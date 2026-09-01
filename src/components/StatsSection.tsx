@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { formatLocalizedNumber } from '@/lib/localizedNumbers';
 
 /**
- * Splits "127+" into its numeric target and the decoration around it, keeping the affix on the
+ * Splits "120+" into its numeric target and the decoration around it, keeping the affix on the
  * side it was authored on — the Arabic bundle writes "+38" rather than "38+".
  */
 function parseStatValue(value: string): { number: number; prefix: string; suffix: string } {

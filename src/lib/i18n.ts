@@ -32,7 +32,7 @@ export const translations = {
       subtitle:
         'BioNixus is a global healthcare and pharmaceutical market research firm founded in London in 2012, now delivering research for 118 clients across 48 countries in the Americas, EMEA, and APAC. We advise pharmaceutical, biotech, and medtech leaders on launch, access, and growth; and extend the same evidence discipline to B2B, consumer, and industrial clients where market entry, pricing, and stakeholder behaviour shape commercial outcomes. Our work turns KOL, payer, and hospital intelligence — alongside customer, channel, and competitive insight — into decisions leadership teams can act on with confidence.',
       trustStripPrimary: 'Trusted by',
-      trustStripStats: '118 global clients · 127+ projects · 48 countries · founded 2012',
+      trustStripStats: '118 global clients · 120+ projects annually · 127 in 2025 · 48 countries · founded 2012',
       valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',
       serviceHighlights: [
         'Multi-country physician & payer research',
@@ -158,7 +158,7 @@ export const translations = {
     stats: {
       title: 'Global Impact',
       items: [
-        { value: '127+', label: 'Projects Delivered' },
+        { value: '120+', label: 'Global projects annually' },
         { value: '118', label: 'Global Clients' },
         { value: '48', label: 'Countries Covered' },
         { value: '14+', label: 'Therapeutic Areas' },
@@ -413,7 +413,7 @@ export const translations = {
       subtitle:
         'BioNixus ist ein globaler Erkenntnis- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen pharmazeutischen, Biotechnologie- und Medizintechnik-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
       trustStripPrimary: 'Vertrauenswürdig bei',
-      trustStripStats: '118 globale Kunden · 127+ Projekte · 48 Länder',
+      trustStripStats: '118 globale Kunden · 120+ Projekte jährlich · 127 im Jahr 2025 · 48 Länder',
       valueProposition:
         'Jedes Mandat beginnt mit einer echten vertrieblichen Frage, nicht mit einem generischen Datenexport. Sie erhalten belastbare quantitative und qualitative Erkenntnisse — zugeschnitten auf Entscheidung, Markt und regulatorische Realität — von der Marktgrößenanalyse vor der Markteinführung bis zur Optimierung nach der Markteinführung.',
       serviceHighlights: [
@@ -638,7 +638,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Abgedeckte Länder' },
         { value: '14+', label: 'Therapiegebiete' },
-        { value: '127+', label: 'Gelieferte Projekte' },
+        { value: '120+', label: 'Globale Projekte jährlich' },
         { value: '118', label: 'Globale Kunden' },
       ],
     },
@@ -914,7 +914,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Pays Couverts' },
         { value: '14+', label: 'Aires Thérapeutiques' },
-        { value: '127+', label: 'Projets Livrés' },
+        { value: '120+', label: 'Projets mondiaux par an' },
         { value: '118', label: 'Clients mondiaux' },
       ],
     },
@@ -1190,7 +1190,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Países Cubiertos' },
         { value: '14+', label: 'Áreas Terapéuticas' },
-        { value: '127+', label: 'Proyectos Entregados' },
+        { value: '120+', label: 'Proyectos globales al año' },
         { value: '118', label: 'Clientes globales' },
       ],
     },
@@ -1465,7 +1465,7 @@ export const translations = {
       items: [
         { value: '48', label: '覆盖国家' },
         { value: '14+', label: '治疗领域' },
-        { value: '127+', label: '交付项目' },
+        { value: '120+', label: '每年全球项目' },
         { value: '118', label: '全球客户' },
       ],
     },
@@ -1745,7 +1745,7 @@ export const translations = {
       items: [
         { value: '48', label: 'دولة مغطاة' },
         { value: '+14', label: 'مجال علاجي' },
-        { value: '+120', label: 'مشروع منجز' },
+        { value: '+120', label: 'مشروعًا عالميًا سنويًا' },
         { value: '118', label: 'عميلًا عالميًا' },
       ],
     },
@@ -2051,7 +2051,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Países Atendidos' },
         { value: '14+', label: 'Áreas Terapêuticas' },
-        { value: '120+', label: 'Projetos Entregues' },
+        { value: '120+', label: 'Projetos globais por ano' },
         { value: '118', label: 'Clientes globais' },
       ],
     },
@@ -2306,7 +2306,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Охваченных стран' },
         { value: '14+', label: 'Терапевтических областей' },
-        { value: '120+', label: 'Реализованных проектов' },
+        { value: '120+', label: 'Глобальных проектов ежегодно' },
         { value: '118', label: 'Глобальных клиентов' },
       ],
     },

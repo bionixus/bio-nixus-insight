@@ -453,7 +453,7 @@ export function buildIndustryCountryPageConfig(
         body: `BioNixus executes ${industry.displayNameShort.toLowerCase()} studies from regional offices with MENA-scale reach.`,
       },
       {
-        title: `${BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.value} projects delivered`,
+        title: `${BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.value} global projects annually (${BIONIXUS_MARKETING_CLAIMS.projects2025.value} in 2025)`,
         body: `Cross-industry programs (${BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.source}) with healthcare-grade governance for sensitive categories.`,
       },
       {

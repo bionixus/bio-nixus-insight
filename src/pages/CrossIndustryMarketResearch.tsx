@@ -58,7 +58,7 @@ const capabilities = [
 ] as const;
 
 const proofPoints = [
-  { value: '127+', label: 'Projects delivered', detail: 'Across commercial and research programmes' },
+  { value: '120+', label: 'Global projects annually', detail: '127 delivered in 2025' },
   { value: '48', label: 'Countries', detail: 'Across MENA, Europe, and global programmes' },
   { value: 'Q+Q', label: 'Methods', detail: 'Quantitative and qualitative under one team' },
 ] as const;

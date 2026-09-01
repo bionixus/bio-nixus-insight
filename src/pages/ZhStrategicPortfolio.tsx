@@ -321,8 +321,8 @@ export default function ZhStrategicPortfolio() {
                 <p className="text-primary-foreground/80 text-sm mt-1">执行覆盖国家</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">127+</p>
-                <p className="text-primary-foreground/80 text-sm mt-1">医药项目</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">120+</p>
+                <p className="text-primary-foreground/80 text-sm mt-1">每年全球项目</p>
               </div>
               <div>
                 <p className="text-3xl md:text-4xl font-display font-bold">118</p>

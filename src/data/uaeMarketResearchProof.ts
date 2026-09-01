@@ -6,7 +6,7 @@ export const UAE_MR_COMPANY_PROOF = [
     body: 'BioNixus runs physician, payer, and institutional research across Dubai, Abu Dhabi, and the Northern Emirates with bilingual Arabic–English execution—not a single “UAE average.”',
   },
   {
-    title: '127+ projects delivered',
+    title: '120+ global projects annually (127 in 2025)',
     body: 'Programs span launch sizing, access evidence, competitive intelligence, and post-launch tracking for pharma, biotech, and medtech sponsors.',
   },
   {

@@ -19,7 +19,7 @@ export const aboutPageCopyZh: AboutPageCopy = {
   ctaPrimary: '索取方案',
   ctaSecondary: '探索行业',
   metrics: [
-    { value: '127+', label: '已交付项目' },
+    { value: '120+', label: '每年全球项目' },
     { value: '118', label: '全球客户' },
     { value: '48', label: '覆盖国家' },
     { value: '16', label: '行业垂直' },
@@ -49,7 +49,7 @@ export const aboutPageCopyZh: AboutPageCopy = {
   storyAct3P1:
     '伦敦根源、MENA 区域深度与美国总部——这一路径使 BioNixus 跻身全球前 100 市场研究公司。我们在 48 国、14+ 治疗领域、六种语言开展项目。在监管下锻造的医药规范现已扩展至 16 个垂直领域的 B2B/B2C——因为客户要求我们在各处保持同一标准。',
   storyAct3P2BeforePharma:
-    '127+ 项目、118 位全球客户。界定研究范围与交付研究的仍是同一团队——自伦敦以来未变。变化的是信任我们的市场与行业数量。探索我们的',
+    '每年 120+ 个全球项目（2025 年 127 个）、118 位全球客户。界定研究范围与交付研究的仍是同一团队——自伦敦以来未变。变化的是信任我们的市场与行业数量。探索我们的',
   storyAct3LinkPharma: '医药与健康研究',
   storyAct3P2Mid1: '、完整',
   storyAct3LinkIndustries: '行业中心',

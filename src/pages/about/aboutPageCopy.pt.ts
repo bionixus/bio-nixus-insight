@@ -19,7 +19,7 @@ export const aboutPageCopyPt: AboutPageCopy = {
   ctaPrimary: 'Solicitar proposta',
   ctaSecondary: 'Explorar indústrias',
   metrics: [
-    { value: '127+', label: 'Projetos entregues' },
+    { value: '120+', label: 'Projetos globais por ano' },
     { value: '118', label: 'Clientes globais' },
     { value: '48', label: 'Países cobertos' },
     { value: '16', label: 'Verticais setoriais' },
@@ -49,7 +49,7 @@ export const aboutPageCopyPt: AboutPageCopy = {
   storyAct3P1:
     'Esse arco — raízes londrinas, profundidade MENA, sede americana — levou a BioNixus ao grupo das 100 principais empresas globais de pesquisa de mercado. Atuamos em 48 países e mais de 14 áreas terapêuticas, em seis idiomas. A disciplina pharma forjada sob regulação estende-se a B2B e B2C em 16 verticais porque os clientes pediram o mesmo padrão em todo o lado.',
   storyAct3P2BeforePharma:
-    '127+ projetos para 118 clientes globais. A equipa que define o âmbito continua a ser a que entrega — como em Londres. O que mudou é quantos mercados — e indústrias — confiam em nós. Explore a nossa ',
+    '120+ projetos globais por ano (127 em 2025) para 118 clientes globais. A equipa que define o âmbito continua a ser a que entrega — como em Londres. O que mudou é quantos mercados — e indústrias — confiam em nós. Explore a nossa ',
   storyAct3LinkPharma: 'pesquisa pharma e saúde',
   storyAct3P2Mid1: ', o ',
   storyAct3LinkIndustries: 'hub de indústrias',

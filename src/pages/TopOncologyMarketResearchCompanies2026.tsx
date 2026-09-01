@@ -70,24 +70,6 @@ const firms: FirmProfile[] = [
   },
   {
     rank: 3,
-    name: 'Ipsos Healthcare',
-    type: 'Multi-country HCP survey',
-    hq: 'France',
-    anchor: 'ipsos',
-    url: 'https://www.ipsos.com',
-    bestFor: 'Multi-country HCP surveys, oncology monitors, and attitudinal landscape',
-    limit: 'Stated practice, not a full chart. Weak where you need documented history and line of therapy.',
-    overview:
-      'Ipsos Healthcare fields multi-country oncology HCP surveys and monitors. Share of mention and stated prescribing are useful for message and landscape work. They are not a physician-completed PRF with documented history, incident versus prevalent quotas, or brand share among treated patients.',
-    strengths: [
-      'Multi-country oncology HCP surveys',
-      'Treatment landscape and message testing',
-      'Physician preference research',
-      'Global office network for attitudinal fieldwork',
-    ],
-  },
-  {
-    rank: 4,
     name: 'Kantar / Cerner Enviza',
     type: 'Epidemiology · patient journey',
     hq: 'UK',
@@ -105,7 +87,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 5,
+    rank: 4,
     name: 'Adelphi Real World',
     type: 'Disease-specific programme (DSP)',
     hq: 'UK',
@@ -123,7 +105,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 6,
+    rank: 5,
     name: 'OPEN Health',
     type: 'HEOR · access evidence',
     hq: 'UK',
@@ -145,7 +127,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top oncology market research companies in 2026?',
-    a: 'Ranked by fit for treatment-pattern work — not headcount — the 2026 shortlist is BioNixus (indication-level anonymous PRFs with full history, new and current case recruitment, brand trackers as share of treated patients), IQVIA (syndicated pack and prescription volume), Ipsos Healthcare (HCP surveys), Kantar / Cerner Enviza (epidemiology and journey), Adelphi Real World (Western DSP charts), and OPEN Health (oncology HEOR). BioNixus ranks first when the decision needs the patient behind the pack.',
+    a: 'Ranked by fit for treatment-pattern work — not headcount — the 2026 shortlist is BioNixus (indication-level anonymous PRFs with full history, new and current case recruitment, brand trackers as share of treated patients), IQVIA (syndicated pack and prescription volume), Kantar / Cerner Enviza (epidemiology and journey), Adelphi Real World (Western DSP charts), and OPEN Health (oncology HEOR). BioNixus ranks first when the decision needs the patient behind the pack.',
   },
   {
     q: 'How is BioNixus different from IQVIA in oncology?',
@@ -169,7 +151,7 @@ const faqItems = [
   },
   {
     q: 'Can HCP surveys replace PRFs?',
-    a: 'No. Ipsos and Kantar are strong at attitude and share of mention. Stated practice is not documented history, not incident/prevalent quotas, and not indication-coded brand share among treated patients. Use surveys for message and perception; use PRFs for the oncology file.',
+    a: 'No. Kantar and other HCP survey houses are strong at attitude and share of mention. Stated practice is not documented history, not incident/prevalent quotas, and not indication-coded brand share among treated patients. Use surveys for message and perception; use PRFs for the oncology file.',
   },
   {
     q: 'Which regions can BioNixus field oncology PRFs in?',
@@ -354,13 +336,13 @@ export default function TopOncologyMarketResearchCompanies2026() {
               </div>
               <div className="cmkt">
                 <span className="iso">03</span>
-                <span className="nm">Ipsos</span>
-                <span className="tag">HCP survey</span>
+                <span className="nm">Kantar</span>
+                <span className="tag">Journey</span>
               </div>
               <div className="cmkt">
                 <span className="iso">04</span>
-                <span className="nm">Kantar</span>
-                <span className="tag">Journey</span>
+                <span className="nm">Adelphi</span>
+                <span className="tag">Chart DSP</span>
               </div>
             </div>
             <div className="cdrow">
@@ -403,7 +385,8 @@ export default function TopOncologyMarketResearchCompanies2026() {
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
-                {STATS.clients} clients · {STATS.countries} countries · {STATS.projects} projects
+                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
+                annually · {STATS.projects2025} in 2025
               </div>
             </div>
           </div>
@@ -431,7 +414,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
               </div>
               <div className="stat-cell b">
                 <div className="stat-n">Survey</div>
-                <div className="stat-l">Ipsos · Kantar HCP / patient</div>
+                <div className="stat-l">Kantar HCP / patient survey</div>
               </div>
               <div className="stat-cell g">
                 <div className="stat-n">Chart</div>
@@ -744,15 +727,15 @@ export default function TopOncologyMarketResearchCompanies2026() {
                 <div className="n">04</div>
                 <h3>Do not buy surveys alone</h3>
                 <p>
-                  HCP “share of mention” is not a PRF. Ipsos and Kantar are strong at attitude. They do not replace
-                  documented history and incident/prevalent quotas.
+                  HCP “share of mention” is not a PRF. Kantar and similar survey houses are strong at attitude. They do
+                  not replace documented history and incident/prevalent quotas.
                 </p>
               </div>
             </div>
             <div className="fit-band">
               <div className="fit-cell">
                 <div className="k">Projects</div>
-                <div className="v">{STATS.projects} delivered</div>
+                <div className="v">{STATS.projectsAnnual} annually</div>
               </div>
               <div className="fit-cell g">
                 <div className="k">Clients</div>
@@ -775,7 +758,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
             </div>
             <div className="section-num">06 — Who belongs on the shortlist</div>
             <h2 className="section-title" id="profiles-title">
-              Six firms. <em>Different jobs.</em>
+              Five firms. <em>Different jobs.</em>
             </h2>
             <p className="section-lede">
               Profiles below are assessed by the oncology job, not corporate revenue. Select on unit of observation first
@@ -889,7 +872,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
             </div>
             <p className="note-line mt-4">
               Ranking reflects fit for oncology treatment-pattern and brand-tracker work, not corporate revenue. IQVIA,
-              Ipsos, Kantar, Cerner Enviza, Adelphi, and OPEN Health are independent organisations; descriptions of their
+              Kantar, Cerner Enviza, Adelphi, and OPEN Health are independent organisations; descriptions of their
               typical commercial products are based on publicly characterised offerings and buyer practice, not a paid
               audit of each firm. PRFs contain no patient identifiers. BioNixus does not provide legal, medical, or
               regulatory advice.

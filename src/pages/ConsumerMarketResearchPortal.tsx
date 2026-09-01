@@ -253,7 +253,7 @@ export default function ConsumerMarketResearchPortal() {
             </div>
             {/* Trust badge strip */}
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-teal-100 font-medium">
-              {['14+ years', '127+ projects', '15+ countries', 'Arabic–English fieldwork'].map(
+              {['14+ years', '120+ projects annually · 127 in 2025', '15+ countries', 'Arabic–English fieldwork'].map(
                 (badge) => (
                   <span key={badge} className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-teal-200 inline-block" />
@@ -423,7 +423,7 @@ export default function ConsumerMarketResearchPortal() {
                 { title: 'B2B Specialist Panels', description: 'Verified C-suite, CFO, and IT buyer panels across GCC and Europe — hard-to-reach audiences recruited and screened, not panel spill.' },
                 { title: 'Speed to Insight', description: 'Fieldwork-to-report in 4–6 weeks with local quota management, bilingual instruments, and executive synthesis from day one.' },
               ]}
-              summary="ICC/ESOMAR-aligned methodology, 127+ projects delivered, 14+ years of in-region fieldwork across consumer and B2B verticals."
+              summary="ICC/ESOMAR-aligned methodology, 120+ global projects annually (127 in 2025), 14+ years of in-region fieldwork across consumer and B2B verticals."
               className="mt-10"
             />
           </div>

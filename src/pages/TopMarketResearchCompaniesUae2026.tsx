@@ -55,7 +55,7 @@ const firms: FirmProfile[] = [
       ...BIONIXUS_MR_STRENGTHS_BASE,
       'Multilingual consumer fieldwork across Dubai, Abu Dhabi, and the Northern Emirates',
       'Premium and multicultural audience segmentation for expatriate-majority UAE markets',
-      `Founded ${BIONIXUS_MR_STATS.since} · ${BIONIXUS_MR_STATS.projects} projects · ${BIONIXUS_MR_STATS.clients} global clients`,
+      `Founded ${BIONIXUS_MR_STATS.since} · ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually · ${BIONIXUS_MR_STATS.projects2025} in 2025 · ${BIONIXUS_MR_STATS.clients} global clients`,
     ],
   },
   {
@@ -240,7 +240,7 @@ const faqItems = [
   },
   {
     q: 'Does BioNixus conduct market research in the UAE?',
-    a: `Yes. BioNixus has conducted market research since ${BIONIXUS_MR_STATS.since}, with ${BIONIXUS_MR_STATS.projects} projects for ${BIONIXUS_MR_STATS.clients} global clients and UAE execution across consumer, FMCG, healthcare, and multi-industry programmes. Email admin@bionixus.com for a proposal within 48 hours.`,
+    a: `Yes. BioNixus has conducted market research since ${BIONIXUS_MR_STATS.since}, with ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually (${BIONIXUS_MR_STATS.projects2025} in 2025) for ${BIONIXUS_MR_STATS.clients} global clients and UAE execution across consumer, FMCG, healthcare, and multi-industry programmes. Email admin@bionixus.com for a proposal within 48 hours.`,
   },
 ];
 
@@ -406,7 +406,8 @@ export default function TopMarketResearchCompaniesUae2026() {
               <div>
                 <dt className="text-muted-foreground">Projects / clients</dt>
                 <dd className="font-semibold text-foreground">
-                  {BIONIXUS_MR_STATS.projects} / {BIONIXUS_MR_STATS.clients}
+                  {BIONIXUS_MR_STATS.projectsAnnual} annually · {BIONIXUS_MR_STATS.projects2025} in 2025 /{' '}
+                  {BIONIXUS_MR_STATS.clients}
                 </dd>
               </div>
               <div>

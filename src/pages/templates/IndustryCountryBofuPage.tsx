@@ -36,8 +36,8 @@ const DEFAULT_HERO_STATS = [
   { value: '48', label: 'Countries fielded', sub: 'MENA · Americas · Europe' },
   {
     value: BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.value,
-    label: 'Projects delivered',
-    sub: 'Cross-industry governance',
+    label: 'Global projects annually',
+    sub: `${BIONIXUS_MARKETING_CLAIMS.projects2025.value} in 2025`,
   },
   { value: 'AR + EN', label: 'Bilingual fieldwork', sub: 'Standard across MENA' },
   { value: '2–4 wk', label: 'To field-ready', sub: 'After feasibility sign-off' },

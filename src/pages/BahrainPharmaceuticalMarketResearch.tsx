@@ -18,7 +18,7 @@ const BAHRAIN_MR_COMPANY_PROOF = [
     body: "BioNixus builds Bahrain research around the National Health Regulatory Authority's (NHRA) registration and Health Technology Assessment (HTA) pathway—not a generic GCC template.",
   },
   {
-    title: '127+ projects delivered across the GCC',
+    title: '120+ global projects annually (127 in 2025), including GCC work',
     body: 'Programs span launch sizing, access evidence, competitive intelligence, and post-launch tracking for pharma, biotech, and medtech sponsors operating in Bahrain and neighbouring markets.',
   },
   {

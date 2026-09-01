@@ -442,7 +442,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       { label: 'Population', value: '109M+ (largest in MENA)' },
       { label: 'Pharma Market Size', value: '$5.8B+ annually' },
       { label: 'Key Regulator', value: 'EDA (Egyptian Drug Authority)' },
-      { label: 'BioNixus Projects', value: '127+ completed Egypt studies' },
+      { label: 'BioNixus Projects', value: 'Egypt field teams · 120+ global projects annually' },
       { label: 'Local Manufacturing', value: '90% domestic production' },
       { label: 'Strategic Context', value: 'Universal Health Insurance expansion' },
     ],
@@ -450,7 +450,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       {
         question: 'What are the top market research companies in Egypt?',
         answer:
-          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, Nielsen, AMRB, YouGov, Infomine, and Alkoun MEA. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with a 15-year track record and 127+ completed projects.',
+          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, Nielsen, AMRB, YouGov, Infomine, and Alkoun MEA. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with a 15-year track record and 120+ global projects annually (127 in 2025).',
       },
       {
         question: 'How does BioNixus run pharmaceutical market research in Egypt?',

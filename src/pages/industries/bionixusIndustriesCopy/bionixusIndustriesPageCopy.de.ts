@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyDe: BionixusIndustriesPageCopy = {
   cardLive: 'Live',
   chartNonHealthcare: 'Nicht-Gesundheits-Silo',
   chartHealthcare: 'Gesundheitssilo',
-  cardFoot: 'Seit 2012 · 127+ Projekte · 118 Kunden · 48 Länder',
+  cardFoot: 'Seit 2012 · 120+ Projekte jährlich · 127 im Jahr 2025 · 118 Kunden · 48 Länder',
   regionRibbon: [
     'Nordamerika',
     'LATAM',
@@ -33,7 +33,7 @@ export const bionixusIndustriesPageCopyDe: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Gegründet in London', sub: 'Wurzeln in britischer Pharmaforschung' },
-    { value: '127+', label: 'Abgeschlossene Projekte', sub: 'in 48 Ländern' },
+    { value: '120+', label: 'Globale Projekte jährlich', sub: 'in 48 Ländern' },
     { value: '118', label: 'Betreute Kunden', sub: 'von Pharma bis Konsum' },
     { value: '16', label: 'Branchenvertikalen', sub: 'und wachsend' },
   ],

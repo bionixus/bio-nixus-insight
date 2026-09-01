@@ -24,7 +24,7 @@ const firms: FirmProfile[] = [
     hq: 'USA (HQ — Sheridan, WY) · UK (London) · 48 countries',
     anchor: 'bionixus',
     overview:
-      'BioNixus is a global pharmaceutical and healthcare market research company headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and fieldwork networks across 48 countries. Since 2012, the firm has completed 127+ projects for 118 global clients across 14+ therapeutic areas (BioNixus internal records, 2026). In the US specifically, BioNixus designs research around the FDA-regulated, multi-payer US market: physician and specialist surveys across major AMCs (Mayo Clinic, Cleveland Clinic, MSKCC, Johns Hopkins, UCSF, MGH) and community IDN networks; KOL identification and influence mapping; PBM and CMS payer research covering UnitedHealth/Optum, CVS/Caremark, and Express Scripts/Cigna; IRA drug price negotiation impact research; HEOR and real-world evidence generation; and competitive intelligence for launch planning and lifecycle management. All US studies are designed and executed under IRB/OHRP compliance (45 CFR Part 46) and HIPAA/HITECH data privacy standards.',
+      'BioNixus is a global pharmaceutical and healthcare market research company headquartered in Sheridan, Wyoming (USA), with offices in London (UK) and fieldwork networks across 48 countries. Since 2012, the firm runs 120+ global projects annually (127 in 2025) for 118 global clients across 14+ therapeutic areas (BioNixus internal records, 2026). In the US specifically, BioNixus designs research around the FDA-regulated, multi-payer US market: physician and specialist surveys across major AMCs (Mayo Clinic, Cleveland Clinic, MSKCC, Johns Hopkins, UCSF, MGH) and community IDN networks; KOL identification and influence mapping; PBM and CMS payer research covering UnitedHealth/Optum, CVS/Caremark, and Express Scripts/Cigna; IRA drug price negotiation impact research; HEOR and real-world evidence generation; and competitive intelligence for launch planning and lifecycle management. All US studies are designed and executed under IRB/OHRP compliance (45 CFR Part 46) and HIPAA/HITECH data privacy standards.',
     strengths: [
       'US HQ: Sheridan, Wyoming with global delivery network',
       'IRB-compliant US HCP research (45 CFR Part 46 / Common Rule)',
@@ -114,7 +114,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top market research companies in the USA?',
-    a: 'Leading market research firms in the USA include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first for pharmaceutical and healthcare research, operating as a global network headquartered in the US with full-service capability, IRB-compliant HCP and payer research, PBM formulary expertise, and 127+ completed projects across 48 countries as of 2026.',
+    a: 'Leading market research firms in the USA include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first for pharmaceutical and healthcare research, operating as a global network headquartered in the US with full-service capability, IRB-compliant HCP and payer research, PBM formulary expertise, and 120+ global projects annually (127 in 2025) across 48 countries as of 2026.',
   },
   {
     q: 'How much does market research cost in the USA?',

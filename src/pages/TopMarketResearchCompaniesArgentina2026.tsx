@@ -121,7 +121,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best market research companies in Argentina?',
-    a: 'Leading market research firms in Argentina include BioNixus, Kantar Argentina, Ipsos Argentina, NielsenIQ, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 48 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
+    a: 'Leading market research firms in Argentina include BioNixus, Kantar Argentina, Ipsos Argentina, NielsenIQ, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 120+ global projects annually (127 in 2025) across 48 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
   },
   {
     q: 'What makes market research in Argentina unique?',

@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyEs: BionixusIndustriesPageCopy = {
   cardLive: 'En vivo',
   chartNonHealthcare: 'Silo no sanitario',
   chartHealthcare: 'Silo sanitario',
-  cardFoot: 'Desde 2012 · 127+ proyectos · 118 clientes · 48 países',
+  cardFoot: 'Desde 2012 · 120+ proyectos al año · 127 en 2025 · 118 clientes · 48 países',
   regionRibbon: [
     'Norteamérica',
     'LATAM',
@@ -33,7 +33,7 @@ export const bionixusIndustriesPageCopyEs: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Fundada en Londres', sub: 'Raíces en investigación farmacéutica británica' },
-    { value: '127+', label: 'Proyectos entregados', sub: 'en 48 países' },
+    { value: '120+', label: 'Proyectos globales al año', sub: 'en 48 países' },
     { value: '118', label: 'Clientes atendidos', sub: 'de pharma a consumo' },
     { value: '16', label: 'Verticales industriales', sub: 'y en crecimiento' },
   ],

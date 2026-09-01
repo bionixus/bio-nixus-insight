@@ -19,7 +19,7 @@ export const aboutPageCopyDe: AboutPageCopy = {
   ctaPrimary: 'Angebot anfordern',
   ctaSecondary: 'Branchen entdecken',
   metrics: [
-    { value: '127+', label: 'Abgeschlossene Projekte' },
+    { value: '120+', label: 'Globale Projekte jährlich' },
     { value: '118', label: 'Globale Kunden' },
     { value: '48', label: 'Abgedeckte Länder' },
     { value: '16', label: 'Branchenvertikalen' },
@@ -51,7 +51,7 @@ export const aboutPageCopyDe: AboutPageCopy = {
   storyAct3P1:
     'Dieser Bogen — Londoner Wurzeln, regionale MENA-Tiefe, amerikanischer Hauptsitz — trug BioNixus in den Kreis der weltweit führenden 100 Marktforschungsunternehmen. Wir sind in 48 Ländern und über 14 Therapiegebiete tätig, auf Englisch, Arabisch, Französisch, Deutsch, Spanisch und Chinesisch. Die unter Regulierung geschmiedete pharmazeutische Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 16 Branchenvertikalen — weil Kunden uns baten, denselben Standard überall anzuwenden.',
   storyAct3P2BeforePharma:
-    '127+ Projekte für 118 globale Kunden. Das Team, das Ihre Studie plant, ist noch immer das Team, das sie liefert. Das hat sich seit London nicht geändert. Was sich geändert hat, ist, wie viele Märkte — und wie viele Branchen — uns vertrauen. Entdecken Sie unsere ',
+    '120+ globale Projekte jährlich (127 im Jahr 2025) für 118 globale Kunden. Das Team, das Ihre Studie plant, ist noch immer das Team, das sie liefert. Das hat sich seit London nicht geändert. Was sich geändert hat, ist, wie viele Märkte — und wie viele Branchen — uns vertrauen. Entdecken Sie unsere ',
   storyAct3LinkPharma: 'Pharmazeutische & Gesundheitsforschung',
   storyAct3P2Mid1: ', den vollständigen ',
   storyAct3LinkIndustries: 'Branchen-Hub',

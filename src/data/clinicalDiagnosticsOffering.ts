@@ -189,7 +189,7 @@ export const whyBioNixus = [
 ];
 
 export const trackRecordStats = [
-  { value: '127+', label: 'Projects delivered' },
+  { value: '120+', label: 'Global projects annually' },
   { value: '118', label: 'Clients served' },
   { value: '18', label: 'Countries covered' },
   { value: '15 yr', label: 'Sector experience' },

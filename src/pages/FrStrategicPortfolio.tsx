@@ -315,8 +315,8 @@ export default function FrStrategicPortfolio() {
                 <p className="text-primary-foreground/80 text-sm mt-1">pays d'exécution</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">127+</p>
-                <p className="text-primary-foreground/80 text-sm mt-1">projets pharmaceutiques</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">120+</p>
+                <p className="text-primary-foreground/80 text-sm mt-1">projets mondiaux par an</p>
               </div>
               <div>
                 <p className="text-3xl md:text-4xl font-display font-bold">118</p>
