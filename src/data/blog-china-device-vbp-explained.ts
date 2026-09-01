@@ -8,7 +8,7 @@ import { NMPA_CLASS_III_TIMELINE_SLUG } from '@/data/blog-nmpa-class-iii-timelin
 export const CHINA_DEVICE_VBP_EXPLAINED_SLUG = 'china-device-vbp-rounds-explained';
 
 export const CHINA_DEVICE_VBP_EXPLAINED_COVER_IMAGE =
-  'https://images.unsplash.com/photo-1551076805-e1869033e561?w=1600&h=900&fit=crop&q=85';
+  '/images/blog/china-device-vbp-rounds-explained-cover.jpg';
 
 export const CHINA_DEVICE_VBP_EXPLAINED_META_TITLE =
   'China Device VBP Rounds Explained 2026 | Stents, Joints & Renewals';

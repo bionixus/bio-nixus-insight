@@ -7,9 +7,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const GCC_PHARMACOECONOMICS_SLUG = 'gcc-pharmacoeconomics';
 
-/** Stable hero / Open Graph asset (HTTPS, works with `optimizeSanityImage` passthrough). */
+/** Unique 1200×630 JPEG for LinkedIn / Facebook (title baked into the card). */
 export const GCC_PHARMACOECONOMICS_COVER_IMAGE =
-  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&h=900&fit=crop&q=85';
+  '/images/blog/gcc-pharmacoeconomics-cover.jpg';
 
 /** SEO meta (~155 chars). */
 export const GCC_PHARMACOECONOMICS_META_DESCRIPTION =

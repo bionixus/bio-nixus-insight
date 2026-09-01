@@ -10,7 +10,7 @@ import type { BlogPost } from '@/types/blog';
 export const UAE_HEALTHCARE_TRENDS_2026_SLUG = 'uae-healthcare-market-trends-2026';
 
 export const UAE_HEALTHCARE_TRENDS_2026_COVER_IMAGE =
-  'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&h=900&fit=crop&q=85';
+  '/images/blog/uae-healthcare-market-trends-2026-cover.jpg';
 
 export const UAE_HEALTHCARE_TRENDS_2026_META_TITLE =
   'UAE Healthcare Market Trends 2026 Guide | BioNixus';

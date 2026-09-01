@@ -30,6 +30,7 @@ import {
   NF1_KOSELUGO_DRUG_TAGS,
   NF1_KOSELUGO_DRUG_BLOG_SLUG,
   NF1_KOSELUGO_COVER_IMAGE,
+  NF1_KOSELUGO_DRUG_COVER_IMAGE,
   NF1_KOSELUGO_DISPLAY_TITLE,
   NF1_KOSELUGO_EXECUTIVE_SUMMARY_HTML,
   NF1_KOSELUGO_META_DESCRIPTION,
@@ -94,7 +95,7 @@ const NF1_KOSELUGO_DRUG_BUNDLE: TherapyStaticBlogBundle = {
   metaTitle: NF1_KOSELUGO_DRUG_META_TITLE,
   metaDescription: NF1_KOSELUGO_DRUG_META_DESCRIPTION,
   ogDescription: NF1_KOSELUGO_DRUG_OG_DESCRIPTION,
-  coverImage: NF1_KOSELUGO_COVER_IMAGE,
+  coverImage: NF1_KOSELUGO_DRUG_COVER_IMAGE,
   displayTitle: NF1_KOSELUGO_DRUG_DISPLAY_TITLE,
   bodyHtml: NF1_KOSELUGO_DRUG_BODY_HTML,
   executiveSummaryHtml: NF1_KOSELUGO_DRUG_EXECUTIVE_SUMMARY_HTML,
@@ -102,8 +103,7 @@ const NF1_KOSELUGO_DRUG_BUNDLE: TherapyStaticBlogBundle = {
   schemaFaq: cloneFaq(NF1_KOSELUGO_DRUG_SCHEMA_FAQ),
   tags: [...NF1_KOSELUGO_DRUG_TAGS],
   itemListSchema: NF1_KOSELUGO_DRUG_SCHEMA_ITEM_LIST,
-  schemaMentions: [...NF1_KOSELUGO_DRUG_SCHEMA_MENTIONS],
-  schemaOgImageDimensions: { width: 1600, height: 900 },
+  schemaOgImageDimensions: { width: 1200, height: 630 },
 };
 
 const DESMOID_BUNDLE: TherapyStaticBlogBundle = {
@@ -118,8 +118,7 @@ const DESMOID_BUNDLE: TherapyStaticBlogBundle = {
   tableOfContents: [...DESMOID_BLOG_TABLE_OF_CONTENTS],
   schemaFaq: cloneFaq(DESMOID_BLOG_SCHEMA_FAQ),
   tags: [...DESMOID_BLOG_TAGS],
-  itemListSchema: DESMOID_STATIC_BLOG_SCHEMA_ITEM_LIST,
-  schemaOgImageDimensions: { width: 1600, height: 1067 },
+  schemaOgImageDimensions: { width: 1200, height: 630 },
 };
 
 const BY_SLUG: Record<string, TherapyStaticBlogBundle> = {

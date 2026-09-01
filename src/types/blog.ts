@@ -31,6 +31,7 @@ export interface BlogPost {
   category: string;
   country: string;
   coverImage?: string;
+  coverImageAlt?: string;
   body?: string | PortableTextBlock[];
   bodyHtml?: string;
   language?: string;
@@ -52,6 +53,7 @@ export interface BlogPost {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   authorName?: string;
   authorTitle?: string;
   authorImage?: string;

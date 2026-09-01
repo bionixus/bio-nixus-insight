@@ -16,9 +16,9 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
   tags: ['Egypt', 'Market Research Companies', 'Kantar Egypt', 'Healthcare Market Research', 'MENA'],
   // Professional corporate boardroom / strategy meeting (Unsplash)
   coverImage:
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=85',
+    '/images/blog/market-research-companies-egypt-cover.jpg',
   ogImage:
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=85',
+    '/images/blog/market-research-companies-egypt-cover.jpg',
   ogTitle: 'Top Market Research Companies in Egypt (2026 Compared) | BioNixus',
   ogDescription:
     'Compare leading market research companies operating in Egypt — global networks (Kantar, Ipsos, NielsenIQ, IQVIA, YouGov) and BioNixus healthcare specialists.',

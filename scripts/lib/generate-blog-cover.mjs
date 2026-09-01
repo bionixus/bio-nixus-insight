@@ -78,6 +78,7 @@ function layoutIndexFromSlug(slug) {
  *   actionType?: string;
  *   layoutIndex?: number;
  *   slug?: string;
+ *   footer?: string;
  *   outPath: string;
  * }} opts
  */
@@ -89,6 +90,7 @@ export async function generateBlogCover({
   actionType = '',
   layoutIndex,
   slug = '',
+  footer = 'GCC & MENA · PHARMA MARKET ACCESS',
   outPath,
 }) {
   const theme = pickTheme(therapeuticArea, actionType);
@@ -147,7 +149,7 @@ export async function generateBlogCover({
 
   ${safeSponsor ? `<text x="${tl.titleX}" y="${tl.footerY - 36}" fill="${GOLD_LIGHT}" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600">${safeSponsor}</text>` : ''}
 
-  <text x="${tl.titleX}" y="${tl.footerY}" fill="#5a6d85" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="0.08em">GCC &amp; MENA · PHARMA MARKET ACCESS</text>
+  <text x="${tl.titleX}" y="${tl.footerY}" fill="#5a6d85" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="0.08em">${escapeXml(footer)}</text>
 </svg>`;
 
   fs.mkdirSync(path.dirname(outPath), { recursive: true });

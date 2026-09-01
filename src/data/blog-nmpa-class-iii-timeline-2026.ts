@@ -7,7 +7,7 @@ import type { BlogPost } from '@/types/blog';
 export const NMPA_CLASS_III_TIMELINE_SLUG = 'nmpa-class-iii-registration-timeline-2026';
 
 export const NMPA_CLASS_III_TIMELINE_COVER_IMAGE =
-  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&h=900&fit=crop&q=85';
+  '/images/blog/nmpa-class-iii-registration-timeline-2026-cover.jpg';
 
 export const NMPA_CLASS_III_TIMELINE_META_TITLE =
   'NMPA Class III Registration Timeline 2026 | CMDE Guide';

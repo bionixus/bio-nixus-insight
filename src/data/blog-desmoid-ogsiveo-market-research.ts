@@ -7,7 +7,7 @@ import type { BlogPost } from '@/types/blog';
 export const DESMOID_NIROGACESTAT_BLOG_SLUG = 'desmoid-tumors-nirogacestat-pharma-market-access';
 
 export const DESMOID_BLOG_COVER_IMAGE =
-  'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=85';
+  '/images/blog/desmoid-tumors-nirogacestat-pharma-market-access-cover.jpg';
 
 export const DESMOID_BLOG_META_TITLE = 'Desmoid Market Access Briefing | Ogsiveo (Nirogacestat) | BioNixus';
 

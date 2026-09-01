@@ -46,6 +46,41 @@ function htmlDocumentAttrs(isArabic) {
   return isArabic ? ' lang="ar" dir="rtl"' : ' lang="en"';
 }
 
+function isSvgImageUrl(url) {
+  if (!url) return false;
+  return url.split('?')[0].toLowerCase().endsWith('.svg');
+}
+
+function toSocialShareImageUrl(url) {
+  if (!url) return `${BASE}/og-image.png`;
+  let absolute = url;
+  if (absolute.startsWith('//')) absolute = `https:${absolute}`;
+  if (absolute.startsWith('/')) absolute = `${BASE}${absolute}`;
+  if (absolute.includes('cdn.sanity.io')) {
+    const base = absolute.split('?')[0];
+    return `${base}?w=1200&h=630&fit=crop&fm=jpg&q=90`;
+  }
+  if (absolute.includes('images.unsplash.com')) {
+    try {
+      const parsed = new URL(absolute);
+      parsed.searchParams.set('w', '1200');
+      parsed.searchParams.set('h', '630');
+      parsed.searchParams.set('fit', 'crop');
+      parsed.searchParams.set('q', '85');
+      parsed.searchParams.set('fm', 'jpg');
+      return parsed.toString();
+    } catch {
+      return absolute;
+    }
+  }
+  return absolute;
+}
+
+function pickCrawlerShareImage(post) {
+  const raster = [post?.ogImage, post?.coverImage].find((candidate) => candidate && !isSvgImageUrl(candidate));
+  return toSocialShareImageUrl(raster || post?.ogImage || post?.coverImage);
+}
+
 // Fetch full post including body content for crawlers (AhrefsBot, Googlebot, etc.)
 const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   title,
@@ -54,10 +89,15 @@ const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   contentSilo,
   "seoMetaDescription": seo.metaDescription,
   "seoMetaTitle": seo.metaTitle,
+  "ogTitle": openGraph.ogTitle,
+  "ogDescription": openGraph.ogDescription,
   "body": coalesce(body, content),
   bodyHtml,
   htmlContent,
   "coverImage": mainImage.asset->url,
+  "coverImageAlt": mainImage.alt,
+  "ogImage": openGraph.ogImage.asset->url,
+  "ogImageAlt": openGraph.ogImage.alt,
   publishedAt,
   "author": author->name,
   category,
@@ -333,7 +373,10 @@ export default async function handler(req, res) {
         fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
       }),
     );
-    const image = post.coverImage || `${BASE}/og-image.png`;
+    const image = pickCrawlerShareImage(post);
+    const ogTitle = post.ogTitle ? esc(post.ogTitle) : title;
+    const ogDescription = post.ogDescription ? esc(post.ogDescription) : description;
+    const ogImageAlt = esc(post.ogImageAlt || post.coverImageAlt || documentTitle);
     const url = `${BASE}${pagePath}`;
     const author = post.author || 'BioNixus Research Team';
     const category =
@@ -478,13 +521,16 @@ export default async function handler(req, res) {
   <meta property="og:locale" content="${isArabic ? 'ar_SA' : 'en_US'}">
   <meta property="og:locale:alternate" content="${isArabic ? 'en_US' : 'ar_SA'}">
   <meta property="og:site_name" content="BioNixus">
-  <meta property="og:title" content="${title}">
-  <meta property="og:description" content="${description}">
+  <meta property="og:title" content="${ogTitle}">
+  <meta property="og:description" content="${ogDescription}">
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${esc(image)}">
+  <meta property="og:image:url" content="${esc(image)}">
+  <meta property="og:image:secure_url" content="${esc(image)}">
+  <meta property="og:image:type" content="${image.includes('.png') && !image.includes('fm=jpg') ? 'image/png' : 'image/jpeg'}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${title}">
+  <meta property="og:image:alt" content="${ogImageAlt}">
   ${post.publishedAt ? `<meta property="article:published_time" content="${esc(post.publishedAt)}">` : ''}
   ${category ? `<meta property="article:section" content="${esc(category)}">` : ''}
   ${Array.isArray(post.tags) ? post.tags.map((t) => `<meta property="article:tag" content="${esc(t)}">`).join('\n  ') : ''}
@@ -492,9 +538,10 @@ export default async function handler(req, res) {
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@BioNixus">
-  <meta name="twitter:title" content="${title}">
-  <meta name="twitter:description" content="${description}">
+  <meta name="twitter:title" content="${ogTitle}">
+  <meta name="twitter:description" content="${ogDescription}">
   <meta name="twitter:image" content="${esc(image)}">
+  <meta name="twitter:image:alt" content="${ogImageAlt}">
 
   <link rel="canonical" href="${url}">
 

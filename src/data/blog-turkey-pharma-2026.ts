@@ -9,7 +9,7 @@ import type { BlogPost } from '@/types/blog';
 export const TURKEY_PHARMA_2026_SLUG = 'turkey-pharmaceutical-market-2026-titck-top-companies';
 
 export const TURKEY_PHARMA_2026_COVER_IMAGE =
-  'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=1600&h=900&fit=crop&q=85';
+  '/images/blog/turkey-pharmaceutical-market-2026-titck-top-companies-cover.jpg';
 
 export const TURKEY_PHARMA_2026_META_TITLE =
   'Turkey Pharmaceutical Market 2026: Size, TITCK & Top Companies | BioNixus';

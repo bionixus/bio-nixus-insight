@@ -23,7 +23,12 @@ import {
 } from '@/lib/blog-robots';
 import { getRareTumorClusterByBlogSlug } from '@/data/rare-tumor-seo-cluster';
 import { RareTumorClusterCallout } from '@/components/seo/RareTumorClusterCallout';
-import { optimizeSanityImage } from '@/lib/image-utils';
+import {
+  optimizeSanityImage,
+  pickSocialShareImage,
+  SOCIAL_OG_HEIGHT,
+  SOCIAL_OG_WIDTH,
+} from '@/lib/image-utils';
 import {
   buildSeoDescription,
   formatSlugAsPageHeading,
@@ -1083,16 +1088,18 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const therapyStaticBundledCover =
     isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined;
 
-  const socialImage =
-    therapyStaticBundledCover ||
-    post.ogImage ||
-    post.coverImage ||
-    (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
-
-  const resolvedOgImageRaw = socialImage || 'https://www.bionixus.com/og-image.png';
-  const resolvedOgImageUrl = resolvedOgImageRaw.startsWith('/')
-    ? `${BLOG_PUBLIC_ORIGIN}${resolvedOgImageRaw}`
-    : resolvedOgImageRaw;
+  const socialShare = pickSocialShareImage(
+    therapyStaticBundledCover,
+    post.ogImage,
+    post.coverImage,
+    isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined,
+  );
+  const resolvedOgImageUrl = socialShare.url;
+  const resolvedOgImageType = socialShare.mime;
+  const socialImageAlt =
+    post.ogImageAlt ||
+    post.coverImageAlt ||
+    articleDisplayTitle;
   const ogTimes = blogOgArticleIsoTimestamps(post);
   const blogHreflangAlternates = blogEnArAlternateUrls(pathClean);
 
@@ -1173,7 +1180,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         locale={getOgLocale(language)}
         alternateLocales={getOgLocaleAlternates(language)}
         siteName="BioNixus"
-        imageAlt={articleDisplayTitle}
+        imageAlt={socialImageAlt}
+        imageWidth={SOCIAL_OG_WIDTH}
+        imageHeight={SOCIAL_OG_HEIGHT}
+        imageType={resolvedOgImageType}
         twitterSite="@BioNixus"
         article={{
           publishedTime: ogTimes.published,
@@ -1223,7 +1233,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                 ogImageHeight: q2PharmaSchemaBundle.ogImageHeight,
               }
             : resolvedOgImageUrl && !resolvedOgImageUrl.endsWith('/og-image.png')
-              ? { ogImageWidth: 1200, ogImageHeight: 630 }
+              ? { ogImageWidth: SOCIAL_OG_WIDTH, ogImageHeight: SOCIAL_OG_HEIGHT }
               : {})}
         articleSection={
           post.category?.trim() ||
@@ -1336,7 +1346,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           >
             <img
               src={optimizeSanityImage(heroCoverImage, 1400, 600)}
-              alt={articleDisplayTitle || 'Article cover image'}
+              alt={post.coverImageAlt || articleDisplayTitle || 'Article cover image'}
               className="w-full h-full object-cover opacity-[0.55] transition-transform duration-[6000ms] ease-in-out group-hover:scale-[1.03]"
               loading="eager"
               fetchPriority="high"

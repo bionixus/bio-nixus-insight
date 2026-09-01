@@ -9,7 +9,7 @@ import type { BlogPost } from '@/types/blog';
 export const SINGAPORE_MEDTECH_2026_SLUG = 'medtech-singapore-2026-market-hsa-registration';
 
 export const SINGAPORE_MEDTECH_2026_COVER_IMAGE =
-  'https://images.unsplash.com/photo-1580281657702-257584239a55?w=1600&h=900&fit=crop&q=85';
+  '/images/blog/medtech-singapore-2026-market-hsa-registration-cover.jpg';
 
 export const SINGAPORE_MEDTECH_2026_META_TITLE =
   'MedTech in Singapore 2026: Market Size, HSA & Key Players | BioNixus';

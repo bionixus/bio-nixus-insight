@@ -249,6 +249,9 @@ export const NF1_KOSELUGO_HARDCODED_POST: BlogPost = {
 /** Drug-brand editorial spoke — Koselugo (selumetinib); distinct from disease briefing at `/blog/neurofibromatosis`. */
 export const NF1_KOSELUGO_DRUG_BLOG_SLUG = 'nf1-koselugo-selumetinib-pharma-market-research';
 
+export const NF1_KOSELUGO_DRUG_COVER_IMAGE =
+  '/images/blog/nf1-koselugo-selumetinib-pharma-market-research-cover.jpg';
+
 export const NF1_KOSELUGO_DRUG_META_TITLE =
   'Koselugo (Selumetinib) Market Research | NF1 MEK Inhibitor Access | BioNixus';
 
@@ -399,8 +402,8 @@ export const NF1_KOSELUGO_DRUG_HARDCODED_POST: BlogPost = {
   language: 'en',
   readingTime: 14,
   tags: [...NF1_KOSELUGO_DRUG_TAGS],
-  coverImage: NF1_KOSELUGO_COVER_IMAGE,
-  ogImage: NF1_KOSELUGO_COVER_IMAGE,
+  coverImage: NF1_KOSELUGO_DRUG_COVER_IMAGE,
+  ogImage: NF1_KOSELUGO_DRUG_COVER_IMAGE,
   ogTitle: NF1_KOSELUGO_DRUG_META_TITLE,
   ogDescription: NF1_KOSELUGO_DRUG_OG_DESCRIPTION,
   seoMetaTitle: NF1_KOSELUGO_DRUG_META_TITLE,

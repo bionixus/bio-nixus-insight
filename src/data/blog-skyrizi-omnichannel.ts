@@ -21,8 +21,8 @@ export const SKYRIZI_HARDCODED_POST: BlogPost = {
     "Brand tracking",
     "DTC advertising"
   ],
-  "coverImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=85",
-  "ogImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=85",
+  "coverImage": "/images/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement-cover.jpg",
+  "ogImage": "/images/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement-cover.jpg",
   "ogTitle": "Skyrizi Tops July Pharma Rankings: Omnichannel Engagement Lessons | BioNixus",
   "ogDescription": "Skyrizi led July pharma TV ad spend and brand-impression rankings. What AbbVie's immunology leadership means for omnichannel engagement, HCP digital, and promotional ROI.",
   "seoMetaTitle": "Skyrizi Tops July Pharma Rankings: Omnichannel Engagement Lessons | BioNixus",

@@ -8,6 +8,97 @@
  */
 
 const SANITY_CDN = 'cdn.sanity.io';
+const UNSPLASH_CDN = 'images.unsplash.com';
+
+/** LinkedIn / Facebook / Twitter share canvas. */
+export const SOCIAL_OG_WIDTH = 1200;
+export const SOCIAL_OG_HEIGHT = 630;
+const DEFAULT_SITE_ORIGIN = 'https://www.bionixus.com';
+const DEFAULT_OG_IMAGE_URL = `${DEFAULT_SITE_ORIGIN}/og-image.png`;
+
+export function isSvgImageUrl(url: string | undefined): boolean {
+  if (!url) return false;
+  const path = url.split('?')[0].toLowerCase();
+  return path.endsWith('.svg');
+}
+
+export function toAbsoluteImageUrl(url: string, origin = DEFAULT_SITE_ORIGIN): string {
+  const trimmed = url.trim();
+  if (!trimmed) return '';
+  if (trimmed.startsWith('//')) return `https:${trimmed}`;
+  if (trimmed.startsWith('/')) return `${origin}${trimmed}`;
+  return trimmed;
+}
+
+export function socialShareImageMime(url: string | undefined): string {
+  if (!url) return 'image/jpeg';
+  const [path, query = ''] = url.split('?');
+  if (/(?:^|&)fm=jpe?g(?:&|$)/i.test(query)) return 'image/jpeg';
+  if (/(?:^|&)fm=png(?:&|$)/i.test(query)) return 'image/png';
+  if (/(?:^|&)fm=webp(?:&|$)/i.test(query)) return 'image/webp';
+  const lower = path.toLowerCase();
+  if (lower.endsWith('.png')) return 'image/png';
+  if (lower.endsWith('.webp')) return 'image/webp';
+  if (lower.endsWith('.svg')) return 'image/svg+xml';
+  if (lower.endsWith('.gif')) return 'image/gif';
+  return 'image/jpeg';
+}
+
+/**
+ * LinkedIn and Facebook ignore SVG and often skip WebP. Force a 1200×630 JPEG
+ * crop for Sanity / Unsplash so every article has a unique raster share image.
+ */
+export function toSocialShareImageUrl(
+  url: string | undefined,
+  origin = DEFAULT_SITE_ORIGIN,
+): string | undefined {
+  if (!url?.trim()) return undefined;
+  const absolute = toAbsoluteImageUrl(url, origin);
+  if (!absolute) return undefined;
+
+  if (absolute.includes(SANITY_CDN)) {
+    const base = absolute.split('?')[0];
+    const params = new URLSearchParams();
+    params.set('w', String(SOCIAL_OG_WIDTH));
+    params.set('h', String(SOCIAL_OG_HEIGHT));
+    params.set('fit', 'crop');
+    params.set('fm', 'jpg');
+    params.set('q', '90');
+    return `${base}?${params.toString()}`;
+  }
+
+  if (absolute.includes(UNSPLASH_CDN)) {
+    try {
+      const parsed = new URL(absolute);
+      parsed.searchParams.set('w', String(SOCIAL_OG_WIDTH));
+      parsed.searchParams.set('h', String(SOCIAL_OG_HEIGHT));
+      parsed.searchParams.set('fit', 'crop');
+      parsed.searchParams.set('q', '85');
+      parsed.searchParams.set('fm', 'jpg');
+      return parsed.toString();
+    } catch {
+      return absolute;
+    }
+  }
+
+  return absolute;
+}
+
+/**
+ * Prefer a raster cover over SVG (LinkedIn drops SVG og:image). Falls back to
+ * the site OG image only when no article image exists.
+ */
+export function pickSocialShareImage(
+  ...candidates: Array<string | undefined>
+): { url: string; mime: string; isFallback: boolean } {
+  const raster = candidates.find((candidate) => candidate?.trim() && !isSvgImageUrl(candidate));
+  const any = candidates.find((candidate) => candidate?.trim());
+  const chosen = toSocialShareImageUrl(raster || any);
+  if (chosen) {
+    return { url: chosen, mime: socialShareImageMime(chosen), isFallback: false };
+  }
+  return { url: DEFAULT_OG_IMAGE_URL, mime: 'image/png', isFallback: true };
+}
 
 export function optimizeSanityImage(
   url: string | undefined,

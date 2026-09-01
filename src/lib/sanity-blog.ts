@@ -137,6 +137,7 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   country,
   "countryTitle": country->title,
   "coverImage": mainImage.asset->url,
+  "coverImageAlt": mainImage.alt,
   readingTime,
   tags,
   tableOfContents,
@@ -146,6 +147,7 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   seo,
   openGraph,
   "ogImageUrl": openGraph.ogImage.asset->url,
+  "ogImageAlt": openGraph.ogImage.alt,
   "authorName": author->name,
   "authorTitle": author->title,
   "authorImage": author->image.asset->url,
@@ -208,6 +210,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     category: categoryStr,
     country: countryStr,
     coverImage: p.coverImage ?? undefined,
+    coverImageAlt: typeof p.coverImageAlt === 'string' && p.coverImageAlt.trim() ? p.coverImageAlt.trim() : undefined,
     publishedAtIso: p.publishedAtIso,
     updatedAtIso: p.updatedAtIso,
     ...(p.contentSilo === 'industries' || p.contentSilo === 'healthcare'
@@ -254,6 +257,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
         out.ogDescription = raw.openGraph.ogDescription;
       }
       if (raw.ogImageUrl) out.ogImage = raw.ogImageUrl;
+      if (typeof raw.ogImageAlt === 'string' && raw.ogImageAlt.trim()) out.ogImageAlt = raw.ogImageAlt.trim();
       if (raw.authorName) out.authorName = raw.authorName;
       if (raw.authorTitle) out.authorTitle = raw.authorTitle;
       if (raw.authorImage) out.authorImage = raw.authorImage;
@@ -522,6 +526,7 @@ interface RawSanityPost {
   country?: string;
   countryTitle?: string;
   coverImage?: string;
+  coverImageAlt?: string;
   readingTime?: number;
   tags?: string[];
   tableOfContents?: { heading?: string; anchor?: string }[];
@@ -539,6 +544,7 @@ interface RawSanityPost {
     ogDescription?: string;
   };
   ogImageUrl?: string;
+  ogImageAlt?: string;
   authorName?: string;
   authorTitle?: string;
   authorImage?: string;
