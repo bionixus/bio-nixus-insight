@@ -198,7 +198,7 @@ export default function ServicePage() {
           statsCaption: '',
           stats: [
             { value: 'Quant + qual', label: 'Integrated methods' },
-            { value: '17+', label: 'Markets covered' },
+            { value: '48', label: 'Markets covered' },
             { value: 'ESOMAR', label: 'Governance standard' },
           ],
           description: (

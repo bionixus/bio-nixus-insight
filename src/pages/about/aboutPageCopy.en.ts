@@ -2,7 +2,7 @@ import type { AboutPageCopy } from './aboutPageCopy.types';
 
 const METRICS = [
   { value: '127+', label: 'Projects delivered' },
-  { value: '48', label: 'Global clients' },
+  { value: '118', label: 'Global clients' },
   { value: '48', label: 'Countries covered' },
   { value: '16', label: 'Industry verticals' },
   { value: '14+', label: 'Therapeutic areas' },
@@ -53,7 +53,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   storyAct3P1:
     "That arc — London roots, GCC and Cairo regional depth, American headquarters — has carried BioNixus into the company of the world's top 100 market research firms. We field across 48 countries and 14+ therapeutic areas, in English, Arabic, French, German, Spanish, and Chinese. The pharma discipline we forged under regulation now extends to B2B and B2C programmes in 16 industry verticals — because clients asked us to bring the same standard everywhere.",
   storyAct3P2BeforePharma:
-    '127+ projects delivered for 48 global clients. The team that scopes your study is still the team that delivers it. That has not changed since London. What changed is how many markets — and how many industries — trust us with it. Explore our ',
+    '127+ projects delivered for 118 global clients. The team that scopes your study is still the team that delivers it. That has not changed since London. What changed is how many markets — and how many industries — trust us with it. Explore our ',
   storyAct3LinkPharma: 'pharma & healthcare research',
   storyAct3P2Mid1: ', the full ',
   storyAct3LinkIndustries: 'industries hub',

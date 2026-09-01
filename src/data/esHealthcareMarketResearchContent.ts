@@ -13,7 +13,7 @@ export const ES_HUB_CONTENT = {
   heroDescription:
     'BioNixus transforma señales fragmentadas — el comportamiento del prescriptor, la lógica del pagador, los recorridos del paciente y los movimientos competitivos — en decisiones defendibles para equipos farmacéuticos, biotecnológicos y de tecnología médica que necesitan evidencia real en España, el resto de Europa y la región MENA. Nuestro método es coherente a nivel global; lo que cambia entre países es el contexto regulatorio, el comprador local y la cultura clínica de cada mercado que estudiamos con profundidad senior-led.',
   stats: [
-    { value: '38', label: 'Países cubiertos' },
+    { value: '48', label: 'Países cubiertos' },
     { value: '14+', label: 'Áreas terapéuticas' },
     { value: '4 regiones', label: 'Américas · Europa · MENA · Asia' },
   ],

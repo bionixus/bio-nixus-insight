@@ -49,8 +49,8 @@ export default function EsHealthcareMarketResearchSpain() {
       metrics={[
         {
           label: 'Mercados cubiertos',
-          value: '38',
-          detail: 'BioNixus realiza investigación de mercado en salud en más de 17 países, incluida España y Europa.',
+          value: '48',
+          detail: 'BioNixus realiza investigación de mercado en salud en 48 países, incluida España y Europa.',
         },
         {
           label: 'Años de experiencia',
@@ -59,8 +59,8 @@ export default function EsHealthcareMarketResearchSpain() {
         },
         {
           label: 'Clientes internacionales',
-          value: '48+',
-          detail: 'Más de 48 clientes farmacéuticos y biotecnológicos en todo el mundo han confiado su investigación a BioNixus.',
+          value: '118',
+          detail: 'Más de 118 clientes farmacéuticos y biotecnológicos en todo el mundo han confiado su investigación a BioNixus.',
         },
       ]}
       faqs={[

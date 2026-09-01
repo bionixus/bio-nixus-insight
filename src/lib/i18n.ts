@@ -30,9 +30,9 @@ export const translations = {
       titleEmphasis: 'Your Strategy',
       title: 'Pharmaceutical and healthcare market research for confident launch, access, and growth',
       subtitle:
-        'BioNixus is a global healthcare and pharmaceutical market research firm founded in London in 2012, now delivering research across 48 countries in the Americas, EMEA, and APAC. We advise pharmaceutical, biotech, and medtech leaders on launch, access, and growth; and extend the same evidence discipline to B2B, consumer, and industrial clients where market entry, pricing, and stakeholder behaviour shape commercial outcomes. Our work turns KOL, payer, and hospital intelligence — alongside customer, channel, and competitive insight — into decisions leadership teams can act on with confidence.',
+        'BioNixus is a global healthcare and pharmaceutical market research firm founded in London in 2012, now delivering research for 118 clients across 48 countries in the Americas, EMEA, and APAC. We advise pharmaceutical, biotech, and medtech leaders on launch, access, and growth; and extend the same evidence discipline to B2B, consumer, and industrial clients where market entry, pricing, and stakeholder behaviour shape commercial outcomes. Our work turns KOL, payer, and hospital intelligence — alongside customer, channel, and competitive insight — into decisions leadership teams can act on with confidence.',
       trustStripPrimary: 'Trusted by',
-      trustStripStats: '48 global clients · 127+ projects · 48 countries · founded 2012',
+      trustStripStats: '118 global clients · 127+ projects · 48 countries · founded 2012',
       valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',
       serviceHighlights: [
         'Multi-country physician & payer research',
@@ -159,8 +159,8 @@ export const translations = {
       title: 'Global Impact',
       items: [
         { value: '127+', label: 'Projects Delivered' },
-        { value: '48', label: 'Global Clients' },
-        { value: '38', label: 'Countries Covered' },
+        { value: '118', label: 'Global Clients' },
+        { value: '48', label: 'Countries Covered' },
         { value: '14+', label: 'Therapeutic Areas' },
       ],
     },
@@ -413,7 +413,7 @@ export const translations = {
       subtitle:
         'BioNixus ist ein globaler Erkenntnis- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen pharmazeutischen, Biotechnologie- und Medizintechnik-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
       trustStripPrimary: 'Vertrauenswürdig bei',
-      trustStripStats: '48 globale Kunden · 127+ Projekte · 38 Länder',
+      trustStripStats: '118 globale Kunden · 127+ Projekte · 48 Länder',
       valueProposition:
         'Jedes Mandat beginnt mit einer echten vertrieblichen Frage, nicht mit einem generischen Datenexport. Sie erhalten belastbare quantitative und qualitative Erkenntnisse — zugeschnitten auf Entscheidung, Markt und regulatorische Realität — von der Marktgrößenanalyse vor der Markteinführung bis zur Optimierung nach der Markteinführung.',
       serviceHighlights: [
@@ -636,10 +636,10 @@ export const translations = {
     stats: {
       title: 'Globale Wirkung',
       items: [
-        { value: '38', label: 'Abgedeckte Länder' },
+        { value: '48', label: 'Abgedeckte Länder' },
         { value: '14+', label: 'Therapiegebiete' },
         { value: '127+', label: 'Gelieferte Projekte' },
-        { value: '15+', label: 'Jahre Erfahrung' },
+        { value: '118', label: 'Globale Kunden' },
       ],
     },
     testimonials: {
@@ -912,10 +912,10 @@ export const translations = {
     stats: {
       title: 'Impact Mondial',
       items: [
-        { value: '38', label: 'Pays Couverts' },
+        { value: '48', label: 'Pays Couverts' },
         { value: '14+', label: 'Aires Thérapeutiques' },
         { value: '127+', label: 'Projets Livrés' },
-        { value: '15+', label: 'Années d\'Expérience' },
+        { value: '118', label: 'Clients mondiaux' },
       ],
     },
     testimonials: {
@@ -1188,10 +1188,10 @@ export const translations = {
     stats: {
       title: 'Impacto Global',
       items: [
-        { value: '38', label: 'Países Cubiertos' },
+        { value: '48', label: 'Países Cubiertos' },
         { value: '14+', label: 'Áreas Terapéuticas' },
         { value: '127+', label: 'Proyectos Entregados' },
-        { value: '15+', label: 'Años de Experiencia' },
+        { value: '118', label: 'Clientes globales' },
       ],
     },
     testimonials: {
@@ -1463,10 +1463,10 @@ export const translations = {
     stats: {
       title: '全球影响',
       items: [
-        { value: '38', label: '覆盖国家' },
+        { value: '48', label: '覆盖国家' },
         { value: '14+', label: '治疗领域' },
         { value: '127+', label: '交付项目' },
-        { value: '15+', label: '年经验' },
+        { value: '118', label: '全球客户' },
       ],
     },
     testimonials: {
@@ -1743,10 +1743,10 @@ export const translations = {
     stats: {
       title: 'التأثير العالمي',
       items: [
-        { value: '+38', label: 'دولة مغطاة' },
+        { value: '48', label: 'دولة مغطاة' },
         { value: '+14', label: 'مجال علاجي' },
         { value: '+120', label: 'مشروع منجز' },
-        { value: '+15', label: 'سنة خبرة' },
+        { value: '118', label: 'عميلًا عالميًا' },
       ],
     },
     testimonials: {
@@ -2049,10 +2049,10 @@ export const translations = {
     stats: {
       title: 'Impacto Global',
       items: [
-        { value: '38', label: 'Países Atendidos' },
+        { value: '48', label: 'Países Atendidos' },
         { value: '14+', label: 'Áreas Terapêuticas' },
         { value: '120+', label: 'Projetos Entregues' },
-        { value: '15+', label: 'Anos de Experiência' },
+        { value: '118', label: 'Clientes globais' },
       ],
     },
     testimonials: {
@@ -2304,10 +2304,10 @@ export const translations = {
     stats: {
       title: 'Глобальный охват',
       items: [
-        { value: '38', label: 'Охваченных стран' },
+        { value: '48', label: 'Охваченных стран' },
         { value: '14+', label: 'Терапевтических областей' },
         { value: '120+', label: 'Реализованных проектов' },
-        { value: '15+', label: 'Лет опыта' },
+        { value: '118', label: 'Глобальных клиентов' },
       ],
     },
     testimonials: {

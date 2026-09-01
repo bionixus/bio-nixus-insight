@@ -9,7 +9,7 @@ export const aboutPageCopyEs: AboutPageCopy = {
   heroTagline: 'Firma internacional global de investigación de mercado',
   h1: 'Investigación de mercado global — construida sobre pharma, la industria más regulada que servimos, y ampliada para ser de confianza en todas las industrias',
   heroSubheadBeforeSa:
-    'BioNixus se fundó en Londres en 2012 en investigación de mercado farmacéutico — la industria más regulada que servimos. Al extenderse los mandatos a Oriente Medio y las Américas, abrimos una oficina regional MENA en El Gran Cairo y establecimos la sede global en EE. UU. (Wyoming). Esa disciplina GCP se extiende hoy a programas B2B y B2C en 38 países — incluida la ',
+    'BioNixus se fundó en Londres en 2012 en investigación de mercado farmacéutico — la industria más regulada que servimos. Al extenderse los mandatos a Oriente Medio y las Américas, abrimos una oficina regional MENA en El Gran Cairo y establecimos la sede global en EE. UU. (Wyoming). Esa disciplina GCP se extiende hoy a programas B2B y B2C en 48 países — incluida la ',
   heroLinkSa: 'investigación de mercado sanitario en Arabia Saudita',
   heroSubheadBeforeUae: ', los ',
   heroLinkUae: 'EAU',
@@ -20,8 +20,8 @@ export const aboutPageCopyEs: AboutPageCopy = {
   ctaSecondary: 'Explorar industrias',
   metrics: [
     { value: '127+', label: 'Proyectos entregados' },
-    { value: '48', label: 'Clientes globales' },
-    { value: '38', label: 'Países cubiertos' },
+    { value: '118', label: 'Clientes globales' },
+    { value: '48', label: 'Países cubiertos' },
     { value: '16', label: 'Verticales industriales' },
     { value: '14+', label: 'Áreas terapéuticas' },
   ],
@@ -47,9 +47,9 @@ export const aboutPageCopyEs: AboutPageCopy = {
     ' nos dio equipos de campo árabe–inglés, acceso a médicos en el GCC y Norte de África y ejecución in situ que la investigación de escritorio nunca replica. La sede en Sheridan, Wyoming llegó después — no como reubicación, sino como hogar natural de una firma ya global. Londres siguió siendo nuestra base europea y el lugar donde nació BioNixus.',
   storyAct3H3: 'Hoy — entre el top 100 global',
   storyAct3P1:
-    'Ese arco — raíces londinenses, profundidad MENA, sede americana — llevó a BioNixus al grupo de las 100 principales firmas globales de investigación de mercado. Operamos en 38 países y más de 14 áreas terapéuticas, en seis idiomas. La disciplina pharma forjada bajo regulación se extiende a B2B y B2C en 16 verticales porque los clientes pidieron el mismo estándar en todas partes.',
+    'Ese arco — raíces londinenses, profundidad MENA, sede americana — llevó a BioNixus al grupo de las 100 principales firmas globales de investigación de mercado. Operamos en 48 países y más de 14 áreas terapéuticas, en seis idiomas. La disciplina pharma forjada bajo regulación se extiende a B2B y B2C en 16 verticales porque los clientes pidieron el mismo estándar en todas partes.',
   storyAct3P2BeforePharma:
-    '127+ proyectos para 48 clientes globales. El equipo que define el alcance sigue siendo el que entrega — como en Londres. Lo que cambió es cuántos mercados — e industrias — confían en nosotros. Explore nuestra ',
+    '127+ proyectos para 118 clientes globales. El equipo que define el alcance sigue siendo el que entrega — como en Londres. Lo que cambió es cuántos mercados — e industrias — confían en nosotros. Explore nuestra ',
   storyAct3LinkPharma: 'investigación pharma y sanitaria',
   storyAct3P2Mid1: ', el ',
   storyAct3LinkIndustries: 'hub de industrias',
@@ -62,7 +62,7 @@ export const aboutPageCopyEs: AboutPageCopy = {
   differentiators: [
     {
       title: 'Alcance global, ejecución regional',
-      body: 'Fundada en Londres, con sede en EE. UU. y oficina regional MENA en El Gran Cairo — BioNixus trabaja en 38 países y seis idiomas. Nuestros equipos árabe–inglés conocen SFDA, DHA, MOHAP, EDA y las sutilezas clínicas de cada mercado.',
+      body: 'Fundada en Londres, con sede en EE. UU. y oficina regional MENA en El Gran Cairo — BioNixus trabaja en 48 países y seis idiomas. Nuestros equipos árabe–inglés conocen SFDA, DHA, MOHAP, EDA y las sutilezas clínicas de cada mercado.',
     },
     {
       title: 'Herencia pharma, rigor multi-industria',

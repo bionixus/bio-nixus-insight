@@ -138,7 +138,7 @@ const Services = () => {
         commercialOfferings,
         copy?.jsonLd.collectionName ?? 'Global Market Research Services',
         copy?.jsonLd.collectionDescription ??
-          'Pharmaceutical and healthcare market research plus B2B and B2C commercial research — CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and online behaviour tracking across 38 countries.',
+          'Pharmaceutical and healthcare market research plus B2B and B2C commercial research — CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and online behaviour tracking across 48 countries.',
         copy?.seo.canonical ?? 'https://www.bionixus.com/services',
       ),
       faqJsonLd(serviceFaq),
@@ -162,7 +162,7 @@ const Services = () => {
         }
         description={
           copy?.seo.description ??
-          'Pharma & B2B research across 38 countries: physician surveys, KOL mapping, market access & CATI/CAWI. Proposal in 24 hours.'
+          'Pharma & B2B research across 48 countries: physician surveys, KOL mapping, market access & CATI/CAWI. Proposal in 24 hours.'
         }
         canonical={copy?.seo.canonical ?? 'https://www.bionixus.com/services'}
         jsonLd={jsonLd}
@@ -200,7 +200,7 @@ const Services = () => {
             </h1>
             <p className="mb-8 max-w-3xl text-lg leading-relaxed text-white/75 md:text-xl sr sr-up revealed">
               {copy?.hero.subtitle ??
-                'BioNixus runs senior-led programmes across 38 countries — from physician surveys and HTA strategy to CATI, CAWI, CAPI fieldwork, focus groups, mystery shopping, price elasticity, and online behaviour tracking. One firm, one methodology standard, scoped to the decision you need to make.'}
+                'BioNixus runs senior-led programmes across 48 countries — from physician surveys and HTA strategy to CATI, CAWI, CAPI fieldwork, focus groups, mystery shopping, price elasticity, and online behaviour tracking. One firm, one methodology standard, scoped to the decision you need to make.'}
             </p>
             <div className="mb-10 flex flex-wrap gap-3 sr sr-up revealed">
               <Link

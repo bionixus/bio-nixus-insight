@@ -3,7 +3,7 @@ import type { BionixusIndustriesPageCopy } from './bionixusIndustriesPageCopy.ty
 export const bionixusIndustriesPageCopyPt: BionixusIndustriesPageCopy = {
   seoTitle: 'Pesquisa de mercado em todas as indústrias | BioNixus',
   seoDescription:
-    'A BioNixus foi fundada em Londres em 2012 em pesquisa de mercado farmacêutico e hoje é reconhecida entre as 100 principais empresas globais de pesquisa de mercado. Com sede nos EUA em Sheridan, Wyoming, escritório fundador em Londres e escritório regional MENA no Grande Cairo, a firma entrega pesquisa quantitativa e qualitativa em 38 países e 16 verticais setoriais — pharma e saúde onde lidera, com os mesmos padrões de evidência estendidos a programas B2B e B2C em todo o mundo.',
+    'A BioNixus foi fundada em Londres em 2012 em pesquisa de mercado farmacêutico e hoje é reconhecida entre as 100 principais empresas globais de pesquisa de mercado. Com sede nos EUA em Sheridan, Wyoming, escritório fundador em Londres e escritório regional MENA no Grande Cairo, a firma entrega pesquisa quantitativa e qualitativa em 48 países e 16 verticais setoriais — pharma e saúde onde lidera, com os mesmos padrões de evidência estendidos a programas B2B e B2C em todo o mundo.',
   breadcrumbHome: 'Início',
   breadcrumbIndustries: 'Indústrias',
   schemaCollectionName: 'Pesquisa de mercado em todas as indústrias',
@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyPt: BionixusIndustriesPageCopy = {
   cardLive: 'Ao vivo',
   chartNonHealthcare: 'Silo não-saúde',
   chartHealthcare: 'Silo saúde',
-  cardFoot: 'Desde 2012 · 127+ projetos · 48 clientes · 38 países',
+  cardFoot: 'Desde 2012 · 127+ projetos · 118 clientes · 48 países',
   regionRibbon: [
     'América do Norte',
     'LATAM',
@@ -33,8 +33,8 @@ export const bionixusIndustriesPageCopyPt: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Fundada em Londres', sub: 'Raízes em pesquisa farmacêutica no Reino Unido' },
-    { value: '127+', label: 'Projetos entregues', sub: 'em 38 países' },
-    { value: '48', label: 'Clientes servidos', sub: 'de pharma a consumo' },
+    { value: '127+', label: 'Projetos entregues', sub: 'em 48 países' },
+    { value: '118', label: 'Clientes servidos', sub: 'de pharma a consumo' },
     { value: '16', label: 'Verticais setoriais', sub: 'e a crescer' },
   ],
   statsAriaLabel: 'BioNixus em resumo',

@@ -180,6 +180,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/insights/top-market-research-companies-dubai-2026') return '6 Best Market Research Companies in Dubai (2026) | UAE Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return '6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-riyadh-2026') return '6 Best Market Research Companies in Riyadh (2026) | KSA Agency Rankings | BioNixus';
+  if (path === '/insights/top-oncology-market-research-companies-2026') return 'Top Oncology Market Research Companies 2026 | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-saudi-arabia-2026') return '5 Best Healthcare Market Research Firms in Saudi Arabia (2026) | SFDA Specialists | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-dubai-2026') return '5 Best Healthcare Market Research Firms in Dubai (2026) | DHA Specialists | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-abu-dhabi-2026') return '5 Best Healthcare Market Research Firms in Abu Dhabi (2026) | DoH Specialists | BioNixus';

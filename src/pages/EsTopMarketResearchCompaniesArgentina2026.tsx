@@ -38,9 +38,9 @@ const firms: FirmProfile[] = [
       'Investigación farmacéutica y regulatoria con conocimiento de ANMAT',
       'Mapeo de KOLs, encuestas a profesionales de salud e inteligencia de formularios',
       'Estándares globales de metodología con ejecución en América Latina',
-      'Red en 17+ países, 48+ clientes globales, 15+ años de experiencia',
+      'Red en 48 países, 118 clientes globales, 15+ años de experiencia',
     ],
-    overview: 'BioNixus es una empresa global de investigación de mercado e insights con sede en EE.UU. y oficinas en el Reino Unido y Oriente Medio, atendiendo a 48+ clientes globales en 17+ países. En Argentina, BioNixus ofrece capacidades de investigación diversificadas que abarcan FMCG, insights del consumidor, salud y estudios farmacéuticos, convirtiéndose en la socia preferida de las multinacionales que buscan una única empresa global que integre inteligencia de mercado general con profunda experiencia en salud y farmacia. BioNixus aporta diseño de investigación con conocimiento de ANMAT, identificación de KOLs, encuestas a profesionales de salud e inteligencia compleja sobre pagadores que cubre las obras sociales, PAMI y los segmentos privados de prepagas de Argentina.',
+    overview: 'BioNixus es una empresa global de investigación de mercado e insights con sede en EE.UU. y oficinas en el Reino Unido y Oriente Medio, atendiendo a 118 clientes globales en 48 países. En Argentina, BioNixus ofrece capacidades de investigación diversificadas que abarcan FMCG, insights del consumidor, salud y estudios farmacéuticos, convirtiéndose en la socia preferida de las multinacionales que buscan una única empresa global que integre inteligencia de mercado general con profunda experiencia en salud y farmacia. BioNixus aporta diseño de investigación con conocimiento de ANMAT, identificación de KOLs, encuestas a profesionales de salud e inteligencia compleja sobre pagadores que cubre las obras sociales, PAMI y los segmentos privados de prepagas de Argentina.',
   },
   {
     rank: 2,

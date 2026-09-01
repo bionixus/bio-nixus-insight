@@ -248,7 +248,7 @@ export const PT_SERVICE_FAQ = [
   {
     question: 'Quais geografias esses serviços cobrem?',
     answer:
-      'A BioNixus executa em 38 países nas Américas, Europa, Oriente Médio, Norte da África e mercados prioritários da Ásia-Pacífico — com escritórios e redes de campo nos Estados Unidos, Reino Unido, Egito, Arábia Saudita, Emirados Árabes Unidos, Kuwait e Brasil.',
+      'A BioNixus executa em 48 países nas Américas, Europa, Oriente Médio, Norte da África e mercados prioritários da Ásia-Pacífico — com escritórios e redes de campo nos Estados Unidos, Reino Unido, Egito, Arábia Saudita, Emirados Árabes Unidos, Kuwait e Brasil.',
   },
   {
     question: 'Em quanto tempo recebemos uma proposta?',

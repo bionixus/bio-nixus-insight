@@ -124,7 +124,7 @@ export const HEALTHCARE_SERVICES: HealthcareService[] = [
     slug: 'quantitative-research',
     title: 'Quantitative research & physician surveys',
     summary:
-      'Statistically powered surveys with physicians, payers, and healthcare professionals across 38 countries — online, telephone, and face-to-face fieldwork at defined sample sizes (n=50 to 500+), with quotas and significance testing your governance team can defend.',
+      'Statistically powered surveys with physicians, payers, and healthcare professionals across 48 countries — online, telephone, and face-to-face fieldwork at defined sample sizes (n=50 to 500+), with quotas and significance testing your governance team can defend.',
     icon: BarChart3,
     tags: ['Pharma', 'MedTech', 'Payers'],
   },
@@ -334,7 +334,7 @@ export const SERVICE_FAQ = [
   {
     question: 'Which geographies do these services cover?',
     answer:
-      'BioNixus executes across 38 countries in the Americas, Europe, MENA, Africa, and Asia-Pacific priority markets — with offices and field networks in the US, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil.',
+      'BioNixus executes across 48 countries in the Americas, Europe, MENA, Africa, and Asia-Pacific priority markets — with offices and field networks in the US, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil.',
   },
   {
     question: 'How quickly can we receive a proposal?',
@@ -344,7 +344,7 @@ export const SERVICE_FAQ = [
 ] as const;
 
 export const HERO_METRICS = [
-  { value: '38', label: 'Countries fielded' },
+  { value: '48', label: 'Countries fielded' },
   { value: '16', label: 'Industry verticals' },
   { value: '6', label: 'Core pharma modules' },
   { value: '9+', label: 'Fieldwork modes' },

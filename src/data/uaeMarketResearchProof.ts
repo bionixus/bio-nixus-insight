@@ -2,7 +2,7 @@
 
 export const UAE_MR_COMPANY_PROOF = [
   {
-    title: '38 countries, emirate-aware fieldwork',
+    title: '48 countries, emirate-aware fieldwork',
     body: 'BioNixus runs physician, payer, and institutional research across Dubai, Abu Dhabi, and the Northern Emirates with bilingual Arabic–English execution—not a single “UAE average.”',
   },
   {

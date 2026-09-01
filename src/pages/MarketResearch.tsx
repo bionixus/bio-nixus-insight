@@ -47,7 +47,7 @@ const PRIORITY_RIBBON = [
   'Europe & UK',
   'Brazil',
   'MENA & GCC',
-  '38 countries · 16 industries',
+  '48 countries · 16 industries',
 ];
 
 const HUB_FAQ = [
@@ -315,7 +315,7 @@ export default function MarketResearch() {
                   </div>
                 </div>
                 <div className="bx-card-foot">
-                  <strong>38 countries</strong> fielded · 127+ projects delivered
+                  <strong>48 countries</strong> fielded · 127+ projects delivered
                 </div>
               </div>
             </div>

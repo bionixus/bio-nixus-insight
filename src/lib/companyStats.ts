@@ -1,7 +1,7 @@
 export const STATS = {
-  countries: '38',
+  countries: '48',
   projects: '127+',
   therapyAreas: '14+',
   yearsExperience: '15+',
-  clients: '48+',
+  clients: '118',
 } as const;

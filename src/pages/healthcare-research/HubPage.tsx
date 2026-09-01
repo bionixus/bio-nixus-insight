@@ -34,7 +34,7 @@ const HUB_FAQS = [
   {
     question: 'Can you run a single study across several countries and languages at once?',
     answer:
-      'Yes — multi-country, multilingual fieldwork is core to how we work. From our US headquarters in Sheridan, Wyoming, one global project office coordinates recruitment, translation, and analysis so your numbers stay comparable from New York to Riyadh to Tokyo, while local moderators and native-language interviewers keep the nuance intact. Across our operating history we have delivered work in 17+ countries and 14+ therapeutic areas, which is what makes side-by-side regional reads dependable rather than approximate.',
+      'Yes — multi-country, multilingual fieldwork is core to how we work. From our US headquarters in Sheridan, Wyoming, one global project office coordinates recruitment, translation, and analysis so your numbers stay comparable from New York to Riyadh to Tokyo, while local moderators and native-language interviewers keep the nuance intact. Across our operating history we have delivered work in 48 countries and 14+ therapeutic areas, which is what makes side-by-side regional reads dependable rather than approximate.',
   },
   {
     question: 'How fast can you turn around a proposal once we share a brief?',
@@ -346,7 +346,7 @@ export default function HubPage() {
               {
                 title: 'Cross-border comparability',
                 description:
-                  'Harmonised instruments across 17+ countries so regional sequencing and access strategy reads consistently.',
+                  'Harmonised instruments across 48 countries so regional sequencing and access strategy reads consistently.',
               },
               {
                 title: 'Report and directory hub',

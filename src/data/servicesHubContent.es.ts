@@ -248,7 +248,7 @@ export const ES_SERVICE_FAQ = [
   {
     question: '¿Cuál es su cobertura en España y Europa?',
     answer:
-      'Ejecutamos trabajo de campo en España, EU5, Reino Unido y otros mercados europeos, dentro de una capacidad que cubre 38 países — con oficinas y redes de campo en Estados Unidos, Reino Unido, Egipto, Arabia Saudí, Emiratos Árabes Unidos, Kuwait y Brasil. Los programas globales siguen siendo posibles cuando su estrategia va más allá de Europa.',
+      'Ejecutamos trabajo de campo en España, EU5, Reino Unido y otros mercados europeos, dentro de una capacidad que cubre 48 países — con oficinas y redes de campo en Estados Unidos, Reino Unido, Egipto, Arabia Saudí, Emiratos Árabes Unidos, Kuwait y Brasil. Los programas globales siguen siendo posibles cuando su estrategia va más allá de Europa.',
   },
   {
     question: '¿En cuánto tiempo recibimos una propuesta?',

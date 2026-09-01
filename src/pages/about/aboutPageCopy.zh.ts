@@ -3,13 +3,13 @@ import type { AboutPageCopy } from './aboutPageCopy.types';
 export const aboutPageCopyZh: AboutPageCopy = {
   seoTitle: '关于 BioNixus | 基于受监管医药的全球市场研究 | BioNixus',
   seoDescription:
-    'BioNixus 2012 年创立于伦敦，从英国医药市场研究成长为全球前 100 市场研究公司之一——美国总部、大开罗 MENA 区域办公室，覆盖 38 国与 16 个行业垂直领域。',
+    'BioNixus 2012 年创立于伦敦，从英国医药市场研究成长为全球前 100 市场研究公司之一——美国总部、大开罗 MENA 区域办公室，覆盖 48 国与 16 个行业垂直领域。',
   breadcrumbHome: '首页',
   breadcrumbAbout: '关于我们',
   heroTagline: '全球国际市场研究公司',
   h1: '全球市场研究——建立在医药这一我们服务的最受监管行业之上，并扩展至跨行业信赖',
   heroSubheadBeforeSa:
-    'BioNixus 2012 年在伦敦创立，专注医药市场研究——我们服务的最受监管行业。随着客户项目延伸至中东与美洲，我们在大开罗设立 MENA 区域办公室，并在美国（Wyoming）建立全球总部。这一 GCP 级规范现已扩展至 38 国的 B2B 与 B2C 项目——包括',
+    'BioNixus 2012 年在伦敦创立，专注医药市场研究——我们服务的最受监管行业。随着客户项目延伸至中东与美洲，我们在大开罗设立 MENA 区域办公室，并在美国（Wyoming）建立全球总部。这一 GCP 级规范现已扩展至 48 国的 B2B 与 B2C 项目——包括',
   heroLinkSa: '沙特阿拉伯医疗健康市场研究',
   heroSubheadBeforeUae: '、',
   heroLinkUae: '阿联酋',
@@ -20,8 +20,8 @@ export const aboutPageCopyZh: AboutPageCopy = {
   ctaSecondary: '探索行业',
   metrics: [
     { value: '127+', label: '已交付项目' },
-    { value: '48', label: '全球客户' },
-    { value: '38', label: '覆盖国家' },
+    { value: '118', label: '全球客户' },
+    { value: '48', label: '覆盖国家' },
     { value: '16', label: '行业垂直' },
     { value: '14+', label: '治疗领域' },
   ],
@@ -47,9 +47,9 @@ export const aboutPageCopyZh: AboutPageCopy = {
     '带来阿英双语现场团队、GCC 与北非医生网络，以及桌面研究无法替代的一地执行。美国 Sheridan（Wyoming）总部随后设立——并非迁址，而是客户与抱负已全球化的自然结果。伦敦仍是欧洲基地与 BioNixus 创立之地。',
   storyAct3H3: '今天——全球前 100',
   storyAct3P1:
-    '伦敦根源、MENA 区域深度与美国总部——这一路径使 BioNixus 跻身全球前 100 市场研究公司。我们在 38 国、14+ 治疗领域、六种语言开展项目。在监管下锻造的医药规范现已扩展至 16 个垂直领域的 B2B/B2C——因为客户要求我们在各处保持同一标准。',
+    '伦敦根源、MENA 区域深度与美国总部——这一路径使 BioNixus 跻身全球前 100 市场研究公司。我们在 48 国、14+ 治疗领域、六种语言开展项目。在监管下锻造的医药规范现已扩展至 16 个垂直领域的 B2B/B2C——因为客户要求我们在各处保持同一标准。',
   storyAct3P2BeforePharma:
-    '127+ 项目、48 位全球客户。界定研究范围与交付研究的仍是同一团队——自伦敦以来未变。变化的是信任我们的市场与行业数量。探索我们的',
+    '127+ 项目、118 位全球客户。界定研究范围与交付研究的仍是同一团队——自伦敦以来未变。变化的是信任我们的市场与行业数量。探索我们的',
   storyAct3LinkPharma: '医药与健康研究',
   storyAct3P2Mid1: '、完整',
   storyAct3LinkIndustries: '行业中心',
@@ -61,7 +61,7 @@ export const aboutPageCopyZh: AboutPageCopy = {
   differentiators: [
     {
       title: '全球覆盖，区域执行',
-      body: '伦敦创立、美国总部、大开罗 MENA 区域办公室——BioNixus 在 38 国、六种语言开展研究。阿英团队熟悉 SFDA、DHA、MOHAP、EDA 及各地处方实践差异。',
+      body: '伦敦创立、美国总部、大开罗 MENA 区域办公室——BioNixus 在 48 国、六种语言开展研究。阿英团队熟悉 SFDA、DHA、MOHAP、EDA 及各地处方实践差异。',
     },
     {
       title: '医药基因，跨行业严谨',

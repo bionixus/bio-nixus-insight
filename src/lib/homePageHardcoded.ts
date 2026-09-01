@@ -119,7 +119,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     globalReach: {
       signals: [
-        "6 continents · 38 countries",
+        "6 continents · 48 countries",
         "Pharma & healthcare — where we lead",
         "Enterprise & consumer research",
         "GDPR · GCP · local regulatory alignment"
@@ -199,7 +199,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Strategic Portfolio",
-        description: "Full capability overview: 127+ projects, 48 global clients, dual-practice healthcare and consumer research across Egypt and MENA.",
+        description: "Full capability overview: 127+ projects, 118 global clients, dual-practice healthcare and consumer research across Egypt and MENA.",
         label: "Egypt Focus",
         hint: "See our market research portfolio"
       },
@@ -265,7 +265,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Trusted by",
-      stats: "48 global clients · 127+ projects · 38 countries"
+      stats: "118 global clients · 127+ projects · 48 countries"
     },
     videoEmbed: {
       transcriptLabel: "Transcript"
@@ -308,7 +308,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     globalReach: {
       signals: [
-        "6 Kontinente · 38 Länder",
+        "6 Kontinente · 48 Länder",
         "Pharmazeutik und Gesundheitswesen — wo wir führend sind",
         "Forschung für Unternehmen und Verbraucher",
         "Datenschutz-Grundverordnung · Gute Klinische Praxis · lokale Regulierungskonformität"
@@ -388,7 +388,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Strategisches Portfolio",
-        description: "Vollständiger Leistungsüberblick: 127+ Projekte, 48 globale Kunden, Gesundheitswesen- und Verbraucherforschung in Ägypten und Naher Osten und Nordafrika.",
+        description: "Vollständiger Leistungsüberblick: 127+ Projekte, 118 globale Kunden, Gesundheitswesen- und Verbraucherforschung in Ägypten und Naher Osten und Nordafrika.",
         label: "Fokus Ägypten",
         hint: "Unser Marktforschungs-Portfolio ansehen"
       },
@@ -454,7 +454,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Vertrauenswürdig bei",
-      stats: "48 globale Kunden · 127+ Projekte · 38 Länder"
+      stats: "118 globale Kunden · 127+ Projekte · 48 Länder"
     },
     videoEmbed: {
       transcriptLabel: "Transkript"
@@ -497,7 +497,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     globalReach: {
       signals: [
-        "6 continents · 38 pays",
+        "6 continents · 48 pays",
         "Médicaments et santé — notre cœur de métier",
         "Recherche entreprises et consommateurs",
         "RGPD · Bonnes Pratiques Cliniques · alignement réglementaire local"
@@ -577,7 +577,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Portefeuille stratégique",
-        description: "Vue d'ensemble des capacités : 127+ projets, 48 clients mondiaux, recherche santé et consommateur en Égypte et Moyen-Orient et Afrique du Nord.",
+        description: "Vue d'ensemble des capacités : 127+ projets, 118 clients mondiaux, recherche santé et consommateur en Égypte et Moyen-Orient et Afrique du Nord.",
         label: "Focus Égypte",
         hint: "Voir notre portefeuille d'études"
       },
@@ -643,7 +643,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Recommandé par",
-      stats: "48 clients mondiaux · 127+ projets · 38 pays"
+      stats: "118 clients mondiaux · 127+ projets · 48 pays"
     },
     videoEmbed: {
       transcriptLabel: "Transcription"
@@ -686,7 +686,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     globalReach: {
       signals: [
-        "6 continentes · 38 países",
+        "6 continentes · 48 países",
         "Medicamentos y sanidad — donde lideramos",
         "Investigación empresarial y de consumo",
         "RGPD · Buenas Prácticas Clínicas · alineamiento regulatorio local"
@@ -766,7 +766,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Portafolio estratégico",
-        description: "Panorama de capacidades: 127+ proyectos, 48 clientes globales, investigación sanitaria y de consumo en Egipto y Oriente Medio y Norte de África.",
+        description: "Panorama de capacidades: 127+ proyectos, 118 clientes globales, investigación sanitaria y de consumo en Egipto y Oriente Medio y Norte de África.",
         label: "Enfoque Egipto",
         hint: "Ver nuestro portafolio de investigación"
       },
@@ -832,7 +832,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Recomendado por",
-      stats: "48 clientes globales · 127+ proyectos · 38 países"
+      stats: "118 clientes globales · 127+ proyectos · 48 países"
     },
     videoEmbed: {
       transcriptLabel: "Transcripción"
@@ -875,7 +875,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     globalReach: {
       signals: [
-        "6 continentes · 38 países",
+        "6 continentes · 48 países",
         "Medicamentos e saúde — onde lideramos",
         "Pesquisa empresarial e de consumo",
         "Proteção de dados · Boas Práticas Clínicas · conformidade regulatória local"
@@ -955,7 +955,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Portfólio estratégico",
-        description: "Visão completa: 127+ projetos, 48 clientes globais, pesquisa em saúde e consumo no Egito e Oriente Médio e Norte da África.",
+        description: "Visão completa: 127+ projetos, 118 clientes globais, pesquisa em saúde e consumo no Egito e Oriente Médio e Norte da África.",
         label: "Foco Egito",
         hint: "Ver nosso portfólio de pesquisa"
       },
@@ -1021,7 +1021,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Recomendado por",
-      stats: "48 clientes globais · 127+ projetos · 38 países"
+      stats: "118 clientes globais · 127+ projetos · 48 países"
     },
     videoEmbed: {
       transcriptLabel: "Transcrição"
@@ -1064,7 +1064,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     globalReach: {
       signals: [
-        "6 континентов · 38 стран",
+        "6 континентов · 48 стран",
         "Лекарства и здравоохранение — наше ядро",
         "Исследования для предприятий и потребителей",
         "Защита данных · Надлежащая клиническая практика · соответствие местным нормам"
@@ -1144,7 +1144,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Стратегический портфель",
-        description: "Полный обзор возможностей: 127+ проектов, 48 клиентов, исследования здравоохранения и потребителей в Египте и Ближний Восток и Северная Африка.",
+        description: "Полный обзор возможностей: 127+ проектов, 118 клиентов, исследования здравоохранения и потребителей в Египте и Ближний Восток и Северная Африка.",
         label: "Фокус на Египте",
         hint: "Смотреть портфолио исследований"
       },
@@ -1210,7 +1210,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Нам доверяют",
-      stats: "48 клиентов · 127+ проектов · 38 стран"
+      stats: "118 клиентов · 127+ проектов · 48 стран"
     },
     videoEmbed: {
       transcriptLabel: "Транскрипт"
@@ -1253,7 +1253,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     globalReach: {
       signals: [
-        "六大洲 · 三十八个国家",
+        "六大洲 · 四十八个国家",
         "医药与健康 — 我们的核心优势",
         "企业与消费者研究",
         "数据保护条例 · 良好临床规范 · 本地监管合规"
@@ -1333,7 +1333,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "战略能力组合",
-        description: "完整能力概览：一百二十七+项目、四十八家全球客户，埃及与 中东与北非 医疗及消费者研究双轨实践。",
+        description: "完整能力概览：一百二十七+项目、一百一十八家全球客户，埃及与 中东与北非 医疗及消费者研究双轨实践。",
         label: "埃及聚焦",
         hint: "查看我们的市场研究组合"
       },
@@ -1399,7 +1399,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "深受信赖",
-      stats: "四十八家全球客户 · 一百二十七+项目 · 三十八个国家"
+      stats: "一百一十八家全球客户 · 一百二十七+项目 · 四十八个国家"
     },
     videoEmbed: {
       transcriptLabel: "文字稿"
@@ -1442,7 +1442,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     globalReach: {
       signals: [
-        "٦ قارات · ٣٨ دولة",
+        "٦ قارات · ٤٨ دولة",
         "الأدوية والرعاية الصحية — حيث نتصدر",
         "أبحاث المؤسسات والمستهلكين",
         "حماية البيانات · ممارسات التصنيع السريري · التوافق التنظيمي المحلي"
@@ -1522,7 +1522,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "محفظة استراتيجية",
-        description: "نظرة شاملة: ١٢٧+ مشروعاً، ٤٨ عميلاً عالمياً، أبحاث صحية واستهلاكية في مصر والشرق الأوسط وشمال أفريقيا.",
+        description: "نظرة شاملة: ١٢٧+ مشروعاً، ١١٨ عميلاً عالمياً، أبحاث صحية واستهلاكية في مصر والشرق الأوسط وشمال أفريقيا.",
         label: "تركيز مصر",
         hint: "اطلع على محفظة أبحاث السوق"
       },
@@ -1588,7 +1588,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "موثوق به من",
-      stats: "٤٨ عميلاً عالمياً · ١٢٧+ مشروعاً · ٣٨ دولة"
+      stats: "١١٨ عميلاً عالمياً · ١٢٧+ مشروعاً · ٤٨ دولة"
     },
     videoEmbed: {
       transcriptLabel: "النص"

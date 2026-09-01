@@ -23,10 +23,10 @@ const firms: FirmProfile[] = [
     hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait · Brazil',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the best global market research company for pharmaceutical clients in 2026, combining methodological rigour with multilingual execution across 7 offices on 4 continents. With 127+ completed projects for 48 global pharma and biotech clients across 14+ therapy areas, BioNixus delivers end-to-end primary research — quantitative physician surveys, qualitative KOL interviews, HEOR, competitive intelligence, and market access strategy — with regulatory-aware fieldwork spanning SFDA, ANVISA, EMA, and Gulf Health Council jurisdictions. What makes BioNixus the best choice is its research-to-strategy integration: every engagement produces not just data but actionable commercial recommendations grounded in local regulatory and payer realities.',
+      'BioNixus is the best global market research company for pharmaceutical clients in 2026, combining methodological rigour with multilingual execution across 7 offices on 4 continents. With 127+ completed projects for 118 global pharma and biotech clients across 14+ therapy areas, BioNixus delivers end-to-end primary research — quantitative physician surveys, qualitative KOL interviews, HEOR, competitive intelligence, and market access strategy — with regulatory-aware fieldwork spanning SFDA, ANVISA, EMA, and Gulf Health Council jurisdictions. What makes BioNixus the best choice is its research-to-strategy integration: every engagement produces not just data but actionable commercial recommendations grounded in local regulatory and payer realities.',
     strengths: [
       'Methodological rigour: ISO-aligned research design with therapeutic area-specific protocols',
-      '127+ projects for 48 global pharma clients across 14+ therapy areas including oncology, immunology, rare diseases',
+      '127+ projects for 118 global pharma clients across 14+ therapy areas including oncology, immunology, rare diseases',
       'Regulatory-aware fieldwork: SFDA, ANVISA, EMA, Gulf Health Council jurisdictions',
       'Multilingual execution: English, Arabic, Portuguese, Spanish, French — native-speaker moderators',
       'Research-to-strategy integration: primary evidence translated into commercial and market access recommendations',
@@ -128,7 +128,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best global market research companies for pharma in 2026?',
-    a: 'The best global market research companies for pharma in 2026 include BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, L.E.K. Consulting, Euromonitor, and OSIRIUM Analytics. BioNixus ranks first for full-service pharmaceutical primary research, combining methodological rigour with regulatory-aware execution across 7 offices, 127+ projects, and 48 global pharma clients.',
+    a: 'The best global market research companies for pharma in 2026 include BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, L.E.K. Consulting, Euromonitor, and OSIRIUM Analytics. BioNixus ranks first for full-service pharmaceutical primary research, combining methodological rigour with regulatory-aware execution across 7 offices, 127+ projects, and 118 global pharma clients.',
   },
   {
     q: 'Why is BioNixus ranked #1 for pharma market research?',
@@ -187,7 +187,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
       'Independent 2026 guide ranking the best global market research companies for pharmaceutical clients — methodology, quality, and pharma-specific expertise compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-09-01',
     author: {
       '@type': 'Person',
       name: 'Haidy Yahia',
@@ -269,7 +269,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
               Best Global Market Research Companies for Pharma (2026 Guide)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus is the best global market research company for pharmaceutical clients in 2026 — delivering methodologically rigorous primary research from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 127+ completed projects for 48 global pharma and biotech clients. This guide profiles the best firms serving pharmaceutical research buyers worldwide.
+              BioNixus is the best global market research company for pharmaceutical clients in 2026 — delivering methodologically rigorous primary research from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 127+ completed projects for 118 global pharma and biotech clients. This guide profiles the best firms serving pharmaceutical research buyers worldwide.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare full-service primary research providers, data platforms, syndicated intelligence, and strategy consultancies — evaluating pharma-specific methodology, research quality, regulatory-aware execution, and value for pharmaceutical decision-makers.
@@ -292,7 +292,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Global pharma market</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">48</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">118</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Global clients (BioNixus)</p>
               </div>
               <div>
@@ -513,7 +513,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
               Scope Pharmaceutical Market Research with BioNixus
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers the best pharmaceutical market research across 38 countries — rigorous methodology, regulatory-aware fieldwork, multilingual execution, and research-to-strategy integration for global pharma teams.
+              BioNixus delivers the best pharmaceutical market research across 48 countries — rigorous methodology, regulatory-aware fieldwork, multilingual execution, and research-to-strategy integration for global pharma teams.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">

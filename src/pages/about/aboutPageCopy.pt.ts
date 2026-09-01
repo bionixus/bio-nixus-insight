@@ -9,7 +9,7 @@ export const aboutPageCopyPt: AboutPageCopy = {
   heroTagline: 'Empresa internacional global de pesquisa de mercado',
   h1: 'Pesquisa de mercado global — construída sobre pharma, a indústria mais regulada que servimos, e expandida para ser confiável em todas as indústrias',
   heroSubheadBeforeSa:
-    'A BioNixus foi fundada em Londres em 2012 em pesquisa de mercado farmacêutico — a indústria mais regulada que servimos. À medida que os mandatos se estenderam ao Médio Oriente e às Américas, abrimos um escritório regional MENA no Grande Cairo e estabelecemos a sede global nos EUA (Wyoming). Essa disciplina GCP estende-se hoje a programas B2B e B2C em 38 países — incluindo ',
+    'A BioNixus foi fundada em Londres em 2012 em pesquisa de mercado farmacêutico — a indústria mais regulada que servimos. À medida que os mandatos se estenderam ao Médio Oriente e às Américas, abrimos um escritório regional MENA no Grande Cairo e estabelecemos a sede global nos EUA (Wyoming). Essa disciplina GCP estende-se hoje a programas B2B e B2C em 48 países — incluindo ',
   heroLinkSa: 'pesquisa de mercado de saúde na Arábia Saudita',
   heroSubheadBeforeUae: ', ',
   heroLinkUae: 'EAU',
@@ -20,8 +20,8 @@ export const aboutPageCopyPt: AboutPageCopy = {
   ctaSecondary: 'Explorar indústrias',
   metrics: [
     { value: '127+', label: 'Projetos entregues' },
-    { value: '48', label: 'Clientes globais' },
-    { value: '38', label: 'Países cobertos' },
+    { value: '118', label: 'Clientes globais' },
+    { value: '48', label: 'Países cobertos' },
     { value: '16', label: 'Verticais setoriais' },
     { value: '14+', label: 'Áreas terapêuticas' },
   ],
@@ -47,9 +47,9 @@ export const aboutPageCopyPt: AboutPageCopy = {
     ' deu-nos equipas de campo árabe–inglês, acesso a médicos no GCC e Norte de África e execução local que a pesquisa de secretaria nunca replica. A sede em Sheridan, Wyoming veio depois — não como relocalização, mas como lar natural de uma firma já global. Londres permaneceu a base europeia e o lugar onde a BioNixus nasceu.',
   storyAct3H3: 'Hoje — entre o top 100 global',
   storyAct3P1:
-    'Esse arco — raízes londrinas, profundidade MENA, sede americana — levou a BioNixus ao grupo das 100 principais empresas globais de pesquisa de mercado. Atuamos em 38 países e mais de 14 áreas terapêuticas, em seis idiomas. A disciplina pharma forjada sob regulação estende-se a B2B e B2C em 16 verticais porque os clientes pediram o mesmo padrão em todo o lado.',
+    'Esse arco — raízes londrinas, profundidade MENA, sede americana — levou a BioNixus ao grupo das 100 principais empresas globais de pesquisa de mercado. Atuamos em 48 países e mais de 14 áreas terapêuticas, em seis idiomas. A disciplina pharma forjada sob regulação estende-se a B2B e B2C em 16 verticais porque os clientes pediram o mesmo padrão em todo o lado.',
   storyAct3P2BeforePharma:
-    '127+ projetos para 48 clientes globais. A equipa que define o âmbito continua a ser a que entrega — como em Londres. O que mudou é quantos mercados — e indústrias — confiam em nós. Explore a nossa ',
+    '127+ projetos para 118 clientes globais. A equipa que define o âmbito continua a ser a que entrega — como em Londres. O que mudou é quantos mercados — e indústrias — confiam em nós. Explore a nossa ',
   storyAct3LinkPharma: 'pesquisa pharma e saúde',
   storyAct3P2Mid1: ', o ',
   storyAct3LinkIndustries: 'hub de indústrias',
@@ -62,7 +62,7 @@ export const aboutPageCopyPt: AboutPageCopy = {
   differentiators: [
     {
       title: 'Alcance global, execução regional',
-      body: 'Fundada em Londres, com sede nos EUA e escritório regional MENA no Grande Cairo — a BioNixus trabalha em 38 países e seis idiomas. As nossas equipas árabe–inglês conhecem SFDA, DHA, MOHAP, EDA e as nuances clínicas de cada mercado.',
+      body: 'Fundada em Londres, com sede nos EUA e escritório regional MENA no Grande Cairo — a BioNixus trabalha em 48 países e seis idiomas. As nossas equipas árabe–inglês conhecem SFDA, DHA, MOHAP, EDA e as nuances clínicas de cada mercado.',
     },
     {
       title: 'Herança pharma, rigor multi-indústria',

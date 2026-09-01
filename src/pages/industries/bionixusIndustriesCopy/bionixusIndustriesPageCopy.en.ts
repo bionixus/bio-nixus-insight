@@ -21,7 +21,7 @@ export const bionixusIndustriesPageCopyEn: BionixusIndustriesPageCopy = {
   cardLive: 'Live',
   chartNonHealthcare: 'Non-healthcare silo',
   chartHealthcare: 'Healthcare silo',
-  cardFoot: 'Since 2012 · 127+ projects · 48 clients · 38 countries',
+  cardFoot: 'Since 2012 · 127+ projects · 118 clients · 48 countries',
   regionRibbon: [
     'North America',
     'LATAM',
@@ -32,8 +32,8 @@ export const bionixusIndustriesPageCopyEn: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Founded in London', sub: 'UK pharmaceutical research roots' },
-    { value: '127+', label: 'Projects delivered', sub: 'across 38 countries' },
-    { value: '48', label: 'Clients served', sub: 'pharma to consumer' },
+    { value: '127+', label: 'Projects delivered', sub: 'across 48 countries' },
+    { value: '118', label: 'Clients served', sub: 'pharma to consumer' },
     { value: '16', label: 'Industry verticals', sub: 'and growing' },
   ],
   statsAriaLabel: 'BioNixus at a glance',

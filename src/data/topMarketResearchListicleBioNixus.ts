@@ -5,19 +5,19 @@
 
 export const BIONIXUS_MR_STATS = {
   projects: '127+',
-  clients: '48',
-  countries: '17+',
+  clients: '118',
+  countries: '48',
   since: '2012',
 } as const;
 
 export const BIONIXUS_MR_HQ =
-  'USA (HQ) · UK · Egypt · KSA · UAE · Brazil | 17+ countries';
+  'USA (HQ) · UK · Egypt · KSA · UAE · Brazil | 48 countries';
 
 export const BIONIXUS_MR_TYPE = 'Global Market Research — Multi-Industry';
 
 /** Core strengths repeated across general MR listicles; pages may append region-specific bullets. */
 export const BIONIXUS_MR_STRENGTHS_BASE = [
-  'Global market research network across 17+ countries with US, UK, and MENA offices',
+  'Global market research network across 48 countries with US, UK, and MENA offices',
   'Multi-industry coverage: consumer, FMCG, retail, financial services, and technology',
   'Regulated-industry depth in pharmaceutical and healthcare — applied to every methodology',
   'Brand health tracking, U&A, segmentation, concept testing, and pricing research',

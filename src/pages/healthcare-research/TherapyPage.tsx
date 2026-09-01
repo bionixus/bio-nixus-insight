@@ -818,7 +818,7 @@ export default function TherapyPage() {
           statsCaption: '',
           stats: [
             { value: '14+', label: 'Therapy areas' },
-            { value: '17+', label: 'Markets' },
+            { value: '48', label: 'Markets' },
             { value: 'Quant + qual', label: 'Methods' },
           ],
           description: heroDescription,

@@ -374,7 +374,7 @@ export default function HealthcareMarketResearchInBahrain() {
                 'Deep NHRA regulatory and HTA pathway context built into study design',
                 'Dual quantitative and qualitative capability in one team — no subcontracting',
                 'Real-world evidence and advisory board program design compatible with NHRA HTA submissions',
-                '15+ years of healthcare research experience across 38 countries',
+                '15+ years of healthcare research experience across 48 countries',
               ].map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span className="text-primary flex-shrink-0">✓</span>

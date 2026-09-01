@@ -3,7 +3,7 @@ import type { BionixusIndustriesPageCopy } from './bionixusIndustriesPageCopy.ty
 export const bionixusIndustriesPageCopyDe: BionixusIndustriesPageCopy = {
   seoTitle: 'Marktforschung über Branchen hinweg | BioNixus',
   seoDescription:
-    'BioNixus wurde 2012 in London in der pharmazeutischen Marktforschung gegründet und zählt heute zu den weltweit führenden 100 Marktforschungsunternehmen. Mit US-Hauptsitz in Sheridan, Wyoming, Gründungsbüro in London und MENA-Regionalbüro im Großraum Kairo liefert die Firma quantitative und qualitative Forschung in 38 Ländern und 16 Branchenvertikalen — Pharma und Gesundheit, wo sie führt, mit denselben Evidenzstandards, die auf B2B- und B2C-Programme weltweit ausgeweitet werden.',
+    'BioNixus wurde 2012 in London in der pharmazeutischen Marktforschung gegründet und zählt heute zu den weltweit führenden 100 Marktforschungsunternehmen. Mit US-Hauptsitz in Sheridan, Wyoming, Gründungsbüro in London und MENA-Regionalbüro im Großraum Kairo liefert die Firma quantitative und qualitative Forschung in 48 Ländern und 16 Branchenvertikalen — Pharma und Gesundheit, wo sie führt, mit denselben Evidenzstandards, die auf B2B- und B2C-Programme weltweit ausgeweitet werden.',
   breadcrumbHome: 'Startseite',
   breadcrumbIndustries: 'Branchen',
   schemaCollectionName: 'Marktforschung über Branchen hinweg',
@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyDe: BionixusIndustriesPageCopy = {
   cardLive: 'Live',
   chartNonHealthcare: 'Nicht-Gesundheits-Silo',
   chartHealthcare: 'Gesundheitssilo',
-  cardFoot: 'Seit 2012 · 127+ Projekte · 48 Kunden · 38 Länder',
+  cardFoot: 'Seit 2012 · 127+ Projekte · 118 Kunden · 48 Länder',
   regionRibbon: [
     'Nordamerika',
     'LATAM',
@@ -33,8 +33,8 @@ export const bionixusIndustriesPageCopyDe: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Gegründet in London', sub: 'Wurzeln in britischer Pharmaforschung' },
-    { value: '127+', label: 'Abgeschlossene Projekte', sub: 'in 38 Ländern' },
-    { value: '48', label: 'Betreute Kunden', sub: 'von Pharma bis Konsum' },
+    { value: '127+', label: 'Abgeschlossene Projekte', sub: 'in 48 Ländern' },
+    { value: '118', label: 'Betreute Kunden', sub: 'von Pharma bis Konsum' },
     { value: '16', label: 'Branchenvertikalen', sub: 'und wachsend' },
   ],
   statsAriaLabel: 'BioNixus im Überblick',

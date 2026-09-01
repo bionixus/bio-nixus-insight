@@ -39,7 +39,7 @@ const firms: FirmProfile[] = [
       'SFDA, DHA/DOH, MOHAP, and EDA-aware study design',
       'KOL mapping across government and private hospital networks in GCC and Egypt',
       'HEOR, market access, and competitive intelligence integrated with primary evidence',
-      '127+ projects for 48+ global pharma and healthcare clients with deep MENA track record',
+      '127+ projects for 118 global pharma and healthcare clients with deep MENA track record',
     ],
   },
   {

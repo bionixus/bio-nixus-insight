@@ -3,7 +3,7 @@ import type { BionixusIndustriesPageCopy } from './bionixusIndustriesPageCopy.ty
 export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   seoTitle: '跨行业市场研究 | BioNixus',
   seoDescription:
-    'BioNixus 2012 年创立于伦敦，起步于医药市场研究，现跻身全球前 100 市场研究公司。美国总部位于 Wyoming 州 Sheridan，创始办公室在伦敦，MENA 区域办公室设于大开罗——在 38 国、16 个行业垂直领域开展定量与定性研究——在医药与健康领域领先，并将同一证据标准延伸至全球 B2B 与 B2C 项目。',
+    'BioNixus 2012 年创立于伦敦，起步于医药市场研究，现跻身全球前 100 市场研究公司。美国总部位于 Wyoming 州 Sheridan，创始办公室在伦敦，MENA 区域办公室设于大开罗——在 48 国、16 个行业垂直领域开展定量与定性研究——在医药与健康领域领先，并将同一证据标准延伸至全球 B2B 与 B2C 项目。',
   breadcrumbHome: '首页',
   breadcrumbIndustries: '行业',
   schemaCollectionName: '跨行业市场研究',
@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   cardLive: '实时',
   chartNonHealthcare: '非医疗健康专区',
   chartHealthcare: '医疗健康专区',
-  cardFoot: '自 2012 年起 · 127+ 项目 · 48 位客户 · 38 国',
+  cardFoot: '自 2012 年起 · 127+ 项目 · 118 位客户 · 48 国',
   regionRibbon: [
     '北美',
     'LATAM',
@@ -33,8 +33,8 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: '创立于伦敦', sub: '英国医药研究根基' },
-    { value: '127+', label: '已交付项目', sub: '覆盖 38 国' },
-    { value: '48', label: '服务客户', sub: '从 pharma 到 consumer' },
+    { value: '127+', label: '已交付项目', sub: '覆盖 48 国' },
+    { value: '118', label: '服务客户', sub: '从 pharma 到 consumer' },
     { value: '16', label: '行业垂直', sub: '持续扩展' },
   ],
   statsAriaLabel: 'BioNixus 概览',

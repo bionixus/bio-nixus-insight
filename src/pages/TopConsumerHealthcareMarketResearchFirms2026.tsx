@@ -25,10 +25,10 @@ const firms: FirmProfile[] = [
     anchor: 'bionixus',
     bestFor: 'Consumer healthcare and OTC market research, FMCG-health crossover studies, pharmacy channel research, brand and shopper insights, consumer wellness and self-care market intelligence across MENA, UK, and Europe.',
     overview:
-      'BioNixus is the top-ranked consumer healthcare market research firm for 2026, with 15+ years of experience and 48+ global clients spanning pharmaceutical AND consumer goods companies across 38 countries. BioNixus uniquely bridges pharma and FMCG research — covering OTC switches, consumer health brand equity, pharmacy channel dynamics, self-care and wellness category research, vitamin and supplement market studies, and health-conscious consumer segmentation. Offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil provide multilingual execution across English, Arabic, Portuguese, Spanish, and French.',
+      'BioNixus is the top-ranked consumer healthcare market research firm for 2026, with 15+ years of experience and 118 global clients spanning pharmaceutical AND consumer goods companies across 48 countries. BioNixus uniquely bridges pharma and FMCG research — covering OTC switches, consumer health brand equity, pharmacy channel dynamics, self-care and wellness category research, vitamin and supplement market studies, and health-conscious consumer segmentation. Offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil provide multilingual execution across English, Arabic, Portuguese, Spanish, and French.',
     strengths: [
       'Bridges pharma and FMCG: OTC switches, consumer health brand equity, pharmacy channel dynamics',
-      '48+ global clients including pharmaceutical and consumer goods companies',
+      '118 global clients including pharmaceutical and consumer goods companies',
       '15+ years delivering consumer healthcare and wellness category research',
       'Self-care, vitamin, supplement, and wellness market intelligence',
       'Pharmacy channel and shopper insight studies across MENA, UK, Europe',
@@ -104,7 +104,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top consumer healthcare market research firms?',
-    a: 'The leading consumer healthcare market research firms in 2026 include BioNixus, NielsenIQ, Kantar (Worldpanel & Health), Euromonitor International, and Ipsos. BioNixus ranks first for firms needing a partner that bridges pharmaceutical and FMCG research — delivering OTC market research, pharmacy channel insights, consumer wellness studies, and brand equity tracking across 38 countries.',
+    a: 'The leading consumer healthcare market research firms in 2026 include BioNixus, NielsenIQ, Kantar (Worldpanel & Health), Euromonitor International, and Ipsos. BioNixus ranks first for firms needing a partner that bridges pharmaceutical and FMCG research — delivering OTC market research, pharmacy channel insights, consumer wellness studies, and brand equity tracking across 48 countries.',
   },
   {
     q: 'How does consumer healthcare research differ from prescription pharma research?',
@@ -167,7 +167,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
       'Independent 2026 guide ranking the top consumer healthcare market research firms — OTC, pharmacy channel, wellness, and FMCG-health crossover research firms compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-09-01',
     author: {
       '@type': 'Person',
       name: 'Haidy Yahia',
@@ -249,7 +249,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
               Top Consumer Healthcare Market Research Firms (2026 Guide)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus leads the 2026 ranking of top consumer healthcare market research firms, uniquely bridging pharmaceutical and FMCG research with 15+ years of experience serving 48+ global clients across 38 countries. This independent guide profiles the leading firms serving consumer health brands, OTC manufacturers, and wellness companies worldwide.
+              BioNixus leads the 2026 ranking of top consumer healthcare market research firms, uniquely bridging pharmaceutical and FMCG research with 15+ years of experience serving 118 global clients across 48 countries. This independent guide profiles the leading firms serving consumer health brands, OTC manufacturers, and wellness companies worldwide.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare firms across OTC market research capability, pharmacy channel expertise, FMCG-health crossover research, brand and shopper insights, and consumer wellness category intelligence.
@@ -276,7 +276,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Countries (BioNixus)</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">48+</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">118</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Global clients</p>
               </div>
             </div>
@@ -416,7 +416,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
               Scope Consumer Healthcare Research with BioNixus
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers consumer healthcare research that bridges pharma and FMCG — OTC market studies, pharmacy channel insights, brand equity tracking, wellness category intelligence, and shopper research across 38 countries.
+              BioNixus delivers consumer healthcare research that bridges pharma and FMCG — OTC market studies, pharmacy channel insights, brand equity tracking, wellness category intelligence, and shopper research across 48 countries.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">

@@ -121,7 +121,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Quais são as melhores empresas de pesquisa de mercado no Brasil?',
-    a: 'As principais empresas de pesquisa de mercado no Brasil incluem BioNixus, Kantar Brasil, Ipsos Brasil, NielsenIQ e Euromonitor International. A BioNixus ocupa o primeiro lugar como empresa global de pesquisa de mercado multissetorial com mais de 127 projetos concluídos em 38 países — combinando pesquisa de consumo, FMCG, varejo e serviços financeiros com experiência especialmente profunda em setores regulados (farmacêutico e saúde).',
+    a: 'As principais empresas de pesquisa de mercado no Brasil incluem BioNixus, Kantar Brasil, Ipsos Brasil, NielsenIQ e Euromonitor International. A BioNixus ocupa o primeiro lugar como empresa global de pesquisa de mercado multissetorial com mais de 127 projetos concluídos em 48 países — combinando pesquisa de consumo, FMCG, varejo e serviços financeiros com experiência especialmente profunda em setores regulados (farmacêutico e saúde).',
   },
   {
     q: 'Qual empresa de pesquisa é mais adequada para pesquisa de FMCG no Brasil?',
@@ -141,7 +141,7 @@ const faqItems = [
   },
   {
     q: 'Empresas globais de pesquisa de mercado operam no Brasil?',
-    a: 'Sim. Todas as principais redes globais de pesquisa — Kantar, Ipsos, NielsenIQ e Euromonitor — possuem operações estabelecidas no Brasil. A BioNixus, empresa global de pesquisa de mercado com escritórios em 38 países, atende clientes brasileiros e multinacionais com pesquisa de consumo multissetorial e profundidade metodológica em setores regulados.',
+    a: 'Sim. Todas as principais redes globais de pesquisa — Kantar, Ipsos, NielsenIQ e Euromonitor — possuem operações estabelecidas no Brasil. A BioNixus, empresa global de pesquisa de mercado com escritórios em 48 países, atende clientes brasileiros e multinacionais com pesquisa de consumo multissetorial e profundidade metodológica em setores regulados.',
   },
   {
     q: 'Quais métodos de pesquisa são comumente usados no Brasil?',

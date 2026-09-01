@@ -3,7 +3,7 @@ import type { BionixusIndustriesPageCopy } from './bionixusIndustriesPageCopy.ty
 export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
   seoTitle: 'أبحاث السوق عبر الصناعات | BioNixus',
   seoDescription:
-    'تأسست BioNixus في لندن عام 2012 في أبحاث السوق الدوائية، وهي اليوم ضمن أفضل 100 شركة أبحاث سوق عالمية. مقرها الأمريكي في Sheridan بولاية Wyoming، ومكتبها التأسيسي في لندن، ومكتب إقليمي لمنطقة الشرق الأوسط وشمال أفريقيا في القاهرة الكبرى — تنفّذ الشركة أبحاثًا كمية ونوعية في 38 دولة و16 قطاعًا صناعيًا: الأدوية والرعاية الصحية حيث تقود، مع توسيع معايير الأدلة نفسها إلى برامج B2B وB2C حول العالم.',
+    'تأسست BioNixus في لندن عام 2012 في أبحاث السوق الدوائية، وهي اليوم ضمن أفضل 100 شركة أبحاث سوق عالمية. مقرها الأمريكي في Sheridan بولاية Wyoming، ومكتبها التأسيسي في لندن، ومكتب إقليمي لمنطقة الشرق الأوسط وشمال أفريقيا في القاهرة الكبرى — تنفّذ الشركة أبحاثًا كمية ونوعية في 48 دولة و16 قطاعًا صناعيًا: الأدوية والرعاية الصحية حيث تقود، مع توسيع معايير الأدلة نفسها إلى برامج B2B وB2C حول العالم.',
   breadcrumbHome: 'الرئيسية',
   breadcrumbIndustries: 'القطاعات',
   schemaCollectionName: 'أبحاث السوق عبر الصناعات',
@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
   cardLive: 'مباشر',
   chartNonHealthcare: 'سيلو غير الصحي',
   chartHealthcare: 'سيلو الرعاية الصحية',
-  cardFoot: 'منذ 2012 · 127+ مشروعًا · 48 عميلًا · 38 دولة',
+  cardFoot: 'منذ 2012 · 127+ مشروعًا · 118 عميلًا · 48 دولة',
   regionRibbon: [
     'أمريكا الشمالية',
     'LATAM',
@@ -33,8 +33,8 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'تأسست في لندن', sub: 'جذور في الأبحاث الدوائية البريطانية' },
-    { value: '127+', label: 'مشروعًا منجزًا', sub: 'في 38 دولة' },
-    { value: '48', label: 'عميلًا خدمناهم', sub: 'من pharma إلى consumer' },
+    { value: '127+', label: 'مشروعًا منجزًا', sub: 'في 48 دولة' },
+    { value: '118', label: 'عميلًا خدمناهم', sub: 'من pharma إلى consumer' },
     { value: '16', label: 'قطاعًا صناعيًا', sub: 'وما زال يتوسع' },
   ],
   statsAriaLabel: 'BioNixus بنظرة سريعة',

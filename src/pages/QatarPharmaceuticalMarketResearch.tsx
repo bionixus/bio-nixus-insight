@@ -18,7 +18,7 @@ const QATAR_MR_COMPANY_PROOF = [
     body: 'BioNixus runs physician, payer, and institutional research across Qatar with bilingual Arabic–English execution built around Ministry of Public Health (MoPH) requirements and Hamad Medical Corporation (HMC) research protocols.',
   },
   {
-    title: '48+ global clients across 38 countries',
+    title: '118 global clients across 48 countries',
     body: 'Programs span launch sizing, market access evidence, competitive intelligence, and post-launch tracking for pharma, biotech, and medtech sponsors entering the Qatar market.',
   },
   {

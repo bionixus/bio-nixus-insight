@@ -8,7 +8,7 @@ export const oncologyGlobalEn: CountryListicleConfig = {
   country: 'Global',
   title: 'Top Oncology Market Research Companies 2026 | BioNixus',
   metaDescription:
-    'Independent 2026 guide to the top oncology market research companies — launch support, tumor board dynamics, precision medicine research, biomarker.',
+    'Compare BioNixus vs IQVIA: indication-level PRFs with full patient history, new vs current case recruitment, and brand trackers — not generic pack sales data.',
   canonical:
     'https://www.bionixus.com/insights/top-oncology-market-research-companies-2026',
   hreflang: [
@@ -24,7 +24,7 @@ export const oncologyGlobalEn: CountryListicleConfig = {
   ogLocale: 'en_US',
   inLanguage: 'en',
   datePublished: '2026-06-19',
-  dateModified: '2026-06-19',
+  dateModified: '2026-09-01',
   badge: '2026 Oncology Market Research Guide',
   h1: 'Top Oncology Market Research Companies (2026 Guide)',
   heroIntro:
@@ -57,16 +57,16 @@ export const oncologyGlobalEn: CountryListicleConfig = {
       url: 'https://www.bionixus.com',
       orgId: 'https://www.bionixus.com/#organization',
       bestFor:
-        'oncology launch support research, KOL mapping in oncology, tumor board dynamics, biomarker testing uptake, oncology market access in MENA and GCC',
+        'indication-level anonymous PRFs with full patient history, new and current case recruitment, oncology brand trackers as share of treated patients',
       overview:
-        'BioNixus is a global healthcare market research company with specialist oncology market research capabilities, covering oncologist prescribing behaviour, tumor board dynamics, biomarker testing uptake, KOL identification and mapping, and oncology market access research across MENA and GCC markets. With 15+ years of experience and operations across 38 countries, BioNixus serves oncology pharmaceutical companies, immuno-oncology brand teams, and market access leaders navigating the world\'s most complex therapy area. In the MENA region, BioNixus maintains established oncologist networks across King Faisal Specialist Hospital Riyadh, Cleveland Clinic Abu Dhabi, Hamad Medical Corporation Qatar, and regional cancer centres, enabling primary oncology research that requires specialist clinical access. BioNixus delivers the oncology launch intelligence — from tumor board influence mapping to biomarker testing barrier research — that translates into commercially actionable decisions for oncology pharmaceutical companies in a rapidly evolving MENA market.',
+        'BioNixus is a global market research firm serving 118 clients across 48 countries. In oncology the unit of observation is the anonymous Patient Record / Request Form (PRF), not the pack: full patient history from the treating physician, quota-controlled recruitment of new and current cases, and brand trackers that report share of treated patients by indication, line, and biomarker. IQVIA remains the volume layer. BioNixus is the patient layer — including MENA and GCC hospital fieldwork where syndicated audits are pack-only.',
       strengths: [
-        'Oncologist prescribing behaviour and treatment decision driver studies across cancer indications',
-        'Tumor board dynamics research — understanding MDT influence on oncology prescribing decisions',
-        'Biomarker testing uptake research including NGS adoption, PD-L1 testing, and companion diagnostic awareness',
-        'KOL identification and mapping in oncology across MENA and GCC academic cancer centres',
-        'Payer and formulary committee research for oncology drug access across Gulf healthcare systems',
-        'Oncology patient journey research with cancer-type specific instrument design',
+        'Anonymous PRFs with full history — indication, line, biomarker, prior regimens',
+        'New vs current case recruitment with incident and prevalent quotas',
+        'Brand trackers as share of treated patients, not pack share',
+        'Indication-coded records that do not infer tumour from SKU',
+        'Hospital-level fieldwork across MENA, GCC, UK, Europe, and Brazil',
+        'Reconciles to IQVIA units when both layers are in the file',
       ],
     },
     {
@@ -78,9 +78,9 @@ export const oncologyGlobalEn: CountryListicleConfig = {
       anchor: 'iqvia-oncology',
       url: 'https://www.iqvia.com',
       bestFor:
-        'oncology prescription analytics, cancer epidemiology data, RWE for oncology, HEOR for oncology market access',
+        'syndicated sell-in / sell-out, prescription audits, and pack-level oncology volume — not indication-coded PRFs',
       overview:
-        'IQVIA\'s oncology practice provides the most comprehensive prescription data and analytics infrastructure for the global oncology market, tracking cancer drug prescriptions, market share, and treatment patterns across major markets through IQVIA\'s MIDAS prescription database, oncology-specific therapy analysers, and real-world evidence (RWE) programmes. IQVIA\'s oncology HEOR and health economics teams support payer submissions for oncology drugs with cost-effectiveness modelling and burden of disease studies. IQVIA\'s oncology intelligence products are the commercial data backbone for most major oncology pharmaceutical companies globally. Primary qualitative research with oncologists and tumor boards is less core than IQVIA\'s analytics and data intelligence strengths.',
+        'IQVIA is the default volume layer for oncology commercial teams: sell-in, sell-out, pharmacy and hospital audits, and SKU share of units. That answers how much product moved. It does not recruit new versus current cases, does not code indication on a multi-tumour SKU as a PRF does, and brand “share” is units, not treated patients. Pair it with BioNixus when the P&L question is which tumour, which line, and which patient.',
       strengths: [
         'Oncology prescription analytics and cancer drug market share tracking globally',
         'Cancer epidemiology forecasting and patient population modelling',

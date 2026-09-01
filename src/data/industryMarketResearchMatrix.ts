@@ -449,7 +449,7 @@ export function buildIndustryCountryPageConfig(
     executivePoints: getIndustryBofuExecutivePoints(industrySlug, countrySlug),
     proofBullets: [
       {
-        title: `38 countries, ${country.label} fieldwork`,
+        title: `48 countries, ${country.label} fieldwork`,
         body: `BioNixus executes ${industry.displayNameShort.toLowerCase()} studies from regional offices with MENA-scale reach.`,
       },
       {

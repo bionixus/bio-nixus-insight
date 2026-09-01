@@ -521,6 +521,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'UAE healthcare trends 2026: payer tightening, DHA vs DOH access, specialty and biosimilars, and digital-health signals for pharma and medtech. BioNixus.',
   },
+  '/insights/top-oncology-market-research-companies-2026': {
+    title: 'Top Oncology Market Research Companies 2026 | BioNixus',
+    description:
+      'Compare BioNixus vs IQVIA: indication-level PRFs with full patient history, new vs current case recruitment, and brand trackers — not generic pack sales data.',
+  },
 };
 
 /**

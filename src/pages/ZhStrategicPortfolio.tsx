@@ -170,7 +170,7 @@ const faqItems = [
   },
   {
     q: 'BioNixus 可以在哪些国家执行医药研究？',
-    a: '我们在超过 38 个国家执行一手项目。主要优势地区包括海湾六国（沙特、阿联酋、卡塔尔、科威特、阿曼、巴林）、埃及、土耳其、法国、德国、意大利、西班牙、英国、美国、加拿大、巴西和日本。每一个国家都有经过验证的医师小组、本地实地合作方以及一套集中式项目治理，保证问卷工具的一致性。',
+    a: '我们在超过 48 个国家执行一手项目。主要优势地区包括海湾六国（沙特、阿联酋、卡塔尔、科威特、阿曼、巴林）、埃及、土耳其、法国、德国、意大利、西班牙、英国、美国、加拿大、巴西和日本。每一个国家都有经过验证的医师小组、本地实地合作方以及一套集中式项目治理，保证问卷工具的一致性。',
   },
   {
     q: 'BioNixus 相比 IQVIA、Kantar Health 等全球巨头的差异化是什么？',
@@ -325,7 +325,7 @@ export default function ZhStrategicPortfolio() {
                 <p className="text-primary-foreground/80 text-sm mt-1">医药项目</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">48+</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">118</p>
                 <p className="text-primary-foreground/80 text-sm mt-1">药企与医械客户</p>
               </div>
               <div>

@@ -49,7 +49,7 @@ const CLIENT_REVIEWS_FAQ = [
   {
     question: 'How many clients has BioNixus worked with?',
     answer:
-      'BioNixus is recommended by more than 40 happy clients worldwide, with 127+ delivered projects across 38 countries and 14+ therapeutic areas since 2012.',
+      'BioNixus is recommended by more than 40 happy clients worldwide, with 127+ delivered projects across 48 countries and 14+ therapeutic areas since 2012.',
   },
   {
     question: 'Can I speak with a reference client?',

@@ -13,7 +13,7 @@ export const FR_HUB_CONTENT = {
   heroDescription:
     'BioNixus transforme les signaux fragmentés — comportement des prescripteurs, logique des payeurs, parcours patients et mouvements concurrentiels — en décisions défendables. Notre méthode est cohérente mondialement ; ce qui change, c\'est le contexte réglementaire et l\'acheteur local.',
   stats: [
-    { value: '38', label: 'Pays couverts' },
+    { value: '48', label: 'Pays couverts' },
     { value: '14+', label: 'Aires thérapeutiques' },
     { value: '4 régions', label: 'Amériques · Europe · MENA · Asie' },
   ],
@@ -31,7 +31,7 @@ export const FR_HUB_CONTENT = {
     },
     {
       title: 'Comparabilité transfrontalière',
-      description: 'Instruments harmonisés sur 38 pays pour des roll-ups régionaux cohérents.',
+      description: 'Instruments harmonisés sur 48 pays pour des roll-ups régionaux cohérents.',
     },
     {
       title: 'Hub rapports et services',

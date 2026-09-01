@@ -3,7 +3,7 @@ import type { BionixusIndustriesPageCopy } from './bionixusIndustriesPageCopy.ty
 export const bionixusIndustriesPageCopyRu: BionixusIndustriesPageCopy = {
   seoTitle: 'Исследования рынка во всех отраслях | BioNixus',
   seoDescription:
-    'BioNixus основана в Лондоне в 2012 году в фармацевтических исследованиях рынка и сегодня входит в число 100 ведущих мировых исследовательских компаний. Штаб-квартира в США (Sheridan, Wyoming), учредительный офис в Лондоне и региональный офис MENA в Большом Каире — компания проводит количественные и качественные исследования в 38 странах и 16 отраслевых вертикалях: pharma и здравоохранение, где она лидирует, с теми же стандартами доказательности, распространёнными на B2B и B2C программы по всему миру.',
+    'BioNixus основана в Лондоне в 2012 году в фармацевтических исследованиях рынка и сегодня входит в число 100 ведущих мировых исследовательских компаний. Штаб-квартира в США (Sheridan, Wyoming), учредительный офис в Лондоне и региональный офис MENA в Большом Каире — компания проводит количественные и качественные исследования в 48 странах и 16 отраслевых вертикалях: pharma и здравоохранение, где она лидирует, с теми же стандартами доказательности, распространёнными на B2B и B2C программы по всему миру.',
   breadcrumbHome: 'Главная',
   breadcrumbIndustries: 'Отрасли',
   schemaCollectionName: 'Исследования рынка во всех отраслях',
@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyRu: BionixusIndustriesPageCopy = {
   cardLive: 'Актуально',
   chartNonHealthcare: 'Раздел вне healthcare',
   chartHealthcare: 'Healthcare-раздел',
-  cardFoot: 'С 2012 · 127+ проектов · 48 клиентов · 38 стран',
+  cardFoot: 'С 2012 · 127+ проектов · 118 клиентов · 48 стран',
   regionRibbon: [
     'Северная Америка',
     'LATAM',
@@ -33,8 +33,8 @@ export const bionixusIndustriesPageCopyRu: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Основана в Лондоне', sub: 'Корни в британских фарма-исследованиях' },
-    { value: '127+', label: 'Выполненных проектов', sub: 'в 38 странах' },
-    { value: '48', label: 'Обслуженных клиентов', sub: 'от pharma до consumer' },
+    { value: '127+', label: 'Выполненных проектов', sub: 'в 48 странах' },
+    { value: '118', label: 'Обслуженных клиентов', sub: 'от pharma до consumer' },
     { value: '16', label: 'Отраслевых вертикалей', sub: 'и растёт' },
   ],
   statsAriaLabel: 'BioNixus одним взглядом',

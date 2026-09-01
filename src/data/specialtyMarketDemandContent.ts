@@ -36,7 +36,7 @@ const SHARED_WHY = [
   'Regulator- and pathway-aware study design from protocol one',
   'Comparable instruments for multi-country roll-ups when needed',
   'Board-ready synthesis with evidence gaps and owners flagged',
-  '15+ years of healthcare research across 38 countries',
+  '15+ years of healthcare research across 48 countries',
 ];
 
 /* ------------------------------------------------------------------ */

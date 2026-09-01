@@ -294,7 +294,7 @@ export default function HealthcareMarketResearchInEgypt() {
                 'Deep EDA and UHI regulatory context built into study design',
                 'Dual quantitative and qualitative capability in one team — no subcontracting',
                 'Real-world evidence and advisory board program design compatible with Egyptian access submissions',
-                '17+ countries, 127+ projects delivered across MENA and beyond',
+                '48 countries, 127+ projects delivered across MENA and beyond',
                 'Cairo-based execution with regional MENA fieldwork reach',
               ].map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">

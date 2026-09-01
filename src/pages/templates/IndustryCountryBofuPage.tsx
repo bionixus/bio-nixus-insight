@@ -33,7 +33,7 @@ const SEGMENT_ACCENT: Record<'pharma-healthcare' | 'b2b' | 'b2c', 'teal' | 'gold
 };
 
 const DEFAULT_HERO_STATS = [
-  { value: '38', label: 'Countries fielded', sub: 'MENA · Americas · Europe' },
+  { value: '48', label: 'Countries fielded', sub: 'MENA · Americas · Europe' },
   {
     value: BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.value,
     label: 'Projects delivered',

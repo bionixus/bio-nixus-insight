@@ -9,7 +9,7 @@ export const BIONIXUS_MARKETING_CLAIMS = {
   } satisfies SourcedMetric,
   globalClients: {
     label: 'Global clients served',
-    value: '48',
+    value: '118',
     source: 'BioNixus internal client records (2026)',
   } satisfies SourcedMetric,
   operatingHistory: {

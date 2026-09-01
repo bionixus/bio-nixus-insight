@@ -248,7 +248,7 @@ export const FR_SERVICE_FAQ = [
   {
     question: 'Quelle est votre couverture en France et en Europe ?',
     answer:
-      'Nous réalisons le terrain en France, dans l\'EU5, au Royaume-Uni et sur d\'autres marchés européens, au sein d\'une capacité d\'exécution couvrant 38 pays — avec des bureaux et des réseaux terrain aux États-Unis, au Royaume-Uni, en Égypte, en Arabie saoudite, aux Émirats arabes unis, au Koweït et au Brésil. Les programmes mondiaux restent possibles lorsque votre stratégie dépasse l\'Europe.',
+      'Nous réalisons le terrain en France, dans l\'EU5, au Royaume-Uni et sur d\'autres marchés européens, au sein d\'une capacité d\'exécution couvrant 48 pays — avec des bureaux et des réseaux terrain aux États-Unis, au Royaume-Uni, en Égypte, en Arabie saoudite, aux Émirats arabes unis, au Koweït et au Brésil. Les programmes mondiaux restent possibles lorsque votre stratégie dépasse l\'Europe.',
   },
   {
     question: 'Sous quel délai recevons-nous une proposition ?',

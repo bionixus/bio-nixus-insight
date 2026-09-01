@@ -319,7 +319,7 @@ export default function HealthcareMarketResearchInJordan() {
                 'Deep JFDA regulatory context built into study design, including HTA-aligned evidence generation',
                 'Dual quantitative and qualitative capability in one team — no subcontracting',
                 'Real-world evidence and advisory board programme design compatible with Jordan access submissions',
-                '15+ years of healthcare research experience across 38 countries',
+                '15+ years of healthcare research experience across 48 countries',
               ].map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span className="text-primary flex-shrink-0">✓</span>

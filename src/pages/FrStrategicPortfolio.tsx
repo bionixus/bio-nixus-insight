@@ -169,7 +169,7 @@ const faqItems = [
   },
   {
     q: "Dans quels pays BioNixus peut-il exécuter des études pharmaceutiques ?",
-    a: "Nous exécutons des programmes primaires dans plus de 38 pays. Nos zones de force principale sont le Golfe (Arabie Saoudite, Émirats Arabes Unis, Qatar, Koweït, Oman, Bahreïn), l'Égypte, la Turquie, la France, l'Allemagne, l'Italie, l'Espagne, le Royaume-Uni, les États-Unis, le Canada, le Brésil et le Japon. Pour chaque pays, nous disposons de panels HCP vérifiés, de partenaires terrain locaux et d'une gouvernance de projet centralisée qui garantit la cohérence des instruments.",
+    a: "Nous exécutons des programmes primaires dans plus de 48 pays. Nos zones de force principale sont le Golfe (Arabie Saoudite, Émirats Arabes Unis, Qatar, Koweït, Oman, Bahreïn), l'Égypte, la Turquie, la France, l'Allemagne, l'Italie, l'Espagne, le Royaume-Uni, les États-Unis, le Canada, le Brésil et le Japon. Pour chaque pays, nous disposons de panels HCP vérifiés, de partenaires terrain locaux et d'une gouvernance de projet centralisée qui garantit la cohérence des instruments.",
   },
   {
     q: "Comment se différencie BioNixus des acteurs globaux comme IQVIA ou Kantar Health ?",
@@ -319,7 +319,7 @@ export default function FrStrategicPortfolio() {
                 <p className="text-primary-foreground/80 text-sm mt-1">projets pharmaceutiques</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">48+</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">118</p>
                 <p className="text-primary-foreground/80 text-sm mt-1">clients pharma & medtech</p>
               </div>
               <div>

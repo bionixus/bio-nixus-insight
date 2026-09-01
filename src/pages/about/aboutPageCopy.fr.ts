@@ -9,7 +9,7 @@ export const aboutPageCopyFr: AboutPageCopy = {
   heroTagline: 'Cabinet international de recherche marché',
   h1: 'Recherche marché mondiale — fondée sur le pharma, l’industrie la plus réglementée que nous servons, et étendue à l’ensemble des secteurs',
   heroSubheadBeforeSa:
-    'BioNixus a été fondée à Londres en 2012 dans la recherche marché pharmaceutique — l’industrie la plus réglementée que nous servons. À mesure que les mandats s’étendaient au Moyen-Orient et aux Amériques, nous avons ouvert un bureau régional MENA au Grand Caire et établi le siège mondial aux États-Unis (Wyoming). Cette discipline de niveau GCP s’étend aujourd’hui aux programmes B2B et B2C dans 38 pays — dont la ',
+    'BioNixus a été fondée à Londres en 2012 dans la recherche marché pharmaceutique — l’industrie la plus réglementée que nous servons. À mesure que les mandats s’étendaient au Moyen-Orient et aux Amériques, nous avons ouvert un bureau régional MENA au Grand Caire et établi le siège mondial aux États-Unis (Wyoming). Cette discipline de niveau GCP s’étend aujourd’hui aux programmes B2B et B2C dans 48 pays — dont la ',
   heroLinkSa: 'recherche marché santé en Arabie saoudite',
   heroSubheadBeforeUae: ', les ',
   heroLinkUae: 'Émirats',
@@ -20,8 +20,8 @@ export const aboutPageCopyFr: AboutPageCopy = {
   ctaSecondary: 'Explorer les industries',
   metrics: [
     { value: '127+', label: 'Projets livrés' },
-    { value: '48', label: 'Clients mondiaux' },
-    { value: '38', label: 'Pays couverts' },
+    { value: '118', label: 'Clients mondiaux' },
+    { value: '48', label: 'Pays couverts' },
     { value: '16', label: 'Verticales sectorielles' },
     { value: '14+', label: 'Aires thérapeutiques' },
   ],
@@ -47,9 +47,9 @@ export const aboutPageCopyFr: AboutPageCopy = {
     ' nous a apporté des équipes terrain arabe–anglais, l’accès aux médecins du GCC et d’Afrique du Nord, et une exécution de proximité irremplaçable. Le siège américain à Sheridan, Wyoming est venu ensuite — non comme une relocalisation, mais comme le domicile naturel d’un cabinet devenu réellement global. Londres est restée notre base européenne et le lieu de naissance de BioNixus.',
   storyAct3H3: 'Aujourd’hui — parmi le top 100 mondial',
   storyAct3P1:
-    'Cet arc — racines londoniennes, profondeur MENA, siège américain — a porté BioNixus parmi les 100 premières sociétés mondiales de recherche marché. Nous sommes actifs dans 38 pays et plus de 14 aires thérapeutiques, en six langues. La discipline pharma forgée sous régulation s’étend désormais aux verticales B2B et B2C (16 secteurs), parce que les clients nous ont demandé le même standard partout.',
+    'Cet arc — racines londoniennes, profondeur MENA, siège américain — a porté BioNixus parmi les 100 premières sociétés mondiales de recherche marché. Nous sommes actifs dans 48 pays et plus de 14 aires thérapeutiques, en six langues. La discipline pharma forgée sous régulation s’étend désormais aux verticales B2B et B2C (16 secteurs), parce que les clients nous ont demandé le même standard partout.',
   storyAct3P2BeforePharma:
-    '127+ projets pour 48 clients mondiaux. L’équipe qui cadrage votre étude est celle qui la livre — comme à Londres. Ce qui a changé, c’est le nombre de marchés — et de secteurs — qui nous font confiance. Explorez notre ',
+    '127+ projets pour 118 clients mondiaux. L’équipe qui cadrage votre étude est celle qui la livre — comme à Londres. Ce qui a changé, c’est le nombre de marchés — et de secteurs — qui nous font confiance. Explorez notre ',
   storyAct3LinkPharma: 'recherche pharma & santé',
   storyAct3P2Mid1: ', le ',
   storyAct3LinkIndustries: 'hub industries',
@@ -62,7 +62,7 @@ export const aboutPageCopyFr: AboutPageCopy = {
   differentiators: [
     {
       title: 'Portée mondiale, exécution régionale',
-      body: 'Fondée à Londres, siège aux États-Unis, bureau régional MENA au Grand Caire — BioNixus intervient dans 38 pays et six langues. Nos équipes arabe–anglais connaissent SFDA, DHA, MOHAP, EDA et les nuances cliniques de prescription par marché.',
+      body: 'Fondée à Londres, siège aux États-Unis, bureau régional MENA au Grand Caire — BioNixus intervient dans 48 pays et six langues. Nos équipes arabe–anglais connaissent SFDA, DHA, MOHAP, EDA et les nuances cliniques de prescription par marché.',
     },
     {
       title: 'Héritage pharma, rigueur multi-secteurs',

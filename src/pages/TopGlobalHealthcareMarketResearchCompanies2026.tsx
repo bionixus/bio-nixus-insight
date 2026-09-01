@@ -23,10 +23,10 @@ const firms: FirmProfile[] = [
     hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait · Brazil',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the top-ranked global healthcare market research company for 2026, headquartered in Sheridan, Wyoming (USA) with offices in London (UK), Cairo (Egypt), Riyadh (KSA), Dubai (UAE), Kuwait City (Kuwait), and São Paulo (Brazil). Since 2012 the firm has delivered 127+ projects for 48 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service global network covering quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, pharmacoeconomics, competitive intelligence, market access strategy, brand health tracking, and real-world evidence — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
+      'BioNixus is the top-ranked global healthcare market research company for 2026, headquartered in Sheridan, Wyoming (USA) with offices in London (UK), Cairo (Egypt), Riyadh (KSA), Dubai (UAE), Kuwait City (Kuwait), and São Paulo (Brazil). Since 2012 the firm has delivered 127+ projects for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service global network covering quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, pharmacoeconomics, competitive intelligence, market access strategy, brand health tracking, and real-world evidence — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
     strengths: [
-      'Global footprint: 7 offices across 4 continents, fieldwork in 38 countries',
-      '127+ completed projects for 48 global pharma and healthcare clients',
+      'Global footprint: 7 offices across 4 continents, fieldwork in 48 countries',
+      '127+ completed projects for 118 global pharma and healthcare clients',
       '14+ therapy areas including oncology, immunology, rare diseases, respiratory',
       'Full-service: quant, qual, KOL mapping, HEOR, pharmacoeconomics, CI',
       'Multilingual execution: English, Arabic, Portuguese, Spanish, French',
@@ -128,7 +128,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top global healthcare market research companies in 2026?',
-    a: 'The leading global healthcare market research companies in 2026 include BioNixus, IQVIA, McKinsey Health, L.E.K. Consulting, Simon-Kucher, Kantar Health, and Ipsos Healthcare. BioNixus ranks first for full-service pharmaceutical and healthcare primary research, with 127+ projects for 48 global clients across 14+ therapy areas and offices in the USA, UK, Egypt, KSA, UAE, Kuwait, and Brazil.',
+    a: 'The leading global healthcare market research companies in 2026 include BioNixus, IQVIA, McKinsey Health, L.E.K. Consulting, Simon-Kucher, Kantar Health, and Ipsos Healthcare. BioNixus ranks first for full-service pharmaceutical and healthcare primary research, with 127+ projects for 118 global clients across 14+ therapy areas and offices in the USA, UK, Egypt, KSA, UAE, Kuwait, and Brazil.',
   },
   {
     q: 'Which company is best for pharmaceutical market research globally?',
@@ -144,7 +144,7 @@ const faqItems = [
   },
   {
     q: 'Which healthcare market research company operates in the most countries?',
-    a: 'IQVIA has the broadest geographic presence with 100+ country coverage for syndicated data. For custom primary research, BioNixus operates across 38 countries from 7 offices spanning the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil — delivering multilingual execution in English, Arabic, Portuguese, Spanish, and French.',
+    a: 'IQVIA has the broadest geographic presence with 100+ country coverage for syndicated data. For custom primary research, BioNixus operates across 48 countries from 7 offices spanning the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil — delivering multilingual execution in English, Arabic, Portuguese, Spanish, and French.',
   },
   {
     q: 'What therapy areas do top healthcare research companies cover?',
@@ -187,7 +187,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
       'Independent 2026 guide ranking the top global healthcare market research companies — pharmaceutical analytics, strategy consulting, and primary research firms compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-08-22',
+    dateModified: '2026-09-01',
     author: {
       '@type': 'Person',
       name: 'Haidy Yahia',
@@ -269,7 +269,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
               Top Global Healthcare Market Research Companies (2026 Guide)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus leads the 2026 ranking of top global healthcare market research companies, operating from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 127+ completed projects for 48 global clients. This independent guide profiles the leading firms serving pharmaceutical, biotech, and medtech research buyers worldwide.
+              BioNixus leads the 2026 ranking of top global healthcare market research companies, operating from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 127+ completed projects for 118 global clients. This independent guide profiles the leading firms serving pharmaceutical, biotech, and medtech research buyers worldwide.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare full-service primary research providers, data and analytics platforms, and strategy consultancies — evaluating global reach, therapy area depth, methodology, and value for pharmaceutical decision-makers.
@@ -440,7 +440,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
                 For pharmaceutical teams needing <strong className="text-foreground">custom primary evidence</strong> — physician surveys, KOL interviews, patient research, payer insight — full-service research firms deliver execution. Strategy consultants synthesise existing evidence into recommendations but typically partner with research firms for fieldwork.
               </p>
               <p>
-                <strong className="text-foreground">BioNixus uniquely bridges both</strong>, combining hands-on primary research execution with strategic synthesis across 38 countries. This means pharma clients get evidence generation and commercial interpretation from a single partner — without the cost and coordination overhead of separate research and consulting engagements.
+                <strong className="text-foreground">BioNixus uniquely bridges both</strong>, combining hands-on primary research execution with strategic synthesis across 48 countries. This means pharma clients get evidence generation and commercial interpretation from a single partner — without the cost and coordination overhead of separate research and consulting engagements.
               </p>
               <p>
                 IQVIA dominates syndicated data. Simon-Kucher leads in pricing. Each firm has a sweet spot. The optimal model often combines a primary research partner (BioNixus) with data subscriptions (IQVIA) and selective strategy consulting where needed.
@@ -514,7 +514,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
               Scope Global Healthcare Market Research with BioNixus
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers custom pharmaceutical and healthcare research across 38 countries — physician surveys, KOL mapping, HEOR, market access strategy, competitive intelligence, and brand health tracking.
+              BioNixus delivers custom pharmaceutical and healthcare research across 48 countries — physician surveys, KOL mapping, HEOR, market access strategy, competitive intelligence, and brand health tracking.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">

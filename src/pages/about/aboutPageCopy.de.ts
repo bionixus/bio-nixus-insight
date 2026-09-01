@@ -9,7 +9,7 @@ export const aboutPageCopyDe: AboutPageCopy = {
   heroTagline: 'Globales internationales Marktforschungsunternehmen',
   h1: 'Globale Marktforschung — auf pharmazeutischer Forschung aufgebaut, der am stärksten regulierten Branche, die wir bedienen, und über Branchen hinweg ausgeweitet',
   heroSubheadBeforeSa:
-    'BioNixus wurde 2012 in London in der pharmazeutischen Marktforschung gegründet — der am stärksten regulierten Branche, die wir bedienen. Als Kundenprogramme in den Nahen Osten und in die Amerikas reichten, eröffneten wir ein MENA-Regionalbüro im Großraum Kairo und richteten den globalen US-Hauptsitz in Wyoming ein. Diese GCP-konforme Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 38 Ländern — einschließlich dedizierter ',
+    'BioNixus wurde 2012 in London in der pharmazeutischen Marktforschung gegründet — der am stärksten regulierten Branche, die wir bedienen. Als Kundenprogramme in den Nahen Osten und in die Amerikas reichten, eröffneten wir ein MENA-Regionalbüro im Großraum Kairo und richteten den globalen US-Hauptsitz in Wyoming ein. Diese GCP-konforme Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 48 Ländern — einschließlich dedizierter ',
   heroLinkSa: 'Gesundheitsmarktforschung in Saudi-Arabien',
   heroSubheadBeforeUae: ', den ',
   heroLinkUae: 'VAE',
@@ -20,8 +20,8 @@ export const aboutPageCopyDe: AboutPageCopy = {
   ctaSecondary: 'Branchen entdecken',
   metrics: [
     { value: '127+', label: 'Abgeschlossene Projekte' },
-    { value: '48', label: 'Globale Kunden' },
-    { value: '38', label: 'Abgedeckte Länder' },
+    { value: '118', label: 'Globale Kunden' },
+    { value: '48', label: 'Abgedeckte Länder' },
     { value: '16', label: 'Branchenvertikalen' },
     { value: '14+', label: 'Therapiegebiete' },
   ],
@@ -49,9 +49,9 @@ export const aboutPageCopyDe: AboutPageCopy = {
     ' brachte uns arabisch-englische Field-Teams, Zugang zu Ärzten im gesamten GCC und in Nordafrika und operative Ausführung vor Ort, die Schreibtischforschung nie ersetzen kann. Der US-Hauptsitz in Sheridan, Wyoming folgte — nicht als Verlagerung, sondern als natürlicher Sitz für ein Unternehmen, dessen Kunden und Ambitionen wirklich global geworden waren. London blieb unsere europäische Basis und der Ort, an dem BioNixus begann.',
   storyAct3H3: 'Heute — unter den weltweit Top 100',
   storyAct3P1:
-    'Dieser Bogen — Londoner Wurzeln, regionale MENA-Tiefe, amerikanischer Hauptsitz — trug BioNixus in den Kreis der weltweit führenden 100 Marktforschungsunternehmen. Wir sind in 38 Ländern und über 14 Therapiegebiete tätig, auf Englisch, Arabisch, Französisch, Deutsch, Spanisch und Chinesisch. Die unter Regulierung geschmiedete pharmazeutische Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 16 Branchenvertikalen — weil Kunden uns baten, denselben Standard überall anzuwenden.',
+    'Dieser Bogen — Londoner Wurzeln, regionale MENA-Tiefe, amerikanischer Hauptsitz — trug BioNixus in den Kreis der weltweit führenden 100 Marktforschungsunternehmen. Wir sind in 48 Ländern und über 14 Therapiegebiete tätig, auf Englisch, Arabisch, Französisch, Deutsch, Spanisch und Chinesisch. Die unter Regulierung geschmiedete pharmazeutische Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 16 Branchenvertikalen — weil Kunden uns baten, denselben Standard überall anzuwenden.',
   storyAct3P2BeforePharma:
-    '127+ Projekte für 48 globale Kunden. Das Team, das Ihre Studie plant, ist noch immer das Team, das sie liefert. Das hat sich seit London nicht geändert. Was sich geändert hat, ist, wie viele Märkte — und wie viele Branchen — uns vertrauen. Entdecken Sie unsere ',
+    '127+ Projekte für 118 globale Kunden. Das Team, das Ihre Studie plant, ist noch immer das Team, das sie liefert. Das hat sich seit London nicht geändert. Was sich geändert hat, ist, wie viele Märkte — und wie viele Branchen — uns vertrauen. Entdecken Sie unsere ',
   storyAct3LinkPharma: 'Pharmazeutische & Gesundheitsforschung',
   storyAct3P2Mid1: ', den vollständigen ',
   storyAct3LinkIndustries: 'Branchen-Hub',
@@ -64,7 +64,7 @@ export const aboutPageCopyDe: AboutPageCopy = {
   differentiators: [
     {
       title: 'Globale Reichweite, regionale Umsetzung',
-      body: 'In London gegründet, in den USA headquartered, mit einem MENA-Regionalbüro im Großraum Kairo — BioNixus ist in 38 Ländern und sechs Sprachen im Feld. Unsere arabisch-englischen Teams im GCC und in Nordafrika kennen die Regulatoren, die Gesundheitsentscheidungen prägen — SFDA, DHA, MOHAP und EDA — sowie die klinischen Nuancen jeder Verschreibungspraxis.',
+      body: 'In London gegründet, in den USA headquartered, mit einem MENA-Regionalbüro im Großraum Kairo — BioNixus ist in 48 Ländern und sechs Sprachen im Feld. Unsere arabisch-englischen Teams im GCC und in Nordafrika kennen die Regulatoren, die Gesundheitsentscheidungen prägen — SFDA, DHA, MOHAP und EDA — sowie die klinischen Nuancen jeder Verschreibungspraxis.',
     },
     {
       title: 'Pharmazeutisches Erbe, branchenübergreifende Strenge',
