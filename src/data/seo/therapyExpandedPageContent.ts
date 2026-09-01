@@ -338,5 +338,15 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver account-level substitution confidence maps, tender scenario notes, physician and pharmacist objection libraries, and uptake models linked to biologics hubs, immunology research, and country reports where hospital procurement dominates access.',
     },
+    {
+      question: 'What is the Saudi Arabia biosimilar market outlook for 2026?',
+      answer:
+        'Saudi Arabia\'s biosimilar market is accelerating under SFDA interchangeability guidance, NUPCO central tender awards, and Vision 2030 localisation incentives. Research tracks which categories (insulin, filgrastim, adalimumab, trastuzumab) show pharmacist-led switching versus physician resistance, and how tender pricing compares to originator private-channel volumes.',
+    },
+    {
+      question: 'How do GCC biologics markets differ from generic injectables?',
+      answer:
+        'GCC biologics demand is driven by oncology, immunology, and diabetes hospital protocols with HTA-style evidence requirements, while generic injectables compete primarily on NUPCO and MOH tender price with faster substitution. Launch sequencing should treat these as separate access programmes — see our GCC pharmaceutical market research and Saudi biosimilar market reports for segment-level sizing.',
+    },
   ],
 };

@@ -160,9 +160,9 @@ export const CTR_SEO_BY_PATH = {
       'Japan medical devices market $41B in 2026 → ~$64B by 2032. PMDA Class I–IV (todokede/ninsho/shonin), NHI listing & hospital procurement — BioNixus market report.',
   },
   '/gcc-market-access-guide': {
-    title: 'GCC Market Access 2026: Pharma & MedTech Entry Guide',
+    title: 'GCC Pharma Market Access 2026: SFDA, MOHAP & NUPCO Guide',
     description:
-      'How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain.',
+      'GCC pharmaceutical market access 2026 — SFDA/MOHAP registration, NUPCO tenders, ERP pricing, biosimilar HTA and distributor requirements across all 6 GCC states. By BioNixus.',
   },
   '/healthcare-market-research': {
     title: 'Healthcare Market Research Company | Bionixus',
@@ -501,6 +501,32 @@ export const CTR_SEO_BY_PATH = {
     title: 'UAE Healthcare Market Trends 2026 Guide | BioNixus',
     description:
       'UAE healthcare trends 2026: payer tightening, DHA vs DOH access, specialty and biosimilars, and digital-health signals for pharma and medtech. BioNixus.',
+  },
+  // CTR sprint wave 8 (2026-09-01): GSC week — page-1 zero-click queries + high-impression thin pages.
+  '/japan-general-surgical-devices-market': {
+    title: 'Japan General Surgical Devices Market 2026: Size & Forecast',
+    description:
+      'Japan general surgical devices market 2026 — OR equipment, staplers, electrosurgical units, PMDA Class II/III pathways and hospital procurement. Report by BioNixus.',
+  },
+  '/brazil-healthcare-market-report': {
+    title: 'Brazil Healthcare Market 2026: ANVISA, SUS & CONITEC Guide',
+    description:
+      'Brazil healthcare market $165B in 2026 — ANVISA registration, SUS/CONITEC HTA, ANS private insurance, CMED pricing and pharma market outlook. Report by BioNixus.',
+  },
+  '/insights/top-healthcare-market-research-companies-dubai-2026': {
+    title: 'Pharmaceutical Companies in Dubai 2026: Top MR Firms Ranked',
+    description:
+      'Pharmaceutical companies in Dubai and UAE 2026 — ranked healthcare market research firms, MOHAP/DHA context and pharma fieldwork. Compare BioNixus & peers.',
+  },
+  '/gcc-pharma-market-report-2026': {
+    title: 'Saudi Arabia Biosimilar Market 2026: GCC Biologics Outlook',
+    description:
+      'Saudi Arabia biosimilar market and GCC biologics outlook 2026 — SFDA interchangeability, NUPCO tender dynamics and substitution research. By BioNixus.',
+  },
+  '/blog/healthcare-overview-brazil-market-2026': {
+    title: 'Brazil Pharmaceutical Market News 2026: Regulation & Health',
+    description:
+      'Latest pharmaceutical market news Brazil 2026 — ANVISA regulation, CMED pricing, CONITEC HTA and health policy updates for pharma teams. Analysis by BioNixus.',
   },
 };
 

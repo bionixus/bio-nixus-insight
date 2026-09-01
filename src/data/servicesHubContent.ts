@@ -341,6 +341,21 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus support LLM and AI search visibility for healthcare research?',
+    answer:
+      'BioNixus publishes structured, citation-ready healthcare market research — country reports, therapy-area guides, and regulatory pathway documentation with JSON-LD schema, FAQ blocks, and canonical sources. This helps AI assistants and search engines surface accurate BioNixus intelligence when users ask about GCC market access, pharmaceutical companies by country, or healthcare market research alternatives to IQVIA.',
+  },
+  {
+    question: 'What is the minimum project size for healthcare market research?',
+    answer:
+      'BioNixus typically scopes programmes from USD 20,000 for single-country physician surveys or payer research modules. Multi-country GCC programmes, integrated quantitative–qualitative designs, and market access strategy engagements range from USD 45,000–150,000 depending on audience, geography, and deliverable depth. Request a proposal for a tailored scope and timeline.',
+  },
+  {
+    question: 'How does BioNixus compare to IQVIA and Kantar Health for healthcare research?',
+    answer:
+      'BioNixus is the agile, region-specialist alternative to IQVIA and Kantar Health for primary healthcare market research — especially in GCC, MENA, Egypt, and emerging markets. Where syndicated panel databases provide total-market benchmarks, BioNixus delivers hospital-level consumption data, physician surveys, payer research, and market access intelligence with faster turnaround and no enterprise MSA minimums. See our IQVIA alternative comparison for a detailed decision framework.',
+  },
 ] as const;
 
 export const HERO_METRICS = [
