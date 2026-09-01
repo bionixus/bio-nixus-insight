@@ -482,6 +482,14 @@ const GccMarketAccessGuide = () => {
                 physician switching intent after NUPCO or MOH tender awards.
               </p>
               <p>
+                In 2026, GCC payers are tightening evidence expectations for high-cost biologics: Saudi SFDA Economic
+                Evaluation Submissions increasingly require budget-impact models calibrated to local epidemiology;
+                UAE emirate committees request comparative effectiveness summaries alongside price benchmarks; and Kuwait
+                MOH tender scoring weights therapeutic alternatives with explicit cost-per-patient projections. Teams
+                that treat HTA as a post-registration afterthought lose 6–12 months to committee cycles — integrated
+                research during Phase III or pre-launch planning compresses time-to-listing.
+              </p>
+              <p>
                 See also{' '}
                 <Link to="/heor-consulting-saudi-arabia" className="text-primary underline font-medium">
                   HEOR consulting Saudi Arabia
@@ -666,6 +674,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'How long does MOHAP pharmaceutical registration take in the UAE?',
+                  a: 'MOHAP registration in the UAE typically takes 6–12 months for generics and 12–18 months for new chemical entities, with separate emirate formulary reviews in Dubai (DHA) and Abu Dhabi (DOH/DOH) adding 3–6 months for hospital listing. A local authorised agent is mandatory; Arabic or bilingual labelling is required for most categories.',
+                },
+                {
+                  q: 'What is the difference between SFDA and MOHAP registration pathways?',
+                  a: 'Saudi Arabia\'s SFDA requires a local scientific office, Arabic labelling, and ERP-linked pricing before NUPCO tender eligibility. UAE MOHAP handles federal registration but emirate health authorities (DHA, DOH) control hospital formulary decisions independently. Launch teams targeting both markets need parallel regulatory and access research — registration alone does not guarantee hospital uptake.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

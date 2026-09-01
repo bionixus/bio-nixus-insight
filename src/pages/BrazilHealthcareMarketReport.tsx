@@ -48,6 +48,14 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus support Brazil-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Brazilian and Latin American pharmaceutical and medical device companies in entering GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys across all major therapeutic areas; and comparative Brazil vs. GCC market intelligence. Brazil and the GCC share several commercial parallels — large generic medicine markets, centralized public procurement, and premium private hospital sectors — that make BioNixus\'s cross-regional intelligence particularly relevant for Brazilian pharma companies planning MENA expansion.',
   },
+  {
+    question: 'What are the latest pharmaceutical market regulatory developments in Brazil for 2026?',
+    answer: 'Key 2026 developments include continued CMED price revision cycles referencing international benchmarks, CONITEC expansion of SUS-incorporated oncology and rare-disease therapies, ANVISA biosimilar interchangeability guidance updates, and ANS Rol de Procedimentos expansions covering additional biologics and gene therapies in the private supplementary sector. ANVISA\'s RDC 751/2022 GMP requirements affect both domestic manufacturers and importers. Companies monitoring Brazil pharmaceutical market news should track CMED gazette publications, CONITEC incorporation decisions, and ANS coverage list updates quarterly.',
+  },
+  {
+    question: 'How does Brazil\'s medical devices market compare to its pharmaceutical sector?',
+    answer: 'Brazil\'s medical devices market is estimated at USD 11–13 billion in 2026 — roughly 40% of pharmaceutical market value but growing faster in diagnostics, surgical robotics, and connected monitoring. ANVISA GGMED registration (Classes I–IV) and INMETRO electrical certification run parallel to pharmaceutical pathways. SUS procurement through CONITEC HTA and ANS private hospital adoption create the same dual-channel dynamic as medicines. See our Brazil medical devices market report for segment-level intelligence.',
+  },
 ], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-healthcare-market-report');
@@ -63,7 +71,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-09-01',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -117,7 +125,8 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
-          <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">Brazil's pharmaceutical industry news in 2026 centres on three policy threads: CMED maximum price revisions tied to international reference baskets, CONITEC decisions expanding SUS coverage for oncology biologics and rare-disease therapies, and ANS Rol expansions that pull innovative medicines into the private supplementary channel faster than SUS incorporation allows. Medical device teams face parallel ANVISA GGMED and INMETRO certification requirements with SUS tender cycles that differ from pharmaceutical CONITEC HTA timelines.</p>
+          <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link> and <Link to="/brazil-medtech-market-research" className="text-primary hover:underline font-medium">Brazil MedTech market research</Link> for device-specific ANVISA pathways.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="healthcare" />

@@ -220,6 +220,7 @@ const BIOSIMILARS_TAIL: ReferenceSection[] = [
     title: 'Forecasting biosimilar erosion and launch sequencing across markets',
     paragraphs: [
       'Erosion curves fail when analogues differ on administration setting, cold-chain logistics, centre concentration, or payer incentive structures. BioNixus pairs analogue review with measured substitution confidence, tender calendar intelligence, and account-level procurement behaviour so forecasts reflect operational reality.',
+      'GCC hospital systems (NUPCO, HMC, MOH Kuwait) increasingly mandate biosimilar substitution in tender awards — but physician and nurse training gaps create 3–6 month lag between policy and practice. European markets show the opposite pattern: rebate-driven switching with regional autonomy creating uneven erosion curves across Germany, France, and Nordics.',
       'Escalate biosimilar programmes through biologics and immunology hubs, Saudi biosimilar market reports, and healthcare market research country pages where hospital tendering dominates access.',
     ],
   },
