@@ -1,9 +1,10 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
+import { Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 interface FirmProfile {
@@ -639,6 +640,7 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
               {[
+                { to: '/pharmaceutical-companies-switzerland', label: 'Pharmaceutical companies in Switzerland', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
                 {
                   to: '/pharmaceutical-market-research-switzerland',
                   label: 'Pharmaceutical Market Research Switzerland',
@@ -673,31 +675,19 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Plan Market Research in Switzerland
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers multilingual pharmaceutical and healthcare market research across Switzerland — HCP surveys in German, French, and Italian, KOL mapping at Swiss university hospitals, BAG Spezialitätenliste payer research, Basel biopharma cluster intelligence, and Access Consortium benchmarking. Global standards. In-market Swiss execution.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/pharmaceutical-market-research-switzerland"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
-              >
+        <ListicleProposalCta
+          countryName="Switzerland"
+          ctaId="listicle_switzerland_footer"
+          headline="Need brand and competitor data in Switzerland?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/pharmaceutical-market-research-switzerland"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
                 View Swiss Research Capabilities
-              </Link>
-            </div>
-          </div>
-        </section>
+          </Link>
+        </ListicleProposalCta>
       </main>
       <Footer />
     </div>

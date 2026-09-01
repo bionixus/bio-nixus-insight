@@ -397,6 +397,7 @@ const staticPages = [
   { path: '/sfda-market-access-strategy-saudi-arabia', priority: '0.9', changefreq: 'monthly' },
   { path: '/biosimilar-market-entry-saudi-arabia', priority: '0.9', changefreq: 'monthly' },
   { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly' },
+  { path: '/nielsen-alternative', priority: '0.9', changefreq: 'monthly' },
   { path: '/kantar-health-alternative-gcc', priority: '0.9', changefreq: 'monthly' },
   { path: '/gfk-alternative-egypt', priority: '0.87', changefreq: 'monthly' },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', priority: '0.80', changefreq: 'monthly' },

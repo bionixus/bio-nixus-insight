@@ -5,6 +5,7 @@ import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, 
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 import {
   BIONIXUS_MR_HQ,
@@ -449,6 +450,13 @@ export default function TopMarketResearchCompaniesBrazil2026() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Related Resources</h2>
             <div className="grid md:grid-cols-2 gap-4">
+              <Link to="/pharmaceutical-companies-brazil" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-green-400 hover:bg-green-50 transition-colors">
+                <Building2 className="w-5 h-5 text-green-700 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-gray-900">Pharmaceutical companies in Brazil</div>
+                  <div className="text-sm text-gray-500">The companies we study — manufacturers, MNCs, and distributors.</div>
+                </div>
+              </Link>
               <Link to="/insights/top-healthcare-market-research-companies-brazil-2026" className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-green-400 hover:bg-green-50 transition-colors">
                 <BookOpen className="w-5 h-5 text-green-700 flex-shrink-0" />
                 <div>
@@ -465,19 +473,21 @@ export default function TopMarketResearchCompaniesBrazil2026() {
               </Link>
             </div>
           </section>
-
-          {/* CTA */}
-          <section className="bg-gradient-to-r from-green-800 to-blue-800 rounded-2xl p-8 text-white text-center">
-            <Building2 className="w-10 h-10 mx-auto mb-4 text-green-300" />
-            <h2 className="text-2xl font-bold mb-3">Planning Research in Brazil?</h2>
-            <p className="text-green-100 mb-6 max-w-2xl mx-auto">
-              BioNixus is a top global market research company delivering consumer brand tracking, U&A, segmentation, concept testing, and retail/shopper programmes in Brazil — with regulated-industry methodological rigour and Portuguese-English bilingual reporting.
-            </p>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-green-900 font-semibold px-6 py-3 rounded-lg hover:bg-green-50 transition-colors">
-              Request a Brazil Research Proposal <ArrowRight className="w-4 h-4" />
-            </Link>
-          </section>
         </div>
+
+        <ListicleProposalCta
+          countryName="Brazil"
+          ctaId="listicle_brazil_footer"
+          headline="Need brand and competitor data in Brazil?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/insights/top-healthcare-market-research-companies-brazil-2026"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
+            Top healthcare MR companies in Brazil
+          </Link>
+        </ListicleProposalCta>
       </main>
 
       <Footer />

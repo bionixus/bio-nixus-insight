@@ -69,10 +69,14 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return true;
   if (path === '/insights/top-consumer-insights-companies-ksa-2026') return true;
   if (path === '/insights/top-market-research-companies-uae-2026') return true;
+  if (path === '/insights/top-market-research-companies-gcc-2026') return true;
+  if (path === '/nielsen-alternative') return true;
   if (path === '/insights/top-market-research-companies-dubai-2026') return true;
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return true;
   if (path === '/insights/top-market-research-companies-riyadh-2026') return true;
   if (path === '/insights/top-healthcare-market-research-companies-saudi-arabia-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-uae-2026') return true;
+  if (path === '/insights/top-healthcare-market-research-companies-mena-2026') return true;
   if (path === '/insights/top-healthcare-market-research-companies-dubai-2026') return true;
   if (path === '/insights/top-healthcare-market-research-companies-abu-dhabi-2026') return true;
   if (path === '/insights/top-healthcare-market-research-companies-kuwait-2026') return true;

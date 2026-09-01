@@ -1,13 +1,15 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
+import { Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getHreflangLinks } from '@/lib/seo';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 
 interface FirmProfile {
   rank: number;
@@ -641,6 +643,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
                 </Link>{' '}
                 for methodology details.
               </p>
+              <ListicleIqviaBridge countryLabel="Saudi Arabia" />
             </div>
           </div>
         </section>
@@ -697,6 +700,8 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
                 { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies', desc: 'Global 2026 ranking of healthcare market research companies and agencies.' },
                 { to: '/insights/top-healthcare-market-research-companies-mena-2026', label: 'Top Healthcare MRC in MENA', desc: 'MENA healthcare market research companies — GCC and regional buyer shortlist.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of syndicated audits.' },
+                { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
+                { to: '/pharmaceutical-companies-saudi-arabia', label: 'Pharmaceutical companies in Saudi Arabia', desc: 'The companies we study — the matching country directory.' },
                 { to: '/insights/top-healthcare-market-research-companies-riyadh-2026', label: 'Top Healthcare MRC in Riyadh', desc: 'City-specific guide for Riyadh pharma and healthcare research.' },
               ].map((r) => (
                 <Link
@@ -712,33 +717,19 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Plan Healthcare Market Research in Saudi Arabia
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers SFDA-aware pharmaceutical and healthcare market research in Saudi Arabia — physician surveys,
-              KOL mapping, NUPCO procurement intelligence, HEOR evidence, competitive intelligence, and consumer research.
-              Global standards. In-country Saudi execution.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/strategic-portfolio"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
-              >
-                View Strategic Portfolio
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ListicleProposalCta
+          countryName="Saudi Arabia"
+          ctaId="listicle_ksa_healthcare_footer"
+          headline="Need brand and competitor data in Saudi Arabia?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/strategic-portfolio"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
+            View Strategic Portfolio
+          </Link>
+        </ListicleProposalCta>
       </main>
       <Footer />
     </div>

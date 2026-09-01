@@ -34,6 +34,11 @@ export function QualificationForm({ formId, sourceContext, defaultMarkets, onSuc
   const [freeMailWarning, setFreeMailWarning] = useState<string | null>(null);
   const [freeMailAcknowledged, setFreeMailAcknowledged] = useState(false);
   const [started, setStarted] = useState(false);
+  const [showAllMarkets, setShowAllMarkets] = useState(() =>
+    Boolean(defaultMarkets?.some((m) => !QUALIFICATION_FORM_MARKETS.slice(0, 7).includes(m as (typeof QUALIFICATION_FORM_MARKETS)[number]))),
+  );
+  const priorityMarkets = QUALIFICATION_FORM_MARKETS.slice(0, 7);
+  const visibleMarkets = showAllMarkets ? QUALIFICATION_FORM_MARKETS : priorityMarkets;
 
   const handleFirstInteraction = () => {
     if (started) return;
@@ -228,8 +233,8 @@ export function QualificationForm({ formId, sourceContext, defaultMarkets, onSuc
 
       <fieldset>
         <legend className="block text-sm font-medium text-foreground mb-2">Markets of interest</legend>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-1.5 max-h-36 overflow-y-auto pr-1">
-          {QUALIFICATION_FORM_MARKETS.map((market) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-1.5 pr-1">
+          {visibleMarkets.map((market) => (
             <label key={market} className="flex items-center gap-1.5 text-xs text-foreground cursor-pointer">
               <input
                 type="checkbox"
@@ -242,6 +247,15 @@ export function QualificationForm({ formId, sourceContext, defaultMarkets, onSuc
             </label>
           ))}
         </div>
+        {!showAllMarkets ? (
+          <button
+            type="button"
+            className="mt-2 text-xs font-medium text-primary hover:underline"
+            onClick={() => setShowAllMarkets(true)}
+          >
+            Show all {QUALIFICATION_FORM_MARKETS.length} markets
+          </button>
+        ) : null}
       </fieldset>
 
       <div className="grid sm:grid-cols-2 gap-4">

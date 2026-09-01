@@ -79,6 +79,14 @@ export const PHARMA_DIRECTORY_LISTICLE: Record<string, { to: string; label: stri
     to: '/insights/top-market-research-companies-morocco-2026',
     label: 'Top market research companies in Morocco (2026)',
   },
+  jordan: {
+    to: '/insights/top-market-research-companies-jordan-2026',
+    label: 'Top market research companies in Jordan (2026)',
+  },
+  'south-korea': {
+    to: '/insights/top-market-research-companies-south-korea-2026',
+    label: 'Top market research companies in South Korea (2026)',
+  },
   oman: {
     to: '/insights/top-market-research-companies-oman-2026',
     label: 'Top market research companies in Oman (2026)',
@@ -93,7 +101,7 @@ export const PHARMA_DIRECTORY_LISTICLE: Record<string, { to: string; label: stri
   },
 };
 
-/** Reverse pair: one listicle → matching pharma directory. Wave 1 countries. */
+/** Reverse pair: one listicle → matching pharma directory. Waves 1–2. */
 export const LISTICLE_DIRECTORY_PAIR: Record<string, { to: string; label: string }> = {
   '/insights/top-market-research-companies-egypt-2026': {
     to: '/pharmaceutical-companies-egypt',
@@ -131,6 +139,66 @@ export const LISTICLE_DIRECTORY_PAIR: Record<string, { to: string; label: string
     to: '/pharmaceutical-companies-bahrain',
     label: 'Pharmaceutical companies in Bahrain',
   },
+  '/insights/top-market-research-companies-usa-2026': {
+    to: '/pharmaceutical-companies-usa',
+    label: 'Pharmaceutical companies in the USA',
+  },
+  '/insights/top-market-research-companies-uk-2026': {
+    to: '/pharmaceutical-companies-uk',
+    label: 'Pharmaceutical companies in the UK',
+  },
+  '/insights/top-market-research-companies-germany-2026': {
+    to: '/pharmaceutical-companies-germany',
+    label: 'Pharmaceutical companies in Germany',
+  },
+  '/insights/top-market-research-companies-brazil-2026': {
+    to: '/pharmaceutical-companies-brazil',
+    label: 'Pharmaceutical companies in Brazil',
+  },
+  '/insights/top-market-research-companies-canada-2026': {
+    to: '/pharmaceutical-companies-canada',
+    label: 'Pharmaceutical companies in Canada',
+  },
+  '/insights/top-market-research-companies-turkey-2026': {
+    to: '/pharmaceutical-companies-turkey',
+    label: 'Pharmaceutical companies in Turkey',
+  },
+  '/insights/top-market-research-companies-india-2026': {
+    to: '/pharmaceutical-companies-india',
+    label: 'Pharmaceutical companies in India',
+  },
+  '/insights/top-market-research-companies-china-2026': {
+    to: '/pharmaceutical-companies-china',
+    label: 'Pharmaceutical companies in China',
+  },
+  '/insights/top-market-research-companies-japan-2026': {
+    to: '/pharmaceutical-companies-japan',
+    label: 'Pharmaceutical companies in Japan',
+  },
+  '/insights/top-market-research-companies-singapore-2026': {
+    to: '/pharmaceutical-companies-singapore',
+    label: 'Pharmaceutical companies in Singapore',
+  },
+  '/insights/top-market-research-companies-malaysia-2026': {
+    to: '/pharmaceutical-companies-malaysia',
+    label: 'Pharmaceutical companies in Malaysia',
+  },
+  '/insights/top-market-research-companies-switzerland-2026': {
+    to: '/pharmaceutical-companies-switzerland',
+    label: 'Pharmaceutical companies in Switzerland',
+  },
+  '/insights/top-market-research-companies-jordan-2026': {
+    to: '/pharmaceutical-companies-jordan',
+    label: 'Pharmaceutical companies in Jordan',
+  },
+  '/insights/top-market-research-companies-morocco-2026': {
+    to: '/pharmaceutical-companies-morocco',
+    label: 'Pharmaceutical companies in Morocco',
+  },
+  '/insights/top-market-research-companies-south-korea-2026': {
+    to: '/pharmaceutical-companies-south-korea',
+    label: 'Pharmaceutical companies in South Korea',
+  },
 };
 
 /** Maps directory display names onto QualificationForm market checkboxes. */
@@ -140,6 +208,10 @@ export const DIRECTORY_FORM_MARKET: Record<string, string> = {
   UAE: 'United Arab Emirates',
   'the UAE': 'United Arab Emirates',
   Egypt: 'Egypt',
+  GCC: 'Saudi Arabia',
+  'the GCC': 'Saudi Arabia',
+  MENA: 'Saudi Arabia',
+  'the MENA': 'Saudi Arabia',
   Qatar: 'Qatar',
   Oman: 'Oman',
   Bahrain: 'Bahrain',

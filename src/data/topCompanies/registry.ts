@@ -246,14 +246,26 @@ const RELATED_LINK_CORRECTIONS: Record<string, string> = {
  * The registry accumulated 31 links to pages that were never built (localized
  * listicles, a LATAM roundup, a Morocco page), each a crawlable 404.
  */
+const IQVIA_MENA_RELATED: CountryListicleConfig['related'] = [
+  { to: '/iqvia-alternative', label: 'IQVIA alternative — primary research' },
+  { to: '/nielsen-alternative', label: 'Nielsen alternative — account-level data' },
+  { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA' },
+];
+
 export function resolvePublishedRelated(
   config: CountryListicleConfig,
 ): CountryListicleConfig['related'] {
   const seen = new Set<string>();
   const directory = directoryForListiclePath(config.slug);
-  const seeded = directory
-    ? [{ to: directory.to, label: directory.label }, ...config.related]
-    : config.related;
+  const iqvia =
+    config.lang === 'en' && (config.region === 'gcc' || config.region === 'mena')
+      ? IQVIA_MENA_RELATED
+      : [];
+  const seeded = [
+    ...(directory ? [{ to: directory.to, label: directory.label }] : []),
+    ...iqvia,
+    ...config.related,
+  ];
   return seeded.flatMap((link) => {
     const corrected = RELATED_LINK_CORRECTIONS[link.to];
     const path = corrected ?? link.to;

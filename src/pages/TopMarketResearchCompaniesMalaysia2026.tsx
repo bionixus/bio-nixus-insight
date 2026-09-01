@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, Building2, Globe, Users, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 interface FirmProfile {
@@ -713,6 +714,7 @@ export default function TopMarketResearchCompaniesMalaysia2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/pharmaceutical-companies-malaysia', label: 'Pharmaceutical companies in Malaysia', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
                 {
                   to: '/insights/top-healthcare-market-research-companies-malaysia-2026',
                   label: 'Top Healthcare Market Research Companies Malaysia 2026',
@@ -747,33 +749,19 @@ export default function TopMarketResearchCompaniesMalaysia2026() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Plan Market Research in Malaysia
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers NPRA- and MaHTAS-aligned, GCP-compliant pharmaceutical and healthcare market research
-              across Malaysia — HCP surveys at major AMCs and tertiary hospitals, KOL mapping, MOH and FUKKM payer
-              research, and HEOR evidence generation. Global standards. In-market Malaysian execution and ASEAN reach.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/pharmaceutical-market-research-malaysia"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
-              >
+        <ListicleProposalCta
+          countryName="Malaysia"
+          ctaId="listicle_malaysia_footer"
+          headline="Need brand and competitor data in Malaysia?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/pharmaceutical-market-research-malaysia"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
                 View Malaysian Research Capabilities
-              </Link>
-            </div>
-          </div>
-        </section>
+          </Link>
+        </ListicleProposalCta>
       </main>
       <Footer />
     </div>

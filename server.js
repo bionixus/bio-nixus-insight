@@ -163,7 +163,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
   if (path === '/strategic-portfolio') return 'BioNixus Strategic Portfolio | Market Research & Consulting';
   if (path === '/ar/strategic-portfolio') return 'محفظة BioNixus الاستراتيجية | أبحاث السوق والاستشارات';
-  if (path === '/insights/top-market-research-companies-egypt-2026') return '5 Best Market Research Companies in Egypt (2026) | Ranked Buyer Guide | BioNixus';
+  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Best Market Research Companies in Egypt (2026) | Ranked';
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return '5 أفضل شركات أبحاث السوق في مصر (2026) | دليل المشترين | BioNixus';
   if (path === '/insights/top-market-research-companies-brazil-2026') return '5 Best Market Research Companies in Brazil (2026) | LATAM Agency Rankings | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-brazil-2026') return '5 Best Healthcare Market Research Firms in Brazil (2026) | ANVISA Specialists | BioNixus';

@@ -1,10 +1,12 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
+import { Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 
 interface FirmProfile {
   rank: number;
@@ -656,6 +658,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
                 </Link>{' '}
                 provide local depth.
               </p>
+              <ListicleIqviaBridge countryLabel="MENA" />
             </div>
           </div>
         </section>
@@ -753,6 +756,16 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
                   label: 'BioNixus Middle East Pillar',
                   desc: 'Middle East pharmaceutical and healthcare market research capabilities.',
                 },
+                {
+                  to: '/iqvia-alternative',
+                  label: 'IQVIA Alternative',
+                  desc: 'When you need custom primary research instead of audits.',
+                },
+                {
+                  to: '/nielsen-alternative',
+                  label: 'Nielsen Alternative',
+                  desc: 'Account-level and traditional-trade data syndicated panels miss.',
+                },
               ].map((r) => (
                 <Link
                   key={r.to}
@@ -767,31 +780,19 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
           </div>
         </section>
 
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Plan Healthcare Market Research Across MENA
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers primary HCP and payer research across MENA — Arabic-English bilingual fieldwork from
-              Cairo, Riyadh, Dubai, and Kuwait City. Global standards. In-market Middle East execution.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/bionixus-market-research-middle-east"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
-              >
-                View Middle East Capabilities
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ListicleProposalCta
+          countryName="MENA"
+          ctaId="listicle_mena_healthcare_footer"
+          headline="Need brand and competitor data in MENA?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/bionixus-market-research-middle-east"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
+            View Middle East Capabilities
+          </Link>
+        </ListicleProposalCta>
       </main>
       <Footer />
     </div>

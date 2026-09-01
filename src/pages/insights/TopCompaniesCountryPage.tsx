@@ -3,11 +3,13 @@ import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { Building2, Globe, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
+import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import type { CountryListicleConfig } from '@/data/topCompanies/types';
 import { resolvePublishedHreflang, resolvePublishedRelated } from '@/data/topCompanies/registry';
+import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 
 interface Props {
   config: CountryListicleConfig;
@@ -51,23 +53,11 @@ export default function TopCompaniesCountryPage({ config }: Props) {
     about: { '@type': 'Place', name: config.country },
   };
 
-  const itemListSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
+  const itemListSchema = buildListicleItemListSchema({
     name: title,
-    numberOfItems: firms.length,
-    itemListElement: firms.map((f) => ({
-      '@type': 'ListItem',
-      position: f.rank,
-      item: {
-        '@type': 'Organization',
-        ...(f.orgId ? { '@id': f.orgId } : {}),
-        name: f.name,
-        url: f.url,
-        description: `Best for: ${f.bestFor}`,
-      },
-    })),
-  };
+    canonical,
+    firms,
+  });
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -329,6 +319,14 @@ export default function TopCompaniesCountryPage({ config }: Props) {
             </div>
           </section>
         )}
+
+        {config.lang === 'en' && (config.region === 'gcc' || config.region === 'mena') ? (
+          <section className="section-padding py-12">
+            <div className="container-wide max-w-5xl mx-auto">
+              <ListicleIqviaBridge countryLabel={config.country} />
+            </div>
+          </section>
+        ) : null}
 
         {/* FAQ */}
         <section className="section-padding py-16" id="faq">

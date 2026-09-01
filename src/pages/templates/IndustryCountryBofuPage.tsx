@@ -586,12 +586,21 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
             </p>
             <div className="bx-cta-actions">
               <Link to="/contact" className="bx-btn-gold">
-                Book a discovery call →
+                Request a proposal →
               </Link>
-              <a href="mailto:info@bionixus.com" className="bx-btn-ghost">
-                info@bionixus.com
+              <a href="mailto:admin@bionixus.com" className="bx-btn-ghost">
+                admin@bionixus.com
               </a>
             </div>
+            {!config.industry.isHealthcareAdjacent ? (
+              <p className="bx-lead" style={{ marginTop: 16 }}>
+                Already on a syndicated feed? See the{' '}
+                <Link to="/nielsen-alternative">Nielsen alternative</Link>
+                {' '}and{' '}
+                <Link to="/iqvia-alternative">IQVIA alternative</Link>
+                {' '}for account-level primary research.
+              </p>
+            ) : null}
           </div>
         </section>
       </main>

@@ -8,6 +8,8 @@ export interface IndustryListicleCrossLink {
 /** Paths served by rich standalone listicle pages — matrix template must not register these. */
 export const DEDICATED_INDUSTRY_LISTICLE_PATHS = new Set<string>([
   '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
+  '/insights/top-healthcare-market-research-companies-uae-2026',
+  '/insights/top-healthcare-market-research-companies-mena-2026',
   '/insights/top-healthcare-market-research-companies-dubai-2026',
   '/insights/top-healthcare-market-research-companies-abu-dhabi-2026',
   '/insights/top-healthcare-market-research-companies-kuwait-2026',

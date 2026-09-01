@@ -7,6 +7,8 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getHreflangLinks } from '@/lib/seo';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
+import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
+import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
@@ -319,25 +321,13 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
       'market research firms ksa, market research companies ksa, market research firms saudi arabia, top market research companies in saudi arabia, BioNixus, IQVIA alternative Saudi Arabia',
   };
 
-  const itemListSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
+  const itemListSchema = buildListicleItemListSchema({
     name: 'Market Research Firms in KSA 2026',
     description:
       'Market research firms in KSA ranked by custom primary research capability, bilingual execution, and multi-industry depth.',
-    numberOfItems: firms.length,
-    itemListElement: firms.map((f) => ({
-      '@type': 'ListItem',
-      position: f.rank,
-      item: {
-        '@type': 'Organization',
-        ...(f.orgId ? { '@id': f.orgId } : {}),
-        name: f.name,
-        url: f.url,
-        description: `Best for: ${f.bestFor}`,
-      },
-    })),
-  };
+    canonical: CANONICAL,
+    firms,
+  });
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -739,6 +729,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                 market research with regulated-sector methodological depth and bilingual Saudi fieldwork — not a
                 syndicated data subscription alone.
               </p>
+              <ListicleIqviaBridge countryLabel="Saudi Arabia" />
             </div>
           </div>
         </section>
@@ -793,6 +784,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                 { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Healthcare MR Companies Saudi Arabia', desc: 'SFDA-aware healthcare and pharma firm rankings.' },
                 { to: '/insights/top-market-research-companies-riyadh-2026', label: 'Top Market Research Companies in Riyadh', desc: 'Sister guide focused on the Saudi capital.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
+                { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
                 { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
                 { to: '/kantar-health-alternative-gcc', label: 'Kantar Health Alternative GCC', desc: 'GCC healthcare research alternative to Kantar Health.' },
                 { to: '/market-research', label: 'Market Research Services', desc: 'Consumer, FMCG, retail, and multi-industry capabilities.' },

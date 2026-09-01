@@ -1,9 +1,10 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BarChart3, Building2, Globe, Users, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
+import { BarChart3, Building2, Globe, Users, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 interface FirmProfile {
@@ -588,6 +589,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/pharmaceutical-companies-usa', label: 'Pharmaceutical companies in the USA', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
                 { to: '/insights/top-healthcare-market-research-companies-usa-2026', label: 'Top Healthcare MRC in USA', desc: 'Deep dive into the top healthcare and pharma research firms in the US — IRB compliance, KOL mapping, PBM payer research.' },
                 { to: '/pharmaceutical-market-research-usa', label: 'US Pharmaceutical Market Research', desc: 'FDA-aligned pharmaceutical research covering HCP surveys, KOL mapping, PBM payer research, and IRA intelligence.' },
                 { to: '/healthcare-market-research-usa', label: 'Healthcare Market Research USA', desc: 'US healthcare research overview — HCP surveys, payer research, HEOR, and patient studies.' },
@@ -608,31 +610,19 @@ export default function TopMarketResearchCompaniesUsa2026() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Plan Market Research in the USA
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers IRB-compliant pharmaceutical and healthcare market research across the USA — HCP surveys at major AMCs, KOL mapping, PBM payer research, IRA impact intelligence, and HEOR evidence generation. Global standards. In-market US execution.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/pharmaceutical-market-research-usa"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
-              >
-                View US Research Capabilities
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ListicleProposalCta
+          countryName="United States"
+          ctaId="listicle_usa_footer"
+          headline="Need brand and competitor data in the USA?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/pharmaceutical-market-research-usa"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
+            View US Research Capabilities
+          </Link>
+        </ListicleProposalCta>
       </main>
       <Footer />
     </div>

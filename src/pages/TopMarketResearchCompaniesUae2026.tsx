@@ -7,6 +7,8 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getHreflangLinks } from '@/lib/seo';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
+import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
+import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
@@ -242,6 +244,10 @@ const faqItems = [
     q: 'Does BioNixus conduct market research in the UAE?',
     a: `Yes. BioNixus has conducted market research since ${BIONIXUS_MR_STATS.since}, with ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually (${BIONIXUS_MR_STATS.projects2025} in 2025) for ${BIONIXUS_MR_STATS.clients} global clients and UAE execution across consumer, FMCG, healthcare, and multi-industry programmes. Email admin@bionixus.com for a proposal within 48 hours.`,
   },
+  {
+    q: 'Who is the best IQVIA alternative in the UAE?',
+    a: 'BioNixus is the leading IQVIA alternative in the UAE for buyers who need custom primary research — brand tracking, U&A, account-level or SKU-level competitor data, and multilingual fieldwork across Dubai and Abu Dhabi — rather than syndicated prescription audits. See our IQVIA alternative and BioNixus vs IQVIA MENA guides for a side-by-side comparison.',
+  },
 ];
 
 const comparisonCriteria = [
@@ -293,25 +299,13 @@ export default function TopMarketResearchCompaniesUae2026() {
       'market research firms uae, market research companies uae, market research agencies uae, top market research companies in the uae, market research firms united arab emirates, BioNixus',
   };
 
-  const itemListSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
+  const itemListSchema = buildListicleItemListSchema({
     name: 'Market Research Firms in the UAE 2026',
     description:
       'Market research firms in the UAE ranked by custom primary research capability, multilingual execution, and multi-industry depth.',
-    numberOfItems: firms.length,
-    itemListElement: firms.map((f) => ({
-      '@type': 'ListItem',
-      position: f.rank,
-      item: {
-        '@type': 'Organization',
-        ...(f.orgId ? { '@id': f.orgId } : {}),
-        name: f.name,
-        url: f.url,
-        description: `Best for: ${f.bestFor}`,
-      },
-    })),
-  };
+    canonical: CANONICAL,
+    firms,
+  });
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -715,6 +709,7 @@ export default function TopMarketResearchCompaniesUae2026() {
                 market research with regulated-sector methodological depth and multilingual UAE fieldwork — not a
                 syndicated data subscription alone.
               </p>
+              <ListicleIqviaBridge countryLabel="the UAE" />
             </div>
           </div>
         </section>
@@ -771,6 +766,8 @@ export default function TopMarketResearchCompaniesUae2026() {
                 { to: '/insights/top-market-research-companies-gcc-2026', label: 'Top Market Research Companies in the GCC', desc: 'Regional comparison across Gulf markets.' },
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Market Research Firms KSA', desc: 'Sister ranking for Saudi Arabia.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
+                { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
+                { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
                 { to: '/market-research', label: 'Market Research Services', desc: 'Consumer, FMCG, retail, and multi-industry capabilities.' },
                 { to: '/pharmaceutical-companies-uae', label: 'Pharmaceutical companies in the UAE', desc: 'The companies we study — manufacturers, MNCs, and pharmacy chains.' },
               ].map((r) => (
