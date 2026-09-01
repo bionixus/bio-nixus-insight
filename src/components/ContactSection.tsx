@@ -259,22 +259,20 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
     const ch = t.contactHomeEmbed;
     const contactPageHref = localizedContactPath(language);
     return (
-      <section id="contact" className="section-padding bg-background border-t border-border" ref={sectionRef}>
-        <div className={`container-wide max-w-3xl mx-auto ${isRTL ? 'text-right' : ''}`}>
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">{ch.title}</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">{ch.body}</p>
-          <p className="text-sm text-muted-foreground mb-8">
-            <a href="mailto:admin@bionixus.com" className="text-primary font-medium hover:underline">
+      <section id="contact" className="premium-home-cream section-padding" ref={sectionRef}>
+        <div className={`container-wide mx-auto max-w-3xl text-center ${isRTL ? 'text-right md:text-center' : ''}`}>
+          <span className="mx-auto mb-5 block h-px w-10 bg-[#C9A84C]/40" aria-hidden="true" />
+          <h2 className="mb-4 font-display text-3xl md:text-4xl font-light tracking-tight text-[#0C1B33]">{ch.title}</h2>
+          <p className="mb-6 text-lg font-light leading-relaxed text-[#7A7267]">{ch.body}</p>
+          <p className="mb-8 text-sm font-light text-[#7A7267]">
+            <a href="mailto:admin@bionixus.com" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline">
               {ch.emailLine}
             </a>
           </p>
-          <Link
-            to={contactPageHref}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity group"
-          >
+          <Link to={contactPageHref} className="premium-gold-btn group">
             {ch.cta}
             <ArrowRight
-              className={`w-5 h-5 transition-transform ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}
+              className={`h-4 w-4 transition-transform ${isRTL ? 'rtl:scale-x-[-1] group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}
             />
           </Link>
         </div>

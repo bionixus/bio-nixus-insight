@@ -18,24 +18,20 @@ const TestimonialsSection = () => {
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 120 });
 
   return (
-    <section id="testimonials" className="section-padding bg-cream-dark" ref={sectionRef}>
-      <div className="container-wide">
-        {/* Trusted by Industry Leaders – continuous marquee ticker */}
-        <div className="mb-16 pb-12 border-b border-border">
-          <p className="text-center text-sm text-foreground/70 mb-8 uppercase tracking-widest">
+    <section id="testimonials" className="premium-home-midnight section-padding" ref={sectionRef}>
+      <div className="container-wide relative z-10 max-w-6xl">
+        <div className="mb-16 border-b border-white/10 pb-12">
+          <p className="mb-8 text-center text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
             {t.homePage.testimonials.marquee}
           </p>
-          <div className="overflow-hidden select-none w-full" aria-hidden="true">
-            <div
-              className="flex animate-marquee will-change-transform"
-              style={{ width: 'max-content' }}
-            >
+          <div className="w-full overflow-hidden select-none" aria-hidden="true">
+            <div className="flex w-max animate-marquee will-change-transform">
               {[...Array(3)].map((_, set) => (
-                <div key={set} className="flex items-center gap-16 shrink-0 px-8">
+                <div key={set} className="flex shrink-0 items-center gap-16 px-8">
                   {t.ui.brands.companies.map((company) => (
                     <span
                       key={`${set}-${company}`}
-                      className="text-xl font-display font-semibold text-foreground/75 whitespace-nowrap"
+                      className="whitespace-nowrap font-display text-xl font-medium text-white/35"
                     >
                       {company}
                     </span>
@@ -46,23 +42,22 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line sr-line-center">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <span className="mx-auto mb-5 block h-px w-10 bg-[#0EA5A0]/40" aria-hidden="true" />
+          <h2 className="mb-5 font-display text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-[#FFFEFB] sr sr-up">
             {t.testimonials.title}
           </h2>
-          <p className="text-lg text-foreground/70 sr sr-up">
+          <p className="text-base font-light leading-relaxed text-white/45 sr sr-up">
             {t.testimonials.subtitle}
           </p>
         </div>
 
-        {/* Case Study Teasers Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid gap-6 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <Link
               key={index}
               to="/case-studies"
-              className="group bg-background rounded-xl shadow-sm border border-border sr sr-scale-up sr-spring hover-lift block transition-colors hover:border-primary/30 overflow-hidden"
+              className="premium-card-dark group block overflow-hidden sr sr-scale-up sr-spring"
             >
               <OptimizedImage
                 src={TESTIMONIAL_THUMBNAILS[index % TESTIMONIAL_THUMBNAILS.length].src}
@@ -71,32 +66,27 @@ const TestimonialsSection = () => {
                 })}
                 width={400}
                 height={240}
-                className="w-full h-40 object-cover"
+                className="h-40 w-full object-cover opacity-80 transition-opacity group-hover:opacity-100"
                 loading="lazy"
               />
               <div className="p-8">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-primary/80 bg-primary/10 px-3 py-1 rounded-full">
-                  {testimonial.role}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  {testimonial.company}
-                </span>
-              </div>
-              <p className="text-lg text-foreground leading-relaxed mb-6 font-display">
-                {testimonial.quote}
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="font-semibold text-foreground">
-                  {testimonial.author}
-                </span>
-                <ArrowRight className="w-5 h-5 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all" />
-              </div>
+                <div className="mb-4 flex items-center gap-2">
+                  <span className="rounded-full bg-[#C9A84C]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#C9A84C]">
+                    {testimonial.role}
+                  </span>
+                  <span className="text-xs text-white/35">{testimonial.company}</span>
+                </div>
+                <p className="mb-6 font-display text-lg font-light leading-relaxed text-[#FFFEFB]">
+                  {testimonial.quote}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-white/70">{testimonial.author}</span>
+                  <ArrowRight className="h-5 w-5 text-[#C9A84C]/70 transition-all group-hover:translate-x-1 group-hover:text-[#C9A84C] rtl:rotate-180" />
+                </div>
               </div>
             </Link>
           ))}
         </div>
-
       </div>
     </section>
   );

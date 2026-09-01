@@ -4,27 +4,29 @@ import {
   Users, 
   Microscope, 
   Rocket, 
-  BarChart3 
+  BarChart3,
+  ArrowRight,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import type { HomePageUiOverlay } from '@/lib/homePageUiStrings';
-import { localizedContactPath } from '@/lib/seo';
+import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
+import { HOME_SERVICE_PATHS } from '@/lib/homePageJsonLd';
+import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 
 type ServicesOverlayCopy = NonNullable<HomePageUiOverlay['services']>;
 
 const icons = [TrendingUp, Target, Users, Microscope, Rocket, BarChart3];
 
-/** Maps each service card index to its dedicated page slug (or null for no link). */
-const serviceLinks: (string | null)[] = [
-  '/services/quantitative-research',
-  '/services/qualitative-research',
-  '/services/market-access',
-  '/services/kol-stakeholder-mapping',
-  null, // Geographic Coverage — no dedicated page
-  null, // Methodology & Compliance — no dedicated page
-];
+const ICON_WELLS = [
+  'bg-[#EBF4FF] text-[#2563EB]',
+  'bg-[#E6FAF8] text-[#0EA5A0]',
+  'bg-[#FFF0ED] text-[#E06852]',
+  'bg-[#FDF6E3] text-[#C9A84C]',
+  'bg-[#E8EEF6] text-[#12284A]',
+  'bg-[#F3F1EC] text-[#3D3830]',
+] as const;
 
 type PrimaryArBlock = { title: string; lead: string; countries: { name: string; items: string[] }[]; deliverables: string };
 type SecondaryArBlock = { title: string; intro: string; regions: { name: string; items: string[] }[]; note: string };
@@ -76,14 +78,16 @@ const ServicesSection = () => {
         : t.services.items;
 
   return (
-    <section id="services" className="section-padding bg-cream" ref={sectionRef}>
-      <div className="container-wide">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line sr-line-center">
+    <section id="services" className="premium-home-cream section-padding" ref={sectionRef}>
+      <div className="container-wide max-w-6xl">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <div className="sr sr-up">
+            <PremiumEyebrow>{t.nav.services}</PremiumEyebrow>
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-light tracking-tight text-[#0C1B33] mb-5 sr sr-up">
             {t.services.title}
           </h2>
-          <p className="text-lg text-muted-foreground sr sr-up">
+          <p className="text-base md:text-lg font-light leading-relaxed text-[#7A7267] sr sr-up">
             {t.services.subtitle}
           </p>
         </div>
@@ -92,7 +96,7 @@ const ServicesSection = () => {
         {showPrimaryAr && primaryBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-primary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-primary premium-card mb-10 md:mb-12 animate-fade-up"
             dir="rtl"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -125,7 +129,7 @@ const ServicesSection = () => {
         {showPrimaryDe && primaryDeBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-primary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-primary premium-card mb-10 md:mb-12 animate-fade-up"
             lang="de"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -160,7 +164,7 @@ const ServicesSection = () => {
         {showSecondaryDe && secondaryDeBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-secondary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-secondary premium-card mb-10 md:mb-12 animate-fade-up"
             lang="de"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -181,7 +185,7 @@ const ServicesSection = () => {
         {showPrimaryFr && primaryFrBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-primary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-primary premium-card mb-10 md:mb-12 animate-fade-up"
             lang="fr"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -216,7 +220,7 @@ const ServicesSection = () => {
         {showSecondaryFr && secondaryFrBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-secondary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-secondary premium-card mb-10 md:mb-12 animate-fade-up"
             lang="fr"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -239,7 +243,7 @@ const ServicesSection = () => {
         {showPrimaryEs && primaryEsBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-primary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-primary premium-card mb-10 md:mb-12 animate-fade-up"
             lang="es"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -274,7 +278,7 @@ const ServicesSection = () => {
         {showSecondaryEs && secondaryEsBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-secondary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-secondary premium-card mb-10 md:mb-12 animate-fade-up"
             lang="es"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -297,7 +301,7 @@ const ServicesSection = () => {
         {showPrimaryZh && primaryZhBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-primary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-primary premium-card mb-10 md:mb-12 animate-fade-up"
             lang="zh-CN"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -332,7 +336,7 @@ const ServicesSection = () => {
         {showSecondaryZh && secondaryZhBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-secondary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-secondary premium-card mb-10 md:mb-12 animate-fade-up"
             lang="zh-CN"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -355,7 +359,7 @@ const ServicesSection = () => {
         {showSecondaryAr && secondaryBlocks.map((block, blockIndex) => (
           <div
             key={blockIndex}
-            className="service-secondary mb-12 md:mb-16 rounded-xl bg-background p-8 md:p-10 shadow-sm border border-border animate-fade-up"
+            className="service-secondary premium-card mb-10 md:mb-12 animate-fade-up"
             dir="rtl"
           >
             <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-4">
@@ -385,38 +389,44 @@ const ServicesSection = () => {
         ))}
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {gridItems.map((service, index) => {
             const iconIndex =
               showPrimaryFr || showPrimaryEs || showPrimaryZh ? index : showPrimaryAr ? index + primaryBlocks.length : showPrimaryDe ? index + primaryDeBlocks.length : index;
             const Icon = icons[iconIndex];
-            const linkHref = serviceLinks[iconIndex] || null;
-            const isPriorityCard = iconIndex === 0;
+            const rawLink = HOME_SERVICE_PATHS[iconIndex];
+            const linkHref = rawLink ? getLocalizedPathForLanguage(rawLink, language) : null;
             const showCountryDepthBadge = iconIndex === 4;
+            const well = ICON_WELLS[iconIndex] ?? ICON_WELLS[0];
 
             const cardContent = (
               <>
                 {showCountryDepthBadge ? (
-                  <span className="inline-flex mb-3 rounded-full bg-primary/15 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                  <span className="mb-4 inline-flex rounded-full bg-[#C9A84C]/15 px-2.5 py-1 text-[11px] font-semibold text-[#9A7A2E]">
                     {servicesCopy.countryDepthBadge}
                   </span>
                 ) : null}
-                <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
-                  <Icon className="w-7 h-7 text-primary" />
+                <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${well}`}>
+                  <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-display font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
+                <h3 className="mb-4 font-display text-xl font-medium tracking-tight text-[#0C1B33] transition-colors group-hover:text-[#C9A84C]">
                   {service.title}
                 </h3>
-                <p className="service-card-muted text-muted-foreground leading-relaxed">
+                <p className="service-card-muted text-[15px] font-light leading-relaxed text-[#7A7267]">
                   {service.description}
                 </p>
                 {'bullets' in service && Array.isArray((service as { bullets?: string[] }).bullets) && (
-                  <ul className="service-card-muted mt-4 list-disc list-inside text-muted-foreground leading-relaxed space-y-1">
+                  <ul className="service-card-muted mt-4 list-disc space-y-1 ps-5 text-[15px] font-light leading-relaxed text-[#7A7267]">
                     {(service as { bullets: string[] }).bullets.map((b, i) => (
                       <li key={i}>{b}</li>
                     ))}
                   </ul>
                 )}
+                {linkHref ? (
+                  <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide text-[#C9A84C] transition-all group-hover:gap-3">
+                    <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
+                  </span>
+                ) : null}
               </>
             );
 
@@ -424,18 +434,14 @@ const ServicesSection = () => {
               <Link
                 key={index}
                 to={linkHref}
-                className={`service-card group sr sr-scale-up sr-spring hover-lift cursor-pointer ${
-                  isPriorityCard ? 'border-primary/40 bg-gradient-to-br from-primary/10 via-background to-background' : ''
-                }`}
+                className="premium-card group flex h-full flex-col sr sr-scale-up sr-spring cursor-pointer"
               >
                 {cardContent}
               </Link>
             ) : (
               <div
                 key={index}
-                className={`service-card group sr sr-scale-up sr-spring hover-lift ${
-                  isPriorityCard ? 'border-primary/40 bg-gradient-to-br from-primary/10 via-background to-background' : ''
-                }`}
+                className="premium-card group flex h-full flex-col sr sr-scale-up sr-spring"
               >
                 {cardContent}
               </div>
@@ -443,13 +449,11 @@ const ServicesSection = () => {
           })}
         </div>
 
-        <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center sr sr-up">
-          <p className="text-foreground font-medium mb-4">{servicesCopy.bottomCtaPrompt}</p>
-          <Link
-            to={localizedContactPath(language)}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
-          >
+        <div className="premium-card mt-12 text-center sr sr-up">
+          <p className="mb-6 font-display text-xl font-medium text-[#0C1B33]">{servicesCopy.bottomCtaPrompt}</p>
+          <Link to={localizedContactPath(language)} className="premium-gold-btn">
             {servicesCopy.bottomCtaButton}
+            <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
           </Link>
         </div>
       </div>

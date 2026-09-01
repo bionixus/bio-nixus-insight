@@ -1,6 +1,11 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { getLocalizedPathForLanguage } from '@/lib/seo';
+import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
+import type { Language } from '@/lib/i18n';
 
 type MethodologySectionProps = { nestUnderParentH1?: boolean };
 
@@ -54,285 +59,135 @@ function MethodologySubHeading({
 
 type MethodologyStep = {
   title: string;
+  description?: string;
   items?: string[];
   subsections?: { heading: string; items: string[] }[];
 };
-type MethodologyAr = { title: string; steps: MethodologyStep[] };
-type MethodologyStepDe = { title: string; description: string };
-type MethodologyDe = { title: string; steps: MethodologyStepDe[] };
 
-type MethodologyFr = MethodologyDe;
-type MethodologyEs = MethodologyDe;
-type MethodologyZh = MethodologyDe;
+type MethodologyBundle = {
+  title: string;
+  intro?: string;
+  steps: MethodologyStep[];
+};
 
-type MethodologyEn = { title: string; intro?: string; steps: MethodologyStepDe[] };
+const LANG_ATTR: Record<Language, string | undefined> = {
+  en: 'en',
+  de: 'de',
+  fr: 'fr',
+  es: 'es',
+  zh: 'zh-CN',
+  ar: 'ar',
+  pt: 'pt',
+  ru: 'ru',
+};
 
 const MethodologySection = ({ nestUnderParentH1 = false }: MethodologySectionProps) => {
   const { t, language } = useLanguage();
   const sectionRef = useScrollReveal<HTMLElement>({ stagger: 100 });
-  const dataEn = 'methodologyEn' in t ? (t as { methodologyEn?: MethodologyEn }).methodologyEn : undefined;
-  const dataAr = 'methodologyAr' in t ? (t as { methodologyAr?: MethodologyAr }).methodologyAr : undefined;
-  const dataDe = 'methodologyDe' in t ? (t as { methodologyDe?: MethodologyDe }).methodologyDe : undefined;
-  const dataFr = 'methodologyFr' in t ? (t as { methodologyFr?: MethodologyFr }).methodologyFr : undefined;
-  const dataEs = 'methodologyEs' in t ? (t as { methodologyEs?: MethodologyEs }).methodologyEs : undefined;
-  const dataZh = 'methodologyZh' in t ? (t as { methodologyZh?: MethodologyZh }).methodologyZh : undefined;
+  const services = t as typeof t & {
+    methodologyEn?: MethodologyBundle;
+    methodologyDe?: MethodologyBundle;
+    methodologyFr?: MethodologyBundle;
+    methodologyEs?: MethodologyBundle;
+    methodologyZh?: MethodologyBundle;
+    methodologyAr?: MethodologyBundle;
+    methodologyPt?: MethodologyBundle;
+    methodologyRu?: MethodologyBundle;
+  };
 
-  // English methodology
-  if (language === 'en' && dataEn) {
-    return (
-      <section
-        id="methodology"
-        className="methodology section-padding bg-cream"
-        lang="en"
-        ref={sectionRef}
-      >
-        <div className="container-wide">
-          <MethodologySectionTitle
-            nestUnderParentH1={nestUnderParentH1}
-            className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 sr sr-up sr-line sr-line-center"
-          >
-            {dataEn.title}
-          </MethodologySectionTitle>
-          {dataEn.intro && (
-            <p className="text-center text-muted-foreground text-lg max-w-3xl mx-auto mb-10 sr sr-up">
-              {dataEn.intro}
-            </p>
-          )}
-          <div className="methodology-compact space-y-6">
-            {dataEn.steps.map((step, i) => (
-              <div
-                key={i}
-                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border sr sr-left hover-lift"
-              >
-                <MethodologyStepHeading
-                  nestUnderParentH1={nestUnderParentH1}
-                  className="text-lg md:text-xl font-display font-semibold text-foreground mb-3"
-                >
-                  {step.title}
-                </MethodologyStepHeading>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const byLang: Record<Language, MethodologyBundle | undefined> = {
+    en: services.methodologyEn,
+    de: services.methodologyDe,
+    fr: services.methodologyFr,
+    es: services.methodologyEs,
+    zh: services.methodologyZh,
+    ar: services.methodologyAr,
+    pt: services.methodologyPt,
+    ru: services.methodologyRu,
+  };
 
-  // Chinese methodology (compact)
-  if (language === 'zh' && dataZh) {
-    return (
-      <section
-        id="methodology"
-        className="methodology section-padding bg-cream"
-        lang="zh-CN"
-      >
-        <div className="container-wide">
-          <MethodologySectionTitle
-            nestUnderParentH1={nestUnderParentH1}
-            className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up"
-          >
-            {dataZh.title}
-          </MethodologySectionTitle>
-          <div className="methodology-steps space-y-6">
-            {dataZh.steps.map((step, i) => (
-              <div
-                key={i}
-                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <MethodologyStepHeading
-                  nestUnderParentH1={nestUnderParentH1}
-                  className="text-lg md:text-xl font-display font-semibold text-foreground mb-3"
-                >
-                  {step.title}
-                </MethodologyStepHeading>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const data = byLang[language] ?? services.methodologyEn;
+  if (!data) return null;
 
-  // Spanish methodology (compact)
-  if (language === 'es' && dataEs) {
-    return (
-      <section
-        id="methodology"
-        className="methodology section-padding bg-cream"
-        lang="es"
-      >
-        <div className="container-wide">
-          <MethodologySectionTitle
-            nestUnderParentH1={nestUnderParentH1}
-            className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up"
-          >
-            {dataEs.title}
-          </MethodologySectionTitle>
-          <div className="methodology-steps space-y-6">
-            {dataEs.steps.map((step, i) => (
-              <div
-                key={i}
-                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <MethodologyStepHeading
-                  nestUnderParentH1={nestUnderParentH1}
-                  className="text-lg md:text-xl font-display font-semibold text-foreground mb-3"
-                >
-                  {step.title}
-                </MethodologyStepHeading>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // French methodology (compact)
-  if (language === 'fr' && dataFr) {
-    return (
-      <section
-        id="methodology"
-        className="methodology section-padding bg-cream"
-        lang="fr"
-      >
-        <div className="container-wide">
-          <MethodologySectionTitle
-            nestUnderParentH1={nestUnderParentH1}
-            className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up"
-          >
-            {dataFr.title}
-          </MethodologySectionTitle>
-          <div className="methodology-steps space-y-6">
-            {dataFr.steps.map((step, i) => (
-              <div
-                key={i}
-                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <MethodologyStepHeading
-                  nestUnderParentH1={nestUnderParentH1}
-                  className="text-lg md:text-xl font-display font-semibold text-foreground mb-3"
-                >
-                  {step.title}
-                </MethodologyStepHeading>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // German methodology (compact)
-  if (language === 'de' && dataDe) {
-    return (
-      <section
-        id="methodology"
-        className="methodology section-padding bg-cream"
-        lang="de"
-      >
-        <div className="container-wide">
-          <MethodologySectionTitle
-            nestUnderParentH1={nestUnderParentH1}
-            className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up"
-          >
-            {dataDe.title}
-          </MethodologySectionTitle>
-          <div className="methodology-compact space-y-6">
-            {dataDe.steps.map((step, i) => (
-              <div
-                key={i}
-                className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <MethodologyStepHeading
-                  nestUnderParentH1={nestUnderParentH1}
-                  className="text-lg md:text-xl font-display font-semibold text-foreground mb-3"
-                >
-                  {step.title}
-                </MethodologyStepHeading>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // Arabic methodology
-  if (language !== 'ar' || !dataAr) return null;
+  const methodologyHref = getLocalizedPathForLanguage('/methodology', language);
 
   return (
     <section
       id="methodology"
-      className="methodology section-padding bg-cream"
-      dir="rtl"
+      className="methodology premium-home-cream section-padding"
+      lang={LANG_ATTR[language]}
+      dir={language === 'ar' ? 'rtl' : undefined}
+      ref={sectionRef}
     >
-      <div className="container-wide">
-        <MethodologySectionTitle
-          nestUnderParentH1={nestUnderParentH1}
-          className="text-3xl md:text-4xl font-display font-semibold text-foreground text-center mb-12 animate-fade-up"
-        >
-          {dataAr.title}
-        </MethodologySectionTitle>
-        <div className="methodology-steps space-y-8 md:space-y-10">
-          {dataAr.steps.map((step, i) => (
-            <div
-              key={i}
-              className="step rounded-xl bg-background p-6 md:p-8 shadow-sm border border-border animate-fade-up"
-              style={{ animationDelay: `${i * 80}ms` }}
-            >
+      <div className="container-wide max-w-6xl mx-auto">
+        <div className="mx-auto mb-12 max-w-3xl text-center sr sr-up">
+          <PremiumEyebrow>{t.footer.methodology}</PremiumEyebrow>
+          <MethodologySectionTitle
+            nestUnderParentH1={nestUnderParentH1}
+            className="font-display text-3xl md:text-4xl font-light tracking-tight text-[#0C1B33]"
+          >
+            {data.title}
+          </MethodologySectionTitle>
+          {data.intro ? (
+            <p className="mt-5 text-base md:text-lg font-light leading-relaxed text-[#7A7267]">
+              {data.intro}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {data.steps.map((step, i) => (
+            <article key={step.title} className="premium-card h-full sr sr-scale-up sr-spring">
+              <span className="mb-5 block font-display text-3xl font-light text-[#C9A84C]">
+                {String(i + 1).padStart(2, '0')}
+              </span>
               <MethodologyStepHeading
                 nestUnderParentH1={nestUnderParentH1}
-                className="text-lg md:text-xl font-display font-semibold text-foreground mb-4"
+                className="mb-4 font-display text-xl font-medium text-[#0C1B33]"
               >
                 {step.title}
               </MethodologyStepHeading>
+              {step.description ? (
+                <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">{step.description}</p>
+              ) : null}
               {step.items ? (
-                <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                  {step.items.map((item, j) => (
-                    <li key={j}>{item}</li>
+                <ul className="list-disc space-y-2 ps-5 text-[15px] font-light leading-relaxed text-[#7A7267]">
+                  {step.items.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
-              ) : step.subsections ? (
+              ) : null}
+              {step.subsections ? (
                 <div className="space-y-4">
-                  {step.subsections.map((sub, j) => (
-                    <div key={j}>
+                  {step.subsections.map((sub) => (
+                    <div key={sub.heading}>
                       <MethodologySubHeading
                         nestUnderParentH1={nestUnderParentH1}
-                        className="font-semibold text-foreground text-sm mb-2 mt-4 first:mt-0"
+                        className="mb-2 text-sm font-semibold text-[#0C1B33]"
                       >
-                        {sub.heading}:
+                        {sub.heading}
                       </MethodologySubHeading>
-                      <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                        {sub.items.map((item, k) => (
-                          <li key={k}>{item}</li>
+                      <ul className="list-disc space-y-1 ps-5 text-[15px] font-light leading-relaxed text-[#7A7267]">
+                        {sub.items.map((item) => (
+                          <li key={item}>{item}</li>
                         ))}
                       </ul>
                     </div>
                   ))}
                 </div>
               ) : null}
-            </div>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-12 text-center sr sr-up">
+          <Link
+            to={methodologyHref}
+            className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#C9A84C] transition-all hover:gap-3"
+          >
+            {t.footer.methodology}
+            <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
+          </Link>
         </div>
       </div>
     </section>

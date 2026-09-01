@@ -229,7 +229,9 @@ const BlogSection = ({
     <section
       id="insights"
       className={`section-padding ${
-        variant === "index"
+        variant === "home"
+          ? "premium-home-cream py-16 md:py-20"
+          : variant === "index"
           ? "border-t border-border/40 bg-white py-16"
           : "bg-background"
       }`}
@@ -238,10 +240,16 @@ const BlogSection = ({
       <div className="container-wide">
         {showHeader ? (
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line sr-line-center">
+            <h2
+              className={
+                isHomeLayout
+                  ? "mb-5 font-display text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-[#0C1B33] sr sr-up"
+                  : "mb-6 font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground sr sr-up sr-line sr-line-center"
+              }
+            >
               {t.blog.title}
             </h2>
-            <p className="text-lg text-muted-foreground sr sr-up">
+            <p className={isHomeLayout ? "text-lg font-light text-[#7A7267] sr sr-up" : "text-lg text-muted-foreground sr sr-up"}>
               {t.blog.subtitle}
             </p>
           </div>
@@ -413,7 +421,11 @@ const BlogSection = ({
           <div className="text-center mt-12 sr sr-up">
             <Link
               to={blogBasePath}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors duration-200 cursor-pointer shimmer"
+              className={
+                isHomeLayout
+                  ? "premium-gold-btn"
+                  : "inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors duration-200 cursor-pointer shimmer"
+              }
             >
               {t.blog.readMoreArticles}
               <ArrowUpRight className="w-4 h-4" aria-hidden />

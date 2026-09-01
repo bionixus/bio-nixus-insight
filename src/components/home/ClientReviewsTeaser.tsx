@@ -5,6 +5,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { BIONIXUS_UK_AGGREGATE_RATING } from '@/data/googleReviewsUk';
 import { HAPPY_CLIENTS_COUNT } from '@/data/clientReviews';
 import { formatLocalizedDecimal, formatLocalizedNumber } from '@/lib/localizedNumbers';
+import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 
 export function ClientReviewsTeaser() {
   const { t, language } = useLanguage();
@@ -16,37 +17,36 @@ export function ClientReviewsTeaser() {
   return (
     <section
       id="client-reviews"
-      className="section-padding bg-background border-t border-border"
+      className="premium-home-ivory section-padding"
       ref={sectionRef}
       aria-labelledby="client-reviews-teaser-heading"
     >
-      <div className="container-wide max-w-5xl mx-auto">
-        <div className="rounded-2xl border border-border bg-card p-8 md:p-10 text-center shadow-sm sr sr-up">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">{copy.eyebrow}</p>
+      <div className="container-wide max-w-4xl mx-auto">
+        <div className="premium-card px-8 py-12 text-center md:px-14 md:py-16 sr sr-up">
+          <PremiumEyebrow>{copy.eyebrow}</PremiumEyebrow>
           <h2
             id="client-reviews-teaser-heading"
-            className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4"
+            className="mb-4 font-display text-3xl md:text-4xl font-light tracking-tight text-[#0C1B33]"
           >
-            {copy.titleBeforeCount} {clientCount} {copy.titleAfterCount}
+            {copy.titleBeforeCount}{' '}
+            <em className="font-medium not-italic text-[#C9A84C]">{clientCount}</em>{' '}
+            {copy.titleAfterCount}
           </h2>
-          <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">{copy.description}</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-8 text-sm text-foreground">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2">
-              <Users className="w-4 h-4 text-primary" aria-hidden="true" />
+          <p className="mx-auto mb-8 max-w-2xl font-light leading-relaxed text-[#7A7267]">{copy.description}</p>
+          <div className="mb-8 flex flex-wrap items-center justify-center gap-3 text-sm text-[#3D3830]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#EDE9E3] bg-[#F4F2ED] px-4 py-2">
+              <Users className="h-4 w-4 text-[#C9A84C]" aria-hidden="true" />
               {clientCount}+ {copy.happyClientsBadgeSuffix}
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2">
-              <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#EDE9E3] bg-[#F4F2ED] px-4 py-2">
+              <Star className="h-4 w-4 fill-[#C9A84C] text-[#C9A84C]" aria-hidden="true" />
               {formatLocalizedDecimal(BIONIXUS_UK_AGGREGATE_RATING.ratingValue, language)}{' '}
               {copy.googleRatingSuffix}
             </span>
           </div>
-          <Link
-            to="/client-reviews"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-          >
+          <Link to="/client-reviews" className="premium-gold-btn">
             {copy.cta}
-            <ArrowRight className="w-4 h-4 rtl:rotate-180" aria-hidden="true" />
+            <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden="true" />
           </Link>
         </div>
       </div>

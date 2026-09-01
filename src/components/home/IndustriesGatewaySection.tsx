@@ -5,11 +5,18 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { SEGMENTS } from '@/data/bionixusIndustrySegments';
 import { INDUSTRIES_INSIGHTS_SECTION_PATH } from '@/lib/blog-content-silo';
 import { getLocalizedPathForLanguage } from '@/lib/seo';
+import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 
 const SEGMENT_ICONS = {
   'pharma-healthcare': HeartPulse,
   b2b: Building2,
   b2c: ShoppingBag,
+} as const;
+
+const SEGMENT_WELLS = {
+  'pharma-healthcare': 'bg-[#FFF0ED] text-[#E06852]',
+  b2b: 'bg-[#EBF4FF] text-[#2563EB]',
+  b2c: 'bg-[#E6FAF8] text-[#0EA5A0]',
 } as const;
 
 const IndustriesGatewaySection = () => {
@@ -27,22 +34,23 @@ const IndustriesGatewaySection = () => {
 
   return (
     <section
-      className="section-padding py-14 bg-background border-t border-border"
+      className="premium-home-cream section-padding py-16 md:py-20"
       aria-labelledby="industries-gateway-heading"
       ref={sectionRef}
     >
       <div className="container-wide max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-10 sr sr-up">
+        <div className="mx-auto mb-12 max-w-3xl text-center sr sr-up">
+          <PremiumEyebrow>{t.nav.industries}</PremiumEyebrow>
           <h2
             id="industries-gateway-heading"
-            className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4"
+            className="mb-4 font-display text-3xl md:text-4xl font-light tracking-tight text-[#0C1B33]"
           >
             {copy.h2}
           </h2>
-          <p className="text-muted-foreground leading-relaxed">{copy.intro}</p>
+          <p className="font-light leading-relaxed text-[#7A7267]">{copy.intro}</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 mb-10">
+        <div className="mb-10 grid gap-5 md:grid-cols-3">
           {(['pharma-healthcare', 'b2b', 'b2c'] as const).map((slug) => {
             const segment = SEGMENTS[slug];
             const localized = segmentCopy[slug];
@@ -52,32 +60,29 @@ const IndustriesGatewaySection = () => {
               <Link
                 key={slug}
                 to={segment.path}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-md sr sr-scale-up sr-spring hover-lift cursor-pointer"
+                className="premium-card group flex flex-col cursor-pointer sr sr-scale-up sr-spring"
               >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
-                  <Icon className="h-5 w-5 text-primary" aria-hidden />
+                <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl ${SEGMENT_WELLS[slug]}`}>
+                  <Icon className="h-6 w-6" aria-hidden />
                 </div>
-                <h3 className="font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="mb-2 font-display text-xl font-medium text-[#0C1B33] transition-colors group-hover:text-[#C9A84C]">
                   {localized.label}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{localized.tagline}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
+                <p className="flex-1 text-sm font-light leading-relaxed text-[#7A7267]">{localized.tagline}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#C9A84C] transition-all group-hover:gap-3">
                   {exploreLabel}
-                  <ArrowRight className="h-4 w-4" aria-hidden />
+                  <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
                 </span>
               </Link>
             );
           })}
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-4 mb-8">
+        <div className="mb-10 grid gap-4 sm:grid-cols-3">
           {copy.stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-border bg-muted/30 px-5 py-4 text-center sr sr-up"
-            >
-              <p className="font-display text-2xl font-semibold text-foreground">{stat.value}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
+            <div key={stat.label} className="rounded-2xl border border-[#EDE9E3] bg-[#FFFEFB] px-5 py-6 text-center sr sr-up">
+              <p className="font-display text-3xl font-light text-[#0C1B33]">{stat.value}</p>
+              <p className="mt-1 text-sm font-light text-[#7A7267]">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -85,13 +90,13 @@ const IndustriesGatewaySection = () => {
         <div className="text-center sr sr-up">
           <Link
             to={hubPath}
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer"
+            className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#C9A84C] transition-all hover:gap-3 cursor-pointer"
           >
             {copy.exploreAll}
-            <ArrowRight className="h-4 w-4" aria-hidden />
+            <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
           </Link>
-          <p className="mt-3 text-sm text-muted-foreground">
-            <Link to={INDUSTRIES_INSIGHTS_SECTION_PATH} className="text-primary font-medium hover:underline">
+          <p className="mt-3 text-sm font-light text-[#7A7267]">
+            <Link to={INDUSTRIES_INSIGHTS_SECTION_PATH} className="font-medium text-[#0C1B33] underline-offset-4 hover:underline">
               {copy.insightsLink}
             </Link>
           </p>

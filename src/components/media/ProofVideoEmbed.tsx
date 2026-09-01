@@ -22,19 +22,19 @@ export function ProofVideoEmbed({
   return (
     <section className={`section-padding py-8 ${className}`} aria-labelledby="proof-video-heading">
       <div className="container-wide max-w-4xl mx-auto">
-        <h2 id="proof-video-heading" className="text-2xl font-display font-semibold text-foreground mb-3">
+        <h2 id="proof-video-heading" className="mb-3 font-display text-2xl md:text-3xl font-light tracking-tight text-[#0C1B33]">
           {title}
         </h2>
-        <p className="text-muted-foreground leading-relaxed mb-6">{description}</p>
+        <p className="mb-8 text-base font-light leading-relaxed text-[#7A7267]">{description}</p>
 
         {youtubeId ? (
-          <figure className="rounded-xl border border-border bg-card overflow-hidden">
+          <figure className="overflow-hidden rounded-[20px] border border-[#EDE9E3] bg-[#FFFEFB] shadow-[0_16px_60px_rgba(6,16,31,0.06)]">
             <YouTubeEmbed videoId={youtubeId} title={title} />
-            <figcaption className="p-4 text-xs text-muted-foreground leading-relaxed">
+            <figcaption className="p-5 text-xs font-light leading-relaxed text-[#7A7267]">
               {transcript}
               {watchHref ? (
                 <p className="mt-3">
-                  <Link to={watchHref} className="text-primary font-medium hover:underline text-sm">
+                  <Link to={watchHref} className="text-sm font-medium text-[#C9A84C] underline-offset-4 hover:underline">
                     {watchLabel}
                   </Link>
                 </p>
@@ -42,7 +42,7 @@ export function ProofVideoEmbed({
             </figcaption>
           </figure>
         ) : src ? (
-          <figure className="rounded-xl border border-border bg-card overflow-hidden">
+          <figure className="overflow-hidden rounded-[20px] border border-[#EDE9E3] bg-[#FFFEFB] shadow-[0_16px_60px_rgba(6,16,31,0.06)]">
             <video
               controls
               preload="none"
@@ -54,11 +54,11 @@ export function ProofVideoEmbed({
               <source src={src} type="video/mp4" />
               <track kind="captions" />
             </video>
-            <figcaption className="p-4 text-xs text-muted-foreground leading-relaxed">
+            <figcaption className="p-5 text-xs font-light leading-relaxed text-[#7A7267]">
               {transcript}
               {watchHref ? (
                 <p className="mt-3">
-                  <Link to={watchHref} className="text-primary font-medium hover:underline text-sm">
+                  <Link to={watchHref} className="text-sm font-medium text-[#C9A84C] underline-offset-4 hover:underline">
                     {watchLabel}
                   </Link>
                 </p>
@@ -66,7 +66,7 @@ export function ProofVideoEmbed({
             </figcaption>
           </figure>
         ) : (
-          <figure className="rounded-xl border border-border bg-card overflow-hidden">
+          <figure className="overflow-hidden rounded-[20px] border border-[#EDE9E3] bg-[#FFFEFB] shadow-[0_16px_60px_rgba(6,16,31,0.06)]">
             <div className="relative">
               <OptimizedImage
                 src={poster}

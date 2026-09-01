@@ -196,6 +196,141 @@
     box-shadow: var(--shadow-lg);
   }
 
+  /* Homepage premium system — midnight / champagne / cream */
+  .premium-home-cream {
+    background: #F4F2ED;
+  }
+  .premium-home-ivory {
+    background: #FFFEFB;
+  }
+  .premium-home-midnight {
+    position: relative;
+    overflow: hidden;
+    background: #06101F;
+  }
+  .premium-home-midnight::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 80% 0%, rgba(201, 168, 76, 0.08), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 8% 100%, rgba(14, 165, 160, 0.06), transparent 50%);
+  }
+  .premium-card {
+    position: relative;
+    overflow: hidden;
+    background: #FFFEFB;
+    border: 1px solid #EDE9E3;
+    border-radius: 20px;
+    padding: 2.25rem;
+    transition:
+      transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #C9A84C, #0EA5A0);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .premium-card:hover,
+  .premium-card:focus-visible {
+    transform: translateY(-6px);
+    border-color: transparent;
+    box-shadow: 0 24px 80px rgba(6, 16, 31, 0.08);
+  }
+  .premium-card:hover::before,
+  .premium-card:focus-visible::before {
+    opacity: 1;
+  }
+  .premium-card-dark {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      background 0.4s ease,
+      border-color 0.4s ease;
+  }
+  .premium-card-dark::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #C9A84C, #0EA5A0);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .premium-card-dark:hover,
+  .premium-card-dark:focus-visible {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  .premium-card-dark:hover::after,
+  .premium-card-dark:focus-visible::after {
+    opacity: 1;
+  }
+  .premium-gold-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #C9A84C, #B8933E);
+    padding: 0.95rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #06101F;
+    box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .premium-gold-btn:hover,
+  .premium-gold-btn:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(201, 168, 76, 0.35);
+  }
+  .premium-faq details {
+    border: 1px solid #EDE9E3;
+    border-radius: 16px;
+    background: #FFFEFB;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .premium-faq details[open] {
+    border-color: rgba(201, 168, 76, 0.35);
+    box-shadow: 0 12px 40px rgba(6, 16, 31, 0.05);
+  }
+  .premium-faq summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .premium-faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .premium-faq summary span[aria-hidden] {
+    color: #C9A84C;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
   /* Blog post body – HTML from Sanity (McKinsey-style article blocks) */
   .prose-body {
     @apply text-foreground;
@@ -704,6 +839,12 @@
       transition: none !important;
     }
     .hover-lift:hover,
+    .premium-card:hover,
+    .premium-card:focus-visible,
+    .premium-card-dark:hover,
+    .premium-card-dark:focus-visible,
+    .premium-gold-btn:hover,
+    .premium-gold-btn:focus-visible,
     .group:hover .blog-card-image,
     .group:focus-visible .blog-card-image {
       transform: none;

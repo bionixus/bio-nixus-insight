@@ -12,6 +12,7 @@ export function HomeExplainerSection() {
     <MediaVisualBriefing
       heading={media.visualBriefing.heading}
       figures={media.visualBriefing.figures}
+      className="premium-home-cream py-16 md:py-20"
     />
   );
 }

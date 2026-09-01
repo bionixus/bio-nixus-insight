@@ -12,7 +12,7 @@ export function HomeOverviewVideoSection() {
   return (
     <ProofVideoEmbed
       config={media.proofVideo}
-      className="bg-cream border-y border-border py-12"
+      className="premium-home-ivory border-y border-[#EDE9E3] py-16 md:py-20"
       watchHref={HOME_OVERVIEW_WATCH_PATH}
       watchLabel="Open full watch page"
     />

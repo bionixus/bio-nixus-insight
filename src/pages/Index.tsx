@@ -86,6 +86,7 @@ const Index = () => {
         </div>
         <div className="cv-auto">
           <BlogSection
+            variant="home"
             posts={homeArticlePosts ?? undefined}
             isLoading={blogLoading && !ssrHomeInsights?.length}
           />
@@ -109,26 +110,27 @@ const Index = () => {
         <div className="cv-auto">
           <MethodologySection nestUnderParentH1 />
         </div>
-        <div className="cv-auto section-padding bg-cream border-t border-border">
+        <div className="cv-auto premium-home-ivory section-padding">
           <FAQSection
+            premium
             sectionId={HOME_FAQ_SECTION_ID}
             title={homeFaq.sectionTitle}
             items={homeFaq.items}
-            className="py-14 bg-transparent"
+            className="py-4 bg-transparent"
           />
-          <div className="container-wide max-w-4xl mx-auto pb-12 text-center text-sm text-muted-foreground">
-            <Link to="/faq" className="text-primary font-medium hover:underline cursor-pointer">
+          <div className="container-wide mx-auto max-w-4xl pb-8 text-center text-sm font-light text-[#7A7267]">
+            <Link to="/faq" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline cursor-pointer">
               {homeFaq.ctaFullFaq}
             </Link>
             <span className="mx-2" aria-hidden="true">
               ·
             </span>
-            <Link to={contactHref} className="text-primary font-medium hover:underline cursor-pointer">
+            <Link to={contactHref} className="font-medium text-[#C9A84C] underline-offset-4 hover:underline cursor-pointer">
               {homeFaq.ctaProposal}
             </Link>
           </div>
         </div>
-        <CTASection variant="research-proposal" />
+        <CTASection premium variant="research-proposal" />
         <div className="cv-auto">
           <ContactSection embedOnHomePage />
         </div>

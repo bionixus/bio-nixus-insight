@@ -77,25 +77,30 @@ const StatsSection = () => {
   }, [inView, hydrated]);
 
   return (
-    <section ref={sectionRef} id="about" className="section-padding bg-primary overflow-hidden">
-      <div className="container-wide">
-        <h2 className={`text-3xl md:text-4xl font-display font-semibold text-primary-foreground text-center mb-16 transition-all duration-700 ${hydrated && inView ? 'opacity-100 translate-y-0' : hydrated ? 'opacity-0 translate-y-6' : ''}`}>
+    <section ref={sectionRef} id="about" className="premium-home-midnight section-padding">
+      <div className="container-wide relative z-10 max-w-6xl">
+        <h2 className={`mb-16 text-center font-display text-3xl md:text-4xl font-light tracking-tight text-[#FFFEFB] transition-all duration-700 ${hydrated && inView ? 'opacity-100 translate-y-0' : hydrated ? 'opacity-0 translate-y-6' : ''}`}>
           {t.stats.title}
         </h2>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
           {t.stats.items.map((stat, index) => (
             <div
               key={index}
-              className={`text-center transition-all duration-700 ${hydrated && inView ? 'opacity-100 translate-y-0' : hydrated ? 'opacity-0 translate-y-8' : ''}`}
-              style={{ transitionDelay: hydrated ? `${index * 150}ms` : undefined }}
+              className={`relative px-4 text-center transition-all duration-700 lg:px-8 ${hydrated && inView ? 'opacity-100 translate-y-0' : hydrated ? 'opacity-0 translate-y-8' : ''} ${index === 1 ? 'delay-150' : index === 2 ? 'delay-300' : index === 3 ? 'delay-[450ms]' : ''}`}
             >
-              <div className={`text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gold-warm mb-3 tabular-nums ${done ? 'glow-pop' : ''}`}>
+              {index > 0 ? (
+                <span
+                  className="pointer-events-none absolute left-0 top-[15%] hidden h-[70%] w-px bg-gradient-to-b from-transparent via-white/10 to-transparent lg:block"
+                  aria-hidden
+                />
+              ) : null}
+              <div className={`mb-3 font-display text-4xl md:text-5xl lg:text-[3.5rem] font-light tracking-tight text-[#C9A84C] tabular-nums ${done ? 'glow-pop' : ''}`}>
                 {parsed[index]?.prefix ?? ''}
                 {formatLocalizedNumber(counts[index] ?? parsed[index]?.number ?? 0, language)}
                 {parsed[index]?.suffix ?? ''}
               </div>
-              <div className={`text-primary-foreground/80 font-medium transition-all duration-500 ${done ? 'opacity-100' : 'opacity-60'}`}>
+              <div className={`text-sm font-light tracking-wide text-white/45 transition-opacity duration-500 ${done ? 'opacity-100' : 'opacity-60'}`}>
                 {stat.label}
               </div>
             </div>
