@@ -379,15 +379,6 @@ function buildListicleFirms(
     },
     {
       rank: 3,
-      name: 'Ipsos',
-      type: 'Global Network',
-      hq: 'France (global) / regional offices',
-      anchor: 'ipsos',
-      overview: `Ipsos provides custom and syndicated research in ${country.label} across public affairs, consumer, and specialist B2B categories.`,
-      strengths: ['Established regional presence', 'Quantitative rigour', 'Public affairs capability'],
-    },
-    {
-      rank: 4,
       name: 'NielsenIQ',
       type: 'Global Network — Measurement',
       hq: 'USA (global)',
@@ -396,7 +387,7 @@ function buildListicleFirms(
       strengths: ['Retail and shopper panels', 'Syndicated measurement', 'FMCG-oriented analytics'],
     },
     {
-      rank: 5,
+      rank: 4,
       name: 'Regional custom agencies',
       type: 'Local / Regional',
       hq: `${country.label} and GCC`,
@@ -560,7 +551,7 @@ export function buildIndustryCountryPageConfig(
     listicleFaqs: [
       {
         q: `What are the top ${name.toLowerCase()} market research companies in ${country.label}?`,
-        a: `Leading options include BioNixus, Kantar, Ipsos, NielsenIQ, and regional custom agencies serving ${country.label}.`,
+        a: `Leading options include BioNixus, Kantar, NielsenIQ, and regional custom agencies serving ${country.label}.`,
       },
       {
         q: `How do I choose a ${name.toLowerCase()} market research partner in ${country.label}?`,

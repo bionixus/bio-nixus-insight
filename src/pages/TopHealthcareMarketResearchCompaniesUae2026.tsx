@@ -62,23 +62,6 @@ const firms: FirmProfile[] = [
   },
   {
     rank: 3,
-    name: 'Ipsos UAE',
-    type: 'Global Market Research Network',
-    hq: 'France (global) / Dubai & Abu Dhabi',
-    anchor: 'ipsos',
-    url: 'https://www.ipsos.com',
-    bestFor: 'Consumer health perception research, patient surveys, HCP attitude-and-usage studies, advertising effectiveness for healthcare brands',
-    overview:
-      'Ipsos has a long-standing presence in the UAE with offices in both Dubai and Abu Dhabi, supporting consumer, public affairs, and healthcare research across the Emirates. The Ipsos Healthcare practice supports pharmaceutical clients with physician attitude-and-usage studies, patient research, disease awareness studies, and advertising concept testing. Ipsos brings strong methodological rigour, large UAE consumer panel infrastructure, and the scale for nationally representative quantitative studies covering the UAE\'s diverse expatriate and national population across all seven emirates.',
-    strengths: [
-      'Long-standing UAE market presence across Dubai and Abu Dhabi',
-      'Large UAE consumer panel for diverse, expat-majority population',
-      'Healthcare division for HCP and patient research',
-      'Advertising effectiveness and concept testing capability',
-    ],
-  },
-  {
-    rank: 4,
     name: 'Kantar MENAP',
     type: 'Global Market Research Network',
     hq: 'UK (global) / Dubai MENAP hub',
@@ -95,7 +78,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 5,
+    rank: 4,
     name: 'Research & Markets',
     type: 'Global Syndicated Research Publisher',
     hq: 'Ireland (global)',
@@ -112,7 +95,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 6,
+    rank: 5,
     name: 'GlobalData',
     type: 'Global Intelligence & Analytics Provider',
     hq: 'UK (global)',
@@ -129,7 +112,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 7,
+    rank: 6,
     name: 'M3 (UAE)',
     type: 'Digital Physician Panel & Survey Platform',
     hq: 'Japan (global) / Middle East operations',
@@ -150,7 +133,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top healthcare market research companies in the UAE?',
-    a: 'The leading healthcare market research companies in the UAE for 2026 are: BioNixus (global insights firm with MOHAP/DHA/DOH-compliant pharmaceutical, healthcare, and consumer research capabilities), IQVIA MENA (prescription data and real-world evidence analytics), Ipsos UAE (consumer health and HCP research), Kantar MENAP (consumer brand health tracking), Research & Markets (syndicated reports), GlobalData (secondary pharma intelligence), and M3 (digital physician panels). For custom primary research requiring MOHAP compliance, HCP recruitment across DHCC and Abu Dhabi hospital networks, KOL mapping, or HEOR evidence, BioNixus offers full-service delivery across all seven UAE emirates.',
+    a: 'The leading healthcare market research companies in the UAE for 2026 are: BioNixus (global insights firm with MOHAP/DHA/DOH-compliant pharmaceutical, healthcare, and consumer research capabilities), IQVIA MENA (prescription data and real-world evidence analytics), Kantar MENAP (consumer brand health tracking), Research & Markets (syndicated reports), GlobalData (secondary pharma intelligence), and M3 (digital physician panels). For custom primary research requiring MOHAP compliance, HCP recruitment across DHCC and Abu Dhabi hospital networks, KOL mapping, or HEOR evidence, BioNixus offers full-service delivery across all seven UAE emirates.',
   },
   {
     q: 'How does the UAE\'s triple-regulator structure affect healthcare market research?',
@@ -327,7 +310,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An expert guide to the leading healthcare and pharmaceutical market research companies operating across
-              the UAE for 2026. This guide profiles 7 firms with demonstrated capability in MOHAP/DHA/DOH-compliant
+              the UAE for 2026. This guide profiles 6 firms with demonstrated capability in MOHAP/DHA/DOH-compliant
               pharmaceutical research, HCP surveys across Dubai Healthcare City (DHCC) and Abu Dhabi hospital networks,
               KOL mapping, UAE payer and insurance research, HEOR evidence generation, and multi-emirate healthcare
               intelligence — to help you select the right research partner for the UAE's unique triple-regulator market.
@@ -417,7 +400,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
                 <ShieldCheck className="w-4 h-4" /> MOHAP, DHA, DOH and UAE payer dynamics
               </a>
               <a href="#firm-profiles" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Building2 className="w-4 h-4" /> 7 healthcare research firm profiles
+                <Building2 className="w-4 h-4" /> 6 healthcare research firm profiles
               </a>
               <a href="#buyer-criteria" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BarChart3 className="w-4 h-4" /> How to evaluate a UAE research partner
@@ -547,7 +530,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
         <section className="section-padding py-16 bg-muted/30" id="firm-profiles">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
-              7 Top Healthcare Market Research Companies in UAE (2026)
+              6 Top Healthcare Market Research Companies in UAE (2026)
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
               The following profiles cover firms with demonstrated healthcare and pharmaceutical market research capability across the UAE. Each is assessed by use case and market positioning — select based on your research type, therapeutic area, and UAE engagement requirements.

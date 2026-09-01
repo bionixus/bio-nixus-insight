@@ -64,24 +64,6 @@ const firms: FirmProfile[] = [
   },
   {
     rank: 3,
-    name: 'Ipsos Healthcare',
-    type: 'Global Market Research Network',
-    hq: 'France (global) · Riyadh · Dubai · Cairo',
-    anchor: 'ipsos',
-    url: 'https://www.ipsos.com',
-    bestFor:
-      'Custom primary research for HCP attitude-and-usage studies, patient research, advertising and message testing across GCC and Egypt',
-    overview:
-      'Ipsos maintains offices in Riyadh, Dubai, and Cairo, delivering custom primary research for pharmaceutical and healthcare companies across MENA. The firm supports physician attitude-and-usage studies, patient research, advertising and message testing, and therapy area deep-dives. Ipsos brings strong quantitative methodology and multi-country execution capability across GCC and Levant markets, with healthcare expertise depending on the research team assigned.',
-    strengths: [
-      'Established offices in Riyadh, Dubai, and Cairo with local research teams',
-      'Custom primary research for global and regional pharma clients',
-      'Strong quantitative and qualitative methodology for MENA healthcare',
-      'Multi-country execution across GCC, Egypt, and Levant markets',
-    ],
-  },
-  {
-    rank: 4,
     name: 'Kantar Health',
     type: 'Global Market Research Network',
     hq: 'UK (global) · Dubai · Riyadh',
@@ -99,7 +81,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 5,
+    rank: 4,
     name: 'Sapience Analytics',
     type: 'Regional — Pharmaceutical Consulting & Intelligence',
     hq: 'UAE / MENA',
@@ -117,7 +99,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 6,
+    rank: 5,
     name: 'IDS (International Data Systems)',
     type: 'Regional — Healthcare Data & Fieldwork',
     hq: 'UAE / MENA',
@@ -135,7 +117,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 7,
+    rank: 6,
     name: 'Euromonitor International',
     type: 'Global Syndicated Intelligence Provider',
     hq: 'UK (global)',
@@ -157,7 +139,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top healthcare market research companies in MENA / Middle East 2026?',
-    a: 'The leading healthcare market research companies in MENA for 2026 are: BioNixus (#1 for primary HCP and payer research across GCC and Egypt), IQVIA (syndicated prescription data and RWE), Ipsos Healthcare (custom HCP and patient primary research), Kantar Health (consumer health and brand tracking), Sapience Analytics (market access and tender intelligence), IDS (regional fieldwork), and Euromonitor International (syndicated secondary intelligence). For custom primary research requiring Arabic-English bilingual HCP/payer fieldwork, BioNixus offers full-service delivery from four MENA offices.',
+    a: 'The leading healthcare market research companies in MENA for 2026 are: BioNixus (#1 for primary HCP and payer research across GCC and Egypt), IQVIA (syndicated prescription data and RWE), Kantar Health (consumer health and brand tracking), Sapience Analytics (market access and tender intelligence), IDS (regional fieldwork), and Euromonitor International (syndicated secondary intelligence). For custom primary research requiring Arabic-English bilingual HCP/payer fieldwork, BioNixus offers full-service delivery from four MENA offices.',
   },
   {
     q: 'Who is best for primary HCP and payer research in MENA?',
@@ -334,7 +316,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               An expert guide to the leading healthcare market research companies operating across MENA / the Middle East
-              in 2026. This guide profiles 7 firms with demonstrated capability in primary HCP surveys, payer and
+              in 2026. This guide profiles 6 firms with demonstrated capability in primary HCP surveys, payer and
               formulary research, KOL mapping, and multi-country GCC and Egypt execution — within the broader{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline">
                 healthcare market research
@@ -435,7 +417,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
                 <ShieldCheck className="w-4 h-4" /> Regulatory and access dynamics
               </a>
               <a href="#firm-profiles" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Building2 className="w-4 h-4" /> 7 healthcare research firm profiles
+                <Building2 className="w-4 h-4" /> 6 healthcare research firm profiles
               </a>
               <a href="#buyer-criteria" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BarChart3 className="w-4 h-4" /> How to evaluate a MENA research partner
@@ -566,7 +548,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
         <section className="section-padding py-16 bg-muted/30" id="firm-profiles">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
-              7 Top Healthcare Market Research Companies in MENA (2026)
+              6 Top Healthcare Market Research Companies in MENA (2026)
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
               Profiles cover firms with demonstrated healthcare market research capability across MENA. Each is assessed
