@@ -17,7 +17,7 @@ const WHATSAPP_NUMBER = BIONIXUS_PHONE_UK.replace(/\D/g, '');
 const CONTACT_PATHS = new Set(languages.map((lang) => localizedContactPath(lang.code)));
 
 const FIELD_BASE =
-  'w-full px-4 py-3 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors';
+  'w-full px-2.5 py-1.5 md:px-4 md:py-3 text-sm md:text-base rounded-md md:rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors';
 
 type ContactValidation = {
   firstName?: string;
@@ -78,6 +78,7 @@ export default function WhatsAppProposalWidget() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [whatsAppUrl, setWhatsAppUrl] = useState<string | null>(null);
+  const [ringing, setRinging] = useState(false);
 
   const validation = (t.contact as { validation?: ContactValidation }).validation;
   const v = (key: keyof ContactValidation) => validation?.[key] ?? '';
@@ -124,7 +125,37 @@ export default function WhatsAppProposalWidget() {
     setErrors({});
     setSubmitError(null);
     setWhatsAppUrl(null);
+    setRinging(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (open) return;
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let lastY = window.scrollY;
+    let coolUntil = 0;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      const delta = y - lastY;
+      lastY = y;
+      if (Math.abs(delta) < 4) return;
+      const now = Date.now();
+      if (now < coolUntil) return;
+      coolUntil = now + 900;
+      setRinging(true);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [open]);
+
+  useEffect(() => {
+    if (!ringing) return;
+    const id = window.setTimeout(() => setRinging(false), 900);
+    return () => window.clearTimeout(id);
+  }, [ringing]);
 
   if (CONTACT_PATHS.has(pathname)) return null;
 
@@ -212,22 +243,22 @@ export default function WhatsAppProposalWidget() {
   return (
     <div
       ref={rootRef}
-      className={`fixed z-50 ${offsetClass} end-4 md:end-6`}
+      className={`fixed z-50 ${offsetClass} end-3 md:end-6`}
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {open ? (
         <div
-          className="mb-3 w-[min(22.5rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-border bg-background shadow-elegant"
+          className="mb-0 w-[min(19.5rem,calc(100vw-1.25rem))] overflow-hidden rounded-xl md:mb-3 md:w-[min(22.5rem,calc(100vw-2rem))] md:rounded-2xl border border-border bg-background shadow-elegant"
           role="dialog"
           aria-modal="false"
           aria-labelledby={`${formId}-title`}
         >
-          <div className="flex items-start justify-between gap-3 bg-primary px-5 py-4 text-primary-foreground">
+          <div className="flex items-start justify-between gap-2 bg-primary px-3 py-2.5 md:gap-3 md:px-5 md:py-4 text-primary-foreground">
             <div>
-              <h2 id={`${formId}-title`} className="font-display text-lg font-semibold leading-snug">
+              <h2 id={`${formId}-title`} className="font-display text-sm font-semibold leading-snug md:text-lg">
                 {copy.panelTitle}
               </h2>
-              <p className="mt-1 text-sm text-primary-foreground/70 leading-relaxed">
+              <p className="mt-0.5 hidden text-sm text-primary-foreground/70 leading-relaxed sm:block">
                 {copy.panelSubtitle}
               </p>
             </div>
@@ -237,31 +268,31 @@ export default function WhatsAppProposalWidget() {
               className="shrink-0 rounded-md p-1 text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-label={copy.closeLabel}
             >
-              <X className="h-5 w-5" aria-hidden />
+              <X className="h-4 w-4 md:h-5 md:w-5" aria-hidden />
             </button>
           </div>
 
-          <div className="max-h-[min(70vh,560px)] overflow-y-auto p-5">
+          <div className="flex max-h-[min(62dvh,24rem)] flex-col overflow-hidden p-0 md:max-h-[min(70vh,560px)]">
             {submitted ? (
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-lg font-bold text-primary">
+              <div className="p-3 text-center md:p-5">
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-base font-bold text-primary md:mb-4 md:h-12 md:w-12 md:text-lg">
                   ✓
                 </div>
-                <h3 className="mb-2 font-display text-lg font-semibold text-foreground">
+                <h3 className="mb-1.5 font-display text-base font-semibold text-foreground md:mb-2 md:text-lg">
                   {copy.successTitle}
                 </h3>
-                <p className="mb-5 text-sm text-muted-foreground leading-relaxed">{copy.successBody}</p>
+                <p className="mb-3 text-xs text-muted-foreground leading-relaxed md:mb-5 md:text-sm">{copy.successBody}</p>
                 {whatsAppUrl ? (
                   <a
                     href={whatsAppUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-4 py-3 font-semibold text-accent-foreground transition hover:brightness-105"
+                    className="inline-flex w-full items-center justify-center rounded-md bg-accent px-3 py-2.5 text-sm font-semibold text-accent-foreground transition hover:brightness-105 md:rounded-lg md:px-4 md:py-3 md:text-base"
                   >
                     {copy.openWhatsAppAgain}
                   </a>
                 ) : null}
-                {submitError ? <p className="mt-3 text-sm text-destructive">{submitError}</p> : null}
+                {submitError ? <p className="mt-2 text-xs text-destructive md:mt-3 md:text-sm">{submitError}</p> : null}
               </div>
             ) : (
               <form
@@ -269,11 +300,12 @@ export default function WhatsAppProposalWidget() {
                 method="POST"
                 onSubmit={handleSubmit}
                 noValidate
-                className="space-y-4"
+                className="flex min-h-0 max-h-full flex-1 flex-col"
               >
-                <div className="grid grid-cols-2 gap-3">
+                <div className="min-h-0 space-y-2 overflow-y-auto px-3 pt-3 md:space-y-4 md:px-5 md:pt-5">
+                <div className="grid grid-cols-2 gap-2 md:gap-3">
                   <div>
-                    <label htmlFor={`${formId}-firstName`} className="mb-2 block text-sm font-medium text-foreground">
+                    <label htmlFor={`${formId}-firstName`} className="mb-1 block text-xs font-medium text-foreground md:mb-2 md:text-sm">
                       {t.contact.firstName} <span className="text-destructive">*</span>
                     </label>
                     <input
@@ -287,10 +319,10 @@ export default function WhatsAppProposalWidget() {
                       className={fieldClass(Boolean(errors.firstName))}
                       placeholder={place('firstNamePlaceholder', 'John')}
                     />
-                    {errors.firstName ? <p className="mt-1 text-sm text-destructive">{errors.firstName}</p> : null}
+                    {errors.firstName ? <p className="mt-0.5 text-xs text-destructive md:mt-1 md:text-sm">{errors.firstName}</p> : null}
                   </div>
                   <div>
-                    <label htmlFor={`${formId}-lastName`} className="mb-2 block text-sm font-medium text-foreground">
+                    <label htmlFor={`${formId}-lastName`} className="mb-1 block text-xs font-medium text-foreground md:mb-2 md:text-sm">
                       {t.contact.lastName} <span className="text-destructive">*</span>
                     </label>
                     <input
@@ -303,12 +335,12 @@ export default function WhatsAppProposalWidget() {
                       className={fieldClass(Boolean(errors.lastName))}
                       placeholder={place('lastNamePlaceholder', 'Smith')}
                     />
-                    {errors.lastName ? <p className="mt-1 text-sm text-destructive">{errors.lastName}</p> : null}
+                    {errors.lastName ? <p className="mt-0.5 text-xs text-destructive md:mt-1 md:text-sm">{errors.lastName}</p> : null}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor={`${formId}-workEmail`} className="mb-2 block text-sm font-medium text-foreground">
+                  <label htmlFor={`${formId}-workEmail`} className="mb-1 block text-xs font-medium text-foreground md:mb-2 md:text-sm">
                     {t.contact.workEmail} <span className="text-destructive">*</span>
                   </label>
                   <input
@@ -321,11 +353,11 @@ export default function WhatsAppProposalWidget() {
                     className={fieldClass(Boolean(errors.workEmail))}
                     placeholder={place('workEmailPlaceholder', 'john@company.com')}
                   />
-                  {errors.workEmail ? <p className="mt-1 text-sm text-destructive">{errors.workEmail}</p> : null}
+                  {errors.workEmail ? <p className="mt-0.5 text-xs text-destructive md:mt-1 md:text-sm">{errors.workEmail}</p> : null}
                 </div>
 
                 <div>
-                  <label htmlFor={`${formId}-company`} className="mb-2 block text-sm font-medium text-foreground">
+                  <label htmlFor={`${formId}-company`} className="mb-1 block text-xs font-medium text-foreground md:mb-2 md:text-sm">
                     {t.contact.company} <span className="text-destructive">*</span>
                   </label>
                   <input
@@ -338,11 +370,11 @@ export default function WhatsAppProposalWidget() {
                     className={fieldClass(Boolean(errors.company))}
                     placeholder={place('companyPlaceholder', 'Your Company')}
                   />
-                  {errors.company ? <p className="mt-1 text-sm text-destructive">{errors.company}</p> : null}
+                  {errors.company ? <p className="mt-0.5 text-xs text-destructive md:mt-1 md:text-sm">{errors.company}</p> : null}
                 </div>
 
                 <div>
-                  <label htmlFor={`${formId}-phone`} className="mb-2 block text-sm font-medium text-foreground">
+                  <label htmlFor={`${formId}-phone`} className="mb-1 block text-xs font-medium text-foreground md:mb-2 md:text-sm">
                     {t.contact.phoneLabel} <span className="text-destructive">*</span>
                   </label>
                   <input
@@ -355,26 +387,28 @@ export default function WhatsAppProposalWidget() {
                     className={fieldClass(Boolean(errors.phone))}
                     placeholder="+44 20 7123 4567"
                   />
-                  {errors.phone ? <p className="mt-1 text-sm text-destructive">{errors.phone}</p> : null}
+                  {errors.phone ? <p className="mt-0.5 text-xs text-destructive md:mt-1 md:text-sm">{errors.phone}</p> : null}
                 </div>
 
                 <div>
-                  <label htmlFor={`${formId}-message`} className="mb-2 block text-sm font-medium text-foreground">
+                  <label htmlFor={`${formId}-message`} className="mb-1 block text-xs font-medium text-foreground md:mb-2 md:text-sm">
                     {t.contact.message} <span className="text-destructive">*</span>
                   </label>
                   <textarea
                     id={`${formId}-message`}
                     name="message"
-                    rows={3}
+                    rows={2}
                     required
                     aria-invalid={Boolean(errors.message)}
                     className={`${fieldClass(Boolean(errors.message))} resize-none`}
                     placeholder={place('messagePlaceholder', 'Tell us about your research needs...')}
                   />
-                  {errors.message ? <p className="mt-1 text-sm text-destructive">{errors.message}</p> : null}
+                  {errors.message ? <p className="mt-0.5 text-xs text-destructive md:mt-1 md:text-sm">{errors.message}</p> : null}
+                </div>
                 </div>
 
-                <p className="text-xs text-muted-foreground leading-snug">
+                <div className="shrink-0 border-t border-border bg-background px-3 py-2.5 md:px-5 md:py-4">
+                <p className="mb-2 text-[11px] leading-snug text-muted-foreground md:text-xs">
                   {copy.privacyBefore}
                   <Link
                     to={getLocalizedPathForLanguage('/privacy', language)}
@@ -385,46 +419,47 @@ export default function WhatsAppProposalWidget() {
                   {copy.privacyAfter}
                 </p>
 
-                {submitError ? <p className="text-sm text-destructive">{submitError}</p> : null}
+                {submitError ? <p className="mb-2 text-xs text-destructive md:text-sm">{submitError}</p> : null}
 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full rounded-lg bg-accent py-3 font-semibold text-accent-foreground transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="w-full rounded-md bg-accent py-2 text-sm font-semibold text-accent-foreground transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70 md:rounded-lg md:py-3 md:text-base"
                 >
                   {submitting ? copy.submitting : copy.submitButton}
                 </button>
+                </div>
               </form>
             )}
           </div>
         </div>
       ) : null}
 
-      <div className="flex justify-end">
+      <div className={`flex justify-end ${open ? 'hidden md:flex' : ''}`}>
         {open ? (
           <button
             type="button"
-            className="whatsapp-fab is-open relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-elegant ring-2 ring-accent transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:h-16 md:w-16"
+            className="whatsapp-fab is-open relative flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-elegant ring-2 ring-accent transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:h-16 md:w-16"
             aria-label={copy.closeLabel}
             aria-expanded
             aria-haspopup="dialog"
             onClick={() => setOpen(false)}
           >
-            <X className="h-6 w-6" aria-hidden />
+            <X className="h-5 w-5 md:h-6 md:w-6" aria-hidden />
           </button>
         ) : (
           <Tooltip delayDuration={200}>
             <TooltipTrigger asChild>
               <button
                 type="button"
-                className="whatsapp-fab relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-elegant ring-2 ring-accent transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:h-16 md:w-16"
+                className={`whatsapp-fab relative flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-elegant ring-2 ring-accent transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:h-16 md:w-16 ${ringing ? 'is-ringing' : ''}`}
                 aria-label={copy.fabAriaLabel}
                 aria-expanded={false}
                 aria-haspopup="dialog"
                 onClick={() => setOpen(true)}
               >
                 <span className="whatsapp-fab-pulse" aria-hidden />
-                <Phone className="whatsapp-fab-icon h-6 w-6" aria-hidden />
+                <Phone className="whatsapp-fab-icon h-5 w-5 md:h-6 md:w-6" aria-hidden />
               </button>
             </TooltipTrigger>
             <TooltipContent side={isRTL ? 'right' : 'left'} sideOffset={12} className="max-w-[14rem] font-medium">

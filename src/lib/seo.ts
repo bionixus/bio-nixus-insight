@@ -34,7 +34,7 @@ export const seoByLanguage: Record<Language, {
 }> = {
   en: {
     // CTR-engineered homepage title/description (exact; server skips length clamps).
-    title: 'Bionixus — Healthcare & Pharma Market Research Firm (MENA, Asia, Global)',
+    title: 'BioNixus - The Global Market Research Firm (EMEA, Americas, APAC and MENA)',
     description:
       'Primary healthcare market research and market access consulting for pharma & medical devices — GCC, USA, Turkey, Europe, Brazil & Asia. Request a proposal.',
     keywords:
