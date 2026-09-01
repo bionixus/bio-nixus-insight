@@ -250,6 +250,10 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/insights/top-market-research-companies-saudi-arabia-2026',
     ar: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026',
   },
+  '/insights/top-market-research-companies-uae-2026': {
+    en: '/insights/top-market-research-companies-uae-2026',
+    ar: '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026',
+  },
   '/market-research-saudi-arabia-pharmaceutical': {
     en: '/market-research-saudi-arabia-pharmaceutical',
     ar: '/ar/abhath-suq-adwiyah-saudi-arabia',

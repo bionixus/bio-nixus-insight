@@ -403,7 +403,11 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
                 <Link to="/market-research" className="text-primary hover:underline">
                   market research capabilities
                 </Link>{' '}
-                page and the{' '}
+                page, the{' '}
+                <Link to="/insights/top-market-research-companies-uae-2026" className="text-primary hover:underline">
+                  market research firms UAE
+                </Link>{' '}
+                country ranking, and the{' '}
                 <Link to="/insights/top-market-research-companies-dubai-2026" className="text-primary hover:underline">
                   Dubai market research guide
                 </Link>. For regulated-sector depth, visit{' '}
@@ -569,7 +573,7 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
               {[
                 { to: '/market-research', label: 'Market Research Services', desc: 'Consumer, FMCG, retail, and multi-industry research capabilities.' },
                 { to: '/insights/top-market-research-companies-dubai-2026', label: 'Top Market Research Companies in Dubai', desc: 'Sister guide focused on Dubai consumer research.' },
-                { to: '/insights/top-market-research-companies-uae-2026', label: 'Top Market Research Companies in the UAE', desc: 'Full UAE emirates comparison guide.' },
+                { to: '/insights/top-market-research-companies-uae-2026', label: 'market research firms UAE', desc: 'Full UAE emirates comparison guide.' },
                 { to: '/insights/top-market-research-companies-gcc-2026', label: 'Top Market Research Companies in the GCC', desc: 'Regional comparison across Gulf markets.' },
                 { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },
                 { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Abu Dhabi consumer research engagement.' },

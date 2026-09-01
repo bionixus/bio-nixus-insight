@@ -335,7 +335,14 @@ export default function CountryPage() {
                   >
                     United Arab Emirates healthcare market research
                   </Link>
-                  .
+                  . For a cross-industry ranking of{' '}
+                  <Link
+                    to="/insights/top-market-research-companies-uae-2026"
+                    className="text-primary font-medium hover:underline"
+                  >
+                    market research firms UAE
+                  </Link>
+                  , see the 2026 general listicle.
                 </>
               ) : (
                 <>

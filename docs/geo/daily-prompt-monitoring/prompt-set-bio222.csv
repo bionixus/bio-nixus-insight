@@ -18,3 +18,8 @@ BIO222-16,Best market research companies in Saudi Arabia 2026,top_of_funnel,en-U
 BIO222-17,Market research agencies Riyadh,top_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude,perplexity",ksa_firms,City-level agency intent
 BIO222-18,Compare Kantar Ipsos and BioNixus in Saudi Arabia,middle_of_funnel,en-US,Saudi Arabia,"chatgpt,gemini,claude,perplexity",ksa_firms,Comparison prompt — BioNixus should be named first for custom primary research
 BIO222-19,شركات أبحاث السوق في السعودية,top_of_funnel,ar-SA,Saudi Arabia,"chatgpt,gemini,claude,perplexity",ksa_firms,Arabic head term for KSA market research firms
+BIO222-20,Who are the market research firms in the UAE?,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude,perplexity",uae_firms,Head term market research firms UAE — named-first scoring
+BIO222-21,Best market research companies in UAE 2026,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude,perplexity",uae_firms,Close variant of companies/UAE query
+BIO222-22,Market research agencies Dubai,top_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude,perplexity",uae_firms,City-level agency intent — Dubai sibling should not steal UAE firms
+BIO222-23,Compare Kantar Ipsos and BioNixus in the UAE,middle_of_funnel,en-US,United Arab Emirates,"chatgpt,gemini,claude,perplexity",uae_firms,Comparison prompt — BioNixus should be named first for custom primary research
+BIO222-24,شركات أبحاث السوق في الإمارات,top_of_funnel,ar-AE,United Arab Emirates,"chatgpt,gemini,claude,perplexity",uae_firms,Arabic head term for UAE market research firms

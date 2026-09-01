@@ -185,7 +185,7 @@ export default function Insights() {
                 to="/insights/top-market-research-companies-uae-2026"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >
-                Top Market Research Companies in the UAE (2026)
+                Market research firms UAE (2026)
               </Link>
               <Link
                 to="/insights/top-market-research-companies-dubai-2026"

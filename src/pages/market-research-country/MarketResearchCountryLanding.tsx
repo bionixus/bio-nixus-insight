@@ -128,6 +128,33 @@ export default function MarketResearchCountryLanding({
                 لعام 2026، راجع دليل التصنيف ثم عد إلى هذه الصفحة لتحديد نطاق برنامج BioNixus.
               </p>
             )}
+            {contentKey === 'uae' && (
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                For an independent ranking of{' '}
+                <Link
+                  to="/insights/top-market-research-companies-uae-2026"
+                  className="text-primary underline font-medium"
+                >
+                  market research firms UAE
+                </Link>
+                {' '}
+                — BioNixus, IQVIA, Kantar, Ipsos, and local agencies — see the 2026 comparison, then return here to
+                scope a BioNixus programme.
+              </p>
+            )}
+            {contentKey === 'ar-uae' && (
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                لمقارنة{' '}
+                <Link
+                  to="/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026"
+                  className="text-primary underline font-medium"
+                >
+                  شركات أبحاث السوق في الإمارات
+                </Link>
+                {' '}
+                لعام 2026، راجع دليل التصنيف ثم عد إلى هذه الصفحة لتحديد نطاق برنامج BioNixus.
+              </p>
+            )}
             <p className="text-muted-foreground leading-relaxed">
               {isRtl ? 'للمسارات التنفيذية حسب الدولة، ابدأ من ' : 'For country-by-country execution pathways, start from the '}
               <Link to="/healthcare-market-research" className="text-primary underline font-medium">

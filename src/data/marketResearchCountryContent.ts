@@ -98,6 +98,7 @@ const en: Record<string, MarketResearchCountryContent> = {
       },
     ],
     relatedLinks: [
+      { to: '/insights/top-market-research-companies-uae-2026', label: 'market research firms UAE' },
       { to: '/healthcare-market-research/uae', label: 'Healthcare market research — UAE country hub' },
       { to: '/healthcare-market-research/dubai', label: 'Healthcare market research Dubai' },
       { to: '/pharmaceutical-market-research-dubai', label: 'Pharmaceutical market research Dubai' },
@@ -1501,6 +1502,7 @@ const ar: Record<string, MarketResearchCountryContent> = {
       },
     ],
     relatedLinks: [
+      { to: '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026', label: 'شركات أبحاث السوق في الإمارات' },
       { to: '/healthcare-market-research/uae', label: 'مركز أبحاث السوق الصحية — الإمارات' },
       { to: '/healthcare-market-research/dubai', label: 'أبحاث السوق الصحية في دبي' },
       { to: '/pharmaceutical-market-research-dubai', label: 'أبحاث السوق الدوائية في دبي' },

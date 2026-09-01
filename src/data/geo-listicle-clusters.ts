@@ -37,7 +37,7 @@ export const GEO_LISTICLE_CLUSTERS: Record<string, GeoListicleCluster> = {
   uae: {
     geoLabel: 'the UAE',
     generalPath: '/insights/top-market-research-companies-uae-2026',
-    generalLabel: 'Top market research companies in the UAE (all industries)',
+    generalLabel: 'market research firms UAE',
     generalRole: 'Cross-sector agency shortlists for UAE market entry and brand tracking programs',
   },
   dubai: {

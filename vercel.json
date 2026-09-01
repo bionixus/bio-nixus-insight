@@ -283,6 +283,11 @@
       "statusCode": 301
     },
     {
+      "source": "/insights/market-research-firms-uae",
+      "destination": "/insights/top-market-research-companies-uae-2026",
+      "statusCode": 301
+    },
+    {
       "source": "/insights/top-obesity-market-research-companies-2026",
       "destination": "/insights/best-obesity-weight-management-market-research-firms-2026",
       "statusCode": 301

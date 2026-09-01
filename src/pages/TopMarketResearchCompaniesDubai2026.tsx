@@ -404,7 +404,7 @@ export default function TopMarketResearchCompaniesDubai2026() {
                 </Link>{' '}
                 page and the{' '}
                 <Link to="/insights/top-market-research-companies-uae-2026" className="text-primary hover:underline">
-                  UAE market research guide
+                  market research firms UAE
                 </Link>. For regulated-sector depth, visit{' '}
                 <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
                   healthcare market research in the UAE
@@ -576,7 +576,7 @@ export default function TopMarketResearchCompaniesDubai2026() {
               {[
                 { to: '/market-research', label: 'Market Research Services', desc: 'Consumer, FMCG, retail, and multi-industry research capabilities.' },
                 { to: '/insights/top-market-research-companies-abu-dhabi-2026', label: 'Top Market Research Companies in Abu Dhabi', desc: 'Sister guide focused on the UAE capital.' },
-                { to: '/insights/top-market-research-companies-uae-2026', label: 'Top Market Research Companies in the UAE', desc: 'Full UAE emirates comparison guide.' },
+                { to: '/insights/top-market-research-companies-uae-2026', label: 'market research firms UAE', desc: 'Full UAE emirates comparison guide.' },
                 { to: '/insights/top-market-research-companies-gcc-2026', label: 'Top Market Research Companies in the GCC', desc: 'Regional comparison across Gulf markets.' },
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top Market Research Companies in Saudi Arabia', desc: 'Sister guide to the leading research firms in Saudi Arabia.' },
                 { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },

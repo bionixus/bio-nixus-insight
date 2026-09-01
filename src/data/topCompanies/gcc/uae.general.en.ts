@@ -8,22 +8,23 @@ export const uaeGeneralEn: CountryListicleConfig = {
   country: 'United Arab Emirates',
   rtl: false,
 
-  title: 'Top Market Research Companies in the UAE 2026 | BioNixus',
+  title: 'Market Research Firms UAE 2026 | Top UAE Companies',
   metaDescription:
-    'Discover the top market research companies in the UAE for 2026. Compare BioNixus, Kantar MENAP, IQVIA MENA, NielsenIQ, and Euromonitor across primary.',
+    'Market research firms UAE 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, Ipsos, NielsenIQ, and local agencies in the UAE.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026' },
+    { lang: 'ar', href: 'https://www.bionixus.com/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026' },
     { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026' },
   ],
   ogLocale: 'en_AE',
   inLanguage: 'en',
 
   datePublished: '2026-06-12',
-  dateModified: '2026-06-12',
+  dateModified: '2026-09-01',
   badge: '2026 Industry Guide',
 
-  h1: 'Best Market Research Companies in the UAE (2026 Guide)',
+  h1: 'Market Research Firms in the UAE (2026 Rankings)',
   heroIntro:
     'The United Arab Emirates is the GCC\'s most diversified commercial hub — home to a $504B+ economy, a highly urbanised and expatriate-dominated consumer base, and dual healthcare regulators across Dubai and Abu Dhabi. This guide profiles the five leading market research companies operating across the UAE in 2026, ranked by breadth of primary research capability, healthcare and pharmaceutical expertise, and UAE-specific execution strength.',
   heroStats: ['5 Firms Profiled', '$504B+ GDP', 'MOHAP Regulated', '8 FAQs Answered'],

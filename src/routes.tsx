@@ -269,6 +269,7 @@ import ArHealthcareMarketResearch from '@/pages/ArHealthcareMarketResearch';
 import ArHealthcareMarketResearchSaudiArabia from '@/pages/ArHealthcareMarketResearchSaudiArabia';
 import ArTopHealthcareMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopHealthcareMarketResearchCompaniesSaudiArabia2026';
 import ArTopMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopMarketResearchCompaniesSaudiArabia2026';
+import ArTopMarketResearchCompaniesUae2026 from '@/pages/ArTopMarketResearchCompaniesUae2026';
 import AustraliaPharmaceuticalMarketResearch from '@/pages/AustraliaPharmaceuticalMarketResearch';
 import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
 import BrazilHealthcareMarketResearch from '@/pages/BrazilHealthcareMarketResearch';
@@ -567,6 +568,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/ar/insights/top-market-research-companies-egypt-2026', element: suspensePage(<ArTopMarketResearchCompaniesEgypt2026 />) },
   { path: '/zh/insights/top-market-research-companies-egypt-2026', element: <ZhTopMarketResearchCompaniesEgypt2026 /> },
   { path: '/insights/market-research-firms-ksa', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
+  { path: '/insights/market-research-firms-uae', element: <Navigate to="/insights/top-market-research-companies-uae-2026" replace /> },
   { path: '/insights/top-market-research-companies-ksa-2026', element: <Navigate to="/insights/top-market-research-companies-saudi-arabia-2026" replace /> },
   { path: '/insights/top-market-research-companies-saudi-arabia-2026', element: <TopMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/insights/top-consumer-insights-companies-saudi-arabia-2026', element: <TopConsumerInsightsCompaniesSaudiArabiaRedirect /> },
@@ -789,6 +791,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/ar/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/ar/healthcare-market-research/saudi-arabia', element: <ArHealthcareMarketResearchSaudiArabia /> },
   { path: '/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026', element: <ArTopMarketResearchCompaniesSaudiArabia2026 /> },
+  { path: '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026', element: <ArTopMarketResearchCompaniesUae2026 /> },
   { path: '/ar/insights/top-sharaket-abhath-sihha-alsaudia-2026', element: <ArTopHealthcareMarketResearchCompaniesSaudiArabia2026 /> },
   { path: '/brazil-pharmaceutical-market-research', element: <BrazilPharmaceuticalMarketResearch /> },
   { path: '/brazil-healthcare-market-research', element: <BrazilHealthcareMarketResearch /> },

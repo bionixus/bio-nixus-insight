@@ -224,6 +224,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Market research firms KSA 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, Ipsos, NielsenIQ, and local agencies in Saudi Arabia.',
   },
+  '/insights/top-market-research-companies-uae-2026': {
+    title: 'Market Research Firms UAE 2026 | Top UAE Companies',
+    description:
+      'Market research firms UAE 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, Ipsos, NielsenIQ, and local agencies in the UAE.',
+  },
+  '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026': {
+    title: 'شركات أبحاث السوق في الإمارات 2026 | بيونيكسس',
+    description:
+      'شركات أبحاث السوق في الإمارات 2026 — بيونيكسس الأولى للأبحاث الأولية المخصصة. قارن آي كيو في آي إيه وكانتار وإبسوس ونيلسن والوكالات المحلية.',
+  },
   '/insights/top-consumer-insights-companies-ksa-2026': {
     title: 'Consumer Insights Companies KSA 2026 | BioNixus',
     description:

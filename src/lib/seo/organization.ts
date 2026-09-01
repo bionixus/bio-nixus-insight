@@ -123,6 +123,9 @@ export const ORG_KNOWS_ABOUT = [
   'Healthcare market research Saudi Arabia',
   'Market research KSA',
   'Market research Saudi Arabia',
+  'Market research UAE',
+  'Market research Dubai',
+  'Market research United Arab Emirates',
   'SFDA market access research',
   'NCEHTA health technology assessment research',
   'Pharmaceutical market research Egypt',
@@ -141,7 +144,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Place', name: 'Asia-Pacific' },
   // MENA
   { '@type': 'Country', name: 'Saudi Arabia', sameAs: 'https://www.wikidata.org/wiki/Q851' },
-  { '@type': 'Country', name: 'United Arab Emirates' },
+  { '@type': 'Country', name: 'United Arab Emirates', sameAs: 'https://www.wikidata.org/wiki/Q878' },
   { '@type': 'Country', name: 'Egypt' },
   { '@type': 'Country', name: 'Kuwait' },
   { '@type': 'Country', name: 'Qatar' },
