@@ -1,11 +1,12 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
+import { Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getHreflangLinks } from '@/lib/seo';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
@@ -770,7 +771,7 @@ export default function TopMarketResearchCompaniesUae2026() {
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Market Research Firms KSA', desc: 'Sister ranking for Saudi Arabia.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
                 { to: '/market-research', label: 'Market Research Services', desc: 'Consumer, FMCG, retail, and multi-industry capabilities.' },
-                { to: '/contact', label: 'Request a Proposal', desc: 'Proposal within 48 hours for UAE programmes.' },
+                { to: '/pharmaceutical-companies-uae', label: 'Pharmaceutical companies in the UAE', desc: 'The companies we study — manufacturers, MNCs, and pharmacy chains.' },
               ].map((r) => (
                 <Link
                   key={r.to}
@@ -785,31 +786,19 @@ export default function TopMarketResearchCompaniesUae2026() {
           </div>
         </section>
 
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Scope Market Research for the UAE
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers custom primary research across the UAE — brand tracking, U&A, segmentation,
-              and multi-industry programmes. Proposal within 48 hours.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/strategic-portfolio"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
-              >
-                View Strategic Portfolio
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ListicleProposalCta
+          countryName="United Arab Emirates"
+          ctaId="listicle_uae_footer"
+          headline="Need brand and competitor data in the UAE?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/strategic-portfolio"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
+            View Strategic Portfolio
+          </Link>
+        </ListicleProposalCta>
       </main>
       <Footer />
     </div>

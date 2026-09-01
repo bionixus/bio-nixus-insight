@@ -21,10 +21,12 @@ export type QualificationFormProps = {
   formId: string;
   /** Optional context label shown in the form and sent with the submission, e.g. a report/page name. */
   sourceContext?: string;
+  /** Prefills Markets of interest checkboxes (must match QUALIFICATION_FORM_MARKETS). */
+  defaultMarkets?: string[];
   onSuccess?: () => void;
 };
 
-export function QualificationForm({ formId, sourceContext, onSuccess }: QualificationFormProps) {
+export function QualificationForm({ formId, sourceContext, defaultMarkets, onSuccess }: QualificationFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -229,7 +231,13 @@ export function QualificationForm({ formId, sourceContext, onSuccess }: Qualific
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-1.5 max-h-36 overflow-y-auto pr-1">
           {QUALIFICATION_FORM_MARKETS.map((market) => (
             <label key={market} className="flex items-center gap-1.5 text-xs text-foreground cursor-pointer">
-              <input type="checkbox" name="markets" value={market} className="h-3.5 w-3.5 rounded border-input text-primary focus:ring-primary/20" />
+              <input
+                type="checkbox"
+                name="markets"
+                value={market}
+                defaultChecked={defaultMarkets?.includes(market)}
+                className="h-3.5 w-3.5 rounded border-input text-primary focus:ring-primary/20"
+              />
               {market}
             </label>
           ))}

@@ -39,7 +39,7 @@ export function ReportMidPageCta({ config, className = 'my-10' }: ReportMidPageC
           className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold rounded-md transition-all hover:-translate-y-0.5 shadow-lg"
           style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
         >
-          Book a briefing call
+          {config.primaryCtaLabel}
           <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden />
         </Link>
         <a

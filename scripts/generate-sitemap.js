@@ -123,7 +123,6 @@ const STATIC_ROUTES = [
   '/blog/digital-therapeutics-regulation-mena-markets',
   '/blog/top-healthcare-market-research-companies-uae',
   '/blog/top-healthcare-market-research-companies-kuwait',
-  '/blog/top-market-research-companies-egypt-2026',
   '/ar/blog',
   '/ar/blog/saudi-healthcare-market-research-firms-ar',
   '/ar/contacts',

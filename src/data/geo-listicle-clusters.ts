@@ -76,6 +76,12 @@ export const GEO_LISTICLE_CLUSTERS: Record<string, GeoListicleCluster> = {
     healthcareLabel: 'Top healthcare market research companies in Kuwait',
     healthcareRole: 'MOH-aware pharmaceutical fieldwork, hospital stakeholder mapping, and payer evidence',
   },
+  iran: {
+    geoLabel: 'Iran',
+    generalPath: '/insights/top-market-research-companies-iran-2026',
+    generalLabel: 'Top market research companies in Iran (2026)',
+    generalRole: 'Account-level primary research shortlist versus IQVIA/Nielsen syndicated feeds',
+  },
   egypt: {
     geoLabel: 'Egypt',
     generalPath: '/insights/top-market-research-companies-egypt-2026',

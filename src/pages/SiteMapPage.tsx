@@ -100,6 +100,7 @@ const staticLinks = [
   { to: '/methodology', label: 'Methodology' },
   { to: '/strategic-portfolio', label: 'Strategic Portfolio' },
   { to: '/insights/top-market-research-companies-egypt-2026', label: 'Best Market Research Companies in Egypt (2026)' },
+  { to: '/insights/top-market-research-companies-iran-2026', label: 'Best Market Research Companies in Iran (2026)' },
   { to: '/nf1-pharma-market-research', label: 'NF1 pharma market research (services)' },
   { to: '/desmoid-tumor-pharma-market-research', label: 'Desmoid tumor pharma market research (services)' },
   { to: '/blog/nf1-koselugo-selumetinib-pharma-market-research', label: 'NF1 Koselugo / selumetinib market research (blog)' },

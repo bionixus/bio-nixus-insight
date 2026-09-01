@@ -7,6 +7,7 @@ import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { PharmaDirectoryBridge } from '@/components/seo/PharmaDirectoryBridge';
 import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
@@ -69,13 +70,13 @@ const SaudiPharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-saudi-arabia';
 
-  const ogTitle = "Top Pharmaceutical Companies in Saudi Arabia (2026 List + Data)";
-  const ogDescription = "Ranked 2026 list of pharmaceutical companies in Saudi Arabia with localization status, NUPCO context and market size. By Bionixus.";
+  const ogTitle = "Top 20 Pharmaceutical Companies in Saudi Arabia (2026 List)";
+  const ogDescription = "2026 ranking of pharmaceutical companies in Saudi Arabia — SPIMACO, Tabuk, MNCs, NUPCO tenders and localization. By BioNixus, KSA healthcare research experts.";
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top 20 Pharmaceutical Companies in Saudi Arabia (2026 Ranked)</title>
-        <meta name="description" content="Top 20 pharmaceutical companies in Saudi Arabia ranked for 2026 — SPIMACO, Tabuk, MNCs, localization status, NUPCO tenders and market size. By BioNixus." />        <link rel="canonical" href={citationUrl} />
+        <title>Top 20 Pharmaceutical Companies in Saudi Arabia (2026 List)</title>
+        <meta name="description" content="2026 ranking of pharmaceutical companies in Saudi Arabia — SPIMACO, Tabuk, MNCs, NUPCO tenders and localization. By BioNixus, KSA healthcare research experts." />        <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in Saudi Arabia: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Saudi Arabia — local manufacturers, MNC offices, distributors, $12.4B market data, SFDA regulatory landscape, and Vision 2030 outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Saudi Arabia', item: citationUrl }] })}</script>
@@ -150,17 +151,11 @@ const SaudiPharmaCompanies = () => {
           <div className="overflow-x-auto rounded-xl border border-border"><table className="w-full text-sm"><thead><tr className="bg-primary/5 border-b border-border"><th className="text-left px-4 py-3 font-semibold text-foreground">Company</th><th className="text-left px-4 py-3 font-semibold text-foreground">HQ</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden md:table-cell">Type</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden lg:table-cell">Therapeutic Areas</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden xl:table-cell">Notes</th></tr></thead><tbody>
             {pharmaCompanies.map((c, i) => (<tr key={c.name} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}><td className="px-4 py-3 font-medium text-foreground">{c.name}</td><td className="px-4 py-3 text-muted-foreground">{c.hq}</td><td className="px-4 py-3 hidden md:table-cell"><span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${c.type === 'Local Manufacturer' ? 'bg-green-50 text-green-700' : c.type === 'MNC Office' ? 'bg-blue-50 text-blue-700' : c.type === 'Regional' ? 'bg-amber-50 text-amber-700' : 'bg-purple-50 text-purple-700'}`}>{c.type}</span></td><td className="px-4 py-3 text-muted-foreground hidden lg:table-cell">{c.therapeuticAreas}</td><td className="px-4 py-3 text-muted-foreground text-xs hidden xl:table-cell">{c.notes}</td></tr>))}
           </tbody></table></div>
-          <div className="mt-8">
-            <ConversionCTA
-              variant="gated-asset"
-              reportName="GCC Pharma & MedTech Market Databook 2026"
-              pdfPath="/downloads/gcc-pharma-medtech-databook-2026-sample.pdf"
-              headline="Get the full Saudi Arabia ranked directory + market sizes (PDF)"
-              buttonLabel="Get the directory PDF"
-              ctaId="pharma_companies_saudi-arabia_after_table"
-              ctaLocation="after_first_table"
-            />
-          </div>
+          <PharmaDirectoryBridge
+            countryName="Saudi Arabia"
+            directorySlug="saudi-arabia"
+            ctaId="pharma_companies_saudi-arabia_after_table"
+          />
 
         </div></section>
 

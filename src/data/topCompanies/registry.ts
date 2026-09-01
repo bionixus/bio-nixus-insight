@@ -7,6 +7,7 @@
  * Keep this file free of JSX/React imports.
  */
 import type { CountryListicleConfig, ListicleHreflang } from './types';
+import { directoryForListiclePath } from '../pharmaDirectoryListicles';
 
 // GCC (general)
 import { uaeGeneralEn } from './gcc/uae.general.en';
@@ -41,6 +42,7 @@ import { jordanHealthcareEn } from './mena/jordan.healthcare.en';
 import { lebanonGeneralEn } from './mena/lebanon.general.en';
 import { lebanonHealthcareEn } from './mena/lebanon.healthcare.en';
 import { iraqGeneralEn } from './mena/iraq.general.en';
+import { iranGeneralEn } from './mena/iran.general.en';
 import { moroccoGeneralEn } from './mena/morocco.general.en';
 import { algeriaGeneralEn } from './mena/algeria.general.en';
 import { tunisiaGeneralEn } from './mena/tunisia.general.en';
@@ -134,6 +136,7 @@ export const allListicleConfigs: CountryListicleConfig[] = [
   lebanonGeneralEn,
   lebanonHealthcareEn,
   iraqGeneralEn,
+  iranGeneralEn,
   moroccoGeneralEn,
   algeriaGeneralEn,
   tunisiaGeneralEn,
@@ -247,7 +250,11 @@ export function resolvePublishedRelated(
   config: CountryListicleConfig,
 ): CountryListicleConfig['related'] {
   const seen = new Set<string>();
-  return config.related.flatMap((link) => {
+  const directory = directoryForListiclePath(config.slug);
+  const seeded = directory
+    ? [{ to: directory.to, label: directory.label }, ...config.related]
+    : config.related;
+  return seeded.flatMap((link) => {
     const corrected = RELATED_LINK_CORRECTIONS[link.to];
     const path = corrected ?? link.to;
     if (!path.startsWith('/') || path === config.slug || seen.has(path)) return [];

@@ -1,10 +1,11 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
+import { Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 import {
   BIONIXUS_MR_HQ,
@@ -105,7 +106,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best market research companies in Egypt?',
-    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 38 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
+    a: 'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, NielsenIQ, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 127+ completed projects across 48 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
   },
   {
     q: 'How much does market research cost in Egypt?',
@@ -117,7 +118,7 @@ const faqItems = [
   },
   {
     q: 'Should I use a global network or a local specialist for Egypt research?',
-    a: 'BioNixus combines both — global network reach (38 countries, 48 global clients) with Egypt-specific consumer fieldwork, bilingual Arabic-English execution, and category knowledge across the largest consumer population in MENA. Global networks like Kantar and Ipsos offer benchmarking and large quantitative infrastructure; BioNixus adds multi-industry depth plus regulated-sector methodological discipline.',
+    a: 'BioNixus combines both — global network reach (48 countries, 118 global clients) with Egypt-specific consumer fieldwork, bilingual Arabic-English execution, and category knowledge across the largest consumer population in MENA. Global networks like Kantar and Ipsos offer benchmarking and large quantitative infrastructure; BioNixus adds multi-industry depth plus regulated-sector methodological discipline.',
   },
   {
     q: 'What research methods work best for Egyptian consumer studies?',
@@ -580,8 +581,8 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 { to: '/insights/top-market-research-companies-uae-2026', label: 'Top Market Research Companies in the UAE', desc: 'Consumer and multi-industry firms across the Emirates.' },
                 { to: '/insights/top-market-research-companies-gcc-2026', label: 'Top Market Research Companies in the GCC', desc: 'Regional comparison across Gulf markets.' },
                 { to: '/strategic-portfolio', label: 'BioNixus Strategic Portfolio', desc: 'Full portfolio of market research and consulting capabilities.' },
-                { to: '/blog/top-market-research-companies-egypt-2026', label: 'Egypt Market Research Editorial', desc: 'Long-form blog companion with related coverage.' },
-                { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Egypt consumer research engagement.' },
+                { to: '/pharmaceutical-companies-egypt', label: 'Pharmaceutical companies in Egypt', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
+                { to: '/contact', label: 'Email a brief', desc: 'Or write admin@bionixus.com for an Egypt research proposal.' },
               ].map((r) => (
                 <Link
                   key={r.to}
@@ -596,33 +597,19 @@ export default function TopMarketResearchCompaniesEgypt2026() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Scope Consumer Market Research for Egypt
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers global, multi-industry market research across Egypt and MENA —
-              brand tracking, U&A, segmentation, concept testing, and retail/shopper programmes with
-              regulated-industry methodological rigour.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/strategic-portfolio"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
-              >
-                View Strategic Portfolio
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ListicleProposalCta
+          countryName="Egypt"
+          ctaId="listicle_egypt_footer"
+          headline="Need brand and competitor data in Egypt?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/strategic-portfolio"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
+            View Strategic Portfolio
+          </Link>
+        </ListicleProposalCta>
       </main>
       <Footer />
     </div>

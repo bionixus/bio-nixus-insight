@@ -892,7 +892,7 @@ export default function CountryPage() {
               </Link>
               . For agency listicle intent, see{' '}
               <Link
-                to="/blog/top-market-research-companies-egypt-2026"
+                to="/insights/top-market-research-companies-egypt-2026"
                 className="text-primary underline font-medium"
               >
                 top market research companies in Egypt (2026)

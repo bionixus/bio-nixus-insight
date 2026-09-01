@@ -1,11 +1,12 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
+import { Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 
 interface FirmProfile {
@@ -32,7 +33,7 @@ const firms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'MOH Kuwait-aware pharmaceutical research, HCP surveys, KOL mapping, HEOR, market access strategy, FMCG, and consumer insights — global methodology with deep Kuwait and GCC execution',
     overview:
-      'BioNixus is a global market research and insights firm headquartered in the USA with offices in the UK and the Middle East, combining 15+ years of MENA experience with diversified capabilities across healthcare, pharmaceutical, FMCG, and consumer research. In Kuwait, BioNixus provides full-service healthcare market research: MOH Kuwait-aware study design, physician and specialist surveys across Mubarak Al-Kabeer Hospital, Al-Sabah Hospital, and Kuwait Cancer Control Center, KOL identification and mapping, payer research aligned with government formulary and Kuwait Drug Committee (KDC) dynamics, HEOR evidence generation, and competitive intelligence for pharmaceutical market entry and lifecycle strategy. BioNixus serves 48+ global pharmaceutical and consumer goods clients across 17+ countries, applying rigorous global methodology to Kuwait\'s unique regulatory, cultural, and clinical landscape. Arabic-English bilingual fieldwork is standard, with coverage spanning Kuwait City, Salmiya, Hawalli, and secondary governorates.',
+      'BioNixus is a global market research and insights firm headquartered in the USA with offices in the UK and the Middle East, combining 15+ years of MENA experience with diversified capabilities across healthcare, pharmaceutical, FMCG, and consumer research. In Kuwait, BioNixus provides full-service healthcare market research: MOH Kuwait-aware study design, physician and specialist surveys across Mubarak Al-Kabeer Hospital, Al-Sabah Hospital, and Kuwait Cancer Control Center, KOL identification and mapping, payer research aligned with government formulary and Kuwait Drug Committee (KDC) dynamics, HEOR evidence generation, and competitive intelligence for pharmaceutical market entry and lifecycle strategy. BioNixus serves 118 global pharmaceutical and consumer goods clients across 48 countries, applying rigorous global methodology to Kuwait\'s unique regulatory, cultural, and clinical landscape. Arabic-English bilingual fieldwork is standard, with coverage spanning Kuwait City, Salmiya, Hawalli, and secondary governorates.',
     strengths: [
       'MOH Kuwait and Kuwait Drug Committee (KDC) regulatory awareness',
       'Government hospital HCP access (Mubarak Al-Kabeer, Al-Sabah, KCCC)',
@@ -699,7 +700,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
                 { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide', desc: 'Strategic guide to pharmaceutical market access across GCC countries.' },
                 { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Top Healthcare MRC in Saudi Arabia', desc: 'SFDA-aware healthcare research companies in the KSA market.' },
                 { to: '/insights/top-healthcare-market-research-companies-dubai-2026', label: 'Top Healthcare MRC in Dubai', desc: 'DHA-aware healthcare research companies in Dubai.' },
-                { to: '/contact', label: 'Request a Proposal', desc: 'Get in touch for a custom Kuwait healthcare research engagement.' },
+                { to: '/pharmaceutical-companies-kuwait', label: 'Pharmaceutical companies in Kuwait', desc: 'The companies we study — the matching country directory.' },
               ].map((r) => (
                 <Link
                   key={r.to}
@@ -714,33 +715,19 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Plan Healthcare Market Research in Kuwait
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers MOH Kuwait-aware pharmaceutical and healthcare market research — physician surveys
-              across government hospitals, KOL mapping, KDC formulary research, HEOR evidence, FMCG and consumer
-              insights. Global standards. In-country Kuwait execution across the GCC.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/kuwait-market-access-research"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
-              >
-                View Kuwait Research Capabilities
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ListicleProposalCta
+          countryName="Kuwait"
+          ctaId="listicle_kuwait_healthcare_footer"
+          headline="Need brand and competitor data in Kuwait?"
+          body="Account-level or SKU-level primary research — not a syndicated dashboard. Proposal ready within 48 hours of a brief."
+        >
+          <Link
+            to="/kuwait-market-access-research"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground font-semibold hover:bg-white/20 transition-colors"
+          >
+            View Kuwait Research Capabilities
+          </Link>
+        </ListicleProposalCta>
       </main>
       <Footer />
     </div>

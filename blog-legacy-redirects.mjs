@@ -58,6 +58,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':
     '/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026',
+  '/blog/top-market-research-companies-egypt-2026':
+    '/insights/top-market-research-companies-egypt-2026',
   ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
   ...BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
 };

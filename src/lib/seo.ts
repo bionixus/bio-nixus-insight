@@ -293,11 +293,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
     zh: '/zh/insights/top-market-research-companies-egypt-2026',
   },
-  '/blog/top-market-research-companies-egypt-2026': {
-    en: '/insights/top-market-research-companies-egypt-2026',
-    ar: '/ar/insights/top-market-research-companies-egypt-2026',
-    zh: '/zh/insights/top-market-research-companies-egypt-2026',
-  },
   '/insights/top-market-research-companies-brazil-2026': {
     en: '/insights/top-market-research-companies-brazil-2026',
     pt: '/pt/insights/top-market-research-companies-brasil-2026',

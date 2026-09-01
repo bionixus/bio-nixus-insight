@@ -1,7 +1,8 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Globe, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
+import { Building2, Globe, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
+import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
@@ -364,19 +365,12 @@ export default function TopCompaniesCountryPage({ config }: Props) {
           </section>
         )}
 
-        {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">{cta.title}</h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">{cta.body}</p>
-            <Link
-              to={cta.to}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-            >
-              {cta.button} <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
+        <ListicleProposalCta
+          countryName={config.country}
+          ctaId={`listicle_${config.country.toLowerCase().replace(/\s+/g, '_')}_footer`}
+          headline={cta.title}
+          body={cta.body}
+        />
       </main>
       <Footer />
     </div>

@@ -28,6 +28,7 @@ import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { PharmaDirectoryBridge } from '@/components/seo/PharmaDirectoryBridge';
 import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import {
@@ -544,14 +545,11 @@ return (
               </table>
             </div>
 
-            <div className="mt-8">
-              <ConversionCTA
-                variant="talk-to-research"
-                market="Kuwait"
-                ctaId="pharma_companies_kuwait_after_table"
-                ctaLocation="after_first_table"
-              />
-            </div>
+            <PharmaDirectoryBridge
+              countryName="Kuwait"
+              directorySlug="kuwait"
+              ctaId="pharma_companies_kuwait_after_table"
+            />
 
             {/* Mobile card view */}
             <div className="mt-6 md:hidden space-y-4">

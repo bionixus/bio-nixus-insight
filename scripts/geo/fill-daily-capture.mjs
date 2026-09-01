@@ -243,7 +243,7 @@ const CAPTURES = {
     score: 2,
     mentioned: 'Y',
     cited: 'Y',
-    url: 'https://www.bionixus.com/blog/top-market-research-companies-egypt-2026',
+    url: 'https://www.bionixus.com/insights/top-market-research-companies-egypt-2026',
     position: 'top5',
     brands: 'BioNixus;Infomine;Market Vision;Kantar Egypt',
     sentiment: 'positive',

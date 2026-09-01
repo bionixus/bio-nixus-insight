@@ -10,6 +10,7 @@ import {
 import { QualificationForm } from '@/components/conversion/QualificationForm';
 import { GatedAssetForm } from '@/components/conversion/GatedAssetForm';
 import { trackCtaClick, trackFormView } from '@/lib/analytics';
+import { formMarketForDirectory } from '@/data/pharmaDirectoryListicles';
 
 type TalkToResearchCtaProps = {
   variant: 'talk-to-research';
@@ -49,6 +50,7 @@ export function ConversionCTA(props: ConversionCtaProps) {
 
   if (props.variant === 'talk-to-research') {
     const market = props.market || 'your market';
+    const defaultMarket = formMarketForDirectory(market);
     return (
       <>
         <div className={`rounded-2xl border border-border bg-card p-6 md:p-8 text-center ${props.className || ''}`}>
@@ -72,7 +74,12 @@ export function ConversionCTA(props: ConversionCtaProps) {
               <DialogTitle>Request a Proposal</DialogTitle>
               <DialogDescription>Tell us what you need — we typically respond within 48 hours.</DialogDescription>
             </DialogHeader>
-            <QualificationForm formId={props.ctaId} sourceContext={market} onSuccess={() => undefined} />
+            <QualificationForm
+              formId={props.ctaId}
+              sourceContext={market}
+              defaultMarkets={defaultMarket ? [defaultMarket] : undefined}
+              onSuccess={() => undefined}
+            />
           </DialogContent>
         </Dialog>
       </>
