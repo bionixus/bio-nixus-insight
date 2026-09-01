@@ -39,8 +39,6 @@ const StatsSection = () => {
 
   useEffect(() => {
     setHydrated(true);
-    setCounts(targets.map(() => 0));
-    setDone(false);
   }, []);
 
   useEffect(() => {
@@ -60,6 +58,7 @@ const StatsSection = () => {
     if (!inView || !hydrated || hasAnimated.current) return;
     hasAnimated.current = true;
     startRef.current = null;
+    setDone(false);
     setCounts(targets.map(() => 0));
     const step = (timestamp: number) => {
       if (startRef.current === null) startRef.current = timestamp;

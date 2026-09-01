@@ -15,6 +15,7 @@ import BlogSection from '@/components/BlogSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import { ClientReviewsTeaser } from '@/components/home/ClientReviewsTeaser';
 import HomePathwaysSection from '@/components/home/HomePathwaysSection';
+import { HomeExploreResearchSection } from '@/components/home/HomeExploreResearchSection';
 import { HomeExplainerSection } from '@/components/media/HomeExplainerSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -26,7 +27,7 @@ import type { BlogPost } from '@/types/blog';
 import { filterPostsBySilo } from '@/lib/blog-content-silo';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { getHomePageFaq, HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq';
-import { getLocalizedPathForLanguage, localizedContactPath, seoByLanguage } from '@/lib/seo';
+import { localizedContactPath, seoByLanguage } from '@/lib/seo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { buildHomePathwayCards } from '@/data/homePathwayCards';
 
@@ -44,43 +45,7 @@ const Index = () => {
   const contactHref = localizedContactPath(language);
 
   const featuredCards = buildHomePathwayCards(language, t.homePage.pathwayCards);
-
   const explore = t.ui.exploreResearch;
-  const exploreColumns = [
-    {
-      heading: explore.startHere,
-      links: [
-        { to: getLocalizedPathForLanguage('/healthcare-market-research', language), label: explore.hub },
-        { to: getLocalizedPathForLanguage('/services', language), label: t.nav.services },
-        { to: '/iqvia-alternative', label: explore.iqvia },
-        { to: '/nielsen-alternative', label: 'Nielsen alternative' },
-        { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Market research firms KSA' },
-        { to: '/insights/top-market-research-companies-uae-2026', label: 'Market research firms UAE' },
-        { to: '/insights/top-market-research-companies-egypt-2026', label: 'Market research firms Egypt' },
-        { to: '/insights/top-market-research-companies-gcc-2026', label: 'Market research firms GCC' },
-        { to: '/healthcare-market-statistics', label: explore.statistics },
-        { to: '/faq', label: explore.faq },
-      ],
-    },
-    {
-      heading: explore.featuredReports,
-      links: [
-        { to: '/saudi-arabia-healthcare-market-report', label: explore.saudiReport },
-        { to: '/uae-healthcare-market-report', label: explore.uaeReport },
-        { to: '/usa-healthcare-market-report', label: explore.usaReport },
-      ],
-    },
-    {
-      heading: explore.byCountry,
-      links: [
-        { to: '/healthcare-market-research/united-states', label: explore.countryUsa },
-        { to: '/healthcare-market-research/saudi-arabia', label: explore.countrySaudi },
-        { to: '/healthcare-market-research/uae', label: explore.countryUae },
-        { to: '/healthcare-market-research/turkey', label: explore.countryTurkey },
-        { to: '/healthcare-market-research/egypt', label: explore.countryEgypt },
-      ],
-    },
-  ];
 
   useEffect(() => {
     if (!hash) return;
@@ -109,50 +74,42 @@ const Index = () => {
         <PremiumComplianceRibbon />
         <GlobalReachSection />
         <ServicesSection />
-        <HomeOverviewVideoSection />
-        <HomeExplainerSection />
+        <div className="cv-auto">
+          <HomeOverviewVideoSection />
+        </div>
+        <div className="cv-auto">
+          <HomeExplainerSection />
+        </div>
         <StatsSection />
-        <IndustriesGatewaySection />
+        <div className="cv-auto">
+          <IndustriesGatewaySection />
+        </div>
         <div className="cv-auto">
           <BlogSection
             posts={homeArticlePosts ?? undefined}
             isLoading={blogLoading && !ssrHomeInsights?.length}
           />
         </div>
-        <ClientReviewsTeaser />
-        <TestimonialsSection />
+        <div className="cv-auto">
+          <ClientReviewsTeaser />
+        </div>
+        <div className="cv-auto">
+          <TestimonialsSection />
+        </div>
         <div className="cv-auto">
           <HomePathwaysSection cards={featuredCards} />
         </div>
-        <section className="section-padding bg-cream-dark border-t border-border" aria-labelledby="home-explore-research-heading">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 id="home-explore-research-heading" className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              {explore.heading}
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {exploreColumns.map((column) => (
-                <div key={column.heading}>
-                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">
-                    {column.heading}
-                  </h3>
-                  <ul className="space-y-2">
-                    {column.links.map((link) => (
-                      <li key={link.to}>
-                        <Link to={link.to} className="text-primary hover:underline font-medium">
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <div className="cv-auto">
+          <HomeExploreResearchSection
+            explore={explore}
+            language={language}
+            servicesLabel={t.nav.services}
+          />
+        </div>
         <div className="cv-auto">
           <MethodologySection nestUnderParentH1 />
         </div>
-        <div className="section-padding bg-cream border-t border-border">
+        <div className="cv-auto section-padding bg-cream border-t border-border">
           <FAQSection
             sectionId={HOME_FAQ_SECTION_ID}
             title={homeFaq.sectionTitle}

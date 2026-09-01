@@ -43,10 +43,12 @@ export function useSanityLatestInsights(limit = 3, ssrPosts?: BlogPost[] | null)
   return useQuery({
     queryKey: ['sanity-latest-insights', language, limit],
     queryFn: () => fetchSanityLatestInsights(language, limit),
-    enabled: isSanityConfigured(),
+    enabled: isSanityConfigured() && !hasSsr,
     initialData: hasSsr ? ssrPosts! : undefined,
     staleTime: 2 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
   });
 }
 

@@ -16,3 +16,4 @@ export const ArTopMarketResearchCompaniesEgypt2026 = lazy(
 export const BionixusMarketResearchMiddleEast = lazy(
   () => import('@/pages/BionixusMarketResearchMiddleEast'),
 );
+export const Index = lazy(() => import('@/pages/Index'));

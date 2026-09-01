@@ -35,6 +35,18 @@ const IRREGULAR_IMPORTS: Record<string, Importer> = {
 /** Dynamic-slug routes matched by prefix. */
 const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }> = [
   {
+    test: (path) =>
+      path === '/' ||
+      path === '/de' ||
+      path === '/fr' ||
+      path === '/es' ||
+      path === '/zh' ||
+      path === '/ar' ||
+      path === '/pt' ||
+      path === '/ru',
+    load: () => import('@/pages/Index'),
+  },
+  {
     test: (path) => path === '/bionixus-market-research-middle-east',
     load: () => import('@/pages/BionixusMarketResearchMiddleEast'),
   },

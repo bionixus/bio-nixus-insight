@@ -38,9 +38,20 @@ export type UiChromeStrings = {
   };
   exploreResearch: {
     heading: string;
+    kicker: string;
+    lede: string;
     startHere: string;
     hub: string;
     iqvia: string;
+    nielsen: string;
+    oncology: string;
+    ksaFirms: string;
+    uaeFirms: string;
+    egyptFirms: string;
+    gccFirms: string;
+    rankings: string;
+    compare: string;
+    more: string;
     statistics: string;
     faq: string;
     featuredReports: string;
@@ -91,9 +102,20 @@ const en: UiChromeStrings = {
   },
   exploreResearch: {
     heading: 'Explore BioNixus research',
+    kicker: 'Indexed destinations',
+    lede: 'Each URL is a decision page — rankings, country programmes, and market reports built for pharmaceutical buyers.',
     startHere: 'Start here',
     hub: 'Global healthcare market research hub',
     iqvia: 'BioNixus vs. IQVIA and other legacy vendors',
+    nielsen: 'Nielsen alternative',
+    oncology: 'Top oncology market research companies 2026',
+    ksaFirms: 'Market research firms KSA',
+    uaeFirms: 'Market research firms UAE',
+    egyptFirms: 'Market research firms Egypt',
+    gccFirms: 'Market research firms GCC',
+    rankings: 'Rankings',
+    compare: 'Compare',
+    more: 'Also in this library',
     statistics: 'Healthcare & Pharma Market Statistics 2026',
     faq: 'Frequently Asked Questions',
     featuredReports: 'Featured market reports',

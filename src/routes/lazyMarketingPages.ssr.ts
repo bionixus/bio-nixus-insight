@@ -10,3 +10,4 @@ export { default as ArMarketResearchEgypt } from '@/pages/ArMarketResearchEgypt'
 export { default as AiChatbotsLeadGeneration } from '@/pages/AiChatbotsLeadGeneration';
 export { default as ArTopMarketResearchCompaniesEgypt2026 } from '@/pages/ArTopMarketResearchCompaniesEgypt2026';
 export { default as BionixusMarketResearchMiddleEast } from '@/pages/BionixusMarketResearchMiddleEast';
+export { default as Index } from '@/pages/Index';

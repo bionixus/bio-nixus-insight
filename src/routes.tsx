@@ -1,7 +1,6 @@
 import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, type RouteObject } from 'react-router-dom';
 import { RouteLoadingFallback } from '@/components/RouteLoadingFallback';
-import Index from '@/pages/Index';
 import Blog from '@/pages/Blog';
 import CaseStudies from '@/pages/CaseStudies';
 import About from '@/pages/About';
@@ -124,6 +123,7 @@ import {
   ArMarketResearchUae,
   ArTopMarketResearchCompaniesEgypt2026,
   BionixusMarketResearchMiddleEast,
+  Index,
 } from '@/routes/lazyMarketingPages';
 import TopGlobalHealthcareMarketResearchCompanies2026 from '@/pages/TopGlobalHealthcareMarketResearchCompanies2026';
 import TopPharmaceuticalAnalyticsCompaniesWorldwide2026 from '@/pages/TopPharmaceuticalAnalyticsCompaniesWorldwide2026';
@@ -406,14 +406,14 @@ function suspensePage(node: ReactNode) {
 }
 
 const rawRoutes: RouteObject[] = [
-  { path: '/', element: <Index /> },
-  { path: '/de', element: <Index /> },
-  { path: '/fr', element: <Index /> },
-  { path: '/es', element: <Index /> },
-  { path: '/zh', element: <Index /> },
-  { path: '/ar', element: <Index /> },
-  { path: '/pt', element: <Index /> },
-  { path: '/ru', element: <Index /> },
+  { path: '/', element: suspensePage(<Index />) },
+  { path: '/de', element: suspensePage(<Index />) },
+  { path: '/fr', element: suspensePage(<Index />) },
+  { path: '/es', element: suspensePage(<Index />) },
+  { path: '/zh', element: suspensePage(<Index />) },
+  { path: '/ar', element: suspensePage(<Index />) },
+  { path: '/pt', element: suspensePage(<Index />) },
+  { path: '/ru', element: suspensePage(<Index />) },
   { path: '/about', element: <About /> },
   { path: '/de/about', element: <About /> },
   { path: '/fr/about', element: <About /> },
