@@ -153,12 +153,21 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
           'Quant engagements emphasise powering aligned to subgroup decisions—not global headline significance theatrics meaningless if segments driving revenue remain unresolved. Adaptive quota choreography rescues timelines when recruiting friction spikes without silently biasing inference.',
           'Trade-off methodologies (MaxDiff, DCEs) adhere to cognitive load budgets—avoiding factorial explosions clinicians abandon midstream; anchoring vignettes tether abstract attributes to wards, procurement scoring, stewardship rituals.',
           'Forecast bridges stress-test elasticity of behavioural intent vs operational ceilings—preventing exaggerated adoption ramps.',
+          'Payer-adjacent quotas—pharmacists, procurement officers, formulary stewards—enter the design when tender rules or substitution policy shape realised uptake, not only physician stated intent.',
         ],
       },
       {
         title: 'Dashboarding for leadership consumption vs analytic audit depth',
         paragraphs: [
           'Deliverables bifurcate intentionally: concise leadership synthesis plus reproducible appendix layers satisfying analytics governance, alliance diligence, methodological peer review—all version controlled.',
+          'Segment dashboards link behavioural metrics to commercial KPI owners—medical education choke points, access objection hierarchies, account prioritisation tags—so insight teams do not hand affiliates undifferentiated chart packs.',
+        ],
+      },
+      {
+        title: 'Multi-country quant harmonisation without false uniformisation',
+        paragraphs: [
+          'GCC physician panels differ materially from NHS consultant workflows or EU5 stewardship rituals even within the same therapy area. BioNixus harmonises core metrics for regional governance while tagging irreducible local divergences affiliates must respect.',
+          'Arabic, French, German, and Portuguese field modules preserve decision authenticity; translation and back-translation workflows support compliance reviews without collapsing nuance into English-only convenience.',
         ],
       },
     ],

@@ -798,6 +798,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Brazil\'s USD 11–13 billion devices market serves 218 million population — Latin America\'s largest. Dual SUS/public and ANS/private pathways require segmented research design.',
       'Domestic orthopaedic and dental manufacturers compete aggressively; import tariffs reshape multinational pricing strategy.',
       'BioNixus supports Brazil MedTech research with ANVISA context, Portuguese fieldwork, and LATAM expansion intelligence.',
+      'Rede D\'Or and Hapvida hospital group expansion continues to pull premium device adoption in São Paulo, Rio, and secondary cities — research should segment private-plan versus SUS channel economics when forecasting uptake.',
     ],
   },
 };

@@ -96,7 +96,8 @@ export const CTR_SEO_BY_PATH = {
   },
   '/iqvia-alternative': {
     // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // CTR iterate 2026-09-02: head query "iqvia competitors" = 36 impr @ pos 6.3, 0% CTR
+    title: 'IQVIA Competitors & Alternatives: Top 10 Ranked (2026)',
     description:
       'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
   },
@@ -164,9 +165,9 @@ export const CTR_SEO_BY_PATH = {
       'Japan medical devices market $41B in 2026 → ~$64B by 2032. PMDA Class I–IV (todokede/ninsho/shonin), NHI listing & hospital procurement — BioNixus market report.',
   },
   '/gcc-market-access-guide': {
-    title: 'GCC Market Access 2026: Pharma & MedTech Entry Guide',
+    title: 'GCC Market Access 2026: Pharma, Biologics & MedTech Guide',
     description:
-      'How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain.',
+      'GCC market access 2026 — SFDA, MOHAP registration, biologics & biosimilar tenders, NUPCO timing, pricing and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain.',
   },
   '/healthcare-market-research': {
     title: 'Healthcare Market Research Company | Bionixus',
@@ -401,16 +402,6 @@ export const CTR_SEO_BY_PATH = {
     description:
       'NielsenIQ alternatives for FMCG and retail research 2026 — when BioNixus wins on account-level and traditional-trade data, and when Nielsen panels still fit.',
   },
-  '/pricing': {
-    title: 'Market Research Pricing | Project Bands (2026)',
-    description:
-      'BioNixus market research pricing is by project and country. Typical 2026 bands: $20k–$75k single-country, $45k–$120k+ multi-country GCC. Proposal in 48 hours.',
-  },
-  '/account-level-market-research': {
-    title: 'What Is Account-Level Market Research Data?',
-    description:
-      'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.',
-  },
   '/insights/top-fmcg-market-research-companies-egypt-2026': {
     title: 'FMCG Market Research Firms Egypt 2026 | Ranked',
     description:
@@ -580,6 +571,21 @@ export const CTR_SEO_BY_PATH = {
     title: 'Top Oncology Market Research Companies 2026 | BioNixus',
     description:
       'Compare BioNixus vs IQVIA: indication-level PRFs with full patient history, new vs current case recruitment, and brand trackers — not generic pack sales data.',
+  },
+  '/india-medical-devices-market-report': {
+    title: 'India Medical Devices Market 2026: $12B Size & CDSCO MDR',
+    description:
+      'India medical devices market $12B in 2026, 8% CAGR — CDSCO MDR 2017, PLI manufacturing, NPPA pricing, hospital procurement & GCC export intelligence. BioNixus.',
+  },
+  '/japan-general-surgical-devices-market': {
+    title: 'Japan General Surgical Devices Market 2026 | BioNixus',
+    description:
+      'Japan general surgical devices market — PMDA pathways, NHI categories, OR stapling/energy/laparoscopy adoption & hospital procurement research by BioNixus.',
+  },
+  '/services/quantitative-research': {
+    title: 'Quantitative Healthcare Research | Physician Surveys — BioNixus',
+    description:
+      'Quantitative healthcare market research — physician & payer surveys n=50–500+, conjoint, MaxDiff, market sizing across GCC, UK, EU5 & MENA. Proposal in 48h.',
   },
 };
 

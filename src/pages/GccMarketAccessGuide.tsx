@@ -541,6 +541,34 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* Multi-country launch sequencing */}
+        <section className="section-padding py-12 bg-muted/20" id="launch-sequencing">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              GCC launch sequencing: registration, pricing, and tender alignment
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Successful GCC pharmaceutical and MedTech launches rarely follow a single-country waterfall. Saudi Arabia&apos;s SFDA registration and NUPCO tender calendar often set the pace for biologics and high-volume injectables, while UAE emirate-level MOHAP, DHA, and DOH formulary decisions can unlock private-hospital revenue before federal listing completes. Kuwait, Qatar, Oman, and Bahrain each maintain separate pricing references and procurement offices — meaning a GCC Centralised Registration Procedure approval does not automatically synchronise commercial access.
+              </p>
+              <p>
+                BioNixus recommends mapping three parallel tracks before committing launch spend: regulatory milestones (SFDA, MOHAP, GCC-CRP where applicable), pricing and reimbursement positioning (ERP basket selection, confidential negotiation windows), and procurement readiness (NUPCO framework timing, hospital formulary committee cycles, distributor warehousing). Teams that align evidence generation — budget impact, interchangeability confidence for biosimilars, Arabic labelling — to the slowest gate in their priority markets avoid the common failure mode of approved-but-unlisted products sitting outside active tender windows.
+              </p>
+              <p>
+                For biologics and biosimilar portfolios specifically, research should cover physician switching intent, pharmacist substitution rules, and post-tender uptake — not only registration dossiers. See our{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline font-medium">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                hub for segment-level biologics intelligence and the{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline font-medium">
+                  biosimilar market entry Saudi Arabia
+                </Link>{' '}
+                guide for KSA-specific sequencing.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="section-padding py-12 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
@@ -666,6 +694,14 @@ const GccMarketAccessGuide = () => {
                 {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
+                },
+                {
+                  q: 'What is the recommended GCC country launch order for new biologics?',
+                  a: 'There is no universal sequence, but most manufacturers prioritise Saudi Arabia (SFDA + NUPCO volume) and UAE (MOHAP federal plus DHA/DOH emirate access) before smaller GCC states. Biosimilar and biologic portfolios should align evidence packs to NUPCO evaluation cycles and ERP pricing references simultaneously — registration alone does not guarantee tender placement. BioNixus maps country-specific formulary and procurement gates so teams avoid launch spend ahead of listing readiness.',
+                },
+                {
+                  q: 'How long from SFDA approval to first NUPCO tender participation?',
+                  a: 'Typical planning assumes 12–18 months from SFDA marketing authorisation to meaningful NUPCO framework participation, depending on pricing submission timing, Arabic labelling readiness, local warehousing, and whether the product category aligns with an active NUPCO tender window. Early competitive intelligence on prior analogous awards shortens bid preparation.',
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">

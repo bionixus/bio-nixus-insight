@@ -48,6 +48,10 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus support Brazil-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Brazilian and Latin American pharmaceutical and medical device companies in entering GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys across all major therapeutic areas; and comparative Brazil vs. GCC market intelligence. Brazil and the GCC share several commercial parallels — large generic medicine markets, centralized public procurement, and premium private hospital sectors — that make BioNixus\'s cross-regional intelligence particularly relevant for Brazilian pharma companies planning MENA expansion.',
   },
+  {
+    question: 'How does ANVISA regulate medical devices separately from pharmaceuticals in Brazil?',
+    answer: 'ANVISA\'s GGMED division regulates medical devices under risk Classes I–IV, distinct from drug registration pathways. Class III and IV devices require ANVISA registration with Portuguese-language Module 1 documentation and GMP compliance under RDC 751/2022. SUS procurement for high-cost technologies flows through CONITEC HTA, while ANS private plans cover devices listed in the Rol de Procedimentos. Import tariffs of 30–60% effective rates drive local manufacturing partnerships — BioNixus Brazil MedTech research maps distributor capability, ANVISA timelines, and the SUS versus ANS channel split for device commercial planning.',
+  },
 ], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-healthcare-market-report');
@@ -63,7 +67,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-09-02',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -78,7 +82,7 @@ const jsonLd = [
     countryName: "Brazil",
     marketSlug: "brazil",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-08-22",
+    modifiedDate: "2026-09-02",
   })
 ];
 

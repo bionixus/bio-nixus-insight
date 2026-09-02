@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
 
 interface ServiceData {
   title: string;
@@ -26,7 +27,7 @@ const serviceData: Record<string, ServiceData> = {
     metaTitle: 'Quantitative Healthcare Research | Physician Surveys EMEA — BioNixus',
     metaDescription: 'Statistically robust physician and payer surveys across 17+ EMEA markets. Sample sizes n=50-500+, market sizing, conjoint, MaxDiff, and DCE methodologies.',
     heroSubtitle: 'Large-scale statistical insights from physicians and healthcare professionals across UK, Europe, and MENA markets.',
-    overview: 'BioNixus conducts rigorous quantitative healthcare market research designed to provide statistically robust evidence for pharmaceutical decision-making. Our physician surveys span multiple specialties and countries, delivering the data foundations your commercial, medical affairs, and market access teams need.',
+    overview: 'BioNixus conducts rigorous quantitative healthcare market research designed to provide statistically robust evidence for pharmaceutical decision-making. Our physician surveys span multiple specialties and countries, delivering the data foundations your commercial, medical affairs, and market access teams need. Programmes include online and telephone HCP surveys (n=50–500+), conjoint and MaxDiff trade-off modules, market sizing with forecast bridges, and payer-adjacent quotas when tender or formulary decisions shape uptake — harmonised across GCC, UK, EU5, and North Africa with reproducible governance artefacts for affiliate and alliance diligence.',
     capabilities: [
       'Online and telephone physician surveys (n=50–500+) across 17+ EMEA countries',
       'NHS and private healthcare provider research in the UK',
@@ -38,6 +39,9 @@ const serviceData: Record<string, ServiceData> = {
       'Conjoint analysis, MaxDiff, and discrete choice experiments (DCE)',
       'Brand tracking and awareness studies',
       'Market sizing, forecasting, and segmentation',
+      'GCC and MENA physician panel access with Arabic–English bilingual fieldwork',
+      'Forecast bridge modules linking survey intent to operational adoption ceilings',
+      'Pharmacist and procurement quotas when tender or formulary scoring drives prescribing',
     ],
     deliverables: [
       'Statistical reports with confidence intervals and significance testing',
@@ -127,6 +131,8 @@ const serviceData: Record<string, ServiceData> = {
       'Competitive positioning research with physicians',
       'Conference intelligence and publication tracking',
       'Scenario planning and strategic forecasting',
+      'GCC and MENA physician panel access with Arabic–English bilingual fieldwork',
+      'Forecast bridge modules linking survey intent to operational adoption ceilings',
     ],
     deliverables: [
       'Competitive landscape dashboards',
@@ -286,6 +292,45 @@ const ServiceDetail = () => {
           </section>
         )}
 
+        {slug === 'quantitative-research' && (
+          <section className="section-padding py-10 bg-background border-b border-border/60">
+            <div className="container-wide max-w-4xl mx-auto">
+              <GeoLLMAnswerBlock
+                question="What does quantitative healthcare market research include at BioNixus?"
+                answer="BioNixus quantitative healthcare research delivers statistically powered physician, pharmacist, and payer-adjacent surveys — n=50 to 500+ — with conjoint, MaxDiff, discrete choice, market sizing, and forecast bridges across GCC, UK, EU5, and MENA. Sampling aligns to subgroup decisions that move revenue, not headline significance alone."
+                points={[
+                  {
+                    title: 'Physician & HCP surveys',
+                    description:
+                      'Online and telephone modules across 17+ EMEA markets with volume-stratified quotas, treatment-pattern tracking, and formulary preference studies.',
+                  },
+                  {
+                    title: 'Trade-off & messaging science',
+                    description:
+                      'Conjoint, MaxDiff, and DCE designs under cognitive-load budgets clinicians can complete — ranking attributes that mirror real tender and prescribing decisions.',
+                  },
+                  {
+                    title: 'Market sizing & forecasting',
+                    description:
+                      'Segmentation, adoption curves, and elasticity diagnostics bridging stated intent to operational ceilings — preventing exaggerated launch ramps.',
+                  },
+                  {
+                    title: 'Payer-adjacent quant',
+                    description:
+                      'Pharmacist, procurement, and HTA decision-maker modules when substitution rules and tender scoring drive uptake — not physician-only panels.',
+                  },
+                  {
+                    title: 'Governance-ready deliverables',
+                    description:
+                      'Leadership synthesis plus reproducible appendix layers — questionnaire versioning, quota logs, dashboard codebooks — for analytics governance and alliance diligence.',
+                  },
+                ]}
+                summary="Request a quantitative research proposal through BioNixus contact — scoped to your target markets and decision timeline."
+              />
+            </div>
+          </section>
+        )}
+
         {/* Overview */}
         <section className="section-padding py-12 bg-cream-dark">
           <div className="container-wide max-w-4xl mx-auto">
@@ -349,6 +394,20 @@ const ServiceDetail = () => {
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Geographic Coverage</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">{svc.geoCoverage}</p>
+            {slug === 'quantitative-research' && (
+              <div className="mt-8 space-y-4 text-muted-foreground leading-relaxed">
+                <h3 className="text-xl font-display font-semibold text-foreground">Quantitative methodology standards</h3>
+                <p>
+                  BioNixus quantitative programmes begin with a calibrated scope memo that defines hypotheses, minimally sufficient sample sizes, quota strata, and the commercial decisions the survey must resolve — launch sequencing, messaging prioritisation, access objection hierarchies, or forecast governance. Instrument design follows cognitive-load budgets: conjoint and MaxDiff modules avoid factorial explosions that clinicians abandon midstream, while vignettes anchor abstract attributes to ward, procurement, and stewardship rituals stakeholders actually encounter.
+                </p>
+                <p>
+                  Field execution emphasises quota integrity and adaptive choreography. When recruiting friction spikes in a priority segment, BioNixus adjusts quotas transparently rather than silently biasing inference. Physician modules stratify by prescribing volume and corridor type; payer-adjacent modules include pharmacists and procurement stakeholders when tender scoring or formulary substitution drives behaviour. Cross-country programmes harmonise variable dictionaries while preserving local language modules and recruitment ethics appropriate to each market.
+                </p>
+                <p>
+                  Deliverables bifurcate intentionally: concise leadership synthesis for governance meetings plus reproducible appendix layers — questionnaire versioning, quota logs, significance testing, dashboard codebooks — satisfying analytics governance and alliance diligence. Forecast bridges stress-test elasticity of stated intent against operational ceilings, preventing exaggerated adoption ramps that affiliates cannot operationalise. Teams integrating quant with qualitative forensics on the same hub programme reduce rework when segment hypotheses remain unstable after an initial wave.                   For methodology depth, see the quantitative healthcare market research guide linked above and the healthcare market research hub for integrated qual-quant programmes.
+                </p>
+              </div>
+            )}
             <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4">
               {svc.geoCoverage.includes('Kuwait') && (
                 <Link to="/pharmaceutical-companies-kuwait" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
@@ -398,6 +457,26 @@ const ServiceDetail = () => {
             </div>
           </div>
         </section>
+
+        {slug && SERVICE_EXPANDED_FAQS[slug]?.length ? (
+          <section className="section-padding py-12 bg-muted/30" id={`${slug}-faq`}>
+            <div className="container-wide max-w-4xl mx-auto">
+              <h2 className="text-2xl font-display font-semibold text-foreground mb-8">
+                Frequently asked questions
+              </h2>
+              <div className="space-y-4">
+                {SERVICE_EXPANDED_FAQS[slug].map((faq) => (
+                  <details key={faq.question} className="bg-card border border-border rounded-xl p-6">
+                    <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">
+                      {faq.question}
+                    </summary>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-3">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         {slug ? <ServiceMarketReferenceGuide serviceSlug={slug} /> : null}
 
