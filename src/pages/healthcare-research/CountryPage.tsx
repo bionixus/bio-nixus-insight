@@ -291,7 +291,15 @@ export default function CountryPage() {
                 <>
                   Saudi Arabia's pharmaceutical market exceeds USD 10 billion annually, the largest in the GCC, and
                   BioNixus delivers SFDA-aware physician surveys, Arabic fieldwork, and hospital stakeholder evidence
-                  across KSA. For agency shortlists beyond healthcare, see our{' '}
+                  across KSA — account-level and SKU-level cuts syndicated audits miss. See{' '}
+                  <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
+                    what account-level data is
+                  </Link>{' '}
+                  and the{' '}
+                  <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                    IQVIA alternative
+                  </Link>
+                  . For agency shortlists beyond healthcare, see our{' '}
                   <Link
                     to="/insights/top-market-research-companies-saudi-arabia-2026"
                     className="text-primary font-medium hover:underline"
@@ -310,11 +318,20 @@ export default function CountryPage() {
                 </>
               ) : config.slug === 'uae' ? (
                 <>
-                  BioNixus runs DHA and DOH-aligned{' '}
+                  BioNixus is a primary healthcare market research firm for UAE affiliates — account-level and
+                  SKU-level brand versus competitor data, not a syndicated dashboard. We run DHA and DOH-aligned{' '}
                   <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
                     healthcare market research
                   </Link>{' '}
-                  in Dubai and Abu Dhabi with MOHAP-aware payer evidence. For the Dubai MR cluster see{' '}
+                  in Dubai and Abu Dhabi with MOHAP-aware payer evidence. See{' '}
+                  <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
+                    what account-level data is
+                  </Link>{' '}
+                  and the{' '}
+                  <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                    IQVIA alternative
+                  </Link>
+                  . For the Dubai MR cluster see{' '}
                   <Link
                     to="/pharmaceutical-market-research-dubai"
                     className="text-primary font-medium hover:underline"
@@ -501,8 +518,13 @@ export default function CountryPage() {
           <section className="mb-8">
             <GeoLLMAnswerBlock
               question="Healthcare market research UAE — Dubai, Abu Dhabi & MOHAP programmes"
-              answer="BioNixus healthcare market research in the UAE runs DHA and DOH-aligned fieldwork in Dubai and Abu Dhabi with MOHAP-aware payer evidence — paired with GCC pharmaceutical and medtech reports for launch sequencing."
+              answer="BioNixus is a primary healthcare market research firm for UAE affiliates. Fieldwork is DHA and DOH-aligned in Dubai and Abu Dhabi, with MOHAP-aware payer evidence and account-level cuts syndicated IQVIA feeds miss. Keep the dashboard for national sizing; brief us for named hospitals and emirate SKUs."
               points={[
+                {
+                  title: 'Account-level vs syndicated',
+                  description:
+                    'What account-level and SKU-level data is — and why IQVIA national feeds miss traditional trade.',
+                },
                 {
                   title: 'GCC pharma market report 2026',
                   description:
@@ -526,6 +548,12 @@ export default function CountryPage() {
               ]}
             />
             <div className="flex flex-wrap gap-3 mt-4">
+              <Link to="/account-level-market-research" className="text-sm font-semibold text-primary hover:underline">
+                Account-level data
+              </Link>
+              <Link to="/iqvia-alternative" className="text-sm font-semibold text-primary hover:underline">
+                IQVIA alternative
+              </Link>
               <Link to="/gcc-pharma-market-report-2026" className="text-sm font-semibold text-primary hover:underline">
                 GCC pharma market report 2026
               </Link>
@@ -886,7 +914,15 @@ export default function CountryPage() {
               <Link to="/egypt-pharmaceutical-market-research" className="text-primary underline font-medium">
                 healthcare market research company in Egypt
               </Link>{' '}
-              page; for mid-funnel planning see{' '}
+              page. For the data cut syndicated audits miss, see{' '}
+              <Link to="/account-level-market-research" className="text-primary underline font-medium">
+                account-level and SKU-level data
+              </Link>{' '}
+              and the{' '}
+              <Link to="/iqvia-alternative" className="text-primary underline font-medium">
+                IQVIA alternative
+              </Link>
+              . For mid-funnel planning see{' '}
               <Link to="/market-research-egypt" className="text-primary underline font-medium">
                 market research in Egypt
               </Link>

@@ -5,6 +5,7 @@ import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import {
   buildBreadcrumbSchema,
   buildFAQSchema,
+  buildHubPageSchemas,
   buildProfessionalServiceSchema,
   buildOrganizationSchema,
   buildVideoObjectSchema,
@@ -57,6 +58,34 @@ describe('Homepage schema bundle', () => {
     const nodes = buildSchemas(props);
     expect(nodes.some((n) => n['@type'] === 'Organization')).toBe(true);
     expect(nodes.some((n) => n['@type'] === 'WebSite')).toBe(true);
+  });
+
+  it('emits all six Google LocalBusiness listings with matching NAP', () => {
+    const nodes = buildSchemas(props);
+    const offices = nodes.filter((n) => n['@type'] === 'LocalBusiness');
+    expect(offices.map((n) => n.name)).toEqual([
+      'BioNixus LLC USA',
+      'BioNixus UK',
+      'BioNixus Egypt',
+      'BioNixus UAE',
+      'BioNixus Saudi Arabia',
+      'BioNixus Kuwait',
+    ]);
+    const uk = offices.find((n) => n.name === 'BioNixus UK') as Record<string, unknown>;
+    expect(uk.aggregateRating).toBeTruthy();
+    expect(offices.filter((n) => n.aggregateRating).map((n) => n.name)).toEqual(['BioNixus UK']);
+    expect((offices.find((n) => n.name === 'BioNixus LLC USA') as any).address.streetAddress).toContain(
+      'Coffeen Ave Ste 1200',
+    );
+    expect((offices.find((n) => n.name === 'BioNixus UAE') as any).address.streetAddress).toContain(
+      'Thuraya Tower 1',
+    );
+    expect((offices.find((n) => n.name === 'BioNixus Saudi Arabia') as any).address.addressLocality).toBe(
+      'Al Khobar',
+    );
+    expect((offices.find((n) => n.name === 'BioNixus Kuwait') as any).address.addressLocality).toBe(
+      'Salmiya',
+    );
   });
 });
 
@@ -199,6 +228,25 @@ describe('AI SEO pages (pricing + account-level definition)', () => {
       name: 'BioNixus primary market research',
       description: 'Project- and country-based primary market research pricing.',
     });
+  });
+
+  it('healthcare hub FAQ includes the definition questions', () => {
+    const nodes = buildHubPageSchemas([
+      {
+        question: 'What is healthcare market research?',
+        answer:
+          'Healthcare market research is primary evidence used to decide launch, access, and brand versus competitor questions.',
+      },
+      {
+        question: 'When is IQVIA enough, and when should we brief a primary research firm?',
+        answer: 'Keep IQVIA for national syndicated sizing. Brief a field firm for account-level cuts.',
+      },
+    ]);
+    nodes.forEach(parseAndValidate);
+    const faq = nodes.find((node) => (node as { '@type'?: string })['@type'] === 'FAQPage') as {
+      mainEntity: { name: string }[];
+    };
+    expect(faq.mainEntity[0].name).toBe('What is healthcare market research?');
   });
 
   it('account-level Article node is valid JSON-LD', () => {

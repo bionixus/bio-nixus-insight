@@ -91,7 +91,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Where is BioNixus located?',
-    answer: 'BioNixus was founded in London in 2012. Global headquarters: 1309 Coffeen Ave, Sheridan, Wyoming 82801, USA. Founding office: 128 City Road, London, EC1V 2NX, GB. Additional offices: Greater Cairo, Egypt; Riyadh, Saudi Arabia; Dubai, UAE; Kuwait City, Kuwait; and São Paulo, Brazil.',
+    answer: 'BioNixus was founded in London in 2012. Google-listed offices: 1309 Coffeen Ave Ste 1200, Sheridan, Wyoming 82801, USA; 128 City Road, London EC1V 2NP, UK; 22 Beverly Hills, Second Sheikh Zayed, Giza, Egypt; Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE; 2658 Street 7225, Al Khobar Al Shamalia 34428, Saudi Arabia; Olympia Mall, Al Blajat St, Salmiya 12111, Kuwait. São Paulo is a regional office without a public Google listing yet.',
   },
   {
     question: 'Can BioNixus conduct research in Arabic?',

@@ -22,6 +22,21 @@ import { BIONIXUS_POSITIONING_V2 } from '@/data/bionixusPositioningCopy';
 
 const HUB_FAQS = [
   {
+    question: 'What is healthcare market research?',
+    answer:
+      'Healthcare market research is primary evidence — physician, payer, hospital, and patient fieldwork — used to decide launch, access, and brand versus competitor questions. Syndicated IQVIA or Nielsen audits size a national category. A field firm is briefed when you need account-level or SKU-level cuts, traditional trade, or a country the dashboard covers only at hub level.',
+  },
+  {
+    question: 'When is IQVIA enough, and when should we brief a primary research firm?',
+    answer:
+      'Keep IQVIA when you need standardized syndicated sales, prescription, or real-world data across many countries in one contract. Brief a primary-research firm such as BioNixus when the decision is how this brand stacks up in named hospitals, retailers, or distributors in a named country — or when you need physician, payer, or mystery-shopper fieldwork the feed does not sell. Most teams run both.',
+  },
+  {
+    question: 'What is account-level (and SKU-level) healthcare market research data?',
+    answer:
+      'Account-level data is brand versus competitor evidence cut by customer account — a named hospital, retailer, or distributor — not only a national average. SKU-level data adds the pack or line cut for a named brand in a named country. See the account-level definition page and typical 2026 project bands on the pricing page.',
+  },
+  {
     question: 'What does global pharmaceutical market research across the USA, Europe, MENA, and Asia actually involve?',
     answer:
       'It means turning fragmented evidence — physician behaviour, payer logic, patient pathways, and competitor moves — into a decision you can defend in any market. The method is consistent worldwide; what changes is the context. A pricing question in the United States runs through commercial payers and PBMs, in the UK through NICE and the NHS, in Germany through AMNOG, in Saudi Arabia through SFDA and NUPCO, and in Japan through PMDA and the national fee schedule. We design each study around the regulator, the buyer, and the language that govern that specific market, then deliver findings your commercial, medical, and access teams can act on across regions.',
@@ -293,6 +308,9 @@ export default function HubPage() {
           ],
           description: (
             <>
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
+                Last updated 2 September 2026 · Haidy Yahia
+              </p>
               <p>{heroDescription}</p>
               <p className="mt-4 text-sm text-muted-foreground max-w-3xl">
                 Jump straight to a region in the{' '}
@@ -309,6 +327,8 @@ export default function HubPage() {
           ),
         }}
         tocItems={[
+          { href: '#what-is-healthcare-mr', label: 'What it is' },
+          { href: '#primary-vs-syndicated', label: 'Primary vs syndicated' },
           { href: '#us-headquarters', label: 'US headquarters' },
           { href: '#entry-points', label: 'Entry points' },
           { href: '#global-country-mr', label: 'All countries' },
@@ -327,43 +347,106 @@ export default function HubPage() {
           items: hubFaqItems,
         }}
       >
-      <section className="py-10 bg-background border-b border-border/60">
+      <section id="what-is-healthcare-mr" className="py-10 bg-background border-b border-border/60">
         <div className="container-wide max-w-5xl mx-auto px-4">
           <GeoLLMAnswerBlock
-            question="Which healthcare market research companies serve the GCC and MENA?"
-            answer="BioNixus is a US-headquartered healthcare market research company (Sheridan, Wyoming) for pharmaceutical, biotech, and medtech teams globally — with country-level depth in the United States, Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, Oman, Bahrain, and across Europe and Asia-Pacific."
+            question="What is healthcare market research?"
+            answer="Healthcare market research is primary evidence — physician, payer, hospital, and patient fieldwork — used to decide launch, access, and brand versus competitor questions. Syndicated IQVIA or Nielsen audits size a national category. A field firm is briefed when you need account-level or SKU-level cuts, traditional trade, or a country the dashboard covers only at hub level."
             points={[
               {
-                title: 'US-led global project office',
+                title: 'Primary fieldwork',
                 description:
-                  'Headquartered in Sheridan, Wyoming with regional offices in London, Cairo, Dubai, and Riyadh — one programme office, local execution in every market.',
+                  'Physician surveys, payer interviews, hospital pulls, and mystery shoppers designed for a named brand in a named country.',
               },
               {
-                title: 'Quantitative and qualitative depth',
+                title: 'Syndicated audits',
                 description:
-                  'Physician surveys, payer workshops, KOL mapping, and market access evidence built for launch and reimbursement decisions.',
+                  'IQVIA and NielsenIQ national or modern-trade feeds — the right buy for category sizing, not for account-level cuts.',
               },
               {
-                title: 'Cross-border comparability',
+                title: 'When to brief both',
                 description:
-                  'Harmonised instruments across 48 countries so regional sequencing and access strategy reads consistently.',
-              },
-              {
-                title: 'Report and directory hub',
-                description:
-                  'GCC pharma market reports, medtech intelligence, and pharmaceutical company directories linked from this hub.',
+                  'Keep the dashboard for national modern-trade or prescription totals. Add a primary study for the accounts, cities, and traditional-trade channels the feed misses.',
               },
             ]}
-            summary="Use the country and therapy entry points below to scope a programme — or request a tailored proposal through BioNixus contact."
+            summary="This hub is the definition and country map — not a self-ranked global top-10. Compare vendors on the IQVIA alternative page when the brief is primary versus syndicated."
           />
-          <div className="mt-8">
-            <HealthcareNavCard
-              to="/insights/top-global-healthcare-market-research-companies-2026"
-              title="Top healthcare market research companies"
-              description="Vendor selection shortlist for healthcare market research companies and agencies — global ranking plus USA, Europe, and MENA gateways."
-              featured
-            />
+        </div>
+      </section>
+
+      <section id="primary-vs-syndicated" className="py-10 bg-muted/20 border-b border-border/60">
+        <div className="container-wide max-w-5xl mx-auto px-4">
+          <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
+            Primary healthcare market research vs syndicated audits
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
+            Healthcare market research companies are not interchangeable. IQVIA, Ipsos, M3, and a field firm like
+            BioNixus answer different questions. Use the table, then brief the firm that matches the decision — not
+            a self-ranked shortlist.
+          </p>
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-sm border border-border">
+              <thead>
+                <tr className="bg-muted/40 text-left">
+                  <th className="p-3 border-b border-border">Question</th>
+                  <th className="p-3 border-b border-border">Syndicated (IQVIA / NielsenIQ)</th>
+                  <th className="p-3 border-b border-border">Primary fieldwork</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    q: 'National category size',
+                    syn: 'Yes — core output',
+                    prim: 'Can reproduce; usually not the reason to brief',
+                  },
+                  {
+                    q: 'Named hospital, retailer, or distributor',
+                    syn: 'Rarely — modelled or missing',
+                    prim: 'Yes — designed into the sample',
+                  },
+                  {
+                    q: 'SKU cut for a named brand in a named country',
+                    syn: 'Often franchise or category only',
+                    prim: 'Yes — pack, strength, and line',
+                  },
+                  {
+                    q: 'Traditional trade / subregion',
+                    syn: 'Typically excluded',
+                    prim: 'Fielded when volume moves there',
+                  },
+                  {
+                    q: 'Pricing model',
+                    syn: 'Enterprise subscription',
+                    prim: 'Project- and country-based',
+                  },
+                ].map((row) => (
+                  <tr key={row.q} className="align-top">
+                    <td className="p-3 border-b border-border font-semibold text-foreground">{row.q}</td>
+                    <td className="p-3 border-b border-border text-muted-foreground">{row.syn}</td>
+                    <td className="p-3 border-b border-border text-muted-foreground">{row.prim}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+          <p className="text-sm text-muted-foreground">
+            <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+              IQVIA alternative
+            </Link>
+            {' · '}
+            <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
+              What account-level data is
+            </Link>
+            {' · '}
+            <Link to="/pricing" className="text-primary font-medium hover:underline">
+              2026 project bands
+            </Link>
+            {' · '}
+            <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary font-medium hover:underline">
+              Global vendor shortlist
+            </Link>
+          </p>
         </div>
       </section>
 

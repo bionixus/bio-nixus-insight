@@ -1,7 +1,18 @@
 # GSC URL Inspection priority recrawl list — Global Country MR sprint
-# Updated 2026-06-23 — MENA country MR + Dubai cluster + GCC BOFU refresh.
+# Updated 2026-09-02 — AI SEO top-keyword pages (IQVIA, account-level, hub, Dubai).
 # Submit via Google Search Console → URL Inspection → Request Indexing.
 # Also ping via: npm run indexnow:priority
+
+# --- Tier 0: AI SEO money pages (Sep 2026) ---
+https://www.bionixus.com/iqvia-alternative
+https://www.bionixus.com/account-level-market-research
+https://www.bionixus.com/healthcare-market-research
+https://www.bionixus.com/pricing
+https://www.bionixus.com/healthcare-market-research-in-uae
+https://www.bionixus.com/healthcare-market-research/uae
+https://www.bionixus.com/healthcare-market-research/egypt
+https://www.bionixus.com/healthcare-market-research/saudi-arabia
+https://www.bionixus.com/llms.txt
 
 # --- Tier 1: Dubai MR cluster (~1.5k impr, 0 clicks) ---
 https://www.bionixus.com/pharmaceutical-market-research-dubai

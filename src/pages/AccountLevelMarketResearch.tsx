@@ -283,10 +283,10 @@ export default function AccountLevelMarketResearch() {
               {[
                 { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges, plus /pricing.md.' },
                 { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'When the brief is pharma audits vs primary data.' },
-                { to: '/nielsen-alternative', label: 'Nielsen alternative', desc: 'When the brief is traditional trade or SKU cuts.' },
-                { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
-                { to: '/faq', label: 'FAQ', desc: 'Coverage, compliance, and how to brief us.' },
-                { to: '/methodology', label: 'Methodology', desc: 'How fieldwork and quality controls are designed.' },
+                { to: '/healthcare-market-research', label: 'Healthcare market research', desc: 'What it is — primary vs syndicated, then country hubs.' },
+                { to: '/healthcare-market-research/uae', label: 'Healthcare MR UAE', desc: 'Dubai and Abu Dhabi programmes for affiliates.' },
+                { to: '/healthcare-market-research/egypt', label: 'Healthcare MR Egypt', desc: 'Account-level fieldwork in the largest MENA market.' },
+                { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare MR KSA', desc: 'SFDA-aware primary studies vs syndicated audits.' },
               ].map((r) => (
                 <Link
                   key={r.to}
