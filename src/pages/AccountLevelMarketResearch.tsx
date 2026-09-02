@@ -283,6 +283,10 @@ export default function AccountLevelMarketResearch() {
               {[
                 { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges, plus /pricing.md.' },
                 { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'When the brief is pharma audits vs primary data.' },
+                { to: '/kantar-alternative', label: 'Kantar alternative', desc: 'Brand-track vs account-level commercial research.' },
+                { to: '/tools/syndicated-data-gap', label: 'Syndicated data gap', desc: 'Five questions to see what the dashboard still misses.' },
+                { to: '/templates/country-research-brief', label: 'Country research brief', desc: 'Brand, SKU, market, and the Nielsen/IQVIA gap.' },
+                { to: '/fmcg-companies-egypt', label: 'FMCG companies in Egypt', desc: 'Named accounts we study when Nielsen undersamples bakals.' },
                 { to: '/healthcare-market-research', label: 'Healthcare market research', desc: 'What it is — primary vs syndicated, then country hubs.' },
                 { to: '/healthcare-market-research/uae', label: 'Healthcare MR UAE', desc: 'Dubai and Abu Dhabi programmes for affiliates.' },
                 { to: '/healthcare-market-research/egypt', label: 'Healthcare MR Egypt', desc: 'Account-level fieldwork in the largest MENA market.' },

@@ -18,6 +18,7 @@ import { getIndustryListicleCrossLinks } from '@/data/industry-listicle-clusters
 import { IndustryListicleClusterCallout } from '@/components/seo/IndustryListicleClusterCallout';
 import { CountryRankingCover } from '@/pages/country-ranking/CountryRankingCover';
 import { CountryRankingPremiumStyles } from '@/pages/country-ranking/CountryRankingPremiumStyles';
+import { getIndustryDirectoryPath, type IndustryDirectorySlug } from '@/data/industryCompanyDirectories';
 
 type TopIndustryMarketResearchListicleProps = {
   countrySlug: MatrixCountrySlug;
@@ -316,6 +317,23 @@ export default function TopIndustryMarketResearchListicle({
                 </h3>
                 <p className="text-sm text-muted-foreground">BioNixus BOFU execution page.</p>
               </Link>
+              {['fmcg', 'retail', 'real-estate'].includes(industrySlug) &&
+              ['egypt', 'uae', 'saudi-arabia', 'kuwait', 'oman', 'qatar'].includes(countrySlug) ? (
+                <Link
+                  to={getIndustryDirectoryPath(
+                    industrySlug as IndustryDirectorySlug,
+                    countrySlug as 'egypt' | 'uae' | 'saudi-arabia' | 'kuwait' | 'oman' | 'qatar',
+                  )}
+                  className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors"
+                >
+                  <h3 className="font-semibold text-foreground mb-1">
+                    {config.industry.displayNameShort} companies in {countryLabel}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Named manufacturers, banners, or developers we study — not a research-firm listicle.
+                  </p>
+                </Link>
+              ) : null}
               {countryRankingPath ? (
                 <Link
                   to={countryRankingPath}

@@ -24,6 +24,14 @@ import {
   type MarketResearchIndexCountry,
 } from '@/data/industryHubCountries';
 import { PremiumIndustriesStyles } from '@/pages/industries/PremiumIndustriesStyles';
+import {
+  getIndustryDirectoryPath,
+  type IndustryDirectoryCountrySlug,
+  type IndustryDirectorySlug,
+} from '@/data/industryCompanyDirectories';
+
+const DIRECTORY_INDUSTRIES = new Set<string>(['fmcg', 'retail', 'real-estate']);
+const DIRECTORY_COUNTRIES = new Set<string>(['egypt', 'uae', 'saudi-arabia', 'kuwait', 'oman', 'qatar']);
 
 const COUNTRY_COUNT = MARKET_RESEARCH_BY_INDUSTRY_COUNTRIES.length;
 
@@ -123,6 +131,16 @@ function MatrixCountrySection({
                       <Link to={getIndustryListiclePath(countrySlug, industrySlug)}>
                         Top firms (2026) →
                       </Link>
+                      {DIRECTORY_INDUSTRIES.has(industrySlug) && DIRECTORY_COUNTRIES.has(countrySlug) ? (
+                        <Link
+                          to={getIndustryDirectoryPath(
+                            industrySlug as IndustryDirectorySlug,
+                            countrySlug as IndustryDirectoryCountrySlug,
+                          )}
+                        >
+                          Company directory →
+                        </Link>
+                      ) : null}
                     </article>
                   );
                 })}

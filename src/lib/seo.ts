@@ -293,6 +293,30 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     ar: '/ar/insights/top-market-research-companies-egypt-2026',
     zh: '/zh/insights/top-market-research-companies-egypt-2026',
   },
+  '/pharmaceutical-companies-egypt': {
+    en: '/pharmaceutical-companies-egypt',
+    ar: '/ar/pharmaceutical-companies-egypt',
+  },
+  '/pharmaceutical-companies-uae': {
+    en: '/pharmaceutical-companies-uae',
+    ar: '/ar/pharmaceutical-companies-uae',
+  },
+  '/pharmaceutical-companies-saudi-arabia': {
+    en: '/pharmaceutical-companies-saudi-arabia',
+    ar: '/ar/pharmaceutical-companies-saudi-arabia',
+  },
+  '/pharmaceutical-companies-kuwait': {
+    en: '/pharmaceutical-companies-kuwait',
+    ar: '/ar/pharmaceutical-companies-kuwait',
+  },
+  '/pharmaceutical-companies-oman': {
+    en: '/pharmaceutical-companies-oman',
+    ar: '/ar/pharmaceutical-companies-oman',
+  },
+  '/pharmaceutical-companies-qatar': {
+    en: '/pharmaceutical-companies-qatar',
+    ar: '/ar/pharmaceutical-companies-qatar',
+  },
   '/insights/top-market-research-companies-brazil-2026': {
     en: '/insights/top-market-research-companies-brazil-2026',
     pt: '/pt/insights/top-market-research-companies-brasil-2026',

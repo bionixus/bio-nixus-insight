@@ -23,10 +23,18 @@ export type QualificationFormProps = {
   sourceContext?: string;
   /** Prefills Markets of interest checkboxes (must match QUALIFICATION_FORM_MARKETS). */
   defaultMarkets?: string[];
+  /** Prefills the need select (must match QUALIFICATION_FORM_NEEDS). */
+  defaultNeed?: (typeof QUALIFICATION_FORM_NEEDS)[number];
   onSuccess?: () => void;
 };
 
-export function QualificationForm({ formId, sourceContext, defaultMarkets, onSuccess }: QualificationFormProps) {
+export function QualificationForm({
+  formId,
+  sourceContext,
+  defaultMarkets,
+  defaultNeed,
+  onSuccess,
+}: QualificationFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -220,7 +228,7 @@ export function QualificationForm({ formId, sourceContext, defaultMarkets, onSuc
           id={`${formId}-need`}
           name="need"
           required
-          defaultValue=""
+          defaultValue={defaultNeed ?? ''}
           className={`w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.need ? 'border-destructive' : 'border-input'}`}
         >
           <option value="" disabled>Select…</option>

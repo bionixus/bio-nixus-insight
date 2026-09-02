@@ -690,6 +690,9 @@ export default function MarketResearch() {
                     <Link to={country.midFunnelPath}>Market research overview →</Link>
                     <Link to={country.pharmaBofuPath}>Pharmaceutical research →</Link>
                     <Link to={country.healthcareHubPath}>Healthcare hub →</Link>
+                    {['egypt', 'uae', 'saudi-arabia', 'kuwait', 'oman', 'qatar'].includes(slug) ? (
+                      <Link to={`/fmcg-companies-${slug}`}>FMCG companies directory →</Link>
+                    ) : null}
                   </article>
                 );
               })}
@@ -736,6 +739,20 @@ export default function MarketResearch() {
                 <span className="bx-next-desc">
                   In-depth interviews, focus groups, and stakeholder conversations.
                 </span>
+              </Link>
+              <Link to="/kantar-alternative" className="bx-next-card">
+                <span className="bx-next-label">
+                  Kantar / Nielsen / IQVIA alternatives <span className="bx-next-arrow">→</span>
+                </span>
+                <span className="bx-next-desc">
+                  Keep the syndicated feed. Add account-level primary when the dashboard averages the account away.
+                </span>
+              </Link>
+              <Link to="/tools/syndicated-data-gap" className="bx-next-card">
+                <span className="bx-next-label">
+                  Syndicated data gap diagnostic <span className="bx-next-arrow">→</span>
+                </span>
+                <span className="bx-next-desc">Five questions, then a 48-hour proposal brief.</span>
               </Link>
             </div>
           </div>
