@@ -4,6 +4,7 @@ import type { Language } from '@/lib/i18n'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
 import { buildCanonicalOrganization } from '@/lib/seo/organization'
+import { buildAllGoogleLocalBusinesses } from '@/lib/seo/googleReviewsSchema'
 
 // Mirrors the site's Language union rather than restating it — the local copy
 // had drifted and was missing pt and ru, so those pages could not pass their
@@ -251,9 +252,7 @@ export function isValidSchemaNode(node: Record<string, unknown>): boolean {
     return (
       isNonEmptyString(node.name) &&
       typeof node.address === 'object' &&
-      node.address !== null &&
-      typeof node.aggregateRating === 'object' &&
-      node.aggregateRating !== null
+      node.address !== null
     )
   }
 
@@ -340,6 +339,7 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
   if (props.pageType === 'home') {
     const nodes: Record<string, unknown>[] = [
       buildOrganization(),
+      ...buildAllGoogleLocalBusinesses(),
       buildWebsite(inLanguage),
     ]
     if (props.faqItems && props.faqItems.length > 0) {
@@ -541,7 +541,7 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       worksFor: { '@id': ORG_ID },
     }))
 
-  return [buildOrganization(), ...personNodes]
+  return [buildOrganization(), ...buildAllGoogleLocalBusinesses(), ...personNodes]
 }
 
 export default function SchemaMarkup(props: SchemaMarkupProps) {

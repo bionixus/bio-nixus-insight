@@ -26,8 +26,16 @@ export function ListicleIqviaBridge({ countryLabel }: ListicleIqviaBridgeProps) 
           IQVIA alternative — custom primary research
         </Link>
         {' · '}
+        <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
+          What account-level and SKU-level data is
+        </Link>
+        {' · '}
         <Link to="/nielsen-alternative" className="text-primary font-medium hover:underline">
-          Nielsen alternative — account-level and traditional trade
+          Nielsen alternative — traditional trade
+        </Link>
+        {' · '}
+        <Link to="/pricing" className="text-primary font-medium hover:underline">
+          Project pricing bands
         </Link>
         {' · '}
         <Link to="/bionixus-vs-iqvia-mena" className="text-primary font-medium hover:underline">

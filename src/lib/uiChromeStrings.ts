@@ -93,9 +93,9 @@ const en: UiChromeStrings = {
     coverAlt: 'Blog post cover',
   },
   coverageMap: {
-    alt: 'BioNixus global research coverage map showing offices in Sheridan (US headquarters), London, Cairo, Riyadh, Dubai, Kuwait City, and São Paulo.',
+    alt: 'BioNixus global research coverage map showing Google-listed offices in Sheridan, London, Sheikh Zayed, Dubai, Al Khobar, Salmiya, and São Paulo.',
     caption:
-      'Offices in Sheridan (US HQ), London, Cairo, Riyadh, Dubai, Kuwait City, and São Paulo — bilingual Arabic–English fieldwork across GCC and MENA markets, with GDPR-aligned European programmes.',
+      'Google-listed offices: Sheridan (US HQ), London, Sheikh Zayed (Egypt), Dubai, Al Khobar (KSA), Salmiya (Kuwait), plus São Paulo — bilingual Arabic–English fieldwork across GCC and MENA markets, with GDPR-aligned European programmes.',
   },
   chart: {
     forecastYear: '26E',

@@ -6,7 +6,7 @@
  * The static index.html block is hand-aligned to these values.
  */
 
-import { BIONIXUS_UK_GBP_MAPS_URL } from '@/data/googleReviewsUk';
+import { GOOGLE_OFFICE_MAPS_URLS, GOOGLE_OFFICES } from '@/data/googleLocations';
 
 const BASE_URL = 'https://www.bionixus.com';
 
@@ -28,7 +28,7 @@ export const ORG_SAME_AS = [
   'https://www.goodfirms.co/company/bionixus-market-research',
   'https://www.wikidata.org/wiki/Q140188264',
   'https://careers.bionixus.com/',
-  BIONIXUS_UK_GBP_MAPS_URL,
+  ...GOOGLE_OFFICE_MAPS_URLS,
 ];
 
 /**
@@ -183,42 +183,12 @@ export const ORG_NUMBER_OF_EMPLOYEES = {
   maxValue: 100,
 };
 
+/** Streets match live Google Business Profiles (captured 2026-09-02). */
 export const ORG_ADDRESS = [
-  {
-    '@type': 'PostalAddress',
-    streetAddress: '1309 Coffeen Ave',
-    addressLocality: 'Sheridan',
-    addressRegion: 'WY',
-    postalCode: '82801',
-    addressCountry: 'US',
-  },
-  {
-    '@type': 'PostalAddress',
-    streetAddress: '128 City Road',
-    addressLocality: 'London',
-    postalCode: 'EC1V 2NX',
-    addressCountry: 'GB',
-  },
-  {
-    '@type': 'PostalAddress',
-    addressLocality: 'Cairo',
-    addressCountry: 'EG',
-  },
-  {
-    '@type': 'PostalAddress',
-    addressLocality: 'Riyadh',
-    addressCountry: 'SA',
-  },
-  {
-    '@type': 'PostalAddress',
-    addressLocality: 'Dubai',
-    addressCountry: 'AE',
-  },
-  {
-    '@type': 'PostalAddress',
-    addressLocality: 'Kuwait City',
-    addressCountry: 'KW',
-  },
+  ...GOOGLE_OFFICES.map((office) => ({
+    '@type': 'PostalAddress' as const,
+    ...office.address,
+  })),
   {
     '@type': 'PostalAddress',
     addressLocality: 'São Paulo',
@@ -273,10 +243,17 @@ export function buildCanonicalOrganization(): Record<string, unknown> {
     knowsAbout: ORG_KNOWS_ABOUT,
     sameAs: ORG_SAME_AS,
     address: ORG_ADDRESS,
-    location: ORG_ADDRESS.map((addr) => ({
-      '@type': 'Place',
-      address: addr,
-    })),
+    location: [
+      ...GOOGLE_OFFICES.map((office) => ({ '@id': office.schemaId })),
+      {
+        '@type': 'Place',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'São Paulo',
+          addressCountry: 'BR',
+        },
+      },
+    ],
     contactPoint: ORG_CONTACT_POINT,
     areaServed: ORG_AREA_SERVED,
   };

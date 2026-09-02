@@ -7,6 +7,8 @@ import ContactSection from '@/components/ContactSection';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { buildAllGoogleLocalBusinesses } from '@/lib/seo/googleReviewsSchema';
+import { GOOGLE_OFFICES } from '@/data/googleLocations';
 import { getContactFormStrings } from '@/lib/contactFormStrings';
 import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -253,6 +255,7 @@ const Contact = () => {
   ];
 
   const jsonLd = [
+    ...buildAllGoogleLocalBusinesses(),
     buildBreadcrumbSchema(breadcrumbItems),
     {
       '@context': 'https://schema.org',
@@ -394,6 +397,57 @@ const Contact = () => {
         </section>
 
         <ContactSection premium />
+
+        <section
+          className="border-b border-border bg-background"
+          aria-labelledby="contact-offices-heading"
+        >
+          <div className="container-wide py-16 md:py-20">
+            <h2
+              id="contact-offices-heading"
+              className={`text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 ${isRTL ? 'text-right' : ''}`}
+            >
+              Google-listed offices
+            </h2>
+            <p className={`text-muted-foreground mb-10 max-w-2xl ${isRTL ? 'text-right ms-auto' : ''}`}>
+              Addresses and phones as published on BioNixus Google Business Profiles.
+            </p>
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {GOOGLE_OFFICES.map((office) => {
+                const line = [
+                  office.address.streetAddress,
+                  office.address.addressLocality,
+                  office.address.addressRegion,
+                  office.address.postalCode,
+                  office.address.addressCountry,
+                ]
+                  .filter(Boolean)
+                  .join(', ');
+                return (
+                  <li key={office.id} className={isRTL ? 'text-right' : ''}>
+                    <h3 className="font-display font-semibold text-foreground mb-2">{office.name}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-2">{line}</p>
+                    <p className="text-sm">
+                      <a href={`tel:${office.telephone}`} className="text-foreground hover:text-accent">
+                        {office.telephone}
+                      </a>
+                    </p>
+                    <p className="text-sm mt-1">
+                      <a
+                        href={office.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent hover:underline"
+                      >
+                        Google Maps
+                      </a>
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
 
         <section
           ref={engagementRef}
