@@ -13,6 +13,7 @@ import {
 } from '@/lib/seo/schemas';
 import { getAllVideos } from '@/data/videos';
 import { buildDatasetSchema, buildMedicalWebPageSchema } from '@/lib/reportEnrichmentSchemas';
+import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 
 /**
  * Site-wide JSON-LD validation. Every node emitted by a schema builder must
@@ -32,7 +33,8 @@ describe('Organization + WebSite (global, every page)', () => {
     const org = buildCanonicalOrganization();
     parseAndValidate(org);
     const contactPoints = (org as any).contactPoint as Array<Record<string, unknown>>;
-    expect(contactPoints.some((cp) => typeof cp.email === 'string' && cp.email.includes('@'))).toBe(true);
+    expect(contactPoints.some((cp) => cp.email === 'admin@bionixus.com')).toBe(true);
+    expect((org as any).knowsAbout.length).toBeLessThanOrEqual(20);
   });
 
   it('buildOrganizationSchema (used by hub/country/therapy pages) is valid', () => {
@@ -54,10 +56,12 @@ describe('Homepage schema bundle', () => {
     nodes.forEach(parseAndValidate);
   });
 
-  it('includes an Organization and a WebSite node', () => {
+  it('includes a WebSite node and does not re-emit Organization (index.html is the single copy)', () => {
     const nodes = buildSchemas(props);
-    expect(nodes.some((n) => n['@type'] === 'Organization')).toBe(true);
+    expect(nodes.some((n) => n['@type'] === 'Organization')).toBe(false);
     expect(nodes.some((n) => n['@type'] === 'WebSite')).toBe(true);
+    const website = nodes.find((n) => n['@type'] === 'WebSite') as Record<string, unknown>;
+    expect(website.potentialAction).toBeUndefined();
   });
 
   it('emits all six Google LocalBusiness listings with matching NAP', () => {
@@ -73,6 +77,8 @@ describe('Homepage schema bundle', () => {
     ]);
     const uk = offices.find((n) => n.name === 'BioNixus UK') as Record<string, unknown>;
     expect(uk.aggregateRating).toBeTruthy();
+    expect((uk.aggregateRating as { reviewCount: string }).reviewCount).toBe('4');
+    expect(Array.isArray(uk.review) && uk.review.length).toBe(4);
     expect(offices.filter((n) => n.aggregateRating).map((n) => n.name)).toEqual(['BioNixus UK']);
     expect((offices.find((n) => n.name === 'BioNixus LLC USA') as any).address.streetAddress).toContain(
       'Coffeen Ave Ste 1200',
@@ -177,6 +183,33 @@ describe('Report-page inline Article normalization (SEOHead backfill)', () => {
     expect((normalized as any).mainEntityOfPage['@type']).toBe('WebPage');
   });
 
+  it('backfills publisher.logo on Article nodes that omit it', () => {
+    const bareArticle = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Top Market Research Companies in the UAE 2026',
+      description: 'Buyer guide to market research firms in the UAE.',
+      url: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026',
+      datePublished: '2026-06-07',
+      dateModified: '2026-09-01',
+      image: { '@type': 'ImageObject', url: 'https://www.bionixus.com/og-image.png' },
+      author: { '@type': 'Person', name: 'Haidy Yahia' },
+      publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026#webpage' },
+    };
+
+    const normalized = normalizeJsonLdNode(bareArticle, {
+      title: 'Top Market Research Companies in the UAE 2026',
+      description: 'Buyer guide to market research firms in the UAE.',
+      canonicalUrl: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026',
+      ogImage: 'https://www.bionixus.com/og-image.png',
+    });
+
+    parseAndValidate(normalized);
+    expect((normalized as any).publisher.logo['@type']).toBe('ImageObject');
+    expect((normalized as any).publisher.logo.url).toContain('bionixus-logo.webp');
+  });
+
   it('leaves non-Article nodes (FAQPage, BreadcrumbList) untouched', () => {
     const faq = buildFAQSchema([{ question: 'Q?', answer: 'A.' }]);
     const normalized = normalizeJsonLdNode(faq, {
@@ -268,6 +301,22 @@ describe('AI SEO pages (pricing + account-level definition)', () => {
         logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
       },
     });
+  });
+});
+
+describe('Country ranking ItemList', () => {
+  it('puts a name on every ListItem', () => {
+    const node = buildListicleItemListSchema({
+      name: 'Market Research Firms in Egypt 2026',
+      canonical: 'https://www.bionixus.com/insights/top-market-research-companies-egypt-2026',
+      firms: [
+        { rank: 1, name: 'BioNixus', anchor: 'bionixus' },
+        { rank: 2, name: 'Kantar Egypt', anchor: 'kantar' },
+      ],
+    });
+    parseAndValidate(node);
+    expect(node.numberOfItems).toBe(2);
+    expect(node.itemListElement.every((item: { name?: string }) => typeof item.name === 'string' && item.name.length > 0)).toBe(true);
   });
 });
 

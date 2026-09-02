@@ -240,7 +240,7 @@ export default function HubPage() {
       ? (hubContent.trustSignals as { label: string; value: string }[])
       : [
         { label: 'US Headquarters', value: 'Sheridan, WY' },
-        { label: 'Global Offices', value: 'London · Cairo · Dubai · Riyadh' },
+        { label: 'Global Offices', value: 'London · Giza · Dubai · Al Khobar · Salmiya' },
         { label: 'Core Markets', value: 'Americas, Europe, MENA, Asia' },
         { label: 'Methods', value: 'CATI, CAPI, IDIs, Quant' },
         { label: 'Compliance', value: 'ESOMAR / GDPR / HIPAA-aware' },

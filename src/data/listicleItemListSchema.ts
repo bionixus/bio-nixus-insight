@@ -24,6 +24,7 @@ export function buildListicleItemListSchema(opts: {
     itemListElement: opts.firms.map((f) => ({
       '@type': 'ListItem',
       position: f.rank,
+      name: f.name,
       url: `${opts.canonical}#${f.anchor}`,
       item: {
         '@type': 'Organization',

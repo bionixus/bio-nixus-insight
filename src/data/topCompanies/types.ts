@@ -95,7 +95,7 @@ export interface CountryListicleConfig {
   considerations: ListicleConsiderationCard[];
   faqTitle: string;
   faqItems: ListicleFaqItem[];
-  /** Rendered as a GeoLLMAnswerBlock with matching QAPage JSON-LD. */
+  /** Rendered as a GeoLLMAnswerBlock with matching WebPage/Question JSON-LD. */
   aeoAnswer?: ListicleAeoAnswer;
   relatedTitle: string;
   related: ListicleRelatedLink[];

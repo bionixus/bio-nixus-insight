@@ -20,7 +20,6 @@ import {
   HAPPY_CLIENTS_COUNT,
 } from '@/data/clientReviews';
 import { buildUkGoogleReviewsLocalBusiness } from '@/lib/seo/googleReviewsSchema';
-import { buildCanonicalOrganization } from '@/lib/seo/organization';
 
 const PAGE_URL = 'https://www.bionixus.com/client-reviews';
 
@@ -49,7 +48,7 @@ const CLIENT_REVIEWS_FAQ = [
   {
     question: 'How many clients has BioNixus worked with?',
     answer:
-      'BioNixus is recommended by more than 40 happy clients worldwide, with 120+ global projects annually (127 in 2025) across 48 countries and 14+ therapeutic areas since 2012.',
+      'BioNixus is recommended by more than 118 happy clients worldwide, with 120+ global projects annually (127 in 2025) across 48 countries and 14+ therapeutic areas since 2012.',
   },
   {
     question: 'Can I speak with a reference client?',
@@ -93,11 +92,10 @@ const ClientReviews = () => {
         <title>Client Reviews | BioNixus Pharmaceutical Market Research</title>
         <meta
           name="description"
-          content="Read verified Google reviews and client testimonials for BioNixus. Recommended by more than 40 happy pharmaceutical, biotech, and medical device clients across the US, Europe, and LATAM."
+          content="Read verified Google reviews and client testimonials for BioNixus. Recommended by more than 118 happy pharmaceutical, biotech, and medical device clients across the US, Europe, and LATAM."
         />
         <link rel="canonical" href={PAGE_URL} />
-        {/* Organization has no AggregateRating — ratings live only on UK LocalBusiness below. */}
-        <script type="application/ld+json">{JSON.stringify(buildCanonicalOrganization())}</script>
+        {/* Organization lives once in index.html. Ratings live only on UK LocalBusiness. */}
         <script type="application/ld+json">{JSON.stringify(buildUkGoogleReviewsLocalBusiness())}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

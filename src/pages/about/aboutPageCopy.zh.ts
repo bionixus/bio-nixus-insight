@@ -91,7 +91,7 @@ export const aboutPageCopyZh: AboutPageCopy = {
   presenceIntro: 'BioNixus 创立于伦敦，总部在美国，MENA 项目由大开罗区域办公室运营——在美洲、欧洲、中东与 APAC 活跃开展现场研究。',
   offices: [
     { title: '美国——全球总部', lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
-    { title: '英国——伦敦（创始办公室）', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
+    { title: '英国——伦敦（创始办公室）', lines: ['128 City Road', 'London, EC1V 2NP', '+44 7727 666682'] },
     {
       title: '埃及——大开罗（MENA 区域办公室）',
       lines: ['MENA 区域运营与阿英双语现场中心，服务 GCC、北非与中东更广泛项目。', '+20 120 688 2323'],

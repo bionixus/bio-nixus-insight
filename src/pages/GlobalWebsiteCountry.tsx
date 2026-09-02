@@ -1815,7 +1815,7 @@ const GlobalWebsiteCountry = () => {
                   streetAddress: '128 City Road',
                   addressLocality: 'London',
                   addressRegion: 'England',
-                  postalCode: 'EC1V 2NX',
+                  postalCode: 'EC1V 2NP',
                   addressCountry: 'GB',
                 },
                 geo: {

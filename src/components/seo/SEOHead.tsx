@@ -41,6 +41,25 @@ export function normalizeJsonLdNode(
       ? node.mainEntityOfPage
       : { '@type': 'WebPage', '@id': `${url}#webpage`, url };
 
+  const publisher =
+    node.publisher && typeof node.publisher === 'object' && !Array.isArray(node.publisher)
+      ? (node.publisher as Record<string, unknown>)
+      : null;
+  const publisherWithLogo =
+    publisher && !publisher.logo
+      ? {
+          ...publisher,
+          '@type': publisher['@type'] ?? 'Organization',
+          name: publisher.name ?? 'BioNixus',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://www.bionixus.com/bionixus-logo.webp',
+            width: 512,
+            height: 512,
+          },
+        }
+      : node.publisher;
+
   return {
     ...node,
     headline: node.headline ?? ctx.title,
@@ -48,6 +67,7 @@ export function normalizeJsonLdNode(
     image: node.image ?? { '@type': 'ImageObject', url: ctx.ogImage },
     url,
     mainEntityOfPage,
+    ...(publisherWithLogo ? { publisher: publisherWithLogo } : {}),
   };
 }
 
