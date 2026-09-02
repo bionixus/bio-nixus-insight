@@ -187,6 +187,48 @@ const pharmaCountryLinks = [
   { to: '/medical-device-companies-japan', label: 'Medical Device Companies in Japan' },
 ];
 
+const industryCompanyDirectoryLinks = [
+  { to: '/fmcg-companies-egypt', label: 'FMCG companies in Egypt' },
+  { to: '/fmcg-companies-uae', label: 'FMCG companies in UAE' },
+  { to: '/fmcg-companies-saudi-arabia', label: 'FMCG companies in Saudi Arabia' },
+  { to: '/fmcg-companies-kuwait', label: 'FMCG companies in Kuwait' },
+  { to: '/fmcg-companies-oman', label: 'FMCG companies in Oman' },
+  { to: '/fmcg-companies-qatar', label: 'FMCG companies in Qatar' },
+  { to: '/retail-companies-egypt', label: 'Retail companies in Egypt' },
+  { to: '/retail-companies-uae', label: 'Retail companies in UAE' },
+  { to: '/retail-companies-saudi-arabia', label: 'Retail companies in Saudi Arabia' },
+  { to: '/retail-companies-kuwait', label: 'Retail companies in Kuwait' },
+  { to: '/retail-companies-oman', label: 'Retail companies in Oman' },
+  { to: '/retail-companies-qatar', label: 'Retail companies in Qatar' },
+  { to: '/real-estate-companies-egypt', label: 'Real estate companies in Egypt' },
+  { to: '/real-estate-companies-uae', label: 'Real estate companies in UAE' },
+  { to: '/real-estate-companies-saudi-arabia', label: 'Real estate companies in Saudi Arabia' },
+  { to: '/real-estate-companies-kuwait', label: 'Real estate companies in Kuwait' },
+  { to: '/real-estate-companies-oman', label: 'Real estate companies in Oman' },
+  { to: '/real-estate-companies-qatar', label: 'Real estate companies in Qatar' },
+];
+
+const competitorAndToolLinks = [
+  { to: '/kantar-alternative', label: 'Kantar alternative' },
+  { to: '/bionixus-vs-nielsen', label: 'BioNixus vs Nielsen' },
+  { to: '/bionixus-vs-kantar', label: 'BioNixus vs Kantar' },
+  { to: '/gfk-alternative', label: 'GfK alternative' },
+  { to: '/ims-health-alternative', label: 'IMS Health alternative' },
+  { to: '/iqvia-alternative-saudi-arabia', label: 'IQVIA alternative in Saudi Arabia' },
+  { to: '/templates/country-research-brief', label: 'Country research brief template' },
+  { to: '/tools/syndicated-data-gap', label: 'Syndicated data gap diagnostic' },
+  { to: '/templates/mystery-shop-retail-brief', label: 'Mystery-shop retail brief' },
+];
+
+const arPharmaDirectoryLinks = [
+  { to: '/ar/pharmaceutical-companies-egypt', label: 'الشركات الدوائية في مصر' },
+  { to: '/ar/pharmaceutical-companies-uae', label: 'الشركات الدوائية في الإمارات' },
+  { to: '/ar/pharmaceutical-companies-saudi-arabia', label: 'الشركات الدوائية في السعودية' },
+  { to: '/ar/pharmaceutical-companies-kuwait', label: 'الشركات الدوائية في الكويت' },
+  { to: '/ar/pharmaceutical-companies-oman', label: 'الشركات الدوائية في عُمان' },
+  { to: '/ar/pharmaceutical-companies-qatar', label: 'الشركات الدوائية في قطر' },
+];
+
 const healthcareCountryLinks = [
   { to: '/healthcare-market-research/europe', label: 'Healthcare Market Research in Europe' },
   { to: '/healthcare-market-research/uk', label: 'Healthcare Market Research in UK' },
@@ -361,6 +403,8 @@ const tocNav = [
   { id: 'section-core', label: 'Core navigation' },
   { id: 'section-services', label: 'Services' },
   { id: 'section-pharma', label: 'Pharma guides' },
+  { id: 'section-industry-dirs', label: 'Industry directories' },
+  { id: 'section-compare', label: 'Comparisons & tools' },
   { id: 'section-reports', label: 'Market reports' },
   { id: 'section-industry', label: 'Industry matrix' },
   { id: 'section-healthcare', label: 'Healthcare geography' },
@@ -763,6 +807,43 @@ export default function SiteMapPage() {
                   >
                     <ul className="grid gap-2">
                       {pharmaCountryLinks.map((item) => (
+                        <li key={item.to}>
+                          <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </SectionShell>
+
+                  <SectionShell
+                    id="section-industry-dirs"
+                    icon={Building2}
+                    title="FMCG, retail & real-estate directories"
+                    description="Company directories by industry and country — the accounts we study, not research-firm listicles."
+                    countLabel={`${industryCompanyDirectoryLinks.length} directories`}
+                  >
+                    <ul className="grid gap-2">
+                      {industryCompanyDirectoryLinks.map((item) => (
+                        <li key={item.to}>
+                          <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </SectionShell>
+
+                  <SectionShell
+                    id="section-compare"
+                    icon={BarChart3}
+                    title="Comparisons & brief templates"
+                    description="Keep the syndicated feed. Add account-level primary — plus brief templates that convert."
+                    countLabel={`${competitorAndToolLinks.length + arPharmaDirectoryLinks.length} pages`}
+                  >
+                    <ul className="grid gap-2">
+                      {competitorAndToolLinks.map((item) => (
+                        <li key={item.to}>
+                          <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
+                        </li>
+                      ))}
+                      {arPharmaDirectoryLinks.map((item) => (
                         <li key={item.to}>
                           <PremiumInternalLink to={item.to}>{item.label}</PremiumInternalLink>
                         </li>

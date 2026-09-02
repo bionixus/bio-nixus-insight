@@ -11,10 +11,15 @@ import { QualificationForm } from '@/components/conversion/QualificationForm';
 import { GatedAssetForm } from '@/components/conversion/GatedAssetForm';
 import { trackCtaClick, trackFormView } from '@/lib/analytics';
 import { formMarketForDirectory } from '@/data/pharmaDirectoryListicles';
+import { QUALIFICATION_FORM_NEEDS } from '@/data/qualificationFormOptions';
 
 type TalkToResearchCtaProps = {
   variant: 'talk-to-research';
   market?: string;
+  /** Overrides the Formspree source-context label (defaults to market). */
+  sourceContext?: string;
+  /** Prefills the qualification need select. */
+  defaultNeed?: (typeof QUALIFICATION_FORM_NEEDS)[number];
   ctaId: string;
   ctaLocation: string;
   className?: string;
@@ -76,7 +81,8 @@ export function ConversionCTA(props: ConversionCtaProps) {
             </DialogHeader>
             <QualificationForm
               formId={props.ctaId}
-              sourceContext={market}
+              sourceContext={props.sourceContext ?? market}
+              defaultNeed={props.defaultNeed}
               defaultMarkets={defaultMarket ? [defaultMarket] : undefined}
               onSuccess={() => undefined}
             />

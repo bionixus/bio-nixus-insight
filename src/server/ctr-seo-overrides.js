@@ -581,6 +581,171 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Compare BioNixus vs IQVIA: indication-level PRFs with full patient history, new vs current case recruitment, and brand trackers — not generic pack sales data.',
   },
+  '/fmcg-companies-egypt': {
+    title: 'Top FMCG Companies in Egypt (2026) | Traditional Trade',
+    description:
+      '2026 list of FMCG companies in Egypt — Edita, Juhayna, MNCs, bakals vs modern trade. Account-level research by BioNixus.',
+  },
+  '/fmcg-companies-uae': {
+    title: 'Top FMCG Companies in UAE (2026) | Traditional Trade',
+    description:
+      '2026 list of FMCG companies in the UAE — Agthia, IFFCO, Unilever, Nestlé. Account-level research by BioNixus.',
+  },
+  '/fmcg-companies-saudi-arabia': {
+    title: 'Top FMCG Companies in Saudi Arabia (2026) | Trade Mix',
+    description:
+      '2026 list of FMCG companies in Saudi Arabia — Almarai, Savola, NADEC, MNCs. Account-level research by BioNixus.',
+  },
+  '/fmcg-companies-kuwait': {
+    title: 'Top FMCG Companies in Kuwait (2026) | Trade Mix',
+    description:
+      '2026 list of FMCG companies in Kuwait — KDD, Americana, MNCs, and traditional grocers. Account-level research by BioNixus.',
+  },
+  '/fmcg-companies-oman': {
+    title: 'Top FMCG Companies in Oman (2026) | Trade Mix',
+    description:
+      '2026 list of FMCG companies in Oman — Areej, Oman Refreshment, MNCs, and traditional trade. Account-level research by BioNixus.',
+  },
+  '/fmcg-companies-qatar': {
+    title: 'Top FMCG Companies in Qatar (2026) | Trade Mix',
+    description:
+      '2026 list of FMCG companies in Qatar — Baladna, AMTF, MNCs, and traditional grocers. Account-level research by BioNixus.',
+  },
+  '/retail-companies-egypt': {
+    title: 'Top Retail Companies in Egypt (2026) | Banners + Trade',
+    description:
+      '2026 list of retail companies in Egypt — Carrefour, Spinneys, Seoudi, and traditional grocers. Account-level research by BioNixus.',
+  },
+  '/retail-companies-uae': {
+    title: 'Top Retail Companies in UAE (2026) | Banners + Trade',
+    description:
+      '2026 list of retail companies in the UAE — Carrefour, Lulu, Spinneys, and traditional trade. Account-level research by BioNixus.',
+  },
+  '/retail-companies-saudi-arabia': {
+    title: 'Top Retail Companies in Saudi Arabia (2026)',
+    description:
+      '2026 list of retail companies in Saudi Arabia — Panda, Tamimi, Lulu, and traditional grocers. Account-level research by BioNixus.',
+  },
+  '/retail-companies-kuwait': {
+    title: 'Top Retail Companies in Kuwait (2026) | Banners',
+    description:
+      '2026 list of retail companies in Kuwait — Sultan Center, Lulu, Carrefour, and traditional grocers. Account-level research by BioNixus.',
+  },
+  '/retail-companies-oman': {
+    title: 'Top Retail Companies in Oman (2026) | Banners',
+    description:
+      '2026 list of retail companies in Oman — Lulu, Carrefour, and traditional grocers. Account-level research by BioNixus.',
+  },
+  '/retail-companies-qatar': {
+    title: 'Top Retail Companies in Qatar (2026) | Banners',
+    description:
+      '2026 list of retail companies in Qatar — Lulu, Carrefour, and traditional grocers. Account-level research by BioNixus.',
+  },
+  '/real-estate-companies-egypt': {
+    title: 'Top Real Estate Companies in Egypt (2026)',
+    description:
+      '2026 list of real estate developers in Egypt — SODIC, Palm Hills, Talaat Moustafa, and MNCs. Primary research by BioNixus.',
+  },
+  '/real-estate-companies-uae': {
+    title: 'Top Real Estate Companies in UAE (2026)',
+    description:
+      '2026 list of real estate developers in the UAE — Emaar, DAMAC, Aldar, and Nakheel. Primary research by BioNixus.',
+  },
+  '/real-estate-companies-saudi-arabia': {
+    title: 'Top Real Estate Companies in Saudi Arabia (2026)',
+    description:
+      '2026 list of real estate developers in Saudi Arabia — ROSHN, Dar Al Arkan, and NEOM-adjacent supply. Primary research by BioNixus.',
+  },
+  '/real-estate-companies-kuwait': {
+    title: 'Top Real Estate Companies in Kuwait (2026)',
+    description:
+      '2026 list of real estate companies in Kuwait — Mabanee, United Real Estate, and listed developers. Primary research by BioNixus.',
+  },
+  '/real-estate-companies-oman': {
+    title: 'Top Real Estate Companies in Oman (2026)',
+    description:
+      '2026 list of real estate companies in Oman — Omran, Al Mouj, and listed developers. Primary research by BioNixus.',
+  },
+  '/real-estate-companies-qatar': {
+    title: 'Top Real Estate Companies in Qatar (2026)',
+    description:
+      '2026 list of real estate companies in Qatar — Qatari Diar, Barwa, UDC, and Msheireb. Primary research by BioNixus.',
+  },
+  '/kantar-alternative': {
+    title: 'Kantar Alternative for Primary Research (2026)',
+    description:
+      'Keep Kantar for brand trackers. Add BioNixus for account-level and traditional-trade fieldwork. Proposal in 48 hours.',
+  },
+  '/bionixus-vs-nielsen': {
+    title: 'BioNixus vs NielsenIQ (2026) | Account-Level Primary',
+    description:
+      'Keep NielsenIQ for modern-trade panels. Add BioNixus when you need named accounts, SKUs, or traditional trade.',
+  },
+  '/bionixus-vs-kantar': {
+    title: 'BioNixus vs Kantar (2026) | Brand-Test vs Accounts',
+    description:
+      'Keep Kantar for brand-track. Add BioNixus when the missing cut is account-level or traditional trade.',
+  },
+  '/gfk-alternative': {
+    title: 'GfK Alternative for Account-Level Research (2026)',
+    description:
+      'Keep GfK or NIQ panels for modern trade. Add BioNixus for SKU, account, and traditional-trade cuts.',
+  },
+  '/ims-health-alternative': {
+    title: 'IMS Health Alternative — Pharma Primary Research',
+    description:
+      'IMS Health is now IQVIA. Keep the audit. Add BioNixus for account-level primary research. Not EMR software.',
+  },
+  '/iqvia-alternative-saudi-arabia': {
+    title: 'IQVIA Alternative in Saudi Arabia (2026)',
+    description:
+      'Keep IQVIA in KSA. Add BioNixus for account-level and traditional-trade primary. Proposal in 48 hours.',
+  },
+  '/templates/country-research-brief': {
+    title: 'Country Research Brief Template | BioNixus',
+    description:
+      'Fill brand, SKU, country, and the Nielsen/IQVIA gap. Request a 48-hour BioNixus proposal.',
+  },
+  '/tools/syndicated-data-gap': {
+    title: 'Syndicated Data Gap Diagnostic | BioNixus',
+    description:
+      'Five questions to see if IQVIA, Nielsen, GfK or IMS still miss account-level data. Then request a proposal.',
+  },
+  '/templates/mystery-shop-retail-brief': {
+    title: 'Mystery Shop Retail Brief (GCC) | BioNixus',
+    description:
+      'GCC grocery and pharmacy mystery-shop brief — banners, SKUs, traditional trade. Request a 48-hour proposal.',
+  },
+  '/ar/pharmaceutical-companies-egypt': {
+    title: 'شركات الأدوية في مصر 2026 | دليل الشركات',
+    description:
+      'دليل شركات الأدوية في مصر — إيبيكو، إيفا فارما، والشركات متعددة الجنسيات. أبحاث على مستوى الحساب من بايونكسس.',
+  },
+  '/ar/pharmaceutical-companies-uae': {
+    title: 'شركات الأدوية في الإمارات 2026 | دليل الشركات',
+    description:
+      'دليل شركات الأدوية في الإمارات — جلفار، نيوفارما، والشركات متعددة الجنسيات. أبحاث أولية من بايونكسس.',
+  },
+  '/ar/pharmaceutical-companies-saudi-arabia': {
+    title: 'شركات الأدوية في السعودية 2026 | دليل الشركات',
+    description:
+      'دليل شركات الأدوية في السعودية — سبيماكو، تبوك، والشركات متعددة الجنسيات. أبحاث أولية من بايونكسس.',
+  },
+  '/ar/pharmaceutical-companies-kuwait': {
+    title: 'شركات الأدوية في الكويت 2026 | دليل الشركات',
+    description:
+      'دليل شركات الأدوية في الكويت — مصنعون محليون وشركات متعددة الجنسيات. أبحاث أولية من بايونكسس.',
+  },
+  '/ar/pharmaceutical-companies-oman': {
+    title: 'شركات الأدوية في عُمان 2026 | دليل الشركات',
+    description:
+      'دليل شركات الأدوية في عُمان — مصنعون محليون وشركات متعددة الجنسيات. أبحاث أولية من بايونكسس.',
+  },
+  '/ar/pharmaceutical-companies-qatar': {
+    title: 'شركات الأدوية في قطر 2026 | دليل الشركات',
+    description:
+      'دليل شركات الأدوية في قطر — مصنعون محليون وشركات متعددة الجنسيات. أبحاث أولية من بايونكسس.',
+  },
 };
 
 /**
