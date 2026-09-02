@@ -47,6 +47,14 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
     question: 'How does BioNixus support Indian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Indian medical device manufacturers in entering GCC and MENA markets. India\'s growing medtech manufacturing base — particularly in diagnostics, consumables, and commodity medical supplies — has strong natural markets in GCC countries where Indian-manufactured products have established procurement histories. BioNixus provides SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and GCC-wide regulatory pathway intelligence; NUPCO and hospital procurement data; distributor network mapping; and primary research with biomedical engineers and procurement managers. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
+  {
+    question: 'Which Indian hospital networks drive medical device adoption in 2026?',
+    answer: 'Private hospital chains — Apollo, Fortis, Max Healthcare, and Manipal — account for a disproportionate share of premium imported and innovative device revenue, operating at international price points with shorter procurement cycles than government empanelment. Public tertiary centres — AIIMS, PGIMER, Tata Memorial, and CMC Vellore — set clinical reference standards and influence government tender specifications through HLL and state medical corporations. PM-JAY empanelled hospitals create a third channel where cost-sensitive device choices must meet Ayushman Bharat package economics. BioNixus maps adoption by channel so manufacturers do not conflate private premium volume with public-sector price sensitivity.',
+  },
+  {
+    question: 'What is the CDSCO Sugam portal and how long does India device registration take?',
+    answer: 'Sugam is CDSCO\'s online portal for medical device registration and import licence applications under MDR 2017. Class A and B devices typically require 3–9 months for registration; Class C and D require 9–18 months with technical dossier review. Foreign manufacturers appoint an authorised Indian agent for import licensing and post-market vigilance. Devices already cleared by FDA or notified EU bodies may qualify for abridged review when predicate equivalence is accepted. Planning should include state-level distribution agreements and hospital listing timelines beyond CDSCO approval alone.',
+  },
 ], 'india');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/india-medical-devices-market-report');
@@ -62,7 +70,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-09-02',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -77,7 +85,7 @@ const jsonLd = [
     countryName: "India",
     marketSlug: "india",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-09-02",
   })
 ];
 
@@ -117,6 +125,7 @@ const IndiaMedicalDevicesMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">India is among the world's fastest-growing medical device markets — fourth-largest in Asia and growing at 8% CAGR. The PLI scheme and Medical Device Parks are driving a domestic manufacturing transformation that is creating Indian-branded device companies with growing international ambitions, including in GCC markets.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">Commercial teams should plan around three parallel access channels: premium private hospital chains (Apollo, Fortis, Max) where innovative devices launch at international price points; government procurement through HLL and state medical corporations where NPPA price scrutiny and tender economics dominate; and PM-JAY empanelled facilities where package rates constrain device choice. CDSCO MDR 2017 registration via the Sugam portal is the regulatory gate, but hospital listing and distributor coverage determine realised volume.</p>
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
