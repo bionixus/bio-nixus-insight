@@ -9,7 +9,13 @@ import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
 import { formatMetaDescriptionInRange } from './src/server/seo-meta.js';
 import { getCtrSeo, isCtrSeoPath } from './lib/ctr-seo-overrides.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
-import { buildLcpPreloadTag, getClientAssetHints } from './lib/ssr-client-asset-hints.mjs';
+import {
+  buildLcpPreloadTag,
+  getClientAssetHints,
+  SSR_HTML_CACHE_CONTROL,
+  SSR_HTML_CDN_CACHE_CONTROL,
+  SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL,
+} from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
 import { LEGACY_REDIRECTS } from './lib/legacy-redirects.mjs';
@@ -1089,7 +1095,12 @@ async function startServer() {
         req.path,
       );
 
-      res.status(statusCode).set({ 'Content-Type': 'text/html' }).end(localizedPage);
+      res.status(statusCode).set({
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': SSR_HTML_CACHE_CONTROL,
+        'CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
+        'Vercel-CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
+      }).end(localizedPage);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('SSR request failed:', error);
