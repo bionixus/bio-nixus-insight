@@ -15,7 +15,7 @@ export const BAHRAIN_VACCINES_COPY: OverrideCopy = {
   summaryPara1:
     'BioNixus sizes the Bahrain vaccine market at roughly USD 20 million in 2026, advancing toward about USD 35 million by 2030 at roughly 16.7% CAGR. NHRA conjugate reviews, Salmaniya school-mandate cohesion, and causeway-commuter vaccination attribution shape a compact but distinct Gulf schedule market. Sizing reflects BioNixus market analysis, 2026.',
   summaryPara2:
-    'Use this report with the [Bahrain healthcare market report](/bahrain-healthcare-market-report), the [GCC vaccines market report](/market-reports/gcc-vaccines-market-report), and the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for regional depth. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
+    'Use this report with the [Bahrain healthcare market report](/bahrain-healthcare-market-report), the [GCC vaccine market 2026 report](/market-reports/gcc-vaccines-market-report), and the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for regional depth. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
   faqs: [
     {
       question: 'How large is the Bahrain vaccine market in 2026?',

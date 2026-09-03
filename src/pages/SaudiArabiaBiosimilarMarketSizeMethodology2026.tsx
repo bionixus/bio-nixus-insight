@@ -186,9 +186,9 @@ export default function SaudiArabiaBiosimilarMarketSizeMethodology2026() {
               </Link>{' '}
               and the{' '}
               <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary font-medium hover:underline">
-                biosimilar market entry Saudi Arabia
+                Saudi Arabia biosimilar market 2026 guide
               </Link>{' '}
-              strategy guide when registration and launch sequencing sit on the critical path.
+              (size, SFDA pathway and entry strategy) when registration and launch sequencing sit on the critical path.
             </p>
 
             <section className="rounded-2xl border border-border bg-muted/20 p-6 mb-10">

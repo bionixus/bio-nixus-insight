@@ -38,6 +38,7 @@ export const SEGMENT_MARKET_INDEX: SegmentMarketIndexEntry[] = [
   { slug: 'saudi-arabia-api-market', group: 'saudi-biotech', label: 'Saudi Arabia API (active pharmaceutical ingredients) market' },
   { slug: 'saudi-arabia-biocatalyst-market', group: 'saudi-biotech', label: 'Saudi Arabia biocatalyst market' },
   { slug: 'saudi-arabia-plasma-fractionation-market', group: 'saudi-biotech', label: 'Saudi Arabia plasma fractionation market' },
+  { slug: 'saudi-arabia-biologics-market', group: 'saudi-biotech', label: 'Saudi Arabia biologics market' },
 
   { slug: 'saudi-arabia-cardiovascular-devices-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia cardiovascular devices market' },
   { slug: 'saudi-arabia-aesthetics-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia aesthetics market' },
@@ -53,6 +54,7 @@ export const SEGMENT_MARKET_INDEX: SegmentMarketIndexEntry[] = [
   { slug: 'gcc-intravenous-solutions-market', group: 'gcc', label: 'GCC intravenous solutions market' },
   { slug: 'gcc-medical-tourism-market', group: 'gcc', label: 'GCC medical tourism market' },
   { slug: 'gcc-obesity-market', group: 'gcc', label: 'GCC obesity market' },
+  { slug: 'qatar-personalized-medicine-market', group: 'gcc', label: 'Qatar personalized medicine market' },
 
   { slug: 'middle-east-biomarkers-market', group: 'middle-east', label: 'Middle East biomarkers market' },
   { slug: 'middle-east-in-vitro-diagnostics-market', group: 'middle-east', label: 'Middle East in vitro diagnostics market' },
@@ -67,7 +69,7 @@ export const SEGMENT_MARKET_INDEX: SegmentMarketIndexEntry[] = [
   { slug: 'bionixus-saudi-arabia-oncology-insights', group: 'flagship', label: 'BioNixus Saudi Arabia oncology insights' },
   { slug: 'bionixus-uae-oncology-insights', group: 'flagship', label: 'BioNixus UAE oncology insights' },
   { slug: 'top-pharmacies-saudi-arabia', group: 'flagship', label: 'Top pharmacies operating in Saudi Arabia' },
-  { slug: 'pharmaceutical-product-registration-saudi-arabia', group: 'flagship', label: 'Pharmaceutical product registration in Saudi Arabia' },
+  { slug: 'pharmaceutical-product-registration-saudi-arabia', group: 'flagship', label: 'SFDA pricing submission and launch readiness in Saudi Arabia' },
 ];
 
 export const SEGMENT_MARKET_SLUGS: string[] = SEGMENT_MARKET_INDEX.map((entry) => entry.slug);

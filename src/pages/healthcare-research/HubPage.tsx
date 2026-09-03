@@ -197,13 +197,13 @@ export default function HubPage() {
       ? (hubContent.faq as { question: string; answer: string }[])
       : HUB_FAQS;
   // CTR-engineered exact title/description (SEOHead also forces via getCtrSeo).
-  const hubSeoTitle = 'Healthcare Market Research Company | Bionixus';
+  const hubSeoTitle = 'Healthcare Market Research: Definition, Methods & Companies';
   const hubSeoDescription =
-    'Bionixus is a healthcare market research company specializing in pharma, medical devices & patient studies across the Middle East, Asia, Europe & Americas. Get a proposal.';
+    'Healthcare market research explained — what it is, primary vs syndicated methods, costs, and how to brief a firm. BioNixus runs physician, payer and patient research in 48 countries.';
   const heroTitle =
     typeof hubContent?.title === 'string' && hubContent.title.length > 0
       ? hubContent.title
-      : 'Healthcare market research — global pharmaceutical & medtech insights across the Americas, Europe, MENA, and Asia-Pacific';
+      : 'Healthcare market research: definition, methods, and how pharma and medtech teams use it across the Americas, Europe, MENA, and Asia-Pacific';
   const heroDescription =
     typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
       ? hubContent.metaDescription
@@ -309,7 +309,7 @@ export default function HubPage() {
           description: (
             <>
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Last updated 2 September 2026 · Haidy Yahia
+                Last updated 3 September 2026 · Haidy Yahia
               </p>
               <p>{heroDescription}</p>
               <p className="mt-4 text-sm text-muted-foreground max-w-3xl">
@@ -380,8 +380,10 @@ export default function HubPage() {
             Primary healthcare market research vs syndicated audits
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
-            Healthcare market research companies are not interchangeable. IQVIA, Ipsos, M3, and a field firm like
-            BioNixus answer different questions. Use the table, then brief the firm that matches the decision — not
+            <Link to="/healthcare-market-research-companies" className="text-primary font-medium hover:underline">
+              Healthcare market research companies
+            </Link>{' '}
+            are not interchangeable. IQVIA, Ipsos, M3, and a field firm like BioNixus answer different questions. Use the table, then brief the firm that matches the decision — not
             a self-ranked shortlist.
           </p>
           <div className="overflow-x-auto mb-6">
@@ -443,8 +445,12 @@ export default function HubPage() {
               2026 project bands
             </Link>
             {' · '}
+            <Link to="/healthcare-market-research-companies" className="text-primary font-medium hover:underline">
+              Healthcare market research companies (2026 ranking)
+            </Link>
+            {' · '}
             <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary font-medium hover:underline">
-              Global vendor shortlist
+              Global top-10 shortlist
             </Link>
           </p>
         </div>
@@ -550,6 +556,7 @@ export default function HubPage() {
             <HealthcareNavCard to="/market-research-qatar" title="Market research in Qatar" />
             <HealthcareNavCard to="/market-research-oman" title="Market research in Oman" />
             <HealthcareNavCard to="/market-research-bahrain" title="Market research in Bahrain" />
+            <HealthcareNavCard to="/market-research-gcc" title="Market research GCC (all six Gulf states)" featured />
             <HealthcareNavCard
               to="/healthcare-market-research-kuwait"
               title="Kuwait healthcare market research — MOH &amp; GPADC"

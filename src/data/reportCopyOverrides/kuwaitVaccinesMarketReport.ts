@@ -15,7 +15,7 @@ export const KUWAIT_VACCINES_COPY: OverrideCopy = {
   summaryPara1:
     'BioNixus sizes the Kuwait vaccine market at roughly USD 44 million in 2026, advancing toward about USD 76 million by 2030 at roughly 16.8% CAGR. MOH childhood schedule updates and influenza antigen selection set government volume; private clinics drive premium HPV uptake among affluent households. Sizing reflects BioNixus market analysis, 2026.',
   summaryPara2:
-    'Use this report with the [Kuwait healthcare market report](/kuwait-healthcare-market-report), the [GCC vaccines market report](/market-reports/gcc-vaccines-market-report), and the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for regional depth. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
+    'Use this report with the [Kuwait healthcare market report](/kuwait-healthcare-market-report), the [GCC vaccine market 2026 report](/market-reports/gcc-vaccines-market-report), and the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for regional depth. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
   faqs: [
     {
       question: 'How large is the Kuwait vaccine market in 2026?',

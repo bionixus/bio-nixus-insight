@@ -165,7 +165,7 @@ export default function HealthcareMarketResearchInQatar() {
                 {
                   area: 'Precision medicine',
                   detail:
-                    'Genomics adoption, personalized therapy readiness, and biomarker testing behaviour across Qatar oncology centers',
+                    'Genomics adoption, personalized therapy readiness, and biomarker testing behaviour across Qatar oncology centers — see the Qatar personalized medicine market briefing',
                 },
                 {
                   area: 'Pharmacovigilance',
@@ -351,6 +351,8 @@ export default function HealthcareMarketResearchInQatar() {
                 { to: '/pharmaceutical-market-research-qatar', label: 'Qatar pharmaceutical market research' },
                 { to: '/qatar-market-access-research', label: 'Qatar market access research' },
                 { to: '/market-research-qatar', label: 'Market research in Qatar (hub)' },
+                { to: '/qatar-personalized-medicine-market', label: 'Qatar personalized medicine market' },
+                { to: '/market-reports/qatar-digital-health-market-report', label: 'Qatar digital health market 2026' },
                 { to: '/insights/top-market-research-companies-qatar-2026', label: 'Best market research companies in Qatar' },
                 { to: '/insights/top-healthcare-market-research-companies-qatar-2026', label: 'Best healthcare market research companies in Qatar' },
               ].map((link) => (

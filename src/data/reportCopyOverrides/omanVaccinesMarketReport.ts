@@ -15,7 +15,7 @@ export const OMAN_VACCINES_COPY: OverrideCopy = {
   summaryPara1:
     'BioNixus sizes the Oman vaccine market at roughly USD 24 million in 2026, advancing toward about USD 41 million by 2030 at roughly 16.9% CAGR. Muscat littoral programmes and interior outreach, plus meningococcal Hajj worker bundles, shape demand. Sizing reflects BioNixus market analysis, 2026.',
   summaryPara2:
-    'Use this report with the [Oman healthcare market report](/oman-healthcare-market-report), the [GCC vaccines market report](/market-reports/gcc-vaccines-market-report), and the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for regional depth. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
+    'Use this report with the [Oman healthcare market report](/oman-healthcare-market-report), the [GCC vaccine market 2026 report](/market-reports/gcc-vaccines-market-report), and the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for regional depth. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
   faqs: [
     {
       question: 'How large is the Oman vaccine market in 2026?',

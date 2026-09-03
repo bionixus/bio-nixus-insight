@@ -11,14 +11,15 @@ type OverrideCopy = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 
 export const UAE_DIGITAL_HEALTH_COPY: OverrideCopy = {
   slug: SLUG,
-  title: 'UAE Digital Health Market Report 2026',
-  metaTitle: 'UAE Digital Health Market Report 2026 | BioNixus',
+  title: 'UAE Digital Health Market 2026: Size, Growth and Outlook',
+  metaTitle: 'UAE Digital Health Market 2026: Size, Growth, Outlook',
   metaDescription:
-    'UAE digital health market ~USD 96M in 2026 (BioNixus analysis), ~17.5% CAGR: Malaffi & Nabidh health information exchanges, MOHAP/DHA/DOH, telehealth, AI diagnostics, SaMD regulation—decision-ready Gulf intelligence.',
+    'UAE digital health market is ~USD 96M in 2026, growing ~17.5% a year to ~USD 168M by 2030. Malaffi/Nabidh exchanges, DHA and DOH SaMD rules, telehealth, AI.',
+  modifiedDate: '2026-09-03',
   heroLead:
-    'This briefing reads UAE digital health through its data backbone: mandatory health-information exchanges—Malaffi in Abu Dhabi, Nabidh in Dubai, and the federal Riayati—plus emirate smart-health strategies, where integration with these platforms, not the technology itself, decides whether a digital solution scales across the country.',
+    'The UAE digital health market is worth roughly USD 96 million in 2026 and is forecast to reach about USD 168 million by 2030, a ~17.5% CAGR (BioNixus analysis). Growth is driven by mandatory health-information exchanges (Malaffi in Abu Dhabi, Nabidh in Dubai, federal Riayati), telehealth, AI diagnostics and remote monitoring; MOHAP, DHA and DOH regulate software-as-a-medical-device. Integration with the emirate exchanges, not the technology itself, decides whether a solution scales.',
   summaryPara1:
-    'The UAE is a digital-health frontrunner, distinguished by mandatory, emirate-level health-information exchanges that most markets lack. BioNixus sizes the market at roughly USD 96 million in 2026, advancing toward about USD 168 million by 2030 at roughly 17.5% CAGR. Abu Dhabi’s Malaffi and Dubai’s Nabidh exchanges, with the federal Riayati layer, connect providers and create both an integration requirement and an opportunity; DHA and DOH smart-health strategies, telehealth, AI diagnostics, and a medical-tourism digital front-end round out demand. MOHAP, DHA, and DOH govern software-as-a-medical-device and AI-device pathways. The binding constraints are emirate-specific integration, data governance, and clinical-workflow fit rather than technology novelty. Sizing reflects BioNixus market analysis, 2026.',
+    'The UAE digital health market is a Gulf frontrunner, distinguished by mandatory, emirate-level health-information exchanges that most markets lack. BioNixus sizes the market at roughly USD 96 million in 2026, advancing toward about USD 168 million by 2030 at roughly 17.5% CAGR. Abu Dhabi’s Malaffi and Dubai’s Nabidh exchanges, with the federal Riayati layer, connect providers and create both an integration requirement and an opportunity; DHA and DOH smart-health strategies, telehealth, AI diagnostics, and a medical-tourism digital front-end round out demand. MOHAP, DHA, and DOH govern software-as-a-medical-device and AI-device pathways. The binding constraints are emirate-specific integration, data governance, and clinical-workflow fit rather than technology novelty. Sizing reflects BioNixus market analysis, 2026.',
   summaryPara2:
     'Use this report with the [UAE healthcare market report](/uae-healthcare-market-report) for macro context, the [UAE medical devices market report](/market-reports/uae-medical-devices-market-report) for the SaMD and connected-device overlap, the [GCC digital health market report](/market-reports/gcc-digital-health-market-report) for Gulf-wide benchmarking, the [Saudi Arabia digital health market report](/market-reports/saudi-arabia-digital-health-market-report) for the contrasting national-platform model, [digital-health research](/healthcare-market-research/therapy/digital-health) for programme design, and the [healthcare market research hub](/healthcare-market-research) to scope bilingual fieldwork.',
   marketAccessNotes:

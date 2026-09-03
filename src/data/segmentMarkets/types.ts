@@ -53,6 +53,27 @@ export type SegmentMarketContent = {
   };
   /** "What we research" cards. */
   researchTopics: Array<{ name: string; detail: string }>;
+  /**
+   * Optional numbered ranking rendered as a cited table directly under the quick answer.
+   * Emits ItemList JSON-LD. Every row must carry a public source; no modelled figures.
+   */
+  rankedList?: {
+    heading: string;
+    intro?: string;
+    /** Column labels for the three detail cells that follow rank and name. */
+    columns: [string, string, string];
+    items: Array<{
+      rank: number;
+      name: string;
+      /** Official website (used as ItemList item url). */
+      url?: string;
+      cells: [string, string, string];
+      source?: { label: string; href: string };
+    }>;
+    footnote?: string;
+  };
+  /** ISO date (YYYY-MM-DD). Shown as "Updated" under the H1 and emitted as dateModified. */
+  lastUpdated?: string;
   /** Sub-segment / category breakdown table. */
   segmentBreakdown?: {
     heading: string;

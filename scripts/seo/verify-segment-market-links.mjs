@@ -63,6 +63,8 @@ function resolves(path) {
   if (/^\/healthcare-market-research\/[a-z-]+(\/[a-z-]+)?$/.test(path)) return true;
   if (/^\/pharma-insights-[a-z-]+$/.test(path)) return true;
   if (/^\/real-world-evidence-[a-z-]+$/.test(path)) return true;
+  /** Sanity blog posts render through the /blog/:slug route in routes.tsx. */
+  if (/^\/blog\/[a-z0-9-]+$/.test(path)) return true;
 
   return false;
 }
