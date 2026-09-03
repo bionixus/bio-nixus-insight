@@ -5,4 +5,9 @@
  */
 import type { DirectoryPageInput } from '../types';
 
-export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [];
+// Wave 1 — MENA healthcare gaps
+import { pharmaceuticalDistributorsSaudiArabia } from './pharmaceutical-distributors/saudi-arabia';
+
+export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
+  pharmaceuticalDistributorsSaudiArabia,
+];

@@ -41,7 +41,7 @@ await build({
   stdin: {
     contents: `
       export * from '@/data/companyDirectories';
-      export { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
+      export { buildPharmaCompaniesFaqLd, buildDirectoryItemListLd } from '@/components/seo/pharmaCompaniesSeo';
     `,
     resolveDir: root,
     loader: 'ts',
@@ -62,7 +62,7 @@ const {
   COMPANY_DIRECTORY_HUBS,
   LEGACY_DIRECTORIES,
   buildPharmaCompaniesFaqLd,
-  buildPharmaCompaniesItemListLd,
+  buildDirectoryItemListLd,
 } = mod;
 
 const failures = [];
@@ -220,7 +220,7 @@ for (const d of COMPANY_DIRECTORIES) {
   // JSON-LD builders must produce parseable output with the right counts.
   try {
     const url = `https://www.bionixus.com${d.path}`;
-    const list = JSON.parse(JSON.stringify(buildPharmaCompaniesItemListLd(url, d.companies.map((c) => c.name))));
+    const list = JSON.parse(JSON.stringify(buildDirectoryItemListLd(url, d.h1, d.companies)));
     if (list['@type'] !== 'ItemList' || list.itemListElement?.length !== n) fail(d.path, 'ItemList JSON-LD malformed');
     const faq = JSON.parse(JSON.stringify(buildPharmaCompaniesFaqLd(url, d.faq)));
     if (faq['@type'] !== 'FAQPage' || faq.mainEntity?.length !== d.faq.length) fail(d.path, 'FAQPage JSON-LD malformed');

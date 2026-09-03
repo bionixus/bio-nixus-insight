@@ -9,7 +9,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { IndustryDirectoryBridge } from '@/components/seo/IndustryDirectoryBridge';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
-import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
+import { buildDirectoryItemListLd, buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
 import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { getDirectoryConversionCopy } from '@/data/reportConversionConfig';
@@ -86,7 +86,13 @@ export default function CompanyDirectoryPage({ path }: Props) {
         <link rel="alternate" hrefLang="en" href={citationUrl} />
         <link rel="alternate" hrefLang="x-default" href={citationUrl} />
         <script type="application/ld+json">
-          {JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, config.companies.map((c) => c.name)))}
+          {JSON.stringify(
+            buildDirectoryItemListLd(
+              citationUrl,
+              `${entityMeta.labelPlural} in ${country.name}`,
+              config.companies.map((c) => ({ name: c.name, hq: c.hq, focus: c.focus })),
+            ),
+          )}
         </script>
         <script type="application/ld+json">
           {JSON.stringify({

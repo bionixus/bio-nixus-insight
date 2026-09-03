@@ -8,6 +8,7 @@ import {
 } from '@/data/industryMarketResearchMatrix';
 import { DIRECTORY_COUNTRIES, DIRECTORY_HUB_COUNTRY_SLUGS } from './countries';
 import { DIRECTORY_ENTITIES, DIRECTORY_ENTITY_HUB_SLUGS, ENTITY_NEIGHBOURS } from './entities';
+import { DIRECTORY_HUB_INPUTS } from './hubs';
 import { directoryLabel, directoryPath } from './listings';
 import type {
   DirectoryCountrySlug,
@@ -27,12 +28,21 @@ export function countryHubPath(country: DirectoryCountrySlug): string {
   return `/companies-in-${country}`;
 }
 
+const PUBLISHED_COUNTRY_HUBS = new Set(
+  DIRECTORY_HUB_INPUTS.filter((h) => h.kind === 'country' && h.countrySlug).map((h) => h.countrySlug!),
+);
+const PUBLISHED_ENTITY_HUBS = new Set(
+  DIRECTORY_HUB_INPUTS.filter((h) => h.kind === 'entity' && h.entity).map((h) => h.entity!),
+);
+
+/** True when the `/companies-in-{country}` hub is published (planned set: DIRECTORY_HUB_COUNTRY_SLUGS). */
 export function hasCountryHub(country: DirectoryCountrySlug): boolean {
-  return DIRECTORY_HUB_COUNTRY_SLUGS.includes(country);
+  return DIRECTORY_HUB_COUNTRY_SLUGS.includes(country) && PUBLISHED_COUNTRY_HUBS.has(country);
 }
 
+/** True when the `/{entity}` hub is published (planned set: DIRECTORY_ENTITY_HUB_SLUGS). */
 export function hasEntityHub(entity: DirectoryEntitySlug): boolean {
-  return DIRECTORY_ENTITY_HUB_SLUGS.includes(entity);
+  return DIRECTORY_ENTITY_HUB_SLUGS.includes(entity) && PUBLISHED_ENTITY_HUBS.has(entity);
 }
 
 function isMatrixCountry(slug: DirectoryCountrySlug): slug is MatrixCountrySlug {

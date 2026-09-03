@@ -755,7 +755,7 @@ const RETAIL_QATAR = finish('retail', 'qatar', {
   metaDescription:
     '2026 directory of retail companies in Qatar: Al Meera, Lulu, Carrefour, Family Food Centre. Listing-gate grocery plus pharmacies. Account-level research.',
   introLead:
-    'Qatari grocery has a public-facing gate: Al Meera. Lulu and Carrefour are the international comparison set. Family Food Centre and Mega Mart take neighbourhood and value trips. Traditional souq grocery still moves rice and water. Pharmacy banners take personal care. World Cup leftover stores made Doha look more modern than the weekly trolley actually is.',
+    'Qatari grocery has a public-facing gate: Al Meera. Lulu and Carrefour set the international benchmark shoppers compare it against. Family Food Centre and Mega Mart take neighbourhood and value trips. Traditional souq grocery still moves rice and water. Pharmacy banners take personal care. World Cup leftover stores made Doha look more modern than the weekly trolley actually is.',
   introRest:
     'BioNixus treats Al Meera as its own account type — listing and price are not a private hypermarket meeting. A Nielsen modern-trade average that flattens Al Meera into “Qatar grocery” will miss the gate. Use this list with our retail market research in Qatar.',
   stats: [
@@ -785,10 +785,10 @@ const RETAIL_QATAR = finish('retail', 'qatar', {
   },
   growthDrivers: [
     { title: 'Al Meera as public grocery', desc: 'Listing conversations have a different temperature than a private hyper. Treat it as its own account type.' },
-    { title: 'Post-World Cup store stock without Dubai habits', desc: 'The boxes look newer. The staple trip is still Al Meera and the neighbourhood grocer.' },
+    { title: 'Post-World Cup store stock without Dubai habits', desc: 'The boxes look newer. Weekly staples are still bought at Al Meera and the corner grocer, not the showcase malls.' },
     { title: 'Expat versus Qatari catchments', desc: 'West Bay is not Al Rayyan. Split the sample when the SKU is culturally marked.' },
     { title: 'Value banners versus destination hypers', desc: 'Mega Mart and Family Food Centre are not Carrefour. Merge them and the planogram will fit none.' },
-    { title: 'Pharmacy adjacency', desc: 'Personal-care SKUs leave grocery. Include chemist banners when the pack belongs there.' },
+    { title: 'Pharmacy adjacency', desc: 'Personal-care SKUs leave grocery. Add Qatar’s chemist banners to the sample whenever the pack sells through pharmacy.' },
     { title: 'Mall intercepts as a contamination risk', desc: 'Place Vendôme is not a weekly trolley. Say so if you mix mall missions into grocery work.' },
   ],
   faq: [
@@ -1087,7 +1087,7 @@ const RE_QATAR = finish('real-estate', 'qatar', {
   ],
   faq: [
     { q: 'Which real estate companies should we map in Qatar?', a: 'Qatari Diar, Barwa, Ezdan, UDC (The Pearl), Msheireb Properties, Mazaya Qatar, Alijarah Holding, and Qatari Investors Group. That set covers sovereign masterplans, listed volume, the island, and downtown.' },
-    { q: 'Is Lusail the same market as The Pearl?', a: 'No. Different developer logic, different buyer mix, different absorption story after the World Cup. Averaging them is how briefs produce a unit nobody is shopping.' },
+    { q: 'Is Lusail the same market as The Pearl?', a: 'No. Different developer logic, different buyer mix, different absorption story after the World Cup. Blend them and the brief ends up pricing a unit that exists in neither district.' },
     { q: 'Can we copy a Dubai freehold questionnaire onto Doha?', a: 'Not without rewriting it. State-linked supply, family end-use, and post-event absorption are the Qatar facts. Visa-yield language is the usual import error.' },
     { q: 'Do Nielsen or IQVIA sell this cut?', a: 'No. Those feeds are grocery and pharma. Developer demand is primary fieldwork. BioNixus complements them in the categories they cover; we do not pretend they cover housing.' },
     { q: 'What must the brief name?', a: 'Masterplan and buyer — Pearl investor, Msheireb end-user, Lusail absorption. “Qatar real estate” is not a design.' },
