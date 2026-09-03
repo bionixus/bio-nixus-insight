@@ -192,7 +192,7 @@ export default function GccPharmaceuticalMarketResearch() {
               <p className="mt-4 text-sm text-muted-foreground">
                 For open-access market sizing and hospital consumption intelligence, see the{' '}
                 <Link to="/gcc-pharma-market-report-2026" className="text-primary font-medium hover:underline">
-                  GCC pharma market report 2026
+                  GCC pharmaceutical market 2026 report (size, companies, outlook)
                 </Link>
                 . For country and therapy programmes, use the{' '}
                 <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">

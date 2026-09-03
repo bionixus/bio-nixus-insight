@@ -296,6 +296,7 @@ const staticPages = [
   { path: '/market-research-saudi', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-kuwait', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-qatar', priority: '0.9', changefreq: 'weekly' },
+  { path: '/market-research-gcc', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-oman', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-bahrain', priority: '0.9', changefreq: 'weekly' },
   { path: '/market-research-egypt', priority: '0.9', changefreq: 'weekly' },
@@ -364,6 +365,7 @@ const staticPages = [
   { path: '/pharmaceutical-companies-kuwait', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-saudi-arabia', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-uae', priority: '0.9', changefreq: 'monthly' },
+  { path: '/pharmaceutical-companies-dubai', priority: '0.85', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-egypt', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-qatar', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-oman', priority: '0.9', changefreq: 'monthly' },
@@ -609,7 +611,6 @@ const staticPages = [
   { path: '/healthcare-market-research-denmark', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-norway', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-france', priority: '0.90', changefreq: 'monthly' },
-  { path: '/healthcare-market-research-in-uae', priority: '0.92', changefreq: 'monthly' },
   { path: '/healthcare-market-research-kuwait', priority: '0.92', changefreq: 'monthly' },
   { path: '/healthcare-market-research-qatar', priority: '0.92', changefreq: 'monthly' },
   { path: '/healthcare-market-research-bahrain', priority: '0.92', changefreq: 'monthly' },
@@ -864,6 +865,44 @@ try {
   );
 } catch {
   console.warn('Sitemap: topcompanies-manifest.json missing — run scripts/emit-topcompanies-manifest.mjs first.');
+}
+
+// Company directory matrix (src/data/companyDirectories), emitted by
+// scripts/emit-company-directories-manifest.mjs. Registry spokes and hubs get a
+// dedicated public/sitemap-directories.xml so each wave can be resubmitted in GSC
+// on its own; the 18 pre-matrix industry pages stay in sitemap.xml.
+let companyDirectoriesManifest = { directories: [], hubs: [] };
+try {
+  companyDirectoriesManifest = JSON.parse(
+    readFileSync(join(__dirname, 'data', 'company-directories-manifest.json'), 'utf8'),
+  );
+} catch {
+  console.warn(
+    'Sitemap: company-directories-manifest.json missing — run scripts/emit-company-directories-manifest.mjs first.',
+  );
+}
+
+function writeCompanyDirectoriesSitemap() {
+  const pages = [...companyDirectoriesManifest.hubs, ...companyDirectoriesManifest.directories].filter(
+    (p) => !isSitemapRedirectSourcePath(p.path),
+  );
+  const seen = new Set();
+  const entries = [];
+  for (const page of pages.sort((a, b) => a.path.localeCompare(b.path))) {
+    const loc = `${BASE}${page.path}`;
+    if (seen.has(loc)) continue;
+    seen.add(loc);
+    entries.push(urlEntry(loc, page.lastmod || new Date().toISOString().slice(0, 10), page.changefreq || 'monthly', page.priority || '0.86'));
+  }
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${entries.join('\n')}
+</urlset>
+`;
+  writeFileSync(join(publicDir, 'sitemap-directories.xml'), xml, 'utf8');
+  console.log(`Sitemap written to public/sitemap-directories.xml (${entries.length} URLs).`);
+  return entries.length;
 }
 
 function buildStaticRoutes() {
@@ -1402,7 +1441,6 @@ const STATIC_PAGE_FILES = {
   '/account-level-market-research': ['src/pages/AccountLevelMarketResearch.tsx'],
   '/iqvia-alternative': ['public/conf/iqvia-alternative.html'],
   '/pharmaceutical-market-research-dubai': ['public/conf/pharmaceutical-market-research-dubai.html'],
-  '/healthcare-market-research-in-uae': ['src/pages/HealthcareMarketResearchInUae.tsx'],
   '/healthcare-market-statistics': ['src/pages/HealthcareMarketStatistics.tsx'],
   '/resources': ['src/pages/Resources.tsx'],
   '/privacy': ['src/pages/Privacy.tsx'],
@@ -1565,6 +1603,7 @@ const STATIC_PAGE_FILES = {
   '/pharmaceutical-companies-kuwait': ['src/pages/KuwaitPharmaCompanies.tsx'],
   '/pharmaceutical-companies-saudi-arabia': ['src/pages/SaudiPharmaCompanies.tsx'],
   '/pharmaceutical-companies-uae': ['src/pages/UaePharmaCompanies.tsx'],
+  '/pharmaceutical-companies-dubai': ['src/pages/DubaiPharmaCompanies.tsx'],
   '/pharmaceutical-companies-egypt': ['src/pages/EgyptPharmaCompanies.tsx'],
   '/pharmaceutical-companies-qatar': ['src/pages/QatarPharmaCompanies.tsx'],
   '/pharmaceutical-companies-oman': ['src/pages/OmanPharmaCompanies.tsx'],
@@ -1916,6 +1955,7 @@ ${urls.join('\n')}
   assertSitemapNotShrunk([...finalUrls.keys()]);
 
   writeFileSync(outPath, xml, 'utf8');
+  writeCompanyDirectoriesSitemap();
   await writePressRssFeed(blogProjectId, blogDataset);
   console.log(
     `Sitemap written to public/sitemap.xml (${urls.length} canonical URLs from ${candidates.size} candidates).`

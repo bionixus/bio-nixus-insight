@@ -366,7 +366,7 @@ export default function HealthcareMarketResearchInOman() {
                 { to: '/market-research-oman', label: 'All-industry market research in Oman' },
                 { to: '/insights/top-healthcare-market-research-companies-oman-2026', label: 'Top healthcare market research companies in Oman' },
                 { to: '/insights/top-market-research-companies-oman-2026', label: 'Top market research companies in Oman' },
-                { to: '/healthcare-market-research-in-uae', label: 'Healthcare market research in the UAE' },
+                { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
               ].map((link) => (
                 <Link
                   key={link.to}

@@ -62,6 +62,7 @@ export const CaseStudy = lazy(() => import('@/pages/CaseStudy'));
 export const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
 
 export const UaePharmaCompanies = lazy(() => import('@/pages/UaePharmaCompanies'));
+export const DubaiPharmaCompanies = lazy(() => import('@/pages/DubaiPharmaCompanies'));
 export const KuwaitPharmaCompanies = lazy(() => import('@/pages/KuwaitPharmaCompanies'));
 export const SaudiPharmaCompanies = lazy(() => import('@/pages/SaudiPharmaCompanies'));
 export const EgyptPharmaCompanies = lazy(() => import('@/pages/EgyptPharmaCompanies'));

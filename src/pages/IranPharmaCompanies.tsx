@@ -14,6 +14,7 @@ import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccH
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
+import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -208,6 +209,10 @@ const IranPharmaCompanies = () => {
             { title: 'Partner & Distributor Mapping', desc: 'Identification of credible local partners, distributors (e.g. Darou Pakhsh Distribution, TPICO), and potential collaboration opportunities.' },
             { title: 'Post-Sanctions Readiness', desc: 'Scenario planning, market entry strategies, and commercial due diligence for companies considering Iran once regulatory and trade conditions allow.' },
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
+        </div></section>
+
+        <section className="section-padding py-10" id="country-directories"><div className="container-wide w-full">
+          <CountryDirectoryLinks country="iran" excludePath="/pharmaceutical-companies-iran" compact />
         </div></section>
 
         <PharmaCompaniesFaqSection items={faqItems} />

@@ -334,7 +334,7 @@ export default function HealthcareMarketResearchCanada() {
                 { to: '/insights/top-healthcare-market-research-companies-canada-2026', label: 'Top healthcare MR companies Canada 2026' },
                 { to: '/insights/top-market-research-companies-canada-2026', label: 'Top market research companies Canada 2026' },
                 { to: '/healthcare-market-research-usa', label: 'Healthcare market research USA' },
-                { to: '/healthcare-market-research-in-uae', label: 'Healthcare market research UAE' },
+                { to: '/healthcare-market-research/uae', label: 'Healthcare market research UAE' },
               ].map((link) => (
                 <Link
                   key={link.to}

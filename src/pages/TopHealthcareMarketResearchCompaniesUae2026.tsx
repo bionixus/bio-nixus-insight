@@ -598,7 +598,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
                   UAE pharmaceutical market research guide
                 </Link>{' '}
                 and{' '}
-                <Link to="/healthcare-market-research-in-uae" className="text-primary hover:underline">
+                <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
                   UAE healthcare market research overview
                 </Link>{' '}
                 for methodology details.

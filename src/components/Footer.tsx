@@ -40,6 +40,7 @@ const Footer = () => {
     clientReviewsLink?: string;
     newsPress?: string;
     newsletterConsent?: string;
+    companyDirectories?: string;
   };
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
@@ -268,6 +269,14 @@ const Footer = () => {
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
                 >
                   {f.industriesHub ?? 'Industries'}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/company-directories"
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-[0.95rem]"
+                >
+                  {footerExtra.companyDirectories ?? 'Company directories'}
                 </Link>
               </li>
               <li>

@@ -780,12 +780,20 @@ export default function CountryPage() {
                   Saudi immunology &amp; biologics market report
                 </Link>
                 , the{' '}
+                <Link to="/saudi-arabia-biologics-market" className="text-primary underline font-medium">
+                  Saudi Arabia biologics market
+                </Link>
+                , the{' '}
                 <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline font-medium">
                   Saudi Arabia biosimilar market
                 </Link>
                 , the{' '}
                 <Link to="/market-reports/saudi-arabia-cancer-diagnostics-market-report" className="text-primary underline font-medium">
                   Saudi Arabia cancer diagnostics market
+                </Link>
+                , the{' '}
+                <Link to="/market-reports/saudi-arabia-digital-health-market-report" className="text-primary underline font-medium">
+                  KSA digital health market
                 </Link>
                 , and the{' '}
                 <Link to="/gcc-pharma-market-report-2026" className="text-primary underline font-medium">
@@ -849,6 +857,13 @@ export default function CountryPage() {
                 Dubai country research hub
               </Link>
               .
+            </p>
+            <p className="text-base leading-relaxed text-muted-foreground mt-4">
+              For segment sizing, the{' '}
+              <Link to="/market-reports/uae-digital-health-market-report" className="text-primary underline font-medium">
+                UAE digital health market 2026
+              </Link>{' '}
+              report covers Malaffi, Nabidh and Riayati integration, MOHAP/DHA/DOH SaMD rules and telehealth and AI adoption.
             </p>
         </ReportPremiumSection>
       )}

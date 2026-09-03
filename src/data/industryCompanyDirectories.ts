@@ -40,6 +40,10 @@ export type IndustryDirectoryConfig = {
   relatedLinks: { to: string; label: string }[];
   publishedDate: string;
   modifiedDate: string;
+  /** Optional matrix-era fields (see src/data/companyDirectories/types.ts). */
+  regulatorSource?: { name: string; url: string; asOf: string };
+  sources?: string[];
+  fieldNotes?: string[];
 };
 
 const PUBLISHED = '2026-09-02';

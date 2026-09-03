@@ -400,7 +400,7 @@ export default function HealthcareMarketResearchInBahrain() {
                 { to: '/insights/top-market-research-companies-bahrain-2026', label: 'Best market research companies in Bahrain' },
                 { to: '/insights/top-healthcare-market-research-companies-bahrain-2026', label: 'Best healthcare market research companies in Bahrain' },
                 { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
-                { to: '/healthcare-market-research-in-uae', label: 'Healthcare market research in UAE' },
+                { to: '/healthcare-market-research/uae', label: 'Healthcare market research in UAE' },
               ].map((link) => (
                 <Link
                   key={link.to}

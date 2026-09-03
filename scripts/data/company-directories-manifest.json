@@ -1,0 +1,334 @@
+{
+  "generatedAt": "2026-09-03T18:17:17.129Z",
+  "directories": [],
+  "hubs": [],
+  "industry": [
+    {
+      "path": "/fmcg-companies-egypt",
+      "entity": "fmcg-companies",
+      "country": "egypt",
+      "title": "Top 13 FMCG Companies in Egypt (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of FMCG companies in Egypt: Edita, Juhayna, Nestlé, Unilever. Traditional grocers plus modern trade. Account- and SKU-level primary research.",
+      "h1": "FMCG Companies in Egypt",
+      "companies": 13,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/fmcg-companies-uae",
+      "entity": "fmcg-companies",
+      "country": "uae",
+      "title": "Top 12 FMCG Companies in UAE (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of FMCG companies in the UAE: Agthia, IFFCO, Al Rawabi, Nestlé, Unilever. Modern trade plus traditional souk. SKU-level research by BioNixus.",
+      "h1": "FMCG Companies in the UAE",
+      "companies": 12,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/fmcg-companies-saudi-arabia",
+      "entity": "fmcg-companies",
+      "country": "saudi-arabia",
+      "title": "Top 12 FMCG Companies in Saudi Arabia (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of FMCG companies in Saudi Arabia: Almarai, Savola, NADEC, Unilever, P&G. Panda and BinDawood listing. Account-level research by BioNixus.",
+      "h1": "FMCG Companies in Saudi Arabia",
+      "companies": 12,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/fmcg-companies-kuwait",
+      "entity": "fmcg-companies",
+      "country": "kuwait",
+      "title": "Top 11 FMCG Companies in Kuwait (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of FMCG companies in Kuwait: Kuwait Flour Mills, KDD, Americana, Unilever. Co-ops and Sultan Center. Account- and SKU-level primary research.",
+      "h1": "FMCG Companies in Kuwait",
+      "companies": 11,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/fmcg-companies-oman",
+      "entity": "fmcg-companies",
+      "country": "oman",
+      "title": "Top 11 FMCG Companies in Oman (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of FMCG companies in Oman: A’saffa, Oman Flour Mills, Areej, Nestlé, Khimji Ramdas. Lulu plus wilayat grocers. SKU-level primary research.",
+      "h1": "FMCG Companies in Oman",
+      "companies": 11,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/fmcg-companies-qatar",
+      "entity": "fmcg-companies",
+      "country": "qatar",
+      "title": "Top 11 FMCG Companies in Qatar (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of FMCG companies in Qatar: Baladna, Widam, Qatar Flour Mills, Al Meera. Food-security brands plus MNC trolley. SKU-level primary research.",
+      "h1": "FMCG Companies in Qatar",
+      "companies": 11,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/retail-companies-egypt",
+      "entity": "retail-companies",
+      "country": "egypt",
+      "title": "Top 10 Retail Companies in Egypt (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of retail companies in Egypt: Carrefour, BIM, Seoudi, Metro, Lulu. Traditional grocers plus pharmacy banners. Account-level shopper research.",
+      "h1": "Retail Companies in Egypt",
+      "companies": 10,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/retail-companies-uae",
+      "entity": "retail-companies",
+      "country": "uae",
+      "title": "Top 10 Retail Companies in UAE (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of retail companies in the UAE: Carrefour, Lulu, Spinneys, Union Coop, Choithrams. Modern trade plus pharmacy. Account-level shopper research.",
+      "h1": "Retail Companies in the UAE",
+      "companies": 10,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/retail-companies-saudi-arabia",
+      "entity": "retail-companies",
+      "country": "saudi-arabia",
+      "title": "Top 10 Retail Companies in Saudi Arabia (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of retail companies in Saudi Arabia: Panda, BinDawood, Othaim, Tamimi, Lulu. Traditional grocers plus Nahdi. Account-level shopper research.",
+      "h1": "Retail Companies in Saudi Arabia",
+      "companies": 10,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/retail-companies-kuwait",
+      "entity": "retail-companies",
+      "country": "kuwait",
+      "title": "Top 8 Retail Companies in Kuwait (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of retail companies in Kuwait: Sultan Center, Lulu, Carrefour, co-ops. Pharmacy banners plus traditional grocers. Account-level shopper research.",
+      "h1": "Retail Companies in Kuwait",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/retail-companies-oman",
+      "entity": "retail-companies",
+      "country": "oman",
+      "title": "Top 8 Retail Companies in Oman (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of retail companies in Oman: Lulu, Carrefour, Al Fair, Khimji. Wilayat grocers plus pharmacies. Account-level shopper research by BioNixus.",
+      "h1": "Retail Companies in Oman",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/retail-companies-qatar",
+      "entity": "retail-companies",
+      "country": "qatar",
+      "title": "Top 8 Retail Companies in Qatar (2026) | Traditional + Modern Trade",
+      "metaDescription": "2026 directory of retail companies in Qatar: Al Meera, Lulu, Carrefour, Family Food Centre. Listing-gate grocery plus pharmacies. Account-level research.",
+      "h1": "Retail Companies in Qatar",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/real-estate-companies-egypt",
+      "entity": "real-estate-companies",
+      "country": "egypt",
+      "title": "Top 8 Real Estate Companies in Egypt (2026) | Developers We Study",
+      "metaDescription": "2026 directory of real estate companies in Egypt: TMG, SODIC, Palm Hills, Emaar Misr, Orascom. Compounds we study. Account-level primary research by BioNixus.",
+      "h1": "Real Estate Companies in Egypt",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/real-estate-companies-uae",
+      "entity": "real-estate-companies",
+      "country": "uae",
+      "title": "Top 8 Real Estate Companies in UAE (2026) | Developers We Study",
+      "metaDescription": "2026 directory of real estate companies in the UAE: Emaar, Aldar, Nakheel, Damac, Sobha. Off-plan and freehold we study. Primary research by BioNixus.",
+      "h1": "Real Estate Companies in the UAE",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/real-estate-companies-saudi-arabia",
+      "entity": "real-estate-companies",
+      "country": "saudi-arabia",
+      "title": "Top 8 Real Estate Companies in Saudi Arabia (2026) | Developers We Study",
+      "metaDescription": "2026 directory of real estate companies in Saudi Arabia: ROSHN, Dar Al Arkan, Jabal Omar, RETAL. Vision 2030 developers we study. Primary research by BioNixus.",
+      "h1": "Real Estate Companies in Saudi Arabia",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/real-estate-companies-kuwait",
+      "entity": "real-estate-companies",
+      "country": "kuwait",
+      "title": "Top 8 Real Estate Companies in Kuwait (2026) | Developers We Study",
+      "metaDescription": "2026 directory of real estate companies in Kuwait: Mabanee, URC, NREC, Tamdeen. Retail-led developers we study. Account-level primary research by BioNixus.",
+      "h1": "Real Estate Companies in Kuwait",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/real-estate-companies-oman",
+      "entity": "real-estate-companies",
+      "country": "oman",
+      "title": "Top 8 Real Estate Companies in Oman (2026) | Developers We Study",
+      "metaDescription": "2026 directory of real estate companies in Oman: Omran, Al Mouj, Muriya. Tourism-led mixed-use communities we study. Account-level primary research by BioNixus.",
+      "h1": "Real Estate Companies in Oman",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    },
+    {
+      "path": "/real-estate-companies-qatar",
+      "entity": "real-estate-companies",
+      "country": "qatar",
+      "title": "Top 8 Real Estate Companies in Qatar (2026) | Developers We Study",
+      "metaDescription": "2026 directory of real estate companies in Qatar: Qatari Diar, Barwa, Ezdan, UDC, Msheireb. Lusail and Pearl we study. Account-level primary research.",
+      "h1": "Real Estate Companies in Qatar",
+      "companies": 8,
+      "lastmod": "2026-09-02"
+    }
+  ],
+  "legacy": [
+    {
+      "path": "/pharmaceutical-companies-saudi-arabia",
+      "entity": "pharmaceutical-companies",
+      "country": "saudi-arabia"
+    },
+    {
+      "path": "/pharmaceutical-companies-uae",
+      "entity": "pharmaceutical-companies",
+      "country": "uae"
+    },
+    {
+      "path": "/pharmaceutical-companies-egypt",
+      "entity": "pharmaceutical-companies",
+      "country": "egypt"
+    },
+    {
+      "path": "/pharmaceutical-companies-kuwait",
+      "entity": "pharmaceutical-companies",
+      "country": "kuwait"
+    },
+    {
+      "path": "/pharmaceutical-companies-qatar",
+      "entity": "pharmaceutical-companies",
+      "country": "qatar"
+    },
+    {
+      "path": "/pharmaceutical-companies-oman",
+      "entity": "pharmaceutical-companies",
+      "country": "oman"
+    },
+    {
+      "path": "/pharmaceutical-companies-bahrain",
+      "entity": "pharmaceutical-companies",
+      "country": "bahrain"
+    },
+    {
+      "path": "/pharmaceutical-companies-iraq",
+      "entity": "pharmaceutical-companies",
+      "country": "iraq"
+    },
+    {
+      "path": "/pharmaceutical-companies-iran",
+      "entity": "pharmaceutical-companies",
+      "country": "iran"
+    },
+    {
+      "path": "/pharmaceutical-companies-jordan",
+      "entity": "pharmaceutical-companies",
+      "country": "jordan"
+    },
+    {
+      "path": "/pharmaceutical-companies-morocco",
+      "entity": "pharmaceutical-companies",
+      "country": "morocco"
+    },
+    {
+      "path": "/pharmaceutical-companies-turkey",
+      "entity": "pharmaceutical-companies",
+      "country": "turkey"
+    },
+    {
+      "path": "/pharmaceutical-companies-india",
+      "entity": "pharmaceutical-companies",
+      "country": "india"
+    },
+    {
+      "path": "/pharmaceutical-companies-china",
+      "entity": "pharmaceutical-companies",
+      "country": "china"
+    },
+    {
+      "path": "/pharmaceutical-companies-japan",
+      "entity": "pharmaceutical-companies",
+      "country": "japan"
+    },
+    {
+      "path": "/pharmaceutical-companies-south-korea",
+      "entity": "pharmaceutical-companies",
+      "country": "south-korea"
+    },
+    {
+      "path": "/pharmaceutical-companies-singapore",
+      "entity": "pharmaceutical-companies",
+      "country": "singapore"
+    },
+    {
+      "path": "/pharmaceutical-companies-malaysia",
+      "entity": "pharmaceutical-companies",
+      "country": "malaysia"
+    },
+    {
+      "path": "/pharmaceutical-companies-brazil",
+      "entity": "pharmaceutical-companies",
+      "country": "brazil"
+    },
+    {
+      "path": "/pharmaceutical-companies-germany",
+      "entity": "pharmaceutical-companies",
+      "country": "germany"
+    },
+    {
+      "path": "/pharmaceutical-companies-uk",
+      "entity": "pharmaceutical-companies",
+      "country": "uk"
+    },
+    {
+      "path": "/pharmaceutical-companies-switzerland",
+      "entity": "pharmaceutical-companies",
+      "country": "switzerland"
+    },
+    {
+      "path": "/pharmaceutical-companies-usa",
+      "entity": "pharmaceutical-companies",
+      "country": "usa"
+    },
+    {
+      "path": "/pharmaceutical-companies-canada",
+      "entity": "pharmaceutical-companies",
+      "country": "canada"
+    },
+    {
+      "path": "/medical-device-companies-saudi-arabia",
+      "entity": "medical-device-companies",
+      "country": "saudi-arabia"
+    },
+    {
+      "path": "/medical-device-companies-uae",
+      "entity": "medical-device-companies",
+      "country": "uae"
+    },
+    {
+      "path": "/medical-device-companies-japan",
+      "entity": "medical-device-companies",
+      "country": "japan"
+    },
+    {
+      "path": "/medical-device-companies-usa",
+      "entity": "medical-device-companies",
+      "country": "usa"
+    },
+    {
+      "path": "/top-pharmacies-saudi-arabia",
+      "entity": "pharmacy-chains",
+      "country": "saudi-arabia"
+    }
+  ]
+}

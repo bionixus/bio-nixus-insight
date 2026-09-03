@@ -15,6 +15,7 @@ export default function HealthcareMarketResearchAgencyGcc() {
       areaServed={['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Bahrain', 'Oman']}
       intro="BioNixus is a healthcare market research agency for GCC teams across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — with evidence programs built for practical launch and access decisions. For the global vendor shortlist, use our top healthcare market research companies guide; for methodology and coverage, start from the healthcare market research hub."
       links={[
+        { to: '/market-research-gcc', label: 'Market research GCC — all six Gulf states', primary: true },
         { to: '/healthcare-market-research-companies', label: 'Top healthcare market research companies', primary: true },
         { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/bionixus-market-research-middle-east', label: 'Middle East pharmaceutical market research', primary: true },

@@ -1576,7 +1576,7 @@ const apiMarket: SegmentMarketContent = {
     { to: '/saudi-arabia-biocatalyst-market', label: 'Saudi Arabia biocatalyst market' },
     { to: '/gcc-generic-pharmaceuticals-market', label: 'GCC generic pharmaceuticals market' },
     { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
-    { to: '/pharmaceutical-product-registration-saudi-arabia', label: 'Pharmaceutical product registration in Saudi Arabia' },
+    { to: '/pharmaceutical-product-registration-saudi-arabia', label: 'SFDA pricing submission and launch readiness' },
     { to: '/saudi-arabia-pharmaceutical-packaging-market', label: 'Saudi Arabia pharmaceutical packaging market' },
     { to: '/gcc-pharma-market-report-2026', label: 'GCC pharma market report' },
   ],
@@ -2142,6 +2142,201 @@ const plasmaFractionation: SegmentMarketContent = {
   areaServed: ['Saudi Arabia'],
 };
 
+
+/* ------------------------------------------------------------------ */
+/* 9. Saudi Arabia Biologics Market                                    */
+/* ------------------------------------------------------------------ */
+const biologics: SegmentMarketContent = {
+  slug: 'saudi-arabia-biologics-market',
+  group: 'saudi-biotech',
+  geoLabel: 'Saudi Arabia',
+  segmentLabel: 'Biologics',
+  badge: 'Saudi Arabia · Biologics & Biosimilars',
+  breadcrumbLabel: 'Saudi Arabia Biologics Market',
+  title: 'Saudi Arabia Biologics Market 2026: Size, Access, Biosimilars',
+  description:
+    'Saudi Arabia biologics market 2026 — largest share of the ~USD 4.8–5.4B GCC biologics market. SFDA pathway, NUPCO tenders, biosimilar uptake, Lifera localisation, and access research from BioNixus.',
+  canonical: `${SEGMENT_MARKET_BASE}/saudi-arabia-biologics-market`,
+  h1: 'Saudi Arabia Biologics Market: Size, SFDA Access, NUPCO Tenders & Biosimilar Uptake',
+  intro: [
+    'The Saudi Arabia biologics market is the largest in the Gulf. BioNixus estimates the six-country GCC biologics market at roughly USD 4.8–5.4 billion in 2026, and Saudi Arabia — with about 46% of regional pharmaceutical spend — holds the largest single share, led by oncology monoclonal antibodies, immunology biologics (which BioNixus sizes at roughly USD 700–850 million for the Kingdom in 2026), insulins and GLP-1 therapies, and a fast-growing biosimilar segment. Demand is concentrated in Ministry of Health clusters supplied through NUPCO tenders, the National Guard and military health systems, King Faisal Specialist Hospital & Research Centre, and premium private groups in Riyadh and Jeddah.',
+    'Access is decided institutionally. The Saudi Food and Drug Authority (SFDA) registers biologics and biosimilars, external reference pricing sets the list price that the rest of the GCC then references, and NUPCO centralised tenders reset net price across MOH facilities — adalimumab and trastuzumab biosimilars have already shown how quickly a tender award moves share. Vision 2030 localisation, led by the PIF-backed Lifera and partnerships with global manufacturers, is adding local biologic fill-finish and biosimilar production that tender committees increasingly favour.',
+    'BioNixus researches the Saudi Arabia biologics market at account and department level: oncologists, rheumatologists, dermatologists, gastroenterologists, and endocrinologists at the institutions that initiate biologic therapy; hospital pharmacists and NUPCO-facing procurement; SFDA and Council of Health Insurance stakeholders; and patients on chronic biologic therapy. Segment-level market sizing, biosimilar switching curves, and tender win/loss drivers are delivered in a commissioned study.',
+  ],
+  quickAnswer: {
+    question: 'How big is the Saudi Arabia biologics market and what drives access?',
+    answer:
+      'Saudi Arabia holds the largest share of the GCC biologics market, which BioNixus estimates at roughly USD 4.8–5.4 billion in 2026; Saudi immunology biologics alone are sized at about USD 700–850 million. Access is governed by SFDA registration, external reference pricing, and NUPCO centralised tenders for MOH facilities, while NGHA, KFSH&RC, and private infusion centres buy separately. Biosimilar competition in anti-TNF, trastuzumab, bevacizumab, rituximab, and insulin is the main commercial variable, and Vision 2030 localisation through Lifera is shifting tender preference toward locally produced biologics.',
+    points: [
+      {
+        title: 'Largest GCC biologics market',
+        description:
+          'Roughly 46% of GCC pharmaceutical spend sits in Saudi Arabia; oncology, immunology, diabetes and obesity, and ophthalmology biologics lead value.',
+      },
+      {
+        title: 'NUPCO tenders set net price',
+        description:
+          'Centralised MOH procurement awards move share across dozens of hospitals at once; the Saudi price then references across the Gulf.',
+      },
+      {
+        title: 'Biosimilars accelerating',
+        description:
+          'SFDA biosimilar pathway maturity and tender economics are compressing originator price in anti-TNF, oncology mAbs, and insulins.',
+      },
+      {
+        title: 'Localisation is a procurement lever',
+        description:
+          'Lifera and partner plants add local biologic manufacturing that Vision 2030 procurement policy rewards in tender scoring.',
+      },
+    ],
+    summary:
+      'BioNixus delivers commissioned Saudi biologics intelligence: therapy-class sizing, hospital and department consumption, biosimilar switching behaviour, NUPCO tender win/loss drivers, and payer evidence expectations for SFDA and CHI submissions.',
+  },
+  researchTopics: [
+    {
+      name: 'Biologics market sizing by therapy class and channel',
+      detail:
+        'Oncology, immunology, endocrinology, ophthalmology, and rare-disease biologics sized from hospital procurement and pharmacy consumption data across MOH, NGHA, KFSH&RC, and private channels.',
+    },
+    {
+      name: 'Biosimilar uptake and switching',
+      detail:
+        'Physician confidence in switching stable patients, pharmacist substitution practice, and share shift after NUPCO awards by molecule and department.',
+    },
+    {
+      name: 'NUPCO and institutional tender intelligence',
+      detail:
+        'Tender calendar, evaluation criteria, local-content weighting, and win/loss drivers for biologic and biosimilar bids.',
+    },
+    {
+      name: 'Payer and HTA-style evidence expectations',
+      detail:
+        'What SFDA Economic Evaluation Submission reviewers, CHI, and hospital P&T committees require for high-cost biologics and budget-impact files.',
+    },
+    {
+      name: 'Infusion capacity and specialty pharmacy',
+      detail:
+        'Infusion-chair availability, home-infusion and Wasfaty dispensing pathways, cold-chain reliability, and patient-support programme performance.',
+    },
+    {
+      name: 'Prescriber pathway and sequencing',
+      detail:
+        'Where biologics enter treatment lines in rheumatology, dermatology, gastroenterology, oncology, and diabetes, and how prior authorisation shapes use.',
+    },
+  ],
+  segmentBreakdown: {
+    heading: 'Biologics segments we research in Saudi Arabia',
+    items: [
+      { label: 'Oncology monoclonal antibodies and ADCs', detail: 'Trastuzumab, bevacizumab, rituximab and their biosimilars; checkpoint inhibitors; antibody-drug conjugates at KFSH&RC, KFMC, and oncology centres nationwide.' },
+      { label: 'Immunology biologics', detail: 'Anti-TNF, IL-17, IL-23, IL-4Rα, and JAK-adjacent therapies across rheumatology, dermatology, and gastroenterology; BioNixus sizes this segment at ~USD 700–850M in 2026.' },
+      { label: 'Insulins and GLP-1 therapies', detail: 'Biosimilar insulins in MOH tenders and rapid GLP-1 growth for diabetes and obesity in public and private channels.' },
+      { label: 'Ophthalmology anti-VEGF', detail: 'Aflibercept, ranibizumab and biosimilars in diabetic macular oedema and AMD, concentrated in tertiary eye centres.' },
+      { label: 'Rare disease and enzyme replacement', detail: 'Orphan biologics funded through MOH and NGHA exceptional-approval routes and the Saudi Genome Program pipeline.' },
+      { label: 'Vaccines and plasma-derived products', detail: 'Adjacent biologic categories procured centrally; see the Saudi vaccines report and plasma fractionation page.' },
+    ],
+  },
+  demandDrivers: {
+    heading: 'What is driving Saudi Arabia biologics demand',
+    drivers: [
+      { title: 'Chronic disease burden', detail: 'High prevalence of diabetes, obesity, autoimmune disease, and rising cancer incidence expand the biologic-eligible population.' },
+      { title: 'Vision 2030 Health Sector Transformation', detail: 'Cluster reorganisation, specialty capacity, and privatisation expand infusion and specialty pharmacy access outside Riyadh and Jeddah.' },
+      { title: 'Biosimilar competition', detail: 'SFDA pathway and NUPCO tenders make biologics affordable at volume, expanding treated patients while compressing price.' },
+      { title: 'Localisation and Lifera', detail: 'PIF-backed local manufacturing and technology transfer add tender preference for Saudi-made biologics and insulins.' },
+      { title: 'Private insurance growth', detail: 'Mandatory private cover under CHI expands a second, faster-moving access channel for premium biologics.' },
+      { title: 'Genomics and precision medicine', detail: 'Saudi Genome Program and companion-diagnostic capacity increase biomarker-guided biologic use in oncology and rare disease.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'How the Saudi Arabia biologics market is structured',
+    paragraphs: [
+      'Public provision dominates volume. Ministry of Health hospitals, organised into regional health clusters, are supplied through NUPCO centralised tenders and dispense chronic biologics increasingly via Wasfaty community pharmacies. The National Guard Health Affairs (NGHA), Ministry of Defense hospitals, KFSH&RC, and university hospitals procure separately with their own formularies, so a single national listing does not guarantee access everywhere.',
+      'Private demand concentrates in Riyadh, Jeddah, and the Eastern Province through groups such as Dr. Sulaiman Al Habib, Dallah, Saudi German Hospitals, and Almoosa, funded by CHI-regulated private insurance; premium biologics often launch here first while tender listing is pending.',
+      'Regulation and pricing run through SFDA registration (including the biosimilar pathway and Economic Evaluation Submission for selected products) and external reference pricing across 14 reference countries; the resulting Saudi price is referenced by the UAE, Qatar, Kuwait, Oman, and Bahrain, which is why Saudi launch sequencing shapes the whole GCC.',
+      'Supply is shifting toward local production: Lifera, SPIMACO, Tabuk, Jamjoom, and international partners are adding biologic fill-finish, insulin, and biosimilar capacity under Vision 2030 localisation targets, and tender scoring increasingly rewards local content.',
+    ],
+  },
+  geoSignals: {
+    heading: 'Institutional signals across Saudi Arabia',
+    items: [
+      { name: 'Riyadh — KFSH&RC, KFMC, NGHA, Al Habib', signal: 'Highest concentration of oncology and immunology biologic initiation; reference centres for biosimilar switching practice.' },
+      { name: 'Jeddah and Makkah region — KAUH, KFSH&RC Jeddah, private groups', signal: 'Second-largest biologic demand pool; strong private infusion capacity.' },
+      { name: 'Eastern Province — Johns Hopkins Aramco, Almoosa, Dammam clusters', signal: 'Employer-funded and private channels with early adoption of premium biologics.' },
+      { name: 'NUPCO', signal: 'Centralised MOH tendering that resets biologic and biosimilar net price nationally.' },
+      { name: 'SFDA and Council of Health Insurance', signal: 'Registration, biosimilar pathway, reference pricing, EES requirements, and private-insurance benefit rules.' },
+      { name: 'Lifera and localisation partners', signal: 'Local biologic and insulin manufacturing that changes tender economics and supply security.' },
+    ],
+  },
+  audiences: [
+    { audience: 'Rheumatologists, dermatologists, and gastroenterologists', description: 'Biologic sequencing, biosimilar switching confidence, and prior-authorisation friction.' },
+    { audience: 'Medical and haematology oncologists', description: 'mAb and ADC use, biosimilar acceptance, and biomarker-guided prescribing at tertiary centres.' },
+    { audience: 'Endocrinologists and diabetologists', description: 'Insulin biosimilar and GLP-1 adoption across MOH and private channels.' },
+    { audience: 'Hospital pharmacists and P&T committee members', description: 'Formulary criteria, substitution policy, and budget-impact expectations.' },
+    { audience: 'NUPCO and institutional procurement stakeholders', description: 'Tender design, local-content weighting, and award drivers.' },
+    { audience: 'Patients on chronic biologic therapy', description: 'Adherence, home-infusion and Wasfaty experience, and switching acceptance.' },
+  ],
+  methodology: [
+    'Hospital procurement and pharmacy consumption data across MOH, NGHA, KFSH&RC, and private channels to size biologics by molecule, department, and account.',
+    'Quantitative physician surveys sized per specialty with verified rosters, plus in-depth interviews on switching and sequencing.',
+    'Procurement and P&T committee interviews structured to NUPCO tender criteria and SFDA EES formats.',
+    'Biosimilar uptake curves modelled from tender awards and department-level consumption rather than national audit averages.',
+    'Optional GCC benchmarking against the UAE, Qatar, and Kuwait on harmonised instruments.',
+  ],
+  whyBionixus: [
+    'Account-level Saudi biologics data — hospital, department, indication, and patient — that syndicated audits do not provide.',
+    'Riyadh office and verified access to KFSH&RC, NGHA, MOH cluster, and private-group stakeholders.',
+    'Published Saudi and GCC biologics, immunology, and biosimilar reports that anchor sizing to one consistent evidence base.',
+    'Deliverables structured for SFDA, NUPCO, and CHI decisions, not generic insight decks.',
+  ],
+  relatedLinks: [
+    { to: '/market-reports/saudi-arabia-immunology-biologics-market-report', label: 'Saudi Arabia immunology & biologics market report 2026' },
+    { to: '/market-reports/saudi-arabia-biosimilars-market-report', label: 'Saudi Arabia biosimilars market report' },
+    { to: '/biosimilar-market-entry-saudi-arabia', label: 'Saudi Arabia biosimilar market entry guide' },
+    { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market 2026 (biologics segment)' },
+    { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
+    { to: '/saudi-arabia-biotechnology-market', label: 'Saudi Arabia biotechnology market' },
+    { to: '/saudi-arabia-plasma-fractionation-market', label: 'Saudi Arabia plasma fractionation market' },
+    { to: '/middle-east-biologics-market', label: 'Middle East biologics market' },
+  ],
+  faqs: [
+    {
+      question: 'How big is the Saudi Arabia biologics market in 2026?',
+      answer:
+        'Saudi Arabia is the largest share of the GCC biologics market, which BioNixus estimates at roughly USD 4.8–5.4 billion in 2026 across oncology, immunology, diabetes, and other specialty categories. BioNixus sizes Saudi immunology biologics alone at about USD 700–850 million in 2026, growing toward USD 1.6 billion by 2030. Molecule- and account-level sizing for the full biologics market is delivered in a commissioned study.',
+    },
+    {
+      question: 'Who buys biologics in Saudi Arabia?',
+      answer:
+        'NUPCO buys for Ministry of Health hospitals through centralised tenders; the National Guard Health Affairs, Ministry of Defense hospitals, KFSH&RC, and university hospitals procure separately; and private hospital groups such as Dr. Sulaiman Al Habib and Dallah buy for insured patients. Each channel has its own formulary logic.',
+    },
+    {
+      question: 'How does SFDA regulate biologics and biosimilars?',
+      answer:
+        'SFDA registers biologics through its marketing authorisation process with a dedicated biosimilar pathway aligned to ICH and EMA principles, applies external reference pricing across 14 reference countries, and requires Economic Evaluation Submissions for selected high-cost products. Interchangeability and substitution are interpreted at hospital level.',
+    },
+    {
+      question: 'How fast are biosimilars taking share in Saudi Arabia?',
+      answer:
+        'Rapidly in tendered molecules. NUPCO awards for adalimumab, trastuzumab, bevacizumab, rituximab, and insulin biosimilars move share across MOH facilities within a tender cycle, while private and NGHA channels switch more gradually depending on physician confidence. BioNixus tracks uptake by department and indication rather than national averages.',
+    },
+    {
+      question: 'What role does Lifera play in the Saudi biologics market?',
+      answer:
+        'Lifera, backed by the Public Investment Fund, is building local biologic, insulin, vaccine, and plasma manufacturing through partnerships with global companies under Vision 2030 localisation targets. Locally manufactured biologics benefit from procurement preference in NUPCO tenders, changing the competitive economics for imported products.',
+    },
+    {
+      question: 'Which therapy areas lead Saudi biologics demand?',
+      answer:
+        'Oncology monoclonal antibodies, immunology biologics for rheumatology, dermatology, and gastroenterology, insulins and GLP-1 therapies for diabetes and obesity, anti-VEGF agents in ophthalmology, and orphan biologics for rare disease. Vaccines and plasma-derived products are adjacent centrally procured categories.',
+    },
+    {
+      question: 'What does BioNixus deliver for a Saudi biologics study?',
+      answer:
+        'Therapy-class and account-level market sizing, biosimilar switching and substitution research, NUPCO tender intelligence, payer and P&T committee evidence expectations, infusion and specialty pharmacy capacity mapping, and patient-support insight — structured for launch, tender, or access decisions.',
+    },
+  ],
+  areaServed: ['Saudi Arabia'],
+};
+
 export const SAUDI_BIOTECH_SEGMENT_PAGES: SegmentMarketContent[] = [
   biotechnology,
   regenerativeMedicine,
@@ -2151,4 +2346,5 @@ export const SAUDI_BIOTECH_SEGMENT_PAGES: SegmentMarketContent[] = [
   apiMarket,
   biocatalyst,
   plasmaFractionation,
+  biologics,
 ];

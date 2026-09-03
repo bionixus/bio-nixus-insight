@@ -148,6 +148,23 @@ const registrationTimeline: TimelineStep[] = [
   { phase: 'Marketing Authorisation', duration: '2–4 weeks', description: 'Registration certificate issued. Product added to national formulary (if applicable). Import license obtained through local agent.' },
 ];
 
+interface MarketEntryStep {
+  step: string;
+  action: string;
+  timing: string;
+  research: string;
+}
+
+const gccMarketEntrySteps: MarketEntryStep[] = [
+  { step: '1. Prioritise countries', action: 'Rank the six GCC states by market size, pricing exposure, and channel fit. Saudi Arabia usually first (largest market, reference price for the Gulf), UAE second (insurance-funded private demand).', timing: 'Month 0–2', research: 'Market sizing, competitor landscape, price corridor modelling across KSA, UAE, Qatar, Kuwait, Oman, Bahrain.' },
+  { step: '2. Appoint a local partner', action: 'Mandatory authorised representative, scientific office, or distributor in each state; the partner holds import licences and often decides tender participation.', timing: 'Month 1–3', research: 'Distributor assessment: registration track record, tender wins, warehouse and cold-chain capability, portfolio conflicts.' },
+  { step: '3. Register the product', action: 'National dossier (CTD/eCTD) to SFDA, MOHAP/DHA/DOH, MOH Kuwait, MOPH Qatar, NHRA Bahrain, or MOH Oman — or the GCC centralised procedure for a single technical review.', timing: 'Month 3–18', research: 'Regulatory intelligence on comparators, expected questions, and biosimilar or medtech pathway precedents.' },
+  { step: '4. Secure pricing approval', action: 'External reference pricing in KSA, UAE, Qatar, Bahrain; cost-plus in Kuwait. The first approved GCC price constrains every later market.', timing: 'Month 12–20', research: 'Reference-price benchmarking, willingness-to-pay proxies, payer price-sensitivity interviews.' },
+  { step: '5. Win listing and tenders', action: 'NUPCO tenders and hospital formularies in Saudi Arabia; MOH tenders in Kuwait, Qatar, Oman; emirate formularies and insurer lists in the UAE.', timing: 'Month 15–24', research: 'Procurement officer and P&T committee interviews, tender win/loss analysis, budget-impact models.' },
+  { step: '6. Build committee evidence', action: 'HTA-style dossiers (SFDA EES, emirate formulary reviews) plus HCP and patient evidence that answers local committee questions.', timing: 'Parallel to 3–5', research: 'HEOR modules, KOL mapping, physician and pharmacist surveys, patient-journey research.' },
+  { step: '7. Sequence the launch', action: 'Launch country by country once price, listing, and stock are aligned; track uptake against tender awards and formulary decisions.', timing: 'Month 18–30', research: 'Launch tracking, brand and competitor account-level data, switching and substitution studies.' },
+];
+
 const GccMarketAccessGuide = () => {
   const { language } = useLanguage();
   const basePath = languagePaths[language] || '/';
@@ -156,14 +173,14 @@ const GccMarketAccessGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GCC Market Access 2026: Pharma & MedTech Entry Guide</title>
+        <title>GCC Market Entry Guide 2026: Pharma & MedTech Access</title>
         <meta
           name="description"
-          content="How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain."
+          content="GCC market entry for pharma and medtech in 2026 — the 7-step path to enter Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain: registration, pricing, tenders, distributors."
         />
         <link rel="canonical" href={citationUrl} />
-        <meta property="og:title" content="GCC Market Access 2026: Pharma & MedTech Entry Guide (All 6 Countries)" />
-        <meta property="og:description" content="How to enter GCC healthcare markets in 2026 — registration, pricing, tenders and distributors for Saudi, UAE, Qatar, Kuwait, Oman, Bahrain." />
+        <meta property="og:title" content="GCC Market Entry Guide 2026: Pharma & MedTech Access (All 6 Countries)" />
+        <meta property="og:description" content="GCC market entry for pharma and medtech in 2026 — the 7-step path to enter Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain: registration, pricing, tenders, distributors." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={citationUrl} />
         <script type="application/ld+json">
@@ -171,11 +188,11 @@ const GccMarketAccessGuide = () => {
             '@context': 'https://schema.org',
             '@type': 'Article',
             image: 'https://www.bionixus.com/og-image.png',
-            headline: 'GCC Pharmaceutical Market Access Guide 2026',
-            description: 'Complete guide to pharmaceutical drug registration, pricing, and reimbursement across the 6 GCC countries: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
+            headline: 'GCC Market Entry Guide 2026: Pharmaceutical and MedTech Market Access',
+            description: 'How to enter the GCC pharmaceutical and medtech markets: drug registration, pricing, reimbursement, tenders, and distributor selection across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.',
             url: citationUrl,
             datePublished: '2026-01-15',
-            dateModified: '2026-08-22',
+            dateModified: '2026-09-03',
             author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
             publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
           })}
@@ -196,6 +213,21 @@ const GccMarketAccessGuide = () => {
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
             mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How do you enter the GCC pharmaceutical market?',
+                acceptedAnswer: { '@type': 'Answer', text: 'GCC market entry follows seven steps: (1) prioritise countries by market size and pricing exposure — usually Saudi Arabia and the UAE first; (2) appoint a local authorised representative or distributor, which is mandatory in all six states; (3) register the product with the national authority (SFDA, MOHAP/DHA/DOH, MOH Kuwait, MOPH Qatar, NHRA Bahrain, MOH Oman) or via the GCC centralised procedure; (4) secure pricing approval under external reference pricing; (5) win formulary or tender listing (NUPCO in Saudi Arabia, MOH tenders in Kuwait, Qatar and Oman, emirate formularies in the UAE); (6) build payer and HCP evidence for committees; (7) sequence the launch country by country. End-to-end this typically takes 12–24 months.' },
+              },
+              {
+                '@type': 'Question',
+                name: 'Which GCC country should a pharmaceutical company enter first?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Most companies enter Saudi Arabia first because it is the largest GCC pharmaceutical market and its SFDA price becomes a reference for the rest of the Gulf, followed by the UAE for its insurance-funded private demand and faster MOHAP timelines. Qatar, Kuwait, Oman and Bahrain are usually sequenced after the KSA price is set, because each references KSA and UAE prices.' },
+              },
+              {
+                '@type': 'Question',
+                name: 'How much does GCC market entry cost and how long does it take?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Registration fees are modest relative to the commercial investment; the real costs are the authorised representative or distributor margin, GMP inspection logistics, pricing dossier preparation, and the 12–24 months of pre-revenue time. BioNixus market-entry research programmes for the GCC typically start at USD 20,000 for a single-country payer and distributor assessment and scale to multi-country launch sequencing.' },
+              },
               {
                 '@type': 'Question',
                 name: 'How long does pharmaceutical registration take in Saudi Arabia (SFDA)?',
@@ -243,14 +275,15 @@ const GccMarketAccessGuide = () => {
               Free Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              GCC pharmaceutical market access guide 2026 — registration, pricing, and reimbursement
+              GCC market entry guide 2026 — pharmaceutical and medtech market access, registration, pricing, and reimbursement
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              Everything pharmaceutical companies need to know about drug registration, pricing, and reimbursement across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman. Regulatory authority requirements, timelines, and practical guidance from BioNixus — part of our{' '}
-              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research</Link> coverage.
+              GCC market entry for pharmaceutical and medical device companies runs through six national regulators and one commercial reality: approval is not access. This guide covers drug registration, pricing, reimbursement, tenders, and distributor selection across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman, with regulatory authority requirements, timelines, and practical guidance from BioNixus — part of our{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research</Link> coverage. For market size and company context, see the{' '}
+              <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC pharmaceutical market 2026 report</Link>.
             </p>
             <p className="text-sm text-muted-foreground">
-              Last updated: August 2026 &middot; Sources: SFDA, MOHAP, DHA, DOH, MOPH, NHRA, MOH regulatory publications
+              Last updated: September 2026 &middot; Sources: SFDA, MOHAP, DHA, DOH, MOPH, NHRA, MOH regulatory publications
             </p>
 
             {/* Citation box */}
@@ -278,8 +311,8 @@ const GccMarketAccessGuide = () => {
         <section className="section-padding pt-0 pb-8 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
-              question="How does pharmaceutical market access work in the GCC?"
-              answer="GCC market access requires national marketing authorisation (SFDA in Saudi Arabia, MOHAP/DHA/DOH in the UAE, and peer authorities in Kuwait, Qatar, Bahrain, and Oman), external-reference or cost-plus pricing approval, and formulary or tender listing before hospital uptake — typically 12–24 months end-to-end with a local authorised representative."
+              question="How does GCC market entry work for pharmaceutical and medtech companies?"
+              answer="GCC market entry requires a local authorised representative in every state, national marketing authorisation (SFDA in Saudi Arabia, MOHAP/DHA/DOH in the UAE, and peer authorities in Kuwait, Qatar, Bahrain, and Oman) or the GCC centralised procedure, external-reference or cost-plus pricing approval, and formulary or tender listing (NUPCO, MOH tenders, emirate formularies) before hospital uptake — typically 12–24 months end-to-end. Most companies enter Saudi Arabia first because its price references the rest of the Gulf."
               points={[
                 {
                   title: 'Registration dossier (CTD)',
@@ -312,6 +345,7 @@ const GccMarketAccessGuide = () => {
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
             <div className="grid md:grid-cols-2 gap-2">
+              <a href="#market-entry-steps" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> GCC Market Entry: 7 Steps</a>
               <a href="#regulatory-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulatory Bodies by Country</a>
               <a href="#registration-timeline" className="text-sm text-primary hover:underline flex items-center gap-2"><Clock className="w-4 h-4" /> Typical Registration Timeline</a>
               <a href="#country-details" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> Country-by-Country Requirements</a>
@@ -320,8 +354,51 @@ const GccMarketAccessGuide = () => {
           </div>
         </section>
 
+        {/* GCC market entry steps */}
+        <section className="section-padding py-16" id="market-entry-steps">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+              GCC Market Entry in 7 Steps
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              The sequence below is how pharmaceutical and medtech companies actually enter the GCC. Regulatory
+              registration is step three, not step one — country prioritisation and partner selection decide the
+              price you can defend and the channels you can reach.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border bg-card">
+              <table className="w-full text-sm text-left min-w-[760px]">
+                <thead className="bg-muted/50">
+                  <tr>
+                    <th scope="col" className="px-4 py-3 font-semibold text-foreground">Step</th>
+                    <th scope="col" className="px-4 py-3 font-semibold text-foreground">What has to happen</th>
+                    <th scope="col" className="px-4 py-3 font-semibold text-foreground whitespace-nowrap">Typical timing</th>
+                    <th scope="col" className="px-4 py-3 font-semibold text-foreground">Research BioNixus runs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {gccMarketEntrySteps.map((row) => (
+                    <tr key={row.step} className="border-t border-border align-top">
+                      <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">{row.step}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.action}</td>
+                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.timing}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.research}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Saudi-specific registration mechanics are covered step by step in our{' '}
+              <Link to="/blog/sfda-drug-registration-guide" className="text-primary hover:underline font-medium">
+                SFDA drug registration guide (pharmaceutical product registration in Saudi Arabia)
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
         {/* Registration Timeline */}
-        <section className="section-padding py-16" id="registration-timeline">
+        <section className="section-padding py-16 bg-muted/20" id="registration-timeline">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
               Typical GCC Drug Registration Timeline
@@ -551,6 +628,9 @@ const GccMarketAccessGuide = () => {
               Explore country-specific regulatory guides, regional market data, and execution-focused service pages.
             </p>
             <div className="grid md:grid-cols-2 gap-3">
+              <Link to="/market-research-gcc" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
+                Market research GCC — six-country physician, payer and hospital research
+              </Link>
               <Link to="/services/market-access" className="rounded-lg border border-border bg-card p-4 text-primary hover:underline">
                 Market access consulting services for pharma teams
               </Link>
@@ -635,6 +715,18 @@ const GccMarketAccessGuide = () => {
             </h2>
             <div className="space-y-4">
               {[
+                {
+                  q: 'How do you enter the GCC pharmaceutical market?',
+                  a: 'GCC market entry follows seven steps: prioritise countries (usually Saudi Arabia and the UAE first); appoint a local authorised representative or distributor, which is mandatory in all six states; register the product with the national authority or via the GCC centralised procedure; secure pricing approval under external reference pricing; win formulary or tender listing (NUPCO in Saudi Arabia, MOH tenders in Kuwait, Qatar and Oman, emirate formularies in the UAE); build payer and HCP evidence for committees; and sequence the launch country by country. End-to-end this typically takes 12–24 months.',
+                },
+                {
+                  q: 'Which GCC country should a pharmaceutical company enter first?',
+                  a: 'Most companies enter Saudi Arabia first because it is the largest GCC pharmaceutical market and its SFDA price becomes a reference for the rest of the Gulf, followed by the UAE for its insurance-funded private demand and faster MOHAP timelines. Qatar, Kuwait, Oman and Bahrain are usually sequenced after the KSA price is set, because each references KSA and UAE prices.',
+                },
+                {
+                  q: 'How much does GCC market entry cost and how long does it take?',
+                  a: 'Registration fees are modest relative to the commercial investment; the real costs are the authorised representative or distributor margin, GMP inspection logistics, pricing dossier preparation, and the 12–24 months of pre-revenue time. BioNixus market-entry research programmes for the GCC typically start at USD 20,000 for a single-country payer and distributor assessment and scale to multi-country launch sequencing.',
+                },
                 {
                   q: 'How long does pharmaceutical registration take in Saudi Arabia (SFDA)?',
                   a: 'SFDA registration typically takes 8–18 months depending on product type: 8–12 months for generics (ANDA), 12–18 months for new drugs (NDA), and potentially longer for biologics and biosimilars. A local authorised representative (scientific office) is mandatory for foreign companies.',
