@@ -286,6 +286,40 @@ const ServiceDetail = () => {
           </section>
         )}
 
+        {slug === 'competitive-intelligence' && (
+          <section className="section-padding py-10 bg-background border-b border-border/60">
+            <div className="container-wide max-w-4xl mx-auto">
+              <GeoLLMAnswerBlock
+                question="What pharmaceutical competitive intelligence services does BioNixus provide?"
+                answer="BioNixus delivers primary competitive intelligence for pharma — pipeline monitoring, win/loss analysis, launch-readiness assessments, KOL influence mapping, and competitive messaging defence across EMEA and GCC markets. Unlike IQVIA syndicated data, BioNixus runs decision-grade fieldwork with verified prescribers, pharmacists, and procurement stakeholders within weeks."
+                points={[
+                  {
+                    title: 'Pipeline & launch intelligence',
+                    description:
+                      'Clinical trial registry monitoring, regulatory filing milestones, congress abstract tracking, and probability-weighted launch timelines for competitor products.',
+                  },
+                  {
+                    title: 'Win/loss & tender defence',
+                    description:
+                      'Structured interviews revealing why accounts chose or rejected therapies — formulary positioning, NUPCO tender evaluation, and pharmacist substitution behaviour.',
+                  },
+                  {
+                    title: 'KOL & influence mapping',
+                    description:
+                      'Connectivity intelligence beyond speaker bureau frequency — guideline committee footprints, mentorship gravity, and regional referral cascade mapping.',
+                  },
+                  {
+                    title: 'IQVIA alternative',
+                    description:
+                      'BioNixus complements IQVIA syndicated data with primary research in markets where panel coverage is thin. See the IQVIA alternatives guide for a full comparison.',
+                  },
+                ]}
+                summary="Request a competitive intelligence proposal scoped to your therapy area and target markets."
+              />
+            </div>
+          </section>
+        )}
+
         {/* Overview */}
         <section className="section-padding py-12 bg-cream-dark">
           <div className="container-wide max-w-4xl mx-auto">
@@ -398,6 +432,97 @@ const ServiceDetail = () => {
             </div>
           </div>
         </section>
+
+        {slug === 'competitive-intelligence' && (
+          <section className="section-padding py-12 bg-cream-dark">
+            <div className="container-wide max-w-4xl mx-auto space-y-8">
+              <div>
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+                  Pharmaceutical competitive intelligence use cases
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Competitive intelligence programmes at BioNixus are scoped to one portfolio decision — launch sequencing in Saudi Arabia, tender defence in Egypt, biosimilar erosion modelling in the UK, or KOL influence mapping in the UAE — rather than open-ended monitoring subscriptions. Each engagement begins with explicit hypotheses about competitor behaviour, account switching triggers, and evidence gaps that syndicated data cannot fill.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Launch-readiness modules combine clinical trial registry monitoring (ClinicalTrials.gov, EU CTR, WHO ICTRP), regulatory filing milestone tracking (FDA, EMA, SFDA, MOHAP), and congress abstract surveillance (ASCO, ESMO, EULAR, ACC) with primary probe interviews that validate whether pipeline threats are translating into account-level displacement for your therapy area. Probability-weighted launch timelines help portfolio committees allocate evidence production and field force resources before competitors reach formulary committees. All intelligence outputs include source grading and compliance documentation suitable for internal audit, alliance diligence, and medical affairs governance reviews.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Win/loss research reveals why accounts chose or rejected a therapy — objections that prescription audit dashboards cannot surface. BioNixus designs blinded interview protocols capturing prescriber rationale, pharmacist substitution behaviour, payer formulary positioning, and NUPCO tender evaluation criteria. Outputs feed medical affairs education priorities, sales enablement, and HEOR counter-evidence planning. For a comparison of when BioNixus replaces versus complements IQVIA syndicated data, see our{' '}
+                  <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">IQVIA competitors and alternatives guide</Link>.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+                  GCC and EMEA competitive intelligence methodology
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Gulf markets require intelligence modules beyond Western-centric pipeline tracking. NUPCO tender award patterns, SFDA registration queue positions, and hospital formulary committee decisions signal competitive displacement before revenue impact appears in syndicated panels. BioNixus recruits pharmacists, procurement managers, and medical directors with verified institutional affiliations — not convenience samples that overweight Dubai private hospitals at the expense of Saudi MOH or Egyptian public-sector dynamics.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  European programmes account for national HTA fragmentation: NICE technology appraisal timelines in England, G-BA AMNOG benefit assessments in Germany, HAS transparency committee recommendations in France. Competitive intelligence that ignores access pathway differences produces launch forecasts that misallocate affiliate resources. BioNixus harmonises taxonomy across markets while preserving local behavioural realism — the same variable dictionary with country-calibrated instruments.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  Scenario planning modules stress-test portfolio assumptions when procurement rules change mid-year — NUPCO framework refreshes, NHS ICS formulary restructures, or German AMNOG benefit downgrades. Probability-weighted entry assumptions anchored to behaviours measured in priority markets replace analyst sentiment with field-validated intelligence suitable for board-level portfolio reviews and alliance diligence.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  BioNixus competitive intelligence deliverables include pipeline landscape dashboards, win/loss interview summaries with verbatim physician quotes, KOL influence maps annotated to decision bottlenecks, competitive messaging test readouts, and 30/60/90 action plans with evidence gaps flagged for medical affairs and access teams. All programmes include audit-ready methodology appendices for internal compliance review.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  Typical engagement timelines run four to six weeks from objective alignment to draft readout, with daily funnel dashboards during active fieldwork enabling real-time corrective action when quota skew or screener leakage surfaces. Request a competitive intelligence proposal scoped to your therapy area, target markets, and portfolio decision via our contact form — response within one business day.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  Competitive intelligence programmes integrate with medical affairs, market access, and new product planning workflows so insights cascade into KPI ownership rather than decaying in monthly newsletter archives. BioNixus optionally facilitates cross-functional workshops that operationalise findings into segment playbooks, account tagging schemes, and prioritized medical education arcs aligned to the competitive threats your field teams face in priority markets across GCC, UK, EU5, and North Africa. Contact BioNixus for a scoped proposal — we respond within one business day with a methodological spine, indicative timeline, and fieldwork footprint.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {slug === 'market-access' && (
+          <section className="section-padding py-12 bg-cream-dark">
+            <div className="container-wide max-w-4xl mx-auto space-y-8">
+              <div>
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+                  GCC market access evidence and tender strategy
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Gulf market access is not a single playbook. Saudi Arabia requires SFDA registration followed by NUPCO tender placement for public hospital volume; UAE splits between MOHAP federal pathways and emirate authorities (DHA Dubai, DOH Abu Dhabi); Kuwait, Qatar, Bahrain, and Oman each maintain distinct pricing and procurement frameworks. BioNixus maps country-specific access sequences — registration timing, pricing negotiation windows, formulary committee calendars, and tender evaluation criteria — so launch teams sequence evidence production against real decision gates.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  SFDA Economic Evaluation System (EES), mandatory from July 2025, integrates pharmacoeconomic and budget-impact evidence at registration. Programs designed for Saudi access must anticipate EES requirements during protocol design, not retrofit them at submission. BioNixus coordinates payer research, budget-impact modelling, and willingness-to-pay studies so HEOR and access teams work from one evidence architecture with role-specific outputs.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Tender defence programmes combine win/loss analysis on prior NUPCO awards, competitive pricing intelligence, and stakeholder interviews with pharmacy directors and procurement managers. For the full GCC access landscape — registration, pricing, tenders, and distributors across all six Gulf states — see our{' '}
+                  <Link to="/gcc-market-access-guide" className="text-primary font-medium hover:underline">GCC market access guide</Link> and{' '}
+                  <Link to="/heor-consulting-saudi-arabia" className="text-primary font-medium hover:underline">HEOR consulting Saudi Arabia</Link> pages.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+                  EMEA HTA submission and payer research
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  European market access requires navigating distinct HTA bodies with different evidence thresholds. NICE technology appraisals in England demand cost-per-QALY analysis against GBP 20,000–30,000 willingness-to-pay thresholds; G-BA AMNOG assessments in Germany focus on additional clinical benefit versus appropriate comparator; HAS CEPS pricing in France uses transparency committee recommendations that shape confidential negotiation corridors.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  BioNixus payer research modules identify the specific objections each HTA body raises for your therapy class — extrapolation concerns, subgroup fragility, caregiver burden, implementation barriers — so HEOR teams refine models before submission rather than after rejection. NHS Integrated Care Board stewardship adds another layer: formulary decisions increasingly sit with ICS pharmacy leads rather than individual trust committees, requiring research instruments that capture both national HTA outcomes and local implementation friction.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  Willingness-to-pay studies and pricing corridor analysis inform confidential negotiations with payers and authorities. BioNixus designs conjoint and discrete-choice experiments that reflect real formulary trade-offs — not hypothetical attribute lists divorced from committee evaluation rituals. Budget-impact models populated from locally observed treatment sequences reduce the rework cycle between payer interviews and HEOR deliverables, accelerating time-to-submission for SFDA EES, NICE, and G-BA dossiers.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  Market access deliverables include payer interview reports, pricing corridor recommendations, HTA evidence gap analyses, cost-effectiveness model inputs, value proposition frameworks, and formulary positioning strategies aligned to SFDA EES, NICE, and NUPCO evaluation criteria. Request a scoped proposal via our contact form — typical turnaround for a methodological spine is within five business days.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  BioNixus serves pharmaceutical and medical device manufacturers across GCC, UK, EU5, and North Africa with market access research that connects prescriber behaviour to payer and procurement reality. Explore our healthcare market research hub for country-level programmes or the GCC market access guide for registration and tender context across all six Gulf states.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  For Saudi Arabia specifically, SFDA EES submissions require coordinated budget-impact, cost-effectiveness, HTA, and payer research modules — see our dedicated HEOR consulting and Saudi payer market access research pages for the four evidence pillars scoped as one coordinated programme.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         {slug ? <ServiceMarketReferenceGuide serviceSlug={slug} /> : null}
 
