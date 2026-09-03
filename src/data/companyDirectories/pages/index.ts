@@ -19,7 +19,29 @@ import { pharmaceuticalDistributorsMorocco } from './pharmaceutical-distributors
 import { pharmaceuticalDistributorsTurkey } from './pharmaceutical-distributors/turkey';
 import { pharmaceuticalDistributorsPakistan } from './pharmaceutical-distributors/pakistan';
 
+// Wave 1 — MENA healthcare gaps: medical device companies
+import { medicalDeviceCompaniesEgypt } from './medical-device-companies/egypt';
+import { medicalDeviceCompaniesKuwait } from './medical-device-companies/kuwait';
+import { medicalDeviceCompaniesQatar } from './medical-device-companies/qatar';
+import { medicalDeviceCompaniesOman } from './medical-device-companies/oman';
+import { medicalDeviceCompaniesBahrain } from './medical-device-companies/bahrain';
+import { medicalDeviceCompaniesIraq } from './medical-device-companies/iraq';
+import { medicalDeviceCompaniesJordan } from './medical-device-companies/jordan';
+import { medicalDeviceCompaniesMorocco } from './medical-device-companies/morocco';
+import { medicalDeviceCompaniesTurkey } from './medical-device-companies/turkey';
+import { medicalDeviceCompaniesIran } from './medical-device-companies/iran';
+
 export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
+  medicalDeviceCompaniesEgypt,
+  medicalDeviceCompaniesKuwait,
+  medicalDeviceCompaniesQatar,
+  medicalDeviceCompaniesOman,
+  medicalDeviceCompaniesBahrain,
+  medicalDeviceCompaniesIraq,
+  medicalDeviceCompaniesJordan,
+  medicalDeviceCompaniesMorocco,
+  medicalDeviceCompaniesTurkey,
+  medicalDeviceCompaniesIran,
   pharmaceuticalDistributorsSaudiArabia,
   pharmaceuticalDistributorsUae,
   pharmaceuticalDistributorsEgypt,
