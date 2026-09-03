@@ -167,6 +167,7 @@ export function buildRelatedLinks(
   if (hasEntityHub(entity)) {
     push({ to: DIRECTORY_ENTITIES[entity].hubPath!, label: `${DIRECTORY_ENTITIES[entity].labelPlural} by country` });
   }
+  push({ to: DIRECTORY_MASTER_HUB_PATH, label: 'All company directories by country and industry' });
   push({ to: '/account-level-market-research', label: 'Account-level market research' });
   return links;
 }
