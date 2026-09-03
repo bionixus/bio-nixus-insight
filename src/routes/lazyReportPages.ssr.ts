@@ -59,6 +59,7 @@ export { default as CaseStudy } from '@/pages/CaseStudy';
 export { default as PressReleasePage } from '@/pages/PressReleasePage';
 
 export { default as UaePharmaCompanies } from '@/pages/UaePharmaCompanies';
+export { default as DubaiPharmaCompanies } from '@/pages/DubaiPharmaCompanies';
 export { default as KuwaitPharmaCompanies } from '@/pages/KuwaitPharmaCompanies';
 export { default as SaudiPharmaCompanies } from '@/pages/SaudiPharmaCompanies';
 export { default as EgyptPharmaCompanies } from '@/pages/EgyptPharmaCompanies';

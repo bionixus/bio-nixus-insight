@@ -305,12 +305,14 @@ function titleFor(spec: SpecRow) {
 
 function metaDescriptionFor(spec: SpecRow, title: string) {
   const fact = getTherapyMarketFactOrThrow(spec.marketSlug, spec.therapySlug);
-  const v1 = fact.marketSize2026.value;
+  // Fact values are already prefixed with "~" (e.g. "~$33M"); avoid emitting "~~$33M".
+  const raw = String(fact.marketSize2026.value);
+  const v1 = raw.startsWith('~') ? raw : `~${raw}`;
   const therapy = therapyMeta(spec.therapySlug).name;
   const regulator = MARKET_CONTENT[spec.marketSlug].regulatoryBody.split('•')[0].trim();
-  const base = `${spec.market} ${therapy} 2026 (~${v1}): registration, payer access & clinician adoption — ${regulator}. Proposal in 24 hours.`;
+  const base = `${spec.market} ${therapy} 2026 (${v1}): registration, payer access & clinician adoption — ${regulator}. Proposal in 24 hours.`;
   if (base.length <= 155) return base;
-  const short = `${spec.market} ${therapy} market 2026 (~${v1}): access, tenders & adoption. BioNixus research — proposal in 24 hours.`;
+  const short = `${spec.market} ${therapy} market 2026 (${v1}): access, tenders & adoption. BioNixus research — proposal in 24 hours.`;
   return short.length <= 155 ? short : `${short.slice(0, 152).trim()}…`;
 }
 

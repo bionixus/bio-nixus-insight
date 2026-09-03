@@ -19,6 +19,8 @@ export type MarketResearchCountryContent = {
   deliverables: { heading: string; bullets: string[] };
   decisionBlueprint: { why: string; evidence: string; next: string };
   hubLinkLabel?: string;
+  /** schema.org type for areaServed — defaults to Country; use AdministrativeArea for multi-country regions such as the GCC. */
+  areaServedType?: 'Country' | 'AdministrativeArea' | 'Place';
 };
 
 const COUNTRY_PAGE_DELIVERABLES = [
@@ -949,6 +951,135 @@ const en: Record<string, MarketResearchCountryContent> = {
       why: 'Compact markets require precise stakeholder maps before scaling fieldwork. In Qatar specifically, HMC\'s centralized committee structure means a single institutional relationship can matter more than a broad physician survey, and misreading that relationship can stall a launch regardless of clinical merit.',
       evidence: 'Pilot qual often sharpens quant screeners in Qatar specialist pools. Sponsors who validate feasibility with two or three named specialists before fielding avoid the common trap of designing a survey for a population that does not exist at scale, and the resulting screeners are noticeably cleaner.',
       next: 'Link this page to the Qatar healthcare hub and company directory for internal planning. Confirm whether HMC, Sidra, or private networks are the priority stakeholder group before instruments are finalized, and align on which internal function owns the resulting action plan.',
+    },
+  },
+  gcc: {
+    title: 'Market Research GCC: Pharma & Healthcare in 6 Gulf States',
+    description:
+      'Market research GCC — BioNixus runs physician, payer, hospital and patient research across Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain. Gulf Cooperation Council, not capability centres.',
+    canonical: '/market-research-gcc',
+    h1: 'Market Research in the GCC (Gulf Cooperation Council)',
+    intro:
+      'Market research in the GCC means primary research across the six Gulf Cooperation Council states — Saudi Arabia, the United Arab Emirates, Qatar, Kuwait, Oman, and Bahrain — a region of roughly 58 million people and a USD 27 billion pharmaceutical market in 2026. BioNixus runs physician, payer, hospital, pharmacy, and patient research in all six markets from offices in Riyadh, Dubai, and Cairo, with harmonised Arabic–English instruments so a launch, pricing, or access question can be read country by country and side by side. Note: this page is about the Gulf region; if you searched "GCC market research" meaning Global Capability Centres, see the FAQ below. The six GCC health systems share external reference pricing and a mandatory local-agent model but differ sharply in payer structure — Saudi Arabia is a government-tender market led by NUPCO, the UAE is insurance-funded and emirate-fragmented, Qatar and Kuwait are single-payer ministry systems, and Oman and Bahrain are small MOH-led markets — so a GCC average hides the decisions that matter.',
+    countryLabel: 'Gulf Cooperation Council (GCC)',
+    primaryKeyword: 'Market research GCC',
+    areaServedType: 'AdministrativeArea',
+    faqItems: [
+      {
+        question: 'What does market research GCC mean?',
+        answer:
+          'In healthcare and pharma, "market research GCC" means primary and secondary research across the six Gulf Cooperation Council countries — Saudi Arabia, UAE, Qatar, Kuwait, Oman, and Bahrain. It covers market sizing, physician and payer surveys, hospital and pharmacy consumption data, distributor assessment, and pricing and access research. BioNixus is a healthcare market research firm running these programmes in all six GCC states.',
+      },
+      {
+        question: 'Does GCC market research mean Global Capability Centres?',
+        answer:
+          'Not on this page. "GCC" is also an abbreviation for Global Capability Centres — offshore shared-service and engineering hubs, typically in India — and analysts publish "GCC market research" reports on that sector. BioNixus does not cover capability centres. This page and the linked country pages are about the Gulf Cooperation Council healthcare and pharmaceutical markets.',
+      },
+      {
+        question: 'How big is the GCC pharmaceutical market?',
+        answer:
+          'BioNixus values the six-country GCC pharmaceutical market at roughly USD 23.7 billion in 2024 and about USD 27 billion in 2026, growing at a 7.6% CAGR to approximately USD 37 billion by 2030. Saudi Arabia accounts for around 46% of regional spend and the UAE is the second-largest market. The full breakdown is in the GCC pharmaceutical market 2026 report.',
+      },
+      {
+        question: 'Which GCC country should market research start in?',
+        answer:
+          'Saudi Arabia in most cases: it is the largest market, its SFDA-approved price becomes the reference for the rest of the Gulf, and NUPCO tenders concentrate hospital demand. The UAE usually follows for its insurance-funded private demand. Qatar, Kuwait, Oman, and Bahrain are typically added as cells inside a multi-country programme rather than researched in isolation.',
+      },
+      {
+        question: 'Can one study cover all six GCC countries?',
+        answer:
+          'Yes. BioNixus fields harmonised instruments with country-specific screener logic so results are comparable across Saudi Arabia, UAE, Qatar, Kuwait, Oman, and Bahrain while preserving each regulator and payer context (SFDA and NUPCO, MOHAP/DHA/DOH, MOPH and HMC, Kuwait MOH, Oman MOH, NHRA). Sample sizes are set per country because specialist pools in Qatar, Bahrain, and Oman are small.',
+      },
+      {
+        question: 'How much does GCC market research cost?',
+        answer:
+          'Single-country physician or payer studies typically start around USD 20,000; multi-country GCC programmes that combine quantitative HCP surveys, payer interviews, and consumption data run from roughly USD 60,000 upward depending on specialties, sample, and number of markets. BioNixus publishes indicative 2026 project bands on its pricing page.',
+      },
+      {
+        question: 'Does BioNixus run Arabic-language fieldwork in the GCC?',
+        answer:
+          'Yes. Arabic–English screeners, moderation, and reporting are standard across all six GCC states, with Gulf-dialect moderators for qualitative work and bilingual QC on quantitative programmes.',
+      },
+      {
+        question: 'How long does a GCC market research programme take?',
+        answer:
+          'Focused single-country diagnostics can start within days of scope sign-off and report in two to three weeks. Multi-country GCC programmes usually run six to ten weeks depending on specialist scarcity, hospital access approvals, and the number of markets fielded in parallel.',
+      },
+    ],
+    relatedLinks: [
+      { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market 2026: size, companies, outlook' },
+      { to: '/gcc-market-access-guide', label: 'GCC market entry guide (registration, pricing, tenders)' },
+      { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },
+      { to: '/insights/top-market-research-companies-gcc-2026', label: 'Top market research companies in the GCC (2026)' },
+      { to: '/market-research-ksa', label: 'Market research KSA (Saudi Arabia)' },
+      { to: '/market-research-uae', label: 'Market research UAE' },
+      { to: '/market-research-qatar', label: 'Market research Qatar' },
+      { to: '/market-research-kuwait', label: 'Market research Kuwait' },
+      { to: '/market-research-oman', label: 'Market research Oman' },
+      { to: '/market-research-bahrain', label: 'Market research Bahrain' },
+    ],
+    regulatory: {
+      heading: 'Six regulators, one region: the GCC context for market research',
+      paragraphs: [
+        'Each GCC state runs its own marketing authorisation and pricing process — SFDA in Saudi Arabia, MOHAP with emirate-level DHA and DOH in the UAE, MOPH in Qatar, the Ministry of Health in Kuwait and Oman, and NHRA in Bahrain — and the GCC centralised registration procedure only harmonises the technical review, not pricing, listing, or import.',
+        'External reference pricing links the six markets: the first approved GCC price, usually Saudi Arabia, constrains what can be defended in every later market. Research that tests price sensitivity in one country without modelling the reference cascade is incomplete.',
+        'Hospital demand runs through tenders in most of the region — NUPCO in Saudi Arabia, ministry tenders in Kuwait, Qatar, and Oman — while the UAE splits between national registration and emirate formularies and insurer lists. Procurement officers and P&T committee members are therefore core respondents in GCC access research, not just prescribers.',
+        'A local authorised representative or distributor is mandatory in all six states and typically holds import licences and tender relationships, so distributor assessment is part of most GCC market-entry research rather than a separate exercise.',
+      ],
+    },
+    marketStructure: {
+      heading: 'GCC healthcare market structure',
+      paragraphs: [
+        'Saudi Arabia is roughly 46% of GCC pharmaceutical spend and the UAE the second-largest market; together they account for about two-thirds of the Gulf total. Qatar and Kuwait spend far above their population weight per capita, while Oman and Bahrain are small MOH-led markets where a handful of institutions set practice.',
+        'Payer models diverge: Saudi Arabia combines a government-funded majority with fast-growing mandatory private insurance; the UAE is insurance-funded with mandatory cover in Abu Dhabi and Dubai; Qatar and Kuwait are predominantly single-payer ministry systems with expanding private segments; Oman and Bahrain remain government-dominated.',
+        'Specialist care is concentrated in a small number of tertiary centres — KFSH&RC and the National Guard system in Saudi Arabia, Cleveland Clinic Abu Dhabi and SEHA in the UAE, Hamad Medical Corporation and Sidra in Qatar — so account-level research reaches most of the relevant demand for oncology, immunology, and rare disease in each country.',
+        'Retail pharmacy is consolidating around large chains (Nahdi and Al-Dawaa in Saudi Arabia, Life and Aster in the UAE), and e-pharmacy is growing fastest in the UAE and Saudi Arabia, which changes how consumer-health and chronic-therapy research should be sampled.',
+      ],
+    },
+    services: {
+      heading: 'GCC market research services',
+      items: [
+        { title: 'GCC market sizing and forecasting', description: 'Six-country sizing built from hospital procurement, pharmacy consumption, and physician research, not a single national average.' },
+        { title: 'Physician and HCP research', description: 'Quantitative surveys and in-depth interviews with verified specialists across Saudi Arabia, UAE, Qatar, Kuwait, Oman, and Bahrain.' },
+        { title: 'Payer and market access research', description: 'NUPCO, MOH tender, emirate formulary, and insurer interviews structured for pricing and listing decisions.' },
+        { title: 'Distributor and partner assessment', description: 'Authorised representative and distributor evaluation across the six GCC states before market entry.' },
+        { title: 'Hospital and pharmacy consumption data', description: 'Account-level purchase and dispensing data across GCC hospitals and pharmacy chains.' },
+        { title: 'KOL mapping', description: 'Influence networks across the Gulf tertiary centres that shape guideline and formulary decisions.' },
+        { title: 'Patient and caregiver research', description: 'Bilingual patient-journey and adherence research across citizen and expatriate segments.' },
+        { title: 'Launch and brand tracking', description: 'Multi-wave GCC tracking of awareness, trial, and switching after tender awards and formulary decisions.' },
+      ],
+    },
+    methodology: {
+      heading: 'Methodology for GCC programmes',
+      paragraphs: [
+        'One harmonised instrument, six country-specific screeners: shared core questions keep results comparable, while regulator, payer, and channel terminology is localised per market.',
+        'Sample is sized per country. Saudi Arabia and the UAE support full quantitative samples in most specialties; Qatar, Kuwait, Oman, and Bahrain are often qualitative-led because named-specialist pools are small.',
+        'Recruitment uses verified hospital rosters and society membership rather than generic panels, with bilingual QC on every wave.',
+        'Consumption data from hospital procurement and pharmacy dispensing is triangulated with primary research so sizing and share estimates are validated at account level.',
+        'Every deliverable maps back to one commercial or access decision — country prioritisation, price corridor, tender strategy, or launch sequence.',
+      ],
+    },
+    therapyFocus: {
+      heading: 'Therapy focus across the GCC',
+      paragraph:
+        'Oncology, diabetes and obesity (including GLP-1 therapies), immunology and biologics, cardiovascular disease, vaccines, and rare disease account for most GCC research demand. Biosimilar substitution after NUPCO and MOH tender awards, and precision medicine adoption in Saudi and Qatari genomics programmes, are the fastest-growing briefs.',
+      areas: ['Oncology', 'Diabetes and obesity', 'Immunology and biologics', 'Biosimilars', 'Cardiology', 'Vaccines', 'Rare disease', 'Digital health'],
+    },
+    process: {
+      heading: 'GCC engagement process',
+      steps: [
+        { title: 'Scope', body: 'Decision gate, therapy area, and which of the six GCC markets are in scope.' },
+        { title: 'Feasibility', body: 'Named-specialist and payer pool sizing per country before sample is committed.' },
+        { title: 'Field', body: 'Parallel bilingual fieldwork across markets with weekly checkpoints.' },
+        { title: 'Triangulate', body: 'Primary findings validated against hospital and pharmacy consumption data.' },
+        { title: 'Apply', body: 'Country-by-country readout, side-by-side comparison, and 30/60/90 actions.' },
+      ],
+    },
+    deliverables: { heading: 'GCC programme outputs', bullets: COUNTRY_PAGE_DELIVERABLES },
+    decisionBlueprint: {
+      why: 'The GCC is six markets with one reference-price chain, not one market. The first country you price in constrains every later one, and the payer that matters changes at each border — NUPCO in Riyadh, insurers in Dubai, HMC in Doha.',
+      evidence: 'Country-specific screeners over one harmonised core instrument produce comparable reads without flattening the differences that drive access; triangulating against consumption data keeps sizing honest where specialist samples are small.',
+      next: 'Decide which GCC states are in scope and in what order, confirm the decision each country cell must inform, and open the country pages below for regulator and payer detail before instruments are finalised.',
     },
   },
   oman: {

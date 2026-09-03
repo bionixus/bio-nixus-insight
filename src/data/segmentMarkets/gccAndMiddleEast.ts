@@ -2547,6 +2547,202 @@ const middleEastBiologics: SegmentMarketContent = {
   areaServed: MIDDLE_EAST_AREA_SERVED,
 };
 
+
+/* ------------------------------------------------------------------ */
+/* 10. Qatar Personalized Medicine Market                              */
+/* ------------------------------------------------------------------ */
+const qatarPersonalizedMedicine: SegmentMarketContent = {
+  slug: 'qatar-personalized-medicine-market',
+  group: 'gcc',
+  lastUpdated: '2026-09-03',
+  geoLabel: 'Qatar',
+  segmentLabel: 'Personalized Medicine',
+  badge: 'Qatar · Personalized & Precision Medicine',
+  breadcrumbLabel: 'Qatar Personalized Medicine Market',
+  title: 'Qatar Personalized Medicine Market: Genomics & Access',
+  description:
+    'Qatar personalized medicine market 2026: Qatar Genome Programme, Qatar Biobank, HMC and Sidra precision oncology, pharmacogenomics, and MOPH access research.',
+  canonical: `${SEGMENT_MARKET_BASE}/qatar-personalized-medicine-market`,
+  h1: 'Qatar Personalized Medicine Market: Genomics, Precision Oncology & Access Intelligence',
+  intro: [
+    'The Qatar personalized medicine market is the most genomics-ready in the Gulf relative to its size. The Qatar Genome Programme has sequenced tens of thousands of Qatari genomes through Qatar Biobank, giving the country a population-specific reference that Saudi Arabia and the UAE are still building; Hamad Medical Corporation (HMC) and Sidra Medicine run precision oncology, pharmacogenomics, and rare-disease genomics services inside a single-payer system where the Ministry of Public Health (MOPH) and HMC committees decide which biomarker-guided therapies and companion diagnostics are funded.',
+    'That concentration is the commercial story. Almost every patient who could receive a targeted therapy in Qatar is diagnosed, tested, and treated across a handful of institutions — HMC\'s National Center for Cancer Care and Research (NCCCR), Sidra Medicine for paediatric and maternal genomics, Qatar Biobank and Qatar Genome for population data, and a small private sector led by groups such as Al Ahli and Al Emadi. Adoption therefore depends on testing capacity, molecular tumour board practice, and formulary decisions rather than on prescriber marketing.',
+    'BioNixus researches the Qatar personalized medicine market at the level where those decisions are made: oncologists and clinical geneticists at HMC and Sidra, molecular pathology and laboratory leads, MOPH and HMC pharmacy and therapeutics committee members, and patients navigating genomic testing. We do not publish invented market sizes for a market this small; we quantify the addressable patient pool, testing rates, and payer appetite in a commissioned study.',
+  ],
+  quickAnswer: {
+    question: 'What is the Qatar personalized medicine market and who controls access?',
+    answer:
+      'The Qatar personalized medicine market covers genomics-guided diagnosis and treatment — precision oncology, pharmacogenomics, rare-disease genomics, and companion diagnostics — delivered mainly through Hamad Medical Corporation and Sidra Medicine and informed by the Qatar Genome Programme and Qatar Biobank. Access is controlled by MOPH registration and pricing, HMC formulary and molecular tumour board decisions, and in-country testing capacity; the private sector and medical tourism add a small second channel.',
+    points: [
+      {
+        title: 'Population genomics is a national asset',
+        description:
+          'The Qatar Genome Programme and Qatar Biobank give Qatar a population-specific variant reference that supports pharmacogenomic and rare-disease programmes ahead of most Gulf peers.',
+      },
+      {
+        title: 'Two institutions treat most patients',
+        description:
+          'HMC (including NCCCR) and Sidra Medicine perform most genomic testing and targeted-therapy initiation, so account-level intelligence covers the majority of demand.',
+      },
+      {
+        title: 'Single-payer access decisions',
+        description:
+          'MOPH pricing plus HMC pharmacy and therapeutics committee and tumour board decisions determine which biomarker-defined therapies and tests are funded.',
+      },
+      {
+        title: 'Capacity, not awareness, is the bottleneck',
+        description:
+          'Uptake follows next-generation sequencing capacity, turnaround times, and genetic-counselling availability more than physician familiarity with the drug.',
+      },
+    ],
+    summary:
+      'BioNixus delivers commissioned Qatar personalized medicine intelligence: addressable patient sizing by biomarker, testing pathway and capacity mapping, HMC and MOPH committee evidence expectations, and physician and patient adoption research.',
+  },
+  researchTopics: [
+    {
+      name: 'Biomarker-defined patient sizing',
+      detail:
+        'How many patients in Qatar carry the actionable alteration, how many are tested, and how many reach a targeted therapy — built from HMC and Sidra pathway interviews rather than national prevalence extrapolation.',
+    },
+    {
+      name: 'Genomic testing pathway and capacity',
+      detail:
+        'Where NGS, single-gene, and pharmacogenomic tests are run, turnaround times, reflex-testing practice, and where samples are sent abroad.',
+    },
+    {
+      name: 'Molecular tumour board and formulary behaviour',
+      detail:
+        'How HMC tumour boards and pharmacy and therapeutics committees weigh biomarker evidence, comparator data, and budget impact for targeted and companion-diagnostic-linked therapies.',
+    },
+    {
+      name: 'Pharmacogenomics adoption',
+      detail:
+        'Clinician use of Qatar Genome pharmacogenomic findings in prescribing, decision-support integration, and the therapy classes where PGx is changing practice.',
+    },
+    {
+      name: 'Payer evidence and pricing expectations',
+      detail:
+        'What MOPH and HMC expect for precision-medicine pricing files, including reference-price cascade from Saudi Arabia and the UAE and willingness to fund companion diagnostics.',
+    },
+    {
+      name: 'Patient and family experience',
+      detail:
+        'Genetic-counselling access, consent and data-sharing attitudes, and treatment-journey friction for Qatari and expatriate patients.',
+    },
+  ],
+  segmentBreakdown: {
+    heading: 'Personalized medicine segments we research in Qatar',
+    items: [
+      { label: 'Precision oncology', detail: 'Targeted therapies and immuno-oncology selected by biomarker at NCCCR and private oncology units; lung, breast, colorectal, and haematological malignancies dominate.' },
+      { label: 'Pharmacogenomics', detail: 'Qatar Genome-derived PGx variants applied to cardiology, psychiatry, oncology supportive care, and anticoagulation prescribing.' },
+      { label: 'Rare and inherited disease genomics', detail: 'Whole-exome and whole-genome diagnosis at Sidra Medicine and HMC, premarital and newborn screening, and orphan-drug eligibility.' },
+      { label: 'Companion and complementary diagnostics', detail: 'NGS panels, IHC and FISH, liquid biopsy, and single-gene tests that gate targeted therapy; in-country versus send-out capacity.' },
+      { label: 'Population genomics and biobanking', detail: 'Qatar Genome Programme and Qatar Biobank cohorts as recruitment, real-world-evidence, and validation platforms.' },
+      { label: 'Digital and AI decision support', detail: 'Integration of genomic results into HMC electronic records and clinical decision-support tools.' },
+    ],
+  },
+  demandDrivers: {
+    heading: 'What is driving personalized medicine demand in Qatar',
+    drivers: [
+      { title: 'Qatar Genome Programme and Qatar Biobank', detail: 'A national sequencing effort and population biobank provide the reference data that makes pharmacogenomics and rare-disease diagnosis clinically usable.' },
+      { title: 'Qatar National Vision 2030 and health strategy', detail: 'Precision medicine and genomics are named priorities in national health strategy and research funding through Qatar Foundation and Qatar National Research Fund.' },
+      { title: 'Consanguinity and inherited disease burden', detail: 'Elevated rates of recessive disorders sustain demand for genomic diagnosis, carrier screening, and orphan therapies.' },
+      { title: 'Oncology capacity expansion', detail: 'NCCCR and new private oncology capacity increase the number of patients who can be biomarker-tested and treated in country.' },
+      { title: 'Mandatory health insurance', detail: 'Expanding private coverage creates a second access route for tests and therapies outside the HMC formulary.' },
+      { title: 'Regional reference pricing', detail: 'MOPH benchmarks against Saudi and UAE prices, so Gulf precision-medicine launches sequence Qatar after the larger markets.' },
+    ],
+  },
+  marketStructure: {
+    heading: 'How the Qatar personalized medicine market is structured',
+    paragraphs: [
+      'Public provision dominates. Hamad Medical Corporation operates the national tertiary network and the National Center for Cancer Care and Research; Sidra Medicine leads paediatric, maternal, and inherited-disease genomics; Primary Health Care Corporation (PHCC) handles screening and referral. Together they account for the large majority of genomic tests and targeted-therapy initiations.',
+      'Research and data infrastructure sit alongside care delivery: the Qatar Genome Programme, Qatar Biobank, Qatar Precision Health Institute, and academic partners including Weill Cornell Medicine–Qatar and Hamad Bin Khalifa University generate the population data and clinical studies that inform adoption.',
+      'Access runs through MOPH marketing authorisation and pricing, then HMC pharmacy and therapeutics and tumour-board decisions; HMC procurement buys centrally. A small private sector — Al Ahli Hospital, Al Emadi Hospital, and specialist clinics — serves insured patients and some medical tourism, typically sending complex genomic testing to reference laboratories.',
+      'Because the treating population is small and expatriate-heavy, sizing must separate citizen and resident segments and account for patients treated abroad; a single national prevalence figure is not a usable forecast input.',
+    ],
+  },
+  geoSignals: {
+    heading: 'Institutional signals across Qatar',
+    items: [
+      { name: 'Hamad Medical Corporation (HMC) and NCCCR', signal: 'National tertiary and cancer centre; molecular pathology, NGS panels, and most targeted-therapy initiation; central formulary and procurement.' },
+      { name: 'Sidra Medicine', signal: 'Paediatric and maternal genomics, whole-genome diagnosis of inherited disease, and rare-disease clinics with independent procurement logic.' },
+      { name: 'Qatar Genome Programme and Qatar Biobank', signal: 'Population sequencing and biobank cohorts underpinning pharmacogenomics and rare-disease variant interpretation.' },
+      { name: 'Ministry of Public Health (MOPH)', signal: 'Registration, pricing, and national strategy for precision medicine; pharmacovigilance and laboratory licensing.' },
+      { name: 'Primary Health Care Corporation (PHCC)', signal: 'Premarital and population screening, referral into genomic services.' },
+      { name: 'Private hospitals (Al Ahli, Al Emadi) and reference labs', signal: 'Insured and medical-tourism channel; send-out testing and early adoption of liquid biopsy where funded.' },
+    ],
+  },
+  audiences: [
+    { audience: 'Medical and clinical oncologists at HMC/NCCCR and private units', description: 'Biomarker testing practice, targeted-therapy sequencing, and tumour-board dynamics.' },
+    { audience: 'Clinical geneticists and genetic counsellors', description: 'Rare-disease diagnostic pathways, consent, and family cascade testing at Sidra and HMC.' },
+    { audience: 'Molecular pathology and laboratory directors', description: 'NGS capacity, turnaround, validation, and send-out decisions.' },
+    { audience: 'HMC pharmacy and therapeutics committee and procurement leads', description: 'Evidence and budget-impact expectations for targeted therapies and companion diagnostics.' },
+    { audience: 'MOPH pricing and policy stakeholders', description: 'Reference-pricing logic and national precision-medicine strategy priorities.' },
+    { audience: 'Patients and caregivers', description: 'Testing experience, genetic-counselling access, and data-sharing attitudes across citizen and expatriate populations.' },
+  ],
+  methodology: [
+    'Feasibility first: we confirm the named specialist and laboratory pool in Qatar before committing to sample size, and recommend qualitative-led designs where the population is very small.',
+    'Pathway mapping interviews at HMC, Sidra, and private units reconstruct the diagnosis-to-treatment funnel by biomarker.',
+    'Committee and payer interviews structured to MOPH and HMC evidence formats so findings feed pricing and listing files directly.',
+    'Bilingual Arabic–English patient research with consent-sensitive recruitment through treating institutions and patient organisations.',
+    'Optional GCC benchmarking cell comparing Qatar with Saudi Arabia and the UAE precision-medicine programmes on harmonised instruments.',
+  ],
+  whyBionixus: [
+    'GCC precision-medicine track record across Saudi Arabia, the UAE, and Qatar, including genomics-programme and oncology-centre research.',
+    'Direct access to Doha specialists and laboratory leads through verified institutional rosters, not generic panels.',
+    'Deliverables built for launch and access decisions: addressable-patient models, testing-capacity maps, and committee evidence gaps.',
+    'Data discipline — quantification comes from fieldwork and institutional data, never from recycled global report figures.',
+  ],
+  relatedLinks: [
+    { to: '/market-research-qatar', label: 'Market research Qatar' },
+    { to: '/healthcare-market-research-qatar', label: 'Healthcare market research in Qatar' },
+    { to: '/qatar-healthcare-market-report', label: 'Qatar healthcare market report' },
+    { to: '/pharmaceutical-companies-qatar', label: 'Pharmaceutical companies in Qatar' },
+    { to: '/qatar-market-access-research', label: 'Qatar market access research' },
+    { to: '/gcc-personalized-medicine-market', label: 'GCC personalized medicine market' },
+    { to: '/saudi-arabia-precision-medicine-market', label: 'Saudi Arabia precision medicine market' },
+    { to: '/market-reports/qatar-digital-health-market-report', label: 'Qatar digital health market 2026' },
+  ],
+  faqs: [
+    {
+      question: 'How big is the Qatar personalized medicine market?',
+      answer:
+        'Qatar is a small, high-spend market of roughly three million residents, so the personalized medicine market is best measured in addressable patients by biomarker and in genomic tests performed rather than in a headline dollar figure. BioNixus sizes it in a commissioned study from HMC, Sidra, and private-sector pathway data; we do not publish an invented market value for a market this concentrated.',
+    },
+    {
+      question: 'Which institutions lead personalized medicine in Qatar?',
+      answer:
+        'Hamad Medical Corporation, including the National Center for Cancer Care and Research, and Sidra Medicine deliver most precision oncology and rare-disease genomics. The Qatar Genome Programme and Qatar Biobank provide population genomic data, with Weill Cornell Medicine–Qatar, Hamad Bin Khalifa University, and the Qatar Precision Health Institute as research partners.',
+    },
+    {
+      question: 'What is the Qatar Genome Programme?',
+      answer:
+        'The Qatar Genome Programme is a national population-sequencing initiative run with Qatar Biobank under Qatar Foundation that has sequenced tens of thousands of Qatari genomes to build a population-specific reference for research, pharmacogenomics, and rare-disease diagnosis.',
+    },
+    {
+      question: 'How are precision medicines and companion diagnostics funded in Qatar?',
+      answer:
+        'Through MOPH registration and pricing followed by HMC formulary and tumour-board decisions, with HMC procuring centrally for the public system. Privately insured patients can access tests and therapies through private hospitals, and some patients are treated abroad under government sponsorship.',
+    },
+    {
+      question: 'What slows adoption of personalized medicine in Qatar?',
+      answer:
+        'Testing capacity and turnaround, genetic-counselling availability, reference-price cascades from Saudi Arabia and the UAE, and the small number of eligible patients per biomarker — not physician awareness. Research programmes therefore focus on pathway and committee behaviour rather than broad awareness surveys.',
+    },
+    {
+      question: 'How does Qatar compare with Saudi Arabia and the UAE in personalized medicine?',
+      answer:
+        'Qatar leads on population genomics per capita through the Qatar Genome Programme; Saudi Arabia has the larger patient volumes and the Saudi Genome Program; the UAE, through the Emirati Genome Programme and M42, is scaling fastest. Gulf launches typically sequence Saudi Arabia and the UAE first, then Qatar, because of reference pricing.',
+    },
+    {
+      question: 'What does BioNixus deliver for a Qatar personalized medicine study?',
+      answer:
+        'Addressable-patient sizing by biomarker, genomic testing pathway and capacity maps, HMC and MOPH committee evidence expectations, physician and laboratory adoption drivers, and patient-journey insight — structured for a launch, pricing, or access decision.',
+    },
+  ],
+  areaServed: ['Qatar'],
+};
+
 export const GCC_MIDDLE_EAST_SEGMENT_PAGES: SegmentMarketContent[] = [
   gccOtcDrugs,
   gccTablets,
@@ -2557,4 +2753,5 @@ export const GCC_MIDDLE_EAST_SEGMENT_PAGES: SegmentMarketContent[] = [
   middleEastBiomarkers,
   middleEastIvd,
   middleEastBiologics,
+  qatarPersonalizedMedicine,
 ];

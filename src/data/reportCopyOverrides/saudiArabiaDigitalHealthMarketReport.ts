@@ -11,14 +11,15 @@ type OverrideCopy = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 
 export const SAUDI_ARABIA_DIGITAL_HEALTH_COPY: OverrideCopy = {
   slug: SLUG,
-  title: 'Saudi Arabia Digital Health Market Report 2026',
-  metaTitle: 'Saudi Arabia Digital Health Market Report 2026 | BioNixus',
+  title: 'KSA Digital Health Market 2026: Saudi Arabia Size and Outlook',
+  metaTitle: 'KSA Digital Health Market 2026: Saudi Size & Outlook',
   metaDescription:
-    'Saudi digital health market ~USD 268M in 2026 (BioNixus analysis), ~17.6% CAGR: Vision 2030 transformation, Seha Virtual Hospital, Sehhaty, telehealth, AI/SaMD under SFDA, national EHR—decision-ready Gulf intelligence.',
+    'KSA digital health market is ~USD 268M in 2026, growing ~17.6% a year to ~USD 458M by 2030. Vision 2030, Seha Virtual Hospital, Sehhaty, SFDA SaMD rules.',
+  modifiedDate: '2026-09-03',
   heroLead:
-    'This briefing reads Saudi digital health where adoption is actually decided: government-led transformation under Vision 2030, flagship assets like the Seha Virtual Hospital and the Sehhaty platform, SFDA’s evolving software-as-a-medical-device and AI guidance, and procurement and integration realities that determine whether a digital solution scales beyond pilot.',
+    'The KSA digital health market (Saudi Arabia) is worth roughly USD 268 million in 2026 and is forecast to reach about USD 458 million by 2030, a ~17.6% CAGR (BioNixus analysis) — the largest national digital-health market in the GCC. Growth is government-led under Vision 2030: the Seha Virtual Hospital, the Sehhaty platform, a national EHR and exchange, SDAIA-backed AI, and SFDA software-as-a-medical-device guidance. Procurement and national-platform integration, not demand, decide whether a solution scales beyond pilot.',
   summaryPara1:
-    'Saudi Arabia is the GCC’s most ambitious digital-health transformer, with government policy—not private demand alone—driving adoption. BioNixus sizes the market at roughly USD 268 million in 2026, advancing toward about USD 458 million by 2030 at roughly 17.6% CAGR. Vision 2030 and the Health Sector Transformation Program anchor demand: the Seha Virtual Hospital, the Sehhaty patient platform, a national EHR and health-information exchange, SDAIA-backed AI, and a strong telehealth base. SFDA is building software-as-a-medical-device and AI-device guidance, while procurement runs through MOH, NUPCO, and the privatisation agenda. The binding questions are national-system integration, data governance, and clinical-workflow fit rather than technology novelty. Sizing reflects BioNixus market analysis, 2026.',
+    'The KSA digital health market makes Saudi Arabia the GCC’s most ambitious digital-health transformer, with government policy—not private demand alone—driving adoption. BioNixus sizes the market at roughly USD 268 million in 2026, advancing toward about USD 458 million by 2030 at roughly 17.6% CAGR. Vision 2030 and the Health Sector Transformation Program anchor demand: the Seha Virtual Hospital, the Sehhaty patient platform, a national EHR and health-information exchange, SDAIA-backed AI, and a strong telehealth base. SFDA is building software-as-a-medical-device and AI-device guidance, while procurement runs through MOH, NUPCO, and the privatisation agenda. The binding questions are national-system integration, data governance, and clinical-workflow fit rather than technology novelty. Sizing reflects BioNixus market analysis, 2026.',
   summaryPara2:
     'Use this report with the [Saudi Arabia healthcare market report](/saudi-arabia-healthcare-market-report) for macro context, the [SFDA market access strategy for Saudi Arabia](/sfda-market-access-strategy-saudi-arabia) when SaMD or AI-device classification is on your critical path, the [GCC digital health market report](/market-reports/gcc-digital-health-market-report) for Gulf-wide benchmarking, the [UAE digital health market report](/market-reports/uae-digital-health-market-report) for a contrasting emirate model, [digital-health research](/healthcare-market-research/therapy/digital-health) for programme design, and the [healthcare market research hub](/healthcare-market-research) to scope bilingual fieldwork.',
   marketAccessNotes:
@@ -30,6 +31,11 @@ export const SAUDI_ARABIA_DIGITAL_HEALTH_COPY: OverrideCopy = {
   methodologyParagraph:
     'Methodology combines BioNixus market analysis for sizing and CAGR bands with structured desk review of Vision 2030 Health Sector Transformation, MOH, SDAIA, and SFDA software-as-a-medical-device and AI public guidance, plus primary modules—clinician, administrator, and health-IT-leader interviews and adoption surveys where data is available. Because SaMD/AI classification, interoperability standards, and procurement models change on short cycles, regulatory and access statements should be revalidated before launch decisions. Figures are planning inputs rather than audited financials. Outputs are built for market access, digital-health commercial, and medical-affairs leadership and do not constitute regulatory or legal advice.',
   faqs: [
+    {
+      question: 'What is the KSA digital health market size in 2026?',
+      answer:
+        'The KSA digital health market — the Kingdom of Saudi Arabia — is roughly USD 268 million in 2026 and forecast to reach about USD 458 million by 2030, a ~17.6% CAGR (BioNixus analysis). That makes Saudi Arabia the largest single national digital-health market in the GCC, ahead of the UAE (~USD 96 million) and Qatar (~USD 33 million). The figure covers telehealth and virtual care, remote patient monitoring, AI-enabled diagnostics and clinical decision support, and patient-engagement platforms; it excludes core hospital IT and connected medical devices, which are reported separately. Growth is policy-driven: Vision 2030’s Health Sector Transformation Program funds the Seha Virtual Hospital, the Sehhaty app and a national EHR, so the addressable opportunity tracks MOH and NUPCO procurement cycles more than consumer demand. Treat the sizing as a planning band and revalidate against procurement signals before committing budget.',
+    },
     {
       question: 'How large is the Saudi Arabia digital health market in 2026?',
       answer:

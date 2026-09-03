@@ -32,7 +32,61 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
     },
     buildBreadcrumbSchema(breadcrumbItems),
     buildFAQSchema(content.faqs, { pageUrl: content.canonical }),
+    ...(content.rankedList
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            '@id': `${content.canonical}#ranked-list`,
+            name: content.rankedList.heading,
+            url: `${content.canonical}#ranked-list`,
+            numberOfItems: content.rankedList.items.length,
+            itemListOrder: 'https://schema.org/ItemListOrderAscending',
+            itemListElement: content.rankedList.items.map((item) => ({
+              '@type': 'ListItem',
+              position: item.rank,
+              name: item.name,
+              ...(item.url ? { url: item.url } : {}),
+              item: {
+                '@type': 'Organization',
+                name: item.name,
+                ...(item.url ? { url: item.url } : {}),
+                description: item.cells.join(' — '),
+              },
+            })),
+          },
+        ]
+      : []),
+    ...(content.lastUpdated
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: content.h1,
+            description: content.description,
+            mainEntityOfPage: content.canonical,
+            image: 'https://www.bionixus.com/og-image.png',
+            dateModified: content.lastUpdated,
+            author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
+            publisher: {
+              '@type': 'Organization',
+              name: 'BioNixus',
+              url: 'https://www.bionixus.com',
+              logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
+            },
+          },
+        ]
+      : []),
   ];
+
+  const lastUpdatedLabel = content.lastUpdated
+    ? new Date(`${content.lastUpdated}T00:00:00Z`).toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        timeZone: 'UTC',
+      })
+    : null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -54,6 +108,12 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
               {content.h1}
             </h1>
+            {lastUpdatedLabel && (
+              <p className="text-sm text-muted-foreground mb-4">
+                Updated{' '}
+                <time dateTime={content.lastUpdated}>{lastUpdatedLabel}</time>
+              </p>
+            )}
             <div className="space-y-4">
               {content.intro.map((para) => (
                 <p key={para.slice(0, 48)} className="text-lg text-muted-foreground leading-relaxed">
@@ -75,6 +135,86 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
             />
           </div>
         </section>
+
+        {content.rankedList && (
+          <section className="section-padding py-10" id="ranked-list">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+                {content.rankedList.heading}
+              </h2>
+              {content.rankedList.intro && (
+                <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">{content.rankedList.intro}</p>
+              )}
+              <div className="overflow-x-auto rounded-xl border border-border">
+                <table className="w-full text-sm">
+                  <thead className="bg-muted/40">
+                    <tr className="text-left">
+                      <th scope="col" className="px-4 py-3 font-semibold text-foreground w-12">
+                        #
+                      </th>
+                      <th scope="col" className="px-4 py-3 font-semibold text-foreground">
+                        Pharmacy
+                      </th>
+                      {content.rankedList.columns.map((col) => (
+                        <th key={col} scope="col" className="px-4 py-3 font-semibold text-foreground">
+                          {col}
+                        </th>
+                      ))}
+                      <th scope="col" className="px-4 py-3 font-semibold text-foreground">
+                        Source
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {content.rankedList.items.map((item) => (
+                      <tr key={item.rank} className="border-t border-border align-top">
+                        <td className="px-4 py-3 font-semibold text-foreground">{item.rank}</td>
+                        <td className="px-4 py-3 font-semibold text-foreground">
+                          {item.url ? (
+                            <a
+                              href={item.url}
+                              rel="nofollow noopener"
+                              target="_blank"
+                              className="text-primary hover:underline"
+                            >
+                              {item.name}
+                            </a>
+                          ) : (
+                            item.name
+                          )}
+                        </td>
+                        {item.cells.map((cell, idx) => (
+                          <td key={idx} className="px-4 py-3 text-muted-foreground leading-relaxed">
+                            {cell}
+                          </td>
+                        ))}
+                        <td className="px-4 py-3 text-muted-foreground leading-relaxed">
+                          {item.source ? (
+                            <a
+                              href={item.source.href}
+                              rel="nofollow noopener"
+                              target="_blank"
+                              className="text-primary hover:underline"
+                            >
+                              {item.source.label}
+                            </a>
+                          ) : (
+                            '—'
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {content.rankedList.footnote && (
+                <p className="text-xs text-muted-foreground leading-relaxed mt-4 max-w-3xl">
+                  {content.rankedList.footnote}
+                </p>
+              )}
+            </div>
+          </section>
+        )}
 
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">

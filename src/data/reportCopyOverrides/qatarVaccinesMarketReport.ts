@@ -15,7 +15,7 @@ export const QATAR_VACCINES_COPY: OverrideCopy = {
   summaryPara1:
     'BioNixus sizes the Qatar vaccine market at roughly USD 49 million in 2026, advancing toward about USD 84 million by 2030 at roughly 17.1% CAGR. Hamad-led campaigns, RSV neonatal allotment queuing, and sovereign cold-chain warehousing for conjugate lots shape access. Sizing reflects BioNixus market analysis, 2026.',
   summaryPara2:
-    'Use this report with the [Qatar healthcare market report](/qatar-healthcare-market-report), the [GCC vaccines market report](/market-reports/gcc-vaccines-market-report), and the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for regional depth. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
+    'Use this report with the [Qatar healthcare market report](/qatar-healthcare-market-report), the [GCC vaccine market 2026 report](/market-reports/gcc-vaccines-market-report), and the [Saudi Arabia vaccine market report](/market-reports/saudi-arabia-vaccines-market-report) for regional depth. BioNixus vaccine trackers sit alongside biologics, biosimilars, oncology, and rare-disease insight programmes.',
   faqs: [
     {
       question: 'How large is the Qatar vaccine market in 2026?',
