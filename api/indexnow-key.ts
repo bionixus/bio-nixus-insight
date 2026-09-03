@@ -3,7 +3,13 @@ import path from 'node:path';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
-import { buildLcpPreloadTag, getClientAssetHints } from '../lib/ssr-client-asset-hints.mjs';
+import {
+  buildLcpPreloadTag,
+  getClientAssetHints,
+  SSR_HTML_CACHE_CONTROL,
+  SSR_HTML_CDN_CACHE_CONTROL,
+  SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL,
+} from '../lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
@@ -845,7 +851,10 @@ async function handleSsrRequest(
   const page = injectHtml(template, pathname, appHtml, helmetData, initialData);
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', SSR_HTML_CACHE_CONTROL);
+  const cdnCache = notFound ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL;
+  res.setHeader('CDN-Cache-Control', cdnCache);
+  res.setHeader('Vercel-CDN-Cache-Control', cdnCache);
   res.status(notFound ? 404 : 200).send(page);
 }
 
