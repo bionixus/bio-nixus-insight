@@ -124,12 +124,57 @@ const CaseStudies = () => {
   // Split: first is featured, rest are secondary
   const [featured, ...rest] = filteredList;
 
+  const CASE_STUDIES_URL = 'https://www.bionixus.com/case-studies';
+  const hubListItems =
+    caseStudies.length > 0
+      ? caseStudies.map((cs) => ({ slug: cs.slug, title: cs.title }))
+      : [
+          { slug: 'biologics-market-analysis-uae', title: 'Biologics Market Analysis UAE' },
+          { slug: 'cns-case-study', title: 'CNS Case Study' },
+          { slug: 'gcc-oncology-market', title: 'GCC Oncology Market' },
+          { slug: 'uae-influenza-vaccines-report-2025-2026', title: 'UAE Influenza Vaccines Report 2025–2026' },
+        ];
+  const caseStudiesHubJsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': `${CASE_STUDIES_URL}#collection`,
+      name: 'Healthcare & Pharmaceutical Case Studies',
+      description:
+        'Explore BioNixus case studies in healthcare and pharmaceutical market research across Europe, the Middle East, and Africa.',
+      url: CASE_STUDIES_URL,
+      isPartOf: { '@id': 'https://www.bionixus.com/#website' },
+      about: { '@id': 'https://www.bionixus.com/#organization' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'BioNixus healthcare case studies',
+      numberOfItems: hubListItems.length,
+      itemListElement: hubListItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.title,
+        url: `${CASE_STUDIES_URL}/${item.slug}`,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Case Studies', item: CASE_STUDIES_URL },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare & Pharmaceutical Case Studies | BioNixus"
         description="Explore BioNixus case studies in healthcare and pharmaceutical market research across Europe, the Middle East, and Africa. Proposal in 24 hours."
         canonical="/case-studies"
+        jsonLd={caseStudiesHubJsonLd}
       />
       <Navbar />
       <main>

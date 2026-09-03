@@ -21,7 +21,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import {
   buildServiceSchema,
   buildFAQSchema,
@@ -203,7 +202,6 @@ export default function ConsumerMarketResearchPortal() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const jsonLd = [
-    buildCanonicalOrganization(),
     buildServiceSchema(),
     buildFAQSchema(FAQ_ITEMS, {
       pageUrl: 'https://www.bionixus.com/consumer-market-research',

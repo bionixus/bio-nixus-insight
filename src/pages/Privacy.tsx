@@ -24,7 +24,7 @@ const Privacy = () => {
 
           <h2 className="mt-8 text-xl font-semibold">2. Data controller</h2>
           <p>
-            BioNixus, headquartered at 1309 Coffeen Ave, Sheridan, WY 82801, USA, with a UK office at 128 City Road, London, EC1V 2NX, GB, is the data controller for the personal data we process. For questions about this policy or your data, contact us at{' '}
+            BioNixus, headquartered at 1309 Coffeen Ave Ste 1200, Sheridan, WY 82801, USA, with a UK office at 128 City Road, London, EC1V 2NP, GB, is the data controller for the personal data we process. For questions about this policy or your data, contact us at{' '}
             <a href="mailto:admin@bionixus.com" className="text-primary underline hover:no-underline">admin@bionixus.com</a>.
           </p>
 

@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { buildOrganizationSchema } from '@/lib/seo/schemas';
 
 const CANONICAL = 'https://www.bionixus.com/pharmaceutical-market-research-provider';
 
@@ -76,8 +75,6 @@ export default function PharmaceuticalMarketResearchProvider() {
     ],
   };
 
-  const organizationSchema = buildOrganizationSchema();
-
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -116,7 +113,6 @@ export default function PharmaceuticalMarketResearchProvider() {
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

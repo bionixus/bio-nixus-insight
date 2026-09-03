@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import NotFound from '@/pages/NotFound';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import {
   buildFAQSchema,
   buildBreadcrumbSchema,
@@ -50,7 +49,6 @@ export default function IndustryGlobalHubPage() {
   const canonicalUrl = `${BASE_URL}/market-research/${config.slug}`;
 
   const jsonLd = [
-    buildCanonicalOrganization(),
     {
       ...buildServiceSchema(),
       name: `BioNixus ${config.displayName} Market Research`,

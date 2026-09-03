@@ -152,23 +152,6 @@ const FAQ = () => {
     ],
   };
 
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': 'https://www.bionixus.com/#organization',
-    name: 'BioNixus',
-    foundingDate: '2012',
-    url: 'https://www.bionixus.com',
-    logo: 'https://www.bionixus.com/bionixus-logo.webp',
-    sameAs: [
-      'https://www.linkedin.com/company/bionixus/',
-      'https://www.facebook.com/Bionixus',
-      'https://www.instagram.com/bionixus_',
-      'https://www.crunchbase.com/organization/bionixus',
-      'https://www.goodfirms.co/company/bionixus-market-research',
-    ],
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -180,7 +163,6 @@ const FAQ = () => {
         <link rel="canonical" href="https://www.bionixus.com/faq" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       </Helmet>
       <Navbar />
       <main>

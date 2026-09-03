@@ -105,7 +105,7 @@ export const aboutPageCopyAr: AboutPageCopy = {
     },
     {
       title: 'المملكة المتحدة — لندن (مكتب التأسيس)',
-      lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'],
+      lines: ['128 City Road', 'London, EC1V 2NP', '+44 7727 666682'],
     },
     {
       title: 'مصر — القاهرة الكبرى (المكتب الإقليمي للشرق الأوسط وشمال أفريقيا)',

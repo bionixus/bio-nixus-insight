@@ -6,7 +6,6 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import {
   buildBreadcrumbSchema,
   buildFAQSchema,
-  buildOrganizationSchema,
   buildServiceSchema,
 } from '@/lib/seo/schemas';
 
@@ -247,7 +246,6 @@ const faqItems = [
 const totalIndications = therapyAreas.reduce((sum, area) => sum + area.indications.length, 0);
 
 const jsonLd = [
-  buildOrganizationSchema(),
   {
     ...buildServiceSchema(),
     name: 'Pharmaceutical Therapy Areas Market Research',
