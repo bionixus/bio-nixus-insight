@@ -95,8 +95,8 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // CTR wave 10 (2026-09-03): "iqvia competitors" = 36 impr @ pos 6.3, 0% CTR — lead with exact query head term.
+    title: 'IQVIA Competitors & Alternatives: Top 10 Ranked (2026)',
     description:
       'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
   },
@@ -163,6 +163,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Japan medical devices market $41B in 2026 → ~$64B by 2032. PMDA Class I–IV (todokede/ninsho/shonin), NHI listing & hospital procurement — BioNixus market report.',
   },
+  '/japan-general-surgical-devices-market': {
+    title: 'Japan General Surgical Devices Market 2026 | PMDA & NHI',
+    description:
+      'Japan general surgical devices market 2026 — stapling, energy, laparoscopy, PMDA pathways, NHI functional categories, and OR procurement intelligence by BioNixus.',
+  },
+  '/india-medical-devices-market-report': {
+    title: 'India Medical Devices Market 2026: $12B Size & CDSCO MDR',
+    description:
+      'India medical devices market $12B in 2026, 8% CAGR. CDSCO MDR 2017 registration, PLI manufacturing, NPPA price regulation, and hospital procurement — BioNixus report.',
+  },
   '/gcc-market-access-guide': {
     title: 'GCC Market Access 2026: Pharma & MedTech Entry Guide',
     description:
@@ -224,7 +234,8 @@ export const CTR_SEO_BY_PATH = {
       'Top pharmaceutical analytics companies worldwide 2026 — real-world data, HEOR, syndicated Rx analytics & primary research ranked for pharma buyers.',
   },
   '/insights/top-healthcare-market-research-companies-usa-2026': {
-    title: 'Top 10 Healthcare Market Research Companies USA (2026) | Ranked',
+    // CTR wave 10 (2026-09-03): 527 impr @ 0.57% CTR @ pos 28.6 — lead with exact query "healthcare market research companies".
+    title: 'Healthcare Market Research Companies USA (2026) | Top 10',
     description:
       'Healthcare market research companies USA 2026 — top 10 ranked for IRB-compliant HCP, KOL mapping, PBM payer & HEOR primary research. Compare BioNixus & peers.',
   },
@@ -492,9 +503,9 @@ export const CTR_SEO_BY_PATH = {
       'Top healthcare market research companies worldwide 2026 — global ranked guide for HCP, payer & HEOR primary research. Compare BioNixus, IQVIA, Kantar.',
   },
   '/market-reports/gcc-immunology-biologics-market-report': {
-    title: 'GCC Immunology & Biologics Market 2026: Size & Access',
+    title: 'GCC Biologics Market 2026: Size, Biosimilars & SFDA Access',
     description:
-      'GCC immunology and biologics market 2026 — market size, biosimilar competition, SFDA/MOHAP access and tender dynamics across the Gulf. Report by BioNixus.',
+      'GCC biologics market 2026 — immunology market size, biosimilar competition, SFDA/MOHAP access and NUPCO tender dynamics across the Gulf. Report by BioNixus.',
   },
   '/market-reports/gcc-respiratory-market-report': {
     title: 'GCC Respiratory Market 2026: Size, Tenders & Forecast',

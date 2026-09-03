@@ -667,6 +667,10 @@ const GccMarketAccessGuide = () => {
                   q: 'What evidence do GCC hospital formulary committees typically require?',
                   a: 'Committees request clinical efficacy summaries, safety profiles, dosing convenience, budget impact versus comparators, and local real-world use data where available. BioNixus designs advisory boards and payer research to surface the specific questions each country\'s committee asks before listing.',
                 },
+                {
+                  q: 'How does medical device registration differ from pharmaceutical registration in the GCC?',
+                  a: 'Medical devices follow SFDA, MOHAP, and emirate-specific pathways distinct from drug dossiers: classification (Class I–III or risk-based equivalents), technical files, post-market surveillance, and often separate distributor licensing. Saudi SFDA requires a local authorised representative for foreign manufacturers; UAE MOHAP and DHA/DOH may require emirate-level import permits even after central listing. BioNixus maps device-specific evidence — clinical evaluation reports, equivalence claims, and hospital procurement categories — alongside pharma access programmes so launch teams do not treat devices as a regulatory afterthought.',
+                },
               ].map((faq) => (
                 <details key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <summary className="text-lg font-display font-semibold text-foreground cursor-pointer list-none">

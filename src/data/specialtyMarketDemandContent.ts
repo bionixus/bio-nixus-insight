@@ -381,23 +381,26 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
   intro: [
     'Japan’s general surgical devices market sits inside the world’s third-largest medical device economy — with OR adoption shaped by PMDA classification, NHI functional category pricing, and hospital capital planning rather than US-style IDN contracts alone. BioNixus researches stapler, energy, laparoscopy, clip, and open-surgery instrument decisions with surgeons, OR nurses, and hospital procurement so launch teams know which accounts move volume.',
     'Generic “Japan medical devices” reports bury general surgery inside imaging and endoscopy giants. This page isolates the surgical-instruments and OR consumables decision set so OEMs can brief Japan without competing for attention against MRI and endoscopy headlines.',
+    'Japan’s aging population sustains high general surgery volumes — cholecystectomy, colectomy, hernia repair, and bariatric procedures remain among the most common inpatient surgeries. Minimally invasive technique migration continues to shift instrument baskets from open trays toward laparoscopic and energy platforms, but community hospitals still run substantial open-case volumes that sustain legacy SKU demand.',
+    'PMDA Class II–IV pathways, JMDN code selection, and Chuikyo NHI listing windows create a regulatory calendar that global launch teams must sequence against hospital capital cycles. A device cleared in the US or EU may still wait six months for the next NHI functional category listing — BioNixus maps that gap so portfolio committees set realistic Japan revenue timing.',
+    'BioNixus programmes are scoped to one decision — launch sequencing, competitive defence, or portfolio rationalisation — with deliverables suitable for global portfolio committees and Japanese affiliate commercial teams.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
     {
       name: 'OR adoption & technique migration',
       detail:
-        'Laparoscopic versus open vs robotic-adjacent instrument use, and what changes stapling, energy, and clip preference.',
+        'Laparoscopic versus open versus robotic-adjacent instrument use, and what changes stapling, energy, and clip preference. BioNixus maps technique migration curves by hospital tier — university hospitals adopt MIS platforms 12–18 months before community hospitals, creating a predictable cascade window for competitive defence and launch sequencing research.',
     },
     {
       name: 'Hospital procurement & capital cycles',
       detail:
-        'How Japanese hospitals score price, service contracts, training burden, and total cost of ownership for general surgery SKUs.',
+        'How Japanese hospitals score price, service contracts, training burden, and total cost of ownership for general surgery SKUs. Procurement committees weight service response SLAs, spare-parts availability, and OR nurse retraining hours alongside unit price — a dynamic that favours incumbents with established workflow integration.',
     },
     {
       name: 'PMDA class & predicate strategy',
       detail:
-        'Classification and clinical-evidence expectations that shape Japan entry timing for new surgical platforms.',
+        'Classification and clinical-evidence expectations that shape Japan entry timing for new surgical platforms. PMDA sōdan consultations clarify whether overseas clinical data is accepted, which JMDN code applies, and whether ninsho (certification body) or shonin (PMDA approval) is required — decisions that can add or subtract six months from launch timelines.',
     },
     {
       name: 'NHI category pricing implications',
@@ -412,7 +415,17 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
     {
       name: 'Training & KOL cascade mapping',
       detail:
-        'Which university hospitals and high-volume community ORs actually set technique norms regionally.',
+        'Which university hospitals and high-volume community ORs actually set technique norms regionally. BioNixus maps KOL influence beyond publication counts — OR nurse trainer networks, distributor clinical specialist relationships, and regional referral gravity determine how fast new platforms spread from Tokyo and Osaka university hospitals to community ORs.',
+    },
+    {
+      name: 'Sakigake & device-lag reduction',
+      detail:
+        'Japan Sakigake priority designation compresses PMDA review to ~6 months for devices with unmet medical need and early Japan development plans. BioNixus analyses which general surgery platforms qualify, how device-lag versus US/EU clearance affects hospital procurement timing, and whether concurrent global launch is commercially realistic given Chuikyo NHI listing windows.',
+    },
+    {
+      name: 'Distributor & MAH channel strategy',
+      detail:
+        'Foreign OEMs without a Japanese licensed entity must appoint a Marketing Authorization Holder (MAH) or Designated MAH. Distributor clinical specialists jointly shape OR familiarity with manufacturer field teams. BioNixus researches channel partner effectiveness, service contract satisfaction, and training programme quality — factors that often decide platform switches as much as clinical performance claims.',
     },
   ],
   demandDrivers: {
@@ -420,7 +433,7 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
     drivers: [
       {
         title: 'Aging surgical volumes',
-        detail: 'Older-patient procedure mix lifts demand for efficient, low-complication general surgery workflows.',
+        detail: 'Older-patient procedure mix lifts demand for efficient, low-complication general surgery workflows. Japan has the world highest proportion of population over 65, sustaining cholecystectomy, colectomy, hernia repair, and bariatric procedure volumes that drive stapling, energy, and clip consumption across university and community hospitals.',
       },
       {
         title: 'Minimally invasive migration',
@@ -449,6 +462,33 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
     paragraphs: [
       'Japan’s hospital density and NHI coverage create high baseline procedure volume, but SKU choice concentrates in university and high-volume community hospitals first. Distributors and manufacturer clinical specialists jointly shape OR familiarity; service and training often decide switches as much as stapling performance claims.',
       'BioNixus designs Japan general surgery programmes around a single decision — launch sequencing, competitive defence, or portfolio rationalisation — then recruits surgeons, OR nurses, biomedical engineers, and procurement with verified practice settings.',
+      'The competitive landscape spans domestic champions (Olympus surgical instruments, Terumo stapling, Nipro consumables) and multinational portfolios (Ethicon, Medtronic surgical, Intuitive-adjacent instrument ecosystems). University hospitals in Tokyo, Osaka, and Nagoya set technique norms that cascade to regional community hospitals within 12–18 months — making KOL cascade mapping more predictive than national share data alone.',
+      'Hospital procurement committees evaluate total cost of ownership across capital equipment leases, disposable contract pricing, service response times, and OR nurse training burden. A stapling platform that wins on clinical performance but requires 40 hours of nurse retraining may lose to an incumbent with inferior outcomes but established workflow integration.',
+    ],
+  },
+  calendarBlocks: {
+    heading: '2026 Japan general surgical device planning checkpoints',
+    items: [
+      {
+        period: 'Q1 2026 — PMDA consultation & JMDN scoping',
+        detail:
+          'Confirm device class, predicate strategy, and whether Sakigake priority review applies. Commission surgeon and OR nurse workflow research before dossier lock.',
+      },
+      {
+        period: 'Q2 2026 — Chuikyo April NHI listing window',
+        detail:
+          'April is the primary NHI functional category revision cycle. Devices missing this window wait until October — model revenue impact and run competitive defence research on incumbent platforms.',
+      },
+      {
+        period: 'Q3 2026 — hospital capital & procurement season',
+        detail:
+          'Japanese fiscal year starts April; Q3 sees capital budget execution and disposable contract renewals. Run procurement committee and biomedical engineering interviews during active evaluation windows.',
+      },
+      {
+        period: 'Q4 2026 — Chuikyo October listing & 2027 sequencing',
+        detail:
+          'Second annual NHI revision window. Re-forecast adoption curves and lock 2027 KOL training investments against expected listing and hospital procurement cycles.',
+      },
     ],
   },
   signalGrid: {
@@ -458,6 +498,8 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
       { label: 'Stapling & clip systems', signal: 'High volume; loyalty tied to OR familiarity and complication risk.' },
       { label: 'Laparoscopic instruments', signal: 'Capex plus disposable mix; committee TCO scrutiny rising.' },
       { label: 'Open surgery instrumentation', signal: 'Still material in community hospitals and selected case types.' },
+      { label: 'Robotic-adjacent instruments', signal: 'Da Vinci ecosystem spillover reshapes stapling and energy preferences in high-volume centres.' },
+      { label: 'Reusable vs disposable mix', signal: 'NHI category pricing and environmental policies push hospitals toward reusables in selected categories.' },
     ],
   },
   audiences: [
@@ -465,8 +507,22 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
     { audience: 'OR nursing leads', description: 'Workflow and setup stakeholders who make or break adoption.' },
     { audience: 'Hospital procurement / VAS', description: 'Committees scoring price, service, and standardization.' },
     { audience: 'Biomedical engineering', description: 'Maintenance, capital, and inventory gatekeepers.' },
+    { audience: 'Distributor clinical specialists', description: 'Field teams who train OR staff and influence platform familiarity before procurement votes.' },
+    { audience: 'University hospital KOLs', description: 'Technique-setters whose adoption cascades to regional community hospitals within 12–18 months.' },
   ],
-  whyBionixus: SHARED_WHY,
+  whyBionixus: [
+    'Primary research with verified Japanese surgeons, OR nurses, biomedical engineers, and hospital procurement committees — not syndicated panel data averaged across APAC',
+    'PMDA Class I–IV pathway and JMDN/NHI functional category intelligence scoped to general surgical instruments and OR consumables',
+    'KOL cascade mapping across Tokyo, Osaka, and Nagoya university hospitals that set technique norms for regional community OR adoption',
+    'Competitive objection libraries for stapling, energy, laparoscopy, and clip platforms against Olympus-adjacent workflows and multinational portfolios',
+    'Chuikyo NHI listing window planning aligned to April and October revision cycles — modelling revenue impact when devices miss a listing quarter',
+    'Training burden and OR nurse workflow research that predicts adoption speed beyond surgeon enthusiasm scores alone',
+    'Bilingual Japanese–English fieldwork with medical terminology reviewed by local advisors before recruitment begins',
+    'Decision-grade deliverables in 4–6 weeks — scoped to one portfolio question (launch, defence, or rationalisation) rather than generic market sizing subscriptions',
+    'Integrated reporting suitable for global portfolio committees and Japanese affiliate commercial teams reviewing launch sequencing decisions',
+    'Cross-links to Japan medical devices market report and GCC surgical market intelligence for multi-market portfolio context',
+    'Request a scoped briefing for Japan general surgical device research via the BioNixus contact form today.',
+  ],
   relatedLinks: [
     { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
     { to: '/pharmaceutical-market-research-japan', label: 'Pharmaceutical market research Japan' },
@@ -489,6 +545,21 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
       question: 'Does BioNixus recruit Japanese surgeons for device research?',
       answer:
         'Yes — verified surgeons, OR nurses, and procurement stakeholders, with instruments designed for Japanese hospital workflow and reporting suitable for global portfolio committees.',
+    },
+    {
+      question: 'What is the Japan general surgical devices market size in 2026?',
+      answer:
+        'Japan’s general surgical instruments and OR consumables segment is estimated at USD 3–4 billion within the broader USD 41 billion medical device market. Stapling, energy, and laparoscopic platforms account for the majority of value; open surgery instrumentation remains material in community hospitals. Growth is driven by aging surgical volumes, MIS migration, and premium innovation listings under NHI functional categories C1/C2. Olympus, Terumo, Ethicon, and Medtronic portfolios dominate stapling and energy; domestic manufacturers influence surgeon preference research especially in community hospital segments where service contracts and training relationships outweigh clinical differentiation claims.',
+    },
+    {
+      question: 'How long does PMDA approval take for general surgical devices in Japan?',
+      answer:
+        'Class II devices via ninsho (certification body) typically take 6–9 months; Class III/IV shonin (PMDA approval) takes 9–12 months standard or ~6 months under Sakigake priority designation. NHI listing adds 3–6 months depending on Chuikyo biannual revision windows (April and October). Total launch-to-revenue timelines of 18–24 months are common for innovative surgical platforms. BioNixus recommends mapping PMDA sōdan consultation outcomes and JMDN code selection against hospital capital planning cycles before committing to Japan launch sequencing — a six-month NHI listing gap can defer revenue materially even after regulatory clearance.',
+    },
+    {
+      question: 'How does BioNixus support Japan general surgical device launches?',
+      answer:
+        'BioNixus runs primary research with verified Japanese surgeons, OR nurses, biomedical engineers, and hospital procurement committees. Programmes cover competitive objection libraries, KOL cascade mapping, NHI category pricing implications, training burden assessment, and launch sequencing against PMDA and Chuikyo calendars — scoped to one portfolio decision rather than generic market sizing. Typical deliverables include executive summaries mapped to one commercial decision, stakeholder segmentation with influence and objection themes, competitive landscape dashboards, and 30/60/90 action plans with evidence gaps flagged. Engagements run four to six weeks from objective alignment to draft readout, with bilingual Japanese–English execution and medical terminology reviewed by local advisors before fieldwork begins.',
     },
   ],
   areaServed: ['Japan'],

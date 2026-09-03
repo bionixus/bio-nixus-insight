@@ -72,6 +72,27 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
           'BioNixus maintains disciplined interview neutrality, structured summarization with source grading, and explicit separation between intelligence conclusions and marketing claims—preserving strategic speed without regulatory recklessness.',
         ],
       },
+      {
+        title: 'Pipeline monitoring and launch-readiness intelligence across EMEA and GCC',
+        paragraphs: [
+          'Pharmaceutical competitive intelligence must track more than competitor press releases. BioNixus monitors clinical trial registry updates (ClinicalTrials.gov, EU CTR, WHO ICTRP), regulatory filing milestones (FDA, EMA, SFDA, MOHAP), congress abstract releases (ASCO, ESMO, EULAR, ACC), and patent expiry calendars to build probability-weighted launch timelines.',
+          'For GCC markets, intelligence modules extend to NUPCO tender award patterns, SFDA registration queues, and hospital formulary committee decisions that signal competitive displacement before revenue impact appears in syndicated data. Primary probe interviews with pharmacists and procurement managers validate whether pipeline threats are translating into account-level switching.',
+        ],
+      },
+      {
+        title: 'Win/loss analysis and competitive messaging defence',
+        paragraphs: [
+          'Structured win/loss research reveals why accounts chose or rejected a therapy — objections that syndicated dashboards cannot surface. BioNixus designs blinded and semi-blinded interview protocols that capture prescriber rationale, pharmacist substitution behaviour, payer formulary positioning, and tender evaluation criteria without compromising compliance.',
+          'Competitive messaging defence programmes test how incumbent and challenger narratives perform against real clinical and access objections. Outputs feed medical affairs education priorities, sales enablement, and HEOR counter-evidence planning — closing the loop between intelligence gathering and commercial response.',
+        ],
+      },
+      {
+        title: 'When to choose BioNixus over IQVIA or Kantar for competitive intelligence',
+        paragraphs: [
+          'IQVIA and Kantar excel at syndicated prescription data, longitudinal claims panels, and large-scale quantitative tracking. BioNixus wins when teams need primary qualitative and mixed-methods intelligence scoped to a specific competitive decision — launch sequencing in Saudi Arabia, tender defence in Egypt, or KOL influence mapping in the UAE — with fieldwork executed in local languages within weeks rather than months.',
+          'For a full comparison of when BioNixus replaces versus complements IQVIA, see the IQVIA alternatives and competitors guide. Many manufacturers use IQVIA for data subscriptions and BioNixus for decision-grade primary research in markets where syndicated coverage is thin or outdated.',
+        ],
+      },
     ],
     'clinical-trial-support': [
       {
@@ -111,6 +132,28 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
         paragraphs: [
           'When qualitative payer hesitations cluster around extrapolation realism, caregiver burden understatement, dosing regimen adherence doubts, subgroup fragility skepticism—or operational implementation hesitations masking economic reluctance—HEOR refinement becomes targeted instead of exploratory.',
           'BioNixus coordinates iterative loops sparing clients from static models misaligned with live discourse encountered in stakeholder interviews.',
+        ],
+      },
+      {
+        title: 'GCC market access: SFDA, NUPCO, MOHAP, and emirate-specific pathways',
+        paragraphs: [
+          'Gulf market access is not a single playbook. Saudi Arabia requires SFDA registration followed by NUPCO tender placement for public hospital volume; UAE splits between MOHAP federal pathways and emirate authorities (DHA Dubai, DOH Abu Dhabi); Kuwait, Qatar, Bahrain, and Oman each maintain distinct pricing and procurement frameworks.',
+          'BioNixus maps country-specific access sequences — registration timing, pricing negotiation windows, formulary committee calendars, and tender evaluation criteria — so launch teams sequence evidence production and fieldwork against real decision gates rather than generic Gulf averages.',
+          'SFDA Economic Evaluation System (EES), mandatory from July 2025, integrates pharmacoeconomic and budget-impact evidence at registration. Programs designed for Saudi access must anticipate EES requirements during protocol design, not retrofit them at submission.',
+        ],
+      },
+      {
+        title: 'EMEA HTA submission support: NICE, G-BA, HAS, and national fragmentation',
+        paragraphs: [
+          'European market access requires navigating distinct HTA bodies with different evidence thresholds. NICE technology appraisals in England demand cost-per-QALY analysis against GBP 20,000–30,000 willingness-to-pay thresholds; G-BA AMNOG assessments in Germany focus on additional clinical benefit versus appropriate comparator; HAS CEPS pricing in France uses transparency committee recommendations.',
+          'BioNixus payer research modules identify the specific objections each HTA body raises for your therapy class — extrapolation concerns, subgroup fragility, caregiver burden, implementation barriers — so HEOR teams refine models before submission rather than after rejection.',
+        ],
+      },
+      {
+        title: 'Tender defence and formulary positioning research',
+        paragraphs: [
+          'Hospital formulary committees and centralized procurement bodies (NUPCO, HLL Lifecare India, NHS trust formularies) evaluate products on clinical efficacy, budget impact, operational feasibility, and competitive positioning. BioNixus designs research that surfaces the specific evaluation criteria each committee applies — often undocumented in public procurement rules.',
+          'Tender defence programmes combine win/loss analysis on prior awards, competitive pricing intelligence, and stakeholder interviews with pharmacy directors and procurement managers to build evidence packages that survive committee scrutiny and price negotiation rounds.',
         ],
       },
     ],
