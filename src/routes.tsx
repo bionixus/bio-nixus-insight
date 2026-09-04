@@ -42,7 +42,7 @@ import MarketResearch from '@/pages/MarketResearch';
 import WhatIsMarketStudy from '@/pages/WhatIsMarketStudy';
 import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
-import { buildIndustryDirectoryRoutes } from '@/data/industryDirectoryRoutes';
+import { buildCompanyDirectoryRoutes } from '@/data/companyDirectoryRoutes';
 import { buildCompetitorAlternativeRoutes } from '@/data/competitorAlternativeRoutes';
 import { buildArPharmaDirectoryRoutes } from '@/data/arPharmaDirectoryRoutes';
 import CountryResearchBriefTemplate from '@/pages/CountryResearchBriefTemplate';
@@ -117,6 +117,7 @@ import MarketResearchKsa from '@/pages/MarketResearchKsa';
 import MarketResearchSaudi from '@/pages/MarketResearchSaudi';
 import MarketResearchKuwait from '@/pages/MarketResearchKuwait';
 import MarketResearchQatar from '@/pages/MarketResearchQatar';
+import MarketResearchGcc from '@/pages/MarketResearchGcc';
 import MarketResearchOman from '@/pages/MarketResearchOman';
 import MarketResearchBahrain from '@/pages/MarketResearchBahrain';
 import MarketResearchEgypt from '@/pages/MarketResearchEgypt';
@@ -210,6 +211,7 @@ import {
   CaseStudy,
   PressReleasePage,
   UaePharmaCompanies,
+  DubaiPharmaCompanies,
   KuwaitPharmaCompanies,
   SaudiPharmaCompanies,
   EgyptPharmaCompanies,
@@ -342,7 +344,6 @@ import HealthcareMarketResearchChina from '@/pages/HealthcareMarketResearchChina
 import HealthcareMarketResearchDenmark from '@/pages/HealthcareMarketResearchDenmark';
 import HealthcareMarketResearchNorway from '@/pages/HealthcareMarketResearchNorway';
 import HealthcareMarketResearchFrance from '@/pages/HealthcareMarketResearchFrance';
-import HealthcareMarketResearchInUae from '@/pages/HealthcareMarketResearchInUae';
 import HealthcareMarketResearchInKuwait from '@/pages/HealthcareMarketResearchInKuwait';
 import HealthcareMarketResearchInQatar from '@/pages/HealthcareMarketResearchInQatar';
 import HealthcareMarketResearchInBahrain from '@/pages/HealthcareMarketResearchInBahrain';
@@ -476,6 +477,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/market-research-saudi', element: <MarketResearchSaudi /> },
   { path: '/market-research-kuwait', element: <MarketResearchKuwait /> },
   { path: '/market-research-qatar', element: <MarketResearchQatar /> },
+  { path: '/market-research-gcc', element: <MarketResearchGcc /> },
   { path: '/market-research-oman', element: <MarketResearchOman /> },
   { path: '/market-research-bahrain', element: <MarketResearchBahrain /> },
   { path: '/market-research-egypt', element: <MarketResearchEgypt /> },
@@ -574,6 +576,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/pharmaceutical-companies-kuwait', element: suspensePage(<KuwaitPharmaCompanies />) },
   { path: '/pharmaceutical-companies-saudi-arabia', element: suspensePage(<SaudiPharmaCompanies />) },
   { path: '/pharmaceutical-companies-uae', element: suspensePage(<UaePharmaCompanies />) },
+  { path: '/pharmaceutical-companies-dubai', element: suspensePage(<DubaiPharmaCompanies />) },
   { path: '/insights/top-global-healthcare-market-research-companies-2026', element: <TopGlobalHealthcareMarketResearchCompanies2026 /> },
   { path: '/insights/top-pharmaceutical-analytics-companies-worldwide-2026', element: <TopPharmaceuticalAnalyticsCompaniesWorldwide2026 /> },
   { path: '/insights/best-global-market-research-companies-pharma-2026', element: <BestGlobalMarketResearchCompaniesPharma2026 /> },
@@ -788,7 +791,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/b2b-industries', element: <IndustrySegmentPage slug="b2b" /> },
   { path: '/b2c-industries', element: <IndustrySegmentPage slug="b2c" /> },
   ...buildIndustryMatrixRoutes(),
-  ...buildIndustryDirectoryRoutes(),
+  ...buildCompanyDirectoryRoutes(),
   ...buildArPharmaDirectoryRoutes(),
   { path: '/ar/insights/top-market-research-companies-uae-2026', element: <Navigate to="/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026" replace /> },
   { path: '/ar/insights/top-market-research-companies-saudi-arabia-2026', element: <Navigate to="/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026" replace /> },
@@ -840,7 +843,8 @@ const rawRoutes: RouteObject[] = [
   { path: '/healthcare-market-research-norway', element: <HealthcareMarketResearchNorway /> },
   { path: '/healthcare-market-research-france', element: <HealthcareMarketResearchFrance /> },
   { path: '/healthcare-market-research-germany', element: <Navigate to="/healthcare-market-research/germany" replace /> },
-  { path: '/healthcare-market-research-in-uae', element: <HealthcareMarketResearchInUae /> },
+  // 301 at the edge/server via config/legacy-redirects.json; client-side fallback for SPA navigations.
+  { path: '/healthcare-market-research-in-uae', element: <Navigate to="/healthcare-market-research/uae" replace /> },
   { path: '/healthcare-market-research-kuwait', element: <HealthcareMarketResearchInKuwait /> },
   { path: '/healthcare-market-research-qatar', element: <HealthcareMarketResearchInQatar /> },
   { path: '/healthcare-market-research-bahrain', element: <HealthcareMarketResearchInBahrain /> },

@@ -49,6 +49,7 @@ export default function MarketResearchCountryLanding({
     deliverables,
     decisionBlueprint,
     hubLinkLabel,
+    areaServedType,
   } = content;
 
   const isRtl = canonical.startsWith('/ar/');
@@ -65,7 +66,7 @@ export default function MarketResearchCountryLanding({
       name: h1,
       serviceType: primaryKeyword,
       areaServed: {
-        '@type': 'Country',
+        '@type': areaServedType ?? 'Country',
         name: countryLabel,
       },
       provider: {

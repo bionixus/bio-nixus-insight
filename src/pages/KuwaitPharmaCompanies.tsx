@@ -39,6 +39,7 @@ import {
   ReportReadingProgress,
 } from '@/components/report-conversion';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
+import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import { buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('kuwait');
@@ -964,6 +965,7 @@ return (
             <Link to="/kuwait-healthcare-market-report" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Kuwait Healthcare Market Report <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/kuwait-medical-devices-market-report" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Kuwait Medical Devices Market Report <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
           </div>
+          <CountryDirectoryLinks country="kuwait" excludePath="/pharmaceutical-companies-kuwait" compact className="mt-10" />
         </div></section>
 
         <section className="scroll-mt-28 py-12 md:py-14 bg-muted/40 border-y border-border/70" id="faq">

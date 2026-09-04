@@ -180,7 +180,7 @@ const UaeInfluenzaVaccineReport = () => (
                 UAE Healthcare Market Report 2026
               </Link>{' '}
               and our{' '}
-              <Link to="/healthcare-market-research-in-uae" className="text-primary hover:underline font-medium">
+              <Link to="/healthcare-market-research/uae" className="text-primary hover:underline font-medium">
                 healthcare market research in UAE
               </Link>{' '}
               overview; for the full vaccines category across all antigens, see the{' '}
@@ -453,7 +453,7 @@ const UaeInfluenzaVaccineReport = () => (
               typically delivered within a 4–8 week fieldwork window to align with pre-season and mid-season decision
               points. For companies scoping UAE fieldwork alongside broader Gulf research, see our{' '}
               <Link
-                to="/healthcare-market-research-in-uae"
+                to="/healthcare-market-research/uae"
                 className="text-primary hover:underline font-medium"
               >
                 UAE healthcare market research

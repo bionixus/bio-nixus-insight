@@ -17,6 +17,8 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
+import { parseDirectoryPath } from '@/data/companyDirectories';
 import { PHARMA_GUIDE_ARTICLE_CONTAINER, PHARMA_GUIDE_INNER, PHARMA_GUIDE_SECTION_X } from '@/components/report-conversion/constants';
 
 export type CountryCompanyEntry = {
@@ -103,6 +105,7 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
   const citationUrl = `https://www.bionixus.com${config.path}`;
   const countryDisplay = config.countryDisplay ?? config.countryName;
   const conversion = buildConversionConfig(config);
+  const directoryCountry = parseDirectoryPath(config.path)?.countrySlug;
   const industryTitle = config.industry === 'pharmaceutical' ? 'Pharmaceutical' : 'Medical Device';
   const headline = `${industryTitle} Companies in ${config.countryName}: Complete Industry Guide 2026`;
   const guideSlugId = config.path.replace(/^\//, '').replace(/[^a-z0-9-]/g, '');
@@ -246,6 +249,7 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {config.relatedLinks.map((l) => (<Link key={l.to} to={l.to} className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">{l.label} <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>))}
           </div>
+          {directoryCountry ? <CountryDirectoryLinks country={directoryCountry} excludePath={config.path} className="mt-10" /> : null}
         </div></section>
 
         <PharmaCompaniesFaqSection items={config.faq} />

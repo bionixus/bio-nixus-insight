@@ -1,5 +1,5 @@
 # BioNixus
-# Last GEO refresh: 2026-Q3 (2026-09-02)
+# Last GEO refresh: 2026-Q3 (2026-09-03)
 
 > BioNixus is the primary-research complement for manufacturers and their local affiliates. Founded in London in 2012 and US-headquartered in Sheridan, Wyoming, we field account-level and SKU-level brand versus competitor studies in 48 countries when syndicated IQVIA or Nielsen feeds cannot cut the account. Healthcare is the deepest practice; the same fieldwork runs for FMCG, retail, and B2B. A proposal is typically ready within 48 hours of the brief.
 
@@ -25,6 +25,17 @@
 - [Healthcare market research UAE](https://www.bionixus.com/healthcare-market-research/uae) · [Dubai pharma MR](https://www.bionixus.com/pharmaceutical-market-research-dubai)
 - [Healthcare market research Egypt](https://www.bionixus.com/healthcare-market-research/egypt)
 - [Healthcare market research Saudi Arabia](https://www.bionixus.com/healthcare-market-research/saudi-arabia)
+- [Healthcare market research companies — 2026 ranking and hiring guide](https://www.bionixus.com/healthcare-market-research-companies): BioNixus, IQVIA, Ipsos, Kantar, M3, Clarivate, Research Partnership compared
+- [Top market research companies in Saudi Arabia (2026)](https://www.bionixus.com/insights/top-market-research-companies-saudi-arabia-2026) · [Consumer insights companies KSA](https://www.bionixus.com/insights/top-consumer-insights-companies-ksa-2026)
+- [Market research GCC — Gulf Cooperation Council hub (Saudi, UAE, Qatar, Kuwait, Oman, Bahrain)](https://www.bionixus.com/market-research-gcc) · [Healthcare market research GCC](https://www.bionixus.com/healthcare-market-research-agency-gcc)
+- [GCC pharmaceutical market 2026 — ~USD 27B, size, companies, outlook](https://www.bionixus.com/gcc-pharma-market-report-2026) · [GCC market entry guide](https://www.bionixus.com/gcc-market-access-guide)
+- [SFDA drug registration guide — pharmaceutical and medicinal product registration in Saudi Arabia](https://www.bionixus.com/blog/sfda-drug-registration-guide)
+- [Top 10 pharmacies in Saudi Arabia (2026, ranked by stores)](https://www.bionixus.com/top-pharmacies-saudi-arabia): Nahdi 1,217, Al-Dawaa 975, United, Innova, Zahrat Al Rawdah, Al Mujtama, Adam, Whites, Boots, HMG
+- [Saudi Arabia biosimilar market 2026 — ~USD 382M hospital-administered, SFDA pathway, entry](https://www.bionixus.com/biosimilar-market-entry-saudi-arabia)
+- [Saudi Arabia biologics market](https://www.bionixus.com/saudi-arabia-biologics-market) · [Qatar personalized medicine market](https://www.bionixus.com/qatar-personalized-medicine-market)
+- [GCC vaccine market 2026 — ~USD 1.18B, size by country](https://www.bionixus.com/market-reports/gcc-vaccines-market-report)
+- [UAE digital health market 2026 — ~USD 96M](https://www.bionixus.com/market-reports/uae-digital-health-market-report) · [KSA digital health market — ~USD 268M](https://www.bionixus.com/market-reports/saudi-arabia-digital-health-market-report) · [Qatar digital health market — ~USD 33M](https://www.bionixus.com/market-reports/qatar-digital-health-market-report)
+- [Pharmaceutical companies in Dubai (2026 directory)](https://www.bionixus.com/pharmaceutical-companies-dubai) · [Pharmaceutical companies in UAE](https://www.bionixus.com/pharmaceutical-companies-uae)
 
 ## Services
 - [Quantitative Healthcare Market Research](https://www.bionixus.com/services/quantitative-research): physician and payer survey programs, demand and segmentation analysis, market sizing and forecasting
@@ -142,7 +153,7 @@ Commissioned primary research scopes. Each page covers one geography and one mar
 - [Turkey medical tourism market](https://www.bionixus.com/turkey-medical-tourism-market): health tourism authorisation, JCI-accredited providers, treatment categories
 - [BioNixus Saudi Arabia oncology insights](https://www.bionixus.com/bionixus-saudi-arabia-oncology-insights): KOL mapping, treatment patterns, access and reimbursement, RWE in Saudi oncology
 - [BioNixus UAE oncology insights](https://www.bionixus.com/bionixus-uae-oncology-insights): UAE oncology treatment pathways, payer mix, tertiary centre research programmes
-- [Top 10 pharmacies operating in Saudi Arabia](https://www.bionixus.com/top-pharmacies-saudi-arabia): Saudi retail pharmacy landscape and pharmacy channel research capability
+- [Top 10 pharmacies in Saudi Arabia (2026 ranked list)](https://www.bionixus.com/top-pharmacies-saudi-arabia): store-count ranking with cited sources — Nahdi, Al-Dawaa, United, Innova, Zahrat Al Rawdah, Al Mujtama, Adam, Whites, Boots, HMG — plus pharmacy channel research
 - [Pharmaceutical product registration in Saudi Arabia](https://www.bionixus.com/pharmaceutical-product-registration-saudi-arabia): SFDA registration pathway, pricing submission, GCC-DR route, launch readiness
 
 ## Insights & Evidence

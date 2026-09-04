@@ -13,6 +13,7 @@ import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGlobalHubLinks } from '@/components/seo/PharmaCompaniesGlobalHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
+import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import {
   ReportConsultationBand,
@@ -223,6 +224,10 @@ const GermanyPharmaCompanies = () => {
             <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Healthcare market research companies <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/insights/top-healthcare-market-research-companies-germany-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Germany healthcare MR companies 2026 <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
           </div>
+        </div></section>
+
+        <section className="section-padding py-10" id="country-directories"><div className="container-wide w-full">
+          <CountryDirectoryLinks country="germany" excludePath="/pharmaceutical-companies-germany" compact />
         </div></section>
 
         <PharmaCompaniesFaqSection items={faqItems} />

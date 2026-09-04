@@ -578,6 +578,9 @@ const BionixusMarketResearchMiddleEast = () => {
               </Link>
             </div>
             <div className="mt-3 grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+              <Link to="/gcc-pharma-market-report-2026" className="text-sm text-primary hover:underline">
+                GCC pharmaceutical market 2026: size, companies, outlook
+              </Link>
               <Link to="/gcc-pharmaceutical-market-research" className="text-sm text-primary hover:underline">
                 GCC pharmaceutical market research
               </Link>

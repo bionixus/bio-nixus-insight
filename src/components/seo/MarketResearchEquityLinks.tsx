@@ -24,7 +24,7 @@ const COUNTRY_LINKS: Record<string, { heading: string; links: EquityLink[] }> = 
   uae: {
     heading: 'Market research partners for the UAE',
     links: [
-      { to: '/healthcare-market-research-in-uae', label: 'Healthcare market research in Dubai & the UAE' },
+      { to: '/healthcare-market-research/uae', label: 'Healthcare market research in Dubai & the UAE' },
       { to: '/market-research-in-uae', label: 'All-industry market research in the UAE' },
       { to: '/gcc-biopharmaceuticals-market', label: 'GCC biopharmaceuticals market' },
       { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
@@ -58,7 +58,7 @@ const COUNTRY_LINKS: Record<string, { heading: string; links: EquityLink[] }> = 
       { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
       { to: '/gcc-pharmacy-market', label: 'GCC pharmacy market' },
       { to: '/gcc-biopharmaceuticals-market', label: 'GCC biopharmaceuticals market' },
-      { to: '/healthcare-market-research-in-uae', label: 'Healthcare market research in the UAE' },
+      { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
       HUB,
     ],
   },
@@ -78,7 +78,7 @@ const COUNTRY_LINKS: Record<string, { heading: string; links: EquityLink[] }> = 
       { to: '/gcc-clinical-trials-market', label: 'GCC clinical trials market' },
       { to: '/gcc-personalized-medicine-market', label: 'GCC personalized medicine market' },
       { to: '/gcc-biopharmaceuticals-market', label: 'GCC biopharmaceuticals market' },
-      { to: '/healthcare-market-research-in-uae', label: 'Healthcare market research in the UAE' },
+      { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
       HUB,
     ],
   },
@@ -100,7 +100,7 @@ const DEFAULT_LINKS: { heading: string; links: EquityLink[] } = {
     { to: '/gcc-biopharmaceuticals-market', label: 'GCC biopharmaceuticals market' },
     { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
     { to: '/gcc-pharmacy-market', label: 'GCC pharmacy market' },
-    { to: '/healthcare-market-research-in-uae', label: 'Healthcare market research in the UAE' },
+    { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
     HUB,
   ],
 };

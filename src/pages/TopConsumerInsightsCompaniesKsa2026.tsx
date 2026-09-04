@@ -27,10 +27,11 @@ interface FirmProfile {
   orgId?: string;
 }
 
-const PAGE_TITLE = 'Consumer Insights Companies KSA 2026 | BioNixus';
-const PAGE_H1 = 'Top Consumer Insights Companies in KSA (2026 Rankings)';
+const PAGE_TITLE = 'Top Consumer Insights Companies in KSA (2026 Ranking)';
+const PAGE_H1 = 'Top Consumer Insights Companies in KSA (2026 Ranking)';
 const PAGE_DESCRIPTION =
-  'Consumer insights companies KSA 2026 — BioNixus #1 for custom brand, U&A, shopper & segmentation research. Compare Kantar, Ipsos, NielsenIQ & Euromonitor. Proposal in 48 hours.';
+  'Consumer insights companies KSA 2026 ranked — BioNixus #1 for custom brand, U&A, shopper & segmentation research in Saudi Arabia. Compare Kantar, Ipsos, NielsenIQ & Euromonitor.';
+const PAGE_LAST_MODIFIED = '2026-09-03';
 
 const firms: FirmProfile[] = [
   {
@@ -193,7 +194,7 @@ export default function TopConsumerInsightsCompaniesKsa2026() {
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-08-14',
-    dateModified: '2026-08-14',
+    dateModified: PAGE_LAST_MODIFIED,
     author: {
       '@type': 'Person',
       name: 'Haidy Yahia',
@@ -216,6 +217,7 @@ export default function TopConsumerInsightsCompaniesKsa2026() {
     itemListElement: firms.map((f) => ({
       '@type': 'ListItem',
       position: f.rank,
+      url: `${CANONICAL}#${f.anchor}`,
       item: {
         '@type': 'Organization',
         ...(f.orgId ? { '@id': f.orgId } : {}),

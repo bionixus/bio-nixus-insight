@@ -5,7 +5,15 @@ import {
 
 export type IndustryDirectorySlug = 'fmcg' | 'retail' | 'real-estate';
 export type IndustryDirectoryCountrySlug = 'egypt' | 'uae' | 'saudi-arabia' | 'kuwait' | 'oman' | 'qatar';
-export type IndustryCompanyType = 'Local' | 'MNC' | 'Regional' | 'Distributor' | 'Retailer' | 'Developer';
+export type IndustryCompanyType =
+  | 'Local'
+  | 'MNC'
+  | 'Regional'
+  | 'Distributor'
+  | 'Retailer'
+  | 'Developer'
+  | 'Operator'
+  | 'Government';
 
 export type IndustryCompanyEntry = {
   name: string;
@@ -40,6 +48,12 @@ export type IndustryDirectoryConfig = {
   relatedLinks: { to: string; label: string }[];
   publishedDate: string;
   modifiedDate: string;
+  /** Optional matrix-era fields (see src/data/companyDirectories/types.ts). */
+  regulatorSource?: { name: string; url: string; asOf: string };
+  sources?: string[];
+  fieldNotes?: string[];
+  /** Entity-specific prose sections (e.g. developer launch pipeline, off-plan vs ready). */
+  sections?: { heading: string; paragraphs: string[] }[];
 };
 
 const PUBLISHED = '2026-09-02';
@@ -156,7 +170,8 @@ function finish(
     | 'relatedLinks'
     | 'publishedDate'
     | 'modifiedDate'
-  >,
+  > &
+    Partial<Pick<IndustryDirectoryConfig, 'title' | 'h1' | 'modifiedDate'>>,
 ): IndustryDirectoryConfig {
   const cm = COUNTRY_META[country];
   const industryLabel = INDUSTRY_LABEL[industry];
@@ -751,7 +766,7 @@ const RETAIL_QATAR = finish('retail', 'qatar', {
   metaDescription:
     '2026 directory of retail companies in Qatar: Al Meera, Lulu, Carrefour, Family Food Centre. Listing-gate grocery plus pharmacies. Account-level research.',
   introLead:
-    'Qatari grocery has a public-facing gate: Al Meera. Lulu and Carrefour are the international comparison set. Family Food Centre and Mega Mart take neighbourhood and value trips. Traditional souq grocery still moves rice and water. Pharmacy banners take personal care. World Cup leftover stores made Doha look more modern than the weekly trolley actually is.',
+    'Qatari grocery has a public-facing gate: Al Meera. Lulu and Carrefour set the international benchmark shoppers compare it against. Family Food Centre and Mega Mart take neighbourhood and value trips. Traditional souq grocery still moves rice and water. Pharmacy banners take personal care. World Cup leftover stores made Doha look more modern than the weekly trolley actually is.',
   introRest:
     'BioNixus treats Al Meera as its own account type — listing and price are not a private hypermarket meeting. A Nielsen modern-trade average that flattens Al Meera into “Qatar grocery” will miss the gate. Use this list with our retail market research in Qatar.',
   stats: [
@@ -781,10 +796,10 @@ const RETAIL_QATAR = finish('retail', 'qatar', {
   },
   growthDrivers: [
     { title: 'Al Meera as public grocery', desc: 'Listing conversations have a different temperature than a private hyper. Treat it as its own account type.' },
-    { title: 'Post-World Cup store stock without Dubai habits', desc: 'The boxes look newer. The staple trip is still Al Meera and the neighbourhood grocer.' },
+    { title: 'Post-World Cup store stock without Dubai habits', desc: 'The boxes look newer. Weekly staples are still bought at Al Meera and the corner grocer, not the showcase malls.' },
     { title: 'Expat versus Qatari catchments', desc: 'West Bay is not Al Rayyan. Split the sample when the SKU is culturally marked.' },
     { title: 'Value banners versus destination hypers', desc: 'Mega Mart and Family Food Centre are not Carrefour. Merge them and the planogram will fit none.' },
-    { title: 'Pharmacy adjacency', desc: 'Personal-care SKUs leave grocery. Include chemist banners when the pack belongs there.' },
+    { title: 'Pharmacy adjacency', desc: 'Personal-care SKUs leave grocery. Add Qatar’s chemist banners to the sample whenever the pack sells through pharmacy.' },
     { title: 'Mall intercepts as a contamination risk', desc: 'Place Vendôme is not a weekly trolley. Say so if you mix mall missions into grocery work.' },
   ],
   faq: [
@@ -796,152 +811,356 @@ const RETAIL_QATAR = finish('retail', 'qatar', {
   ],
 });
 
+const RE_MODIFIED = '2026-09-03';
+
 const RE_EGYPT = finish('real-estate', 'egypt', {
+  title: 'Top 24 Real Estate Developers in Egypt (2026 List)',
+  h1: 'Top Real Estate Developers in Egypt (2026)',
+  modifiedDate: RE_MODIFIED,
   metaDescription:
-    '2026 directory of real estate companies in Egypt: TMG, SODIC, Palm Hills, Emaar Misr, Orascom. Compounds we study. Account-level primary research by BioNixus.',
+    '2026 list of real estate developers in Egypt: TMG, SODIC, Palm Hills, Emaar Misr, Ora, Mountain View, Hyde Park, City Edge and more — pipeline, off-plan, buyers, brokers.',
   introLead:
-    'Egyptian residential is a compound-and-coast story, not a “Cairo skyline” story. Talaat Moustafa Group built the East Cairo new-city model (Al Rehab, Madinaty). SODIC and Palm Hills own the West Cairo and North Coast branded-community conversation. Emaar Misr imported a Gulf operating system onto Uptown Cairo and Marassi. Orascom Development treats El Gouna as a destination city, not a suburb.',
+    'Egypt’s residential market is built by developers, not by a resale stock: almost every home sold in New Cairo, 6th of October, the New Administrative Capital and the North Coast is an off-plan unit bought from one of roughly 40 active developers on a five- to ten-year payment plan, which makes the developer — its brand, delivery record and pricing — the unit of analysis for anyone studying Egyptian housing demand.',
   introRest:
-    'Nielsen has nothing to sell here. BioNixus fields buyers, brokers, and sales-gallery staff at the project and developer — account-level work in a sector syndicated panels do not cover. Use this list with our real estate market research in Egypt.',
+    'Talaat Moustafa Group set the East Cairo compound template with Al Rehab and Madinaty; SODIC, Palm Hills and Mountain View own the West Cairo and coastal conversation; Emaar Misr imported a Gulf operating model; Ora, Tatweer Misr and La Vista scaled second-home destinations; and government-backed City Edge and the Administrative Capital for Urban Development supply the new cities. Land is allocated by the New Urban Communities Authority, contracts and pricing respond to currency moves and interest rates, and brokers close a large share of tickets. This directory lists the developers that define Egypt’s primary housing market, explains how launches, payment plans, buyer segments and brokerage actually work, and shows how BioNixus researches them for developers, banks and building-material brands.',
   stats: [
-    { value: '8', label: 'Developers we list and study' },
-    { value: 'Compounds', label: 'East + West Cairo model' },
-    { value: 'North Coast', label: 'Second-home theatre' },
-    { value: 'No panel', label: 'Primary research only' },
+    { value: '~EGP 1trn', label: 'Estimated annual primary residential sales value in 2024 at launch prices' },
+    { value: '8–10 yrs', label: 'Typical off-plan instalment plan offered by leading developers' },
+    { value: '~70%', label: 'Share of Greater Cairo primary sales concentrated in New Cairo, 6th of October and the New Capital' },
+    { value: '4', label: 'EGX-listed developers (TMG, Palm Hills, MNHD, Heliopolis Housing) plus SODIC under Aldar–ADQ' },
   ],
-  channelHeading: 'Sales galleries, brokers, and off-plan — not a grocery audit',
+  channelHeading: 'How developers sell homes in Egypt',
   channelBody:
-    'Demand is read in sales galleries, broker networks, and payment-plan comparisons — not in a retail panel. The New Administrative Capital, East Cairo compounds, Sheikh Zayed / 6th of October, and the North Coast are different products and different buyers. A study that averages “Cairo residential” will recommend a product that exists in none of those theatres.',
+    'Egyptian developers acquire land from the New Urban Communities Authority or private owners, launch phases off-plan with a 5–10% down payment and instalments over eight to ten years, and fund construction from customer receipts rather than bank debt. Sales run through in-house teams at project sales galleries and through a large brokerage layer — Coldwell Banker Egypt, Nawy, Bayut Egypt, Property Finder and thousands of independent brokers — that earns 2–5% commission and steers a significant share of first-time buyers. Demand is segmented by geography: East Cairo (New Cairo, Madinaty, Mostakbal City) for upper-middle-income families, West Cairo (Sheikh Zayed, 6th of October) for a comparable but distinct buyer, the New Administrative Capital for government-linked and investor demand, and the North Coast, Ain Sokhna and Red Sea for second homes. Currency devaluation has made real estate the default inflation hedge, so investor buyers and Egyptians abroad paying in dollars are a growing segment, and developers respond with export-style pricing and dollar-linked launches. Delivery risk, resale liquidity and payment-plan terms matter as much as price per metre, which is why BioNixus fieldwork combines buyer surveys with broker interviews and sales-gallery mystery shopping.',
   companies: [
-    { name: 'Talaat Moustafa Group (TMG)', hq: 'Egypt', type: 'Developer', focus: 'East Cairo new cities, hospitality', notes: 'Al Rehab and Madinaty; the compound template others copy' },
-    { name: 'SODIC', hq: 'Egypt', type: 'Developer', focus: 'West Cairo, North Coast communities', notes: 'Branded community; different buyer than TMG East Cairo' },
-    { name: 'Palm Hills Developments', hq: 'Egypt', type: 'Developer', focus: 'West Cairo, coast, mixed use', notes: 'EGX-listed; West Cairo and coastal second homes' },
-    { name: 'Emaar Misr', hq: 'Egypt / UAE', type: 'Regional', focus: 'Uptown Cairo, Marassi, Mivida', notes: 'Gulf operating system on Egyptian land' },
-    { name: 'Orascom Development', hq: 'Switzerland / Egypt', type: 'Developer', focus: 'Destination towns (El Gouna)', notes: 'Town, not suburb; hospitality-led residential' },
-    { name: 'Madinet Nasr Housing (MNHD)', hq: 'Egypt', type: 'Developer', focus: 'East Cairo, listed housing', notes: 'EGX housing name; Taj City and adjacent' },
-    { name: 'Hyde Park Developments', hq: 'Egypt', type: 'Developer', focus: 'New Cairo compounds', notes: 'East Cairo competitor set to TMG' },
-    { name: 'Hassan Allam Properties', hq: 'Egypt', type: 'Developer', focus: 'Mixed use, residential', notes: 'Contractor-to-developer; different capital story' },
+    { name: 'Talaat Moustafa Group (TMG)', hq: 'Cairo', type: 'Developer', focus: 'Madinaty, Al Rehab, Noor, SouthMed; hospitality', notes: 'EGX-listed and the largest by land bank and sales; its compound model and payment plans are the benchmark every East Cairo competitor prices against.' },
+    { name: 'SODIC', hq: 'Cairo', type: 'Developer', focus: 'West Cairo communities, East Cairo, North Coast', notes: 'Controlled by Aldar and ADQ since 2021; Allegria, Eastown and June bring a Gulf-style operating model to Egyptian premium housing.' },
+    { name: 'Palm Hills Developments', hq: 'Cairo', type: 'Developer', focus: 'West Cairo, New Cairo, North Coast, Alexandria', notes: 'EGX-listed with Badya and Palm Hills New Cairo; one of the most active launchers of new phases and co-development deals.' },
+    { name: 'Emaar Misr', hq: 'Cairo', type: 'Regional', focus: 'Uptown Cairo, Mivida, Marassi, Cairo Gate', notes: 'Emaar’s Egyptian arm; Marassi defines the premium North Coast segment and its delivery record sets buyer expectations.' },
+    { name: 'Mountain View (DMG)', hq: 'Cairo', type: 'Developer', focus: 'iCity, Mountain View Ras El Hikma, Hyde Park adjacency', notes: 'Fast-growing family developer with a distinctive design-led brand and strong broker following in both East and West Cairo.' },
+    { name: 'Ora Developers', hq: 'Cairo', type: 'Developer', focus: 'ZED East and West, Silversands, Solana', notes: 'Naguib Sawiris’ developer with mixed-use towers and coastal projects; a premium-segment competitor to Emaar and SODIC.' },
+    { name: 'Hyde Park Developments', hq: 'Cairo', type: 'Developer', focus: 'Hyde Park New Cairo, Seashore, Tawny', notes: 'East Cairo compound developer with a large land bank and phased launches that compete directly with TMG and Mountain View.' },
+    { name: 'Madinet Masr (MNHD)', hq: 'Cairo', type: 'Developer', focus: 'Taj City, Sarai, Zahw', notes: 'EGX-listed developer with a large East Cairo land bank; pioneered flexible payment tools and partnership models.' },
+    { name: 'Orascom Development Egypt', hq: 'Cairo / El Gouna', type: 'Developer', focus: 'El Gouna, O West, Makadi Heights', notes: 'Listed destination developer; El Gouna is the model for hospitality-led residential towns and O West extends it to West Cairo.' },
+    { name: 'Hassan Allam Properties', hq: 'Cairo', type: 'Developer', focus: 'Swan Lake, Haptown, Seasons', notes: 'Contractor-backed developer with East Cairo and Sheikh Zayed projects; construction capability differentiates delivery credibility.' },
+    { name: 'Tatweer Misr', hq: 'Cairo', type: 'Developer', focus: 'Fouka Bay, IL Monte Galala, Bloomfields', notes: 'Second-home and new-city specialist; Ain Sokhna and North Coast launches make it a reference for coastal demand.' },
+    { name: 'La Vista Developments', hq: 'Cairo', type: 'Developer', focus: 'La Vista Bay, El Patio, Ras El Hikma', notes: 'Established coastal and Sokhna developer with strong repeat-buyer base; now expanding into New Cairo residential.' },
+    { name: 'Al Marasem Development', hq: 'Cairo', type: 'Developer', focus: 'Fifth Square, Moon Residences', notes: 'Bin Laden Group-linked developer with premium New Cairo projects; a competitor set for TMG and Hyde Park at the top end.' },
+    { name: 'Misr Italia Properties', hq: 'Cairo', type: 'Developer', focus: 'IL Bosco, Vinci, Kai Sokhna, La Nuova Vista', notes: 'New Capital and New Cairo developer with a design-led brand; among the largest private developers in the New Administrative Capital.' },
+    { name: 'Marakez (Fawaz Alhokair Group)', hq: 'Cairo', type: 'Regional', focus: 'District 5, Mall of Arabia, Aeon', notes: 'Saudi-owned mixed-use developer combining retail malls with residential districts in East and West Cairo.' },
+    { name: 'Al Ahly Sabbour', hq: 'Cairo', type: 'Developer', focus: 'Keeva, Gaia, L’Avenir, Odyssia', notes: 'Joint venture with the National Bank of Egypt; broad East and West Cairo portfolio and coastal launches at Ras El Hikma.' },
+    { name: 'Iwan Developments', hq: 'Cairo', type: 'Developer', focus: 'Jedar, Atrio, Jeera in Sheikh Zayed', notes: 'West Cairo specialist with a loyal Sheikh Zayed buyer base; representative of mid-size developers scaling through phased launches.' },
+    { name: 'Dorra Group', hq: 'Cairo', type: 'Developer', focus: 'Address East, Village West, Dorra Bay', notes: 'Contractor-developer with New Cairo, Sheikh Zayed and coastal projects; delivery record is a core selling point.' },
+    { name: 'Arabia Holding', hq: 'Cairo', type: 'Developer', focus: 'Galleria Moon Valley, Sun Capital, Sky Park', notes: 'Diversified developer active in New Cairo, 6th of October and the New Capital across mid-market segments.' },
+    { name: 'City Edge Developments', hq: 'Cairo', type: 'Government', focus: 'New Alamein, New Mansoura, Zahya, Etapa', notes: 'Owned by NUCA and Housing & Development Bank; the state’s developer for fourth-generation cities and a large launcher in New Alamein.' },
+    { name: 'Administrative Capital for Urban Development (ACUD)', hq: 'New Administrative Capital', type: 'Government', focus: 'Master developer of the New Administrative Capital', notes: 'Sells land to private developers and develops government districts; its release schedule drives New Capital supply.' },
+    { name: 'New Urban Communities Authority (NUCA)', hq: 'Cairo', type: 'Government', focus: 'Land allocation and new-city planning', notes: 'Allocates land through auctions and partnerships; its pricing and instalment terms to developers shape every launch price.' },
+    { name: 'Heliopolis Housing & Development', hq: 'Cairo', type: 'Developer', focus: 'Heliopark, New Heliopolis land bank', notes: 'EGX-listed state-affiliated developer monetising a large East Cairo land bank through partnerships with private developers.' },
+    { name: 'Al-Futtaim Group Real Estate', hq: 'Dubai / Cairo', type: 'Regional', focus: 'Cairo Festival City', notes: 'UAE group developing the Cairo Festival City mixed-use district in New Cairo; a Gulf benchmark for integrated communities.' },
   ],
   categoryBlurbs: {
-    local: 'TMG, SODIC, Palm Hills, MNHD, Hyde Park, and Hassan Allam are Egyptian developers with distinct geographies. East Cairo is not West Cairo. Do not file them as one “local developer” row.',
-    mnc: 'International capital shows up through operating partners and off-plan buyers, not through a Western homebuilder brand. Do not force a US production-home narrative onto compounds.',
-    regional: 'Emaar Misr is the Gulf system on Egyptian land. Marassi and Uptown Cairo are not TMG Madinaty. The sales-gallery script is different; so is the buyer.',
-    trade: 'The “trade” here is the sales gallery, the broker, and the payment plan. That is the account. There is no Nielsen feed to buy.',
+    local: 'Egyptian developers from TMG and Palm Hills to Mountain View, Hyde Park, Ora and Tatweer Misr: family or listed groups that launch off-plan phases and fund construction from instalments.',
+    mnc: 'No Western homebuilder operates in Egypt; international exposure comes through Gulf capital in SODIC and Emaar Misr, DFI lending and dollar-paying buyers abroad.',
+    regional: 'Gulf developers — Emaar Misr, Marakez, Al-Futtaim and SODIC’s owners Aldar and ADQ — that bring regional operating models and capital to Egyptian land.',
+    trade: 'The state layer: NUCA allocates land, ACUD masters the New Capital and City Edge develops fourth-generation cities, together setting the supply calendar and land prices.',
   },
+  sections: [
+    {
+      heading: 'Launch pipeline and new cities',
+      paragraphs: [
+        'Supply in Egypt is calendar-driven. Developers launch phases in waves timed to NUCA land instalments, Ramadan and summer selling seasons and currency events, and the pipeline for 2025–2027 is dominated by three theatres: East Cairo, where TMG’s Noor, Hyde Park, Mountain View and Madinet Masr continue to release phases along the Suez Road and in Mostakbal City; the New Administrative Capital, where Misr Italia, Arabia Holding and dozens of mid-size developers build around ACUD’s government district; and the North Coast, where Ras El Hikma’s ADQ-backed masterplan, New Alamein under City Edge and Emaar’s Marassi extension have turned a summer strip into a year-round investment market.',
+        'The West Cairo pipeline is smaller but premium, with SODIC, Palm Hills’ Badya, Ora’s ZED West, O West and Sheikh Zayed infill from Iwan and Dorra. Beyond Cairo, New Mansoura, New Alamein and Sokhna are the fourth-generation cities where state developers and private partners test demand outside the capital. Tracking this pipeline by developer, phase and price per metre is the starting point for any competitor study, because the phase a buyer compares against changes every quarter.',
+      ],
+    },
+    {
+      heading: 'Off-plan versus ready homes',
+      paragraphs: [
+        'Egypt is an off-plan market. Most units are sold before or during construction on instalment plans of eight to ten years with 5–10% down, and the payment plan is as much the product as the villa or apartment: developers compete on down payment, instalment length, delivery date and cashback rather than list price. Ready or near-ready inventory commands a premium and is mostly resold by earlier buyers, which has created a secondary market run by brokers and platforms such as Nawy and Aqarmap where resale liquidity is a key buyer concern.',
+        'For research this means the buyer decision is a financing decision. BioNixus instruments capture plan terms, perceived delivery risk by developer, resale expectations and the trade-off between location and instalment length, and pair buyer surveys with developer sales data to explain why one launch sells out in a weekend while a neighbouring phase stalls.',
+      ],
+    },
+    {
+      heading: 'Buyer segments',
+      paragraphs: [
+        'Four buyer groups drive the primary market. Upper-middle-income Cairo families upgrading from older districts to compounds in East or West Cairo; investors and savers using off-plan property as an inflation hedge after successive devaluations; Egyptians working in the Gulf and abroad who pay in dollars and are courted with export-style pricing and international sales events; and second-home buyers for the North Coast, Sokhna and Red Sea, a segment that has broadened from elite families to upper-middle-income households buying on instalments.',
+        'Each segment weighs developer brand, location, plan and delivery differently, and the same developer often sells to all four across its portfolio. Segment-level sampling — by theatre, income band, residence and purchase motive — is what turns a sentiment survey into a usable product and pricing brief.',
+      ],
+    },
+    {
+      heading: 'Brokerage and sales channels',
+      paragraphs: [
+        'Brokers close a large share of Egyptian primary sales. Developers run in-house teams and sales galleries but pay 2–5% commission to a brokerage layer that ranges from Coldwell Banker Egypt, RE/MAX, Nawy, Bayut and Property Finder to thousands of independent agents and social-media sellers, and many buyers meet a project first through a broker rather than a developer campaign. Brokers steer buyers between developers based on commission, delivery reputation and plan flexibility, so broker sentiment predicts sales momentum.',
+        'Digital platforms and proptech — Nawy, Aqarmap, Coldwell Banker’s and developers’ own apps, and instalment-financing startups — increasingly shape discovery and comparison. BioNixus fields broker interviews, mystery shopping of sales galleries and platform-listing audits alongside buyer research so developers see the channel that actually converts.',
+      ],
+    },
+  ],
   growthDrivers: [
-    { title: 'East Cairo new-city template', desc: 'TMG’s Al Rehab/Madinaty model still sets how buyers talk about compounds. Competitor work has to start there, not with a downtown tower.' },
-    { title: 'West Cairo branded communities', desc: 'SODIC and Palm Hills sell a different lifestyle script. Averaging them with East Cairo hides the product.' },
-    { title: 'North Coast as a second-home market', desc: 'Marassi, Hacienda-type, and SODIC coastal are not primary residences. Sample the second-home buyer or do not claim the coast.' },
-    { title: 'New Administrative Capital as a separate theatre', desc: 'Government-adjacent demand is not Sheikh Zayed demand. Do not fold NAC into “Greater Cairo.”' },
-    { title: 'Payment plans as the product', desc: 'Egyptian off-plan is a financing product as much as a unit. Instrument design has to capture plan, not only price per metre.' },
-    { title: 'Broker as a decision unit', desc: 'Many tickets still close through brokers. A buyer-only sample will miss how the gallery actually converts.' },
+    { title: 'Currency and inflation hedging', desc: 'Successive devaluations have made off-plan property the default savings vehicle, pulling investors and expatriate Egyptians into launches and letting developers reprice quickly.' },
+    { title: 'Ras El Hikma and the North Coast', desc: 'The ADQ-backed Ras El Hikma masterplan, New Alamein and Marassi are converting the coast into a year-round market and lifting land values for every developer with coastal exposure.' },
+    { title: 'Gulf capital in Egyptian developers', desc: 'Aldar–ADQ at SODIC, Emaar Misr, Marakez and Al-Futtaim bring Gulf operating models, financing and buyer networks that raise the competitive bar on delivery and design.' },
+    { title: 'State developers and new cities', desc: 'City Edge, ACUD and NUCA control land supply and price, and their releases in the New Capital and fourth-generation cities set the calendar for private launches.' },
+    { title: 'Payment-plan innovation', desc: 'Ten-year plans, low down payments, cashback and instalment-financing partners have become the main competitive weapon, changing how buyers compare developers.' },
+    { title: 'Export-style sales to Egyptians abroad', desc: 'Dollar-priced launches, Gulf roadshows and international sales events target the diaspora, adding a buyer segment with different priorities and price sensitivity.' },
   ],
   faq: [
-    { q: 'Which real estate companies should we map in Egypt?', a: 'TMG, SODIC, Palm Hills, Emaar Misr, Orascom Development, MNHD, Hyde Park, and Hassan Allam Properties. That set covers East Cairo, West Cairo, coast, destination towns, and the listed housing names.' },
-    { q: 'Does Nielsen or IQVIA cover Egyptian real estate?', a: 'No. Those feeds are built for FMCG, retail, and pharma audits. Real estate demand is primary fieldwork — buyers, brokers, galleries. That is why this directory exists.' },
-    { q: 'Why not treat “Cairo residential” as one market?', a: 'Because East Cairo compounds, West Cairo communities, NAC, and the North Coast are different products and buyers. Averaging them is how briefs produce a unit nobody is shopping.' },
-    { q: 'What does account-level mean for a developer study?', a: 'A named developer and project, a named theatre (Madinaty versus Sheikh Zayed versus Sahel), and a named buyer type. “Sentiment in Cairo” is not a design.' },
-    { q: 'How does BioNixus price this versus a syndicated report?', a: 'By project and country. There is no dashboard minimum because there is no dashboard. A scoped proposal is ready within 48 hours of a brief.' },
+    { q: 'Who are the largest real estate developers in Egypt?', a: 'Talaat Moustafa Group, SODIC, Palm Hills, Emaar Misr, Mountain View, Ora, Hyde Park, Madinet Masr, Orascom Development and Hassan Allam Properties lead the private market, with City Edge and ACUD as the main state developers.' },
+    { q: 'How do payment plans work with Egyptian developers?', a: 'Buyers typically pay 5–10% down and the balance in instalments over eight to ten years while the developer builds; delivery dates, instalment length and cashback are core competitive terms alongside price per metre.' },
+    { q: 'Where are new homes being launched in Egypt?', a: 'Mainly East Cairo (New Cairo, Madinaty, Mostakbal City), West Cairo (Sheikh Zayed, 6th of October), the New Administrative Capital and the North Coast around Ras El Hikma and New Alamein, plus fourth-generation cities such as New Mansoura.' },
+    { q: 'Do brokers matter in Egyptian real estate?', a: 'Yes. Brokers and platforms such as Coldwell Banker Egypt, Nawy, Bayut and independent agents close a large share of primary sales for 2–5% commission and steer buyers between developers.' },
+    { q: 'What does BioNixus study about real estate developers in Egypt?', a: 'Buyer segmentation and purchase-driver surveys by theatre; developer brand and delivery-reputation tracking; broker and sales-gallery research; payment-plan and pricing tests; and demand studies for building-material and home-finance brands.' },
+    { q: 'Is this list ranked?', a: 'No. Developers are grouped by role and included because they recur in BioNixus Egypt fieldwork and on NUCA and EGX records; order does not indicate size or sales.' },
+  ],
+  regulatorSource: {
+    name: 'New Urban Communities Authority (NUCA) — licensed developers and land allocations; Egyptian Exchange listed real estate companies',
+    url: 'https://www.newcities.gov.eg',
+    asOf: '2026-09-03',
+  },
+  sources: [
+    'EGX annual reports of TMG, Palm Hills, Madinet Masr, Orascom Development Egypt and Heliopolis Housing, 2024–2025',
+    'Ministry of Housing and NUCA land allocation announcements and New Alamein / New Capital releases, 2024–2025',
+    'CBE and CAPMAS housing and construction statistics; Nawy and Aqarmap market reports, 2024',
+    'BioNixus Egypt developer, buyer and broker fieldwork, 2023–2026',
+  ],
+  fieldNotes: [
+    'Buyer segmentation surveys across East Cairo, West Cairo, the New Capital and the North Coast covering purchase motive, plan preference and developer brand perception.',
+    'Developer brand and delivery-reputation tracking among recent buyers and prospects for TMG, SODIC, Palm Hills, Emaar Misr, Mountain View and challengers.',
+    'Broker interviews and sales-gallery mystery shopping to map commission, steering behaviour and conversion practices by developer.',
+    'Payment-plan and pricing tests, and demand studies for building-material, finishing and home-finance brands tied to developer handover schedules.',
   ],
 });
 
 const RE_UAE = finish('real-estate', 'uae', {
+  title: 'Top 24 Real Estate Developers in UAE (2026 List)',
+  h1: 'Top Real Estate Developers in the UAE (2026)',
+  modifiedDate: RE_MODIFIED,
   metaDescription:
-    '2026 directory of real estate companies in the UAE: Emaar, Aldar, Nakheel, Damac, Sobha. Off-plan and freehold we study. Primary research by BioNixus.',
+    '2026 list of real estate developers in the UAE: Emaar, Aldar, Dubai Holding, Damac, Sobha, Binghatti, Azizi, Danube, Arada and more — pipeline, off-plan, buyers, brokers.',
   introLead:
-    'UAE residential is two regulators and two capital stories. Emaar still sets the Dubai freehold script (Downtown, Dubai Hills, Dubai Creek). Nakheel owns the island and master-community vocabulary (Palm, Discovery Gardens). Damac sells a different off-plan buyer. Sobha is the quality-and-delivery name. Aldar is not “Emaar in Abu Dhabi” — it is the Abu Dhabi champion with a different end-user and a different government adjacency.',
+    'The UAE is the Middle East’s most developer-led housing market: Dubai alone recorded more than 180,000 property transactions in 2024, the majority of them off-plan sales by a few dozen developers, and Abu Dhabi, Sharjah and Ras Al Khaimah have each built their own developer champions around freehold reforms and mega-projects.',
   introRest:
-    'Syndicated grocery panels do not cover this. BioNixus fields investors, end-users, brokers, and sales suites at the developer and master community. Use this list with our real estate market research in the UAE.',
+    'Emaar sets the Dubai master-community script, Dubai Holding Real Estate now combines Nakheel, Meraas and Meydan under government ownership, Damac, Sobha, Binghatti, Azizi and Danube compete for the off-plan investor, and Aldar, Modon, Imkan and Bloom dominate Abu Dhabi; Arada and Eagle Hills lead Sharjah and RAK Properties and Al Hamra anchor Ras Al Khaimah’s Wynn-driven boom. The Dubai Land Department, Abu Dhabi Real Estate Centre and Sharjah RERA regulate escrow, off-plan sales and brokers, and roughly 20,000 licensed agents drive transactions. This directory lists the developers that define UAE housing supply, explains how launches, off-plan versus ready inventory, buyer segments and brokerage actually work, and shows how BioNixus researches them for developers, lenders and building-product brands.',
   stats: [
-    { value: '8', label: 'Developers we list and study' },
-    { value: 'Two regulators', label: 'Dubai vs Abu Dhabi' },
-    { value: 'Off-plan', label: 'Investor versus end-user' },
-    { value: 'No panel', label: 'Primary research only' },
+    { value: '180,000+', label: 'Dubai property transactions in 2024, a record year' },
+    { value: '~60%', label: 'Share of Dubai residential sales that were off-plan in 2024' },
+    { value: '4', label: 'Regulators: DLD/RERA, ADREC, Sharjah RERA and RAK Municipality' },
+    { value: '~20,000', label: 'Licensed real estate brokers in Dubai' },
   ],
-  channelHeading: 'Sales suites and brokers — Dubai is not Abu Dhabi',
+  channelHeading: 'How developers sell homes in the UAE',
   channelBody:
-    'DLD and ADREC are different systems. An off-plan investor in Business Bay is not an Aldar end-user on Yas or Saadiyat. Master communities (Emaar, Nakheel) and branded towers (Damac, Sobha) convert through different broker networks. If the brief says “UAE real estate,” ask which emirate and which buyer — the instrument changes.',
+    'UAE developers launch off-plan phases into escrow-protected accounts regulated by DLD and ADREC, sell through in-house teams and a large brokerage layer, and increasingly through international roadshows in London, Mumbai, Moscow and Shanghai. Dubai’s market splits between master communities built by Emaar, Dubai Holding and Nakheel — Downtown, Dubai Hills, Dubai Creek Harbour, Palm Jumeirah, Jumeirah Village — and tower and branded-residence developers such as Damac, Sobha, Binghatti, Omniyat, Select Group and Ellington, with Azizi, Danube, Samana and Reportage serving the affordable off-plan investor with 1% monthly payment plans. Abu Dhabi works differently: Aldar dominates Yas, Saadiyat and Reem Island, Modon and Imkan develop Hudayriyat and Jubail, and end-user demand from Emiratis and long-term residents outweighs flipping. Sharjah’s Arada and Eagle Hills and Ras Al Khaimah’s RAK Properties and Al Hamra have opened freehold to foreigners and built master communities around Aljada, Maryam Island and Al Marjan Island. Investors buy for rental yield, capital gains and Golden Visa eligibility, end-users buy for schools and commute, and brokers steer both; the mix by emirate and product is what a research design has to name before it can measure anything.',
   companies: [
-    { name: 'Emaar Properties', hq: 'UAE', type: 'Developer', focus: 'Dubai freehold, master communities', notes: 'Downtown, Hills, Creek; the script others sell against' },
-    { name: 'Aldar Properties', hq: 'UAE', type: 'Developer', focus: 'Abu Dhabi communities, mixed use', notes: 'Abu Dhabi champion; not an Emaar clone' },
-    { name: 'Nakheel', hq: 'UAE', type: 'Developer', focus: 'Islands, master communities', notes: 'Palm and large-scale Dubai masterplans' },
-    { name: 'Damac Properties', hq: 'UAE', type: 'Developer', focus: 'Off-plan towers, branded residences', notes: 'A different investor and a different delivery conversation' },
-    { name: 'Sobha Realty', hq: 'UAE / India', type: 'Developer', focus: 'Quality residential, delivery', notes: 'The delivery-reputation name in Dubai freehold' },
-    { name: 'Dubai Holding / Meraas', hq: 'UAE', type: 'Developer', focus: 'Master communities, destinations', notes: 'City Walk, Bluewaters, district-scale Dubai' },
-    { name: 'RAK Properties', hq: 'UAE', type: 'Developer', focus: 'Ras Al Khaimah residential', notes: 'Northern Emirates; not a Dubai demand clone' },
-    { name: 'MAG Lifestyle Development', hq: 'UAE', type: 'Developer', focus: 'Branded / lifestyle off-plan', notes: 'Lifestyle off-plan competitor set to Damac' },
+    { name: 'Emaar Properties', hq: 'Dubai', type: 'Developer', focus: 'Downtown, Dubai Hills, Dubai Creek Harbour, The Oasis, Rashid Yachts', notes: 'DFM-listed market leader; its launch calendar, pricing and payment plans are the reference for every Dubai competitor.' },
+    { name: 'Aldar Properties', hq: 'Abu Dhabi', type: 'Developer', focus: 'Yas Island, Saadiyat, Reem, Dubai and Egypt expansion', notes: 'ADX-listed Abu Dhabi champion with a growing Dubai and international pipeline; end-user and Emirati demand dominate.' },
+    { name: 'Dubai Holding Real Estate (Nakheel, Meraas, Meydan, Dubai Properties)', hq: 'Dubai', type: 'Government', focus: 'Palm Jumeirah, Bluewaters, City Walk, Meydan, Jumeirah Beach Residence', notes: 'Government-owned master developer formed by the 2024 merger; controls much of Dubai’s prime and waterfront land bank.' },
+    { name: 'Damac Properties', hq: 'Dubai', type: 'Developer', focus: 'Damac Hills, Damac Lagoons, branded residences, Damac Islands', notes: 'Privately held after delisting; the largest private off-plan seller with aggressive launch cadence and international roadshows.' },
+    { name: 'Sobha Realty', hq: 'Dubai', type: 'Developer', focus: 'Sobha Hartland, Sobha One, Siniya Island (Umm Al Quwain)', notes: 'Backward-integrated builder known for delivery quality; premium off-plan competitor to Emaar with a strong Indian buyer base.' },
+    { name: 'Binghatti Developers', hq: 'Dubai', type: 'Developer', focus: 'Branded towers with Bugatti, Mercedes-Benz and Jacob & Co', notes: 'Fastest-growing private developer by launches; brand collaborations define the new branded-residence segment.' },
+    { name: 'Azizi Developments', hq: 'Dubai', type: 'Developer', focus: 'Riviera at MBR City, Azizi Venice, Al Furjan', notes: 'High-volume mid-market off-plan developer targeting investors with long payment plans and large master communities.' },
+    { name: 'Danube Properties', hq: 'Dubai', type: 'Developer', focus: 'Affordable off-plan towers with 1% monthly plans', notes: 'Pioneered the 1% monthly payment plan; a core account for understanding first-time investor demand.' },
+    { name: 'Ellington Properties', hq: 'Dubai', type: 'Developer', focus: 'Design-led boutique residences in JVC, Downtown, Palm', notes: 'Premium boutique developer whose buyers prioritise design and end-use over yield; expanding into Ras Al Khaimah.' },
+    { name: 'Omniyat', hq: 'Dubai', type: 'Developer', focus: 'Ultra-luxury: One at Palm, Vela, Orla by Dorchester', notes: 'Defines the top of the market with branded ultra-prime residences and record price per square foot.' },
+    { name: 'Select Group', hq: 'Dubai', type: 'Developer', focus: 'Six Senses Residences, Peninsula, Marina towers', notes: 'Waterfront and branded-residence developer in Dubai Marina and Business Bay with a high-net-worth buyer base.' },
+    { name: 'Deyaar Development', hq: 'Dubai', type: 'Developer', focus: 'Business Bay, Al Furjan, Dubai Production City', notes: 'DFM-listed developer backed by Dubai Islamic Bank; mid-market residential and hospitality pipeline.' },
+    { name: 'Union Properties', hq: 'Dubai', type: 'Developer', focus: 'Motor City, Green Community, Dubai Investments Park', notes: 'DFM-listed master developer of Motor City relaunching its land bank after restructuring.' },
+    { name: 'MAG Group Property Development', hq: 'Dubai', type: 'Developer', focus: 'Keturah, MAG City, MAG 22', notes: 'Lifestyle and wellness-branded off-plan developer competing with Damac and Sobha in the upper-mid segment.' },
+    { name: 'Samana Developers', hq: 'Dubai', type: 'Developer', focus: 'Private-pool apartments in JVC, Arjan, Dubailand', notes: 'Rapid-launch developer serving investors with amenity-led mid-market towers and extended plans.' },
+    { name: 'Nshama', hq: 'Dubai', type: 'Developer', focus: 'Town Square Dubai master community', notes: 'Affordable master-community developer whose townhouses and apartments target end-user families.' },
+    { name: 'Wasl Properties', hq: 'Dubai', type: 'Government', focus: 'Wasl1, Wasl Gate, rental portfolio and Port de La Mer', notes: 'Dubai government real estate arm with the emirate’s largest rental portfolio and growing freehold sales.' },
+    { name: 'Modon Holding', hq: 'Abu Dhabi', type: 'Government', focus: 'Hudayriyat Island, Ras El Hekma (Egypt), Nawayef', notes: 'ADX-listed, government-backed master developer; anchors Abu Dhabi’s newest island communities.' },
+    { name: 'Imkan Properties', hq: 'Abu Dhabi', type: 'Developer', focus: 'Makers District, Nudra, AlJurf', notes: 'Abu Dhabi developer of Reem Island and Ghantoot communities; premium end-user positioning.' },
+    { name: 'Bloom Holding', hq: 'Abu Dhabi', type: 'Developer', focus: 'Bloom Living in Zayed City', notes: 'Abu Dhabi master-community developer focused on villa and townhouse demand from Emirati and expatriate families.' },
+    { name: 'Reportage Properties', hq: 'Abu Dhabi', type: 'Developer', focus: 'Affordable off-plan in Abu Dhabi, Dubai and Egypt', notes: 'High-volume affordable developer with a broad investor base across emirates.' },
+    { name: 'Arada', hq: 'Sharjah', type: 'Developer', focus: 'Aljada, Masaar, Sharjah and Dubai launches', notes: 'Sharjah’s largest developer and the driver of the emirate’s freehold market; expanding into Dubai and Australia.' },
+    { name: 'Eagle Hills', hq: 'Abu Dhabi', type: 'Regional', focus: 'Maryam Island (Sharjah), Ramhan Island, Bahrain, Europe', notes: 'Abu Dhabi-based regional master developer active in Sharjah, Bahrain and Eastern Europe.' },
+    { name: 'RAK Properties and Al Hamra', hq: 'Ras Al Khaimah', type: 'Developer', focus: 'Mina Al Arab, Al Marjan Island, Al Hamra Village', notes: 'Ras Al Khaimah’s listed developers benefiting from the Wynn Al Marjan resort and freehold investor inflows.' },
   ],
   categoryBlurbs: {
-    local: 'Emaar, Aldar, Nakheel, Damac, Dubai Holding, RAK Properties, and MAG are UAE developers with emirate-specific systems. Abu Dhabi and Ras Al Khaimah are not Dubai catchments.',
-    mnc: 'International brands arrive as branded residences and capital, not as a US homebuilder. Sobha is the closest to an imported quality operating system with local delivery stakes.',
-    regional: 'Sobha’s India–UAE story and Gulf capital in Dubai towers are the regional layer. They still close in a Dubai sales suite, not in a regional dashboard.',
-    trade: 'The channel is the broker, the sales suite, and the escrow / off-plan plan. There is no grocery-style audit to buy.',
+    local: 'UAE-owned developers from listed Emaar, Aldar and Deyaar to private groups such as Damac, Binghatti, Azizi, Danube, Ellington and Omniyat, each with a distinct product and buyer.',
+    mnc: 'No foreign homebuilder develops at scale in the UAE; international involvement comes through hotel-branded residences, foreign buyers and Indian-origin developers such as Sobha and Danube.',
+    regional: 'Regional master developers such as Eagle Hills, and UAE developers exporting to Egypt, Saudi Arabia and Europe, link Emirati capital to neighbouring markets.',
+    trade: 'Government master developers — Dubai Holding Real Estate, Wasl, Modon — that hold prime land banks and set the pace of supply in Dubai and Abu Dhabi.',
   },
+  sections: [
+    {
+      heading: 'Launch pipeline by emirate',
+      paragraphs: [
+        'Dubai’s pipeline is the region’s largest, with more than 100,000 units scheduled for handover between 2025 and 2027 and new launches every week. Emaar continues to release The Oasis, Dubai Hills and Creek Harbour phases; Dubai Holding Real Estate is activating Palm Jebel Ali, Dubai Islands and Meydan land; Damac, Sobha, Binghatti, Azizi and Danube launch towers and communities across Dubailand, MBR City, JVC and Business Bay; and Omniyat, Select and Ellington add branded ultra-prime stock on the Palm and Marina.',
+        'Abu Dhabi supply is concentrated in Aldar’s Yas, Saadiyat and Reem projects, Modon’s Hudayriyat Island and Bloom Living in Zayed City, with a stronger villa and end-user mix. Sharjah’s Aljada and Masaar by Arada and Maryam Island by Eagle Hills, and Ras Al Khaimah’s Al Marjan Island around the Wynn resort, are the fastest-growing secondary pipelines. Tracking launches by developer, community and price band each quarter is essential because comparable inventory shifts constantly.',
+      ],
+    },
+    {
+      heading: 'Off-plan versus ready homes',
+      paragraphs: [
+        'Off-plan sales made up roughly 60% of Dubai residential transactions in 2024. Developers sell into DLD-regulated escrow with 10–20% down and construction-linked or post-handover plans, and payment structure — 1% monthly, 60/40 or 80/20 post-handover — is a primary competitive lever. Ready homes trade in a deep secondary market with mortgage financing and command a premium for immediate rental yield, while off-plan attracts investors betting on capital appreciation and resale before completion.',
+        'Abu Dhabi and the northern emirates carry a higher share of end-user and ready purchases, and mortgage penetration is rising with lower down-payment rules. BioNixus research separates off-plan and ready buyers, captures plan-term sensitivity, perceived delivery risk by developer and resale intent, and links these to developer sales data to explain absorption differences.',
+      ],
+    },
+    {
+      heading: 'Buyer segments',
+      paragraphs: [
+        'UAE developers sell to five distinct groups: international investors from India, the UK, Russia, China and the GCC buying for yield, capital gains and Golden Visa eligibility; resident end-users upgrading to villas and townhouses in master communities; Emirati families in Abu Dhabi and Sharjah using government housing programmes and freehold zones; high-net-worth buyers of branded and ultra-prime residences; and first-time investors drawn by 1% monthly plans in affordable towers.',
+        'Each segment differs in nationality mix, financing, decision timeline and channel, and emirate matters: Dubai skews investor, Abu Dhabi and Sharjah skew end-user. Segment-level quotas by nationality, residence, purchase motive and product type are what make a UAE buyer study actionable for pricing and launch design.',
+      ],
+    },
+    {
+      heading: 'Brokerage and sales channels',
+      paragraphs: [
+        'Brokers dominate distribution. Roughly 20,000 RERA-licensed agents in Dubai, from Betterhomes, Allsopp & Allsopp, haus & haus, Driven Properties and fäm Properties to thousands of small brokerages, earn 2–5% commission and originate most off-plan and secondary sales, with Property Finder, Bayut and Dubizzle as the discovery layer. Developers run flagship sales centres and international roadshows but rely on broker networks and incentive programmes to move launches, and broker incentives regularly exceed 5% on slower projects.',
+        'Abu Dhabi and Sharjah are more developer-direct, with Aldar and Arada selling significant volume through their own teams and apps. BioNixus fields broker interviews and incentive tracking, sales-centre mystery shopping and portal-listing audits alongside buyer research so developers understand the channel that actually converts by emirate and product.',
+      ],
+    },
+  ],
   growthDrivers: [
-    { title: 'Two-emirate fallacy', desc: 'Dubai freehold and Abu Dhabi end-user housing do not share a buyer. A “UAE” average is how Aldar briefs get a Downtown questionnaire.' },
-    { title: 'Off-plan versus ready', desc: 'Investor off-plan and end-user ready are different products. Split the sample or do not claim both.' },
-    { title: 'Master community versus branded tower', desc: 'Emaar/Nakheel community living is not a Damac branded floor. The gallery script and the broker are different.' },
-    { title: 'Delivery reputation as a brand', desc: 'Sobha’s research question is often handover, not lifestyle CGI. Instrument for that or you will measure the wrong job.' },
-    { title: 'Northern Emirates as a third market', desc: 'RAK is not a cheaper Dubai. Treat it as its own demand system when the brief includes it.' },
-    { title: 'Broker concentration', desc: 'A handful of agencies still steer off-plan tickets. Buyer-only samples miss the steering.' },
+    { title: 'Golden Visa and residency-linked demand', desc: 'Ten-year visas for property buyers above AED 2 million and remote-work residency have made real estate an immigration product, sustaining international investor inflows.' },
+    { title: 'Government master developer consolidation', desc: 'The merger of Nakheel, Meraas and Meydan into Dubai Holding Real Estate and Modon’s expansion concentrate prime land supply and change how private developers access sites.' },
+    { title: 'Branded and ultra-prime residences', desc: 'Hotel- and fashion-branded towers from Omniyat, Binghatti, Select and Damac have created a top tier with record prices and a distinct high-net-worth buyer.' },
+    { title: 'Payment-plan competition', desc: '1% monthly, post-handover and rent-to-own structures from Danube, Azizi, Samana and Reportage have widened the investor base and made plan terms a primary purchase driver.' },
+    { title: 'Northern emirates freehold', desc: 'Sharjah’s freehold opening, Arada’s Aljada and Ras Al Khaimah’s Wynn-driven Al Marjan Island are pulling investors and developers beyond Dubai and Abu Dhabi.' },
+    { title: 'Handover wave and delivery risk', desc: 'More than 100,000 Dubai units due by 2027 make delivery track record and construction quality decisive brand attributes, favouring backward-integrated developers.' },
   ],
   faq: [
-    { q: 'Which real estate companies should we map in the UAE?', a: 'Emaar, Aldar, Nakheel, Damac, Sobha, Dubai Holding/Meraas, RAK Properties, and MAG. That set covers Dubai freehold, Abu Dhabi, islands, off-plan towers, and the Northern Emirates.' },
-    { q: 'Is Aldar just Emaar in Abu Dhabi?', a: 'No. Different regulator, different end-user mix, different government adjacency. Copying a Downtown Dubai instrument onto Yas is the usual failure.' },
-    { q: 'Do syndicated research firms cover UAE real estate?', a: 'Grocery and pharma panels do not. Demand here is primary work — suites, brokers, investors, end-users. BioNixus fields that. We do not pretend to replace a Nielsen subscription that was never built for this.' },
-    { q: 'What must a UAE developer brief name?', a: 'Emirate, developer, project type (community vs tower), and buyer (off-plan investor vs end-user). “Sentiment in the UAE” is not a design.' },
-    { q: 'How fast can BioNixus scope a developer study?', a: 'A proposal is ready within 48 hours of a usable brief. Pricing is by project and country — no syndicated minimum.' },
+    { q: 'Who are the largest real estate developers in the UAE?', a: 'Emaar, Dubai Holding Real Estate (Nakheel, Meraas, Meydan), Damac, Sobha, Binghatti, Azizi and Danube lead Dubai; Aldar, Modon, Imkan and Bloom lead Abu Dhabi; Arada leads Sharjah and RAK Properties and Al Hamra lead Ras Al Khaimah.' },
+    { q: 'How do off-plan sales work in the UAE?', a: 'Developers sell units before completion into DLD- or ADREC-regulated escrow accounts, typically with 10–20% down and construction-linked or post-handover instalments; off-plan made up about 60% of Dubai residential sales in 2024.' },
+    { q: 'Who buys homes from UAE developers?', a: 'International investors from India, the UK, Russia, China and the GCC, resident end-users, Emirati families, high-net-worth buyers of branded residences and first-time investors using 1% monthly plans, with the mix varying sharply by emirate.' },
+    { q: 'How important are brokers in the UAE?', a: 'Very. Around 20,000 licensed agents in Dubai originate most off-plan and secondary sales for 2–5% commission, supported by Property Finder, Bayut and Dubizzle, while Abu Dhabi and Sharjah developers sell more directly.' },
+    { q: 'What does BioNixus study about real estate developers in the UAE?', a: 'Buyer segmentation by nationality and motive; developer brand and delivery-reputation tracking; broker incentive and steering research; payment-plan and pricing tests; and demand studies for building-product, fit-out and mortgage brands.' },
+    { q: 'Is this list ranked?', a: 'No. Developers are grouped by role and included because they recur in BioNixus UAE fieldwork and DLD, ADREC and exchange records; order does not indicate size or sales.' },
+  ],
+  regulatorSource: {
+    name: 'Dubai Land Department / RERA registered developers and Abu Dhabi Real Estate Centre (ADREC) licensed developers',
+    url: 'https://dubailand.gov.ae',
+    asOf: '2026-09-03',
+  },
+  sources: [
+    'Dubai Land Department transaction statistics and RERA developer and broker registers, 2024–2025',
+    'ADREC and Sharjah RERA licensing data; DFM and ADX annual reports of Emaar, Aldar, Deyaar, Union Properties, Modon and RAK Properties, 2024–2025',
+    'Property Finder, Bayut and Property Monitor market reports, 2024',
+    'BioNixus UAE developer, buyer and broker fieldwork, 2023–2026',
+  ],
+  fieldNotes: [
+    'Buyer segmentation surveys across Dubai, Abu Dhabi, Sharjah and Ras Al Khaimah by nationality, residence, purchase motive and product type.',
+    'Developer brand and delivery-reputation tracking among recent buyers and prospects for Emaar, Aldar, Damac, Sobha, Binghatti, Azizi and challengers.',
+    'Broker interviews, incentive tracking and sales-centre mystery shopping to map commission, steering and conversion practices by developer and emirate.',
+    'Payment-plan and pricing tests, and demand studies for building-product, fit-out, furniture and mortgage brands tied to handover schedules.',
   ],
 });
 
 const RE_KSA = finish('real-estate', 'saudi-arabia', {
+  title: 'Top 24 Real Estate Developers in Saudi Arabia (2026 List)',
+  h1: 'Top Real Estate Developers in Saudi Arabia (2026)',
+  modifiedDate: RE_MODIFIED,
   metaDescription:
-    '2026 directory of real estate companies in Saudi Arabia: ROSHN, Dar Al Arkan, Jabal Omar, RETAL. Vision 2030 developers we study. Primary research by BioNixus.',
+    '2026 list of real estate developers in Saudi Arabia: ROSHN, NHC, Dar Al Arkan, Jabal Omar, RETAL, Red Sea Global, Diriyah and more — pipeline, off-plan, buyers, brokers.',
   introLead:
-    'Saudi residential is a policy-and-giga story before it is a luxury-tower story. ROSHN is the PIF-backed volume housing name. Dar Al Arkan is the listed developer the market has watched for two decades. Jabal Omar is Makkah, not Riyadh. RETAL is the Eastern Province quality name. Emaar The Economic City and National Housing Company sit inside Vision 2030 supply, not inside a Dubai off-plan script.',
+    'Saudi Arabia is running the largest housing programme in the region: Vision 2030 targets 70% home ownership, the Sakani programme has supported more than a million families since 2017, and PIF-backed giga-developers, the National Housing Company and a growing tier of Tadawul-listed and private developers are building whole districts in Riyadh, Jeddah, the Eastern Province and the Holy Cities.',
   introRest:
-    'There is no Nielsen feed for this. BioNixus fields end-users, Sakani-adjacent buyers, brokers, and sales centres at the developer and city. Use this directory with our real estate market research in Saudi Arabia.',
+    'ROSHN and NHC supply master-planned communities at national scale; Dar Al Arkan, RETAL, Al Akaria, Sumou and Arriyadh Development are the listed developers investors track; Jabal Omar, Makkah Construction, Umm Al Qura and Rua Al Madinah build around the Two Holy Mosques; and Red Sea Global, NEOM, Diriyah, Qiddiya and New Murabba are the giga-projects that redefine what a Saudi development company is. The Real Estate General Authority licenses developers and brokers, Wafi regulates off-plan sales, and the Real Estate Development Fund and Saudi Real Estate Refinance Company finance demand. This directory lists the developers that define Saudi housing supply, explains how launches, off-plan sales, buyer segments and brokerage work in the Kingdom, and shows how BioNixus researches them for developers, lenders and building-product brands.',
   stats: [
-    { value: '8', label: 'Developers we list and study' },
-    { value: 'ROSHN', label: 'PIF-backed volume housing' },
-    { value: 'Sakani', label: 'Demand-side policy' },
-    { value: 'No panel', label: 'Primary research only' },
+    { value: '70%', label: 'Vision 2030 home-ownership target, up from about 47% in 2016' },
+    { value: '~64%', label: 'Saudi home-ownership rate reached by 2024 under the Housing Program' },
+    { value: '1m+', label: 'Families supported by Sakani housing solutions since 2017' },
+    { value: '5', label: 'PIF giga-projects with residential components: NEOM, Red Sea, Diriyah, Qiddiya, ROSHN' },
   ],
-  channelHeading: 'Sakani, giga-projects, and city-specific developers',
+  channelHeading: 'How developers sell homes in Saudi Arabia',
   channelBody:
-    'Riyadh, Jeddah, the Eastern Province, and the Two Holy Cities are different products. ROSHN communities are not Jabal Omar rooms and not a RETAL Khobar villa. Off-plan investor language imported from Dubai will mis-brief a Sakani end-user. Name the city and the programme.',
+    'The Saudi primary market runs on policy and programme as much as on brand. The Ministry of Municipal, Rural Affairs and Housing’s Sakani platform matches eligible citizens to subsidised mortgages, land and off-plan units from approved developers, and the Real Estate Development Fund and SRC channel financing through banks such as Al Rajhi, SNB and Riyad Bank, so eligibility and mortgage terms shape who buys what. Developers sell through Wafi-licensed off-plan programmes with escrow accounts, in-house sales centres and a brokerage layer that is professionalising under REGA licensing and the Ejar and Wafi platforms. Supply is city-specific: Riyadh, where ROSHN’s Sedra and Warefa, NHC’s suburbs, Dar Al Arkan’s Shams Ar Riyadh and Diriyah and New Murabba dominate; Jeddah, where Emaar The Economic City, Dar Al Arkan and Sedco develop along the coast and King Abdullah Economic City; the Eastern Province, where RETAL, Sumou and Ajdan lead Khobar and Dammam; and Makkah and Madinah, where Jabal Omar, Umm Al Qura’s Masar and Rua Al Madinah build hospitality-residential districts for pilgrims. Investors are a smaller share than in Dubai, expatriate ownership is only now being liberalised, and Saudi end-user families financed through Sakani remain the core buyer, which is why a Dubai off-plan instrument misreads Saudi demand.',
   companies: [
-    { name: 'ROSHN', hq: 'Saudi Arabia', type: 'Developer', focus: 'PIF-backed communities', notes: 'Volume Vision 2030 housing; not a luxury-tower story' },
-    { name: 'Dar Al Arkan', hq: 'Saudi Arabia', type: 'Developer', focus: 'Listed residential and commercial', notes: 'Long-running Tadawul developer name' },
-    { name: 'Jabal Omar Development', hq: 'Saudi Arabia', type: 'Developer', focus: 'Makkah hospitality-residential', notes: 'Haramain adjacency; not a Riyadh catchment' },
-    { name: 'RETAL Urban Development', hq: 'Saudi Arabia', type: 'Developer', focus: 'Eastern Province communities', notes: 'Khobar–Dammam quality name' },
-    { name: 'Emaar The Economic City', hq: 'Saudi Arabia / UAE', type: 'Regional', focus: 'King Abdullah Economic City', notes: 'Gulf operating system on a KSA giga site' },
-    { name: 'National Housing Company', hq: 'Saudi Arabia', type: 'Developer', focus: 'Ministry-adjacent supply', notes: 'Policy housing; different buyer than Dar Al Arkan' },
-    { name: 'Sumou Real Estate', hq: 'Saudi Arabia', type: 'Developer', focus: 'Eastern / listed development', notes: 'Eastern Province listed name' },
-    { name: 'Aldar (KSA adjacency)', hq: 'UAE', type: 'Regional', focus: 'Regional developer interest', notes: 'Abu Dhabi champion appearing in regional briefs' },
+    { name: 'ROSHN Group', hq: 'Riyadh', type: 'Government', focus: 'Sedra, Warefa, Alarous, Marafy; national master communities', notes: 'PIF giga-developer building integrated communities in Riyadh, Jeddah, the Eastern Province and Makkah; the volume benchmark for Saudi housing.' },
+    { name: 'National Housing Company (NHC)', hq: 'Riyadh', type: 'Government', focus: 'Suburban communities and Sakani supply', notes: 'Ministry-owned master developer delivering hundreds of thousands of units through partnerships with private developers.' },
+    { name: 'Dar Al Arkan Real Estate Development', hq: 'Riyadh', type: 'Developer', focus: 'Shams Ar Riyadh, Sedra Jeddah, branded residences, international', notes: 'Tadawul-listed developer with two decades of track record and branded projects in Dubai, Bosnia and the Maldives.' },
+    { name: 'RETAL Urban Development', hq: 'Khobar', type: 'Developer', focus: 'Eastern Province and Riyadh communities', notes: 'Tadawul-listed developer with a quality reputation in Khobar and Dammam and a growing Riyadh pipeline.' },
+    { name: 'Jabal Omar Development Company', hq: 'Makkah', type: 'Developer', focus: 'Jabal Omar hospitality and residential district beside the Grand Mosque', notes: 'Tadawul-listed developer of the largest private project in Makkah; hospitality-led residential for pilgrims.' },
+    { name: 'Emaar The Economic City', hq: 'King Abdullah Economic City', type: 'Regional', focus: 'KAEC master developer', notes: 'Tadawul-listed Emaar affiliate developing the King Abdullah Economic City north of Jeddah with PIF as a shareholder.' },
+    { name: 'Red Sea Global', hq: 'Riyadh', type: 'Government', focus: 'The Red Sea and Amaala luxury destinations', notes: 'PIF giga-developer of resort and residential communities on the Red Sea coast; sets the ultra-luxury benchmark.' },
+    { name: 'NEOM', hq: 'Tabuk', type: 'Government', focus: 'The Line, Sindalah, Trojena, Oxagon', notes: 'PIF giga-project with residential programmes for a new region; its procurement and design standards influence the whole sector.' },
+    { name: 'Diriyah Company', hq: 'Riyadh', type: 'Government', focus: 'Diriyah Gate heritage and residential district', notes: 'PIF developer of the Diriyah masterplan with premium residential and hospitality near central Riyadh.' },
+    { name: 'Qiddiya Investment Company', hq: 'Riyadh', type: 'Government', focus: 'Entertainment city with residential districts', notes: 'PIF giga-project south-west of Riyadh combining entertainment, sports and housing.' },
+    { name: 'New Murabba Development Company', hq: 'Riyadh', type: 'Government', focus: 'New Murabba downtown and the Mukaab', notes: 'PIF developer of a new Riyadh downtown with 100,000-plus residential units planned.' },
+    { name: 'Rua Al Madinah Holding', hq: 'Madinah', type: 'Government', focus: 'Rua Al Madinah district near the Prophet’s Mosque', notes: 'PIF developer of a hospitality and residential district for Madinah pilgrims and residents.' },
+    { name: 'Umm Al Qura for Development (Masar)', hq: 'Makkah', type: 'Developer', focus: 'Masar Destination boulevard in Makkah', notes: 'Developer of the Masar mixed-use corridor linking central Makkah to the Grand Mosque.' },
+    { name: 'Saudi Real Estate Company (Al Akaria)', hq: 'Riyadh', type: 'Developer', focus: 'Riyadh residential and commercial; Widyan', notes: 'Tadawul-listed developer majority-owned by PIF; redeveloping legacy Riyadh land into new communities.' },
+    { name: 'Makkah Construction and Development Company', hq: 'Makkah', type: 'Developer', focus: 'Abraj Al Bait and Makkah real estate', notes: 'Tadawul-listed owner-developer of the Abraj Al Bait complex; a reference for pilgrim-driven real estate.' },
+    { name: 'Taiba Investments', hq: 'Madinah', type: 'Developer', focus: 'Madinah hospitality and residential', notes: 'Tadawul-listed developer and hotel owner around the Prophet’s Mosque, merged with Dur Hospitality.' },
+    { name: 'Arriyadh Development Company', hq: 'Riyadh', type: 'Developer', focus: 'Riyadh mixed-use and residential', notes: 'Tadawul-listed developer with a Riyadh-focused portfolio of residential and commercial projects.' },
+    { name: 'Sumou Real Estate', hq: 'Khobar', type: 'Developer', focus: 'Eastern Province and Riyadh communities', notes: 'Tadawul-listed developer of villa and apartment communities in Dammam, Khobar and Riyadh.' },
+    { name: 'Jeddah Economic Company', hq: 'Jeddah', type: 'Developer', focus: 'Jeddah Economic City and Jeddah Tower', notes: 'Kingdom Holding-led developer of the Jeddah Tower district; relaunched construction in 2025.' },
+    { name: 'Ajdan Real Estate Development', hq: 'Khobar', type: 'Developer', focus: 'Ajdan Walk, Ajdan Rise, Eastern Province waterfront', notes: 'Private Eastern Province developer known for waterfront mixed-use projects and premium apartments.' },
+    { name: 'Dar Wa Emaar', hq: 'Riyadh', type: 'Developer', focus: 'Sakani-eligible villa communities in Riyadh and Jeddah', notes: 'Private developer delivering large volumes of affordable villas through NHC and Sakani partnerships.' },
+    { name: 'Al Saedan Real Estate', hq: 'Riyadh', type: 'Developer', focus: 'Riyadh residential communities', notes: 'Long-established private Riyadh developer with a broad mid-market villa and apartment portfolio.' },
+    { name: 'Sedco Development', hq: 'Jeddah', type: 'Developer', focus: 'Jeddah residential and mixed-use', notes: 'Sedco Holding’s development arm with premium Jeddah communities and commercial assets.' },
+    { name: 'Real Estate General Authority (REGA) and Real Estate Development Fund', hq: 'Riyadh', type: 'Government', focus: 'Developer and broker licensing, Wafi off-plan regulation, Sakani financing', notes: 'REGA licenses developers and brokers and runs Wafi; REDF and SRC finance the subsidised mortgages behind most Saudi purchases.' },
   ],
   categoryBlurbs: {
-    local: 'ROSHN, Dar Al Arkan, Jabal Omar, RETAL, NHC, and Sumou are Saudi developers with city- and programme-specific jobs. Makkah is not Riyadh. The Eastern Province is not a Jeddah clone.',
-    mnc: 'International homebuilders are not the KSA story. Capital and operators arrive through giga-projects and joint ventures, not through a Western tract-home brand.',
-    regional: 'Emaar The Economic City and Aldar adjacency are the Gulf layer. They still have to survive a Saudi end-user and a Saudi regulator — not a Downtown Dubai script.',
-    trade: 'The channel is Sakani, the sales centre, and the broker. There is no grocery audit. Primary fieldwork is the product.',
+    local: 'Saudi developers from Tadawul-listed Dar Al Arkan, RETAL, Al Akaria and Sumou to private groups such as Ajdan, Dar Wa Emaar, Al Saedan and Sedco, each with a city-specific portfolio.',
+    mnc: 'International homebuilders do not develop in Saudi Arabia; foreign expertise arrives through giga-project joint ventures, hotel brands and design and construction partners.',
+    regional: 'Gulf developers — Emaar through Emaar The Economic City and UAE groups exploring Saudi entry — that bring regional operating models to Saudi land.',
+    trade: 'The state layer: PIF giga-developers ROSHN, Red Sea Global, NEOM, Diriyah, Qiddiya, New Murabba and Rua Al Madinah, plus NHC, REGA and the Real Estate Development Fund that set supply, rules and financing.',
   },
+  sections: [
+    {
+      heading: 'Launch pipeline and giga-projects',
+      paragraphs: [
+        'Saudi supply is programme-driven. ROSHN is delivering Sedra and Warefa in Riyadh, Alarous in Jeddah and Marafy and Eastern Province communities toward a target of hundreds of thousands of homes, and NHC is releasing suburban land and units through partnerships with private developers across Riyadh, Jeddah and Dammam. Riyadh’s pipeline also includes New Murabba’s downtown, Diriyah Gate, Qiddiya’s residential districts and Al Akaria’s Widyan, while Jeddah adds KAEC phases, Jeddah Economic City and Red Sea Global’s coastal resorts to the north.',
+        'The Holy Cities carry a distinct pipeline: Jabal Omar, Masar, Rua Al Madinah and Taiba build hospitality-residential districts timed to pilgrim growth toward 30 million a year. The Eastern Province pipeline from RETAL, Sumou and Ajdan is smaller but premium. Tracking releases by developer, city and Sakani eligibility each quarter is essential because subsidised supply reprices the private market.',
+      ],
+    },
+    {
+      heading: 'Off-plan versus ready homes',
+      paragraphs: [
+        'Off-plan sales in Saudi Arabia run through the Wafi programme, which licenses projects, mandates escrow accounts and lets developers sell units before completion to Sakani-eligible and open-market buyers. Ready villas and apartments still account for a larger share of transactions than in Dubai, because subsidised mortgages through REDF and banks favour completed units and because many buyers purchase land and self-build through contractors, a channel that competes directly with developers.',
+        'Developers therefore compete on delivery certainty, mortgage pre-approval partnerships and monthly instalment affordability rather than on speculative appreciation. BioNixus research separates Wafi off-plan, ready-unit and self-build buyers, captures mortgage and eligibility constraints and measures developer trust, which is the decisive attribute in a market where delivery delays remain common.',
+      ],
+    },
+    {
+      heading: 'Buyer segments',
+      paragraphs: [
+        'Saudi housing demand centres on citizen families: first-time buyers using Sakani subsidies and REDF-backed mortgages; upgraders moving from rented apartments or older districts into master communities; and affluent families buying premium villas in Riyadh’s north, Jeddah’s Obhur coast or Khobar’s waterfront. A fourth, smaller segment of investors buys apartments for rental yield as Riyadh’s population and expatriate workforce grow, and a fifth is emerging as foreign ownership rules liberalise and giga-projects market branded residences internationally.',
+        'Segment behaviour differs by city and programme, and the same developer may serve Sakani-eligible buyers in one project and premium end-users in another. Quotas by city, eligibility, income band and purchase motive are what make Saudi buyer research usable for product design and pricing.',
+      ],
+    },
+    {
+      heading: 'Brokerage and sales channels',
+      paragraphs: [
+        'Saudi brokerage is professionalising quickly. REGA licensing, the Wafi and Ejar platforms and the growth of firms such as Century 21 Saudi, Aqar and regional brokerages are replacing informal agents, while listing portals Aqar, Bayut Saudi and Wasalt shape discovery. Developers sell primarily through their own sales centres and digital channels, with NHC’s and ROSHN’s platforms handling large volumes directly, and pay brokers commissions of around 2.5% for referred buyers.',
+        'Banks are a channel in their own right, because mortgage pre-approval through Al Rajhi, SNB, Riyad Bank and Alinma often determines which developer a family can buy from. BioNixus fields broker and bank-channel interviews, sales-centre mystery shopping and portal audits alongside buyer research so developers see how Saudi purchases are actually originated.',
+      ],
+    },
+  ],
   growthDrivers: [
-    { title: 'ROSHN as policy supply', desc: 'PIF-backed communities change what “competitor” means. A luxury-tower questionnaire will miss the buyer ROSHN actually has.' },
-    { title: 'Sakani as demand infrastructure', desc: 'Eligibility and financing are part of the product. Instrument for the programme, not only for lifestyle CGI.' },
-    { title: 'Makkah and Madinah as a fourth market', desc: 'Jabal Omar is hospitality-residential next to the Haram. It is not a Riyadh villa study.' },
-    { title: 'Eastern Province quality names', desc: 'RETAL and Sumou are Khobar–Dammam stories. A Riyadh-only sample will not see them.' },
-    { title: 'Giga-project leakage', desc: 'NEOM, Red Sea, and Diriyah distort headlines. Say whether the brief is giga, city housing, or both.' },
-    { title: 'Listed versus policy developers', desc: 'Dar Al Arkan and NHC do not share a capital or a buyer. Do not merge them in a “KSA developers” cell.' },
+    { title: 'Housing Program and Sakani', desc: 'Subsidised mortgages, land grants and off-plan support toward the 70% ownership target underpin most citizen purchases and define which developers and units qualify.' },
+    { title: 'PIF giga-developers', desc: 'ROSHN, Red Sea Global, NEOM, Diriyah, Qiddiya and New Murabba concentrate capital, land and design standards in state-backed developers that private firms partner with or price against.' },
+    { title: 'Riyadh population growth', desc: 'The capital’s push toward 15–20 million residents, regional headquarters relocations and Expo 2030 drive apartment demand and premium villa supply in the north and around new districts.' },
+    { title: 'Pilgrim-driven real estate', desc: 'Growth toward 30 million pilgrims a year sustains hospitality-residential development around the Grand Mosque and the Prophet’s Mosque by Jabal Omar, Masar, Rua Al Madinah and Taiba.' },
+    { title: 'Foreign ownership liberalisation', desc: 'Rules allowing non-Saudis to own property in designated zones open a new international buyer segment and change how giga-projects market branded residences.' },
+    { title: 'Capital-market and REIT funding', desc: 'Tadawul listings, sukuk and real estate funds give developers and NHC partners capital for large phased communities and raise disclosure standards across the sector.' },
   ],
   faq: [
-    { q: 'Which real estate companies should we map in Saudi Arabia?', a: 'ROSHN, Dar Al Arkan, Jabal Omar, RETAL, Emaar The Economic City, National Housing Company, Sumou, and Aldar where the brief is regional. That set covers policy volume, listed developers, Makkah, and the Eastern Province.' },
-    { q: 'Can we use a Dubai off-plan questionnaire in Riyadh?', a: 'Not without rewriting it. Sakani end-users, ROSHN communities, and Haramain projects are different jobs from a Business Bay investor. That is the usual failure we are hired to stop.' },
-    { q: 'Is there a syndicated real estate panel in KSA?', a: 'Not in the Nielsen/IQVIA sense. Demand work is primary — sales centres, brokers, eligible buyers. BioNixus fields it. We complement those firms in FMCG and pharma; we do not pretend they cover housing.' },
-    { q: 'What must the brief name?', a: 'City, developer, programme (Sakani vs open market vs giga), and buyer type. “Saudi real estate sentiment” is not a design.' },
-    { q: 'How does BioNixus price a developer study?', a: 'By project and country. Proposal within 48 hours of a brief. No enterprise dashboard minimum — there is no dashboard to subscribe to.' },
+    { q: 'Who are the largest real estate developers in Saudi Arabia?', a: 'ROSHN and the National Housing Company lead by volume, Dar Al Arkan, RETAL, Al Akaria, Sumou and Arriyadh Development are the main listed developers, Jabal Omar, Masar and Rua Al Madinah build in the Holy Cities, and Red Sea Global, NEOM, Diriyah, Qiddiya and New Murabba are the PIF giga-projects.' },
+    { q: 'How do off-plan sales work in Saudi Arabia?', a: 'Through the Wafi programme, which licenses projects, requires escrow accounts and allows sales before completion; buyers often combine off-plan purchase with Sakani eligibility and REDF-subsidised mortgages.' },
+    { q: 'Who buys homes from Saudi developers?', a: 'Mainly Saudi families using Sakani subsidies and bank mortgages, upgraders moving into master communities and affluent villa buyers, with a smaller investor segment and an emerging international segment as ownership rules liberalise.' },
+    { q: 'How important are brokers in Saudi Arabia?', a: 'Growing but less dominant than in Dubai; developers sell mostly through their own sales centres and platforms, REGA-licensed brokers earn around 2.5% on referrals, and banks’ mortgage pre-approval often decides which developer a buyer can choose.' },
+    { q: 'What does BioNixus study about real estate developers in Saudi Arabia?', a: 'Buyer segmentation by city, eligibility and motive; developer brand and delivery-trust tracking; broker, bank-channel and sales-centre research; pricing and instalment tests; and demand studies for building-product, finishing and home-finance brands.' },
+    { q: 'Is this list ranked?', a: 'No. Developers are grouped by role and included because they recur in BioNixus Saudi fieldwork and REGA, Wafi and Tadawul records; order does not indicate size or sales.' },
+  ],
+  regulatorSource: {
+    name: 'Real Estate General Authority (REGA) — licensed developers and Wafi off-plan projects; Tadawul listed real estate development companies',
+    url: 'https://rega.gov.sa',
+    asOf: '2026-09-03',
+  },
+  sources: [
+    'Ministry of Municipal, Rural Affairs and Housing — Housing Program and Sakani annual reports, 2024–2025',
+    'Tadawul annual reports of Dar Al Arkan, RETAL, Jabal Omar, Emaar The Economic City, Al Akaria, Sumou and Arriyadh Development, 2024–2025',
+    'PIF and giga-project disclosures (ROSHN, Red Sea Global, NEOM, Diriyah, New Murabba); GASTAT housing statistics, 2024',
+    'BioNixus Saudi developer, buyer and broker fieldwork, 2023–2026',
+  ],
+  fieldNotes: [
+    'Buyer segmentation surveys across Riyadh, Jeddah, the Eastern Province and the Holy Cities by Sakani eligibility, income band, purchase motive and product type.',
+    'Developer brand and delivery-trust tracking among recent buyers and prospects for ROSHN, NHC partners, Dar Al Arkan, RETAL, Jabal Omar and challengers.',
+    'Broker, bank-channel and sales-centre research mapping mortgage pre-approval, commission and conversion practices by developer and city.',
+    'Pricing and instalment tests, and demand studies for building-product, finishing, furniture and home-finance brands tied to handover schedules.',
   ],
 });
+
 
 const RE_KUWAIT = finish('real-estate', 'kuwait', {
   metaDescription:
@@ -1083,7 +1302,7 @@ const RE_QATAR = finish('real-estate', 'qatar', {
   ],
   faq: [
     { q: 'Which real estate companies should we map in Qatar?', a: 'Qatari Diar, Barwa, Ezdan, UDC (The Pearl), Msheireb Properties, Mazaya Qatar, Alijarah Holding, and Qatari Investors Group. That set covers sovereign masterplans, listed volume, the island, and downtown.' },
-    { q: 'Is Lusail the same market as The Pearl?', a: 'No. Different developer logic, different buyer mix, different absorption story after the World Cup. Averaging them is how briefs produce a unit nobody is shopping.' },
+    { q: 'Is Lusail the same market as The Pearl?', a: 'No. Different developer logic, different buyer mix, different absorption story after the World Cup. Blend them and the brief ends up pricing a unit that exists in neither district.' },
     { q: 'Can we copy a Dubai freehold questionnaire onto Doha?', a: 'Not without rewriting it. State-linked supply, family end-use, and post-event absorption are the Qatar facts. Visa-yield language is the usual import error.' },
     { q: 'Do Nielsen or IQVIA sell this cut?', a: 'No. Those feeds are grocery and pharma. Developer demand is primary fieldwork. BioNixus complements them in the categories they cover; we do not pretend they cover housing.' },
     { q: 'What must the brief name?', a: 'Masterplan and buyer — Pearl investor, Msheireb end-user, Lusail absorption. “Qatar real estate” is not a design.' },

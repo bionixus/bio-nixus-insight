@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/account-level-market-research</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -99,7 +99,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/blog</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/blog" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/blog" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
@@ -189,7 +189,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/insights</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/insights" />
@@ -304,7 +304,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/methodology</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -610,7 +610,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/blog" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/blog" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/blog" />
@@ -1657,7 +1657,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/insights</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/insights" />
@@ -1687,7 +1687,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/methodology</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1943,7 +1943,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es/insights</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/insights" />
@@ -1991,7 +1991,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es/methodology</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2012,7 +2012,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/faq</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2173,7 +2173,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr/insights</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/insights" />
@@ -2203,7 +2203,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr/methodology</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2491,12 +2491,6 @@
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/healthcare-market-research-in-uae</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.92</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research-india</loc>
@@ -3040,7 +3034,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/insights" />
@@ -4571,7 +4565,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/iqvia-alternative</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -6013,6 +6007,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/market-research-gcc</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/market-research-healthcare</loc>
     <lastmod>2026-08-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/market-research-healthcare" />
@@ -6233,7 +6233,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/methodology</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -6574,6 +6574,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/pharmaceutical-companies-dubai</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/pharmaceutical-companies-egypt</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -6905,7 +6911,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/pricing</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -6977,7 +6983,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/pt/insights</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/insights" />
@@ -7037,7 +7043,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/pt/methodology</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7151,6 +7157,12 @@
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/qatar-personalized-medicine-market</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/qatar-public-sector-market-research</loc>
@@ -7457,7 +7469,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ru/insights</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/insights" />
@@ -7526,6 +7538,12 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/saudi-arabia-biocatalyst-market</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/saudi-arabia-biologics-market</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
@@ -7766,7 +7784,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/services</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/services" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/services" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/services" />
@@ -7781,25 +7799,25 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/services/clinical-trial-support</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/services/competitive-intelligence</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/services/kol-stakeholder-mapping</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/services/market-access</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/services/market-access" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/services/market-access" />
     <changefreq>monthly</changefreq>
@@ -7807,13 +7825,13 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/services/qualitative-research</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/services/quantitative-research</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -8260,7 +8278,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh/insights</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/insights" />
@@ -8300,7 +8318,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh/methodology</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -13,6 +13,7 @@ import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
+import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import {
   ReportConsultationBand,
@@ -71,15 +72,15 @@ const UaePharmaCompanies = () => {
   const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-uae';
 
-  const ogTitle = "Top 30 Pharmaceutical Companies in UAE & Dubai (2026)";
-  const ogDescription = "2026 list of pharmaceutical companies in UAE and Dubai — manufacturers vs distributors, MNCs and MOHAP/DHA context. By BioNixus, GCC pharma research specialists.";
+  const ogTitle = "Top 30 Pharmaceutical Companies in UAE (2026 List)";
+  const ogDescription = "2026 list of pharmaceutical companies in the UAE — Julphar, Neopharma, Globalpharma, MNC offices and distributors, with MOHAP/DHA/DOH context. Dubai city guide linked. By BioNixus.";
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top 30 Pharmaceutical Companies in UAE & Dubai (2026)</title>
-        <meta name="description" content="2026 list of pharmaceutical companies in UAE and Dubai — manufacturers vs distributors, MNCs and MOHAP/DHA context. By BioNixus, GCC pharma research specialists." />        <link rel="canonical" href={citationUrl} />
+        <title>Top 30 Pharmaceutical Companies in UAE (2026 List)</title>
+        <meta name="description" content="2026 list of pharmaceutical companies in the UAE — Julphar, Neopharma, Globalpharma, MNC offices and distributors, with MOHAP/DHA/DOH context. Dubai city guide linked. By BioNixus." />        <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the UAE: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in the United Arab Emirates — local manufacturers, MNC offices, distributors, $4.5B market data, MOHAP/DHA/DOH regulatory landscape, and medical tourism outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the UAE: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in the United Arab Emirates — local manufacturers, MNC offices, distributors, $4.5B market data, MOHAP/DHA/DOH regulatory landscape, and medical tourism outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-09-03', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the UAE', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
@@ -101,7 +102,7 @@ const UaePharmaCompanies = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />Industry Guide 2026</div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">Pharmaceutical Companies in the UAE</h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">The UAE pharmaceutical market is valued at approximately USD 4.5 billion in 2026 and is growing at 17.5% year-over-year, the fastest rate in the GCC, with around 20 major pharmaceutical companies operating across manufacturers, multinational offices, and distributors. Pharmaceutical companies in the UAE anchor the fastest-growing GCC spend curve — start from <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> for regional programmes, or compare <Link to="/insights/top-market-research-companies-uae-2026" className="text-primary font-medium hover:underline">market research firms UAE</Link> for a 2026 agency shortlist. This guide covers major pharma companies, MOHAP/DHA/DOH regulatory framework, medical tourism, market data, distribution channels, and strategic opportunities.</p>
-          <p className="text-sm text-muted-foreground">Last updated: February 2026 &middot; Sources: MOHAP, DHA, DOH, BioNixus MEA, company filings</p>
+          <p className="text-sm text-muted-foreground">Last updated: September 2026 &middot; Sources: MOHAP, DHA, DOH, BioNixus MEA, company filings</p>
           <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in the UAE: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
           <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
 
@@ -163,7 +164,7 @@ const UaePharmaCompanies = () => {
 
         <section className="section-padding py-16" id="companies-by-category"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">List of Pharmaceutical Companies in the UAE by Category</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">UAE pharmaceutical companies span local manufacturers (e.g. Julphar, Neopharma, Globalpharma), multinational corporations with regional offices (including AstraZeneca regional HQ in Dubai), regional players, and major pharmacy chains dominating retail distribution.</p>
+          <p className="text-muted-foreground mb-10 max-w-3xl">UAE pharmaceutical companies span local manufacturers (e.g. Julphar, Neopharma, Globalpharma), multinational corporations with regional offices (including AstraZeneca regional HQ in Dubai), regional players, and major pharmacy chains dominating retail distribution. For the emirate-level view of regional headquarters, free-zone clusters, and DHA regulation, see <Link to="/pharmaceutical-companies-dubai" className="text-primary hover:underline font-medium">pharmaceutical companies in Dubai</Link>.</p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center"><Pill className="w-5 h-5 text-green-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">Local Manufacturers</h3></div><p className="text-sm text-muted-foreground mb-4">The UAE has several local pharmaceutical manufacturers, led by Julphar (Gulf Pharmaceutical Industries) — the largest Arab pharma company, based in Ras Al Khaimah and operating in 50+ countries. Neopharma (Abu Dhabi), Globalpharma (Dubai, WHO prequalified), Gulf Inject (injectables), and Pharmax (consumer health) round out the local base.</p><ul className="space-y-1.5 text-sm text-foreground">{pharmaCompanies.filter(c => c.type === 'Local Manufacturer').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-green-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
             <div className="bg-card border border-border rounded-xl p-6"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center"><Globe className="w-5 h-5 text-blue-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">Multinational Pharma Offices</h3></div><p className="text-sm text-muted-foreground mb-4">Major global pharmaceutical companies maintain offices in the UAE; AstraZeneca has its regional HQ in Dubai. MNCs dominate the innovator segment. Eli Lilly is among the fastest-growing (100%+ YoY); Novo Nordisk (Ozempic/Wegovy) is driving strong growth in diabetes and obesity.</p><ul className="space-y-1.5 text-sm text-foreground">{pharmaCompanies.filter(c => c.type === 'MNC Office').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-blue-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
@@ -266,6 +267,10 @@ const UaePharmaCompanies = () => {
             <Link to="/pharmaceutical-companies-oman" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Oman <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/pharmaceutical-companies-bahrain" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Bahrain <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
           </div>
+        </div></section>
+
+        <section className="section-padding py-10" id="country-directories"><div className="container-wide w-full">
+          <CountryDirectoryLinks country="uae" excludePath="/pharmaceutical-companies-uae" compact />
         </div></section>
 
         <PharmaCompaniesFaqSection items={faqItems} />

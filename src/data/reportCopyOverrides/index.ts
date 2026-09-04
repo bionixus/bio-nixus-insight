@@ -27,6 +27,7 @@ import { SAUDI_ARABIA_DIGITAL_HEALTH_COPY } from '@/data/reportCopyOverrides/sau
 import { SAUDI_ARABIA_VACCINES_COPY } from '@/data/reportCopyOverrides/saudiArabiaVaccinesMarketReport';
 import { SAUDI_ARABIA_DERMATOLOGY_COPY } from '@/data/reportCopyOverrides/saudiArabiaDermatologyMarketReport';
 import { UAE_DIGITAL_HEALTH_COPY } from '@/data/reportCopyOverrides/uaeDigitalHealthMarketReport';
+import { QATAR_DIGITAL_HEALTH_COPY } from '@/data/reportCopyOverrides/qatarDigitalHealthMarketReport';
 import { UAE_VACCINES_COPY } from '@/data/reportCopyOverrides/uaeVaccinesMarketReport';
 import { UAE_DERMATOLOGY_COPY } from '@/data/reportCopyOverrides/uaeDermatologyMarketReport';
 import { GCC_VACCINES_COPY } from '@/data/reportCopyOverrides/gccVaccinesMarketReport';
@@ -67,6 +68,7 @@ const OVERRIDES: OverrideCopy[] = [
   SAUDI_ARABIA_VACCINES_COPY,
   SAUDI_ARABIA_DERMATOLOGY_COPY,
   UAE_DIGITAL_HEALTH_COPY,
+  QATAR_DIGITAL_HEALTH_COPY,
   UAE_VACCINES_COPY,
   UAE_DERMATOLOGY_COPY,
   GCC_VACCINES_COPY,

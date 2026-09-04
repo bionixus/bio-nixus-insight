@@ -10,7 +10,7 @@ const content: GeneralMRPageContent = {
   intro:
     "Research companies in UAE operate in one of the world's most international, high-income consumer markets — a multicultural population of 9.7 million with over 89% expatriates and one of the GCC's most sophisticated retail and financial ecosystems. BioNixus is a global market research company delivering primary consumer, B2B, and specialist industry studies across Dubai, Abu Dhabi, Sharjah, and the Northern Emirates for multinational and regional clients.",
   countryLabel: 'United Arab Emirates',
-  healthcarePageLink: '/healthcare-market-research-in-uae',
+  healthcarePageLink: '/healthcare-market-research/uae',
   healthcarePageLabel: 'Healthcare & pharmaceutical market research in the UAE',
   industries: [
     {
@@ -200,7 +200,7 @@ const content: GeneralMRPageContent = {
     },
   ],
   relatedLinks: [
-    { to: '/healthcare-market-research-in-uae', label: 'Healthcare market research in the UAE' },
+    { to: '/healthcare-market-research/uae', label: 'Healthcare market research in the UAE' },
     {
       to: '/insights/top-market-research-companies-uae-2026',
       label: 'Top market research companies in UAE (2026 guide)',
