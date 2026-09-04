@@ -36,7 +36,7 @@ interface FirmProfile {
 }
 
 const PAGE_TITLE = 'Top Market Research Companies in Saudi Arabia (2026)';
-const PAGE_H1 = 'Top Market Research Companies in Saudi Arabia: 2026 Ranking';
+const PAGE_H1 = 'Top Market Research Companies in Saudi Arabia: 2026 Ranking of KSA Research Firms and Market Analysis Firms';
 const PAGE_DESCRIPTION =
   'Top market research companies in Saudi Arabia 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ and local KSA market analysis firms.';
 const PAGE_LAST_MODIFIED = '2026-09-03';
@@ -283,7 +283,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
       { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.bionixus.com/insights' },
-      { '@type': 'ListItem', position: 3, name: PAGE_H1, item: CANONICAL },
+      { '@type': 'ListItem', position: 3, name: 'Top Market Research Companies in Saudi Arabia (2026)', item: CANONICAL },
     ],
   };
 
@@ -301,7 +301,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
       name: 'Haidy Yahia',
       affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     },
-    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'Saudi Arabia', sameAs: 'https://www.wikidata.org/wiki/Q851' },
     keywords:

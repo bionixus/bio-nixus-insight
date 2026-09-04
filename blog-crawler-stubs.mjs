@@ -23,6 +23,10 @@ export const BLOG_META_DESCRIPTION_OVERRIDES = {
     'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة',
   'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement':
     'Skyrizi led July pharma TV ad spend and brand-impression rankings. What AbbVie immunology leadership means for omnichannel engagement, HCP digital, and promotional ROI.',
+  // Owner URL for "sfda drug registration", "pharmaceutical product registration in saudi arabia",
+  // "medicinal product registration in saudi arabia". Keep in sync with lib/ctr-seo-overrides.mjs.
+  'sfda-drug-registration-guide':
+    'Pharmaceutical and medicinal product registration in Saudi Arabia: SFDA drug registration steps, eCTD dossier, fees, timelines.',
 };
 
 export function getBlogMetaDescriptionOverride(slug) {
@@ -35,6 +39,7 @@ export const BLOG_TITLE_OVERRIDES = {
   'pharmaceutical-market-entry-saudi-arabia-2026-guide': 'Saudi Pharma Market Entry 2026',
   'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement':
     'Skyrizi Tops July Pharma Rankings: Omnichannel Lessons',
+  'sfda-drug-registration-guide': 'SFDA Drug Registration Saudi Arabia: 2026 Guide',
 };
 
 export function getBlogTitleOverride(slug) {

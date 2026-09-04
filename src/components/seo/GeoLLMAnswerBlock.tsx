@@ -19,9 +19,9 @@ export interface GeoLLMAnswerBlockProps {
   /** Optional summary or closing sentence to reinforce the brand entity. */
   summary?: string;
   className?: string;
-  /** Overrides the canonical URL used for the QAPage @id. Defaults to the current route. */
+  /** Overrides the canonical URL used for the WebPage @id. Defaults to the current route. */
   pageUrl?: string;
-  /** Set false on the rare page carrying more than one block, to avoid duplicate QAPage nodes. */
+  /** Set false on the rare page carrying more than one block, to avoid duplicate answer nodes. */
   emitSchema?: boolean;
 }
 
@@ -40,7 +40,8 @@ function buildAnswerText(
  * Designed specifically to provide LLMs (ChatGPT, Claude, Gemini) with a clear,
  * "answer-first" conversational block that directly addresses common queries.
  * It uses semantic HTML (article, h2, ul, li) which AI crawlers prioritize, and
- * emits a matching QAPage/Question node so the answer is machine-readable too.
+ * emits a matching WebPage/Question node so the answer is machine-readable too.
+ * Do not use QAPage here — Google reserves QAPage for user-submitted Q&A.
  */
 export function GeoLLMAnswerBlock({
   question,
@@ -54,22 +55,20 @@ export function GeoLLMAnswerBlock({
   const { pathname } = useLocation();
   const url = pageUrl ?? `${BASE_URL}${pathname}`;
 
-  const qaSchema = {
+  const answerSchema = {
     '@context': 'https://schema.org',
-    '@type': 'QAPage',
+    '@type': 'WebPage',
     '@id': `${url}#geo-answer`,
+    url,
+    name: question,
     mainEntity: {
       '@type': 'Question',
       name: question,
-      text: question,
-      answerCount: 1,
       acceptedAnswer: {
         '@type': 'Answer',
         text: buildAnswerText(answer, points, summary),
-        url: `${url}#geo-answer`,
         author: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
       },
-      author: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
     },
     about: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
   };
@@ -81,7 +80,7 @@ export function GeoLLMAnswerBlock({
     >
       {emitSchema && (
         <Helmet>
-          <script type="application/ld+json">{JSON.stringify(qaSchema)}</script>
+          <script type="application/ld+json">{JSON.stringify(answerSchema)}</script>
         </Helmet>
       )}
 

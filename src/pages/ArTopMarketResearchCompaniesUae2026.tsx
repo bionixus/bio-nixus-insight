@@ -257,7 +257,7 @@ export default function ArTopMarketResearchCompaniesUae2026() {
       '@id': 'https://www.bionixus.com/#organization',
       name: 'BioNixus',
     },
-    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
   };
 
   const itemListSchema = {

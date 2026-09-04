@@ -103,7 +103,7 @@ const en: UiChromeStrings = {
   exploreResearch: {
     heading: 'Explore BioNixus research',
     kicker: 'Indexed destinations',
-    lede: 'Each URL is a decision page — rankings, country programmes, and market reports built for pharmaceutical buyers.',
+    lede: 'Each URL is a decision page — country programs, competitor alternatives, and reports a marketing team can brief from.',
     startHere: 'Start here',
     hub: 'Global healthcare market research hub',
     iqvia: 'BioNixus vs. IQVIA and other legacy vendors',

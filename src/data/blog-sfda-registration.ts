@@ -21,7 +21,7 @@ export const sfdaDrugRegistrationGuide: BlogPostType = {
         { heading: 'Required Documentation (CTD)', anchor: 'required-documentation' },
         { heading: 'Common Challenges', anchor: 'common-challenges' }
     ],
-    executiveSummary: 'Saudi Arabia represents the largest pharmaceutical market in the MENA region, valued at over $8.5 billion. However, entering this lucrative market requires strict adherence to the Saudi Food & Drug Authority (SFDA) regulations. This guide demystifies the SFDA drug registration process, detailing the key pathways, expected timelines, necessary documentation, and strategic approaches for pharmaceutical companies seeking successful market entry in 2026.',
+    executiveSummary: 'Saudi Arabia represents the largest pharmaceutical market in the MENA region, valued at over $8.5 billion. Pharmaceutical and medicinal product registration in Saudi Arabia runs through the Saudi Food & Drug Authority (SFDA) — this guide walks the SFDA drug registration process end to end: pathways, timelines, eCTD documentation, fees, and strategic approaches for successful market entry in 2026.',
     faq: [
         { question: 'What is the average timeline for SFDA drug registration?', answer: 'The timeline varies by product type. New Chemical Entities (NCEs) typically take 12 to 18 months. Generics generally take 9 to 12 months. Priority review pathways can significantly shorten these timelines for essential or innovative therapies.' },
         { question: 'What is the GCC Centralized Registration procedure?', answer: 'The GCC Centralized Registration allows pharmaceutical companies to submit a single application to the Executive Board of the Health Ministers Council for GCC States. If approved, the drug can be marketed across all participating GCC countries (including Saudi Arabia, UAE, Kuwait, Oman, Bahrain, and Qatar), streamlining the regulatory process.' },
@@ -37,7 +37,7 @@ export const sfdaDrugRegistrationGuide: BlogPostType = {
     },
     bodyHtml: `
     <h2 id="understanding-the-sfda">Understanding the SFDA (Saudi Food & Drug Authority)</h2>
-    <p>Established to ensure the safety and efficacy of food and drugs in the Kingdom, the <strong>Saudi Food & Drug Authority (SFDA)</strong> is the sole regulatory body governing pharmaceutical approvals in Saudi Arabia. As the largest pharma market in the Middle East, valued at over <strong>$8.5 billion</strong> and growing rapidly under <em>Vision 2030</em>, understanding the SFDA is paramount for global pharmaceutical companies.</p>
+    <p>Established to ensure the safety and efficacy of food and drugs in the Kingdom, the <strong>Saudi Food & Drug Authority (SFDA)</strong> is the sole regulatory body governing pharmaceutical and medicinal product registration in Saudi Arabia. As the largest pharma market in the Middle East, valued at over <strong>$8.5 billion</strong> and growing rapidly under <em>Vision 2030</em>, understanding SFDA drug registration is paramount for global pharmaceutical companies.</p>
     <p>The SFDA operates with stringent standards comparable to the FDA and EMA. Their mandate requires rigorous evaluation of clinical data, manufacturing practices (GMP), and product stability specifically tailored to GCC climatic conditions (Zone IVa/IVb).</p>
 
     <h2 id="drug-registration-pathways">Drug Registration Pathways</h2>

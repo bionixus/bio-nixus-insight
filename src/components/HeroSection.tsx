@@ -91,7 +91,7 @@ const HeroSection = () => {
                 {hero.ctaPremium ?? hero.cta}
               </Link>
               <Link
-                to="/case-studies"
+                to="#methodology"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-8 py-[17px] text-sm font-normal tracking-wide text-white/55 transition-colors hover:border-white/25 hover:text-white"
               >
                 <span aria-hidden="true">◈</span>

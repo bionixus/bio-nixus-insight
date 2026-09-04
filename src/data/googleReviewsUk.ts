@@ -18,7 +18,8 @@ export type GoogleReviewUk = {
 
 export const BIONIXUS_UK_AGGREGATE_RATING = {
   ratingValue: 5,
-  reviewCount: 6,
+  // Matches the four marked-up Review objects below (Google review snippet rule).
+  reviewCount: 4,
   bestRating: 5,
   worstRating: 1,
 } as const;

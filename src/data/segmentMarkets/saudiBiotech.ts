@@ -2149,13 +2149,14 @@ const plasmaFractionation: SegmentMarketContent = {
 const biologics: SegmentMarketContent = {
   slug: 'saudi-arabia-biologics-market',
   group: 'saudi-biotech',
+  lastUpdated: '2026-09-03',
   geoLabel: 'Saudi Arabia',
   segmentLabel: 'Biologics',
   badge: 'Saudi Arabia · Biologics & Biosimilars',
   breadcrumbLabel: 'Saudi Arabia Biologics Market',
-  title: 'Saudi Arabia Biologics Market 2026: Size, Access, Biosimilars',
+  title: 'Saudi Arabia Biologics Market 2026: Size, SFDA, Biosimilars',
   description:
-    'Saudi Arabia biologics market 2026 — largest share of the ~USD 4.8–5.4B GCC biologics market. SFDA pathway, NUPCO tenders, biosimilar uptake, Lifera localisation, and access research from BioNixus.',
+    'Saudi Arabia biologics market 2026: largest GCC share of the ~USD 4.8–5.4B biologics market. SFDA pathway, NUPCO tenders, biosimilar uptake, Lifera localising.',
   canonical: `${SEGMENT_MARKET_BASE}/saudi-arabia-biologics-market`,
   h1: 'Saudi Arabia Biologics Market: Size, SFDA Access, NUPCO Tenders & Biosimilar Uptake',
   intro: [

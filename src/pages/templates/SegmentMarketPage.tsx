@@ -65,6 +65,7 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
             headline: content.h1,
             description: content.description,
             mainEntityOfPage: content.canonical,
+            image: 'https://www.bionixus.com/og-image.png',
             dateModified: content.lastUpdated,
             author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
             publisher: {

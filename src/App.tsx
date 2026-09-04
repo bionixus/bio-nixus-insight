@@ -35,14 +35,24 @@ class SilentBoundary extends Component<{ children: ReactNode }, { failed: boolea
   render() { return this.state.failed ? null : this.props.children; }
 }
 
-function DeferredAnalytics() {
+function useDeferredMount(delayMs: number) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const id = setTimeout(() => setReady(true), 3000);
-    return () => clearTimeout(id);
-  }, []);
+    const start = () => setReady(true);
+    if (typeof window.requestIdleCallback === 'function') {
+      const idleId = window.requestIdleCallback(start, { timeout: delayMs });
+      return () => window.cancelIdleCallback(idleId);
+    }
+    const id = window.setTimeout(start, delayMs);
+    return () => window.clearTimeout(id);
+  }, [delayMs]);
 
+  return ready;
+}
+
+function DeferredAnalytics() {
+  const ready = useDeferredMount(3000);
   if (!ready) return null;
 
   return (
@@ -58,6 +68,20 @@ function DeferredAnalytics() {
   );
 }
 
+/** FAB / sticky bar / cookie banner are not LCP. Mount after first paint. */
+function DeferredPageChrome() {
+  const ready = useDeferredMount(2500);
+  if (!ready) return null;
+
+  return (
+    <>
+      <StickyCTA />
+      <WhatsAppProposalWidget />
+      <CookieConsent />
+    </>
+  );
+}
+
 function AppProviders({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
@@ -69,10 +93,8 @@ function AppProviders({ children }: { children: ReactNode }) {
           <Toaster />
           <Sonner />
           {children}
-          <StickyCTA />
-          <WhatsAppProposalWidget />
           <LocalePrompt />
-          <CookieConsent />
+          <DeferredPageChrome />
           <DeferredAnalytics />
         </TooltipProvider>
       </LanguageProvider>

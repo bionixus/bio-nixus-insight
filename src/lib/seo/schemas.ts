@@ -85,13 +85,12 @@ export const buildServiceSchema = buildProfessionalServiceSchema;
 export function buildOrganizationSchema() {
   return {
     ...buildCanonicalOrganization(),
-    email: 'mosama@bionixus.com',
+    email: 'admin@bionixus.com',
   };
 }
 
 export function buildHubPageSchemas(faqItems: { question: string; answer: string }[]) {
   return [
-    buildOrganizationSchema(),
     buildServiceSchema(),
     buildFAQSchema(faqItems, {
       pageUrl: `${BASE_URL}/healthcare-market-research`,
@@ -137,7 +136,6 @@ export function buildCountryPageSchemas(config: CountryConfig) {
       : buildServiceSchema();
 
   return [
-    buildOrganizationSchema(),
     serviceSchema,
     buildFAQSchema(config.faqQuestions, { pageUrl, sectionId: `healthcare-mr-country-${config.slug}-faq` }),
     buildBreadcrumbSchema([
@@ -151,7 +149,6 @@ export function buildCountryPageSchemas(config: CountryConfig) {
 export function buildTherapyPageSchemas(area: string, description: string) {
   const label = area.replace(/-/g, ' ');
   return [
-    buildOrganizationSchema(),
     {
       ...buildProfessionalServiceSchema(),
       name: `${label} market research`,
@@ -170,7 +167,6 @@ export function buildTherapyPageSchemas(area: string, description: string) {
 export function buildServicePageSchemas(service: string, description: string) {
   const label = service.replace(/-/g, ' ');
   return [
-    buildOrganizationSchema(),
     {
       ...buildProfessionalServiceSchema(),
       name: `${label} service`,
@@ -219,7 +215,6 @@ export function buildVideoObjectSchema(video: SiteVideo) {
 
 export function buildVideoWatchPageSchemas(video: SiteVideo) {
   return [
-    buildOrganizationSchema(),
     buildVideoObjectSchema(video),
     buildBreadcrumbSchema([
       { name: 'Home', href: '/' },
@@ -231,7 +226,6 @@ export function buildVideoWatchPageSchemas(video: SiteVideo) {
 
 export function buildVideosIndexSchemas(videos: SiteVideo[]) {
   return [
-    buildOrganizationSchema(),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

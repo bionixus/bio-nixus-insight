@@ -28,18 +28,18 @@ export type HomePageUiOverlay = {
 export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
   en: {
     ctaVariants: {
-      country: 'Discuss your {country} pharmaceutical research strategy',
+      country: 'Discuss your {country} brand vs competitor brief',
       countryFallback: 'your country',
-      therapy: 'Explore {therapy} market research opportunities',
-      therapyFallback: 'therapy',
-      service: 'Talk with BioNixus research specialists',
+      therapy: 'Explore {therapy} market research',
+      therapyFallback: 'category',
+      service: 'Talk with a BioNixus research lead',
     },
     services: {
       bottomCtaPrompt:
-        'Need a tailored healthcare market research scope for your pharmaceutical priorities?',
+        'Have a country, a brand, and a breakdown your dashboard cannot give?',
       bottomCtaButton: 'Request a proposal',
-      countryDepthBadge: 'Country-Level Depth',
-      kolCardTitle: 'KOL and Stakeholder Mapping',
+      countryDepthBadge: 'Country program',
+      kolCardTitle: 'Account and stakeholder mapping',
     },
     footer: {
       clientReviewsLink: 'Client reviews',

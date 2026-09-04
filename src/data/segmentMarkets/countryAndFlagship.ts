@@ -2403,7 +2403,7 @@ const pharmaceuticalProductRegistrationSaudiArabia: SegmentMarketContent = {
   breadcrumbLabel: 'SFDA Pricing Submission & Launch Readiness',
   title: 'SFDA Pricing Submission & Launch Readiness | Saudi Arabia',
   description:
-    'SFDA pricing submission and commercial launch readiness in Saudi Arabia: reference pricing, NUPCO tenders, formulary listing and the research that turns registration into revenue.',
+    'SFDA pricing submission and launch readiness in Saudi Arabia: reference pricing, NUPCO tenders, formulary listing and research that turns filing into revenue.',
   canonical: `${SEGMENT_MARKET_BASE}/pharmaceutical-product-registration-saudi-arabia`,
   h1: 'SFDA Pricing Submission and Commercial Launch Readiness in Saudi Arabia',
   intro: [

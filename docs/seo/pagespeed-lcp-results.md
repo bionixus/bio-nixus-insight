@@ -50,6 +50,17 @@ npx lighthouse "https://www.bionixus.com/about" \
   --output=json --output-path=./lighthouse-about.json
 ```
 
+## GSC desktop CWV (2026-09-03 export)
+
+`bionixus.com-core-web-vitals-2026-09-03.zip` — 142 URLs **Need improvement** (LCP > 2.5s desktop), 0 Good, INP N/A. Shared bottleneck: SSR HTML `s-maxage=60` expired before repeat CrUX hits (`x-vercel-cache: MISS`).
+
+Follow-up shipped:
+
+1. **Edge-cache HTML 1h + 24h SWR** — `CDN-Cache-Control` / `Vercel-CDN-Cache-Control` in [`api/indexnow-key.ts`](../../api/indexnow-key.ts) and [`server.js`](../../server.js).
+2. **Do not modulepreload `index.js`** — [`lib/ssr-client-asset-hints.mjs`](../../lib/ssr-client-asset-hints.mjs) preloads CSS only so JS does not steal LCP bandwidth.
+3. **Sitewide `main h1` critical CSS** — paint the heading before Tailwind/JS; Georgia fallback (Playfair is not linked).
+4. **Defer WhatsApp / sticky CTA / cookie banner** 2.5s after idle in [`src/App.tsx`](../../src/App.tsx).
+
 **Targets:** typical SSR routes LCP &lt; 4.0s; maintain `/about` ~2.8s or better.
 
 Compare JSON `categories.performance.score` and `audits['largest-contentful-paint'].numericValue` against the CSV baseline above.

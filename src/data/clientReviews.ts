@@ -3,7 +3,7 @@
  * Distinct from verified Google Business Profile reviews in googleReviewsUk.ts.
  */
 
-export const HAPPY_CLIENTS_COUNT = 40;
+export const HAPPY_CLIENTS_COUNT = 118;
 
 export type ClientTestimonialRegion = 'north-america' | 'europe' | 'latam';
 

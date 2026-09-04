@@ -9,9 +9,9 @@
 /** @type {Record<string, { title: string; description: string }>} */
 export const CTR_SEO_BY_PATH = {
   '/': {
-    title: 'BioNixus - The Global Market Research Firm (EMEA, Americas, APAC and MENA)',
+    title: 'Account-level research for marketing teams | BioNixus',
     description:
-      'Primary healthcare market research and market access consulting for pharma & medical devices — GCC, USA, Turkey, Europe, Brazil & Asia. Request a proposal.',
+      'Account-level brand vs competitor data for marketing teams in 48 countries. Keep IQVIA or Nielsen — add the breakdown they miss. 48-hour proposal.',
   },
   // CTR iterate 2026-09-01: head query "pharmaceutical companies in uae" = 645 impr / 0.78% CTR @ pos 7.5;
   // Dubai variants = 661 impr and were title-absent. Keep Top 30 + 2026; add Dubai; drop "Ranked List" to stay ≤60.
@@ -23,7 +23,7 @@ export const CTR_SEO_BY_PATH = {
   '/pharmaceutical-companies-dubai': {
     title: 'Pharmaceutical Companies in Dubai (2026): HQs & Distributors',
     description:
-      'Pharmaceutical companies in Dubai — MNC regional HQs in Dubai Science Park and DHCC, local manufacturers, distributors and pharmacy chains, with DHA and MOHAP context. By BioNixus.',
+      'Pharmaceutical companies in Dubai: MNC regional HQs in Dubai Science Park and DHCC, local manufacturers, distributors and pharmacy chains, with DHA context.',
   },
   // CTR sprint wave 3 (2026-08-22): "Top N + year + Ranked List" formula — matches
   // winning query pattern ("top 20 pharmaceutical companies in saudi arabia" = 37.5% CTR @ pos 5).
@@ -118,7 +118,7 @@ export const CTR_SEO_BY_PATH = {
   '/blog/sfda-drug-registration-guide': {
     title: 'SFDA Drug Registration in Saudi Arabia: 2026 Step Guide',
     description:
-      'Pharmaceutical product registration in Saudi Arabia explained — SFDA drug registration steps, eCTD dossier, GMP inspection, pricing, fees and realistic 2026 timelines.',
+      'Pharmaceutical and medicinal product registration in Saudi Arabia: SFDA drug registration steps, eCTD dossier, GMP inspection, fees and 2026 timelines.',
   },
   // GSC iterate (China devices): baseline ~0.25% CTR @ ~pos 18 (2026-08).
   // Targets: CTR ≥3% in 2–4 weeks; primary cluster avg pos ≤8 then ≤3; head "market report" top 10→3.
@@ -171,22 +171,22 @@ export const CTR_SEO_BY_PATH = {
   '/gcc-pharma-market-report-2026': {
     title: 'GCC Pharmaceutical Market 2026: Size, Companies, Outlook',
     description:
-      'GCC pharmaceutical market 2026: ~USD 27B across Saudi Arabia, UAE, Qatar, Kuwait, Oman, Bahrain; 7.6% CAGR to ~USD 37B by 2030. Biologics, generics, leading companies and outlook.',
+      'GCC pharmaceutical market 2026: ~USD 27B across Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain, 7.6% CAGR to ~USD 37B by 2030. Biologics, generics.',
   },
   '/gcc-market-access-guide': {
     title: 'GCC Market Entry Guide 2026: Pharma & MedTech Access',
     description:
-      'GCC market entry for pharma and medtech in 2026 — the 7-step path to enter Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain: registration, pricing, tenders, distributors.',
+      'GCC market entry for pharma and medtech in 2026: the 7-step path into Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain: registration, pricing, tenders.',
   },
   '/healthcare-market-research': {
     title: 'Healthcare Market Research: Definition, Methods & Companies',
     description:
-      'Healthcare market research explained — what it is, primary vs syndicated methods, costs, and how to brief a firm. BioNixus runs physician, payer and patient research in 48 countries.',
+      'Healthcare market research explained: what it is, primary vs syndicated methods, costs and how to brief a firm. BioNixus runs physician and payer research.',
   },
   '/healthcare-market-research-companies': {
     title: 'Healthcare Market Research Companies: 2026 Ranking & Guide',
     description:
-      'Healthcare market research companies ranked for 2026 — BioNixus, IQVIA, Ipsos, Kantar, M3, Clarivate, Research Partnership — plus how to choose an agency and what it costs.',
+      'Healthcare market research companies ranked for 2026: BioNixus, IQVIA, Ipsos, Kantar, M3, Clarivate, Research Partnership, plus how to choose an agency.',
   },
   '/insights/top-market-research-companies-angola-2026': {
     title: '5 Best Market Research Companies in Angola (2026 Ranked)',
@@ -241,7 +241,7 @@ export const CTR_SEO_BY_PATH = {
   '/insights/top-market-research-companies-saudi-arabia-2026': {
     title: 'Top Market Research Companies in Saudi Arabia (2026)',
     description:
-      'Top market research companies in Saudi Arabia 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ and local KSA market analysis firms.',
+      'Top market research companies in Saudi Arabia 2026: BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ and KSA market analysis firms.',
   },
   '/insights/top-market-research-companies-uae-2026': {
     title: 'Market Research Firms UAE 2026 | Top UAE Companies',
@@ -256,7 +256,7 @@ export const CTR_SEO_BY_PATH = {
   '/insights/top-consumer-insights-companies-ksa-2026': {
     title: 'Top Consumer Insights Companies in KSA (2026 Ranking)',
     description:
-      'Consumer insights companies KSA 2026 ranked — BioNixus #1 for custom brand, U&A, shopper & segmentation research in Saudi Arabia. Compare Kantar, Ipsos, NielsenIQ & Euromonitor.',
+      'Consumer insights companies KSA 2026 ranked: BioNixus #1 for custom brand, U&A, shopper and segmentation research in Saudi Arabia. Compare Kantar and NielsenIQ.',
   },
   '/insights/top-healthcare-market-research-companies-saudi-arabia-2026': {
     title: 'Healthcare Market Research Companies Saudi Arabia (2026)',
@@ -651,8 +651,6 @@ export const CTR_SEO_BY_PATH = {
     description:
       '2026 list of retail companies in Qatar — Lulu, Carrefour, and traditional grocers. Account-level research by BioNixus.',
   },
-  // Developer-directory upgrade 2026-09-03: retitled from "Real Estate Companies" to match the
-  // "real estate developers in X" query family; URLs unchanged (24 developers, pipeline/off-plan/buyer/broker sections).
   '/real-estate-companies-egypt': {
     title: 'Top 24 Real Estate Developers in Egypt (2026 List)',
     description:

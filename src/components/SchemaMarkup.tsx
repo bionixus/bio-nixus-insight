@@ -3,7 +3,6 @@ import type { BlogPost } from '@/types/blog'
 import type { Language } from '@/lib/i18n'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
-import { buildCanonicalOrganization } from '@/lib/seo/organization'
 import { buildAllGoogleLocalBusinesses } from '@/lib/seo/googleReviewsSchema'
 
 // Mirrors the site's Language union rather than restating it — the local copy
@@ -132,10 +131,6 @@ function toIsoDate(value?: string): string | undefined {
   return d.toISOString()
 }
 
-function buildOrganization() {
-  return buildCanonicalOrganization();
-}
-
 function buildWebsite(inLanguage: string) {
   return {
     '@context': 'https://schema.org',
@@ -145,18 +140,6 @@ function buildWebsite(inLanguage: string) {
     name: 'BioNixus',
     publisher: { '@id': ORG_ID },
     inLanguage,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${BASE_URL}/blog?search={search_term_string}`,
-      },
-      'query-input': {
-        '@type': 'PropertyValueSpecification',
-        valueRequired: true,
-        valueName: 'search_term_string',
-      },
-    },
   }
 }
 
@@ -338,7 +321,6 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
 
   if (props.pageType === 'home') {
     const nodes: Record<string, unknown>[] = [
-      buildOrganization(),
       ...buildAllGoogleLocalBusinesses(),
       buildWebsite(inLanguage),
     ]
@@ -529,6 +511,8 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
     return nodes
   }
 
+  if (props.pageType !== 'about') return []
+
   const people = props.people || []
   const personNodes = people
     .filter((p) => isNonEmptyString(p.name))
@@ -541,7 +525,7 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       worksFor: { '@id': ORG_ID },
     }))
 
-  return [buildOrganization(), ...buildAllGoogleLocalBusinesses(), ...personNodes]
+  return [...buildAllGoogleLocalBusinesses(), ...personNodes]
 }
 
 export default function SchemaMarkup(props: SchemaMarkupProps) {

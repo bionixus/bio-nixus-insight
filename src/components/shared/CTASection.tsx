@@ -39,7 +39,7 @@ export function CTASection({ variant, countryName, therapyArea, premium = false 
               {cta.requestProposal}
             </Link>
             <a
-              href={`mailto:mosama@bionixus.com?subject=${encodeURIComponent(cta.mailtoSubject)}`}
+              href={`mailto:admin@bionixus.com?subject=${encodeURIComponent(cta.mailtoSubject)}`}
               className="inline-flex items-center justify-center rounded-xl border border-white/10 px-8 py-[15px] text-sm font-medium tracking-wide text-white/60 transition-colors hover:border-white/25 hover:text-white"
             >
               {cta.emailUs}
@@ -77,7 +77,7 @@ export function CTASection({ variant, countryName, therapyArea, premium = false 
             {cta.requestProposal}
           </Link>
           <a
-            href={`mailto:mosama@bionixus.com?subject=${encodeURIComponent(cta.mailtoSubject)}`}
+            href={`mailto:admin@bionixus.com?subject=${encodeURIComponent(cta.mailtoSubject)}`}
             className="px-6 py-3 rounded-lg border border-white/40 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
           >
             {cta.emailUs}

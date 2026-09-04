@@ -105,35 +105,32 @@ export const aboutPageCopyEn: AboutPageCopy = {
   offices: [
     {
       title: 'United States — Global Headquarters',
-      lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'],
+      lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'],
     },
     {
       title: 'United Kingdom — London (Founding Office)',
-      lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'],
+      lines: ['128 City Road', 'London, EC1V 2NP', '+44 7727 666682'],
     },
     {
-      title: 'Egypt — Greater Cairo',
-      lines: [
-        'MENA regional operations and bilingual fieldwork hub serving the GCC, North Africa, and wider Middle East programmes.',
-        '+20 120 688 2323',
-      ],
+      title: 'Egypt — Sheikh Zayed, Giza',
+      lines: ['22 Beverly Hills, Second Sheikh Zayed', 'Sheikh Zayed, Giza 3240232', '+20 120 688 2323'],
       linkLabel: 'Egypt market research',
     },
     {
-      title: 'Saudi Arabia — Riyadh',
-      lines: ['SFDA-aware fieldwork and NUPCO-context research across the Kingdom.'],
+      title: 'Saudi Arabia — Al Khobar',
+      lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'],
       linkLabel: 'Saudi Arabia market research',
       linkPath: '/market-research-saudi-arabia-pharmaceutical',
     },
     {
       title: 'United Arab Emirates — Dubai',
-      lines: ['DHA, DOH, and MOHAP-aligned studies across the UAE.'],
+      lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'],
       linkLabel: 'UAE market research',
       linkPath: '/uae-pharmaceutical-market-research',
     },
     {
-      title: 'Kuwait — Kuwait City',
-      lines: ['MOH hospital system research and GCC coordination.'],
+      title: 'Kuwait — Salmiya',
+      lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'],
     },
     {
       title: 'Brazil — São Paulo',

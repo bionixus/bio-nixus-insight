@@ -100,7 +100,7 @@ export const aboutPageCopyEs: AboutPageCopy = {
     'Fundada en Londres, con sede en EE. UU. y programas MENA desde El Gran Cairo — fieldwork activo en Américas, Europa, Oriente Medio y APAC.',
   offices: [
     { title: 'Estados Unidos — Sede global', lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
-    { title: 'Reino Unido — Londres (oficina fundacional)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
+    { title: 'Reino Unido — Londres (oficina fundacional)', lines: ['128 City Road', 'London, EC1V 2NP', '+44 7727 666682'] },
     {
       title: 'Egipto — El Gran Cairo (oficina regional MENA)',
       lines: ['Operaciones MENA y hub bilingüe de fieldwork para GCC, Norte de África y Oriente Medio.', '+20 120 688 2323'],

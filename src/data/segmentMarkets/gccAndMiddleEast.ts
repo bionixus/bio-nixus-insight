@@ -2554,13 +2554,14 @@ const middleEastBiologics: SegmentMarketContent = {
 const qatarPersonalizedMedicine: SegmentMarketContent = {
   slug: 'qatar-personalized-medicine-market',
   group: 'gcc',
+  lastUpdated: '2026-09-03',
   geoLabel: 'Qatar',
   segmentLabel: 'Personalized Medicine',
   badge: 'Qatar · Personalized & Precision Medicine',
   breadcrumbLabel: 'Qatar Personalized Medicine Market',
   title: 'Qatar Personalized Medicine Market: Genomics & Access',
   description:
-    'Qatar personalized medicine market — Qatar Genome Programme, Qatar Biobank, HMC and Sidra precision oncology, pharmacogenomics, companion diagnostics and MOPH access. BioNixus research.',
+    'Qatar personalized medicine market 2026: Qatar Genome Programme, Qatar Biobank, HMC and Sidra precision oncology, pharmacogenomics, and MOPH access research.',
   canonical: `${SEGMENT_MARKET_BASE}/qatar-personalized-medicine-market`,
   h1: 'Qatar Personalized Medicine Market: Genomics, Precision Oncology & Access Intelligence',
   intro: [
