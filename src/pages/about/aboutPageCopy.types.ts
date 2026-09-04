@@ -46,6 +46,10 @@ export interface AboutPageCopy {
   breadcrumbAbout: string;
   heroTagline: string;
   h1: string;
+  /** Optional gold-emphasis split for the midnight hero H1. */
+  h1Lead?: string;
+  h1Emphasis?: string;
+  h1After?: string;
   heroSubheadBeforeSa: string;
   heroLinkSa: string;
   heroSubheadBeforeUae: string;
