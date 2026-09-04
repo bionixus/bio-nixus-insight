@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
+import { ArrowRight, Building2, Layers, Package } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
@@ -76,8 +80,45 @@ const COMPARISON = [
   {
     cut: 'Pricing model',
     syndicated: 'Enterprise subscription',
-    primary: 'Project- and country-based — see /pricing',
+    primary: 'Project- and country-based — see pricing',
   },
+] as const;
+
+const CUTS = [
+  {
+    icon: Building2,
+    title: 'Account-level',
+    body: 'Named hospital, retailer, distributor, or key account — not a country total.',
+  },
+  {
+    icon: Package,
+    title: 'SKU-level',
+    body: 'Pack, strength, or line for a named brand in a named country.',
+  },
+  {
+    icon: Layers,
+    title: 'What syndicated misses',
+    body: 'Subaccounts, subregions, traditional trade, and account- or SKU-specific primary data.',
+  },
+] as const;
+
+const RELATED = [
+  { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges, plus /pricing.md.' },
+  { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'When the brief is pharma audits vs primary data.' },
+  { to: '/kantar-alternative', label: 'Kantar alternative', desc: 'Brand-track vs account-level commercial research.' },
+  { to: '/tools/syndicated-data-gap', label: 'Syndicated data gap', desc: 'Five questions to see what the dashboard still misses.' },
+  { to: '/templates/country-research-brief', label: 'Country research brief', desc: 'Brand, SKU, market, and the Nielsen/IQVIA gap.' },
+  { to: '/fmcg-companies-egypt', label: 'FMCG companies in Egypt', desc: 'Named accounts we study when Nielsen undersamples bakals.' },
+  { to: '/healthcare-market-research', label: 'Healthcare market research', desc: 'What it is — primary vs syndicated, then country hubs.' },
+  { to: '/healthcare-market-research/uae', label: 'Healthcare MR UAE', desc: 'Dubai and Abu Dhabi programmes for affiliates.' },
+  { to: '/healthcare-market-research/egypt', label: 'Healthcare MR Egypt', desc: 'Account-level fieldwork in the largest MENA market.' },
+  { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare MR KSA', desc: 'SFDA-aware primary studies vs syndicated audits.' },
+] as const;
+
+const GRAIN_ROWS = [
+  { label: 'Named hospital', width: 'w-11/12', tone: 'gold' },
+  { label: 'Named retailer', width: 'w-2/3', tone: 'teal' },
+  { label: 'Named distributor', width: 'w-1/3', tone: 'muted' },
 ] as const;
 
 const breadcrumbSchema = buildBreadcrumbSchema([
@@ -119,7 +160,7 @@ export const ACCOUNT_LEVEL_SCHEMA_NODES = [breadcrumbSchema, faqSchema, articleS
 
 export default function AccountLevelMarketResearch() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#FFFEFB]">
       <Helmet>
         <title>{PAGE_TITLE}</title>
         <meta name="description" content={PAGE_DESCRIPTION} />
@@ -143,34 +184,129 @@ export default function AccountLevelMarketResearch() {
       />
       <Navbar />
       <main>
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-              <Link to="/" className="hover:text-primary transition-colors">
-                Home
-              </Link>
-              <span>/</span>
-              <span className="text-foreground">Account-level market research</span>
-            </div>
+        <div className="premium-home-ivory pt-24 pb-0">
+          <div className="container-wide mx-auto max-w-6xl">
+            <BreadcrumbNav
+              items={[
+                { name: 'Home', href: '/' },
+                { name: 'Account-level market research', href: PATH },
+              ]}
+              className="px-0"
+            />
           </div>
         </div>
 
-        <section className="section-padding pt-0 pb-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">
-              Last updated 2 September 2026 · {AUTHOR}
-            </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              What is account-level (and SKU-level) market research data?
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              Account-level market research data is brand versus competitor evidence cut by customer account — a
-              named hospital, retailer, or distributor — not only a national average. SKU-level data adds the
-              product cut: how this pack or line is doing in that account, in that country. Syndicated IQVIA and
-              Nielsen audits are built for the national feed. Primary fieldwork is how you get the rest.
-            </p>
+        <section className="premium-home-midnight section-padding pt-10 pb-16 md:pt-14 md:pb-24" aria-labelledby="account-level-heading">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#C9A84C] via-[#C9A84C]/30 to-transparent" aria-hidden="true" />
+          <div className="container-wide relative z-10 mx-auto max-w-6xl">
+            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:gap-16">
+              <div>
+                <PremiumEyebrow>Primary evidence · Account &amp; SKU</PremiumEyebrow>
+                <h1
+                  id="account-level-heading"
+                  className="sr-lcp max-w-4xl font-display text-3xl font-light leading-[1.12] tracking-tight text-[#FFFEFB] md:text-5xl"
+                >
+                  What is account-level (and SKU-level) market research data?
+                </h1>
+                <p className="mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/55">
+                  Account-level market research data is brand versus competitor evidence cut by customer account — a
+                  named hospital, retailer, or distributor — not only a national average. SKU-level data adds the
+                  product cut: how this pack or line is doing in that account, in that country. Syndicated IQVIA and
+                  Nielsen audits are built for the national feed. Primary fieldwork is how you get the rest, as part of
+                  our{' '}
+                  <Link to="/healthcare-market-research" className="text-[#C9A84C] underline-offset-4 hover:underline">
+                    healthcare market research
+                  </Link>{' '}
+                  programmes.
+                </p>
+                <p className="mt-4 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-white/30">
+                  Last updated 2 September 2026 · {AUTHOR}
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Link to="/contact" className="premium-gold-btn">
+                    Request a proposal
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <Link
+                    to="/pricing"
+                    className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/12 px-8 py-[15px] text-sm font-medium tracking-wide text-white/65 transition-colors hover:border-white/25 hover:text-[#FFFEFB]"
+                  >
+                    See pricing bands
+                  </Link>
+                </div>
+              </div>
+
+              <aside className="premium-card-dark p-7 md:p-8" aria-label="Illustrative grain of account-level data">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">The grain that matters</p>
+                <p className="mt-3 font-display text-xl font-light text-[#FFFEFB]">National averages hide the account</p>
+                <p className="mt-2 text-sm font-light leading-relaxed text-white/40">
+                  Illustrative structure — not a published market size. The dashboard returns one country number. The
+                  brief needs named accounts and SKUs.
+                </p>
+
+                <div className="mt-7 space-y-5">
+                  <div>
+                    <div className="mb-2 flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-white/35">
+                      <span>Syndicated audit</span>
+                      <span>Country total</span>
+                    </div>
+                    <div className="h-2 overflow-hidden rounded-full bg-white/10">
+                      <div className="h-full w-1/2 rounded-full bg-white/25" />
+                    </div>
+                  </div>
+                  <div className="h-px bg-white/10" aria-hidden="true" />
+                  <div>
+                    <p className="mb-3 text-[11px] uppercase tracking-[0.16em] text-white/35">Primary fieldwork</p>
+                    <ul className="space-y-3.5">
+                      {GRAIN_ROWS.map((row) => (
+                        <li key={row.label}>
+                          <div className="mb-1.5 flex items-center justify-between text-sm">
+                            <span className="font-medium text-white/80">{row.label}</span>
+                            <span className="text-[11px] uppercase tracking-[0.14em] text-white/30">Named cut</span>
+                          </div>
+                          <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
+                            <div
+                              className={`h-full rounded-full ${row.width} ${
+                                row.tone === 'gold'
+                                  ? 'bg-[#C9A84C]'
+                                  : row.tone === 'teal'
+                                    ? 'bg-[#0EA5A0]/80'
+                                    : 'bg-white/35'
+                              }`}
+                            />
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section className="premium-home-ivory section-padding py-16 md:py-20" aria-labelledby="three-cuts-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <PremiumEyebrow>Three cuts</PremiumEyebrow>
+              <h2
+                id="three-cuts-heading"
+                className="font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl"
+              >
+                The brief is not a country total
+              </h2>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {CUTS.map((cut) => (
+                <article key={cut.title} className="premium-card">
+                  <cut.icon className="mb-5 h-5 w-5 text-[#C9A84C]" aria-hidden="true" />
+                  <h3 className="mb-3 font-display text-xl font-medium text-[#0C1B33]">{cut.title}</h3>
+                  <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">{cut.body}</p>
+                </article>
+              ))}
+            </div>
             <GeoLLMAnswerBlock
-              className="mt-8"
+              className="mt-12 border-[#EDE9E3] bg-[#FFFEFB] shadow-[0_24px_80px_rgba(6,16,31,0.06)]"
               question="What is account-level market research data?"
               answer="Account-level market research data is insights cut by customer account, not only national aggregates. SKU-level data is the same evidence cut by product SKU for a named brand in a named country. Syndicated IQVIA and Nielsen feeds typically miss subaccounts, traditional trade, and those cuts — primary fieldwork fills the gap."
               points={[
@@ -192,26 +328,54 @@ export default function AccountLevelMarketResearch() {
           </div>
         </section>
 
-        <section className="section-padding py-12 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-              Account-level vs SKU-level vs national audits
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-border">
+        <section className="premium-home-cream section-padding py-16 md:py-20" aria-labelledby="comparison-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mb-10 max-w-2xl">
+              <PremiumEyebrow tone="teal">Side by side</PremiumEyebrow>
+              <h2
+                id="comparison-heading"
+                className="font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl"
+              >
+                Account-level vs SKU-level vs national audits
+              </h2>
+            </div>
+            <div className="overflow-x-auto rounded-2xl border border-[#EDE9E3] bg-[#FFFEFB] shadow-[0_24px_80px_rgba(6,16,31,0.05)]">
+              <table className="w-full min-w-[640px] text-left text-sm">
+                <caption className="sr-only">
+                  Comparison of syndicated IQVIA and NielsenIQ cuts versus BioNixus primary fieldwork
+                </caption>
                 <thead>
-                  <tr className="bg-muted/40 text-left">
-                    <th className="p-3 border-b border-border">Cut</th>
-                    <th className="p-3 border-b border-border">Syndicated (IQVIA / NielsenIQ)</th>
-                    <th className="p-3 border-b border-border">Primary fieldwork (BioNixus)</th>
+                  <tr className="bg-[#06101F] text-[#FFFEFB]">
+                    <th scope="col" className="px-5 py-4 font-medium">
+                      Cut
+                    </th>
+                    <th scope="col" className="px-5 py-4 font-medium text-white/70">
+                      Syndicated (IQVIA / NielsenIQ)
+                    </th>
+                    <th scope="col" className="border-l border-[#C9A84C]/30 px-5 py-4 font-medium text-[#C9A84C]">
+                      Primary fieldwork (BioNixus)
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.cut} className="align-top">
-                      <td className="p-3 border-b border-border font-semibold text-foreground">{row.cut}</td>
-                      <td className="p-3 border-b border-border text-muted-foreground">{row.syndicated}</td>
-                      <td className="p-3 border-b border-border text-muted-foreground">{row.primary}</td>
+                  {COMPARISON.map((row, index) => (
+                    <tr key={row.cut} className={index % 2 === 0 ? 'bg-[#FFFEFB]' : 'bg-[#F4F2ED]/60'}>
+                      <th scope="row" className="px-5 py-4 align-top font-medium text-[#0C1B33]">
+                        {row.cut}
+                      </th>
+                      <td className="px-5 py-4 align-top font-light leading-relaxed text-[#7A7267]">{row.syndicated}</td>
+                      <td className="border-l border-[#C9A84C]/15 px-5 py-4 align-top font-light leading-relaxed text-[#0C1B33]">
+                        {row.cut === 'Pricing model' ? (
+                          <>
+                            Project- and country-based — see{' '}
+                            <Link to="/pricing" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline">
+                              pricing
+                            </Link>
+                          </>
+                        ) : (
+                          row.primary
+                        )}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -220,97 +384,140 @@ export default function AccountLevelMarketResearch() {
           </div>
         </section>
 
-        <section className="section-padding py-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-              Why syndicated audits miss traditional trade
-            </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl mb-3">
-              Traditional trade — independent pharmacies, grocers, and non-modern retail — is where a large share
-              of volume still moves in Egypt, the GCC, and other emerging markets. National modern-trade panels
-              and prescription audits are not designed to sample those accounts. Subregion and subaccount cuts
-              sit below the subscription grain. That is why a Head of Marketing can pay for IQVIA or Nielsen and
-              still be blind on how the brand stacks up in-market.
-            </p>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl">
-              Primary studies fill that gap: mystery shoppers, account interviews, pharmacy and hospital pulls,
-              and surveys designed for the accounts and SKUs in the brief. See{' '}
-              <Link to="/iqvia-alternative" className="text-primary underline font-medium">
-                IQVIA alternative
-              </Link>{' '}
-              for pharma audits and{' '}
-              <Link to="/nielsen-alternative" className="text-primary underline font-medium">
-                Nielsen alternative
-              </Link>{' '}
-              for FMCG retail measurement.
-            </p>
-          </div>
-        </section>
-
-        <section className="section-padding py-12 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
-              Account-level data is not a US commercial-data platform
-            </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl">
-              Searches for “account-level market research data” often return Veeva, Trinity, IntegriChain, or
-              EVERSANA — software that stitches CRM, claims, and payer profiles, mostly for the United States.
-              That is a different product. BioNixus is a primary market research firm: field teams collect
-              account-level and SKU-level evidence for a named brand in a named country, including markets those
-              platforms do not cover.
-            </p>
-          </div>
-        </section>
-
-        <section className="section-padding py-12" id="faq">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-6">Frequently asked questions</h2>
-            <div className="space-y-4">
-              {FAQ.map((faq) => (
-                <details key={faq.question} className="rounded-xl border border-border bg-card p-4">
-                  <summary className="cursor-pointer font-semibold text-foreground">{faq.question}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{faq.answer}</p>
-                </details>
-              ))}
+        <section className="premium-home-ivory section-padding py-16 md:py-20" aria-labelledby="traditional-trade-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(260px,0.9fr)]">
+              <div>
+                <PremiumEyebrow>Where volume still moves</PremiumEyebrow>
+                <h2
+                  id="traditional-trade-heading"
+                  className="mb-6 font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl"
+                >
+                  Why syndicated audits miss traditional trade
+                </h2>
+                <p className="max-w-2xl font-light leading-relaxed text-[#7A7267]">
+                  Traditional trade — independent pharmacies, grocers, and non-modern retail — is where a large share
+                  of volume still moves in Egypt, the GCC, and other emerging markets. National modern-trade panels
+                  and prescription audits are not designed to sample those accounts. Subregion and subaccount cuts
+                  sit below the subscription grain. That is why a Head of Marketing can pay for IQVIA or Nielsen and
+                  still be blind on how the brand stacks up in-market.
+                </p>
+                <p className="mt-4 max-w-2xl font-light leading-relaxed text-[#7A7267]">
+                  Primary studies fill that gap: mystery shoppers, account interviews, pharmacy and hospital pulls,
+                  and surveys designed for the accounts and SKUs in the brief. See{' '}
+                  <Link to="/iqvia-alternative" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline">
+                    IQVIA alternative
+                  </Link>{' '}
+                  for pharma audits and{' '}
+                  <Link to="/nielsen-alternative" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline">
+                    Nielsen alternative
+                  </Link>{' '}
+                  for FMCG retail measurement.
+                </p>
+              </div>
+              <aside className="space-y-4">
+                {[
+                  { title: 'Modern-trade panel', body: 'National, modelled, subscription grain.' },
+                  { title: 'Traditional trade', body: 'Independent pharmacies, grocers, bakals — fielded when volume moves there.' },
+                  { title: 'Named SKU in-account', body: 'Pack and line cuts the franchise total cannot show.' },
+                ].map((item) => (
+                  <article key={item.title} className="premium-card py-6">
+                    <h3 className="mb-2 font-display text-lg font-medium text-[#0C1B33]">{item.title}</h3>
+                    <p className="text-sm font-light leading-relaxed text-[#7A7267]">{item.body}</p>
+                  </article>
+                ))}
+              </aside>
             </div>
           </div>
         </section>
 
-        <section className="section-padding py-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related resources</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges, plus /pricing.md.' },
-                { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'When the brief is pharma audits vs primary data.' },
-                { to: '/kantar-alternative', label: 'Kantar alternative', desc: 'Brand-track vs account-level commercial research.' },
-                { to: '/tools/syndicated-data-gap', label: 'Syndicated data gap', desc: 'Five questions to see what the dashboard still misses.' },
-                { to: '/templates/country-research-brief', label: 'Country research brief', desc: 'Brand, SKU, market, and the Nielsen/IQVIA gap.' },
-                { to: '/fmcg-companies-egypt', label: 'FMCG companies in Egypt', desc: 'Named accounts we study when Nielsen undersamples bakals.' },
-                { to: '/healthcare-market-research', label: 'Healthcare market research', desc: 'What it is — primary vs syndicated, then country hubs.' },
-                { to: '/healthcare-market-research/uae', label: 'Healthcare MR UAE', desc: 'Dubai and Abu Dhabi programmes for affiliates.' },
-                { to: '/healthcare-market-research/egypt', label: 'Healthcare MR Egypt', desc: 'Account-level fieldwork in the largest MENA market.' },
-                { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare MR KSA', desc: 'SFDA-aware primary studies vs syndicated audits.' },
-              ].map((r) => (
-                <Link
-                  key={r.to}
-                  to={r.to}
-                  className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors"
-                >
-                  <h3 className="font-semibold text-foreground mb-1">{r.label}</h3>
-                  <p className="text-sm text-muted-foreground">{r.desc}</p>
+        <section className="premium-home-cream section-padding py-16 md:py-20" aria-labelledby="not-veeva-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="premium-card overflow-hidden p-0 md:grid md:grid-cols-[0.9fr_1.1fr]">
+              <div className="premium-home-midnight px-8 py-10 md:px-10 md:py-12">
+                <p className="relative z-10 text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
+                  Different product
+                </p>
+                <p className="relative z-10 mt-4 font-display text-2xl font-light leading-snug text-[#FFFEFB] md:text-3xl">
+                  CRM and claims software is not primary fieldwork
+                </p>
+              </div>
+              <div className="px-8 py-10 md:px-10 md:py-12">
+                <h2 id="not-veeva-heading" className="mb-4 font-display text-2xl font-light tracking-tight text-[#0C1B33] md:text-3xl">
+                  Account-level data is not a US commercial-data platform
+                </h2>
+                <p className="font-light leading-relaxed text-[#7A7267]">
+                  Searches for “account-level market research data” often return Veeva, Trinity, IntegriChain, or
+                  EVERSANA — software that stitches CRM, claims, and payer profiles, mostly for the United States.
+                  That is a different product. BioNixus is a primary market research firm: field teams collect
+                  account-level and SKU-level evidence for a named brand in a named country, including markets those
+                  platforms do not cover.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="premium-home-ivory">
+          <FAQSection
+            premium
+            title="Frequently asked questions"
+            items={FAQ}
+            className="section-padding py-16 md:py-20"
+          />
+        </div>
+
+        <section className="premium-home-cream section-padding py-16 md:py-20" aria-labelledby="related-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mb-10">
+              <PremiumEyebrow>Continue</PremiumEyebrow>
+              <h2 id="related-heading" className="font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl">
+                Related resources
+              </h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {RELATED.map((resource) => (
+                <Link key={resource.to} to={resource.to} className="premium-card group block p-6">
+                  <h3 className="mb-2 font-display text-lg font-medium text-[#0C1B33] group-hover:text-[#C9A84C]">
+                    {resource.label}
+                  </h3>
+                  <p className="text-sm font-light leading-relaxed text-[#7A7267]">{resource.desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-[#C9A84C]">
+                    Open
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
                 </Link>
               ))}
             </div>
           </div>
         </section>
 
-        <ListicleProposalCta
-          countryName="the GCC"
-          ctaId="account_level_footer"
-          headline="Need account-level or SKU-level data for a named brand?"
-          body="Tell us the country, the accounts, and the SKU. Proposal ready within 48 hours of a brief."
-        />
+        <section className="premium-home-midnight section-padding py-20 md:py-24">
+          <div className="container-wide relative z-10 mx-auto max-w-3xl text-center">
+            <span className="mx-auto mb-6 block h-px w-10 bg-[#C9A84C]/40" aria-hidden="true" />
+            <h2 className="mb-5 font-display text-3xl font-light tracking-tight text-[#FFFEFB] md:text-4xl">
+              Need account-level or SKU-level data for a named brand?
+            </h2>
+            <p className="mb-10 text-base font-light leading-relaxed text-white/45">
+              Tell us the country, the accounts, and the SKU. Proposal ready within 48 hours of a brief.
+            </p>
+            <ConversionCTA
+              variant="talk-to-research"
+              market="the GCC"
+              ctaId="account_level_footer"
+              ctaLocation="listicle_footer"
+              className="border-[#EDE9E3] bg-[#FFFEFB] text-left"
+            />
+            <p className="mt-8">
+              <a
+                href="mailto:admin@bionixus.com?subject=Account-level%20market%20research"
+                className="text-sm font-medium text-white/50 underline decoration-white/20 underline-offset-4 hover:text-[#C9A84C]"
+              >
+                Or email admin@bionixus.com
+              </a>
+            </p>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

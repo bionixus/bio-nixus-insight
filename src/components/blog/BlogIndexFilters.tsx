@@ -53,7 +53,7 @@ function OptionLabel({ label, count }: { label: string; count: number }) {
 }
 
 const triggerClass =
-  'h-11 rounded-xl border-border/80 bg-background/80 shadow-sm backdrop-blur-sm transition-colors hover:border-primary/30 focus:ring-primary/20';
+  'h-11 rounded-xl border-[#EDE9E3] bg-[#FFFEFB] shadow-none transition-colors hover:border-[#C9A84C]/40 focus:ring-[#C9A84C]/20';
 
 const BlogIndexFilters = ({
   state,
@@ -74,12 +74,12 @@ const BlogIndexFilters = ({
 
   return (
     <section
-      className="section-padding relative z-10 -mt-6 pb-8 pt-0"
+      className="premium-home-ivory section-padding relative z-10 pb-4 pt-10"
       aria-label="Filter blog articles"
       dir={dir}
     >
-      <div className="container-wide">
-        <div className="rounded-2xl border border-border/80 bg-card/95 p-4 shadow-[0_8px_32px_rgba(6,16,31,0.06)] backdrop-blur-md md:p-6">
+      <div className="container-wide mx-auto max-w-6xl">
+        <div className="premium-card p-5 md:p-7">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="grid flex-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <div className="relative sm:col-span-2 lg:col-span-1">
@@ -104,7 +104,7 @@ const BlogIndexFilters = ({
               <div className="space-y-1.5">
                 <label
                   htmlFor="blog-country-filter"
-                  className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+                  className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7A7267]"
                 >
                   <Globe className="h-3.5 w-3.5" aria-hidden />
                   {labels.countryLabel}
@@ -130,7 +130,7 @@ const BlogIndexFilters = ({
               <div className="space-y-1.5">
                 <label
                   htmlFor="blog-topic-filter"
-                  className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+                  className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7A7267]"
                 >
                   <LayoutGrid className="h-3.5 w-3.5" aria-hidden />
                   {labels.topicLabel}
@@ -152,14 +152,14 @@ const BlogIndexFilters = ({
             </div>
 
             <div className="flex flex-wrap items-center gap-3 lg:flex-col lg:items-end lg:pb-0.5">
-              <p className="text-sm text-muted-foreground tabular-nums">
+              <p className="text-sm font-light tabular-nums text-[#7A7267]">
                 {labels.showing(visibleCount, totalCount)}
               </p>
               {filtersActive ? (
                 <button
                   type="button"
                   onClick={onClear}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5 cursor-pointer"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-[#EDE9E3] px-3 py-2 text-sm font-medium text-[#0C1B33] transition-colors hover:border-[#C9A84C]/40"
                 >
                   <X className="h-3.5 w-3.5" aria-hidden />
                   {labels.clear}

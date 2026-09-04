@@ -265,6 +265,7 @@ import PtTopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/PtTopHealt
 import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
 import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
 import TopOncologyMarketResearchCompanies2026 from '@/pages/TopOncologyMarketResearchCompanies2026';
+import TopHematologyMarketResearchCompanies2026 from '@/pages/TopHematologyMarketResearchCompanies2026';
 import BestObesityWeightManagementMarketResearchFirms2026 from '@/pages/BestObesityWeightManagementMarketResearchFirms2026';
 import LeadingBiologicsBiosimilarsMarketResearchCompanies2026 from '@/pages/LeadingBiologicsBiosimilarsMarketResearchCompanies2026';
 import SaudiArabiaBiosimilarMarketSizeMethodology2026 from '@/pages/SaudiArabiaBiosimilarMarketSizeMethodology2026';
@@ -621,6 +622,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
   { path: '/insights/top-oncology-market-research-companies-2026', element: <TopOncologyMarketResearchCompanies2026 /> },
+  { path: '/insights/top-hematology-market-research-companies-2026', element: <TopHematologyMarketResearchCompanies2026 /> },
   { path: '/insights/top-obesity-market-research-companies-2026', element: <Navigate to="/insights/best-obesity-weight-management-market-research-firms-2026" replace /> },
   { path: '/insights/best-obesity-weight-management-market-research-firms-2026', element: <BestObesityWeightManagementMarketResearchFirms2026 /> },
   { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', element: <LeadingBiologicsBiosimilarsMarketResearchCompanies2026 /> },

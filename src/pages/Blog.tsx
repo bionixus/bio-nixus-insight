@@ -9,8 +9,10 @@ import BlogIndexFilters from '@/components/blog/BlogIndexFilters';
 import { BlogIndexHero } from '@/components/blog/BlogIndexHero';
 import { BlogRelatedPathways } from '@/components/blog/BlogRelatedPathways';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
+import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { CTASection } from '@/components/shared/CTASection';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { useSanityBlog } from '@/hooks/useSanityBlog';
 import { blogRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { INTERNAL_LINK_AMPLIFICATION_TARGETS } from '@/lib/internalLinkAmplificationTargets';
@@ -394,8 +396,28 @@ const Blog = () => {
   const mainLang = isArabicBlog ? 'ar' : isGerman ? 'de' : isFrench ? 'fr' : 'en';
   const hreflangLinks = getHreflangLinks(pathname);
 
+  const breadcrumbItems = isArabicBlog
+    ? [
+        { name: 'الرئيسية', href: '/ar' },
+        { name: 'المدونة', href: '/ar/blog' },
+      ]
+    : isGerman
+      ? [
+          { name: 'Startseite', href: '/de' },
+          { name: 'Blog', href: '/de/blog' },
+        ]
+      : isFrench
+        ? [
+            { name: 'Accueil', href: '/fr' },
+            { name: 'Blog', href: '/fr/blog' },
+          ]
+        : [
+            { name: 'Home', href: '/' },
+            { name: 'Blog', href: '/blog' },
+          ];
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#FFFEFB]">
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -420,6 +442,11 @@ const Blog = () => {
       </Helmet>
       <Navbar />
       <main dir={mainDir} lang={mainLang}>
+        <div className="premium-home-ivory pt-24 pb-0">
+          <div className="container-wide mx-auto max-w-6xl">
+            <BreadcrumbNav items={breadcrumbItems} className="px-0" />
+          </div>
+        </div>
         <BlogIndexHero
           dir={mainDir}
           lang={mainLang}
@@ -433,48 +460,62 @@ const Blog = () => {
           proposalLabel={proposalLabel}
           proposalHref={contactPath}
           sectionRef={heroRef}
+          clearsNavbar={false}
         />
         <PremiumComplianceRibbon />
 
-        <section className="section-padding border-b border-border/60 bg-[#FAF8F4] py-12" ref={introRef}>
-          <div className="container-wide mx-auto max-w-5xl">
-            <div className="mb-3 inline-flex items-center gap-2.5">
-              <span className="h-px w-8 bg-[#C9A84C]/50" aria-hidden />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C9A84C]">
-                {isArabicBlog ? 'نهج البحث' : isGerman ? 'Forschungsansatz' : isFrench ? 'Approche' : 'Research approach'}
-              </span>
-            </div>
-            <h2 className="mb-6 font-display text-2xl font-semibold text-foreground md:text-3xl sr sr-up sr-line">
+        <section className="premium-home-cream section-padding py-16 md:py-20" ref={introRef}>
+          <div className="container-wide mx-auto max-w-6xl">
+            <PremiumEyebrow tone="teal">
+              {isArabicBlog ? 'نهج البحث' : isGerman ? 'Forschungsansatz' : isFrench ? 'Approche' : 'Research approach'}
+            </PremiumEyebrow>
+            <h2 className="mb-8 font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl">
               {introHeading}
             </h2>
-            <div className="grid md:grid-cols-2 gap-8 text-muted-foreground leading-relaxed text-[15px]">
-              <p className="sr sr-left">{introText}</p>
+            <div className="grid gap-5 md:grid-cols-2">
+              <article className="premium-card">
+                <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">{introText}</p>
+              </article>
               {isArabicBlog ? (
-                <p className="sr sr-right">
-                  ننشر تحديثات منتظمة حول التنظيم الصحي وسلوك وصف الأطباء في الشرق الأوسط وشمال أفريقيا.
-                  <Link to="/ar/arabic-blog-alsawdyh" className="block mt-4 text-primary font-medium hover:underline cursor-pointer">
+                <article className="premium-card">
+                  <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                    ننشر تحديثات منتظمة حول التنظيم الصحي وسلوك وصف الأطباء في الشرق الأوسط وشمال أفريقيا.
+                  </p>
+                  <Link
+                    to="/ar/arabic-blog-alsawdyh"
+                    className="mt-4 inline-flex text-sm font-medium text-[#C9A84C] underline-offset-4 hover:underline"
+                  >
                     دليل أبحاث السوق الدوائي في السعودية
                   </Link>
-                </p>
+                </article>
               ) : isGerman ? (
-                <p className="sr sr-right">
-                  Nutzen Sie die Übersicht nach Entscheidungsphase—frühe Validierung, Zulassungsnahe Evidenz,
-                  payerseitige Narrative und Post-Launch-Optimierung.
-                </p>
+                <article className="premium-card">
+                  <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                    Nutzen Sie die Übersicht nach Entscheidungsphase—frühe Validierung, Zulassungsnahe Evidenz,
+                    payerseitige Narrative und Post-Launch-Optimierung.
+                  </p>
+                </article>
               ) : isFrench ? (
-                <p className="sr sr-right">
-                  Parcourez les entrées selon votre question décisionnelle—preuve de valeur, segmentation,
-                  adoption hospitalière ou dynamiques retail.
-                </p>
+                <article className="premium-card">
+                  <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                    Parcourez les entrées selon votre question décisionnelle—preuve de valeur, segmentation,
+                    adoption hospitalière ou dynamiques retail.
+                  </p>
+                </article>
               ) : (
-                <p className="sr sr-right">
-                  Pick articles that match your decision stage—pre-launch, pricing, or post-launch—then follow
-                  through to{' '}
-                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline cursor-pointer">
-                    healthcare market research
-                  </Link>{' '}
-                  and service pages for a coherent evidence thread.
-                </p>
+                <article className="premium-card">
+                  <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                    Pick articles that match your decision stage—pre-launch, pricing, or post-launch—then follow
+                    through to{' '}
+                    <Link
+                      to="/healthcare-market-research"
+                      className="font-medium text-[#C9A84C] underline-offset-4 hover:underline"
+                    >
+                      healthcare market research
+                    </Link>{' '}
+                    and service pages for a coherent evidence thread.
+                  </p>
+                </article>
               )}
             </div>
           </div>
@@ -551,12 +592,17 @@ const Blog = () => {
         />
 
         {!isArabicBlog && !isGerman && !isFrench ? (
-          <section className="section-padding border-t border-border/60 bg-cream py-12">
-            <FAQSection title="Frequently asked questions" items={[...BLOG_FAQ_EN]} className="bg-transparent py-0" />
-          </section>
+          <div className="premium-home-ivory">
+            <FAQSection
+              premium
+              title="Frequently asked questions"
+              items={[...BLOG_FAQ_EN]}
+              className="section-padding py-16 md:py-20"
+            />
+          </div>
         ) : null}
 
-        <CTASection variant="research-proposal" />
+        <CTASection variant="research-proposal" premium />
       </main>
       <Footer />
     </div>
