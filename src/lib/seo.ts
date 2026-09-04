@@ -34,11 +34,11 @@ export const seoByLanguage: Record<Language, {
 }> = {
   en: {
     // CTR-engineered homepage title/description (exact; server skips length clamps).
-    title: 'BioNixus - The Global Market Research Firm (EMEA, Americas, APAC and MENA)',
+    title: 'Account-level research for marketing teams | BioNixus',
     description:
-      'Primary healthcare market research and market access consulting for pharma & medical devices — GCC, USA, Turkey, Europe, Brazil & Asia. Request a proposal.',
+      'Account-level brand vs competitor data for marketing teams in 48 countries. Keep IQVIA or Nielsen — add the breakdown they miss. 48-hour proposal.',
     keywords:
-      'market research company, pharmaceutical market research company, healthcare market research company, global healthcare market research, pharma market research, physician surveys, KOL mapping, market access research, MENA market research, GCC pharmaceutical research, UAE healthcare research, Saudi Arabia pharma research, Egypt market research, medtech market research, competitive intelligence',
+      'market research firm, primary market research, account-level market research, SKU-level data, brand vs competitor research, IQVIA alternative, Nielsen alternative, market research companies, healthcare market research, FMCG market research, country market research',
     canonicalPath: '/',
   },
   de: {

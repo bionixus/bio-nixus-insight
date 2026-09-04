@@ -22,92 +22,119 @@ export const translations = {
       contact: 'Contact',
     },
     indexLanding: {
-      emeaSignalsH2: 'Global reach with local execution depth',
+      emeaSignalsH2: 'Keep the dashboard. Add the breakdown it cannot give.',
+    },
+    homeProblem: {
+      eyebrow: 'The gap',
+      h2: 'Your dashboard answers the country. It does not answer the account.',
+      lead:
+        'Marketing and commercial teams already pay for a syndicated feed. It tells them the national share. It does not tell them which hospital, department, retailer, distributor, or SKU is moving it — or what is happening in traditional trade. Those are the breakdowns that change a launch or a share plan.',
+      columns: [
+        {
+          title: 'What you already have',
+          body: 'A syndicated subscription. Useful for the market total. Weak when you need brand vs competitor at a named account in a named country.',
+        },
+        {
+          title: 'What you still cannot see',
+          body: 'Subaccounts. Subregions. Traditional trade. SKU-level performance. The local affiliate cannot brief a campaign from a global average.',
+        },
+        {
+          title: 'What we field',
+          body: 'Primary research designed for that breakdown. Local teams run the study. You get a decision pack — not a recycled dashboard export.',
+        },
+      ],
+      linkLabel: 'What account-level and SKU-level data means',
     },
     hero: {
-      tagline: 'Global International Market Research Firm',
-      titleLead: 'Account-level data',
-      titleEmphasis: 'for launch decisions',
-      title: 'Account-level market research for healthcare and pharma',
+      tagline: 'Primary market research for manufacturers and local affiliates',
+      titleLead: 'Brand vs competitor data,',
+      titleEmphasis: 'down to the account and the SKU.',
+      title: 'Brand vs competitor data, down to the account and the SKU',
       subtitle:
-        'BioNixus is a primary market research firm that delivers account-level and SKU-level brand versus competitor data in 48 countries. Syndicated IQVIA and Nielsen feeds miss subaccounts, traditional trade, and country-level cuts. Field teams run the study; a proposal is ready within 48 hours of your brief.',
+        'BioNixus is a global primary market research firm that delivers account-level and SKU-level brand versus competitor data in 48 countries. Syndicated data feeds miss subaccounts, traditional trade, and country-level breakdowns. Field teams run the study; a proposal is ready within 48 hours of your brief.',
       trustStripPrimary: 'Trusted by',
       trustStripStats: '118 global clients · 120+ projects annually · 127 in 2025 · 48 countries · founded 2012',
-      valueProposition: 'Every engagement starts from a real commercial question, not a generic data dump. You get defensible quantitative and qualitative evidence — scoped to the decision, the market, and the regulatory reality you actually operate in — from pre-launch sizing through post-launch optimization.',
+      valueProposition:
+        'Every study starts from a commercial question your marketing team has to answer: how do we stack up vs competitors in this country, at this account, on this SKU? You get fieldwork and a decision pack — not a generic data dump.',
       serviceHighlights: [
-        'Multi-country physician & payer research',
-        'Launch, access & growth evidence',
-        'Compliance-aware fieldwork',
+        'Brand vs competitor at account and SKU',
+        'Country-priced primary fieldwork',
+        'Proposal ready within 48 hours',
       ],
       cta: 'Request a proposal',
-      ctaPremium: 'Book a Discovery Call →',
-      ctaSecondary: 'View Case Studies',
-      trustBar: 'Decision-ready evidence for pharmaceutical, biotech, and medtech teams since 2012, across',
-      trustCountries: 'MENA, Latin America, Eastern Europe, the UK, and the wider EMEA region.',
+      ctaPremium: 'Request a proposal',
+      ctaSecondary: 'See how we work',
+      trustBar: 'Primary research for manufacturers and their local affiliates since 2012, across',
+      trustCountries: 'Europe, the Middle East, Africa, the Americas, and Asia.',
       complianceBadges: [
-        'MHRA and EMA regulatory compliance',
-        'NHS Research Ethics Committee (REC) standards',
-        'GDPR-compliant data collection protocols',
-        'ICH-GCP guidelines for clinical research',
+        'Account-level and SKU-level breakdowns',
+        'Proposal ready within 48 hours',
+        'Project- and country-based pricing',
+        'GDPR and local field governance',
       ],
     },
     services: {
-      title: 'Pharmaceutical and healthcare market research services',
+      title: 'What your marketing team can brief',
       subtitle:
-        'Decision-ready quantitative and qualitative evidence for launch, market access, and growth — globally, with deep execution in Europe, the Americas, and the Middle East.',
+        'Primary studies scoped to a brand, a country, and a decision — not a recycled global feed. Healthcare is where we are deepest. The same fieldwork runs for FMCG, retail, and B2B.',
       items: [
         {
-          title: 'Quantitative Healthcare Market Research',
-          description: 'Size demand, segment the opportunity, and quantify physician and payer behavior with statistically robust surveys and trackers built around real prescribing structures.',
-          bullets: [
-            'Demand and segmentation analysis',
-            'Physician and payer survey programs',
-            'Market sizing and forecasting',
-          ],
-        },
-        {
-          title: 'Qualitative Pharmaceutical Research',
-          description: 'Understand the why behind adoption and access through in-depth interviews and advisory-style discussions with physicians, payers, and hospital decision-makers.',
-          bullets: [
-            'In-depth interviews and focus groups',
-            'Treatment pathway and barrier analysis',
-            'Message and evidence testing',
-          ],
-        },
-        {
-          title: 'Market Access and Value Evidence',
-          description: 'Map payer evidence expectations and pressure-test your pricing, reimbursement, and value story before you face an HTA body or formulary committee.',
-          bullets: [
-            'Payer evidence expectation mapping',
-            'Access barrier diagnostics',
-            'Value communication refinement',
-          ],
-        },
-        {
-          title: 'KOL and Stakeholder Mapping',
-          description: 'Pinpoint the clinicians, committees, and procurement voices that genuinely shape decisions in each market, and where to focus engagement first.',
-          bullets: [
-            'KOL influence mapping by country',
-            'Stakeholder priority architecture',
-            'Engagement strategy inputs',
-          ],
-        },
-        {
-          title: 'Global Country-Level Execution',
+          title: 'Brand vs competitor studies',
           description:
-            'Country-level execution across the United States, Canada, the UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, and APAC priority markets — with comparable design for regional roll-ups.',
+            'Quantify how your brand stacks up against named competitors in a specific country — share, perception, and the accounts that move the number.',
           bullets: [
-            'Country-level execution with regional comparability',
-            'Cross-market insight for portfolio planning',
+            'Demand and segmentation',
+            'Brand vs competitor trackers',
+            'Market sizing you can take to commercial',
           ],
         },
         {
-          title: 'Methodology and Compliance',
-          description: 'Fieldwork governed by GDPR, EMA, MOH, and FDA-aligned standards, with respondent verification and audit-ready documentation at every step.',
+          title: 'Brand perception and shopper research',
+          description:
+            'Hear why customers choose you or the competitor — interviews, groups, and shopper work your dashboard cannot invent.',
           bullets: [
-            'Compliance-aware fieldwork governance',
-            'Quality controls and data integrity protocols',
-            'Secure and audit-ready delivery',
+            'In-depth interviews and groups',
+            'Barrier and journey analysis',
+            'Message and claim testing',
+          ],
+        },
+        {
+          title: 'Launch and commercial evidence',
+          description:
+            'Pressure-test pricing, access, and the story marketing will take to market — before you spend the launch budget.',
+          bullets: [
+            'Access and pricing diagnostics',
+            'Value-story testing',
+            'Launch-readiness evidence',
+          ],
+        },
+        {
+          title: 'Account and stakeholder mapping',
+          description:
+            'Name the accounts, buyers, and influencers who actually decide — hospitals, retailers, distributors, or committees — so the local affiliate knows where to go first.',
+          bullets: [
+            'Account priority by country',
+            'Stakeholder maps',
+            'Engagement inputs for the local team',
+          ],
+        },
+        {
+          title: 'Country-level programs',
+          description:
+            'Field the same design across the United States, UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, Qatar, and APAC priority markets — comparable enough to roll up, local enough to act.',
+          bullets: [
+            'Single-country or multi-country',
+            'Regional roll-ups for portfolio planning',
+          ],
+        },
+        {
+          title: 'Study design and decision-ready charts',
+          description:
+            'Senior-led design, respondent checks, and charts a marketing head can put in a leadership pack. GDPR-aware fieldwork. Audit-ready when the category requires it.',
+          bullets: [
+            'Design built around the decision',
+            'Quality and identity checks',
+            'Presentation-ready deliverables',
           ],
         },
       ],
@@ -139,7 +166,7 @@ export const translations = {
     },
     blog: {
       title: 'Latest Insights',
-      subtitle: 'Thought leadership and research perspectives from our global team',
+      subtitle: 'Country and category notes your marketing team can use — not a generic newsletter',
       readMore: 'Read Article',
       readMoreArticles: 'Read more articles',
       filterAllTopics: 'All topics',
@@ -156,17 +183,17 @@ export const translations = {
       ],
     },
     stats: {
-      title: 'Global Impact',
+      title: 'What you can brief internally',
       items: [
-        { value: '120+', label: 'Global projects annually' },
-        { value: '118', label: 'Global Clients' },
-        { value: '48', label: 'Countries Covered' },
-        { value: '14+', label: 'Therapeutic Areas' },
+        { value: '120+', label: 'Studies per year' },
+        { value: '118', label: 'Clients' },
+        { value: '48', label: 'Countries' },
+        { value: '48h', label: 'Brief to proposal' },
       ],
     },
     testimonials: {
-      title: 'Featured Case Studies',
-      subtitle: 'Real outcomes from our work with pharmaceutical and biotech teams worldwide',
+      title: 'Featured case studies',
+      subtitle: 'How marketing and commercial teams used primary fieldwork to decide a launch or a country plan',
       items: [
         { quote: 'Read how BioNixus shaped a Top-10 pharma\u2019s GCC oncology launch strategy with quantitative physician surveys and competitive intelligence.', author: 'GCC Oncology Launch', role: 'Case Study', company: 'Multinational Pharmaceutical' },
         { quote: 'See how BioNixus helped a mid-cap biotech accelerate EMEA expansion with multi-country KOL mapping and market access diagnostics.', author: 'EMEA Expansion', role: 'Case Study', company: 'Mid-Cap Biotech' },
@@ -178,7 +205,7 @@ export const translations = {
       titleBeforeCount: 'Recommended by more than',
       titleAfterCount: 'happy clients',
       description:
-        'Read verified Google reviews from our London office and testimonials from pharmaceutical, biotech, and medical device partners across the US, Europe, and LATAM.',
+        'Read verified Google reviews from our London office and notes from manufacturers and local affiliates across healthcare, consumer, and enterprise work.',
       happyClientsBadgeSuffix: 'happy clients',
       googleRatingSuffix: 'on Google',
       cta: 'Read all client reviews',
@@ -194,12 +221,12 @@ export const translations = {
       badges: [],
     },
     methodologyEn: {
-      title: 'Healthcare market research methodology, data quality, and regulatory compliance',
-      intro: 'Our research aligns with the highest standards of regulatory compliance and data security across UK, European, and MENA markets.',
+      title: 'How a BioNixus study works',
+      intro: 'Three steps. One commercial question. A proposal in 48 hours — then fieldwork in the country you named.',
       steps: [
-        { title: 'Regulatory alignment', description: 'MHRA and EMA regulatory compliance. NHS Research Ethics Committee (REC) standards. GDPR-compliant data collection protocols. ICH-GCP guidelines for clinical research.' },
-        { title: 'Data collection & quality', description: 'Multilingual survey deployment (English, German, French, Spanish, Italian, Arabic). Real-time data validation and quality checks. Physician identity verification protocols. Secure data encryption and storage.' },
-        { title: 'Advanced analytics', description: 'Statistical modelling and predictive analytics. HEOR and cost-effectiveness analysis for HTA submissions. Cross-country comparative analysis.' },
+        { title: 'Brief the decision', description: 'Tell us the brand, the country, the competitor set, and the breakdown you cannot get from syndicated subscriptions. We scope the study around that question — not a template deck.' },
+        { title: 'Field the country', description: 'Local teams run interviews, surveys, mystery shops, or account visits. Multilingual where the market needs it. Identity and quality checks on every wave.' },
+        { title: 'Get a decision pack', description: 'Charts and findings a Head of Marketing can take to the commercial director. Comparable across countries when you need a regional roll-up.' },
       ],
     },
     contact: {
@@ -249,9 +276,9 @@ export const translations = {
       },
     },
     contactHomeEmbed: {
-      title: 'Request a tailored research proposal',
+      title: 'Request a scoped proposal',
       body:
-        'The homepage summarizes services, regional coverage, and methodology. The dedicated contact page hosts the full intake form, privacy context, and structured fields so BioNixus can respond with a scoped plan—typically within one business day.',
+        'Name the brand, the country, and the breakdown your dashboard misses. The contact page has the full form. We typically send a scoped proposal within 48 hours.',
       cta: 'Open the full contact form',
       emailLine: 'Prefer email? admin@bionixus.com',
     },
@@ -263,7 +290,7 @@ export const translations = {
     },
     footer: {
       tagline:
-        'Global market research with pharma and healthcare leadership — and proven capability across B2B and B2C sectors. Delivering evidence-based insights to pharmaceutical, biotech, and enterprise teams worldwide.',
+        'Primary market research for manufacturers and their local affiliates — account-level and SKU-level fieldwork in 48 countries when a syndicated feed cannot break down to the account.',
       quickLinksHeading: 'Quick links',
       companyHeading: 'Company',
       healthcareHub: 'Healthcare market research hub',
@@ -284,7 +311,7 @@ export const translations = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       newsletterHeading: 'Newsletter',
-      newsletterDesc: 'Get healthcare insights delivered to your inbox.',
+      newsletterDesc: 'Get country and category research notes for marketing teams.',
       newsletterPlaceholder: 'Your name',
       newsletterEmailPlaceholder: 'Work email',
       newsletterButton: 'Subscribe',

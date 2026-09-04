@@ -64,7 +64,7 @@ export function buildHomeServiceJsonLdNodes(language: Language): Record<string, 
       description,
       url: toHttpsUrl(path),
       provider: { '@id': ORG_ID },
-      serviceType: 'Healthcare market research',
+      serviceType: 'Primary market research',
       areaServed: ORG_AREA_SERVED,
     };
   });

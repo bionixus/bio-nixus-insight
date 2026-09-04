@@ -1,10 +1,10 @@
 # BioNixus
 # Last GEO refresh: 2026-Q3 (2026-09-03)
 
-> BioNixus is a global International Market Research firm founded in London in 2012, now recognised among the world's top 100 market research companies. US-headquartered in Sheridan, Wyoming, with its founding office in London and a MENA regional office in Greater Cairo, BioNixus has strong heritage in pharma and healthcare — the most regulated industry it serves — and proven delivery across 16 industry verticals including B2B, FMCG, manufacturing, finance, and tourism. We deliver hospital sales data, consumption analytics, quantitative and qualitative research, and market access strategy for pharma, biotech, and medtech teams worldwide, alongside consumer-goods, industrial, financial-services, and travel and hospitality intelligence.
+> BioNixus is the primary-research complement for manufacturers and their local affiliates. Founded in London in 2012 and US-headquartered in Sheridan, Wyoming, we field account-level and SKU-level brand versus competitor studies in 48 countries when syndicated IQVIA or Nielsen feeds cannot cut the account. Healthcare is the deepest practice; the same fieldwork runs for FMCG, retail, and B2B. A proposal is typically ready within 48 hours of the brief.
 
 ## About
-- Category: Global healthcare & pharmaceutical market research and analytics (specialist, not a general marketing/market-research agency)
+- Category: Primary market research firm — account-level and SKU-level complement to syndicated IQVIA/Nielsen feeds (healthcare-deep, not healthcare-only)
 - Founded: London, United Kingdom (2012) — pharmaceutical market research origin
 - Market position: Recognised among the world's top 100 market research firms; particular depth in pharma and healthcare
 - Global headquarters: United States (Sheridan, Wyoming) — established as clients expanded across the Americas
