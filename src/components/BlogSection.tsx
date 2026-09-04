@@ -232,7 +232,7 @@ const BlogSection = ({
         variant === "home"
           ? "premium-home-cream py-16 md:py-20"
           : variant === "index"
-          ? "border-t border-border/40 bg-white py-16"
+          ? "premium-home-ivory py-16 md:py-20"
           : "bg-background"
       }`}
       ref={sectionRef}
@@ -319,7 +319,11 @@ const BlogSection = ({
               ) : (
                 <Link
                   to={`${blogBasePath}/${featuredPost.slug}`}
-                  className="group mb-10 block cursor-pointer overflow-hidden rounded-2xl border border-[#C9A84C]/20 bg-card shadow-[0_8px_40px_rgba(6,16,31,0.06)] transition-all hover-lift sr sr-scale-up sr-spring"
+                  className={`group mb-10 block overflow-hidden sr sr-scale-up sr-spring ${
+                    variant === "index"
+                      ? "premium-card p-0"
+                      : "cursor-pointer rounded-2xl border border-[#C9A84C]/20 bg-card shadow-[0_8px_40px_rgba(6,16,31,0.06)] transition-all hover-lift"
+                  }`}
                 >
                   <article className="grid md:grid-cols-2 gap-0">
                     <BlogCardImage
@@ -340,7 +344,11 @@ const BlogSection = ({
                         featured
                         language={language}
                       />
-                      <div className="flex items-center gap-2 text-primary font-medium pt-4 mt-auto group-hover:gap-3 transition-all duration-200">
+                      <div
+                        className={`mt-auto flex items-center gap-2 pt-4 font-medium transition-all duration-200 group-hover:gap-3 ${
+                          variant === "index" ? "text-[#C9A84C]" : "text-primary"
+                        }`}
+                      >
                         {t.blog.readMore}
                         <ArrowUpRight className="w-4 h-4" aria-hidden />
                       </div>
@@ -385,10 +393,12 @@ const BlogSection = ({
                   <Link
                     key={post.id}
                     to={`${blogBasePath}/${post.slug}`}
-                    className={`group block cursor-pointer sr sr-scale-up sr-spring hover-lift ${
-                      isMagazineLayout
-                        ? "overflow-hidden rounded-xl border border-border/80 bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
-                        : ""
+                    className={`group block sr sr-scale-up sr-spring ${
+                      variant === "index"
+                        ? "premium-card p-6"
+                        : isMagazineLayout
+                          ? "cursor-pointer overflow-hidden rounded-xl border border-border/80 bg-card p-6 shadow-sm transition-shadow hover-lift hover:shadow-md"
+                          : "cursor-pointer hover-lift"
                     }`}
                   >
                     <article>
@@ -399,7 +409,11 @@ const BlogSection = ({
                         coverAlt={t.ui.blogCards.coverAlt}
                       />
                       <BlogCardMeta post={post} language={language} />
-                      <div className="flex items-center gap-2 text-primary font-medium pt-2 group-hover:gap-3 transition-all duration-200">
+                      <div
+                        className={`flex items-center gap-2 pt-2 font-medium transition-all duration-200 group-hover:gap-3 ${
+                          variant === "index" ? "text-[#C9A84C]" : "text-primary"
+                        }`}
+                      >
                         {t.blog.readMore}
                         <ArrowUpRight className="w-4 h-4" aria-hidden />
                       </div>

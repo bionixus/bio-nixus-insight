@@ -188,6 +188,8 @@ const comparisonCriteria = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-kuwait-2026';
+const OG_IMAGE =
+  'https://www.bionixus.com/images/blog/top-healthcare-market-research-companies-kuwait-cover.jpg';
 
 export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
   const breadcrumbSchema = {
@@ -208,7 +210,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
+    image: OG_IMAGE,
     headline: 'Top Healthcare Market Research Companies in Kuwait (2026 Guide)',
     description:
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Kuwait for 2026. Covers MOH Kuwait-aware firms, Kuwait Drug Committee (KDC), KOL mapping, government formulary research, and how to evaluate a research partner for Kuwait.',
@@ -258,7 +260,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
       <OpenGraphMeta
         title="Top Healthcare Market Research Companies in Kuwait | BioNixus"
         description="Leading healthcare & pharmaceutical market research firms in Kuwait 2026 — MOH Kuwait-aware, KDC formulary research, KOL mapping, GCC execution."
-        image="https://www.bionixus.com/og-image.png"
+        image={OG_IMAGE}
         url={CANONICAL}
         type="article"
         locale="en_KW"

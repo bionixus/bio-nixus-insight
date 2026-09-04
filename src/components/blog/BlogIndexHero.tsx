@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { RefObject } from 'react';
-import { ArrowLeft, BookOpen } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { PremiumHeroOrbitals } from '@/components/home/PremiumHeroOrbitals';
 
 export type BlogIndexHeroStat = { value: string; label: string };
@@ -18,6 +19,8 @@ export interface BlogIndexHeroProps {
   proposalLabel: string;
   proposalHref: string;
   sectionRef?: RefObject<HTMLElement | null>;
+  /** When false, the hero sits under a breadcrumb strip and does not pad for the navbar. */
+  clearsNavbar?: boolean;
 }
 
 export function BlogIndexHero({
@@ -33,103 +36,68 @@ export function BlogIndexHero({
   proposalLabel,
   proposalHref,
   sectionRef,
+  clearsNavbar = true,
 }: BlogIndexHeroProps) {
-  const isRtl = dir === 'rtl';
-
   return (
     <section
       ref={sectionRef}
       data-hero-lcp
-      className="relative overflow-hidden bg-[#06101F] text-[#FFFEFB]"
+      className={`premium-home-midnight section-padding pb-16 md:pb-24 ${
+        clearsNavbar ? 'pt-24 md:pt-28' : 'pt-10 md:pt-14'
+      }`}
       dir={dir}
       lang={lang}
+      aria-labelledby="blog-index-heading"
     >
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `
-            radial-gradient(ellipse 70% 55% at 65% 45%, rgba(12,27,51,1) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 45% at 20% 80%, rgba(14,165,160,0.08) 0%, transparent 50%),
-            radial-gradient(ellipse 35% 30% at 85% 15%, rgba(201,168,76,0.06) 0%, transparent 40%),
-            linear-gradient(180deg, #06101F 0%, #081628 100%)
-          `,
-        }}
-        aria-hidden
-      />
-
-      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.04]" aria-hidden>
-        <svg viewBox="0 0 1440 900" className="h-full w-full" preserveAspectRatio="none">
-          <defs>
-            <pattern id="blogHeroHexGrid" width="60" height="52" patternUnits="userSpaceOnUse">
-              <path
-                d="M30 0 L60 15 L60 37 L30 52 L0 37 L0 15 Z"
-                fill="none"
-                stroke="rgba(255,255,255,0.4)"
-                strokeWidth="0.5"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#blogHeroHexGrid)" />
-        </svg>
-      </div>
-
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#C9A84C] via-[#C9A84C]/30 to-transparent" aria-hidden="true" />
       <PremiumHeroOrbitals />
 
-      <div className="relative z-10 container-wide mx-auto max-w-[1260px] px-6 pb-16 pt-28 sm:px-10 sm:pb-20 sm:pt-32">
-        <Link
-          to={homeHref}
-          className="mb-10 inline-flex items-center gap-2 text-sm font-medium text-white/45 transition-colors hover:text-white/80"
-        >
-          <ArrowLeft className={`h-4 w-4 shrink-0${isRtl ? ' rotate-180' : ''}`} aria-hidden />
-          {homeLabel}
-        </Link>
-
-        <div className="max-w-3xl premium-fade-up">
-          <div className="mb-8 inline-flex items-center gap-2.5">
-            <span className="h-px w-8 bg-[#C9A84C]/40" aria-hidden />
-            <span className="inline-flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
-              <BookOpen className="h-3.5 w-3.5" aria-hidden />
-              {eyebrow}
-            </span>
+      <div className="container-wide relative z-10 mx-auto max-w-6xl">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:gap-16">
+          <div>
+            <PremiumEyebrow>{eyebrow}</PremiumEyebrow>
+            <h1
+              id="blog-index-heading"
+              className="sr-lcp max-w-4xl font-display text-3xl font-light leading-[1.12] tracking-tight text-[#FFFEFB] md:text-5xl"
+            >
+              {title}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/55">{subtitle}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a href="#insights" className="premium-gold-btn">
+                {browseLabel}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <Link
+                to={proposalHref}
+                className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/12 px-8 py-[15px] text-sm font-medium tracking-wide text-white/65 transition-colors hover:border-white/25 hover:text-[#FFFEFB]"
+              >
+                {proposalLabel}
+              </Link>
+            </div>
+            <p className="mt-5">
+              <Link
+                to={homeHref}
+                className="text-sm font-medium text-white/40 underline-offset-4 transition-colors hover:text-[#C9A84C] hover:underline"
+              >
+                {homeLabel}
+              </Link>
+            </p>
           </div>
-
-          <h1 className="mb-7 font-display text-[clamp(2.2rem,4vw,3.5rem)] font-light leading-[1.12] tracking-tight text-balance">
-            {title}
-          </h1>
-
-          <p className="mb-10 max-w-2xl text-[17px] font-light leading-[1.8] text-white/45">{subtitle}</p>
 
           {stats && stats.length > 0 ? (
-            <ul
-              className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3"
-              aria-label="Blog highlights"
-            >
-              {stats.map((stat) => (
-                <li
-                  key={stat.label}
-                  className="rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 text-center backdrop-blur-sm"
-                >
-                  <p className="font-display text-2xl font-medium text-[#C9A84C] md:text-3xl">{stat.value}</p>
-                  <p className="mt-1 text-sm text-white/50">{stat.label}</p>
-                </li>
-              ))}
-            </ul>
+            <aside className="premium-card-dark p-7 md:p-8" aria-label="Blog highlights">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">{eyebrow}</p>
+              <ul className="mt-7 space-y-4">
+                {stats.map((stat) => (
+                  <li key={stat.label} className="border-b border-white/10 pb-4 last:border-b-0 last:pb-0">
+                    <p className="text-[11px] uppercase tracking-[0.16em] text-white/35">{stat.label}</p>
+                    <p className="mt-1.5 font-display text-lg font-light text-[#FFFEFB]">{stat.value}</p>
+                  </li>
+                ))}
+              </ul>
+            </aside>
           ) : null}
-
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
-              href="#insights"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#C9A84C] to-[#B8933E] px-9 py-[15px] text-sm font-semibold tracking-wide text-[#06101F] shadow-[0_4px_20px_rgba(201,168,76,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(201,168,76,0.35)]"
-            >
-              {browseLabel}
-            </a>
-            <Link
-              to={proposalHref}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-8 py-[15px] text-sm font-normal tracking-wide text-white/55 transition-colors hover:border-white/25 hover:text-white"
-            >
-              {proposalLabel}
-            </Link>
-          </div>
         </div>
       </div>
     </section>

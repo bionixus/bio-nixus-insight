@@ -1,4 +1,5 @@
 import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
+import { RouteLoadingFallback } from '@/components/RouteLoadingFallback';
 import { useRoutes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -82,6 +83,19 @@ function DeferredPageChrome() {
   );
 }
 
+/** Skeleton only after hydration — a first-load fallback discards SSR HTML. */
+function ClientNavSuspense({ children }: { children: ReactNode }) {
+  const [allowFallback, setAllowFallback] = useState(false);
+
+  useEffect(() => {
+    setAllowFallback(true);
+  }, []);
+
+  return (
+    <Suspense fallback={allowFallback ? <RouteLoadingFallback /> : null}>{children}</Suspense>
+  );
+}
+
 function AppProviders({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
@@ -110,7 +124,9 @@ export default function App({ initialData = {} }: AppProps) {
   const element = useRoutes(routes);
   return (
     <InitialDataProvider value={initialData}>
-      <AppProviders>{element}</AppProviders>
+      <AppProviders>
+        <ClientNavSuspense>{element}</ClientNavSuspense>
+      </AppProviders>
     </InitialDataProvider>
   );
 }

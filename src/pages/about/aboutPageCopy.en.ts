@@ -22,6 +22,9 @@ export const aboutPageCopyEn: AboutPageCopy = {
   breadcrumbAbout: 'About',
   heroTagline: 'Global International Market Research Firm',
   h1: 'Global market research — built on pharma, the most regulated industry we serve, and expanded to be trusted across industries',
+  h1Lead: 'Global market research — ',
+  h1Emphasis: 'built on pharma, the most regulated industry we serve,',
+  h1After: ' and expanded to be trusted across industries',
   heroSubheadBeforeSa:
     'BioNixus was founded in London in 2012 in pharmaceutical market research — the most regulated industry we serve. As clients stretched across the Middle East and the Americas, we opened offices in Cairo, Riyadh, Dubai, Kuwait City, and São Paulo, and established US global headquarters in Wyoming. That GCP-grade discipline now extends to B2B and B2C programmes across 48 countries — with dedicated ',
   heroLinkSa: 'healthcare market research in Saudi Arabia',

@@ -92,6 +92,45 @@ function marketingHomeLanguage(path: string): Language | null {
   return null;
 }
 
+const HOME_INSIGHTS_TTL_MS = 5 * 60 * 1000;
+const HOME_INSIGHTS_BUDGET_MS = 400;
+const homeInsightsCache = new Map<string, { at: number; posts: BlogPost[] }>();
+
+function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
+  return new Promise((resolve) => {
+    const timer = setTimeout(() => resolve(fallback), ms);
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      () => {
+        clearTimeout(timer);
+        resolve(fallback);
+      },
+    );
+  });
+}
+
+async function fetchHomeLatestInsights(language: Language): Promise<BlogPost[]> {
+  const hit = homeInsightsCache.get(language);
+  if (hit && Date.now() - hit.at < HOME_INSIGHTS_TTL_MS) return hit.posts;
+
+  let posts: BlogPost[] = [];
+  try {
+    posts = await withTimeout(
+      fetchSanityLatestInsightsWithClient(sanityServer, language, 3),
+      HOME_INSIGHTS_BUDGET_MS,
+      hit?.posts ?? [],
+    );
+  } catch {
+    posts = hit?.posts ?? [];
+  }
+
+  if (posts.length) homeInsightsCache.set(language, { at: Date.now(), posts });
+  return posts;
+}
+
 const HUB_QUERY = `*[_type == "hubResearchPage"][0]{
   _id,
   title,
@@ -403,15 +442,9 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
 
   const homeLang = marketingHomeLanguage(normalizedPath);
   if (homeLang) {
-    let homeLatestInsights: BlogPost[] = [];
-    try {
-      homeLatestInsights = await fetchSanityLatestInsightsWithClient(sanityServer, homeLang, 3);
-    } catch {
-      homeLatestInsights = [];
-    }
     return {
       pageType: 'home',
-      homeLatestInsights,
+      homeLatestInsights: await fetchHomeLatestInsights(homeLang),
     };
   }
 

@@ -135,14 +135,8 @@ const About = () => {
         </div>
 
         <section
-          className="section-padding relative overflow-hidden pb-12 pt-4 text-[#FFFEFB]"
-          style={{
-            background: `
-              radial-gradient(ellipse 70% 55% at 65% 45%, rgba(12,27,51,1) 0%, transparent 70%),
-              radial-gradient(ellipse 50% 45% at 20% 80%, rgba(14,165,160,0.08) 0%, transparent 50%),
-              linear-gradient(180deg, #06101F 0%, #081628 100%)
-            `,
-          }}
+          data-hero-lcp
+          className="premium-hero-lcp-wash section-padding relative overflow-hidden bg-[#06101F] pb-12 pt-4 text-[#FFFEFB]"
           ref={heroRef}
         >
           <div className="container-wide relative z-10 mx-auto max-w-5xl">
@@ -150,8 +144,18 @@ const About = () => {
               <span className="h-px w-8 bg-[#C9A84C]/40" aria-hidden="true" />
               <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">{copy.heroTagline}</span>
             </div>
-            <h1 className="mb-6 max-w-4xl font-display text-3xl font-light leading-tight tracking-tight md:text-4xl lg:text-5xl sr sr-up sr-line revealed">
-              {copy.h1}
+            <h1 className="sr-lcp mb-6 max-w-4xl font-display text-3xl font-light leading-tight tracking-tight !text-[#FFFEFB] md:text-4xl lg:text-5xl sr sr-up sr-line revealed">
+              {copy.h1Lead && copy.h1Emphasis ? (
+                <>
+                  {copy.h1Lead}
+                  <em className="font-medium not-italic !text-[#C9A84C]">
+                    {copy.h1Emphasis}
+                  </em>
+                  {copy.h1After}
+                </>
+              ) : (
+                copy.h1
+              )}
             </h1>
             <p className="mb-8 max-w-3xl text-lg leading-relaxed text-white/75 md:text-xl sr sr-up revealed">
               {copy.heroSubheadBeforeSa}

@@ -196,7 +196,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-04',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -259,7 +259,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
         locale="en"
         article={{
           publishedTime: '2026-06-12',
-          modifiedTime: '2026-09-01',
+          modifiedTime: '2026-09-04',
           section: 'Oncology Market Research',
           tags: [
             'oncology market research',
@@ -808,6 +808,10 @@ export default function TopOncologyMarketResearchCompanies2026() {
               Related reading
             </h2>
             <div className="related-grid">
+              <Link className="related-card" to="/insights/top-hematology-market-research-companies-2026">
+                <h3>Top hematology market research companies</h3>
+                <p>The blood-cancer and benign-hematology companion ranking: PRFs versus vial data.</p>
+              </Link>
               <Link className="related-card" to="/healthcare-market-research/therapy/oncology">
                 <h3>Oncology therapy area research</h3>
                 <p>BioNixus oncology capability, methodology, and in-region execution.</p>

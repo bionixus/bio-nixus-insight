@@ -1,6 +1,5 @@
 import type { RouteObject } from 'react-router-dom';
-import IndustryCountryBofuPage from '@/pages/templates/IndustryCountryBofuPage';
-import TopIndustryMarketResearchListicle from '@/pages/templates/TopIndustryMarketResearchListicle';
+import { IndustryCountryBofuPage, TopIndustryMarketResearchListicle } from '@/routes/lazySeoPages';
 import {
   getAllPublishedMatrixPairs,
   getIndustryBofuPath,

@@ -272,6 +272,12 @@ export default function Insights() {
                 Top Oncology Market Research Companies (2026)
               </Link>
               <Link
+                to="/insights/top-hematology-market-research-companies-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top Hematology Market Research Companies (2026)
+              </Link>
+              <Link
                 to="/insights/best-rare-disease-market-research-companies-2026"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >

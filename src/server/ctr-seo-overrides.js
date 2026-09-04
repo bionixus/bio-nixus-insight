@@ -412,9 +412,9 @@ export const CTR_SEO_BY_PATH = {
       'NielsenIQ alternatives for FMCG and retail research 2026 — when BioNixus wins on account-level and traditional-trade data, and when Nielsen panels still fit.',
   },
   '/pricing': {
-    title: 'Market Research Pricing | Project Bands (2026)',
+    title: 'Market Research Pricing | $10k–$75k Country (2026)',
     description:
-      'BioNixus market research pricing is by project and country. Typical 2026 bands: $20k–$75k single-country, $45k–$120k+ multi-country GCC. Proposal in 48 hours.',
+      'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.',
   },
   '/account-level-market-research': {
     title: 'What Is Account-Level Market Research Data?',
@@ -590,6 +590,11 @@ export const CTR_SEO_BY_PATH = {
     title: 'Top Oncology Market Research Companies 2026 | BioNixus',
     description:
       'Compare BioNixus vs IQVIA: indication-level PRFs with full patient history, new vs current case recruitment, and brand trackers — not generic pack sales data.',
+  },
+  '/insights/top-hematology-market-research-companies-2026': {
+    title: 'Top Hematology Market Research Companies 2026 | BioNixus',
+    description:
+      'Top hematology market research companies 2026: BioNixus vs IQVIA, Oracle, Adelphi. Anonymous PRFs, line-of-therapy brand trackers, malignant + benign.',
   },
   '/fmcg-companies-egypt': {
     title: 'Top FMCG Companies in Egypt (2026) | Traditional Trade',

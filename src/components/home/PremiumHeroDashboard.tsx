@@ -20,7 +20,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
 
   return (
     <div
-      className={`relative overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.025] p-7 sm:p-9 backdrop-blur-md shadow-[0_40px_80px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.04)] ${className}`.trim()}
+      className={`relative overflow-hidden rounded-3xl border border-white/[0.06] bg-[#06101F]/90 p-7 sm:p-9 shadow-[0_40px_80px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.04)] ${className}`.trim()}
     >
       <div
         className="pointer-events-none absolute inset-x-[60px] top-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent"
@@ -35,7 +35,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
       </div>
 
       <div className="relative mb-7 h-[200px]">
-        <div className="absolute right-5 top-2 z-10 rounded-[10px] border border-[#C9A84C]/20 bg-[#06101F]/85 px-4 py-3 backdrop-blur-sm">
+        <div className="absolute right-5 top-2 z-10 rounded-[10px] border border-[#C9A84C]/20 bg-[#06101F]/85 px-4 py-3">
           <p className="font-display text-[28px] font-medium leading-none text-[#C9A84C]">{d.calloutValue}</p>
           <p className="mt-1 text-[11px] text-white/35">{d.calloutLabel}</p>
           <p className="mt-0.5 text-[11px] font-medium text-[#14CFC8]">{d.calloutCagr}</p>

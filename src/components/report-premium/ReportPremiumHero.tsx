@@ -10,6 +10,25 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { getMarketReportWhitePaperForPath } from '@/data/marketReportWhitePapers';
 
+const COUNTRY_SAMPLE_PDF: Record<string, { reportName: string; pdfPath: string }> = {
+  '/usa-healthcare-market-report': {
+    reportName: 'US Healthcare Market Report 2026',
+    pdfPath: '/downloads/usa-healthcare-market-report-2026-sample.pdf',
+  },
+  '/brazil-healthcare-market-report': {
+    reportName: 'Brazil Healthcare Market Report 2026',
+    pdfPath: '/downloads/brazil-healthcare-market-report-2026-sample.pdf',
+  },
+  '/germany-healthcare-market-report': {
+    reportName: 'Germany Healthcare Market Report 2026',
+    pdfPath: '/downloads/germany-healthcare-market-report-2026-sample.pdf',
+  },
+  '/uk-healthcare-market-report': {
+    reportName: 'UK Healthcare Market Report 2026',
+    pdfPath: '/downloads/uk-healthcare-market-report-2026-sample.pdf',
+  },
+};
+
 export type ReportHeroStat = {
   value: string;
   label: string;
@@ -48,6 +67,7 @@ export function ReportPremiumHero({
 }: ReportPremiumHeroProps) {
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 90, threshold: 0.08 });
   const whitePaper = getMarketReportWhitePaperForPath(config.canonicalPath);
+  const countrySample = COUNTRY_SAMPLE_PDF[config.canonicalPath.replace(/\/$/, '')];
 
   const visualAlt = `${countryName ?? therapyName ?? 'Healthcare'} market research intelligence dashboard with growth analytics for ${title}`;
 
@@ -101,11 +121,11 @@ export function ReportPremiumHero({
             <div className="mt-6 sr sr-up">
               <ConversionCTA
                 variant="gated-asset"
-                reportName={whitePaper?.title ?? 'GCC Healthcare Market Report 2026'}
-                pdfPath={whitePaper?.htmlPath ?? '/downloads/gcc-pharma-medtech-databook-2026-sample.pdf'}
-                headline={whitePaper ? `Download the ${whitePaper.title}` : undefined}
-                buttonLabel={whitePaper ? 'Get the full report' : undefined}
-                submitLabel={whitePaper ? 'Get the full report' : undefined}
+                reportName={countrySample?.reportName ?? whitePaper?.title ?? 'GCC Healthcare Market Report 2026'}
+                pdfPath={countrySample?.pdfPath ?? whitePaper?.htmlPath ?? '/downloads/gcc-pharma-medtech-databook-2026-sample.pdf'}
+                headline={countrySample ? undefined : whitePaper ? `Download the ${whitePaper.title}` : undefined}
+                buttonLabel={whitePaper && !countrySample ? 'Get the full report' : undefined}
+                submitLabel={whitePaper && !countrySample ? 'Get the full report' : undefined}
                 ctaId={`${config.canonicalPath.replace(/[^a-z0-9]+/gi, '_')}_hero_gated`}
                 ctaLocation="report_hero"
               />

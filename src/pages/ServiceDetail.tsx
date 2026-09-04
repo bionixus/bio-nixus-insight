@@ -7,6 +7,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { PremiumMarketAccess } from '@/components/services/PremiumMarketAccess';
+import { PremiumQuantitativeResearch } from '@/components/services/PremiumQuantitativeResearch';
+import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
 
 interface ServiceData {
   title: string;
@@ -199,11 +202,18 @@ const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { language } = useLanguage();
   const svc = slug ? serviceData[slug] : undefined;
+  const faqItems =
+    slug === 'quantitative-research'
+      ? SERVICE_EXPANDED_FAQS['quantitative-research']
+      : slug === 'market-access'
+        ? SERVICE_EXPANDED_FAQS['market-access']
+        : undefined;
+  const isPremiumService = slug === 'quantitative-research' || slug === 'market-access';
 
   if (!svc) return <Navigate to="/services" replace />;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen ${isPremiumService ? 'bg-[#FFFEFB]' : 'bg-background'}`}>
       <SchemaMarkup
         pageType="service"
         pageUrl={`https://www.bionixus.com/services/${slug}`}
@@ -211,6 +221,7 @@ const ServiceDetail = () => {
         serviceName={svc.title}
         serviceDescription={svc.metaDescription}
         providerAreaServed={svc.geoCoverage}
+        faqItems={faqItems}
         breadcrumb={[
           { name: 'Home', item: 'https://www.bionixus.com/' },
           { name: 'Services', item: 'https://www.bionixus.com/services' },
@@ -224,6 +235,12 @@ const ServiceDetail = () => {
       </Helmet>
       <Navbar />
       <main>
+        {slug === 'quantitative-research' ? (
+          <PremiumQuantitativeResearch svc={svc} />
+        ) : slug === 'market-access' ? (
+          <PremiumMarketAccess svc={svc} />
+        ) : (
+          <>
         <div className="section-padding pt-24 pb-4">
           <div className="container-wide">
             <Link
@@ -418,6 +435,8 @@ const ServiceDetail = () => {
             </Link>
           </div>
         </section>
+          </>
+        )}
       </main>
       <Footer />
     </div>

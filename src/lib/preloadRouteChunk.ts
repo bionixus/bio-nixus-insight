@@ -12,6 +12,11 @@
  */
 
 import { isSegmentMarketPath } from '@/data/segmentMarketIndex';
+import { getSeoExportName, getSeoPageLoader } from '@/routes/lazySeoPages';
+import * as seoLazyPages from '@/routes/lazySeoPages';
+import * as marketingLazyPages from '@/routes/lazyMarketingPages';
+import * as reportLazyPages from '@/routes/lazyReportPages';
+import { warmLazy } from '@/lib/warmLazy';
 
 type Importer = () => Promise<unknown>;
 
@@ -114,11 +119,118 @@ function resolveImporter(pathname: string): Importer | undefined {
   return PREFIX_IMPORTS.find((entry) => entry.test(pathname))?.load;
 }
 
+function isHomePath(path: string): boolean {
+  return (
+    path === '/' ||
+    path === '/de' ||
+    path === '/fr' ||
+    path === '/es' ||
+    path === '/zh' ||
+    path === '/ar' ||
+    path === '/pt' ||
+    path === '/ru'
+  );
+}
+
+function lookupLazyExport(name: string): unknown {
+  for (const barrel of [seoLazyPages, marketingLazyPages, reportLazyPages]) {
+    const value = (barrel as Record<string, unknown>)[name];
+    if (value && typeof value === 'object') return value;
+  }
+  return undefined;
+}
+
+const IRREGULAR_LAZY: Record<string, unknown> = {
+  '/pharmaceutical-companies-saudi-arabia': reportLazyPages.SaudiPharmaCompanies,
+  '/medical-device-companies-saudi-arabia': reportLazyPages.SaudiMedicalDeviceCompanies,
+  '/gcc-anesthesia-surgical-market-report': reportLazyPages.GccAnesthesiaSurgicalMarket,
+  '/uae-influenza-vaccine-report': reportLazyPages.UaeInfluenzaVaccineReport,
+};
+
+function resolveLazyComponent(pathname: string): unknown {
+  if (isHomePath(pathname)) return marketingLazyPages.Index;
+  if (IRREGULAR_LAZY[pathname]) return IRREGULAR_LAZY[pathname];
+
+  const seoName = getSeoExportName(pathname);
+  if (seoName) {
+    const found = lookupLazyExport(seoName);
+    if (found) return found;
+  }
+
+  if (pathname.startsWith('/pharmaceutical-companies-')) {
+    const found = lookupLazyExport(
+      `${slugToComponentName(pathname.slice('/pharmaceutical-companies-'.length))}PharmaCompanies`,
+    );
+    if (found) return found;
+  }
+
+  if (pathname.startsWith('/medical-device-companies-')) {
+    const found = lookupLazyExport(
+      `${slugToComponentName(pathname.slice('/medical-device-companies-'.length))}MedicalDeviceCompanies`,
+    );
+    if (found) return found;
+  }
+
+  if (pathname.endsWith('-market-report') || pathname.endsWith('-report')) {
+    const found = lookupLazyExport(slugToComponentName(pathname.slice(1)));
+    if (found) return found;
+  }
+
+  const marketingByPath: Record<string, unknown> = {
+    '/bionixus-market-research-middle-east': marketingLazyPages.BionixusMarketResearchMiddleEast,
+    '/bionixus-ai-chatbots-increase-sales-and-lead-generation': marketingLazyPages.AiChatbotsLeadGeneration,
+    '/ar/insights/top-market-research-companies-egypt-2026':
+      marketingLazyPages.ArTopMarketResearchCompaniesEgypt2026,
+    '/ar/market-research-uae': marketingLazyPages.ArMarketResearchUae,
+    '/ar/market-research-ksa': marketingLazyPages.ArMarketResearchKsa,
+    '/ar/market-research-saudi': marketingLazyPages.ArMarketResearchSaudi,
+    '/ar/market-research-kuwait': marketingLazyPages.ArMarketResearchKuwait,
+    '/ar/market-research-egypt': marketingLazyPages.ArMarketResearchEgypt,
+  };
+  if (marketingByPath[pathname]) return marketingByPath[pathname];
+
+  if (
+    pathname.startsWith('/blog/') ||
+    pathname.startsWith('/ar/blog/') ||
+    pathname.startsWith('/de/blog/') ||
+    pathname.startsWith('/fr/blog/') ||
+    pathname.startsWith('/es/blog/') ||
+    pathname.startsWith('/pt/blog/') ||
+    pathname.startsWith('/ru/blog/') ||
+    pathname.startsWith('/zh/blog/') ||
+    pathname.startsWith('/bionixus-industries/insights/')
+  ) {
+    return reportLazyPages.BlogPost;
+  }
+
+  if (pathname.startsWith('/news/') && pathname !== '/news/feed.xml') {
+    return reportLazyPages.PressReleasePage;
+  }
+
+  if (
+    pathname.startsWith('/market-reports/') &&
+    !pathname.startsWith('/market-reports/therapy/') &&
+    !pathname.startsWith('/market-reports/country/')
+  ) {
+    return reportLazyPages.HealthcareReportPage;
+  }
+
+  if (isSegmentMarketPath(pathname)) return reportLazyPages.SegmentMarketRoute;
+
+  return undefined;
+}
+
 export async function preloadRouteChunk(pathname: string): Promise<void> {
-  const importer = resolveImporter(pathname);
-  if (!importer) return;
+  const normalized = pathname.replace(/\/$/, '') || '/';
+  const lazyComponent = resolveLazyComponent(normalized);
+  const importer = resolveImporter(normalized) ?? getSeoPageLoader(normalized);
+
   try {
-    await importer();
+    if (lazyComponent) {
+      await warmLazy(lazyComponent);
+      return;
+    }
+    if (importer) await importer();
   } catch {
     // Preload is best-effort; Suspense handles loading normally if it fails.
   }
