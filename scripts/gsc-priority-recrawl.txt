@@ -1,24 +1,42 @@
-# GSC URL Inspection priority recrawl list — Global Country MR sprint
-# Updated 2026-09-02 — AI SEO top-keyword pages (IQVIA, account-level, hub, Dubai).
+# GSC URL Inspection priority recrawl list
+# Updated 2026-09-04 — Rank-23 keyword owners (#146/#147) at Tier 0.
 # Submit via Google Search Console → URL Inspection → Request Indexing.
 # Also ping via: npm run indexnow:priority
+# Rank-23 file: scripts/rank23-owner-urls.txt
 
-# --- Tier 0: AI SEO money pages (Sep 2026) ---
+# --- Tier 0: Rank-23 keyword owners (Sep 2026) ---
+https://www.bionixus.com/market-research-gcc
+https://www.bionixus.com/qatar-personalized-medicine-market
+https://www.bionixus.com/saudi-arabia-biologics-market
+https://www.bionixus.com/pharmaceutical-companies-dubai
+https://www.bionixus.com/top-pharmacies-saudi-arabia
+https://www.bionixus.com/biosimilar-market-entry-saudi-arabia
+https://www.bionixus.com/insights/top-consumer-insights-companies-ksa-2026
+https://www.bionixus.com/insights/top-market-research-companies-saudi-arabia-2026
+https://www.bionixus.com/blog/sfda-drug-registration-guide
+https://www.bionixus.com/healthcare-market-research-companies
+https://www.bionixus.com/healthcare-market-research
+https://www.bionixus.com/gcc-pharma-market-report-2026
+https://www.bionixus.com/gcc-market-access-guide
+https://www.bionixus.com/market-reports/gcc-vaccines-market-report
+https://www.bionixus.com/market-reports/uae-digital-health-market-report
+https://www.bionixus.com/market-reports/saudi-arabia-digital-health-market-report
+https://www.bionixus.com/market-reports/qatar-digital-health-market-report
+https://www.bionixus.com/healthcare-market-research/uae
+https://www.bionixus.com/llms.txt
+https://www.bionixus.com/sitemap.xml
+
+# --- Tier 0b: AI SEO money pages (Sep 2026) ---
 https://www.bionixus.com/iqvia-alternative
 https://www.bionixus.com/account-level-market-research
-https://www.bionixus.com/healthcare-market-research
 https://www.bionixus.com/pricing
-https://www.bionixus.com/healthcare-market-research-in-uae
-https://www.bionixus.com/healthcare-market-research/uae
 https://www.bionixus.com/healthcare-market-research/egypt
 https://www.bionixus.com/healthcare-market-research/saudi-arabia
-https://www.bionixus.com/llms.txt
 
 # --- Tier 1: Dubai MR cluster (~1.5k impr, 0 clicks) ---
 https://www.bionixus.com/pharmaceutical-market-research-dubai
 https://www.bionixus.com/insights/top-healthcare-market-research-companies-dubai-2026
 https://www.bionixus.com/insights/top-market-research-companies-dubai-2026
-https://www.bionixus.com/healthcare-market-research/uae
 https://www.bionixus.com/healthcare-market-research/dubai
 https://www.bionixus.com/market-research-uae
 
