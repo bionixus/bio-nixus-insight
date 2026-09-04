@@ -1,6 +1,5 @@
 import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, type RouteObject } from 'react-router-dom';
-import { RouteLoadingFallback } from '@/components/RouteLoadingFallback';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import { buildCompanyDirectoryRoutes } from '@/data/companyDirectoryRoutes';
 import { buildCompetitorAlternativeRoutes } from '@/data/competitorAlternativeRoutes';

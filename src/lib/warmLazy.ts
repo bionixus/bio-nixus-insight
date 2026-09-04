@@ -38,6 +38,7 @@ export async function warmLazy(component: unknown): Promise<void> {
   }
 
   const mod = await thenable;
+  // React 18 _init returns payload._result.default — store the module, not default.
   payload._status = RESOLVED;
-  payload._result = mod?.default ?? mod;
+  payload._result = mod;
 }

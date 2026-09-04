@@ -1068,7 +1068,7 @@ async function startServer() {
 
       const perfHints = isProduction
         ? [getClientAssetHints(path.resolve(__dirname, 'dist/client/assets')), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n')
-        : buildLcpPreloadTag(initialData);
+        : [`<link rel="stylesheet" href="/src/index.css">`, buildLcpPreloadTag(initialData)].filter(Boolean).join('\n');
       const combinedHead = perfHints ? `${perfHints}\n${headTags}` : headTags;
 
       const page = template

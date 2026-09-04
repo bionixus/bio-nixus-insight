@@ -132,19 +132,48 @@ function isHomePath(path: string): boolean {
   );
 }
 
+function lookupLazyExport(name: string): unknown {
+  for (const barrel of [seoLazyPages, marketingLazyPages, reportLazyPages]) {
+    const value = (barrel as Record<string, unknown>)[name];
+    if (value && typeof value === 'object') return value;
+  }
+  return undefined;
+}
+
+const IRREGULAR_LAZY: Record<string, unknown> = {
+  '/pharmaceutical-companies-saudi-arabia': reportLazyPages.SaudiPharmaCompanies,
+  '/medical-device-companies-saudi-arabia': reportLazyPages.SaudiMedicalDeviceCompanies,
+  '/gcc-anesthesia-surgical-market-report': reportLazyPages.GccAnesthesiaSurgicalMarket,
+  '/uae-influenza-vaccine-report': reportLazyPages.UaeInfluenzaVaccineReport,
+};
+
 function resolveLazyComponent(pathname: string): unknown {
   if (isHomePath(pathname)) return marketingLazyPages.Index;
+  if (IRREGULAR_LAZY[pathname]) return IRREGULAR_LAZY[pathname];
 
   const seoName = getSeoExportName(pathname);
-  if (seoName && seoName in seoLazyPages) {
-    return (seoLazyPages as Record<string, unknown>)[seoName];
+  if (seoName) {
+    const found = lookupLazyExport(seoName);
+    if (found) return found;
   }
 
-  if (pathname.endsWith('-market-report')) {
-    const reportName = slugToComponentName(pathname.slice(1));
-    if (reportName in reportLazyPages) {
-      return (reportLazyPages as Record<string, unknown>)[reportName];
-    }
+  if (pathname.startsWith('/pharmaceutical-companies-')) {
+    const found = lookupLazyExport(
+      `${slugToComponentName(pathname.slice('/pharmaceutical-companies-'.length))}PharmaCompanies`,
+    );
+    if (found) return found;
+  }
+
+  if (pathname.startsWith('/medical-device-companies-')) {
+    const found = lookupLazyExport(
+      `${slugToComponentName(pathname.slice('/medical-device-companies-'.length))}MedicalDeviceCompanies`,
+    );
+    if (found) return found;
+  }
+
+  if (pathname.endsWith('-market-report') || pathname.endsWith('-report')) {
+    const found = lookupLazyExport(slugToComponentName(pathname.slice(1)));
+    if (found) return found;
   }
 
   const marketingByPath: Record<string, unknown> = {
