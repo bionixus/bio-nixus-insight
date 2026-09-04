@@ -18,10 +18,11 @@ export function ListicleProposalCta({
   children,
 }: ListicleProposalCtaProps) {
   return (
-    <section className="section-padding py-16 bg-primary text-primary-foreground">
-      <div className="container-wide max-w-5xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">{headline}</h2>
-        <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">{body}</p>
+    <section className="directory-cta-band section-padding py-16 md:py-20">
+      <div className="relative z-[1] container-wide max-w-5xl mx-auto text-center">
+        <p className="directory-kicker mb-5">48-hour proposal</p>
+        <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4 text-white">{headline}</h2>
+        <p className="text-white/70 mb-8 max-w-2xl mx-auto">{body}</p>
         <div className="max-w-xl mx-auto text-left text-foreground">
           <ConversionCTA
             variant="talk-to-research"

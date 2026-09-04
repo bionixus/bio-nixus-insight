@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, BarChart3, Truck, Users } from 'lucide-react';
+import { Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, Truck } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
@@ -20,6 +20,16 @@ import {
 import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import { parseDirectoryPath } from '@/data/companyDirectories';
 import { PHARMA_GUIDE_ARTICLE_CONTAINER, PHARMA_GUIDE_INNER, PHARMA_GUIDE_SECTION_X } from '@/components/report-conversion/constants';
+import {
+  DirectoryCategoryCard,
+  DirectoryDriverCard,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectoryOutlineLink,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
 
 export type CountryCompanyEntry = {
   name: string;
@@ -111,7 +121,7 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
   const guideSlugId = config.path.replace(/^\//, '').replace(/[^a-z0-9-]/g, '');
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>{config.title}</title>
         <meta name="description" content={config.metaDescription} />
@@ -132,15 +142,66 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
       <Navbar />
       <ReportReadingProgress progressId={`pharma-guide-rp-${guideSlugId}`} />
       <main>
-        <div className={`${PHARMA_GUIDE_SECTION_X} pt-24 pb-4`}><div className={PHARMA_GUIDE_INNER}><nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to="/" className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">{industryTitle} Companies in {config.countryName}</span></nav></div></div>
+        <div data-hero-lcp>
+          <DirectoryHero
+            breadcrumbs={[
+              { name: 'Home', href: '/' },
+              { name: 'Resources', href: '/resources' },
+              { name: `${industryTitle} Companies in ${config.countryName}`, href: config.path },
+            ]}
+            kicker="Industry Guide 2026"
+            h1={config.h1}
+            lead={
+              <>
+                {config.introLead} — see BioNixus&apos;s <Link to="/healthcare-market-research">healthcare market research</Link> hub
+                for global context. {config.introRest}
+              </>
+            }
+            metaLine={`Last updated: August 2026 · Sources: ${config.sources.slice(0, 3).join(', ')}, BioNixus research`}
+            stats={config.stats}
+            actions={
+              <>
+                <DirectoryGoldLink to="#request-proposal">Request a {config.countryName} proposal</DirectoryGoldLink>
+                <DirectoryOutlineLink href="#top-companies">Browse the companies</DirectoryOutlineLink>
+              </>
+            }
+          />
+        </div>
 
-        <section className={`${PHARMA_GUIDE_SECTION_X} pt-0 pb-12`} data-hero-lcp><div className={PHARMA_GUIDE_INNER}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />Industry Guide 2026</div>
-          <h1 className="sr-lcp text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-5xl">{config.h1}</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mb-4">{config.introLead} — see BioNixus&apos;s <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> hub for global context. {config.introRest}</p>
-          <p className="text-sm text-muted-foreground">Last updated: August 2026 &middot; Sources: {config.sources.slice(0, 3).join(', ')}, BioNixus research</p>
-          <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;{headline}.&quot; BioNixus Healthcare Market Research, Aug. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
-          <ReportEarlyCtaBar config={conversion} className="mt-8" /></div></section>
+        <DirectoryJumpNav
+          items={[
+            { href: '#companies-quick-answer', label: 'Answer' },
+            { href: '#top-companies', label: 'Companies' },
+            { href: '#companies-by-category', label: 'Categories' },
+            { href: '#regulatory-landscape', label: 'Regulator' },
+            { href: '#growth-drivers', label: 'Drivers' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+        />
+
+        <DirectorySection id="cite" eyebrow="Attribution">
+          <div className="premium-card p-5">
+            <div className="flex items-start gap-3">
+              <Share2 className="w-5 h-5 text-[#C9A84C] mt-0.5 shrink-0" />
+              <div>
+                <p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  BioNixus. &quot;{headline}.&quot; BioNixus Healthcare Market Research, Aug. 2026,{' '}
+                  <a href={citationUrl} className="text-primary hover:underline break-all">
+                    {citationUrl}
+                  </a>
+                  .<br />
+                  Licensed under{' '}
+                  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                    CC BY 4.0
+                  </a>{' '}
+                  — free to share and adapt with attribution.
+                </p>
+              </div>
+            </div>
+          </div>
+          <ReportEarlyCtaBar config={conversion} className="mt-8" />
+        </DirectorySection>
 
         <section className={`${PHARMA_GUIDE_SECTION_X} py-10 bg-muted/25 border-y border-border/60`} id="companies-quick-answer" aria-labelledby="companies-quick-answer-heading">
           <div className={PHARMA_GUIDE_INNER}>
@@ -159,23 +220,6 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
         </section>
 
         <ReportContentWithAside config={conversion} containerClassName={PHARMA_GUIDE_ARTICLE_CONTAINER}>
-        <section className="py-12 bg-primary text-primary-foreground"><div className="container-wide w-full"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {config.stats.map((s) => (<div key={s.label}><p className="text-3xl md:text-4xl font-display font-bold">{s.value}</p><p className="text-primary-foreground/70 text-sm mt-1">{s.label}</p></div>))}
-        </div></div></section>
-
-        <section className="section-padding py-8 bg-muted/30"><div className="container-wide w-full">
-          <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
-          <div className="grid md:grid-cols-2 gap-2">
-            <a href="#market-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><BarChart3 className="w-4 h-4" /> {config.countryName} Market Overview</a>
-            <a href="#top-companies" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> Top {industryTitle} Companies</a>
-            <a href="#companies-by-category" className="text-sm text-primary hover:underline flex items-center gap-2"><Users className="w-4 h-4" /> Companies by Category</a>
-            <a href="#regulatory-landscape" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> {config.regulator.short} Regulatory Landscape</a>
-            <a href="#growth-drivers" className="text-sm text-primary hover:underline flex items-center gap-2"><TrendingUp className="w-4 h-4" /> Growth Drivers</a>
-            <a href="#bionixus-support" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> How BioNixus Supports Teams in {config.countryName}</a>
-            <a href="#related-directories" className="text-sm text-primary hover:underline flex items-center gap-2"><Truck className="w-4 h-4" /> Related Country Directories</a>
-            <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently Asked Questions</a>
-          </div>
-        </div></section>
 
         <section className="section-padding py-16" id="market-overview"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">{config.countryName} {industryTitle} Market Overview</h2>
@@ -187,7 +231,7 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
         <section className="section-padding py-16 bg-muted/30" id="top-companies"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Top {industryTitle} Companies in {countryDisplay}</h2>
           <p className="text-muted-foreground mb-8 max-w-3xl">The following table lists the major {config.industry} companies operating in {countryDisplay} — including local manufacturers, multinational offices, regional players, and leading distributors.</p>
-          <div className="overflow-x-auto rounded-xl border border-border"><table className="w-full text-sm"><thead><tr className="bg-primary/5 border-b border-border"><th className="text-left px-4 py-3 font-semibold text-foreground">Company</th><th className="text-left px-4 py-3 font-semibold text-foreground">HQ</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden md:table-cell">Type</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden lg:table-cell">Focus Areas</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden xl:table-cell">Notes</th></tr></thead><tbody>
+          <div className="overflow-x-auto rounded-2xl border border-[#EDE9E3] shadow-[0_16px_50px_rgba(6,16,31,0.05)]"><table className="directory-table"><thead><tr><th>Company</th><th>HQ</th><th className="hidden md:table-cell">Type</th><th className="hidden lg:table-cell">Focus Areas</th><th className="hidden xl:table-cell">Notes</th></tr></thead><tbody>
             {config.companies.map((c, i) => (<tr key={c.name} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}><td className="px-4 py-3 font-medium text-foreground">{c.name}</td><td className="px-4 py-3 text-muted-foreground">{c.hq}</td><td className="px-4 py-3 hidden md:table-cell"><span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${c.type === 'Local Manufacturer' ? 'bg-green-50 text-green-700' : c.type === 'MNC Office' ? 'bg-blue-50 text-blue-700' : c.type === 'Regional' ? 'bg-amber-50 text-amber-700' : 'bg-purple-50 text-purple-700'}`}>{c.type}</span></td><td className="px-4 py-3 text-muted-foreground hidden lg:table-cell">{c.therapeuticAreas}</td><td className="px-4 py-3 text-muted-foreground text-xs hidden xl:table-cell">{c.notes}</td></tr>))}
           </tbody></table></div>
           {config.industry === 'pharmaceutical' ? (
@@ -214,11 +258,11 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
         <section className="section-padding py-16" id="companies-by-category"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">List of {industryTitle} Companies in {countryDisplay} by Category</h2>
           <p className="text-muted-foreground mb-10 max-w-3xl">{config.countryName} {config.industry} companies span local manufacturers, multinational corporation offices, regional suppliers, and key distributors.</p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card border border-border rounded-xl p-6"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center"><Pill className="w-5 h-5 text-green-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">Local Manufacturers</h3></div><p className="text-sm text-muted-foreground mb-4">{config.categoryBlurbs.local}</p><ul className="space-y-1.5 text-sm text-foreground">{config.companies.filter(c => c.type === 'Local Manufacturer').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-green-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
-            <div className="bg-card border border-border rounded-xl p-6"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center"><Globe className="w-5 h-5 text-blue-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">Multinational Offices</h3></div><p className="text-sm text-muted-foreground mb-4">{config.categoryBlurbs.mnc}</p><ul className="space-y-1.5 text-sm text-foreground">{config.companies.filter(c => c.type === 'MNC Office').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-blue-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
-            <div className="bg-card border border-border rounded-xl p-6"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center"><Building2 className="w-5 h-5 text-amber-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">Regional Players</h3></div><p className="text-sm text-muted-foreground mb-4">{config.categoryBlurbs.regional}</p><ul className="space-y-1.5 text-sm text-foreground">{config.companies.filter(c => c.type === 'Regional').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-amber-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
-            <div className="bg-card border border-border rounded-xl p-6"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center"><Truck className="w-5 h-5 text-purple-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">Distributors</h3></div><p className="text-sm text-muted-foreground mb-4">{config.categoryBlurbs.distributor}</p><ul className="space-y-1.5 text-sm text-foreground">{config.companies.filter(c => c.type === 'Distributor').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-purple-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
+          <div className="grid md:grid-cols-2 gap-5">
+            <DirectoryCategoryCard title="Local Manufacturers" icon={<Pill className="w-5 h-5" />} blurb={config.categoryBlurbs.local} names={config.companies.filter((c) => c.type === 'Local Manufacturer').map((c) => c.name)} />
+            <DirectoryCategoryCard title="Multinational Offices" icon={<Globe className="w-5 h-5" />} blurb={config.categoryBlurbs.mnc} names={config.companies.filter((c) => c.type === 'MNC Office').map((c) => c.name)} />
+            <DirectoryCategoryCard title="Regional Players" icon={<Building2 className="w-5 h-5" />} blurb={config.categoryBlurbs.regional} names={config.companies.filter((c) => c.type === 'Regional').map((c) => c.name)} />
+            <DirectoryCategoryCard title="Distributors" icon={<Truck className="w-5 h-5" />} blurb={config.categoryBlurbs.distributor} names={config.companies.filter((c) => c.type === 'Distributor').map((c) => c.name)} />
           </div>
         </div></section>
 
@@ -234,7 +278,7 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
 
         <section className="section-padding py-16" id="growth-drivers"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">{config.countryName} {industryTitle} Market Growth Drivers</h2>
-          <div className="grid md:grid-cols-3 gap-6">{config.growthDrivers.map((d) => (<div key={d.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{d.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p></div>))}</div>
+          <div className="grid md:grid-cols-3 gap-5">{config.growthDrivers.map((d) => (<DirectoryDriverCard key={d.title} title={d.title} desc={d.desc} />))}</div>
         </div></section>
 
         <section className="section-padding py-16" id="bionixus-support"><div className="container-wide w-full">
@@ -247,17 +291,19 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Related BioNixus country directories &amp; reports</h2>
           <p className="text-muted-foreground mb-8 max-w-3xl">Compare the {config.countryName} {config.industry} industry with BioNixus company directories and market reports for other priority markets.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {config.relatedLinks.map((l) => (<Link key={l.to} to={l.to} className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">{l.label} <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>))}
+            {config.relatedLinks.map((l) => (<DirectoryLinkTile key={l.to} to={l.to} title={l.label} />))}
           </div>
           {directoryCountry ? <CountryDirectoryLinks country={directoryCountry} excludePath={config.path} className="mt-10" /> : null}
         </div></section>
 
-        <PharmaCompaniesFaqSection items={config.faq} />
+        <PharmaCompaniesFaqSection items={config.faq} contained />
 
         <section className="section-padding py-12" id="methodology"><div className="container-wide w-full"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6">{config.sources.map((s) => (<li key={s}>{s}</li>))}</ul><p className="text-sm text-muted-foreground leading-relaxed">Company lists are editorial snapshots, not endorsements; market sizes are BioNixus estimate ranges synthesised from regulator and industry sources. For customised market intelligence on {countryDisplay}, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
         </ReportContentWithAside>
 
-        <ReportConsultationBand config={conversion} />
+        <div id="request-proposal">
+          <ReportConsultationBand config={conversion} />
+        </div>
         </main>
       <Footer />
       {past70Percent ? (

@@ -39,7 +39,8 @@ export function IndustryDirectoryBridge({
   const place = countryDisplay ?? countryName;
 
   return (
-    <div className={className} id="request-proposal">
+    <div className={`${className} premium-card`} id="request-proposal">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C9A84C] mb-2">Primary research</p>
       <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-2">
         {headline ?? `These are the ${industryLabel} accounts we study in ${place}`}
       </h2>

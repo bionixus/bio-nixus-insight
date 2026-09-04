@@ -1,14 +1,21 @@
-import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Building2, Globe2, Layers } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import { buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
+import { ReportReadingProgress } from '@/components/report-conversion';
+import {
+  DirectoryDriverCard,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectoryOutlineLink,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import {
   ALL_DIRECTORY_LISTINGS,
@@ -55,35 +62,6 @@ const REGION_LABEL: Record<DirectoryRegion, string> = {
 
 const REGION_ORDER: DirectoryRegion[] = ['gcc', 'mena', 'africa', 'europe', 'northamerica', 'latam', 'apac'];
 
-function LinkTile({ to, title, sub }: { to: string; title: string; sub?: string }) {
-  return (
-    <Link
-      to={to}
-      className="group flex items-center justify-between gap-3 rounded-xl border border-border bg-card p-4 text-sm shadow-sm transition-colors hover:border-primary"
-    >
-      <span>
-        <span className="block font-semibold text-foreground">{title}</span>
-        {sub ? <span className="block text-xs text-muted-foreground mt-0.5">{sub}</span> : null}
-      </span>
-      <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>
-        &rarr;
-      </span>
-    </Link>
-  );
-}
-
-function SectionHeading({ icon, title, body }: { icon: ReactNode; title: string; body?: string }) {
-  return (
-    <>
-      <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 flex items-center gap-3">
-        {icon}
-        {title}
-      </h2>
-      {body ? <p className="text-muted-foreground mb-8 max-w-3xl">{body}</p> : null}
-    </>
-  );
-}
-
 export default function DirectoryHubPage({ path }: Props) {
   const hub = getDirectoryHub(path);
   if (!hub) return null;
@@ -114,9 +92,44 @@ export default function DirectoryHubPage({ path }: Props) {
   ];
 
   const formMarket = country?.formMarket ?? 'Global';
+  const kicker =
+    hub.kind === 'master'
+      ? 'BioNixus company directories'
+      : hub.kind === 'country'
+        ? `${country?.name} company directories`
+        : `${entity?.labelPlural} directories`;
+
+  const stats = [
+    { value: String(items.length), label: 'directories in this hub' },
+    { value: String(new Set(items.map((d) => d.countrySlug)).size), label: 'countries covered' },
+    { value: String(new Set(items.map((d) => d.entity)).size), label: 'company types' },
+    { value: '48h', label: 'to a scoped proposal' },
+  ];
+
+  const jumpItems =
+    hub.kind === 'master'
+      ? [
+          { href: '#by-country', label: 'By country' },
+          { href: '#by-industry', label: 'By industry' },
+          { href: '#all-directories', label: 'A–Z' },
+          { href: '#use-cases', label: 'Use cases' },
+          { href: '#faq', label: 'FAQ' },
+        ]
+      : hub.kind === 'country'
+        ? [
+            { href: '#directories', label: 'Directories' },
+            { href: '#research', label: 'Research' },
+            { href: '#use-cases', label: 'Use cases' },
+            { href: '#faq', label: 'FAQ' },
+          ]
+        : [
+            { href: '#directories', label: 'By country' },
+            { href: '#use-cases', label: 'Use cases' },
+            { href: '#faq', label: 'FAQ' },
+          ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -167,90 +180,51 @@ export default function DirectoryHubPage({ path }: Props) {
         type="website"
         locale="en_US"
       />
+      <ReportReadingProgress progressId={`hub-rp-${hub.path.replace(/^\//, '').replace(/[^a-z0-9]+/g, '-')}`} />
       <Navbar />
       <main>
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <BreadcrumbNav items={breadcrumbs} className="px-0 mb-2" />
-          </div>
-        </div>
+        <DirectoryHero
+          breadcrumbs={breadcrumbs}
+          kicker={kicker}
+          h1={hub.h1}
+          lead={hub.intro[0] ?? pageDescription}
+          rest={
+            hub.intro.length > 1 ? (
+              <>
+                {hub.intro.slice(1).map((p, i) => (
+                  <p key={i} className={i > 0 ? 'mt-3' : undefined}>
+                    {p}
+                  </p>
+                ))}
+              </>
+            ) : undefined
+          }
+          stats={stats}
+          actions={
+            <>
+              <DirectoryGoldLink to={hub.kind === 'master' ? '#by-country' : '#directories'}>
+                Browse the directories
+              </DirectoryGoldLink>
+              <DirectoryOutlineLink href="#use-cases">See how teams use them</DirectoryOutlineLink>
+            </>
+          }
+        />
 
-        <section className="section-padding pt-0 pb-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">
-              {hub.kind === 'master'
-                ? 'BioNixus company directories'
-                : hub.kind === 'country'
-                  ? `${country?.name} company directories`
-                  : `${entity?.labelPlural} directories`}
-            </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              {hub.h1}
-            </h1>
-            {hub.intro.map((p, i) => (
-              <p
-                key={i}
-                className={
-                  i === 0
-                    ? 'text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4'
-                    : 'text-muted-foreground leading-relaxed max-w-3xl mb-4'
-                }
-              >
-                {p}
-              </p>
-            ))}
-          </div>
-        </section>
-
-        <section className="section-padding py-12 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">{items.length}</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">directories in this hub</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">
-                  {new Set(items.map((d) => d.countrySlug)).size}
-                </p>
-                <p className="text-primary-foreground/70 text-sm mt-1">countries covered</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">
-                  {new Set(items.map((d) => d.entity)).size}
-                </p>
-                <p className="text-primary-foreground/70 text-sm mt-1">company types</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">48h</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">to a scoped proposal</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <DirectoryJumpNav items={jumpItems} />
 
         {hub.kind === 'master' ? <MasterBody /> : null}
         {hub.kind === 'country' && hub.countrySlug ? <CountryBody country={hub.countrySlug} items={items} /> : null}
         {hub.kind === 'entity' && hub.entity ? <EntityBody entity={hub.entity} items={items} /> : null}
 
-        <section className="section-padding py-16" id="use-cases">
-          <div className="container-wide max-w-5xl mx-auto">
-            <SectionHeading
-              icon={<Layers className="w-6 h-6 text-primary" aria-hidden />}
-              title="What these directories are for"
-            />
-            <div className="grid md:grid-cols-3 gap-6">
-              {hub.useCases.map((u) => (
-                <div key={u.title} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{u.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{u.desc}</p>
-                </div>
-              ))}
-            </div>
+        <DirectorySection id="use-cases" surface="ivory" eyebrow="Who this is for" title="What these directories are for">
+          <div className="grid md:grid-cols-3 gap-5">
+            {hub.useCases.map((u) => (
+              <DirectoryDriverCard key={u.title} title={u.title} desc={u.desc} />
+            ))}
           </div>
-        </section>
+        </DirectorySection>
 
-        <PharmaCompaniesFaqSection items={hub.faq} />
+        <PharmaCompaniesFaqSection items={hub.faq} contained />
 
         <ListicleProposalCta
           countryName={formMarket}
@@ -268,6 +242,12 @@ export default function DirectoryHubPage({ path }: Props) {
   );
 }
 
+function GroupHeading({ children }: { children: string }) {
+  return (
+    <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3 mt-2">{children}</h3>
+  );
+}
+
 function MasterBody() {
   const countries = getDirectoryCountriesWithPages();
   const entities = getDirectoryEntitiesWithPages();
@@ -282,85 +262,72 @@ function MasterBody() {
 
   return (
     <>
-      <section className="section-padding py-16 bg-muted/30" id="by-country">
-        <div className="container-wide max-w-5xl mx-auto">
-          <SectionHeading
-            icon={<Globe2 className="w-6 h-6 text-primary" aria-hidden />}
-            title="Browse by country"
-            body="Every market where BioNixus maintains at least one named-account directory. Countries with a dedicated hub list ten or more company types."
-          />
-          {byRegion.map((g) => (
-            <div key={g.region} className="mb-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">
-                {REGION_LABEL[g.region]}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {g.countries.map((c) => {
-                  const n = getDirectoriesForCountry(c).length;
-                  const to = hasCountryHub(c) ? countryHubPath(c) : getDirectoriesForCountry(c)[0]?.path;
-                  return (
-                    <LinkTile
-                      key={c}
-                      to={to}
-                      title={DIRECTORY_COUNTRIES[c].name}
-                      sub={`${n} ${n === 1 ? 'directory' : 'directories'}${hasCountryHub(c) ? ' · country hub' : ''}`}
-                    />
-                  );
-                })}
-              </div>
+      <DirectorySection
+        id="by-country"
+        eyebrow="Geography"
+        title="Browse by country"
+        body="Every market where BioNixus maintains at least one named-account directory. Countries with a dedicated hub list ten or more company types."
+      >
+        {byRegion.map((g) => (
+          <div key={g.region} className="mb-8">
+            <GroupHeading>{REGION_LABEL[g.region]}</GroupHeading>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {g.countries.map((c) => {
+                const n = getDirectoriesForCountry(c).length;
+                const to = hasCountryHub(c) ? countryHubPath(c) : getDirectoriesForCountry(c)[0]?.path;
+                return (
+                  <DirectoryLinkTile
+                    key={c}
+                    to={to}
+                    title={DIRECTORY_COUNTRIES[c].name}
+                    sub={`${n} ${n === 1 ? 'directory' : 'directories'}${hasCountryHub(c) ? ' · country hub' : ''}`}
+                  />
+                );
+              })}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        ))}
+      </DirectorySection>
 
-      <section className="section-padding py-16" id="by-industry">
-        <div className="container-wide max-w-5xl mx-auto">
-          <SectionHeading
-            icon={<Building2 className="w-6 h-6 text-primary" aria-hidden />}
-            title="Browse by company type"
-            body="The same directory format across sectors: 12–25 named accounts, channel structure, growth drivers and the regulator or registry the list was checked against."
-          />
-          {bySector.map((g) => (
-            <div key={g.sector} className="mb-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">
-                {SECTOR_LABEL[g.sector]}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {g.entities.map((e) => {
-                  const list = getDirectoriesForEntity(e);
-                  const to = hasEntityHub(e) ? DIRECTORY_ENTITIES[e].hubPath! : list[0]?.path;
-                  return (
-                    <LinkTile
-                      key={e}
-                      to={to}
-                      title={DIRECTORY_ENTITIES[e].labelPlural}
-                      sub={`${list.length} ${list.length === 1 ? 'country' : 'countries'}${hasEntityHub(e) ? ' · hub' : ''}`}
-                    />
-                  );
-                })}
-              </div>
+      <DirectorySection
+        id="by-industry"
+        surface="cream"
+        eyebrow="Company type"
+        title="Browse by company type"
+        body="The same directory format across sectors: 12–25 named accounts, channel structure, growth drivers and the regulator or registry the list was checked against."
+      >
+        {bySector.map((g) => (
+          <div key={g.sector} className="mb-8">
+            <GroupHeading>{SECTOR_LABEL[g.sector]}</GroupHeading>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {g.entities.map((e) => {
+                const list = getDirectoriesForEntity(e);
+                const to = hasEntityHub(e) ? DIRECTORY_ENTITIES[e].hubPath! : list[0]?.path;
+                return (
+                  <DirectoryLinkTile
+                    key={e}
+                    to={to}
+                    title={DIRECTORY_ENTITIES[e].labelPlural}
+                    sub={`${list.length} ${list.length === 1 ? 'country' : 'countries'}${hasEntityHub(e) ? ' · hub' : ''}`}
+                  />
+                );
+              })}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        ))}
+      </DirectorySection>
 
-      <section className="section-padding py-16 bg-muted/30" id="all-directories">
-        <div className="container-wide max-w-5xl mx-auto">
-          <SectionHeading
-            icon={<Layers className="w-6 h-6 text-primary" aria-hidden />}
-            title="All directories, A–Z"
-          />
-          <ul className="columns-1 sm:columns-2 lg:columns-3 gap-6 text-sm">
-            {ALL_DIRECTORY_LISTINGS.map((d) => (
-              <li key={d.path} className="mb-1.5 break-inside-avoid">
-                <Link to={d.path} className="text-foreground hover:text-primary hover:underline">
-                  {d.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <DirectorySection id="all-directories" eyebrow="Index" title="All directories, A–Z">
+        <ul className="columns-1 sm:columns-2 lg:columns-3 gap-6 text-sm">
+          {ALL_DIRECTORY_LISTINGS.map((d) => (
+            <li key={d.path} className="mb-2 break-inside-avoid">
+              <Link to={d.path} className="text-foreground hover:text-[#8A6A12] hover:underline underline-offset-4">
+                {d.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </DirectorySection>
     </>
   );
 }
@@ -382,41 +349,31 @@ function CountryBody({ country, items }: { country: DirectoryCountrySlug; items:
 
   return (
     <>
-      <section className="section-padding py-16 bg-muted/30" id="directories">
-        <div className="container-wide max-w-5xl mx-auto">
-          <SectionHeading
-            icon={<Building2 className="w-6 h-6 text-primary" aria-hidden />}
-            title={`Company directories for ${meta.display}`}
-            body={`Each directory lists the named ${meta.display} accounts BioNixus studies, the channel structure they sell through and the public register the list was checked against.`}
-          />
-          {groups.map((g) => (
-            <div key={g.sector} className="mb-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">
-                {SECTOR_LABEL[g.sector]}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {g.items.map((d) => (
-                  <LinkTile key={d.path} to={d.path} title={DIRECTORY_ENTITIES[d.entity].labelPlural} sub={d.label} />
-                ))}
-              </div>
+      <DirectorySection
+        id="directories"
+        eyebrow={meta.display}
+        title={`Company directories for ${meta.display}`}
+        body={`Each directory lists the named ${meta.display} accounts BioNixus studies, the channel structure they sell through and the public register the list was checked against.`}
+      >
+        {groups.map((g) => (
+          <div key={g.sector} className="mb-8">
+            <GroupHeading>{SECTOR_LABEL[g.sector]}</GroupHeading>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {g.items.map((d) => (
+                <DirectoryLinkTile key={d.path} to={d.path} title={DIRECTORY_ENTITIES[d.entity].labelPlural} sub={d.label} />
+              ))}
             </div>
+          </div>
+        ))}
+      </DirectorySection>
+
+      <DirectorySection id="research" surface="cream" eyebrow="Briefs" title={`Research briefs for ${meta.display}`}>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {research.map((l) => (
+            <DirectoryLinkTile key={l.to} to={l.to} title={l.label} />
           ))}
         </div>
-      </section>
-
-      <section className="section-padding py-16" id="research">
-        <div className="container-wide max-w-5xl mx-auto">
-          <SectionHeading
-            icon={<Globe2 className="w-6 h-6 text-primary" aria-hidden />}
-            title={`Research briefs for ${meta.display}`}
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {research.map((l) => (
-              <LinkTile key={l.to} to={l.to} title={l.label} />
-            ))}
-          </div>
-        </div>
-      </section>
+      </DirectorySection>
     </>
   );
 }
@@ -429,31 +386,22 @@ function EntityBody({ entity, items }: { entity: DirectoryEntitySlug; items: Dir
   })).filter((g) => g.items.length > 0);
 
   return (
-    <section className="section-padding py-16 bg-muted/30" id="directories">
-      <div className="container-wide max-w-5xl mx-auto">
-        <SectionHeading
-          icon={<Globe2 className="w-6 h-6 text-primary" aria-hidden />}
-          title={`${meta.labelPlural} by country`}
-          body={`Every ${meta.labelSingular} directory BioNixus maintains, grouped by region. Each page carries 12–25 named accounts, the ${meta.tradeHeading.toLowerCase()} layer, growth drivers and a country proposal form.`}
-        />
-        {groups.map((g) => (
-          <div key={g.region} className="mb-8">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">
-              {REGION_LABEL[g.region]}
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {g.items.map((d) => (
-                <LinkTile
-                  key={d.path}
-                  to={d.path}
-                  title={DIRECTORY_COUNTRIES[d.countrySlug].name}
-                  sub={d.label}
-                />
-              ))}
-            </div>
+    <DirectorySection
+      id="directories"
+      eyebrow={meta.labelPlural}
+      title={`${meta.labelPlural} by country`}
+      body={`Every ${meta.labelSingular} directory BioNixus maintains, grouped by region. Each page carries 12–25 named accounts, the ${meta.tradeHeading.toLowerCase()} layer, growth drivers and a country proposal form.`}
+    >
+      {groups.map((g) => (
+        <div key={g.region} className="mb-8">
+          <GroupHeading>{REGION_LABEL[g.region]}</GroupHeading>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {g.items.map((d) => (
+              <DirectoryLinkTile key={d.path} to={d.path} title={DIRECTORY_COUNTRIES[d.countrySlug].name} sub={d.label} />
+            ))}
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      ))}
+    </DirectorySection>
   );
 }

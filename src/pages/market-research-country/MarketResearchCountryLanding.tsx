@@ -2,8 +2,17 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
+import {
+  DirectoryDriverCard,
+  DirectoryFaqList,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectoryOutlineLink,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import {
   getMarketResearchCountryContent,
@@ -84,24 +93,21 @@ export default function MarketResearchCountryLanding({
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <SEOHead title={title} description={description} canonical={canonical} jsonLd={jsonLd} />
       <Navbar />
       <main dir={isRtl ? 'rtl' : 'ltr'} lang={isRtl ? 'ar' : 'en'}>
-        <BreadcrumbNav
-          items={[
+        <DirectoryHero
+          breadcrumbs={[
             { name: isRtl ? 'الرئيسية' : 'Home', href: isRtl ? '/ar' : '/' },
             { name: isRtl ? 'أبحاث السوق' : 'Market Research', href: '/market-research' },
             { name: h1, href: canonical },
           ]}
-        />
-
-        <section className="section-padding py-14 bg-gradient-to-b from-muted/30 to-background">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4">
-              {h1}
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">{intro}</p>
+          kicker={isRtl ? 'أبحاث السوق' : 'Market research'}
+          h1={h1}
+          lead={intro}
+          rest={
+            <>
             {(contentKey === 'ksa' || contentKey === 'saudi') && (
               <p className="text-muted-foreground leading-relaxed mb-4">
                 For an independent ranking of{' '}
@@ -226,21 +232,43 @@ export default function MarketResearchCountryLanding({
                 )}
               </p>
             ) : null}
-          </div>
-        </section>
+            </>
+          }
+          stats={[
+            { value: countryLabel, label: isRtl ? 'السوق' : 'Market' },
+            { value: 'AR + EN', label: isRtl ? 'عمل ميداني' : 'Fieldwork' },
+            { value: '48h', label: isRtl ? 'للعرض' : 'to a proposal' },
+            { value: '48', label: isRtl ? 'دولة' : 'countries' },
+          ]}
+          actions={
+            <>
+              <DirectoryGoldLink to="/contact">{isRtl ? 'اطلب عرضاً' : 'Request a proposal'}</DirectoryGoldLink>
+              <DirectoryOutlineLink href="#regulatory">{isRtl ? 'اقرأ السياق' : 'Read the context'}</DirectoryOutlineLink>
+            </>
+          }
+        />
 
-        <section className="section-padding py-10">
-          <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
-              {regulatory.heading}
-            </h2>
+        <DirectoryJumpNav
+          items={[
+            { href: '#regulatory', label: isRtl ? 'التنظيم' : 'Regulator' },
+            { href: '#structure', label: isRtl ? 'الهيكل' : 'Structure' },
+            { href: '#services', label: isRtl ? 'الخدمات' : 'Services' },
+            { href: '#related', label: isRtl ? 'روابط' : 'Related' },
+            { href: '#faq', label: isRtl ? 'أسئلة' : 'FAQ' },
+          ]}
+        />
+
+        <DirectorySection id="regulatory" eyebrow={isRtl ? 'السياق' : 'Context'} title={regulatory.heading}>
+          <div className="space-y-4 max-w-3xl">
             {regulatory.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              <p key={paragraph.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                {paragraph}
+              </p>
             ))}
           </div>
-        </section>
+        </DirectorySection>
 
-        <section className="section-padding py-10 bg-muted/20">
+        <section className="section-padding py-10 bg-muted/20" id="structure">
           <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
               {marketStructure.heading}
@@ -251,17 +279,14 @@ export default function MarketResearchCountryLanding({
           </div>
         </section>
 
-        <section className="section-padding py-10">
+        <section className="section-padding py-10" id="services">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
               {services.heading}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {services.items.map((item) => (
-                <article key={item.title} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                </article>
+                <DirectoryDriverCard key={item.title} title={item.title} desc={item.description} />
               ))}
             </div>
           </div>
@@ -301,10 +326,7 @@ export default function MarketResearchCountryLanding({
             </h2>
             <div className="grid md:grid-cols-3 gap-4">
               {process.steps.map((step) => (
-                <article key={step.title} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{step.body}</p>
-                </article>
+                <DirectoryDriverCard key={step.title} title={step.title} desc={step.body} />
               ))}
             </div>
           </div>
@@ -351,38 +373,25 @@ export default function MarketResearchCountryLanding({
           </div>
         </section>
 
-        <section className="section-padding py-8 bg-muted/20">
+        <section className="section-padding py-8 bg-muted/20" id="related">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-xl font-semibold text-foreground mb-3">
               {isRtl ? 'صفحات ذات صلة' : 'Related country and intent pages'}
             </h2>
             <div className="grid md:grid-cols-2 gap-3">
               {relatedLinks.map((link) => (
-                <Link
-                  key={`${link.to}-${link.label}`}
-                  to={link.to}
-                  className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
-                >
-                  {link.label}
-                </Link>
+                <DirectoryLinkTile key={`${link.to}-${link.label}`} to={link.to} title={link.label} />
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section-padding py-8">
+        <section className="section-padding py-8" id="faq">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl font-semibold text-foreground mb-3">
               {isRtl ? 'الأسئلة الشائعة' : 'FAQs'}
             </h2>
-            <div className="space-y-3">
-              {faqItems.map((item) => (
-                <details key={item.question} className="rounded-xl border border-border bg-card p-4">
-                  <summary className="cursor-pointer font-semibold text-foreground">{item.question}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
-                </details>
-              ))}
-            </div>
+            <DirectoryFaqList items={faqItems.map((item) => ({ q: item.question, a: item.answer }))} />
           </div>
         </section>
 

@@ -2,12 +2,21 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SegmentMarketContent } from '@/data/segmentMarkets/types';
+import {
+  DirectoryDriverCard,
+  DirectoryFaqList,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectoryOutlineLink,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
 
 /**
  * Shared template for geography × segment market landing pages
@@ -88,8 +97,18 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
       })
     : null;
 
+  const jumpItems = [
+    { href: '#answer', label: 'Answer' },
+    ...(content.rankedList ? [{ href: '#ranked-list', label: 'Ranking' }] : []),
+    { href: '#research', label: 'Research' },
+    { href: '#drivers', label: 'Drivers' },
+    { href: '#structure', label: 'Structure' },
+    { href: '#related', label: 'Related' },
+    { href: '#faq', label: 'FAQ' },
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <SEOHead
         title={content.title}
         description={content.description}
@@ -98,286 +117,225 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
       />
       <Navbar />
       <main>
-        <BreadcrumbNav items={breadcrumbItems} />
+        <DirectoryHero
+          breadcrumbs={breadcrumbItems}
+          kicker={content.badge}
+          h1={content.h1}
+          lead={content.intro[0] ?? content.description}
+          rest={
+            content.intro.length > 1 ? (
+              <>
+                {content.intro.slice(1).map((para) => (
+                  <p key={para.slice(0, 48)} className="mt-3">
+                    {para}
+                  </p>
+                ))}
+              </>
+            ) : undefined
+          }
+          metaLine={lastUpdatedLabel ? `Updated ${lastUpdatedLabel}` : undefined}
+          stats={[
+            { value: content.geoLabel, label: 'Market' },
+            { value: content.segmentLabel, label: 'Segment' },
+            { value: String(content.researchTopics.length), label: 'research topics' },
+            { value: '48h', label: 'to a scoped proposal' },
+          ]}
+          actions={
+            <>
+              <DirectoryGoldLink to="/contact">Request a proposal</DirectoryGoldLink>
+              <DirectoryOutlineLink href="#research">See what we research</DirectoryOutlineLink>
+            </>
+          }
+        />
 
-        <section className="section-padding py-14 bg-gradient-to-b from-muted/30 to-background">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              {content.badge}
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
-              {content.h1}
-            </h1>
-            {lastUpdatedLabel && (
-              <p className="text-sm text-muted-foreground mb-4">
-                Updated{' '}
-                <time dateTime={content.lastUpdated}>{lastUpdatedLabel}</time>
-              </p>
-            )}
-            <div className="space-y-4">
-              {content.intro.map((para) => (
-                <p key={para.slice(0, 48)} className="text-lg text-muted-foreground leading-relaxed">
-                  {para}
-                </p>
-              ))}
-            </div>
-          </div>
-        </section>
+        <DirectoryJumpNav items={jumpItems} />
 
-        <section className="section-padding py-8">
-          <div className="container-wide max-w-5xl mx-auto">
-            <GeoLLMAnswerBlock
-              question={content.quickAnswer.question}
-              answer={content.quickAnswer.answer}
-              points={content.quickAnswer.points}
-              summary={content.quickAnswer.summary}
-              pageUrl={content.canonical}
-            />
-          </div>
-        </section>
+        <DirectorySection id="answer" eyebrow="Quick answer">
+          <GeoLLMAnswerBlock
+            question={content.quickAnswer.question}
+            answer={content.quickAnswer.answer}
+            points={content.quickAnswer.points}
+            summary={content.quickAnswer.summary}
+            pageUrl={content.canonical}
+          />
+        </DirectorySection>
 
-        {content.rankedList && (
-          <section className="section-padding py-10" id="ranked-list">
-            <div className="container-wide max-w-5xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-                {content.rankedList.heading}
-              </h2>
-              {content.rankedList.intro && (
-                <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">{content.rankedList.intro}</p>
-              )}
-              <div className="overflow-x-auto rounded-xl border border-border">
-                <table className="w-full text-sm">
-                  <thead className="bg-muted/40">
-                    <tr className="text-left">
-                      <th scope="col" className="px-4 py-3 font-semibold text-foreground w-12">
-                        #
+        {content.rankedList ? (
+          <DirectorySection
+            id="ranked-list"
+            surface="cream"
+            eyebrow="Named accounts"
+            title={content.rankedList.heading}
+            body={content.rankedList.intro}
+          >
+            <div className="overflow-x-auto rounded-2xl border border-[#EDE9E3] shadow-[0_16px_50px_rgba(6,16,31,0.05)]">
+              <table className="directory-table">
+                <thead>
+                  <tr>
+                    <th scope="col" className="w-12">
+                      #
+                    </th>
+                    <th scope="col">Pharmacy</th>
+                    {content.rankedList.columns.map((col) => (
+                      <th key={col} scope="col">
+                        {col}
                       </th>
-                      <th scope="col" className="px-4 py-3 font-semibold text-foreground">
-                        Pharmacy
-                      </th>
-                      {content.rankedList.columns.map((col) => (
-                        <th key={col} scope="col" className="px-4 py-3 font-semibold text-foreground">
-                          {col}
-                        </th>
-                      ))}
-                      <th scope="col" className="px-4 py-3 font-semibold text-foreground">
-                        Source
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {content.rankedList.items.map((item) => (
-                      <tr key={item.rank} className="border-t border-border align-top">
-                        <td className="px-4 py-3 font-semibold text-foreground">{item.rank}</td>
-                        <td className="px-4 py-3 font-semibold text-foreground">
-                          {item.url ? (
-                            <a
-                              href={item.url}
-                              rel="nofollow noopener"
-                              target="_blank"
-                              className="text-primary hover:underline"
-                            >
-                              {item.name}
-                            </a>
-                          ) : (
-                            item.name
-                          )}
-                        </td>
-                        {item.cells.map((cell, idx) => (
-                          <td key={idx} className="px-4 py-3 text-muted-foreground leading-relaxed">
-                            {cell}
-                          </td>
-                        ))}
-                        <td className="px-4 py-3 text-muted-foreground leading-relaxed">
-                          {item.source ? (
-                            <a
-                              href={item.source.href}
-                              rel="nofollow noopener"
-                              target="_blank"
-                              className="text-primary hover:underline"
-                            >
-                              {item.source.label}
-                            </a>
-                          ) : (
-                            '—'
-                          )}
-                        </td>
-                      </tr>
                     ))}
-                  </tbody>
-                </table>
-              </div>
-              {content.rankedList.footnote && (
-                <p className="text-xs text-muted-foreground leading-relaxed mt-4 max-w-3xl">
-                  {content.rankedList.footnote}
-                </p>
-              )}
+                    <th scope="col">Source</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {content.rankedList.items.map((item) => (
+                    <tr key={item.rank}>
+                      <td className="directory-rank">{String(item.rank).padStart(2, '0')}</td>
+                      <td className="font-semibold text-foreground">
+                        {item.url ? (
+                          <a href={item.url} rel="nofollow noopener" target="_blank" className="text-primary hover:underline">
+                            {item.name}
+                          </a>
+                        ) : (
+                          item.name
+                        )}
+                      </td>
+                      {item.cells.map((cell, idx) => (
+                        <td key={idx} className="text-muted-foreground leading-relaxed">
+                          {cell}
+                        </td>
+                      ))}
+                      <td className="text-muted-foreground leading-relaxed">
+                        {item.source ? (
+                          <a
+                            href={item.source.href}
+                            rel="nofollow noopener"
+                            target="_blank"
+                            className="text-primary hover:underline"
+                          >
+                            {item.source.label}
+                          </a>
+                        ) : (
+                          '—'
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          </section>
-        )}
+            {content.rankedList.footnote ? (
+              <p className="text-xs text-muted-foreground leading-relaxed mt-4 max-w-3xl">{content.rankedList.footnote}</p>
+            ) : null}
+          </DirectorySection>
+        ) : null}
 
-        <section className="section-padding py-10">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              What we research in the {content.geoLabel} {content.segmentLabel.toLowerCase()} market
-            </h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {content.researchTopics.map((item) => (
-                <article key={item.name} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-base font-semibold text-foreground mb-2">{item.name}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
-                </article>
+        <DirectorySection
+          id="research"
+          eyebrow="Coverage"
+          title={`What we research in the ${content.geoLabel} ${content.segmentLabel.toLowerCase()} market`}
+        >
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {content.researchTopics.map((item) => (
+              <DirectoryDriverCard key={item.name} title={item.name} desc={item.detail} />
+            ))}
+          </div>
+        </DirectorySection>
+
+        {content.segmentBreakdown ? (
+          <DirectorySection id="breakdown" surface="cream" eyebrow="Breakdown" title={content.segmentBreakdown.heading}>
+            <dl className="grid sm:grid-cols-2 gap-5">
+              {content.segmentBreakdown.items.map((item) => (
+                <DirectoryDriverCard key={item.label} title={item.label} desc={item.detail} />
+              ))}
+            </dl>
+          </DirectorySection>
+        ) : null}
+
+        <DirectorySection id="drivers" eyebrow="What is moving" title={content.demandDrivers.heading}>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {content.demandDrivers.drivers.map((driver) => (
+              <DirectoryDriverCard key={driver.title} title={driver.title} desc={driver.detail} />
+            ))}
+          </div>
+        </DirectorySection>
+
+        <DirectorySection id="structure" surface="cream" eyebrow="Market structure" title={content.marketStructure.heading}>
+          <div className="space-y-4 max-w-3xl">
+            {content.marketStructure.paragraphs.map((para) => (
+              <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                {para}
+              </p>
+            ))}
+          </div>
+        </DirectorySection>
+
+        {content.geoSignals ? (
+          <DirectorySection id="signals" eyebrow="Signals" title={content.geoSignals.heading}>
+            <div className="grid md:grid-cols-2 gap-5">
+              {content.geoSignals.items.map((item) => (
+                <DirectoryDriverCard key={item.name} title={item.name} desc={item.signal} />
               ))}
             </div>
+          </DirectorySection>
+        ) : null}
+
+        <DirectorySection id="audiences" surface="cream" eyebrow="Fieldwork" title="Who we interview">
+          <div className="grid md:grid-cols-2 gap-5">
+            {content.audiences.map((audience) => (
+              <DirectoryDriverCard key={audience.audience} title={audience.audience} desc={audience.description} />
+            ))}
           </div>
-        </section>
+        </DirectorySection>
 
-        {content.segmentBreakdown && (
-          <section className="section-padding py-10 bg-muted/20">
-            <div className="container-wide max-w-5xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-                {content.segmentBreakdown.heading}
-              </h2>
-              <dl className="grid sm:grid-cols-2 gap-4">
-                {content.segmentBreakdown.items.map((item) => (
-                  <div key={item.label} className="rounded-xl border border-border bg-card p-5">
-                    <dt className="text-base font-semibold text-foreground mb-2">{item.label}</dt>
-                    <dd className="text-sm text-muted-foreground leading-relaxed">{item.detail}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </section>
-        )}
-
-        <section className="section-padding py-10">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              {content.demandDrivers.heading}
-            </h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {content.demandDrivers.drivers.map((driver) => (
-                <article key={driver.title} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-base font-semibold text-foreground mb-2">{driver.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{driver.detail}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding py-10 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-              {content.marketStructure.heading}
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              {content.marketStructure.paragraphs.map((para) => (
-                <p key={para.slice(0, 48)}>{para}</p>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {content.geoSignals && (
-          <section className="section-padding py-10">
-            <div className="container-wide max-w-5xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-                {content.geoSignals.heading}
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {content.geoSignals.items.map((item) => (
-                  <article key={item.name} className="rounded-xl border border-border bg-card p-5">
-                    <h3 className="text-lg font-semibold text-foreground mb-2">{item.name}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.signal}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        <section className="section-padding py-10 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Who we interview
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {content.audiences.map((audience) => (
-                <article key={audience.audience} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{audience.audience}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{audience.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {content.methodology && content.methodology.length > 0 && (
-          <section className="section-padding py-10">
-            <div className="container-wide max-w-5xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-                How we size and validate the {content.segmentLabel.toLowerCase()} opportunity
-              </h2>
-              <ul className="space-y-3">
-                {content.methodology.map((step) => (
-                  <li key={step.slice(0, 48)} className="flex gap-3 text-muted-foreground leading-relaxed">
-                    <span className="text-primary flex-shrink-0">→</span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        )}
-
-        <section className="section-padding py-10 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-              Why teams choose BioNixus for {content.geoLabel} {content.segmentLabel.toLowerCase()} research
-            </h2>
-            <WhyBioNixusIntro />
-            <ul className="grid sm:grid-cols-2 gap-3 mt-6">
-              {content.whyBionixus.map((point) => (
-                <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
-                  <span className="text-primary flex-shrink-0">✓</span>
-                  <span>{point}</span>
+        {content.methodology && content.methodology.length > 0 ? (
+          <DirectorySection
+            id="methodology"
+            eyebrow="Method"
+            title={`How we size and validate the ${content.segmentLabel.toLowerCase()} opportunity`}
+          >
+            <ul className="space-y-3">
+              {content.methodology.map((step) => (
+                <li
+                  key={step.slice(0, 48)}
+                  className="flex gap-3 text-sm text-foreground bg-[#FFFEFB] rounded-2xl border border-[#EDE9E3] p-5"
+                >
+                  <span className="text-[#C9A84C] flex-shrink-0">→</span>
+                  <span>{step}</span>
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
+          </DirectorySection>
+        ) : null}
 
-        <section className="section-padding py-8">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-xl font-semibold text-foreground mb-3">Related research resources</h2>
-            <div className="grid md:grid-cols-2 gap-3">
-              {content.relatedLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <DirectorySection
+          id="why"
+          surface="cream"
+          eyebrow="Why BioNixus"
+          title={`Why teams choose BioNixus for ${content.geoLabel} ${content.segmentLabel.toLowerCase()} research`}
+        >
+          <WhyBioNixusIntro />
+          <ul className="grid sm:grid-cols-2 gap-3 mt-6">
+            {content.whyBionixus.map((point) => (
+              <li
+                key={point.slice(0, 48)}
+                className="flex gap-2 text-sm text-foreground bg-[#FFFEFB] rounded-2xl border border-[#EDE9E3] p-5"
+              >
+                <span className="text-[#C9A84C] flex-shrink-0">✓</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </DirectorySection>
 
-        <section className="section-padding py-8 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Frequently asked questions</h2>
-            <div className="space-y-3">
-              {content.faqs.map((item) => (
-                <details key={item.question} className="rounded-xl border border-border bg-card p-4">
-                  <summary className="cursor-pointer font-semibold text-foreground">{item.question}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
-                </details>
-              ))}
-            </div>
+        <DirectorySection id="related" eyebrow="Keep reading" title="Related research resources">
+          <div className="grid md:grid-cols-2 gap-3">
+            {content.relatedLinks.map((link) => (
+              <DirectoryLinkTile key={link.to} to={link.to} title={link.label} />
+            ))}
           </div>
-        </section>
+        </DirectorySection>
+
+        <DirectorySection id="faq" surface="cream" eyebrow="Questions" title="Frequently asked questions">
+          <DirectoryFaqList items={content.faqs.map((item) => ({ q: item.question, a: item.answer }))} />
+        </DirectorySection>
 
         <CTASection variant="research-proposal" />
       </main>
