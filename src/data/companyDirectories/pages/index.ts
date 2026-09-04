@@ -31,7 +31,25 @@ import { medicalDeviceCompaniesMorocco } from './medical-device-companies/morocc
 import { medicalDeviceCompaniesTurkey } from './medical-device-companies/turkey';
 import { medicalDeviceCompaniesIran } from './medical-device-companies/iran';
 
+// Wave 1 — MENA healthcare gaps: pharmacy chains
+import { pharmacyChainsUae } from './pharmacy-chains/uae';
+import { pharmacyChainsEgypt } from './pharmacy-chains/egypt';
+import { pharmacyChainsKuwait } from './pharmacy-chains/kuwait';
+import { pharmacyChainsQatar } from './pharmacy-chains/qatar';
+import { pharmacyChainsOman } from './pharmacy-chains/oman';
+import { pharmacyChainsBahrain } from './pharmacy-chains/bahrain';
+import { pharmacyChainsJordan } from './pharmacy-chains/jordan';
+import { pharmacyChainsTurkey } from './pharmacy-chains/turkey';
+
 export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
+  pharmacyChainsUae,
+  pharmacyChainsEgypt,
+  pharmacyChainsKuwait,
+  pharmacyChainsQatar,
+  pharmacyChainsOman,
+  pharmacyChainsBahrain,
+  pharmacyChainsJordan,
+  pharmacyChainsTurkey,
   medicalDeviceCompaniesEgypt,
   medicalDeviceCompaniesKuwait,
   medicalDeviceCompaniesQatar,
