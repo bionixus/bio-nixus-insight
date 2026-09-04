@@ -42,7 +42,7 @@ import MarketResearch from '@/pages/MarketResearch';
 import WhatIsMarketStudy from '@/pages/WhatIsMarketStudy';
 import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
-import { buildIndustryDirectoryRoutes } from '@/data/industryDirectoryRoutes';
+import { buildCompanyDirectoryRoutes } from '@/data/companyDirectoryRoutes';
 import { buildCompetitorAlternativeRoutes } from '@/data/competitorAlternativeRoutes';
 import { buildArPharmaDirectoryRoutes } from '@/data/arPharmaDirectoryRoutes';
 import CountryResearchBriefTemplate from '@/pages/CountryResearchBriefTemplate';
@@ -789,7 +789,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/b2b-industries', element: <IndustrySegmentPage slug="b2b" /> },
   { path: '/b2c-industries', element: <IndustrySegmentPage slug="b2c" /> },
   ...buildIndustryMatrixRoutes(),
-  ...buildIndustryDirectoryRoutes(),
+  ...buildCompanyDirectoryRoutes(),
   ...buildArPharmaDirectoryRoutes(),
   { path: '/ar/insights/top-market-research-companies-uae-2026', element: <Navigate to="/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026" replace /> },
   { path: '/ar/insights/top-market-research-companies-saudi-arabia-2026', element: <Navigate to="/ar/insights/top-sharaket-abhath-alsuq-alsaudia-2026" replace /> },

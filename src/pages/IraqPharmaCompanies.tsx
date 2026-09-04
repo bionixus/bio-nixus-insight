@@ -12,6 +12,7 @@ import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
+import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -200,6 +201,10 @@ const IraqPharmaCompanies = () => {
             { title: 'Stakeholder & KOL Mapping', desc: 'Physician and payer mapping across MOH, KRG, and private sector; NGO and international partnership landscape.' },
             { title: 'Market Sizing & Demand Assessment', desc: 'Market sizing, therapeutic area demand, and growth drivers for the $2.8B Iraqi pharma market and KRG segment.' },
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
+        </div></section>
+
+        <section className="section-padding py-10" id="country-directories"><div className="container-wide w-full">
+          <CountryDirectoryLinks country="iraq" excludePath="/pharmaceutical-companies-iraq" compact />
         </div></section>
 
         <PharmaCompaniesFaqSection items={faqItems} />

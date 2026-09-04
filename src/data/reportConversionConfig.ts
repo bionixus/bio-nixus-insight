@@ -1,3 +1,4 @@
+import type { DirectoryEntitySlug } from '@/data/companyDirectories/types';
 import type { ReportEntry } from '@/data/healthcareReportTypes';
 import { MARKET_CONTENT } from '@/data/healthcareReportContent';
 
@@ -621,5 +622,133 @@ export function getHealthcareMarketResearchServiceConfig(
     asideDeskLabel: `${label} service desk`,
     midPageHeadline: `Integrate ${label.toLowerCase()} with country and therapy workstreams`,
     midPageBody: `Book a scoping call to connect this service module with your wider launch or access program.`,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Company directory matrix (src/data/companyDirectories) — per-entity CTA copy
+// ---------------------------------------------------------------------------
+
+export type DirectoryConversionCopy = {
+  /** Heading above the after-table proposal form. `{place}` is replaced with the country display name. */
+  bridgeHeadline: string;
+  /** Paragraph under the bridge heading. */
+  bridgeBody: string;
+  /** Footer band headline. */
+  footerHeadline: string;
+  /** Footer band body. */
+  footerBody: string;
+};
+
+const DIRECTORY_DEFAULT_COPY: DirectoryConversionCopy = {
+  bridgeHeadline: 'These are the {label} accounts we study in {place}',
+  bridgeBody:
+    'Need account-level or SKU-level data for a brand in {place}? BioNixus runs primary fieldwork — brand vs competitors, including the channels a dashboard averages away. Proposal ready within 48 hours of a brief.',
+  footerHeadline: 'Need account-level {label} data in {place}?',
+  footerBody:
+    'Brand versus competitor, including the channels and accounts a dashboard averages away. Proposal ready within 48 hours of a brief.',
+};
+
+const DIRECTORY_ENTITY_COPY: Partial<Record<DirectoryEntitySlug, Partial<DirectoryConversionCopy>>> = {
+  'pharmaceutical-companies': {
+    footerHeadline: 'Need brand and competitor data in {place}?',
+    footerBody:
+      'Physician, pharmacist and payer fieldwork on the accounts above — prescription share, formulary position and tender exposure. Proposal within 48 hours.',
+  },
+  'pharmaceutical-distributors': {
+    bridgeHeadline: 'These are the distributors and wholesalers we map in {place}',
+    bridgeBody:
+      'Choosing or auditing a distribution partner in {place}? BioNixus runs distributor due-diligence interviews, channel-share estimates and pharmacy-level availability checks. Proposal ready within 48 hours of a brief.',
+    footerHeadline: 'Need distributor and channel data in {place}?',
+    footerBody:
+      'Coverage, credit terms, cold-chain capability and share of pharmacy purchases by wholesaler — from the pharmacies and hospitals themselves, not a directory.',
+  },
+  'pharmacy-chains': {
+    bridgeHeadline: 'These are the pharmacy banners we audit in {place}',
+    bridgeBody:
+      'Launching an OTC, consumer-health or Rx brand through retail pharmacy in {place}? BioNixus runs shelf audits, pharmacist recommendation trackers and shopper studies across the chains above. Proposal within 48 hours.',
+    footerHeadline: 'Need pharmacy-level data in {place}?',
+    footerBody:
+      'Availability, recommendation share, promotional compliance and category share by banner — fielded in-store and by pharmacist interview.',
+  },
+  'hospital-groups': {
+    bridgeHeadline: 'These are the hospital operators we work with in {place}',
+    bridgeBody:
+      'Selling into private hospitals in {place}? BioNixus runs procurement-committee interviews, formulary-listing studies and KOL mapping across the groups above. Proposal ready within 48 hours of a brief.',
+    footerHeadline: 'Need hospital-level data in {place}?',
+    footerBody:
+      'Procurement pathways, formulary status, device usage and clinician preference by operator — fielded with the people who make the decisions.',
+  },
+  'medical-device-companies': {
+    footerHeadline: 'Need device-level competitive data in {place}?',
+    footerBody:
+      'Installed base, procedure volumes, surgeon preference and tender outcomes by hospital — fielded across public and private operators.',
+  },
+  'biotech-companies': {
+    bridgeHeadline: 'These are the biotech and innovation accounts we track in {place}',
+    bridgeBody:
+      'Partnering, licensing or launching a biologic in {place}? BioNixus runs KOL, payer and regulator interviews plus hospital-level demand sizing. Proposal within 48 hours.',
+    footerHeadline: 'Need biotech and biologics market data in {place}?',
+    footerBody: 'Payer appetite, biosimilar uptake, KOL sentiment and tender exposure — primary research, not desk estimates.',
+  },
+  'cro-companies': {
+    bridgeHeadline: 'These are the clinical research partners we benchmark in {place}',
+    bridgeBody:
+      'Selecting sites or a CRO in {place}? BioNixus runs investigator and site-feasibility interviews, patient-pathway mapping and competitor-trial landscaping. Proposal within 48 hours.',
+    footerHeadline: 'Need site and investigator intelligence in {place}?',
+    footerBody: 'Feasibility, recruitment realism and investigator preference — from the sites, not the sponsor deck.',
+  },
+  'health-insurers': {
+    bridgeHeadline: 'These are the payers we interview in {place}',
+    bridgeBody:
+      'Building a market-access or reimbursement case in {place}? BioNixus runs payer, TPA and employer interviews plus willingness-to-cover studies. Proposal within 48 hours.',
+    footerHeadline: 'Need payer and reimbursement data in {place}?',
+    footerBody: 'Coverage rules, formulary influence and price sensitivity by insurer — fielded with medical directors and claims teams.',
+  },
+  banks: {
+    bridgeHeadline: 'These are the banks whose customers we survey in {place}',
+    bridgeBody:
+      'Launching a card, digital product or SME proposition in {place}? BioNixus runs customer-satisfaction, brand-health and mystery-shopping programs across the banks above. Proposal within 48 hours.',
+    footerHeadline: 'Need customer and brand data on banks in {place}?',
+    footerBody: 'NPS, switching intent, product penetration and branch experience by bank — fielded with account holders and SMEs.',
+  },
+  'automotive-distributors': {
+    bridgeHeadline: 'These are the dealer groups we field with in {place}',
+    bridgeBody:
+      'Tracking showroom traffic, aftersales satisfaction or brand consideration in {place}? BioNixus runs mystery shopping, buyer interviews and dealer audits across the groups above. Proposal within 48 hours.',
+    footerHeadline: 'Need dealer and buyer data in {place}?',
+    footerBody: 'Consideration, showroom experience, aftersales loyalty and dealer compliance — fielded at the point of sale.',
+  },
+  'real-estate-companies': {
+    bridgeHeadline: 'These are the developers whose buyers we survey in {place}',
+    bridgeBody:
+      'Pricing a launch or sizing buyer demand in {place}? BioNixus runs buyer and investor interviews, broker panels and community-satisfaction studies across the developers above. Proposal within 48 hours.',
+    footerHeadline: 'Need buyer and broker data in {place}?',
+    footerBody: 'Purchase intent, price sensitivity, community satisfaction and broker preference by developer — from the people who buy.',
+  },
+  'hotel-groups': {
+    bridgeHeadline: 'These are the hospitality operators we field with in {place}',
+    bridgeBody:
+      'Benchmarking guest experience or sizing a new property in {place}? BioNixus runs guest, corporate-buyer and travel-trade interviews across the groups above. Proposal within 48 hours.',
+    footerHeadline: 'Need guest and travel-trade data in {place}?',
+    footerBody: 'Guest satisfaction, corporate account preference and OTA dynamics by operator — fielded with guests and bookers.',
+  },
+};
+
+function fill(template: string, vars: { label: string; place: string }): string {
+  return template.replace(/\{label\}/g, vars.label).replace(/\{place\}/g, vars.place);
+}
+
+/** CTA copy for a directory page, with `{label}` / `{place}` resolved. */
+export function getDirectoryConversionCopy(
+  entity: DirectoryEntitySlug,
+  vars: { label: string; place: string },
+): DirectoryConversionCopy {
+  const merged = { ...DIRECTORY_DEFAULT_COPY, ...(DIRECTORY_ENTITY_COPY[entity] ?? {}) };
+  return {
+    bridgeHeadline: fill(merged.bridgeHeadline, vars),
+    bridgeBody: fill(merged.bridgeBody, vars),
+    footerHeadline: fill(merged.footerHeadline, vars),
+    footerBody: fill(merged.footerBody, vars),
   };
 }

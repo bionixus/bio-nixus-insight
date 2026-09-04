@@ -35,7 +35,7 @@ import {
 } from '@/data/developedMarketMedtechPages';
 import { SEGMENT_MARKET_SLUGS } from '@/data/segmentMarketIndex';
 import { allListicleConfigs } from '@/data/topCompanies';
-import { INDUSTRY_COMPANY_DIRECTORIES } from '@/data/industryCompanyDirectories';
+import { TEMPLATE_DIRECTORIES, COMPANY_DIRECTORY_HUBS } from '@/data/companyDirectories';
 import { COMPETITOR_ALTERNATIVES } from '@/data/competitorAlternatives';
 import { AR_PHARMA_DIRECTORIES } from '@/data/arPharmaDirectories';
 
@@ -54,7 +54,8 @@ export const generatedPaths: string[] = [
   ]),
   ...SEGMENT_MARKET_SLUGS.map((slug) => '/' + slug),
   ...allListicleConfigs.map((c) => c.slug),
-  ...INDUSTRY_COMPANY_DIRECTORIES.map((d) => d.path),
+  ...TEMPLATE_DIRECTORIES.map((d) => d.path),
+  ...COMPANY_DIRECTORY_HUBS.map((h) => h.path),
   ...COMPETITOR_ALTERNATIVES.map((c) => c.path),
   ...AR_PHARMA_DIRECTORIES.map((d) => d.path),
 ];

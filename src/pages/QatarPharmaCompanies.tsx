@@ -14,6 +14,7 @@ import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccH
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
+import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -222,6 +223,10 @@ const QatarPharmaCompanies = () => {
             <Link to="/pharmaceutical-companies-oman" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Oman <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
             <Link to="/pharmaceutical-companies-bahrain" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Bahrain <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
           </div>
+        </div></section>
+
+        <section className="section-padding py-10" id="country-directories"><div className="container-wide w-full">
+          <CountryDirectoryLinks country="qatar" excludePath="/pharmaceutical-companies-qatar" compact />
         </div></section>
 
         <PharmaCompaniesFaqSection items={faqItems} />

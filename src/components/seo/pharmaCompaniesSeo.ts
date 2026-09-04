@@ -16,6 +16,34 @@ export function buildPharmaCompaniesItemListLd(pageUrl: string, companyNames: st
   };
 }
 
+type DirectoryCompanyInput = { name: string; hq?: string; focus?: string };
+
+/**
+ * ItemList of Organization items for company-directory pages
+ * (src/data/companyDirectories). Lists every company on the page, not just 12.
+ */
+export function buildDirectoryItemListLd(pageUrl: string, listName: string, companies: DirectoryCompanyInput[]) {
+  const items = companies.filter((c) => c && c.name);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: listName,
+    url: pageUrl,
+    itemListOrder: 'https://schema.org/ItemListUnordered',
+    numberOfItems: items.length,
+    itemListElement: items.map((c, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Organization',
+        name: c.name,
+        ...(c.focus ? { description: c.focus } : {}),
+        ...(c.hq ? { location: { '@type': 'Place', name: c.hq } } : {}),
+      },
+    })),
+  };
+}
+
 type PharmaFaqInput = { q: string; a: string };
 
 /** FAQPage JSON-LD aligned with visible <details> content on pharma company guides. */

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import type { QUALIFICATION_FORM_NEEDS } from '@/data/qualificationFormOptions';
 
 type IndustryDirectoryBridgeProps = {
   countryName: string;
@@ -11,6 +12,11 @@ type IndustryDirectoryBridgeProps = {
   ctaId: string;
   sourceContext?: string;
   className?: string;
+  /** Qualification-form need to preselect; defaults to brand/competitor data. */
+  defaultNeed?: (typeof QUALIFICATION_FORM_NEEDS)[number];
+  /** Override the default heading / paragraph (directory matrix passes per-entity copy). */
+  headline?: string;
+  body?: string;
 };
 
 /**
@@ -26,23 +32,26 @@ export function IndustryDirectoryBridge({
   ctaId,
   sourceContext,
   className = 'mt-8',
+  defaultNeed = 'Brand and competitor data (account- or SKU-level)',
+  headline,
+  body,
 }: IndustryDirectoryBridgeProps) {
   const place = countryDisplay ?? countryName;
 
   return (
     <div className={className} id="request-proposal">
       <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-2">
-        These are the {industryLabel} accounts we study in {place}
+        {headline ?? `These are the ${industryLabel} accounts we study in ${place}`}
       </h2>
       <p className="text-sm text-muted-foreground leading-relaxed mb-5 max-w-3xl">
-        Need account-level or SKU-level data for a brand in {place}? BioNixus runs primary
-        fieldwork — brand vs competitors, including traditional trade. Proposal ready within 48 hours of a brief.
+        {body ??
+          `Need account-level or SKU-level data for a brand in ${place}? BioNixus runs primary fieldwork — brand vs competitors, including traditional trade. Proposal ready within 48 hours of a brief.`}
       </p>
       <ConversionCTA
         variant="talk-to-research"
         market={countryName}
         sourceContext={sourceContext}
-        defaultNeed="Brand and competitor data (account- or SKU-level)"
+        defaultNeed={defaultNeed}
         ctaId={ctaId}
         ctaLocation="after_first_table"
       />
