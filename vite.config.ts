@@ -9,12 +9,13 @@ import { componentTagger } from "lovable-tagger";
  * `.ssr.ts` twins so renderToString never ships Suspense fallbacks.
  */
 function ssrRouteSplitPlugin(isSsrBuild: boolean | undefined): Plugin {
-  const reportClient = path.resolve(__dirname, "src/routes/lazyReportPages.ts");
-  const reportSsr = path.resolve(__dirname, "src/routes/lazyReportPages.ssr.ts");
-  const marketingClient = path.resolve(__dirname, "src/routes/lazyMarketingPages.ts");
-  const marketingSsr = path.resolve(__dirname, "src/routes/lazyMarketingPages.ssr.ts");
+  const barrels = ["lazyReportPages", "lazyMarketingPages", "lazySeoPages"].map((name) => ({
+    name,
+    client: path.resolve(__dirname, `src/routes/${name}.ts`),
+    ssr: path.resolve(__dirname, `src/routes/${name}.ssr.ts`),
+  }));
 
-  const matchBarrel = (source: string, name: "lazyReportPages" | "lazyMarketingPages") => {
+  const matchBarrel = (source: string, name: string) => {
     const normalized = source.replace(/\\/g, "/");
     if (normalized.includes(`${name}.ssr`)) return false;
     return (
@@ -30,11 +31,9 @@ function ssrRouteSplitPlugin(isSsrBuild: boolean | undefined): Plugin {
     resolveId(source, _importer, options) {
       const useSsr = Boolean(options?.ssr) || Boolean(isSsrBuild);
       if (!useSsr) return null;
-      if (matchBarrel(source, "lazyReportPages")) return reportSsr;
-      if (matchBarrel(source, "lazyMarketingPages")) return marketingSsr;
-      // After @ alias resolves to absolute client path during SSR
-      if (source === reportClient) return reportSsr;
-      if (source === marketingClient) return marketingSsr;
+      for (const barrel of barrels) {
+        if (matchBarrel(source, barrel.name) || source === barrel.client) return barrel.ssr;
+      }
       return null;
     },
   };

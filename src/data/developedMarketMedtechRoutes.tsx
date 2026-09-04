@@ -1,6 +1,5 @@
 import type { RouteObject } from 'react-router-dom';
-import DevelopedMarketMedtechPage from '@/pages/templates/DevelopedMarketMedtechPage';
-import DevelopedMarketMedtechListiclePage from '@/pages/templates/DevelopedMarketMedtechListiclePage';
+import { DevelopedMarketMedtechListiclePage, DevelopedMarketMedtechPage } from '@/routes/lazySeoPages';
 import {
   DEVELOPED_MARKET_MEDTECH_SLUGS,
   getDevelopedMarketMedtechListiclePath,

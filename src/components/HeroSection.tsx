@@ -22,18 +22,7 @@ const HeroSection = () => {
       dir={isRTL ? 'rtl' : undefined}
       lang={language}
     >
-      {/* Premium background gradient */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `
-            radial-gradient(ellipse 70% 55% at 65% 45%, rgba(12,27,51,1) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 45% at 20% 80%, rgba(14,165,160,0.08) 0%, transparent 50%),
-            radial-gradient(ellipse 35% 30% at 85% 15%, rgba(201,168,76,0.06) 0%, transparent 40%),
-            linear-gradient(180deg, #06101F 0%, #081628 100%)
-          `,
-        }}
-      />
+      <div className="premium-hero-lcp-wash absolute inset-0" aria-hidden="true" />
 
       {/* Hex molecule grid */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.04]" aria-hidden="true">

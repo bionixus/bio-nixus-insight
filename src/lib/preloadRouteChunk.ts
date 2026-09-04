@@ -12,6 +12,7 @@
  */
 
 import { isSegmentMarketPath } from '@/data/segmentMarketIndex';
+import { getSeoPageLoader } from '@/routes/lazySeoPages';
 
 type Importer = () => Promise<unknown>;
 
@@ -115,7 +116,7 @@ function resolveImporter(pathname: string): Importer | undefined {
 }
 
 export async function preloadRouteChunk(pathname: string): Promise<void> {
-  const importer = resolveImporter(pathname);
+  const importer = resolveImporter(pathname) ?? getSeoPageLoader(pathname);
   if (!importer) return;
   try {
     await importer();

@@ -1,4 +1,5 @@
 import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
+import { RouteLoadingFallback } from '@/components/RouteLoadingFallback';
 import { useRoutes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -110,7 +111,9 @@ export default function App({ initialData = {} }: AppProps) {
   const element = useRoutes(routes);
   return (
     <InitialDataProvider value={initialData}>
-      <AppProviders>{element}</AppProviders>
+      <AppProviders>
+        <Suspense fallback={<RouteLoadingFallback />}>{element}</Suspense>
+      </AppProviders>
     </InitialDataProvider>
   );
 }
