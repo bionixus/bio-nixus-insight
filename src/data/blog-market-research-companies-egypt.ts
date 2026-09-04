@@ -19,10 +19,10 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
     '/images/blog/market-research-companies-egypt-cover.jpg',
   ogImage:
     '/images/blog/market-research-companies-egypt-cover.jpg',
-  ogTitle: 'Top Market Research Companies in Egypt (2026 Compared) | BioNixus',
+  ogTitle: 'Top Market Research Companies in Egypt 2026 | BioNixus',
   ogDescription:
     'Compare leading market research companies operating in Egypt — global networks (Kantar, Ipsos, NielsenIQ, IQVIA, YouGov) and BioNixus healthcare specialists.',
-  seoMetaTitle: 'Top Market Research Companies in Egypt (2026 Compared) | BioNixus',
+  seoMetaTitle: 'Top Market Research Companies in Egypt 2026 | BioNixus',
   seoMetaDescription:
     'Compare leading market research companies operating in Egypt — global networks (Kantar, Ipsos, NielsenIQ, IQVIA, YouGov) and BioNixus healthcare specialists.',
   seoCanonicalUrl: 'https://www.bionixus.com/blog/market-research-companies-egypt',

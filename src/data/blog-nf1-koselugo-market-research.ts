@@ -8,13 +8,13 @@ export const NF1_KOSELUGO_BLOG_SLUG = 'neurofibromatosis';
 
 export const NF1_KOSELUGO_COVER_IMAGE = '/images/blog/nf1-koselugo-selumetinib-cover.jpg';
 
-export const NF1_KOSELUGO_META_TITLE = 'NF1 Market Access Briefing | Neurofibromatosis & MEK Inhibition | BioNixus';
+export const NF1_KOSELUGO_META_TITLE = 'NF1 Market Access Briefing: MEK Inhibition | BioNixus';
 
 export const NF1_KOSELUGO_DISPLAY_TITLE =
   'NF1 Market Access Briefing: Neurofibromatosis, MEK Inhibition & HCP Evidence Signals';
 
 export const NF1_KOSELUGO_META_DESCRIPTION =
-  'Neurofibromatosis type 1 (NF1) landscape, oral MEK inhibition for symptomatic plexiform neurofibromas—FDA paediatric approvals from Apr 2020 plus the EU\u2019s first adult+paediatric therapy EZMEKLY (mirdametinib), conditionally approved 17 Jul 2025—and how pharma teams localize evidence for payers & specialists. Links to BioNixus NF1 pharma research pillar.';
+  'NF1 and MEK inhibition for plexiform neurofibromas — FDA paediatric approvals, EU EZMEKLY context, and how pharma teams localize payer evidence.';
 
 export const NF1_KOSELUGO_OG_DESCRIPTION = NF1_KOSELUGO_META_DESCRIPTION;
 
@@ -253,13 +253,13 @@ export const NF1_KOSELUGO_DRUG_COVER_IMAGE =
   '/images/blog/nf1-koselugo-selumetinib-pharma-market-research-cover.jpg';
 
 export const NF1_KOSELUGO_DRUG_META_TITLE =
-  'Koselugo (Selumetinib) Market Research | NF1 MEK Inhibitor Access | BioNixus';
+  'Koselugo (Selumetinib) NF1 Market Research | BioNixus';
 
 export const NF1_KOSELUGO_DRUG_DISPLAY_TITLE =
   'Koselugo (Selumetinib) Market Research: NF1 Plexiform Neurofibroma Access & Launch Signals';
 
 export const NF1_KOSELUGO_DRUG_META_DESCRIPTION =
-  'Koselugo (selumetinib) market research for NF1-associated plexiform neurofibromas—FDA approval chronology (Apr 2020 paediatrics; adult label Nov 2025), EU positioning versus EZMEKLY (mirdametinib), launch economics, and specialist adoption intelligence. Pairs with NF1 disease briefing and BioNixus research services.';
+  'Koselugo (selumetinib) market research for NF1 plexiform neurofibromas — FDA chronology, EU vs EZMEKLY, launch economics, and specialist adoption.';
 
 export const NF1_KOSELUGO_DRUG_OG_DESCRIPTION = NF1_KOSELUGO_DRUG_META_DESCRIPTION;
 

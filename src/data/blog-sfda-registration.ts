@@ -11,7 +11,7 @@ export const sfdaDrugRegistrationGuide: BlogPostType = {
     country: 'Saudi Arabia',
     tags: ['SFDA', 'Drug Registration', 'Saudi Arabia', 'Market Access', 'Regulatory Affairs'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'SFDA Drug Registration 2026: Process, Timeline & Fees Explained',
+    seoMetaTitle: 'SFDA Drug Registration 2026: Process, Timeline, Fees',
     seoMetaDescription: 'Complete SFDA drug registration guide for Saudi Arabia — requirements, dossier format, fees and realistic timelines. Updated for 2026.',
     tableOfContents: [
         { heading: 'Understanding the SFDA', anchor: 'understanding-the-sfda' },
