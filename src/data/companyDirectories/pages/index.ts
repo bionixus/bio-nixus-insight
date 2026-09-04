@@ -41,7 +41,25 @@ import { pharmacyChainsBahrain } from './pharmacy-chains/bahrain';
 import { pharmacyChainsJordan } from './pharmacy-chains/jordan';
 import { pharmacyChainsTurkey } from './pharmacy-chains/turkey';
 
+// Wave 1 — MENA healthcare gaps: private hospital groups and operators
+import { hospitalGroupsSaudiArabia } from './hospital-groups/saudi-arabia';
+import { hospitalGroupsUae } from './hospital-groups/uae';
+import { hospitalGroupsEgypt } from './hospital-groups/egypt';
+import { hospitalGroupsKuwait } from './hospital-groups/kuwait';
+import { hospitalGroupsQatar } from './hospital-groups/qatar';
+import { hospitalGroupsOman } from './hospital-groups/oman';
+import { hospitalGroupsBahrain } from './hospital-groups/bahrain';
+import { hospitalGroupsTurkey } from './hospital-groups/turkey';
+
 export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
+  hospitalGroupsSaudiArabia,
+  hospitalGroupsUae,
+  hospitalGroupsEgypt,
+  hospitalGroupsKuwait,
+  hospitalGroupsQatar,
+  hospitalGroupsOman,
+  hospitalGroupsBahrain,
+  hospitalGroupsTurkey,
   pharmacyChainsUae,
   pharmacyChainsEgypt,
   pharmacyChainsKuwait,
