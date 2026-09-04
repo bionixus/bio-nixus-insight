@@ -83,6 +83,19 @@ function DeferredPageChrome() {
   );
 }
 
+/** Skeleton only after hydration — a first-load fallback discards SSR HTML. */
+function ClientNavSuspense({ children }: { children: ReactNode }) {
+  const [allowFallback, setAllowFallback] = useState(false);
+
+  useEffect(() => {
+    setAllowFallback(true);
+  }, []);
+
+  return (
+    <Suspense fallback={allowFallback ? <RouteLoadingFallback /> : null}>{children}</Suspense>
+  );
+}
+
 function AppProviders({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
@@ -112,7 +125,7 @@ export default function App({ initialData = {} }: AppProps) {
   return (
     <InitialDataProvider value={initialData}>
       <AppProviders>
-        <Suspense fallback={<RouteLoadingFallback />}>{element}</Suspense>
+        <ClientNavSuspense>{element}</ClientNavSuspense>
       </AppProviders>
     </InitialDataProvider>
   );

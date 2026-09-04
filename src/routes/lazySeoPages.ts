@@ -972,8 +972,27 @@ const seoPathToExport: Record<string, string> = {
   "/zh/strategic-portfolios": "ZhStrategicPortfolio",
 };
 
-export function getSeoPageLoader(pathname: string): (() => Promise<unknown>) | undefined {
+export function getSeoExportName(pathname: string): string | undefined {
   const normalized = pathname.replace(/\/$/, '') || '/';
-  const exportName = seoPathToExport[normalized] ?? seoPathToExport[pathname];
+  if (seoPathToExport[normalized]) return seoPathToExport[normalized];
+  if (seoPathToExport[pathname]) return seoPathToExport[pathname];
+
+  let bestName: string | undefined;
+  let bestLen = -1;
+  for (const [pattern, name] of Object.entries(seoPathToExport)) {
+    if (!pattern.includes(':')) continue;
+    const prefix = pattern.split('/:')[0];
+    if (normalized === prefix || normalized.startsWith(`${prefix}/`)) {
+      if (prefix.length > bestLen) {
+        bestName = name;
+        bestLen = prefix.length;
+      }
+    }
+  }
+  return bestName;
+}
+
+export function getSeoPageLoader(pathname: string): (() => Promise<unknown>) | undefined {
+  const exportName = getSeoExportName(pathname);
   return exportName ? seoPageLoaders[exportName] : undefined;
 }

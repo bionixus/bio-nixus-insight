@@ -301,6 +301,10 @@ export { default as ZhTopMarketResearchCompaniesEgypt2026 } from '@/pages/ZhTopM
 export { default as TopConsumerInsightsCompaniesKsa2026, TopConsumerInsightsCompaniesSaudiArabiaRedirect } from '@/pages/TopConsumerInsightsCompaniesKsa2026';
 
 /** SSR pages are eager via this barrel; client preload maps live in lazySeoPages.ts. */
+export function getSeoExportName(_pathname: string): undefined {
+  return undefined;
+}
+
 export function getSeoPageLoader(_pathname: string): undefined {
   return undefined;
 }

@@ -196,7 +196,7 @@ const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
 const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
 
-function suspensePage(node: ReactNode, fallback: ReactNode = <RouteLoadingFallback />) {
+function suspensePage(node: ReactNode, fallback: ReactNode = null) {
   return <Suspense fallback={fallback}>{node}</Suspense>;
 }
 
