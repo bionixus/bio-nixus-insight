@@ -46,7 +46,7 @@ const Methodology = () => {
 
   const usesEnglishFaq = language === 'en' || language === 'pt' || language === 'ru';
   const jsonLd = useMemo(() => {
-    const nodes = [buildBreadcrumbSchema(breadcrumbItems)];
+    const nodes: object[] = [buildBreadcrumbSchema(breadcrumbItems)];
     if (usesEnglishFaq) {
       nodes.push(buildFAQSchema(METHODOLOGY_EN_FAQ, { pageUrl: 'https://www.bionixus.com/methodology' }));
     }

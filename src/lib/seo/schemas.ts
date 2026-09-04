@@ -18,7 +18,7 @@ export function buildBreadcrumbSchema(items: { name: string; href: string }[]) {
 }
 
 export function buildFAQSchema(
-  items: { question: string; answer: string }[],
+  items: readonly { question: string; answer: string }[],
   options?: { pageUrl?: string; sectionId?: string },
 ) {
   const sectionId = options?.sectionId ?? 'faq';
