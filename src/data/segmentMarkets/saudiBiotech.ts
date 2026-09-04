@@ -2149,7 +2149,7 @@ const plasmaFractionation: SegmentMarketContent = {
 const biologics: SegmentMarketContent = {
   slug: 'saudi-arabia-biologics-market',
   group: 'saudi-biotech',
-  lastUpdated: '2026-09-03',
+  lastUpdated: '2026-09-04',
   geoLabel: 'Saudi Arabia',
   segmentLabel: 'Biologics',
   badge: 'Saudi Arabia · Biologics & Biosimilars',
@@ -2333,6 +2333,16 @@ const biologics: SegmentMarketContent = {
       question: 'What does BioNixus deliver for a Saudi biologics study?',
       answer:
         'Therapy-class and account-level market sizing, biosimilar switching and substitution research, NUPCO tender intelligence, payer and P&T committee evidence expectations, infusion and specialty pharmacy capacity mapping, and patient-support insight — structured for launch, tender, or access decisions.',
+    },
+    {
+      question: 'What is the GCC biologics market size and Saudi Arabia share in 2026?',
+      answer:
+        'BioNixus estimates the six-country GCC biologics market at roughly USD 4.8–5.4 billion in 2026. Saudi Arabia holds the largest single share — about 46% of regional pharmaceutical spend — with oncology mAbs, immunology biologics (~USD 700–850 million in 2026), insulins/GLP-1 therapies, and ophthalmology anti-VEGF agents leading value. Saudi pricing and NUPCO awards are referenced across the UAE, Qatar, Kuwait, Oman, and Bahrain.',
+    },
+    {
+      question: 'How do NUPCO biologics tenders affect GCC pricing?',
+      answer:
+        'NUPCO centralised MOH tenders reset net biologic and biosimilar price across dozens of Saudi hospitals in one award cycle. Because Saudi external reference pricing is referenced by other GCC regulators, a NUPCO outcome often shapes Gulf-wide price expectations — making Saudi tender timing a regional commercial decision, not a country-only event.',
     },
   ],
   areaServed: ['Saudi Arabia'],
