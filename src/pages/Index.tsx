@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
+import { HomeProblemSection } from '@/components/home/HomeProblemSection';
 import { HomeOverviewVideoSection } from '@/components/home/HomeOverviewVideoSection';
 import GlobalReachSection from '@/components/home/GlobalReachSection';
 import IndustriesGatewaySection from '@/components/home/IndustriesGatewaySection';
@@ -72,17 +73,21 @@ const Index = () => {
       <main>
         <HeroSection />
         <PremiumComplianceRibbon />
-        <GlobalReachSection />
+        <HomeProblemSection />
+        <div className="cv-auto">
+          <MethodologySection nestUnderParentH1 />
+        </div>
         <ServicesSection />
+        <GlobalReachSection />
+        <div className="cv-auto">
+          <IndustriesGatewaySection />
+        </div>
+        <StatsSection />
         <div className="cv-auto">
           <HomeOverviewVideoSection />
         </div>
         <div className="cv-auto">
           <HomeExplainerSection />
-        </div>
-        <StatsSection />
-        <div className="cv-auto">
-          <IndustriesGatewaySection />
         </div>
         <div className="cv-auto">
           <BlogSection
@@ -106,9 +111,6 @@ const Index = () => {
             language={language}
             servicesLabel={t.nav.services}
           />
-        </div>
-        <div className="cv-auto">
-          <MethodologySection nestUnderParentH1 />
         </div>
         <div className="cv-auto premium-home-ivory section-padding">
           <FAQSection

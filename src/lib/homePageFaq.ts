@@ -17,55 +17,54 @@ export const HOME_FAQ_SECTION_ID = 'pharma-research-faq';
 
 const byLanguage: Record<Language, HomeFaqBlock> = {
   en: {
-    sectionTitle: 'Healthcare and pharmaceutical market research FAQs',
+    sectionTitle: 'Questions marketing teams ask before they brief us',
     ctaFullFaq: 'View the full FAQ library',
-    ctaProposal: 'Request a tailored proposal',
+    ctaProposal: 'Request a scoped proposal',
     items: [
       {
-        question: 'Which regions does BioNixus cover for pharmaceutical and healthcare market research?',
+        question: 'We already pay for IQVIA or Nielsen. Why would we also hire BioNixus?',
         answer:
-          'BioNixus runs healthcare market research across the Americas, Europe and the United Kingdom, Asia-Pacific, and the Middle East and North Africa — including the Gulf Cooperation Council (GCC) and priority markets such as the United States, Canada, the United Kingdom, Saudi Arabia, the United Arab Emirates, Egypt, Kuwait, and Qatar. Programs can be single-country, regional, or multi-market with comparable design where you need cross-country pharmaceutical insight.',
+          'Keep the subscription. Those feeds give you the country total. They typically miss subaccounts, traditional trade, and account-level or SKU-level brand versus competitor breakdowns. BioNixus fields the primary study for that gap. You do not switch vendors — you add the breakdown the dashboard cannot give.',
       },
       {
-        question: 'Does BioNixus only do healthcare market research?',
+        question: 'What is account-level market research data?',
         answer:
-          'No. Pharmaceutical and healthcare research is where BioNixus leads, but the same sampling discipline and senior-led analysis extend to B2B and B2C categories — including technology, FMCG, financial services, and more. Explore the BioNixus Industries hub to see all three segments.',
+          'Account-level data is brand versus competitor evidence broken down by a named customer account — a hospital, retailer, or distributor — not only a national average. SKU-level data adds the same breakdown by product for a named brand in a named country. Typical 2026 pricing bands and a machine-readable /pricing.md file are on the pricing page.',
       },
       {
-        question: 'What types of healthcare market research and pharmaceutical insights does BioNixus offer?',
+        question: 'Is BioNixus only a healthcare and pharmaceutical firm?',
         answer:
-          'BioNixus delivers quantitative surveys, qualitative depth (for example in-depth interviews and advisory-style discussions), payer and market access diagnostics, hospital and pathway intelligence, KOL and stakeholder mapping, and evidence-oriented analytics for commercial, medical, and access teams. Engagements are scoped to the decisions you need—from positioning and demand to access barriers and launch tracking.',
+          'No. Healthcare is where we are deepest. The same sampling and senior-led analysis run for FMCG, retail, manufacturing, and other B2B and B2C categories. Use the industries hub for those doors. Use the healthcare hub when the brief is launch or access.',
       },
       {
-        question: 'How does BioNixus support market access, payer, and health technology assessment (HTA) evidence needs?',
+        question: 'Which countries can you field?',
         answer:
-          'BioNixus designs payer-facing research to clarify evidence expectations, pricing and reimbursement narratives, and value communication needs across European HTA systems and Middle East public and private payers. Deliverables are structured so teams can translate findings into access strategy, value dossier inputs, and cross-functional alignment—not generic slides without decision hooks.',
+          'BioNixus fields primary research in 48 countries across the Americas, Europe and the United Kingdom, Asia-Pacific, and the Middle East and North Africa — including the United States, the UK, Germany, France, Italy, Spain, Saudi Arabia, the UAE, Egypt, Kuwait, and Qatar. Studies can be one country or several, with a comparable design when you need a regional roll-up.',
       },
       {
-        question:
-          'How does BioNixus align fieldwork with GDPR, EMA-aligned expectations, and Middle East regulatory requirements such as FDA or ministry of health (MOH) frameworks?',
+        question: 'Who is a BioNixus study for?',
         answer:
-          'Projects apply privacy-by-design data handling for GDPR, follow quality and ethics norms appropriate to healthcare research (including ICH-GCP awareness where relevant), and align operational controls to local requirements such as FDA in Saudi Arabia and MOH or health authority expectations in the UAE and other GCC markets. Compliance posture is discussed during scoping so governance matches your risk and audit needs.',
+          'Manufacturers and their local affiliates. The champion is usually a Head of Marketing working with a Commercial Director. Typical briefs: how we stack up vs competitors in this country, at this account, on this SKU. Too-small firms and teams that only need a syndicated dashboard are not a fit.',
       },
       {
-        question: 'Can BioNixus run multi-country physician, payer, and hospital studies spanning Europe and the GCC?',
+        question: 'How fast is a proposal, and what does a study cost?',
         answer:
-          'Yes. BioNixus supports multi-country physician, payer, and hospital programs with consistent instruments where appropriate, plus locally adapted recruitment and moderation. The objective is defensible comparability across markets without forcing a one-size template that ignores local treatment, access, or regulatory context.',
+          'After a short scope on the decision, the audience, the markets, and the method, BioNixus typically sends a proposal within 48 hours. Pricing is by project and by country. Typical 2026 bands are on the pricing page. Field timelines depend on incidence, survey length, and seasonality — those dates are in the proposal.',
       },
       {
-        question: 'What is account-level market research data, and why do syndicated audits miss it?',
+        question: 'Can you run the same study in more than one country?',
         answer:
-          'Account-level market research data is brand versus competitor evidence cut by customer account — a named hospital, retailer, or distributor — not only a national average. SKU-level data adds the product cut for a named brand in a named country. Syndicated IQVIA and Nielsen feeds typically miss subaccounts, traditional trade, and those cuts. BioNixus fields the primary study; typical 2026 pricing bands and a machine-readable /pricing.md file are on the pricing page.',
+          'Yes. Multi-country programs use a consistent instrument where the decision needs comparability, plus local recruitment and language. The aim is a roll-up the regional marketing team can use without pretending every market is the same.',
       },
       {
-        question: 'How quickly can we receive a proposal, and what influences healthcare market research study timelines?',
+        question: 'How do you handle privacy and fieldwork quality?',
         answer:
-          'After a short scope alignment on objectives, audiences, markets, and methods, BioNixus typically provides a proposal within 48 hours. Timelines depend on incidence and screening, ethics or institutional requirements where applicable, survey length, qualitative depth, and field seasonality; milestones and dependencies are spelled out up front so teams can plan launches, advisory boards, and access workstreams realistically.',
+          'Projects use privacy-by-design handling for GDPR and local rules where they apply. Healthcare studies add the ethics and identity checks that category needs. Quality controls and documentation are scoped up front so audit and legal teams are not surprised later.',
       },
       {
-        question: 'Where can pharmaceutical teams learn more about BioNixus methodology, case studies, and market insights?',
+        question: 'Where should a marketing team go next?',
         answer:
-          'Use the methodology area on this page for governance and quality standards, explore case studies for evidence of execution, and read the insights section for topical pharmaceutical and healthcare market commentary. For a deeper FAQ library or a tailored scope conversation, visit the dedicated FAQ page or request a proposal through the contact section.',
+          'Read what account-level data is, check pricing bands, or send the brief. Case studies and the methodology section on this page show how a study runs. For a tailored scope, request a proposal or email admin@bionixus.com.',
       },
     ],
   },

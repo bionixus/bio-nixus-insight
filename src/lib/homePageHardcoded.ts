@@ -85,49 +85,49 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
   en: {
     compliance: {
       badges: [
-        "MHRA and EMA regulatory compliance",
-        "NHS Research Ethics Committee (REC) standards",
-        "GDPR-compliant data collection protocols",
-        "ICH-GCP guidelines for clinical research"
+        "Account-level and SKU-level breakdowns",
+        "Proposal ready within 48 hours",
+        "Project- and country-based pricing",
+        "GDPR and local field governance"
       ]
     },
     heroDashboard: {
-      heading: "Market Intelligence Dashboard",
-      status: "Live",
-      calloutValue: "~$1.8T",
-      calloutLabel: "Global Pharma Market (2026E)",
-      calloutCagr: "↑ ~6% CAGR 2024–2026",
-      legendGlobal: "Global benchmark",
-      legendRegional: "Regional depth",
+      heading: "What Your old syndicate subscriptions miss",
+      status: "Account breakdown",
+      calloutValue: "Account",
+      calloutLabel: "vs national average",
+      calloutCagr: "The breakdown IQVIA and Nielsen skip",
+      legendGlobal: "National average",
+      legendRegional: "By account",
       metrics: [
         {
-          label: "Global Pharma",
-          value: "~$1.8T",
-          sub: "2026E market"
+          label: "Coverage",
+          value: "48",
+          sub: "countries"
         },
         {
-          label: "Americas Pharma",
-          value: "~$720B",
-          sub: "2026E market"
+          label: "Fieldwork",
+          value: "120+",
+          sub: "studies a year"
         },
         {
-          label: "APAC Pharma",
-          value: "~$480B",
-          sub: "2026E market"
+          label: "Proposal",
+          value: "48h",
+          sub: "from your brief"
         }
       ]
     },
     globalReach: {
       signals: [
-        "6 continents · 48 countries",
-        "Pharma & healthcare — where we lead",
-        "Enterprise & consumer research",
-        "GDPR · GCP · local regulatory alignment"
+        "48 countries · local field teams",
+        "Keep the syndicated subscriptions — add the breakdown they miss",
+        "Healthcare, FMCG, retail, and B2B",
+        "48-hour proposal · country pricing"
       ]
     },
     industriesGateway: {
-      h2: "Beyond healthcare — research across industries",
-      intro: "The same sampling discipline and senior-led analysis we built for pharma now extends to B2B and B2C markets.",
+      h2: "The same fieldwork. Three doors in.",
+      intro: "Healthcare is where we are deepest. FMCG, retail, and B2B get the same account-level design — not a side door on a pharma site.",
       stats: [
         {
           value: "120+",
@@ -138,8 +138,8 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
           label: "Industry verticals"
         },
         {
-          value: "7",
-          label: "GCC/MENA markets with industry pages"
+          value: "48",
+          label: "global markets in Europe, Americas, APAC and MEA"
         }
       ],
       exploreAll: "Explore all industries",
@@ -149,35 +149,35 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     industrySegments: {
       pharma: {
         label: "Pharma & Healthcare",
-        tagline: "Where BioNixus was built — and still leads.",
+        tagline: "Launch, access, and brand vs competitor work in hospitals and pharmacies.",
         navLabel: "Pharma & Healthcare"
       },
       b2b: {
         label: "B2B Industries",
-        tagline: "Enterprise, institutional, and infrastructure markets.",
+        tagline: "Enterprise and institutional buyers — accounts, not only categories.",
         navLabel: "B2B Industries"
       },
       b2c: {
-        label: "B2C Industries",
-        tagline: "Consumer demand, brands, and the shopper journey.",
-        navLabel: "B2C Industries"
+        label: "FMCG & retail",
+        tagline: "Shopper, brand, and traditional-trade breakdowns your panel average misses.",
+        navLabel: "FMCG & retail"
       }
     },
     pathways: {
-      h2: "Healthcare Research Pathways",
-      introFull: "BioNixus runs healthcare market research globally — with country-level depth across the Americas, Europe, and the Middle East. Use these healthcare market research pathways for launch, market access, and growth. Compare methods in our market research hub.",
-      introPart1: "BioNixus runs healthcare market research globally — with country-level depth across the Americas, Europe, and the Middle East. Use these ",
+      h2: "Where marketing teams usually start",
+      introFull: "Start with the country or the competitor you already have on the brief. Healthcare paths are below because that is where most inbound arrives. Compare methods in our market research hub, or go to industries for FMCG, retail, and B2B.",
+      introPart1: "Start with the country or the competitor you already have on the brief. Healthcare paths are below because that is where most inbound arrives. Compare methods in our ",
       introLinkHealthcare: "healthcare market research",
-      introPart2: " pathways for launch, market access, and growth. Compare methods in our ",
+      introPart2: " hub, or go to the ",
       introLinkHub: "market research",
-      introPart3: "hub.",
+      introPart3: "library.",
       moreSummary: "More research pathways",
       moreLinksTemplate: "{N} links"
     },
     pathwayCards: [
       {
         title: "Healthcare Market Research",
-        description: "Decision-ready healthcare market research programs for pharmaceutical teams — globally, with deep execution in Europe, the Americas, and the Middle East."
+        description: "Country programs for pharmaceutical and healthcare marketing teams — launch, access, and brand vs competitor evidence."
       },
       {
         title: "Saudi Arabia Pharmaceutical Research",
@@ -229,30 +229,30 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       }
     ],
     visualBriefing: {
-      heading: "How BioNixus turns field evidence into launch decisions",
+      heading: "How BioNixus turns fieldwork into a decision a marketing team can brief",
       figures: [
         {
-          alt: "Healthcare market research workshop with GCC commercial and market access leaders reviewing pharmaceutical evidence",
-          caption: "Converting pharmaceutical data and evidence into launch and access actions."
+          alt: "Marketing and commercial leaders reviewing account-level brand versus competitor charts from a BioNixus country study",
+          caption: "From field evidence to a launch or share plan — not a dashboard export."
         },
         {
-          alt: "Pharmaceutical data validation workflow combining quantitative analytics and AI-assisted quality review",
-          caption: "Human validation operations with governed AI-assisted quality controls for healthcare datasets."
+          alt: "Researchers checking interview and survey quality before charts go to a marketing team",
+          caption: "Human checks on every wave. Charts a Head of Marketing can put in a leadership pack."
         }
       ]
     },
     overviewVideo: {
-      title: "BioNixus healthcare market research overview",
-      description: "A short overview of how BioNixus designs quantitative, qualitative, and access programs for pharmaceutical teams in global markets including the Americas, Europe, and the Middle East.",
-      transcript: "BioNixus supports pharmaceutical and healthcare teams with market research built for real decisions — launch readiness, market access, payer evidence, and competitive intelligence. Programs combine senior-led design, bilingual Arabic–English fieldwork, and audit-ready governance across global markets including the Americas, Europe, and the Middle East.",
+      title: "How BioNixus scopes a primary research brief",
+      description: "A short overview of how BioNixus turns a brand-versus-competitor question into a scoped study — with a healthcare example from markets in the Americas, Europe, and the Middle East.",
+      transcript: "BioNixus is a primary market research firm. We field account-level and SKU-level brand versus competitor studies in 48 countries when a syndicated IQVIA or Nielsen feed cannot break down to the account. This film uses a healthcare brief as the example. The same design runs for FMCG, retail, and B2B. A proposal is typically ready within 48 hours.",
       fallbackLabel: "Browse anonymized case studies"
     },
     cta: {
-      researchProposalHeadline: "Get a custom healthcare market research proposal",
-      body: "Our team supports pharmaceutical companies with decision-ready insights across the Americas, Europe, and the Middle East using quantitative and qualitative methodologies.",
+      researchProposalHeadline: "Get a scoped proposal in 48 hours",
+      body: "Name the brand, the country, and the breakdown your syndicated feed cannot give you. We send a project- and country-priced proposal — typically within 48 hours.",
       requestProposal: "Request a proposal",
       emailUs: "Email us",
-      mailtoSubject: "Healthcare Market Research Inquiry",
+      mailtoSubject: "Primary market research brief",
       phoneRegionLabels: [
         "US No.",
         "Europe No.",
