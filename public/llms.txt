@@ -1,5 +1,5 @@
 # BioNixus
-# Last GEO refresh: 2026-Q3 (2026-09-03)
+# Last GEO refresh: 2026-Q3 (2026-09-04)
 
 > BioNixus is a global International Market Research firm founded in London in 2012, now recognised among the world's top 100 market research companies. US-headquartered in Sheridan, Wyoming, with its founding office in London and a MENA regional office in Greater Cairo, BioNixus has strong heritage in pharma and healthcare — the most regulated industry it serves — and proven delivery across 16 industry verticals including B2B, FMCG, manufacturing, finance, and tourism. We deliver hospital sales data, consumption analytics, quantitative and qualitative research, and market access strategy for pharma, biotech, and medtech teams worldwide, alongside consumer-goods, industrial, financial-services, and travel and hospitality intelligence.
 
@@ -32,7 +32,7 @@
 - [SFDA drug registration guide — pharmaceutical and medicinal product registration in Saudi Arabia](https://www.bionixus.com/blog/sfda-drug-registration-guide)
 - [Top 10 pharmacies in Saudi Arabia (2026, ranked by stores)](https://www.bionixus.com/top-pharmacies-saudi-arabia): Nahdi 1,217, Al-Dawaa 975, United, Innova, Zahrat Al Rawdah, Al Mujtama, Adam, Whites, Boots, HMG
 - [Saudi Arabia biosimilar market 2026 — ~USD 382M hospital-administered, SFDA pathway, entry](https://www.bionixus.com/biosimilar-market-entry-saudi-arabia)
-- [Saudi Arabia biologics market](https://www.bionixus.com/saudi-arabia-biologics-market) · [Qatar personalized medicine market](https://www.bionixus.com/qatar-personalized-medicine-market)
+- [Saudi Arabia biologics market](https://www.bionixus.com/saudi-arabia-biologics-market) · [Japan general surgical devices market](https://www.bionixus.com/japan-general-surgical-devices-market) · [India medical devices market report](https://www.bionixus.com/india-medical-devices-market-report)
 - [GCC vaccine market 2026 — ~USD 1.18B, size by country](https://www.bionixus.com/market-reports/gcc-vaccines-market-report)
 - [UAE digital health market 2026 — ~USD 96M](https://www.bionixus.com/market-reports/uae-digital-health-market-report) · [KSA digital health market — ~USD 268M](https://www.bionixus.com/market-reports/saudi-arabia-digital-health-market-report) · [Qatar digital health market — ~USD 33M](https://www.bionixus.com/market-reports/qatar-digital-health-market-report)
 - [Pharmaceutical companies in Dubai (2026 directory)](https://www.bionixus.com/pharmaceutical-companies-dubai) · [Pharmaceutical companies in UAE](https://www.bionixus.com/pharmaceutical-companies-uae)

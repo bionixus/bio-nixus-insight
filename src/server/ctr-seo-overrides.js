@@ -100,10 +100,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // Wave 11 CTR (2026-09-04): "iqvia competitors" = 36 impr / 0% CTR @ pos 6.3; lead with Competitors for exact-match snippet.
+    title: 'IQVIA Competitors & Alternatives: Top 10 Ranked (2026)',
     description:
-      'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
+      'IQVIA competitors and companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     title: 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide',
@@ -139,9 +139,9 @@ export const CTR_SEO_BY_PATH = {
       'GCC medical devices market $9.0B in 2026 → $16.2B by 2035 (6.7% CAGR). Saudi & UAE share, IVD, hospital procurement & SFDA/MOHAP pathways — BioNixus.',
   },
   '/gcc-pharmaceutical-market-research': {
-    title: 'GCC Biologics & Generic Injectables Market 2026 | BioNixus',
+    title: 'GCC Biologics Market 2026: Size, SFDA & NUPCO Access',
     description:
-      'GCC biologics ($4.8–5.4B), generic injectables, precision medicine & drug repurposing — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman.',
+      'GCC biologics market ~USD 4.8–5.4B in 2026 — Saudi share, biosimilar tenders, generic injectables, and pharmaceutical market research across KSA, UAE, Qatar, Kuwait, Bahrain & Oman.',
   },
   '/uae-healthcare-market-report': {
     title: 'UAE Healthcare Market Report 2026: Size, Pharma & Devices',
@@ -162,6 +162,11 @@ export const CTR_SEO_BY_PATH = {
     title: 'GCC Anesthesia & Surgical Market 2026: Size & Country Data',
     description:
       'GCC anesthesia market $850M–1B and 1.8–2.2M annual surgical procedures — Saudi, UAE, Kuwait, Qatar, Oman & Bahrain intelligence by BioNixus.',
+  },
+  '/japan-general-surgical-devices-market': {
+    title: 'Japan General Surgical Devices Market 2026 | PMDA & OR',
+    description:
+      'Japan general surgical devices market 2026 — staplers, energy, laparoscopy, PMDA ninsho/shonin, NHI functional categories, and hospital OR procurement intelligence by BioNixus.',
   },
   '/japan-medical-devices-market-report': {
     title: 'Japan Medical Devices Market 2026: $41B Size & PMDA Forecast',

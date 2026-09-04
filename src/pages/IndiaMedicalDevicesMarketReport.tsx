@@ -19,6 +19,7 @@ import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportC
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
+  { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
   { name: 'India Medical Devices Market Report', href: '/india-medical-devices-market-report' },
 ];
 
@@ -62,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-09-04',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {

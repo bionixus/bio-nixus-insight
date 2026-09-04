@@ -48,6 +48,18 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus support Brazil-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Brazilian and Latin American pharmaceutical and medical device companies in entering GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys across all major therapeutic areas; and comparative Brazil vs. GCC market intelligence. Brazil and the GCC share several commercial parallels — large generic medicine markets, centralized public procurement, and premium private hospital sectors — that make BioNixus\'s cross-regional intelligence particularly relevant for Brazilian pharma companies planning MENA expansion.',
   },
+  {
+    question: 'What is the Brazil medical devices market size in 2026?',
+    answer: 'BioNixus estimates Brazil\'s medical devices market at approximately USD 11–13 billion in 2026, growing toward USD 17 billion by 2030 (~8% CAGR). Approximately 75–80% of advanced device demand is import-dependent, while consumables and disposables have a strong domestic manufacturing base. ANVISA registration, SUS vs private channel split, and CMED-adjacent price dynamics shape commercial access.',
+  },
+  {
+    question: 'How do CONITEC and CMED interact for new drug launches in Brazil?',
+    answer: 'ANVISA approval is the regulatory gate; CONITEC conducts HTA for SUS incorporation using cost-effectiveness and budget-impact evidence from the public-system perspective. CMED sets maximum pharmaceutical prices (PCFAR/PMC) that apply across channels. A product can be ANVISA-approved but not SUS-incorporated — or SUS-listed but commercially constrained by CMED price ceilings — so launch sequencing must model both pathways.',
+  },
+  {
+    question: 'Which Brazilian cities drive private-channel pharmaceutical revenue?',
+    answer: 'São Paulo, Rio de Janeiro, Belo Horizonte, and Brasília concentrate premium private hospitals (Albert Einstein, Sírio-Libanês, Hospital BP, Mater Dei) where innovative branded pharmaceuticals and novel devices launch at international price points. SUS volume concentrates in state and municipal hospitals with CONITEC-governed incorporation decisions.',
+  },
 ], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-healthcare-market-report');
@@ -63,7 +75,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-09-04',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
