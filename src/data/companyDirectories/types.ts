@@ -116,6 +116,12 @@ export type DirectoryCompanyEntry = {
   notes: string;
 };
 
+export type DirectoryProseSection = {
+  heading: string;
+  /** One or more paragraphs. */
+  paragraphs: string[];
+};
+
 export type DirectoryRegulatorSource = {
   /** e.g. 'Saudi Food and Drug Authority (SFDA) — licensed drug establishments register' */
   name: string;
@@ -196,6 +202,11 @@ export type DirectoryPageInput = {
   companies: DirectoryCompanyEntry[];
   categoryBlurbs: { local: string; mnc: string; regional: string; trade: string };
   growthDrivers: { title: string; desc: string }[];
+  /**
+   * Optional entity-specific prose sections rendered between the channel section and
+   * growth drivers (e.g. launch pipeline, off-plan vs ready, buyer segments for developers).
+   */
+  sections?: DirectoryProseSection[];
   faq: { q: string; a: string }[];
   /** Primary regulator / registry the list was checked against. */
   regulatorSource: DirectoryRegulatorSource;

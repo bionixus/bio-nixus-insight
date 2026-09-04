@@ -83,6 +83,7 @@ function pageText(d) {
     ...d.companies.flatMap((c) => [c.name, c.hq, c.type, c.focus, c.notes]),
     ...Object.values(d.categoryBlurbs),
     ...d.growthDrivers.flatMap((g) => [g.title, g.desc]),
+    ...(d.sections ?? []).flatMap((s) => [s.heading, ...s.paragraphs]),
     ...d.faq.flatMap((f) => [f.q, f.a]),
     ...(d.fieldNotes ?? []),
     ...(d.sources ?? []),
@@ -98,6 +99,7 @@ function proseText(d) {
     d.channelBody,
     ...Object.values(d.categoryBlurbs),
     ...d.growthDrivers.map((g) => g.desc),
+    ...(d.sections ?? []).flatMap((s) => s.paragraphs),
     ...d.faq.map((f) => f.a),
     ...(d.fieldNotes ?? []),
   ]

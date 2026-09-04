@@ -33,6 +33,7 @@ export function adaptIndustryDirectory(cfg: IndustryDirectoryConfig): DirectoryP
     companies: cfg.companies,
     categoryBlurbs: cfg.categoryBlurbs,
     growthDrivers: cfg.growthDrivers,
+    sections: cfg.sections,
     faq: cfg.faq,
     regulatorSource: cfg.regulatorSource,
     sources: cfg.sources ?? [],

@@ -1,7 +1,727 @@
 {
-  "generatedAt": "2026-09-03T18:17:17.129Z",
-  "directories": [],
-  "hubs": [],
+  "generatedAt": "2026-09-04T13:04:44.412Z",
+  "directories": [
+    {
+      "path": "/hospital-groups-bahrain",
+      "entity": "hospital-groups",
+      "country": "bahrain",
+      "title": "Top 15 Private Hospital Groups in Bahrain (2026)",
+      "metaDescription": "Private hospital groups in Bahrain: Al Hilal, American Mission, Royal Bahrain (KIMS), Bahrain Specialist, Al Kindi, Ibn Al-Nafees and public systems — networks, payers.",
+      "h1": "Private Hospital Groups in Bahrain",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "National Health Regulatory Authority (NHRA) — licensed hospitals and healthcare facilities",
+        "url": "https://www.nhra.bh",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hospital-groups-egypt",
+      "entity": "hospital-groups",
+      "country": "egypt",
+      "title": "Top 15 Private Hospital Groups in Egypt (2026)",
+      "metaDescription": "Private hospital groups in Egypt: Cleopatra Hospitals, Alameda (As-Salam, Dar Al Fouad), Saudi German Cairo, Andalusia, Wadi El Nil and public systems — networks, payers.",
+      "h1": "Private Hospital Groups in Egypt",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Ministry of Health and Population and General Authority for Healthcare Accreditation and Regulation (GAHAR) — licensed and accredited hospitals",
+        "url": "https://www.mohp.gov.eg",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hospital-groups-kuwait",
+      "entity": "hospital-groups",
+      "country": "kuwait",
+      "title": "Top 15 Private Hospital Groups in Kuwait (2026)",
+      "metaDescription": "Private hospital groups in Kuwait: Dar Al Shifa, Al Salam International, New Mowasat, Royale Hayat, Al Seef, Taiba, Hadi, Dhaman and MOH systems — networks and payers.",
+      "h1": "Private Hospital Groups in Kuwait",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Kuwait Ministry of Health — Private Medical Licensing Department, licensed private hospitals",
+        "url": "https://www.moh.gov.kw",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hospital-groups-oman",
+      "entity": "hospital-groups",
+      "country": "oman",
+      "title": "Top 15 Private Hospital Groups in Oman (2026)",
+      "metaDescription": "Private hospital groups in Oman: Badr Al Samaa, Aster Al Raffah, KIMS, Burjeel Muscat, Starcare, Apollo, Oman International and MOH systems — networks and payers.",
+      "h1": "Private Hospital Groups in Oman",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Oman Ministry of Health — Directorate General of Private Health Establishments, licensed private hospitals",
+        "url": "https://www.moh.gov.om",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hospital-groups-qatar",
+      "entity": "hospital-groups",
+      "country": "qatar",
+      "title": "Top 14 Private Hospital Groups in Qatar (2026)",
+      "metaDescription": "Private hospital groups in Qatar: The View (Elegancia), Al Ahli, Al Emadi, Doha Clinic, Aster, Naseem Al Rabeeh plus HMC, Sidra and PHCC — networks and payers.",
+      "h1": "Private Hospital Groups in Qatar",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Qatar Ministry of Public Health — Health Facilities Licensing, licensed hospitals and medical centres",
+        "url": "https://www.moph.gov.qa",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hospital-groups-saudi-arabia",
+      "entity": "hospital-groups",
+      "country": "saudi-arabia",
+      "title": "Top 15 Private Hospital Groups in Saudi Arabia (2026)",
+      "metaDescription": "Private hospital groups in Saudi Arabia: Dr. Sulaiman Al Habib, Mouwasat, Dallah, Fakeeh Care, Saudi German, Almoosa, Al Hammadi and Care — networks and payers.",
+      "h1": "Private Hospital Groups in Saudi Arabia",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Ministry of Health Statistical Yearbook and Council of Health Insurance — licensed private hospitals and insured population",
+        "url": "https://www.moh.gov.sa/en/Ministry/Statistics/book/Pages/default.aspx",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hospital-groups-turkey",
+      "entity": "hospital-groups",
+      "country": "turkey",
+      "title": "Top 15 Private Hospital Groups in Turkey (2026)",
+      "metaDescription": "Private hospital groups in Turkey: Acıbadem, MLP Care (Medical Park, Liv), Memorial, Medicana, Florence Nightingale, Anadolu, Koç and Medipol — networks and payers.",
+      "h1": "Private Hospital Groups in Turkey",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Ministry of Health Health Statistics Yearbook and General Directorate of Health Services — licensed private hospitals",
+        "url": "https://www.saglik.gov.tr",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hospital-groups-uae",
+      "entity": "hospital-groups",
+      "country": "uae",
+      "title": "Top 15 Private Hospital Groups in UAE (2026)",
+      "metaDescription": "Private hospital groups in the UAE: Burjeel, NMC, Mediclinic, Aster, PureHealth, American Hospital Dubai, Saudi German, Thumbay, Prime and Zulekha — networks and payers.",
+      "h1": "Private Hospital Groups in the UAE",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Department of Health Abu Dhabi and Dubai Health Authority — licensed hospital facility registers",
+        "url": "https://www.doh.gov.ae",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-bahrain",
+      "entity": "medical-device-companies",
+      "country": "bahrain",
+      "title": "Top 17 Medical Device Companies in Bahrain (2026)",
+      "metaDescription": "Medical device companies in Bahrain: Siemens Healthineers, GE HealthCare, Philips, Medtronic, Roche, YMH, Gulf Pharmacy, KHUH and MOH tenders — market map, NHRA rules.",
+      "h1": "Medical Device Companies in Bahrain",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "National Health Regulatory Authority (NHRA) — medical device registration and licensed agents",
+        "url": "https://www.nhra.bh",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-egypt",
+      "entity": "medical-device-companies",
+      "country": "egypt",
+      "title": "Top 16 Medical Device Companies in Egypt (2026)",
+      "metaDescription": "Medical device companies in Egypt: Siemens Healthineers, GE HealthCare, Philips, Medtronic, Roche, BD, Alkan Medical, Elaraby and UPA tenders — market map and EDA rules.",
+      "h1": "Medical Device Companies in Egypt",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Egyptian Drug Authority (EDA) — Medical Devices sector, registered establishments and products",
+        "url": "https://www.edaegypt.gov.eg/en/",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-iran",
+      "entity": "medical-device-companies",
+      "country": "iran",
+      "title": "Top 15 Medical Device Companies in Iran (2026)",
+      "metaDescription": "Medical device companies in Iran: IMED-regulated market with Pooyandegan Rah Saadat, Behyaar, Parto Negar Persia, Pishtaz Teb, Mindray, SSO and university buyers.",
+      "h1": "Medical Device Companies in Iran",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Iran Medical Device Regulatory Authority (IMED) — registered manufacturers, importers and devices",
+        "url": "https://imed.ir",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-iraq",
+      "entity": "medical-device-companies",
+      "country": "iraq",
+      "title": "Top 15 Medical Device Companies in Iraq (2026)",
+      "metaDescription": "Medical device companies in Iraq: KIMADIA and KRG procurement, Siemens Healthineers, GE HealthCare, Philips, Medtronic, Mindray, Zozik Group and private hospital buyers.",
+      "h1": "Medical Device Companies in Iraq",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Iraq Ministry of Health — KIMADIA supplier registration and medical device import approvals",
+        "url": "https://moh.gov.iq",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-jordan",
+      "entity": "medical-device-companies",
+      "country": "jordan",
+      "title": "Top 16 Medical Device Companies in Jordan (2026)",
+      "metaDescription": "Medical device companies in Jordan: Siemens Healthineers, GE HealthCare, Philips, Medtronic, Roche, Munir Sukhtian, Joswe Medical, KHCC and JPD tenders — JFDA rules.",
+      "h1": "Medical Device Companies in Jordan",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Jordan Food and Drug Administration (JFDA) — medical device registration and licensed agents",
+        "url": "https://www.jfda.jo",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-kuwait",
+      "entity": "medical-device-companies",
+      "country": "kuwait",
+      "title": "Top 16 Medical Device Companies in Kuwait (2026)",
+      "metaDescription": "Medical device companies in Kuwait: GE HealthCare, Siemens Healthineers, Philips, Medtronic, Roche, ATC, Yiaco, Al Essa, Bader Sultan and MOH tenders — market structure.",
+      "h1": "Medical Device Companies in Kuwait",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Kuwait Ministry of Health — Medical Devices department, registered agents and devices",
+        "url": "https://www.moh.gov.kw",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-morocco",
+      "entity": "medical-device-companies",
+      "country": "morocco",
+      "title": "Top 16 Medical Device Companies in Morocco (2026)",
+      "metaDescription": "Medical device companies in Morocco: Siemens Healthineers, GE HealthCare, Philips, Medtronic, Roche, Promamec, Akdital, Oncorad and CHU tenders — market map, AMMPS rules.",
+      "h1": "Medical Device Companies in Morocco",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Agence Marocaine des Médicaments et des Produits de Santé (AMMPS) — medical device registration and licensed establishments",
+        "url": "https://www.ammps.gov.ma",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-oman",
+      "entity": "medical-device-companies",
+      "country": "oman",
+      "title": "Top 16 Medical Device Companies in Oman (2026)",
+      "metaDescription": "Medical device companies in Oman: GE HealthCare, Siemens Healthineers, Philips, Medtronic, Roche, Mustafa Sultan, Khimji Ramdas, Muscat Pharmacy and MOH tenders.",
+      "h1": "Medical Device Companies in Oman",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Oman Ministry of Health — Directorate General of Pharmaceutical Affairs and Drug Control, medical device registration and agents",
+        "url": "https://www.moh.gov.om",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-qatar",
+      "entity": "medical-device-companies",
+      "country": "qatar",
+      "title": "Top 16 Medical Device Companies in Qatar (2026)",
+      "metaDescription": "Medical device companies in Qatar: Siemens Healthineers, GE HealthCare, Philips, Medtronic, Roche, Khalid Scientific, Ebn Sina Medical, HMC and Sidra procurement.",
+      "h1": "Medical Device Companies in Qatar",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Qatar Ministry of Public Health — medical device registration and licensed agents",
+        "url": "https://www.moph.gov.qa",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-turkey",
+      "entity": "medical-device-companies",
+      "country": "turkey",
+      "title": "Top 17 Medical Device Companies in Turkey (2026)",
+      "metaDescription": "Medical device companies in Turkey: Siemens Healthineers, GE HealthCare, Philips, Medtronic, Aselsan, Alvimedica, Bıçakcılar, Acıbadem and city hospital tenders.",
+      "h1": "Medical Device Companies in Turkey",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) — Ürün Takip Sistemi (ÜTS) medical device registrations",
+        "url": "https://www.titck.gov.tr",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-bahrain",
+      "entity": "pharmaceutical-distributors",
+      "country": "bahrain",
+      "title": "Top 13 Pharmaceutical Distributors in Bahrain (2026)",
+      "metaDescription": "Pharmaceutical distributors in Bahrain: Yousuf Mahmood Husain, Gulf Pharmacy, Bahrain Pharmacy, Jaffar, Nasser, Wael and MOH purchasing — NHRA rules and channels.",
+      "h1": "Pharmaceutical Distributors in Bahrain",
+      "companies": 13,
+      "regulatorSource": {
+        "name": "National Health Regulatory Authority (NHRA) — licensed pharmaceutical establishments and drug stores",
+        "url": "https://www.nhra.bh",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-egypt",
+      "entity": "pharmaceutical-distributors",
+      "country": "egypt",
+      "title": "Top 15 Pharmaceutical Distributors in Egypt (2026)",
+      "metaDescription": "Pharmaceutical distributors in Egypt: Ibnsina Pharma, UCP, Multipharma, Pharma Overseas, EgyDrug, the Unified Procurement Authority and chains — channels and EDA rules.",
+      "h1": "Pharmaceutical Distributors in Egypt",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Egyptian Drug Authority (EDA) — licensed pharmaceutical establishments and distribution warehouses",
+        "url": "https://www.edaegypt.gov.eg/en/",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-iraq",
+      "entity": "pharmaceutical-distributors",
+      "country": "iraq",
+      "title": "Top 13 Pharmaceutical Distributors in Iraq (2026)",
+      "metaDescription": "Pharmaceutical distributors in Iraq: KIMADIA, KRG medical supplies, Zozik Group, SDI, Pioneer, Awamedica and scientific bureaus — federal and Kurdistan channels.",
+      "h1": "Pharmaceutical Distributors in Iraq",
+      "companies": 13,
+      "regulatorSource": {
+        "name": "Iraq Ministry of Health — KIMADIA supplier registration and licensed scientific bureaus",
+        "url": "https://moh.gov.iq",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-jordan",
+      "entity": "pharmaceutical-distributors",
+      "country": "jordan",
+      "title": "Top 14 Pharmaceutical Distributors in Jordan (2026)",
+      "metaDescription": "Pharmaceutical distributors in Jordan: Joint Procurement Department, Arab Drug Store, Pharmacy One, Dawacom, Hikma, Dar Al Dawa and JPM — JFDA rules and channels.",
+      "h1": "Pharmaceutical Distributors in Jordan",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Jordan Food and Drug Administration (JFDA) — licensed drug stores and pharmaceutical establishments",
+        "url": "https://www.jfda.jo",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-kuwait",
+      "entity": "pharmaceutical-distributors",
+      "country": "kuwait",
+      "title": "Top 14 Pharmaceutical Distributors in Kuwait (2026)",
+      "metaDescription": "Pharmaceutical distributors in Kuwait: Al-Hajery, Yiaco, AAW, Safwan, Bader Sultan, Boushahri, Al Essa and MOH Central Medical Stores — agency rules, tenders, channels.",
+      "h1": "Pharmaceutical Distributors in Kuwait",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Kuwait Ministry of Health — Drug and Food Control, registered pharmaceutical agents and importers",
+        "url": "https://www.moh.gov.kw",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-morocco",
+      "entity": "pharmaceutical-distributors",
+      "country": "morocco",
+      "title": "Top 16 Pharmaceutical Distributors in Morocco (2026)",
+      "metaDescription": "Pharmaceutical distributors in Morocco: the 66 licensed grossistes-répartiteurs led by Cooper Pharma Répartition, Sophaca, GPM, UGP and Maphar — AMMPS rules and margins.",
+      "h1": "Pharmaceutical Distributors in Morocco",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Agence Marocaine des Médicaments et des Produits de Santé (AMMPS) — établissements pharmaceutiques grossistes-répartiteurs register",
+        "url": "https://www.ammps.gov.ma/basesdedonnes/etablissements-pharmaceutiques-grossistes-repartiteurs",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-oman",
+      "entity": "pharmaceutical-distributors",
+      "country": "oman",
+      "title": "Top 14 Pharmaceutical Distributors in Oman (2026)",
+      "metaDescription": "Pharmaceutical distributors in Oman: Muscat Pharmacy, Ibn Sina, Mazoon, Scientific Pharmacy, Al Hashar, KR Healthcare and MOH central stores — channels and licensing.",
+      "h1": "Pharmaceutical Distributors in Oman",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Oman Ministry of Health — Directorate General of Pharmaceutical Affairs and Drug Control, licensed drug stores and agents",
+        "url": "https://www.moh.gov.om",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-pakistan",
+      "entity": "pharmaceutical-distributors",
+      "country": "pakistan",
+      "title": "Top 16 Pharmaceutical Distributors in Pakistan (2026)",
+      "metaDescription": "Pharmaceutical distributors in Pakistan: Muller & Phipps, IBL Operations, Premier Agencies, Ali Gohar, provincial tenders and pharmacy chains — DRAP rules and channels.",
+      "h1": "Pharmaceutical Distributors in Pakistan",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Drug Regulatory Authority of Pakistan (DRAP) — licensed drug manufacturers, importers and distributors",
+        "url": "https://www.dra.gov.pk",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-qatar",
+      "entity": "pharmaceutical-distributors",
+      "country": "qatar",
+      "title": "Top 13 Pharmaceutical Distributors in Qatar (2026)",
+      "metaDescription": "Pharmaceutical distributors in Qatar: Ebn Sina Medical, Qatar Pharma, Khalid Scientific, HMC and PHCC procurement, GWC and QR Pharma cold chain — channels and MoPH rules.",
+      "h1": "Pharmaceutical Distributors in Qatar",
+      "companies": 13,
+      "regulatorSource": {
+        "name": "Qatar Ministry of Public Health — Pharmacy and Drug Control, licensed pharmaceutical agents and establishments",
+        "url": "https://www.moph.gov.qa",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-saudi-arabia",
+      "entity": "pharmaceutical-distributors",
+      "country": "saudi-arabia",
+      "title": "Top 17 Pharmaceutical Distributors in Saudi Arabia (2026)",
+      "metaDescription": "Pharmaceutical distributors in Saudi Arabia: NUPCO, Cigalah, Banaja, Tamer, Salehiya and cold-chain 3PLs — channel structure, SFDA licensing, tender routes.",
+      "h1": "Pharmaceutical Distributors in Saudi Arabia",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Saudi Food and Drug Authority (SFDA) — licensed drug establishments and importers register",
+        "url": "https://www.sfda.gov.sa/en/drugs-establishments",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-turkey",
+      "entity": "pharmaceutical-distributors",
+      "country": "turkey",
+      "title": "Top 15 Pharmaceutical Distributors in Turkey (2026)",
+      "metaDescription": "Pharmaceutical distributors in Turkey: Selçuk Ecza, Hedef Alliance, Nevzat, As Ecza, Bahar, pharmacist cooperatives, SGK and DMO — TİTCK licensing and channel structure.",
+      "h1": "Pharmaceutical Distributors in Turkey",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) — licensed pharmaceutical wholesalers (ecza depoları) register",
+        "url": "https://www.titck.gov.tr",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-uae",
+      "entity": "pharmaceutical-distributors",
+      "country": "uae",
+      "title": "Top 16 Pharmaceutical Distributors in UAE (2026)",
+      "metaDescription": "Pharmaceutical distributors in the UAE: Gulf Drug, Pharmatrade, Al Zahrawi, MPC, Ittihad, Alphamed, Rafed and Dubai cold-chain 3PLs — licensing, channels, tenders.",
+      "h1": "Pharmaceutical Distributors in the UAE",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Emirates Drug Establishment / MOHAP — registered medical stores and pharmaceutical establishments",
+        "url": "https://mohap.gov.ae/en",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmacy-chains-bahrain",
+      "entity": "pharmacy-chains",
+      "country": "bahrain",
+      "title": "Top 14 Pharmacy Chains in Bahrain (2026)",
+      "metaDescription": "Pharmacy chains in Bahrain: Nasser, Wael, Jaffar, Bahrain Pharmacy, Gulf Pharmacy, Al Hilal, Boots and hospital pharmacies, plus MOH dispensing and NHRA rules.",
+      "h1": "Pharmacy Chains in Bahrain",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "National Health Regulatory Authority (NHRA) — licensed pharmacies and pharmaceutical facilities",
+        "url": "https://www.nhra.bh",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmacy-chains-egypt",
+      "entity": "pharmacy-chains",
+      "country": "egypt",
+      "title": "Top 13 Pharmacy Chains in Egypt (2026)",
+      "metaDescription": "Pharmacy chains in Egypt: El Ezaby, Seif, 19011, Roshdy, Misr, El Tarshouby, EgyDrug state pharmacies and e-pharmacies Chefaa and Yodawy — footprints and EDA rules.",
+      "h1": "Pharmacy Chains in Egypt",
+      "companies": 13,
+      "regulatorSource": {
+        "name": "Egyptian Drug Authority (EDA) — licensed pharmacies and pharmaceutical establishments",
+        "url": "https://www.edaegypt.gov.eg/en/",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmacy-chains-jordan",
+      "entity": "pharmacy-chains",
+      "country": "jordan",
+      "title": "Top 14 Pharmacy Chains in Jordan (2026)",
+      "metaDescription": "Pharmacy chains in Jordan: Pharmacy One, Dawacom, hospital pharmacies at KHCC and private groups, Royal Medical Services and MOH dispensing, plus JFDA rules.",
+      "h1": "Pharmacy Chains in Jordan",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Jordan Food and Drug Administration (JFDA) — licensed pharmacies and drug stores",
+        "url": "https://www.jfda.jo",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmacy-chains-kuwait",
+      "entity": "pharmacy-chains",
+      "country": "kuwait",
+      "title": "Top 14 Pharmacy Chains in Kuwait (2026)",
+      "metaDescription": "Pharmacy chains in Kuwait: Boots, Al-Hajery, Yiaco and Safwan pharmacies, private hospital dispensaries, MOH polyclinic pharmacies and delivery apps explained.",
+      "h1": "Pharmacy Chains in Kuwait",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Kuwait Ministry of Health — Pharmaceutical and Herbal Medicines Registration and Control Administration",
+        "url": "https://www.moh.gov.kw",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmacy-chains-oman",
+      "entity": "pharmacy-chains",
+      "country": "oman",
+      "title": "Top 14 Pharmacy Chains in Oman (2026)",
+      "metaDescription": "Pharmacy chains in Oman: Muscat Pharmacy, Ibn Sina, Mazoon, Scientific Pharmacy, Al Hashar, Badr Al Samaa and Aster Al Raffah, plus MOH dispensing and rules.",
+      "h1": "Pharmacy Chains in Oman",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Oman Ministry of Health — Directorate General of Pharmaceutical Affairs and Drug Control, licensed pharmacies",
+        "url": "https://www.moh.gov.om",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmacy-chains-qatar",
+      "entity": "pharmacy-chains",
+      "country": "qatar",
+      "title": "Top 14 Pharmacy Chains in Qatar (2026)",
+      "metaDescription": "Pharmacy chains in Qatar: Kulud, Wellcare, Ebn Sina, Aster, Boots, Care n Cure and hospital pharmacies, plus HMC and PHCC dispensing — footprints and MoPH rules.",
+      "h1": "Pharmacy Chains in Qatar",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Qatar Ministry of Public Health — Pharmacy and Drug Control Department, licensed pharmacies",
+        "url": "https://www.moph.gov.qa",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmacy-chains-turkey",
+      "entity": "pharmacy-chains",
+      "country": "turkey",
+      "title": "Pharmacy Chains in Turkey: Who Fills the Role (2026 List)",
+      "metaDescription": "Turkey bans pharmacy chains, so cooperatives (EDAK, BEK), wholesalers (Selçuk, Hedef Alliance), TEB, SGK and hospital groups fill the role for 28,000 pharmacies.",
+      "h1": "Pharmacy Chains in Turkey: Cooperatives, Wholesalers and Groups That Fill the Role (2026)",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) and Turkish Pharmacists Association — pharmacy licensing and statistics",
+        "url": "https://www.titck.gov.tr",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmacy-chains-uae",
+      "entity": "pharmacy-chains",
+      "country": "uae",
+      "title": "Top 14 Pharmacy Chains in UAE (2026)",
+      "metaDescription": "Pharmacy chains in the UAE: Life Pharmacy, Aster, BinSina, Al Manara, Boots, Medicina, Supercare, Thumbay and 800Pharmacy — store counts, formats and licensing.",
+      "h1": "Pharmacy Chains in the UAE",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Dubai Health Authority and Department of Health Abu Dhabi — licensed pharmacy facility registers",
+        "url": "https://www.dha.gov.ae",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    }
+  ],
+  "hubs": [
+    {
+      "path": "/company-directories",
+      "kind": "master",
+      "title": "Company Directories by Country & Industry (2026) | BioNixus",
+      "metaDescription": "All BioNixus company directories: pharma, medical device, distributor, hospital, pharmacy, FMCG, retail, real estate and bank lists by country across MENA and beyond.",
+      "lastmod": "2026-09-03",
+      "priority": "0.9",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/companies-in-saudi-arabia",
+      "kind": "country",
+      "title": "Top Companies in Saudi Arabia by Industry (2026 Directories)",
+      "metaDescription": "Saudi Arabia company directories by industry: pharma companies and distributors, medtech, hospital groups, pharmacy chains, FMCG, retail, developers and banks.",
+      "lastmod": "2026-09-03",
+      "priority": "0.88",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/companies-in-uae",
+      "kind": "country",
+      "title": "Top Companies in UAE by Industry (2026 Directories)",
+      "metaDescription": "UAE company directories by industry: pharma companies and distributors, medtech, hospital groups, pharmacy chains, FMCG, retail, developers and banks (Dubai, Abu Dhabi).",
+      "lastmod": "2026-09-03",
+      "priority": "0.88",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/companies-in-egypt",
+      "kind": "country",
+      "title": "Top Companies in Egypt by Industry (2026 Directories)",
+      "metaDescription": "Egypt company directories by industry: pharma companies and distributors, medtech, hospital groups, pharmacy chains, FMCG, retail, developers and banks (EDA and EGX).",
+      "lastmod": "2026-09-03",
+      "priority": "0.88",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/companies-in-kuwait",
+      "kind": "country",
+      "title": "Top Companies in Kuwait by Industry (2026 Directories)",
+      "metaDescription": "Kuwait company directories by industry: pharma companies and distributors, medtech suppliers, hospital groups, pharmacy chains, FMCG, retail, developers and banks.",
+      "lastmod": "2026-09-03",
+      "priority": "0.88",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/companies-in-qatar",
+      "kind": "country",
+      "title": "Top Companies in Qatar by Industry (2026 Directories)",
+      "metaDescription": "Qatar company directories by industry: pharma companies and distributors, medtech suppliers, hospital groups, pharmacy chains, FMCG, retail, developers and banks in Doha.",
+      "lastmod": "2026-09-03",
+      "priority": "0.88",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/companies-in-oman",
+      "kind": "country",
+      "title": "Top Companies in Oman by Industry (2026 Directories)",
+      "metaDescription": "Oman company directories by industry: pharma companies and distributors, medtech suppliers, hospital groups, pharmacy chains, FMCG, retail, developers and banks.",
+      "lastmod": "2026-09-03",
+      "priority": "0.88",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/companies-in-bahrain",
+      "kind": "country",
+      "title": "Top Companies in Bahrain by Industry (2026 Directories)",
+      "metaDescription": "Bahrain company directories by industry: pharma companies and distributors, medtech suppliers, hospital groups, pharmacy chains, FMCG, retail, developers and banks.",
+      "lastmod": "2026-09-03",
+      "priority": "0.88",
+      "changefreq": "weekly"
+    }
+  ],
   "industry": [
     {
       "path": "/fmcg-companies-egypt",
@@ -127,31 +847,31 @@
       "path": "/real-estate-companies-egypt",
       "entity": "real-estate-companies",
       "country": "egypt",
-      "title": "Top 8 Real Estate Companies in Egypt (2026) | Developers We Study",
-      "metaDescription": "2026 directory of real estate companies in Egypt: TMG, SODIC, Palm Hills, Emaar Misr, Orascom. Compounds we study. Account-level primary research by BioNixus.",
-      "h1": "Real Estate Companies in Egypt",
-      "companies": 8,
-      "lastmod": "2026-09-02"
+      "title": "Top 24 Real Estate Developers in Egypt (2026 List)",
+      "metaDescription": "2026 list of real estate developers in Egypt: TMG, SODIC, Palm Hills, Emaar Misr, Ora, Mountain View, Hyde Park, City Edge and more — pipeline, off-plan, buyers, brokers.",
+      "h1": "Top Real Estate Developers in Egypt (2026)",
+      "companies": 24,
+      "lastmod": "2026-09-03"
     },
     {
       "path": "/real-estate-companies-uae",
       "entity": "real-estate-companies",
       "country": "uae",
-      "title": "Top 8 Real Estate Companies in UAE (2026) | Developers We Study",
-      "metaDescription": "2026 directory of real estate companies in the UAE: Emaar, Aldar, Nakheel, Damac, Sobha. Off-plan and freehold we study. Primary research by BioNixus.",
-      "h1": "Real Estate Companies in the UAE",
-      "companies": 8,
-      "lastmod": "2026-09-02"
+      "title": "Top 24 Real Estate Developers in UAE (2026 List)",
+      "metaDescription": "2026 list of real estate developers in the UAE: Emaar, Aldar, Dubai Holding, Damac, Sobha, Binghatti, Azizi, Danube, Arada and more — pipeline, off-plan, buyers, brokers.",
+      "h1": "Top Real Estate Developers in the UAE (2026)",
+      "companies": 24,
+      "lastmod": "2026-09-03"
     },
     {
       "path": "/real-estate-companies-saudi-arabia",
       "entity": "real-estate-companies",
       "country": "saudi-arabia",
-      "title": "Top 8 Real Estate Companies in Saudi Arabia (2026) | Developers We Study",
-      "metaDescription": "2026 directory of real estate companies in Saudi Arabia: ROSHN, Dar Al Arkan, Jabal Omar, RETAL. Vision 2030 developers we study. Primary research by BioNixus.",
-      "h1": "Real Estate Companies in Saudi Arabia",
-      "companies": 8,
-      "lastmod": "2026-09-02"
+      "title": "Top 24 Real Estate Developers in Saudi Arabia (2026 List)",
+      "metaDescription": "2026 list of real estate developers in Saudi Arabia: ROSHN, NHC, Dar Al Arkan, Jabal Omar, RETAL, Red Sea Global, Diriyah and more — pipeline, off-plan, buyers, brokers.",
+      "h1": "Top Real Estate Developers in Saudi Arabia (2026)",
+      "companies": 24,
+      "lastmod": "2026-09-03"
     },
     {
       "path": "/real-estate-companies-kuwait",

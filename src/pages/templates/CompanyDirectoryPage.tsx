@@ -275,7 +275,31 @@ export default function CompanyDirectoryPage({ path }: Props) {
           </div>
         </section>
 
-        <section className="section-padding py-16 bg-muted/30" id="growth-drivers">
+        {config.sections && config.sections.length > 0 ? (
+          <section className="section-padding py-16 bg-muted/30" id="market-structure">
+            <div className="container-wide max-w-5xl mx-auto space-y-12">
+              {config.sections.map((sec) => (
+                <div key={sec.heading}>
+                  <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+                    {sec.heading}
+                  </h2>
+                  <div className="space-y-4 max-w-3xl">
+                    {sec.paragraphs.map((p, i) => (
+                      <p key={i} className="text-muted-foreground leading-relaxed">
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        <section
+          className={`section-padding py-16 ${config.sections && config.sections.length > 0 ? '' : 'bg-muted/30'}`}
+          id="growth-drivers"
+        >
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
               What is moving {entityMeta.movementNoun} in {country.display}
