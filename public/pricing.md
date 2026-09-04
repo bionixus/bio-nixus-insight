@@ -1,35 +1,24 @@
 # Pricing — BioNixus
 
-Last updated: 2026-09-02  
+Last updated: 2026-09-04  
 Model: project- and country-based. No enterprise syndicated-dashboard minimum.  
 Proposal: 48 hours from brief to a scoped proposal ready to launch.  
 Contact: admin@bionixus.com · https://www.bionixus.com/contact
 
-These are typical 2026 project bands published on BioNixus country and FAQ pages. They are planning ranges, not a quote. Final price depends on countries, method, sample, therapy area, and language.
+These are typical 2026 project bands. They are planning ranges, not a quote. Final price depends on countries, method, sample, therapy area, and language.
 
-## Single-country qualitative
-- Price: typically $20,000–$45,000
-- Limits: one country; KOL, payer, or hospital interviews; bilingual Arabic–English where required
-- Features: discussion guide, recruitment, fieldwork, decision-ready readout
-- Best for: access barriers, message tests, launch sequencing in one market
+## Single-country study
+- Price: typically $10,000–$75,000 USD
+- Limits: one country; qualitative, quantitative, or mixed-method
+- Features: discussion guide or instrument, recruitment, fieldwork, decision-ready readout
+- Best for: a named brand in one market, including account-level or SKU-level cuts and traditional trade
+- Note: qualitative KOL or payer interviews sit toward the lower end; specialist HCP samples sit toward the upper end
 
-## Single-country quantitative or mixed-method
-- Price: typically $25,000–$75,000
-- Limits: one country; physician, pharmacist, or consumer sample sized to the decision
-- Features: instrument design, fieldwork, tables, brand vs competitor cuts at account or SKU level when the brief asks for them
-- Best for: demand, U&A, segmentation, pricing research, shopper or retail audits including traditional trade
-
-## Multi-country GCC or MENA
-- Price: typically $45,000–$120,000+
-- Limits: two or more countries (for example Saudi Arabia + UAE + Egypt); comparable design with local adaptation
+## Multi-country study
+- Price: typically $25,000–$120,000 USD
+- Limits: two or more countries; comparable design with local adaptation
 - Features: shared instrument, local recruitment, cross-country readout
-- Best for: regional launch, tender, or brand vs competitor programmes
-
-## Healthcare specialist and HEOR / HTA packages
-- Price: typically toward the upper end of the bands above; global mixed-method programmes commonly $30,000–$150,000+
-- Limits: specialist HCP incidence, ethics or hospital access, and dossier inputs drive cost
-- Features: SFDA / NICE / G-BA / HAS-aware evidence, payer mapping, budget-impact or cost-effectiveness inputs
-- Best for: market access and value evidence, not a syndicated audit feed
+- Best for: regional launch, tender, or brand versus competitor programmes (for example Saudi Arabia + UAE + Egypt)
 
 ## Retainer
 - Price: custom — scoped by country and cadence

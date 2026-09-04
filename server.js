@@ -499,7 +499,7 @@ function buildFallbackDescription(pathname) {
     return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
   }
   if (path === '/pricing') {
-    return 'BioNixus market research pricing is by project and country. Typical 2026 bands: $20k–$75k single-country, $45k–$120k+ multi-country GCC. Proposal in 48 hours.';
+    return 'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.';
   }
   if (path === '/account-level-market-research') {
     return 'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.';

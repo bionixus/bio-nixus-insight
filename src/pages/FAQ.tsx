@@ -59,7 +59,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'How much does primary healthcare market research cost?',
-    answer: 'Cost depends heavily on scope. Based on BioNixus\'s published project ranges, custom pharmaceutical and healthcare market research in the Middle East typically costs $25,000–$120,000+ per project: qualitative KOL advisory boards and payer interviews generally run toward the lower end, while multi-country quantitative physician surveys and HEOR/HTA evidence packages sit toward the upper end. Global multi-country studies (5+ markets, mixed methods) commonly run $30,000–$150,000+. Planning bands, units, and a machine-readable file are on the pricing page (/pricing and /pricing.md). Get a scoped quote by requesting a proposal.',
+    answer: 'Cost depends heavily on scope. Based on BioNixus\'s published project ranges, typical 2026 bands are $10,000–$75,000 USD for a single-country study and $25,000–$120,000 USD for a multi-country study. Qualitative KOL advisory boards and payer interviews generally run toward the lower end; mixed-method physician surveys and HEOR/HTA packages sit toward the upper end. Planning bands, units, and a machine-readable file are on the pricing page (/pricing and /pricing.md). Get a scoped quote by requesting a proposal.',
   },
   {
     question: 'How do I choose a market research partner for GCC market entry?',
