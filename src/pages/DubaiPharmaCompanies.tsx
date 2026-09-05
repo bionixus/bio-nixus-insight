@@ -1,7 +1,8 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, BarChart3, Truck, Users } from 'lucide-react';
+import { BookOpen, Building2, Globe, ShieldCheck, Pill, Truck, Users } from 'lucide-react';
+import { LegacyDirectoryChrome } from '@/components/seo/DirectoryPremium';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
@@ -76,7 +77,7 @@ const DubaiPharmaCompanies = () => {
     'Pharmaceutical companies in Dubai — MNC regional HQs in Dubai Science Park and DHCC, local manufacturers, distributors and pharmacy chains, with DHA and MOHAP context. By BioNixus.';
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -98,25 +99,43 @@ const DubaiPharmaCompanies = () => {
       <Navbar />
       <ReportReadingProgress progressId="pharma-guide-rp-dubai" />
       <main>
-        <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/pharmaceutical-companies-uae" className="hover:text-primary transition-colors">Pharmaceutical Companies in the UAE</Link><span>/</span><span className="text-foreground">Dubai</span></div></div></div>
-
-        <section className="section-padding pt-0 pb-12"><div className="container-wide max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />City Guide 2026</div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">Pharmaceutical Companies in Dubai: Regional Headquarters, Manufacturers and Distributors</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-            Pharmaceutical companies in Dubai fall into four groups: the Gulf and Middle East regional headquarters of multinationals such as AstraZeneca, Pfizer, Novartis, Sanofi, MSD, Boehringer Ingelheim, Novo Nordisk, Eli Lilly, and AbbVie, clustered in Dubai Science Park and Dubai Healthcare City; local manufacturers Globalpharma and Pharmax; licensed distributors including Pharmatrade, Al Ittihad Drug Store, and Gulf Drug; and the head offices of the Life, Aster, and BinSina pharmacy chains. Dubai is the commercial centre of the UAE pharmaceutical market — roughly USD 4.5 billion in 2026 and the fastest-growing in the GCC — even though the largest Gulf sales are booked in Saudi Arabia. This city spoke sits under the{' '}
-            <Link to="/pharmaceutical-companies-uae" className="text-primary font-medium hover:underline">pharmaceutical companies in the UAE</Link> directory and covers the Dubai-specific regulator (DHA), free-zone clusters, distribution, and how BioNixus researches Dubai accounts.
-          </p>
-          <p className="text-sm text-muted-foreground">Last updated: September 2026 &middot; Sources: MOHAP, DHA, Dubai Science Park, DHCC, company websites and filings, BioNixus MEA</p>
-          <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in Dubai: Regional Headquarters, Manufacturers and Distributors (2026).&quot; BioNixus Healthcare Market Research, Sep. 2026, <a href={CITATION_URL} className="text-primary hover:underline break-all">{CITATION_URL}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
-          <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
-
-        <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div><p className="text-3xl md:text-4xl font-display font-bold">$4.5B</p><p className="text-primary-foreground/70 text-sm mt-1">UAE pharma market (2026)</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">18</p><p className="text-primary-foreground/70 text-sm mt-1">Dubai-based companies profiled</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">2</p><p className="text-primary-foreground/70 text-sm mt-1">Regulators (MOHAP + DHA)</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">3</p><p className="text-primary-foreground/70 text-sm mt-1">Free-zone pharma clusters</p></div>
-        </div></div></section>
+        <LegacyDirectoryChrome
+          breadcrumbs={[
+            { name: 'Home', href: basePath },
+            { name: 'Pharmaceutical Companies in the UAE', href: '/pharmaceutical-companies-uae' },
+            { name: 'Dubai', href: '/pharmaceutical-companies-dubai' },
+          ]}
+          kicker="City Guide 2026"
+          h1="Pharmaceutical Companies in Dubai: Regional Headquarters, Manufacturers and Distributors"
+          lead={
+            <>
+              Pharmaceutical companies in Dubai fall into four groups: the Gulf and Middle East regional headquarters of multinationals such as AstraZeneca, Pfizer, Novartis, Sanofi, MSD, Boehringer Ingelheim, Novo Nordisk, Eli Lilly, and AbbVie, clustered in Dubai Science Park and Dubai Healthcare City; local manufacturers Globalpharma and Pharmax; licensed distributors including Pharmatrade, Al Ittihad Drug Store, and Gulf Drug; and the head offices of the Life, Aster, and BinSina pharmacy chains. Dubai is the commercial centre of the UAE pharmaceutical market — roughly USD 4.5 billion in 2026 and the fastest-growing in the GCC — even though the largest Gulf sales are booked in Saudi Arabia. This city spoke sits under the{' '}
+              <Link to="/pharmaceutical-companies-uae">pharmaceutical companies in the UAE</Link> directory and covers the Dubai-specific regulator (DHA), free-zone clusters, distribution, and how BioNixus researches Dubai accounts.
+            </>
+          }
+          metaLine="Last updated: September 2026 · Sources: MOHAP, DHA, Dubai Science Park, DHCC, company websites and filings, BioNixus MEA"
+          stats={[
+            { value: '$4.5B', label: 'UAE pharma market (2026)' },
+            { value: '18', label: 'Dubai-based companies profiled' },
+            { value: '2', label: 'Regulators (MOHAP + DHA)' },
+            { value: '3', label: 'Free-zone pharma clusters' },
+          ]}
+          jumpItems={[
+            { href: '#dubai-companies', label: 'Companies' },
+            { href: '#clusters', label: 'Clusters' },
+            { href: '#regulation', label: 'Regulation' },
+            { href: '#distribution', label: 'Distribution' },
+            { href: '#growth', label: 'Growth' },
+            { href: '#bionixus-support', label: 'Support' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+          proposalLabel="Request a Dubai proposal"
+          browseHref="#dubai-companies"
+          citationUrl={CITATION_URL}
+          citeHeadline="Pharmaceutical Companies in Dubai: Regional Headquarters, Manufacturers and Distributors (2026)"
+          citeMonthYear="Sep. 2026"
+        />
+        <ReportEarlyCtaBar config={PHARMA_CONVERSION} />
 
         <section className="section-padding py-10"><div className="container-wide max-w-5xl mx-auto">
           <GeoLLMAnswerBlock
@@ -133,19 +152,6 @@ const DubaiPharmaCompanies = () => {
         </div></section>
 
         <ReportContentWithAside config={PHARMA_CONVERSION}>
-        <section className="section-padding py-8 bg-muted/30"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
-          <div className="grid md:grid-cols-2 gap-2">
-            <a href="#dubai-companies" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> Pharmaceutical companies in Dubai (table)</a>
-            <a href="#clusters" className="text-sm text-primary hover:underline flex items-center gap-2"><BarChart3 className="w-4 h-4" /> Dubai Science Park, DHCC and Jebel Ali</a>
-            <a href="#regulation" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulation: MOHAP and DHA</a>
-            <a href="#distribution" className="text-sm text-primary hover:underline flex items-center gap-2"><Truck className="w-4 h-4" /> Distribution and pharmacy channels</a>
-            <a href="#growth" className="text-sm text-primary hover:underline flex items-center gap-2"><TrendingUp className="w-4 h-4" /> Why Dubai keeps growing</a>
-            <a href="#bionixus-support" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> How BioNixus researches Dubai</a>
-            <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently asked questions</a>
-          </div>
-        </div></section>
-
         <section className="section-padding py-16" id="dubai-companies"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical Companies in Dubai: Regional HQs, Manufacturers, Distributors and Chains</h2>
           <p className="text-muted-foreground mb-8 max-w-3xl">Companies with a Dubai head office, regional headquarters, manufacturing site, or distribution base. Julphar (Ras Al Khaimah) and Neopharma (Abu Dhabi) are covered in the UAE directory.</p>

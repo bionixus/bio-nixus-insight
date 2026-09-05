@@ -712,6 +712,22 @@ const DIRECTORY_ENTITY_COPY: Partial<Record<DirectoryEntitySlug, Partial<Directo
     footerHeadline: 'Need customer and brand data on banks in {place}?',
     footerBody: 'NPS, switching intent, product penetration and branch experience by bank — fielded with account holders and SMEs.',
   },
+  'fmcg-companies': {
+    bridgeHeadline: 'These are the FMCG manufacturers we audit in {place}',
+    bridgeBody:
+      'Launching or defending a grocery brand in {place}? BioNixus runs shopper, retailer-audit and traditional-trade studies across the houses above. Proposal within 48 hours.',
+    footerHeadline: 'Need SKU-level grocery data in {place}?',
+    footerBody:
+      'Availability, substitution, shopper mission and banner share — fielded in modern trade and the wholesale route the panel undersamples.',
+  },
+  'food-beverage-companies': {
+    bridgeHeadline: 'These are the food and beverage manufacturers we field with in {place}',
+    bridgeBody:
+      'Pricing a dairy, snack or HORECA launch in {place}? BioNixus runs buyer, distributor and food-service interviews across the plants above. Proposal within 48 hours.',
+    footerHeadline: 'Need food-service and retail data in {place}?',
+    footerBody:
+      'Listing, food-service specification and shopper preference by manufacturer — from the buyers and chefs, not a catalogue.',
+  },
   'automotive-distributors': {
     bridgeHeadline: 'These are the dealer groups we field with in {place}',
     bridgeBody:

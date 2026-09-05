@@ -1,6 +1,380 @@
 {
-  "generatedAt": "2026-09-05T11:05:16.679Z",
+  "generatedAt": "2026-09-05T12:24:43.916Z",
   "directories": [
+    {
+      "path": "/automotive-distributors-bahrain",
+      "entity": "automotive-distributors",
+      "country": "bahrain",
+      "title": "Top 16 Automotive Distributors in Bahrain (2026)",
+      "metaDescription": "Automotive distributors in Bahrain: Euro Motors, Motor City, Y.K. Almoayyed, Ebrahim K. Kanoo, National Motor Company — Toyota, BMW, causeway leak.",
+      "h1": "Automotive Distributors in Bahrain",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Bahrain Ministry of Industry and Commerce — Sijilat licensing and consumer protection",
+        "url": "https://www.moic.gov.bh/en",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/automotive-distributors-egypt",
+      "entity": "automotive-distributors",
+      "country": "egypt",
+      "title": "Top 18 Automotive Distributors in Egypt (2026)",
+      "metaDescription": "Automotive distributors in Egypt: GB Auto, Mansour, Aboul Fotouh, Bavarian Auto Group, Ezz Elarab — EGX groups, CKD plants, FX import licences, customs.",
+      "h1": "Automotive Distributors in Egypt",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Egyptian Customs Authority — import valuation, duty and release procedures",
+        "url": "https://www.customs.gov.eg/",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/automotive-distributors-kuwait",
+      "entity": "automotive-distributors",
+      "country": "kuwait",
+      "title": "Top 17 Automotive Distributors in Kuwait (2026)",
+      "metaDescription": "Automotive distributors in Kuwait: Alghanim Motors, Al-Sayer, Mohamed Naser Al-Sayer, Ali Alghanim & Sons — Toyota, GM, BMW, Chinese EVs, agency law.",
+      "h1": "Automotive Distributors in Kuwait",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Kuwait Ministry of Commerce and Industry — trade licensing and consumer protection",
+        "url": "https://moci.gov.kw/en/",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/automotive-distributors-oman",
+      "entity": "automotive-distributors",
+      "country": "oman",
+      "title": "Top 16 Automotive Distributors in Oman (2026)",
+      "metaDescription": "Automotive distributors in Oman: Saud Bahwan, Al Hashar, Suhail Bahwan, Towell Auto, Mohsin Haider Darwish — Toyota, Nissan, Mercedes, Buraimi leak.",
+      "h1": "Automotive Distributors in Oman",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Oman Ministry of Commerce, Industry and Investment Promotion — commercial licensing",
+        "url": "https://www.tejarah.gov.om/en",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/automotive-distributors-qatar",
+      "entity": "automotive-distributors",
+      "country": "qatar",
+      "title": "Top 18 Automotive Distributors in Qatar (2026)",
+      "metaDescription": "Automotive distributors in Qatar: Nasser Bin Khaled, Saleh Al Hamad Al Mana, Almuftah, Alfardan, Al Abdulghani — Mercedes, Nissan, Toyota, Salwa Road.",
+      "h1": "Automotive Distributors in Qatar",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Qatar Ministry of Commerce and Industry — commercial licensing and consumer protection",
+        "url": "https://www.moci.gov.qa/en/",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/automotive-distributors-saudi-arabia",
+      "entity": "automotive-distributors",
+      "country": "saudi-arabia",
+      "title": "Top 18 Automotive Distributors in Saudi Arabia (2026)",
+      "metaDescription": "Automotive distributors in Saudi Arabia: Abdul Latif Jameel, Aljomaih, Naghi, Alissa, Petromin, SAMACO, Al-Jabr — Toyota, GM lines, Chinese EVs, SAMA finance.",
+      "h1": "Automotive Distributors in Saudi Arabia",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Ministry of Commerce — automotive dealership assessment and consumer-protection notices",
+        "url": "https://mc.gov.sa/en/pages/default.aspx",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/automotive-distributors-turkey",
+      "entity": "automotive-distributors",
+      "country": "turkey",
+      "title": "Top 18 Automotive Distributors in Turkey (2026)",
+      "metaDescription": "Automotive distributors in Turkey: Doğuş Otomotiv, Borusan, Oyak Renault, Tofaş, Mercedes-Benz Türk, Toyota Türkiye — plants, ODMD, customs union.",
+      "h1": "Automotive Distributors in Turkey",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "ODMD — Automotive Distributors and Mobility Association (distributor register and monthly tape)",
+        "url": "https://www.odmd.org.tr/",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/automotive-distributors-uae",
+      "entity": "automotive-distributors",
+      "country": "uae",
+      "title": "Top 18 Automotive Distributors in UAE (2026)",
+      "metaDescription": "Automotive distributors in the UAE: Al-Futtaim, Al Tayer, Gargash, Arabian Automobiles, Ali & Sons, Emirates Motor Company — emirate agencies, luxury, EVs.",
+      "h1": "Automotive Distributors in the UAE",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "UAE Ministry of Economy — commercial licensing and consumer-protection framework",
+        "url": "https://www.moec.gov.ae/en",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-bahrain",
+      "entity": "banks",
+      "country": "bahrain",
+      "title": "Banks in Bahrain: NBB, ABC, CBB licensees (2026)",
+      "metaDescription": "Banks in Bahrain: NBB, BBK, Ithmaar, Al Baraka, Bank ABC, GFH, GIB and CBB — retail books, wholesale licences, BENEFIT rails.",
+      "h1": "Banks in Bahrain",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Central Bank of Bahrain (CBB) — licensed banks by retail, wholesale and Islamic class, payment-system oversight",
+        "url": "https://www.cbb.gov.bh",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-egypt",
+      "entity": "banks",
+      "country": "egypt",
+      "title": "Banks in Egypt: NBE, CIB, CBE licensed names (2026)",
+      "metaDescription": "Banks in Egypt: NBE, Banque Misr, CIB, QNB Alahli, Banque du Caire and CBE — state giants, private books, pound and FX rails.",
+      "h1": "Banks in Egypt",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Central Bank of Egypt (CBE) — licensed banks, prudential rules, pound and FX corridor, payment systems",
+        "url": "https://www.cbe.org.eg",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-france",
+      "entity": "banks",
+      "country": "france",
+      "title": "French Banks: Listed Groups, Mutuals and ACPR (2026)",
+      "metaDescription": "French banks directory: BNP Paribas, Crédit Agricole, Société Générale, BPCE, Crédit Mutuel, La Banque Postale, ACPR and Banque de France — mutuals.",
+      "h1": "Banks in France",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Autorité de contrôle prudentiel et de résolution (ACPR) — prudential supervision of banks and insurers",
+        "url": "https://acpr.banque-france.fr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-germany",
+      "entity": "banks",
+      "country": "germany",
+      "title": "German Banks: Private, Sparkassen and Cooperative (2026)",
+      "metaDescription": "German banks directory: Deutsche Bank, Commerzbank, KfW, Sparkassen, DZ Bank, ING-DiBa, BayernLB, BaFin and Bundesbank — three pillars and Hausbank.",
+      "h1": "Banks in Germany",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Federal Financial Supervisory Authority (BaFin) — supervision of German credit institutions",
+        "url": "https://www.bafin.de",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-italy",
+      "entity": "banks",
+      "country": "italy",
+      "title": "Italian Banks: Intesa, UniCredit and Regional Groups (2026)",
+      "metaDescription": "Italian banks directory: Intesa Sanpaolo, UniCredit, Banco BPM, MPS, BPER, Fineco, BancoPosta, Banca d’Italia, IVASS and FITD — popolari and bancassurance.",
+      "h1": "Banks in Italy",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Banca d’Italia — supervision of credit institutions and national central-bank functions",
+        "url": "https://www.bancaditalia.it",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-kuwait",
+      "entity": "banks",
+      "country": "kuwait",
+      "title": "Banks in Kuwait: NBK, KFH, CBK licensees (2026)",
+      "metaDescription": "Banks in Kuwait: NBK, KFH, Gulf Bank, Boubyan, Warba, Burgan and the Central Bank — conventional books, Islamic names, K-Net rails.",
+      "h1": "Banks in Kuwait",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Central Bank of Kuwait (CBK) — licensed banks, Islamic and conventional books, payment-system oversight",
+        "url": "https://www.cbk.gov.kw",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-oman",
+      "entity": "banks",
+      "country": "oman",
+      "title": "Banks in Oman: Bank Muscat, NBO, CBO list (2026)",
+      "metaDescription": "Banks in Oman: Bank Muscat, NBO, Bank Dhofar, Sohar International, Bank Nizwa and CBO — consolidation, Islamic books, Sohar corridor.",
+      "h1": "Banks in Oman",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Central Bank of Oman (CBO) — licensed banks, Islamic windows and dedicated licences, payment-system oversight",
+        "url": "https://cbo.gov.om",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-qatar",
+      "entity": "banks",
+      "country": "qatar",
+      "title": "Banks in Qatar: QNB, QIB, QCB licensed names (2026)",
+      "metaDescription": "Banks in Qatar: QNB, Commercial Bank, QIB, Doha Bank, Masraf Al Rayan, Dukhan and QCB — riyal books, Islamic names, NAPS rails.",
+      "h1": "Banks in Qatar",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Qatar Central Bank (QCB) — licensed banks, Islamic and conventional books, payment-system oversight",
+        "url": "https://www.qcb.gov.qa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-saudi-arabia",
+      "entity": "banks",
+      "country": "saudi-arabia",
+      "title": "Banks in Saudi Arabia: SNB, Al Rajhi, SAMA names (2026)",
+      "metaDescription": "Banks in Saudi Arabia: SNB, Al Rajhi, SAB, Alinma, STC Bank and SAMA — Islamic books, digital licences, Vision 2030 corporate banking.",
+      "h1": "Banks in Saudi Arabia",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Saudi Central Bank (SAMA) — licensed banks, digital-bank charters and payment-service / stored-value classes",
+        "url": "https://www.sama.gov.sa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-spain",
+      "entity": "banks",
+      "country": "spain",
+      "title": "Spanish Banks: Santander, Cajas Legacy and Banco de España (2026)",
+      "metaDescription": "Spanish banks directory: Santander, BBVA, CaixaBank, Sabadell, Bankinter, Unicaja, Openbank, Banco de España, FROB and FGD — cajas and resolution.",
+      "h1": "Banks in Spain",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Banco de España — supervision of credit institutions and national central-bank functions",
+        "url": "https://www.bde.es",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-turkey",
+      "entity": "banks",
+      "country": "turkey",
+      "title": "Banks in Turkey: Ziraat, İşbank, BDDK names (2026)",
+      "metaDescription": "Banks in Turkey: Ziraat, İşbank, Garanti BBVA, Yapı Kredi, Akbank, VakıfBank, Halkbank and BDDK — state trio, private books, BKM rails.",
+      "h1": "Banks in Turkey",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Banking Regulation and Supervision Agency (BDDK) — licensed banks and participation banks, with TCMB on monetary and FAST rails",
+        "url": "https://www.bddk.org.tr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-uae",
+      "entity": "banks",
+      "country": "uae",
+      "title": "Banks in the UAE: FAB, Emirates NBD, CBUAE list (2026)",
+      "metaDescription": "Banks in the UAE: FAB, Emirates NBD, ADCB, Mashreq, DIB, ADIB, Wio, Zand and CBUAE — onshore books, Islamic names, digital charters.",
+      "h1": "Banks in the UAE",
+      "companies": 19,
+      "regulatorSource": {
+        "name": "Central Bank of the UAE (CBUAE) — licensed banks register, digital-first and specialised charters, stored-value facilities",
+        "url": "https://www.centralbank.ae",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-uk",
+      "entity": "banks",
+      "country": "uk",
+      "title": "UK Banks: High Street, Mutuals and Challengers (2026)",
+      "metaDescription": "UK banks directory: HSBC, Barclays, Lloyds, NatWest, Nationwide, Santander UK, Starling, Monzo, PRA, FCA and Bank of England — ring-fence and mutuals.",
+      "h1": "Banks in the UK",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Prudential Regulation Authority — Bank of England prudential supervision of banks and building societies",
+        "url": "https://www.bankofengland.co.uk/prudential-regulation",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-usa",
+      "entity": "banks",
+      "country": "usa",
+      "title": "US Banks: Money-Center, Community and Digital (2026)",
+      "metaDescription": "US banks directory: JPMorgan, Bank of America, Wells Fargo, Citi, US Bank, PNC, Capital One, Truist, OCC, Fed and FDIC — charters, community banks, digital.",
+      "h1": "Banks in the USA",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Office of the Comptroller of the Currency — national bank and federal savings association supervision",
+        "url": "https://www.occ.gov",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
     {
       "path": "/biotech-companies-egypt",
       "entity": "biotech-companies",
@@ -151,6 +525,312 @@
         "asOf": "2026-09-04"
       },
       "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-bahrain",
+      "entity": "fmcg-companies",
+      "country": "bahrain",
+      "title": "Top 18 FMCG Companies in Bahrain (2026)",
+      "metaDescription": "FMCG companies in Bahrain: Awal Dairy, Delmon Poultry, Bahrain Flour Mills, Unilever and P&G Gulf affiliates, Alosra, Lulu and BMMI — grocery basket and channels.",
+      "h1": "FMCG Companies in Bahrain",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Bahrain Ministry of Industry and Commerce — Consumer Protection Directorate",
+        "url": "https://www.moic.gov.bh",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-indonesia",
+      "entity": "fmcg-companies",
+      "country": "indonesia",
+      "title": "Top 18 FMCG Companies in Indonesia (2026)",
+      "metaDescription": "FMCG companies in Indonesia: Unilever Indonesia, Indofood, Wings, Mayora, Kalbe Consumer, Alfamart and Indomaret — warung trade, minimarket duopoly, BPOM.",
+      "h1": "FMCG Companies in Indonesia",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Badan Pengawas Obat dan Makanan (BPOM) — food, drink and cosmetics registration",
+        "url": "https://www.pom.go.id",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-jordan",
+      "entity": "fmcg-companies",
+      "country": "jordan",
+      "title": "Top 18 FMCG Companies in Jordan (2026)",
+      "metaDescription": "FMCG companies in Jordan: Siniora, Al-Nabil, Jordan Dairy, NutriDar, Unilever Levant, Zalloum and Fine — neighbourhood grocers, Levant plants, JFDA.",
+      "h1": "FMCG Companies in Jordan",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Jordan Food and Drug Administration (JFDA) — foods, drinks and cosmetics registration",
+        "url": "https://www.jfda.jo",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-kenya",
+      "entity": "fmcg-companies",
+      "country": "kenya",
+      "title": "Top 18 FMCG Companies in Kenya (2026)",
+      "metaDescription": "FMCG companies in Kenya: Bidco Africa, Brookside, Kevian, Unilever Kenya, EABL, Naivas and Quickmart — duka trade, post-Nakumatt grocery, KEBS.",
+      "h1": "FMCG Companies in Kenya",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Kenya Bureau of Standards (KEBS) — standards marks for foods, drinks and cosmetics",
+        "url": "https://www.kebs.org",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-mexico",
+      "entity": "fmcg-companies",
+      "country": "mexico",
+      "title": "Top 18 FMCG Companies in Mexico (2026)",
+      "metaDescription": "FMCG companies in Mexico: Bimbo, Coca-Cola Femsa, Grupo Lala, La Costeña, Unilever Mexico, P&G Mexico and Walmart Mexico — abarrotes, OXXO, COFEPRIS.",
+      "h1": "FMCG Companies in Mexico",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Comisión Federal para la Protección contra Riesgos Sanitarios (COFEPRIS) — foods, drinks and cosmetics",
+        "url": "https://www.gob.mx/cofepris",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-morocco",
+      "entity": "fmcg-companies",
+      "country": "morocco",
+      "title": "Top 18 FMCG Companies in Morocco (2026)",
+      "metaDescription": "FMCG companies in Morocco: Centrale Danone, Cosumar, Lesieur Cristal, Unilever Maghreb, Label’Vie and Marjane — hanout trade, sugar-oil-dairy core, ONSSA.",
+      "h1": "FMCG Companies in Morocco",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Office National de Sécurité Sanitaire des Produits Alimentaires (ONSSA) — food establishments and products",
+        "url": "https://www.onssa.gov.ma",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-nigeria",
+      "entity": "fmcg-companies",
+      "country": "nigeria",
+      "title": "Top 18 FMCG Companies in Nigeria (2026)",
+      "metaDescription": "FMCG companies in Nigeria: Dangote Sugar, Flour Mills, Nestlé Nigeria, Unilever Nigeria, PZ Cussons, NBC, NASCON and Dufil — open-market trade, NGX names, NAFDAC.",
+      "h1": "FMCG Companies in Nigeria",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "National Agency for Food and Drug Administration and Control (NAFDAC) — foods, drinks and cosmetics registers",
+        "url": "https://www.nafdac.gov.ng",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-pakistan",
+      "entity": "fmcg-companies",
+      "country": "pakistan",
+      "title": "Top 18 FMCG Companies in Pakistan (2026)",
+      "metaDescription": "FMCG companies in Pakistan: Unilever Pakistan, Nestlé Pakistan, Engro Foods, National Foods, Tapal, Colgate Pakistan and Imtiaz — kiryana trade, masala aisle, channels.",
+      "h1": "FMCG Companies in Pakistan",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Pakistan Standards and Quality Control Authority (PSQCA) — standards and conformity marks",
+        "url": "https://www.psqca.com.pk",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-south-africa",
+      "entity": "fmcg-companies",
+      "country": "south-africa",
+      "title": "Top 18 FMCG Companies in South Africa (2026)",
+      "metaDescription": "FMCG companies in South Africa: Tiger Brands, Pioneer Foods, RCL Foods, Unilever SA, Clover, Shoprite and Massmart — spaza trade, listed industrials, channels.",
+      "h1": "FMCG Companies in South Africa",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "National Department of Health — Food Control (Foodstuffs, Cosmetics and Disinfectants Act)",
+        "url": "https://www.health.gov.za",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-turkey",
+      "entity": "fmcg-companies",
+      "country": "turkey",
+      "title": "Top 18 FMCG Companies in Turkey (2026)",
+      "metaDescription": "FMCG companies in Turkey: Ülker, Eczacıbaşı Tüketim, Hayat Kimya, Coca-Cola İçecek, Unilever, P&G, BIM and Bizim Toptan — grocery basket, discount trade, channels.",
+      "h1": "FMCG Companies in Turkey",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Republic of Türkiye Ministry of Agriculture and Forestry — food establishments and Turkish Food Codex",
+        "url": "https://www.tarimorman.gov.tr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-bahrain",
+      "entity": "food-beverage-companies",
+      "country": "bahrain",
+      "title": "Top 16 Food & Beverage Companies in Bahrain (2026)",
+      "metaDescription": "Bahrain food-and-beverage plants: Awal Dairy, Bahrain Flour Mills, Delmon Poultry, Trafco, bottlers and Health Food Control. Island halls, not detergents.",
+      "h1": "Food & Beverage Companies in Bahrain",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Ministry of Health (Bahrain) — Public Health Directorate, Food Control Section, establishment inspection and import permissions",
+        "url": "https://www.moh.gov.bh",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-egypt",
+      "entity": "food-beverage-companies",
+      "country": "egypt",
+      "title": "Top 18 Food & Beverage Companies in Egypt (2026)",
+      "metaDescription": "Egyptian food-and-beverage plants: Juhayna, Edita, Domty, Obour Land, Beyti, Coca-Cola and PepsiCo halls plus NFSA control. Manufacture, not the full FMCG trolley.",
+      "h1": "Food & Beverage Companies in Egypt",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "National Food Safety Authority (NFSA) — facility licensing, import control and mandatory food-safety criteria (Law 1 of 2017)",
+        "url": "https://nfsa.gov.eg",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-kuwait",
+      "entity": "food-beverage-companies",
+      "country": "kuwait",
+      "title": "Top 16 Food & Beverage Companies in Kuwait (2026)",
+      "metaDescription": "Kuwait food-and-beverage manufacturers: KDD, Mezzan, Kuwait Flour Mills, Americana halls, Kout Fresh Productions and PAFN. Plants and commissaries, not detergents.",
+      "h1": "Food & Beverage Companies in Kuwait",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Public Authority for Food and Nutrition (PAFN) — food-establishment licensing, import clearance and nutrition control (Law 112 of 2013)",
+        "url": "https://www.pafn.gov.kw",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-oman",
+      "entity": "food-beverage-companies",
+      "country": "oman",
+      "title": "Top 17 Food & Beverage Companies in Oman (2026)",
+      "metaDescription": "Omani food-and-beverage plants: A’Safani tuna, Oman Flour Mills, A’Saffa poultry, Mazoon Dairy, Areej oils, Tanuf water and FSQC licences under MAFWR.",
+      "h1": "Food & Beverage Companies in Oman",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Food Safety and Quality Center (FSQC), Ministry of Agriculture, Fisheries and Water Resources — national food-safety file (Royal Decrees 24/2019 and 92/2020)",
+        "url": "https://www.mafwr.gov.om",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-qatar",
+      "entity": "food-beverage-companies",
+      "country": "qatar",
+      "title": "Top 18 Food & Beverage Companies in Qatar (2026)",
+      "metaDescription": "Qatar food-and-beverage plants: Baladna, Qatar Flour Mills, Widam, Mazzraty, Hassad, water halls and MOPH Food Safety. Local factories after 2017, not fuel or feed.",
+      "h1": "Food & Beverage Companies in Qatar",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Ministry of Public Health (Qatar) — Food Safety Department, establishment inspection and port food control (Law 8 of 1990)",
+        "url": "https://www.moph.gov.qa/english",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-saudi-arabia",
+      "entity": "food-beverage-companies",
+      "country": "saudi-arabia",
+      "title": "Top 18 Food & Beverage Companies in Saudi Arabia (2026)",
+      "metaDescription": "Saudi food-and-beverage plants: Almarai, SADAFCO, NADEC, Tanmiah, Halwani, Americana Foods, Nestlé lines and SFDA licences. Manufacture and HORECA, not detergents.",
+      "h1": "Food & Beverage Companies in Saudi Arabia",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Saudi Food and Drug Authority (SFDA) — Food Sector, food-manufacture licensing and imported-food control",
+        "url": "https://www.sfda.gov.sa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-turkey",
+      "entity": "food-beverage-companies",
+      "country": "turkey",
+      "title": "Top 18 Food & Beverage Companies in Turkey (2026)",
+      "metaDescription": "Turkish food-and-beverage manufacturers: Ülker, Şölen, Pınar, Sütaş, Anadolu Efes, Coca-Cola İçecek, Tat Gıda and Tarım food control. Plants, not a grocery trolley.",
+      "h1": "Food & Beverage Companies in Turkey",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Ministry of Agriculture and Forestry (Türkiye) — General Directorate of Food and Control, Turkish Food Codex and establishment inspection",
+        "url": "https://www.tarimorman.gov.tr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-uae",
+      "entity": "food-beverage-companies",
+      "country": "uae",
+      "title": "Top 18 Food & Beverage Companies in UAE (2026)",
+      "metaDescription": "UAE food-and-beverage manufacturers: Agthia, Al Ain Farms, Al Rawabi, IFFCO, Mai Dubai, Americana, Unilever Food Solutions, ADAFSA and Dubai Municipality halls.",
+      "h1": "Food & Beverage Companies in the UAE",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Abu Dhabi Agriculture and Food Safety Authority (ADAFSA) — food safety, farm inspection and handler training (successor to ADFCA)",
+        "url": "https://www.adafsa.gov.ae",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -702,12 +1382,12 @@
       "path": "/pharmaceutical-companies-france",
       "entity": "pharmaceutical-companies",
       "country": "france",
-      "title": "Top 16 Pharmaceutical Companies in France (2026)",
-      "metaDescription": "Pharmaceutical companies in France: Sanofi, Servier, Ipsen, Pierre Fabre, Théa, Pfizer, Novartis, Roche and ANSM — HAS ASMR, CEPS price, officines.",
+      "title": "Top 18 Pharmaceutical Companies in France (2026)",
+      "metaDescription": "Pharmaceutical companies in France: Sanofi, Servier, Pierre Fabre, Ipsen, Théa, ANSM, HAS and CEPS — transparency, prices, early access.",
       "h1": "Pharmaceutical Companies in France",
-      "companies": 16,
+      "companies": 18,
       "regulatorSource": {
-        "name": "Agence nationale de sécurité du médicament et des produits de santé (ANSM) — authorised medicines and establishments",
+        "name": "Agence nationale de sécurité du médicament et des produits de santé (ANSM) — authorised medicines and inspected establishments",
         "url": "https://ansm.sante.fr",
         "asOf": "2026-09-04"
       },
@@ -1500,6 +2180,24 @@
       "kind": "entity",
       "title": "Pharmaceutical Distributors by Country (2026 Directories) | BioNixus",
       "metaDescription": "Pharmaceutical distributor directories by country: licensed agents, wholesalers, public buyers and cold-chain 3PLs across the Gulf, Egypt, Levant, Turkey and Pakistan.",
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/banks",
+      "kind": "entity",
+      "title": "Banks by Country (2026 Directories) | BioNixus",
+      "metaDescription": "Bank directories by country: licensed commercial, Islamic and digital banks across the Gulf, Egypt, Turkey, the United States and G5 Europe — regulators and networks.",
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/fmcg-companies",
+      "kind": "entity",
+      "title": "FMCG Companies by Country (2026 Directories) | BioNixus",
+      "metaDescription": "FMCG company directories by country: local manufacturers, MNC affiliates and modern-versus-traditional trade partners across the Gulf, Turkey, Africa and Asia.",
       "lastmod": "2026-09-03",
       "priority": "0.86",
       "changefreq": "weekly"

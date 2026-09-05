@@ -9,13 +9,8 @@ import {
   Globe,
   ShieldCheck,
   Pill,
-  TrendingUp,
   Truck,
   Users,
-  ArrowLeft,
-  Calendar,
-  MapPin,
-  Clock,
   AlignLeft,
   List,
   ArrowUpRight,
@@ -38,6 +33,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { LegacyDirectoryChrome } from '@/components/seo/DirectoryPremium';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import { buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
@@ -250,7 +246,7 @@ const KuwaitPharmaCompanies = () => {
     })),
   };
 return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>Top 15 Pharmaceutical Companies in Kuwait (2026 Ranked List)</title>
         <meta
@@ -299,69 +295,48 @@ return (
       />
       <ReportReadingProgress progressId="kuwait-pharma-guide-rp" />
       <Navbar />
-      <main className="bg-background">
-        <header
-          className="relative pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden scroll-mt-0"
-          style={{ background: 'linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%)' }}
-        >
-          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} aria-hidden />
-          <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.06] pointer-events-none" style={{ background: 'hsl(var(--accent))' }} aria-hidden />
-          <div className="max-w-screen-xl mx-auto px-6 md:px-10 relative z-10">
-            <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-white/50 mb-6" aria-label="Breadcrumb">
-              <Link to={basePath} className="hover:text-white/80 transition-colors">
-                Home
-              </Link>
-              <span className="text-white/25" aria-hidden>/</span>
-              <Link to="/resources" className="hover:text-white/80 transition-colors">
-                Resources
-              </Link>
-              <span className="text-white/25" aria-hidden>/</span>
-              <span className="text-white/70">Pharmaceutical companies in Kuwait</span>
-            </nav>
-            <Link to="/resources" className="inline-flex items-center gap-1.5 text-white/55 hover:text-white/85 text-sm mb-7 transition-colors">
-              <ArrowLeft className="w-3.5 h-3.5" aria-hidden /> Back to resources
-            </Link>
-            <div className="mb-4">
-              <span
-                className="inline-flex px-3 py-1 text-[10px] font-extrabold tracking-[0.12em] uppercase rounded-sm"
-                style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}
-              >
-                Healthcare market intelligence
-              </span>
-            </div>
-            <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] tracking-[-0.02em] text-white max-w-4xl mb-3 text-balance">
-              Pharmaceutical companies in Kuwait
-            </h1>
-            <p className="text-lg text-white/80 max-w-3xl mb-6">
-              Industry guide &amp; top medical distributors (2026)
-            </p>
-            <p className="text-[17px] text-white/70 leading-relaxed max-w-3xl mb-8">
-              A premium reference for pharmaceutical and life sciences leaders mapping the Kuwait market — importer–wholesaler footprint, pharmaceutical registration pathways with Kuwait MOH, tender-centric government demand, distributor dynamics, and how BioNixus delivers Kuwait-specific physician, payer, and market access{' '}
-              <Link to="/healthcare-market-research" className="text-accent underline underline-offset-2 hover:no-underline">
-                healthcare market research
-              </Link>
+      <main>
+        <LegacyDirectoryChrome
+          breadcrumbs={[
+            { name: 'Home', href: basePath },
+            { name: 'Resources', href: '/resources' },
+            { name: 'Pharmaceutical companies in Kuwait', href: '/pharmaceutical-companies-kuwait' },
+          ]}
+          kicker="Healthcare market intelligence"
+          h1="Pharmaceutical companies in Kuwait"
+          lead={
+            <>
+              Industry guide &amp; top medical distributors (2026). A premium reference for pharmaceutical and life sciences leaders mapping the Kuwait market — importer–wholesaler footprint, pharmaceutical registration pathways with Kuwait MOH, tender-centric government demand, distributor dynamics, and how BioNixus delivers Kuwait-specific physician, payer, and market access{' '}
+              <Link to="/healthcare-market-research">healthcare market research</Link>
               . For firm rankings, see{' '}
-              <Link to="/insights/top-healthcare-market-research-companies-kuwait-2026" className="text-accent underline underline-offset-2 hover:no-underline">
+              <Link to="/insights/top-healthcare-market-research-companies-kuwait-2026">
                 top healthcare market research companies in Kuwait (2026)
               </Link>
               .
-            </p>
-            <div className="flex flex-wrap items-center text-[13px] text-white/55">
-              <div className="flex items-center gap-1.5 pr-4 border-r border-white/20">
-                <Calendar className="w-3 h-3 opacity-60 shrink-0" aria-hidden />
-                <strong className="text-white/85 font-medium">Updated May 2026</strong>
-              </div>
-              <div className="flex items-center gap-1.5 px-4 border-r border-white/20">
-                <MapPin className="w-3 h-3 opacity-60 shrink-0" aria-hidden />
-                <strong className="text-white/85 font-medium">Kuwait</strong>
-              </div>
-              <div className="flex items-center gap-1.5 pl-4">
-                <Clock className="w-3 h-3 opacity-60 shrink-0" aria-hidden />
-                <strong className="text-white/85 font-medium">~14 min read</strong>
-              </div>
-            </div>
-          </div>
-        </header>
+            </>
+          }
+          metaLine="Updated May 2026"
+          stats={[
+            { value: '$1.2B', label: 'Pharmaceutical market value' },
+            { value: '8.4%', label: 'YoY growth' },
+            { value: '4.9M', label: 'Population' },
+            { value: '$245', label: 'Pharma spending per capita' },
+          ]}
+          jumpItems={[
+            { href: '#market-overview', label: 'Overview' },
+            { href: '#top-medical-distributors', label: 'Distributors' },
+            { href: '#top-companies', label: 'Companies' },
+            { href: '#companies-by-category', label: 'Categories' },
+            { href: '#regulatory-landscape', label: 'Regulator' },
+            { href: '#distribution-channels', label: 'Channels' },
+            { href: '#growth-drivers', label: 'Drivers' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+          proposalLabel="Request a Kuwait proposal"
+          citationUrl={citationUrl}
+          citeHeadline="Pharmaceutical Companies in Kuwait: Top Medical Distributors, MNCs & Regulatory Guide 2026"
+          citeMonthYear="May 2026"
+        />
 
         <PharmaCompaniesQuickAnswer
           country="kuwait"
@@ -418,49 +393,11 @@ return (
 
 <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mb-10" />
 
-              <div className="mb-10 rounded-2xl border border-border bg-gradient-to-br from-primary/[0.04] via-background to-muted/40 p-6 md:p-8 shadow-sm">
-                <p className="text-[11px] font-extrabold uppercase tracking-[0.1em] text-primary mb-4">Kuwait pharmaceutical snapshot</p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
-                  <div>
-                    <p className="font-display text-2xl md:text-3xl font-bold text-primary">$1.2B</p>
-                    <p className="text-muted-foreground text-xs mt-1">Pharmaceutical market value</p>
-                  </div>
-                  <div>
-                    <p className="font-display text-2xl md:text-3xl font-bold text-primary">8.4%</p>
-                    <p className="text-muted-foreground text-xs mt-1">YoY growth</p>
-                  </div>
-                  <div>
-                    <p className="font-display text-2xl md:text-3xl font-bold text-primary">4.9M</p>
-                    <p className="text-muted-foreground text-xs mt-1">Population</p>
-                  </div>
-                  <div>
-                    <p className="font-display text-2xl md:text-3xl font-bold text-primary">$245</p>
-                    <p className="text-muted-foreground text-xs mt-1">Pharma spending per capita</p>
-                  </div>
-                </div>
-              </div>
-
               <blockquote className="blog-pull-quote mb-12">
                 <p className="font-display text-xl italic leading-relaxed text-primary m-0">
                   Because nearly all medicines are imported, importer–distributors sit at the centre of Kuwait tenders, hospital formulary access, and retail coverage — where specialist healthcare market research accelerates partner and launch decisions.
                 </p>
               </blockquote>
-
-              <nav className="mb-14 rounded-xl overflow-hidden border border-border shadow-sm" aria-label="Table of contents">
-                <div className="flex items-center gap-2 px-5 py-3.5 bg-muted/70 border-b border-border">
-                  <List className="w-3.5 h-3.5 text-primary" aria-hidden />
-                  <span className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-primary">In this guide</span>
-                  <span className="ml-auto text-[11px] text-muted-foreground">{KUWAIT_PHARMA_GUIDE_TOC.length} sections</span>
-                </div>
-                <div className="p-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 bg-background/80">
-                  {KUWAIT_PHARMA_GUIDE_TOC.map((item, i) => (
-                    <a key={item.href} href={item.href} className="flex items-start gap-2 text-[13px] text-primary hover:text-accent transition-colors group leading-snug scroll-mt-28">
-                      <span className="blog-toc-num group-hover:bg-accent transition-colors">{i + 1}</span>
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-              </nav>
 
               <div className="blog-article-body">
 
