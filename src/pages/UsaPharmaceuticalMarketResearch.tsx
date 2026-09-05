@@ -103,6 +103,7 @@ const jsonLd = [
     description:
       'US pharmaceutical market research: FDA-aligned HCP surveys, PBM and CMS payer studies, IRA impact research, and KOL mapping across major AMCs.',
     url: PAGE_URL,
+    image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
     dateModified: '2026-09-05',
     author: personAuthorJsonLd(PAGE_AUTHOR),

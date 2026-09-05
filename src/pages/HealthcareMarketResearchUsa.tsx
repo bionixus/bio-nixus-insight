@@ -81,6 +81,7 @@ const jsonLd = [
     description:
       'USA healthcare market research: IRB-compliant HCP surveys, KOL mapping, PBM and CMS payer studies, and HEOR evidence for FDA-aligned launch teams.',
     url: `https://www.bionixus.com${canonicalPath}`,
+    image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
     dateModified: '2026-09-05',
     author: personAuthorJsonLd(PAGE_AUTHOR),
