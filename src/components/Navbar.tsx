@@ -110,67 +110,67 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Language Selector & CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <SiteSearch variant="icon" />
-            <Link
-              to={globalSitesHref}
-              aria-label={ui.nav.globalSites}
-              className="group relative p-2 rounded-lg border border-border bg-background text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
-            >
-              <Globe2 className="w-4 h-4" />
-              <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs text-background opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
-                {ui.nav.globalSites}
-              </span>
-            </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                type="button"
-                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                aria-label={`${ui.nav.language}: ${currentLang?.name ?? 'English'}`}
+          <div className="flex items-center gap-2 md:gap-4">
+            <SiteSearch variant="icon" onNavigate={() => setIsOpen(false)} />
+            <div className="hidden md:flex items-center gap-4">
+              <Link
+                to={globalSitesHref}
+                aria-label={ui.nav.globalSites}
+                className="group relative p-2 rounded-lg border border-border bg-background text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
               >
-                <span aria-hidden>{currentLang?.flag}</span>
-                <span className="text-foreground/80">{currentLang?.code.toUpperCase()}</span>
-                <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" aria-hidden />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="min-w-[150px]">
-                {languages.map((lang) => (
-                  <DropdownMenuItem
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className={`cursor-pointer ${language === lang.code ? 'bg-muted' : ''}`}
-                  >
-                    <span className="mr-2">{lang.flag}</span>
-                    {lang.name}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+                <Globe2 className="w-4 h-4" />
+                <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs text-background opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
+                  {ui.nav.globalSites}
+                </span>
+              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  type="button"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  aria-label={`${ui.nav.language}: ${currentLang?.name ?? 'English'}`}
+                >
+                  <span aria-hidden>{currentLang?.flag}</span>
+                  <span className="text-foreground/80">{currentLang?.code.toUpperCase()}</span>
+                  <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" aria-hidden />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="min-w-[150px]">
+                  {languages.map((lang) => (
+                    <DropdownMenuItem
+                      key={lang.code}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={`cursor-pointer ${language === lang.code ? 'bg-muted' : ''}`}
+                    >
+                      <span className="mr-2">{lang.flag}</span>
+                      {lang.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-            <Link
-              to={contactPath}
-              className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
-              aria-current={isActiveHref(contactPath) ? 'page' : undefined}
+              <Link
+                to={contactPath}
+                className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
+                aria-current={isActiveHref(contactPath) ? 'page' : undefined}
+              >
+                {t.nav.contact}
+              </Link>
+            </div>
+
+            <button
+              type="button"
+              className="md:hidden p-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              {...(isOpen ? { 'aria-controls': 'mobile-primary-nav' } : {})}
+              aria-label={isOpen ? ui.nav.closeMenu : ui.nav.openMenu}
             >
-              {t.nav.contact}
-            </Link>
+              {isOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="md:hidden p-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-expanded={isOpen}
-            {...(isOpen ? { 'aria-controls': 'mobile-primary-nav' } : {})}
-            aria-label={isOpen ? ui.nav.closeMenu : ui.nav.openMenu}
-          >
-            {isOpen ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
-              <Menu className="w-6 h-6 text-foreground" />
-            )}
-          </button>
         </div>
 
         {/* Mobile Menu */}
@@ -180,7 +180,6 @@ const Navbar = () => {
             className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in"
           >
             <div className="flex flex-col gap-4">
-              <SiteSearch variant="mobile" onNavigate={() => setIsOpen(false)} />
               {navItems.map((item) => (
                 <Link
                   key={item.key}

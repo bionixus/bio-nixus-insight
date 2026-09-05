@@ -1,4 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Loader2, Search } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
@@ -47,6 +48,7 @@ export function SiteSearch({ variant = 'icon', onNavigate }: SiteSearchProps) {
   const [loading, setLoading] = useState(false);
   const [loadError, setLoadError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const navigatingRef = useRef(false);
   const listId = useId();
 
   useEffect(() => {
@@ -85,10 +87,21 @@ export function SiteSearch({ variant = 'icon', onNavigate }: SiteSearchProps) {
   const readyQuery = query.trim().length >= 2;
 
   const go = (path: string) => {
-    setOpen(false);
-    setQuery('');
+    if (navigatingRef.current) return;
+    navigatingRef.current = true;
+    inputRef.current?.blur();
+    // Commit the close before routing so Radix can drop iOS scroll-lock / inert.
+    // A same-tick <Link> inside the dialog updates the URL on mobile but leaves
+    // the previous page painted.
+    flushSync(() => {
+      setQuery('');
+      setOpen(false);
+    });
     onNavigate?.();
-    navigate(path);
+    window.setTimeout(() => {
+      navigatingRef.current = false;
+      navigate(path);
+    }, 50);
   };
 
   const triggerClass =
@@ -96,7 +109,7 @@ export function SiteSearch({ variant = 'icon', onNavigate }: SiteSearchProps) {
       ? 'hidden lg:flex items-center gap-2 min-w-[220px] h-10 px-3 rounded-lg border border-border bg-background text-sm text-foreground/70 hover:border-[#C9A84C]/40 hover:text-foreground transition-colors'
       : variant === 'mobile'
         ? 'flex w-full items-center gap-2 min-h-11 px-3 rounded-lg border border-border bg-background text-sm text-foreground/80'
-        : 'group relative p-2 rounded-lg border border-border bg-background text-foreground/80 hover:bg-muted hover:text-foreground transition-colors';
+        : 'group relative inline-flex items-center justify-center p-2 min-h-11 min-w-11 rounded-lg border border-border bg-background text-foreground/80 hover:bg-muted hover:text-foreground transition-colors md:min-h-9 md:min-w-9';
 
   return (
     <>
@@ -130,7 +143,14 @@ export function SiteSearch({ variant = 'icon', onNavigate }: SiteSearchProps) {
           if (!next) setQuery('');
         }}
       >
-        <DialogContent className="overflow-hidden gap-0 p-0 max-w-[40rem] border-[#1A2A44]/20 shadow-[0_24px_80px_rgba(12,27,51,0.28)] [&>button]:text-white [&>button]:hover:text-[#E8C56A] [&>button]:opacity-80">
+        <DialogContent
+          className="overflow-hidden gap-0 p-0 max-w-[40rem] border-[#1A2A44]/20 shadow-[0_24px_80px_rgba(12,27,51,0.28)] [&>button]:text-white [&>button]:hover:text-[#E8C56A] [&>button]:opacity-80"
+          onOpenAutoFocus={(event) => {
+            event.preventDefault();
+            inputRef.current?.focus();
+          }}
+          onCloseAutoFocus={(event) => event.preventDefault()}
+        >
           <DialogTitle className="sr-only">{copy.searchTitle}</DialogTitle>
           <DialogDescription className="sr-only">{copy.searchHint}</DialogDescription>
           <div className="bg-[#0C1B33] px-5 pt-5 pb-4">
@@ -173,16 +193,9 @@ export function SiteSearch({ variant = 'icon', onNavigate }: SiteSearchProps) {
                       to={path}
                       role="option"
                       className="flex items-start gap-3 px-5 py-2.5 hover:bg-[#C9A84C]/10 focus-visible:bg-[#C9A84C]/10 outline-none"
-                      onClick={() => {
-                        setOpen(false);
-                        setQuery('');
-                        onNavigate?.();
-                      }}
-                      onKeyDown={(event) => {
-                        if (event.key === 'Enter') {
-                          event.preventDefault();
-                          go(path);
-                        }
+                      onClick={(event) => {
+                        event.preventDefault();
+                        go(path);
                       }}
                     >
                       <ArrowUpRight className="w-4 h-4 mt-0.5 shrink-0 text-[#C9A84C]" aria-hidden />
