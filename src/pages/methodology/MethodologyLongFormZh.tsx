@@ -1,147 +1,197 @@
 import type { JSX } from 'react';
-import { Link } from 'react-router-dom';
 import type { Language } from '@/lib/i18n';
-import { methodologyLocalizedPath as loc } from './methodologyLocalizedPath';
+import { MethodologyLongFormLayout, type MethodologyLongFormCopy } from './MethodologyLongFormLayout';
 
 type Props = { lang: Language };
 
+export const METHODOLOGY_ZH_FAQ = [
+  {
+    question: 'BioNixus 对医疗健康与消费品研究是否使用同一套方法？',
+    answer:
+      '是的——治理骨架相同：以决策为先的设计、核验抽样、现场协议、多阶段校验、伦理，以及给行动者看的报告。受访者、守则与表格颗粒度会变。医疗项目纲要按 BHBIA、EphMRA 与药物警戒规则招募医生、支付方与医院账户。消费品项目纲要按 ESOMAR 与当地消费者研究守则招募购物者、品类采购与具名零售账户。',
+  },
+  {
+    question: '如何核验医疗健康样本？',
+    answer:
+      '医疗健康样本需对照监管注册核验执照、确认专科，并通过机构名录核验执业场所。我们从已核验的医生库、医院登记与专科协会名册招募——不用开放互联网自愿池。每季度刷新，剔除迁出或已退休的医生。',
+  },
+  {
+    question: '消费品与传统渠道研究如何抽样？',
+    answer:
+      '消费品样本围绕真正出量的账户与渠道构建——现代渠道、独立药店与杂货店、传统小店与具名经销商——若项目需要家庭或购物篮证据，再加购物者与采购配额。筛查问卷在进场前审阅。当联合面板对该渠道抽样不足时，使用神秘顾客、账户拜访与拦截访问。',
+  },
+  {
+    question: '现场执行有哪些质量控制？',
+    answer:
+      '每个项目都有招募周期、合规酬金、访谈窗口与配额缺口升级的协议。定量问卷实时监控完成时长、中途退出与直线作答。定性场次在取得同意后录音、逐字转录，并在 24 小时内复盘。多市场项目每日站会，捕捉翻译或招募漂移。',
+  },
+  {
+    question: '如何处理 GDPR 与当地数据保护？',
+    answer:
+      '项目遵循 GDPR、英国数据保护法、ESOMAR 指引及当地法律——包括沙特 PDPL、阿联酋联邦数据保护法与科威特 CITRA。医疗工作另循 BHBIA 与 EphMRA。收集前取得同意，数据假名化；未经额外随访同意，不向客户提供可识别信息。',
+  },
+  {
+    question: 'BioNixus 方法报告包含什么？',
+    answer:
+      '每份交付先给出核心发现与建议行动，再给支撑数据。定量包含样本表、加权、置信区间与问卷。定性包含主题分析与匿名逐字稿。追踪项目可含看板。医疗卷宗可含 HTA 附录；消费品包含品牌与渠道切片，供营销负责人提交商务总监。',
+  },
+] as const;
+
+export const METHODOLOGY_ZH_COPY: MethodologyLongFormCopy = {
+  faqTitle: '常见问题',
+  faq: METHODOLOGY_ZH_FAQ,
+  theatre: {
+    eyebrow: '同一骨架',
+    h2: '医疗健康与消费品共用方法，不共用受访者',
+    leadBefore: 'BioNixus 是一手市场研究公司。同一套六项控制——设计、抽样、现场、校验、伦理与报告——既用于',
+    healthcareLink: '医疗健康市场研究',
+    leadMid: '，也用于消费品或',
+    industryLink: '行业',
+    leadAfter: '研究。改变的是样本里是谁、哪部守则约束酬金，以及表格要切到多细。',
+    caption: 'BioNixus 方法在医疗健康与消费品中的应用对照',
+    controlCol: '控制项',
+    healthcareCol: '医疗健康',
+    consumerCol: '消费品及其他行业',
+    rows: [
+      {
+        cut: '我们访谈谁',
+        healthcare: '医生、支付方、KOL、医院与药店账户',
+        consumer: '购物者、品类采购、零售商、经销商、传统渠道',
+      },
+      {
+        cut: '如何找到他们',
+        healthcare: '执照注册、医院网络、专科协会',
+        consumer: '具名账户、渠道名单、拦截、神秘顾客、经同意的再联系',
+      },
+      {
+        cut: '约束工作的守则',
+        healthcare: 'BHBIA、EphMRA、药物警戒、公允市场价值酬金',
+        consumer: 'ESOMAR、当地消费者研究守则、可审计激励',
+      },
+      {
+        cut: '交付必须经得起',
+        healthcare: '医学、准入与 HTA 审查',
+        consumer: '品牌、渠道与商务总监审视',
+      },
+    ],
+  },
+  design: {
+    h2: '研究设计原则',
+    lead:
+      '每个项目都从把商业问题翻译成研究真正能回答的问题开始。我们与将使用证据的人坐下来——医疗项目是品牌、医学与市场准入；消费品项目是品牌、品类与渠道——目标足够具体以驱动决策，又足够灵活以便在早期数据指向别处时纠偏。围着错误问题设计的研究又快又便宜，也毫无用处。',
+    quantitative: {
+      title: '定量',
+      body:
+        '结构化问卷、经验证量表，以及在权衡重要时使用联合分析或 MaxDiff——医生的治疗选择或购物者的包装选择。工具至少对五名受访者做认知预测试。',
+      link: '定量研究',
+    },
+    qualitative: {
+      title: '定性',
+      body:
+        '围绕决策树逻辑的半结构提纲。医疗：医生访谈、支付方顾问会、医院民族志。消费品：购物者深访、零售与经销商访谈、店内观察。提纲在前两到三场后迭代。',
+      link: '定性研究',
+    },
+    mixed: {
+      title: '混合方法',
+      body:
+        '当项目既要统计颗粒又要解释深度时使用——上市研究把 200 名医生问卷与专科深访配对，或品类研究把购物者问卷与联合数据看不到的具名账户拜访配对。',
+    },
+  },
+  sampling: {
+    h2: '抽样框架与样本量治理',
+    lead:
+      '样本质量决定洞察可信度。医疗样本来自覆盖 17+ 个欧洲、中东、非洲与海湾市场的自有专业面板，以及符合 ESOMAR 与 BHBIA 的合作方。消费品与行业样本围绕项目中的账户与渠道构建——不是开放互联网自愿池。',
+    healthcareKicker: '医疗健康',
+    panelTitle: '面板来源',
+    panel: [
+      {
+        title: '执照核验。',
+        body:
+          '从监管数据库招募——迪拜 DHA、阿布扎比 DOH、沙特 SFDA、阿联酋 MOHAP 与科威特 MOH——确保每位样本在首次联系前都有可审计的执照、专科与执业场所。',
+      },
+      {
+        title: '医院与诊所网络。',
+        body: '通过 SEHA、Mediclinic、Aster、NMC、克利夫兰诊所阿布扎比与沙特德国医院等协调人做专科转介。',
+      },
+      {
+        title: '专业协会。',
+        body: '协会名册与执照注册交叉核对，使会员名单从不单独成立。',
+      },
+      {
+        title: '三层核验。',
+        body: '执照、专科与执业场所。每季度刷新，剔除迁出或已退休的医生。',
+      },
+    ],
+    consumerKicker: '消费品与行业',
+    channelTitle: '按账户与渠道来源',
+    namedTitle: '具名账户。',
+    namedBefore: '零售商、经销商、独立药店、杂货店与传统小店在真正出量处抽样——联合',
+    nielsen: 'Nielsen',
+    namedMid: '与',
+    gfk: 'GfK 类',
+    namedMid2: '数据源通常漏掉的颗粒。参见',
+    accountLink: '账户级市场研究',
+    namedAfter: '。',
+    shopper: {
+      title: '购物者与采购配额。',
+      body: '品类采购与家庭购物者按项目中的 SKU、渠道与城市招募——不是掩盖账户的全国均值。',
+    },
+    mystery: {
+      title: '神秘顾客与拦截。',
+      body: '当问题是货架、柜台或传统渠道门店里发生了什么——面板看板无法替代。',
+    },
+    recontact: {
+      title: '经同意的再联系。',
+      body: '既往波次中已核验且同意再联系的受访者，在工期优先时仍是最快路径。',
+    },
+    closing:
+      '样本量按预设统计功效目标计算。多数定量项目在每个可报告细分上瞄准 95% 置信水平下至少 ±5% 误差。总体本身很小——罕见病专科、国家目录委员或短名单重点账户采购——则按普查式招募，并按更小基数调整分析。',
+  },
+  field: {
+    h2: '现场治理与质量控制',
+    p1: '现场是方法遇见执行纪律的地方。每个项目——医疗或消费品——都有招募周期、酬金（符合行业守则）、访谈窗口与配额缺口升级协议。',
+    p2:
+      '定量问卷配备完成率、中位时长、退出与直线作答的实时看板。持续在预期中位时长三分之一以内完成的问卷会被标记，未通过质控则剔除。',
+    p3: '定性现场在取得同意后录音并逐字转录。主持人 24 小时内提交复盘。多市场项目有中央项目经理，并与当地团队每日站会。',
+    p4Before: '现场',
+    clinicalLink: '临床试验支持',
+    p4After:
+      '同样遵循该骨架，并增加中心识别与研究者画像控制。神秘顾客与账户拜访波次同样遵循该骨架，并记录门店选择与 SKU 可得性。',
+  },
+  validation: {
+    h2: '数据校验与人工智能辅助质控',
+    p1: '原始数据在分析前经过多阶段校验。第一层自动化：算法标记重复 ID、不可能的组合与统计上异常的作答模式。',
+    p2: '第二层由分析师主导。资深研究员对照招募数据复核标记记录，必要时联系受访者。无法核验的记录按书面理由剔除。',
+    p3:
+      '人工智能辅助质控增加第三层。语言模型评估开放题的连贯性、相关性与最短长度。定性转录做主题建模。机器生成主题再由分析团队核验——人工智能加快模式发现；每条解释性结论由人审。',
+    p4Before: '客户得到可用于内部决策、在医疗项目中还可用于监管或 HTA 申报的数据集。证据如何进入',
+    accessLink: '市场准入与 HTA 策略',
+    p4After: '。',
+  },
+  ethics: {
+    h2: '伦理、GDPR 与行业守则',
+    p1:
+      '每个 BioNixus 项目遵循 GDPR、英国数据保护法、ESOMAR 指引及当地数据保护法——包括沙特 PDPL、阿联酋联邦数据保护法与科威特 CITRA。该底线同时适用于医疗与消费品。',
+    p2:
+      '医疗项目另加 BHBIA 法律与伦理指引及 EphMRA 行为守则。触及患者数据的研究——即使通过医生报告间接触及——在要求处取得伦理审查。不良事件报告在进场前向每位主持人交代，并在 24 小时内升级至客户药物警戒。',
+    p3: '消费品与行业项目留在 ESOMAR 与适用的当地消费者研究守则内。激励走可审计渠道。医疗酬金另对照当地药企协会的公允市场价值指引。',
+    p4: '收集前以受访者偏好语言取得同意。个人数据假名化，存放于欧盟加密服务器。',
+  },
+  reporting: {
+    h2: '报告标准与交付结构',
+    p1:
+      '洞察到达行动者之前没有价值。报告先给出三到五条核心发现与建议行动——再给支撑数据。这对消费品品牌的营销负责人与治疗领域上市的准入负责人同样成立。',
+    p2: '定量报告含方法附录——样本构成、加权、置信区间与问卷。定性报告以匿名逐字稿呈现主题分析。',
+    p3Before:
+      '标准交付包括追踪看板、管理层幻灯与技术附录。医疗包可按 HTA 或监管卷宗切分。消费品包按品牌、渠道与 SKU 决策切分。对于',
+    intelLink: '竞争情报',
+    p3After: '项目，我们在两个场景都提供带告警的监测报告。',
+    p4Before: '所有报告经过两阶段内部审阅——分析师核数据准确性，资深总监核战略一致性。',
+    kolLink: 'KOL 与利益相关方图谱',
+    p4After: '遵循同一协议，并额外可视化影响网络。',
+  },
+};
+
 export function MethodologyLongFormZh({ lang }: Props): JSX.Element {
-  const p = (path: string) => loc(lang, path);
-  return (
-    <>
-      <section className="section-padding bg-background" id="research-design">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">1. 研究设计原则</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            每项研究在研究设计阶段就会把商业议题转化为可检验的研究框架；我们与品牌、医学事务与市场准入团队协作，界定既足够具体、又可随项目进展校正的研究目标。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            <strong className="text-foreground">定量研究</strong>
-            使用结构化问卷及经过验证的量表；在需要权衡比较时辅以联合分析或 MaxDiff。问卷在正式实施前会进行认知预测试（至少 5 名受访者），并结合跳题逻辑、随机化与注意力检测题以保障起始数据质量。进一步了解我们的{' '}
-            <Link to={p('/services/quantitative-research')} className="text-primary hover:underline font-medium">
-              医疗健康定量研究实践
-            </Link>
-            。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            <strong className="text-foreground">定性研究</strong>
-            采用半结构化、含决策分叉逻辑的深度访谈提纲；无论在门诊还是医院场景中开展一对一访谈、付费方顾问会或观察研究，我们都在内部试点后迭代提纲。对治疗领域复杂的项目，启用具备临床医学背景的主持人，以降低诱导受访者的风险。请参阅{' '}
-            <Link to={p('/services/qualitative-research')} className="text-primary hover:underline font-medium">
-              制药定性研究能力与流程
-            </Link>
-            。
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            若需要「可推广统计结论 + 行为解释」，我们采用定量与定性融合的混合式设计，例如上市后准备度研究同时覆盖 200 名医生定量样本与约 20 位高处方专家的深访。
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-cream" id="sampling-frameworks">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">2. 抽样与样本治理</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            抽样质量直接影响结论可信度。BioNixus 自运营覆盖欧洲、中东、非洲及海湾地区十几个市场的医疗专业人士样本网络，并与符合 ESOMAR / BHBIA 标准的合规供应商合作补充；受访者来自经核验的医生库、院内登记或专科协会名册，不使用开放互联网的随意注册样本池。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            定量项目的样本量在启动前对齐统计功效假设；对每个可报告的细分受众，我们常规划在 95% 置信区间内约 ±5% 的误差带宽。罕见病或极小总体则采用穷尽式配额并相应调整分析方法。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            配额同时控制专科、执业场景（院内/社区）、处方强度与地域；多国研究中按国别设配额，避免单一国家在汇总数据中占比过高。
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            定性项目的筛选问卷由项目组与客户共同终审；我们会在二次核验中比对面板信息与筛选答案，以确保背景真实一致。
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background" id="fieldwork-governance">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">3. 现场执行与质量控制</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            方法论必须在现场制度化。每份工单都配套执行备忘录：招募周期、与当地行业守则一致的受访者激励、访谈排期窗口，以及配额短缺的升级路径。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            定量在线调查配置实时监控面板，追踪完成率、中位完成时长、卡点位置与平直作答信号；远低于合理中位作答时间的答卷会标记复核并在未通过质量控制时剔除。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            定性访谈（在取得同意前提下）录音并完成逐字转录；主持人在每场结束 24 小时内撰写纪要，捕获仍在新鲜的假设与议题。在多市场研究中，项目经理与各地团队同步站会，第一时间发现翻译措辞或招募偏差。
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            我们也以同一治理框架承接{' '}
-            <Link to={p('/services/clinical-trial-support')} className="text-primary hover:underline font-medium">
-              临床试验支持类现场研究
-            </Link>
-            ，并增设中心可行性及研究者画像的补充质控要点。
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-cream" id="data-validation">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">4. 数据验证与 AI 辅助质控</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            在进入分析以前，原始数据必须经过多层验证：自动规则识别重复 ID、不可能的组合答案以及统计异常的答题模式。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            第二层由研究员主导，将告警记录与原招募信息进行比对，必要时回访受访者澄清；未能验证的记录会从终版数据库排除并记录剔除原因。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            AI 辅助质控构成第三层：自然语言模型检查开放题的连贯性与有效篇幅；定性转录可先经主题建模发现潜在脉络，再由分析团队人工复核——加速模式识别，但最终结论均需人工签署。
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            借由上述链路，客户获得既可以支撑内部决策、也可在必要时用于递交 HTA / 监管资料的数据基础。延伸阅读我们如何把证据并入{' '}
-            <Link to={p('/services/market-access')} className="text-primary hover:underline font-medium">
-              市场准入及价值沟通策略流程
-            </Link>
-            。
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background" id="ethics-compliance">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">5. 伦理、GDPR 与监管对齐</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            所有项目运行在涵盖 GDPR、《英国数据保护法》、ESOMAR、BHBIA 法律伦理指南以及 EphMRA 行为守则的合规框架之内；在海湾地区同时遵守沙特阿拉伯 PDPL、阿联酋联邦数据保护法、科威特 CITRA 等本地要求。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            数据采集前取得受访者同意；文件提供其母语版本并说明用途与保留期限。个人信息在采集端即伪匿名化，存放在欧盟加密环境中；如需向客户提供可识别资料，须在单独授权下执行。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            牵涉患者相关信息（哪怕是经由医生描述的间接情景）时会按国家规定启动伦理复核及更严格的脱敏策略；项目组在开始前即培训 AE 上报路径，并保持 24 小时升级到客户药物警戒团队的通道。
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            激励费用通过可追溯渠道支付并对照制药行业协会发布的合理市场价值准则，以降低透明度与反腐败风险。
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-cream" id="reporting-standards">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">6. 交付物结构与报告规范</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            洞察若无法触动决策者便没有价值，因此报告采用「先结论」的叙事顺序：开篇总结 3–5 条关键发现与对应行动建议，再在后续章节铺设支撑图表。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            定量成果附带方法论附录——样本构成、加权方案、置信区间以及问卷存档；定性成果以匿名化 verbatim 佐证主题脉络。
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            交付组合通常包括长期追踪项目的可视化面板、管理层演示文稿，以及可用于监管或 HTA 团队的技术附录。针对{' '}
-            <Link to={p('/services/competitive-intelligence')} className="text-primary hover:underline font-medium">
-              竞品情报追踪项目
-            </Link>
-            ，我们可提供事件驱动的实时监控更新。
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            每份交付在发出前均需通过「分析师自检 + 合伙人战略校对」两道流程；{' '}
-            <Link to={p('/services/kol-stakeholder-mapping')} className="text-primary hover:underline font-medium">
-              KOL 与利益相关方洞察图谱
-            </Link>
-            亦遵循同级规范，并提供影响力网络可视化层。
-          </p>
-        </div>
-      </section>
-    </>
-  );
+  return <MethodologyLongFormLayout lang={lang} copy={METHODOLOGY_ZH_COPY} />;
 }

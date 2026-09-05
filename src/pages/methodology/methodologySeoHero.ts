@@ -16,6 +16,19 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     ctaTitle: string;
     ctaBody: string;
     ctaButton: string;
+    heroEyebrow: string;
+    healthcareProgrammes: string;
+    asideAria: string;
+    twoTheatres: string;
+    sameBar: string;
+    spineNote: string;
+    healthcareLabel: string;
+    healthcarePeople: string;
+    healthcareLink: string;
+    consumerLabel: string;
+    consumerPeople: string;
+    industriesLink: string;
+    emailCta: string;
   }
 > = {
   en: {
@@ -35,6 +48,19 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     ctaBody:
       'A multi-market launch study, a single-country shopper or payer landscape, or an always-on competitive programme — the method flexes to the industry, the complexity, and the regulatory context in front of it. Tell us the decision you need to make and we will design the research that meets your evidence bar.',
     ctaButton: 'Get in touch',
+    heroEyebrow: 'Healthcare · Consumer · One spine',
+    healthcareProgrammes: 'Healthcare programmes',
+    asideAria: 'Healthcare and consumer methodology theatres',
+    twoTheatres: 'Two theatres',
+    sameBar: 'Same quality bar. Different respondents.',
+    spineNote: 'The brief names the industry. The spine — design, sample, field, validate, report — does not change.',
+    healthcareLabel: 'Healthcare',
+    healthcarePeople: 'Physicians, payers, KOLs, hospitals',
+    healthcareLink: 'Healthcare market research',
+    consumerLabel: 'Consumer',
+    consumerPeople: 'Shoppers, buyers, retailers, trade',
+    industriesLink: 'Industries we study',
+    emailCta: 'Email admin@bionixus.com',
   },
   de: {
     seoTitle: 'Methodik der Gesundheitsmarktforschung | BioNixus',
@@ -47,12 +73,25 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     langMirrorMid:
       '. Ordnen Sie Ihre Evidence-Planung über den Marktforschungs-Insights‑Hub unter',
     langMirrorTail: 'oder vergleichen Sie',
-    marketResearchHubLabel: 'Market research data insights Hub',
+    marketResearchHubLabel: 'Hub für Marktforschungsdaten und Insights',
     gfkAlternativeLabel: 'GfK-Alternative Ägypten Marktforschungsabdeckung',
     ctaTitle: 'Forschungsanforderungen besprechen',
     ctaBody:
       'Ob Multi-Market-Launch-Analyse, Payer‑Landschaft in einem Land oder laufende Wettbewerbsintelligence — unsere Methodik passt sich Komplexität und regulatorischem Kontext Ihres Vorhabens an. Kontaktieren Sie uns für ein auf Ihre Evidence‑Standards zugeschnittenes Programm.',
     ctaButton: 'Kontakt aufnehmen',
+    heroEyebrow: 'Gesundheitswesen · Konsumgüter · Ein Gerüst',
+    healthcareProgrammes: 'Gesundheitsprogramme',
+    asideAria: 'Methodik-Bereiche Gesundheitswesen und Konsumgüter',
+    twoTheatres: 'Zwei Felder',
+    sameBar: 'Dieselbe Qualitätslatte. Andere Befragte.',
+    spineNote: 'Das Briefing nennt die Branche. Das Gerüst — Design, Sample, Feld, Validierung, Bericht — bleibt.',
+    healthcareLabel: 'Gesundheitswesen',
+    healthcarePeople: 'Ärzte, Kostenträger, KOLs, Krankenhäuser',
+    healthcareLink: 'Gesundheitsmarktforschung',
+    consumerLabel: 'Konsumgüter',
+    consumerPeople: 'Shopper, Einkäufer, Handel, Vertrieb',
+    industriesLink: 'Branchen, die wir erforschen',
+    emailCta: 'E-Mail an admin@bionixus.com',
   },
   fr: {
     seoTitle: 'Méthodologie des études de marché santé | BioNixus',
@@ -71,6 +110,19 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     ctaBody:
       'Études multi‑pays pré‑launch, panorama payeur mono‑pays ou veille concurrentielle continue — notre méthodologie s’adapte à la densité médicale, au contexte réglementaire et à vos niveaux de preuve. Contactez‑nous pour un dispositif sur mesure.',
     ctaButton: 'Écrivez‑nous',
+    heroEyebrow: 'Santé · Grande consommation · Une même colonne',
+    healthcareProgrammes: 'Programmes santé',
+    asideAria: 'Théâtres méthodologiques santé et grande consommation',
+    twoTheatres: 'Deux théâtres',
+    sameBar: 'Le même niveau d’exigence. D’autres répondants.',
+    spineNote: 'Le brief nomme le secteur. La colonne — conception, échantillon, terrain, validation, rapport — ne change pas.',
+    healthcareLabel: 'Santé',
+    healthcarePeople: 'Médecins, payeurs, KOL, hôpitaux',
+    healthcareLink: 'Études de marché santé',
+    consumerLabel: 'Grande consommation',
+    consumerPeople: 'Shoppers, acheteurs, distributeurs, commerce',
+    industriesLink: 'Secteurs que nous étudions',
+    emailCta: 'Écrire à admin@bionixus.com',
   },
   es: {
     seoTitle: 'Metodología de investigación de mercado sanitario | BioNixus',
@@ -83,12 +135,25 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     langMirrorMid:
       '. Alineé sus planes probatorios con el hub de datos e insights sobre investigación en',
     langMirrorTail: 'o compare la',
-    marketResearchHubLabel: 'investigación de mercado datos e insights Hub',
+    marketResearchHubLabel: 'hub de datos e insights de investigación de mercado',
     gfkAlternativeLabel: 'alternativa tipo GfK para cobertura en Egipto',
     ctaTitle: 'Hablemos sobre sus necesidades analíticas',
     ctaBody:
       'Lanzamiento multi‑país, paisaje de pagadores nacional o Inteligencia competitiva continua: nuestra metodología se adapta a la complejidad y la normativa aplicable al proyecto y a sus niveles de evidencia. Contacte para personalizar.',
     ctaButton: 'Contactar',
+    heroEyebrow: 'Salud · Consumo · Una misma columna',
+    healthcareProgrammes: 'Programas de salud',
+    asideAria: 'Escenarios metodológicos de salud y consumo',
+    twoTheatres: 'Dos escenarios',
+    sameBar: 'El mismo listón de calidad. Otros encuestados.',
+    spineNote: 'El brief nombra el sector. La columna — diseño, muestra, campo, validación, informe — no cambia.',
+    healthcareLabel: 'Salud',
+    healthcarePeople: 'Médicos, pagadores, KOL, hospitales',
+    healthcareLink: 'Investigación de mercado sanitario',
+    consumerLabel: 'Consumo',
+    consumerPeople: 'Shoppers, compradores, retailers, trade',
+    industriesLink: 'Industrias que investigamos',
+    emailCta: 'Escribir a admin@bionixus.com',
   },
   zh: {
     seoTitle: '医疗与健康市场研究方法 | BioNixus',
@@ -106,6 +171,19 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     ctaBody:
       '多国上市研究、单个国家医保方格局评估或持续竞争情报项目——我们都会根据复杂度、监管环境与证据阈值调整方法学与治理。请联系我们定制方案。',
     ctaButton: '联系 BioNixus',
+    heroEyebrow: '医疗健康 · 消费品 · 同一骨架',
+    healthcareProgrammes: '医疗健康项目',
+    asideAria: '医疗健康与消费品研究方法场景',
+    twoTheatres: '两个场景',
+    sameBar: '同一质量门槛。不同受访者。',
+    spineNote: '简报点明行业。骨架——设计、抽样、执行、校验、报告——不变。',
+    healthcareLabel: '医疗健康',
+    healthcarePeople: '医生、支付方、KOL、医院',
+    healthcareLink: '医疗健康市场研究',
+    consumerLabel: '消费品',
+    consumerPeople: '购物者、采购、零售商、渠道',
+    industriesLink: '我们研究的行业',
+    emailCta: '发邮件至 admin@bionixus.com',
   },
   pt: {
     seoTitle: 'Metodologia de pesquisa de mercado em saúde | BioNixus',
@@ -124,6 +202,19 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     ctaBody:
       'Um estudo de lançamento multi-país, um panorama de pagadores em um único mercado ou um programa contínuo de inteligência competitiva — o método adapta-se à complexidade e ao contexto regulatório. Conte-nos a decisão que precisa tomar e desenharemos a pesquisa que atende ao seu padrão de evidência.',
     ctaButton: 'Entre em contato',
+    heroEyebrow: 'Saúde · Consumo · Uma mesma espinha',
+    healthcareProgrammes: 'Programas de saúde',
+    asideAria: 'Cenários metodológicos de saúde e consumo',
+    twoTheatres: 'Dois cenários',
+    sameBar: 'O mesmo padrão de qualidade. Outros respondentes.',
+    spineNote: 'O brief nomeia o setor. A espinha — desenho, amostra, campo, validação, relatório — não muda.',
+    healthcareLabel: 'Saúde',
+    healthcarePeople: 'Médicos, pagadores, KOLs, hospitais',
+    healthcareLink: 'Pesquisa de mercado em saúde',
+    consumerLabel: 'Consumo',
+    consumerPeople: 'Shoppers, compradores, retalhistas, trade',
+    industriesLink: 'Setores que estudamos',
+    emailCta: 'Enviar e-mail para admin@bionixus.com',
   },
   ru: {
     seoTitle: 'Методология исследований рынка здравоохранения | BioNixus',
@@ -142,6 +233,19 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     ctaBody:
       'Многонациональное исследование перед запуском, картирование плательщиков в одной стране или постоянная конкурентная аналитика — методология адаптируется к сложности и регуляторному контексту. Расскажите, какое решение вам нужно принять, и мы спроектируем исследование под ваш стандарт доказательности.',
     ctaButton: 'Связаться с нами',
+    heroEyebrow: 'Здравоохранение · Потребление · Один каркас',
+    healthcareProgrammes: 'Программы здравоохранения',
+    asideAria: 'Методологические сцены здравоохранения и потребления',
+    twoTheatres: 'Две сцены',
+    sameBar: 'Та же планка качества. Другие респонденты.',
+    spineNote: 'Бриф называет отрасль. Каркас — дизайн, выборка, поле, валидация, отчёт — не меняется.',
+    healthcareLabel: 'Здравоохранение',
+    healthcarePeople: 'Врачи, плательщики, KOL, больницы',
+    healthcareLink: 'Исследования рынка здравоохранения',
+    consumerLabel: 'Потребление',
+    consumerPeople: 'Покупатели, байеры, ритейл, торговля',
+    industriesLink: 'Отрасли, которые мы изучаем',
+    emailCta: 'Написать на admin@bionixus.com',
   },
   ar: {
     seoTitle: 'منهجية أبحاث السوق الصحي | BioNixus',
@@ -159,5 +263,18 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
     ctaBody:
       'سياسات طرح متعدّدة الأسواق، أو تشخيص منظومة جهات الدفع في بلد واحد، أو برامج دورية للاستخبارات التنافسية — تتأقلم منهجيتنا مع التعقيد والسياق التنظيمي. تواصلوا لبناء برنامج يلبي معايير الأدلة لديكم.',
     ctaButton: 'تواصل الآن',
+    heroEyebrow: 'الرعاية الصحية · الاستهلاك · عمود واحد',
+    healthcareProgrammes: 'برامج الرعاية الصحية',
+    asideAria: 'مسارح منهجية الرعاية الصحية والاستهلاك',
+    twoTheatres: 'مسارحان',
+    sameBar: 'العتبة نفسها. مستجيبون مختلفون.',
+    spineNote: 'الموجز يسمّي القطاع. العمود — التصميم، العينة، الميدان، التحقق، التقرير — لا يتغيّر.',
+    healthcareLabel: 'الرعاية الصحية',
+    healthcarePeople: 'أطباء، جهات دفع، خبراء رأي، مستشفيات',
+    healthcareLink: 'أبحاث سوق الرعاية الصحية',
+    consumerLabel: 'الاستهلاك',
+    consumerPeople: 'متسوقون، مشترين، تجزئة، تجارة',
+    industriesLink: 'القطاعات التي ندرسها',
+    emailCta: 'راسلوا admin@bionixus.com',
   },
 };

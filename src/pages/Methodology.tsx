@@ -12,7 +12,26 @@ import { METHODOLOGY_SEO_AND_HERO } from '@/pages/methodology/methodologySeoHero
 import { methodologyLocalizedPath } from '@/pages/methodology/methodologyLocalizedPath';
 import { MethodologyLongFormBody } from '@/pages/methodology/MethodologyLongFormBody';
 import { METHODOLOGY_EN_FAQ } from '@/pages/methodology/MethodologyLongFormEn';
+import { METHODOLOGY_DE_FAQ } from '@/pages/methodology/MethodologyLongFormDe';
+import { METHODOLOGY_FR_FAQ } from '@/pages/methodology/MethodologyLongFormFr';
+import { METHODOLOGY_ES_FAQ } from '@/pages/methodology/MethodologyLongFormEs';
+import { METHODOLOGY_PT_FAQ } from '@/pages/methodology/MethodologyLongFormPt';
+import { METHODOLOGY_RU_FAQ } from '@/pages/methodology/MethodologyLongFormRu';
+import { METHODOLOGY_ZH_FAQ } from '@/pages/methodology/MethodologyLongFormZh';
+import { METHODOLOGY_AR_FAQ } from '@/pages/methodology/MethodologyLongFormAr';
 import { languagePaths, getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
+import type { Language } from '@/lib/i18n';
+
+const METHODOLOGY_FAQ = {
+  en: METHODOLOGY_EN_FAQ,
+  de: METHODOLOGY_DE_FAQ,
+  fr: METHODOLOGY_FR_FAQ,
+  es: METHODOLOGY_ES_FAQ,
+  pt: METHODOLOGY_PT_FAQ,
+  ru: METHODOLOGY_RU_FAQ,
+  zh: METHODOLOGY_ZH_FAQ,
+  ar: METHODOLOGY_AR_FAQ,
+} as const satisfies Record<Language, readonly { question: string; answer: string }[]>;
 
 const LANGUAGE_MIRROR = [
   { href: '/methodology', label: 'English' },
@@ -44,14 +63,14 @@ const Methodology = () => {
     [homePath, methodologyPath, t.footer.methodology, t.nav.home],
   );
 
-  const usesEnglishFaq = language === 'en' || language === 'pt' || language === 'ru';
+  const methodologyFaq = METHODOLOGY_FAQ[language];
   const jsonLd = useMemo(() => {
     const nodes: object[] = [buildBreadcrumbSchema(breadcrumbItems)];
-    if (usesEnglishFaq) {
-      nodes.push(buildFAQSchema(METHODOLOGY_EN_FAQ, { pageUrl: 'https://www.bionixus.com/methodology' }));
+    if (methodologyFaq) {
+      nodes.push(buildFAQSchema([...methodologyFaq], { pageUrl: 'https://www.bionixus.com/methodology' }));
     }
     return nodes;
-  }, [breadcrumbItems, usesEnglishFaq]);
+  }, [breadcrumbItems, methodologyFaq]);
   const contactPath = localizedContactPath(language);
 
   return (
@@ -72,7 +91,7 @@ const Methodology = () => {
           <div className="container-wide relative z-10 mx-auto max-w-6xl">
             <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:gap-16">
               <div>
-                <PremiumEyebrow>Healthcare · Consumer · One spine</PremiumEyebrow>
+                <PremiumEyebrow>{copy.heroEyebrow}</PremiumEyebrow>
                 <h1
                   id="methodology-heading"
                   className="sr-lcp max-w-4xl font-display text-3xl font-light leading-[1.12] tracking-tight text-[#FFFEFB] md:text-5xl"
@@ -109,33 +128,33 @@ const Methodology = () => {
                     to={healthcareHubPath}
                     className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/12 px-8 py-[15px] text-sm font-medium tracking-wide text-white/65 transition-colors hover:border-white/25 hover:text-[#FFFEFB]"
                   >
-                    Healthcare programmes
+                    {copy.healthcareProgrammes}
                   </Link>
                 </div>
               </div>
 
-              <aside className="premium-card-dark p-7 md:p-8" aria-label="Healthcare and consumer methodology theatres">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">Two theatres</p>
-                <p className="mt-3 font-display text-xl font-light text-[#FFFEFB]">Same quality bar. Different respondents.</p>
+              <aside className="premium-card-dark p-7 md:p-8" aria-label={copy.asideAria}>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">{copy.twoTheatres}</p>
+                <p className="mt-3 font-display text-xl font-light text-[#FFFEFB]">{copy.sameBar}</p>
                 <p className="mt-2 text-sm font-light leading-relaxed text-white/40">
-                  The brief names the industry. The spine — design, sample, field, validate, report — does not change.
+                  {copy.spineNote}
                 </p>
                 <ul className="mt-7 space-y-4">
                   <li className="border-b border-white/10 pb-4">
-                    <p className="text-[11px] uppercase tracking-[0.16em] text-white/35">Healthcare</p>
-                    <p className="mt-1.5 font-display text-lg font-light text-[#FFFEFB]">Physicians, payers, KOLs, hospitals</p>
+                    <p className="text-[11px] uppercase tracking-[0.16em] text-white/35">{copy.healthcareLabel}</p>
+                    <p className="mt-1.5 font-display text-lg font-light text-[#FFFEFB]">{copy.healthcarePeople}</p>
                     <p className="mt-1 text-sm font-light text-white/40">
                       <Link to={healthcareHubPath} className="text-[#C9A84C] underline-offset-4 hover:underline">
-                        Healthcare market research
+                        {copy.healthcareLink}
                       </Link>
                     </p>
                   </li>
                   <li>
-                    <p className="text-[11px] uppercase tracking-[0.16em] text-white/35">Consumer</p>
-                    <p className="mt-1.5 font-display text-lg font-light text-[#FFFEFB]">Shoppers, buyers, retailers, trade</p>
+                    <p className="text-[11px] uppercase tracking-[0.16em] text-white/35">{copy.consumerLabel}</p>
+                    <p className="mt-1.5 font-display text-lg font-light text-[#FFFEFB]">{copy.consumerPeople}</p>
                     <p className="mt-1 text-sm font-light text-white/40">
                       <Link to={industriesPath} className="text-[#C9A84C] underline-offset-4 hover:underline">
-                        Industries we study
+                        {copy.industriesLink}
                       </Link>
                     </p>
                   </li>
@@ -161,7 +180,7 @@ const Methodology = () => {
                 href="mailto:admin@bionixus.com?subject=Research%20methodology"
                 className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/10 px-8 py-[15px] text-sm font-medium tracking-wide text-white/60 transition-colors hover:border-white/25 hover:text-[#FFFEFB]"
               >
-                Email admin@bionixus.com
+                {copy.emailCta}
               </a>
             </div>
           </div>

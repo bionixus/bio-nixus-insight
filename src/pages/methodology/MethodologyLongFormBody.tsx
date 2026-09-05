@@ -5,6 +5,8 @@ import { MethodologyLongFormDe } from './MethodologyLongFormDe';
 import { MethodologyLongFormEn } from './MethodologyLongFormEn';
 import { MethodologyLongFormEs } from './MethodologyLongFormEs';
 import { MethodologyLongFormFr } from './MethodologyLongFormFr';
+import { MethodologyLongFormPt } from './MethodologyLongFormPt';
+import { MethodologyLongFormRu } from './MethodologyLongFormRu';
 import { MethodologyLongFormZh } from './MethodologyLongFormZh';
 
 /** Numbered methodology sections localized per route language (`/methodology`, `/de/methodology`, …). */
@@ -21,8 +23,9 @@ export function MethodologyLongFormBody({ lang }: { lang: Language }): JSX.Eleme
     case 'ar':
       return <MethodologyLongFormAr lang={lang} />;
     case 'pt':
+      return <MethodologyLongFormPt lang={lang} />;
     case 'ru':
-      return <MethodologyLongFormEn lang={lang} />;
+      return <MethodologyLongFormRu lang={lang} />;
     default:
       return <MethodologyLongFormEn lang={lang} />;
   }

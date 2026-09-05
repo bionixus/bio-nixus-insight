@@ -1,157 +1,212 @@
 import type { JSX } from 'react';
-import { Link } from 'react-router-dom';
 import type { Language } from '@/lib/i18n';
-import { methodologyLocalizedPath as loc } from './methodologyLocalizedPath';
+import { MethodologyLongFormLayout, type MethodologyLongFormCopy } from './MethodologyLongFormLayout';
 
 type Props = { lang: Language };
 
+export const METHODOLOGY_DE_FAQ = [
+  {
+    question: 'Nutzt BioNixus dieselbe Methodik für Gesundheits- und Konsumforschung?',
+    answer:
+      'Ja — das Governance-Gerüst ist dasselbe: entscheidungsorientiertes Design, verifizierte Stichprobe, Feldprotokolle, mehrstufige Validierung, Ethik und ein Bericht für die, die handeln. Befragte, Kodizes und die Feinheit der Tabellen ändern sich. Gesundheitsbriefs rekrutieren Ärzte, Kostenträger und Krankenhaus-Accounts unter BHBIA, EphMRA und Pharmakovigilanz. Konsumbriefs rekrutieren Shopper, Category Buyer und benannte Handelsaccounts unter ESOMAR und lokalen Kodizes.',
+  },
+  {
+    question: 'Wie verifizieren Sie Gesundheitsstichproben?',
+    answer:
+      'Gesundheits-Panellisten durchlaufen Lizenzprüfung gegen Behördenregister, Facharztbestätigung und Praxis-Checks über Klinikverzeichnisse. Wir rekrutieren aus verifizierten Ärzte-Datenbanken, Krankenhausregistern und Fachgesellschaften — nicht aus offenen Internet-Pools. Quartalsweise Refreshs entfernen umgezogene oder pensionierte Ärzte.',
+  },
+  {
+    question: 'Wie ziehen Sie Stichproben für Konsum- und Traditional-Trade-Studien?',
+    answer:
+      'Konsumstichproben entstehen um die Accounts und Kanäle, in denen Volumen wirklich läuft — Modern Trade, unabhängige Apotheken und Lebensmitteleinzelhändler, Bakals und benannte Distributoren — plus Shopper- und Buyer-Quoten, wenn der Brief Haushalts- oder Warenkorb-Evidenz braucht. Screener werden vor dem Feld geprüft. Mystery Shops, Account-Besuche und Intercepts, wenn ein syndiziertes Panel den Kanal untererfasst.',
+  },
+  {
+    question: 'Welche Qualitätskontrollen gelten im Feld?',
+    answer:
+      'Jedes Projekt läuft gegen ein Protokoll für Rekrutierungsfristen, konforme Honorare, Interviewfenster und Quoten-Eskalation. Quantitative Befragungen werden in Echtzeit auf Dauer, Abbruch und Straight-Lining überwacht. Qualitative Sessions werden mit Einwilligung aufgezeichnet, transkribiert und innerhalb von 24 Stunden debrieft. Multi-Markt-Studien haben tägliche Stand-ups gegen Übersetzungs- oder Rekrutierungsdrift.',
+  },
+  {
+    question: 'Wie werden DSGVO und lokaler Datenschutz gehandhabt?',
+    answer:
+      'Projekte laufen unter DSGVO, UK Data Protection Act, ESOMAR-Leitlinien und lokalem Recht — einschließlich saudischem PDPL, dem Bundesdatenschutzgesetz der VAE und CITRA-Vorgaben in Kuwait. Gesundheitsarbeit folgt zusätzlich BHBIA und EphMRA. Einwilligung vor der Erhebung, Daten werden pseudonymisiert, identifizierbare Angaben gehen nicht an den Auftraggeber ohne extra Follow-up-Einwilligung.',
+  },
+  {
+    question: 'Was enthält ein BioNixus-Methodikbericht?',
+    answer:
+      'Jedes Deliverable öffnet mit Kernbefunden und empfohlenen Handlungen, dann den Stützdaten. Quantitative Packs enthalten Stichprobentabellen, Gewichtung, Konfidenzintervalle und den Fragebogen. Qualitative Packs enthalten Themenanalyse mit anonymisierten Verbatims. Tracker können Dashboards enthalten. Gesundheitsdossiers können HTA-Anhänge enthalten; Konsum-Packs enthalten Marken- und Trade-Schnitte für den Head of Marketing.',
+  },
+] as const;
+
+export const METHODOLOGY_DE_COPY: MethodologyLongFormCopy = {
+  faqTitle: 'Häufig gestellte Fragen',
+  faq: METHODOLOGY_DE_FAQ,
+  theatre: {
+    eyebrow: 'Ein Gerüst',
+    h2: 'Gesundheitswesen und Konsum teilen die Methode, nicht den Befragten',
+    leadBefore:
+      'BioNixus ist ein Primärforschungsinstitut. Dieselben sechs Kontrollen — Design, Stichprobe, Feld, Validierung, Ethik und Bericht — laufen auf einem Briefing für',
+    healthcareLink: 'Gesundheitsmarktforschung',
+    leadMid: 'und auf einem Konsum- oder',
+    industryLink: 'Branchen',
+    leadAfter:
+      '-Briefing. Was sich ändert, ist, wer in der Stichprobe sitzt, welcher Kodex das Honorar steuert und wie fein die Tabellen geschnitten werden müssen.',
+    caption: 'Wie die BioNixus-Methodik in Gesundheitswesen versus Konsumgütern greift',
+    controlCol: 'Kontrolle',
+    healthcareCol: 'Gesundheitswesen',
+    consumerCol: 'Konsumgüter und andere Branchen',
+    rows: [
+      {
+        cut: 'Mit wem wir sprechen',
+        healthcare: 'Ärzte, Kostenträger, KOLs, Krankenhaus- und Apotheken-Accounts',
+        consumer: 'Shopper, Category Buyer, Handel, Distributoren, Traditional Trade',
+      },
+      {
+        cut: 'Wie wir sie finden',
+        healthcare: 'Lizenzregister, Krankenhausnetze, Fachgesellschaften',
+        consumer: 'Benannte Accounts, Handelslisten, Intercepts, Mystery Shops, Rekontakt mit Einwilligung',
+      },
+      {
+        cut: 'Kodizes, die die Arbeit binden',
+        healthcare: 'BHBIA, EphMRA, Pharmakovigilanz, Honorare zum Fair Market Value',
+        consumer: 'ESOMAR, lokale Konsumforschungskodizes, auditierbare Incentives',
+      },
+      {
+        cut: 'Was das Pack überstehen muss',
+        healthcare: 'Medizinische, Access- und HTA-Prüfung',
+        consumer: 'Prüfung durch Marke, Trade und Commercial Director',
+      },
+    ],
+  },
+  design: {
+    h2: 'Prinzipien der Studienkonzeption',
+    lead:
+      'Jedes Programm beginnt damit, eine Geschäftsfrage in etwas zu übersetzen, das eine Studie wirklich beantworten kann. Wir setzen uns mit denen, die die Evidenz nutzen — Brand, Medical und Market Access im Gesundheitsbrief; Marke, Kategorie und Trade im Konsumbrief — und legen Ziele fest, die konkret genug sind, um zu entscheiden, und flexibel genug, um nachzusteuern. Eine Studie um die falsche Frage ist schnell, günstig und nutzlos.',
+    quantitative: {
+      title: 'Quantitativ',
+      body:
+        'Strukturierte Fragebögen, validierte Skalen und Conjoint oder MaxDiff, wenn Trade-offs zählen — Therapieentscheidung des Arztes oder Pack-Wahl des Shoppers. Instrumente erhalten ein kognitives Pretest mit mindestens fünf Befragten. Skip-Logik, Randomisierung und Trap-Fragen schützen die Integrität.',
+      link: 'Quantitative Forschung',
+    },
+    qualitative: {
+      title: 'Qualitativ',
+      body:
+        'Halbstrukturierte Leitfäden mit Entscheidungsbaum-Logik. Gesundheitswesen: Arztinterviews, Payer-Boards, Krankenhausethnografie. Konsum: Shopper-Depths, Händler- und Distributorengespräche, Beobachtung im Markt. Leitfäden werden nach den ersten zwei bis drei Sessions verfeinert.',
+      link: 'Qualitative Forschung',
+    },
+    mixed: {
+      title: 'Mixed Method',
+      body:
+        'Wenn der Brief statistisches Korn und erklärende Tiefe braucht — eine Launch-Studie mit einer 200-Ärzte-Befragung plus Spezialisten-Depths, oder eine Kategoriestudie mit Shopper-Survey und Account-Besuchen, die der syndizierte Feed nicht zeigt.',
+    },
+  },
+  sampling: {
+    h2: 'Stichprobenrahmen und Steuerung der Stichprobengröße',
+    lead:
+      'Stichprobenqualität bestimmt die Glaubwürdigkeit jedes Insights. Gesundheitsstichproben kommen aus proprietären Fachpanels in 17+ EMEA- und GCC-Märkten plus akkreditierte ESOMAR- und BHBIA-Partner. Konsum- und Branchenstichproben entstehen um die Accounts und Kanäle im Brief — nicht aus einem offenen Internet-Pool.',
+    healthcareKicker: 'Gesundheitswesen',
+    panelTitle: 'Panel-Sourcing',
+    panel: [
+      {
+        title: 'Lizenzprüfung.',
+        body:
+          'Rekrutierung aus Regulierungsdatenbanken — DHA Dubai, DOH Abu Dhabi, SFDA Saudi-Arabien, MOHAP VAE und MOH Kuwait — damit jeder Panellist vor dem Erstkontakt eine auditierbare Lizenz, Fachrichtung und Praxis hat.',
+      },
+      {
+        title: 'Krankenhaus- und Kliniknetze.',
+        body:
+          'Fachüberweisung über Koordinatoren in SEHA, Mediclinic, Aster, NMC, Cleveland Clinic Abu Dhabi und Saudi German Hospital — für Therapietiefe, die Register allein nicht liefern.',
+      },
+      {
+        title: 'Fachgesellschaften.',
+        body: 'Mitgliederlisten werden mit Lizenzregistern gekreuzt, damit Mitgliedschaft nie allein steht.',
+      },
+      {
+        title: 'Dreischichtige Validierung.',
+        body: 'Lizenz, Fachrichtung und Praxissetting. Quartalsweiser Refresh entfernt umgezogene oder pensionierte Ärzte.',
+      },
+    ],
+    consumerKicker: 'Konsumgüter & Industrie',
+    channelTitle: 'Account- und Kanal-Sourcing',
+    namedTitle: 'Benannte Accounts.',
+    namedBefore:
+      'Händler, Distributoren, unabhängige Apotheken, Lebensmitteleinzelhändler und Bakals werden gezogen, wo das Volumen läuft — das Korn, das syndizierte',
+    nielsen: 'Nielsen',
+    namedMid: 'und',
+    gfk: 'GfK-ähnliche',
+    namedMid2: 'Feeds typischerweise verfehlen. Siehe',
+    accountLink: 'Account-Level-Marktforschung',
+    namedAfter: '.',
+    shopper: {
+      title: 'Shopper- und Buyer-Quoten.',
+      body:
+        'Category Buyer und Haushalts-Shopper werden auf SKU, Kanal und Stadt im Brief rekrutiert — nicht auf einen nationalen Durchschnitt, der den Account versteckt.',
+    },
+    mystery: {
+      title: 'Mystery Shop und Intercept.',
+      body:
+        'Wenn die Frage ist, was am Regal, an der Theke oder im Traditional-Trade-Laden passiert — Methoden, die ein Panel-Dashboard nicht ersetzt.',
+    },
+    recontact: {
+      title: 'Rekontakt mit Einwilligung.',
+      body:
+        'Verifizierte Befragte früherer Wellen, die Folgekontakt zugestimmt haben, bleiben der schnellste Weg, wenn die Timeline Priorität hat — in beiden Feldern.',
+    },
+    closing:
+      'Stichprobengrößen werden gegen vorab definierte Power-Ziele berechnet. Bei den meisten quantitativen Programmen streben wir mindestens ±5 % Fehlerbereich bei 95 % Konfidenz in jeder berichtbaren Teilgruppe an. Ist die Population klein — Seltene-Erkrankungen-Spezialisten, nationale Formulary-Mitglieder oder eine kurze Key-Account-Liste — rekrutieren wir zensusartig und passen die Analyse an die kleinere Basis an.',
+  },
+  field: {
+    h2: 'Feld-Governance und Qualitätskontrollen',
+    p1:
+      'Im Feld trifft Methodik auf operative Disziplin. Jedes Projekt — Gesundheit oder Konsum — läuft gegen ein Protokoll für Rekrutierungsfristen, Honorare (konform zum Branchenkodex), Interviewfenster und Eskalation bei Quotenlücken.',
+    p2:
+      'Quantitative Befragungen haben Echtzeit-Dashboards für Abschlussrate, Medianzeit, Abbruch und Straight-Lining. Befragungen, die durchgängig in weniger als einem Drittel der erwarteten Medianzeit enden, werden markiert und bei Qualitätsversagen ausgeschlossen.',
+    p3:
+      'Qualitatives Feld wird mit Einwilligung aufgezeichnet und wörtlich transkribiert. Moderatoren liefern Debrief-Notizen innerhalb von 24 Stunden. Multi-Markt-Studien haben einen zentralen Projektleiter und tägliche Stand-ups mit lokalen Teams.',
+    p4Before: 'Feldarbeit für',
+    clinicalLink: 'klinische Studienunterstützung',
+    p4After:
+      'folgt demselben Gerüst, mit Extra-Kontrollen für Site-Identifikation und Investigator-Profiling. Mystery-Shop- und Account-Besuchswellen folgen demselben Gerüst, mit Logs für Store-Auswahl und SKU-Verfügbarkeit.',
+  },
+  validation: {
+    h2: 'Datenvalidierung und KI-gestützte Qualitätssicherung',
+    p1:
+      'Rohdaten durchlaufen eine mehrstufige Validierungspipeline. Die erste Stufe ist automatisiert: Algorithmen markieren doppelte IDs, unmögliche Kombinationen und statistisch anomale Antwortmuster.',
+    p2:
+      'Die zweite Stufe führt ein Analyst. Ein Senior Researcher prüft markierte Datensätze gegen Rekrutierungsdaten und kontaktiert bei Bedarf Befragte. Nicht validierbare Records werden mit dokumentierter Begründung entfernt.',
+    p3:
+      'KI-gestützte Qualitätssicherung fügt eine dritte Schicht hinzu. Sprachmodelle prüfen Open-Ends auf Kohärenz, Relevanz und Mindestlänge. Qualitative Transkripte durchlaufen Topic-Modelling. Maschinell erzeugte Themen validiert das Analyseteam — KI beschleunigt Mustererkennung; jede Interpretation bleibt menschlich geprüft.',
+    p4Before: 'Auftraggeber erhalten Datensätze, denen interne Entscheidungen und, bei Gesundheitsbriefs, regulatorische oder HTA-Einreichungen trauen können. Wie Evidenz',
+    accessLink: 'Market Access und HTA-Strategie',
+    p4After: ' speist — und wie Konsumbriefs stattdessen Marken- und Trade-Entscheidungen speisen.',
+  },
+  ethics: {
+    h2: 'Ethik, DSGVO und Branchenkodizes',
+    p1:
+      'Jedes BioNixus-Projekt läuft unter DSGVO, UK Data Protection Act, ESOMAR-Leitlinien und lokalem Datenschutzrecht — einschließlich saudischem PDPL, dem Bundesdatenschutzgesetz der VAE und CITRA-Vorgaben in Kuwait. Diese Untergrenze gilt für Gesundheit und Konsum gleichermaßen.',
+    p2:
+      'Gesundheitsprogramme ergänzen BHBIA Legal & Ethical Guidelines und den EphMRA Code of Conduct. Studien, die Patientendaten berühren — auch indirekt über arztberichtete Records — holen ethische Prüfung ein, wo vorgeschrieben. Adverse-Event-Reporting wird jedem Moderator vor dem Feld briefed, mit 24-Stunden-Eskalation an die Pharmakovigilanz des Auftraggebers.',
+    p3:
+      'Konsum- und Branchenprogramme bleiben innerhalb von ESOMAR und dem geltenden lokalen Kodex. Incentives laufen über auditierbare Kanäle. Gesundheits-Honorare werden zusätzlich gegen Fair-Market-Value-Leitlinien der lokalen Pharmaverbände gespiegelt.',
+    p4:
+      'Einwilligung erfolgt vor der Erhebung, in der bevorzugten Sprache des Befragten. Personenbezogene Daten werden pseudonymisiert und auf verschlüsselten EU-Servern gespeichert.',
+  },
+  reporting: {
+    h2: 'Berichtsstandards und Deliverable-Strukturen',
+    p1:
+      'Insight hat keinen Wert, bis er die erreicht, die handeln. Berichte öffnen mit drei bis fünf Kernbefunden und den empfohlenen Handlungen — bevor Stützdaten folgen. Das gilt für einen Head of Marketing einer Konsummarke und für einen Market-Access-Lead beim Therapie-Launch.',
+    p2:
+      'Quantitative Berichte enthalten Methodik-Anhänge — Stichprobenzusammensetzung, Gewichtung, Konfidenzintervalle und den Fragebogen. Qualitative Berichte präsentieren Themenanalyse mit anonymisierten Verbatims.',
+    p3Before:
+      'Standard-Deliverables umfassen interaktive Dashboards für Tracker, Executive-Decks und technische Anhänge. Gesundheitspacks können für HTA geschnitten werden. Konsum-Packs für Marken-, Trade- und SKU-Entscheidungen. Für',
+    intelLink: 'Competitive Intelligence',
+    p3After: 'liefern wir Monitoring-Berichte mit Alert-Updates in beiden Feldern.',
+    p4Before:
+      'Alle Berichte durchlaufen eine zweistufige interne Prüfung — Analyst auf Datenkorrektheit, Senior Director auf strategische Kohärenz. ',
+    kolLink: 'KOL- und Stakeholder-Mapping',
+    p4After: 'folgt demselben Protokoll, mit zusätzlicher Visualisierung von Einflussnetzwerken.',
+  },
+};
+
 export function MethodologyLongFormDe({ lang }: Props): JSX.Element {
-  const p = (path: string) => loc(lang, path);
-  return (
-    <>
-      <section className="section-padding bg-background" id="research-design">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-            1. Prinzipien der Studienkonzeption
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Jedes Projekt beginnt mit einer strukturierten Designphase, die kommerzielle Fragestellungen in ein prüfbares Forschungsgerüst übersetzt. Gemeinsam mit Marken‑, Medical‑Affairs‑ und Market‑Access‑Teams definieren wir Ziele, die konkret genug sind, um Entscheidungen zu treiben, und zugleich flexibel bleiben, um kurs‑Korrekturen während der Feldphase zu ermöglichen.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            <strong className="text-foreground">Quantitative Forschung</strong> nutzt standardisierte Fragebögen auf Basis validierter Skalen sowie conjoint‑ oder MaxDiff‑Designs für Trade‑off‑Messungen. Erhebungsinstrumente werden vor dem Feldstart durch kognitives Pretesting mit mindestens fünf Respondenten überprüft. Skip‑Logiken, Randomisierung und Plausibilitätsfragen schützen die Datenintegrität von Anfang an. Lesen Sie mehr zu unserer Herangehensweise an die{' '}
-            <Link to={p('/services/quantitative-research')} className="text-primary hover:underline font-medium">
-              quantitative Gesundheitsforschung
-            </Link>
-            .
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            <strong className="text-foreground">Qualitative Forschung</strong> folgt halb‑strukturierten Leitfäden mit Entscheidungsbaum‑Logik. Ob Einzelinterviews mit Ärztinnen und Ärzten, Payer‑Advisory‑Boards oder ethnografische Beobachtungen in Kliniken — jedes Interviewleitfadenset wird intern pilotiert und nach den ersten zwei bis drei Gesprächen verfeinert. Bei komplexen Therapiegebieten setzen wir medizinische Moderatorinnen und Moderatoren ein, die klinische Nuancen erkunden können, ohne zu lenken. Erfahren Sie mehr über{' '}
-            <Link to={p('/services/qualitative-research')} className="text-primary hover:underline font-medium">
-              qualitative pharmazeutische Forschung
-            </Link>
-            .
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Mixed‑Method‑Designs setzen wir ein, wenn statistische Generalisierbarkeit und erklärende Tiefe gleichermaßen gefragt sind — etwa bei einer Launch‑Readiness‑Studie aus einer Ärztebefragung (n ≈ 200) und Tiefeinterviews mit intensiv verschreibenden Spezialisten.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-cream" id="sampling-frameworks">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-            2. Stichprobendesign und Stichprobengröße
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Datenqualität beginnt bei der Rekrutierung. BioNixus pflegt proprietäre Ärzte‑ und HCP‑Panels in mehr als 17 EMEA‑ und GCC‑Märkten und ergänzt diese durch akkreditierte Panel‑Partner nach ESOMAR‑ und BHBIA‑Standards. Rekrutierung erfolgt über verifizierte Ärzteinformationssysteme, Krankenhausregister und Mitgliedschaften fachlicher Gesellschaften — nicht über offene Opt‑In‑Pools im offenen Internet.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Stichprobenumfänge leiten wir aus vorab definierten Power‑Annahmen ab. Bei den meisten quantitativen Vorhaben streben wir pro auswertbarer Teilgruppe mindestens einen Fehlerbereich von ±5&nbsp;% bei 95&nbsp;%‑Konfidenz an. Bei kleinen Zielpopulationen — etwa seltenen Indikationen oder nationalen Gremiumsmitgliedern — kann eine quasi‑Vollerhebung sinnvoller sein; dann passen wir die Auswertung an die Basis an.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Quotierung sichert Repräsentation nach Fachrichtung, Setting (stationär vs. niedergelassen), Verschreibungsvolumen und Region. Bei Multimarket‑Studien definieren wir Länderquoten so, dass keine einzelne Märktekohorte die Aggregation dominiert.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Vor qualitativer Feldarbeit prüfen Projektleitung und Auftraggeber gemeinsam die Rekruter‑Screener. Fachrichtung, Verschreibungsbefugnis und Behandlungserfahrung verifizieren wir doppelt — durch Abgleich von Profiler‑Daten mit Screenerantworten.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background" id="fieldwork-governance">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-            3. Feldsteuerung und Qualitätskontrolle
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Feldarbeit ist dort, wo Methodik operative Disziplin braucht. Jedes Projekt folgt einem Feldprotokoll mit Rekrutierungs‑Zeitplänen, respondentengerechten und kodexkonformen Honoraren, Zeitfenstern für Interviews sowie Eskalationspfaden bei Quotenausfall.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Online‑Befragungen werden über Monitoring‑Dashboards begleitet — Abschlussquoten, Median‑Bearbeitungszeit, Abbruchsstufen und Hinweise auf „Straight‑lining“. Bei systematisch zu kurzen Bearbeitungszeiten erfolgt Prüfung und Ausschluss, wenn die Qualitätsprüfung nicht bestanden wird.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Qualitative Sitzungen werden mit Einwilligung aufgezeichnet und wortgetreu transkribiert. Moderatoren dokumentieren bis 24&nbsp;Stunden danach Briefing‑Notizen zu Hypothesen und emergenten Themen — solange Gesprächsinhalt noch aktuell ist. In multimarketen Projekten führt eine zentrale Projektmanagementeinheit tägliche Feld‑Checks mit Local Teams durch, um Übersetzungsabweichungen oder Rekrutierungs‑Drifts früh zu erkennen.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Auch bei{' '}
-            <Link to={p('/services/clinical-trial-support')} className="text-primary hover:underline font-medium">
-              klinischer Studienbegleitung
-            </Link>{' '}
-            gelten diese Governance‑Regeln — ergänzt um Site‑Machbarkeit und Profiling‑Untersuchungen von Prüfzentren oder Investigators.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-cream" id="data-validation">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-            4. Datenvalidierung und KI‑gestützte Qualitätssicherung
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Rohdaten durchlaufen vor jeder Auswertung mehrere Filterstufen. Automatisiert werden Duplikate, unmögliche Antwort‑Kombinationen (etwa AllgemeinmedizinerIn mit neurochirurgischen Eingriffen) sowie statistisch auffällige Muster markiert.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            In einem zweiten Schritt prüfen Senior‑Researcher markierte Datensätze gegen Rekrutierungsnachweise und klären ggf. Rückfragen mit Respondenten. Nicht nachvollziehbare Einträge entfernen wir mit dokumentiertem Ausschlussgrund.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            KI‑gestütztes QA ergänzt dieses Modell: NLP überprüft offene Verbatim‑Antworten auf Kohärenz, Relevanz und Mindestsubstanz; qualitative Transkripte können zusätzliche Themenmodelle durchlaufen — maschinell gefundene Theme werden jedoch immer durch menschliche Analystinnen und Analysten verifiziert. KI beschleunigt Musterfindung; Interpretation bleibt menschliche Verantwortung.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Diese Mehrlagen‑Logik erzeugt Daten, denen Auftraggebende auch für interne Entscheidungen sowie — wenn nötig — regulatorische oder HTA‑Dossiers vertrauen können. Erfahren Sie mehr über die Integration von Evidenz in{' '}
-            <Link to={p('/services/market-access')} className="text-primary hover:underline font-medium">
-              Market‑Access‑ und Bewertungsstrategien (HTA)
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background" id="ethics-compliance">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-            5. Ethik, GDPR und regulatorische Angleichung
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            BioNixus‑Projekte orientieren sich an GDPR, britischem Datenschutzgesetz sowie Leitlinien von ESOMAR, EphMRA und BHBIA. In GCC‑Märkten berücksichtigen wir zusätzlich lokale Gesetze — etwa PDPL in Saudi‑Arabien, das UAE Federal Data Protection Law und Kuwait (CITRA).
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Einwilligungen holen wir vor Datenaufnahme ein; Unterlagen sind in der bevorzugten Sprache der Teilnehmenden und erläutern Verwendungszweck sowie Aufbewahrungsfristen. Personenbezogene Daten werden pseudonymisiert erfasst und auf verschlüsselten EU‑Servern verarbeitet. Identifizierbare Information geben wir ohne ausdrückliche Zusatzfreigabe für Follow‑ups nicht weiter.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Wo Bezüge zu patientenbezogenen Informationen bestehen — auch indirekt über ärztliche Angaben zu Patientenkohorten — aktivieren wir, wo nötig, ethisches Review sowie verschärfte De‑Identifikation. Für unerwünschte Arzneimittel­reaktionen schulen wir alle Moderatorinnen, Moderatoren und Interviewer vor Feldstart mit 24‑h‑Eskalationspfaden zur Pharmakovigilanzeinheit der Auftraggebenden.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Honorarabrechnung erfolgt über nachvollziehbare Kanäle und entspricht lokal gültigen Fair‑Market‑Value‑Leitlinien der pharmazeutischen Industrieverbände — zum Schutz von Respondenten wie Sponsoren gegen Transparenz‑ und Compliance‑Risiken.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-cream" id="reporting-standards">
-        <div className="container-wide max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-            6. Reporting‑Standards und Deliverable‑Struktur
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Erkenntnisse haben nur Wirkung, wenn sie Entscheider:innen erreichen. Unsere Reporting‑Struktur ist „Decision‑first“: jede Deliverable öffnet mit einer Executive‑Summary aus drei bis fünf Kernergebnissen und Handlungsempfehlungen, bevor Detailtabellen folgen.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Quantitative Reports liefern vollständige Methodikanhänge — Stichprobentabellen, Gewichtungen, Konfidenzintervalle und Fragbogenkopien — damit Sponsor:innen Evidence nachvollziehen können. Qualitative Arbeiten präsentieren Themen‑Analysen mit anonymisierten Zitaten.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Zu den Standard‑Deliverables zählen interaktive Dashboards für Tracker, Executive‑Decks sowie technische Annexes für Regulatorika oder{' '}
-            <Link to={p('/services/competitive-intelligence')} className="text-primary hover:underline font-medium">
-              Wettbewerbs‑Intelligence
-            </Link>
-            ‑Teams — dort mit ereignisbasierten Echtzeit‑Updates möglich.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Vor Auslieferung prüfen Analyst:innen Dateninhalte sowie Senior Direktor:innen narrativ‑strategische Kohärenz. Ebenso verläuft QA bei{' '}
-            <Link to={p('/services/kol-stakeholder-mapping')} className="text-primary hover:underline font-medium">
-              KOL‑ und Stakeholder‑Mappings
-            </Link>{' '}
-            — inkl. Visualisierung von Einflussnetzwerken.
-          </p>
-        </div>
-      </section>
-    </>
-  );
+  return <MethodologyLongFormLayout lang={lang} copy={METHODOLOGY_DE_COPY} />;
 }
