@@ -1,9 +1,8 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, BarChart3, Truck, Users } from 'lucide-react';
+import { BookOpen, Building2, Globe, Pill, ShieldCheck, Truck, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
@@ -22,6 +21,17 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { PHARMA_GUIDE_ARTICLE_CONTAINER } from '@/components/report-conversion/constants';
+import {
+  DirectoryCategoryCard,
+  DirectoryDriverCard,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectoryOutlineLink,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('usa');
 
@@ -32,6 +42,13 @@ interface PharmaCompany {
   therapeuticAreas: string;
   notes: string;
 }
+
+const TYPE_BADGE: Record<PharmaCompany['type'], string> = {
+  'Local Manufacturer': 'bg-[#E8F3EE] text-[#1B5E45]',
+  'MNC Office': 'bg-[#E8EDF5] text-[#14233E]',
+  Regional: 'bg-[#FBF3E0] text-[#8A6A12]',
+  Distributor: 'bg-[#F3EEF7] text-[#5B3A75]',
+};
 
 const pharmaCompanies: PharmaCompany[] = [
   { name: 'Pfizer', hq: 'USA', type: 'Local Manufacturer', therapeuticAreas: 'Oncology, vaccines, inflammation, rare diseases', notes: 'US HQ; major innovator and vaccine franchise' },
@@ -45,7 +62,7 @@ const pharmaCompanies: PharmaCompany[] = [
   { name: 'Regeneron', hq: 'USA', type: 'Local Manufacturer', therapeuticAreas: 'Ophthalmology, immunology, oncology', notes: 'Antibody platform; Dupixent partnership' },
   { name: 'Vertex Pharmaceuticals', hq: 'USA', type: 'Local Manufacturer', therapeuticAreas: 'Cystic fibrosis, rare diseases', notes: 'CF franchise; pipeline expansion' },
   { name: 'Moderna', hq: 'USA', type: 'Local Manufacturer', therapeuticAreas: 'Vaccines, mRNA therapeutics', notes: 'mRNA vaccine platform' },
-  { name: 'Biogen', hq: 'USA', type: 'Local Manufacturer', therapeuticAreas: 'Neuroscience, MS, Alzheimer\'s', notes: 'Neuroscience-focused biotech' },
+  { name: 'Biogen', hq: 'USA', type: 'Local Manufacturer', therapeuticAreas: "Neuroscience, MS, Alzheimer's", notes: 'Neuroscience-focused biotech' },
   { name: 'Novartis', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, immunology, cardiovascular, gene therapy', notes: 'Major US commercial and manufacturing presence' },
   { name: 'Roche / Genentech', hq: 'Switzerland', type: 'MNC Office', therapeuticAreas: 'Oncology, haematology, neuroscience, diagnostics', notes: 'Genentech as US research/commercial hub' },
   { name: 'Sanofi', hq: 'France', type: 'MNC Office', therapeuticAreas: 'Immunology, vaccines, rare diseases, diabetes', notes: 'Strong US specialty and vaccine presence' },
@@ -53,7 +70,7 @@ const pharmaCompanies: PharmaCompany[] = [
   { name: 'GSK (GlaxoSmithKline)', hq: 'UK', type: 'MNC Office', therapeuticAreas: 'Vaccines, respiratory, HIV, specialty', notes: 'Vaccine and specialty presence in US' },
   { name: 'Novo Nordisk', hq: 'Denmark', type: 'MNC Office', therapeuticAreas: 'Diabetes, obesity, rare diseases', notes: 'GLP-1 franchise driving US growth' },
   { name: 'Takeda', hq: 'Japan', type: 'MNC Office', therapeuticAreas: 'GI, rare diseases, oncology, plasma', notes: 'US specialty and plasma focus' },
-  { name: 'Bayer', hq: 'Germany', type: 'MNC Office', therapeuticAreas: 'Cardiology, oncology, women\'s health, consumer', notes: 'US pharma and consumer health' },
+  { name: 'Bayer', hq: 'Germany', type: 'MNC Office', therapeuticAreas: "Cardiology, oncology, women's health, consumer", notes: 'US pharma and consumer health' },
   { name: 'Boehringer Ingelheim', hq: 'Germany', type: 'MNC Office', therapeuticAreas: 'CVRM, respiratory, oncology', notes: 'Jardiance franchise; large US operations' },
   { name: 'Daiichi Sankyo', hq: 'Japan', type: 'MNC Office', therapeuticAreas: 'Oncology (ADCs), cardiovascular', notes: 'Enhertu-led US oncology growth' },
   { name: 'Astellas', hq: 'Japan', type: 'MNC Office', therapeuticAreas: 'Oncology, urology, transplant', notes: 'Xtandi and cell therapy investment' },
@@ -78,7 +95,7 @@ const faqItems = [
 const TOP_10_US_PHARMA: { name: string; note: string }[] = [
   { name: 'Eli Lilly', note: 'GLP-1 franchise (Mounjaro, Zepbound) has made Lilly the most valuable pharma company globally' },
   { name: 'Pfizer', note: 'broadest US commercial infrastructure; oncology and vaccine anchor' },
-  { name: 'Merck & Co. (MSD)', note: 'Keytruda remains the world\'s top-selling drug' },
+  { name: 'Merck & Co. (MSD)', note: "Keytruda remains the world's top-selling drug" },
   { name: 'AbbVie', note: 'Skyrizi and Rinvoq successfully replaced Humira revenue' },
   { name: 'Johnson & Johnson', note: 'diversified pharma + medtech leader' },
   { name: 'Novo Nordisk (US)', note: 'Ozempic/Wegovy drive the largest foreign-company US franchise' },
@@ -88,22 +105,48 @@ const TOP_10_US_PHARMA: { name: string; note: string }[] = [
   { name: 'Gilead Sciences', note: 'HIV leadership plus growing oncology franchise' },
 ];
 
+const RELATED_DIRECTORIES = [
+  { to: '/pharmaceutical-companies-uk', title: 'Pharmaceutical companies in UK' },
+  { to: '/pharmaceutical-companies-germany', title: 'Pharmaceutical companies in Germany' },
+  { to: '/pharmaceutical-companies-brazil', title: 'Pharmaceutical companies in Brazil' },
+  { to: '/pharmaceutical-companies-canada', title: 'Pharmaceutical companies in Canada' },
+  { to: '/insights/top-global-healthcare-market-research-companies-2026', title: 'Healthcare market research companies' },
+  { to: '/insights/top-healthcare-market-research-companies-usa-2026', title: 'USA healthcare MR companies 2026' },
+  { to: '/medical-device-companies-usa', title: 'Medical device companies in USA' },
+];
+
+const GROWTH_DRIVERS = [
+  { title: 'Specialty & Oncology', desc: 'Specialty medicines and oncology continue to concentrate value growth and drive complex channel strategies.' },
+  { title: 'Metabolic / GLP-1 Demand', desc: 'Diabetes and obesity therapies have reshaped volume, manufacturing, and payer budgets across the US market.' },
+  { title: 'IRA & Payer Pressure', desc: 'Inflation Reduction Act negotiation and PBM reform debates are reshaping pricing and launch sequencing.' },
+  { title: 'Biotech Innovation Clusters', desc: 'Boston, Bay Area, San Diego, and other hubs feed continuous pipeline renewal into Big Pharma portfolios.' },
+  { title: 'Specialty Pharmacy', desc: 'Limited distribution and specialty pharmacy networks are critical for high-cost biologics and cell/gene therapies.' },
+  { title: 'Manufacturing Resilience', desc: 'Onshoring and dual-sourcing strategies remain priorities after pandemic supply shocks.' },
+];
+
+const BIONIXUS_SERVICES = [
+  { title: 'Physician Surveys & KOL Mapping', desc: 'Quantitative and qualitative research with US physicians across specialties, IDNs, and community settings.' },
+  { title: 'Market Access & Payer Strategy', desc: 'CMS, commercial payer, and PBM landscape research to stress-test formulary and contracting hypotheses.' },
+  { title: 'Competitive Intelligence', desc: 'Launch tracking, share-of-voice, and channel monitoring across key US therapeutic categories.' },
+  { title: 'Market Entry & Expansion', desc: 'Indication prioritisation, stakeholder mapping, and go-to-market planning for US launches.' },
+];
+
 const UsaPharmaCompanies = () => {
   const past70Percent = useScrollThreshold(70);
   const { language } = useLanguage();
-  const basePath = languagePaths[language] || '/';
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-usa';
 
   const ogTitle = 'Top Pharmaceutical Companies in USA (2026 Ranked List)';
   const ogDescription = 'Complete 2026 list of pharmaceutical companies in the USA — Big Pharma, biotech, wholesalers, FDA/CMS context. Research by BioNixus.';
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>Top Pharmaceutical Companies in USA (2026 Ranked List)</title>
         <meta name="description" content="Complete 2026 list of pharmaceutical companies in the USA — Big Pharma, biotech, wholesalers, FDA/CMS context. Research by BioNixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the USA: Complete Industry Guide 2026', description: 'Guide to pharmaceutical companies in the United States — major manufacturers, biotech leaders, wholesalers, FDA/CMS landscape, and market structure for 2026.', url: citationUrl, datePublished: '2026-08-14', dateModified: '2026-08-22', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the USA: Complete Industry Guide 2026', description: 'Guide to pharmaceutical companies in the United States — major manufacturers, biotech leaders, wholesalers, FDA/CMS landscape, and market structure for 2026.', url: citationUrl, datePublished: '2026-08-14', dateModified: '2026-09-05', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the USA', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
@@ -119,22 +162,78 @@ const UsaPharmaCompanies = () => {
       <Navbar />
       <ReportReadingProgress progressId="pharma-guide-rp-usa" />
       <main>
-        <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in the USA</span></div></div></div>
+        <div data-hero-lcp>
+          <DirectoryHero
+            breadcrumbs={[
+              { name: 'Home', href: '/' },
+              { name: 'Resources', href: '/resources' },
+              { name: 'Pharmaceutical Companies in the USA', href: '/pharmaceutical-companies-usa' },
+            ]}
+            kicker="Industry Guide 2026"
+            h1="Pharmaceutical Companies in the USA"
+            lead={
+              <>
+                The United States is the world&apos;s largest pharmaceutical market — commonly cited in the USD 600
+                billion-plus range for prescription medicines — with headquarters and major commercial operations for
+                most global innovators. Pharmaceutical companies in the USA set the pace for specialty, oncology, and
+                metabolic launches — start from{' '}
+                <Link to="/healthcare-market-research">healthcare market research</Link> for programme scoping.
+              </>
+            }
+            rest="This guide covers major manufacturers, biotech leaders, wholesalers, FDA/CMS dynamics, distribution channels, and strategic opportunities."
+            metaLine="Last updated: September 2026 · Sources: FDA, CMS, company filings, BioNixus research"
+            stats={[
+              { value: '$600B+', label: 'Rx pharma market (ballpark)' },
+              { value: '340M+', label: 'Population' },
+              { value: 'FDA', label: 'Primary drug regulator' },
+              { value: 'CMS', label: 'Federal payer / coverage' },
+            ]}
+            actions={
+              <>
+                <DirectoryGoldLink to="#request-proposal">Request a USA research proposal</DirectoryGoldLink>
+                <DirectoryOutlineLink href="#top-companies">Browse the companies</DirectoryOutlineLink>
+              </>
+            }
+          />
+        </div>
 
-        <section className="section-padding pt-0 pb-12"><div className="container-wide max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />Industry Guide 2026</div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">Pharmaceutical Companies in the USA</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">The United States is the world&apos;s largest pharmaceutical market — commonly cited in the USD 600 billion-plus range for prescription medicines — with headquarters and major commercial operations for most global innovators. Pharmaceutical companies in the USA set the pace for specialty, oncology, and metabolic launches — start from <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> for programme scoping. This guide covers major manufacturers, biotech leaders, wholesalers, FDA/CMS dynamics, distribution channels, and strategic opportunities.</p>
-          <p className="text-sm text-muted-foreground">Last updated: August 2026 &middot; Sources: FDA, CMS, company filings, BioNixus research</p>
-          <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in the USA: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Aug. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
-          <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" /></div></section>
+        <DirectoryJumpNav
+          items={[
+            { href: '#pharma-companies-quick-answer', label: 'Answer' },
+            { href: '#top-companies', label: 'Companies' },
+            { href: '#companies-by-category', label: 'Categories' },
+            { href: '#regulatory-landscape', label: 'FDA / CMS' },
+            { href: '#distribution-channels', label: 'Channels' },
+            { href: '#growth-drivers', label: 'Drivers' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+        />
 
-        <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div><p className="text-3xl md:text-4xl font-display font-bold">$600B+</p><p className="text-primary-foreground/70 text-sm mt-1">Rx pharma market (ballpark)</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">340M+</p><p className="text-primary-foreground/70 text-sm mt-1">Population</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">FDA</p><p className="text-primary-foreground/70 text-sm mt-1">Primary drug regulator</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">CMS</p><p className="text-primary-foreground/70 text-sm mt-1">Federal payer / coverage</p></div>
-        </div></div></section>
+        <DirectorySection id="cite" eyebrow="Attribution">
+          <div className="premium-card p-5">
+            <p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              BioNixus. &quot;Pharmaceutical Companies in the USA: Complete Industry Guide 2026.&quot; BioNixus
+              Healthcare Market Research, Aug. 2026,{' '}
+              <a href={citationUrl} className="text-primary hover:underline break-all">
+                {citationUrl}
+              </a>
+              .
+              <br />
+              Licensed under{' '}
+              <a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                CC BY 4.0
+              </a>{' '}
+              — free to share and adapt with attribution.
+            </p>
+          </div>
+          <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" />
+        </DirectorySection>
 
         <PharmaCompaniesQuickAnswer
           country="usa"
@@ -144,149 +243,323 @@ const UsaPharmaCompanies = () => {
           topCompanyNames={pharmaCompanies.map((c) => c.name)}
         />
 
-        <ReportContentWithAside config={PHARMA_CONVERSION}>
-        <section className="section-padding py-8 bg-muted/30"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
-          <div className="grid md:grid-cols-2 gap-2">
-            <a href="#market-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><BarChart3 className="w-4 h-4" /> USA Pharmaceutical Market Overview</a>
-            <a href="#top-companies" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> Top Pharmaceutical Companies</a>
-            <a href="#companies-by-category" className="text-sm text-primary hover:underline flex items-center gap-2"><Users className="w-4 h-4" /> Companies by Category</a>
-            <a href="#regulatory-landscape" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Regulatory Landscape (FDA / CMS)</a>
-            <a href="#distribution-channels" className="text-sm text-primary hover:underline flex items-center gap-2"><Truck className="w-4 h-4" /> Distribution Channels</a>
-            <a href="#growth-drivers" className="text-sm text-primary hover:underline flex items-center gap-2"><TrendingUp className="w-4 h-4" /> Growth Drivers</a>
-            <a href="#bionixus-support" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> How BioNixus Supports Pharma in the USA</a>
-            <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently Asked Questions</a>
-          </div>
-        </div></section>
+        <ReportContentWithAside config={PHARMA_CONVERSION} containerClassName={PHARMA_GUIDE_ARTICLE_CONTAINER}>
+          <DirectorySection id="market-overview" eyebrow="Market" title="USA Pharmaceutical Market Overview">
+            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+              <p>
+                The US pharmaceutical market is the <strong className="text-foreground">largest globally</strong>, with
+                prescription spend commonly framed in the <strong className="text-foreground">USD 600 billion-plus</strong>{' '}
+                range. Growth is concentrated in specialty medicines, oncology, immunology, and metabolic therapies
+                (including GLP-1s), while traditional primary-care categories remain more mature.
+              </p>
+              <p>
+                Regulation is led by the <strong className="text-foreground">FDA</strong> (approval, manufacturing
+                quality, labelling) and coverage policy by <strong className="text-foreground">CMS</strong> (Medicare,
+                Medicaid) alongside commercial PBMs and insurers. Distribution is dominated by the &quot;Big Three&quot;
+                wholesalers and specialty pharmacy networks.
+              </p>
+              <p>
+                For comparative country programmes, see our{' '}
+                <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                  healthcare market research hub
+                </Link>{' '}
+                and peer directories for the UK, Germany, Brazil, and Canada.
+              </p>
+            </div>
+          </DirectorySection>
 
-        <section className="section-padding py-16" id="market-overview"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">USA Pharmaceutical Market Overview</h2>
-          <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
-            <p>The US pharmaceutical market is the <strong className="text-foreground">largest globally</strong>, with prescription spend commonly framed in the <strong className="text-foreground">USD 600 billion-plus</strong> range. Growth is concentrated in specialty medicines, oncology, immunology, and metabolic therapies (including GLP-1s), while traditional primary-care categories remain more mature.</p>
-            <p>Regulation is led by the <strong className="text-foreground">FDA</strong> (approval, manufacturing quality, labelling) and coverage policy by <strong className="text-foreground">CMS</strong> (Medicare, Medicaid) alongside commercial PBMs and insurers. Distribution is dominated by the &quot;Big Three&quot; wholesalers and specialty pharmacy networks.</p>
-            <p>For comparative country programmes, see our <Link to="/healthcare-market-research" className="text-primary hover:underline">healthcare market research hub</Link> and peer directories for the UK, Germany, Brazil, and Canada.</p>
-          </div>
-        </div></section>
+          <DirectorySection
+            id="top-companies"
+            surface="cream"
+            eyebrow="Ranked list"
+            title="Top Pharmaceutical Companies in the USA"
+            body="US-market revenue leaders first, then the full operating table — US-headquartered manufacturers, foreign multinational affiliates, and national wholesalers."
+          >
+            <div className="premium-card p-6 md:p-8 mb-10">
+              <h3 className="text-lg font-display font-semibold text-foreground mb-6">
+                Top 10 pharmaceutical companies in the USA (2026, by US-market revenue)
+              </h3>
+              <ol className="space-y-4">
+                {TOP_10_US_PHARMA.map((company, index) => (
+                  <li key={company.name} className="flex items-start gap-4">
+                    <span className="directory-rank mt-0.5 w-8 shrink-0">{String(index + 1).padStart(2, '0')}</span>
+                    <span>
+                      <strong className="text-foreground">{company.name}</strong>
+                      <span className="text-muted-foreground"> — {company.note}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="overflow-x-auto rounded-2xl border border-[#EDE9E3] shadow-[0_16px_50px_rgba(6,16,31,0.05)]">
+              <table className="directory-table">
+                <thead>
+                  <tr>
+                    <th scope="col" className="w-12">
+                      #
+                    </th>
+                    <th scope="col">Company</th>
+                    <th scope="col">HQ</th>
+                    <th scope="col" className="hidden md:table-cell">
+                      Type
+                    </th>
+                    <th scope="col" className="hidden lg:table-cell">
+                      Therapeutic Areas
+                    </th>
+                    <th scope="col" className="hidden xl:table-cell">
+                      Notes
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pharmaCompanies.map((company, index) => (
+                    <tr key={company.name}>
+                      <td className="directory-rank">{String(index + 1).padStart(2, '0')}</td>
+                      <td className="font-semibold text-foreground">{company.name}</td>
+                      <td className="text-muted-foreground">{company.hq}</td>
+                      <td className="hidden md:table-cell">
+                        <span
+                          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${TYPE_BADGE[company.type]}`}
+                        >
+                          {company.type}
+                        </span>
+                      </td>
+                      <td className="text-muted-foreground hidden lg:table-cell">{company.therapeuticAreas}</td>
+                      <td className="text-muted-foreground text-xs hidden xl:table-cell">{company.notes}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <PharmaDirectoryBridge
+              countryName="United States"
+              countryDisplay="the USA"
+              directorySlug="usa"
+              ctaId="pharma_companies_usa_after_table"
+            />
+          </DirectorySection>
 
-        <section className="section-padding py-16 bg-muted/30" id="top-companies"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Top Pharmaceutical Companies in the USA</h2>
-          <div className="bg-card border border-border rounded-xl p-6 mb-8 max-w-4xl">
-            <h3 className="text-lg font-display font-semibold text-foreground mb-4">Top 10 pharmaceutical companies in the USA (2026, by US-market revenue)</h3>
-            <ol className="list-decimal pl-5 space-y-2 text-sm text-foreground">
-              {TOP_10_US_PHARMA.map((c) => (
-                <li key={c.name}><strong>{c.name}</strong> — <span className="text-muted-foreground">{c.note}</span></li>
+          <ReportMidPageCta config={PHARMA_CONVERSION} />
+
+          <DirectorySection
+            id="companies-by-category"
+            eyebrow="Categories"
+            title="List of Pharmaceutical Companies in the USA by Category"
+            body="US pharmaceutical companies span headquarters manufacturers, foreign multinational affiliates with large US operations, and national wholesaler/specialty pharmacy networks."
+          >
+            <div className="grid md:grid-cols-2 gap-5">
+              <DirectoryCategoryCard
+                title="US-Headquartered Manufacturers"
+                icon={<Pill className="w-5 h-5" />}
+                blurb="US-headquartered innovators and biotech majors anchor the market — Pfizer, J&J, Merck, AbbVie, Lilly, BMS, Amgen, Gilead, Regeneron, Vertex, Moderna, and Biogen among others."
+                names={pharmaCompanies.filter((c) => c.type === 'Local Manufacturer').map((c) => c.name)}
+              />
+              <DirectoryCategoryCard
+                title="Multinational Pharma Affiliates"
+                icon={<Globe className="w-5 h-5" />}
+                blurb="European and Japanese MNCs maintain large US commercial and manufacturing footprints (Novartis, Roche/Genentech, Sanofi, AstraZeneca, GSK, Novo Nordisk, Takeda, Bayer)."
+                names={pharmaCompanies.filter((c) => c.type === 'MNC Office').map((c) => c.name)}
+              />
+              <div className="md:col-span-2">
+                <DirectoryCategoryCard
+                  title="Wholesalers & Distribution"
+                  icon={<Truck className="w-5 h-5" />}
+                  blurb="McKesson, Cencora (AmerisourceBergen), and Cardinal Health dominate wholesale distribution and specialty pharmacy logistics."
+                  names={pharmaCompanies.filter((c) => c.type === 'Distributor').map((c) => c.name)}
+                />
+              </div>
+            </div>
+          </DirectorySection>
+
+          <DirectorySection
+            id="regulatory-landscape"
+            surface="cream"
+            eyebrow="Access"
+            title="Pharma Companies in the USA: Regulatory Landscape (FDA / CMS)"
+            body="FDA leads drug approval and quality; CMS and commercial payers shape coverage and reimbursement."
+          >
+            <div className="grid md:grid-cols-2 gap-5 mb-8">
+              <div className="premium-card p-6 md:p-7">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-[#C9A84C]" />
+                  Regulatory Authorities
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                  <strong className="text-foreground">FDA</strong> leads approval and quality oversight;{' '}
+                  <strong className="text-foreground">CMS</strong> shapes federal coverage. Commercial payers and PBMs
+                  control most private formulary access. Pricing and access debates centre on IRA negotiation, Part D
+                  redesign, and specialty utilization management.
+                </p>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Approval Pathways</p>
+                    <p className="text-lg font-semibold text-foreground">NDA/BLA with priority and accelerated options</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Pricing / Access Model</p>
+                    <p className="text-sm text-foreground">
+                      Commercial + Medicare/Medicaid; IRA negotiation for selected drugs
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="premium-card p-6 md:p-7">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <Pill className="w-5 h-5 text-[#C9A84C]" />
+                  Key Registration Requirements
+                </h3>
+                <ul className="space-y-3 text-sm text-foreground">
+                  <li>FDA CTD/eCTD dossier and manufacturing inspections</li>
+                  <li>GMP / cGMP compliance</li>
+                  <li>Labelling and REMS where applicable</li>
+                  <li>Pharmacovigilance and post-marketing commitments</li>
+                  <li className="font-medium">US agent / affiliate typically required for foreign applicants</li>
+                </ul>
+              </div>
+            </div>
+          </DirectorySection>
+
+          <DirectorySection
+            id="distribution-channels"
+            eyebrow="Channels"
+            title="Drug Distribution Channels in the USA"
+            body="US pharmaceutical distribution is dominated by national wholesalers feeding retail, hospital, and specialty pharmacy channels."
+          >
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="premium-card p-6 md:p-8">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <Users className="w-5 h-5 text-[#C9A84C]" />
+                  Private / Commercial Channel
+                </h3>
+                <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+                  <p>Commercial insurance and employer plans dominate private utilisation, with PBMs managing formularies and rebates.</p>
+                  <ul className="space-y-2 text-foreground">
+                    <li>Retail chains and independent pharmacies</li>
+                    <li>Specialty pharmacy limited networks</li>
+                    <li>Hospital GPO purchasing</li>
+                    <li>PBM formulary and prior authorisation</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="premium-card p-6 md:p-8">
+                <h3 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-[#C9A84C]" />
+                  Public Payer Channel
+                </h3>
+                <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+                  <p>Medicare (Parts B/D), Medicaid, and VA/DoD channels are major public payers.</p>
+                  <ul className="space-y-2 text-foreground">
+                    <li>CMS coverage and IRA negotiation</li>
+                    <li>State Medicaid formularies</li>
+                    <li>340B and safety-net channels</li>
+                    <li>VA/DoD procurement</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </DirectorySection>
+
+          <DirectorySection
+            id="growth-drivers"
+            surface="cream"
+            eyebrow="Outlook"
+            title="USA Pharmaceutical Market Growth Drivers"
+            body="Specialty innovation, metabolic demand, and payer reform are reshaping the US pharmaceutical landscape."
+          >
+            <div className="grid md:grid-cols-3 gap-5">
+              {GROWTH_DRIVERS.map((driver) => (
+                <DirectoryDriverCard key={driver.title} title={driver.title} desc={driver.desc} />
               ))}
-            </ol>
-          </div>
-          <p className="text-muted-foreground mb-8 max-w-3xl">The following table lists major pharmaceutical companies operating in the USA — including US-headquartered manufacturers, foreign multinational affiliates, and national wholesalers.</p>
-          <div className="overflow-x-auto rounded-xl border border-border"><table className="w-full text-sm"><thead><tr className="bg-primary/5 border-b border-border"><th className="text-left px-4 py-3 font-semibold text-foreground">Company</th><th className="text-left px-4 py-3 font-semibold text-foreground">HQ</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden md:table-cell">Type</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden lg:table-cell">Therapeutic Areas</th><th className="text-left px-4 py-3 font-semibold text-foreground hidden xl:table-cell">Notes</th></tr></thead><tbody>
-            {pharmaCompanies.map((c, i) => (<tr key={c.name} className={`border-b border-border ${i % 2 === 0 ? 'bg-card' : 'bg-muted/20'}`}><td className="px-4 py-3 font-medium text-foreground">{c.name}</td><td className="px-4 py-3 text-muted-foreground">{c.hq}</td><td className="px-4 py-3 hidden md:table-cell"><span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${c.type === 'Local Manufacturer' ? 'bg-green-50 text-green-700' : c.type === 'MNC Office' ? 'bg-blue-50 text-blue-700' : c.type === 'Regional' ? 'bg-amber-50 text-amber-700' : 'bg-purple-50 text-purple-700'}`}>{c.type}</span></td><td className="px-4 py-3 text-muted-foreground hidden lg:table-cell">{c.therapeuticAreas}</td><td className="px-4 py-3 text-muted-foreground text-xs hidden xl:table-cell">{c.notes}</td></tr>))}
-          </tbody></table></div>
-          <PharmaDirectoryBridge
-            countryName="United States"
-            countryDisplay="the USA"
-            directorySlug="usa"
-            ctaId="pharma_companies_usa_after_table"
-          />
-        </div></section>
+            </div>
+          </DirectorySection>
 
-        <ReportMidPageCta config={PHARMA_CONVERSION} />
+          <DirectorySection
+            id="bionixus-support"
+            eyebrow="Fieldwork"
+            title="How BioNixus Supports Pharma Companies in the USA"
+            body={
+              <>
+                BioNixus is a healthcare market research company supporting pharma and biotech programmes in the United
+                States and globally. For company-level US programmes, see our{' '}
+                <Link to="/pharmaceutical-market-research-usa" className="text-primary hover:underline font-medium">
+                  market research company for USA pharma
+                </Link>
+                . We help pharma, biotech, and medtech companies with:
+              </>
+            }
+          >
+            <div className="grid md:grid-cols-2 gap-5 mb-10">
+              {BIONIXUS_SERVICES.map((service) => (
+                <DirectoryDriverCard key={service.title} title={service.title} desc={service.desc} />
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              For tailored healthcare research, explore our{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                healthcare market research services
+              </Link>{' '}
+              or contact our{' '}
+              <Link to="/healthcare-market-research/united-states" className="text-primary hover:underline">
+                US pharmaceutical market research team
+              </Link>
+              .
+            </p>
+          </DirectorySection>
 
-        <section className="section-padding py-16" id="companies-by-category"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">List of Pharmaceutical Companies in the USA by Category</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">US pharmaceutical companies span headquarters manufacturers, foreign multinational affiliates with large US operations, and national wholesaler/specialty pharmacy networks.</p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card border border-border rounded-xl p-6"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center"><Pill className="w-5 h-5 text-green-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">US-Headquartered Manufacturers</h3></div><p className="text-sm text-muted-foreground mb-4">US-headquartered innovators and biotech majors anchor the market — Pfizer, J&amp;J, Merck, AbbVie, Lilly, BMS, Amgen, Gilead, Regeneron, Vertex, Moderna, and Biogen among others.</p><ul className="space-y-1.5 text-sm text-foreground">{pharmaCompanies.filter(c => c.type === 'Local Manufacturer').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-green-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
-            <div className="bg-card border border-border rounded-xl p-6"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center"><Globe className="w-5 h-5 text-blue-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">Multinational Pharma Affiliates</h3></div><p className="text-sm text-muted-foreground mb-4">European and Japanese MNCs maintain large US commercial and manufacturing footprints (Novartis, Roche/Genentech, Sanofi, AstraZeneca, GSK, Novo Nordisk, Takeda, Bayer).</p><ul className="space-y-1.5 text-sm text-foreground">{pharmaCompanies.filter(c => c.type === 'MNC Office').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-blue-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
-            <div className="bg-card border border-border rounded-xl p-6 md:col-span-2"><div className="flex items-center gap-3 mb-4"><div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center"><Truck className="w-5 h-5 text-purple-700" /></div><h3 className="text-lg font-display font-semibold text-foreground">Wholesalers &amp; Distribution</h3></div><p className="text-sm text-muted-foreground mb-4">McKesson, Cencora (AmerisourceBergen), and Cardinal Health dominate wholesale distribution and specialty pharmacy logistics.</p><ul className="space-y-1.5 text-sm text-foreground">{pharmaCompanies.filter(c => c.type === 'Distributor').map(c => (<li key={c.name} className="flex items-start gap-2"><span className="text-purple-600 mt-1 shrink-0">&#x2713;</span> {c.name}</li>))}</ul></div>
-          </div>
-        </div></section>
+          <DirectorySection
+            id="peer-directories"
+            surface="cream"
+            eyebrow="Compare markets"
+            title="Pharmaceutical companies in other major markets"
+            body="Compare the US pharmaceutical industry with BioNixus company directories for peer markets."
+          >
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {RELATED_DIRECTORIES.map((link) => (
+                <DirectoryLinkTile key={link.to} to={link.to} title={link.title} />
+              ))}
+            </div>
+          </DirectorySection>
 
-        <section className="section-padding py-16 bg-muted/30" id="regulatory-landscape"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharma Companies in the USA: Regulatory Landscape (FDA / CMS)</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">FDA leads drug approval and quality; CMS and commercial payers shape coverage and reimbursement.</p>
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
-            <div className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-primary" />Regulatory Authorities</h3><p className="text-sm text-muted-foreground leading-relaxed mb-4"><strong className="text-foreground">FDA</strong> leads approval and quality oversight; <strong className="text-foreground">CMS</strong> shapes federal coverage. Commercial payers and PBMs control most private formulary access. Pricing and access debates centre on IRA negotiation, Part D redesign, and specialty utilization management.</p><div className="space-y-3"><div><p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Approval Pathways</p><p className="text-lg font-semibold text-foreground">NDA/BLA with priority and accelerated options</p></div><div><p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Pricing / Access Model</p><p className="text-sm text-foreground">Commercial + Medicare/Medicaid; IRA negotiation for selected drugs</p></div></div></div>
-            <div className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2"><Pill className="w-5 h-5 text-primary" />Key Registration Requirements</h3><ul className="space-y-3 text-sm text-foreground"><li className="flex items-start gap-2"><span className="text-primary mt-1 shrink-0">&#x2713;</span><span>FDA CTD/eCTD dossier and manufacturing inspections</span></li><li className="flex items-start gap-2"><span className="text-primary mt-1 shrink-0">&#x2713;</span><span>GMP / cGMP compliance</span></li><li className="flex items-start gap-2"><span className="text-primary mt-1 shrink-0">&#x2713;</span><span>Labelling and REMS where applicable</span></li><li className="flex items-start gap-2"><span className="text-primary mt-1 shrink-0">&#x2713;</span><span>Pharmacovigilance and post-marketing commitments</span></li><li className="flex items-start gap-2"><span className="text-amber-600 mt-1 shrink-0"><Building2 className="w-4 h-4" /></span><span className="font-medium">US agent / affiliate typically required for foreign applicants</span></li></ul></div>
-          </div>
-        </div></section>
+          <section className="section-padding py-10" id="country-directories">
+            <div className="container-wide w-full">
+              <CountryDirectoryLinks country="usa" excludePath="/pharmaceutical-companies-usa" compact />
+            </div>
+          </section>
 
-        <section className="section-padding py-16" id="distribution-channels"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Drug Distribution Channels in the USA</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">US pharmaceutical distribution is dominated by national wholesalers feeding retail, hospital, and specialty pharmacy channels.</p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card border border-border rounded-xl p-8"><h3 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2"><Users className="w-5 h-5 text-primary" />Private / Commercial Channel</h3><div className="space-y-4 text-sm text-muted-foreground leading-relaxed"><p>Commercial insurance and employer plans dominate private utilisation, with PBMs managing formularies and rebates.</p><ul className="space-y-1.5"><li className="flex items-start gap-2"><span className="text-primary shrink-0">&#x25BA;</span> Retail chains and independent pharmacies</li><li className="flex items-start gap-2"><span className="text-primary shrink-0">&#x25BA;</span> Specialty pharmacy limited networks</li><li className="flex items-start gap-2"><span className="text-primary shrink-0">&#x25BA;</span> Hospital GPO purchasing</li><li className="flex items-start gap-2"><span className="text-primary shrink-0">&#x25BA;</span> PBM formulary and prior authorisation</li></ul></div></div>
-            <div className="bg-card border border-border rounded-xl p-8"><h3 className="text-lg font-display font-semibold text-foreground mb-4 flex items-center gap-2"><Building2 className="w-5 h-5 text-primary" />Public Payer Channel</h3><div className="space-y-4 text-sm text-muted-foreground leading-relaxed"><p>Medicare (Parts B/D), Medicaid, and VA/DoD channels are major public payers.</p><ul className="space-y-1.5"><li className="flex items-start gap-2"><span className="text-primary shrink-0">&#x25BA;</span> CMS coverage and IRA negotiation</li><li className="flex items-start gap-2"><span className="text-primary shrink-0">&#x25BA;</span> State Medicaid formularies</li><li className="flex items-start gap-2"><span className="text-primary shrink-0">&#x25BA;</span> 340B and safety-net channels</li><li className="flex items-start gap-2"><span className="text-primary shrink-0">&#x25BA;</span> VA/DoD procurement</li></ul></div></div>
-          </div>
-        </div></section>
+          <PharmaCompaniesFaqSection items={faqItems} contained />
 
-        <section className="section-padding py-16" id="growth-drivers"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">USA Pharmaceutical Market Growth Drivers</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">Specialty innovation, metabolic demand, and payer reform are reshaping the US pharmaceutical landscape.</p>
-          <div className="grid md:grid-cols-3 gap-6">{[
-            { title: 'Specialty & Oncology', desc: 'Specialty medicines and oncology continue to concentrate value growth and drive complex channel strategies.' },
-            { title: 'Metabolic / GLP-1 Demand', desc: 'Diabetes and obesity therapies have reshaped volume, manufacturing, and payer budgets across the US market.' },
-            { title: 'IRA & Payer Pressure', desc: 'Inflation Reduction Act negotiation and PBM reform debates are reshaping pricing and launch sequencing.' },
-            { title: 'Biotech Innovation Clusters', desc: 'Boston, Bay Area, San Diego, and other hubs feed continuous pipeline renewal into Big Pharma portfolios.' },
-            { title: 'Specialty Pharmacy', desc: 'Limited distribution and specialty pharmacy networks are critical for high-cost biologics and cell/gene therapies.' },
-            { title: 'Manufacturing Resilience', desc: 'Onshoring and dual-sourcing strategies remain priorities after pandemic supply shocks.' },
-          ].map((d) => (<div key={d.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{d.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p></div>))}</div>
-        </div></section>
+          <PharmaCompaniesGlobalHubLinks country="usa" />
 
-        <section className="section-padding py-16" id="bionixus-support"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">How BioNixus Supports Pharma Companies in the USA</h2>
-          <p className="text-muted-foreground mb-10 max-w-3xl">
-            BioNixus is a healthcare market research company supporting pharma and biotech programmes in the United States and globally.
-            For company-level US programmes, see our{' '}
-            <Link to="/pharmaceutical-market-research-usa" className="text-primary hover:underline font-medium">
-              market research company for USA pharma
-            </Link>
-            . We help pharma, biotech, and medtech companies with:
-          </p>
-          <div className="grid md:grid-cols-2 gap-6 mb-10">{[
-            { title: 'Physician Surveys & KOL Mapping', desc: 'Quantitative and qualitative research with US physicians across specialties, IDNs, and community settings.' },
-            { title: 'Market Access & Payer Strategy', desc: 'CMS, commercial payer, and PBM landscape research to stress-test formulary and contracting hypotheses.' },
-            { title: 'Competitive Intelligence', desc: 'Launch tracking, share-of-voice, and channel monitoring across key US therapeutic categories.' },
-            { title: 'Market Entry & Expansion', desc: 'Indication prioritisation, stakeholder mapping, and go-to-market planning for US launches.' },
-          ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
-          <p className="text-muted-foreground leading-relaxed mt-8 max-w-4xl">
-            For tailored healthcare research, explore our{' '}
-            <Link to="/healthcare-market-research" className="text-primary hover:underline">
-              healthcare market research services
-            </Link>{' '}
-            or contact our{' '}
-            <Link to="/healthcare-market-research/united-states" className="text-primary hover:underline">
-              US pharmaceutical market research team
-            </Link>.
-          </p>
-        </div></section>
-
-        <section className="section-padding py-16" id="peer-directories"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical companies in other major markets</h2>
-          <p className="text-muted-foreground mb-8 max-w-3xl">Compare the US pharmaceutical industry with BioNixus company directories for peer markets.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <Link to="/pharmaceutical-companies-uk" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in UK <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
-            <Link to="/pharmaceutical-companies-germany" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Germany <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
-            <Link to="/pharmaceutical-companies-brazil" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Brazil <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
-            <Link to="/pharmaceutical-companies-canada" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Pharmaceutical companies in Canada <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
-            <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Healthcare market research companies <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
-            <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">USA healthcare MR companies 2026 <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
-            <Link to="/medical-device-companies-usa" className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary">Medical device companies in USA <span className="text-primary transition-transform group-hover:translate-x-1" aria-hidden>&rarr;</span></Link>
-          </div>
-        </div></section>
-
-        <section className="section-padding py-10" id="country-directories"><div className="container-wide w-full">
-          <CountryDirectoryLinks country="usa" excludePath="/pharmaceutical-companies-usa" compact />
-        </div></section>
-
-        <PharmaCompaniesFaqSection items={faqItems} />
-
-        <PharmaCompaniesGlobalHubLinks country="usa" />
-        <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>FDA and CMS public materials</li><li>Company 10-K / annual reports and investor disclosures</li><li>Wholesaler and specialty pharmacy channel disclosures</li><li>BioNixus primary research with US healthcare stakeholders (2024–2026)</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on the USA, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
+          <DirectorySection id="methodology" eyebrow="Sources" title="Data Sources & Methodology">
+            <div className="premium-card p-6 md:p-8">
+              <h3 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-[#C9A84C]" />
+                How this guide was compiled
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                This guide aggregates publicly available information from:
+              </p>
+              <ul className="text-sm text-muted-foreground space-y-2 mb-6">
+                <li>FDA and CMS public materials</li>
+                <li>Company 10-K / annual reports and investor disclosures</li>
+                <li>Wholesaler and specialty pharmacy channel disclosures</li>
+                <li>BioNixus primary research with US healthcare stakeholders (2024–2026)</li>
+              </ul>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                For customised market intelligence on the USA,{' '}
+                <Link to="/contact" className="text-primary hover:underline">
+                  contact our team
+                </Link>
+                .
+              </p>
+            </div>
+          </DirectorySection>
         </ReportContentWithAside>
 
-        <ReportConsultationBand config={PHARMA_CONVERSION} />
-        </main>
+        <div id="request-proposal">
+          <ReportConsultationBand config={PHARMA_CONVERSION} />
+        </div>
+      </main>
       <Footer />
       {past70Percent ? (
         <div className="fixed bottom-0 left-0 right-0 z-40 bg-background border-t border-border shadow-lg p-4">
