@@ -730,6 +730,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/pt/pesquisa-mercado-farmaceutico-brasil', element: <PtBrazilPharmaceuticalMarketResearch /> },
   { path: '/pt/pesquisa-mercado-saude-brasil', element: <PtBrazilHealthcareMarketResearch /> },
   { path: '/ru/healthcare-market-research', element: <HubPage /> },
+  { path: '/pt/healthcare-market-research', element: <HubPage /> },
   { path: '/top-market-research-companies-brazil-2026', element: <Navigate to="/insights/top-market-research-companies-brazil-2026" replace /> },
   ...allListicleConfigs.map((config) => ({
     path: config.slug,

@@ -57,6 +57,7 @@ export const ORG_FOUNDING_LOCATION = {
  */
 
 export const ORG_KNOWS_ABOUT = [
+  'Market research company',
   'Pharmaceutical market research',
   'Healthcare market research',
   'Market access research',
@@ -96,8 +97,8 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   // MENA
   { '@type': 'Country', name: 'Saudi Arabia', sameAs: 'https://www.wikidata.org/wiki/Q851' },
   { '@type': 'Country', name: 'United Arab Emirates', sameAs: 'https://www.wikidata.org/wiki/Q878' },
-  { '@type': 'Country', name: 'Egypt' },
-  { '@type': 'Country', name: 'Kuwait' },
+  { '@type': 'Country', name: 'Egypt', sameAs: 'https://www.wikidata.org/wiki/Q79' },
+  { '@type': 'Country', name: 'Kuwait', sameAs: 'https://www.wikidata.org/wiki/Q817' },
   { '@type': 'Country', name: 'Qatar' },
   { '@type': 'Country', name: 'Bahrain' },
   { '@type': 'Country', name: 'Oman' },
@@ -105,26 +106,28 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
   { '@type': 'Country', name: 'Morocco' },
   // Europe & UK
   { '@type': 'Country', name: 'United Kingdom', sameAs: 'https://www.wikidata.org/wiki/Q145' },
-  { '@type': 'Country', name: 'Germany' },
-  { '@type': 'Country', name: 'France' },
-  { '@type': 'Country', name: 'Italy' },
-  { '@type': 'Country', name: 'Spain' },
+  { '@type': 'Country', name: 'Germany', sameAs: 'https://www.wikidata.org/wiki/Q183' },
+  { '@type': 'Country', name: 'France', sameAs: 'https://www.wikidata.org/wiki/Q142' },
+  { '@type': 'Country', name: 'Italy', sameAs: 'https://www.wikidata.org/wiki/Q38' },
+  { '@type': 'Country', name: 'Spain', sameAs: 'https://www.wikidata.org/wiki/Q29' },
   { '@type': 'Country', name: 'Turkey', sameAs: 'https://www.wikidata.org/wiki/Q43' },
   { '@type': 'Country', name: 'Poland', sameAs: 'https://www.wikidata.org/wiki/Q36' },
   { '@type': 'Country', name: 'Netherlands', sameAs: 'https://www.wikidata.org/wiki/Q29999' },
   { '@type': 'Country', name: 'Sweden', sameAs: 'https://www.wikidata.org/wiki/Q34' },
+  { '@type': 'Country', name: 'Switzerland', sameAs: 'https://www.wikidata.org/wiki/Q39' },
+  { '@type': 'Country', name: 'Norway', sameAs: 'https://www.wikidata.org/wiki/Q20' },
   { '@type': 'Country', name: 'Ireland', sameAs: 'https://www.wikidata.org/wiki/Q27' },
   // Americas
-  { '@type': 'Country', name: 'United States' },
-  { '@type': 'Country', name: 'Canada' },
-  { '@type': 'Country', name: 'Brazil' },
+  { '@type': 'Country', name: 'United States', sameAs: 'https://www.wikidata.org/wiki/Q30' },
+  { '@type': 'Country', name: 'Canada', sameAs: 'https://www.wikidata.org/wiki/Q16' },
+  { '@type': 'Country', name: 'Brazil', sameAs: 'https://www.wikidata.org/wiki/Q155' },
   { '@type': 'Country', name: 'Argentina', sameAs: 'https://www.wikidata.org/wiki/Q414' },
   // Asia-Pacific
   { '@type': 'Country', name: 'Japan', sameAs: 'https://www.wikidata.org/wiki/Q17' },
-  { '@type': 'Country', name: 'China' },
+  { '@type': 'Country', name: 'China', sameAs: 'https://www.wikidata.org/wiki/Q148' },
   { '@type': 'Country', name: 'India' },
   { '@type': 'Country', name: 'South Korea' },
-  { '@type': 'Country', name: 'Singapore' },
+  { '@type': 'Country', name: 'Singapore', sameAs: 'https://www.wikidata.org/wiki/Q334' },
   { '@type': 'Country', name: 'Australia' },
 ];
 

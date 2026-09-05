@@ -16,6 +16,7 @@ import { ClientPortalDialog } from '@/components/ClientPortalDialog';
 const Footer = () => {
   const { pathname } = useLocation();
   const { t, language, isRTL } = useLanguage();
+  const ui = t.ui;
   const phoneRegionLabels = t.homePage.cta.phoneRegionLabels;
   const phoneLines = [
     { tel: BIONIXUS_PHONE_US, label: `${phoneRegionLabels[0]} ${BIONIXUS_PHONE_US_DISPLAY}` },
@@ -79,7 +80,8 @@ const Footer = () => {
       pathname === '/fr' ||
       pathname === '/es' ||
       pathname === '/zh' ||
-      pathname.startsWith('/zh/');
+      pathname === '/pt' ||
+      pathname === '/ru';
     if (isHome) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -105,7 +107,7 @@ const Footer = () => {
             <Link to={basePath} className="flex items-center gap-3 mb-6" onClick={handleLogoClick}>
               <img
                 src="/bionixus-logo-footer.webp"
-                alt="BioNixus — Healthcare Market Research Company"
+                alt={ui.nav.footerLogoAlt}
                 className="h-10 w-auto object-contain [filter:brightness(0)_invert(1)]"
                 width={200}
                 height={80}

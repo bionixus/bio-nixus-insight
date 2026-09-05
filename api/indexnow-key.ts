@@ -188,7 +188,7 @@ const GENERIC_DEFAULT_TITLES = new Set<string>([
 function buildFallbackTitle(pathname: string): string {
   const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
   const path = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
-  const localeRoots = new Set(['/', '/de', '/fr', '/es', '/ar', '/zh']);
+  const localeRoots = new Set(['/', '/de', '/fr', '/es', '/ar', '/zh', '/pt', '/ru']);
   if (path === '/') return 'Healthcare & Pharmaceutical Market Research | BioNixus';
   if (path === '/zh') return 'EMEA Healthcare Market Research (Chinese) | BioNixus';
   if (localeRoots.has(path)) return 'BioNixus | Healthcare & Pharmaceutical Market Research';

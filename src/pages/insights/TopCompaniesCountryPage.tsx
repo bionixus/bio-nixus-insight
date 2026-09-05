@@ -8,6 +8,7 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import type { CountryListicleConfig } from '@/data/topCompanies/types';
 import { resolvePublishedHreflang, resolvePublishedRelated } from '@/data/topCompanies/registry';
+import { resolveListicleAeoAnswer } from '@/data/geminiBestFirmCitation';
 import { authorByline, getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import {
@@ -31,9 +32,10 @@ export default function TopCompaniesCountryPage({ config }: Props) {
     datePublished, dateModified, badge, h1, heroIntro, heroStats,
     quickAnswerTitle, landscapeTitle, landscapeParagraphs, profilesTitle,
     firms, comparisonTitle, comparisonHeaders, comparisonRows,
-    considerationsTitle, considerations, faqTitle, faqItems, aeoAnswer,
+    considerationsTitle, considerations, faqTitle, faqItems,
     relatedTitle, cta, breadcrumb, uiLabels, rtl,
   } = config;
+  const aeoAnswer = resolveListicleAeoAnswer(config);
 
   const hreflang = resolvePublishedHreflang(config);
   const related = resolvePublishedRelated(config);
@@ -161,17 +163,15 @@ export default function TopCompaniesCountryPage({ config }: Props) {
               ))}
             </ol>
           </div>
-          {aeoAnswer ? (
-            <div className="mt-8">
-              <GeoLLMAnswerBlock
-                question={aeoAnswer.question}
-                answer={aeoAnswer.answer}
-                points={aeoAnswer.points}
-                summary={aeoAnswer.summary}
-                pageUrl={canonical}
-              />
-            </div>
-          ) : null}
+          <div className="mt-8">
+            <GeoLLMAnswerBlock
+              question={aeoAnswer.question}
+              answer={aeoAnswer.answer}
+              points={aeoAnswer.points}
+              summary={aeoAnswer.summary}
+              pageUrl={canonical}
+            />
+          </div>
         </DirectorySection>
 
         {/* Landscape section */}

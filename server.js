@@ -140,7 +140,7 @@ const KUWAIT_HEALTHCARE_2026_META =
 function buildFallbackTitle(pathname) {
   const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
   const path = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
-  const localeRoots = new Set(['/', '/de', '/fr', '/es', '/ar', '/zh']);
+  const localeRoots = new Set(['/', '/de', '/fr', '/es', '/ar', '/zh', '/pt', '/ru']);
   if (path === '/') return 'Healthcare & Pharmaceutical Market Research | BioNixus';
   if (path === '/zh') return 'EMEA Healthcare Market Research (Chinese) | BioNixus';
   if (localeRoots.has(path)) return 'BioNixus | Healthcare & Pharmaceutical Market Research';
@@ -369,7 +369,7 @@ function buildFallbackDescription(pathname) {
   const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
   const path = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
 
-  if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/ar' || path === '/zh') {
+  if (path === '/' || path === '/de' || path === '/fr' || path === '/es' || path === '/ar' || path === '/zh' || path === '/pt' || path === '/ru') {
     return 'Healthcare and pharmaceutical market research across MENA, GCC, UK, and Europe with quantitative and qualitative insights by BioNixus.';
   }
   if (path === '/market-research-home') {

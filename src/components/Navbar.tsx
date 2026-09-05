@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe2, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languages } from '@/lib/i18n';
@@ -22,8 +22,7 @@ import { SiteSearch } from '@/components/SiteSearch';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
-  const navigate = useNavigate();
-  const { language, setLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
   const ui = t.ui;
   const basePath = languagePaths[language] || '/';
   const contactPath = localizedContactPath(language);
@@ -48,16 +47,11 @@ const Navbar = () => {
       pathname === '/es' ||
       pathname === '/zh' ||
       pathname === '/ar' ||
-      pathname.startsWith('/zh/');
+      pathname === '/pt' ||
+      pathname === '/ru';
     if (isHome) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  };
-
-  const handleLanguageChange = (code: typeof language) => {
-    setLanguage(code);
-    navigate(resolveLanguageSwitchPath(pathname, code));
-    setIsOpen(false);
   };
 
   const currentLang = languages.find(l => l.code === language);
@@ -85,7 +79,7 @@ const Navbar = () => {
           <Link to={basePath} className="flex items-center gap-3" onClick={handleLogoClick}>
             <img
               src="/bionixus-logo.webp"
-              alt="BioNixus — Global Market Research for Pharma, Healthcare & Industries"
+              alt={ui.nav.logoAlt}
               className="h-9 w-auto object-contain"
               width={126}
               height={36}
@@ -137,11 +131,17 @@ const Navbar = () => {
                   {languages.map((lang) => (
                     <DropdownMenuItem
                       key={lang.code}
-                      onClick={() => handleLanguageChange(lang.code)}
+                      asChild
                       className={`cursor-pointer ${language === lang.code ? 'bg-muted' : ''}`}
                     >
-                      <span className="mr-2">{lang.flag}</span>
-                      {lang.name}
+                      <Link
+                        to={resolveLanguageSwitchPath(pathname, lang.code)}
+                        hrefLang={lang.code === 'zh' ? 'zh-CN' : lang.code}
+                        lang={lang.code}
+                      >
+                        <span className="mr-2">{lang.flag}</span>
+                        {lang.name}
+                      </Link>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -210,15 +210,17 @@ const Navbar = () => {
               <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-border">
                 <span className="text-xs text-muted-foreground w-full sm:w-auto">{ui.nav.language}</span>
                 {languages.map((lang) => (
-                  <button
+                  <Link
                     key={lang.code}
-                    type="button"
-                    onClick={() => handleLanguageChange(lang.code)}
+                    to={resolveLanguageSwitchPath(pathname, lang.code)}
+                    hrefLang={lang.code === 'zh' ? 'zh-CN' : lang.code}
+                    lang={lang.code}
+                    onClick={() => setIsOpen(false)}
                     aria-label={formatTemplate(
                       language === lang.code ? ui.nav.languageCurrent : ui.nav.languageSwitchTo,
                       { language: lang.name },
                     )}
-                    aria-pressed={language === lang.code}
+                    aria-current={language === lang.code ? 'true' : undefined}
                     className={`px-3 py-2 rounded-lg text-sm ${
                       language === lang.code
                         ? 'bg-primary text-primary-foreground'
@@ -226,7 +228,7 @@ const Navbar = () => {
                     }`}
                   >
                     <span aria-hidden>{lang.flag}</span>
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>

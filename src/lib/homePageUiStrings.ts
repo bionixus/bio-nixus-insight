@@ -21,6 +21,7 @@ export type HomePageUiOverlay = {
     newsPress?: string;
     newsletterConsent?: string;
     industriesHub?: string;
+    companyDirectories?: string;
   };
   clientReviewsTeaser?: { happyClientsCount: string };
 };
@@ -46,6 +47,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
       newsPress: 'News & press',
       newsletterConsent:
         'I would like to receive monthly EMEA pharma research insights from BioNixus. I can unsubscribe anytime.',
+      companyDirectories: 'Company directories',
     },
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
@@ -74,6 +76,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
       newsletterConsent:
         'Ich möchte monatliche pharmazeutische EMEA-Erkenntnisse von BioNixus erhalten. Ich kann mich jederzeit abmelden.',
       industriesHub: 'Branchen',
+      companyDirectories: 'Unternehmensverzeichnisse',
     },
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
@@ -102,6 +105,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
       newsletterConsent:
         'Je souhaite recevoir les insights mensuels EMEA pharma de BioNixus. Je peux me désabonner à tout moment.',
       industriesHub: 'Secteurs',
+      companyDirectories: 'Annuaires d’entreprises',
     },
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
@@ -130,6 +134,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
       newsletterConsent:
         'Deseo recibir insights mensuales de investigación farmacéutica EMEA de BioNixus. Puedo darme de baja en cualquier momento.',
       industriesHub: 'Industrias',
+      companyDirectories: 'Directorios de empresas',
     },
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
@@ -158,6 +163,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
       newsletterConsent:
         'Gostaria de receber insights mensais de pesquisa farmacêutica EMEA da BioNixus. Posso cancelar a inscrição a qualquer momento.',
       industriesHub: 'Setores',
+      companyDirectories: 'Diretórios de empresas',
     },
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
@@ -186,6 +192,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
       newsletterConsent:
         'Я хочу получать ежемесячные инсайты EMEA pharma от BioNixus. Я могу отписаться в любое время.',
       industriesHub: 'Отрасли',
+      companyDirectories: 'Справочники компаний',
     },
     clientReviewsTeaser: { happyClientsCount: '40' },
   },
@@ -212,6 +219,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
       newsPress: '新闻与媒体',
       newsletterConsent: '我希望接收 BioNixus 的 EMEA 医药研究月度洞察。我可随时取消订阅。',
       industriesHub: '行业',
+      companyDirectories: '企业名录',
     },
     clientReviewsTeaser: { happyClientsCount: '四十' },
   },
@@ -239,6 +247,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
       newsletterConsent:
         'أرغب في تلقي رؤى أبحاث EMEA الدوائية الشهرية من بيونكسس. يمكنني إلغاء الاشتراك في أي وقت.',
       industriesHub: 'القطاعات',
+      companyDirectories: 'أدلة الشركات',
     },
     clientReviewsTeaser: { happyClientsCount: '٤٠' },
   },

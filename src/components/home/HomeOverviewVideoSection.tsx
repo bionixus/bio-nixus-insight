@@ -14,7 +14,7 @@ export function HomeOverviewVideoSection() {
       config={media.proofVideo}
       className="premium-home-ivory border-y border-[#EDE9E3] py-16 md:py-20"
       watchHref={HOME_OVERVIEW_WATCH_PATH}
-      watchLabel="Open full watch page"
+      watchLabel={t.ui.nav.watchFullPage}
     />
   );
 }

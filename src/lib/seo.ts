@@ -214,6 +214,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     es: '/es/healthcare-market-research',
     ar: '/ar/healthcare-market-research',
     zh: '/zh/healthcare-market-research',
+    pt: '/pt/healthcare-market-research',
     ru: '/ru/healthcare-market-research',
   },
   '/bionixus-market-research-middle-east': {
@@ -382,9 +383,34 @@ function stripLanguagePrefix(pathname: string): string {
   return normalized;
 }
 
+/** Detect the UI language implied by a path's prefix (e.g. /de/... -> 'de'), defaulting to 'en'. */
+function detectLanguageFromPath(normalized: string): Language {
+  const candidates = (Object.keys(languagePaths) as Language[])
+    .filter((lang) => lang !== 'en')
+    .sort((a, b) => languagePaths[b].length - languagePaths[a].length);
+  for (const lang of candidates) {
+    const prefix = languagePaths[lang];
+    if (normalized === prefix || normalized.startsWith(`${prefix}/`)) return lang;
+  }
+  return 'en';
+}
+
+function pathBelongsToLanguage(path: string, lang: Language): boolean {
+  return detectLanguageFromPath(normalizePath(path)) === lang;
+}
+
+function prefixWithLanguage(enPath: string, lang: Language): string {
+  const stripped = stripLanguagePrefix(enPath);
+  if (lang === 'en') return stripped;
+  const base = languagePaths[lang] || '/';
+  if (stripped === '/') return base;
+  return `${base}${stripped}`;
+}
+
 /**
  * Resolve the URL to navigate to when switching UI language from the current path.
- * Uses localized route groups when available; otherwise strips/adds language prefixes.
+ * LanguageContext always follows the URL prefix, so this must never return an
+ * English URL for a non-English target — that snaps the UI back to English.
  */
 export function resolveLanguageSwitchPath(pathname: string, targetLang: Language): string {
   const normalized = normalizePath(pathname);
@@ -392,17 +418,21 @@ export function resolveLanguageSwitchPath(pathname: string, targetLang: Language
   if (groupKey) {
     const group = localizedRouteGroups[groupKey];
     const target = group[targetLang];
-    if (typeof target === 'string') return target;
-    if (typeof group.en === 'string') {
-      return targetLang === 'en' ? group.en : languagePaths[targetLang] || '/';
+    if (typeof target === 'string' && pathBelongsToLanguage(target, targetLang)) {
+      return target;
     }
+    return prefixWithLanguage('/', targetLang);
   }
 
   const stripped = stripLanguagePrefix(normalized);
   if (targetLang === 'en') return stripped;
-  const base = languagePaths[targetLang] || '/';
-  if (stripped === '/') return base;
-  return base;
+
+  const currentLang = detectLanguageFromPath(normalized);
+  if (currentLang !== 'en' || stripped === '/blog' || stripped.startsWith('/blog/')) {
+    return prefixWithLanguage(stripped, targetLang);
+  }
+
+  return languagePaths[targetLang] || '/';
 }
 
 export function getCanonicalPath(pathname: string = '/') {
@@ -417,18 +447,6 @@ const HREFLANG_LANG_KEYS: readonly Language[] = ['en', 'de', 'fr', 'es', 'zh', '
 
 function hreflangLangCode(key: Language): string {
   return key === 'zh' ? 'zh-CN' : key;
-}
-
-/** Detect the UI language implied by a path's prefix (e.g. /de/... -> 'de'), defaulting to 'en'. */
-function detectLanguageFromPath(normalized: string): Language {
-  const candidates = (Object.keys(languagePaths) as Language[])
-    .filter((lang) => lang !== 'en')
-    .sort((a, b) => languagePaths[b].length - languagePaths[a].length);
-  for (const lang of candidates) {
-    const prefix = languagePaths[lang];
-    if (normalized === prefix || normalized.startsWith(`${prefix}/`)) return lang;
-  }
-  return 'en';
 }
 
 export function getHreflangLinks(pathname: string = '/') {
@@ -482,8 +500,20 @@ export function getHreflangLinks(pathname: string = '/') {
 export function getLocalizedPathForLanguage(enCanonicalPath: string, lang: Language): string {
   const normalized = normalizePath(enCanonicalPath);
   const routes = localizedRouteGroups[normalized as keyof typeof localizedRouteGroups];
-  if (routes && typeof routes[lang] === 'string') {
-    return routes[lang];
+  if (routes) {
+    const target = routes[lang];
+    if (typeof target === 'string' && pathBelongsToLanguage(target, lang)) {
+      return target;
+    }
+    if (lang === 'en' && typeof routes.en === 'string') return routes.en;
+    const hasPrefixedSibling = Object.entries(routes).some(
+      ([key, path]) => key !== 'en' && typeof path === 'string' && pathBelongsToLanguage(path, key as Language),
+    );
+    if (hasPrefixedSibling) {
+      const enPath = typeof routes.en === 'string' ? routes.en : normalized;
+      return prefixWithLanguage(enPath, lang);
+    }
+    return typeof routes.en === 'string' ? routes.en : normalized;
   }
   return normalized;
 }

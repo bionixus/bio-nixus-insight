@@ -432,6 +432,27 @@ export const translations = {
     indexLanding: {
       emeaSignalsH2: 'Globale Reichweite mit lokaler Umsetzungstiefe',
     },
+    homeProblem: {
+      eyebrow: 'Die Lücke',
+      h2: 'Ihr Dashboard beantwortet das Land. Es beantwortet nicht den Account.',
+      lead:
+        'Marketing- und Commercial-Teams zahlen bereits für einen syndizierten Feed. Er zeigt den nationalen Anteil. Er sagt nicht, welches Krankenhaus, welche Abteilung, welcher Händler, Distributor oder SKU ihn bewegt — und was im traditionellen Handel passiert. Das sind die Aufschlüsselungen, die einen Launch oder einen Share-Plan verändern.',
+      columns: [
+        {
+          title: 'Was Sie bereits haben',
+          body: 'Ein syndiziertes Abo. Nützlich für die Marktgröße. Schwach, wenn Sie Marke gegen Wettbewerber an einem benannten Account in einem benannten Land brauchen.',
+        },
+        {
+          title: 'Was Sie weiterhin nicht sehen',
+          body: 'Unteraccounts. Subregionen. Traditioneller Handel. Performance auf SKU-Ebene. Die lokale Niederlassung kann keine Kampagne aus einem globalen Durchschnitt briefen.',
+        },
+        {
+          title: 'Was wir erheben',
+          body: 'Primärforschung für genau diese Aufschlüsselung. Lokale Teams führen die Studie. Sie erhalten ein Entscheidungspaket — keinen recycelten Dashboard-Export.',
+        },
+      ],
+      linkLabel: 'Was Account- und SKU-Daten bedeuten',
+    },
     hero: {
       tagline: 'Globales Internationales Marktforschungsunternehmen',
       titleLead: 'Forschung, die',
@@ -747,6 +768,7 @@ export const translations = {
       quickLinksHeading: 'Schnellzugriffe',
       companyHeading: 'Unternehmen',
       healthcareHub: 'Zentrum für Gesundheitsmarktforschung',
+      industriesHub: 'Branchen',
       blogAndInsights: 'Blog & Erkenntnisse',
       sitemap: 'Vollständige Seitenübersicht',
       about: 'Über uns',
@@ -818,6 +840,27 @@ export const translations = {
     indexLanding: {
       emeaSignalsH2:
         'Panorama des études de marché pharmaceutiques et santé en Europe, au Moyen-Orient et en Afrique',
+    },
+    homeProblem: {
+      eyebrow: 'L’écart',
+      h2: 'Votre tableau de bord répond au pays. Il ne répond pas au compte.',
+      lead:
+        'Les équipes marketing et commerciales paient déjà un flux syndiqué. Il donne la part nationale. Il ne dit pas quel hôpital, service, enseigne, distributeur ou SKU la fait bouger — ni ce qui se passe dans le commerce traditionnel. Ce sont les découpages qui changent un lancement ou un plan de parts.',
+      columns: [
+        {
+          title: 'Ce que vous avez déjà',
+          body: 'Un abonnement syndiqué. Utile pour le total marché. Faible quand il faut marque contre concurrent sur un compte nommé, dans un pays nommé.',
+        },
+        {
+          title: 'Ce que vous ne voyez toujours pas',
+          body: 'Sous-comptes. Sous-régions. Commerce traditionnel. Performance au SKU. La filiale locale ne peut pas cadrer une campagne à partir d’une moyenne mondiale.',
+        },
+        {
+          title: 'Ce que nous menons sur le terrain',
+          body: 'De la recherche primaire conçue pour ce découpage. Des équipes locales mènent l’étude. Vous recevez un dossier de décision — pas un export de tableau de bord recyclé.',
+        },
+      ],
+      linkLabel: 'Ce que signifient les données au niveau compte et SKU',
     },
     hero: {
       titleLead: 'La recherche qui façonne',
@@ -1023,11 +1066,12 @@ export const translations = {
       quickLinksHeading: 'Liens rapides',
       companyHeading: 'Entreprise',
       healthcareHub: 'Hub recherche de marché en santé',
-      blogAndInsights: 'Blog & insights',
+      industriesHub: 'Secteurs',
+      blogAndInsights: 'Blog et analyses',
       sitemap: 'Annuaire complet du site',
       about: 'À propos',
       services: 'Services',
-      insights: 'Insights',
+      insights: 'Analyses',
       careers: 'Carrières',
       clientsPortal: 'Portail Client',
       caseStudies: 'Études de Cas',
@@ -1094,6 +1138,27 @@ export const translations = {
     indexLanding: {
       emeaSignalsH2:
         'Panorama de la investigación de mercado farmacéutico y sanitario en Europa, Oriente Medio y África',
+    },
+    homeProblem: {
+      eyebrow: 'La brecha',
+      h2: 'Su panel responde al país. No responde a la cuenta.',
+      lead:
+        'Los equipos de marketing y comercial ya pagan un feed sindicado. Da la cuota nacional. No dice qué hospital, departamento, retailer, distribuidor o SKU la mueve — ni qué ocurre en el comercio tradicional. Esos desgloses cambian un lanzamiento o un plan de cuota.',
+      columns: [
+        {
+          title: 'Lo que ya tiene',
+          body: 'Una suscripción sindicada. Útil para el total de mercado. Débil cuando necesita marca frente a competidor en una cuenta concreta, en un país concreto.',
+        },
+        {
+          title: 'Lo que sigue sin ver',
+          body: 'Subcuentas. Subregiones. Comercio tradicional. Rendimiento a nivel de SKU. La afiliada local no puede preparar el brief de una campaña a partir de una media global.',
+        },
+        {
+          title: 'Lo que levantamos en campo',
+          body: 'Investigación primaria diseñada para ese desglose. Equipos locales ejecutan el estudio. Recibe un pack de decisión — no un export reciclado del panel.',
+        },
+      ],
+      linkLabel: 'Qué significan los datos a nivel de cuenta y SKU',
     },
     hero: {
       titleLead: 'La investigación que define',
@@ -1299,11 +1364,12 @@ export const translations = {
       quickLinksHeading: 'Enlaces rápidos',
       companyHeading: 'Empresa',
       healthcareHub: 'Centro de investigación de mercado sanitario',
+      industriesHub: 'Industrias',
       blogAndInsights: 'Blog y análisis',
       sitemap: 'Directorio completo del sitio',
       about: 'Sobre nosotros',
       services: 'Servicios',
-      insights: 'Insights',
+      insights: 'Análisis',
       careers: 'Carreras',
       clientsPortal: 'Portal del Cliente',
       caseStudies: 'Casos de Estudio',
@@ -1369,6 +1435,27 @@ export const translations = {
     },
     indexLanding: {
       emeaSignalsH2: '欧洲、中东与非洲医药及医疗健康市场研究概览',
+    },
+    homeProblem: {
+      eyebrow: '缺口',
+      h2: '仪表盘能回答国家。回答不了具体账户。',
+      lead:
+        '市场与商业团队已经在为联合订阅付费。它给出全国份额，却说不清是哪家医院、科室、零售商、经销商或 SKU 在拉动数字——也不知道传统渠道里发生了什么。正是这些拆分会改变上市或份额计划。',
+      columns: [
+        {
+          title: '您已有的',
+          body: '一份联合数据订阅。对市场规模有用。当您需要在指定国家、指定账户上看品牌对竞品时，就不够了。',
+        },
+        {
+          title: '您仍看不见的',
+          body: '子账户。子区域。传统渠道。SKU 级表现。当地分公司无法用全球平均值去撰写一场战役简报。',
+        },
+        {
+          title: '我们实地采集的',
+          body: '为这一拆分设计的一手研究。本地团队执行项目。您拿到的是决策包——不是仪表盘的重复导出。',
+        },
+      ],
+      linkLabel: '账户级与 SKU 级数据的含义',
     },
     hero: {
       titleLead: '以研究塑造',
@@ -1574,6 +1661,7 @@ export const translations = {
       quickLinksHeading: '快速链接',
       companyHeading: '公司',
       healthcareHub: '医疗市场研究中心',
+      industriesHub: '行业',
       blogAndInsights: '博客与洞察',
       sitemap: '全站索引',
       about: '关于我们',
@@ -1639,6 +1727,27 @@ export const translations = {
     },
     indexLanding: {
       emeaSignalsH2: 'لمحة عن أبحاث السوق الصحية والدوائية في أوروبا والشرق الأوسط وإفريقيا',
+    },
+    homeProblem: {
+      eyebrow: 'الفجوة',
+      h2: 'لوحة البيانات تجيب عن الدولة. لا تجيب عن الحساب.',
+      lead:
+        'فرق التسويق والتجارة تدفع أصلاً مقابل تغذية بيانات مجمّعة. تعطيك الحصة الوطنية. لا تقول أي مستشفى أو قسم أو تاجر تجزئة أو موزّع أو رمز منتج يحرّكها — ولا ما يجري في التجارة التقليدية. هذه التفاصيل هي ما يغيّر الإطلاق أو خطة الحصة.',
+      columns: [
+        {
+          title: 'ما لديكم أصلاً',
+          body: 'اشتراك بيانات مجمّعة. مفيد لإجمالي السوق. ضعيف عندما تحتاجون العلامة مقابل المنافس في حساب محدد في دولة محددة.',
+        },
+        {
+          title: 'ما لا يزال خافياً',
+          body: 'الحسابات الفرعية. المناطق الفرعية. التجارة التقليدية. الأداء على مستوى رمز المنتج. لا تستطيع الشركة المحلية صياغة حملة من متوسط عالمي.',
+        },
+        {
+          title: 'ما نجمعه ميدانياً',
+          body: 'بحث أولي مصمّم لهذا التفصيل. فرق محلية تنفّذ الدراسة. تحصلون على حزمة قرار — لا على تصدير معاد من لوحة البيانات.',
+        },
+      ],
+      linkLabel: 'ماذا تعني بيانات مستوى الحساب ورمز المنتج',
     },
     hero: {
       titleLead: 'أبحاث تصنع',
@@ -1854,6 +1963,7 @@ export const translations = {
       quickLinksHeading: 'روابط سريعة',
       companyHeading: 'الشركة',
       healthcareHub: 'مركز أبحاث السوق الصحية',
+      industriesHub: 'القطاعات',
       blogAndInsights: 'المدونة والرؤى',
       sitemap: 'خريطة الموقع الكاملة',
       about: 'من نحن',
@@ -2014,12 +2124,33 @@ export const translations = {
       home: 'Início',
       services: 'Serviços',
       industries: 'Setores',
-      insights: 'Insights',
+      insights: 'Perspectivas',
       about: 'Sobre nós',
       contact: 'Contato',
     },
     indexLanding: {
       emeaSignalsH2: 'Visão geral do mercado farmacêutico e de saúde no Brasil, América Latina, Europa e MENA',
+    },
+    homeProblem: {
+      eyebrow: 'A lacuna',
+      h2: 'O painel responde ao país. Não responde à conta.',
+      lead:
+        'As equipas de marketing e comercial já pagam por um feed sindicado. Ele dá a quota nacional. Não diz qual hospital, departamento, retalhista, distribuidor ou SKU a move — nem o que acontece no comércio tradicional. São esses cortes que mudam um lançamento ou um plano de quota.',
+      columns: [
+        {
+          title: 'O que já tem',
+          body: 'Uma subscrição sindicada. Útil para o total de mercado. Fraca quando precisa de marca versus concorrente numa conta nomeada, num país nomeado.',
+        },
+        {
+          title: 'O que continua a não ver',
+          body: 'Subcontas. Sub-regiões. Comércio tradicional. Desempenho ao nível do SKU. A afiliada local não consegue preparar o brief de uma campanha a partir de uma média global.',
+        },
+        {
+          title: 'O que recolhemos no terreno',
+          body: 'Pesquisa primária desenhada para esse corte. Equipas locais conduzem o estudo. Recebe um pacote de decisão — não um export reciclado do painel.',
+        },
+      ],
+      linkLabel: 'O que significam os dados ao nível da conta e do SKU',
     },
     hero: {
       titleLead: 'A pesquisa que molda',
@@ -2143,14 +2274,36 @@ export const translations = {
       stayButton: 'Continuar em inglês',
     },
     footer: {
-      description: 'Empresa global de pesquisa de mercado em saúde com sede nos EUA, escritórios no Reino Unido e cobertura em toda a EMEA, América Latina e MENA.',
-      quickLinks: 'Links Rápidos',
+      tagline:
+        'Pesquisa primária para fabricantes e afiliadas locais — trabalho de campo ao nível da conta e do SKU em 48 países quando um feed sindicado não desce até à conta.',
+      quickLinksHeading: 'Links rápidos',
+      companyHeading: 'Empresa',
+      healthcareHub: 'Centro de pesquisa de mercado em saúde',
+      industriesHub: 'Setores',
+      blogAndInsights: 'Blog e perspetivas',
+      sitemap: 'Diretório completo do site',
+      about: 'Sobre nós',
       services: 'Serviços',
-      legal: 'Legal',
+      insights: 'Perspectivas',
+      careers: 'Carreiras',
+      clientsPortal: 'Portal do cliente',
+      caseStudies: 'Casos de estudo',
+      methodology: 'Metodologia',
+      contactHeading: 'Contacto',
+      locationUs: 'Wyoming, EUA',
+      locationUk: 'Londres, Reino Unido',
+      copyright: '© 2026 BioNixus. Todos os direitos reservados.',
       privacy: 'Política de Privacidade',
       terms: 'Termos de Uso',
-      copyright: '© 2026 BioNixus. Todos os direitos reservados.',
-      tagline: 'Pesquisa de Mercado em Saúde Global',
+      newsletterHeading: 'Newsletter',
+      newsletterDesc: 'Receba notas de pesquisa por país e categoria para equipas de marketing.',
+      newsletterPlaceholder: 'O seu nome',
+      newsletterEmailPlaceholder: 'E-mail profissional',
+      newsletterButton: 'Subscrever',
+      newsletterSubscribing: 'A subscrever...',
+      newsletterSuccess: 'Verifique o seu e-mail para confirmar!',
+      newsletterAlready: 'Já está subscrito — consulte o seu e-mail para as últimas atualizações!',
+      newsletterError: 'Algo correu mal. Tente novamente.',
     },
     caseStudiesPage: {
       title: 'Casos de Estudo',
@@ -2201,6 +2354,27 @@ export const translations = {
     },
     indexLanding: {
       emeaSignalsH2: 'Обзор фармацевтического и медицинского рынка России, Восточной Европы и MENA',
+    },
+    homeProblem: {
+      eyebrow: 'Разрыв',
+      h2: 'Дашборд отвечает за страну. Он не отвечает за аккаунт.',
+      lead:
+        'Маркетинг и коммерция уже платят за синдицированную ленту. Она даёт национальную долю. Она не говорит, какая больница, отделение, ритейлер, дистрибьютор или SKU её двигает — и что происходит в традиционной торговле. Именно эти разрезы меняют запуск или план доли.',
+      columns: [
+        {
+          title: 'Что у вас уже есть',
+          body: 'Синдицированная подписка. Полезна для итога рынка. Слаба, когда нужна марка против конкурента на конкретном аккаунте в конкретной стране.',
+        },
+        {
+          title: 'Чего вы по-прежнему не видите',
+          body: 'Субаккаунты. Субрегионы. Традиционная торговля. Показатели на уровне SKU. Локальный офис не может брифровать кампанию из глобального среднего.',
+        },
+        {
+          title: 'Что мы собираем в поле',
+          body: 'Первичные исследования под этот разрез. Локальные команды проводят работу. Вы получаете пакет для решения — не повторный экспорт дашборда.',
+        },
+      ],
+      linkLabel: 'Что означают данные на уровне аккаунта и SKU',
     },
     hero: {
       titleLead: 'Исследования, формирующие',
@@ -2429,6 +2603,7 @@ export const translations = {
       quickLinksHeading: 'Быстрые ссылки',
       companyHeading: 'Компания',
       healthcareHub: 'Центр маркетинговых исследований здравоохранения',
+      industriesHub: 'Отрасли',
       blogAndInsights: 'Блог и аналитика',
       sitemap: 'Полный каталог сайта',
       about: 'О нас',

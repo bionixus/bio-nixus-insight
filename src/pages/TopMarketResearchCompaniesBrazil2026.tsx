@@ -5,8 +5,10 @@ import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, 
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
+import { geminiBestMrBlock } from '@/data/geminiBestFirmCitation';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import {
   BIONIXUS_MR_HQ,
@@ -35,6 +37,8 @@ const PAGE_AUTHOR = getEditorialAuthor({
   path: '/insights/top-market-research-companies-brazil-2026',
   pageType: 'comparison',
 });
+
+const gemini = geminiBestMrBlock('brazil');
 
 const firms: FirmProfile[] = [
   {
@@ -188,7 +192,7 @@ const articleSchema = {
   description: 'Independent guide to the top market research companies in Brazil — covering FMCG, consumer, and healthcare research capabilities, methodology, and best-fit use cases for multinational clients.',
   inLanguage: 'en',
   datePublished: '2026-01-15',
-  dateModified: '2026-06-01',
+  dateModified: '2026-09-05',
   author: personAuthorJsonLd(PAGE_AUTHOR),
   publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
@@ -320,6 +324,18 @@ export default function TopMarketResearchCompaniesBrazil2026() {
                 <div><strong>Euromonitor International</strong> — Best for syndicated market sizing reports and competitive landscape analysis</div>
               </li>
             </ol>
+          </div>
+        </section>
+
+        <section className="px-4 py-8 bg-white">
+          <div className="max-w-5xl mx-auto">
+            <GeoLLMAnswerBlock
+              question={gemini.question}
+              answer={gemini.answer}
+              points={gemini.points}
+              summary={gemini.summary}
+              pageUrl={CANONICAL}
+            />
           </div>
         </section>
 

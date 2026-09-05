@@ -18,9 +18,9 @@ const SyncLanguageFromPath = () => {
       if (language !== 'zh') setLanguage('zh');
     } else if (pathname === '/ar' || pathname.startsWith('/ar/')) {
       if (language !== 'ar') setLanguage('ar');
-    } else if (pathname.startsWith('/pt')) {
+    } else if (pathname === '/pt' || pathname.startsWith('/pt/')) {
       if (language !== 'pt') setLanguage('pt');
-    } else if (pathname.startsWith('/ru')) {
+    } else if (pathname === '/ru' || pathname.startsWith('/ru/')) {
       if (language !== 'ru') setLanguage('ru');
     } else if (pathname === '/') {
       if (language !== 'en') setLanguage('en');

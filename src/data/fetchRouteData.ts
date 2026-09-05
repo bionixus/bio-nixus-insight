@@ -89,6 +89,8 @@ function marketingHomeLanguage(path: string): Language | null {
   if (n === '/es') return 'es';
   if (n === '/zh') return 'zh';
   if (n === '/ar') return 'ar';
+  if (n === '/pt') return 'pt';
+  if (n === '/ru') return 'ru';
   return null;
 }
 
