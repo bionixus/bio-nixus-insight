@@ -332,7 +332,7 @@ const Contact = () => {
             </p>
             <h1
               id="contact-hero-heading"
-              className="sr-lcp sr sr-up max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-semibold leading-[1.08] text-balance break-words mb-6"
+              className="sr-lcp sr sr-up max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-semibold leading-[1.08] text-balance break-words mb-6 !text-[#FFFEFB]"
             >
               {heroTitle}
             </h1>
