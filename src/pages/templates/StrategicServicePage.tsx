@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import type { ReportConversionConfig } from '@/data/reportConversionConfig';
@@ -121,26 +120,21 @@ export default function StrategicServicePage({
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <SEOHead title={title} description={description} canonical={canonicalUrl} jsonLd={jsonLd} />
       <ReportReadingProgress progressId={`service-rp-${slugKey}`} />
       <Navbar />
       <main>
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <BreadcrumbNav items={breadcrumbItems} />
-          </div>
-        </div>
-
         <ReportPremiumHero
           title={h1}
           description={intro}
           config={config}
           countryName={marketName}
-          badges={['BioNixus service', 'Senior-led analysis', 'Bilingual fieldwork']}
+          badges={['Primary research', 'Senior-led analysis', 'Bilingual fieldwork']}
           stats={metrics.map((m) => ({ value: m.value, label: m.label }))}
           statsCaption=""
           heroImage={pageMedia?.heroImage}
+          breadcrumbs={breadcrumbItems}
         />
 
         {pageMedia?.visualBriefing ? (

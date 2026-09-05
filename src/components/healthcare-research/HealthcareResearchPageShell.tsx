@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import type { ReportConversionConfig } from '@/data/reportConversionConfig';
 import {
@@ -12,6 +11,7 @@ import {
 import { ReportPremiumHero, type ReportHeroStat } from '@/components/report-premium';
 import { MarketReportWhitePaperBand } from '@/components/report-premium/MarketReportWhitePaperBand';
 import { getMarketReportWhitePaperForPath } from '@/data/marketReportWhitePapers';
+import { DirectoryJumpNav } from '@/components/seo/DirectoryPremium';
 
 type BreadcrumbItem = { name: string; href: string };
 
@@ -53,16 +53,10 @@ export function HealthcareResearchPageShell({
   const whitePaper = getMarketReportWhitePaperForPath(config.canonicalPath);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Navbar />
       <ReportReadingProgress progressId={progressId} />
       <main>
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <BreadcrumbNav items={breadcrumbs} />
-          </div>
-        </div>
-
         <ReportPremiumHero
           title={hero.title}
           description={hero.description}
@@ -75,7 +69,10 @@ export function HealthcareResearchPageShell({
           metaLinks={hero.metaLinks}
           stats={hero.stats}
           statsCaption={hero.statsCaption ?? ''}
+          breadcrumbs={breadcrumbs}
         />
+
+        {tocItems?.length ? <DirectoryJumpNav items={tocItems} /> : null}
 
         <ReportContentWithAside config={config} tocItems={tocItems}>
           {children}

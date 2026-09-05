@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FolderOpen } from 'lucide-react';
+import { DirectoryLinkTile } from '@/components/seo/DirectoryPremium';
 import {
   DIRECTORY_COUNTRIES,
   DIRECTORY_ENTITIES,
@@ -50,7 +51,7 @@ export function CountryDirectoryLinks({ country, excludePath, heading, className
             <li key={d.path}>
               <Link
                 to={d.path}
-                className="inline-flex rounded-full border border-border bg-card px-3 py-1 text-foreground hover:border-primary hover:text-primary"
+                className="inline-flex min-h-11 items-center rounded-full border border-[#EDE9E3] bg-[#FFFEFB] px-3.5 py-1.5 text-foreground hover:border-[#C9A84C] hover:text-[#8A6A12] transition-colors"
               >
                 {DIRECTORY_ENTITIES[d.entity].labelPlural}
               </Link>
@@ -69,25 +70,17 @@ export function CountryDirectoryLinks({ country, excludePath, heading, className
   return (
     <div className={className} data-country-directory-links>
       <h3 className="text-xl font-display font-semibold text-foreground mb-2 flex items-center gap-2">
-        <FolderOpen className="w-5 h-5 text-primary" aria-hidden />
+        <FolderOpen className="w-5 h-5 text-[#C9A84C]" aria-hidden />
         {title}
       </h3>
       <p className="text-sm text-muted-foreground mb-4 max-w-3xl">
         The other named-account lists BioNixus maintains for {meta.display}. Each one links to the matching proposal
         form and research brief.
       </p>
-      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {items.map((d) => (
           <li key={d.path}>
-            <Link
-              to={d.path}
-              className="flex items-center justify-between gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors hover:border-primary"
-            >
-              <span>{DIRECTORY_ENTITIES[d.entity].labelPlural}</span>
-              <span className="text-primary" aria-hidden>
-                &rarr;
-              </span>
-            </Link>
+            <DirectoryLinkTile to={d.path} title={DIRECTORY_ENTITIES[d.entity].labelPlural} />
           </li>
         ))}
       </ul>

@@ -4,6 +4,7 @@
 import type { DirectoryHubInput } from '../types';
 import { masterHub } from './master';
 import { bahrainHub, egyptHub, kuwaitHub, omanHub, qatarHub, saudiArabiaHub, uaeHub } from './countries';
+import { pharmaceuticalCompaniesHub, pharmaceuticalDistributorsHub } from './entities';
 
 export const DIRECTORY_HUB_INPUTS: DirectoryHubInput[] = [
   // Wave 1
@@ -15,4 +16,7 @@ export const DIRECTORY_HUB_INPUTS: DirectoryHubInput[] = [
   qatarHub,
   omanHub,
   bahrainHub,
+  // Wave 2 — entity hubs
+  pharmaceuticalCompaniesHub,
+  pharmaceuticalDistributorsHub,
 ];

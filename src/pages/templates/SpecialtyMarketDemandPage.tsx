@@ -2,11 +2,20 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
+import {
+  DirectoryDriverCard,
+  DirectoryFaqList,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectoryOutlineLink,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
 
 /**
  * Shared template for GSC demand-driven specialty market pages
@@ -37,8 +46,18 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
     buildFAQSchema(content.faqs, { pageUrl: content.canonical }),
   ];
 
+  const jumpItems = [
+    { href: '#research', label: 'Research' },
+    { href: '#drivers', label: 'Drivers' },
+    { href: '#structure', label: 'Structure' },
+    ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
+    ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
+    { href: '#audiences', label: 'Audiences' },
+    { href: '#faq', label: 'FAQ' },
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <SEOHead
         title={content.title}
         description={content.description}
@@ -47,181 +66,130 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
       />
       <Navbar />
       <main>
-        <BreadcrumbNav items={breadcrumbItems} />
-
-        <section className="section-padding py-14 bg-gradient-to-b from-muted/30 to-background">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              {content.badge}
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
-              {content.h1}
-            </h1>
-            <div className="space-y-4">
-              {content.intro.map((para) => (
-                <p key={para.slice(0, 48)} className="text-lg text-muted-foreground leading-relaxed">
+        <DirectoryHero
+          breadcrumbs={breadcrumbItems}
+          kicker={content.badge}
+          h1={content.h1}
+          lead={content.intro[0] ?? content.description}
+          rest={
+            <>
+              {content.intro.slice(1).map((para) => (
+                <p key={para.slice(0, 48)} className="mt-3">
                   {para}
                 </p>
               ))}
-            </div>
-            {content.hubLink ? (
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                Start from our{' '}
-                <Link to={content.hubLink.to} className="text-primary font-medium hover:underline">
-                  {content.hubLink.label}
-                </Link>{' '}
-                for broader programme design, or request a scoped briefing for this market.
+              {content.hubLink ? (
+                <p className="mt-3">
+                  Start from our <Link to={content.hubLink.to}>{content.hubLink.label}</Link> for broader programme
+                  design, or request a scoped briefing for this market.
+                </p>
+              ) : null}
+            </>
+          }
+          stats={[
+            { value: content.segmentLabel, label: 'Segment' },
+            { value: String(content.researchTopics.length), label: 'research topics' },
+            { value: String(content.demandDrivers.drivers.length), label: 'demand drivers' },
+            { value: '48h', label: 'to a scoped proposal' },
+          ]}
+          actions={
+            <>
+              <DirectoryGoldLink to="/contact">Request a proposal</DirectoryGoldLink>
+              <DirectoryOutlineLink href="#research">See what we research</DirectoryOutlineLink>
+            </>
+          }
+        />
+
+        <DirectoryJumpNav items={jumpItems} />
+
+        <DirectorySection
+          id="research"
+          eyebrow="Coverage"
+          title={`What we research in the ${content.segmentLabel.toLowerCase()} market`}
+        >
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {content.researchTopics.map((item) => (
+              <DirectoryDriverCard key={item.name} title={item.name} desc={item.detail} />
+            ))}
+          </div>
+        </DirectorySection>
+
+        <DirectorySection id="drivers" surface="cream" eyebrow="What is moving" title={content.demandDrivers.heading}>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {content.demandDrivers.drivers.map((d) => (
+              <DirectoryDriverCard key={d.title} title={d.title} desc={d.detail} />
+            ))}
+          </div>
+        </DirectorySection>
+
+        <DirectorySection id="structure" eyebrow="Market structure" title={content.marketStructure.heading}>
+          <div className="space-y-4 max-w-3xl">
+            {content.marketStructure.paragraphs.map((para) => (
+              <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                {para}
               </p>
-            ) : null}
+            ))}
           </div>
-        </section>
-
-        <section className="section-padding py-10">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              What we research in the {content.segmentLabel.toLowerCase()} market
-            </h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {content.researchTopics.map((item) => (
-                <article key={item.name} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-base font-semibold text-foreground mb-2">{item.name}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding py-10 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              {content.demandDrivers.heading}
-            </h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {content.demandDrivers.drivers.map((d) => (
-                <article key={d.title} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-base font-semibold text-foreground mb-2">{d.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{d.detail}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding py-10">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              {content.marketStructure.heading}
-            </h2>
-            <div className="space-y-4">
-              {content.marketStructure.paragraphs.map((para) => (
-                <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
-                  {para}
-                </p>
-              ))}
-            </div>
-          </div>
-        </section>
+        </DirectorySection>
 
         {content.signalGrid ? (
-          <section className="section-padding py-10 bg-muted/20">
-            <div className="container-wide max-w-5xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-                {content.signalGrid.heading}
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {content.signalGrid.items.map((item) => (
-                  <article key={item.label} className="rounded-xl border border-border bg-card p-5">
-                    <h3 className="text-base font-semibold text-foreground mb-2">{item.label}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.signal}</p>
-                  </article>
-                ))}
-              </div>
+          <DirectorySection id="signals" surface="cream" eyebrow="Signals" title={content.signalGrid.heading}>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {content.signalGrid.items.map((item) => (
+                <DirectoryDriverCard key={item.label} title={item.label} desc={item.signal} />
+              ))}
             </div>
-          </section>
+          </DirectorySection>
         ) : null}
 
         {content.calendarBlocks ? (
-          <section className="section-padding py-10">
-            <div className="container-wide max-w-5xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-                {content.calendarBlocks.heading}
-              </h2>
-              <div className="space-y-4">
-                {content.calendarBlocks.items.map((item) => (
-                  <article key={item.period} className="rounded-xl border border-border bg-card p-5">
-                    <h3 className="text-base font-semibold text-foreground mb-2">{item.period}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
-                  </article>
-                ))}
-              </div>
+          <DirectorySection id="calendar" eyebrow="Calendar" title={content.calendarBlocks.heading}>
+            <div className="space-y-4">
+              {content.calendarBlocks.items.map((item) => (
+                <DirectoryDriverCard key={item.period} title={item.period} desc={item.detail} />
+              ))}
             </div>
-          </section>
+          </DirectorySection>
         ) : null}
 
-        <section className="section-padding py-10 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-              Who we interview
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {content.audiences.map((a) => (
-                <article key={a.audience} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-base font-semibold text-foreground mb-2">{a.audience}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{a.description}</p>
-                </article>
-              ))}
-            </div>
+        <DirectorySection id="audiences" surface="cream" eyebrow="Fieldwork" title="Who we interview">
+          <div className="grid sm:grid-cols-2 gap-5">
+            {content.audiences.map((a) => (
+              <DirectoryDriverCard key={a.audience} title={a.audience} desc={a.description} />
+            ))}
           </div>
-        </section>
+        </DirectorySection>
 
-        <section className="section-padding py-10">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
-              Why BioNixus for {content.segmentLabel.toLowerCase()} research
-            </h2>
-            <WhyBioNixusIntro />
-            <ul className="grid sm:grid-cols-2 gap-3 mt-6">
-              {content.whyBionixus.map((point) => (
-                <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
-                  <span className="text-primary flex-shrink-0">✓</span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <DirectorySection
+          id="why"
+          eyebrow="Why BioNixus"
+          title={`Why BioNixus for ${content.segmentLabel.toLowerCase()} research`}
+        >
+          <WhyBioNixusIntro />
+          <ul className="grid sm:grid-cols-2 gap-3 mt-6">
+            {content.whyBionixus.map((point) => (
+              <li
+                key={point.slice(0, 48)}
+                className="flex gap-2 text-sm text-foreground bg-[#FFFEFB] rounded-2xl border border-[#EDE9E3] p-5"
+              >
+                <span className="text-[#C9A84C] flex-shrink-0">✓</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </DirectorySection>
 
-        <section className="section-padding py-8 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-xl font-semibold text-foreground mb-3">Related research resources</h2>
-            <div className="grid md:grid-cols-2 gap-3">
-              {content.relatedLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="rounded-lg border border-border bg-card p-4 text-primary hover:underline"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+        <DirectorySection id="related" surface="cream" eyebrow="Keep reading" title="Related research resources">
+          <div className="grid md:grid-cols-2 gap-3">
+            {content.relatedLinks.map((link) => (
+              <DirectoryLinkTile key={link.to} to={link.to} title={link.label} />
+            ))}
           </div>
-        </section>
+        </DirectorySection>
 
-        <section className="section-padding py-8">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Frequently asked questions</h2>
-            <div className="space-y-3">
-              {content.faqs.map((item) => (
-                <details key={item.question} className="rounded-xl border border-border bg-card p-4">
-                  <summary className="cursor-pointer font-semibold text-foreground">{item.question}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
+        <DirectorySection id="faq" eyebrow="Questions" title="Frequently asked questions">
+          <DirectoryFaqList items={content.faqs.map((item) => ({ q: item.question, a: item.answer }))} />
+        </DirectorySection>
 
         <CTASection variant="research-proposal" />
       </main>

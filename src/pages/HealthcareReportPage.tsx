@@ -3,7 +3,6 @@ import Footer from '@/components/Footer';
 import { Link, useParams } from 'react-router-dom';
 import NotFound from '@/pages/NotFound';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { buildReportEnrichmentSchemas } from '@/lib/reportEnrichmentSchemas';
@@ -138,7 +137,7 @@ export default function HealthcareReportPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <ReportReadingProgress progressId={`market-report-rp-${report.slug}`} />
       <Navbar />
       <SEOHead
@@ -153,12 +152,6 @@ export default function HealthcareReportPage() {
         jsonLd={jsonLd}
       />
       <main>
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <BreadcrumbNav items={breadcrumbItems} />
-          </div>
-        </div>
-
         <ReportPremiumHero
           title={report.title}
           description={report.heroLead ?? intro}
@@ -167,6 +160,7 @@ export default function HealthcareReportPage() {
           therapySlug={report.therapyAreaSlug}
           therapyName={report.therapyArea}
           countryName={report.market}
+          breadcrumbs={breadcrumbItems}
           stats={[
             { value: report.stat1Value, label: report.stat1Label },
             { value: report.stat2Value, label: report.stat2Label },

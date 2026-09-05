@@ -1,7 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Link } from 'react-router-dom';
-import { Building2, Globe, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
 import { Helmet } from 'react-helmet-async';
@@ -10,6 +9,16 @@ import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import type { CountryListicleConfig } from '@/data/topCompanies/types';
 import { resolvePublishedHreflang, resolvePublishedRelated } from '@/data/topCompanies/registry';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
+import {
+  DirectoryDriverCard,
+  DirectoryFaqList,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectoryOutlineLink,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
 
 interface Props {
   config: CountryListicleConfig;
@@ -72,7 +81,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
   const dir = rtl ? 'rtl' : 'ltr';
 
   return (
-    <div className="min-h-screen bg-background" dir={dir}>
+    <div className="directory-page min-h-screen" dir={dir}>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={metaDescription} />
@@ -95,80 +104,59 @@ export default function TopCompaniesCountryPage({ config }: Props) {
       />
       <Navbar />
       <main>
-        {/* Breadcrumb */}
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-              <Link to="/" className="hover:text-primary transition-colors">{breadcrumb.home}</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-primary transition-colors">{breadcrumb.insights}</Link>
-              <span>/</span>
-              <span className="text-foreground">{breadcrumb.current}</span>
-            </div>
-          </div>
-        </div>
+        <DirectoryHero
+          breadcrumbs={[
+            { name: breadcrumb.home, href: '/' },
+            { name: breadcrumb.insights, href: '/insights' },
+            { name: breadcrumb.current, href: config.canonical.replace('https://www.bionixus.com', '') },
+          ]}
+          kicker={badge}
+          h1={h1}
+          lead={heroIntro}
+          metaLine={`Published ${datePublished} · By BioNixus Research Team`}
+          stats={heroStats.map((stat) => {
+            const [val, ...rest] = stat.split(' ');
+            return { value: val, label: rest.join(' ') || val };
+          })}
+          actions={
+            <>
+              <DirectoryGoldLink to="#request-proposal">{cta.title}</DirectoryGoldLink>
+              <DirectoryOutlineLink href="#firm-profiles">Browse the ranking</DirectoryOutlineLink>
+            </>
+          }
+        />
 
-        {/* Hero */}
-        <section className="section-padding pt-0 pb-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <BarChart3 className="w-4 h-4" />
-              {badge}
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              {h1}
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">{heroIntro}</p>
-            <p className="text-sm text-muted-foreground">Published {datePublished} · By BioNixus Research Team</p>
-          </div>
-        </section>
+        <DirectoryJumpNav
+          items={[
+            { href: '#quick-answer', label: 'Ranking' },
+            { href: '#landscape', label: 'Landscape' },
+            { href: '#firm-profiles', label: 'Profiles' },
+            { href: '#comparison', label: 'Compare' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+        />
 
-        {/* Stats bar */}
-        <section className="section-padding py-12 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {heroStats.map((stat, i) => {
-                const [val, ...rest] = stat.split(' ');
-                return (
-                  <div key={i}>
-                    <p className="text-3xl md:text-4xl font-display font-bold">{val}</p>
-                    <p className="text-primary-foreground/70 text-sm mt-1">{rest.join(' ')}</p>
-                  </div>
-                );
-              })}
-            </div>
+        <DirectorySection id="quick-answer" eyebrow="Ranking" title={quickAnswerTitle}>
+          <div className="premium-card p-8">
+            {uiLabels.quickAnswerIntro ? (
+              <p className="text-sm text-muted-foreground mb-4">{uiLabels.quickAnswerIntro}</p>
+            ) : null}
+            <ol className="space-y-2">
+              {firms.map((f) => (
+                <li key={f.anchor} className="flex items-start gap-3 text-sm">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#FBF3E0] text-[#8A6A12] text-xs font-bold shrink-0 mt-0.5">
+                    {f.rank}
+                  </span>
+                  <span>
+                    <strong className="text-foreground">{f.name}</strong>
+                    <span className="text-muted-foreground"> — {uiLabels.bestFor}: {f.bestFor}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
           </div>
-        </section>
-
-        {/* Quick Answer */}
-        <section className="section-padding py-10" aria-label="Quick Answer">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="bg-card border border-border rounded-xl p-8">
-              <h2 className="text-xl font-display font-semibold text-foreground mb-4">{quickAnswerTitle}</h2>
-              {uiLabels.quickAnswerIntro && (
-                <p className="text-sm text-muted-foreground mb-4">{uiLabels.quickAnswerIntro}</p>
-              )}
-              <ol className="space-y-2">
-                {firms.map((f) => (
-                  <li key={f.anchor} className="flex items-start gap-3 text-sm">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-0.5">
-                      {f.rank}
-                    </span>
-                    <span>
-                      <strong className="text-foreground">{f.name}</strong>
-                      <span className="text-muted-foreground"> — {uiLabels.bestFor}: {f.bestFor}</span>
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        {/* Answer-first block for AI answer engines */}
-        {aeoAnswer && (
-          <section className="section-padding py-6">
-            <div className="container-wide max-w-5xl mx-auto">
+          {aeoAnswer ? (
+            <div className="mt-8">
               <GeoLLMAnswerBlock
                 question={aeoAnswer.question}
                 answer={aeoAnswer.answer}
@@ -177,32 +165,8 @@ export default function TopCompaniesCountryPage({ config }: Props) {
                 pageUrl={canonical}
               />
             </div>
-          </section>
-        )}
-
-        {/* Table of contents */}
-        <section className="section-padding py-8 bg-muted/30">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
-            <div className="grid md:grid-cols-2 gap-2">
-              <a href="#landscape" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Globe className="w-4 h-4" /> {landscapeTitle}
-              </a>
-              <a href="#firm-profiles" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <Building2 className="w-4 h-4" /> {profilesTitle}
-              </a>
-              <a href="#comparison" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <BarChart3 className="w-4 h-4" /> {comparisonTitle}
-              </a>
-              <a href="#considerations" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4" /> {considerationsTitle}
-              </a>
-              <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2">
-                <BookOpen className="w-4 h-4" /> {faqTitle}
-              </a>
-            </div>
-          </div>
-        </section>
+          ) : null}
+        </DirectorySection>
 
         {/* Landscape section */}
         <section className="section-padding py-16" id="landscape">
@@ -226,7 +190,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
                 <div
                   key={firm.anchor}
                   id={firm.anchor}
-                  className="bg-card border border-border rounded-xl p-8 scroll-mt-24"
+                  className="premium-card p-8 scroll-mt-24"
                 >
                   {firm.rank === 1 && (
                     <div className="mb-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">
@@ -275,11 +239,11 @@ export default function TopCompaniesCountryPage({ config }: Props) {
           <section className="section-padding py-16" id="comparison">
             <div className="container-wide max-w-5xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">{comparisonTitle}</h2>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm border-collapse">
+              <div className="overflow-x-auto rounded-2xl border border-[#EDE9E3] shadow-[0_16px_50px_rgba(6,16,31,0.05)]">
+                <table className="directory-table">
                   <thead>
-                    <tr className="bg-primary text-primary-foreground">
-                      <th className="p-3 text-left font-semibold">{uiLabels.capability}</th>
+                    <tr>
+                      <th>{uiLabels.capability}</th>
                       {comparisonHeaders.map((h, i) => (
                         <th key={i} className="p-3 text-left font-semibold">{h}</th>
                       ))}
@@ -308,12 +272,9 @@ export default function TopCompaniesCountryPage({ config }: Props) {
           <section className="section-padding py-16 bg-muted/30" id="considerations">
             <div className="container-wide max-w-5xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">{considerationsTitle}</h2>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-5">
                 {considerations.map((c) => (
-                  <div key={c.title} className="bg-card border border-border rounded-xl p-6">
-                    <h3 className="text-lg font-display font-semibold text-foreground mb-3">{c.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{c.body}</p>
-                  </div>
+                  <DirectoryDriverCard key={c.title} title={c.title} desc={c.body} />
                 ))}
               </div>
             </div>
@@ -332,14 +293,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
         <section className="section-padding py-16" id="faq">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">{faqTitle}</h2>
-            <div className="space-y-6">
-              {faqItems.map((faq) => (
-                <div key={faq.question} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.question}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
+            <DirectoryFaqList items={faqItems.map((faq) => ({ q: faq.question, a: faq.answer }))} />
           </div>
         </section>
 
@@ -348,27 +302,23 @@ export default function TopCompaniesCountryPage({ config }: Props) {
           <section className="section-padding py-12 bg-muted/30">
             <div className="container-wide max-w-5xl mx-auto">
               <h2 className="text-xl font-display font-semibold text-foreground mb-6">{relatedTitle}</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {related.map((r) => (
-                  <Link
-                    key={r.to}
-                    to={r.to}
-                    className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 hover:shadow-md transition-all"
-                  >
-                    <p className="font-semibold text-foreground text-sm">{r.label}</p>
-                  </Link>
+                  <DirectoryLinkTile key={r.to} to={r.to} title={r.label} />
                 ))}
               </div>
             </div>
           </section>
         )}
 
-        <ListicleProposalCta
-          countryName={config.country}
-          ctaId={`listicle_${config.country.toLowerCase().replace(/\s+/g, '_')}_footer`}
-          headline={cta.title}
-          body={cta.body}
-        />
+        <div id="request-proposal">
+          <ListicleProposalCta
+            countryName={config.country}
+            ctaId={`listicle_${config.country.toLowerCase().replace(/\s+/g, '_')}_footer`}
+            headline={cta.title}
+            body={cta.body}
+          />
+        </div>
       </main>
       <Footer />
     </div>

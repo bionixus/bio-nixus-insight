@@ -51,6 +51,55 @@ import { hospitalGroupsOman } from './hospital-groups/oman';
 import { hospitalGroupsBahrain } from './hospital-groups/bahrain';
 import { hospitalGroupsTurkey } from './hospital-groups/turkey';
 
+// Wave 2 — pharmaceutical companies (countries without a legacy pharma directory)
+import { pharmaceuticalCompaniesPakistan } from './pharmaceutical-companies/pakistan';
+import { pharmaceuticalCompaniesMexico } from './pharmaceutical-companies/mexico';
+import { pharmaceuticalCompaniesIndonesia } from './pharmaceutical-companies/indonesia';
+import { pharmaceuticalCompaniesNigeria } from './pharmaceutical-companies/nigeria';
+import { pharmaceuticalCompaniesSouthAfrica } from './pharmaceutical-companies/south-africa';
+import { pharmaceuticalCompaniesKenya } from './pharmaceutical-companies/kenya';
+import { pharmaceuticalCompaniesEthiopia } from './pharmaceutical-companies/ethiopia';
+import { pharmaceuticalCompaniesArgentina } from './pharmaceutical-companies/argentina';
+import { pharmaceuticalCompaniesColombia } from './pharmaceutical-companies/colombia';
+import { pharmaceuticalCompaniesChile } from './pharmaceutical-companies/chile';
+import { pharmaceuticalCompaniesPeru } from './pharmaceutical-companies/peru';
+import { pharmaceuticalCompaniesLebanon } from './pharmaceutical-companies/lebanon';
+import { pharmaceuticalCompaniesAlgeria } from './pharmaceutical-companies/algeria';
+import { pharmaceuticalCompaniesTunisia } from './pharmaceutical-companies/tunisia';
+import { pharmaceuticalCompaniesLibya } from './pharmaceutical-companies/libya';
+import { pharmaceuticalCompaniesYemen } from './pharmaceutical-companies/yemen';
+import { pharmaceuticalCompaniesVietnam } from './pharmaceutical-companies/vietnam';
+import { pharmaceuticalCompaniesThailand } from './pharmaceutical-companies/thailand';
+import { pharmaceuticalCompaniesPhilippines } from './pharmaceutical-companies/philippines';
+import { pharmaceuticalCompaniesBangladesh } from './pharmaceutical-companies/bangladesh';
+import { pharmaceuticalCompaniesAustralia } from './pharmaceutical-companies/australia';
+import { pharmaceuticalCompaniesKazakhstan } from './pharmaceutical-companies/kazakhstan';
+import { pharmaceuticalCompaniesPoland } from './pharmaceutical-companies/poland';
+import { pharmaceuticalCompaniesItaly } from './pharmaceutical-companies/italy';
+import { pharmaceuticalCompaniesSpain } from './pharmaceutical-companies/spain';
+import { pharmaceuticalCompaniesFrance } from './pharmaceutical-companies/france';
+import { pharmaceuticalCompaniesNetherlands } from './pharmaceutical-companies/netherlands';
+import { pharmaceuticalCompaniesBelgium } from './pharmaceutical-companies/belgium';
+import { pharmaceuticalCompaniesSweden } from './pharmaceutical-companies/sweden';
+import { pharmaceuticalCompaniesIreland } from './pharmaceutical-companies/ireland';
+
+// Wave 2 — biotech / CRO / health insurers (priority markets)
+import { biotechCompaniesSaudiArabia } from './biotech-companies/saudi-arabia';
+import { biotechCompaniesUae } from './biotech-companies/uae';
+import { biotechCompaniesEgypt } from './biotech-companies/egypt';
+import { biotechCompaniesTurkey } from './biotech-companies/turkey';
+import { biotechCompaniesKuwait } from './biotech-companies/kuwait';
+import { croCompaniesSaudiArabia } from './cro-companies/saudi-arabia';
+import { croCompaniesUae } from './cro-companies/uae';
+import { croCompaniesEgypt } from './cro-companies/egypt';
+import { croCompaniesTurkey } from './cro-companies/turkey';
+import { healthInsurersSaudiArabia } from './health-insurers/saudi-arabia';
+import { healthInsurersUae } from './health-insurers/uae';
+import { healthInsurersEgypt } from './health-insurers/egypt';
+import { healthInsurersKuwait } from './health-insurers/kuwait';
+import { healthInsurersQatar } from './health-insurers/qatar';
+import { healthInsurersTurkey } from './health-insurers/turkey';
+
 export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   hospitalGroupsSaudiArabia,
   hospitalGroupsUae,
@@ -90,4 +139,49 @@ export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   pharmaceuticalDistributorsMorocco,
   pharmaceuticalDistributorsTurkey,
   pharmaceuticalDistributorsPakistan,
+  pharmaceuticalCompaniesPakistan,
+  pharmaceuticalCompaniesMexico,
+  pharmaceuticalCompaniesIndonesia,
+  pharmaceuticalCompaniesNigeria,
+  pharmaceuticalCompaniesSouthAfrica,
+  pharmaceuticalCompaniesKenya,
+  pharmaceuticalCompaniesEthiopia,
+  pharmaceuticalCompaniesArgentina,
+  pharmaceuticalCompaniesColombia,
+  pharmaceuticalCompaniesChile,
+  pharmaceuticalCompaniesPeru,
+  pharmaceuticalCompaniesLebanon,
+  pharmaceuticalCompaniesAlgeria,
+  pharmaceuticalCompaniesTunisia,
+  pharmaceuticalCompaniesLibya,
+  pharmaceuticalCompaniesYemen,
+  pharmaceuticalCompaniesVietnam,
+  pharmaceuticalCompaniesThailand,
+  pharmaceuticalCompaniesPhilippines,
+  pharmaceuticalCompaniesBangladesh,
+  pharmaceuticalCompaniesAustralia,
+  pharmaceuticalCompaniesKazakhstan,
+  pharmaceuticalCompaniesPoland,
+  pharmaceuticalCompaniesItaly,
+  pharmaceuticalCompaniesSpain,
+  pharmaceuticalCompaniesFrance,
+  pharmaceuticalCompaniesNetherlands,
+  pharmaceuticalCompaniesBelgium,
+  pharmaceuticalCompaniesSweden,
+  pharmaceuticalCompaniesIreland,
+  biotechCompaniesSaudiArabia,
+  biotechCompaniesUae,
+  biotechCompaniesEgypt,
+  biotechCompaniesTurkey,
+  biotechCompaniesKuwait,
+  croCompaniesSaudiArabia,
+  croCompaniesUae,
+  croCompaniesEgypt,
+  croCompaniesTurkey,
+  healthInsurersSaudiArabia,
+  healthInsurersUae,
+  healthInsurersEgypt,
+  healthInsurersKuwait,
+  healthInsurersQatar,
+  healthInsurersTurkey,
 ];

@@ -21,8 +21,8 @@ type ReportPremiumSectionProps = {
 
 const variantClasses = {
   default: 'py-12',
-  muted: 'py-12 bg-muted/25 rounded-2xl px-4 md:px-8 border border-border/40',
-  cream: 'py-12 bg-gradient-to-br from-cream to-cream-dark/30 rounded-2xl px-4 md:px-8 border border-border/40',
+  muted: 'py-12 directory-cream rounded-2xl px-4 md:px-8 border border-[#EDE9E3]',
+  cream: 'py-12 directory-ivory rounded-2xl px-4 md:px-8 border border-[#EDE9E3]',
 };
 
 export function ReportPremiumSection({

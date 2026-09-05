@@ -1,13 +1,20 @@
-import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import type { CompetitorAlternativeConfig } from '@/data/competitorAlternatives';
+import {
+  DirectoryFaqList,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectoryOutlineLink,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
 
 type Props = {
   config: CompetitorAlternativeConfig;
@@ -53,7 +60,7 @@ export default function CompetitorAlternativePage({ config }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -74,158 +81,152 @@ export default function CompetitorAlternativePage({ config }: Props) {
       />
       <Navbar />
       <main>
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <BreadcrumbNav
-              items={[
-                { name: 'Home', href: '/' },
-                { name: crumb, href: config.path },
-              ]}
-              className="px-0 mb-2"
-            />
-          </div>
-        </div>
-
-        <section className="section-padding pt-0 pb-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">{config.eyebrow}</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              {config.h1}
-            </h1>
-            {config.intro.map((paragraph, index) => (
-              <p
-                key={paragraph.slice(0, 48)}
-                className={
-                  index === 0
-                    ? 'text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4'
-                    : 'text-muted-foreground leading-relaxed max-w-3xl mb-4 last:mb-0'
-                }
-              >
-                {paragraph}
-              </p>
-            ))}
-            <GeoLLMAnswerBlock
-              className="mt-8"
-              question={config.geoLLM.question}
-              answer={config.geoLLM.answer}
-              points={config.geoLLM.points}
-              summary={config.geoLLM.summary}
-            />
-          </div>
-        </section>
-
-        <section className="section-padding py-12 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Who each is for</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded-xl border border-border bg-card p-6">
-                <h3 className="font-semibold text-foreground mb-3">Stay with the incumbent when</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  {config.stayWhen.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-xl border border-border bg-card p-6">
-                <h3 className="font-semibold text-foreground mb-3">Add BioNixus when</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  {config.addWhen.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding py-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-2">Alternatives compared</h2>
-            <p className="text-muted-foreground mb-6 max-w-3xl">
-              Include real options. Being listed here is not an attack on the incumbent — it is a shortlist for buyers
-              who typed this query.
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-border">
-                <thead>
-                  <tr className="bg-muted/40 text-left">
-                    <th className="p-3 border-b border-border">Firm</th>
-                    <th className="p-3 border-b border-border">Best for</th>
-                    <th className="p-3 border-b border-border">Coverage</th>
-                    <th className="p-3 border-b border-border">Model</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {config.alternatives.map((alt) => (
-                    <tr key={alt.name} className="align-top">
-                      <td className="p-3 border-b border-border font-semibold text-foreground">{alt.name}</td>
-                      <td className="p-3 border-b border-border text-muted-foreground">{alt.bestFor}</td>
-                      <td className="p-3 border-b border-border text-muted-foreground">{alt.region}</td>
-                      <td className="p-3 border-b border-border text-muted-foreground">{alt.model}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding py-12 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">You do not have to switch off</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl mb-3">
-              The usual model is the subscription you already buy, plus a custom study for the accounts, cities, and
-              SKUs the feed cannot produce. BioNixus complements Nielsen, Kantar, GfK, IMS Health, and IQVIA. It does
-              not replace them.
-            </p>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl">
-              Proposal ready within 48 hours of a brief. Email{' '}
-              <a href="mailto:admin@bionixus.com" className="text-primary underline">
-                admin@bionixus.com
-              </a>{' '}
-              or request a proposal below.
-            </p>
-          </div>
-        </section>
-
-        <section className="section-padding py-12" id="faq">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-6">Frequently asked questions</h2>
-            <div className="space-y-4">
-              {config.faq.map((faq) => (
-                <details key={faq.q} className="rounded-xl border border-border bg-card p-4">
-                  <summary className="cursor-pointer font-semibold text-foreground">{faq.q}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{faq.a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding py-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related resources</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {config.related.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors"
-                >
-                  <h3 className="font-semibold text-foreground mb-1">{item.label}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <ListicleProposalCta
-          countryName={config.cta.countryName}
-          ctaId={config.cta.ctaId}
-          headline={config.cta.headline}
-          body={config.cta.body}
+        <DirectoryHero
+          breadcrumbs={[
+            { name: 'Home', href: '/' },
+            { name: crumb, href: config.path },
+          ]}
+          kicker={config.eyebrow}
+          h1={config.h1}
+          lead={config.intro[0] ?? pageDescription}
+          rest={
+            config.intro.length > 1 ? (
+              <>
+                {config.intro.slice(1).map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)} className="mt-3">
+                    {paragraph}
+                  </p>
+                ))}
+              </>
+            ) : undefined
+          }
+          stats={[
+            { value: String(config.alternatives.length), label: 'options compared' },
+            { value: 'Keep + add', label: 'usual model' },
+            { value: '48h', label: 'to a scoped proposal' },
+            { value: 'Primary', label: 'research, not a feed' },
+          ]}
+          actions={
+            <>
+              <DirectoryGoldLink to="#request-proposal">Request a proposal</DirectoryGoldLink>
+              <DirectoryOutlineLink href="#compared">Compare alternatives</DirectoryOutlineLink>
+            </>
+          }
         />
+
+        <DirectoryJumpNav
+          items={[
+            { href: '#who-for', label: 'Who each is for' },
+            { href: '#compared', label: 'Compared' },
+            { href: '#keep', label: 'Keep the feed' },
+            { href: '#faq', label: 'FAQ' },
+            { href: '#related', label: 'Related' },
+          ]}
+        />
+
+        <DirectorySection id="who-for" eyebrow="Fit" title="Who each is for">
+          <GeoLLMAnswerBlock
+            className="mb-8"
+            question={config.geoLLM.question}
+            answer={config.geoLLM.answer}
+            points={config.geoLLM.points}
+            summary={config.geoLLM.summary}
+          />
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="premium-card p-6 md:p-7">
+              <h3 className="text-lg font-display font-semibold text-foreground mb-3">Stay with the incumbent when</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {config.stayWhen.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="premium-card p-6 md:p-7">
+              <h3 className="text-lg font-display font-semibold text-foreground mb-3">Add BioNixus when</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {config.addWhen.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </DirectorySection>
+
+        <DirectorySection
+          id="compared"
+          surface="cream"
+          eyebrow="Shortlist"
+          title="Alternatives compared"
+          body="Include real options. Being listed here is not an attack on the incumbent — it is a shortlist for buyers who typed this query."
+        >
+          <div className="overflow-x-auto rounded-2xl border border-[#EDE9E3] shadow-[0_16px_50px_rgba(6,16,31,0.05)]">
+            <table className="directory-table">
+              <thead>
+                <tr>
+                  <th scope="col">Firm</th>
+                  <th scope="col">Best for</th>
+                  <th scope="col">Coverage</th>
+                  <th scope="col">Model</th>
+                </tr>
+              </thead>
+              <tbody>
+                {config.alternatives.map((alt) => (
+                  <tr key={alt.name}>
+                    <td className="font-semibold text-foreground">{alt.name}</td>
+                    <td className="text-muted-foreground">{alt.bestFor}</td>
+                    <td className="text-muted-foreground">{alt.region}</td>
+                    <td className="text-muted-foreground">{alt.model}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </DirectorySection>
+
+        <DirectorySection
+          id="keep"
+          eyebrow="Complement, not replace"
+          title="You do not have to switch off"
+          body={
+            <>
+              <p>
+                The usual model is the subscription you already buy, plus a custom study for the accounts, cities, and
+                SKUs the feed cannot produce. BioNixus complements Nielsen, Kantar, GfK, IMS Health, and IQVIA. It does
+                not replace them.
+              </p>
+              <p className="mt-3">
+                Proposal ready within 48 hours of a brief. Email{' '}
+                <a href="mailto:admin@bionixus.com" className="text-primary underline">
+                  admin@bionixus.com
+                </a>{' '}
+                or request a proposal below.
+              </p>
+            </>
+          }
+        >
+          <div />
+        </DirectorySection>
+
+        <DirectorySection id="faq" surface="cream" eyebrow="Questions" title="Frequently asked questions">
+          <DirectoryFaqList items={config.faq} />
+        </DirectorySection>
+
+        <DirectorySection id="related" eyebrow="Keep reading" title="Related resources">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {config.related.map((item) => (
+              <DirectoryLinkTile key={item.to} to={item.to} title={item.label} sub={item.desc} />
+            ))}
+          </div>
+        </DirectorySection>
+
+        <div id="request-proposal">
+          <ListicleProposalCta
+            countryName={config.cta.countryName}
+            ctaId={config.cta.ctaId}
+            headline={config.cta.headline}
+            body={config.cta.body}
+          />
+        </div>
       </main>
       <Footer />
     </div>

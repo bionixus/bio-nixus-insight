@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { CalendarDays, Globe2, Sparkles } from 'lucide-react';
 import type { MediaFigure } from '@/data/mediaAssets';
 import type { ReportConversionConfig } from '@/data/reportConversionConfig';
 import { OptimizedImage } from '@/components/media/OptimizedImage';
@@ -9,6 +8,8 @@ import { ReportSectionVisual } from '@/components/report-premium/ReportSectionVi
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { getMarketReportWhitePaperForPath } from '@/data/marketReportWhitePapers';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import type { DirectoryBreadcrumb } from '@/components/seo/DirectoryPremium';
 
 const COUNTRY_SAMPLE_PDF: Record<string, { reportName: string; pdfPath: string }> = {
   '/usa-healthcare-market-report': {
@@ -49,6 +50,7 @@ type ReportPremiumHeroProps = {
   statsCaption?: string;
   /** Optional real photography; falls back to programmatic SVG visual. */
   heroImage?: MediaFigure;
+  breadcrumbs?: DirectoryBreadcrumb[];
 };
 
 export function ReportPremiumHero({
@@ -64,6 +66,7 @@ export function ReportPremiumHero({
   stats,
   statsCaption = 'Market sizing: BioNixus market analysis, 2026.',
   heroImage,
+  breadcrumbs,
 }: ReportPremiumHeroProps) {
   const heroRef = useScrollReveal<HTMLElement>({ stagger: 90, threshold: 0.08 });
   const whitePaper = getMarketReportWhitePaperForPath(config.canonicalPath);
@@ -74,32 +77,17 @@ export function ReportPremiumHero({
   return (
     <section
       ref={heroRef}
-      className="relative overflow-hidden border-b border-border/60"
+      className="directory-hero pt-28 md:pt-32 pb-14 md:pb-16 px-4 sm:px-6 lg:px-8"
       data-report-hero
       aria-labelledby="report-hero-title"
     >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(135deg, hsl(var(--navy-deep) / 0.03) 0%, hsl(var(--cream)) 45%, hsl(var(--background)) 100%)',
-        }}
-        aria-hidden
-      />
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-gold-light to-transparent opacity-80" aria-hidden />
-
-      <div className="container-wide section-padding pb-12 md:pb-16 relative">
-        <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] gap-10 lg:gap-14 items-center">
+      <div className="directory-hero-inner container-wide max-w-6xl mx-auto">
+        {breadcrumbs?.length ? <BreadcrumbNav items={breadcrumbs} className="px-0 mb-8" tone="on-dark" /> : null}
+        <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] gap-10 lg:gap-14 items-start">
           <div className="min-w-0">
             <div className="flex flex-wrap gap-2 mb-6 sr sr-up sr-fast">
               {badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/8 text-primary text-xs font-semibold border border-primary/10"
-                >
-                  {badge === 'Open access' ? <Sparkles className="w-3.5 h-3.5" aria-hidden /> : null}
-                  {badge === 'Updated May 2026' ? <CalendarDays className="w-3.5 h-3.5" aria-hidden /> : null}
-                  {badge.includes('BioNixus') ? <Globe2 className="w-3.5 h-3.5" aria-hidden /> : null}
+                <span key={badge} className="directory-kicker">
                   {badge}
                 </span>
               ))}
@@ -107,18 +95,24 @@ export function ReportPremiumHero({
 
             <h1
               id="report-hero-title"
-              className="sr-lcp text-3xl md:text-4xl lg:text-[2.75rem] font-display font-bold text-foreground mb-5 leading-[1.12]"
+              className="sr-lcp text-3xl md:text-4xl lg:text-[2.75rem] font-display font-semibold tracking-tight text-white mb-5 leading-[1.12]"
             >
               {title}
             </h1>
 
-            <div className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 sr sr-up">{description}</div>
+            <div className="text-base md:text-lg text-white/78 leading-relaxed mb-6 sr sr-up [&_a]:text-[#E8C56A] [&_a]:underline">
+              {description}
+            </div>
 
-            {metaLinks ? <div className="text-sm text-muted-foreground leading-relaxed mb-8 sr sr-up">{metaLinks}</div> : null}
+            {metaLinks ? (
+              <div className="text-sm text-white/62 leading-relaxed mb-8 sr sr-up [&_a]:text-[#E8C56A] [&_a]:underline">
+                {metaLinks}
+              </div>
+            ) : null}
 
-            <ReportEarlyCtaBar config={config} className="sr sr-up" />
+            <ReportEarlyCtaBar config={config} className="sr sr-up mb-8" tone="on-dark" />
 
-            <div className="mt-6 sr sr-up">
+            <div className="premium-card p-5 md:p-6 sr sr-up">
               <ConversionCTA
                 variant="gated-asset"
                 reportName={countrySample?.reportName ?? whitePaper?.title ?? 'GCC Healthcare Market Report 2026'}
@@ -134,7 +128,7 @@ export function ReportPremiumHero({
 
           <div className="sr-lcp min-w-0">
             {heroImage ? (
-              <figure className="rounded-2xl border border-border/70 bg-card overflow-hidden shadow-xl">
+              <figure className="rounded-2xl border border-white/10 bg-white/4 overflow-hidden">
                 <OptimizedImage
                   src={heroImage.src}
                   alt={heroImage.alt}
@@ -146,9 +140,7 @@ export function ReportPremiumHero({
                   sizes="hero"
                 />
                 {heroImage.caption ? (
-                  <figcaption className="p-3 text-xs text-muted-foreground leading-relaxed">
-                    {heroImage.caption}
-                  </figcaption>
+                  <figcaption className="p-3 text-xs text-white/55 leading-relaxed">{heroImage.caption}</figcaption>
                 ) : null}
               </figure>
             ) : (
@@ -166,19 +158,14 @@ export function ReportPremiumHero({
               <>
                 <div className="grid grid-cols-3 gap-3 mt-4">
                   {stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="rounded-xl border border-border/70 bg-card/90 backdrop-blur-sm px-3 py-3 text-center hover-lift"
-                    >
-                      <p className="text-lg md:text-xl font-display font-bold text-primary tabular-nums">{stat.value}</p>
-                      <p className="text-[10px] md:text-xs text-muted-foreground mt-1 leading-snug">{stat.label}</p>
+                    <div key={stat.label} className="directory-stat">
+                      <p className="directory-stat-value text-xl md:text-2xl">{stat.value}</p>
+                      <p className="directory-stat-label">{stat.label}</p>
                     </div>
                   ))}
                 </div>
                 {statsCaption ? (
-                  <p className="text-[10px] md:text-xs text-muted-foreground/75 mt-2.5 text-center italic">
-                    {statsCaption}
-                  </p>
+                  <p className="text-[10px] md:text-xs text-white/45 mt-2.5 text-center italic">{statsCaption}</p>
                 ) : null}
               </>
             ) : null}

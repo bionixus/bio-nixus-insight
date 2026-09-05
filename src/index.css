@@ -338,6 +338,181 @@
     line-height: 1;
   }
 
+  /* Company-directory matrix — editorial / McKinsey treatment */
+  .directory-page {
+    background: #F4F2ED;
+  }
+  .directory-hero {
+    position: relative;
+    overflow: hidden;
+    background: #06101F;
+    color: #FFFEFB;
+  }
+  .directory-hero::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 88% 0%, rgba(201, 168, 76, 0.14), transparent 55%),
+      radial-gradient(ellipse 45% 40% at 6% 92%, rgba(14, 165, 160, 0.08), transparent 50%);
+  }
+  .directory-hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .directory-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    background: rgba(201, 168, 76, 0.1);
+    color: #E8C56A;
+    border-radius: 999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .directory-stat {
+    border: 1px solid rgba(201, 168, 76, 0.22);
+    background: rgba(255, 254, 251, 0.04);
+    border-radius: 16px;
+    padding: 1.15rem 1rem;
+    text-align: left;
+  }
+  .directory-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    line-height: 1.1;
+    color: #FFFEFB;
+  }
+  .directory-stat-label {
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: rgba(255, 254, 251, 0.62);
+  }
+  .directory-jump {
+    position: sticky;
+    top: 3.75rem;
+    z-index: 30;
+    border-bottom: 1px solid #EDE9E3;
+    background: rgba(244, 242, 237, 0.92);
+    backdrop-filter: blur(12px);
+  }
+  .directory-jump-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #3D3A34;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .directory-jump-link:hover,
+  .directory-jump-link:focus-visible {
+    background: #06101F;
+    color: #FFFEFB;
+  }
+  .directory-ivory {
+    background: #FFFEFB;
+  }
+  .directory-cream {
+    background: #F4F2ED;
+  }
+  .directory-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.875rem;
+  }
+  .directory-table thead th {
+    background: #06101F;
+    color: #FFFEFB;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.85rem 1rem;
+    letter-spacing: 0.01em;
+  }
+  .directory-table thead th:first-child {
+    border-top-left-radius: 12px;
+  }
+  .directory-table thead th:last-child {
+    border-top-right-radius: 12px;
+  }
+  .directory-table tbody td {
+    padding: 0.95rem 1rem;
+    border-bottom: 1px solid #EDE9E3;
+    vertical-align: top;
+    background: #FFFEFB;
+  }
+  .directory-table tbody tr:nth-child(even) td {
+    background: #F8F5F0;
+  }
+  .directory-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+  }
+  .directory-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+  }
+  .directory-rank {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: #C9A84C;
+    letter-spacing: 0.04em;
+  }
+  .directory-tile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 72px;
+    padding: 1.1rem 1.15rem;
+    border: 1px solid #EDE9E3;
+    background: #FFFEFB;
+    border-radius: 16px;
+    box-shadow: 0 1px 0 rgba(6, 16, 31, 0.03);
+    transition:
+      transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .directory-tile:hover,
+  .directory-tile:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(201, 168, 76, 0.45);
+    box-shadow: 0 16px 40px rgba(6, 16, 31, 0.07);
+  }
+  .directory-cta-band {
+    position: relative;
+    overflow: hidden;
+    background: #06101F;
+    color: #FFFEFB;
+  }
+  .directory-cta-band::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 90% 10%, rgba(201, 168, 76, 0.16), transparent 55%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .directory-tile,
+    .directory-tile:hover,
+    .directory-tile:focus-visible,
+    .directory-page .premium-card,
+    .directory-page .premium-card:hover,
+    .directory-page .premium-card:focus-visible {
+      transform: none;
+      transition: none;
+    }
+  }
+
   /* Blog post body – HTML from Sanity (McKinsey-style article blocks) */
   .prose-body {
     @apply text-foreground;
