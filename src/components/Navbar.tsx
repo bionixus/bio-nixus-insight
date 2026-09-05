@@ -16,6 +16,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { SiteSearch } from '@/components/SiteSearch';
 
 
 const Navbar = () => {
@@ -111,6 +112,7 @@ const Navbar = () => {
 
           {/* Language Selector & CTA */}
           <div className="hidden md:flex items-center gap-4">
+            <SiteSearch variant="icon" />
             <Link
               to={globalSitesHref}
               aria-label={ui.nav.globalSites}
@@ -178,6 +180,7 @@ const Navbar = () => {
             className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in"
           >
             <div className="flex flex-col gap-4">
+              <SiteSearch variant="mobile" onNavigate={() => setIsOpen(false)} />
               {navItems.map((item) => (
                 <Link
                   key={item.key}

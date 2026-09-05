@@ -1959,6 +1959,13 @@ ${urls.join('\n')}
   writeFileSync(outPath, xml, 'utf8');
   writeCompanyDirectoriesSitemap();
   await writePressRssFeed(blogProjectId, blogDataset);
+  try {
+    const { writeSiteSearchIndex } = await import('./generate-site-search-index.mjs');
+    const searchCount = writeSiteSearchIndex(publicDir);
+    console.log(`Site search index written (${searchCount} paths).`);
+  } catch (err) {
+    console.warn('Site search index skipped:', err instanceof Error ? err.message : err);
+  }
   console.log(
     `Sitemap written to public/sitemap.xml (${urls.length} canonical URLs from ${candidates.size} candidates).`
   );

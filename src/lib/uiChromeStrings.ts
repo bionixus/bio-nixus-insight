@@ -15,6 +15,17 @@ export type UiChromeStrings = {
     languageSwitchTo: string;
     openMenu: string;
     closeMenu: string;
+    searchOpen: string;
+    searchTooltip: string;
+    searchTitle: string;
+    searchKicker: string;
+    searchPlaceholder: string;
+    searchHint: string;
+    searchEmpty: string;
+    searchNoResults: string;
+    searchError: string;
+    /** `{count}` placeholder */
+    searchCount: string;
   };
   brands: {
     /** Marquee wordmarks, localized where a market-standard rendering exists. */
@@ -81,6 +92,16 @@ const en: UiChromeStrings = {
     languageSwitchTo: 'Switch language to {language}',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
+    searchOpen: 'Search pages',
+    searchTooltip: 'Search pages ⌘K',
+    searchTitle: 'Search BioNixus pages',
+    searchKicker: 'Site search',
+    searchPlaceholder: 'Type a word — usa, saudi, oncology…',
+    searchHint: 'Lists every published URL that contains your word.',
+    searchEmpty: 'Type at least two characters to list matching URLs.',
+    searchNoResults: 'No published URLs contain that word.',
+    searchError: 'Search index could not be loaded. Try again in a moment.',
+    searchCount: '{count} matching URLs',
   },
   brands: {
     companies: ['Pfizer', 'Roche', 'Novartis', 'Sanofi', 'AstraZeneca', 'Merck'],
