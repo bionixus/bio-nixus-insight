@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
@@ -66,9 +65,6 @@ const Index = () => {
         faqItems={homeFaq.items}
         articlePosts={homeArticlePosts}
       />
-      <Helmet>
-        <link rel="preload" as="image" href="/bionixus-logo.webp" fetchPriority="high" />
-      </Helmet>
       <Navbar />
       <main>
         <HeroSection />

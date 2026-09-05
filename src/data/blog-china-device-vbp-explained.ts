@@ -11,7 +11,7 @@ export const CHINA_DEVICE_VBP_EXPLAINED_COVER_IMAGE =
   '/images/blog/china-device-vbp-rounds-explained-cover.jpg';
 
 export const CHINA_DEVICE_VBP_EXPLAINED_META_TITLE =
-  'China Device VBP Rounds Explained 2026 | Stents, Joints & Renewals';
+  'China Device VBP 2026: Stents, Joints & Renewals | BioNixus';
 
 export const CHINA_DEVICE_VBP_EXPLAINED_META_DESCRIPTION =
   'How China’s medical device Volume-Based Procurement works in 2026: stent and joint price-cut examples, win vs lose outcomes, renewals, and private-hospital escape valves.';

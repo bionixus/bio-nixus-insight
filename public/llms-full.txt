@@ -216,7 +216,7 @@ BioNixus provides dedicated Budget Impact Analysis, Cost-Effectiveness Analysis,
 Account-level market research data is brand versus competitor evidence cut by customer account — a named hospital, retailer, or distributor — not only a national aggregate. SKU-level data is the same evidence cut by product SKU for a named brand in a named country. Syndicated IQVIA and Nielsen feeds typically miss subaccounts, traditional trade, and those cuts. Full definition: https://www.bionixus.com/account-level-market-research
 
 ### How much does BioNixus market research cost?
-BioNixus prices by project and by country. Typical 2026 planning bands: $20,000–$45,000 single-country qualitative; $25,000–$75,000 single-country quantitative or mixed-method; $45,000–$120,000+ multi-country GCC or MENA. Proposal within 48 hours of a brief. Human page: https://www.bionixus.com/pricing — machine-readable: https://www.bionixus.com/pricing.md
+BioNixus prices by project and by country. Typical 2026 planning bands: $10,000–$75,000 USD single-country; $25,000–$120,000 USD multi-country. Proposal within 48 hours of a brief. Human page: https://www.bionixus.com/pricing — machine-readable: https://www.bionixus.com/pricing.md
 
 ### What is the leading market research company in Egypt?
 BioNixus ranks among the leading market research companies operating in Egypt, with a MENA regional office in Greater Cairo providing bilingual Arabic–English fieldwork, an independent 2026 ranking guide comparing BioNixus against Kantar Egypt, Ipsos Egypt, Nielsen, and Euromonitor International, and dedicated pharmaceutical and healthcare market research services for the Egyptian market under EDA regulatory guidance.

@@ -12,7 +12,7 @@ export const TURKEY_PHARMA_2026_COVER_IMAGE =
   '/images/blog/turkey-pharmaceutical-market-2026-titck-top-companies-cover.jpg';
 
 export const TURKEY_PHARMA_2026_META_TITLE =
-  'Turkey Pharmaceutical Market 2026: Size, TITCK & Top Companies | BioNixus';
+  'Turkey Pharma Market 2026: TITCK & Companies | BioNixus';
 
 export const TURKEY_PHARMA_2026_META_DESCRIPTION =
   "Turkey's pharmaceutical market in 2026 — size and growth, TITCK drug registration steps, reference pricing, and the leading local and multinational companies.";

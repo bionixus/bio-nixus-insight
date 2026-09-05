@@ -1,5 +1,5 @@
 import type { RouteObject } from 'react-router-dom';
-import SpecialtyMarketDemandPage from '@/pages/templates/SpecialtyMarketDemandPage';
+import { SpecialtyMarketDemandPage } from '@/routes/lazySeoPages';
 import {
   SPECIALTY_MARKET_DEMAND_CONTENT,
 } from '@/data/specialtyMarketDemandContent';

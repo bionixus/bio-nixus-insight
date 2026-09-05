@@ -187,6 +187,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return '6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-riyadh-2026') return '6 Best Market Research Companies in Riyadh (2026) | KSA Agency Rankings | BioNixus';
   if (path === '/insights/top-oncology-market-research-companies-2026') return 'Top Oncology Market Research Companies 2026 | BioNixus';
+  if (path === '/insights/top-hematology-market-research-companies-2026') return 'Top Hematology Market Research Companies 2026 | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-saudi-arabia-2026') return '5 Best Healthcare Market Research Firms in Saudi Arabia (2026) | SFDA Specialists | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-dubai-2026') return '5 Best Healthcare Market Research Firms in Dubai (2026) | DHA Specialists | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-abu-dhabi-2026') return '5 Best Healthcare Market Research Firms in Abu Dhabi (2026) | DoH Specialists | BioNixus';
@@ -499,7 +500,7 @@ function buildFallbackDescription(pathname) {
     return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
   }
   if (path === '/pricing') {
-    return 'BioNixus market research pricing is by project and country. Typical 2026 bands: $20k–$75k single-country, $45k–$120k+ multi-country GCC. Proposal in 48 hours.';
+    return 'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.';
   }
   if (path === '/account-level-market-research') {
     return 'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.';
@@ -1067,7 +1068,7 @@ async function startServer() {
 
       const perfHints = isProduction
         ? [getClientAssetHints(path.resolve(__dirname, 'dist/client/assets')), buildLcpPreloadTag(initialData)].filter(Boolean).join('\n')
-        : buildLcpPreloadTag(initialData);
+        : [`<link rel="stylesheet" href="/src/index.css">`, buildLcpPreloadTag(initialData)].filter(Boolean).join('\n');
       const combinedHead = perfHints ? `${perfHints}\n${headTags}` : headTags;
 
       const page = template

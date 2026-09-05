@@ -1,19 +1,19 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Globe2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { CTASection } from '@/components/shared/CTASection';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
+import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
-import {
-  getServicesHubBundle,
-} from '@/data/servicesHubContent';
+import { getServicesHubBundle } from '@/data/servicesHubContent';
 import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 
 const recoveryLinkLabels: Record<string, string> = {
@@ -36,11 +36,6 @@ function pathToLabel(path: string): string {
   const slug = path.split('/').filter(Boolean).pop() ?? path;
   return slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
-
-const recoveryLinksWithLabels = serviceRecoveryPaths.map((path) => ({
-  path,
-  label: pathToLabel(path),
-}));
 
 const servicesHubJsonLd = (
   healthcareServices: ReturnType<typeof getServicesHubBundle>['healthcareServices'],
@@ -120,6 +115,7 @@ const Services = () => {
   const servicesPath = basePath === '/' ? '/services' : `${basePath}/services`;
   const contactPath = localizedContactPath(language);
   const methodologyPath = basePath === '/' ? '/methodology' : `${basePath}/methodology`;
+  const healthcareHubPath = getLocalizedPathForLanguage('/healthcare-market-research', language);
 
   const breadcrumbItems = useMemo(
     () => [
@@ -154,11 +150,10 @@ const Services = () => {
   const linksRef = useScrollReveal<HTMLElement>({ stagger: 60 });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#FFFEFB]">
       <SEOHead
         title={
-          copy?.seo.title ??
-          'Market Research Services | Pharma, Healthcare & B2B | BioNixus'
+          copy?.seo.title ?? 'Market Research Services | Pharma, Healthcare & B2B | BioNixus'
         }
         description={
           copy?.seo.description ??
@@ -169,78 +164,82 @@ const Services = () => {
       />
       <Navbar />
       <main dir={isRTL ? 'rtl' : 'ltr'} lang={language}>
-        <div className="section-padding pt-24 pb-2">
-          <div className="container-wide">
-            <BreadcrumbNav items={breadcrumbItems} />
+        <div className="premium-home-ivory pt-24 pb-0">
+          <div className="container-wide mx-auto max-w-6xl">
+            <BreadcrumbNav items={breadcrumbItems} className="px-0" />
           </div>
         </div>
 
         <section
-          className="section-padding relative overflow-hidden pb-12 pt-4 text-[#FFFEFB]"
-          style={{
-            background: `
-              radial-gradient(ellipse 70% 55% at 65% 45%, rgba(12,27,51,1) 0%, transparent 70%),
-              radial-gradient(ellipse 50% 45% at 20% 80%, rgba(14,165,160,0.08) 0%, transparent 50%),
-              linear-gradient(180deg, #06101F 0%, #081628 100%)
-            `,
-          }}
+          className="premium-home-midnight section-padding pt-10 pb-16 md:pt-14 md:pb-24"
+          aria-labelledby="services-hub-heading"
           ref={heroRef}
         >
-          <div className="container-wide relative z-10 mx-auto max-w-5xl">
-            <div className="mb-6 inline-flex items-center gap-2.5 sr sr-left sr-fast revealed">
-              <span className="h-px w-8 bg-[#C9A84C]/40" aria-hidden="true" />
-              <Globe2 className="h-4 w-4 text-[#C9A84C]" aria-hidden="true" />
-              <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
-                {copy?.hero.eyebrow ?? 'Global services'}
-              </span>
-            </div>
-            <h1 className="mb-6 max-w-4xl font-display text-3xl font-light leading-tight tracking-tight md:text-4xl lg:text-5xl sr sr-up sr-line revealed">
-              {copy?.hero.h1 ??
-                'Market research services for pharma, healthcare, and commercial industries'}
-            </h1>
-            <p className="mb-8 max-w-3xl text-lg leading-relaxed text-white/75 md:text-xl sr sr-up revealed">
-              {copy?.hero.subtitle ??
-                'BioNixus runs senior-led programmes across 48 countries — from physician surveys and HTA strategy to CATI, CAWI, CAPI fieldwork, focus groups, mystery shopping, price elasticity, and online behaviour tracking. One firm, one methodology standard, scoped to the decision you need to make.'}
-            </p>
-            <div className="mb-10 flex flex-wrap gap-3 sr sr-up revealed">
-              <Link
-                to={contactPath}
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-[#C9A84C] to-[#B8933E] px-6 py-3 text-sm font-semibold text-[#06101F] shadow-[0_4px_20px_rgba(201,168,76,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(201,168,76,0.35)] cursor-pointer"
-              >
-                {copy?.hero.ctaProposal ?? 'Request a proposal'}
-              </Link>
-              <Link
-                to={methodologyPath}
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-normal text-white/60 transition-colors hover:border-white/30 hover:text-white cursor-pointer"
-              >
-                {copy?.hero.ctaMethodology ?? 'Research methodology'}
-              </Link>
-            </div>
-            <ul
-              className="grid grid-cols-2 gap-4 sm:grid-cols-4 sr sr-up revealed"
-              aria-label="Service credentials"
-            >
-              {heroMetrics.map((metric) => (
-                <li
-                  key={metric.label}
-                  className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 text-center"
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#C9A84C] via-[#C9A84C]/30 to-transparent" aria-hidden="true" />
+          <div className="container-wide relative z-10 mx-auto max-w-6xl">
+            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:gap-16">
+              <div>
+                <PremiumEyebrow>{copy?.hero.eyebrow ?? 'Global services'}</PremiumEyebrow>
+                <h1
+                  id="services-hub-heading"
+                  className="sr-lcp max-w-4xl font-display text-3xl font-light leading-[1.12] tracking-tight text-[#FFFEFB] md:text-5xl"
                 >
-                  <p className="font-display text-2xl font-semibold text-[#FFFEFB] md:text-3xl">{metric.value}</p>
-                  <p className="mt-1 text-xs text-white/60 md:text-sm">{metric.label}</p>
-                </li>
-              ))}
-            </ul>
+                  {copy?.hero.h1 ??
+                    'Market research services for pharma, healthcare, and commercial industries'}
+                </h1>
+                <p className="mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/55">
+                  {copy?.hero.subtitle ??
+                    'BioNixus runs senior-led programmes across 48 countries — from physician surveys and HTA strategy to CATI, CAWI, CAPI fieldwork, focus groups, mystery shopping, price elasticity, and online behaviour tracking. One firm, one methodology standard, scoped to the decision you need to make.'}{' '}
+                  <Link to={healthcareHubPath} className="text-[#C9A84C] underline-offset-4 hover:underline">
+                    Healthcare market research
+                  </Link>
+                  .
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Link to={contactPath} className="premium-gold-btn">
+                    {copy?.hero.ctaProposal ?? 'Request a proposal'}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <Link
+                    to={methodologyPath}
+                    className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/12 px-8 py-[15px] text-sm font-medium tracking-wide text-white/65 transition-colors hover:border-white/25 hover:text-[#FFFEFB]"
+                  >
+                    {copy?.hero.ctaMethodology ?? 'Research methodology'}
+                  </Link>
+                </div>
+              </div>
+
+              <aside className="premium-card-dark p-7 md:p-8" aria-label="Service credentials">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
+                  {copy?.hero.eyebrow ?? 'Global services'}
+                </p>
+                <p className="mt-3 font-display text-xl font-light text-[#FFFEFB]">
+                  {copy?.intro.h2 ?? 'Three connected research portfolios'}
+                </p>
+                <ul className="mt-7 space-y-4">
+                  {heroMetrics.map((metric) => (
+                    <li key={metric.label} className="border-b border-white/10 pb-4 last:border-b-0 last:pb-0">
+                      <p className="text-[11px] uppercase tracking-[0.16em] text-white/35">{metric.label}</p>
+                      <p className="mt-1.5 font-display text-lg font-light text-[#FFFEFB]">{metric.value}</p>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </div>
           </div>
         </section>
 
         <PremiumComplianceRibbon />
 
-        <section className="section-padding py-14 bg-[#F4F2ED]" ref={introRef}>
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6 sr sr-up sr-line">
-              {copy?.intro.h2 ?? 'Three connected research portfolios'}
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8 text-muted-foreground leading-relaxed">
+        <section className="premium-home-cream section-padding py-16 md:py-20" ref={introRef}>
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mb-12 max-w-2xl">
+              <PremiumEyebrow tone="teal">{copy?.intro.h2 ?? 'Three connected research portfolios'}</PremiumEyebrow>
+              <h2 className="font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl">
+                {copy?.intro.h2 ?? 'Three connected research portfolios'}
+              </h2>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
               {(copy?.intro.columns ?? [
                 {
                   h3: 'Pharma & healthcare',
@@ -255,65 +254,50 @@ const Services = () => {
                   body: 'B2B buyer research, shopper insight, and consumer segmentation for banking, retail, tourism, technology, manufacturing, and FMCG — via the',
                 },
               ]).map((column, index) => (
-              <article
-                key={column.h3}
-                className={`rounded-xl border border-[#D6D0C7]/60 bg-white p-6 sr hover-lift ${
-                  index === 0 ? 'sr-left' : index === 1 ? 'sr-up' : 'sr-right'
-                }`}
-              >
-                <h3 className="text-lg font-display font-semibold text-foreground mb-3">{column.h3}</h3>
-                <p>
-                  {column.body}
-                  {index === 2 ? (
-                    <>
-                      {' '}
-                      <Link
-                        to={getLocalizedPathForLanguage('/bionixus-industries', language)}
-                        className="text-primary font-medium hover:underline"
-                      >
-                        {t.ui.services.industriesHubLink}
-                      </Link>
-                      .
-                    </>
-                  ) : null}
-                </p>
-              </article>
+                <article key={column.h3} className="premium-card">
+                  <h3 className="mb-3 font-display text-xl font-medium text-[#0C1B33]">{column.h3}</h3>
+                  <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                    {column.body}
+                    {index === 2 ? (
+                      <>
+                        {' '}
+                        <Link
+                          to={getLocalizedPathForLanguage('/bionixus-industries', language)}
+                          className="font-medium text-[#C9A84C] underline-offset-4 hover:underline"
+                        >
+                          {t.ui.services.industriesHubLink}
+                        </Link>
+                        .
+                      </>
+                    ) : null}
+                  </p>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section-padding py-14" ref={healthcareRef}>
-          <div className="container-wide max-w-6xl mx-auto">
-            <div className="mb-10 max-w-3xl">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 sr sr-up sr-line">
+        <section className="premium-home-ivory section-padding py-16 md:py-20" ref={healthcareRef}>
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mb-12 max-w-3xl">
+              <PremiumEyebrow>{copy?.healthcare.h2 ?? 'Pharma & healthcare research modules'}</PremiumEyebrow>
+              <h2 className="mb-4 font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl">
                 {copy?.healthcare.h2 ?? 'Pharma & healthcare research modules'}
               </h2>
-              <p className="text-muted-foreground leading-relaxed sr sr-up">
+              <p className="font-light leading-relaxed text-[#7A7267]">
                 {copy?.healthcare.intro ??
                   'Quantitative, qualitative, access, intelligence, trial support, and stakeholder mapping — combinable into one global programme.'}
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {healthcareServices.map((svc) => {
                 const Icon = svc.icon;
                 return (
-                  <Link
-                    key={svc.slug}
-                    to={`/services/${svc.slug}`}
-                    className="group flex flex-col rounded-xl border border-border bg-card p-7 transition-all duration-300 hover:border-[#C9A84C]/40 hover:shadow-[0_12px_40px_-12px_rgba(6,16,31,0.15)] cursor-pointer sr sr-scale-up sr-spring hover-lift"
-                  >
-                    <div
-                      className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[#06101F]/5 ring-1 ring-[#C9A84C]/20"
-                      aria-hidden
-                    >
-                      <Icon className="h-6 w-6 text-[#0C1B33]" />
-                    </div>
-                    <h3 className="mb-3 text-lg font-display font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {svc.title}
-                    </h3>
-                    <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">{svc.summary}</p>
-                    <div className="mb-4 flex flex-wrap gap-1.5">
+                  <Link key={svc.slug} to={`/services/${svc.slug}`} className="premium-card group flex flex-col">
+                    <Icon className="mb-5 h-5 w-5 text-[#C9A84C]" aria-hidden="true" />
+                    <h3 className="mb-3 font-display text-xl font-medium text-[#0C1B33]">{svc.title}</h3>
+                    <p className="mb-5 flex-1 text-[15px] font-light leading-relaxed text-[#7A7267]">{svc.summary}</p>
+                    <div className="mb-5 flex flex-wrap gap-1.5">
                       {svc.tags.map((tag) => (
                         <span
                           key={tag}
@@ -323,8 +307,9 @@ const Services = () => {
                         </span>
                       ))}
                     </div>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                      {copy?.healthcare.viewScope ?? 'View scope'} <ArrowRight className="h-4 w-4" aria-hidden />
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[#C9A84C] underline-offset-4 group-hover:underline">
+                      {copy?.healthcare.viewScope ?? 'View scope'}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
                   </Link>
                 );
@@ -334,53 +319,41 @@ const Services = () => {
         </section>
 
         <section
-          className="section-padding py-14 bg-[#06101F] text-[#FFFEFB]"
+          className="premium-home-midnight section-padding py-16 md:py-20"
           ref={methodologyRef}
         >
-          <div className="container-wide max-w-6xl mx-auto">
-            <div className="mb-10 max-w-3xl">
-              <p className="mb-3 text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C] sr sr-up">
-                {copy?.methodology.eyebrow ?? 'Fieldwork & analytics'}
-              </p>
-              <h2 className="text-2xl md:text-3xl font-display font-light text-[#FFFEFB] mb-3 sr sr-up sr-line">
+          <div className="container-wide relative z-10 mx-auto max-w-6xl">
+            <div className="mb-12 max-w-3xl">
+              <PremiumEyebrow>{copy?.methodology.eyebrow ?? 'Fieldwork & analytics'}</PremiumEyebrow>
+              <h2 className="mb-4 font-display text-3xl font-light tracking-tight text-[#FFFEFB] md:text-4xl">
                 {copy?.methodology.h2 ?? 'Methodologies across industries'}
               </h2>
-              <p className="text-white/65 leading-relaxed sr sr-up">
+              <p className="font-light leading-relaxed text-white/45">
                 {copy?.methodology.intro ??
                   'The same senior team runs CATI, CAWI, and CAPI fieldwork for pharma HCP panels and B2B buyer programmes — plus mystery shopping, price elasticity, focus groups, and online behaviour tracking where your category demands it.'}
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {methodologyServices.map((svc) => {
                 const Icon = svc.icon;
                 return (
-                  <Link
-                    key={svc.id}
-                    to={svc.href}
-                    className="group flex flex-col rounded-xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:border-[#C9A84C]/35 hover:bg-white/[0.07] cursor-pointer sr sr-scale-up hover-lift"
-                  >
-                    <div className="mb-4 flex items-start justify-between gap-3">
-                      <div
-                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#C9A84C]/10 ring-1 ring-[#C9A84C]/25"
-                        aria-hidden
-                      >
-                        <Icon className="h-5 w-5 text-[#E4CC7A]" />
-                      </div>
+                  <Link key={svc.id} to={svc.href} className="premium-card-dark group flex flex-col p-7">
+                    <div className="mb-5 flex items-start justify-between gap-3">
+                      <Icon className="h-5 w-5 text-[#C9A84C]" aria-hidden="true" />
                       {svc.abbr ? (
                         <span className="rounded-md border border-white/10 px-2 py-0.5 text-[10px] font-bold tracking-widest text-[#C9A84C]">
                           {svc.abbr}
                         </span>
                       ) : null}
                     </div>
-                    <h3 className="mb-2 text-base font-display font-semibold text-[#FFFEFB] group-hover:text-[#E4CC7A] transition-colors">
-                      {svc.title}
-                    </h3>
-                    <p className="mb-3 flex-1 text-sm leading-relaxed text-white/60">{svc.summary}</p>
-                    <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-[#C9A84C]/70">
+                    <h3 className="mb-3 font-display text-lg font-medium text-[#FFFEFB]">{svc.title}</h3>
+                    <p className="mb-4 flex-1 text-[15px] font-light leading-relaxed text-white/45">{svc.summary}</p>
+                    <p className="mb-4 text-[10px] font-semibold uppercase tracking-wider text-[#C9A84C]/70">
                       {svc.industries}
                     </p>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-[#E4CC7A] group-hover:gap-2 transition-all">
-                      {copy?.methodology.learnMore ?? 'Learn more'} <ArrowRight className="h-4 w-4" aria-hidden />
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[#C9A84C]">
+                      {copy?.methodology.learnMore ?? 'Learn more'}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
                   </Link>
                 );
@@ -389,41 +362,32 @@ const Services = () => {
           </div>
         </section>
 
-        <section className="section-padding py-14 bg-[#F4F2ED]" ref={commercialRef}>
-          <div className="container-wide max-w-6xl mx-auto">
-            <div className="mb-10 max-w-3xl">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3 sr sr-up sr-line">
+        <section className="premium-home-cream section-padding py-16 md:py-20" ref={commercialRef}>
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mb-12 max-w-3xl">
+              <PremiumEyebrow tone="teal">{copy?.commercial.h2 ?? 'Commercial & cross-industry research'}</PremiumEyebrow>
+              <h2 className="mb-4 font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl">
                 {copy?.commercial.h2 ?? 'Commercial & cross-industry research'}
               </h2>
-              <p className="text-muted-foreground leading-relaxed sr sr-up">
+              <p className="font-light leading-relaxed text-[#7A7267]">
                 {copy?.commercial.intro ??
                   'Non-pharma programmes for enterprise buyers, institutional decision-makers, and consumer markets — Americas, EMEA, Africa, and LATAM.'}
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid gap-5 md:grid-cols-2">
               {commercialOfferings.map((offering) => {
                 const Icon = offering.icon;
                 return (
-                  <Link
-                    key={offering.to}
-                    to={offering.to}
-                    className="group flex flex-col rounded-xl border border-[#D6D0C7]/60 bg-white p-8 transition-all duration-300 hover:border-[#C9A84C]/40 hover:shadow-[0_12px_40px_-12px_rgba(6,16,31,0.12)] cursor-pointer sr sr-scale-up sr-spring hover-lift"
-                  >
-                    <div
-                      className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[#06101F]/5 ring-1 ring-[#C9A84C]/20"
-                      aria-hidden
-                    >
-                      <Icon className="h-6 w-6 text-[#0C1B33]" />
-                    </div>
-                    <h3 className="mb-3 text-xl font-display font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {offering.title}
-                    </h3>
-                    <p className="mb-3 flex-1 text-muted-foreground leading-relaxed">{offering.summary}</p>
-                    <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-primary/80">
+                  <Link key={offering.to} to={offering.to} className="premium-card group flex flex-col">
+                    <Icon className="mb-5 h-5 w-5 text-[#C9A84C]" aria-hidden="true" />
+                    <h3 className="mb-3 font-display text-xl font-medium text-[#0C1B33]">{offering.title}</h3>
+                    <p className="mb-3 flex-1 text-[15px] font-light leading-relaxed text-[#7A7267]">{offering.summary}</p>
+                    <p className="mb-5 text-[11px] font-semibold uppercase tracking-wider text-[#C9A84C]/80">
                       {offering.examples}
                     </p>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                      {copy?.commercial.explore ?? 'Explore segment'} <ArrowRight className="h-4 w-4" aria-hidden />
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[#C9A84C] underline-offset-4 group-hover:underline">
+                      {copy?.commercial.explore ?? 'Explore segment'}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
                   </Link>
                 );
@@ -432,37 +396,50 @@ const Services = () => {
           </div>
         </section>
 
-        <section className="section-padding py-14" ref={linksRef}>
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4 sr sr-up sr-line">
-              {copy?.links.h2 ?? 'Related research hubs & industries'}
-            </h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl sr sr-up">
-              {copy?.links.intro ??
-                'Start from a healthcare hub, an industry segment, or a global index — depending on your category and geography.'}
-            </p>
-            <ul className="grid sm:grid-cols-2 gap-3 sr sr-up">
+        <section className="premium-home-ivory section-padding py-16 md:py-20" ref={linksRef}>
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mb-10 max-w-2xl">
+              <PremiumEyebrow>{copy?.links.h2 ?? 'Related research hubs & industries'}</PremiumEyebrow>
+              <h2 className="mb-4 font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl">
+                {copy?.links.h2 ?? 'Related research hubs & industries'}
+              </h2>
+              <p className="font-light leading-relaxed text-[#7A7267]">
+                {copy?.links.intro ??
+                  'Start from a healthcare hub, an industry segment, or a global index — depending on your category and geography.'}
+              </p>
+            </div>
+            <ul className="grid gap-4 sm:grid-cols-2">
               {hubLinks.map((link) => (
                 <li key={link.to}>
-                  <Link to={link.to} className="text-primary font-medium hover:underline cursor-pointer">
+                  <Link
+                    to={link.to}
+                    className="premium-card flex items-center justify-between gap-4 p-6 text-sm font-medium text-[#0C1B33]"
+                  >
                     {link.label}
+                    <ArrowRight className="h-4 w-4 shrink-0 text-[#C9A84C]" aria-hidden="true" />
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <details className="mt-8 rounded-xl border border-border bg-card p-6 sr sr-up">
-              <summary className="cursor-pointer font-display font-semibold text-foreground list-none flex items-center justify-between gap-2">
-                {copy?.links.moreGuides ?? 'More research guides'}
-                <span className="text-sm font-normal text-muted-foreground">
-                  {recoveryLinksWithLabels.length} {copy?.links.linksCount ?? 'links'}
+            <details className="premium-card mt-8 p-0">
+              <summary className="cursor-pointer list-none px-7 py-6 font-display text-lg font-medium text-[#0C1B33]">
+                <span className="flex items-center justify-between gap-2">
+                  {copy?.links.moreGuides ?? 'More research guides'}
+                  <span className="text-sm font-normal text-[#7A7267]">
+                    {recoveryLinksWithLabels.length} {copy?.links.linksCount ?? 'links'}
+                  </span>
                 </span>
               </summary>
-              <ul className="grid sm:grid-cols-2 gap-2 mt-4 pt-4 border-t border-border">
+              <ul className="grid gap-2 border-t border-[#EDE9E3] px-7 py-5 sm:grid-cols-2">
                 {recoveryLinksWithLabels.map(({ path, label }) => (
                   <li key={path}>
-                    <Link to={path} className="text-sm text-primary hover:underline cursor-pointer">
+                    <Link
+                      to={path}
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-[#C9A84C] underline-offset-4 hover:underline"
+                    >
                       {label}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                     </Link>
                   </li>
                 ))}
@@ -471,28 +448,16 @@ const Services = () => {
           </div>
         </section>
 
-        <section className="section-padding py-14 bg-[#F4F2ED]">
-          <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8 text-center">
-              {copy?.faq.h2 ?? 'Frequently asked questions'}
-            </h2>
-            <div className="space-y-3">
-              {serviceFaq.map((item) => (
-                <details
-                  key={item.question}
-                  className="rounded-xl border border-[#D6D0C7]/60 bg-white px-6 py-4 group"
-                >
-                  <summary className="cursor-pointer font-medium text-foreground list-none pr-4">
-                    {item.question}
-                  </summary>
-                  <p className="mt-3 text-muted-foreground leading-relaxed text-sm">{item.answer}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
+        <div className="premium-home-ivory">
+          <FAQSection
+            premium
+            title={copy?.faq.h2 ?? 'Frequently asked questions'}
+            items={[...serviceFaq]}
+            className="section-padding py-16 md:py-20"
+          />
+        </div>
 
-        <CTASection variant="service" />
+        <CTASection variant="service" premium />
       </main>
       <Footer />
     </div>

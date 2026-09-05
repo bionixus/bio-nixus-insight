@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T11:01:51.091Z",
+  "generatedAt": "2026-09-05T11:05:16.679Z",
   "directories": [
     {
       "path": "/biotech-companies-egypt",
@@ -702,12 +702,12 @@
       "path": "/pharmaceutical-companies-france",
       "entity": "pharmaceutical-companies",
       "country": "france",
-      "title": "Top 18 Pharmaceutical Companies in France (2026)",
-      "metaDescription": "Pharmaceutical companies in France: Sanofi, Servier, Pierre Fabre, Ipsen, Théa, ANSM, HAS and CEPS — transparency, prices, early access.",
+      "title": "Top 16 Pharmaceutical Companies in France (2026)",
+      "metaDescription": "Pharmaceutical companies in France: Sanofi, Servier, Ipsen, Pierre Fabre, Théa, Pfizer, Novartis, Roche and ANSM — HAS ASMR, CEPS price, officines.",
       "h1": "Pharmaceutical Companies in France",
-      "companies": 18,
+      "companies": 16,
       "regulatorSource": {
-        "name": "Agence nationale de sécurité du médicament et des produits de santé (ANSM) — authorised medicines and inspected establishments",
+        "name": "Agence nationale de sécurité du médicament et des produits de santé (ANSM) — authorised medicines and establishments",
         "url": "https://ansm.sante.fr",
         "asOf": "2026-09-04"
       },

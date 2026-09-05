@@ -1,5 +1,5 @@
 import type { RouteObject } from 'react-router-dom';
-import CompetitorAlternativePage from '@/pages/templates/CompetitorAlternativePage';
+import { CompetitorAlternativePage } from '@/routes/lazySeoPages';
 import { COMPETITOR_ALTERNATIVES } from '@/data/competitorAlternatives';
 
 /** Route objects for Kantar / Nielsen / GfK / IMS Health / IQVIA-KSA comparison pages. */

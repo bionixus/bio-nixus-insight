@@ -12,7 +12,7 @@ export const SINGAPORE_MEDTECH_2026_COVER_IMAGE =
   '/images/blog/medtech-singapore-2026-market-hsa-registration-cover.jpg';
 
 export const SINGAPORE_MEDTECH_2026_META_TITLE =
-  'MedTech in Singapore 2026: Market Size, HSA & Key Players | BioNixus';
+  'MedTech Singapore 2026: HSA, Size & Players | BioNixus';
 
 export const SINGAPORE_MEDTECH_2026_META_DESCRIPTION =
   "Singapore's medtech industry in 2026 — manufacturing scale, HSA Class A–D registration, Access Consortium, and the top device makers with Singapore plants.";

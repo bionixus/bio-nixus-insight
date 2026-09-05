@@ -19,21 +19,21 @@ export const METHODOLOGY_SEO_AND_HERO: Record<
   }
 > = {
   en: {
-    seoTitle: 'Healthcare Market Research Methodology | BioNixus',
+    seoTitle: 'Market Research Methodology | Healthcare & Consumer',
     seoDescription:
-      'How BioNixus designs, runs, and quality-assures healthcare market research: research design, sampling and sample-size governance, fieldwork controls, data validation, ethics and GDPR, and decision-first reporting across EMEA and GCC markets.',
-    h1: 'Healthcare Market Research Methodology',
+      'How BioNixus designs and quality-assures market research for healthcare and consumer brands: sampling, fieldwork, validation, ethics, and decision-ready reports.',
+    h1: 'Market research methodology for healthcare and consumer industries',
     intro:
-      'A pharmaceutical decision is only as good as the evidence under it — and evidence is only trustworthy if you can see how it was made. This page is that look behind the curtain: how BioNixus designs each study, recruits and verifies the right respondents, governs fieldwork, validates the data, meets the ethics and regulatory bar in every market, and reports findings you can act on. No black boxes.',
+      'A commercial decision is only as good as the evidence under it — whether the brief is a named brand versus a competitor in hospital accounts, or a pack versus a rival on a traditional-trade shelf. Evidence is only trustworthy if you can see how it was made. This page is that look behind the curtain: how BioNixus designs each study, recruits and verifies the right respondents, governs fieldwork, validates the data, meets the ethics bar in every market, and reports findings a marketing or access team can act on. One governance spine. Two theatres: healthcare and consumer.',
     langMirrorLead: 'Localized methodology mirrors:',
     langMirrorMid:
       '. Align evidence plans with the market research insights hub at',
     langMirrorTail: 'or explore',
     marketResearchHubLabel: 'market research data insights hub',
     gfkAlternativeLabel: 'GfK alternative coverage in Egypt',
-    ctaTitle: 'Discuss Your Research Requirements',
+    ctaTitle: 'Discuss your research requirements',
     ctaBody:
-      'A multi-market launch study, a single-country payer landscape, or an always-on competitive intelligence programme — the method flexes to the complexity and the regulatory context in front of it. Tell us the decision you need to make and we will design the research that meets your evidence bar.',
+      'A multi-market launch study, a single-country shopper or payer landscape, or an always-on competitive programme — the method flexes to the industry, the complexity, and the regulatory context in front of it. Tell us the decision you need to make and we will design the research that meets your evidence bar.',
     ctaButton: 'Get in touch',
   },
   de: {

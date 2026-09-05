@@ -1,6 +1,5 @@
 import type { RouteObject } from 'react-router-dom';
-import CompanyDirectoryPage from '@/pages/templates/CompanyDirectoryPage';
-import DirectoryHubPage from '@/pages/templates/DirectoryHubPage';
+import { CompanyDirectoryPage, DirectoryHubPage } from '@/routes/lazySeoPages';
 import { COMPANY_DIRECTORY_HUBS, TEMPLATE_DIRECTORIES } from '@/data/companyDirectories';
 
 /**

@@ -1,128 +1,18 @@
 import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, type RouteObject } from 'react-router-dom';
-import { RouteLoadingFallback } from '@/components/RouteLoadingFallback';
-import Blog from '@/pages/Blog';
-import CaseStudies from '@/pages/CaseStudies';
-import About from '@/pages/About';
-import ClientReviews from '@/pages/ClientReviews';
-import Services from '@/pages/Services';
-import CrossIndustryMarketResearch from '@/pages/CrossIndustryMarketResearch';
-import FAQ from '@/pages/FAQ';
-import HealthcareMarketStatistics from '@/pages/HealthcareMarketStatistics';
-import Resources from '@/pages/Resources';
-import Insights from '@/pages/Insights';
-import NewsHub from '@/pages/NewsHub';
-import Media from '@/pages/Media';
-import SiteMapPage from '@/pages/SiteMapPage';
-import VideosIndex from '@/pages/VideosIndex';
-import ServiceDetail from '@/pages/ServiceDetail';
-import Privacy from '@/pages/Privacy';
-import Terms from '@/pages/Terms';
-import Contact from '@/pages/Contact';
-import Methodology from '@/pages/Methodology';
-import VerifyEmail from '@/pages/VerifyEmail';
-import MenaMarketData from '@/pages/MenaMarketData';
-import GccMarketAccessGuide from '@/pages/GccMarketAccessGuide';
-import BionixusVsIqviaMena from '@/pages/BionixusVsIqviaMena';
-import GccPharmaMarketReport2026 from '@/pages/GccPharmaMarketReport2026';
-import KolMappingSaudiArabiaOncology from '@/pages/KolMappingSaudiArabiaOncology';
-import PhysicianSurveySaudiArabia from '@/pages/PhysicianSurveySaudiArabia';
-import SfdaMarketAccessStrategySaudiArabia from '@/pages/SfdaMarketAccessStrategySaudiArabia';
-import BiosimilarMarketEntrySaudiArabia from '@/pages/BiosimilarMarketEntrySaudiArabia';
-import IqviaAlternative from '@/pages/IqviaAlternative';
-import NielsenAlternative from '@/pages/NielsenAlternative';
-import Pricing from '@/pages/Pricing';
-import AccountLevelMarketResearch from '@/pages/AccountLevelMarketResearch';
-import BionixusMiddleEastAfrica from '@/pages/BionixusMiddleEastAfrica';
-import PharmaceuticalMarketResearchDubai from '@/pages/PharmaceuticalMarketResearchDubai';
-import KantarHealthAlternativeGcc from '@/pages/KantarHealthAlternativeGcc';
-import GfkAlternativeEgypt from '@/pages/GfkAlternativeEgypt';
-import NotFound from '@/pages/NotFound';
-import MarketResearch from '@/pages/MarketResearch';
-import WhatIsMarketStudy from '@/pages/WhatIsMarketStudy';
-import MarketResearchByIndustry from '@/pages/MarketResearchByIndustry';
 import { buildIndustryMatrixRoutes } from '@/data/industryMatrixRoutes';
 import { buildCompanyDirectoryRoutes } from '@/data/companyDirectoryRoutes';
 import { buildCompetitorAlternativeRoutes } from '@/data/competitorAlternativeRoutes';
 import { buildArPharmaDirectoryRoutes } from '@/data/arPharmaDirectoryRoutes';
-import CountryResearchBriefTemplate from '@/pages/CountryResearchBriefTemplate';
-import SyndicatedDataGapTool from '@/pages/SyndicatedDataGapTool';
-import MysteryShopRetailBrief from '@/pages/MysteryShopRetailBrief';
 import { buildDevelopedMarketMedtechRoutes } from '@/data/developedMarketMedtechRoutes';
 import { buildSpecialtyMarketDemandRoutes } from '@/data/specialtyMarketDemandRoutes';
 import { buildCountryKeywordRoutes } from '@/data/countryKeywordRoutes';
 import { SEGMENT_MARKET_SLUGS } from '@/data/segmentMarketIndex';
 import legacyRedirects from '../config/legacy-redirects.json';
-import BionixusIndustries from '@/pages/industries/BionixusIndustries';
-import BionixusIndustriesInsights from '@/pages/industries/BionixusIndustriesInsights';
-import IndustrySegmentPage from '@/pages/industries/IndustrySegmentPage';
-import MarketResearchHome from '@/pages/MarketResearchHome';
-import MarketResearchSaudiArabiaPharmaceutical from '@/pages/MarketResearchSaudiArabiaPharmaceutical';
-import MarketResearchHealthcare from '@/pages/MarketResearchHealthcare';
-import QualitativeMarketResearch from '@/pages/QualitativeMarketResearch';
-import QuantitativeHealthcareMarketResearchGuide from '@/pages/QuantitativeHealthcareMarketResearchGuide';
-import GccPharmaceuticalMarketResearch from '@/pages/GccPharmaceuticalMarketResearch';
-import UaePharmaceuticalMarketResearch from '@/pages/UaePharmaceuticalMarketResearch';
-import KuwaitPharmaceuticalMarketResearch from '@/pages/KuwaitPharmaceuticalMarketResearch';
-import QatarPharmaceuticalMarketResearch from '@/pages/QatarPharmaceuticalMarketResearch';
-import BahrainPharmaceuticalMarketResearch from '@/pages/BahrainPharmaceuticalMarketResearch';
-import OmanPharmaceuticalMarketResearch from '@/pages/OmanPharmaceuticalMarketResearch';
-import JordanPharmaceuticalMarketResearch from '@/pages/JordanPharmaceuticalMarketResearch';
-import EgyptPharmaceuticalMarketResearch from '@/pages/EgyptPharmaceuticalMarketResearch';
-import HealthcareMarketResearchInEgypt from '@/pages/HealthcareMarketResearchInEgypt';
-import SaudiPayerMarketAccessResearch from '@/pages/SaudiPayerMarketAccessResearch';
-import GccHcpRecruitmentMarketResearch from '@/pages/GccHcpRecruitmentMarketResearch';
-import HealthcareMarketResearchAgencyGcc from '@/pages/HealthcareMarketResearchAgencyGcc';
-import PharmaceuticalTherapyAreas from '@/pages/PharmaceuticalTherapyAreas';
-import UaeMarketAccessResearch from '@/pages/UaeMarketAccessResearch';
-import KuwaitMarketAccessResearch from '@/pages/KuwaitMarketAccessResearch';
-import QatarMarketAccessResearch from '@/pages/QatarMarketAccessResearch';
-import HealthcareFieldworkMiddleEast from '@/pages/HealthcareFieldworkMiddleEast';
-import RealWorldEvidence from '@/pages/RealWorldEvidence';
-import RealWorldEvidenceGcc from '@/pages/RealWorldEvidenceGcc';
-import RealWorldDataHealthcareMiddleEast from '@/pages/RealWorldDataHealthcareMiddleEast';
-import HeorConsultingSaudiArabia from '@/pages/HeorConsultingSaudiArabia';
-import HtaStudiesSaudiArabia from '@/pages/HtaStudiesSaudiArabia';
-import CostEffectivenessAnalysisSaudiArabia from '@/pages/CostEffectivenessAnalysisSaudiArabia';
-import CostEffectivenessAnalysisGcc from '@/pages/CostEffectivenessAnalysisGcc';
-import PharmaFieldworkSaudiArabia from '@/pages/PharmaFieldworkSaudiArabia';
-import PharmaFieldworkUae from '@/pages/PharmaFieldworkUae';
-import PharmaFieldworkEgypt from '@/pages/PharmaFieldworkEgypt';
-import ClinicalDiagnosticsMarketResearch from '@/pages/ClinicalDiagnosticsMarketResearch';
-import ClinicalDiagnosticsProposalRequest from '@/pages/ClinicalDiagnosticsProposalRequest';
-import PatientSupportProgramResearchGcc from '@/pages/PatientSupportProgramResearchGcc';
-import BudgetImpactModelSaudiArabia from '@/pages/BudgetImpactModelSaudiArabia';
-import MarketAccess from '@/pages/MarketAccess';
-import ArabicBlogAlsawdyh from '@/pages/ArabicBlogAlsawdyh';
-import PharmaciesSaudiArabiaMarketing from '@/pages/PharmaciesSaudiArabiaMarketing';
 import {
   GlobalWebsitesCountryRedirect,
   GlobalWebsitesRedirect,
 } from '@/components/seo/GlobalWebsitesRedirect';
-import PremiumHomePreview from '@/pages/PremiumHomePreview';
-import ConfPortfolio from '@/pages/ConfPortfolio';
-import MarketResearchUae from '@/pages/MarketResearchUae';
-import DiabetesMarketResearchUae from '@/pages/DiabetesMarketResearchUae';
-import SpecialistPhysicianPanelUae from '@/pages/SpecialistPhysicianPanelUae';
-import MslInsightResearchMiddleEast from '@/pages/MslInsightResearchMiddleEast';
-import MedicalAffairsInsightResearchGcc from '@/pages/MedicalAffairsInsightResearchGcc';
-import BrandTrackingPharmaGcc from '@/pages/BrandTrackingPharmaGcc';
-import CommercialEffectivenessPharmaMiddleEast from '@/pages/CommercialEffectivenessPharmaMiddleEast';
-import HealthcareFieldworkGcc from '@/pages/HealthcareFieldworkGcc';
-import PatientJourneyResearchGcc from '@/pages/PatientJourneyResearchGcc';
-import PatientAdherenceResearchMiddleEast from '@/pages/PatientAdherenceResearchMiddleEast';
-import RespiratoryMarketAccessGcc from '@/pages/RespiratoryMarketAccessGcc';
-import UaePricingReimbursementStrategy from '@/pages/UaePricingReimbursementStrategy';
-import MarketResearchKsa from '@/pages/MarketResearchKsa';
-import MarketResearchSaudi from '@/pages/MarketResearchSaudi';
-import MarketResearchKuwait from '@/pages/MarketResearchKuwait';
-import MarketResearchQatar from '@/pages/MarketResearchQatar';
-import MarketResearchGcc from '@/pages/MarketResearchGcc';
-import MarketResearchOman from '@/pages/MarketResearchOman';
-import MarketResearchBahrain from '@/pages/MarketResearchBahrain';
-import MarketResearchEgypt from '@/pages/MarketResearchEgypt';
-import Nf1PharmaMarketResearch from '@/pages/Nf1PharmaMarketResearch';
-import DesmoidTumorPharmaMarketResearch from '@/pages/DesmoidTumorPharmaMarketResearch';
 import {
   AiChatbotsLeadGeneration,
   ArMarketResearchEgypt,
@@ -134,28 +24,6 @@ import {
   BionixusMarketResearchMiddleEast,
   Index,
 } from '@/routes/lazyMarketingPages';
-import TopGlobalHealthcareMarketResearchCompanies2026 from '@/pages/TopGlobalHealthcareMarketResearchCompanies2026';
-import TopPharmaceuticalAnalyticsCompaniesWorldwide2026 from '@/pages/TopPharmaceuticalAnalyticsCompaniesWorldwide2026';
-import BestGlobalMarketResearchCompaniesPharma2026 from '@/pages/BestGlobalMarketResearchCompaniesPharma2026';
-import TopMarketResearchCompaniesGcc2026 from '@/pages/TopMarketResearchCompaniesGcc2026';
-import TopPharmaMarketResearchCompaniesMiddleEast2026 from '@/pages/TopPharmaMarketResearchCompaniesMiddleEast2026';
-import TopHealthcareMarketResearchCompaniesMena2026 from '@/pages/TopHealthcareMarketResearchCompaniesMena2026';
-import PharmaceuticalMarketResearchProvider from '@/pages/PharmaceuticalMarketResearchProvider';
-import TopMarketResearchCompaniesEgypt2026 from '@/pages/TopMarketResearchCompaniesEgypt2026';
-import TopMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopMarketResearchCompaniesSaudiArabia2026';
-import TopConsumerInsightsCompaniesKsa2026, {
-  TopConsumerInsightsCompaniesSaudiArabiaRedirect,
-} from '@/pages/TopConsumerInsightsCompaniesKsa2026';
-import HealthcareMarketResearchCompanies2026 from '@/pages/HealthcareMarketResearchCompanies2026';
-import TopMarketResearchCompaniesUae2026 from '@/pages/TopMarketResearchCompaniesUae2026';
-import TopMarketResearchCompaniesDubai2026 from '@/pages/TopMarketResearchCompaniesDubai2026';
-import TopMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopMarketResearchCompaniesAbuDhabi2026';
-import TopMarketResearchCompaniesRiyadh2026 from '@/pages/TopMarketResearchCompaniesRiyadh2026';
-import TopHealthcareMarketResearchCompaniesRiyadh2026 from '@/pages/TopHealthcareMarketResearchCompaniesRiyadh2026';
-import TopHealthcareMarketResearchCompaniesSaudiArabia2026 from '@/pages/TopHealthcareMarketResearchCompaniesSaudiArabia2026';
-import TopHealthcareMarketResearchCompaniesDubai2026 from '@/pages/TopHealthcareMarketResearchCompaniesDubai2026';
-import TopHealthcareMarketResearchCompaniesAbuDhabi2026 from '@/pages/TopHealthcareMarketResearchCompaniesAbuDhabi2026';
-import TopHealthcareMarketResearchCompaniesKuwait2026 from '@/pages/TopHealthcareMarketResearchCompaniesKuwait2026';
 import {
   SaudiArabiaMedicalDevicesMarketReport,
   SaudiArabiaHealthcareMarketReport,
@@ -240,165 +108,82 @@ import {
   UsaMedicalDeviceCompanies,
   JapanMedicalDeviceCompanies,
 } from '@/routes/lazyReportPages';
-import HealthcareReportsHub from '@/pages/HealthcareReportsHub';
-import HealthcareReportsByTherapy from '@/pages/HealthcareReportsByTherapy';
-import HealthcareReportsByCountry from '@/pages/HealthcareReportsByCountry';
+import {
+  About, AccountLevelMarketResearch, ArabicBlogAlsawdyh, ArBahthSuqAdwiyahSaudiArabia,
+  ArgentinaPharmaceuticalMarketResearch, ArHealthcareMarketResearch, ArHealthcareMarketResearchSaudiArabia, ArTopHealthcareMarketResearchCompaniesSaudiArabia2026,
+  ArTopMarketResearchCompaniesSaudiArabia2026, ArTopMarketResearchCompaniesUae2026, AustraliaPharmaceuticalMarketResearch, BahrainPharmaceuticalMarketResearch,
+  BestGlobalMarketResearchCompaniesPharma2026, BestObesityWeightManagementMarketResearchFirms2026, BestRareDiseaseMarketResearchCompanies2026, BionixusIndustries,
+  BionixusIndustriesInsights, BionixusMiddleEastAfrica, BionixusVsIqviaMena, BiosimilarMarketEntrySaudiArabia,
+  Blog, BrandTrackingPharmaGcc, BrazilHealthcareMarketResearch, BrazilPharmaceuticalMarketResearch,
+  BudgetImpactModelSaudiArabia, CanadaPharmaceuticalMarketResearch, CaseStudies, ChinaPharmaceuticalMarketResearch,
+  ClientReviews, ClinicalDiagnosticsMarketResearch, ClinicalDiagnosticsProposalRequest, CommercialEffectivenessPharmaMiddleEast,
+  ConfPortfolio, ConsumerMarketResearchPortal, Contact, CostEffectivenessAnalysisGcc,
+  CostEffectivenessAnalysisSaudiArabia, CountryPage, CountryResearchBriefTemplate, CrossIndustryMarketResearch,
+  DeHealthcareMarketResearchGermany, DenmarkPharmaceuticalMarketResearch, DesmoidTumorPharmaMarketResearch, DiabetesMarketResearchUae,
+  EgyptPharmaceuticalMarketResearch, EsHealthcareMarketResearchSpain, EsHubPage, EsTopHealthcareMarketResearchCompaniesArgentina2026,
+  EsTopMarketResearchCompaniesArgentina2026, FAQ, FrancePharmaceuticalMarketResearch, FrBionixusMarketResearchMiddleEast,
+  FrFranceCountryPage, FrHubPage, FrQuantitativeHealthcareMarketResearch, FrStrategicPortfolio,
+  GccBiopharmaceuticalsMarket, GccClinicalTrialsMarket, GccGenericInjectablesMarket, GccGenericPharmaceuticalsMarket,
+  GccHcpRecruitmentMarketResearch, GccMarketAccessGuide, GccPersonalizedMedicineMarket, GccPharmaceuticalMarketResearch,
+  GccPharmacyMarket, GccPharmaMarketReport2026, GermanyPharmaceuticalMarketResearch, GfkAlternativeEgypt,
+  HealthcareFieldworkGcc, HealthcareFieldworkMiddleEast, HealthcareMarketResearchAgencyGcc, HealthcareMarketResearchArgentina,
+  HealthcareMarketResearchAustralia, HealthcareMarketResearchCanada, HealthcareMarketResearchChina, HealthcareMarketResearchCompanies2026,
+  HealthcareMarketResearchDenmark, HealthcareMarketResearchFrance, HealthcareMarketResearchInBahrain, HealthcareMarketResearchIndia,
+  HealthcareMarketResearchInEgypt, HealthcareMarketResearchInJordan, HealthcareMarketResearchInKuwait, HealthcareMarketResearchInOman,
+  HealthcareMarketResearchInQatar, HealthcareMarketResearchIreland, HealthcareMarketResearchItaly, HealthcareMarketResearchJapan,
+  HealthcareMarketResearchMalaysia, HealthcareMarketResearchNetherlands, HealthcareMarketResearchNewZealand, HealthcareMarketResearchNorway,
+  HealthcareMarketResearchPoland, HealthcareMarketResearchSingapore, HealthcareMarketResearchSouthKorea, HealthcareMarketResearchSpain,
+  HealthcareMarketResearchSweden, HealthcareMarketResearchSwitzerland, HealthcareMarketResearchTurkey, HealthcareMarketResearchUk,
+  HealthcareMarketResearchUsa, HealthcareMarketStatistics, HealthcareReportsByCountry, HealthcareReportsByTherapy,
+  HealthcareReportsHub, HeorConsulting, HeorConsultingSaudiArabia, HtaStudiesSaudiArabia,
+  HubPage, IndiaPharmaceuticalMarketResearch, IndustryGlobalHubPage, IndustrySegmentPage,
+  Insights, IqviaAlternative, IrelandPharmaceuticalMarketResearch, ItalyPharmaceuticalMarketResearch,
+  JapanPharmaceuticalMarketResearch, JordanPharmaceuticalMarketResearch, KantarHealthAlternativeGcc, KolMappingSaudiArabiaOncology,
+  KuwaitMarketAccessResearch, KuwaitPharmaceuticalMarketResearch, LeadingBiologicsBiosimilarsMarketResearchCompanies2026, MalaysiaPharmaceuticalMarketResearch,
+  MarketAccess, MarketResearch, MarketResearchBahrain, MarketResearchByIndustry,
+  MarketResearchEgypt, MarketResearchGcc, MarketResearchHealthcare, MarketResearchHome,
+  MarketResearchInEgypt, MarketResearchInSaudiArabia, MarketResearchInUae, MarketResearchKsa,
+  MarketResearchKuwait, MarketResearchOman, MarketResearchQatar, MarketResearchSaudi,
+  MarketResearchSaudiArabiaPharmaceutical, MarketResearchUae, Media, MedicalAffairsInsightResearchGcc,
+  MenaMarketData, Methodology, MslInsightResearchMiddleEast, MysteryShopRetailBrief,
+  NetherlandsPharmaceuticalMarketResearch, NewsHub, NewZealandPharmaceuticalMarketResearch, Nf1PharmaMarketResearch,
+  NielsenAlternative, NotFound, OmanPharmaceuticalMarketResearch, PatientAdherenceResearchMiddleEast,
+  PatientJourneyResearchGcc, PatientSupportProgramResearchGcc, PharmaceuticalMarketResearchDubai, PharmaceuticalMarketResearchProvider,
+  PharmaceuticalTherapyAreas, PharmaciesSaudiArabiaMarketing, PharmaFieldworkEgypt, PharmaFieldworkSaudiArabia,
+  PharmaFieldworkUae, PhysicianSurveySaudiArabia, PolandPharmaceuticalMarketResearch, PremiumHomePreview,
+  Pricing, Privacy, PtBrazilHealthcareMarketResearch, PtBrazilPharmaceuticalMarketResearch,
+  PtTopEmpresasPesquisaMercadoBrasil2026, PtTopHealthcareMarketResearchCompaniesBrazil2026, PtTopMarketResearchCompaniesBrazil2026, QatarMarketAccessResearch,
+  QatarPharmaceuticalMarketResearch, QualitativeMarketResearch, QuantitativeHealthcareMarketResearchGuide, RealWorldDataHealthcareMiddleEast,
+  RealWorldEvidence, RealWorldEvidenceGcc, Resources, RespiratoryMarketAccessGcc,
+  SaudiArabiaBiosimilarMarketSizeMethodology2026, SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026, SaudiArabiaVaccineMarketSizeMethodology2026, SaudiPayerMarketAccessResearch,
+  ServiceDetail, ServicePage, Services, SfdaMarketAccessStrategySaudiArabia,
+  SingaporePharmaceuticalMarketResearch, SiteMapPage, SouthKoreaPharmaceuticalMarketResearch, SpainPharmaceuticalMarketResearch,
+  SpecialistPhysicianPanelUae, SwedenPharmaceuticalMarketResearch, SwitzerlandPharmaceuticalMarketResearch, SyndicatedDataGapTool,
+  Terms, TherapyPage, TopCompaniesCountryPage, TopConsumerHealthcareMarketResearchFirms2026,
+  TopConsumerInsightsCompaniesKsa2026, TopConsumerInsightsCompaniesSaudiArabiaRedirect, TopGlobalHealthcareMarketResearchCompanies2026, TopHealthcareMarketResearchCompaniesAbuDhabi2026,
+  TopHealthcareMarketResearchCompaniesArgentina2026,
+  TopHealthcareMarketResearchCompaniesAustralia2026, TopHealthcareMarketResearchCompaniesBrazil2026, TopHealthcareMarketResearchCompaniesCanada2026, TopHealthcareMarketResearchCompaniesChina2026,
+  TopHealthcareMarketResearchCompaniesDenmark2026, TopHealthcareMarketResearchCompaniesDubai2026, TopHealthcareMarketResearchCompaniesEurope2026, TopHealthcareMarketResearchCompaniesFrance2026,
+  TopHealthcareMarketResearchCompaniesGermany2026, TopHealthcareMarketResearchCompaniesIndia2026, TopHealthcareMarketResearchCompaniesIreland2026, TopHealthcareMarketResearchCompaniesItaly2026,
+  TopHealthcareMarketResearchCompaniesJapan2026, TopHealthcareMarketResearchCompaniesKuwait2026, TopHealthcareMarketResearchCompaniesMalaysia2026, TopHealthcareMarketResearchCompaniesMena2026,
+  TopHealthcareMarketResearchCompaniesNetherlands2026, TopHealthcareMarketResearchCompaniesNewZealand2026, TopHealthcareMarketResearchCompaniesNorway2026, TopHealthcareMarketResearchCompaniesPoland2026,
+  TopHealthcareMarketResearchCompaniesRiyadh2026, TopHealthcareMarketResearchCompaniesSaudiArabia2026, TopHealthcareMarketResearchCompaniesSingapore2026, TopHealthcareMarketResearchCompaniesSouthKorea2026,
+  TopHealthcareMarketResearchCompaniesSpain2026, TopHealthcareMarketResearchCompaniesSweden2026, TopHealthcareMarketResearchCompaniesSwitzerland2026, TopHealthcareMarketResearchCompaniesTurkey2026,
+  TopHealthcareMarketResearchCompaniesUae2026, TopHealthcareMarketResearchCompaniesUk2026, TopHealthcareMarketResearchCompaniesUsa2026, TopHematologyMarketResearchCompanies2026,
+  TopMarketResearchCompaniesAbuDhabi2026, TopMarketResearchCompaniesArgentina2026, TopMarketResearchCompaniesAustralia2026, TopMarketResearchCompaniesBrazil2026,
+  TopMarketResearchCompaniesCanada2026, TopMarketResearchCompaniesChina2026, TopMarketResearchCompaniesDenmark2026, TopMarketResearchCompaniesDubai2026,
+  TopMarketResearchCompaniesEgypt2026, TopMarketResearchCompaniesFrance2026, TopMarketResearchCompaniesGcc2026, TopMarketResearchCompaniesGermany2026,
+  TopMarketResearchCompaniesIndia2026, TopMarketResearchCompaniesIreland2026, TopMarketResearchCompaniesItaly2026, TopMarketResearchCompaniesJapan2026,
+  TopMarketResearchCompaniesMalaysia2026, TopMarketResearchCompaniesNetherlands2026, TopMarketResearchCompaniesNewZealand2026, TopMarketResearchCompaniesPoland2026,
+  TopMarketResearchCompaniesRiyadh2026, TopMarketResearchCompaniesSaudiArabia2026, TopMarketResearchCompaniesSingapore2026, TopMarketResearchCompaniesSouthKorea2026,
+  TopMarketResearchCompaniesSpain2026, TopMarketResearchCompaniesSweden2026, TopMarketResearchCompaniesSwitzerland2026, TopMarketResearchCompaniesTurkey2026,
+  TopMarketResearchCompaniesUae2026, TopMarketResearchCompaniesUk2026, TopMarketResearchCompaniesUsa2026, TopOncologyMarketResearchCompanies2026,
+  TopPharmaceuticalAnalyticsCompaniesWorldwide2026, TopPharmaMarketResearchCompaniesMiddleEast2026, TurkeyPharmaceuticalMarketResearch, UaeMarketAccessResearch,
+  UaePharmaceuticalMarketResearch, UaePricingReimbursementStrategy, UkPharmaceuticalMarketResearch, UsaPharmaceuticalMarketResearch,
+  VerifyEmail, VideosIndex, WhatIsMarketStudy, ZhBionixusMarketResearchMiddleEast,
+  ZhStrategicPortfolio, ZhTopMarketResearchCompaniesEgypt2026,
+} from '@/routes/lazySeoPages';
 import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
-import BlogPostPage from '@/pages/BlogPost';
-import HubPage from '@/pages/healthcare-research/HubPage';
-import FrHubPage from '@/pages/healthcare-research/FrHubPage';
-import EsHubPage from '@/pages/healthcare-research/EsHubPage';
-import FrFranceCountryPage from '@/pages/healthcare-research/FrFranceCountryPage';
-import CountryPage from '@/pages/healthcare-research/CountryPage';
-import TherapyPage from '@/pages/healthcare-research/TherapyPage';
-import ServicePage from '@/pages/healthcare-research/ServicePage';
-import FrBionixusMarketResearchMiddleEast from '@/pages/FrBionixusMarketResearchMiddleEast';
-import ZhBionixusMarketResearchMiddleEast from '@/pages/ZhBionixusMarketResearchMiddleEast';
-import FrStrategicPortfolio from '@/pages/FrStrategicPortfolio';
-import ZhStrategicPortfolio from '@/pages/ZhStrategicPortfolio';
-import FrQuantitativeHealthcareMarketResearch from '@/pages/FrQuantitativeHealthcareMarketResearch';
-import ZhTopMarketResearchCompaniesEgypt2026 from '@/pages/ZhTopMarketResearchCompaniesEgypt2026';
-import TopMarketResearchCompaniesBrazil2026 from '@/pages/TopMarketResearchCompaniesBrazil2026';
-import TopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/TopHealthcareMarketResearchCompaniesBrazil2026';
-import TopMarketResearchCompaniesArgentina2026 from '@/pages/TopMarketResearchCompaniesArgentina2026';
-import TopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/TopHealthcareMarketResearchCompaniesArgentina2026';
-import PtTopMarketResearchCompaniesBrazil2026 from '@/pages/PtTopMarketResearchCompaniesBrazil2026';
-import PtTopHealthcareMarketResearchCompaniesBrazil2026 from '@/pages/PtTopHealthcareMarketResearchCompaniesBrazil2026';
-import EsTopMarketResearchCompaniesArgentina2026 from '@/pages/EsTopMarketResearchCompaniesArgentina2026';
-import EsTopHealthcareMarketResearchCompaniesArgentina2026 from '@/pages/EsTopHealthcareMarketResearchCompaniesArgentina2026';
-import TopOncologyMarketResearchCompanies2026 from '@/pages/TopOncologyMarketResearchCompanies2026';
-import BestObesityWeightManagementMarketResearchFirms2026 from '@/pages/BestObesityWeightManagementMarketResearchFirms2026';
-import LeadingBiologicsBiosimilarsMarketResearchCompanies2026 from '@/pages/LeadingBiologicsBiosimilarsMarketResearchCompanies2026';
-import SaudiArabiaBiosimilarMarketSizeMethodology2026 from '@/pages/SaudiArabiaBiosimilarMarketSizeMethodology2026';
-import SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026 from '@/pages/SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026';
-import SaudiArabiaVaccineMarketSizeMethodology2026 from '@/pages/SaudiArabiaVaccineMarketSizeMethodology2026';
-import BestRareDiseaseMarketResearchCompanies2026 from '@/pages/BestRareDiseaseMarketResearchCompanies2026';
-import TopConsumerHealthcareMarketResearchFirms2026 from '@/pages/TopConsumerHealthcareMarketResearchFirms2026';
-// --- ported SEO page imports ---
-import ArBahthSuqAdwiyahSaudiArabia from '@/pages/ArBahthSuqAdwiyahSaudiArabia';
-import ArHealthcareMarketResearch from '@/pages/ArHealthcareMarketResearch';
-import ArHealthcareMarketResearchSaudiArabia from '@/pages/ArHealthcareMarketResearchSaudiArabia';
-import ArTopHealthcareMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopHealthcareMarketResearchCompaniesSaudiArabia2026';
-import ArTopMarketResearchCompaniesSaudiArabia2026 from '@/pages/ArTopMarketResearchCompaniesSaudiArabia2026';
-import ArTopMarketResearchCompaniesUae2026 from '@/pages/ArTopMarketResearchCompaniesUae2026';
-import AustraliaPharmaceuticalMarketResearch from '@/pages/AustraliaPharmaceuticalMarketResearch';
-import BrazilPharmaceuticalMarketResearch from '@/pages/BrazilPharmaceuticalMarketResearch';
-import BrazilHealthcareMarketResearch from '@/pages/BrazilHealthcareMarketResearch';
-import CanadaPharmaceuticalMarketResearch from '@/pages/CanadaPharmaceuticalMarketResearch';
-import IndiaPharmaceuticalMarketResearch from '@/pages/IndiaPharmaceuticalMarketResearch';
-import SingaporePharmaceuticalMarketResearch from '@/pages/SingaporePharmaceuticalMarketResearch';
-import PolandPharmaceuticalMarketResearch from '@/pages/PolandPharmaceuticalMarketResearch';
-import MalaysiaPharmaceuticalMarketResearch from '@/pages/MalaysiaPharmaceuticalMarketResearch';
-import HealthcareMarketResearchMalaysia from '@/pages/HealthcareMarketResearchMalaysia';
-import TopMarketResearchCompaniesMalaysia2026 from '@/pages/TopMarketResearchCompaniesMalaysia2026';
-import TopHealthcareMarketResearchCompaniesMalaysia2026 from '@/pages/TopHealthcareMarketResearchCompaniesMalaysia2026';
-import HealthcareMarketResearchPoland from '@/pages/HealthcareMarketResearchPoland';
-import TopMarketResearchCompaniesPoland2026 from '@/pages/TopMarketResearchCompaniesPoland2026';
-import TopHealthcareMarketResearchCompaniesPoland2026 from '@/pages/TopHealthcareMarketResearchCompaniesPoland2026';
-import TopHealthcareMarketResearchCompaniesTurkey2026 from '@/pages/TopHealthcareMarketResearchCompaniesTurkey2026';
-import TurkeyPharmaceuticalMarketResearch from '@/pages/TurkeyPharmaceuticalMarketResearch';
-import HealthcareMarketResearchTurkey from '@/pages/HealthcareMarketResearchTurkey';
-import TopMarketResearchCompaniesTurkey2026 from '@/pages/TopMarketResearchCompaniesTurkey2026';
-import NetherlandsPharmaceuticalMarketResearch from '@/pages/NetherlandsPharmaceuticalMarketResearch';
-import HealthcareMarketResearchNetherlands from '@/pages/HealthcareMarketResearchNetherlands';
-import TopMarketResearchCompaniesNetherlands2026 from '@/pages/TopMarketResearchCompaniesNetherlands2026';
-import TopHealthcareMarketResearchCompaniesNetherlands2026 from '@/pages/TopHealthcareMarketResearchCompaniesNetherlands2026';
-import SwedenPharmaceuticalMarketResearch from '@/pages/SwedenPharmaceuticalMarketResearch';
-import HealthcareMarketResearchSweden from '@/pages/HealthcareMarketResearchSweden';
-import TopMarketResearchCompaniesSweden2026 from '@/pages/TopMarketResearchCompaniesSweden2026';
-import TopHealthcareMarketResearchCompaniesSweden2026 from '@/pages/TopHealthcareMarketResearchCompaniesSweden2026';
-import ArgentinaPharmaceuticalMarketResearch from '@/pages/ArgentinaPharmaceuticalMarketResearch';
-import HealthcareMarketResearchArgentina from '@/pages/HealthcareMarketResearchArgentina';
-import IrelandPharmaceuticalMarketResearch from '@/pages/IrelandPharmaceuticalMarketResearch';
-import HealthcareMarketResearchIreland from '@/pages/HealthcareMarketResearchIreland';
-import TopMarketResearchCompaniesIreland2026 from '@/pages/TopMarketResearchCompaniesIreland2026';
-import TopHealthcareMarketResearchCompaniesIreland2026 from '@/pages/TopHealthcareMarketResearchCompaniesIreland2026';
-import TopMarketResearchCompaniesSingapore2026 from '@/pages/TopMarketResearchCompaniesSingapore2026';
-import TopHealthcareMarketResearchCompaniesSingapore2026 from '@/pages/TopHealthcareMarketResearchCompaniesSingapore2026';
-import JapanPharmaceuticalMarketResearch from '@/pages/JapanPharmaceuticalMarketResearch';
-import UkPharmaceuticalMarketResearch from '@/pages/UkPharmaceuticalMarketResearch';
-import HealthcareMarketResearchUk from '@/pages/HealthcareMarketResearchUk';
-import TopMarketResearchCompaniesUk2026 from '@/pages/TopMarketResearchCompaniesUk2026';
-import TopHealthcareMarketResearchCompaniesUk2026 from '@/pages/TopHealthcareMarketResearchCompaniesUk2026';
-import HealthcareMarketResearchJapan from '@/pages/HealthcareMarketResearchJapan';
-import TopMarketResearchCompaniesJapan2026 from '@/pages/TopMarketResearchCompaniesJapan2026';
-import TopHealthcareMarketResearchCompaniesJapan2026 from '@/pages/TopHealthcareMarketResearchCompaniesJapan2026';
-import ChinaPharmaceuticalMarketResearch from '@/pages/ChinaPharmaceuticalMarketResearch';
-import ConsumerMarketResearchPortal from '@/pages/ConsumerMarketResearchPortal';
-import DeHealthcareMarketResearchGermany from '@/pages/DeHealthcareMarketResearchGermany';
-import DenmarkPharmaceuticalMarketResearch from '@/pages/DenmarkPharmaceuticalMarketResearch';
-import EsHealthcareMarketResearchSpain from '@/pages/EsHealthcareMarketResearchSpain';
-import FrancePharmaceuticalMarketResearch from '@/pages/FrancePharmaceuticalMarketResearch';
-import GccBiopharmaceuticalsMarket from '@/pages/market-research-gcc/GccBiopharmaceuticalsMarket';
-import GccClinicalTrialsMarket from '@/pages/market-research-gcc/GccClinicalTrialsMarket';
-import GccGenericInjectablesMarket from '@/pages/market-research-gcc/GccGenericInjectablesMarket';
-import GccGenericPharmaceuticalsMarket from '@/pages/market-research-gcc/GccGenericPharmaceuticalsMarket';
-import GccPersonalizedMedicineMarket from '@/pages/market-research-gcc/GccPersonalizedMedicineMarket';
-import GccPharmacyMarket from '@/pages/market-research-gcc/GccPharmacyMarket';
-import GermanyPharmaceuticalMarketResearch from '@/pages/GermanyPharmaceuticalMarketResearch';
-import HealthcareMarketResearchAustralia from '@/pages/HealthcareMarketResearchAustralia';
-import HealthcareMarketResearchCanada from '@/pages/HealthcareMarketResearchCanada';
-import HealthcareMarketResearchIndia from '@/pages/HealthcareMarketResearchIndia';
-import HealthcareMarketResearchChina from '@/pages/HealthcareMarketResearchChina';
-import HealthcareMarketResearchDenmark from '@/pages/HealthcareMarketResearchDenmark';
-import HealthcareMarketResearchNorway from '@/pages/HealthcareMarketResearchNorway';
-import HealthcareMarketResearchFrance from '@/pages/HealthcareMarketResearchFrance';
-import HealthcareMarketResearchInKuwait from '@/pages/HealthcareMarketResearchInKuwait';
-import HealthcareMarketResearchInQatar from '@/pages/HealthcareMarketResearchInQatar';
-import HealthcareMarketResearchInBahrain from '@/pages/HealthcareMarketResearchInBahrain';
-import HealthcareMarketResearchInOman from '@/pages/HealthcareMarketResearchInOman';
-import HealthcareMarketResearchInJordan from '@/pages/HealthcareMarketResearchInJordan';
-import HealthcareMarketResearchItaly from '@/pages/HealthcareMarketResearchItaly';
-import HealthcareMarketResearchNewZealand from '@/pages/HealthcareMarketResearchNewZealand';
-import HealthcareMarketResearchSingapore from '@/pages/HealthcareMarketResearchSingapore';
-import HealthcareMarketResearchSouthKorea from '@/pages/HealthcareMarketResearchSouthKorea';
-import HealthcareMarketResearchSpain from '@/pages/HealthcareMarketResearchSpain';
-import HealthcareMarketResearchSwitzerland from '@/pages/HealthcareMarketResearchSwitzerland';
-import HealthcareMarketResearchUsa from '@/pages/HealthcareMarketResearchUsa';
-import HeorConsulting from '@/pages/HeorConsulting';
-import IndustryGlobalHubPage from '@/pages/IndustryGlobalHubPage';
-import ItalyPharmaceuticalMarketResearch from '@/pages/ItalyPharmaceuticalMarketResearch';
-import MarketResearchInEgypt from '@/pages/MarketResearchInEgypt';
-import MarketResearchInSaudiArabia from '@/pages/MarketResearchInSaudiArabia';
-import MarketResearchInUae from '@/pages/MarketResearchInUae';
-import NewZealandPharmaceuticalMarketResearch from '@/pages/NewZealandPharmaceuticalMarketResearch';
-import PtBrazilHealthcareMarketResearch from '@/pages/PtBrazilHealthcareMarketResearch';
-import PtBrazilPharmaceuticalMarketResearch from '@/pages/PtBrazilPharmaceuticalMarketResearch';
-import PtTopEmpresasPesquisaMercadoBrasil2026 from '@/pages/PtTopEmpresasPesquisaMercadoBrasil2026';
-import SouthKoreaPharmaceuticalMarketResearch from '@/pages/SouthKoreaPharmaceuticalMarketResearch';
-import SpainPharmaceuticalMarketResearch from '@/pages/SpainPharmaceuticalMarketResearch';
-import SwitzerlandPharmaceuticalMarketResearch from '@/pages/SwitzerlandPharmaceuticalMarketResearch';
-import TopHealthcareMarketResearchCompaniesAustralia2026 from '@/pages/TopHealthcareMarketResearchCompaniesAustralia2026';
-import TopHealthcareMarketResearchCompaniesCanada2026 from '@/pages/TopHealthcareMarketResearchCompaniesCanada2026';
-import TopHealthcareMarketResearchCompaniesChina2026 from '@/pages/TopHealthcareMarketResearchCompaniesChina2026';
-import TopHealthcareMarketResearchCompaniesDenmark2026 from '@/pages/TopHealthcareMarketResearchCompaniesDenmark2026';
-import TopHealthcareMarketResearchCompaniesNorway2026 from '@/pages/TopHealthcareMarketResearchCompaniesNorway2026';
-import TopHealthcareMarketResearchCompaniesFrance2026 from '@/pages/TopHealthcareMarketResearchCompaniesFrance2026';
-import TopHealthcareMarketResearchCompaniesGermany2026 from '@/pages/TopHealthcareMarketResearchCompaniesGermany2026';
-import TopHealthcareMarketResearchCompaniesItaly2026 from '@/pages/TopHealthcareMarketResearchCompaniesItaly2026';
-import TopHealthcareMarketResearchCompaniesIndia2026 from '@/pages/TopHealthcareMarketResearchCompaniesIndia2026';
-import TopHealthcareMarketResearchCompaniesNewZealand2026 from '@/pages/TopHealthcareMarketResearchCompaniesNewZealand2026';
-import TopHealthcareMarketResearchCompaniesSouthKorea2026 from '@/pages/TopHealthcareMarketResearchCompaniesSouthKorea2026';
-import TopHealthcareMarketResearchCompaniesSpain2026 from '@/pages/TopHealthcareMarketResearchCompaniesSpain2026';
-import TopHealthcareMarketResearchCompaniesSwitzerland2026 from '@/pages/TopHealthcareMarketResearchCompaniesSwitzerland2026';
-import TopHealthcareMarketResearchCompaniesUae2026 from '@/pages/TopHealthcareMarketResearchCompaniesUae2026';
-import TopHealthcareMarketResearchCompaniesUsa2026 from '@/pages/TopHealthcareMarketResearchCompaniesUsa2026';
-import TopHealthcareMarketResearchCompaniesEurope2026 from '@/pages/TopHealthcareMarketResearchCompaniesEurope2026';
-import TopMarketResearchCompaniesAustralia2026 from '@/pages/TopMarketResearchCompaniesAustralia2026';
-import TopMarketResearchCompaniesCanada2026 from '@/pages/TopMarketResearchCompaniesCanada2026';
-import TopMarketResearchCompaniesChina2026 from '@/pages/TopMarketResearchCompaniesChina2026';
-import TopMarketResearchCompaniesDenmark2026 from '@/pages/TopMarketResearchCompaniesDenmark2026';
-import TopMarketResearchCompaniesFrance2026 from '@/pages/TopMarketResearchCompaniesFrance2026';
-import TopMarketResearchCompaniesGermany2026 from '@/pages/TopMarketResearchCompaniesGermany2026';
-import TopMarketResearchCompaniesItaly2026 from '@/pages/TopMarketResearchCompaniesItaly2026';
-import TopMarketResearchCompaniesIndia2026 from '@/pages/TopMarketResearchCompaniesIndia2026';
-import TopMarketResearchCompaniesNewZealand2026 from '@/pages/TopMarketResearchCompaniesNewZealand2026';
-import TopMarketResearchCompaniesSouthKorea2026 from '@/pages/TopMarketResearchCompaniesSouthKorea2026';
-import TopMarketResearchCompaniesSpain2026 from '@/pages/TopMarketResearchCompaniesSpain2026';
-import TopMarketResearchCompaniesSwitzerland2026 from '@/pages/TopMarketResearchCompaniesSwitzerland2026';
-import TopMarketResearchCompaniesUsa2026 from '@/pages/TopMarketResearchCompaniesUsa2026';
-import UsaPharmaceuticalMarketResearch from '@/pages/UsaPharmaceuticalMarketResearch';
-import TopCompaniesCountryPage from '@/pages/insights/TopCompaniesCountryPage';
 import { allListicleConfigs } from '@/data/topCompanies';
 
 const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
@@ -410,19 +195,19 @@ const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
 const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
 
-function suspensePage(node: ReactNode) {
-  return <Suspense fallback={<RouteLoadingFallback />}>{node}</Suspense>;
+function suspensePage(node: ReactNode, fallback: ReactNode = null) {
+  return <Suspense fallback={fallback}>{node}</Suspense>;
 }
 
 const rawRoutes: RouteObject[] = [
-  { path: '/', element: suspensePage(<Index />) },
-  { path: '/de', element: suspensePage(<Index />) },
-  { path: '/fr', element: suspensePage(<Index />) },
-  { path: '/es', element: suspensePage(<Index />) },
-  { path: '/zh', element: suspensePage(<Index />) },
-  { path: '/ar', element: suspensePage(<Index />) },
-  { path: '/pt', element: suspensePage(<Index />) },
-  { path: '/ru', element: suspensePage(<Index />) },
+  { path: '/', element: suspensePage(<Index />, null) },
+  { path: '/de', element: suspensePage(<Index />, null) },
+  { path: '/fr', element: suspensePage(<Index />, null) },
+  { path: '/es', element: suspensePage(<Index />, null) },
+  { path: '/zh', element: suspensePage(<Index />, null) },
+  { path: '/ar', element: suspensePage(<Index />, null) },
+  { path: '/pt', element: suspensePage(<Index />, null) },
+  { path: '/ru', element: suspensePage(<Index />, null) },
   { path: '/about', element: <About /> },
   { path: '/de/about', element: <About /> },
   { path: '/fr/about', element: <About /> },
@@ -624,6 +409,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/es/insights/top-empresas-investigacion-mercado-argentina-2026', element: <EsTopMarketResearchCompaniesArgentina2026 /> },
   { path: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026', element: <EsTopHealthcareMarketResearchCompaniesArgentina2026 /> },
   { path: '/insights/top-oncology-market-research-companies-2026', element: <TopOncologyMarketResearchCompanies2026 /> },
+  { path: '/insights/top-hematology-market-research-companies-2026', element: <TopHematologyMarketResearchCompanies2026 /> },
   { path: '/insights/top-obesity-market-research-companies-2026', element: <Navigate to="/insights/best-obesity-weight-management-market-research-firms-2026" replace /> },
   { path: '/insights/best-obesity-weight-management-market-research-firms-2026', element: <BestObesityWeightManagementMarketResearchFirms2026 /> },
   { path: '/insights/leading-biologics-biosimilars-market-research-companies-2026', element: <LeadingBiologicsBiosimilarsMarketResearchCompanies2026 /> },
@@ -736,7 +522,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/blog/:slug', element: suspensePage(<BlogPost />) },
   {
     path: `/${SKYRIZI_ROOT_SLUG}`,
-    element: <BlogPostPage fixedSlug={SKYRIZI_ROOT_SLUG} />,
+    element: suspensePage(<BlogPost fixedSlug={SKYRIZI_ROOT_SLUG} />),
   },
   { path: '/case-studies', element: <CaseStudies /> },
   { path: '/case-studies/:slug', element: suspensePage(<CaseStudy />) },

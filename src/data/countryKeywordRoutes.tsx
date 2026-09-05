@@ -1,5 +1,5 @@
 import type { RouteObject } from 'react-router-dom';
-import CountryKeywordPage from '@/pages/templates/CountryKeywordPage';
+import { CountryKeywordPage } from '@/routes/lazySeoPages';
 import { COUNTRY_KEYWORD_PAGES } from '@/data/countryKeywordPages';
 
 /** Route objects for country Pharma Insights and RWE SEO pages. */
