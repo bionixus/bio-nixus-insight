@@ -411,16 +411,6 @@ export const CTR_SEO_BY_PATH = {
     description:
       'NielsenIQ alternatives for FMCG and retail research 2026 — when BioNixus wins on account-level and traditional-trade data, and when Nielsen panels still fit.',
   },
-  '/pricing': {
-    title: 'Market Research Pricing | $10k–$75k Country (2026)',
-    description:
-      'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.',
-  },
-  '/account-level-market-research': {
-    title: 'What Is Account-Level Market Research Data?',
-    description:
-      'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.',
-  },
   '/insights/top-fmcg-market-research-companies-egypt-2026': {
     title: 'FMCG Market Research Firms Egypt 2026 | Ranked',
     description:

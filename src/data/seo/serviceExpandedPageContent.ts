@@ -161,6 +161,63 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
         'Timelines depend on quota complexity and hybrid sequencing, but engagements typically move from calibrated scope memo through field release, cleaning, segmented analytics, and governance-ready synthesis within planning cycles affiliates can align to launch gates—not open-ended tracker maintenance without decision owners.',
     },
   ],
+  'competitive-intelligence': [
+    {
+      question: 'What is pharmaceutical competitive intelligence?',
+      answer:
+        'Pharmaceutical competitive intelligence combines primary physician and payer research with curated secondary signals — pipeline milestones, label changes, tender awards, and congress activity — to explain where competitors actually win share, not where syndicated dashboards show nominal presence. BioNixus designs CI modules around a single decision: launch readiness, defensive messaging, or portfolio rationalisation.',
+    },
+    {
+      question: 'How does BioNixus CI differ from syndicated data vendors?',
+      answer:
+        'Syndicated vendors excel at longitudinal Rx or hospital claims panels. BioNixus wins when teams need behavioural explanation — why a competitor wins formulary placement, which objection blocks switching, or how a pipeline asset will be received by treating clinicians in a specific country. We integrate with IQVIA or Kantar where syndicated data still fits; see our IQVIA alternative guide for when to combine both.',
+    },
+    {
+      question: 'Which CI deliverables do pharma commercial teams use most?',
+      answer:
+        'Landscape dashboards annotated by decision relevance, launch-readiness scorecards, prescriber switching studies, patent-expiry impact briefs, and quarterly war-room briefings tied to KPI owners. Each deliverable links to quant or qual modules on the healthcare market research hub when validation is required.',
+    },
+    {
+      question: 'Can competitive intelligence cover GCC and EU5 in one programme?',
+      answer:
+        'Yes — harmonised taxonomies enable portfolio roll-ups while local modules preserve Gulf procurement, NUPCO tender, and EU5 HTA nuances affiliates cannot reinterpret from a single global deck. Arabic–English fieldwork is standard for MENA modules.',
+    },
+    {
+      question: 'When should CI precede versus follow quantitative research?',
+      answer:
+        'CI often precedes quant when the competitive set or launch narrative is unstable; it follows quant when segment hypotheses need validation against who actually accelerates or vetoes adoption. BioNixus sequences waves to avoid redundant interviews and misallocated advisory spend.',
+    },
+    {
+      question: 'Does BioNixus track competitor pipeline and congress activity?',
+      answer:
+        'Yes — pipeline probability-of-success trackers, publication and congress intelligence, and prescriber-perception modules are scoped to therapeutic areas and geographies that move revenue, not cosmetic landscape posters.',
+    },
+    {
+      question: 'How is competitive intelligence used for biosimilar and LOE defence?',
+      answer:
+        'We map substitution confidence among hospital pharmacists, payer scoring rituals, and clinician inertia before loss-of-exclusivity windows — then test defensive narratives quantitatively where share erosion risk is material.',
+    },
+    {
+      question: 'What is the typical timeline for a CI engagement?',
+      answer:
+        'Tracker programmes can start within two weeks; launch-readiness or switching studies typically run four to eight weeks depending on geography and quota complexity. Leadership-ready synthesis includes reproducible source grading for governance teams.',
+    },
+    {
+      question: 'How does competitive intelligence support pharmaceutical launch sequencing?',
+      answer:
+        'CI identifies which competitor narratives will dominate formulary and payer conversations at launch, which physician segments remain movable, and where access gates bind uptake before promotional spend scales. BioNixus links CI modules to market access and quant validation on the healthcare market research hub so affiliates execute one evidence plan.',
+    },
+    {
+      question: 'Does BioNixus offer CI for medical devices as well as pharmaceuticals?',
+      answer:
+        'Yes — hospital procurement, tender defence, and surgeon-or-nurse workflow research for devices follow the same decision-first CI methodology as pharma brand defence. GCC NUPCO and EU5 hospital tender modules integrate with device CI trackers when portfolios span both sectors.',
+    },
+    {
+      question: 'How often should pharmaceutical teams refresh competitive intelligence trackers?',
+      answer:
+        'Quarterly refresh fits most oncology and immunology portfolios; monthly pulse trackers suit pre-launch windows or active tender defence. BioNixus calibrates cadence to decision gates — registration, formulary, procurement — rather than selling undifferentiated subscription volume.',
+    },
+  ],
   'qualitative-research': [
     {
       question: 'What is qualitative pharmaceutical market research used for?',
@@ -206,6 +263,8 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
 };
 
 export const SERVICE_HERO_EXTENSIONS: Record<string, string> = {
+  'competitive-intelligence':
+    'Pair competitive intelligence with quantitative segmentation and market access modules on the healthcare market research hub when launch, defence, or LOE decisions need one behavioural evidence base.',
   'market-access':
     'Pair this service with the GCC market access guide and country-specific reports on the healthcare market research hub when sequencing registration, pricing, and reimbursement workstreams.',
   'physician-insights':

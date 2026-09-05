@@ -5,6 +5,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
 
@@ -75,6 +76,19 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             ) : null}
           </div>
         </section>
+
+        {content.geoAnswerBlock ? (
+          <section className="section-padding py-10 border-y border-border/60">
+            <div className="container-wide max-w-5xl mx-auto">
+              <GeoLLMAnswerBlock
+                question={content.geoAnswerBlock.question}
+                answer={content.geoAnswerBlock.answer}
+                points={content.geoAnswerBlock.points}
+                summary={content.geoAnswerBlock.summary}
+              />
+            </div>
+          </section>
+        ) : null}
 
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
@@ -153,6 +167,23 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
                     <h3 className="text-base font-semibold text-foreground mb-2">{item.period}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
                   </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {content.methodologySection ? (
+          <section className="section-padding py-10 bg-muted/20">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+                {content.methodologySection.heading}
+              </h2>
+              <div className="space-y-4">
+                {content.methodologySection.paragraphs.map((para) => (
+                  <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                    {para}
+                  </p>
                 ))}
               </div>
             </div>

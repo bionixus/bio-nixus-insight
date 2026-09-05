@@ -48,6 +48,18 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus support Brazil-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Brazilian and Latin American pharmaceutical and medical device companies in entering GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys across all major therapeutic areas; and comparative Brazil vs. GCC market intelligence. Brazil and the GCC share several commercial parallels — large generic medicine markets, centralized public procurement, and premium private hospital sectors — that make BioNixus\'s cross-regional intelligence particularly relevant for Brazilian pharma companies planning MENA expansion.',
   },
+  {
+    question: 'What is ANVISA\'s role in Brazil medical device and pharmaceutical regulation?',
+    answer: 'ANVISA (Agência Nacional de Vigilância Sanitária) regulates both pharmaceuticals and medical devices in Brazil. Drug registration follows a category-based pathway with GMP inspection, stability data, and Portuguese labelling requirements. Medical devices are classified I–IV with registration or notification routes depending on risk class. ANVISA also oversees pharmacovigilance, advertising, and import licensing. Foreign manufacturers typically appoint a Brazilian legal representative (BRH) for registration and post-market obligations.',
+  },
+  {
+    question: 'How does Brazil\'s CMED pharmaceutical pricing framework work in 2026?',
+    answer: 'CMED (Câmara de Regulação do Mercado de Medicamentos) sets maximum ex-factory (PF) and consumer (PMC) prices using an international reference basket and annual adjustment formulas. Price revisions follow defined calendar windows; new molecules enter through CMED after ANVISA registration. Private channel prices can exceed CMED caps in premium hospitals, but SUS and retail channels are tightly regulated. BioNixus models pricing corridors for teams sequencing Brazil alongside GCC confidential pricing negotiations.',
+  },
+  {
+    question: 'Which Brazilian therapy areas offer the strongest private-sector growth in 2026?',
+    answer: 'Oncology biologics and biosimilars, GLP-1 and SGLT-2 diabetes therapies, immunology (TNF, IL-17, JAK inhibitors), and rare-disease orphan products show the fastest private supplementary growth — especially in São Paulo, Rio de Janeiro, and Belo Horizonte premium hospital networks. SUS channels remain volume-heavy for HIV, tuberculosis, and essential medicines. Cross-border teams use Brazil private uptake as a proxy for Latin American payer willingness before GCC dossier work.',
+  },
 ], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-healthcare-market-report');
@@ -63,7 +75,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-09-05',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
