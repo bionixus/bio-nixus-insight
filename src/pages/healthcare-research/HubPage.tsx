@@ -617,6 +617,7 @@ export default function HubPage() {
           </div>
         <HealthcareStatPanel
           className="mt-8"
+          variant="facts"
           stats={trustSignals.map((item) => ({ label: item.label, value: item.value }))}
         />
       </ReportPremiumSection>

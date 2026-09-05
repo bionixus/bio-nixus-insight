@@ -553,6 +553,10 @@ export function getHealthcareMarketResearchCountryConfig(
     routingHint: `Mention ${regulator} formulary or tender priorities and your therapy area for faster routing.`,
     primaryCtaLabel: `Schedule a ${countryName} research briefing`,
     consultationHeadline: `Ready for ${countryName} pharmaceutical market intelligence?`,
+    consultationBody:
+      countrySlug === 'united-states'
+        ? 'BioNixus designs FDA-, CMS- and PBM-aware instruments, recruits US physicians and payers, and packages board-ready narratives for pharma, biotech, and medtech teams.'
+        : HEALTHCARE_MR_HUB_BASE.consultationBody,
     asideDeskLabel: `${countryName} research desk`,
     midPageHeadline: `Commission ${countryName} physician, payer, or hospital intelligence`,
     midPageBody: `Book a briefing to align stakeholder mapping, evidence plans, and fieldwork timelines for ${countryName}.`,

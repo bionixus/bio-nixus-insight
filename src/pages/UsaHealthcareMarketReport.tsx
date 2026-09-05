@@ -25,7 +25,7 @@ const breadcrumbItems = [
 const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   {
     question: 'How big is the USA healthcare market in 2026?',
-    answer: 'The United States healthcare market is the world\'s largest, estimated at USD 4.4–4.6 trillion in 2026, representing approximately 17.6% of GDP. The US healthcare system combines public payers (Medicare for adults 65+, Medicaid for low-income populations, managed by CMS — Centers for Medicare & Medicaid Services) and private insurance (employer-sponsored insurance, ACA marketplace plans, and commercial managed care plans). CMS administers approximately USD 1.8 trillion in annual expenditure. Approximately 92% of the population has some form of health insurance coverage.',
+    answer: 'The United States healthcare market is the world\'s largest. CMS National Health Expenditure projections (June 2026) put 2026 NHE at USD 6.0 trillion (USD 6.017 trillion published), or 18.7% of GDP, after USD 5.7 trillion in 2025 and USD 5.3 trillion in 2024. The system combines public payers (Medicare for adults 65+, Medicaid, administered by CMS) and private insurance (employer-sponsored insurance, ACA marketplace plans, and commercial managed care). CMS projects the insured share of the population at 90.8% in 2026. Personal health care — the goods-and-services subset of NHE — is projected at USD 5.15 trillion in 2026.',
   },
   {
     question: 'What is the USA pharmaceutical market size in 2026?',
@@ -41,7 +41,7 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
   },
   {
     question: 'What is the Inflation Reduction Act (IRA) impact on the US pharmaceutical market?',
-    answer: 'The Inflation Reduction Act of 2022 introduced three significant changes to US pharmaceutical pricing: (1) Medicare drug price negotiation — CMS can negotiate prices directly for the highest-spend Medicare drugs (10 drugs in 2026, expanding to 15 in 2027 and 20 per year thereafter); (2) Inflation rebates — manufacturers must pay rebates if price increases exceed CPI; (3) Out-of-pocket cap — Medicare Part D beneficiary OOP costs capped at USD 2,000 per year from 2025. The negotiated prices (MFPs — Maximum Fair Prices) took effect January 2026 for the first cohort of 10 drugs, representing an average 60–80% reduction from list price. The IRA is reshaping commercial strategy for products with significant Medicare exposure, particularly in the cardiovascular, diabetes, and oncology categories.',
+    answer: 'The Inflation Reduction Act of 2022 introduced three significant changes to US pharmaceutical pricing: (1) Medicare drug price negotiation — CMS can negotiate prices directly for the highest-spend Medicare drugs (10 drugs with MFPs in 2026, expanding to 15 in 2027 and 20 per year thereafter); (2) Inflation rebates — manufacturers must pay rebates if price increases exceed CPI; (3) Out-of-pocket cap — Medicare Part D beneficiary OOP costs capped at USD 2,000 per year from 2025. First-cohort MFPs took effect January 2026; list-to-MFP reductions are product-specific and published by CMS rather than a single average cut. The IRA is reshaping commercial strategy for products with significant Medicare exposure, particularly in the cardiovascular, diabetes, and oncology categories.',
   },
   {
     question: 'How does BioNixus serve US-based pharmaceutical companies expanding to MENA?',
@@ -62,7 +62,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-09-05',
     mainEntityOfPage: 'https://www.bionixus.com/usa-healthcare-market-report',
   },
   {
@@ -73,11 +73,11 @@ const jsonLd = [
   },
   ...buildReportEnrichmentSchemas({
     pageTitle: "USA Healthcare Market Report 2026 | FDA, CMS, PBMs & Pharmaceutical Market Intelligence | BioNixus",
-    pageMetaDescription: "USA healthcare market at USD 4.5 trillion in 2026 — world's largest. FDA approval pathways, Medicare IRA drug negotiations, PBM formulary access, USD 600B pharmaceutical market, and BioNixus GCC expansion intelligence.",
+    pageMetaDescription: "USA healthcare market at USD 6.0 trillion in 2026 (CMS NHE) — world's largest. FDA approval pathways, Medicare IRA drug negotiations, PBM formulary access, USD 615B pharmaceutical market, and BioNixus GCC expansion intelligence.",
     countryName: "United States",
     marketSlug: "usa",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-09-05",
   })
 ];
 
@@ -86,7 +86,7 @@ const UsaHealthcareMarketReport = () => (
     <Navbar />
     <SEOHead
       title="USA Healthcare Market Research Report 2026 | BioNixus"
-      description="USA healthcare market research: USD 4.5T healthcare market, FDA approval pathways, Medicare, PBMs, USD 600B pharmaceutical market — BioNixus global pharma."
+      description="USA healthcare market research: CMS NHE USD 6.0T in 2026, FDA pathways, Medicare IRA, PBMs, USD 615B pharmaceutical market — BioNixus global pharma."
       canonical="https://www.bionixus.com/usa-healthcare-market-report"
       jsonLd={jsonLd}
     />
@@ -95,12 +95,12 @@ const UsaHealthcareMarketReport = () => (
       <div className="section-padding pt-24 pb-4"><div className="container-wide"><BreadcrumbNav items={breadcrumbItems} /></div></div>
               <ReportPremiumHero
           title="USA Healthcare Market Report 2026: FDA Approval, Medicare IRA Negotiations, and Commercial Market Intelligence"
-          description="The USA healthcare market is the world's largest, estimated at USD 4.4–4.6 trillion in 2026, with a pharmaceutical market of roughly USD 590–640 billion. BioNixus serves US-headquartered pharmaceutical and medical device companies with GCC and MENA market entry intelligence — delivering the regional granularity that American commercial teams need to prioritise and execute international expansion."
+          description="The USA healthcare market is the world's largest. CMS projects national health expenditure at USD 6.0 trillion in 2026 (18.7% of GDP), with a BioNixus pharmaceutical market band of USD 590–640 billion. BioNixus serves US-headquartered pharmaceutical and medical device companies with FDA/CMS/PBM intelligence and GCC–MENA market-entry programmes."
           config={REPORT_CONVERSION}
           marketSlug="usa"
           countryName="USA"
           stats={[
-            { value: '~$4.5T', label: 'USA healthcare market 2026' },
+            { value: '~$6.0T', label: 'USA healthcare market 2026' },
             { value: '~$615B', label: 'Pharmaceutical market 2026' },
             { value: '~$180B', label: 'Medical devices market 2026' },
           ]}
@@ -111,12 +111,12 @@ const UsaHealthcareMarketReport = () => (
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
           <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
             <div className="grid sm:grid-cols-3 gap-6 text-center">
-              <div><p className="text-3xl font-display font-bold text-primary">~$4.5T</p><p className="text-xs text-muted-foreground mt-1">USA healthcare market 2026</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">~$6.0T</p><p className="text-xs text-muted-foreground mt-1">USA healthcare market 2026 (CMS NHE)</p></div>
               <div><p className="text-3xl font-display font-bold text-primary">~$615B</p><p className="text-xs text-muted-foreground mt-1">Pharmaceutical market 2026</p></div>
               <div><p className="text-3xl font-display font-bold text-primary">~$180B</p><p className="text-xs text-muted-foreground mt-1">Medical devices market 2026</p></div>
             </div>
           </div>
-          <p className="text-muted-foreground leading-relaxed mb-4">The United States is the world's largest and most commercially significant healthcare market, accounting for approximately 45% of global pharmaceutical revenues. The Inflation Reduction Act drug price negotiations represent the most significant structural change to US pharmaceutical commercial models since the Medicare Modernization Act of 2003 — reshaping launch strategy, pricing architecture, and international reference pricing dynamics for all global pharmaceutical companies.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">The United States is the world's largest and most commercially significant healthcare market, accounting for approximately 45% of global pharmaceutical revenues. CMS Office of the Actuary (NHE projections 2025–34, June 2026) sizes 2026 national health expenditure at USD 6.017 trillion. The Inflation Reduction Act drug price negotiations represent the most significant structural change to US pharmaceutical commercial models since the Medicare Modernization Act of 2003 — reshaping launch strategy, pricing architecture, and international reference pricing dynamics for all global pharmaceutical companies.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>

@@ -19,6 +19,12 @@ function regionAccessNarrative(region: CountryRegion, countryName: string): stri
       `Comparability across EU affiliates is improved when core survey modules stay stable while local screeners capture institution type, referral density, and prescribing permission models that differ materially between countries that otherwise look “similar” on a regional slide.`,
     ];
   }
+  if (region === 'americas') {
+    return [
+      `In the United States, FDA approval is market authorisation — not commercial access. Research in ${countryName} has to separate the PDUFA clock from PBM formulary placement, CMS National Coverage Determinations or automatic Part B/D coverage, IRA Maximum Fair Prices for negotiated Medicare drugs, and GPO contracts that still govern most hospital purchasing. When those clocks are collapsed into a single “US launch date,” global teams overstate Year-1 patients and understate rebate and prior-authorisation friction.`,
+      `BioNixus designs US programmes with IRB-aware HCP fieldwork, payer and PBM advisors, and hospital or IDN voices so commercial, medical, and access owners see which gate actually moves utilization — and which evidence would change a P&T or formulary decision.`,
+    ];
+  }
   return [
     `Across MENA and GCC-adjacent ecosystems, pharmaceutical demand is frequently split between public procurement channels, private provider groups, and overlapping regulatory expectations. In ${countryName}, market access research gains credibility when it distinguishes institution-level bottlenecks—formulary cycles, tender scoring, pharmacy governance, prior authorization friction—from prescriber enthusiasm or brand awareness metrics that can look strong on paper yet fail to convert into realized patients.`,
     `BioNixus field teams routinely bilingualize instruments where needed, align recruitment with local confidentiality culture, and integrate policy desk review with primary evidence so leadership teams can connect “what regulators allow” with “what hospitals operationalize.”`,

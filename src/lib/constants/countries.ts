@@ -1,4 +1,4 @@
-export type CountryRegion = 'mena' | 'europe' | 'uk';
+export type CountryRegion = 'mena' | 'europe' | 'uk' | 'americas';
 
 export interface CountryFAQItem {
   question: string;
@@ -920,6 +920,47 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       },
     ],
   },
+  'united-states': {
+    name: 'United States',
+    slug: 'united-states',
+    region: 'americas',
+    metaSuffix: 'USA healthcare and pharmaceutical market research for FDA, CMS, PBM, and IRA decisions.',
+    metaTitle: 'Healthcare Market Research in United States | BioNixus',
+    metaDescription:
+      'Healthcare market research in the United States: FDA, CMS, PBM and IRA-aware physician, payer and hospital evidence. CMS NHE ~$6.0T in 2026. Proposal in 24 hours.',
+    ogDescription:
+      'BioNixus delivers pharmaceutical market research in the United States with FDA, CMS, PBM and IRA context — physician, payer and hospital evidence for launch and access.',
+    h1: 'Healthcare Market Research in the United States',
+    relatedCountries: ['uk', 'germany'],
+    relatedTherapies: ['oncology', 'diabetes', 'immunology', 'rare-diseases'],
+    keyStats: [
+      { label: 'Healthcare market 2026', value: '~$6.0T' },
+      { label: 'Pharma market 2026', value: '~$615B' },
+      { label: 'Key bodies', value: 'FDA · CMS · PBMs' },
+    ],
+    faqQuestions: [
+      {
+        question: 'How does BioNixus approach healthcare market research in the United States?',
+        answer:
+          'Programs are designed around FDA authorisation, CMS coverage, PBM formulary placement, and IRA Medicare negotiation exposure — then matched to qualitative and quantitative methods so commercial, medical, and market-access teams can act. BioNixus recruits US physicians, payers, and hospital stakeholders across academic medical centres and community IDNs.',
+      },
+      {
+        question: 'Which stakeholders are usually prioritized in United States studies?',
+        answer:
+          'Sampling typically includes prescribing specialists, IDN and P&T influencers, PBM and commercial-payer advisors, and hospital pharmacy or GPO-adjacent voices based on therapy and care setting. FDA approval is not treated as access; research separates authorisation from formulary, Part B/D, and GPO clocks.',
+      },
+      {
+        question: 'How is United States research aligned with cross-country strategy?',
+        answer:
+          'Each US study uses comparable core metrics plus local FDA/CMS/PBM modules so leadership can benchmark against UK, EU5, Brazil, and GCC cells without losing US execution realism. Start from the healthcare market research hub to align country priorities with therapy and service planning.',
+      },
+      {
+        question: 'What outputs are delivered from United States market research engagements?',
+        answer:
+          'Deliverables usually include stakeholder maps, PBM and CMS access barriers, IRA cohort exposure framing, segment-level opportunity notes, and action-oriented recommendations tied to launch or lifecycle decisions. Minimum engagement is USD 20,000.',
+      },
+    ],
+  },
 };
 
 const COUNTRY_NAME_OVERRIDES: Record<string, string> = {
@@ -949,9 +990,12 @@ function slugToCountryName(slug: string): string {
     .join(' ');
 }
 
+const AMERICAS_SLUGS = new Set(['united-states', 'usa', 'canada', 'brazil']);
+
 function inferCountryRegion(slug: string): CountryRegion {
   if (UK_SLUGS.has(slug)) return 'uk';
   if (EUROPE_SLUGS.has(slug)) return 'europe';
+  if (AMERICAS_SLUGS.has(slug)) return 'americas';
   return 'mena';
 }
 

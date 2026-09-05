@@ -65,6 +65,11 @@ const COUNTRY_TRIAD_LINKS: Record<
     healthcareReport: '/egypt-healthcare-market-report',
     devicesReport: '/egypt-medical-devices-market-report',
   },
+  'united-states': {
+    pharmaCompanies: '/pharmaceutical-companies-usa',
+    healthcareReport: '/usa-healthcare-market-report',
+    devicesReport: '/usa-medical-devices-market-report',
+  },
 };
 
 function CountryTriadLinks({ slug, countryName }: { slug: string; countryName: string }) {
@@ -158,7 +163,9 @@ function buildEvidenceSafeStats(config: CountryConfig): { label: string; value: 
           ? 'Localized MENA fieldwork and interpretation'
           : config.region === 'uk'
             ? 'UK-context qualitative and quantitative delivery'
-            : 'Multi-country European coordination with local adaptation',
+            : config.region === 'americas'
+              ? 'FDA, CMS, and PBM-aware US fieldwork and interpretation'
+              : 'Multi-country European coordination with local adaptation',
     },
     { label: 'Primary Output', value: 'Decision-ready evidence for strategy and execution planning' },
   ];
@@ -271,7 +278,11 @@ export default function CountryPage() {
           countryName: config.name,
           marketSlug: config.slug,
           stats: heroStats,
-          statsCaption: '',
+          statsCaption: config.slug === 'united-states' ? 'Healthcare sizing: CMS NHE projections 2025–34 (June 2026).' : '',
+          badges:
+            config.slug === 'united-states'
+              ? ['Published by BioNixus', 'Updated September 2026', 'CMS NHE 2026']
+              : undefined,
           description: (
             <p>
               {config.slug === 'united-arab-emirates' ? (
@@ -360,6 +371,20 @@ export default function CountryPage() {
                     market research firms UAE
                   </Link>
                   , see the 2026 general listicle.
+                </>
+              ) : config.slug === 'united-states' ? (
+                <>
+                  BioNixus designs United States programmes around FDA authorisation, CMS coverage, PBM formulary
+                  placement, and IRA Medicare negotiation — account-level evidence syndicated audits miss. CMS projects
+                  national health expenditure at approximately USD 6.0 trillion in 2026. Start from the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                    healthcare market research hub
+                  </Link>{' '}
+                  to align US priorities with therapy and service planning, or open the{' '}
+                  <Link to="/usa-healthcare-market-report" className="text-primary font-medium hover:underline">
+                    USA healthcare market report
+                  </Link>
+                  .
                 </>
               ) : (
                 <>
@@ -911,6 +936,49 @@ export default function CountryPage() {
             ; for mid-funnel planning see{' '}
             <Link to={`/market-research-${config.slug}`} className="text-primary underline font-medium">
               market research in {config.name}
+            </Link>
+            .
+          </p>
+        </ReportPremiumSection>
+      )}
+
+      {config.slug === 'united-states' && (
+        <ReportPremiumSection
+          id="usa-company-intent"
+          title="United States healthcare market research — company intent"
+          countryName={config.name}
+          marketSlug={config.slug}
+        >
+          <p className="text-base leading-relaxed text-muted-foreground mb-4">
+            For BOFU company-intent searches, use our{' '}
+            <Link to="/healthcare-market-research-usa" className="text-primary underline font-medium">
+              healthcare market research company in the USA
+            </Link>{' '}
+            page and the{' '}
+            <Link to="/usa-healthcare-market-report" className="text-primary underline font-medium">
+              USA healthcare market report
+            </Link>
+            . For manufacturer mapping see{' '}
+            <Link to="/pharmaceutical-companies-usa" className="text-primary underline font-medium">
+              pharmaceutical companies in the USA
+            </Link>{' '}
+            and{' '}
+            <Link to="/medical-device-companies-usa" className="text-primary underline font-medium">
+              medical device companies in the USA
+            </Link>
+            .
+          </p>
+          <p className="text-base leading-relaxed text-muted-foreground">
+            Agency shortlists:{' '}
+            <Link
+              to="/insights/top-healthcare-market-research-companies-usa-2026"
+              className="text-primary underline font-medium"
+            >
+              top healthcare market research companies USA 2026
+            </Link>
+            . For GCC expansion from a US affiliate, pair this hub with the{' '}
+            <Link to="/gcc-pharma-market-report-2026" className="text-primary underline font-medium">
+              GCC pharmaceutical market report 2026
             </Link>
             .
           </p>

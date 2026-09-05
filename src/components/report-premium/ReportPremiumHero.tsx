@@ -13,7 +13,15 @@ import type { DirectoryBreadcrumb } from '@/components/seo/DirectoryPremium';
 
 const COUNTRY_SAMPLE_PDF: Record<string, { reportName: string; pdfPath: string }> = {
   '/usa-healthcare-market-report': {
-    reportName: 'US Healthcare Market Report 2026',
+    reportName: 'USA Healthcare Market Report 2026',
+    pdfPath: '/downloads/usa-healthcare-market-report-2026-sample.pdf',
+  },
+  '/healthcare-market-research/united-states': {
+    reportName: 'USA Healthcare Market Report 2026',
+    pdfPath: '/downloads/usa-healthcare-market-report-2026-sample.pdf',
+  },
+  '/healthcare-market-research-usa': {
+    reportName: 'USA Healthcare Market Report 2026',
     pdfPath: '/downloads/usa-healthcare-market-report-2026-sample.pdf',
   },
   '/brazil-healthcare-market-report': {
