@@ -8,6 +8,7 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import type { CountryListicleConfig } from '@/data/topCompanies/types';
 import { resolvePublishedHreflang, resolvePublishedRelated } from '@/data/topCompanies/registry';
+import { authorByline, getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import {
   DirectoryDriverCard,
@@ -36,6 +37,11 @@ export default function TopCompaniesCountryPage({ config }: Props) {
 
   const hreflang = resolvePublishedHreflang(config);
   const related = resolvePublishedRelated(config);
+  const pageAuthor = getEditorialAuthor({
+    path: config.slug,
+    region: config.region,
+    pageType: 'comparison',
+  });
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -56,7 +62,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
     url: canonical,
     datePublished,
     dateModified,
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: personAuthorJsonLd(pageAuthor),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage,
     about: { '@type': 'Place', name: config.country },
@@ -113,7 +119,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
           kicker={badge}
           h1={h1}
           lead={heroIntro}
-          metaLine={`Published ${datePublished} · By BioNixus Research Team`}
+          metaLine={authorByline(pageAuthor, datePublished)}
           stats={heroStats.map((stat) => {
             const [val, ...rest] = stat.split(' ');
             return { value: val, label: rest.join(' ') || val };

@@ -162,7 +162,7 @@ export const SINGAPORE_MEDTECH_2026_HARDCODED_POST: BlogPost = {
   seoMetaTitle: SINGAPORE_MEDTECH_2026_META_TITLE,
   seoMetaDescription: SINGAPORE_MEDTECH_2026_META_DESCRIPTION,
   seoCanonicalUrl: `https://www.bionixus.com/blog/${SINGAPORE_MEDTECH_2026_SLUG}`,
-  authorName: 'Laura Williams',
+  authorName: 'Sarah Chen',
   authorTitle: 'Research Director, BioNixus Healthcare Market Research',
   publishedAtIso: SINGAPORE_MEDTECH_2026_PUBLISHED_ISO,
   updatedAtIso: SINGAPORE_MEDTECH_2026_UPDATED_ISO,

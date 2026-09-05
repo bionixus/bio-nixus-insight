@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, ShoppingCart, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -147,6 +148,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-consumer-healthcare-market-research-firms-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-consumer-healthcare-market-research-firms-2026',
+  pageType: 'comparison',
+});
+
 export default function TopConsumerHealthcareMarketResearchFirms2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -168,11 +174,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
     url: CANONICAL,
     datePublished: '2026-06-12',
     dateModified: '2026-09-01',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
   };
@@ -208,7 +210,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
           name="description"
           content="Independent 2026 ranking of top consumer healthcare market research firms — BioNixus, NielsenIQ, Kantar, Euromonitor, and Ipsos compared for OTC, pharmacy channel, and wellness research."
         />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
@@ -255,7 +257,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
               We compare firms across OTC market research capability, pharmacy channel expertise, FMCG-health crossover research, brand and shopper insights, and consumer wellness category intelligence.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By Haidy Yahia · 14 min read
+              Published June 2026 · By {PAGE_AUTHOR.name} · 14 min read
             </p>
           </div>
         </section>
@@ -382,7 +384,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
                 Firms ordered by consumer health research capability, with emphasis on firms that bridge pharmaceutical and FMCG methodologies. Consumer healthcare encompasses OTC pharmaceuticals, vitamins and supplements, personal care with health claims, and wellness products sold through pharmacy and retail channels.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Maintained by Haidy Yahia. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
+                Maintained by {PAGE_AUTHOR.name}. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>

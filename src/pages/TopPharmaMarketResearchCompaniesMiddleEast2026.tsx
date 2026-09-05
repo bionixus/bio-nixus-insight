@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -167,6 +168,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-pharma-market-research-companies-middle-east-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-pharma-market-research-companies-middle-east-2026',
+  pageType: 'comparison',
+});
+
 export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -188,11 +194,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
     url: CANONICAL,
     datePublished: '2026-06-12',
     dateModified: '2026-09-01',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
   };
@@ -228,7 +230,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
           name="description"
           content="Top pharmaceutical market research companies Middle East 2026 — SFDA, MOHAP/DHA & GCC fieldwork ranked. Compare BioNixus, IQVIA MENA, Kantar & Ipsos."
         />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <meta name="geo.region" content="ME" />
         <meta name="geo.placename" content="Middle East" />
         <link rel="canonical" href={CANONICAL} />
@@ -277,7 +279,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
               We compare full-service primary research providers, data and analytics platforms, regional consultancies, and competitive intelligence specialists — evaluating Middle East pharma capability, Arabic-language execution, regulatory awareness, and physician recruitment networks.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By Haidy Yahia · 15 min read
+              Published June 2026 · By {PAGE_AUTHOR.name} · 15 min read
             </p>
           </div>
         </section>
@@ -459,7 +461,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
                 This guide profiles pharma market research companies with demonstrated Middle East pharmaceutical research capability as of 2026. Selection criteria: (1) active operations or offices in the Middle East, (2) pharmaceutical and healthcare research as a primary offering in MENA, (3) identifiable client engagements and track record in the region. Firms ordered by full-service primary research capability and Middle East depth.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Maintained by Haidy Yahia. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
+                Maintained by {PAGE_AUTHOR.name}. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>

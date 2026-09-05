@@ -1,10 +1,18 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Stethoscope } from 'lucide-react';
+import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import {
+  DirectoryFaqList,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryOutlineLink,
+} from '@/components/seo/DirectoryPremium';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -259,6 +267,11 @@ const comparisonCriteria = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-usa-2026';
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-healthcare-market-research-companies-usa-2026',
+  region: 'northamerica',
+  pageType: 'comparison',
+});
 
 export default function TopHealthcareMarketResearchCompaniesUsa2026() {
   const breadcrumbSchema = {
@@ -280,8 +293,8 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
       'Expert guide to the leading healthcare and pharmaceutical market research companies in the USA for 2026. Covers IRB-compliant HCP firms, KOL mapping across US academic medical centres, payer and PBM research, IRA impact intelligence, and how to evaluate a US research partner.',
     url: CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-08-22',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    dateModified: '2026-09-05',
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'United States', sameAs: 'https://www.wikidata.org/wiki/Q30' },
@@ -319,7 +332,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>Healthcare Market Research Companies USA 2026 | BioNixus</title>
         <meta
@@ -346,74 +359,53 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
       />
       <Navbar />
       <main>
-        {/* Breadcrumb */}
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6 flex-wrap">
-              <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-primary transition-colors">Insights</Link>
-              <span>/</span>
-              <span className="text-foreground">Top Healthcare Market Research Companies in USA</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Hero */}
-        <section className="section-padding pt-0 pb-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <Stethoscope className="w-4 h-4" />
-              Healthcare &amp; Pharma Research — 2026 Expert Guide
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Healthcare Market Research Companies USA (2026 Guide)
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
+        <DirectoryHero
+          breadcrumbs={[
+            { name: 'Home', href: '/' },
+            { name: 'Insights', href: '/insights' },
+            { name: 'Top Healthcare Market Research Companies in USA', href: '/insights/top-healthcare-market-research-companies-usa-2026' },
+          ]}
+          kicker="Healthcare & Pharma Research — 2026 Expert Guide"
+          h1="Healthcare Market Research Companies USA (2026 Guide)"
+          lead={
+            <>
               An expert guide to the leading{' '}
-              <strong className="text-foreground">healthcare market research companies USA</strong> buyers shortlist
-              in 2026. This guide profiles 10 firms with demonstrated capability in IRB-compliant US HCP surveys, KOL
-              mapping across major academic medical centres, PBM and CMS payer research, IRA drug negotiation
-              intelligence, HEOR evidence generation, and multi-region US healthcare research. For methodology and
-              coverage, start from our{' '}
-              <Link to="/healthcare-market-research" className="text-primary hover:underline">
+              <strong className="text-white">healthcare market research companies USA</strong> buyers shortlist in 2026.
+              This guide profiles 10 firms with demonstrated capability in IRB-compliant US HCP surveys, KOL mapping
+              across major academic medical centres, PBM and CMS payer research, IRA drug negotiation intelligence, HEOR
+              evidence generation, and multi-region US healthcare research. For methodology and coverage, start from our{' '}
+              <Link to="/healthcare-market-research" className="text-[#E8C56A] underline">
                 healthcare market research
               </Link>{' '}
               hub; for the global vendor shortlist, see{' '}
-              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
+              <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-[#E8C56A] underline">
                 top healthcare market research companies
               </Link>
               .
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Updated August 2026 · By BioNixus Research Team · 16 min read
-            </p>
-          </div>
-        </section>
+            </>
+          }
+          metaLine={`Updated September 2026 · By ${PAGE_AUTHOR.name} · 16 min read`}
+          stats={[
+            { value: '$590–640B', label: 'US pharma market (BioNixus band)' },
+            { value: 'FDA + CMS', label: 'Key regulators' },
+            { value: '3 PBMs', label: 'Formulary gatekeepers' },
+            { value: '10', label: 'Firms profiled' },
+          ]}
+          actions={
+            <>
+              <DirectoryGoldLink to="#request-proposal">Request a US research briefing</DirectoryGoldLink>
+              <DirectoryOutlineLink href="#firm-profiles">Browse the ranking</DirectoryOutlineLink>
+            </>
+          }
+        />
 
-        {/* Key stats bar */}
-        <section className="section-padding py-12 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">$615B+</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">US pharma market</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">FDA + CMS</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Key regulators</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">3 PBMs</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Formulary gatekeepers</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">10</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Firms profiled</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <DirectoryJumpNav
+          items={[
+            { href: '#firm-profiles', label: 'Profiles' },
+            { href: '#comparison', label: 'Compare' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+        />
 
         {/* LLM Answer Block */}
         <section className="section-padding py-10">
@@ -740,14 +732,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
-              {faqItems.map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
+            <DirectoryFaqList items={faqItems} />
           </div>
         </section>
 
@@ -780,7 +765,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
         </section>
 
         {/* CTA */}
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
+        <section id="request-proposal" className="section-padding py-16 bg-primary text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
               Plan Healthcare Market Research in the USA

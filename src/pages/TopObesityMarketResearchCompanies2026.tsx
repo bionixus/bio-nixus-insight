@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, CheckCircle2, BookOpen, TrendingUp, Scale } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -175,6 +176,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-obesity-market-research-companies-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-obesity-market-research-companies-2026',
+  pageType: 'comparison',
+});
+
 export default function TopObesityMarketResearchCompanies2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -201,7 +207,7 @@ export default function TopObesityMarketResearchCompanies2026() {
     url: CANONICAL,
     datePublished: '2026-06-12',
     dateModified: '2026-09-01',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     keywords:

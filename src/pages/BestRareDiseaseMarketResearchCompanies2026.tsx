@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Building2, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2, Microscope, HeartPulse } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -147,6 +148,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/best-rare-disease-market-research-companies-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/best-rare-disease-market-research-companies-2026',
+  pageType: 'comparison',
+});
+
 export default function BestRareDiseaseMarketResearchCompanies2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -168,11 +174,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
     url: CANONICAL,
     datePublished: '2026-06-12',
     dateModified: '2026-09-01',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
   };
@@ -208,7 +210,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
           name="description"
           content="Independent 2026 ranking of the best rare disease market research companies — BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, and OPEN Health compared for orphan drug research."
         />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
@@ -227,7 +229,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
         article={{
           publishedTime: '2026-06-12',
           modifiedTime: '2026-06-12',
-          author: 'Haidy Yahia',
+          author: PAGE_AUTHOR.name,
           section: 'Rare Disease Research',
           tags: ['rare disease market research', 'orphan drug market research', 'patient-finding research', 'KOL mapping rare disease'],
         }}
@@ -264,7 +266,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
               We evaluate specialist rare disease research capability — from diagnostic odyssey research and genetic testing access studies to named-patient pathway analysis and centre-of-excellence mapping.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By Haidy Yahia · 14 min read
+              Published June 2026 · By {PAGE_AUTHOR.name} · 14 min read
             </p>
           </div>
         </section>
@@ -473,7 +475,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
                 This guide profiles rare disease market research companies with demonstrated orphan drug research capability as of 2026. Selection criteria: (1) active rare disease research operations, (2) orphan drug and rare disease research as a core offering, (3) identifiable pharmaceutical client engagements in rare disease therapeutic areas, (4) multi-market rare disease fieldwork capability. Firms ranked by patient-finding expertise and orphan drug market access knowledge.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Maintained by Haidy Yahia. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
+                Maintained by {PAGE_AUTHOR.name}. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>

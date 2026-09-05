@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -67,10 +68,10 @@ const jsonLd = [
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'USA Medical Devices Market Report 2026: FDA Pathways, CMS Reimbursement, and GPO/IDN Procurement',
-    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
+    author: personAuthorJsonLd(getEditorialAuthor({ path: '/usa-medical-devices-market-report', countrySlug: 'united-states', pageType: 'article' })),
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-09-05',
     mainEntityOfPage: 'https://www.bionixus.com/usa-medical-devices-market-report',
   },
   {
@@ -81,11 +82,11 @@ const jsonLd = [
   },
   ...buildReportEnrichmentSchemas({
     pageTitle: "USA Medical Devices Market Report 2026 | FDA 510(k)/PMA, CMS NTAP & GPO Procurement | BioNixus",
-    pageMetaDescription: "USA medical devices market at USD 180B in 2026 — world's largest. FDA regulatory pathways, CMS DRG and NTAP reimbursement, GPO/IDN procurement, and BioNixus intelligence for US medtech companies expanding to GCC and MENA.",
+    pageMetaDescription: "USA medical devices market at USD 175–200B in 2026 (MDMA/AdvaMed). FDA 510(k)/PMA, CMS DRG and NTAP, GPO/IDN procurement, and BioNixus GCC intelligence.",
     countryName: "United States",
     marketSlug: "usa",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-09-05",
   })
 ];
 
@@ -93,8 +94,8 @@ const UsaMedicalDevicesMarketReport = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <SEOHead
-      title="USA Medical Devices Market Report 2026 | BioNixus"
-      description="USA medical devices market at USD 180B in 2026 — world's largest. FDA regulatory pathways, CMS DRG and NTAP reimbursement, GPO/IDN procurement, and BioNixus intelligence for US medtech companies expanding to GCC and MENA."
+      title="USA Medical Devices Market Report 2026 | BioNixus Research"
+      description="USA medical devices market at USD 175–200B in 2026 (MDMA/AdvaMed). FDA 510(k)/PMA, CMS DRG and NTAP, GPO/IDN procurement, and BioNixus GCC intelligence."
       canonical="https://www.bionixus.com/usa-medical-devices-market-report"
       jsonLd={jsonLd}
     />
@@ -108,7 +109,7 @@ const UsaMedicalDevicesMarketReport = () => (
           marketSlug="usa"
           countryName="USA"
           stats={[
-            { value: '~$180B', label: 'USA medical devices market 2026' },
+            { value: '$175–200B', label: 'USA medical devices market 2026' },
             { value: '~$245B', label: 'Forecast 2030' },
             { value: '6.0%', label: 'CAGR 2026–2030' },
           ]}
@@ -119,7 +120,7 @@ const UsaMedicalDevicesMarketReport = () => (
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
           <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
             <div className="grid sm:grid-cols-3 gap-6 text-center">
-              <div><p className="text-3xl font-display font-bold text-primary">~$180B</p><p className="text-xs text-muted-foreground mt-1">USA medical devices market 2026</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">$175–200B</p><p className="text-xs text-muted-foreground mt-1">USA medical devices market 2026 (MDMA/AdvaMed)</p></div>
               <div><p className="text-3xl font-display font-bold text-primary">~$245B</p><p className="text-xs text-muted-foreground mt-1">Forecast 2030</p></div>
               <div><p className="text-3xl font-display font-bold text-primary">6.0%</p><p className="text-xs text-muted-foreground mt-1">CAGR 2026–2030</p></div>
             </div>

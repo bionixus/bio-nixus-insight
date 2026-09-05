@@ -11,6 +11,7 @@ import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import {
   BIONIXUS_MR_HQ,
   BIONIXUS_MR_TYPE,
@@ -163,6 +164,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-gcc-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-market-research-companies-gcc-2026',
+  pageType: 'comparison',
+});
+
 export default function TopMarketResearchCompaniesGcc2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -184,11 +190,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
     url: CANONICAL,
     datePublished: '2026-06-12',
     dateModified: '2026-09-01',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
   };
@@ -233,7 +235,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
       <Helmet>
         <title>{PAGE_TITLE}</title>
         <meta name="description" content={PAGE_DESCRIPTION} />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <meta name="geo.region" content="GCC" />
         <meta name="geo.placename" content="Gulf Cooperation Council" />
         <link rel="canonical" href={CANONICAL} />
@@ -528,7 +530,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
                 and multi-industry depth.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Maintained by Haidy Yahia. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
+                Maintained by {PAGE_AUTHOR.name}. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>

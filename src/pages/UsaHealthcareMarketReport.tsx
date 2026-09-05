@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -59,7 +60,7 @@ const jsonLd = [
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-linkedin.png',
     headline: 'USA Healthcare Market Report 2026: FDA, CMS, PBMs, and Pharmaceutical Market Intelligence',
-    author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
+    author: personAuthorJsonLd(getEditorialAuthor({ path: '/usa-healthcare-market-report', countrySlug: 'united-states', pageType: 'article' })),
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
     dateModified: '2026-09-05',
@@ -73,7 +74,7 @@ const jsonLd = [
   },
   ...buildReportEnrichmentSchemas({
     pageTitle: "USA Healthcare Market Report 2026 | FDA, CMS, PBMs & Pharmaceutical Market Intelligence | BioNixus",
-    pageMetaDescription: "USA healthcare market at USD 6.0 trillion in 2026 (CMS NHE) — world's largest. FDA approval pathways, Medicare IRA drug negotiations, PBM formulary access, USD 615B pharmaceutical market, and BioNixus GCC expansion intelligence.",
+    pageMetaDescription: "USA healthcare market at USD 6.017T in 2026 (CMS NHE). FDA pathways, IRA Medicare talks, PBMs, USD 590–640B pharma (BioNixus) and USD 175–200B devices.",
     countryName: "United States",
     marketSlug: "usa",
     publishedDate: "2026-05-27",
@@ -86,7 +87,7 @@ const UsaHealthcareMarketReport = () => (
     <Navbar />
     <SEOHead
       title="USA Healthcare Market Research Report 2026 | BioNixus"
-      description="USA healthcare market research: CMS NHE USD 6.0T in 2026, FDA pathways, Medicare IRA, PBMs, USD 615B pharmaceutical market — BioNixus global pharma."
+      description="USA healthcare market at USD 6.017T in 2026 (CMS NHE). FDA pathways, IRA Medicare talks, PBMs, USD 590–640B pharma (BioNixus) and USD 175–200B devices."
       canonical="https://www.bionixus.com/usa-healthcare-market-report"
       jsonLd={jsonLd}
     />
@@ -100,9 +101,9 @@ const UsaHealthcareMarketReport = () => (
           marketSlug="usa"
           countryName="USA"
           stats={[
-            { value: '~$6.0T', label: 'USA healthcare market 2026' },
-            { value: '~$615B', label: 'Pharmaceutical market 2026' },
-            { value: '~$180B', label: 'Medical devices market 2026' },
+            { value: '$6.017T', label: 'USA healthcare market 2026 (CMS)' },
+            { value: '$590–640B', label: 'Pharmaceutical market (BioNixus)' },
+            { value: '$175–200B', label: 'Medical devices (MDMA/AdvaMed)' },
           ]}
         />
       <ReportContentWithAside config={REPORT_CONVERSION}>
@@ -111,9 +112,9 @@ const UsaHealthcareMarketReport = () => (
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>
           <div className="bg-white rounded-xl border border-border p-6 shadow-sm mb-6">
             <div className="grid sm:grid-cols-3 gap-6 text-center">
-              <div><p className="text-3xl font-display font-bold text-primary">~$6.0T</p><p className="text-xs text-muted-foreground mt-1">USA healthcare market 2026 (CMS NHE)</p></div>
-              <div><p className="text-3xl font-display font-bold text-primary">~$615B</p><p className="text-xs text-muted-foreground mt-1">Pharmaceutical market 2026</p></div>
-              <div><p className="text-3xl font-display font-bold text-primary">~$180B</p><p className="text-xs text-muted-foreground mt-1">Medical devices market 2026</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">$6.017T</p><p className="text-xs text-muted-foreground mt-1">USA healthcare market 2026 (CMS NHE)</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">$590–640B</p><p className="text-xs text-muted-foreground mt-1">Pharmaceutical market 2026 (BioNixus)</p></div>
+              <div><p className="text-3xl font-display font-bold text-primary">$175–200B</p><p className="text-xs text-muted-foreground mt-1">Medical devices 2026 (MDMA/AdvaMed)</p></div>
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">The United States is the world's largest and most commercially significant healthcare market, accounting for approximately 45% of global pharmaceutical revenues. CMS Office of the Actuary (NHE projections 2025–34, June 2026) sizes 2026 national health expenditure at USD 6.017 trillion. The Inflation Reduction Act drug price negotiations represent the most significant structural change to US pharmaceutical commercial models since the Medicare Modernization Act of 2003 — reshaping launch strategy, pricing architecture, and international reference pricing dynamics for all global pharmaceutical companies.</p>

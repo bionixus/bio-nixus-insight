@@ -150,7 +150,7 @@ export const UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST: BlogPost = {
   seoMetaDescription: UAE_HEALTHCARE_TRENDS_2026_META_DESCRIPTION,
   seoCanonicalUrl: `https://www.bionixus.com/blog/${UAE_HEALTHCARE_TRENDS_2026_SLUG}`,
   seoNoIndex: false,
-  authorName: 'Laura Williams',
+  authorName: 'Dina Ibrahim',
   authorTitle: 'Research Director, BioNixus Healthcare Market Research',
   publishedAtIso: UAE_HEALTHCARE_TRENDS_2026_PUBLISHED_ISO,
   updatedAtIso: UAE_HEALTHCARE_TRENDS_2026_UPDATED_ISO,

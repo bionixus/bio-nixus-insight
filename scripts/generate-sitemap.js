@@ -90,20 +90,6 @@ const STATIC_ROUTES = [
   '/ar/market-research-kuwait',
   '/ar/market-research-egypt',
   '/ar/market-research-healthcare',
-  '/global-websites',
-  '/global-websites/united-arab-emirates',
-  '/global-websites/saudi-arabia',
-  '/global-websites/united-kingdom',
-  '/global-websites/germany',
-  '/global-websites/france',
-  '/global-websites/spain',
-  '/global-websites/italy',
-  '/global-websites/kuwait',
-  '/global-websites/qatar',
-  '/global-websites/bahrain',
-  '/global-websites/oman',
-  '/global-websites/egypt',
-  '/global-websites/united-states',
   '/blog/sfda-drug-registration-guide',
   '/blog/healthcare-market-research-methodologies-gcc',
   '/blog/kol-mapping-pharma-middle-east',
@@ -136,7 +122,7 @@ const STATIC_ROUTES = [
 function routeMeta(url) {
   if (url === '/') return { priority: '1.0', changefreq: 'weekly' };
   if (url === '/healthcare-market-research') return { priority: '0.95', changefreq: 'weekly' };
-  if (url === '/global-websites/united-arab-emirates') return { priority: '0.95', changefreq: 'weekly' };
+  if (url === '/healthcare-market-research/united-arab-emirates') return { priority: '0.95', changefreq: 'weekly' };
   if (url === '/strategic-portfolio' || url === '/ar/strategic-portfolio') {
     return { priority: '0.72', changefreq: 'monthly' };
   }
@@ -145,7 +131,6 @@ function routeMeta(url) {
   if (url.startsWith('/blog') || url.startsWith('/ar/blog')) return { priority: '0.85', changefreq: 'daily' };
   if (url.startsWith('/insights') || url.startsWith('/ar/insights')) return { priority: '0.9', changefreq: 'weekly' };
   if (url.startsWith('/healthcare-market-research')) return { priority: '0.9', changefreq: 'weekly' };
-  if (url.startsWith('/global-websites/')) return { priority: '0.85', changefreq: 'monthly' };
   if (url.startsWith('/market-research-')) return { priority: '0.85', changefreq: 'weekly' };
   if (url.startsWith('/ar/market-research-')) return { priority: '0.8', changefreq: 'weekly' };
   if (url.startsWith('/services/')) return { priority: '0.8', changefreq: 'monthly' };

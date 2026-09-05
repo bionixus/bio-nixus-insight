@@ -6,6 +6,14 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import {
+  DirectoryFaqList,
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryOutlineLink,
+} from '@/components/seo/DirectoryPremium';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -157,6 +165,11 @@ const comparisonCriteria = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-usa-2026';
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-market-research-companies-usa-2026',
+  region: 'northamerica',
+  pageType: 'comparison',
+});
 
 export default function TopMarketResearchCompaniesUsa2026() {
   const breadcrumbSchema = {
@@ -178,8 +191,8 @@ export default function TopMarketResearchCompaniesUsa2026() {
       'Independent guide to the leading market research companies in the USA for 2026: healthcare, pharma, and consumer research firms compared by capability, methodology, and US expertise.',
     url: CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    dateModified: '2026-09-05',
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'United States', sameAs: 'https://www.wikidata.org/wiki/Q30' },
@@ -209,7 +222,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>Top Market Research Companies in the USA (2026 Guide) | BioNixus</title>
         <meta
@@ -236,64 +249,47 @@ export default function TopMarketResearchCompaniesUsa2026() {
       />
       <Navbar />
       <main>
-        {/* Breadcrumb */}
-        <div className="section-padding pt-24 pb-4">
-          <div className="container-wide">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-              <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-primary transition-colors">Insights</Link>
-              <span>/</span>
-              <span className="text-foreground">Top Market Research Companies in the USA</span>
-            </div>
-          </div>
-        </div>
+        <DirectoryHero
+          breadcrumbs={[
+            { name: 'Home', href: '/' },
+            { name: 'Insights', href: '/insights' },
+            { name: 'Top Market Research Companies in the USA', href: '/insights/top-market-research-companies-usa-2026' },
+          ]}
+          kicker="2026 Industry Guide"
+          h1="Top Market Research Companies in the USA (2026 Guide)"
+          lead={
+            <>
+              An independent guide to the leading market research companies operating in the United States for 2026. This
+              article profiles six firms across healthcare, pharmaceutical, and consumer research — comparing
+              capabilities, methodologies, US-specific expertise, and what to look for when shortlisting a research
+              partner for the world&apos;s largest pharmaceutical market. Start from the{' '}
+              <Link to="/healthcare-market-research" className="text-[#E8C56A] underline">
+                healthcare market research hub
+              </Link>
+              .
+            </>
+          }
+          metaLine={`Updated September 2026 · By ${PAGE_AUTHOR.name} · 14 min read`}
+          stats={[
+            { value: '6', label: 'Firms profiled' },
+            { value: '$590–640B', label: 'US pharma market (BioNixus band)' },
+            { value: 'FDA + CMS', label: 'Key regulators' },
+            { value: '3 PBMs', label: 'Formulary gatekeepers' },
+          ]}
+          actions={
+            <>
+              <DirectoryGoldLink to="#request-proposal">Request a US research briefing</DirectoryGoldLink>
+              <DirectoryOutlineLink href="#firm-profiles">Browse the ranking</DirectoryOutlineLink>
+            </>
+          }
+        />
 
-        {/* Hero */}
-        <section className="section-padding pt-0 pb-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <BarChart3 className="w-4 h-4" />
-              2026 Industry Guide
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Market Research Companies in the USA (2026 Guide)
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An independent guide to the leading market research companies operating in the United States for 2026.
-              This article profiles six firms across healthcare, pharmaceutical, and consumer research — comparing
-              capabilities, methodologies, US-specific expertise, and what to look for when shortlisting a
-              research partner for the world's largest pharmaceutical market.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Published June 2026 · By BioNixus Research Team · 14 min read
-            </p>
-          </div>
-        </section>
-
-        {/* Key stats bar */}
-        <section className="section-padding py-12 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">6</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Firms profiled</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">$615B+</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">US pharma market</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">FDA + CMS</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Key regulators</p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">3 PBMs</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Formulary gatekeepers</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <DirectoryJumpNav
+          items={[
+            { href: '#firm-profiles', label: 'Profiles' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+        />
 
         {/* LLM Answer Block */}
         <section className="section-padding py-10">
@@ -572,14 +568,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
-              {faqItems.map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
+            <DirectoryFaqList items={faqItems} />
           </div>
         </section>
 
@@ -610,6 +599,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
           </div>
         </section>
 
+        <div id="request-proposal">
         <ListicleProposalCta
           countryName="United States"
           ctaId="listicle_usa_footer"
@@ -623,6 +613,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
             View US Research Capabilities
           </Link>
         </ListicleProposalCta>
+        </div>
       </main>
       <Footer />
     </div>

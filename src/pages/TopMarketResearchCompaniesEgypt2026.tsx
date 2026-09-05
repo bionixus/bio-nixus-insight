@@ -13,6 +13,7 @@ import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import {
   BIONIXUS_MR_HQ,
   BIONIXUS_MR_TYPE,
@@ -147,6 +148,11 @@ const comparisonCriteria = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-egypt-2026';
+
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-market-research-companies-egypt-2026',
+  pageType: 'comparison',
+});
 const CTR = getCtrSeo('/insights/top-market-research-companies-egypt-2026');
 const PAGE_TITLE = CTR?.title ?? 'Best Market Research Companies in Egypt (2026) | Ranked';
 const PAGE_DESCRIPTION =
@@ -174,11 +180,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
     url: CANONICAL,
     datePublished: '2026-04-18',
     dateModified: '2026-09-01',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
   };
@@ -226,7 +228,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
         <meta name="description" content={PAGE_DESCRIPTION} />
         <meta name="geo.region" content="EG" />
         <meta name="geo.placename" content="Egypt" />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link
@@ -539,7 +541,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 and multi-industry depth.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                This guide is maintained by Haidy Yahia. BioNixus is profiled in this guide and is
+                This guide is maintained by {PAGE_AUTHOR.name}. BioNixus is profiled in this guide and is
                 transparent about its inclusion. For corrections or updates,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>

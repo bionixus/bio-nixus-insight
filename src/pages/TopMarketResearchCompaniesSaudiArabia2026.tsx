@@ -13,6 +13,7 @@ import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { CountryRankingCover } from '@/pages/country-ranking/CountryRankingCover';
 import { CountryRankingPremiumStyles } from '@/pages/country-ranking/CountryRankingPremiumStyles';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import {
   BIONIXUS_MR_HQ,
   BIONIXUS_MR_TYPE,
@@ -276,6 +277,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-saudi-arabia-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-market-research-companies-saudi-arabia-2026',
+  pageType: 'comparison',
+});
+
 export default function TopMarketResearchCompaniesSaudiArabia2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -296,11 +302,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
     url: CANONICAL,
     datePublished: '2026-06-07',
     dateModified: PAGE_LAST_MODIFIED,
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'Saudi Arabia', sameAs: 'https://www.wikidata.org/wiki/Q851' },
@@ -350,7 +352,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
         <meta name="description" content={PAGE_DESCRIPTION} />
         <meta name="geo.region" content="SA" />
         <meta name="geo.placename" content="Saudi Arabia" />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         {getHreflangLinks('/insights/top-market-research-companies-saudi-arabia-2026').map(
           ({ lang, href }) => (

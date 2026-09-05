@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -148,6 +149,11 @@ const faqItems = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/zh/insights/top-market-research-companies-egypt-2026';
+
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/zh/insights/top-market-research-companies-egypt-2026',
+  pageType: 'comparison',
+});
 const EN_CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-egypt-2026';
 const AR_CANONICAL = 'https://www.bionixus.com/ar/insights/top-market-research-companies-egypt-2026';
 
@@ -178,15 +184,7 @@ export default function ZhTopMarketResearchCompaniesEgypt2026() {
     datePublished: '2026-04-18',
     dateModified: '2026-09-01',
     inLanguage: 'zh-Hans',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: {
-        '@type': 'Organization',
-        '@id': 'https://www.bionixus.com/#organization',
-        name: 'BioNixus',
-      },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
       '@id': 'https://www.bionixus.com/#organization',
@@ -231,7 +229,7 @@ export default function ZhTopMarketResearchCompaniesEgypt2026() {
           name="description"
           content="2026 年埃及最佳市场研究公司 5 强指南——消费者、FMCG、零售与跨行业研究能力对比，附合作伙伴筛选标准。"
         />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="zh-Hans" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={EN_CANONICAL} />
@@ -286,7 +284,7 @@ export default function ZhTopMarketResearchCompaniesEgypt2026() {
               。
             </p>
             <p className="text-sm text-muted-foreground">
-              发布时间：2026 年 4 月 · 作者：Haidy Yahia · 阅读时长约 14 分钟
+              发布时间：2026 年 4 月 · 作者：{PAGE_AUTHOR.name} · 阅读时长约 14 分钟
             </p>
             <p className="text-sm text-muted-foreground mt-2">
               阅读其他语言版本：{' '}

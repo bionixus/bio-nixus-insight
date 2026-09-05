@@ -12,6 +12,7 @@ import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
+import { getEditorialAuthor } from '@/data/editorialAuthors';
 
 const PATH = '/account-level-market-research';
 const CANONICAL = `https://www.bionixus.com${PATH}`;
@@ -21,7 +22,7 @@ const PAGE_DESCRIPTION =
   CTR?.description ??
   'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.';
 const PUBLISHED = '2026-09-02';
-const AUTHOR = 'Haidy Yahia';
+const AUTHOR = getEditorialAuthor({ path: PATH, pageType: 'article' }).name;
 
 const FAQ = [
   {

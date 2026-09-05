@@ -30,6 +30,7 @@ import {
   DirectoryOutlineLink,
   DirectorySection,
 } from '@/components/seo/DirectoryPremium';
+import { getEditorialAuthor, isComparisonPath, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 export type CountryCompanyEntry = {
   name: string;
@@ -119,6 +120,10 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
   const industryTitle = config.industry === 'pharmaceutical' ? 'Pharmaceutical' : 'Medical Device';
   const headline = `${industryTitle} Companies in ${config.countryName}: Complete Industry Guide 2026`;
   const guideSlugId = config.path.replace(/^\//, '').replace(/[^a-z0-9-]/g, '');
+  const pageAuthor = getEditorialAuthor({
+    path: config.path,
+    pageType: isComparisonPath(config.path) ? 'comparison' : 'article',
+  });
 
   return (
     <div className="directory-page min-h-screen">
@@ -127,7 +132,7 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
         <meta name="description" content={config.metaDescription} />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, config.companies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline, description: config.metaDescription, url: citationUrl, datePublished: config.publishedDate, dateModified: config.modifiedDate, author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline, description: config.metaDescription, url: citationUrl, datePublished: config.publishedDate, dateModified: config.modifiedDate, author: personAuthorJsonLd(pageAuthor), publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: `${industryTitle} Companies in ${config.countryName}`, item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, config.faq))}</script>
       </Helmet>

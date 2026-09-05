@@ -9,6 +9,7 @@ import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
 import { STATS } from '@/lib/companyStats';
 import { BIONIXUS_PHONE_UK, BIONIXUS_PHONE_UK_DISPLAY } from '@/components/report-conversion/constants';
 import { OncologyPremiumStyles } from '@/pages/oncology-listicle/OncologyPremiumStyles';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -168,6 +169,11 @@ const prfRows = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-oncology-market-research-companies-2026';
+
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-oncology-market-research-companies-2026',
+  pageType: 'comparison',
+});
 const PAGE_TITLE = 'Top Oncology Market Research Companies 2026 | BioNixus';
 const PAGE_DESCRIPTION =
   'Compare BioNixus vs IQVIA: indication-level PRFs with full patient history, new vs current case recruitment, and brand trackers — not generic pack sales data.';
@@ -197,7 +203,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
     url: CANONICAL,
     datePublished: '2026-06-12',
     dateModified: '2026-09-04',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: {

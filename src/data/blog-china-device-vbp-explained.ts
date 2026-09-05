@@ -109,7 +109,7 @@ export const CHINA_DEVICE_VBP_EXPLAINED_HARDCODED_POST: BlogPost = {
   seoMetaTitle: CHINA_DEVICE_VBP_EXPLAINED_META_TITLE,
   seoMetaDescription: CHINA_DEVICE_VBP_EXPLAINED_META_DESCRIPTION,
   seoCanonicalUrl: `https://www.bionixus.com/blog/${CHINA_DEVICE_VBP_EXPLAINED_SLUG}`,
-  authorName: 'Laura Williams',
+  authorName: 'Sarah Chen',
   authorTitle: 'Research Director, BioNixus Healthcare Market Research',
   publishedAtIso: CHINA_DEVICE_VBP_EXPLAINED_PUBLISHED_ISO,
   updatedAtIso: CHINA_DEVICE_VBP_EXPLAINED_UPDATED_ISO,

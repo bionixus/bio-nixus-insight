@@ -193,7 +193,7 @@ describe('Report-page inline Article normalization (SEOHead backfill)', () => {
       datePublished: '2026-06-07',
       dateModified: '2026-09-01',
       image: { '@type': 'ImageObject', url: 'https://www.bionixus.com/og-image.png' },
-      author: { '@type': 'Person', name: 'Haidy Yahia' },
+      author: { '@type': 'Person', name: 'Dina Ibrahim' },
       publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
       mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026#webpage' },
     };
@@ -293,7 +293,7 @@ describe('AI SEO pages (pricing + account-level definition)', () => {
       dateModified: '2026-09-02',
       image: { '@type': 'ImageObject', url: 'https://www.bionixus.com/og-image.png' },
       mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.bionixus.com/account-level-market-research' },
-      author: { '@type': 'Person', name: 'Haidy Yahia' },
+      author: { '@type': 'Person', name: 'Laura McConaughey' },
       publisher: {
         '@type': 'Organization',
         '@id': 'https://www.bionixus.com/#organization',

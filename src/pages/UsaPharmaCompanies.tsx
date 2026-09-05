@@ -9,6 +9,7 @@ import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { PharmaDirectoryBridge } from '@/components/seo/PharmaDirectoryBridge';
 import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import { PharmaCompaniesGlobalHubLinks } from '@/components/seo/PharmaCompaniesGlobalHubLinks';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
@@ -34,6 +35,11 @@ import {
 } from '@/components/seo/DirectoryPremium';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('usa');
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/pharmaceutical-companies-usa',
+  countrySlug: 'united-states',
+  pageType: 'article',
+});
 
 interface PharmaCompany {
   name: string;
@@ -146,7 +152,7 @@ const UsaPharmaCompanies = () => {
         <meta name="description" content="Complete 2026 list of pharmaceutical companies in the USA — Big Pharma, biotech, wholesalers, FDA/CMS context. Research by BioNixus." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the USA: Complete Industry Guide 2026', description: 'Guide to pharmaceutical companies in the United States — major manufacturers, biotech leaders, wholesalers, FDA/CMS landscape, and market structure for 2026.', url: citationUrl, datePublished: '2026-08-14', dateModified: '2026-09-05', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the USA: Complete Industry Guide 2026', description: 'Guide to pharmaceutical companies in the United States — major manufacturers, biotech leaders, wholesalers, FDA/CMS landscape, and market structure for 2026.', url: citationUrl, datePublished: '2026-08-14', dateModified: '2026-09-05', author: personAuthorJsonLd(PAGE_AUTHOR), publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the USA', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
@@ -173,8 +179,7 @@ const UsaPharmaCompanies = () => {
             h1="Pharmaceutical Companies in the USA"
             lead={
               <>
-                The United States is the world&apos;s largest pharmaceutical market — commonly cited in the USD 600
-                billion-plus range for prescription medicines — with headquarters and major commercial operations for
+                The United States is the world&apos;s largest pharmaceutical market — BioNixus sizes prescription medicines at USD 590–640 billion in 2026 — with headquarters and major commercial operations for
                 most global innovators. Pharmaceutical companies in the USA set the pace for specialty, oncology, and
                 metabolic launches — start from{' '}
                 <Link to="/healthcare-market-research">healthcare market research</Link> for programme scoping.
@@ -183,7 +188,7 @@ const UsaPharmaCompanies = () => {
             rest="This guide covers major manufacturers, biotech leaders, wholesalers, FDA/CMS dynamics, distribution channels, and strategic opportunities."
             metaLine="Last updated: September 2026 · Sources: FDA, CMS, company filings, BioNixus research"
             stats={[
-              { value: '$600B+', label: 'Rx pharma market (ballpark)' },
+              { value: '$590–640B', label: 'Rx pharma market (BioNixus)' },
               { value: '340M+', label: 'Population' },
               { value: 'FDA', label: 'Primary drug regulator' },
               { value: 'CMS', label: 'Federal payer / coverage' },

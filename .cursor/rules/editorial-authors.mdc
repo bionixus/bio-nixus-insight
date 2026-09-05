@@ -1,0 +1,43 @@
+---
+description: Geographic author attribution for BioNixus pages and blogs
+alwaysApply: true
+---
+
+# Editorial authors by geography
+
+Use **only** authors that already exist in Sanity (`_type == "author"`). Do not invent names. Canonical roster and helpers: `src/data/editorialAuthors.ts`.
+
+## USA, Canada, Europe
+
+- Bylines, Article JSON-LD `author`, and blog `author` refs must be **European or American names** from the Western Sanity roster (Laura McConaughey, Sarah Chen, Martha DeVito, Anna Cuban, Armela Belba, Ivona Gunjova).
+- Replace Mohammad Alsaadany and any other Arab names on these pages.
+
+## Middle East / GCC / MENA
+
+- Keep **Arab names** from the MENA roster (Mohammad Ashour, Dina Ibrahim).
+- Arabic-language posts stay on MENA authors.
+
+## Comparison / ranking pages (hard rule)
+
+Never attribute **Mohammad Alsaadany** (or Dr. Mohammad Alsaadany) on pages that compare or rank market research companies — including `/insights/top-*-market-research-companies-*`, “best market research companies” copy, and IQVIA/Nielsen/Kantar alternative listicles.
+
+- MENA comparison pages: use Mohammad Ashour or Dina Ibrahim.
+- USA / Canada / Europe comparison pages: use a Western Sanity author.
+
+## Blogs (Sanity)
+
+Change mismatched authors and republish **except** when Google Search Console shows the URL in **position ≤ 20** or with **clicks > 0**. Those URLs keep the live author.
+
+## Examples
+
+```ts
+// ✅ USA listicle
+getEditorialAuthor({ path: '/insights/top-market-research-companies-usa-2026', region: 'northamerica', pageType: 'comparison' })
+
+// ✅ Saudi ranking
+getEditorialAuthor({ path: '/insights/top-market-research-companies-saudi-arabia-2026', region: 'gcc', pageType: 'comparison' })
+// → Dina Ibrahim or Mohammad Ashour — never Alsaadany
+
+// ❌ BAD
+author: { name: 'Dr. Mohammad Alsaadany' } // on a USA or comparison page
+```

@@ -9,6 +9,7 @@ import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
 import { STATS } from '@/lib/companyStats';
 import { BIONIXUS_PHONE_UK, BIONIXUS_PHONE_UK_DISPLAY } from '@/components/report-conversion/constants';
 import { OncologyPremiumStyles } from '@/pages/oncology-listicle/OncologyPremiumStyles';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -175,6 +176,11 @@ const prfRows = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-hematology-market-research-companies-2026';
+
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-hematology-market-research-companies-2026',
+  pageType: 'comparison',
+});
 const PAGE_TITLE = 'Top Hematology Market Research Companies 2026 | BioNixus';
 const PAGE_DESCRIPTION =
   'Top hematology market research companies 2026: BioNixus vs IQVIA, Oracle, Adelphi. Anonymous PRFs, line-of-therapy brand trackers, malignant + benign.';
@@ -206,7 +212,7 @@ export default function TopHematologyMarketResearchCompanies2026() {
     url: CANONICAL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
       '@id': 'https://www.bionixus.com/#organization',

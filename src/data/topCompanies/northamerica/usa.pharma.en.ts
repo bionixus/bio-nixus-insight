@@ -24,7 +24,7 @@ export const usaPharmaEn: CountryListicleConfig = {
   ogLocale: 'en_US',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-05',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in the USA (2026 Guide)',
   heroIntro:

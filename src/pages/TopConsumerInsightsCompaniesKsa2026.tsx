@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import {
   BIONIXUS_MR_HQ,
   BIONIXUS_MR_TYPE,
@@ -162,6 +163,11 @@ const faqItems = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-consumer-insights-companies-ksa-2026';
+
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-consumer-insights-companies-ksa-2026',
+  pageType: 'comparison',
+});
 const PATH = '/insights/top-consumer-insights-companies-ksa-2026';
 
 const breadcrumbItems = [
@@ -195,11 +201,7 @@ export default function TopConsumerInsightsCompaniesKsa2026() {
     url: CANONICAL,
     datePublished: '2026-08-14',
     dateModified: PAGE_LAST_MODIFIED,
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'Saudi Arabia' },
@@ -245,7 +247,7 @@ export default function TopConsumerInsightsCompaniesKsa2026() {
         <meta name="description" content={PAGE_DESCRIPTION} />
         <meta name="geo.region" content="SA" />
         <meta name="geo.placename" content="Saudi Arabia" />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
@@ -287,7 +289,7 @@ export default function TopConsumerInsightsCompaniesKsa2026() {
               </Link>{' '}
               guide for the broader multi-industry shortlist.
             </p>
-            <p className="text-sm text-muted-foreground mb-4">Published August 2026 · By Haidy Yahia · 12 min read</p>
+            <p className="text-sm text-muted-foreground mb-4">Published August 2026 · By {PAGE_AUTHOR.name} · 12 min read</p>
             <dl className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-sm border border-border rounded-xl p-4 bg-card mb-6">
               <div>
                 <dt className="text-muted-foreground">Founded</dt>

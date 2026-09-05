@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -183,6 +184,11 @@ const comparisonCriteria = [
 
 const PAGE_CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-canada-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-market-research-companies-canada-2026',
+  pageType: 'comparison',
+});
+
 export default function TopMarketResearchCompaniesCanada2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -204,7 +210,7 @@ export default function TopMarketResearchCompaniesCanada2026() {
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'Canada', sameAs: 'https://www.wikidata.org/wiki/Q16' },

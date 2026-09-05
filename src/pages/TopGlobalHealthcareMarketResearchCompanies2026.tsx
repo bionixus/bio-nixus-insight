@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -167,6 +168,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-global-healthcare-market-research-companies-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-global-healthcare-market-research-companies-2026',
+  pageType: 'comparison',
+});
+
 export default function TopGlobalHealthcareMarketResearchCompanies2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -188,11 +194,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
     url: CANONICAL,
     datePublished: '2026-06-12',
     dateModified: '2026-09-01',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
   };
@@ -228,7 +230,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
           name="description"
           content="Independent 2026 ranking of top global healthcare market research companies — BioNixus, IQVIA, McKinsey Health, L.E.K., Simon-Kucher, Kantar, and Ipsos compared."
         />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
@@ -275,7 +277,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
               We compare full-service primary research providers, data and analytics platforms, and strategy consultancies — evaluating global reach, therapy area depth, methodology, and value for pharmaceutical decision-makers.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By Haidy Yahia · 16 min read
+              Published June 2026 · By {PAGE_AUTHOR.name} · 16 min read
             </p>
           </div>
         </section>
@@ -460,7 +462,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
                 This guide profiles healthcare market research companies with demonstrated global pharmaceutical research capability as of 2026. Selection criteria: (1) active global operations, (2) pharmaceutical and healthcare research as a primary offering, (3) identifiable client engagements and track record. Firms ordered by full-service primary research capability.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Maintained by Haidy Yahia. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
+                Maintained by {PAGE_AUTHOR.name}. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>

@@ -105,7 +105,7 @@ export const NMPA_CLASS_III_TIMELINE_HARDCODED_POST: BlogPost = {
   seoMetaTitle: NMPA_CLASS_III_TIMELINE_META_TITLE,
   seoMetaDescription: NMPA_CLASS_III_TIMELINE_META_DESCRIPTION,
   seoCanonicalUrl: `https://www.bionixus.com/blog/${NMPA_CLASS_III_TIMELINE_SLUG}`,
-  authorName: 'Laura Williams',
+  authorName: 'Sarah Chen',
   authorTitle: 'Research Director, BioNixus Healthcare Market Research',
   publishedAtIso: NMPA_CLASS_III_TIMELINE_PUBLISHED_ISO,
   updatedAtIso: NMPA_CLASS_III_TIMELINE_UPDATED_ISO,

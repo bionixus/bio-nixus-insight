@@ -19,6 +19,9 @@ import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { BIONIXUS_POSITIONING_V2 } from '@/data/bionixusPositioningCopy';
+import { getEditorialAuthor } from '@/data/editorialAuthors';
+
+const HUB_AUTHOR = getEditorialAuthor({ path: '/healthcare-market-research', pageType: 'article' });
 
 const HUB_FAQS = [
   {
@@ -309,7 +312,7 @@ export default function HubPage() {
           description: (
             <>
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Last updated 3 September 2026 · Haidy Yahia
+                Last updated 3 September 2026 · {HUB_AUTHOR.name}
               </p>
               <p>{heroDescription}</p>
               <p className="mt-4 text-sm text-muted-foreground max-w-3xl">

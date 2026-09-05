@@ -12,6 +12,7 @@ import { CountryRankingCover } from '@/pages/country-ranking/CountryRankingCover
 import { CountryRankingPremiumStyles } from '@/pages/country-ranking/CountryRankingPremiumStyles';
 import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -187,6 +188,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-saudi-arabia-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
+  pageType: 'comparison',
+});
+
 export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -213,7 +219,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
     url: CANONICAL,
     datePublished: '2026-06-09',
     dateModified: '2026-08-14',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'Saudi Arabia' },

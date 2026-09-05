@@ -5,6 +5,7 @@ import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, 
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -236,6 +237,11 @@ const countryListicles = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-europe-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-healthcare-market-research-companies-europe-2026',
+  pageType: 'comparison',
+});
+
 export default function TopHealthcareMarketResearchCompaniesEurope2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -262,7 +268,7 @@ export default function TopHealthcareMarketResearchCompaniesEurope2026() {
     url: CANONICAL,
     datePublished: '2026-08-14',
     dateModified: '2026-08-14',
-    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
     about: { '@type': 'Place', name: 'Europe', sameAs: 'https://www.wikidata.org/wiki/Q46' },

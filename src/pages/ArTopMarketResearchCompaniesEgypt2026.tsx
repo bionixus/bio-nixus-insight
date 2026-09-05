@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -149,6 +150,11 @@ const faqItems = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/ar/insights/top-market-research-companies-egypt-2026';
+
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/ar/insights/top-market-research-companies-egypt-2026',
+  pageType: 'comparison',
+});
 const EN_CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-egypt-2026';
 
 export default function ArTopMarketResearchCompaniesEgypt2026() {
@@ -172,11 +178,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
     datePublished: '2026-04-18',
     dateModified: '2026-04-18',
     inLanguage: 'ar',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
   };
 
@@ -217,7 +219,7 @@ export default function ArTopMarketResearchCompaniesEgypt2026() {
           name="description"
           content="دليل 2026 لأفضل 5 شركات أبحاث سوق في مصر — مستهلكين وFMCG وتجزئة وقطاعات متعددة. مقارنة القدرات ومعايير اختيار الشريك."
         />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="ar" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={EN_CANONICAL} />

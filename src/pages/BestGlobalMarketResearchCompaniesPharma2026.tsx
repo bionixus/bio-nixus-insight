@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -167,6 +168,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/best-global-market-research-companies-pharma-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/best-global-market-research-companies-pharma-2026',
+  pageType: 'comparison',
+});
+
 export default function BestGlobalMarketResearchCompaniesPharma2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -188,11 +194,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
     url: CANONICAL,
     datePublished: '2026-06-12',
     dateModified: '2026-09-01',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
   };
@@ -228,7 +230,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
           name="description"
           content="Independent 2026 ranking of the best global market research companies for pharmaceutical clients — BioNixus, IQVIA, Kantar Health, Ipsos, L.E.K., Euromonitor, and OSIRIUM compared."
         />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
@@ -275,7 +277,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
               We compare full-service primary research providers, data platforms, syndicated intelligence, and strategy consultancies — evaluating pharma-specific methodology, research quality, regulatory-aware execution, and value for pharmaceutical decision-makers.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By Haidy Yahia · 15 min read
+              Published June 2026 · By {PAGE_AUTHOR.name} · 15 min read
             </p>
           </div>
         </section>
@@ -460,7 +462,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
                 This guide profiles market research companies with demonstrated pharmaceutical research capability and global operations as of 2026. Selection criteria: (1) pharma and life sciences as a primary focus, (2) active global operations with identifiable pharma clients, (3) methodology and quality evidence, (4) breadth of therapeutic area coverage. Firms ordered by pharma-specific research quality and full-service capability.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Maintained by Haidy Yahia. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
+                Maintained by {PAGE_AUTHOR.name}. BioNixus is profiled and transparent about its inclusion. For corrections,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>

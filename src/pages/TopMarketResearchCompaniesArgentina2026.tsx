@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import {
   BIONIXUS_MR_HQ,
   BIONIXUS_MR_TYPE,
@@ -28,6 +29,11 @@ interface FirmProfile {
 }
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-argentina-2026';
+
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-market-research-companies-argentina-2026',
+  pageType: 'comparison',
+});
 
 const firms: FirmProfile[] = [
   {
@@ -182,7 +188,7 @@ const articleSchema = {
   inLanguage: 'en',
   datePublished: '2026-01-15',
   dateModified: '2026-06-01',
-  author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization' },
+  author: personAuthorJsonLd(PAGE_AUTHOR),
   publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
 };

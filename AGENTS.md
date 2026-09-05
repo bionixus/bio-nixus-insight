@@ -47,3 +47,9 @@
 4. Every content change updates dateModified in schema and sitemap <lastmod>.
 5. Performance budget: LCP < 2.5s, CLS < 0.1, INP < 200ms on mobile.
 6. After each task, output a DEPLOY CHECKLIST of files changed.
+
+## Editorial authors
+- USA, Canada, Europe: European or American names from the Sanity author roster (`src/data/editorialAuthors.ts`). Never Arab names on those pages.
+- Middle East / GCC / MENA: keep Arab names (Mohammad Ashour, Dina Ibrahim).
+- Never attribute Mohammad Alsaadany on “best / top market research companies” comparison pages.
+- Blogs: retarget authors to this rule and republish unless GSC shows position ≤ 20 or clicks > 0.

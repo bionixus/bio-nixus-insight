@@ -19,6 +19,7 @@ import {
   rweCountryPath,
 } from '@/data/countryKeywordPages';
 import { SAUDI_ARABIA_COUNTRY_HUB_ENRICHMENT } from '@/data/saudiArabiaCountryHubEnrichment';
+import { getEditorialAuthorForCountrySlug } from '@/data/editorialAuthors';
 
 /**
  * Hub-and-spoke triad: /healthcare-market-research/{slug} ↔ /pharmaceutical-companies-{slug} ↔
@@ -252,6 +253,7 @@ export default function CountryPage() {
       ? config.keyStats.slice(0, 3).map((stat) => ({ value: stat.value, label: stat.label }))
       : evidenceSafeStats.slice(0, 3).map((stat) => ({ value: stat.value, label: stat.label }));
   const faqSectionId = `healthcare-mr-country-${config.slug}-faq`;
+  const countryAuthor = getEditorialAuthorForCountrySlug(config.slug);
 
   return (
     <>
@@ -281,8 +283,12 @@ export default function CountryPage() {
           statsCaption: config.slug === 'united-states' ? 'Healthcare sizing: CMS NHE projections 2025–34 (June 2026).' : '',
           badges:
             config.slug === 'united-states'
-              ? ['Published by BioNixus', 'Updated September 2026', 'CMS NHE 2026']
-              : undefined,
+              ? ['Published by BioNixus', 'Updated September 2026', 'CMS NHE 2026', countryAuthor ? `By ${countryAuthor.name}` : ''].filter(
+                  (badge): badge is string => Boolean(badge),
+                )
+              : countryAuthor
+                ? [`By ${countryAuthor.name}`]
+                : undefined,
           description: (
             <p>
               {config.slug === 'united-arab-emirates' ? (

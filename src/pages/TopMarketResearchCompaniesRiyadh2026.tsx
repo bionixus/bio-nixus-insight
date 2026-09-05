@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import {
   BIONIXUS_MR_HQ,
   BIONIXUS_MR_TYPE,
@@ -163,6 +164,11 @@ const comparisonCriteria = [
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-riyadh-2026';
 
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: '/insights/top-market-research-companies-riyadh-2026',
+  pageType: 'comparison',
+});
+
 export default function TopMarketResearchCompaniesRiyadh2026() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -184,11 +190,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
     url: CANONICAL,
     datePublished: '2026-06-09',
     dateModified: '2026-06-09',
-    author: {
-      '@type': 'Person',
-      name: 'Haidy Yahia',
-      affiliation: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    },
+    author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
   };
@@ -243,7 +245,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
         />
         <meta name="geo.region" content="SA-01" />
         <meta name="geo.placename" content="Riyadh" />
-        <meta name="author" content="Haidy Yahia" />
+        <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
@@ -299,7 +301,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
               research partner for the Kingdom&apos;s commercial and institutional capital.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By Haidy Yahia · 14 min read
+              Published June 2026 · By {PAGE_AUTHOR.name} · 14 min read
             </p>
             <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.riyadh} variant="general" />
           </div>
@@ -542,7 +544,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
                 and multi-industry depth.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                This guide is maintained by Haidy Yahia. BioNixus is profiled in this guide and is transparent about
+                This guide is maintained by {PAGE_AUTHOR.name}. BioNixus is profiled in this guide and is transparent about
                 its inclusion. For corrections or updates,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>

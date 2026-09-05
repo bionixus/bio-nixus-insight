@@ -26,7 +26,7 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
   seoMetaDescription:
     'Compare leading market research companies operating in Egypt — global networks (Kantar, Ipsos, NielsenIQ, IQVIA, YouGov) and BioNixus healthcare specialists.',
   seoCanonicalUrl: 'https://www.bionixus.com/blog/market-research-companies-egypt',
-  authorName: 'Laura Williams',
+  authorName: 'Dina Ibrahim',
   authorTitle: 'Research Director, BioNixus Healthcare Market Research',
   publishedAtIso: '2026-07-21T10:00:00.000Z',
   updatedAtIso: '2026-08-21T10:00:00.000Z',
