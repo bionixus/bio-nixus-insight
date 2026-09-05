@@ -3,10 +3,10 @@ import type { DirectoryHubInput } from '../types';
 export const masterHub: DirectoryHubInput = {
   kind: 'master',
   metaDescription:
-    'All BioNixus company directories: pharma, medical device, distributor, hospital, pharmacy, FMCG, retail, real estate and bank lists by country across MENA and beyond.',
+    'All BioNixus company directories: pharma, medtech, distributors, hospitals, FMCG, retail, developers, banks, automotive, construction, logistics and more — by country.',
   intro: [
     'BioNixus maintains named-account directories for the industries and countries where it fields primary research. Each directory lists 12–25 companies — local groups, multinationals, regional players and the distributors, operators or developers that sit between them — with the public register the list was checked against and the channel structure that decides how those companies sell.',
-    'The directories started with pharmaceutical companies in the Gulf and Egypt and now cover medical devices, pharmaceutical distributors, pharmacy chains, hospital groups, biotech, CROs, insurers, FMCG, retail, real estate developers, banks and more. They are not rankings. They are the account lists our analysts and field teams work from, published so brand, market-access and strategy teams can start a market brief with the right names.',
+    'The directories started with pharmaceutical companies in the Gulf and Egypt and now cover medical devices, pharmaceutical distributors, pharmacy chains, hospital groups, biotech, CROs, insurers, FMCG, retail, real estate developers, banks, automotive distributors, food-and-beverage manufacturers, construction, cosmetics, hospitality, logistics and industrial manufacturing. They are not rankings. They are the account lists our analysts and field teams work from, published so brand, market-access and strategy teams can start a market brief with the right names.',
     'Use the country hubs when you are entering or auditing one market across several industries. Use the company-type hubs when you run one category across many countries.',
   ],
   useCases: [

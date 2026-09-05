@@ -1,6 +1,7 @@
 /**
  * Entity hubs — one page per company type, listing every country directory for it.
  * Wave 2 adds pharmaceutical companies and pharmaceutical distributors.
+ * Wave 4 adds medical device companies and retail companies.
  */
 import type { DirectoryHubInput } from '../types';
 
@@ -56,7 +57,7 @@ export const pharmaceuticalDistributorsHub: DirectoryHubInput = {
   intro: [
     'Distribution is where most market-entry plans in the Middle East, Africa and South Asia succeed or stall, and it is the layer least visible in public data. This hub collects the BioNixus pharmaceutical distributor directories so a channel team can see, country by country, who holds the import licence, who runs the wholesale depots, which public buyer consolidates hospital demand and which logistics providers move cold-chain product.',
     'Each country page classifies participants by role — licensed agents and importers, wholesalers, pharmacy chains with central purchasing, government procurement bodies and third-party logistics providers — and explains the channel path from registration to the hospital pharmacy or retail counter. The pages sit alongside the pharmaceutical company, pharmacy chain and hospital group directories for the same country so the manufacturer, intermediary and end-account layers can be read together.',
-    'Coverage began with the Gulf states, Egypt, Iraq, Jordan, Morocco, Turkey and Pakistan, where agent selection and tender access are the questions BioNixus is briefed on most often. Priority markets in South Asia, Africa, Latin America and South-East Asia follow in later releases.',
+    'Coverage began with the Gulf states, Egypt, Iraq, Jordan, Morocco, Turkey and Pakistan, where agent selection and tender access are the questions BioNixus is briefed on most often. India, China, Brazil, Mexico, South Africa, Nigeria, Indonesia and Vietnam now sit beside those first pages so a multi-country channel brief can start from one hub.',
   ],
   useCases: [
     {
@@ -86,8 +87,8 @@ export const pharmaceuticalDistributorsHub: DirectoryHubInput = {
       a: 'Through pharmacy purchase-record audits, hospital pharmacist and procurement interviews, tender-award tracking and mystery-shopper availability checks in the main cities of each country.',
     },
     {
-      q: 'Which countries will be added next?',
-      a: 'India, China, Brazil, Mexico, South Africa, Nigeria, Indonesia and Vietnam are scheduled once BioNixus fieldwork in those channels reaches the depth needed to classify distributors with confidence.',
+      q: 'Which countries sit outside the first Gulf-and-Levant set?',
+      a: 'India, China, Brazil, Mexico, South Africa, Nigeria, Indonesia and Vietnam now have their own distributor directories, classified against the local import licence, public buyer and wholesale layer in each market.',
     },
   ],
 };
@@ -176,6 +177,94 @@ export const fmcgCompaniesHub: DirectoryHubInput = {
     {
       q: 'Can BioNixus run a study on a brand in one of these countries?',
       a: 'Yes. Shopper, retailer-audit, wholesaler and brand-health studies are scoped through the proposal form on each country page, with the market and category prefilled.',
+    },
+  ],
+};
+
+export const medicalDeviceCompaniesHub: DirectoryHubInput = {
+  kind: 'entity',
+  entity: 'medical-device-companies',
+  metaDescription:
+    'Medical device company directories by country: manufacturers, affiliates, distributors and public buyers across MENA, Europe, Asia and the Americas.',
+  intro: [
+    'Medical technology is a registration-and-tender business long before it is a brand story: a CT scanner, an implant or a glucometer still needs a local agent, a hospital procurement desk and a regulator that has seen the file. This hub gathers the BioNixus medical-device directories so a market-access or capital-equipment team can see, country by country, who manufactures, who distributes, who inspects and who buys.',
+    'Gulf pages sit beside the older hand-written Saudi, UAE, Japan and US directories; Wave 4 adds Germany, the UK, China, India, Korea, Singapore, Malaysia, Brazil, France, Italy, Spain, Canada, Australia, Switzerland and Mexico. Each spoke classifies multinational affiliates, local manufacturers, appointed distributors and the public buyer — UPA, NUPCO, NHS Supply Chain, SUS, IMSS, GKV — that actually awards volume.',
+    'Pair a country page with the hospital-group and pharmaceutical-distributor directories for the same market when the brief is a full account map rather than a manufacturer list. BioNixus fields those named accounts in-hospital; the directories are the list, not the study.',
+  ],
+  useCases: [
+    {
+      title: 'Agent and service-partner selection',
+      desc: 'Shortlist licensed distributors and service organisations by installed base and tender record before appointing an exclusive agent.',
+    },
+    {
+      title: 'Public-buyer mapping',
+      desc: 'See which body pools hospital capital equipment and consumables — and which local names win those awards — before a launch year.',
+    },
+    {
+      title: 'Installed-base and switching studies',
+      desc: 'Turn a country list into a biomedical-engineer, theatre-nurse or lab-manager tracker against every named manufacturer on the page.',
+    },
+  ],
+  faq: [
+    {
+      q: 'How is a company chosen for a medical-device directory?',
+      a: 'It holds a device licence or a commercial presence in the country, appears in public tenders or hospital installed-base work, and recurs in BioNixus biomedical and procurement interviews. Pure trading houses without a clinical footprint are left off.',
+    },
+    {
+      q: 'Why are public buyers listed among manufacturers?',
+      a: 'In most covered markets a single procurement agency or insurance fund decides more monthly volume than any private hospital group, so it belongs on the first map a capital-equipment team draws.',
+    },
+    {
+      q: 'Are the Saudi, UAE, Japan and US pages in this hub?',
+      a: 'Yes. Those four URLs predate the registry and were not recreated. This hub links to them beside the new country spokes.',
+    },
+    {
+      q: 'Can BioNixus study a specific device company in one of these countries?',
+      a: 'Yes. Account-level studies — hospital switching, service-level, tender tracking and surgeon preference — are scoped through the proposal form on each country page.',
+    },
+  ],
+};
+
+export const retailCompaniesHub: DirectoryHubInput = {
+  kind: 'entity',
+  entity: 'retail-companies',
+  metaDescription:
+    'Retail company directories by country: hypermarkets, discounters, co-ops, chemist banners and traditional grocers across the Gulf, Levant, Africa and Turkey.',
+  intro: [
+    'Retail directories name the banners a shopper can actually walk into — not the factories that fill the trolley. Egypt, the UAE, Saudi Arabia, Kuwait, Oman and Qatar already have live retail pages from the first industry wave; those URLs are unchanged. This hub adds Bahrain, Jordan, Morocco, Iraq, Turkey, Pakistan, Nigeria and South Africa so a regional brand plan can be read as a banner set rather than as a country average.',
+    'Each country page classifies destination hypers, hard discounters, local supermarket groups, co-ops, chemist banners and the traditional grocer or open-market layer that still takes the weekday trip. FMCG manufacturer directories sit on a separate URL when the brief is plants and SKUs rather than facings.',
+    'Nielsen, Circana and their peers remain the panel. BioNixus is the fieldwork layer that cuts those banners by mission, catchment and SKU. Use a country page when the question is which account held the pack, not which category grew.',
+  ],
+  useCases: [
+    {
+      title: 'Banner-level shopper design',
+      desc: 'Split samples by format — hard discount, hypermarket, co-op, chemist, traditional grocer — instead of one “modern trade” cell.',
+    },
+    {
+      title: 'Listing and promotion sequencing',
+      desc: 'See which banners actually set organised-grocery tempo in each country before a launch or a pack-down.',
+    },
+    {
+      title: 'Traditional-trade coverage checks',
+      desc: 'Commission grocer, souq and cash-and-carry audits against the banners that restock them, not against a national average.',
+    },
+  ],
+  faq: [
+    {
+      q: 'How is a retail directory different from an FMCG directory?',
+      a: 'Retail pages list banners and formats. FMCG pages list manufacturers and the trade that moves their packs. A BIM-versus-Carrefour brief belongs here; a Cosumar-versus-Unilever brief belongs on the FMCG page.',
+    },
+    {
+      q: 'Why are some Gulf countries missing from the new files?',
+      a: 'Egypt, the UAE, Saudi Arabia, Kuwait, Oman and Qatar already have live /retail-companies-{country} pages. Those URLs were not recreated. This hub links to them alongside the new spokes.',
+    },
+    {
+      q: 'Do pharmacy chains belong on a grocery directory?',
+      a: 'When the SKU is personal care, baby or OTC-adjacent, yes — chemist banners take those missions. Dedicated pharmacy-chain directories exist where BioNixus fields that channel as its own account set.',
+    },
+    {
+      q: 'Can BioNixus run a shopper study against these banners?',
+      a: 'Yes. Shopper, retailer-audit and mystery-shop studies are scoped through the proposal form on each country page, with the market and banners named.',
     },
   ],
 };
