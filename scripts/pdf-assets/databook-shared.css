@@ -64,17 +64,19 @@ html, body {
   flex-direction: column;
 }
 .page-body {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   min-height: 0;
 }
 .fill {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   min-height: 0;
-  margin-top: 8px;
+  margin-top: 6px;
+  background: var(--navy);
+  border: 1px solid var(--navy);
 }
 
 .doc-topbar {
@@ -139,21 +141,23 @@ tr:nth-child(even) td { background: var(--paper); }
 
 /* Premium fill-panel charts — stretch to eat leftover page height */
 .chart-card {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 0;
   background: var(--paper-warm);
-  border: 1px solid var(--line);
-  padding: 8px 11px 9px;
+  border: 0;
+  padding: 8px 11px 8px;
+  overflow: hidden;
 }
 .chart-card h3 { margin: 0 0 6px; }
 .chart-note { font-size: 8px; color: var(--muted); margin: 5px 0 0; font-style: italic; }
 .chart-stage {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   display: flex;
   align-items: stretch;
-  min-height: 32mm;
+  width: 100%;
+  min-height: 38mm;
   gap: 14px;
 }
 .chart-stage.split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; }
@@ -162,8 +166,8 @@ tr:nth-child(even) td { background: var(--paper); }
   display: flex;
   align-items: stretch;
   gap: 8px;
-  flex: 1;
-  min-height: 0;
+  flex: 0 0 auto;
+  min-height: 42mm;
   padding-top: 4px;
 }
 .vbar {
@@ -180,7 +184,7 @@ tr:nth-child(even) td { background: var(--paper); }
   background: var(--line-soft);
   display: flex;
   align-items: flex-end;
-  min-height: 28mm;
+  min-height: 32mm;
 }
 .vbar-fill {
   width: 100%;
@@ -190,10 +194,48 @@ tr:nth-child(even) td { background: var(--paper); }
 .vbar-v { font-family: var(--serif); font-size: 10px; font-weight: 700; color: var(--navy); margin-top: 4px; line-height: 1.1; }
 .vbar-l { font-size: 7.5px; color: var(--muted); text-align: center; letter-spacing: 0.02em; line-height: 1.2; margin-top: 2px; }
 
-.hbars { display: flex; flex-direction: column; justify-content: space-evenly; flex: 1; min-height: 0; gap: 5px; }
-.hbar { display: grid; grid-template-columns: 92px 1fr 58px; gap: 8px; align-items: center; font-size: 9px; }
-.hbar-track { height: 11px; background: #e6ebf0; }
-.hbar-fill { height: 11px; background: linear-gradient(90deg, var(--navy), var(--blue-accent)); }
+.fill-facts {
+  flex: 1 1 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  align-content: stretch;
+  background: var(--navy);
+  color: #fff;
+  min-height: 28mm;
+}
+.fill-facts div {
+  padding: 10px 12px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fill-facts div:nth-child(4n) { border-right: 0; }
+.fill-facts div:nth-child(-n+4) { border-top: 0; }
+.fill-facts b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.15;
+}
+.fill-facts span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.hbars { display: flex; flex-direction: column; justify-content: flex-start; flex: 1 1 auto; width: 100%; min-width: 0; min-height: 28mm; gap: 7px; }
+.hbar { display: grid; grid-template-columns: 92px 1fr 58px; gap: 8px; align-items: center; font-size: 9px; width: 100%; }
+.hbar-track { height: 12px; background: #e6ebf0; }
+.hbar-fill { height: 12px; background: linear-gradient(90deg, var(--navy), var(--blue-accent)); }
 .hbar-fill.gold { background: linear-gradient(90deg, var(--navy-mid), var(--gold)); }
 .hbar .lab { color: var(--navy); font-weight: 600; }
 .hbar .val { color: var(--muted); text-align: right; font-weight: 600; }
@@ -231,7 +273,9 @@ tr:nth-child(even) td { background: var(--paper); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  flex: 1;
+  flex: 0 0 auto;
+  min-height: 28mm;
+  align-content: stretch;
 }
 .clock-cell {
   background: var(--white);
@@ -261,7 +305,8 @@ tr:nth-child(even) td { background: var(--paper); }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 7px;
-  flex: 1;
+  flex: 0 0 auto;
+  align-content: stretch;
 }
 .tile {
   background: var(--white);

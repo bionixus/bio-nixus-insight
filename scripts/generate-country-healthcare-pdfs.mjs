@@ -1,3 +1,9 @@
+/**
+ * Country healthcare sample PDFs.
+ * Fill-the-page + chart rules: scripts/pdf-assets/README.md
+ * Every A4 page must fill 297mm (no leftover white bands). Charts only from
+ * published live-page figures — never invent $ shares, rebates, or beds.
+ */
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
