@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { Share2, BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, BarChart3, Truck, Users } from 'lucide-react';
+import { BookOpen, Building2, Globe, ShieldCheck, Pill, TrendingUp, Truck, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { Helmet } from 'react-helmet-async';
@@ -15,6 +15,7 @@ import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuic
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
+import { LegacyDirectoryChrome } from '@/components/seo/DirectoryPremium';
 import {
   ReportConsultationBand,
   ReportContentWithAside,
@@ -74,7 +75,7 @@ const SaudiPharmaCompanies = () => {
   const ogTitle = "Top 20 Pharmaceutical Companies in Saudi Arabia (2026 List)";
   const ogDescription = "2026 ranking of pharmaceutical companies in Saudi Arabia — SPIMACO, Tabuk, MNCs, NUPCO tenders and localization. By BioNixus, KSA healthcare research experts.";
   return (
-    <div className="min-h-screen bg-background">
+    <div className="directory-page min-h-screen">
       <Helmet>
         <title>Top 20 Pharmaceutical Companies in Saudi Arabia (2026 List)</title>
         <meta name="description" content="2026 ranking of pharmaceutical companies in Saudi Arabia — SPIMACO, Tabuk, MNCs, NUPCO tenders and localization. By BioNixus, KSA healthcare research experts." />        <link rel="canonical" href={citationUrl} />
@@ -95,16 +96,41 @@ const SaudiPharmaCompanies = () => {
       <Navbar />
       <ReportReadingProgress progressId="pharma-guide-rp-saudi-arabia" />
       <main>
-        <div className="section-padding pt-24 pb-4"><div className="container-wide"><div className="flex items-center gap-2 text-sm text-muted-foreground mb-6"><Link to={basePath} className="hover:text-primary transition-colors">Home</Link><span>/</span><Link to="/resources" className="hover:text-primary transition-colors">Resources</Link><span>/</span><span className="text-foreground">Pharmaceutical Companies in Saudi Arabia</span></div></div></div>
-
-        <section className="section-padding pt-0 pb-12"><div className="container-wide max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"><Building2 className="w-4 h-4" />Industry Guide 2026</div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">Pharmaceutical Companies in Saudi Arabia</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">Saudi Arabia's pharmaceutical market is valued at approximately USD 12.4 billion in 2026, the largest in the GCC, with around 19 licensed local manufacturers alongside multinational offices and major distributors. Pharmaceutical companies in Saudi Arabia lead GCC and MENA spend — use <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research</Link> for Kingdom and Gulf programmes. For market research firms in KSA supporting these manufacturers, see our <Link to="/insights/top-market-research-companies-saudi-arabia-2026" className="text-primary font-medium hover:underline">2026 ranking of market research firms KSA</Link>. This guide covers major pharma companies, SFDA regulatory framework, Vision 2030 manufacturing targets, market data, distribution channels, and strategic opportunities.</p>
-          <p className="text-sm text-muted-foreground">Last updated: February 2026 &middot; Sources: SFDA, BioNixus MEA, SPIMACO, Jamjoom Pharma, Al Jazira Capital, company filings</p>
-          <div className="mt-8 p-5 bg-muted/50 border border-border rounded-xl"><div className="flex items-start gap-3"><Share2 className="w-5 h-5 text-primary mt-0.5 shrink-0" /><div><p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p><p className="text-sm text-muted-foreground leading-relaxed">BioNixus. &quot;Pharmaceutical Companies in Saudi Arabia: Complete Industry Guide 2026.&quot; BioNixus Healthcare Market Research, Feb. 2026, <a href={citationUrl} className="text-primary hover:underline break-all">{citationUrl}</a>.<br />Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CC BY 4.0</a> — free to share and adapt with attribution.</p></div></div></div>
-          <ReportEarlyCtaBar config={PHARMA_CONVERSION} className="mt-8" />
-        </div></section>
+        <LegacyDirectoryChrome
+          breadcrumbs={[
+            { name: 'Home', href: basePath },
+            { name: 'Resources', href: '/resources' },
+            { name: 'Pharmaceutical Companies in Saudi Arabia', href: '/pharmaceutical-companies-saudi-arabia' },
+          ]}
+          h1="Pharmaceutical Companies in Saudi Arabia"
+          lead={
+            <>
+              Saudi Arabia&apos;s pharmaceutical market is valued at approximately USD 12.4 billion in 2026, the largest in the GCC, with around 19 licensed local manufacturers alongside multinational offices and major distributors. Pharmaceutical companies in Saudi Arabia lead GCC and MENA spend — use <Link to="/healthcare-market-research">healthcare market research</Link> for Kingdom and Gulf programmes. For market research firms in KSA supporting these manufacturers, see our <Link to="/insights/top-market-research-companies-saudi-arabia-2026">2026 ranking of market research firms KSA</Link>. This guide covers major pharma companies, SFDA regulatory framework, Vision 2030 manufacturing targets, market data, distribution channels, and strategic opportunities.
+            </>
+          }
+          metaLine="Last updated: February 2026 · Sources: SFDA, BioNixus MEA, SPIMACO, Jamjoom Pharma, Al Jazira Capital, company filings"
+          stats={[
+            { value: '$12.4B', label: 'Pharmaceutical market value' },
+            { value: '11.1%', label: 'Year-over-year growth' },
+            { value: '36.9M', label: 'Population' },
+            { value: '$336', label: 'Pharma spending per capita' },
+          ]}
+          jumpItems={[
+            { href: '#pharma-companies-quick-answer', label: 'Answer' },
+            { href: '#market-overview', label: 'Overview' },
+            { href: '#top-companies', label: 'Companies' },
+            { href: '#companies-by-category', label: 'Categories' },
+            { href: '#regulatory-landscape', label: 'Regulator' },
+            { href: '#distribution-channels', label: 'Channels' },
+            { href: '#growth-drivers', label: 'Drivers' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+          proposalLabel="Request a Saudi Arabia proposal"
+          citationUrl={citationUrl}
+          citeHeadline="Pharmaceutical Companies in Saudi Arabia: Complete Industry Guide 2026"
+          citeMonthYear="Feb. 2026"
+        />
+        <ReportEarlyCtaBar config={PHARMA_CONVERSION} />
 
         <PharmaCompaniesQuickAnswer
           country="saudi-arabia"
@@ -115,26 +141,6 @@ const SaudiPharmaCompanies = () => {
         />
 
         <ReportContentWithAside config={PHARMA_CONVERSION}>
-        <section className="section-padding py-12 bg-primary text-primary-foreground"><div className="container-wide max-w-5xl mx-auto"><div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div><p className="text-3xl md:text-4xl font-display font-bold">$12.4B</p><p className="text-primary-foreground/70 text-sm mt-1">Pharmaceutical market value</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">11.1%</p><p className="text-primary-foreground/70 text-sm mt-1">Year-over-year growth</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">36.9M</p><p className="text-primary-foreground/70 text-sm mt-1">Population</p></div>
-          <div><p className="text-3xl md:text-4xl font-display font-bold">$336</p><p className="text-primary-foreground/70 text-sm mt-1">Pharma spending per capita</p></div>
-        </div></div></section>
-
-        <section className="section-padding py-8 bg-muted/30"><div className="container-wide max-w-5xl mx-auto">
-          <h2 className="text-lg font-display font-semibold text-foreground mb-4">In this guide</h2>
-          <div className="grid md:grid-cols-2 gap-2">
-            <a href="#market-overview" className="text-sm text-primary hover:underline flex items-center gap-2"><BarChart3 className="w-4 h-4" /> Saudi Pharmaceutical Market Overview</a>
-            <a href="#top-companies" className="text-sm text-primary hover:underline flex items-center gap-2"><Building2 className="w-4 h-4" /> Top Pharmaceutical Companies</a>
-            <a href="#companies-by-category" className="text-sm text-primary hover:underline flex items-center gap-2"><Users className="w-4 h-4" /> Companies by Category</a>
-            <a href="#regulatory-landscape" className="text-sm text-primary hover:underline flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> SFDA Regulatory Landscape</a>
-            <a href="#distribution-channels" className="text-sm text-primary hover:underline flex items-center gap-2"><Truck className="w-4 h-4" /> Distribution Channels</a>
-            <a href="#growth-drivers" className="text-sm text-primary hover:underline flex items-center gap-2"><TrendingUp className="w-4 h-4" /> Vision 2030 &amp; Growth Drivers</a>
-            <a href="#bionixus-support" className="text-sm text-primary hover:underline flex items-center gap-2"><Globe className="w-4 h-4" /> How BioNixus Supports Pharma in KSA</a>
-            <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2"><BookOpen className="w-4 h-4" /> Frequently Asked Questions</a>
-          </div>
-        </div></section>
 
         <section className="section-padding py-16" id="market-overview"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Saudi Arabia Pharmaceutical Market Overview</h2>

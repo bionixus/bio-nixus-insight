@@ -47,7 +47,7 @@ export function PharmaCompaniesQuickAnswer({
 
   return (
     <section
-      className={`${PHARMA_GUIDE_SECTION_X} py-10 bg-muted/25 border-y border-border/60`}
+      className={`${PHARMA_GUIDE_SECTION_X} py-10 directory-ivory border-y border-[#EDE9E3]`}
       id="pharma-companies-quick-answer"
       aria-labelledby="pharma-quick-answer-heading"
     >

@@ -100,6 +100,54 @@ import { healthInsurersKuwait } from './health-insurers/kuwait';
 import { healthInsurersQatar } from './health-insurers/qatar';
 import { healthInsurersTurkey } from './health-insurers/turkey';
 
+// Wave 3 — banks (GCC, Egypt, Turkey, US, G5 Europe)
+import { banksSaudiArabia } from './banks/saudi-arabia';
+import { banksUae } from './banks/uae';
+import { banksEgypt } from './banks/egypt';
+import { banksKuwait } from './banks/kuwait';
+import { banksQatar } from './banks/qatar';
+import { banksOman } from './banks/oman';
+import { banksBahrain } from './banks/bahrain';
+import { banksTurkey } from './banks/turkey';
+import { banksUsa } from './banks/usa';
+import { banksUk } from './banks/uk';
+import { banksGermany } from './banks/germany';
+import { banksFrance } from './banks/france';
+import { banksItaly } from './banks/italy';
+import { banksSpain } from './banks/spain';
+
+// Wave 3 — automotive distributors (GCC, Egypt, Turkey)
+import { automotiveDistributorsSaudiArabia } from './automotive-distributors/saudi-arabia';
+import { automotiveDistributorsUae } from './automotive-distributors/uae';
+import { automotiveDistributorsEgypt } from './automotive-distributors/egypt';
+import { automotiveDistributorsKuwait } from './automotive-distributors/kuwait';
+import { automotiveDistributorsQatar } from './automotive-distributors/qatar';
+import { automotiveDistributorsOman } from './automotive-distributors/oman';
+import { automotiveDistributorsBahrain } from './automotive-distributors/bahrain';
+import { automotiveDistributorsTurkey } from './automotive-distributors/turkey';
+
+// Wave 3 — food & beverage manufacturers (not the grocery FMCG basket)
+import { foodBeverageCompaniesSaudiArabia } from './food-beverage-companies/saudi-arabia';
+import { foodBeverageCompaniesUae } from './food-beverage-companies/uae';
+import { foodBeverageCompaniesEgypt } from './food-beverage-companies/egypt';
+import { foodBeverageCompaniesKuwait } from './food-beverage-companies/kuwait';
+import { foodBeverageCompaniesQatar } from './food-beverage-companies/qatar';
+import { foodBeverageCompaniesOman } from './food-beverage-companies/oman';
+import { foodBeverageCompaniesBahrain } from './food-beverage-companies/bahrain';
+import { foodBeverageCompaniesTurkey } from './food-beverage-companies/turkey';
+
+// Wave 3 — FMCG expansion (do not recreate Egypt/UAE/KSA/Kuwait/Oman/Qatar)
+import { fmcgCompaniesTurkey } from './fmcg-companies/turkey';
+import { fmcgCompaniesBahrain } from './fmcg-companies/bahrain';
+import { fmcgCompaniesNigeria } from './fmcg-companies/nigeria';
+import { fmcgCompaniesPakistan } from './fmcg-companies/pakistan';
+import { fmcgCompaniesIndonesia } from './fmcg-companies/indonesia';
+import { fmcgCompaniesMexico } from './fmcg-companies/mexico';
+import { fmcgCompaniesSouthAfrica } from './fmcg-companies/south-africa';
+import { fmcgCompaniesKenya } from './fmcg-companies/kenya';
+import { fmcgCompaniesMorocco } from './fmcg-companies/morocco';
+import { fmcgCompaniesJordan } from './fmcg-companies/jordan';
+
 export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   hospitalGroupsSaudiArabia,
   hospitalGroupsUae,
@@ -184,4 +232,44 @@ export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   healthInsurersKuwait,
   healthInsurersQatar,
   healthInsurersTurkey,
+  banksSaudiArabia,
+  banksUae,
+  banksEgypt,
+  banksKuwait,
+  banksQatar,
+  banksOman,
+  banksBahrain,
+  banksTurkey,
+  banksUsa,
+  banksUk,
+  banksGermany,
+  banksFrance,
+  banksItaly,
+  banksSpain,
+  automotiveDistributorsSaudiArabia,
+  automotiveDistributorsUae,
+  automotiveDistributorsEgypt,
+  automotiveDistributorsKuwait,
+  automotiveDistributorsQatar,
+  automotiveDistributorsOman,
+  automotiveDistributorsBahrain,
+  automotiveDistributorsTurkey,
+  foodBeverageCompaniesSaudiArabia,
+  foodBeverageCompaniesUae,
+  foodBeverageCompaniesEgypt,
+  foodBeverageCompaniesKuwait,
+  foodBeverageCompaniesQatar,
+  foodBeverageCompaniesOman,
+  foodBeverageCompaniesBahrain,
+  foodBeverageCompaniesTurkey,
+  fmcgCompaniesTurkey,
+  fmcgCompaniesBahrain,
+  fmcgCompaniesNigeria,
+  fmcgCompaniesPakistan,
+  fmcgCompaniesIndonesia,
+  fmcgCompaniesMexico,
+  fmcgCompaniesSouthAfrica,
+  fmcgCompaniesKenya,
+  fmcgCompaniesMorocco,
+  fmcgCompaniesJordan,
 ];

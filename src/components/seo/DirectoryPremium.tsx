@@ -265,6 +265,89 @@ export function DirectoryDriverCard({ title, desc }: { title: string; desc: stri
   );
 }
 
+export function DirectoryCiteBox({
+  url,
+  headline,
+  monthYear,
+}: {
+  url: string;
+  headline: string;
+  monthYear: string;
+}) {
+  return (
+    <DirectorySection id="cite" eyebrow="Attribution" surface="ivory">
+      <div className="premium-card p-5">
+        <p className="font-semibold text-foreground text-sm mb-1">Cite this guide</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          BioNixus. &quot;{headline}.&quot; BioNixus Healthcare Market Research, {monthYear},{' '}
+          <a href={url} className="text-primary hover:underline break-all">
+            {url}
+          </a>
+          .<br />
+          Licensed under{' '}
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            CC BY 4.0
+          </a>{' '}
+          — free to share and adapt with attribution.
+        </p>
+      </div>
+    </DirectorySection>
+  );
+}
+
+export function LegacyDirectoryChrome({
+  breadcrumbs,
+  kicker = 'Industry Guide 2026',
+  h1,
+  lead,
+  metaLine,
+  stats,
+  jumpItems,
+  proposalHref = '#request-proposal',
+  proposalLabel,
+  browseHref = '#top-companies',
+  citationUrl,
+  citeHeadline,
+  citeMonthYear,
+}: {
+  breadcrumbs: DirectoryBreadcrumb[];
+  kicker?: string;
+  h1: string;
+  lead: ReactNode;
+  metaLine: string;
+  stats: { value: string; label: string }[];
+  jumpItems: DirectoryJumpItem[];
+  proposalHref?: string;
+  proposalLabel: string;
+  browseHref?: string;
+  citationUrl: string;
+  citeHeadline: string;
+  citeMonthYear: string;
+}) {
+  return (
+    <>
+      <div data-hero-lcp>
+        <DirectoryHero
+          breadcrumbs={breadcrumbs}
+          kicker={kicker}
+          h1={h1}
+          lead={lead}
+          metaLine={metaLine}
+          stats={stats}
+          actions={
+            <>
+              <DirectoryGoldLink to={proposalHref}>{proposalLabel}</DirectoryGoldLink>
+              <DirectoryOutlineLink href={browseHref}>Browse the companies</DirectoryOutlineLink>
+            </>
+          }
+        />
+      </div>
+      <DirectoryJumpNav items={jumpItems} />
+      <DirectoryCiteBox url={citationUrl} headline={citeHeadline} monthYear={citeMonthYear} />
+    </>
+  );
+}
+
 export function DirectoryFaqList({ items }: { items: { q: string; a: string }[] }) {
   return (
     <div className="premium-faq space-y-3">

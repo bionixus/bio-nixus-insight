@@ -501,6 +501,64 @@
     inset: 0;
     background: radial-gradient(ellipse 60% 50% at 90% 10%, rgba(201, 168, 76, 0.16), transparent 55%);
   }
+  /* Leftover handwritten directory bodies inherit the editorial shell */
+  .directory-page table:not(.directory-table) {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.875rem;
+  }
+  .directory-page table:not(.directory-table) thead th {
+    background: #06101F;
+    color: #FFFEFB;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.85rem 1rem;
+    letter-spacing: 0.01em;
+  }
+  .directory-page table:not(.directory-table) thead th:first-child {
+    border-top-left-radius: 12px;
+  }
+  .directory-page table:not(.directory-table) thead th:last-child {
+    border-top-right-radius: 12px;
+  }
+  .directory-page table:not(.directory-table) tbody td {
+    padding: 0.95rem 1rem;
+    border-bottom: 1px solid #EDE9E3;
+    vertical-align: top;
+    background: #FFFEFB;
+  }
+  .directory-page table:not(.directory-table) tbody tr:nth-child(even) td {
+    background: #F8F5F0;
+  }
+  .directory-page .bg-card {
+    background-color: #FFFEFB;
+    border-color: #EDE9E3;
+    box-shadow: 0 1px 0 rgba(6, 16, 31, 0.03);
+  }
+  .directory-page .bg-muted\/30,
+  .directory-page .bg-muted\/25,
+  .directory-page .bg-muted\/50 {
+    background-color: #F4F2ED;
+  }
+  .directory-page main > section.section-padding > .container-wide > h2,
+  .directory-page main section[id] > .container-wide > h2 {
+    font-family: var(--font-display);
+    color: #14233E;
+  }
+  .directory-page details {
+    border: 1px solid #EDE9E3;
+    background: #FFFEFB;
+    border-radius: 16px;
+    padding: 0.15rem 0;
+  }
+  .directory-page details summary {
+    padding: 1rem 1.15rem;
+  }
+  .directory-page details[open] {
+    box-shadow: 0 1px 0 rgba(6, 16, 31, 0.03);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .directory-tile,
     .directory-tile:hover,
