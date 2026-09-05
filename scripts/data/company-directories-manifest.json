@@ -1,6 +1,261 @@
 {
-  "generatedAt": "2026-09-04T13:39:13.128Z",
+  "generatedAt": "2026-09-05T11:01:51.091Z",
   "directories": [
+    {
+      "path": "/biotech-companies-egypt",
+      "entity": "biotech-companies",
+      "country": "egypt",
+      "title": "Top 16 Biotech Companies in Egypt (2026)",
+      "metaDescription": "Biotech companies in Egypt: Eva Pharma, Pharco, VACSERA, Minapharm, EIPICO, 10th of Ramadan plants and the EDA — biologics and vaccines.",
+      "h1": "Biotech Companies in Egypt",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Egyptian Drug Authority (EDA) — registered biological products and licensed manufacturing establishments",
+        "url": "https://www.edaegypt.gov.eg",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/biotech-companies-kuwait",
+      "entity": "biotech-companies",
+      "country": "kuwait",
+      "title": "Top 16 Biotech Companies in Kuwait (2026)",
+      "metaDescription": "Biotech in Kuwait: Dasman Diabetes Institute, KFAS labs, Kuwait University HSC, MOH and regional biologics offices — research, not discovery.",
+      "h1": "Biotech Companies in Kuwait",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Kuwait Ministry of Health — Drug and Food Control and Central Medical Stores (biologics registration and public procurement)",
+        "url": "https://www.moh.gov.kw",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/biotech-companies-saudi-arabia",
+      "entity": "biotech-companies",
+      "country": "saudi-arabia",
+      "title": "Top 18 Biotech Companies in Saudi Arabia (2026)",
+      "metaDescription": "Biotech companies in Saudi Arabia: Lifera, SaudiVax, Sudair Pharma, Jamjoom, Arabio, KFSHRC, KAUST spin-outs, SFDA — biologics, vaccines, cell therapy.",
+      "h1": "Biotech Companies in Saudi Arabia",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Saudi Food and Drug Authority (SFDA) — registered biological products and licensed drug establishments",
+        "url": "https://www.sfda.gov.sa",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/biotech-companies-turkey",
+      "entity": "biotech-companies",
+      "country": "turkey",
+      "title": "Top 16 Biotech Companies in Turkey (2026)",
+      "metaDescription": "Biotech companies in Turkey: Abdi İbrahim, DEVA, Koçak Farma, Nobel İlaç, TİTCK and TÜBİTAK MAM — vaccines, biosimilars, domestic plants.",
+      "h1": "Biotech Companies in Turkey",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Turkish Medicines and Medical Devices Agency (TİTCK) — registered biological products and licensed establishments",
+        "url": "https://www.titck.gov.tr",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/biotech-companies-uae",
+      "entity": "biotech-companies",
+      "country": "uae",
+      "title": "Top 17 Biotech Companies in UAE (2026)",
+      "metaDescription": "UAE biotech: M42, PureHealth, Hayat Biotech, Julphar, ADSCC, NYUAD, Khalifa University, MOHAP and DoH — hub, capital and regulation.",
+      "h1": "Biotech Companies in the UAE",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Ministry of Health and Prevention (MOHAP) — registered biological products and licensed establishments",
+        "url": "https://mohap.gov.ae",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cro-companies-egypt",
+      "entity": "cro-companies",
+      "country": "egypt",
+      "title": "Top 16 Clinical Research Organizations in Egypt (2026)",
+      "metaDescription": "CROs in Egypt: IQVIA, ClinServ, ARC, GRC, RAY, NRC, university hospitals and the EDA — trial sites, bioequivalence, ethics.",
+      "h1": "Clinical Research Organizations in Egypt",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Egyptian Drug Authority (EDA) — clinical trial authorisation and inspected bioequivalence establishments",
+        "url": "https://www.edaegypt.gov.eg",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cro-companies-saudi-arabia",
+      "entity": "cro-companies",
+      "country": "saudi-arabia",
+      "title": "Top 20 Clinical Research Organizations in Saudi Arabia (2026)",
+      "metaDescription": "CROs in Saudi Arabia: IQVIA, ICON, Parexel, PPD, Syneos, ArabMed CRO, ClinArt MENA, KFSHRC, KAIMRC and the SFDA — service scope, sites and approval routes.",
+      "h1": "Clinical Research Organizations in Saudi Arabia",
+      "companies": 20,
+      "regulatorSource": {
+        "name": "Saudi Food and Drug Authority (SFDA) — Clinical Trials Department and Saudi Clinical Trials Registry (SCTR)",
+        "url": "https://www.sfda.gov.sa",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cro-companies-turkey",
+      "entity": "cro-companies",
+      "country": "turkey",
+      "title": "Top 17 Clinical Research Organizations in Turkey (2026)",
+      "metaDescription": "CROs in Turkey: IQVIA, Monitor CRO, Omega, Klinar, Koç, Hacettepe and TİTCK — service scope, hospital sites and approvals.",
+      "h1": "Clinical Research Organizations in Turkey",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Turkish Medicines and Medical Devices Agency (TİTCK) — clinical trials department and electronic submissions",
+        "url": "https://www.titck.gov.tr",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cro-companies-uae",
+      "entity": "cro-companies",
+      "country": "uae",
+      "title": "Top 17 Clinical Research Organizations in UAE (2026)",
+      "metaDescription": "CROs in the UAE: IQVIA, ICON, Parexel, PPD, ClinArt MENA, DHA, DoH and Cleveland Clinic Abu Dhabi — sites, ethics, approvals.",
+      "h1": "Clinical Research Organizations in the UAE",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Dubai Health Authority — research permissions and licensed facilities (with DoH Abu Dhabi and DHCR as sister regimes)",
+        "url": "https://www.dha.gov.ae",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/health-insurers-egypt",
+      "entity": "health-insurers",
+      "country": "egypt",
+      "title": "Top 16 Health Insurance Companies in Egypt (2026)",
+      "metaDescription": "Health insurers in Egypt: AXA, MetLife, Allianz, GIG, UHIA, HIO and the FRA — universal rollout versus private medical cover.",
+      "h1": "Health Insurance Companies in Egypt",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Universal Health Insurance Authority (UHIA) — statutory public scheme, with the Financial Regulatory Authority supervising private writers",
+        "url": "https://www.uhia.gov.eg",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/health-insurers-kuwait",
+      "entity": "health-insurers",
+      "country": "kuwait",
+      "title": "Top 16 Health Insurance Companies in Kuwait (2026)",
+      "metaDescription": "Health insurers in Kuwait: GIG, Wethaq, Gulf Insurance, Dhaman, AFYA, MOH and the IRU — public payer, expats and takaful.",
+      "h1": "Health Insurance Companies in Kuwait",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Insurance Regulatory Unit (IRU) — licensed insurers and takaful firms, with the Ministry of Health as public payer",
+        "url": "https://www.iru.gov.kw",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/health-insurers-qatar",
+      "entity": "health-insurers",
+      "country": "qatar",
+      "title": "Top 16 Health Insurance Companies in Qatar (2026)",
+      "metaDescription": "Health insurers in Qatar: QLM, Damaan, Al Khaleej Takaful, QIC, Seha/NHI history, MoPH and QCB — medical lines and networks.",
+      "h1": "Health Insurance Companies in Qatar",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Ministry of Public Health — health-system and insurance-mandate rules, with Qatar Central Bank licensing writers",
+        "url": "https://www.moph.gov.qa",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/health-insurers-saudi-arabia",
+      "entity": "health-insurers",
+      "country": "saudi-arabia",
+      "title": "Top 16 Health Insurance Companies in Saudi Arabia (2026)",
+      "metaDescription": "Health insurers in Saudi Arabia: Bupa Arabia, Tawuniya, Medgulf, Malath, Al Rajhi Takaful, CHI, GOSI and NPHIES — networks, mandates.",
+      "h1": "Health Insurance Companies in Saudi Arabia",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Council of Health Insurance (CHI) — licensed cooperative health-insurance products, accredited providers and NPHIES",
+        "url": "https://www.chi.gov.sa",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/health-insurers-turkey",
+      "entity": "health-insurers",
+      "country": "turkey",
+      "title": "Top 16 Health Insurance Companies in Turkey (2026)",
+      "metaDescription": "Health insurers in Turkey: Allianz, Anadolu, Aksigorta, Mapfre, SGK, TSS complementary cover and SEDDK — public core, private top-up.",
+      "h1": "Health Insurance Companies in Turkey",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "SEDDK — private health insurance (TSS/ÖSS) supervision, with SGK as the public tariff payer",
+        "url": "https://www.seddk.gov.tr",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/health-insurers-uae",
+      "entity": "health-insurers",
+      "country": "uae",
+      "title": "Top 16 Health Insurance Companies in UAE (2026)",
+      "metaDescription": "Health insurers in the UAE: Daman, Sukoon, GIG, Salama, NAS, Neuron, DHA Essential Benefits and DoH Thiqa — payers and TPAs.",
+      "h1": "Health Insurance Companies in the UAE",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Department of Health – Abu Dhabi — mandatory health-insurance rules (Thiqa/Basic) and licensed writers, with DHA as the Dubai counterpart",
+        "url": "https://www.doh.gov.ae",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
     {
       "path": "/hospital-groups-bahrain",
       "entity": "hospital-groups",
@@ -304,6 +559,516 @@
         "asOf": "2026-09-03"
       },
       "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-algeria",
+      "entity": "pharmaceutical-companies",
+      "country": "algeria",
+      "title": "Top 18 Pharmaceutical Companies in Algeria (2026)",
+      "metaDescription": "Pharmaceutical companies in Algeria: Saidal, Biopharm, Merinal, Hikma, Sanofi, PCH and ANPP — local-production rules, hospital buying, price controls.",
+      "h1": "Pharmaceutical Companies in Algeria",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "ANPP — Agence Nationale des Produits Pharmaceutiques, registration and licensed establishments",
+        "url": "https://www.anpp.dz",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-argentina",
+      "entity": "pharmaceutical-companies",
+      "country": "argentina",
+      "title": "Top 20 Pharmaceutical Companies in Argentina (2026)",
+      "metaDescription": "Pharmaceutical companies in Argentina: Roemmers, Bagó, Elea Phoenix, Raffo, Richmond, Cassará, Pfizer, ANMAT, PAMI and IOMA — plants, payers, reimbursement.",
+      "h1": "Pharmaceutical Companies in Argentina",
+      "companies": 20,
+      "regulatorSource": {
+        "name": "ANMAT — registros sanitarios de medicamentos and authorised establishment listings",
+        "url": "https://www.argentina.gob.ar/anmat",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-australia",
+      "entity": "pharmaceutical-companies",
+      "country": "australia",
+      "title": "Top 18 Pharmaceutical Companies in Australia (2026)",
+      "metaDescription": "Pharmaceutical companies in Australia: CSL, Seqirus, Mayne Pharma, Viatris, Pfizer, GSK, AstraZeneca, Roche, TGA and PBS — listing, plasma, vaccines.",
+      "h1": "Pharmaceutical Companies in Australia",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Therapeutic Goods Administration — Australian Register of Therapeutic Goods and licensed manufacturers",
+        "url": "https://www.tga.gov.au",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-bangladesh",
+      "entity": "pharmaceutical-companies",
+      "country": "bangladesh",
+      "title": "Top 18 Pharmaceutical Companies in Bangladesh (2026)",
+      "metaDescription": "Pharmaceutical companies in Bangladesh: Square, Beximco, Incepta, ACI, Renata, Eskayef, ACME, DGDA — generics self-sufficiency, API imports, Africa exports.",
+      "h1": "Pharmaceutical Companies in Bangladesh",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Directorate General of Drug Administration (DGDA) — licensed manufacturers, registered products and pricing",
+        "url": "https://www.dgda.gov.bd",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-belgium",
+      "entity": "pharmaceutical-companies",
+      "country": "belgium",
+      "title": "Top 18 Pharmaceutical Companies in Belgium (2026)",
+      "metaDescription": "Pharmaceutical companies in Belgium: UCB, Janssen Beerse, GSK Wavre, Galapagos, FAMHP and INAMI — biologics plants, reimbursement, reference prices.",
+      "h1": "Pharmaceutical Companies in Belgium",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Federal Agency for Medicines and Health Products (FAMHP / FAGG / AFMPS) — authorised medicines and inspected manufacturers",
+        "url": "https://www.famhp.be",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-chile",
+      "entity": "pharmaceutical-companies",
+      "country": "chile",
+      "title": "Top 18 Pharmaceutical Companies in Chile (2026)",
+      "metaDescription": "Pharmaceutical companies in Chile: Laboratorio Chile, Recalcine, Andrómaco, Saval, Pfizer, ISP, FONASA and Cenabast — registration, chains and payers.",
+      "h1": "Pharmaceutical Companies in Chile",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Instituto de Salud Pública de Chile (ISP) — registros sanitarios de medicamentos",
+        "url": "https://www.ispch.cl",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-colombia",
+      "entity": "pharmaceutical-companies",
+      "country": "colombia",
+      "title": "Top 19 Pharmaceutical Companies in Colombia (2026)",
+      "metaDescription": "Pharmaceutical companies in Colombia: Procaps, Tecnoquímicas, Lafrancol, Genfar, Pfizer, INVIMA and ADRES — EPS reimbursement, CIR prices, Andean plants.",
+      "h1": "Pharmaceutical Companies in Colombia",
+      "companies": 19,
+      "regulatorSource": {
+        "name": "INVIMA — registros sanitarios and certified pharmaceutical establishments",
+        "url": "https://www.invima.gov.co",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-ethiopia",
+      "entity": "pharmaceutical-companies",
+      "country": "ethiopia",
+      "title": "Top 18 Pharmaceutical Companies in Ethiopia (2026)",
+      "metaDescription": "Pharmaceutical companies in Ethiopia: EPHARM, Addis Pharmaceutical Factory, Cadila, Humanwell, Julphar, EFDA and EPSS — industrial parks, FX and pooled buying.",
+      "h1": "Pharmaceutical Companies in Ethiopia",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Ethiopian Food and Drug Authority (EFDA) — registered medicines and licensed manufacturers",
+        "url": "https://www.efda.gov.et",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-france",
+      "entity": "pharmaceutical-companies",
+      "country": "france",
+      "title": "Top 18 Pharmaceutical Companies in France (2026)",
+      "metaDescription": "Pharmaceutical companies in France: Sanofi, Servier, Pierre Fabre, Ipsen, Théa, ANSM, HAS and CEPS — transparency, prices, early access.",
+      "h1": "Pharmaceutical Companies in France",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Agence nationale de sécurité du médicament et des produits de santé (ANSM) — authorised medicines and inspected establishments",
+        "url": "https://ansm.sante.fr",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-indonesia",
+      "entity": "pharmaceutical-companies",
+      "country": "indonesia",
+      "title": "Top 22 Pharmaceutical Companies in Indonesia (2026)",
+      "metaDescription": "Pharmaceutical companies in Indonesia: Kalbe Farma, Kimia Farma, Dexa Medica, Sanbe, Bio Farma, Tempo Scan, Pfizer, BPOM and BPJS — portfolios, e-catalogue, channels.",
+      "h1": "Pharmaceutical Companies in Indonesia",
+      "companies": 22,
+      "regulatorSource": {
+        "name": "Badan Pengawas Obat dan Makanan (BPOM) — registered drug products and licensed pharmaceutical industries",
+        "url": "https://www.pom.go.id",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-ireland",
+      "entity": "pharmaceutical-companies",
+      "country": "ireland",
+      "title": "Top 18 Pharmaceutical Companies in Ireland (2026)",
+      "metaDescription": "Pharmaceutical companies in Ireland: Pfizer, MSD, AbbVie, Jazz, Alkermes, Perrigo, HPRA and HSE — manufacturing hubs, reimbursement, IPHA deals.",
+      "h1": "Pharmaceutical Companies in Ireland",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Health Products Regulatory Authority (HPRA) — authorised medicines and inspected manufacturers and wholesalers",
+        "url": "https://www.hpra.ie",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-italy",
+      "entity": "pharmaceutical-companies",
+      "country": "italy",
+      "title": "Top 18 Pharmaceutical Companies in Italy (2026)",
+      "metaDescription": "Pharmaceutical companies in Italy: Menarini, Recordati, Angelini, Chiesi, Zambon, Dompé, AIFA and SSN — pricing, regions, payback.",
+      "h1": "Pharmaceutical Companies in Italy",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Agenzia Italiana del Farmaco (AIFA) — authorised medicines, pricing and reimbursement, payback determinations",
+        "url": "https://www.aifa.gov.it",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-kazakhstan",
+      "entity": "pharmaceutical-companies",
+      "country": "kazakhstan",
+      "title": "Top 18 Pharmaceutical Companies in Kazakhstan (2026)",
+      "metaDescription": "Pharmaceutical companies in Kazakhstan: Santo, Nobel AFF, Abdi Ibrahim, SK-Pharmacy, Pfizer, Sanofi, Novartis, NCEM — EAEU dossiers, OSMS, localisation.",
+      "h1": "Pharmaceutical Companies in Kazakhstan",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Ministry of Health of the Republic of Kazakhstan — Committee for Medical and Pharmaceutical Control / National Center for Expertise of Medicines",
+        "url": "https://www.gov.kz/memleket/entities/dsm",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-kenya",
+      "entity": "pharmaceutical-companies",
+      "country": "kenya",
+      "title": "Top 19 Pharmaceutical Companies in Kenya (2026)",
+      "metaDescription": "Pharmaceutical companies in Kenya: Universal Corporation, Cosmos, Dawa, Lab & Allied, GSK, Novartis, Pfizer, KEMSA and the Pharmacy and Poisons Board.",
+      "h1": "Pharmaceutical Companies in Kenya",
+      "companies": 19,
+      "regulatorSource": {
+        "name": "Pharmacy and Poisons Board (PPB) — registered products, licensed manufacturers and PRIMS premise records",
+        "url": "https://www.pharmacyboardkenya.org",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-lebanon",
+      "entity": "pharmaceutical-companies",
+      "country": "lebanon",
+      "title": "Top 18 Pharmaceutical Companies in Lebanon (2026)",
+      "metaDescription": "Lebanese pharmaceutical companies after the currency crash: Algorithm, Benta, Arwan, Pharmaline, Mersaco, NSSF and the MOPH Import & Drug Department.",
+      "h1": "Pharmaceutical Companies in Lebanon",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Ministry of Public Health (Lebanon) — Import & Drug Department, drug registration and import licensing",
+        "url": "https://www.moph.gov.lb",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-libya",
+      "entity": "pharmaceutical-companies",
+      "country": "libya",
+      "title": "Top 18 Pharmaceutical Companies in Libya (2026)",
+      "metaDescription": "Pharmaceutical companies in Libya: MSO, Azawia, Alahlia, Hikma, Eva, Julphar, Pharco and the Food and Drug Control Center — tenders, cash trade.",
+      "h1": "Pharmaceutical Companies in Libya",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Libyan Ministry of Health and Food and Drug Control Center — public supply policy and medicine control",
+        "url": "https://moh.gov.ly",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-mexico",
+      "entity": "pharmaceutical-companies",
+      "country": "mexico",
+      "title": "Top 20 Pharmaceutical Companies in Mexico (2026)",
+      "metaDescription": "Pharmaceutical companies in Mexico: Genomma Lab, Sanfer, Liomont, Silanes, PiSA, Neolpharma, Probiomed, Pfizer, COFEPRIS and IMSS — portfolios, channels, buyers.",
+      "h1": "Pharmaceutical Companies in Mexico",
+      "companies": 20,
+      "regulatorSource": {
+        "name": "COFEPRIS — Registros Sanitarios de Medicamentos and licensed establishments database",
+        "url": "https://www.gob.mx/cofepris",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-netherlands",
+      "entity": "pharmaceutical-companies",
+      "country": "netherlands",
+      "title": "Top 18 Pharmaceutical Companies in the Netherlands (2026)",
+      "metaDescription": "Pharmaceutical companies in the Netherlands: Pharming, uniQure, Synthon, InnoGenerics, CBG and Zorginstituut — HTA, preference pricing, specialty.",
+      "h1": "Pharmaceutical Companies in the Netherlands",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "College ter Beoordeling van Geneesmiddelen (CBG-MEB) — authorised medicines and licensed manufacturers",
+        "url": "https://www.cbg-meb.nl",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-nigeria",
+      "entity": "pharmaceutical-companies",
+      "country": "nigeria",
+      "title": "Top 21 Pharmaceutical Companies in Nigeria (2026)",
+      "metaDescription": "Pharmaceutical companies in Nigeria: Emzor, Fidson, May & Baker, Swipha, Neimeth, Juhel, Mecure, Pfizer Nigeria and NAFDAC — portfolios, import rules, channels.",
+      "h1": "Pharmaceutical Companies in Nigeria",
+      "companies": 21,
+      "regulatorSource": {
+        "name": "National Agency for Food and Drug Administration and Control (NAFDAC) — registered products and licensed manufacturers",
+        "url": "https://www.nafdac.gov.ng",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-pakistan",
+      "entity": "pharmaceutical-companies",
+      "country": "pakistan",
+      "title": "Top 21 Pharmaceutical Companies in Pakistan (2026)",
+      "metaDescription": "Pharmaceutical companies in Pakistan: Getz, Searle, Sami, GSK Pakistan, Abbott, Hilton, Highnoon, Ferozsons, Martin Dow and DRAP — portfolios, channels, tenders.",
+      "h1": "Pharmaceutical Companies in Pakistan",
+      "companies": 21,
+      "regulatorSource": {
+        "name": "Drug Regulatory Authority of Pakistan (DRAP) — registered drug manufacturers and importers",
+        "url": "https://www.dra.gov.pk",
+        "asOf": "2026-09-03"
+      },
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-peru",
+      "entity": "pharmaceutical-companies",
+      "country": "peru",
+      "title": "Top 19 Pharmaceutical Companies in Peru (2026)",
+      "metaDescription": "Pharmaceutical companies in Peru: Farmindustria, Medifarma, Portugal, Roemmers, Abbott, DIGEMID, EsSalud and SIS — generics, imports and pharmacy chains.",
+      "h1": "Pharmaceutical Companies in Peru",
+      "companies": 19,
+      "regulatorSource": {
+        "name": "DIGEMID — registros sanitarios de medicamentos and licensed establishments",
+        "url": "https://www.digemid.minsa.gob.pe",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-philippines",
+      "entity": "pharmaceutical-companies",
+      "country": "philippines",
+      "title": "Top 18 Pharmaceutical Companies in the Philippines (2026)",
+      "metaDescription": "Pharmaceutical companies in the Philippines: Unilab, Pascual, Natrapharm, Interphil, Pfizer, GSK, Sanofi, Zuellig, FDA and PhilHealth — packages, Mercury Drug.",
+      "h1": "Pharmaceutical Companies in the Philippines",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Food and Drug Administration of the Philippines — registered drug products and licensed establishments",
+        "url": "https://www.fda.gov.ph",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-poland",
+      "entity": "pharmaceutical-companies",
+      "country": "poland",
+      "title": "Top 18 Pharmaceutical Companies in Poland (2026)",
+      "metaDescription": "Pharmaceutical companies in Poland: Polpharma, Adamed, Celon, Krka, Pfizer, URPL and NFZ — generics, reimbursement lists, hospital tenders.",
+      "h1": "Pharmaceutical Companies in Poland",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Office for Registration of Medicinal Products, Medical Devices and Biocidal Products (URPL) — authorised medicines and licensed manufacturers",
+        "url": "https://www.urpl.gov.pl",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-south-africa",
+      "entity": "pharmaceutical-companies",
+      "country": "south-africa",
+      "title": "Top 20 Pharmaceutical Companies in South Africa (2026)",
+      "metaDescription": "Pharmaceutical companies in South Africa: Aspen, Adcock Ingram, Cipla Medpro, Pharma Dynamics, Sanofi, Novartis, Pfizer, Roche, Dis-Chem, Clicks and SAHPRA.",
+      "h1": "Pharmaceutical Companies in South Africa",
+      "companies": 20,
+      "regulatorSource": {
+        "name": "South African Health Products Regulatory Authority (SAHPRA) — registered health products and licensed establishments",
+        "url": "https://www.sahpra.org.za",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-spain",
+      "entity": "pharmaceutical-companies",
+      "country": "spain",
+      "title": "Top 18 Pharmaceutical Companies in Spain (2026)",
+      "metaDescription": "Pharmaceutical companies in Spain: Almirall, Esteve, Grifols, Ferrer, Rovi, PharmaMar, Cinfa, AEMPS and SNS — reference prices, regional tenders.",
+      "h1": "Pharmaceutical Companies in Spain",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS) — authorised medicines and inspected manufacturers",
+        "url": "https://www.aemps.gob.es",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-sweden",
+      "entity": "pharmaceutical-companies",
+      "country": "sweden",
+      "title": "Top 18 Pharmaceutical Companies in Sweden (2026)",
+      "metaDescription": "Pharmaceutical companies in Sweden: AstraZeneca Södertälje, Sobi, Recipharm, Orexo, Läkemedelsverket and TLV — value-based prices, regions.",
+      "h1": "Pharmaceutical Companies in Sweden",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Läkemedelsverket (Swedish Medical Products Agency) — authorised medicines and inspected manufacturers",
+        "url": "https://www.lakemedelsverket.se",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-thailand",
+      "entity": "pharmaceutical-companies",
+      "country": "thailand",
+      "title": "Top 17 Pharmaceutical Companies in Thailand (2026)",
+      "metaDescription": "Pharmaceutical companies in Thailand: GPO, Siam Bioscience, Mega Lifesciences, Pfizer, Roche, Zuellig, Thai FDA and NHSO — UCS reimbursement, medical-hub hospitals.",
+      "h1": "Pharmaceutical Companies in Thailand",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "Thai Food and Drug Administration (Thai FDA) — licensed drug establishments and registered medicinal products",
+        "url": "https://www.fda.moph.go.th",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-tunisia",
+      "entity": "pharmaceutical-companies",
+      "country": "tunisia",
+      "title": "Top 18 Pharmaceutical Companies in Tunisia (2026)",
+      "metaDescription": "Tunisian pharmaceutical companies: SIPHAT, Unimed, Adwya, Teriak, Opalia, PCT and CNAM — import monopoly, reimbursement, generic exports.",
+      "h1": "Pharmaceutical Companies in Tunisia",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Ministère de la Santé / ANMPS (successor to the Direction de la Pharmacie et du Médicament) — medicine regulation",
+        "url": "https://santetunisie.rns.tn",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-vietnam",
+      "entity": "pharmaceutical-companies",
+      "country": "vietnam",
+      "title": "Top 20 Pharmaceutical Companies in Vietnam (2026)",
+      "metaDescription": "Pharmaceutical companies in Vietnam: DHG, Traphaco, Imexpharm, Pymepharco, Sanofi, Pfizer, Roche, AstraZeneca, DAV and VSS — BHYT tenders, channels.",
+      "h1": "Pharmaceutical Companies in Vietnam",
+      "companies": 20,
+      "regulatorSource": {
+        "name": "Drug Administration of Vietnam (DAV) — registered drug products and licensed pharmaceutical establishments",
+        "url": "https://dav.gov.vn",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-companies-yemen",
+      "entity": "pharmaceutical-companies",
+      "country": "yemen",
+      "title": "Top 18 Pharmaceutical Companies in Yemen (2026)",
+      "metaDescription": "Pharmaceutical companies in Yemen: YEDCO, Shaphaco, Global Pharma, Modern Pharma, Hikma, Eva, Pharco, Cipla and SBDMA — dual authorities, cash pharmacies.",
+      "h1": "Pharmaceutical Companies in Yemen",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Supreme Board of Drugs and Medical Appliances (SBDMA) — regulation of medicine manufacture and trade",
+        "url": "https://sbdma.gov.ye",
+        "asOf": "2026-09-04"
+      },
+      "lastmod": "2026-09-04",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -719,6 +1484,24 @@
       "metaDescription": "Bahrain company directories by industry: pharma companies and distributors, medtech suppliers, hospital groups, pharmacy chains, FMCG, retail, developers and banks.",
       "lastmod": "2026-09-03",
       "priority": "0.88",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/pharmaceutical-companies",
+      "kind": "entity",
+      "title": "Pharmaceutical Companies by Country (2026 Directories) | BioNixus",
+      "metaDescription": "Pharmaceutical company directories for 50+ countries: local manufacturers, MNC affiliates and regional groups across the Gulf, Africa, Asia, Europe and Latin America.",
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/pharmaceutical-distributors",
+      "kind": "entity",
+      "title": "Pharmaceutical Distributors by Country (2026 Directories) | BioNixus",
+      "metaDescription": "Pharmaceutical distributor directories by country: licensed agents, wholesalers, public buyers and cold-chain 3PLs across the Gulf, Egypt, Levant, Turkey and Pakistan.",
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
       "changefreq": "weekly"
     }
   ],
