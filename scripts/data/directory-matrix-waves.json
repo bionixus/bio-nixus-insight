@@ -1,0 +1,25 @@
+{
+  "description": "Company-directory matrix wave metadata for report:weekly and directory-matrix gates.",
+  "gates": {
+    "indexation14dPct": 80,
+    "day28": {
+      "impressionsPerDay": 10,
+      "note": "Early-signal floor. Below this at day 28: check indexation, title, and internal links before rewriting."
+    },
+    "day90": {
+      "impressionsPerDay": 50,
+      "positionMax": 15,
+      "killBelowImpressionsPerDay": 10,
+      "note": "Head-query target: ≥50 impressions/day and average position ≤15. Kill/rewrite any spoke still under 10 impressions/day at day 90 — do not leave it thin."
+    },
+    "matrixClicksPerMonthByDay120": 3000,
+    "directoryFormLeadsPerMonthByDay90": 20
+  },
+  "waves": [
+    { "id": 1, "published": "2026-09-03", "file": "scripts/indexnow-wave-1.txt" },
+    { "id": 2, "published": "2026-09-04", "file": "scripts/indexnow-wave-2.txt" },
+    { "id": 3, "published": "2026-09-05", "file": "scripts/indexnow-wave-3.txt" },
+    { "id": 4, "published": "2026-09-05", "file": "scripts/indexnow-wave-4.txt" },
+    { "id": 5, "published": "2026-09-05", "file": "scripts/indexnow-wave-5.txt" }
+  ]
+}

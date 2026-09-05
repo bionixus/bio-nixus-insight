@@ -749,6 +749,42 @@ const DIRECTORY_ENTITY_COPY: Partial<Record<DirectoryEntitySlug, Partial<Directo
     footerHeadline: 'Need guest and travel-trade data in {place}?',
     footerBody: 'Guest satisfaction, corporate account preference and OTA dynamics by operator — fielded with guests and bookers.',
   },
+  'retail-companies': {
+    bridgeHeadline: 'These are the retail banners we audit in {place}',
+    bridgeBody:
+      'Listing a SKU or defending a facing in {place}? BioNixus runs shopper, retailer-audit and mystery-shop studies across the banners above. Proposal within 48 hours.',
+    footerHeadline: 'Need banner-level shopper data in {place}?',
+    footerBody:
+      'Availability, substitution and mission by format — hypermarket, discounter, co-op, chemist and traditional grocer — not a modern-trade average.',
+  },
+  'construction-companies': {
+    bridgeHeadline: 'These are the contractors we field with in {place}',
+    bridgeBody:
+      'Picking a delivery partner or sizing a bid list in {place}? BioNixus runs developer, PMC and supplier interviews across the houses above. Proposal within 48 hours.',
+    footerHeadline: 'Need contractor and bid-list intelligence in {place}?',
+    footerBody: 'Prequalification, package split and delivery reputation — from the clients who award the work, not a tender portal.',
+  },
+  'cosmetics-companies': {
+    bridgeHeadline: 'These are the beauty houses we audit in {place}',
+    bridgeBody:
+      'Launching a fragrance, skincare or colour line in {place}? BioNixus runs shopper, pharmacist and beauty-retailer studies across the brands above. Proposal within 48 hours.',
+    footerHeadline: 'Need beauty-retail and pharmacy data in {place}?',
+    footerBody: 'Recommendation share, facing and price architecture by banner — fielded in-store, not from a brand deck.',
+  },
+  'logistics-companies': {
+    bridgeHeadline: 'These are the logistics operators we map in {place}',
+    bridgeBody:
+      'Choosing a 3PL, port or last-mile partner in {place}? BioNixus runs shipper, warehouse and customs-broker interviews across the operators above. Proposal within 48 hours.',
+    footerHeadline: 'Need 3PL and lane-level data in {place}?',
+    footerBody: 'Service levels, dwell times and cold-chain capability — from the shippers who use the lane, not a brochure.',
+  },
+  'manufacturing-companies': {
+    bridgeHeadline: 'These are the industrial manufacturers we field with in {place}',
+    bridgeBody:
+      'Localising a plant, offtake or industrial-city brief in {place}? BioNixus runs buyer, supplier and industrial-city interviews across the houses above. Proposal within 48 hours.',
+    footerHeadline: 'Need industrial-account data in {place}?',
+    footerBody: 'Offtake, localisation and supplier preference by plant — fielded with procurement, not a chamber directory.',
+  },
 };
 
 function fill(template: string, vars: { label: string; place: string }): string {

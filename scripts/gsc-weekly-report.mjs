@@ -293,8 +293,20 @@ function computeMixMetrics({ currentPages, currentCountries, currentDevices, sit
       const p = pagePathFromUrl(r.page);
       return p && /^\/pharmaceutical-companies-/.test(p);
     });
+    const directoryMatrixPages = currentPages.filter((r) => {
+      const p = pagePathFromUrl(r.page);
+      if (!p) return false;
+      return (
+        p === '/company-directories' ||
+        p.startsWith('/companies-in-') ||
+        /^\/(pharmaceutical-companies|medical-device-companies|pharmaceutical-distributors|pharmacy-chains|hospital-groups|biotech-companies|cro-companies|health-insurers|fmcg-companies|retail-companies|real-estate-companies|banks|automotive-distributors|food-beverage-companies|construction-companies|cosmetics-companies|hotel-groups|logistics-companies|manufacturing-companies)(-|$)/.test(
+          p,
+        )
+      );
+    });
     metrics.listicleCluster = aggregateCtr(listiclePages);
     metrics.pharmaCompaniesCluster = aggregateCtr(pharmaCompanyPages);
+    metrics.directoryMatrixCluster = aggregateCtr(directoryMatrixPages);
   }
 
   metrics.siteCtrPct = siteCtrPct ?? null;
@@ -570,6 +582,11 @@ function buildMarkdown(r) {
         `| /pharmaceutical-companies-* cluster | ${fmt(m.pharmaCompaniesCluster.clicks)} | ${fmt(m.pharmaCompaniesCluster.impressions)} | ${fmt(m.pharmaCompaniesCluster.ctrPct, 2)}% | Winning directory cluster |`,
       );
     }
+    if (m.directoryMatrixCluster) {
+      lines.push(
+        `| Company-directory matrix | ${fmt(m.directoryMatrixCluster.clicks)} | ${fmt(m.directoryMatrixCluster.impressions)} | ${fmt(m.directoryMatrixCluster.ctrPct, 2)}% | Hubs + entity-country spokes |`,
+      );
+    }
     lines.push('');
   } else {
     lines.push(
@@ -634,6 +651,17 @@ function buildMarkdown(r) {
       '',
     );
   }
+
+  lines.push('## Company directory matrix (28/90-day gates)', '');
+  lines.push(
+    'Run `npm run report:directory-gates` after this scorecard. It scores each IndexNow wave against GSC Pages.csv:',
+    '',
+    '- 14-day: ≥80% of the wave should appear in Pages.csv (indexation signal) before treating the next wave as gated-go.',
+    '- 28-day: ≥10 impressions/day early-signal floor.',
+    '- 90-day: ≥50 impressions/day and avg position ≤15; **kill/rewrite any spoke still under 10 impressions/day** — do not leave it thin.',
+    '- Form: directory `source_page` / `cta_id` leads ≥20/month by day 90.',
+    '',
+  );
 
   lines.push('## Next-week priority recommendation', '');
   lines.push(

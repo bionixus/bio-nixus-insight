@@ -89,10 +89,13 @@ import { biotechCompaniesUae } from './biotech-companies/uae';
 import { biotechCompaniesEgypt } from './biotech-companies/egypt';
 import { biotechCompaniesTurkey } from './biotech-companies/turkey';
 import { biotechCompaniesKuwait } from './biotech-companies/kuwait';
+import { biotechCompaniesQatar } from './biotech-companies/qatar';
+import { biotechCompaniesIndia } from './biotech-companies/india';
 import { croCompaniesSaudiArabia } from './cro-companies/saudi-arabia';
 import { croCompaniesUae } from './cro-companies/uae';
 import { croCompaniesEgypt } from './cro-companies/egypt';
 import { croCompaniesTurkey } from './cro-companies/turkey';
+import { croCompaniesJordan } from './cro-companies/jordan';
 import { healthInsurersSaudiArabia } from './health-insurers/saudi-arabia';
 import { healthInsurersUae } from './health-insurers/uae';
 import { healthInsurersEgypt } from './health-insurers/egypt';
@@ -115,6 +118,10 @@ import { banksGermany } from './banks/germany';
 import { banksFrance } from './banks/france';
 import { banksItaly } from './banks/italy';
 import { banksSpain } from './banks/spain';
+import { banksJordan } from './banks/jordan';
+import { banksMorocco } from './banks/morocco';
+import { banksPakistan } from './banks/pakistan';
+import { banksNigeria } from './banks/nigeria';
 
 // Wave 3 — automotive distributors (GCC, Egypt, Turkey)
 import { automotiveDistributorsSaudiArabia } from './automotive-distributors/saudi-arabia';
@@ -125,6 +132,7 @@ import { automotiveDistributorsQatar } from './automotive-distributors/qatar';
 import { automotiveDistributorsOman } from './automotive-distributors/oman';
 import { automotiveDistributorsBahrain } from './automotive-distributors/bahrain';
 import { automotiveDistributorsTurkey } from './automotive-distributors/turkey';
+import { automotiveDistributorsMorocco } from './automotive-distributors/morocco';
 
 // Wave 3 — food & beverage manufacturers (not the grocery FMCG basket)
 import { foodBeverageCompaniesSaudiArabia } from './food-beverage-companies/saudi-arabia';
@@ -135,6 +143,7 @@ import { foodBeverageCompaniesQatar } from './food-beverage-companies/qatar';
 import { foodBeverageCompaniesOman } from './food-beverage-companies/oman';
 import { foodBeverageCompaniesBahrain } from './food-beverage-companies/bahrain';
 import { foodBeverageCompaniesTurkey } from './food-beverage-companies/turkey';
+import { foodBeverageCompaniesMorocco } from './food-beverage-companies/morocco';
 
 // Wave 3 — FMCG expansion (do not recreate Egypt/UAE/KSA/Kuwait/Oman/Qatar)
 import { fmcgCompaniesTurkey } from './fmcg-companies/turkey';
@@ -147,6 +156,91 @@ import { fmcgCompaniesSouthAfrica } from './fmcg-companies/south-africa';
 import { fmcgCompaniesKenya } from './fmcg-companies/kenya';
 import { fmcgCompaniesMorocco } from './fmcg-companies/morocco';
 import { fmcgCompaniesJordan } from './fmcg-companies/jordan';
+import { fmcgCompaniesIraq } from './fmcg-companies/iraq';
+import { fmcgCompaniesAlgeria } from './fmcg-companies/algeria';
+import { fmcgCompaniesTunisia } from './fmcg-companies/tunisia';
+import { fmcgCompaniesLebanon } from './fmcg-companies/lebanon';
+
+// Wave 4 — medical devices priority markets (legacy KSA/UAE/Japan/USA excluded)
+import { medicalDeviceCompaniesGermany } from './medical-device-companies/germany';
+import { medicalDeviceCompaniesUk } from './medical-device-companies/uk';
+import { medicalDeviceCompaniesChina } from './medical-device-companies/china';
+import { medicalDeviceCompaniesIndia } from './medical-device-companies/india';
+import { medicalDeviceCompaniesSouthKorea } from './medical-device-companies/south-korea';
+import { medicalDeviceCompaniesSingapore } from './medical-device-companies/singapore';
+import { medicalDeviceCompaniesMalaysia } from './medical-device-companies/malaysia';
+import { medicalDeviceCompaniesBrazil } from './medical-device-companies/brazil';
+import { medicalDeviceCompaniesFrance } from './medical-device-companies/france';
+import { medicalDeviceCompaniesItaly } from './medical-device-companies/italy';
+import { medicalDeviceCompaniesSpain } from './medical-device-companies/spain';
+import { medicalDeviceCompaniesCanada } from './medical-device-companies/canada';
+import { medicalDeviceCompaniesAustralia } from './medical-device-companies/australia';
+import { medicalDeviceCompaniesSwitzerland } from './medical-device-companies/switzerland';
+import { medicalDeviceCompaniesMexico } from './medical-device-companies/mexico';
+
+// Wave 4 — distributors priority markets
+import { pharmaceuticalDistributorsIndia } from './pharmaceutical-distributors/india';
+import { pharmaceuticalDistributorsChina } from './pharmaceutical-distributors/china';
+import { pharmaceuticalDistributorsBrazil } from './pharmaceutical-distributors/brazil';
+import { pharmaceuticalDistributorsMexico } from './pharmaceutical-distributors/mexico';
+import { pharmaceuticalDistributorsSouthAfrica } from './pharmaceutical-distributors/south-africa';
+import { pharmaceuticalDistributorsNigeria } from './pharmaceutical-distributors/nigeria';
+import { pharmaceuticalDistributorsIndonesia } from './pharmaceutical-distributors/indonesia';
+import { pharmaceuticalDistributorsVietnam } from './pharmaceutical-distributors/vietnam';
+
+// Wave 4 — retail expansion (do not recreate Egypt/UAE/KSA/Kuwait/Oman/Qatar)
+import { retailCompaniesBahrain } from './retail-companies/bahrain';
+import { retailCompaniesJordan } from './retail-companies/jordan';
+import { retailCompaniesMorocco } from './retail-companies/morocco';
+import { retailCompaniesIraq } from './retail-companies/iraq';
+import { retailCompaniesTurkey } from './retail-companies/turkey';
+import { retailCompaniesPakistan } from './retail-companies/pakistan';
+import { retailCompaniesNigeria } from './retail-companies/nigeria';
+import { retailCompaniesSouthAfrica } from './retail-companies/south-africa';
+
+// Wave 4 — real-estate developers (do not recreate Egypt/UAE/KSA)
+import { realEstateCompaniesBahrain } from './real-estate-companies/bahrain';
+import { realEstateCompaniesJordan } from './real-estate-companies/jordan';
+import { realEstateCompaniesMorocco } from './real-estate-companies/morocco';
+import { realEstateCompaniesIraq } from './real-estate-companies/iraq';
+import { realEstateCompaniesTurkey } from './real-estate-companies/turkey';
+import { realEstateCompaniesPakistan } from './real-estate-companies/pakistan';
+
+// Wave 5 — construction
+import { constructionCompaniesSaudiArabia } from './construction-companies/saudi-arabia';
+import { constructionCompaniesUae } from './construction-companies/uae';
+import { constructionCompaniesQatar } from './construction-companies/qatar';
+import { constructionCompaniesEgypt } from './construction-companies/egypt';
+import { constructionCompaniesKuwait } from './construction-companies/kuwait';
+import { constructionCompaniesOman } from './construction-companies/oman';
+
+// Wave 5 — cosmetics
+import { cosmeticsCompaniesSaudiArabia } from './cosmetics-companies/saudi-arabia';
+import { cosmeticsCompaniesUae } from './cosmetics-companies/uae';
+import { cosmeticsCompaniesEgypt } from './cosmetics-companies/egypt';
+import { cosmeticsCompaniesKuwait } from './cosmetics-companies/kuwait';
+import { cosmeticsCompaniesQatar } from './cosmetics-companies/qatar';
+
+// Wave 5 — hotel groups
+import { hotelGroupsUae } from './hotel-groups/uae';
+import { hotelGroupsSaudiArabia } from './hotel-groups/saudi-arabia';
+import { hotelGroupsEgypt } from './hotel-groups/egypt';
+import { hotelGroupsQatar } from './hotel-groups/qatar';
+import { hotelGroupsOman } from './hotel-groups/oman';
+
+// Wave 5 — logistics
+import { logisticsCompaniesUae } from './logistics-companies/uae';
+import { logisticsCompaniesSaudiArabia } from './logistics-companies/saudi-arabia';
+import { logisticsCompaniesEgypt } from './logistics-companies/egypt';
+import { logisticsCompaniesQatar } from './logistics-companies/qatar';
+import { logisticsCompaniesOman } from './logistics-companies/oman';
+
+// Wave 5 — industrial manufacturing
+import { manufacturingCompaniesSaudiArabia } from './manufacturing-companies/saudi-arabia';
+import { manufacturingCompaniesUae } from './manufacturing-companies/uae';
+import { manufacturingCompaniesEgypt } from './manufacturing-companies/egypt';
+import { manufacturingCompaniesTurkey } from './manufacturing-companies/turkey';
+import { manufacturingCompaniesQatar } from './manufacturing-companies/qatar';
 
 export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   hospitalGroupsSaudiArabia,
@@ -222,10 +316,13 @@ export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   biotechCompaniesEgypt,
   biotechCompaniesTurkey,
   biotechCompaniesKuwait,
+  biotechCompaniesQatar,
+  biotechCompaniesIndia,
   croCompaniesSaudiArabia,
   croCompaniesUae,
   croCompaniesEgypt,
   croCompaniesTurkey,
+  croCompaniesJordan,
   healthInsurersSaudiArabia,
   healthInsurersUae,
   healthInsurersEgypt,
@@ -246,6 +343,10 @@ export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   banksFrance,
   banksItaly,
   banksSpain,
+  banksJordan,
+  banksMorocco,
+  banksPakistan,
+  banksNigeria,
   automotiveDistributorsSaudiArabia,
   automotiveDistributorsUae,
   automotiveDistributorsEgypt,
@@ -254,6 +355,7 @@ export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   automotiveDistributorsOman,
   automotiveDistributorsBahrain,
   automotiveDistributorsTurkey,
+  automotiveDistributorsMorocco,
   foodBeverageCompaniesSaudiArabia,
   foodBeverageCompaniesUae,
   foodBeverageCompaniesEgypt,
@@ -262,6 +364,7 @@ export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   foodBeverageCompaniesOman,
   foodBeverageCompaniesBahrain,
   foodBeverageCompaniesTurkey,
+  foodBeverageCompaniesMorocco,
   fmcgCompaniesTurkey,
   fmcgCompaniesBahrain,
   fmcgCompaniesNigeria,
@@ -272,4 +375,71 @@ export const DIRECTORY_PAGE_INPUTS: DirectoryPageInput[] = [
   fmcgCompaniesKenya,
   fmcgCompaniesMorocco,
   fmcgCompaniesJordan,
+  fmcgCompaniesIraq,
+  fmcgCompaniesAlgeria,
+  fmcgCompaniesTunisia,
+  fmcgCompaniesLebanon,
+  medicalDeviceCompaniesGermany,
+  medicalDeviceCompaniesUk,
+  medicalDeviceCompaniesChina,
+  medicalDeviceCompaniesIndia,
+  medicalDeviceCompaniesSouthKorea,
+  medicalDeviceCompaniesSingapore,
+  medicalDeviceCompaniesMalaysia,
+  medicalDeviceCompaniesBrazil,
+  medicalDeviceCompaniesFrance,
+  medicalDeviceCompaniesItaly,
+  medicalDeviceCompaniesSpain,
+  medicalDeviceCompaniesCanada,
+  medicalDeviceCompaniesAustralia,
+  medicalDeviceCompaniesSwitzerland,
+  medicalDeviceCompaniesMexico,
+  pharmaceuticalDistributorsIndia,
+  pharmaceuticalDistributorsChina,
+  pharmaceuticalDistributorsBrazil,
+  pharmaceuticalDistributorsMexico,
+  pharmaceuticalDistributorsSouthAfrica,
+  pharmaceuticalDistributorsNigeria,
+  pharmaceuticalDistributorsIndonesia,
+  pharmaceuticalDistributorsVietnam,
+  retailCompaniesBahrain,
+  retailCompaniesJordan,
+  retailCompaniesMorocco,
+  retailCompaniesIraq,
+  retailCompaniesTurkey,
+  retailCompaniesPakistan,
+  retailCompaniesNigeria,
+  retailCompaniesSouthAfrica,
+  realEstateCompaniesBahrain,
+  realEstateCompaniesJordan,
+  realEstateCompaniesMorocco,
+  realEstateCompaniesIraq,
+  realEstateCompaniesTurkey,
+  realEstateCompaniesPakistan,
+  constructionCompaniesSaudiArabia,
+  constructionCompaniesUae,
+  constructionCompaniesQatar,
+  constructionCompaniesEgypt,
+  constructionCompaniesKuwait,
+  constructionCompaniesOman,
+  cosmeticsCompaniesSaudiArabia,
+  cosmeticsCompaniesUae,
+  cosmeticsCompaniesEgypt,
+  cosmeticsCompaniesKuwait,
+  cosmeticsCompaniesQatar,
+  hotelGroupsUae,
+  hotelGroupsSaudiArabia,
+  hotelGroupsEgypt,
+  hotelGroupsQatar,
+  hotelGroupsOman,
+  logisticsCompaniesUae,
+  logisticsCompaniesSaudiArabia,
+  logisticsCompaniesEgypt,
+  logisticsCompaniesQatar,
+  logisticsCompaniesOman,
+  manufacturingCompaniesSaudiArabia,
+  manufacturingCompaniesUae,
+  manufacturingCompaniesEgypt,
+  manufacturingCompaniesTurkey,
+  manufacturingCompaniesQatar,
 ];

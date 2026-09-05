@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T12:24:43.916Z",
+  "generatedAt": "2026-09-05T14:28:59.764Z",
   "directories": [
     {
       "path": "/automotive-distributors-bahrain",
@@ -46,6 +46,23 @@
       "regulatorSource": {
         "name": "Kuwait Ministry of Commerce and Industry — trade licensing and consumer protection",
         "url": "https://moci.gov.kw/en/",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/automotive-distributors-morocco",
+      "entity": "automotive-distributors",
+      "country": "morocco",
+      "title": "Top 15 Automotive Distributors in Morocco (2026)",
+      "metaDescription": "Automotive distributors in Morocco: Auto Hall, Sopriam, SMEIA, Renault SOMACA, Stellantis Kenitra — plants, retail, customs.",
+      "h1": "Automotive Distributors in Morocco",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Administration des Douanes et Impôts Indirects — import valuation, duty and release of vehicles and industrial kits",
+        "url": "https://www.douane.gov.ma",
         "asOf": "2026-09-05"
       },
       "lastmod": "2026-09-05",
@@ -223,6 +240,23 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/banks-jordan",
+      "entity": "banks",
+      "country": "jordan",
+      "title": "Banks in Jordan: Arab Bank, HBTF, CBJ names (2026)",
+      "metaDescription": "Banks in Jordan: Arab Bank, Housing Bank, Bank of Jordan, Cairo Amman, JIB and CBJ — Amman books, Islamic chairs, dinar rails.",
+      "h1": "Banks in Jordan",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Central Bank of Jordan (CBJ) — licensed banks, prudential rules, dinar corridor and payment systems",
+        "url": "https://www.cbj.gov.jo",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/banks-kuwait",
       "entity": "banks",
       "country": "kuwait",
@@ -240,6 +274,40 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/banks-morocco",
+      "entity": "banks",
+      "country": "morocco",
+      "title": "Banks in Morocco: Attijariwafa, BCP, BAM names (2026)",
+      "metaDescription": "Banks in Morocco: Attijariwafa, BCP, Bank of Africa, SG Maroc, BMCI, CIH and Bank Al-Maghrib — Casablanca books, BAM rules.",
+      "h1": "Banks in Morocco",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Bank Al-Maghrib (BAM) — licensed banks and participative banks, prudential rules and payment-system oversight",
+        "url": "https://www.bkam.ma",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-nigeria",
+      "entity": "banks",
+      "country": "nigeria",
+      "title": "Banks in Nigeria: Access, Zenith, CBN names (2026)",
+      "metaDescription": "Banks in Nigeria: Access, Zenith, GTBank, First Bank, UBA, Fidelity and CBN — Lagos books, naira rails, licensed panels.",
+      "h1": "Banks in Nigeria",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Central Bank of Nigeria (CBN) — licensed banks, prudential rules, naira corridor and payment systems",
+        "url": "https://www.cbn.gov.ng",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/banks-oman",
       "entity": "banks",
       "country": "oman",
@@ -250,6 +318,23 @@
       "regulatorSource": {
         "name": "Central Bank of Oman (CBO) — licensed banks, Islamic windows and dedicated licences, payment-system oversight",
         "url": "https://cbo.gov.om",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/banks-pakistan",
+      "entity": "banks",
+      "country": "pakistan",
+      "title": "Banks in Pakistan: HBL, UBL, SBP licensed names (2026)",
+      "metaDescription": "Banks in Pakistan: HBL, UBL, MCB, Allied, Meezan, NBP and State Bank — conventional books, Islamic chairs, rupee rails (2026).",
+      "h1": "Banks in Pakistan",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "State Bank of Pakistan (SBP) — licensed banks, prudential rules, rupee corridor and payment systems",
+        "url": "https://www.sbp.org.pk",
         "asOf": "2026-09-05"
       },
       "lastmod": "2026-09-05",
@@ -393,6 +478,23 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/biotech-companies-india",
+      "entity": "biotech-companies",
+      "country": "india",
+      "title": "Top 18 Biotech Companies in India (2026)",
+      "metaDescription": "India biotech: Biocon, Serum Institute, Bharat Biotech, Syngene, Biological E, Zydus biologics, CDSCO and BIRAC — vaccines, biosimilars, CDMO.",
+      "h1": "Biotech Companies in India",
+      "companies": 18,
+      "regulatorSource": {
+        "name": "Central Drugs Standard Control Organisation (CDSCO) — biologicals, vaccines and rDNA product registration",
+        "url": "https://cdsco.gov.in",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/biotech-companies-kuwait",
       "entity": "biotech-companies",
       "country": "kuwait",
@@ -406,6 +508,23 @@
         "asOf": "2026-09-04"
       },
       "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/biotech-companies-qatar",
+      "entity": "biotech-companies",
+      "country": "qatar",
+      "title": "Top 16 Biotech Companies in Qatar (2026)",
+      "metaDescription": "Qatar biotech: Qatar Genome, Qatar Biobank, Sidra, QBRI, HBKU, Weill Cornell Medicine-Qatar, QSTP and MoPH — sequencing, sites and licences.",
+      "h1": "Biotech Companies in Qatar",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Ministry of Public Health (MoPH) — clinical research and healthcare-facility licensing",
+        "url": "https://www.moph.gov.qa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -461,6 +580,193 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/construction-companies-egypt",
+      "entity": "construction-companies",
+      "country": "egypt",
+      "title": "Top 14 Construction Companies in Egypt (2026)",
+      "metaDescription": "Egypt contractors: Orascom Construction, Hassan Allam, Arab Contractors, Petrojet, Concord, Samcrete — NUCA cities, housing ministry packages.",
+      "h1": "Construction Companies in Egypt",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "New Urban Communities Authority (NUCA) — new-city land, housing packages and community offtake",
+        "url": "https://www.nuca.gov.eg",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/construction-companies-kuwait",
+      "entity": "construction-companies",
+      "country": "kuwait",
+      "title": "Top 14 Construction Companies in Kuwait (2026)",
+      "metaDescription": "Kuwait contractors: Combined Group, Mushrif, Ahmadiah, Kharafi, Al-Hani — MPW classification, oil-sector civil, Kuwait City packages.",
+      "h1": "Construction Companies in Kuwait",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of Public Works (MPW) — contractor classification, roads, schools and government buildings",
+        "url": "https://www.mpw.gov.kw",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/construction-companies-oman",
+      "entity": "construction-companies",
+      "country": "oman",
+      "title": "Top 14 Construction Companies in Oman (2026)",
+      "metaDescription": "Oman contractors: Galfar, Bahwan Engineering, Al-Hassan, CCC, ASYAD project houses — Tender Board grades, Duqm and Sohar packages.",
+      "h1": "Construction Companies in Oman",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Secretariat General of the Tender Board — e-tendering portal and contractor classification",
+        "url": "https://etendering.tenderboard.gov.om",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/construction-companies-qatar",
+      "entity": "construction-companies",
+      "country": "qatar",
+      "title": "Top 14 Construction Companies in Qatar (2026)",
+      "metaDescription": "Qatar contractors: HBK, Midmac, Al Jaber, Galfar Al Misnad, Qatari Diar, QDAP — Ashghal grades, Lusail packages, public-works offtake.",
+      "h1": "Construction Companies in Qatar",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ashghal (Public Works Authority) — contractor classification, roads, drainage and government buildings",
+        "url": "https://www.ashghal.gov.qa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/construction-companies-saudi-arabia",
+      "entity": "construction-companies",
+      "country": "saudi-arabia",
+      "title": "Top 16 Construction Companies in Saudi Arabia (2026)",
+      "metaDescription": "Saudi contractors: Binladin, El Seif, Nesma, Almabani, BESIX, L&T, SAPAC, Red Sea Global and NEOM — MOMRAH grades, giga packages, Riyadh offtakers.",
+      "h1": "Construction Companies in Saudi Arabia",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Ministry of Municipalities and Housing (MOMAH) — contractor classification and municipal licensing (Balady)",
+        "url": "https://www.momah.gov.sa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/construction-companies-uae",
+      "entity": "construction-companies",
+      "country": "uae",
+      "title": "Top 15 Construction Companies in UAE (2026)",
+      "metaDescription": "UAE contractors: ALEC, Trojan, Al-Futtaim Construction, Multiplex, Acciona, Drake & Scull — Dubai Municipality and ADM licences, emirate packages.",
+      "h1": "Construction Companies in the UAE",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Dubai Municipality — building permits, contractor registration and inspection",
+        "url": "https://www.dm.gov.ae",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cosmetics-companies-egypt",
+      "entity": "cosmetics-companies",
+      "country": "egypt",
+      "title": "Cosmetics firms in Egypt: Eva, EDA, L’Oréal (2026)",
+      "metaDescription": "Egypt cosmetics accounts: Eva Cosmetics, L’Oréal Egypt, Unilever, P&G, Elaraby personal care — EDA filings, pharmacy and grocery doors.",
+      "h1": "Cosmetics & Personal Care Companies in Egypt",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Egyptian Drug Authority (EDA) — cosmetics and personal-care files, establishment licences",
+        "url": "https://www.edaegypt.gov.eg",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cosmetics-companies-kuwait",
+      "entity": "cosmetics-companies",
+      "country": "kuwait",
+      "title": "Cosmetics firms in Kuwait: oud, Faces, MOH (2026)",
+      "metaDescription": "Kuwait cosmetics accounts: local oud houses, Faces, Sultan Center beauty, L’Oréal, Unilever — MOH filings, Avenues and pharmacy doors.",
+      "h1": "Cosmetics & Personal Care Companies in Kuwait",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Kuwait Ministry of Health — cosmetic product notification and market control",
+        "url": "https://www.moh.gov.kw",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cosmetics-companies-qatar",
+      "entity": "cosmetics-companies",
+      "country": "qatar",
+      "title": "Cosmetics firms in Qatar: Faces, oud, MoPH (2026)",
+      "metaDescription": "Qatar cosmetics accounts: Faces, L’Oréal, local oud houses, Unilever — MoPH filings, Place Vendôme and Lagoona Mall doors.",
+      "h1": "Cosmetics & Personal Care Companies in Qatar",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Qatar Ministry of Public Health (MoPH) — cosmetic product notification and market control",
+        "url": "https://www.moph.gov.qa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cosmetics-companies-saudi-arabia",
+      "entity": "cosmetics-companies",
+      "country": "saudi-arabia",
+      "title": "Cosmetics firms in Saudi Arabia: oud, SFDA (2026)",
+      "metaDescription": "Saudi cosmetics accounts: Arabian Oud, Abdul Samad Al Qurashi, Art of Nature, L’Oréal, Unilever, P&G — SFDA filings, Faces and Sephora trade.",
+      "h1": "Cosmetics & Personal Care Companies in Saudi Arabia",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Saudi Food and Drug Authority (SFDA) — cosmetics product listing and establishment control",
+        "url": "https://www.sfda.gov.sa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cosmetics-companies-uae",
+      "entity": "cosmetics-companies",
+      "country": "uae",
+      "title": "Cosmetics firms in the UAE: Huda, MOHAP (2026)",
+      "metaDescription": "UAE cosmetics accounts: Huda Beauty, Kayali, Makeup City, Faces, Sephora, L’Oréal, Unilever — MOHAP filings, Dubai and Abu Dhabi doors.",
+      "h1": "Cosmetics & Personal Care Companies in the UAE",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "UAE Ministry of Health and Prevention (MOHAP) — cosmetic product notification and market control",
+        "url": "https://mohap.gov.ae",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/cro-companies-egypt",
       "entity": "cro-companies",
       "country": "egypt",
@@ -474,6 +780,23 @@
         "asOf": "2026-09-04"
       },
       "lastmod": "2026-09-04",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/cro-companies-jordan",
+      "entity": "cro-companies",
+      "country": "jordan",
+      "title": "Top 16 Clinical Research Organizations in Jordan (2026)",
+      "metaDescription": "CROs in Jordan: IQVIA, ClinServ, Triumpharma, Pharmaceutical Research Unit, KHCC, university hospitals and JFDA — trials, BE units, ethics.",
+      "h1": "Clinical Research Organizations in Jordan",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Jordan Food and Drug Administration (JFDA) — clinical trials authorisation and inspected bioequivalence units",
+        "url": "https://www.jfda.jo",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -529,6 +852,23 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/fmcg-companies-algeria",
+      "entity": "fmcg-companies",
+      "country": "algeria",
+      "title": "Top 16 FMCG Companies in Algeria (2026)",
+      "metaDescription": "FMCG companies in Algeria: Cevital, Ifri, Soummam, Hamoud Boualem, Danone Djurdjura, Unilever and CACQE — souk plus banners.",
+      "h1": "FMCG Companies in Algeria",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Centre Algérien du Contrôle de la Qualité et de l’Emballage (CACQE) — conformity and packaging control, with the Ministry of Commerce",
+        "url": "https://www.cacqe.org",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/fmcg-companies-bahrain",
       "entity": "fmcg-companies",
       "country": "bahrain",
@@ -563,6 +903,23 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/fmcg-companies-iraq",
+      "entity": "fmcg-companies",
+      "country": "iraq",
+      "title": "Top 15 FMCG Companies in Iraq (2026)",
+      "metaDescription": "FMCG companies in Iraq: Baghdad Soft Drinks, Al-Saeed, Khairat Al-Rafidain, Fine, MAF Carrefour — souqs, agents, COSQC (2026).",
+      "h1": "FMCG Companies in Iraq",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Central Organization for Standardization and Quality Control (COSQC) — standards, conformity and selected product control",
+        "url": "https://www.cosqc.gov.iq",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/fmcg-companies-jordan",
       "entity": "fmcg-companies",
       "country": "jordan",
@@ -590,6 +947,23 @@
       "regulatorSource": {
         "name": "Kenya Bureau of Standards (KEBS) — standards marks for foods, drinks and cosmetics",
         "url": "https://www.kebs.org",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/fmcg-companies-lebanon",
+      "entity": "fmcg-companies",
+      "country": "lebanon",
+      "title": "Top 16 FMCG Companies in Lebanon (2026)",
+      "metaDescription": "FMCG companies in Lebanon: Indevco, Chtaura, Liban Lait, Fattal, Holdal, Cortas, Spinneys and TSC — grocers, agents, MoE.",
+      "h1": "FMCG Companies in Lebanon",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Ministry of Economy and Trade (Lebanon) — labelling, consumer protection and selected market-control files",
+        "url": "https://www.economy.gov.lb",
         "asOf": "2026-09-05"
       },
       "lastmod": "2026-09-05",
@@ -682,6 +1056,23 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/fmcg-companies-tunisia",
+      "entity": "fmcg-companies",
+      "country": "tunisia",
+      "title": "Top 15 FMCG Companies in Tunisia (2026)",
+      "metaDescription": "FMCG companies in Tunisia: Délice, Poulina, SFBT, Land’Or, Saida, Unilever Maghreb and Magasin Général — grocers, banners.",
+      "h1": "FMCG Companies in Tunisia",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Ministry of Commerce (Tunisia) — labelling, market control and selected import rules, with INNORPI on standards",
+        "url": "https://www.commerce.gov.tn",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/fmcg-companies-turkey",
       "entity": "fmcg-companies",
       "country": "turkey",
@@ -743,6 +1134,23 @@
       "regulatorSource": {
         "name": "Public Authority for Food and Nutrition (PAFN) — food-establishment licensing, import clearance and nutrition control (Law 112 of 2013)",
         "url": "https://www.pafn.gov.kw",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/food-beverage-companies-morocco",
+      "entity": "food-beverage-companies",
+      "country": "morocco",
+      "title": "Top 15 Food & Beverage Companies in Morocco (2026)",
+      "metaDescription": "Moroccan food-and-beverage plants: Centrale Danone, Cosumar, Lesieur, Copag, Bel, BdM and ONSSA. Halls and HORECA, not a trolley.",
+      "h1": "Food & Beverage Companies in Morocco",
+      "companies": 15,
+      "regulatorSource": {
+        "name": "Office National de Sécurité Sanitaire des Produits Alimentaires (ONSSA) — food-establishment licensing, product inspection and sanitary files",
+        "url": "https://www.onssa.gov.ma",
         "asOf": "2026-09-05"
       },
       "lastmod": "2026-09-05",
@@ -1073,6 +1481,278 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/hotel-groups-egypt",
+      "entity": "hotel-groups",
+      "country": "egypt",
+      "title": "Hotel groups in Egypt: Orascom, Travco (2026)",
+      "metaDescription": "Egypt hotel groups: Orascom Hotels, Travco, Marriott, Accor, Hilton, TUI — Ministry of Tourism licences, Red Sea and Cairo keys.",
+      "h1": "Hotel & Hospitality Groups in Egypt",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Egypt Ministry of Tourism and Antiquities — hotel classification, tourism licences and statistics",
+        "url": "https://mota.gov.eg",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hotel-groups-oman",
+      "entity": "hotel-groups",
+      "country": "oman",
+      "title": "Hotel groups in Oman: Omran, Anantara (2026)",
+      "metaDescription": "Oman hotel groups: Omran, Anantara, Shangri-La Barr Al Jissah, Crowne Plaza, Al Bustan Palace — Ministry of Heritage and Tourism licences.",
+      "h1": "Hotel & Hospitality Groups in Oman",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Oman Ministry of Heritage and Tourism — hotel classification, tourism permits and heritage-adjacent rules",
+        "url": "https://mhet.gov.om",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hotel-groups-qatar",
+      "entity": "hotel-groups",
+      "country": "qatar",
+      "title": "Hotel groups in Qatar: Katara, QTA (2026)",
+      "metaDescription": "Qatar hotel groups: Katara Hospitality, Marriott, Hilton, Mandarin Oriental, Msheireb hotels — QTA licences, West Bay and Lusail keys.",
+      "h1": "Hotel & Hospitality Groups in Qatar",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Qatar Tourism — hotel classification, tourism permits and promotion",
+        "url": "https://www.qatartourism.com",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hotel-groups-saudi-arabia",
+      "entity": "hotel-groups",
+      "country": "saudi-arabia",
+      "title": "Hotel groups in Saudi Arabia: Dur, Accor (2026)",
+      "metaDescription": "Saudi hotel groups: Dur Hospitality, Accor, Hilton, Marriott, Red Sea Global, Diriyah — Ministry of Tourism licences, Makkah and Riyadh keys.",
+      "h1": "Hotel & Hospitality Groups in Saudi Arabia",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Saudi Ministry of Tourism — hotel classification, tourism licences and published statistics",
+        "url": "https://mt.gov.sa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/hotel-groups-uae",
+      "entity": "hotel-groups",
+      "country": "uae",
+      "title": "Hotel groups in the UAE: Jumeirah, DTCM (2026)",
+      "metaDescription": "UAE hotel groups: Jumeirah, Emaar Hospitality, Rotana, Marriott, Hilton, IHG, Accor, Kerzner — DTCM licences, Dubai and Abu Dhabi keys.",
+      "h1": "Hotel & Hospitality Groups in the UAE",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Dubai Department of Economy and Tourism (DTCM) — hotel classification, tourism permits and statistics",
+        "url": "https://www.dubaitourism.gov.ae",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/logistics-companies-egypt",
+      "entity": "logistics-companies",
+      "country": "egypt",
+      "title": "Top 14 Logistics Companies in Egypt (2026)",
+      "metaDescription": "Egypt logistics accounts: SCCT, Damietta, EgyptAir Cargo, CMA CGM, DB Schenker, Aramex — Customs Authority, Sokhna and Alexandria gates.",
+      "h1": "Logistics Companies in Egypt",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Egyptian Customs Authority — clearance at ports and airports",
+        "url": "https://www.customs.gov.eg",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/logistics-companies-oman",
+      "entity": "logistics-companies",
+      "country": "oman",
+      "title": "Top 14 Logistics Companies in Oman (2026)",
+      "metaDescription": "Oman logistics accounts: ASYAD, SOHAR Port, Port of Salalah, Oman Post, DHL — three-port theatres, free-zone yards, Muscat last mile.",
+      "h1": "Logistics Companies in Oman",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "ASYAD Group — state logistics parent across ports, zones and hinterland (operations and offtake map)",
+        "url": "https://asyad.om",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/logistics-companies-qatar",
+      "entity": "logistics-companies",
+      "country": "qatar",
+      "title": "Top 14 Logistics Companies in Qatar (2026)",
+      "metaDescription": "Qatar logistics accounts: Mwani Qatar, QTerminals, GWC, Qatar Post, DHL — Hamad Port stamps, Mesaieed and Industrial Area yards.",
+      "h1": "Logistics Companies in Qatar",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Mwani Qatar — ports authority, Hamad Port rules and landlord overlay",
+        "url": "https://www.mwani.com.qa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/logistics-companies-saudi-arabia",
+      "entity": "logistics-companies",
+      "country": "saudi-arabia",
+      "title": "Top 14 Logistics Companies in Saudi Arabia (2026)",
+      "metaDescription": "Saudi logistics accounts: SAL, Bahri, SAPTCO freight, Naqel, SMSA, DHL, King Abdullah Port — ZATCA customs, Riyadh and Jeddah yards.",
+      "h1": "Logistics Companies in Saudi Arabia",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Zakat, Tax and Customs Authority (ZATCA) — customs clearance, zakat and tax overlay",
+        "url": "https://zatca.gov.sa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/logistics-companies-uae",
+      "entity": "logistics-companies",
+      "country": "uae",
+      "title": "Top 14 Logistics Companies in UAE (2026)",
+      "metaDescription": "UAE logistics accounts: DP World, Aramex, Emirates SkyCargo, Agility, DHL, FedEx — FTA and Dubai Customs, Jebel Ali and Khalifa yards.",
+      "h1": "Logistics Companies in the UAE",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Federal Tax Authority (FTA) — VAT and excise overlay on goods moving through UAE ports and free zones",
+        "url": "https://www.fta.gov.ae",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/manufacturing-companies-egypt",
+      "entity": "manufacturing-companies",
+      "country": "egypt",
+      "title": "Top 14 Manufacturing Companies in Egypt (2026)",
+      "metaDescription": "Egypt manufacturers: Ezz Steel, Elsewedy Electric, Abu Qir Fertilizers, SIDPEC, Oriental Weavers — IDA licences, Sokhna and Delta plants.",
+      "h1": "Manufacturing Companies in Egypt",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Industrial Development Authority (IDA) — industrial licences and industrial-land overlay",
+        "url": "https://www.ida.gov.eg",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/manufacturing-companies-qatar",
+      "entity": "manufacturing-companies",
+      "country": "qatar",
+      "title": "Top 14 Manufacturing Companies in Qatar (2026)",
+      "metaDescription": "Qatar manufacturers: Qatalum, Qatar Steel, QAFCO, Mesaieed, Pearl GTL — QatarEnergy industrial offtakers, Ras Laffan and Mesaieed plants.",
+      "h1": "Manufacturing Companies in Qatar",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "QatarEnergy — industrial shareholder, feedstock and downstream overlay across Mesaieed and Ras Laffan",
+        "url": "https://www.qatarenergy.qa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/manufacturing-companies-saudi-arabia",
+      "entity": "manufacturing-companies",
+      "country": "saudi-arabia",
+      "title": "Top 14 Manufacturing Companies in Saudi Arabia (2026)",
+      "metaDescription": "Saudi manufacturers: SABIC, Maaden, Tasnee, Advanced Petrochemical, Sadara — RCJY and MODON cities, Jubail and Yanbu offtakers.",
+      "h1": "Manufacturing Companies in Saudi Arabia",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Royal Commission for Jubail and Yanbu (RCJY) — industrial-city landlord, licences and utilities",
+        "url": "https://www.rcjy.gov.sa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/manufacturing-companies-turkey",
+      "entity": "manufacturing-companies",
+      "country": "turkey",
+      "title": "Top 14 Manufacturing Companies in Turkey (2026)",
+      "metaDescription": "Turkey manufacturers: Erdemir, Tüpraş, Şişecam, Arçelik, Ford Otosan — Ministry of Industry licences, Marmara and Iskenderun plants.",
+      "h1": "Manufacturing Companies in Turkey",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Republic of Türkiye Ministry of Industry and Technology — industrial registration, incentives and OSB overlay",
+        "url": "https://www.sanayi.gov.tr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/manufacturing-companies-uae",
+      "entity": "manufacturing-companies",
+      "country": "uae",
+      "title": "Top 14 Manufacturing Companies in UAE (2026)",
+      "metaDescription": "UAE manufacturers: Emirates Global Aluminium, Emirates Steel Arkan, Ducab, Strata, ADNOC industrial — KIZAD and industrial-city offtakers.",
+      "h1": "Manufacturing Companies in the UAE",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Khalifa Industrial Zone Abu Dhabi (KIZAD) — capital industrial-city landlord, plots and utilities",
+        "url": "https://www.kizad.ae",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-australia",
+      "entity": "medical-device-companies",
+      "country": "australia",
+      "title": "Australia Medtech: TGA, Cochlear and State Buying (2026)",
+      "metaDescription": "Australia medical device companies: TGA, Cochlear, ResMed, Nanosonics, Sonic Healthcare, state health buying and hospital device distributors.",
+      "h1": "Medical Device Companies in Australia",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "TGA — Therapeutic Goods Administration, ARTG medical device listings",
+        "url": "https://www.tga.gov.au",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/medical-device-companies-bahrain",
       "entity": "medical-device-companies",
       "country": "bahrain",
@@ -1090,6 +1770,57 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/medical-device-companies-brazil",
+      "entity": "medical-device-companies",
+      "country": "brazil",
+      "title": "Brazil Medtech: Anvisa, SUS Buying and Local Makers (2026)",
+      "metaDescription": "Brazil medical device companies: Anvisa, SUS buying, Baumer, Fanem, Siemens, GE, B. Braun, Unimed, Hapvida and hospital distributors.",
+      "h1": "Medical Device Companies in Brazil",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Anvisa — Agência Nacional de Vigilância Sanitária, medical device registro and Cadastro",
+        "url": "https://www.gov.br/anvisa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-canada",
+      "entity": "medical-device-companies",
+      "country": "canada",
+      "title": "Canada Medtech: Health Canada, GPOs and Provinces (2026)",
+      "metaDescription": "Canada medical device companies: Health Canada, Medtronic, Abbott, provincial authorities, Ontario Health, hospital GPOs and local device firms.",
+      "h1": "Medical Device Companies in Canada",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Health Canada — Medical Devices Directorate, licences and MDEL establishments",
+        "url": "https://www.canada.ca/en/health-canada.html",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-china",
+      "entity": "medical-device-companies",
+      "country": "china",
+      "title": "China Medtech: Mindray, NMPA and Volume Buying (2026)",
+      "metaDescription": "China medical device companies: Mindray, United Imaging, MicroPort, Weigao, Yuwell, Neusoft, Shinva, GE, Siemens, Philips, Sinopharm and NMPA.",
+      "h1": "Medical Device Companies in China",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "NMPA — National Medical Products Administration, medical device registration and supervision",
+        "url": "https://www.nmpa.gov.cn",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/medical-device-companies-egypt",
       "entity": "medical-device-companies",
       "country": "egypt",
@@ -1103,6 +1834,57 @@
         "asOf": "2026-09-03"
       },
       "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-france",
+      "entity": "medical-device-companies",
+      "country": "france",
+      "title": "French Medtech: ANSM, AP-HP Buying and IVD Houses (2026)",
+      "metaDescription": "France medical device companies: ANSM, AP-HP buying, bioMérieux, Guerbet, Stago, Air Liquide Medical, Essilor, Siemens, GE and Philips.",
+      "h1": "Medical Device Companies in France",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "ANSM — Agence nationale de sécurité du médicament et des produits de santé, medical devices",
+        "url": "https://ansm.sante.fr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-germany",
+      "entity": "medical-device-companies",
+      "country": "germany",
+      "title": "German Medtech Makers, BfArM and Hospital Buying (2026)",
+      "metaDescription": "German medical device companies: Siemens Healthineers, B. Braun, Fresenius, Zeiss, Dräger, Karl Storz, Ottobock, Biotronik, Hartmann, Roche, BfArM, GKV buying.",
+      "h1": "Medical Device Companies in Germany",
+      "companies": 17,
+      "regulatorSource": {
+        "name": "BfArM — medical devices, vigilance and German competent-authority notices",
+        "url": "https://www.bfarm.de",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-india",
+      "entity": "medical-device-companies",
+      "country": "india",
+      "title": "India Medtech: CDSCO, Meril and Hospital Tenders (2026)",
+      "metaDescription": "India medical device companies: Poly Medicure, HMD, Trivitron, Skanray, Meril, Transasia, BPL, Apollo buying, AIIMS tenders and CDSCO rules.",
+      "h1": "Medical Device Companies in India",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "CDSCO — Central Drugs Standard Control Organisation, medical device licensing",
+        "url": "https://cdsco.gov.in",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -1141,6 +1923,23 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/medical-device-companies-italy",
+      "entity": "medical-device-companies",
+      "country": "italy",
+      "title": "Italian Medtech: Ministry, LivaNova and Regional Buying (2026)",
+      "metaDescription": "Italy medical device companies: Ministry of Health, LivaNova, Diasorin, Menarini, Esaote, Artsana, regional buying and hospital distributors.",
+      "h1": "Medical Device Companies in Italy",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Ministero della Salute — medical devices directorate and national register",
+        "url": "https://www.salute.gov.it",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/medical-device-companies-jordan",
       "entity": "medical-device-companies",
       "country": "jordan",
@@ -1171,6 +1970,40 @@
         "asOf": "2026-09-03"
       },
       "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-malaysia",
+      "entity": "medical-device-companies",
+      "country": "malaysia",
+      "title": "Malaysia Medtech: MDA, Gloves and Hospital Buying (2026)",
+      "metaDescription": "Malaysia medical device companies: MDA, Top Glove, Kossan, Supermax, IHH Pantai, Pharmaniaga, Siemens MY and local hospital distributors.",
+      "h1": "Medical Device Companies in Malaysia",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "MDA — Medical Device Authority Malaysia, MeDC@St registration",
+        "url": "https://www.mda.gov.my",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-mexico",
+      "entity": "medical-device-companies",
+      "country": "mexico",
+      "title": "Mexico Medtech: COFEPRIS, IMSS and Private Groups (2026)",
+      "metaDescription": "Mexico medical device companies: COFEPRIS, IMSS, ISSSTE, PiSA, Siemens, GE, Médica Sur, ABC Hospital and local device distributors.",
+      "h1": "Medical Device Companies in Mexico",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "COFEPRIS — Comisión Federal para la Protección contra Riesgos Sanitarios, dispositivos médicos",
+        "url": "https://www.gob.mx/cofepris",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -1226,6 +2059,74 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/medical-device-companies-singapore",
+      "entity": "medical-device-companies",
+      "country": "singapore",
+      "title": "Singapore Medtech: HSA, Esco and Cluster Buying (2026)",
+      "metaDescription": "Singapore medical device companies: HSA, Esco, Biosensors, BD hub, Siemens SEA, Parkway IHH, NUHS and National University Hospital.",
+      "h1": "Medical Device Companies in Singapore",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "HSA — Health Sciences Authority, medical device and dealer licensing",
+        "url": "https://www.hsa.gov.sg",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-south-korea",
+      "entity": "medical-device-companies",
+      "country": "south-korea",
+      "title": "Korea Medtech: Samsung Medison, MFDS and NHIS (2026)",
+      "metaDescription": "South Korea medtech: Samsung Medison, Alpinion, Osstem, Vatech, Lunit, Seegene, Siemens KR, MFDS registration and NHIS hospital buying.",
+      "h1": "Medical Device Companies in South Korea",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "MFDS — Ministry of Food and Drug Safety, medical device approval and surveillance",
+        "url": "https://www.mfds.go.kr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-spain",
+      "entity": "medical-device-companies",
+      "country": "spain",
+      "title": "Spanish Medtech: AEMPS, Grifols and Regional Services (2026)",
+      "metaDescription": "Spain medical device companies: AEMPS, Grifols, Werfen, Palex, Fenin, SERMAS, Andalusia health services and multinational device offices.",
+      "h1": "Medical Device Companies in Spain",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "AEMPS — Agencia Española de Medicamentos y Productos Sanitarios, productos sanitarios",
+        "url": "https://www.aemps.gob.es",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-switzerland",
+      "entity": "medical-device-companies",
+      "country": "switzerland",
+      "title": "Swiss Medtech: Swissmedic, Roche and Insel Buying (2026)",
+      "metaDescription": "Switzerland medical device companies: Swissmedic, Roche Diagnostics, Straumann, Sonova, Ypsomed, Hamilton Medical, Medtronic and Inselspital.",
+      "h1": "Medical Device Companies in Switzerland",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Swissmedic — Swiss Agency for Therapeutic Products, medical devices",
+        "url": "https://www.swissmedic.ch",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/medical-device-companies-turkey",
       "entity": "medical-device-companies",
       "country": "turkey",
@@ -1239,6 +2140,23 @@
         "asOf": "2026-09-03"
       },
       "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/medical-device-companies-uk",
+      "entity": "medical-device-companies",
+      "country": "uk",
+      "title": "UK Medtech: Smith & Nephew, MHRA and NHS Supply (2026)",
+      "metaDescription": "UK medical device companies: Smith & Nephew, Convatec, Medtronic, J&J MedTech, Olympus, GE HealthCare, Renishaw, MHRA, NICE and NHS Supply Chain.",
+      "h1": "Medical Device Companies in the UK",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "MHRA — Medicines and Healthcare products Regulatory Agency, device registration and vigilance",
+        "url": "https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -1770,6 +2688,40 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/pharmaceutical-distributors-brazil",
+      "entity": "pharmaceutical-distributors",
+      "country": "brazil",
+      "title": "Top 14 Pharmaceutical Distributors in Brazil (2026)",
+      "metaDescription": "Pharmaceutical distributors in Brazil: Profarma, Panpharma, Santa Cruz, Raia Drogasil, Hypera, Anvisa and SUS — wholesale books, retail DCs, public buyers.",
+      "h1": "Pharmaceutical Distributors in Brazil",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Anvisa — licensed pharmaceutical manufacturers, importers and distributors; serialization and GDP inspection",
+        "url": "https://www.gov.br/anvisa",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-china",
+      "entity": "pharmaceutical-distributors",
+      "country": "china",
+      "title": "Top 14 Pharmaceutical Distributors in China (2026)",
+      "metaDescription": "Pharmaceutical distributors in China: Sinopharm, Shanghai Pharma, CR Pharma, Jointown, VBP hospitals and NMPA — two-invoice rules, provincial buyers.",
+      "h1": "Pharmaceutical Distributors in China",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "National Medical Products Administration (NMPA) — licensed drug manufacturers, importers and wholesale enterprises",
+        "url": "https://www.nmpa.gov.cn",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/pharmaceutical-distributors-egypt",
       "entity": "pharmaceutical-distributors",
       "country": "egypt",
@@ -1783,6 +2735,40 @@
         "asOf": "2026-09-03"
       },
       "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-india",
+      "entity": "pharmaceutical-distributors",
+      "country": "india",
+      "title": "Top 16 Pharmaceutical Distributors in India (2026)",
+      "metaDescription": "Pharmaceutical distributors in India: Entero, TNMSC, HLL, MedPlus, Jan Aushadhi, CGHS and CDSCO — state buyers, listed wholesalers, manufacturer fleets.",
+      "h1": "Pharmaceutical Distributors in India",
+      "companies": 16,
+      "regulatorSource": {
+        "name": "Central Drugs Standard Control Organisation (CDSCO) — licensed manufacturers, importers and wholesale establishments",
+        "url": "https://cdsco.gov.in",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-indonesia",
+      "entity": "pharmaceutical-distributors",
+      "country": "indonesia",
+      "title": "Top 14 Pharmaceutical Distributors in Indonesia (2026)",
+      "metaDescription": "Pharmaceutical distributors in Indonesia: Enseval, Millennium Pharmacon, Tempo Scan Pacific, Kimia Farma, BPOM and BPJS Kesehatan — PBF books, JKN, island coverage.",
+      "h1": "Pharmaceutical Distributors in Indonesia",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "BPOM (Badan Pengawas Obat dan Makanan) — licensed manufacturers, importers and pedagang besar farmasi",
+        "url": "https://www.pom.go.id",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -1838,6 +2824,23 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/pharmaceutical-distributors-mexico",
+      "entity": "pharmaceutical-distributors",
+      "country": "mexico",
+      "title": "Top 14 Pharmaceutical Distributors in Mexico (2026)",
+      "metaDescription": "Pharmaceutical distributors in Mexico: Nadro, Casa Saba, Marzam, Farmacias del Ahorro, IMSS, ISSSTE and Cofepris — private books, public institutes, chemist DCs.",
+      "h1": "Pharmaceutical Distributors in Mexico",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Cofepris — licensed pharmaceutical manufacturers, importers and distributors",
+        "url": "https://www.gob.mx/cofepris",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/pharmaceutical-distributors-morocco",
       "entity": "pharmaceutical-distributors",
       "country": "morocco",
@@ -1851,6 +2854,23 @@
         "asOf": "2026-09-03"
       },
       "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-nigeria",
+      "entity": "pharmaceutical-distributors",
+      "country": "nigeria",
+      "title": "Top 14 Pharmaceutical Distributors in Nigeria (2026)",
+      "metaDescription": "Pharmaceutical distributors in Nigeria: SKG, Emzor channel, Alpha Pharmacy, Medplus, Worldwide Healthcare, NAFDAC, PCN and federal medical stores.",
+      "h1": "Pharmaceutical Distributors in Nigeria",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "National Agency for Food and Drug Administration and Control (NAFDAC) — licensed manufacturers, importers and premises",
+        "url": "https://www.nafdac.gov.ng",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -1923,6 +2943,23 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/pharmaceutical-distributors-south-africa",
+      "entity": "pharmaceutical-distributors",
+      "country": "south-africa",
+      "title": "Top 14 Pharmaceutical Distributors in South Africa (2026)",
+      "metaDescription": "Pharmaceutical distributors in South Africa: UPD, Imperial Health Sciences, Clicks, Dis-Chem, SAHPRA and NDoH tenders — private books, banner DCs, public depots.",
+      "h1": "Pharmaceutical Distributors in South Africa",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "South African Health Products Regulatory Authority (SAHPRA) — licensed manufacturers, importers and wholesalers",
+        "url": "https://www.sahpra.org.za",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
       "path": "/pharmaceutical-distributors-turkey",
       "entity": "pharmaceutical-distributors",
       "country": "turkey",
@@ -1953,6 +2990,23 @@
         "asOf": "2026-09-03"
       },
       "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pharmaceutical-distributors-vietnam",
+      "entity": "pharmaceutical-distributors",
+      "country": "vietnam",
+      "title": "Top 14 Pharmaceutical Distributors in Vietnam (2026)",
+      "metaDescription": "Pharmaceutical distributors in Vietnam: DKSH, Zuellig, VINAPHARM, Domesco, Pymepharco, DAV and MOH — foreign 3PL-agents, SOE books, provincial buyers.",
+      "h1": "Pharmaceutical Distributors in Vietnam",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Drug Administration of Vietnam (DAV) / Ministry of Health — licensed manufacturers, importers and wholesalers",
+        "url": "https://dav.gov.vn",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
       "priority": "0.86",
       "changefreq": "monthly"
     },
@@ -2091,6 +3145,244 @@
       "lastmod": "2026-09-03",
       "priority": "0.86",
       "changefreq": "monthly"
+    },
+    {
+      "path": "/real-estate-companies-bahrain",
+      "entity": "real-estate-companies",
+      "country": "bahrain",
+      "title": "Top 16 Real Estate Developers in Bahrain (2026 List)",
+      "metaDescription": "2026 list of real estate developers in Bahrain: Diyar Al Muharraq, Edamah, Naseej, Dilmunia, Al Areen, Eskan Bank — pipeline, off-plan, buyers, brokers.",
+      "h1": "Top Real Estate Developers in Bahrain (2026)",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Bahrain Real Estate Regulatory Authority (RERA) — licensed projects and brokers; Survey and Land Registration Bureau titles",
+        "url": "https://www.rera.gov.bh",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/real-estate-companies-iraq",
+      "entity": "real-estate-companies",
+      "country": "iraq",
+      "title": "Top 16 Real Estate Developers in Iraq (2026 List)",
+      "metaDescription": "2026 list of real estate developers in Iraq: Empire World, Nass Iraq, Baghdad investment projects, Zawraa, Erbil and Basra compounds — pipeline, buyers.",
+      "h1": "Top Real Estate Developers in Iraq (2026)",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Baghdad Investment Commission / Kurdistan Investment Board — licensed investment projects and compound permissions",
+        "url": "https://www.investpromo.gov.iq",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/real-estate-companies-jordan",
+      "entity": "real-estate-companies",
+      "country": "jordan",
+      "title": "Top 16 Real Estate Developers in Jordan (2026 List)",
+      "metaDescription": "2026 list of real estate developers in Jordan: Abdali, MAWARED, Green Land, Jordan Dubai Properties, SIC — pipeline, off-plan, buyers, Amman land.",
+      "h1": "Top Real Estate Developers in Jordan (2026)",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Department of Lands and Survey — title records; Greater Amman Municipality building and zoning",
+        "url": "https://www.dls.gov.jo",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/real-estate-companies-morocco",
+      "entity": "real-estate-companies",
+      "country": "morocco",
+      "title": "Top 16 Real Estate Developers in Morocco (2026 List)",
+      "metaDescription": "2026 list of real estate developers in Morocco: Addoha, Alliances Darna, CGI, CDG Development, Palmeraie, Anfa — pipeline, VEFA, buyers, brokers.",
+      "h1": "Top Real Estate Developers in Morocco (2026)",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of National Territory, Urban Planning, Housing and City Policy — VEFA and social-housing rules",
+        "url": "https://www.mhpv.gov.ma",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/real-estate-companies-pakistan",
+      "entity": "real-estate-companies",
+      "country": "pakistan",
+      "title": "Top 16 Real Estate Developers in Pakistan (2026 List)",
+      "metaDescription": "2026 list of real estate developers in Pakistan: Bahria Town, DHA, Emaar Pakistan, Lucky Creek, Imarat, LDA/CDA — pipeline, files, buyers, brokers.",
+      "h1": "Top Real Estate Developers in Pakistan (2026)",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Lahore Development Authority / Capital Development Authority — scheme approval and sector releases; cantonment DHA rules",
+        "url": "https://www.lda.gop.pk",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/real-estate-companies-turkey",
+      "entity": "real-estate-companies",
+      "country": "turkey",
+      "title": "Top 16 Real Estate Developers in Turkey (2026 List)",
+      "metaDescription": "2026 list of real estate developers in Turkey: Emlak Konut, TOKİ, NEF, Ağaoğlu, Sur Yapı, Rönesans, DAP, Ege Yapı — pipeline, off-plan, GYODER.",
+      "h1": "Top Real Estate Developers in Turkey (2026)",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of Environment, Urbanisation and Climate Change — developer licensing and zoning; GYODER industry practice",
+        "url": "https://www.csb.gov.tr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/retail-companies-bahrain",
+      "entity": "retail-companies",
+      "country": "bahrain",
+      "title": "Top 14 Retail Companies in Bahrain (2026)",
+      "metaDescription": "Retail companies in Bahrain: Lulu, Carrefour, Al Jazira supermarket, Mega Mart, Seef mall grocery, pharmacies and grocers — island banners, causeway leak.",
+      "h1": "Retail Companies in Bahrain",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of Industry and Commerce — Sijilat commercial licences for retail establishments",
+        "url": "https://www.moic.gov.bh",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/retail-companies-iraq",
+      "entity": "retail-companies",
+      "country": "iraq",
+      "title": "Top 14 Retail Companies in Iraq (2026)",
+      "metaDescription": "Retail companies in Iraq: Family Mall, Carrefour MAF Iraq, Ankawa grocers, Baghdad wholesale markets and local supermarket groups — banners versus souq.",
+      "h1": "Retail Companies in Iraq",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of Trade — company registration and selected food-retail and ration rules",
+        "url": "https://www.mot.gov.iq",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/retail-companies-jordan",
+      "entity": "retail-companies",
+      "country": "jordan",
+      "title": "Top 14 Retail Companies in Jordan (2026)",
+      "metaDescription": "Retail companies in Jordan: Carrefour MAF, Cozmo, C-Town, Sameh Mall, Safeway Jordan and neighbourhood grocers — Amman banners, not manufacturers.",
+      "h1": "Retail Companies in Jordan",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of Industry, Trade and Supply — commercial registration and selected retail licensing",
+        "url": "https://www.mit.gov.jo",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/retail-companies-morocco",
+      "entity": "retail-companies",
+      "country": "morocco",
+      "title": "Top 14 Retail Companies in Morocco (2026)",
+      "metaDescription": "Retail companies in Morocco: Label’Vie (Carrefour, Atacadao), Marjane, BIM Morocco, Aswak Assalam and hanouts — banners as accounts, not factories.",
+      "h1": "Retail Companies in Morocco",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of Industry and Trade — commercial licensing; ONSSA food-retail hygiene rules",
+        "url": "https://www.mcinet.gov.ma",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/retail-companies-nigeria",
+      "entity": "retail-companies",
+      "country": "nigeria",
+      "title": "Top 14 Retail Companies in Nigeria (2026)",
+      "metaDescription": "Retail companies in Nigeria: Shoprite, Spar Nigeria, Justrite, Market Square, FoodCo and open markets — organised banners versus Idumota and Onitsha.",
+      "h1": "Retail Companies in Nigeria",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Corporate Affairs Commission / NAFDAC retail-sale rules for foods and cosmetics",
+        "url": "https://www.cac.gov.ng",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/retail-companies-pakistan",
+      "entity": "retail-companies",
+      "country": "pakistan",
+      "title": "Top 14 Retail Companies in Pakistan (2026)",
+      "metaDescription": "Retail companies in Pakistan: Imtiaz, Metro, Carrefour Pakistan, Chase Up, Al-Fatah and Utility Stores Corporation — banners, USC, neighbourhood grocers.",
+      "h1": "Retail Companies in Pakistan",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of Commerce / provincial industries departments — commercial registration of retail establishments",
+        "url": "https://www.commerce.gov.pk",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/retail-companies-south-africa",
+      "entity": "retail-companies",
+      "country": "south-africa",
+      "title": "Top 14 Retail Companies in South Africa (2026)",
+      "metaDescription": "Retail companies in South Africa: Shoprite/Checkers, Pick n Pay, Woolworths, Spar, Massmart/Makro and Clicks — banner missions, spaza restock, chemist.",
+      "h1": "Retail Companies in South Africa",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Department of Health — Foodstuffs, Cosmetics and Disinfectants Act; NRCS compulsory specifications for selected retail goods",
+        "url": "https://www.health.gov.za",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/retail-companies-turkey",
+      "entity": "retail-companies",
+      "country": "turkey",
+      "title": "Top 14 Retail Companies in Turkey (2026)",
+      "metaDescription": "Retail companies in Turkey: BIM, A101, Şok, Migros, CarrefourSA, Macrocenter and Bizim Toptan — discount banners as accounts, not factories.",
+      "h1": "Retail Companies in Turkey",
+      "companies": 14,
+      "regulatorSource": {
+        "name": "Ministry of Trade — retail competition, unfair trading and commercial registration",
+        "url": "https://www.ticaret.gov.tr",
+        "asOf": "2026-09-05"
+      },
+      "lastmod": "2026-09-05",
+      "priority": "0.86",
+      "changefreq": "monthly"
     }
   ],
   "hubs": [
@@ -2098,7 +3390,7 @@
       "path": "/company-directories",
       "kind": "master",
       "title": "Company Directories by Country & Industry (2026) | BioNixus",
-      "metaDescription": "All BioNixus company directories: pharma, medical device, distributor, hospital, pharmacy, FMCG, retail, real estate and bank lists by country across MENA and beyond.",
+      "metaDescription": "All BioNixus company directories: pharma, medtech, distributors, hospitals, FMCG, retail, developers, banks, automotive, construction, logistics and more — by country.",
       "lastmod": "2026-09-03",
       "priority": "0.9",
       "changefreq": "weekly"
@@ -2198,6 +3490,24 @@
       "kind": "entity",
       "title": "FMCG Companies by Country (2026 Directories) | BioNixus",
       "metaDescription": "FMCG company directories by country: local manufacturers, MNC affiliates and modern-versus-traditional trade partners across the Gulf, Turkey, Africa and Asia.",
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/medical-device-companies",
+      "kind": "entity",
+      "title": "Medical Device Companies by Country (2026 Directories) | BioNixus",
+      "metaDescription": "Medical device company directories by country: manufacturers, affiliates, distributors and public buyers across MENA, Europe, Asia and the Americas.",
+      "lastmod": "2026-09-03",
+      "priority": "0.86",
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/retail-companies",
+      "kind": "entity",
+      "title": "Retail Companies by Country (2026 Directories) | BioNixus",
+      "metaDescription": "Retail company directories by country: hypermarkets, discounters, co-ops, chemist banners and traditional grocers across the Gulf, Levant, Africa and Turkey.",
       "lastmod": "2026-09-03",
       "priority": "0.86",
       "changefreq": "weekly"

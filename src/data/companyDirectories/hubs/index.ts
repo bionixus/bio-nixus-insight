@@ -7,8 +7,10 @@ import { bahrainHub, egyptHub, kuwaitHub, omanHub, qatarHub, saudiArabiaHub, uae
 import {
   banksHub,
   fmcgCompaniesHub,
+  medicalDeviceCompaniesHub,
   pharmaceuticalCompaniesHub,
   pharmaceuticalDistributorsHub,
+  retailCompaniesHub,
 } from './entities';
 
 export const DIRECTORY_HUB_INPUTS: DirectoryHubInput[] = [
@@ -27,4 +29,7 @@ export const DIRECTORY_HUB_INPUTS: DirectoryHubInput[] = [
   // Wave 3 — entity hubs
   banksHub,
   fmcgCompaniesHub,
+  // Wave 4 — entity hubs
+  medicalDeviceCompaniesHub,
+  retailCompaniesHub,
 ];
