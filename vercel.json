@@ -204,7 +204,12 @@
     },
     {
       "source": "/bionixus-vs-iqvia-mena/",
-      "destination": "/bionixus-vs-iqvia-mena",
+      "destination": "/iqvia-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/bionixus-vs-iqvia-mena",
+      "destination": "/iqvia-alternative",
       "statusCode": 301
     },
     {
@@ -473,10 +478,6 @@
     {
       "source": "/ar/strategic-portfolio",
       "destination": "/conf/strategic-portfolio-ar.html"
-    },
-    {
-      "source": "/bionixus-vs-iqvia-mena",
-      "destination": "/conf/bionixus-vs-iqvia-mena.html"
     },
     {
       "source": "/kol-mapping-saudi-arabia-oncology",

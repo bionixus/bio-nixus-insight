@@ -38,8 +38,12 @@ export function ListicleIqviaBridge({ countryLabel }: ListicleIqviaBridgeProps) 
           Project pricing bands
         </Link>
         {' · '}
-        <Link to="/bionixus-vs-iqvia-mena" className="text-primary font-medium hover:underline">
-          BioNixus vs IQVIA MENA
+        <Link to="/hcp-atu-study" className="text-primary font-medium hover:underline">
+          HCP ATU study
+        </Link>
+        {' · '}
+        <Link to="/pharmacy-mystery-shopper" className="text-primary font-medium hover:underline">
+          Pharmacy mystery shopper
         </Link>
       </p>
     </aside>

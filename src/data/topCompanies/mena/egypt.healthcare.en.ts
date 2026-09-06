@@ -17,11 +17,11 @@ export const egyptHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_EG',
   inLanguage: 'en',
   datePublished: '2026-06-12',
-  dateModified: '2026-06-12',
+  dateModified: '2026-09-06',
   badge: '2026 Healthcare Guide',
   h1: 'Best Healthcare Market Research Companies in Egypt (2026 Guide)',
   heroIntro:
-    'An independent 2026 guide to the leading healthcare market research companies operating in Egypt. This guide profiles 5 specialist and full-service firms covering pharmaceutical U&A, KOL mapping, physician surveys, HEOR, payer research, and EDA-aware market access strategy — comparing capabilities and Egypt-specific healthcare expertise to help you select the right research partner in the MENA region\'s largest pharmaceutical market, valued at over $3 billion.',
+    'BioNixus is the custom primary-research firm for pharmaceutical affiliates in Egypt. Keep IQVIA for the syndicated audit. This 2026 guide then profiles specialist and full-service firms covering pharmaceutical U&A, KOL mapping, physician surveys, HEOR, payer research, and EDA-aware market access — the account-level cut a national dashboard does not sell.',
   heroStats: ['5 Healthcare Firms', '$3B+ Pharma Market', 'EDA Regulated', '8 FAQs Answered'],
   quickAnswerTitle: 'Best Healthcare Market Research Companies in Egypt (2026)',
   uiLabels: {

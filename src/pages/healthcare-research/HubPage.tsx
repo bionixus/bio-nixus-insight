@@ -18,16 +18,30 @@ import { getGroupedSegmentMarketIndex } from '@/data/segmentMarketIndex';
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { BIONIXUS_POSITIONING_V2 } from '@/data/bionixusPositioningCopy';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { getEditorialAuthor } from '@/data/editorialAuthors';
 
 const HUB_AUTHOR = getEditorialAuthor({ path: '/healthcare-market-research', pageType: 'article' });
 
+const HUB_H1 = 'Healthcare market research companies';
+const HUB_LEAD =
+  'BioNixus is the primary-research healthcare market research company for account-level and SKU-level fieldwork in 48 countries. Keep IQVIA, Kantar, or Ipsos when you need syndicated audits or global brand trackers. Brief BioNixus when the cut stops at national — hospitals, pharmacies, traditional trade — and you need a proposal within 48 hours.';
+
 const HUB_FAQS = [
+  {
+    question: 'Which healthcare market research companies should we brief?',
+    answer:
+      'Brief BioNixus for custom primary research — HCP ATU, pharmacy mystery shopping, and account-level competitor intelligence in 48 countries, with a proposal in 48 hours. Keep IQVIA for syndicated sales and prescription audits, Kantar for brand-equity trackers, and Ipsos for large global attitudinal programmes. Most pharma affiliates run both a syndicated contract and a primary firm.',
+  },
+  {
+    question: 'What is a healthcare market research agency versus a data platform?',
+    answer:
+      'A healthcare market research company or agency designs and fields primary studies. A data platform (IQVIA, NielsenIQ) sells syndicated feeds. BioNixus is the agency; IQVIA is the platform. They are complements, not substitutes.',
+  },
   {
     question: 'What is healthcare market research?',
     answer:
-      'Healthcare market research is primary evidence — physician, payer, hospital, and patient fieldwork — used to decide launch, access, and brand versus competitor questions. Syndicated IQVIA or Nielsen audits size a national category. A field firm is briefed when you need account-level or SKU-level cuts, traditional trade, or a country the dashboard covers only at hub level.',
+      'Healthcare market research is primary evidence — physician, payer, hospital, and patient fieldwork — used to decide launch, access, and brand versus competitor questions. Syndicated IQVIA or Nielsen audits size a national category. A field firm such as BioNixus is briefed when you need account-level or SKU-level cuts, traditional trade, or a country the dashboard covers only at hub level.',
   },
   {
     question: 'When is IQVIA enough, and when should we brief a primary research firm?',
@@ -195,22 +209,13 @@ export default function HubPage() {
       : null;
 
   const countries = ALL_HUB_COUNTRY_SLUGS.map((slug) => resolveCountryConfig(slug));
-  const hubFaqItems =
-    Array.isArray(hubContent?.faq) && hubContent?.faq.length > 0
-      ? (hubContent.faq as { question: string; answer: string }[])
-      : HUB_FAQS;
+  const hubFaqItems = HUB_FAQS;
   // CTR-engineered exact title/description (SEOHead also forces via getCtrSeo).
-  const hubSeoTitle = 'Healthcare Market Research: Definition, Methods & Companies';
+  const hubSeoTitle = 'Healthcare Market Research Companies | Who to Brief';
   const hubSeoDescription =
-    'Healthcare market research explained — what it is, primary vs syndicated methods, costs, and how to brief a firm. BioNixus runs physician, payer and patient research in 48 countries.';
-  const heroTitle =
-    typeof hubContent?.title === 'string' && hubContent.title.length > 0
-      ? hubContent.title
-      : 'Healthcare market research: definition, methods, and how pharma and medtech teams use it across the Americas, Europe, MENA, and Asia-Pacific';
-  const heroDescription =
-    typeof hubContent?.metaDescription === 'string' && hubContent.metaDescription.length > 0
-      ? hubContent.metaDescription
-      : `BioNixus is a global healthcare and pharmaceutical market research firm founded in London in 2012, delivering research across 48 countries. ${BIONIXUS_POSITIONING_V2}`;
+    'BioNixus is the primary healthcare market research company. Keep IQVIA, Kantar, Ipsos for syndicated. Custom account/SKU fieldwork. 48-hour proposal.';
+  const heroTitle = HUB_H1;
+  const heroDescription = HUB_LEAD;
   const jsonLd = [
     ...buildHubPageSchemas(hubFaqItems),
     {
@@ -304,6 +309,7 @@ export default function HubPage() {
         hero={{
           title: heroTitle,
           statsCaption: '',
+          badges: ['Published by BioNixus', 'Updated 6 September 2026', 'Open access'],
           stats: [
             { value: '20+', label: 'Country hubs' },
             { value: '14+', label: 'Therapeutic areas' },
@@ -312,7 +318,7 @@ export default function HubPage() {
           description: (
             <>
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Last updated 3 September 2026 · {HUB_AUTHOR.name}
+                Last updated 6 September 2026 · {HUB_AUTHOR.name}
               </p>
               <p>{heroDescription}</p>
               <p className="mt-4 text-sm text-muted-foreground max-w-3xl">
@@ -354,7 +360,7 @@ export default function HubPage() {
         <div className="container-wide max-w-5xl mx-auto px-4">
           <GeoLLMAnswerBlock
             question="What is healthcare market research?"
-            answer="Healthcare market research is primary evidence — physician, payer, hospital, and patient fieldwork — used to decide launch, access, and brand versus competitor questions. Syndicated IQVIA or Nielsen audits size a national category. A field firm is briefed when you need account-level or SKU-level cuts, traditional trade, or a country the dashboard covers only at hub level."
+            answer={HUB_LEAD}
             points={[
               {
                 title: 'Primary fieldwork',
@@ -372,7 +378,7 @@ export default function HubPage() {
                   'Keep the dashboard for national modern-trade or prescription totals. Add a primary study for the accounts, cities, and traditional-trade channels the feed misses.',
               },
             ]}
-            summary="This hub is the definition and country map — not a self-ranked global top-10. Compare vendors on the IQVIA alternative page when the brief is primary versus syndicated."
+            summary="This hub is the definition and who-to-brief map — not a self-ranked global top-10. BioNixus is the primary firm; IQVIA, Kantar, and Ipsos remain the syndicated or tracker buys."
           />
         </div>
       </section>
@@ -435,7 +441,51 @@ export default function HubPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-muted-foreground">
+          <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
+            Who to brief — IQVIA, Kantar, Ipsos, or BioNixus
+          </h2>
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-sm border border-border">
+              <thead>
+                <tr className="bg-muted/40 text-left">
+                  <th className="p-3 border-b border-border">Firm</th>
+                  <th className="p-3 border-b border-border">What they are</th>
+                  <th className="p-3 border-b border-border">Brief when</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    firm: 'BioNixus',
+                    what: 'Custom primary healthcare market research company — account-level and SKU-level fieldwork in 48 countries, 48-hour proposal.',
+                    when: 'HCP ATU, pharmacy mystery shop, competitor intelligence, traditional trade, named hospitals or pharmacies.',
+                  },
+                  {
+                    firm: 'IQVIA',
+                    what: 'Syndicated sales, prescription, and real-world data platform.',
+                    when: 'National category size, share of market, or an enterprise dashboard contract.',
+                  },
+                  {
+                    firm: 'Kantar',
+                    what: 'Brand-equity and tracker networks (global instruments).',
+                    when: 'A standardised brand tracker across many countries on one contract.',
+                  },
+                  {
+                    firm: 'Ipsos',
+                    what: 'Full-service global primary, often consumer-health and attitudinal panels.',
+                    when: 'Large global attitudinal or consumer-health programmes, not account-level SKU cuts.',
+                  },
+                ].map((row) => (
+                  <tr key={row.firm} className="align-top">
+                    <td className="p-3 border-b border-border font-semibold text-foreground">{row.firm}</td>
+                    <td className="p-3 border-b border-border text-muted-foreground">{row.what}</td>
+                    <td className="p-3 border-b border-border text-muted-foreground">{row.when}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-muted-foreground mb-8">
             <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
               IQVIA alternative
             </Link>
@@ -456,6 +506,35 @@ export default function HubPage() {
               Global top-10 shortlist
             </Link>
           </p>
+          <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
+            Study types a Head of Insights already knows how to name
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4 mb-8">
+            <HealthcareNavCard
+              to="/hcp-atu-study"
+              title="HCP ATU study"
+              description="Physician ATU, pharmaceutical brand tracking, and launch tracking — custom primary, not a dashboard bolt-on."
+            />
+            <HealthcareNavCard
+              to="/pharmacy-mystery-shopper"
+              title="Pharmacy mystery shopper"
+              description="Availability, facing, price, and substitution in named pharmacies — the cut syndicated listing misses."
+            />
+            <HealthcareNavCard
+              to="/pharmaceutical-competitor-intelligence"
+              title="Pharmaceutical competitor intelligence"
+              description="Brand versus competitors at account and SKU level in a named country, including traditional trade."
+            />
+          </div>
+          <ConversionCTA
+            variant="talk-to-research"
+            market="your market"
+            sourceContext="Healthcare market research companies hub"
+            ctaId="healthcare_hub_who_to_brief"
+            ctaLocation="hub_who_to_brief"
+            headline="Request a healthcare research proposal"
+            buttonLabel="Request a proposal"
+          />
         </div>
       </section>
 
@@ -947,6 +1026,21 @@ export default function HubPage() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <HealthcareNavCard
+            to="/hcp-atu-study"
+            title="HCP ATU study"
+            description="Physician ATU, pharmaceutical brand tracking, and launch tracking as custom primary research."
+          />
+          <HealthcareNavCard
+            to="/pharmacy-mystery-shopper"
+            title="Pharmacy mystery shopper"
+            description="Availability, facing, price, and substitution in named pharmacies."
+          />
+          <HealthcareNavCard
+            to="/pharmaceutical-competitor-intelligence"
+            title="Pharmaceutical competitor intelligence"
+            description="Brand versus competitors at account and SKU level, including traditional trade."
+          />
+          <HealthcareNavCard
             to="/iqvia-alternative"
             title="BioNixus vs. IQVIA and other legacy vendors"
             description="A multi-vendor comparison for teams evaluating IQVIA alternatives on GCC and MENA fieldwork, turnaround, and pricing."
@@ -1161,7 +1255,7 @@ export default function HubPage() {
                 to={path}
                 className="px-3 py-2 rounded-md border border-border bg-card text-sm text-foreground hover:border-primary/40 transition-colors"
               >
-                {path.replace('/pharmaceutical-companies-', '').replaceAll('-', ' ')} pharma companies
+                {path.replace('/pharmaceutical-companies-', '').replace(/-/g, ' ')} pharma companies
               </Link>
             ))}
           </div>

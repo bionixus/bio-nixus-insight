@@ -249,7 +249,7 @@ const RELATED_LINK_CORRECTIONS: Record<string, string> = {
 const IQVIA_MENA_RELATED: CountryListicleConfig['related'] = [
   { to: '/iqvia-alternative', label: 'IQVIA alternative — primary research' },
   { to: '/nielsen-alternative', label: 'Nielsen alternative — account-level data' },
-  { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA' },
+  { to: '/hcp-atu-study', label: 'HCP ATU study' },
 ];
 
 export function resolvePublishedRelated(

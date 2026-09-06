@@ -356,10 +356,9 @@ export default function TopMarketResearchCompaniesUae2026() {
           crumbHref="/insights/top-market-research-companies-uae-2026"
           subtitle={
             <>
-              An independent 2026 ranking of firms buyers shortlist for Dubai, Abu Dhabi, and Northern Emirates
-              consumer, FMCG, retail, and multi-industry programmes. BioNixus ranks #1 for custom primary
-              research and account-level brand vs competitor data. Compare IQVIA, Kantar, NielsenIQ, and
-              Euromonitor. Hire BioNixus via our{' '}
+              BioNixus is the custom primary-research firm for affiliates in the UAE. Keep IQVIA and Nielsen as the
+              syndicated audits. This 2026 ranking then compares Kantar, NielsenIQ, and Euromonitor for Dubai, Abu
+              Dhabi, and Northern Emirates programmes. Hire BioNixus via our{' '}
               <Link to="/market-research-uae">market research UAE</Link> service page.
             </>
           }
@@ -694,7 +693,10 @@ export default function TopMarketResearchCompaniesUae2026() {
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Market Research Firms KSA', desc: 'Sister ranking for Saudi Arabia.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
                 { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
-                { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
+                { to: '/account-level-market-research', label: 'Account-level data', desc: 'Named hospital, retailer, or distributor — not a country total.' },
+                { to: '/hcp-atu-study', label: 'HCP ATU study', desc: 'Physician ATU and pharmaceutical brand tracking.' },
+                { to: '/pharmacy-mystery-shopper', label: 'Pharmacy mystery shopper', desc: 'Availability, facing, and price in named pharmacies.' },
+                { to: '/pharmaceutical-competitor-intelligence', label: 'Pharmaceutical competitor intelligence', desc: 'Brand versus competitors at account and SKU level.' },
                 { to: '/market-research', label: 'Market Research Services', desc: 'Consumer, FMCG, retail, and multi-industry capabilities.' },
                 { to: '/pharmaceutical-companies-uae', label: 'Pharmaceutical companies in the UAE', desc: 'The companies we study — manufacturers, MNCs, and pharmacy chains.' },
               ].map((r) => (

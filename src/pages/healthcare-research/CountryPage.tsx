@@ -535,8 +535,8 @@ export default function CountryPage() {
                       IQVIA alternative
                     </Link>{' '}
                     and{' '}
-                    <Link to="/bionixus-vs-iqvia-mena" className="text-primary underline font-medium">
-                      BioNixus vs IQVIA MENA
+                    <Link to="/iqvia-alternative" className="text-primary underline font-medium">
+                      IQVIA alternative
                     </Link>
                     .
                   </p>

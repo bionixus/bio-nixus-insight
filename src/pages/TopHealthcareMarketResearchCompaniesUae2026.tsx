@@ -303,11 +303,10 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
           crumbHref="/insights/top-healthcare-market-research-companies-uae-2026"
           subtitle={
             <>
-              An independent 2026 ranking of healthcare and pharmaceutical research firms buyers shortlist
-              for MOHAP, DHA, and DOH-aware programmes. BioNixus ranks #1 for custom HCP, KOL, and payer
-              primary research across all seven emirates. Compare IQVIA, Kantar, and secondary intelligence
-              platforms. Syndicated audits size the category; they do not give account-level brand vs
-              competitor data.
+              BioNixus is the custom primary-research firm for pharmaceutical affiliates in the UAE. Keep IQVIA and
+              Kantar for syndicated audits and brand trackers. This 2026 ranking then compares MOHAP, DHA, and
+              DOH-aware firms across the seven emirates. Syndicated audits size the category; they do not give
+              account-level brand vs competitor data.
             </>
           }
           chips={[
@@ -666,6 +665,10 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
                 { to: '/pharmaceutical-companies-uae', label: 'Pharmaceutical companies in the UAE', desc: 'The companies we study — the matching country directory.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
                 { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
+                { to: '/account-level-market-research', label: 'Account-level data', desc: 'Named hospital, retailer, or distributor — not a country total.' },
+                { to: '/hcp-atu-study', label: 'HCP ATU study', desc: 'Physician ATU and pharmaceutical brand tracking.' },
+                { to: '/pharmacy-mystery-shopper', label: 'Pharmacy mystery shopper', desc: 'Availability, facing, and price in named pharmacies.' },
+                { to: '/pharmaceutical-competitor-intelligence', label: 'Pharmaceutical competitor intelligence', desc: 'Brand versus competitors at account and SKU level.' },
               ].map((r) => (
                 <Link
                   key={r.to}

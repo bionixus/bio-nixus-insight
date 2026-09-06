@@ -501,8 +501,8 @@ const BionixusMarketResearchMiddleEast = () => {
                 For teams already using IQVIA or Kantar globally, BioNixus often operates as the MENA specialist partner:
                 harmonised KPIs for global reporting, but field execution, Arabic moderation, and hospital access managed
                 from Cairo and GCC offices. See{' '}
-                <Link to="/bionixus-vs-iqvia-mena" className="text-primary underline">
-                  BioNixus vs IQVIA MENA
+                <Link to="/iqvia-alternative" className="text-primary underline">
+                  IQVIA alternative
                 </Link>{' '}
                 and{' '}
                 <Link to="/kantar-health-alternative-gcc" className="text-primary underline">

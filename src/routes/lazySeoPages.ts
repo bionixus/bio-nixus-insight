@@ -119,6 +119,7 @@ export const HealthcareReportsByTherapy = lazy(() => import('@/pages/HealthcareR
 export const HealthcareReportsHub = lazy(() => import('@/pages/HealthcareReportsHub'));
 export const HeorConsulting = lazy(() => import('@/pages/HeorConsulting'));
 export const HeorConsultingSaudiArabia = lazy(() => import('@/pages/HeorConsultingSaudiArabia'));
+export const HcpAtuStudy = lazy(() => import('@/pages/HcpAtuStudy'));
 export const HtaStudiesSaudiArabia = lazy(() => import('@/pages/HtaStudiesSaudiArabia'));
 export const HubPage = lazy(() => import('@/pages/healthcare-research/HubPage'));
 export const IndiaPharmaceuticalMarketResearch = lazy(() => import('@/pages/IndiaPharmaceuticalMarketResearch'));
@@ -173,8 +174,10 @@ export const PatientJourneyResearchGcc = lazy(() => import('@/pages/PatientJourn
 export const PatientSupportProgramResearchGcc = lazy(() => import('@/pages/PatientSupportProgramResearchGcc'));
 export const PharmaceuticalMarketResearchDubai = lazy(() => import('@/pages/PharmaceuticalMarketResearchDubai'));
 export const PharmaceuticalMarketResearchProvider = lazy(() => import('@/pages/PharmaceuticalMarketResearchProvider'));
+export const PharmaceuticalCompetitorIntelligence = lazy(() => import('@/pages/PharmaceuticalCompetitorIntelligence'));
 export const PharmaceuticalTherapyAreas = lazy(() => import('@/pages/PharmaceuticalTherapyAreas'));
 export const PharmaciesSaudiArabiaMarketing = lazy(() => import('@/pages/PharmaciesSaudiArabiaMarketing'));
+export const PharmacyMysteryShopper = lazy(() => import('@/pages/PharmacyMysteryShopper'));
 export const PharmaFieldworkEgypt = lazy(() => import('@/pages/PharmaFieldworkEgypt'));
 export const PharmaFieldworkSaudiArabia = lazy(() => import('@/pages/PharmaFieldworkSaudiArabia'));
 export const PharmaFieldworkUae = lazy(() => import('@/pages/PharmaFieldworkUae'));
@@ -422,6 +425,7 @@ const seoPageLoaders: Record<string, () => Promise<unknown>> = {
   "HealthcareReportsHub": () => import('@/pages/HealthcareReportsHub'),
   "HeorConsulting": () => import('@/pages/HeorConsulting'),
   "HeorConsultingSaudiArabia": () => import('@/pages/HeorConsultingSaudiArabia'),
+  "HcpAtuStudy": () => import('@/pages/HcpAtuStudy'),
   "HtaStudiesSaudiArabia": () => import('@/pages/HtaStudiesSaudiArabia'),
   "HubPage": () => import('@/pages/healthcare-research/HubPage'),
   "IndiaPharmaceuticalMarketResearch": () => import('@/pages/IndiaPharmaceuticalMarketResearch'),
@@ -476,8 +480,10 @@ const seoPageLoaders: Record<string, () => Promise<unknown>> = {
   "PatientSupportProgramResearchGcc": () => import('@/pages/PatientSupportProgramResearchGcc'),
   "PharmaceuticalMarketResearchDubai": () => import('@/pages/PharmaceuticalMarketResearchDubai'),
   "PharmaceuticalMarketResearchProvider": () => import('@/pages/PharmaceuticalMarketResearchProvider'),
+  "PharmaceuticalCompetitorIntelligence": () => import('@/pages/PharmaceuticalCompetitorIntelligence'),
   "PharmaceuticalTherapyAreas": () => import('@/pages/PharmaceuticalTherapyAreas'),
   "PharmaciesSaudiArabiaMarketing": () => import('@/pages/PharmaciesSaudiArabiaMarketing'),
+  "PharmacyMysteryShopper": () => import('@/pages/PharmacyMysteryShopper'),
   "PharmaFieldworkEgypt": () => import('@/pages/PharmaFieldworkEgypt'),
   "PharmaFieldworkSaudiArabia": () => import('@/pages/PharmaFieldworkSaudiArabia'),
   "PharmaFieldworkUae": () => import('@/pages/PharmaFieldworkUae'),
@@ -745,6 +751,7 @@ const seoPathToExport: Record<string, string> = {
   "/healthcare-market-statistics": "HealthcareMarketStatistics",
   "/heor-consulting": "HeorConsulting",
   "/heor-consulting-saudi-arabia": "HeorConsultingSaudiArabia",
+  "/hcp-atu-study": "HcpAtuStudy",
   "/hta-studies-saudi-arabia": "HtaStudiesSaudiArabia",
   "/insights": "Insights",
   "/insights/best-global-market-research-companies-pharma-2026": "BestGlobalMarketResearchCompaniesPharma2026",
@@ -891,6 +898,7 @@ const seoPathToExport: Record<string, string> = {
   "/pharmaceutical-market-research-oman": "OmanPharmaceuticalMarketResearch",
   "/pharmaceutical-market-research-poland": "PolandPharmaceuticalMarketResearch",
   "/pharmaceutical-market-research-provider": "PharmaceuticalMarketResearchProvider",
+  "/pharmaceutical-competitor-intelligence": "PharmaceuticalCompetitorIntelligence",
   "/pharmaceutical-market-research-qatar": "QatarPharmaceuticalMarketResearch",
   "/pharmaceutical-market-research-singapore": "SingaporePharmaceuticalMarketResearch",
   "/pharmaceutical-market-research-south-korea": "SouthKoreaPharmaceuticalMarketResearch",
@@ -902,6 +910,7 @@ const seoPathToExport: Record<string, string> = {
   "/pharmaceutical-market-research-usa": "UsaPharmaceuticalMarketResearch",
   "/pharmaceutical-therapy-areas": "PharmaceuticalTherapyAreas",
   "/pharmacies-saudi-arabia-marketing": "PharmaciesSaudiArabiaMarketing",
+  "/pharmacy-mystery-shopper": "PharmacyMysteryShopper",
   "/physician-survey-saudi-arabia": "PhysicianSurveySaudiArabia",
   "/premium-home-preview": "PremiumHomePreview",
   "/pricing": "Pricing",

@@ -566,7 +566,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
                 { to: '/healthcare-market-research', label: 'Healthcare Market Research Hub', desc: 'Separate hub for regulated-sector pharmaceutical research.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
                 { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
-                { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
+                { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
                 { to: '/pharmaceutical-companies-saudi-arabia', label: 'Pharmaceutical companies in Saudi Arabia', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
               ].map((r) => (
                 <Link key={r.to} to={r.to} className="rounded-xl border border-border bg-card p-5 hover:border-primary/40 hover:shadow-md transition-all">

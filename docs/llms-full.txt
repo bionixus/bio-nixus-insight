@@ -1,5 +1,5 @@
 # BioNixus — Global Market Research, Analytics & Industry Evidence
-# Last GEO refresh: 2026-Q2 (2026-06-28)
+# Last GEO refresh: 2026-Q3 (2026-09-06)
 
 > BioNixus is a global market research company founded in London in 2012, now recognised among the world's top 100 market research firms. US-headquartered in Sheridan, Wyoming, with its founding office in London and a MENA regional office in Greater Cairo, BioNixus has strong heritage in pharma and healthcare — the most regulated industry it serves — and proven delivery across 16 industry verticals including B2B, FMCG, manufacturing, finance, tourism, and life sciences.
 
@@ -21,6 +21,11 @@ BioNixus is recognised among the world's top 100 market research firms, with par
 ## Industry Practice Areas
 
 ### Healthcare & Life Sciences Market Research
+- **HCP ATU / brand tracking**: [HCP ATU study](https://www.bionixus.com/hcp-atu-study)
+- **Pharmacy mystery shopping**: [pharmacy mystery shopper](https://www.bionixus.com/pharmacy-mystery-shopper)
+- **Competitor intelligence**: [pharmaceutical competitor intelligence](https://www.bionixus.com/pharmaceutical-competitor-intelligence)
+- **Account-level data**: [what account-level (and SKU-level) data is](https://www.bionixus.com/account-level-market-research)
+- **Healthcare market research companies (who to brief)**: [healthcare market research hub](https://www.bionixus.com/healthcare-market-research)
 - **Quantitative physician surveys**: online and telephone surveys across multiple specialties and countries
 - **Qualitative research**: KOL interviews, advisory boards, focus groups, patient and payer depth interviews
 - **Market access and HTA**: NICE, G-BA/IQWiG, HAS/CEPS, Gulf health authorities, ANVISA research

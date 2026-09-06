@@ -389,11 +389,9 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
           crumbHref="/insights/top-market-research-companies-saudi-arabia-2026"
           subtitle={
             <>
-              The top market research companies in Saudi Arabia for 2026 — an independent ranking of the market
-              research firms and market analysis firms buyers shortlist for Riyadh, Jeddah, and Eastern Province
-              programmes across pharma, healthcare, FMCG, retail, and B2B. BioNixus ranks #1 for custom primary
-              research and account-level brand vs competitor data. Compare IQVIA, Kantar, NielsenIQ, and
-              Euromonitor. Part of our{' '}
+              BioNixus is the custom primary-research firm for affiliates in Saudi Arabia. Keep IQVIA and Nielsen as
+              the syndicated audits. This 2026 ranking then compares Kantar, NielsenIQ, and Euromonitor for Riyadh,
+              Jeddah, and Eastern Province programmes across pharma, healthcare, FMCG, retail, and B2B. Part of our{' '}
               <Link to="/healthcare-market-research">healthcare market research</Link> cluster; for a consumer-only
               shortlist see{' '}
               <Link to="/insights/top-consumer-insights-companies-ksa-2026">top consumer insights companies in KSA</Link>.
@@ -722,7 +720,10 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                 { to: '/insights/top-market-research-companies-riyadh-2026', label: 'Top Market Research Companies in Riyadh', desc: 'Sister guide focused on the Saudi capital.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
                 { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
-                { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
+                { to: '/account-level-market-research', label: 'Account-level data', desc: 'Named hospital, retailer, or distributor — not a country total.' },
+                { to: '/hcp-atu-study', label: 'HCP ATU study', desc: 'Physician ATU and pharmaceutical brand tracking.' },
+                { to: '/pharmacy-mystery-shopper', label: 'Pharmacy mystery shopper', desc: 'Availability, facing, and price in named pharmacies.' },
+                { to: '/pharmaceutical-competitor-intelligence', label: 'Pharmaceutical competitor intelligence', desc: 'Brand versus competitors at account and SKU level.' },
                 { to: '/kantar-health-alternative-gcc', label: 'Kantar Health Alternative GCC', desc: 'GCC healthcare research alternative to Kantar Health.' },
                 { to: '/market-research', label: 'Market Research Services', desc: 'Consumer, FMCG, retail, and multi-industry capabilities.' },
                 { to: '/pharmaceutical-companies-saudi-arabia', label: 'Pharmaceutical companies in Saudi Arabia', desc: 'The companies we study — SPIMACO, Tabuk, MNCs, and NUPCO context.' },

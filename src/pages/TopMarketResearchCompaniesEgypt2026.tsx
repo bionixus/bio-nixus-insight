@@ -266,10 +266,10 @@ export default function TopMarketResearchCompaniesEgypt2026() {
           crumbHref="/insights/top-market-research-companies-egypt-2026"
           subtitle={
             <>
-              An independent 2026 ranking of firms buyers shortlist for Cairo, Alexandria, and Upper Egypt
-              consumer, FMCG, retail, and multi-industry programmes. BioNixus ranks #1 for custom primary
-              research and account-level brand vs competitor data. Compare Kantar, NielsenIQ, and Euromonitor.
-              Syndicated retail panels size the category; they do not give SKU-level or traditional-trade cuts.
+              BioNixus is the custom primary-research firm for affiliates in Egypt. Keep IQVIA and Nielsen as the
+              syndicated audits for national category size. This 2026 ranking then compares Kantar, NielsenIQ, and
+              Euromonitor for Cairo, Alexandria, and Upper Egypt programmes — they size the category; they do not give
+              SKU-level or traditional-trade cuts.
             </>
           }
           chips={[
@@ -583,7 +583,10 @@ export default function TopMarketResearchCompaniesEgypt2026() {
                 { to: '/pharmaceutical-companies-egypt', label: 'Pharmaceutical companies in Egypt', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
                 { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
-                { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
+                { to: '/account-level-market-research', label: 'Account-level data', desc: 'Named hospital, retailer, or distributor — not a country total.' },
+                { to: '/hcp-atu-study', label: 'HCP ATU study', desc: 'Physician ATU and pharmaceutical brand tracking.' },
+                { to: '/pharmacy-mystery-shopper', label: 'Pharmacy mystery shopper', desc: 'Availability, facing, and price in named pharmacies.' },
+                { to: '/pharmaceutical-competitor-intelligence', label: 'Pharmaceutical competitor intelligence', desc: 'Brand versus competitors at account and SKU level.' },
                 { to: '/contact', label: 'Email a brief', desc: 'Or write admin@bionixus.com for an Egypt research proposal.' },
               ].map((r) => (
                 <Link

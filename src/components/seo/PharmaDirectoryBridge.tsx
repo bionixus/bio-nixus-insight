@@ -52,6 +52,21 @@ export function PharmaDirectoryBridge({
           </Link>
         </p>
       ) : null}
+      <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-3xl">
+        If the brief is availability, an HCP tracker, or brand versus competitors — not a company list — see{' '}
+        <Link to="/pharmacy-mystery-shopper" className="text-primary font-medium hover:underline">
+          pharmacy mystery shopping
+        </Link>
+        {', '}
+        <Link to="/hcp-atu-study" className="text-primary font-medium hover:underline">
+          HCP ATU studies
+        </Link>
+        {', or '}
+        <Link to="/pharmaceutical-competitor-intelligence" className="text-primary font-medium hover:underline">
+          pharmaceutical competitor intelligence
+        </Link>
+        .
+      </p>
     </div>
   );
 }

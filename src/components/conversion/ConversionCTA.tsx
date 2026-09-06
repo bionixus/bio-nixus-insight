@@ -23,6 +23,8 @@ type TalkToResearchCtaProps = {
   ctaId: string;
   ctaLocation: string;
   className?: string;
+  headline?: string;
+  buttonLabel?: string;
 };
 
 type GatedAssetCtaProps = {
@@ -60,7 +62,7 @@ export function ConversionCTA(props: ConversionCtaProps) {
       <>
         <div className={`rounded-2xl border border-border bg-card p-6 md:p-8 text-center ${props.className || ''}`}>
           <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-2">
-            Planning research in {market}?
+            {props.headline || `Planning research in ${market}?`}
           </h3>
           <p className="text-sm text-muted-foreground mb-5 max-w-xl mx-auto">
             Primary research, market access &amp; HEOR. Proposals within 48 hours.
@@ -70,7 +72,7 @@ export function ConversionCTA(props: ConversionCtaProps) {
             onClick={handleOpen}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
           >
-            Request a Proposal <ArrowRight className="w-4 h-4" />
+            {props.buttonLabel || 'Request a Proposal'} <ArrowRight className="w-4 h-4" />
           </button>
         </div>
         <Dialog open={open} onOpenChange={setOpen}>

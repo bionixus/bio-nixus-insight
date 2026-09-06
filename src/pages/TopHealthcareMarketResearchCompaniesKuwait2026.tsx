@@ -707,7 +707,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
                 { to: '/pharmaceutical-companies-kuwait', label: 'Pharmaceutical companies in Kuwait', desc: 'The companies we study — the matching country directory.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
                 { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },
-                { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
+                { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of audits.' },
               ].map((r) => (
                 <Link
                   key={r.to}

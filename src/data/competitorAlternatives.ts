@@ -542,7 +542,7 @@ const IMS_HEALTH_ALTERNATIVE: CompetitorAlternativeConfig = {
   related: [
     { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'Current-brand page — do not treat this IMS Health URL as a retitle of that one.' },
     { to: '/iqvia-alternative-saudi-arabia', label: 'IQVIA alternative in Saudi Arabia', desc: 'Country complement for KSA pharma teams.' },
-    { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
+    { to: '/hcp-atu-study', label: 'HCP ATU study', desc: 'Physician ATU and brand tracking — the study IQVIA does not sell as a dashboard.' },
     { to: '/pharmaceutical-companies-saudi-arabia', label: 'Pharma companies in Saudi Arabia', desc: 'The accounts behind an audit row.' },
     { to: '/account-level-market-research', label: 'Account-level data', desc: 'What an audit average still cannot show.' },
     { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges.' },
@@ -650,7 +650,7 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
   related: [
     { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'Global ranked page — do not steal that title here.' },
     { to: '/ims-health-alternative', label: 'IMS Health alternative', desc: 'Legacy audit name still on contracts.' },
-    { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Regional head-to-head.' },
+    { to: '/pharmacy-mystery-shopper', label: 'Pharmacy mystery shopper', desc: 'Availability in named accounts when the KSA audit stops at Kingdom total.' },
     { to: '/pharmaceutical-companies-saudi-arabia', label: 'Pharma companies in Saudi Arabia', desc: 'SPIMACO, Jamjoom, MNCs, Nahdi — the accounts.' },
     { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research KSA', desc: 'Country BOFU for pharmaceutical fieldwork.' },
     { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Healthcare firms in KSA', desc: 'Healthcare listicle for the Kingdom.' },

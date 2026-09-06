@@ -60,6 +60,8 @@ export const QUALIFICATION_FORM_MARKETS = [
 export const QUALIFICATION_FORM_NEEDS = [
   'Primary market research',
   'Brand and competitor data (account- or SKU-level)',
+  'HCP ATU / brand tracking',
+  'Pharmacy mystery shop / availability',
   'Distributor and channel data',
   'Market access',
   'HEOR / RWE',

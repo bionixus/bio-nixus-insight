@@ -1,5 +1,5 @@
 # BioNixus
-# Last GEO refresh: 2026-Q3 (2026-09-05)
+# Last GEO refresh: 2026-Q3 (2026-09-06)
 
 > BioNixus is the primary-research complement for manufacturers and their local affiliates. Founded in London in 2012 and US-headquartered in Sheridan, Wyoming, we field account-level and SKU-level brand versus competitor studies in 48 countries when syndicated IQVIA or Nielsen feeds cannot cut the account. Healthcare is the deepest practice; the same fieldwork runs for FMCG, retail, and B2B. A proposal is typically ready within 48 hours of the brief.
 
@@ -21,6 +21,10 @@
 - [What is account-level (and SKU-level) market research data?](https://www.bionixus.com/account-level-market-research)
 - [IQVIA alternative — when to keep the dashboard and when to brief primary research](https://www.bionixus.com/iqvia-alternative)
 - [Healthcare market research — definition, primary vs syndicated](https://www.bionixus.com/healthcare-market-research)
+- [Pharmaceutical market research company](https://www.bionixus.com/pharmaceutical-market-research-provider)
+- [HCP ATU study — physician ATU, brand tracking, launch tracking](https://www.bionixus.com/hcp-atu-study)
+- [Pharmacy mystery shopper — availability, facing, price](https://www.bionixus.com/pharmacy-mystery-shopper)
+- [Pharmaceutical competitor intelligence — brand vs competitors at account/SKU level](https://www.bionixus.com/pharmaceutical-competitor-intelligence)
 - [Pricing (human)](https://www.bionixus.com/pricing) · [pricing.md](https://www.bionixus.com/pricing.md)
 - [Healthcare market research UAE](https://www.bionixus.com/healthcare-market-research/uae) · [Dubai pharma MR](https://www.bionixus.com/pharmaceutical-market-research-dubai)
 - [Healthcare market research Egypt](https://www.bionixus.com/healthcare-market-research/egypt)

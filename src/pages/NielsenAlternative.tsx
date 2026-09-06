@@ -133,7 +133,7 @@ const RELATED = [
   { to: '/insights/top-market-research-companies-uae-2026', label: 'Market research firms UAE', desc: 'Country ranking — includes NielsenIQ.' },
   { to: '/insights/top-market-research-companies-egypt-2026', label: 'Market research firms Egypt', desc: 'Country ranking — includes NielsenIQ.' },
   { to: '/insights/top-fmcg-market-research-companies-saudi-arabia-2026', label: 'FMCG firms in KSA', desc: 'Industry listicle already ranking near page 1.' },
-  { to: '/bionixus-vs-iqvia-mena', label: 'BioNixus vs IQVIA MENA', desc: 'Side-by-side MENA capability comparison.' },
+  { to: '/account-level-market-research', label: 'Account-level data', desc: 'Named hospital, retailer, or distributor — not a country total.' },
 ] as const;
 
 const faqSchema = buildFAQSchema(FAQ, { pageUrl: CANONICAL });

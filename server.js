@@ -292,7 +292,16 @@ function buildFallbackTitle(pathname) {
   }
 
   if (path === '/bionixus-vs-iqvia-mena') {
-    return 'BioNixus vs IQVIA MENA Research (2026) | BioNixus';
+    return 'IQVIA Alternative | BioNixus';
+  }
+  if (path === '/hcp-atu-study') {
+    return 'HCP ATU Study | Pharma Brand Tracking | BioNixus';
+  }
+  if (path === '/pharmacy-mystery-shopper') {
+    return 'Pharmacy Mystery Shopper | Availability | BioNixus';
+  }
+  if (path === '/pharmaceutical-competitor-intelligence') {
+    return 'Pharma Competitor Intelligence | BioNixus';
   }
 
   if (path === '/bionixus-middle-east-africa') {
@@ -504,6 +513,15 @@ function buildFallbackDescription(pathname) {
   }
   if (path === '/account-level-market-research') {
     return 'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.';
+  }
+  if (path === '/hcp-atu-study') {
+    return 'HCP ATU and physician ATU studies for pharmaceutical brand tracking and launch tracking. Primary fieldwork in 48 countries. Proposal in 48 hours.';
+  }
+  if (path === '/pharmacy-mystery-shopper') {
+    return 'Pharmacy mystery shopping and availability studies — stock, facing, price, and substitution in named accounts. 48 countries. 48-hour proposal.';
+  }
+  if (path === '/pharmaceutical-competitor-intelligence') {
+    return 'Pharmaceutical competitor intelligence and brand-versus-competitor studies at account and SKU level. Primary fieldwork. 48-hour proposal.';
   }
   if (path === '/bionixus-vs-iqvia-mena') {
     return 'Compare BioNixus and IQVIA for MENA healthcare research, including hospital data, analytics, and market access support tailored for Saudi Arabia and the GCC.';
@@ -753,17 +771,9 @@ async function startServer() {
     res.type('html').sendFile(clinicalDiagnosticsProposalPath);
   });
 
-  /** Static comparison page — same pattern as strategic-portfolio. */
-  const vsIqviaAbsolutePath = path.resolve(
-    __dirname,
-    isProduction ? path.join('dist/client', 'conf/bionixus-vs-iqvia-mena.html') : path.join('public', 'conf/bionixus-vs-iqvia-mena.html'),
-  );
-  app.get('/bionixus-vs-iqvia-mena/', (req, res, next) => {
-    if (req.path.endsWith('/')) return res.redirect(301, '/bionixus-vs-iqvia-mena');
-    return next();
-  });
-  app.get('/bionixus-vs-iqvia-mena', (_req, res) => {
-    res.type('html').sendFile(vsIqviaAbsolutePath);
+  /** 301 cannibal URL — one IQVIA-alternative page. */
+  app.get(['/bionixus-vs-iqvia-mena', '/bionixus-vs-iqvia-mena/'], (_req, res) => {
+    res.redirect(301, '/iqvia-alternative');
   });
 
   /** Static KOL mapping page. */

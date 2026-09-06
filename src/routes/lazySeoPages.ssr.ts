@@ -117,6 +117,7 @@ export { default as HealthcareReportsByTherapy } from '@/pages/HealthcareReports
 export { default as HealthcareReportsHub } from '@/pages/HealthcareReportsHub';
 export { default as HeorConsulting } from '@/pages/HeorConsulting';
 export { default as HeorConsultingSaudiArabia } from '@/pages/HeorConsultingSaudiArabia';
+export { default as HcpAtuStudy } from '@/pages/HcpAtuStudy';
 export { default as HtaStudiesSaudiArabia } from '@/pages/HtaStudiesSaudiArabia';
 export { default as HubPage } from '@/pages/healthcare-research/HubPage';
 export { default as IndiaPharmaceuticalMarketResearch } from '@/pages/IndiaPharmaceuticalMarketResearch';
@@ -171,8 +172,10 @@ export { default as PatientJourneyResearchGcc } from '@/pages/PatientJourneyRese
 export { default as PatientSupportProgramResearchGcc } from '@/pages/PatientSupportProgramResearchGcc';
 export { default as PharmaceuticalMarketResearchDubai } from '@/pages/PharmaceuticalMarketResearchDubai';
 export { default as PharmaceuticalMarketResearchProvider } from '@/pages/PharmaceuticalMarketResearchProvider';
+export { default as PharmaceuticalCompetitorIntelligence } from '@/pages/PharmaceuticalCompetitorIntelligence';
 export { default as PharmaceuticalTherapyAreas } from '@/pages/PharmaceuticalTherapyAreas';
 export { default as PharmaciesSaudiArabiaMarketing } from '@/pages/PharmaciesSaudiArabiaMarketing';
+export { default as PharmacyMysteryShopper } from '@/pages/PharmacyMysteryShopper';
 export { default as PharmaFieldworkEgypt } from '@/pages/PharmaFieldworkEgypt';
 export { default as PharmaFieldworkSaudiArabia } from '@/pages/PharmaFieldworkSaudiArabia';
 export { default as PharmaFieldworkUae } from '@/pages/PharmaFieldworkUae';

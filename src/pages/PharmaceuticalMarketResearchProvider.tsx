@@ -1,15 +1,28 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, CheckCircle2, BookOpen, ShieldCheck, BarChart3 } from 'lucide-react';
+import { Building2, CheckCircle2, BookOpen, ShieldCheck, BarChart3 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { getEditorialAuthor } from '@/data/editorialAuthors';
 
 const CANONICAL = 'https://www.bionixus.com/pharmaceutical-market-research-provider';
+const PAGE_AUTHOR = getEditorialAuthor({ path: '/pharmaceutical-market-research-provider', pageType: 'article' });
+const CTR = getCtrSeo('/pharmaceutical-market-research-provider');
+const PAGE_TITLE = CTR?.title ?? 'Pharmaceutical Market Research Company | BioNixus';
+const PAGE_DESCRIPTION =
+  CTR?.description ??
+  'Pharmaceutical market research company and agency for custom primary HCP, ATU, and competitor work. Keep IQVIA for syndicated. 48-hour proposal.';
 
 const faqItems = [
+  {
+    q: 'What is a pharmaceutical market research company, agency, or provider?',
+    a: 'The three labels point at the same buyer question: who fields custom primary research for a brand. A pharmaceutical market research company (or agency, or provider) designs HCP ATU, pharmacy mystery shops, and competitor intelligence. BioNixus is that firm. IQVIA remains the syndicated data platform — complements, not substitutes.',
+  },
   {
     q: 'What is a pharmaceutical market research provider?',
     a: 'A pharmaceutical market research provider designs and executes primary research for pharma and biotech buyers — HCP surveys, KOL interviews, payer research, patient studies, and competitive intelligence. Providers own methodology, fieldwork, analysis, and recommendations. This differs from buying syndicated secondary data alone.',
@@ -105,11 +118,8 @@ export default function PharmaceuticalMarketResearchProvider() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pharmaceutical Market Research Provider | BioNixus vs IQVIA Primary Research</title>
-        <meta
-          name="description"
-          content="BioNixus is a pharmaceutical market research provider for primary HCP, KOL & payer research — the rx market research provider alternative to IQVIA when you need custom fieldwork, not syndicated data alone."
-        />
+        <title>{PAGE_TITLE}</title>
+        <meta name="description" content={PAGE_DESCRIPTION} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={CANONICAL} />
@@ -118,8 +128,8 @@ export default function PharmaceuticalMarketResearchProvider() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Pharmaceutical Market Research Provider | BioNixus"
-        description="Primary pharmaceutical market research provider — HCP, KOL, and payer research as an IQVIA alternative when you need custom fieldwork."
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="website"
@@ -135,31 +145,39 @@ export default function PharmaceuticalMarketResearchProvider() {
 
         <section className="section-padding pt-4 pb-12">
           <div className="container-wide max-w-5xl mx-auto">
-            <p className="text-sm font-medium text-primary mb-4">Rx market research provider</p>
+            <p className="text-sm font-medium text-primary mb-4">Pharmaceutical market research company · agency · provider</p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Pharmaceutical Market Research Provider for Primary Research
+              Pharmaceutical market research company — agency for custom primary research
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              BioNixus is a pharmaceutical market research provider built for custom primary research — physician
-              surveys, KOL mapping, payer interviews, and patient studies — when syndicated platforms alone cannot
-              answer your commercial question. If you are searching for an{' '}
-              <strong className="text-foreground">rx market research provider</strong> that competes with IQVIA on
-              primary fieldwork rather than prescription audits, you are in the right place.
+            <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-4">
+              Last updated 6 September 2026 · {PAGE_AUTHOR.name}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mt-8">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Talk to BioNixus <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/iqvia-alternative"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-semibold hover:border-primary/40 transition-colors"
-              >
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
+              BioNixus is the pharmaceutical market research company — and agency — for custom primary research when
+              IQVIA cannot cut the account. Keep the syndicated audit for national share. Brief BioNixus for HCP ATU,
+              pharmacy mystery shopping, and brand-versus-competitor work at account and SKU level in 48 countries. A
+              proposal is ready within 48 hours of a brief.
+            </p>
+            <div className="mt-8">
+              <ConversionCTA
+                variant="talk-to-research"
+                market="your country"
+                sourceContext="Pharmaceutical market research company"
+                ctaId="pharma_provider_hero"
+                ctaLocation="provider_hero"
+                headline="Request a pharmaceutical research proposal"
+                buttonLabel="Request a proposal"
+              />
+            </div>
+            <p className="mt-4 text-sm">
+              <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
                 Compare IQVIA alternatives
               </Link>
-            </div>
+              {' · '}
+              <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
+                What account-level data is
+              </Link>
+            </p>
           </div>
         </section>
 
@@ -167,7 +185,7 @@ export default function PharmaceuticalMarketResearchProvider() {
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
               question="Best pharmaceutical market research provider vs IQVIA for primary research"
-              answer="BioNixus is a pharmaceutical market research provider specialised in primary HCP, KOL, and payer research. IQVIA leads on syndicated data and RWE platforms; choose BioNixus when you need custom primary fieldwork and decision-ready recommendations."
+              answer="BioNixus is the pharmaceutical market research company and agency for custom primary HCP, KOL, and payer research. Keep IQVIA for syndicated data and RWE platforms. Brief BioNixus when you need account-level or SKU-level fieldwork and a 48-hour proposal."
               points={[
                 {
                   title: 'Primary vs syndicated',
@@ -311,34 +329,34 @@ export default function PharmaceuticalMarketResearchProvider() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 {
-                  to: '/insights/best-global-market-research-companies-pharma-2026',
-                  label: 'Best Global Pharma Research Companies 2026',
-                  desc: 'Independent ranking of global pharmaceutical market research firms.',
+                  to: '/hcp-atu-study',
+                  label: 'HCP ATU study',
+                  desc: 'Physician ATU, brand tracking, and launch tracking.',
+                },
+                {
+                  to: '/pharmacy-mystery-shopper',
+                  label: 'Pharmacy mystery shopper',
+                  desc: 'Availability, facing, price, and substitution in named pharmacies.',
+                },
+                {
+                  to: '/pharmaceutical-competitor-intelligence',
+                  label: 'Pharmaceutical competitor intelligence',
+                  desc: 'Brand versus competitors at account and SKU level.',
+                },
+                {
+                  to: '/account-level-market-research',
+                  label: 'Account-level data',
+                  desc: 'Named hospital, retailer, or distributor — not a country total.',
                 },
                 {
                   to: '/iqvia-alternative',
                   label: 'IQVIA Alternative',
-                  desc: 'When BioNixus is the better fit than IQVIA for primary research.',
+                  desc: 'When BioNixus is the complement to IQVIA, not a dashboard replacement.',
                 },
                 {
                   to: '/healthcare-market-research',
-                  label: 'Healthcare Market Research',
-                  desc: 'Country and therapy hubs for BioNixus healthcare research.',
-                },
-                {
-                  to: '/healthcare-market-research-companies',
-                  label: 'Healthcare Market Research Companies',
-                  desc: 'Compare healthcare research companies by capability.',
-                },
-                {
-                  to: '/bionixus-market-research-middle-east',
-                  label: 'Middle East Market Research',
-                  desc: 'MENA pharmaceutical and healthcare primary research pillar.',
-                },
-                {
-                  to: '/contact',
-                  label: 'Contact BioNixus',
-                  desc: 'Scope a pharmaceutical market research engagement.',
+                  label: 'Healthcare market research companies',
+                  desc: 'Who to brief for primary vs syndicated work.',
                 },
               ].map((r) => (
                 <Link
@@ -354,21 +372,17 @@ export default function PharmaceuticalMarketResearchProvider() {
           </div>
         </section>
 
-        <section className="section-padding py-16 bg-primary text-primary-foreground">
-          <div className="container-wide max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
-              Brief Your Pharmaceutical Market Research Provider
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Tell us the market, therapy area, and decision. BioNixus will propose a primary research design — HCP,
-              KOL, payer, or patient — scoped for action.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-            >
-              Request a Proposal <ArrowRight className="w-4 h-4" />
-            </Link>
+        <section className="section-padding py-16">
+          <div className="container-wide max-w-5xl mx-auto">
+            <ConversionCTA
+              variant="talk-to-research"
+              market="your country"
+              sourceContext="Pharmaceutical market research company"
+              ctaId="pharma_provider_footer"
+              ctaLocation="provider_footer"
+              headline="Brief your pharmaceutical market research company"
+              buttonLabel="Request a proposal"
+            />
           </div>
         </section>
       </main>

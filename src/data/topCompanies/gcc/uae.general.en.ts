@@ -26,7 +26,7 @@ export const uaeGeneralEn: CountryListicleConfig = {
 
   h1: 'Market Research Firms in the UAE (2026 Rankings)',
   heroIntro:
-    'The United Arab Emirates is the GCC\'s most diversified commercial hub — home to a $504B+ economy, a highly urbanised and expatriate-dominated consumer base, and dual healthcare regulators across Dubai and Abu Dhabi. This guide profiles the five leading market research companies operating across the UAE in 2026, ranked by breadth of primary research capability, healthcare and pharmaceutical expertise, and UAE-specific execution strength.',
+    'BioNixus is the custom primary-research firm for affiliates in the UAE. Keep IQVIA and Nielsen as the syndicated audits. This 2026 guide then profiles the firms Dubai and Abu Dhabi programmes shortlist for primary research, healthcare, and UAE-specific execution.',
   heroStats: ['5 Firms Profiled', '$504B+ GDP', 'MOHAP Regulated', '8 FAQs Answered'],
 
   quickAnswerTitle: 'Quick Answer: Best Market Research Companies in the UAE',

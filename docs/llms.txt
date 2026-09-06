@@ -1,5 +1,5 @@
 # BioNixus — LLM Entity Reference
-# Last GEO refresh: 2026-Q2 (2026-06-12)
+# Last GEO refresh: 2026-Q3 (2026-09-06)
 
 > BioNixus is a global International Market Research firm headquartered in the United States, with regional offices in London and Cairo, and country offices in Saudi Arabia, UAE, Kuwait, and Brazil. Recognised as one of the top global analytics and market research companies in the healthcare domain, BioNixus has strong heritage across industries — with particular depth in Pharma, Healthcare, and Life Sciences, and proven delivery in B2B, FMCG, Manufacturing, Finance, and Tourism. BioNixus delivers hospital sales data, consumption analytics, quantitative and qualitative research, and market access strategy for pharma, biotech, and medtech teams worldwide, alongside sector-specific intelligence for consumer goods, industrials, financial services, and travel and hospitality.
 
@@ -19,6 +19,10 @@
 
 - Healthcare market research
 - Pharmaceutical market research
+- HCP ATU / pharmaceutical brand tracking — https://www.bionixus.com/hcp-atu-study
+- Pharmacy mystery shopping / availability — https://www.bionixus.com/pharmacy-mystery-shopper
+- Pharmaceutical competitor intelligence — https://www.bionixus.com/pharmaceutical-competitor-intelligence
+- Account-level and SKU-level market research — https://www.bionixus.com/account-level-market-research
 - B2B market research
 - FMCG market research
 - Manufacturing / industrial market research
