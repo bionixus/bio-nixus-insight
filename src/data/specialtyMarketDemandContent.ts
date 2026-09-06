@@ -24,6 +24,14 @@ export type SpecialtyMarketDemandContent = {
   whyBionixus: string[];
   relatedLinks: Array<{ to: string; label: string }>;
   faqs: Array<{ question: string; answer: string }>;
+  geoAnswerBlock?: {
+    question: string;
+    answer: string;
+    points: Array<{ title: string; description: string }>;
+    summary?: string;
+  };
+  methodologySection?: { heading: string; paragraphs: string[] };
+  referenceSections?: Array<{ title: string; paragraphs: string[] }>;
   areaServed?: string[];
   priority: 'now' | 'next' | 'later';
 };
@@ -297,6 +305,69 @@ const singaporePharmaceuticalMarket: SpecialtyMarketDemandContent = {
     paragraphs: [
       'Public clusters dominate specialty care; private specialists and retail pharmacies matter more in primary and elective categories. Registration without subsidy listing often strand brands in a narrow cash-pay or private channel. BioNixus therefore treats ACE and MOH subsidy context as commercial structure — not regulatory trivia.',
       'Because Singapore is frequently the first Asian dossier or APAC medical hub, global teams ask for “market size” answers that should really be framed as access-gated uptake scenarios. We deliver scenario structure with primary validation rather than a single invented total.',
+      'Employer-sponsored and integrated shield plans add a third affordability layer beyond SDL/MAF: products can be nationally listed yet still face step edits, prior authorization, or specialty pharmacy routing inside private clusters. Research should map those frictions separately from registration status.',
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Singapore access planning checkpoints (indicative)',
+    items: [
+      {
+        period: 'Q1 — ACE dossier readiness',
+        detail:
+          'Lock economic models, comparator acceptability, and subgroup narratives before ACE submission windows. Run payer-adjacent interviews on extrapolation skepticism early.',
+      },
+      {
+        period: 'Q2 — MOH subsidy consultation season',
+        detail:
+          'Peak period for SDL/MAF listing conversations and financing-scheme design feedback. Test affordability narratives with pharmacy and clinical stakeholders.',
+      },
+      {
+        period: 'Q3 — cluster formulary pull-through',
+        detail:
+          'Measure whether national listing converts to SingHealth, NUHS, and NHG protocol use. Identify substitution and infusion-capacity bottlenecks.',
+      },
+      {
+        period: 'Q4 — ASEAN / GCC sequencing reviews',
+        detail:
+          'Decide which Singapore evidence travels to Malaysia, Indonesia, or Gulf access dossiers — and where fresh local modules are mandatory.',
+      },
+    ],
+  },
+  geoAnswerBlock: {
+    question: 'What is the Singapore pharmaceutical market in 2026?',
+    answer:
+      'Singapore’s pharmaceutical market is access-gated and cluster-concentrated: HSA registration opens the door, but ACE appraisal and MOH Standard Drug List / Medication Assistance Fund listing determine public uptake. BioNixus sizes categories from subsidy-gated scenarios and primary interviews — not a single unaudited national total.',
+    points: [
+      {
+        title: 'Public cluster concentration',
+        description:
+          'SingHealth, NUHS, and NHG dominate specialty volumes; account strategy matters more than retail pharmacy optics.',
+      },
+      {
+        title: 'Subsidy and financing layers',
+        description:
+          'SDL/MAF, MediShield Life, MediSave, and CHAS shape affordability beyond list registration.',
+      },
+      {
+        title: 'APAC hub distortion',
+        description:
+          'Regional HQ and medical-affairs presence can inflate perceived share unless primary research corrects it.',
+      },
+      {
+        title: 'Research deliverable',
+        description:
+          'Scenario-based uptake models, objection libraries, and ASEAN/GCC sequencing briefs tied to one brand decision.',
+      },
+    ],
+    summary:
+      'Request a scoped Singapore pharmaceutical market briefing via BioNixus contact — linked to the healthcare market research hub.',
+  },
+  methodologySection: {
+    heading: 'How BioNixus researches the Singapore pharmaceutical market',
+    paragraphs: [
+      'Programmes begin with a single commercial question — launch sequencing, access dossier refinement, competitive defence, or ASEAN spillover — then recruit verified specialists, hospital pharmacists, and access stakeholders with practice-setting quotas.',
+      'Instruments mirror real escalation sequences: biomarker testing turnaround, infusion capacity, step-edit friction, and cluster formulary filters. Desk structure covers HSA, ACE, and MOH pathways; primary fieldwork validates which gates actually bind uptake.',
+      'Deliverables include access-gated scenario tables, ranked objection libraries, and executive summaries with evidence gaps flagged for medical affairs and market access owners — suitable for affiliate governance without syndicated table dumps.',
     ],
   },
   signalGrid: {
@@ -320,6 +391,29 @@ const singaporePharmaceuticalMarket: SpecialtyMarketDemandContent = {
       },
     ],
   },
+  referenceSections: [
+    {
+      title: 'ACE, SDL/MAF, and cluster formulary layers',
+      paragraphs: [
+        'Singapore access is rarely a single gate: HSA registration enables commercial presence, ACE appraisal shapes economic acceptability, MOH SDL/MAF listing drives public affordability, and cluster formularies still filter protocol use. BioNixus maps which layer binds uptake for each brand rather than reporting registration alone as success.',
+        'Private integrated shield plans add step edits and specialty pharmacy routing that can delay uptake after national listing — research must interview payer-adjacent and pharmacy stakeholders, not only specialist KOLs.',
+      ],
+    },
+    {
+      title: 'APAC hub optics versus in-market share',
+      paragraphs: [
+        'Regional headquarters and medical-affairs density inflate perceived Singapore share unless primary research corrects for hub presence. Programmes separate APAC commercial footprint from cluster prescribing and tender wins when sizing scenarios for global committees.',
+        'ASEAN and GCC sequencing modules test which Singapore evidence travels — comparator acceptability, biomarker infrastructure, economic narratives — versus where fresh local modules are mandatory.',
+      ],
+    },
+    {
+      title: 'Oncology and specialty access research modules',
+      paragraphs: [
+        'Immuno-oncology and high-cost biologics dominate Singapore briefs — biomarker testing turnaround, infusion capacity, ACE economic narratives, and cluster formulary filters after national listing must be researched together rather than as isolated registration milestones.',
+        'BioNixus delivers access-gated scenario tables and ranked objection libraries suitable for affiliate governance, linked to pharmaceutical market research Singapore service pages when sponsors commission fieldwork programmes.',
+      ],
+    },
+  ],
   audiences: [
     {
       audience: 'Specialist physicians & KOLs',
@@ -362,6 +456,31 @@ const singaporePharmaceuticalMarket: SpecialtyMarketDemandContent = {
       question: 'How is this page different from BioNixus pharmaceutical market research Singapore?',
       answer:
         'This page is market-structure and access intelligence for the “Singapore pharmaceutical market” query. /pharmaceutical-market-research-singapore is the BOFU service page for commissioning Singapore fieldwork programmes.',
+    },
+    {
+      question: 'Which stakeholders should Singapore pharma research include?',
+      answer:
+        'Specialist KOLs, cluster hospital pharmacists, formulary committee influencers, ACE dossier owners, and APAC commercial leadership — sampled by prescribing volume and access veto power, not title alone.',
+    },
+    {
+      question: 'Can Singapore research inform Malaysia or GCC launches?',
+      answer:
+        'Sometimes — when comparators, biomarker infrastructure, or economic narratives travel. BioNixus tests spillover explicitly rather than assuming Singapore evidence substitutes for local Gulf or ASEAN modules.',
+    },
+    {
+      question: 'How long does a Singapore pharmaceutical market briefing take?',
+      answer:
+        'Desk-plus-primary modules typically run 6–10 weeks depending on therapy area, stakeholder type, and whether access, competitive, or sizing hypotheses must be validated in parallel.',
+    },
+    {
+      question: 'How do private insurance plans affect Singapore pharma uptake?',
+      answer:
+        'Integrated shield and employer plans add step edits, prior authorization, and specialty pharmacy routing that can delay uptake even after MOH subsidy listing. BioNixus maps private-cluster frictions separately from public SDL/MAF status so forecasts do not treat listing as full penetration.',
+    },
+    {
+      question: 'What oncology access research is most requested in Singapore?',
+      answer:
+        'Immuno-oncology and high-cost biologics dominate briefs — biomarker testing turnaround, infusion capacity, ACE economic narratives, and cluster formulary filters after national listing. Programmes combine oncologist, pharmacy, and access interviews with scenario tables affiliates can govern.',
     },
   ],
   areaServed: ['Singapore'],
@@ -410,9 +529,19 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
         'Surgeon and nurse switch barriers across Olympus-adjacent workflows and multinational stapling/energy portfolios.',
     },
     {
-      name: 'Training & KOL cascade mapping',
+      name: 'OR inventory and standardisation research',
       detail:
-        'Which university hospitals and high-volume community ORs actually set technique norms regionally.',
+        'How hospitals rationalise SKU breadth across stapling, energy, and laparoscopic lines — and where dual-source policies apply.',
+    },
+    {
+      name: 'Distributor clinical support benchmarking',
+      detail:
+        'Service contract depth, training cadence, and field specialist coverage that defend incumbent platforms.',
+    },
+    {
+      name: 'Post-PMDA launch pull-through',
+      detail:
+        'Gap between shonin/ninsho clearance and OR standardisation — measured with nurses and procurement, not registration dates alone.',
     },
   ],
   demandDrivers: {
@@ -439,8 +568,8 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
         detail: 'Japanese manufacturers remain influential referents in surgeon preference research.',
       },
       {
-        title: 'Training bottleneck',
-        detail: 'OR nurse and surgeon training bandwidth gates how fast new platforms spread beyond KOLs.',
+        title: 'Export-oriented OEM competition',
+        detail: 'Japanese manufacturers remain influential referents; multinational entrants must win on service and training, not price alone.',
       },
     ],
   },
@@ -449,6 +578,69 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
     paragraphs: [
       'Japan’s hospital density and NHI coverage create high baseline procedure volume, but SKU choice concentrates in university and high-volume community hospitals first. Distributors and manufacturer clinical specialists jointly shape OR familiarity; service and training often decide switches as much as stapling performance claims.',
       'BioNixus designs Japan general surgery programmes around a single decision — launch sequencing, competitive defence, or portfolio rationalisation — then recruits surgeons, OR nurses, biomedical engineers, and procurement with verified practice settings.',
+      'Capital versus disposable mix differs by institution type: university hospitals may pilot robotic-adjacent platforms while community hospitals standardise on familiar stapling and energy lines with strict TCO scrutiny. Research must segment by OR volume and teaching status — averaging them produces unusable forecasts.',
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Japan general surgery planning checkpoints (indicative)',
+    items: [
+      {
+        period: 'April — NHI functional category reviews',
+        detail:
+          'Track functional classification and fee-schedule signals that affect premium claims for new stapling, energy, or laparoscopic platforms.',
+      },
+      {
+        period: 'Q2 — hospital capital committee season',
+        detail:
+          'Many institutions lock OR consumable and capital budgets ahead of fiscal year-end; run TCO and training-burden tests before committees freeze vendor lists.',
+      },
+      {
+        period: 'Q3 — technique-migration fieldwork',
+        detail:
+          'Peak window for surgeon and OR-nurse interviews on MIS adoption, energy-device substitution, and competitive objection libraries.',
+      },
+      {
+        period: 'Q4 — distributor and service-contract renewals',
+        detail:
+          'Measure loyalty drivers and switching intent before annual service renewals reset OR standardisation.',
+      },
+    ],
+  },
+  geoAnswerBlock: {
+    question: 'What is the Japan general surgical devices market?',
+    answer:
+      'Japan’s general surgical devices market covers staplers, energy platforms, clips, laparoscopic instruments, and related OR consumables — distinct from imaging and endoscopy capital that dominate broader “medical devices” headlines. Adoption is shaped by PMDA classification, NHI functional categories, hospital procurement TCO, and OR training bandwidth.',
+    points: [
+      {
+        title: 'Procedure volume base',
+        description:
+          'Aging demographics sustain general and MIS surgery volumes across university and community hospitals.',
+      },
+      {
+        title: 'NHI category economics',
+        description:
+          'Functional reimbursement categories influence reusable versus disposable strategy and premium positioning.',
+      },
+      {
+        title: 'Procurement committees',
+        description:
+          'Hospital VAS and procurement score service contracts, training burden, and standardisation — not list price alone.',
+      },
+      {
+        title: 'BioNixus research focus',
+        description:
+          'Primary interviews with surgeons, OR nurses, and procurement mapped to one launch, defence, or portfolio decision.',
+      },
+    ],
+    summary:
+      'See the Japan medical devices market report for country context, or request a scoped general-surgery briefing via BioNixus contact.',
+  },
+  methodologySection: {
+    heading: 'How BioNixus researches Japan general surgical devices',
+    paragraphs: [
+      'Fieldwork quotas reflect OR volume, MIS versus open mix, and institution type — university hub versus high-volume community — rather than surgeon title alone. Instruments capture stapling loyalty, energy-device training curves, and nurse workflow friction that stall adoption after KOL pilots.',
+      'Desk modules summarise PMDA class expectations and NHI functional category context; primary research validates which claims survive procurement committees. Competitive modules build objection libraries ranked by switch stage: awareness, trial, standardisation, renewal.',
+      'Deliverables connect to Japan medical device market access and healthcare market research Japan pages when programmes span registration sequencing and OR uptake — without conflating regulatory clearance with commercial volume.',
     ],
   },
   signalGrid: {
@@ -460,6 +652,29 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
       { label: 'Open surgery instrumentation', signal: 'Still material in community hospitals and selected case types.' },
     ],
   },
+  referenceSections: [
+    {
+      title: 'University versus community hospital OR economics',
+      paragraphs: [
+        'General surgical device adoption in Japan concentrates first in university hospitals and high-volume community centres — yet procurement committees score total cost of ownership differently by institution type. University hubs may pilot robotic-adjacent platforms while community hospitals standardise familiar stapling lines with strict service-contract scrutiny. BioNixus segments fieldwork accordingly rather than averaging OR preferences into a single national narrative.',
+        'Distributor clinical specialist coverage and nurse training bandwidth often decide switches as much as incremental stapler performance claims. Primary modules quantify training burden and setup time objections that stall adoption after KOL enthusiasm.',
+      ],
+    },
+    {
+      title: 'PMDA classification and NHI functional categories',
+      paragraphs: [
+        'Registration class and NHI functional reimbursement category shape whether disposable premium claims are economically credible. Desk structure summarises PMDA expectations; primary research validates which differentiation narratives survive hospital VAS committees.',
+        'Post-clearance pull-through research measures gaps between regulatory approval and OR standardisation — a common failure mode for multinational portfolios that treat Japan entry as a single milestone.',
+      ],
+    },
+    {
+      title: 'Competitive defence and distributor service contracts',
+      paragraphs: [
+        'Incumbent stapling and energy platforms defend share through OR nurse familiarity, service contract bundling, and complication-risk aversion — not list price alone. Win/loss modules after hospital standardisation renewals reveal which objection themes actually move committees.',
+        'BioNixus links Japan general surgery intelligence to the broader Japan medical devices market report and GCC anesthesia and surgical reports when manufacturers compare APAC and Gulf OR strategies in one portfolio review.',
+      ],
+    },
+  ],
   audiences: [
     { audience: 'General & MIS surgeons', description: 'Procedure owners who decide platform familiarity and brand loyalty.' },
     { audience: 'OR nursing leads', description: 'Workflow and setup stakeholders who make or break adoption.' },
@@ -489,6 +704,36 @@ const japanGeneralSurgicalDevices: SpecialtyMarketDemandContent = {
       question: 'Does BioNixus recruit Japanese surgeons for device research?',
       answer:
         'Yes — verified surgeons, OR nurses, and procurement stakeholders, with instruments designed for Japanese hospital workflow and reporting suitable for global portfolio committees.',
+    },
+    {
+      question: 'How does Japan general surgical devices research differ from the Japan medical devices report?',
+      answer:
+        'The country report covers the full device economy. This page isolates OR stapling, energy, laparoscopy, and open-instrument decisions so general-surgery OEMs brief Japan without competing against imaging headlines.',
+    },
+    {
+      question: 'What training barriers slow surgical device adoption in Japan?',
+      answer:
+        'OR nurse setup time, surgeon familiarity with incumbent platforms, distributor clinical support depth, and hospital standardisation policies often gate adoption more than incremental performance claims — BioNixus measures these explicitly.',
+    },
+    {
+      question: 'Can research cover robotic-adjacent instrument portfolios?',
+      answer:
+        'Yes, when the commercial question spans MIS platforms adjacent to robotic workflows. Modules separate robotic capital decisions from general laparoscopic consumables to avoid mixed buyer sets.',
+    },
+    {
+      question: 'How do Japanese hospitals evaluate stapler versus energy platform switches?',
+      answer:
+        'Committees weigh complication risk, nurse setup time, service contract continuity, training burden, and total cost of ownership — often retaining incumbents unless a platform shows measurable workflow or outcome advantage. BioNixus quantifies objection hierarchies by institution type so OEMs do not misread KOL enthusiasm as system-wide standardisation.',
+    },
+    {
+      question: 'What is the typical timeline for Japan general surgical device research?',
+      answer:
+        'Desk structure plus primary modules usually run 8–12 weeks depending on specialty mix, institution quotas, and whether competitive defence and launch sequencing run in parallel. Accelerated waves are possible when hypotheses are narrow — for example, energy-device substitution in community hospitals only.',
+    },
+    {
+      question: 'How does BioNixus link Japan general surgery research to GCC programmes?',
+      answer:
+        'When manufacturers use Japan reference data in Gulf tender or training narratives, BioNixus tests which claims travel — PMDA credibility, training models, service contracts — versus where fresh GCC hospital and procurement modules are mandatory. See the GCC anesthesia and surgical market report for related Gulf OR context.',
     },
   ],
   areaServed: ['Japan'],
@@ -1200,8 +1445,97 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'Oncology regimen intensity sets the addressable pool — research must tie prophylaxis thresholds to the regimens hospitals actually run, not national averages.',
+      'Biosimilar G-CSF pressure concentrates in hospital pharmacy substitution and tender cycles; clinician stated preference often diverges from realised ward practice.',
     ],
   },
+  signalGrid: {
+    heading: 'Clinical and procurement signals',
+    items: [
+      { label: 'Primary prophylaxis protocols', signal: 'Hospital-specific thresholds differ from society guidelines on paper.' },
+      { label: 'Biosimilar substitution', signal: 'Pharmacy-led switches accelerate after tender change.' },
+      { label: 'Outpatient oncology expansion', signal: 'Administration device and schedule attributes gain weight.' },
+      { label: 'GCC tender frameworks', signal: 'Supportive-care injectables move on distinct award cadences.' },
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Supportive-care planning checkpoints (indicative)',
+    items: [
+      {
+        period: 'Q1 — guideline and protocol refresh',
+        detail:
+          'Map hospital prophylaxis thresholds after society updates; run pharmacist substitution diagnostics before tender prep.',
+      },
+      {
+        period: 'Q2 — tender and framework season',
+        detail:
+          'Peak window for GCC and EU5 supportive-care injectable awards — win/loss and message tests while RFP language is live.',
+      },
+      {
+        period: 'Q3 — biosimilar switch measurement',
+        detail:
+          'Quantify realised ward practice versus stated oncologist preference after pharmacy-led switches.',
+      },
+      {
+        period: 'Q4 — regimen mix forecasting',
+        detail:
+          'Link myelosuppressive regimen forecasts to prophylaxis pools for next-year supply and medical education planning.',
+      },
+    ],
+  },
+  geoAnswerBlock: {
+    question: 'What drives the febrile neutropenia market in 2026?',
+    answer:
+      'The febrile neutropenia market is driven by myelosuppressive oncology regimens, hospital prophylaxis protocols, biosimilar G-CSF competition, and tender awards — not consumer awareness. BioNixus researches oncologists, oncology pharmacists, and procurement stakeholders including Gulf hospital settings.',
+    points: [
+      {
+        title: 'Protocol stickiness',
+        description:
+          'Primary versus secondary prophylaxis rules vary by hospital — research maps real protocols, not guideline summaries alone.',
+      },
+      {
+        title: 'Pharmacy substitution',
+        description:
+          'Tender awards and biosimilar confidence drive realised share beyond oncologist stated preference.',
+      },
+      {
+        title: 'Administration friction',
+        description:
+          'Device, schedule, and nursing burden attributes affect preference in day-clinic expansion.',
+      },
+      {
+        title: 'BioNixus modules',
+        description:
+          'Protocol mapping, switch diagnostics, message tests, and GCC tender overlays scoped to one brand decision.',
+      },
+    ],
+    summary:
+      'Link to oncology market research and GCC oncology reports, or request a febrile neutropenia briefing via BioNixus contact.',
+  },
+  methodologySection: {
+    heading: 'How BioNixus researches febrile neutropenia markets',
+    paragraphs: [
+      'Programmes segment prophylaxis protocol owners, oncology pharmacists, infectious-disease admission stakeholders, and tender decision makers — with hospital-type quotas reflecting regimen intensity.',
+      'Quant modules measure switch intent tempered by inertia diagnostics; qual depth resolves polarised pharmacy versus oncology camps when distributions hide conflict.',
+      'Deliverables include protocol libraries, ranked objection themes, tender-timing notes for Gulf frameworks, and message tests validated before affiliate scale-up.',
+    ],
+  },
+  referenceSections: [
+    {
+      title: 'Protocol stickiness and pharmacy substitution',
+      paragraphs: [
+        'Febrile neutropenia prophylaxis is protocol-shaped: primary versus secondary thresholds vary by hospital and regimen mix. BioNixus maps real protocols with oncologists and pharmacists rather than relying on society guideline summaries alone.',
+        'Biosimilar G-CSF pressure concentrates in pharmacy substitution and tender awards — stated oncologist preference often diverges from realised ward practice after framework changes.',
+      ],
+    },
+    {
+      title: 'Supportive-care tender modules in the Gulf',
+      paragraphs: [
+        'When supportive-care injectables move through Gulf frameworks, tender and pull-through modules are scoped separately from EU5 protocol research — award timing and substitution rules differ materially by country.',
+        'Administration device and schedule attributes gain weight as outpatient oncology expands; nursing burden and day-clinic logistics belong in message tests alongside clinical safety themes.',
+      ],
+    },
+  ],
   audiences: [
     { audience: 'Medical oncologists', description: 'Protocol decision owners.' },
     { audience: 'Oncology pharmacists', description: 'Substitution and tender influencers.' },
@@ -1220,6 +1554,26 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
       question: 'What drives the febrile neutropenia market?',
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
+    },
+    {
+      question: 'How do biosimilars affect febrile neutropenia market share?',
+      answer:
+        'Hospital pharmacy substitution after tender change often moves share faster than oncologist preference surveys suggest — BioNixus measures both stated and realised practice.',
+    },
+    {
+      question: 'Should febrile neutropenia research include GCC tenders?',
+      answer:
+        'When supportive-care injectables move through Gulf frameworks, tender and pull-through modules are essential — scoped separately from EU5 protocol research.',
+    },
+    {
+      question: 'What is the difference between primary and secondary prophylaxis research?',
+      answer:
+        'Primary prophylaxis maps regimen-linked prevention rules; secondary prophylaxis maps treatment after neutropenia events — mixing them obscures addressable patient pools.',
+    },
+    {
+      question: 'Which stakeholders matter most for G-CSF message testing?',
+      answer:
+        'Medical oncologists own protocol intent; oncology pharmacists and tender committees often decide realised brand — both belong in message tests.',
     },
   ],
   priority: 'next',
@@ -1266,8 +1620,97 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Portable diagnostics in Italy sit between laboratory governance and clinical urgency. BioNixus separates acute POCT, ambulatory programmes, and community pathways so manufacturers do not average incompatible buyer sets.',
+      'Regional ASL procurement and hospital-group tenders increasingly specify LIS connectivity, cybersecurity, and post-market surveillance obligations — pilots that ignore IT gatekeepers rarely scale beyond a single ward.',
+      'Reagent rental and throughput economics decide renewals more than instrument list price; research must capture test-menu expansion plans and lab-director quality thresholds, not only ED enthusiasm.',
     ],
   },
+  signalGrid: {
+    heading: 'POCT adoption signals by setting',
+    items: [
+      { label: 'Emergency departments', signal: 'Turnaround pressure favours near-patient panels when quality validation is complete.' },
+      { label: 'Ward-based POCT', signal: 'Nursing workflow and LIS integration dominate go-live decisions.' },
+      { label: 'Community laboratories', signal: 'Regional consolidation reassesses which tests stay decentralised.' },
+      { label: 'Ambulatory cardiometabolic', signal: 'Chronic monitoring expands handheld use beyond acute care.' },
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Italy POCT planning checkpoints (indicative)',
+    items: [
+      {
+        period: 'Q1 — method validation windows',
+        detail:
+          'Laboratory directors lock validation protocols before ED or ward pilots expand — commission adoption research before validation completes.',
+      },
+      {
+        period: 'Q2 — regional tender season',
+        detail:
+          'Many ASL and hospital-group specifications include interoperability clauses — test messaging against live RFP language.',
+      },
+      {
+        period: 'Q3 — connectivity go-live reviews',
+        detail:
+          'IT and clinical engineering gate scaled deployment; measure friction after pilot success.',
+      },
+      {
+        period: 'Q4 — reagent contract renewals',
+        detail:
+          'Throughput and menu expansion decide renewals — run competitive defence interviews before contracts reset.',
+      },
+    ],
+  },
+  geoAnswerBlock: {
+    question: 'What is the Italy portable diagnostic devices market?',
+    answer:
+      'Italy’s portable diagnostic devices market covers near-patient and handheld platforms in hospitals, ambulatory settings, and selected community pathways — governed by laboratory quality rules, LIS integration, and regional procurement more than consumer retail demand.',
+    points: [
+      {
+        title: 'POCT governance',
+        description:
+          'Laboratory directors control method validation, quality, and connectivity — not only clinical enthusiasm.',
+      },
+      {
+        title: 'Regional procurement',
+        description:
+          'ASL and hospital-group tenders score interoperability and service support alongside reagent economics.',
+      },
+      {
+        title: 'EU IVDR context',
+        description:
+          'Documentation and post-market surveillance expectations affect Italy rollout timing for new platforms.',
+      },
+      {
+        title: 'BioNixus focus',
+        description:
+          'Primary research with lab, clinical, procurement, and IT stakeholders mapped to one adoption decision.',
+      },
+    ],
+    summary:
+      'See Italy MedTech market research and clinical diagnostics programmes, or request a scoped POCT briefing.',
+  },
+  methodologySection: {
+    heading: 'How BioNixus researches Italy portable diagnostics',
+    paragraphs: [
+      'Programmes segment acute ED, ward POCT, ambulatory, and community laboratory pathways before recruiting — mixing them produces vendor scorecards no buyer uses.',
+      'Instruments capture quality validation burden, LIS/HIS integration requirements, reagent throughput economics, and competitive installed-base switch costs. Desk modules summarise EU IVDR evidence expectations; fieldwork tests go-live realism.',
+      'Deliverables include setting-specific objection libraries, regional tender timing notes, and connectivity checklist gaps ranked by decision stage — suitable for commercial and regulatory affairs alignment.',
+    ],
+  },
+  referenceSections: [
+    {
+      title: 'Laboratory governance versus clinical urgency',
+      paragraphs: [
+        'Portable diagnostics in Italy sit between laboratory quality rules and ED or ward urgency — pilots fail when clinical enthusiasm outruns method validation and LIS integration. BioNixus recruits laboratory directors as primary gatekeepers alongside clinical sponsors.',
+        'Regional ASL procurement increasingly specifies interoperability and cybersecurity clauses; vendors must test messaging against live tender language rather than generic connectivity claims.',
+      ],
+    },
+    {
+      title: 'Reagent economics and installed-base switching',
+      paragraphs: [
+        'Reagent rental and throughput economics decide renewals more than instrument list price — research captures test-menu expansion plans and quality thresholds lab directors enforce before scaling POCT.',
+        'Switch costs from benchtop and central-lab alternatives are often underestimated; primary modules quantify validation burden and downtime risk that procurement committees weigh in renewal decisions.',
+      ],
+    },
+  ],
   audiences: [
     { audience: 'Laboratory directors', description: 'Quality and method-validation gatekeepers.' },
     { audience: 'ED / ward clinical leads', description: 'Pathway owners who create ordering pull.' },
@@ -1288,6 +1731,21 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
       question: 'What is the Italy portable diagnostic devices market?',
       answer:
         'Near-patient and handheld diagnostic platforms used in hospitals, ambulatory settings, and selected community pathways — researched through laboratory, clinical, and procurement stakeholders rather than consumer gadget panels.',
+    },
+    {
+      question: 'Who buys portable diagnostics in Italian hospitals?',
+      answer:
+        'Laboratory directors, ED and ward clinical leads, hospital or ASL procurement, and IT connectivity owners form a coalition — research must include all veto points.',
+    },
+    {
+      question: 'How does EU IVDR affect Italy POCT timelines?',
+      answer:
+        'IVDR documentation and post-market surveillance expectations extend evaluation cycles; BioNixus maps evidence packs buyers demand before pilots scale.',
+    },
+    {
+      question: 'Can POCT research cover ambulatory cardiometabolic monitoring?',
+      answer:
+        'Yes — when the commercial question spans chronic ambulatory use cases distinct from acute ED panels. Modules stay setting-specific to preserve actionable segments.',
     },
   ],
   areaServed: ['Italy'],
@@ -1461,6 +1919,45 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FSP buying in the GCC is rarely a single RFP for “the region.” Sponsors often lock global FSP frameworks then stress-test Middle East delivery cells. BioNixus scopes research to the function and geography under evaluation.',
+      'Saudi localisation and SFDA inspection readiness weigh heavily in partner selection — modular CRA models fail when in-country Arabic capability and site relationships are thin.',
+      'Hybrid models blending full-service oversight with FSP resourcing are increasingly common; research should capture sponsor governance expectations and site experience, not only vendor slide claims.',
+    ],
+  },
+  geoAnswerBlock: {
+    question: 'What is the GCC functional service providers (FSP) market?',
+    answer:
+      'The GCC FSP market is modular clinical-development outsourcing — monitoring, data management, medical writing, pharmacovigilance, and related functions — sold into Gulf-sponsored or Gulf-executed trials rather than full-service CRO lock-in.',
+    points: [
+      {
+        title: 'Sponsor model shift',
+        description:
+          'Cost and utilisation control push sponsors toward FSP cells with explicit KPI governance.',
+      },
+      {
+        title: 'Localisation pressure',
+        description:
+          'Saudi and UAE programmes favour partners with in-market presence, Arabic capability, and site access.',
+      },
+      {
+        title: 'Function-specific wins',
+        description:
+          'Monitoring, DM, and PV preferences differ — research must scope by function under evaluation.',
+      },
+      {
+        title: 'BioNixus output',
+        description:
+          'Win-theme libraries, site-experience diagnostics, and sponsor decision maps for Gulf FSP selection.',
+      },
+    ],
+    summary:
+      'See GCC clinical trials market research and request a scoped FSP diligence briefing via BioNixus contact.',
+  },
+  methodologySection: {
+    heading: 'How BioNixus researches GCC FSP markets',
+    paragraphs: [
+      'Primary interviews with sponsor clinical operations, FSP commercial leaders, site/SMO leadership, and medical/PV oversight — scoped to the function and country cell under evaluation.',
+      'Modules test startup timelines, CRA model quality, Arabic fieldwork capability, inspection-readiness governance, and pricing KPIs sponsors actually enforce in modular contracts.',
+      'Deliverables rank win themes by decision stage, document site-experience friction honestly, and link to GCC clinical trials and RWE pages when programmes span outsourcing and evidence generation.',
     ],
   },
   signalGrid: {
@@ -1472,6 +1969,22 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
       { label: 'Egypt adjacency', signal: 'Often bundled into MENA FSP conversations for enrolment scale.' },
     ],
   },
+  referenceSections: [
+    {
+      title: 'Modular outsourcing versus full-service lock-in',
+      paragraphs: [
+        'Sponsors adopt FSP models when utilisation control and function-specific depth beat full-service CRO economics — especially for Phase II–IV and RWE programmes with predictable resourcing. BioNixus interviews clinical operations leaders on KPI governance and hybrid oversight models rather than vendor slide claims alone.',
+        'Hybrid models blending FSP resourcing with full-service quality oversight are increasingly common; research documents where sponsors retain inspection risk versus delegate it to modular partners.',
+      ],
+    },
+    {
+      title: 'Gulf localisation and site experience',
+      paragraphs: [
+        'Saudi programmes often require in-country monitoring presence, Arabic capability, and SFDA inspection readiness — modular CRA models fail when Middle East delivery cells are thin on site relationships. Site and SMO interviews validate delivery quality day to day.',
+        'UAE hubs support regional PM models with strong private hospital sites; smaller GCC cells in Qatar, Kuwait, Oman, and Bahrain need capacity realism diligence rather than generic regional promises.',
+      ],
+    },
+  ],
   audiences: [
     { audience: 'Sponsor clinical operations', description: 'Outsourcing-model and vendor decision owners.' },
     { audience: 'FSP / CRO commercial leaders', description: 'Competitors and partners seeking Gulf win themes.' },
@@ -1492,6 +2005,21 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
       question: 'What is the GCC functional service providers market?',
       answer:
         'The market for modular clinical-development services (monitoring, data management, medical writing, PV, and related functions) sold into Gulf-sponsored or Gulf-executed programmes — researched through sponsor, site, and delivery-partner stakeholders.',
+    },
+    {
+      question: 'When do Gulf sponsors choose FSP over full-service CROs?',
+      answer:
+        'When utilisation control, function-specific depth, or hybrid governance models beat full-service lock-in — especially for Phase II–IV and RWE programmes with predictable resourcing needs.',
+    },
+    {
+      question: 'How important is Saudi localisation for FSP selection?',
+      answer:
+        'Critical for many Saudi programmes — in-country monitoring presence, Arabic capability, and SFDA inspection readiness often decide shortlists regardless of global brand recognition.',
+    },
+    {
+      question: 'Can FSP research cover Egypt adjacency?',
+      answer:
+        'Yes, when sponsors bundle MENA enrolment scale into Gulf FSP conversations. BioNixus scopes geography explicitly to avoid false regional generalisations.',
     },
   ],
   areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],
@@ -1535,6 +2063,45 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Medication management sits across capital pharmacy automation and software/adherence layers. BioNixus scopes the decision cell first — inpatient automation, ambulatory e-Rx, or adherence — before fieldwork.',
+      'Saudi Wasfaty-linked ambulatory workflows and UAE private-hospital closed-loop initiatives often run on different procurement calendars than MOH inpatient automation — programmes that average them produce vendor shortlists no buyer recognises.',
+      'Cybersecurity and HIS integration reviews lengthen Gulf evaluation cycles; vendors win when clinical engineering and CIO coalitions see go-live realism, not when pharmacy directors alone endorse features.',
+    ],
+  },
+  geoAnswerBlock: {
+    question: 'What is the GCC medication management market?',
+    answer:
+      'The GCC medication management market spans hospital pharmacy automation, e-prescribing and closed-loop medication systems, inventory visibility, and adherence programmes — purchased by chief pharmacists, hospital CIOs, and ambulatory payers across Saudi Arabia, UAE, Kuwait, Qatar, Oman, and Bahrain.',
+    points: [
+      {
+        title: 'Inpatient automation',
+        description:
+          'ADC, unit-dose, and compounding workflows funded as capital projects with quality and staffing leverage narratives.',
+      },
+      {
+        title: 'Closed-loop e-prescribing',
+        description:
+          'HIS-integrated medication systems gated by IT, cybersecurity, and clinician workflow friction.',
+      },
+      {
+        title: 'Wasfaty and ambulatory linkage',
+        description:
+          'Saudi ambulatory programmes connect retail and hospital medication management — distinct buyer coalitions from inpatient automation.',
+      },
+      {
+        title: 'BioNixus deliverable',
+        description:
+          'Buyer-coalition maps, objection libraries, and tender-timing briefs tied to one vendor decision.',
+      },
+    ],
+    summary:
+      'Link to the GCC pharmacy market and healthcare market research hub, or request a scoped medication-management proposal.',
+  },
+  methodologySection: {
+    heading: 'How BioNixus researches GCC medication management',
+    paragraphs: [
+      'Engagements isolate one decision cell — inpatient automation, ambulatory e-Rx, or adherence sponsorship — then recruit chief pharmacists, CIO architecture owners, quality leads, and payer ambulatory stakeholders with verified institution type.',
+      'Modules test integration depth, cybersecurity acceptance, staffing-leverage credibility, and error-reduction business cases against real Gulf procurement rhythms — including NUPCO-adjacent hospital timelines where relevant.',
+      'Outputs include ranked objection libraries, coalition maps showing IT versus pharmacy veto power, and calendar notes for capital versus SaaS buying routes — artefacts vendor commercial teams can action before tender windows close.',
     ],
   },
   signalGrid: {
@@ -1546,6 +2113,29 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
       { label: 'Oman / Bahrain', signal: 'Selective modernisation projects; localisation and service support weigh heavily.' },
     ],
   },
+  referenceSections: [
+    {
+      title: 'Inpatient automation versus ambulatory medication pathways',
+      paragraphs: [
+        'Gulf hospitals often bundle inpatient automated dispensing, unit-dose compounding, and ambulatory e-prescribing into one “medication management” initiative — yet buyer coalitions and budget owners differ. Inpatient automation is chief-pharmacist and quality-led; ambulatory closed-loop programmes are CIO-led with employer overlays in UAE private groups. BioNixus scopes research to the decision cell under evaluation before recruiting stakeholders.',
+        'Wasfaty-linked Saudi ambulatory workflows introduce retail pharmacy chains and MOH ambulatory administrators — a third pathway that cannot be averaged with MOH inpatient automation timelines without producing unusable vendor scorecards.',
+      ],
+    },
+    {
+      title: 'Integration, cybersecurity, and go-live realism',
+      paragraphs: [
+        'Closed-loop medication systems face longer Gulf evaluation cycles because CIO and clinical engineering offices require interface catalogues, downtime playbooks, and patch-management commitments before pharmacy budgets release. Primary interviews rank which evidence gaps veto go-live versus which are negotiable during implementation.',
+        'Patient-safety narratives must map to hospital KPIs — error reduction, nursing time returned, inventory accuracy — rather than generic ROI slides. BioNixus validates which metrics CFO and quality committees actually track in Saudi MOH networks versus UAE private groups.',
+      ],
+    },
+    {
+      title: 'Procurement calendars and localisation',
+      paragraphs: [
+        'Capital automation follows hospital mega-project calendars; SaaS adherence layers may renew on different cycles with different approvers. BioNixus maps country-specific tender and budget windows rather than assuming a single GCC launch date.',
+        'Localisation and Arabic-language training support frequently decide shortlists in Oman, Bahrain, and Kuwait after technical parity — service credibility research with implementation leads complements feature comparisons.',
+      ],
+    },
+  ],
   audiences: [
     { audience: 'Chief pharmacists', description: 'Clinical and operational owners of medication systems.' },
     { audience: 'Hospital CIO / IT', description: 'Integration and cybersecurity gatekeepers.' },
@@ -1566,6 +2156,21 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
       question: 'What is included in the GCC medication management market?',
       answer:
         'Hospital pharmacy automation, e-prescribing and closed-loop medication systems, inventory visibility, and adherence / patient-support programmes — researched through pharmacy, IT, and clinical stakeholders across Gulf markets.',
+    },
+    {
+      question: 'How does Wasfaty affect medication management research in Saudi Arabia?',
+      answer:
+        'Wasfaty links ambulatory prescribing and retail fulfilment — research must include MOH ambulatory stakeholders and pharmacy chains, not only inpatient automation buyers.',
+    },
+    {
+      question: 'Which Gulf markets lead inpatient automation adoption?',
+      answer:
+        'Saudi Vision 2030 hospitals and UAE private groups often pilot first; Kuwait and Qatar can standardise quickly when leadership sponsors change. BioNixus maps country-specific coalitions rather than assuming uniform GCC uptake.',
+    },
+    {
+      question: 'What evidence do Gulf hospitals demand for closed-loop medication systems?',
+      answer:
+        'Integration test results, cybersecurity packs, clinician workflow pilots, and patient-safety business cases — priced against staffing and error-reduction KPIs hospitals actually track.',
     },
   ],
   areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],

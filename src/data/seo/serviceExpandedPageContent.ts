@@ -203,6 +203,48 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
         'Yes. Multilingual moderation and transcription workflows preserve decision authenticity in GCC and European markets while harmonised codebooks enable regional roll-ups. Language choice follows stakeholder type and local affiliate requirements rather than defaulting to English-only convenience.',
     },
   ],
+  'competitive-intelligence': [
+    {
+      question: 'What is pharmaceutical competitive intelligence?',
+      answer:
+        'Pharmaceutical competitive intelligence connects external signals — pipeline moves, congress readouts, prescriber switching, tender awards, access shifts — to explicit decisions: launch sequencing, account prioritisation, medical education emphasis, HEOR counter-moves, and alliance triggers. BioNixus blends primary HCP and payer probes with curated secondary monitoring inside a taxonomy leadership can query.',
+    },
+    {
+      question: 'How is BioNixus competitive intelligence different from syndicated data?',
+      answer:
+        'Syndicated datasets describe what happened in aggregate; BioNixus intelligence explains why accounts move, which objections bind uptake, and which scenarios stress-test your forecast. Primary modules recruit verified prescribers, pharmacists, and access stakeholders — not desk rewrites of public filings alone.',
+    },
+    {
+      question: 'When should pharma teams commission competitive intelligence?',
+      answer:
+        'Before launch sequencing commits, when a competitor label or tender shock threatens share, when medical affairs needs objection libraries ranked by decision stage, or when alliance and BD teams require diligence on partnership triggers — especially across EMEA and GCC where local behaviour diverges sharply.',
+    },
+    {
+      question: 'Which methodologies suit pharma competitive intelligence?',
+      answer:
+        'Structured prescriber and pharmacist probes, win/loss interviews after tender or formulary events, scenario workshops with probability-weighted entry assumptions, congress and publication tracking, and selective qual depth when quant distributions hide polarised camps.',
+    },
+    {
+      question: 'How does BioNixus maintain ethical firewalls?',
+      answer:
+        'Interview neutrality, fair-balance discipline, anti-kickback sensitivity, source grading, and explicit separation between intelligence conclusions and promotional claims — preserving strategic speed without regulatory recklessness.',
+    },
+    {
+      question: 'Can competitive intelligence integrate with market access and forecasting?',
+      answer:
+        'Yes. Payer hesitation patterns inform HEOR refinement; prescriber inertia diagnostics temper launch forecasts; tender defence modules link intelligence to NUPCO and hospital pull-through calendars in Gulf markets.',
+    },
+    {
+      question: 'What deliverables do commercial teams receive?',
+      answer:
+        'Landscape dashboards tied to decisions, pipeline probability trackers, launch readiness scorecards, prescriber switching reports, objection hierarchies, and quarterly briefings with explicit owners for medical, brand, and access KPIs.',
+    },
+    {
+      question: 'Which geographies does BioNixus cover for pharma CI?',
+      answer:
+        'EU5, UK, GCC, and wider MENA with bilingual Arabic–English capability — depth where tender, HTA, and hospital committee behaviour diverges from US or global syndicated narratives.',
+    },
+  ],
 };
 
 export const SERVICE_HERO_EXTENSIONS: Record<string, string> = {
