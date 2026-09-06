@@ -72,6 +72,21 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
           'BioNixus maintains disciplined interview neutrality, structured summarization with source grading, and explicit separation between intelligence conclusions and marketing claims—preserving strategic speed without regulatory recklessness.',
         ],
       },
+      {
+        title: 'Competitive intelligence for multi-country launches',
+        paragraphs: [
+          'EMEA and GCC launches rarely share one competitive narrative. BioNixus harmonises variable dictionaries while preserving local tender, HTA, and hospital committee modules — so regional roll-ups do not erase the objections that actually bind uptake in Saudi Arabia versus Germany versus the UK.',
+          'Alliance and BD teams use the same intelligence taxonomy for diligence: partnership triggers, erosion scenarios, and medical education choke points — reducing reinterpretation marathons between global strategy and affiliate execution.',
+        ],
+      },
+      {
+        title: 'Operationalising intelligence into launch, access, and lifecycle KPIs',
+        paragraphs: [
+          'Intelligence decays when it lives in monthly slide decks without owners. BioNixus links findings to medical education choke points, account tagging schemes, tender defence calendars, and forecast governance checkpoints so affiliates act in the same planning cycle.',
+          'Launch readiness scorecards combine prescriber objection libraries, payer hesitation patterns, and supply or training bottlenecks — weighted by decision stage rather than generic SWOT aesthetics.',
+          'Lifecycle defence modules track biosimilar, tender, and guideline shocks with scenario ranges affiliates can stress-test in forecast committees without rebuilding narratives from scratch.',
+        ],
+      },
     ],
     'clinical-trial-support': [
       {
