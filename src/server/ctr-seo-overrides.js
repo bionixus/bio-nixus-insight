@@ -586,6 +586,27 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Febrile neutropenia market 2026 — G-CSF market size, biosimilar filgrastim/pegfilgrastim competition and oncology demand forecast. By BioNixus.',
   },
+  // CTR wave 14 (2026-09-07): page-1 queries @ 0% CTR — japan general surgical devices (pos 4.6, 25 impr)
+  '/japan-general-surgical-devices-market': {
+    title: 'Japan General Surgical Devices Market 2026: Size & Forecast',
+    description:
+      'Japan general surgical devices market 2026 — staplers, energy devices, laparoscopy, PMDA/NHI context and OR adoption forecast. Primary research by BioNixus.',
+  },
+  '/singapore-pharmaceutical-market': {
+    title: 'Singapore Pharmaceutical Market 2026: HSA, ACE & Size',
+    description:
+      'Singapore pharmaceutical market 2026 — HSA registration, ACE HTA, MOH SDL/MAF access and cluster uptake intelligence. By BioNixus.',
+  },
+  '/gcc-medication-management-market': {
+    title: 'GCC Medication Management Market 2026 | Pharmacy Tech',
+    description:
+      'GCC medication management market 2026 — hospital pharmacy automation, e-prescribing, Wasfaty workflows and adherence programmes. By BioNixus.',
+  },
+  '/italy-portable-diagnostic-devices-market': {
+    title: 'Italy Portable Diagnostic Devices Market 2026 | POCT',
+    description:
+      'Italy portable diagnostic devices market 2026 — POCT adoption, regional procurement, IVDR evidence and hospital laboratory pathways. By BioNixus.',
+  },
   '/uae-pricing-reimbursement-strategy': {
     title: 'UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH',
     description:
