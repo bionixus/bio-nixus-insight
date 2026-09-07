@@ -6,6 +6,9 @@ import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
+import { buildSpecialtyMarketReferenceSections } from '@/data/seo/specialtyMarketReferenceContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { SpecialtyMarketReferenceGuide } from '@/components/seo/SpecialtyMarketReferenceGuide';
 import {
   DirectoryDriverCard,
   DirectoryFaqList,
@@ -23,6 +26,9 @@ import {
  */
 export default function SpecialtyMarketDemandPage({ content }: { content: SpecialtyMarketDemandContent }) {
   const canonicalPath = `/${content.slug}`;
+  const referenceSections = content.referenceContext
+    ? buildSpecialtyMarketReferenceSections(content.referenceContext)
+    : null;
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
@@ -52,6 +58,8 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
     { href: '#structure', label: 'Structure' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
+    ...(content.geoAnswer ? [{ href: '#geo-answer', label: 'Quick answer' }] : []),
+    ...(referenceSections ? [{ href: '#reference', label: 'Reference' }] : []),
     { href: '#audiences', label: 'Audiences' },
     { href: '#faq', label: 'FAQ' },
   ];
@@ -150,6 +158,22 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
               ))}
             </div>
           </DirectorySection>
+        ) : null}
+
+        {content.geoAnswer ? (
+          <DirectorySection id="geo-answer" eyebrow="Direct answer" title="What decision-makers ask first">
+            <GeoLLMAnswerBlock
+              question={content.geoAnswer.question}
+              answer={content.geoAnswer.answer}
+              points={content.geoAnswer.points}
+              summary={content.geoAnswer.summary}
+              pageUrl={content.canonical}
+            />
+          </DirectorySection>
+        ) : null}
+
+        {referenceSections ? (
+          <SpecialtyMarketReferenceGuide segmentLabel={content.segmentLabel} sections={referenceSections} />
         ) : null}
 
         <DirectorySection id="audiences" surface="cream" eyebrow="Fieldwork" title="Who we interview">
