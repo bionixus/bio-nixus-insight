@@ -574,6 +574,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Spain\'s EUR 10–12 billion devices market within EUR 120–130 billion health expenditure serves 47.9 million population. High diabetes prevalence (14.8% adults) drives monitoring and therapeutic device demand.',
       'Regional adoption variation is among the widest in EU5 — Catalonia and Madrid versus slower rural communities require segmented research, not national averages.',
       'BioNixus supports Spain MedTech research with AEMPS context and verified hospital networks across target autonomous communities.',
+      'Hospital Guía Farmacoterapéutica committees and IPT therapeutic positioning create three-to-six-month implementation lag after regional adoption — research should map committee behaviour, not only national listing headlines.',
     ],
   },
   switzerland: {
@@ -606,6 +607,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Switzerland\'s CHF 6–7 billion medtech market punches above population weight (8.7 million) with highest OECD health spending per capita. Roche, Zambon, and dense SME ecosystem characterise domestic industry.',
       'Access Consortium credentials make Switzerland a strategic parallel market with Canada and Australia for global launch sequencing.',
       'BioNixus supports Swiss MedTech research with Swissmedic context and verified KOL networks at major university hospitals.',
+      'Cantonal hospital procurement and supplementary insurance pathways create dual adoption routes — research should segment mandatory KVG versus premium VVG coverage when forecasting innovator uptake.',
     ],
   },
   denmark: {
@@ -638,6 +640,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Denmark\'s medtech sector exports globally through Ambu, Coloplast, and William Demant (Demant) — domestic market size belies international strategic importance. 5.9 million population with high health expenditure per capita.',
       'Regional hospital groups concentrate procedural volume; digital health leadership creates differentiated adoption pathways for connected devices.',
       'BioNixus supports Denmark MedTech research with EU MDR context and Nordic expansion intelligence.',
+      'Nordic collaborative procurement (SKI, NHN) and five regional health authorities mean tender timing can shift adoption faster than in larger EU markets — account research should include regional group frameworks.',
     ],
   },
   'new-zealand': {
@@ -793,11 +796,14 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Rede D\'Or, Hapvida, and Fleury anchor private hospital adoption; public university hospitals (USP, UNIFESP, UFRJ) drive KOL activity.',
       'Portuguese fieldwork mandatory for physician and patient modules. BioNixus Brazil programmes use verified Brazilian specialist networks.',
       'Mercosur regulatory harmonisation efforts affect southern cone expansion — Brazil research supports Argentina and Chile comparative modules.',
+      'ANS premium hospital networks adopt innovator devices ahead of SUS CONITEC decisions — segmentation between channels is essential for credible Brazil MedTech forecasts.',
     ],
     marketParagraphs: [
       'Brazil\'s USD 11–13 billion devices market serves 218 million population — Latin America\'s largest. Dual SUS/public and ANS/private pathways require segmented research design.',
       'Domestic orthopaedic and dental manufacturers compete aggressively; import tariffs reshape multinational pricing strategy.',
       'BioNixus supports Brazil MedTech research with ANVISA context, Portuguese fieldwork, and LATAM expansion intelligence.',
+      'Premium ANS hospitals (Einstein, Sírio-Libanês, Mater Dei) adopt innovator devices at international price points while SUS procurement follows CONITEC HTA — research must separate channels before forecasting Brazil share.',
+      'Orthopaedic, dental, and diagnostic segments show strong domestic competition from ABIMO members — multinational entrants should map local manufacturing partnerships and distributor clinical support density before setting share targets.',
     ],
   },
 };

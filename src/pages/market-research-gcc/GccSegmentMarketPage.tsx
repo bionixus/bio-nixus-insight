@@ -6,6 +6,9 @@ import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { GccSegmentContent } from '@/data/gccSegmentMarketContent';
+import { buildSpecialtyMarketReferenceSections } from '@/data/seo/specialtyMarketReferenceContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { SpecialtyMarketReferenceGuide } from '@/components/seo/SpecialtyMarketReferenceGuide';
 import {
   DirectoryDriverCard,
   DirectoryFaqList,
@@ -24,6 +27,9 @@ import {
  */
 export default function GccSegmentMarketPage({ content }: { content: GccSegmentContent }) {
   const canonicalPath = `/${content.slug}`;
+  const referenceSections = content.referenceContext
+    ? buildSpecialtyMarketReferenceSections(content.referenceContext)
+    : null;
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
@@ -96,6 +102,8 @@ export default function GccSegmentMarketPage({ content }: { content: GccSegmentC
             { href: '#drivers', label: 'Drivers' },
             { href: '#structure', label: 'Structure' },
             { href: '#countries', label: 'By country' },
+            ...(content.geoAnswer ? [{ href: '#geo-answer', label: 'Quick answer' }] : []),
+            ...(referenceSections ? [{ href: '#reference', label: 'Reference' }] : []),
             { href: '#audiences', label: 'Audiences' },
             { href: '#faq', label: 'FAQ' },
           ]}
@@ -143,6 +151,22 @@ export default function GccSegmentMarketPage({ content }: { content: GccSegmentC
             ))}
           </div>
         </DirectorySection>
+
+        {content.geoAnswer ? (
+          <DirectorySection id="geo-answer" surface="cream" eyebrow="Quick answer" title={content.geoAnswer.question}>
+            <GeoLLMAnswerBlock
+              question={content.geoAnswer.question}
+              answer={content.geoAnswer.answer}
+              points={content.geoAnswer.points}
+              summary={content.geoAnswer.summary}
+              emitSchema={false}
+            />
+          </DirectorySection>
+        ) : null}
+
+        {referenceSections ? (
+          <SpecialtyMarketReferenceGuide segmentLabel={content.segmentLabel} sections={referenceSections} />
+        ) : null}
 
         <DirectorySection id="audiences" eyebrow="Fieldwork" title="Research audiences we reach">
           <div className="grid md:grid-cols-2 gap-5">

@@ -426,16 +426,6 @@ export const CTR_SEO_BY_PATH = {
     description:
       'NielsenIQ alternatives for FMCG and retail research 2026 — when BioNixus wins on account-level and traditional-trade data, and when Nielsen panels still fit.',
   },
-  '/pricing': {
-    title: 'Market Research Pricing | $10k–$75k Country (2026)',
-    description:
-      'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.',
-  },
-  '/account-level-market-research': {
-    title: 'What Is Account-Level Market Research Data?',
-    description:
-      'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.',
-  },
   '/insights/top-fmcg-market-research-companies-egypt-2026': {
     title: 'FMCG Market Research Firms Egypt 2026 | Ranked',
     description:
@@ -585,6 +575,58 @@ export const CTR_SEO_BY_PATH = {
     title: 'Febrile Neutropenia Market 2026: Size, G-CSF & Forecast',
     description:
       'Febrile neutropenia market 2026 — G-CSF market size, biosimilar filgrastim/pegfilgrastim competition and oncology demand forecast. By BioNixus.',
+  },
+  // CTR wave 14 (2026-09-07): page-1 queries @ 0% CTR — japan general surgical devices (pos 4.6, 25 impr)
+  '/japan-general-surgical-devices-market': {
+    title: 'Japan General Surgical Devices Market 2026: Size & Forecast',
+    description:
+      'Japan general surgical devices market 2026 — staplers, energy devices, laparoscopy, PMDA/NHI context and OR adoption forecast. Primary research by BioNixus.',
+  },
+  '/singapore-pharmaceutical-market': {
+    title: 'Singapore Pharmaceutical Market 2026: HSA, ACE & Size',
+    description:
+      'Singapore pharmaceutical market 2026 — HSA registration, ACE HTA, MOH SDL/MAF access and cluster uptake intelligence. By BioNixus.',
+  },
+  '/gcc-medication-management-market': {
+    title: 'GCC Medication Management Market 2026 | Pharmacy Tech',
+    description:
+      'GCC medication management market 2026 — hospital pharmacy automation, e-prescribing, Wasfaty workflows and adherence programmes. By BioNixus.',
+  },
+  '/italy-portable-diagnostic-devices-market': {
+    title: 'Italy Portable Diagnostic Devices Market 2026 | POCT',
+    description:
+      'Italy portable diagnostic devices market 2026 — POCT adoption, regional procurement, IVDR evidence and hospital laboratory pathways. By BioNixus.',
+  },
+  // CTR wave 15 (2026-09-08): Italy/GCC query clusters dropped >20 positions; page-1 0% CTR
+  '/italy-medical-device-connectivity-market': {
+    title: 'Italy Medical Device Connectivity Market 2026 | Digital Health',
+    description:
+      'Italy medical device connectivity market 2026 — HIS/LIS integration, microservices healthcare IT, cybersecurity and connected MedTech adoption. By BioNixus.',
+  },
+  '/gcc-generic-pharmaceuticals-market': {
+    title: 'GCC Generic Pharmaceuticals Market 2026 | Retail & Tenders',
+    description:
+      'GCC generic pharmaceuticals market 2026 — Wasfaty, retail substitution, NUPCO tenders and localization across KSA, UAE and Gulf states. By BioNixus.',
+  },
+  '/gcc-generic-injectables-market': {
+    title: 'GCC Generic Injectables Market 2026 | Hospital Tenders',
+    description:
+      'GCC generic injectables market 2026 — sterile injectable tenders, NUPCO frameworks, hospital pharmacy substitution and ICV scoring. By BioNixus.',
+  },
+  '/gcc-clinical-trials-market': {
+    title: 'GCC Clinical Trials Market 2026 | Saudi & UAE CRO Intel',
+    description:
+      'GCC clinical trials market 2026 — Saudi Vision 2030 trials, UAE hub sites, SFDA regulation and sponsor outsourcing trends. By BioNixus.',
+  },
+  '/doxorubicin-market': {
+    title: 'Doxorubicin Market Access 2026 | Liposomal & Tender Intel',
+    description:
+      'Doxorubicin market access 2026 — liposomal vs conventional, oncology protocols, cardiotoxicity stewardship and GCC hospital tenders. By BioNixus.',
+  },
+  '/biosimilar-market-entry-saudi-arabia': {
+    title: 'Saudi Arabia Biosimilar Market 2026 | SFDA & NUPCO Guide',
+    description:
+      'Saudi Arabia biosimilar market 2026 — SFDA registration, NUPCO tenders, substitution rules and localization for biologics entrants. By BioNixus.',
   },
   '/uae-pricing-reimbursement-strategy': {
     title: 'UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH',
