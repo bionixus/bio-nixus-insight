@@ -48,6 +48,14 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus support Brazil-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Brazilian and Latin American pharmaceutical and medical device companies in entering GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys across all major therapeutic areas; and comparative Brazil vs. GCC market intelligence. Brazil and the GCC share several commercial parallels — large generic medicine markets, centralized public procurement, and premium private hospital sectors — that make BioNixus\'s cross-regional intelligence particularly relevant for Brazilian pharma companies planning MENA expansion.',
   },
+  {
+    question: 'What are the main medical device regulatory pathways in Brazil?',
+    answer: 'ANVISA classifies medical devices into risk Classes I–IV under GGMED oversight. Class III/IV devices require full registration with Portuguese-language Module 1 documentation and GMP compliance under RDC 751/2022. SUS procurement for high-cost technologies follows CONITEC HTA; ANS private plans cover devices listed in the Rol de Procedimentos. BioNixus maps dual-channel adoption — public SUS versus premium ANS hospitals — when sponsors brief Brazil MedTech strategy.',
+  },
+  {
+    question: 'How does Brazil compare to GCC markets for pharma and MedTech expansion?',
+    answer: 'Brazil and the GCC share large generic medicine markets, centralised public procurement, and premium private hospital sectors — but regulatory pathways differ (ANVISA/CONITEC versus SFDA/MOHAP/NUPCO). BioNixus provides comparative intelligence for Brazilian companies entering MENA and for global teams sequencing LATAM versus Gulf investments.',
+  },
 ], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-healthcare-market-report');
@@ -63,7 +71,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-09-08',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -117,6 +125,7 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">Brazil's pharmaceutical market splits across SUS incorporation (CONITEC, PCDT protocols, RENAME lists), ANS private coverage through the Rol de Procedimentos, and cash-pay retail channels. MedTech and device adoption follows a parallel dual path — CONITEC for high-cost SUS technologies versus premium ANS hospital procurement at Einstein, Sírio-Libanês, and Mater Dei. BioNixus segments research design to the channel that owns your commercial question.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
