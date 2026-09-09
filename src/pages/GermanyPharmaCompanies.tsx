@@ -65,6 +65,8 @@ const faqItems = [
   { q: 'What is AMNOG and why does it matter?', a: 'AMNOG is Germany\'s early benefit assessment framework. After launch, manufacturers negotiate reimbursement with the GKV-SV based on G-BA benefit ratings — making evidence strategy critical for commercial success.' },
   { q: 'Do foreign companies need a local presence to sell in Germany?', a: 'Foreign manufacturers typically need an EU/German marketing authorisation route, a local affiliate or partner for pharmacovigilance and distribution, and an AMNOG/G-BA access strategy for reimbursed medicines.' },
   { q: 'Which companies dominate German drug distribution?', a: 'Wholesalers such as Phoenix Pharma, Noweda, and other national distributors supply community pharmacies and hospitals; pharmacy cooperatives play a larger role than in many other markets.' },
+  { q: 'How does Germany\'s AMNOG process affect market research design?', a: 'AMNOG benefit ratings and GKV-SV negotiations shape which clinical and economic endpoints matter at launch. BioNixus payer and physician modules align to G-BA/IQWiG evidence expectations—not generic willingness-to-pay exercises disconnected from German HTA rituals.' },
+  { q: 'How do German pharmacy cooperatives affect market access research?', a: 'Cooperative wholesalers such as Noweda influence community pharmacy economics and substitution dynamics differently from pure wholesale models elsewhere in Europe. BioNixus modules include pharmacist-adjacent quotas when tender scoring and substitution rituals shape uptake.' },
 ];
 
 const GermanyPharmaCompanies = () => {
