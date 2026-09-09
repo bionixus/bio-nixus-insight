@@ -62,14 +62,23 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
         paragraphs: [
           'Sustainable competitive intelligence for pharmaceutical teams ties external signals to explicit decisions: launch sequencing, account prioritization, medical education emphasis, HEOR counter-moves, tender defense choreography, alliance partnership triggers. Without decision hooks, intelligence becomes ambient noise that decays before affiliates translate it.',
           'BioNixus blends primary intelligence (structured prescriber and pharmacist signals, account-level probe modules) with curated secondary monitoring (pipeline states, congress readouts, policy shifts) inside a taxonomy leadership can query rather than re-read each month from scratch.',
-          'Scenario planning benefits from quantified uncertainty: ranges for analogue erosion, probability-weighted entry assumptions, stress tests when procurement rules change mid-year—anchored to behaviours measured in priority markets rather than analyst sentiment alone.',
-        ],
+        'Scenario planning benefits from quantified uncertainty: ranges for analogue erosion, probability-weighted entry assumptions, stress tests when procurement rules change mid-year—anchored to behaviours measured in priority markets rather than analyst sentiment alone.',
+        'BioNixus quarterly briefings annotate intelligence by decision type—initiation, switching, tender defence, HEOR counter-moves—so medical affairs and brand teams know which module to action without re-reading undifferentiated news digests.',
+      ],
       },
       {
         title: 'Ethical guardrails, confidentiality, and firewalling against promotional bias',
         paragraphs: [
           'Intelligence gathering must respect fair balance, anti-kickback sensitivities, competitive confidentiality, and internal compliance firewalls separating insight generation from promotional planning. Documentation trails support audits and alliance diligence.',
           'BioNixus maintains disciplined interview neutrality, structured summarization with source grading, and explicit separation between intelligence conclusions and marketing claims—preserving strategic speed without regulatory recklessness.',
+        ],
+      },
+      {
+        title: 'Integrating CI with physician insight, access, and launch governance',
+        paragraphs: [
+          'Competitive intelligence earns budget when it changes KPI owners: which accounts to defend in tender cycles, which HEOR counter-moves to prepare before dossier resubmission, which prescriber segments show switching elasticity when biosimilar pressure intensifies, and which medical education arcs must shift before congress season.',
+          'BioNixus sequences primary prescriber and pharmacist probes with access objection libraries and quantitative validation waves so brand, medical, and access teams share one competitor narrative—not three incompatible storylines rebuilt each quarter from syndicated dashboards alone.',
+          'Quarterly briefings annotate intelligence by decision type—initiation, switching, tender defence, HEOR counter-moves—with explicit ownership tables affiliates can execute without reinterpretation marathons across markets.',
         ],
       },
     ],
@@ -94,6 +103,13 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
         paragraphs: [
           'Trial-derived intelligence informs pre-launch medical narrative testing, payer-adjacent evidence planning, PSP design realism, investigator relationship prioritization—all reducing the translation gap sometimes separating R&D pacing from commercial readiness clocks.',
           'Teams should institutionalize feedback loops linking recruitment friction discoveries to label expectation management, endpoint communicability, and real-world evidence planning.',
+        ],
+      },
+      {
+        title: 'GCC and EU5 site selection with operational risk tagging',
+        paragraphs: [
+          'Saudi Arabia and UAE ethics rhythms, SFDA device overlays, and EU5 diagnostic backlogs shape site ranking differently from optimistic feasibility questionnaires. BioNixus annotates shortlists with risk tags—competing trials, nursing bandwidth, laboratory turnaround, transportation friction—sponsors can action before CRO commitment.',
+          'Independent verification before CRO selection prevents costly protocol amendments driven by naive capacity assumptions; feasibility modules de-risk geography and site selection so proposals reflect operational reality in Gulf and European centres.',
         ],
       },
     ],
@@ -145,6 +161,14 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
           'Documentation emphasises behavioural observation without inducement distortions respecting EFPIA-relevant sensitivities varying by market; transparency for compliance teams outweighs flashy network aesthetics.',
         ],
       },
+      {
+        title: 'Sequencing KOL mapping with physician insight and congress planning',
+        paragraphs: [
+          'Mapping often precedes deep physician quant when influence structure is uncertain; it follows quant when segment hypotheses need validation against who actually accelerates or vetoes adoption in target institution types.',
+          'BioNixus links tiered expert rosters to decision types—initiation, switching, protocol adoption—so congress engagement, advisory design, and MSL deployment prioritise leverage that moves consensus rather than ceremonial visibility.',
+          'Workshop options translate influence maps into quarterly engagement calendars affiliates can execute, with explicit compliance-safe documentation separating behavioural observation from promotional planning.',
+        ],
+      },
     ],
     'quantitative-research': [
       {
@@ -172,6 +196,20 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
         ],
       },
       {
+        title: 'Payer-adjacent qual and tender defence forensics',
+        paragraphs: [
+          'When economic reluctance masquerades as clinical caution, payer-adjacent depth interviews isolate skepticism patterns that should inform HEOR refinement, pricing narrative tests, and tender defence—not generic willingness-to-pay exercises disconnected from live stakeholder discourse.',
+          'BioNixus links qual theme libraries to quant segment hypotheses and access objection hierarchies so medical affairs, brand, and access teammates synchronise within the same planning cycle rather than commissioning redundant waves.',
+        ],
+      },
+      {
+        title: 'Workshop translation from qual depth to medical and brand action',
+        paragraphs: [
+          'Objection hierarchies with illustrative quotes graded for governance feed medical education choke-point maps, message tests affiliates can execute, and explicit linkage tables from qualitative findings to KPI owners.',
+          'Optional facilitation workshops convert saturation-stable themes into quarterly action plans—reducing the translation gap between insightful transcripts and field-ready narratives compliance teams can approve.',
+        ],
+      },
+      {
         title: `Where ${t} unlocks stalled quant programmes`,
         paragraphs: [
           'When flat distributions conceal polarized cluster camps, contradictory pairwise patterns appear, quotas miss hidden high-leverage outliers, vignettes mis-specify clinically realistic alternatives—structured qual rescues inference before flawed quant reruns amplify costs.',
@@ -195,6 +233,7 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
       paragraphs: [
         'Which decision materially changes within six to twelve months if evidence arrives? Which stakeholders wield veto unrecognized on org charts? What analogue trajectories constrain priors? What governance approvals gate field release? Which segments remain strategically decisive even if statistically uncomfortable to sample?',
         'Arriving with calibrated answers—even provisional—elevates methodological sharpness materially.',
+        'BioNixus returns a scope memo within 48 hours of brief covering hypotheses, analogous markets, quota feasibility, and phased budget unlocks keyed to incremental uncertainty reduction—before irreversible questionnaire programming or field release.',
       ],
     },
   ];

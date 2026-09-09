@@ -78,6 +78,16 @@ const FAQ_ITEMS = [
     answer:
       'Yes. Brazil and the GCC share structural parallels — large public/centralized procurement systems (SUS/NUPCO), sizable generics markets, and premium private hospital sectors — that make cross-regional expansion strategy natural. BioNixus delivers SFDA (Saudi Arabia), MOHAP (UAE), and MOH (Kuwait, Qatar, Oman) regulatory intelligence, NUPCO tender and hospital formulary data, and Arabic/English HCP research from our regional offices, alongside comparative Brazil-GCC benchmarking for companies sequencing launches across both regions.',
   },
+  {
+    question: 'How does CMED pricing regulation affect pharmaceutical research design in Brazil?',
+    answer:
+      'CMED (Câmara de Regulação do Mercado de Medicamentos) governs maximum factory prices and annual adjustments for medicines in Brazil. Research instruments must reflect how CMED ceilings interact with SUS CONITEC incorporation decisions and ANS private-plan reimbursement—especially for innovative therapies where public and private channels diverge on willingness to pay and access timing.',
+  },
+  {
+    question: 'What is BioNixus methodology for nationally representative Brazil HCP samples?',
+    answer:
+      'BioNixus post-stratifies physician and pharmacist quotas using IBGE regional and income quintile weighting, CRM registry validation, and institution-type mix (SUS tertiary, private premium, community)—avoiding São Paulo–Rio bias that inflates adoption forecasts for national launch plans.',
+  },
 ];
 
 const FAQ_SECTION_ID = 'brazil-healthcare-market-research-faq';
@@ -312,6 +322,13 @@ export default function BrazilHealthcareMarketResearch() {
                 <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
                   global healthcare market research hub
                 </Link>.
+              </p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                BioNixus Brazil programmes align wave sequencing to ANVISA registration milestones, CONITEC incorporation
+                calendars, and ANS private-plan formulary cycles so HCP and patient research arrives before affiliates commit
+                to messaging payers already reject—reducing rework across SUS and supplementary insurance channels. CMED
+                price-ceiling dynamics and regional IBGE weighting are embedded in sampling design so national forecasts
+                are not distorted by São Paulo–Rio convenience panels alone.
               </p>
               <ReportMidPageCta config={CONVERSION_CONFIG} className="mt-8" />
             </div>

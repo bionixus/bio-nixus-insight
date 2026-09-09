@@ -101,9 +101,10 @@ export const CTR_SEO_BY_PATH = {
   },
   '/iqvia-alternative': {
     // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // Wave 16 (2026-09-09): sharpen for "iqvia competitors" / "companies like iqvia" @ pos 6–8, 0% CTR
+    title: 'IQVIA Competitors & Alternatives: Top 10 Ranked (2026)',
     description:
-      'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
+      'IQVIA competitors and companies like IQVIA ranked for healthcare primary research in 2026 — when BioNixus wins on account-level fieldwork, and when IQVIA syndicated data still fits.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     title: 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide',
@@ -373,7 +374,7 @@ export const CTR_SEO_BY_PATH = {
   '/services/competitive-intelligence': {
     title: 'Pharma Competitive Intelligence Services (2026) | BioNixus',
     description:
-      'Pharmaceutical competitive intelligence services — pipeline monitoring, launch readiness, prescriber switching and landscape assessments across EMEA. By BioNixus.',
+      'Pharmaceutical competitive intelligence — pipeline monitoring, launch readiness, prescriber switching, and EMEA landscape assessments with primary fieldwork. By BioNixus.',
   },
   '/blog/awiqli-insulin-icodec-weekly-fda-2026': {
     title: 'Awiqli (Insulin Icodec) FDA Approval 2026: What It Means',
@@ -775,6 +776,37 @@ export const CTR_SEO_BY_PATH = {
     title: 'شركات الأدوية في قطر 2026 | دليل الشركات',
     description:
       'دليل شركات الأدوية في قطر — مصنعون محليون وشركات متعددة الجنسيات. أبحاث أولية من بايونكسس.',
+  },
+  // CTR wave 16 (2026-09-09 cron): dropped query clusters + thin-page priority URLs
+  '/italy-medical-device-connectivity-market': {
+    title: 'Italy Microservices Healthcare Market & Device Connectivity (2026)',
+    description:
+      'Italy microservices healthcare market and medical device connectivity research — HIS/LIS integration, hospital IT, cybersecurity gates, and regional tender intelligence by BioNixus.',
+  },
+  '/gcc-clinical-trials-market': {
+    title: 'GCC Clinical Trials Market: Site Feasibility & SFDA Research',
+    description:
+      'GCC clinical trials market intelligence — SFDA regulation, site feasibility, investigator mapping, patient recruitment, and Gulf genome adjacency. Primary research by BioNixus.',
+  },
+  '/gcc-generic-injectables-market': {
+    title: 'GCC Generic Injectables Market Research & Intelligence (2026)',
+    description:
+      'GCC generic injectables market — NUPCO/Rafed procurement, pharmacist substitution, Lifera localization, and hospital tender dynamics across Saudi Arabia and the Gulf. By BioNixus.',
+  },
+  '/insights/top-market-research-companies-usa-2026': {
+    title: 'Top Market Research Companies in USA (2026 Ranked List)',
+    description:
+      'Top market research companies in the USA ranked for 2026 — pharma primary research, IRB-compliant HCP surveys, PBM payer intelligence, and IQVIA alternatives. By BioNixus.',
+  },
+  '/insights/saudi-arabia-biosimilar-market-size-methodology-2026': {
+    title: 'Saudi Arabia Biosimilar Market Size & Methodology (2026)',
+    description:
+      'Saudi Arabia biosimilar market size methodology 2026 — SFDA pathways, NUPCO tenders, substitution dynamics, and primary research scope by BioNixus.',
+  },
+  '/services/market-access': {
+    title: 'Market Access Consulting | HTA EMEA & GCC Pricing (2026)',
+    description:
+      'Market access consulting for pharma — NICE, G-BA, HAS HTA plus SFDA, MOHAP, NUPCO pricing, payer research, and tender strategy across UK, EU5, and Gulf markets.',
   },
 };
 
