@@ -426,16 +426,6 @@ export const CTR_SEO_BY_PATH = {
     description:
       'NielsenIQ alternatives for FMCG and retail research 2026 — when BioNixus wins on account-level and traditional-trade data, and when Nielsen panels still fit.',
   },
-  '/pricing': {
-    title: 'Market Research Pricing | $10k–$75k Country (2026)',
-    description:
-      'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.',
-  },
-  '/account-level-market-research': {
-    title: 'What Is Account-Level Market Research Data?',
-    description:
-      'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.',
-  },
   '/insights/top-fmcg-market-research-companies-egypt-2026': {
     title: 'FMCG Market Research Firms Egypt 2026 | Ranked',
     description:
@@ -775,6 +765,57 @@ export const CTR_SEO_BY_PATH = {
     title: 'شركات الأدوية في قطر 2026 | دليل الشركات',
     description:
       'دليل شركات الأدوية في قطر — مصنعون محليون وشركات متعددة الجنسيات. أبحاث أولية من بايونكسس.',
+  },
+  // CTR wave 16 (2026-09-10): Italy/GCC query-cluster recovery + service CTR + biosimilar snippet.
+  '/italy-medical-device-connectivity-market': {
+    title: 'Italy Medical Device Connectivity Market 2026 | BioNixus',
+    description:
+      'Italy medical device connectivity & microservices healthcare market research — HIS/LIS integration, hospital IT, cybersecurity gates. Primary intelligence by BioNixus.',
+  },
+  '/italy-portable-diagnostic-devices-market': {
+    title: 'Italy Portable Diagnostic Devices Market 2026 | BioNixus',
+    description:
+      'Italy portable diagnostic devices & POCT market research — hospital adoption, ASL procurement, LIS integration. Field intelligence by BioNixus.',
+  },
+  '/italy-clinical-trials-market': {
+    title: 'Italy Clinical Trials Market 2026: Site Feasibility | BioNixus',
+    description:
+      'Italy clinical trials market research — site feasibility, ethics timelines, enrolment realism, EU CTR context. Sponsor intelligence by BioNixus.',
+  },
+  '/gcc-clinical-trials-market': {
+    title: 'GCC Clinical Trials Market 2026: Site Feasibility | BioNixus',
+    description:
+      'GCC clinical trials market — SFDA regulation, site feasibility, Gulf genome cohorts, patient recruitment. Feasibility research by BioNixus.',
+  },
+  '/gcc-generic-injectables-market': {
+    title: 'GCC Generic Injectables Market 2026 | NUPCO & Tenders',
+    description:
+      'GCC generic injectables market — NUPCO/Rafed tenders, hospital procurement, biosimilar injectables, localization. Research by BioNixus.',
+  },
+  '/gcc-generic-pharmaceuticals-market': {
+    title: 'GCC Generic Pharmaceuticals Market 2026 | BioNixus',
+    description:
+      'GCC generic pharmaceuticals market — Wasfaty, retail substitution, hospital tenders, localization. Primary research by BioNixus.',
+  },
+  '/gcc-functional-service-providers-market': {
+    title: 'GCC Functional Service Providers (FSP) Market 2026',
+    description:
+      'GCC functional service providers market — CRO/FSP monitoring, data management, PV modules for Gulf trials. Sponsor & site intelligence by BioNixus.',
+  },
+  '/gcc-medication-management-market': {
+    title: 'GCC Medication Management Market 2026 | BioNixus',
+    description:
+      'GCC medication management — pharmacy automation, closed-loop meds, Wasfaty workflows, adherence programmes. Hospital & IT research by BioNixus.',
+  },
+  '/healthcare-market-research/services/market-access': {
+    title: 'Pharma Market Access Research Services (2026) | BioNixus',
+    description:
+      'Pharmaceutical market access research — payer evidence, HTA, pricing narratives, GCC/UK/EU5 modules. Decision-ready access intelligence by BioNixus.',
+  },
+  '/biosimilar-market-entry-saudi-arabia': {
+    title: 'Saudi Arabia Biosimilar Market 2026: SFDA & NUPCO Guide',
+    description:
+      'Saudi Arabia biosimilar market — SFDA pathways, NUPCO frameworks, substitution and clinician confidence. Market access research by BioNixus.',
   },
 };
 
