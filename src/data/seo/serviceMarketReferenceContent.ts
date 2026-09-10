@@ -66,6 +66,21 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
         ],
       },
       {
+        title: 'Win/loss, tender pull-through, and prescriber switching forensics',
+        paragraphs: [
+          'Syndicated Rx audits show share movement in aggregate; they rarely explain why a tender award did not convert to ward utilisation, why a biosimilar switch stalled at pharmacy, or why a competitor medical-affairs narrative shifted committee behaviour. BioNixus runs structured win/loss interviews with procurement, pharmacy, and clinical stakeholders on recent analogous decisions.',
+          'Prescriber switching modules separate stated intent from operational inertia — infusion capacity, monitoring burden, prior authorisation fatigue, pharmacist substitution rules — so forecast governance receives calibrated envelopes rather than raw survey optimism.',
+          'In Gulf corridors, NUPCO and MOH framework dynamics mean competitor wins on price do not guarantee pull-through; UK and EU5 affiliates face HTA and guideline shifts that change the competitive set faster than quarterly audit refreshes capture.',
+        ],
+      },
+      {
+        title: 'Launch-readiness war games and medical-affairs surveillance',
+        paragraphs: [
+          'Launch-readiness modules stress-test competitor narratives, access timing assumptions, and field deployment plans before affiliates commit spend. Optional war-room facilitation links win/loss themes to quant validation waves and access objection libraries so medical, brand, and access teams share one evidence base.',
+          'Medical-affairs and congress surveillance maps how competitors disseminate evidence, activate KOL tiers, and seed objection handlers — intelligence that informs your counter-messaging and advisory design rather than archive-only newsletter clips.',
+        ],
+      },
+      {
         title: 'Ethical guardrails, confidentiality, and firewalling against promotional bias',
         paragraphs: [
           'Intelligence gathering must respect fair balance, anti-kickback sensitivities, competitive confidentiality, and internal compliance firewalls separating insight generation from promotional planning. Documentation trails support audits and alliance diligence.',

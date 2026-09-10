@@ -203,6 +203,38 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
         'Yes. Multilingual moderation and transcription workflows preserve decision authenticity in GCC and European markets while harmonised codebooks enable regional roll-ups. Language choice follows stakeholder type and local affiliate requirements rather than defaulting to English-only convenience.',
     },
   ],
+  'competitive-intelligence': [
+    {
+      question: 'What is pharmaceutical competitive intelligence research?',
+      answer:
+        'Primary and mixed-method research that maps competitor pipelines, access moves, prescriber switching, tender outcomes, and medical-affairs activity — turning landscape surveillance into win/loss themes and launch-readiness actions BioNixus affiliates can execute.',
+    },
+    {
+      question: 'How does BioNixus CI differ from syndicated audit subscriptions?',
+      answer:
+        'Syndicated audits show what happened in aggregate; BioNixus tests why share moves or stalls with prescriber, pharmacist, payer, and procurement stakeholders — especially where tender awards do not convert to utilisation in Gulf and EU5 corridors.',
+    },
+    {
+      question: 'Which modules fit a competitive intelligence engagement?',
+      answer:
+        'Launch-readiness war games, win/loss interviews, prescriber switching forensics, tender pull-through, and medical-affairs or congress surveillance — sequenced to the commercial question rather than a generic landscape deck.',
+    },
+    {
+      question: 'Can CI integrate with market access and KOL programmes?',
+      answer:
+        'Yes. Competitive moves must align with payer gates and influence maps. BioNixus links CI outputs to access objection libraries and KOL tiering so medical, brand, and access teams share one evidence base.',
+    },
+    {
+      question: 'What deliverables should sponsors expect from CI research?',
+      answer:
+        'Scenario boards, ranked objection libraries, win/loss themes with stakeholder grading, executive summaries with KPI owners, and optional war-room workshops — artefacts designed for affiliate execution, not archive-only reporting.',
+    },
+    {
+      question: 'How does BioNixus localise CI across MENA, UK, and EU5?',
+      answer:
+        'Harmonised competitive taxonomies with local modules for procurement, substitution, HTA, and referral culture — preserving decision authenticity while enabling regional roll-ups for portfolio governance.',
+    },
+  ],
 };
 
 export const SERVICE_HERO_EXTENSIONS: Record<string, string> = {
@@ -216,4 +248,6 @@ export const SERVICE_HERO_EXTENSIONS: Record<string, string> = {
     'See the quantitative healthcare market research methodology guide for sampling, trade-off design, and forecast-bridge standards that govern BioNixus quant engagements.',
   'qualitative-research':
     'Qualitative modules often follow or precede quant waves on the same hub programme—design hybrids that reduce rework when segment hypotheses remain unstable.',
+  'competitive-intelligence':
+    'Pair CI with the GCC competitive intelligence blog, IQVIA-alternative positioning, and market access modules when war-room decisions must reflect payer and tender reality—not desk research alone.',
 };

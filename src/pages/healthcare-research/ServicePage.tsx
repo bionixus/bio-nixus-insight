@@ -32,6 +32,8 @@ const SERVICE_COPY: Record<string, string> = {
     'Quantitative healthcare research with robust sampling, segmentation, MaxDiff/conjoint where needed, adoption metrics, and forecasting-grade analytics for portfolio, launch, and lifecycle decisions.',
   'qualitative-research':
     'Qualitative pharma research through IDIs, expert panels, and focus groups—revealing payer and prescriber rationale, access friction, and behavioral barriers that quantitative trackers miss.',
+  'competitive-intelligence':
+    'Pharmaceutical competitive intelligence: pipeline monitoring, launch-readiness reviews, prescriber switching forensics, and landscape assessments turned into actionable win/loss themes across MENA, UK, and EU5.',
 };
 
 const SERVICE_SECTIONS: Record<string, { title: string; bullets: string[] }> = {
@@ -75,6 +77,14 @@ const SERVICE_SECTIONS: Record<string, { title: string; bullets: string[] }> = {
       'Translate qualitative depth into executable strategy actions.',
     ],
   },
+  'competitive-intelligence': {
+    title: 'Competitive Intelligence Delivery Model',
+    bullets: [
+      'Monitor competitor pipelines, access moves, and messaging shifts with primary field evidence.',
+      'Run launch-readiness and win/loss modules tied to real prescriber and payer behaviour.',
+      'Translate landscape insight into explicit commercial and medical action priorities.',
+    ],
+  },
 };
 
 const SERVICE_HERO_COPY: Record<string, string> = {
@@ -88,6 +98,8 @@ const SERVICE_HERO_COPY: Record<string, string> = {
     'Quantitative studies provide measurable confidence on segmentation, demand signals, and adoption risk, with analysis built for decision use rather than reporting volume.',
   'qualitative-research':
     'Qualitative programs surface the rationale behind behavior, helping teams interpret barriers, language sensitivity, and stakeholder decision logic with context.',
+  'competitive-intelligence':
+    'Competitive intelligence programmes connect syndicated audit data with primary fieldwork — prescriber switching, tender outcomes, and medical-affairs activity — so teams know where share can realistically move.',
 };
 
 function getServiceExtraToc(service: string): { href: string; label: string }[] {
@@ -122,6 +134,12 @@ function getServiceExtraToc(service: string): { href: string; label: string }[] 
         { href: '#qualitative-research-modules', label: 'Research modules' },
         { href: '#qualitative-research-execution', label: 'Workshop translation' },
       ];
+    case 'competitive-intelligence':
+      return [
+        { href: '#competitive-intelligence-pathway', label: 'Landscape forensics' },
+        { href: '#competitive-intelligence-modules', label: 'Research modules' },
+        { href: '#competitive-intelligence-execution', label: 'War-room handoff' },
+      ];
     default:
       return [];
   }
@@ -133,6 +151,7 @@ const SERVICES_WITH_DEEP_DIVES = new Set([
   'kol-mapping',
   'quantitative-research',
   'qualitative-research',
+  'competitive-intelligence',
 ]);
 
 export default function ServicePage() {
@@ -947,6 +966,114 @@ export default function ServicePage() {
           </>
         ) : null}
 
+        {service === 'competitive-intelligence' ? (
+          <>
+            <ReportPremiumSection
+              id="competitive-intelligence-pathway"
+              title="Competitive intelligence: where syndicated audits stop and primary fieldwork begins"
+            >
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Pharma competitive intelligence fails when desk research repackages syndicated audits without testing
+                  whether{' '}
+                  <strong className="font-medium text-foreground">prescribers, pharmacists, and payers</strong> actually
+                  behave as forecast models assume. BioNixus combines pipeline and access surveillance with primary
+                  modules — win/loss interviews, tender pull-through, medical-affairs activity mapping — so teams know
+                  where share can move in the next two planning cycles, not in a generic five-year TAM slide.
+                </p>
+                <p>
+                  In Gulf markets, consolidated procurement and substitution rules mean competitor wins on tender do not
+                  guarantee ward utilisation. UK and EU5 affiliates face HTA, biosimilar, and guideline shifts that
+                  change the real competitive set faster than quarterly audit refreshes capture.
+                </p>
+                <p>
+                  Pair with{' '}
+                  <Link to="/blog/competitive-intelligence-pharma-gcc" className="text-primary underline">
+                    pharma competitive intelligence in the GCC
+                  </Link>
+                  ,{' '}
+                  <Link to="/pharmaceutical-competitor-intelligence" className="text-primary underline">
+                    pharmaceutical competitor intelligence
+                  </Link>
+                  , and the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary underline">
+                    healthcare market research hub
+                  </Link>{' '}
+                  when CI must inform access, medical, and brand planning together.
+                </p>
+              </div>
+            </ReportPremiumSection>
+
+            <ReportPremiumSection
+              id="competitive-intelligence-modules"
+              title="Modules BioNixus integrates for competitive intelligence engagements"
+              variant="muted"
+            >
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                  <li>
+                    <strong className="text-foreground">Launch-readiness and war-game modules:</strong> test competitor
+                    narratives, access timing, and field deployment assumptions before affiliates commit spend.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Win/loss and tender forensics:</strong> structured interviews with
+                    procurement, pharmacy, and clinical stakeholders on recent analogous awards.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Prescriber switching and inertia research:</strong> where
+                    share moves in practice versus where syndicated Rx trends suggest it should.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Medical-affairs and congress surveillance:</strong> map evidence
+                    dissemination and KOL activation patterns competitors use to defend or erode share.
+                  </li>
+                </ul>
+                <p>
+                  Deliverables include objection libraries, scenario boards, executive summaries with explicit KPI owners,
+                  and optional workshops that translate CI into medical, access, and brand action lists affiliates can
+                  execute without weeks of reinterpretation.
+                </p>
+              </div>
+            </ReportPremiumSection>
+
+            <ReportPremiumSection
+              id="competitive-intelligence-execution"
+              title="From CI insight to war-room execution: closing the action gap"
+            >
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Competitive intelligence earns its budget when it changes{' '}
+                  <strong className="font-medium text-foreground">message tests</strong>,{' '}
+                  <strong className="font-medium text-foreground">access sequencing</strong>, and{' '}
+                  <strong className="font-medium text-foreground">medical education priorities</strong> — not when it
+                  produces another landscape deck that sits in a shared drive. BioNixus optionally facilitates war-room
+                  sessions linking win/loss themes to quant validation waves and access objection libraries.
+                </p>
+                <p>
+                  For IQVIA-alternative and syndicated-data-gap queries, CI modules clarify where audit data still
+                  suffices and where account-level primary research is the missing cut — keeping procurement narratives
+                  honest about what each method can prove.
+                </p>
+                <p>
+                  Connect execution planning with{' '}
+                  <Link to="/iqvia-alternative" className="text-primary underline">
+                    IQVIA alternatives
+                  </Link>
+                  ,{' '}
+                  <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                    market access research
+                  </Link>
+                  , and{' '}
+                  <Link to="/healthcare-market-research/services/kol-mapping" className="text-primary underline">
+                    KOL mapping
+                  </Link>{' '}
+                  when competitive moves must align with influence maps and payer gates in the same planning cycle.
+                </p>
+              </div>
+            </ReportPremiumSection>
+          </>
+        ) : null}
+
         {SERVICES_WITH_DEEP_DIVES.has(service) && (
           <ReportPremiumSection
             id="deep-dives"
@@ -957,9 +1084,11 @@ export default function ServicePage() {
                   ? 'Deep dive: physician insights'
                   : service === 'kol-mapping'
                     ? 'Deep dive: KOL intelligence'
-                    : service === 'quantitative-research'
+                    :               service === 'quantitative-research'
                       ? 'Deep dive: quantitative methods'
-                      : 'Deep dive: qualitative methods'
+                      : service === 'competitive-intelligence'
+                        ? 'Deep dive: competitive intelligence'
+                        : 'Deep dive: qualitative methods'
             }
             variant="muted"
           >
@@ -1031,6 +1160,20 @@ export default function ServicePage() {
                     to="/blog/healthcare-market-research-methodologies-gcc"
                     title="GCC research methodologies"
                     description="Best practices for IDIs and focus groups in the region."
+                  />
+                </>
+              )}
+              {service === 'competitive-intelligence' && (
+                <>
+                  <HealthcareNavCard
+                    to="/blog/competitive-intelligence-pharma-gcc"
+                    title="Pharma CI in the GCC"
+                    description="Tracking competitor formularies and medical affairs activity."
+                  />
+                  <HealthcareNavCard
+                    to="/iqvia-alternative"
+                    title="IQVIA alternatives"
+                    description="When primary research beats syndicated audit data alone."
                   />
                 </>
               )}

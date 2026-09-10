@@ -11,6 +11,7 @@ export type PharmaCompaniesCountrySlug =
   | 'saudi-arabia'
   | 'egypt'
   | 'iran'
+  | 'iraq'
   | 'usa'
   | 'uk'
   | 'germany'
@@ -20,7 +21,7 @@ export type PharmaCompaniesCountrySlug =
 /** GCC/MENA slugs that share the Gulf hub-link cluster (not USA/UK/EU/LATAM/CA). */
 export type PharmaCompaniesGccSlug = Extract<
   PharmaCompaniesCountrySlug,
-  'kuwait' | 'oman' | 'qatar' | 'bahrain' | 'uae' | 'saudi-arabia' | 'egypt' | 'iran'
+  'kuwait' | 'oman' | 'qatar' | 'bahrain' | 'uae' | 'saudi-arabia' | 'egypt' | 'iran' | 'iraq'
 >;
 
 export const PHARMA_COMPANIES_GCC_SLUGS: PharmaCompaniesGccSlug[] = [
@@ -32,6 +33,7 @@ export const PHARMA_COMPANIES_GCC_SLUGS: PharmaCompaniesGccSlug[] = [
   'saudi-arabia',
   'egypt',
   'iran',
+  'iraq',
 ];
 
 const PEER_SLUGS: PharmaCompaniesGccSlug[] = PHARMA_COMPANIES_GCC_SLUGS;
