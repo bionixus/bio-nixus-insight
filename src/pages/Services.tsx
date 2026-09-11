@@ -13,7 +13,7 @@ import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
-import { getServicesHubBundle } from '@/data/servicesHubContent';
+import { getServicesHubBundle, SERVICES_HUB_DECISION_SECTION } from '@/data/servicesHubContent';
 import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 
 const recoveryLinkLabels: Record<string, string> = {
@@ -445,6 +445,19 @@ const Services = () => {
                 ))}
               </ul>
             </details>
+          </div>
+        </section>
+
+        <section className="premium-home-cream section-padding py-16 md:py-20">
+          <div className="container-wide mx-auto max-w-6xl">
+            <h2 className="mb-4 font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl">
+              {SERVICES_HUB_DECISION_SECTION.heading}
+            </h2>
+            <div className="max-w-3xl space-y-4 font-light leading-relaxed text-[#7A7267]">
+              {SERVICES_HUB_DECISION_SECTION.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </section>
 
