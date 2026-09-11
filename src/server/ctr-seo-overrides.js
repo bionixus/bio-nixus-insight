@@ -100,10 +100,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // Wave 17 CTR (2026-09-11): GSC page-1 queries "iqvia competitors", "companies like iqvia", "looking for something better than iqvia" @ 0% CTR.
+    title: 'IQVIA Competitors & Alternatives (2026 Ranked List)',
     description:
-      'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
+      'Companies like IQVIA ranked for healthcare primary research — when BioNixus wins on agile regional fieldwork vs IQVIA syndicated data. Compare top alternatives in 2026.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     title: 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide',
@@ -426,16 +426,6 @@ export const CTR_SEO_BY_PATH = {
     description:
       'NielsenIQ alternatives for FMCG and retail research 2026 — when BioNixus wins on account-level and traditional-trade data, and when Nielsen panels still fit.',
   },
-  '/pricing': {
-    title: 'Market Research Pricing | $10k–$75k Country (2026)',
-    description:
-      'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.',
-  },
-  '/account-level-market-research': {
-    title: 'What Is Account-Level Market Research Data?',
-    description:
-      'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.',
-  },
   '/insights/top-fmcg-market-research-companies-egypt-2026': {
     title: 'FMCG Market Research Firms Egypt 2026 | Ranked',
     description:
@@ -537,9 +527,19 @@ export const CTR_SEO_BY_PATH = {
       'Foundayo (orforglipron) market report 2026 — oral GLP-1 obesity drug uptake, pricing, GCC/US launch outlook and competitor landscape. By BioNixus.',
   },
   '/gcc-functional-service-providers-market': {
-    title: 'GCC Functional Service Providers (FSP) Market 2026 | Size',
+    title: 'GCC Functional Service Providers Market 2026 | FSP Size',
     description:
-      'GCC functional service providers market 2026 — FSP outsourcing size, clinical/regulatory FSP demand in Saudi & UAE, and vendor landscape. By BioNixus.',
+      'GCC functional service providers (FSP) market 2026 — clinical & regulatory outsourcing size, Saudi/UAE FSP demand, and vendor landscape. Primary research by BioNixus.',
+  },
+  '/market-reports/saudi-arabia-biosimilars-market-report': {
+    title: 'Saudi Arabia Biosimilar Market 2026: Size, SFDA & NUPCO',
+    description:
+      'Saudi Arabia biosimilar market 2026 — market size, SFDA pathways, NUPCO tender dynamics, and uptake vs originators. Report and primary research by BioNixus.',
+  },
+  '/insights/top-market-research-companies-usa-2026': {
+    title: 'Top Healthcare Market Research Companies USA (2026 List)',
+    description:
+      'Top healthcare market research companies in the USA ranked for 2026 — primary research vs IQVIA syndicated data. Agile specialists for pharma & MedTech. By BioNixus.',
   },
   '/brazil-medical-devices-market-report': {
     title: 'Brazil Medical Devices Market 2026: ANVISA, Size & Forecast',

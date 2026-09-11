@@ -7,6 +7,7 @@ import {
   type PharmaCompaniesGlobalSlug,
 } from '@/components/seo/PharmaCompaniesGlobalHubLinks';
 import { PHARMA_GUIDE_INNER, PHARMA_GUIDE_SECTION_X } from '@/components/report-conversion/constants';
+import { PHARMA_DECISION_GUIDES } from '@/data/pharmaCompaniesDecisionGuides';
 
 type Props = {
   country: PharmaCompaniesCountrySlug;
@@ -44,6 +45,7 @@ export function PharmaCompaniesQuickAnswer({
     !isGcc && country in HC_LISTICLE_BY_COUNTRY
       ? HC_LISTICLE_BY_COUNTRY[country as PharmaCompaniesGlobalSlug]
       : null;
+  const decisionGuide = PHARMA_DECISION_GUIDES[country];
 
   return (
     <section
@@ -69,6 +71,9 @@ export function PharmaCompaniesQuickAnswer({
           .
           {extraSentence ? ` ${extraSentence}` : ''}
         </p>
+        {decisionGuide ? (
+          <p className="text-muted-foreground leading-relaxed mb-4 max-w-3xl">{decisionGuide}</p>
+        ) : null}
         <p className="text-sm font-semibold text-foreground mb-2">Companies and channels teams ask about first</p>
         <ol className="list-decimal list-inside space-y-1.5 text-sm text-muted-foreground mb-4 max-w-3xl">
           {list.map((name) => (

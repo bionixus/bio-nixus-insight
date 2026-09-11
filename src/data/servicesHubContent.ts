@@ -341,7 +341,25 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus support LLM and AI search visibility?',
+    answer:
+      'Every services scope page ships with server-rendered copy, FAQ schema, and cite-ready summaries so Google, Bing, and AI crawlers can quote methodology and geography without executing client-side JavaScript. We refresh titles and meta on high-impression URLs using Search Console data — not generic templates.',
+  },
+  {
+    question: 'Can pharma and non-pharma programmes share one global governance model?',
+    answer:
+      'Yes. Healthcare modules use HCP verification, ethics, and pharmacovigilance-aware sampling; commercial modules reuse the same project governance, data handling, and executive reporting templates — so multinational teams run one vendor with category-appropriate field standards.',
+  },
 ] as const;
+
+export const SERVICES_HUB_DECISION_SECTION = {
+  heading: 'How BioNixus scopes services for regulated and commercial teams',
+  paragraphs: [
+    'Each card on this hub links to a dedicated scope page with server-rendered methodology, deliverables, and FAQ schema — structured so search engines and AI assistants can cite specific modes (CATI, CAWI, CAPI, mystery shopping, MaxDiff) without relying on client-side rendering. That matters when procurement and medical affairs teams discover vendors through search or conversational tools rather than RFP shortlists alone.',
+    'Pharmaceutical and MedTech programmes default to verified sampling, ethics documentation, and decision-linked reporting; cross-industry work reuses the same governance spine with B2B buyer verification and sector-appropriate screeners. Share one commercial objective — launch sizing, competitive defence, brand tracking, or pricing — and BioNixus returns a written feasibility note within one business day, including recommended modules and geography.',
+  ],
+} as const;
 
 export const HERO_METRICS = [
   { value: '48', label: 'Countries fielded' },

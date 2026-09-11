@@ -31,6 +31,7 @@ import {
   DirectorySection,
 } from '@/components/seo/DirectoryPremium';
 import { getEditorialAuthor, isComparisonPath, personAuthorJsonLd } from '@/data/editorialAuthors';
+import { PHARMA_COUNTRY_DECISION_BY_PATH } from '@/data/pharmaCountryDecisionByPath';
 
 export type CountryCompanyEntry = {
   name: string;
@@ -116,6 +117,7 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
   const citationUrl = `https://www.bionixus.com${config.path}`;
   const countryDisplay = config.countryDisplay ?? config.countryName;
   const conversion = buildConversionConfig(config);
+  const decisionResearchParagraph = PHARMA_COUNTRY_DECISION_BY_PATH[config.path];
   const directoryCountry = parseDirectoryPath(config.path)?.countrySlug;
   const industryTitle = config.industry === 'pharmaceutical' ? 'Pharmaceutical' : 'Medical Device';
   const headline = `${industryTitle} Companies in ${config.countryName}: Complete Industry Guide 2026`;
@@ -217,6 +219,9 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
               <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">healthcare market research hub</Link>.
               {config.quickAnswer.extraSentence ? ` ${config.quickAnswer.extraSentence}` : ''}
             </p>
+            {decisionResearchParagraph ? (
+              <p className="text-muted-foreground leading-relaxed mb-4 max-w-3xl">{decisionResearchParagraph}</p>
+            ) : null}
             <p className="text-sm font-semibold text-foreground mb-2">Companies and channels teams ask about first</p>
             <ol className="list-decimal list-inside space-y-1.5 text-sm text-muted-foreground mb-4 max-w-3xl">
               {config.companies.slice(0, 7).map((c) => (<li key={c.name} className="pl-1">{c.name}</li>))}

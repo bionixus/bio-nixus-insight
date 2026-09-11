@@ -82,7 +82,7 @@ function buildServices(label: string, regulatorShort: string) {
   };
 }
 
-function buildMethodology(label: string) {
+function buildMethodology(label: string, regulatorShort: string) {
   return {
     heading: `Methodology for ${label} MedTech market research`,
     paragraphs: [
@@ -90,6 +90,8 @@ function buildMethodology(label: string) {
       `Mixed-method designs combine quantitative surveys for adoption metrics and competitive share-of-voice with qualitative depth for procurement rationale and workflow barriers. Sample sizes target eighty percent power to detect ten-point shifts in adoption intent or committee recommendation likelihood where quant modules apply; qual modules typically run twelve to twenty interviews per stakeholder cell until thematic saturation.`,
       `All physician and hospital stakeholder research in ${label} follows TCPS 2 or equivalent ethics requirements with documented informed consent, de-identified reporting, and secure data handling. Respondent verification includes licence, specialty, and practice-setting confirmation — reducing misclassification risk that undermines syndicated panel data in specialist device categories.`,
       `Deliverables include executive synthesis, segment prioritisation, competitive objection libraries, and a thirty/sixty/ninety-day action plan with evidence gaps flagged. Optional global benchmarking cells run in parallel using harmonised instruments so ${label} insights roll up cleanly for multinational portfolio reviews without losing local execution realism.`,
+      `For connected and software-as-a-medical-device categories, BioNixus adds IT architecture, cybersecurity, and clinical-engineering modules so connectivity claims are tested with the stakeholders who can block go-live after regulatory clearance. That separation keeps clinical adoption research honest when hospital CIO offices, not procedure specialists, hold veto power.`,
+      `Programmes are documented for medical affairs and compliance review: sampling frames, verification steps, ethics approvals where required, and de-identified reporting standards suitable for internal audit. That governance layer matters when ${label} studies inform launch investment committees or post-market surveillance plans tied to ${regulatorShort} obligations.`,
     ],
   };
 }
@@ -159,7 +161,7 @@ function buildExpandedContent(country: DevelopedMarketMedtechCountry): ServiceLa
       paragraphs: country.marketParagraphs,
     },
     services: buildServices(country.label, country.regulatorShort),
-    methodology: buildMethodology(country.label),
+    methodology: buildMethodology(country.label, country.regulatorShort),
     useCases: {
       heading: `When manufacturers commission MedTech research in ${country.label}`,
       paragraph: `Teams typically engage when a launch, line extension, competitive entry, or international expansion decision requires local evidence beyond syndicated audit data.`,
