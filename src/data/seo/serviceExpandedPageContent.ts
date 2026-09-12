@@ -203,6 +203,53 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
         'Yes. Multilingual moderation and transcription workflows preserve decision authenticity in GCC and European markets while harmonised codebooks enable regional roll-ups. Language choice follows stakeholder type and local affiliate requirements rather than defaulting to English-only convenience.',
     },
   ],
+  'competitive-intelligence': [
+    {
+      question: 'What is pharmaceutical competitive intelligence?',
+      answer:
+        'Competitive intelligence connects external signals — pipeline moves, congress readouts, tender shifts, prescriber switching — to explicit commercial decisions: launch sequencing, account prioritisation, medical education emphasis, and HEOR counter-moves. BioNixus blends primary physician and pharmacist research with curated secondary monitoring inside a taxonomy leadership can query rather than re-read each month.',
+    },
+    {
+      question: 'How is competitive intelligence different from syndicated data vendors?',
+      answer:
+        'Syndicated trackers report historical share and awareness; BioNixus measures why stakeholders switch or stall — procurement objections, protocol inertia, access gates, and message credibility — through verified primary fieldwork scoped to one therapy or device decision.',
+    },
+    {
+      question: 'Which stakeholders should pharma CI programmes include?',
+      answer:
+        'Prescribing physicians, hospital pharmacists, tender and procurement leads where relevant, medical affairs counterparts, and optionally payer-adjacent reviewers when access narratives are part of the competitive set. Sampling reflects veto and acceleration power along the real decision route.',
+    },
+    {
+      question: 'Can competitive intelligence support launch readiness?',
+      answer:
+        'Yes. Launch readiness scorecards combine analogue erosion ranges, objection libraries, account prioritisation, and scenario stress tests when procurement rules or competitor entries shift mid-year — anchored to behaviours measured in priority EMEA and GCC markets.',
+    },
+    {
+      question: 'How does BioNixus maintain ethical CI guardrails?',
+      answer:
+        'Interview neutrality, structured summarisation with source grading, compliance-friendly documentation, and explicit separation between intelligence conclusions and promotional claims — preserving strategic speed without regulatory recklessness.',
+    },
+    {
+      question: 'What deliverables come from a competitive intelligence engagement?',
+      answer:
+        'Landscape dashboards, pipeline and analogue trackers, prescriber switching reports, quarterly briefings, and workshop options linking findings to medical, brand, and access owners — integrated with the healthcare market research hub and country guides where needed.',
+    },
+    {
+      question: 'How long does a pharmaceutical competitive intelligence programme take?',
+      answer:
+        'Feasibility and decision framing typically complete in two weeks; full primary programmes often run eight to ten weeks from instrument finalisation through executive synthesis, depending on quota complexity and hybrid quant/qual sequencing. Tracker extensions are scoped only after baseline architecture exists.',
+    },
+    {
+      question: 'Does BioNixus cover IQVIA-style syndicated metrics?',
+      answer:
+        'BioNixus focuses on primary behavioural evidence — switching, objections, tender pull-through, and launch readiness — rather than repackaging Rx tables. Teams often retain syndicated vendors for historical share while commissioning BioNixus for decisions syndicated data cannot answer.',
+    },
+    {
+      question: 'Which markets are strongest for CI fieldwork?',
+      answer:
+        'GCC (Saudi Arabia, UAE, Kuwait, Qatar), UK and EU5, and selected North Africa hubs — with bilingual Arabic–English modules where hospital and payer stakeholders require them. Programmes harmonise cores for regional roll-ups when affiliates need comparable readouts.',
+    },
+  ],
 };
 
 export const SERVICE_HERO_EXTENSIONS: Record<string, string> = {
@@ -216,4 +263,6 @@ export const SERVICE_HERO_EXTENSIONS: Record<string, string> = {
     'See the quantitative healthcare market research methodology guide for sampling, trade-off design, and forecast-bridge standards that govern BioNixus quant engagements.',
   'qualitative-research':
     'Qualitative modules often follow or precede quant waves on the same hub programme—design hybrids that reduce rework when segment hypotheses remain unstable.',
+  'competitive-intelligence':
+    'Pair competitive intelligence with IQVIA alternative comparisons and country pharma directories when launch teams need primary research depth beyond syndicated trackers.',
 };

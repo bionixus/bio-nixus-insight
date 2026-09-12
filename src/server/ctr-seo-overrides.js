@@ -100,10 +100,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // CTR wave 18 (2026-09-12): head query "iqvia competitors" @ pos 6.3, 0% CTR — lead exact match
+    title: 'IQVIA Competitors: Top 10 Alternatives Ranked (2026)',
     description:
-      'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
+      'IQVIA competitors and companies like IQVIA ranked for 2026 — primary healthcare market research vs syndicated IQVIA data. Compare BioNixus, Kantar Health, ZS, and more.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     title: 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide',
@@ -234,9 +234,10 @@ export const CTR_SEO_BY_PATH = {
       'Top pharmaceutical analytics companies worldwide 2026 — real-world data, HEOR, syndicated Rx analytics & primary research ranked for pharma buyers.',
   },
   '/insights/top-healthcare-market-research-companies-usa-2026': {
-    title: 'Top 10 Healthcare Market Research Companies USA (2026) | Ranked',
+    // CTR wave 18: 527 impr @ 0.57% CTR, pos 28.6 — USA 33% impr share @ 0.09% CTR sitewide drag
+    title: 'Best Healthcare Market Research Companies USA (2026)',
     description:
-      'Healthcare market research companies USA 2026 — top 10 ranked for IRB-compliant HCP, KOL mapping, PBM payer & HEOR primary research. Compare BioNixus & peers.',
+      'Healthcare market research companies in the USA ranked for 2026 — IRB-compliant HCP surveys, payer & HEOR primary research vs IQVIA. Top 10 list by BioNixus.',
   },
   '/insights/top-market-research-companies-saudi-arabia-2026': {
     title: 'Top Market Research Companies in Saudi Arabia (2026)',
@@ -426,16 +427,6 @@ export const CTR_SEO_BY_PATH = {
     description:
       'NielsenIQ alternatives for FMCG and retail research 2026 — when BioNixus wins on account-level and traditional-trade data, and when Nielsen panels still fit.',
   },
-  '/pricing': {
-    title: 'Market Research Pricing | $10k–$75k Country (2026)',
-    description:
-      'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.',
-  },
-  '/account-level-market-research': {
-    title: 'What Is Account-Level Market Research Data?',
-    description:
-      'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.',
-  },
   '/insights/top-fmcg-market-research-companies-egypt-2026': {
     title: 'FMCG Market Research Firms Egypt 2026 | Ranked',
     description:
@@ -537,9 +528,10 @@ export const CTR_SEO_BY_PATH = {
       'Foundayo (orforglipron) market report 2026 — oral GLP-1 obesity drug uptake, pricing, GCC/US launch outlook and competitor landscape. By BioNixus.',
   },
   '/gcc-functional-service-providers-market': {
-    title: 'GCC Functional Service Providers (FSP) Market 2026 | Size',
+    // CTR wave 18: query cluster dropped −36 pos; page 108 impr @ pos 24.7, thin on production
+    title: 'GCC Functional Service Providers Market (2026) | FSP Guide',
     description:
-      'GCC functional service providers market 2026 — FSP outsourcing size, clinical/regulatory FSP demand in Saudi & UAE, and vendor landscape. By BioNixus.',
+      'GCC functional service providers market 2026 — clinical FSP outsourcing, monitoring & data management in Saudi Arabia and UAE. Sponsor & site intelligence by BioNixus.',
   },
   '/brazil-medical-devices-market-report': {
     title: 'Brazil Medical Devices Market 2026: ANVISA, Size & Forecast',
