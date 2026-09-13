@@ -4,6 +4,7 @@ import { normalizeJsonLdNode } from '@/components/seo/SEOHead';
 import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import {
   buildBreadcrumbSchema,
+  buildCountryPageSchemas,
   buildFAQSchema,
   buildHubPageSchemas,
   buildProfessionalServiceSchema,
@@ -11,6 +12,7 @@ import {
   buildVideoObjectSchema,
   buildVideoWatchPageSchemas,
 } from '@/lib/seo/schemas';
+import { COUNTRY_CONFIGS } from '@/lib/constants/countries';
 import { getAllVideos } from '@/data/videos';
 import { buildDatasetSchema, buildMedicalWebPageSchema } from '@/lib/reportEnrichmentSchemas';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
@@ -301,6 +303,19 @@ describe('AI SEO pages (pricing + account-level definition)', () => {
         logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
       },
     });
+  });
+});
+
+describe('KSA + UAE healthcare hub country schemas', () => {
+  it('emits valid Service + FAQPage + BreadcrumbList for Saudi Arabia and UAE', () => {
+    for (const slug of ['saudi-arabia', 'uae'] as const) {
+      const nodes = buildCountryPageSchemas(COUNTRY_CONFIGS[slug]);
+      expect(nodes.length).toBe(3);
+      nodes.forEach(parseAndValidate);
+      expect(nodes.some((node) => node['@type'] === 'Service')).toBe(true);
+      expect(nodes.some((node) => node['@type'] === 'FAQPage')).toBe(true);
+      expect(nodes.some((node) => node['@type'] === 'BreadcrumbList')).toBe(true);
+    }
   });
 });
 

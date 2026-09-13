@@ -1,6 +1,7 @@
 import type { CountryConfig } from '@/lib/constants/countries';
 import type { SiteVideo } from '@/data/videos';
 import { ORG_AREA_SERVED, buildCanonicalOrganization } from '@/lib/seo/organization';
+import { getHealthcareHubCompaniesCopy } from '@/data/healthcareHubCompaniesCopy';
 
 const BASE_URL = 'https://www.bionixus.com';
 
@@ -105,15 +106,16 @@ export function buildHubPageSchemas(faqItems: { question: string; answer: string
 
 export function buildCountryPageSchemas(config: CountryConfig) {
   const pageUrl = `${BASE_URL}/healthcare-market-research/${config.slug}`;
+  const hubCompaniesCopy = getHealthcareHubCompaniesCopy(config.slug);
   const serviceSchema =
     config.slug === 'saudi-arabia'
       ? {
           ...buildProfessionalServiceSchema(),
           '@id': `${pageUrl}#service`,
-          name: 'Healthcare Market Research Saudi Arabia',
+          name: hubCompaniesCopy?.h1 ?? 'Healthcare market research companies in Saudi Arabia',
           serviceType: 'Healthcare Market Research',
           description:
-            'Primary healthcare and pharmaceutical market research in Saudi Arabia — SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah, and Eastern Province.',
+            'Primary healthcare market research companies in Saudi Arabia — SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah, and Eastern Province. IQVIA remains the syndicated audit; BioNixus is the account-level complement.',
           url: pageUrl,
           areaServed: [
             {
@@ -133,7 +135,29 @@ export function buildCountryPageSchemas(config: CountryConfig) {
             },
           ],
         }
-      : buildServiceSchema();
+      : config.slug === 'uae'
+        ? {
+            ...buildProfessionalServiceSchema(),
+            '@id': `${pageUrl}#service`,
+            name: hubCompaniesCopy?.h1 ?? 'Healthcare market research companies in the UAE',
+            serviceType: 'Healthcare Market Research',
+            description:
+              'Primary healthcare market research companies in the UAE — DHA- and DOH-aligned HCP, hospital, and payer studies in Dubai and Abu Dhabi, with MOHAP-aware evidence. IQVIA covers syndicated audits; BioNixus is the account-level complement.',
+            url: pageUrl,
+            areaServed: [
+              {
+                '@type': 'City',
+                name: 'Dubai',
+                containedInPlace: { '@type': 'Country', name: 'United Arab Emirates' },
+              },
+              {
+                '@type': 'City',
+                name: 'Abu Dhabi',
+                containedInPlace: { '@type': 'Country', name: 'United Arab Emirates' },
+              },
+            ],
+          }
+        : buildServiceSchema();
 
   return [
     serviceSchema,
