@@ -134,114 +134,6 @@ const KANTAR_ALTERNATIVE: CompetitorAlternativeConfig = {
   },
 };
 
-const BIONIXUS_VS_NIELSEN: CompetitorAlternativeConfig = {
-  path: '/bionixus-vs-nielsen',
-  title: 'BioNixus vs Nielsen: Account Data vs Panels (2026)',
-  description:
-    'BioNixus vs Nielsen 2026: side-by-side on account-level primary research versus modern-trade panels. Complement the feed — not a rip-and-replace switch.',
-  eyebrow: 'BioNixus vs NielsenIQ',
-  h1: 'BioNixus vs Nielsen — who each is for',
-  intro: [
-    'This is the head-to-head page. NielsenIQ wins when you need modern-trade retail measurement and household panels for FMCG and OTC. BioNixus wins when you need a named account, a named SKU, traditional trade, or a category Nielsen does not audit.',
-    'It is not a switch. Manufacturers already paying for Nielsen still brief BioNixus for the cut the feed cannot produce. For the broader alternatives list, see Nielsen alternative.',
-  ],
-  stayWhen: [
-    'You need standardized modern-trade retail measurement across many countries.',
-    'The category is FMCG or OTC and the panel covers your channels.',
-    'The question is national share, not a named account or pack.',
-  ],
-  addWhen: [
-    'The brief names a banner, a city, or a pack size.',
-    'Traditional trade or a subregion is where the volume actually moves.',
-    'The industry is real estate, banking, manufacturing, hospitality, or B2B — Nielsen has no feed to buy.',
-  ],
-  alternatives: [
-    {
-      name: 'BioNixus',
-      bestFor: 'Account- and SKU-level primary research; traditional trade; non-FMCG industries',
-      region: '48 countries — MENA, Europe, Americas, Asia',
-      model: 'Project- and country-based. No enterprise dashboard minimum.',
-    },
-    {
-      name: 'NielsenIQ',
-      bestFor: 'Modern-trade POS, household panels, national FMCG/OTC category sizing',
-      region: 'Global syndicated coverage; MENA often via a regional hub',
-      model: 'Syndicated subscription',
-    },
-    {
-      name: 'Kantar',
-      bestFor: 'Brand tracking and large-scale consumer panels',
-      region: 'Global network; GCC via Dubai hub',
-      model: 'Syndicated trackers plus custom quant',
-    },
-    {
-      name: 'GfK',
-      bestFor: 'Tech and durables retail panels',
-      region: 'GCC electronics and durables',
-      model: 'Syndicated POS / channel data',
-    },
-    {
-      name: 'Ipsos',
-      bestFor: 'Custom U&A and brand studies',
-      region: 'Riyadh, Jeddah, Dubai and global network',
-      model: 'Project-based at large-agency scale',
-    },
-    {
-      name: 'Euromonitor',
-      bestFor: 'Desk category sizing',
-      region: 'Passport reports, not fieldwork',
-      model: 'Report and database subscription',
-    },
-  ],
-  faq: [
-    {
-      q: 'Is BioNixus trying to replace Nielsen?',
-      a: 'No. NielsenIQ is the right product for modern-trade category sizing. BioNixus is the right product for the account and SKU the dashboard does not show. The usual model is both.',
-    },
-    {
-      q: 'When does BioNixus win a head-to-head against Nielsen?',
-      a: 'When the brief names accounts, traditional trade, a subregion, or an industry Nielsen does not cover. When the brief is national modern-trade share, Nielsen wins.',
-    },
-    {
-      q: 'Does Nielsen cover traditional trade in MENA?',
-      a: 'Syndicated audits are strongest in modern trade and national cuts. They typically miss traditional trade, subaccount, and subregion depth. Primary fieldwork fills that gap.',
-    },
-    {
-      q: 'How should procurement compare the two?',
-      a: 'Compare the question, not a generic “research vendor” RFP. Dashboard versus primary study are different SKUs. Price Nielsen as a subscription; price BioNixus as a scoped country project.',
-    },
-    {
-      q: 'Where is the longer Nielsen alternatives list?',
-      a: 'On /nielsen-alternative — ranked options including Kantar, Ipsos, Euromonitor, and GfK. This page is the head-to-head only.',
-    },
-  ],
-  related: [
-    { to: '/nielsen-alternative', label: 'Nielsen alternative', desc: 'Full alternatives list — this page is the head-to-head.' },
-    { to: '/gfk-alternative', label: 'GfK alternative', desc: 'When the panel is durables and tech, not FMCG.' },
-    { to: '/account-level-market-research', label: 'Account-level data', desc: 'What the dashboard misses at account and SKU.' },
-    { to: '/fmcg-companies-egypt', label: 'FMCG companies in Egypt', desc: 'The accounts we study when Nielsen undersamples bakals.' },
-    { to: '/insights/top-fmcg-market-research-companies-saudi-arabia-2026', label: 'FMCG firms in KSA', desc: 'Industry listicle already ranking near page 1.' },
-    { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges.' },
-  ],
-  cta: {
-    countryName: 'Saudi Arabia',
-    ctaId: 'bionixus_vs_nielsen_footer',
-    headline: 'Need the cut Nielsen does not sell?',
-    body: 'Account-level or SKU-level primary research — including traditional trade. Proposal ready within 48 hours of a brief.',
-  },
-  geoLLM: {
-    question: 'BioNixus vs Nielsen — who should we hire?',
-    answer:
-      'Hire NielsenIQ for modern-trade retail panels and national FMCG category sizing. Hire BioNixus when the brief is account-level or SKU-level primary research, traditional trade, or an industry Nielsen does not cover. Most manufacturers run both.',
-    points: [
-      { title: 'Nielsen wins on', description: 'POS and household panels for FMCG and OTC in modern trade. National category sizing.' },
-      { title: 'BioNixus wins on', description: 'Named accounts, SKUs, traditional trade, and categories with no panel to buy.' },
-      { title: 'Procurement note', description: 'These are different products. Do not force a single-vendor RFP onto both.' },
-    ],
-    summary: 'BioNixus versus Nielsen is a complement decision, not a cancellation decision.',
-  },
-};
-
 const BIONIXUS_VS_KANTAR: CompetitorAlternativeConfig = {
   path: '/bionixus-vs-kantar',
   title: 'BioNixus vs Kantar: Brand-Test vs Account Data (2026)',
@@ -326,7 +218,7 @@ const BIONIXUS_VS_KANTAR: CompetitorAlternativeConfig = {
   related: [
     { to: '/kantar-alternative', label: 'Kantar alternative', desc: 'Wider alternatives list — this page is the brand-test objection.' },
     { to: '/kantar-health-alternative-gcc', label: 'Kantar Health alternative GCC', desc: 'Healthcare-specific Gulf page.' },
-    { to: '/bionixus-vs-nielsen', label: 'BioNixus vs Nielsen', desc: 'When the subscription is a retail panel, not a brand-track.' },
+    { to: '/nielsen-alternative', label: 'Nielsen alternative', desc: 'When the subscription is a retail panel, not a brand-track.' },
     { to: '/account-level-market-research', label: 'Account-level data', desc: 'What the tracker does not show.' },
     { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Market research firms KSA', desc: 'Country ranking — includes Kantar.' },
     { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges.' },
@@ -434,7 +326,6 @@ const GFK_ALTERNATIVE: CompetitorAlternativeConfig = {
   related: [
     { to: '/gfk-alternative-egypt', label: 'GfK alternative Egypt', desc: 'Country complement — Egypt-specific GfK brief.' },
     { to: '/nielsen-alternative', label: 'Nielsen alternative', desc: 'When the panel you already buy is grocery, not durables.' },
-    { to: '/bionixus-vs-nielsen', label: 'BioNixus vs Nielsen', desc: 'Head-to-head on account data versus modern-trade panels.' },
     { to: '/account-level-market-research', label: 'Account-level data', desc: 'What a retail panel still cannot show.' },
     { to: '/insights/top-market-research-companies-egypt-2026', label: 'Market research firms Egypt', desc: 'Country ranking — includes GfK context.' },
     { to: '/pricing', label: 'Pricing bands', desc: 'Project- and country-based ranges.' },
@@ -676,7 +567,6 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
 
 export const COMPETITOR_ALTERNATIVES: CompetitorAlternativeConfig[] = [
   KANTAR_ALTERNATIVE,
-  BIONIXUS_VS_NIELSEN,
   BIONIXUS_VS_KANTAR,
   GFK_ALTERNATIVE,
   IMS_HEALTH_ALTERNATIVE,

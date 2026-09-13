@@ -424,6 +424,9 @@ function buildFallbackDescription(pathname: string): string {
   if (path === '/iqvia-alternative') {
     return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
   }
+  if (path === '/nielsen-alternative') {
+    return 'NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap.';
+  }
   if (path === '/bionixus-vs-iqvia-mena') {
     return 'Compare BioNixus and IQVIA for MENA healthcare research, including hospital data, analytics, and market access support tailored for Saudi Arabia and the GCC.';
   }

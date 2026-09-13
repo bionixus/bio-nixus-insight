@@ -508,6 +508,9 @@ function buildFallbackDescription(pathname) {
   if (path === '/iqvia-alternative') {
     return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
   }
+  if (path === '/nielsen-alternative') {
+    return 'NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap.';
+  }
   if (path === '/pricing') {
     return 'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.';
   }
@@ -776,6 +779,23 @@ async function startServer() {
     res.redirect(301, '/iqvia-alternative');
   });
 
+  /** 301 cannibal / alias URLs — one Nielsen-alternative page. */
+  app.get(
+    [
+      '/bionixus-vs-nielsen',
+      '/bionixus-vs-nielsen/',
+      '/bionixus-vs-nielseniq',
+      '/bionixus-vs-nielseniq/',
+      '/nielseniq-alternative',
+      '/nielseniq-alternative/',
+      '/nielsen-iq-alternative',
+      '/nielsen-iq-alternative/',
+    ],
+    (_req, res) => {
+      res.redirect(301, '/nielsen-alternative');
+    },
+  );
+
   /** Static KOL mapping page. */
   const kolMappingAbsolutePath = path.resolve(
     __dirname,
@@ -854,6 +874,19 @@ async function startServer() {
   });
   app.get('/iqvia-alternative', (_req, res) => {
     res.type('html').sendFile(iqviaAltAbsolutePath);
+  });
+
+  /** Static Nielsen / NielsenIQ alternative page. */
+  const nielsenAltAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'conf/nielsen-alternative.html') : path.join('public', 'conf/nielsen-alternative.html'),
+  );
+  app.get('/nielsen-alternative/', (req, res, next) => {
+    if (req.path.endsWith('/')) return res.redirect(301, '/nielsen-alternative');
+    return next();
+  });
+  app.get('/nielsen-alternative', (_req, res) => {
+    res.type('html').sendFile(nielsenAltAbsolutePath);
   });
 
   /** Static Dubai pharma market research page. */
