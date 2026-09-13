@@ -429,7 +429,7 @@ export const CTR_SEO_BY_PATH = {
   '/nielsen-alternative': {
     title: 'Nielsen Alternatives & Competitors: Ranked (2026)',
     description:
-      'NielsenIQ alternatives for FMCG and retail research 2026 — when BioNixus wins on account-level and traditional-trade data, and when Nielsen panels still fit.',
+      'NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap.',
   },
   '/pricing': {
     title: 'Market Research Pricing | $10k–$75k Country (2026)',

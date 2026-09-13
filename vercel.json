@@ -213,6 +213,46 @@
       "statusCode": 301
     },
     {
+      "source": "/bionixus-vs-nielsen/",
+      "destination": "/nielsen-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/bionixus-vs-nielsen",
+      "destination": "/nielsen-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/bionixus-vs-nielseniq/",
+      "destination": "/nielsen-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/bionixus-vs-nielseniq",
+      "destination": "/nielsen-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/nielseniq-alternative/",
+      "destination": "/nielsen-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/nielseniq-alternative",
+      "destination": "/nielsen-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/nielsen-iq-alternative/",
+      "destination": "/nielsen-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/nielsen-iq-alternative",
+      "destination": "/nielsen-alternative",
+      "statusCode": 301
+    },
+    {
       "source": "/kol-mapping-saudi-arabia-oncology/",
       "destination": "/kol-mapping-saudi-arabia-oncology",
       "statusCode": 301
@@ -235,6 +275,11 @@
     {
       "source": "/iqvia-alternative/",
       "destination": "/iqvia-alternative",
+      "statusCode": 301
+    },
+    {
+      "source": "/nielsen-alternative/",
+      "destination": "/nielsen-alternative",
       "statusCode": 301
     },
     {
@@ -510,6 +555,10 @@
     {
       "source": "/iqvia-alternative",
       "destination": "/conf/iqvia-alternative.html"
+    },
+    {
+      "source": "/nielsen-alternative",
+      "destination": "/conf/nielsen-alternative.html"
     },
     {
       "source": "/bionixus-middle-east-africa",

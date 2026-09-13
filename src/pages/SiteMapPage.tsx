@@ -210,7 +210,7 @@ const industryCompanyDirectoryLinks = [
 
 const competitorAndToolLinks = [
   { to: '/kantar-alternative', label: 'Kantar alternative' },
-  { to: '/bionixus-vs-nielsen', label: 'BioNixus vs Nielsen' },
+  { to: '/nielsen-alternative', label: 'Nielsen alternative' },
   { to: '/bionixus-vs-kantar', label: 'BioNixus vs Kantar' },
   { to: '/gfk-alternative', label: 'GfK alternative' },
   { to: '/ims-health-alternative', label: 'IMS Health alternative' },
