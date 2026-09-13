@@ -20,6 +20,7 @@ import {
 } from '@/data/countryKeywordPages';
 import { SAUDI_ARABIA_COUNTRY_HUB_ENRICHMENT } from '@/data/saudiArabiaCountryHubEnrichment';
 import { getEditorialAuthorForCountrySlug } from '@/data/editorialAuthors';
+import { getHealthcareHubCompaniesCopy } from '@/data/healthcareHubCompaniesCopy';
 
 /**
  * Hub-and-spoke triad: /healthcare-market-research/{slug} ↔ /pharmaceutical-companies-{slug} ↔
@@ -211,15 +212,23 @@ export default function CountryPage() {
       ? (data.countryContent as Record<string, unknown>)
       : null;
 
-  const faqItems =
+  const hubCompaniesCopy = getHealthcareHubCompaniesCopy(config.slug);
+  const baseFaqItems =
     Array.isArray(countryContent?.faq) && countryContent.faq.length > 0
       ? (countryContent.faq as { question: string; answer: string }[])
       : config.faqQuestions.length > 0
         ? config.faqQuestions
         : buildCountryFaqFallback(config);
+  const faqItems = hubCompaniesCopy
+    ? [
+        { question: hubCompaniesCopy.faqQuestion, answer: hubCompaniesCopy.faqAnswer },
+        ...baseFaqItems.filter((item) => item.question !== hubCompaniesCopy.faqQuestion),
+      ]
+    : baseFaqItems;
   const evidenceSafeStats = buildEvidenceSafeStats(config);
-  const heroHeading =
-    typeof countryContent?.title === 'string' && countryContent.title.length > 0
+  const heroHeading = hubCompaniesCopy
+    ? hubCompaniesCopy.h1
+    : typeof countryContent?.title === 'string' && countryContent.title.length > 0
       ? countryContent.title
       : config.h1;
   const marketOverview =
@@ -304,79 +313,32 @@ export default function CountryPage() {
                   </Link>
                   .
                 </>
-              ) : config.slug === 'saudi-arabia' ? (
+              ) : config.slug === 'saudi-arabia' && hubCompaniesCopy ? (
                 <>
-                  Saudi Arabia's pharmaceutical market exceeds USD 10 billion annually, the largest in the GCC, and
-                  BioNixus delivers SFDA-aware physician surveys, Arabic fieldwork, and hospital stakeholder evidence
-                  across KSA — account-level and SKU-level cuts syndicated audits miss. See{' '}
-                  <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
-                    what account-level data is
-                  </Link>{' '}
-                  and the{' '}
+                  {hubCompaniesCopy.opening} See the{' '}
                   <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
                     IQVIA alternative
-                  </Link>
-                  . For agency shortlists beyond healthcare, see our{' '}
-                  <Link
-                    to="/insights/top-market-research-companies-saudi-arabia-2026"
-                    className="text-primary font-medium hover:underline"
-                  >
-                    market research firms KSA
-                  </Link>
-                  . For registration and tender sequencing, see the{' '}
-                  <Link to="/sfda-market-access-strategy-saudi-arabia" className="text-primary font-medium hover:underline">
-                    SFDA market access strategy for Saudi Arabia
                   </Link>{' '}
                   and the{' '}
-                  <Link to="/blog/pharma-market-entry-saudi-arabia-playbook" className="text-primary font-medium hover:underline">
-                    pharma market entry Saudi Arabia playbook
+                  <Link to="/sfda-market-access-strategy-saudi-arabia" className="text-primary font-medium hover:underline">
+                    SFDA market access strategy for Saudi Arabia
                   </Link>
                   .
                 </>
-              ) : config.slug === 'uae' ? (
+              ) : config.slug === 'uae' && hubCompaniesCopy ? (
                 <>
-                  BioNixus is a primary healthcare market research firm for UAE affiliates — account-level and
-                  SKU-level brand versus competitor data, not a syndicated dashboard. We run DHA and DOH-aligned{' '}
-                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
-                    healthcare market research
-                  </Link>{' '}
-                  in Dubai and Abu Dhabi with MOHAP-aware payer evidence. See{' '}
-                  <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
-                    what account-level data is
-                  </Link>{' '}
-                  and the{' '}
+                  {hubCompaniesCopy.opening} See the{' '}
                   <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
                     IQVIA alternative
-                  </Link>
-                  . For the Dubai MR cluster see{' '}
-                  <Link
-                    to="/pharmaceutical-market-research-dubai"
-                    className="text-primary font-medium hover:underline"
-                  >
-                    healthcare market research Dubai
                   </Link>{' '}
-                  and our{' '}
+                  and the{' '}
                   <Link
-                    to="/insights/top-healthcare-market-research-companies-dubai-2026"
+                    to="/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide"
                     className="text-primary font-medium hover:underline"
                   >
-                    top healthcare market research companies in Dubai
+                    Abu Dhabi DOH vs Dubai DHA formulary guide
                   </Link>
-                  . For federated UAE planning, see{' '}
-                  <Link
-                    to="/healthcare-market-research/united-arab-emirates"
-                    className="text-primary font-medium hover:underline"
-                  >
-                    United Arab Emirates healthcare market research
-                  </Link>
-                  . For a cross-industry ranking of{' '}
-                  <Link
-                    to="/insights/top-market-research-companies-uae-2026"
-                    className="text-primary font-medium hover:underline"
-                  >
-                    market research firms UAE
-                  </Link>
-                  , see the 2026 general listicle.
+                  .
                 </>
               ) : config.slug === 'united-states' ? (
                 <>
@@ -415,7 +377,7 @@ export default function CountryPage() {
         ]}
         faq={{
           sectionId: faqSectionId,
-          title: `Frequently Asked Questions About Pharmaceutical Research in ${config.name}`,
+          title: hubCompaniesCopy?.faqQuestion ?? `Frequently Asked Questions About Pharmaceutical Research in ${config.name}`,
           items: faqItems,
         }}
       >
@@ -493,14 +455,18 @@ export default function CountryPage() {
                 ) : null}
                 {section.id === 'why-healthcare-mr-saudi-differs' ? (
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    For agency-intent buyers shortlisting{' '}
+                    For the syndicated audit versus primary complement, see the{' '}
+                    <Link to="/iqvia-alternative" className="text-primary underline font-medium">
+                      IQVIA alternative
+                    </Link>
+                    . For registration and tender sequencing, see the{' '}
                     <Link
-                      to="/insights/top-market-research-companies-saudi-arabia-2026"
+                      to="/sfda-market-access-strategy-saudi-arabia"
                       className="text-primary underline font-medium"
                     >
-                      top market research companies in Saudi Arabia
+                      SFDA market access strategy for Saudi Arabia
                     </Link>
-                    , see our 2026 Kingdom-wide rankings — then return here for SFDA-aware healthcare fieldwork design.
+                    .
                   </p>
                 ) : null}
                 {section.id === 'therapy-programmes-saudi-hub' ? (

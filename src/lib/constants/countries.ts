@@ -1,3 +1,8 @@
+import {
+  KSA_HUB_COMPANIES_COPY,
+  UAE_HUB_COMPANIES_COPY,
+} from '@/data/healthcareHubCompaniesCopy';
+
 export type CountryRegion = 'mena' | 'europe' | 'uk' | 'americas';
 
 export interface CountryFAQItem {
@@ -34,12 +39,11 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'saudi-arabia',
     region: 'mena',
     metaSuffix: 'KSA pharma market research with Vision 2030 healthcare expertise.',
-    metaTitle: 'Healthcare Market Research Saudi Arabia | BioNixus',
-    metaDescription:
-      'Healthcare market research Saudi Arabia: SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah & Eastern Province. Request a proposal.',
+    metaTitle: KSA_HUB_COMPANIES_COPY.title,
+    metaDescription: KSA_HUB_COMPANIES_COPY.description,
     ogDescription:
       'BioNixus delivers pharmaceutical market research in Saudi Arabia with SFDA-aware execution, Arabic fieldwork, and hospital stakeholder access across Riyadh, Jeddah, and Dammam.',
-    h1: 'Healthcare Market Research Saudi Arabia',
+    h1: KSA_HUB_COMPANIES_COPY.h1,
     relatedCountries: ['uae', 'kuwait'],
     relatedTherapies: ['diabetes', 'oncology', 'respiratory', 'immunology'],
     keyStats: [
@@ -49,6 +53,10 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       { label: 'Strategic Context', value: 'Vision 2030 healthcare transformation' },
     ],
     faqQuestions: [
+      {
+        question: KSA_HUB_COMPANIES_COPY.faqQuestion,
+        answer: KSA_HUB_COMPANIES_COPY.faqAnswer,
+      },
       {
         question: 'Who provides healthcare market research in Saudi Arabia?',
         answer:
@@ -92,12 +100,11 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'uae',
     region: 'mena',
     metaSuffix: 'UAE pharmaceutical insights across Abu Dhabi, Dubai, and Sharjah healthcare systems.',
-    metaTitle: 'Healthcare Market Research UAE | DHA, DOH & MOHAP | BioNixus',
-    metaDescription:
-      'Pharma market research in the UAE: DHA and DOH-aligned physician surveys, hospital fieldwork in Dubai and Abu Dhabi, and MOHAP-context payer evidence for.',
+    metaTitle: UAE_HUB_COMPANIES_COPY.title,
+    metaDescription: UAE_HUB_COMPANIES_COPY.description,
     ogDescription:
       'BioNixus provides UAE pharmaceutical market research with DOH and MOHAP context, multilingual field execution, and access to major hospital networks.',
-    h1: 'Healthcare Market Research in the UAE',
+    h1: UAE_HUB_COMPANIES_COPY.h1,
     relatedCountries: ['saudi-arabia', 'kuwait'],
     relatedTherapies: ['oncology', 'diabetes', 'respiratory', 'vaccines'],
     keyStats: [
@@ -107,6 +114,10 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       { label: 'Healthcare Context', value: 'Multilingual physician workforce' },
     ],
     faqQuestions: [
+      {
+        question: UAE_HUB_COMPANIES_COPY.faqQuestion,
+        answer: UAE_HUB_COMPANIES_COPY.faqAnswer,
+      },
       {
         question:
           'What makes UAE pharmaceutical market research different from other GCC markets?',
