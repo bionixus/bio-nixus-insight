@@ -64,7 +64,7 @@ describe('lead forms', () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
-  it('notifies /api/notify-download for a business-email gated download, not Formspree', async () => {
+  it('notifies /api/subscribe for a business-email gated download, not Formspree', async () => {
     fetchMock.mockResolvedValue({ ok: true, json: async () => ({ success: true }) });
     HTMLAnchorElement.prototype.click = vi.fn();
     render(
@@ -83,7 +83,8 @@ describe('lead forms', () => {
     await screen.findByText(/your download has started/i);
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const [url] = fetchMock.mock.calls[0];
-    expect(url).toBe('/api/notify-download');
+    expect(url).toBe('/api/subscribe');
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body).intent).toBe('gated-download-notify');
     expect(String(url)).not.toMatch(/formspree/i);
   });
 

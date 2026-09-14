@@ -33,9 +33,10 @@ describe('lead form routing', () => {
     }
   });
 
-  it('notifies admin via the Resend download route', () => {
-    expect(readSrc('api/notify-download.ts')).toContain('admin@bionixus.com');
-    expect(readSrc('api/notify-download.ts')).toContain('RESEND_API_KEY');
-    expect(readSrc('src/lib/notifyDownloadLead.ts')).toContain('/api/notify-download');
+  it('notifies admin via the existing subscribe Resend route', () => {
+    expect(readSrc('api/subscribe.ts')).toContain('admin@bionixus.com');
+    expect(readSrc('api/subscribe.ts')).toContain('gated-download-notify');
+    expect(readSrc('src/lib/notifyDownloadLead.ts')).toContain('/api/subscribe');
+    expect(readSrc('src/lib/notifyDownloadLead.ts')).toContain('gated-download-notify');
   });
 });

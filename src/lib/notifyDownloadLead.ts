@@ -1,6 +1,8 @@
 import { getWorkEmailValidationError } from './freeMailDomains';
 
-export const DOWNLOAD_NOTIFY_ENDPOINT = '/api/notify-download';
+/** Reuses /api/subscribe so we do not add a 13th Vercel serverless function. */
+export const DOWNLOAD_NOTIFY_ENDPOINT = '/api/subscribe';
+export const DOWNLOAD_NOTIFY_INTENT = 'gated-download-notify';
 
 export type DownloadNotifyPayload = {
   workEmail: string;
@@ -110,7 +112,7 @@ export async function notifyDownloadLead(payload: DownloadNotifyPayload): Promis
     const res = await fetch(DOWNLOAD_NOTIFY_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ intent: DOWNLOAD_NOTIFY_INTENT, ...payload }),
     });
     return { notified: res.ok };
   } catch {
