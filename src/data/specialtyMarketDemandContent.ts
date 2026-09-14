@@ -1175,16 +1175,66 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
   h1: 'Febrile Neutropenia Market: Supportive-Care & Protocol Intelligence',
   intro: [
     'The febrile neutropenia market is driven by oncology regimen intensity, hospital prophylaxis protocols, and biosimilar G-CSF competition more than consumer awareness. BioNixus researches oncologists, oncology pharmacists, and tender stakeholders to forecast switching and protocol stickiness — including Gulf hospital settings where supportive-care injectables move through frameworks.',
+    'Queries such as “febrile neutropenia market” often reflect oncology brand teams sizing prophylaxis pools or hospital groups benchmarking G-CSF protocols. We map primary versus secondary prophylaxis thresholds, biosimilar substitution rules, and admission pathways so forecasts tie to committee behaviour rather than epidemiology slides alone.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
-    { name: 'Prophylaxis protocol research', detail: 'When hospitals choose primary vs secondary prophylaxis.' },
-    { name: 'G-CSF brand / biosimilar switching', detail: 'Pharmacist and oncologist confidence drivers.' },
-    { name: 'Inpatient pathway mapping', detail: 'Admission and antibiotic pathway implications for brands.' },
-    { name: 'GCC tender modules', detail: 'Framework dynamics for supportive-care injectables.' },
-    { name: 'Nursing administration friction', detail: 'Device and schedule attributes that affect preference.' },
-    { name: 'Competitive message tests', detail: 'Safety, convenience, and supply themes that move share.' },
+    {
+      name: 'Prophylaxis protocol research',
+      detail:
+        'When hospitals choose primary versus secondary prophylaxis — guideline thresholds, regimen risk scores, and pharmacy policy enforcement documented with committee chairs and oncology pharmacists.',
+    },
+    {
+      name: 'G-CSF brand / biosimilar switching',
+      detail:
+        'Pharmacist and oncologist confidence drivers after tender awards — including nursing administration burden, cold-chain handling, and perceived infection-risk reduction.',
+    },
+    {
+      name: 'Inpatient pathway mapping',
+      detail:
+        'Admission and antibiotic pathway implications for brands when febrile neutropenia events occur — emergency, infectious disease, and oncology hand-offs that shape product stickiness.',
+    },
+    {
+      name: 'GCC tender modules',
+      detail:
+        'Framework dynamics for supportive-care injectables in Saudi and UAE hospital systems — price, supply security, and local content scoring alongside clinical acceptance.',
+    },
+    {
+      name: 'Nursing administration friction',
+      detail:
+        'Device and schedule attributes that affect preference in day-clinic versus inpatient settings — training time, preparation steps, and error-risk perceptions.',
+    },
+    {
+      name: 'Competitive message tests',
+      detail:
+        'Safety, convenience, and supply themes that move share in message-testing modules with oncologists, pharmacists, and procurement stakeholders.',
+    },
   ],
+  calendarBlocks: {
+    heading: 'Typical febrile neutropenia research programme',
+    items: [
+      {
+        period: 'Weeks 1–2',
+        detail:
+          'Scope prophylaxis versus treatment decisions, target accounts, and competitive set; confirm feasibility for oncology pharmacists and oncologists in each geography.',
+      },
+      {
+        period: 'Weeks 3–5',
+        detail:
+          'Qualitative depth on protocol drivers and substitution barriers; optional quantitative module on prophylaxis rates if sample frames support powered readouts.',
+      },
+      {
+        period: 'Weeks 6–7',
+        detail:
+          'Tender and procurement add-on for Gulf frameworks when injectable G-CSF awards are in scope.',
+      },
+      {
+        period: 'Week 8',
+        detail:
+          'Executive synthesis with scenario forecasts tied to protocol and tender levers — not epidemiology-only slides.',
+      },
+    ],
+  },
   demandDrivers: {
     heading: 'Demand drivers',
     drivers: [
@@ -1197,9 +1247,12 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'How febrile neutropenia markets are structured',
     paragraphs: [
       'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'Hospital oncology pathways split prophylaxis decisions (oncologist-led, pharmacy-enforced) from inpatient FN management (emergency and infectious-disease protocols). Share forecasts that ignore this split routinely overstate brand opportunity in secondary prophylaxis while missing tender risk in primary prophylaxis.',
+      'Biosimilar G-CSF waves move through central tenders in Europe and Gulf frameworks alike; clinician confidence and nursing administration burden determine whether substitution sticks after award. Qualitative depth with oncology pharmacists is often the decisive module.',
+      'Day-clinic expansion shifts administration from inpatient wards to ambulatory settings — device attributes (fixed versus variable dosing, storage, training) become switching variables that syndicated sales data cannot explain.',
     ],
   },
   audiences: [
@@ -1220,6 +1273,26 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
       question: 'What drives the febrile neutropenia market?',
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
+    },
+    {
+      question: 'How do hospitals choose primary versus secondary G-CSF prophylaxis?',
+      answer:
+        'Guideline thresholds, regimen febrile-neutropenia risk scores, and budget impact jointly set policy. BioNixus interviews oncology pharmacists and committee chairs to document where institutions tighten or relax prophylaxis — the lever that moves addressable volume faster than new patient starts.',
+    },
+    {
+      question: 'How does febrile neutropenia research differ in the GCC?',
+      answer:
+        'Supportive-care injectables often flow through NUPCO and hospital frameworks with price and supply scoring. We add tender stakeholder modules and cross-link to GCC oncology and generic-injectables intelligence so FN forecasts respect framework timing, not only clinical incidence.',
+    },
+    {
+      question: 'What evidence do payers and committees expect for G-CSF brands?',
+      answer:
+        'Hospital committees weight infection-related admission reduction, nursing time, and total cost per cycle. BioNixus tests which economic and clinical narratives survive pharmacy challenge in your target accounts.',
+    },
+    {
+      question: 'Can BioNixus track biosimilar switching after a tender award?',
+      answer:
+        'Yes. Post-award waves combine pharmacist interviews and utilisation proxies to measure substitution stickiness, identify accounts that revert to originator, and capture objection themes for medical affairs follow-up.',
     },
   ],
   priority: 'next',
@@ -1436,31 +1509,110 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
   h1: 'GCC Functional Service Providers (FSP) Market: Sponsor & Delivery Intelligence',
   intro: [
     'The GCC functional service providers market sits at the intersection of rising Gulf clinical-trial ambition and sponsor preference for modular FSP models over full-service CROs. BioNixus researches sponsor clinical-operations leaders, site networks, and in-region delivery partners to show which FSP capabilities win Gulf assignments — monitoring, data management, medical writing, pharmacovigilance — and where full-service still dominates.',
+    'Sponsors searching “GCC functional service providers market” usually need vendor-selection evidence, not a syndicated CRO directory. We map which functions Gulf programmes keep in-house, which they outsource under FSP master agreements, and how in-country Arabic capability, site relationships, and inspection-readiness scores change shortlists for Saudi and UAE execution cells.',
+    'BioNixus programmes triangulate sponsor interviews with site and SMO feedback so FSP marketing claims about “local presence” are tested against CRA travel patterns, monitoring visit quality, and startup timelines that sites actually experience.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
-    { name: 'Sponsor outsourcing model research', detail: 'When Gulf programmes choose FSP vs full-service vs hybrid.' },
-    { name: 'Capability-by-function mapping', detail: 'Monitoring, DM, medical writing, PV, and biostat preferences.' },
-    { name: 'In-region delivery diligence', detail: 'Arabic capability, hospital access, and travel logistics as win themes.' },
-    { name: 'Site & investigator experience research', detail: 'How FSP CRA models feel to Gulf sites versus legacy CROs.' },
-    { name: 'Pricing and governance interviews', detail: 'What KPIs and governance sponsors demand from FSP partners.' },
-    { name: 'Competitive landscape briefs', detail: 'Global FSP brands vs regional specialists in Saudi Arabia and UAE.' },
+    {
+      name: 'Sponsor outsourcing model research',
+      detail:
+        'When Gulf programmes choose FSP versus full-service versus hybrid resourcing — mapped to phase, indication, inspection history, and whether the sponsor retains data ownership and medical monitoring in-house.',
+    },
+    {
+      name: 'Capability-by-function mapping',
+      detail:
+        'Monitoring, data management, medical writing, pharmacovigilance, and biostatistics preferences by function — including which tasks sponsors refuse to offshore from Riyadh or Dubai project cells.',
+    },
+    {
+      name: 'In-region delivery diligence',
+      detail:
+        'Arabic source-document capability, hospital access, CRA continuity, and travel logistics scored against reference visits — separating real in-country presence from mailbox offices.',
+    },
+    {
+      name: 'Site & investigator experience research',
+      detail:
+        'How FSP CRA models feel to Gulf sites versus legacy full-service CROs on query resolution, monitoring visit preparation, and startup communication.',
+    },
+    {
+      name: 'Pricing and governance interviews',
+      detail:
+        'Unit-rate versus FTE models, governance KPIs written into statements of work, and escalation paths when delivery metrics miss thresholds mid-study.',
+    },
+    {
+      name: 'Competitive landscape briefs',
+      detail:
+        'Global FSP brands versus regional specialists in Saudi Arabia and UAE — win themes, reference patterns, and therapeutic areas where each archetype is disqualified early.',
+    },
   ],
   demandDrivers: {
     heading: 'Demand drivers',
     drivers: [
-      { title: 'Gulf trial volume growth', detail: 'More Phase II–IV and RWE programmes need flexible resourcing.' },
-      { title: 'Sponsor cost pressure', detail: 'FSP models promise utilisation control versus full-service lock-in.' },
-      { title: 'Localisation expectations', detail: 'Saudi and UAE programmes favour partners with in-market presence.' },
-      { title: 'Startup timeline scrutiny', detail: 'Site activation speed is a decisive selection criterion.' },
-      { title: 'Therapeutic specialisation', detail: 'Oncology and rare-disease depth beats generic capacity claims.' },
-      { title: 'Quality / inspection readiness', detail: 'GCP inspection risk pushes sponsors toward proven oversight models.' },
+      {
+        title: 'Gulf trial volume growth',
+        detail:
+          'More Phase II–IV and RWE programmes need flexible resourcing without rebuilding full CRO infrastructure for every new asset.',
+      },
+      {
+        title: 'Sponsor cost pressure',
+        detail:
+          'FSP models promise utilisation control versus full-service lock-in — but only when governance and quality oversight remain credible to QA and inspection teams.',
+      },
+      {
+        title: 'Localisation expectations',
+        detail:
+          'Saudi Vision 2030 and UAE hub strategies favour partners who can document Arabic capability, local employment, and hospital relationships beyond a sales office address.',
+      },
+      {
+        title: 'Startup timeline scrutiny',
+        detail:
+          'Site activation speed and predictable ethics/regulatory timelines are decisive — sponsors penalise FSP vendors who underestimate Gulf site complexity.',
+      },
+      {
+        title: 'Therapeutic specialisation',
+        detail:
+          'Oncology, rare disease, and cell-therapy depth beats generic capacity claims; cardiology and vaccine waves may tolerate thinner local teams.',
+      },
+      {
+        title: 'Quality / inspection readiness',
+        detail:
+          'GCP inspection risk and SFDA expectations push sponsors toward FSP models with documented oversight, training, and deviation management — not lowest unit rate alone.',
+      },
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Typical FSP vendor diligence calendar',
+    items: [
+      {
+        period: 'Weeks 1–2',
+        detail:
+          'Decision framing: functions to outsource, countries in scope, inspection risk profile, and therapeutic complexity. Document incumbent CRO pain points and governance non-negotiables.',
+      },
+      {
+        period: 'Weeks 3–4',
+        detail:
+          'Shortlist research with sponsors who ran comparable Gulf programmes; reference patterns and disqualifiers captured before RFP release.',
+      },
+      {
+        period: 'Weeks 5–6',
+        detail:
+          'Site and investigator experience modules — validate CRA quality claims with principal investigators and site coordinators who lived through prior FSP awards.',
+      },
+      {
+        period: 'Weeks 7–8',
+        detail:
+          'Commercial synthesis: recommended archetype (global FSP, regional specialist, hybrid), governance KPI package, and negotiation levers for MSA renewals.',
+      },
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'How GCC FSP buying is structured',
     paragraphs: [
       'FSP buying in the GCC is rarely a single RFP for “the region.” Sponsors often lock global FSP frameworks then stress-test Middle East delivery cells. BioNixus scopes research to the function and geography under evaluation.',
+      'Three commercial archetypes dominate Gulf FSP decisions: (1) global FSP with a thin Dubai or Riyadh project-management overlay, (2) regional boutique with strong hospital relationships but limited global QA systems, and (3) hybrid models where monitoring is local but data management and medical writing stay offshore. Research must identify which archetype fits the sponsor’s inspection risk tolerance and therapeutic complexity.',
+      'Therapeutic depth separates credible FSP bids from generic capacity claims. Oncology, rare disease, and cell-therapy programmes demand CRA and medical-monitor depth that cardiology or vaccine waves may not. BioNixus segments sample frames by indication and phase before scoring vendor fit.',
+      'Governance KPIs — query rate, monitoring visit report turnaround, protocol deviation trends, and site satisfaction — are increasingly written into FSP statements of work. Primary research captures which metrics Gulf sponsors actually audit versus which remain slide-deck promises.',
+      'Egypt and wider MENA enrolment scale often appears in FSP RFPs as a bundled “Middle East cell.” BioNixus can run harmonised sponsor and site modules across Gulf execution markets and Egypt adjacency so resourcing plans reflect realistic travel, language, and regulatory boundaries — not a single undifferentiated MENA map.',
     ],
   },
   signalGrid: {
@@ -1473,10 +1625,26 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
     ],
   },
   audiences: [
-    { audience: 'Sponsor clinical operations', description: 'Outsourcing-model and vendor decision owners.' },
-    { audience: 'FSP / CRO commercial leaders', description: 'Competitors and partners seeking Gulf win themes.' },
-    { audience: 'Site / SMO leadership', description: 'Stakeholders who experience delivery quality day to day.' },
-    { audience: 'Medical / PV oversight', description: 'Quality and compliance governors of modular models.' },
+    {
+      audience: 'Sponsor clinical operations',
+      description:
+        'VP and director-level owners of outsourcing strategy, FSP master agreements, and vendor scorecards for Gulf-executed studies.',
+    },
+    {
+      audience: 'FSP / CRO commercial leaders',
+      description:
+        'Business development and proposal teams who need evidence-based win themes instead of generic Middle East capability slides.',
+    },
+    {
+      audience: 'Site / SMO leadership',
+      description:
+        'Principal investigators, coordinators, and SMO executives who grade CRA continuity, monitoring quality, and startup realism.',
+    },
+    {
+      audience: 'Medical / PV oversight',
+      description:
+        'Medical monitors, pharmacovigilance leads, and QA managers who approve modular models only when oversight and inspection readiness are demonstrable.',
+    },
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
@@ -1492,6 +1660,31 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
       question: 'What is the GCC functional service providers market?',
       answer:
         'The market for modular clinical-development services (monitoring, data management, medical writing, PV, and related functions) sold into Gulf-sponsored or Gulf-executed programmes — researched through sponsor, site, and delivery-partner stakeholders.',
+    },
+    {
+      question: 'When do Gulf sponsors choose FSP instead of a full-service CRO?',
+      answer:
+        'Sponsors typically choose FSP when they retain data ownership and therapeutic strategy in-house but need flexible resourcing for monitoring, DM, or medical writing. BioNixus interviews clinical-operations leaders to document the portfolio characteristics — phase, indication, site count, and inspection history — where FSP economics beat full-service lock-in in Saudi Arabia and the UAE.',
+    },
+    {
+      question: 'Which FSP capabilities matter most in Saudi Arabia versus the UAE?',
+      answer:
+        'Saudi programmes stress SFDA inspection readiness, Arabic source-document fluency, and site activation across MOH and university hospitals. UAE programmes often prioritise private-hospital site access, regional PM hubs, and fast CRA deployment into multinational investigator networks. BioNixus runs country-specific stakeholder modules rather than collapsing the Gulf into one scorecard.',
+    },
+    {
+      question: 'How does BioNixus research GCC functional service providers?',
+      answer:
+        'We combine sponsor outsourcing interviews, site and SMO experience research, and competitive landscape briefs on global FSP brands versus regional specialists. Deliverables include win-theme libraries, governance KPI benchmarks, and a recommended partner archetype mapped to your phase and therapeutic area.',
+    },
+    {
+      question: 'How does GCC FSP demand connect to clinical trials market growth?',
+      answer:
+        'Rising Phase II–IV and RWE volume increases demand for modular resourcing, but FSP only wins when sponsors trust in-region delivery quality. Cross-linking FSP research with our GCC clinical trials market intelligence helps forecast when outsourcing shifts from full-service CRO awards to function-level FSP call-offs.',
+    },
+    {
+      question: 'What should vendors avoid when selling FSP into the Gulf?',
+      answer:
+        'Generic “we have an office in Dubai” positioning fails site diligence. Sponsors and investigators reward proven CRA continuity, realistic startup timelines, and PV/medical-writing depth for complex protocols. BioNixus message-testing modules show which claims accelerate shortlists versus trigger reference checks.',
     },
   ],
   areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],

@@ -310,6 +310,40 @@ export const HUB_LINKS = [
   { to: '/case-studies', label: 'Client case studies' },
 ] as const;
 
+/** Long-form SSR copy for /services — improves depth for SEO and LLM citation. */
+export const SERVICES_HUB_DEEP_DIVE = {
+  eyebrow: 'How we work',
+  title: 'Global market research services built for regulated and commercial decisions',
+  sections: [
+    {
+      heading: 'Pharmaceutical and healthcare programmes',
+      paragraphs: [
+        'BioNixus was founded on pharmaceutical and healthcare primary research — physician surveys, payer and HTA engagement, hospital procurement studies, MedTech adoption research, and competitive intelligence that governance teams can defend. Programmes run across the US, EU5, UK, GCC, North Africa, and Asia-Pacific priority markets with verified sampling, bilingual fieldwork where required, and synthesis tied to a single launch, access, or portfolio decision.',
+        'Healthcare modules combine quantitative rigour with qualitative depth: KOL advisory boards explain committee behaviour that surveys alone cannot capture; market access work tests value stories against NICE, G-BA, HAS, CMS, SFDA, and Gulf payer expectations; clinical trial support maps site feasibility and investigator influence before CRO awards are signed.',
+      ],
+    },
+    {
+      heading: 'Fieldwork modes and methodology',
+      paragraphs: [
+        'CATI reaches senior B2B buyers and specialists who will not complete online panels. CAWI scales trackers and brand health studies with mobile-first design and fraud screening. CAPI supports hospital audits, retail visits, and on-site B2B interviews with supervisor QC. Focus groups, mystery shopping, price elasticity, conjoint, segmentation, and digital behaviour modules slot into the same programme when mixed-mode designs improve coverage or reduce bias.',
+        'Every mode shares one methodology standard: documented sample frames, respondent verification, secure data handling, and executive readouts with evidence gaps flagged. Explore the methodology hub for ethics, privacy, and quality governance detail.',
+      ],
+    },
+    {
+      heading: 'Cross-industry and B2B research',
+      paragraphs: [
+        'The same senior-led teams execute B2B buyer research, shopper insight, and consumer segmentation for banking, retail, tourism, technology, manufacturing, and FMCG — via dedicated industry hubs when healthcare compliance is not required. Win-loss analysis, market sizing, and competitive intelligence for enterprise software and industrial categories use parallel governance without diluting pharma-grade sampling where categories overlap (for example health-tech AI).',
+      ],
+    },
+    {
+      heading: 'Geography and proposal turnaround',
+      paragraphs: [
+        'BioNixus fields studies in 48 countries with offices and networks in the United States, United Kingdom, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil. Share your objective, audience, geography, and timeline through the contact form — we typically return a scoped methodology outline within one business day.',
+      ],
+    },
+  ],
+} as const;
+
 export const SERVICE_FAQ = [
   {
     question: 'Does BioNixus only work in pharmaceutical and healthcare markets?',
@@ -340,6 +374,21 @@ export const SERVICE_FAQ = [
     question: 'How quickly can we receive a proposal?',
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
+  },
+  {
+    question: 'How is BioNixus different from IQVIA or Kantar for healthcare research?',
+    answer:
+      'IQVIA and Kantar excel at global syndicated data and large-scale infrastructure. BioNixus wins when teams need agile primary research — verified HCP and payer interviews, hospital procurement depth, GCC and MENA field networks, and decision-ready synthesis without syndicated panel limitations. Many clients keep syndicated vendors and add BioNixus for the primary modules syndication cannot answer.',
+  },
+  {
+    question: 'Do you support HEOR, market access, and HTA evidence?',
+    answer:
+      'Yes. Market access and HEOR modules include value-story testing, budget impact and cost-effectiveness support, payer engagement research, and dossier-oriented evidence planning mapped to the authorities that govern your markets — including emerging markets where HTA institutions are maturing.',
+  },
+  {
+    question: 'Can BioNixus run Arabic–English healthcare fieldwork in the GCC?',
+    answer:
+      'Yes. Gulf programmes routinely combine Arabic clinician and pharmacist interviews with English reporting for global headquarters. We document bilingual consent, transcription, and analysis standards in the proposal.',
   },
 ] as const;
 

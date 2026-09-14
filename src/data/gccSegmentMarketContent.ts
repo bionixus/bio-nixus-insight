@@ -1348,37 +1348,39 @@ const genericPharmaceuticals: GccSegmentContent = {
   intro: [
     'The GCC generic pharmaceuticals market spans retail solid oral dose, hospital generics, and tender-driven therapeutic substitution — a wider arena than sterile injectables alone. BioNixus researches pharmacist substitution, physician brand loyalty, Wasfaty and insurance formularies, and central procurement rules so originators and generic houses can forecast share with field evidence.',
     'Search demand for “GCC generic pharmaceuticals market” needs channel structure and policy levers, not a recycled injectables brief. We treat retail chronic care, hospital oral/solid dose, and framework awards as distinct decision cells, then triangulate primary interviews against public procurement signals.',
+    'Originators defending post-patent brands and generic houses bidding framework lots face different evidence standards. BioNixus scopes retail pharmacist modules, physician loyalty studies, and tender stakeholder interviews to the channel that actually owns your revenue risk — then links findings to SFDA, NHRA, and MOH context country by country.',
+    'GCC-DR harmonisation and national implementation timelines still create staggered launch windows across Saudi Arabia, the UAE, Kuwait, Qatar, Oman, and Bahrain. A generic portfolio that is substitutable at retail in Dubai may still be negotiating hospital framework placement in Riyadh — research must map registration status, tender calendars, and pharmacist enforcement separately rather than assuming a single “GCC launch date.”',
   ],
   researchTopics: [
     {
       name: 'Retail substitution & pharmacist behaviour',
       detail:
-        'How community pharmacists switch originator chronic brands under Wasfaty, insurance, and patient OOP pressure.',
+        'How community pharmacists switch originator chronic brands under Wasfaty, insurance, and patient out-of-pocket pressure — including counselling time, stock availability, and insurer rejection workflows that block substitution even when policy allows it.',
     },
     {
       name: 'Hospital oral / solid-dose tender research',
       detail:
-        'NUPCO and MOH award criteria for non-injectable generics — price, supply, and ICV weighting.',
+        'NUPCO and MOH award criteria for non-injectable generics — price, supply continuity, ICV weighting, and post-award pharmacy pull-through inside hospital formularies.',
     },
     {
       name: 'Physician brand-loyalty studies',
       detail:
-        'Where clinicians resist substitution (narrow therapeutic index, chronic specialty) versus where they accept generics.',
+        'Where clinicians resist substitution (narrow therapeutic index, chronic specialty, paediatric formulations) versus where they accept generics — mapped by specialty and account type.',
     },
     {
       name: 'Localization & domestic manufacturer mapping',
       detail:
-        'Saudi and UAE local producers’ competitive impact on imported generics portfolios.',
+        'Saudi and UAE local producers’ competitive impact on imported generics portfolios — partnership models, pack sizes, and tender scoring advantages tied to domestic manufacture.',
     },
     {
       name: 'Originator defence modules',
       detail:
-        'Patient-support, device, and quality narratives that retain share after patent expiry.',
+        'Patient-support, device, and quality narratives that retain share after patent expiry — tested with physicians and pharmacists rather than assumed from global brand decks.',
     },
     {
       name: 'Channel & pricing intelligence',
       detail:
-        'Retail versus tender net-price dynamics and distributor role in pull-through.',
+        'Retail versus tender net-price dynamics, distributor margin structures, and parallel import risk that distort apparent list-price erosion.',
     },
   ],
   demandDrivers: {
@@ -1415,6 +1417,9 @@ const genericPharmaceuticals: GccSegmentContent = {
     paragraphs: [
       'Retail chronic care, hospital oral generics, and sterile injectables are related but not identical games. Injectables remain tender- and hospital-led; many oral chronic brands are retail- and insurance-led. BioNixus scopes modules to the channel that owns your P&L question and links to the dedicated injectables page when sterile tenders dominate.',
       'SFDA registration, Gulf Health Council arrangements, and country reimbursement rules create six-market variation under a shared “GCC” label. Side-by-side country cells keep forecasts honest.',
+      'Wasfaty and insurance formularies in Saudi Arabia, plus UAE insurer preferred-generic lists, accelerate substitution for chronic oral brands faster than hospital committees move on high-risk molecules. Research designs must match molecule risk class and channel ownership.',
+      'Localization and ICV scoring increasingly reward domestic packers and manufacturers in Saudi framework awards — imported generic portfolios need explicit diligence on local partnership and supply continuity narratives that tender committees score.',
+      'Retail pharmacy chains consolidate preferred-generic lists that community pharmacists enforce daily; hospital tenders set floors that retail may never reach for the same SKU. Forecast models should not assume retail share equals tender share.',
     ],
   },
   countrySignals: [
@@ -1498,6 +1503,26 @@ const genericPharmaceuticals: GccSegmentContent = {
       question: 'Does localization affect generic competition in the Gulf?',
       answer:
         'Yes. Saudi Arabia and the UAE increasingly reward domestic manufacturing with tender and formulary preference, changing win probability for imported generics houses.',
+    },
+    {
+      question: 'How does Wasfaty change generic substitution in Saudi Arabia?',
+      answer:
+        'Wasfaty pushes chronic therapies toward approved generic alternatives at community pharmacy, increasing pharmacist-led switching for eligible molecules. BioNixus researches substitution behaviour molecule by molecule because therapeutic index and patient communication requirements still block automatic switches for some classes.',
+    },
+    {
+      question: 'What research do originators need after patent expiry in the GCC?',
+      answer:
+        'Originators typically need physician loyalty and patient-support studies, retail pharmacist objection libraries, and tender defence modules for hospital oral brands still on framework. BioNixus sequences modules to the channel where erosion starts first — often retail in UAE and framework in Saudi hospital oral categories.',
+    },
+    {
+      question: 'How does BioNixus size GCC generic categories without publishing unverified totals?',
+      answer:
+        'We combine channel interviews, tender award analysis, and formulary policy review to build bottom-up volume and share ranges for your molecule and pack — rather than citing a single unverifiable regional market-size headline.',
+    },
+    {
+      question: 'When should teams use the generic injectables page instead?',
+      answer:
+        'When sterile hospital tenders and NUPCO-style framework awards dominate the P&L — oncology supportive care, anti-infectives, and hospital injectable generics. The broader generic pharmaceuticals page covers oral, retail, and multi-channel solid dose.',
     },
   ],
 };
