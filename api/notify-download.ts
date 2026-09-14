@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 import {
   buildDownloadNotifyEmail,
   validateDownloadNotifyPayload,
-} from '../src/lib/notifyDownloadLead'
+} from '../src/lib/notifyDownloadLead.js'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 const ADMIN_EMAIL = 'admin@bionixus.com'
