@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { ArrowRight, BookOpen, BarChart3, ShieldCheck, Brain, Users, Target } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { WorkEmailRequestForm } from '@/components/conversion/WorkEmailRequestForm';
 
 type CountryBenchmark = {
   country: string;
@@ -1322,26 +1323,20 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                 Get a condensed briefing for leadership teams with our methodology checklist, KPI scorecard, and GCC implementation timeline.
                 Enter your work email and our team will send the summary within one business day.
               </p>
-              <form action="https://formspree.io/f/xgozewew" method="POST" className="grid sm:grid-cols-[1fr_auto] gap-3">
-                <input type="hidden" name="_subject" value="Executive summary request: Quantitative Healthcare Market Research Guide" />
-                <input type="hidden" name="requestType" value="Executive Summary Request" />
-                <input type="hidden" name="formVariant" value="quantitative_page_exec_summary" />
-                <input type="hidden" name="sourcePage" value="/quantitative-healthcare-market-research" />
-                <input type="hidden" name="sourceUrl" value="https://www.bionixus.com/quantitative-healthcare-market-research" />
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Work email"
-                  className="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-                />
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center rounded-lg bg-primary px-5 h-11 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-                >
-                  Request Summary
-                </button>
-              </form>
+              <WorkEmailRequestForm
+                destination="formspree"
+                formId="quantitative_page_exec_summary"
+                requestType="Executive Summary Request"
+                subject="Executive summary request: Quantitative Healthcare Market Research Guide"
+                sourcePage="/quantitative-healthcare-market-research"
+                sourceUrl="https://www.bionixus.com/quantitative-healthcare-market-research"
+                submitLabel="Request Summary"
+                formClassName="grid sm:grid-cols-[1fr_auto] gap-3"
+                inputClassName="h-11 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                buttonClassName="inline-flex items-center justify-center rounded-lg bg-primary px-5 h-11 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-70"
+                successTitle="Request received"
+                successBody="Our team will send the executive summary to your work email within one business day."
+              />
             </article>
           </div>
         </section>

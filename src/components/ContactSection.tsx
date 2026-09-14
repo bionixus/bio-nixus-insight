@@ -16,6 +16,7 @@ import { TrustCoverageMap } from '@/components/media/TrustCoverageMap';
 import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
 import { getContactFormStrings } from '@/lib/contactFormStrings';
 import { trackLeadSubmitted } from '@/lib/analytics';
+import { getWorkEmailValidationError } from '@/lib/freeMailDomains';
 
 type ContactValidation = {
   firstName?: string;
@@ -27,6 +28,7 @@ type ContactValidation = {
   message?: string;
   privacy?: string;
   emailFormat?: string;
+  businessEmail?: string;
   country?: string;
   consent?: string;
   success?: string;
@@ -132,8 +134,6 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
   const v = (key: keyof ContactValidation) => validation?.[key] ?? '';
   const place = (key: string, fallback: string) => c[key] ?? fallback;
 
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -144,11 +144,12 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
     if (!(data.get('lastName') as string)?.trim()) next.lastName = v('lastName') || 'Last name is required';
 
     const rawEmail = (data.get('workEmail') as string)?.trim() || '';
-    if (!rawEmail) {
-      next.workEmail = v('workEmail') || 'Work email is required';
-    } else if (!EMAIL_RE.test(rawEmail)) {
-      next.workEmail = v('emailFormat') || 'Please enter a valid email address';
-    }
+    const emailError = getWorkEmailValidationError(rawEmail, {
+      required: v('workEmail') || 'Work email is required',
+      invalid: v('emailFormat') || 'Please enter a valid email address',
+      freeMail: v('businessEmail'),
+    });
+    if (emailError) next.workEmail = emailError;
 
     if (!(data.get('company') as string)?.trim()) next.company = v('company') || 'Company is required';
     if (!(data.get('country') as string)?.trim()) next.country = v('country') || 'Please select a country';

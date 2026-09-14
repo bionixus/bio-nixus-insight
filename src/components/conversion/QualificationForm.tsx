@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { isFreeMailDomain } from '@/lib/freeMailDomains';
+import { getWorkEmailValidationError } from '@/lib/freeMailDomains';
 import { trackLeadSubmitted, trackFormStart } from '@/lib/analytics';
 import {
   QUALIFICATION_FORM_MARKETS,
@@ -11,7 +11,6 @@ import {
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const ERROR_EMAIL = 'admin@bionixus.com';
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Scheduling link shown on the thank-you state. */
 export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://schedule.bionixus.com/meeting-with-bionixus';
@@ -39,8 +38,6 @@ export function QualificationForm({
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [freeMailWarning, setFreeMailWarning] = useState<string | null>(null);
-  const [freeMailAcknowledged, setFreeMailAcknowledged] = useState(false);
   const [started, setStarted] = useState(false);
   const [showAllMarkets, setShowAllMarkets] = useState(() =>
     Boolean(defaultMarkets?.some((m) => !QUALIFICATION_FORM_MARKETS.slice(0, 7).includes(m as (typeof QUALIFICATION_FORM_MARKETS)[number]))),
@@ -61,25 +58,14 @@ export function QualificationForm({
     const next: Record<string, string> = {};
 
     const rawEmail = (data.get('workEmail') as string)?.trim() || '';
-    if (!rawEmail) {
-      next.workEmail = 'Work email is required';
-    } else if (!EMAIL_RE.test(rawEmail)) {
-      next.workEmail = 'Please enter a valid email address';
-    }
+    const emailError = getWorkEmailValidationError(rawEmail);
+    if (emailError) next.workEmail = emailError;
     if (!(data.get('company') as string)?.trim()) next.company = 'Company is required';
     if (!(data.get('role') as string)?.trim()) next.role = 'Role is required';
     if (!(data.get('need') as string)?.trim()) next.need = 'Please select what you need';
 
     setErrors(next);
     if (Object.keys(next).length > 0) return;
-
-    // Soft-block: free-mail domain gets one warning, then submission proceeds on the next attempt.
-    if (rawEmail && isFreeMailDomain(rawEmail) && !freeMailAcknowledged) {
-      setFreeMailWarning('Please use your company email — our buyers have work email.');
-      setFreeMailAcknowledged(true);
-      return;
-    }
-    setFreeMailWarning(null);
 
     const company = (data.get('company') as string)?.trim() || '';
     const role = (data.get('role') as string)?.trim() || '';
@@ -188,7 +174,6 @@ export function QualificationForm({
           placeholder="you@company.com"
         />
         {errors.workEmail && <p className="text-xs text-destructive mt-1">{errors.workEmail}</p>}
-        {freeMailWarning && <p className="text-xs text-amber-600 mt-1">{freeMailWarning}</p>}
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">

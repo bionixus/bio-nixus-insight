@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { isFreeMailDomain } from '@/lib/freeMailDomains';
+import { getWorkEmailValidationError } from '@/lib/freeMailDomains';
+import { notifyDownloadLead } from '@/lib/notifyDownloadLead';
 import { trackLeadSubmitted, trackFormStart } from '@/lib/analytics';
 import { QUALIFICATION_FORM_MARKETS } from '@/data/qualificationFormOptions';
-
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type GatedAssetFormProps = {
   formId: string;
@@ -17,15 +15,21 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitError, setSubmitError] = useState<string | null>(null);
-  const [freeMailWarning, setFreeMailWarning] = useState<string | null>(null);
-  const [freeMailAcknowledged, setFreeMailAcknowledged] = useState(false);
   const [started, setStarted] = useState(false);
 
   const handleFirstInteraction = () => {
     if (started) return;
     setStarted(true);
     trackFormStart({ formId });
+  };
+
+  const startDownload = () => {
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = pdfPath.split('/').pop() || 'sample.pdf';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -35,68 +39,46 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
     const next: Record<string, string> = {};
 
     const rawEmail = (data.get('workEmail') as string)?.trim() || '';
-    if (!rawEmail) {
-      next.workEmail = 'Work email is required';
-    } else if (!EMAIL_RE.test(rawEmail)) {
-      next.workEmail = 'Please enter a valid email address';
-    }
+    const emailError = getWorkEmailValidationError(rawEmail);
+    if (emailError) next.workEmail = emailError;
     if (!(data.get('company') as string)?.trim()) next.company = 'Company is required';
     if (!(data.get('country') as string)?.trim()) next.country = 'Please select a country';
 
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
-    if (rawEmail && isFreeMailDomain(rawEmail) && !freeMailAcknowledged) {
-      setFreeMailWarning('Please use your company email — our buyers have work email.');
-      setFreeMailAcknowledged(true);
-      return;
-    }
-    setFreeMailWarning(null);
-
     const company = (data.get('company') as string)?.trim() || '';
     const country = (data.get('country') as string)?.trim() || '';
     const currentUrl = window.location.href;
     const currentPath = window.location.pathname;
     const params = new URL(currentUrl).searchParams;
-
     const isHtmlAsset = pdfPath.toLowerCase().endsWith('.html');
-    data.set('_subject', `${isHtmlAsset ? 'Report download request' : 'PDF sample request'} — ${reportName} (${company})`);
-    data.set('requestType', 'Gated Asset Download');
-    data.set('formVariant', formId);
-    data.set('reportName', reportName);
-    data.set('sourcePage', currentPath);
-    data.set('sourceUrl', currentUrl);
-    data.set('utmSource', params.get('utm_source') || '');
-    data.set('utmMedium', params.get('utm_medium') || '');
-    data.set('utmCampaign', params.get('utm_campaign') || '');
-    data.set('utmContent', params.get('utm_content') || '');
-    data.set('utmTerm', params.get('utm_term') || '');
 
     setSubmitting(true);
-    setSubmitError(null);
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+      // Notify admin via Resend. Do not block the download if the email fails —
+      // the visitor already passed the business-email gate.
+      await notifyDownloadLead({
+        workEmail: rawEmail,
+        company,
+        country,
+        reportName,
+        formVariant: formId,
+        requestType: isHtmlAsset ? 'Report download request' : 'PDF sample request',
+        sourcePage: currentPath,
+        sourceUrl: currentUrl,
+        utmSource: params.get('utm_source') || '',
+        utmMedium: params.get('utm_medium') || '',
+        utmCampaign: params.get('utm_campaign') || '',
+        utmContent: params.get('utm_content') || '',
+        utmTerm: params.get('utm_term') || '',
       });
-      if (res.ok) {
-        setSubmitted(true);
-        trackLeadSubmitted({ formId });
-        // Trigger the PDF download client-side once the lead is captured.
-        const link = document.createElement('a');
-        link.href = pdfPath;
-        link.download = pdfPath.split('/').pop() || 'sample.pdf';
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-      } else {
-        const json = await res.json().catch(() => ({}));
-        setSubmitError(json.error || 'Something went wrong — please try again.');
-      }
     } catch {
-      setSubmitError('Something went wrong — please try again.');
+      // Swallow — download still proceeds.
     } finally {
+      setSubmitted(true);
+      trackLeadSubmitted({ formId });
+      startDownload();
       setSubmitting(false);
     }
   };
@@ -134,7 +116,6 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
           placeholder="you@company.com"
         />
         {errors.workEmail && <p className="text-xs text-destructive mt-1">{errors.workEmail}</p>}
-        {freeMailWarning && <p className="text-xs text-amber-600 mt-1">{freeMailWarning}</p>}
       </div>
       <div>
         <label htmlFor={`${formId}-ga-company`} className="block text-sm font-medium text-foreground mb-1.5">
@@ -167,8 +148,6 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         </select>
         {errors.country && <p className="text-xs text-destructive mt-1">{errors.country}</p>}
       </div>
-
-      {submitError && <p className="text-sm text-destructive">{submitError}</p>}
 
       <button
         type="submit"
