@@ -587,9 +587,14 @@ export const CTR_SEO_BY_PATH = {
       'Japan healthcare market 2026 — market size, PMDA regulation, NHI pricing revisions, aging demand and hospital landscape. Report by BioNixus.',
   },
   '/febrile-neutropenia-market': {
-    title: 'Febrile Neutropenia Market 2026: Size, G-CSF & Forecast',
+    title: 'Febrile Neutropenia Market 2026: G-CSF & Protocol Guide',
     description:
-      'Febrile neutropenia market 2026 — G-CSF market size, biosimilar filgrastim/pegfilgrastim competition and oncology demand forecast. By BioNixus.',
+      'Febrile neutropenia market 2026 — G-CSF prophylaxis protocols, biosimilar switching, hospital pathways and GCC tender dynamics. Primary research by BioNixus.',
+  },
+  '/gcc-generic-pharmaceuticals-market': {
+    title: 'GCC Generic Pharmaceuticals Market 2026: Retail & Tender',
+    description:
+      'GCC generic pharmaceuticals market 2026 — Wasfaty, SFDA, NUPCO and retail substitution behaviour across Saudi, UAE and Gulf markets. Research by BioNixus.',
   },
   '/uae-pricing-reimbursement-strategy': {
     title: 'UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH',
