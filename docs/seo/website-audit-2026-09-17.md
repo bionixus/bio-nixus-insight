@@ -55,6 +55,7 @@ Report: `docs/seo/sitewide-audit-phase2.md`.
 - `src/data/specialtyMarketDemandContent.ts`
 - `src/data/gccSegmentMarketContent.ts`
 - `src/lib/preloadRouteChunk.ts`
+- `src/routes.tsx`
 - `config/legacy-redirects.json`
 - `src/server/ctr-seo-overrides.js`
 - `lib/ctr-seo-overrides.mjs`
