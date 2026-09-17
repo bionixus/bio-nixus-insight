@@ -105,6 +105,10 @@ const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }>
       path.startsWith('/bionixus-industries/insights/'),
     load: () => import('@/pages/BlogPost'),
   },
+  {
+    test: (path) => path.startsWith('/videos/') && path !== '/videos',
+    load: () => import('@/pages/VideoWatchPage'),
+  },
 ];
 
 function resolveImporter(pathname: string): Importer | undefined {
