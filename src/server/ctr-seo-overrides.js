@@ -542,9 +542,9 @@ export const CTR_SEO_BY_PATH = {
       'Foundayo (orforglipron) market report 2026 — oral GLP-1 obesity drug uptake, pricing, GCC/US launch outlook and competitor landscape. By BioNixus.',
   },
   '/gcc-functional-service-providers-market': {
-    title: 'GCC Functional Service Providers (FSP) Market 2026 | Size',
+    title: 'GCC Functional Service Providers (FSP) Market Research | BioNixus',
     description:
-      'GCC functional service providers market 2026 — FSP outsourcing size, clinical/regulatory FSP demand in Saudi & UAE, and vendor landscape. By BioNixus.',
+      'GCC functional service providers market research — FSP vs full-service CRO models, Saudi/UAE clinical ops outsourcing, site networks, and sponsor buyer criteria. By BioNixus.',
   },
   '/brazil-medical-devices-market-report': {
     title: 'Brazil Medical Devices Market 2026: ANVISA, Size & Forecast',
@@ -587,9 +587,9 @@ export const CTR_SEO_BY_PATH = {
       'Japan healthcare market 2026 — market size, PMDA regulation, NHI pricing revisions, aging demand and hospital landscape. Report by BioNixus.',
   },
   '/febrile-neutropenia-market': {
-    title: 'Febrile Neutropenia Market 2026: Size, G-CSF & Forecast',
+    title: 'Febrile Neutropenia Market Research | G-CSF & Protocol Intelligence',
     description:
-      'Febrile neutropenia market 2026 — G-CSF market size, biosimilar filgrastim/pegfilgrastim competition and oncology demand forecast. By BioNixus.',
+      'Febrile neutropenia market research — G-CSF prophylaxis protocols, biosimilar switching, hospital pharmacy tenders, and GCC oncology supportive-care intelligence. By BioNixus.',
   },
   '/uae-pricing-reimbursement-strategy': {
     title: 'UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH',

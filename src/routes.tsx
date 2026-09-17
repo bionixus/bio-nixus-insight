@@ -193,7 +193,7 @@ const AdminAnalytics = lazy(() => import('@/pages/AdminAnalytics'));
 const AdminCalendar = lazy(() => import('@/pages/AdminCalendar'));
 const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
-const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
+import VideoWatchPage from '@/pages/VideoWatchPage';
 
 function suspensePage(node: ReactNode, fallback: ReactNode = null) {
   return <Suspense fallback={fallback}>{node}</Suspense>;
@@ -506,7 +506,7 @@ const rawRoutes: RouteObject[] = [
   { path: '/news/:slug', element: suspensePage(<PressReleasePage />) },
   { path: '/media', element: <Media /> },
   { path: '/videos', element: <VideosIndex /> },
-  { path: '/videos/:slug', element: suspensePage(<VideoWatchPage />) },
+  { path: '/videos/:slug', element: <VideoWatchPage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/de/blog', element: <Blog /> },
   { path: '/de/blog/:slug', element: suspensePage(<BlogPost />) },
