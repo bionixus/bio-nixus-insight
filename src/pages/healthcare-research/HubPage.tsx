@@ -225,6 +225,7 @@ export default function HubPage() {
       description:
         'US-headquartered BioNixus healthcare and pharmaceutical market research across the Americas, Europe, MENA & GCC, and Asia-Pacific.',
       url: 'https://www.bionixus.com/healthcare-market-research',
+      dateModified: '2026-09-18',
       isPartOf: { '@type': 'WebSite', url: 'https://www.bionixus.com', name: 'BioNixus' },
       about: GLOBAL_MARKETS.map((r) => r.region),
     },
@@ -309,7 +310,7 @@ export default function HubPage() {
         hero={{
           title: heroTitle,
           statsCaption: '',
-          badges: ['Published by BioNixus', 'Updated 6 September 2026', 'Open access'],
+          badges: ['Published by BioNixus', 'Updated 18 September 2026', 'Open access'],
           stats: [
             { value: '20+', label: 'Country hubs' },
             { value: '14+', label: 'Therapeutic areas' },
@@ -318,7 +319,7 @@ export default function HubPage() {
           description: (
             <>
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Last updated 6 September 2026 · {HUB_AUTHOR.name}
+                Last updated 18 September 2026 · {HUB_AUTHOR.name}
               </p>
               <p>{heroDescription}</p>
               <p className="mt-4 text-sm text-muted-foreground max-w-3xl">
@@ -488,6 +489,10 @@ export default function HubPage() {
           <p className="text-sm text-muted-foreground mb-8">
             <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
               IQVIA alternative
+            </Link>
+            {' · '}
+            <Link to="/nielsen-alternative" className="text-primary font-medium hover:underline">
+              NielsenIQ alternative for primary research
             </Link>
             {' · '}
             <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
@@ -1044,6 +1049,11 @@ export default function HubPage() {
             to="/iqvia-alternative"
             title="BioNixus vs. IQVIA and other legacy vendors"
             description="A multi-vendor comparison for teams evaluating IQVIA alternatives on GCC and MENA fieldwork, turnaround, and pricing."
+          />
+          <HealthcareNavCard
+            to="/nielsen-alternative"
+            title="NielsenIQ alternative for primary research"
+            description="Keep NielsenIQ for national retail / RMS. Brief BioNixus for account, SKU, and traditional-trade cuts the feed misses."
           />
           <HealthcareNavCard
             to="/heor-consulting"

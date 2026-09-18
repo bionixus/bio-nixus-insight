@@ -126,3 +126,47 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
     expect(iqviaHtml).toContain('Nielsen alternative');
   });
 });
+
+describe('Nielsen alternative internal link graph', () => {
+  const hub = readFileSync(join(root, 'src/pages/healthcare-research/HubPage.tsx'), 'utf8');
+  const pharmaHub = readFileSync(join(root, 'src/pages/PharmaceuticalMarketResearchProvider.tsx'), 'utf8');
+  const studyTypes = readFileSync(join(root, 'src/data/pharmaStudyTypePages.ts'), 'utf8');
+  const llms = readFileSync(join(root, 'public/llms.txt'), 'utf8');
+  const llmsFull = readFileSync(join(root, 'public/llms-full.txt'), 'utf8');
+
+  it('healthcare hub links /nielsen-alternative next to IQVIA alternative', () => {
+    expect(hub).toContain('to="/iqvia-alternative"');
+    expect(hub).toContain('to="/nielsen-alternative"');
+    expect(hub).toContain('NielsenIQ alternative for primary research');
+    expect(hub.indexOf('to="/nielsen-alternative"')).toBeGreaterThan(hub.indexOf('to="/iqvia-alternative"'));
+  });
+
+  it('pharma hub links Nielsen as a retail / FMCG / OTC complement', () => {
+    expect(pharmaHub).toContain('to="/iqvia-alternative"');
+    expect(pharmaHub).toContain('to="/nielsen-alternative"');
+    expect(pharmaHub).toContain('NielsenIQ alternative for primary research');
+    expect(pharmaHub).toContain('Keep NielsenIQ for national retail / OTC shelf');
+  });
+
+  it('pharmacy mystery shopper (not HCP ATU) cross-links Nielsen for syndicated retail', () => {
+    const pharmacyBlock = studyTypes.slice(
+      studyTypes.indexOf('export const PHARMACY_MYSTERY_SHOPPER'),
+      studyTypes.indexOf('export const PHARMA_COMPETITOR_INTEL'),
+    );
+    const atuBlock = studyTypes.slice(
+      studyTypes.indexOf('export const HCP_ATU_STUDY'),
+      studyTypes.indexOf('export const PHARMACY_MYSTERY_SHOPPER'),
+    );
+    expect(pharmacyBlock).toContain("to: '/nielsen-alternative'");
+    expect(atuBlock).not.toContain("to: '/nielsen-alternative'");
+  });
+
+  it('llms.txt and llms-full.txt list Nielsen alternative with the 2026-09-18 GEO stamp', () => {
+    expect(llms).toContain('# Last GEO refresh: 2026-Q3 (2026-09-18)');
+    expect(llmsFull).toContain('# Last GEO refresh: 2026-Q3 (2026-09-18)');
+    expect(llms).toContain('https://www.bionixus.com/nielsen-alternative');
+    expect(llms).toContain('https://www.bionixus.com/iqvia-alternative');
+    expect(llmsFull).toContain('https://www.bionixus.com/nielsen-alternative');
+    expect(llmsFull).toContain('https://www.bionixus.com/iqvia-alternative');
+  });
+});
