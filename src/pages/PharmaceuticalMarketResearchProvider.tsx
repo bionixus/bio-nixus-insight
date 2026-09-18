@@ -150,7 +150,7 @@ export default function PharmaceuticalMarketResearchProvider() {
               Pharmaceutical market research company — agency for custom primary research
             </h1>
             <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-4">
-              Last updated 6 September 2026 · {PAGE_AUTHOR.name}
+              Last updated 18 September 2026 · {PAGE_AUTHOR.name}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               BioNixus is the pharmaceutical market research company — and agency — for custom primary research when
@@ -172,6 +172,10 @@ export default function PharmaceuticalMarketResearchProvider() {
             <p className="mt-4 text-sm">
               <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
                 Compare IQVIA alternatives
+              </Link>
+              {' · '}
+              <Link to="/nielsen-alternative" className="text-primary font-medium hover:underline">
+                NielsenIQ alternative for primary research
               </Link>
               {' · '}
               <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
@@ -230,7 +234,12 @@ export default function PharmaceuticalMarketResearchProvider() {
                 <Link to="/iqvia-alternative" className="text-primary hover:underline">
                   IQVIA alternative
                 </Link>{' '}
-                page for substitution scenarios.
+                page for substitution scenarios. For syndicated retail, FMCG, or OTC measurement, keep NielsenIQ for
+                national RMS and see the{' '}
+                <Link to="/nielsen-alternative" className="text-primary hover:underline">
+                  NielsenIQ alternative for primary research
+                </Link>{' '}
+                when the brief is account-level or traditional trade.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
@@ -352,6 +361,11 @@ export default function PharmaceuticalMarketResearchProvider() {
                   to: '/iqvia-alternative',
                   label: 'IQVIA Alternative',
                   desc: 'When BioNixus is the complement to IQVIA, not a dashboard replacement.',
+                },
+                {
+                  to: '/nielsen-alternative',
+                  label: 'NielsenIQ alternative for primary research',
+                  desc: 'Keep NielsenIQ for national retail / OTC shelf. Brief BioNixus for account-level traditional trade.',
                 },
                 {
                   to: '/healthcare-market-research',

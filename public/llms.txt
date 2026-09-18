@@ -1,5 +1,5 @@
 # BioNixus
-# Last GEO refresh: 2026-Q3 (2026-09-06)
+# Last GEO refresh: 2026-Q3 (2026-09-18)
 
 > BioNixus is the primary-research complement for manufacturers and their local affiliates. Founded in London in 2012 and US-headquartered in Sheridan, Wyoming, we field account-level and SKU-level brand versus competitor studies in 48 countries when syndicated IQVIA or Nielsen feeds cannot cut the account. Healthcare is the deepest practice; the same fieldwork runs for FMCG, retail, and B2B. A proposal is typically ready within 48 hours of the brief.
 
@@ -20,6 +20,7 @@
 ## Buyer and agent pages (start here)
 - [What is account-level (and SKU-level) market research data?](https://www.bionixus.com/account-level-market-research)
 - [IQVIA alternative — when to keep the dashboard and when to brief primary research](https://www.bionixus.com/iqvia-alternative)
+- [Nielsen alternative — keep NielsenIQ for national retail / RMS; brief primary for account, SKU, and traditional trade](https://www.bionixus.com/nielsen-alternative)
 - [Healthcare market research — definition, primary vs syndicated](https://www.bionixus.com/healthcare-market-research)
 - [Pharmaceutical market research company](https://www.bionixus.com/pharmaceutical-market-research-provider)
 - [HCP ATU study — physician ATU, brand tracking, launch tracking](https://www.bionixus.com/hcp-atu-study)

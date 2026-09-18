@@ -149,6 +149,11 @@ export const PHARMACY_MYSTERY_SHOPPER: PharmaStudyTypeConfig = {
   ],
   related: [
     ...SHARED_RELATED,
+    {
+      to: '/nielsen-alternative',
+      label: 'NielsenIQ alternative for primary research',
+      desc: 'Keep NielsenIQ for national retail / RMS. Brief a mystery shop when the panel cannot walk the store.',
+    },
     { to: '/templates/mystery-shop-retail-brief', label: 'Retail mystery-shop brief', desc: 'Grocery and traditional trade — not pharmacy.' },
   ],
 };
