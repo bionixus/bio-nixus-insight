@@ -591,6 +591,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Febrile neutropenia market research — G-CSF prophylaxis protocols, biosimilar switching, hospital pharmacy tenders, and GCC oncology supportive-care intelligence. By BioNixus.',
   },
+  '/japan-medical-disposables-market': {
+    title: 'Japan Medical Disposables Market 2026: Hospital Procurement',
+    description:
+      'Japan medical disposables market 2026 — infection-control, drapes, PPE, and procedure-pack adoption, GPO tender behaviour, and nursing workflow intelligence. By BioNixus.',
+  },
+  '/japan-neurology-devices-market': {
+    title: 'Japan Neurology Devices Market 2026: Stroke & Neurosurgery',
+    description:
+      'Japan neurology devices market 2026 — stroke intervention, neurosurgery, neuromonitoring, PMDA/NHI context, and designated-centre adoption research. By BioNixus.',
+  },
   '/uae-pricing-reimbursement-strategy': {
     title: 'UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH',
     description:

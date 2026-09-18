@@ -859,55 +859,153 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Japan Neurology Devices Market',
   title: 'Japan Neurology Devices Market Research | BioNixus',
   description:
-    'Japan neurology devices market research — neurointervention, neuromonitoring, neurosurgery capital, PMDA pathways, and hospital adoption intelligence from.',
+    'Japan neurology devices market research — stroke intervention, neurosurgery, neuromonitoring, PMDA pathways, NHI categories, and hospital adoption from BioNixus.',
   canonical: `${BASE}/japan-neurology-devices-market`,
   h1: 'Japan Neurology Devices Market: Clinical & Access Intelligence',
   intro: [
-    'Japan’s neurology devices market concentrates in stroke intervention, neurosurgery, monitoring, and implant categories inside a high-bed, aging health system. BioNixus isolates neurology from general MedTech coverage so OEMs can brief PMDA timing, NHI category issues, and hospital KOL cascades accurately.',
+    'Japan’s neurology devices market sits inside one of the world’s most stroke-burdened, aging health systems — where neurointervention, neurosurgery, neuromonitoring, and implant categories follow designated-centre protocols and proctor-heavy adoption curves. BioNixus isolates neurology from general MedTech coverage so OEMs can brief PMDA timing, NHI functional categories, and regional KOL cascades without imaging-capital noise.',
+    'Queries for “Japan neurology devices market” reflect distinct commercial intents: stroke thrombectomy and aneurysm platforms, neurosurgical navigation and monitoring, deep-brain and neuromodulation capital, and high-cost disposable lines tied to interventional suites. Each has different evidence, training, and reimbursement gates — averaging them produces forecasts leadership cannot defend.',
+    'PMDA clearance is only the first gate. Hospitals weigh NHI category placement, proctor availability, complication narratives, and capital budget cycles before high-cost neuro devices diffuse beyond flagship centres. BioNixus researches neurointerventionalists, stroke directors, neurosurgeons, biomed engineering, and procurement as separate decision cells.',
+    'Stroke network designation concentrates volume: designated centres set thrombectomy and aneurysm protocols that community hospitals reference but do not always replicate. Research must map which centres actually drive device norms regionally versus which purchase passively from group contracts.',
+    'For global neurology portfolios, Japan insight often informs Asia-Pacific sequencing and training investment. BioNixus delivers interview-backed adoption curves and objection libraries — not syndicated market tables — so medical affairs and market access teams align launch resourcing to real hospital behaviour.',
+    'Engagements typically conclude with a prioritised hospital target list, training-investment implications, and an evidence-gap memo suitable for PMDA-facing and NHI-facing workstreams — so Japan research connects directly to launch committee decisions.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
-    { name: 'Neurointerventionalist panels', detail: 'Stroke and aneurysm device choice drivers and switch barriers.' },
-    { name: 'Neurosurgery capital planning', detail: 'How hospitals prioritise neuro capital budgets.' },
-    { name: 'PMDA evidence expectations', detail: 'Clinical data and predicate strategies for neuro devices.' },
-    { name: 'NHI category implications', detail: 'Pricing category effects on disposable versus capital mixes.' },
-    { name: 'Stroke network mapping', detail: 'Which centres set protocol norms regionally.' },
-    { name: 'Competitive objection libraries', detail: 'Training and complication themes that stall share gains.' },
+    {
+      name: 'Neurointerventionalist panels',
+      detail:
+        'Stroke thrombectomy, aneurysm, and neurovascular device choice drivers, switch barriers, and training requirements.',
+    },
+    {
+      name: 'Neurosurgery capital planning',
+      detail:
+        'How hospitals prioritise navigation, monitoring, and implant platforms within neurosurgical capex cycles.',
+    },
+    {
+      name: 'PMDA evidence & predicate strategy',
+      detail:
+        'Clinical data expectations and Japan entry timing for innovative neuro platforms versus follow-on devices.',
+    },
+    {
+      name: 'NHI category implications',
+      detail:
+        'Functional classification effects on disposable versus capital revenue mix and premium positioning.',
+    },
+    {
+      name: 'Stroke network & designation mapping',
+      detail:
+        'Which designated centres set regional protocols and how community hospitals align purchasing.',
+    },
+    {
+      name: 'Proctoring & training bandwidth',
+      detail:
+        'Manufacturer field support and case proctoring as gating factors beyond regulatory approval.',
+    },
+    {
+      name: 'Competitive objection libraries',
+      detail:
+        'Complication, workflow, and cost themes that stall share gains after initial KOL use.',
+    },
+    {
+      name: 'ICU & stroke-unit pathway research',
+      detail:
+        'How emergency and ICU pathways influence device pull-through and stocking policies.',
+    },
+    {
+      name: 'Neuromonitoring & ICU capital',
+      detail:
+        'EEG, ICP, and related monitoring adoption distinct from interventional disposable volumes.',
+    },
   ],
   demandDrivers: {
-    heading: 'Demand drivers',
+    heading: 'Demand drivers in Japan neurology devices',
     drivers: [
-      { title: 'Aging stroke burden', detail: 'Demographic pressure lifts interventional volume.' },
-      { title: 'Stroke centre designation', detail: 'Network design concentrates device utilisation.' },
-      { title: 'Device lag reduction', detail: 'Faster approvals enable nearer-concurrent launches.' },
-      { title: 'Training intensity', detail: 'Proctoring bandwidth gates diffusion beyond KOLs.' },
-      { title: 'Hospital cost scrutiny', detail: 'High-cost disposables face sharper TCO review.' },
-      { title: 'Domestic OEM presence', detail: 'Japanese manufacturers shape preference baselines.' },
+      { title: 'Aging stroke burden', detail: 'Demographic pressure sustains interventional and monitoring demand.' },
+      { title: 'Stroke centre designation', detail: 'Network design concentrates device utilisation and protocol authority.' },
+      { title: 'Device-lag reduction', detail: 'Faster PMDA pathways enable nearer-concurrent Japan launches.' },
+      { title: 'Training & proctoring intensity', detail: 'Case support bandwidth gates diffusion beyond academic KOLs.' },
+      { title: 'Hospital cost scrutiny', detail: 'High-cost disposables face sharper TCO review in public systems.' },
+      { title: 'Domestic OEM presence', detail: 'Japanese manufacturers shape baseline preference and service expectations.' },
+      { title: 'Thrombectomy time metrics', detail: 'Quality indicators push centres to standardise device platforms.' },
+      { title: 'Neuromodulation expansion', detail: 'Movement disorder and pain programmes add capital categories.' },
+      { title: 'Rehabilitation linkage', detail: 'Post-acute pathways influence monitoring and implant follow-up economics.' },
+      { title: 'Asia-Pacific reference role', detail: 'Japan adoption narratives travel to affiliate markets — requiring local validation.' },
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'How Japan’s neurology devices market is structured',
     paragraphs: [
-      'Volume concentrates in designated stroke and university neurosurgery centres. Distributor technical specialists and proctors are part of the commercial system BioNixus maps alongside clinical preference.',
+      'Neurology device volume concentrates in designated stroke centres, university neurosurgery programmes, and high-volume interventional suites — not evenly across Japan’s hospital base. Commercial plans that assume national roll-out from a single KOL site routinely overstate year-one share.',
+      'Neurointervention mixes high-cost disposables with capital platforms (imaging adjuncts, navigation, monitoring). NHI functional categories influence whether hospitals treat spend as procedural consumables or depreciated capital — shaping tender behaviour and standardization committees.',
+      'Training and proctoring are part of the commercial system: distributors and manufacturer clinical specialists enable case coverage that hospitals expect before expanding indications. BioNixus maps proctor bandwidth and complication narratives alongside preference data.',
+      'Stroke pathways tie emergency medicine, neuroradiology, neurosurgery, and ICU stakeholders together. Device adoption research must include pathway owners — not only interventionalists — because stocking and protocol changes require multi-disciplinary sign-off.',
+      'Community hospitals often purchase through group contracts referencing academic protocols they cannot fully replicate clinically. Research clarifies where “listed” devices see utilisation versus shelf stock — a common gap in syndicated procedure forecasts.',
+      'For portfolio committees, Japan neurology modules should state explicit decision goals: launch sequencing, competitive defence, training ROI, or access evidence for NHI category arguments. BioNixus aligns recruitment and instruments to that single decision.',
+      'Rehabilitation and post-acute partners increasingly influence monitoring and implant follow-up economics — especially for stroke and movement-disorder programmes where readmission metrics matter. Device research that stops at the interventional suite under-estimates stocking decisions made in rehab and outpatient neurology clinics.',
+      'Radiology and hybrid OR investments can reposition neurology device pull-through when stroke teams co-locate imaging and intervention. BioNixus maps capital-committee narratives alongside clinician preference so manufacturers understand whether adoption is imaging-led, disposable-led, or training-led.',
+      'Medical device adverse-event reporting and hospital risk committees increasingly influence neuro device retention after media or registry signals — even when regulators have not restricted a product. Qualitative research captures those reputational dynamics early enough to adjust medical affairs and field training before utilisation collapses in public systems.',
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Japan neuro device planning cadence',
+    items: [
+      { period: 'Spring', detail: 'Hospital capital budget submissions; neurosurgery and stroke programmes compete for imaging and monitoring line items.' },
+      { period: 'Summer', detail: 'Proctoring calendars and conference seasons influence KOL visibility and trainee pipelines.' },
+      { period: 'Autumn', detail: 'Designated-centre reviews and quality-metric reporting can trigger protocol changes affecting device platforms.' },
+      { period: 'Year-end', detail: 'High-cost disposable contract renewals; TCO reviews intensify in public hospitals.' },
+    ],
+  },
+  signalGrid: {
+    heading: 'Neurology category signals',
+    items: [
+      { label: 'Stroke thrombectomy', signal: 'Designated-centre driven; time metrics influence platform stickiness.' },
+      { label: 'Aneurysm & neurovascular', signal: 'Proctor-heavy; complication narratives dominate switching.' },
+      { label: 'Neurosurgical navigation', signal: 'Capital cycles; biomed and OR integration are key gates.' },
+      { label: 'Neuromonitoring', signal: 'ICU and epilepsy programmes; distinct from interventional disposables.' },
+      { label: 'Neuromodulation implants', signal: 'Longer evidence and referral pathways; slower diffusion curves.' },
+      { label: 'Community hospital uptake', signal: 'Often contract-led; utilisation may lag flagship centres.' },
     ],
   },
   audiences: [
-    { audience: 'Neurointerventionalists & neurosurgeons', description: 'Primary clinical decision makers.' },
-    { audience: 'Stroke unit / ICU leads', description: 'Protocol and pathway influencers.' },
-    { audience: 'Hospital procurement', description: 'Capital and disposable contract owners.' },
-    { audience: 'Biomedical engineering', description: 'Maintenance and inventory stakeholders.' },
+    { audience: 'Neurointerventionalists', description: 'Primary owners for stroke and aneurysm device choice.' },
+    { audience: 'Neurosurgeons', description: 'Decision makers for navigation, implants, and monitoring platforms.' },
+    { audience: 'Stroke unit & ICU leads', description: 'Pathway stakeholders influencing protocol and stocking.' },
+    { audience: 'Hospital procurement', description: 'Capital and high-cost disposable contract owners.' },
+    { audience: 'Biomedical engineering', description: 'Integration, maintenance, and inventory gatekeepers.' },
+    { audience: 'Manufacturer medical affairs', description: 'Teams linking clinical evidence to adoption and training plans.' },
   ],
-  whyBionixus: SHARED_WHY,
+  whyBionixus: [
+    ...SHARED_WHY,
+    'Neuro specialty modules separate interventional, surgical, and monitoring buyer sets',
+    'Japan PMDA-to-hospital adoption research linked to Asia-Pacific portfolio planning',
+  ],
   relatedLinks: [
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
     { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
+    { to: '/japan-medical-device-market-access', label: 'Japan medical device market access' },
     { to: '/healthcare-market-research-japan', label: 'Healthcare market research Japan' },
   ],
   faqs: [
     {
       question: 'What does the Japan neurology devices market include?',
       answer:
-        'Neurointervention consumables and capital, neurosurgical instruments, neuromonitoring, and related implants — researched as a distinct decision set from broad MedTech.',
+        'Neurointervention consumables and capital, neurosurgical instruments, neuromonitoring, neuromodulation implants, and related platforms — researched as a distinct decision set from broad “medical devices” headlines.',
+    },
+    {
+      question: 'How is Japan neurology device adoption different from the US?',
+      answer:
+        'Designated stroke networks, NHI functional categories, and proctor-heavy training norms create slower but sticky adoption curves. BioNixus researches local pathway owners rather than importing US launch assumptions.',
+    },
+    {
+      question: 'Does BioNixus provide Japan neurology market size estimates?',
+      answer:
+        'We deliver stakeholder-backed adoption, switching, and access intelligence — not unverifiable syndicated dollar totals — so medical and commercial teams can defend resourcing decisions.',
+    },
+    {
+      question: 'How should OEMs prioritise Japan neurology research spend?',
+      answer:
+        'Start from the commercial decision: thrombectomy share defence, aneurysm platform launch, neuromonitoring capital, or NHI category evidence. BioNixus recruits designated-centre KOLs, community hospital buyers, and biomed/procurement only when they influence that decision — avoiding unfocused “neurologist omnibus” surveys that do not change forecasts.',
     },
   ],
   areaServed: ['Japan'],
@@ -921,55 +1019,205 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Japan Medical Disposables Market',
   title: 'Japan Medical Disposables Market Research | BioNixus',
   description:
-    'Japan medical disposables market research — hospital consumables, infection-control products, tender dynamics, and procurement behaviour intelligence from.',
+    'Japan medical disposables market research — hospital consumables, infection-control products, PMDA context, NHI procurement, and adoption intelligence from BioNixus.',
   canonical: `${BASE}/japan-medical-disposables-market`,
   h1: 'Japan Medical Disposables Market: Procurement & Adoption Intelligence',
   intro: [
-    'Japan’s medical disposables market is high-volume, committee-governed, and sensitive to infection-control standards and total cost. BioNixus researches nursing, infection control, and procurement stakeholders to show which SKUs earn formulary permanency versus perpetual trial status.',
+    'Japan’s medical disposables market is one of the world’s highest-volume hospital consumable economies — governed by infection-control standards, nursing workflow committees, and group-purchasing contracts rather than retail shelf competition. BioNixus researches infection-control leads, ward nursing managers, and hospital procurement to show which SKUs earn permanent formulary status versus perpetual “trial” limbo.',
+    'Teams searching “Japan medical disposables market” usually need adoption intelligence, not a syndicated dollar total: which drapes, antiseptics, procedure packs, and PPE lines survive standardization reviews, how dual-source rules behave after a tender award, and where private university hospitals diverge from public group-purchasing behaviour.',
+    'Unlike capital MedTech, disposables volume is won or lost on nursing usability, infection-prevention credibility, and distributor service levels. A product can clear PMDA notification yet fail if setup time adds minutes to turnover, if packaging confuses sterile field rules, or if procurement cannot reconcile unit economics with mandated quality indicators.',
+    'BioNixus programmes map decision cells explicitly — infection control sets policy, nursing managers veto poor workflow, procurement owns contracts — then field-tests switching barriers, training burden, and sustainability criteria that increasingly appear in Japanese hospital evaluations.',
+    'For global OEMs, Japan disposables research also informs GCC and Asia-Pacific affiliate strategy when Japanese manufacturing credentials or quality narratives are used in Gulf tenders. BioNixus can link Japan preference drivers to export-facing dossiers only when local Japanese stakeholder interviews support those claims.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
-    { name: 'Infection-control product research', detail: 'PPE, drapes, and antiseptic category choice drivers.' },
-    { name: 'Ward nursing preference studies', detail: 'Usability and workflow friction on high-turn SKUs.' },
-    { name: 'Hospital tender intelligence', detail: 'How standardization and dual-source rules operate.' },
-    { name: 'Private vs public account mix', detail: 'Where volume and margin actually concentrate.' },
-    { name: 'Competitive switching barriers', detail: 'Training, kit design, and contract lock-ins.' },
-    { name: 'GCC export linkage', detail: 'When Japanese disposable credentials travel into Gulf tenders.' },
+    {
+      name: 'Infection-control product research',
+      detail:
+        'PPE, drapes, antiseptics, and sterilization-adjacent categories — how hospital QI programmes set acceptable brands and when exceptions are granted.',
+    },
+    {
+      name: 'Ward nursing preference studies',
+      detail:
+        'Usability, packaging, and setup friction on high-turn SKUs; qualitative work that explains why nurses retain legacy products despite lower list price.',
+    },
+    {
+      name: 'Hospital tender & GPO intelligence',
+      detail:
+        'Standardization rules, dual-source policies, and service-level expectations after group-purchasing awards.',
+    },
+    {
+      name: 'Private vs public account mix',
+      detail:
+        'Where margin and volume concentrate across university hospitals, community hospitals, and clinic chains.',
+    },
+    {
+      name: 'Competitive switching barriers',
+      detail:
+        'Training, kit redesign, sterilization compatibility, and contractual lock-ins that delay share gains after listing.',
+    },
+    {
+      name: 'Sustainability & green procurement',
+      detail:
+        'Emerging environmental scoring in evaluations and how it interacts with infection-control non-negotiables.',
+    },
+    {
+      name: 'Procedure-pack customisation',
+      detail:
+        'How OR and ward committees approve pack composition changes and who blocks SKU rationalisation.',
+    },
+    {
+      name: 'Distributor service benchmarking',
+      detail:
+        'Logistics, stock-out response, and field training as differentiators once unit prices converge.',
+    },
+    {
+      name: 'PMDA notification & labelling',
+      detail:
+        'How classification and labelling affect hospital acceptance for new disposable formats.',
+    },
   ],
   demandDrivers: {
-    heading: 'Demand drivers',
+    heading: 'Demand drivers in Japan medical disposables',
     drivers: [
-      { title: 'Infection prevention standards', detail: 'Hospital QI programmes sustain premium disposables demand.' },
-      { title: 'Nursing workflow pressure', detail: 'Usability often outweighs small unit-price gaps.' },
-      { title: 'Central tendering', detail: 'Group purchasing compresses net prices and raises service expectations.' },
-      { title: 'Aging inpatient volumes', detail: 'Bed utilisation keeps baseline consumable demand elevated.' },
-      { title: 'Domestic manufacturing', detail: 'Japanese suppliers remain default referents for many categories.' },
-      { title: 'Sustainability scrutiny', detail: 'Green procurement criteria begin to appear in evaluations.' },
+      {
+        title: 'Infection prevention standards',
+        detail: 'Hospital quality indicators sustain premium disposables where clinical risk is visible to leadership.',
+      },
+      {
+        title: 'Nursing workflow pressure',
+        detail: 'Usability and setup time often outweigh small per-unit price gaps on busy wards.',
+      },
+      {
+        title: 'Central tendering & GPO consolidation',
+        detail: 'Group contracts compress net prices and raise expectations for service and training.',
+      },
+      {
+        title: 'Aging inpatient volumes',
+        detail: 'High bed utilisation keeps baseline consumable demand elevated across categories.',
+      },
+      {
+        title: 'Domestic manufacturing referents',
+        detail: 'Japanese suppliers shape default quality expectations for many SKU classes.',
+      },
+      {
+        title: 'Sustainability scrutiny',
+        detail: 'Green procurement criteria increasingly appear alongside infection-control requirements.',
+      },
+      {
+        title: 'Post-pandemic stock policies',
+        detail: 'Dual sourcing and buffer stock rules still influence brand loyalty years after COVID-era shortages.',
+      },
+      {
+        title: 'Outpatient & day-surgery growth',
+        detail: 'Ambulatory sites use different pack sizes and PPE mixes than inpatient towers.',
+      },
+      {
+        title: 'Tourism-linked private demand',
+        detail: 'Premium private hospitals may retain differentiated disposables lines versus public standardization.',
+      },
+      {
+        title: 'Export-facing quality narratives',
+        detail: 'Some manufacturers use Japan hospital references in Asia and GCC tenders — claims that require local validation.',
+      },
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'How Japan’s medical disposables market is structured',
     paragraphs: [
-      'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them.',
+      'Hospital disposables in Japan are committee-governed: infection-control policy sets acceptable categories, nursing leadership validates workflow, and procurement implements standardization through group contracts. A SKU can be clinically acceptable yet fail commercially if any lane objects during a renewal cycle.',
+      'Volume concentrates in high-turn categories — drapes, gowns, gloves, antiseptics, suction liners, and procedure packs — where small usability differences compound across thousands of uses per month. Research that averages “hospital opinion” misses the veto power of ward managers who control daily practice.',
+      'Public and large private systems increasingly use group purchasing to enforce dual-source rules. After an award, switching often requires proof of equivalent infection outcomes and nurse training bandwidth. BioNixus maps those post-tender gates so launch forecasts do not assume instant share capture.',
+      'Domestic manufacturers remain influential referents for quality and reliability, especially where hospitals prioritise supply continuity. Multinational entrants must research not only price but also distributor field support, Japanese-language training materials, and compatibility with existing sterilization workflows.',
+      'Sustainability criteria are entering evaluations, but infection-control teams frequently treat them as secondary to patient-safety metrics. Successful suppliers research how hospitals trade off recyclable packaging against established sterile-barrier performance — a trade-off that differs by ward type.',
+      'For medtech portfolio teams, Japan disposables insight should connect to capital and reusable instrument strategy: standardization committees often negotiate bundles across categories. BioNixus can align disposable research modules with surgical device programmes when clients need a single hospital narrative.',
+      'Seasonal and outbreak-driven demand spikes still reshape stocking policies: influenza seasons, norovirus clusters, and regional infection events can temporarily override standardization lists. Manufacturers who only research “steady state” tender behaviour miss the exception pathways infection-control teams use during crises — pathways that often become permanent dual-source rules afterward.',
+      'Clinic chains and dialysis-centre networks represent a parallel disposable economy with different pack sizes, reimbursement incentives, and nursing ratios than acute hospitals. BioNixus segments acute, ambulatory, and long-term care modules so clients do not treat Japan as a single homogeneous account map.',
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Typical Japan hospital evaluation rhythm',
+    items: [
+      { period: 'Q1–Q2', detail: 'Infection-control policy refresh and PPE framework reviews after winter respiratory season.' },
+      { period: 'Mid-year', detail: 'OR and ward standardization projects; procedure-pack rationalisation often stalls without nursing sign-off.' },
+      { period: 'Q3–Q4', detail: 'Group-purchasing renewals and dual-source negotiations; distributor service scorecards influence awards.' },
+      { period: 'Ongoing', detail: 'Supply shock responses can bypass standard lists — research should capture exception criteria.' },
+    ],
+  },
+  signalGrid: {
+    heading: 'Category and channel signals',
+    items: [
+      {
+        label: 'Infection-control PPE',
+        signal: 'Policy-driven; switches follow outbreak memory and QI metric pressure.',
+      },
+      {
+        label: 'Surgical drapes & gowns',
+        signal: 'OR committee standardization; nurse setup time is a primary switch barrier.',
+      },
+      {
+        label: 'Antiseptics & prep',
+        signal: 'Formulary stability high unless clinical controversy or supply shock.',
+      },
+      {
+        label: 'Procedure packs',
+        signal: 'Custom pack logic varies by hospital; rationalisation projects are politically sensitive.',
+      },
+      {
+        label: 'University hospitals',
+        signal: 'Earlier access to novel formats; KOL preference cascades to community sites slowly.',
+      },
+      {
+        label: 'Community hospitals',
+        signal: 'Price and service dominate; fewer exceptions to GPO standard lists.',
+      },
     ],
   },
   audiences: [
-    { audience: 'Infection-control leads', description: 'Policy gatekeepers for many disposable categories.' },
-    { audience: 'Ward nursing managers', description: 'Daily users who veto poor workflow products.' },
-    { audience: 'Hospital procurement', description: 'Contract and standardization owners.' },
-    { audience: 'Distributor partners', description: 'Logistics and service intermediaries.' },
+    { audience: 'Infection-control leads', description: 'Policy gatekeepers for PPE, drapes, and antiseptic categories.' },
+    { audience: 'Ward & OR nursing managers', description: 'Daily users who approve or block workflow changes.' },
+    { audience: 'Hospital procurement / GPO liaisons', description: 'Contract, dual-source, and standardization owners.' },
+    { audience: 'Operating room directors', description: 'Stakeholders for pack composition and turnover metrics.' },
+    { audience: 'Distributor clinical specialists', description: 'Training and service intermediaries who shape adoption speed.' },
+    { audience: 'Medtech portfolio & marketing', description: 'Teams linking Japan evidence to Asia-Pacific launch narratives.' },
   ],
-  whyBionixus: SHARED_WHY,
+  whyBionixus: [
+    ...SHARED_WHY,
+    'Japan hospital modules that separate infection control, nursing, and procurement findings',
+    'Experience across Asia-Pacific disposables and GCC tender research for export-facing claims',
+  ],
   relatedLinks: [
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
     { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
+    { to: '/japan-medical-device-market-access', label: 'Japan medical device market access' },
+    { to: '/healthcare-market-research-japan', label: 'Healthcare market research Japan' },
     { to: '/gcc-medical-devices-market-report', label: 'GCC medical devices market report' },
   ],
   faqs: [
     {
       question: 'What is included in Japan medical disposables research?',
       answer:
-        'High-turn hospital consumables — infection-control products, procedure packs, and related single-use categories — researched through nursing, infection control, and procurement lenses.',
+        'High-turn hospital consumables — infection-control products, drapes, gowns, antiseptics, procedure packs, and related single-use categories — researched through infection control, nursing, and procurement stakeholders rather than retail syndicated tables.',
+    },
+    {
+      question: 'How do Japanese hospitals choose disposable suppliers?',
+      answer:
+        'Through infection-control policy, nursing workflow validation, and group-purchasing contracts. BioNixus interviews each lane so forecasts reflect veto points, not averaged “hospital satisfaction” scores.',
+    },
+    {
+      question: 'Does BioNixus publish Japan medical disposables market size?',
+      answer:
+        'We focus on decision-led primary research — adoption, switching, and tender behaviour — and avoid unverifiable headline dollar totals. Clients receive evidence tied to named stakeholder types and care settings.',
+    },
+    {
+      question: 'Can Japan disposables research support GCC tenders?',
+      answer:
+        'When Japanese hospital references are used in export dossiers, BioNixus validates preference drivers locally so affiliate teams do not over-claim Japan adoption in Gulf procurement submissions.',
+    },
+    {
+      question: 'What methodology does BioNixus use for Japan hospital disposables?',
+      answer:
+        'Mixed-mode primary research: verified infection-control and nursing interviews, procurement and GPO liaison discussions, and optional workflow observation in agreed sites. Instruments are designed for Japanese hospital governance — not translated US surveys — and outputs include switching barriers, training burden, and tender timing tied to named stakeholder types.',
     },
   ],
   areaServed: ['Japan'],
