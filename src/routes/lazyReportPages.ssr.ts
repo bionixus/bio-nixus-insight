@@ -57,6 +57,7 @@ export { default as SegmentMarketRoute } from '@/pages/SegmentMarketRoute';
 export { default as BlogPost } from '@/pages/BlogPost';
 export { default as CaseStudy } from '@/pages/CaseStudy';
 export { default as PressReleasePage } from '@/pages/PressReleasePage';
+export { default as VideoWatchPage } from '@/pages/VideoWatchPage';
 
 export { default as UaePharmaCompanies } from '@/pages/UaePharmaCompanies';
 export { default as DubaiPharmaCompanies } from '@/pages/DubaiPharmaCompanies';

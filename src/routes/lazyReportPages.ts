@@ -60,6 +60,7 @@ export const SegmentMarketRoute = lazy(() => import('@/pages/SegmentMarketRoute'
 export const BlogPost = lazy(() => import('@/pages/BlogPost'));
 export const CaseStudy = lazy(() => import('@/pages/CaseStudy'));
 export const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
+export const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
 
 export const UaePharmaCompanies = lazy(() => import('@/pages/UaePharmaCompanies'));
 export const DubaiPharmaCompanies = lazy(() => import('@/pages/DubaiPharmaCompanies'));

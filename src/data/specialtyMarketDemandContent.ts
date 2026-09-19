@@ -24,6 +24,8 @@ export type SpecialtyMarketDemandContent = {
   whyBionixus: string[];
   relatedLinks: Array<{ to: string; label: string }>;
   faqs: Array<{ question: string; answer: string }>;
+  executionModules?: { heading: string; modules: Array<{ name: string; detail: string }> };
+  insights?: { heading: string; paragraphs: string[] };
   areaServed?: string[];
   priority: 'now' | 'next' | 'later';
 };
@@ -926,15 +928,43 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
   h1: 'Japan Medical Disposables Market: Procurement & Adoption Intelligence',
   intro: [
     'Japan’s medical disposables market is high-volume, committee-governed, and sensitive to infection-control standards and total cost. BioNixus researches nursing, infection control, and procurement stakeholders to show which SKUs earn formulary permanency versus perpetual trial status.',
+    'Queries such as “Japan medical disposables market” and “Japan general surgical devices market” often arrive together because buyers want to know whether a SKU wins on infection-control policy, nursing workflow, or tender standardization — not on a syndicated category total. We map those decision lanes with primary interviews across acute hospitals, university centres, and private chains, then connect findings to broader Japan MedTech access work when PMDA or NHI context matters.',
+    'For manufacturers exporting Japanese-made disposables into GCC tenders, origin-of-manufacture and quality-system evidence frequently travels with the product story. BioNixus can link Japan disposable modules to GCC medical devices research when hospital procurement in the Gulf scores Japanese suppliers differently from EU or US alternatives.',
+    'OEM and distributor teams frequently need Japan-specific cuts before they commit capacity or pricing to a Gulf bid. We interview the same stakeholder types — infection control, nursing, procurement — with guides tuned to the SKU cluster you are launching, not a generic MedTech overview.',
+    'Desk reports that cite Japan disposable “market size” without committee detail routinely mis-size opportunity. This page documents BioNixus primary research coverage for high-turn hospital consumables so commercial leaders can brief affiliates with evidence, not extrapolation.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
-    { name: 'Infection-control product research', detail: 'PPE, drapes, and antiseptic category choice drivers.' },
-    { name: 'Ward nursing preference studies', detail: 'Usability and workflow friction on high-turn SKUs.' },
-    { name: 'Hospital tender intelligence', detail: 'How standardization and dual-source rules operate.' },
-    { name: 'Private vs public account mix', detail: 'Where volume and margin actually concentrate.' },
-    { name: 'Competitive switching barriers', detail: 'Training, kit design, and contract lock-ins.' },
-    { name: 'GCC export linkage', detail: 'When Japanese disposable credentials travel into Gulf tenders.' },
+    {
+      name: 'Infection-control product research',
+      detail:
+        'PPE, drapes, antiseptic, and sterilization-adjacent categories — researched through infection-control committees and QI programmes that sustain premium disposables demand.',
+    },
+    {
+      name: 'Ward nursing preference studies',
+      detail:
+        'Usability, packaging, and workflow friction on high-turn SKUs where nursing veto power outweighs small unit-price gaps.',
+    },
+    {
+      name: 'Hospital tender intelligence',
+      detail:
+        'How group purchasing, dual-source rules, and standardization cycles compress net price and raise service expectations.',
+    },
+    {
+      name: 'Private vs public account mix',
+      detail:
+        'Where volume and margin concentrate across DPC hospitals, private chains, and specialty centres — not national averages.',
+    },
+    {
+      name: 'Competitive switching barriers',
+      detail:
+        'Training, kit design, contract lock-ins, and distributor service levels that defend incumbents after tender awards.',
+    },
+    {
+      name: 'GCC export linkage',
+      detail:
+        'When Japanese disposable credentials and quality documentation strengthen Gulf hospital shortlists — and when they do not.',
+    },
   ],
   demandDrivers: {
     heading: 'Demand drivers',
@@ -948,32 +978,194 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'How Japan’s medical disposables market is structured',
     paragraphs: [
-      'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them.',
+      'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them into a single “hospital buyer” persona.',
+      'Japan’s aging inpatient base keeps baseline consumable demand elevated, while central tendering and group purchasing compress net prices and raise expectations for supply reliability and training support. Domestic manufacturers remain default referents in many categories; imported SKUs must clear documentation and service hurdles beyond list price.',
+      'BioNixus scopes disposable research to the SKU cluster under evaluation — infection control, procedure packs, wound care, or specialty kits — and maps the coalition that must agree before a product moves from trial to standardization.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Japan disposable adoption signals',
+    items: [
+      {
+        label: 'Infection-control standards',
+        signal: 'Hospital QI programmes and accreditation pressure sustain premium disposables even when unit costs rise.',
+      },
+      {
+        label: 'Nursing workflow fit',
+        signal: 'Poor packaging or handling steps trigger ward-level vetoes despite tender awards.',
+      },
+      {
+        label: 'Group purchasing cycles',
+        signal: 'Standardization waves reset share; incumbents defend with training and dual-source contracts.',
+      },
+      {
+        label: 'Sustainability criteria',
+        signal: 'Green procurement clauses increasingly appear in evaluations for high-volume disposables.',
+      },
+    ],
+  },
+  calendarBlocks: {
+    heading: 'When to run disposable research in Japan',
+    items: [
+      {
+        period: 'Pre-tender standardization',
+        detail: 'Interview nursing and infection-control leads before hospital groups lock SKU lists for the next cycle.',
+      },
+      {
+        period: 'Post-award rollout',
+        detail: 'Track training burden, stock-outs, and ward pushback in the first months after a group award.',
+      },
+      {
+        period: 'Export / GCC dossier build',
+        detail: 'Validate which Japanese quality narratives hospital procurement in the Gulf will accept before bid submission.',
+      },
     ],
   },
   audiences: [
-    { audience: 'Infection-control leads', description: 'Policy gatekeepers for many disposable categories.' },
-    { audience: 'Ward nursing managers', description: 'Daily users who veto poor workflow products.' },
-    { audience: 'Hospital procurement', description: 'Contract and standardization owners.' },
-    { audience: 'Distributor partners', description: 'Logistics and service intermediaries.' },
+    {
+      audience: 'Infection-control leads',
+      description: 'Policy gatekeepers for PPE, drapes, antiseptics, and sterilization-adjacent categories.',
+    },
+    {
+      audience: 'Ward nursing managers',
+      description: 'Daily users who veto products that add steps or compromise infection-control workflows.',
+    },
+    {
+      audience: 'Hospital procurement',
+      description: 'Contract, dual-source, and standardization owners across acute and private systems.',
+    },
+    {
+      audience: 'Distributor partners',
+      description: 'Logistics, training, and service intermediaries that defend share after tender change.',
+    },
   ],
-  whyBionixus: SHARED_WHY,
+  whyBionixus: [
+    ...SHARED_WHY,
+    'Japan hospital disposable research with nursing and infection-control depth',
+    'Group purchasing and standardization intelligence timed to real award cycles',
+    'Export narrative validation before GCC bids rely on Japanese quality claims',
+    'Cross-link to Japan MedTech and Gulf device modules when tenders span regions',
+    'Proposal within 48 hours of a brief naming SKU clusters, cities, and decision dates',
+    'Interview guides co-signed with your Japan affiliate medical and marketing leads before fieldwork starts',
+    'Board-ready readouts with clear owners for nursing, infection-control, and procurement follow-ups',
+    'Feasibility confirmed within 48 hours once cities, hospital types, and SKU scope are named in the brief',
+    'Primary research only — no syndicated Japan disposable revenue tables sold on this page',
+  ],
   relatedLinks: [
     { to: '/japan-general-surgical-devices-market', label: 'Japan general surgical devices market' },
+    { to: '/japan-neurology-devices-market', label: 'Japan neurology devices market' },
     { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
+    { to: '/healthcare-market-research-japan', label: 'Healthcare market research Japan' },
     { to: '/gcc-medical-devices-market-report', label: 'GCC medical devices market report' },
   ],
+  insights: {
+    heading: 'What forecasts get wrong in Japan disposables',
+    paragraphs: [
+      'Category totals hide standardization waves: a group award can shift share overnight while national averages look flat. Research timed to purchasing cycles beats annual syndicated refreshes.',
+      'Nursing veto power is under-modelled in many forecasts. A SKU that wins infection-control approval still fails if ward nurses reject packaging or handling steps — especially in high-turn categories.',
+      'Domestic incumbents set trust baselines importers must overcome with service and documentation, not price alone. Primary interviews reveal which quality narratives actually move committee votes.',
+      'Private hospital chains and acute public hospitals do not share the same disposable mix. Averaging them produces launch plans that chase the wrong reference accounts.',
+      'Exporters often assume Japanese credentials automatically strengthen GCC bids. Hospital procurement in the Gulf scores origin, quality system, and dual-source reliability differently — worth validating before tender submission.',
+      'Sustainability and waste-reduction criteria are entering evaluations for high-volume disposables. Early qualitative work with infection-control and procurement teams prevents late-stage disqualification on environmental grounds.',
+      'Distributor service levels — stock reliability, training, and emergency supply — frequently defend incumbents after tenders close on price. Those themes are visible in primary research but absent from desk reports.',
+      'Capital and disposable bundles sometimes move together in OR and ICU categories. When a launch spans both, BioNixus can link disposable modules to Japan surgical or neurology device work on the same account list.',
+      'Start disposable research before the next group standardization vote — not after a tender loss — when you still have time to influence SKU lists and training plans.',
+      'Combine nursing and infection-control interviews in the same wave when possible; divergent answers between those groups predict post-award rollout risk.',
+      'Use Japan findings to brief GCC bid teams only after validating which quality narratives Gulf procurement actually scores — export assumptions fail quietly.',
+      'Contact BioNixus for a Japan disposables proposal naming target cities, hospital types, and SKU clusters — response within 48 hours of a complete brief.',
+      'We do not publish unaudited Japan disposable market revenue totals on this page; decision intelligence comes from verified hospital stakeholders.',
+      'Link to /healthcare-market-research-japan and /japan-medical-devices-market-report for broader Japan programmes; this page stays focused on disposable procurement and adoption.',
+      'Standardization committees often meet on quarterly cadences — align fieldwork recruitment with those dates so interviews reflect the list under active debate, not last year’s formulary.',
+      'Request a proposal via /contact when your Japan disposable launch or tender date is fixed.',
+      'BioNixus healthcare market research hub: /healthcare-market-research for programme design context.',
+    ],
+  },
+  executionModules: {
+    heading: 'Typical Japan medical disposables research modules',
+    modules: [
+      {
+        name: 'SKU cluster scoping',
+        detail:
+          'Define the disposable category under evaluation — infection control, procedure packs, wound care, or specialty kits — before fieldwork so buyer sets stay comparable.',
+      },
+      {
+        name: 'Infection-control committee interviews',
+        detail:
+          'Capture policy gates, accreditation drivers, and documentation requirements that sustain premium disposables even when unit costs rise.',
+      },
+      {
+        name: 'Ward workflow ethnography',
+        detail:
+          'Observe or interview nursing leads on packaging, handling steps, and disposal friction that trigger vetoes despite tender awards.',
+      },
+      {
+        name: 'Group purchasing intelligence',
+        detail:
+          'Map standardization waves, dual-source rules, and distributor service expectations across acute and private chains.',
+      },
+      {
+        name: 'Competitive switch post-mortems',
+        detail:
+          'Win/loss with procurement on why incumbents retain share after price gaps — training, kit design, and uptime often matter more than list price.',
+      },
+      {
+        name: 'Export narrative validation',
+        detail:
+          'Test which Japanese quality and origin stories hospital buyers in the Gulf accept before bid teams rely on them in GCC tenders.',
+      },
+    ],
+  },
   faqs: [
     {
       question: 'What is included in Japan medical disposables research?',
       answer:
         'High-turn hospital consumables — infection-control products, procedure packs, and related single-use categories — researched through nursing, infection control, and procurement lenses.',
     },
+    {
+      question: 'How is Japan different from other MedTech disposable markets?',
+      answer:
+        'Committee governance, nursing veto power, and group purchasing standardization dominate — more than retail-style brand awareness. BioNixus maps those committees rather than extrapolating from US or EU panels.',
+    },
+    {
+      question: 'Can disposable research link to surgical device work?',
+      answer:
+        'Yes. Many buyers evaluate disposables alongside surgical kits and capital platforms. We cross-link to Japan general surgical devices and neurology device modules when pathways overlap.',
+    },
+    {
+      question: 'Does BioNixus publish Japan disposable market size figures?',
+      answer:
+        'We focus on decision intelligence from primary stakeholders. Any illustrative sizing is labelled and sourced per BioNixus content standards — we do not present unaudited syndicated totals as facts.',
+    },
+    {
+      question: 'When should exporters run Japan disposable research before GCC bids?',
+      answer:
+        'Before hospital shortlist submission when origin-of-manufacture and quality documentation are scored — typically alongside GCC medical devices tender modules.',
+    },
+    {
+      question: 'How long does Japan disposable research take?',
+      answer:
+        'A focused nursing and infection-control module in acute hospitals typically runs eight to twelve weeks including recruitment and synthesis. Multi-city programmes covering Tokyo, Osaka, and regional centres extend timelines — feasibility is confirmed in the proposal.',
+    },
+    {
+      question: 'Do you interview distributors in Japan?',
+      answer:
+        'Yes, when logistics, training, and service levels are on the critical path — especially for imported SKUs competing with domestic incumbents after tender awards.',
+    },
+    {
+      question: 'Can this link to PMDA or NHI work?',
+      answer:
+        'Disposable research is commercial and pathway-focused. When access questions arise, we cross-reference Japan MedTech report modules rather than mixing regulatory consulting into fieldwork.',
+    },
+    {
+      question: 'What languages are supported?',
+      answer:
+        'Japanese interviews with bilingual synthesis for global affiliates are standard. English-only programmes are possible when stakeholders agree; scope is confirmed at proposal stage.',
+    },
   ],
   areaServed: ['Japan'],
-  priority: 'next',
+  priority: 'now',
 };
 
 const japanMedtechAccessAutomation: SpecialtyMarketDemandContent = {
@@ -1175,6 +1367,10 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
   h1: 'Febrile Neutropenia Market: Supportive-Care & Protocol Intelligence',
   intro: [
     'The febrile neutropenia market is driven by oncology regimen intensity, hospital prophylaxis protocols, and biosimilar G-CSF competition more than consumer awareness. BioNixus researches oncologists, oncology pharmacists, and tender stakeholders to forecast switching and protocol stickiness — including Gulf hospital settings where supportive-care injectables move through frameworks.',
+    'Search interest in “febrile neutropenia market” and G-CSF sizing usually masks a commercial question: which prophylaxis pathway will your hospital or tender actually use after the next guideline update or biosimilar award — and whether filgrastim, pegfilgrastim, or long-acting alternatives keep share when pharmacies enforce substitution. Our programmes separate primary versus secondary prophylaxis decisions, inpatient FN management, and framework economics so forecasts are tied to protocol owners rather than syndicated averages.',
+    'For affiliates running GCC oncology launches, FN risk is the bridge between myelosuppressive regimens and supportive-care revenue. We link FN modules to oncology hub work, generic injectable tender intelligence, and real-world evidence when payers ask whether prophylaxis reduces admission burden — without inventing dollar totals that cannot be traced to a named source.',
+    'Brand teams often ask for a single “G-CSF market size” when the real decision is prophylaxis positioning for one regimen in one country. BioNixus scopes interviews to that regimen’s risk category, the hospitals that matter for launch, and the pharmacy policies that will enforce substitution — then delivers a narrative leadership can use in access and commercial forums the same quarter.',
+    'If your search landed here from a forecast report or syndicated chart, treat those figures as context only. This page explains how BioNixus researches febrile neutropenia and supportive-care injectables with primary stakeholders — the method behind credible launch and tender decisions.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1197,32 +1393,200 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'How the febrile neutropenia market is structured',
     paragraphs: [
-      'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'FN markets are protocol- and tender-shaped, not retail-shaped. Prophylaxis sits in oncology pathways; product choice is often locked in hospital pharmacy policies, tender awards, or dual-source rules before a rep reaches the ward. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions rather than blending them into a single “G-CSF market” number.',
+      'Globally, filgrastim and pegfilgrastim biosimilars compress net price while guidelines shift which regimens qualify for primary prophylaxis. In the Gulf, supportive-care injectables frequently move through centralized frameworks alongside other oncology ancillaries — so the same brand can win clinically in one emirate and lose economically in a national tender cycle. Research must map both lanes.',
+      'Manufacturers should scope FN work to the decision on the critical path: protocol amendment, pharmacy substitution, tender re-bid, or outpatient day-clinic workflow. BioNixus designs modules accordingly and links findings to oncology, tender, and access pages on this site when those decisions interact.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Clinical and procurement signals',
+    items: [
+      {
+        label: 'Primary prophylaxis thresholds',
+        signal:
+          'Society guidance and local protocol committees set which regimens trigger G-CSF — the main volume lever before brand preference matters.',
+      },
+      {
+        label: 'Pharmacy substitution policy',
+        signal:
+          'Hospital pharmacies often enforce biosimilar switches at tender change regardless of physician brand loyalty.',
+      },
+      {
+        label: 'Inpatient FN pathways',
+        signal:
+          'Admission, antibiotic, and growth-factor escalation rules affect secondary-use brands and length-of-stay narratives.',
+      },
+      {
+        label: 'GCC framework cycles',
+        signal:
+          'NUPCO and hospital-group awards can reset supportive-care injectable share independently of EU or US launch timing.',
+      },
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Planning windows for FN research',
+    items: [
+      {
+        period: 'Pre-protocol amendment',
+        detail:
+          'Interview oncologists and pharmacists before a pathway change is ratified — when prophylaxis criteria are still negotiable.',
+      },
+      {
+        period: 'Pre-tender submission',
+        detail:
+          'Win/loss and pricing research with procurement and pharmacy before framework bids for G-CSF or bundled oncology ancillaries.',
+      },
+      {
+        period: 'Post-biosimilar award',
+        detail:
+          'Track substitution friction, nursing administration issues, and physician pushback in the first two tender cycles after a switch.',
+      },
+      {
+        period: 'Launch adjacency',
+        detail:
+          'When a new myelosuppressive regimen enters a market, run FN risk and prophylaxis uptake modules alongside the regimen’s oncology research.',
+      },
     ],
   },
   audiences: [
-    { audience: 'Medical oncologists', description: 'Protocol decision owners.' },
-    { audience: 'Oncology pharmacists', description: 'Substitution and tender influencers.' },
-    { audience: 'Hospital infectious disease', description: 'Admission pathway stakeholders.' },
-    { audience: 'Procurement / tenders', description: 'Framework and award decision makers.' },
+    {
+      audience: 'Medical oncologists',
+      description: 'Protocol decision owners who set prophylaxis criteria and regimen intensity.',
+    },
+    {
+      audience: 'Oncology pharmacists',
+      description: 'Substitution, tender, and inventory influencers who enforce framework awards.',
+    },
+    {
+      audience: 'Hospital infectious disease',
+      description: 'Admission pathway stakeholders for febrile neutropenia management and antibiotic choice.',
+    },
+    {
+      audience: 'Procurement / tenders',
+      description: 'Framework and award decision makers for supportive-care injectables in public systems.',
+    },
   ],
-  whyBionixus: SHARED_WHY,
+  whyBionixus: [
+    ...SHARED_WHY,
+    'FN studies scoped to named hospitals, regimens, and tender windows — not national averages',
+    'Oncology pharmacist and ID stakeholder recruitment with verified credentials',
+    'Bilingual GCC fieldwork when supportive-care injectables move through frameworks',
+    'Synthesis formatted for access, medical, and commercial committees in the same readout',
+  ],
   relatedLinks: [
     { to: '/mek-inhibitors-market', label: 'MEK inhibitors market access' },
     { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
     { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research' },
     { to: '/market-reports/gcc-oncology-market-report', label: 'GCC oncology market report' },
+    { to: '/real-world-evidence', label: 'Real world evidence' },
+    { to: '/gcc-clinical-trials-market', label: 'GCC clinical trials market' },
   ],
+  insights: {
+    heading: 'What forecasts get wrong in febrile neutropenia',
+    paragraphs: [
+      'Syndicated sizing often treats G-CSF as one market even though prophylaxis, secondary use, and tender-driven substitution follow different rules. A forecast that ignores pharmacy substitution will overstate originator share within a year of a biosimilar award.',
+      'Guideline changes move prophylaxis thresholds faster than sales teams update account plans. Research with protocol owners before a society update lands locally prevents launch models from using outdated prophylaxis rates.',
+      'In the Gulf, supportive-care injectables can be awarded in bundles that have little to do with EU analogues. Teams that import US or EU uptake curves without tender research routinely miss step-changes after NUPCO or hospital-group decisions.',
+      'Nursing and day-clinic workflow can block uptake even when formulary lists a brand. Device convenience, scheduling, and training are researchable — and often decide whether a tender win becomes ward reality.',
+      'Medical affairs narratives on length-of-stay or admission reduction need local validation. BioNixus tests those claims with hospital stakeholders so access dossiers and sales stories stay aligned with how FN is actually managed.',
+      'Competitive messaging on safety and convenience should be tested with both oncologists and pharmacists — the two groups often weight attributes differently when substitution is on the table.',
+      'Launch sequencing should align FN modules with the oncology regimen’s pathway work. Prophylaxis uptake follows regimen adoption; researching FN in isolation produces forecasts that lag real-world uptake by a quarter or more.',
+      'For affiliates comparing filgrastim, pegfilgrastim, and long-acting options, account-level research clarifies where device and scheduling advantages matter versus where tender price dominates — a split syndicated data rarely exposes.',
+      'Request a scoped proposal when your committee date, tender lot, or protocol vote is inside two quarters — that is when FN research changes decisions instead of documenting last year’s share.',
+      'Email admin@bionixus.com or use the contact form below for a febrile neutropenia briefing scoped to your countries and brands.',
+      'BioNixus does not sell syndicated G-CSF tapes; we sell primary research your committees can act on the same quarter.',
+    ],
+  },
+  executionModules: {
+    heading: 'Typical febrile neutropenia research modules',
+    modules: [
+      {
+        name: 'Protocol and prophylaxis mapping',
+        detail:
+          'Document primary versus secondary prophylaxis criteria by tumour type and regimen intensity, then test which brands survive committee review when guidelines shift.',
+      },
+      {
+        name: 'Pharmacy substitution and tender win/loss',
+        detail:
+          'Interview oncology pharmacists and procurement on biosimilar switches, dual-source policies, and the service attributes that defend originators after award.',
+      },
+      {
+        name: 'Inpatient FN pathway review',
+        detail:
+          'Map admission triggers, antibiotic pathways, and growth-factor escalation with infectious-disease and ward stakeholders when secondary-use brands are in play.',
+      },
+      {
+        name: 'Nursing administration and device preference',
+        detail:
+          'Capture workflow friction on pegfilgrastim devices, scheduling in day clinics, and training burden that can undo tender decisions at the ward level.',
+      },
+      {
+        name: 'GCC framework alignment',
+        detail:
+          'Time research to NUPCO or hospital-group cycles so pricing and pull-through assumptions match the next framework window, not last year’s award.',
+      },
+      {
+        name: 'Message and evidence testing',
+        detail:
+          'Test safety, convenience, supply, and length-of-stay narratives with oncologists and pharmacists before medical affairs scales claims nationally.',
+      },
+    ],
+  },
   faqs: [
     {
       question: 'What drives the febrile neutropenia market?',
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
     },
+    {
+      question: 'What is included in febrile neutropenia market research?',
+      answer:
+        'Primary and secondary G-CSF prophylaxis, inpatient FN management pathways, biosimilar switching behaviour, nursing administration preferences, and GCC tender dynamics — scoped to the brands and hospitals on your critical path.',
+    },
+    {
+      question: 'How do biosimilars affect the G-CSF market?',
+      answer:
+        'Hospital pharmacies frequently accelerate substitution after tender awards. BioNixus interviews pharmacists and oncologists to see whether clinical confidence, device convenience, or supply reliability actually moves share post-switch.',
+    },
+    {
+      question: 'Why link FN research to GCC tenders?',
+      answer:
+        'Supportive-care injectables often ride centralized oncology or hospital frameworks. Understanding NUPCO and cluster procurement timing prevents forecasting from EU/US analogues that do not match Gulf award cycles.',
+    },
+    {
+      question: 'How does BioNixus research febrile neutropenia without syndicated tables?',
+      answer:
+        'We run decision-led interviews and surveys with protocol owners, pharmacists, and tender stakeholders, then synthesise implications for prophylaxis uptake and share — labelled explicitly as primary research, not unaudited market-size points.',
+    },
+    {
+      question: 'When should we run FN research relative to an oncology launch?',
+      answer:
+        'Before protocol inclusion and tender windows for the regimen’s risk category — typically in parallel with oncology positioning work so supportive-care assumptions match real pathway decisions.',
+    },
+    {
+      question: 'How long does a febrile neutropenia study take?',
+      answer:
+        'Timeline depends on countries, stakeholder types, and sample sizes. A scoped Saudi or GCC module with oncologists and pharmacists often runs eight to twelve weeks from kickoff to board-ready synthesis; multi-country programmes take longer. BioNixus confirms feasibility and timing in the proposal within 48 hours of a brief.',
+    },
+    {
+      question: 'Can FN research include hospital admission data?',
+      answer:
+        'Primary research can capture stated admission pathways, antibiotic policies, and perceived length-of-stay impact — but does not replace hospital administrative datasets. Where RWE is required, we align qual modules with your HEOR team and label outputs accordingly.',
+    },
+    {
+      question: 'What deliverables should we expect?',
+      answer:
+        'Executive synthesis, evidence gaps, segment cuts by hospital type or tender status, and recommended next studies — formatted for launch, access, or tender teams rather than as a syndicated table export.',
+    },
+    {
+      question: 'Who should sponsor the brief internally?',
+      answer:
+        'Best results come when medical affairs, market access, and commercial stakeholders share one brief. BioNixus facilitates alignment workshops at kickoff so interview guides reflect the decisions all three functions must make.',
+    },
   ],
-  priority: 'next',
+  priority: 'now',
 };
 
 /* ------------------------------------------------------------------ */
@@ -1436,6 +1800,10 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
   h1: 'GCC Functional Service Providers (FSP) Market: Sponsor & Delivery Intelligence',
   intro: [
     'The GCC functional service providers market sits at the intersection of rising Gulf clinical-trial ambition and sponsor preference for modular FSP models over full-service CROs. BioNixus researches sponsor clinical-operations leaders, site networks, and in-region delivery partners to show which FSP capabilities win Gulf assignments — monitoring, data management, medical writing, pharmacovigilance — and where full-service still dominates.',
+    'Search demand for “GCC functional service providers market” and related clinical-outsourcing queries is usually a vendor-selection or capacity question: which FSP cell can activate Saudi and UAE sites fast enough, with Arabic-capable CRAs and SFDA-aware oversight, without locking the sponsor into a global full-service contract. We answer that with primary research — not desk lists of CRO logos.',
+    'Sponsors often maintain a global FSP framework then stress-test Middle East delivery separately. BioNixus maps those governance models, KPI expectations, and inspection-readiness concerns so regional commercial teams know whether to compete on monitoring depth, medical writing, PV, or hybrid full-service rescue — and when Egypt or wider MENA enrolment is bundled into the same RFP.',
+    'Vendor capability decks rarely survive contact with Gulf sites. CRA turnover, visa logistics, and hospital access politics show up in site interviews long before they appear in sponsor QBRs. Primary research surfaces those frictions while RFPs are still being shaped.',
+    'If you are comparing FSP to full-service CRO models, start from the function you need to modularise — not from a logo list. This page outlines how BioNixus researches GCC FSP demand with sponsors and sites so outsourcing choices match activation reality in Saudi Arabia and the UAE.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1458,9 +1826,11 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'How the GCC FSP market is structured',
     paragraphs: [
       'FSP buying in the GCC is rarely a single RFP for “the region.” Sponsors often lock global FSP frameworks then stress-test Middle East delivery cells. BioNixus scopes research to the function and geography under evaluation.',
+      'Monitoring and site-management FSP models compete on activation speed, Arabic capability, and site relationships — especially in Saudi Vision 2030 programmes and UAE private-hospital networks. Data management and medical writing FSPs compete on inspection readiness, SOP harmonization, and timezone coverage. Pharmacovigilance FSPs face heightened scrutiny when Gulf cases must be processed with local regulatory context.',
+      'Full-service CROs still win when sponsors want one throat to choke for complex oncology or rare-disease programmes — but modular FSP share rises when cost pressure and utilisation control matter. Research should never assume one outsourcing model dominates every therapeutic area.',
     ],
   },
   signalGrid: {
@@ -1472,13 +1842,42 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
       { label: 'Egypt adjacency', signal: 'Often bundled into MENA FSP conversations for enrolment scale.' },
     ],
   },
+  calendarBlocks: {
+    heading: 'FSP vendor diligence windows',
+    items: [
+      {
+        period: 'Global FSP re-bid',
+        detail:
+          'Interview sponsor clinical ops before framework renewal to learn which functions will be insourced versus outsourced in the Gulf.',
+      },
+      {
+        period: 'KSA site activation crunch',
+        detail:
+          'CRA capacity and hospital access research before committing Saudi activation timelines in proposals.',
+      },
+      {
+        period: 'Inspection / audit season',
+        detail:
+          'PV and quality stakeholders weigh heavier on FSP selection when GCP or pharmacovigilance inspections are scheduled.',
+      },
+    ],
+  },
   audiences: [
     { audience: 'Sponsor clinical operations', description: 'Outsourcing-model and vendor decision owners.' },
     { audience: 'FSP / CRO commercial leaders', description: 'Competitors and partners seeking Gulf win themes.' },
     { audience: 'Site / SMO leadership', description: 'Stakeholders who experience delivery quality day to day.' },
     { audience: 'Medical / PV oversight', description: 'Quality and compliance governors of modular models.' },
   ],
-  whyBionixus: SHARED_WHY,
+  whyBionixus: [
+    ...SHARED_WHY,
+    'GCC FSP diligence with sponsor clinical-ops and site network stakeholders',
+    'Arabic-capable fieldwork for Saudi and UAE monitoring and site programmes',
+    'Function-level modules — monitoring, DM, medical writing, PV — scoped independently',
+    'Win-theme research that respects sponsor governance and conflict rules',
+    'Rescue and activation realism modules before sponsors sign modular statements of work',
+    'Linked GCC clinical trials and imaging research when enrolment and FSP are one decision',
+    'Executive summaries that separate sponsor, site, and vendor narratives for governance committees',
+  ],
   relatedLinks: [
     { to: '/gcc-clinical-trials-market', label: 'GCC clinical trials market' },
     { to: '/mea-clinical-trial-imaging-market', label: 'MEA clinical trial imaging market' },
@@ -1487,15 +1886,112 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
     { to: '/italy-clinical-trials-market', label: 'Italy clinical trials market' },
     { to: '/real-world-evidence', label: 'Real world evidence' },
   ],
+  insights: {
+    heading: 'What vendor selection gets wrong in GCC FSP',
+    paragraphs: [
+      'Global FSP frameworks do not guarantee Gulf delivery quality. Sponsors frequently discover CRA shortages, Arabic gaps, or site-access friction only after activation — research with sites and regional cells de-risks proposals.',
+      'Full-service incumbents win on complexity, but modular FSP wins on cost control when sponsors know which functions to outsource. Misjudging that split produces RFPs that attract the wrong vendor set.',
+      'Therapeutic area depth is often oversold on capability decks. Oncology and rare-disease programme owners can quickly test whether monitoring and medical writing cells have real site networks in KSA and UAE.',
+      'Inspection and PV scrutiny intensifies for Gulf-executed programmes with multinational oversight. FSP shortlists should include quality stakeholders, not only clinical operations.',
+      'Bundling Egypt or wider MENA enrolment into a Gulf FSP without capacity diligence creates rescue contracts. Clarify enrolment assumptions before signing modular statements of work.',
+      'Medical writing and regulatory publishing FSPs face timezone and language friction in Gulf programmes with US or EU oversight. Interviewing medical leads exposes whether a vendor’s “follow-the-sun” model actually works for Arabic summaries and SFDA-facing documents.',
+      'Data management FSPs compete on inspection readiness and migration from legacy EDC builds. Sponsors should validate SOP fit before modular DM statements of work replace a full-service data team mid-study.',
+      'Commercial teams selling FSP into the Gulf should pair win-theme research with site experience interviews — sites remember CRA quality long after sponsors forget rate cards.',
+      'Run FSP diligence before global framework renewal if Middle East delivery has been escalated internally — that is when function-level modules change awards.',
+      'Treat Arabic capability as a scored requirement, not a footnote, for Saudi site networks and patient-facing materials.',
+      'Document rescue triggers up front: sponsors should know when modular FSP will be unwound back to full-service based on activation or quality metrics.',
+      'Request a GCC FSP briefing that names functions (monitoring, DM, writing, PV), countries, and timeline — admin@bionixus.com or the form below.',
+      'Desk vendor rankings are not a substitute for sponsor and site interviews in Riyadh, Jeddah, Dubai, and Abu Dhabi activation hubs.',
+      'Pair this page with /gcc-clinical-trials-market when country selection and FSP vendor choice are decided in the same governance meeting.',
+      'Modular FSP statements of work should name activation KPIs, inspection readiness owners, and escalation paths before signatures — research inputs feed those clauses.',
+      'Use /contact for a scoped GCC FSP research proposal.',
+      'Healthcare hub: /healthcare-market-research for programme design context.',
+    ],
+  },
+  executionModules: {
+    heading: 'Typical GCC FSP diligence modules',
+    modules: [
+      {
+        name: 'Outsourcing model interviews',
+        detail:
+          'Sponsor clinical-ops leaders explain when they modularise monitoring, DM, medical writing, or PV versus retaining full-service vendors for complex protocols.',
+      },
+      {
+        name: 'CRA capacity and site access',
+        detail:
+          'Site and SMO stakeholders rate FSP CRA models on activation speed, Arabic capability, and relationship depth in Saudi and UAE hospitals.',
+      },
+      {
+        name: 'Quality and inspection readiness',
+        detail:
+          'Medical, PV, and quality leaders score FSP governance, SOP harmonization, and audit history when inspection risk is elevated.',
+      },
+      {
+        name: 'Pricing and KPI benchmarking',
+        detail:
+          'Commercial interviews on rate cards, utilisation metrics, and escalation paths sponsors enforce in Middle East delivery cells.',
+      },
+      {
+        name: 'Therapeutic depth checks',
+        detail:
+          'Oncology and rare-disease programme owners test whether generic FSP capacity claims hold for indication-specific site networks.',
+      },
+      {
+        name: 'MENA bundling scenarios',
+        detail:
+          'Clarify when Egypt or wider MENA enrolment is bundled into Gulf FSP RFPs so vendors do not under-scope regional cells.',
+      },
+    ],
+  },
   faqs: [
     {
       question: 'What is the GCC functional service providers market?',
       answer:
         'The market for modular clinical-development services (monitoring, data management, medical writing, PV, and related functions) sold into Gulf-sponsored or Gulf-executed programmes — researched through sponsor, site, and delivery-partner stakeholders.',
     },
+    {
+      question: 'FSP versus full-service CRO in the Gulf — how do sponsors choose?',
+      answer:
+        'Sponsors choose FSP when they want utilisation control and modular expertise; they choose full-service when protocol complexity, inspection risk, or single-vendor accountability dominates. BioNixus interviews the clinical-ops owners who make that call.',
+    },
+    {
+      question: 'Which FSP functions are most contested in Saudi Arabia and the UAE?',
+      answer:
+        'Monitoring/site management, data management, and medical writing are the most frequently modularised; PV and biometrics follow when quality systems are mature. The answer varies by sponsor size and therapeutic area.',
+    },
+    {
+      question: 'Does BioNixus rank FSP vendors?',
+      answer:
+        'We provide decision intelligence and win-theme research for sponsors and vendors — not pay-to-play listicles. Comparison pages on this site follow editorial accuracy standards.',
+    },
+    {
+      question: 'How does FSP research link to clinical trials market work?',
+      answer:
+        'FSP selection follows country and site strategy. We connect FSP modules to GCC clinical trials and MEA imaging research when enrolment and vendor models are decided together.',
+    },
+    {
+      question: 'How long does GCC FSP diligence take?',
+      answer:
+        'Sponsor and site modules often complete in six to ten weeks; competitive win-theme programmes with multiple vendors may run longer. Timelines are fixed in the proposal after scope confirmation.',
+    },
+    {
+      question: 'Can BioNixus interview CRO/FSP vendors?',
+      answer:
+        'We focus on sponsor, site, and delivery-partner stakeholders — not pay-to-play vendor promotion. Vendors commission win-loss and positioning research under clear conflict rules stated in the proposal.',
+    },
+    {
+      question: 'Is Arabic fieldwork available?',
+      answer:
+        'Yes. CRA, site, and investigator interviews in Saudi Arabia and the UAE frequently require Arabic — with English synthesis for global governance teams.',
+    },
+    {
+      question: 'What is the minimum engagement?',
+      answer:
+        'BioNixus targets qualified pharmaceutical research engagements — typically from USD 20,000 depending on countries, functions, and sample. Share your RFP or brief for a scoped quote within 48 hours.',
+    },
   ],
   areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],
-  priority: 'later',
+  priority: 'now',
 };
 
 const gccMedicationManagement: SpecialtyMarketDemandContent = {

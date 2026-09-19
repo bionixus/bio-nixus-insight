@@ -52,6 +52,8 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
     { href: '#structure', label: 'Structure' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
+    ...(content.executionModules ? [{ href: '#execution', label: 'Execution' }] : []),
+    ...(content.insights ? [{ href: '#insights', label: 'Insights' }] : []),
     { href: '#audiences', label: 'Audiences' },
     { href: '#faq', label: 'FAQ' },
   ];
@@ -147,6 +149,28 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             <div className="space-y-4">
               {content.calendarBlocks.items.map((item) => (
                 <DirectoryDriverCard key={item.period} title={item.period} desc={item.detail} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {content.executionModules ? (
+          <DirectorySection id="execution" eyebrow="Method" title={content.executionModules.heading}>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {content.executionModules.modules.map((item) => (
+                <DirectoryDriverCard key={item.name} title={item.name} desc={item.detail} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {content.insights ? (
+          <DirectorySection id="insights" surface="cream" eyebrow="Decision support" title={content.insights.heading}>
+            <div className="space-y-4 max-w-3xl">
+              {content.insights.paragraphs.map((para) => (
+                <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                  {para}
+                </p>
               ))}
             </div>
           </DirectorySection>
