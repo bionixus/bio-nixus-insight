@@ -118,6 +118,7 @@ export default function CompetitorAlternativePage({ config }: Props) {
           items={[
             { href: '#who-for', label: 'Who each is for' },
             { href: '#compared', label: 'Compared' },
+            ...(config.longFormSections?.length ? [{ href: '#guide', label: 'Guide' }] : []),
             { href: '#keep', label: 'Keep the feed' },
             { href: '#faq', label: 'FAQ' },
             { href: '#related', label: 'Related' },
@@ -182,6 +183,33 @@ export default function CompetitorAlternativePage({ config }: Props) {
             </table>
           </div>
         </DirectorySection>
+
+        {config.longFormSections?.length ? (
+          <DirectorySection id="guide" eyebrow="Deep dive" title="Saudi Arabia intelligence guide">
+            <div className="space-y-10 max-w-3xl">
+              {config.longFormSections.map((section) => (
+                <section key={section.title} className="space-y-3">
+                  {section.eyebrow ? (
+                    <p className="text-xs font-semibold uppercase tracking-wide text-[#C9A84C]">{section.eyebrow}</p>
+                  ) : null}
+                  <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground">{section.title}</h2>
+                  {section.paragraphs.map((para) => (
+                    <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
+                  {section.bullets?.length ? (
+                    <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground">
+                      {section.bullets.map((item) => (
+                        <li key={item.slice(0, 48)}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </section>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
 
         <DirectorySection
           id="keep"

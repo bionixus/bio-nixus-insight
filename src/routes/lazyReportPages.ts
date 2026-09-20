@@ -58,6 +58,8 @@ export const TurkeyMedicalDevicesMarketReport = lazy(() => import('@/pages/Turke
 export const HealthcareReportPage = lazy(() => import('@/pages/HealthcareReportPage'));
 export const SegmentMarketRoute = lazy(() => import('@/pages/SegmentMarketRoute'));
 export const BlogPost = lazy(() => import('@/pages/BlogPost'));
+export const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
+export const VideosIndex = lazy(() => import('@/pages/VideosIndex'));
 export const CaseStudy = lazy(() => import('@/pages/CaseStudy'));
 export const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
 

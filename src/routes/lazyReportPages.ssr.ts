@@ -55,6 +55,8 @@ export { default as TurkeyMedicalDevicesMarketReport } from '@/pages/TurkeyMedic
 export { default as HealthcareReportPage } from '@/pages/HealthcareReportPage';
 export { default as SegmentMarketRoute } from '@/pages/SegmentMarketRoute';
 export { default as BlogPost } from '@/pages/BlogPost';
+export { default as VideoWatchPage } from '@/pages/VideoWatchPage';
+export { default as VideosIndex } from '@/pages/VideosIndex';
 export { default as CaseStudy } from '@/pages/CaseStudy';
 export { default as PressReleasePage } from '@/pages/PressReleasePage';
 

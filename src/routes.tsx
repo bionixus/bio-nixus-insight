@@ -76,6 +76,7 @@ import {
   HealthcareReportPage,
   SegmentMarketRoute,
   BlogPost,
+  VideoWatchPage,
   CaseStudy,
   PressReleasePage,
   UaePharmaCompanies,
@@ -193,8 +194,6 @@ const AdminAnalytics = lazy(() => import('@/pages/AdminAnalytics'));
 const AdminCalendar = lazy(() => import('@/pages/AdminCalendar'));
 const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
-const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
-
 function suspensePage(node: ReactNode, fallback: ReactNode = null) {
   return <Suspense fallback={fallback}>{node}</Suspense>;
 }

@@ -1,3 +1,6 @@
+import type { LongFormSection } from '@/data/specialtyMarketDemandContent';
+import { IQVIA_ALTERNATIVE_SAUDI_LONG_FORM } from '@/data/competitorAlternativeLongForm/iqviaSaudi2026';
+
 export type CompetitorAlternativeRow = {
   name: string;
   bestFor: string;
@@ -24,6 +27,7 @@ export type CompetitorAlternativeConfig = {
     points: { title: string; description: string }[];
     summary: string;
   };
+  longFormSections?: LongFormSection[];
 };
 
 const KANTAR_ALTERNATIVE: CompetitorAlternativeConfig = {
@@ -467,6 +471,7 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
   intro: [
     'This is the Saudi complement, not a retitle of the global IQVIA alternative page. IQVIA remains the right buy when you need a syndicated audit in the Kingdom universe it covers. It is the wrong buy when the brief is a named hospital, a NUPCO tender, an SFDA pathway, or a physician segment the audit averages away.',
     'BioNixus fields that primary work in Saudi Arabia — bilingual, SFDA-aware, priced by project. For the ranked global list, stay on /iqvia-alternative. For the legacy audit name, see /ims-health-alternative.',
+    'Saudi teams comparing IQVIA competitors for hospital, NUPCO, or SFDA-context work should read the guide below before reusing global competitor slides that do not mention Kingdom accounts.',
   ],
   stayWhen: [
     'The IQVIA audit already covers your Saudi pack and the question is national or channel share.',
@@ -537,6 +542,10 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
       q: 'How fast can BioNixus scope a KSA study?',
       a: 'A proposal is ready within 48 hours of a brief. Pricing is by project and country. Email admin@bionixus.com or use the form below.',
     },
+    {
+      q: 'What deliverables do Saudi IQVIA complement studies include?',
+      a: 'Typical deliverables are executive synthesis, anonymised interview transcripts or summaries, account or hospital heatmaps, and recommended medical and access actions — scoped to the therapy and accounts in your brief. We do not resell IQVIA audit extracts or mimic syndicated file formats.',
+    },
   ],
   related: [
     { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'Global ranked page — do not steal that title here.' },
@@ -563,6 +572,7 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
     ],
     summary: 'BioNixus is the IQVIA alternative in Saudi Arabia for affiliates who already pay for the audit and still cannot see the account.',
   },
+  longFormSections: IQVIA_ALTERNATIVE_SAUDI_LONG_FORM,
 };
 
 export const COMPETITOR_ALTERNATIVES: CompetitorAlternativeConfig[] = [
