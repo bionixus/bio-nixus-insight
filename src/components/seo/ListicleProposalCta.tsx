@@ -6,6 +6,7 @@ type ListicleProposalCtaProps = {
   ctaId: string;
   headline: string;
   body: string;
+  buttonLabel?: string;
   children?: ReactNode;
 };
 
@@ -15,6 +16,7 @@ export function ListicleProposalCta({
   ctaId,
   headline,
   body,
+  buttonLabel,
   children,
 }: ListicleProposalCtaProps) {
   return (
@@ -29,6 +31,7 @@ export function ListicleProposalCta({
             market={countryName}
             ctaId={ctaId}
             ctaLocation="listicle_footer"
+            buttonLabel={buttonLabel}
           />
         </div>
         {children ? <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">{children}</div> : null}

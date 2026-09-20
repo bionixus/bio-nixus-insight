@@ -589,8 +589,15 @@ export default function HubPage() {
             Explore the{' '}
             <Link to="/healthcare-market-research/united-states" className="text-primary font-medium hover:underline">
               United States healthcare market research hub
-            </Link>{' '}
-            or{' '}
+            </Link>
+            , the{' '}
+            <Link
+              to="/insights/top-healthcare-market-research-companies-usa-2026"
+              className="text-primary font-medium hover:underline"
+            >
+              top healthcare market research companies in the USA
+            </Link>
+            , or{' '}
             <Link to="/contact" className="text-primary font-medium hover:underline">
               request a proposal
             </Link>{' '}

@@ -239,9 +239,9 @@ export const CTR_SEO_BY_PATH = {
       'Top pharmaceutical analytics companies worldwide 2026 — real-world data, HEOR, syndicated Rx analytics & primary research ranked for pharma buyers.',
   },
   '/insights/top-healthcare-market-research-companies-usa-2026': {
-    title: 'Top 10 Healthcare Market Research Companies USA (2026) | Ranked',
+    title: 'Top Healthcare Market Research Companies in the USA (2026)',
     description:
-      'Healthcare market research companies USA 2026 — top 10 ranked for IRB-compliant HCP, KOL mapping, PBM payer & HEOR primary research. Compare BioNixus & peers.',
+      'Top healthcare market research companies in the USA (2026). Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail.',
   },
   '/insights/top-market-research-companies-saudi-arabia-2026': {
     title: 'Top Market Research Companies in Saudi Arabia (2026)',
