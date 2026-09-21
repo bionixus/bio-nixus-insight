@@ -56,7 +56,7 @@ function buildServices(label: string, regulatorShort: string) {
     items: [
       {
         title: 'Hospital procurement and formulary committee research',
-        description: `Primary research with hospital pharmacy, biomedical engineering, and value-analysis committees — mapping evidence requirements, tender criteria, and.`,
+        description: `Primary research with hospital pharmacy, biomedical engineering, and value-analysis committees — mapping evidence requirements, tender criteria, and total-cost-of-ownership objections before listing decisions.`,
       },
       {
         title: 'Clinician adoption and workflow studies',
@@ -68,7 +68,7 @@ function buildServices(label: string, regulatorShort: string) {
       },
       {
         title: 'Pricing, reimbursement, and payer-adjacent research',
-        description: `Research on provincial, national, or insurer funding pathways for device categories — including technology assessment expectations, DRG/procedure funding.`,
+        description: `Research on provincial, national, or insurer funding pathways for device categories — including technology assessment expectations, DRG or procedure funding rules, and private-payer carve-outs that shape adoption.`,
       },
       {
         title: 'KOL mapping and advisory board programmes',
@@ -76,7 +76,7 @@ function buildServices(label: string, regulatorShort: string) {
       },
       {
         title: 'GCC and MENA expansion intelligence for ${label} manufacturers',
-        description: `Comparative research linking ${label} regulatory credentials (including Access Consortium or reference-agency reliance) to SFDA, MOHAP, and GCC hospital.`,
+        description: `Comparative research linking ${label} regulatory credentials (including Access Consortium or reference-agency reliance) to SFDA, MOHAP, and GCC hospital procurement intelligence so global launch committees see one harmonised evidence story.`,
       },
     ],
   };
@@ -569,6 +569,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'EU MDR notified body capacity and EUDAMED requirements apply. Spain frequently serves as reference member state for EU MRP procedures.',
       'Hospital capital equipment purchases align to regional budget cycles and EU Next Generation EU recovery fund healthcare investments (2021–2026).',
       'BioNixus Spain programmes use Spanish fieldwork with autonomous community-aware sample design.',
+      'Regional health ministries (comunidades autónomas) publish separate innovation budgets — MedTech research should tag accounts by autonomous community when tender calendars and HTA appetite diverge between Catalonia, Madrid, and Andalusia.',
     ],
     marketParagraphs: [
       'Spain\'s EUR 10–12 billion devices market within EUR 120–130 billion health expenditure serves 47.9 million population. High diabetes prevalence (14.8% adults) drives monitoring and therapeutic device demand.',
@@ -601,6 +602,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Swiss price level is among the highest globally — premium innovator adoption often precedes EU5 listing; Switzerland serves as early-revenue market for global launches.',
       'Multilingual requirements (German, French, Italian) affect IFU and patient material localisation. BioNixus Switzerland programmes segment by linguistic region.',
       'Medtech Switzerland industry association advocates for innovation-friendly procurement — research connects policy context to account prioritisation.',
+      'Swissmedic reliance on EU MDR certificates plus bilateral mutual recognition with the UK creates parallel filing paths — research programmes should document which credential each hospital procurement team treats as decisive.',
     ],
     marketParagraphs: [
       'Switzerland\'s CHF 6–7 billion medtech market punches above population weight (8.7 million) with highest OECD health spending per capita. Roche, Zambon, and dense SME ecosystem characterise domestic industry.',
@@ -633,6 +635,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'EU MDR notified body certification and EUDAMED registration apply. Denmark frequently participates in Nordic collaborative procurement (SKI, NHN).',
       'English proficiency among specialists enables bilingual research programmes for global HQ coordination.',
       'BioNixus Denmark programmes respect regional procurement context with verified hospital and specialist networks.',
+      'SKI and NHN framework agreements bundle diagnostics and consumables across regions — manufacturers should research which lots and renewal windows determine share before committing launch sequencing.',
     ],
     marketParagraphs: [
       'Denmark\'s medtech sector exports globally through Ambu, Coloplast, and William Demant (Demant) — domestic market size belies international strategic importance. 5.9 million population with high health expenditure per capita.',
@@ -793,6 +796,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Rede D\'Or, Hapvida, and Fleury anchor private hospital adoption; public university hospitals (USP, UNIFESP, UFRJ) drive KOL activity.',
       'Portuguese fieldwork mandatory for physician and patient modules. BioNixus Brazil programmes use verified Brazilian specialist networks.',
       'Mercosur regulatory harmonisation efforts affect southern cone expansion — Brazil research supports Argentina and Chile comparative modules.',
+      'RDC 665/2022 and ongoing ANVISA digital submission pilots shorten traceability for Class III/IV renewals — manufacturers should align post-market surveillance narratives with the evidence hospital value committees request at tender.',
     ],
     marketParagraphs: [
       'Brazil\'s USD 11–13 billion devices market serves 218 million population — Latin America\'s largest. Dual SUS/public and ANS/private pathways require segmented research design.',

@@ -586,6 +586,7 @@ export default function TherapyPage() {
   const titleArea = THERAPY_META[area]?.displayName ?? area.replace(/-/g, ' ');
   const isBiologics = area === 'biologics';
   const isImmunology = area === 'immunology';
+  const isBiosimilars = area === 'biosimilars';
   const copy =
     THERAPY_COPY[area] ||
     'Therapy-focused pharmaceutical market research with actionable evidence for stakeholder engagement and growth planning.';
@@ -647,6 +648,11 @@ export default function TherapyPage() {
                 { href: '#vaccines-pathway', label: 'Immunization research' },
                 { href: '#vaccines-modules', label: 'Research modules' },
               ]
+            : area === 'biosimilars'
+              ? [
+                  { href: '#biosimilars-tenders', label: 'Tender & substitution' },
+                  { href: '#biosimilars-modules', label: 'Research modules' },
+                ]
             : area === 'aesthetic-medicine'
               ? [
                   { href: '#aesthetic-pathway', label: 'Demand dynamics' },
@@ -753,6 +759,41 @@ export default function TherapyPage() {
                   rare disease market research
                 </Link>{' '}
                 when your asset spans specialist overlap or orphan-like referral patterns.
+              </p>
+            </div>
+          ) : isBiosimilars ? (
+            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Biosimilar share is won in procurement rooms and pharmacy workflows—not in headline efficacy tables.
+                BioNixus maps{' '}
+                <strong className="font-medium text-foreground">
+                  substitution authority, tender scoring, switching protocols, and post-switch monitoring habits
+                </strong>{' '}
+                across GCC, UK, and EU5 systems so originators and biosimilar sponsors invest in the levers that actually
+                move volume. Start from the{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research hub
+                </Link>{' '}
+                for country coverage, then use the sections below to scope a biosimilar insight programme.
+              </p>
+              <p>
+                For Saudi tender density and SFDA listing context, see the{' '}
+                <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline">
+                  Saudi Arabia biosimilar market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline">
+                  biosimilar market entry in Saudi Arabia
+                </Link>{' '}
+                guide. Gulf-wide benchmarking sits in the{' '}
+                <Link to="/market-reports/gcc-biosimilars-market-report" className="text-primary underline">
+                  GCC biosimilars market report
+                </Link>
+                ; for originator-defence and immunology overlap, pair with{' '}
+                <Link to="/healthcare-market-research/therapy/biologics" className="text-primary underline">
+                  biologics market research
+                </Link>
+                .
               </p>
             </div>
           ) : (
@@ -2241,7 +2282,83 @@ export default function TherapyPage() {
         </>
       ) : null}
 
-      {!isBiologics && !isImmunology ? (
+      {isBiosimilars ? (
+        <>
+          <ReportPremiumSection
+            id="biosimilars-tenders"
+            title="Tender mechanics, substitution authority, and GCC hospital reality"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Biosimilar erosion rarely follows a single national narrative. In Saudi Arabia, NUPCO national tenders
+                and hospital pharmacy substitution policies can compress originator volume within a single procurement
+                cycle; in the UAE and Bahrain, private-hospital formularies may retain originator preference while
+                public channels switch on price. UK and EU5 markets add pharmacy-level substitution, rebate-driven
+                bundles, and HTA-linked budget impact tests that differ by indication and setting.
+              </p>
+              <p>
+                BioNixus programmes quantify who can authorise a switch (prescriber, pharmacist, committee, or
+                procurement officer), which evidence artefacts unblock that authority (extrapolation comfort, device
+                training, patient-support continuity), and how post-switch monitoring habits affect perceived safety.
+                That behavioural map prevents teams from over-investing in physician messaging when pharmacists or
+                tender scoring matrices actually gate volume.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="biosimilars-modules"
+            title="Modules we integrate in biosimilar launch and defence studies"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Substitution simulation:</strong> vignettes varied by induction
+                  vs maintenance, comorbidity, prior biologic exposure, and payer type to test extrapolation and
+                  interchangeability narratives.
+                </li>
+                <li>
+                  <strong className="text-foreground">Tender and formulary decoding:</strong> desk-plus-primary mapping
+                  of scoring weights, named-patient exceptions, and centre-level variation in high-volume GCC hospitals.
+                </li>
+                <li>
+                  <strong className="text-foreground">Originator defence levers:</strong> device experience, indication
+                  breadth, patient-support continuity, and real-world evidence that retains share after biosimilar entry.
+                </li>
+                <li>
+                  <strong className="text-foreground">Pharmacist and nurse operational depth:</strong> cold chain,
+                  preparation time, adverse-event attribution after switch, and infusion-chair economics that stall uptake
+                  despite price advantage.
+                </li>
+              </ul>
+              <p>
+                Commissioning teams typically anchor Gulf work on the{' '}
+                <Link to="/market-reports/gcc-biosimilars-market-report" className="text-primary underline">
+                  GCC biosimilars market report
+                </Link>{' '}
+                and{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline">
+                  Saudi biosimilar entry guide
+                </Link>
+                , then scope bilingual fieldwork through the{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research hub
+                </Link>
+                .
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <RelatedPages
+            currentSlug={area}
+            relatedCountries={['saudi-arabia', 'uae', 'bahrain']}
+            relatedTherapies={['biologics', 'immunology', 'oncology']}
+          />
+        </>
+      ) : null}
+
+      {!isBiologics && !isImmunology && !isBiosimilars ? (
         <RelatedPages
           currentSlug={area}
           relatedCountries={['saudi-arabia', 'uae', 'uk']}

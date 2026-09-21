@@ -360,6 +360,42 @@ export default function HealthcareMarketResearchInBahrain() {
           </div>
         </section>
 
+        {/* Biosimilars and specialty injectables */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Biosimilars, biologics, and hospital injectables in Bahrain
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Bahrain’s compact hospital network makes it a practical GCC test bed for biosimilar and biologic
+                programmes before scaling to Saudi NUPCO tenders or UAE private-hospital formularies. Salmaniya Medical
+                Complex and King Hamad University Hospital concentrate oncology, rheumatology, and diabetes biologic
+                volume — so substitution research can reach committee influencers and specialty pharmacists in a
+                single wave rather than across dozens of disconnected sites.
+              </p>
+              <p>
+                NHRA’s HTA pathway expects comparative effectiveness and budget impact alongside clinical dossiers.
+                BioNixus designs prescriber, pharmacist, and payer-adjacent modules that isolate whether hesitation is
+                clinical (extrapolation, immunogenicity narratives) or operational (cold chain, infusion capacity,
+                causeway patient mix). Pair Bahrain fieldwork with the{' '}
+                <Link to="/market-reports/gcc-biosimilars-market-report" className="text-primary underline">
+                  GCC biosimilars market report
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research/therapy/biosimilars" className="text-primary underline">
+                  biosimilars therapy research guide
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research/saudi-arabia" className="text-primary underline">
+                  Saudi Arabia healthcare market research
+                </Link>{' '}
+                when your launch plan spans the causeway and Eastern Province referral corridors.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Proof points */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
