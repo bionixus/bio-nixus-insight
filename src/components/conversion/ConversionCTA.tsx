@@ -45,7 +45,7 @@ type GatedAssetCtaProps = {
 type ConversionCtaProps = TalkToResearchCtaProps | GatedAssetCtaProps;
 
 /** Reusable conversion CTA — Variant A ("talk to research") opens the qualification form;
- * Variant B ("gated asset") opens a short form that emails a PDF sample and notifies sales. */
+ * Variant B ("gated asset") opens a short form that starts a client download and notifies admin via Resend. */
 export function ConversionCTA(props: ConversionCtaProps) {
   const [open, setOpen] = useState(false);
 

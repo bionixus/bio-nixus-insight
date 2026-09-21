@@ -10,6 +10,7 @@ import {
   CLINICAL_DIAGNOSTICS_PATH,
   CLINICAL_DIAGNOSTICS_PROPOSAL_DECK_PATH,
 } from '@/data/clinicalDiagnosticsOffering';
+import { getWorkEmailValidationError } from '@/lib/freeMailDomains';
 import '@/styles/clinical-diagnostics-proposal.css';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
@@ -53,9 +54,13 @@ export default function ClinicalDiagnosticsProposalRequest() {
     setError(null);
     const form = e.currentTarget;
     const data = new FormData(form);
-    const email = (data.get('workEmail') as string)?.trim();
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('Please enter a valid work email.');
+    const email = (data.get('workEmail') as string)?.trim() || '';
+    const emailError = getWorkEmailValidationError(email, {
+      required: 'Please enter a valid work email.',
+      invalid: 'Please enter a valid work email.',
+    });
+    if (emailError) {
+      setError(emailError);
       return;
     }
     if (!data.get('consent')) {

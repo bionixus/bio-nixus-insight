@@ -12,10 +12,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { getWorkEmailValidationError } from '@/lib/freeMailDomains';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
-
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
 
 /** Mirrors contact.validation in i18n; `phone` has no counterpart there. */
@@ -29,6 +28,7 @@ type ContactGateValidation = {
   privacy?: string;
   phone?: string;
   emailFormat?: string;
+  businessEmail?: string;
   phoneFormat?: string;
   success?: string;
   error?: string;
@@ -84,8 +84,12 @@ export function CaseStudyContactGate({
 
     if (!firstName) next.firstName = v('firstName');
     if (!lastName) next.lastName = v('lastName');
-    if (!workEmail) next.workEmail = v('workEmail');
-    else if (!EMAIL_REGEX.test(workEmail)) next.workEmail = v('emailFormat');
+    const emailError = getWorkEmailValidationError(workEmail, {
+      required: v('workEmail'),
+      invalid: v('emailFormat'),
+      freeMail: v('businessEmail'),
+    });
+    if (emailError) next.workEmail = emailError;
     if (!company) next.company = v('company');
     if (phone && !PHONE_REGEX.test(phone)) next.phone = v('phoneFormat') || 'Please enter a valid phone number';
 

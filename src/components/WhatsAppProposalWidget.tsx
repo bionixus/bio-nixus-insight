@@ -5,13 +5,12 @@ import { BIONIXUS_PHONE_UK } from '@/components/report-conversion/constants';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { trackLeadSubmitted } from '@/lib/analytics';
+import { getWorkEmailValidationError } from '@/lib/freeMailDomains';
 import { languages } from '@/lib/i18n';
 import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { getWhatsAppWidgetStrings } from '@/lib/whatsappWidgetStrings';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const COOKIE_CONSENT_KEY = 'bionixus-cookie-consent';
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
 const WHATSAPP_NUMBER = BIONIXUS_PHONE_UK.replace(/\D/g, '');
 const CONTACT_PATHS = new Set(languages.map((lang) => localizedContactPath(lang.code)));
@@ -27,6 +26,7 @@ type ContactValidation = {
   phone?: string;
   message?: string;
   emailFormat?: string;
+  businessEmail?: string;
   phoneFormat?: string;
   error?: string;
 };
@@ -73,9 +73,7 @@ export default function WhatsAppProposalWidget() {
   const firstFieldRef = useRef<HTMLInputElement>(null);
   const [open, setOpen] = useState(false);
   const [cookieVisible, setCookieVisible] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [whatsAppUrl, setWhatsAppUrl] = useState<string | null>(null);
   const [ringing, setRinging] = useState(false);
@@ -123,7 +121,6 @@ export default function WhatsAppProposalWidget() {
     setOpen(false);
     setSubmitted(false);
     setErrors({});
-    setSubmitError(null);
     setWhatsAppUrl(null);
     setRinging(false);
   }, [pathname]);
@@ -163,7 +160,7 @@ export default function WhatsAppProposalWidget() {
     ? 'bottom-44 md:bottom-28'
     : 'bottom-24 md:bottom-6';
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -178,21 +175,21 @@ export default function WhatsAppProposalWidget() {
 
     if (!firstName) next.firstName = v('firstName') || 'First name is required';
     if (!lastName) next.lastName = v('lastName') || 'Last name is required';
-    if (!workEmail) next.workEmail = v('workEmail') || 'Work email is required';
-    else if (!EMAIL_REGEX.test(workEmail)) next.workEmail = v('emailFormat') || 'Please enter a valid email address';
+    const emailError = getWorkEmailValidationError(workEmail, {
+      required: v('workEmail') || 'Work email is required',
+      invalid: v('emailFormat') || 'Please enter a valid email address',
+      freeMail: v('businessEmail'),
+    });
+    if (emailError) next.workEmail = emailError;
     if (!company) next.company = v('company') || 'Company is required';
     if (!phone) next.phone = copy.phoneRequired;
     else if (!PHONE_REGEX.test(phone)) next.phone = v('phoneFormat') || 'Please enter a valid phone number';
     if (!message) next.message = v('message') || 'Message is required';
 
     setErrors(next);
-    setSubmitError(null);
     if (Object.keys(next).length > 0) return;
 
     const currentUrl = window.location.href;
-    const currentPath = window.location.pathname;
-    const params = new URL(currentUrl).searchParams;
-
     const waUrl = buildWhatsAppUrl({
       greeting: copy.greeting,
       firstName,
@@ -204,40 +201,10 @@ export default function WhatsAppProposalWidget() {
       pageUrl: currentUrl,
     });
 
-    data.set('_subject', `WhatsApp Proposal Request - ${firstName} ${lastName}`);
-    data.set('requestType', 'WhatsApp Proposal Request');
-    data.set('formVariant', 'whatsapp_proposal_widget');
-    data.set('sourcePage', currentPath);
-    data.set('sourceUrl', currentUrl);
-    data.set('reportName', '');
-    data.set('utmSource', params.get('utm_source') || '');
-    data.set('utmMedium', params.get('utm_medium') || '');
-    data.set('utmCampaign', params.get('utm_campaign') || '');
-    data.set('utmContent', params.get('utm_content') || '');
-    data.set('utmTerm', params.get('utm_term') || '');
-
     setWhatsAppUrl(waUrl);
     setSubmitted(true);
     openWhatsApp(waUrl);
-
-    setSubmitting(true);
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
-        trackLeadSubmitted({ formId: 'whatsapp_proposal_widget' });
-      } else {
-        const json = await res.json().catch(() => ({}));
-        setSubmitError((json as { error?: string }).error || v('error'));
-      }
-    } catch {
-      setSubmitError(v('error'));
-    } finally {
-      setSubmitting(false);
-    }
+    trackLeadSubmitted({ formId: 'whatsapp_proposal_widget' });
   };
 
   return (
@@ -292,12 +259,9 @@ export default function WhatsAppProposalWidget() {
                     {copy.openWhatsAppAgain}
                   </a>
                 ) : null}
-                {submitError ? <p className="mt-2 text-xs text-destructive md:mt-3 md:text-sm">{submitError}</p> : null}
               </div>
             ) : (
               <form
-                action={FORMSPREE_ENDPOINT}
-                method="POST"
                 onSubmit={handleSubmit}
                 noValidate
                 className="flex min-h-0 max-h-full flex-1 flex-col"
@@ -419,14 +383,11 @@ export default function WhatsAppProposalWidget() {
                   {copy.privacyAfter}
                 </p>
 
-                {submitError ? <p className="mb-2 text-xs text-destructive md:text-sm">{submitError}</p> : null}
-
                 <button
                   type="submit"
-                  disabled={submitting}
-                  className="w-full rounded-md bg-accent py-2 text-sm font-semibold text-accent-foreground transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70 md:rounded-lg md:py-3 md:text-base"
+                  className="w-full rounded-md bg-accent py-2 text-sm font-semibold text-accent-foreground transition hover:brightness-105 md:rounded-lg md:py-3 md:text-base"
                 >
-                  {submitting ? copy.submitting : copy.submitButton}
+                  {copy.submitButton}
                 </button>
                 </div>
               </form>
