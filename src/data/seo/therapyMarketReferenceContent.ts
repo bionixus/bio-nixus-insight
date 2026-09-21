@@ -76,6 +76,15 @@ const DIABETES_TAIL: ReferenceSection[] = [
     ],
   },
   {
+    title: 'GCC and MENA diabetes market context for pharmaceutical research design',
+    paragraphs: [
+      'MENA pharmaceutical markets are commonly described in secondary analyst consensus (2023–2025) as growing in a roughly 6–8% CAGR range, with GCC pharmaceutical spend cited in the low tens of billions USD (trade estimates 2024; BioNixus market analysis). Diabetes and obesity-related metabolic portfolios absorb a material share of that innovative volume because prevalence is high, primary–specialist handoffs are fragmented, and payer step edits increasingly shape which patients reach advanced therapies.',
+      'Country-specific regulators—SFDA in Saudi Arabia, MOHAP and emirate authorities (DHA, DOH) in the UAE, MOH Kuwait, and MOPH Qatar—set registration, pricing, and formulary gates that differ from a single Gulf average. Research that imports EU or US denominators unchanged understates how NUPCO tender timing, CHI claims growth, and private insurer protocols filter eligible diabetes patients before endocrinology enthusiasm converts to treated share.',
+      'BioNixus diabetes programmes therefore pair behavioural modules (initiation, titration, inertia, CGM adoption, switch intent) with access overlays that document where formulary stewardship and pharmacist substitution constrain uptake. Compared with broad syndicated trackers from global vendors (IQVIA MENA, legacy Kantar Health footprints, ZS-style access consulting), GCC-native bilingual fieldwork and access/HEOR depth reduce rework when affiliates must defend local forecasts to regional portfolio committees.',
+      'When obesity pharmacotherapy expands clinician attention budgets, diabetes research must capture cross-category competition explicitly—referral patterns, payer budget cannibalisation, and institutional protocols that accelerate or delay GLP-1 and related metabolic use—so forecasts do not treat diabetes corridors as isolated from broader cardiometabolic prescribing.',
+    ],
+  },
+  {
     title: 'Operationalizing diabetes insight for launch, expansion, and lifecycle defence',
     paragraphs: [
       'Deliverables may include GP versus specialist handoff maps, formulary step-therapy friction registers, switch-intent segmentation, Ramadan or cultural adherence modules where relevant, and access-risk overlays tied to observable payer behaviour—all aligned so affiliates synchronize rather than reinterpret.',
@@ -103,6 +112,15 @@ const VACCINES_TAIL: ReferenceSection[] = [
     ],
   },
   {
+    title: 'GCC and MENA immunization market context for vaccines research design',
+    paragraphs: [
+      'Across MENA, pharmaceutical market growth is commonly cited in a 6–8% CAGR range (secondary analyst consensus 2023–2025), while GCC pharmaceutical spend sits in the low tens of billions USD (trade estimates 2024; BioNixus market analysis). Immunization programmes sit at the intersection of national public-health campaigns, private clinic acceleration, pharmacy administration rights, and institutional batch procurement—channels that rarely share a single decision calendar.',
+      'Regulatory and payer pathways remain country-specific: SFDA (Saudi Arabia), MOHAP with DHA/DOH overlays (UAE), MOH Kuwait, and MOPH Qatar each shape registration, campaign timing, and reimbursement coding differently. Treating the Gulf as one homogeneous vaccine sample frame systematically misreads where recommendation confidence fails to convert into doses administered.',
+      'BioNixus vaccines research therefore measures the intent–behaviour gap—stockouts, scheduling friction, documentation burden, caregiver hesitancy, occupational mandates—rather than awareness alone. Versus global syndicated panels (IQVIA MENA and similar footprints) or access consultancies that underweight field logistics, bilingual GCC-native execution and channel-specific sampling produce rollout plans affiliates can execute before campaign windows close.',
+      'Lifecycle modules stress-test competitive entry, schedule changes, and communication constraints in multilingual populations so medical and public-health teams invest in fixes that change delivered doses—not attitudes tracked in isolation from procurement and administration reality.',
+    ],
+  },
+  {
     title: 'Translating immunization insight into rollout and lifecycle action',
     paragraphs: [
       'Effective vaccine engagements produce channel-readiness maps, stakeholder-weighted sampling plans, message hierarchies validated against recommendation behaviour, and competitive-entry scenarios when schedule changes or new products alter uptake curves.',
@@ -118,6 +136,15 @@ const CARDIO_TAIL: ReferenceSection[] = [
       'Cardiovascular categories often entail interactions between inpatient intervention culture, lipid or hypertension inertia in outpatient stewardship, pharmacist-led substitution corridors, wearable adoption differences, guideline update cadence shocks, residual risk narratives competing for clinician attention budgets.',
       'Research bridging acute and chronic corridors prevents exaggerated adoption curves that assume instantaneous cascade after guideline publication or hospital discharge.',
       'Post-event prescribing rituals—statin intensification after MI, anticoagulation bridging after AF diagnosis, GDMT uptitration after heart-failure admission—often determine long-term share more than acute intervention enthusiasm alone. Studies should map who owns titration after the index event and where persistence decays.',
+    ],
+  },
+  {
+    title: 'GCC and MENA cardiology market context for pharmaceutical research design',
+    paragraphs: [
+      'Cardiometabolic burden arrives early across much of MENA, while pharmaceutical market growth is commonly cited in a 6–8% CAGR range (secondary analyst consensus 2023–2025) and GCC pharmaceutical spend in the low tens of billions USD (trade estimates 2024; BioNixus market analysis). Lipid, anticoagulation, heart-failure, and hypertension franchises compete for clinician attention inside that growth—yet undertreatment persists when specialist initiation is not matched by primary-care persistence and formulary permission.',
+      'Access gates remain local: SFDA and NUPCO dynamics in Saudi Arabia, MOHAP/DHA/DOH overlays in the UAE, MOH Kuwait, and MOPH Qatar each apply different substitution, tender, and step-therapy rules. Cardiology research that ignores these overlays produces guideline-aligned optimism that fails commercially when pharmacist substitution or institutional procurement compresses choice after discharge.',
+      'BioNixus programmes therefore map acute-to-chronic handoffs, residual-risk narrative tolerance, and payer-adjacent objections in bilingual fieldwork. Relative to global vendors (IQVIA MENA, legacy Kantar footprints) and access consultancies that underweight Gulf institutional calendars, GCC-native design shortens the path from insight to affiliate execution for launch and lifecycle defence.',
+      'Where diabetes and obesity pharmacotherapy reshape the same clinician attention budget, combined cardiometabolic modules reduce duplicate fieldwork and clarify where medical education, access investment, and brand messaging must coordinate rather than compete for the same outpatient visit.',
     ],
   },
   {
@@ -146,6 +173,15 @@ const AESTHETIC_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Aesthetic demand responds to discretionary spend cycles, channel trust, injector training heterogeneity, device versus toxin bundling incentives, reputational backlash risk, multilingual marketing regulations, influencer dynamics where compliant research design must avoid promotional contamination.',
       'Segment forecasts should stratify elective sensitivity and privacy preferences—particularly across Gulf private corridors versus mass-market aspirations.',
+    ],
+  },
+  {
+    title: 'GCC and MENA aesthetic medicine market context for research design',
+    paragraphs: [
+      'Aesthetic and consumer-medical categories grow inside a MENA pharmaceutical environment commonly cited at roughly 6–8% CAGR (secondary analyst consensus 2023–2025), with GCC pharmaceutical spend in the low tens of billions USD (trade estimates 2024; BioNixus market analysis). Unlike hospital-centric specialties, aesthetic demand is discretionary, reputation-driven, and channel-fragmented across dermatology, plastic surgery, dentistry crossover, and medi-spa ecosystems.',
+      'Regulatory and promotional rules remain country-specific across SFDA, MOHAP/DHA/DOH, MOH Kuwait, and MOPH Qatar, while Egypt, Jordan, and Lebanon add distinct private-payer mixes. Multilingual marketing regulations, before-and-after disclosure norms, and platform advertising restrictions shape what providers and consumers discuss openly—so instruments must elicit behaviour without contaminating results through non-compliant stimulus.',
+      'BioNixus aesthetic programmes therefore prioritise channel maps, price-architecture sensitivity, training loyalty, and compliance-aware message testing. Versus global syndicated trackers (IQVIA MENA and similar) or boutique panels that underweight Gulf private corridors, bilingual fieldwork and payer-aware design produce forecasts affiliates can defend when discretionary spend cycles compress or accelerate.',
+      'When immune-mediated dermatology and medical-aesthetic portfolios sit in the same affiliate, combined modules clarify where medical education, experience design, and access narratives should diverge—preventing a single playbook from erasing the referral-light dynamics that define aesthetic patient choice.',
     ],
   },
   {
