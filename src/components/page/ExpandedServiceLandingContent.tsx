@@ -17,6 +17,14 @@ type ExpandedServiceLandingContentProps = {
 export function ExpandedServiceLandingContent({ content }: ExpandedServiceLandingContentProps) {
   return (
     <LongFormProse>
+      <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+        Explore the{' '}
+        <Link to={content.hubLink.to} className="text-primary underline">
+          {content.hubLink.label}
+        </Link>{' '}
+        for regional context and related services.
+      </p>
+
       <LongFormSection heading={content.regulatory.heading}>
         {content.regulatory.paragraphs.map((paragraph) => (
           <LongFormParagraph key={paragraph.slice(0, 48)}>{paragraph}</LongFormParagraph>
@@ -27,13 +35,6 @@ export function ExpandedServiceLandingContent({ content }: ExpandedServiceLandin
         {content.marketContext.paragraphs.map((paragraph) => (
           <LongFormParagraph key={paragraph.slice(0, 48)}>{paragraph}</LongFormParagraph>
         ))}
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          Explore the{' '}
-          <Link to={content.hubLink.to} className="text-primary underline">
-            {content.hubLink.label}
-          </Link>{' '}
-          for regional context and related services.
-        </p>
       </LongFormSection>
 
       <LongFormSection heading={content.services.heading}>

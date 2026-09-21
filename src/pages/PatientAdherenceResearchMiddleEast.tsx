@@ -95,6 +95,7 @@ export default function PatientAdherenceResearchMiddleEast() {
           h1="Patient Adherence Research Middle East"
           intro="Patient adherence in the Middle East is shaped by factors that have no parallel in European or North American pharmaceutical research: Ramadan fasting disrupting daily dosing cycles, biologic storage challenges under extreme heat, cost sensitivity driving early discontinuation in non-Gulf markets, and patient education gaps in populations managing complex chronic disease regimens. BioNixus designs and executes adherence research programmes across the GCC and wider Middle East — from pharmacy claims analysis and longitudinal patient surveys to qualitative barrier IDIs — that give pharmaceutical teams the evidence to understand, quantify, and address treatment non-adherence in local market terms."
           links={[
+            { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
             { to: '/patient-journey-research-gcc', label: 'Patient journey research GCC' },
             { to: '/patient-support-program-research-gcc', label: 'Patient support program research GCC' },
             { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC' },
@@ -102,6 +103,18 @@ export default function PatientAdherenceResearchMiddleEast() {
             { to: '/contact', label: 'Request adherence research scope' },
           ]}
         />
+
+        <section className="section-padding py-2">
+          <div className="container-wide max-w-5xl mx-auto">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              For regional context and related services, start from our{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>{' '}
+              before scoping adherence research.
+            </p>
+          </div>
+        </section>
 
         <ExecutiveDecisionBlock
           heading="Middle East adherence research: decision framework"

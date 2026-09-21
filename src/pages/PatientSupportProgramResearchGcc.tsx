@@ -15,6 +15,7 @@ export default function PatientSupportProgramResearchGcc() {
       areaServed={['Saudi Arabia', 'UAE', 'Kuwait', 'Qatar', 'GCC']}
       intro="In the GCC, a lot of a brand's value leaks after launch — at the points where patients fall out of diagnosis, initiation, and refill. Patient support programs are meant to close those gaps, but only if you know where the friction actually sits. BioNixus maps the diagnosis-to-treatment journey, locates the real drop-off points, and turns them into support interventions you can test against an adherence or persistence metric."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC', primary: true },
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },

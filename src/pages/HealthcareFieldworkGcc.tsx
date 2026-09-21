@@ -95,6 +95,7 @@ export default function HealthcareFieldworkGcc() {
           h1="Healthcare Fieldwork GCC"
           intro="Pharmaceutical and medical device teams conducting primary research across the Gulf Cooperation Council face a distinctive set of operational realities: thin specialist pools, gatekeeper-heavy institutions, bilingual data requirements, and regulatory frameworks that differ meaningfully from European or North American norms. BioNixus designs and executes healthcare fieldwork across all six GCC markets — Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — with role-verified specialist cohorts, incidence-aware quota management, and audit-ready dataset delivery."
           links={[
+            { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
             { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East' },
             { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment' },
             { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC' },
@@ -103,6 +104,18 @@ export default function HealthcareFieldworkGcc() {
             { to: '/contact', label: 'Request fieldwork scope' },
           ]}
         />
+
+        <section className="section-padding py-2">
+          <div className="container-wide max-w-5xl mx-auto">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              For regional context and related services, start from our{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>{' '}
+              before scoping GCC fieldwork.
+            </p>
+          </div>
+        </section>
 
         <ExecutiveDecisionBlock
           heading="Healthcare fieldwork GCC: decision framework"

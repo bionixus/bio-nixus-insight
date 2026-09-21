@@ -15,6 +15,7 @@ export default function GccHcpRecruitmentMarketResearch() {
       areaServed={['Saudi Arabia', 'GCC']}
       intro="A GCC physician study is only as credible as the people who actually answered it. In markets where some specialties number in the dozens, sample quality is the study — not a logistics detail. BioNixus recruits verified specialists across Saudi Arabia and the wider Gulf with role and licence validation, incidence-aware quotas, and a quality funnel that is governed while fieldwork is live, not audited after the fact."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/bionixus-market-research-middle-east', label: 'Back to Middle East pillar', primary: true },
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East', primary: true },
         { to: '/quantitative-healthcare-market-research', label: 'See quantitative guide' },

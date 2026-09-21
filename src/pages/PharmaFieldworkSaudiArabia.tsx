@@ -13,6 +13,7 @@ export default function PharmaFieldworkSaudiArabia() {
       h1="Pharma Fieldwork Saudi Arabia"
       intro="BioNixus delivers pharma fieldwork in Saudi Arabia with verified physician and payer recruitment, Arabic–English moderation, and governance aligned to SFDA and institutional access realities—not consumer panel shortcuts. Start from our healthcare market research hub for regional context, then scope one KSA fieldwork objective aligned to your launch or access milestone."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         {
           to: '/market-research-saudi-arabia-pharmaceutical',
           label: 'Healthcare market research company in Saudi Arabia',
