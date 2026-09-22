@@ -356,6 +356,16 @@ export default function HealthcareMarketResearchInBahrain() {
                 that engage NHRA's digital health pathway early often move faster than those replicating a strategy
                 built for a more conservative regulatory environment.
               </p>
+              <p>
+                Biosimilar and biologic portfolios benefit from Bahrain&apos;s compact formulary network: hospital
+                pharmacy committees and NHRA HTA reviewers can be mapped comprehensively within a single research
+                cycle. BioNixus runs substitution-confidence, tender, and patient-support continuity modules aligned
+                to our{' '}
+                <Link to="/healthcare-market-research/therapy/biosimilars" className="text-primary hover:underline">
+                  biosimilars therapy research hub
+                </Link>{' '}
+                when Gulf hospital awards drive share shifts faster than physician advocacy alone.
+              </p>
             </div>
           </div>
         </section>
@@ -366,6 +376,11 @@ export default function HealthcareMarketResearchInBahrain() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               Why pharmaceutical teams choose BioNixus in Bahrain
             </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">
+              Bahrain&apos;s NHRA-forward environment rewards sponsors who invest in HTA-aligned evidence early — especially for
+              biologics, biosimilars, and specialty hospital lines where compact committee networks make high-quality primary
+              research feasible within a single wave of fieldwork across public and private hospitals.
+            </p>
             <ul className="grid sm:grid-cols-2 gap-3">
               {[
                 'Specialist in pharma and healthcare research — not a generalist panel company running healthcare as a sideline',
@@ -375,6 +390,7 @@ export default function HealthcareMarketResearchInBahrain() {
                 'Dual quantitative and qualitative capability in one team — no subcontracting',
                 'Real-world evidence and advisory board program design compatible with NHRA HTA submissions',
                 '15+ years of healthcare research experience across 48 countries',
+                'Oncology, immunology, and biosimilar modules linked to NHRA HTA and compact hospital committee mapping',
               ].map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span className="text-primary flex-shrink-0">✓</span>

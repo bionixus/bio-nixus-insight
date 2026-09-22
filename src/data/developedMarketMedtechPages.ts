@@ -56,7 +56,7 @@ function buildServices(label: string, regulatorShort: string) {
     items: [
       {
         title: 'Hospital procurement and formulary committee research',
-        description: `Primary research with hospital pharmacy, biomedical engineering, and value-analysis committees — mapping evidence requirements, tender criteria, and.`,
+        description: `Primary research with hospital pharmacy, biomedical engineering, and value-analysis committees — mapping evidence requirements, tender criteria, and total-cost-of-ownership objections before capital or consumable awards.`,
       },
       {
         title: 'Clinician adoption and workflow studies',
@@ -68,7 +68,7 @@ function buildServices(label: string, regulatorShort: string) {
       },
       {
         title: 'Pricing, reimbursement, and payer-adjacent research',
-        description: `Research on provincial, national, or insurer funding pathways for device categories — including technology assessment expectations, DRG/procedure funding.`,
+        description: `Research on provincial, national, or insurer funding pathways for device categories — including technology assessment expectations, DRG/procedure funding rules, and private-pay corridors where public listing lags.`,
       },
       {
         title: 'KOL mapping and advisory board programmes',
@@ -76,7 +76,7 @@ function buildServices(label: string, regulatorShort: string) {
       },
       {
         title: 'GCC and MENA expansion intelligence for ${label} manufacturers',
-        description: `Comparative research linking ${label} regulatory credentials (including Access Consortium or reference-agency reliance) to SFDA, MOHAP, and GCC hospital.`,
+        description: `Comparative research linking ${label} regulatory credentials (including Access Consortium or reference-agency reliance) to SFDA, MOHAP, and GCC hospital procurement intelligence — so global portfolio teams sequence launches with realistic tender and formulary timelines.`,
       },
     ],
   };
@@ -574,6 +574,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Spain\'s EUR 10–12 billion devices market within EUR 120–130 billion health expenditure serves 47.9 million population. High diabetes prevalence (14.8% adults) drives monitoring and therapeutic device demand.',
       'Regional adoption variation is among the widest in EU5 — Catalonia and Madrid versus slower rural communities require segmented research, not national averages.',
       'BioNixus supports Spain MedTech research with AEMPS context and verified hospital networks across target autonomous communities.',
+      'IPT positioning and CIPM price negotiations often determine whether a device reaches hospital Guía Farmacoterapéutica listing — qualitative procurement research should accompany clinician surveys when access is the binding constraint.',
     ],
   },
   switzerland: {
@@ -606,6 +607,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Switzerland\'s CHF 6–7 billion medtech market punches above population weight (8.7 million) with highest OECD health spending per capita. Roche, Zambon, and dense SME ecosystem characterise domestic industry.',
       'Access Consortium credentials make Switzerland a strategic parallel market with Canada and Australia for global launch sequencing.',
       'BioNixus supports Swiss MedTech research with Swissmedic context and verified KOL networks at major university hospitals.',
+      'Cantonal HTA and hospital-group tenders (Insel, CHUV, USZ networks) create step-changes in net price that prescriber surveys alone miss — procurement and biomedical engineering modules should run alongside specialist adoption work.',
     ],
   },
   denmark: {
@@ -638,6 +640,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Denmark\'s medtech sector exports globally through Ambu, Coloplast, and William Demant (Demant) — domestic market size belies international strategic importance. 5.9 million population with high health expenditure per capita.',
       'Regional hospital groups concentrate procedural volume; digital health leadership creates differentiated adoption pathways for connected devices.',
       'BioNixus supports Denmark MedTech research with EU MDR context and Nordic expansion intelligence.',
+      'Nordic collaborative procurement (SKI, NHN) and regional tender calendars can reset competitive share overnight — tender intelligence and hospital pharmacy committee modules belong in the same programme as specialist adoption metrics.',
     ],
   },
   'new-zealand': {
@@ -734,6 +737,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Poland\'s PLN 18–22 billion medtech market is Central Europe\'s largest by population (38 million) with EU-funded hospital investment driving capital equipment cycles.',
       'NFZ cost-containment pressure increases alongside private pay growth — dual-pathway research prevents mispriced access strategy.',
       'BioNixus supports Poland MedTech research with URPL/NFZ context and EU5 comparative modules.',
+      'EU cohesion-funded hospital modernisation tenders align to fund disbursement schedules — mapping tender calendars alongside clinician preference explains adoption bursts that syndicated share data misattributes to brand campaigns.',
     ],
   },
   malaysia: {
@@ -766,6 +770,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Malaysia\'s MYR 8–10 billion medtech market serves 34 million population with dual public-private healthcare pathways and ASEAN distribution hub ambitions.',
       'Medical tourism through private hospitals (Prince Court, Gleneagles KL) creates premium adoption corridor distinct from MOH procurement.',
       'BioNixus supports Malaysia MedTech research with MDA-aware design and verified specialist networks across public and private systems.',
+      'Private chains (IHH, KPJ) often adopt innovator devices twelve to eighteen months ahead of MOH central contracts — segmentation by account type prevents mispriced launch sequencing for multinational portfolios.',
     ],
   },
   brazil: {
@@ -798,6 +803,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Brazil\'s USD 11–13 billion devices market serves 218 million population — Latin America\'s largest. Dual SUS/public and ANS/private pathways require segmented research design.',
       'Domestic orthopaedic and dental manufacturers compete aggressively; import tariffs reshape multinational pricing strategy.',
       'BioNixus supports Brazil MedTech research with ANVISA context, Portuguese fieldwork, and LATAM expansion intelligence.',
+      'Hospital group consolidation (Rede D\'Or, Hapvida) and CONITEC HTA for high-cost technologies mean device launches need evidence plans that work for both private fast-track adoption and SUS committee scrutiny — research should map those lanes separately rather than averaging “Brazil hospital” sentiment.',
     ],
   },
 };

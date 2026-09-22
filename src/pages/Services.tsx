@@ -13,7 +13,7 @@ import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
-import { getServicesHubBundle } from '@/data/servicesHubContent';
+import { getServicesHubBundle, SERVICES_HUB_DEPTH_SECTIONS } from '@/data/servicesHubContent';
 import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 
 const recoveryLinkLabels: Record<string, string> = {
@@ -101,6 +101,8 @@ const Services = () => {
   const hubLinks = bundle.hubLinks;
   const serviceFaq = bundle.serviceFaq;
   const heroMetrics = bundle.heroMetrics;
+  const depthSections =
+    'depthSections' in bundle && bundle.depthSections ? bundle.depthSections : SERVICES_HUB_DEPTH_SECTIONS;
 
   const recoveryLinksWithLabels = useMemo(
     () =>
@@ -445,6 +447,33 @@ const Services = () => {
                 ))}
               </ul>
             </details>
+          </div>
+        </section>
+
+        <section className="premium-home-cream section-padding py-16 md:py-20" aria-labelledby="services-hub-depth-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mb-12 max-w-3xl">
+              <PremiumEyebrow tone="teal">Scope &amp; governance</PremiumEyebrow>
+              <h2
+                id="services-hub-depth-heading"
+                className="font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl"
+              >
+                How BioNixus scopes global market research programmes
+              </h2>
+            </div>
+            <div className="space-y-12">
+              {depthSections.map((section) => (
+                <article key={section.heading} className="premium-card p-8 md:p-10">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">{section.eyebrow}</p>
+                  <h3 className="mt-3 font-display text-2xl font-medium text-[#0C1B33]">{section.heading}</h3>
+                  <div className="mt-5 space-y-4 text-[15px] font-light leading-relaxed text-[#7A7267]">
+                    {section.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)}>{para}</p>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

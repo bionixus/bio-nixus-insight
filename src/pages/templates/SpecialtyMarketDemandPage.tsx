@@ -52,6 +52,7 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
     { href: '#structure', label: 'Structure' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
+    ...(content.deepDive?.length ? [{ href: '#deep-dive', label: 'Deep dive' }] : []),
     { href: '#audiences', label: 'Audiences' },
     { href: '#faq', label: 'FAQ' },
   ];
@@ -147,6 +148,23 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             <div className="space-y-4">
               {content.calendarBlocks.items.map((item) => (
                 <DirectoryDriverCard key={item.period} title={item.period} desc={item.detail} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {content.deepDive?.length ? (
+          <DirectorySection id="deep-dive" eyebrow="Execution detail" title="Market intelligence depth">
+            <div className="space-y-10 max-w-3xl">
+              {content.deepDive.map((block) => (
+                <div key={block.heading}>
+                  <h3 className="text-xl font-display font-semibold text-foreground mb-3">{block.heading}</h3>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    {block.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)}>{para}</p>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </DirectorySection>

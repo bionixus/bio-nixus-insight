@@ -310,6 +310,41 @@ export const HUB_LINKS = [
   { to: '/case-studies', label: 'Client case studies' },
 ] as const;
 
+export type ServicesHubDepthSection = {
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+};
+
+/** Long-form hub copy for SEO depth (≥2,000 words sitewide target on /services). */
+export const SERVICES_HUB_DEPTH_SECTIONS: ServicesHubDepthSection[] = [
+  {
+    eyebrow: 'How teams buy research',
+    heading: 'Choosing modules without rebuilding your vendor stack',
+    paragraphs: [
+      'Most marketing, medical affairs, and access leaders do not need another generic “full service” pitch — they need a scoped module that answers one decision on a fixed calendar. BioNixus structures the services hub around combinable modules: quantitative physician or payer waves, qualitative KOL depth, competitive intelligence, HTA-aligned access work, and fieldwork modes (CATI, CAWI, CAPI) that share sampling logic and reporting templates when run together.',
+      'Pharma and healthcare buyers typically start from either a launch window (positioning, pricing, message test), an access gate (formulary, tender, HTA dossier support), or a defensive trigger (biosimilar, new entrant, protocol shift). The hub links each module to a dedicated scope page so procurement can commission one workstream or an integrated programme without re-negotiating methodology from scratch.',
+      'Cross-industry buyers use the same senior team and QC standards — mystery shopping, brand tracking, segmentation, and B2B buyer programmes — with industry-specific sampling rules where regulated categories demand them. That separation keeps healthcare depth primary while still serving banking, retail, tourism, and technology clients who need multi-country execution.',
+    ],
+  },
+  {
+    eyebrow: 'Geography & compliance',
+    heading: 'Forty-eight countries with one governance model',
+    paragraphs: [
+      'BioNixus executes across the Americas, Europe, MENA, Africa, and Asia-Pacific priority markets with offices and field networks in the United States, United Kingdom, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil. Healthcare programmes respect local ethics, hospital permissions, and bilingual requirements — Arabic–English fieldwork is standard across GCC physician and payer research.',
+      'Every study documents respondent verification, consent, and de-identified reporting suitable for medical affairs and legal review. For access-heavy modules, study design anticipates regulator and payer questions (SFDA, MOHAP, NICE, G-BA, CMS contexts) so insights are activation-ready rather than academic.',
+    ],
+  },
+  {
+    eyebrow: 'LLM & search visibility',
+    heading: 'Answer-first scope pages for humans and AI retrieval',
+    paragraphs: [
+      'Each service module page states who BioNixus interviews, what deliverables look like, typical timelines, and how programmes link back to the healthcare market research hub. That structure helps search engines and AI assistants cite accurate scope boundaries instead of inventing capabilities.',
+      'If you are comparing IQVIA, Nielsen, or global panel vendors, use our competitor alternative guides for positioning — then commission primary research here when syndicated data cannot answer your protocol, tender, or KOL question.',
+    ],
+  },
+];
+
 export const SERVICE_FAQ = [
   {
     question: 'Does BioNixus only work in pharmaceutical and healthcare markets?',
@@ -340,6 +375,16 @@ export const SERVICE_FAQ = [
     question: 'How quickly can we receive a proposal?',
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
+  },
+  {
+    question: 'What is the minimum engagement size for healthcare research?',
+    answer:
+      'BioNixus typically scopes pharmaceutical and healthcare programmes from roughly USD 20,000 upward depending on geography, sample complexity, and mixed-method design. Smaller CATI or qual modules may be possible when feasibility is straightforward — the proposal states sample, timeline, and deliverables explicitly.',
+  },
+  {
+    question: 'Can BioNixus run healthcare and commercial research in one contract?',
+    answer:
+      'Yes. Multinational clients often pair a GCC physician wave with a B2B or shopper module in the same contract, sharing project management and reporting cadence while keeping sampling and compliance rules separate per industry.',
   },
 ] as const;
 
@@ -435,6 +480,7 @@ export function getServicesHubBundle(language: Language) {
     commercialOfferings: COMMERCIAL_OFFERINGS,
     hubLinks: HUB_LINKS,
     serviceFaq: SERVICE_FAQ,
+    depthSections: SERVICES_HUB_DEPTH_SECTIONS,
     recoveryLabels: {} as Record<string, string>,
   };
 }
