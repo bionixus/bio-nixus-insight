@@ -223,6 +223,22 @@ const BIOSIMILARS_TAIL: ReferenceSection[] = [
       'Escalate biosimilar programmes through biologics and immunology hubs, Saudi biosimilar market reports, and healthcare market research country pages where hospital tendering dominates access.',
     ],
   },
+  {
+    title: 'GCC tender corridors and hospital substitution mechanics',
+    paragraphs: [
+      'In Saudi Arabia, UAE, and smaller Gulf markets, biosimilar volume often moves through centralized hospital awards and pharmacy substitution mandates rather than physician-led brand choice alone. Research must document whether substitution is policy-permitted, pharmacist-default, or still clinically resisted in high-risk patient segments.',
+      'NUPCO and emirate-level procurement calendars create step-changes in biosimilar share that lag regulatory approval by quarters. BioNixus integrates tender intelligence with HCP confidence modules so launch sequencing reflects procurement reality, not approval-date optimism.',
+      'Patient-support continuity, device training, and cold-chain reliability remain originator defence levers even after tender loss. Qualitative modules capture nursing and pharmacy rituals that quantitative share trackers miss during the first two tender cycles.',
+    ],
+  },
+  {
+    title: 'Evidence packages payers expect for biosimilar switching',
+    paragraphs: [
+      'Payers and hospital committees increasingly ask for switching studies, immunogenicity narratives, and budget-impact models that align with local HTA habits — SFDA Economic Evaluation System pressure in Saudi Arabia is one example, but EU5 and UK formularies apply parallel scrutiny.',
+      'BioNixus designs HEOR and qualitative bundles that answer committee objections before field teams encounter them: interchangeability stigma, indication breadth gaps, and total administration cost including nurse time and wastage.',
+      'For multinational portfolios, harmonized survey instruments across GCC and EU5 cells allow leadership to compare substitution confidence on a single scale while preserving country-specific procurement appendices.',
+    ],
+  },
 ];
 
 const DEFAULT_TAIL: ReferenceSection[] = [
