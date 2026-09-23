@@ -822,6 +822,21 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
     heading: 'IVD access structure in Singapore',
     paragraphs: [
       'Access is multi-gated: HSA clearance, lab technical validation, clinical ordering behaviour, and budget owners. BioNixus scopes research to the gate that is currently blocking volume.',
+      'Singapore\'s three public hospital clusters — SingHealth (SGH, NCCS), NHG (TTSH), and NUHS (NUH) — operate centralised laboratory networks that standardise assay menus across sister hospitals. A listing at one cluster node often implies group-wide adoption, but technical validation timelines and pathologist sign-off vary by test complexity.',
+      'HSA\'s IVD registration pathway classifies assays by risk, with higher-risk categories requiring clinical performance data and post-market surveillance plans. Access Consortium verification can compress review for assays already approved by TGA, MHRA, or Health Canada — making Singapore a strategic parallel submission market for ASEAN expansion.',
+      'ACE (Agency for Care Effectiveness) health technology assessments increasingly influence MOH subsidy decisions for high-cost molecular and companion diagnostics. Research should map ACE evaluation criteria alongside laboratory adoption barriers to forecast realistic volume curves post-registration.',
+      'Private hospital groups (Parkway Pantai, Raffles, IHH) serve medical tourism and premium patient segments with faster innovator adoption than public clusters — segmenting research by public versus private laboratory setting reveals adoption sequencing invisible in blended national data.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Singapore IVD market access signals (2026)',
+    items: [
+      { label: 'HSA registration', signal: 'IVD risk classification determines evidence burden; Access Consortium verification available for reference-country approvals.' },
+      { label: 'Cluster lab standardisation', signal: 'SingHealth, NUHS, and NHG central labs drive group-wide assay menus — one validation can unlock multiple hospitals.' },
+      { label: 'Precision oncology demand', signal: 'Companion diagnostics and NGS panels face rising evidence bars from pathologists and ACE assessments.' },
+      { label: 'Cost-per-test scrutiny', signal: 'Procurement weighs reagent rental, throughput, and total cost of ownership against central-lab alternatives.' },
+      { label: 'ASEAN HQ hub', signal: 'APAC teams pilot IVD dossiers in Singapore before scaling into Malaysia, Indonesia, and Thailand.' },
+      { label: 'POCT expansion', signal: 'Ward and clinic point-of-care creates parallel buyer sets beyond central laboratory leadership.' },
     ],
   },
   audiences: [
@@ -846,6 +861,26 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
       question: 'Who decides IVD adoption in Singapore hospitals?',
       answer:
         'Typically laboratory leadership plus clinical champions and procurement — with cluster standardization often binding sister hospitals.',
+    },
+    {
+      question: 'How does HSA regulate IVD products in Singapore?',
+      answer:
+        'HSA classifies IVDs by risk under the Health Products Act. Higher-risk assays require clinical performance data and post-market surveillance. Access Consortium verification can accelerate review for products approved by TGA, MHRA, Health Canada, FDA, or Swissmedic.',
+    },
+    {
+      question: 'What role does ACE play in Singapore IVD access?',
+      answer:
+        'The Agency for Care Effectiveness evaluates high-cost health technologies for MOH subsidy decisions. ACE assessments influence whether molecular diagnostics and companion tests receive public funding beyond HSA registration.',
+    },
+    {
+      question: 'When should IVD manufacturers research Singapore versus ASEAN markets?',
+      answer:
+        'Singapore is typically the first ASEAN market for regulatory dossier validation and cluster lab adoption proof. BioNixus recommends Singapore primary research before scaling into Malaysia, Indonesia, and Thailand with harmonised evidence architecture.',
+    },
+    {
+      question: 'How does BioNixus support Singapore IVD market access research?',
+      answer:
+        'BioNixus conducts pathologist and lab director interviews, cluster procurement mapping, HSA pathway analysis, and competitive installed-base research — delivering decision-ready evidence for launch, competitive defence, and ASEAN expansion planning.',
     },
   ],
   areaServed: ['Singapore'],
@@ -886,9 +921,13 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'Japan neurology devices market structure',
     paragraphs: [
       'Volume concentrates in designated stroke and university neurosurgery centres. Distributor technical specialists and proctors are part of the commercial system BioNixus maps alongside clinical preference.',
+      'Japan\'s super-ageing demographics (28%+ over 65) drive structural demand for stroke intervention, neurosurgery, and neuromonitoring devices. Designated stroke centres (dōmei byōin) set regional protocol norms that cascade to community hospitals — KOL mapping at these hubs predicts national diffusion patterns.',
+      'PMDA (Pharmaceuticals and Medical Devices Agency) regulates neurology devices under risk-based classification with todokede (notification), ninsho (certification), and shonin (approval) pathways. NHI (National Health Insurance) fee schedule revisions every two years reshape reimbursement for high-cost disposables and capital equipment.',
+      'Domestic manufacturers (Terumo, Nihon Kohden, Olympus neurosurgery portfolio) compete aggressively with US and European imports. Research should map local preference baselines and distributor technical support capabilities before assuming multinational clinical data translates to committee recommendation.',
+      'Training intensity and proctoring bandwidth gate diffusion beyond early-adopter KOLs — BioNixus programmes quantify how many centres can realistically adopt novel neurointerventional or monitoring technologies within a 12–18 month window.',
     ],
   },
   audiences: [
@@ -948,9 +987,13 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'Japan medical disposables market structure',
     paragraphs: [
       'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them.',
+      'Japan\'s hospital disposables market operates through centralised group purchasing organisations (GPOs) and hospital-wide standardisation committees that lock in SKU choices for 12–24 month contract cycles. Switching costs — training, kit redesign, inventory management — often outweigh marginal unit-price differences.',
+      'Infection-control standards tightened post-COVID sustain premium disposables demand in PPE, drapes, and antiseptic categories. Hospital quality improvement programmes reference JIS (Japanese Industrial Standards) and international guidelines when evaluating product switches.',
+      'Domestic manufacturers (Terumo, Nipro, Asahi Kasei medical division) remain default referents for many disposable categories — multinational entrants must research local preference baselines and distributor service expectations before assuming clinical equivalence drives switching.',
+      'NHI reimbursement for procedure-related disposables ties to DPC (Diagnosis Procedure Combination) fee schedules — research should map how DPC category revisions affect disposable utilisation rates and hospital margin pressure.',
     ],
   },
   audiences: [
@@ -1197,9 +1240,13 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     ],
   },
   marketStructure: {
-    heading: 'Structure',
+    heading: 'Febrile neutropenia market structure',
     paragraphs: [
       'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'G-CSF prophylaxis guidelines from ASCO, ESMO, and regional oncology societies set prophylaxis thresholds — but hospital pharmacy substitution policies and tender awards often override guideline intent in daily practice. Research must map where pharmacist substitution confidence diverges from oncologist prescribing preference.',
+      'Biosimilar filgrastim and pegfilgrastim competition reshaped hospital pharmacy economics globally — Japan, EU5, and GCC markets each operate distinct tender and substitution frameworks that require local research rather than extrapolated erosion curves.',
+      'In GCC hospital settings, supportive-care injectables move through NUPCO, MOHAP, and HMC framework agreements — tender calendar timing and ICV scoring affect G-CSF category awards independently of clinical guideline updates.',
+      'Long-acting pegfilgrastim formulations versus short-acting filgrastim create administration convenience trade-offs that nursing and day-clinic stakeholders weigh alongside unit cost — research should capture workflow friction that formulary committees reference during tender evaluation.',
     ],
   },
   audiences: [
@@ -1220,6 +1267,26 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
       question: 'What drives the febrile neutropenia market?',
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
+    },
+    {
+      question: 'How big is the G-CSF market for febrile neutropenia prophylaxis?',
+      answer:
+        'Global G-CSF market size exceeds USD 6 billion annually, with filgrastim biosimilars reshaping hospital pharmacy economics. Market sizing should segment by prophylaxis versus treatment use, short-acting versus long-acting formulations, and geography-specific tender dynamics.',
+    },
+    {
+      question: 'What role do hospital protocols play in G-CSF prescribing?',
+      answer:
+        'Institutional prophylaxis protocols — primary versus secondary, risk-stratification thresholds, and day-clinic administration preferences — often determine brand share more than individual physician preference. BioNixus researches protocol owners and oncology pharmacists alongside medical oncologists.',
+    },
+    {
+      question: 'How does febrile neutropenia research differ in GCC markets?',
+      answer:
+        'GCC hospital tender frameworks (NUPCO, MOHAP, HMC) govern supportive-care injectable awards independently of clinical guidelines. Research should map tender calendar timing, ICV scoring, and post-award hospital pull-through alongside oncologist prescribing behaviour.',
+    },
+    {
+      question: 'How does BioNixus support febrile neutropenia market research?',
+      answer:
+        'BioNixus conducts oncologist surveys, oncology pharmacist interviews, prophylaxis protocol mapping, G-CSF switching studies, and GCC tender intelligence — delivering decision-ready evidence for launch, competitive defence, and lifecycle management.',
     },
   ],
   priority: 'next',
