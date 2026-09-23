@@ -152,6 +152,18 @@ export default function CompetitorAlternativePage({ config }: Props) {
           </div>
         </DirectorySection>
 
+        {config.deepDive ? (
+          <DirectorySection id="deep-dive" surface="cream" eyebrow="Saudi context" title={config.deepDive.heading}>
+            <div className="space-y-4 max-w-3xl">
+              {config.deepDive.paragraphs.map((para) => (
+                <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                  {para}
+                </p>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
         <DirectorySection
           id="compared"
           surface="cream"
