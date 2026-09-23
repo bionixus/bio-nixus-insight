@@ -81,6 +81,14 @@ https://www.bionixus.com/healthcare-market-research/turkey
 https://www.bionixus.com/healthcare-market-research/singapore
 https://www.bionixus.com/healthcare-market-research/japan
 
+# --- Tier 7: Thin-page expansion (2026-09-17 cron) ---
+https://www.bionixus.com/febrile-neutropenia-market
+https://www.bionixus.com/japan-medical-disposables-market
+https://www.bionixus.com/japan-neurology-devices-market
+https://www.bionixus.com/gcc-functional-service-providers-market
+https://www.bionixus.com/gcc-generic-pharmaceuticals-market
+https://www.bionixus.com/gcc-biologics-market
+
 # --- Secondary ---
 https://www.bionixus.com/
 https://www.bionixus.com/premium-home-page
