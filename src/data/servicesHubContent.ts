@@ -341,6 +341,21 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'How does BioNixus handle healthcare compliance and data protection?',
+    answer:
+      'Programmes follow GDPR-aligned consent and retention standards, ICH-GCP awareness for clinical-adjacent work, and region-specific rules such as SFDA and MOH frameworks in the Gulf, NHS REC expectations in the UK, and HIPAA-aware handling for US physician modules. Methodology appendices document sampling, incentives, and data flows for your legal and medical review.',
+  },
+  {
+    question: 'What is the difference between syndicated data and BioNixus primary research?',
+    answer:
+      'Syndicated dashboards (IQVIA, Nielsen, Clarivate) excel at national Rx or retail totals. BioNixus fields custom studies when you need account-level brand-versus-competitor share, tender-linked hospital consumption, payer or formulary behaviour, or SKU-level pharmacy audits that syndicated feeds cannot reconstruct. Most clients keep syndicated subscriptions and add primary modules for the decisions syndication cannot answer.',
+  },
+  {
+    question: 'Can BioNixus support AI and LLM-ready evidence summaries?',
+    answer:
+      'Yes. Deliverables can include structured executive summaries, FAQ blocks, and citation-ready methodology notes designed for internal knowledge bases and public GEO pages (see bionixus.com/llms.txt). We do not scrape syndicated data into models; insights come from consented primary fieldwork and documented desk sources.',
+  },
 ] as const;
 
 export const HERO_METRICS = [

@@ -663,7 +663,13 @@ export default function TherapyPage() {
                       { href: '#respiratory-modules', label: 'Research modules' },
                       { href: '#respiratory-execution', label: 'Launch alignment' },
                     ]
-                  : [];
+                  : area === 'biosimilars'
+                    ? [
+                        { href: '#biosimilars-substitution', label: 'Substitution research' },
+                        { href: '#biosimilars-modules', label: 'Research modules' },
+                        { href: '#biosimilars-gcc', label: 'GCC tender context' },
+                      ]
+                    : [];
   const heroTitle = isBiologics
     ? 'Biologics market research guide'
     : isImmunology
@@ -1151,6 +1157,93 @@ export default function TherapyPage() {
                 so medical, access, and field teams synchronise on centre maps and funding paths before scale-up.
                 Rare disease portfolios that span multiple GCC markets should harmonize centre maps while preserving
                 country-specific funding committee language in readouts.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'biosimilars' ? (
+        <>
+          <ReportPremiumSection
+            id="biosimilars-substitution"
+            title="Biosimilars market research: substitution confidence and tender mechanics"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Biosimilar performance is rarely explained by price alone. Uptake depends on{' '}
+                <strong className="font-medium text-foreground">pharmacist substitution authority</strong>,{' '}
+                <strong className="font-medium text-foreground">prescriber familiarity</strong>,{' '}
+                <strong className="font-medium text-foreground">device and administration experience</strong>, and{' '}
+                <strong className="font-medium text-foreground">procurement scoring</strong> that can reset a molecule
+                across an entire hospital group after one award. BioNixus maps those levers with mixed quant and qual
+                fieldwork across MENA, the UK, and Europe.
+              </p>
+              <p>
+                For Gulf programmes, contrast national-tender systems (where a single NUPCO or Rafed award can move share
+                overnight) with UAE-style payer-by-payer adoption. Pair this guide with the{' '}
+                <Link to="/biosimilar-market-entry-saudi-arabia" className="text-primary underline">
+                  Saudi biosimilar market entry guide
+                </Link>
+                , the{' '}
+                <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline">
+                  Saudi Arabia biosimilars market report
+                </Link>
+                , and the{' '}
+                <Link to="/insights/saudi-arabia-biosimilar-market-size-methodology-2026" className="text-primary underline">
+                  methodology note on Saudi biosimilar market sizing
+                </Link>{' '}
+                when forecasts must reconcile hospital-administered scope with broader published bands.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="biosimilars-modules"
+            title="Modules BioNixus integrates for biosimilar and originator defence studies"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Switching confidence and vignette testing:</strong> realistic
+                  patient cases varied by induction versus maintenance, comorbidity, prior biologic exposure, and
+                  institution type.
+                </li>
+                <li>
+                  <strong className="text-foreground">Procurement and formulary overlays:</strong> tender calendars,
+                  rebate structures, pharmacist notification rules, and committee scoring dimensions that trump clinical
+                  preference on paper.
+                </li>
+                <li>
+                  <strong className="text-foreground">Originator defence levers:</strong> device, patient support,
+                  indication breadth, and real-world evidence valued in the relevant channel — traced to decision owners
+                  rather than assumed from label claims.
+                </li>
+                <li>
+                  <strong className="text-foreground">Molecule-wave forecasting:</strong> sequencing of supportive-care,
+                  immunology, and oncology biosimilar entries so portfolio teams do not average incompatible adoption
+                  curves.
+                </li>
+              </ul>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection id="biosimilars-gcc" title="GCC and MENA biosimilar context for research design">
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Saudi Arabia remains the fastest-substitution Gulf market when hospital-administered biologics and
+                supportive-care injectables sit inside national frameworks. The UAE advances insurer-by-insurer, so
+                clinician confidence and private hospital formulary politics matter more. BioNixus bilingual fieldwork
+                captures both patterns without treating “GCC” as homogeneous.
+              </p>
+              <p>
+                Continue to the{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research hub
+                </Link>{' '}
+                for country coverage, or request a proposal via the contact form when you need a scoped switching or
+                tender-impact study for a specific molecule class.
               </p>
             </div>
           </ReportPremiumSection>
