@@ -52,6 +52,7 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
     { href: '#structure', label: 'Structure' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
+    ...(content.guideSections?.length ? [{ href: '#guide', label: 'Guide' }] : []),
     { href: '#audiences', label: 'Audiences' },
     { href: '#faq', label: 'FAQ' },
   ];
@@ -147,6 +148,23 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             <div className="space-y-4">
               {content.calendarBlocks.items.map((item) => (
                 <DirectoryDriverCard key={item.period} title={item.period} desc={item.detail} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {content.guideSections?.length ? (
+          <DirectorySection id="guide" eyebrow="Practitioner guide" title="How to read this market in 2026">
+            <div className="space-y-10 max-w-3xl">
+              {content.guideSections.map((section) => (
+                <div key={section.title} className="space-y-4">
+                  <h3 className="text-xl font-display font-semibold text-foreground">{section.title}</h3>
+                  {section.paragraphs.map((para) => (
+                    <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
+                </div>
               ))}
             </div>
           </DirectorySection>

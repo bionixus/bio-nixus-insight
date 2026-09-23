@@ -21,9 +21,20 @@ export const CTR_SEO_BY_PATH = {
       '2026 list of pharmaceutical companies in the UAE — Julphar, Neopharma, Globalpharma, MNC offices and distributors, with MOHAP/DHA/DOH context. Dubai city guide linked. By BioNixus.',
   },
   '/pharmaceutical-companies-dubai': {
-    title: 'Pharmaceutical Companies in Dubai (2026): HQs & Distributors',
+    // CTR iterate 2026-09-23: page-1 queries "pharma companies in dubai" / "pharmaceutical companies dubai" @ 0% CTR.
+    title: 'Top Pharmaceutical Companies in Dubai (2026 Ranked)',
     description:
-      'Pharmaceutical companies in Dubai: MNC regional HQs in Dubai Science Park and DHCC, local manufacturers, distributors and pharmacy chains, with DHA context.',
+      'Top pharmaceutical companies in Dubai ranked for 2026 — MNC regional HQs in Dubai Science Park & DHCC, manufacturers, distributors & pharmacy chains with DHA/MOHAP context. By BioNixus.',
+  },
+  '/saudi-arabia-biologics-market': {
+    title: 'Saudi Arabia Biologics Market 2026: Size, SFDA & Biosimilars',
+    description:
+      'Saudi Arabia biologics market 2026 — biologics and biosimilar uptake, SFDA access, NUPCO tenders, and hospital-administered sizing. GCC biologics context by BioNixus.',
+  },
+  '/pharmaceutical-market-research-dubai': {
+    title: 'Pharmaceutical Market Research Dubai (2026) | BioNixus',
+    description:
+      'Pharmaceutical market research in Dubai — DHA/MOHAP-aware physician surveys, pharmacy audits, payer studies, and MNC HQ fieldwork. Proposal within 48 hours.',
   },
   // CTR sprint wave 3 (2026-08-22): "Top N + year + Ranked List" formula — matches
   // winning query pattern ("top 20 pharmaceutical companies in saudi arabia" = 37.5% CTR @ pos 5).
