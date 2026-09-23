@@ -4,8 +4,18 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
+import {
+  buildSpecialtyMarketContextSection,
+  buildSpecialtyMarketEvidenceSection,
+  buildSpecialtyMarketDeliverables,
+  buildSpecialtyMarketEngagement,
+  buildSpecialtyMarketGeoBlock,
+  buildSpecialtyMarketMethodology,
+  buildSupplementarySpecialtyFaqs,
+} from '@/data/specialtyMarketMethodology';
 import {
   DirectoryDriverCard,
   DirectoryFaqList,
@@ -23,6 +33,13 @@ import {
  */
 export default function SpecialtyMarketDemandPage({ content }: { content: SpecialtyMarketDemandContent }) {
   const canonicalPath = `/${content.slug}`;
+  const geoBlock = buildSpecialtyMarketGeoBlock(content);
+  const marketContext = buildSpecialtyMarketContextSection(content);
+  const evidenceSection = buildSpecialtyMarketEvidenceSection(content);
+  const methodology = buildSpecialtyMarketMethodology(content);
+  const deliverables = buildSpecialtyMarketDeliverables(content);
+  const engagement = buildSpecialtyMarketEngagement(content);
+  const allFaqs = [...content.faqs, ...buildSupplementarySpecialtyFaqs(content)];
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
@@ -43,16 +60,21 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
         : {}),
     },
     buildBreadcrumbSchema(breadcrumbItems),
-    buildFAQSchema(content.faqs, { pageUrl: content.canonical }),
+    buildFAQSchema(allFaqs, { pageUrl: content.canonical }),
   ];
 
   const jumpItems = [
     { href: '#research', label: 'Research' },
     { href: '#drivers', label: 'Drivers' },
     { href: '#structure', label: 'Structure' },
+    { href: '#context', label: 'Context' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
     { href: '#audiences', label: 'Audiences' },
+    { href: '#evidence', label: 'Evidence' },
+    { href: '#methodology', label: 'Methodology' },
+    { href: '#deliverables', label: 'Deliverables' },
+    { href: '#engagement', label: 'Timeline' },
     { href: '#faq', label: 'FAQ' },
   ];
 
@@ -102,6 +124,18 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
 
         <DirectoryJumpNav items={jumpItems} />
 
+        <section className="section-padding py-10 bg-[#FFFEFB] border-b border-[#EDE9E3]">
+          <div className="container max-w-4xl">
+            <GeoLLMAnswerBlock
+              question={geoBlock.question}
+              answer={geoBlock.answer}
+              points={geoBlock.points}
+              summary={geoBlock.summary}
+              pageUrl={content.canonical}
+            />
+          </div>
+        </section>
+
         <DirectorySection
           id="research"
           eyebrow="Coverage"
@@ -125,6 +159,16 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
         <DirectorySection id="structure" eyebrow="Market structure" title={content.marketStructure.heading}>
           <div className="space-y-4 max-w-3xl">
             {content.marketStructure.paragraphs.map((para) => (
+              <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                {para}
+              </p>
+            ))}
+          </div>
+        </DirectorySection>
+
+        <DirectorySection id="context" surface="cream" eyebrow="Intelligence" title={marketContext.heading}>
+          <div className="space-y-4 max-w-3xl">
+            {marketContext.paragraphs.map((para) => (
               <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
                 {para}
               </p>
@@ -160,8 +204,59 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
           </div>
         </DirectorySection>
 
+        <DirectorySection id="evidence" eyebrow="Quality" title={evidenceSection.heading}>
+          <div className="space-y-4 max-w-3xl">
+            {evidenceSection.paragraphs.map((para) => (
+              <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                {para}
+              </p>
+            ))}
+          </div>
+        </DirectorySection>
+
+        <DirectorySection id="methodology" eyebrow="How we work" title={methodology.heading}>
+          <div className="space-y-4 max-w-3xl">
+            {methodology.paragraphs.map((para) => (
+              <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                {para}
+              </p>
+            ))}
+          </div>
+        </DirectorySection>
+
+        <DirectorySection
+          id="deliverables"
+          surface="cream"
+          eyebrow="Outputs"
+          title={deliverables.heading}
+        >
+          <ul className="grid sm:grid-cols-2 gap-3 max-w-4xl">
+            {deliverables.bullets.map((point) => (
+              <li
+                key={point.slice(0, 48)}
+                className="flex gap-2 text-sm text-foreground bg-[#FFFEFB] rounded-2xl border border-[#EDE9E3] p-5"
+              >
+                <span className="text-[#C9A84C] flex-shrink-0">✓</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </DirectorySection>
+
+        <DirectorySection id="engagement" eyebrow="Timeline" title={engagement.heading}>
+          <div className="space-y-4 max-w-3xl">
+            {engagement.steps.map((step) => (
+              <div key={step.title} className="rounded-2xl border border-[#EDE9E3] bg-[#FFFEFB] p-5">
+                <h3 className="font-semibold text-foreground">{step.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.body}</p>
+              </div>
+            ))}
+          </div>
+        </DirectorySection>
+
         <DirectorySection
           id="why"
+          surface="cream"
           eyebrow="Why BioNixus"
           title={`Why BioNixus for ${content.segmentLabel.toLowerCase()} research`}
         >
@@ -188,7 +283,7 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
         </DirectorySection>
 
         <DirectorySection id="faq" eyebrow="Questions" title="Frequently asked questions">
-          <DirectoryFaqList items={content.faqs.map((item) => ({ q: item.question, a: item.answer }))} />
+          <DirectoryFaqList items={allFaqs.map((item) => ({ q: item.question, a: item.answer }))} />
         </DirectorySection>
 
         <CTASection variant="research-proposal" />

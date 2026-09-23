@@ -105,10 +105,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // Wave 19 CTR (2026-09-13): GSC "iqvia competitors" pos 6.3 @ 0% CTR — lead with Competitors + companies like IQVIA
+    title: 'IQVIA Competitors & Companies Like IQVIA: Top 10 (2026)',
     description:
-      'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
+      'IQVIA competitors and companies like IQVIA ranked for healthcare primary market research in 2026 — agile regional alternative vs IQVIA syndicated data. Compare BioNixus, Kantar, ZS.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     title: 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide',
@@ -371,9 +371,10 @@ export const CTR_SEO_BY_PATH = {
       'Pharmaceutical competitor intelligence and brand-versus-competitor studies at account and SKU level. Primary fieldwork. 48-hour proposal.',
   },
   '/heor-consulting': {
-    title: 'HEOR Consulting Services: Health Economics & Outcomes Research',
+    // Wave 19 CTR (2026-09-13): money query "heor consulting" pos ~50 — shorter title with exact match
+    title: 'HEOR Consulting 2026: Health Economics & Outcomes Research',
     description:
-      'Bionixus HEOR consulting — economic models, RWE studies, payer evidence and value dossiers for pharma & medtech across emerging and developed markets.',
+      'HEOR consulting for pharma and medtech — budget-impact models, RWE studies, payer dossiers, and SFDA EES-ready evidence across GCC, Europe, and emerging markets. BioNixus.',
   },
   '/services/competitive-intelligence': {
     title: 'Pharma Competitive Intelligence Services (2026) | BioNixus',
@@ -430,16 +431,6 @@ export const CTR_SEO_BY_PATH = {
     title: 'Nielsen Alternatives & Competitors: Ranked (2026)',
     description:
       'NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap.',
-  },
-  '/pricing': {
-    title: 'Market Research Pricing | $10k–$75k Country (2026)',
-    description:
-      'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.',
-  },
-  '/account-level-market-research': {
-    title: 'What Is Account-Level Market Research Data?',
-    description:
-      'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.',
   },
   '/insights/top-fmcg-market-research-companies-egypt-2026': {
     title: 'FMCG Market Research Firms Egypt 2026 | Ranked',
@@ -542,9 +533,15 @@ export const CTR_SEO_BY_PATH = {
       'Foundayo (orforglipron) market report 2026 — oral GLP-1 obesity drug uptake, pricing, GCC/US launch outlook and competitor landscape. By BioNixus.',
   },
   '/gcc-functional-service-providers-market': {
-    title: 'GCC Functional Service Providers (FSP) Market 2026 | Size',
+    // Wave 19 CTR (2026-09-13): query "gcc functional service providers market" pos 4.6 @ 0% CTR
+    title: 'GCC Functional Service Providers Market 2026 | FSP Guide',
     description:
-      'GCC functional service providers market 2026 — FSP outsourcing size, clinical/regulatory FSP demand in Saudi & UAE, and vendor landscape. By BioNixus.',
+      'GCC functional service providers market 2026 — FSP vs CRO outsourcing, clinical monitoring & data management demand in Saudi Arabia and UAE. Primary research by BioNixus.',
+  },
+  '/gcc-clinical-trials-market': {
+    title: 'GCC Clinical Trials Market 2026: Saudi & UAE Site Growth',
+    description:
+      'GCC clinical trials market 2026 — Phase II–IV volume, SFDA regulation, hospital site networks in Saudi Arabia and UAE, and sponsor outsourcing trends. By BioNixus.',
   },
   '/brazil-medical-devices-market-report': {
     title: 'Brazil Medical Devices Market 2026: ANVISA, Size & Forecast',
