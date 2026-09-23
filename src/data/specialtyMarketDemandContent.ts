@@ -4,6 +4,13 @@
  * regulators, tenders, and care pathways. No fabricated dollar totals.
  */
 
+export type LongFormSection = {
+  eyebrow?: string;
+  title: string;
+  paragraphs: string[];
+  bullets?: string[];
+};
+
 export type SpecialtyMarketDemandContent = {
   slug: string;
   segmentLabel: string;
@@ -24,11 +31,20 @@ export type SpecialtyMarketDemandContent = {
   whyBionixus: string[];
   relatedLinks: Array<{ to: string; label: string }>;
   faqs: Array<{ question: string; answer: string }>;
+  longFormSections?: LongFormSection[];
   areaServed?: string[];
   priority: 'now' | 'next' | 'later';
 };
 
+import { GSC_PRIORITY_LONG_FORM } from '@/data/specialtyMarketLongForm/gscPriority2026';
+
 const BASE = 'https://www.bionixus.com';
+
+function attachGscLongForm(content: SpecialtyMarketDemandContent): SpecialtyMarketDemandContent {
+  const longFormSections = GSC_PRIORITY_LONG_FORM[content.slug];
+  if (!longFormSections) return content;
+  return { ...content, longFormSections };
+}
 
 const SHARED_WHY = [
   'Decision-led primary research — not syndicated table dumps',
@@ -921,11 +937,14 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Japan Medical Disposables Market',
   title: 'Japan Medical Disposables Market Research | BioNixus',
   description:
-    'Japan medical disposables market research — hospital consumables, infection-control products, tender dynamics, and procurement behaviour intelligence from.',
+    'Japan medical disposables market research — hospital consumables, infection-control products, tender dynamics, and procurement behaviour intelligence from BioNixus.',
   canonical: `${BASE}/japan-medical-disposables-market`,
   h1: 'Japan Medical Disposables Market: Procurement & Adoption Intelligence',
   intro: [
     'Japan’s medical disposables market is high-volume, committee-governed, and sensitive to infection-control standards and total cost. BioNixus researches nursing, infection control, and procurement stakeholders to show which SKUs earn formulary permanency versus perpetual trial status.',
+    'Use this guide when your brief is hospital procurement, infection-control policy, or tender defence — not consumer retail disposables. We map category-by-category adoption with primary interviews rather than syndicated POS claims.',
+    'The guide below covers tender governance, nursing veto points, sustainability criteria, and OR/ICU splits — the topics that determine whether a Japan disposable SKU keeps shelf space after the first contract year.',
+    'Hospital groups in Tokyo, Osaka, and Nagoya often set reference policies that regional members adopt within one to two tender cycles — research should name those groups when your launch depends on them.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -935,6 +954,11 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     { name: 'Private vs public account mix', detail: 'Where volume and margin actually concentrate.' },
     { name: 'Competitive switching barriers', detail: 'Training, kit design, and contract lock-ins.' },
     { name: 'GCC export linkage', detail: 'When Japanese disposable credentials travel into Gulf tenders.' },
+    {
+      name: 'Disaster and pandemic stockpile rules',
+      detail:
+        'How hospitals set par levels, dual-source requirements, and emergency reserves for high-turn SKUs — and how those rules survive annual tender rebids.',
+    },
   ],
   demandDrivers: {
     heading: 'Demand drivers',
@@ -945,12 +969,19 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
       { title: 'Aging inpatient volumes', detail: 'Bed utilisation keeps baseline consumable demand elevated.' },
       { title: 'Domestic manufacturing', detail: 'Japanese suppliers remain default referents for many categories.' },
       { title: 'Sustainability scrutiny', detail: 'Green procurement criteria begin to appear in evaluations.' },
+      {
+        title: 'DRG and length-of-stay pressure',
+        detail: 'Hospitals favour disposables that reduce turnaround time and nursing touches even when unit price rises slightly.',
+      },
     ],
   },
   marketStructure: {
     heading: 'Structure',
     paragraphs: [
       'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them.',
+      'University-hospital consortia and regional group purchasing create “winner-take-most” dynamics within a category — second-place SKUs may survive only as backup lots.',
+      'Importers should assume a nurse trial period and infection-control sign-off even when price wins on paper; research documents where trials fail.',
+      'Export-oriented suppliers should pair Japan depth with GCC procurement modules when Middle East tenders cite Japanese quality systems — one narrative for both markets reduces commercial rework.',
     ],
   },
   audiences: [
@@ -971,9 +1002,34 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
       answer:
         'High-turn hospital consumables — infection-control products, procedure packs, and related single-use categories — researched through nursing, infection control, and procurement lenses.',
     },
+    {
+      question: 'How do Japanese hospital tenders affect disposable suppliers?',
+      answer:
+        'Tenders and group contracts standardise SKUs, set logistics penalties, and often require nurse and infection-control approval before awards finalize. BioNixus maps those gates with primary stakeholder interviews.',
+    },
+    {
+      question: 'Can Japan disposables research support GCC tenders?',
+      answer:
+        'Yes — when origin-of-manufacture or Japan quality credentials matter in Gulf dossiers, we sequence Japan adoption modules with GCC procurement research.',
+    },
+    {
+      question: 'Which Japanese hospital stakeholders should be interviewed for disposables?',
+      answer:
+        'At minimum: infection-control leads for policy, ward nursing managers for daily-use veto, central procurement for contract terms, and — for OR-focused SKUs — perioperative nursing and anaesthesia representatives. BioNixus adjusts the sample when your category is ICU-only, ambulatory-only, or hospital-group specific.',
+    },
+    {
+      question: 'How does sustainability affect Japan disposable tenders today?',
+      answer:
+        'Green procurement criteria appear more often in university-hospital and metropolitan contracts. Buyers ask for environmental disclosures and sometimes weigh reusable alternatives. Primary research clarifies which sustainability claims influence scores versus which are ignored — so vendors do not over-invest in the wrong narrative.',
+    },
+    {
+      question: 'What is the typical sample for Japan medical disposables primary research?',
+      answer:
+        'Samples depend on category and care setting: often 20–40 qualitative interviews across infection control, nursing, and procurement, sometimes augmented by a short quantitative survey in one metro or hospital group. BioNixus defines n and geography in the proposal so feasibility matches your launch timeline.',
+    },
   ],
   areaServed: ['Japan'],
-  priority: 'next',
+  priority: 'now',
 };
 
 const japanMedtechAccessAutomation: SpecialtyMarketDemandContent = {
@@ -1175,6 +1231,8 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
   h1: 'Febrile Neutropenia Market: Supportive-Care & Protocol Intelligence',
   intro: [
     'The febrile neutropenia market is driven by oncology regimen intensity, hospital prophylaxis protocols, and biosimilar G-CSF competition more than consumer awareness. BioNixus researches oncologists, oncology pharmacists, and tender stakeholders to forecast switching and protocol stickiness — including Gulf hospital settings where supportive-care injectables move through frameworks.',
+    'This page is written for medical affairs, market access, and commercial teams who need protocol-level FN intelligence — not a syndicated incidence chart. We focus on prophylaxis rules, G-CSF substitution, and tender-linked supportive care in hospitals that actually treat myelosuppressive regimens.',
+    'Updated September 2026 for search demand on febrile neutropenia market size, G-CSF competition, and supportive-care forecasting — with primary evidence you can defend in access committees.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1200,6 +1258,8 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'Segmentation by tumour type and regimen intensity beats a single “FN market” forecast: breast, lung, and haematology pathways use different prophylaxis thresholds and different pharmacy owners.',
+      'In GCC accounts, supportive-care lines are often negotiated with oncology main agents — research must capture bundle logic, not isolate G-CSF as if it were an OTC category.',
     ],
   },
   audiences: [
@@ -1221,8 +1281,28 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
     },
+    {
+      question: 'What is the difference between primary and secondary FN prophylaxis research?',
+      answer:
+        'Primary prophylaxis studies focus on regimen-based prevention before any FN event; secondary prophylaxis studies focus on patients who already experienced FN. Hospital committees and payers treat them as separate economic decisions — BioNixus scopes interviews accordingly.',
+    },
+    {
+      question: 'Does BioNixus publish a febrile neutropenia market size number?',
+      answer:
+        'We do not fabricate unverifiable global market-size tables. We deliver primary evidence on protocol adoption, switching triggers, and tender behaviour that sponsors use to build their own forecasts.',
+    },
+    {
+      question: 'Can FN research include GCC hospital tenders?',
+      answer:
+        'Yes. When your brief includes Saudi Arabia, the UAE, or wider GCC accounts, we add procurement and oncology pharmacy modules aligned to local tender and formulary practice.',
+    },
+    {
+      question: 'How long does a febrile neutropenia market research programme take?',
+      answer:
+        'Qualitative protocol audits often complete in four to six weeks after kickoff; combined qual and quant programmes with Gulf tender modules may run eight to twelve weeks depending on hospital access and sample size. BioNixus confirms timelines in the proposal within 48 hours of receiving your brief, therapy list, and priority accounts.',
+    },
   ],
-  priority: 'next',
+  priority: 'now',
 };
 
 /* ------------------------------------------------------------------ */
@@ -1436,6 +1516,8 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
   h1: 'GCC Functional Service Providers (FSP) Market: Sponsor & Delivery Intelligence',
   intro: [
     'The GCC functional service providers market sits at the intersection of rising Gulf clinical-trial ambition and sponsor preference for modular FSP models over full-service CROs. BioNixus researches sponsor clinical-operations leaders, site networks, and in-region delivery partners to show which FSP capabilities win Gulf assignments — monitoring, data management, medical writing, pharmacovigilance — and where full-service still dominates.',
+    'This is sponsor-side intelligence: when to unbundle, how to diligence Arabic monitoring cells, and what site networks say about FSP delivery quality — not a directory of CRO list prices.',
+    'Use it when evaluating GCC functional service providers for 2026 outsourcing — monitoring, data management, medical writing, PV, and hybrid models across Saudi Arabia, the UAE, and neighbouring Gulf markets.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1461,6 +1543,9 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FSP buying in the GCC is rarely a single RFP for “the region.” Sponsors often lock global FSP frameworks then stress-test Middle East delivery cells. BioNixus scopes research to the function and geography under evaluation.',
+      'Monitoring-only awards, data-management retainers, and medical-writing pods can involve different vendors — research must not assume one FSP logo equals one accountable team on the ground.',
+      'Inspection readiness and eTMF discipline are now explicit shortlist criteria in mature sponsor organisations; vendor pitches that only discuss rate cards lose.',
+      'BioNixus recommends documenting the outsourcing decision owner (clinical ops vs procurement vs QA) before fieldwork — the stakeholder mix changes which FSP themes matter in interviews.',
     ],
   },
   signalGrid: {
@@ -1493,9 +1578,29 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
       answer:
         'The market for modular clinical-development services (monitoring, data management, medical writing, PV, and related functions) sold into Gulf-sponsored or Gulf-executed programmes — researched through sponsor, site, and delivery-partner stakeholders.',
     },
+    {
+      question: 'When should a sponsor use FSP instead of a full-service CRO in the Gulf?',
+      answer:
+        'When the sponsor already owns protocol and data strategy, needs flexible in-country monitoring, or must localise Arabic site management without re-awarding an entire full-service contract. BioNixus validates those triggers with clinical-ops interviews.',
+    },
+    {
+      question: 'Does BioNixus provide FSP clinical services?',
+      answer:
+        'No. BioNixus is a primary market research firm. We inform FSP strategy and competitive positioning; we do not sell CRA monitoring or data-management contracts.',
+    },
+    {
+      question: 'What should sponsors ask FSP vendors about Gulf delivery?',
+      answer:
+        'Ask for named sites and investigators in Saudi Arabia and the UAE, Arabic monitoring capability, travel and logistics assumptions, inspection themes from the last two years, and how medical oversight escalations are documented. BioNixus captures those themes from sponsor and site interviews so your RFP scorecard matches reality.',
+    },
+    {
+      question: 'Which countries are included in GCC FSP market research?',
+      answer:
+        'Saudi Arabia, the UAE, Kuwait, Qatar, Oman, and Bahrain — plus Egypt adjacency when sponsors bundle MENA enrolment. Scope is confirmed in the proposal so smaller Gulf cells are not assumed away.',
+    },
   ],
   areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],
-  priority: 'later',
+  priority: 'now',
 };
 
 const gccMedicationManagement: SpecialtyMarketDemandContent = {
@@ -1717,15 +1822,15 @@ export const SPECIALTY_MARKET_DEMAND_CONTENT: SpecialtyMarketDemandContent[] = [
   nupcoTenderCalendar,
   singaporeIvdMarketAccess,
   japanNeurologyDevices,
-  japanMedicalDisposables,
+  attachGscLongForm(japanMedicalDisposables),
   japanMedtechAccessAutomation,
   italyClinicalTrials,
   mekInhibitors,
-  febrileNeutropenia,
+  attachGscLongForm(febrileNeutropenia),
   italyPortableDiagnostics,
   italyDeviceConnectivity,
   italyOncologyAntiInfectiveAccess,
-  gccFspMarket,
+  attachGscLongForm(gccFspMarket),
   gccMedicationManagement,
   doxorubicinMarket,
   meaClinicalTrialImaging,
