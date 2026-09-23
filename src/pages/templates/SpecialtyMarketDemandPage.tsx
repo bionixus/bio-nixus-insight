@@ -187,6 +187,25 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
           </div>
         </DirectorySection>
 
+        {content.referenceSections?.length ? (
+          <DirectorySection id="reference" eyebrow="Reference" title="Methodology & market context">
+            <div className="space-y-8 max-w-3xl">
+              {content.referenceSections.map((sec) => (
+                <article key={sec.title}>
+                  <h3 className="text-xl font-display font-semibold text-foreground mb-3">{sec.title}</h3>
+                  <div className="space-y-4">
+                    {sec.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
         <DirectorySection id="faq" eyebrow="Questions" title="Frequently asked questions">
           <DirectoryFaqList items={content.faqs.map((item) => ({ q: item.question, a: item.answer }))} />
         </DirectorySection>

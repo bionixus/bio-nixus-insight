@@ -8,6 +8,8 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { PharmaDirectoryBridge } from '@/components/seo/PharmaDirectoryBridge';
+import { PharmaCompaniesGccHubLinks } from '@/components/seo/PharmaCompaniesGccHubLinks';
+import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import { getPharmaGuideConfig } from '@/data/reportConversionConfig';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
@@ -76,7 +78,7 @@ const IraqPharmaCompanies = () => {
       <Helmet>
         <title>Top Pharmaceutical Companies in Iraq (2026 KIMADIA Guide)</title>
         <meta name="description" content="Top pharmaceutical companies in Iraq ranked for 2026 — KIMADIA tender system, local manufacturers, MNC offices and market size. Research by BioNixus." />        <link rel="canonical" href={citationUrl} />
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in Iraq: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Iraq — local manufacturers, MNC offices, distributors, $2.8B market data, KIMADIA regulatory landscape, and dual federal-KRG market outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-02-15', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in Iraq: Complete Industry Guide 2026', description: 'Comprehensive guide to pharmaceutical companies operating in Iraq — local manufacturers, MNC offices, distributors, $2.8B market data, KIMADIA regulatory landscape, and dual federal-KRG market outlook.', url: citationUrl, datePublished: '2026-02-15', dateModified: '2026-09-10', author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' }, publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in Iraq', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
@@ -113,6 +115,7 @@ const IraqPharmaCompanies = () => {
             { value: '$63', label: 'Pharma spending per capita' },
           ]}
           jumpItems={[
+            { href: '#pharma-companies-quick-answer', label: 'Answer' },
             { href: '#market-overview', label: 'Overview' },
             { href: '#top-companies', label: 'Companies' },
             { href: '#companies-by-category', label: 'Categories' },
@@ -128,6 +131,15 @@ const IraqPharmaCompanies = () => {
         />
         <ReportEarlyCtaBar config={PHARMA_CONVERSION} />
 
+        <PharmaCompaniesQuickAnswer
+          country="iraq"
+          marketSize="approximately USD 2.8 billion"
+          growthRate="8.5% year-over-year"
+          regulatorLabel="Ministry of Health (MOH) and KIMADIA"
+          topCompanyNames={pharmaCompanies.map((c) => c.name)}
+          extraSentence="Roughly 80% of medicines are imported, so competitive strategy turns on KIMADIA tender pricing, dual federal–KRG access pathways, and distributor reach across Baghdad, Basra, and Erbil rather than local manufacturing scale alone."
+        />
+
         <ReportContentWithAside config={PHARMA_CONVERSION}>
 
         <section className="section-padding py-16" id="market-overview"><div className="container-wide max-w-5xl mx-auto">
@@ -135,7 +147,8 @@ const IraqPharmaCompanies = () => {
           <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
             <p>Iraq&apos;s pharmaceutical market is a <strong className="text-foreground">large population market</strong> — 44.5 million people (second-largest Arab state) — valued at approximately <strong className="text-foreground">US$2.8 billion</strong>, growing at <strong className="text-foreground">8.5% year-over-year</strong>. Per-capita pharmaceutical spending of <strong className="text-foreground">$63</strong> indicates massive growth potential as healthcare access and insurance coverage expand.</p>
             <p>Post-conflict healthcare reconstruction is driving investment, with <strong className="text-foreground">$5B+ invested</strong> in healthcare. <strong className="text-foreground">KIMADIA</strong> (State Company for Marketing Drugs &amp; Medical Appliances) under the MOH dominates government procurement in federal Iraq. The market is <strong className="text-foreground">dual</strong>: federal Iraq and the <strong className="text-foreground">Kurdistan Region (KRG)</strong> operate separate procurement systems. Approximately <strong className="text-foreground">80% of pharmaceuticals are imported</strong>; local manufacturing is led by SDI (State Company for Drug Industries, Samarra) and a small number of private and joint-venture manufacturers.</p>
-            <p>Chronic disease burden (diabetes, cardiovascular) and one of the youngest demographics in the region drive sustained demand. NGO and international health partnerships play a significant role in supply and access. For broader regional context, see our <Link to="/mena-pharma-market-data" className="text-primary hover:underline">MENA Pharmaceutical Market Data 2026</Link> and <Link to="/gcc-market-access-guide" className="text-primary hover:underline">GCC Pharmaceutical Market Access Guide</Link>.</p>
+            <p>Chronic disease burden (diabetes, cardiovascular) and one of the youngest demographics in the region drive sustained demand. NGO and international health partnerships play a significant role in supply and access. Tender cycles through KIMADIA typically favour established MNC and regional suppliers with proven cold-chain and documentation track records; private-channel growth through 30,000+ pharmacies adds a parallel route for branded and specialty products outside government procurement.</p>
+            <p>For broader regional context, see our <Link to="/mena-pharma-market-data" className="text-primary hover:underline">MENA Pharmaceutical Market Data 2026</Link>, <Link to="/gcc-market-access-guide" className="text-primary hover:underline">GCC Pharmaceutical Market Access Guide</Link>, and <Link to="/insights/top-market-research-companies-iraq-2026" className="text-primary hover:underline">top healthcare market research companies in Iraq</Link>.</p>
           </div>
         </div></section>
 
@@ -214,6 +227,8 @@ const IraqPharmaCompanies = () => {
         </div></section>
 
         <PharmaCompaniesFaqSection items={faqItems} />
+
+        <PharmaCompaniesGccHubLinks country="iraq" />
 
         <section className="section-padding py-12" id="methodology"><div className="container-wide max-w-5xl mx-auto"><div className="bg-card border border-border rounded-xl p-8"><h2 className="text-xl font-display font-semibold text-foreground mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" />Data Sources &amp; Methodology</h2><p className="text-sm text-muted-foreground leading-relaxed mb-4">This guide aggregates publicly available information from:</p><ul className="text-sm text-muted-foreground space-y-2 mb-6"><li>MOH and KIMADIA public information</li><li>BioNixus Middle East &amp; Africa market reports</li><li>Company and industry reports</li><li>BioNixus proprietary research</li></ul><p className="text-sm text-muted-foreground leading-relaxed">For customised market intelligence on Iraq, <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.</p></div></div></section>
         </ReportContentWithAside>
