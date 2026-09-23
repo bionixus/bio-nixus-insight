@@ -6,6 +6,7 @@ import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import {
   DirectoryDriverCard,
   DirectoryFaqList,
@@ -52,6 +53,9 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
     { href: '#structure', label: 'Structure' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
+    ...(content.geoAnswerBlock ? [{ href: '#geo-answer', label: 'Quick answer' }] : []),
+    ...(content.methodologySection ? [{ href: '#methodology', label: 'Methodology' }] : []),
+    ...(content.referenceSections ? [{ href: '#reference', label: 'Reference' }] : []),
     { href: '#audiences', label: 'Audiences' },
     { href: '#faq', label: 'FAQ' },
   ];
@@ -147,6 +151,48 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             <div className="space-y-4">
               {content.calendarBlocks.items.map((item) => (
                 <DirectoryDriverCard key={item.period} title={item.period} desc={item.detail} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {content.geoAnswerBlock ? (
+          <DirectorySection id="geo-answer" surface="cream" eyebrow="Direct answer" title="Answer-first summary">
+            <GeoLLMAnswerBlock
+              question={content.geoAnswerBlock.question}
+              answer={content.geoAnswerBlock.answer}
+              points={content.geoAnswerBlock.points}
+              summary={content.geoAnswerBlock.summary}
+            />
+          </DirectorySection>
+        ) : null}
+
+        {content.methodologySection ? (
+          <DirectorySection id="methodology" eyebrow="How we research" title={content.methodologySection.heading}>
+            <div className="space-y-4 max-w-3xl">
+              {content.methodologySection.paragraphs.map((para) => (
+                <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                  {para}
+                </p>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {content.referenceSections ? (
+          <DirectorySection id="reference" surface="cream" eyebrow="Deep dive" title="Market reference guide">
+            <div className="space-y-10 max-w-3xl">
+              {content.referenceSections.map((sec) => (
+                <article key={sec.title}>
+                  <h3 className="text-xl font-display font-semibold text-foreground mb-4">{sec.title}</h3>
+                  <div className="space-y-4">
+                    {sec.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                </article>
               ))}
             </div>
           </DirectorySection>
