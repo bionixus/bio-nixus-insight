@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
 import { trackLeadSubmitted, trackFormStart } from '@/lib/analytics';
+import { submitLeadDual } from '@/lib/submitLeadDual';
 import {
   QUALIFICATION_FORM_MARKETS,
   QUALIFICATION_FORM_NEEDS,
@@ -9,7 +10,6 @@ import {
   QUALIFICATION_FORM_BUDGETS,
 } from '@/data/qualificationFormOptions';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const ERROR_EMAIL = 'admin@bionixus.com';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -113,18 +113,30 @@ export function QualificationForm({
     setSubmitting(true);
     setSubmitError(null);
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
+      const result = await submitLeadDual(data);
+      if (result.skipped) {
+        setSubmitted(true);
+        return;
+      }
+      if (result.ok) {
         setSubmitted(true);
         trackLeadSubmitted({ formId });
         onSuccess?.();
+      } else if (result.formspreeNetworkError) {
+        setSubmitError('Something went wrong — please try again or email us directly.');
+        redirectToErrorEmail({
+          rawEmail,
+          company,
+          role,
+          need,
+          markets,
+          timeline,
+          budget,
+          sourceContext,
+          errorDetails: result.formspreeNetworkError,
+        });
       } else {
-        const json = await res.json().catch(() => ({}));
-        setSubmitError(json.error || 'Something went wrong — please try again or email us directly.');
+        setSubmitError(result.formspreeError || 'Something went wrong — please try again or email us directly.');
         redirectToErrorEmail({ rawEmail, company, role, need, markets, timeline, budget, sourceContext });
       }
     } catch (err) {
@@ -174,6 +186,15 @@ export function QualificationForm({
 
   return (
     <form onSubmit={handleSubmit} onFocus={handleFirstInteraction} className="space-y-5" noValidate>
+      <input
+        type="text"
+        name="hp_company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        defaultValue=""
+        className="hidden"
+      />
       {sourceContext ? <input type="hidden" name="reportName" value={sourceContext} /> : null}
       <div>
         <label htmlFor={`${formId}-workEmail`} className="block text-sm font-medium text-foreground mb-1.5">

@@ -8,8 +8,7 @@ import { trackLeadSubmitted } from '@/lib/analytics';
 import { languages } from '@/lib/i18n';
 import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { getWhatsAppWidgetStrings } from '@/lib/whatsappWidgetStrings';
-
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
+import { FORMSPREE_ENDPOINT, isLeadHoneypot, submitLeadDual } from '@/lib/submitLeadDual';
 const COOKIE_CONSENT_KEY = 'bionixus-cookie-consent';
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
@@ -216,22 +215,24 @@ export default function WhatsAppProposalWidget() {
     data.set('utmContent', params.get('utm_content') || '');
     data.set('utmTerm', params.get('utm_term') || '');
 
+    if (isLeadHoneypot(data)) {
+      setSubmitted(true);
+      return;
+    }
+
     setWhatsAppUrl(waUrl);
     setSubmitted(true);
     openWhatsApp(waUrl);
 
     setSubmitting(true);
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
+      const result = await submitLeadDual(data);
+      if (result.ok) {
         trackLeadSubmitted({ formId: 'whatsapp_proposal_widget' });
+      } else if (result.formspreeNetworkError) {
+        setSubmitError(v('error'));
       } else {
-        const json = await res.json().catch(() => ({}));
-        setSubmitError((json as { error?: string }).error || v('error'));
+        setSubmitError(result.formspreeError || v('error'));
       }
     } catch {
       setSubmitError(v('error'));
@@ -302,6 +303,15 @@ export default function WhatsAppProposalWidget() {
                 noValidate
                 className="flex min-h-0 max-h-full flex-1 flex-col"
               >
+                <input
+                  type="text"
+                  name="hp_company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  defaultValue=""
+                  className="hidden"
+                />
                 <div className="min-h-0 space-y-2 overflow-y-auto px-3 pt-3 md:space-y-4 md:px-5 md:pt-5">
                 <div className="grid grid-cols-2 gap-2 md:gap-3">
                   <div>

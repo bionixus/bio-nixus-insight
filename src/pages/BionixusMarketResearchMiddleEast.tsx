@@ -20,6 +20,7 @@ import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { EmailCaptureForm } from '@/components/conversion/EmailCaptureForm';
 
 const pageUrl = 'https://www.bionixus.com/bionixus-market-research-middle-east';
 const pageImage = 'https://www.bionixus.com/images/quant-hcp-survey-executive.png';
@@ -947,28 +948,16 @@ const BionixusMarketResearchMiddleEast = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 Get a concise strategy brief covering stakeholder sequencing, access risk checkpoints, and a 90-day activation template.
               </p>
-              <form action="https://formspree.io/f/xgozewew" method="POST" className="grid sm:grid-cols-[1fr_auto] gap-3">
-                <input type="hidden" name="_subject" value="Report request: GCC Pharmaceutical Research Brief" />
-                <input type="hidden" name="requestType" value="Report Download Request" />
-                <input type="hidden" name="formVariant" value="middle_east_page_report_brief" />
-                <input type="hidden" name="reportName" value="GCC Pharmaceutical Research Brief" />
-                <input type="hidden" name="sourcePage" value="/bionixus-market-research-middle-east" />
-                <input type="hidden" name="sourceUrl" value="https://www.bionixus.com/bionixus-market-research-middle-east" />
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Work email"
-                  className="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-                />
-                <button
-                  type="submit"
-                  onClick={() => trackCtaClick('download_research_brief', 'post_faq')}
-                  className="inline-flex items-center justify-center rounded-lg bg-primary px-5 h-11 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-                >
-                  Send brief
-                </button>
-              </form>
+              <EmailCaptureForm
+                formVariant="middle_east_page_report_brief"
+                requestType="Report Download Request"
+                subject="Report request: GCC Pharmaceutical Research Brief"
+                reportName="GCC Pharmaceutical Research Brief"
+                sourcePage="/bionixus-market-research-middle-east"
+                sourceUrl="https://www.bionixus.com/bionixus-market-research-middle-east"
+                submitLabel="Send brief"
+                onSubmitClick={() => trackCtaClick('download_research_brief', 'post_faq')}
+              />
             </article>
           </div>
         </section>

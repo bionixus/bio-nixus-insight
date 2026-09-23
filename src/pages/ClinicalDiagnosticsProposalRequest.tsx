@@ -11,8 +11,8 @@ import {
   CLINICAL_DIAGNOSTICS_PROPOSAL_DECK_PATH,
 } from '@/data/clinicalDiagnosticsOffering';
 import '@/styles/clinical-diagnostics-proposal.css';
+import { submitLeadDual } from '@/lib/submitLeadDual';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const PAGE_PATH = '/clinical-diagnostics-proposal-request';
 const PAGE_URL = `https://www.bionixus.com${PAGE_PATH}`;
 
@@ -72,12 +72,12 @@ export default function ClinicalDiagnosticsProposalRequest() {
 
     setSubmitting(true);
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (!res.ok) throw new Error('submit_failed');
+      const result = await submitLeadDual(data);
+      if (result.skipped) return;
+      if (!result.ok) {
+        setError('Something went wrong. Email digital@bionixus.uk with your company name and we will send the deck.');
+        return;
+      }
       setSubmitted(true);
     } catch {
       setError('Something went wrong. Email digital@bionixus.uk with your company name and we will send the deck.');
@@ -136,6 +136,15 @@ export default function ClinicalDiagnosticsProposalRequest() {
                 </p>
 
                 <form onSubmit={handleSubmit} className="max-w-xl space-y-4 font-[family-name:var(--cd-sans)]">
+                  <input
+                    type="text"
+                    name="hp_company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    defaultValue=""
+                    className="hidden"
+                  />
                   <div className="grid sm:grid-cols-2 gap-4">
                     <label className="block text-sm">
                       <span className="font-semibold text-[#002244]">First name *</span>
