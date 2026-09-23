@@ -6,6 +6,7 @@ import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import {
   DirectoryDriverCard,
   DirectoryFaqList,
@@ -52,6 +53,7 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
     { href: '#structure', label: 'Structure' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
+    ...(content.methodology ? [{ href: '#methodology', label: 'Methodology' }] : []),
     { href: '#audiences', label: 'Audiences' },
     { href: '#faq', label: 'FAQ' },
   ];
@@ -100,6 +102,20 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
           }
         />
 
+        {content.geoAnswer ? (
+          <section className="section-padding py-10 bg-[#FFFEFB] border-b border-[#EDE9E3]">
+            <div className="container-wide mx-auto max-w-4xl px-4">
+              <GeoLLMAnswerBlock
+                question={content.geoAnswer.question}
+                answer={content.geoAnswer.answer}
+                points={content.geoAnswer.points}
+                summary={content.geoAnswer.summary}
+                pageUrl={content.canonical}
+              />
+            </div>
+          </section>
+        ) : null}
+
         <DirectoryJumpNav items={jumpItems} />
 
         <DirectorySection
@@ -147,6 +163,18 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             <div className="space-y-4">
               {content.calendarBlocks.items.map((item) => (
                 <DirectoryDriverCard key={item.period} title={item.period} desc={item.detail} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {content.methodology ? (
+          <DirectorySection id="methodology" eyebrow="Methodology" title={content.methodology.heading}>
+            <div className="space-y-4 max-w-3xl">
+              {content.methodology.paragraphs.map((para) => (
+                <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                  {para}
+                </p>
               ))}
             </div>
           </DirectorySection>

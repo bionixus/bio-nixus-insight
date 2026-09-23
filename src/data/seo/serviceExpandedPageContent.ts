@@ -118,6 +118,31 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
       answer:
         'Mapping often precedes deep physician quant when influence structure is uncertain; it follows quant when segment hypotheses need validation against who actually accelerates or vetoes adoption in target institution types. Sequential design avoids redundant interviews and misallocated advisory spend.',
     },
+    {
+      question: 'How does BioNixus tier KOLs for medical affairs versus commercial planning?',
+      answer:
+        'Tiering links experts to decision types—initiation, switching, protocol adoption, tender defence—not vanity connectivity scores. Medical affairs receives advisory blueprinting and congress calendars; commercial teams receive account-level influence diagnostics resilient to spokesperson fatigue when consensus shifts mid-cycle.',
+    },
+    {
+      question: 'Can KOL mapping support investigator selection for clinical trials?',
+      answer:
+        'Yes. Influence maps identify investigators whose referral gravity and multidisciplinary convening centrality accelerate enrolment—not publication prominence alone. BioNixus connects mapping outputs to trial feasibility and medical affairs narrative testing when R&D and commercial readiness clocks overlap on the same therapy area.',
+    },
+    {
+      question: 'How does BioNixus map pharmacist and stewardship opinion leaders?',
+      answer:
+        'Pharmacist and stewardship tiers translate substitution confidence or hesitancy into uptake forecasts—especially where economic reluctance masquerades as clinical caution. Mapping includes protocol veto players and referral accelerators affiliates must respect when designing advisory boards and MSL territories.',
+    },
+    {
+      question: 'What workshop options follow KOL mapping deliverables?',
+      answer:
+        'Optional facilitation converts influence maps into quarterly engagement calendars, congress priorities, and advisory roster recommendations—with compliance-safe documentation separating behavioural observation from promotional planning so medical affairs and commercial teams align on the same evidence base.',
+    },
+    {
+      question: 'How does BioNixus avoid speaker-bureau bias in influence research?',
+      answer:
+        'Peer nomination, structured referral probes, and decision-type tiering prioritise who moves initiation, switching, and protocol adoption—not paid speaker frequency alone. Documentation emphasises behavioural observation without inducement distortions so compliance teams can audit inference without flashy network aesthetics that misallocate medical resources.',
+    },
   ],
   'quantitative-research': [
     {
@@ -161,6 +186,125 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
         'Timelines depend on quota complexity and hybrid sequencing, but engagements typically move from calibrated scope memo through field release, cleaning, segmented analytics, and governance-ready synthesis within planning cycles affiliates can align to launch gates—not open-ended tracker maintenance without decision owners.',
     },
   ],
+  'competitive-intelligence': [
+    {
+      question: 'What is pharmaceutical competitive intelligence?',
+      answer:
+        'Pharmaceutical competitive intelligence connects external signals—pipeline moves, launch timing, prescriber switching, tender defence, HEOR counter-moves—to explicit commercial decisions. BioNixus blends primary prescriber and account probes with curated secondary monitoring inside a taxonomy leadership can query rather than re-read each month from scratch.',
+    },
+    {
+      question: 'How does BioNixus competitive intelligence differ from syndicated data?',
+      answer:
+        'Syndicated dashboards summarise market share; BioNixus intelligence ties competitor behaviour to decisions your affiliate must make: account prioritisation, medical education emphasis, launch sequencing, and access narrative tests. Primary fieldwork validates whether secondary signals actually change prescribing or procurement in priority markets.',
+    },
+    {
+      question: 'Which EMEA markets does BioNixus cover for pharma CI?',
+      answer:
+        'EU5, GCC, North Africa, and the UK—with particular depth in Saudi Arabia, UAE, Egypt, Kuwait, and Qatar where consolidated procurement and SFDA/MOHAP access overlays shape competitive dynamics. Harmonised taxonomies enable regional roll-ups while local modules preserve institution-level realism.',
+    },
+    {
+      question: 'Can competitive intelligence support launch readiness?',
+      answer:
+        'Yes. Launch readiness scorecards combine pipeline probability, prescriber perception, account-level switching barriers, and access timing so brand, medical, and access teams align before field spend scales. Scenario planning stress-tests analogue erosion when procurement rules or guidelines shift mid-year.',
+    },
+    {
+      question: 'What ethical safeguards apply to pharma CI research?',
+      answer:
+        'Interview neutrality, structured summarisation with source grading, and explicit separation between intelligence conclusions and promotional claims—preserving strategic speed without regulatory recklessness. Documentation trails support compliance and alliance diligence reviews.',
+    },
+    {
+      question: 'How should CI integrate with physician insight and market access?',
+      answer:
+        'Intelligence earns budget when it changes KPI owners: which accounts to defend, which HEOR gaps to close before resubmission, which medical education arcs to prioritise. BioNixus links CI outputs to physician insight and market access modules on the services hub so teams share one behavioural evidence base.',
+    },
+    {
+      question: 'What deliverables do pharmaceutical CI engagements include?',
+      answer:
+        'Competitive landscape dashboards, pipeline trackers with probability-weighted scenarios, launch readiness scorecards, prescriber switching reports, and quarterly briefings annotated by decision relevance—not vanity newsletter volume without action hooks.',
+    },
+    {
+      question: 'When should sponsors commission CI versus syndicated tracking alone?',
+      answer:
+        'When affiliate decisions require account-level or therapy-specific forensics syndicated panels cannot resolve—tender defence, KOL consensus shifts, biosimilar switching corridors, or access objections that masquerade as clinical caution. BioNixus scopes primary modules to the elasticity of those decisions.',
+    },
+    {
+      question: 'How often should pharmaceutical CI briefings refresh for EMEA affiliates?',
+      answer:
+        'Quarterly cadence suits most launch and lifecycle programmes, with event-triggered updates when pipeline readouts, guideline shifts, or procurement rule changes land mid-cycle. BioNixus annotates each briefing by decision relevance and KPI ownership so affiliates action intelligence without re-reading undifferentiated news digests every month.',
+    },
+    {
+      question: 'Can BioNixus CI support biosimilar and generic defence strategies?',
+      answer:
+        'Yes. Prescriber switching forensics, pharmacist substitution overlays, and account-level tender defence modules quantify where economic reluctance masquerades as clinical caution—informing medical education emphasis, HEOR counter-moves, and field prioritisation before share erosion accelerates in priority corridors.',
+    },
+    {
+      question: 'How does BioNixus document CI sources for compliance review?',
+      answer:
+        'Structured summarisation with source grading, interview neutrality, and explicit separation between intelligence conclusions and promotional claims—documentation trails support compliance and alliance diligence without slowing strategic decision cycles affiliates require at launch.',
+    },
+  ],
+  'clinical-trial-support': [
+    {
+      question: 'What clinical trial support research does BioNixus provide?',
+      answer:
+        'Site identification and ranking, investigator profiling, patient recruitment feasibility, protocol feedback from treating physicians, and competitive trial landscape mapping across EMEA—outputs annotated with operational risk tags affiliates can action without redundant qualification travel.',
+    },
+    {
+      question: 'How is trial feasibility different from investigator enthusiasm surveys?',
+      answer:
+        'Feasibility modules surface diagnostic backlogs, competing trials cannibalising the same patients, nursing bandwidth, laboratory turnaround variance, and transportation friction—not optimistic self-reported capacity. BioNixus validates investigator claims against historical performance analogues where ethically feasible.',
+    },
+    {
+      question: 'Which GCC and MENA markets does BioNixus map for clinical research?',
+      answer:
+        'Saudi Arabia, UAE, Kuwait, Qatar, Oman, Bahrain, Egypt, and Jordan—with SFDA, MOHAP, and institutional ethics committee rhythm mapping plus bilingual Arabic–English recruitment protocols for patient-facing modules where required.',
+    },
+    {
+      question: 'Can trial support research inform pre-launch medical strategy?',
+      answer:
+        'Yes. Recruitment friction discoveries should feed label expectation management, endpoint communicability, real-world evidence planning, and investigator relationship prioritisation—reducing the gap between R&D pacing and commercial readiness clocks.',
+    },
+    {
+      question: 'How does BioNixus handle diversity and representation in feasibility?',
+      answer:
+        'Feasibility research illuminates structural barriers honestly—referral gravity, language of consent, seasonal incidence, and public–private routing—rather than performative aspiration. Diversity goals influence site shortlists and patient pathway assumptions sponsors can defend to regulators.',
+    },
+    {
+      question: 'What deliverables come from a clinical trial support engagement?',
+      answer:
+        'Ranked site shortlists with risk tags, investigator network maps, recruitment feasibility assessments with patient-flow estimates, protocol optimisation recommendations, and competitive trial landscape reports linking sites to enrolment competition.',
+    },
+    {
+      question: 'Does BioNixus support device and diagnostic trial pathways?',
+      answer:
+        'Yes. Device trials require ISO 14155-aligned conduct expectations and SFDA or national device regulatory overlays BioNixus maps alongside pharmaceutical protocols—especially where hospital IT, clinical engineering, and ethics committees add approval layers beyond drug-only templates.',
+    },
+    {
+      question: 'How should sponsors sequence feasibility before CRO selection?',
+      answer:
+        'Independent site and investigator verification before CRO commitment prevents costly protocol amendments driven by naive capacity assumptions. BioNixus feasibility modules de-risk geography and site selection so CRO proposals reflect operational reality in Gulf and European centres.',
+    },
+    {
+      question: 'How does BioNixus rank clinical trial sites with operational risk tags?',
+      answer:
+        'Site shortlists combine investigator-reported capacity with diagnostic backlogs, competing trials cannibalising the same patients, nursing bandwidth, laboratory turnaround variance, and transportation friction in dispersed geographies—each annotated with risk tags sponsors can action without redundant qualification travel across EMEA.',
+    },
+    {
+      question: 'What GCC regulatory overlays affect trial feasibility research?',
+      answer:
+        'SFDA and national ethics rhythms, import restrictions for investigational product, data localisation expectations, and public–private routing diverge from EU5 templates. BioNixus maps these overlays early so protocol assumptions survive institutional review rather than triggering expensive amendments after CRO commitment.',
+    },
+    {
+      question: 'How does feasibility research connect to pre-launch medical planning?',
+      answer:
+        'Recruitment friction discoveries inform medical narrative testing, payer-adjacent evidence planning, and real-world evidence design—reducing the translation gap between R&D pacing and commercial readiness clocks when endpoints or visit schedules prove impractical in priority sites.',
+    },
+    {
+      question: 'Does BioNixus support device and diagnostic trial feasibility?',
+      answer:
+        'Yes. ISO 14155-aligned conduct expectations, hospital IT overlays, and SFDA device regulatory paths are mapped alongside pharmaceutical protocols—especially where clinical engineering and ethics committees add approval layers beyond drug-only templates.',
+    },
+  ],
   'qualitative-research': [
     {
       question: 'What is qualitative pharmaceutical market research used for?',
@@ -202,18 +346,44 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
       answer:
         'Yes. Multilingual moderation and transcription workflows preserve decision authenticity in GCC and European markets while harmonised codebooks enable regional roll-ups. Language choice follows stakeholder type and local affiliate requirements rather than defaulting to English-only convenience.',
     },
+    {
+      question: 'How long does a typical pharmaceutical qual programme take from scope to deliverables?',
+      answer:
+        'Timelines depend on role mix, geography, and hybrid sequencing with quant waves, but most engagements move from calibrated scope memo through recruitment, moderation, thematic analysis, and governance-ready synthesis within planning cycles affiliates can align to launch gates—not open-ended transcript accumulation without KPI owners.',
+    },
+    {
+      question: 'What governance artefacts accompany qualitative deliverables?',
+      answer:
+        'Theme libraries with saturation notes, objection hierarchies with quotes graded for compliance review, reproducible topic guides, and explicit linkage tables from findings to medical, brand, and access owners—artefacts procurement and medical governance teams can audit without reconstructing methodology from slide decks alone.',
+    },
+    {
+      question: 'How should qual and quant be sequenced on the same programme?',
+      answer:
+        'When segment hypotheses remain unstable, qual often precedes quant to generate testable hypotheses—or follows quant to rescue flat distributions hiding polarised camps. BioNixus designs hybrids keyed to the elasticity of pivotal decisions rather than cosmetic comprehensiveness that delays launch gates.',
+    },
+    {
+      question: 'What industries and therapy areas use BioNixus qual most often?',
+      answer:
+        'Oncology, rare disease, immunology, hospital anti-infectives, and MedTech connectivity programmes across GCC, UK, and EU5—whenever payer-adjacent skepticism, stewardship interactions, or operational frictions must inform access, medical, and brand planning within the same governance cycle.',
+    },
   ],
 };
 
 export const SERVICE_HERO_EXTENSIONS: Record<string, string> = {
   'market-access':
     'Pair this service with the GCC market access guide and country-specific reports on the healthcare market research hub when sequencing registration, pricing, and reimbursement workstreams.',
+  'competitive-intelligence':
+    'Link competitive intelligence to physician insight, market access, and quantitative validation on the services hub so launch, medical, and access teams act on the same competitor narrative—not three incompatible storylines. Quarterly briefings annotate intelligence by decision type with explicit KPI ownership tables affiliates can execute without reinterpretation marathons across EMEA markets.',
+  'clinical-trial-support':
+    'Connect trial feasibility to investigator strategy, medical affairs narrative testing, and GCC clinical trials market intelligence when R&D and commercial clocks overlap on the same therapy area. Independent site verification before CRO commitment prevents costly protocol amendments driven by naive capacity assumptions in Gulf and European centres.',
   'physician-insights':
     'Integrate physician insight modules with quantitative segmentation and qualitative forensics on the hub so field, medical, and access teams share one behavioural evidence base.',
   'kol-mapping':
     'Connect KOL intelligence to physician insight and qualitative depth when influence maps must explain why consensus shifts—or stalls—in specific institution types.',
+  'kol-stakeholder-mapping':
+    'Connect KOL intelligence to physician insight and qualitative depth when influence maps must explain why consensus shifts—or stalls—in specific institution types. Tiered rosters link experts to decision types—initiation, switching, protocol adoption—so congress engagement and MSL deployment prioritise leverage that moves consensus rather than ceremonial visibility compliance teams cannot action. Workshop options translate maps into quarterly engagement calendars affiliates can execute.',
   'quantitative-research':
     'See the quantitative healthcare market research methodology guide for sampling, trade-off design, and forecast-bridge standards that govern BioNixus quant engagements.',
   'qualitative-research':
-    'Qualitative modules often follow or precede quant waves on the same hub programme—design hybrids that reduce rework when segment hypotheses remain unstable.',
+    'Qualitative modules often follow or precede quant waves on the same hub programme—design hybrids that reduce rework when segment hypotheses remain unstable. Theme libraries include saturation notes and linkage tables from findings to medical, brand, and access KPI owners so governance teams can audit inference without reconstructing methodology from slide decks alone.',
 };

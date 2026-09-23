@@ -107,6 +107,19 @@ export function PharmaCompaniesQuickAnswer({
             .
           </p>
         )}
+        <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-3xl">
+          For account-level brand-versus-competitor fieldwork—not a static company list—BioNixus runs primary research
+          with pharmacy mystery shopping, HCP ATU studies, and{' '}
+          <Link to="/services/competitive-intelligence" className="text-primary font-medium hover:underline">
+            pharmaceutical competitive intelligence
+          </Link>{' '}
+          modules scoped to {countryName}. Proposal turnaround is typically 48 hours after a structured brief covering
+          therapy area, account archetypes, and the syndicated data gap your team needs filled. Teams comparing{' '}
+          <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+            IQVIA alternatives
+          </Link>{' '}
+          for primary fieldwork often pair directory context with account-level modules on the same programme.
+        </p>
       </div>
     </section>
   );

@@ -288,6 +288,51 @@ export function PremiumMarketAccess({ svc }: PremiumMarketAccessProps) {
 
       <ServiceMarketReferenceGuide serviceSlug="market-access" />
 
+      <section className="premium-home-cream section-padding py-16 md:py-20" aria-labelledby="access-execution-heading">
+        <div className="container-wide mx-auto max-w-6xl">
+          <div className="mb-10 max-w-3xl">
+            <PremiumEyebrow tone="teal">Execution</PremiumEyebrow>
+            <h2
+              id="access-execution-heading"
+              className="font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl"
+            >
+              From access insight to affiliate launch gates
+            </h2>
+            <p className="mt-4 font-light leading-relaxed text-[#7A7267]">
+              Market access research earns its budget when it changes country order, evidence sequencing, and affiliate
+              resource allocation—not when it produces another payer slide deck reinterpreted for weeks. BioNixus
+              workshops optionally translate objection libraries into explicit gates: which markets can absorb field
+              investment now, which require HEOR refinement first, and which should wait for registration or procurement
+              calendar alignment.
+            </p>
+            <p className="mt-4 font-light leading-relaxed text-[#7A7267]">
+              In Gulf corridors, consolidated procurement and SFDA economic evaluation overlays mean access insight must
+              connect to tender defence and pricing narrative tests before brand teams scale messaging. UK and EU5
+              affiliates benefit from comparator acceptability maps and subgroup fragility registers that tell medical
+              affairs exactly which evidence gaps to close before resubmission. Pair execution planning with{' '}
+              <Link to="/heor-consulting" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline">
+                HEOR consulting
+              </Link>
+              ,{' '}
+              <Link
+                to="/healthcare-market-research/services/physician-insights"
+                className="font-medium text-[#C9A84C] underline-offset-4 hover:underline"
+              >
+                physician insight studies
+              </Link>
+              , and the{' '}
+              <Link
+                to="/healthcare-market-research"
+                className="font-medium text-[#C9A84C] underline-offset-4 hover:underline"
+              >
+                healthcare market research hub
+              </Link>{' '}
+              so access, medical, and commercial teams share one behavioural evidence base.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {faqItems.length > 0 ? (
         <div className="premium-home-ivory">
           <FAQSection
