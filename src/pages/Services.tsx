@@ -13,7 +13,7 @@ import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
-import { getServicesHubBundle } from '@/data/servicesHubContent';
+import { getServicesHubBundle, SERVICES_HUB_DEEP_DIVE } from '@/data/servicesHubContent';
 import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
 
 const recoveryLinkLabels: Record<string, string> = {
@@ -392,6 +392,30 @@ const Services = () => {
                   </Link>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        <section className="premium-home-cream section-padding py-16 md:py-20" aria-labelledby="services-deep-dive-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <PremiumEyebrow tone="teal">{SERVICES_HUB_DEEP_DIVE.eyebrow}</PremiumEyebrow>
+            <h2
+              id="services-deep-dive-heading"
+              className="mb-10 max-w-3xl font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl"
+            >
+              {SERVICES_HUB_DEEP_DIVE.title}
+            </h2>
+            <div className="space-y-12">
+              {SERVICES_HUB_DEEP_DIVE.sections.map((section) => (
+                <article key={section.heading} className="max-w-4xl">
+                  <h3 className="mb-4 font-display text-xl font-medium text-[#0C1B33]">{section.heading}</h3>
+                  <div className="space-y-4 text-[15px] font-light leading-relaxed text-[#7A7267]">
+                    {section.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)}>{para}</p>
+                    ))}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
