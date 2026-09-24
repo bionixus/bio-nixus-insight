@@ -156,7 +156,10 @@ function buildExpandedContent(country: DevelopedMarketMedtechCountry): ServiceLa
     },
     marketContext: {
       heading: `Why MedTech teams invest in ${country.label} market research now`,
-      paragraphs: country.marketParagraphs,
+      paragraphs: [
+        ...country.marketParagraphs,
+        `For ${country.label} manufacturers weighing GCC expansion, BioNixus can pair local ${country.regulatorShort} evidence with SFDA, MOHAP, and hospital-tender modules so portfolio committees see one narrative from registration through Gulf listing — without duplicating fieldwork. Proposal outlines typically arrive within one business day once segment, account type, and decision date are defined.`,
+      ],
     },
     services: buildServices(country.label, country.regulatorShort),
     methodology: buildMethodology(country.label),

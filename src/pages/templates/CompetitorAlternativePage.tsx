@@ -183,6 +183,23 @@ export default function CompetitorAlternativePage({ config }: Props) {
           </div>
         </DirectorySection>
 
+        {config.deepSections?.length ? (
+          <DirectorySection id="guide" surface="cream" eyebrow="Kingdom context" title="Saudi Arabia research guide">
+            <div className="space-y-10 max-w-3xl">
+              {config.deepSections.map((section) => (
+                <div key={section.title} className="space-y-4">
+                  <h3 className="text-xl font-display font-semibold text-foreground">{section.title}</h3>
+                  {section.paragraphs.map((para) => (
+                    <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
         <DirectorySection
           id="keep"
           eyebrow="Complement, not replace"

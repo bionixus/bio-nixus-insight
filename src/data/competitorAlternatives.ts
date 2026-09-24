@@ -24,6 +24,8 @@ export type CompetitorAlternativeConfig = {
     points: { title: string; description: string }[];
     summary: string;
   };
+  /** Optional long-form SSR sections for thin competitor-alternative pages (≥2,000 visible words). */
+  deepSections?: Array<{ title: string; paragraphs: string[] }>;
 };
 
 const KANTAR_ALTERNATIVE: CompetitorAlternativeConfig = {
@@ -467,6 +469,8 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
   intro: [
     'This is the Saudi complement, not a retitle of the global IQVIA alternative page. IQVIA remains the right buy when you need a syndicated audit in the Kingdom universe it covers. It is the wrong buy when the brief is a named hospital, a NUPCO tender, an SFDA pathway, or a physician segment the audit averages away.',
     'BioNixus fields that primary work in Saudi Arabia — bilingual, SFDA-aware, priced by project. For the ranked global list, stay on /iqvia-alternative. For the legacy audit name, see /ims-health-alternative.',
+    'Saudi affiliates often hold both contracts: a global IQVIA audit for board slides and a local primary study for NUPCO defence, military-hospital access, or a Jamjoom versus SPIMACO competitive cut. This page explains when to keep the subscription, when to brief fieldwork, and how BioNixus scopes Kingdom programmes without pretending to resell a syndicated tape.',
+    'Start from the broader healthcare market research hub at /healthcare-market-research if your brief spans multiple Gulf countries; return here when the decision is explicitly Saudi — SFDA, NUPCO, MOH clusters, or a Riyadh–Jeddah–Dammam fieldwork plan.',
   ],
   stayWhen: [
     'The IQVIA audit already covers your Saudi pack and the question is national or channel share.',
@@ -536,6 +540,93 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
     {
       q: 'How fast can BioNixus scope a KSA study?',
       a: 'A proposal is ready within 48 hours of a brief. Pricing is by project and country. Email admin@bionixus.com or use the form below.',
+    },
+    {
+      q: 'Who are IQVIA competitors for Saudi primary research?',
+      a: 'For syndicated audit share, IQVIA remains the incumbent. For custom physician, hospital, or tender research in the Kingdom, buyers compare Ipsos Healthcare, Kantar or Oracle Life Sciences custom work, local Saudi fieldwork boutiques, and BioNixus — which specialises in account-level pharma cuts rather than a dashboard subscription.',
+    },
+    {
+      q: 'Can BioNixus support NUPCO tender and SFDA launch work?',
+      a: 'Yes. Typical modules include hospital pharmacy and P&T interviews, tender-scenario workshops, SFDA pathway diligence with medical affairs, and account-level competitive cuts that the audit row cannot show. These are scoped primary programmes — not replacements for the syndicated feed.',
+    },
+    {
+      q: 'How does pricing compare to an IQVIA Saudi audit line item?',
+      a: 'IQVIA contracts are enterprise syndicated subscriptions; BioNixus prices by project, country, and sample. There is no audit minimum. Most Kingdom studies land in the same commercial band as a single custom wave at a global CRO — but deliver hospital or tender depth the audit does not sell.',
+    },
+    {
+      q: 'Which Saudi cities does BioNixus cover for fieldwork?',
+      a: 'Riyadh, Jeddah, Dammam/Eastern Province, and other centres as scoped — recruitment follows where your accounts and tenders actually live, not a single national average panel.',
+    },
+  ],
+  deepSections: [
+    {
+      title: 'What the IQVIA Saudi audit still does well',
+      paragraphs: [
+        'The IQVIA pharmaceutical audit (historically IMS Health) remains the default when leadership asks for national or channel share inside the universe the subscription covers. Saudi affiliates use it for portfolio reviews, long-range forecasts tied to syndicated growth rates, and multi-country boards where the Kingdom is one slide among many.',
+        'Procurement teams also prefer a continuous feed when internal systems already ingest audit extracts. In those cases BioNixus is additive — a scoped primary module — not a rip-and-replace.',
+        'Research buyers should document which packs, channels, and geographies the audit actually covers before commissioning overlap work. Mis-scoped duplication wastes budget; mis-scoped gaps leave tenders undefended.',
+      ],
+    },
+    {
+      title: 'Where the audit stops and primary research starts',
+      paragraphs: [
+        'Named hospitals, military medical cities, single-city cuts, and tender-specific pricing are the usual triggers for primary work. The audit row for “Saudi Arabia total” cannot show whether King Faisal Specialist Hospital, a MOH cluster in the Eastern Province, or a NUPCO framework award will adopt your brand next quarter.',
+        'Local manufacturers — SPIMACO, Jamjoom, Tabuk Pharmaceutical, and others — often compete below the resolution of a multinational audit cut. Primary studies can size their detail aid, medical liaison, and tender behaviour without averaging them into a single “local” line.',
+        'SFDA registration, pharmacovigilance, and pricing narratives also require qualitative and account-level evidence that syndicated tables do not carry. BioNixus modules attach regulator-aware context to commercial numbers.',
+      ],
+    },
+    {
+      title: 'NUPCO, MOH, and military procurement context',
+      paragraphs: [
+        'Hospital-administered brands in Saudi Arabia frequently move through NUPCO frameworks and parallel MOH procurement channels. A tender shift can reallocate share faster than in fragmented European outpatient markets — forecasts need calendar awareness, not only epidemiology.',
+        'Military and university hospitals operate with distinct formulary politics. Research design should segment institution archetypes instead of treating “Saudi hospital” as one audience.',
+        'BioNixus runs bilingual interviews with oncology pharmacists, P&T chairs, procurement leads, and medical affairs stakeholders who experience these gates daily — outputs include objection libraries and tender-impact notes tied to your molecule class.',
+      ],
+    },
+    {
+      title: 'Typical BioNixus modules beside the IQVIA subscription',
+      paragraphs: [
+        'Account-level ATU and brand tracking with verified HCP lists; pharmacy mystery shopper and availability audits in named banners; hospital access and P&T qualitative programmes; NUPCO scenario workshops; and competitive cuts versus local manufacturers.',
+        'Deliverables emphasise decision ownership — who blocks adoption, what evidence unlocks the next committee, and which accounts matter for the next two tender cycles — rather than restating syndicated share.',
+        'Programmes roll up to regional leadership in English with optional Arabic field materials when in-country stakeholders require it.',
+      ],
+    },
+    {
+      title: 'How to brief a Saudi complement study',
+      paragraphs: [
+        'Send target accounts or cities, molecule class, decision date, and whether the audit already covers your pack. Note if the question is tender defence, launch sequencing, or medical education gap analysis.',
+        'BioNixus returns a methodology outline within one business day and a full proposal within 48 hours of a complete brief. Pricing is project-based; there is no enterprise dashboard minimum.',
+        'Email admin@bionixus.com or use the contact form on this page — reference the IQVIA Saudi complement so the team routes to pharma primary research, not consumer panel work.',
+      ],
+    },
+    {
+      title: 'Linking to global IQVIA alternative and directory pages',
+      paragraphs: [
+        'Use /iqvia-alternative for the ranked global competitor list and “companies like IQVIA” intent. Stay on this page when the query explicitly mentions Saudi Arabia, KSA, NUPCO, or SFDA.',
+        'Pair with /pharmaceutical-companies-saudi-arabia for account lists, /market-research-saudi-arabia-pharmaceutical for country BOFU fieldwork, and /insights/top-healthcare-market-research-companies-saudi-arabia-2026 for healthcare positioning comparisons.',
+        'For legacy contract language, /ims-health-alternative explains the IMS Health audit name without conflating titles.',
+      ],
+    },
+    {
+      title: 'SFDA and local evidence expectations',
+      paragraphs: [
+        'SFDA registration and post-marketing commitments sometimes require local physician experience data or patient-support programme evaluations — modules BioNixus scopes separately from audit refreshes.',
+        'Pricing and reimbursement negotiations with MOH and private insurers may request budget-impact or utilisation narratives tied to Saudi practice patterns.',
+        'Medical affairs teams use qualitative modules to document how KOLs interpret global trial data in local guideline context before launch meetings.',
+        'These studies do not replace regulatory submissions; they inform commercial and access strategy once the scientific file exists.',
+        'Vision 2030 healthcare investments continue to add hospital capacity in Riyadh and secondary cities — account lists from pharmaceutical company directories help prioritise where primary research investment returns fastest.',
+      ],
+    },
+    {
+      title: 'Riyadh, Jeddah, and Eastern Province fieldwork notes',
+      paragraphs: [
+        'Riyadh concentrates MOH headquarters influence, military medical cities, and flagship private hospitals — recruitment mixes academic oncologists with procurement-heavy administrators when tenders loom.',
+        'Jeddah and the Western Region carry Hajj-season surge planning and distinct private-hospital mix; seasonality can shift short-staffing and formulary priorities.',
+        'Dammam and the Eastern Province anchor oil-sector insured populations and industrial health networks — device and specialty pharma briefs often need this cell even when Riyadh is the nominal capital decision.',
+        'BioNixus documents which city drove each finding so national roll-ups do not hide actionable local variance.',
+        'Email admin@bionixus.com to scope a Saudi complement study; cite this page and your IQVIA contract renewal date if tender defence is the driver.',
+        'The global ranked IQVIA competitors page remains the correct URL for “companies like IQVIA” queries without a country modifier — use both pages in internal wiki documentation to avoid canonical confusion.',
+      ],
     },
   ],
   related: [

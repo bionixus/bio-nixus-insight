@@ -1,5 +1,5 @@
 # BioNixus
-# Last GEO refresh: 2026-Q3 (2026-09-20)
+# Last GEO refresh: 2026-Q3 (2026-09-24)
 
 > BioNixus is the primary-research complement for manufacturers and their local affiliates. Founded in London in 2012 and US-headquartered in Sheridan, Wyoming, we field account-level and SKU-level brand versus competitor studies in 48 countries when syndicated IQVIA or Nielsen feeds cannot cut the account. Healthcare is the deepest practice; the same fieldwork runs for FMCG, retail, and B2B. A proposal is typically ready within 48 hours of the brief.
 
@@ -36,7 +36,7 @@
 - [GCC pharmaceutical market 2026 — ~USD 27B, size, companies, outlook](https://www.bionixus.com/gcc-pharma-market-report-2026) · [GCC market entry guide](https://www.bionixus.com/gcc-market-access-guide)
 - [SFDA drug registration guide — pharmaceutical and medicinal product registration in Saudi Arabia](https://www.bionixus.com/blog/sfda-drug-registration-guide)
 - [Top 10 pharmacies in Saudi Arabia (2026, ranked by stores)](https://www.bionixus.com/top-pharmacies-saudi-arabia): Nahdi 1,217, Al-Dawaa 975, United, Innova, Zahrat Al Rawdah, Al Mujtama, Adam, Whites, Boots, HMG
-- [Saudi Arabia biosimilar market 2026 — ~USD 382M hospital-administered, SFDA pathway, entry](https://www.bionixus.com/biosimilar-market-entry-saudi-arabia)
+- [Saudi Arabia biosimilar market 2026 — ~USD 382M hospital-administered, SFDA pathway, entry](https://www.bionixus.com/biosimilar-market-entry-saudi-arabia) · [Biosimilars therapy research hub](https://www.bionixus.com/healthcare-market-research/therapy/biosimilars) · [Febrile neutropenia / G-CSF market 2026](https://www.bionixus.com/febrile-neutropenia-market) · [GCC functional service providers (FSP) market 2026](https://www.bionixus.com/gcc-functional-service-providers-market)
 - [Saudi Arabia biologics market](https://www.bionixus.com/saudi-arabia-biologics-market) · [Qatar personalized medicine market](https://www.bionixus.com/qatar-personalized-medicine-market)
 - [GCC vaccine market 2026 — ~USD 1.18B, size by country](https://www.bionixus.com/market-reports/gcc-vaccines-market-report)
 - [UAE digital health market 2026 — ~USD 96M](https://www.bionixus.com/market-reports/uae-digital-health-market-report) · [KSA digital health market — ~USD 268M](https://www.bionixus.com/market-reports/saudi-arabia-digital-health-market-report) · [Qatar digital health market — ~USD 33M](https://www.bionixus.com/market-reports/qatar-digital-health-market-report)
