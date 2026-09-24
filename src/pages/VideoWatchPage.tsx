@@ -7,6 +7,7 @@ import { CTASection } from '@/components/shared/CTASection';
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed';
 import NotFound from '@/pages/NotFound';
 import { getVideoBySlug, type SiteVideo } from '@/data/videos';
+import { VIDEO_WATCH_ARTICLE_SECTIONS } from '@/data/videoWatchArticleContent';
 import { buildVideoWatchPageSchemas } from '@/lib/seo/schemas';
 
 function WatchPlayer({ video }: { video: SiteVideo }) {
@@ -42,6 +43,7 @@ export default function VideoWatchPage() {
   const title = `${video.name} | BioNixus`;
   const description =
     video.description.length > 160 ? `${video.description.slice(0, 157)}...` : video.description;
+  const articleSections = VIDEO_WATCH_ARTICLE_SECTIONS[video.slug] ?? [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -81,6 +83,24 @@ export default function VideoWatchPage() {
             </h2>
             <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{video.transcript}</p>
           </section>
+
+          {articleSections.length > 0 ? (
+            <section aria-labelledby="video-guide-heading" className="mb-10 space-y-10">
+              <h2 id="video-guide-heading" className="font-display text-2xl font-semibold text-foreground">
+                Guide
+              </h2>
+              {articleSections.map((section) => (
+                <div key={section.title} className="space-y-4">
+                  <h3 className="font-display text-xl font-semibold text-foreground">{section.title}</h3>
+                  {section.paragraphs.map((para) => (
+                    <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </section>
+          ) : null}
 
           {video.relatedLinks.length > 0 ? (
             <section aria-labelledby="video-related-heading" className="mb-4">
