@@ -12,8 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
+import { FORMSPREE_ENDPOINT, submitLeadDual } from '@/lib/submitLeadDual';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
@@ -108,17 +107,15 @@ export function CaseStudyContactGate({
 
     setSubmitting(true);
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
+      const result = await submitLeadDual(data);
+      if (result.skipped) return;
+      if (result.ok) {
         onSuccess();
         onOpenChange(false);
+      } else if (result.formspreeNetworkError) {
+        setSubmitError(v('error'));
       } else {
-        const json = await res.json().catch(() => ({}));
-        setSubmitError(json.error || v('error'));
+        setSubmitError(result.formspreeError || v('error'));
       }
     } catch {
       setSubmitError(v('error'));
@@ -135,6 +132,15 @@ export function CaseStudyContactGate({
           <DialogDescription>{caseStudyTitle}</DialogDescription>
         </DialogHeader>
         <form action={FORMSPREE_ENDPOINT} method="POST" onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            name="hp_company"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            defaultValue=""
+            className="hidden"
+          />
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="gate-firstName">{c.firstName}</Label>

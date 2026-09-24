@@ -16,6 +16,7 @@ import { TrustCoverageMap } from '@/components/media/TrustCoverageMap';
 import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
 import { getContactFormStrings } from '@/lib/contactFormStrings';
 import { trackLeadSubmitted } from '@/lib/analytics';
+import { FORMSPREE_ENDPOINT, submitLeadDual } from '@/lib/submitLeadDual';
 
 type ContactValidation = {
   firstName?: string;
@@ -67,7 +68,6 @@ const REFERRAL_OPTIONS = [
   'Other',
 ] as const;
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const ERROR_EMAIL = 'digital@bionixus.uk';
 
 type ErrorEmailFields = {
@@ -203,12 +203,12 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
 
     setSubmitting(true);
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
+      const result = await submitLeadDual(data);
+      if (result.skipped) {
+        setSubmitted(true);
+        return;
+      }
+      if (result.ok) {
         setSubmitted(true);
         trackLeadSubmitted({ formId: 'contact_section' });
         try {
@@ -238,11 +238,13 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
             }),
           });
         } catch {
-          // Silently ignore - Formspree submission is the primary action
+          // Newsletter subscribe is optional once the lead itself is saved.
         }
+      } else if (result.formspreeNetworkError) {
+        setSubmitError(v('error'));
+        sendErrorEmail(errorFields, `Network/client error: ${result.formspreeNetworkError}`);
       } else {
-        const json = await res.json().catch(() => ({}));
-        const errorMsg = json.error || v('error');
+        const errorMsg = result.formspreeError || v('error');
         setSubmitError(errorMsg);
         sendErrorEmail(errorFields, errorMsg);
       }
@@ -442,6 +444,15 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
             onSubmit={handleSubmit}
             noValidate
           >
+                  <input
+                    type="text"
+                    name="hp_company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    defaultValue=""
+                    className="hidden"
+                  />
                   {/* Name */}
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>

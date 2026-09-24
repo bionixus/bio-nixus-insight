@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
 import { trackLeadSubmitted, trackFormStart } from '@/lib/analytics';
+import { submitLeadDual } from '@/lib/submitLeadDual';
 import { QUALIFICATION_FORM_MARKETS } from '@/data/qualificationFormOptions';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type GatedAssetFormProps = {
@@ -75,12 +75,9 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
     setSubmitting(true);
     setSubmitError(null);
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
+      const result = await submitLeadDual(data);
+      if (result.skipped) return;
+      if (result.ok) {
         setSubmitted(true);
         trackLeadSubmitted({ formId });
         // Trigger the PDF download client-side once the lead is captured.
@@ -91,8 +88,7 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         link.click();
         link.remove();
       } else {
-        const json = await res.json().catch(() => ({}));
-        setSubmitError(json.error || 'Something went wrong — please try again.');
+        setSubmitError(result.formspreeError || 'Something went wrong — please try again.');
       }
     } catch {
       setSubmitError('Something went wrong — please try again.');
@@ -121,6 +117,15 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
 
   return (
     <form onSubmit={handleSubmit} onFocus={handleFirstInteraction} className="space-y-4" noValidate>
+      <input
+        type="text"
+        name="hp_company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        defaultValue=""
+        className="hidden"
+      />
       <div>
         <label htmlFor={`${formId}-ga-workEmail`} className="block text-sm font-medium text-foreground mb-1.5">
           Work email <span className="text-destructive">*</span>
