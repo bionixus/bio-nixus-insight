@@ -19,6 +19,9 @@ import { MediaVisualBriefing } from '@/components/media/MediaVisualBriefing';
 import { ProcessWorkflowVisual } from '@/components/media/ProcessWorkflowVisual';
 import { ProofVideoEmbed } from '@/components/media/ProofVideoEmbed';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { GeoLLMAnswerBlock, type GeoLLMAnswerBlockProps } from '@/components/seo/GeoLLMAnswerBlock';
+
+type GeoLLMConfig = Pick<GeoLLMAnswerBlockProps, 'question' | 'answer' | 'points' | 'summary'>;
 
 type LinkItem = {
   to: string;
@@ -45,6 +48,8 @@ type StrategicServicePageProps = {
   faqs?: Array<{ question: string; answer: string }>;
   /** Optional long-form sections from serviceLandingContent ([BIO-451]). */
   expandedContent?: ServiceLandingExpandedContent;
+  /** Optional GEO / LLM answer-first block for retrieval engines. */
+  geoLLM?: GeoLLMConfig;
   /** Key into PAGE_MEDIA in mediaAssets.ts; defaults to slug derived from canonical URL. */
   mediaSlug?: string;
   /** Optional per-region breakdown (e.g. payer/HTA landscape by country) — renders as its own section with one H3 per region. */
@@ -68,6 +73,7 @@ export default function StrategicServicePage({
   expandedContent,
   mediaSlug,
   regionalLandscapes,
+  geoLLM,
 }: StrategicServicePageProps) {
   const resolvedFaqs = expandedContent?.faqs ?? faqs;
   const pagePath = canonicalUrl.replace('https://www.bionixus.com', '') || '/';
@@ -156,6 +162,9 @@ export default function StrategicServicePage({
         ) : null}
 
         <ReportContentWithAside config={config}>
+          {geoLLM ? (
+            <GeoLLMAnswerBlock className="mb-10" {...geoLLM} pageUrl={canonicalUrl} />
+          ) : null}
           <p className="text-sm text-muted-foreground leading-relaxed mb-8">
             For regional context and related services, start from our{' '}
             <Link to="/healthcare-market-research" className="text-primary underline font-medium">

@@ -108,12 +108,12 @@ export const CTR_SEO_BY_PATH = {
     // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
     title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
     description:
-      'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
+      'IQVIA competitors and companies like IQVIA — ranked alternatives for healthcare market research in 2026. Compare primary research vs syndicated data; MENA depth vs enterprise IQVIA contracts.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
-    title: 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide',
+    title: 'Cairo Hospitals Healthcare 2023-2026 | Egypt Hospital Guide',
     description:
-      'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.',
+      'Cairo hospitals healthcare 2023-2026: ranked private and university hospitals, UHI rollout, EDA pharma access, and patient volumes. Free Egypt healthcare market overview by BioNixus.',
   },
   '/blog/nupco-saudi-arabia-tendering-guide': {
     title: 'NUPCO Tenders 2026: Register & Win Saudi Procurement',

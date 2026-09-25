@@ -142,6 +142,9 @@ const UkPharmaCompanies = () => {
             <p>The UK pharmaceutical market is anchored by the <strong className="text-foreground">NHS</strong> as the dominant purchaser, with <strong className="text-foreground">GSK</strong> and <strong className="text-foreground">AstraZeneca</strong> as globally significant UK-based manufacturers. Specialty medicines, oncology, vaccines, and metabolic therapies drive much of the value growth.</p>
             <p>Post-Brexit, the <strong className="text-foreground">MHRA</strong> is the primary medicines regulator, while <strong className="text-foreground">NICE</strong> appraisals remain central to national uptake. Wholesalers and pharmacy chains manage the last mile into community and hospital settings.</p>
             <p>For comparative country programmes, see our <Link to="/healthcare-market-research" className="text-primary hover:underline">healthcare market research hub</Link> and peer directories for the USA, Germany, Brazil, and Canada.</p>
+            <p>
+              NHS England integrated care boards and hospital formulary committees increasingly gate uptake before NICE Technology Appraisal publication for high-cost medicines and adjacent devices — primary research with pharmacy leads, clinical directors, and procurement teams explains why national guidance does not always translate into local adoption. BioNixus UK programmes segment ICB-level variation alongside wholesale and community pharmacy pull-through for realistic launch sequencing.
+            </p>
           </div>
         </div></section>
 
