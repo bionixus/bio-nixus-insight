@@ -20,10 +20,10 @@ import { MarketReportWhitePaperBand } from '@/components/report-premium/MarketRe
 import { getMarketReportWhitePaper } from '@/data/marketReportWhitePapers';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
 
-const PAGE_TITLE = 'Japan Medical Devices Market 2026: $41B Size & PMDA Forecast';
+const PAGE_TITLE = 'Japan Medical Devices Market Size 2026: $41B | PMDA Guide';
 const PAGE_DESCRIPTION =
-  'Japan medical devices market $41B in 2026 → ~$64B by 2032. PMDA Class I–IV (todokede/ninsho/shonin), NHI listing & hospital procurement — BioNixus market report.';
-const PAGE_MODIFIED = '2026-08-30';
+  'Japan medical devices market size ~$41B in 2026 (surgical, neurology, disposables). PMDA Class I–IV, NHI listing, hospital procurement & device lag — BioNixus report.';
+const PAGE_MODIFIED = '2026-09-26';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
