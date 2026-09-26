@@ -12,6 +12,7 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { getServicesHubBundle } from '@/data/servicesHubContent';
 import { getLocalizedPathForLanguage, languagePaths, localizedContactPath } from '@/lib/seo';
@@ -447,6 +448,36 @@ const Services = () => {
             </details>
           </div>
         </section>
+
+        {!copy ? (
+          <section className="premium-home-cream section-padding py-16 md:py-20" aria-labelledby="services-geo-answer">
+            <div className="container-wide mx-auto max-w-4xl">
+              <GeoLLMAnswerBlock
+                question="What market research services does BioNixus offer for pharmaceutical and healthcare teams?"
+                answer="BioNixus delivers senior-led pharmaceutical and healthcare market research across 48 countries — quantitative physician and payer surveys, qualitative KOL programmes, market access and HTA support, competitive intelligence, clinical trial feasibility, and stakeholder mapping — combined with CATI, CAWI, CAPI, focus groups, and mystery shopping where your category requires it."
+                points={[
+                  {
+                    title: 'Pharma & healthcare modules',
+                    description:
+                      'Six core modules from physician surveys through market access — combinable into one global programme with shared QC.',
+                  },
+                  {
+                    title: 'Fieldwork modes',
+                    description:
+                      'CATI for senior buyers and HCPs, CAWI for trackers, CAPI for hospital and retail audits — mixed-mode by design.',
+                  },
+                  {
+                    title: 'Commercial breadth',
+                    description:
+                      'B2B, B2C, and cross-industry research for banking, retail, tourism, technology, and FMCG via the same methodology standard.',
+                  },
+                ]}
+                summary="Request a proposal via the contact form — BioNixus typically returns a tailored methodology outline within one business day."
+                pageUrl="https://www.bionixus.com/services"
+              />
+            </div>
+          </section>
+        ) : null}
 
         <div className="premium-home-ivory">
           <FAQSection

@@ -506,7 +506,7 @@ function buildFallbackDescription(pathname) {
     return 'Pharma market research in Dubai: physician surveys, hospital data, KOL mapping, and UAE payer-aware market access—BioNixus.';
   }
   if (path === '/iqvia-alternative') {
-    return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
+    return 'IQVIA competitors & alternatives (2026): BioNixus primary pharma research vs IQVIA syndicated data — hospital analytics & flexible global studies.';
   }
   if (path === '/nielsen-alternative') {
     return 'NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap.';

@@ -341,6 +341,21 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'What is the minimum engagement size for BioNixus market research?',
+    answer:
+      'Most pharmaceutical and healthcare programmes start from USD 20,000 for a single-country module with verified HCP or payer sampling. Multi-country launch, access, and competitive-intelligence programmes are scoped to your governance calendar — we document feasibility before fieldwork commitment.',
+  },
+  {
+    question: 'How does BioNixus compare to IQVIA or Kantar for healthcare research?',
+    answer:
+      'BioNixus specialises in primary, in-country pharmaceutical and healthcare research across 48 markets — physician surveys, hospital procurement intelligence, KOL mapping, and market access — with flexible project sizing. Syndicated data vendors remain appropriate for panel audits at enterprise scale; see our IQVIA alternatives guide for a side-by-side buyer checklist.',
+  },
+  {
+    question: 'Can BioNixus run CATI, CAWI, and CAPI in the same global programme?',
+    answer:
+      'Yes. Mixed-mode designs are common when senior B2B buyers need CATI, hospital audits require CAPI, and tracker waves run CAWI. One senior team harmonises screeners, quotas, and reporting templates so multi-country committees receive comparable cuts.',
+  },
 ] as const;
 
 export const HERO_METRICS = [

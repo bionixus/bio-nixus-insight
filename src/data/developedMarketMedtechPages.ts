@@ -574,6 +574,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Spain\'s EUR 10–12 billion devices market within EUR 120–130 billion health expenditure serves 47.9 million population. High diabetes prevalence (14.8% adults) drives monitoring and therapeutic device demand.',
       'Regional adoption variation is among the widest in EU5 — Catalonia and Madrid versus slower rural communities require segmented research, not national averages.',
       'BioNixus supports Spain MedTech research with AEMPS context and verified hospital networks across target autonomous communities.',
+      'IPT and CIPM milestones often precede Guía Farmacoterapéutica listing by three to six months — fieldwork that follows hospital pharmacy committees in CatSalut and SERMAS clarifies when innovator devices actually reach procedure volume.',
     ],
   },
   switzerland: {
@@ -606,6 +607,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Switzerland\'s CHF 6–7 billion medtech market punches above population weight (8.7 million) with highest OECD health spending per capita. Roche, Zambon, and dense SME ecosystem characterise domestic industry.',
       'Access Consortium credentials make Switzerland a strategic parallel market with Canada and Australia for global launch sequencing.',
       'BioNixus supports Swiss MedTech research with Swissmedic context and verified KOL networks at major university hospitals.',
+      'Cantonal procurement calendars (Zurich, Vaud, Geneva) rarely align with EU5 listing — primary research that tracks hospital committee objections and supplementary-insurance uptake explains revenue timing better than syndicated audit averages.',
     ],
   },
   denmark: {
@@ -638,6 +640,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Denmark\'s medtech sector exports globally through Ambu, Coloplast, and William Demant (Demant) — domestic market size belies international strategic importance. 5.9 million population with high health expenditure per capita.',
       'Regional hospital groups concentrate procedural volume; digital health leadership creates differentiated adoption pathways for connected devices.',
       'BioNixus supports Denmark MedTech research with EU MDR context and Nordic expansion intelligence.',
+      'SKI and regional tender waves often gate capital equipment purchases — clinician and biomedical-engineering interviews clarify when connected-device pilots convert to funded rollouts across Region Hovedstaden and Midtjylland.',
     ],
   },
   'new-zealand': {
@@ -734,6 +737,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Poland\'s PLN 18–22 billion medtech market is Central Europe\'s largest by population (38 million) with EU-funded hospital investment driving capital equipment cycles.',
       'NFZ cost-containment pressure increases alongside private pay growth — dual-pathway research prevents mispriced access strategy.',
       'BioNixus supports Poland MedTech research with URPL/NFZ context and EU5 comparative modules.',
+      'AOTMiT HTA opinions and NFZ reimbursement decisions increasingly gate high-cost implants — research that pairs payer interviews with hospital committee modules reduces surprises at voivodeship tender stage.',
     ],
   },
   malaysia: {
@@ -766,6 +770,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Malaysia\'s MYR 8–10 billion medtech market serves 34 million population with dual public-private healthcare pathways and ASEAN distribution hub ambitions.',
       'Medical tourism through private hospitals (Prince Court, Gleneagles KL) creates premium adoption corridor distinct from MOH procurement.',
       'BioNixus supports Malaysia MedTech research with MDA-aware design and verified specialist networks across public and private systems.',
+      'IHH and KPJ formulary committees often adopt innovator devices ahead of MOH central contracts — segmented sampling across private chains versus MOH hospitals explains uptake curves syndicated data smooths away.',
     ],
   },
   brazil: {
@@ -798,6 +803,7 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Brazil\'s USD 11–13 billion devices market serves 218 million population — Latin America\'s largest. Dual SUS/public and ANS/private pathways require segmented research design.',
       'Domestic orthopaedic and dental manufacturers compete aggressively; import tariffs reshape multinational pricing strategy.',
       'BioNixus supports Brazil MedTech research with ANVISA context, Portuguese fieldwork, and LATAM expansion intelligence.',
+      'Launch teams increasingly model CONITEC HTA timing against ANS Rol updates and Rede D\'Or tender calendars so capital equipment and implant forecasts reflect when committees actually release budget — not only when ANVISA registration clears.',
     ],
   },
 };
