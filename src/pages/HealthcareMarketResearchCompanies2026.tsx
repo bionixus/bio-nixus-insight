@@ -219,7 +219,7 @@ export default function HealthcareMarketResearchCompanies2026() {
     image: 'https://www.bionixus.com/og-image.png',
     url: CANONICAL,
     datePublished: '2026-07-21',
-    dateModified: '2026-09-03',
+    dateModified: '2026-09-27',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -339,7 +339,7 @@ export default function HealthcareMarketResearchCompanies2026() {
               research across MENA↔global bridges; IQVIA and peers remain strongest for syndicated data.
             </p>
             <p className="text-sm text-muted-foreground">
-              Updated 3 September 2026 · By BioNixus Research Team · 14 min read
+              Updated 27 September 2026 · By BioNixus Research Team · 15 min read
             </p>
           </div>
         </section>
@@ -424,6 +424,40 @@ export default function HealthcareMarketResearchCompanies2026() {
                   <p className="text-sm text-muted-foreground">{g.desc}</p>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-16 bg-muted/10" id="budgets-timelines">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Typical budgets, timelines, and RFP signals
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl">
+              <p>
+                Healthcare market research companies quote on scope — not a single rate card. A focused online HCP
+                attitude-and-usage wave in one country often completes in three to four weeks; multi-country payer depth,
+                KOL advisory boards, and patient modules typically run six to twelve weeks depending on IRB or ethics
+                review, therapy scarcity, and bilingual fieldwork. Syndicated data licences from IQVIA or Clarivate are
+                annual subscriptions; primary agencies such as BioNixus, Ipsos Healthcare, or Research Partnership price
+                custom programmes with minimums that reflect verified recruitment and senior analyst time.
+              </p>
+              <p>
+                Strong RFPs name the commercial decision (launch sequencing, formulary narrative, competitive defence),
+                stakeholders (HCP, payer, patient), geographies, languages, and whether syndicated feeds already exist.
+                Weak RFPs ask for “a brand tracker” without channel context — the fastest way to receive incompatible
+                proposals. If your team is comparing{' '}
+                <Link to="/iqvia-alternative" className="text-primary hover:underline font-medium">
+                  IQVIA alternatives
+                </Link>{' '}
+                for primary work, state explicitly that you need fieldwork, not another data licence.
+              </p>
+              <p>
+                BioNixus minimum engagement sizes for standalone primary healthcare research generally start around USD
+                20,000, with 48-hour proposal turnaround once objectives are clear. Enterprise affiliates often run
+                BioNixus modules alongside existing IQVIA or Kantar contracts — this guide helps procurement label which
+                vendor type fits each line item.
+              </p>
             </div>
           </div>
         </section>
