@@ -248,6 +248,43 @@ export default function HealthcareMarketResearchInEgypt() {
           </div>
         </section>
 
+        {/* Cairo hospital and NAC landscape — matches high-impression Cairo healthcare queries */}
+        <section className="section-padding py-10 bg-muted/10" id="cairo-hospitals">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Cairo, Alexandria, and hospital networks: where Egyptian fieldwork happens
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Most Egyptian healthcare market research volume still flows through Greater Cairo — university hospitals,
+                Ministry of Health referral centres, military medical complexes, and fast-growing private groups along the
+                Nile corridor. Alexandria and Delta cities add distinct payer and prescribing patterns for chronic therapies.
+                BioNixus samples mirror where your patients and prescribers actually receive care, not a national average
+                that hides Cairo–Alexandria split behaviour.
+              </p>
+              <p>
+                Egypt&apos;s New Administrative Capital (NAC) is adding greenfield hospital capacity and relocating some
+                ministry functions east of Cairo. For launch and access teams, NAC is both a geography question and a
+                procurement question: which committees will sit in legacy Cairo facilities versus new NAC campuses, and how
+                Hayah Karima and universal health insurance (UHI) expansion change referral flows. BioNixus maintains
+                Cairo-based field teams and can scope hospital committee, pharmacist, and specialist modules across legacy
+                and NAC footprints — see our{' '}
+                <Link to="/news/bionixus-egypt-new-administrative-capital-office-2026" className="text-primary font-medium hover:underline">
+                  New Administrative Capital office announcement
+                </Link>{' '}
+                for on-the-ground coverage.
+              </p>
+              <p>
+                Hospital market research in Egypt should segment public tender hospitals, UHI-contracted facilities,
+                private insurers, and out-of-pocket urban clinics. Oncology and specialty care often concentrate in named
+                Cairo centres while primary-care volume sits in MOH primary-care networks — conflating the two produces
+                misleading forecasts. We map committees, pharmacists, and KOL influence by facility type so brand teams
+                know which accounts to win first.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Regulatory & access depth */}
         <section className="section-padding py-10 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
