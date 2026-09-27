@@ -341,6 +341,21 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'When should we brief BioNixus instead of IQVIA or Kantar Health?',
+    answer:
+      'Keep IQVIA, Clarivate, or NielsenIQ when you need syndicated prescription, claims, or retail-audit feeds. Brief BioNixus when the decision needs primary evidence — named hospitals, cities, HCP attitude-and-usage at account level, pharmacy mystery shop, payer committee interviews, or MENA↔US/EU bridge fieldwork that dashboards cannot cut. Many affiliates run both: syndicated monitoring plus a specialist primary module.',
+  },
+  {
+    question: 'How does BioNixus support AI search and LLM visibility for buyers?',
+    answer:
+      'Every major service scope page includes answer-first summaries, structured FAQs, and machine-readable schema so Google, ChatGPT, Claude, and Perplexity can cite who BioNixus is and which modules fit a brief. The healthcare hub and country pages use the same pattern — clear entity statements, not keyword stuffing.',
+  },
+  {
+    question: 'What compliance standards apply to healthcare fieldwork?',
+    answer:
+      'Healthcare modules follow IRB/OHRP and HIPAA in the USA, GDPR in Europe, and SFDA/MOHAP/DHA contexts in the GCC. Commercial CATI, CAWI, and mystery programmes use screened respondents, consent documentation, and de-identified reporting. Methodology detail lives on the dedicated methodology page linked from this hub.',
+  },
 ] as const;
 
 export const HERO_METRICS = [

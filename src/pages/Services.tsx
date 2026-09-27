@@ -11,6 +11,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { getServicesHubBundle } from '@/data/servicesHubContent';
@@ -230,6 +231,34 @@ const Services = () => {
         </section>
 
         <PremiumComplianceRibbon />
+
+        <section className="premium-home-cream section-padding py-12 md:py-16" aria-labelledby="services-quick-answer">
+          <div className="container-wide mx-auto max-w-6xl">
+            <GeoLLMAnswerBlock
+              question="What market research services does BioNixus offer?"
+              answer="BioNixus delivers senior-led market research services for pharmaceutical, healthcare, and commercial teams across 48 countries — combining physician and payer primary research with CATI, CAWI, CAPI fieldwork, focus groups, mystery shopping, price elasticity, and digital behaviour tracking under one methodology standard."
+              points={[
+                {
+                  title: 'Pharma and healthcare modules',
+                  description:
+                    'Quantitative HCP surveys, qualitative KOL depth, market access and HTA support, competitive intelligence, clinical trial site identification, and stakeholder mapping — combinable into one global programme.',
+                },
+                {
+                  title: 'Fieldwork modes',
+                  description:
+                    'CATI for senior buyers and specialists, CAWI for scale, CAPI for on-site hospital and retail audits, plus mixed-mode designs with shared QC and bilingual reporting.',
+                },
+                {
+                  title: 'Commercial and cross-industry',
+                  description:
+                    'B2B buyer research, shopper insight, and consumer segmentation for banking, retail, tourism, technology, and FMCG via the industries hub.',
+                },
+              ]}
+              summary="Start from the healthcare hub for regulated categories or open a module card below for scope, deliverables, and typical timelines."
+              pageUrl="https://www.bionixus.com/services"
+            />
+          </div>
+        </section>
 
         <section className="premium-home-cream section-padding py-16 md:py-20" ref={introRef}>
           <div className="container-wide mx-auto max-w-6xl">
