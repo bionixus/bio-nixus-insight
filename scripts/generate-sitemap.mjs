@@ -123,6 +123,7 @@ const SITEMAP_REDIRECT_SOURCE_PATHS = new Set([
   '/conf',
   '/ar/conf',
   '/healthcare-market-research/united-kingdom',
+  '/healthcare-market-research/united-arab-emirates',
   '/blog/gcc-pharmaceuticals-market-arabic-2026',
   // Alias / duplicate insight URLs — canonical targets only in sitemap (avoid keyword cannibalization).
   '/insights/top-market-research-companies-ksa-2026',
@@ -816,13 +817,13 @@ const globalWebsiteCountrySlugs = [
 /**
  * /healthcare-market-research/{slug} — Global Websites slugs plus hub aliases (uae, uk, europe, GCC cities).
  *
- * Note: `united-kingdom` is intentionally excluded — it 301-redirects to the
- * shorter canonical slug `/healthcare-market-research/uk` (see vercel.json
- * and api/indexnow-key.ts) to resolve a duplicate-title pair.
+ * Note: `united-kingdom` and `united-arab-emirates` are intentionally excluded —
+ * they 301-redirect to `/healthcare-market-research/uk` and
+ * `/healthcare-market-research/uae` (see vercel.json) to resolve duplicate hubs.
  */
 const healthcareMarketResearchCountrySlugs = [
   ...new Set([
-    ...globalWebsiteCountrySlugs.filter((slug) => slug !== 'united-kingdom'),
+    ...globalWebsiteCountrySlugs.filter((slug) => slug !== 'united-kingdom' && slug !== 'united-arab-emirates'),
     'saudi-arabia',
     'uae',
     'kuwait',

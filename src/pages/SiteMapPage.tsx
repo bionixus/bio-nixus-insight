@@ -234,7 +234,6 @@ const healthcareCountryLinks = [
   { to: '/healthcare-market-research/uk', label: 'Healthcare Market Research in UK' },
   { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare Market Research in Saudi Arabia' },
   { to: '/healthcare-market-research/uae', label: 'Healthcare Market Research in UAE (Dubai & Abu Dhabi)' },
-  { to: '/healthcare-market-research/united-arab-emirates', label: 'Healthcare Market Research — United Arab Emirates (federated)' },
   { to: '/healthcare-market-research/dubai', label: 'Healthcare Market Research in Dubai' },
   { to: '/healthcare-market-research/abu-dhabi', label: 'Healthcare Market Research in Abu Dhabi' },
   { to: '/healthcare-market-research/riyadh', label: 'Healthcare Market Research in Riyadh' },

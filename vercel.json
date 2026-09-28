@@ -153,6 +153,11 @@
       "statusCode": 301
     },
     {
+      "source": "/healthcare-market-research/united-arab-emirates",
+      "destination": "/healthcare-market-research/uae",
+      "statusCode": 301
+    },
+    {
       "source": "/market-reports/uae-medical-devices-market-report",
       "destination": "/uae-medical-devices-market-report",
       "statusCode": 301

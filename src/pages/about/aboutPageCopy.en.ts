@@ -26,7 +26,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   h1Emphasis: 'built on pharma, the most regulated industry we serve,',
   h1After: ' and expanded to be trusted across industries',
   heroSubheadBeforeSa:
-    'BioNixus was founded in London in 2012 in pharmaceutical market research — the most regulated industry we serve. As clients stretched across the Middle East and the Americas, we opened offices in Cairo, Riyadh, Dubai, Kuwait City, and São Paulo, and established US global headquarters in Wyoming. That GCP-grade discipline now extends to B2B and B2C programmes across 48 countries — with dedicated ',
+    'BioNixus was founded in London in 2012 in pharmaceutical market research — the most regulated industry we serve. As clients stretched across the Middle East and the Americas, we opened offices in Cairo, Al Khobar, Dubai, Kuwait City, and São Paulo, and established US global headquarters in Wyoming. That GCP-grade discipline now extends to B2B and B2C programmes across 48 countries — with dedicated ',
   heroLinkSa: 'healthcare market research in Saudi Arabia',
   heroSubheadBeforeUae: ', the ',
   heroLinkUae: 'UAE',
@@ -51,7 +51,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
     'We answered by growing where the work was, not where it was easy. A ',
   storyAct2LinkCairo: 'regional office in Greater Cairo',
   storyAct2P2AfterLink:
-    ', followed by offices in Riyadh, Dubai, Kuwait City, and São Paulo, gave us Arabic–English field teams, physician access across the GCC and North Africa, and on-the-ground execution that desk research could never replicate. US headquarters in Sheridan, Wyoming followed — not as a relocation, but as the natural home for a firm whose clients and ambition had become genuinely global. London remained our European base and the place where BioNixus began.',
+    ', followed by offices in Al Khobar, Dubai, Kuwait City, and São Paulo, gave us Arabic–English field teams, physician access across the GCC and North Africa, and on-the-ground execution that desk research could never replicate. US headquarters in Sheridan, Wyoming followed — not as a relocation, but as the natural home for a firm whose clients and ambition had become genuinely global. London remained our European base and the place where BioNixus began.',
   storyAct3H3: 'Today — among the top 100 globally',
   storyAct3P1:
     "That arc — London roots, GCC and Cairo regional depth, American headquarters — has carried BioNixus into the company of the world's top 100 market research firms. We field across 48 countries and 14+ therapeutic areas, in English, Arabic, French, German, Spanish, and Chinese. The pharma discipline we forged under regulation now extends to B2B and B2C programmes in 16 industry verticals — because clients asked us to bring the same standard everywhere.",
@@ -69,7 +69,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   differentiators: [
     {
       title: 'Global reach, regional execution',
-      body: 'Founded in London, headquartered in the United States, with offices in Cairo, Riyadh, Dubai, Kuwait City, and São Paulo — BioNixus fields across 48 countries in six languages. Our Arabic–English teams across the GCC and North Africa know the regulators that govern healthcare decisions — SFDA, DHA, MOHAP, and the EDA — and the clinical nuances that shape how treatments are prescribed in each market.',
+      body: 'Founded in London, headquartered in the United States, with offices in Cairo, Al Khobar, Dubai, Kuwait City, and São Paulo — BioNixus fields across 48 countries in six languages. Our Arabic–English teams across the GCC and North Africa know the regulators that govern healthcare decisions — SFDA, DHA, MOHAP, and the EDA — and the clinical nuances that shape how treatments are prescribed in each market.',
     },
     {
       title: 'Pharma heritage, multi-industry rigour',

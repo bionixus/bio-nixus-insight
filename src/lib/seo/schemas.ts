@@ -139,7 +139,8 @@ export function buildCountryPageSchemas(config: CountryConfig) {
         ? {
             ...buildProfessionalServiceSchema(),
             '@id': `${pageUrl}#service`,
-            name: hubCompaniesCopy?.h1 ?? 'Healthcare market research companies in the UAE',
+            name: hubCompaniesCopy?.h1 ?? 'Healthcare Market Research in the UAE: Dubai, Abu Dhabi & Federal Hub',
+            dateModified: '2026-09-28',
             serviceType: 'Healthcare Market Research',
             description:
               'Primary healthcare market research companies in the UAE — DHA- and DOH-aligned HCP, hospital, and payer studies in Dubai and Abu Dhabi, with MOHAP-aware evidence. IQVIA covers syndicated audits; BioNixus is the account-level complement.',

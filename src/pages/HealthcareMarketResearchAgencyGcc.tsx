@@ -21,6 +21,8 @@ export default function HealthcareMarketResearchAgencyGcc() {
         { to: '/bionixus-market-research-middle-east', label: 'Middle East pharmaceutical market research', primary: true },
         { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
         { to: '/healthcare-market-research/uae', label: 'Healthcare market research UAE' },
+        { to: '/uae-pharmaceutical-market-research', label: 'Healthcare market research company in UAE' },
+        { to: '/insights/top-market-research-companies-uae-2026', label: 'Top market research company in UAE (2026)' },
         { to: '/healthcare-market-research/kuwait', label: 'Healthcare market research Kuwait' },
         { to: '/healthcare-market-research/qatar', label: 'Healthcare market research Qatar' },
         { to: '/healthcare-market-research/oman', label: 'Healthcare market research Oman' },

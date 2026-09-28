@@ -2284,7 +2284,7 @@ const biologics: SegmentMarketContent = {
   ],
   whyBionixus: [
     'Account-level Saudi biologics data — hospital, department, indication, and patient — that syndicated audits do not provide.',
-    'Riyadh office and verified access to KFSH&RC, NGHA, MOH cluster, and private-group stakeholders.',
+    'Al Khobar office and verified access to KFSH&RC, NGHA, MOH cluster, and private-group stakeholders.',
     'Published Saudi and GCC biologics, immunology, and biosimilar reports that anchor sizing to one consistent evidence base.',
     'Deliverables structured for SFDA, NUPCO, and CHI decisions, not generic insight decks.',
   ],

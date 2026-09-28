@@ -84,7 +84,7 @@ const jsonLd = [
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
     { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
-    { name: 'Healthcare Market Research in the UAE', href: '/healthcare-market-research-in-uae' },
+    { name: 'Healthcare Market Research in the UAE', href: '/healthcare-market-research/uae' },
   ]),
   buildFAQSchema(faqItems),
 ];
@@ -95,7 +95,7 @@ export default function HealthcareMarketResearchInUae() {
       <SEOHead
         title="Healthcare Market Research Dubai & UAE | BioNixus"
         description="Pharmaceutical market research firms in Dubai delivering HCP, KOL, patient, and payer studies. DHA, DoH, and MOHAP-aligned healthcare market research for."
-        canonical="/healthcare-market-research-in-uae"
+        canonical="/healthcare-market-research/uae"
         jsonLd={jsonLd}
       />
       <Navbar />
@@ -104,7 +104,7 @@ export default function HealthcareMarketResearchInUae() {
           items={[
             { name: 'Home', href: '/' },
             { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
-            { name: 'Healthcare Market Research UAE', href: '/healthcare-market-research-in-uae' },
+            { name: 'Healthcare Market Research UAE', href: '/healthcare-market-research/uae' },
           ]}
         />
 

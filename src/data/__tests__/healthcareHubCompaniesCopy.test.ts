@@ -35,7 +35,7 @@ describe('KSA + UAE healthcare hub companies paste kit', () => {
   it('ships the UAE title, H1, opening, and FAQ on the country hub config', () => {
     const config = COUNTRY_CONFIGS.uae;
     expect(config.metaTitle).toBe(UAE_HUB_COMPANIES_COPY.title);
-    expect(config.h1).toBe('Healthcare market research companies in the UAE');
+    expect(config.h1).toBe('Healthcare Market Research in the UAE: Dubai, Abu Dhabi & Federal Hub');
     expect(firstFiftyWords(UAE_HUB_COMPANIES_COPY.opening)).toBe(UAE_HUB_COMPANIES_COPY.opening);
     expect(config.faqQuestions[0]).toEqual({
       question: 'What are the top healthcare market research companies in the UAE?',

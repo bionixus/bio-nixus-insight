@@ -33,15 +33,15 @@ export const KSA_HUB_COMPANIES_COPY: HealthcareHubCompaniesCopy = {
 
 export const UAE_HUB_COMPANIES_COPY: HealthcareHubCompaniesCopy = {
   path: '/healthcare-market-research/uae',
-  title: 'Healthcare Market Research Companies in the UAE | DHA, DOH, MOHAP | BioNixus',
+  title: 'Healthcare Market Research UAE: DHA, DOH & MOHAP | BioNixus',
   description:
-    'Healthcare market research companies in the UAE: DHA- and DOH-aligned HCP surveys, Dubai and Abu Dhabi hospital fieldwork, MOHAP evidence. Request a proposal.',
-  h1: 'Healthcare market research companies in the UAE',
+    'UAE healthcare market research hub: DHA, DOH, MOHAP and EDE context, therapy priorities and reports from BioNixus Dubai. Hiring? See our company page.',
+  h1: 'Healthcare Market Research in the UAE: Dubai, Abu Dhabi & Federal Hub',
   opening:
-    'BioNixus is a primary healthcare market research company in the UAE for Dubai and Abu Dhabi affiliates. Studies are DHA- and DOH-aligned, with MOHAP-aware payer evidence and account-level cuts national IQVIA feeds miss. Keep the dashboard for emirate sizing; brief BioNixus for named hospitals and SKUs.',
+    'This is BioNixus\'s UAE healthcare market research hub, run from our Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2. If you are choosing a healthcare market research company in UAE, start with our company page.',
   faqQuestion: 'What are the top healthcare market research companies in the UAE?',
   faqAnswer:
-    'IDS and Dubai field agencies cover in-emirate healthcare fieldwork. IQVIA covers syndicated audits. BioNixus is the primary-research complement for multi-country programmes that include Dubai and Abu Dhabi — DHA- and DOH-aligned HCP, hospital, and payer studies at account and SKU level. Keep the dashboard for emirate sizing; brief a primary firm for named hospitals and SKUs.',
+    'BioNixus (Dubai office, Al Sufouh 2) for DHA-, DOH- and MOHAP-aligned primary research; IQVIA for syndicated audits; local agencies such as Sapience, Curis Health and IDS for in-emirate fieldwork. See the 2026 ranking.',
 };
 
 export const HEALTHCARE_HUB_COMPANIES_COPY: Record<'saudi-arabia' | 'uae', HealthcareHubCompaniesCopy> = {
