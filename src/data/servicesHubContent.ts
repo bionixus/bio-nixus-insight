@@ -91,7 +91,15 @@ import {
   AR_RECOVERY_LINK_LABELS,
   AR_SERVICE_FAQ,
   AR_SERVICES_HUB_COPY,
+  AR_SERVICES_GEO_LLM,
 } from './servicesHubContent.ar';
+
+export type ServicesHubGeoLLM = {
+  question: string;
+  answer: string;
+  points: { title: string; description: string }[];
+  summary: string;
+};
 
 export type HealthcareService = {
   slug: string;
@@ -341,7 +349,47 @@ export const SERVICE_FAQ = [
     answer:
       'Share your objective, audience, industry, and timeline via the contact form. We typically return a tailored methodology outline within one business day.',
   },
+  {
+    question: 'When should we brief BioNixus instead of IQVIA or Kantar Health?',
+    answer:
+      'Keep IQVIA, Clarivate, or NielsenIQ when you need syndicated prescription, claims, or retail-audit feeds. Brief BioNixus when the decision needs primary evidence — named hospitals, cities, HCP attitude-and-usage at account level, pharmacy mystery shop, payer committee interviews, or MENA↔US/EU bridge fieldwork that dashboards cannot cut. Many affiliates run both: syndicated monitoring plus a specialist primary module.',
+  },
+  {
+    question: 'How does BioNixus support AI search and LLM visibility for buyers?',
+    answer:
+      'Every major service scope page includes answer-first summaries, structured FAQs, and machine-readable schema so Google, ChatGPT, Claude, and Perplexity can cite who BioNixus is and which modules fit a brief. The healthcare hub and country pages use the same pattern — clear entity statements, not keyword stuffing.',
+  },
+  {
+    question: 'What compliance standards apply to healthcare fieldwork?',
+    answer:
+      'Healthcare modules follow IRB/OHRP and HIPAA in the USA, GDPR in Europe, and SFDA/MOHAP/DHA contexts in the GCC. Commercial CATI, CAWI, and mystery programmes use screened respondents, consent documentation, and de-identified reporting. Methodology detail lives on the dedicated methodology page linked from this hub.',
+  },
 ] as const;
+
+export const SERVICES_HUB_GEO_LLM: ServicesHubGeoLLM = {
+  question: 'What market research services does BioNixus offer?',
+  answer:
+    'BioNixus delivers senior-led market research services for pharmaceutical, healthcare, and commercial teams across 48 countries — combining physician and payer primary research with CATI, CAWI, CAPI fieldwork, focus groups, mystery shopping, price elasticity, and digital behaviour tracking under one methodology standard.',
+  points: [
+    {
+      title: 'Pharma and healthcare modules',
+      description:
+        'Quantitative HCP surveys, qualitative KOL depth, market access and HTA support, competitive intelligence, clinical trial site identification, and stakeholder mapping — combinable into one global programme.',
+    },
+    {
+      title: 'Fieldwork modes',
+      description:
+        'CATI for senior buyers and specialists, CAWI for scale, CAPI for on-site hospital and retail audits, plus mixed-mode designs with shared QC and bilingual reporting.',
+    },
+    {
+      title: 'Commercial and cross-industry',
+      description:
+        'B2B buyer research, shopper insight, and consumer segmentation for banking, retail, tourism, technology, and FMCG via the industries hub.',
+    },
+  ],
+  summary:
+    'Start from the healthcare hub for regulated categories or open a module card below for scope, deliverables, and typical timelines.',
+};
 
 export const HERO_METRICS = [
   { value: '48', label: 'Countries fielded' },
@@ -420,12 +468,17 @@ const LOCALIZED_BUNDLES = {
     hubLinks: AR_HUB_LINKS,
     serviceFaq: AR_SERVICE_FAQ,
     recoveryLabels: AR_RECOVERY_LINK_LABELS,
+    geoLLM: AR_SERVICES_GEO_LLM,
   },
 } as const;
 
 export function getServicesHubBundle(language: Language) {
   const localized = LOCALIZED_BUNDLES[language as keyof typeof LOCALIZED_BUNDLES];
-  if (localized) return localized;
+  if (localized) {
+    const geoLLM =
+      'geoLLM' in localized ? (localized as { geoLLM: ServicesHubGeoLLM }).geoLLM : undefined;
+    return { ...localized, geoLLM };
+  }
 
   return {
     copy: null,
@@ -436,5 +489,6 @@ export function getServicesHubBundle(language: Language) {
     hubLinks: HUB_LINKS,
     serviceFaq: SERVICE_FAQ,
     recoveryLabels: {} as Record<string, string>,
+    geoLLM: SERVICES_HUB_GEO_LLM,
   };
 }
