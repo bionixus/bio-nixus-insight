@@ -83,7 +83,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-05',
+    dateModified: '2026-09-27',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -177,6 +177,7 @@ export default function HealthcareMarketResearchUsa() {
           { href: '#audiences', label: 'Audiences' },
           { href: '#methodology', label: 'Methodology' },
           { href: '#access', label: 'FDA · CMS · IRA' },
+          { href: '#syndicated-vs-primary', label: 'Syndicated vs primary' },
           { href: `#${faqSectionId}`, label: 'FAQ' },
         ]}
         faq={{
@@ -329,6 +330,45 @@ export default function HealthcareMarketResearchUsa() {
               ICER assessments carry payer influence despite no statutory authority — PBM formulary decisions increasingly
               cite ICER evidence. BioNixus conducts pre-ICER evidence strategy research and post-assessment payer impact
               studies.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="syndicated-vs-primary"
+          title="When US affiliates brief BioNixus vs IQVIA or NielsenIQ"
+          variant="muted"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              US pharmaceutical and medtech teams almost always maintain syndicated data contracts — IQVIA for national
+              prescription and claims feeds, NielsenIQ or IRI for retail and consumer health, Clarivate for pipeline and
+              secondary intelligence. Those platforms answer “how big is the market” and “how are we trending nationally.”
+              They rarely answer “why we are losing at this IDN,” “which PBM medical director blocks our prior auth,” or
+              “what message moves community cardiologists in the Southeast this quarter.”
+            </p>
+            <p>
+              BioNixus is the primary-research complement: IRB-compliant HCP attitude-and-usage at named accounts, KOL
+              mapping across NCI and AMC networks, paired physician–payer modules, pharmacy mystery shop for availability
+              and facing, and competitor intelligence at hospital or SKU level. Affiliates brief us when launch, IRA, or
+              formulary committees need decision-grade qualitative and quantitative evidence — not another dashboard
+              export. See the{' '}
+              <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                IQVIA alternative guide
+              </Link>{' '}
+              and the{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="text-primary font-medium hover:underline">
+                USA healthcare market research companies shortlist
+              </Link>{' '}
+              for how buyers split syndicated vs primary budgets.
+            </p>
+            <p>
+              Typical US primary programmes run 3–4 weeks for focused HCP waves and 6–10 weeks for mixed-method access
+              work including PBM interviews. Minimum engagement sizes align with global affiliate standards (generally
+              USD 20,000+ for standalone primary modules). Proposal turnaround is typically 48 hours once objectives,
+              audience, and geography are defined.
             </p>
           </div>
         </ReportPremiumSection>

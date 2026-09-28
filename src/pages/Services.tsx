@@ -11,6 +11,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { serviceRecoveryPaths } from '@/lib/internalLinkRecovery';
 import { getServicesHubBundle } from '@/data/servicesHubContent';
@@ -101,6 +102,7 @@ const Services = () => {
   const hubLinks = bundle.hubLinks;
   const serviceFaq = bundle.serviceFaq;
   const heroMetrics = bundle.heroMetrics;
+  const geoLLM = bundle.geoLLM;
 
   const recoveryLinksWithLabels = useMemo(
     () =>
@@ -230,6 +232,20 @@ const Services = () => {
         </section>
 
         <PremiumComplianceRibbon />
+
+        {geoLLM ? (
+        <section className="premium-home-cream section-padding py-12 md:py-16" aria-labelledby="services-quick-answer">
+          <div className="container-wide mx-auto max-w-6xl">
+            <GeoLLMAnswerBlock
+              question={geoLLM.question}
+              answer={geoLLM.answer}
+              points={geoLLM.points}
+              summary={geoLLM.summary}
+              pageUrl={copy?.seo.canonical ?? 'https://www.bionixus.com/services'}
+            />
+          </div>
+        </section>
+        ) : null}
 
         <section className="premium-home-cream section-padding py-16 md:py-20" ref={introRef}>
           <div className="container-wide mx-auto max-w-6xl">
