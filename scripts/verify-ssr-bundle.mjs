@@ -84,3 +84,6 @@ for (const pathname of CRITICAL_PATHS) {
 }
 
 console.log('verify-ssr-bundle: all critical routes passed');
+// Homepage render starts a Sanity fetch whose socket can outlive this script.
+// The checks above already passed; exit so `npm run build` is not held open.
+process.exit(0);
