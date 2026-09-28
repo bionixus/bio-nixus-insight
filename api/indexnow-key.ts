@@ -44,22 +44,6 @@ function getCachedClientAssetHints(): string {
   return getClientAssetHints(path.join(process.cwd(), 'dist', 'client', 'assets'));
 }
 
-function insertShareFigureAfterHero(mainInner: string, figureHtml: string): string {
-  const h1Idx = mainInner.search(/<h1\b/i);
-  if (h1Idx === -1) return `${mainInner}${figureHtml}`;
-  const afterH1 = mainInner.slice(h1Idx);
-  const sectionEnd = afterH1.search(/<\/section>/i);
-  if (sectionEnd !== -1) {
-    const insertAt = h1Idx + sectionEnd + '</section>'.length;
-    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
-  }
-  const h1End = afterH1.search(/<\/h1>/i);
-  if (h1End !== -1) {
-    const insertAt = h1Idx + h1End + '</h1>'.length;
-    return `${mainInner.slice(0, insertAt)}${figureHtml}${mainInner.slice(insertAt)}`;
-  }
-  return `${mainInner}${figureHtml}`;
-}
 const REDIRECTS: Record<string, string> = {
   ...LEGACY_REDIRECTS,
   ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
@@ -80,60 +64,6 @@ function inferHtmlLang(pathname: string): { lang: string; dir: 'ltr' | 'rtl' } {
 function applyHtmlLang(template: string, pathname: string): string {
   const { lang, dir } = inferHtmlLang(pathname);
   return template.replace(/<html[^>]*>/i, `<html lang="${lang}" dir="${dir}">`);
-}
-
-type ShareCardCopy = {
-  caption: string;
-  /** Takes the canonical URL so the alt text stays unique per page. */
-  alt: (url: string) => string;
-  openInNewTab: string;
-};
-
-const SHARE_CARD_COPY: Record<string, ShareCardCopy> = {
-  en: {
-    caption: 'Share this page —',
-    alt: (url) => `BioNixus share card for ${url}`,
-    openInNewTab: 'Open the share card for this page in a new tab',
-  },
-  de: {
-    caption: 'Diese Seite teilen —',
-    alt: (url) => `BioNixus-Sharekarte für ${url}`,
-    openInNewTab: 'Die Sharekarte dieser Seite in einem neuen Tab öffnen',
-  },
-  fr: {
-    caption: 'Partager cette page —',
-    alt: (url) => `Carte de partage BioNixus pour ${url}`,
-    openInNewTab: 'Ouvrir la carte de partage de cette page dans un nouvel onglet',
-  },
-  es: {
-    caption: 'Compartir esta página —',
-    alt: (url) => `Tarjeta para compartir de BioNixus para ${url}`,
-    openInNewTab: 'Abrir la tarjeta para compartir de esta página en una pestaña nueva',
-  },
-  pt: {
-    caption: 'Compartilhar esta página —',
-    alt: (url) => `Cartão de compartilhamento da BioNixus para ${url}`,
-    openInNewTab: 'Abrir o cartão de compartilhamento desta página em uma nova aba',
-  },
-  ru: {
-    caption: 'Поделиться этой страницей —',
-    alt: (url) => `Карточка BioNixus для публикации страницы ${url}`,
-    openInNewTab: 'Открыть карточку публикации этой страницы в новой вкладке',
-  },
-  'zh-CN': {
-    caption: '分享本页 —',
-    alt: (url) => `${url} 的 BioNixus 分享卡片`,
-    openInNewTab: '在新标签页中打开本页的分享卡片',
-  },
-  ar: {
-    caption: 'شارك هذه الصفحة —',
-    alt: (url) => `بطاقة مشاركة بيونكسس للصفحة ${url}`,
-    openInNewTab: 'فتح بطاقة مشاركة هذه الصفحة في تبويب جديد',
-  },
-};
-
-function getShareCardCopy(pathname: string): ShareCardCopy {
-  return SHARE_CARD_COPY[inferHtmlLang(pathname).lang] ?? SHARE_CARD_COPY.en;
 }
 
 const TITLE_UPPERCASE_TOKENS = new Set([
@@ -512,50 +442,6 @@ function ensureTitleTag(html: string, pathname: string): string {
 }
 
 /**
- * Guarantees every page has at least one descriptive image inside its
- * <main> content area. SEO auditors (Ahrefs/Semrush) flag pages whose
- * content area has no images — they explicitly do not count CSS background
- * images, header/footer chrome, or off-content imagery.
- *
- * If <main> already contains at least one <img>, the page is left
- * untouched (rich pages keep their authored imagery). Otherwise we inject
- * a small per-path share figure just before </main> using the
- * /api/og-card?path=... endpoint, which produces a deterministic SVG
- * unique to this URL.
- */
-function ensureMainContentImage(html: string, pathname: string): string {
-  const mainMatch = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
-  if (!mainMatch) return html;
-  const mainInner = mainMatch[1];
-  if (/<img\b/i.test(mainInner)) return html;
-  if (/data-page-share/i.test(mainInner)) return html;
-
-  const cleanPath = (pathname || '/').split('?')[0].split('#')[0] || '/';
-  const normalizedPath = cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '');
-  const encodedPath = encodeURIComponent(normalizedPath);
-  const fullUrl = `https://www.bionixus.com${normalizedPath === '/' ? '' : normalizedPath}`;
-  const copy = getShareCardCopy(pathname);
-  const altText = escapeHtmlAttribute(copy.alt(fullUrl));
-  const figureHtml = `<aside data-page-share class="mt-10 mb-8">
-  <figure class="mx-auto max-w-sm rounded-lg overflow-hidden border border-border bg-card shadow-sm">
-    <a href="/api/og-card?path=${encodedPath}" target="_blank" rel="noopener" class="block" aria-label="${escapeHtmlAttribute(copy.openInNewTab)}">
-      <img src="/api/og-card?path=${encodedPath}" alt="${altText}" title="${altText}" width="400" height="210" loading="lazy" decoding="async" fetchpriority="low" class="block w-full h-auto max-w-sm" />
-    </a>
-    <figcaption class="px-3 py-2 text-xs text-muted-foreground border-t border-border">${copy.caption} <strong class="text-foreground">BioNixus</strong></figcaption>
-  </figure>
-</aside>`;
-
-  const mainOpen = html.match(/<main\b[^>]*>/i);
-  if (!mainOpen) return html;
-  const mainStart = html.indexOf(mainOpen[0]) + mainOpen[0].length;
-  const mainClose = html.lastIndexOf('</main>');
-  if (mainClose === -1 || mainClose <= mainStart) return html;
-  const mainBody = html.slice(mainStart, mainClose);
-  const updatedInner = insertShareFigureAfterHero(mainBody, figureHtml);
-  return `${html.slice(0, mainStart)}${updatedInner}${html.slice(mainClose)}`;
-}
-
-/**
  * Ensures every <img> tag has a `title` attribute. SEO crawlers (Ahrefs/Semrush)
  * flag images without `title`; we mirror the (already-required) `alt` value into
  * `title` so we satisfy the audit without changing visible behavior. Decorative
@@ -706,13 +592,12 @@ function injectHtml(
       '<!--ssr-data-->',
       `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
     );
+  // Do not inject nodes into #root after renderToString. A share <aside> that
+  // is not in the React tree makes hydrateRoot throw and client-render the page.
   return ensureCtrOgTags(
     ensureCanonicalTag(
       ensureImageTitleAttributes(
-        ensureMainContentImage(
-          ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
-          pathname,
-        ),
+        ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
       ),
       pathname,
     ),

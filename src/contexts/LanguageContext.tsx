@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect, useLayoutEffect } from 'react';
+import React, { createContext, useContext, useMemo, useState, ReactNode, useEffect, useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { translations, languages, type Language } from '@/lib/i18n';
 import { getTranslations, type MergedTranslations } from '@/lib/getTranslations';
@@ -76,6 +76,21 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  return context ?? fallbackLanguageContext;
+  const context = useContext(LanguageContext) ?? fallbackLanguageContext;
+  const { pathname } = useLocation();
+  const pathLanguage = getLanguageFromPath(pathname);
+
+  // Hydration can replay a Suspense boundary without this provider on the
+  // context stack. The replay then reads the default English value and
+  // replaces the server HTML (locale pages flip to English). The URL prefix
+  // is the source of truth, matching LanguageProvider.
+  return useMemo(() => {
+    if (context.language === pathLanguage) return context;
+    return {
+      language: pathLanguage,
+      setLanguage: context.setLanguage,
+      t: getTranslations(pathLanguage),
+      isRTL: languages.find((l) => l.code === pathLanguage)?.rtl || false,
+    };
+  }, [context, pathLanguage]);
 };
