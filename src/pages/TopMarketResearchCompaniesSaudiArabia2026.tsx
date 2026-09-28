@@ -249,7 +249,7 @@ const faqItems = [
   },
   {
     q: 'How much does market research cost in Saudi Arabia?',
-    a: 'Custom consumer and general market research in Saudi Arabia typically ranges from $20,000 to $60,000 per project depending on scope, methodology, sample size, and geography. Syndicated reports range from $2,000–$10,000. Multi-city programmes across Riyadh, Jeddah, and the Eastern Province sit toward the higher end.',
+    a: 'Custom consumer and general market research in Saudi Arabia typically ranges from $10,000 to $60,000 per project depending on scope, methodology, sample size, and geography. Multi-city programmes across Riyadh, Jeddah, and the Eastern Province sit toward the higher end.',
   },
   {
     q: 'Should I choose custom primary research or syndicated data in Saudi Arabia?',

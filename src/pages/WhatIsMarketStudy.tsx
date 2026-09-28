@@ -50,7 +50,7 @@ const faqItems = [
   {
     question: 'How much does a market study cost?',
     answer:
-      'Market study costs vary widely based on methodology, geography, and complexity. A qualitative study with 10–15 in-depth interviews across two markets typically costs $18,000–$40,000. A quantitative physician survey across three GCC countries with n=150 respondents runs $30,000–$65,000. A full mixed-methods market entry assessment — combining desk research, qualitative KOL interviews, and a quantitative sizing model — typically costs $45,000–$120,000. Pharmaceutical market studies in GCC and Middle East markets tend to cost 15–25% more than equivalent Western European projects due to specialist recruitment constraints and bilingual execution requirements. Competitive intelligence and secondary research programmes are generally lower-cost ($8,000–$25,000) but sacrifice primary data depth.',
+      'Market study costs vary widely based on methodology, geography, and complexity. A qualitative study with 10–15 in-depth interviews across two markets typically costs $10,000 to $60,000. A quantitative physician survey across three GCC countries with n=150 respondents runs $10,000 to $60,000. A full mixed-methods market entry assessment — combining desk research, qualitative KOL interviews, and a quantitative sizing model — typically costs $10,000 to $60,000. Pharmaceutical market studies in GCC and Middle East markets tend to cost 15–25% more than equivalent Western European projects due to specialist recruitment constraints and bilingual execution requirements. Competitive intelligence and secondary research programmes are generally lower-cost ($10,000 to $60,000) but sacrifice primary data depth.',
   },
   {
     question: 'How long does a market study take?',
@@ -84,7 +84,7 @@ const jsonLd = [
       'A complete guide to market studies: definition, types (qualitative, quantitative, competitive intelligence, market sizing, brand tracking, market access), industries, methodology, costs, and timelines.',
     mainEntityOfPage: PAGE_URL,
     datePublished: '2025-01-15T09:00:00Z',
-    dateModified: '2026-06-08T09:00:00Z',
+    dateModified: '2026-09-28',
     author: {
       '@type': 'Organization',
       name: 'BioNixus',
@@ -206,7 +206,7 @@ const STUDY_TYPES = [
     description:
       'In-depth interviews (IDIs), focus groups, advisory boards, KOL consultations, and ethnographic observation. Qualitative studies answer the "why" — uncovering motivations, barriers, contextual factors, and the logic behind decisions that surveys cannot capture.',
     useCases: ['Pre-launch positioning', 'Payer objection mapping', 'Patient journey research', 'Message testing'],
-    cost: '$18K–$80K',
+    cost: '$10k–$60k',
     timeline: '5–10 weeks',
   },
   {
@@ -219,7 +219,7 @@ const STUDY_TYPES = [
     description:
       'Physician panels, consumer surveys, and structured data collection that measure incidence, prevalence, prescribing intent, and market share at scale. Quantitative studies provide statistical confidence and segment-level comparability across markets.',
     useCases: ['Prescribing intent measurement', 'Product awareness tracking', 'Willingness-to-pay', 'Segmentation'],
-    cost: '$25K–$65K',
+    cost: '$10k–$60k',
     timeline: '6–10 weeks',
   },
   {
@@ -232,7 +232,7 @@ const STUDY_TYPES = [
     description:
       'Total addressable market (TAM), serviceable addressable market (SAM), and growth forecasting models built from primary research, epidemiological data, and market analytics. Provides the evidence base for business case development and portfolio prioritisation.',
     useCases: ['Market entry business case', 'Portfolio prioritisation', 'Investor reporting', 'Launch sizing'],
-    cost: '$20K–$55K',
+    cost: '$10k–$60k',
     timeline: '4–8 weeks',
   },
   {
@@ -245,7 +245,7 @@ const STUDY_TYPES = [
     description:
       'Systematic landscape mapping of competitor positioning, pipeline, pricing, distribution, and key account activity. CI studies identify white-space opportunities, differentiation gaps, and pre-empt competitive threats before they impact commercial performance.',
     useCases: ['Launch landscape mapping', 'Pipeline surveillance', 'Pricing benchmarking', 'Share-of-voice analysis'],
-    cost: '$15K–$45K',
+    cost: '$10k–$60k',
     timeline: '3–6 weeks',
   },
   {
@@ -258,7 +258,7 @@ const STUDY_TYPES = [
     description:
       'Awareness, consideration, preference, and message recall measurement among HCPs, patients, or consumers. Brand tracking studies establish baselines before launch and monitor promotional impact across multiple waves over time.',
     useCases: ['Pre-launch baseline', 'Post-launch brand health', 'Message impact tracking', 'NPS measurement'],
-    cost: '$20K–$50K',
+    cost: '$10k–$60k',
     timeline: '4–8 weeks',
   },
   {
@@ -271,7 +271,7 @@ const STUDY_TYPES = [
     description:
       'Reimbursement pathway assessment, HTA evidence mapping, willingness-to-pay modelling, and payer decision-logic research. Critical for pharmaceutical and medtech organisations preparing formulary submissions, HEOR evidence packs, or pricing strategy.',
     useCases: ['Formulary dossier evidence', 'ICER/QALY modelling context', 'Payer landscape mapping', 'HEOR research'],
-    cost: '$30K–$80K',
+    cost: '$10k–$60k',
     timeline: '6–12 weeks',
   },
 ]
@@ -314,7 +314,7 @@ export default function WhatIsMarketStudy() {
         <title>What is Market Study? Types, Methods &amp; Industries | BioNixus</title>
         <meta
           name="description"
-          content="What is a market study? Complete guide covering definition, 6 types (qualitative, quantitative, competitive intelligence, market sizing, brand tracking, market access), industries, costs ($18K–$120K), timelines, and how to commission one."
+          content="What is a market study? Complete guide covering definition, 6 types (qualitative, quantitative, competitive intelligence, market sizing, brand tracking, market access), industries, costs ($10k–$60k), timelines, and how to commission one."
         />
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content="What is Market Study? Types, Methods & Industries | BioNixus" />
@@ -364,7 +364,7 @@ export default function WhatIsMarketStudy() {
             {[
               { value: '6', label: 'Types of market studies' },
               { value: '8+', label: 'Industries covered' },
-              { value: '$18K–$120K', label: 'Typical cost range' },
+              { value: '$10k–$60k', label: 'Typical cost range' },
               { value: '4–16 wks', label: 'Typical timeline' },
             ].map(({ value, label }) => (
               <div key={label}>
@@ -733,12 +733,12 @@ export default function WhatIsMarketStudy() {
               </thead>
               <tbody className="divide-y divide-border">
                 {[
-                  ['Qualitative', '8–15 IDIs or 2–3 focus groups', '$18,000–$80,000', '5–10 weeks', 'Understanding why; exploratory insight'],
-                  ['Quantitative', 'Survey n=100–400', '$25,000–$65,000', '6–10 weeks', 'Sizing, intent, segment measurement'],
-                  ['Mixed methods', 'Qual + quant sequenced', '$45,000–$120,000', '10–16 weeks', 'Strategic decisions requiring both depth and scale'],
-                  ['Market sizing', 'Desk + primary modelling', '$20,000–$55,000', '4–8 weeks', 'TAM/SAM, business case, investor reporting'],
-                  ['Competitive intelligence', 'Desk + expert interviews', '$15,000–$45,000', '3–6 weeks', 'Landscape mapping, launch readiness'],
-                  ['Market access / HEOR', 'Payer interviews + modelling', '$30,000–$80,000', '6–12 weeks', 'Reimbursement dossiers, HTA evidence'],
+                  ['Qualitative', '8–15 IDIs or 2–3 focus groups', '$10,000 to $60,000', '5–10 weeks', 'Understanding why; exploratory insight'],
+                  ['Quantitative', 'Survey n=100–400', '$10,000 to $60,000', '6–10 weeks', 'Sizing, intent, segment measurement'],
+                  ['Mixed methods', 'Qual + quant sequenced', '$10,000 to $60,000', '10–16 weeks', 'Strategic decisions requiring both depth and scale'],
+                  ['Market sizing', 'Desk + primary modelling', '$10,000 to $60,000', '4–8 weeks', 'TAM/SAM, business case, investor reporting'],
+                  ['Competitive intelligence', 'Desk + expert interviews', '$10,000 to $60,000', '3–6 weeks', 'Landscape mapping, launch readiness'],
+                  ['Market access / HEOR', 'Payer interviews + modelling', '$10,000 to $60,000', '6–12 weeks', 'Reimbursement dossiers, HTA evidence'],
                 ].map(([type, method, cost, time, best]) => (
                   <tr key={type} className="hover:bg-muted/40 transition-colors bg-card">
                     <td className="px-5 py-3.5 font-semibold text-foreground">{type}</td>

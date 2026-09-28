@@ -512,7 +512,7 @@ function buildFallbackDescription(pathname) {
     return 'NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap.';
   }
   if (path === '/pricing') {
-    return 'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.';
+    return 'Custom research from $10,000 to $60,000. BioNixus prices pharma and healthcare primary studies by project. No syndicated report fee. Proposal in 48 hours.';
   }
   if (path === '/account-level-market-research') {
     return 'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.';
@@ -1029,6 +1029,11 @@ async function startServer() {
   app.use(async (req, res, next) => {
     try {
       const rawPathAndQuery = (req.originalUrl || req.url || '/').split('#')[0];
+      const uaeAliasPath = (rawPathAndQuery.split('?')[0] || '/').replace(/\/+$/, '') || '/';
+      if (uaeAliasPath === '/uae') {
+        res.redirect(301, '/healthcare-market-research/uae');
+        return;
+      }
       const canonical = canonicalRedirectTarget(rawPathAndQuery);
       if (canonical.changed && canonical.full !== canonical.original) {
         res.redirect(301, canonical.full);
@@ -1144,6 +1149,7 @@ async function startServer() {
         'Cache-Control': SSR_HTML_CACHE_CONTROL,
         'CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
         'Vercel-CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
+        ...(statusCode === 404 ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}),
       }).end(localizedPage);
     } catch (error) {
       // eslint-disable-next-line no-console

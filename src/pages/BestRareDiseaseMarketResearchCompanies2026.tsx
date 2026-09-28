@@ -117,7 +117,7 @@ const faqItems = [
   },
   {
     q: 'How much does rare disease market research cost?',
-    a: 'Rare disease market research typically costs $40,000–$200,000+ per project depending on the condition prevalence, number of markets, specialist physician availability, and methodology. Ultra-rare conditions requiring genetic testing pathway research or specialist-centre mapping cost more due to small sample sizes and the need for bespoke recruitment. Multi-country orphan drug access studies across 3–5 markets typically fall in the $80,000–$150,000 range.',
+    a: 'Rare disease market research typically costs $10,000 to $60,000 per project depending on the condition prevalence, number of markets, specialist physician availability, and methodology. Ultra-rare conditions requiring genetic testing pathway research or specialist-centre mapping cost more due to small sample sizes and the need for bespoke recruitment. Multi-country orphan drug access studies across 3–5 markets typically fall in the $10,000 to $60,000 range.',
   },
   {
     q: 'Which firm is best for KOL and specialist-centre mapping in rare disease?',
@@ -173,7 +173,7 @@ export default function BestRareDiseaseMarketResearchCompanies2026() {
       'Independent 2026 guide ranking the best rare disease market research companies — patient-finding research, orphan drug market access, KOL mapping, and diagnostic pathway specialists compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

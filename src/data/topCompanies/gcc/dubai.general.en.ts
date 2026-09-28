@@ -20,7 +20,7 @@ export const dubaiGeneralEn: CountryListicleConfig = {
   inLanguage: 'en',
 
   datePublished: '2026-06-12',
-  dateModified: '2026-06-12',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
 
   h1: 'Best Market Research Companies in Dubai (2026 Guide)',
@@ -217,7 +217,7 @@ export const dubaiGeneralEn: CountryListicleConfig = {
     {
       question: 'How much does market research cost in Dubai?',
       answer:
-        "Custom market research projects in Dubai typically range from $20,000 to $70,000 depending on scope, methodology, and sector complexity. Healthcare and pharmaceutical studies requiring physician recruitment or specialist KOL interviews tend to sit toward the higher end. Quantitative consumer surveys across Dubai's diverse expatriate population carry a cost premium due to multi-language fieldwork requirements and higher participant incentive expectations. Syndicated market reports from providers such as Euromonitor can be accessed from approximately $2,500 per category report.",
+        "Custom market research projects in Dubai typically range from $10,000 to $60,000 depending on scope, methodology, and sector complexity. Healthcare and pharmaceutical studies requiring physician recruitment or specialist KOL interviews tend to sit toward the higher end. Quantitative consumer surveys across Dubai's diverse expatriate population carry a cost premium due to multi-language fieldwork requirements and higher participant incentive expectations. Syndicated market reports from providers such as Euromonitor can be accessed from approximately $2,500 per category report.",
     },
     {
       question: 'Which company is best for healthcare market research in Dubai?',

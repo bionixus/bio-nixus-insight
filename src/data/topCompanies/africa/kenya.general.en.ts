@@ -17,7 +17,7 @@ export const kenyaGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_KE',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Kenya (2026 Guide)',
   heroIntro:
@@ -209,7 +209,7 @@ export const kenyaGeneralEn: CountryListicleConfig = {
     },
     {
       question: 'How much does market research cost in Kenya?',
-      answer: 'Custom market research in Kenya typically ranges from $10,000 to $40,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Digital and mobile methodologies can reduce fieldwork costs in Kenya compared to traditional face-to-face approaches. Syndicated reports start from around $2,000.',
+      answer: 'Custom market research in Kenya typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Digital and mobile methodologies can reduce fieldwork costs in Kenya compared to traditional face-to-face approaches.',
     },
     {
       question: 'Which market research company is best for healthcare research in Kenya?',

@@ -162,7 +162,7 @@ const faqItems = [
   },
   {
     q: 'How much does healthcare market research cost in MENA?',
-    a: 'Custom healthcare market research in MENA typically costs $25,000–$120,000+ per project depending on countries included, methodology, therapy area, and HCP sample requirements. Multi-country GCC studies involving Saudi Arabia, UAE, and Egypt sit at the upper end. Syndicated data subscriptions from IQVIA for MENA often start in the mid-five figures annually.',
+    a: 'Custom healthcare market research in MENA typically costs $10,000 to $60,000 per project depending on countries included, methodology, therapy area, and HCP sample requirements. Multi-country GCC studies involving Saudi Arabia, UAE, and Egypt sit at the upper end. Syndicated data subscriptions from IQVIA for MENA often start in the mid-five figures annually.',
   },
   {
     q: 'Which MENA countries matter most for healthcare market research?',
@@ -234,7 +234,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
       'Expert 2026 guide to the leading healthcare market research companies in MENA / Middle East. BioNixus ranks #1 for primary HCP and payer research across GCC and Egypt.',
     url: CANONICAL,
     datePublished: '2026-08-14',
-    dateModified: '2026-08-14',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

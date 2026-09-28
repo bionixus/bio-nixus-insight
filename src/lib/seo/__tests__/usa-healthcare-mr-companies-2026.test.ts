@@ -93,7 +93,7 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(replacement?.a).toMatch(/^No\. Complementary\./);
     const cost = USA_HEALTHCARE_MR_FAQS.find((row) => row.q.includes('cost'));
     expect(cost?.a).toContain('/pricing');
-    expect(cost?.a).toContain('$10,000–$75,000');
+    expect(cost?.a).toContain('$10,000 to $60,000');
     const speed = USA_HEALTHCARE_MR_FAQS.find((row) => row.q.includes('How fast'));
     expect(speed?.a).toContain('48 hours');
     expect(USA_HEALTHCARE_MR_CTA_ID).toBe('usa_healthcare_mr_companies_2026');
@@ -115,10 +115,10 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
   });
 
   it('is wired into sitemap, llms buyer pages, and the healthcare hub', () => {
-    expect(USA_HEALTHCARE_MR_DATE_MODIFIED).toBe('2026-09-20');
+    expect(USA_HEALTHCARE_MR_DATE_MODIFIED).toBe('2026-09-28');
     expect(sitemap).toContain(`<loc>https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}</loc>`);
     expect(sitemap).toMatch(
-      new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-09-20</lastmod>`),
+      new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-09-28</lastmod>`),
     );
     expect(llms).toContain(`https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`);
     expect(llms).toContain('# Last GEO refresh: 2026-Q3 (2026-09-20)');

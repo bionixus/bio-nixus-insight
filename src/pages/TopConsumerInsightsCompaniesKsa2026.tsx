@@ -158,7 +158,7 @@ const faqItems = [
   },
   {
     q: 'How much do consumer insights projects cost in KSA?',
-    a: 'Custom consumer insights programmes in KSA typically range from $20,000 to $55,000 depending on cities, sample size, and method mix. Syndicated reports from Euromonitor or retail subscriptions from NielsenIQ are priced separately.',
+    a: 'Custom consumer insights programmes in KSA typically range from $10,000 to $60,000 depending on cities, sample size, and method mix. Syndicated reports from Euromonitor or retail subscriptions from NielsenIQ are priced separately.',
   },
 ];
 

@@ -16,7 +16,7 @@ const faqItems = [
   {
     question: 'What does a commercial effectiveness research programme for a Middle East pharma brand typically include?',
     answer:
-      'A comprehensive Middle East commercial effectiveness programme covers five research streams that together provide a 360-degree view of commercial performance. First, sales force effectiveness (SFE) research: physician-facing surveys measuring call frequency, message recall, representative performance perception, and rep versus competitor comparison — conducted with 80–120 HCPs across KSA and UAE. Second, KOL mapping and influence network analysis: systematic identification of tier-1, tier-2, and tier-3 key opinion leaders by specialty, with network relationship mapping and influence scoring. Third, promotional channel audit: recall and engagement measurement across all active channels — detail visits, e-details, congress and CME, digital materials, and WhatsApp in MENA-specific contexts. Fourth, multi-channel customer experience research: integrated touchpoint auditing capturing how HCPs experience the brand across all channels collectively, not just in isolation. Fifth, commercial effectiveness scorecard: a structured synthesis of all research streams into a ranked prioritisation of commercial investment decisions. BioNixus delivers the complete programme over 12–16 weeks for two to three GCC markets at a total cost of $80,000–$250,000.',
+      'A comprehensive Middle East commercial effectiveness programme covers five research streams that together provide a 360-degree view of commercial performance. First, sales force effectiveness (SFE) research: physician-facing surveys measuring call frequency, message recall, representative performance perception, and rep versus competitor comparison — conducted with 80–120 HCPs across KSA and UAE. Second, KOL mapping and influence network analysis: systematic identification of tier-1, tier-2, and tier-3 key opinion leaders by specialty, with network relationship mapping and influence scoring. Third, promotional channel audit: recall and engagement measurement across all active channels — detail visits, e-details, congress and CME, digital materials, and WhatsApp in MENA-specific contexts. Fourth, multi-channel customer experience research: integrated touchpoint auditing capturing how HCPs experience the brand across all channels collectively, not just in isolation. Fifth, commercial effectiveness scorecard: a structured synthesis of all research streams into a ranked prioritisation of commercial investment decisions. BioNixus delivers the complete programme over 12–16 weeks for two to three GCC markets at a total cost of $10,000 to $60,000.',
   },
   {
     question: 'How is GCC sales force effectiveness research conducted, and what metrics matter most?',
@@ -75,7 +75,7 @@ export default function CommercialEffectivenessPharmaMiddleEast() {
         <title>Commercial Effectiveness Pharma Middle East | BioNixus</title>
         <meta
           name="description"
-          content="Commercial effectiveness pharma Middle East: sales force effectiveness research, KOL mapping, promotional channel audits, and multi-channel experience research across KSA, UAE, and GCC. Full programme $80,000–$250,000 over 12–16 weeks."
+          content="Commercial effectiveness pharma Middle East: sales force effectiveness research, KOL mapping, promotional channel audits, and multi-channel experience research across KSA, UAE, and GCC. Full programme $10,000 to $60,000 over 12–16 weeks."
         />
         <link rel="canonical" href={pageUrl} />
         {jsonLd.map((schema, index) => (
@@ -232,14 +232,14 @@ export default function CommercialEffectivenessPharmaMiddleEast() {
                 Programme cost and timeline
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                A full Middle East commercial effectiveness programme covering 2–3 GCC markets costs between <strong>$80,000 and $250,000</strong> and runs over <strong>12–16 weeks</strong>, depending on the number of markets, research streams included, and KOL mapping depth.
+                A full Middle East commercial effectiveness programme covering 2–3 GCC markets costs <strong>$10,000 to $60,000</strong> and runs over <strong>12–16 weeks</strong>, depending on the number of markets, research streams included, and KOL mapping depth.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed">
-                <li>SFE research (2 markets, n=80–120 per market): $30,000–$60,000 / 5–7 weeks</li>
-                <li>KOL mapping with network analysis (1 specialty, 2 markets): $25,000–$50,000 / 6–8 weeks</li>
-                <li>Promotional channel audit and message testing (2 markets): $20,000–$40,000 / 4–6 weeks</li>
-                <li>Digital channel effectiveness research (2 markets): $15,000–$30,000 / 4–5 weeks</li>
-                <li>Commercial effectiveness scorecard synthesis: $10,000–$20,000 / 2–3 weeks</li>
+                <li>SFE research (2 markets, n=80–120 per market): $10,000 to $60,000 / 5–7 weeks</li>
+                <li>KOL mapping with network analysis (1 specialty, 2 markets): $10,000 to $60,000 / 6–8 weeks</li>
+                <li>Promotional channel audit and message testing (2 markets): $10,000 to $60,000 / 4–6 weeks</li>
+                <li>Digital channel effectiveness research (2 markets): $10,000 to $60,000 / 4–5 weeks</li>
+                <li>Commercial effectiveness scorecard synthesis: $10,000 to $60,000 / 2–3 weeks</li>
               </ul>
             </div>
 
@@ -258,8 +258,8 @@ export default function CommercialEffectivenessPharmaMiddleEast() {
                 </article>
                 <article className="rounded-lg border border-border bg-card p-3">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">Programme cost range</p>
-                  <p className="text-xl font-semibold text-foreground">$80K–$250K</p>
-                  <p className="text-xs text-muted-foreground mt-1">Full programme across 2–3 GCC markets. Individual research stream modules available from $15,000.</p>
+                  <p className="text-xl font-semibold text-foreground">$10k–$60k</p>
+                  <p className="text-xs text-muted-foreground mt-1">Full programme across 2–3 GCC markets. Individual research stream modules are scoped inside custom research from $10,000 to $60,000.</p>
                 </article>
               </div>
             </div>

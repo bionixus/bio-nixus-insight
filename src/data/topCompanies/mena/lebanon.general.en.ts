@@ -17,7 +17,7 @@ export const lebanonGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_LB',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Lebanon (2026 Guide)',
   heroIntro:
@@ -210,7 +210,7 @@ export const lebanonGeneralEn: CountryListicleConfig = {
     },
     {
       question: 'How much does market research cost in Lebanon?',
-      answer: 'Custom market research in Lebanon typically ranges from $10,000 to $40,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Lebanon\'s economic environment means fieldwork costs can be lower than in GCC markets, but logistical complexity and the need for trilingual instruments can offset savings. Syndicated reports covering Lebanon start from approximately $1,800.',
+      answer: 'Custom market research in Lebanon typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Lebanon\'s economic environment means fieldwork costs can be lower than in GCC markets, but logistical complexity and the need for trilingual instruments can offset savings.',
     },
     {
       question: 'Which market research company is best for healthcare research in Lebanon?',

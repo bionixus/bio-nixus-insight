@@ -172,7 +172,7 @@ const faqItems = [
   },
   {
     q: 'How much does healthcare market research cost in India?',
-    a: 'Custom healthcare and pharmaceutical market research engagements in India typically range from USD 15,000 to USD 70,000 per project, depending on methodology, sample size, respondent type (HCP versus patient versus payer), and geographic scope. Studies requiring fieldwork across multiple Indian states, multilingual instruments, or Tier-2/Tier-3 city reach generally cost more than metro-only, English-language studies, reflecting the added logistics of India\'s scale and diversity.',
+    a: 'Custom research from $10,000 to $60,000 per project, depending on methodology, sample size, respondent type (HCP versus patient versus payer), and geographic scope. Studies requiring fieldwork across multiple Indian states, multilingual instruments, or Tier-2/Tier-3 city reach generally cost more than metro-only, English-language studies, reflecting the added logistics of India\'s scale and diversity.',
   },
   {
     q: 'Can India healthcare research be benchmarked against other markets?',

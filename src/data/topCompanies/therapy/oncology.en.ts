@@ -24,7 +24,7 @@ export const oncologyGlobalEn: CountryListicleConfig = {
   ogLocale: 'en_US',
   inLanguage: 'en',
   datePublished: '2026-06-19',
-  dateModified: '2026-09-01',
+  dateModified: '2026-09-28',
   badge: '2026 Oncology Market Research Guide',
   h1: 'Top Oncology Market Research Companies (2026 Guide)',
   heroIntro:
@@ -248,7 +248,7 @@ export const oncologyGlobalEn: CountryListicleConfig = {
     {
       question: 'How much does oncology market research cost?',
       answer:
-        'Oncology market research costs vary significantly by scope. Oncologist prescribing behaviour surveys (quantitative, 50–100 oncologists) typically range from $30,000 to $60,000. Tumor board dynamics qualitative research ranges from $25,000 to $50,000. Biomarker testing uptake studies range from $30,000 to $55,000. KOL mapping programmes for oncology range from $25,000 to $55,000. Payer and formulary research ranges from $20,000 to $45,000. Multi-country MENA studies carry a regional complexity premium reflecting specialist HCP recruitment. Contact BioNixus for a tailored oncology research proposal.',
+        'Oncology market research costs vary significantly by scope. Oncologist prescribing behaviour surveys (quantitative, 50–100 oncologists) typically range from $10,000 to $60,000. Tumor board dynamics qualitative research ranges from $10,000 to $60,000. Biomarker testing uptake studies range from $10,000 to $60,000. KOL mapping programmes for oncology range from $10,000 to $60,000. Payer and formulary research ranges from $10,000 to $60,000. Multi-country MENA studies carry a regional complexity premium reflecting specialist HCP recruitment. Contact BioNixus for a tailored oncology research proposal.',
     },
     {
       question: 'Does BioNixus conduct oncology market research?',

@@ -115,7 +115,7 @@ function buildSharedContent(bodyHtml) {
       {
         question: 'How much does custom financial services research cost in Egypt?',
         answer:
-          'Custom programmes typically range from roughly USD 20,000 to 80,000+ depending on sample size, geography, methodology, and reporting depth; multi-country MENA scopes cost more.',
+          'Custom research from $10,000 to $60,000 depending on sample size, geography, methodology, and reporting depth. Multi-country MENA scopes stay inside that range.',
       },
     ]),
   };

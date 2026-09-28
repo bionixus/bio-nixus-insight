@@ -17,7 +17,7 @@ export const abuDhabiHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_AE',
   inLanguage: 'en',
   datePublished: '2026-06-19',
-  dateModified: '2026-06-19',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Guide',
   h1: 'Best Healthcare Market Research Companies in Abu Dhabi (2026 Guide)',
   heroIntro:
@@ -212,7 +212,7 @@ export const abuDhabiHealthcareEn: CountryListicleConfig = {
     {
       question: 'How much does healthcare market research cost in Abu Dhabi?',
       answer:
-        'Custom healthcare market research in Abu Dhabi typically ranges from $22,000 to $70,000 per project, depending on scope, methodology, sample size, and physician or patient recruitment requirements. Physician surveys involving specialist HCP recruitment at SEHA or private Abu Dhabi hospitals tend to be at the higher end of this range. KOL mapping and identification engagements across Abu Dhabi specialist networks typically range from $25,000 to $45,000. HEOR and pharmacoeconomic studies with Abu Dhabi-specific modelling aligned to Thiqa or DAMAN market access criteria typically start from $30,000. Syndicated country-level reports from providers like Euromonitor start from approximately $2,500, but offer limited Abu Dhabi-specific granularity or DOH regulatory depth.',
+        'Custom healthcare market research in Abu Dhabi typically ranges from $10,000 to $60,000 per project, depending on scope, methodology, sample size, and physician or patient recruitment requirements. Physician surveys involving specialist HCP recruitment at SEHA or private Abu Dhabi hospitals tend to be at the higher end of this range. KOL mapping and identification engagements across Abu Dhabi specialist networks typically range from $10,000 to $60,000. HEOR and pharmacoeconomic studies with Abu Dhabi-specific modelling aligned to Thiqa or DAMAN market access criteria are scoped inside custom research from $10,000 to $60,000. Syndicated country-level reports from providers like Euromonitor start from approximately $2,500, but offer limited Abu Dhabi-specific granularity or DOH regulatory depth.',
     },
     {
       question: 'What is DOH Abu Dhabi and how does it regulate pharmaceutical research?',

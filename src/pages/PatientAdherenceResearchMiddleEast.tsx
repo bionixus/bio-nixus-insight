@@ -37,7 +37,7 @@ const faqItems = [
   {
     question: 'What does a Middle East adherence research programme typically cost and how long does it take?',
     answer:
-      "Cost and timeline depend heavily on the measurement approach. A cross-sectional quantitative adherence survey (300–500 patients, self-report via validated scale, two or three GCC markets) costs $40,000–$70,000 and takes 6–10 weeks from brief to clean data. A longitudinal adherence study with baseline and two follow-up assessments at 90 days and 12 months (200–300 patients, three markets) costs $90,000–$140,000 and takes 14–18 months end-to-end (though early interim data may be available from 4–6 months). A pharmacy claims-based adherence analysis using insurance or hospital pharmacy data (where data partnership access is already established) costs $50,000–$80,000 and takes 8–12 weeks for analysis and reporting, but may require 2–3 months of partnership arrangement time before data access is granted. A comprehensive adherence programme combining pharmacy claims analysis, longitudinal patient survey, and barrier IDIs runs $120,000–$200,000 over a 10–16 week timeline for the primary research component.",
+      "Cost and timeline depend heavily on the measurement approach. A cross-sectional quantitative adherence survey (300–500 patients, self-report via validated scale, two or three GCC markets) costs $10,000 to $60,000 and takes 6–10 weeks from brief to clean data. A longitudinal adherence study with baseline and two follow-up assessments at 90 days and 12 months (200–300 patients, three markets) costs $10,000 to $60,000 and takes 14–18 months end-to-end (though early interim data may be available from 4–6 months). A pharmacy claims-based adherence analysis using insurance or hospital pharmacy data (where data partnership access is already established) costs $10,000 to $60,000 and takes 8–12 weeks for analysis and reporting, but may require 2–3 months of partnership arrangement time before data access is granted. A comprehensive adherence programme combining pharmacy claims analysis, longitudinal patient survey, and barrier IDIs runs $10,000 to $60,000 over a 10–16 week timeline for the primary research component.",
   },
 ];
 
@@ -244,7 +244,7 @@ export default function PatientAdherenceResearchMiddleEast() {
               The following cost and timeline ranges are for the primary research and data analysis components of Middle East adherence programmes. Reporting and visualisation are scoped separately.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong className="text-foreground">Cross-sectional quantitative adherence survey, 300–500 patients, 3 markets:</strong> $40,000–$70,000; 6–10 weeks. <strong className="text-foreground">Qualitative barrier IDI programme, 20–30 patients + 10–15 caregivers, 2–3 markets:</strong> $45,000–$75,000; 6–10 weeks. <strong className="text-foreground">Mixed-method programme (qualitative barriers + cross-sectional quantitative):</strong> $75,000–$120,000; 10–14 weeks. <strong className="text-foreground">Longitudinal patient survey with 12-month follow-up, 200–300 patients, 3 markets:</strong> $100,000–$160,000; 14–18 months end-to-end. <strong className="text-foreground">Pharmacy claims analysis (where data partnership is established), 2–3 GCC markets:</strong> $50,000–$80,000; 8–12 weeks from data access to findings. <strong className="text-foreground">Comprehensive programme (claims analysis + longitudinal survey + barrier IDIs):</strong> $150,000–$220,000; timeline depends on claims data access and follow-up period.
+              <strong className="text-foreground">Cross-sectional quantitative adherence survey, 300–500 patients, 3 markets:</strong> $10,000 to $60,000; 6–10 weeks. <strong className="text-foreground">Qualitative barrier IDI programme, 20–30 patients + 10–15 caregivers, 2–3 markets:</strong> $10,000 to $60,000; 6–10 weeks. <strong className="text-foreground">Mixed-method programme (qualitative barriers + cross-sectional quantitative):</strong> $10,000 to $60,000; 10–14 weeks. <strong className="text-foreground">Longitudinal patient survey with 12-month follow-up, 200–300 patients, 3 markets:</strong> $10,000 to $60,000; 14–18 months end-to-end. <strong className="text-foreground">Pharmacy claims analysis (where data partnership is established), 2–3 GCC markets:</strong> $10,000 to $60,000; 8–12 weeks from data access to findings. <strong className="text-foreground">Comprehensive programme (claims analysis + longitudinal survey + barrier IDIs):</strong> $10,000 to $60,000; timeline depends on claims data access and follow-up period.
             </p>
           </div>
         </section>
@@ -259,7 +259,7 @@ export default function PatientAdherenceResearchMiddleEast() {
             },
             {
               label: 'Cost range',
-              value: '$70k–$200k',
+              value: '$10k–$60k',
               detail: 'Mixed-method to comprehensive adherence programme across GCC and wider Middle East.',
             },
             {

@@ -24,7 +24,7 @@ export const kuwaitPharmaEn: CountryListicleConfig = {
   ogLocale: 'en_KW',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-28',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in Kuwait (2026 Guide)',
   heroIntro:
@@ -279,7 +279,7 @@ export const kuwaitPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Kuwait?',
       answer:
-        'Custom pharmaceutical primary research in Kuwait typically starts from around $20,000 for a focused qualitative study and rises to $60,000 or more for multi-stakeholder programmes combining prescriber, formulary and procurement research. Cost is driven mainly by sample difficulty rather than sample size: interviews with hospital consultants inside MOH institutions, formulary committee members and procurement-facing decision-makers cost substantially more per completed interview than private-sector general practitioners. Syndicated reports and pipeline databases are far cheaper but answer a different set of questions.',
+        'Custom pharmaceutical primary research in Kuwait is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining prescriber, formulary and procurement research. Cost is driven mainly by sample difficulty rather than sample size: interviews with hospital consultants inside MOH institutions, formulary committee members and procurement-facing decision-makers cost substantially more per completed interview than private-sector general practitioners. Syndicated reports and pipeline databases are far cheaper but answer a different set of questions.',
     },
     {
       question: 'How does Ministry of Health drug registration in Kuwait affect research design?',

@@ -24,7 +24,7 @@ export const consumerHealthcareGlobalEn: CountryListicleConfig = {
   ogLocale: 'en_US',
   inLanguage: 'en',
   datePublished: '2026-06-19',
-  dateModified: '2026-06-19',
+  dateModified: '2026-09-28',
   badge: '2026 Consumer Healthcare Guide',
   h1: 'Top Consumer Healthcare Market Research Firms (2026 Guide)',
   heroIntro:
@@ -248,7 +248,7 @@ export const consumerHealthcareGlobalEn: CountryListicleConfig = {
     {
       question: 'How much does consumer healthcare market research cost?',
       answer:
-        'Consumer healthcare market research project costs vary significantly by scope and methodology. Consumer U&A studies typically range from $20,000 to $50,000. Brand tracking programmes with quarterly fieldwork range from $40,000 to $80,000 per annum. Shopper insight and pharmacy intercept studies range from $25,000 to $45,000. Concept testing and NPD research range from $20,000 to $40,000. Multi-country MENA studies with Arabic-language fieldwork typically carry a regional complexity premium. Contact BioNixus for a tailored consumer healthcare research proposal.',
+        'Consumer healthcare market research project costs vary significantly by scope and methodology. Consumer U&A studies typically range from $10,000 to $60,000. Brand tracking programmes with quarterly fieldwork range from $10,000 to $60,000 per annum. Shopper insight and pharmacy intercept studies range from $10,000 to $60,000. Concept testing and NPD research range from $10,000 to $60,000. Multi-country MENA studies with Arabic-language fieldwork typically carry a regional complexity premium. Contact BioNixus for a tailored consumer healthcare research proposal.',
     },
     {
       question: 'Does BioNixus conduct consumer healthcare market research?',

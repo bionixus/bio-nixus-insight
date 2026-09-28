@@ -1,32 +1,26 @@
 # Pricing — BioNixus
 
-Last updated: 2026-09-04  
+Last updated: 2026-09-28
 Model: project- and country-based. No enterprise syndicated-dashboard minimum.  
 Proposal: 48 hours from brief to a scoped proposal ready to launch.  
 Contact: admin@bionixus.com · https://www.bionixus.com/contact
 
-These are typical 2026 project bands. They are planning ranges, not a quote. Final price depends on countries, method, sample, therapy area, and language.
+Custom research from $10,000 to $60,000. This is a planning range, not a quote. Final price depends on countries, method, sample, therapy area, and language.
 
-## Single-country study
-- Price: typically $10,000–$75,000 USD
-- Limits: one country; qualitative, quantitative, or mixed-method
+## Custom research
+- Price: custom research from $10,000 to $60,000 (also written $10k–$60k)
+- Limits: one country or several; qualitative, quantitative, or mixed-method
 - Features: discussion guide or instrument, recruitment, fieldwork, decision-ready readout
-- Best for: a named brand in one market, including account-level or SKU-level cuts and traditional trade
-- Note: qualitative KOL or payer interviews sit toward the lower end; specialist HCP samples sit toward the upper end
-
-## Multi-country study
-- Price: typically $25,000–$120,000 USD
-- Limits: two or more countries; comparable design with local adaptation
-- Features: shared instrument, local recruitment, cross-country readout
-- Best for: regional launch, tender, or brand versus competitor programmes (for example Saudi Arabia + UAE + Egypt)
+- Best for: a named brand in one market, or a regional programme such as Saudi Arabia + UAE + Egypt, including account-level or SKU-level cuts and traditional trade
+- Note: single-country and multi-country studies use this same range
 
 ## Retainer
-- Price: custom — scoped by country and cadence
+- Price: custom research from $10,000 to $60,000, scoped by country and cadence
 - Limits: agreed markets, study types, and reporting cycle
 - Features: repeat brand, competitor, or mystery-shopper waves without a new enterprise MSA
 - Best for: teams that already buy IQVIA or Nielsen and need a standing primary-research cut
 
-## What is not in these bands
+## What is not in this range
 - IQVIA or NielsenIQ syndicated subscriptions (buy those separately)
 - Full CRO trial operations
 - Field-force outsourcing

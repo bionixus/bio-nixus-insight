@@ -1,21 +1,17 @@
 Pricing — BioNixus
-Last updated: 2026-09-04
+Last updated: 2026-09-28
 Model: project- and country-based. No enterprise syndicated-dashboard minimum.
 Proposal: 48 hours from brief.
 Contact: admin@bionixus.com
 
-Typical 2026 project bands (planning ranges, not a quote):
+Custom research from $10,000 to $60,000 (also written $10k–$60k). Planning range, not a quote.
 
-Single-country study
-- Price: typically $10,000–$75,000 USD
-- One country; qualitative, quantitative, or mixed-method
-
-Multi-country study
-- Price: typically $25,000–$120,000 USD
-- Two or more countries; comparable design with local adaptation
+Custom research
+- Price: custom research from $10,000 to $60,000
+- One country or several; qualitative, quantitative, or mixed-method
 
 Retainer
-- Price: custom, scoped by country and cadence
+- Price: custom research from $10,000 to $60,000, scoped by country and cadence
 
 Not included: IQVIA or NielsenIQ subscriptions, CRO trial operations, field-force outsourcing.
 

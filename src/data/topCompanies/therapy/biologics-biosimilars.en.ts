@@ -24,7 +24,7 @@ export const biologicsBiosimilarsGlobalEn: CountryListicleConfig = {
   ogLocale: 'en_US',
   inLanguage: 'en',
   datePublished: '2026-06-19',
-  dateModified: '2026-06-19',
+  dateModified: '2026-09-28',
   badge: '2026 Biologics & Biosimilars Guide',
   h1: 'Leading Biologics and Biosimilars Market Research Companies (2026 Guide)',
   heroIntro:
@@ -248,7 +248,7 @@ export const biologicsBiosimilarsGlobalEn: CountryListicleConfig = {
     {
       question: 'How much does biologics market research cost?',
       answer:
-        'Biologics market research project costs vary by scope and methodology. Physician prescribing behaviour surveys (quantitative) typically range from $25,000 to $50,000. Biosimilar uptake barrier studies combining qualitative and quantitative methods range from $35,000 to $70,000. Payer and formulary committee interview programmes range from $20,000 to $40,000. KOL mapping programmes for biologic specialties range from $25,000 to $55,000. Multi-country MENA studies carry a regional complexity premium. Contact BioNixus for a tailored biologics research proposal.',
+        'Biologics market research project costs vary by scope and methodology. Physician prescribing behaviour surveys (quantitative) typically range from $10,000 to $60,000. Biosimilar uptake barrier studies combining qualitative and quantitative methods range from $10,000 to $60,000. Payer and formulary committee interview programmes range from $10,000 to $60,000. KOL mapping programmes for biologic specialties range from $10,000 to $60,000. Multi-country MENA studies carry a regional complexity premium. Contact BioNixus for a tailored biologics research proposal.',
     },
     {
       question: 'Does BioNixus conduct biologics and biosimilars market research?',

@@ -53,7 +53,7 @@ const FAQ = [
   {
     question: 'How much does account-level primary research cost?',
     answer:
-      'Typical 2026 planning bands are $10,000–$75,000 USD for a single-country study and $25,000–$120,000 USD for a multi-country study. See the pricing page. A proposal is ready within 48 hours of a brief.',
+      'Typical 2026 planning bands are custom research from $10,000 to $60,000. See the pricing page. A proposal is ready within 48 hours of a brief.',
   },
 ];
 

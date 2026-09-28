@@ -127,7 +127,7 @@ const faqItems = [
   },
   {
     q: 'How much does obesity market research cost?',
-    a: 'Custom obesity and weight management market research typically ranges from $35,000 to $100,000 per project depending on the number of markets, respondent types (endocrinologists, PCPs, payers, patients), and methodology. Multi-market GLP-1 competitive landscape studies and payer market access research tend to cost more due to specialist recruitment. Syndicated obesity market reports range from $5,000 to $20,000.',
+    a: 'Custom obesity and weight management market research typically ranges from $10,000 to $60,000 per project depending on the number of markets, respondent types (endocrinologists, PCPs, payers, patients), and methodology. Multi-market GLP-1 competitive landscape studies and payer market access research tend to cost more due to specialist recruitment.',
   },
   {
     q: 'Which firm is best for obesity market research in the Middle East and GCC?',
@@ -206,7 +206,7 @@ export default function TopObesityMarketResearchCompanies2026() {
       'Expert 2026 guide to the leading obesity market research companies. Covers GLP-1 receptor agonist research, anti-obesity medication landscape, patient journey mapping, payer market access, and how to select an obesity research partner.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

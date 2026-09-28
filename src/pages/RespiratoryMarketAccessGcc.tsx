@@ -41,7 +41,7 @@ const faqItems = [
   {
     question: 'What does a full GCC respiratory market access research programme cost and how long does it take?',
     answer:
-      'A full GCC respiratory market access research programme covering 2–3 markets (KSA plus UAE, or a broader 3-market scope including Kuwait) typically costs between $90,000 and $250,000 and runs over 12–18 weeks, depending on research scope and the depth of payer evidence dossier support. Representative programme components and costs include: payer landscape interviews (10–14 qualitative interviews with SFDA/NCEHTA, MOH formulary committee members, DHA, DOH/Daman medical directors across 2 markets) at $25,000–$45,000 over 5–7 weeks; pulmonologist HCP survey (n=60–80 across KSA and UAE, covering prescribing behaviour, GINA/GOLD guideline adherence, biologic prescribing patterns, and competitive positioning) at $25,000–$40,000 over 4–6 weeks; patient journey research (n=20–30 patient IDIs across severe asthma and COPD sub-groups) at $20,000–$35,000 over 4–6 weeks; budget impact modelling for KSA/UAE severe asthma biologic population at $20,000–$40,000 over 4–6 weeks; and integrated market access report with payer evidence gap analysis and access strategy recommendations at $15,000–$30,000 over 3–4 weeks. Multi-module programmes benefit from integrated project management and cross-stream synthesis, which reduces total cost by 10–15% versus independent commissioning of each module.',
+      'A full GCC respiratory market access research programme covering 2–3 markets (KSA plus UAE, or a broader 3-market scope including Kuwait) typically costs $10,000 to $60,000 and runs over 12–18 weeks, depending on research scope and the depth of payer evidence dossier support. Representative programme components and costs include: payer landscape interviews (10–14 qualitative interviews with SFDA/NCEHTA, MOH formulary committee members, DHA, DOH/Daman medical directors across 2 markets) at $10,000 to $60,000 over 5–7 weeks; pulmonologist HCP survey (n=60–80 across KSA and UAE, covering prescribing behaviour, GINA/GOLD guideline adherence, biologic prescribing patterns, and competitive positioning) at $10,000 to $60,000 over 4–6 weeks; patient journey research (n=20–30 patient IDIs across severe asthma and COPD sub-groups) at $10,000 to $60,000 over 4–6 weeks; budget impact modelling for KSA/UAE severe asthma biologic population at $10,000 to $60,000 over 4–6 weeks; and integrated market access report with payer evidence gap analysis and access strategy recommendations at $10,000 to $60,000 over 3–4 weeks. Multi-module programmes benefit from integrated project management and cross-stream synthesis, which reduces total cost by 10–15% versus independent commissioning of each module.',
   },
 ];
 
@@ -236,17 +236,17 @@ export default function RespiratoryMarketAccessGcc() {
                 Programme cost and timeline
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                A full GCC respiratory market access research programme costs between <strong>$90,000 and $250,000</strong> and runs over <strong>12–18 weeks</strong>, depending on the number of markets, research streams, and RWE scope.
+                A full GCC respiratory market access research programme costs <strong>$10,000 to $60,000</strong> and runs over <strong>12–18 weeks</strong>, depending on the number of markets, research streams, and RWE scope.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed">
-                <li><strong>Payer landscape interviews (10–14 interviews, 2 markets):</strong> $25,000–$45,000 / 5–7 weeks</li>
-                <li><strong>Pulmonologist HCP survey (n=60–80 across KSA and UAE):</strong> $25,000–$40,000 / 4–6 weeks</li>
-                <li><strong>Patient journey IDIs (n=20–30, severe asthma and COPD):</strong> $20,000–$35,000 / 4–6 weeks</li>
-                <li><strong>Budget-impact modelling with GCC input validation:</strong> $20,000–$40,000 / 4–6 weeks</li>
-                <li><strong>Integrated market access report and access strategy:</strong> $15,000–$30,000 / 3–4 weeks</li>
+                <li><strong>Payer landscape interviews (10–14 interviews, 2 markets):</strong> $10,000 to $60,000 / 5–7 weeks</li>
+                <li><strong>Pulmonologist HCP survey (n=60–80 across KSA and UAE):</strong> $10,000 to $60,000 / 4–6 weeks</li>
+                <li><strong>Patient journey IDIs (n=20–30, severe asthma and COPD):</strong> $10,000 to $60,000 / 4–6 weeks</li>
+                <li><strong>Budget-impact modelling with GCC input validation:</strong> $10,000 to $60,000 / 4–6 weeks</li>
+                <li><strong>Integrated market access report and access strategy:</strong> $10,000 to $60,000 / 3–4 weeks</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                RWE programme scoping — including retrospective chart review study design, registry protocol development, or insurance claims data access negotiation — is available as a separate scope addition, typically adding $20,000–$50,000 and 4–8 weeks to a combined access research and RWE planning programme.
+                RWE programme scoping — including retrospective chart review study design, registry protocol development, or insurance claims data access negotiation — is available as a separate scope addition, scoped inside custom research from $10,000 to $60,000 and 4–8 weeks to a combined access research and RWE planning programme.
               </p>
             </div>
 
@@ -265,8 +265,8 @@ export default function RespiratoryMarketAccessGcc() {
                 </article>
                 <article className="rounded-lg border border-border bg-card p-3">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">Programme cost range</p>
-                  <p className="text-xl font-semibold text-foreground">$90K–$250K</p>
-                  <p className="text-xs text-muted-foreground mt-1">Full respiratory access research programme. Individual modules from $20,000. RWE planning available as addition.</p>
+                  <p className="text-xl font-semibold text-foreground">$10k–$60k</p>
+                  <p className="text-xs text-muted-foreground mt-1">Full respiratory access research programme. Individual modules are scoped inside custom research from $10,000 to $60,000. RWE planning available as addition.</p>
                 </article>
               </div>
             </div>

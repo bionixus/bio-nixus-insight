@@ -51,7 +51,7 @@ const faqItems = [
   {
     question: 'How much does pharmaceutical market research cost in Bahrain?',
     answer:
-      'Custom pharmaceutical market research in Bahrain typically ranges from $15,000 to $55,000 per project depending on scope, methodology, and sample requirements. HCP surveys and KOL mapping studies involving hospital network recruitment across Salmaniya Medical Complex or King Hamad University Hospital cost more than consumer health studies, and NHRA HTA-aligned payer research commands a premium.',
+      'Custom pharmaceutical market research in Bahrain typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. HCP surveys and KOL mapping studies involving hospital network recruitment across Salmaniya Medical Complex or King Hamad University Hospital cost more than consumer health studies, and NHRA HTA-aligned payer research commands a premium.',
   },
   {
     question: 'What is King Hamad University Hospital and why does it matter for research?',

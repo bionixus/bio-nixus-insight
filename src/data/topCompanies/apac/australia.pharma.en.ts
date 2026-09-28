@@ -280,7 +280,7 @@ export const australiaPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Australia?',
       answer:
-        'Custom pharmaceutical primary research in Australia typically starts at around US$20,000 for a focused qualitative study and reaches US$70,000 or more for multi-stakeholder programmes combining specialist prescribers, hospital pharmacists and formulary decision-makers. Cost is driven mainly by sample scarcity: Australian specialist populations in narrow therapy areas are small, so honoraria and recruitment effort per completed interview are high compared with general practice, and patient-facing work adds Human Research Ethics Committee review time. Syndicated reports and pipeline databases are much cheaper but answer different questions.',
+        'Custom pharmaceutical primary research in Australia is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining specialist prescribers, hospital pharmacists and formulary decision-makers. Cost is driven mainly by sample scarcity: Australian specialist populations in narrow therapy areas are small, so honoraria and recruitment effort per completed interview are high compared with general practice, and patient-facing work adds Human Research Ethics Committee review time. Syndicated reports and pipeline databases are much cheaper but answer different questions.',
     },
     {
       question: 'What is the PBAC and why does it matter for pharmaceutical market research?',

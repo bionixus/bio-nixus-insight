@@ -143,7 +143,7 @@ const faqItems = [
   },
   {
     q: 'How much does obesity market research cost?',
-    a: 'Custom obesity market research typically costs between $30,000 and $150,000 per project depending on scope, methodology, number of markets, and respondent types. Multi-country GLP-1 prescriber studies or payer access research programmes start at $50,000+. Syndicated obesity market reports range from $5,000 to $25,000. Investment varies significantly based on whether the research involves primary data collection, real-world evidence analysis, or forecasting models.',
+    a: 'Custom obesity market research typically costs $10,000 to $60,000 per project depending on scope, methodology, number of markets, and respondent types. Multi-country GLP-1 prescriber studies or payer access research programmes are scoped inside custom research from $10,000 to $60,000. Investment varies significantly based on whether the research involves primary data collection, real-world evidence analysis, or forecasting models.',
   },
   {
     q: 'Which firm leads in anti-obesity medication access research?',
@@ -230,7 +230,7 @@ export default function BestObesityWeightManagementMarketResearchFirms2026() {
       'Expert 2026 guide to the best obesity and weight management market research firms. GLP-1 market research, anti-obesity medication access studies, patient journey research, prescriber behaviour analysis — ranked by capability.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

@@ -24,7 +24,7 @@ export const rareDiseaseGlobalEn: CountryListicleConfig = {
   ogLocale: 'en_US',
   inLanguage: 'en',
   datePublished: '2026-06-19',
-  dateModified: '2026-06-19',
+  dateModified: '2026-09-28',
   badge: '2026 Rare Disease Market Research Guide',
   h1: 'Best Rare Disease Market Research Companies (2026 Guide)',
   heroIntro:
@@ -248,7 +248,7 @@ export const rareDiseaseGlobalEn: CountryListicleConfig = {
     {
       question: 'How much does rare disease market research cost?',
       answer:
-        'Rare disease market research costs reflect the specialist nature of the work. HCP identification and landscape mapping programmes range from $20,000 to $45,000. Patient and caregiver depth interview programmes (8–15 interviews) range from $25,000 to $50,000. Orphan drug payer and market access research ranges from $25,000 to $45,000. Patient advocacy landscape mapping ranges from $15,000 to $35,000. Multi-country MENA rare disease studies are priced based on target disease HCP and patient landscape complexity. Contact BioNixus for a tailored rare disease research proposal.',
+        'Rare disease market research costs reflect the specialist nature of the work. HCP identification and landscape mapping programmes range from $10,000 to $60,000. Patient and caregiver depth interview programmes (8–15 interviews) range from $10,000 to $60,000. Orphan drug payer and market access research ranges from $10,000 to $60,000. Patient advocacy landscape mapping ranges from $10,000 to $60,000. Multi-country MENA rare disease studies are priced based on target disease HCP and patient landscape complexity. Contact BioNixus for a tailored rare disease research proposal.',
     },
     {
       question: 'Does BioNixus conduct rare disease market research?',

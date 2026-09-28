@@ -17,7 +17,7 @@ export const bahrainHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_BH',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Bahrain (2026 Guide)',
   heroIntro:
@@ -214,7 +214,7 @@ export const bahrainHealthcareEn: CountryListicleConfig = {
     },
     {
       question: 'How much does pharmaceutical market research cost in Bahrain?',
-      answer: 'Custom pharmaceutical market research in Bahrain typically ranges from $15,000 to $55,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with hospital network recruitment tend to cost more than consumer health studies. NHRA HTA-aligned payer and formulary research commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
+      answer: 'Custom pharmaceutical market research in Bahrain typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with hospital network recruitment tend to cost more than consumer health studies. NHRA HTA-aligned payer and formulary research commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
     },
     {
       question: 'What is the NHRA and how does it regulate pharmaceutical research in Bahrain?',

@@ -133,7 +133,7 @@ const faqItems = [
   },
   {
     q: 'How much does healthcare market research cost in Riyadh?',
-    a: 'Custom healthcare market research in Riyadh typically ranges from $20,000 to $70,000 per project, depending on scope, methodology, therapeutic area complexity, and respondent type. Physician surveys and KOL mapping programmes at specialist centres like KFSH&RC and KAMC tend to cost more due to recruitment complexity and ethics review timelines. Multi-hospital programmes across MOH central-region, military, and private networks start higher. Syndicated reports from Euromonitor range from $3,000–$15,000.',
+    a: 'Custom healthcare market research in Riyadh typically ranges from $10,000 to $60,000 per project, depending on scope, methodology, therapeutic area complexity, and respondent type. Physician surveys and KOL mapping programmes at specialist centres like KFSH&RC and KAMC tend to cost more due to recruitment complexity and ethics review timelines. Multi-hospital programmes across MOH central-region, military, and private networks start higher. Syndicated reports from Euromonitor range from $3,000–$15,000.',
   },
   {
     q: 'Which firm is best for KOL mapping and HCP research in Riyadh?',
@@ -208,7 +208,7 @@ export default function TopHealthcareMarketResearchCompaniesRiyadh2026() {
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Riyadh for 2026. Covers SFDA-aware firms, KFSH&RC and KAMC HCP access, NUPCO procurement intelligence, Vision 2030 healthcare context, and how to evaluate a research partner for the Saudi capital.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-06-09',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

@@ -24,7 +24,7 @@ export const uaePharmaEn: CountryListicleConfig = {
   ogLocale: 'en_AE',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-28',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in the UAE (2026 Guide)',
   heroIntro:
@@ -284,7 +284,7 @@ export const uaePharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in the UAE?',
       answer:
-        'Custom pharmaceutical primary research in the United Arab Emirates typically runs from around $20,000 for a focused qualitative study to $70,000 or more for multi-stakeholder programmes combining prescriber, insurer and formulary research across both Abu Dhabi and Dubai. Cost is driven mainly by sample difficulty and by geographic spread: interviews with insurer medical directors, DoH or DHA formulary decision-makers, or specialists inside SEHA hospitals cost substantially more per completed interview than private-sector general practitioners in Dubai, and a genuinely multi-emirate sample costs more than a Dubai-only one. Syndicated reports and pipeline databases are far cheaper but answer different questions.',
+        'Custom pharmaceutical primary research in the United Arab Emirates is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining prescriber, insurer and formulary research across both Abu Dhabi and Dubai. Cost is driven mainly by sample difficulty and by geographic spread: interviews with insurer medical directors, DoH or DHA formulary decision-makers, or specialists inside SEHA hospitals cost substantially more per completed interview than private-sector general practitioners in Dubai, and a genuinely multi-emirate sample costs more than a Dubai-only one. Syndicated reports and pipeline databases are far cheaper but answer different questions.',
     },
     {
       question: 'How do MOHAP registration and pricing affect market research design in the UAE?',

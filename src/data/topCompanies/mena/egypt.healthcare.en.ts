@@ -17,7 +17,7 @@ export const egyptHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_EG',
   inLanguage: 'en',
   datePublished: '2026-06-12',
-  dateModified: '2026-09-06',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Guide',
   h1: 'Best Healthcare Market Research Companies in Egypt (2026 Guide)',
   heroIntro:
@@ -212,7 +212,7 @@ export const egyptHealthcareEn: CountryListicleConfig = {
     {
       question: 'How much does healthcare market research cost in Egypt?',
       answer:
-        'Custom healthcare market research in Egypt typically ranges from $12,000 to $50,000 per project depending on scope, methodology, and sample requirements. Egypt\'s large physician and patient universe enables larger-scale quantitative studies at lower per-respondent cost than GCC markets. Physician surveys and KOL mapping engagements with university hospital recruitment typically range from $15,000–$35,000. HEOR and pharmacoeconomic studies with EDA-aligned design start from approximately $20,000. Syndicated country reports from providers like Euromonitor start from around $2,500.',
+        'Custom healthcare market research in Egypt typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Egypt\'s large physician and patient universe enables larger-scale quantitative studies at lower per-respondent cost than GCC markets. Physician surveys and KOL mapping engagements with university hospital recruitment typically range from $10,000 to $60,000. HEOR and pharmacoeconomic studies with EDA-aligned design is scoped inside custom research from $10,000 to $60,000. Syndicated country reports from providers like Euromonitor start from around $2,500.',
     },
     {
       question: 'What is the EDA and what is its role in pharmaceutical research in Egypt?',

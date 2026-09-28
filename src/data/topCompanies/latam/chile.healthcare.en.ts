@@ -17,7 +17,7 @@ export const chileHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_CL',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Chile (2026 Guide)',
   heroIntro:
@@ -209,7 +209,7 @@ export const chileHealthcareEn: CountryListicleConfig = {
     },
     {
       question: 'How much does healthcare market research cost in Chile?',
-      answer: 'Custom healthcare market research in Chile typically ranges from $15,000 to $55,000 per project depending on methodology, therapeutic area, and scope. Given Chile\'s smaller population relative to Brazil or Mexico, physician recruitment panels may be more limited, which can affect project timelines and costs. HEOR and ETESA-aligned health technology assessment studies typically range from $25,000 to $75,000+.',
+      answer: 'Custom healthcare market research in Chile typically ranges from $10,000 to $60,000 per project depending on methodology, therapeutic area, and scope. Given Chile\'s smaller population relative to Brazil or Mexico, physician recruitment panels may be more limited, which can affect project timelines and costs. HEOR and ETESA-aligned health technology assessment studies typically range from $10,000 to $60,000.',
     },
     {
       question: 'What is ANAMED and why does it matter for pharmaceutical research in Chile?',

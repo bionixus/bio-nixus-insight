@@ -959,7 +959,6 @@ const seoPathToExport: Record<string, string> = {
   "/templates/mystery-shop-retail-brief": "MysteryShopRetailBrief",
   "/terms": "Terms",
   "/tools/syndicated-data-gap": "SyndicatedDataGapTool",
-  "/uae": "CountryPage",
   "/uae-market-access-research": "UaeMarketAccessResearch",
   "/uae-pharmaceutical-market-research": "UaePharmaceuticalMarketResearch",
   "/uae-pricing-reimbursement-strategy": "UaePricingReimbursementStrategy",

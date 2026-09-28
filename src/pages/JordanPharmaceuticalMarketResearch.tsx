@@ -79,7 +79,7 @@ const faqItems = [
   {
     question: 'How much does pharmaceutical market research cost in Jordan?',
     answer:
-      'Custom pharmaceutical market research in Jordan typically ranges from $18,000 to $65,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with KHCC and JUH network recruitment tend to cost more than consumer health studies. Syndicated reports start from around $2,500.',
+      'Custom pharmaceutical market research in Jordan typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with KHCC and JUH network recruitment tend to cost more than consumer health studies.',
   },
   {
     question: 'Why does Jordan pharmaceutical research need JFDA-specific design?',

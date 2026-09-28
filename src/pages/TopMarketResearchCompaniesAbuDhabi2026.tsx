@@ -125,7 +125,7 @@ const faqItems = [
   },
   {
     q: 'How much does market research cost in Abu Dhabi?',
-    a: 'Custom consumer and general market research in Abu Dhabi typically ranges from $20,000 to $60,000 per project depending on scope, methodology, sample size, and multilingual requirements. Syndicated reports range from $2,000–$10,000. Multi-segment programmes across Abu Dhabi\'s diverse Emirati and expatriate audiences sit toward the higher end of custom budgets.',
+    a: 'Custom consumer and general market research in Abu Dhabi typically ranges from $10,000 to $60,000 per project depending on scope, methodology, sample size, and multilingual requirements. Multi-segment programmes across Abu Dhabi\'s diverse Emirati and expatriate audiences sit toward the higher end of custom budgets.',
   },
   {
     q: 'Why does regulated-industry experience matter for consumer research?',
@@ -189,7 +189,7 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
       'Independent guide to the leading market research companies in Abu Dhabi for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Abu Dhabi expertise.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-06-09',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

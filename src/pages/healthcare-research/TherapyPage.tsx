@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import NotFound from '@/pages/NotFound';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { HealthcareResearchPageShell } from '@/components/healthcare-research/HealthcareResearchPageShell';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
@@ -581,8 +582,13 @@ const THERAPY_FAQS: Record<string, { question: string; answer: string }[]> = {
   ],
 };
 
+const KNOWN_THERAPY_SLUGS = new Set(Object.keys(THERAPY_COPY));
+
 export default function TherapyPage() {
   const { area = '' } = useParams<{ area: string }>();
+  if (!KNOWN_THERAPY_SLUGS.has(area)) {
+    return <NotFound />;
+  }
   const titleArea = THERAPY_META[area]?.displayName ?? area.replace(/-/g, ' ');
   const isBiologics = area === 'biologics';
   const isImmunology = area === 'immunology';

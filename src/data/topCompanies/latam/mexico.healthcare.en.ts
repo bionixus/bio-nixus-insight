@@ -17,7 +17,7 @@ export const mexicoHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_MX',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Mexico (2026 Guide)',
   heroIntro:
@@ -209,7 +209,7 @@ export const mexicoHealthcareEn: CountryListicleConfig = {
     },
     {
       question: 'How much does healthcare market research cost in Mexico?',
-      answer: 'Custom healthcare market research in Mexico typically ranges from $18,000 to $65,000 per project depending on methodology, therapeutic area, and scope. Physician surveys with specialist recruitment tend to be priced higher than patient or consumer health studies. HEOR and market access studies with evidence synthesis can range from $30,000 to $100,000+.',
+      answer: 'Custom healthcare market research in Mexico typically ranges from $10,000 to $60,000 per project depending on methodology, therapeutic area, and scope. Physician surveys with specialist recruitment tend to be priced higher than patient or consumer health studies. HEOR and market access studies with evidence synthesis can range from $10,000 to $60,000.',
     },
     {
       question: 'What is COFEPRIS and why does it matter for pharmaceutical market research in Mexico?',

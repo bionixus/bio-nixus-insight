@@ -129,7 +129,7 @@ const faqItems = [
   },
   {
     q: 'How much does market research cost in the GCC?',
-    a: 'Custom consumer and general market research in the GCC typically ranges from $25,000 to $80,000 per project depending on the number of GCC countries, methodology, sample size, and cities covered. Syndicated reports range from $2,000–$10,000. Multi-country programmes spanning all 6 GCC nations sit toward the higher end of custom budgets.',
+    a: 'Custom consumer and general market research in the GCC typically ranges from $10,000 to $60,000 per project depending on the number of GCC countries, methodology, sample size, and cities covered. Multi-country programmes spanning all 6 GCC nations sit toward the higher end of custom budgets.',
   },
   {
     q: 'Why does regulated-industry experience matter for GCC consumer research?',
@@ -189,7 +189,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
       'Independent 2026 guide ranking the top market research companies in the GCC — consumer, FMCG, retail, and multi-industry firms across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

@@ -17,7 +17,7 @@ export const tunisiaGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_TN',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Tunisia (2026 Guide)',
   heroIntro:
@@ -210,7 +210,7 @@ export const tunisiaGeneralEn: CountryListicleConfig = {
     },
     {
       question: 'How much does market research cost in Tunisia?',
-      answer: 'Custom market research in Tunisia typically ranges from $10,000 to $40,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Tunisia\'s strong digital infrastructure makes online and mobile methodologies cost-effective options. Syndicated Tunisia country reports start from around $1,500 to $3,500.',
+      answer: 'Custom market research in Tunisia typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Tunisia\'s strong digital infrastructure makes online and mobile methodologies cost-effective options.',
     },
     {
       question: 'Which market research company is best for pharmaceutical research in Tunisia?',

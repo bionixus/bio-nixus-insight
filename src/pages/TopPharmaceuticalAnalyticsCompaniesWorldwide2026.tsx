@@ -137,7 +137,7 @@ const faqItems = [
   },
   {
     q: 'How much does pharmaceutical analytics cost?',
-    a: 'Custom pharmaceutical analytics projects typically cost $40,000–$200,000+ depending on scope, methodology, geographic coverage, and therapeutic complexity. Predictive modelling and multi-country analytics programmes sit at the higher end. Syndicated data analytics subscriptions from IQVIA or Clarivate range from $15,000–$250,000+ annually depending on modules and geographies.',
+    a: 'Custom pharmaceutical analytics projects typically cost $10,000 to $60,000 depending on scope, methodology, geographic coverage, and therapeutic complexity. Predictive modelling and multi-country analytics programmes sit at the higher end. Syndicated data analytics subscriptions from IQVIA or Clarivate range from $15,000–$250,000+ annually depending on modules and geographies.',
   },
   {
     q: 'What is the difference between commercial analytics and market access analytics?',
@@ -193,7 +193,7 @@ export default function TopPharmaceuticalAnalyticsCompaniesWorldwide2026() {
       'Independent 2026 guide ranking the top pharmaceutical analytics companies worldwide — commercial analytics, predictive modelling, market access analytics, and RWE analytics firms compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

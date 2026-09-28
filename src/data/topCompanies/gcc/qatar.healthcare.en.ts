@@ -17,7 +17,7 @@ export const qatarHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_QA',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Qatar (2026 Guide)',
   heroIntro:
@@ -214,7 +214,7 @@ export const qatarHealthcareEn: CountryListicleConfig = {
     },
     {
       question: 'How much does pharmaceutical market research cost in Qatar?',
-      answer: 'Custom pharmaceutical market research in Qatar typically ranges from $20,000 to $70,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with HMC-network recruitment tend to cost more than consumer health studies. Payer and formulary committee research with MoPH-aligned design commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
+      answer: 'Custom pharmaceutical market research in Qatar typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with HMC-network recruitment tend to cost more than consumer health studies. Payer and formulary committee research with MoPH-aligned design commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
     },
     {
       question: 'How do I recruit physicians at Hamad Medical Corporation (HMC) for research?',

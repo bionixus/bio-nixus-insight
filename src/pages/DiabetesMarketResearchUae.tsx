@@ -104,7 +104,7 @@ export default function DiabetesMarketResearchUae() {
           stats: [
             { value: '~19%', label: 'UAE adult diabetes prevalence (IDF 2023)' },
             { value: '10–14 wks', label: 'Typical multi-method programme timeline' },
-            { value: '$75K–$200K', label: 'Comprehensive study cost range' },
+            { value: '$10k–$60k', label: 'Comprehensive study cost range' },
           ],
           description: (
             <p>
@@ -169,7 +169,7 @@ export default function DiabetesMarketResearchUae() {
               { label: 'UAE adult diabetes prevalence', value: '~19%' },
               { label: 'Global rank (age-adjusted adult prevalence)', value: '4th' },
               { label: 'Programme timeline', value: '10–14 weeks' },
-              { label: 'Programme cost range', value: '$75K–$200K' },
+              { label: 'Programme cost range', value: '$10k–$60k' },
             ]}
             caption="IDF Diabetes Atlas 2023. Programme ranges reflect typical multi-method HCP, patient, and payer modules."
           />
@@ -347,23 +347,23 @@ export default function DiabetesMarketResearchUae() {
             <p>
               A comprehensive UAE diabetes market study combining quantitative HCP surveys, qualitative patient IDIs,
               and payer interviews runs over <strong>10–14 weeks</strong> and costs between{' '}
-              <strong>$75,000 and $200,000</strong> depending on scope.
+              <strong>$10,000 to $60,000</strong> depending on scope.
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Quantitative HCP survey (n=50–100):</strong> $20,000–$40,000 / 4–6 weeks
+                <strong>Quantitative HCP survey (n=50–100):</strong> $10,000 to $60,000 / 4–6 weeks
               </li>
               <li>
-                <strong>Qualitative patient IDIs (n=20–30):</strong> $20,000–$35,000 / 4–5 weeks
+                <strong>Qualitative patient IDIs (n=20–30):</strong> $10,000 to $60,000 / 4–5 weeks
               </li>
               <li>
-                <strong>Payer landscape interviews (n=8–12):</strong> $15,000–$25,000 / 4–5 weeks
+                <strong>Payer landscape interviews (n=8–12):</strong> $10,000 to $60,000 / 4–5 weeks
               </li>
               <li>
-                <strong>Competitive intelligence synthesis:</strong> $10,000–$20,000 / 2–3 weeks
+                <strong>Competitive intelligence synthesis:</strong> $10,000 to $60,000 / 2–3 weeks
               </li>
               <li>
-                <strong>Integrated commercial insights report:</strong> $10,000–$20,000 / 2–3 weeks
+                <strong>Integrated commercial insights report:</strong> $10,000 to $60,000 / 2–3 weeks
               </li>
             </ul>
           </div>

@@ -17,7 +17,7 @@ export const peruHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_PE',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Peru (2026 Guide)',
   heroIntro:
@@ -209,7 +209,7 @@ export const peruHealthcareEn: CountryListicleConfig = {
     },
     {
       question: 'How much does healthcare market research cost in Peru?',
-      answer: 'Custom healthcare market research in Peru typically ranges from $14,000 to $50,000 per project depending on methodology, therapeutic area, and scope. Physician specialist recruitment may require longer timelines outside Lima. HEOR and market access studies typically range from $22,000 to $70,000+. Peru\'s relatively smaller specialist physician population compared to Brazil or Mexico can affect panel feasibility for narrow therapeutic area studies.',
+      answer: 'Custom healthcare market research in Peru typically ranges from $10,000 to $60,000 per project depending on methodology, therapeutic area, and scope. Physician specialist recruitment may require longer timelines outside Lima. HEOR and market access studies typically range from $10,000 to $60,000. Peru\'s relatively smaller specialist physician population compared to Brazil or Mexico can affect panel feasibility for narrow therapeutic area studies.',
     },
     {
       question: 'What is DIGEMID and why does it matter for pharmaceutical research in Peru?',

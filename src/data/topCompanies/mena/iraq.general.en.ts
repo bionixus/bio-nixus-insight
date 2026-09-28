@@ -17,7 +17,7 @@ export const iraqGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_IQ',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Iraq (2026 Guide)',
   heroIntro:
@@ -217,7 +217,7 @@ export const iraqGeneralEn: CountryListicleConfig = {
     {
       question: 'How much does market research cost in Iraq?',
       answer:
-        'Custom market research in Iraq typically ranges from $18,000 to $65,000 per project depending on scope, methodology, geography (Baghdad, Erbil, or nationwide), and sector. Healthcare and pharmaceutical studies with physician recruitment or KIMADIA procurement intelligence tend to cost more than consumer research. Syndicated Iraq country reports start from around $2,500.',
+        'Custom market research in Iraq typically ranges from $10,000 to $60,000 per project depending on scope, methodology, geography (Baghdad, Erbil, or nationwide), and sector. Healthcare and pharmaceutical studies with physician recruitment or KIMADIA procurement intelligence tend to cost more than consumer research.',
     },
     {
       question: 'Which market research company is best for healthcare research in Iraq?',

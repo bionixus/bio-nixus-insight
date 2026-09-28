@@ -366,8 +366,7 @@ export default function HealthcareMarketResearchUsa() {
             </p>
             <p>
               Typical US primary programmes run 3–4 weeks for focused HCP waves and 6–10 weeks for mixed-method access
-              work including PBM interviews. Minimum engagement sizes align with global affiliate standards (generally
-              USD 20,000+ for standalone primary modules). Proposal turnaround is typically 48 hours once objectives,
+              work including PBM interviews. Custom research from $10,000 to $60,000. Proposal turnaround is typically 48 hours once objectives,
               audience, and geography are defined.
             </p>
           </div>

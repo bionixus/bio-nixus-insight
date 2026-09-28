@@ -17,7 +17,7 @@ export const riyadhGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_SA',
   inLanguage: 'en',
   datePublished: '2026-06-12',
-  dateModified: '2026-06-12',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Riyadh (2026 Guide)',
   heroIntro:
@@ -214,7 +214,7 @@ export const riyadhGeneralEn: CountryListicleConfig = {
     },
     {
       question: 'How much does market research cost in Riyadh?',
-      answer: 'Custom market research in Riyadh typically ranges from $22,000 to $75,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment or HEOR components tend toward the higher end of this range. Consumer research and brand tracking projects for Saudi National audiences are typically in the $22,000–$45,000 range. Syndicated reports start from approximately $3,000.',
+      answer: 'Custom market research in Riyadh typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment or HEOR components tend toward the higher end of this range. Consumer research and brand tracking projects for Saudi National audiences are typically in the $10,000 to $60,000 range.',
     },
     {
       question: 'Which market research company specialises in healthcare and SFDA research in Riyadh?',

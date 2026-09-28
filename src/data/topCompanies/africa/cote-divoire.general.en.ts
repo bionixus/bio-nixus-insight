@@ -17,7 +17,7 @@ export const coteDivoireGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_CI',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: "Best Market Research Companies in Côte d'Ivoire (2026 Guide)",
   heroIntro:
@@ -217,7 +217,7 @@ export const coteDivoireGeneralEn: CountryListicleConfig = {
     {
       question: "How much does market research cost in Côte d'Ivoire?",
       answer:
-        "Custom market research in Côte d'Ivoire typically ranges from $15,000 to $55,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment or regulatory intelligence tend to cost more than consumer research. Syndicated Côte d'Ivoire country reports start from around $2,500.",
+        "Custom market research in Côte d'Ivoire typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment or regulatory intelligence tend to cost more than consumer research.",
     },
     {
       question: "Which market research company is best for healthcare research in Côte d'Ivoire?",

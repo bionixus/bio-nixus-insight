@@ -145,7 +145,7 @@ const faqItems = [
   },
   {
     q: 'How much does pharma market research cost in the Middle East?',
-    a: 'Custom pharmaceutical market research in the Middle East typically costs $25,000–$120,000+ per project depending on the number of countries, methodology, therapy area complexity, and physician sample requirements. Multi-country GCC studies involving Saudi Arabia, UAE, and Egypt at the upper end. Syndicated data subscriptions from IQVIA for MENA start at approximately $15,000–$80,000+ annually.',
+    a: 'Custom pharmaceutical market research in the Middle East typically costs $10,000 to $60,000 per project depending on the number of countries, methodology, therapy area complexity, and physician sample requirements. Multi-country GCC studies involving Saudi Arabia, UAE, and Egypt at the upper end. Syndicated data subscriptions from IQVIA for MENA start at approximately $15,000–$80,000+ annually.',
   },
   {
     q: 'How do I evaluate a pharma market research partner for the Middle East?',
@@ -193,7 +193,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
       'Independent 2026 guide ranking the top pharmaceutical market research companies in the Middle East — MENA pharma analytics, fieldwork, competitive intelligence, and primary research firms compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

@@ -17,7 +17,7 @@ export const omanGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_OM',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Oman (2026 Guide)',
   heroIntro:
@@ -212,7 +212,7 @@ export const omanGeneralEn: CountryListicleConfig = {
     {
       question: 'How much does market research cost in Oman?',
       answer:
-        'Custom market research in Oman typically ranges from $12,000 to $50,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer or FMCG research. Syndicated country reports from providers like Euromonitor start from around $2,500 and offer an accessible entry point for market sizing.',
+        'Custom market research in Oman typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer or FMCG research. Syndicated country reports from providers like Euromonitor start from around $2,500 and offer an accessible entry point for market sizing.',
     },
     {
       question: 'Which market research company is best for healthcare research in Oman?',

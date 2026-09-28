@@ -359,7 +359,6 @@ const rawRoutes: RouteObject[] = [
   { path: '/healthcare-market-research/services/:service', element: <ServicePage /> },
   { path: '/healthcare-market-research/:country', element: <CountryPage /> },
   { path: '/saudi-arabia', element: <CountryPage /> },
-  { path: '/uae', element: <CountryPage /> },
   { path: '/kuwait', element: <CountryPage /> },
   { path: '/uk', element: <CountryPage /> },
   { path: '/europe', element: <CountryPage /> },
