@@ -1749,6 +1749,15 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                 <p className="text-sm text-muted-foreground mb-4">
                   {blogUi.relatedResearchDescription}
                 </p>
+                {slug === 'market-access-research-uae-2026' ? (
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Need a partner to run it?{' '}
+                    <Link to="/uae-pharmaceutical-market-research" className="text-primary font-medium hover:underline">
+                      Healthcare market research company in UAE
+                    </Link>{' '}
+                    (Dubai office, DHA/DOH/MOHAP/EDE).
+                  </p>
+                ) : null}
                 <div className="flex flex-wrap gap-2">
                   {getRelatedResearchLinksForLocale(articleLocale, {
                     isGccComparisonEn,

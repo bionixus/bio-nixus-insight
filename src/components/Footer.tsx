@@ -366,6 +366,17 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a
+                  href="https://share.google/TlyheRVZ5L1sFKPQy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  Dubai, UAE
+                </a>
+              </li>
+              <li>
                 <a href={`tel:${phoneLines[1].tel}`} className="hover:text-primary-foreground transition-colors">
                   {phoneLines[1].label}
                 </a>

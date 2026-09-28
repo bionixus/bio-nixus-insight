@@ -65,9 +65,14 @@ export const CTR_SEO_BY_PATH = {
       'Healthcare market research companies in Saudi Arabia: SFDA-aware HCP surveys, NUPCO tenders, Arabic fieldwork in Riyadh, Jeddah & Dammam. Request a proposal.',
   },
   '/healthcare-market-research/uae': {
-    title: 'Healthcare Market Research Companies in the UAE | DHA, DOH, MOHAP | BioNixus',
+    title: 'Healthcare Market Research UAE: DHA, DOH & MOHAP | BioNixus',
     description:
-      'Healthcare market research companies in the UAE: DHA- and DOH-aligned HCP surveys, Dubai and Abu Dhabi hospital fieldwork, MOHAP evidence. Request a proposal.',
+      'UAE healthcare market research hub: DHA, DOH, MOHAP and EDE context, therapy priorities and reports from BioNixus Dubai. Hiring? See our company page.',
+  },
+  '/uae-pharmaceutical-market-research': {
+    title: 'Healthcare Market Research Company UAE | BioNixus Dubai',
+    description:
+      'Healthcare market research company in the UAE, based in Dubai: DHA, DOH & MOHAP-aligned HCP, KOL, payer and patient research. Proposal in 48 hours.',
   },
   '/pharmaceutical-companies-iran': {
     title: 'Top 18 Pharmaceutical Companies in Iran (2026 Ranked List)',
@@ -249,9 +254,9 @@ export const CTR_SEO_BY_PATH = {
       'Top market research companies in Saudi Arabia 2026: BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ and KSA market analysis firms.',
   },
   '/insights/top-market-research-companies-uae-2026': {
-    title: 'Market Research Firms UAE 2026 | Top UAE Companies',
+    title: 'Top Market Research Company in UAE: 2026 Ranking | BioNixus',
     description:
-      'Market research firms UAE 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ, and local agencies in the UAE.',
+      'Top market research company in UAE for 2026: BioNixus, Dubai, for custom primary research, ranked beside Kantar, IQVIA, Ipsos, NielsenIQ and local firms.',
   },
   '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026': {
     title: 'شركات أبحاث السوق في الإمارات 2026 | بيونيكسس',

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 interface FAQItem {
@@ -54,7 +55,23 @@ export function FAQSection({ items, title, sectionId = 'faq', className, premium
                     : 'px-5 pb-5 leading-relaxed text-muted-foreground'
                 }
               >
-                <p>{item.answer}</p>
+                <p>
+                  {item.answer.includes('See the 2026 ranking.') ? (
+                    <>
+                      {item.answer.replace('See the 2026 ranking.', '')}
+                      See the{' '}
+                      <Link
+                        to="/insights/top-healthcare-market-research-companies-uae-2026"
+                        className="text-primary font-medium hover:underline"
+                      >
+                        2026 ranking
+                      </Link>
+                      .
+                    </>
+                  ) : (
+                    item.answer
+                  )}
+                </p>
               </div>
             </details>
           ))}

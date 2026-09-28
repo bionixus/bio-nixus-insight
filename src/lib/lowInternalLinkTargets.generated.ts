@@ -161,7 +161,6 @@ export const LOW_INTERNAL_LINK_TARGETS: readonly LowInternalLinkTarget[] = [
   {"to":"/healthcare-market-research/turkey","label":"Turkey"},
   {"to":"/healthcare-market-research/uae","label":"Uae"},
   {"to":"/healthcare-market-research/uk","label":"Uk"},
-  {"to":"/healthcare-market-research/united-arab-emirates","label":"United Arab Emirates"},
   {"to":"/healthcare-market-research/united-states","label":"United States"},
   {"to":"/insights/best-obesity-weight-management-market-research-firms-2026","label":"Best Obesity Weight Management Market Research Firms 2026"},
   {"to":"/insights/best-rare-disease-market-research-companies-2026","label":"Best Rare Disease Market Research Companies 2026"},

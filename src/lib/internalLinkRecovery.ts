@@ -135,7 +135,6 @@ const rawReportZeroLinkPaths = [
   '/healthcare-market-research/switzerland',
   '/healthcare-market-research/tunisia',
   '/healthcare-market-research/turkey',
-  '/healthcare-market-research/united-arab-emirates',
   '/healthcare-market-research/uk',
   '/healthcare-market-research/united-states',
   '/market-research-customer-insight',

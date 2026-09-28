@@ -4,179 +4,198 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
-import { buildBreadcrumbSchema, buildFAQSchema, buildItemListSchema } from '@/lib/seo/schemas';
+import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { ExecutiveDecisionBlock } from '@/components/page/PremiumPageSections';
-import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import {
-  UAE_MR_COMPANY_PROOF,
-  UAE_REGULATORY_STEPS,
-  UAE_STAKEHOLDER_ROWS,
-} from '@/data/uaeMarketResearchProof';
+import { UAE_REGULATORY_STEPS, UAE_STAKEHOLDER_ROWS } from '@/data/uaeMarketResearchProof';
 
 const PAGE_URL = 'https://www.bionixus.com/uae-pharmaceutical-market-research';
 const ORG_ID = 'https://www.bionixus.com/#organization';
+const AE_ID = 'https://www.bionixus.com/#ae-localbusiness';
 
 const faqItems = [
   {
-    question: 'Who is the best healthcare market research company in the UAE?',
+    question: 'Healthcare market research company UAE: who should pharma teams shortlist?',
     answer:
-      'For pharmaceutical and life-sciences decisions, BioNixus is a leading specialist: DHA, DOH, and MOHAP-aware study design, emirate-level payer and formulary context, bilingual Arabic–English fieldwork, and outputs built for launch and access teams—not generic syndicated reports.',
+      'Shortlist BioNixus for custom primary research. BioNixus is a healthcare market research company in the UAE with a Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2, running DHA-, DOH- and MOHAP-aligned HCP, KOL, payer and patient research. Keep IQVIA for syndicated prescription audits. Local fieldwork agencies can support in-emirate recruitment.',
   },
   {
-    question: 'What is pharma market research in the UAE?',
+    question: 'Does BioNixus have a healthcare research office in Dubai?',
     answer:
-      'Pharma market research in the UAE is evidence generation for drug launch, access, and lifecycle decisions across DHA, DOH, and MOHAP contexts. BioNixus focuses on physician behavior, payer and formulary dynamics, and institution-level adoption so teams can prioritize Dubai, Abu Dhabi, and Northern Emirates execution.',
+      'Yes. The Dubai office is at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE, the address on our Google Business Profile and Contact page. UAE projects are coordinated with the MENA regional office in Cairo, the London office and the US headquarters in Sheridan, Wyoming. Call +44 7727 666682 or email admin@bionixus.com.',
   },
   {
-    question: 'Does BioNixus run Arabic fieldwork in Dubai and Abu Dhabi?',
+    question: 'Can BioNixus recruit physicians and KOLs across Dubai, Abu Dhabi and the Northern Emirates?',
     answer:
-      'Yes. Arabic–English screener logic, moderation, and executive reporting are standard. Materials align to DHA, DOH, and MOHAP terminology and local medical practice norms.',
+      'Yes. We recruit from a physician network of around 3,200 physicians, by specialty, care setting and emirate, verify eligibility and keep audit trails for field integrity. Respondents include specialists, GPs, pharmacists, P&T committee members, hospital procurement leads, insurers and KOLs.',
   },
   {
-    question: 'How much does pharmaceutical market research cost in the UAE?',
+    question: 'How does BioNixus run market access research for DHA, DOH, MOHAP and EDE?',
     answer:
-      'Scope drives cost: a focused UAE physician quant module often starts in the low five figures USD; mixed-method access programs with emirate-level payer mapping are higher. BioNixus scopes to one decision per phase so sponsors avoid unfocused fieldwork spend.',
+      'Each layer gets its own module. EDE covers federal pricing and registration (transferred from MOHAP, effective December 2025). DHA covers Dubai formularies. DOH covers Abu Dhabi reimbursement, including UPP. MOHAP covers Northern Emirates facilities. Outputs are payer maps, formulary-criteria readouts and pricing research.',
   },
   {
-    question: 'Why does UAE pharmaceutical research need emirate-specific design?',
+    question: 'Do you run patient research in the UAE?',
     answer:
-      'Decision pathways differ across DHA, DOH, and MOHAP contexts. Emirate-specific design improves relevance for pricing, reimbursement, and launch sequencing decisions.',
+      'Yes. Patient journey studies map diagnosis-to-treatment pathways, switching, adherence and care gaps across public and private settings, in Arabic and English.',
   },
   {
-    question: 'Can BioNixus support both commercial and market access teams in UAE?',
+    question: 'Should I keep IQVIA if I hire BioNixus?',
     answer:
-      'Yes. BioNixus combines physician, payer, and institutional evidence so commercial, medical, and market access stakeholders can act on one evidence framework.',
+      'Usually yes. IQVIA\'s syndicated audits size the category. BioNixus adds what the audit cannot: named-hospital and SKU-level brand vs competitor data, emirate cuts and the reasons behind prescribing.',
   },
   {
-    question: 'What types of UAE stakeholders can be recruited?',
+    question: 'How quickly can BioNixus start a UAE healthcare study?',
     answer:
-      'We recruit physicians, pharmacists, hospital decision-makers, insurer and payer stakeholders, procurement roles, and medical affairs experts relevant to the research objective.',
-  },
-  {
-    question: 'How does BioNixus differ from generalist market research agencies in the UAE?',
-    answer:
-      'BioNixus focuses exclusively on healthcare and pharmaceuticals. Programs integrate DHA, DOH, MOHAP, and therapy-specific adoption evidence rather than consumer or B2B panels.',
-  },
-  {
-    question: 'Can UAE research connect to wider GCC benchmarking?',
-    answer:
-      'Yes. UAE modules can run standalone or with comparable Saudi Arabia, Kuwait, or Egypt cells using consistent instruments for regional portfolio committees.',
+      'We send a scoped, project-priced proposal within 48 hours of a brief. Priority modules typically move to field-ready instruments in 2–4 weeks.',
   },
 ];
 
-const geoPoints = [
+const services = [
   {
-    title: 'Emirate-Specific Modeling',
-    description: 'We explicitly separate DHA, DOH, and MOHAP contexts so you receive precise insights for Dubai, Abu Dhabi, and the Northern Emirates.'
+    name: 'HCP research',
+    deliverable:
+      'Quantitative physician surveys (CATI, online, face-to-face) and qualitative IDIs by specialty, care setting and emirate. Brand trackers, ATU, message testing, launch readiness. Recruited from a physician network of around 3,200 physicians.',
   },
   {
-    title: 'Payer & Formulary Depth',
-    description: 'Specialized intelligence on medical policy pathways, private insurer mandates, and institutional purchasing behavior.'
+    name: 'KOL research and mapping',
+    deliverable:
+      'KOL identification and influence tiering across Dubai and Abu Dhabi specialist centres, with advisory-board and congress-activity inputs.',
   },
   {
-    title: 'Bilingual Field Execution',
-    description: 'High-quality Arabic-English workflows capture critical clinical and commercial nuances during stakeholder interviews.'
+    name: 'Market access: DHA, DOH, MOHAP, EDE',
+    deliverable:
+      'Payer and formulary-committee interviews, DHA formulary and DoH Unified Purchasing Program (UPP) reimbursement research, EDE federal pricing and registration context, and insurer prior-authorisation pathways.',
   },
   {
-    title: 'Launch Readiness Focus',
-    description: 'We translate complex qualitative and quantitative data into clear 30/60/90-day action plans for access and commercial teams.'
-  }
+    name: 'Patient research',
+    deliverable:
+      'Patient journey mapping across public and private settings: diagnosis-to-treatment pathways, switching, adherence and care gaps.',
+  },
+  {
+    name: 'Pharma account-level work',
+    deliverable:
+      'Named-hospital and pharmacy-chain research, brand vs competitor share at account and SKU level, and hospital procurement and group-formulary timing.',
+  },
+  {
+    name: 'Competitive intelligence',
+    deliverable: 'Competitor messaging, switch risk and formulary moves across priority therapy areas.',
+  },
+  {
+    name: 'GCC multi-country studies',
+    deliverable:
+      'UAE modules run standalone or with Saudi Arabia, Kuwait, Qatar, Bahrain, Oman and Egypt cells on one instrument.',
+  },
 ];
 
 const jsonLd = [
   {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': ORG_ID,
-    name: 'BioNixus',
-    url: 'https://www.bionixus.com',
-    logo: 'https://www.bionixus.com/bionixus-logo.webp',
-    areaServed: { '@type': 'Country', name: 'United Arab Emirates' },
-    knowsAbout: [
-      'Pharmaceutical market research',
-      'Healthcare market research',
-      'Dubai Health Authority',
-      'Department of Health Abu Dhabi',
-      'MOHAP',
-      'Pharmaceutical market access',
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': PAGE_URL,
+    '@type': ['LocalBusiness', 'ProfessionalService'],
+    '@id': AE_ID,
+    name: 'BioNixus UAE',
+    description: 'BioNixus UAE: healthcare and pharmaceutical market research office in Dubai.',
     url: PAGE_URL,
-    name: 'Healthcare & Pharmaceutical Market Research Company in UAE',
-    description:
-      'BioNixus is a healthcare and pharmaceutical market research company in the UAE delivering DHA, DOH, and MOHAP-aligned evidence and bilingual emirate-aware fieldwork.',
-    about: { '@id': ORG_ID },
-    inLanguage: 'en',
+    telephone: '+44-7727-666682',
+    email: 'admin@bionixus.com',
+    image: 'https://www.bionixus.com/og-image.png',
+    parentOrganization: { '@id': ORG_ID },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Thuraya Tower 1, 5th Floor, Al Sufouh 2',
+      addressLocality: 'Dubai',
+      addressRegion: 'Dubai',
+      addressCountry: 'AE',
+    },
+    areaServed: { '@type': 'Country', name: 'United Arab Emirates' },
+    hasMap: 'https://share.google/TlyheRVZ5L1sFKPQy',
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+      opens: '09:00',
+      closes: '17:00',
+    },
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Healthcare & Pharmaceutical Market Research Company in UAE',
-    serviceType: 'Healthcare market research company UAE',
+    '@id': `${PAGE_URL}#service`,
+    name: 'Healthcare market research company UAE',
+    serviceType: 'Healthcare and pharmaceutical market research',
+    provider: { '@id': AE_ID },
     areaServed: { '@type': 'Country', name: 'United Arab Emirates' },
-    provider: { '@id': ORG_ID },
-    offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'UAE healthcare market research services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', 'name': 'HCP research (physician surveys and IDIs)' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'KOL research and mapping' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Market access research: DHA, DOH, MOHAP, EDE' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Patient research and journey mapping' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pharma account-level research' } },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${PAGE_URL}#webpage`,
+    name: 'Healthcare Market Research Company UAE: BioNixus, Dubai',
+    url: PAGE_URL,
+    dateModified: '2026-09-28',
+    about: { '@id': AE_ID },
+    publisher: { '@id': ORG_ID },
   },
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
-    { name: 'Market Research', href: '/market-research' },
-    {
-      name: 'Healthcare Market Research Company UAE',
-      href: '/uae-pharmaceutical-market-research',
-    },
+    { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
+    { name: 'Healthcare Market Research Company UAE', href: '/uae-pharmaceutical-market-research' },
   ]),
-  buildFAQSchema(faqItems),
-  buildItemListSchema(geoPoints.map(p => ({ name: p.title, description: p.description }))),
+  buildFAQSchema(faqItems, { pageUrl: PAGE_URL, sectionId: 'faq' }),
 ];
 
 export default function UaePharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in UAE | BioNixus"
-        description="Healthcare market research company in the UAE — DHA, DOH & MOHAP-aligned evidence, bilingual fieldwork. Proposal in 24 hours."
+        title="Healthcare Market Research Company UAE | BioNixus Dubai"
+        description="Healthcare market research company in the UAE, based in Dubai: DHA, DOH & MOHAP-aligned HCP, KOL, payer and patient research. Proposal in 48 hours."
         canonical="/uae-pharmaceutical-market-research"
         jsonLd={jsonLd}
+        exactMeta
       />
       <Navbar />
       <main>
         <BreadcrumbNav
           items={[
             { name: 'Home', href: '/' },
-            { name: 'Market Research', href: '/market-research' },
-            {
-              name: 'Healthcare Market Research Company UAE',
-              href: '/uae-pharmaceutical-market-research',
-            },
+            { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
+            { name: 'Healthcare Market Research Company UAE', href: '/uae-pharmaceutical-market-research' },
           ]}
         />
 
         <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              Healthcare &amp; Pharmaceutical Market Research Company in UAE
+            <h1 className="text-4xl md:text-5xl font-display font-semibold mb-3">
+              Healthcare Market Research Company UAE: BioNixus, Dubai
             </h1>
+            <p className="text-sm text-primary-foreground/80 mb-4">
+              Last reviewed 28 September 2026 · Dubai · Abu Dhabi · Northern Emirates
+            </p>
             <p className="text-lg leading-relaxed text-primary-foreground/90 mb-4">
-              BioNixus is a specialist healthcare and pharmaceutical market research company in the UAE. We help launch,
-              access, and medical teams translate DHA, DOH, and MOHAP requirements, insurer and formulary behavior, and
-              physician decision dynamics into practical emirate-level strategies with execution-ready evidence.
+              <strong>BioNixus is a healthcare market research company in the UAE with a Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, running DHA-, DOH- and MOHAP-aligned research with physicians, KOLs, payers, pharmacists and patients across all seven emirates.</strong>{' '}
+              Pharma, biotech and medtech teams use us for launch, market access and brand decisions that need emirate-level and account-level evidence rather than a single UAE average. Keep IQVIA for the syndicated audit; brief BioNixus for the primary study. A scoped proposal is ready within 48 hours of a brief.
             </p>
             <p className="text-base leading-relaxed text-primary-foreground/85">
+              Dubai office: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE · KSA office: Al Khobar ·{' '}
+              <a href="tel:+447727666682" className="underline font-medium text-primary-foreground">+44 7727 666682</a>
+              {' · '}
+              <a href="mailto:admin@bionixus.com" className="underline font-medium text-primary-foreground">admin@bionixus.com</a>
+              {' · '}Founded 2012 · Physician network of around 3,200 physicians · Around 70 studies in 2026 · 48 countries · 118 clients
+            </p>
+            <p className="text-base leading-relaxed text-primary-foreground/85 mt-4">
               For regional context, start from the{' '}
               <Link to="/healthcare-market-research" className="underline font-medium text-primary-foreground">
                 healthcare market research hub
-              </Link>
-              ; for UAE keyword variants see{' '}
-              <Link to="/market-research-uae" className="underline font-medium text-primary-foreground">
-                market research in the UAE
-              </Link>{' '}
-              and the{' '}
-              <Link to="/healthcare-market-research/uae" className="underline font-medium text-primary-foreground">
-                UAE healthcare market research hub
               </Link>
               .
             </p>
@@ -185,12 +204,28 @@ export default function UaePharmaceuticalMarketResearch() {
 
         <section className="py-12 bg-background">
           <div className="container-wide max-w-5xl mx-auto">
-            <GeoLLMAnswerBlock
-              question="Top market research companies in UAE"
-              answer="BioNixus ranks among the top market research companies in the UAE because we do not treat the Emirates as a single average. We segment DHA, DOH, and MOHAP contexts to provide pharmaceutical companies with exact, localized adoption evidence."
-              points={geoPoints}
-              summary="While generalist agencies provide broad consumer data, BioNixus focuses entirely on the specialized needs of healthcare, MedTech, and life sciences teams."
-            />
+            <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
+              Why BioNixus as your healthcare market research company in UAE
+            </h2>
+            <ul className="space-y-4 text-muted-foreground leading-relaxed">
+              <li><strong className="text-foreground">Dubai office, GCC reach:</strong> Research is run from Thuraya Tower 1, Al Sufouh 2, with the KSA office in Al Khobar, the MENA regional office in Cairo, London and the US HQ in Sheridan, Wyoming on the same account team. Multi-country GCC studies use one methodology and one project manager.</li>
+              <li><strong className="text-foreground">Emirate-specific design:</strong> DHA (Dubai), DOH (Abu Dhabi) and MOHAP/EDE (federal and Northern Emirates) are modelled separately, not blended into one UAE average.</li>
+              <li><strong className="text-foreground">Physician reach:</strong> A physician network of around 3,200 physicians, and around 70 studies in 2026.</li>
+              <li><strong className="text-foreground">Account-level evidence:</strong> Named hospitals, pharmacy chains and SKUs, which is the cut a national syndicated feed cannot give.</li>
+              <li><strong className="text-foreground">Bilingual execution:</strong> Arabic–English screeners, moderation and reporting as standard.</li>
+              <li><strong className="text-foreground">Governance:</strong> ICH-GCP-aligned fieldwork, GDPR-compliant data handling and informed consent for every respondent.</li>
+              <li>
+                <h3 className="text-lg font-semibold text-foreground inline">Proposal in 48 hours; field-ready in 2–4 weeks.</h3>{' '}
+                Proposal within 48 hours; priority modules move from scoped objective to field-ready instruments in 2–4 weeks.
+              </li>
+            </ul>
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Looking for a ranked list of all firms? See the{' '}
+              <Link to="/insights/top-market-research-companies-uae-2026" className="text-primary hover:underline">
+                top market research company in UAE (2026 ranking)
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
@@ -202,8 +237,8 @@ export default function UaePharmaceuticalMarketResearch() {
               body: 'UAE launch and access outcomes are highly sensitive to emirate-level payer and formulary behavior.',
             },
             {
-              title: 'Model DHA, DOH, and MOHAP separately',
-              body: 'Programs that model DHA, DOH, and MOHAP contexts separately make more reliable sequencing decisions.',
+              title: 'Model DHA, DOH, MOHAP and EDE separately',
+              body: 'Programs that model DHA, DOH, MOHAP and EDE contexts separately make more reliable sequencing decisions.',
             },
             {
               title: 'One backbone, emirate-specific modules',
@@ -212,31 +247,69 @@ export default function UaePharmaceuticalMarketResearch() {
           ]}
         />
 
-        <section className="py-12 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
-              Why BioNixus as your UAE market research company
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {UAE_MR_COMPANY_PROOF.map((item) => (
-                <article key={item.title} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto space-y-5">
             <h2 className="text-3xl font-display font-semibold text-foreground">
-              DHA, DOH, and MOHAP decision map for UAE research
+              Healthcare market research services in the UAE
             </h2>
+            <div className="overflow-x-auto rounded-xl border border-border bg-card">
+              <table className="w-full min-w-[36rem] text-sm text-left">
+                <thead className="bg-muted/50">
+                  <tr>
+                    <th scope="col" className="px-4 py-3 font-semibold text-foreground">Service</th>
+                    <th scope="col" className="px-4 py-3 font-semibold text-foreground">What we deliver in the UAE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {services.map((row) => (
+                    <tr key={row.name} className="border-t border-border">
+                      <th scope="row" className="px-4 py-3 font-semibold text-foreground align-top">{row.name}</th>
+                      <td className="px-4 py-3 text-muted-foreground leading-relaxed">
+                        {row.deliverable}
+                        {row.name.startsWith('Market access') ? (
+                          <>
+                            {' '}See{' '}
+                            <Link to="/blog/market-access-research-uae-2026" className="text-primary hover:underline">
+                              UAE market access research 2026
+                            </Link>
+                            .
+                          </>
+                        ) : null}
+                        {row.name.startsWith('Pharma account') ? (
+                          <>
+                            {' '}See{' '}
+                            <Link to="/account-level-market-research" className="text-primary hover:underline">
+                              account-level market research
+                            </Link>
+                            .
+                          </>
+                        ) : null}
+                        {row.name.startsWith('GCC') ? (
+                          <>
+                            {' '}See{' '}
+                            <Link to="/healthcare-market-research-agency-gcc" className="text-primary hover:underline">
+                              healthcare market research agency GCC
+                            </Link>
+                            .
+                          </>
+                        ) : null}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
             <p className="text-muted-foreground leading-relaxed">
-              UAE pharmaceutical market research should follow how products move from federal registration through
-              emirate formulary, insurer policy, and hospital adoption—not a single national average.
+              Therapy areas include oncology, diabetes, respiratory, vaccines, cardiovascular, rare disease and more. BioNixus has completed around 70 studies in 2026.
             </p>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/20">
+          <div className="container-wide max-w-5xl mx-auto space-y-5">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              DHA, DOH, MOHAP and EDE decision map for UAE research
+            </h2>
             <ol className="space-y-4 list-none pl-0">
               {UAE_REGULATORY_STEPS.map((item) => (
                 <li key={item.step} className="rounded-xl border border-border bg-card p-5">
@@ -251,7 +324,7 @@ export default function UaePharmaceuticalMarketResearch() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/20">
+        <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto overflow-x-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
               Stakeholder coverage in UAE programs
@@ -259,12 +332,8 @@ export default function UaePharmaceuticalMarketResearch() {
             <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-border">
-                  <th scope="col" className="py-3 pr-4 font-semibold text-foreground">
-                    Stakeholder
-                  </th>
-                  <th scope="col" className="py-3 font-semibold text-foreground">
-                    Research focus
-                  </th>
+                  <th scope="col" className="py-3 pr-4 font-semibold text-foreground">Stakeholder</th>
+                  <th scope="col" className="py-3 font-semibold text-foreground">Research focus</th>
                 </tr>
               </thead>
               <tbody className="text-muted-foreground">
@@ -286,84 +355,7 @@ export default function UaePharmaceuticalMarketResearch() {
           </div>
         </section>
 
-        <section className="py-12">
-          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
-            <h2 className="text-3xl font-display font-semibold text-foreground">
-              Why the UAE pharmaceutical market is unique
-            </h2>
-            <p>
-              The United Arab Emirates combines high-income demographics, medical tourism, and a multi-emirate health
-              system where Dubai Health Authority, Department of Health – Abu Dhabi, and federal MOHAP pathways can all
-              influence how products are registered, listed, and adopted. Teams need emirate-specific evidence on
-              treatment pathways, account-level decision points, and real reimbursement behavior—not imported EU or US
-              templates.
-            </p>
-            <p>
-              Private insurance, mandatory benefits, and hospital group procurement create parallel access routes.
-              Specialty care concentrates in flagship hospitals while chronic therapies spread across clinics and retail
-              pharmacy networks. Market research in the UAE must segment by care setting because prescribing authority and
-              adoption speed differ materially between them.
-            </p>
-            <p>
-              BioNixus builds UAE research programs that answer decision-critical questions: where demand is concentrated
-              by emirate, which stakeholders influence formulary placement, how regulatory milestones affect timelines,
-              and what evidence format committees and payers trust.
-            </p>
-          </div>
-        </section>
-
         <section className="py-12 bg-muted/20">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-5">
-              UAE-specific market research services
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">Physician and specialist intelligence</h3>
-                <p className="text-sm text-muted-foreground">
-                  We map prescriber behavior, treatment sequencing, and adoption barriers across priority therapeutic
-                  areas by emirate and care setting.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">DHA, DOH, and access pathway research</h3>
-                <p className="text-sm text-muted-foreground">
-                  We identify evidence needs and friction from registration through institutional and insurer uptake.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">Hospital and payer landscape analysis</h3>
-                <p className="text-sm text-muted-foreground">
-                  We assess account readiness, medical policy influence, and procurement behavior to improve activation
-                  sequencing.
-                </p>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground mb-2">Bilingual qualitative and quantitative execution</h3>
-                <p className="text-sm text-muted-foreground">
-                  Arabic–English workflows preserve local nuance while outputs stay aligned for regional and global teams.
-                </p>
-              </article>
-            </div>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              For broader regional programs, see our{' '}
-              <Link to="/market-research" className="text-primary underline">
-                market research services hub
-              </Link>
-              ,{' '}
-              <Link to="/uae-market-access-research" className="text-primary underline">
-                UAE market access research
-              </Link>
-              , and{' '}
-              <Link to="/pharmaceutical-companies-uae" className="text-primary underline">
-                pharmaceutical companies in the UAE
-              </Link>
-              .
-            </p>
-          </div>
-        </section>
-
-        <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto space-y-5">
             <h2 className="text-3xl font-display font-semibold text-foreground">UAE case study patterns we solve</h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -412,37 +404,14 @@ export default function UaePharmaceuticalMarketResearch() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/20">
+        <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
             <h2 className="text-3xl font-display font-semibold text-foreground">
-              Regulatory context: DHA, DOH, and MOHAP
+              Regulatory context: EDE, MOHAP, DHA and DOH
             </h2>
             <p>
-              UAE execution quality depends on aligning federal and emirate regulatory context with market-access and
-              activation planning from the start. Treating DHA, DOH, and MOHAP as interchangeable slows commercialization
-              and wastes fieldwork spend.
+              UAE research has to follow how a product moves through <strong className="text-foreground">four decision layers</strong>. The <strong className="text-foreground">Emirates Drug Establishment (EDE)</strong> took over federal pricing and registration functions from MOHAP under Federal Decree-Law 38/2024, effective December 2025. <strong className="text-foreground">MOHAP</strong> facilities and protocols still matter in the Northern Emirates. The <strong className="text-foreground">Dubai Health Authority (DHA)</strong> sets Dubai formularies and licensing. The <strong className="text-foreground">Department of Health – Abu Dhabi (DOH)</strong> runs Abu Dhabi payer rules, including the Unified Purchasing Program (UPP) from April 2025. BioNixus designs a separate evidence module for each layer, so launch sequencing reflects what regulators, insurers and hospitals actually do.
             </p>
-            <p>
-              BioNixus outputs are decision-ready and execution-ready: stakeholder evidence combined with market structure
-              analysis so UAE plans reflect what hospitals, insurers, and physicians actually do—not generic GCC slides.
-            </p>
-          </div>
-        </section>
-
-        <section className="py-12">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-4">Arabic market context</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Arabic-language moderation and localized terminology controls keep insights precise in high-context healthcare
-              conversations across the Emirates.
-            </p>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <p className="text-foreground leading-relaxed">
-                في دولة الإمارات العربية المتحدة، تعتمد نجاح أبحاث السوق الدوائية على فهم عميق لسلوك مقدمي الرعاية الصحية
-                وآليات الشراء والتأمين ومتطلبات هيئات الصحة في كل إمارة. تقدم BioNixus برامج بحثية ثنائية اللغة تساعد
-                فرق التسويق والوصول إلى السوق على اتخاذ قرارات عملية قابلة للتنفيذ.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -453,10 +422,32 @@ export default function UaePharmaceuticalMarketResearch() {
               {faqItems.map((item) => (
                 <details key={item.question} className="rounded-xl border border-border bg-card p-4">
                   <summary className="cursor-pointer font-semibold text-foreground">{item.question}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                    {item.answer}
+                    {item.question.startsWith('Should I keep IQVIA') ? (
+                      <>
+                        {' '}See{' '}
+                        <Link to="/iqvia-alternative" className="text-primary hover:underline">IQVIA alternative</Link>.
+                      </>
+                    ) : null}
+                  </p>
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-xl font-display font-semibold text-foreground mb-4">Related UAE research</h2>
+            <ul className="space-y-2 text-muted-foreground">
+              <li><Link to="/insights/top-market-research-companies-uae-2026" className="text-primary hover:underline">Top market research company in UAE (2026 ranking)</Link></li>
+              <li><Link to="/pharmaceutical-market-research-dubai" className="text-primary hover:underline">Pharmaceutical market research in Dubai</Link></li>
+              <li><Link to="/iqvia-alternative" className="text-primary hover:underline">BioNixus vs IQVIA: IQVIA alternative</Link></li>
+              <li><Link to="/blog/market-access-research-uae-2026" className="text-primary hover:underline">UAE market access research 2026: EDE, DoH, DHA</Link></li>
+              <li><Link to="/healthcare-market-research-agency-gcc" className="text-primary hover:underline">Healthcare market research agency GCC</Link></li>
+              <li><Link to="/healthcare-market-research/uae" className="text-primary hover:underline">UAE healthcare market research hub</Link></li>
+            </ul>
           </div>
         </section>
 

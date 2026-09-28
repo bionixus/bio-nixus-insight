@@ -86,9 +86,10 @@ export const ONCOLOGY_PREMIUM_CSS = `
   font-family: var(--onco-serif); font-size: clamp(32px, 5vw, 52px); font-weight: 500; line-height: 1.08;
   color: #fff; margin: 0 0 16px; letter-spacing: -.6px; text-shadow: 0 4px 32px rgba(0,0,0,.4);
 }
+.bx-onco .cover-inner > .h1-kicker,
 .bx-onco .cover-title .h1-kicker {
   display: block; font-family: var(--onco-cond); font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
-  color: var(--onco-gold-light); font-weight: 600; margin-bottom: 12px; text-shadow: none;
+  color: var(--onco-gold-light); font-weight: 600; margin: 0 0 12px; text-shadow: none;
 }
 .bx-onco .cover-title em { color: var(--onco-gold-light); font-style: italic; font-weight: 400; }
 .bx-onco .cover-subtitle { font-size: 15.5px; font-weight: 300; line-height: 1.62; color: rgba(255,255,255,.78); max-width: 62ch; margin-bottom: 22px; }

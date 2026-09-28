@@ -84,3 +84,6 @@ for (const pathname of CRITICAL_PATHS) {
 }
 
 console.log('verify-ssr-bundle: all critical routes passed');
+// Homepage SSR starts a background Sanity fetch. A live socket would keep this
+// gate from exiting after every critical route has already rendered.
+process.exit(0);

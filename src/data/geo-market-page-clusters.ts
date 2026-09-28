@@ -28,7 +28,7 @@ export const GEO_MARKET_PAGE_CLUSTERS: Record<string, GeoMarketPageCluster> = {
   },
   uae: {
     countryName: 'United Arab Emirates',
-    globalWebsitesPath: '/healthcare-market-research/uae',
+    globalWebsitesPath: '/uae-pharmaceutical-market-research',
     globalWebsitesLabel: 'UAE pharmaceutical go-to-market blueprint',
     globalRole:
       'Dubai DHA, Abu Dhabi DOH, MOHAP, and Emirates-wide launch sequencing for pharma commercialization teams',
@@ -36,10 +36,6 @@ export const GEO_MARKET_PAGE_CLUSTERS: Record<string, GeoMarketPageCluster> = {
     healthcareMrLabel: 'Pharma market research in the UAE (Dubai & Abu Dhabi)',
     healthcareRole:
       'Emirate-level physician fieldwork, payer interviews, and hospital access studies optimized for UAE execution',
-    healthcareFullNamePath: '/healthcare-market-research/united-arab-emirates',
-    healthcareFullNameLabel: 'United Arab Emirates healthcare market research (federated UAE)',
-    healthcareFullNameRole:
-      'MOHAP, DHA, and DOH jurisdiction mapping with UAE-wide stakeholder sampling for multi-emirate portfolios',
   },
 };
 

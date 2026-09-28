@@ -110,7 +110,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     keyStats: [
       { label: 'Pharma Market Size', value: '$5.2B+ annually' },
       { label: 'Key Regulators', value: 'DOH / MOHAP' },
-      { label: 'BioNixus Projects', value: '40+ completed UAE studies' },
+      { label: 'BioNixus Projects', value: 'Around 70 studies in 2026' },
       { label: 'Healthcare Context', value: 'Multilingual physician workforce' },
     ],
     faqQuestions: [
