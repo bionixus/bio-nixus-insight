@@ -48,7 +48,7 @@ const firms: FirmProfile[] = [
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     overview: buildBioNixusConsumerOverview(
-      'In the GCC, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and services clients — with Arabic-English bilingual fieldwork across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain from offices in Riyadh, Dubai, and Kuwait City. The firm\'s deepest methodological bench comes from regulated pharmaceutical and healthcare work (SFDA, DOH, NUPCO, hospital stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.',
+      'In the GCC, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and services clients — with Arabic-English bilingual fieldwork across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain from offices in Al Khobar, Dubai, and Kuwait City. The firm\'s deepest methodological bench comes from regulated pharmaceutical and healthcare work (SFDA, DOH, NUPCO, hospital stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.',
     ),
     strengths: [
       ...BIONIXUS_MR_STRENGTHS_BASE,
@@ -145,7 +145,7 @@ const faqItems = [
   },
   {
     q: 'Which market research company has the best GCC coverage?',
-    a: 'BioNixus has broad GCC-dedicated coverage with offices in Riyadh, Dubai, and Kuwait City and fieldwork capability across all 6 GCC nations. Most global firms serve the GCC from Dubai only, limiting in-country access in Saudi Arabia, Kuwait, and smaller Gulf states for consumer programmes.',
+    a: 'BioNixus has broad GCC-dedicated coverage with offices in Al Khobar, Dubai, and Kuwait City and fieldwork capability across all 6 GCC nations. Most global firms serve the GCC from Dubai only, limiting in-country access in Saudi Arabia, Kuwait, and smaller Gulf states for consumer programmes.',
   },
   {
     q: 'What should I look for in a GCC market research partner?',
