@@ -117,6 +117,9 @@ export default function CompetitorAlternativePage({ config }: Props) {
         <DirectoryJumpNav
           items={[
             { href: '#who-for', label: 'Who each is for' },
+            ...(config.narrativeSections?.length
+              ? [{ href: '#kingdom-depth', label: 'Saudi depth' }]
+              : []),
             { href: '#compared', label: 'Compared' },
             { href: '#keep', label: 'Keep the feed' },
             { href: '#faq', label: 'FAQ' },
@@ -151,6 +154,29 @@ export default function CompetitorAlternativePage({ config }: Props) {
             </div>
           </div>
         </DirectorySection>
+
+        {config.narrativeSections?.map((section, index) => (
+          <DirectorySection
+            key={section.id}
+            id={index === 0 ? 'kingdom-depth' : section.id}
+            surface={index % 2 === 1 ? 'cream' : undefined}
+            eyebrow={section.eyebrow}
+            title={section.title}
+          >
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+              {section.bullets?.length ? (
+                <ul className="list-disc pl-6 space-y-2 marker:text-primary">
+                  {section.bullets.map((item) => (
+                    <li key={item.slice(0, 48)}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          </DirectorySection>
+        ))}
 
         <DirectorySection
           id="compared"

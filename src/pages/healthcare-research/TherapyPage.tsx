@@ -663,7 +663,13 @@ export default function TherapyPage() {
                       { href: '#respiratory-modules', label: 'Research modules' },
                       { href: '#respiratory-execution', label: 'Launch alignment' },
                     ]
-                  : [];
+                  : area === 'biosimilars'
+                    ? [
+                        { href: '#biosimilars-gcc', label: 'GCC biologics context' },
+                        { href: '#biosimilars-modules', label: 'Research modules' },
+                        { href: '#biosimilars-execution', label: 'Defense & switching' },
+                      ]
+                    : [];
   const heroTitle = isBiologics
     ? 'Biologics market research guide'
     : isImmunology
@@ -1893,6 +1899,105 @@ export default function TherapyPage() {
                 Deliverables emphasise stakeholder segmentation, value-narrative testing, undertreatment analysis, and
                 access-risk maps tied to observable behaviour—outputs brand, medical, and access teams can execute without
                 weeks of reinterpretation across MENA, the UK, and Europe.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'biosimilars' ? (
+        <>
+          <ReportPremiumSection
+            id="biosimilars-gcc"
+            title="GCC biologics and biosimilars: tenders, substitution, and the evidence syndicated data misses"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Biosimilar forecasts fail when national share points are mistaken for{' '}
+                <strong className="font-medium text-foreground">hospital tender outcomes</strong>,{' '}
+                <strong className="font-medium text-foreground">pharmacist substitution authority</strong>, and{' '}
+                <strong className="font-medium text-foreground">SFDA-aligned switching protocols</strong>. In Saudi
+                Arabia and the wider GCC, centralized procurement and EES-driven access expectations compress the window
+                between registration and erosion — research must trace who authorises switches, not only who prefers the
+                originator molecule on a survey scale.
+              </p>
+              <p>
+                BioNixus maps those dynamics with mixed quant and qual modules across Riyadh, Jeddah, Dammam, Abu Dhabi,
+                Dubai, and other priority cells — comparable cores for regional governance, local modules for tender and
+                formulary realism. Pair this guide with{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>
+                , the{' '}
+                <Link to="/market-reports/saudi-arabia-biosimilars-market-report" className="text-primary underline">
+                  Saudi Arabia biosimilars market report
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research/therapy/biologics" className="text-primary underline">
+                  biologics market research
+                </Link>{' '}
+                when portfolios span originator defense and biosimilar launch in the same region.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="biosimilars-modules"
+            title="Modules BioNixus integrates for biosimilars engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Substitution forensics:</strong> pharmacist-led switches, tender
+                  scoring, interchangeability confidence, and adverse-event attribution habits after a switch.
+                </li>
+                <li>
+                  <strong className="text-foreground">Originator defense levers:</strong> device, patient-support,
+                  indication-breadth, and real-world-evidence narratives tested against committee language.
+                </li>
+                <li>
+                  <strong className="text-foreground">Stakeholder weighting:</strong> specialists, hospital pharmacists,
+                  procurement influencers, and nurses who operationalise dosing and monitoring burdens.
+                </li>
+                <li>
+                  <strong className="text-foreground">Access overlay:</strong> budget-impact and HEOR inputs aligned to
+                  SFDA EES and Gulf payer expectations before erosion scenarios are presented to leadership.
+                </li>
+              </ul>
+              <p>
+                Deliverables emphasise erosion scenarios grounded in surveyed behaviour, objection libraries for medical
+                and access teams, and explicit gates for when to invest in defense versus when to pivot to value-based
+                contracting — outputs that survive affiliate, regional, and global governance without reinterpretation.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="biosimilars-execution"
+            title="From biosimilar insight to launch, defense, and LLM-visible evidence summaries"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Biosimilar research earns its budget when it changes{' '}
+                <strong className="font-medium text-foreground">tender timing</strong>,{' '}
+                <strong className="font-medium text-foreground">medical education emphasis</strong>, and{' '}
+                <strong className="font-medium text-foreground">patient-support investment</strong> — not when
+                specialist enthusiasm is mistaken for persistent volume. BioNixus links scenarios to explicit launch and
+                defense gates so affiliates know which markets can absorb field spend before procurement calendars close.
+              </p>
+              <p>
+                Answer-first summaries and structured FAQs on this page are designed so Google, ChatGPT, Claude, and
+                Perplexity can cite how BioNixus approaches GCC biosimilar research — complementing syndicated audit
+                subscriptions rather than replacing them. Request a scoped proposal via the{' '}
+                <Link to="/contact" className="text-primary underline">
+                  contact form
+                </Link>{' '}
+                or explore{' '}
+                <Link to="/iqvia-alternative" className="text-primary underline">
+                  IQVIA alternatives
+                </Link>{' '}
+                when the brief also requires account-level primary data beside audit feeds.
               </p>
             </div>
           </ReportPremiumSection>
