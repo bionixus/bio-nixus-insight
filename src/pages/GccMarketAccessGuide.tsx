@@ -226,7 +226,7 @@ const GccMarketAccessGuide = () => {
               {
                 '@type': 'Question',
                 name: 'How much does GCC market entry cost and how long does it take?',
-                acceptedAnswer: { '@type': 'Answer', text: 'Registration fees are modest relative to the commercial investment; the real costs are the authorised representative or distributor margin, GMP inspection logistics, pricing dossier preparation, and the 12–24 months of pre-revenue time. BioNixus market-entry research programmes for the GCC typically start at USD 20,000 for a single-country payer and distributor assessment and scale to multi-country launch sequencing.' },
+                acceptedAnswer: { '@type': 'Answer', text: 'Registration fees are modest relative to the commercial investment; the real costs are the authorised representative or distributor margin, GMP inspection logistics, pricing dossier preparation, and the 12–24 months of pre-revenue time. Custom research from $10,000 to $60,000 for a single-country payer and distributor assessment or a multi-country launch sequence.' },
               },
               {
                 '@type': 'Question',
@@ -725,7 +725,7 @@ const GccMarketAccessGuide = () => {
                 },
                 {
                   q: 'How much does GCC market entry cost and how long does it take?',
-                  a: 'Registration fees are modest relative to the commercial investment; the real costs are the authorised representative or distributor margin, GMP inspection logistics, pricing dossier preparation, and the 12–24 months of pre-revenue time. BioNixus market-entry research programmes for the GCC typically start at USD 20,000 for a single-country payer and distributor assessment and scale to multi-country launch sequencing.',
+                  a: 'Registration fees are modest relative to the commercial investment; the real costs are the authorised representative or distributor margin, GMP inspection logistics, pricing dossier preparation, and the 12–24 months of pre-revenue time. Custom research from $10,000 to $60,000 for a single-country payer and distributor assessment or a multi-country launch sequence.',
                 },
                 {
                   q: 'How long does pharmaceutical registration take in Saudi Arabia (SFDA)?',

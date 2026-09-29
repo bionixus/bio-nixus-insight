@@ -12,7 +12,7 @@ const faqItems = [
   {
     question: 'How much does healthcare fieldwork in the GCC typically cost?',
     answer:
-      'Cost depends heavily on specialty, geography, and method. A telephone depth-interview study targeting 30 general practitioners across three GCC markets typically runs $35,000–$55,000 all-in. A face-to-face central location test with 50 specialist physicians across all six GCC markets — including role verification, bilingual moderation, audio transcription, and a full QC report — ranges from $80,000 to $120,000. Niche specialties such as haematology or paediatric oncology attract a 25–40% premium over standard therapeutic areas due to lower physician density and longer recruitment windows.',
+      'Cost depends heavily on specialty, geography, and method. A telephone depth-interview study targeting 30 general practitioners across three GCC markets typically runs $10,000 to $60,000 all-in. A face-to-face central location test with 50 specialist physicians across all six GCC markets — including role verification, bilingual moderation, audio transcription, and a full QC report — ranges from $10,000 to $60,000. Niche specialties such as haematology or paediatric oncology stay inside that same range versus standard therapeutic areas due to lower physician density and longer recruitment windows.',
   },
   {
     question: 'How long does a GCC healthcare fieldwork project take from briefing to clean data delivery?',
@@ -296,7 +296,7 @@ export default function HealthcareFieldworkGcc() {
               Healthcare fieldwork costs in GCC vary significantly by method, specialty, geography, and deliverable requirements. The ranges below cover all-in fieldwork costs including recruitment, moderation or survey administration, translation, QC, and deliverable preparation — but exclude analysis and reporting, which is typically scoped separately.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong className="text-foreground">Telephone depth interviews, 30 HCPs, 2–3 GCC markets, primary care:</strong> $35,000–$55,000. <strong className="text-foreground">Online quantitative survey, 100 HCPs, pan-GCC, common specialty:</strong> $45,000–$70,000. <strong className="text-foreground">F2F depth interviews, 40–50 HCPs, 4 GCC markets, specialist:</strong> $70,000–$100,000. <strong className="text-foreground">Full pan-GCC F2F specialist study, 50–70 HCPs, 6 markets, niche specialty:</strong> $90,000–$120,000. <strong className="text-foreground">CLT with physician concept testing, 30–40 HCPs, 2 markets:</strong> $60,000–$90,000.
+              <strong className="text-foreground">Telephone depth interviews, 30 HCPs, 2–3 GCC markets, primary care:</strong> $10,000 to $60,000. <strong className="text-foreground">Online quantitative survey, 100 HCPs, pan-GCC, common specialty:</strong> $10,000 to $60,000. <strong className="text-foreground">F2F depth interviews, 40–50 HCPs, 4 GCC markets, specialist:</strong> $10,000 to $60,000. <strong className="text-foreground">Full pan-GCC F2F specialist study, 50–70 HCPs, 6 markets, niche specialty:</strong> $10,000 to $60,000. <strong className="text-foreground">CLT with physician concept testing, 30–40 HCPs, 2 markets:</strong> $10,000 to $60,000.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Specialty premiums apply for haematology, paediatric oncology, infectious disease specialists, and rare disease experts — typically adding 25–40% to the base recruitment cost. Payer-only studies carry a further premium due to access complexity.
@@ -327,7 +327,7 @@ export default function HealthcareFieldworkGcc() {
             },
             {
               label: 'Cost range',
-              value: '$35k–$120k',
+              value: '$10k–$60k',
               detail: 'All-in fieldwork cost for GCC HCP studies depending on method, specialty, and geography.',
             },
           ]}

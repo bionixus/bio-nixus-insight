@@ -24,7 +24,7 @@ export const turkeyPharmaEn: CountryListicleConfig = {
   ogLocale: 'en_TR',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-28',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in Turkey (2026 Guide)',
   heroIntro:
@@ -279,7 +279,7 @@ export const turkeyPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Turkey?',
       answer:
-        'Custom pharmaceutical primary research in Turkey typically runs from around $20,000 for a focused qualitative study to $65,000 or more for multi-stakeholder programmes combining prescriber, payer and health economics work. Cost is driven mainly by sample difficulty rather than sample size: Turkey\'s large physician base makes quantitative prescriber fieldwork comparatively efficient, while interviews with SGK-facing payer stakeholders and reimbursement decision-influencers cost substantially more per completed interview. Turkish-language instrument development, moderation and transcript-level analysis should be budgeted as standard rather than treated as an optional extra.',
+        'Custom pharmaceutical primary research in Turkey is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining prescriber, payer and health economics work. Cost is driven mainly by sample difficulty rather than sample size: Turkey\'s large physician base makes quantitative prescriber fieldwork comparatively efficient, while interviews with SGK-facing payer stakeholders and reimbursement decision-influencers cost substantially more per completed interview. Turkish-language instrument development, moderation and transcript-level analysis should be budgeted as standard rather than treated as an optional extra.',
     },
     {
       question: 'What is TİTCK and how does it affect market research design?',

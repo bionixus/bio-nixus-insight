@@ -109,7 +109,7 @@ const faqItems = [
   },
   {
     q: 'How much does market research cost in Egypt?',
-    a: 'Custom consumer and general market research in Egypt typically ranges from $15,000 to $50,000 per project depending on scope, methodology, sample size, and geography. Syndicated reports range from $2,000–$10,000. Multi-city programmes across Cairo, Alexandria, and Upper Egypt sit toward the higher end of custom budgets.',
+    a: 'Custom consumer and general market research in Egypt typically ranges from $10,000 to $60,000 per project depending on scope, methodology, sample size, and geography. Multi-city programmes across Cairo, Alexandria, and Upper Egypt sit toward the higher end of custom budgets.',
   },
   {
     q: 'Why does regulated-industry experience matter for consumer research?',
@@ -182,7 +182,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
       'Independent guide to the leading market research companies in Egypt for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Egypt expertise.',
     url: CANONICAL,
     datePublished: '2026-04-18',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

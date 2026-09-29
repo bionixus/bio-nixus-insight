@@ -137,7 +137,7 @@ const faqItems = [
   },
   {
     q: 'How much does healthcare market research cost in Kuwait?',
-    a: 'Custom healthcare market research in Kuwait typically ranges from $18,000 to $60,000 per project depending on scope, methodology, therapeutic area, and respondent type. Kuwait\'s relatively small but highly concentrated HCP population (most specialists are in MOH hospitals in Kuwait City) can simplify recruitment logistics but may limit sample sizes. Multi-country GCC programmes including Kuwait typically start at $40,000+. Kuwait-only specialist surveys tend to be cost-efficient due to geographic concentration. Syndicated reports from Euromonitor range from $3,000–$12,000 for Kuwait-specific data.',
+    a: 'Custom healthcare market research in Kuwait typically ranges from $10,000 to $60,000 per project depending on scope, methodology, therapeutic area, and respondent type. Kuwait\'s relatively small but highly concentrated HCP population (most specialists are in MOH hospitals in Kuwait City) can simplify recruitment logistics but may limit sample sizes. Multi-country GCC programmes including Kuwait are scoped inside custom research from $10,000 to $60,000. Kuwait-only specialist surveys tend to be cost-efficient due to geographic concentration. Syndicated reports from Euromonitor range from $3,000–$12,000 for Kuwait-specific data.',
   },
   {
     q: 'Which firm is best for KOL mapping in Kuwait?',
@@ -222,7 +222,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Kuwait for 2026. Covers MOH Kuwait-aware firms, Kuwait Drug Committee (KDC), KOL mapping, government formulary research, and how to evaluate a research partner for Kuwait.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-08-14',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

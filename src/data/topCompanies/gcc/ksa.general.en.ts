@@ -19,7 +19,7 @@ export const ksaGeneralEn: CountryListicleConfig = {
   inLanguage: 'en',
 
   datePublished: '2026-06-12',
-  dateModified: '2026-06-12',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
 
   h1: 'Best Market Research Companies in Saudi Arabia (2026 Guide)',
@@ -217,7 +217,7 @@ export const ksaGeneralEn: CountryListicleConfig = {
     {
       question: 'How much does market research cost in Saudi Arabia?',
       answer:
-        'Custom market research in Saudi Arabia typically ranges from $20,000 to $70,000 per project depending on scope, methodology, and sector. Pharmaceutical and healthcare studies involving physician recruitment tend to be at the higher end. Syndicated reports start from around $2,500. Riyadh-based projects often require higher participant incentives than other GCC markets.',
+        'Custom market research in Saudi Arabia typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Pharmaceutical and healthcare studies involving physician recruitment tend to be at the higher end. Riyadh-based projects often require higher participant incentives than other GCC markets.',
     },
     {
       question: 'Which market research company is best for healthcare research in Saudi Arabia?',

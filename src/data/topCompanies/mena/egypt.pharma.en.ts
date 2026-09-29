@@ -24,7 +24,7 @@ export const egyptPharmaEn: CountryListicleConfig = {
   ogLocale: 'en_EG',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-28',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in Egypt (2026 Guide)',
   heroIntro:
@@ -279,7 +279,7 @@ export const egyptPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Egypt?',
       answer:
-        'Custom pharmaceutical primary research in Egypt typically runs from around $20,000 for a focused qualitative study to $60,000 or more for multi-stakeholder programmes combining prescriber, payer and procurement research. Egypt\'s very large physician base makes quantitative fieldwork comparatively economical per completed interview, so cost is driven less by sample size than by sample difficulty and reach: interviews with UHI and MOHP formulary decision-makers, or specialist recruitment outside Greater Cairo across the Delta and Upper Egypt, cost substantially more than accessible Cairo private-sector respondents. Syndicated reports and pipeline databases are cheaper but answer a different question.',
+        'Custom pharmaceutical primary research in Egypt is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining prescriber, payer and procurement research. Egypt\'s very large physician base makes quantitative fieldwork comparatively economical per completed interview, so cost is driven less by sample size than by sample difficulty and reach: interviews with UHI and MOHP formulary decision-makers, or specialist recruitment outside Greater Cairo across the Delta and Upper Egypt, cost substantially more than accessible Cairo private-sector respondents. Syndicated reports and pipeline databases are cheaper but answer a different question.',
     },
     {
       question: 'How does EDA registration and pricing affect market research design?',

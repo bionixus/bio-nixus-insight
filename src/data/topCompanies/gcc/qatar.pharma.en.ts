@@ -24,7 +24,7 @@ export const qatarPharmaEn: CountryListicleConfig = {
   ogLocale: 'en_QA',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-28',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in Qatar (2026 Guide)',
   heroIntro:
@@ -284,7 +284,7 @@ export const qatarPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Qatar?',
       answer:
-        'Custom pharmaceutical primary research in Qatar typically runs from around $20,000 for a focused qualitative study to $70,000 or more for multi-stakeholder programmes combining prescriber, formulary and pricing research. Cost per completed interview in Qatar is high relative to larger markets for a specific reason: the addressable universe is very small, so recruitment is a relationship exercise rather than a panel exercise, and interviews with HMC formulary and pharmacy leadership or senior therapy-area specialists command a substantial premium over private-sector general practitioners. Small absolute market size does not translate into cheap research. Syndicated reports and pipeline databases are far cheaper but answer different questions.',
+        'Custom pharmaceutical primary research in Qatar is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining prescriber, formulary and pricing research. Cost per completed interview in Qatar is high relative to larger markets for a specific reason: the addressable universe is very small, so recruitment is a relationship exercise rather than a panel exercise, and interviews with HMC formulary and pharmacy leadership or senior therapy-area specialists command a substantial premium over private-sector general practitioners. Small absolute market size does not translate into cheap research. Syndicated reports and pipeline databases are far cheaper but answer different questions.',
     },
     {
       question: 'Why do HMC formulary decisions matter so much in Qatar?',

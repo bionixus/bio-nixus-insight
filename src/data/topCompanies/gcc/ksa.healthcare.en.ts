@@ -28,7 +28,7 @@ export const ksaHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_SA',
   inLanguage: 'en',
   datePublished: '2026-06-12',
-  dateModified: '2026-06-12',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Guide',
   h1: 'Best Healthcare Market Research Companies in Saudi Arabia (2026 Guide)',
   heroIntro:
@@ -227,7 +227,7 @@ export const ksaHealthcareEn: CountryListicleConfig = {
     {
       question: 'How much does healthcare market research cost in Saudi Arabia?',
       answer:
-        'Custom healthcare market research in Saudi Arabia typically ranges from $25,000 to $80,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with tertiary hospital recruitment typically range from $30,000 to $60,000. HEOR and pharmacoeconomic modelling studies are generally higher, reflecting the specialised analytical inputs required. Patient journey and consumer health studies tend toward the lower end of the range. Syndicated healthcare reports start from approximately $3,000.',
+        'Custom healthcare market research in Saudi Arabia typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with tertiary hospital recruitment typically range from $10,000 to $60,000. HEOR and pharmacoeconomic modelling studies are generally higher, reflecting the specialised analytical inputs required. Patient journey and consumer health studies tend toward the lower end of the range.',
     },
     {
       question: 'What is SFDA and why does it matter for healthcare market research?',

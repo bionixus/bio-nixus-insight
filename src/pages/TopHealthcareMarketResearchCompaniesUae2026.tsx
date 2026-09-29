@@ -144,7 +144,7 @@ const faqItems = [
   },
   {
     q: 'What is the cost of healthcare market research in the UAE?',
-    a: 'Custom healthcare market research in the UAE typically ranges from $20,000 to $75,000 per project depending on scope, methodology, therapeutic area, and respondent type. Specialist physician surveys and KOL mapping programmes in oncology or rare diseases cost more due to limited respondent pools. Multi-emirate UAE studies (covering Dubai, Abu Dhabi, and Northern Emirates) typically add 20–30% to costs versus single-emirate programmes. Syndicated reports start from approximately $2,500. Dubai\'s premium research environment and multilingual fieldwork requirements can increase project costs compared to single-language, single-market studies.',
+    a: 'Custom healthcare market research in the UAE typically ranges from $10,000 to $60,000 per project depending on scope, methodology, therapeutic area, and respondent type. Specialist physician surveys and KOL mapping programmes in oncology or rare diseases cost more due to limited respondent pools. Multi-emirate UAE studies (covering Dubai, Abu Dhabi, and Northern Emirates) stay inside that same range versus single-emirate programmes. Dubai\'s premium research environment and multilingual fieldwork requirements can increase project costs compared to single-language, single-market studies.',
   },
   {
     q: 'Which research firm is best for MOHAP-compliant HCP research across the UAE?',
@@ -227,7 +227,7 @@ export default function TopHealthcareMarketResearchCompaniesUae2026() {
       'Expert guide to the leading healthcare and pharmaceutical market research companies in the UAE for 2026. Covers MOHAP/DHA/DOH-aware research firms, KOL mapping across all seven emirates, UAE payer dynamics, and how to evaluate a research partner for the UAE.',
     url: CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-08-31',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

@@ -137,7 +137,7 @@ const faqItems = [
   },
   {
     q: 'How much does global healthcare market research cost?',
-    a: 'Custom global healthcare market research typically costs $30,000–$150,000+ per project depending on scope, geography, methodology, and therapeutic complexity. Multi-country studies involving 5+ markets and mixed methods sit at the higher end. Syndicated data subscriptions from providers like IQVIA range from $10,000–$200,000+ annually depending on modules.',
+    a: 'Custom global healthcare market research typically costs $10,000 to $60,000 per project depending on scope, geography, methodology, and therapeutic complexity. Multi-country studies involving 5+ markets and mixed methods sit at the higher end. Syndicated data subscriptions from providers like IQVIA range from $10,000–$200,000+ annually depending on modules.',
   },
   {
     q: 'What is the difference between healthcare market research and pharmaceutical consulting?',
@@ -193,7 +193,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
       'Independent 2026 guide ranking the top global healthcare market research companies — pharmaceutical analytics, strategy consulting, and primary research firms compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

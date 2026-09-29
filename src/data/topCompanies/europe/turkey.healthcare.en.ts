@@ -17,7 +17,7 @@ export const turkeyHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_TR',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Turkey (2026 Guide)',
   heroIntro:
@@ -210,7 +210,7 @@ export const turkeyHealthcareEn: CountryListicleConfig = {
     },
     {
       question: 'How much does healthcare market research cost in Turkey?',
-      answer: 'Custom healthcare market research in Turkey typically ranges from $12,000 to $55,000 per project depending on methodology, therapeutic area, and scope. Qualitative KOL advisory boards typically cost $15,000–$35,000, while large-scale quantitative physician surveys or HEOR studies may reach $35,000–$70,000+. SGK-aligned market access evidence research varies in cost based on complexity and the scope of payer stakeholder engagement required.',
+      answer: 'Custom healthcare market research in Turkey typically ranges from $10,000 to $60,000 per project depending on methodology, therapeutic area, and scope. Qualitative KOL advisory boards typically cost $10,000 to $60,000, while large-scale quantitative physician surveys or HEOR studies may reach $10,000 to $60,000. SGK-aligned market access evidence research varies in cost based on complexity and the scope of payer stakeholder engagement required.',
     },
     {
       question: 'Which company is best for TITCK/SGK regulatory and payer research in Turkey?',

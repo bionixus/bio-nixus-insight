@@ -17,7 +17,7 @@ export const senegalGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_SN',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Senegal (2026 Guide)',
   heroIntro:
@@ -217,7 +217,7 @@ export const senegalGeneralEn: CountryListicleConfig = {
     {
       question: 'How much does market research cost in Senegal?',
       answer:
-        'Custom market research in Senegal typically ranges from $14,000 to $50,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment or regulatory intelligence tend to cost more than consumer research. Syndicated Senegal country reports start from around $2,500.',
+        'Custom market research in Senegal typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment or regulatory intelligence tend to cost more than consumer research.',
     },
     {
       question: 'Which market research company is best for healthcare research in Senegal?',

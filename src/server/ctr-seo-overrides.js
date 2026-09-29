@@ -437,9 +437,9 @@ export const CTR_SEO_BY_PATH = {
       'NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap.',
   },
   '/pricing': {
-    title: 'Market Research Pricing | $10k–$75k Country (2026)',
+    title: 'Custom Research from $10,000 to $60,000 | BioNixus',
     description:
-      'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.',
+      'Custom research from $10,000 to $60,000. BioNixus prices pharma and healthcare primary studies by project. No syndicated report fee. Proposal in 48 hours.',
   },
   '/account-level-market-research': {
     title: 'What Is Account-Level Market Research Data?',

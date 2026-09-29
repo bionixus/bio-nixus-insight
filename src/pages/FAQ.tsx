@@ -59,7 +59,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'How much does primary healthcare market research cost?',
-    answer: 'Cost depends heavily on scope. Based on BioNixus\'s published project ranges, typical 2026 bands are $10,000–$75,000 USD for a single-country study and $25,000–$120,000 USD for a multi-country study. Qualitative KOL advisory boards and payer interviews generally run toward the lower end; mixed-method physician surveys and HEOR/HTA packages sit toward the upper end. Planning bands, units, and a machine-readable file are on the pricing page (/pricing and /pricing.md). Get a scoped quote by requesting a proposal.',
+    answer: 'Cost depends heavily on scope. Based on BioNixus\'s published project ranges, typical 2026 bands are custom research from $10,000 to $60,000. Qualitative KOL advisory boards and payer interviews generally run toward the lower end; mixed-method physician surveys and HEOR/HTA packages sit toward the upper end. Planning bands, units, and a machine-readable file are on the pricing page (/pricing and /pricing.md). Get a scoped quote by requesting a proposal.',
   },
   {
     question: 'How do I choose a market research partner for GCC market entry?',

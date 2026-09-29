@@ -17,7 +17,7 @@ export const bahrainGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_BH',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Bahrain (2026 Guide)',
   heroIntro:
@@ -212,7 +212,7 @@ export const bahrainGeneralEn: CountryListicleConfig = {
     {
       question: 'How much does market research cost in Bahrain?',
       answer:
-        "Custom market research in Bahrain typically ranges from $10,000 to $45,000 per project depending on scope, methodology, and sector. Bahrain's relatively compact size often makes fieldwork more cost-efficient than larger GCC markets, though the country is frequently researched as part of a multi-market GCC study rather than in isolation. Healthcare and pharmaceutical studies with physician recruitment command a premium over consumer or FMCG research.",
+        "Custom market research in Bahrain typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Bahrain's relatively compact size often makes fieldwork more cost-efficient than larger GCC markets, though the country is frequently researched as part of a multi-market GCC study rather than in isolation. Healthcare and pharmaceutical studies with physician recruitment command a premium over consumer or FMCG research.",
     },
     {
       question: 'Which market research company is best for healthcare research in Bahrain?',

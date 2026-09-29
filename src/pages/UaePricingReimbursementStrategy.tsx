@@ -41,7 +41,7 @@ const faqItems = [
   {
     question: 'What does a payer primary research programme for UAE look like and how much does it cost?',
     answer:
-      'A full UAE payer research and value story development programme typically runs 10–14 weeks and costs between $50,000 and $140,000 depending on scope. A standard programme includes: payer landscape mapping (desk research plus 8–12 qualitative interviews with DHA, DOH, Daman, and private insurer medical directors — approximately $20,000–$35,000); willingness-to-pay research using validated conjoint or threshold-technique instruments with 20–30 payer-adjacent respondents ($15,000–$30,000); a KOL and payer advisory board workshop bringing together 8–10 specialists and payer representatives to pressure-test the value proposition ($15,000–$25,000); and value story and access dossier development synthesising all evidence into a submission-ready package ($10,000–$20,000). BioNixus delivers this as an integrated programme with a dedicated UAE project manager and Arabic-language capability for payer interviews where needed.',
+      'A full UAE payer research and value story development programme typically runs 10–14 weeks and costs $10,000 to $60,000 depending on scope. A standard programme includes: payer landscape mapping (desk research plus 8–12 qualitative interviews with DHA, DOH, Daman, and private insurer medical directors — approximately $10,000 to $60,000); willingness-to-pay research using validated conjoint or threshold-technique instruments with 20–30 payer-adjacent respondents ($10,000 to $60,000); a KOL and payer advisory board workshop bringing together 8–10 specialists and payer representatives to pressure-test the value proposition ($10,000 to $60,000); and value story and access dossier development synthesising all evidence into a submission-ready package ($10,000 to $60,000). BioNixus delivers this as an integrated programme with a dedicated UAE project manager and Arabic-language capability for payer interviews where needed.',
   },
 ];
 
@@ -280,14 +280,14 @@ export default function UaePricingReimbursementStrategy() {
                 Cost ranges and timeline
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                A full UAE payer research and value story development programme costs between <strong>$50,000 and $140,000</strong> and runs over <strong>10–14 weeks</strong>, depending on the scope of primary research, number of payer segments, and depth of health-economic modelling support required.
+                A full UAE payer research and value story development programme costs <strong>$10,000 to $60,000</strong> and runs over <strong>10–14 weeks</strong>, depending on the scope of primary research, number of payer segments, and depth of health-economic modelling support required.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground leading-relaxed">
-                <li>Payer landscape mapping (8–12 qualitative interviews): $20,000–$35,000 / 4–5 weeks</li>
-                <li>Willingness-to-pay quantitative study (20–30 respondents): $15,000–$30,000 / 3–5 weeks</li>
-                <li>KOL and payer advisory board (8–10 participants): $15,000–$25,000 / 3–4 weeks</li>
-                <li>Value story brief and access readiness assessment: $10,000–$20,000 / 2–3 weeks</li>
-                <li>Health-economic modelling inputs and BIM calibration support: $10,000–$30,000 / 3–5 weeks</li>
+                <li>Payer landscape mapping (8–12 qualitative interviews): $10,000 to $60,000 / 4–5 weeks</li>
+                <li>Willingness-to-pay quantitative study (20–30 respondents): $10,000 to $60,000 / 3–5 weeks</li>
+                <li>KOL and payer advisory board (8–10 participants): $10,000 to $60,000 / 3–4 weeks</li>
+                <li>Value story brief and access readiness assessment: $10,000 to $60,000 / 2–3 weeks</li>
+                <li>Health-economic modelling inputs and BIM calibration support: $10,000 to $60,000 / 3–5 weeks</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Modules can be commissioned independently or as an integrated programme with shared project management and cross-module synthesis. BioNixus provides fixed-fee pricing for defined scope programmes; variable-scope programmes are costed on a time-and-materials basis with agreed milestone reviews.
@@ -309,7 +309,7 @@ export default function UaePricingReimbursementStrategy() {
                 </article>
                 <article className="rounded-lg border border-border bg-card p-3">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">Programme cost range</p>
-                  <p className="text-xl font-semibold text-foreground">$50K–$140K</p>
+                  <p className="text-xl font-semibold text-foreground">$10k–$60k</p>
                   <p className="text-xs text-muted-foreground mt-1">Full payer research, value story, and access readiness assessment. Modular commissioning available.</p>
                 </article>
               </div>

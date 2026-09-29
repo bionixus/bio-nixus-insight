@@ -17,7 +17,7 @@ export const southAfricaGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_ZA',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in South Africa (2026 Guide)',
   heroIntro:
@@ -209,7 +209,7 @@ export const southAfricaGeneralEn: CountryListicleConfig = {
     },
     {
       question: 'How much does market research cost in South Africa?',
-      answer: 'Custom market research in South Africa typically ranges from $12,000 to $50,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Multilingual fieldwork across multiple languages and provinces adds complexity and cost. Syndicated reports start from around $2,000.',
+      answer: 'Custom market research in South Africa typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Multilingual fieldwork across multiple languages and provinces adds complexity and cost.',
     },
     {
       question: 'Which market research company is best for healthcare research in South Africa?',

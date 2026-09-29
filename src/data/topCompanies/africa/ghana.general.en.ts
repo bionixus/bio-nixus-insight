@@ -17,7 +17,7 @@ export const ghanaGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_GH',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Ghana (2026 Guide)',
   heroIntro:
@@ -209,7 +209,7 @@ export const ghanaGeneralEn: CountryListicleConfig = {
     },
     {
       question: 'How much does market research cost in Ghana?',
-      answer: 'Custom market research in Ghana typically ranges from $10,000 to $45,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Syndicated reports start from around $2,500.',
+      answer: 'Custom market research in Ghana typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research.',
     },
     {
       question: 'Which market research company is best for healthcare research in Ghana?',

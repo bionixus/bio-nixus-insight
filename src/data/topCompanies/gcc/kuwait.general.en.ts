@@ -18,7 +18,7 @@ export const kuwaitGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_KW',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Kuwait (2026 Guide)',
   heroIntro:
@@ -216,7 +216,7 @@ export const kuwaitGeneralEn: CountryListicleConfig = {
     },
     {
       question: 'How much does market research cost in Kuwait?',
-      answer: 'Custom market research in Kuwait typically ranges from $15,000 to $55,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Syndicated reports start from around $2,500. Qualitative B2B research for Vision 2035 sector-entry assessments typically ranges from $18,000 to $35,000.',
+      answer: 'Custom market research in Kuwait typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Qualitative B2B research for Vision 2035 sector-entry assessments typically ranges from $10,000 to $60,000.',
     },
     {
       question: 'Which market research company is best for healthcare research in Kuwait?',

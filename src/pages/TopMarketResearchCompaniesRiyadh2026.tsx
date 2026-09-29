@@ -125,7 +125,7 @@ const faqItems = [
   },
   {
     q: 'How much does market research cost in Riyadh?',
-    a: 'Custom consumer and general market research in Riyadh typically ranges from $15,000 to $60,000 per project depending on scope, methodology, sample size, and geography. Syndicated reports range from $2,000–$10,000. Multi-segment programmes across Riyadh and other Saudi cities sit toward the higher end of custom budgets.',
+    a: 'Custom consumer and general market research in Riyadh typically ranges from $10,000 to $60,000 per project depending on scope, methodology, sample size, and geography. Multi-segment programmes across Riyadh and other Saudi cities sit toward the higher end of custom budgets.',
   },
   {
     q: 'Why does regulated-industry experience matter for consumer research?',
@@ -189,7 +189,7 @@ export default function TopMarketResearchCompaniesRiyadh2026() {
       'Independent guide to the leading market research companies in Riyadh for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Saudi field depth.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-06-09',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

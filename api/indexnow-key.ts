@@ -668,6 +668,12 @@ async function handleSsrRequest(
   let url: string;
   if (normalizedRewrittenPath) {
     const publicPath = buildPublicPathAndQuery(normalizedRewrittenPath.split('#')[0]);
+    const uaeAliasPath = (publicPath.split('?')[0] || '/').replace(/\/+$/, '') || '/';
+    if (uaeAliasPath === '/uae') {
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.redirect(301, '/healthcare-market-research/uae');
+      return;
+    }
     const cr = canonicalRedirectTarget(publicPath);
     if (cr.changed) {
       res.setHeader('Cache-Control', 'public, max-age=3600');
@@ -743,6 +749,7 @@ async function handleSsrRequest(
   const cdnCache = notFound ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL;
   res.setHeader('CDN-Cache-Control', cdnCache);
   res.setHeader('Vercel-CDN-Cache-Control', cdnCache);
+  if (notFound) res.setHeader('X-Robots-Tag', 'noindex, nofollow');
   res.status(notFound ? 404 : 200).send(page);
 }
 

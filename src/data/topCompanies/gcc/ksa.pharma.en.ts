@@ -24,7 +24,7 @@ export const ksaPharmaEn: CountryListicleConfig = {
   ogLocale: 'en_SA',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-28',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in Saudi Arabia (2026 Guide)',
   heroIntro:
@@ -279,7 +279,7 @@ export const ksaPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Saudi Arabia?',
       answer:
-        'Custom pharmaceutical primary research in Saudi Arabia typically runs from around $20,000 for a focused qualitative study to $70,000 or more for multi-stakeholder programmes combining prescriber, payer and procurement research. Cost is driven mainly by sample difficulty: interviews with formulary and NUPCO-facing decision-makers, or with specialists in MOH and military hospital networks, cost substantially more per completed interview than private-sector general practitioners. Syndicated reports and pipeline databases are much cheaper but answer different questions.',
+        'Custom pharmaceutical primary research in Saudi Arabia is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining prescriber, payer and procurement research. Cost is driven mainly by sample difficulty: interviews with formulary and NUPCO-facing decision-makers, or with specialists in MOH and military hospital networks, cost substantially more per completed interview than private-sector general practitioners. Syndicated reports and pipeline databases are much cheaper but answer different questions.',
     },
     {
       question: 'How does SFDA drug registration affect market research design?',

@@ -17,7 +17,7 @@ export const nigeriaGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_NG',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Nigeria (2026 Guide)',
   heroIntro:
@@ -209,7 +209,7 @@ export const nigeriaGeneralEn: CountryListicleConfig = {
     },
     {
       question: 'How much does market research cost in Nigeria?',
-      answer: 'Custom market research in Nigeria typically ranges from $10,000 to $45,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Nationally representative fieldwork covering multiple geopolitical zones adds operational complexity and cost. Syndicated reports start from around $2,000.',
+      answer: 'Custom market research in Nigeria typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more than consumer research. Nationally representative fieldwork covering multiple geopolitical zones adds operational complexity and cost.',
     },
     {
       question: 'Which market research company is best for healthcare research in Nigeria?',

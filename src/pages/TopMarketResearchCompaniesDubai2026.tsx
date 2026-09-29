@@ -125,7 +125,7 @@ const faqItems = [
   },
   {
     q: 'How much does market research cost in Dubai?',
-    a: 'Custom consumer and general market research in Dubai typically ranges from $20,000 to $60,000 per project depending on scope, methodology, sample size, and multilingual requirements. Syndicated reports range from $2,000–$10,000. Multi-segment programmes across Dubai\'s diverse expatriate and Emirati audiences sit toward the higher end of custom budgets.',
+    a: 'Custom consumer and general market research in Dubai typically ranges from $10,000 to $60,000 per project depending on scope, methodology, sample size, and multilingual requirements. Multi-segment programmes across Dubai\'s diverse expatriate and Emirati audiences sit toward the higher end of custom budgets.',
   },
   {
     q: 'Why does regulated-industry experience matter for consumer research?',
@@ -189,7 +189,7 @@ export default function TopMarketResearchCompaniesDubai2026() {
       'Independent guide to the leading market research companies in Dubai for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Dubai expertise.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-06-09',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

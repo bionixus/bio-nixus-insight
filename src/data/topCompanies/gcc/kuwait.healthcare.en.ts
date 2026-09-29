@@ -17,7 +17,7 @@ export const kuwaitHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_KW',
   inLanguage: 'en',
   datePublished: '2026-06-12',
-  dateModified: '2026-06-12',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Guide',
   h1: 'Best Healthcare Market Research Companies in Kuwait (2026 Guide)',
   heroIntro:
@@ -212,7 +212,7 @@ export const kuwaitHealthcareEn: CountryListicleConfig = {
     {
       question: 'How much does healthcare market research cost in Kuwait?',
       answer:
-        'Custom healthcare market research in Kuwait typically ranges from $22,000 to $70,000 per project depending on scope, methodology, and sample requirements. Physician surveys with specialist HCP recruitment at MOH hospitals tend to be at the higher end of this range. KOL mapping engagements and payer research studies average $25,000–$45,000. HEOR and pharmacoeconomic studies with Kuwait-specific modelling typically start from $30,000. Syndicated country reports from providers like Euromonitor start from approximately $2,500.',
+        'Custom healthcare market research in Kuwait typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys with specialist HCP recruitment at MOH hospitals tend to be at the higher end of this range. KOL mapping engagements and payer research studies average $10,000 to $60,000. HEOR and pharmacoeconomic studies with Kuwait-specific modelling are scoped inside custom research from $10,000 to $60,000. Syndicated country reports from providers like Euromonitor start from approximately $2,500.',
     },
     {
       question: 'What is MOH Kuwait\'s role in pharmaceutical regulation?',

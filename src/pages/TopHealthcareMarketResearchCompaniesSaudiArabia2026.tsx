@@ -139,7 +139,7 @@ const faqItems = [
   },
   {
     q: 'How much does healthcare market research cost in Saudi Arabia?',
-    a: 'Custom healthcare market research in Saudi Arabia typically ranges from $20,000 to $75,000 per project, depending on scope, methodology, therapeutic area complexity, and respondent type. Physician surveys and KOL mapping programmes in specialist therapy areas (oncology, rare diseases, immunology) tend to cost more due to recruitment complexity. Multi-country GCC programmes including Saudi Arabia typically start at $45,000+. Syndicated reports from Euromonitor range from $3,000–$15,000.',
+    a: 'Custom healthcare market research in Saudi Arabia typically ranges from $10,000 to $60,000 per project, depending on scope, methodology, therapeutic area complexity, and respondent type. Physician surveys and KOL mapping programmes in specialist therapy areas (oncology, rare diseases, immunology) tend to cost more due to recruitment complexity. Multi-country GCC programmes including Saudi Arabia are scoped inside custom research from $10,000 to $60,000. Syndicated reports from Euromonitor range from $3,000–$15,000.',
   },
   {
     q: 'What is Vision 2030\'s impact on healthcare market research in Saudi Arabia?',
@@ -218,7 +218,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Saudi Arabia for 2026. Covers SFDA-aware research firms, KOL mapping, NUPCO procurement intelligence, Vision 2030 healthcare context, and how to evaluate a research partner for the Kingdom.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-08-14',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

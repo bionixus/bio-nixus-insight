@@ -166,7 +166,7 @@ const faqItems = [
   },
   {
     q: 'How much does healthcare market research cost in Turkey?',
-    a: 'Custom healthcare market research in Turkey typically ranges from USD 20,000 to USD 70,000 per project depending on scope, methodology, therapeutic area, and respondent type. Specialist physician surveys at leading Turkish university hospitals and KOL mapping programmes cost more due to limited respondent availability and ethics-committee approval timelines. Full mixed-method programs (HCP surveys + payer depth interviews + advisory board) typically range from USD 45,000 to USD 100,000. Ethics-committee approval requirements add time and rigour compared to non-compliant alternatives, and no precise industry-wide benchmark exists — costs vary materially by therapeutic area and fieldwork complexity.',
+    a: 'Custom research from $10,000 to $60,000 per project depending on scope, methodology, therapeutic area, and respondent type. Specialist physician surveys at leading Turkish university hospitals and KOL mapping programmes sit toward the top of that range due to limited respondent availability and ethics-committee approval timelines. Full mixed-method programs (HCP surveys + payer depth interviews + advisory board) are scoped inside that same range. Ethics-committee approval requirements add time and rigour compared to non-compliant alternatives, and no precise industry-wide benchmark exists — costs vary materially by therapeutic area and fieldwork complexity.',
   },
   {
     q: 'Is BioNixus ethics-committee-compliant for HCP research in Turkey?',

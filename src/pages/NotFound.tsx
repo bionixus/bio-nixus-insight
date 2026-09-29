@@ -20,6 +20,7 @@ const NotFound = () => {
     <>
       <Helmet>
         <title>404 - {(t as any).notFound?.message || 'Page Not Found'} | BioNixus</title>
+        <meta name="robots" content="noindex, nofollow" />
         <meta name="prerender-status" content="404" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background" data-route-status="404">

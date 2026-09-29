@@ -21,7 +21,7 @@ export const uaeGeneralEn: CountryListicleConfig = {
   inLanguage: 'en',
 
   datePublished: '2026-06-12',
-  dateModified: '2026-09-01',
+  dateModified: '2026-09-28',
   badge: '2026 Industry Guide',
 
   h1: 'Market Research Firms in the UAE (2026 Rankings)',
@@ -219,7 +219,7 @@ export const uaeGeneralEn: CountryListicleConfig = {
     {
       question: 'How much does market research cost in the UAE?',
       answer:
-        'Custom market research in the UAE typically ranges from $18,000 to $65,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more. Syndicated reports start from around $2,500. Dubai-based projects often carry a price premium due to participant incentive expectations.',
+        'Custom market research in the UAE typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sector. Healthcare and pharmaceutical studies with physician recruitment tend to cost more. Dubai-based projects often carry a price premium due to participant incentive expectations.',
     },
     {
       question: 'Which market research company is best for healthcare research in the UAE?',

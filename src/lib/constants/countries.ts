@@ -471,7 +471,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       {
         question: 'How much does market research cost in Egypt?',
         answer:
-          'Custom market research engagements in Egypt typically range from $15,000 to $50,000 per project depending on scope, methodology, geography, and therapeutic or sector complexity. Multi-country MENA programs start higher. BioNixus provides transparent pricing with fixed-scope proposals.',
+          'Custom market research engagements in Egypt typically range from $10,000 to $60,000 per project depending on scope, methodology, geography, and therapeutic or sector complexity. Multi-country MENA programs start higher. BioNixus provides transparent pricing with fixed-scope proposals.',
       },
       {
         question: 'Which healthcare stakeholders should be included in Egypt pharma studies?',
@@ -968,7 +968,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       {
         question: 'What outputs are delivered from United States market research engagements?',
         answer:
-          'Deliverables usually include stakeholder maps, PBM and CMS access barriers, IRA cohort exposure framing, segment-level opportunity notes, and action-oriented recommendations tied to launch or lifecycle decisions. Minimum engagement is USD 20,000.',
+          'Deliverables usually include stakeholder maps, PBM and CMS access barriers, IRA cohort exposure framing, segment-level opportunity notes, and action-oriented recommendations tied to launch or lifecycle decisions. Custom research from $10,000 to $60,000.',
       },
     ],
   },

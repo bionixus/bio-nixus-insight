@@ -17,7 +17,7 @@ export const lebanonHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_LB',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Lebanon (2026 Guide)',
   heroIntro:
@@ -217,7 +217,7 @@ export const lebanonHealthcareEn: CountryListicleConfig = {
     {
       question: 'How much does pharmaceutical market research cost in Lebanon?',
       answer:
-        "Custom pharmaceutical market research in Lebanon typically ranges from $15,000 to $60,000 per project depending on scope, methodology, and sample requirements. Given Lebanon's current economic environment, fieldwork logistics and respondent incentivisation may require careful planning. KOL mapping studies with AUBMC and LAU Medical faculty recruitment tend to command a premium. Syndicated reports from providers such as Euromonitor start from around $2,500.",
+        "Custom pharmaceutical market research in Lebanon typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Given Lebanon's current economic environment, fieldwork logistics and respondent incentivisation may require careful planning. KOL mapping studies with AUBMC and LAU Medical faculty recruitment tend to command a premium. Syndicated reports from providers such as Euromonitor start from around $2,500.",
     },
     {
       question: 'How do I recruit physicians at AUBMC for market research?',

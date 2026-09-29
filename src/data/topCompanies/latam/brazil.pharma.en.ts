@@ -284,7 +284,7 @@ export const brazilPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Brazil?',
       answer:
-        'Custom pharmaceutical primary research in Brazil typically starts at around US$20,000 for a focused qualitative study and reaches US$70,000 or more for multi-stakeholder programmes combining prescriber, payer and hospital procurement research. Cost is driven mainly by sample difficulty and compliance overhead: interviews with SUS formulary and health-plan decision-makers, or with specialists in academic referral centres, cost far more per completed interview than metropolitan general practitioners, and patient-facing work carries CEP/CONEP ethics review time. Syndicated reports and pipeline databases are much cheaper but answer different questions.',
+        'Custom pharmaceutical primary research in Brazil is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining prescriber, payer and hospital procurement research. Cost is driven mainly by sample difficulty and compliance overhead: interviews with SUS formulary and health-plan decision-makers, or with specialists in academic referral centres, cost far more per completed interview than metropolitan general practitioners, and patient-facing work carries CEP/CONEP ethics review time. Syndicated reports and pipeline databases are much cheaper but answer different questions.',
     },
     {
       question: 'What is CONITEC and why does it matter for pharmaceutical research in Brazil?',

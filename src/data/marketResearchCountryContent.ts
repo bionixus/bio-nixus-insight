@@ -993,7 +993,7 @@ const en: Record<string, MarketResearchCountryContent> = {
       {
         question: 'How much does GCC market research cost?',
         answer:
-          'Single-country physician or payer studies typically start around USD 20,000; multi-country GCC programmes that combine quantitative HCP surveys, payer interviews, and consumption data run from roughly USD 60,000 upward depending on specialties, sample, and number of markets. BioNixus publishes indicative 2026 project bands on its pricing page.',
+          'Custom research from $10,000 to $60,000. Single-country physician or payer studies and multi-country GCC programmes that combine quantitative HCP surveys, payer interviews, and consumption data are scoped inside that range. BioNixus publishes the range on its pricing page.',
       },
       {
         question: 'Does BioNixus run Arabic-language fieldwork in the GCC?',

@@ -15,25 +15,27 @@ import { OncologyPremiumStyles } from '@/pages/oncology-listicle/OncologyPremium
 const PATH = '/pricing';
 const CANONICAL = `https://www.bionixus.com${PATH}`;
 const CTR = getCtrSeo(PATH);
-const PAGE_TITLE = CTR?.title ?? 'Market Research Pricing | $10k–$75k Country (2026)';
+const PAGE_TITLE = CTR?.title ?? 'Custom Research from $10,000 to $60,000 | BioNixus';
 const PAGE_DESCRIPTION =
   CTR?.description ??
-  'BioNixus market research pricing is by project and country. 2026 bands: $10,000–$75,000 single-country, $25,000–$120,000 multi-country. Proposal in 48 hours.';
+  'Custom research from $10,000 to $60,000. BioNixus prices pharma and healthcare primary studies by project. No syndicated report fee. Proposal in 48 hours.';
+
+const CUSTOM_RESEARCH_PRICE = '$10,000–$60,000 USD';
 
 const BANDS = [
   {
     name: 'Single-country study',
-    price: '$10,000–$75,000 USD',
+    price: CUSTOM_RESEARCH_PRICE,
     limits: 'One country; qualitative, quantitative, or mixed-method',
     includes: 'Guide or instrument, recruitment, fieldwork, decision-ready readout',
-    note: 'Qualitative KOL or payer interviews sit toward the lower end. Account-level or SKU-level cuts sit toward the upper end.',
+    note: 'Qualitative KOL or payer interviews and account-level or SKU-level cuts are scoped inside this range.',
   },
   {
     name: 'Multi-country study',
-    price: '$25,000–$120,000 USD',
+    price: CUSTOM_RESEARCH_PRICE,
     limits: 'Two or more countries; comparable design with local adaptation',
     includes: 'Shared instrument, local recruitment, cross-country readout',
-    note: 'GCC and MENA programmes (for example Saudi Arabia + UAE + Egypt) sit in this band.',
+    note: 'GCC and MENA programmes (for example Saudi Arabia + UAE + Egypt) use the same custom-research range.',
   },
 ] as const;
 
@@ -41,7 +43,7 @@ const FAQ = [
   {
     question: 'How much does primary healthcare market research cost?',
     answer:
-      'BioNixus typical 2026 planning bands are $10,000–$75,000 USD for a single-country study and $25,000–$120,000 USD for a multi-country study. Qualitative KOL or payer work sits toward the lower end of each band. Mixed-method physician surveys and specialist HCP samples sit toward the upper end. These are planning bands, not a quote.',
+      'Custom research from $10,000 to $60,000. Qualitative KOL or payer work and mixed-method physician surveys are scoped inside that range. This is a planning range, not a quote.',
   },
   {
     question: 'How is BioNixus priced versus IQVIA or Nielsen?',
@@ -154,22 +156,21 @@ export default function Pricing() {
               not by <em>seat.</em>
             </h1>
             <p className="cover-subtitle">
-              BioNixus charges by project and by country — not a syndicated subscription. Typical 2026 bands are{' '}
-              <strong>$10,000–$75,000 USD</strong> for a single-country study and{' '}
-              <strong>$25,000–$120,000 USD</strong> for a multi-country study. A scoped proposal is ready within 48
-              hours of a brief. The same bands are published in{' '}
+              BioNixus charges by project and by country — not a syndicated subscription. Custom research from{' '}
+              <strong>$10,000 to $60,000</strong>. A scoped proposal is ready within 48
+              hours of a brief. The same range is published in{' '}
               <a href="/pricing.md">/pricing.md</a> and <a href="/pricing.txt">/pricing.txt</a>.
             </p>
             <div className="cover-mkts">
               <div className="cmkt live">
                 <span className="iso">01</span>
                 <span className="nm">Single-country</span>
-                <span className="tag">$10k–$75k</span>
+                <span className="tag">$10k–$60k</span>
               </div>
               <div className="cmkt live">
                 <span className="iso">02</span>
                 <span className="nm">Multi-country</span>
-                <span className="tag">$25k–$120k</span>
+                <span className="tag">$10k–$60k</span>
               </div>
               <div className="cmkt">
                 <span className="iso">03</span>
@@ -186,7 +187,7 @@ export default function Pricing() {
               <div className="cdcell">
                 <div className="cdlbl">Single-country</div>
                 <div className="cdval">
-                  $10,000–$75,000
+                  $10,000–$60,000
                   <br />
                   <span className="accent">USD · one market</span>
                 </div>
@@ -194,7 +195,7 @@ export default function Pricing() {
               <div className="cdcell">
                 <div className="cdlbl">Multi-country</div>
                 <div className="cdval">
-                  $25,000–$120,000
+                  $10,000–$60,000
                   <br />
                   <span className="accent">USD · two or more</span>
                 </div>
@@ -236,7 +237,7 @@ export default function Pricing() {
             </div>
             <div className="section-num">01 — Typical planning ranges</div>
             <h2 className="section-title" id="bands-title">
-              Two bands. <em>One invoice model.</em>
+              One range. <em>One invoice model.</em>
             </h2>
             <p className="section-lede">
               Last updated 4 September 2026. These figures are planning ranges, not a rate card. Final price depends
@@ -252,7 +253,7 @@ export default function Pricing() {
                 </div>
                 <div className="choice-body">
                   <div className="choice-kicker">Typical 2026 band</div>
-                  <div className="choice-amt">$10,000–$75,000</div>
+                  <div className="choice-amt">$10,000–$60,000</div>
                   <p className="text-[14.5px] leading-relaxed text-[color:var(--onco-text-soft)] mb-2">
                     USD. Qualitative interviews sit toward the floor. Mixed-method and specialist HCP samples sit
                     toward the ceiling.
@@ -273,7 +274,7 @@ export default function Pricing() {
                 </div>
                 <div className="choice-body">
                   <div className="choice-kicker">Typical 2026 band</div>
-                  <div className="choice-amt">$25,000–$120,000</div>
+                  <div className="choice-amt">$10,000–$60,000</div>
                   <p className="text-[14.5px] leading-relaxed text-[color:var(--onco-text-soft)] mb-2">
                     USD. Comparable design across markets, with local adaptation. GCC and MENA programmes sit in this
                     band.
@@ -291,19 +292,19 @@ export default function Pricing() {
             <div className="stat-band">
               <div className="stat-cell">
                 <div className="stat-n">$10k</div>
-                <div className="stat-l">Single-country floor</div>
+                <div className="stat-l">Custom research floor</div>
               </div>
               <div className="stat-cell b">
-                <div className="stat-n">$75k</div>
-                <div className="stat-l">Single-country ceiling</div>
+                <div className="stat-n">$60k</div>
+                <div className="stat-l">Custom research ceiling</div>
               </div>
               <div className="stat-cell g">
-                <div className="stat-n">$25k</div>
-                <div className="stat-l">Multi-country floor</div>
+                <div className="stat-n">$10k–$60k</div>
+                <div className="stat-l">Single-country studies</div>
               </div>
               <div className="stat-cell s">
-                <div className="stat-n">$120k</div>
-                <div className="stat-l">Multi-country ceiling</div>
+                <div className="stat-n">$10k–$60k</div>
+                <div className="stat-l">Multi-country studies</div>
               </div>
             </div>
           </section>
@@ -351,15 +352,14 @@ export default function Pricing() {
               </table>
             </div>
             <p className="note-line">
-              HEOR / HTA and specialist healthcare packages sit inside the same two bands. Specialist incidence, ethics,
-              and hospital access move a brief toward the ceiling — they do not open a third price list.
+              HEOR / HTA and specialist healthcare packages sit inside custom research from $10,000 to $60,000. Specialist incidence, ethics,
+              and hospital access are scoped inside that range — they do not open a second price list.
             </p>
             <div className="bundle-banner">
               <h3>How much does BioNixus market research cost?</h3>
               <p>
-                BioNixus charges by project and by country. Typical 2026 planning bands are{' '}
-                <strong>$10,000–$75,000 USD</strong> for a single-country study and{' '}
-                <strong>$25,000–$120,000 USD</strong> for a multi-country study. A written proposal is ready within 48
+                BioNixus charges by project and by country. Custom research from{' '}
+                <strong>$10,000 to $60,000</strong>. A written proposal is ready within 48
                 hours of a brief.
               </p>
             </div>

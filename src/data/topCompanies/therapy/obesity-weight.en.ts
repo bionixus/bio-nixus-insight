@@ -24,7 +24,7 @@ export const obesityWeightGlobalEn: CountryListicleConfig = {
   ogLocale: 'en_US',
   inLanguage: 'en',
   datePublished: '2026-06-19',
-  dateModified: '2026-06-19',
+  dateModified: '2026-09-28',
   badge: '2026 Obesity & Weight Management Guide',
   h1: 'Best Obesity & Weight Management Market Research Firms (2026 Guide)',
   heroIntro:
@@ -248,7 +248,7 @@ export const obesityWeightGlobalEn: CountryListicleConfig = {
     {
       question: 'How much does obesity and weight management market research cost?',
       answer:
-        'Obesity market research project costs vary by scope and methodology. GLP-1 physician prescribing behaviour surveys (quantitative) typically range from $25,000 to $50,000. Obesity patient journey studies (qualitative and quantitative combined) range from $30,000 to $65,000. Payer coverage and prior authorisation research ranges from $20,000 to $40,000. GLP-1 brand positioning and competitive intelligence studies range from $25,000 to $50,000. Multi-country MENA studies carry a regional complexity premium. Contact BioNixus for a tailored obesity research proposal.',
+        'Obesity market research project costs vary by scope and methodology. GLP-1 physician prescribing behaviour surveys (quantitative) typically range from $10,000 to $60,000. Obesity patient journey studies (qualitative and quantitative combined) range from $10,000 to $60,000. Payer coverage and prior authorisation research ranges from $10,000 to $60,000. GLP-1 brand positioning and competitive intelligence studies range from $10,000 to $60,000. Multi-country MENA studies carry a regional complexity premium. Contact BioNixus for a tailored obesity research proposal.',
     },
     {
       question: 'Does BioNixus conduct obesity and weight management market research?',

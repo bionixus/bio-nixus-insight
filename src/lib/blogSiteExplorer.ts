@@ -56,7 +56,7 @@ const CANONICAL_EXTRA_PATHS: readonly string[] = [
   '/healthcare-fieldwork-middle-east',
   '/saudi-payer-market-access-research',
   '/saudi-arabia',
-  '/uae',
+  '/healthcare-market-research/uae',
   '/kuwait',
   '/uk',
   '/europe',

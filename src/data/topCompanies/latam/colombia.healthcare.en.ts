@@ -17,7 +17,7 @@ export const colombiaHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_CO',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Colombia (2026 Guide)',
   heroIntro:
@@ -209,7 +209,7 @@ export const colombiaHealthcareEn: CountryListicleConfig = {
     },
     {
       question: 'How much does healthcare market research cost in Colombia?',
-      answer: 'Custom healthcare market research in Colombia typically ranges from $15,000 to $55,000 per project depending on methodology, therapeutic area, and scope. Physician surveys with specialist recruitment are priced higher than consumer health studies. HEOR and market access studies with IETS-aligned evidence synthesis can range from $25,000 to $80,000+.',
+      answer: 'Custom healthcare market research in Colombia typically ranges from $10,000 to $60,000 per project depending on methodology, therapeutic area, and scope. Physician surveys with specialist recruitment are priced higher than consumer health studies. HEOR and market access studies with IETS-aligned evidence synthesis can range from $10,000 to $60,000.',
     },
     {
       question: 'What is INVIMA and why does it matter for pharmaceutical research in Colombia?',

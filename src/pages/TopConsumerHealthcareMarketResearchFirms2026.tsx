@@ -117,7 +117,7 @@ const faqItems = [
   },
   {
     q: 'How much does consumer healthcare market research cost?',
-    a: 'Custom consumer healthcare research typically costs $25,000–$120,000+ per project depending on methodology, markets, and sample complexity. Multi-country quantitative studies at the higher end. Syndicated data subscriptions from NielsenIQ or Euromonitor range from $15,000–$150,000+ annually depending on category and geographic coverage.',
+    a: 'Custom consumer healthcare research typically costs $10,000 to $60,000 per project depending on methodology, markets, and sample complexity. Multi-country quantitative studies at the higher end. Syndicated data subscriptions from NielsenIQ or Euromonitor range from $15,000–$150,000+ annually depending on category and geographic coverage.',
   },
   {
     q: 'Which firm is best for pharmacy channel research?',
@@ -173,7 +173,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
       'Independent 2026 guide ranking the top consumer healthcare market research firms — OTC, pharmacy channel, wellness, and FMCG-health crossover research firms compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

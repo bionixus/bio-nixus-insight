@@ -141,7 +141,7 @@ const faqItems = [
   },
   {
     q: 'How much does pharmaceutical market research cost globally?',
-    a: 'Global pharmaceutical market research typically costs $35,000–$200,000+ per project depending on methodology, geography, therapeutic complexity, and sample requirements. Multi-country studies with mixed-method design (quantitative + qualitative) in 5+ markets sit at the higher end. Syndicated data subscriptions from IQVIA or Euromonitor range from $15,000–$250,000+ annually.',
+    a: 'Global pharmaceutical market research typically costs $10,000 to $60,000 per project depending on methodology, geography, therapeutic complexity, and sample requirements. Multi-country studies with mixed-method design (quantitative + qualitative) in 5+ markets sit at the higher end. Syndicated data subscriptions from IQVIA or Euromonitor range from $15,000–$250,000+ annually.',
   },
   {
     q: 'What is the difference between a pharma research company and a consulting firm?',
@@ -193,7 +193,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
       'Independent 2026 guide ranking the best global market research companies for pharmaceutical clients — methodology, quality, and pharma-specific expertise compared.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

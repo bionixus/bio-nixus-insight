@@ -126,7 +126,7 @@ const faqItems = [
   },
   {
     q: 'How much does biologics market research cost?',
-    a: 'Custom biologics market research typically ranges from $30,000 to $120,000 per project depending on scope, number of markets, methodology, and therapeutic area complexity. Biosimilar switching studies and institutional tender research may fall at the higher end due to specialist respondent recruitment. Multi-country programmes spanning 5+ markets typically start from $60,000+. Budget impact and HEOR modelling projects for HTA submissions may range from $40,000 to $80,000 depending on jurisdiction requirements.',
+    a: 'Custom biologics market research typically ranges from $10,000 to $60,000 per project depending on scope, number of markets, methodology, and therapeutic area complexity. Biosimilar switching studies and institutional tender research may fall at the higher end due to specialist respondent recruitment. Multi-country programmes spanning 5+ markets are scoped inside custom research from $10,000 to $60,000. Budget impact and HEOR modelling projects for HTA submissions may range from $10,000 to $60,000 depending on jurisdiction requirements.',
   },
   {
     q: 'Which firm leads in tender and procurement research for biologics?',
@@ -200,7 +200,7 @@ export default function LeadingBiologicsBiosimilarsMarketResearchCompanies2026()
       'Expert 2026 guide to the leading biologics and biosimilars market research companies. Covers biosimilar switching research, institutional tender and procurement intelligence, payer and formulary access studies, and originator defence strategy.',
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-01',
+    dateModified: '2026-09-28',
     author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

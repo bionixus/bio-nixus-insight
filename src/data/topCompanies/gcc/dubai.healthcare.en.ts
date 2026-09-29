@@ -17,7 +17,7 @@ export const dubaiHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_AE',
   inLanguage: 'en',
   datePublished: '2026-06-19',
-  dateModified: '2026-06-19',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Guide',
   h1: 'Best Healthcare Market Research Companies in Dubai (2026 Guide)',
   heroIntro:
@@ -212,7 +212,7 @@ export const dubaiHealthcareEn: CountryListicleConfig = {
     {
       question: 'How much does healthcare market research cost in Dubai?',
       answer:
-        'Custom healthcare market research in Dubai typically ranges from $22,000 to $70,000 per project, depending on scope, methodology, sample size, and physician or patient recruitment requirements. Physician surveys involving specialist HCP recruitment across DHA hospitals or the DHCC cluster tend to be at the higher end of this range. KOL mapping and identification engagements across Dubai specialist networks typically range from $25,000 to $45,000. HEOR and pharmacoeconomic studies with Dubai-specific modelling aligned to DHA formulary criteria typically start from $30,000. Syndicated country-level reports from providers like Euromonitor start from approximately $2,500, but offer limited Dubai-specific granularity or DHA regulatory depth.',
+        'Custom healthcare market research in Dubai typically ranges from $10,000 to $60,000 per project, depending on scope, methodology, sample size, and physician or patient recruitment requirements. Physician surveys involving specialist HCP recruitment across DHA hospitals or the DHCC cluster tend to be at the higher end of this range. KOL mapping and identification engagements across Dubai specialist networks typically range from $10,000 to $60,000. HEOR and pharmacoeconomic studies with Dubai-specific modelling aligned to DHA formulary criteria are scoped inside custom research from $10,000 to $60,000. Syndicated country-level reports from providers like Euromonitor start from approximately $2,500, but offer limited Dubai-specific granularity or DHA regulatory depth.',
     },
     {
       question: 'What is DHA and how does it regulate pharmaceutical research in Dubai?',

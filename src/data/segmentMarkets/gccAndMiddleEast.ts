@@ -314,7 +314,7 @@ const gccOtcDrugs: SegmentMarketContent = {
     {
       question: 'What does a BioNixus GCC OTC study include?',
       answer:
-        'A typical commissioned study combines a bilingual pharmacist survey, shopper exit interviews in defined city catchments, structured shelf and price audits, and depth interviews with chain buyers and distributors. Deliverables cover category structure, recommendation drivers, price architecture, digital assortment, and a prioritised action list for listing, detailing, and switch strategy. Minimum engagement size is 20,000 US dollars.',
+        'A typical commissioned study combines a bilingual pharmacist survey, shopper exit interviews in defined city catchments, structured shelf and price audits, and depth interviews with chain buyers and distributors. Deliverables cover category structure, recommendation drivers, price architecture, digital assortment, and a prioritised action list for listing, detailing, and switch strategy. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: GCC_AREA_SERVED,
@@ -588,7 +588,7 @@ const gccTablets: SegmentMarketContent = {
     {
       question: 'What would a BioNixus GCC oral solid dose study deliver?',
       answer:
-        'A commissioned study typically maps regional manufacturing and contract manufacturing capacity, models tender economics and realised net pricing by channel, tests prescriber and pharmacist substitution behaviour, and sets out a registration and localisation sequence per market. Output is a decision document with assumptions stated explicitly, suitable for investment committee review. Commissioned engagements begin at 20,000 US dollars.',
+        'A commissioned study typically maps regional manufacturing and contract manufacturing capacity, models tender economics and realised net pricing by channel, tests prescriber and pharmacist substitution behaviour, and sets out a registration and localisation sequence per market. Output is a decision document with assumptions stated explicitly, suitable for investment committee review. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: GCC_AREA_SERVED,
@@ -867,7 +867,7 @@ const gccNutraceuticals: SegmentMarketContent = {
     {
       question: 'What does a BioNixus GCC nutraceuticals study include?',
       answer:
-        'A commissioned study normally covers category and channel structure, registration and claim feasibility by market, pharmacist and clinician recommendation drivers, shopper motivations and price sensitivity, and competitive assortment across retail and online. Deliverables include a prioritised market-entry or growth plan with explicit assumptions. Engagements start at 20,000 US dollars.',
+        'A commissioned study normally covers category and channel structure, registration and claim feasibility by market, pharmacist and clinician recommendation drivers, shopper motivations and price sensitivity, and competitive assortment across retail and online. Deliverables include a prioritised market-entry or growth plan with explicit assumptions. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: GCC_AREA_SERVED,
@@ -1146,7 +1146,7 @@ const gccIntravenousSolutions: SegmentMarketContent = {
     {
       question: 'What does a BioNixus GCC IV solutions study deliver?',
       answer:
-        'A commissioned study typically covers institutional demand mapping by facility type, tender scoring behaviour and realised net pricing, clinical and pharmacy acceptance of formulations and container formats, supply-continuity expectations, and a local manufacturing or partnership assessment. Output is a bid and investment-ready decision document. Commissioned studies in this segment start at 20,000 US dollars.',
+        'A commissioned study typically covers institutional demand mapping by facility type, tender scoring behaviour and realised net pricing, clinical and pharmacy acceptance of formulations and container formats, supply-continuity expectations, and a local manufacturing or partnership assessment. Output is a bid and investment-ready decision document. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: GCC_AREA_SERVED,
@@ -1425,7 +1425,7 @@ const gccMedicalTourism: SegmentMarketContent = {
     {
       question: 'What does a BioNixus GCC medical tourism study include?',
       answer:
-        'A commissioned study typically quantifies outbound leakage by specialty, identifies realistic inbound source markets, maps facilitator and payer routing economics, benchmarks provider propositions on accreditation and service, and sets out the capability and communication gaps to close. Deliverables are aimed at provider growth plans, payer network design, or destination investment cases. The minimum commissioned engagement is 20,000 US dollars.',
+        'A commissioned study typically quantifies outbound leakage by specialty, identifies realistic inbound source markets, maps facilitator and payer routing economics, benchmarks provider propositions on accreditation and service, and sets out the capability and communication gaps to close. Deliverables are aimed at provider growth plans, payer network design, or destination investment cases. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: GCC_AREA_SERVED,
@@ -1704,7 +1704,7 @@ const gccObesity: SegmentMarketContent = {
     {
       question: 'What does a BioNixus GCC obesity study deliver?',
       answer:
-        'A commissioned study typically maps treatment pathways by market, documents payer coverage and prior authorisation criteria, quantifies prescriber initiation behaviour and persistence, tests patient willingness to pay, and assesses pharmacy and clinic channel dynamics. Output is a forecast-ready access and commercial plan with stated assumptions. Study budgets begin at 20,000 US dollars.',
+        'A commissioned study typically maps treatment pathways by market, documents payer coverage and prior authorisation criteria, quantifies prescriber initiation behaviour and persistence, tests patient willingness to pay, and assesses pharmacy and clinic channel dynamics. Output is a forecast-ready access and commercial plan with stated assumptions. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: GCC_AREA_SERVED,
@@ -1983,7 +1983,7 @@ const middleEastBiomarkers: SegmentMarketContent = {
     {
       question: 'What does a BioNixus Middle East biomarker study include?',
       answer:
-        'A commissioned study typically maps laboratory capability and turnaround by market, quantifies clinician ordering behaviour and barriers, documents funding and reimbursement routes, assesses companion diagnostic co-launch readiness, and identifies result-to-treatment access gaps. Deliverables support launch sequencing and diagnostic partnership decisions. Commissioned programmes start at 20,000 US dollars.',
+        'A commissioned study typically maps laboratory capability and turnaround by market, quantifies clinician ordering behaviour and barriers, documents funding and reimbursement routes, assesses companion diagnostic co-launch readiness, and identifies result-to-treatment access gaps. Deliverables support launch sequencing and diagnostic partnership decisions. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: MIDDLE_EAST_AREA_SERVED,
@@ -2262,7 +2262,7 @@ const middleEastIvd: SegmentMarketContent = {
     {
       question: 'What does a BioNixus Middle East IVD study deliver?',
       answer:
-        'A commissioned study typically maps laboratory networks and installed platforms, models test volumes and reagent pull-through by discipline, analyses tender and placement economics, documents registration pathways, and evaluates distributor options by market. Deliverables support placement strategy, bid decisions, and portfolio prioritisation. Minimum study investment is 20,000 US dollars.',
+        'A commissioned study typically maps laboratory networks and installed platforms, models test volumes and reagent pull-through by discipline, analyses tender and placement economics, documents registration pathways, and evaluates distributor options by market. Deliverables support placement strategy, bid decisions, and portfolio prioritisation. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: MIDDLE_EAST_AREA_SERVED,
@@ -2541,7 +2541,7 @@ const middleEastBiologics: SegmentMarketContent = {
     {
       question: 'What does a BioNixus Middle East biologics study deliver?',
       answer:
-        'A commissioned study typically maps access pathways from approval to funded patient in each market, quantifies prescriber treatment sequencing and switching behaviour, documents payer and procurement evidence requirements, assesses biosimilar risk or opportunity by molecule, and evaluates distribution and patient support needs. Deliverables support launch, pricing, and biosimilar strategy. Engagement budgets begin at 20,000 US dollars.',
+        'A commissioned study typically maps access pathways from approval to funded patient in each market, quantifies prescriber treatment sequencing and switching behaviour, documents payer and procurement evidence requirements, assesses biosimilar risk or opportunity by molecule, and evaluates distribution and patient support needs. Deliverables support launch, pricing, and biosimilar strategy. Custom research from $10,000 to $60,000.',
     },
   ],
   areaServed: MIDDLE_EAST_AREA_SERVED,

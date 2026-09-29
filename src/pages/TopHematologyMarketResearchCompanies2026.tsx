@@ -163,7 +163,7 @@ const faqItems = [
   },
   {
     q: 'What does a hematology market research programme cost?',
-    a: 'BioNixus engagements start at USD 20,000. Cost is driven by the number of diagnoses and lines in scope, the number of markets, the incident-to-prevalent quota mix, the number of tracker waves, and whether a KOL or IDI overlay is added. A single-market, single-indication PRF wave sits at the lower end; a multi-country GCC myeloma tracker with quarterly waves and a benign-hematology module sits higher. Request a proposal and we will return a scoped design and price within 48 hours.',
+    a: 'Custom research from $10,000 to $60,000. Cost is driven by the number of diagnoses and lines in scope, the number of markets, the incident-to-prevalent quota mix, the number of tracker waves, and whether a KOL or IDI overlay is added. A single-market, single-indication PRF wave sits at the lower end; a multi-country GCC myeloma tracker with quarterly waves and a benign-hematology module sits higher. Request a proposal and we will return a scoped design and price within 48 hours.',
   },
 ];
 

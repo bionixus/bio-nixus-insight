@@ -24,7 +24,7 @@ export const omanPharmaEn: CountryListicleConfig = {
   ogLocale: 'en_OM',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-28',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in Oman (2026 Guide)',
   heroIntro:
@@ -279,7 +279,7 @@ export const omanPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Oman?',
       answer:
-        'Custom pharmaceutical primary research in Oman typically starts from around $20,000 for a focused qualitative study and reaches $60,000 or more for multi-stakeholder programmes combining prescriber, formulary and procurement research. Two factors drive cost more than sample size: the seniority of the respondents, since referral-centre consultants and procurement decision-makers are expensive to reach, and geography, because fieldwork extending beyond Muscat into the governorate health directorates carries real travel and scheduling overhead. Syndicated reports and pipeline databases cost far less but answer different questions.',
+        'Custom pharmaceutical primary research in Oman is custom research from $10,000 to $60,000 for multi-stakeholder programmes combining prescriber, formulary and procurement research. Two factors drive cost more than sample size: the seniority of the respondents, since referral-centre consultants and procurement decision-makers are expensive to reach, and geography, because fieldwork extending beyond Muscat into the governorate health directorates carries real travel and scheduling overhead. Syndicated reports and pipeline databases cost far less but answer different questions.',
     },
     {
       question: 'What is the Directorate General of Pharmaceutical Affairs and Drug Control?',

@@ -17,7 +17,7 @@ export const omanHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_OM',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Oman (2026 Guide)',
   heroIntro:
@@ -214,7 +214,7 @@ export const omanHealthcareEn: CountryListicleConfig = {
     },
     {
       question: 'How much does pharmaceutical market research cost in Oman?',
-      answer: 'Custom pharmaceutical market research in Oman typically ranges from $15,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with SQUH or Royal Hospital Muscat recruitment tend to cost more than consumer health studies. Payer and formulary committee research with MoH Oman-aligned design commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
+      answer: 'Custom pharmaceutical market research in Oman typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with SQUH or Royal Hospital Muscat recruitment tend to cost more than consumer health studies. Payer and formulary committee research with MoH Oman-aligned design commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
     },
     {
       question: 'What is the role of MCIOMS in Oman pharmaceutical regulation?',

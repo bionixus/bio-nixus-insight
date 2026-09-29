@@ -66,6 +66,16 @@
   ],
   "redirects": [
     {
+      "source": "/uae",
+      "destination": "/healthcare-market-research/uae",
+      "statusCode": 301
+    },
+    {
+      "source": "/uae/",
+      "destination": "/healthcare-market-research/uae",
+      "statusCode": 301
+    },
+    {
       "source": "/insights/top-consumer-insights-companies-saudi-arabia-2026",
       "destination": "/insights/top-consumer-insights-companies-ksa-2026",
       "statusCode": 301

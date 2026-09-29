@@ -236,10 +236,10 @@ export default function PatientJourneyResearchGcc() {
               Patient journey research in GCC is inherently more complex to field than HCP research, due to patient recruitment logistics, ethics requirements, and the multi-stakeholder design. Cost and timeline ranges below cover full qualitative journey programmes spanning three GCC markets with multiple stakeholder types.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong className="text-foreground">Single market qualitative journey study (KSA or UAE), 10–15 patient IDIs + 6–8 HCP IDIs + 3–5 caregiver IDIs:</strong> $45,000–$75,000 fieldwork cost; 6–8 weeks from brief to raw data. <strong className="text-foreground">Three-market GCC journey study (KSA, UAE, Kuwait or Qatar), equivalent design per market:</strong> $120,000–$180,000; 8–12 weeks. <strong className="text-foreground">Multi-method journey study with online diary component (4–6 weeks diary run) plus qualitative IDIs:</strong> $130,000–$200,000; 14–18 weeks total. <strong className="text-foreground">Full journey programme with payer interviews and medical chart review added:</strong> $150,000–$220,000; 12–16 weeks.
+              <strong className="text-foreground">Single market qualitative journey study (KSA or UAE), 10–15 patient IDIs + 6–8 HCP IDIs + 3–5 caregiver IDIs:</strong> $10,000 to $60,000 fieldwork cost; 6–8 weeks from brief to raw data. <strong className="text-foreground">Three-market GCC journey study (KSA, UAE, Kuwait or Qatar), equivalent design per market:</strong> $10,000 to $60,000; 8–12 weeks. <strong className="text-foreground">Multi-method journey study with online diary component (4–6 weeks diary run) plus qualitative IDIs:</strong> $10,000 to $60,000; 14–18 weeks total. <strong className="text-foreground">Full journey programme with payer interviews and medical chart review added:</strong> $10,000 to $60,000; 12–16 weeks.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              These ranges exclude analysis, journey mapping, and reporting, which is typically an additional $25,000–$50,000 for a three-market multi-stakeholder study depending on depth of output required.
+              These ranges exclude analysis, journey mapping, and reporting, which is scoped inside custom research from $10,000 to $60,000 for a three-market multi-stakeholder study depending on depth of output required.
             </p>
           </div>
         </section>
@@ -254,7 +254,7 @@ export default function PatientJourneyResearchGcc() {
             },
             {
               label: 'Cost range',
-              value: '$60k–$180k',
+              value: '$10k–$60k',
               detail: 'Fieldwork cost for single-market to three-market patient journey research programmes in GCC.',
             },
             {

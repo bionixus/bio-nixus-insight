@@ -656,7 +656,7 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-turkey-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-uae-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-uk-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-usa-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-09-20' },
+  { path: '/insights/top-healthcare-market-research-companies-usa-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-09-28' },
   { path: '/insights/top-healthcare-market-research-companies-europe-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-algeria-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-angola-2026', priority: '0.85', changefreq: 'monthly' },
@@ -980,6 +980,7 @@ function buildStaticRoutes() {
       path: `/market-reports/${slug}`,
       priority: '0.87',
       changefreq: 'weekly',
+      ...(slug === 'gcc-immunology-biologics-market-report' ? { lastmod: '2026-09-29' } : {}),
     });
   }
   for (const slug of industryGlobalHubSlugs) {

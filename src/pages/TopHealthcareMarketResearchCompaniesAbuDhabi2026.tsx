@@ -133,7 +133,7 @@ const faqItems = [
   },
   {
     q: 'How much does healthcare market research cost in Abu Dhabi?',
-    a: 'Custom healthcare market research in Abu Dhabi typically ranges from $20,000 to $70,000 per project depending on scope, therapeutic area complexity, and respondent type. Specialist physician surveys and KOL mapping programmes in oncology or rare diseases cost more due to limited respondent pools. Multi-emirate UAE programmes (Abu Dhabi + Dubai) typically start from $35,000+. Abu Dhabi government sector research (SEHA, MoHAP-affiliated facilities) may require additional ethics review timelines, which can affect project scheduling.',
+    a: 'Custom healthcare market research in Abu Dhabi typically ranges from $10,000 to $60,000 per project depending on scope, therapeutic area complexity, and respondent type. Specialist physician surveys and KOL mapping programmes in oncology or rare diseases cost more due to limited respondent pools. Multi-emirate UAE programmes (Abu Dhabi + Dubai) are scoped inside custom research from $10,000 to $60,000. Abu Dhabi government sector research (SEHA, MoHAP-affiliated facilities) may require additional ethics review timelines, which can affect project scheduling.',
   },
   {
     q: 'Which firm is best for KOL mapping in Abu Dhabi?',
@@ -208,7 +208,7 @@ export default function TopHealthcareMarketResearchCompaniesAbuDhabi2026() {
       'Expert guide to the leading healthcare and pharmaceutical market research companies in Abu Dhabi for 2026. Covers DoH-compliant firms, SEHA hospital access, KOL mapping, Daman payer research, and how to evaluate a research partner for Abu Dhabi.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-06-09',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

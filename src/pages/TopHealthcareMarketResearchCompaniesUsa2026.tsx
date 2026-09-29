@@ -173,7 +173,7 @@ const faqItems = [
   },
   {
     q: 'How much does a USA primary study cost?',
-    a: 'BioNixus publishes typical 2026 planning bands on the pricing page (/pricing): $10,000–$75,000 USD for a single-country study and $25,000–$120,000 USD for a multi-country study. Qualitative KOL or payer work sits toward the lower end. Mixed-method physician surveys and specialist HCP samples sit toward the upper end. These are planning bands, not a quote, and not a comparison to unpublished NielsenIQ or IQVIA subscription fees. Request a USA research proposal for a scoped figure.',
+    a: 'BioNixus publishes typical 2026 planning bands on the pricing page (/pricing): custom research from $10,000 to $60,000. Qualitative KOL or payer work sits toward the lower end. Mixed-method physician surveys and specialist HCP samples sit toward the upper end. These are planning bands, not a quote, and not a comparison to unpublished NielsenIQ or IQVIA subscription fees. Request a USA research proposal for a scoped figure.',
   },
   {
     q: 'How fast is a proposal?',
@@ -234,7 +234,7 @@ export const USA_HEALTHCARE_MR_H1 = 'Top healthcare market research companies in
 export const USA_HEALTHCARE_MR_CTA_ID = 'usa_healthcare_mr_companies_2026';
 export const USA_HEALTHCARE_MR_FIRMS = firms;
 export const USA_HEALTHCARE_MR_FAQS = faqItems;
-export const USA_HEALTHCARE_MR_DATE_MODIFIED = '2026-09-20';
+export const USA_HEALTHCARE_MR_DATE_MODIFIED = '2026-09-28';
 
 const CANONICAL = `https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`;
 const PAGE_AUTHOR = getEditorialAuthor({
@@ -746,7 +746,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
                 { to: '/hcp-atu-study', label: 'HCP ATU study', desc: 'Physician ATU and pharmaceutical brand tracking.' },
                 { to: '/pharmacy-mystery-shopper', label: 'Pharmacy mystery shopper', desc: 'Availability, facing, and price in named pharmacies.' },
                 { to: '/pharmaceutical-competitor-intelligence', label: 'Pharmaceutical competitor intelligence', desc: 'Brand versus competitors at account and SKU level.' },
-                { to: '/pricing', label: 'Pricing', desc: '2026 planning bands — $10,000–$75,000 single-country.' },
+                { to: '/pricing', label: 'Pricing', desc: '2026 planning bands — custom research from $10,000 to $60,000.' },
                 { to: '/insights/top-market-research-companies-usa-2026', label: 'Top market research companies USA', desc: 'Cross-industry USA ranking — healthcare sister page is this URL.' },
                 { to: '/insights/top-healthcare-market-research-companies-canada-2026', label: 'Top healthcare MRC in Canada', desc: 'CADTH/pCPA-aware Canadian healthcare research shortlist.' },
                 { to: '/insights/top-healthcare-market-research-companies-uk-2026', label: 'Top healthcare MRC in the UK', desc: 'MHRA/NICE/NHS healthcare research companies.' },

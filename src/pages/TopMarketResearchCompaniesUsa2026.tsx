@@ -131,7 +131,7 @@ const faqItems = [
   },
   {
     q: 'How much does market research cost in the USA?',
-    a: 'Custom market research engagements in the USA typically range from $30,000 to $120,000 per project depending on scope, methodology, geography, and research complexity. Healthcare and pharmaceutical studies with IRB review requirements, specialist HCP recruitment, or PBM payer depth interviews cost more. Syndicated reports range from $2,500 to $15,000. Multi-region US programs (Northeast, South, Midwest, West Coast) add 20–30% versus single-region studies.',
+    a: 'Custom market research engagements in the USA typically range from $10,000 to $60,000 per project depending on scope, methodology, geography, and research complexity. Healthcare and pharmaceutical studies with IRB review requirements, specialist HCP recruitment, or PBM payer depth interviews cost more. Multi-region US programs (Northeast, South, Midwest, West Coast) stay inside that same range versus single-region studies.',
   },
   {
     q: 'Which firm does pharmaceutical market research in the USA?',
@@ -195,7 +195,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
       'Independent guide to the leading market research companies in the USA for 2026: healthcare, pharma, and consumer research firms compared by capability, methodology, and US expertise.',
     url: CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-09-05',
+    dateModified: '2026-09-28',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

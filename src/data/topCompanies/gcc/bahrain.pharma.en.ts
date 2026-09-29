@@ -24,7 +24,7 @@ export const bahrainPharmaEn: CountryListicleConfig = {
   ogLocale: 'en_BH',
   inLanguage: 'en',
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-09-28',
   badge: '2026 Pharmaceutical Research Guide',
   h1: 'Top Pharmaceutical Market Research Companies in Bahrain (2026 Guide)',
   heroIntro:
@@ -279,7 +279,7 @@ export const bahrainPharmaEn: CountryListicleConfig = {
     {
       question: 'What does pharmaceutical market research cost in Bahrain?',
       answer:
-        'Custom pharmaceutical primary research in Bahrain typically starts from around $20,000 for a focused qualitative programme and reaches $50,000 or more where prescriber, formulary and payer stakeholders are covered together or where Bahrain is fielded alongside other GCC markets. Cost here is not driven by volume of interviews, because the achievable universe is small; it is driven by the difficulty of reaching senior consultants and payer decision-makers and by the design work required to make a small-base study defensible. Adding Bahrain to an existing multi-country GCC programme is usually the most economical route.',
+        'Custom pharmaceutical primary research in Bahrain is custom research from $10,000 to $60,000 where prescriber, formulary and payer stakeholders are covered together or where Bahrain is fielded alongside other GCC markets. Cost here is not driven by volume of interviews, because the achievable universe is small; it is driven by the difficulty of reaching senior consultants and payer decision-makers and by the design work required to make a small-base study defensible. Adding Bahrain to an existing multi-country GCC programme is usually the most economical route.',
     },
     {
       question: 'How does NHRA registration and pricing affect research design in Bahrain?',

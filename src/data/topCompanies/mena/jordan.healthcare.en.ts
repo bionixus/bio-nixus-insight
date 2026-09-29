@@ -17,7 +17,7 @@ export const jordanHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_JO',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-09-28',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Jordan (2026 Guide)',
   heroIntro:
@@ -217,7 +217,7 @@ export const jordanHealthcareEn: CountryListicleConfig = {
     {
       question: 'How much does pharmaceutical market research cost in Jordan?',
       answer:
-        'Custom pharmaceutical market research in Jordan typically ranges from $18,000 to $65,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with KHCC and JUH network recruitment tend to cost more than consumer health studies. JFDA HTA-aligned payer and formulary research commands a premium. Syndicated reports from providers such as Euromonitor start from around $2,500.',
+        'Custom pharmaceutical market research in Jordan typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with KHCC and JUH network recruitment tend to cost more than consumer health studies. JFDA HTA-aligned payer and formulary research commands a premium. Syndicated reports from providers such as Euromonitor start from around $2,500.',
     },
     {
       question: 'How do I recruit physicians at King Hussein Cancer Center (KHCC) for research?',
