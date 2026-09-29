@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import {
+  getCanonicalPath,
   getHreflangLinks,
   getGeoMeta,
   defaultOgImageUrl,
@@ -118,12 +119,13 @@ export function SEOHead({
           preferred: description,
           fallback: 'BioNixus healthcare and pharmaceutical market research insights and services.',
         }));
-  const canonicalPath = (() => {
+  const requestPath = (() => {
     const clean = (pathname || '/').split('?')[0].split('#')[0] || '/';
     return clean === '/' ? '/' : clean.replace(/\/+$/, '');
   })();
+  const canonicalPath = getCanonicalPath(requestPath);
   const canonicalUrl = `https://www.bionixus.com${canonicalPath}`;
-  const reportShare = isMarketReportPath(canonicalPath);
+  const reportShare = isMarketReportPath(requestPath);
   const resolvedOgImage =
     ogImage
     ?? (reportShare ? marketReportOgImageUrl : defaultOgImageUrl);

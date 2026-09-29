@@ -195,8 +195,6 @@ const extraStaticSitemapPages = [
   { path: '/pt/services', priority: '0.75', changefreq: 'monthly' },
   { path: '/ru/services', priority: '0.75', changefreq: 'monthly' },
   { path: '/ar/healthcare-market-research', priority: '0.8', changefreq: 'monthly' },
-  { path: '/ru/healthcare-market-research', priority: '0.75', changefreq: 'monthly' },
-  { path: '/zh/healthcare-market-research', priority: '0.75', changefreq: 'monthly' },
   { path: '/ar/healthcare-market-research/saudi-arabia', priority: '0.8', changefreq: 'monthly' },
   { path: '/de/healthcare-market-research/germany', priority: '0.8', changefreq: 'monthly' },
   { path: '/es/healthcare-market-research/spain', priority: '0.8', changefreq: 'monthly' },
@@ -277,7 +275,6 @@ const staticPages = [
   { path: '/insights', priority: '0.8', changefreq: 'weekly' },
   { path: '/de/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/fr/blog', priority: '0.8', changefreq: 'weekly' },
-  { path: '/es/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/ar/arabic-blog-alsawdyh', priority: '0.7', changefreq: 'monthly' },
   { path: '/case-studies', priority: '0.9', changefreq: 'weekly' },
   { path: '/services', priority: '0.9', changefreq: 'monthly' },
@@ -313,7 +310,6 @@ const staticPages = [
   { path: '/es/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/zh/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/ar/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
-  { path: '/pt/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/qualitative-market-research', priority: '0.9', changefreq: 'weekly' },
   { path: '/pharmacies-saudi-arabia-marketing', priority: '0.9', changefreq: 'weekly' },
   { path: '/bionixus-ai-chatbots-increase-sales-and-lead-generation', priority: '0.7', changefreq: 'monthly' },
@@ -475,11 +471,9 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-mena-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/pharmaceutical-market-research-provider', priority: '0.90', changefreq: 'monthly' },
   { path: '/pt', priority: '0.9', changefreq: 'weekly' },
-  { path: '/pt/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/pt/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/pt/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/ru', priority: '0.9', changefreq: 'weekly' },
-  { path: '/ru/market-research-healthcare', priority: '0.85', changefreq: 'weekly' },
   { path: '/ru/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/ru/methodology', priority: '0.6', changefreq: 'monthly' },
   { path: '/pt/insights/top-market-research-companies-brasil-2026', priority: '0.85', changefreq: 'monthly' },
@@ -571,7 +565,7 @@ const staticPages = [
   { path: '/gcc-medical-devices-market-report', priority: '0.90', changefreq: 'monthly' },
   { path: '/gcc-personalized-medicine-market', priority: '0.86', changefreq: 'monthly' },
   { path: '/gcc-pharmacy-market', priority: '0.86', changefreq: 'monthly' },
-  { path: '/germany-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
+  { path: '/germany-healthcare-market-report', priority: '0.88', changefreq: 'monthly', lastmod: '2026-09-29' },
   { path: '/germany-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/healthcare-market-research-australia', priority: '0.90', changefreq: 'monthly' },
   { path: '/healthcare-market-research-canada', priority: '0.90', changefreq: 'monthly' },
@@ -951,6 +945,7 @@ function buildStaticRoutes() {
       path: `/healthcare-market-research/therapy/${area}`,
       priority: '0.75',
       changefreq: 'monthly',
+      ...(area === 'biologics' ? { lastmod: '2026-09-29' } : {}),
     });
   }
   for (const service of healthcareServiceSlugs) {
@@ -999,13 +994,11 @@ const hreflangGroups = [
   { en: '/', pt: '/pt', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', ru: '/ru', 'x-default': '/' },
   {
     en: '/market-research-healthcare',
-    pt: '/pt/market-research-healthcare',
     de: '/de/market-research-healthcare',
     fr: '/fr/market-research-healthcare',
     es: '/es/market-research-healthcare',
     ar: '/ar/market-research-healthcare',
     'zh-CN': '/zh/market-research-healthcare',
-    ru: '/ru/market-research-healthcare',
     'x-default': '/market-research-healthcare',
   },
   { en: '/contact', pt: '/pt/contact', de: '/de/contact', fr: '/fr/contact', es: '/es/contact', ar: '/ar/contact', 'zh-CN': '/zh/contact', ru: '/ru/contact', 'x-default': '/contact' },
@@ -1013,18 +1006,17 @@ const hreflangGroups = [
   { en: '/insights', pt: '/pt/insights', de: '/de/insights', fr: '/fr/insights', es: '/es/insights', ar: '/ar/insights', 'zh-CN': '/zh/insights', ru: '/ru/insights', 'x-default': '/insights' },
   { en: '/about', pt: '/pt/about', de: '/de/about', fr: '/fr/about', es: '/es/about', ar: '/ar/about', 'zh-CN': '/zh/about', ru: '/ru/about', 'x-default': '/about' },
   { en: '/services', pt: '/pt/services', de: '/de/services', fr: '/fr/services', es: '/es/services', ar: '/ar/services', 'zh-CN': '/zh/services', ru: '/ru/services', 'x-default': '/services' },
-  // Only list languages that actually have distinct localized URLs.
-  // pt/ru/zh/es blog indexes self-canonicalize (see src/pages/Blog.tsx) rather than
-  // pointing at /blog, so they're valid distinct hreflang targets even though they
-  // currently render the same English copy as /blog.
-  { en: '/blog', pt: '/pt/blog', de: '/de/blog', fr: '/fr/blog', es: '/es/blog', ar: '/ar/blog', 'zh-CN': '/zh/blog', ru: '/ru/blog', 'x-default': '/blog' },
+  // es/pt/ru/zh blog indexes render the English index and canonical to /blog.
+  { en: '/blog', de: '/de/blog', fr: '/fr/blog', ar: '/ar/blog', 'x-default': '/blog' },
   // /es/market-access redirects to /services/market-access itself -- excluded to
   // avoid a "hreflang to redirect" error.
   { en: '/services/market-access', 'x-default': '/services/market-access' },
   {
     en: '/healthcare-market-research',
+    de: '/de/healthcare-market-research/germany',
     es: '/es/healthcare-market-research',
     fr: '/fr/healthcare-market-research',
+    ar: '/ar/healthcare-market-research',
     'x-default': '/healthcare-market-research',
   },
   {
@@ -1940,6 +1932,16 @@ async function main() {
       excluded.push({ url: loc, reason: 'redirect-source' });
       finalUrls.delete(loc);
     }
+  }
+
+  const lastmodFloor = {
+    [`${BASE}/blog/kol-mapping-pharma-middle-east`]: '2026-09-29',
+    [`${BASE}/healthcare-market-research/uae`]: '2026-09-29',
+    [`${BASE}/insights/top-market-research-companies-egypt-2026`]: '2026-09-29',
+  };
+  for (const [loc, floor] of Object.entries(lastmodFloor)) {
+    const meta = finalUrls.get(loc);
+    if (meta && (meta.lastmod || '') < floor) meta.lastmod = floor;
   }
 
   const urls = [...finalUrls.entries()]

@@ -24,7 +24,7 @@ function mergeThinTherapyFaqs(
   return [...base, ...appended];
 }
 
-const BIOLOGICS_SEO_TITLE = 'Biologics Research Guide: Biosimilars & Market Access | BioNixus';
+const BIOLOGICS_SEO_TITLE = 'Biologics Market Research Services for Pharma | BioNixus';
 
 const IMMUNOLOGY_SEO_TITLE = 'Immunology Research Guide: Biologics & Patient Pathways | BioNixus';
 
@@ -38,7 +38,7 @@ const THERAPY_COPY: Record<string, string> = {
   immunology:
     'Immunology market research across MENA, UK & Europe: immune-mediated disease pathways, biologic sequencing and switching, safety and monitoring narratives, access and step-therapy friction—quantitative and qualitative insights for specialty and primary stakeholders.',
   biologics:
-    'Biologics and biosimilars market research across MENA, UK & Europe: adoption drivers, substitution confidence, hospital tendering, payer evidence, and launch or defense strategy—quantitative and qualitative pharmaceutical studies.',
+    'Custom biologics market research for pharma: prescriber, pharmacist, and tender fieldwork for launch and biosimilar defence. 48-hour proposal from BioNixus.',
   vaccines:
     'Vaccines and immunization programs: HCP confidence, public uptake drivers, communication testing, and rollout strategy support for national and private channels in priority healthcare markets.',
   cardiology:
@@ -677,7 +677,7 @@ export default function TherapyPage() {
                       ]
                     : [];
   const heroTitle = isBiologics
-    ? 'Biologics market research guide'
+    ? 'Biologics market research services'
     : isImmunology
       ? 'Immunology market research guide'
       : `${titleArea.charAt(0).toUpperCase() + titleArea.slice(1)} market research`;
@@ -685,22 +685,21 @@ export default function TherapyPage() {
   const heroDescription = isBiologics ? (
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                Biologics and biosimilars require strategy grounded in clinical practice, institutional workflow, and
-                access realities. Strong planning starts with a precise map of{' '}
-                <strong className="font-medium text-foreground">who influences initiation, continuation, substitution</strong>{' '}
-                and{' '}
-                <strong className="font-medium text-foreground">
-                  which procurement, formulary, and operational constraints shape uptake.
-                </strong>{' '}
-                BioNixus builds mixed-method programs to map those decision dynamics across GCC, broader MENA, the
-                United Kingdom, and Europe. Explore the{' '}
+                BioNixus runs custom biologics market research for pharmaceutical teams: prescriber, pharmacist, and
+                tender fieldwork that supports launch, access, and biosimilar defence. This page scopes the study. It
+                does not republish a syndicated size table. Start from the{' '}
                 <Link to="/healthcare-market-research" className="text-primary underline">
                   healthcare market research hub
                 </Link>{' '}
-                for country coverage, or continue below for a structured guide to biologics insight work.
+                for country coverage, then use the modules below to brief a biologics programme.
               </p>
               <p>
-                If your portfolio skews toward immune-mediated disease, pair this page with{' '}
+                Gulf immunology and biologics sizing is in the{' '}
+                <Link to="/market-reports/gcc-immunology-biologics-market-report" className="text-primary underline">
+                  GCC immunology and biologics market report
+                </Link>
+                , which puts the 2026 market at USD 2.2–2.8 billion. If the brief is immune-mediated disease pathways,
+                pair this services page with{' '}
                 <Link to="/healthcare-market-research/therapy/immunology" className="text-primary underline">
                   immunology market research
                 </Link>
@@ -737,7 +736,7 @@ export default function TherapyPage() {
               <p>
                 Most immunology assets compete as advanced therapies; link this page with our{' '}
                 <Link to="/healthcare-market-research/therapy/biologics" className="text-primary underline">
-                  biologics market research guide
+                  biologics market research services
                 </Link>{' '}
                 for procurement, tender, and biosimilar substitution dynamics. For Gulf context on institution mix and access
                 evolution, see{' '}
@@ -789,7 +788,7 @@ export default function TherapyPage() {
                 </Link>
                 . Where specialty biologics or substitution shape the category, our{' '}
                 <Link to="/healthcare-market-research/therapy/biologics" className="text-primary underline">
-                  biologics market research guide
+                  biologics market research services
                 </Link>{' '}
                 and{' '}
                 <Link to="/healthcare-market-research/therapy/immunology" className="text-primary underline">
