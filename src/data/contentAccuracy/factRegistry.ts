@@ -59,6 +59,18 @@ function buildFact(marketSlug: string, therapySlug: string): TherapyMarketFact |
     };
   }
 
+  // Owner-confirmed GCC immunology & biologics headline (gccRegional.ts):
+  // USD 2.2–2.8B in 2026 at ~11% CAGR. 2030 is an estimate: four years of
+  // compound growth, about USD 3.3–4.3B. Other therapy markets keep their tuples.
+  if (marketSlug === 'gcc' && therapySlug === 'immunology-biologics') {
+    base.forecast2030 = {
+      label: 'Forecast 2030 (estimate)',
+      value: 'USD 3.3–4.3B',
+      source: segmentSource,
+      year: 2030,
+    };
+  }
+
   const sources = new Set<string>([base.marketSize2026.source, base.forecast2030.source, base.cagr.source]);
   if (intel?.epidemiology?.length) {
     intel.epidemiology.slice(0, 2).forEach((e) => {

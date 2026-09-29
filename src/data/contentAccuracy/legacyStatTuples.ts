@@ -37,7 +37,7 @@ export const LEGACY_STAT_TUPLES: Record<string, StatTuple> = {
   "gcc:dermatology": ["~$428M","Market size 2026","~$706M","Forecast 2030","17.9%","CAGR 2026–2030"] as StatTuple,
   "gcc:diabetes-metabolic": ["~$5.25B","Market size 2026","~$8.96B","Forecast 2030","13.9%","CAGR 2026–2030"] as StatTuple,
   "gcc:digital-health": ["~$982M","Market size 2026","~$1.71B","Forecast 2030","17.9%","CAGR 2026–2030"] as StatTuple,
-  "gcc:immunology-biologics": ["~$5.92B","Market size 2026","~$9.71B","Forecast 2030","12.6%","CAGR 2026–2030"] as StatTuple,
+  "gcc:immunology-biologics": ["USD 2.2–2.8B","Market size 2026","USD 3.3–4.3B","Forecast 2030 (estimate)","~11%","CAGR 2026–2030"] as StatTuple,
   "gcc:neurology-cns": ["~$2.71B","Market size 2026","~$4.82B","Forecast 2030","13.9%","CAGR 2026–2030"] as StatTuple,
   "gcc:oncology": ["~$7.8B","Market size 2026","~$13.9B","Forecast 2030","11.6%","CAGR 2026–2030"] as StatTuple,
   "gcc:rare-diseases": ["~$1.92B","Market size 2026","~$3.31B","Forecast 2030","15.9%","CAGR 2026–2030"] as StatTuple,

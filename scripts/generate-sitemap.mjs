@@ -979,6 +979,7 @@ function buildStaticRoutes() {
       path: `/market-reports/${slug}`,
       priority: '0.87',
       changefreq: 'weekly',
+      ...(slug === 'gcc-immunology-biologics-market-report' ? { lastmod: '2026-09-29' } : {}),
     });
   }
   for (const slug of industryGlobalHubSlugs) {
