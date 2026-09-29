@@ -352,6 +352,10 @@ export default function EgyptPharmaceuticalMarketResearch() {
               <Link to="/pharmaceutical-companies-egypt" className="text-primary underline">
                 pharmaceutical companies in Egypt
               </Link>
+              ,{' '}
+              <Link to="/egypt-obesity-market" className="text-primary underline">
+                Egypt obesity and GLP-1 primary research
+              </Link>
               , the{' '}
               <Link to="/insights/top-market-research-companies-egypt-2026" className="text-primary underline">
                 top market research companies in Egypt (2026) guide

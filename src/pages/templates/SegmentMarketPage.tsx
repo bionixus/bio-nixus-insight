@@ -24,18 +24,33 @@ import {
  */
 export default function SegmentMarketPage({ content }: { content: SegmentMarketContent }) {
   const canonicalPath = `/${content.slug}`;
-  const breadcrumbItems = [
+  const breadcrumbItems = content.breadcrumbs ?? [
     { name: 'Home', href: '/' },
     { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
     { name: content.breadcrumbLabel, href: canonicalPath },
   ];
 
+  const webPageSchema =
+    content.pageSchema === 'webpage'
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: content.h1,
+            url: content.canonical,
+            ...(content.lastUpdated ? { dateModified: content.lastUpdated } : {}),
+          },
+        ]
+      : [];
+
   const jsonLd = [
     {
       ...buildServiceSchema(),
-      name: `${content.geoLabel} ${content.segmentLabel} Market Research`,
-      serviceType: `${content.segmentLabel} market research and market intelligence`,
-      description: content.description,
+      ...(content.serviceName ? { '@id': `${content.canonical}#service` } : {}),
+      name: content.serviceName ?? `${content.geoLabel} ${content.segmentLabel} Market Research`,
+      serviceType:
+        content.serviceType ?? `${content.segmentLabel} market research and market intelligence`,
+      description: content.serviceDescription ?? content.description,
       url: content.canonical,
       areaServed: content.areaServed.map((name) => ({ '@type': 'Country', name })),
     },
@@ -66,7 +81,8 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
           },
         ]
       : []),
-    ...(content.lastUpdated
+    ...webPageSchema,
+    ...(content.lastUpdated && content.pageSchema !== 'webpage'
       ? [
           {
             '@context': 'https://schema.org',
@@ -97,6 +113,8 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
       })
     : null;
 
+  const introLinks = content.introLinks ?? [];
+
   const jumpItems = [
     { href: '#answer', label: 'Answer' },
     ...(content.rankedList ? [{ href: '#ranked-list', label: 'Ranking' }] : []),
@@ -121,7 +139,22 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
           breadcrumbs={breadcrumbItems}
           kicker={content.badge}
           h1={content.h1}
-          lead={content.intro[0] ?? content.description}
+          lead={
+            introLinks.length > 0 ? (
+              <>
+                {content.intro[0] ?? content.description}{' '}
+                {introLinks.map((link, index) => (
+                  <span key={link.to}>
+                    {index === 0 ? 'See the ' : ' and the '}
+                    <Link to={link.to}>{link.label}</Link>
+                    {index === introLinks.length - 1 ? '.' : null}
+                  </span>
+                ))}
+              </>
+            ) : (
+              (content.intro[0] ?? content.description)
+            )
+          }
           rest={
             content.intro.length > 1 ? (
               <>
@@ -324,6 +357,29 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
             ))}
           </ul>
         </DirectorySection>
+
+        {content.citations && content.citations.length > 0 ? (
+          <DirectorySection id="sources" eyebrow="Sources" title="Public sources used as research context">
+            <ul className="space-y-4">
+              {content.citations.map((citation) => (
+                <li
+                  key={citation.href}
+                  className="rounded-2xl border border-[#EDE9E3] bg-[#FFFEFB] p-5"
+                >
+                  <a
+                    href={citation.href}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="font-semibold text-primary hover:underline"
+                  >
+                    {citation.label}
+                  </a>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{citation.note}</p>
+                </li>
+              ))}
+            </ul>
+          </DirectorySection>
+        ) : null}
 
         <DirectorySection id="related" eyebrow="Keep reading" title="Related research resources">
           <div className="grid md:grid-cols-2 gap-3">

@@ -74,6 +74,23 @@ export type SegmentMarketContent = {
   };
   /** ISO date (YYYY-MM-DD). Shown as "Updated" under the H1 and emitted as dateModified. */
   lastUpdated?: string;
+  /**
+   * When `webpage`, emit a WebPage node (dateModified = lastUpdated) instead of Article.
+   * Other pages keep the Article node.
+   */
+  pageSchema?: 'webpage';
+  /** Replaces the default Home → healthcare hub → leaf breadcrumb trail. */
+  breadcrumbs?: Array<{ name: string; href: string }>;
+  /** Service JSON-LD name. Defaults to "{geo} {segment} Market Research". */
+  serviceName?: string;
+  /** Service JSON-LD serviceType. */
+  serviceType?: string;
+  /** Service JSON-LD description. Defaults to the meta description. */
+  serviceDescription?: string;
+  /** Rendered in the hero immediately after the first paragraph. */
+  introLinks?: Array<{ to: string; label: string }>;
+  /** Public documents cited as registration or adjacency context. */
+  citations?: Array<{ label: string; href: string; note: string }>;
   /** Sub-segment / category breakdown table. */
   segmentBreakdown?: {
     heading: string;
