@@ -9,7 +9,13 @@ import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketRefer
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { PremiumMarketAccess } from '@/components/services/PremiumMarketAccess';
 import { PremiumQuantitativeResearch } from '@/components/services/PremiumQuantitativeResearch';
-import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
+import {
+  getServiceExpandedFaqs,
+  SERVICE_HERO_EXTENSIONS,
+  SERVICE_PAGE_GEO_LLM,
+} from '@/data/seo/serviceExpandedPageContent';
+import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { ServiceProgrammeNarrative } from '@/components/seo/ServiceProgrammeNarrative';
 
 interface ServiceData {
   title: string;
@@ -202,12 +208,9 @@ const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { language } = useLanguage();
   const svc = slug ? serviceData[slug] : undefined;
-  const faqItems =
-    slug === 'quantitative-research'
-      ? SERVICE_EXPANDED_FAQS['quantitative-research']
-      : slug === 'market-access'
-        ? SERVICE_EXPANDED_FAQS['market-access']
-        : undefined;
+  const faqItems = getServiceExpandedFaqs(slug);
+  const geoLlm = slug ? SERVICE_PAGE_GEO_LLM[slug] : undefined;
+  const heroExtension = slug ? SERVICE_HERO_EXTENSIONS[slug] : undefined;
   const isPremiumService = slug === 'quantitative-research' || slug === 'market-access';
 
   if (!svc) return <Navigate to="/services" replace />;
@@ -260,9 +263,23 @@ const ServiceDetail = () => {
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl">
               {svc.heroSubtitle}
+              {heroExtension ? ` ${heroExtension}` : ''}
             </p>
           </div>
         </section>
+
+        {geoLlm ? (
+          <section className="section-padding py-10 bg-background border-b border-border/60">
+            <div className="container-wide max-w-4xl mx-auto">
+              <GeoLLMAnswerBlock
+                question={geoLlm.question}
+                answer={geoLlm.answer}
+                points={geoLlm.points}
+                summary={geoLlm.summary}
+              />
+            </div>
+          </section>
+        ) : null}
 
         {slug === 'market-access' && (
           <section className="section-padding py-10 bg-background border-b border-border/60">
@@ -417,6 +434,12 @@ const ServiceDetail = () => {
         </section>
 
         {slug ? <ServiceMarketReferenceGuide serviceSlug={slug} /> : null}
+
+        {slug ? <ServiceProgrammeNarrative serviceSlug={slug} className="bg-cream-dark" /> : null}
+
+        {faqItems && faqItems.length > 0 ? (
+          <FAQSection title="Frequently asked questions" items={faqItems} className="section-padding py-16 bg-cream-dark" />
+        ) : null}
 
         {/* CTA */}
         <section className="section-padding py-16 bg-primary">

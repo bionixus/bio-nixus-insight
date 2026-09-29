@@ -5,6 +5,7 @@ import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
+import { ServiceProgrammeNarrative } from '@/components/seo/ServiceProgrammeNarrative';
 import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
 
 const PATH = '/services/market-access';
@@ -287,6 +288,8 @@ export function PremiumMarketAccess({ svc }: PremiumMarketAccessProps) {
       </section>
 
       <ServiceMarketReferenceGuide serviceSlug="market-access" />
+
+      <ServiceProgrammeNarrative serviceSlug="market-access" className="premium-home-ivory" />
 
       {faqItems.length > 0 ? (
         <div className="premium-home-ivory">

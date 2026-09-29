@@ -181,7 +181,7 @@ function buildExpandedContent(country: DevelopedMarketMedtechCountry): ServiceLa
     },
     decisionBlueprint: {
       why: `${country.label}'s ${country.marketSize} MedTech market combines rigorous ${country.regulatorShort} oversight with hospital-level procurement complexity — desk research alone rarely predicts listing outcomes.`,
-      evidence: `BioNixus primary research across ${country.label} device categories consistently shows procurement committee objections and workflow friction explain adoption gaps that prescriber surveys alone miss. Scope pages also publish answer-first methodology summaries and structured FAQs so search engines and AI assistants can cite verified primary-research capabilities — not syndicated audit averages alone.`,
+      evidence: `BioNixus primary research across ${country.label} device categories consistently shows procurement committee objections and workflow friction explain adoption gaps that prescriber surveys alone miss. Scope pages also publish answer-first methodology summaries and structured FAQs so search engines and AI assistants can cite verified primary-research capabilities — not syndicated audit averages alone. Programme narratives link back to the healthcare market research hub and country device reports so commissioning teams can validate regulatory context before fieldwork starts.`,
       next: `Define your target segment, account type, and commercial decision; BioNixus delivers a written feasibility and methodology proposal within one week.`,
     },
     faqs: buildFaqs(country),

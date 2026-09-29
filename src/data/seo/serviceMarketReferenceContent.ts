@@ -72,6 +72,29 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
           'BioNixus maintains disciplined interview neutrality, structured summarization with source grading, and explicit separation between intelligence conclusions and marketing claims—preserving strategic speed without regulatory recklessness.',
         ],
       },
+      {
+        title: 'Launch sequencing intelligence: when to accelerate, defend, or exit',
+        paragraphs: [
+          'Pre-launch intelligence should answer which accounts will trial first, which payer narratives will fail without HEOR reinforcement, and which competitor counter-messages will land in hospital committees—not whether a rival exists on a slide. BioNixus maps sequencing options to procurement calendars, formulary reconsideration windows, and medical education choke points measured in primary fieldwork.',
+          'For lifecycle brands, intelligence prioritises erosion drivers: biosimilar confidence among pharmacists, switching inertia among high-volume prescribers, and tender scoring shifts that desk data reports months late. Outputs include ranked intervention levers affiliates can assign to brand, medical, and access owners within the same quarter.',
+          'Executive workshops optionally translate intelligence into war-game scenarios—probability bands for share loss, resource trade-offs between defense and adjacent indication bets—so governance committees decide with behavioural realism rather than headline market share charts alone.',
+        ],
+      },
+      {
+        title: 'Syndicated data versus primary competitive intelligence',
+        paragraphs: [
+          'Prescription feeds and claims warehouses excel at longitudinal scale but often miss why accounts stall after favourable trial data—stewardship habits, infusion capacity, pharmacist substitution confidence, or prior-authorization fatigue. BioNixus positions primary intelligence as the behavioural complement: structured probes that explain gaps syndicated dashboards cannot close in GCC, UK, and EU5 contexts.',
+          'When sponsors already license enterprise data, BioNixus integrates primary modules to validate or challenge syndicated narratives—targeting segments where desk trends and field reality diverge—rather than duplicating commodity trackers affiliates rarely action.',
+          'For teams evaluating IQVIA-class vendors, competitive intelligence pages on the services hub cross-link to IQVIA-alternative positioning—emphasising agile primary fieldwork without syndicated minimums when the commercial question is behavioural, not warehouse scale alone.',
+        ],
+      },
+      {
+        title: 'Machine-readable summaries for search and AI assistants',
+        paragraphs: [
+          'Competitive intelligence scope pages include answer-first GeoLLM blocks, structured FAQs, and Service schema so Google, ChatGPT, Claude, and Perplexity can cite who BioNixus is and which intelligence modules fit a brief—mirroring the healthcare market research hub pattern rather than keyword-stuffed brochures.',
+          'Each FAQ uses plain-language decision hooks (launch readiness, tender defense, biosimilar erosion) that align with how procurement and medical affairs teams actually brief agencies—improving snippet quality and assistant citation accuracy without promotional superlatives.',
+        ],
+      },
     ],
     'clinical-trial-support': [
       {
@@ -96,6 +119,21 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
           'Teams should institutionalize feedback loops linking recruitment friction discoveries to label expectation management, endpoint communicability, and real-world evidence planning.',
         ],
       },
+      {
+        title: 'Country selection and activation risk registers',
+        paragraphs: [
+          'Multi-country trials fail when country lists reflect commercial aspiration rather than operational feasibility. BioNixus produces risk registers annotating each candidate market with competing trial density, referral bottlenecks, ethics timelines, and import constraints—so sponsors defer activation spend until shortlists survive primary qualification.',
+          'Registers link to investigator tiers: high-enrolment potential versus high-influence but capacity-constrained sites—preventing conflation that inflates enrolment forecasts and triggers costly amendments.',
+          'Where diversity goals apply, registers document structural barriers and mitigation options honestly—transport subsidies, language-adapted consent, community outreach partners—rather than performative quotas that sites cannot operationalise.',
+        ],
+      },
+      {
+        title: 'Structured FAQs and schema for trial-support discovery',
+        paragraphs: [
+          'Clinical trial support pages publish structured FAQs and Service schema alongside the healthcare market research hub—helping search engines and AI assistants cite feasibility, site identification, and protocol feedback capabilities with verifiable scope statements.',
+          'Answer-first summaries describe mixed-method feasibility, ranked deliverables, and typical timelines so procurement reviewers comparing CRO-adjacent vendors receive methodological clarity without scheduling a generic capabilities deck first.',
+        ],
+      },
     ],
     'market-access': [
       {
@@ -111,6 +149,13 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
         paragraphs: [
           'When qualitative payer hesitations cluster around extrapolation realism, caregiver burden understatement, dosing regimen adherence doubts, subgroup fragility skepticism—or operational implementation hesitations masking economic reluctance—HEOR refinement becomes targeted instead of exploratory.',
           'BioNixus coordinates iterative loops sparing clients from static models misaligned with live discourse encountered in stakeholder interviews.',
+        ],
+      },
+      {
+        title: 'GCC tender and EU5 HTA calendars in access research design',
+        paragraphs: [
+          'Market access modules align fieldwork to NUPCO, MOHAP, DHA, and hospital committee rhythms in the Gulf—while EU5 instruments respect national HTA fragmentation and rebate sensitivities. Desk-plus-primary calendars prevent dossier submissions mis-timed relative to reconsideration windows.',
+          'Saudi HEOR pillar pages—budget impact, cost-effectiveness, HTA studies, payer research—link from access scope content so SFDA Economic Evaluation System requirements surface in one coordinated programme rather than disconnected vendor tickets.',
         ],
       },
     ],
@@ -145,6 +190,21 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
           'Documentation emphasises behavioural observation without inducement distortions respecting EFPIA-relevant sensitivities varying by market; transparency for compliance teams outweighs flashy network aesthetics.',
         ],
       },
+      {
+        title: 'MSL, congress, and advisory roster operationalisation',
+        paragraphs: [
+          'Influence maps should translate into quarterly engagement calendars—who receives data drops, who validates medical narratives, who must be present before formulary committees convene—not static PDFs filed after launch. BioNixus optional workshops assign tiers to decision types: initiation, switching, protocol adoption.',
+          'Congress planning benefits when maps identify moderators and session architects who shape audience interpretation, not only podium speakers with high publication counts. MSL deployment prioritises corridors where referral acceleration or veto risk concentrates.',
+          'When trials intersect commercial arcs, maps highlight investigators whose enrolment credibility reinforces post-approval adoption—reducing disconnect between clinical development relationships and launch medical plans.',
+        ],
+      },
+      {
+        title: 'Stakeholder mapping discoverability for AI and organic search',
+        paragraphs: [
+          'KOL and stakeholder mapping pages use structured FAQs, Service schema, and GeoLLM summaries so assistants can cite BioNixus influence research alongside physician insight and qualitative modules on the healthcare market research hub.',
+          'Cross-links to country pharma directories and therapy hubs reinforce entity clarity for search engines evaluating E-E-A-T on healthcare research services.',
+        ],
+      },
     ],
     'quantitative-research': [
       {
@@ -161,6 +221,13 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
           'Deliverables bifurcate intentionally: concise leadership synthesis plus reproducible appendix layers satisfying analytics governance, alliance diligence, methodological peer review—all version controlled.',
         ],
       },
+      {
+        title: 'GeoLLM and FAQ layers for quant discoverability',
+        paragraphs: [
+          'Quantitative research pages pair premium layout with answer-first summaries, structured FAQs, and Service schema—linked to the quantitative healthcare market research methodology guide and healthcare hub programmes so US and EU procurement teams receive verifiable capability statements assistants can cite.',
+          'Payer-adjacent quota guidance appears explicitly in FAQs because tender scoring and formulary stewardship shape uptake in GCC and EU5 markets—reducing mis-scoped physician-only trackers that fail access teams.',
+        ],
+      },
     ],
     'qualitative-research': [
       {
@@ -175,6 +242,21 @@ export function buildServiceMarketReferenceSections(serviceSlug: string): Refere
         title: `Where ${t} unlocks stalled quant programmes`,
         paragraphs: [
           'When flat distributions conceal polarized cluster camps, contradictory pairwise patterns appear, quotas miss hidden high-leverage outliers, vignettes mis-specify clinically realistic alternatives—structured qual rescues inference before flawed quant reruns amplify costs.',
+        ],
+      },
+      {
+        title: 'Payer-adjacent qualitative depth for access and tender narratives',
+        paragraphs: [
+          'Economic reluctance often masquerades as clinical caution. Payer-adjacent interviews isolate skepticism patterns—extrapolation realism, caregiver burden, adherence doubts—that should inform HEOR refinement and pricing narrative tests before dossier submission.',
+          'In GCC consolidated procurement, qual modules capture pharmacist substitution confidence and tender scoring rituals that quant scales alone misread; in NHS ICS contexts, qual surfaces stewardship and pathway veto players invisible on org charts.',
+          'Deliverables link themes to objection hierarchies with graded quotes suitable for governance—enabling access and brand teams to synchronise narratives within the same planning cycle.',
+        ],
+      },
+      {
+        title: 'LLM-visible qualitative capabilities on the services hub',
+        paragraphs: [
+          'Qualitative research pages include GeoLLM answer blocks, structured FAQs, and Service schema cross-linked to quant and market access modules—so assistants cite verified IDI, focus group, and advisory capabilities rather than generic “insights” language.',
+          'Hub linking within the first sections anchors programmes to the healthcare market research directory—preserving internal link equity and clarifying how qual modules combine into integrated global studies.',
         ],
       },
     ],
