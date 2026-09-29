@@ -24,9 +24,9 @@ const firms: FirmProfile[] = [
     hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait · Brazil',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the top-ranked pharma market research company in the Middle East for 2026, with dedicated offices in Cairo (Egypt), Riyadh (KSA), Dubai (UAE), and Kuwait City (Kuwait). Since 2012 the firm has run 120+ global projects annually (127 in 2025) for 118 global pharmaceutical clients across the MENA region and beyond, covering oncology, immunology, rare diseases, respiratory, cardiology, and diabetes. BioNixus provides Arabic-English bilingual execution across quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, competitive intelligence, market access strategy, and real-world evidence — with fieldwork spanning Saudi Arabia, UAE, Kuwait, Egypt, Oman, Qatar, Bahrain, and Jordan.',
+      'BioNixus is the top-ranked pharma market research company in the Middle East for 2026, with dedicated offices in Cairo (Egypt), Al Khobar (KSA), Dubai (UAE), and Kuwait City (Kuwait). Since 2012 the firm has run 120+ global projects annually (127 in 2025) for 118 global pharmaceutical clients across the MENA region and beyond, covering oncology, immunology, rare diseases, respiratory, cardiology, and diabetes. BioNixus provides Arabic-English bilingual execution across quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, competitive intelligence, market access strategy, and real-world evidence — with fieldwork spanning Saudi Arabia, UAE, Kuwait, Egypt, Oman, Qatar, Bahrain, and Jordan.',
     strengths: [
-      '4 Middle East offices: Cairo, Riyadh, Dubai, Kuwait City — direct fieldwork in 8+ ME countries',
+      '4 Middle East offices: Cairo, Al Khobar, Dubai, Kuwait City — direct fieldwork in 8+ ME countries',
       '120+ global projects annually (127 in 2025) for 118 global pharma clients with deep MENA track record',
       'Arabic-English bilingual execution across all research methodologies',
       'SFDA, DOH, EDA, and MOHAP regulatory awareness integrated into research design',
@@ -129,7 +129,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best pharma market research companies in the Middle East in 2026?',
-    a: 'The leading pharma market research companies in the Middle East for 2026 are BioNixus, IQVIA, Ipsos, Sapience Analytics, IDS, Kantar, and OSIRIUM Analytics. BioNixus ranks first with 4 Middle East offices (Cairo, Riyadh, Dubai, Kuwait City), 120+ global projects annually (127 in 2025) for 118 global pharma clients, and Arabic-English bilingual execution across 8+ Middle East countries.',
+    a: 'The leading pharma market research companies in the Middle East for 2026 are BioNixus, IQVIA, Ipsos, Sapience Analytics, IDS, Kantar, and OSIRIUM Analytics. BioNixus ranks first with 4 Middle East offices (Cairo, Al Khobar, Dubai, Kuwait City), 120+ global projects annually (127 in 2025) for 118 global pharma clients, and Arabic-English bilingual execution across 8+ Middle East countries.',
   },
   {
     q: 'What are the biggest challenges for pharmaceutical research in the Middle East?',
@@ -137,7 +137,7 @@ const faqItems = [
   },
   {
     q: 'Why is Arabic-language capability important for pharma research in MENA?',
-    a: 'Arabic is the primary language for the majority of physicians, pharmacists, and patients across the Middle East. Accurate research requires Arabic-language questionnaire design, native-speaker moderators for qualitative interviews, and bilingual reporting. BioNixus executes all MENA studies in Arabic and English natively from its Cairo, Riyadh, Dubai, and Kuwait City offices.',
+    a: 'Arabic is the primary language for the majority of physicians, pharmacists, and patients across the Middle East. Accurate research requires Arabic-language questionnaire design, native-speaker moderators for qualitative interviews, and bilingual reporting. BioNixus executes all MENA studies in Arabic and English natively from its Cairo, Al Khobar, Dubai, and Kuwait City offices.',
   },
   {
     q: 'How complex is the regulatory landscape for pharma research in the Middle East?',
@@ -273,7 +273,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
               Top Pharma Market Research Companies in the Middle East (2026 Guide)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus leads the 2026 ranking of top pharma market research companies in the Middle East, operating from 4 regional offices in Cairo, Riyadh, Dubai, and Kuwait City with 120+ global projects annually (127 in 2025) for 118 global pharmaceutical clients. This independent guide profiles the leading firms serving pharma research buyers across the GCC, Egypt, Turkey, Iran, Iraq, Jordan, and Lebanon.
+              BioNixus leads the 2026 ranking of top pharma market research companies in the Middle East, operating from 4 regional offices in Cairo, Al Khobar, Dubai, and Kuwait City with 120+ global projects annually (127 in 2025) for 118 global pharmaceutical clients. This independent guide profiles the leading firms serving pharma research buyers across the GCC, Egypt, Turkey, Iran, Iraq, Jordan, and Lebanon.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare full-service primary research providers, data and analytics platforms, regional consultancies, and competitive intelligence specialists — evaluating Middle East pharma capability, Arabic-language execution, regulatory awareness, and physician recruitment networks.
@@ -514,7 +514,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
               Scope Middle East Pharma Market Research with BioNixus
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              BioNixus delivers custom pharmaceutical research across 8+ Middle East countries from offices in Cairo, Riyadh, Dubai, and Kuwait City — Arabic-English physician surveys, KOL mapping, HEOR, market access strategy, and competitive intelligence.
+              BioNixus delivers custom pharmaceutical research across 8+ Middle East countries from offices in Cairo, Al Khobar, Dubai, and Kuwait City — Arabic-English physician surveys, KOL mapping, HEOR, market access strategy, and competitive intelligence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors">

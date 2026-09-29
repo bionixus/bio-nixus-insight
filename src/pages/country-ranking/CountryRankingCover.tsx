@@ -25,6 +25,10 @@ type CountryRankingCoverProps = {
   crumbHref: string;
   chips: RankingCoverChip[];
   stats: RankingCoverStat[];
+  /** Replaces the default meta + "1 September 2026" line when a page has been re-reviewed. */
+  reviewedLine?: string;
+  /** Replaces the shared office strip. Defaults keep other ranking pages unchanged. */
+  networkLine?: ReactNode;
 };
 
 export function CountryRankingCover({
@@ -37,6 +41,8 @@ export function CountryRankingCover({
   crumbHref,
   chips,
   stats,
+  reviewedLine,
+  networkLine,
 }: CountryRankingCoverProps) {
   return (
     <section className="cover">
@@ -65,9 +71,13 @@ export function CountryRankingCover({
           </div>
           <div className="cover-top-right">
             <div className="cref">
-              {meta}
-              <br />
-              1 September 2026
+              {reviewedLine ?? (
+                <>
+                  {meta}
+                  <br />
+                  1 September 2026
+                </>
+              )}
             </div>
             <div className="cbadge">{badge}</div>
           </div>
@@ -77,10 +87,8 @@ export function CountryRankingCover({
           <span className="or-txt">{kicker}</span>
           <span className="or-line" />
         </div>
-        <h1 className="cover-title">
-          <span className="h1-kicker">{kicker}</span>
-          {h1}
-        </h1>
+        <p className="h1-kicker">{kicker}</p>
+        <h1 className="cover-title">{h1}</h1>
         <p className="cover-subtitle">{subtitle}</p>
         <div className="cover-mkts">
           {chips.map((chip) => (
@@ -108,14 +116,18 @@ export function CountryRankingCover({
           ))}
         </div>
         <div className="cover-foot">
-          <div>
-            <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Riyadh · Dubai ·{' '}
-            <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
-          </div>
-          <div>
-            {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
-            annually · {STATS.projects2025} in 2025
-          </div>
+          {networkLine ?? (
+            <>
+              <div>
+                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
+              </div>
+              <div>
+                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
+                annually · {STATS.projects2025} in 2025
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>

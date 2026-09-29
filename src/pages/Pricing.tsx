@@ -219,7 +219,7 @@ export default function Pricing() {
             </div>
             <div className="cover-foot">
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Riyadh · Dubai ·{' '}
+                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>

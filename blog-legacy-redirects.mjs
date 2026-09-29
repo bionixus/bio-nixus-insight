@@ -39,6 +39,7 @@ export const REDIRECT_HREF_REWRITES = {
   '/conf': '/strategic-portfolio',
   '/ar/conf': '/ar/strategic-portfolio',
   '/healthcare-market-research/united-kingdom': '/healthcare-market-research/uk',
+  '/healthcare-market-research/united-arab-emirates': '/healthcare-market-research/uae',
   '/ar/': '/ar',
   '/ar/contacts': '/ar/contact',
   '/fr/contacts': '/fr/contact',

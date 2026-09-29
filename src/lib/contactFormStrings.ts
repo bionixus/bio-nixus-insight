@@ -88,7 +88,7 @@ const en: ContactFormStrings = {
   },
   phoneFieldLabel: 'Phone',
   regionalRepresentationLabel: 'Regional representation',
-  regionalOffices: ['Dubai, UAE', 'Jeddah, Saudi Arabia', 'Kuwait City, Kuwait', 'Cairo, Egypt'],
+  regionalOffices: ['Dubai, UAE', 'Al Khobar, Saudi Arabia', 'Kuwait City, Kuwait', 'Cairo, Egypt'],
   premiumFormSubcopy:
     'Tell us the markets, sector, and decision at stake. We respond with a scoped plan — typically within one business day.',
   premiumEyebrow: 'Direct channels',
@@ -154,7 +154,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     regionalRepresentationLabel: 'Regionale Vertretung',
     regionalOffices: [
       'Dubai, VAE',
-      'Dschidda, Saudi-Arabien',
+      'Al Khobar, Saudi-Arabien',
       'Kuwait-Stadt, Kuwait',
       'Kairo, Ägypten',
     ],
@@ -220,7 +220,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     regionalRepresentationLabel: 'Représentation régionale',
     regionalOffices: [
       'Dubaï, Émirats arabes unis',
-      'Djeddah, Arabie saoudite',
+      'Al Khobar, Arabie saoudite',
       'Koweït, Koweït',
       'Le Caire, Égypte',
     ],
@@ -286,7 +286,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     regionalRepresentationLabel: 'Representación regional',
     regionalOffices: [
       'Dubái, Emiratos Árabes Unidos',
-      'Yeda, Arabia Saudí',
+      'Al Khobar, Arabia Saudí',
       'Ciudad de Kuwait, Kuwait',
       'El Cairo, Egipto',
     ],
@@ -352,7 +352,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     regionalRepresentationLabel: 'Representação regional',
     regionalOffices: [
       'Dubai, Emirados Árabes Unidos',
-      'Jeddah, Arábia Saudita',
+      'Al Khobar, Arábia Saudita',
       'Cidade do Kuwait, Kuwait',
       'Cairo, Egito',
     ],
@@ -418,7 +418,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     regionalRepresentationLabel: 'Региональное представительство',
     regionalOffices: [
       'Дубай, ОАЭ',
-      'Джидда, Саудовская Аравия',
+      'Эль-Хубар, Саудовская Аравия',
       'Эль-Кувейт, Кувейт',
       'Каир, Египет',
     ],
@@ -482,7 +482,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: '电话',
     regionalRepresentationLabel: '区域代表处',
-    regionalOffices: ['阿联酋迪拜', '沙特阿拉伯吉达', '科威特科威特城', '埃及开罗'],
+    regionalOffices: ['阿联酋迪拜', '沙特阿拉伯胡拜尔', '科威特科威特城', '埃及开罗'],
     premiumFormSubcopy:
       '请告诉我们目标市场、治疗领域以及需要支持的决策。我们通常会在一个工作日内回复一份明确界定范围的研究方案。',
     premiumEyebrow: '直接联系方式',
@@ -545,7 +545,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     regionalRepresentationLabel: 'التمثيل الإقليمي',
     regionalOffices: [
       'دبي، الإمارات العربية المتحدة',
-      'جدة، المملكة العربية السعودية',
+      'الخبر، المملكة العربية السعودية',
       'مدينة الكويت، الكويت',
       'القاهرة، مصر',
     ],

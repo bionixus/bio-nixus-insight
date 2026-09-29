@@ -327,16 +327,26 @@ export default function CountryPage() {
                 </>
               ) : config.slug === 'uae' && hubCompaniesCopy ? (
                 <>
-                  {hubCompaniesCopy.opening} See the{' '}
-                  <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
-                    IQVIA alternative
-                  </Link>{' '}
-                  and the{' '}
-                  <Link
-                    to="/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide"
-                    className="text-primary font-medium hover:underline"
-                  >
-                    Abu Dhabi DOH vs Dubai DHA formulary guide
+                  <span className="block text-sm text-muted-foreground mb-3">Last reviewed 28 September 2026</span>
+                  This is BioNixus&apos;s UAE healthcare market research hub, run from our Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2. If you are choosing a healthcare market research company in UAE, start with our{' '}
+                  <Link to="/uae-pharmaceutical-market-research" className="text-primary font-medium hover:underline">
+                    company page
+                  </Link>
+                  . For the regional index, see the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                    healthcare market research hub
+                  </Link>
+                  , the{' '}
+                  <Link to="/insights/top-market-research-companies-uae-2026" className="text-primary font-medium hover:underline">
+                    top market research company in UAE (2026 ranking)
+                  </Link>
+                  ,{' '}
+                  <Link to="/blog/market-access-research-uae-2026" className="text-primary font-medium hover:underline">
+                    UAE market access research 2026
+                  </Link>
+                  , and{' '}
+                  <Link to="/healthcare-market-research-agency-gcc" className="text-primary font-medium hover:underline">
+                    healthcare market research agency GCC
                   </Link>
                   .
                 </>
@@ -852,6 +862,13 @@ export default function CountryPage() {
               , and the{' '}
               <Link to="/healthcare-market-research/dubai" className="text-primary underline font-medium">
                 Dubai country research hub
+              </Link>
+              .
+            </p>
+              <p className="text-base leading-relaxed text-muted-foreground mt-4">
+              See the{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-uae-2026" className="text-primary underline font-medium">
+                2026 ranking of healthcare market research companies in the UAE
               </Link>
               .
             </p>

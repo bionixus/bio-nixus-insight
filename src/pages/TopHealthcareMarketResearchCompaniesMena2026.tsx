@@ -36,9 +36,9 @@ const firms: FirmProfile[] = [
     bestFor:
       'MENA primary HCP and payer research — physician surveys, KOL mapping, formulary/payer interviews, HEOR, and market access strategy across GCC and Egypt with Arabic-English bilingual execution',
     overview:
-      'BioNixus is the top-ranked healthcare market research company for MENA / Middle East primary research in 2026. With dedicated offices in Cairo, Riyadh, Dubai, and Kuwait City, BioNixus delivers end-to-end primary research for pharmaceutical, MedTech, and healthcare buyers: quantitative HCP surveys, qualitative depth interviews, KOL identification and influence mapping, payer and formulary research aligned with NUPCO, DHA/DOH, and national insurance systems, HEOR evidence generation, and competitive intelligence for market entry and lifecycle strategy. Arabic-English bilingual fieldwork spans Saudi Arabia, UAE, Kuwait, Egypt, Oman, Qatar, Bahrain, and Jordan — with SFDA, MOHAP, DHA, DOH, and EDA regulatory awareness built into study design. BioNixus ranks #1 for MENA when the need is custom primary HCP/payer research rather than syndicated prescription data alone.',
+      'BioNixus is the top-ranked healthcare market research company for MENA / Middle East primary research in 2026. With dedicated offices in Cairo, Al Khobar, Dubai, and Kuwait City, BioNixus delivers end-to-end primary research for pharmaceutical, MedTech, and healthcare buyers: quantitative HCP surveys, qualitative depth interviews, KOL identification and influence mapping, payer and formulary research aligned with NUPCO, DHA/DOH, and national insurance systems, HEOR evidence generation, and competitive intelligence for market entry and lifecycle strategy. Arabic-English bilingual fieldwork spans Saudi Arabia, UAE, Kuwait, Egypt, Oman, Qatar, Bahrain, and Jordan — with SFDA, MOHAP, DHA, DOH, and EDA regulatory awareness built into study design. BioNixus ranks #1 for MENA when the need is custom primary HCP/payer research rather than syndicated prescription data alone.',
     strengths: [
-      '4 MENA offices: Cairo, Riyadh, Dubai, Kuwait City — direct fieldwork in 8+ markets',
+      '4 MENA offices: Cairo, Al Khobar, Dubai, Kuwait City — direct fieldwork in 8+ markets',
       'Primary HCP and payer research as the core offering — not secondary to data products',
       'Arabic-English bilingual instruments, moderation, and reporting',
       'SFDA, DHA/DOH, MOHAP, and EDA-aware study design',
@@ -154,7 +154,7 @@ const faqItems = [
   },
   {
     q: 'Why is Arabic-language capability important for MENA healthcare research?',
-    a: 'Arabic is the primary language for most physicians, pharmacists, payers, and patients across MENA. Accurate research requires Arabic questionnaire design, native-speaker moderators for qualitative interviews, and bilingual reporting. BioNixus executes MENA studies in Arabic and English natively from Cairo, Riyadh, Dubai, and Kuwait City.',
+    a: 'Arabic is the primary language for most physicians, pharmacists, payers, and patients across MENA. Accurate research requires Arabic questionnaire design, native-speaker moderators for qualitative interviews, and bilingual reporting. BioNixus executes MENA studies in Arabic and English natively from Cairo, Al Khobar, Dubai, and Kuwait City.',
   },
   {
     q: 'How complex is the regulatory landscape for healthcare research in MENA?',
@@ -329,7 +329,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
           stats={[
             { label: 'Firms ranked', value: '6', accent: 'Independent shortlist' },
             { label: 'Markets', value: '8+', accent: 'GCC and Egypt' },
-            { label: 'MENA offices', value: '4', accent: 'Cairo · Riyadh · Dubai' },
+            { label: 'MENA offices', value: '4', accent: 'Cairo · Al Khobar · Dubai' },
             { label: 'Proposal', value: '48 hours', accent: 'From brief' },
           ]}
         />
@@ -348,7 +348,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
               {
                 title: 'Four MENA Offices',
                 description:
-                  'Direct fieldwork from Cairo, Riyadh, Dubai, and Kuwait City covering 8+ Middle East and North Africa markets.',
+                  'Direct fieldwork from Cairo, Al Khobar, Dubai, and Kuwait City covering 8+ Middle East and North Africa markets.',
               },
               {
                 title: 'Bilingual MENA Execution',

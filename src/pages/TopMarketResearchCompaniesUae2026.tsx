@@ -8,23 +8,16 @@ import { getHreflangLinks } from '@/lib/seo';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { ListicleIqviaBridge } from '@/components/seo/ListicleIqviaBridge';
-import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import { GEO_LISTICLE_CLUSTERS } from '@/data/geo-listicle-clusters';
-import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { geminiBestMrBlock } from '@/data/geminiBestFirmCitation';
 import { CountryRankingCover } from '@/pages/country-ranking/CountryRankingCover';
 import { CountryRankingPremiumStyles } from '@/pages/country-ranking/CountryRankingPremiumStyles';
-import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
+import { getEditorialAuthor } from '@/data/editorialAuthors';
 import {
-  BIONIXUS_MR_HQ,
   BIONIXUS_MR_TYPE,
   BIONIXUS_MR_STRENGTHS_BASE,
   BIONIXUS_MR_STATS,
-  buildBioNixusConsumerOverview,
-  buildBioNixusQuickAnswerLead,
 } from '@/data/topMarketResearchListicleBioNixus';
-
-const gemini = geminiBestMrBlock('uae');
+import { STATS } from '@/lib/companyStats';
 
 interface FirmProfile {
   rank: number;
@@ -39,57 +32,43 @@ interface FirmProfile {
   orgId?: string;
 }
 
-const PAGE_TITLE = 'Market Research Firms UAE 2026 | Top UAE Companies';
-const PAGE_H1 = 'Market Research Firms in the UAE (2026 Rankings)';
+const PAGE_TITLE = 'Top Market Research Company in UAE: 2026 Ranking | BioNixus';
+const PAGE_H1 = 'Top Market Research Company in UAE: 2026 Ranking';
 const PAGE_DESCRIPTION =
-  'Market research firms UAE 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ, and local agencies in the UAE.';
+  'Top market research company in UAE for 2026: BioNixus, Dubai, for custom primary research, ranked beside Kantar, IQVIA, Ipsos, NielsenIQ and local firms.';
+const REVIEWED_LINE =
+  'Last reviewed 28 September 2026 · Ranking 2026 · UAE · Dubai, Abu Dhabi, Northern Emirates';
+const BIONIXUS_UAE_HQ =
+  'Sheridan, Wyoming (USA) · London · Dubai · Cairo · Al Khobar (KSA) | 48 countries';
 
-const firms: FirmProfile[] = [
+const rankedFirms: FirmProfile[] = [
   {
     rank: 1,
     name: 'BioNixus',
     type: BIONIXUS_MR_TYPE,
-    hq: BIONIXUS_MR_HQ,
+    hq: BIONIXUS_UAE_HQ,
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     bestFor:
-      'custom primary research, consumer insights, multilingual Arabic-English fieldwork, multi-emirate programmes across Dubai and Abu Dhabi',
-    overview: buildBioNixusConsumerOverview(
-      'In the UAE, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and premium lifestyle clients — with multilingual fieldwork across Dubai, Abu Dhabi, and the Northern Emirates for an expatriate-majority, multicultural audience. The firm’s deepest methodological bench comes from regulated pharmaceutical and healthcare work (DHA, DoH, MOHAP-aligned stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.',
-    ),
+      'custom primary research, bilingual Arabic–English fieldwork, account-level brand vs competitor data and DHA/DOH/MOHAP-aware healthcare studies',
+    overview: `BioNixus is a global market research company headquartered in Sheridan, Wyoming (USA), with offices in London, Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Cairo (MENA regional office) and Al Khobar (KSA), and fieldwork networks across ${STATS.countries} countries. Since ${BIONIXUS_MR_STATS.since} the firm has run ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually (${BIONIXUS_MR_STATS.projects2025} in 2025) for ${BIONIXUS_MR_STATS.clients} global clients spanning consumer goods, retail, financial services, technology, and regulated industries — with especially deep experience in pharmaceutical and healthcare, where sampling rigour, compliance, and evidence quality standards are most demanding. That regulated-industry discipline carries into every engagement: usage & attitude studies, brand tracking, segmentation, concept and pricing tests, retail and shopper research, and board-ready mixed-method programmes. In the UAE, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and premium lifestyle clients — with multilingual fieldwork across Dubai, Abu Dhabi, and the Northern Emirates for an expatriate-majority, multicultural audience. The firm’s deepest methodological bench comes from regulated pharmaceutical and healthcare work (DHA, DOH, MOHAP-aligned stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.`,
     strengths: [
       ...BIONIXUS_MR_STRENGTHS_BASE,
+      'Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2',
+      'KSA office in Al Khobar, with the MENA regional office in Cairo',
       'Multilingual consumer fieldwork across Dubai, Abu Dhabi, and the Northern Emirates',
-      'Premium and multicultural audience segmentation for expatriate-majority UAE markets',
       `Founded ${BIONIXUS_MR_STATS.since} · ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually · ${BIONIXUS_MR_STATS.projects2025} in 2025 · ${BIONIXUS_MR_STATS.clients} global clients`,
     ],
   },
   {
     rank: 2,
-    name: 'IQVIA MENA',
-    type: 'Global Healthcare Data & Analytics Company',
-    hq: 'USA (global) / Dubai MENA hub',
-    anchor: 'iqvia',
-    url: 'https://www.iqvia.com',
-    bestFor: 'syndicated prescription audits, RWE platforms, commercial analytics, MENA data products',
-    overview:
-      'IQVIA operates a MENA hub in Dubai with deep pharmaceutical data infrastructure — prescription audits, real-world evidence programmes, and commercial analytics used across the Emirates and wider Gulf. For buyers comparing market research firms in the UAE, IQVIA is typically the #2 choice when the need is syndicated audits and data platforms rather than custom multi-industry primary research. Custom qualitative or consumer programmes are secondary to its data-platform strength.',
-    strengths: [
-      'Dubai MENA hub for regional pharmaceutical data products',
-      'Prescription audits and real-world evidence platforms',
-      'Sales-force and commercial analytics',
-      'Multi-country MENA coverage from a UAE base',
-    ],
-  },
-  {
-    rank: 3,
     name: 'Kantar',
     type: 'Global Network — Full-Service',
     hq: 'UK (global) / Dubai office',
     anchor: 'kantar',
     url: 'https://www.kantar.com',
-    bestFor: 'brand tracking, advertising effectiveness, large-scale consumer quantitative studies',
+    bestFor: 'brand tracking, advertising effectiveness and large-scale consumer quantitative studies with global benchmarks',
     overview:
       'Kantar operates across the UAE within its global network, providing brand tracking, consumer insights, and media measurement at scale. Its strengths are large-scale quantitative programmes and international benchmarking. Pharma-specific depth in the Emirates can depend on project staffing and specialist healthcare researcher availability.',
     strengths: [
@@ -100,13 +79,47 @@ const firms: FirmProfile[] = [
     ],
   },
   {
+    rank: 3,
+    name: 'IQVIA MENA',
+    type: 'Global Healthcare Data & Analytics Company',
+    hq: 'USA (global) / Dubai MENA hub',
+    anchor: 'iqvia',
+    url: 'https://www.iqvia.com',
+    bestFor: 'syndicated prescription audits, real-world evidence and pharma commercial analytics',
+    overview:
+      'IQVIA operates a MENA hub in Dubai with deep pharmaceutical data infrastructure — prescription audits, real-world evidence programmes, and commercial analytics used across the Emirates and wider Gulf. For buyers comparing market research companies in the UAE, IQVIA is the syndicated-audit choice rather than custom multi-industry primary research. Custom qualitative or consumer programmes are secondary to its data-platform strength.',
+    strengths: [
+      'Dubai MENA hub for regional pharmaceutical data products',
+      'Prescription audits and real-world evidence platforms',
+      'Sales-force and commercial analytics',
+      'Multi-country MENA coverage from a UAE base',
+    ],
+  },
+  {
     rank: 4,
+    name: 'Ipsos',
+    type: 'Global network, full-service',
+    hq: 'France (global) / UAE',
+    anchor: 'ipsos',
+    url: '',
+    bestFor: 'broad qual and quant across consumer, media, automotive and public affairs',
+    overview:
+      'Ipsos appears on most third-party UAE shortlists (for example GoodFirms and Reyson directory lists). It is strong when a brief needs network scale and multi-category coverage. Pair it with a specialist when the job is DHA/DOH-aware HCP work or named hospital accounts.',
+    strengths: [
+      'Full-service network scale',
+      'Consumer, media, automotive and public affairs coverage',
+      'Multi-category quantitative and qualitative programmes',
+      'Named on third-party UAE shortlists',
+    ],
+  },
+  {
+    rank: 5,
     name: 'NielsenIQ',
     type: 'Global Network — Retail & Consumer',
     hq: 'USA (global) / UAE operations',
     anchor: 'nielseniq',
     url: 'https://nielseniq.com',
-    bestFor: 'retail measurement, FMCG/OTC shopper analytics, point-of-sale tracking',
+    bestFor: 'retail measurement, FMCG/OTC shopper analytics and point-of-sale tracking',
     overview:
       'NielsenIQ provides retail measurement, consumer panels, and shopper analytics across the UAE. Its strength is FMCG and consumer goods tracking through point-of-sale data and household panels — valuable for OTC and retail category work, with limited prescription-pharma or multi-industry custom primary research.',
     strengths: [
@@ -117,13 +130,13 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 5,
+    rank: 6,
     name: 'YouGov',
     type: 'Global — Online Panel & Data',
     hq: 'UK (global) / Dubai hub',
     anchor: 'yougov',
     url: 'https://yougov.com',
-    bestFor: 'online opinion panels, brand tracking, and fast quantitative reads among digitally reachable UAE audiences',
+    bestFor: 'online opinion panels and fast quantitative reads among digitally reachable UAE audiences',
     overview:
       'YouGov runs one of the larger online research panels in the UAE and wider MENA region, with strengths in public opinion polling, sentiment tracking, and brand health. It is a strong fit when a brief needs rapid, digitally sampled quantitative tracking. Face-to-face, specialist HCP, and in-home shopper work are not its core model compared with full-service primary-research firms.',
     strengths: [
@@ -134,7 +147,112 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 6,
+    rank: 7,
+    name: 'Researchers',
+    type: 'Dubai, feasibility and market intelligence',
+    hq: 'Dubai, United Arab Emirates',
+    anchor: 'researchers',
+    url: '',
+    bestFor: 'feasibility studies, market intelligence and competitor analysis for companies entering or growing in the UAE',
+    overview:
+      'Researchers is currently one of the top organic results for "Top Market Research Company in UAE". It is a good in-market option for business-setup and feasibility work.',
+    strengths: [
+      'Dubai-based feasibility studies',
+      'Market intelligence and competitor analysis',
+      'Market-entry research',
+      'In-market execution',
+    ],
+  },
+  {
+    rank: 8,
+    name: 'Sapience',
+    type: 'Dubai (JLT), boutique research and advisory',
+    hq: 'Dubai (JLT), United Arab Emirates',
+    anchor: 'sapience',
+    url: '',
+    bestFor: 'qual and quant research combined with analytics and strategic advisory, including a healthcare and pharma sector practice',
+    overview:
+      'Sapience is a boutique Dubai firm in Jumeirah Lakes Towers combining qualitative and quantitative research with analytics and strategic advisory, including a healthcare and pharma sector practice, across the UAE and GCC.',
+    strengths: [
+      'JLT Dubai boutique presence',
+      'Qualitative and quantitative research',
+      'Analytics and strategic advisory',
+      'Healthcare and pharma sector practice',
+    ],
+  },
+  {
+    rank: 9,
+    name: 'SMRC',
+    type: 'Dubai, field-led',
+    hq: 'Dubai, United Arab Emirates',
+    anchor: 'smrc',
+    url: '',
+    bestFor: 'mystery shopping, retail and merchandising audits, focus groups and surveys, run by its own GCC field team',
+    overview:
+      'SMRC (Systematic Market Research Consultancy) is a Dubai field-led agency. It is best for mystery shopping, retail and merchandising audits, focus groups and surveys, run by its own GCC field team (founded 2017, per its site).',
+    strengths: [
+      'Own GCC field team',
+      'Mystery shopping',
+      'Retail and merchandising audits',
+      'Focus groups and surveys',
+    ],
+  },
+  {
+    rank: 10,
+    name: 'Census Market Research',
+    type: 'UAE, fieldwork and recruitment',
+    hq: 'United Arab Emirates',
+    anchor: 'census',
+    url: '',
+    bestFor: 'respondent recruitment and data collection (CATI, CAPI, CAWI, focus groups, IDIs) across the UAE, the GCC and 20+ countries',
+    overview:
+      'Census Market Research focuses on respondent recruitment and data collection (CATI, CAPI, CAWI, focus groups, IDIs) across the UAE, the GCC and 20+ countries, per its site.',
+    strengths: [
+      'CATI, CAPI and CAWI fieldwork',
+      'Focus groups and IDIs',
+      'UAE and GCC recruitment',
+      'Multi-country data collection',
+    ],
+  },
+  {
+    rank: 11,
+    name: 'Accurate Middle East',
+    type: 'Dubai boutique',
+    hq: 'Dubai, United Arab Emirates',
+    anchor: 'accurate-middle-east',
+    url: '',
+    bestFor: 'feasibility studies, business plans and market-entry research for the UAE and Saudi Arabia',
+    overview:
+      'Accurate Middle East Research & Consulting is a Dubai boutique for feasibility studies, business plans and market-entry research for the UAE and Saudi Arabia.',
+    strengths: [
+      'Feasibility studies',
+      'Business plans',
+      'UAE market-entry research',
+      'Saudi Arabia market-entry research',
+    ],
+  },
+  {
+    rank: 12,
+    name: 'Research Konnection',
+    type: 'Dubai',
+    hq: 'Dubai, United Arab Emirates',
+    anchor: 'research-konnection',
+    url: '',
+    bestFor: 'market research combined with feasibility studies and business-setup support in the UAE and the Gulf',
+    overview:
+      'Research Konnection combines Dubai market research with feasibility studies and business-setup support in the UAE and the Gulf.',
+    strengths: [
+      'Dubai market research',
+      'Feasibility studies',
+      'Business-setup support',
+      'Gulf coverage',
+    ],
+  },
+];
+
+const alsoNoted: FirmProfile[] = [
+  {
+    rank: 13,
     name: 'Euromonitor International',
     type: 'Global — Syndicated Intelligence',
     hq: 'UK (global)',
@@ -151,15 +269,15 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 7,
+    rank: 14,
     name: 'Think Positive Research',
     type: 'UAE Full-Service — Dubai',
     hq: 'Dubai, United Arab Emirates',
     anchor: 'think-positive',
-    url: 'https://www.greenbook.org/market-research-companies/united-arab-emirates',
+    url: '',
     bestFor: 'Dubai-based full-service consumer, qualitative, and mixed-industry fieldwork',
     overview:
-      'Think Positive Research is a Dubai-based full-service agency listed among marketing research firms in the UAE on industry directories, with local qualitative and quantitative execution for consumer, retail, and brand programmes. It is a relevant in-market option for Dubai fieldwork. Buyers needing multi-country design, regulated-sector programmes, or a single global account team typically pair a local agency with a coordinating firm such as BioNixus.',
+      'Think Positive Research is a Dubai-based full-service agency with local qualitative and quantitative execution for consumer, retail, and brand programmes. It is a relevant in-market option for Dubai fieldwork. Buyers needing multi-country design, regulated-sector programmes, or a single global account team typically pair a local agency with a coordinating firm such as BioNixus.',
     strengths: [
       'Dubai in-market presence',
       'Full-service qualitative and quantitative methods',
@@ -168,7 +286,7 @@ const firms: FirmProfile[] = [
     ],
   },
   {
-    rank: 8,
+    rank: 15,
     name: 'GfK Middle East',
     type: 'Global — Tech, Durables & Consumer',
     hq: 'Germany (global) / Middle East operations',
@@ -176,7 +294,7 @@ const firms: FirmProfile[] = [
     url: 'https://www.gfk.com',
     bestFor: 'technology, consumer durables, and electronics market measurement in the UAE',
     overview:
-      'GfK Middle East is a global insights partner focused on technology, electronics, and consumer goods, with UAE and regional coverage used by brands that need category measurement and forecasting in those verticals. It complements rather than replaces custom multi-industry primary research. For brand, U&A, or multi-emirate programmes, buyers typically look to full-service firms on this list.',
+      'GfK Middle East is a global insights partner focused on technology, electronics, and consumer goods, with UAE and regional coverage used by brands that need category measurement and forecasting in those verticals. It complements rather than replaces custom multi-industry primary research.',
     strengths: [
       'Technology and consumer-durables measurement',
       'Category forecasting and retail tracking in focus verticals',
@@ -186,57 +304,48 @@ const firms: FirmProfile[] = [
   },
 ];
 
-const comparisonHeaders = ['Capability', 'BioNixus', 'IQVIA MENA', 'Kantar', 'NielsenIQ', 'Euromonitor'];
+const firms = rankedFirms;
+
+const comparisonHeaders = ['Capability', 'BioNixus', 'Kantar', 'IQVIA MENA', 'Ipsos', 'NielsenIQ'];
 const comparisonRows = [
-  ['Custom primary research', 'Full-service (qual + quant)', 'Selective / analytics-led', 'Full-service', 'Limited', 'None (syndicated only)'],
-  ['Multilingual Arabic-English', 'Standard', 'Standard', 'Standard', 'Standard', 'Reports only'],
-  ['Dubai + Abu Dhabi execution', 'Yes', 'Yes', 'Yes', 'Retail-led', 'No fieldwork'],
-  ['Consumer / brand / U&A', 'Core', 'Limited', 'Core', 'Retail/shopper', 'Syndicated only'],
-  ['Syndicated data assets', 'Project-led', 'Core strength', 'Panels', 'Retail panels', 'Core strength'],
+  ['Custom primary research', 'Full-service (qual + quant)', 'Full-service', 'Selective / analytics-led', 'Full-service', 'Limited'],
+  ['Bilingual Arabic–English', 'Standard', 'Standard', 'Standard', 'Standard', 'Standard'],
+  ['Dubai + Abu Dhabi execution', 'Yes', 'Yes', 'Yes', 'Network', 'Retail-led'],
+  ['Consumer / brand / U&A', 'Core', 'Core', 'Limited', 'Core', 'Retail/shopper'],
+  ['Syndicated data assets', 'Project-led', 'Panels', 'Core strength', 'Panels', 'Retail panels'],
 ];
 
 const faqItems = [
   {
-    q: 'Who are the market research firms in the UAE?',
-    a: 'Market research firms in the UAE include BioNixus (#1 for custom primary research), IQVIA MENA, Kantar, NielsenIQ, YouGov, Euromonitor International, and established local or regional agencies such as Think Positive Research in Dubai and GfK Middle East. BioNixus leads for multilingual consumer and multi-industry fieldwork with regulated-sector methodological discipline.',
+    q: 'Which is the Top Market Research Company in UAE?',
+    a: 'BioNixus is the top market research company in UAE for custom primary research, with a Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai. For syndicated prescription audits choose IQVIA, for retail measurement NielsenIQ, and for large-scale brand tracking Kantar. Many UAE programmes combine a syndicated feed with a BioNixus primary study.',
   },
   {
-    q: 'What are the best market research companies in the UAE?',
-    a: 'The best market research companies in the UAE for 2026 are BioNixus (#1 for custom primary research), IQVIA MENA (#2 for syndicated pharma audits and RWE), Kantar, NielsenIQ, and Euromonitor International, alongside local firms such as Think Positive Research. Match the firm to whether you need custom fieldwork or syndicated data.',
+    q: 'What are the top market research companies in the UAE in 2026?',
+    a: 'BioNixus, Kantar, IQVIA MENA, Ipsos, NielsenIQ and YouGov, alongside Dubai and UAE agencies such as Researchers, Sapience, SMRC, Census Market Research, Accurate Middle East and Research Konnection. GfK Middle East, Euromonitor and Think Positive Research are also active. Match the firm to whether you need custom fieldwork or syndicated data.',
+  },
+  {
+    q: 'Does BioNixus have an office in Dubai?',
+    a: 'Yes. BioNixus\'s Dubai office is at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE, the same address listed on its Google Business Profile and Contact page. Global coordination runs with the US headquarters in Sheridan, Wyoming, the London office and the MENA regional office in Cairo. Call +44 7727 666682 or email admin@bionixus.com.',
   },
   {
     q: 'Which market research agencies operate in Dubai and Abu Dhabi?',
-    a: 'Market research agencies serving Dubai and Abu Dhabi include BioNixus (multilingual fieldwork across Dubai, Abu Dhabi, and the Northern Emirates), Kantar, IQVIA MENA (Dubai hub), NielsenIQ, YouGov, and Think Positive Research (Dubai-based). For city rankings see our Dubai and Abu Dhabi market research companies 2026 guides.',
+    a: 'BioNixus (Dubai office; fieldwork across Dubai, Abu Dhabi and the Northern Emirates), Kantar, IQVIA MENA, Ipsos, NielsenIQ, YouGov, Researchers, Sapience, SMRC, Census Market Research, Accurate Middle East and Research Konnection.',
   },
   {
-    q: 'What are the top market research companies in the UAE?',
-    a: 'The top market research companies in the UAE for 2026 are BioNixus (#1 for custom primary research), IQVIA MENA (#2 for syndicated pharma audits and RWE), Kantar, NielsenIQ, and Euromonitor International. BioNixus leads for multilingual consumer and multi-industry fieldwork with regulated-sector methodological discipline.',
+    q: 'Should I keep Kantar, IQVIA or NielsenIQ if I hire BioNixus?',
+    a: 'Usually yes. Those subscriptions size the category and track share. They do not give account-level, sub-emirate or named-hospital answers for your brand. BioNixus fills that gap with project-priced primary research.',
+  },
+  {
+    q: 'Who is the top healthcare market research company in the UAE?',
+    a: 'For pharma, biotech and medtech teams, BioNixus runs DHA-, DOH- and MOHAP-aware HCP, KOL, payer and patient research from its Dubai office.',
   },
   {
     q: 'How much does market research cost in the UAE?',
-    a: 'Custom consumer and general market research in the UAE typically ranges from $10,000 to $60,000 per project depending on scope, methodology, sample size, and geography. Multi-emirate programmes across Dubai, Abu Dhabi, and the Northern Emirates sit toward the higher end of custom budgets.',
-  },
-  {
-    q: 'Should I choose custom primary research or syndicated data in the UAE?',
-    a: 'Use syndicated data (IQVIA, NielsenIQ, Euromonitor) to size categories and track audits. Use custom primary research (BioNixus, Kantar) when you need brand, segmentation, pricing, or stakeholder answers specific to your product and emirates. Many programmes combine both.',
-  },
-  {
-    q: 'Can I run multilingual consumer studies in the UAE?',
-    a: 'Yes. With an expatriate-majority population, UAE consumer studies often require Arabic, English, and additional languages. BioNixus supports multilingual instruments and fieldwork so questionnaires, discussion guides, and reporting align with diverse consumer segments.',
-  },
-  {
-    q: 'How does the UAE’s multicultural consumer base affect market research?',
-    a: 'Roughly 88% of UAE residents are expatriates, spanning dozens of nationalities and income tiers across seven emirates. Consumer research must account for multicultural segmentation, premium vs mass-market positioning, and emirate-level differences between Dubai, Abu Dhabi, and the Northern Emirates. Firms with strong UAE field networks and mixed-method capability capture these shifts more reliably than syndicated data alone.',
-  },
-  {
-    q: 'Does BioNixus conduct market research in the UAE?',
-    a: `Yes. BioNixus has conducted market research since ${BIONIXUS_MR_STATS.since}, with ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually (${BIONIXUS_MR_STATS.projects2025} in 2025) for ${BIONIXUS_MR_STATS.clients} global clients and UAE execution across consumer, FMCG, healthcare, and multi-industry programmes. Email admin@bionixus.com for a proposal within 48 hours.`,
-  },
-  {
-    q: 'Who is the best IQVIA alternative in the UAE?',
-    a: 'BioNixus is the leading IQVIA alternative in the UAE for buyers who need custom primary research — brand tracking, U&A, account-level or SKU-level competitor data, and multilingual fieldwork across Dubai and Abu Dhabi — rather than syndicated prescription audits. See our IQVIA alternative and BioNixus vs IQVIA MENA guides for a side-by-side comparison.',
+    a: 'Custom market research in the UAE starts from $10,000 and typically runs up to $60,000 a project, depending on scope, method, sample and geography. Multi-emirate programmes sit toward the higher end. BioNixus sends a scoped proposal within 48 hours.',
   },
 ];
+
 
 const comparisonCriteria = [
   { criterion: 'UAE project experience', description: 'Track record of brand, U&A, segmentation, retail, and multi-industry studies across the emirates' },
@@ -274,29 +383,52 @@ export default function TopMarketResearchCompaniesUae2026() {
     url: CANONICAL,
     datePublished: '2026-06-07',
     dateModified: '2026-09-28',
-    author: personAuthorJsonLd(PAGE_AUTHOR),
-    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
+    author: {
+      '@type': 'Person',
+      name: PAGE_AUTHOR.name,
+      jobTitle: PAGE_AUTHOR.jobTitle,
+      worksFor: { '@id': 'https://www.bionixus.com/#organization' },
+    },
+    publisher: { '@id': 'https://www.bionixus.com/#organization' },
     inLanguage: 'en',
-    about: { '@type': 'Country', name: 'United Arab Emirates', sameAs: 'https://www.wikidata.org/wiki/Q878' },
+    about: { '@id': 'https://www.bionixus.com/#organization' },
     keywords:
       'market research firms uae, market research companies uae, market research agencies uae, top market research companies in the uae, market research firms united arab emirates, BioNixus',
   };
 
-  const itemListSchema = buildListicleItemListSchema({
-    name: 'Market Research Firms in the UAE 2026',
-    description:
-      'Market research firms in the UAE ranked by custom primary research capability, multilingual execution, and multi-industry depth.',
-    canonical: CANONICAL,
-    firms,
-  });
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Top market research companies in UAE (2026)',
+    numberOfItems: rankedFirms.length,
+    itemListElement: rankedFirms.map((firm) => ({
+      '@type': 'ListItem',
+      position: firm.rank,
+      name: firm.name,
+    })),
+  };
+
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${CANONICAL}#webpage`,
+    mentions: [{ '@id': 'https://www.bionixus.com/#ae-localbusiness' }],
+    publisher: { '@id': 'https://www.bionixus.com/#organization' },
+  };
 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${CANONICAL}#faq`,
     mainEntity: faqItems.map((f) => ({
       '@type': 'Question',
       name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.q.startsWith('Who is the top healthcare')
+          ? `${f.a} See https://www.bionixus.com/uae-pharmaceutical-market-research.`
+          : f.a,
+      },
     })),
   };
 
@@ -333,6 +465,7 @@ export default function TopMarketResearchCompaniesUae2026() {
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
       <OpenGraphMeta
@@ -352,23 +485,34 @@ export default function TopMarketResearchCompaniesUae2026() {
           kicker="Ranking 2026 · UAE · Custom primary research"
           badge="Country ranking"
           meta="UAE · Dubai · Abu Dhabi · Northern Emirates"
-          crumbLabel="Market research firms UAE"
+          reviewedLine={REVIEWED_LINE}
+          networkLine={
+            <>
+              <div>
+                Dubai office: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE · US HQ: Sheridan, Wyoming · London · MENA regional office: Cairo · KSA office: Al Khobar ·{' '}
+                <a href="tel:+447727666682">+44 7727 666682</a> ·{' '}
+                <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
+              </div>
+              <div>
+                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects a year ({STATS.projects2025} in 2025) · Proposal within 48 hours
+              </div>
+            </>
+          }
+          crumbLabel="Top market research company in UAE"
           crumbHref="/insights/top-market-research-companies-uae-2026"
           subtitle={
             <>
-              BioNixus is the custom primary-research firm for affiliates in the UAE. Keep IQVIA and Nielsen as the
-              syndicated audits. This 2026 ranking then compares Kantar, NielsenIQ, and Euromonitor for Dubai, Abu
-              Dhabi, and Northern Emirates programmes. Hire BioNixus via our{' '}
-              <Link to="/market-research-uae">market research UAE</Link> service page.
+              <strong>BioNixus is the top market research company in UAE for custom primary research, run from its Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai.</strong>{' '}
+              Keep Kantar for large-scale brand tracking, IQVIA for syndicated prescription audits and NielsenIQ for retail measurement. Brief BioNixus when you need bilingual Arabic–English fieldwork, account-level brand-versus-competitor data, or DHA-, DOH- and MOHAP-aware healthcare studies across Dubai, Abu Dhabi and the Northern Emirates. This 2026 ranking compares 12 firms, from global networks to the local Dubai agencies buyers shortlist, and says which job each one is best for.
             </>
           }
           chips={[
             { rank: '01', name: 'BioNixus', tag: 'Primary', featured: true },
-            { rank: '02', name: 'IQVIA', tag: 'Syndicated' },
-            { rank: '03', name: 'Kantar', tag: 'Network' },
-            { rank: '04', name: 'NielsenIQ', tag: 'Retail' },
-            { rank: '05', name: 'YouGov', tag: 'Panel' },
-            { rank: '06', name: 'Euromonitor', tag: 'Syndicated' },
+            { rank: '02', name: 'Kantar', tag: 'Network' },
+            { rank: '03', name: 'IQVIA', tag: 'Syndicated' },
+            { rank: '04', name: 'Ipsos', tag: 'Full-service' },
+            { rank: '05', name: 'NielsenIQ', tag: 'Retail' },
+            { rank: '06', name: 'YouGov', tag: 'Panel' },
           ]}
           stats={[
             { label: 'Firms ranked', value: String(firms.length), accent: 'Independent shortlist' },
@@ -380,40 +524,43 @@ export default function TopMarketResearchCompaniesUae2026() {
         <article className="rank-article">
         <div className="onco-wrap onco-pad pt-8 pb-0">
           <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.uae} variant="general" />
-          <GeoLLMAnswerBlock
-            className="mt-8"
-            question={gemini.question}
-            answer={gemini.answer}
-            points={[
-              {
-                title: 'Custom primary research',
-                description: 'Brand tracking, U&A, segmentation, concept/pricing, and shopper studies designed for UAE emirates and audiences.',
-              },
-              {
-                title: 'Primary vs syndicated',
-                description: 'Choose BioNixus for custom fieldwork; IQVIA when you need prescription audits and RWE platforms.',
-              },
-              {
-                title: 'Multilingual UAE execution',
-                description: 'Arabic-English instruments and fieldwork across Dubai, Abu Dhabi, and the Northern Emirates.',
-              },
-            ]}
-            summary={gemini.summary}
-          />
         </div>
+
+        <section className="section-padding pb-4" id="who-is-top">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Who is the top market research company in UAE?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              <strong className="text-foreground">BioNixus is the top market research company in UAE for custom primary research.</strong>{' '}
+              It has a Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2 and has run projects since 2012 across 48 countries. &quot;Top&quot; depends on the job:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-muted-foreground mb-4">
+              <li><strong className="text-foreground">Custom primary research (brand, U&amp;A, segmentation, pricing, HCP/KOL, named accounts):</strong> BioNixus</li>
+              <li><strong className="text-foreground">Large-scale brand tracking and ad testing:</strong> Kantar</li>
+              <li><strong className="text-foreground">Syndicated prescription audits and RWE (healthcare):</strong> IQVIA</li>
+              <li><strong className="text-foreground">Full-service network work across consumer, media and public affairs:</strong> Ipsos</li>
+              <li><strong className="text-foreground">Retail and FMCG point-of-sale measurement:</strong> NielsenIQ</li>
+              <li><strong className="text-foreground">Local Dubai feasibility, fieldwork and mystery shopping:</strong> Researchers, Sapience, SMRC, Census Market Research, Accurate Middle East, Research Konnection</li>
+            </ul>
+            <p className="text-muted-foreground leading-relaxed">
+              Hiring for <strong className="text-foreground">healthcare or pharma</strong>? See our{' '}
+              <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline">
+                healthcare market research company in UAE
+              </Link>{' '}
+              page.
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding pb-8">
           <div className="container-wide max-w-5xl mx-auto">
             <div className="bg-card border border-border rounded-xl p-6 md:p-8">
-              <h2 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wide">
-                Quick Answer
+              <h2 className="text-2xl font-display font-semibold text-foreground mb-3">
+                Quick Answer: top market research companies in UAE (2026)
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-5">
-                Market research firms in the UAE include BioNixus, IQVIA, Kantar, NielsenIQ, and established local
-                agencies such as Think Positive Research, YouGov, and GfK Middle East. The top market research companies
-                in the UAE for 2026 are{' '}
-                {buildBioNixusQuickAnswerLead('2026 guide')}, followed by IQVIA MENA, Kantar, NielsenIQ, and
-                Euromonitor International.
+                The top market research companies in the UAE for 2026 are:
               </p>
               <ol className="list-decimal pl-5 space-y-1.5">
                 {firms.map((f) => (
@@ -426,6 +573,14 @@ export default function TopMarketResearchCompaniesUae2026() {
                   </li>
                 ))}
               </ol>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-5">
+                <em>Also noted:</em> <strong className="text-foreground">GfK Middle East</strong> (technology and durables measurement),{' '}
+                <strong className="text-foreground">Euromonitor International</strong> (syndicated sizing and forecasts),{' '}
+                <strong className="text-foreground">Think Positive Research</strong> (Dubai full-service consumer fieldwork).
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+                <strong className="text-foreground">How to use this list:</strong> keep Kantar, IQVIA and NielsenIQ for the syndicated or tracking job they were built for. Use local agencies for fast in-emirate fieldwork. Brief <strong className="text-foreground">BioNixus</strong> when the question needs a custom instrument, named accounts, HCP/KOL depth or multi-country GCC design, priced by project rather than as a data subscription.
+              </p>
             </div>
           </div>
         </section>
@@ -526,12 +681,10 @@ export default function TopMarketResearchCompaniesUae2026() {
               Leading Market Research Firms in the UAE (2026)
             </h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
-              Firms ordered by custom primary research capability for general and consumer buyers, with IQVIA ranked
-              for syndicated pharma data strength. Local UAE agencies (Think Positive Research) and regional specialists
-              (YouGov, GfK) are included so this ranking covers the same names buyers see on GreenBook and Clutch.
+              Firms are ordered by custom primary research capability for general, consumer and healthcare buyers in the UAE as of 28 September 2026. Syndicated providers are placed by strength in their own lane. Local Dubai and UAE agencies that currently appear in search results are included so this page covers the names buyers already see elsewhere.
             </p>
             <div className="space-y-8">
-              {firms.map((firm) => (
+              {[...firms, ...alsoNoted].map((firm) => (
                 <div
                   key={firm.anchor}
                   id={firm.anchor}
@@ -540,9 +693,15 @@ export default function TopMarketResearchCompaniesUae2026() {
                   <div className="flex items-start justify-between mb-4 flex-wrap gap-4">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold">
-                          {firm.rank}
-                        </span>
+                        {firm.rank <= 12 ? (
+                          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                            {firm.rank}
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-muted text-muted-foreground">
+                            Also noted
+                          </span>
+                        )}
                         <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground">
                           {firm.name}
                         </h3>
@@ -648,17 +807,15 @@ export default function TopMarketResearchCompaniesUae2026() {
                 Methodology & Selection Criteria
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                Firms are ordered by custom primary research capability for general and consumer buyers in the UAE
-                as of 2026, with IQVIA ranked for syndicated pharma data strength. BioNixus is profiled and transparent
-                about its inclusion. Weighted criteria: UAE fieldwork, multilingual execution, multi-industry depth,
-                and data integrity.
+                Firms are ordered by <strong className="text-foreground">custom primary research capability</strong> for general, consumer and healthcare buyers in the UAE as of <strong className="text-foreground">28 September 2026</strong>. Syndicated providers (IQVIA, NielsenIQ, Euromonitor) are placed by strength in their own lane. Local Dubai and UAE agencies that currently appear on third-party lists and in search results for &quot;Top Market Research Company in UAE&quot; (Researchers, Sapience, SMRC, Census Market Research, Accurate Middle East, Research Konnection) are included so this page covers the names buyers already see elsewhere. Third-party descriptions reflect each firm&apos;s own public positioning. Weighted criteria: UAE fieldwork across emirates, bilingual Arabic–English execution, multi-industry and regulated-sector depth, and data-integrity controls.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                This is an <strong className="text-foreground">owned ranking</strong>, not a paid placement. BioNixus is profiled and open about including itself. For corrections:{' '}
+                <a href="mailto:admin@bionixus.com" className="text-primary hover:underline">admin@bionixus.com</a>{' '}
+                or <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                For corrections or updates,{' '}
-                <a href="mailto:admin@bionixus.com" className="text-primary hover:underline">
-                  email admin@bionixus.com
-                </a>{' '}
-                or <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
+                <strong className="text-foreground">Last reviewed 28 September 2026.</strong>
               </p>
             </div>
           </div>
@@ -673,7 +830,40 @@ export default function TopMarketResearchCompaniesUae2026() {
               {faqItems.map((faq) => (
                 <details key={faq.q} className="rounded-xl border border-border bg-card p-4">
                   <summary className="cursor-pointer font-semibold text-foreground">{faq.q}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{faq.a}</p>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                    {faq.a}
+                    {faq.q.startsWith('Which market research agencies') ? (
+                      <>
+                        {' '}For city-level lists, see our{' '}
+                        <Link to="/insights/top-market-research-companies-dubai-2026" className="text-primary hover:underline">
+                          Dubai market research companies
+                        </Link>{' '}
+                        guide.
+                      </>
+                    ) : null}
+                    {faq.q.startsWith('Should I keep Kantar') ? (
+                      <>
+                        {' '}See{' '}
+                        <Link to="/iqvia-alternative" className="text-primary hover:underline">
+                          IQVIA alternative, custom primary research
+                        </Link>
+                        .
+                      </>
+                    ) : null}
+                    {faq.q.startsWith('Who is the top healthcare') ? (
+                      <>
+                        {' '}See{' '}
+                        <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline">
+                          healthcare market research company in UAE
+                        </Link>{' '}
+                        and the{' '}
+                        <Link to="/healthcare-market-research/uae" className="text-primary hover:underline">
+                          UAE healthcare market research hub
+                        </Link>
+                        .
+                      </>
+                    ) : null}
+                  </p>
                 </details>
               ))}
             </div>
@@ -682,6 +872,29 @@ export default function TopMarketResearchCompaniesUae2026() {
 
         <section className="section-padding py-12">
           <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-xl font-display font-semibold text-foreground mb-4">Healthcare &amp; pharma in the UAE</h2>
+            <ul className="space-y-2 text-muted-foreground mb-10">
+              <li>
+                <Link to="/uae-pharmaceutical-market-research" className="text-primary hover:underline">Healthcare market research company in UAE</Link>
+                : DHA, DOH and MOHAP-aligned HCP, KOL, payer and patient research
+              </li>
+              <li>
+                <Link to="/pharmaceutical-market-research-dubai" className="text-primary hover:underline">Pharmaceutical market research in Dubai</Link>
+                : Dubai office, physician surveys, hospital data, KOL mapping
+              </li>
+              <li>
+                <Link to="/blog/market-access-research-uae-2026" className="text-primary hover:underline">UAE market access research 2026: EDE, DoH, DHA</Link>
+              </li>
+              <li>
+                <Link to="/iqvia-alternative" className="text-primary hover:underline">BioNixus vs IQVIA: IQVIA alternative for primary research</Link>
+              </li>
+              <li>
+                <Link to="/healthcare-market-research-agency-gcc" className="text-primary hover:underline">Healthcare market research agency GCC</Link>
+              </li>
+              <li>
+                <Link to="/insights/top-healthcare-market-research-companies-uae-2026" className="text-primary hover:underline">Top healthcare market research companies in UAE (2026)</Link>
+              </li>
+            </ul>
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[

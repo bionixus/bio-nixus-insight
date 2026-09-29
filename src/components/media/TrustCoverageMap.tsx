@@ -4,7 +4,7 @@ const COVERAGE_MAP_SRC = '/images/bionixus-global-coverage-map.webp';
 const COVERAGE_MAP_SRCSET =
   '/images/bionixus-global-coverage-map-800.webp 800w, /images/bionixus-global-coverage-map.webp 1280w';
 
-/** Branded office-footprint graphic — US HQ, London, Cairo, Riyadh, Dubai, Kuwait City, São Paulo. */
+/** Branded office-footprint graphic — US HQ, London, Cairo, Al Khobar, Dubai, Kuwait City, São Paulo. */
 export function TrustCoverageMap() {
   const { t } = useLanguage();
   const copy = t.ui.coverageMap;

@@ -14,16 +14,16 @@ export const UAE_MR_COMPANY_PROOF = [
     body: 'Study design respects emirate-level regulatory and payer pathways, with GDPR-compliant data handling for global sponsors.',
   },
   {
-    title: 'Proposal-ready in weeks',
-    body: 'Typical UAE modules move from scoped objective to field-ready instruments in 2–4 weeks for priority therapy areas.',
+    title: 'Proposal in 48 hours; field-ready in 2–4 weeks',
+    body: 'A scoped proposal is ready within 48 hours. Priority UAE modules move from scoped objective to field-ready instruments in 2–4 weeks.',
   },
 ] as const;
 
 export const UAE_REGULATORY_STEPS = [
   {
-    step: '1. MOHAP registration & evidence fit',
+    step: '1. EDE and MOHAP — federal registration and pricing',
     detail:
-      'Align clinical and economic narratives with federal registration and labeling expectations before scaling emirate-level fieldwork.',
+      'The Emirates Drug Establishment (EDE) took over federal pricing and registration from MOHAP under Federal Decree-Law 38/2024, effective December 2025. MOHAP facilities and protocols still matter in the Northern Emirates.',
     link: { to: '/healthcare-market-research/uae', label: 'UAE healthcare market research hub' },
   },
   {
