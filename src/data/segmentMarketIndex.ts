@@ -46,7 +46,7 @@ export const SEGMENT_MARKET_INDEX: SegmentMarketIndexEntry[] = [
   { slug: 'saudi-arabia-skincare-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia skincare market' },
   { slug: 'saudi-arabia-home-infusion-therapy-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia home infusion therapy market' },
   { slug: 'saudi-arabia-pharmaceutical-packaging-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia pharmaceutical packaging market' },
-  { slug: 'saudi-arabia-obesity-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia (KSA) obesity market insights' },
+  { slug: 'saudi-arabia-obesity-market', group: 'saudi-devices-consumer', label: 'Obesity & GLP-1 market research in Saudi Arabia' },
 
   { slug: 'gcc-otc-drugs-market', group: 'gcc', label: 'GCC over-the-counter (OTC) drugs market' },
   { slug: 'gcc-tablet-market', group: 'gcc', label: 'GCC tablet (oral solid dose) market' },

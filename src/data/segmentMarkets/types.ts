@@ -39,6 +39,8 @@ export type SegmentMarketContent = {
   title: string;
   /** 150–160 char meta description. */
   description: string;
+  /** Ship title/description without the 130-character description clamp. */
+  exactMeta?: boolean;
   /** Absolute canonical URL. */
   canonical: string;
   h1: string;
@@ -99,7 +101,11 @@ export type SegmentMarketContent = {
   /** Demand-driver grid. */
   demandDrivers: { heading: string; drivers: Array<{ title: string; detail: string }> };
   /** Narrative market-structure section. */
-  marketStructure: { heading: string; paragraphs: string[] };
+  marketStructure: {
+    heading: string;
+    paragraphs: string[];
+    links?: Array<{ to: string; label: string }>;
+  };
   /** Country / emirate / city level signals. */
   geoSignals?: { heading: string; items: Array<{ name: string; signal: string }> };
   /** Stakeholders BioNixus recruits for this segment. */
@@ -114,4 +120,25 @@ export type SegmentMarketContent = {
   faqs: Array<{ question: string; answer: string }>;
   /** schema.org areaServed country names. */
   areaServed: string[];
+  /** Emit a WebPage node with dateModified = lastUpdated, plus Speakable on the intro. */
+  emitWebPage?: boolean;
+  /** Visible date prefix beside lastUpdated. Default "Updated". */
+  dateLabel?: 'Updated' | 'Last reviewed';
+  heroCtaLabel?: string;
+  heroStats?: Array<{ value: string; label: string }>;
+  researchHeading?: string;
+  methodologyHeading?: string;
+  whyHeading?: string;
+  audiencesHeading?: string;
+  /** Office or fieldwork note under the audience grid. */
+  audiencesNote?: string;
+  sourceNotes?: {
+    heading: string;
+    items: Array<{ text: string; sourceLabel?: string; sourceHref?: string }>;
+  };
+  surveyMethodology?: {
+    heading: string;
+    paragraphs: string[];
+    steps: string[];
+  };
 };
