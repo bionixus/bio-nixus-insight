@@ -23,6 +23,7 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
   const path = cleanPath(pathname);
   /** Blog index + locales (each page ships its own full Helmet stack). */
   if (path === '/blog' || path === '/de/blog' || path === '/fr/blog' || path === '/ar/blog') return true;
+  if (path === '/es/blog' || path === '/pt/blog' || path === '/ru/blog' || path === '/zh/blog') return true;
   if (/^\/blog\/.+/.test(path)) return true;
   if (/^\/ar\/blog\/.+/.test(path)) return true;
   if (/^\/case-studies\/.+/.test(path)) return true;
@@ -31,8 +32,16 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
 
   /** SEOHead-based healthcare hub + service / therapy detail pages. */
   if (path === '/healthcare-market-research') return true;
+  if (
+    path === '/ru/healthcare-market-research'
+    || path === '/zh/healthcare-market-research'
+    || path === '/pt/healthcare-market-research'
+  ) {
+    return true;
+  }
   if (path.startsWith('/healthcare-market-research/services/')) return true;
   if (path.startsWith('/healthcare-market-research/therapy/')) return true;
+  if (/^\/(de|es|fr|ar)\/healthcare-market-research\//.test(path)) return true;
 
   /** Localized “market research healthcare” landings. */
   if (
@@ -42,6 +51,8 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
     || path === '/es/market-research-healthcare'
     || path === '/zh/market-research-healthcare'
     || path === '/ar/market-research-healthcare'
+    || path === '/pt/market-research-healthcare'
+    || path === '/ru/market-research-healthcare'
   ) {
     return true;
   }

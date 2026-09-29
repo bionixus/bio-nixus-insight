@@ -523,38 +523,7 @@ export default function CountryPage() {
 
         {config.slug === 'uae' && (
           <section className="mb-8">
-            <GeoLLMAnswerBlock
-              question="Healthcare market research UAE — Dubai, Abu Dhabi & MOHAP programmes"
-              answer="BioNixus is a primary healthcare market research firm for UAE affiliates. Fieldwork is DHA and DOH-aligned in Dubai and Abu Dhabi, with MOHAP-aware payer evidence and account-level cuts syndicated IQVIA feeds miss. Keep the dashboard for national sizing; brief us for named hospitals and emirate SKUs."
-              points={[
-                {
-                  title: 'Account-level vs syndicated',
-                  description:
-                    'What account-level and SKU-level data is — and why IQVIA national feeds miss traditional trade.',
-                },
-                {
-                  title: 'GCC pharma market report 2026',
-                  description:
-                    'Macro GCC pharmaceutical market sizing with UAE share (~22% of Gulf spend) and segment anchors.',
-                },
-                {
-                  title: 'GCC medical devices & IVD',
-                  description:
-                    'GCC medical devices market report — MOHAP, DHA, and DOH device procurement intelligence.',
-                },
-                {
-                  title: 'Pharmaceutical companies UAE',
-                  description:
-                    'Directory of pharmaceutical companies in the UAE for account mapping and distributor research.',
-                },
-                {
-                  title: 'Healthcare market research Dubai',
-                  description:
-                    'Dubai-focused MR cluster for private hospital and DHA-context programmes.',
-                },
-              ]}
-            />
-            <div className="flex flex-wrap gap-3 mt-4">
+            <div className="flex flex-wrap gap-3">
               <Link to="/account-level-market-research" className="text-sm font-semibold text-primary hover:underline">
                 Account-level data
               </Link>

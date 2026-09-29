@@ -4,13 +4,18 @@ function accepts(acceptEncoding = '', token) {
   return acceptEncoding.toLowerCase().includes(token);
 }
 
-export function sendCompressedHtml(req, res, html, statusCode = 200) {
+export function sendCompressedHtml(req, res, html, statusCode = 200, options = {}) {
   const source = Buffer.from(html, 'utf-8');
   const acceptEncoding = req.headers['accept-encoding'] || '';
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
+  res.setHeader(
+    'Cache-Control',
+    options.cacheControl || 'public, s-maxage=3600, stale-while-revalidate=86400',
+  );
   res.setHeader('Vary', 'Accept-Encoding');
+  if (options.retryAfter) res.setHeader('Retry-After', String(options.retryAfter));
+  if (options.robotsTag) res.setHeader('X-Robots-Tag', options.robotsTag);
 
   if (accepts(acceptEncoding, 'br')) {
     const compressed = zlib.brotliCompressSync(source, {

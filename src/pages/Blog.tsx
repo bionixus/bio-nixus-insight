@@ -117,9 +117,6 @@ const Blog = () => {
   const isArabicBlog = pathname.startsWith('/ar/blog');
   const isGerman = pathname.startsWith('/de/');
   const isFrench = pathname.startsWith('/fr/');
-  const untranslatedBlogPrefix = ['/es/blog', '/pt/blog', '/ru/blog', '/zh/blog'].find((prefix) =>
-    pathname.startsWith(prefix),
-  );
 
   const allPosts = posts ?? ssrPosts ?? [];
   const [filterState, setFilterState] = useState<BlogIndexFilterState>({
@@ -190,9 +187,7 @@ const Blog = () => {
       ? 'https://www.bionixus.com/de/blog'
       : isFrench
         ? 'https://www.bionixus.com/fr/blog'
-        : untranslatedBlogPrefix
-          ? `https://www.bionixus.com${untranslatedBlogPrefix}`
-          : 'https://www.bionixus.com/blog';
+        : 'https://www.bionixus.com/blog';
   const title = isArabicBlog
     ? 'المدونة العربية: أبحاث السوق الصحي والدوائي | BioNixus'
     : isGerman

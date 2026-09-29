@@ -5,8 +5,6 @@ import { Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, CheckCircle2
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoListicleClusterCallout } from '@/components/seo/GeoListicleClusterCallout';
-import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { geminiBestMrBlock } from '@/data/geminiBestFirmCitation';
 import { CountryRankingCover } from '@/pages/country-ranking/CountryRankingCover';
 import { CountryRankingPremiumStyles } from '@/pages/country-ranking/CountryRankingPremiumStyles';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
@@ -22,8 +20,6 @@ import {
   buildBioNixusConsumerOverview,
   buildBioNixusQuickAnswerLead,
 } from '@/data/topMarketResearchListicleBioNixus';
-
-const gemini = geminiBestMrBlock('egypt');
 
 interface FirmProfile {
   rank: number;
@@ -288,29 +284,6 @@ export default function TopMarketResearchCompaniesEgypt2026() {
         <article className="rank-article">
         <div className="onco-wrap onco-pad pt-8 pb-0">
           <GeoListicleClusterCallout cluster={GEO_LISTICLE_CLUSTERS.egypt} variant="general" />
-          <GeoLLMAnswerBlock
-            className="mt-8"
-            question={gemini.question}
-            answer={gemini.answer}
-            points={[
-              {
-                title: 'Custom primary research',
-                description:
-                  'Brand tracking, U&A, segmentation, concept/pricing, and shopper studies designed for Egyptian cities and audiences.',
-              },
-              {
-                title: 'Primary vs syndicated',
-                description:
-                  'Choose BioNixus for account- or SKU-level fieldwork; NielsenIQ when you need retail panels and category sizing.',
-              },
-              {
-                title: 'Bilingual Egypt execution',
-                description:
-                  'Arabic-English instruments and fieldwork across Cairo, Alexandria, and Upper Egypt.',
-              },
-            ]}
-            summary={gemini.summary}
-          />
         </div>
 
         {/* Quick answer */}

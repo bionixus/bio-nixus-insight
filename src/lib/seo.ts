@@ -193,29 +193,24 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     pt: '/pt/services',
     ru: '/ru/services',
   },
+  // es/pt/ru/zh blog indexes render the English index. They are not alternates.
   '/blog': {
     en: '/blog',
     de: '/de/blog',
     fr: '/fr/blog',
-    es: '/es/blog',
-    zh: '/zh/blog',
     ar: '/ar/blog',
-    pt: '/pt/blog',
-    ru: '/ru/blog',
   },
   '/market-access': {
     en: '/services/market-access',
     es: '/services/market-access',
   },
+  // zh/pt/ru hubs render the English HubPage. de/fr/es/ar are translated pages.
   '/healthcare-market-research': {
     en: '/healthcare-market-research',
     de: '/de/healthcare-market-research/germany',
     fr: '/fr/healthcare-market-research',
     es: '/es/healthcare-market-research',
     ar: '/ar/healthcare-market-research',
-    zh: '/zh/healthcare-market-research',
-    pt: '/pt/healthcare-market-research',
-    ru: '/ru/healthcare-market-research',
   },
   '/bionixus-market-research-middle-east': {
     en: '/bionixus-market-research-middle-east',
@@ -334,6 +329,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/insights/top-healthcare-market-research-companies-argentina-2026',
     es: '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026',
   },
+  // pt and ru have no locale copy and fall back to the English page.
   '/market-research-healthcare': {
     en: '/market-research-healthcare',
     de: '/de/market-research-healthcare',
@@ -341,8 +337,6 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     es: '/es/market-research-healthcare',
     zh: '/zh/market-research-healthcare',
     ar: '/ar/market-research-healthcare',
-    pt: '/pt/market-research-healthcare',
-    ru: '/ru/market-research-healthcare',
   },
   '/qualitative-market-research': {
     en: '/qualitative-market-research',
@@ -359,6 +353,42 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     ar: '/ar/arabic-blog-alsawdyh',
   },
 };
+
+/**
+ * Locale URLs that render the English page (or an English fallback). They must
+ * canonical and hreflang to the English URL, and stay out of localizedRouteGroups
+ * so translated alternates do not advertise them.
+ */
+const UNTRANSLATED_LOCALE_TO_ENGLISH: Record<string, string> = {
+  '/ru/healthcare-market-research': '/healthcare-market-research',
+  '/zh/healthcare-market-research': '/healthcare-market-research',
+  '/pt/healthcare-market-research': '/healthcare-market-research',
+  '/es/blog': '/blog',
+  '/pt/blog': '/blog',
+  '/ru/blog': '/blog',
+  '/zh/blog': '/blog',
+  '/pt/market-research-healthcare': '/market-research-healthcare',
+  '/ru/market-research-healthcare': '/market-research-healthcare',
+};
+
+/** Dedicated translated country pages. Other /{lang}/healthcare-market-research/:country routes are English CountryPage copies. */
+const TRANSLATED_LOCALE_COUNTRY_PAGES = new Set([
+  '/de/healthcare-market-research/germany',
+  '/es/healthcare-market-research/spain',
+  '/fr/healthcare-market-research/france',
+  '/ar/healthcare-market-research/saudi-arabia',
+]);
+
+export function untranslatedLocaleEnglishPath(pathname: string): string | null {
+  const normalized = normalizePath(pathname);
+  const mapped = UNTRANSLATED_LOCALE_TO_ENGLISH[normalized];
+  if (mapped) return mapped;
+  const country = normalized.match(/^\/(de|es|fr|ar)\/healthcare-market-research\/([^/]+)$/);
+  if (country && !TRANSLATED_LOCALE_COUNTRY_PAGES.has(normalized)) {
+    return `/healthcare-market-research/${country[2]}`;
+  }
+  return null;
+}
 
 function findRouteGroup(pathname: string) {
   const normalized = normalizePath(pathname);
@@ -414,7 +444,8 @@ function prefixWithLanguage(enPath: string, lang: Language): string {
  */
 export function resolveLanguageSwitchPath(pathname: string, targetLang: Language): string {
   const normalized = normalizePath(pathname);
-  const groupKey = findRouteGroup(normalized);
+  const lookupPath = untranslatedLocaleEnglishPath(normalized) ?? normalized;
+  const groupKey = findRouteGroup(lookupPath);
   if (groupKey) {
     const group = localizedRouteGroups[groupKey];
     const target = group[targetLang];
@@ -437,6 +468,8 @@ export function resolveLanguageSwitchPath(pathname: string, targetLang: Language
 
 export function getCanonicalPath(pathname: string = '/') {
   const normalized = normalizePath(pathname);
+  const englishDuplicate = untranslatedLocaleEnglishPath(normalized);
+  if (englishDuplicate) return englishDuplicate;
   const group = findRouteGroup(normalized);
   if (!group) return normalized;
   const routes = localizedRouteGroups[group];
@@ -452,8 +485,16 @@ function hreflangLangCode(key: Language): string {
 export function getHreflangLinks(pathname: string = '/') {
   const base = getBaseUrl();
   const normalized = normalizePath(pathname);
-  const group = findRouteGroup(normalized);
   const absoluteHref = (path: string) => `${base}${normalizePath(path)}`;
+  const englishDuplicate = untranslatedLocaleEnglishPath(normalized);
+  if (englishDuplicate) {
+    const href = absoluteHref(englishDuplicate);
+    return [
+      { lang: 'x-default', href },
+      { lang: 'en', href },
+    ];
+  }
+  const group = findRouteGroup(normalized);
 
   if (!group) {
     const fallbackHref = absoluteHref(normalized);

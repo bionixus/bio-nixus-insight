@@ -176,8 +176,8 @@ export function buildTherapyPageSchemas(area: string, description: string) {
   return [
     {
       ...buildProfessionalServiceSchema(),
-      name: `${label} market research`,
-      serviceType: `${label} healthcare market research`,
+      name: area === 'biologics' ? 'Biologics market research services' : `${label} market research`,
+      serviceType: area === 'biologics' ? 'Custom biologics market research' : `${label} healthcare market research`,
       description,
       url: `${BASE_URL}/healthcare-market-research/therapy/${area}`,
     },

@@ -1,6 +1,7 @@
 import { createClient } from '@sanity/client';
 import { toHTML } from '@portabletext/to-html';
 import { buildSeoDescription, normalizeSeoTitle, seoTitleWithBrandOnce } from '../../src/server/seo-meta.js';
+import { getCtrSeo } from '../../lib/ctr-seo-overrides.mjs';
 import { sendCompressedHtml } from '../../src/server/compression.js';
 import {
   LEGACY_BLOG_SLUG_TO_CANONICAL,
@@ -335,7 +336,12 @@ export default async function handler(req, res) {
       if (stub || shouldCrawlerIndexBlogSlug(slug)) {
         return sendCompressedHtml(req, res, buildIndexableStubHtml(slug, stub));
       }
-      return sendCompressedHtml(req, res, buildFallbackHtml(slug));
+      // A successful fetch that returns no document is a real miss. 200 + noindex
+      // on that URL tells Google to drop it; 404 does not.
+      return sendCompressedHtml(req, res, buildFallbackHtml(slug), 404, {
+        cacheControl: 'public, max-age=300',
+        robotsTag: 'noindex, follow',
+      });
     }
 
     if (industriesInsight) {
@@ -358,21 +364,24 @@ export default async function handler(req, res) {
       pickLocalizedString(post.seoMetaTitle, contentLocale) ||
       post.title ||
       'BioNixus Blog';
-    const documentTitle = seoTitleWithBrandOnce(titleCore);
+    const ctr = getCtrSeo(pagePath);
+    const documentTitle = ctr?.title || seoTitleWithBrandOnce(titleCore);
     const title = esc(documentTitle);
     const rawBodyText =
       typeof post?.body === 'string' ? post.body : portableTextToPlain(Array.isArray(post?.body) ? post.body : []);
     const metaOverride = getBlogMetaDescriptionOverride(slug);
-    const description = esc(
-      buildSeoDescription({
-        preferred:
-          metaOverride ||
-          pickLocalizedString(post.seoMetaDescription, contentLocale) ||
-          pickLocalizedString(post.excerpt, contentLocale),
-        bodySource: rawBodyText,
-        fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
-      }),
-    );
+    const description = ctr?.description
+      ? esc(ctr.description)
+      : esc(
+          buildSeoDescription({
+            preferred:
+              metaOverride ||
+              pickLocalizedString(post.seoMetaDescription, contentLocale) ||
+              pickLocalizedString(post.excerpt, contentLocale),
+            bodySource: rawBodyText,
+            fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
+          }),
+        );
     const image = pickCrawlerShareImage(post);
     const ogTitle = post.ogTitle ? esc(post.ogTitle) : title;
     const ogDescription = post.ogDescription ? esc(post.ogDescription) : description;
@@ -455,7 +464,8 @@ export default async function handler(req, res) {
       image: image,
       url: url,
       datePublished: post.publishedAt || '',
-      dateModified: post.publishedAt || '',
+      dateModified:
+        pagePath === '/blog/kol-mapping-pharma-middle-east' ? '2026-09-29' : post.publishedAt || '',
       author: {
         '@type': 'Organization',
         name: author,
@@ -578,7 +588,12 @@ export default async function handler(req, res) {
     return sendCompressedHtml(req, res, html);
   } catch (error) {
     console.error('OG handler error:', error);
-    return sendCompressedHtml(req, res, buildFallbackHtml(slug));
+    // Transient upstream failure must not emit noindex. A 200 noindex response
+    // is what drops a live post from Google while Sanity is briefly unreachable.
+    return sendCompressedHtml(req, res, buildUnavailableHtml(slug), 503, {
+      cacheControl: 'private, no-store',
+      retryAfter: '120',
+    });
   }
 }
 
@@ -618,6 +633,37 @@ function buildIndexableStubHtml(slug, stub) {
     <header><h1>${title}</h1></header>
     <p>${description}</p>
     <p>Read the full article on <a href="${url}">BioNixus</a>.</p>
+    ${relatedNav}
+  </article>
+</body>
+</html>`;
+}
+
+function buildUnavailableHtml(slug) {
+  const url = `${BASE}/blog/${esc(slug)}`;
+  const relatedNav = buildRelatedInternalLinksNav(String(slug));
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioNixus Blog</title>
+  <meta name="description" content="This BioNixus article is temporarily unavailable. Retry shortly.">
+  <meta name="llm-access" content="allow">
+  <meta property="og:title" content="BioNixus Blog">
+  <meta property="og:description" content="This BioNixus article is temporarily unavailable. Retry shortly.">
+  <meta property="og:image" content="${BASE}/og-image.png">
+  <meta property="og:url" content="${url}">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="${url}">
+</head>
+<body>
+  <nav aria-label="Breadcrumb">
+    <a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>BioNixus insight</span>
+  </nav>
+  <article>
+    <header><h1>Article temporarily unavailable</h1></header>
+    <p>The article could not be loaded because the content service did not respond. Retry this URL shortly.</p>
     ${relatedNav}
   </article>
 </body>
