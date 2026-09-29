@@ -844,6 +844,316 @@ const kuwaitObesity: SegmentMarketContent = {
 };
 
 /* ------------------------------------------------------------------ */
+/* 3b. Egypt Obesity & GLP-1 Market                       (country)    */
+/* ------------------------------------------------------------------ */
+const egyptObesity: SegmentMarketContent = {
+  slug: 'egypt-obesity-market',
+  group: 'country',
+  geoLabel: 'Egypt',
+  segmentLabel: 'Obesity & GLP-1',
+  badge: 'Egypt · Obesity · GLP-1',
+  breadcrumbLabel: 'Egypt Obesity & GLP-1 Market Research',
+  title: 'Obesity & GLP-1 Market Research Egypt | BioNixus',
+  description:
+    'Obesity and GLP-1 market research in Egypt: semaglutide/tirzepatide surveys, EDA, self-pay, Arabic Cairo. $10,000–$60,000. Custom physician and patient studies.',
+  canonical: `${SEGMENT_MARKET_BASE}/egypt-obesity-market`,
+  h1: 'Obesity & GLP-1 Market Research in Egypt',
+  lastUpdated: '2026-09-29',
+  pageSchema: 'webpage',
+  serviceName: 'Obesity & GLP-1 Market Research in Egypt',
+  serviceType: 'Pharmaceutical and healthcare primary market research',
+  serviceDescription:
+    'Custom obesity and GLP-1 market research in Egypt: physician/KAP surveys on semaglutide and tirzepatide, patient journey, EDA-aware access context; Cairo fieldwork.',
+  breadcrumbs: [
+    { name: 'Home', href: '/' },
+    { name: 'GCC Obesity Market Research', href: '/gcc-obesity-market' },
+    { name: 'Egypt Obesity & GLP-1 Market Research', href: '/egypt-obesity-market' },
+  ],
+  introLinks: [
+    { to: '/healthcare-market-research/egypt', label: 'Egypt healthcare market research hub' },
+    { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  ],
+  intro: [
+    'BioNixus provides obesity and GLP-1 market research in Egypt — physician and KAP surveys on semaglutide and tirzepatide, patient-journey and persistence studies, and access interviews framed around EDA registration and pricing reality. Fieldwork runs in Arabic and English from our MENA Cairo office. Custom projects typically cost $10,000–$60,000. A scoped proposal is returned within one working day.',
+    'EDA-aware primary research on anti-obesity medicines, specialist prescribing, and self-pay patient economics is the brief — not a syndicated MENA average. Egypt’s obesity and incretin opportunity is shaped by three commercial facts: a large addressable metabolic population, a regulator (the Egyptian Drug Authority, EDA) that publishes product assessment and formulary materials for GLP-1 class agents, and a treatment market where out-of-pocket payment often decides initiation and persistence more than a single national benefit design.',
+    'BioNixus researches those facts with commissioned fieldwork from Cairo. Egypt is not modelled by allocating a Gulf percentage to the local market.',
+  ],
+  quickAnswer: {
+    question: 'What do Egypt obesity and GLP-1 insights need to cover?',
+    answer:
+      'Useful obesity GLP-1 market research in Egypt combines four layers: EDA registration and labelling context for weight-management and diabetes incretin products, specialist prescribing behaviour, channel and affordability including self-pay, and the patient journey from first conversation through discontinuation. BioNixus delivers commissioned studies for teams who need physician evidence, patient economics, and access realism before launch or lifecycle decisions.',
+    points: [
+      {
+        title: 'EDA is the regulatory gate',
+        description:
+          'Registration dossiers and national formulary listings shape what physicians can prescribe and what medical affairs teams discuss. Public assessment reports are context for discussion guides, not a substitute for primary evidence.',
+      },
+      {
+        title: 'Self-pay is central',
+        description:
+          'Many patients fund anti-obesity therapy directly. Price and persistence dominate forecasts more than a single assumed national benefit.',
+      },
+      {
+        title: 'Semaglutide and tirzepatide must be named',
+        description:
+          'Agency-intent research needs molecule-level instruments. BioNixus names semaglutide and tirzepatide in surveys, KAP modules, and deliverables.',
+      },
+      {
+        title: 'Arabic fieldwork is required',
+        description:
+          'Physicians and patients outside tertiary English-comfortable settings need Arabic interviewing, coordinated from the MENA Cairo office.',
+      },
+    ],
+    summary:
+      'BioNixus delivers commissioned Egypt obesity studies for pharmaceutical teams who need physician evidence, patient economics, and access realism before launch or lifecycle decisions.',
+  },
+  researchTopics: [
+    {
+      name: 'EDA registration and labelling context',
+      detail:
+        'How assessment reports and formulary listings for GLP-1 receptor agonists, including semaglutide and Wegovy-class materials, frame medical affairs and affiliate evidence needs.',
+    },
+    {
+      name: 'Specialist prescribing and KAP',
+      detail:
+        'Initiation thresholds, first-line choice among semaglutide, tirzepatide, and other anti-obesity medicines, plus monitoring and barriers.',
+    },
+    {
+      name: 'Private clinic and pharmacy channel',
+      detail:
+        'Stocking, price presentation, and recommendation behaviour in self-pay retail pharmacy, hospital pharmacy, and private clinic settings.',
+    },
+    {
+      name: 'Bariatric and metabolic surgery pathways',
+      detail:
+        'How referral into bariatric and metabolic surgery interacts with pharmacotherapy, including when patients move between a procedure and an incretin.',
+    },
+    {
+      name: 'Patient journey and persistence',
+      detail:
+        'Stigma, the first conversation, cost fatigue, tolerability, supply-driven switching, and discontinuation among self-pay and insured patients.',
+    },
+    {
+      name: 'Procurement and insurance context',
+      detail:
+        'Stakeholder mapping only. Coverage of a specific anti-obesity indication is an open research question. Studies model self-pay as a core demand pool and do not treat a national benefit as given.',
+    },
+  ],
+  segmentBreakdown: {
+    heading: 'Obesity and GLP-1 categories we research in Egypt',
+    items: [
+      {
+        label: 'Semaglutide',
+        detail:
+          'Diabetes and weight-management presentations. The Egyptian Drug Authority has published a Wegovy (semaglutide) public assessment report, used here as registration evidence context rather than a clinical claim.',
+      },
+      {
+        label: 'Tirzepatide',
+        detail:
+          'Dual-agonist interest in specialist and private channels, researched through physician surveys and pharmacy checks. No share of market is invented.',
+      },
+      {
+        label: 'Other GLP-1 receptor agonists',
+        detail:
+          'Liraglutide, including chronic weight-management presentations such as Saxenda where the formulary lists them, and dulaglutide, as named in EDA endocrine formulary materials.',
+      },
+      {
+        label: 'Bariatric and endoscopic interventions',
+        detail:
+          'Private and institutional pathways, and how they refer into or away from pharmacotherapy.',
+      },
+      {
+        label: 'Structured weight-management programmes',
+        detail:
+          'Clinic packages that combine pharmacotherapy with lifestyle support, priced and retained as a service rather than a single script.',
+      },
+      {
+        label: 'Consumer and OTC weight products',
+        detail:
+          'First-attempt expectations and price anchors patients carry into a specialist or pharmacy conversation.',
+      },
+    ],
+  },
+  demandDrivers: {
+    heading: 'What is driving Egypt obesity and GLP-1 research demand',
+    drivers: [
+      {
+        title: 'Metabolic disease attention',
+        detail:
+          'A large population and sustained clinical attention on metabolic disease keep weight management on affiliate agendas. BioNixus does not publish an unsourced prevalence percentage on this page.',
+      },
+      {
+        title: 'EDA endocrine documentation',
+        detail:
+          'Public assessment reports and endocrine formulary listings for GLP-1 receptor agonists give medical affairs a concrete frame for which agents to discuss.',
+      },
+      {
+        title: 'Incretin awareness',
+        detail:
+          'Public and social familiarity with incretin-based weight management is pulling new patients into private clinics and pharmacies.',
+      },
+      {
+        title: 'Private clinic density',
+        detail:
+          'Greater Cairo and other urban centres have dense private clinic competition, which accelerates initiation and also switching.',
+      },
+      {
+        title: 'Self-pay purchasing',
+        detail:
+          'Out-of-pocket payment can shorten the path to a first prescription and raise the risk that treatment stops when the monthly cost bites.',
+      },
+    ],
+  },
+  marketStructure: {
+    heading: 'How the Egypt obesity market is structured',
+    paragraphs: [
+      'Egypt should not be modelled as a small copy of Saudi Arabia or the UAE. Public provision, private hospitals, and cash-pay clinics coexist, and pharmacy retail is a major dispensing surface for incretin products. Specialists, especially endocrinology, set clinical direction, while private weight-management and aesthetic-leaning clinics can drive consumer-like initiation for self-pay patients.',
+      'Regulatory reality starts with the Egyptian Drug Authority (EDA). For planning research, BioNixus uses public EDA materials — the Wegovy (semaglutide) public assessment report and the endocrine national formulary listings of GLP-1 receptor agonists — as context for discussion guides. Real-world initiation, stock, and payment mix are then validated in primary interviews. Those documents are not treated as an efficacy claim or as a market-size source.',
+      'Egypt’s universal health insurance expansion and unified procurement are strategically important for many chronic therapies. BioNixus does not assume that expansion covers anti-obesity indications or specific molecules. Public coverage is a hypothesis to test with stakeholders. Self-pay is modelled as a core demand pool until interviews show otherwise.',
+      'Fieldwork is coordinated from the MENA office in Cairo, in Arabic and English. Regional support sits in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Al Khobar, London, Sheridan WY, and São Paulo.',
+    ],
+  },
+  geoSignals: {
+    heading: 'Regional notes for Egypt obesity fieldwork',
+    items: [
+      {
+        name: 'Greater Cairo',
+        signal:
+          'The densest specialist and private clinic market, and the primary fieldwork hub for endocrinology, internal medicine, and weight-management clinics.',
+      },
+      {
+        name: 'Alexandria',
+        signal:
+          'Secondary specialist and private capacity, useful when a study needs a second urban prescribing base outside Cairo.',
+      },
+      {
+        name: 'Delta and Upper Egypt',
+        signal:
+          'More price-sensitive mixes, where family medicine and pharmacy access matter more than tertiary clinic marketing.',
+      },
+      {
+        name: 'Institutional centres',
+        signal:
+          'Tertiary endocrine and bariatric units that set referral norms for the surrounding private and public network.',
+      },
+    ],
+  },
+  audiences: [
+    {
+      audience: 'Endocrinologists and internal medicine specialists',
+      description:
+        'Physicians who set initiation thresholds, choose among semaglutide, tirzepatide, and other agents, and manage monitoring.',
+    },
+    {
+      audience: 'Bariatric and metabolic surgeons',
+      description:
+        'Surgeons who can describe how pharmacotherapy changes referral timing and which patients still proceed to a procedure.',
+    },
+    {
+      audience: 'Private weight-management clinic physicians',
+      description:
+        'Clinic prescribers whose pricing, stocking, and recommendation behaviour shape self-pay initiation.',
+    },
+    {
+      audience: 'Hospital and community pharmacists',
+      description:
+        'Dispensers who see stock, price presentation, and which presentation a self-pay patient actually leaves with.',
+    },
+    {
+      audience: 'Medical affairs and affiliate stakeholders',
+      description:
+        'In-country teams interviewed where permitted, on evidence needs framed by EDA labelling and formulary context.',
+    },
+    {
+      audience: 'Patients and treatment seekers',
+      description:
+        'Arabic-language interviews with people seeking or stopping treatment, with insured versus self-pay status recorded when they can identify it.',
+    },
+  ],
+  methodology: [
+    'Quantitative GLP-1 physician surveys and KAP modules that name semaglutide and tirzepatide.',
+    'In-depth interviews with endocrinologists, bariatric surgeons, and private clinic operators.',
+    'Pharmacy and clinic channel checks on stocking and price presentation.',
+    'Patient research on the journey, monthly spend tolerance, and discontinuation.',
+    'Desk review of public EDA documents to frame instruments, then primary data for commercial numbers.',
+    'Bottom-up logic: eligible patients, access route, initiation, and persistence. No headline obesity market size is published from this page.',
+  ],
+  whyBionixus: [
+    'Egypt is treated as its own market, not a MENA residual or a Gulf percentage allocated to Cairo.',
+    'Instruments and deliverables name semaglutide and tirzepatide.',
+    'Arabic and English fieldwork runs from the MENA Cairo office.',
+    'Self-pay economics are separated from aspirational coverage assumptions.',
+    'Public EDA materials are cited as context, and unverified payer claims stay open questions.',
+    'Custom engagements typically cost $10,000–$60,000. The physician network is about 3,200 physicians, and BioNixus is running about 70 studies in 2026.',
+    'Senior-led delivery when a syndicated obesity PDF cannot answer an affiliate decision.',
+  ],
+  citations: [
+    {
+      label: 'EDA public assessment report: Wegovy (semaglutide)',
+      href: 'https://edaegypt.gov.eg/media/xvngrwx2/par-wegovy.pdf',
+      note: 'Confirms that the Egyptian Drug Authority has published assessment materials for Wegovy / semaglutide. Used as registration evidence context for research design, not as a BioNixus efficacy claim.',
+    },
+    {
+      label: 'EDA endocrine Egyptian national formulary',
+      href: 'https://edaegypt.gov.eg/media/wcbezfpv/4-new-code-endocrine-egyptian-national-formulary.pdf',
+      note: 'Formulary context for GLP-1 receptor agonists, including dulaglutide, liraglutide (including chronic weight-management language), and semaglutide, with tirzepatide mentioned in an interaction context. Listing context only.',
+    },
+    {
+      label: 'Mordor Intelligence — Egypt diabetes drugs market',
+      href: 'https://www.mordorintelligence.com/industry-reports/egypt-diabetes-drugs-market',
+      note: 'Diabetes adjacency only: Mordor sizes the Egypt diabetes drugs market at USD 471.78 million (2026) to USD 646.61 million (2031), 6.51% CAGR. This is not an obesity or anti-obesity medicine market size.',
+    },
+  ],
+  relatedLinks: [
+    { to: '/gcc-obesity-market', label: 'GCC and MENA obesity and GLP-1 hub' },
+    { to: '/saudi-arabia-obesity-market', label: 'Saudi Arabia obesity and GLP-1 market research' },
+    { to: '/uae-obesity-market', label: 'UAE obesity market research' },
+    { to: '/kuwait-obesity-market', label: 'Kuwait obesity market research' },
+    { to: '/healthcare-market-research/egypt', label: 'Egypt healthcare market research hub' },
+    { to: '/patient-journey-research-gcc', label: 'Patient journey research GCC' },
+    { to: '/pharmaceutical-companies-egypt', label: 'Pharmaceutical companies in Egypt' },
+  ],
+  faqs: [
+    {
+      question: 'Who does obesity GLP-1 market research in Egypt?',
+      answer:
+        'BioNixus runs custom obesity and GLP-1 market research in Egypt, including physician surveys, patient-journey studies, and channel work, with Arabic fieldwork from our Cairo office. Typical custom project fees are $10,000–$60,000.',
+    },
+    {
+      question: 'Can BioNixus research the semaglutide and tirzepatide market in Egypt?',
+      answer:
+        'Yes. Instruments name semaglutide and tirzepatide explicitly — initiation, switching, indication mix, supply, and self-pay share — among endocrinologists, other specialists, pharmacists, and clinic operators.',
+    },
+    {
+      question: 'What is the EDA’s role in Egypt obesity and GLP-1 research design?',
+      answer:
+        'The Egyptian Drug Authority (EDA) is the medicines regulator. Public materials such as product assessment reports and endocrine formulary listings help frame which GLP-1 agents are discussed in research guides. BioNixus then measures real-world prescribing and payment with primary fieldwork.',
+    },
+    {
+      question: 'Is anti-obesity medication reimbursed in Egypt?',
+      answer:
+        'Many patients pay out of pocket, and self-pay is a core demand pool in BioNixus studies. Public and insurance pathways are evolving. Whether a specific obesity indication is covered is a research question to test with stakeholders, not an assumed national yes or no.',
+    },
+    {
+      question: 'Do you run Arabic-language physician and patient studies in Egypt?',
+      answer:
+        'Yes. Egypt obesity studies are fielded in Arabic and English as respondents prefer, coordinated from the MENA Cairo office.',
+    },
+    {
+      question: 'How is this different from a syndicated Egypt GLP-1 report?',
+      answer:
+        'BioNixus sells commissioned primary research with named methodology and quotas. We do not quote syndicated obesity report price bands. Custom work is typically $10,000–$60,000.',
+    },
+    {
+      question: 'How fast can we get a proposal?',
+      answer:
+        'Name the brand decision, molecules of interest (for example semaglutide or tirzepatide), and whether you need physician, patient, or channel modules. BioNixus returns a scoped proposal within about one working day.',
+    },
+  ],
+  areaServed: ['Egypt'],
+};
+
+/* ------------------------------------------------------------------ */
 /* 4. Egypt Medical Tourism Market                        (country)    */
 /* ------------------------------------------------------------------ */
 const egyptMedicalTourism: SegmentMarketContent = {
@@ -2690,6 +3000,7 @@ export const COUNTRY_FLAGSHIP_SEGMENT_PAGES: SegmentMarketContent[] = [
   uaeInVitroDiagnosticsDevices,
   uaeObesity,
   kuwaitObesity,
+  egyptObesity,
   egyptMedicalTourism,
   turkeyMedicalTourism,
   bionixusSaudiOncologyInsights,

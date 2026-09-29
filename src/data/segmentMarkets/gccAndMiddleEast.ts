@@ -1671,6 +1671,7 @@ const gccObesity: SegmentMarketContent = {
     { to: '/saudi-arabia-obesity-market', label: 'Saudi Arabia obesity market' },
     { to: '/uae-obesity-market', label: 'UAE obesity market' },
     { to: '/kuwait-obesity-market', label: 'Kuwait obesity market' },
+    { to: '/egypt-obesity-market', label: 'Egypt obesity and GLP-1 market research' },
     { to: '/gcc-pharmaceutical-market-research', label: 'GCC pharmaceutical market research' },
     { to: '/real-world-evidence-gcc', label: 'Real-world evidence in the GCC' },
     { to: '/pharma-insights-saudi-arabia', label: 'Pharma insights: Saudi Arabia' },

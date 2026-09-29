@@ -632,6 +632,14 @@ export default function CountryPage() {
                 {therapy} market research
               </Link>
             ))}
+            {config.slug === 'egypt' && (
+              <Link
+                to="/egypt-obesity-market"
+                className="px-4 py-2 rounded-full border border-border bg-background text-sm hover:border-primary/40 transition-colors"
+              >
+                Obesity & GLP-1 market research in Egypt
+              </Link>
+            )}
           </div>
         </ReportPremiumSection>
 
@@ -1047,6 +1055,11 @@ export default function CountryPage() {
                     to="/insights/top-market-research-companies-egypt-2026"
                     title="Top market research companies in Egypt (2026)"
                     description="Independent guide to leading firms for healthcare, pharma, and consumer research. Proposal in 24 hours."
+                  />
+                  <HealthcareNavCard
+                    to="/egypt-obesity-market"
+                    title="Obesity & GLP-1 market research in Egypt"
+                    description="Semaglutide and tirzepatide physician surveys, EDA registration context, and self-pay demand from Cairo."
                   />
                   <HealthcareNavCard
                     to="/pharmaceutical-companies-egypt"
