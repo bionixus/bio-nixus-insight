@@ -497,9 +497,13 @@ export default function CountryPage() {
                     <Link to="/market-reports/saudi-arabia-immunology-biologics-market-report" className="text-primary underline font-medium">
                       immunology &amp; biologics
                     </Link>
-                    , and{' '}
+                    ,{' '}
                     <Link to="/market-reports/saudi-arabia-rare-diseases-market-report" className="text-primary underline font-medium">
                       rare diseases
+                    </Link>
+                    , and{' '}
+                    <Link to="/saudi-arabia-obesity-market" className="text-primary underline font-medium">
+                      Obesity &amp; GLP-1 market research in Saudi Arabia
                     </Link>
                     .
                   </p>

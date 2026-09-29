@@ -571,6 +571,7 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
     { to: '/pharmacy-mystery-shopper', label: 'Pharmacy mystery shopper', desc: 'Availability in named accounts when the KSA audit stops at Kingdom total.' },
     { to: '/pharmaceutical-companies-saudi-arabia', label: 'Pharma companies in Saudi Arabia', desc: 'SPIMACO, Jamjoom, MNCs, Nahdi — the accounts.' },
     { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Pharma market research KSA', desc: 'Country BOFU for pharmaceutical fieldwork.' },
+    { to: '/saudi-arabia-obesity-market', label: 'Custom GLP-1 physician surveys in KSA', desc: 'Commissioned obesity and GLP-1 physician surveys in Saudi Arabia, coordinated from Al Khobar.' },
     { to: '/insights/top-healthcare-market-research-companies-saudi-arabia-2026', label: 'Healthcare firms in KSA', desc: 'Healthcare listicle for the Kingdom.' },
   ],
   cta: {

@@ -53,6 +53,15 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
       description: content.serviceDescription ?? content.description,
       url: content.canonical,
       areaServed: content.areaServed.map((name) => ({ '@type': 'Country', name })),
+      ...(content.serviceName
+        ? {
+            provider: {
+              '@type': 'Organization',
+              '@id': 'https://www.bionixus.com/#organization',
+              name: 'BioNixus',
+            },
+          }
+        : {}),
     },
     buildBreadcrumbSchema(breadcrumbItems),
     buildFAQSchema(content.faqs, { pageUrl: content.canonical }),
@@ -102,6 +111,29 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
           },
         ]
       : []),
+    ...(content.emitWebPage && content.lastUpdated
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': `${content.canonical}#webpage`,
+            url: content.canonical,
+            name: content.h1,
+            description: content.description,
+            dateModified: content.lastUpdated,
+            isPartOf: { '@type': 'WebSite', name: 'BioNixus', url: 'https://www.bionixus.com' },
+            about: {
+              '@type': 'Organization',
+              '@id': 'https://www.bionixus.com/#organization',
+              name: 'BioNixus',
+            },
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['h1', '#answer-first', '#geo-answer'],
+            },
+          },
+        ]
+      : []),
   ];
 
   const lastUpdatedLabel = content.lastUpdated
@@ -132,6 +164,7 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
         description={content.description}
         canonical={canonicalPath}
         jsonLd={jsonLd}
+        exactMeta={content.exactMeta}
       />
       <Navbar />
       <main>
@@ -142,7 +175,13 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
           lead={
             introLinks.length > 0 ? (
               <>
-                {content.intro[0] ?? content.description}{' '}
+                {content.emitWebPage ? (
+                  <p id="answer-first" className="m-0">
+                    {content.intro[0] ?? content.description}
+                  </p>
+                ) : (
+                  (content.intro[0] ?? content.description)
+                )}{' '}
                 {introLinks.map((link, index) => (
                   <span key={link.to}>
                     {index === 0 ? 'See the ' : ' and the '}
@@ -151,8 +190,10 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
                   </span>
                 ))}
               </>
+            ) : content.emitWebPage ? (
+              <p id="answer-first" className="m-0">{content.intro[0] ?? content.description}</p>
             ) : (
-              (content.intro[0] ?? content.description)
+              content.intro[0] ?? content.description
             )
           }
           rest={
@@ -166,16 +207,18 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
               </>
             ) : undefined
           }
-          metaLine={lastUpdatedLabel ? `Updated ${lastUpdatedLabel}` : undefined}
-          stats={[
-            { value: content.geoLabel, label: 'Market' },
-            { value: content.segmentLabel, label: 'Segment' },
-            { value: String(content.researchTopics.length), label: 'research topics' },
-            { value: '48h', label: 'to a scoped proposal' },
-          ]}
+          metaLine={lastUpdatedLabel ? `${content.dateLabel ?? 'Updated'} ${lastUpdatedLabel}` : undefined}
+          stats={
+            content.heroStats ?? [
+              { value: content.geoLabel, label: 'Market' },
+              { value: content.segmentLabel, label: 'Segment' },
+              { value: String(content.researchTopics.length), label: 'research topics' },
+              { value: '48h', label: 'to a scoped proposal' },
+            ]
+          }
           actions={
             <>
-              <DirectoryGoldLink to="/contact">Request a proposal</DirectoryGoldLink>
+              <DirectoryGoldLink to="/contact">{content.heroCtaLabel ?? 'Request a proposal'}</DirectoryGoldLink>
               <DirectoryOutlineLink href="#research">See what we research</DirectoryOutlineLink>
             </>
           }
@@ -260,10 +303,41 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
           </DirectorySection>
         ) : null}
 
+        {content.sourceNotes ? (
+          <DirectorySection id="key-figures" eyebrow="Cited figures" title={content.sourceNotes.heading}>
+            <ul className="space-y-3">
+              {content.sourceNotes.items.map((item) => (
+                <li
+                  key={item.text.slice(0, 48)}
+                  className="text-sm text-foreground bg-[#FFFEFB] rounded-2xl border border-[#EDE9E3] p-5 leading-relaxed"
+                >
+                  {item.text}
+                  {item.sourceHref ? (
+                    <>
+                      {' '}
+                      <a
+                        href={item.sourceHref}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="text-primary hover:underline"
+                      >
+                        {item.sourceLabel ?? item.sourceHref}
+                      </a>
+                    </>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </DirectorySection>
+        ) : null}
+
         <DirectorySection
           id="research"
           eyebrow="Coverage"
-          title={`What we research in the ${content.geoLabel} ${content.segmentLabel.toLowerCase()} market`}
+          title={
+            content.researchHeading ??
+            `What we research in the ${content.geoLabel} ${content.segmentLabel.toLowerCase()} market`
+          }
         >
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
             {content.researchTopics.map((item) => (
@@ -297,6 +371,17 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
                 {para}
               </p>
             ))}
+            {content.marketStructure.links?.length ? (
+              <ul className="space-y-2 pt-2">
+                {content.marketStructure.links.map((link) => (
+                  <li key={link.to}>
+                    <Link to={link.to} className="text-primary font-medium hover:underline">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </DirectorySection>
 
@@ -310,19 +395,52 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
           </DirectorySection>
         ) : null}
 
-        <DirectorySection id="audiences" surface="cream" eyebrow="Fieldwork" title="Who we interview">
+        <DirectorySection
+          id="audiences"
+          surface="cream"
+          eyebrow="Fieldwork"
+          title={content.audiencesHeading ?? 'Who we interview'}
+        >
           <div className="grid md:grid-cols-2 gap-5">
             {content.audiences.map((audience) => (
               <DirectoryDriverCard key={audience.audience} title={audience.audience} desc={audience.description} />
             ))}
           </div>
+          {content.audiencesNote ? (
+            <p className="text-muted-foreground leading-relaxed mt-6 max-w-3xl">{content.audiencesNote}</p>
+          ) : null}
         </DirectorySection>
+
+        {content.surveyMethodology ? (
+          <DirectorySection id="physician-survey" eyebrow="Physician survey" title={content.surveyMethodology.heading}>
+            {content.surveyMethodology.paragraphs[0] ? (
+              <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
+                {content.surveyMethodology.paragraphs[0]}
+              </p>
+            ) : null}
+            <ol className="space-y-3 list-decimal pl-5 max-w-3xl">
+              {content.surveyMethodology.steps.map((step) => (
+                <li key={step.slice(0, 48)} className="text-sm text-foreground leading-relaxed">
+                  {step}
+                </li>
+              ))}
+            </ol>
+            {content.surveyMethodology.paragraphs.slice(1).map((para) => (
+              <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed max-w-3xl mt-6">
+                {para}
+              </p>
+            ))}
+          </DirectorySection>
+        ) : null}
 
         {content.methodology && content.methodology.length > 0 ? (
           <DirectorySection
             id="methodology"
             eyebrow="Method"
-            title={`How we size and validate the ${content.segmentLabel.toLowerCase()} opportunity`}
+            title={
+              content.methodologyHeading ??
+              `How we size and validate the ${content.segmentLabel.toLowerCase()} opportunity`
+            }
           >
             <ul className="space-y-3">
               {content.methodology.map((step) => (
@@ -342,7 +460,10 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
           id="why"
           surface="cream"
           eyebrow="Why BioNixus"
-          title={`Why teams choose BioNixus for ${content.geoLabel} ${content.segmentLabel.toLowerCase()} research`}
+          title={
+            content.whyHeading ??
+            `Why teams choose BioNixus for ${content.geoLabel} ${content.segmentLabel.toLowerCase()} research`
+          }
         >
           <WhyBioNixusIntro />
           <ul className="grid sm:grid-cols-2 gap-3 mt-6">

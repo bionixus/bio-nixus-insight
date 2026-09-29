@@ -1626,91 +1626,128 @@ const obesity: SegmentMarketContent = {
   group: 'saudi-devices-consumer',
   geoLabel: 'Saudi Arabia',
   segmentLabel: 'Obesity',
-  badge: 'Saudi Arabia · Obesity & Metabolic Research',
-  breadcrumbLabel: 'Saudi Arabia Obesity Market',
-    title: 'Saudi Arabia Obesity Market & GLP-1 Access | BioNixus',
+  badge: 'Saudi Arabia · Obesity · GLP-1 market research',
+  breadcrumbLabel: 'Saudi Arabia Obesity / GLP-1 Market Research',
+  title: 'GLP-1 & Obesity Market Research Saudi Arabia | BioNixus',
   description:
-    'Saudi Arabia obesity market research — GLP-1 prescribing and access, bariatric surgery pathways, obesity clinics, insurance cover, and patient journeys.',
+    'Obesity & GLP-1 market research in Saudi Arabia: physician surveys, semaglutide/tirzepatide access, SFDA/NUPCO/CHI context, Al Khobar. Custom $10,000–$60,000.',
+  exactMeta: true,
   canonical: `${SEGMENT_MARKET_BASE}/saudi-arabia-obesity-market`,
-  h1: 'Saudi Arabia Obesity Market: GLP-1 Access, Bariatric Surgery, and Patient Journey Research',
+  h1: 'Obesity & GLP-1 Market Research in Saudi Arabia',
+  serviceName: 'Obesity & GLP-1 Market Research in Saudi Arabia',
+  emitWebPage: true,
+  lastUpdated: '2026-09-29',
+  dateLabel: 'Last reviewed',
+  heroCtaLabel: 'Request a $10,000–$60,000 scoped proposal',
+  heroStats: [
+    { value: '$10,000–$60,000', label: 'custom studies' },
+    { value: '~3,200', label: 'physicians in network' },
+    { value: '~70', label: 'studies in 2026' },
+    { value: 'Al Khobar', label: 'Saudi fieldwork office' },
+  ],
   intro: [
-    'The Saudi Arabia obesity market has been transformed by the arrival of incretin-based therapies, which turned obesity from a predominantly surgical and lifestyle conversation into a pharmaceutical one. Obesity and diabetes burden in the Gulf is among the highest globally, and the Kingdom now has parallel treatment routes: prescription anti-obesity medicines, bariatric and metabolic surgery, endoscopic interventions, and multidisciplinary obesity clinics. BioNixus researches how patients, prescribers, and payers actually navigate them.',
-    'Access is the decisive commercial variable. Prescription anti-obesity medicines sit in an ambiguous position between medical necessity and lifestyle treatment, which shapes whether insurers reimburse them under Council of Health Insurance-regulated policies, whether public formularies list them, and how much of the market is genuinely out of pocket. Persistence is equally important: therapies with meaningful monthly cost and injection burden face real-world discontinuation that shapes revenue far more than initiation volume.',
-    'Institutional context is supportive but nuanced. Vision 2030 and the Quality of Life Program treat physical activity, nutrition, and healthy weight as national priorities, the Saudi Center for Disease Prevention and Control has elevated non-communicable disease surveillance, and health clusters carry accountability for metabolic outcomes. Bariatric surgery capacity is well established in both public and private sectors, so pharmaceutical and surgical routes now compete and combine in ways that require direct field research to map.',
+    'BioNixus runs obesity and GLP-1 market research in Saudi Arabia — including GLP-1 physician surveys, KAP and ATU tracking, patient-journey and persistence studies, and payer/access interviews. Fieldwork covers endocrinology, family medicine, bariatric/metabolic surgery, and obesity clinics, with senior-led delivery from our Al Khobar office. Custom studies typically range from $10,000 to $60,000. Proposal within one working day.',
+    'Physician surveys, KAP and ATU tracking, semaglutide and tirzepatide access, and patient persistence — custom primary research from Al Khobar.',
   ],
   quickAnswer: {
-    question: 'What is happening in the Saudi Arabia obesity market in the GLP-1 era?',
+    question: 'What does BioNixus do for obesity and GLP-1 market research in Saudi Arabia?',
     answer:
-      'The Saudi Arabia obesity market now runs on three competing routes: prescription anti-obesity medicines, bariatric and metabolic surgery, and multidisciplinary obesity clinic programmes. Access rather than awareness is the constraint, because reimbursement for weight-management therapy is inconsistent and much demand is out of pocket. BioNixus researches prescribers, payers, surgeons, and patients to map pathways, persistence, and realistic commercial opportunity.',
+      'BioNixus is a custom primary-research firm for pharmaceutical and healthcare teams that need obesity GLP-1 market research in Saudi Arabia. We do not sell syndicated obesity report price packs.',
     points: [
       {
-        title: 'Reimbursement is the gate',
+        title: 'GLP-1 physician surveys and KAP studies',
         description:
-          'Whether weight-management therapy is treated as medically necessary or lifestyle determines insurer coverage, public formulary access, and how large the self-pay market really is.',
+          'GLP-1 and anti-obesity medicine physician surveys and KAP studies in Saudi Arabia, commissioned for a brand decision.',
       },
       {
-        title: 'Persistence beats initiation',
+        title: 'Semaglutide and tirzepatide modules',
         description:
-          'Discontinuation driven by cost, tolerability, and expectation mismatch shapes realised revenue more than prescription starts, and it is measurable only through patient research.',
+          'Initiation, switching, and indication-mix questions on semaglutide and tirzepatide, including diabetes versus obesity use.',
       },
       {
-        title: 'Surgery and pharmacotherapy interact',
+        title: 'SFDA, NUPCO, and CHI access context',
         description:
-          'Established bariatric capacity means pharmacotherapy substitutes for, delays, or complements surgery depending on patient profile and referral relationships.',
+          'Payer and formulary interviews that separate public, insured, and self-pay routes for weight-management therapy.',
       },
       {
-        title: 'Multiple prescriber types compete',
+        title: 'Patient journey and discontinuation',
         description:
-          'Endocrinologists, family physicians, bariatric surgeons, and obesity clinic staff all initiate treatment, with different evidence needs and monitoring behaviour.',
+          'Patient journey and discontinuation research on initiation, persistence, and reasons patients stop therapy.',
+      },
+      {
+        title: 'Bariatric referral and pharmacotherapy',
+        description:
+          'How bariatric referral interacts with pharmacotherapy across surgery, clinic, and prescribing pathways.',
+      },
+      {
+        title: 'Arabic and English fieldwork',
+        description:
+          'Arabic and English fieldwork with Al Khobar–supported delivery for Saudi obesity and GLP-1 programmes.',
       },
     ],
     summary:
-      'BioNixus delivers a commissioned Saudi obesity study covering prescriber segmentation, payer coverage behaviour, bariatric referral dynamics, obesity clinic models, patient journey and persistence research, and a pricing and access strategy.',
+      'BioNixus GLP-1 physician surveys in Saudi Arabia stratify endocrinology, family medicine, internal medicine, and bariatric surgery; instruments run in Arabic or English; custom projects typically cost $10,000–$60,000. BioNixus works with about 3,200 physicians across its healthcare network and expects about 70 studies in 2026.',
   },
+  sourceNotes: {
+    heading: 'Key figures for Saudi obesity and GLP-1 market research',
+    items: [
+      {
+        text:
+          'Independent national survey of Saudi clinicians (n=92; 2024 fieldwork published on PMC): endocrinologists prescribed anti-obesity medicines more frequently than family physicians (90.0% vs 60.5%); GLP-1 receptor agonists were the most commonly reported first-line anti-obesity medicines. This is an independent academic survey, not a BioNixus study.',
+        sourceLabel: 'PMC12366907',
+        sourceHref: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12366907/',
+      },
+      {
+        text:
+          'BioNixus delivery facts: about 3,200 physicians in the healthcare network; about 70 studies in 2026; custom obesity and GLP-1 projects typically $10,000–$60,000.',
+      },
+    ],
+  },
+  researchHeading: 'What BioNixus runs for obesity market research in Saudi Arabia',
   researchTopics: [
     {
-      name: 'Prescriber segmentation and initiation behaviour',
+      name: 'GLP-1 physician surveys and KAP studies',
       detail:
-        'How endocrinologists, family physicians, bariatric surgeons, and obesity clinic staff differ in patient selection, dose escalation, monitoring, and comfort with long-term therapy.',
+        'Commissioned physician surveys among endocrinology, family medicine, internal medicine, bariatric surgery, and obesity-clinic physicians on initiation, monitoring, and comfort with anti-obesity medicines.',
     },
     {
-      name: 'Access and reimbursement mapping',
+      name: 'Semaglutide and tirzepatide initiation and switching',
       detail:
-        'Insurer coverage decisions under Council of Health Insurance regulation, employer plan variation, public formulary status, prior authorisation practice, and self-pay exposure.',
+        'Molecule-level questions on semaglutide and tirzepatide: dose escalation, diabetes versus obesity indication mix, supply interruptions, and self-pay versus covered use.',
     },
     {
-      name: 'Bariatric and metabolic surgery pathways',
+      name: 'SFDA, NUPCO, and CHI access interviews',
       detail:
-        'Referral routes into surgery, procedure selection, centre capability, and how the availability of effective pharmacotherapy is changing surgical volume and timing.',
+        'Payer and formulary interviews on public procurement, Council of Health Insurance (CHI) plan design, prior authorisation, and out-of-pocket exposure.',
     },
     {
-      name: 'Obesity clinic and programme models',
+      name: 'Patient journey and discontinuation research',
       detail:
-        'Multidisciplinary clinic structures, wellness and lifestyle programme integration, pricing and package design, and retention across extended treatment journeys.',
+        'Where patients first seek help, what they expect, and how cost, tolerability, and monitoring burden drive discontinuation.',
     },
     {
-      name: 'Patient journey, adherence, and persistence',
+      name: 'Bariatric referral and pharmacotherapy',
       detail:
-        'Where patients first seek help, what they expect, how cost and tolerability drive discontinuation, and what support genuinely extends time on therapy.',
+        'Referral routes into surgery and how pharmacotherapy substitutes for, delays, or complements bariatric and metabolic procedures.',
     },
     {
       name: 'Pharmacy channel and supply behaviour',
       detail:
-        'Dispensing patterns across retail pharmacy chains and hospital pharmacies, prescription verification practice, stock behaviour during constrained supply, and cash-pay dynamics.',
+        'Dispensing across retail and hospital pharmacies, stock behaviour during constrained supply, and cash-pay dynamics for incretin therapies.',
     },
   ],
   segmentBreakdown: {
-    heading: 'Obesity market sub-segments we cover',
+    heading: 'Competing treatment routes in Saudi obesity market research',
     items: [
       {
         label: 'Prescription anti-obesity medicines',
         detail:
-          'Incretin-based and other approved weight-management therapies, where access route, monthly cost exposure, and persistence determine realised commercial value.',
+          'Incretin-based and other approved weight-management therapies. Physician survey work tracks access route, monthly cost exposure, and persistence.',
       },
       {
         label: 'Bariatric and metabolic surgery',
         detail:
-          'Sleeve gastrectomy, bypass, and revisional procedures across public and private centres, plus how surgical demand responds to effective pharmacotherapy.',
+          'Sleeve gastrectomy, bypass, and revisional procedures across public and private centres, and how surgical demand responds to effective pharmacotherapy.',
       },
       {
         label: 'Endoscopic and device-based interventions',
@@ -1720,60 +1757,64 @@ const obesity: SegmentMarketContent = {
       {
         label: 'Obesity clinics and multidisciplinary programmes',
         detail:
-          'Physician-led weight management services combining pharmacotherapy, dietetics, behavioural support, and monitoring, usually sold as private packages.',
+          'Physician-led weight-management services combining pharmacotherapy, dietetics, behavioural support, and monitoring, usually sold as private packages.',
       },
       {
         label: 'Adjacent consumer and OTC categories',
         detail:
-          'Meal replacement, nutraceutical, and wellness products that shape patient expectations, act as first-attempt solutions, and compete for the same out-of-pocket budget.',
+          'Meal replacement, nutraceutical, and wellness products that shape patient expectations and compete for the same out-of-pocket budget.',
       },
     ],
   },
   demandDrivers: {
-    heading: 'What is driving the Saudi obesity market',
+    heading: 'Demand context for obesity market research in Saudi Arabia',
     drivers: [
       {
         title: 'High metabolic disease burden',
         detail:
-          'Obesity and type 2 diabetes prevalence in the Gulf is among the highest globally, creating a large clinically eligible population across both public and private sectors.',
+          'Obesity and type 2 diabetes prevalence in the Gulf is among the highest globally, creating a large clinically eligible population across public and private sectors.',
       },
       {
         title: 'Incretin-based therapy availability',
         detail:
-          'Effective pharmacological weight management has shifted patient expectations and brought a large group of previously untreated people into active medical care.',
+          'Effective pharmacological weight management has shifted patient expectations and brought previously untreated people into active medical care.',
       },
       {
         title: 'Vision 2030 and Quality of Life Program',
         detail:
-          'National priorities on physical activity, nutrition, and healthy weight legitimise investment in prevention and weight management as health system objectives.',
+          'National priorities on physical activity, nutrition, and healthy weight legitimise investment in prevention and weight management.',
       },
       {
         title: 'Established bariatric surgery capacity',
         detail:
-          'Well-developed surgical capability in public and private centres means patients have a credible definitive option, making treatment-route competition unusually direct.',
+          'Surgical capability in public and private centres means patients have a definitive option, so treatment-route competition is direct.',
       },
       {
-        title: 'Private insurance expansion',
+        title: 'Private insurance under CHI',
         detail:
-          'Council of Health Insurance-regulated cover across the private workforce creates a potential funding route, though weight-management coverage remains inconsistent.',
+          'Council of Health Insurance (CHI) cover across the private workforce is a potential funding route, though weight-management coverage remains inconsistent.',
       },
       {
-        title: 'High out-of-pocket willingness to pay',
+        title: 'Self-pay demand',
         detail:
-          'Substantial self-pay demand exists for both pharmacotherapy and clinic programmes, which makes price sensitivity and persistence economics central to forecasting.',
+          'A substantial share of pharmacotherapy and clinic demand is out of pocket, so price sensitivity and persistence sit at the centre of any forecast.',
       },
     ],
   },
   marketStructure: {
-    heading: 'How the Saudi obesity market is structured',
+    heading: 'Access structure for obesity market research in Saudi Arabia',
     paragraphs: [
-      'Three treatment routes compete for the same patient, and the choice between them is driven as much by access as by clinical criteria. Prescription pharmacotherapy is the fastest-growing route but carries recurring cost that patients frequently fund themselves. Bariatric and metabolic surgery offers a one-time intervention with established capacity in public and private centres. Obesity clinics package pharmacotherapy with dietetics, behavioural support, and monitoring as a private service. Commercial planning that models only one route systematically misreads the market.',
-      'Prescribing is distributed across specialties rather than concentrated. Endocrinologists provide clinical leadership and manage complex metabolic patients. Family physicians and internal medicine account for substantial initiation volume and have different monitoring habits and evidence needs. Bariatric surgeons increasingly prescribe pharmacotherapy pre-operatively, post-operatively, and as an alternative for patients declining surgery. Obesity clinic physicians operate in a private, service-oriented model. Each group requires distinct messaging, and the mix differs by region and sector.',
-      'Funding determines the shape of the entire market. Public-sector access depends on formulary decisions and cluster budget priorities, private access depends on insurer policy and employer plan design under Council of Health Insurance regulation, and the remainder is out of pocket through retail pharmacy and clinic channels. Because weight-management therapy sits between medical necessity and lifestyle in coverage terms, payer research is not an optional workstream here — it is the primary determinant of addressable volume and defensible pricing.',
+      'The Saudi obesity conversation is no longer GLP-1 in the abstract. Commercial teams brief research on semaglutide (injectable weight-management and diabetes brands in class) and tirzepatide (dual GIP/GLP-1), alongside other incretin-based and legacy anti-obesity medicines. BioNixus physician surveys ask molecule-level questions: initiation criteria, dose escalation, switching between semaglutide and tirzepatide, diabetes versus obesity indication mix, supply interruptions, and self-pay versus covered use.',
+      'The Saudi Food and Drug Authority (SFDA) governs registration, quality, and safety communications for GLP-1 receptor agonists. BioNixus maps how SFDA registration status and safety communications affect willingness to initiate semaglutide or tirzepatide. Public volume for obesity and metabolic therapies often depends on NUPCO tendering and institutional formulary uptake, not retail awareness alone.',
+      'Access — not awareness — still decides addressable volume for anti-obesity medicines in Saudi Arabia. Public pathways depend on formulary and procurement (including NUPCO-linked supply). Private pathways sit under Council of Health Insurance (CHI) plan design, where weight-management therapy is often treated between medical necessity and lifestyle care. The remainder is out-of-pocket through retail pharmacy and private obesity clinics. BioNixus payer and physician research separates public, insured, and self-pay routes before any forecast is locked.',
+      'Three treatment routes compete for the same patient: prescription pharmacotherapy, bariatric and metabolic surgery, and obesity clinic programmes. Prescribing is distributed across endocrinologists, family physicians, internal medicine, bariatric surgeons, and obesity-clinic physicians. A physician survey that models only one route or one specialty misreads the market.',
+    ],
+    links: [
+      { to: '/blog/nupco-saudi-arabia-tendering-guide', label: 'NUPCO Saudi Arabia tendering guide' },
     ],
   },
   geoSignals: {
-    heading: 'Regional demand signals across the Kingdom',
+    heading: 'Regional notes for a GLP-1 physician survey in Saudi Arabia',
     items: [
       {
         name: 'Riyadh',
@@ -1788,7 +1829,7 @@ const obesity: SegmentMarketContent = {
       {
         name: 'Eastern Province',
         signal:
-          'Dammam and Khobar combine high employer-insured coverage and company-linked healthcare with corporate wellness programmes that surface undiagnosed metabolic risk.',
+          'Dammam and Al Khobar combine employer-insured coverage and company-linked healthcare with corporate wellness programmes that surface undiagnosed metabolic risk. Saudi fieldwork is coordinated from the Al Khobar office.',
       },
       {
         name: 'Secondary cities and interior regions',
@@ -1797,86 +1838,117 @@ const obesity: SegmentMarketContent = {
       },
     ],
   },
+  audiencesHeading: 'Who we interview for Saudi GLP-1 physician surveys',
+  audiencesNote:
+    'BioNixus Saudi fieldwork is coordinated from Al Khobar (Eastern Province). Regional hubs also support programmes from Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), MENA Cairo, London, Sheridan WY (US), and São Paulo.',
   audiences: [
     {
       audience: 'Endocrinologists and metabolic physicians',
       description:
-        'Clinical leaders in weight management, interviewed on patient selection, dose escalation, monitoring, comorbidity management, and long-term therapy expectations.',
+        'Clinical leaders in weight management, interviewed on patient selection, dose escalation, monitoring, and long-term therapy expectations.',
     },
     {
       audience: 'Family physicians and internal medicine',
       description:
-        'High-volume initiators with distinct evidence needs and monitoring habits, interviewed on referral thresholds, confidence, and practical barriers to prescribing.',
+        'High-volume initiators interviewed on referral thresholds, confidence with anti-obesity medicines, and practical barriers to prescribing.',
     },
     {
       audience: 'Bariatric and metabolic surgeons',
       description:
-        'Surgeons whose referral relationships and procedure volumes are directly affected by pharmacotherapy, interviewed on patient selection and combined-pathway practice.',
+        'Surgeons whose referral relationships and procedure volumes are affected by pharmacotherapy, interviewed on patient selection and combined pathways.',
+    },
+    {
+      audience: 'Obesity-clinic physicians and pharmacists',
+      description:
+        'Private obesity-clinic physicians and pharmacists interviewed on package design, dispensing, supply interruptions, and cash-pay behaviour.',
     },
     {
       audience: 'Payers and insurance medical directors',
       description:
-        'Insurers and third-party administrators regulated under Council of Health Insurance rules, researched on weight-management coverage policy and prior authorisation practice.',
+        'Medical directors under Council of Health Insurance (CHI) regulated plans, researched on weight-management coverage policy and prior authorisation.',
     },
     {
       audience: 'Patients and treatment considerers',
       description:
-        'Screened samples of people currently treated or actively seeking weight management, researched on journey, expectations, cost tolerance, and reasons for discontinuation.',
+        'People currently treated or actively seeking weight management, researched on journey, expectations, cost tolerance, and reasons for discontinuation.',
     },
   ],
+  surveyMethodology: {
+    heading: 'GLP-1 physician survey methodology in Saudi Arabia',
+    paragraphs: [
+      'BioNixus designs GLP-1 physician surveys in Saudi Arabia as commissioned primary research, scoped to the brand decision. A typical instrument covers the modules below.',
+      'Modes: online quantitative with optional CATI; Arabic and English; depth interviews for KOLs and medical directors. Sample frames are stratified across endocrinology, family medicine, internal medicine, and bariatric surgery — the same specialty split highlighted in independent Saudi anti-obesity medicine research (PMC12366907). Deliverables include crosstabs, specialty segmentation, message implications, and forecast inputs. Scoped custom projects typically cost $10,000–$60,000.',
+    ],
+    steps: [
+      'Screeners: specialty, sector (public or private), region (Riyadh, Jeddah and the Western Region, Eastern Province including Al Khobar and Dammam, secondary cities), and monthly obesity or metabolic caseload.',
+      'KAP modules: guideline familiarity; comfort initiating anti-obesity medicines; perceived barriers such as training, supply, cost, and stigma.',
+      'Prescribing behaviour: share of eligible patients offered an anti-obesity medicine; first-line choice among semaglutide, tirzepatide, and other agents; diabetes versus obesity indication mix.',
+      'Access filters: prior authorisation experience; NUPCO and formulary constraints; self-pay share.',
+      'Persistence signals: reasons patients discontinue; monitoring burden; referral to bariatric surgery.',
+    ],
+  },
+  methodologyHeading: 'How we size and validate obesity market research in Saudi Arabia',
   methodology: [
-    'Prescriber sample frame stratified across endocrinology, family medicine, internal medicine, bariatric surgery, and obesity clinics, balanced by region and public or private sector.',
+    'Physician survey sample frame stratified across endocrinology, family medicine, internal medicine, bariatric surgery, and obesity clinics, balanced by region and public or private sector.',
     'Depth interviews and quantitative validation on patient selection, initiation triggers, monitoring, switching, and the evidence that would change prescribing behaviour.',
-    'Payer research with insurers and third-party administrators covering coverage policy, prior authorisation, tariff treatment, and employer plan variation.',
-    'Patient journey research with screened treated and treatment-seeking respondents, focused on expectations, cost tolerance, tolerability, and drivers of discontinuation.',
+    'Payer research with insurers and third-party administrators covering coverage policy, prior authorisation, and employer plan variation under Council of Health Insurance (CHI) rules.',
+    'Patient journey research with screened treated and treatment-seeking respondents, focused on expectations, cost tolerance, and drivers of discontinuation.',
     'Bottom-up opportunity model reconciling eligible population, access route, initiation, and persistence, with pricing and access recommendations by sector and channel.',
   ],
+  whyHeading: 'Why teams choose BioNixus for Saudi obesity market research',
   whyBionixus: [
-    'We treat access as the core research question rather than an afterthought, because coverage inconsistency defines the shape of this market.',
-    'Persistence and discontinuation research with real patients, which is where obesity forecasts most often fail in self-pay-heavy markets.',
-    'Coverage of all three competing routes — pharmacotherapy, surgery, and clinic programmes — so route substitution is modelled instead of ignored.',
-    'Prescriber segmentation across endocrinology, primary care, and bariatric surgery, reflecting how initiation volume is actually distributed in the Kingdom.',
-    'Arabic and English fieldwork with clinicians and patients, run by senior researchers experienced in sensitive consumer health topics.',
-    'Agile, senior-led delivery as the region-specialist alternative to IQVIA and Kantar Health, with a costed proposal returned within one working day.',
+    'Access is the core market-research question, because coverage inconsistency defines addressable volume for semaglutide and tirzepatide.',
+    'Persistence and discontinuation research with patients, which is where obesity forecasts most often fail when much demand is self-pay.',
+    'Coverage of pharmacotherapy, surgery, and clinic programmes, so a physician survey models route substitution instead of a single pathway.',
+    'Prescriber segmentation across endocrinology, primary care, and bariatric surgery, reflecting how initiation volume is distributed in the Kingdom.',
+    'Arabic and English fieldwork with clinicians and patients, coordinated from the Al Khobar office.',
+    'Senior-led custom studies, typically $10,000–$60,000, with a costed proposal returned within one working day.',
   ],
   relatedLinks: [
-    { to: '/healthcare-market-research/therapy/diabetes-metabolic', label: 'Diabetes & Metabolic Market Research' },
-    { to: '/gcc-obesity-market', label: 'GCC Obesity Market' },
-    { to: '/uae-obesity-market', label: 'UAE Obesity Market' },
-    { to: '/saudi-payer-market-access-research', label: 'Saudi Payer and Market Access Research' },
-    { to: '/pharma-insights-saudi-arabia', label: 'Pharma Insights Saudi Arabia' },
-    { to: '/consumer-market-research', label: 'Consumer Market Research' },
+    { to: '/gcc-obesity-market', label: 'GCC & MENA obesity / GLP-1 hub' },
+    { to: '/uae-obesity-market', label: 'UAE obesity market research' },
+    { to: '/kuwait-obesity-market', label: 'Kuwait obesity market research' },
+    { to: '/patient-journey-research-gcc', label: 'Patient journey research GCC — obesity/GLP-1' },
+    { to: '/saudi-payer-market-access-research', label: 'Saudi payer & market access research' },
+    { to: '/budget-impact-model-saudi-arabia', label: 'Budget impact modelling Saudi Arabia' },
+    { to: '/blog/nupco-saudi-arabia-tendering-guide', label: 'NUPCO Saudi Arabia tendering guide' },
+    { to: '/contact', label: 'Get a scoped GLP-1 KSA proposal' },
   ],
   faqs: [
     {
-      question: 'How do you size the Saudi Arabia obesity market credibly?',
+      question: 'Who runs obesity GLP-1 market research in Saudi Arabia?',
       answer:
-        'By reconciling eligible population, access route, initiation, and persistence rather than publishing a headline figure. BioNixus builds the model from prescriber-reported patient selection and initiation behaviour, payer coverage research, bariatric referral dynamics, and patient-reported persistence, segmented by public, insured, and self-pay routes. That produces a forecast that survives internal scrutiny, delivered as part of a commissioned primary research study.',
+        'BioNixus runs custom obesity and GLP-1 market research in Saudi Arabia, including physician surveys, patient-journey work, and payer interviews, with fieldwork support from our Al Khobar office. Studies are scoped to the brand decision — not sold as a syndicated obesity report. Typical custom fees are $10,000–$60,000.',
     },
     {
-      question: 'Where can I get KSA Obesity Market Insights for a commercial plan?',
+      question: 'Can BioNixus run a GLP-1 physician survey in Saudi Arabia?',
       answer:
-        'BioNixus produces KSA Obesity Market Insights as commissioned primary research rather than an off-the-shelf report. A typical engagement covers prescriber segmentation across endocrinology, primary care and bariatric surgery, payer coverage and prior authorisation behaviour, obesity clinic economics, patient journey and persistence, and pricing and access recommendations. Scope is agreed to your specific decision, and a costed proposal is returned within one working day.',
+        'Yes. BioNixus fields GLP-1 physician surveys and KAP studies among endocrinologists, family physicians, internal medicine, and bariatric surgeons in Saudi Arabia, in Arabic and English, covering initiation, switching between semaglutide and tirzepatide, access barriers, and persistence.',
     },
     {
-      question: 'Is weight-management medication reimbursed in Saudi Arabia?',
+      question: 'Is semaglutide for weight loss reimbursed in Saudi Arabia?',
       answer:
-        'Coverage is inconsistent, which is precisely why payer research matters. Public-sector access depends on formulary decisions and cluster budget priorities. Private coverage varies by insurer and employer plan design under Council of Health Insurance regulation, with weight management often positioned between medical necessity and lifestyle treatment. A substantial share of demand is consequently funded out of pocket, which changes pricing strategy and forecasting assumptions materially.',
+        'Coverage is inconsistent. Public access depends on formulary and procurement pathways (including NUPCO-linked supply). Private cover varies by insurer and employer plan under Council of Health Insurance (CHI) rules, and a substantial share of demand is out of pocket. BioNixus verifies current coverage with payer and physician research rather than assuming a single national rule.',
     },
     {
-      question: 'How has pharmacotherapy affected bariatric surgery volumes?',
+      question: 'How do tirzepatide and semaglutide compete in the Saudi obesity market?',
       answer:
-        'The relationship is genuinely mixed and needs local measurement. Some patients who would previously have proceeded to surgery now trial pharmacotherapy first, delaying or avoiding operation. Others use medication before surgery to reduce operative risk, or afterwards to manage weight regain. Because bariatric capacity in the Kingdom is well established, route substitution is a real commercial variable that we quantify through surgeon and patient research.',
+        'Both molecules sit inside the broader incretin and anti-obesity medicine conversation. Competitive share, indication mix (diabetes versus obesity), supply, and self-pay economics differ by specialty and sector. BioNixus measures that with molecule-level physician surveys and pharmacy and clinic channel work — not with a single headline market number.',
     },
     {
-      question: 'Who prescribes anti-obesity medicines in the Kingdom?',
+      question: 'What sample does a Saudi GLP-1 / AOM KAP survey need?',
       answer:
-        'Prescribing is distributed rather than concentrated. Endocrinologists provide clinical leadership for complex metabolic patients, family physicians and internal medicine account for substantial initiation volume, bariatric surgeons prescribe around and instead of surgery, and private obesity clinics operate service-based models. Each group has different evidence needs, monitoring habits, and commercial sensitivities, so segmentation by specialty and sector is essential.',
+        'Design depends on the decision. Independent published work in Saudi Arabia has used national convenience samples of about 90 clinicians to compare specialties (see PMC12366907). BioNixus scopes sample size, quotas, and regions to the forecast or messaging question, and can add patient modules when persistence drives revenue.',
     },
     {
-      question: 'Why is persistence research so important in this category?',
+      question: 'How is BioNixus different from IQVIA or a syndicated obesity report for KSA GLP-1?',
       answer:
-        'Because revenue depends on months on therapy, not prescriptions written. In a market where many patients pay directly, discontinuation is driven by monthly cost, gastrointestinal tolerability, injection burden, and mismatch between expected and achieved results. Understanding when and why patients stop, and what support meaningfully extends treatment duration, changes both forecasts and commercial programme design far more than initiation data alone.',
+        'BioNixus delivers commissioned primary evidence — named methodology, specialty quotas, and decision-ready crosstabs — when syndicated audits cannot explain account-level or physician-level behaviour for semaglutide and tirzepatide in Saudi Arabia. Keep syndicated audits where they fit; brief BioNixus for custom HCP and access research ($10,000–$60,000 typical).',
+    },
+    {
+      question: 'Where is BioNixus based for Saudi obesity research?',
+      answer:
+        'Saudi programmes are supported from our Al Khobar office, with additional hubs in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Cairo, London, Sheridan WY, and São Paulo.',
     },
   ],
   areaServed: ['Saudi Arabia'],

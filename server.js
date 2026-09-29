@@ -677,8 +677,11 @@ function ensureCanonicalTag(html, pathname) {
 function ensureCtrOgTags(html, pathname) {
   const ctr = getCtrSeo(pathname);
   if (!ctr) return html;
-  const title = escapeHtmlAttribute(ctr.title);
-  const description = escapeHtmlAttribute(ctr.description);
+  // String#replace treats $1 in the replacement as a capture. Prices like
+  // "$10,000" must be escaped or og/twitter descriptions lose the amount.
+  const asReplaceInsert = (value) => String(value).replace(/\$/g, '$$$$');
+  const title = asReplaceInsert(escapeHtmlAttribute(ctr.title));
+  const description = asReplaceInsert(escapeHtmlAttribute(ctr.description));
   let out = html;
   const upsertProperty = (property, content) => {
     const re = new RegExp(`<meta\\b[^>]*property=(["'])${property}\\1[^>]*>`, 'i');

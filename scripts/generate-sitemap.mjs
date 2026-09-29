@@ -1936,6 +1936,12 @@ async function main() {
 
   const lastmodFloor = {
     [`${BASE}/blog/kol-mapping-pharma-middle-east`]: '2026-09-29',
+    [`${BASE}/saudi-arabia-obesity-market`]: '2026-09-29',
+    [`${BASE}/market-reports/saudi-arabia-diabetes-market-report`]: '2026-09-29',
+    [`${BASE}/iqvia-alternative`]: '2026-09-29',
+    [`${BASE}/iqvia-alternative-saudi-arabia`]: '2026-09-29',
+    [`${BASE}/healthcare-market-research/saudi-arabia`]: '2026-09-29',
+    [`${BASE}/pharmaceutical-companies-saudi-arabia`]: '2026-09-29',
     [`${BASE}/healthcare-market-research/uae`]: '2026-09-29',
     [`${BASE}/insights/top-market-research-companies-egypt-2026`]: '2026-09-29',
   };

@@ -219,6 +219,10 @@ const SaudiPharmaCompanies = () => {
             <Link to="/market-research-saudi-arabia-pharmaceutical" className="text-primary hover:underline font-medium">
               market research company for Saudi pharma
             </Link>
+            . For weight-management prescribing and access, see{' '}
+            <Link to="/saudi-arabia-obesity-market" className="text-primary hover:underline font-medium">
+              Saudi obesity / GLP-1 primary research
+            </Link>
             . We help pharma, biotech, and medtech companies with:
           </p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">{[

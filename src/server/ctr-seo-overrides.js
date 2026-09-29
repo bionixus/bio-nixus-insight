@@ -796,6 +796,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Germany healthcare market report for 2026: about EUR 430 billion in care, AMNOG and GKV access, IQWiG and G-BA benefit ratings, and devices near EUR 31 billion.',
   },
+  '/saudi-arabia-obesity-market': {
+    title: 'GLP-1 & Obesity Market Research Saudi Arabia | BioNixus',
+    description:
+      'Obesity & GLP-1 market research in Saudi Arabia: physician surveys, semaglutide/tirzepatide access, SFDA/NUPCO/CHI context, Al Khobar. Custom $10,000–$60,000.',
+  },
   '/blog/kol-mapping-pharma-middle-east': {
     title: 'KOL Mapping Guide for Middle East Pharma | BioNixus',
     description:
