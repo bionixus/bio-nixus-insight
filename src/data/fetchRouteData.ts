@@ -311,6 +311,12 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
+  const localizedBlogPostMatch = path.match(/^\/(de|fr|pt|ru|zh|es)\/blog\/([^/]+)\/?$/);
+  if (localizedBlogPostMatch) {
+    const slug = decodePathSegment(localizedBlogPostMatch[2]);
+    return fetchBlogPostRouteData(slug);
+  }
+
   const blogPostMatchAr = path.match(/^\/ar\/blog\/([^/]+)\/?$/);
   if (blogPostMatchAr) {
     const slug = decodePathSegment(blogPostMatchAr[1]);

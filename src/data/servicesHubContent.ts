@@ -70,6 +70,7 @@ import {
   RU_METHODOLOGY_SERVICES,
   RU_RECOVERY_LINK_LABELS,
   RU_SERVICE_FAQ,
+  RU_SERVICES_GEO_LLM,
   RU_SERVICES_HUB_COPY,
 } from './servicesHubContent.ru';
 import {
@@ -448,6 +449,7 @@ const LOCALIZED_BUNDLES = {
     hubLinks: RU_HUB_LINKS,
     serviceFaq: RU_SERVICE_FAQ,
     recoveryLabels: RU_RECOVERY_LINK_LABELS,
+    geoLLM: RU_SERVICES_GEO_LLM,
   },
   zh: {
     copy: ZH_SERVICES_HUB_COPY,
