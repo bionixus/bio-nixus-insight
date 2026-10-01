@@ -297,6 +297,7 @@ export { default as UkPharmaceuticalMarketResearch } from '@/pages/UkPharmaceuti
 export { default as UsaPharmaceuticalMarketResearch } from '@/pages/UsaPharmaceuticalMarketResearch';
 export { default as VerifyEmail } from '@/pages/VerifyEmail';
 export { default as VideosIndex } from '@/pages/VideosIndex';
+export { default as VideoWatchPage } from '@/pages/VideoWatchPage';
 export { default as WhatIsMarketStudy } from '@/pages/WhatIsMarketStudy';
 export { default as ZhBionixusMarketResearchMiddleEast } from '@/pages/ZhBionixusMarketResearchMiddleEast';
 export { default as ZhStrategicPortfolio } from '@/pages/ZhStrategicPortfolio';

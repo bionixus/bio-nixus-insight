@@ -180,7 +180,7 @@ import {
   TopMarketResearchCompaniesUae2026, TopMarketResearchCompaniesUk2026, TopMarketResearchCompaniesUsa2026, TopOncologyMarketResearchCompanies2026,
   TopPharmaceuticalAnalyticsCompaniesWorldwide2026, TopPharmaMarketResearchCompaniesMiddleEast2026, TurkeyPharmaceuticalMarketResearch, UaeMarketAccessResearch,
   UaePharmaceuticalMarketResearch, UaePricingReimbursementStrategy, UkPharmaceuticalMarketResearch, UsaPharmaceuticalMarketResearch,
-  VerifyEmail, VideosIndex, WhatIsMarketStudy, ZhBionixusMarketResearchMiddleEast,
+  VerifyEmail, VideosIndex, VideoWatchPage, WhatIsMarketStudy, ZhBionixusMarketResearchMiddleEast,
   ZhStrategicPortfolio, ZhTopMarketResearchCompaniesEgypt2026,
 } from '@/routes/lazySeoPages';
 import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
@@ -193,7 +193,6 @@ const AdminAnalytics = lazy(() => import('@/pages/AdminAnalytics'));
 const AdminCalendar = lazy(() => import('@/pages/AdminCalendar'));
 const AdminCalendarNew = lazy(() => import('@/pages/AdminCalendarNew'));
 const AdminSendNewsletter = lazy(() => import('@/pages/AdminSendNewsletter'));
-const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
 
 function suspensePage(node: ReactNode, fallback: ReactNode = null) {
   return <Suspense fallback={fallback}>{node}</Suspense>;

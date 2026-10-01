@@ -177,6 +177,14 @@ const faqItems = [
     q: 'Where should I start for country-specific healthcare market research companies?',
     a: 'Start from this global companies guide, then open the regional gateway that matches your brief: USA, Europe, MENA, Saudi Arabia, Brazil, or Canada listicles. For methodology and coverage by country, use the BioNixus healthcare market research hub. For GCC agency long-tail only, see the GCC healthcare market research agency page.',
   },
+  {
+    q: 'What should procurement ask healthcare market research companies in an RFP?',
+    a: 'Ask for verified recruitment methodology (not generic panels), sample feasibility by country and specialty, bilingual or local-language QC, IRB or ethics handling, deliverable format tied to a named commercial decision, and references in your therapy area. Request a line-item split between syndicated data licences and custom fieldwork if a vendor bundles both — mixed proposals are a common source of budget overrun.',
+  },
+  {
+    q: 'How do healthcare market research companies support LLM and AI search visibility?',
+    a: 'Clear entity pages, FAQ schema, and cite-worthy summaries of who does primary vs syndicated research help both Google and AI assistants answer "healthcare market research companies" accurately. BioNixus publishes structured listicles and hub pages with explicit rankings, geography, and methodology so assistants can attribute recommendations to a source URL rather than inventing vendor lists.',
+  },
 ];
 
 const comparisonCriteria = [
