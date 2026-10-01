@@ -1005,6 +1005,16 @@ const en: Record<string, MarketResearchCountryContent> = {
         answer:
           'Focused single-country diagnostics can start within days of scope sign-off and report in two to three weeks. Multi-country GCC programmes usually run six to ten weeks depending on specialist scarcity, hospital access approvals, and the number of markets fielded in parallel.',
       },
+      {
+        question: 'How does GCC external reference pricing affect launch sequencing?',
+        answer:
+          'The first Gulf price you defend — usually in Saudi Arabia through SFDA — becomes the ceiling other GCC regulators reference. Market research should model that cascade before you commit to a launch order: a price accepted in the UAE may be impossible to repeat in Kuwait or Qatar if the Saudi reference is already public. BioNixus runs country-cell pricing sensitivity and tender simulations so sequencing decisions are evidence-led, not assumed.',
+      },
+      {
+        question: 'Can BioNixus support GCC biosimilar and tender substitution research?',
+        answer:
+          'Yes. NUPCO, Kuwait MOH, Qatar HMC, and Oman MOH tender awards increasingly drive biosimilar and generic substitution in hospital channels. We combine procurement data, committee interviews, and prescriber confidence modules to forecast uptake after award — the same cluster that declined in GSC for "gcc biologics market" and related tender queries.',
+      },
     ],
     relatedLinks: [
       { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market 2026: size, companies, outlook' },

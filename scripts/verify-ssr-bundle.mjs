@@ -37,6 +37,8 @@ const CRITICAL_PATHS = [
   '/bionixus-market-research-middle-east',
   '/gcc-pharmaceutical-market-research',
   '/saudi-arabia-medical-devices-market-report',
+  '/videos/healthcare-market-research-overview',
+  '/de/blog/gesundheitsmarkt-deutschland-2026',
 ];
 
 let serverEntry;
@@ -72,7 +74,8 @@ for (const pathname of CRITICAL_PATHS) {
       .replace(/\s+/g, ' ')
       .trim();
     const wordCount = mainText ? mainText.split(' ').filter(Boolean).length : 0;
-    if (wordCount < 500) {
+    const minWords = pathname.startsWith('/videos/') ? 250 : 500;
+    if (wordCount < minWords) {
       throw new Error(`render returned thin SSR content (${wordCount} words)`);
     }
     console.log(`verify-ssr-bundle: OK ${pathname} (${html.length} bytes, ~${wordCount} words)`);
