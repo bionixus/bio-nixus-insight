@@ -4,6 +4,8 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
 import { PremiumEyebrow } from '@/components/home/PremiumEyebrow';
 import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketReferenceGuide';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { ServiceProgrammeNarrative } from '@/components/seo/ServiceProgrammeNarrative';
 import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
 
 const PATH = '/services/quantitative-research';
@@ -149,6 +151,29 @@ export function PremiumQuantitativeResearch({ svc }: PremiumQuantitativeResearch
               </article>
             ))}
           </div>
+          <GeoLLMAnswerBlock
+            className="mt-12 border-[#EDE9E3] bg-[#FFFEFB] shadow-[0_24px_80px_rgba(6,16,31,0.06)]"
+            question="What quantitative healthcare market research does BioNixus deliver?"
+            answer="BioNixus runs physician and payer surveys (n=50–500+) across 17+ EMEA markets—conjoint, MaxDiff, DCE, market sizing, and HTA decision-maker modules—with powering aligned to subgroup decisions on the healthcare market research hub, not headline averages alone."
+            points={[
+              {
+                title: 'Physician and payer surveys',
+                description:
+                  'NHS, private, and hospital quotas with pharmacist and procurement-adjacent modules where tender scoring shapes uptake.',
+              },
+              {
+                title: 'Trade-off and forecast discipline',
+                description:
+                  'Cognitive-load-budgeted MaxDiff/DCE plus forecast bridges that stress-test intent against operational ceilings.',
+              },
+              {
+                title: 'Governance-ready deliverables',
+                description:
+                  'Leadership synthesis plus reproducible appendix layers—quota logs, questionnaire versioning—for analytics and alliance diligence.',
+              },
+            ]}
+            summary="Request a quantitative proposal via BioNixus contact—scoped to your markets and decision owners."
+          />
         </div>
       </section>
 
@@ -256,6 +281,8 @@ export function PremiumQuantitativeResearch({ svc }: PremiumQuantitativeResearch
       </section>
 
       <ServiceMarketReferenceGuide serviceSlug="quantitative-research" />
+
+      <ServiceProgrammeNarrative serviceSlug="quantitative-research" className="premium-home-ivory" />
 
       {faqItems.length > 0 ? (
         <div className="premium-home-ivory">
