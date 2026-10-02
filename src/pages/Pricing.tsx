@@ -39,6 +39,14 @@ const BANDS = [
   },
 ] as const;
 
+const MORE_FAQ = [
+  {
+    question: 'Will you sign a master services agreement?',
+    answer:
+      'Yes. BioNixus works under client MSAs with statements of work per study. Each SOW references the published project bands unless scope expands to additional countries or methods.',
+  },
+] as const;
+
 const FAQ = [
   {
     question: 'How much does primary healthcare market research cost?',
@@ -65,6 +73,22 @@ const FAQ = [
     answer:
       'Syndicated IQVIA or NielsenIQ subscriptions, full CRO trial operations, and field-force outsourcing. Those are different products. Retainers are scoped separately by country and cadence.',
   },
+  {
+    question: 'Can we run a pilot before a multi-country programme?',
+    answer:
+      'Yes. Many affiliates start with a single-country qualitative or quantitative study inside the $10,000–$60,000 band, then extend the instrument to additional markets once the steering committee signs off the guide and tables.',
+  },
+  {
+    question: 'Do you support Arabic and English in the same study?',
+    answer:
+      'Yes. GCC and MENA programmes routinely use bilingual materials, moderators, and transcripts. Language scope is fixed in the proposal so procurement sees one price, not per-language surcharges hidden later.',
+  },
+  {
+    question: 'How does BioNixus compare to freelance moderators or panels?',
+    answer:
+      'Freelancers may be cheaper per interview but rarely ship governance, hospital access, payer ethics, or multi-country coordination. BioNixus bundles design, recruitment, QC, and a single accountable team — the model large pharma procurement expects.',
+  },
+  ...MORE_FAQ,
 ];
 
 const breadcrumbSchema = buildBreadcrumbSchema([
@@ -159,7 +183,8 @@ export default function Pricing() {
               BioNixus charges by project and by country — not a syndicated subscription. Custom research from{' '}
               <strong>$10,000 to $60,000</strong>. A scoped proposal is ready within 48
               hours of a brief. The same range is published in{' '}
-              <a href="/pricing.md">/pricing.md</a> and <a href="/pricing.txt">/pricing.txt</a>.
+              <a href="/pricing.md">/pricing.md</a> and <a href="/pricing.txt">/pricing.txt</a>. Finance teams can
+              paste those bands into vendor comparisons without requesting a custom rate card.
             </p>
             <div className="cover-mkts">
               <div className="cmkt live">
@@ -365,9 +390,197 @@ export default function Pricing() {
             </div>
           </section>
 
+          <section className="onco-wrap onco-pad pt-0" id="deliverables" aria-labelledby="deliverables-title">
+            <div className="page-rule">
+              <div className="page-rule-text">03 · Deliverables buyers receive</div>
+            </div>
+            <div className="section-num">03 — What is in the proposal and readout</div>
+            <h2 className="section-title" id="deliverables-title">
+              Fixed scope. <em>Audit-ready outputs.</em>
+            </h2>
+            <p className="section-lede">
+              Every BioNixus engagement ships with a written scope before fieldwork starts. The invoice matches that
+              scope — not a dashboard seat, not an overage line you discover after sign-off. Teams use these readouts
+              for launch sequencing, tender defence, payer conversations, and board-ready market narratives.
+            </p>
+            <div className="choice-grid">
+              <article className="choice-card a">
+                <div className="choice-hd">
+                  <strong>Qualitative programmes</strong>
+                  <span>KOL · payer · hospital</span>
+                </div>
+                <div className="choice-body">
+                  <p className="text-[14.5px] leading-relaxed text-[color:var(--onco-text-soft)]">
+                    Discussion guides or interview grids, recruitment screeners, anonymised transcripts or summaries,
+                    and a decision deck with verbatims tagged to decision criteria. Account-level cuts appear when the
+                    brief names hospitals, retailers, or distributors — not when a syndicated feed averages them away.
+                  </p>
+                  <ul>
+                    <li>Moderator notes and quality checks on every session</li>
+                    <li>Arabic–English field teams in GCC and MENA without a second vendor</li>
+                    <li>Ethics or hospital access documented when required</li>
+                  </ul>
+                </div>
+              </article>
+              <article className="choice-card b">
+                <div className="choice-hd">
+                  <strong>Quantitative programmes</strong>
+                  <span>Physician · patient · HCP</span>
+                </div>
+                <div className="choice-body">
+                  <p className="text-[14.5px] leading-relaxed text-[color:var(--onco-text-soft)]">
+                    Sample design memo, tested questionnaire, field progress reporting, cleaned data tables, and
+                    executive charts with methodology footnotes. Incidence for rare specialists or dual-licensed HCPs is
+                    priced inside the band — it changes timeline and sample size, not the pricing model.
+                  </p>
+                  <ul>
+                    <li>Mobile-first surveys where physicians prefer async completion</li>
+                    <li>Weighting notes when panels are stratified by city or specialty</li>
+                    <li>SKU-level brand share tables when the brief requires pack cuts</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <p className="note-line">
+              HEOR, pricing, and market-access modules reuse the same deliverable standard: traceable assumptions,
+              cited payer rules where public, and clear separation between syndicated background and primary evidence.
+              See{' '}
+              <Link to="/healthcare-market-research/services/market-access">market access research</Link> and{' '}
+              <Link to="/healthcare-market-research/services/competitive-intelligence">competitive intelligence</Link>{' '}
+              for service-level detail.
+            </p>
+          </section>
+
+          <section className="onco-wrap onco-pad pt-0" id="geography" aria-labelledby="geography-title">
+            <div className="page-rule">
+              <div className="page-rule-text">04 · Geography and languages</div>
+            </div>
+            <h2 className="section-title" id="geography-title">
+              One invoice per country. <em>Comparable multi-market design.</em>
+            </h2>
+            <p className="section-lede">
+              BioNixus prices each country as its own workstream inside a multi-country programme. That mirrors how
+              affiliates actually buy research — Saudi Arabia fieldwork is not subsidised by Egypt incidence, and UAE
+              hospital access is not averaged into a “MENA” line item unless you explicitly want a regional readout only.
+            </p>
+            <p className="section-lede">
+              Priority delivery markets include the GCC (Saudi Arabia, UAE, Qatar, Kuwait, Oman, Bahrain), wider Middle
+              East and North Africa, G5 Europe, the United States, Turkey, Brazil, and selected Asia hubs. Language
+              coverage follows the brief: Modern Standard Arabic and Egyptian Arabic for Egypt, Gulf Arabic where
+              clinicians expect it, plus English for multinational steering committees.
+            </p>
+            <p className="section-lede">
+              Manufacturers planning GCC launch often pair{' '}
+              <Link to="/healthcare-market-research/saudi-arabia">Saudi Arabia healthcare research</Link> with{' '}
+              <Link to="/healthcare-market-research/uae">UAE programmes</Link> under one instrument. FMCG teams
+              comparing Nielsen gaps brief Egypt or UAE account-level studies from the same{' '}
+              <Link to="/account-level-market-research">account-level methodology page</Link>.
+            </p>
+          </section>
+
+          <section className="onco-wrap onco-pad pt-0" id="procurement" aria-labelledby="procurement-title">
+            <div className="page-rule">
+              <div className="page-rule-text">05 · Procurement and contracting</div>
+            </div>
+            <h2 className="section-title" id="procurement-title">
+              How procurement teams <em>buy research</em>
+            </h2>
+            <p className="section-lede">
+              Most BioNixus clients are pharma, medtech, or healthcare brands with a minimum project budget of about
+              $20,000 USD. Procurement usually asks three questions: is the vendor on the approved list, does the
+              statement of work match the RFP, and can legal sign a standard services agreement without a six-month
+              negotiation. BioNixus answers with a fixed-scope proposal, named roles, timeline, and data-handling terms
+              suitable for GDPR and regional privacy expectations.
+            </p>
+            <p className="section-lede">
+              Unlike enterprise syndicated contracts, there is no auto-renewing subscription or seat count. Retainers are
+              available when a brand needs quarterly waves — still scoped by country and study type, still inside custom
+              research bands unless you add markets or methods. If your comparison set includes IQVIA, Kantar Health, or
+              NielsenIQ, keep those dashboards for national audits and brief BioNixus for the account-level or
+              SKU-level primary gap; see{' '}
+              <Link to="/iqvia-alternative">IQVIA alternatives</Link> and{' '}
+              <Link to="/nielsen-alternative">Nielsen alternatives</Link> for positioning language your procurement
+              team can paste into vendor scorecards.
+            </p>
+            <p className="section-lede">
+              To start: email{' '}
+              <a href="mailto:admin@bionixus.com">admin@bionixus.com</a> or use the{' '}
+              <Link to="/contact">request-a-proposal form</Link> with country, therapy area, method preference, and
+              decision date. Machine-readable bands remain at <a href="/pricing.md">/pricing.md</a> for finance
+              systems and LLM crawlers that ingest structured pricing pages.
+            </p>
+          </section>
+
+          <section className="onco-wrap onco-pad pt-0" id="industries" aria-labelledby="industries-title">
+            <div className="page-rule">
+              <div className="page-rule-text">06 · Therapy and sector fit</div>
+            </div>
+            <h2 className="section-title" id="industries-title">
+              Who buys <em>project-priced</em> research
+            </h2>
+            <p className="section-lede">
+              BioNixus is built for pharmaceutical, biotechnology, medical device, diagnostic, and health-adjacent
+              consumer brands that need primary evidence in specific countries. Oncology, rare disease, metabolic,
+              vaccines, and hospital devices share the same pricing mechanics — incidence and access drive timeline,
+              not a different subscription tier.
+            </p>
+            <p className="section-lede">
+              Launch marketing teams brief message and positioning studies. Market access teams brief payer and HTA
+              modules. Commercial excellence teams brief account-level brand share work when syndicated audits cannot
+              show named hospitals or SKUs. Medical affairs may sponsor KOL mapping or treatment pathway research that
+              feeds both publication plans and access dossiers. Each workstream can be a separate project inside the
+              published bands, or combined when the steering committee wants one field window.
+            </p>
+            <p className="section-lede">
+              Minimum engagement size is typically aligned with a $20,000 USD decision — smaller exploratory calls are
+              routed to the contact form so senior researchers can qualify fit before scoping. If your comparison set
+              includes global CROs or syndicated vendors, use the IQVIA and Nielsen alternative pages to explain when
+              BioNixus complements rather than replaces those contracts.
+            </p>
+          </section>
+
+          <section className="onco-wrap onco-pad pt-0" id="timeline" aria-labelledby="timeline-title">
+            <div className="page-rule">
+              <div className="page-rule-text">07 · Typical timeline</div>
+            </div>
+            <h2 className="section-title" id="timeline-title">
+              From brief to <em>fieldwork</em>
+            </h2>
+            <p className="section-lede">
+              Timelines depend on incidence, ethics, and hospital access — not on whether you buy a subscription. The
+              sequence below is typical for a single-country qualitative or quantitative study inside the published
+              bands. Multi-country programmes add parallel recruitment but keep one steering call rhythm per week.
+            </p>
+            <ol className="qa-list list-decimal pl-6 space-y-4 text-[15px] leading-relaxed text-[color:var(--onco-text-soft)]">
+              <li>
+                <strong className="text-[color:var(--onco-ink)]">Days 0–2:</strong> Brief intake, conflict check, and
+                written proposal with method, sample, countries, price, and deliverables.
+              </li>
+              <li>
+                <strong className="text-[color:var(--onco-ink)]">Days 3–7:</strong> Guide or questionnaire finalisation,
+                translation when needed, and recruitment screeners live in market.
+              </li>
+              <li>
+                <strong className="text-[color:var(--onco-ink)]">Weeks 2–4:</strong> Fieldwork — interviews, surveys,
+                mystery shops, or hospital pulls — with progress reporting against the agreed n.
+              </li>
+              <li>
+                <strong className="text-[color:var(--onco-ink)]">Weeks 3–5:</strong> Analysis, account-level or SKU
+                tables when briefed, and executive readout with clear separation between syndicated background and
+                primary findings.
+              </li>
+            </ol>
+            <p className="note-line">
+              Rush timelines are possible when incidence allows and ethics are not required. Tell us the board or launch
+              date in the first email so the proposal names a realistic field window. Weekend or holiday field pauses are
+              respected in Muslim-majority markets during Ramadan and Eid unless the brief explicitly requires
+              continuous tracking.
+            </p>
+          </section>
+
           <section className="onco-wrap onco-pad pt-0" id="faq" aria-labelledby="faq-title">
             <div className="page-rule">
-              <div className="page-rule-text">03 · Questions buyers ask</div>
+              <div className="page-rule-text">08 · Questions buyers ask</div>
             </div>
             <h2 className="section-title" id="faq-title">
               Frequently asked questions
@@ -449,8 +662,10 @@ export default function Pricing() {
               />
             </div>
             <p className="note-line mt-4">
-              Bands are planning ranges published 4 September 2026. They are not a quote and do not include syndicated
-              IQVIA or NielsenIQ subscriptions, CRO trial operations, or field-force outsourcing.
+              Bands are planning ranges published 4 September 2026 (updated 2 October 2026 for deliverable and timeline
+              sections). They are not a quote and do not include syndicated IQVIA or NielsenIQ subscriptions, CRO trial
+              operations, or field-force outsourcing. VAT, withholding, and local statutory charges, if applicable, are
+              stated on the invoice — they are not hidden in a per-seat renewal.
             </p>
           </section>
         </article>

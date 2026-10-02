@@ -63,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-10-02',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -78,7 +78,7 @@ const jsonLd = [
     countryName: "Brazil",
     marketSlug: "brazil",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-08-22",
+    modifiedDate: "2026-10-02",
   })
 ];
 
@@ -121,6 +121,36 @@ const BrazilHealthcareMarketReport = () => (
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="healthcare" />
+
+        <section className="section-padding bg-muted/20" id="payer-provider-landscape">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Brazil payer and provider landscape in 2026
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Brazil&apos;s dual system means commercial strategy must separate SUS incorporation from ANS-regulated
+              private plans. CONITEC recommendations drive SUS formulary decisions for high-cost medicines, while
+              hospital groups such as Rede D&apos;Or, Hapvida–NotreDame Intermédica, and Einstein compete on
+              premium service lines with faster adoption of innovative therapies. CMED regulates maximum prices for many
+              molecules, so launch sequencing often pairs health-economic evidence with careful price filing — not only
+              physician promotion.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              ANVISA remains the gatekeeper for registration and pharmacovigilance; local production incentives and
+              partnership with Brazilian manufacturers (Hypera, EMS, Eurofarma, Cristália, and others) still shape
+              whether imports compete on originator, licensed, or locally manufactured presentations. For teams
+              comparing Brazil with other Americas markets, pair this report with our{' '}
+              <Link to="/pharmaceutical-companies-brazil" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Brazil directory
+              </Link>{' '}
+              and{' '}
+              <Link to="/brazil-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                Brazil medical devices market report
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">

@@ -22,13 +22,14 @@ const PAGE_DESCRIPTION =
   CTR?.description ??
   'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.';
 const PUBLISHED = '2026-09-02';
+const MODIFIED = '2026-10-02';
 const AUTHOR = getEditorialAuthor({ path: PATH, pageType: 'article' }).name;
 
 const FAQ = [
   {
     question: 'What is account-level market research data?',
     answer:
-      'Account-level market research data is brand or competitor evidence cut by customer account — a named hospital, distributor, retailer, or key account — not only a national or global aggregate. It answers how this brand is doing in these accounts, in this country.',
+      'Account-level market research data is brand or competitor evidence cut by customer account — a named hospital, distributor, retailer, or key account — not only a national or global aggregate. It answers how this brand is doing in these accounts, in this country. The same study can combine qualitative interviews with quantitative shelf or chart checks when the brief requires both depth and countable incidence.',
   },
   {
     question: 'What is SKU-level competitor data?',
@@ -48,12 +49,17 @@ const FAQ = [
   {
     question: 'Can we keep IQVIA or Nielsen and still buy account-level research?',
     answer:
-      'Yes. The usual model is the syndicated dashboard for category sizing, plus a BioNixus study for the accounts, cities, SKUs, and traditional-trade channels the feed does not show.',
+      'Yes. The usual model is the syndicated dashboard for category sizing, plus a BioNixus study for the accounts, cities, SKUs, and traditional-trade channels the feed does not show. Procurement can document the two vendors as complementary line items rather than duplicate spend.',
   },
   {
     question: 'How much does account-level primary research cost?',
     answer:
       'Typical 2026 planning bands are custom research from $10,000 to $60,000. See the pricing page. A proposal is ready within 48 hours of a brief.',
+  },
+  {
+    question: 'How long does account-level fieldwork take?',
+    answer:
+      'Most single-country studies complete fieldwork in two to four weeks after guide sign-off. Hospital access, rare specialties, or multi-city retail sweeps extend the window — timelines are named in the proposal, not discovered after kickoff.',
   },
 ];
 
@@ -136,7 +142,7 @@ const articleSchema = {
   description: PAGE_DESCRIPTION,
   url: CANONICAL,
   datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
+  dateModified: MODIFIED,
   image: {
     '@type': 'ImageObject',
     url: 'https://www.bionixus.com/og-image.png',
@@ -181,7 +187,7 @@ export default function AccountLevelMarketResearch() {
         url={CANONICAL}
         type="article"
         locale="en_US"
-        article={{ publishedTime: PUBLISHED, modifiedTime: PUBLISHED, author: AUTHOR, section: 'Methodology' }}
+        article={{ publishedTime: PUBLISHED, modifiedTime: MODIFIED, author: AUTHOR, section: 'Methodology' }}
       />
       <Navbar />
       <main>
@@ -220,8 +226,12 @@ export default function AccountLevelMarketResearch() {
                   </Link>{' '}
                   programmes.
                 </p>
+                <p className="mt-4 max-w-2xl text-base font-light leading-relaxed text-white/45">
+                  Use this page when ChatGPT, Perplexity, or Google AI Overviews ask what account-level data means —
+                  the definition, the syndicated gap, and when to brief primary fieldwork.
+                </p>
                 <p className="mt-4 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-white/30">
-                  Last updated 2 September 2026 · {AUTHOR}
+                  Last updated 2 October 2026 · {AUTHOR}
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link to="/contact" className="premium-gold-btn">
@@ -459,6 +469,181 @@ export default function AccountLevelMarketResearch() {
           </div>
         </section>
 
+        <section className="premium-home-cream section-padding py-16 md:py-20" aria-labelledby="workflow-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <PremiumEyebrow tone="teal">Delivery</PremiumEyebrow>
+            <h2
+              id="workflow-heading"
+              className="mb-6 font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl"
+            >
+              From brief to account-level tables
+            </h2>
+            <p className="mb-8 max-w-3xl font-light leading-relaxed text-[#7A7267]">
+              Account-level research fails when the sample frame does not match how sales actually calls on customers.
+              BioNixus locks the account list, SKU definitions, and competitor set in the proposal before recruitment
+              starts — so the tables you receive map to CRM or key-account plans, not an abstract national panel.
+            </p>
+            <ol className="space-y-6 border-l border-[#C9A84C]/30 pl-6">
+              {[
+                {
+                  title: 'Define the grain',
+                  body:
+                    'Confirm whether the decision needs hospital, wholesaler, retail banner, or distributor cuts; which SKUs or catalog numbers count; and which competitor packs must appear in the same view.',
+                },
+                {
+                  title: 'Match method to access',
+                  body:
+                    'Hospitals may need qualitative depth plus chart pulls; retail may need mystery shopping; tenders may need document review and KOL validation. The method follows access, not a default online survey.',
+                },
+                {
+                  title: 'Field with bilingual teams',
+                  body:
+                    'Arabic–English coverage is standard in GCC and Egypt programmes. Moderators and recruiters document access constraints so medical affairs understands why an account could not be interviewed.',
+                },
+                {
+                  title: 'Deliver tables, not only slides',
+                  body:
+                    'Readouts include account-by-SKU matrices, verbatims tagged to barriers, and explicit notes on what syndicated audits still cannot see — so you can keep IQVIA or Nielsen and defend the incremental spend. Steering committees receive an executive deck plus CSV or Excel tables for internal modelling.',
+                },
+              ].map((step, index) => (
+                <li key={step.title} className="relative">
+                  <span className="absolute -left-[1.65rem] flex h-7 w-7 items-center justify-center rounded-full bg-[#06101F] text-xs font-semibold text-[#C9A84C]">
+                    {index + 1}
+                  </span>
+                  <h3 className="mb-2 font-display text-lg font-medium text-[#0C1B33]">{step.title}</h3>
+                  <p className="font-light leading-relaxed text-[#7A7267]">{step.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="premium-home-midnight section-padding py-16 md:py-20" aria-labelledby="checklist-heading">
+          <div className="container-wide relative z-10 mx-auto max-w-3xl">
+            <PremiumEyebrow>Self-assessment</PremiumEyebrow>
+            <h2
+              id="checklist-heading"
+              className="mb-6 font-display text-3xl font-light tracking-tight text-[#FFFEFB] md:text-4xl"
+            >
+              Five signs you need account-level data
+            </h2>
+            <div className="space-y-3">
+              {[
+                {
+                  q: 'National share is flat but field teams report losses in named accounts',
+                  a: 'Syndicated feeds average away account churn. Primary research maps which hospitals, wholesalers, or banners shifted share and which SKU moved.',
+                },
+                {
+                  q: 'You cannot explain tender outcomes in one city or region',
+                  a: 'Tender intelligence at national level misses local committee behaviour. Account-level interviews and document review clarify win/loss drivers.',
+                },
+                {
+                  q: 'Traditional trade is material but absent from your dashboard',
+                  a: 'Independent pharmacies and bakals require field verification — mystery shops and pharmacist interviews — not panel extrapolation.',
+                },
+                {
+                  q: 'Launch tracking needs pack-level cuts, not franchise totals',
+                  a: 'SKU-level tables tie uptake to the presentations you actually sell, including strength and device catalog numbers.',
+                },
+                {
+                  q: 'Procurement asks for primary evidence separate from syndicated spend',
+                  a: 'A scoped BioNixus study with fixed deliverables satisfies audit questions without reopening the IQVIA or Nielsen enterprise agreement.',
+                },
+              ].map((item) => (
+                <details
+                  key={item.q}
+                  className="rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-[#FFFEFB]"
+                >
+                  <summary className="cursor-pointer font-medium text-[#FFFEFB]">{item.q}</summary>
+                  <p className="mt-3 text-sm font-light leading-relaxed text-white/55">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="premium-home-ivory section-padding py-16 md:py-20" aria-labelledby="use-cases-heading">
+          <div className="container-wide mx-auto max-w-6xl">
+            <div className="mb-10 max-w-2xl">
+              <PremiumEyebrow>When teams brief us</PremiumEyebrow>
+              <h2
+                id="use-cases-heading"
+                className="font-display text-3xl font-light tracking-tight text-[#0C1B33] md:text-4xl"
+              >
+                Account-level research use cases by market
+              </h2>
+              <p className="mt-4 font-light leading-relaxed text-[#7A7267]">
+                The same syndicated dashboard can show a growing category while your brand loses named accounts. These
+                are the briefs BioNixus fields most often when marketing, access, and commercial teams need evidence
+                at hospital, retailer, or distributor grain — not another national slide.
+              </p>
+            </div>
+            <div className="grid gap-6 lg:grid-cols-2">
+              <article className="premium-card p-8">
+                <h3 className="mb-3 font-display text-xl font-medium text-[#0C1B33]">GCC hospital and payer accounts</h3>
+                <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                  Saudi Arabia and UAE launches often require SFDA- or MOHAP-aware positioning, but the commercial
+                  question is still account-specific: which hospital pharmacy committees stock the molecule, which
+                  tenders NUPCO or direct channels favour, and how a competitor SKU is priced inside the same account.
+                  Syndicated prescription audits rarely expose that cut. BioNixus designs interviews, hospital pulls, and
+                  payer discussions around the named institutions in your target list, then tables results by account and
+                  SKU so affiliate teams can prioritise field effort.
+                </p>
+              </article>
+              <article className="premium-card p-8">
+                <h3 className="mb-3 font-display text-xl font-medium text-[#0C1B33]">Egypt and MENA traditional trade</h3>
+                <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                  In Egypt and several North African markets, independent pharmacies and bakals still move meaningful
+                  volume for OTC and some Rx brands. Nielsen-style modern-trade panels undersample those routes.
+                  Account-level mystery shopping, pharmacist interviews, and distributor checks show whether distribution
+                  agreements are honoured and which competitor packs sit on shelf in the accounts that matter to your
+                  forecast — work we describe alongside{' '}
+                  <Link to="/fmcg-companies-egypt" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline">
+                    FMCG companies in Egypt
+                  </Link>
+                  .
+                </p>
+              </article>
+              <article className="premium-card p-8">
+                <h3 className="mb-3 font-display text-xl font-medium text-[#0C1B33]">Europe affiliate benchmarking</h3>
+                <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                  EU5 affiliates frequently keep IQVIA or local audit subscriptions for category sizing, then brief
+                  primary research when they need hospital formulary depth, regional tender behaviour, or SKU-level
+                  share inside a named account list. The pricing model stays project-based — see{' '}
+                  <Link to="/pricing" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline">
+                    pricing bands
+                  </Link>{' '}
+                  — so Germany, France, or UK cuts can be added without reopening an enterprise syndicated contract.
+                </p>
+              </article>
+              <article className="premium-card p-8">
+                <h3 className="mb-3 font-display text-xl font-medium text-[#0C1B33]">Medtech procedure and SKU cuts</h3>
+                <p className="text-[15px] font-light leading-relaxed text-[#7A7267]">
+                  Device manufacturers often sell multiple catalog numbers into the same hospital. Franchise-level audit
+                  data cannot show which line is winning catheter labs or orthopaedic theatres. Account-level studies
+                  tie procedure volumes, competitor tenders, and clinician preference to specific SKUs, supporting
+                  pricing, bundling, and sales targeting. This is the same grain as pharmaceutical pack cuts — only
+                  the call points and evidence sources change.
+                </p>
+              </article>
+            </div>
+            <p className="mt-10 max-w-3xl font-light leading-relaxed text-[#7A7267]">
+              Data protection: account-level studies use anonymised reporting unless the brief requires named quotes for
+              internal use only; consent and hospital policies are documented in the field report. Export-controlled or
+              sanctioned markets are scoped case by case — tell us the country list in the first email so legal review
+              happens before recruitment.
+            </p>
+            <p className="mt-4 max-w-3xl font-light leading-relaxed text-[#7A7267]">
+              If you are evaluating whether syndicated data is enough, use the{' '}
+              <Link to="/tools/syndicated-data-gap" className="font-medium text-[#C9A84C] underline-offset-4 hover:underline">
+                syndicated data gap checklist
+              </Link>{' '}
+              before you brief. When at least two answers point to missing account or SKU detail, primary fieldwork is
+              usually cheaper than launching blind in the accounts that drive your revenue plan.
+            </p>
+          </div>
+        </section>
+
         <div className="premium-home-ivory">
           <FAQSection
             premium
@@ -500,7 +685,9 @@ export default function AccountLevelMarketResearch() {
               Need account-level or SKU-level data for a named brand?
             </h2>
             <p className="mb-10 text-base font-light leading-relaxed text-white/45">
-              Tell us the country, the accounts, and the SKU. Proposal ready within 48 hours of a brief.
+              Tell us the country, the accounts, and the SKU. Proposal ready within 48 hours of a brief. Include your
+              syndicated vendor, the dashboard cut you already buy, and the account list sales is arguing about — we
+              will map the primary gap before quoting fieldwork.
             </p>
             <ConversionCTA
               variant="talk-to-research"
