@@ -63,6 +63,10 @@ const faqItems = [
   { q: 'How do sanctions affect the pharmaceutical market in Iran?', a: 'Sanctions have limited direct MNC operations; many global companies (e.g. Novartis, Roche, Sanofi) operate through distributors or local partners. They have also accelerated local R&D and biosimilar development. Post-sanctions scenarios could open significant opportunities for foreign investment and partnerships.' },
   { q: 'Does Iran have biosimilar capabilities?', a: 'Yes. Iran has developed a strong biosimilar sector driven by necessity under sanctions. Companies such as Sobhan Pharmaceutical (insulin), Cinnagen (EPO, insulin), and Exir Pharmaceutical (biosimilars, vaccines) are regional leaders. University–pharma research partnerships and a knowledge-based economy push support ongoing development.' },
   { q: 'How do you register a pharmaceutical product with IFDA?', a: 'Drug registration with the Iran Food and Drug Administration (IFDA) requires submission of a full dossier including GMP certificates, stability data, and labelling in Persian. The process typically takes 12–24 months. IFDA controls pricing (government-controlled), distribution chain, and renewal (5-year renewal). A local representative is typically required for foreign manufacturers.' },
+  {
+    q: 'How can market research help brands assess Iran without on-the-ground visits?',
+    a: 'BioNixus uses distributor interviews, pharmacy and hospital account checks, competitive pack mapping, and KOL discussions to validate demand, pricing pressure, and local-manufacturing substitution risk. Studies are scoped as primary research projects — useful for scenario planning under sanctions and for post-sanctions entry strategies — and complement public IFDA and industry sources cited on this page.',
+  },
 ];
 
 const IranPharmaCompanies = () => {

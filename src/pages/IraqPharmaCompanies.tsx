@@ -61,6 +61,10 @@ const faqItems = [
   { q: 'How does the Kurdistan Region (KRG) market differ?', a: 'The Kurdistan Region has a separate healthcare market and procurement system from federal Iraq. Companies targeting the full Iraqi market must engage both federal (MOH/KIMADIA) and KRG systems. KRG represents a distinct access pathway and formulary environment.' },
   { q: 'What is the status of local pharmaceutical manufacturing in Iraq?', a: 'Local manufacturing exists but is limited; approximately 80% of pharmaceuticals are imported. Key local manufacturers include SDI (State Company for Drug Industries, Samarra — largest state-owned), Iraqi-Egyptian Company for Pharmaceutical Industries (joint venture), Pioneer Industries Company, Dar Al Dawa - Iraq (Jordanian JV, Erbil-based), and Modern Drug Industries (MDI). Post-conflict reconstruction is driving investment in healthcare infrastructure.' },
   { q: 'What are the main market entry challenges in Iraq?', a: 'Market entry challenges include navigating dual federal and KRG regulatory/procurement systems, KIMADIA-dominated government tenders, 12–24 month registration timelines with 5-year renewal, government-controlled pricing, and post-conflict operational considerations. Local or regional partners and understanding NGO and international health partnerships can support market access.' },
+  {
+    q: 'What primary research do affiliates run before an Iraq launch or tender?',
+    a: 'Typical BioNixus briefs cover KIMADIA tender intelligence, private-channel pharmacy audits in Baghdad and Basra, KRG formulary differences, distributor capability checks, and clinician adoption drivers for chronic therapies. Outputs are account- and SKU-aware where the brand needs named hospital or wholesaler cuts, not only a national import statistic.',
+  },
 ];
 
 const IraqPharmaCompanies = () => {

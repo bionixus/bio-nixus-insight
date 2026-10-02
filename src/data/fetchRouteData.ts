@@ -311,6 +311,23 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
+  const localizedBlogPostMatch = path.match(/^\/(de|fr|es|pt|ru|zh)\/blog\/([^/]+)\/?$/);
+  if (localizedBlogPostMatch) {
+    const slug = decodePathSegment(localizedBlogPostMatch[2]);
+    const data = await fetchBlogPostRouteData(slug);
+    const post = data.blogPost as BlogPost | null;
+    if (post && resolveContentSilo(post) === 'industries') {
+      return {
+        pageType: 'blog-post',
+        blogSlug: slug,
+        blogPost: null,
+        relatedPosts: { related: [], prev: null, next: null },
+        lcpPreloadImageUrl: undefined,
+      };
+    }
+    return data;
+  }
+
   const blogPostMatchAr = path.match(/^\/ar\/blog\/([^/]+)\/?$/);
   if (blogPostMatchAr) {
     const slug = decodePathSegment(blogPostMatchAr[1]);
