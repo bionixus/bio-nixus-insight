@@ -2252,7 +2252,7 @@ const bionixusUaeOncologyInsights: SegmentMarketContent = {
     { to: '/real-world-evidence-uae', label: 'Real-World Evidence in the UAE' },
     { to: '/uae-market-access-research', label: 'UAE Market Access Research' },
     {
-      to: '/healthcare-market-research/therapy/cancer-diagnostics',
+      to: '/market-reports/therapy/cancer-diagnostics',
       label: 'Cancer Diagnostics Market Research',
     },
   ],

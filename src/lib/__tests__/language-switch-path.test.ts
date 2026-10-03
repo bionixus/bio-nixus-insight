@@ -63,4 +63,27 @@ describe('getLocalizedPathForLanguage', () => {
       '/de/healthcare-market-research/germany',
     );
   });
+
+  it('does not invent a locale URL when that language has no route', () => {
+    expect(getLocalizedPathForLanguage('/strategic-portfolio', 'pt')).toBe('/strategic-portfolio');
+    expect(getLocalizedPathForLanguage('/strategic-portfolio', 'ar')).toBe('/ar/strategic-portfolio');
+    expect(getLocalizedPathForLanguage('/bionixus-market-research-middle-east', 'es')).toBe(
+      '/bionixus-market-research-middle-east',
+    );
+    expect(getLocalizedPathForLanguage('/bionixus-market-research-middle-east', 'fr')).toBe(
+      '/fr/bionixus-market-research-middle-east',
+    );
+    expect(getLocalizedPathForLanguage('/quantitative-healthcare-market-research', 'de')).toBe(
+      '/quantitative-healthcare-market-research',
+    );
+    expect(getLocalizedPathForLanguage('/insights/top-market-research-companies-egypt-2026', 'de')).toBe(
+      '/insights/top-market-research-companies-egypt-2026',
+    );
+    expect(getLocalizedPathForLanguage('/healthcare-market-research/saudi-arabia', 'pt')).toBe(
+      '/healthcare-market-research/saudi-arabia',
+    );
+    expect(getLocalizedPathForLanguage('/healthcare-market-research/saudi-arabia', 'ar')).toBe(
+      '/ar/healthcare-market-research/saudi-arabia',
+    );
+  });
 });

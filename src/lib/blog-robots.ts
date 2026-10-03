@@ -15,6 +15,8 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-research-companies-egypt',
   'medtech-singapore-2026-market-hsa-registration',
   'turkey-pharmaceutical-market-2026-titck-top-companies',
+  'nmpa-class-iii-registration-timeline-2026',
+  'china-device-vbp-rounds-explained',
 ]);
 
 export const BLOG_HARDCODED_SEO_SLUGS = new Set([
@@ -28,6 +30,8 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'turkey-pharmaceutical-market-2026-titck-top-companies',
   'uae-healthcare-market-trends-2025',
   'uae-healthcare-market-trends-2026',
+  'nmpa-class-iii-registration-timeline-2026',
+  'china-device-vbp-rounds-explained',
 ]);
 
 export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {

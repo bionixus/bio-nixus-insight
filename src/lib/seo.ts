@@ -355,10 +355,17 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
 };
 
 /**
- * Locale URLs that render the English page (or an English fallback). They must
- * canonical and hreflang to the English URL, and stay out of localizedRouteGroups
- * so translated alternates do not advertise them.
+ * Locale hubs that render the English page and have a real route.
+ * getLocalizedPathForLanguage may prefix these. It must not invent
+ * `/${lang}${enPath}` for every other group — those URLs 404.
+ * These stay out of localizedRouteGroups so hreflang does not advertise them.
  */
+const LIVE_ENGLISH_LOCALE_COPIES = new Set([
+  '/pt/healthcare-market-research',
+  '/zh/healthcare-market-research',
+  '/ru/healthcare-market-research',
+]);
+
 const UNTRANSLATED_LOCALE_TO_ENGLISH: Record<string, string> = {
   '/ru/healthcare-market-research': '/healthcare-market-research',
   '/zh/healthcare-market-research': '/healthcare-market-research',
@@ -552,7 +559,9 @@ export function getLocalizedPathForLanguage(enCanonicalPath: string, lang: Langu
     );
     if (hasPrefixedSibling) {
       const enPath = typeof routes.en === 'string' ? routes.en : normalized;
-      return prefixWithLanguage(enPath, lang);
+      const prefixed = prefixWithLanguage(enPath, lang);
+      if (LIVE_ENGLISH_LOCALE_COPIES.has(prefixed)) return prefixed;
+      return enPath;
     }
     return typeof routes.en === 'string' ? routes.en : normalized;
   }

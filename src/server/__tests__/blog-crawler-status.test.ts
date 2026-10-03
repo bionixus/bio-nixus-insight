@@ -68,6 +68,31 @@ describe('api/blog crawler status', () => {
     expect(res.body).toContain('rel="canonical" href="https://www.bionixus.com/blog/kol-mapping-pharma-middle-east"');
   });
 
+  it('returns 200 indexable stubs for hardcoded posts missing from Sanity', async () => {
+    fetchMock.mockResolvedValue(null);
+    const slugs = [
+      'uae-healthcare-market-trends-2026',
+      'nf1-koselugo-selumetinib-pharma-market-research',
+      'market-research-companies-egypt',
+      'medtech-singapore-2026-market-hsa-registration',
+      'turkey-pharmaceutical-market-2026-titck-top-companies',
+      'nmpa-class-iii-registration-timeline-2026',
+      'china-device-vbp-rounds-explained',
+    ];
+    for (const slug of slugs) {
+      const res = await run(slug);
+      expect(res.statusCode, slug).toBe(200);
+      expect(res.body, slug).toContain('name="robots" content="index, follow"');
+      expect(res.body, slug).toContain(`rel="canonical" href="https://www.bionixus.com/blog/${slug}"`);
+    }
+  });
+
+  it('301s the truncated Kresladi slug to the live article', async () => {
+    const res = await run('kresladi-marnetegragene-lad1-fda-');
+    expect(res.statusCode).toBe(301);
+    expect(res.body).toContain('/blog/kresladi-marnetegragene-lad1-fda-2026');
+  });
+
   it('returns 200 indexable HTML with the CTR title when the post exists', async () => {
     fetchMock.mockResolvedValue({
       title: 'KOL Mapping for Pharma Companies in the Middle East: Complete Guide',
