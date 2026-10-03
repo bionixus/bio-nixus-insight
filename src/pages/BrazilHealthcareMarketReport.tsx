@@ -122,6 +122,32 @@ const BrazilHealthcareMarketReport = () => (
       </section>
               <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="healthcare" />
 
+        <section className="section-padding bg-muted/20" id="brazil-research-priorities">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Brazil healthcare research priorities for 2026
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Commercial teams briefing Brazil should separate three evidence layers: ANVISA registration and pharmacovigilance requirements for the private channel; CONITEC incorporation and SUS budget impact for public access; and CMED price regulation that caps retail and hospital acquisition costs. Primary research that collapses these into a single “market size” narrative misallocates launch spend—affiliates need corridor-specific switching, substitution, and tender timing data.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              BioNixus programmes typically pair physician quant in high-volume therapeutic areas with payer-adjacent interviews on substitution and hospital formulary behaviour, then link findings to{' '}
+              <Link to="/pharmaceutical-companies-brazil" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Brazil
+              </Link>{' '}
+              and the{' '}
+              <Link to="/brazil-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                Brazil medical devices market report
+              </Link>{' '}
+              when portfolios span Rx and medtech. For LatAm office context, see the{' '}
+              <Link to="/news/bionixus-brazil-office-latam-expansion-2026" className="text-primary hover:underline font-medium">
+                Brazil office expansion release
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>

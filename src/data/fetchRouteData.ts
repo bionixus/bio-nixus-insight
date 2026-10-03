@@ -429,6 +429,14 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     return { pageType: 'media-kit' };
   }
 
+  const videoMatch = path.match(/^\/videos\/([^/]+)\/?$/);
+  if (videoMatch) {
+    return {
+      pageType: 'video-watch',
+      videoSlug: decodePathSegment(videoMatch[1]),
+    };
+  }
+
   if (path === '/bionixus-industries' || path === '/bionixus-industries/') {
     let industriesInsights: BlogPost[] = [];
     try {

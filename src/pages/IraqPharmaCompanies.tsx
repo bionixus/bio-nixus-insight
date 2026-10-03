@@ -61,6 +61,7 @@ const faqItems = [
   { q: 'How does the Kurdistan Region (KRG) market differ?', a: 'The Kurdistan Region has a separate healthcare market and procurement system from federal Iraq. Companies targeting the full Iraqi market must engage both federal (MOH/KIMADIA) and KRG systems. KRG represents a distinct access pathway and formulary environment.' },
   { q: 'What is the status of local pharmaceutical manufacturing in Iraq?', a: 'Local manufacturing exists but is limited; approximately 80% of pharmaceuticals are imported. Key local manufacturers include SDI (State Company for Drug Industries, Samarra — largest state-owned), Iraqi-Egyptian Company for Pharmaceutical Industries (joint venture), Pioneer Industries Company, Dar Al Dawa - Iraq (Jordanian JV, Erbil-based), and Modern Drug Industries (MDI). Post-conflict reconstruction is driving investment in healthcare infrastructure.' },
   { q: 'What are the main market entry challenges in Iraq?', a: 'Market entry challenges include navigating dual federal and KRG regulatory/procurement systems, KIMADIA-dominated government tenders, 12–24 month registration timelines with 5-year renewal, government-controlled pricing, and post-conflict operational considerations. Local or regional partners and understanding NGO and international health partnerships can support market access.' },
+  { q: 'How do KIMADIA tenders affect pharmaceutical market research?', a: 'KIMADIA centralises federal procurement pricing and allocation; research programmes must separate tender-winning dynamics from private pharmacy demand and KRG formulary behaviour. BioNixus maps tender cycles, distributor capacity (Ibn Hayyan, Dijla, Al Masar), and clinician preference where dual-channel access applies.' },
 ];
 
 const IraqPharmaCompanies = () => {
@@ -197,6 +198,24 @@ const IraqPharmaCompanies = () => {
             { title: 'NGO & International Partnerships', desc: 'NGO and international health partnerships play a significant role in supply, access, and capacity building in the Iraqi market.' },
           ].map((d) => (<div key={d.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{d.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p></div>))}</div>
         </div></section>
+
+        <section className="section-padding py-16 bg-muted/20" id="directory-research-use">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+              Using this Iraq pharmaceutical directory in market research
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4 max-w-3xl">
+              With roughly 80% import dependency, Iraq&apos;s market is shaped by KIMADIA tender outcomes, distributor logistics, and parallel KRG procurement—not only by the MNC offices listed here. Researchers should triangulate federal hospital demand, private pharmacy flow (30,000+ outlets), and reconstruction-funded NGO channels before sizing therapeutic opportunity.
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-3xl">
+              BioNixus combines this company index with tender intelligence, stakeholder mapping, and{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research</Link>{' '}
+              modules across federal Iraq and Erbil. Compare with{' '}
+              <Link to="/pharmaceutical-companies-iran" className="text-primary hover:underline font-medium">pharmaceutical companies in Iran</Link>{' '}
+              and GCC directories when planning regional portfolio sequencing.
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding py-16" id="bionixus-support"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">How BioNixus Supports Pharma Companies in Iraq</h2>
