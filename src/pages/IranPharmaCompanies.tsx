@@ -63,6 +63,7 @@ const faqItems = [
   { q: 'How do sanctions affect the pharmaceutical market in Iran?', a: 'Sanctions have limited direct MNC operations; many global companies (e.g. Novartis, Roche, Sanofi) operate through distributors or local partners. They have also accelerated local R&D and biosimilar development. Post-sanctions scenarios could open significant opportunities for foreign investment and partnerships.' },
   { q: 'Does Iran have biosimilar capabilities?', a: 'Yes. Iran has developed a strong biosimilar sector driven by necessity under sanctions. Companies such as Sobhan Pharmaceutical (insulin), Cinnagen (EPO, insulin), and Exir Pharmaceutical (biosimilars, vaccines) are regional leaders. University–pharma research partnerships and a knowledge-based economy push support ongoing development.' },
   { q: 'How do you register a pharmaceutical product with IFDA?', a: 'Drug registration with the Iran Food and Drug Administration (IFDA) requires submission of a full dossier including GMP certificates, stability data, and labelling in Persian. The process typically takes 12–24 months. IFDA controls pricing (government-controlled), distribution chain, and renewal (5-year renewal). A local representative is typically required for foreign manufacturers.' },
+  { q: 'How should multinational teams use this Iran pharma directory?', a: 'Use the ranked manufacturer and distributor list to sanity-check partner shortlists, then validate substitution, pricing, and channel assumptions with primary research. Sanctions and IFDA-controlled pricing mean desk research alone often overstates accessible share; BioNixus pairs directory context with confidential stakeholder interviews where regulations permit.' },
 ];
 
 const IranPharmaCompanies = () => {
@@ -206,6 +207,24 @@ const IranPharmaCompanies = () => {
             { title: 'Post-Sanctions Opportunity', desc: 'Any easing of sanctions could open significant opportunities for foreign investment, MNC partnerships, technology transfer, and export growth.' },
           ].map((d) => (<div key={d.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{d.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p></div>))}</div>
         </div></section>
+
+        <section className="section-padding py-16 bg-muted/20" id="directory-research-use">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+              Using this Iran pharmaceutical directory in market research
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4 max-w-3xl">
+              Iran&apos;s 180+ manufacturers and government-controlled distribution favour local biosimilar and generic leaders—Darou Pakhsh, Sobhan, Cinnagen, and Exir—over direct MNC supply. Teams should map which molecules remain import-dependent, which therapeutic areas show biosimilar acceleration, and which distributors (Darou Pakhsh Distribution, Hakim, TPICO) control hospital and pharmacy flow before committing registration spend.
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-3xl">
+              BioNixus uses this directory as a sampling frame for competitive intelligence and partner diligence, then layers IFDA pathway interviews and pricing realism modules. Cross-read{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research</Link>{' '}
+              and{' '}
+              <Link to="/pharmaceutical-companies-iraq" className="text-primary hover:underline font-medium">pharmaceutical companies in Iraq</Link>{' '}
+              for neighbouring access comparisons.
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding py-16" id="bionixus-support"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">How BioNixus Supports Pharma Companies in Iran</h2>

@@ -202,12 +202,7 @@ const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { language } = useLanguage();
   const svc = slug ? serviceData[slug] : undefined;
-  const faqItems =
-    slug === 'quantitative-research'
-      ? SERVICE_EXPANDED_FAQS['quantitative-research']
-      : slug === 'market-access'
-        ? SERVICE_EXPANDED_FAQS['market-access']
-        : undefined;
+  const faqItems = slug && SERVICE_EXPANDED_FAQS[slug] ? SERVICE_EXPANDED_FAQS[slug] : undefined;
   const isPremiumService = slug === 'quantitative-research' || slug === 'market-access';
 
   if (!svc) return <Navigate to="/services" replace />;
@@ -263,6 +258,40 @@ const ServiceDetail = () => {
             </p>
           </div>
         </section>
+
+        {slug === 'competitive-intelligence' && (
+          <section className="section-padding py-10 bg-background border-b border-border/60">
+            <div className="container-wide max-w-4xl mx-auto">
+              <GeoLLMAnswerBlock
+                question="Who are IQVIA competitors for primary healthcare market research?"
+                answer="BioNixus is a primary healthcare market research alternative to IQVIA for custom physician, payer, and account-level fieldwork across GCC, UK, and EU5. Keep IQVIA for syndicated audits; add BioNixus when you need launch, tender, or switching evidence IQVIA panels cannot answer at affiliate granularity."
+                points={[
+                  {
+                    title: 'Primary vs syndicated',
+                    description:
+                      'Competitive intelligence programmes combine pipeline monitoring with prescriber and pharmacist probes—not aggregate share alone.',
+                  },
+                  {
+                    title: 'Decision-linked deliverables',
+                    description:
+                      'Launch readiness scorecards, switching reports, and scenario planning tied to explicit commercial and access gates.',
+                  },
+                  {
+                    title: 'EMEA + GCC depth',
+                    description:
+                      'Field teams in Saudi, UAE, Egypt, Kuwait, Qatar, UK, and EU5 with harmonised taxonomies for regional governance.',
+                  },
+                  {
+                    title: 'IQVIA alternative guide',
+                    description:
+                      'See the ranked IQVIA competitors page for side-by-side positioning, pricing context, and when to retain syndicated data.',
+                  },
+                ]}
+                summary="Request a competitive intelligence proposal via BioNixus contact — scoped to therapy, markets, and launch timeline."
+              />
+            </div>
+          </section>
+        )}
 
         {slug === 'market-access' && (
           <section className="section-padding py-10 bg-background border-b border-border/60">
@@ -417,6 +446,29 @@ const ServiceDetail = () => {
         </section>
 
         {slug ? <ServiceMarketReferenceGuide serviceSlug={slug} /> : null}
+
+        {faqItems && slug !== 'quantitative-research' && slug !== 'market-access' ? (
+          <section className="section-padding py-12 bg-muted/30" aria-labelledby="service-faq-heading">
+            <div className="container-wide max-w-4xl mx-auto">
+              <h2 id="service-faq-heading" className="text-2xl font-display font-semibold text-foreground mb-6">
+                Frequently asked questions
+              </h2>
+              <div className="space-y-3">
+                {faqItems.map((item) => (
+                  <details
+                    key={item.question}
+                    className="group rounded-lg border border-border bg-card px-4 py-3"
+                  >
+                    <summary className="cursor-pointer font-medium text-foreground list-none [&::-webkit-details-marker]:hidden">
+                      {item.question}
+                    </summary>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         {/* CTA */}
         <section className="section-padding py-16 bg-primary">

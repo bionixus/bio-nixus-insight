@@ -7,6 +7,7 @@ import { CTASection } from '@/components/shared/CTASection';
 import { YouTubeEmbed } from '@/components/media/YouTubeEmbed';
 import NotFound from '@/pages/NotFound';
 import { getVideoBySlug, type SiteVideo } from '@/data/videos';
+import { getVideoWatchGuide } from '@/data/videoWatchGuideContent';
 import { buildVideoWatchPageSchemas } from '@/lib/seo/schemas';
 
 function WatchPlayer({ video }: { video: SiteVideo }) {
@@ -39,6 +40,7 @@ export default function VideoWatchPage() {
   }
 
   const path = `/videos/${video.slug}`;
+  const guide = getVideoWatchGuide(video.slug);
   const title = `${video.name} | BioNixus`;
   const description =
     video.description.length > 160 ? `${video.description.slice(0, 157)}...` : video.description;
@@ -81,6 +83,44 @@ export default function VideoWatchPage() {
             </h2>
             <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{video.transcript}</p>
           </section>
+
+          {guide ? (
+            <div className="mb-10 space-y-10">
+              {guide.sections.map((section) => (
+                <section key={section.title} aria-labelledby={`guide-${section.title}`}>
+                  <h2
+                    id={`guide-${section.title}`}
+                    className="font-display text-xl font-semibold text-foreground mb-3"
+                  >
+                    {section.title}
+                  </h2>
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph.slice(0, 48)} className="text-muted-foreground leading-relaxed mb-4">
+                      {paragraph}
+                    </p>
+                  ))}
+                </section>
+              ))}
+              <section aria-labelledby="video-faq-heading">
+                <h2 id="video-faq-heading" className="font-display text-xl font-semibold text-foreground mb-4">
+                  Frequently asked questions
+                </h2>
+                <div className="space-y-3">
+                  {guide.faqs.map((item) => (
+                    <details
+                      key={item.question}
+                      className="group rounded-lg border border-border bg-card px-4 py-3"
+                    >
+                      <summary className="cursor-pointer font-medium text-foreground list-none [&::-webkit-details-marker]:hidden">
+                        {item.question}
+                      </summary>
+                      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            </div>
+          ) : null}
 
           {video.relatedLinks.length > 0 ? (
             <section aria-labelledby="video-related-heading" className="mb-4">

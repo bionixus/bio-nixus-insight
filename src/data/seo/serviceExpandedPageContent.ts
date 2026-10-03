@@ -203,6 +203,48 @@ export const SERVICE_EXPANDED_FAQS: Record<string, ServiceFaq[]> = {
         'Yes. Multilingual moderation and transcription workflows preserve decision authenticity in GCC and European markets while harmonised codebooks enable regional roll-ups. Language choice follows stakeholder type and local affiliate requirements rather than defaulting to English-only convenience.',
     },
   ],
+  'competitive-intelligence': [
+    {
+      question: 'What is pharmaceutical competitive intelligence?',
+      answer:
+        'Competitive intelligence connects external signals—pipeline moves, congress readouts, prescriber switching, tender outcomes—to explicit decisions: launch sequencing, account prioritisation, medical education emphasis, and HEOR counter-moves. BioNixus blends primary field probes with curated secondary monitoring inside a taxonomy leadership can query.',
+    },
+    {
+      question: 'How is BioNixus competitive intelligence different from syndicated audits?',
+      answer:
+        'Syndicated audits describe aggregate historical share; BioNixus measures account-level behaviour, objection patterns, and switching intent in priority markets so affiliates can act before syndicated lag catches up.',
+    },
+    {
+      question: 'Which deliverables should a CI programme produce?',
+      answer:
+        'Landscape dashboards, pipeline trackers with probability-weighted scenarios, launch readiness scorecards, prescriber perception reports, and quarterly briefings tied to decision owners—not undifferentiated news digests.',
+    },
+    {
+      question: 'How does BioNixus maintain ethical CI guardrails?',
+      answer:
+        'Interview neutrality, fair-balance discipline, structured summarisation with source grading, and firewalls between intelligence conclusions and promotional claims—documentation supports compliance and alliance diligence.',
+    },
+    {
+      question: 'Can competitive intelligence integrate with physician surveys?',
+      answer:
+        'Yes. Quant and qual physician modules validate switching hypotheses raised in desk monitoring; sequential design avoids redundant field spend when segments are already stable.',
+    },
+    {
+      question: 'Which regions does BioNixus emphasise for pharma CI?',
+      answer:
+        'EU5 and GCC depth with harmonised taxonomies for regional governance; modules reflect tender-led Saudi clusters, NHS ICS flows, and Emirates private acceleration without false uniformisation.',
+    },
+    {
+      question: 'When should teams commission CI versus a full brand tracker?',
+      answer:
+        'Commission CI when a competitive shock, launch, or tender window requires fast primary validation; trackers suit stable maintenance phases. BioNixus scopes waves to the elasticity of the pivotal decision.',
+    },
+    {
+      question: 'How do CI outputs link to the healthcare research hub?',
+      answer:
+        'Findings cross-link to country directories, therapy hubs, and access services so medical, brand, and market access teams share one evidence base rather than parallel slide decks.',
+    },
+  ],
 };
 
 export const SERVICE_HERO_EXTENSIONS: Record<string, string> = {
