@@ -66,6 +66,191 @@
   ],
   "redirects": [
     {
+      "source": "/sitemap-healthcare-markets.xml",
+      "destination": "/sitemap.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/saudi-arabia/pharmaceutical-market-research",
+      "destination": "/market-research-saudi-arabia-pharmaceutical",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/saudi-arabia/pharmaceutical-market-research/",
+      "destination": "/market-research-saudi-arabia-pharmaceutical",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/saudi-arabia/healthcare-market-research",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/saudi-arabia/healthcare-market-research/",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/uae/pharmaceutical-market-research",
+      "destination": "/uae-pharmaceutical-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/uae/pharmaceutical-market-research/",
+      "destination": "/uae-pharmaceutical-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/uae/digital-health-market-research",
+      "destination": "/healthcare-market-research/uae",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/uae/digital-health-market-research/",
+      "destination": "/healthcare-market-research/uae",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/egypt/consumer-healthcare-market-research",
+      "destination": "/healthcare-market-research/egypt",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/egypt/consumer-healthcare-market-research/",
+      "destination": "/healthcare-market-research/egypt",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/kuwait/medical-devices-market-research",
+      "destination": "/kuwait-medical-devices-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/kuwait/medical-devices-market-research/",
+      "destination": "/kuwait-medical-devices-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/qatar/life-sciences-market-research",
+      "destination": "/healthcare-market-research/qatar",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/qatar/life-sciences-market-research/",
+      "destination": "/healthcare-market-research/qatar",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/pharmaceutical-market-research-saudi-arabia",
+      "destination": "/market-research-saudi-arabia-pharmaceutical",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/pharmaceutical-market-research-saudi-arabia/",
+      "destination": "/market-research-saudi-arabia-pharmaceutical",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/healthcare-market-research-saudi-arabia",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/healthcare-market-research-saudi-arabia/",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/rare-disease-market-research",
+      "destination": "/insights/best-rare-disease-market-research-companies-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/rare-disease-market-research/",
+      "destination": "/insights/best-rare-disease-market-research-companies-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/biologics-market-research",
+      "destination": "/insights/leading-biologics-biosimilars-market-research-companies-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/biologics-market-research/",
+      "destination": "/insights/leading-biologics-biosimilars-market-research-companies-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/biosimilars-market-research",
+      "destination": "/insights/leading-biologics-biosimilars-market-research-companies-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/biosimilars-market-research/",
+      "destination": "/insights/leading-biologics-biosimilars-market-research-companies-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/consumer-healthcare-market-research",
+      "destination": "/insights/top-consumer-healthcare-market-research-firms-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/consumer-healthcare-market-research/",
+      "destination": "/insights/top-consumer-healthcare-market-research-firms-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/obesity-market-research",
+      "destination": "/insights/best-obesity-weight-management-market-research-firms-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/obesity-market-research/",
+      "destination": "/insights/best-obesity-weight-management-market-research-firms-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/oncology-market-research",
+      "destination": "/insights/top-oncology-market-research-companies-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/oncology-market-research/",
+      "destination": "/insights/top-oncology-market-research-companies-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/medical-devices-market-research",
+      "destination": "/gcc-medical-devices-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/medical-devices-market-research/",
+      "destination": "/gcc-medical-devices-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/diagnostics-market-research",
+      "destination": "/clinical-diagnostics-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/diagnostics-market-research/",
+      "destination": "/clinical-diagnostics-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research-saudi-arabia",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research-saudi-arabia/",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
       "source": "/uae",
       "destination": "/healthcare-market-research/uae",
       "statusCode": 301
@@ -307,13 +492,23 @@
     },
     {
       "source": "/:path((?!api/).*)",
-      "has": [{ "type": "query", "key": "__ssr" }],
+      "has": [
+        {
+          "type": "query",
+          "key": "__ssr"
+        }
+      ],
       "destination": "/:path",
       "statusCode": 301
     },
     {
       "source": "/:path((?!api/).*)",
-      "has": [{ "type": "query", "key": "trk" }],
+      "has": [
+        {
+          "type": "query",
+          "key": "trk"
+        }
+      ],
       "destination": "/:path",
       "statusCode": 301
     },

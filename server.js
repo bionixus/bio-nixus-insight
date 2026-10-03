@@ -18,7 +18,7 @@ import {
 } from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
-import { LEGACY_REDIRECTS } from './lib/legacy-redirects.mjs';
+import { LEGACY_REDIRECTS, lookupRedirect } from './lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from './lib/untranslated-locale-redirects.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -1051,7 +1051,7 @@ async function startServer() {
         /* keep raw path */
       }
 
-      const blogRedirectTarget = REDIRECTS[req.path] ?? REDIRECTS[decodedPath];
+      const blogRedirectTarget = lookupRedirect(REDIRECTS, req.path, decodedPath);
       if (blogRedirectTarget) {
         res.redirect(301, blogRedirectTarget);
         return;

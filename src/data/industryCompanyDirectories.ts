@@ -64,12 +64,6 @@ const INDUSTRY_LABEL: Record<IndustryDirectorySlug, string> = {
   'real-estate': 'Real Estate',
 };
 
-const TITLE_SUFFIX: Record<IndustryDirectorySlug, string> = {
-  fmcg: 'Traditional + Modern Trade',
-  retail: 'Traditional + Modern Trade',
-  'real-estate': 'Developers We Study',
-};
-
 const COUNTRY_META: Record<
   IndustryDirectoryCountrySlug,
   { countryName: string; countryDisplay: string; titlePlace: string; h1Place: string }
@@ -183,14 +177,14 @@ function finish(
     countrySlug: country,
     countryName: cm.countryName,
     countryDisplay: cm.countryDisplay,
-    title: `Top ${n} ${industryLabel} Companies in ${cm.titlePlace} (2026) | ${TITLE_SUFFIX[industry]}`,
+    title: `Top ${n} ${industryLabel} Companies in ${cm.titlePlace} (2026)`,
     h1: `${industryLabel} Companies in ${cm.h1Place}`,
     listicleTo: getIndustryListiclePath(country, industry),
     listicleLabel: `Best ${industryLabel} market research firms in ${cm.titlePlace} (2026)`,
     bofuTo: getIndustryBofuPath(country, industry),
     relatedLinks: relatedLinksFor(industry, country),
     publishedDate: PUBLISHED,
-    modifiedDate: PUBLISHED,
+    modifiedDate: '2026-10-03',
     ...rest,
   };
 }
