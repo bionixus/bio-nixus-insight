@@ -89,12 +89,14 @@ User-agent: *
 Disallow: /api/
 
 # ----------------------------------------------------------------------
-# LLMs.txt — structured AI context files
-# See https://llmstxt.org for the specification.
+# LLMs.txt — structured AI context files (not robots.txt directives).
+# Google only parses User-agent / Allow / Disallow / Sitemap here; an
+# LLMs-Txt: line shows up in Search Console as an unknown directive.
+# Discovery: GET /llms.txt and <link rel="alternate" href="/llms.txt">.
+# See https://llmstxt.org
 # ----------------------------------------------------------------------
-LLMs-Txt: https://www.bionixus.com/llms.txt
-LLMs-Full-Txt: https://www.bionixus.com/llms-full.txt
-# Machine-readable pricing for AI agents (also /pricing)
+# https://www.bionixus.com/llms.txt
+# https://www.bionixus.com/llms-full.txt
 # https://www.bionixus.com/pricing.md
 # https://www.bionixus.com/pricing.txt
 

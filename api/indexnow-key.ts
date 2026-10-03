@@ -14,6 +14,7 @@ import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/count
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
 import { LEGACY_REDIRECTS } from '../lib/legacy-redirects.mjs';
+import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-redirects.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -714,6 +715,14 @@ async function handleSsrRequest(
   if (legacyCountryIndustryTarget) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
     res.redirect(301, legacyCountryIndustryTarget);
+    return;
+  }
+
+  const untranslatedLocaleTarget =
+    resolveUntranslatedLocaleRedirect(pathname) ?? resolveUntranslatedLocaleRedirect(decodedPathname);
+  if (untranslatedLocaleTarget) {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.redirect(301, untranslatedLocaleTarget);
     return;
   }
 

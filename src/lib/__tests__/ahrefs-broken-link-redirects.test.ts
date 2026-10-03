@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { getLocalizedPathForLanguage } from '@/lib/seo';
 import { getCrawlerStubForSlug } from '../../../blog-crawler-stubs.mjs';
 import { LEGACY_BLOG_SLUG_TO_CANONICAL } from '../../../blog-legacy-redirects.mjs';
+import { resolveUntranslatedLocaleRedirect } from '../../../lib/untranslated-locale-redirects.mjs';
 
 const legacyRedirects = JSON.parse(
   readFileSync(join(process.cwd(), 'config/legacy-redirects.json'), 'utf8'),
@@ -43,12 +44,40 @@ describe('Ahrefs Oct 2026 broken-link map', () => {
       '/sweden-medical-devices-market-report',
       '/healthcare-market-research/therapy/cancer-diagnostics',
       '/healthcare-market-research/therapy/immunology-biologics',
+      '/ru/healthcare-market-research',
+      '/zh/healthcare-market-research',
+      '/pt/healthcare-market-research',
+      '/es/blog',
+      '/pt/blog',
+      '/ru/blog',
+      '/zh/blog',
+      '/ar/healthcare-market-research/oman',
+      '/ar/healthcare-market-research/bahrain',
+      '/es/healthcare-market-research/saudi-arabia',
+      '/de/healthcare-market-research/saudi-arabia',
+      '/fr/healthcare-market-research/saudi-arabia',
     ];
     for (const from of sources) {
       expect(legacyRedirects[from], from).toBeTruthy();
       expect(legacyRedirects[from], from).not.toBe(from);
       expect(vercelSources.has(from), `vercel.json missing ${from}`).toBe(true);
     }
+  });
+
+  it('301s untranslated locale country copies on the SSR helper', () => {
+    expect(resolveUntranslatedLocaleRedirect('/ar/healthcare-market-research/oman')).toBe(
+      '/healthcare-market-research/oman',
+    );
+    expect(resolveUntranslatedLocaleRedirect('/de/healthcare-market-research/uae')).toBe(
+      '/healthcare-market-research/uae',
+    );
+    expect(resolveUntranslatedLocaleRedirect('/es/healthcare-market-research/saudi-arabia')).toBe(
+      '/healthcare-market-research/saudi-arabia',
+    );
+    expect(resolveUntranslatedLocaleRedirect('/de/healthcare-market-research/germany')).toBeNull();
+    expect(resolveUntranslatedLocaleRedirect('/es/healthcare-market-research/spain')).toBeNull();
+    expect(resolveUntranslatedLocaleRedirect('/fr/healthcare-market-research/france')).toBeNull();
+    expect(resolveUntranslatedLocaleRedirect('/ar/healthcare-market-research/saudi-arabia')).toBeNull();
   });
 
   it('does not emit those locale 404s from homepage pathway helpers', () => {

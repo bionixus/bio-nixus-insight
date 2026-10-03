@@ -204,7 +204,7 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
     en: '/services/market-access',
     es: '/services/market-access',
   },
-  // zh/pt/ru hubs render the English HubPage. de/fr/es/ar are translated pages.
+  // zh/pt/ru English-body hubs 301 to the English hub. de/fr/es/ar are translated pages.
   '/healthcare-market-research': {
     en: '/healthcare-market-research',
     de: '/de/healthcare-market-research/germany',
@@ -355,12 +355,10 @@ const localizedRouteGroups: Record<string, Record<string, string>> = {
 };
 
 /**
- * Locale hubs that render the English page and have a real route.
- * getLocalizedPathForLanguage may prefix these. It must not invent
- * `/${lang}${enPath}` for every other group — those URLs 404.
- * These stay out of localizedRouteGroups so hreflang does not advertise them.
+ * Former English-body locale hubs. They 301 to the English hub, so the language
+ * switcher must send PT/ZH/RU to the locale homepage instead of a 301 URL.
  */
-const LIVE_ENGLISH_LOCALE_COPIES = new Set([
+const UNTRANSLATED_HUB_LANGUAGE_HOMEPAGES = new Set([
   '/pt/healthcare-market-research',
   '/zh/healthcare-market-research',
   '/ru/healthcare-market-research',
@@ -560,7 +558,9 @@ export function getLocalizedPathForLanguage(enCanonicalPath: string, lang: Langu
     if (hasPrefixedSibling) {
       const enPath = typeof routes.en === 'string' ? routes.en : normalized;
       const prefixed = prefixWithLanguage(enPath, lang);
-      if (LIVE_ENGLISH_LOCALE_COPIES.has(prefixed)) return prefixed;
+      if (UNTRANSLATED_HUB_LANGUAGE_HOMEPAGES.has(prefixed)) {
+        return languagePaths[lang] || '/';
+      }
       return enPath;
     }
     return typeof routes.en === 'string' ? routes.en : normalized;

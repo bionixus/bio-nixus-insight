@@ -3,7 +3,7 @@
   "outputDirectory": "dist/client",
   "functions": {
     "api/indexnow-key.ts": {
-      "includeFiles": "{dist/**,seo-noise-query.mjs,config/legacy-redirects.json,lib/legacy-redirects.mjs,lib/og-card-svg.mjs,lib/ssr-client-asset-hints.mjs,lib/country-industry-redirects.mjs,lib/global-websites-redirects.mjs,lib/ctr-seo-overrides.mjs}"
+      "includeFiles": "{dist/**,seo-noise-query.mjs,config/legacy-redirects.json,lib/legacy-redirects.mjs,lib/untranslated-locale-redirects.mjs,lib/og-card-svg.mjs,lib/ssr-client-asset-hints.mjs,lib/country-industry-redirects.mjs,lib/global-websites-redirects.mjs,lib/ctr-seo-overrides.mjs}"
     }
   },
   "headers": [
@@ -203,6 +203,76 @@
     {
       "source": "/healthcare-market-research/therapy/immunology-biologics",
       "destination": "/healthcare-market-research/therapy/immunology",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/healthcare-market-research",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/healthcare-market-research",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/healthcare-market-research",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/blog",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/blog",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/blog",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/blog",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/market-research-healthcare",
+      "destination": "/market-research-healthcare",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/market-research-healthcare",
+      "destination": "/market-research-healthcare",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/healthcare-market-research/oman",
+      "destination": "/healthcare-market-research/oman",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/healthcare-market-research/bahrain",
+      "destination": "/healthcare-market-research/bahrain",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/healthcare-market-research/saudi-arabia",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/healthcare-market-research/saudi-arabia",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/healthcare-market-research/saudi-arabia",
+      "destination": "/healthcare-market-research/saudi-arabia",
       "statusCode": 301
     },
     {

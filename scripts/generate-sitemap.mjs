@@ -20,6 +20,7 @@ import {
 } from '../blog-legacy-redirects.mjs';
 import { LEGACY_REDIRECTS } from '../lib/legacy-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
+import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-redirects.mjs';
 import { getIndustryMatrixSitemapPages } from './data/industry-matrix-sitemap.mjs';
 import { getSpecialtyMarketDemandSitemapPages } from './data/specialty-market-demand-sitemap.mjs';
 import { getCountryKeywordSitemapPages } from './data/country-keyword-sitemap.mjs';
@@ -149,6 +150,7 @@ function isSitemapRedirectSourcePath(pathname) {
   const path = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
   if (SITEMAP_REDIRECT_SOURCE_PATHS.has(path)) return true;
   if (resolveGlobalWebsitesRedirect(path)) return true;
+  if (resolveUntranslatedLocaleRedirect(path)) return true;
   return false;
 }
 

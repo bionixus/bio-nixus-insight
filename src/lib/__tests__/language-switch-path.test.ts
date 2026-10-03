@@ -55,10 +55,10 @@ describe('getLocalizedPathForLanguage', () => {
     }
   });
 
-  it('does not drop Portuguese off the healthcare hub', () => {
-    expect(getLocalizedPathForLanguage('/healthcare-market-research', 'pt')).toBe(
-      '/pt/healthcare-market-research',
-    );
+  it('sends PT/ZH/RU hub switchers to the locale homepage, not a 301 URL', () => {
+    expect(getLocalizedPathForLanguage('/healthcare-market-research', 'pt')).toBe('/pt');
+    expect(getLocalizedPathForLanguage('/healthcare-market-research', 'zh')).toBe('/zh');
+    expect(getLocalizedPathForLanguage('/healthcare-market-research', 'ru')).toBe('/ru');
     expect(getLocalizedPathForLanguage('/healthcare-market-research', 'de')).toBe(
       '/de/healthcare-market-research/germany',
     );

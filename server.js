@@ -19,6 +19,7 @@ import {
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
 import { LEGACY_REDIRECTS } from './lib/legacy-redirects.mjs';
+import { resolveUntranslatedLocaleRedirect } from './lib/untranslated-locale-redirects.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -1065,6 +1066,13 @@ async function startServer() {
       const legacyCountryIndustryTarget = resolveLegacyCountryIndustryMarketResearchRedirect(req.path);
       if (legacyCountryIndustryTarget) {
         res.redirect(301, legacyCountryIndustryTarget);
+        return;
+      }
+
+      const untranslatedLocaleTarget =
+        resolveUntranslatedLocaleRedirect(req.path) ?? resolveUntranslatedLocaleRedirect(decodedPath);
+      if (untranslatedLocaleTarget) {
+        res.redirect(301, untranslatedLocaleTarget);
         return;
       }
 

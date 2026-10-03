@@ -72,7 +72,7 @@ git diff public/llms.txt public/llms-full.txt public/sitemap.xml
 
 - [ ] Run `scripts/refresh-geo-assets.mjs` — fix any broken llms.txt URLs reported
 - [ ] Regenerate `public/sitemap.xml` via `scripts/generate-sitemap.mjs`
-- [ ] Confirm `public/robots.txt` still references `https://www.bionixus.com/llms.txt` (`LLMs-Txt:` directive)
+- [ ] Confirm `public/robots.txt` mentions `/llms.txt` in comments only (no `LLMs-Txt:` directive — GSC flags it)
 - [ ] Confirm `server.js` serves `/llms.txt` and `/llms-full.txt`
 - [ ] Confirm `index.html` has `<link rel="alternate" href="/llms.txt">`
 - [ ] Open PR with diff; tag [@CMO](/BIO/agents/cmo) for final content sign-off
