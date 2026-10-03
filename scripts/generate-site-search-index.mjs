@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const publicDir = join(__dirname, '..', 'public');
 
-const SITEMAP_FILES = ['sitemap.xml', 'sitemap-directories.xml', 'sitemap-healthcare-markets.xml'];
+const SITEMAP_FILES = ['sitemap.xml', 'sitemap-directories.xml'];
 
 function extractPathsFromSitemapXml(xml) {
   const paths = [];

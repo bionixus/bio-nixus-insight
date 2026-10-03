@@ -39,7 +39,7 @@ function extractPathsFromSitemapXml(xml: string): string[] {
 }
 
 async function loadSitemapFallback(): Promise<string[]> {
-  const files = ['/sitemap.xml', '/sitemap-directories.xml', '/sitemap-healthcare-markets.xml'];
+  const files = ['/sitemap.xml', '/sitemap-directories.xml'];
   const collected: string[] = [];
   await Promise.all(
     files.map(async (file) => {

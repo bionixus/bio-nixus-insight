@@ -13,7 +13,7 @@ import {
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
-import { LEGACY_REDIRECTS } from '../lib/legacy-redirects.mjs';
+import { LEGACY_REDIRECTS, lookupRedirect } from '../lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-redirects.mjs';
 
 type HelmetLike = {
@@ -696,7 +696,7 @@ async function handleSsrRequest(
     /* keep raw pathname */
   }
 
-  const redirectTarget = REDIRECTS[pathname] ?? REDIRECTS[decodedPathname];
+  const redirectTarget = lookupRedirect(REDIRECTS, pathname, decodedPathname);
   if (redirectTarget) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
     res.redirect(301, redirectTarget);
