@@ -38,8 +38,10 @@ import { allListicleConfigs } from '@/data/topCompanies';
 import { TEMPLATE_DIRECTORIES, COMPANY_DIRECTORY_HUBS } from '@/data/companyDirectories';
 import { COMPETITOR_ALTERNATIVES } from '@/data/competitorAlternatives';
 import { AR_PHARMA_DIRECTORIES } from '@/data/arPharmaDirectories';
+import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
 
 export const generatedPaths: string[] = [
+  '/' + SKYRIZI_ROOT_SLUG,
   ...COUNTRY_KEYWORD_PAGES.map((c) => '/' + c.slug),
   ...SPECIALTY_MARKET_DEMAND_CONTENT.map((c) => '/' + c.slug),
   ...getAllPublishedMatrixPairs().flatMap(({ countrySlug, industrySlug }) => {
