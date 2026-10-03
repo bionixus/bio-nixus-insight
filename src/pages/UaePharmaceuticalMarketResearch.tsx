@@ -175,7 +175,7 @@ export default function UaePharmaceuticalMarketResearch() {
 
         <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-display font-semibold mb-3">
+            <h1 className="text-4xl md:text-5xl font-display font-semibold mb-3 !text-white">
               Healthcare Market Research Company UAE: BioNixus, Dubai
             </h1>
             <p className="text-sm text-primary-foreground/80 mb-4">
