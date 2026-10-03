@@ -3,7 +3,7 @@
   "outputDirectory": "dist/client",
   "functions": {
     "api/indexnow-key.ts": {
-      "includeFiles": "{dist/**,seo-noise-query.mjs,config/legacy-redirects.json,lib/legacy-redirects.mjs,lib/untranslated-locale-redirects.mjs,lib/og-card-svg.mjs,lib/ssr-client-asset-hints.mjs,lib/country-industry-redirects.mjs,lib/global-websites-redirects.mjs,lib/ctr-seo-overrides.mjs}"
+      "includeFiles": "{dist/**,config/**,lib/**,seo-noise-query.mjs}"
     }
   },
   "headers": [
