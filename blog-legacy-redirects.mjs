@@ -7,6 +7,7 @@ export const LEGACY_BLOG_SLUG_TO_CANONICAL = {
   'pharmaceutical-market-research-uk': 'pharmaceutical-market-research-uk-2026',
   'drug-registration-kuwait-pharma-guide': 'healthcare-overview-kuwait-market-2026',
   'middle-east-healthcare-market-statistics-2025': 'middle-east-healthcare-market-statistics-2026',
+  'kresladi-marnetegragene-lad1-fda-': 'kresladi-marnetegragene-lad1-fda-2026',
 };
 
 /** Full-path redirects for Express + Vercel SSR (`/blog/old` → `/blog/new`). */

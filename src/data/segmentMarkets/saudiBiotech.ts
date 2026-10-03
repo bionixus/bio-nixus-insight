@@ -2101,7 +2101,7 @@ const plasmaFractionation: SegmentMarketContent = {
   ],
   relatedLinks: [
     { to: '/saudi-arabia-plasma-fractional-laser-market', label: 'Saudi Arabia plasma fractional laser market (aesthetic devices)' },
-    { to: '/healthcare-market-research/therapy/immunology-biologics', label: 'Immunology and biologics market research' },
+    { to: '/healthcare-market-research/therapy/immunology', label: 'Immunology and biologics market research' },
     { to: '/healthcare-market-research/therapy/rare-diseases', label: 'Rare disease market research' },
     { to: '/saudi-arabia-biotechnology-market', label: 'Saudi Arabia biotechnology market' },
     { to: '/middle-east-biologics-market', label: 'Middle East biologics market' },

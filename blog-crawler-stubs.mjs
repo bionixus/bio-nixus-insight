@@ -12,6 +12,13 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'desmoid-tumors-nirogacestat-pharma-market-access',
   'neurofibromatosis',
   'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
+  'uae-healthcare-market-trends-2026',
+  'nf1-koselugo-selumetinib-pharma-market-research',
+  'market-research-companies-egypt',
+  'medtech-singapore-2026-market-hsa-registration',
+  'turkey-pharmaceutical-market-2026-titck-top-companies',
+  'nmpa-class-iii-registration-timeline-2026',
+  'china-device-vbp-rounds-explained',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -62,6 +69,41 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Desmoid Tumours & OGSIVEO (Nirogacestat): Market Access Intelligence | BioNixus',
     description:
       'Desmoid tumour landscape, OGSIVEO (nirogacestat) FDA approval for progressing adults, and commercial intelligence for Gulf market access teams.',
+  },
+  'uae-healthcare-market-trends-2026': {
+    title: 'UAE Healthcare Market Trends 2026: Payer, Specialty, and Access Shifts',
+    description:
+      'UAE healthcare trends 2026: payer tightening, DHA vs DOH access, specialty and biosimilars, and digital-health signals for pharma and medtech.',
+  },
+  'nf1-koselugo-selumetinib-pharma-market-research': {
+    title: 'Koselugo (Selumetinib) Market Research: NF1 Plexiform Neurofibroma Access',
+    description:
+      'Koselugo (selumetinib) market research for NF1 plexiform neurofibromas — FDA chronology, EU vs EZMEKLY, launch economics, and specialist adoption.',
+  },
+  'market-research-companies-egypt': {
+    title: 'Top Market Research Companies in Egypt (2026 Compared)',
+    description:
+      'Compare leading market research companies operating in Egypt — global networks (Kantar, Ipsos, NielsenIQ, IQVIA, YouGov) and healthcare specialists.',
+  },
+  'medtech-singapore-2026-market-hsa-registration': {
+    title: 'MedTech in Singapore 2026: Market Size, HSA Registration & Key Players',
+    description:
+      "Singapore's medtech industry in 2026 — manufacturing scale, HSA Class A–D registration, Access Consortium, and the top device makers with Singapore plants.",
+  },
+  'turkey-pharmaceutical-market-2026-titck-top-companies': {
+    title: 'Turkey Pharmaceutical Market 2026: Size, TITCK & Top Companies',
+    description:
+      "Turkey's pharmaceutical market in 2026 — size and growth, TITCK drug registration steps, reference pricing, and the leading local and multinational companies.",
+  },
+  'nmpa-class-iii-registration-timeline-2026': {
+    title: 'NMPA Class III Registration Timeline 2026: CMDE Review & Clinical Evidence',
+    description:
+      'NMPA Class III medical device registration in China 2026: CMDE review steps, clinical evaluation options, Resident Agent duties, and 18–36 month planning benchmarks.',
+  },
+  'china-device-vbp-rounds-explained': {
+    title: 'China Device VBP Rounds Explained 2026: Price Cuts & Volume Commitments',
+    description:
+      'How China’s medical device Volume-Based Procurement works in 2026: stent and joint price-cut examples, win vs lose outcomes, renewals, and private-hospital escape valves.',
   },
 };
 

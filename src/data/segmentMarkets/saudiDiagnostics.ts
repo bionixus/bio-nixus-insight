@@ -511,7 +511,7 @@ const molecularDiagnostics: SegmentMarketContent = {
     { to: '/saudi-arabia-diagnostic-labs-market', label: 'Saudi Arabia Diagnostic Labs Market' },
     { to: '/saudi-arabia-in-vitro-diagnostics-market', label: 'Saudi Arabia In-Vitro Diagnostics Market' },
     { to: '/saudi-arabia-next-generation-sequencing-market', label: 'Saudi Arabia Next Generation Sequencing Market' },
-    { to: '/healthcare-market-research/therapy/cancer-diagnostics', label: 'Cancer Diagnostics Market Research' },
+    { to: '/market-reports/therapy/cancer-diagnostics', label: 'Cancer Diagnostics Market Research' },
     { to: '/sfda-market-access-strategy-saudi-arabia', label: 'SFDA Market Access Strategy' },
     { to: '/clinical-diagnostics-market-research', label: 'Clinical Diagnostics Market Research' },
   ],
@@ -2368,7 +2368,7 @@ const cancerBiomarkers: SegmentMarketContent = {
   relatedLinks: [
     { to: '/saudi-arabia-biomarkers-market', label: 'Saudi Arabia Biomarkers Market' },
     { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology Market Research' },
-    { to: '/healthcare-market-research/therapy/cancer-diagnostics', label: 'Cancer Diagnostics Market Research' },
+    { to: '/market-reports/therapy/cancer-diagnostics', label: 'Cancer Diagnostics Market Research' },
     { to: '/kol-mapping-saudi-arabia-oncology', label: 'Saudi Arabia Oncology KOL Mapping' },
     { to: '/bionixus-saudi-arabia-oncology-insights', label: 'Saudi Arabia Oncology Insights' },
     { to: '/saudi-arabia-cancer-immunotherapy-market', label: 'Saudi Arabia Cancer Immunotherapy Market' },

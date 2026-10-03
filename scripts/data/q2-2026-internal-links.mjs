@@ -236,7 +236,7 @@ const CLUSTER_REPORT_LINKS = {
     saudiReport: '/market-reports/saudi-arabia-vaccines-market-report',
   },
   'immunology-dermatology': {
-    therapyHub: '/healthcare-market-research/therapy/immunology-biologics',
+    therapyHub: '/healthcare-market-research/therapy/immunology',
     gccReport: '/market-reports/gcc-dermatology-market-report',
     saudiReport: '/market-reports/saudi-arabia-dermatology-market-report',
     uaeReport: '/market-reports/uae-dermatology-market-report',
