@@ -3,6 +3,7 @@ import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 import {
   getDevelopedMarketMedtechCountry,
   getDevelopedMarketMedtechExpandedContent,
+  getDevelopedMarketMedtechListiclePath,
   getDevelopedMarketMedtechPath,
   type DevelopedMarketMedtechSlug,
 } from '@/data/developedMarketMedtechPages';
@@ -31,6 +32,11 @@ export default function DevelopedMarketMedtechPage({ countrySlug }: DevelopedMar
       links={[
         { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: country.healthcareResearchPath, label: `Healthcare market research ${country.label}`, primary: true },
+        {
+          to: getDevelopedMarketMedtechListiclePath(countrySlug),
+          label: `Top MedTech market research firms in ${country.label} (2026)`,
+          primary: true,
+        },
         { to: country.medDevicesReportPath, label: country.medDevicesReportPath.includes('pharmaceutical') ? `Pharmaceutical market research ${country.label}` : `${country.label} medical devices market report` },
         { to: getDevelopedMarketMedtechPath(relatedA.slug), label: `MedTech market research ${relatedA.label}` },
         { to: getDevelopedMarketMedtechPath(relatedB.slug), label: `MedTech market research ${relatedB.label}` },

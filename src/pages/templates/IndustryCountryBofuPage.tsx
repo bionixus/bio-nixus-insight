@@ -518,6 +518,14 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
                 <Link to={config.relatedReportLink.to}>{config.relatedReportLink.label}</Link>
               </p>
             ) : null}
+            {countrySlug === 'egypt' && industrySlug === 'financial-services' ? (
+              <p className="bx-lead">
+                2026 briefing:{' '}
+                <Link to="/bionixus-industries/insights/financial-services-market-research-egypt-2026">
+                  financial services market research in Egypt
+                </Link>
+              </p>
+            ) : null}
             {!config.industry.isHealthcareAdjacent ? (
               <p className="bx-lead" style={{ marginTop: config.relatedReportLink ? 12 : 28 }}>
                 Global industry hub:{' '}

@@ -278,6 +278,24 @@ export default function Insights() {
                 Top Hematology Market Research Companies (2026)
               </Link>
               <Link
+                to="/insights/top-medtech-market-research-companies-usa-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top MedTech Market Research Firms in the United States (2026)
+              </Link>
+              <Link
+                to="/insights/top-medtech-market-research-companies-germany-2026"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Top MedTech Market Research Firms in Germany (2026)
+              </Link>
+              <Link
+                to="/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement"
+                className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+              >
+                Skyrizi July rankings: omnichannel lessons
+              </Link>
+              <Link
                 to="/insights/best-rare-disease-market-research-companies-2026"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >

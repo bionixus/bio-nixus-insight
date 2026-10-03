@@ -299,9 +299,20 @@ const ClientReviews = () => {
                 Clients across other industries
               </h2>
               <p className="text-muted-foreground leading-relaxed sr sr-up">
-                BioNixus also supports market research for banks and financial services, wood manufacturing,
-                tourism and hospitality, real estate, and AI and IT startups — with the same senior-led methodology
-                and global field execution.
+                BioNixus also supports market research for{' '}
+                <Link to="/bionixus-industries/insights/financial-services-market-research-egypt-2026" className="text-primary underline font-medium">
+                  banks and financial services
+                </Link>
+                ,{' '}
+                <Link to="/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea" className="text-primary underline font-medium">
+                  wood manufacturing
+                </Link>
+                , tourism and hospitality, real estate, and AI and IT startups — with the same senior-led methodology
+                and global field execution. See also{' '}
+                <Link to="/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026" className="text-primary underline font-medium">
+                  online market research and social listening
+                </Link>
+                .
               </p>
             </div>
 

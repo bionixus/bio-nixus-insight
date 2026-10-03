@@ -231,9 +231,26 @@ export default function ConsumerMarketResearchPortal() {
             <h1 className="text-3xl md:text-5xl font-display font-bold leading-tight mb-5">
               Consumer &amp; Business Market Research — Global Coverage
             </h1>
-            <p className="text-lg md:text-xl text-teal-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-teal-100 mb-4 max-w-3xl mx-auto leading-relaxed">
               FMCG, Retail, Financial Services, Technology, Automotive, and 8 more industries — with
               local field teams in 15+ countries
+            </p>
+            <p className="text-sm md:text-base text-teal-100/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Start with{' '}
+              <Link
+                to="/bionixus-industries/insights/financial-services-market-research-egypt-2026"
+                className="underline font-medium text-white"
+              >
+                financial services market research in Egypt
+              </Link>{' '}
+              or{' '}
+              <Link
+                to="/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026"
+                className="underline font-medium text-white"
+              >
+                online market research and social listening
+              </Link>
+              .
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
               <Link

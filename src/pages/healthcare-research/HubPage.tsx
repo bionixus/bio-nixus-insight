@@ -16,6 +16,7 @@ import {
 } from '@/data/countryKeywordPages';
 import { getGroupedSegmentMarketIndex } from '@/data/segmentMarketIndex';
 import { healthcareCountryRecoveryPaths } from '@/lib/internalLinkRecovery';
+import { DEVELOPED_MARKET_MEDTECH_LISTICLE_LINKS } from '@/data/developedMarketMedtechPages';
 import { HubMarketReferenceGuide } from '@/components/seo/HubMarketReferenceGuide';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
@@ -865,6 +866,25 @@ export default function HubPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {GLOBAL_PHARMA_COMPANIES_DIRECTORIES.map((directory) => (
             <HealthcareNavCard key={directory.to} to={directory.to} title={directory.title} />
+          ))}
+        </div>
+      </ReportPremiumSection>
+
+      <ReportPremiumSection
+        id="medtech-market-research-rankings"
+        title="MedTech market research firm rankings — developed markets"
+        variant="muted"
+      >
+        <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
+          Country-by-country rankings of MedTech and medical devices market research firms, cross-linked from the{' '}
+          <Link to="/healthcare-market-research" className="text-primary hover:underline">
+            healthcare market research hub
+          </Link>{' '}
+          so hospital-procurement and device-launch briefs can compare fieldwork partners by market.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {DEVELOPED_MARKET_MEDTECH_LISTICLE_LINKS.map((item) => (
+            <HealthcareNavCard key={item.to} to={item.to} title={item.label} />
           ))}
         </div>
       </ReportPremiumSection>

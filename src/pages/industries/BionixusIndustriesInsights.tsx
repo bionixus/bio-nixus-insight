@@ -29,6 +29,7 @@ import {
   INDUSTRIES_HUB_PATH,
   INDUSTRIES_INSIGHTS_INDEX_PATH,
   INDUSTRIES_INSIGHT_POST_PATH_PREFIX,
+  INDUSTRIES_INSIGHT_EDITORIAL_LINKS,
 } from '@/lib/blog-content-silo';
 import type { BlogPost } from '@/types/blog';
 
@@ -82,6 +83,11 @@ const RELATED_PATHWAYS = [
     label: 'Market research by industry',
     description: 'Country × industry matrix entry points.',
   },
+  ...INDUSTRIES_INSIGHT_EDITORIAL_LINKS.map((item) => ({
+    to: item.to,
+    label: item.label,
+    description: 'Industry insight article.',
+  })),
 ];
 
 export default function BionixusIndustriesInsights() {

@@ -109,6 +109,15 @@ export default function HealthcareReportsByCountry() {
               <Link className="font-medium text-primary hover:underline" to="/market-reports/therapy/oncology">
                 oncology therapy hub
               </Link>
+              {marketSlug === 'sweden' ? (
+                <>
+                  {' '}
+                  or the standalone{' '}
+                  <Link className="font-medium text-primary hover:underline" to="/sweden-healthcare-market-report">
+                    Sweden healthcare market report 2026
+                  </Link>
+                </>
+              ) : null}
               .
             </p>
             <div className="flex flex-wrap gap-3 text-sm">

@@ -831,6 +831,11 @@ export function getDevelopedMarketMedtechListiclePath(slug: DevelopedMarketMedte
   return `/insights/top-medtech-market-research-companies-${slug}-2026`;
 }
 
+export const DEVELOPED_MARKET_MEDTECH_LISTICLE_LINKS = DEVELOPED_MARKET_MEDTECH_SLUGS.map((slug) => ({
+  to: getDevelopedMarketMedtechListiclePath(slug),
+  label: `Top MedTech market research firms — ${DEVELOPED_MARKET_MEDTECH_COUNTRIES[slug].label} (2026)`,
+}));
+
 export function buildDevelopedMarketMedtechListicleFirms(
   country: DevelopedMarketMedtechCountry,
 ): DevelopedMarketMedtechListicleFirm[] {

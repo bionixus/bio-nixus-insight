@@ -10,7 +10,7 @@ import { getMarketReportsHubConfig } from '@/data/reportConversionConfig';
 import { ReportConsultationBand } from '@/components/report-conversion';
 import { ReportPremiumHero, ReportSectionVisual } from '@/components/report-premium';
 
-const COUNTRY_NAV_ORDER = [
+const COUNTRY_NAV_PRIORITY = [
   'gcc',
   'saudi-arabia',
   'uae',
@@ -22,6 +22,13 @@ const COUNTRY_NAV_ORDER = [
   'turkey',
 ] as const;
 
+const orderedCountrySlugs = [
+  ...COUNTRY_NAV_PRIORITY.filter((slug) => MARKET_CONTENT[slug]),
+  ...Object.keys(MARKET_CONTENT).filter(
+    (slug) => !COUNTRY_NAV_PRIORITY.includes(slug as (typeof COUNTRY_NAV_PRIORITY)[number]),
+  ),
+];
+
 const canonical = 'https://www.bionixus.com/market-reports';
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -31,8 +38,6 @@ const breadcrumbItems = [
 const therapySlugs = Object.keys(THERAPY_AREA_CONTENT).sort((a, b) =>
   THERAPY_AREA_CONTENT[a].name.localeCompare(THERAPY_AREA_CONTENT[b].name),
 );
-
-const orderedCountrySlugs = COUNTRY_NAV_ORDER.filter((s) => MARKET_CONTENT[s]);
 
 export default function HealthcareReportsHub() {
   const hubConversion = getMarketReportsHubConfig();

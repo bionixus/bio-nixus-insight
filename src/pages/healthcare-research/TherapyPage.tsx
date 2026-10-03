@@ -731,7 +731,15 @@ export default function TherapyPage() {
                 <Link to="/healthcare-market-research" className="text-primary underline">
                   healthcare market research hub
                 </Link>{' '}
-                for regional coverage, then use this guide to align your immunology research blueprint.
+                for regional coverage, then use this guide to align your immunology research blueprint. For a current
+                commercial read on IL-23 competition and omnichannel ranking, see{' '}
+                <Link
+                  to="/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement"
+                  className="text-primary underline"
+                >
+                  Skyrizi’s July ranking and what it means for omnichannel engagement
+                </Link>
+                .
               </p>
               <p>
                 Most immunology assets compete as advanced therapies; link this page with our{' '}

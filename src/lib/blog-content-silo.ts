@@ -45,6 +45,26 @@ export function getIndustriesInsightPostPath(slug: string): string {
   return `${INDUSTRIES_INSIGHT_POST_PATH_PREFIX}/${slug}`;
 }
 
+/** Industry insight articles that were sitemap-only (zero href inlinks). */
+export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
+  {
+    to: getIndustriesInsightPostPath('online-market-research-social-listening-brand-growth-2026'),
+    label: 'Online market research and social listening for brand growth (2026)',
+  },
+  {
+    to: getIndustriesInsightPostPath('mdf-wood-manufacturing-market-research-trackers-mea'),
+    label: 'Wood boards market research trackers — MEA',
+  },
+  {
+    to: getIndustriesInsightPostPath('financial-services-market-research-egypt-2026'),
+    label: 'Financial services market research in Egypt 2026',
+  },
+] as const;
+
+/** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */
+export const SKYRIZI_CANONICAL_PATH =
+  '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement';
+
 export function isIndustriesInsightPostPath(pathname: string): boolean {
   return /^\/bionixus-industries\/insights\/[^/]+/.test(pathname.split('?')[0] || '');
 }
@@ -70,6 +90,7 @@ export function getBlogPostPath(
   // Arabic-slug posts canonicalise to /ar/blog/. Some CMS records omit `language`,
   // and linking them under /blog/ sends every reference through a 301.
   if (ARABIC_SCRIPT.test(post.slug)) return `${LOCALIZED_BLOG_PREFIX.ar}/${post.slug}`;
+  if (post.slug === SKYRIZI_CANONICAL_PATH.slice(1)) return SKYRIZI_CANONICAL_PATH;
   return `/blog/${post.slug}`;
 }
 

@@ -236,9 +236,17 @@ export default function DevelopedMarketMedtechListiclePage({
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl font-display font-semibold text-foreground mb-4">Related market intelligence</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Compare MedTech research needs with our pages for{' '}
-              <Link to={getDevelopedMarketMedtechPath(country.relatedSlugs[0])} className="text-primary underline font-medium">
+              Compare MedTech research needs with our ranking pages for{' '}
+              <Link to={getDevelopedMarketMedtechListiclePath(country.relatedSlugs[0])} className="text-primary underline font-medium">
                 {getDevelopedMarketMedtechCountry(country.relatedSlugs[0]).label}
+              </Link>{' '}
+              and{' '}
+              <Link to={getDevelopedMarketMedtechListiclePath(country.relatedSlugs[1])} className="text-primary underline font-medium">
+                {getDevelopedMarketMedtechCountry(country.relatedSlugs[1]).label}
+              </Link>
+              , the company pages for{' '}
+              <Link to={getDevelopedMarketMedtechPath(country.relatedSlugs[0])} className="text-primary underline font-medium">
+                MedTech market research in {getDevelopedMarketMedtechCountry(country.relatedSlugs[0]).label}
               </Link>{' '}
               and{' '}
               <Link to={getDevelopedMarketMedtechPath(country.relatedSlugs[1])} className="text-primary underline font-medium">

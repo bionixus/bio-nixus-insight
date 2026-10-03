@@ -26,10 +26,11 @@ import { defaultOgImageUrl } from '@/lib/seo';
 import { CTASection } from '@/components/shared/CTASection';
 import { useSanityBlog, useIndustriesInsights } from '@/hooks/useSanityBlog';
 import { fetchCaseStudies } from '@/lib/sanity-case-studies';
-import { getBlogPostPath, INDUSTRIES_INSIGHTS_INDEX_PATH } from '@/lib/blog-content-silo';
+import { getBlogPostPath, INDUSTRIES_INSIGHTS_INDEX_PATH, INDUSTRIES_INSIGHT_EDITORIAL_LINKS, SKYRIZI_CANONICAL_PATH } from '@/lib/blog-content-silo';
 import { LOW_INTERNAL_LINK_PATHS } from '@/lib/lowInternalLinkTargets.generated';
 import { SEGMENT_MARKET_INDEX } from '@/data/segmentMarketIndex';
 import { INTERNAL_LINK_PRIORITY_TARGETS } from '@/lib/internalLinkAmplificationTargets';
+import { DEVELOPED_MARKET_MEDTECH_LISTICLE_LINKS } from '@/data/developedMarketMedtechPages';
 import {
   MATRIX_COUNTRIES,
   MATRIX_INDUSTRIES,
@@ -320,6 +321,10 @@ const marketReportLinks = [
   { to: '/market-reports/country/qatar', label: 'Qatar Healthcare Reports' },
   { to: '/market-reports/country/bahrain', label: 'Bahrain Healthcare Reports' },
   { to: '/market-reports/country/oman', label: 'Oman Healthcare Reports' },
+  { to: '/market-reports/country/sweden', label: 'Sweden Healthcare Reports' },
+  ...DEVELOPED_MARKET_MEDTECH_LISTICLE_LINKS,
+  ...INDUSTRIES_INSIGHT_EDITORIAL_LINKS,
+  { to: SKYRIZI_CANONICAL_PATH, label: 'Skyrizi July rankings: omnichannel lessons' },
 ];
 
 /** Canonical Arabic posts under /ar/blog/ (also listed in public/sitemap.xml). */

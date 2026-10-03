@@ -110,6 +110,11 @@ export default function HealthcareMarketResearchSweden() {
                 Swedish pharmaceutical market research
               </Link>{' '}
               covers HCP surveys, regional payer research, TLV value-based HTA studies, and market access strategy.
+              Therapy-specific briefs live in the{' '}
+              <Link to="/market-reports/country/sweden" className="text-primary underline font-medium">
+                Sweden healthcare reports collection
+              </Link>
+              .
             </p>
           </div>
         </section>

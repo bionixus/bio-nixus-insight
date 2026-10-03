@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import {
   INDUSTRIES_INSIGHTS_INDEX_PATH,
   INDUSTRIES_INSIGHT_POST_PATH_PREFIX,
+  INDUSTRIES_INSIGHT_EDITORIAL_LINKS,
 } from '@/lib/blog-content-silo';
 import { industrySlugLabel } from '@/lib/industries-insights-filters';
 import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
@@ -111,7 +112,18 @@ export default function IndustriesInsightsSection() {
                 ))}
               </ul>
             ) : (
-              <p className="bx-insights-empty">{copy.insightsEmpty}</p>
+              <ul className="bx-insights-teaser-list">
+                {INDUSTRIES_INSIGHT_EDITORIAL_LINKS.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} className="bx-insights-teaser-card">
+                      <span className="bx-insights-teaser-title">{item.label}</span>
+                      <span className="bx-insights-teaser-arrow" aria-hidden="true">
+                        →
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             )}
             <Link to={INDUSTRIES_INSIGHTS_INDEX_PATH} className="bx-insights-portal-foot">
               {copy.insightsBrowseAll}
