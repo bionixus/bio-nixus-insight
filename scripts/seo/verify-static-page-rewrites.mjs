@@ -15,7 +15,8 @@ import { fileURLToPath } from 'url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
-const { rewrites = [] } = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8'));
+const vercelConfig = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8'));
+const { rewrites = [] } = vercelConfig;
 const confFiles = readdirSync(join(root, 'public/conf')).filter((f) => f.endsWith('.html'));
 
 const destinations = new Set(rewrites.map((r) => r.destination));
@@ -24,6 +25,12 @@ const sources = rewrites.map((r) => r.source);
 const catchAllIndex = sources.findIndex((s) => s.startsWith('/:path'));
 
 const errors = [];
+const includeFiles = vercelConfig.functions?.['api/indexnow-key.ts']?.includeFiles;
+if (typeof includeFiles === 'string' && includeFiles.length > 256) {
+  errors.push(
+    `functions.api/indexnow-key.ts.includeFiles is ${includeFiles.length} chars (Vercel max 256).`,
+  );
+}
 
 for (const file of confFiles) {
   const destination = `/conf/${file}`;
