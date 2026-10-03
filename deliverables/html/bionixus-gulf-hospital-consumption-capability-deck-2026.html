@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BioNixus — Capabilities: Gulf Hospital Access for Dupixent, Atopic Dermatitis and Severe Asthma | 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* BioNixus brand book v1.2 — Playfair Display + Inter, navy + warm gold, cream neutrals */
+:root{
+  --navy-deep:#101C30;
+  --navy-mid:#22345A;
+  --navy-3:#283F5E;
+  --primary:#14233E;
+  --gold:#F5A503;
+  --gold-light:#F7C948;
+  --gold-deep:#E8B829;
+  --cream:#F8F6F2;
+  --cream-dark:#EDEBE7;
+  --white:#FFFFFF;
+  --fg:#1B2640;
+  --muted:#5E6878;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:var(--sans);color:var(--fg);background:#d9d6cf;line-height:1.5;font-size:15px}
+.document{width:1280px;margin:24px auto 48px}
+.slide{
+  width:1280px;height:720px;background:var(--white);position:relative;overflow:hidden;
+  margin-bottom:18px;padding:40px 56px 52px;border-radius:6px;
+  box-shadow:0 25px 50px hsl(220 47% 15% / .15);
+}
+.slide--navy{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy-mid) 50%,var(--navy-3) 100%);color:#fff}
+.slide--cream{background:var(--cream)}
+
+.kicker{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+.slide--navy .kicker{color:var(--gold-light)}
+h1,h2{font-family:var(--serif);color:var(--primary);letter-spacing:-.01em}
+.slide--navy h1,.slide--navy h2{color:#fff}
+h1{font-size:52px;font-weight:700;line-height:1.08}
+h2{font-size:34px;font-weight:600;line-height:1.15}
+h3{font-family:var(--sans);font-size:18px;font-weight:600;color:var(--primary);line-height:1.3}
+.slide--navy h3{color:#fff}
+h1 em,h2 em{font-style:italic;font-weight:600;color:var(--gold)}
+.lede{font-size:17px;line-height:1.6;color:var(--muted);max-width:72ch;margin-top:10px}
+.slide--navy .lede{color:rgba(255,255,255,.76)}
+
+.foot{
+  position:absolute;left:56px;right:56px;bottom:18px;display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;color:var(--muted);letter-spacing:.04em;
+}
+.slide--navy .foot{color:rgba(255,255,255,.62)}
+.foot .rule{flex:1;height:1px;background:var(--cream-dark);margin:0 16px}
+.slide--navy .foot .rule{background:rgba(255,255,255,.16)}
+/* Logo lockup: red heart mark + wordmark + slogan, laid out as in bionixus-logo.png */
+.lockup{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--primary)}
+.lockup img{height:30px;width:auto;display:block}
+.lockup .txt{display:flex;flex-direction:column;line-height:1}
+.lockup .wm{font-family:var(--sans);font-weight:800;font-size:17px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary)}
+.lockup .sl{font-family:var(--sans);font-weight:400;font-size:8.5px;letter-spacing:.02em;color:var(--muted);margin-top:4px;white-space:nowrap}
+.lockup--lg{gap:16px}
+.lockup--lg img{height:60px}
+.lockup--lg .wm{font-size:34px;letter-spacing:.22em}
+.lockup--lg .sl{font-size:15px;margin-top:7px;letter-spacing:.03em}
+.lockup--md{gap:12px}
+.lockup--md img{height:44px}
+.lockup--md .wm{font-size:25px}
+.lockup--md .sl{font-size:11.5px;margin-top:5px}
+/* Reversed (white) version for navy backgrounds: text-only, as in bionixus-logo-footer.png */
+.lockup--rev img{content:url("assets/bionixus-heart-white.png")}
+.lockup--rev .wm{color:#fff}
+.lockup--rev .sl{color:rgba(255,255,255,.85)}
+.gold-rule{width:64px;height:3px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);margin:14px 0 18px;border-radius:2px}
+
+/* cover */
+.cover{display:grid;grid-template-columns:1.1fr .9fr;padding:0;border-radius:6px}
+.cover-l{padding:44px 44px 44px 56px;display:flex;flex-direction:column;background:var(--white);min-height:0}
+.cover .lede{font-size:16px}
+.cover-r{
+  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy-mid) 50%,var(--navy-3) 100%);
+  color:#fff;padding:56px 48px;position:relative;
+}
+.cover-r::after{content:"";position:absolute;right:-90px;bottom:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,3,.28),transparent 68%)}
+.cover h1{margin-top:auto;font-size:46px}
+.cover .lede{margin-top:16px;max-width:38ch;color:#4b5567;margin-bottom:auto}
+.tag{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted)}
+.cover-fact{position:relative;z-index:1;border-top:2px solid var(--gold);padding-top:12px;margin-bottom:22px}
+.cover-fact b{display:block;font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2}
+.cover-fact span{display:block;margin-top:5px;font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{border:1px solid var(--cream-dark);border-radius:6px;padding:7px 12px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--primary);background:var(--cream)}
+
+/* section divider */
+.sec-no{position:absolute;top:36px;right:56px;font-family:var(--serif);font-weight:700;font-size:120px;line-height:1;color:var(--gold);opacity:.95}
+.sec-copy{position:absolute;left:56px;top:250px;max-width:760px}
+.sec-copy h2{font-size:52px;line-height:1.05}
+.sec-copy p{margin-top:16px;font-size:19px;color:rgba(255,255,255,.76);max-width:40ch;line-height:1.5}
+
+/* contents */
+.toc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.toc article{background:var(--cream);border-radius:6px;padding:24px 22px;min-height:400px;border-top:4px solid var(--gold);position:relative}
+.toc .n{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--primary);display:block;line-height:1;margin-bottom:14px}
+.toc h3{font-size:20px;margin-bottom:8px}
+.toc p{font-size:14.5px;color:var(--muted);line-height:1.55}
+
+/* stats + grid */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.stat{background:var(--cream);border-radius:6px;padding:18px 18px 16px;border-top:3px solid var(--gold)}
+.stat b{display:block;font-family:var(--serif);font-size:40px;font-weight:700;color:var(--primary);line-height:1}
+.stat span{display:block;margin-top:8px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.slide--navy .stat{background:rgba(255,255,255,.06);border-top-color:var(--gold-light)}
+.slide--navy .stat b{color:#fff}
+.slide--navy .stat span{color:rgba(255,255,255,.65)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.card{background:var(--cream);border-radius:6px;padding:20px 20px 16px}
+.slide--navy .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.card .n{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--gold);line-height:1}
+.card h3{margin:8px 0 8px;font-size:21px}
+.card p{font-size:14.5px;color:#3a4556;line-height:1.55}
+.slide--navy .card p{color:rgba(255,255,255,.78)}
+.card ul{list-style:none;margin-top:12px}
+.card li{font-size:14px;padding:7px 0 7px 16px;border-top:1px solid var(--cream-dark);position:relative;color:var(--fg)}
+.card li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);position:absolute;left:0;top:13px}
+.slide--navy .card li{border-top-color:rgba(255,255,255,.12);color:rgba(255,255,255,.85)}
+
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.svc article{background:var(--cream);border-radius:6px;padding:20px 20px 18px;min-height:240px;border:1px solid var(--cream-dark)}
+.slide--cream .svc article,.slide--cream .card,.slide--cream .step{background:var(--white);border:1px solid var(--cream-dark)}
+.svc .n{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--gold-deep)}
+.svc h3{font-size:18px;margin:10px 0 10px;line-height:1.25}
+.svc p{font-size:14px;color:#3a4556;line-height:1.55}
+.svc article.hi{background:var(--primary)}
+.svc article.hi h3{color:#fff}
+.svc article.hi p{color:rgba(255,255,255,.78)}
+.svc article.hi .n{color:var(--gold-light)}
+
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;border:1px solid var(--cream-dark);border-radius:6px;overflow:hidden}
+.ladder > div{padding:22px 20px 20px;border-right:1px solid var(--cream-dark);background:var(--white);min-height:250px}
+.ladder > div:last-child{border-right:0}
+.ladder > div.on{background:var(--primary);color:#fff}
+.ladder .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+.ladder > div.on .k{color:var(--gold-light)}
+.ladder strong{display:block;font-family:var(--serif);font-size:26px;font-weight:600;margin:8px 0 10px}
+.ladder p{font-size:14px;color:var(--muted);line-height:1.55}
+.ladder > div.on p{color:rgba(255,255,255,.78)}
+.ladder .st{display:inline-block;margin-top:14px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:6px;background:var(--cream);color:var(--primary)}
+.ladder > div.on .st{background:rgba(245,165,3,.18);color:var(--gold-light)}
+.slide--cream .call{background:var(--white)}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:22px}
+.step{background:var(--cream);border-radius:6px;padding:18px 16px 16px;position:relative}
+.step .n{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--gold);line-height:1}
+.step h3{font-size:16px;margin:8px 0 6px}
+.step p{font-size:13.5px;color:#3a4556;line-height:1.5}
+
+/* proof pages */
+.proof{display:grid;grid-template-columns:auto 1fr;gap:28px;margin-top:14px;align-items:start}
+.shot{
+  background:var(--cream);border:1px solid var(--cream-dark);border-radius:6px;padding:10px;
+  box-shadow:0 10px 15px hsl(220 30% 15% / .1);
+}
+.shot img{display:block;height:456px;width:auto;border-radius:3px}
+.shot figcaption{font-size:10.5px;color:var(--muted);margin-top:8px;line-height:1.4;max-width:452px}
+.read{padding-top:4px}
+.read h3{font-size:22px;font-family:var(--serif);font-weight:600;margin-bottom:6px}
+.read .sub{font-size:13px;color:var(--muted);margin-bottom:12px}
+.kv{display:grid;grid-template-columns:1fr auto;gap:0 18px;font-size:14px;border-top:1px solid var(--cream-dark)}
+.kv div{padding:6px 0;border-bottom:1px solid var(--cream-dark)}
+.kv div:nth-child(even){font-family:var(--serif);font-weight:600;text-align:right;color:var(--primary);font-size:15px}
+.call{background:var(--cream);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 14px;margin-top:14px;font-size:14px;line-height:1.55}
+.read .call{margin-top:10px;font-size:13.5px;padding:10px 12px}
+.read .note{margin-top:8px}
+.read--tight .kv div{padding:4px 0}
+.read--tight .call{margin-top:8px;padding:8px 12px}
+.read--tight .sub{margin-bottom:8px}
+.call strong{color:var(--primary)}
+.note{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.5}
+
+.yes,.no{font-size:14.5px;padding:8px 0 8px 24px;position:relative;border-top:1px solid var(--cream-dark);line-height:1.45}
+.yes::before,.no::before{position:absolute;left:0;top:8px;font-weight:700;font-size:14px}
+.yes::before{content:"✓";color:var(--gold-deep)}
+.no::before{content:"—";color:#a3aab5}
+.panel{background:var(--white);border:1px solid var(--cream-dark);border-radius:6px;padding:18px 20px 14px}
+.panel h3{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:2px}
+.panel .sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.badge{border-radius:6px;padding:7px 11px;font-size:12px;font-weight:600;letter-spacing:.04em;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff}
+.cta{
+  display:inline-block;margin-top:22px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);
+  color:var(--navy-deep);font-weight:600;text-decoration:none;padding:13px 20px;border-radius:6px;font-size:15px;
+}
+
+
+/* charts */
+.viz{display:grid;grid-template-columns:.9fr 1.35fr;gap:16px;margin-top:14px}
+.fill-w{width:100%;height:auto;display:block}
+.viz-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:6px;padding:16px 18px 12px}
+.viz-card h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:2px}
+.viz-card .sub{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.45}
+.donut-row{display:flex;align-items:center;gap:18px}
+.legend{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
+.lg{display:grid;grid-template-columns:10px 1fr auto;gap:8px;align-items:center;font-size:12.5px}
+.lg i{width:10px;height:10px;border-radius:2px;display:block}
+.lg b{font-family:var(--serif);font-size:14px;color:var(--primary)}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:4px}
+.sw-o{border:1.5px dashed var(--gold);background:transparent}
+/* coverage */
+.cov{display:grid;grid-template-columns:230px 1fr 1fr .9fr;gap:14px;margin-top:12px;align-items:start}
+.cov-net{background:var(--cream);border-radius:6px;padding:8px}
+.cov-panel{background:var(--cream);border-radius:6px;padding:14px 14px 10px;border-top:3px solid var(--gold)}
+.cov-panel .stat{padding:12px 12px 10px}.cov-panel .stat b{font-size:28px}.cov-panel .stat span{font-size:11px}
+.cov-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.cov-h h3{font-family:var(--serif);font-size:16.5px;font-weight:600;flex:1 1 100%;margin-top:2px;line-height:1.25}
+.flag{font-family:var(--sans);font-weight:800;font-size:11px;letter-spacing:.1em;background:var(--primary);color:#fff;border-radius:4px;padding:4px 7px}
+.tagp{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep)}
+.tiles{display:flex;flex-direction:column;gap:6px}
+.tile{display:grid;grid-template-columns:1fr 62px 62px;gap:8px;align-items:center;font-size:12px}
+.tile .tn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .tb{height:8px;background:var(--cream-dark);border-radius:4px;overflow:hidden}
+.tile .tb i{display:block;height:100%;background:var(--primary)}
+.tile .tv{font-family:var(--serif);font-weight:600;font-size:13px;text-align:right;color:var(--primary)}
+
+/* account list */
+.acct{display:flex;flex-direction:column;gap:5px;margin-top:4px}
+.acct-row{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:center;background:var(--cream);border-radius:6px;padding:7px 12px;border:1px solid var(--cream-dark)}
+.acct-row.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.acct-dot{width:10px;height:10px;border-radius:50%;background:var(--cream-dark);border:2px solid #fff;box-shadow:0 0 0 1px var(--cream-dark)}
+.acct-row.on .acct-dot{background:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.acct-row b{display:block;font-size:13.5px;font-weight:600;line-height:1.3}
+.acct-row span{display:block;font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+.acct-row.on span{color:rgba(255,255,255,.75)}
+.acct-row em{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap}
+.acct-row.on em{color:var(--gold-light)}
+
+em.cov{display:inline-block;grid-template-columns:none;gap:0;margin-top:0;font-style:normal;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);border:1px solid var(--gold-light);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.acct-row.hi{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);border-color:var(--gold-deep);color:var(--navy-deep)}
+.acct-row.hi span{color:rgba(16,28,48,.78)}
+.acct-row.hi em{color:var(--navy-deep)}
+.acct-big{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1;color:var(--navy-deep);width:34px;text-align:center}
+.acct-row.hi{grid-template-columns:34px 1fr auto}
+
+.close-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:start}
+.contact{border-left:1px solid rgba(255,255,255,.16);padding-left:36px}
+.contact-name{font-size:17px;font-weight:600;margin-top:14px;color:#fff}
+.contact-line{display:block;color:rgba(255,255,255,.85);text-decoration:none;font-size:15px;margin-top:8px;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:8px}
+.contact-line:hover{color:var(--gold-light)}
+.contact .cta{margin-top:18px}
+
+@page{size:13.333in 7.5in;margin:0}
+@media print{
+  body{background:#fff}
+  .document{margin:0;width:auto}
+  .slide{margin:0;box-shadow:none;border-radius:0;page-break-after:always;break-after:page}
+  .slide:last-child{page-break-after:auto}
+}
+</style>
+</head>
+<body>
+<div class="document">
+
+  <!-- 01 COVER -->
+  <section class="slide cover" aria-label="Cover">
+    <div class="cover-l">
+      <div class="lockup lockup--lg" role="img" aria-label="BioNixus — Intelligence For Business Growth">
+        <img src="assets/bionixus-heart.png" alt=""/>
+        <div class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></div>
+      </div>
+      <h1>Hospital-level intelligence in the Gulf, <em>down to the ordering physician.</em></h1>
+      <p class="lede">BioNixus capabilities for pharmaceutical commercial, medical, and market-access teams — with a worked example on Dupixent in atopic dermatitis and severe asthma.</p>
+      <div class="chips">
+        <span class="chip">Saudi Arabia · UAE · Kuwait</span>
+        <span class="chip">Dupixent</span>
+        <span class="chip">Capability deck · 2026</span>
+      </div>
+    </div>
+    <div class="cover-r">
+      <div class="cover-fact" style="margin-top:8px">
+        <b>Since 2012, in regulated markets</b>
+        <span>Founded in London. US headquarters in Sheridan, Wyoming. MENA regional office in Greater Cairo.</span>
+      </div>
+      <div class="cover-fact">
+        <b>Physicians, pharmacists, buyers</b>
+        <span>Three routes into the hospital account. Hospital, product, and physician-level data from the systems that record it — including direct hospital ERP access in Saudi Arabia.</span>
+      </div>
+      <div class="cover-fact">
+        <b>Evidence scoped to a decision</b>
+        <span>Quantitative and qualitative research, market access, KOL mapping, and hospital consumption analytics — built around one commercial question.</span>
+      </div>
+      <p class="foot" style="color:rgba(255,255,255,.6)"><span>Confidential</span><span>01 / 19</span></p>
+    </div>
+  </section>
+
+  <!-- 02 CONTENTS -->
+  <section class="slide" aria-label="Contents">
+    <p class="kicker">Contents</p>
+    <h2>What this deck covers</h2>
+    <div class="toc">
+      <article>
+        <span class="n">1</span>
+        <h3>Who BioNixus is</h3>
+        <p>Heritage, footprint, and the seven core services we run for pharma, biotech, and medtech teams.</p>
+      </article>
+      <article>
+        <span class="n">2</span>
+        <h3>Hospital access capability</h3>
+        <p>How we reach the account through physicians, pharmacists, and buyers, and the four depths of consumption data we deliver.</p>
+      </article>
+      <article>
+        <span class="n">3</span>
+        <h3>Proof: Dupixent</h3>
+        <p>Three source extracts, shown as received: a Kuwait Ministry of Health issue file, an NGHA Oracle inventory worksheet in Saudi Arabia, and a physician-level order ledger from a Burjeel branch in the UAE.</p>
+      </article>
+      <article>
+        <span class="n">4</span>
+        <h3>Working with us</h3>
+        <p>What an engagement looks like, the compliance posture behind it, and how to scope the next file for atopic dermatitis or severe asthma.</p>
+      </article>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>02 / 19</span></p>
+  </section>
+
+  <!-- 03 SECTION 1 -->
+  <section class="slide slide--navy" aria-label="Section one">
+    <div class="sec-no">01</div>
+    <div class="sec-copy">
+      <p class="kicker">Who BioNixus is</p>
+      <h2>A specialist healthcare and pharmaceutical market research firm.</h2>
+      <p>Founded in London in 2012. Offices in the United States, the United Kingdom, Egypt, and the Gulf.</p>
+    </div>
+    <p class="foot"><span class="lockup lockup--rev"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>03 / 19</span></p>
+  </section>
+
+  <!-- 04 AT A GLANCE -->
+  <section class="slide" aria-label="At a glance">
+    <p class="kicker">01 — At a glance</p>
+    <h2>Built in pharma, the most regulated industry we serve.</h2>
+    <p class="lede">Founded in London in 2012 in pharmaceutical market research. Expansion into the Middle East and the Americas brought a MENA regional office in Greater Cairo and US global headquarters in Sheridan, Wyoming. The same evidence standards apply to every engagement, whatever the sector.</p>
+    <div class="stats">
+      <div class="stat"><b>127</b><span>Projects · YTD 2026</span></div>
+      <div class="stat"><b>118</b><span>Clients served</span></div>
+      <div class="stat"><b>48</b><span>Countries covered</span></div>
+      <div class="stat"><b>14+</b><span>Therapy areas</span></div>
+    </div>
+    <div class="two" style="margin-top:22px">
+      <article class="card">
+        <h3>Where we sit</h3>
+        <ul>
+          <li>Global headquarters — Sheridan, Wyoming, United States</li>
+          <li>Founding office — London, United Kingdom</li>
+          <li>MENA regional office — Greater Cairo, Egypt</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Priority markets and buyers</h3>
+        <ul>
+          <li>Saudi Arabia · UAE · Kuwait · Qatar · Egypt · wider GCC and MENA</li>
+          <li>United Kingdom · Germany · France · Italy · Spain · Brazil · United States</li>
+          <li>Pharma commercial, medical, and market-access teams; biotech; specialty pharma; medtech</li>
+        </ul>
+      </article>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>04 / 19</span></p>
+  </section>
+
+  <!-- 05 SERVICES -->
+  <section class="slide slide--cream" aria-label="Core services">
+    <p class="kicker">01 — Core services</p>
+    <h2>Seven services. One rule: start from the commercial question.</h2>
+    <div class="svc">
+      <article>
+        <div class="n">01</div>
+        <h3>Quantitative healthcare market research</h3>
+        <p>Physician and payer survey programmes, demand and segmentation analysis, market sizing and forecasting.</p>
+      </article>
+      <article>
+        <div class="n">02</div>
+        <h3>Qualitative pharmaceutical research</h3>
+        <p>In-depth interviews and focus groups, treatment-pathway and barrier analysis, message and evidence testing.</p>
+      </article>
+      <article>
+        <div class="n">03</div>
+        <h3>Market access and value evidence</h3>
+        <p>Payer evidence-expectation mapping, access-barrier diagnostics, pricing, reimbursement, and value-communication support.</p>
+      </article>
+      <article>
+        <div class="n">04</div>
+        <h3>KOL and stakeholder mapping</h3>
+        <p>KOL influence mapping by country, stakeholder prioritisation, engagement strategy inputs.</p>
+      </article>
+      <article class="hi">
+        <div class="n">05</div>
+        <h3>Hospital sales data and consumption analytics</h3>
+        <p>Hospital, product, and physician-level consumption from the systems that record it. The subject of this deck.</p>
+      </article>
+      <article>
+        <div class="n">06</div>
+        <h3>Brand tracking and competitive intelligence</h3>
+        <p>Competitor pipeline monitoring, landscape analysis, launch readiness assessments.</p>
+      </article>
+      <article>
+        <div class="n">07</div>
+        <h3>Pricing and market access strategy</h3>
+        <p>HTA submission support, formulary and tender strategy, willingness-to-pay studies.</p>
+      </article>
+      <article>
+        <div class="n">+</div>
+        <h3>Real-world evidence</h3>
+        <p>Real-world evidence programmes for pharma, run alongside the primary research and consumption work.</p>
+      </article>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>05 / 19</span></p>
+  </section>
+
+  <!-- 06 SECTION 2 -->
+  <section class="slide slide--navy" aria-label="Section two">
+    <div class="sec-no">02</div>
+    <div class="sec-copy">
+      <p class="kicker">Hospital access capability</p>
+      <h2>Into the account, through the people who run it.</h2>
+      <p>Selected major hospitals in Saudi Arabia, the UAE, Kuwait, and the wider Gulf. Account by account — not a projected national panel.</p>
+    </div>
+    <p class="foot"><span class="lockup lockup--rev"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>06 / 19</span></p>
+  </section>
+
+  <!-- 07 THREE DOORS -->
+  <section class="slide" aria-label="Three routes">
+    <p class="kicker">02 — Access model</p>
+    <h2>Three doors into the same hospital.</h2>
+    <p class="lede">Each answers a different commercial question. Together they show demand, what the pharmacy actually issued, and who wrote the order.</p>
+    <div class="three">
+      <article class="card">
+        <div class="n">01</div>
+        <h3>Physicians</h3>
+        <p>The name on the order line. Useful where influence and volume are not the same person.</p>
+        <ul>
+          <li>Ordering physician per line</li>
+          <li>Strength, quantity, unit, sale date</li>
+          <li>Which brands a named clinician moves</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="n">02</div>
+        <h3>Pharmacists</h3>
+        <p>The issue file. What left the store, not what a panel model allocated to the country.</p>
+        <ul>
+          <li>Requested versus issued quantity</li>
+          <li>Month, issuing point, value in local currency</li>
+          <li>Where demand was only partly filled</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="n">03</div>
+        <h3>Buyers</h3>
+        <p>The procurement seat: formulary, tender, and the decision to keep stocking the brand.</p>
+        <ul>
+          <li>Public hospital and private account routes</li>
+          <li>Who controls the buy, not only the script</li>
+          <li>Why an issue file moved, or stopped</li>
+        </ul>
+      </article>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>07 / 19</span></p>
+  </section>
+  <!-- HOSPITAL COVERAGE -->
+  <section class="slide" aria-label="Hospitals in the files">
+    <p class="kicker">02 — Coverage today</p>
+    <h2>The accounts in our files: Saudi Arabia, Kuwait, and the UAE.</h2>
+    <p class="lede">Institutions shown with evidence are those in the three source extracts. Wider coverage is stated per country.</p>
+    <div class="cov">
+      <div class="cov-net"><svg class="fill-w" viewBox="0 0 300 330" role="img" aria-label="Access network: BioNixus reaches hospitals in Saudi Arabia, Kuwait and the UAE through physicians, pharmacists, buyers and hospital systems">
+<g stroke="#9AA7BD" stroke-width="1.3" fill="none">
+<path d="M48 165 C 90 165, 90 60, 130 60"/><path d="M48 165 C 90 165, 90 130, 130 130"/><path d="M48 165 C 90 165, 90 200, 130 200"/><path d="M48 165 C 90 165, 90 270, 130 270"/>
+</g>
+<g stroke="#F5A503" stroke-width="1.3" fill="none">
+<path d="M200 60 C 228 60, 228 95, 256 95"/><path d="M200 130 C 228 130, 228 95, 256 95"/><path d="M200 200 C 228 200, 228 165, 256 165"/><path d="M200 130 C 228 130, 228 165, 256 165"/><path d="M200 270 C 228 270, 228 235, 256 235"/><path d="M200 60 C 232 60, 232 235, 256 235" opacity=".5"/><path d="M200 270 C 232 270, 232 95, 256 95" opacity=".5"/><path d="M200 200 C 232 200, 232 235, 256 235" opacity=".7"/>
+</g>
+<circle cx="48" cy="165" r="32" fill="#101C30"/><text x="48" y="162" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="8.5" letter-spacing="1.5" fill="#fff">BIONIXUS</text><text x="48" y="174" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#F7C948">field + data</text>
+<g font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#1B2640">
+<rect x="130" y="45" width="70" height="30" rx="6" fill="#fff" stroke="#EDEBE7"/><text x="165" y="64" text-anchor="middle">Physicians</text>
+<rect x="130" y="115" width="70" height="30" rx="6" fill="#fff" stroke="#EDEBE7"/><text x="165" y="134" text-anchor="middle">Pharmacists</text>
+<rect x="130" y="185" width="70" height="30" rx="6" fill="#fff" stroke="#EDEBE7"/><text x="165" y="204" text-anchor="middle">Buyers</text>
+<rect x="130" y="255" width="70" height="30" rx="6" fill="#fff" stroke="#EDEBE7"/><text x="165" y="274" text-anchor="middle">Hospital ERP</text>
+</g>
+<g font-family="Inter,sans-serif">
+<circle cx="272" cy="95" r="22" fill="#F5A503"/><text x="272" y="93" text-anchor="middle" font-weight="800" font-size="10" fill="#101C30">KSA</text><text x="272" y="104" text-anchor="middle" font-size="6.5" fill="#101C30">NGHA</text>
+<circle cx="272" cy="165" r="22" fill="#F5A503"/><text x="272" y="163" text-anchor="middle" font-weight="800" font-size="10" fill="#101C30">KW</text><text x="272" y="174" text-anchor="middle" font-size="6.5" fill="#101C30">7 points</text>
+<circle cx="272" cy="235" r="22" fill="#F5A503"/><text x="272" y="233" text-anchor="middle" font-weight="800" font-size="10" fill="#101C30">UAE</text><text x="272" y="244" text-anchor="middle" font-size="6.5" fill="#101C30">Burjeel</text>
+</g></svg></div>
+      <div class="cov-panel">
+        <div class="cov-h"><span class="flag">KSA</span><span class="tagp">Public · hospital ERP</span><h3>Saudi Arabia · National Guard Health Affairs</h3></div>
+        <p class="note" style="margin:0 0 8px">Oracle item worksheet, Health Affairs Riyadh OU — item record, NUPCO code, vendor, receipts, stock, and consumption tabs.</p>
+        <div class="stats" style="grid-template-columns:1fr 1fr;gap:8px;margin-top:6px">
+          <div class="stat"><b>30</b><span>Top hospital branches</span></div>
+          <div class="stat"><b style="font-size:22px;line-height:1.35">Gov + Private</b><span>Both sectors</span></div>
+        </div>
+        <p class="note" style="border-top:1px solid var(--cream-dark);padding-top:8px"><strong>Covered:</strong> top 30 hospital branches in KSA, governmental and private — including National Guard Health Affairs (shown), KAMC Riyadh, and King Faisal Specialist Hospital.</p>
+      </div>
+      <div class="cov-panel">
+        <div class="cov-h"><span class="flag">KW</span><span class="tagp">Public · issue file</span><h3>Kuwait · Ministry of Health issuing points</h3></div>
+        <div class="tiles"><div class="tile"><span class="tn">Mansuriya (A. Alsaid)</span><span class="tb"><i style="width:100%"></i></span><span class="tv">840 PFS</span></div><div class="tile"><span class="tn">Asaad Al Hamad Ctr</span><span class="tb"><i style="width:88%"></i></span><span class="tv">740 PFS</span></div><div class="tile"><span class="tn">Sabah Hospital</span><span class="tb"><i style="width:38%"></i></span><span class="tv">320 PFS</span></div><div class="tile"><span class="tn">Amiri Hospital</span><span class="tb"><i style="width:31%"></i></span><span class="tv">260 PFS</span></div><div class="tile"><span class="tn">Zain Hospital</span><span class="tb"><i style="width:13%"></i></span><span class="tv">110 PFS</span></div><div class="tile"><span class="tn">Sabah Pediatric Pharm.</span><span class="tb"><i style="width:5%"></i></span><span class="tv">38 PFS</span></div><div class="tile"><span class="tn">Central Prison</span><span class="tb"><i style="width:5%"></i></span><span class="tv">38 PFS</span></div></div>
+      </div>
+      <div class="cov-panel">
+        <div class="cov-h"><span class="flag">UAE</span><span class="tagp">Private · order ledger</span><h3>United Arab Emirates · Burjeel branch</h3></div>
+        <div class="stats" style="grid-template-columns:1fr 1fr;gap:8px;margin-top:6px">
+          <div class="stat"><b>12</b><span>Ordering physicians</span></div>
+          <div class="stat"><b>9</b><span>Brands on ledger</span></div>
+          <div class="stat"><b>2</b><span>Dupixent strengths</span></div>
+          <div class="stat"><b>2025</b><span>Order dates on crop</span></div>
+        </div>
+        <p class="note">Physician-level: material, quantity, unit, sale date, and ordering physician on each line.</p>
+      </div>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>08 / 19</span></p>
+  </section>
+
+
+  <!-- 08 GRAIN LADDER -->
+  <section class="slide slide--cream" aria-label="Data depth">
+    <p class="kicker">02 — What we deliver</p>
+    <h2>Four depths of consumption data.</h2>
+    <p class="lede">Syndicated audits describe a country. Launch, access, and key-account decisions are made inside a hospital. These are the cuts BioNixus puts on the table, and which of them the three extracts in this deck already show.</p>
+    <div class="ladder">
+      <div class="on">
+        <div class="k">Depth 01</div>
+        <strong>Hospital</strong>
+        <p>Issue and request by named institution or pharmacy point, month by month, in local currency.</p>
+        <span class="st">Shown · Kuwait MOH · NGHA Oracle</span>
+      </div>
+      <div class="on">
+        <div class="k">Depth 02</div>
+        <strong>Product</strong>
+        <p>SKU as the system stocks it: strength, pack, unit of measure, and the price the ledger uses.</p>
+        <span class="st">Shown · all three extracts</span>
+      </div>
+      <div>
+        <div class="k">Depth 03</div>
+        <strong>Indication</strong>
+        <p>The use the volume sits in, where the source system or the ordering physician separates it.</p>
+        <span class="st">Commissioned per brief</span>
+      </div>
+      <div class="on">
+        <div class="k">Depth 04</div>
+        <strong>Physician</strong>
+        <p>The ordering clinician’s name on the sales line, with quantity, unit, and date.</p>
+        <span class="st">Shown · Burjeel UAE ledger</span>
+      </div>
+    </div>
+    <div class="call" style="margin-top:20px"><strong>Why this matters for Dupixent.</strong> Atopic dermatitis and severe asthma share the same molecule, and a hospital issue file records the pack, not the diagnosis. The hospital and physician depths tell you where the volume is and who orders it. The indication depth is what separates a dermatology account from a respiratory one — and it is scoped as its own step.</div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>09 / 19</span></p>
+  </section>
+
+  <!-- 09 SECTION 3 -->
+  <section class="slide slide--navy" aria-label="Section three">
+    <div class="sec-no">03</div>
+    <div class="sec-copy">
+      <p class="kicker">Proof · Dupixent</p>
+      <h2>Three source extracts, shown as received.</h2>
+      <p>Kuwait: a Ministry of Health consumption statistic by hospital. Saudi Arabia: the National Guard’s Oracle item worksheet. UAE: a physician-level order ledger from a Burjeel branch. Figures beside each image are transcribed from it, nothing more.</p>
+    </div>
+    <p class="foot"><span class="lockup lockup--rev"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>10 / 19</span></p>
+  </section>
+
+  <!-- 10 KUWAIT SCREENSHOT -->
+  <section class="slide" aria-label="Kuwait consumption file">
+    <p class="kicker">03 — Hospital depth · Kuwait</p>
+    <h2>Dupilumab 300 mg/2 mL, as the ministry system issued it.</h2>
+    <div class="proof">
+      <figure class="shot">
+        <img src="assets/kuwait-moh-dupixent-consumption-2025.jpg" alt="Kuwait Ministry of Health M.I.S. consumption statistic per item for Dupilumab (Dupixent) 300 mg/2 mL, showing requested and issued quantities by hospital for January to April 2025"/>
+        <figcaption>Source extract, unaltered. M.I.S. Reports (dscstr03) · TPHARM · Consumption Statistic Per Item · item 6505-99-02-13340 · basic price KD 210.37611 · date of issue 07-05-2025 · page 1.</figcaption>
+      </figure>
+      <div class="read">
+        <h3>What page 1 records</h3>
+        <p class="sub">Issued PFS and value, periods 202501–202504, per consumer on this page</p>
+        <div class="kv">
+          <div>Abdulkareem Alsaid — Mansuriya</div><div>840 · KD 176,715.932</div>
+          <div>Asaad Al Hamad Center</div><div>740 · KD 155,678.321</div>
+          <div>Sabah Hospital</div><div>320 · KD 67,320.355</div>
+          <div>Amiri Hospital</div><div>260 · KD 54,697.789</div>
+          <div>Zain Hospital</div><div>110 · KD 23,141.372</div>
+          <div>Sabah Hosp. Pediatric Pharmacy</div><div>38 · KD 7,994.292</div>
+          <div>Central Prison</div><div>38 · KD 7,994.292</div>
+          <div><strong>Page 1 total</strong></div><div>2,346 PFS · KD 493,542.353</div>
+        </div>
+        <div class="call"><strong>Request is not issue.</strong> Mansuriya, April: 458 requested, 240 issued. Zain, February: 40 requested, 30 issued. Sabah Hospital: 80 requested and 80 issued in each of the four months.</div>
+        <p class="note">Page 1 only — not a national total. The page does not separate atopic dermatitis from severe asthma; the 300 mg strength is used in both.</p>
+      </div>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>11 / 19</span></p>
+  </section>
+  <!-- KUWAIT CHARTS -->
+  <section class="slide slide--cream" aria-label="Kuwait charts">
+    <p class="kicker">03 — Hospital depth · Kuwait, charted</p>
+    <h2>Where the volume sits, and where demand outran supply.</h2>
+    <div class="viz">
+      <div class="viz-card">
+        <h3>Share of issued 300 mg PFS, page 1</h3>
+        <p class="sub">Seven issuing points · periods 202501–202504 · share of this page, not of Kuwait</p>
+        <div class="donut-row"><svg viewBox="0 0 180 180" width="180" height="180" role="img" aria-label="Share of issued Dupixent 300 mg PFS on page 1 by issuing point"><circle r="70" cx="90" cy="90" fill="none" stroke="#101C30" stroke-width="22" stroke-dasharray="157.48 282.34" stroke-dashoffset="0.00" transform="rotate(-90 90 90)"><title>Abdulkareem Alsaid — Mansuriya: 840 (35.8%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#22345A" stroke-width="22" stroke-dasharray="138.73 301.09" stroke-dashoffset="-157.48" transform="rotate(-90 90 90)"><title>Asaad Al Hamad Center: 740 (31.5%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#3B5480" stroke-width="22" stroke-dasharray="59.99 379.83" stroke-dashoffset="-296.21" transform="rotate(-90 90 90)"><title>Sabah Hospital: 320 (13.6%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#6B7C99" stroke-width="22" stroke-dasharray="48.74 391.08" stroke-dashoffset="-356.21" transform="rotate(-90 90 90)"><title>Amiri Hospital: 260 (11.1%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#9AA7BD" stroke-width="22" stroke-dasharray="20.62 419.20" stroke-dashoffset="-404.95" transform="rotate(-90 90 90)"><title>Zain Hospital: 110 (4.7%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#C3CBD8" stroke-width="22" stroke-dasharray="7.12 432.70" stroke-dashoffset="-425.57" transform="rotate(-90 90 90)"><title>Sabah Hosp. Pediatric Pharmacy: 38 (1.6%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#F5A503" stroke-width="22" stroke-dasharray="7.12 432.70" stroke-dashoffset="-432.70" transform="rotate(-90 90 90)"><title>Central Prison: 38 (1.6%)</title></circle><text x="90" y="86" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="26" fill="#1B2640">2,346</text><text x="90" y="104" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1" fill="#5E6878">PFS · PAGE 1</text></svg><div class="legend"><div class="lg"><i style="background:#101C30"></i><span>Abdulkareem Alsaid — Mansuriya</span><b>35.8%</b></div><div class="lg"><i style="background:#22345A"></i><span>Asaad Al Hamad Center</span><b>31.5%</b></div><div class="lg"><i style="background:#3B5480"></i><span>Sabah Hospital</span><b>13.6%</b></div><div class="lg"><i style="background:#6B7C99"></i><span>Amiri Hospital</span><b>11.1%</b></div><div class="lg"><i style="background:#9AA7BD"></i><span>Zain Hospital</span><b>4.7%</b></div><div class="lg"><i style="background:#C3CBD8"></i><span>Sabah Hosp. Pediatric Pharmacy</span><b>1.6%</b></div><div class="lg"><i style="background:#F5A503"></i><span>Central Prison</span><b>1.6%</b></div></div></div>
+      </div>
+      <div class="viz-card">
+        <h3>Requested vs issued, by month</h3>
+        <p class="sub"><i class="sw" style="background:#101C30"></i>Issued&nbsp;&nbsp;<i class="sw sw-o"></i>Requested (outline) · labels mark months where issue fell short · “–” = no row on the page</p>
+        <svg class="fill-w" viewBox="0 0 706 330" role="img" aria-label="Monthly requested versus issued Dupixent 300 mg PFS by issuing point, January to April 2025"><text x="0" y="12" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#1B2640">Mansuriya</text><line x1="0" y1="144" x2="160" y2="144" stroke="#EDEBE7"/><rect x="8.0" y="96.8" width="24" height="47.2" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Mansuriya Jan: requested 180</title></rect><rect x="8.0" y="96.8" width="24" height="47.2" fill="#101C30"><title>Mansuriya Jan: issued 180</title></rect><text x="20.0" y="92.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">180</text><text x="20.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Jan</text><rect x="48.0" y="49.7" width="24" height="94.3" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Mansuriya Feb: requested 360</title></rect><rect x="48.0" y="86.4" width="24" height="57.6" fill="#101C30"><title>Mansuriya Feb: issued 220</title></rect><text x="60.0" y="45.7" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" fill="#F5A503">220/360</text><text x="60.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Feb</text><rect x="88.0" y="91.6" width="24" height="52.4" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Mansuriya Mar: requested 200</title></rect><rect x="88.0" y="91.6" width="24" height="52.4" fill="#101C30"><title>Mansuriya Mar: issued 200</title></rect><text x="100.0" y="87.6" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">200</text><text x="100.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Mar</text><rect x="128.0" y="24.0" width="24" height="120.0" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Mansuriya Apr: requested 458</title></rect><rect x="128.0" y="81.1" width="24" height="62.9" fill="#101C30"><title>Mansuriya Apr: issued 240</title></rect><text x="140.0" y="20.0" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" fill="#F5A503">240/458</text><text x="140.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Apr</text><text x="182" y="12" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#1B2640">Asaad Al Hamad</text><line x1="182" y1="144" x2="342" y2="144" stroke="#EDEBE7"/><text x="202.0" y="138" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#9AA7BD">–</text><text x="202.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Jan</text><rect x="230.0" y="91.6" width="24" height="52.4" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Asaad Al Hamad Feb: requested 200</title></rect><rect x="230.0" y="91.6" width="24" height="52.4" fill="#101C30"><title>Asaad Al Hamad Feb: issued 200</title></rect><text x="242.0" y="87.6" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">200</text><text x="242.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Feb</text><rect x="270.0" y="107.3" width="24" height="36.7" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Asaad Al Hamad Mar: requested 140</title></rect><rect x="270.0" y="107.3" width="24" height="36.7" fill="#101C30"><title>Asaad Al Hamad Mar: issued 140</title></rect><text x="282.0" y="103.3" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">140</text><text x="282.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Mar</text><rect x="310.0" y="39.2" width="24" height="104.8" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Asaad Al Hamad Apr: requested 400</title></rect><rect x="310.0" y="39.2" width="24" height="104.8" fill="#101C30"><title>Asaad Al Hamad Apr: issued 400</title></rect><text x="322.0" y="35.2" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">400</text><text x="322.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Apr</text><text x="364" y="12" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#1B2640">Sabah Hospital</text><line x1="364" y1="144" x2="524" y2="144" stroke="#EDEBE7"/><rect x="372.0" y="123.0" width="24" height="21.0" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Sabah Hospital Jan: requested 80</title></rect><rect x="372.0" y="123.0" width="24" height="21.0" fill="#101C30"><title>Sabah Hospital Jan: issued 80</title></rect><text x="384.0" y="119.0" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">80</text><text x="384.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Jan</text><rect x="412.0" y="123.0" width="24" height="21.0" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Sabah Hospital Feb: requested 80</title></rect><rect x="412.0" y="123.0" width="24" height="21.0" fill="#101C30"><title>Sabah Hospital Feb: issued 80</title></rect><text x="424.0" y="119.0" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">80</text><text x="424.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Feb</text><rect x="452.0" y="123.0" width="24" height="21.0" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Sabah Hospital Mar: requested 80</title></rect><rect x="452.0" y="123.0" width="24" height="21.0" fill="#101C30"><title>Sabah Hospital Mar: issued 80</title></rect><text x="464.0" y="119.0" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">80</text><text x="464.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Mar</text><rect x="492.0" y="123.0" width="24" height="21.0" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Sabah Hospital Apr: requested 80</title></rect><rect x="492.0" y="123.0" width="24" height="21.0" fill="#101C30"><title>Sabah Hospital Apr: issued 80</title></rect><text x="504.0" y="119.0" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">80</text><text x="504.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Apr</text><text x="546" y="12" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#1B2640">Amiri Hospital</text><line x1="546" y1="144" x2="706" y2="144" stroke="#EDEBE7"/><rect x="554.0" y="133.5" width="24" height="10.5" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Amiri Hospital Jan: requested 40</title></rect><rect x="554.0" y="133.5" width="24" height="10.5" fill="#101C30"><title>Amiri Hospital Jan: issued 40</title></rect><text x="566.0" y="129.5" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">40</text><text x="566.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Jan</text><rect x="594.0" y="117.8" width="24" height="26.2" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Amiri Hospital Feb: requested 100</title></rect><rect x="594.0" y="117.8" width="24" height="26.2" fill="#101C30"><title>Amiri Hospital Feb: issued 100</title></rect><text x="606.0" y="113.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">100</text><text x="606.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Feb</text><rect x="634.0" y="138.8" width="24" height="5.2" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Amiri Hospital Mar: requested 20</title></rect><rect x="634.0" y="138.8" width="24" height="5.2" fill="#101C30"><title>Amiri Hospital Mar: issued 20</title></rect><text x="646.0" y="134.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">20</text><text x="646.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Mar</text><rect x="674.0" y="117.8" width="24" height="26.2" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Amiri Hospital Apr: requested 100</title></rect><rect x="674.0" y="117.8" width="24" height="26.2" fill="#101C30"><title>Amiri Hospital Apr: issued 100</title></rect><text x="686.0" y="113.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">100</text><text x="686.0" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Apr</text><text x="0" y="184" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#1B2640">Zain Hospital</text><line x1="0" y1="316" x2="160" y2="316" stroke="#EDEBE7"/><rect x="8.0" y="310.8" width="24" height="5.2" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Zain Hospital Jan: requested 20</title></rect><rect x="8.0" y="310.8" width="24" height="5.2" fill="#101C30"><title>Zain Hospital Jan: issued 20</title></rect><text x="20.0" y="306.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">20</text><text x="20.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Jan</text><rect x="48.0" y="305.5" width="24" height="10.5" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Zain Hospital Feb: requested 40</title></rect><rect x="48.0" y="308.1" width="24" height="7.9" fill="#101C30"><title>Zain Hospital Feb: issued 30</title></rect><text x="60.0" y="301.5" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" fill="#F5A503">30/40</text><text x="60.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Feb</text><rect x="88.0" y="310.8" width="24" height="5.2" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Zain Hospital Mar: requested 20</title></rect><rect x="88.0" y="310.8" width="24" height="5.2" fill="#101C30"><title>Zain Hospital Mar: issued 20</title></rect><text x="100.0" y="306.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">20</text><text x="100.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Mar</text><rect x="128.0" y="305.5" width="24" height="10.5" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Zain Hospital Apr: requested 40</title></rect><rect x="128.0" y="305.5" width="24" height="10.5" fill="#101C30"><title>Zain Hospital Apr: issued 40</title></rect><text x="140.0" y="301.5" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">40</text><text x="140.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Apr</text><text x="182" y="184" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#1B2640">Sabah Pediatric</text><line x1="182" y1="316" x2="342" y2="316" stroke="#EDEBE7"/><text x="202.0" y="310" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#9AA7BD">–</text><text x="202.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Jan</text><rect x="230.0" y="312.9" width="24" height="3.1" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Sabah Pediatric Feb: requested 12</title></rect><rect x="230.0" y="312.9" width="24" height="3.1" fill="#101C30"><title>Sabah Pediatric Feb: issued 12</title></rect><text x="242.0" y="308.9" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">12</text><text x="242.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Feb</text><rect x="270.0" y="307.6" width="24" height="8.4" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Sabah Pediatric Mar: requested 32</title></rect><rect x="270.0" y="309.2" width="24" height="6.8" fill="#101C30"><title>Sabah Pediatric Mar: issued 26</title></rect><text x="282.0" y="303.6" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" fill="#F5A503">26/32</text><text x="282.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Mar</text><text x="322.0" y="310" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#9AA7BD">–</text><text x="322.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Apr</text><text x="364" y="184" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#1B2640">Central Prison</text><line x1="364" y1="316" x2="524" y2="316" stroke="#EDEBE7"/><rect x="372.0" y="310.8" width="24" height="5.2" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Central Prison Jan: requested 20</title></rect><rect x="372.0" y="316.0" width="24" height="0.0" fill="#101C30"><title>Central Prison Jan: issued 0</title></rect><text x="384.0" y="306.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" fill="#F5A503">0/20</text><text x="384.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Jan</text><rect x="412.0" y="311.8" width="24" height="4.2" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Central Prison Feb: requested 16</title></rect><rect x="412.0" y="311.8" width="24" height="4.2" fill="#101C30"><title>Central Prison Feb: issued 16</title></rect><text x="424.0" y="307.8" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">16</text><text x="424.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Feb</text><rect x="452.0" y="315.0" width="24" height="1.0" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Central Prison Mar: requested 4</title></rect><rect x="452.0" y="315.0" width="24" height="1.0" fill="#101C30"><title>Central Prison Mar: issued 4</title></rect><text x="464.0" y="311.0" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">4</text><text x="464.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Mar</text><rect x="492.0" y="311.3" width="24" height="4.7" fill="none" stroke="#F5A503" stroke-width="1.4" stroke-dasharray="3 2"><title>Central Prison Apr: requested 18</title></rect><rect x="492.0" y="311.3" width="24" height="4.7" fill="#101C30"><title>Central Prison Apr: issued 18</title></rect><text x="504.0" y="307.3" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#5E6878">18</text><text x="504.0" y="329" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#5E6878">Apr</text></svg>
+      </div>
+    </div>
+    <div class="call"><strong>Read.</strong> Mansuriya was short in February (220 of 360) and April (240 of 458). Sabah Hospital was filled in full every month. Which indication that volume served is not on this page.</div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>12 / 19</span></p>
+  </section>
+  <!-- NGHA ORACLE SCREENSHOT -->
+  <section class="slide" aria-label="Saudi NGHA Oracle worksheet">
+    <p class="kicker">03 — System depth · Saudi Arabia, National Guard Health Affairs</p>
+    <h2>Inside the hospital ERP: the Dupixent pen, item by item.</h2>
+    <div class="proof">
+      <figure class="shot">
+        <img style="height:420px" src="assets/ngha-oracle-dupixent-worksheet-2026.jpg" alt="Oracle Applications Sang Global Worksheet at National Guard Health Affairs, KAMC Riyadh, showing item 131161 Dupilumab 300 mg/2 mL prefilled pen with NUPCO code, vendor, last receipt date and on-hand quantity by operating unit, subinventory and location"/>
+        <figcaption>Source extract, unaltered. Oracle “Sang Global Worksheet”, National Guard Health Affairs, Health Affairs Riyadh OU. Quantity tab shown; the same screen carries PO, requisition, consumption, last-issue and last-loan tabs. Rows continue below the crop.</figcaption>
+      </figure>
+      <div class="read read--tight">
+        <h3>What the worksheet records</h3>
+        <p class="sub">Item 131161 · DUPILUMAB 300MG/2ML PREFILLED PEN · UOM Each · status Active</p>
+        <div class="kv">
+          <div>NUPCO code</div><div>5118242800600</div>
+          <div>Vendor · last PO</div><div>SITCO · 500227908</div>
+          <div>Last receipt date</div><div>08 Sep 2026</div>
+          <div>Organization</div><div>KFH Medical Bulk WH <em class="cov">Covered</em></div>
+        </div>
+        <p class="sub" style="margin-top:12px">Saudi accounts covered</p>
+        <div class="acct">
+          <div class="acct-row hi">
+            <span class="acct-big">30</span>
+            <div><b>Top 30 hospital branches in Saudi Arabia</b><span>Governmental and private · system-level access to the account record</span></div>
+            <em>Covered</em>
+          </div>
+          <div class="acct-row on">
+            <span class="acct-dot"></span>
+            <div><b>National Guard Health Affairs (NGHA)</b><span>Hospital ERP (Oracle) · shown in this deck</span></div>
+            <em>Covered</em>
+          </div>
+          <div class="acct-row on">
+            <span class="acct-dot"></span>
+            <div><b>King Abdulaziz Medical City (KAMC), Riyadh</b><span>Health Affairs Riyadh OU · shown in this deck</span></div>
+            <em>Covered</em>
+          </div>
+          <div class="acct-row on">
+            <span class="acct-dot"></span>
+            <div><b>King Faisal Specialist Hospital &amp; Research Centre (KFSH)</b><span>Hospital system access</span></div>
+            <em>Covered</em>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>13 / 19</span></p>
+  </section>
+
+
+
+  <!-- 11 PHYSICIAN LEDGER SCREENSHOT -->
+  <section class="slide" aria-label="Physician order ledger">
+    <p class="kicker">03 — Physician depth · UAE, Burjeel branch</p>
+    <h2>The Dupixent order line carries a name.</h2>
+    <div class="proof">
+      <figure class="shot">
+        <img src="assets/physician-order-ledger-2025.jpg" alt="Sales ledger extract listing material description, quantity, unit of measure, sale date, and ordering physician for Dupixent, Rinvoq, Tezspire, Olumiant, Nucala, Adtralza, Fasenra, Xolair, and Ebglyss during 2025"/>
+        <figcaption>Source extract, unaltered. Columns as printed: material description, quantity, unit of measure, sale date, ordering physician. Source: a Burjeel branch, UAE. The crop continues below the last visible row; the branch header itself is not printed on this crop.</figcaption>
+      </figure>
+      <div class="read">
+        <h3>Dupixent 300 mg PFP 2’s, visible lines</h3>
+        <p class="sub">Boxes by ordering physician · 19 lines · dates 2 Jan to 31 May 2025</p>
+        <div class="kv">
+          <div>Yogesh Indrasen More</div><div>27 boxes</div>
+          <div>Farhan Rasool</div><div>9 boxes</div>
+          <div>Ghulam Mujtaba</div><div>2 boxes</div>
+          <div>Shaik Irfan Basha</div><div>2 boxes</div>
+          <div>Asif Qureshi</div><div>1 box</div>
+          <div><strong>Visible 300 mg total</strong></div><div>41 boxes · 5 physicians</div>
+        </div>
+        <div class="call"><strong>A screenshot, not the file.</strong> This crop is one screen of a much larger ledger. The full extract carries every order line for the account across the period — all brands, all strengths, all ordering physicians — and is delivered as a dataset, not an image. Counts on this page are from the visible rows only.</div>
+        <p class="note">Nine brands appear on the same ledger: Dupixent, Rinvoq, Tezspire, Olumiant, Nucala, Adtralza, Fasenra, Xolair, and Ebglyss. This is a UAE private-hospital file, separate from the Kuwait Ministry of Health page; the two are not linked.</p>
+      </div>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>14 / 19</span></p>
+  </section>
+  <!-- BURJEEL CHARTS -->
+  <section class="slide slide--cream" aria-label="Burjeel charts">
+    <p class="kicker">03 — Physician depth · UAE, Burjeel branch, charted</p>
+    <h2>Who orders Dupixent, and what else moves through the same ledger.</h2>
+    <div class="viz">
+      <div class="viz-card">
+        <h3>Dupixent 300 mg boxes by ordering physician</h3>
+        <p class="sub">19 visible lines · 2 Jan – 31 May 2025 · one physician places two-thirds of the boxes</p>
+        <div class="donut-row"><svg viewBox="0 0 180 180" width="180" height="180" role="img" aria-label="Dupixent 300 mg boxes by ordering physician on the visible ledger"><circle r="70" cx="90" cy="90" fill="none" stroke="#101C30" stroke-width="22" stroke-dasharray="289.64 150.18" stroke-dashoffset="0.00" transform="rotate(-90 90 90)"><title>Yogesh Indrasen More: 27 (65.9%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#22345A" stroke-width="22" stroke-dasharray="96.55 343.28" stroke-dashoffset="-289.64" transform="rotate(-90 90 90)"><title>Farhan Rasool: 9 (22.0%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#3B5480" stroke-width="22" stroke-dasharray="21.45 418.37" stroke-dashoffset="-386.19" transform="rotate(-90 90 90)"><title>Ghulam Mujtaba: 2 (4.9%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#6B7C99" stroke-width="22" stroke-dasharray="21.45 418.37" stroke-dashoffset="-407.64" transform="rotate(-90 90 90)"><title>Shaik Irfan Basha: 2 (4.9%)</title></circle><circle r="70" cx="90" cy="90" fill="none" stroke="#9AA7BD" stroke-width="22" stroke-dasharray="10.73 429.10" stroke-dashoffset="-429.10" transform="rotate(-90 90 90)"><title>Asif Qureshi: 1 (2.4%)</title></circle><text x="90" y="86" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="26" fill="#1B2640">41</text><text x="90" y="104" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1" fill="#5E6878">BOXES · 300 MG</text></svg><div class="legend"><div class="lg"><i style="background:#101C30"></i><span>Yogesh Indrasen More</span><b>27 · 66%</b></div><div class="lg"><i style="background:#22345A"></i><span>Farhan Rasool</span><b>9 · 22%</b></div><div class="lg"><i style="background:#3B5480"></i><span>Ghulam Mujtaba</span><b>2 · 5%</b></div><div class="lg"><i style="background:#6B7C99"></i><span>Shaik Irfan Basha</span><b>2 · 5%</b></div><div class="lg"><i style="background:#9AA7BD"></i><span>Asif Qureshi</span><b>1 · 2%</b></div></div></div>
+      </div>
+      <div class="viz-card">
+        <h3>Brand mix on the visible crop</h3>
+        <p class="sub">Share of 46 order lines · <i class="sw" style="background:#F5A503"></i>Dupixent&nbsp;&nbsp;<i class="sw" style="background:#22345A"></i>other injectable biologics&nbsp;&nbsp;<i class="sw" style="background:#6B7C99"></i>oral JAK inhibitors · lines, not units or value</p>
+        <svg class="fill-w" viewBox="0 0 448 225" role="img" aria-label="Share of visible order lines by brand on the Burjeel ledger crop"><text x="70" y="12.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#1B2640">Dupixent</text><rect x="78" y="0" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="0" width="137.0" height="17" fill="#F5A503" rx="2"><title>Dupixent: 21 of 46 visible order lines</title></rect><text x="221.0" y="12.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">21 · 46%</text><text x="70" y="37.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="500" fill="#1B2640">Rinvoq</text><rect x="78" y="25" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="25" width="39.1" height="17" fill="#6B7C99" rx="2"><title>Rinvoq: 6 of 46 visible order lines</title></rect><text x="123.1" y="37.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">6 · 13%</text><text x="70" y="62.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="500" fill="#1B2640">Olumiant</text><rect x="78" y="50" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="50" width="32.6" height="17" fill="#6B7C99" rx="2"><title>Olumiant: 5 of 46 visible order lines</title></rect><text x="116.6" y="62.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">5 · 11%</text><text x="70" y="87.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="500" fill="#1B2640">Xolair</text><rect x="78" y="75" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="75" width="26.1" height="17" fill="#22345A" rx="2"><title>Xolair: 4 of 46 visible order lines</title></rect><text x="110.1" y="87.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">4 · 9%</text><text x="70" y="112.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="500" fill="#1B2640">Tezspire</text><rect x="78" y="100" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="100" width="19.6" height="17" fill="#22345A" rx="2"><title>Tezspire: 3 of 46 visible order lines</title></rect><text x="103.6" y="112.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">3 · 7%</text><text x="70" y="137.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="500" fill="#1B2640">Adtralza</text><rect x="78" y="125" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="125" width="19.6" height="17" fill="#22345A" rx="2"><title>Adtralza: 3 of 46 visible order lines</title></rect><text x="103.6" y="137.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">3 · 7%</text><text x="70" y="162.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="500" fill="#1B2640">Nucala</text><rect x="78" y="150" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="150" width="13.0" height="17" fill="#22345A" rx="2"><title>Nucala: 2 of 46 visible order lines</title></rect><text x="97.0" y="162.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">2 · 4%</text><text x="70" y="187.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="500" fill="#1B2640">Fasenra</text><rect x="78" y="175" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="175" width="6.5" height="17" fill="#22345A" rx="2"><title>Fasenra: 1 of 46 visible order lines</title></rect><text x="90.5" y="187.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">1 · 2%</text><text x="70" y="212.5" text-anchor="end" font-family="Inter,sans-serif" font-size="11" font-weight="500" fill="#1B2640">Ebglyss</text><rect x="78" y="200" width="300" height="17" fill="#EDEBE7" rx="2"/><rect x="78" y="200" width="6.5" height="17" fill="#22345A" rx="2"><title>Ebglyss: 1 of 46 visible order lines</title></rect><text x="90.5" y="212.5" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="#1B2640">1 · 2%</text></svg>
+      </div>
+    </div>
+    <div class="call"><strong>Read.</strong> Dupixent is 46% of visible order lines; injectable biologics are 35 of 46 lines and oral JAK inhibitors 11. Units differ across brands (box, pen, PFS), so this is a count of orders placed, not a volume or value share. Twelve ordering physicians appear on the crop.</div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>15 / 19</span></p>
+  </section>
+
+
+  <!-- 12 BOTH INDICATIONS -->
+  <section class="slide slide--cream" aria-label="Atopic dermatitis and severe asthma">
+    <p class="kicker">03 — Reading the files for both indications</p>
+    <h2>Same molecule, two commercial questions.</h2>
+    <p class="lede">What each brand team can take from these three extracts today, and what still has to be commissioned. We do not infer an indication split the source does not record.</p>
+    <div class="two">
+      <article class="panel">
+        <h3>Atopic dermatitis</h3>
+        <p class="sub">Dermatology account and key-account planning</p>
+        <p class="yes">Which Kuwait issuing points released the 300 mg PFS, and where request exceeded issue</p>
+        <p class="yes">Which named physicians are on the 300 mg order lines, and how concentrated that is</p>
+        <p class="yes">Presence of Adtralza and Ebglyss on the same ledger as comparators</p>
+        <p class="yes">NGHA on-hand stock of the 300 mg pen by operating unit, with NUPCO code and last receipt date</p>
+        <p class="no">How much of the 300 mg volume was atopic dermatitis rather than asthma</p>
+      </article>
+      <article class="panel">
+        <h3>Severe asthma</h3>
+        <p class="sub">Respiratory account and biologic-class planning</p>
+        <p class="yes">A 200 mg signal on the ledger: two boxes, one physician</p>
+        <p class="yes">Tezspire, Fasenra, Nucala, and Xolair on the same ledger, with ordering physicians</p>
+        <p class="yes">The same NGHA worksheet exposes consumption and last-issue tabs for the pen</p>
+        <p class="yes">Hospital-level 300 mg issue by named Kuwait point, once the indication split is confirmed</p>
+        <p class="no">An asthma-specific volume from the Kuwait page alone</p>
+      </article>
+    </div>
+    <div class="call"><strong>The indication cut</strong> comes from the physician or from a source system that already separates use. It is scoped as its own step in the engagement — see the next section.</div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>16 / 19</span></p>
+  </section>
+
+  <!-- 13 SECTION 4 -->
+  <section class="slide slide--navy" aria-label="Section four">
+    <div class="sec-no">04</div>
+    <div class="sec-copy">
+      <p class="kicker">Working with BioNixus</p>
+      <h2>From one commercial question to a defensible file.</h2>
+      <p>Scoped to the decision, the market, and the regulatory reality you operate in.</p>
+    </div>
+    <p class="foot"><span class="lockup lockup--rev"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>17 / 19</span></p>
+  </section>
+
+  <!-- 14 ENGAGEMENT + COMPLIANCE -->
+  <section class="slide" aria-label="Engagement model">
+    <p class="kicker">04 — How an engagement runs</p>
+    <h2>Five steps, one deliverable you can defend.</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Scope the decision</h3><p>Brand, country, hospitals that matter, and the grain required — hospital, indication, or physician.</p></div>
+      <div class="step"><div class="n">2</div><h3>Secure the account files</h3><p>Issue and request files through the pharmacy and buyer routes, in the format the hospital system produces.</p></div>
+      <div class="step"><div class="n">3</div><h3>Field the physician layer</h3><p>Ordering-physician records where available; structured interviews or surveys to confirm use and line of therapy.</p></div>
+      <div class="step"><div class="n">4</div><h3>Reconcile and cut</h3><p>Hospital, product, indication, and physician views reconciled to the source, with request-versus-issue flagged.</p></div>
+      <div class="step"><div class="n">5</div><h3>Deliver for action</h3><p>Account ranking, demand-versus-supply gaps, named-physician view, and the indication cut where commissioned.</p></div>
+    </div>
+    <div class="two" style="margin-top:22px">
+      <article class="card">
+        <h3>Compliance posture</h3>
+        <p>Market research, clearly distinguished from clinical research. GDPR-compliant data handling; alignment with EMA, MHRA, SFDA, and Ministry of Health frameworks; ICH-GCP awareness; NHS REC standards. Physician identities and account values are handled under client-specific confidentiality terms.</p>
+      </article>
+      <article class="card">
+        <h3>Therapy-area depth relevant here</h3>
+        <ul>
+          <li>Immunology — dermatology, rheumatology, gastroenterology</li>
+          <li>Dermatology — atopic dermatitis, psoriasis</li>
+          <li>Respiratory — asthma, COPD, IPF</li>
+          <li>Biologics and biosimilars — landscape, switching, competitive intelligence</li>
+        </ul>
+      </article>
+    </div>
+    <p class="foot"><span class="lockup"><img src="assets/bionixus-heart.png" alt=""/><span class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></span></span><span class="rule"></span><span>18 / 19</span></p>
+  </section>
+
+  <!-- 15 CLOSE -->
+  <section class="slide slide--navy" aria-label="Close">
+    <div class="lockup lockup--md lockup--rev" role="img" aria-label="BioNixus — Intelligence For Business Growth">
+      <img src="assets/bionixus-heart.png" alt=""/>
+      <div class="txt"><span class="wm">BioNixus</span><span class="sl">Intelligence For Business Growth</span></div>
+    </div>
+    <div class="close-grid">
+      <div>
+        <p class="kicker" style="margin-top:28px">Next step</p>
+        <h2 style="font-size:40px;max-width:20ch">This is a simple capability deck. Your project will not look like it.</h2>
+        <p class="lede">For a commissioned programme the objective, design, and deliverables are rebuilt around the client’s question — brand, indication, markets, hospitals, and the decision the evidence has to carry. Nothing here is a template for that work; it is a view of the access behind it.</p>
+        <div class="stats" style="max-width:700px;margin-top:18px">
+          <div class="stat"><b>127</b><span>Projects · YTD 2026</span></div>
+          <div class="stat"><b>118</b><span>Clients served</span></div>
+          <div class="stat"><b>48</b><span>Countries covered</span></div>
+          <div class="stat"><b>2012</b><span>Founded, London</span></div>
+        </div>
+      </div>
+      <div class="contact">
+        <p class="kicker" style="margin-top:28px">Book a meeting</p>
+        <h3 style="font-family:var(--serif);font-size:26px;font-weight:600;color:#fff;line-height:1.2">BioNixus team, MEA region</h3>
+        <p class="contact-name">Mohammad Alsaadany</p>
+        <a class="contact-line" href="mailto:mohammad.alsaadany@bionixus.com?subject=Meeting%20request%20%E2%80%94%20Gulf%20hospital%20access%20capability%20deck">mohammad.alsaadany@bionixus.com</a>
+        <a class="contact-line" href="tel:+447727666682">+44 7727 666682</a>
+        <a class="contact-line" href="tel:+201206882323">+20 120 688 2323</a>
+        <a class="cta" href="mailto:mohammad.alsaadany@bionixus.com?subject=Meeting%20request%20%E2%80%94%20Gulf%20hospital%20access%20capability%20deck">Book a meeting</a>
+        <div class="badges" style="margin-top:18px">
+          <span class="badge">GDPR</span><span class="badge">EMA</span><span class="badge">MHRA</span><span class="badge">SFDA</span><span class="badge">MOH</span><span class="badge">ICH-GCP</span>
+        </div>
+      </div>
+    </div>
+    <p class="foot"><span>United States · United Kingdom · Egypt · Saudi Arabia · UAE · Kuwait · Brazil · www.bionixus.com</span><span class="rule"></span><span>19 / 19</span></p>
+  </section>
+
+</div>
+</body>
+</html>
