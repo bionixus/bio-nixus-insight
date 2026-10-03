@@ -9,6 +9,11 @@ const legacyRedirects = JSON.parse(
   readFileSync(join(process.cwd(), 'config/legacy-redirects.json'), 'utf8'),
 ) as Record<string, string>;
 
+const vercel = JSON.parse(readFileSync(join(process.cwd(), 'vercel.json'), 'utf8')) as {
+  redirects?: Array<{ source?: string; destination?: string }>;
+};
+const vercelSources = new Set((vercel.redirects ?? []).map((row) => row.source));
+
 describe('Ahrefs Oct 2026 broken-link map', () => {
   it('301s locale-prefixed English-only URLs to a live page', () => {
     const sources = [
@@ -42,6 +47,7 @@ describe('Ahrefs Oct 2026 broken-link map', () => {
     for (const from of sources) {
       expect(legacyRedirects[from], from).toBeTruthy();
       expect(legacyRedirects[from], from).not.toBe(from);
+      expect(vercelSources.has(from), `vercel.json missing ${from}`).toBe(true);
     }
   });
 

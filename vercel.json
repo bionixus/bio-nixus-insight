@@ -3,7 +3,7 @@
   "outputDirectory": "dist/client",
   "functions": {
     "api/indexnow-key.ts": {
-      "includeFiles": "{dist/**,seo-noise-query.mjs,lib/og-card-svg.mjs,lib/ssr-client-asset-hints.mjs,lib/country-industry-redirects.mjs,lib/global-websites-redirects.mjs,lib/ctr-seo-overrides.mjs}"
+      "includeFiles": "{dist/**,seo-noise-query.mjs,config/legacy-redirects.json,lib/legacy-redirects.mjs,lib/og-card-svg.mjs,lib/ssr-client-asset-hints.mjs,lib/country-industry-redirects.mjs,lib/global-websites-redirects.mjs,lib/ctr-seo-overrides.mjs}"
     }
   },
   "headers": [
@@ -73,6 +73,141 @@
     {
       "source": "/uae/",
       "destination": "/healthcare-market-research/uae",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/quantitative-healthcare-market-research",
+      "destination": "/quantitative-healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/quantitative-healthcare-market-research",
+      "destination": "/quantitative-healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/quantitative-healthcare-market-research",
+      "destination": "/quantitative-healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/quantitative-healthcare-market-research",
+      "destination": "/quantitative-healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/quantitative-healthcare-market-research",
+      "destination": "/quantitative-healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/quantitative-healthcare-market-research",
+      "destination": "/quantitative-healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/bionixus-market-research-middle-east",
+      "destination": "/bionixus-market-research-middle-east",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/bionixus-market-research-middle-east",
+      "destination": "/bionixus-market-research-middle-east",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/bionixus-market-research-middle-east",
+      "destination": "/bionixus-market-research-middle-east",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/bionixus-market-research-middle-east",
+      "destination": "/bionixus-market-research-middle-east",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/bionixus-market-research-middle-east",
+      "destination": "/bionixus-market-research-middle-east",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/strategic-portfolio",
+      "destination": "/strategic-portfolio",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/strategic-portfolio",
+      "destination": "/strategic-portfolio",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/strategic-portfolio",
+      "destination": "/strategic-portfolio",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/strategic-portfolio",
+      "destination": "/strategic-portfolio",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/healthcare-market-research/saudi-arabia",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/healthcare-market-research/saudi-arabia",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/healthcare-market-research/saudi-arabia",
+      "destination": "/healthcare-market-research/saudi-arabia",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/insights/top-market-research-companies-egypt-2026",
+      "destination": "/insights/top-market-research-companies-egypt-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/insights/top-market-research-companies-egypt-2026",
+      "destination": "/insights/top-market-research-companies-egypt-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/insights/top-market-research-companies-egypt-2026",
+      "destination": "/insights/top-market-research-companies-egypt-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/insights/top-market-research-companies-egypt-2026",
+      "destination": "/insights/top-market-research-companies-egypt-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/insights/top-market-research-companies-egypt-2026",
+      "destination": "/insights/top-market-research-companies-egypt-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/sweden-medical-devices-market-report",
+      "destination": "/sweden-healthcare-market-report",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research/therapy/cancer-diagnostics",
+      "destination": "/market-reports/therapy/cancer-diagnostics",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research/therapy/immunology-biologics",
+      "destination": "/healthcare-market-research/therapy/immunology",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/kresladi-marnetegragene-lad1-fda-",
+      "destination": "/blog/kresladi-marnetegragene-lad1-fda-2026",
       "statusCode": 301
     },
     {
