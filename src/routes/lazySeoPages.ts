@@ -299,6 +299,7 @@ export const UkPharmaceuticalMarketResearch = lazy(() => import('@/pages/UkPharm
 export const UsaPharmaceuticalMarketResearch = lazy(() => import('@/pages/UsaPharmaceuticalMarketResearch'));
 export const VerifyEmail = lazy(() => import('@/pages/VerifyEmail'));
 export const VideosIndex = lazy(() => import('@/pages/VideosIndex'));
+export const VideoWatchPage = lazy(() => import('@/pages/VideoWatchPage'));
 export const WhatIsMarketStudy = lazy(() => import('@/pages/WhatIsMarketStudy'));
 export const ZhBionixusMarketResearchMiddleEast = lazy(() => import('@/pages/ZhBionixusMarketResearchMiddleEast'));
 export const ZhStrategicPortfolio = lazy(() => import('@/pages/ZhStrategicPortfolio'));
@@ -605,6 +606,7 @@ const seoPageLoaders: Record<string, () => Promise<unknown>> = {
   "UsaPharmaceuticalMarketResearch": () => import('@/pages/UsaPharmaceuticalMarketResearch'),
   "VerifyEmail": () => import('@/pages/VerifyEmail'),
   "VideosIndex": () => import('@/pages/VideosIndex'),
+  "VideoWatchPage": () => import('@/pages/VideoWatchPage'),
   "WhatIsMarketStudy": () => import('@/pages/WhatIsMarketStudy'),
   "ZhBionixusMarketResearchMiddleEast": () => import('@/pages/ZhBionixusMarketResearchMiddleEast'),
   "ZhStrategicPortfolio": () => import('@/pages/ZhStrategicPortfolio'),
@@ -965,6 +967,7 @@ const seoPathToExport: Record<string, string> = {
   "/uk": "CountryPage",
   "/verify-email": "VerifyEmail",
   "/videos": "VideosIndex",
+  "/videos/:slug": "VideoWatchPage",
   "/zh/about": "About",
   "/zh/bionixus-industries": "BionixusIndustries",
   "/zh/bionixus-market-research-middle-east": "ZhBionixusMarketResearchMiddleEast",
