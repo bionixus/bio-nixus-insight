@@ -710,11 +710,6 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
                   desc: 'Country and therapy hubs for BioNixus healthcare research.',
                 },
                 {
-                  to: '/healthcare-market-research-companies',
-                  label: 'Healthcare Market Research Companies',
-                  desc: 'Global healthcare research companies comparison hub.',
-                },
-                {
                   to: '/bionixus-market-research-middle-east',
                   label: 'BioNixus Middle East Pillar',
                   desc: 'Middle East pharmaceutical and healthcare market research capabilities.',

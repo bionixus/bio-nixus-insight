@@ -717,7 +717,6 @@ export default function TopHealthcareMarketResearchCompaniesNetherlands2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/insights/top-healthcare-market-research-companies-europe-2026', label: 'Top Healthcare MRC in Europe', desc: 'Europe healthcare market research companies — Benelux and EU5 buyer guide.' },
-                { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies', desc: 'Global 2026 ranking of healthcare market research companies and agencies.' },
                 { to: '/pharmaceutical-market-research-netherlands', label: 'Pharmaceutical Market Research Netherlands', desc: 'METC-aligned pharmaceutical research covering HCP surveys, KOL mapping, payer research, and Zorginstituut evidence strategy.' },
                 { to: '/insights/top-market-research-companies-netherlands-2026', label: 'Top Market Research Companies Netherlands 2026', desc: 'General and consumer market research firms across the Netherlands for 2026.' },
                 { to: '/healthcare-market-research-netherlands', label: 'Healthcare Market Research Netherlands', desc: 'Comprehensive Dutch healthcare market research overview — HCP surveys, payer research, HEOR, and patient studies.' },

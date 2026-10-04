@@ -251,7 +251,7 @@ export default function ServicePage() {
                 <p>
                   Wave sequencing aligns to formulary and procurement calendars so insight arrives before message
                   scale-up, with explicit handoff gates linking segment dossiers to access objection libraries on the{' '}
-                  <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  <Link to="/services/market-access" className="text-primary underline">
                     market access service
                   </Link>{' '}
                   and quant validation modules when hybrid designs are required.
@@ -849,7 +849,7 @@ export default function ServicePage() {
                 </p>
                 <p>
                   Pair with{' '}
-                  <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  <Link to="/services/market-access" className="text-primary underline">
                     market access research
                   </Link>
                   ,{' '}
@@ -923,7 +923,7 @@ export default function ServicePage() {
                     patient journey research in the GCC
                   </Link>
                   ,{' '}
-                  <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                  <Link to="/services/market-access" className="text-primary underline">
                     market access research
                   </Link>
                   , and the{' '}
@@ -986,7 +986,7 @@ export default function ServicePage() {
                     description="Identifying true clinical influencers in the Middle East."
                   />
                   <HealthcareNavCard
-                    to="/blog/competitive-intelligence-pharma-gcc"
+                    to="/services/competitive-intelligence"
                     title="Pharma competitive intelligence"
                     description="Tracking competitor formularies and Medical Affairs activities."
                   />

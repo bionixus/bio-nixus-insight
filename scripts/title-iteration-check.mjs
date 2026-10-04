@@ -79,6 +79,10 @@ lines.push(
 );
 lines.push('Change titles ONLY in lib/ctr-seo-overrides.mjs + src/server/ctr-seo-overrides.js');
 lines.push('(+ the hardcoded <Helmet> title when the page has one). Keep URL and H1 stable.');
+lines.push(
+  'TITLE FREEZE: URLs in data/seo/title-freeze.json are frozen 8 weeks. One change per URL, with a GSC reason, via',
+);
+lines.push('`node scripts/seo/verify-title-freeze.mjs --allow-title-change=/path`; prebuild fails otherwise.');
 lines.push('');
 lines.push('| Page | Impr | Clicks | CTR | Pos | Δ pos vs prev wk | Override exists |');
 lines.push('|---|---|---|---|---|---|---|');

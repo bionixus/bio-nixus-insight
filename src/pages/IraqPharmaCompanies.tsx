@@ -21,6 +21,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { PharmaCompaniesResearchLinks } from '@/components/seo/PharmaCompaniesResearchLinks';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('iraq');
 
@@ -208,6 +209,8 @@ const IraqPharmaCompanies = () => {
             { title: 'Market Sizing & Demand Assessment', desc: 'Market sizing, therapeutic area demand, and growth drivers for the $2.8B Iraqi pharma market and KRG segment.' },
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
         </div></section>
+
+        <PharmaCompaniesResearchLinks country="iraq" />
 
         <section className="section-padding py-10" id="country-directories"><div className="container-wide w-full">
           <CountryDirectoryLinks country="iraq" excludePath="/pharmaceutical-companies-iraq" compact />

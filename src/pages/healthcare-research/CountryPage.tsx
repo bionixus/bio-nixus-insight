@@ -1042,7 +1042,7 @@ export default function CountryPage() {
                     description="Identifying true clinical influencers across the Emirates."
                   />
                   <HealthcareNavCard
-                    to="/blog/competitive-intelligence-pharma-gcc"
+                    to="/services/competitive-intelligence"
                     title="GCC competitive intelligence"
                     description="Tracking rival formularies and medical affairs engagement."
                   />

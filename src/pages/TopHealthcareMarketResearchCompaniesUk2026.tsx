@@ -700,7 +700,7 @@ export default function TopHealthcareMarketResearchCompaniesUk2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/insights/top-healthcare-market-research-companies-europe-2026', label: 'Top Healthcare MRC in Europe', desc: 'Europe healthcare market research companies — MHRA/NICE, AMNOG, HAS, and EU5 buyer guide.' },
-                { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies', desc: 'Global 2026 ranking of healthcare market research companies and agencies.' },
+                { to: '/healthcare-market-research', label: 'Top Healthcare Market Research Companies', desc: 'How BioNixus compares with global healthcare market research companies and agencies.' },
                 { to: '/pharmaceutical-market-research-uk', label: 'Pharmaceutical Market Research UK', desc: 'HRA-aligned pharmaceutical research covering HCP surveys, KOL mapping, NICE/SMC/AWMSG payer research, and NICE evidence strategy.' },
                 { to: '/insights/top-market-research-companies-uk-2026', label: 'Top Market Research Companies UK 2026', desc: 'General and consumer market research firms across the UK for 2026.' },
                 { to: '/healthcare-market-research-uk', label: 'Healthcare Market Research UK', desc: 'Comprehensive UK healthcare market research overview — HCP surveys, NICE/ICB payer research, HEOR, and patient studies.' },

@@ -666,7 +666,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
               {[
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top Market Research Companies in Saudi Arabia', desc: 'Cross-industry ranking — BioNixus #1 for custom primary research.' },
                 { to: '/insights/top-consumer-insights-companies-ksa-2026', label: 'Consumer Insights Companies KSA', desc: 'Brand, U&A, shopper, and segmentation firm rankings for KSA.' },
-                { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies', desc: 'Global 2026 ranking of healthcare market research companies and agencies.' },
+                { to: '/healthcare-market-research', label: 'Top Healthcare Market Research Companies', desc: 'How BioNixus compares with global healthcare market research companies and agencies.' },
                 { to: '/insights/top-healthcare-market-research-companies-mena-2026', label: 'Top Healthcare MRC in MENA', desc: 'MENA healthcare market research companies — GCC and regional buyer shortlist.' },
                 { to: '/iqvia-alternative', label: 'IQVIA Alternative', desc: 'When you need custom primary research instead of syndicated audits.' },
                 { to: '/nielsen-alternative', label: 'Nielsen Alternative', desc: 'Account-level and traditional-trade data syndicated panels miss.' },

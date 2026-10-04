@@ -768,9 +768,9 @@ export default function TopHealthcareMarketResearchCompaniesNorway2026() {
                   desc: 'Europe healthcare market research companies — Nordic and EU5 buyer guide.',
                 },
                 {
-                  to: '/healthcare-market-research-companies',
+                  to: '/healthcare-market-research',
                   label: 'Top Healthcare Market Research Companies',
-                  desc: 'Global 2026 ranking of healthcare market research companies and agencies.',
+                  desc: 'How BioNixus compares with global healthcare market research companies and agencies.',
                 },
               ].map((r) => (
                 <Link

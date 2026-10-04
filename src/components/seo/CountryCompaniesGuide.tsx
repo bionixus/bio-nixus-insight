@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { PharmaDirectoryBridge } from '@/components/seo/PharmaDirectoryBridge';
+import { PharmaCompaniesResearchLinks } from '@/components/seo/PharmaCompaniesResearchLinks';
 import { useScrollThreshold } from '@/hooks/useScrollThreshold';
 import type { ReportConversionConfig } from '@/data/reportConversionConfig';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
@@ -291,6 +292,10 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
           <p className="text-muted-foreground mb-10 max-w-3xl">BioNixus is a healthcare market research company with primary-research capability in {countryDisplay} and cross-market benchmarking against GCC, USA, and European markets. We help pharma, biotech, and medtech companies with:</p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">{config.bionixusServices.map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
         </div></section>
+
+        {config.path.startsWith('/pharmaceutical-companies-') ? (
+          <PharmaCompaniesResearchLinks country={config.path.slice('/pharmaceutical-companies-'.length)} />
+        ) : null}
 
         <section className="section-padding py-16" id="related-directories"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Related BioNixus country directories &amp; reports</h2>

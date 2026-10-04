@@ -332,7 +332,7 @@ export default function UsaPharmaceuticalMarketResearch() {
           <div className="grid md:grid-cols-2 gap-4">
             <HealthcareNavCard to="/healthcare-market-research/services/physician-insights" title="HCP and physician surveys" description="IRB-compliant quantitative surveys and qualitative IDIs with US physicians across AMCs and community practices." />
             <HealthcareNavCard to="/healthcare-market-research/services/kol-mapping" title="KOL mapping and advisory boards" description="Influence mapping across US AMCs, NCI cancer centres, and specialty society advisory structures." />
-            <HealthcareNavCard to="/healthcare-market-research/services/market-access" title="Payer and PBM research" description="Interviews with PBM medical directors, Medicare plan directors, and commercial pharmacy directors." />
+            <HealthcareNavCard to="/services/market-access" title="Payer and PBM research" description="Interviews with PBM medical directors, Medicare plan directors, and commercial pharmacy directors." />
             <HealthcareNavCard to="/usa-healthcare-market-report" title="HEOR and market access evidence" description="PRO development, cost-effectiveness strategy, and pre-ICER research for US access dossiers." />
           </div>
         </ReportPremiumSection>

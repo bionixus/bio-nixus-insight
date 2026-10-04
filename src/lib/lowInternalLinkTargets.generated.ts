@@ -31,7 +31,6 @@ export const LOW_INTERNAL_LINK_TARGETS: readonly LowInternalLinkTarget[] = [
   {"to":"/blog/ai-vs-human-insight-validating-quantitative-data-2026-pharma-research","label":"Ai Vs Human Insight Validating Quantitative Data 2026 Pharma Research"},
   {"to":"/blog/amnog-frueher-nutzen-marktzugang-2026","label":"Amnog Frueher Nutzen Marktzugang 2026"},
   {"to":"/blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026","label":"Cenrifki Tolebrutinib Nrspms Ema Chmp 2026"},
-  {"to":"/blog/competitive-intelligence-pharma-gcc","label":"Competitive Intelligence Pharma Gcc"},
   {"to":"/blog/data-privacy-beyond-hipaa-global-quantitative-research-compliance-2026","label":"Data Privacy Beyond Hipaa Global Quantitative Research Compliance 2026"},
   {"to":"/blog/deutsche-pharmaunternehmen-2026-pipeline-updates","label":"Deutsche Pharmaunternehmen 2026 Pipeline Updates"},
   {"to":"/blog/eli-lilly-vaccine-acquisitions-curevo-limmatech-2026","label":"Eli Lilly Vaccine Acquisitions Curevo Limmatech 2026"},

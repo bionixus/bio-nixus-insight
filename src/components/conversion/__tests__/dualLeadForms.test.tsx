@@ -34,7 +34,7 @@ function json(body: unknown, status = 200) {
   });
 }
 
-async function submitQualification() {
+async function submitQualification(options: { budget?: string } = {}) {
   render(
     <MemoryRouter>
       <QualificationForm formId="pharma_companies_uae_cta" />
@@ -46,7 +46,10 @@ async function submitQualification() {
   fireEvent.change(screen.getByLabelText(/what do you need/i), {
     target: { value: 'Primary market research' },
   });
-  fireEvent.click(screen.getByRole('button', { name: /request a proposal/i }));
+  if (options.budget) {
+    fireEvent.change(screen.getByLabelText(/budget range/i), { target: { value: options.budget } });
+  }
+  fireEvent.click(screen.getByRole('button', { name: /book a 30-minute scoping call/i }));
 }
 
 afterEach(() => {
@@ -78,7 +81,7 @@ describe('QualificationForm dual submit', () => {
     });
 
     await submitQualification();
-    expect(await screen.findByRole('link', { name: /book a call now/i })).toHaveAttribute(
+    expect(await screen.findByRole('link', { name: /pick a time for your call/i })).toHaveAttribute(
       'href',
       'https://schedule.bionixus.com/meeting-with-bionixus',
     );
@@ -86,6 +89,27 @@ describe('QualificationForm dual submit', () => {
     const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
     expect(urls).toContain(FORMSPREE_ENDPOINT);
     expect(urls).toContain('/api/highlevel-lead');
+    const formspreeCall = (fetch as ReturnType<typeof vi.fn>).mock.calls.find((call) => String(call[0]) === FORMSPREE_ENDPOINT);
+    const body = formspreeCall?.[1]?.body as FormData;
+    expect(body.get('requestType')).toBe('Scoping Call Request');
+  });
+
+  it('routes an under-$20K budget to HighLevel only and answers by email instead of a call', async () => {
+    mockChannels({ formspreeOk: true, highLevelOk: true });
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: { href: 'http://localhost/page', pathname: '/page', search: '' },
+    });
+
+    await submitQualification({ budget: 'Under $20K' });
+    expect(await screen.findByText(/we'll reply by email/i)).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /pick a time for your call/i })).not.toBeInTheDocument();
+    const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
+    expect(urls).toEqual(['/api/highlevel-lead']);
+    const hlCall = (fetch as ReturnType<typeof vi.fn>).mock.calls[0];
+    const payload = JSON.parse(String(hlCall?.[1]?.body));
+    expect(payload.requestType).toBe('Research Enquiry (below minimum)');
+    expect(payload.qualified).toBe('no');
   });
 
   it('keeps the mailto fallback when both channels fail', async () => {
@@ -107,13 +131,13 @@ describe('QualificationForm dual submit', () => {
 
     await submitQualification();
     expect(await screen.findByText(/form quota exceeded/i)).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: /book a call now/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /pick a time for your call/i })).not.toBeInTheDocument();
     expect(hrefs.some((href) => href.startsWith('mailto:admin@bionixus.com'))).toBe(true);
   });
 });
 
-describe('ContactSection dual submit', () => {
-  it('subscribes after HighLevel succeeds even when Formspree is over quota', async () => {
+describe('ContactSection (HighLevel only)', () => {
+  it('saves to HighLevel, never posts to Formspree, and still subscribes', async () => {
     class Observer {
       observe() {}
       unobserve() {}
@@ -157,14 +181,14 @@ describe('ContactSection dual submit', () => {
     expect(await screen.findByText(/thank you/i)).toBeInTheDocument();
     expect(hrefs.join(' ')).not.toContain('mailto:');
     const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
-    expect(urls).toContain(FORMSPREE_ENDPOINT);
+    expect(urls).not.toContain(FORMSPREE_ENDPOINT);
     expect(urls).toContain('/api/highlevel-lead');
     expect(urls).toContain('/api/subscribe');
   });
 });
 
-describe('GatedAssetForm dual submit', () => {
-  it('starts the download when HighLevel succeeds and Formspree fails', async () => {
+describe('GatedAssetForm (HighLevel only)', () => {
+  it('starts the download when HighLevel succeeds without touching Formspree', async () => {
     mockChannels({ formspreeOk: false, highLevelOk: true });
     const clicks: string[] = [];
     vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
@@ -181,9 +205,11 @@ describe('GatedAssetForm dual submit', () => {
 
     expect(await screen.findByText(/your download has started/i)).toBeInTheDocument();
     expect(clicks).toContain('/samples/gcc-devices.pdf');
+    const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
+    expect(urls).not.toContain(FORMSPREE_ENDPOINT);
   });
 
-  it('does not download when both channels fail', async () => {
+  it('does not download when HighLevel fails', async () => {
     mockChannels({ formspreeOk: false, highLevelOk: false });
     const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
     render(
@@ -194,7 +220,7 @@ describe('GatedAssetForm dual submit', () => {
     fireEvent.change(screen.getByLabelText(/country of interest/i), { target: { value: 'Saudi Arabia' } });
     fireEvent.click(screen.getByRole('button', { name: /get the sample pdf/i }));
 
-    expect(await screen.findByText(/form quota exceeded/i)).toBeInTheDocument();
+    expect(await screen.findByText(/could not save your request/i)).toBeInTheDocument();
     expect(click).not.toHaveBeenCalled();
   });
 });

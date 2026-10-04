@@ -8,7 +8,7 @@ import { trackLeadSubmitted } from '@/lib/analytics';
 import { languages } from '@/lib/i18n';
 import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { getWhatsAppWidgetStrings } from '@/lib/whatsappWidgetStrings';
-import { FORMSPREE_ENDPOINT, isLeadHoneypot, submitLeadDual } from '@/lib/submitLeadDual';
+import { isLeadHoneypot, submitLeadDual } from '@/lib/submitLeadDual';
 const COOKIE_CONSENT_KEY = 'bionixus-cookie-consent';
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
@@ -229,10 +229,10 @@ export default function WhatsAppProposalWidget() {
       const result = await submitLeadDual(data);
       if (result.ok) {
         trackLeadSubmitted({ formId: 'whatsapp_proposal_widget' });
-      } else if (result.formspreeNetworkError) {
+      } else if (result.networkError) {
         setSubmitError(v('error'));
       } else {
-        setSubmitError(result.formspreeError || v('error'));
+        setSubmitError(result.error || v('error'));
       }
     } catch {
       setSubmitError(v('error'));
@@ -297,7 +297,6 @@ export default function WhatsAppProposalWidget() {
               </div>
             ) : (
               <form
-                action={FORMSPREE_ENDPOINT}
                 method="POST"
                 onSubmit={handleSubmit}
                 noValidate

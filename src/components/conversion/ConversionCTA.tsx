@@ -65,21 +65,23 @@ export function ConversionCTA(props: ConversionCtaProps) {
             {props.headline || `Planning research in ${market}?`}
           </h3>
           <p className="text-sm text-muted-foreground mb-5 max-w-xl mx-auto">
-            Primary research, market access &amp; HEOR. Proposals within 48 hours.
+            Primary research, market access &amp; HEOR. A 30-minute scoping call, then a costed proposal within 48 hours.
           </p>
           <button
             type="button"
             onClick={handleOpen}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
           >
-            {props.buttonLabel || 'Request a Proposal'} <ArrowRight className="w-4 h-4" />
+            {props.buttonLabel || 'Book a 30-minute scoping call'} <ArrowRight className="w-4 h-4" />
           </button>
         </div>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogContent className="max-w-md max-h-[85vh] overflow-y-auto">
             <DialogHeader>
-              <DialogTitle>Request a Proposal</DialogTitle>
-              <DialogDescription>Tell us what you need — we typically respond within 48 hours.</DialogDescription>
+              <DialogTitle>Book a 30-minute scoping call</DialogTitle>
+              <DialogDescription>
+                Tell us what you need — a research lead confirms a slot within one business day.
+              </DialogDescription>
             </DialogHeader>
             <QualificationForm
               formId={props.ctaId}

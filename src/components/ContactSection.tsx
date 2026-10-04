@@ -16,7 +16,7 @@ import { TrustCoverageMap } from '@/components/media/TrustCoverageMap';
 import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
 import { getContactFormStrings } from '@/lib/contactFormStrings';
 import { trackLeadSubmitted } from '@/lib/analytics';
-import { FORMSPREE_ENDPOINT, submitLeadDual } from '@/lib/submitLeadDual';
+import { submitLeadDual } from '@/lib/submitLeadDual';
 
 type ContactValidation = {
   firstName?: string;
@@ -240,11 +240,11 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
         } catch {
           // Newsletter subscribe is optional once the lead itself is saved.
         }
-      } else if (result.formspreeNetworkError) {
+      } else if (result.networkError) {
         setSubmitError(v('error'));
-        sendErrorEmail(errorFields, `Network/client error: ${result.formspreeNetworkError}`);
+        sendErrorEmail(errorFields, `Network/client error: ${result.networkError}`);
       } else {
-        const errorMsg = result.formspreeError || v('error');
+        const errorMsg = result.error || v('error');
         setSubmitError(errorMsg);
         sendErrorEmail(errorFields, errorMsg);
       }
@@ -438,7 +438,6 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
             ) : null}
           </div>
           <form
-            action={FORMSPREE_ENDPOINT}
             method="POST"
             className="space-y-6"
             onSubmit={handleSubmit}

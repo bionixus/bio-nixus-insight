@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { FORMSPREE_ENDPOINT, submitLeadDual } from '@/lib/submitLeadDual';
+import { submitLeadDual } from '@/lib/submitLeadDual';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
@@ -112,10 +112,10 @@ export function CaseStudyContactGate({
       if (result.ok) {
         onSuccess();
         onOpenChange(false);
-      } else if (result.formspreeNetworkError) {
+      } else if (result.networkError) {
         setSubmitError(v('error'));
       } else {
-        setSubmitError(result.formspreeError || v('error'));
+        setSubmitError(result.error || v('error'));
       }
     } catch {
       setSubmitError(v('error'));
@@ -131,7 +131,7 @@ export function CaseStudyContactGate({
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{caseStudyTitle}</DialogDescription>
         </DialogHeader>
-        <form action={FORMSPREE_ENDPOINT} method="POST" onSubmit={handleSubmit} className="space-y-4">
+        <form method="POST" onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="hp_company"

@@ -23,6 +23,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { PharmaCompaniesResearchLinks } from '@/components/seo/PharmaCompaniesResearchLinks';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('uae');
 
@@ -239,6 +240,8 @@ const UaePharmaCompanies = () => {
             </Link>.
           </p>
         </div></section>
+
+        <PharmaCompaniesResearchLinks country="uae" />
 
         <section className="section-padding py-16" id="dubai-pharma-mr">
           <div className="container-wide max-w-5xl mx-auto">

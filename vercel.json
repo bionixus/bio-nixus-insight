@@ -66,6 +66,56 @@
   ],
   "redirects": [
     {
+      "source": "/pharmaceutical-market-research-provider",
+      "destination": "/pharmaceutical-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/pharmaceutical-market-research-provider/",
+      "destination": "/pharmaceutical-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research-companies",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research-companies/",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/top-healthcare-market-research-firms-mena-europe",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/top-healthcare-market-research-firms-mena-europe/",
+      "destination": "/healthcare-market-research",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research/services/market-access",
+      "destination": "/services/market-access",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthcare-market-research/services/market-access/",
+      "destination": "/services/market-access",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/competitive-intelligence-pharma-gcc",
+      "destination": "/services/competitive-intelligence",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/competitive-intelligence-pharma-gcc/",
+      "destination": "/services/competitive-intelligence",
+      "statusCode": 301
+    },
+    {
       "source": "/sitemap-healthcare-markets.xml",
       "destination": "/sitemap.xml",
       "statusCode": 301

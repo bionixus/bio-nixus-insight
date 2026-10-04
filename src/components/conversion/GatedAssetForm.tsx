@@ -88,7 +88,7 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         link.click();
         link.remove();
       } else {
-        setSubmitError(result.formspreeError || 'Something went wrong — please try again.');
+        setSubmitError(result.error || 'Something went wrong — please try again.');
       }
     } catch {
       setSubmitError('Something went wrong — please try again.');

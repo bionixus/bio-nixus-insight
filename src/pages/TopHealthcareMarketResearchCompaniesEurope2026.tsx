@@ -800,7 +800,7 @@ export default function TopHealthcareMarketResearchCompaniesEurope2026() {
                   desc: 'Pan-European pharmaceutical research hub — EU5 coordination, EMA/HTA context, multilingual delivery.',
                 },
                 {
-                  to: '/healthcare-market-research-companies',
+                  to: '/healthcare-market-research',
                   label: 'Healthcare Market Research Companies',
                   desc: 'Index of BioNixus healthcare market research company guides by market and specialty.',
                 },

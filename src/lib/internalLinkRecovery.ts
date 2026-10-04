@@ -23,7 +23,7 @@ const rawReportZeroLinkPaths = [
   '/blog/abu-dhabi-doh-vs-dubai-dha-formulary-guide',
   '/blog/ai-vs-human-insight-validating-quantitative-data-2026-pharma-research',
   '/blog/avaliacao-tecnologias-conitec-brasil-2026',
-  '/blog/competitive-intelligence-pharma-gcc',
+  '/services/competitive-intelligence',
   '/blog/data-privacy-beyond-hipaa-global-quantitative-research-compliance-2026',
   '/blog/deutsche-pharmaunternehmen-2026-pipeline-updates',
   '/blog/eaeu-farmacevticheskiy-dostup-2026',

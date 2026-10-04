@@ -20,7 +20,7 @@ export type PharmaStudyTypeConfig = {
 
 const SHARED_RELATED = [
   { to: '/healthcare-market-research', label: 'Healthcare market research companies', desc: 'Who to brief for primary vs syndicated work.' },
-  { to: '/pharmaceutical-market-research-provider', label: 'Pharmaceutical market research company', desc: 'Custom primary provider vs IQVIA data platform.' },
+  { to: '/pharmaceutical-market-research', label: 'Pharmaceutical market research company', desc: 'Custom primary HCP, payer and patient research vs syndicated data.' },
   { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'Keep the audit. Brief fieldwork when the cut stops at national.' },
   { to: '/account-level-market-research', label: 'Account-level data', desc: 'Named hospital, retailer, or distributor — not a country total.' },
   { to: '/insights/top-healthcare-market-research-companies-uae-2026', label: 'Healthcare MR companies UAE', desc: 'Custom primary firm for Dubai and Abu Dhabi affiliates.' },

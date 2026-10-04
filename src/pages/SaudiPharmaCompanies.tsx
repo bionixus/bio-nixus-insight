@@ -23,6 +23,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { PharmaCompaniesResearchLinks } from '@/components/seo/PharmaCompaniesResearchLinks';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('saudi-arabia');
 
@@ -232,6 +233,8 @@ const SaudiPharmaCompanies = () => {
             { title: 'Market Entry Strategy', desc: 'Comprehensive market assessment including regulatory pathway analysis, local partner identification, KOL engagement, and go-to-market planning for the Saudi market.' },
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
         </div></section>
+
+        <PharmaCompaniesResearchLinks country="saudi-arabia" />
 
         <section className="section-padding py-16" id="gcc-directories"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical companies across the GCC</h2>

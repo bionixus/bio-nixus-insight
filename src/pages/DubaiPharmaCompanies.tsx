@@ -20,6 +20,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { PharmaCompaniesResearchLinks } from '@/components/seo/PharmaCompaniesResearchLinks';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('uae');
 const CITATION_URL = 'https://www.bionixus.com/pharmaceutical-companies-dubai';
@@ -223,6 +224,8 @@ const DubaiPharmaCompanies = () => {
             { title: 'Regional HQ decision support', desc: 'Gulf launch sequencing, Saudi–UAE price-reference modelling, and distributor assessment for teams running the region from Dubai.' },
           ].map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
         </div></section>
+
+        <PharmaCompaniesResearchLinks country="dubai" />
 
         <section className="section-padding py-16" id="uae-directories"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical companies across the UAE and GCC</h2>

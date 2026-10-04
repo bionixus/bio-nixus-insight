@@ -1,0 +1,1242 @@
+{
+  "generatedAt": "2026-10-04",
+  "source": "data/gsc/current-week/Pages.csv",
+  "minImpressions": 100,
+  "freezeWeeks": 8,
+  "note": "Titles/descriptions of these URLs are frozen for freezeWeeks from frozenAt. Change only via `node scripts/seo/verify-title-freeze.mjs --allow-title-change=/path`, once, with a GSC-backed reason.",
+  "entries": {
+    "/": {
+      "impressions": 599,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Account-level research for marketing teams | BioNixus",
+        "description": "Account-level brand vs competitor data for marketing teams in 48 countries. Keep IQVIA or Nielsen — add the breakdown they miss. 48-hour proposal."
+      }
+    },
+    "/about": {
+      "impressions": 231,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/account-level-market-research": {
+      "impressions": 109,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "What Is Account-Level Market Research Data?",
+        "description": "Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss."
+      }
+    },
+    "/ar/pharmaceutical-companies-egypt": {
+      "impressions": 547,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "شركات الأدوية في مصر 2026 | دليل الشركات",
+        "description": "دليل شركات الأدوية في مصر — إيبيكو، إيفا فارما، والشركات متعددة الجنسيات. أبحاث على مستوى الحساب من بايونكسس."
+      }
+    },
+    "/ar/pharmaceutical-companies-kuwait": {
+      "impressions": 276,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "شركات الأدوية في الكويت 2026 | دليل الشركات",
+        "description": "دليل شركات الأدوية في الكويت — مصنعون محليون وشركات متعددة الجنسيات. أبحاث أولية من بايونكسس."
+      }
+    },
+    "/australia-medical-devices-market-report": {
+      "impressions": 167,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/automotive-distributors-bahrain": {
+      "impressions": 201,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/automotive-distributors-egypt": {
+      "impressions": 348,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-egypt": {
+      "impressions": 473,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-france": {
+      "impressions": 318,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-germany": {
+      "impressions": 804,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-italy": {
+      "impressions": 380,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-morocco": {
+      "impressions": 728,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-oman": {
+      "impressions": 294,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-pakistan": {
+      "impressions": 562,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-qatar": {
+      "impressions": 847,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-spain": {
+      "impressions": 510,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/banks-uk": {
+      "impressions": 781,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/bionixus-industries": {
+      "impressions": 179,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/bionixus-market-research-middle-east": {
+      "impressions": 2180,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/biotech-companies-india": {
+      "impressions": 1937,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/biotech-companies-saudi-arabia": {
+      "impressions": 149,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog": {
+      "impressions": 3884,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/ai-drug-discovery-machine-learning-pharma-2026": {
+      "impressions": 386,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "AI Drug Discovery 2026: How Machine Learning Reshapes Pharma",
+        "description": "AI drug discovery in 2026 — machine learning pipelines, key players, approval milestones and what it means for pharma R&D strategy. Analysis by BioNixus."
+      }
+    },
+    "/blog/awiqli-insulin-icodec-weekly-fda-2026": {
+      "impressions": 562,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Awiqli (Insulin Icodec) FDA Approval 2026: What It Means",
+        "description": "Awiqli weekly insulin icodec and the FDA — 2026 status, launch markets, and what it means for the diabetes market. Analysis by Bionixus."
+      }
+    },
+    "/blog/baxfendy-baxdrostat-hypertension-fda-2026": {
+      "impressions": 130,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/camizestrant-pdufa-extension-astrazeneca-2026": {
+      "impressions": 113,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/gcc-pharmacoeconomics": {
+      "impressions": 221,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/healthcare-overview-egypt-market-2026": {
+      "impressions": 7143,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide",
+        "description": "Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus."
+      }
+    },
+    "/blog/healthcare-overview-kuwait-market-2026": {
+      "impressions": 228,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Kuwait Healthcare Market 2026: Hospitals, MOH & Pharma Guide",
+        "description": "Kuwait healthcare market 2026 — MOH spending, hospital landscape, insurance reform and pharma market context. Free country overview by BioNixus."
+      }
+    },
+    "/blog/healthcare-overview-qatar-market-2026": {
+      "impressions": 236,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/icotyde-icotrokinra-psoriasis-fda-2026": {
+      "impressions": 357,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Icotyde (Icotrokinra) FDA Approval 2026: Psoriasis Impact",
+        "description": "Icotyde (icotrokinra) and the FDA in 2026 — oral IL-23 inhibitor status, launch outlook and psoriasis market impact vs biologics. Analysis by BioNixus."
+      }
+    },
+    "/blog/market-access-strategy-uae": {
+      "impressions": 157,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/nupco-saudi-arabia-tendering-guide": {
+      "impressions": 990,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "NUPCO Tenders 2026: Register & Win Saudi Procurement",
+        "description": "Step-by-step NUPCO tender guide — registration, e-portal, timelines, pricing rules and win strategies for Saudi Arabia. Updated 2026."
+      }
+    },
+    "/blog/obesity-pbm-coverage-lilly-portfolio-q2-2026": {
+      "impressions": 117,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/pharmaceutical-market-entry-saudi-arabia-2026-guide": {
+      "impressions": 188,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/rare-disease-orphan-drug-saudi-arabia-sfda-2026": {
+      "impressions": 208,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Orphan Drugs in Saudi Arabia 2026: SFDA Rare Disease Pathway",
+        "description": "Orphan drug access in Saudi Arabia 2026 — SFDA rare disease pathway, pricing, NUPCO procurement and patient access. Practical guide by BioNixus."
+      }
+    },
+    "/blog/sfda-drug-registration-guide": {
+      "impressions": 473,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "SFDA Drug Registration in Saudi Arabia: 2026 Step Guide",
+        "description": "Pharmaceutical and medicinal product registration in Saudi Arabia: SFDA drug registration steps, eCTD dossier, GMP inspection, fees and 2026 timelines."
+      }
+    },
+    "/blog/top-healthcare-market-research-firms-mena-europe": {
+      "impressions": 745,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/uae-healthcare-market-overview-2026": {
+      "impressions": 177,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/blog/uae-pharmaceutical-market-gcc-entry-guide-2026": {
+      "impressions": 150,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/brazil-healthcare-market-report": {
+      "impressions": 1554,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Brazil Healthcare & Pharma Market 2026: Size, ANVISA & Outlook",
+        "description": "Brazil's healthcare and pharmaceutical market in 2026 — market size, ANVISA regulation, top companies and forecast. By Bionixus."
+      }
+    },
+    "/brazil-pharmaceutical-market-research": {
+      "impressions": 213,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/canada-medical-devices-market-report": {
+      "impressions": 242,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/case-studies/gcc-oncology-market": {
+      "impressions": 134,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/china-medical-devices-market-report": {
+      "impressions": 9603,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "China Medical Devices Market 2026 | NMPA, VBP & Size",
+        "description": "China medical devices market 2026 (~$75–90B): NMPA Class I–III registration, NHSA VBP price cuts, import substitution, and hospital procurement intelligence from BioNixus."
+      }
+    },
+    "/companies-in-egypt": {
+      "impressions": 175,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/construction-companies-saudi-arabia": {
+      "impressions": 536,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/contact": {
+      "impressions": 223,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/cosmetics-companies-egypt": {
+      "impressions": 177,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/cosmetics-companies-saudi-arabia": {
+      "impressions": 116,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/cro-companies-egypt": {
+      "impressions": 140,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/cro-companies-saudi-arabia": {
+      "impressions": 254,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/cro-companies-turkey": {
+      "impressions": 233,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/de": {
+      "impressions": 170,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/egypt-healthcare-market-report": {
+      "impressions": 172,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Egypt Healthcare Market 2026: Size, UHI Rollout & Forecast",
+        "description": "Egypt healthcare market 2026 — market size, Universal Health Insurance rollout, hospital landscape and pharma context with forecasts. By BioNixus."
+      }
+    },
+    "/egypt-healthcare-market-research": {
+      "impressions": 208,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/es/insights/top-empresas-investigacion-mercado-argentina-2026": {
+      "impressions": 107,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026": {
+      "impressions": 125,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/fmcg-companies": {
+      "impressions": 105,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/fmcg-companies-indonesia": {
+      "impressions": 324,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/fmcg-companies-kenya": {
+      "impressions": 1014,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/fmcg-companies-lebanon": {
+      "impressions": 703,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/fmcg-companies-oman": {
+      "impressions": 207,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top FMCG Companies in Oman (2026) | Trade Mix",
+        "description": "2026 list of FMCG companies in Oman — Areej, Oman Refreshment, MNCs, and traditional trade. Account-level research by BioNixus."
+      }
+    },
+    "/fmcg-companies-pakistan": {
+      "impressions": 1402,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/fmcg-companies-tunisia": {
+      "impressions": 773,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/fmcg-companies-turkey": {
+      "impressions": 269,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/food-beverage-companies-egypt": {
+      "impressions": 454,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/food-beverage-companies-oman": {
+      "impressions": 450,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/food-beverage-companies-saudi-arabia": {
+      "impressions": 623,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/gcc-market-access-guide": {
+      "impressions": 4164,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "GCC Market Entry Guide 2026: Pharma & MedTech Access",
+        "description": "GCC market entry for pharma and medtech in 2026: the 7-step path into Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain: registration, pricing, tenders."
+      }
+    },
+    "/gcc-medication-management-market": {
+      "impressions": 142,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/gcc-pharmaceutical-market-research": {
+      "impressions": 169,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "GCC Biologics & Generic Injectables Market 2026 | BioNixus",
+        "description": "GCC biologics ($4.8–5.4B), generic injectables, precision medicine & drug repurposing — pharmaceutical market research across KSA, UAE, Kuwait, Qatar, Bahrain & Oman."
+      }
+    },
+    "/global-websites/france": {
+      "impressions": 577,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/global-websites/italy": {
+      "impressions": 104,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/health-insurers-saudi-arabia": {
+      "impressions": 2186,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research": {
+      "impressions": 4561,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies | Who to Brief",
+        "description": "BioNixus is the primary healthcare market research company. Keep IQVIA, Kantar, Ipsos for syndicated. Custom account/SKU fieldwork. 48-hour proposal."
+      }
+    },
+    "/healthcare-market-research-singapore": {
+      "impressions": 110,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research-south-korea": {
+      "impressions": 174,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research/egypt": {
+      "impressions": 184,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research/france": {
+      "impressions": 102,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research/kuwait": {
+      "impressions": 258,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research/saudi-arabia": {
+      "impressions": 2765,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies in Saudi Arabia | SFDA & NUPCO | BioNixus",
+        "description": "Healthcare market research companies in Saudi Arabia: SFDA-aware HCP surveys, NUPCO tenders, Arabic fieldwork in Riyadh, Jeddah & Dammam. Request a proposal."
+      }
+    },
+    "/healthcare-market-research/services/kol-mapping": {
+      "impressions": 152,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research/services/market-access": {
+      "impressions": 1087,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research/spain": {
+      "impressions": 517,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research/uae": {
+      "impressions": 617,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research UAE: DHA, DOH & MOHAP | BioNixus",
+        "description": "UAE healthcare market research hub: DHA, DOH, MOHAP and EDE context, therapy priorities and reports from BioNixus Dubai. Hiring? See our company page."
+      }
+    },
+    "/healthcare-market-research/uk": {
+      "impressions": 2165,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-research/united-states": {
+      "impressions": 587,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/healthcare-market-statistics": {
+      "impressions": 956,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/heor-consulting": {
+      "impressions": 670,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "HEOR Consulting Services: Health Economics & Outcomes Research",
+        "description": "Bionixus HEOR consulting — economic models, RWE studies, payer evidence and value dossiers for pharma & medtech across emerging and developed markets."
+      }
+    },
+    "/hospital-groups-oman": {
+      "impressions": 364,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/hospital-groups-saudi-arabia": {
+      "impressions": 269,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/india-medical-devices-market-report": {
+      "impressions": 1143,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/best-obesity-weight-management-market-research-firms-2026": {
+      "impressions": 404,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Best Obesity Market Research Firms 2026 | GLP-1 Ranked Guide",
+        "description": "Best obesity & weight management market research firms 2026 — GLP-1, anti-obesity medication access, prescriber behaviour & patient journey studies ranked."
+      }
+    },
+    "/insights/top-fmcg-market-research-companies-bahrain-2026": {
+      "impressions": 119,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-fmcg-market-research-companies-saudi-arabia-2026": {
+      "impressions": 124,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "FMCG Market Research Companies Saudi Arabia 2026 | Ranked",
+        "description": "FMCG market research companies in Saudi Arabia 2026 — shopper, U&A and retail audit specialists ranked for KSA. Compare BioNixus, NielsenIQ, Kantar."
+      }
+    },
+    "/insights/top-global-healthcare-market-research-companies-2026": {
+      "impressions": 144,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 10 Healthcare Market Research Companies (2026) | Global",
+        "description": "Top healthcare market research companies worldwide 2026 — global ranked guide for HCP, payer & HEOR primary research. Compare BioNixus, IQVIA, Kantar."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-abu-dhabi-2026": {
+      "impressions": 142,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-healthcare-market-research-companies-belgium-2026": {
+      "impressions": 591,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies Belgium 2026 | Ranked",
+        "description": "Belgium healthcare market research companies 2026 — INAMI/RIZIV payer research, Brussels HCP fieldwork and EU HQ studies ranked. Compare BioNixus & peers."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-colombia-2026": {
+      "impressions": 230,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "5 Best Healthcare Market Research Firms in Colombia (2026)",
+        "description": "Healthcare market research companies Colombia 2026 — INVIMA-aware HCP, EPS/PBS payer & HEOR firms ranked for Bogotá, Medellín & national fieldwork."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-dubai-2026": {
+      "impressions": 196,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies Dubai 2026 | BioNixus",
+        "description": "Healthcare market research companies Dubai 2026 — DHA-aware firms, DHCC HCP access, UAE payer research. Compare BioNixus, IQVIA MENA & peers."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-europe-2026": {
+      "impressions": 188,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies Europe 2026 | BioNixus",
+        "description": "Europe healthcare market research companies 2026 — EU5, UK, Nordics buyer guide for HCP, payer, and HEOR primary research. Compare BioNixus & peers."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-lebanon-2026": {
+      "impressions": 166,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-healthcare-market-research-companies-peru-2026": {
+      "impressions": 129,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies Peru 2026 | Ranked",
+        "description": "Peru healthcare market research companies 2026 — DIGEMID-aware HCP research, EsSalud/SIS payer studies and Lima fieldwork ranked. Compare BioNixus & peers."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-poland-2026": {
+      "impressions": 536,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies Poland 2026 | Ranked",
+        "description": "Poland healthcare market research companies 2026 — NFZ payer research, Warsaw & Kraków HCP fieldwork ranked. Compare BioNixus and leading Polish firms."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-saudi-arabia-2026": {
+      "impressions": 135,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies Saudi Arabia (2026)",
+        "description": "Healthcare-only market research companies in Saudi Arabia — SFDA-aware rankings for NUPCO, Vision 2030 & Arabic HCP fieldwork. Compare BioNixus, IQVIA & peers."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-sweden-2026": {
+      "impressions": 249,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "5 Best Healthcare Market Research Firms in Sweden (2026)",
+        "description": "Healthcare market research companies Sweden 2026 — TLV-aligned HCP & payer research ranked for Stockholm, Gothenburg & Nordic market access. Compare BioNixus & peers."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-turkey-2026": {
+      "impressions": 101,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-healthcare-market-research-companies-uae-2026": {
+      "impressions": 121,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies UAE & Dubai 2026",
+        "description": "UAE healthcare market research companies 2026 — DHA, DOH and MOHAP-aware HCP, KOL and payer research across Dubai and Abu Dhabi. Compare BioNixus and peers."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-uk-2026": {
+      "impressions": 835,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Companies UK 2026 | BioNixus",
+        "description": "UK healthcare market research companies 2026 — HRA-compliant HCP, NICE/SMC/AWMSG payer research, KOL mapping. Compare BioNixus and leading UK firms."
+      }
+    },
+    "/insights/top-healthcare-market-research-companies-usa-2026": {
+      "impressions": 1205,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Healthcare Market Research Companies in the USA (2026)",
+        "description": "Top healthcare market research companies in the USA (2026). Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail."
+      }
+    },
+    "/insights/top-market-research-companies-abu-dhabi-2026": {
+      "impressions": 192,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-market-research-companies-brazil-2026": {
+      "impressions": 119,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-market-research-companies-canada-2026": {
+      "impressions": 135,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Best Market Research Companies in Canada (2026) | Ranked",
+        "description": "Top market research companies in Canada 2026 — ranked guide for Toronto, Montreal & Vancouver consumer, healthcare and B2B research. Compare BioNixus & peers."
+      }
+    },
+    "/insights/top-market-research-companies-dubai-2026": {
+      "impressions": 224,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "6 Best Market Research Companies in Dubai (2026) | Ranked Guide",
+        "description": "Top market research companies in Dubai 2026 — ranked UAE buyer guide for consumer, healthcare & pharma fieldwork. Compare BioNixus, Kantar & NielsenIQ."
+      }
+    },
+    "/insights/top-market-research-companies-egypt-2026": {
+      "impressions": 523,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Best Market Research Companies in Egypt (2026) | Ranked",
+        "description": "Top market research companies in Egypt 2026 — ranked buyer guide for Cairo consumer, healthcare & pharma fieldwork. Compare BioNixus, Kantar & Nielsen."
+      }
+    },
+    "/insights/top-market-research-companies-gcc-2026": {
+      "impressions": 410,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Market Research Firms GCC 2026 | Top Gulf Companies",
+        "description": "Market research firms GCC 2026 — BioNixus #1 for custom primary research. Compare Kantar, NielsenIQ, and agencies across Saudi Arabia, UAE, and the Gulf."
+      }
+    },
+    "/insights/top-market-research-companies-iraq-2026": {
+      "impressions": 292,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "5 Best Market Research Companies in Iraq (2026) | Ranked Guide",
+        "description": "Top market research companies in Iraq 2026 — ranked buyer guide for Baghdad, Erbil & KRG fieldwork. Compare BioNixus, Kantar & regional partners."
+      }
+    },
+    "/insights/top-market-research-companies-italy-2026": {
+      "impressions": 271,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-market-research-companies-lebanon-2026": {
+      "impressions": 123,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Best Market Research Companies in Lebanon (2026) | Ranked",
+        "description": "Top market research companies in Lebanon 2026 — ranked guide for Beirut consumer, healthcare and pharma fieldwork. Compare BioNixus and regional partners."
+      }
+    },
+    "/insights/top-market-research-companies-morocco-2026": {
+      "impressions": 271,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Best Market Research Companies in Morocco (2026) | Ranked",
+        "description": "Top market research companies in Morocco 2026 — ranked guide for Casablanca & Rabat consumer, healthcare and pharma fieldwork. Compare BioNixus & peers."
+      }
+    },
+    "/insights/top-market-research-companies-poland-2026": {
+      "impressions": 100,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-market-research-companies-qatar-2026": {
+      "impressions": 228,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "5 Best Market Research Companies in Qatar (2026) | Ranked Guide",
+        "description": "Market research companies in Qatar 2026 — ranked guide for Doha fieldwork, HMC procurement context & GCC healthcare research. Compare BioNixus & peers."
+      }
+    },
+    "/insights/top-market-research-companies-saudi-arabia-2026": {
+      "impressions": 324,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Market Research Companies in Saudi Arabia (2026)",
+        "description": "Top market research companies in Saudi Arabia 2026: BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ and KSA market analysis firms."
+      }
+    },
+    "/insights/top-market-research-companies-senegal-2026": {
+      "impressions": 122,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/insights/top-market-research-companies-sweden-2026": {
+      "impressions": 143,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Best Market Research Companies in Sweden (2026) | Ranked",
+        "description": "Top market research companies in Sweden 2026 — ranked guide for Stockholm & Gothenburg consumer, healthcare and B2B fieldwork. Compare BioNixus & peers."
+      }
+    },
+    "/insights/top-market-research-companies-uae-2026": {
+      "impressions": 183,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Market Research Company in UAE: 2026 Ranking | BioNixus",
+        "description": "Top market research company in UAE for 2026: BioNixus, Dubai, for custom primary research, ranked beside Kantar, IQVIA, Ipsos, NielsenIQ and local firms."
+      }
+    },
+    "/insights/top-pharma-market-research-companies-middle-east-2026": {
+      "impressions": 102,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Pharma Market Research Companies Middle East 2026 | Ranked",
+        "description": "Top pharmaceutical market research companies Middle East 2026 — SFDA, MOHAP/DHA & GCC fieldwork ranked. Compare BioNixus, IQVIA MENA, Kantar."
+      }
+    },
+    "/insights/top-pharmaceutical-analytics-companies-worldwide-2026": {
+      "impressions": 108,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Pharmaceutical Analytics Companies Worldwide 2026 | Ranked",
+        "description": "Top pharmaceutical analytics companies worldwide 2026 — real-world data, HEOR, syndicated Rx analytics & primary research ranked for pharma buyers."
+      }
+    },
+    "/iqvia-alternative": {
+      "impressions": 3608,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "IQVIA Alternatives & Competitors: Top 10 Ranked (2026)",
+        "description": "IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits."
+      }
+    },
+    "/italy-medical-devices-market-report": {
+      "impressions": 804,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/japan-medical-device-market-access": {
+      "impressions": 106,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/japan-medical-devices-market-report": {
+      "impressions": 284,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Japan Medical Devices Market 2026: $41B Size & PMDA Forecast",
+        "description": "Japan medical devices market $41B in 2026 → ~$64B by 2032. PMDA Class I–IV (todokede/ninsho/shonin), NHI listing & hospital procurement — BioNixus market report."
+      }
+    },
+    "/japan-medical-disposables-market": {
+      "impressions": 153,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/kuwait-healthcare-market-report": {
+      "impressions": 106,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Kuwait Healthcare Market 2026: Size, MOH Spend & Forecast",
+        "description": "Kuwait healthcare market 2026 — market size, MOH spending, new hospital capacity, insurance reform and pharma context. Report by BioNixus."
+      }
+    },
+    "/logistics-companies-oman": {
+      "impressions": 246,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/logistics-companies-saudi-arabia": {
+      "impressions": 287,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/manufacturing-companies-egypt": {
+      "impressions": 265,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/manufacturing-companies-saudi-arabia": {
+      "impressions": 327,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-reports/country/china": {
+      "impressions": 142,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-reports/country/saudi-arabia": {
+      "impressions": 157,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-reports/gcc-oncology-market-report": {
+      "impressions": 280,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-reports/germany-diabetes-market-report": {
+      "impressions": 119,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-reports/saudi-arabia-biosimilars-market-report": {
+      "impressions": 402,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-reports/south-korea-cardiovascular-market-report": {
+      "impressions": 188,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-research": {
+      "impressions": 3349,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-research/energy": {
+      "impressions": 278,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/market-research/retail": {
+      "impressions": 155,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies": {
+      "impressions": 160,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-brazil": {
+      "impressions": 147,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-canada": {
+      "impressions": 269,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-china": {
+      "impressions": 135,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-egypt": {
+      "impressions": 350,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-iran": {
+      "impressions": 292,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-iraq": {
+      "impressions": 735,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-malaysia": {
+      "impressions": 233,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-mexico": {
+      "impressions": 161,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-oman": {
+      "impressions": 364,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-south-korea": {
+      "impressions": 191,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-switzerland": {
+      "impressions": 387,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/medical-device-companies-uk": {
+      "impressions": 887,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/nielsen-alternative": {
+      "impressions": 747,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Nielsen Alternatives & Competitors: Ranked (2026)",
+        "description": "NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap."
+      }
+    },
+    "/pharmaceutical-companies": {
+      "impressions": 167,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/pharmaceutical-companies-australia": {
+      "impressions": 522,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/pharmaceutical-companies-bahrain": {
+      "impressions": 782,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 16 Pharmaceutical Companies in Bahrain (2026 Ranked)",
+        "description": "Top 16 pharmaceutical companies in Bahrain ranked for 2026 — NHRA regulation, import structure and market size. Research by BioNixus."
+      }
+    },
+    "/pharmaceutical-companies-egypt": {
+      "impressions": 11821,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 40 Pharmaceutical Companies in Egypt (2026 Ranked List)",
+        "description": "2026 ranking of Egypt's pharmaceutical companies — local giants, multinationals, market shares and pricing context. By Bionixus, Egypt healthcare research experts."
+      }
+    },
+    "/pharmaceutical-companies-indonesia": {
+      "impressions": 988,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/pharmaceutical-companies-iran": {
+      "impressions": 171,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 18 Pharmaceutical Companies in Iran (2026 Ranked List)",
+        "description": "Top 18 pharmaceutical companies in Iran ranked for 2026 — market size, sanctions context, local manufacturers and access pathways. By BioNixus."
+      }
+    },
+    "/pharmaceutical-companies-iraq": {
+      "impressions": 1333,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Pharmaceutical Companies in Iraq (2026 KIMADIA Guide)",
+        "description": "Top pharmaceutical companies in Iraq ranked for 2026 — KIMADIA tender system, local manufacturers, MNC offices and market size. Research by BioNixus."
+      }
+    },
+    "/pharmaceutical-companies-kuwait": {
+      "impressions": 2317,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 15 Pharmaceutical Companies in Kuwait (2026 Ranked List)",
+        "description": "Top 15 pharmaceutical companies in Kuwait ranked for 2026 — market size, import structure, MOH context and distributor map. Research by BioNixus."
+      }
+    },
+    "/pharmaceutical-companies-oman": {
+      "impressions": 432,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Pharmaceutical Companies in Oman (2026 Ranked List)",
+        "description": "Top pharmaceutical companies in Oman ranked for 2026 — local manufacturers, MNCs, market size and growth data. The definitive Oman pharma guide by BioNixus."
+      }
+    },
+    "/pharmaceutical-companies-qatar": {
+      "impressions": 125,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 18 Pharmaceutical Companies in Qatar (2026 Ranked List)",
+        "description": "Top 18 pharmaceutical companies in Qatar ranked for 2026 — market size, HMC/PHCC tender system and growth outlook. Research by BioNixus."
+      }
+    },
+    "/pharmaceutical-companies-saudi-arabia": {
+      "impressions": 2033,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 20 Pharmaceutical Companies in Saudi Arabia (2026 List)",
+        "description": "2026 ranking of pharmaceutical companies in Saudi Arabia — SPIMACO, Tabuk, MNCs, NUPCO tenders and localization. By BioNixus, KSA healthcare research experts."
+      }
+    },
+    "/pharmaceutical-companies-uae": {
+      "impressions": 7473,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 30 Pharmaceutical Companies in UAE (2026 List)",
+        "description": "2026 list of pharmaceutical companies in the UAE — Julphar, Neopharma, Globalpharma, MNC offices and distributors, with MOHAP/DHA/DOH context. Dubai city guide linked. By BioNixus."
+      }
+    },
+    "/pharmaceutical-distributors-saudi-arabia": {
+      "impressions": 251,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/pharmacy-chains-oman": {
+      "impressions": 104,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/real-estate-companies-egypt": {
+      "impressions": 837,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 24 Real Estate Developers in Egypt (2026 List)",
+        "description": "2026 list of real estate developers in Egypt: TMG, SODIC, Palm Hills, Emaar Misr, Ora, Mountain View, Hyde Park, City Edge and more — pipeline, off-plan, buyers, brokers."
+      }
+    },
+    "/real-estate-companies-saudi-arabia": {
+      "impressions": 366,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top 24 Real Estate Developers in Saudi Arabia (2026 List)",
+        "description": "2026 list of real estate developers in Saudi Arabia: ROSHN, NHC, Dar Al Arkan, Jabal Omar, RETAL, Red Sea Global, Diriyah and more — pipeline, off-plan, buyers, brokers."
+      }
+    },
+    "/retail-companies-oman": {
+      "impressions": 123,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Retail Companies in Oman (2026) | Banners",
+        "description": "2026 list of retail companies in Oman — Lulu, Carrefour, and traditional grocers. Account-level research by BioNixus."
+      }
+    },
+    "/retail-companies-saudi-arabia": {
+      "impressions": 394,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Top Retail Companies in Saudi Arabia (2026)",
+        "description": "2026 list of retail companies in Saudi Arabia — Panda, Tamimi, Lulu, and traditional grocers. Account-level research by BioNixus."
+      }
+    },
+    "/saudi-payer-market-access-research": {
+      "impressions": 185,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/services/competitive-intelligence": {
+      "impressions": 1104,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Pharma Competitive Intelligence Services (2026) | BioNixus",
+        "description": "Pharmaceutical competitive intelligence services — pipeline monitoring, launch readiness, prescriber switching and landscape assessments across EMEA. By BioNixus."
+      }
+    },
+    "/services/kol-stakeholder-mapping": {
+      "impressions": 307,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/services/market-access": {
+      "impressions": 916,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/services/quantitative-research": {
+      "impressions": 291,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/singapore-healthcare-market-report": {
+      "impressions": 543,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/singapore-ivd-market-access": {
+      "impressions": 145,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/singapore-medical-devices-market-report": {
+      "impressions": 614,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/singapore-medtech-manufacturing-market": {
+      "impressions": 191,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/singapore-pharmaceutical-market": {
+      "impressions": 272,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/sitemap": {
+      "impressions": 138,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/south-korea-medical-devices-market-report": {
+      "impressions": 194,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/spain-healthcare-market-report": {
+      "impressions": 213,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/spain-medical-devices-market-report": {
+      "impressions": 217,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/turkey-healthcare-market-report": {
+      "impressions": 190,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Turkey Healthcare Market 2026: Size, TITCK & SGK Outlook",
+        "description": "Turkey healthcare market 2026 — market size, TITCK regulation, SGK reimbursement, city hospitals and pharma market context. Report by BioNixus."
+      }
+    },
+    "/turkey-medical-devices-market-report": {
+      "impressions": 163,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/uae-healthcare-market-report": {
+      "impressions": 201,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "UAE Healthcare Market Report 2026: Size, Pharma & Devices",
+        "description": "UAE healthcare market $30–33B in 2026 — pharma ($3.5B), medical devices ($1.8B), DHA, DOH & MOHAP regulation. Commercial intelligence by BioNixus."
+      }
+    },
+    "/uae-pharmaceutical-market-research": {
+      "impressions": 122,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "Healthcare Market Research Company UAE | BioNixus Dubai",
+        "description": "Healthcare market research company in the UAE, based in Dubai: DHA, DOH & MOHAP-aligned HCP, KOL, payer and patient research. Proposal in 48 hours."
+      }
+    },
+    "/uae-pricing-reimbursement-strategy": {
+      "impressions": 210,
+      "frozenAt": "2026-10-04",
+      "override": {
+        "title": "UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH",
+        "description": "UAE drug pricing and reimbursement 2026 — MOHAP pricing rules, DHA/DOH formularies, Thiqa/Daman coverage and launch pricing strategy. By BioNixus."
+      }
+    },
+    "/uk-medical-devices-market-report": {
+      "impressions": 110,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/usa-healthcare-market-report": {
+      "impressions": 4731,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/usa-medical-devices-market-report": {
+      "impressions": 1110,
+      "frozenAt": "2026-10-04",
+      "override": null
+    },
+    "/videos/healthcare-market-research-overview": {
+      "impressions": 147,
+      "frozenAt": "2026-10-04",
+      "override": null
+    }
+  }
+}

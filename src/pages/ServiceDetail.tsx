@@ -9,7 +9,13 @@ import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketRefer
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { PremiumMarketAccess } from '@/components/services/PremiumMarketAccess';
 import { PremiumQuantitativeResearch } from '@/components/services/PremiumQuantitativeResearch';
+import { ServiceDeepDive } from '@/components/services/ServiceDeepDive';
 import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
+import {
+  SERVICE_DEEP_CONTENT,
+  SERVICE_DEEP_CONTENT_MODIFIED_AT,
+  SERVICE_DEEP_CONTENT_PUBLISHED_AT,
+} from '@/data/seo/serviceDeepContent';
 
 interface ServiceData {
   title: string;
@@ -202,13 +208,21 @@ const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { language } = useLanguage();
   const svc = slug ? serviceData[slug] : undefined;
-  const faqItems =
-    slug === 'quantitative-research'
-      ? SERVICE_EXPANDED_FAQS['quantitative-research']
-      : slug === 'market-access'
-        ? SERVICE_EXPANDED_FAQS['market-access']
-        : undefined;
+  const deep = slug ? SERVICE_DEEP_CONTENT[slug] : undefined;
   const isPremiumService = slug === 'quantitative-research' || slug === 'market-access';
+  // FAQPage schema: the premium pages' existing FAQ lists plus the deep-dive FAQs, de-duplicated by question.
+  const faqItems = (() => {
+    const base = isPremiumService && slug ? SERVICE_EXPANDED_FAQS[slug] ?? [] : [];
+    const merged = [...base, ...(deep?.faqs ?? [])];
+    const seen = new Set<string>();
+    const unique = merged.filter((f) => {
+      const key = f.question.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    return unique.length > 0 ? unique : undefined;
+  })();
 
   if (!svc) return <Navigate to="/services" replace />;
 
@@ -222,6 +236,8 @@ const ServiceDetail = () => {
         serviceDescription={svc.metaDescription}
         providerAreaServed={svc.geoCoverage}
         faqItems={faqItems}
+        publishedAt={deep ? SERVICE_DEEP_CONTENT_PUBLISHED_AT : undefined}
+        modifiedAt={deep ? SERVICE_DEEP_CONTENT_MODIFIED_AT : undefined}
         breadcrumb={[
           { name: 'Home', item: 'https://www.bionixus.com/' },
           { name: 'Services', item: 'https://www.bionixus.com/services' },
@@ -236,9 +252,15 @@ const ServiceDetail = () => {
       <Navbar />
       <main>
         {slug === 'quantitative-research' ? (
-          <PremiumQuantitativeResearch svc={svc} />
+          <>
+            <PremiumQuantitativeResearch svc={svc} />
+            {deep ? <ServiceDeepDive slug={slug} content={deep} tone="premium" /> : null}
+          </>
         ) : slug === 'market-access' ? (
-          <PremiumMarketAccess svc={svc} />
+          <>
+            <PremiumMarketAccess svc={svc} />
+            {deep ? <ServiceDeepDive slug={slug} content={deep} tone="premium" /> : null}
+          </>
         ) : (
           <>
         <div className="section-padding pt-24 pb-4">
@@ -416,6 +438,8 @@ const ServiceDetail = () => {
           </div>
         </section>
 
+        {slug && deep ? <ServiceDeepDive slug={slug} content={deep} /> : null}
+
         {slug ? <ServiceMarketReferenceGuide serviceSlug={slug} /> : null}
 
         {/* CTA */}
@@ -425,13 +449,13 @@ const ServiceDetail = () => {
               {svc.ctaText}
             </h2>
             <p className="text-primary-foreground/70 mb-8 leading-relaxed">
-              Tell us about your project and receive a tailored proposal within 24 hours.
+              A 30-minute scoping call with a research lead, then a costed proposal within 48 hours.
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
             >
-              Request a Proposal <ArrowRight className="w-4 h-4" />
+              Book a 30-minute scoping call <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>

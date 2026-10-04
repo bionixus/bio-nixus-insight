@@ -37,6 +37,7 @@ import { LegacyDirectoryChrome } from '@/components/seo/DirectoryPremium';
 import { PharmaCompaniesQuickAnswer } from '@/components/seo/PharmaCompaniesQuickAnswer';
 import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
 import { buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
+import { PharmaCompaniesResearchLinks } from '@/components/seo/PharmaCompaniesResearchLinks';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('kuwait');
 
@@ -884,6 +885,8 @@ return (
             </div>
           </div>
         </section>
+
+        <PharmaCompaniesResearchLinks country="kuwait" />
 
         {/* FAQ */}
         <section className="section-padding py-16" id="gcc-directories"><div className="container-wide max-w-5xl mx-auto">

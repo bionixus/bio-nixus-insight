@@ -85,7 +85,6 @@ export { default as HealthcareMarketResearchArgentina } from '@/pages/Healthcare
 export { default as HealthcareMarketResearchAustralia } from '@/pages/HealthcareMarketResearchAustralia';
 export { default as HealthcareMarketResearchCanada } from '@/pages/HealthcareMarketResearchCanada';
 export { default as HealthcareMarketResearchChina } from '@/pages/HealthcareMarketResearchChina';
-export { default as HealthcareMarketResearchCompanies2026 } from '@/pages/HealthcareMarketResearchCompanies2026';
 export { default as HealthcareMarketResearchDenmark } from '@/pages/HealthcareMarketResearchDenmark';
 export { default as HealthcareMarketResearchFrance } from '@/pages/HealthcareMarketResearchFrance';
 export { default as HealthcareMarketResearchInBahrain } from '@/pages/HealthcareMarketResearchInBahrain';
@@ -171,7 +170,7 @@ export { default as PatientAdherenceResearchMiddleEast } from '@/pages/PatientAd
 export { default as PatientJourneyResearchGcc } from '@/pages/PatientJourneyResearchGcc';
 export { default as PatientSupportProgramResearchGcc } from '@/pages/PatientSupportProgramResearchGcc';
 export { default as PharmaceuticalMarketResearchDubai } from '@/pages/PharmaceuticalMarketResearchDubai';
-export { default as PharmaceuticalMarketResearchProvider } from '@/pages/PharmaceuticalMarketResearchProvider';
+export { default as PharmaceuticalMarketResearch } from '@/pages/PharmaceuticalMarketResearch';
 export { default as PharmaceuticalCompetitorIntelligence } from '@/pages/PharmaceuticalCompetitorIntelligence';
 export { default as PharmaceuticalTherapyAreas } from '@/pages/PharmaceuticalTherapyAreas';
 export { default as PharmaciesSaudiArabiaMarketing } from '@/pages/PharmaciesSaudiArabiaMarketing';
