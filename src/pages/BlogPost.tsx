@@ -1952,6 +1952,13 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               market={post.country || undefined}
               ctaId={`blog_${slug}_end`}
               ctaLocation="blog_post_end"
+              {...(slug === 'nupco-saudi-arabia-tendering-guide'
+                ? {
+                    headline: 'Preparing a NUPCO tender bid?',
+                    defaultNeed: 'Market access' as const,
+                    sourceContext: 'NUPCO tender guide',
+                  }
+                : {})}
             />
           </div>
         </div>

@@ -510,7 +510,7 @@ function buildFallbackDescription(pathname) {
     return 'BioNixus IQVIA alternative: hospital sales data, consumption analytics, and flexible global studies for pharmaceutical teams.';
   }
   if (path === '/nielsen-alternative') {
-    return 'NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap.';
+    return 'Nielsen competitors compared: when NielsenIQ retail audits are enough, and when to brief BioNixus for named accounts, traditional trade and SKU-level cuts.';
   }
   if (path === '/pricing') {
     return 'Custom research from $10,000 to $60,000. BioNixus prices pharma and healthcare primary studies by project. No syndicated report fee. Proposal in 48 hours.';

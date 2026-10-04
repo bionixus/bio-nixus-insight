@@ -22,9 +22,9 @@ function extractJsonLd(document: string): Array<Record<string, unknown>> {
 
 describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
   it('ships unique title, meta, one H1, canonical, and OG/Twitter tags', () => {
-    expect(html).toContain('<title>Nielsen Alternatives &amp; Competitors: Ranked (2026)</title>');
+    expect(html).toContain('<title>Nielsen Competitors: NielsenIQ Alternatives Compared (2026)</title>');
     expect(html).toMatch(
-      /<meta name="description" content="NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts\. Keep NielsenIQ for national retail\. Brief BioNixus for the feed gap\.">/,
+      /<meta name="description" content="Nielsen competitors compared: when NielsenIQ retail audits are enough, and when to brief BioNixus for named accounts, traditional trade and SKU-level cuts\.">/,
     );
     const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '';
     const description =
@@ -84,7 +84,7 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
     expect(schemas.some((node) => node['@type'] === 'ItemList')).toBe(true);
     expect(schemas.some((node) => node['@type'] === 'BreadcrumbList')).toBe(true);
     const page = schemas.find((node) => node['@type'] === 'WebPage');
-    expect(page?.dateModified).toBe('2026-09-13');
+    expect(page?.dateModified).toBe('2026-10-04');
     expect(page?.url).toBe('https://www.bionixus.com/nielsen-alternative');
   });
 
@@ -117,8 +117,8 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
       expect(legacyRedirects[source]).toBe('/nielsen-alternative');
     }
     const ctr = getCtrSeo('/nielsen-alternative');
-    expect(ctr?.title).toBe('Nielsen Alternatives & Competitors: Ranked (2026)');
-    expect(ctr?.description).toContain('Keep NielsenIQ for national retail');
+    expect(ctr?.title).toBe('Nielsen Competitors: NielsenIQ Alternatives Compared (2026)');
+    expect(ctr?.description).toContain('when NielsenIQ retail audits are enough');
   });
 
   it('adds a small reciprocal Nielsen link on the IQVIA alternative page', () => {

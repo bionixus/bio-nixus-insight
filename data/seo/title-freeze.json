@@ -80,7 +80,10 @@
     "/banks-morocco": {
       "impressions": 728,
       "frozenAt": "2026-10-04",
-      "override": null
+      "override": {
+        "title": "List of Banks in Morocco (2026): Attijariwafa, BCP & 12 More",
+        "description": "List of banks in Morocco for 2026: Attijariwafa, BCP, Bank of Africa, SG Maroc, BMCI, CIH and more, with Bank Al-Maghrib rules and the Casablanca market."
+      }
     },
     "/banks-oman": {
       "impressions": 294,
@@ -95,7 +98,10 @@
     "/banks-qatar": {
       "impressions": 847,
       "frozenAt": "2026-10-04",
-      "override": null
+      "override": {
+        "title": "List of Banks in Qatar (2026): QNB, QIB, CBQ & 14 More",
+        "description": "List of banks in Qatar for 2026: QNB, Commercial Bank, QIB, Doha Bank, Masraf Al Rayan, Dukhan Bank and more, with QCB licensing, Islamic banks and payments."
+      }
     },
     "/banks-spain": {
       "impressions": 510,
@@ -201,8 +207,8 @@
       "impressions": 990,
       "frozenAt": "2026-10-04",
       "override": {
-        "title": "NUPCO Tenders 2026: Register & Win Saudi Procurement",
-        "description": "Step-by-step NUPCO tender guide — registration, e-portal, timelines, pricing rules and win strategies for Saudi Arabia. Updated 2026."
+        "title": "NUPCO Tender Guide 2026: How to Register and Bid in KSA",
+        "description": "NUPCO tender guide for pharma and medtech suppliers: registration, the e-portal, tender timelines, pricing rules and how to win Saudi unified procurement."
       }
     },
     "/blog/obesity-pbm-coverage-lilly-portfolio-q2-2026": {
@@ -381,7 +387,10 @@
     "/fmcg-companies-tunisia": {
       "impressions": 773,
       "frozenAt": "2026-10-04",
-      "override": null
+      "override": {
+        "title": "15 FMCG Companies in Tunisia (2026): Délice, Poulina, SFBT",
+        "description": "15 FMCG companies in Tunisia for 2026: Délice, Poulina, SFBT, Land’Or, Saida, Unilever Maghreb and more, with the grocers and retail banners that carry them."
+      }
     },
     "/fmcg-companies-turkey": {
       "impressions": 269,
@@ -975,8 +984,8 @@
       "impressions": 747,
       "frozenAt": "2026-10-04",
       "override": {
-        "title": "Nielsen Alternatives & Competitors: Ranked (2026)",
-        "description": "NielsenIQ alternatives for named accounts, traditional trade, and SKU-level cuts. Keep NielsenIQ for national retail. Brief BioNixus for the feed gap."
+        "title": "Nielsen Competitors: NielsenIQ Alternatives Compared (2026)",
+        "description": "Nielsen competitors compared: when NielsenIQ retail audits are enough, and when to brief BioNixus for named accounts, traditional trade and SKU-level cuts."
       }
     },
     "/pharmaceutical-companies": {
@@ -1062,8 +1071,8 @@
       "impressions": 7473,
       "frozenAt": "2026-10-04",
       "override": {
-        "title": "Top 30 Pharmaceutical Companies in UAE (2026 List)",
-        "description": "2026 list of pharmaceutical companies in the UAE — Julphar, Neopharma, Globalpharma, MNC offices and distributors, with MOHAP/DHA/DOH context. Dubai city guide linked. By BioNixus."
+        "title": "Top 30 Pharmaceutical Companies in UAE & Dubai (2026 List)",
+        "description": "2026 list of pharmaceutical companies in the UAE and Dubai — Julphar, Neopharma, Globalpharma, MNC offices and distributors, with MOHAP, DHA and DOH context."
       }
     },
     "/pharmaceutical-distributors-saudi-arabia": {
@@ -1111,7 +1120,10 @@
     "/saudi-payer-market-access-research": {
       "impressions": 185,
       "frozenAt": "2026-10-04",
-      "override": null
+      "override": {
+        "title": "Saudi Market Access Research: SFDA, CHI & NUPCO Payers",
+        "description": "Saudi market access research with payers, formulary committees and NUPCO buyers: SFDA pricing, CHI coverage and tender evidence. Proposal in 48 hours."
+      }
     },
     "/services/competitive-intelligence": {
       "impressions": 1104,

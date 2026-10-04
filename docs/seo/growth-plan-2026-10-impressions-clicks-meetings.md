@@ -214,6 +214,20 @@ implying a ranking.
 | `/saudi-payer-market-access-research` | pos 6, 183 impr | 0% | Title/meta with "SFDA, CHI, NUPCO" named; Phase 2 CTA. |
 | `/pharmaceutical-companies-egypt` | pos 5.4, 10,754 impr | 2.5% | Already strong; do **not** touch title. Add `ItemList` + `dateModified` freshness line in the first 100 words ("Updated October 2026"). |
 
+**4.3 status 2026-10-04 — seven approved title tests shipped, re-frozen to 2026-11-29** (GSC week to 2026-10-04):
+
+| URL | Before (impr / pos / CTR) | New title |
+|---|---|---|
+| `/nielsen-alternative` | 747 / 6.7 / 1.2% | Nielsen Competitors: NielsenIQ Alternatives Compared (2026) |
+| `/blog/nupco-saudi-arabia-tendering-guide` | 990 / 8.4 / 0.4% | NUPCO Tender Guide 2026: How to Register and Bid in KSA (+ NUPCO-specific scoping-call CTA) |
+| `/saudi-payer-market-access-research` | 185 / 6.1 / 0% | Saudi Market Access Research: SFDA, CHI & NUPCO Payers |
+| `/pharmaceutical-companies-uae` | 7,473 / 8.5 / 1.6% | Top 30 Pharmaceutical Companies in UAE & Dubai (2026 List) |
+| `/banks-qatar` | 847 / 8.9 / 0.24% | List of Banks in Qatar (2026): QNB, QIB, CBQ & 14 More |
+| `/banks-morocco` | 728 / 7.7 / 0.27% | List of Banks in Morocco (2026): Attijariwafa, BCP & 12 More |
+| `/fmcg-companies-tunisia` | 773 / 6.3 / 0.52% | 15 FMCG Companies in Tunisia (2026): Délice, Poulina, SFBT |
+
+Not changed: `/iqvia-alternative` (owner decision — it earns 50 clicks/week), `/pharmaceutical-companies-egypt` (top earner), `/blog/healthcare-overview-egypt-market-2026` (its 0.07% CTR is a bot query: 6,645 of 7,143 impressions). Read the result after 28 days; revert any URL whose clicks fall.
+
 ### 4.4 Internal-link engine
 
 The directory cluster (`/pharmaceutical-companies-*`, `/medical-device-companies-*`) is where
