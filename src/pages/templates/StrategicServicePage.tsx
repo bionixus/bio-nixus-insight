@@ -19,11 +19,31 @@ import { MediaVisualBriefing } from '@/components/media/MediaVisualBriefing';
 import { ProcessWorkflowVisual } from '@/components/media/ProcessWorkflowVisual';
 import { ProofVideoEmbed } from '@/components/media/ProofVideoEmbed';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 type LinkItem = {
   to: string;
   label: string;
   primary?: boolean;
+};
+
+/** Answer-first block rendered directly under the hero (LLM/AI-overview citable). */
+export type StrategicAnswerBlock = {
+  question: string;
+  answer: string;
+  points: Array<{ title: string; description: string }>;
+  summary: string;
+};
+
+/** Extra long-form section rendered after "Delivery priorities". Any combination of paragraphs, items and links. */
+export type StrategicSection = {
+  id: string;
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+  paragraphs?: string[];
+  items?: Array<{ title: string; body: string }>;
+  links?: LinkItem[];
 };
 
 type StrategicServicePageProps = {
@@ -49,7 +69,22 @@ type StrategicServicePageProps = {
   mediaSlug?: string;
   /** Optional per-region breakdown (e.g. payer/HTA landscape by country) — renders as its own section with one H3 per region. */
   regionalLandscapes?: Array<{ region: string; paragraphs: string[] }>;
+  /** Optional answer-first block under the hero (question as H2). */
+  answerBlock?: StrategicAnswerBlock;
+  /** Optional additional sections rendered after "Delivery priorities". */
+  sections?: StrategicSection[];
+  /** ISO dates for a WebPage node (datePublished/dateModified). Bump modifiedAt on every content change. */
+  publishedAt?: string;
+  modifiedAt?: string;
 };
+
+/** Lower-cases a label for mid-sentence use while keeping acronyms (HEOR, GCC, RWE, KOL) intact. */
+function sentenceCaseLabel(label: string): string {
+  return label
+    .split(' ')
+    .map((word) => (/^[A-Z0-9&/-]{2,}$/.test(word) ? word : word.toLowerCase()))
+    .join(' ');
+}
 
 export default function StrategicServicePage({
   title,
@@ -68,6 +103,10 @@ export default function StrategicServicePage({
   expandedContent,
   mediaSlug,
   regionalLandscapes,
+  answerBlock,
+  sections,
+  publishedAt,
+  modifiedAt,
 }: StrategicServicePageProps) {
   const resolvedFaqs = expandedContent?.faqs ?? faqs;
   const pagePath = canonicalUrl.replace('https://www.bionixus.com', '') || '/';
@@ -76,7 +115,8 @@ export default function StrategicServicePage({
   const pageMedia = getPageMedia(resolvedMediaSlug) ?? getPageMedia('default-service');
   const faqSectionId = `service-faq-${slugKey}`;
   const marketName = areaServed && areaServed.length ? areaServed[0] : 'GCC & MENA';
-  const serviceLabel = (serviceType ?? breadcrumbLabel).toLowerCase();
+  const serviceLabel = sentenceCaseLabel(serviceType ?? breadcrumbLabel);
+  const breadcrumbLabelLower = sentenceCaseLabel(breadcrumbLabel);
 
   const config: ReportConversionConfig = {
     showEgyptPhone: Boolean(areaServed?.some((a) => /egypt/i.test(a))),
@@ -85,8 +125,8 @@ export default function StrategicServicePage({
     canonicalPath: pagePath,
     emailSubject: `${h1} — BioNixus`,
     routingHint: `Tell us your target market and the decision you are making, and we route you to the right ${serviceLabel} lead.`,
-    primaryCtaLabel: 'Book a discovery call',
-    consultationHeadline: `Plan your ${breadcrumbLabel.toLowerCase()} with BioNixus`,
+    primaryCtaLabel: 'Book a 30-minute scoping call',
+    consultationHeadline: `Plan your ${breadcrumbLabelLower} with BioNixus`,
     consultationBody:
       'BioNixus pairs senior-led design with bilingual Arabic–English fieldwork and audit-ready governance — scoped to the decision in front of you, not a generic template.',
     asideDeskLabel: `${marketName} desk`,
@@ -116,6 +156,21 @@ export default function StrategicServicePage({
       url: canonicalUrl,
     },
     buildBreadcrumbSchema(breadcrumbItems),
+    ...(modifiedAt
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': `${canonicalUrl}#webpage`,
+            url: canonicalUrl,
+            name: title,
+            description,
+            isPartOf: { '@id': 'https://www.bionixus.com/#website' },
+            datePublished: publishedAt ?? modifiedAt,
+            dateModified: modifiedAt,
+          },
+        ]
+      : []),
     ...(resolvedFaqs && resolvedFaqs.length ? [buildFAQSchema(resolvedFaqs, { pageUrl: canonicalUrl })] : []),
   ];
 
@@ -137,6 +192,17 @@ export default function StrategicServicePage({
           breadcrumbs={breadcrumbItems}
         />
 
+        {/* Hub link must sit within the first 200 words of visible content, ahead of media blocks. */}
+        <div className="section-padding py-4">
+          <p className="container-wide max-w-4xl mx-auto text-sm text-muted-foreground leading-relaxed">
+            For regional context and related services, start from our{' '}
+            <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+              healthcare market research hub
+            </Link>{' '}
+            before scoping this engagement.
+          </p>
+        </div>
+
         {pageMedia?.visualBriefing ? (
           <MediaVisualBriefing
             heading={pageMedia.visualBriefing.heading}
@@ -156,13 +222,18 @@ export default function StrategicServicePage({
         ) : null}
 
         <ReportContentWithAside config={config}>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-            For regional context and related services, start from our{' '}
-            <Link to="/healthcare-market-research" className="text-primary underline font-medium">
-              healthcare market research hub
-            </Link>{' '}
-            before scoping this engagement.
-          </p>
+          {answerBlock ? (
+            <section className="section-padding pt-0" id="answer">
+              <div className="container-wide max-w-4xl mx-auto">
+                <GeoLLMAnswerBlock
+                  question={answerBlock.question}
+                  answer={answerBlock.answer}
+                  points={answerBlock.points}
+                  summary={answerBlock.summary}
+                />
+              </div>
+            </section>
+          ) : null}
           {expandedContent ? <ExpandedServiceLandingContent content={expandedContent} /> : null}
 
           {/* Decision framework */}
@@ -170,7 +241,7 @@ export default function StrategicServicePage({
             <div className="container-wide max-w-4xl mx-auto">
               <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">Executive decision framework</p>
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
-                How we approach {breadcrumbLabel.toLowerCase()}
+                How we approach {breadcrumbLabelLower}
               </h2>
               <div className="grid md:grid-cols-3 gap-4">
                 {decisionPoints.map((point) => (
@@ -204,6 +275,50 @@ export default function StrategicServicePage({
               </ul>
             </div>
           </section>
+
+          {sections?.map((section, index) => (
+            <section
+              key={section.id}
+              id={section.id}
+              className={`section-padding ${index % 2 === 0 ? 'bg-cream-dark rounded-2xl border border-border/40' : ''}`}
+            >
+              <div className="container-wide max-w-4xl mx-auto">
+                {section.eyebrow ? (
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">{section.eyebrow}</p>
+                ) : null}
+                <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">{section.heading}</h2>
+                {section.intro ? (
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">{section.intro}</p>
+                ) : null}
+                {section.paragraphs?.map((p) => (
+                  <p key={p.slice(0, 48)} className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 last:mb-0">
+                    {p}
+                  </p>
+                ))}
+                {section.items && section.items.length ? (
+                  <div className="grid md:grid-cols-2 gap-4 mt-2">
+                    {section.items.map((item) => (
+                      <article key={item.title} className="bg-card rounded-xl border border-border p-5 shadow-sm">
+                        <h3 className="text-base font-semibold text-foreground mb-2">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
+                      </article>
+                    ))}
+                  </div>
+                ) : null}
+                {section.links && section.links.length ? (
+                  <ul className="mt-6 flex flex-wrap gap-3">
+                    {section.links.map((link) => (
+                      <li key={`${link.to}-${link.label}`}>
+                        <Link to={link.to} className="text-sm font-semibold text-primary underline-offset-4 hover:underline">
+                          {link.label} →
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            </section>
+          ))}
 
           <section className="section-padding pt-0">
             <div className="container-wide max-w-4xl mx-auto">

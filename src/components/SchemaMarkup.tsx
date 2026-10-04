@@ -71,6 +71,9 @@ type ServiceSchemaProps = {
   providerAreaServed?: string
   breadcrumb: BreadcrumbItem[]
   faqItems?: FaqItem[]
+  /** When set, a WebPage node with datePublished/dateModified is emitted alongside the Service node. */
+  publishedAt?: string
+  modifiedAt?: string
 }
 
 type AboutSchemaProps = {
@@ -503,6 +506,22 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       },
       buildBreadcrumb(props.breadcrumb),
     ]
+
+    const serviceModified = toIsoDate(props.modifiedAt)
+    if (serviceModified) {
+      nodes.push({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `${toHttpsUrl(props.pageUrl)}#webpage`,
+        url: toHttpsUrl(props.pageUrl),
+        name: props.serviceName,
+        description: props.serviceDescription,
+        inLanguage,
+        isPartOf: { '@id': WEBSITE_ID },
+        datePublished: toIsoDate(props.publishedAt) || serviceModified,
+        dateModified: serviceModified,
+      })
+    }
 
     if (props.faqItems && props.faqItems.length > 0) {
       nodes.push(buildFaq(props.faqItems, inLanguage, toHttpsUrl(props.pageUrl)))

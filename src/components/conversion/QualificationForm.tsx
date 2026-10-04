@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
 import { trackLeadSubmitted, trackFormStart } from '@/lib/analytics';
-import { submitLeadDual } from '@/lib/submitLeadDual';
+import { submitLeadDual, submitScopingCallLead } from '@/lib/submitLeadDual';
 import {
   QUALIFICATION_FORM_MARKETS,
   QUALIFICATION_FORM_NEEDS,
   QUALIFICATION_FORM_TIMELINES,
   QUALIFICATION_FORM_BUDGETS,
+  QUALIFICATION_FORM_BELOW_MINIMUM_BUDGET,
 } from '@/data/qualificationFormOptions';
 
 const ERROR_EMAIL = 'admin@bionixus.com';
@@ -36,6 +37,8 @@ export function QualificationForm({
   onSuccess,
 }: QualificationFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  /** True when the submitted budget was below the minimum engagement — answered by email, not a call. */
+  const [belowMinimum, setBelowMinimum] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -96,8 +99,12 @@ export function QualificationForm({
     const utmContent = params.get('utm_content') || '';
     const utmTerm = params.get('utm_term') || '';
 
-    data.set('_subject', `New Research Enquiry — ${company || rawEmail}`);
-    data.set('requestType', 'Qualification Form');
+    const isBelowMinimum = budget === QUALIFICATION_FORM_BELOW_MINIMUM_BUDGET;
+    data.set(
+      '_subject',
+      isBelowMinimum ? `Research enquiry (under $20K) — ${company || rawEmail}` : `Scoping call request — ${company || rawEmail}`,
+    );
+    data.set('requestType', isBelowMinimum ? 'Research Enquiry (below minimum)' : 'Scoping Call Request');
     data.set('formVariant', formId);
     data.set('sourceContext', sourceContext || '');
     data.set('sourcePage', currentPath);
@@ -108,21 +115,24 @@ export function QualificationForm({
     data.set('utmContent', utmContent);
     data.set('utmTerm', utmTerm);
     data.set('markets', markets);
-    data.set('qualified', budget ? 'yes' : 'unspecified-budget');
+    data.set('qualified', isBelowMinimum ? 'no' : budget ? 'yes' : 'unspecified-budget');
 
     setSubmitting(true);
     setSubmitError(null);
     try {
-      const result = await submitLeadDual(data);
+      // Scoping-call requests are the only leads that also go to Formspree (email alert) — see submitLeadDual.
+      // Below-minimum budgets are saved to HighLevel only and answered by email.
+      const result = isBelowMinimum ? await submitLeadDual(data) : await submitScopingCallLead(data);
       if (result.skipped) {
         setSubmitted(true);
         return;
       }
       if (result.ok) {
+        setBelowMinimum(isBelowMinimum);
         setSubmitted(true);
         trackLeadSubmitted({ formId });
         onSuccess?.();
-      } else if (result.formspreeNetworkError) {
+      } else if (result.networkError) {
         setSubmitError('Something went wrong — please try again or email us directly.');
         redirectToErrorEmail({
           rawEmail,
@@ -133,10 +143,10 @@ export function QualificationForm({
           timeline,
           budget,
           sourceContext,
-          errorDetails: result.formspreeNetworkError,
+          errorDetails: result.networkError,
         });
       } else {
-        setSubmitError(result.formspreeError || 'Something went wrong — please try again or email us directly.');
+        setSubmitError(result.error || 'Something went wrong — please try again or email us directly.');
         redirectToErrorEmail({ rawEmail, company, role, need, markets, timeline, budget, sourceContext });
       }
     } catch (err) {
@@ -157,16 +167,35 @@ export function QualificationForm({
     }
   };
 
+  if (submitted && belowMinimum) {
+    return (
+      <div className="text-center py-4">
+        <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-xl font-bold text-primary">
+          ✓
+        </div>
+        <h3 className="text-lg font-display font-semibold text-foreground mb-2">Thank you — we'll reply by email.</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+          Projects under $20K are scoped by email rather than a call. A research lead will send options within one
+          business day. You can also write to{' '}
+          <a href={`mailto:${ERROR_EMAIL}`} className="text-primary font-medium hover:underline">
+            {ERROR_EMAIL}
+          </a>
+          .
+        </p>
+      </div>
+    );
+  }
+
   if (submitted) {
     return (
       <div className="text-center py-4">
         <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-xl font-bold text-primary">
           ✓
         </div>
-        <h3 className="text-lg font-display font-semibold text-foreground mb-2">Thank you — we've got it.</h3>
+        <h3 className="text-lg font-display font-semibold text-foreground mb-2">Thank you — your scoping call request is in.</h3>
         <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-          A member of our research team will follow up within one business day. In the meantime, feel free to browse
-          our <Link to="/case-studies" className="text-primary font-medium hover:underline">case studies</Link>.
+          A research lead will confirm a 30-minute slot within one business day, or pick a time now. In the meantime,
+          browse our <Link to="/case-studies" className="text-primary font-medium hover:underline">case studies</Link>.
         </p>
         {QUALIFICATION_FORM_SCHEDULING_URL ? (
           <a
@@ -175,7 +204,7 @@ export function QualificationForm({
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
           >
-            Book a call now
+            Pick a time for your call
           </a>
         ) : (
           <p className="text-xs text-muted-foreground">Prefer to talk sooner? Call the numbers in our footer.</p>
@@ -329,7 +358,7 @@ export function QualificationForm({
         disabled={submitting}
         className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
       >
-        {submitting ? 'Sending…' : 'Request a Proposal'}
+        {submitting ? 'Sending…' : 'Book a 30-minute scoping call'}
       </button>
     </form>
   );
@@ -346,7 +375,7 @@ function redirectToErrorEmail(fields: {
   sourceContext?: string;
   errorDetails?: string;
 }) {
-  const subject = encodeURIComponent(`Research Enquiry — ${fields.company || fields.rawEmail}`);
+  const subject = encodeURIComponent(`Scoping call request — ${fields.company || fields.rawEmail}`);
   const body = encodeURIComponent(
     `--- FORM DATA ---\n` +
       `Email: ${fields.rawEmail}\n` +

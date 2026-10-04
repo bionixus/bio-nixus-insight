@@ -4,6 +4,16 @@
 # Also ping via: npm run indexnow:priority
 # Rank-23 file: scripts/rank23-owner-urls.txt
 
+# --- Tier 0: Growth plan Phase 1 rebuilds + 301 consolidation targets (2026-10-04) ---
+https://www.bionixus.com/services/market-access
+https://www.bionixus.com/services/competitive-intelligence
+https://www.bionixus.com/services/quantitative-research
+https://www.bionixus.com/services/qualitative-research
+https://www.bionixus.com/services/clinical-trial-support
+https://www.bionixus.com/services/kol-stakeholder-mapping
+https://www.bionixus.com/heor-consulting
+https://www.bionixus.com/pharmaceutical-market-research
+
 # --- Tier 0: Rank-23 keyword owners (Sep 2026) ---
 https://www.bionixus.com/market-research-gcc
 https://www.bionixus.com/qatar-personalized-medicine-market

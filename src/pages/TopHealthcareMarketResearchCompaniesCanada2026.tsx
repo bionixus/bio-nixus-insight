@@ -702,7 +702,7 @@ export default function TopHealthcareMarketResearchCompaniesCanada2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/insights/top-healthcare-market-research-companies-europe-2026', label: 'Top Healthcare MRC in Europe', desc: 'Europe healthcare market research companies for EU and UK benchmarking.' },
-                { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies', desc: 'Global 2026 ranking of healthcare market research companies and agencies.' },
+                { to: '/healthcare-market-research', label: 'Top Healthcare Market Research Companies', desc: 'How BioNixus compares with global healthcare market research companies and agencies.' },
                 { to: '/pharmaceutical-market-research-canada', label: 'Pharmaceutical Market Research Canada', desc: 'TCPS 2-aligned pharmaceutical research covering HCP surveys, KOL mapping, provincial payer research, and CADTH evidence strategy.' },
                 { to: '/insights/top-market-research-companies-canada-2026', label: 'Top Market Research Companies Canada 2026', desc: 'General and consumer market research firms across Canada for 2026.' },
                 { to: '/canada-healthcare-market-report', label: 'Canada Healthcare Market Report', desc: 'Market sizing, Health Canada/CADTH landscape, provincial payer dynamics, and regulatory outlook for the Canadian healthcare market.' },

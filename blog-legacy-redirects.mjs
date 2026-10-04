@@ -62,6 +62,11 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026',
   '/blog/top-market-research-companies-egypt-2026':
     '/insights/top-market-research-companies-egypt-2026',
+  '/healthcare-market-research-companies': '/healthcare-market-research',
+  '/blog/top-healthcare-market-research-firms-mena-europe': '/healthcare-market-research',
+  '/healthcare-market-research/services/market-access': '/services/market-access',
+  '/blog/competitive-intelligence-pharma-gcc': '/services/competitive-intelligence',
+  '/pharmaceutical-market-research-provider': '/pharmaceutical-market-research',
   ...BLOG_LEGACY_FULL_PATH_REDIRECTS,
   ...BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH,
 };

@@ -698,7 +698,7 @@ export default function TopHealthcareMarketResearchCompaniesKuwait2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/insights/top-healthcare-market-research-companies-mena-2026', label: 'Top Healthcare MRC in MENA', desc: 'MENA healthcare market research companies — GCC and regional buyer shortlist.' },
-                { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies', desc: 'Global 2026 ranking of healthcare market research companies and agencies.' },
+                { to: '/healthcare-market-research', label: 'Top Healthcare Market Research Companies', desc: 'How BioNixus compares with global healthcare market research companies and agencies.' },
                 { to: '/kuwait-market-access-research', label: 'Kuwait Market Access Research', desc: 'Payer, formulary, and market access research for the Kuwait market.' },
                 { to: '/gcc-pharmaceutical-market-research', label: 'GCC Pharmaceutical Market Research', desc: 'Comprehensive guide to pharmaceutical research across the GCC.' },
                 { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide', desc: 'Strategic guide to pharmaceutical market access across GCC countries.' },

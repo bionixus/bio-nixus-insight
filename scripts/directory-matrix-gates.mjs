@@ -33,6 +33,8 @@ const strict = process.argv.includes('--strict');
 
 const WAVES_PATH = path.join(root, 'scripts', 'data', 'directory-matrix-waves.json');
 const PAGES_CSV = path.join(root, 'data', 'gsc', 'current-week', 'Pages.csv');
+const CHART_CSV = path.join(root, 'data', 'gsc', 'current-week', 'Chart.csv');
+const DATES_CSV = path.join(root, 'data', 'gsc', 'current-week', 'Dates.csv');
 const LEADS_CSV = path.join(root, 'data', 'leads', 'leads.csv');
 
 function parseCsv(text) {
@@ -117,7 +119,8 @@ function loadPagesIndex() {
   const rows = parseCsv(fs.readFileSync(PAGES_CSV, 'utf8'));
   const byPath = new Map();
   for (const r of rows) {
-    const url = r.Page || r.URL || r.page || r.url;
+    // GSC's Performance export names the column "Top pages"; accept the common variants too.
+    const url = r['Top pages'] || r.Page || r.Pages || r.URL || r.page || r.url;
     const p = pagePathFromUrl(url);
     if (!p) continue;
     const prev = byPath.get(p) || { clicks: 0, impressions: 0, position: 0, n: 0 };
@@ -135,6 +138,14 @@ function loadPagesIndex() {
     delete v.n;
   }
   return byPath;
+}
+
+/** Number of days covered by the export (rows in Dates.csv / Chart.csv). Falls back to 7. */
+function loadWindowDays() {
+  const file = fs.existsSync(DATES_CSV) ? DATES_CSV : fs.existsSync(CHART_CSV) ? CHART_CSV : null;
+  if (!file) return 7;
+  const rows = parseCsv(fs.readFileSync(file, 'utf8')).filter((r) => r.Date);
+  return rows.length > 0 ? rows.length : 7;
 }
 
 function loadDirectoryLeads(directoryPaths) {
@@ -156,6 +167,7 @@ function loadDirectoryLeads(directoryPaths) {
 function main() {
   const spec = JSON.parse(fs.readFileSync(WAVES_PATH, 'utf8'));
   const pages = loadPagesIndex();
+  const windowDays = loadWindowDays();
   const allPaths = [];
   const waveReports = spec.waves.map((w) => {
     const urls = loadWaveUrls(w.file);
@@ -166,8 +178,8 @@ function main() {
       const impressions = g?.impressions || 0;
       const clicks = g?.clicks || 0;
       const position = g?.position ?? null;
-      // GSC Pages.csv is typically a 7-day window.
-      const impressionsPerDay = impressions / 7;
+      // Pages.csv is aggregated over the export window; divide by the real day count.
+      const impressionsPerDay = impressions / windowDays;
       return { path: p, clicks, impressions, impressionsPerDay, position, inGsc: Boolean(g) };
     });
     const indexed = rows.filter((r) => r.inGsc).length;

@@ -23,6 +23,7 @@ import {
   ReportMidPageCta,
   ReportReadingProgress,
 } from '@/components/report-conversion';
+import { PharmaCompaniesResearchLinks } from '@/components/seo/PharmaCompaniesResearchLinks';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('brazil');
 
@@ -218,6 +219,8 @@ const BrazilPharmaCompanies = () => {
             <Link to="/healthcare-market-research/brazil" className="text-primary hover:underline">Brazil pharmaceutical market research team</Link>.
           </p>
         </div></section>
+
+        <PharmaCompaniesResearchLinks country="brazil" />
 
         <section className="section-padding py-16" id="peer-directories"><div className="container-wide max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Pharmaceutical companies in other major markets</h2>

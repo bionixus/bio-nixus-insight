@@ -1036,7 +1036,7 @@ export default function TherapyPage() {
                   KOL mapping for oncology in Saudi Arabia
                 </Link>
                 ,{' '}
-                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                <Link to="/services/market-access" className="text-primary underline">
                   market access research
                 </Link>
                 , and GCC oncology market reports when tender and funding overlays dominate the decision.
@@ -1160,7 +1160,7 @@ export default function TherapyPage() {
                   HEOR consulting in Saudi Arabia
                 </Link>
                 ,{' '}
-                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                <Link to="/services/market-access" className="text-primary underline">
                   market access research
                 </Link>
                 , and the{' '}
@@ -1204,7 +1204,7 @@ export default function TherapyPage() {
                   diabetes market research in the UAE
                 </Link>
                 ,{' '}
-                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                <Link to="/services/market-access" className="text-primary underline">
                   market access research
                 </Link>
                 , and{' '}
@@ -1337,7 +1337,7 @@ export default function TherapyPage() {
                   BioNixus methodology
                 </Link>{' '}
                 for the mixed-methods approach that grounds these workflows in observable behaviour, and{' '}
-                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                <Link to="/services/market-access" className="text-primary underline">
                   market access research
                 </Link>{' '}
                 when payer or formulary constraints shape diabetes product access.
@@ -1476,7 +1476,7 @@ export default function TherapyPage() {
               </p>
               <p>
                 Link to{' '}
-                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                <Link to="/services/market-access" className="text-primary underline">
                   market access research
                 </Link>
                 ,{' '}
@@ -1591,7 +1591,7 @@ export default function TherapyPage() {
                   healthcare market research
                 </Link>{' '}
                 for the broader segmentation framework, and{' '}
-                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                <Link to="/services/market-access" className="text-primary underline">
                   market access research
                 </Link>{' '}
                 when payer or formulary pathways filter vaccine eligibility or reimbursement codes introduce substitution.
@@ -1863,7 +1863,7 @@ export default function TherapyPage() {
                   diabetes market research in the UAE
                 </Link>
                 ,{' '}
-                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                <Link to="/services/market-access" className="text-primary underline">
                   market access research
                 </Link>
                 , and{' '}
@@ -2045,7 +2045,7 @@ export default function TherapyPage() {
                   respiratory market access in the GCC
                 </Link>
                 ,{' '}
-                <Link to="/healthcare-market-research/services/market-access" className="text-primary underline">
+                <Link to="/services/market-access" className="text-primary underline">
                   market access research
                 </Link>
                 , and{' '}

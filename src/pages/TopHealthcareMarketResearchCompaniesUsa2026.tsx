@@ -604,7 +604,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               BioNixus is listed first as the primary-research brief — not as a fake award. Peers match the global{' '}
-              <Link to="/healthcare-market-research-companies" className="text-primary hover:underline">
+              <Link to="/healthcare-market-research" className="text-primary hover:underline">
                 healthcare market research companies
               </Link>{' '}
               guide.
@@ -739,7 +739,6 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/healthcare-market-research', label: 'Healthcare market research hub', desc: 'Definition, primary vs syndicated, and who to brief.' },
-                { to: '/healthcare-market-research-companies', label: 'Healthcare market research companies', desc: 'Global 2026 shortlist — same peer set as this USA page.' },
                 { to: '/iqvia-alternative', label: 'IQVIA alternative', desc: 'When to keep the dashboard and when to brief primary research.' },
                 { to: '/nielsen-alternative', label: 'Nielsen alternative', desc: 'Account-level and traditional-trade cuts retail feeds miss.' },
                 { to: '/account-level-market-research', label: 'Account-level market research', desc: 'Named hospital, retailer, or distributor — not a country total.' },

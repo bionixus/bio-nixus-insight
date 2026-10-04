@@ -232,7 +232,7 @@ export default function PharmaciesSaudiArabiaMarketing() {
                 <li className="flex items-start gap-3 text-muted-foreground">
                   <span className="text-primary font-bold mt-0.5">•</span>
                   <span><strong>Competitive Intelligence</strong> — Identify gaps, benchmark against Nahdi, Al-Dawaa, and other chains. Read about{' '}
-                    <Link to="/blog/competitive-intelligence-pharma-gcc" className="text-primary underline">
+                    <Link to="/services/competitive-intelligence" className="text-primary underline">
                       competitive intelligence in the GCC
                     </Link>.
                   </span>

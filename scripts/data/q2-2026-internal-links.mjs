@@ -304,7 +304,7 @@ export function getInternalLinksForSlug(slug) {
     { href: '/sfda-market-access-strategy-saudi-arabia', anchor: 'SFDA registration strategy for Saudi Arabia' },
     { href: '/saudi-payer-market-access-research', anchor: 'NUPCO tender and Saudi payer research' },
     { href: '/uae-market-access-research', anchor: 'UAE MOHAP and DHA market access research' },
-    { href: '/blog/competitive-intelligence-pharma-gcc', anchor: 'competitive intelligence in GCC pharma' },
+    { href: '/services/competitive-intelligence', anchor: 'pharma competitive intelligence' },
     { href: '/blog/kol-mapping-pharma-middle-east', anchor: 'KOL mapping for Middle East launches' },
     { href: '/blog/gcc-pharmacoeconomics', anchor: 'GCC pharmacoeconomics practical guide' },
     { href: '/services/market-access', anchor: 'pharmaceutical market access consulting' },

@@ -72,3 +72,9 @@ export const QUALIFICATION_FORM_NEEDS = [
 export const QUALIFICATION_FORM_TIMELINES = ['Less than 1 month', '1-3 months', 'Exploring'] as const;
 
 export const QUALIFICATION_FORM_BUDGETS = ['Under $20K', '$20K-50K', '$50K-150K', '$150K+'] as const;
+
+/**
+ * Budget band below the $20K minimum engagement. These requests are saved to HighLevel only
+ * (no Formspree alert) and answered by email instead of a scoping call.
+ */
+export const QUALIFICATION_FORM_BELOW_MINIMUM_BUDGET: (typeof QUALIFICATION_FORM_BUDGETS)[number] = 'Under $20K';

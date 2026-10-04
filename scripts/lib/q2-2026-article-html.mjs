@@ -408,7 +408,7 @@ ${li('Weeks 24+: Tender awards, private payer PA templates, patient support prog
  */
 function buildCompetitive(t, links) {
   const brandGeneric = `${t.brand} (${t.generic})`;
-  const ciLink = l(links, '/blog/competitive-intelligence-pharma-gcc', 'competitive intelligence in GCC pharma');
+  const ciLink = l(links, '/services/competitive-intelligence', 'pharma competitive intelligence');
 
   return `${h2('competitive-dynamics', 'Competitive dynamics and launch scenarios')}
 

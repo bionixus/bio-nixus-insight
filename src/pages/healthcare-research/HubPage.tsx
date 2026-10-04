@@ -390,10 +390,7 @@ export default function HubPage() {
             Primary healthcare market research vs syndicated audits
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
-            <Link to="/healthcare-market-research-companies" className="text-primary font-medium hover:underline">
-              Healthcare market research companies
-            </Link>{' '}
-            are not interchangeable. IQVIA, Ipsos, M3, and a field firm like BioNixus answer different questions. Use the table, then brief the firm that matches the decision — not
+            Healthcare market research companies are not interchangeable. IQVIA, Ipsos, M3, and a field firm like BioNixus answer different questions. Use the table, then brief the firm that matches the decision — not
             a self-ranked shortlist.
           </p>
           <div className="overflow-x-auto mb-6">
@@ -499,8 +496,8 @@ export default function HubPage() {
               2026 project bands
             </Link>
             {' · '}
-            <Link to="/healthcare-market-research-companies" className="text-primary font-medium hover:underline">
-              Healthcare market research companies (2026 ranking)
+            <Link to="/pharmaceutical-market-research" className="text-primary font-medium hover:underline">
+              Pharmaceutical market research company
             </Link>
             {' · '}
             <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary font-medium hover:underline">
@@ -817,7 +814,7 @@ export default function HubPage() {
             segment-level reports in the reports hub
           </Link>
           . For a multi-country programme, start from{' '}
-          <Link to="/healthcare-market-research/services/market-access" className="text-primary hover:underline">
+          <Link to="/services/market-access" className="text-primary hover:underline">
             market access research
           </Link>{' '}
           or tell us your target markets on the{' '}
@@ -1031,9 +1028,9 @@ export default function HubPage() {
               <HealthcareNavCard
                 key={`${service.slug || service.title}`}
                 to={
-                  service.slug
+                  service.slug && service.slug !== 'market-access'
                     ? `/healthcare-market-research/services/${service.slug}`
-                    : '/healthcare-market-research/services/market-access'
+                    : '/services/market-access'
                 }
                 title={service.title || 'Research service'}
                 description={

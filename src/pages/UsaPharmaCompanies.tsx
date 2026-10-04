@@ -33,6 +33,7 @@ import {
   DirectoryOutlineLink,
   DirectorySection,
 } from '@/components/seo/DirectoryPremium';
+import { PharmaCompaniesResearchLinks } from '@/components/seo/PharmaCompaniesResearchLinks';
 
 const PHARMA_CONVERSION = getPharmaGuideConfig('usa');
 const PAGE_AUTHOR = getEditorialAuthor({
@@ -510,6 +511,8 @@ const UsaPharmaCompanies = () => {
               .
             </p>
           </DirectorySection>
+
+          <PharmaCompaniesResearchLinks country="usa" />
 
           <DirectorySection
             id="peer-directories"

@@ -1,21 +1,43 @@
-/** Formspree endpoint shared by website lead forms. HighLevel is posted server-side. */
+/**
+ * Formspree endpoint. Reserved for the "Book a 30-minute scoping call" form only —
+ * every other website form posts to HighLevel alone (see `submitLeadDual` channels).
+ */
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
 
 const HIGHLEVEL_LEAD_ENDPOINT = '/api/highlevel-lead';
 const HONEYPOT_KEYS = ['companyWebsite', 'hp_company'] as const;
 
+/**
+ * Lead routing policy (2026-10):
+ * - `highlevel-only` (default): gated downloads, contact page, WhatsApp widget, email capture,
+ *   case-study gates and proposal registrations go to HighLevel only.
+ * - `scoping-call`: the "Book a 30-minute scoping call" qualification form goes to Formspree + HighLevel
+ *   so the team gets the email alert for meeting requests and nothing else.
+ */
+export type LeadChannels = 'highlevel-only' | 'scoping-call';
+
+export type SubmitLeadOptions = {
+  channels?: LeadChannels;
+};
+
 export type DualLeadResult = {
-  /** True when HighLevel or Formspree accepted the lead, or a honeypot short-circuit ran. */
+  /** True when an attempted channel accepted the lead, or a honeypot short-circuit ran. */
   ok: boolean;
   /** Honeypot tripped: treat as success in the UI and skip downloads, subscribe, and analytics. */
   skipped?: boolean;
+  /** Which channels were attempted for this submission. */
+  channels: LeadChannels;
   formspreeOk: boolean;
   highLevelOk: boolean;
-  /** Formspree HTTP error message, when the response included one. */
+  /** Formspree HTTP error message, when the response included one (scoping-call channel only). */
   formspreeError?: string;
-  /** Formspree fetch threw before a response. */
+  /** Formspree fetch threw before a response (scoping-call channel only). */
   formspreeNetworkError?: string;
   highLevelError?: string;
+  /** User-facing error from whichever attempted channel reported one. Unset when `ok`. */
+  error?: string;
+  /** Set when the submission failed and every attempted channel failed at the network level. */
+  networkError?: string;
 };
 
 type ChannelResult = {
@@ -105,17 +127,20 @@ async function postHighLevel(payload: Record<string, string>): Promise<ChannelRe
 }
 
 /**
- * POST the same lead to Formspree and to `/api/highlevel-lead` in parallel.
- * Success is either channel. Formspree failures are logged when HighLevel saved the lead.
+ * POST a website lead. By default only `/api/highlevel-lead` is called. With
+ * `{ channels: 'scoping-call' }` the lead is also posted to Formspree in parallel,
+ * and success is either channel. Formspree failures are logged when HighLevel saved the lead.
  */
-export async function submitLeadDual(data: FormData): Promise<DualLeadResult> {
+export async function submitLeadDual(data: FormData, options: SubmitLeadOptions = {}): Promise<DualLeadResult> {
+  const channels: LeadChannels = options.channels ?? 'highlevel-only';
   if (isLeadHoneypot(data)) {
-    return { ok: true, skipped: true, formspreeOk: false, highLevelOk: false };
+    return { ok: true, skipped: true, channels, formspreeOk: false, highLevelOk: false };
   }
 
+  const useFormspree = channels === 'scoping-call';
   const payload = enrichLeadPayload(formDataToLeadPayload(data));
   const [formspreeSettled, highLevelSettled] = await Promise.allSettled([
-    postFormspree(data),
+    useFormspree ? postFormspree(data) : Promise.resolve<ChannelResult>({ ok: false }),
     postHighLevel(payload),
   ]);
 
@@ -128,19 +153,33 @@ export async function submitLeadDual(data: FormData): Promise<DualLeadResult> {
       ? highLevelSettled.value
       : { ok: false, networkError: 'HighLevel request failed' };
 
-  if (highLevel.ok && !formspree.ok) {
+  if (useFormspree && highLevel.ok && !formspree.ok) {
     console.warn(
       '[submitLeadDual] Formspree failed; HighLevel lead saved',
       formspree.error || formspree.networkError || 'unknown',
     );
   }
 
+  const ok = (useFormspree && formspree.ok) || highLevel.ok;
+  const attempted = useFormspree ? [formspree, highLevel] : [highLevel];
+  const error = ok ? undefined : attempted.map((c) => c.error).find(Boolean);
+  const networkError =
+    !ok && attempted.every((c) => c.networkError) ? attempted.map((c) => c.networkError).find(Boolean) : undefined;
+
   return {
-    ok: formspree.ok || highLevel.ok,
-    formspreeOk: formspree.ok,
+    ok,
+    channels,
+    formspreeOk: useFormspree && formspree.ok,
     highLevelOk: highLevel.ok,
-    formspreeError: formspree.error,
-    formspreeNetworkError: formspree.networkError,
+    formspreeError: useFormspree ? formspree.error : undefined,
+    formspreeNetworkError: useFormspree ? formspree.networkError : undefined,
     highLevelError: highLevel.error || highLevel.networkError,
+    error,
+    networkError,
   };
+}
+
+/** The only form that reaches Formspree: "Book a 30-minute scoping call" (also saved to HighLevel). */
+export function submitScopingCallLead(data: FormData): Promise<DualLeadResult> {
+  return submitLeadDual(data, { channels: 'scoping-call' });
 }

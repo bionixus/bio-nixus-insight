@@ -4,6 +4,10 @@
  * the engineered copy (no 60-char title / 130-char description clamps).
  *
  * Canonical source — imported by server.js, api/indexnow-key.ts, and React via src/data/ctr-seo-overrides.ts.
+ *
+ * MIRROR of lib/ctr-seo-overrides.mjs for the Vite bundle. The two tables must stay identical:
+ * `npm run verify:title-freeze` (prebuild) fails on any drift and on changes to frozen titles
+ * (data/seo/title-freeze.json). See the header of lib/ctr-seo-overrides.mjs.
  */
 
 /** @type {Record<string, { title: string; description: string }>} */
@@ -244,9 +248,9 @@ export const CTR_SEO_BY_PATH = {
       'Top pharmaceutical analytics companies worldwide 2026 — real-world data, HEOR, syndicated Rx analytics & primary research ranked for pharma buyers.',
   },
   '/insights/top-healthcare-market-research-companies-usa-2026': {
-    title: 'Top 7 US Healthcare Market Research Companies (2026 Ranked)',
+    title: 'Top Healthcare Market Research Companies in the USA (2026)',
     description:
-      'Ranked healthcare market research companies in the USA for 2026 — BioNixus, IQVIA, Ipsos, Kantar, M3 & peers. Primary HCP/payer fieldwork vs syndicated Rx data.',
+      'Top healthcare market research companies in the USA (2026). Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail.',
   },
   '/insights/top-market-research-companies-saudi-arabia-2026': {
     title: 'Top Market Research Companies in Saudi Arabia (2026)',
@@ -354,11 +358,6 @@ export const CTR_SEO_BY_PATH = {
     title: 'Healthcare Market Research Companies MENA 2026 | BioNixus',
     description:
       'MENA healthcare market research companies 2026 — SFDA, DHA/MOHAP, and GCC fieldwork shortlist. Compare BioNixus and regional partners.',
-  },
-  '/pharmaceutical-market-research-provider': {
-    title: 'Pharmaceutical Market Research Company | BioNixus',
-    description:
-      'Pharmaceutical market research company and agency for custom primary HCP, ATU, and competitor work. Keep IQVIA for syndicated. 48-hour proposal.',
   },
   '/hcp-atu-study': {
     title: 'HCP ATU Study | Pharma Brand Tracking | BioNixus',

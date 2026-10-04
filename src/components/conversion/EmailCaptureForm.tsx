@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FORMSPREE_ENDPOINT, submitLeadDual } from '@/lib/submitLeadDual';
+import { submitLeadDual } from '@/lib/submitLeadDual';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -68,7 +68,6 @@ export function EmailCaptureForm({
 
   return (
     <form
-      action={FORMSPREE_ENDPOINT}
       method="POST"
       onSubmit={handleSubmit}
       className="grid sm:grid-cols-[1fr_auto] gap-3"

@@ -681,7 +681,7 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
               {[
                 { to: '/insights/top-healthcare-market-research-companies-europe-2026', label: 'Top Healthcare MRC in Europe', desc: 'Europe healthcare market research companies — AMNOG, GKV, and EU5 buyer guide.' },
-                { to: '/healthcare-market-research-companies', label: 'Top Healthcare Market Research Companies', desc: 'Global 2026 ranking of healthcare market research companies and agencies.' },
+                { to: '/healthcare-market-research', label: 'Top Healthcare Market Research Companies', desc: 'How BioNixus compares with global healthcare market research companies and agencies.' },
                 {
                   to: '/pharmaceutical-market-research-germany',
                   label: 'Pharmaceutical Market Research Germany',

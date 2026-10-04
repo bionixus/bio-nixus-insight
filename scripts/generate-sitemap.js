@@ -96,7 +96,6 @@ const STATIC_ROUTES = [
   '/blog/market-access-strategy-uae',
   '/blog/top-therapy-areas-pharma-growth-saudi-arabia',
   '/blog/pharma-market-entry-saudi-arabia-playbook',
-  '/blog/competitive-intelligence-pharma-gcc',
   '/blog/nice-hta-evidence-requirements-guide',
   '/blog/patient-journey-mapping-saudi-arabia',
   '/blog/middle-east-healthcare-market-statistics-2025',

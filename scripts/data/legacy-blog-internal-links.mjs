@@ -169,7 +169,7 @@ const CLUSTER_PATHS = {
   commercial: {
     hub: '/healthcare-market-research',
     report: '/gcc-pharma-market-report-2026',
-    blogPillar: '/blog/competitive-intelligence-pharma-gcc',
+    blogPillar: '/services/competitive-intelligence',
   },
   oncology: {
     hub: '/healthcare-market-research/therapy/oncology',

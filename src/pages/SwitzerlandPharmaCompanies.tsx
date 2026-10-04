@@ -98,7 +98,7 @@ const config: CountryCompaniesGuideConfig = {
     { to: '/pharmaceutical-companies-usa', label: 'Pharmaceutical companies in USA' },
     { to: '/insights/top-healthcare-market-research-companies-switzerland-2026', label: 'Healthcare market research companies Switzerland 2026' },
     { to: '/gcc-market-access-guide', label: 'GCC market access guide 2026' },
-    { to: '/healthcare-market-research-companies', label: 'Top healthcare market research companies 2026' },
+    { to: '/healthcare-market-research', label: 'Top healthcare market research companies 2026' },
   ],
   sources: [
     'Swissmedic — Swiss Agency for Therapeutic Products',

@@ -87,7 +87,6 @@ export const HealthcareMarketResearchArgentina = lazy(() => import('@/pages/Heal
 export const HealthcareMarketResearchAustralia = lazy(() => import('@/pages/HealthcareMarketResearchAustralia'));
 export const HealthcareMarketResearchCanada = lazy(() => import('@/pages/HealthcareMarketResearchCanada'));
 export const HealthcareMarketResearchChina = lazy(() => import('@/pages/HealthcareMarketResearchChina'));
-export const HealthcareMarketResearchCompanies2026 = lazy(() => import('@/pages/HealthcareMarketResearchCompanies2026'));
 export const HealthcareMarketResearchDenmark = lazy(() => import('@/pages/HealthcareMarketResearchDenmark'));
 export const HealthcareMarketResearchFrance = lazy(() => import('@/pages/HealthcareMarketResearchFrance'));
 export const HealthcareMarketResearchInBahrain = lazy(() => import('@/pages/HealthcareMarketResearchInBahrain'));
@@ -173,7 +172,7 @@ export const PatientAdherenceResearchMiddleEast = lazy(() => import('@/pages/Pat
 export const PatientJourneyResearchGcc = lazy(() => import('@/pages/PatientJourneyResearchGcc'));
 export const PatientSupportProgramResearchGcc = lazy(() => import('@/pages/PatientSupportProgramResearchGcc'));
 export const PharmaceuticalMarketResearchDubai = lazy(() => import('@/pages/PharmaceuticalMarketResearchDubai'));
-export const PharmaceuticalMarketResearchProvider = lazy(() => import('@/pages/PharmaceuticalMarketResearchProvider'));
+export const PharmaceuticalMarketResearch = lazy(() => import('@/pages/PharmaceuticalMarketResearch'));
 export const PharmaceuticalCompetitorIntelligence = lazy(() => import('@/pages/PharmaceuticalCompetitorIntelligence'));
 export const PharmaceuticalTherapyAreas = lazy(() => import('@/pages/PharmaceuticalTherapyAreas'));
 export const PharmaciesSaudiArabiaMarketing = lazy(() => import('@/pages/PharmaciesSaudiArabiaMarketing'));
@@ -394,7 +393,6 @@ const seoPageLoaders: Record<string, () => Promise<unknown>> = {
   "HealthcareMarketResearchAustralia": () => import('@/pages/HealthcareMarketResearchAustralia'),
   "HealthcareMarketResearchCanada": () => import('@/pages/HealthcareMarketResearchCanada'),
   "HealthcareMarketResearchChina": () => import('@/pages/HealthcareMarketResearchChina'),
-  "HealthcareMarketResearchCompanies2026": () => import('@/pages/HealthcareMarketResearchCompanies2026'),
   "HealthcareMarketResearchDenmark": () => import('@/pages/HealthcareMarketResearchDenmark'),
   "HealthcareMarketResearchFrance": () => import('@/pages/HealthcareMarketResearchFrance'),
   "HealthcareMarketResearchInBahrain": () => import('@/pages/HealthcareMarketResearchInBahrain'),
@@ -480,7 +478,7 @@ const seoPageLoaders: Record<string, () => Promise<unknown>> = {
   "PatientJourneyResearchGcc": () => import('@/pages/PatientJourneyResearchGcc'),
   "PatientSupportProgramResearchGcc": () => import('@/pages/PatientSupportProgramResearchGcc'),
   "PharmaceuticalMarketResearchDubai": () => import('@/pages/PharmaceuticalMarketResearchDubai'),
-  "PharmaceuticalMarketResearchProvider": () => import('@/pages/PharmaceuticalMarketResearchProvider'),
+  "PharmaceuticalMarketResearch": () => import('@/pages/PharmaceuticalMarketResearch'),
   "PharmaceuticalCompetitorIntelligence": () => import('@/pages/PharmaceuticalCompetitorIntelligence'),
   "PharmaceuticalTherapyAreas": () => import('@/pages/PharmaceuticalTherapyAreas'),
   "PharmaciesSaudiArabiaMarketing": () => import('@/pages/PharmaciesSaudiArabiaMarketing'),
@@ -723,7 +721,6 @@ const seoPathToExport: Record<string, string> = {
   "/healthcare-market-research-bahrain": "HealthcareMarketResearchInBahrain",
   "/healthcare-market-research-canada": "HealthcareMarketResearchCanada",
   "/healthcare-market-research-china": "HealthcareMarketResearchChina",
-  "/healthcare-market-research-companies": "HealthcareMarketResearchCompanies2026",
   "/healthcare-market-research-denmark": "HealthcareMarketResearchDenmark",
   "/healthcare-market-research-france": "HealthcareMarketResearchFrance",
   "/healthcare-market-research-india": "HealthcareMarketResearchIndia",
@@ -899,7 +896,7 @@ const seoPathToExport: Record<string, string> = {
   "/pharmaceutical-market-research-new-zealand": "NewZealandPharmaceuticalMarketResearch",
   "/pharmaceutical-market-research-oman": "OmanPharmaceuticalMarketResearch",
   "/pharmaceutical-market-research-poland": "PolandPharmaceuticalMarketResearch",
-  "/pharmaceutical-market-research-provider": "PharmaceuticalMarketResearchProvider",
+  "/pharmaceutical-market-research": "PharmaceuticalMarketResearch",
   "/pharmaceutical-competitor-intelligence": "PharmaceuticalCompetitorIntelligence",
   "/pharmaceutical-market-research-qatar": "QatarPharmaceuticalMarketResearch",
   "/pharmaceutical-market-research-singapore": "SingaporePharmaceuticalMarketResearch",

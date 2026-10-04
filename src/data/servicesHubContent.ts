@@ -310,6 +310,7 @@ export const COMMERCIAL_OFFERINGS: CommercialOffering[] = [
 
 export const HUB_LINKS = [
   { to: '/healthcare-market-research', label: 'Healthcare market research hub' },
+  { to: '/pharmaceutical-market-research', label: 'Pharmaceutical market research company' },
   { to: '/services/cross-industry', label: 'Cross-industry market research (Track B)' },
   { to: '/bionixus-industries', label: 'BioNixus across industries' },
   { to: '/market-research-by-industry', label: 'Market research by industry (global index)' },

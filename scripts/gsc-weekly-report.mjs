@@ -47,6 +47,50 @@ const TARGETS = {
   position: 5,
 };
 
+/**
+ * Queries excluded from the "excl. bot/irrelevant queries" line and from the position/CTR tables.
+ * Default: the scraper query that produced ~6,000 impressions and 0 clicks in Sep 2026.
+ * Add more at the CLI: `--exclude-query "some query"` (repeatable) or `--exclude-query=a,b`.
+ */
+const DEFAULT_EXCLUDED_QUERIES = ['cairo hospitals healthcare 2023-2026'];
+
+function parseExcludedQueries(argv) {
+  const extra = [];
+  for (let i = 0; i < argv.length; i += 1) {
+    const arg = argv[i];
+    if (arg === '--exclude-query' && argv[i + 1]) {
+      extra.push(argv[i + 1]);
+      i += 1;
+    } else if (arg.startsWith('--exclude-query=')) {
+      extra.push(...arg.slice('--exclude-query='.length).split(','));
+    }
+  }
+  return [...new Set([...DEFAULT_EXCLUDED_QUERIES, ...extra].map((q) => q.trim().toLowerCase()).filter(Boolean))];
+}
+
+function isExcludedQuery(row, excluded) {
+  return excluded.includes(String(row.query || '').trim().toLowerCase());
+}
+
+/** Totals for the excluded queries plus the week's traffic with them removed. */
+function excludedQuerySummary(queryRows, excluded, summary) {
+  if (!queryRows || !summary) return null;
+  const hits = queryRows.filter((r) => isExcludedQuery(r, excluded));
+  const clicks = hits.reduce((s, r) => s + (r.clicks || 0), 0);
+  const impressions = hits.reduce((s, r) => s + (r.impressions || 0), 0);
+  const remImpr = Math.max(0, summary.totalImpressions - impressions);
+  const remClicks = Math.max(0, summary.totalClicks - clicks);
+  return {
+    excluded,
+    matched: hits.map((r) => ({ query: r.query, clicks: r.clicks, impressions: r.impressions, position: r.position })),
+    excludedClicks: clicks,
+    excludedImpressions: impressions,
+    impressionsPerDay: remImpr / summary.days,
+    clicksPerDay: remClicks / summary.days,
+    ctrPct: remImpr > 0 ? (remClicks / remImpr) * 100 : null,
+  };
+}
+
 /** Qualifies as a qualified lead if budget >= $20K OR timeline < 3 months. */
 function isQualifiedLead(row) {
   const budget = parseBudget(row.budget);
@@ -420,10 +464,14 @@ function fmtDelta(n, digits = 1, suffix = '') {
 }
 
 function main() {
+  const excludedQueries = parseExcludedQueries(process.argv.slice(2));
   const currentDates = normalizeDatesRows(readDatesCsv(path.join(GSC_DIR, 'current-week')));
   const previousDates = normalizeDatesRows(readDatesCsv(path.join(GSC_DIR, 'previous-week')));
-  const currentQueries = normalizeQueryRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Queries.csv')));
-  const previousQueries = normalizeQueryRows(readCsvIfExists(path.join(GSC_DIR, 'previous-week', 'Queries.csv')));
+  const currentQueriesAll = normalizeQueryRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Queries.csv')));
+  const previousQueriesAll = normalizeQueryRows(readCsvIfExists(path.join(GSC_DIR, 'previous-week', 'Queries.csv')));
+  // Position-change and CTR tables ignore the excluded (bot) queries.
+  const currentQueries = currentQueriesAll ? currentQueriesAll.filter((r) => !isExcludedQuery(r, excludedQueries)) : null;
+  const previousQueries = previousQueriesAll ? previousQueriesAll.filter((r) => !isExcludedQuery(r, excludedQueries)) : null;
   const currentPages = normalizePageRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Pages.csv')));
   const previousPages = normalizePageRows(readCsvIfExists(path.join(GSC_DIR, 'previous-week', 'Pages.csv')));
   const currentCountries = normalizeCountryRows(readCsvIfExists(path.join(GSC_DIR, 'current-week', 'Countries.csv')));
@@ -452,6 +500,10 @@ function main() {
     hasPreviousPages: Boolean(previousPages),
     current: curSummary,
     previous: prevSummary,
+    excludedQueries: {
+      current: excludedQuerySummary(currentQueriesAll, excludedQueries, curSummary),
+      previous: excludedQuerySummary(previousQueriesAll, excludedQueries, prevSummary),
+    },
     targets: TARGETS,
     vsTargets: curSummary
       ? {
@@ -516,6 +568,21 @@ function buildMarkdown(r) {
       `| Avg. position | ${fmt(r.current.avgPosition, 1)} | ${fmt(r.targets.position, 1)} | ${fmtDelta(-v.avgPosition.delta, 1)} | ${r.previous ? fmt(r.previous.avgPosition, 1) : 'n/a'} | ${w ? fmtDelta(-w.avgPosition, 1) : 'n/a'} |`,
     );
     lines.push('', '_Position deltas shown as "vs target/last week": positive = closer to #1 (improved)._', '');
+    const ex = r.excludedQueries?.current;
+    if (ex) {
+      const prevEx = r.excludedQueries?.previous;
+      const label = ex.excluded.map((q) => `"${q}"`).join(', ');
+      lines.push(
+        `**Excl. bot/irrelevant queries** (${label}): ${fmt(ex.impressionsPerDay)} impressions/day, ${fmt(ex.clicksPerDay, 1)} clicks/day, CTR ${ex.ctrPct != null ? fmt(ex.ctrPct, 2) + '%' : 'n/a'}` +
+          (prevEx
+            ? ` — last week ${fmt(prevEx.impressionsPerDay)} impr/day, ${fmt(prevEx.clicksPerDay, 1)} clicks/day.`
+            : '.') +
+          (ex.excludedImpressions > 0
+            ? ` Removed ${fmt(ex.excludedImpressions)} impressions / ${fmt(ex.excludedClicks)} clicks from the excluded queries this week.`
+            : ' No excluded query appeared this week.'),
+        '',
+      );
+    }
   } else {
     lines.push('_No Chart.csv (or Dates.csv) found for the current week — cannot compute daily traffic metrics._', '');
   }
