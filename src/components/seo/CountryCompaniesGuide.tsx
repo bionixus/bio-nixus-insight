@@ -293,9 +293,10 @@ export function CountryCompaniesGuide({ config }: { config: CountryCompaniesGuid
           <div className="grid md:grid-cols-2 gap-6 mb-10">{config.bionixusServices.map((s) => (<div key={s.title} className="bg-card border border-border rounded-xl p-6"><h3 className="text-lg font-display font-semibold text-foreground mb-3">{s.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p></div>))}</div>
         </div></section>
 
-        {config.path.startsWith('/pharmaceutical-companies-') ? (
-          <PharmaCompaniesResearchLinks country={config.path.slice('/pharmaceutical-companies-'.length)} />
-        ) : null}
+        <PharmaCompaniesResearchLinks
+          country={config.path.replace(/^\/(pharmaceutical|medical-device)-companies-/, '')}
+          industry={config.industry}
+        />
 
         <section className="section-padding py-16" id="related-directories"><div className="container-wide w-full">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">Related BioNixus country directories &amp; reports</h2>
