@@ -16,6 +16,7 @@ import {
   DirectoryOutlineLink,
   DirectorySection,
 } from '@/components/seo/DirectoryPremium';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 /**
  * Shared template for GSC demand-driven specialty market pages
@@ -101,6 +102,30 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
         />
 
         <DirectoryJumpNav items={jumpItems} />
+
+        {content.slug === 'gcc-functional-service-providers-market' ? (
+          <DirectorySection id="llm-answer" surface="cream" eyebrow="Quick answer" title="GCC functional service providers — what sponsors research">
+            <GeoLLMAnswerBlock
+              question="What is the GCC functional service providers (FSP) market?"
+              answer="The GCC FSP market covers modular clinical-development services—monitoring, data management, medical writing, pharmacovigilance—sold into Gulf-sponsored trials. BioNixus researches sponsor clinical operations, sites, and delivery partners to validate Arabic site support, inspection readiness, KPI transparency, and therapeutic depth before RFP shortlists."
+              points={[
+                {
+                  title: 'FSP vs full-service CRO',
+                  description: 'Sponsors modularise functions for cost control; research shows where hybrids beat bundled MSAs.',
+                },
+                {
+                  title: 'Saudi vs UAE delivery cells',
+                  description: 'Localisation and SFDA context in KSA; private-hospital site density and PM hubs in UAE.',
+                },
+                {
+                  title: 'Linked clinical trials hub',
+                  description: 'Pair with GCC clinical trials market research and RWE planning on the healthcare hub.',
+                },
+              ]}
+              summary="Request a scoped GCC FSP briefing via BioNixus contact — typical programmes start with a 48-hour proposal."
+            />
+          </DirectorySection>
+        ) : null}
 
         <DirectorySection
           id="research"

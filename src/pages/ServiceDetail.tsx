@@ -9,7 +9,8 @@ import { ServiceMarketReferenceGuide } from '@/components/seo/ServiceMarketRefer
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { PremiumMarketAccess } from '@/components/services/PremiumMarketAccess';
 import { PremiumQuantitativeResearch } from '@/components/services/PremiumQuantitativeResearch';
-import { SERVICE_EXPANDED_FAQS } from '@/data/seo/serviceExpandedPageContent';
+import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { SERVICE_EXPANDED_FAQS, SERVICE_HERO_EXTENSIONS } from '@/data/seo/serviceExpandedPageContent';
 
 interface ServiceData {
   title: string;
@@ -119,7 +120,8 @@ const serviceData: Record<string, ServiceData> = {
     metaTitle: 'Pharma Competitive Intelligence Services (2026) | BioNixus',
     metaDescription: 'Real-time pharmaceutical competitive intelligence: competitor monitoring, pipeline analysis, launch readiness assessments, and strategic landscape evaluations across EMEA markets.',
     heroSubtitle: 'Stay ahead with real-time competitor monitoring and strategic landscape assessments for pharmaceutical brands.',
-    overview: 'BioNixus provides pharma competitive intelligence services that enable strategic decision-making. Our analysts combine primary physician research with secondary intelligence to deliver comprehensive landscape assessments, pipeline analyses, and launch readiness evaluations tailored to EMEA markets — the competitive intelligence pharmaceutical commercial, medical affairs, and new-product-planning teams rely on for launch and lifecycle decisions.',
+    overview:
+      'BioNixus provides pharma competitive intelligence services that enable strategic decision-making. Our analysts combine primary physician and pharmacist research with curated secondary intelligence to deliver landscape assessments, pipeline analyses, launch readiness scorecards, and tender defence diagnostics tailored to UK, EU5, and GCC markets. Programmes link external signals—congress readouts, label shifts, procurement awards—to explicit owners across commercial, medical affairs, market access, and new-product planning so intelligence does not decay as inbox noise. Teams benchmarking syndicated vendors often pair this service with the IQVIA alternatives guide when they need agile primary modules instead of audit subscriptions alone.',
     capabilities: [
       'Real-time competitor pipeline monitoring',
       'Landscape and SWOT analyses for pharmaceutical brands',
@@ -207,7 +209,9 @@ const ServiceDetail = () => {
       ? SERVICE_EXPANDED_FAQS['quantitative-research']
       : slug === 'market-access'
         ? SERVICE_EXPANDED_FAQS['market-access']
-        : undefined;
+        : slug === 'competitive-intelligence'
+          ? SERVICE_EXPANDED_FAQS['competitive-intelligence']
+          : undefined;
   const isPremiumService = slug === 'quantitative-research' || slug === 'market-access';
 
   if (!svc) return <Navigate to="/services" replace />;
@@ -261,8 +265,52 @@ const ServiceDetail = () => {
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl">
               {svc.heroSubtitle}
             </p>
+            {slug && SERVICE_HERO_EXTENSIONS[slug] ? (
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-3xl">
+                {SERVICE_HERO_EXTENSIONS[slug]}
+              </p>
+            ) : null}
           </div>
         </section>
+
+        {slug === 'competitive-intelligence' && (
+          <section className="section-padding py-10 bg-background border-b border-border/60">
+            <div className="container-wide max-w-4xl mx-auto">
+              <GeoLLMAnswerBlock
+                question="What do pharmaceutical competitive intelligence services include in 2026?"
+                answer="BioNixus pharmaceutical competitive intelligence combines primary physician and pharmacist research with pipeline, congress, and tender monitoring—linking external signals to launch sequencing, account prioritization, medical education emphasis, and GCC/EU5 access counter-moves."
+                points={[
+                  {
+                    title: 'Primary switching & perception modules',
+                    description:
+                      'Structured probes on initiation, switching intent, analogue comparisons, and pharmacist substitution confidence—not syndicated audit tables alone.',
+                  },
+                  {
+                    title: 'Launch readiness & scenario planning',
+                    description:
+                      'Probability-weighted entry assumptions, tender defense choreography, and stress tests when procurement rules shift mid-year.',
+                  },
+                  {
+                    title: 'EMEA + GCC field depth',
+                    description:
+                      'UK, EU5, and Gulf hospital and payer contexts with harmonised taxonomies for portfolio governance.',
+                  },
+                  {
+                    title: 'IQVIA-alternative positioning',
+                    description:
+                      'When teams need agile primary research instead of syndicated data subscriptions—see IQVIA alternatives for agency benchmarking context.',
+                  },
+                  {
+                    title: 'Hub-linked programmes',
+                    description:
+                      'Integrate with healthcare market research hub services, HEOR consulting, and country pharmaceutical guides.',
+                  },
+                ]}
+                summary="Request a competitive intelligence proposal through BioNixus contact—scoped to your therapeutic area and priority markets."
+              />
+            </div>
+          </section>
+        )}
 
         {slug === 'market-access' && (
           <section className="section-padding py-10 bg-background border-b border-border/60">
@@ -330,6 +378,86 @@ const ServiceDetail = () => {
             )}
           </div>
         </section>
+
+        {slug === 'competitive-intelligence' && (
+          <section className="section-padding py-12 bg-cream-dark border-y border-border/60">
+            <div className="container-wide max-w-4xl mx-auto space-y-10">
+              <div>
+                <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+                  Competitive intelligence modules for launch and lifecycle teams
+                </h2>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  BioNixus programmes are scoped to explicit decisions—not monthly inbox noise. Each module below can run
+                  standalone or as a sequenced wave on the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                    healthcare market research hub
+                  </Link>
+                  .
+                </p>
+              </div>
+              <div className="space-y-8">
+                <article>
+                  <h3 className="text-xl font-display font-semibold text-foreground mb-3">Landscape and pipeline forensics</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    We map analogue and in-pipeline assets with probability-weighted scenarios—label expansion risk,
+                    biosimilar entry windows, and tender-driven substitution in GCC hospital systems. Secondary monitoring
+                    (congress abstracts, regulatory calendars) is graded for reliability and linked to account-level
+                    implications affiliates can action within the same planning cycle.
+                  </p>
+                </article>
+                <article>
+                  <h3 className="text-xl font-display font-semibold text-foreground mb-3">Prescriber switching and account defence</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Structured physician and pharmacist interviews isolate initiation barriers, inertia, infusion capacity,
+                    and stewardship rituals that syndicated audits cannot explain. Outputs include objection hierarchies,
+                    switching diagnostics by institution type, and tender defence choreography when procurement rules shift
+                    mid-year—especially relevant for teams comparing{' '}
+                    <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                      IQVIA alternatives
+                    </Link>{' '}
+                    that emphasise primary research over static datasets.
+                  </p>
+                </article>
+                <article>
+                  <h3 className="text-xl font-display font-semibold text-foreground mb-3">Launch readiness scorecards</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Scorecards align medical, brand, and access owners on evidence gaps before scale-up: KOL consensus
+                    fragility, payer skepticism patterns that should feed HEOR refinement, and account prioritisation maps
+                    for MSL deployment. Governance artefacts include reproducible appendix layers—source grading, interview
+                    neutrality standards, and firewall documentation compliance teams can audit.
+                  </p>
+                </article>
+                <article>
+                  <h3 className="text-xl font-display font-semibold text-foreground mb-3">
+                    Integration with quant, qual, and access workstreams
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    Competitive intelligence should not sit in a silo. BioNixus sequences modules so landscape forensics
+                    inform quantitative segmentation hypotheses, qualitative depth rescues stalled quant when distributions
+                    hide polarised prescriber camps, and access teams receive objection libraries ranked by formulary
+                    stage. Teams commissioning{' '}
+                    <Link to="/services/market-access" className="text-primary font-medium hover:underline">
+                      market access consulting
+                    </Link>{' '}
+                    or{' '}
+                    <Link to="/heor-consulting" className="text-primary font-medium hover:underline">
+                      HEOR consulting
+                    </Link>{' '}
+                    can embed competitive switching diagnostics in the same programme governance model—one taxonomy, one
+                    set of segment definitions, one executive readout cadence.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Typical engagements begin with a 48-hour scoped proposal: therapeutic area, analogue set, priority
+                    markets (UK, EU5, GCC), decision owners, and compliance constraints. Fieldwork respects ESOMAR-aligned
+                    neutrality; deliverables land as dashboards plus workshop-ready narratives—not slide libraries without
+                    owners. For procurement diligence, we provide methodological appendices affiliates can reuse in RFP
+                    scorecards when benchmarking incumbent syndicated vendors or agencies.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Capabilities */}
         <section className="section-padding py-12">
@@ -417,6 +545,38 @@ const ServiceDetail = () => {
         </section>
 
         {slug ? <ServiceMarketReferenceGuide serviceSlug={slug} /> : null}
+
+        {faqItems && slug === 'competitive-intelligence' ? (
+          <FAQSection
+            sectionId="competitive-intelligence-faq"
+            title="Pharmaceutical competitive intelligence — FAQ"
+            items={faqItems.map((item) => ({ question: item.question, answer: item.answer }))}
+            className="bg-muted/30"
+          />
+        ) : null}
+
+        {slug === 'competitive-intelligence' && (
+          <section className="section-padding py-12">
+            <div className="container-wide max-w-4xl mx-auto">
+              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+                Commissioning checklist for pharma CI programmes
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Before fieldwork begins, BioNixus aligns sponsors on analogue boundaries, decision owners, compliance
+                firewalls, and the cadence of readouts. The checklist below is typical for EMEA and GCC competitive
+                intelligence scopes over $20,000 USD.
+              </p>
+              <ul className="space-y-3 text-foreground/90 leading-relaxed list-disc pl-6">
+                <li>Therapeutic area, line of therapy, and institution types in scope (tertiary hub vs community anchor).</li>
+                <li>Priority countries and languages for physician, pharmacist, and payer-adjacent interviews.</li>
+                <li>Competitor set including pipeline assets, biosimilar timelines, and tender-relevant formulations.</li>
+                <li>Linkage to quant, qual, or access modules on the same governance calendar.</li>
+                <li>Deliverable format: dashboards, workshop facilitation, and appendix layers for procurement diligence.</li>
+                <li>Executive readout owners named before field release so intelligence lands with accountable follow-up.</li>
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="section-padding py-16 bg-primary">
