@@ -199,6 +199,8 @@ as "who to brief" — a listicle — rather than as the definitive category page
 8. FAQ (`<details>/<summary>`, FAQPage schema) answering the agency/company/firm variants.
 9. **Primary CTA above the fold = Book a 30-minute scoping call** (Phase 2).
 
+**4.2 status 2026-10-04 — shipped except evidence (item 5).** H1 is now "Healthcare Market Research Company for Pharma & MedTech" (title left frozen). New 150-word answer block, six-service grid (`#core-services`), ten-market grid (`#priority-markets`), pricing section with the $10,000–$60,000 band and cost drivers (`#pricing`), Kantar Health and NielsenIQ alternative links beside the IQVIA comparison, two new FAQs (cost; how to choose an agency or firm), hero stats 48 countries / 120+ projects / 48-hour proposal, hero CTA "Book a 30-minute scoping call". Schema: `ItemList` and `CollectionPage` dropped, `WebPage` with `dateModified` added. In-content self-links removed. Item 5 (case studies with numbers, logos, named analysts) waits on real, approved client material.
+
 Schema: `Organization` + `Service` + `FAQPage` + `BreadcrumbList`; drop the `ItemList` currently
 implying a ranking.
 
@@ -222,7 +224,7 @@ hub, `/pharmaceutical-market-research`, the matching `/insights/top-market-resea
 links.mjs` output into a weekly "inbound links to the 8 money pages" count; target ≥150 internal
 inbound links to the hub within 4 weeks.
 
-**4.4 status 2026-10-04 — pharma directories shipped.** New `src/components/seo/PharmaCompaniesResearchLinks.tsx` ("Commissioning research in {country}") renders after the "How BioNixus supports" section on all 25 `/pharmaceutical-companies-*` pages (15 standalone pages + the 10 on `CountryCompaniesGuide`). Each block links the country pharma research page, the country healthcare research page, `/pharmaceutical-market-research`, `/iqvia-alternative`, `/services/market-access`, `/services/kol-stakeholder-mapping` and `/services/quantitative-research` (Iraq, Iran and Morocco have no country research page, so they get the five global links). The hub and country listicles were already linked by `PharmaCompaniesGccHubLinks` / `PharmaCompaniesGlobalHubLinks`, so they were not duplicated. Still to do: the same block on `/medical-device-companies-*`, and the weekly inbound-link count.
+**4.4 status 2026-10-04 — pharma directories shipped.** New `src/components/seo/PharmaCompaniesResearchLinks.tsx` ("Commissioning research in {country}") renders after the "How BioNixus supports" section on all 25 `/pharmaceutical-companies-*` pages (15 standalone pages + the 10 on `CountryCompaniesGuide`). Each block links the country pharma research page, the country healthcare research page, `/pharmaceutical-market-research`, `/iqvia-alternative`, `/services/market-access`, `/services/kol-stakeholder-mapping` and `/services/quantitative-research` (Iraq, Iran and Morocco have no country research page, so they get the five global links). The hub and country listicles were already linked by `PharmaCompaniesGccHubLinks` / `PharmaCompaniesGlobalHubLinks`, so they were not duplicated. Medical-device directories (`/medical-device-companies-{saudi-arabia,uae,usa,japan}`) now get a device variant of the block linking the country devices report, the GCC devices report (GCC only), country healthcare research, three services and `/iqvia-alternative`. Still to do: the weekly inbound-link count.
 
 ---
 

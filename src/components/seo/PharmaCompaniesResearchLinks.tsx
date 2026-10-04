@@ -5,13 +5,16 @@ type CountryResearchTargets = {
   label: string;
   pharmaResearch?: string;
   healthcareResearch?: string;
+  devicesReport?: string;
+  /** GCC markets also link the regional device report. */
+  gcc?: boolean;
 };
 
 /** Every path here must be a live route, not a redirect source (checked by verify:links). */
 const COUNTRY_RESEARCH_TARGETS: Record<string, CountryResearchTargets> = {
   kuwait: { label: 'Kuwait', pharmaResearch: '/pharmaceutical-market-research-kuwait', healthcareResearch: '/healthcare-market-research-kuwait' },
-  'saudi-arabia': { label: 'Saudi Arabia', pharmaResearch: '/market-research-saudi-arabia-pharmaceutical', healthcareResearch: '/healthcare-market-research/saudi-arabia' },
-  uae: { label: 'the UAE', pharmaResearch: '/uae-pharmaceutical-market-research', healthcareResearch: '/healthcare-market-research/uae' },
+  'saudi-arabia': { label: 'Saudi Arabia', pharmaResearch: '/market-research-saudi-arabia-pharmaceutical', healthcareResearch: '/healthcare-market-research/saudi-arabia', devicesReport: '/saudi-arabia-medical-devices-market-report', gcc: true },
+  uae: { label: 'the UAE', pharmaResearch: '/uae-pharmaceutical-market-research', healthcareResearch: '/healthcare-market-research/uae', devicesReport: '/uae-medical-devices-market-report', gcc: true },
   dubai: { label: 'Dubai', pharmaResearch: '/pharmaceutical-market-research-dubai', healthcareResearch: '/healthcare-market-research/uae' },
   egypt: { label: 'Egypt', pharmaResearch: '/egypt-pharmaceutical-market-research', healthcareResearch: '/egypt-healthcare-market-research' },
   qatar: { label: 'Qatar', pharmaResearch: '/pharmaceutical-market-research-qatar', healthcareResearch: '/healthcare-market-research-qatar' },
@@ -19,7 +22,7 @@ const COUNTRY_RESEARCH_TARGETS: Record<string, CountryResearchTargets> = {
   bahrain: { label: 'Bahrain', pharmaResearch: '/pharmaceutical-market-research-bahrain', healthcareResearch: '/healthcare-market-research-bahrain' },
   iraq: { label: 'Iraq' },
   iran: { label: 'Iran' },
-  usa: { label: 'the USA', pharmaResearch: '/pharmaceutical-market-research-usa', healthcareResearch: '/healthcare-market-research-usa' },
+  usa: { label: 'the USA', pharmaResearch: '/pharmaceutical-market-research-usa', healthcareResearch: '/healthcare-market-research-usa', devicesReport: '/usa-medical-devices-market-report' },
   uk: { label: 'the UK', pharmaResearch: '/pharmaceutical-market-research-uk', healthcareResearch: '/healthcare-market-research-uk' },
   germany: { label: 'Germany', pharmaResearch: '/pharmaceutical-market-research-germany', healthcareResearch: '/healthcare-market-research/germany' },
   brazil: { label: 'Brazil', pharmaResearch: '/brazil-pharmaceutical-market-research', healthcareResearch: '/brazil-healthcare-market-research' },
@@ -29,7 +32,7 @@ const COUNTRY_RESEARCH_TARGETS: Record<string, CountryResearchTargets> = {
   morocco: { label: 'Morocco' },
   india: { label: 'India', pharmaResearch: '/pharmaceutical-market-research-india', healthcareResearch: '/healthcare-market-research-india' },
   china: { label: 'China', pharmaResearch: '/pharmaceutical-market-research-china', healthcareResearch: '/healthcare-market-research-china' },
-  japan: { label: 'Japan', pharmaResearch: '/pharmaceutical-market-research-japan', healthcareResearch: '/healthcare-market-research-japan' },
+  japan: { label: 'Japan', pharmaResearch: '/pharmaceutical-market-research-japan', healthcareResearch: '/healthcare-market-research-japan', devicesReport: '/japan-medical-devices-market-report' },
   'south-korea': { label: 'South Korea', pharmaResearch: '/pharmaceutical-market-research-south-korea', healthcareResearch: '/healthcare-market-research-south-korea' },
   singapore: { label: 'Singapore', pharmaResearch: '/pharmaceutical-market-research-singapore', healthcareResearch: '/healthcare-market-research-singapore' },
   malaysia: { label: 'Malaysia', pharmaResearch: '/pharmaceutical-market-research-malaysia', healthcareResearch: '/healthcare-market-research-malaysia' },
@@ -40,31 +43,51 @@ const linkClass =
   'group flex items-center justify-between gap-2 rounded-xl border border-border bg-card p-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary';
 
 type Props = {
-  /** Slug after `/pharmaceutical-companies-`, e.g. `saudi-arabia`. */
+  /** Slug after `/pharmaceutical-companies-` or `/medical-device-companies-`, e.g. `saudi-arabia`. */
   country: string;
+  industry?: 'pharmaceutical' | 'medical device';
 };
 
 /**
- * Routes the authority of the pharmaceutical-companies directory cluster to the
- * commissioning pages: country research, the pharma research pillar, IQVIA alternative and services.
+ * Routes the authority of the company-directory cluster to the commissioning pages:
+ * country research, the pharma research pillar, IQVIA alternative and services.
  */
-export function PharmaCompaniesResearchLinks({ country }: Props) {
+export function PharmaCompaniesResearchLinks({ country, industry = 'pharmaceutical' }: Props) {
   const target = COUNTRY_RESEARCH_TARGETS[country];
   if (!target) return null;
 
-  const links: Array<{ to: string; label: string }> = [
-    ...(target.pharmaResearch
-      ? [{ to: target.pharmaResearch, label: `Pharmaceutical market research in ${target.label}` }]
-      : []),
-    ...(target.healthcareResearch
-      ? [{ to: target.healthcareResearch, label: `Healthcare market research in ${target.label}` }]
-      : []),
-    { to: '/pharmaceutical-market-research', label: 'Pharmaceutical market research company in 48 countries' },
-    { to: '/iqvia-alternative', label: 'Custom research alongside IQVIA data' },
-    { to: '/services/market-access', label: 'Market access & payer research' },
-    { to: '/services/kol-stakeholder-mapping', label: 'KOL & stakeholder mapping' },
-    { to: '/services/quantitative-research', label: 'HCP surveys & quantitative research' },
-  ];
+  const links: Array<{ to: string; label: string }> =
+    industry === 'medical device'
+      ? [
+          ...(target.devicesReport
+            ? [{ to: target.devicesReport, label: `${target.label.replace(/^the /, '')} medical devices market report` }]
+            : []),
+          ...(target.gcc ? [{ to: '/gcc-medical-devices-market-report', label: 'GCC medical devices market report' }] : []),
+          ...(target.healthcareResearch
+            ? [{ to: target.healthcareResearch, label: `Healthcare market research in ${target.label}` }]
+            : []),
+          { to: '/services/quantitative-research', label: 'Surgeon, clinician & procurement surveys' },
+          { to: '/services/market-access', label: 'Hospital tender & market access research' },
+          { to: '/services/kol-stakeholder-mapping', label: 'KOL & stakeholder mapping' },
+          { to: '/iqvia-alternative', label: 'Custom research alongside IQVIA data' },
+        ]
+      : [
+          ...(target.pharmaResearch
+            ? [{ to: target.pharmaResearch, label: `Pharmaceutical market research in ${target.label}` }]
+            : []),
+          ...(target.healthcareResearch
+            ? [{ to: target.healthcareResearch, label: `Healthcare market research in ${target.label}` }]
+            : []),
+          { to: '/pharmaceutical-market-research', label: 'Pharmaceutical market research company in 48 countries' },
+          { to: '/iqvia-alternative', label: 'Custom research alongside IQVIA data' },
+          { to: '/services/market-access', label: 'Market access & payer research' },
+          { to: '/services/kol-stakeholder-mapping', label: 'KOL & stakeholder mapping' },
+          { to: '/services/quantitative-research', label: 'HCP surveys & quantitative research' },
+        ];
+  const audience =
+    industry === 'medical device'
+      ? 'surgeons, hospital procurement teams and distributors'
+      : 'physicians, payers and pharmacists';
 
   return (
     <section
@@ -77,7 +100,7 @@ export function PharmaCompaniesResearchLinks({ country }: Props) {
           Commissioning research in {target.label}
         </h2>
         <p className="text-muted-foreground mb-6 max-w-3xl leading-relaxed">
-          This directory shows who competes in {target.label}. To learn what physicians, payers and pharmacists there
+          This directory shows who competes in {target.label}. To learn what {audience} there
           will do next, BioNixus runs custom primary research with a{' '}
           <Link to="/contact" className="text-primary font-medium hover:underline">
             proposal within 48 hours of a brief

@@ -24,15 +24,81 @@ import { getEditorialAuthor } from '@/data/editorialAuthors';
 
 const HUB_AUTHOR = getEditorialAuthor({ path: '/healthcare-market-research', pageType: 'article' });
 
-const HUB_H1 = 'Healthcare market research companies';
+const HUB_H1 = 'Healthcare Market Research Company for Pharma & MedTech';
 const HUB_LEAD =
   'BioNixus is the primary-research healthcare market research company for account-level and SKU-level fieldwork in 48 countries. Keep IQVIA, Kantar, or Ipsos when you need syndicated audits or global brand trackers. Brief BioNixus when the cut stops at national — hospitals, pharmacies, traditional trade — and you need a proposal within 48 hours.';
+const HUB_MODIFIED_AT = '2026-10-04';
+const HUB_ANSWER =
+  'A healthcare market research company designs and fields primary studies for pharmaceutical, biotech and medical device teams: physician and nurse surveys, payer and formulary interviews, hospital procurement research, patient studies, pharmacy audits and KOL mapping. BioNixus is that company in 48 countries, with in-house bilingual Arabic–English fieldwork and more than 120 projects a year across the GCC, the wider Middle East, the USA, Europe and Asia. Every study is built around one commercial decision — a launch forecast, a pricing corridor, a tender bid, a positioning choice — and ends with a recommendation tied to it. Custom projects typically run from $10,000 to $60,000 depending on countries, sample and method, and a written proposal follows within 48 hours of a brief. Syndicated data from IQVIA or NielsenIQ sizes the national category; BioNixus answers the account-, prescriber- and payer-level questions that feed cannot.';
+
+const HUB_SERVICES: { to: string; title: string; description: string }[] = [
+  {
+    to: '/services/quantitative-research',
+    title: 'Quantitative research',
+    description: 'HCP, payer and patient surveys sized for segmentation, ATU tracking, demand forecasts and conjoint pricing.',
+  },
+  {
+    to: '/services/qualitative-research',
+    title: 'Qualitative research',
+    description: 'In-depth interviews, advisory boards and message testing that explain why prescribers switch, hesitate or stay.',
+  },
+  {
+    to: '/services/market-access',
+    title: 'Market access research',
+    description: 'Payer, formulary and HTA evidence — pricing corridors, value dossiers and tender strategy by market.',
+  },
+  {
+    to: '/services/competitive-intelligence',
+    title: 'Competitive intelligence',
+    description: 'Brand-versus-competitor evidence at account and SKU level, including pipeline and launch-response tracking.',
+  },
+  {
+    to: '/services/kol-stakeholder-mapping',
+    title: 'KOL & stakeholder mapping',
+    description: 'Influence networks and engagement sequencing for medical affairs and launch teams.',
+  },
+  {
+    to: '/services/clinical-trial-support',
+    title: 'Clinical trial support',
+    description: 'Site feasibility, investigator interviews and patient-recruitment research before you commit to a country.',
+  },
+];
+
+const HUB_PRIORITY_MARKETS: { to: string; name: string; note: string }[] = [
+  { to: '/healthcare-market-research/saudi-arabia', name: 'Saudi Arabia', note: 'SFDA, NUPCO tenders, Arabic HCP fieldwork' },
+  { to: '/healthcare-market-research/uae', name: 'UAE', note: 'MOHAP, DHA and DOH formularies' },
+  { to: '/healthcare-market-research/qatar', name: 'Qatar', note: 'MoPH and HMC hospital research' },
+  { to: '/healthcare-market-research/kuwait', name: 'Kuwait', note: 'MOH procurement and private hospitals' },
+  { to: '/healthcare-market-research/egypt', name: 'Egypt', note: 'EDA, UPA tenders, Cairo and Delta fieldwork' },
+  { to: '/healthcare-market-research/turkey', name: 'Turkey', note: 'TİTCK and SGK reimbursement' },
+  { to: '/healthcare-market-research/united-states', name: 'United States', note: 'FDA, CMS and PBM-context evidence' },
+  { to: '/healthcare-market-research/uk', name: 'United Kingdom', note: 'NICE and NHS formulary research' },
+  { to: '/healthcare-market-research/germany', name: 'Germany', note: 'AMNOG and G-BA benefit evidence' },
+  { to: '/healthcare-market-research/brazil', name: 'Brazil', note: 'ANVISA, CONITEC and private payers' },
+];
+
+const HUB_PRICE_DRIVERS: { factor: string; lower: string; higher: string }[] = [
+  { factor: 'Countries', lower: 'One market', higher: 'Multi-country, harmonised instrument' },
+  { factor: 'Respondents', lower: 'General practitioners, pharmacists', higher: 'Low-incidence specialists, payers, KOLs' },
+  { factor: 'Method', lower: 'Qualitative IDIs or a short online survey', higher: 'Mixed method, conjoint or tracking waves' },
+  { factor: 'Sample', lower: '20–40 interviews or n≈100', higher: 'n≥300 or several segments' },
+];
 
 const HUB_FAQS = [
   {
     question: 'Which healthcare market research companies should we brief?',
     answer:
       'Brief BioNixus for custom primary research — HCP ATU, pharmacy mystery shopping, and account-level competitor intelligence in 48 countries, with a proposal in 48 hours. Keep IQVIA for syndicated sales and prescription audits, Kantar for brand-equity trackers, and Ipsos for large global attitudinal programmes. Most pharma affiliates run both a syndicated contract and a primary firm.',
+  },
+  {
+    question: 'How much does healthcare market research cost?',
+    answer:
+      'Custom healthcare market research with BioNixus typically runs from $10,000 to $60,000 per project. The price moves with the number of countries, how hard the respondents are to reach (a GP sample costs less than oncologists or payers), the method (qualitative interviews versus a large quantitative survey or conjoint) and the sample size. A written proposal with a fixed price follows within 48 hours of a brief.',
+  },
+  {
+    question: 'How do you choose a healthcare market research agency or firm?',
+    answer:
+      'Check four things: whether the firm runs its own fieldwork in your target countries or subcontracts it; whether it can recruit the exact respondents you need (specialists, payers, procurement committees) and show feasibility before contracting; whether senior researchers design and analyse the study rather than only selling it; and whether it delivers a recommendation tied to your decision, not just data tables. Ask for a sample deliverable and a named project lead.',
   },
   {
     question: 'What is a healthcare market research agency versus a data platform?',
@@ -221,27 +287,15 @@ export default function HubPage() {
     ...buildHubPageSchemas(hubFaqItems),
     {
       '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Global Healthcare & Pharmaceutical Market Research',
-      description:
-        'US-headquartered BioNixus healthcare and pharmaceutical market research across the Americas, Europe, MENA & GCC, and Asia-Pacific.',
+      '@type': 'WebPage',
+      '@id': 'https://www.bionixus.com/healthcare-market-research#webpage',
+      name: HUB_H1,
+      description: HUB_ANSWER,
       url: 'https://www.bionixus.com/healthcare-market-research',
       isPartOf: { '@type': 'WebSite', url: 'https://www.bionixus.com', name: 'BioNixus' },
-      about: GLOBAL_MARKETS.map((r) => r.region),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: 'Country healthcare market research hubs',
-      itemListElement: ALL_HUB_COUNTRY_SLUGS.map((slug, idx) => {
-        const config = resolveCountryConfig(slug);
-        return {
-          '@type': 'ListItem',
-          position: idx + 1,
-          name: `${config.name} healthcare market research`,
-          url: `https://www.bionixus.com/healthcare-market-research/${slug}`,
-        };
-      }),
+      about: { '@type': 'Thing', name: 'Healthcare market research' },
+      datePublished: '2026-02-14',
+      dateModified: HUB_MODIFIED_AT,
     },
   ];
   const trustSignals =
@@ -285,7 +339,10 @@ export default function HubPage() {
         },
       ];
 
-  const hubConfig = getHealthcareMarketResearchHubConfig();
+  const hubConfig = {
+    ...getHealthcareMarketResearchHubConfig(),
+    primaryCtaLabel: 'Book a 30-minute scoping call',
+  };
   const hubFaqSectionId = 'healthcare-mr-hub-faq';
 
   return (
@@ -310,34 +367,41 @@ export default function HubPage() {
         hero={{
           title: heroTitle,
           statsCaption: '',
-          badges: ['Published by BioNixus', 'Updated 6 September 2026', 'Open access'],
+          badges: ['Published by BioNixus', 'Updated 4 October 2026', 'Primary research'],
           stats: [
-            { value: '20+', label: 'Country hubs' },
-            { value: '14+', label: 'Therapeutic areas' },
-            { value: 'US HQ', label: 'Sheridan, Wyoming' },
+            { value: '48', label: 'Countries' },
+            { value: '120+', label: 'Projects a year' },
+            { value: '48 hours', label: 'Proposal' },
           ],
           description: (
             <>
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Last updated 6 September 2026 · {HUB_AUTHOR.name}
+                Last updated 4 October 2026 · {HUB_AUTHOR.name}
               </p>
               <p>{heroDescription}</p>
               <p className="mt-4 text-sm text-muted-foreground max-w-3xl">
-                Jump straight to a region in the{' '}
-                <Link className="font-medium text-primary hover:underline" to="#global-coverage">
-                  global market coverage
-                </Link>{' '}
-                map below, browse every country and therapy report in the{' '}
+                Start with our{' '}
+                <a className="font-medium text-primary hover:underline" href="#core-services">
+                  six research services
+                </a>
+                , pick one of the{' '}
+                <a className="font-medium text-primary hover:underline" href="#priority-markets">
+                  priority markets
+                </a>
+                , or browse every country and therapy report in the{' '}
                 <Link className="font-medium text-primary hover:underline" to="/market-reports">
                   healthcare market research reports hub
                 </Link>
-                , or use the country service pages on this hub for bespoke quantitative and qualitative programmes.
+                .
               </p>
             </>
           ),
         }}
         tocItems={[
           { href: '#what-is-healthcare-mr', label: 'What it is' },
+          { href: '#core-services', label: 'Services' },
+          { href: '#priority-markets', label: 'Priority markets' },
+          { href: '#pricing', label: 'Pricing' },
           { href: '#primary-vs-syndicated', label: 'Primary vs syndicated' },
           { href: '#us-headquarters', label: 'US headquarters' },
           { href: '#entry-points', label: 'Entry points' },
@@ -347,7 +411,7 @@ export default function HubPage() {
           { href: '#regional-expertise', label: 'Country hubs' },
           { href: '#city-hubs', label: 'City hubs' },
           { href: '#dubai-uae', label: 'UAE focus' },
-          { href: '#services', label: 'Services' },
+          { href: '#services', label: 'All services' },
           { href: '#therapy-areas', label: 'Therapy areas' },
           { href: `#${hubFaqSectionId}`, label: 'FAQ' },
         ]}
@@ -360,8 +424,8 @@ export default function HubPage() {
       <section id="what-is-healthcare-mr" className="py-10 bg-background border-b border-border/60">
         <div className="container-wide max-w-5xl mx-auto px-4">
           <GeoLLMAnswerBlock
-            question="What is healthcare market research?"
-            answer={HUB_LEAD}
+            question="What does a healthcare market research company do?"
+            answer={HUB_ANSWER}
             points={[
               {
                 title: 'Primary fieldwork',
@@ -381,6 +445,59 @@ export default function HubPage() {
             ]}
             summary="This hub is the definition and who-to-brief map — not a self-ranked global top-10. BioNixus is the primary firm; IQVIA, Kantar, and Ipsos remain the syndicated or tracker buys."
           />
+        </div>
+      </section>
+
+      <section id="core-services" className="py-10 bg-muted/20 border-b border-border/60" aria-labelledby="core-services-heading">
+        <div className="container-wide max-w-5xl mx-auto px-4">
+          <h2 id="core-services-heading" className="text-2xl font-display font-semibold text-foreground mb-3">
+            Healthcare market research services
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
+            Six service lines cover the evidence pharma, biotech and medtech teams commission most. Each page sets out
+            the method, sample sizes, timelines and what a deliverable looks like.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {HUB_SERVICES.map((service) => (
+              <HealthcareNavCard key={service.to} to={service.to} title={service.title} description={service.description} />
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Pharma-specific scope:{' '}
+            <Link to="/pharmaceutical-market-research" className="text-primary font-medium hover:underline">
+              pharmaceutical market research company
+            </Link>
+            {' · '}
+            <Link to="/heor-consulting" className="text-primary font-medium hover:underline">
+              HEOR consulting
+            </Link>
+            {' · '}
+            <Link to="/services" className="text-primary font-medium hover:underline">
+              all research services
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section id="priority-markets" className="py-10 bg-background border-b border-border/60" aria-labelledby="priority-markets-heading">
+        <div className="container-wide max-w-5xl mx-auto px-4">
+          <h2 id="priority-markets-heading" className="text-2xl font-display font-semibold text-foreground mb-3">
+            Healthcare market research by priority market
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
+            The method is the same everywhere; the regulator, the payer and the buying committee change. These ten
+            markets carry most of our fieldwork.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+            {HUB_PRIORITY_MARKETS.map((market) => (
+              <HealthcareNavCard key={market.to} to={market.to} title={market.name} description={market.note} />
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            <a href="#global-country-mr" className="text-primary font-medium hover:underline">
+              See all 30 country and city research hubs
+            </a>
+          </p>
         </div>
       </section>
 
@@ -488,6 +605,14 @@ export default function HubPage() {
               IQVIA alternative
             </Link>
             {' · '}
+            <Link to="/kantar-health-alternative-gcc" className="text-primary font-medium hover:underline">
+              Kantar Health alternative
+            </Link>
+            {' · '}
+            <Link to="/nielsen-alternative" className="text-primary font-medium hover:underline">
+              NielsenIQ alternative
+            </Link>
+            {' · '}
             <Link to="/account-level-market-research" className="text-primary font-medium hover:underline">
               What account-level data is
             </Link>
@@ -533,6 +658,44 @@ export default function HubPage() {
             headline="Request a healthcare research proposal"
             buttonLabel="Request a proposal"
           />
+        </div>
+      </section>
+
+      <section id="pricing" className="py-10 bg-background border-b border-border/60" aria-labelledby="pricing-heading">
+        <div className="container-wide max-w-5xl mx-auto px-4">
+          <h2 id="pricing-heading" className="text-2xl font-display font-semibold text-foreground mb-3">
+            What healthcare market research costs
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
+            Custom projects typically run from <strong className="text-foreground">$10,000 to $60,000</strong>. There
+            is no syndicated subscription: you pay for the study your decision needs, and the proposal states a fixed
+            price within 48 hours of a brief. Four factors decide where a project lands in that range.
+          </p>
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full text-sm border border-border">
+              <thead>
+                <tr className="bg-muted/40 text-left">
+                  <th className="p-3 border-b border-border">Factor</th>
+                  <th className="p-3 border-b border-border">Lower in the range</th>
+                  <th className="p-3 border-b border-border">Higher in the range</th>
+                </tr>
+              </thead>
+              <tbody>
+                {HUB_PRICE_DRIVERS.map((row) => (
+                  <tr key={row.factor} className="align-top">
+                    <td className="p-3 border-b border-border font-semibold text-foreground">{row.factor}</td>
+                    <td className="p-3 border-b border-border text-muted-foreground">{row.lower}</td>
+                    <td className="p-3 border-b border-border text-muted-foreground">{row.higher}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            <Link to="/pricing" className="text-primary font-medium hover:underline">
+              See 2026 project bands and examples
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -854,11 +1017,8 @@ export default function HubPage() {
         variant="muted"
       >
         <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
-          Ranked pharmaceutical company guides for major non-GCC markets, cross-linked to the{' '}
-          <Link to="/healthcare-market-research" className="text-primary hover:underline">
-            healthcare market research hub
-          </Link>{' '}
-          and country healthcare research listicles.
+          Ranked pharmaceutical company guides for major non-GCC markets, cross-linked to this hub and the country
+          healthcare research listicles.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {GLOBAL_PHARMA_COMPANIES_DIRECTORIES.map((directory) => (
@@ -873,10 +1033,7 @@ export default function HubPage() {
         variant="muted"
       >
         <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl">
-          Country-by-country rankings of MedTech and medical devices market research firms, cross-linked from the{' '}
-          <Link to="/healthcare-market-research" className="text-primary hover:underline">
-            healthcare market research hub
-          </Link>{' '}
+          Country-by-country rankings of MedTech and medical devices market research firms, cross-linked from this hub
           so hospital-procurement and device-launch briefs can compare fieldwork partners by market.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -1314,7 +1471,7 @@ export default function HubPage() {
             Looking beyond healthcare or routing to a specific country? The global directory maps our full market coverage. Staying in pharma and devices? Keep to this hub and pick the service or market you need to plan.
           </p>
           <div className="grid md:grid-cols-2 gap-3">
-            <HealthcareNavCard to="/healthcare-market-research" title="Open healthcare market research hub" />
+            <HealthcareNavCard to="/pharmaceutical-market-research" title="Pharmaceutical market research company" />
             <HealthcareNavCard to="/services" title="Compare healthcare research services" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 mt-4">
