@@ -15,6 +15,7 @@ export default function SaudiPayerMarketAccessResearch() {
       areaServed={['Saudi Arabia']}
       intro="In Saudi Arabia, reimbursement runs through centralised NUPCO procurement and institutional formularies at MOH and NGHA, with SFDA pricing in the background. The value evidence that wins is the evidence those committees actually weigh — not a global dossier ported in. BioNixus diagnoses what each payer segment expects, maps the procurement pathway, and prioritises the objections worth answering first."
       links={[
+        { to: '/healthcare-market-research', label: 'Healthcare market research hub', primary: true },
         { to: '/bionixus-market-research-middle-east', label: 'Open Middle East pillar', primary: true },
         { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC', primary: true },
         { to: '/market-research-saudi-arabia-pharmaceutical', label: 'Healthcare market research company in Saudi Arabia' },
