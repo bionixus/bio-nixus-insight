@@ -85,7 +85,7 @@ describe('planLeadWrite', () => {
     expect(plan.upsert.source).toBe('website form / contact_section');
     expect(plan.upsert.companyName).toBe('Pfizer');
     expect(plan.upsert.tags).toBeUndefined();
-    expect(plan.tags).toEqual(['website-lead', 'form:contact_section']);
+    expect(plan.tags).toEqual(['website-lead', 'form:contact_section', 'request:contact-request']);
 
     const custom = plan.upsert.customFields as { id: string; fieldValue: string }[];
     const ids = custom.map((field) => field.id);
@@ -140,7 +140,7 @@ describe('processHighLevelLead', () => {
     expect(upsert.tags).toBeUndefined();
     expect(upsert.phone).toBe('+1 202 555 0143');
     const tags = JSON.parse(String(calls[2].init.body)) as { tags: string[] };
-    expect(tags.tags).toEqual(['website-lead', 'form:contact_section']);
+    expect(tags.tags).toEqual(['website-lead', 'form:contact_section', 'request:contact-request']);
     const note = JSON.parse(String(calls[3].init.body)) as { body: string };
     expect(note.body).toContain('Timeline: 1-3 months');
     expect(JSON.stringify(result.body)).not.toContain('pit-test-token');

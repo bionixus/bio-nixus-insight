@@ -22,6 +22,7 @@
     "audit:blog-numeric-claims": "node scripts/audit-blog-numeric-claims.mjs",
     "audit:desktop": "node scripts/desktop-cwv-audit.mjs",
     "monitor:titles": "node scripts/title-iteration-check.mjs",
+    "leads:export": "node scripts/leads/export-highlevel-leads.mjs",
     "report:weekly": "node scripts/gsc-weekly-report.mjs && node scripts/directory-matrix-gates.mjs",
     "report:directory-gates": "node scripts/directory-matrix-gates.mjs",
     "audit:sitewide:phase2": "node scripts/sitewide-audit-runbook-phase2.mjs",

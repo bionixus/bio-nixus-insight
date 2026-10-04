@@ -27,6 +27,29 @@ export function trackLeadSubmitted(params: { formId?: string }) {
   });
 }
 
+/**
+ * Fires once a "Book a 30-minute scoping call" request succeeds — the meeting-request KPI.
+ * Carries no personal data: only the form, page and the qualification answers.
+ */
+export function trackMeetingBooked(params: {
+  formId: string;
+  sourceContext?: string;
+  need?: string;
+  budget?: string;
+  timeline?: string;
+  markets?: string;
+}) {
+  trackGaEvent('meeting_booked', {
+    form_id: params.formId,
+    source_context: params.sourceContext || undefined,
+    need: params.need || undefined,
+    budget: params.budget || undefined,
+    timeline: params.timeline || undefined,
+    markets: params.markets || undefined,
+    page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+  });
+}
+
 /** Fires when a lead-capture form becomes visible/opens (dialog opened, section scrolled into view). */
 export function trackFormView(params: { formId: string }) {
   trackGaEvent('form_view', { form_id: params.formId });
