@@ -19,9 +19,10 @@
  *   data/gsc/previous-week/Queries.csv     week (same day-count date range, shifted
  *   data/gsc/previous-week/Pages.csv       back 7 days)
  *
- *   data/leads/leads.csv (optional)     — one row per submission, expected columns
- *                                          (case-insensitive, order-independent):
- *                                          date, source_page, budget, timeline
+ *   data/leads/leads.csv (optional)     — one row per submission, written by
+ *                                          `npm run leads:export` (HighLevel). Columns used:
+ *                                          date, source_page, request_type, meeting_request,
+ *                                          budget, timeline, qualified
  *                                          If this file is absent, the leads section
  *                                          of the report is explicitly marked as
  *                                          unavailable rather than estimated.
@@ -93,23 +94,34 @@ function excludedQuerySummary(queryRows, excluded, summary) {
 
 /** Qualifies as a qualified lead if budget >= $20K OR timeline < 3 months. */
 function isQualifiedLead(row) {
+  const flag = String(row.qualified || '').trim().toLowerCase();
+  if (flag === 'yes') return true;
+  if (flag === 'no') return false;
   const budget = parseBudget(row.budget);
   const timelineMonths = parseTimelineMonths(row.timeline);
   const budgetQualifies = budget !== null && budget >= 20000;
-  const timelineQualifies = timelineMonths !== null && timelineMonths < 3;
+  const timelineQualifies = timelineMonths !== null && timelineMonths <= 3;
   return budgetQualifies || timelineQualifies;
 }
 
+/** Lower bound of a budget band: "$20K-50K" → 20000, "Under $20K" → 0, "$150K+" → 150000. */
 function parseBudget(raw) {
   if (raw == null) return null;
-  const num = Number(String(raw).replace(/[^0-9.]/g, ''));
-  return Number.isFinite(num) ? num : null;
+  const s = String(raw).toLowerCase().replace(/,/g, '');
+  if (s.includes('under') || s.includes('less than')) return 0;
+  const m = s.match(/(\d+(?:\.\d+)?)\s*(k|m)?/);
+  if (!m) return null;
+  const mult = m[2] === 'm' ? 1e6 : m[2] === 'k' ? 1e3 : 1;
+  return Number(m[1]) * mult;
 }
 
+/** Upper bound of a timeline band in months: "1-3 months" → 3, "Less than 1 month" → 1. */
 function parseTimelineMonths(raw) {
   if (raw == null) return null;
   const s = String(raw).toLowerCase();
-  const num = Number(s.replace(/[^0-9.]/g, ''));
+  const nums = s.match(/\d+(?:\.\d+)?/g);
+  if (!nums) return null;
+  const num = Number(nums[nums.length - 1]);
   if (!Number.isFinite(num)) return null;
   if (s.includes('week')) return num / 4.345;
   if (s.includes('year')) return num * 12;
@@ -430,25 +442,44 @@ function ctrFlags(currentQueries) {
     .sort((a, b) => (b.impressions || 0) - (a.impressions || 0));
 }
 
-function parseLeads() {
+/** Leads in the report window (the GSC Chart.csv date range when available; the CSV accumulates history). */
+function parseLeads(range) {
   const rows = readCsvIfExists(LEADS_CSV);
   if (!rows) return null;
-  const normalized = rows.map((r) => ({
-    date: pick(r, ['date', 'Date']),
-    sourcePage: pick(r, ['source_page', 'sourcePage', 'Source Page', 'page']),
-    budget: pick(r, ['budget', 'Budget']),
-    timeline: pick(r, ['timeline', 'Timeline']),
-  }));
+  const all = rows.map((r) => {
+    const requestType = pick(r, ['request_type', 'requestType', 'Request Type']) || '';
+    const meetingFlag = String(pick(r, ['meeting_request']) || '').toLowerCase();
+    return {
+      date: pick(r, ['date', 'Date']),
+      sourcePage: pick(r, ['source_page', 'sourcePage', 'Source Page', 'page']),
+      budget: pick(r, ['budget', 'Budget']),
+      timeline: pick(r, ['timeline', 'Timeline']),
+      qualified: pick(r, ['qualified']),
+      requestType,
+      meeting: meetingFlag ? meetingFlag === 'yes' : requestType.toLowerCase() === 'scoping call request',
+    };
+  });
+  const normalized = range
+    ? all.filter((r) => r.date && r.date >= range.start && r.date <= range.end)
+    : all;
   const qualified = normalized.filter(isQualifiedLead);
-  const bySource = new Map();
-  for (const r of normalized) {
-    const key = r.sourcePage || '(unknown)';
-    bySource.set(key, (bySource.get(key) || 0) + 1);
-  }
+  const countBy = (items, keyFn) => {
+    const map = new Map();
+    for (const r of items) {
+      const key = keyFn(r);
+      map.set(key, (map.get(key) || 0) + 1);
+    }
+    return [...map.entries()].sort((a, b) => b[1] - a[1]);
+  };
+  const meetings = normalized.filter((r) => r.meeting);
   return {
+    range: range || null,
     total: normalized.length,
+    meetingRequests: meetings.length,
     qualified: qualified.length,
-    bySource: [...bySource.entries()].sort((a, b) => b[1] - a[1]),
+    byRequestType: countBy(normalized, (r) => r.requestType || '(unknown)'),
+    meetingsBySource: countBy(meetings, (r) => r.sourcePage || '(unknown)'),
+    bySource: countBy(normalized, (r) => r.sourcePage || '(unknown)'),
   };
 }
 
@@ -531,7 +562,14 @@ function main() {
       currentDevices,
       siteCtrPct: curSummary?.ctrPct ?? null,
     }),
-    leads: parseLeads(),
+    leads: parseLeads(
+      currentDates && currentDates.length
+        ? {
+            start: currentDates.map((d) => d.date).sort()[0],
+            end: currentDates.map((d) => d.date).sort().at(-1),
+          }
+        : null,
+    ),
   };
 
   fs.mkdirSync(REPORTS_DIR, { recursive: true });
@@ -704,17 +742,23 @@ function buildMarkdown(r) {
 
   lines.push('## Leads', '');
   if (r.leads) {
+    if (r.leads.range) lines.push(`_Window: ${r.leads.range.start} to ${r.leads.range.end}_`, '');
+    lines.push(`- Meeting requests (Book a 30-minute scoping call): **${r.leads.meetingRequests}**`);
     lines.push(`- Total submissions: ${r.leads.total}`);
-    lines.push(`- Qualified (budget ≥ $20K or timeline < 3 months): ${r.leads.qualified}`);
-    lines.push('- By source page:');
+    lines.push(`- Qualified (budget ≥ $20K or timeline ≤ 3 months): ${r.leads.qualified}`);
+    lines.push('- By request type:');
+    for (const [type, count] of r.leads.byRequestType) lines.push(`  - ${type}: ${count}`);
+    if (r.leads.meetingsBySource.length) {
+      lines.push('- Meeting requests by source page:');
+      for (const [page, count] of r.leads.meetingsBySource) lines.push(`  - ${page}: ${count}`);
+    }
+    lines.push('- All submissions by source page:');
     for (const [page, count] of r.leads.bySource) lines.push(`  - ${page}: ${count}`);
     lines.push('');
   } else {
     lines.push(
-      '_No lead data available. BioNixus\'s qualification/gated-asset forms post directly to Formspree from the ' +
-        'browser with no server-side logging, so there is no local record of submissions to read. Provide ' +
-        `data/leads/leads.csv (columns: date, source_page, budget, timeline) or connect a real data source ` +
-        'before this section can report real numbers — see the chat reply for options._',
+      '_No lead data. Run `npm run leads:export` (needs HIGHLEVEL_API_KEY with contacts.readonly) to write ' +
+        'data/leads/leads.csv from HighLevel, then re-run this report._',
       '',
     );
   }

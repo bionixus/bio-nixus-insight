@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
-import { trackLeadSubmitted, trackFormStart } from '@/lib/analytics';
+import { trackLeadSubmitted, trackFormStart, trackMeetingBooked } from '@/lib/analytics';
 import { submitLeadDual, submitScopingCallLead } from '@/lib/submitLeadDual';
 import {
   QUALIFICATION_FORM_MARKETS,
@@ -131,6 +131,9 @@ export function QualificationForm({
         setBelowMinimum(isBelowMinimum);
         setSubmitted(true);
         trackLeadSubmitted({ formId });
+        if (!isBelowMinimum) {
+          trackMeetingBooked({ formId, sourceContext, need, budget, timeline, markets });
+        }
         onSuccess?.();
       } else if (result.networkError) {
         setSubmitError('Something went wrong — please try again or email us directly.');

@@ -6,6 +6,12 @@ import { GatedAssetForm } from '@/components/conversion/GatedAssetForm';
 import ContactSection from '@/components/ContactSection';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { FORMSPREE_ENDPOINT } from '@/lib/submitLeadDual';
+import { trackMeetingBooked } from '@/lib/analytics';
+
+vi.mock('@/lib/analytics', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@/lib/analytics')>()),
+  trackMeetingBooked: vi.fn(),
+}));
 
 function mockChannels(options: { formspreeOk: boolean; highLevelOk: boolean }) {
   vi.stubGlobal(
@@ -55,6 +61,7 @@ async function submitQualification(options: { budget?: string } = {}) {
 afterEach(() => {
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
+  vi.mocked(trackMeetingBooked).mockClear();
 });
 
 describe('QualificationForm dual submit', () => {
@@ -92,6 +99,9 @@ describe('QualificationForm dual submit', () => {
     const formspreeCall = (fetch as ReturnType<typeof vi.fn>).mock.calls.find((call) => String(call[0]) === FORMSPREE_ENDPOINT);
     const body = formspreeCall?.[1]?.body as FormData;
     expect(body.get('requestType')).toBe('Scoping Call Request');
+    expect(trackMeetingBooked).toHaveBeenCalledWith(
+      expect.objectContaining({ formId: 'pharma_companies_uae_cta', need: 'Primary market research' }),
+    );
   });
 
   it('routes an under-$20K budget to HighLevel only and answers by email instead of a call', async () => {
@@ -110,6 +120,7 @@ describe('QualificationForm dual submit', () => {
     const payload = JSON.parse(String(hlCall?.[1]?.body));
     expect(payload.requestType).toBe('Research Enquiry (below minimum)');
     expect(payload.qualified).toBe('no');
+    expect(trackMeetingBooked).not.toHaveBeenCalled();
   });
 
   it('keeps the mailto fallback when both channels fail', async () => {

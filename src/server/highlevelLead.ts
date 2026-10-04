@@ -162,16 +162,22 @@ export function leadSource(formVariant: string | undefined): string {
   return variant ? `website form / ${variant}` : 'website form';
 }
 
-export function leadTags(formVariant: string | undefined): string[] {
-  const tags = ['website-lead'];
-  const variant = (formVariant || '')
+function tagSlug(value: string | undefined) {
+  return (value || '')
     .trim()
     .toLowerCase()
     .replace(/[^a-z0-9_:-]+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
     .slice(0, 80);
+}
+
+export function leadTags(formVariant: string | undefined, requestType?: string): string[] {
+  const tags = ['website-lead'];
+  const variant = tagSlug(formVariant);
   if (variant) tags.push(`form:${variant}`);
+  const request = tagSlug(requestType);
+  if (request) tags.push(`request:${request}`);
   return tags;
 }
 
@@ -274,7 +280,7 @@ export function planLeadWrite(
   const plan: LeadWritePlan = {
     email: leadEmail(fields),
     upsert,
-    tags: leadTags(fields.formVariant),
+    tags: leadTags(fields.formVariant, fields.requestType),
     note,
   };
   if (upsert.phone) plan.upsertWithoutPhone = buildUpsertBody(fields, locationId, customFields, false);

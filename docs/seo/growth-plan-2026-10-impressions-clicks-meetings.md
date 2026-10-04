@@ -138,6 +138,12 @@ Goal: stop self-inflicted volatility and make every later decision measurable.
 | 0.4 | Lead logging: HighLevel already receives every dual-posted lead (`src/server/highlevelLead.ts`). Export HighLevel contacts weekly to `data/leads/leads.csv` (columns `date, source_page, budget, timeline, request_type`) so the weekly report's Leads section stops saying "no data". | `data/leads/leads.csv`, `scripts/gsc-weekly-report.mjs` (add `request_type` column, count `Meeting request` separately) | Leads table populated |
 | 0.5 | GA4: confirm `cta_click`, `lead_submitted`, `form_start` fire (they are consent-gated in `src/lib/analytics.ts`); add `meeting_booked` event (Phase 2). | `src/lib/analytics.ts` | Events visible in GA4 DebugView |
 
+**0.4 / 0.5 status 2026-10-04 — built.**
+- **GA4 `meeting_booked`.** `trackMeetingBooked` in `src/lib/analytics.ts` fires from `QualificationForm` only when a "Book a 30-minute scoping call" request succeeds; under-$20K enquiries do not fire it. It is consent-gated like the other events. Params: `form_id`, `source_context`, `need`, `budget`, `timeline`, `markets`, `page_path`; no personal data. To finish: mark it as a key event in GA4 Admin.
+- **HighLevel tag.** Every website lead now also gets `request:<type>`, e.g. `request:scoping-call-request`, so meeting requests can be filtered in HighLevel.
+- **`leads.csv`.** `npm run leads:export` (`scripts/leads/export-highlevel-leads.mjs`) reads the "Website lead" notes of `website-lead` contacts and merges one row per submission into `data/leads/leads.csv`. The token needs `contacts.readonly`. Defaults to the last 7 days; use `--since/--until` to change the window. Columns: `date, source_page, request_type, meeting_request, budget, timeline, need, markets, country, form, utm_source, qualified, note_id`. No names, emails, phones or companies.
+- **Weekly report.** The Leads section now reports meeting requests first, by request type and by source page, limited to the GSC export window. The budget and timeline parsers were fixed: they had read "$20K-50K" as 2050 and "1-3 months" as 13.
+
 ---
 
 ## 4. Phase 1 — Win the buyer-intent head terms (weeks 2–10)
