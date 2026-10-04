@@ -51,7 +51,7 @@ Inventory: `docs/seo/bio-448-thin-page-inventory.csv`.
 
 1. **`/services/competitive-intelligence`** — GeoLLM answer block, 8 expanded FAQs (details/summary), hero extension copy for LLM/chat citation.
 2. **`/gcc-functional-service-providers-market`** — structure narrative + 5 FAQs (targets GSC “gcc functional service providers market”).
-3. **Near-threshold GSC pages** — `/pharmaceutical-companies-iran`, `/pharmaceutical-companies-iraq`, `/brazil-healthcare-market-report` content + `dateModified` 2026-10-04.
+3. **Near-threshold GSC pages** — `/pharmaceutical-companies-iran` (2,092w), `/pharmaceutical-companies-iraq` (2,084w), `/brazil-healthcare-market-report` (2,100w) SSR + `dateModified` 2026-10-04.
 4. **Weekly report** — `reports/weekly-report-2026-10-04.md` regenerated from GSC CSVs.
 
 ## LLM / AI citation recommendations
@@ -69,6 +69,7 @@ Inventory: `docs/seo/bio-448-thin-page-inventory.csv`.
 - `src/pages/IranPharmaCompanies.tsx`
 - `src/pages/IraqPharmaCompanies.tsx`
 - `src/pages/BrazilHealthcareMarketReport.tsx`
+- `src/pages/templates/SpecialtyMarketDemandPage.tsx`
 - `docs/seo/website-audit-2026-10-04.md`
 - `docs/seo/bio-448-thin-page-inventory.json` (regenerated crawl)
 - `reports/weekly-report-2026-10-04.md`
