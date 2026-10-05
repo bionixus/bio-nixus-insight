@@ -16,6 +16,8 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
+import { ReportAccessChannelSection } from '@/components/report-premium/ReportAccessChannelSection';
+import { REPORT_ACCESS_CHANNEL_NARRATIVES } from '@/data/reportAccessChannelNarratives';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -117,10 +119,16 @@ const IndiaMedicalDevicesMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">India is among the world's fastest-growing medical device markets — fourth-largest in Asia and growing at 8% CAGR. The PLI scheme and Medical Device Parks are driving a domestic manufacturing transformation that is creating Indian-branded device companies with growing international ambitions, including in GCC markets.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">State tender calendars and Make-in-India preferences increasingly specify domestic content or supplier presence — a factor multinational entrants must model alongside CDSCO timelines.</p>
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="india" countryName="India" variant="medical-devices" />
+
+        <ReportAccessChannelSection
+          narrative={REPORT_ACCESS_CHANNEL_NARRATIVES.india}
+          hubLink={{ to: '/healthcare-market-research', label: 'Healthcare market research hub' }}
+        />
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">

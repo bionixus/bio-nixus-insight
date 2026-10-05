@@ -7,6 +7,7 @@ import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { Language } from '@/lib/i18n';
 import { languagePaths } from '@/lib/seo';
+import { MARKET_RESEARCH_HEALTHCARE_EXPANSION_EN } from '@/data/marketResearchHealthcareExpansion';
 
 type LocalizedCopy = {
   seoTitle: string;
@@ -119,6 +120,26 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
         question: 'How quickly can healthcare market research start?',
         answer:
           'Most projects begin once objectives and scope are aligned, then move into fieldwork with quality controls agreed up front. We typically return a tailored methodology outline within one business day of an initial brief.',
+      },
+      {
+        question: 'Does BioNixus replace IQVIA or syndicated audit subscriptions?',
+        answer:
+          'No. Syndicated audits answer share within their panel universe. BioNixus provides primary research at hospital, payer, and account level — why a committee chose a competitor, whether a distributor gap explains share movement, and how SFDA, MOHAP, or EDA rules shape uptake. Many clients run both; see our IQVIA alternative page for positioning.',
+      },
+      {
+        question: 'What is the minimum budget for custom healthcare market research?',
+        answer:
+          'Primary programmes typically start at USD 20,000 depending on countries, specialties, sample size, and qualitative versus quantitative design. Smaller diagnostic interviews can be scoped as a phase-one module before a full tracker.',
+      },
+      {
+        question: 'Which languages and markets do you cover?',
+        answer:
+          'English and Arabic fieldwork across GCC countries, Egypt, and wider MENA; European waves in local languages across the UK, Germany, France, Italy, and Spain. Country hubs live under /healthcare-market-research with therapy tracks for oncology, immunology, diabetes, and other areas.',
+      },
+      {
+        question: 'How do you ensure HCP and patient data compliance?',
+        answer:
+          'Studies are designed with GDPR-aware governance for EU fieldwork and documented consent and verification for GCC and Egypt. Respondent logs, exclusion reasons, and conflict-of-interest screening are delivered for medical and compliance review — not slide-only summaries.',
       },
     ],
     ctaTitle: 'Need a tailored healthcare market research roadmap?',
@@ -488,6 +509,31 @@ export default function MarketResearchHealthcare() {
             </div>
           </div>
         </section>
+
+        <section className="py-12 border-t border-border">
+            <div className="container-wide max-w-5xl mx-auto space-y-12">
+              {MARKET_RESEARCH_HEALTHCARE_EXPANSION_EN.map((block) => (
+                <div key={block.heading} className="space-y-4">
+                  <h2 className="text-3xl font-display font-semibold text-foreground">{block.heading}</h2>
+                  {block.paragraphs.map((paragraph) => (
+                    <p key={paragraph.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                      {paragraph.includes('/iqvia-alternative') ? (
+                        <>
+                          {paragraph.split('/iqvia-alternative')[0]}
+                          <Link to="/iqvia-alternative" className="text-primary hover:underline font-medium">
+                            IQVIA alternative
+                          </Link>
+                          {paragraph.split('/iqvia-alternative')[1]}
+                        </>
+                      ) : (
+                        paragraph
+                      )}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </section>
 
         <section className="py-12 bg-muted/20">
           <div className="container-wide max-w-6xl mx-auto">

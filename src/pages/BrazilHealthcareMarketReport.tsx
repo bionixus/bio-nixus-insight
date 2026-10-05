@@ -16,6 +16,8 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { ReportAccessChannelSection } from '@/components/report-premium/ReportAccessChannelSection';
+import { REPORT_ACCESS_CHANNEL_NARRATIVES } from '@/data/reportAccessChannelNarratives';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -63,7 +65,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-10-05',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -78,7 +80,7 @@ const jsonLd = [
     countryName: "Brazil",
     marketSlug: "brazil",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-08-22",
+    modifiedDate: "2026-10-05",
   })
 ];
 
@@ -121,6 +123,11 @@ const BrazilHealthcareMarketReport = () => (
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="healthcare" />
+
+        <ReportAccessChannelSection
+          narrative={REPORT_ACCESS_CHANNEL_NARRATIVES.brazil}
+          hubLink={{ to: '/healthcare-market-research', label: 'Healthcare market research hub' }}
+        />
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
