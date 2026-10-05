@@ -314,6 +314,7 @@ const uaeObesity: SegmentMarketContent = {
   description:
     'UAE obesity market insights on GLP-1 access and prescribing, bariatric surgery, insurance coverage in Dubai and Abu Dhabi, and self-pay patient behaviour.',
   canonical: `${SEGMENT_MARKET_BASE}/uae-obesity-market`,
+  lastUpdated: '2026-10-05',
   h1: 'UAE Obesity Market Insights: Access, Prescribing, and Patient Pathways',
   intro: [
     'UAE obesity market insights have to start with a commercial reality that separates this market from Europe or North America: a large share of weight-management treatment is paid for out of pocket, in private clinics, by patients who behave like consumers rather than passive recipients of care. BioNixus researches that behaviour directly — what triggers treatment, what patients pay, where they drop out, and which clinicians they trust.',
@@ -538,6 +539,7 @@ const uaeObesity: SegmentMarketContent = {
     { to: '/saudi-arabia-obesity-market', label: 'Saudi Arabia Obesity Market' },
     { to: '/kuwait-obesity-market', label: 'Kuwait Obesity Market' },
     { to: '/uae-market-access-research', label: 'UAE Market Access Research' },
+    { to: '/patient-journey-research-gcc#obesity', label: 'Obesity patient journey research (GCC)' },
   ],
   faqs: [
     {
@@ -585,6 +587,7 @@ const kuwaitObesity: SegmentMarketContent = {
   badge: 'Kuwait Obesity Market Intelligence',
   breadcrumbLabel: 'Kuwait Obesity Market',
   title: 'Kuwait Obesity Market Insights: Access & Demand | BioNixus',
+  lastUpdated: '2026-10-05',
   description:
     'Kuwait obesity market insights covering MOH tendering, public-sector prescribing, Dasman Diabetes Institute, bariatric pathways, and expatriate access.',
   canonical: `${SEGMENT_MARKET_BASE}/kuwait-obesity-market`,
@@ -807,6 +810,7 @@ const kuwaitObesity: SegmentMarketContent = {
     { to: '/gcc-obesity-market', label: 'GCC Obesity Market' },
     { to: '/uae-obesity-market', label: 'UAE Obesity Market' },
     { to: '/saudi-arabia-obesity-market', label: 'Saudi Arabia Obesity Market' },
+    { to: '/patient-journey-research-gcc#obesity', label: 'Obesity patient journey research (GCC)' },
   ],
   faqs: [
     {
@@ -858,7 +862,7 @@ const egyptObesity: SegmentMarketContent = {
     'Obesity and GLP-1 market research in Egypt: semaglutide/tirzepatide surveys, EDA, self-pay, Arabic Cairo. $10,000–$60,000. Custom physician and patient studies.',
   canonical: `${SEGMENT_MARKET_BASE}/egypt-obesity-market`,
   h1: 'Obesity & GLP-1 Market Research in Egypt',
-  lastUpdated: '2026-09-29',
+  lastUpdated: '2026-10-05',
   pageSchema: 'webpage',
   serviceName: 'Obesity & GLP-1 Market Research in Egypt',
   serviceType: 'Pharmaceutical and healthcare primary market research',
@@ -1110,7 +1114,7 @@ const egyptObesity: SegmentMarketContent = {
     { to: '/uae-obesity-market', label: 'UAE obesity market research' },
     { to: '/kuwait-obesity-market', label: 'Kuwait obesity market research' },
     { to: '/healthcare-market-research/egypt', label: 'Egypt healthcare market research hub' },
-    { to: '/patient-journey-research-gcc', label: 'Patient journey research GCC' },
+    { to: '/patient-journey-research-gcc#obesity', label: 'Obesity patient journey research (GCC)' },
     { to: '/pharmaceutical-companies-egypt', label: 'Pharmaceutical companies in Egypt' },
   ],
   faqs: [

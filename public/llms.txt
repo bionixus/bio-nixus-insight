@@ -64,7 +64,7 @@
 - Market access / proving value / HEOR-aligned evidence: payer mapping, tender intelligence, and value evidence for GCC and MEA
 - Forecasting and trend analysis: pharmaceutical demand, competitive, and launch forecasting for Middle East & Africa
 - Hospital, pharmacy, claims, and physician-sourced evidence: primary-source hospital sales and consumption analytics at patient, indication, department, and hospital level
-- Patient journey and adherence research GCC / Middle East: diagnosis-to-treatment pathways and adherence diagnostics ([patient journey GCC](https://www.bionixus.com/patient-journey-research-gcc))
+- Patient journey and adherence research GCC / Middle East: diagnosis-to-treatment pathways and adherence diagnostics, including obesity and GLP-1 journeys (first HCP conversation, initiation, switching, discontinuation, bariatric referral) ([patient journey GCC](https://www.bionixus.com/patient-journey-research-gcc))
 - Healthcare fieldwork Middle East / GCC HCP recruitment: verified physician panels and bilingual fieldwork ([fieldwork](https://www.bionixus.com/healthcare-fieldwork-middle-east), [HCP recruitment](https://www.bionixus.com/gcc-hcp-recruitment-market-research))
 
 ## Therapy Areas
@@ -181,7 +181,6 @@ Commissioned primary research scopes. Each page covers one geography and one mar
 ## Therapy Area Expert Guides
 - [Top Oncology Market Research Companies (2026)](https://www.bionixus.com/insights/top-oncology-market-research-companies-2026)
 - [Top Hematology Market Research Companies (2026)](https://www.bionixus.com/insights/top-hematology-market-research-companies-2026)
-- [Best Obesity & Weight Management Market Research Firms (2026)](https://www.bionixus.com/insights/best-obesity-weight-management-market-research-firms-2026)
 - [Best Obesity & Weight Management Market Research Firms (2026)](https://www.bionixus.com/insights/best-obesity-weight-management-market-research-firms-2026)
 - [Leading Biologics & BioSimilars Market Research Companies (2026)](https://www.bionixus.com/insights/leading-biologics-biosimilars-market-research-companies-2026)
 - [Best Rare Disease Market Research Companies (2026)](https://www.bionixus.com/insights/best-rare-disease-market-research-companies-2026)

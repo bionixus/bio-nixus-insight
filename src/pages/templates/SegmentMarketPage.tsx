@@ -341,7 +341,7 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
         >
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
             {content.researchTopics.map((item) => (
-              <DirectoryDriverCard key={item.name} title={item.name} desc={item.detail} />
+              <DirectoryDriverCard key={item.name} title={item.name} desc={item.detail} link={item.link} />
             ))}
           </div>
         </DirectorySection>

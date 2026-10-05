@@ -1445,6 +1445,7 @@ const gccObesity: SegmentMarketContent = {
   description:
     'GCC Obesity Market research from BioNixus — GLP-1 access, bariatric surgery, obesity clinics, reimbursement variation and out-of-pocket demand intelligence.',
   canonical: `${SEGMENT_MARKET_BASE}/gcc-obesity-market`,
+  lastUpdated: '2026-10-05',
   h1: 'GCC Obesity Market: GLP-1 Access, Bariatric Care & Payer Intelligence',
   intro: [
     'The GCC Obesity Market has become one of the most commercially significant therapy areas in the region, and one of the least well understood. Obesity prevalence across the Gulf is high enough to be a stated public health priority, incretin-based pharmacotherapy has changed treatment expectations, bariatric surgery is well established, and specialist obesity and metabolic clinics are multiplying. BioNixus provides the prescriber, payer, pharmacy, and patient research needed to plan credibly in that environment.',
@@ -1495,6 +1496,15 @@ const gccObesity: SegmentMarketContent = {
       name: 'Patient willingness to pay and persistence',
       detail:
         'Out-of-pocket price tolerance, funding sources, reasons for discontinuation, and what support would extend treatment duration.',
+    },
+    {
+      name: 'Obesity patient journey research',
+      detail:
+        'We map the obesity patient journey across the GCC, from years of self-management and the first conversation with a doctor to GLP-1 initiation, switching, discontinuation and bariatric referral, with country cuts for Saudi Arabia, the UAE and Kuwait. See',
+      link: {
+        to: '/patient-journey-research-gcc#obesity',
+        label: 'patient journey research for obesity in the GCC',
+      },
     },
     {
       name: 'Pharmacy channel and supply dynamics',

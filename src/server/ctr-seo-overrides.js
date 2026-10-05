@@ -825,6 +825,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'How to map pharma KOLs in Saudi Arabia, the UAE, and the wider Middle East: peer nomination, hospital hierarchies, and digital opinion leaders. By BioNixus.',
   },
+  '/patient-journey-research-gcc': {
+    title: 'Patient Journey Research GCC: Obesity & GLP-1 | BioNixus',
+    description:
+      'BioNixus runs patient journey research for obesity in the GCC: first HCP talk, GLP-1 start, switching, stopping and bariatric referral. Dubai office.',
+  },
 };
 
 /**

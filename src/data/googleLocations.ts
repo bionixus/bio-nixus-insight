@@ -79,7 +79,7 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
     address: {
       streetAddress: '128 City Road',
       addressLocality: 'London',
-      postalCode: 'EC1V 2NP',
+      postalCode: 'EC1V 2NX',
       addressCountry: 'GB',
     },
     geo: {

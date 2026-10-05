@@ -320,7 +320,11 @@ export function buildMatrixSeoCopy(
   const name = industry.displayNameShort;
   const full = industry.displayName;
   const h1 = `${full} Market Research Company in ${country.label}`;
-  const title = `${name} Market Research in ${country.label} 2026 | BioNixus`;
+  // "2026" on the Saudi consumer-health title is clamped to a stray "2" by the 60-character SSR title budget.
+  const title =
+    country.slug === 'saudi-arabia' && industry.slug === 'consumer-health'
+      ? 'Consumer Health Market Research in Saudi Arabia | BioNixus'
+      : `${name} Market Research in ${country.label} 2026 | BioNixus`;
   const metaDescription = industry.isHealthcareAdjacent
     ? `${full} market research in ${country.label}: ${country.regulatorShort}-aware fieldwork, bilingual studies & decision-ready evidence. Proposal in 24 hours.`
     : `${name} market research in ${country.label} 2026 — surveys, qualitative depth & buyer intelligence with local field teams. Proposal in 24 hours.`;

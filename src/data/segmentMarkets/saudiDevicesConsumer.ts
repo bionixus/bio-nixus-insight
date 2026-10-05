@@ -1636,7 +1636,7 @@ const obesity: SegmentMarketContent = {
   h1: 'Obesity & GLP-1 Market Research in Saudi Arabia',
   serviceName: 'Obesity & GLP-1 Market Research in Saudi Arabia',
   emitWebPage: true,
-  lastUpdated: '2026-09-29',
+  lastUpdated: '2026-10-05',
   dateLabel: 'Last reviewed',
   heroCtaLabel: 'Request a $10,000–$60,000 scoped proposal',
   heroStats: [
@@ -1908,7 +1908,7 @@ const obesity: SegmentMarketContent = {
     { to: '/gcc-obesity-market', label: 'GCC & MENA obesity / GLP-1 hub' },
     { to: '/uae-obesity-market', label: 'UAE obesity market research' },
     { to: '/kuwait-obesity-market', label: 'Kuwait obesity market research' },
-    { to: '/patient-journey-research-gcc', label: 'Patient journey research GCC — obesity/GLP-1' },
+    { to: '/patient-journey-research-gcc#obesity', label: 'Obesity patient journey research (GCC)' },
     { to: '/saudi-payer-market-access-research', label: 'Saudi payer & market access research' },
     { to: '/budget-impact-model-saudi-arabia', label: 'Budget impact modelling Saudi Arabia' },
     { to: '/blog/nupco-saudi-arabia-tendering-guide', label: 'NUPCO Saudi Arabia tendering guide' },

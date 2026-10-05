@@ -256,11 +256,29 @@ export function DirectoryCategoryCard({
   );
 }
 
-export function DirectoryDriverCard({ title, desc }: { title: string; desc: string }) {
+export function DirectoryDriverCard({
+  title,
+  desc,
+  link,
+}: {
+  title: string;
+  desc: string;
+  link?: { to: string; label: string };
+}) {
   return (
     <div className="premium-card p-6 md:p-7">
       <h3 className="text-lg font-display font-semibold text-foreground mb-3">{title}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        {desc}
+        {link ? (
+          <>
+            {' '}
+            <Link to={link.to} className="text-primary hover:underline">
+              {link.label}
+            </Link>
+          </>
+        ) : null}
+      </p>
     </div>
   );
 }
