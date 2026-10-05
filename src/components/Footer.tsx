@@ -359,7 +359,7 @@ const Footer = () => {
                   href="https://maps.app.goo.gl/h8eEUQ9V3TryGF1t7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="128 City Road, London, England EC1V 2NP, GB"
+                  title="128 City Road, London, England EC1V 2NX, GB"
                   className="hover:text-primary-foreground transition-colors"
                 >
                   {t.footer.locationUk}

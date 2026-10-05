@@ -20,15 +20,19 @@ export function PremiumHero({
   h1,
   intro,
   links,
+  reviewed,
 }: {
   h1: string;
   intro: string;
   links: HeroLink[];
+  /** Visible review line rendered directly under the H1. */
+  reviewed?: string;
 }) {
   return (
     <section className="section-padding py-14">
       <div className="container-wide max-w-6xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">{h1}</h1>
+        <h1 className={`text-3xl md:text-4xl font-display font-semibold text-foreground ${reviewed ? 'mb-2' : 'mb-4'}`}>{h1}</h1>
+        {reviewed ? <p className="text-sm text-muted-foreground mb-4">{reviewed}</p> : null}
         <p className="text-muted-foreground leading-relaxed max-w-4xl mb-6">{intro}</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
           {links.map((link) => (

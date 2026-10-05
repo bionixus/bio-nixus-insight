@@ -112,7 +112,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
     },
     {
       title: 'United Kingdom — London (Founding Office)',
-      lines: ['128 City Road', 'London, EC1V 2NP', '+44 7727 666682'],
+      lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'],
     },
     {
       title: 'Egypt — Sheikh Zayed, Giza',

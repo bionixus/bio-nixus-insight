@@ -133,7 +133,7 @@ export const ORG_AREA_SERVED: Array<Record<string, string>> = [
 
 export const ORG_NUMBER_OF_EMPLOYEES = {
   '@type': 'QuantitativeValue',
-  minValue: 50,
+  minValue: 51,
   maxValue: 100,
 };
 

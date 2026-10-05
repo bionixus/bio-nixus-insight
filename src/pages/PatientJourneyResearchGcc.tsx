@@ -3,78 +3,141 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { ExecutiveDecisionBlock, PremiumHero, ProofMetricGrid } from '@/components/page/PremiumPageSections';
 
 const pageUrl = 'https://www.bionixus.com/patient-journey-research-gcc';
 
+const PAGE_TITLE = 'Patient Journey Research GCC: Obesity & GLP-1 | BioNixus';
+const PAGE_DESCRIPTION =
+  'BioNixus runs patient journey research for obesity in the GCC: first HCP talk, GLP-1 start, switching, stopping and bariatric referral. Dubai office.';
+
 const faqItems = [
   {
-    question: 'What is patient journey research and why does it matter for GCC pharma launch strategy?',
+    question: 'Patient journey research obesity GCC: who can run it for a pharma team?',
     answer:
-      "Patient journey research maps the full sequence of experiences a patient with a specific condition passes through — from first symptom awareness to treatment initiation to long-term adherence and support. In GCC markets, this research has particular strategic value because the journey structure often differs significantly from European or North American norms. Late diagnosis is prevalent in high-burden conditions such as type 2 diabetes and cardiovascular disease, driven by a combination of cultural reluctance to seek care, limited primary care access in parts of the region, and a tendency to attribute early symptoms to lifestyle rather than disease. Identifying where in the pathway patients are lost — before diagnosis, at referral, at treatment initiation, or during long-term adherence — allows pharma teams to design commercial and medical interventions that directly address the pathway friction rather than assuming a journey that doesn't match local reality.",
+      'BioNixus runs patient journey research for obesity across the GCC and Egypt, led from our Dubai office (Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai) with a KSA office in Al Khobar and a MENA regional office in Cairo. Studies combine patient, caregiver, prescriber, pharmacist and payer interviews in Gulf Arabic and English.',
   },
   {
-    question: 'What GCC-specific features make the patient journey different from Western markets?',
+    question: 'How do you map the obesity patient journey in the GCC?',
     answer:
-      "Several structural features create GCC-specific journey dynamics. First, late diagnosis culture: in conditions such as type 2 diabetes (UAE adult prevalence approximately 19%, KSA approximately 18%), many patients have had elevated blood glucose for years before formal diagnosis. Second, specialist referral barriers: the region's hospital-heavy system creates fragmented primary-to-specialist referral pathways, and patients in government healthcare settings may wait 4–12 weeks for specialist appointments. Third, dual care pathway structures: GCC patients frequently navigate both government and private care simultaneously — seeing a government specialist for drug prescriptions (subsidised) and a private GP for monitoring and convenience — creating complex multi-provider journeys. Fourth, family and caregiver involvement: in GCC cultural contexts, health decisions are often family-mediated, and the caregiver's role in treatment initiation and adherence is more prominent than in most European markets.",
+      'We map eight stages: self-management, first HCP conversation, diagnosis and coding, treatment choice (lifestyle, GLP-1-based medicines, bariatric surgery), access and payment, initiation, persistence or switching or stopping, and maintenance. Each stage is scored for where patients are lost and why, with country cuts for KSA, the UAE, Kuwait and other GCC markets.',
   },
   {
-    question: 'What research design options are available for GCC patient journey studies?',
+    question: 'Can you study GLP-1 discontinuation and switching in Saudi Arabia, the UAE and Kuwait?',
     answer:
-      'Patient journey research in GCC uses four primary design approaches depending on the objective and timeline. Retrospective qualitative IDIs with patients and caregivers (8–15 per country) map the lived journey experience and identify emotional and practical friction points. Ethnographic observation or accompanied journeys — where a researcher follows a consenting patient through a series of healthcare encounters — provide the richest journey data but require intensive ethics management and are typically limited to 4–8 patients. Online patient diaries (structured self-completion over 4–8 weeks) capture real-time journey events and are increasingly viable in UAE, KSA, and Qatar given high smartphone penetration. Retrospective medical chart reviews provide administrative journey data (diagnosis dates, referral gaps, treatment initiation lags) for conditions where chart access can be arranged through institutional partners.',
+      'Yes. We interview current and past users of GLP-1-based medicines and their prescribers and pharmacists to find out why patients stop (cost, side effects, supply, reaching their goal) or switch molecule or channel. Published Kuwait data show this matters: 47% of GLP-1 users surveyed in 2024 had stopped treatment.',
   },
   {
-    question: 'How do you manage research ethics and patient consent for patient journey studies in GCC?',
+    question: 'Who do you interview in an obesity patient journey study?',
     answer:
-      "Patient-level research in GCC requires careful ethics management. In KSA, studies involving patient participants typically require institutional review board approval from the relevant hospital ethics committee and written informed consent in Arabic. In UAE, DHA and DOH each have research permit processes for patient studies conducted in their facilities. Disease stigma is a real consideration in GCC for certain conditions — mental health, HIV, hepatitis C, and some oncology diagnoses carry social stigma that must be addressed in consent documentation and interviewing protocols. Consent forms are prepared in Arabic (Gulf dialect), clearly distinguish research from clinical care, and are reviewed by the BioNixus ethics team for alignment with applicable national guidance. For patient populations with limited health literacy, consent is obtained through a trained witness protocol in addition to written consent.",
+      'People living with obesity and, where relevant, family members. Endocrinologists and obesity physicians, family physicians, bariatric and metabolic surgeons, dietitians, community and hospital pharmacists, and payer, TPA or insurer medical directors. We recruit through a network of about 3,200 physicians.',
   },
   {
-    question: 'How long does a multi-country GCC patient journey study take?',
+    question: 'Does the obesity journey differ by payer in the GCC?',
     answer:
-      'A comprehensive patient journey study spanning three GCC markets (typically KSA, UAE, and one of Kuwait/Qatar) with qualitative patient IDIs, caregiver interviews, and HCP perspectives typically runs 8–12 weeks from confirmed brief to final journey map delivery. The timeline includes: 2 weeks for study design and ethics pathway assessment; 1–2 weeks for Arabic instrument adaptation and field briefing; 4–6 weeks for active field (patient recruitment is inherently slower than HCP recruitment due to ethics requirements and scheduling complexity); and 2–3 weeks for qualitative analysis, journey mapping, and report preparation. Studies incorporating online diary components add 4–6 weeks for the diary run period before analysis can begin.',
+      "Yes. Government supply, insurer criteria and self-pay produce different journeys for the same medicine. Abu Dhabi's Department of Health, for example, publishes a Thiqa reimbursement policy for obesity medications, while many patients elsewhere pay out of pocket. We map who pays at each stage and how that changes initiation and persistence.",
   },
   {
-    question: 'What does a patient journey research deliverable typically include?',
+    question: 'How long does a GCC patient journey study take, and what does it cost?',
     answer:
-      'A comprehensive GCC patient journey deliverable typically includes: a visual journey map showing the touchpoint sequence from symptom awareness through each major stage to long-term management, annotated with emotional sentiment, friction severity, and key decision points; a friction point analysis ranking pathway barriers by type (system, HCP, patient/caregiver, financial) and by magnitude; an opportunity brief mapping commercial, medical, and patient support intervention hypotheses to specific pathway friction points; country-level journey variants showing where the KSA, UAE, and other GCC country journeys diverge; verbatim transcript excerpts in Arabic and English illustrating key themes; and an executive summary structured for presentation to cross-functional pharma teams. For studies with an access application, the journey data is structured to inform patient burden narratives for HTA or formulary submissions.',
+      'A three-market GCC journey study typically takes 8–12 weeks from confirmed brief to raw data, and 14–18 weeks with an online patient diary. Patient journey studies are custom research priced from $10k to $60k, depending on markets, stakeholders and methods.',
+  },
+  {
+    question: 'Which other disease areas do you cover with patient journey research?',
+    answer:
+      'Besides obesity, we run GCC patient journey studies in diabetes and metabolic disease, oncology, cardiovascular disease and respiratory disease (asthma and COPD), and link them to adherence, patient support programme and real-world evidence work.',
   },
 ];
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  inLanguage: 'en',
+  dateModified: '2026-10-05',
+  lastReviewed: '2026-10-05',
+  isPartOf: { '@id': 'https://www.bionixus.com/#website' },
+  publisher: { '@id': 'https://www.bionixus.com/#organization' },
+  about: [
+    { '@type': 'Thing', name: 'Patient journey research' },
+    { '@type': 'MedicalCondition', name: 'Obesity' },
+  ],
+  mainEntity: { '@id': `${pageUrl}#service` },
+};
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Patient Journey Research GCC',
-  serviceType: 'Patient journey research for pharmaceutical teams across GCC markets',
-  areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Bahrain', 'Oman'],
+  '@id': `${pageUrl}#service`,
+  name: 'Patient Journey Research GCC (incl. obesity and GLP-1)',
+  serviceType:
+    'Patient journey research for pharmaceutical teams across GCC markets, including obesity and GLP-1 journeys',
+  areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Bahrain', 'Oman', 'Egypt'],
   provider: {
     '@type': 'Organization',
+    '@id': 'https://www.bionixus.com/#organization',
     name: 'BioNixus',
     url: 'https://www.bionixus.com',
+    foundingDate: '2012',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Thuraya Tower 1, 5th Floor, Al Sufouh 2',
+      addressLocality: 'Dubai',
+      addressCountry: 'AE',
+    },
+  },
+  offers: {
+    '@type': 'Offer',
+    description: 'Custom research from $10k to $60k',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      minPrice: 10000,
+      maxPrice: 60000,
+      priceCurrency: 'USD',
+    },
   },
   description:
-    'Patient journey research across GCC markets mapping diagnosis pathways, specialist referral dynamics, treatment initiation barriers, and adherence friction for pharma launch and access strategy.',
+    'Patient journey research across GCC markets mapping the first HCP conversation and diagnosis, treatment choice (lifestyle, GLP-1-based medicines, bariatric surgery), access and payment, initiation and persistence, switching and discontinuation, plus diabetes, oncology, cardiovascular and respiratory journeys.',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${pageUrl}#faq`,
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
 };
 
 const jsonLd = [
+  webPageSchema,
   serviceSchema,
+  faqSchema,
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
     { name: 'Healthcare Market Research GCC', href: '/healthcare-market-research-agency-gcc' },
     { name: 'Patient Journey Research GCC', href: '/patient-journey-research-gcc' },
   ]),
-  buildFAQSchema(faqItems),
 ];
 
 export default function PatientJourneyResearchGcc() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Patient Journey Research GCC | Pathway Mapping | BioNixus</title>
-        <meta
-          name="description"
-          content="Patient journey research GCC mapping diagnosis gaps, referral barriers, treatment initiation friction, and adherence challenges across KSA, UAE, Kuwait, and Qatar for pharma launch strategy."
-        />
+        <title>{PAGE_TITLE}</title>
+        <meta name="description" content={PAGE_DESCRIPTION} />
+        <meta property="og:title" content={PAGE_TITLE} />
+        <meta property="og:description" content={PAGE_DESCRIPTION} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content={PAGE_TITLE} />
+        <meta name="twitter:description" content={PAGE_DESCRIPTION} />
         <link rel="canonical" href={pageUrl} />
         {jsonLd.map((schema, index) => (
           <script key={`pjrg-schema-${index}`} type="application/ld+json">
@@ -92,16 +155,29 @@ export default function PatientJourneyResearchGcc() {
           ]}
         />
         <PremiumHero
-          h1="Patient Journey Research GCC"
-          intro="Patient journey research in GCC markets requires more than pathway mapping borrowed from European templates. The region's late-diagnosis culture, dual public-private care pathways, family-mediated health decisions, and high prevalence of undertreated chronic conditions create journey structures that differ materially from Western norms. BioNixus designs and executes patient journey research across all six GCC markets, integrating qualitative patient and caregiver perspectives, HCP pathway understanding, and payer system context to produce journey maps that are decision-ready for pharma launch and market access teams."
+          h1="Patient Journey Research GCC: Obesity, GLP-1 and Chronic Disease"
+          reviewed="Last reviewed: 5 October 2026"
+          intro="BioNixus runs patient journey research for obesity in the GCC, mapping the path from the first weight conversation with a doctor to GLP-1 initiation, switching, discontinuation and bariatric referral, from our Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE. We design and field journey studies across all six GCC markets (and Egypt from our Cairo regional office), combining patient and caregiver interviews, prescriber and pharmacist interviews, and payer context. The outputs are journey maps that launch, access and medical teams can act on. Beyond obesity, we run the same journey work for diabetes, oncology, cardiovascular and respiratory disease."
           links={[
             { to: '/patient-support-program-research-gcc', label: 'Patient support program research GCC' },
             { to: '/patient-adherence-research-middle-east', label: 'Patient adherence research Middle East' },
             { to: '/real-world-evidence-gcc', label: 'Real world evidence GCC' },
             { to: '/healthcare-market-research-agency-gcc', label: 'Healthcare market research agency GCC' },
+            { to: '#obesity', label: 'Obesity patient journeys' },
             { to: '/contact', label: 'Request patient journey scope' },
           ]}
         />
+
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+              Who runs patient journey research for obesity in the GCC?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              BioNixus does. We are a healthcare and pharmaceutical market research company founded in 2012, with offices in Dubai, Al Khobar, Cairo, London and São Paulo and US headquarters in Sheridan, Wyoming. For obesity, we map each stage where patients fall out of care or switch: when they first raise weight with a doctor, how obesity gets diagnosed and coded, the choice between lifestyle care, GLP-1-based medicines and bariatric surgery, how treatment is paid for, starting and dose-stepping, and whether patients persist, switch or stop. Fieldwork is in Gulf Arabic and English, drawing on a network of about 3,200 physicians. Custom studies are priced from $10k to $60k.
+            </p>
+          </div>
+        </section>
 
         <ExecutiveDecisionBlock
           heading="GCC patient journey research: decision framework"
@@ -155,6 +231,65 @@ export default function PatientJourneyResearchGcc() {
             <p className="text-muted-foreground leading-relaxed mb-4">
               Certain disease areas have particularly rich journey research value in GCC due to the combination of high prevalence, complex pathway dynamics, and significant commercial opportunity.
             </p>
+            <h3 id="obesity" className="text-xl font-display font-semibold text-foreground mt-8 mb-3 scroll-mt-28">
+              Obesity and GLP-1 patient journeys
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Obesity journeys in the GCC are long, self-managed for years, and increasingly split between GLP-1 medicines, bariatric surgery and self-pay clinics. Published evidence shows why the journey, not just prevalence, decides the commercial opportunity:
+            </p>
+            <ul className="list-disc pl-5 space-y-3 text-muted-foreground leading-relaxed mb-4">
+              <li>
+                <strong className="text-foreground">The first conversation comes late.</strong> In the ACTION-IO survey in Saudi Arabia (1,000 people with obesity and 200 healthcare professionals, fielded in 2018), people with obesity spent a mean of 6 years (median 4 years) struggling with their weight before they first discussed it with a healthcare professional. Only 5% kept off a weight loss of 5% or more for over a year. (
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8265404/" className="text-primary hover:underline" rel="noopener noreferrer" target="_blank">
+                  ACTION-IO Saudi Arabia, PMC8265404
+                </a>
+                ; study sponsored by Novo Nordisk)
+              </li>
+              <li>
+                <strong className="text-foreground">Doctors and patients read motivation differently.</strong> In the same survey, 50% of people with obesity said they were motivated to lose weight. Only 39% of healthcare professionals thought their patients were. (
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8265404/" className="text-primary hover:underline" rel="noopener noreferrer" target="_blank">
+                  PMC8265404
+                </a>
+                )
+              </li>
+              <li>
+                <strong className="text-foreground">Discontinuation and switching are common.</strong> In a 2024 survey of adults in Kuwait using GLP-1 receptor agonists for weight loss, 47% had stopped treatment. The main reasons were side effects, reaching their goal, and cost. The study also reports that GLP-1 RAs are free in government facilities, but shortages and long waits push patients to private clinics. (
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12127183/" className="text-primary hover:underline" rel="noopener noreferrer" target="_blank">
+                  Frontiers in Nutrition, PMC12127183
+                </a>
+                )
+              </li>
+              <li>
+                <strong className="text-foreground">Coverage rules shape the path.</strong> Abu Dhabi&apos;s Department of Health publishes a Thiqa reimbursement policy for obesity medications with eligibility criteria (
+                <a href="https://www.doh.gov.ae/-/media/9F8611EF0B7841F28E2AAE4614327F59.ashx" className="text-primary hover:underline" rel="noopener noreferrer" target="_blank">
+                  DoH policy PDF
+                </a>
+                ). Elsewhere, many patients pay out of pocket, so the same molecule can follow very different journeys by emirate and payer.
+              </li>
+            </ul>
+            <p className="text-muted-foreground leading-relaxed mb-3">What a BioNixus obesity journey study maps:</p>
+            <ol className="list-decimal pl-5 space-y-2 text-muted-foreground leading-relaxed mb-4">
+              <li><strong className="text-foreground">Self-management years:</strong> diets, supplements, clinics and social-media advice before any doctor is involved.</li>
+              <li><strong className="text-foreground">First HCP conversation:</strong> who raises weight (patient or doctor), in which setting (primary care, endocrinology, private clinic), and what stops it.</li>
+              <li><strong className="text-foreground">Diagnosis and coding:</strong> whether obesity is recorded as a disease, plus the comorbidities (type 2 diabetes, hypertension, sleep apnoea) that trigger action.</li>
+              <li><strong className="text-foreground">Treatment choice:</strong> lifestyle programmes, GLP-1-based medicines (semaglutide, tirzepatide), and bariatric and metabolic surgery referral.</li>
+              <li><strong className="text-foreground">Access and payment:</strong> government supply, insurer criteria and prior authorisation, or self-pay. Includes supply shortages and pharmacy substitution.</li>
+              <li><strong className="text-foreground">Initiation and dose-stepping:</strong> first fill, injection training, early side effects, and follow-up cadence.</li>
+              <li><strong className="text-foreground">Persistence, switching and stopping:</strong> why patients switch molecule or channel, stop for cost or tolerability, or stop on reaching their goal.</li>
+              <li><strong className="text-foreground">Maintenance and weight regain:</strong> what happens after stopping, and how the journey hands over to (or from) bariatric surgery.</li>
+            </ol>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Country pages:{' '}
+              <Link to="/saudi-arabia-obesity-market" className="text-primary hover:underline">Saudi Arabia obesity &amp; GLP-1 research</Link>
+              {' · '}
+              <Link to="/uae-obesity-market" className="text-primary hover:underline">UAE obesity market</Link>
+              {' · '}
+              <Link to="/kuwait-obesity-market" className="text-primary hover:underline">Kuwait obesity market</Link>
+              {' · '}
+              <Link to="/egypt-obesity-market" className="text-primary hover:underline">Egypt obesity &amp; GLP-1 research</Link>
+              {' · '}
+              <Link to="/gcc-obesity-market" className="text-primary hover:underline">GCC obesity market hub</Link>
+            </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong className="text-foreground">Diabetes and metabolic disease.</strong> Type 2 diabetes adult prevalence is estimated at approximately 18–19% in both KSA and UAE — among the highest rates globally — with pre-diabetes prevalence adding another 10–15%. The treatment landscape encompasses oral antidiabetic agents, GLP-1 receptor agonists, SGLT-2 inhibitors, insulin, and combination therapies. The journey for a newly diagnosed patient is complex: initial GP management, specialist referral decision (diabetologist vs. endocrinologist vs. GP-continued management), education provision, device choice for insulin users, and long-term adherence to often complex regimens. Journey research here maps the critical branch points that determine whether patients receive optimal therapy.
             </p>
@@ -189,6 +324,9 @@ export default function PatientJourneyResearchGcc() {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong className="text-foreground">Payers</strong> provide the system-level perspective on access barriers, coverage policies, and formulary restrictions that shape which treatments patients can access and at what cost. Payer interviews (3–5 per country for GCC journey research) complete the stakeholder picture and are essential when the journey includes a reimbursement or cost barrier stage.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              <strong className="text-foreground">For obesity journeys</strong> we add the people who control the GLP-1 and surgery decision points: endocrinologists and obesity physicians, family physicians, bariatric and metabolic surgeons, dietitians, community and hospital pharmacists, and payer, TPA and insurance medical directors. We also interview people living with obesity (current, past and never-treated GLP-1 users) and, where relevant, family members involved in the decision.
             </p>
 
             <h2 className="text-2xl font-display font-semibold text-foreground mt-10 mb-4">Touchpoint analysis: mapping the end-to-end GCC journey</h2>
@@ -231,15 +369,40 @@ export default function PatientJourneyResearchGcc() {
               Patient consent in Gulf Arabic is mandatory for all GCC patient research, and the consent process itself must be conducted in the patient's preferred language by the interviewer, not simply presented as a document. For patients with low health literacy or who are unfamiliar with research participation, the consent explanation should be supplemented by a simple verbal summary of what participation involves and what will happen to their information.
             </p>
 
-            <h2 className="text-2xl font-display font-semibold text-foreground mt-10 mb-4">Cost ranges and timelines</h2>
+            <h2 className="text-2xl font-display font-semibold text-foreground mt-10 mb-4">Cost and timelines</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Patient journey research in GCC is inherently more complex to field than HCP research, due to patient recruitment logistics, ethics requirements, and the multi-stakeholder design. Cost and timeline ranges below cover full qualitative journey programmes spanning three GCC markets with multiple stakeholder types.
+              Patient journey studies are priced as custom research, <strong className="text-foreground">from $10k to $60k</strong>, depending on the number of markets, stakeholder types and methods (for example, adding a patient diary or payer interviews). Typical timelines from confirmed brief:
             </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm text-left border border-border">
+                <thead className="bg-muted/40">
+                  <tr>
+                    <th className="p-3 font-semibold text-foreground border-b border-border">Design</th>
+                    <th className="p-3 font-semibold text-foreground border-b border-border">Typical timeline</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr>
+                    <td className="p-3 border-b border-border">Single-market qualitative journey (KSA or UAE): patient, HCP and caregiver interviews</td>
+                    <td className="p-3 border-b border-border">6–8 weeks to raw data</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 border-b border-border">Three-market GCC journey (e.g. KSA, UAE, Kuwait)</td>
+                    <td className="p-3 border-b border-border">8–12 weeks</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 border-b border-border">Journey study with online patient diary (4–6 week diary run) plus interviews</td>
+                    <td className="p-3 border-b border-border">14–18 weeks</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3">Journey study with payer interviews and chart review added</td>
+                    <td className="p-3">12–16 weeks</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong className="text-foreground">Single market qualitative journey study (KSA or UAE), 10–15 patient IDIs + 6–8 HCP IDIs + 3–5 caregiver IDIs:</strong> $10,000 to $60,000 fieldwork cost; 6–8 weeks from brief to raw data. <strong className="text-foreground">Three-market GCC journey study (KSA, UAE, Kuwait or Qatar), equivalent design per market:</strong> $10,000 to $60,000; 8–12 weeks. <strong className="text-foreground">Multi-method journey study with online diary component (4–6 weeks diary run) plus qualitative IDIs:</strong> $10,000 to $60,000; 14–18 weeks total. <strong className="text-foreground">Full journey programme with payer interviews and medical chart review added:</strong> $10,000 to $60,000; 12–16 weeks.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              These ranges exclude analysis, journey mapping, and reporting, which is scoped inside custom research from $10,000 to $60,000 for a three-market multi-stakeholder study depending on depth of output required.
+              We send a scoped proposal within 48 hours of a brief.
             </p>
           </div>
         </section>
@@ -255,7 +418,7 @@ export default function PatientJourneyResearchGcc() {
             {
               label: 'Cost range',
               value: '$10k–$60k',
-              detail: 'Fieldwork cost for single-market to three-market patient journey research programmes in GCC.',
+              detail: 'Custom research, from $10k to $60k.',
             },
             {
               label: 'Stakeholder types',
@@ -282,13 +445,31 @@ export default function PatientJourneyResearchGcc() {
         <section className="section-padding py-8 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-lg font-semibold text-foreground mb-4">Related BioNixus services</h2>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/patient-support-program-research-gcc" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">Patient support program research GCC</Link>
-              <Link to="/patient-adherence-research-middle-east" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">Patient adherence research Middle East</Link>
-              <Link to="/real-world-evidence-gcc" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">Real world evidence GCC</Link>
-              <Link to="/healthcare-market-research-agency-gcc" className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">Healthcare market research agency GCC</Link>
-              <Link to="/contact" className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">Request patient journey scope</Link>
-            </div>
+            <ul className="space-y-2">
+              <li><Link to="/gcc-obesity-market" className="text-primary hover:underline">GCC obesity market research</Link></li>
+              <li><Link to="/saudi-arabia-obesity-market" className="text-primary hover:underline">Obesity &amp; GLP-1 market research Saudi Arabia</Link></li>
+              <li><Link to="/uae-obesity-market" className="text-primary hover:underline">UAE obesity market insights</Link></li>
+              <li><Link to="/kuwait-obesity-market" className="text-primary hover:underline">Kuwait obesity market insights</Link></li>
+              <li><Link to="/egypt-obesity-market" className="text-primary hover:underline">Obesity &amp; GLP-1 market research Egypt</Link></li>
+              <li><Link to="/blog/patient-journey-mapping-saudi-arabia" className="text-primary hover:underline">Patient journey mapping in Saudi Arabia</Link></li>
+              <li><Link to="/patient-adherence-research-middle-east" className="text-primary hover:underline">Patient adherence research Middle East</Link></li>
+              <li><Link to="/patient-support-program-research-gcc" className="text-primary hover:underline">Patient support program research GCC</Link></li>
+              <li><Link to="/real-world-evidence-gcc" className="text-primary hover:underline">Real world evidence GCC</Link></li>
+              <li><Link to="/diabetes-market-research-uae" className="text-primary hover:underline">Diabetes market research UAE</Link></li>
+              <li><Link to="/market-reports/saudi-arabia-diabetes-market-report" className="text-primary hover:underline">Saudi Arabia diabetes market report</Link></li>
+              <li><Link to="/market-reports/gcc-respiratory-market-report" className="text-primary hover:underline">GCC respiratory market report</Link></li>
+              <li><Link to="/healthcare-market-research-agency-gcc" className="text-primary hover:underline">Healthcare market research agency GCC</Link></li>
+              <li><Link to="/contact" className="text-primary hover:underline">Request a patient journey scope</Link></li>
+            </ul>
+            <p className="mt-6">
+              <Link to="/contact" className="inline-block rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">
+                Request a patient journey scope
+              </Link>
+              {' '}
+              <a href="mailto:admin@bionixus.com" className="inline-block rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted">
+                admin@bionixus.com
+              </a>
+            </p>
           </div>
         </section>
       </main>

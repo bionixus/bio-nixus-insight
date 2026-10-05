@@ -54,7 +54,7 @@ export type SegmentMarketContent = {
     summary?: string;
   };
   /** "What we research" cards. */
-  researchTopics: Array<{ name: string; detail: string }>;
+  researchTopics: Array<{ name: string; detail: string; link?: { to: string; label: string } }>;
   /**
    * Optional numbered ranking rendered as a cited table directly under the quick answer.
    * Emits ItemList JSON-LD. Every row must carry a public source; no modelled figures.

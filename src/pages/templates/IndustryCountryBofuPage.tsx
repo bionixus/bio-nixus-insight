@@ -518,6 +518,12 @@ export default function IndustryCountryBofuPage({ countrySlug, industrySlug }: I
                 <Link to={config.relatedReportLink.to}>{config.relatedReportLink.label}</Link>
               </p>
             ) : null}
+            {countrySlug === 'saudi-arabia' && industrySlug === 'consumer-health' ? (
+              <p className="bx-lead">
+                Therapy adjacency:{' '}
+                <Link to="/saudi-arabia-obesity-market">obesity &amp; GLP-1 market research in Saudi Arabia</Link>
+              </p>
+            ) : null}
             {countrySlug === 'egypt' && industrySlug === 'financial-services' ? (
               <p className="bx-lead">
                 2026 briefing:{' '}
