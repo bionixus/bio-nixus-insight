@@ -21,7 +21,30 @@ export interface MarketStatRegion {
   stats: MarketStat[];
 }
 
-export const MARKET_STATISTICS_LAST_UPDATED = '2026-07-22';
+export const MARKET_STATISTICS_LAST_UPDATED = '2026-10-05';
+
+export const HEALTHCARE_STATISTICS_FAQ: { question: string; answer: string }[] = [
+  {
+    question: 'How should I cite these healthcare and pharmaceutical market statistics?',
+    answer:
+      'Each figure on this page names its source in the card below the statistic. For BioNixus modeled estimates, cite BioNixus and link to the relevant market report page where the same range appears. For third-party sources (IDF, WHO, national ministries), cite the original publication year shown in the card.',
+  },
+  {
+    question: 'What is the difference between a BioNixus modeled estimate and a third-party statistic?',
+    answer:
+      'Third-party statistics come from named external datasets (e.g. IDF Diabetes Atlas, WHO, national registries, industry associations). BioNixus modeled estimates are internal market-sizing ranges consistent with our country healthcare and device reports — they are labeled explicitly on the page and should not be treated as audited financial statements.',
+  },
+  {
+    question: 'Which GCC country has the highest diabetes prevalence?',
+    answer:
+      'Kuwait records the highest type 2 diabetes prevalence among GCC adults in the IDF Diabetes Atlas 2023 figures quoted on this page (23.1%), followed by Saudi Arabia and the UAE. Cardiovascular mortality remains the leading cause of death across GCC member states.',
+  },
+  {
+    question: 'Where can I get custom healthcare market data for Saudi Arabia or the UAE?',
+    answer:
+      'For bespoke cuts (therapy area, hospital type, payer channel), request a proposal via the BioNixus contact form or see our healthcare market research hub and country reports linked from each statistic card.',
+  },
+];
 
 export const MARKET_STATISTICS: MarketStatRegion[] = [
   {
@@ -151,8 +174,20 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
       { stat: 'Approximately 6.4 million South Korean adults have diabetes (16.7% of adults over 30).', source: 'Korean Diabetes Association, 2023' },
       { stat: 'South Korea records approximately 270,000 new cancer diagnoses per year; thyroid, colorectal, stomach, and lung cancers are most prevalent.', source: 'Korea Central Cancer Registry (KCCR), 2023' },
       { stat: "Singapore's population is estimated at 5.9 million in 2026.", source: 'Singapore Department of Statistics (SingStat)' },
+      {
+        stat: "Singapore's medical devices market is estimated at USD 2.2–2.8 billion in 2026, growing at roughly 7% CAGR through 2030 as a premium ASEAN hub.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/singapore-medical-devices-market-report',
+        isBioNixusEstimate: true,
+      },
       { stat: 'Cardiovascular disease is the leading cause of death in Singapore, accounting for approximately 23% of all deaths.', source: 'Singapore Ministry of Health, Principal Causes of Death, 2023' },
       { stat: 'Approximately 9% of Singaporean adults aged 18–69 have diabetes.', source: 'Singapore National Health Survey, 2022' },
+      {
+        stat: "India's medical devices market is estimated at USD 11–13 billion in 2026, forecast to reach USD 16–18 billion by 2030 at approximately 8% CAGR.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/india-medical-devices-market-report',
+        isBioNixusEstimate: true,
+      },
       { stat: "44% of Australia's population holds private hospital insurance cover.", source: 'Australian Prudential Regulation Authority (APRA), 2024' },
       { stat: 'Approximately 1.3 million Australians have diagnosed diabetes, of which 85% is type 2.', source: 'Australian Institute of Health and Welfare, Diabetes Snapshot, 2024' },
     ],
@@ -189,6 +224,12 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
         sourceHref: '/canada-healthcare-market-report',
       },
       { stat: 'Approximately 5.3 million Spanish adults have diabetes (14.8% prevalence).', source: 'Sociedad Española de Diabetes (SED), 2023' },
+      {
+        stat: "Brazil's healthcare market is estimated at USD 155–175 billion in 2026 — the largest in Latin America — with a pharmaceutical market of roughly USD 26–30 billion.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
   },
 ];

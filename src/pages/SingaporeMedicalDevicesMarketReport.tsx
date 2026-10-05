@@ -16,6 +16,8 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
+import { ReportAccessChannelSection } from '@/components/report-premium/ReportAccessChannelSection';
+import { REPORT_ACCESS_CHANNEL_NARRATIVES } from '@/data/reportAccessChannelNarratives';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -117,10 +119,16 @@ const SingaporeMedicalDevicesMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Singapore is the premium medical device market and regional distribution hub for Southeast Asia — analogous to Dubai's role in the Middle East. Access Consortium membership, excellent logistics infrastructure, and a premium medical tourism sector make Singapore a critical strategic node for any Asia-Pacific device commercialisation strategy.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">Restructured public clusters share procurement frameworks but maintain separate pharmacy and therapeutics committees — account plans should name SingHealth, NHG, or NUHS where relevant. MedTech entrants often pair Singapore registration with Malaysia or Indonesia distributor interviews in the same programme.</p>
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/singapore-healthcare-market-report" className="text-primary hover:underline font-medium">Singapore Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="singapore" countryName="Singapore" variant="medical-devices" />
+
+        <ReportAccessChannelSection
+          narrative={REPORT_ACCESS_CHANNEL_NARRATIVES.singapore}
+          hubLink={{ to: '/healthcare-market-research', label: 'Healthcare market research hub' }}
+        />
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">

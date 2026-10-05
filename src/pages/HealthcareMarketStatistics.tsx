@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { MARKET_STATISTICS, MARKET_STATISTICS_LAST_UPDATED, type MarketStat } from '@/data/healthcareMarketStatistics';
+import {
+  HEALTHCARE_STATISTICS_FAQ,
+  MARKET_STATISTICS,
+  MARKET_STATISTICS_LAST_UPDATED,
+  type MarketStat,
+} from '@/data/healthcareMarketStatistics';
+import { buildFAQSchema } from '@/lib/seo/schemas';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -57,6 +63,7 @@ const jsonLd = [
     dateModified: MARKET_STATISTICS_LAST_UPDATED,
     mainEntityOfPage: 'https://www.bionixus.com/healthcare-market-statistics',
   },
+  buildFAQSchema(HEALTHCARE_STATISTICS_FAQ),
 ];
 
 function StatCard({ item }: { item: MarketStat }) {
@@ -108,11 +115,22 @@ const HealthcareMarketStatistics = () => {
               global benchmark markets. Every figure below cites its source; figures marked as a BioNixus modeled
               estimate are our own market analysis rather than a third-party dataset.
             </p>
-            <p className="text-sm text-muted-foreground mb-10">
+            <p className="text-sm text-muted-foreground mb-6">
               Last updated: {MARKET_STATISTICS_LAST_UPDATED} · Compiled by BioNixus Research ·{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline">
                 See our full healthcare market research coverage
               </Link>
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-10 max-w-4xl">
+              Use this page as a citable index when briefing launch, access, or epidemiology workstreams: each card
+              links to a deeper country or therapy report where BioNixus maintains aligned ranges. For custom cuts
+              (hospital type, payer channel, or account-level verification),{' '}
+              <Link to="/contact" className="text-primary hover:underline font-medium">request a proposal</Link> or
+              explore{' '}
+              <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">
+                healthcare market research services
+              </Link>
+              .
             </p>
 
             {MARKET_STATISTICS.map((region) => (
@@ -128,6 +146,20 @@ const HealthcareMarketStatistics = () => {
                 </div>
               </section>
             ))}
+
+            <section className="mb-14" id="faq">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+                Healthcare market statistics — FAQ
+              </h2>
+              <div className="space-y-3">
+                {HEALTHCARE_STATISTICS_FAQ.map((item) => (
+                  <details key={item.question} className="rounded-xl border border-border bg-card p-4">
+                    <summary className="cursor-pointer font-semibold text-foreground">{item.question}</summary>
+                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
 
             <div className="mt-4 p-6 rounded-xl border border-border bg-muted/20">
               <h2 className="text-xl font-display font-semibold text-foreground mb-3">Methodology</h2>

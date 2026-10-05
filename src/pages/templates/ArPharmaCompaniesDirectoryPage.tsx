@@ -21,6 +21,8 @@ import {
   type ArPharmaCompanyType,
   type ArPharmaCountrySlug,
 } from '@/data/arPharmaDirectories';
+import { getArPharmaLongForm } from '@/data/arPharmaDirectoryLongForm';
+import { ArPharmaDirectoryLongFormSections } from '@/components/seo/ArPharmaDirectoryLongFormSections';
 
 type Props = {
   countrySlug: ArPharmaCountrySlug;
@@ -36,6 +38,7 @@ const TYPE_BADGE: Record<ArPharmaCompanyType, string> = {
 export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
   const config = getArPharmaDirectory(countrySlug);
   if (!config) return null;
+  const longFormSections = getArPharmaLongForm(countrySlug);
 
   const citationUrl = `https://www.bionixus.com${config.path}`;
   const enUrl = `https://www.bionixus.com${config.enPath}`;
@@ -120,11 +123,14 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
         <DirectoryJumpNav
           items={[
             { href: '#companies', label: 'الشركات' },
+            ...(longFormSections.length > 0 ? [{ href: `#${longFormSections[0].id}`, label: 'نظرة السوق' }] : []),
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
           ]}
         />
+
+        <ArPharmaDirectoryLongFormSections sections={longFormSections} enPath={config.enPath} />
 
         <section className="section-padding py-16 bg-muted/30" id="companies">
           <div className="container-wide max-w-5xl mx-auto">
