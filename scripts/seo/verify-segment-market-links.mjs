@@ -11,7 +11,7 @@
  * Usage: node scripts/seo/verify-segment-market-links.mjs
  */
 
-import { readFileSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import { build } from 'esbuild';
 import { tmpdir } from 'os';
 import { join, dirname } from 'path';
@@ -42,11 +42,57 @@ const [pages, index, reportData, reportContent] = await Promise.all([
 
 const routesSource = readFileSync(join(root, 'src/routes.tsx'), 'utf8');
 const literalRoutes = new Set([...routesSource.matchAll(/path:\s*'([^']+)'/g)].map((match) => match[1]));
+const seoPagesSource = readFileSync(join(root, 'src/routes/lazySeoPages.ts'), 'utf8');
+
+/** Export name → `@/pages/...` module, and pathname → export name, from the SEO page maps. */
+const componentModules = new Map(
+  [...seoPagesSource.matchAll(/"([A-Za-z0-9]+)": \(\) => import\('(@\/[^']+)'\)/g)].map((match) => [
+    match[1],
+    match[2],
+  ]),
+);
+const pathToExport = new Map(
+  [...seoPagesSource.matchAll(/"(\/[^"]+)": "([A-Za-z0-9]+)"/g)].map((match) => [match[1], match[2]]),
+);
 
 const reportSlugs = new Set(reportData.REPORT_ENTRIES.map((entry) => entry.slug));
 const therapySlugs = new Set(Object.keys(reportContent.THERAPY_AREA_CONTENT));
 const countryHubSlugs = new Set(Object.keys(reportContent.MARKET_CONTENT));
 const segmentSlugs = new Set(pages.SEGMENT_MARKET_PAGES.map((page) => page.slug));
+
+/**
+ * Related links may deep-link with a hash (`/patient-journey-research-gcc#obesity`).
+ * The route check uses the pathname; the fragment is checked separately against the page source.
+ */
+function splitTarget(path) {
+  const hashAt = path.indexOf('#');
+  const queryAt = path.indexOf('?');
+  let end = path.length;
+  if (hashAt !== -1) end = Math.min(end, hashAt);
+  if (queryAt !== -1 && queryAt < end) end = queryAt;
+  const pathname = path.slice(0, end);
+  const hash = hashAt === -1 ? '' : path.slice(hashAt + 1).split('?')[0];
+  return { pathname, hash };
+}
+
+function pageSourceHasAnchor(pathname, hash) {
+  if (!/^[A-Za-z][\w:-]*$/.test(hash)) return false;
+  const exportName = pathToExport.get(pathname);
+  const spec = exportName ? componentModules.get(exportName) : undefined;
+  if (!spec?.startsWith('@/')) return false;
+  const base = join(root, 'src', spec.slice(2));
+  const file = [base, `${base}.tsx`, `${base}.ts`, `${base}.jsx`, `${base}.js`].find((candidate) =>
+    existsSync(candidate),
+  );
+  if (!file) return false;
+  const source = readFileSync(file, 'utf8');
+  return (
+    source.includes(`id="${hash}"`) ||
+    source.includes(`id='${hash}'`) ||
+    source.includes(`id={"${hash}"}`) ||
+    source.includes(`id={'${hash}'}`)
+  );
+}
 
 function resolves(path) {
   if (literalRoutes.has(path)) return true;
@@ -107,12 +153,20 @@ for (const page of pages.SEGMENT_MARKET_PAGES) {
 }
 
 for (const page of pages.SEGMENT_MARKET_PAGES) {
-  for (const link of page.relatedLinks) {
+  const links = [...page.relatedLinks];
+  for (const topic of page.researchTopics ?? []) {
+    if (topic.link) links.push(topic.link);
+  }
+  for (const link of links) {
     linkCount += 1;
-    if (link.to === `/${page.slug}`) errors.push(`${page.slug} links to itself`);
-    if (!resolves(link.to)) {
-      if (!brokenLinks.has(link.to)) brokenLinks.set(link.to, []);
-      brokenLinks.get(link.to).push(page.slug);
+    const { pathname, hash } = splitTarget(link.to);
+    if (pathname === `/${page.slug}`) errors.push(`${page.slug} links to itself`);
+    const routeOk = resolves(pathname);
+    const anchorOk = !hash || pageSourceHasAnchor(pathname, hash);
+    if (!routeOk || !anchorOk) {
+      const label = !routeOk ? link.to : `${link.to} (missing id="${hash}")`;
+      if (!brokenLinks.has(label)) brokenLinks.set(label, []);
+      brokenLinks.get(label).push(page.slug);
     }
   }
 }
