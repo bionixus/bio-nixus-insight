@@ -29,16 +29,16 @@ export type HomePageUiOverlay = {
 export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
   en: {
     ctaVariants: {
-      country: 'Discuss your {country} brand vs competitor brief',
-      countryFallback: 'your country',
-      therapy: 'Explore {therapy} market research',
-      therapyFallback: 'category',
-      service: 'Talk with a BioNixus research lead',
+      country: 'Talk to a research lead about {country} this week',
+      countryFallback: 'your market',
+      therapy: 'Talk to a research lead about {therapy} this week',
+      therapyFallback: 'your therapy area',
+      service: 'Book a 30-minute scoping call with a research lead',
     },
     services: {
       bottomCtaPrompt:
         'Have a country, a brand, and a breakdown your dashboard cannot give?',
-      bottomCtaButton: 'Request a proposal',
+      bottomCtaButton: 'Book a 30-minute scoping call',
       countryDepthBadge: 'Country program',
       kolCardTitle: 'Account and stakeholder mapping',
     },

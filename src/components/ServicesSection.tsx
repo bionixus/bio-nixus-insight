@@ -7,6 +7,7 @@ import {
   BarChart3,
   ArrowRight,
 } from 'lucide-react';
+import { ScopingCallButton } from '@/components/conversion/ScopingCallButton';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -451,10 +452,19 @@ const ServicesSection = () => {
 
         <div className="premium-card mt-12 text-center sr sr-up">
           <p className="mb-6 font-display text-xl font-medium text-[#0C1B33]">{servicesCopy.bottomCtaPrompt}</p>
-          <Link to={localizedContactPath(language)} className="premium-gold-btn">
-            {servicesCopy.bottomCtaButton}
-            <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
-          </Link>
+          {language === 'en' ? (
+            <ScopingCallButton
+              ctaId="services-section-scoping-call"
+              ctaLocation="services_section"
+              label={servicesCopy.bottomCtaButton}
+              className="premium-gold-btn"
+            />
+          ) : (
+            <Link to={localizedContactPath(language)} className="premium-gold-btn">
+              {servicesCopy.bottomCtaButton}
+              <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
+            </Link>
+          )}
         </div>
       </div>
     </section>

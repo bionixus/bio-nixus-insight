@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { ScopingCallAgenda } from '@/components/conversion/ScopingCallAgenda';
+import { ScopingCallButton } from '@/components/conversion/ScopingCallButton';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { STATS } from '@/lib/companyStats';
 import { BIONIXUS_PHONE_UK, BIONIXUS_PHONE_UK_DISPLAY } from '@/components/report-conversion/constants';
@@ -216,6 +218,15 @@ export default function Pricing() {
                   <span className="accent">No seat fee</span>
                 </div>
               </div>
+            </div>
+            <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
+              <ScopingCallButton
+                ctaId="pricing-hero-scoping-call"
+                ctaLocation="pricing_hero"
+                sourceContext="Pricing page"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#D4A84B] px-7 py-3.5 text-sm font-semibold text-[#0B1B33] transition-[filter] hover:brightness-105"
+              />
+              <ScopingCallAgenda tone="inverse" className="max-w-md" />
             </div>
             <div className="cover-foot">
               <div>

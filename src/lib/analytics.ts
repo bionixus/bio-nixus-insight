@@ -50,6 +50,16 @@ export function trackMeetingBooked(params: {
   });
 }
 
+/** Fires when a visitor opens the self-serve scheduling link after requesting a scoping call. */
+export function trackMeetingLinkClicked(params: { formId: string; sourceContext?: string; targetUrl: string }) {
+  trackGaEvent('meeting_link_clicked', {
+    form_id: params.formId,
+    source_context: params.sourceContext || undefined,
+    target_url: params.targetUrl,
+    page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+  });
+}
+
 /** Fires when a lead-capture form becomes visible/opens (dialog opened, section scrolled into view). */
 export function trackFormView(params: { formId: string }) {
   trackGaEvent('form_view', { form_id: params.formId });
