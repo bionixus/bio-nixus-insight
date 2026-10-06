@@ -4,6 +4,8 @@ import type { Language } from '@/lib/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
+import { ScopingCallAgenda } from '@/components/conversion/ScopingCallAgenda';
+import { ScopingCallButton } from '@/components/conversion/ScopingCallButton';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
@@ -340,6 +342,17 @@ const Contact = () => {
               {heroSubtitle}
             </p>
 
+            {language === 'en' ? (
+              <div className="sr sr-up mb-4 w-full max-w-xl">
+                <ScopingCallButton
+                  ctaId="contact-hero-scoping-call"
+                  ctaLocation="contact_hero"
+                  sourceContext="Contact page"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 bg-white text-primary font-semibold rounded-md hover:bg-white/90 transition-colors"
+                />
+                <ScopingCallAgenda tone="inverse" className="mt-4" />
+              </div>
+            ) : null}
             <div
               className={`sr sr-up flex flex-col sm:flex-row gap-3 w-full max-w-xl ${isRTL ? 'sm:flex-row-reverse' : ''}`}
             >

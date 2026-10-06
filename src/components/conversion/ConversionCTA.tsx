@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
-import { QualificationForm } from '@/components/conversion/QualificationForm';
+import { ScopingCallAgenda, ScopingCallDialog } from '@/components/conversion/ScopingCallDialog';
 import { GatedAssetForm } from '@/components/conversion/GatedAssetForm';
 import { trackCtaClick, trackFormView } from '@/lib/analytics';
 import { formMarketForDirectory } from '@/data/pharmaDirectoryListicles';
@@ -74,24 +74,16 @@ export function ConversionCTA(props: ConversionCtaProps) {
           >
             {props.buttonLabel || 'Book a 30-minute scoping call'} <ArrowRight className="w-4 h-4" />
           </button>
+          <ScopingCallAgenda className="mt-5 mx-auto max-w-md text-left" />
         </div>
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogContent className="max-w-md max-h-[85vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle>Book a 30-minute scoping call</DialogTitle>
-              <DialogDescription>
-                Tell us what you need — a research lead confirms a slot within one business day.
-              </DialogDescription>
-            </DialogHeader>
-            <QualificationForm
-              formId={props.ctaId}
-              sourceContext={props.sourceContext ?? market}
-              defaultNeed={props.defaultNeed}
-              defaultMarkets={defaultMarket ? [defaultMarket] : undefined}
-              onSuccess={() => undefined}
-            />
-          </DialogContent>
-        </Dialog>
+        <ScopingCallDialog
+          open={open}
+          onOpenChange={setOpen}
+          formId={props.ctaId}
+          sourceContext={props.sourceContext ?? market}
+          defaultNeed={props.defaultNeed}
+          defaultMarkets={defaultMarket ? [defaultMarket] : undefined}
+        />
       </>
     );
   }

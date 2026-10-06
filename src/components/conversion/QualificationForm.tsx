@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
-import { trackLeadSubmitted, trackFormStart, trackMeetingBooked } from '@/lib/analytics';
+import { trackLeadSubmitted, trackFormStart, trackMeetingBooked, trackMeetingLinkClicked } from '@/lib/analytics';
 import { submitLeadDual, submitScopingCallLead } from '@/lib/submitLeadDual';
 import {
   QUALIFICATION_FORM_MARKETS,
@@ -203,6 +203,9 @@ export function QualificationForm({
         {QUALIFICATION_FORM_SCHEDULING_URL ? (
           <a
             href={QUALIFICATION_FORM_SCHEDULING_URL}
+            onClick={() =>
+              trackMeetingLinkClicked({ formId, sourceContext, targetUrl: QUALIFICATION_FORM_SCHEDULING_URL ?? '' })
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"

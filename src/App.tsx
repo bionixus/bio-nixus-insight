@@ -14,11 +14,12 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 import GA4EventTracker from '@/components/GA4EventTracker';
 import LocalePrompt from '@/components/LocalePrompt';
 import CookieConsent from '@/components/CookieConsent';
-import StickyCTA from '@/components/StickyCTA';
 import WhatsAppProposalWidget from '@/components/WhatsAppProposalWidget';
 import { routes } from '@/routes';
 import { InitialDataProvider } from '@/contexts/InitialDataContext';
 
+const LazyStickyCTA = lazy(() => import('@/components/StickyCTA'));
+const LazyScopingCallExitIntent = lazy(() => import('@/components/conversion/ScopingCallExitIntent'));
 const LazyStatsigInit = lazy(() =>
   import('@/components/StatsigInit').catch(() => ({ default: () => null }))
 );
@@ -76,7 +77,10 @@ function DeferredPageChrome() {
 
   return (
     <>
-      <StickyCTA />
+      <Suspense fallback={null}>
+        <LazyStickyCTA />
+        <LazyScopingCallExitIntent />
+      </Suspense>
       <WhatsAppProposalWidget />
       <CookieConsent />
     </>

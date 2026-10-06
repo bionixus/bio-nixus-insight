@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ScopingCallButton } from '@/components/conversion/ScopingCallButton';
 import { localizedPhoneLines } from '@/components/report-conversion/constants';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { localizedContactPath } from '@/lib/seo';
@@ -35,9 +36,18 @@ export function CTASection({ variant, countryName, therapyArea, premium = false 
           </h2>
           <p className="mb-9 text-base font-light leading-relaxed text-white/45">{cta.body}</p>
           <div className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link to={localizedContactPath(language)} className="premium-gold-btn">
-              {cta.requestProposal}
-            </Link>
+            {language === 'en' ? (
+              <ScopingCallButton
+                ctaId={`cta-section-${variant}`}
+                ctaLocation="cta_section"
+                sourceContext={countryName || therapyArea || undefined}
+                className="premium-gold-btn"
+              />
+            ) : (
+              <Link to={localizedContactPath(language)} className="premium-gold-btn">
+                {cta.requestProposal}
+              </Link>
+            )}
             <a
               href={`mailto:admin@bionixus.com?subject=${encodeURIComponent(cta.mailtoSubject)}`}
               className="inline-flex items-center justify-center rounded-xl border border-white/10 px-8 py-[15px] text-sm font-medium tracking-wide text-white/60 transition-colors hover:border-white/25 hover:text-white"
@@ -70,12 +80,21 @@ export function CTASection({ variant, countryName, therapyArea, premium = false 
         <h2 className="text-3xl font-display font-semibold mb-4">{headlineByVariant[variant]}</h2>
         <p className="text-primary-foreground/90 mb-7 leading-relaxed">{cta.body}</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
-          <Link
-            to={localizedContactPath(language)}
-            className="px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-          >
-            {cta.requestProposal}
-          </Link>
+          {language === 'en' ? (
+            <ScopingCallButton
+              ctaId={`cta-section-${variant}`}
+              ctaLocation="cta_section"
+              sourceContext={countryName || therapyArea || undefined}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
+            />
+          ) : (
+            <Link
+              to={localizedContactPath(language)}
+              className="px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
+            >
+              {cta.requestProposal}
+            </Link>
+          )}
           <a
             href={`mailto:admin@bionixus.com?subject=${encodeURIComponent(cta.mailtoSubject)}`}
             className="px-6 py-3 rounded-lg border border-white/40 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
