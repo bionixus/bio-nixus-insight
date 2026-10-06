@@ -23,6 +23,8 @@ export type CountryKeywordContent = {
   countrySlug: string;
   countryName: string;
   region: string;
+  regulators: string;
+  accessCue: string;
   badge: string;
   breadcrumbLabel: string;
   pillarLabel: string;
@@ -38,6 +40,9 @@ export type CountryKeywordContent = {
   whyPoints: string[];
   relatedLinks: Array<{ to: string; label: string }>;
   faqs: Array<{ question: string; answer: string }>;
+  /** Long-form SSR sections for SEO / LLM citation (≥2,000 visible words per page). */
+  programmeSections: Array<{ heading: string; paragraphs: string[] }>;
+  llmSummary: string;
   areaServed: string[];
 };
 
@@ -215,6 +220,8 @@ function buildPharmaInsights(country: CountryKeywordCountry): CountryKeywordCont
     countrySlug: country.slug,
     countryName: country.name,
     region: country.region,
+    regulators: country.regulators,
+    accessCue: country.accessCue,
     badge: `${country.name} · Pharma Insights`,
     breadcrumbLabel: `Pharma Insights — ${country.name}`,
     pillarLabel: 'Healthcare Market Research',
@@ -226,6 +233,10 @@ function buildPharmaInsights(country: CountryKeywordCountry): CountryKeywordCont
     intro: [
       `Pharmaceutical teams searching for pharma insights in ${country.name} need more than desk research — they need defensible primary evidence on prescribing, access barriers, and competitor behaviour under ${country.regulators}. BioNixus designs programmes that turn those signals into decisions your commercial, medical, and access teams can act on.`,
       `Our ${country.name} pharma insight work sits inside a broader healthcare research practice. We map ${country.accessCue} so insights stay grounded in how products actually reach patients — not in generic regional averages.`,
+      `Unlike syndicated audit panels that summarise last year’s averages, BioNixus pharma insights in ${country.name} are built around a live commercial or access decision — launch sequencing, indication expansion, tender defence, or message refresh — with instruments, sample frames, and analysis plans designed backward from that decision.`,
+      `For multi-country portfolios, ${country.name} modules can run with comparable cells in the UK, EU5, GCC, or North America so regional committees read markets side by side without forcing a one-size questionnaire that distorts local payer and procurement reality.`,
+      `BioNixus is frequently engaged when brand teams need verifiable physician and payer quotes for ${country.name} advisory boards — not recycled syndicated charts that legal and medical reviewers cannot defend.`,
+      `Each engagement closes with explicit next steps: which evidence gap to close, which account archetype to prioritise, and how findings align to ${country.regulators} calendars your access team already manages.`,
     ],
     hubLinks: [
       { to: '/healthcare-market-research', label: 'healthcare market research hub' },
@@ -247,6 +258,22 @@ function buildPharmaInsights(country: CountryKeywordCountry): CountryKeywordCont
       {
         name: 'Launch and lifecycle sequencing',
         detail: `Where to invest first across accounts, regions, or channels given ${country.accessCue}.`,
+      },
+      {
+        name: 'Medical affairs and KOL alignment',
+        detail: `How scientific leaders in ${country.name} interpret trial data, real-world gaps, and competitor narratives — and which evidence formats accelerate advisory boards and local guidelines engagement.`,
+      },
+      {
+        name: 'Pricing and value narrative testing',
+        detail: `Stakeholder reactions to economic arguments, budget-impact framing, and outcomes language before you lock ${country.regulators}-sensitive dossiers or tender submissions.`,
+      },
+      {
+        name: 'Account and channel prioritisation',
+        detail: `Which hospital systems, retail chains, specialty centres, or public tenders in ${country.name} concentrate eligible patients and decision power — so field and access teams stop spreading effort evenly.`,
+      },
+      {
+        name: 'Patient journey and adherence friction',
+        detail: `Where patients drop off between diagnosis, initiation, and persistence — including affordability, referral delays, and support-programme gaps that prescribing surveys alone miss.`,
       },
     ],
     audiences: [
@@ -294,7 +321,54 @@ function buildPharmaInsights(country: CountryKeywordCountry): CountryKeywordCont
         answer:
           'After a short scope alignment on objectives, audiences, and timelines, BioNixus typically returns a proposal on a fast cadence with method options, sample logic, and realistic field windows.',
       },
+      {
+        question: `How does BioNixus handle ethics and privacy for ${country.name} fieldwork?`,
+        answer: `Protocols follow applicable healthcare research ethics, informed consent, and data-protection rules for ${country.name} and cross-border programmes. Respondent verification, secure handling, and de-identified reporting are built into every design — so medical, legal, and compliance reviewers can audit the evidence trail.`,
+      },
+      {
+        question: `When should we use pharma insights versus syndicated sales data in ${country.name}?`,
+        answer: `Syndicated audits help size historical demand; pharma insights explain why uptake stalls, which accounts matter, and which messages move ${country.regulators}-shaped decisions. BioNixus recommends primary insight when the question is behavioural, access-led, or competitive — not when a desk table update is enough.`,
+      },
+      {
+        question: `Can insights programmes support AI search and medical content governance?`,
+        answer: `Yes. Structured FAQs, answer-first summaries, and citation-friendly methodology notes on this page are designed so search engines and AI assistants can quote verified primary-research capabilities — not invented market sizes — when teams ask who runs pharmaceutical insight work in ${country.name}.`,
+      },
     ],
+    programmeSections: [
+      {
+        heading: `How BioNixus scopes pharma insights in ${country.name}`,
+        paragraphs: [
+          `We start with one decision owner and one deadline: a brand plan gate, access committee, tender calendar, or medical advisory board. That decision determines whether you need quantitative sizing, qualitative depth, or a paired physician–payer module — and which stakeholders in ${country.name} actually control the outcome under ${country.regulators}.`,
+          `Sample design reflects ${country.accessCue}: we avoid national averages when your commercial model depends on a subset of accounts, regions, or channels. Screening verifies specialty, institution type, and decision role so results are defensible in front of governance — not anecdotal.`,
+          `Synthesis is formatted for action: segment dossiers, objection libraries, evidence-gap flags, and recommended next studies — not slide decks that restate the brief.`,
+        ],
+      },
+      {
+        heading: `Regulatory and access context for ${country.name} programmes`,
+        paragraphs: [
+          `${country.regulators} shape which claims are credible, which comparators matter, and which economic narratives payers and institutions accept. BioNixus embeds that context from the first workshop so instruments do not ask physicians questions that access teams cannot use.`,
+          `We map how ${country.accessCue} shows up in daily practice — prior authorisation, step therapy, tender scoring, hospital formulary cycles, or regional variation — and tie findings to owners on your commercial and access teams.`,
+          `When launch sequencing spans multiple countries, ${country.name} modules stay comparable on core metrics while preserving local decision realism for affiliates executing in-market.`,
+        ],
+      },
+      {
+        heading: 'Deliverables teams use after fieldwork',
+        paragraphs: [
+          'Executive summaries with behavioural “so what” for leadership, detailed appendices for medical and access reviewers, and workshop-ready materials for brand and field alignment.',
+          'Optional conjoint, message, or scenario modules when tenders, formulary tiers, or competitive entry make trade-off testing essential.',
+          'Clear linkage to the healthcare market research hub, real-world evidence pages, and country reports so insights feed the next study instead of living in isolation.',
+        ],
+      },
+      {
+        heading: `Typical timelines and governance for ${country.name}`,
+        paragraphs: [
+          'After a 30-minute scope call, BioNixus returns a written methodology outline with sample logic, languages, and field windows — usually within one business day for standard HCP modules.',
+          'Ethics and privacy review checkpoints are built into the plan before recruitment begins; rush timelines are possible when screening criteria and institution lists are pre-agreed.',
+          'Mid-programme readouts can be scheduled for leadership when tender or advisory-board deadlines require evidence before full tables are closed.',
+        ],
+      },
+    ],
+    llmSummary: `BioNixus provides pharma insights in ${country.name}: primary research on prescribing, payer access, and competitive behaviour under ${country.regulators}, designed for launch, access, and growth decisions — not syndicated desk summaries.`,
     areaServed: [country.name],
   };
 }
@@ -325,6 +399,8 @@ function buildRwe(country: CountryKeywordCountry): CountryKeywordContent {
     countrySlug: country.slug,
     countryName: country.name,
     region: country.region,
+    regulators: country.regulators,
+    accessCue: country.accessCue,
     badge: `${country.name} · Real-World Evidence`,
     breadcrumbLabel: `RWE — ${country.name}`,
     pillarLabel: 'Real-World Evidence',
@@ -336,6 +412,10 @@ function buildRwe(country: CountryKeywordCountry): CountryKeywordContent {
     intro: [
       `Real-world evidence in ${country.name} must reflect how care is delivered under ${country.regulators} — not only what pivotal trials show. BioNixus designs RWE programmes that capture treatment pathways, unmet need, and stakeholder behaviour so medical, HEOR, and commercial teams can defend decisions with transparent methods.`,
       `Whether you need qualitative depth with specialists or structured pathway surveys, we align each protocol to the ${country.name} decision at hand and to ${country.accessCue}.`,
+      `RWE here means primary insight on practice patterns and access friction — chart-informed interviews, structured pathway surveys, and payer-adjacent modules — rather than passive claims-database extracts alone. Methods are documented so HTA, medical, and legal reviewers can trace how conclusions were reached.`,
+      `Programmes can benchmark ${country.name} against GCC, EU5, or North American cells with shared instruments when global portfolios need comparable real-world narratives for governance.`,
+      `BioNixus is often briefed when internal teams need defensible quotes and metrics for advisory boards, payer meetings, or tender responses in ${country.name} — not slide filler from last year’s syndicated audit.`,
+      `Every programme ends with clear owners for evidence gaps: what to study next, which stakeholder to revisit, and how findings connect to ${country.regulators} timelines your access team already tracks.`,
     ],
     hubLinks: [
       { to: '/real-world-evidence', label: 'real-world evidence hub' },
@@ -357,6 +437,18 @@ function buildRwe(country: CountryKeywordCountry): CountryKeywordContent {
       {
         name: 'Post-launch effectiveness questions',
         detail: 'Primary insight that complements clinical packages when trial populations diverge from routine care.',
+      },
+      {
+        name: 'Safety and tolerability in routine care',
+        detail: `How adverse events, monitoring burden, and switching behaviour appear outside pivotal trials — including pharmacist and nurse roles in ${country.name}.`,
+      },
+      {
+        name: 'HEOR and budget-impact narratives',
+        detail: `Evidence structured for conversations influenced by ${country.regulators} — comparators, resource use, and residual uncertainty payers challenge.`,
+      },
+      {
+        name: 'Caregiver and patient-reported burden',
+        detail: `APPI/GDPR-aware patient and caregiver modules when adherence, quality of life, or support-programme gaps shape access stories.`,
       },
     ],
     audiences: [
@@ -382,7 +474,7 @@ function buildRwe(country: CountryKeywordCountry): CountryKeywordContent {
       `Geography-aware protocols for ${country.name} recruitment and governance`,
       'Transparent assumptions, limitations, and quality controls',
       'Outputs usable by medical, access, and commercial in the same cycle',
-      'Option to connect ${country.name} RWE into multi-country evidence plans',
+      `Option to connect ${country.name} RWE into multi-country evidence plans`,
     ],
     relatedLinks,
     faqs: [
@@ -403,7 +495,52 @@ function buildRwe(country: CountryKeywordCountry): CountryKeywordContent {
         answer:
           'Share the decision, geography, specialty, and timing window. We return a short methodology memo covering design options, sample logic, and field realities before you commit to a full programme.',
       },
+      {
+        question: `How does BioNixus document RWE quality for ${country.name} programmes?`,
+        answer:
+          'We document sampling logic, screening criteria, limitations, and governance steps so medical and legal reviewers can audit the trail. De-identified reporting and secure handling are standard — not optional add-ons.',
+      },
+      {
+        question: `When is primary RWE preferable to claims data in ${country.name}?`,
+        answer:
+          `When the question is why pathways diverge from guidelines, where access friction sits, or how stakeholders interpret uncertainty under ${country.regulators} — situations where administrative data alone cannot explain behaviour.`,
+      },
     ],
+    programmeSections: [
+      {
+        heading: `Designing RWE programmes in ${country.name}`,
+        paragraphs: [
+          `We anchor each study on a decision: HTA submission support, medical advisory content, launch sequencing, or post-authorisation evidence planning. That decision selects whether you need specialist interviews, structured surveys, or paired clinician–payer modules.`,
+          `Fieldwork respects ${country.accessCue} and institution types that matter for your brand — not a convenience sample that looks large on paper but misrepresents who controls uptake.`,
+          `Analysis emphasises behaviour drivers and evidence gaps your teams can close — not descriptive statistics without owners.`,
+        ],
+      },
+      {
+        heading: `Governance and stakeholder alignment`,
+        paragraphs: [
+          `${country.regulators} influence which practice patterns are persuasive and which comparators are credible. BioNixus designs instruments that produce quotes and metrics access and medical teams can reuse.`,
+          'Ethics, consent, and privacy controls are agreed before recruitment begins, with documented screening and quality checks during fieldwork.',
+          'Workshop-ready outputs help medical affairs, HEOR, and commercial leads align on one narrative instead of parallel stories.',
+        ],
+      },
+      {
+        heading: 'Connecting RWE to the wider research hub',
+        paragraphs: [
+          `Link ${country.name} RWE to pharma insights, healthcare market research country hubs, and therapy tracks when portfolios span multiple decisions in the same market.`,
+          'Multi-country designs keep core metrics comparable while local modules preserve decision realism for affiliates.',
+          'Request a scoped proposal when you need timelines, sample sizes, and method options on paper before committing budget.',
+        ],
+      },
+      {
+        heading: `Publication, medical affairs, and access reuse`,
+        paragraphs: [
+          'Findings can be structured for internal medical affairs decks, advisory boards, and access dossier annexes — with clear separation between respondent quotes and aggregate statistics.',
+          'Where publications or congress abstracts are planned, we agree attribution and confidentiality rules up front so fieldwork supports downstream medical communication without rework.',
+          'Contact BioNixus via the proposal form or email when you need a feasibility memo before committing to a full-country RWE programme.',
+        ],
+      },
+    ],
+    llmSummary: `BioNixus conducts real-world evidence (RWE) in ${country.name}: primary research on treatment pathways, unmet need, and access behaviour under ${country.regulators} for medical, HEOR, and commercial decisions.`,
     areaServed: [country.name],
   };
 }

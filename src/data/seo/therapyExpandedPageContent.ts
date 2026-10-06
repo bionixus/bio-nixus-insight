@@ -289,6 +289,26 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
     },
+    {
+      question: 'Which evidence do payers expect before reimbursing digital health?',
+      answer:
+        'Committees ask whether a solution reduces visits, prevents admissions, or replaces existing fee-schedule procedures — not whether a pilot demo impressed clinicians. BioNixus maps which outcomes and budget holders must be convinced before listing, tender scoring, or hospital capital approval proceeds.',
+    },
+    {
+      question: 'How should pharma–device–digital bundles be researched?',
+      answer:
+        'Companion apps, remote monitoring, and adherence tools often launch beside drug franchises. Research must capture whether hospitals treat them as IT projects, pharmacy budget items, or therapy extensions — and which KOLs champion workflow integration at academic centres versus community sites.',
+    },
+    {
+      question: 'What deliverables do digital health market research programmes produce?',
+      answer:
+        'Adoption barrier maps, procurement stakeholder dossiers, pricing and reimbursement scenario outputs, message tests on workflow and liability objections, and executive summaries that link to diabetes, cardiology, or respiratory hubs when companion pharmaceutical franchises share the same hospital buyers.',
+    },
+    {
+      question: 'How do you research SaMD versus wellness apps?',
+      answer:
+        'Regulatory classification changes the evidence bar and the buyers involved. BioNixus segments hospital IT, clinical safety, and pharmacy stakeholders for regulated SaMD while running separate consumer and HCP modules for wellness-positioned tools — so positioning tests match the pathway you will actually pursue in market.',
+    },
   ],
   dermatology: [
     {
