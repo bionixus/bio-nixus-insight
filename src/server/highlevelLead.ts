@@ -157,6 +157,18 @@ export function phoneForUpsert(raw: string | undefined): string | null {
   return trimmed;
 }
 
+/** Names HighLevel rejects on contact upsert. The original value still goes in the note. */
+const COUNTRY_ALIASES: Record<string, string> = {
+  türkiye: 'Turkey',
+};
+
+export function countryForUpsert(raw: string | undefined): string | null {
+  if (!raw) return null;
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  return COUNTRY_ALIASES[trimmed.toLowerCase()] || clip(trimmed, 80);
+}
+
 export function leadSource(formVariant: string | undefined): string {
   const variant = (formVariant || '').replace(/\s+/g, ' ').trim().slice(0, 80);
   return variant ? `website form / ${variant}` : 'website form';
@@ -260,7 +272,8 @@ export function buildUpsertBody(
   if (name) body.name = clip(name, 200);
   const company = (fields.company || fields.companyName || '').trim();
   if (company) body.companyName = clip(company, 200);
-  if (fields.country) body.country = clip(fields.country, 80);
+  const country = countryForUpsert(fields.country);
+  if (country) body.country = country;
   if (includePhone) {
     const phone = phoneForUpsert(fields.phone);
     if (phone) body.phone = phone;
@@ -341,9 +354,25 @@ function errorMessage(response: GhlResponse) {
   if (json && typeof json === 'object') {
     const record = json as { message?: unknown; error?: unknown };
     if (typeof record.message === 'string' && record.message.trim()) return record.message.trim();
+    if (Array.isArray(record.message)) {
+      const parts = record.message.filter((item): item is string => typeof item === 'string' && Boolean(item.trim()));
+      if (parts.length) return parts.join('; ');
+    }
     if (typeof record.error === 'string' && record.error.trim()) return record.error.trim();
   }
   return response.text.slice(0, 180);
+}
+
+function countryRejected(response: GhlResponse) {
+  if (response.status !== 400 && response.status !== 422) return false;
+  return /country/i.test(errorMessage(response));
+}
+
+function omitCountry(body: Record<string, unknown>) {
+  if (!('country' in body)) return null;
+  const next = { ...body };
+  delete next.country;
+  return next;
 }
 
 async function loadCustomFields(
@@ -397,6 +426,14 @@ export async function processHighLevelLead(rawBody: unknown, options: ProcessOpt
   if (!apiKey) {
     return { status: 503, body: { error: 'Lead capture is not configured' } };
   }
+  // A location id in HIGHLEVEL_API_KEY is non-empty, so it used to pass the
+  // check above and then fail every upsert with a generic 502.
+  if (apiKey === locationId || apiKey === DEFAULT_LOCATION_ID) {
+    console.error(
+      '[highlevel-lead] HIGHLEVEL_API_KEY is the location id, not a Private Integration token. Set a contacts-write token in Vercel Production.',
+    );
+    return { status: 503, body: { error: 'Lead capture is not configured' } };
+  }
   if (!options.skipRateLimit && options.ip && rateLimited(options.ip, now)) {
     return { status: 429, body: { error: 'Too many requests' } };
   }
@@ -415,13 +452,23 @@ export async function processHighLevelLead(rawBody: unknown, options: ProcessOpt
   const defs = await loadCustomFields(fetchImpl, apiKey, locationId, now);
   const plan = planLeadWrite(fields, locationId, defs);
 
+  let payload = plan.upsert;
   let upserted: GhlResponse;
   try {
-    upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', plan.upsert);
+    upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
     const retryableStatus = upserted.status === 400 || upserted.status === 409 || upserted.status === 422;
     if (!upserted.ok && plan.upsertWithoutPhone && retryableStatus) {
       console.warn('[highlevel-lead] retrying upsert without phone', upserted.status);
-      upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', plan.upsertWithoutPhone);
+      payload = plan.upsertWithoutPhone;
+      upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
+    }
+    if (!upserted.ok && countryRejected(upserted)) {
+      const stripped = omitCountry(payload);
+      if (stripped) {
+        console.warn('[highlevel-lead] retrying upsert without country', upserted.status);
+        payload = stripped;
+        upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
+      }
     }
   } catch (error) {
     console.error('[highlevel-lead] upsert error', error instanceof Error ? error.message : 'unknown');
