@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
+  countryForUpsert,
   planLeadWrite,
   processHighLevelLead,
   resetHighLevelLeadStateForTests,
@@ -42,7 +43,12 @@ const ENV = {
 
 type Call = { url: string; init: RequestInit };
 
-function mockGhl(options?: { failWhenPhone?: boolean; customFieldsStatus?: number; upsertStatus?: number }) {
+function mockGhl(options?: {
+  failWhenPhone?: boolean;
+  failWhenCountry?: string;
+  customFieldsStatus?: number;
+  upsertStatus?: number;
+}) {
   const calls: Call[] = [];
   const fetchImpl = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = String(input);
@@ -54,9 +60,12 @@ function mockGhl(options?: { failWhenPhone?: boolean; customFieldsStatus?: numbe
       return new Response(JSON.stringify({ customFields: DEFS }), { status: 200 });
     }
     if (url.endsWith('/contacts/upsert')) {
-      const body = JSON.parse(String(init?.body || '{}')) as { phone?: string };
+      const body = JSON.parse(String(init?.body || '{}')) as { phone?: string; country?: string };
       if (options?.failWhenPhone && body.phone) {
         return new Response(JSON.stringify({ message: 'duplicate phone' }), { status: 400 });
+      }
+      if (options?.failWhenCountry && body.country === options.failWhenCountry) {
+        return new Response(JSON.stringify({ message: ['country must be valid'] }), { status: 422 });
       }
       if (options?.upsertStatus) {
         return new Response(JSON.stringify({ message: 'nope' }), { status: options.upsertStatus });
@@ -97,6 +106,13 @@ describe('planLeadWrite', () => {
     expect(plan.note).toContain('Markets: Saudi Arabia, UAE');
     expect(plan.note).toContain('UTM source: google');
     expect(plan.note).toContain('Role: Market Access Lead');
+  });
+
+  it('sends Türkiye as Turkey because HighLevel rejects the CLDR name', () => {
+    expect(countryForUpsert('Türkiye')).toBe('Turkey');
+    const plan = planLeadWrite({ ...SAMPLE, country: 'Türkiye' }, 'SjwWFl3GxGB1WQ1LbzLq', DEFS);
+    expect(plan.upsert.country).toBe('Turkey');
+    expect(plan.note).toContain('Country: Türkiye');
   });
 });
 
@@ -189,6 +205,36 @@ describe('processHighLevelLead', () => {
     });
     expect(invalid.status).toBe(400);
     expect(calls).toHaveLength(0);
+  });
+
+  it('refuses a location id stored in HIGHLEVEL_API_KEY and does not call HighLevel', async () => {
+    const { calls, fetchImpl } = mockGhl();
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const result = await processHighLevelLead(SAMPLE, {
+      env: { HIGHLEVEL_API_KEY: 'SjwWFl3GxGB1WQ1LbzLq' },
+      fetchImpl,
+      skipRateLimit: true,
+    });
+    expect(result.status).toBe(503);
+    expect(result.body.error).toBe('Lead capture is not configured');
+    expect(calls).toHaveLength(0);
+    error.mockRestore();
+  });
+
+  it('retries without country when HighLevel rejects the country name', async () => {
+    const { calls, fetchImpl } = mockGhl({ failWhenCountry: 'Hong Kong SAR China' });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const result = await processHighLevelLead(
+      { ...SAMPLE, country: 'Hong Kong SAR China', phone: '12' },
+      { env: ENV, fetchImpl, skipRateLimit: true },
+    );
+    expect(result.status).toBe(200);
+    const bodies = upsertBodies(calls);
+    expect(bodies).toHaveLength(2);
+    expect(bodies[0].country).toBe('Hong Kong SAR China');
+    expect(bodies[1].country).toBeUndefined();
+    expect(bodies[1].email).toBe('jane.doe@pfizer.com');
+    warn.mockRestore();
   });
 
   it('returns a safe error when upsert fails', async () => {
