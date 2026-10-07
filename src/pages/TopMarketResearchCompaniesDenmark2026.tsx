@@ -727,6 +727,17 @@ export default function TopMarketResearchCompaniesDenmark2026() {
           </div>
         </section>
 
+        <section className="section-padding py-12" aria-labelledby="denmark-ranking-method">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 id="denmark-ranking-method" className="text-xl font-display font-semibold text-foreground mb-4">
+              How we ranked Denmark market research firms (2026)
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              Rankings weigh verified pharmaceutical and healthcare primary research capability in Denmark — Danish-language HCP access, Medicinrådet and AMGROS payer fluency, DKMA-aligned field governance, and delivery speed for Nordic multi-country programmes. Firms that rely only on syndicated dashboards without in-country qualitative depth are scored lower than partners that can run mixed-methods studies tied to a single launch or HTA decision.
+            </p>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="section-padding py-16 bg-primary text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto text-center">
