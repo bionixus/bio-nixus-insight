@@ -19,6 +19,7 @@ import { fetchPressReleaseBySlug, fetchPressReleases } from '@/lib/sanity-press-
 import { sanitizeBodyHtml } from '@/lib/sanitize-body-html'
 import { optimizeSanityImage } from '@/lib/image-utils'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import { PersonNameLink } from '@/components/seo/PersonNameLink'
 import ShareButtons from '@/components/ShareButtons'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -240,7 +241,9 @@ export default function PressRelease() {
                   Press Contact
                 </p>
                 {release.contact.name && (
-                  <p className="text-[15px] font-semibold text-foreground">{release.contact.name}</p>
+                  <p className="text-[15px] font-semibold text-foreground">
+                    <PersonNameLink name={release.contact.name} byline={false} className="text-inherit no-underline" />
+                  </p>
                 )}
                 {release.contact.jobTitle && (
                   <p className="text-sm text-muted-foreground">{release.contact.jobTitle}</p>

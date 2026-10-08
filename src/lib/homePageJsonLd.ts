@@ -2,6 +2,7 @@ import type { BlogPost } from '@/types/blog';
 import type { Language } from '@/lib/i18n';
 import { translations } from '@/lib/i18n';
 import { ORG_AREA_SERVED } from '@/lib/seo/organization';
+import { withAlsaadanyPersonJsonLd } from '@/data/editorialAuthors';
 
 const SITE_ORIGIN = 'https://www.bionixus.com';
 const ORG_ID = `${SITE_ORIGIN}/#organization`;
@@ -106,10 +107,10 @@ export function buildHomeArticleJsonLdNodes(
         '@type': 'Thing',
         name: 'Healthcare market research',
       },
-      author: {
+      author: withAlsaadanyPersonJsonLd({
         '@type': 'Person',
         name: post.authorName?.trim() || 'BioNixus Editorial',
-      },
+      }),
       datePublished: published,
       dateModified: modified,
       publisher: {

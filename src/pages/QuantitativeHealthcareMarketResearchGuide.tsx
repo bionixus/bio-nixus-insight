@@ -8,6 +8,8 @@ import { languagePaths } from '@/lib/seo';
 import { ArrowRight, BookOpen, BarChart3, ShieldCheck, Brain, Users, Target } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { EmailCaptureForm } from '@/components/conversion/EmailCaptureForm';
+import { PersonNameLink } from '@/components/seo/PersonNameLink';
+import { withAlsaadanyPersonJsonLd } from '@/data/editorialAuthors';
 
 type CountryBenchmark = {
   country: string;
@@ -469,7 +471,7 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               'UAE healthcare market research',
               'tracking studies',
             ],
-            author: {
+            author: withAlsaadanyPersonJsonLd({
               '@type': 'Person',
               '@id': 'https://www.bionixus.com/quantitative-healthcare-market-research#author',
               name: articleAuthor.name,
@@ -481,7 +483,7 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                 '@id': 'https://www.bionixus.com/#organization',
                 name: 'BioNixus',
               },
-            },
+            }),
             image: 'https://www.bionixus.com/images/quant-hcp-survey-executive.png',
             mainEntityOfPage: canonicalUrl,
             publisher: {
@@ -506,7 +508,7 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
         </script>
 
         <script type="application/ld+json">
-          {JSON.stringify({
+          {JSON.stringify(withAlsaadanyPersonJsonLd({
             '@context': 'https://schema.org',
             '@type': 'Person',
             '@id': 'https://www.bionixus.com/quantitative-healthcare-market-research#author',
@@ -519,7 +521,7 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
               '@id': 'https://www.bionixus.com/#organization',
               name: 'BioNixus',
             },
-          })}
+          }))}
         </script>
 
         <script type="application/ld+json">
@@ -618,12 +620,14 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
                   MA
                 </div>
                 <div>
-                  <h2 className="text-2xl font-display font-semibold text-foreground">{articleAuthor.name}</h2>
+                  <h2 className="text-2xl font-display font-semibold text-foreground">
+                    <PersonNameLink name={articleAuthor.name} className="text-inherit no-underline" />
+                  </h2>
                   <p className="text-sm font-medium text-primary">{articleAuthor.title}</p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Dr. Mohammad Alsaadany leads healthcare market research methodology at BioNixus with 15+ years of experience across
+                <PersonNameLink name="Dr. Mohammad Alsaadany" className="text-inherit no-underline" /> leads healthcare market research methodology at BioNixus with 15+ years of experience across
                 Saudi Arabia, UAE, and wider GCC pharmaceutical markets. His work spans quantitative study design, HCP recruitment
                 governance, and AI-augmented validation frameworks.
               </p>

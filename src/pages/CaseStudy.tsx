@@ -13,6 +13,7 @@ import type { CaseStudy as CaseStudyType } from '@/types/caseStudy';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { PersonNameLink } from '@/components/seo/PersonNameLink';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
 import { optimizeSanityImage } from '@/lib/image-utils';
 import Navbar from '@/components/Navbar';
@@ -492,7 +493,7 @@ const CaseStudyPage = () => {
                         {caseStudy.authorName.charAt(0)}
                       </div>
                     )}
-                    <span className="text-sm font-medium text-foreground">{caseStudy.authorName}</span>
+                    <PersonNameLink name={caseStudy.authorName} className="text-sm font-medium text-foreground no-underline" />
                   </div>
                 ) : null}
                 {displayTags.length > 0 ? (
@@ -665,7 +666,9 @@ const CaseStudyPage = () => {
                     </div>
                   )}
                   <div>
-                    <h2 className="font-display font-semibold text-foreground">{caseStudy.authorName}</h2>
+                    <h2 className="font-display font-semibold text-foreground">
+                      <PersonNameLink name={caseStudy.authorName} className="text-inherit no-underline" />
+                    </h2>
                     <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">Specialist advisor on GCC pharmaceutical and oncology market programmes at BioNixus.</p>
                   </div>
                 </footer>

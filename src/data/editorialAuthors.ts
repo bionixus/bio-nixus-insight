@@ -84,10 +84,25 @@ export const ALSAADANY_AUTHOR: EditorialAuthor = {
   jobTitle: 'Director, BioNixus Healthcare Market Research',
 };
 
+/** Profile linked from his name on the site. JSON-LD `url` uses this English URL. */
+export const ALSAADANY_PROFILE_URL = 'https://www.alsaadany.com/bionixus/';
+/** Arabic-script name links. */
+export const ALSAADANY_PROFILE_URL_AR = 'https://www.alsaadany.com/ar/bionixus/';
+/** Added to Person `sameAs`. */
+export const ALSAADANY_SAME_AS_URL = 'https://www.alsaadany.com/';
+
 const ALSAADANY_NAMES = new Set([
   'mohammad alsaadany',
   'dr. mohammad alsaadany',
   'dr mohammad alsaadany',
+]);
+
+const ALSAADANY_AR_NAMES = new Set([
+  'محمد السعداني',
+  'د. محمد السعداني',
+  'د محمد السعداني',
+  'محمد السعدني',
+  'د. محمد السعدني',
 ]);
 
 const WESTERN_COUNTRY_SLUGS = new Set([
@@ -150,6 +165,77 @@ function pickStable<T>(items: readonly T[], seed: string): T {
 
 export function isAlsaadanyName(name: string | undefined): boolean {
   return Boolean(name && ALSAADANY_NAMES.has(name.trim().toLowerCase()));
+}
+
+export function isAlsaadanyArabicName(name: string | undefined): boolean {
+  return Boolean(name && ALSAADANY_AR_NAMES.has(name.trim()));
+}
+
+export function isAlsaadanyDisplayName(name: string | undefined): boolean {
+  return isAlsaadanyName(name) || isAlsaadanyArabicName(name);
+}
+
+/** English profile for Latin names; Arabic profile when the visible name is Arabic. */
+export function alsaadanyProfileUrl(name: string | undefined): string | null {
+  if (isAlsaadanyArabicName(name)) return ALSAADANY_PROFILE_URL_AR;
+  if (isAlsaadanyName(name)) return ALSAADANY_PROFILE_URL;
+  return null;
+}
+
+const ALSAADANY_LINKEDIN_PATHS = new Set([
+  '/in/mohammad-alsaadany',
+  '/in/dr-mohammad-alsaadany',
+]);
+
+/** True for Mohammad Alsaadany's LinkedIn profile, including the dr- prefix and a trailing slash. */
+export function isAlsaadanyLinkedInUrl(url: string | undefined): boolean {
+  if (!url?.trim()) return false;
+  try {
+    const parsed = new URL(url.trim());
+    const host = parsed.hostname.replace(/^www\./, '').toLowerCase();
+    if (host !== 'linkedin.com') return false;
+    const path = parsed.pathname.replace(/\/+$/, '').toLowerCase();
+    return ALSAADANY_LINKEDIN_PATHS.has(path);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * LinkedIn to show and put in JSON-LD for this author.
+ * Empty when unset. Alsaadany's profile is not reused for a different person.
+ */
+export function authorLinkedInForDisplay(name: string | undefined, url: string | undefined): string | undefined {
+  const trimmed = url?.trim();
+  if (!trimmed) return undefined;
+  if (!isAlsaadanyDisplayName(name) && isAlsaadanyLinkedInUrl(trimmed)) return undefined;
+  return trimmed;
+}
+
+/**
+ * Person / author JSON-LD for Mohammad Alsaadany.
+ * Sets `url` to the English profile and appends the site root to `sameAs`.
+ * Keeps an existing jobTitle; uses Director only when none is set.
+ */
+export function withAlsaadanyPersonJsonLd<
+  T extends {
+    name?: string;
+    jobTitle?: string;
+    url?: string;
+    sameAs?: string | readonly string[];
+  },
+>(person: T): T {
+  if (!isAlsaadanyDisplayName(person.name)) return person;
+  const raw = person.sameAs;
+  const sameAs = [...(Array.isArray(raw) ? raw : raw ? [raw] : [])];
+  if (!sameAs.includes(ALSAADANY_SAME_AS_URL)) sameAs.push(ALSAADANY_SAME_AS_URL);
+  const jobTitle = person.jobTitle && person.jobTitle.trim() ? person.jobTitle : 'Director';
+  return {
+    ...person,
+    url: ALSAADANY_PROFILE_URL,
+    sameAs,
+    jobTitle,
+  } as T;
 }
 
 export function isComparisonPath(path: string): boolean {
@@ -235,7 +321,7 @@ export function getEditorialAuthorForCountrySlug(slug: string): EditorialAuthor 
 }
 
 export function personAuthorJsonLd(author: EditorialAuthor) {
-  return {
+  return withAlsaadanyPersonJsonLd({
     '@type': 'Person' as const,
     name: author.name,
     jobTitle: author.jobTitle,
@@ -244,7 +330,7 @@ export function personAuthorJsonLd(author: EditorialAuthor) {
       '@id': 'https://www.bionixus.com/#organization',
       name: 'BioNixus',
     },
-  };
+  });
 }
 
 export function authorByline(author: EditorialAuthor, published: string): string {
