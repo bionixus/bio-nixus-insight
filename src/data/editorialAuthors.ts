@@ -182,6 +182,36 @@ export function alsaadanyProfileUrl(name: string | undefined): string | null {
   return null;
 }
 
+const ALSAADANY_LINKEDIN_PATHS = new Set([
+  '/in/mohammad-alsaadany',
+  '/in/dr-mohammad-alsaadany',
+]);
+
+/** True for Mohammad Alsaadany's LinkedIn profile, including the dr- prefix and a trailing slash. */
+export function isAlsaadanyLinkedInUrl(url: string | undefined): boolean {
+  if (!url?.trim()) return false;
+  try {
+    const parsed = new URL(url.trim());
+    const host = parsed.hostname.replace(/^www\./, '').toLowerCase();
+    if (host !== 'linkedin.com') return false;
+    const path = parsed.pathname.replace(/\/+$/, '').toLowerCase();
+    return ALSAADANY_LINKEDIN_PATHS.has(path);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * LinkedIn to show and put in JSON-LD for this author.
+ * Empty when unset. Alsaadany's profile is not reused for a different person.
+ */
+export function authorLinkedInForDisplay(name: string | undefined, url: string | undefined): string | undefined {
+  const trimmed = url?.trim();
+  if (!trimmed) return undefined;
+  if (!isAlsaadanyDisplayName(name) && isAlsaadanyLinkedInUrl(trimmed)) return undefined;
+  return trimmed;
+}
+
 /**
  * Person / author JSON-LD for Mohammad Alsaadany.
  * Sets `url` to the English profile and appends the site root to `sameAs`.

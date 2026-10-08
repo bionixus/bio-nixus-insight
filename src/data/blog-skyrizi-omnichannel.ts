@@ -30,7 +30,6 @@ export const SKYRIZI_HARDCODED_POST: BlogPost = {
   "seoCanonicalUrl": "https://www.bionixus.com/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement",
   "authorName": "Mohammad Ashour",
   "authorTitle": "Research Lead, BioNixus Healthcare Market Research",
-  "authorLinkedIn": "https://www.linkedin.com/in/mohammad-alsaadany",
   "publishedAtIso": "2026-06-12T10:00:00.000Z",
   "updatedAtIso": "2026-06-12T10:00:00.000Z",
   "tableOfContents": [

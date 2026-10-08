@@ -1,10 +1,21 @@
 import { describe, expect, it } from 'vitest';
+import { buildSchemas } from '@/components/SchemaMarkup';
+import { DESMOID_BLOG_HARDCODED_POST } from '@/data/blog-desmoid-ogsiveo-market-research';
+import { GCC_PHARMACOECONOMICS_HARDCODED_POST } from '@/data/blog-gcc-pharmacoeconomics';
+import {
+  NF1_KOSELUGO_DRUG_HARDCODED_POST,
+  NF1_KOSELUGO_HARDCODED_POST,
+} from '@/data/blog-nf1-koselugo-market-research';
+import { SKYRIZI_HARDCODED_POST } from '@/data/blog-skyrizi-omnichannel';
 import {
   ALSAADANY_AUTHOR,
   ALSAADANY_PROFILE_URL,
   ALSAADANY_PROFILE_URL_AR,
   ALSAADANY_SAME_AS_URL,
+  MENA_AUTHORS,
   alsaadanyProfileUrl,
+  authorLinkedInForDisplay,
+  isAlsaadanyLinkedInUrl,
   personAuthorJsonLd,
   withAlsaadanyPersonJsonLd,
 } from '@/data/editorialAuthors';
@@ -76,5 +87,58 @@ describe('Alsaadany profile links', () => {
     expect(node.jobTitle).toBe('Director, BioNixus Healthcare Market Research');
     expect(node.url).toBe(ALSAADANY_PROFILE_URL);
     expect(node.sameAs).toEqual([ALSAADANY_SAME_AS_URL]);
+  });
+
+  it('does not give Mohammad Ashour an Alsaadany LinkedIn URL', () => {
+    const ashour = MENA_AUTHORS.find((author) => author.name === 'Mohammad Ashour');
+    expect(ashour?.name).toBe('Mohammad Ashour');
+    expect(ashour?.jobTitle).toBe('Research Lead, MENA');
+    expect(JSON.stringify(ashour)).not.toMatch(/linkedin\.com\/in\/(?:dr-)?mohammad-alsaadany/i);
+
+    const seeds = [
+      GCC_PHARMACOECONOMICS_HARDCODED_POST,
+      DESMOID_BLOG_HARDCODED_POST,
+      SKYRIZI_HARDCODED_POST,
+      NF1_KOSELUGO_HARDCODED_POST,
+      NF1_KOSELUGO_DRUG_HARDCODED_POST,
+    ];
+    for (const post of seeds) {
+      expect(post.authorName).toBe('Mohammad Ashour');
+      expect(post.authorTitle).toBe('Research Lead, BioNixus Healthcare Market Research');
+      expect(post.authorLinkedIn).toBeUndefined();
+    }
+
+    expect(isAlsaadanyLinkedInUrl('https://www.linkedin.com/in/mohammad-alsaadany')).toBe(true);
+    expect(isAlsaadanyLinkedInUrl('https://www.linkedin.com/in/dr-mohammad-alsaadany/')).toBe(true);
+    expect(authorLinkedInForDisplay('Mohammad Ashour', 'https://www.linkedin.com/in/mohammad-alsaadany')).toBeUndefined();
+    expect(authorLinkedInForDisplay('Mohammad Ashour', undefined)).toBeUndefined();
+    expect(authorLinkedInForDisplay('Dina Ibrahim', 'https://www.linkedin.com/in/dina-ibrahim')).toBe(
+      'https://www.linkedin.com/in/dina-ibrahim',
+    );
+  });
+
+  it('omits LinkedIn from Ashour Person JSON-LD when none is set', () => {
+    const nodes = buildSchemas({
+      pageType: 'blog',
+      pageUrl: 'https://www.bionixus.com/blog/gcc-pharmacoeconomics',
+      language: 'en',
+      headline: 'GCC pharmacoeconomics',
+      description: 'How GCC pharmacoeconomics differs from EU HTA for Saudi and UAE payers.',
+      imageUrl: 'https://www.bionixus.com/og-image.png',
+      authorName: 'Mohammad Ashour',
+      authorJobTitle: 'Research Lead, BioNixus Healthcare Market Research',
+      publishedAt: '2026-03-01',
+      modifiedAt: '2026-03-01',
+      breadcrumb: [
+        { name: 'Home', item: 'https://www.bionixus.com/' },
+        { name: 'Blog', item: 'https://www.bionixus.com/blog' },
+      ],
+    });
+    const article = nodes.find((node) => node['@type'] === 'BlogPosting') as { author: PersonNode };
+    expect(article.author.name).toBe('Mohammad Ashour');
+    expect(article.author.jobTitle).toBe('Research Lead, BioNixus Healthcare Market Research');
+    expect(article.author.url).toBeUndefined();
+    expect(article.author.sameAs).toBeUndefined();
+    expect(JSON.stringify(article.author)).not.toMatch(/alsaadany/i);
   });
 });
