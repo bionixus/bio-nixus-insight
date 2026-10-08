@@ -50,6 +50,7 @@ export function EmailCaptureForm({
     try {
       const result = await submitLeadDual(data);
       if (result.ok) setSubmitted(true);
+      else if (result.highLevelStatus === 400 && result.error) setError(result.error);
       else setError('Something went wrong. Email digital@bionixus.uk and we will send it.');
     } catch {
       setError('Something went wrong. Email digital@bionixus.uk and we will send it.');

@@ -72,7 +72,22 @@ describe('submitLeadDual (default: HighLevel only)', () => {
     const result = await submitLeadDual(leadForm());
     expect(result.ok).toBe(false);
     expect(result.error).toBe('Could not save your request. Please try again.');
+    expect(result.highLevelStatus).toBe(502);
     expect(result.networkError).toBeUndefined();
+  });
+
+  it('surfaces a HighLevel 400 email message ahead of a Formspree error', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo) => {
+        if (String(input) === FORMSPREE_ENDPOINT) return jsonResponse({ error: 'Form quota exceeded' }, 422);
+        return jsonResponse({ error: 'Please check your email address and try again.' }, 400);
+      }),
+    );
+    const result = await submitScopingCallLead(leadForm());
+    expect(result.ok).toBe(false);
+    expect(result.highLevelStatus).toBe(400);
+    expect(result.error).toBe('Please check your email address and try again.');
   });
 
   it('reports a network error when HighLevel is unreachable', async () => {
@@ -183,6 +198,15 @@ describe('lead form surfaces', () => {
       expect(src, file).not.toContain('GHL_API_KEY');
       expect(src, file).not.toContain('leadconnectorhq.com');
       expect(src, file).not.toContain('fetch(FORMSPREE_ENDPOINT');
+    }
+
+    for (const file of [
+      'src/components/conversion/EmailCaptureForm.tsx',
+      'src/pages/ClinicalDiagnosticsProposalRequest.tsx',
+    ]) {
+      const src = readFileSync(resolve(ROOT, file), 'utf8');
+      expect(src, file).toContain('highLevelStatus === 400');
+      expect(src, file).toContain('result.error');
     }
   });
 

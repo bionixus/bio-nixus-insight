@@ -48,6 +48,7 @@ function mockGhl(options?: {
   failWhenCountry?: string;
   customFieldsStatus?: number;
   upsertStatus?: number;
+  upsertJson?: unknown;
 }) {
   const calls: Call[] = [];
   const fetchImpl = (async (input: RequestInfo | URL, init?: RequestInit) => {
@@ -68,7 +69,8 @@ function mockGhl(options?: {
         return new Response(JSON.stringify({ message: ['country must be valid'] }), { status: 422 });
       }
       if (options?.upsertStatus) {
-        return new Response(JSON.stringify({ message: 'nope' }), { status: options.upsertStatus });
+        const body = options.upsertJson ?? { message: 'nope' };
+        return new Response(JSON.stringify(body), { status: options.upsertStatus });
       }
       return new Response(JSON.stringify({ new: true, contact: { id: 'contact123' } }), { status: 200 });
     }
@@ -204,6 +206,7 @@ describe('processHighLevelLead', () => {
       skipRateLimit: true,
     });
     expect(invalid.status).toBe(400);
+    expect(invalid.body.error).toBe('Please check your email address and try again.');
     expect(calls).toHaveLength(0);
   });
 
@@ -248,5 +251,67 @@ describe('processHighLevelLead', () => {
     expect(result.body).toEqual({ error: 'Could not save your request. Please try again.' });
     expect(JSON.stringify(result.body)).not.toContain('nope');
     error.mockRestore();
+  });
+
+  it('rejects oversized or malformed emails locally before calling HighLevel', async () => {
+    const { calls, fetchImpl } = mockGhl();
+    const base = { env: ENV, fetchImpl, skipRateLimit: true };
+    const local64 = `${'a'.repeat(64)}@example.com`;
+    const local65 = `${'a'.repeat(65)}@example.com`;
+    const exactly254 = `${'a'.repeat(64)}@${'b'.repeat(63)}.${'c'.repeat(63)}.${'d'.repeat(57)}.com`;
+    const exactly255 = `${'a'.repeat(64)}@${'b'.repeat(63)}.${'c'.repeat(63)}.${'d'.repeat(58)}.com`;
+    expect(exactly254).toHaveLength(254);
+    expect(exactly255).toHaveLength(255);
+
+    const accepted = await processHighLevelLead({ workEmail: local64 }, base);
+    expect(accepted.status).toBe(200);
+
+    const missing = await processHighLevelLead({ firstName: 'Jane' }, base);
+    expect(missing).toEqual({ status: 400, body: { error: 'A valid email is required' } });
+
+    for (const workEmail of [local65, exactly255, 'user@localhost', 'not an email']) {
+      const rejected = await processHighLevelLead({ workEmail }, base);
+      expect(rejected.status, workEmail).toBe(400);
+      expect(rejected.body.error).toBe('Please check your email address and try again.');
+    }
+
+    const withBoundary = await processHighLevelLead({ workEmail: exactly254 }, base);
+    expect(withBoundary.status).toBe(200);
+    expect(calls.filter((call) => call.url.endsWith('/contacts/upsert'))).toHaveLength(2);
+  });
+
+  it('returns 400 when HighLevel rejects the email and does not retry or leak the upstream message', async () => {
+    const shapes: { status: number; json: unknown }[] = [
+      { status: 422, json: { message: ['email must be an email'], error: 'Unprocessable Entity' } },
+      { status: 400, json: { message: 'Bad Request', error: 'The email address is invalid' } },
+      { status: 400, json: { message: 'Unprocessable Entity', errors: { email: ['is invalid'] } } },
+    ];
+    for (const shape of shapes) {
+      resetHighLevelLeadStateForTests();
+      const { calls, fetchImpl } = mockGhl({ upsertStatus: shape.status, upsertJson: shape.json });
+      const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+      const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+      expect(result).toEqual({
+        status: 400,
+        body: { error: 'Please check your email address and try again.' },
+      });
+      expect(JSON.stringify(result.body)).not.toMatch(/must be an email|is invalid|Bad Request/i);
+      expect(calls.filter((call) => call.url.endsWith('/contacts/upsert'))).toHaveLength(1);
+      expect(calls.some((call) => call.url.includes('/tags'))).toBe(false);
+      expect(error).toHaveBeenCalled();
+      error.mockRestore();
+    }
+  });
+
+  it('keeps 502 when a 400 from HighLevel is not about the email', async () => {
+    const { calls, fetchImpl } = mockGhl({ upsertStatus: 400, upsertJson: { message: 'duplicate phone' } });
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+    expect(result.status).toBe(502);
+    expect(result.body).toEqual({ error: 'Could not save your request. Please try again.' });
+    expect(calls.filter((call) => call.url.endsWith('/contacts/upsert')).length).toBeGreaterThan(1);
+    error.mockRestore();
+    warn.mockRestore();
   });
 });

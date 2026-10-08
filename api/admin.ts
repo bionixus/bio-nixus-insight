@@ -2,8 +2,7 @@ import { createClient } from '@sanity/client'
 import { GoogleAuth } from 'google-auth-library'
 import crypto from 'crypto'
 import { parse } from 'csv-parse/sync'
-
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
+import { adminPasswordMatches, rejectUnconfiguredAdminPassword, requireAdminBearer } from '../src/server/adminAuth.js'
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -15,12 +14,7 @@ const sanityServer = createClient({
 
 // ─── Auth helper ───
 function checkAuth(req: any, res: any): boolean {
-  const authHeader = req.headers.authorization
-  if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.substring(7) !== ADMIN_PASSWORD) {
-    res.status(401).json({ error: 'Unauthorized' })
-    return false
-  }
-  return true
+  return requireAdminBearer(req, res)
 }
 
 export default async function handler(req: any, res: any) {
@@ -29,8 +23,9 @@ export default async function handler(req: any, res: any) {
   // ─── verify: POST only, no auth header needed (it's the login check) ───
   if (action === 'verify') {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
-    const { password } = req.body
-    if (password === ADMIN_PASSWORD) {
+    if (rejectUnconfiguredAdminPassword(res)) return
+    const password = req.body?.password
+    if (adminPasswordMatches(password)) {
       return res.status(200).json({ success: true })
     }
     return res.status(401).json({ error: 'Invalid password' })

@@ -11,7 +11,9 @@
 const GHL_BASE = 'https://services.leadconnectorhq.com';
 const GHL_VERSION = '2021-07-28';
 const DEFAULT_LOCATION_ID = 'SjwWFl3GxGB1WQ1LbzLq';
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_RE =
+  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
+const EMAIL_CHECK_ERROR = 'Please check your email address and try again.';
 const CACHE_MS = 10 * 60 * 1000;
 const RATE_WINDOW_MS = 10 * 60 * 1000;
 const RATE_MAX = 20;
@@ -368,6 +370,59 @@ function countryRejected(response: GhlResponse) {
   return /country/i.test(errorMessage(response));
 }
 
+function highLevelErrorText(response: GhlResponse): string {
+  const chunks: string[] = [errorMessage(response)];
+  const json = response.json;
+  if (json && typeof json === 'object') {
+    const record = json as Record<string, unknown>;
+    if (typeof record.error === 'string') chunks.push(record.error);
+    const errors = record.errors;
+    if (Array.isArray(errors)) {
+      for (const item of errors) {
+        if (typeof item === 'string') chunks.push(item);
+        else if (item && typeof item === 'object') {
+          const row = item as Record<string, unknown>;
+          for (const key of ['message', 'field', 'property', 'param']) {
+            if (typeof row[key] === 'string') chunks.push(row[key]);
+          }
+        }
+      }
+    } else if (errors && typeof errors === 'object') {
+      for (const [key, value] of Object.entries(errors as Record<string, unknown>)) {
+        chunks.push(key);
+        if (typeof value === 'string') chunks.push(value);
+        else if (Array.isArray(value)) {
+          for (const item of value) {
+            if (typeof item === 'string') chunks.push(item);
+          }
+        }
+      }
+    }
+  }
+  return chunks.join(' ');
+}
+
+function emailRejected(response: GhlResponse) {
+  if (response.status !== 400 && response.status !== 422) return false;
+  return /\bemail\b/i.test(highLevelErrorText(response));
+}
+
+function emailProblem(email: string): string | null {
+  if (!email) return 'A valid email is required';
+  const at = email.lastIndexOf('@');
+  const local = at === -1 ? email : email.slice(0, at);
+  if (local.length > 64 || email.length > 254 || !EMAIL_RE.test(email)) {
+    return EMAIL_CHECK_ERROR;
+  }
+  return null;
+}
+
+function rejectedEmailResult(response: GhlResponse): LeadResult | null {
+  if (!emailRejected(response)) return null;
+  console.error('[highlevel-lead] upsert rejected the email', response.status);
+  return { status: 400, body: { error: EMAIL_CHECK_ERROR } };
+}
+
 function omitCountry(body: Record<string, unknown>) {
   if (!('country' in body)) return null;
   const next = { ...body };
@@ -445,8 +500,9 @@ export async function processHighLevelLead(rawBody: unknown, options: ProcessOpt
   }
 
   const email = leadEmail(fields);
-  if (!email || !EMAIL_RE.test(email)) {
-    return { status: 400, body: { error: 'A valid email is required' } };
+  const emailError = emailProblem(email);
+  if (emailError) {
+    return { status: 400, body: { error: emailError } };
   }
 
   const defs = await loadCustomFields(fetchImpl, apiKey, locationId, now);
@@ -456,11 +512,15 @@ export async function processHighLevelLead(rawBody: unknown, options: ProcessOpt
   let upserted: GhlResponse;
   try {
     upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
+    const rejected = rejectedEmailResult(upserted);
+    if (rejected) return rejected;
     const retryableStatus = upserted.status === 400 || upserted.status === 409 || upserted.status === 422;
     if (!upserted.ok && plan.upsertWithoutPhone && retryableStatus) {
       console.warn('[highlevel-lead] retrying upsert without phone', upserted.status);
       payload = plan.upsertWithoutPhone;
       upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
+      const rejectedAfterPhone = rejectedEmailResult(upserted);
+      if (rejectedAfterPhone) return rejectedAfterPhone;
     }
     if (!upserted.ok && countryRejected(upserted)) {
       const stripped = omitCountry(payload);
@@ -470,6 +530,8 @@ export async function processHighLevelLead(rawBody: unknown, options: ProcessOpt
         upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
       }
     }
+    const rejectedAfterRetry = rejectedEmailResult(upserted);
+    if (rejectedAfterRetry) return rejectedAfterRetry;
   } catch (error) {
     console.error('[highlevel-lead] upsert error', error instanceof Error ? error.message : 'unknown');
     return { status: 502, body: { error: 'Could not save your request. Please try again.' } };

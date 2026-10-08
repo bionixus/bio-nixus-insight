@@ -75,7 +75,11 @@ export default function ClinicalDiagnosticsProposalRequest() {
       const result = await submitLeadDual(data);
       if (result.skipped) return;
       if (!result.ok) {
-        setError('Something went wrong. Email digital@bionixus.uk with your company name and we will send the deck.');
+        setError(
+          result.highLevelStatus === 400 && result.error
+            ? result.error
+            : 'Something went wrong. Email digital@bionixus.uk with your company name and we will send the deck.',
+        );
         return;
       }
       setSubmitted(true);

@@ -1,24 +1,24 @@
-// Simple admin authentication for API routes
-// In production, use a proper auth solution (e.g., Clerk, Auth0)
+// Simple admin authentication for API routes.
+// In production, use a proper auth solution (e.g., Clerk, Auth0).
 
-export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
+import { adminPasswordMatches, rejectUnconfiguredAdminPassword } from '@/server/adminAuth';
 
-export function requireAuth(
-  handler: (req: any, res: any) => Promise<void>
-) {
+export function requireAuth(handler: (req: any, res: any) => Promise<void>) {
   return async (req: any, res: any) => {
-    const authHeader = req.headers.authorization
+    if (rejectUnconfiguredAdminPassword(res)) return;
 
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      return res.status(401).json({ error: 'Unauthorized' })
+    const authHeader = req.headers?.authorization;
+
+    if (!authHeader || typeof authHeader !== 'string' || !authHeader.startsWith('Bearer ')) {
+      return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    const token = authHeader.substring(7)
+    const token = authHeader.substring(7);
 
-    if (token !== ADMIN_PASSWORD) {
-      return res.status(401).json({ error: 'Invalid credentials' })
+    if (!adminPasswordMatches(token)) {
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    return handler(req, res)
-  }
+    return handler(req, res);
+  };
 }

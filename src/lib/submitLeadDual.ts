@@ -36,6 +36,8 @@ export type DualLeadResult = {
   highLevelError?: string;
   /** User-facing error from whichever attempted channel reported one. Unset when `ok`. */
   error?: string;
+  /** HTTP status from `/api/highlevel-lead` when the response arrived. */
+  highLevelStatus?: number;
   /** Set when the submission failed and every attempted channel failed at the network level. */
   networkError?: string;
 };
@@ -44,6 +46,7 @@ type ChannelResult = {
   ok: boolean;
   error?: string;
   networkError?: string;
+  status?: number;
 };
 
 export function isLeadHoneypot(data: FormData): boolean {
@@ -118,9 +121,9 @@ async function postHighLevel(payload: Record<string, string>): Promise<ChannelRe
       body: JSON.stringify(payload),
     });
     const json = (await res.json().catch(() => ({}))) as { success?: unknown; error?: unknown };
-    if (res.ok && json?.success === true) return { ok: true };
+    if (res.ok && json?.success === true) return { ok: true, status: res.status };
     const error = typeof json?.error === 'string' && json.error.trim() ? json.error.trim() : undefined;
-    return { ok: false, error };
+    return { ok: false, error, status: res.status };
   } catch (err) {
     return { ok: false, networkError: err instanceof Error ? err.message : 'network error' };
   }
@@ -162,7 +165,9 @@ export async function submitLeadDual(data: FormData, options: SubmitLeadOptions 
 
   const ok = (useFormspree && formspree.ok) || highLevel.ok;
   const attempted = useFormspree ? [formspree, highLevel] : [highLevel];
-  const error = ok ? undefined : attempted.map((c) => c.error).find(Boolean);
+  const highLevelClientError =
+    !ok && highLevel.status === 400 && highLevel.error ? highLevel.error : undefined;
+  const error = highLevelClientError || (ok ? undefined : attempted.map((c) => c.error).find(Boolean));
   const networkError =
     !ok && attempted.every((c) => c.networkError) ? attempted.map((c) => c.networkError).find(Boolean) : undefined;
 
@@ -174,6 +179,7 @@ export async function submitLeadDual(data: FormData, options: SubmitLeadOptions 
     formspreeError: useFormspree ? formspree.error : undefined,
     formspreeNetworkError: useFormspree ? formspree.networkError : undefined,
     highLevelError: highLevel.error || highLevel.networkError,
+    highLevelStatus: highLevel.status,
     error,
     networkError,
   };
