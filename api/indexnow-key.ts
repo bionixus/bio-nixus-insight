@@ -658,7 +658,7 @@ async function handleSsrRequest(
     for (const [key, raw] of Object.entries(q)) {
       const lower = key.toLowerCase();
       // `__ssr` + `url` are Vercel rewrite internals — never treat as public query.
-      if (lower === 'url' || lower === '__ssr') continue;
+      if (lower === 'url' || lower === '__ssr' || lower === 'path') continue;
       const val = Array.isArray(raw) ? raw[0] : raw;
       if (typeof val === 'string') params.set(key, val);
     }
