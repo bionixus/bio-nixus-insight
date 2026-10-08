@@ -1,0 +1,4 @@
+# Hobby allows 12 Node serverless functions. Vercel deploys every
+# non-underscore file under api/ as a function, including tests.
+api/**/*.test.ts
+api/**/*.spec.ts

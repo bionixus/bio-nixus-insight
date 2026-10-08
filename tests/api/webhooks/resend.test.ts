@@ -1,6 +1,6 @@
 import { createHmac, randomBytes } from 'node:crypto'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import handler, { config } from './resend'
+import handler, { config } from '../../../api/webhooks/resend.js'
 
 const fetchMock = vi.hoisted(() => vi.fn())
 const patchMock = vi.hoisted(() => vi.fn())
