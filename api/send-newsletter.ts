@@ -2,6 +2,7 @@ import { Resend } from 'resend'
 import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2'
 import { createClient } from '@sanity/client'
 import { toHTML } from '@portabletext/to-html'
+import { requireAdminBearer } from '../src/server/adminAuth.js'
 
 // ─── Config ───
 export const config = {
@@ -20,7 +21,6 @@ const sanityServer = createClient({
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 const BASE_URL = process.env.VITE_BASE_URL || 'https://www.bionixus.com'
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
 
 // ─── AWS SES setup (opt-in — requires USE_AWS_SES=true in addition to credentials) ───
 // SES stays disabled until explicitly enabled, so Resend is the default even if
@@ -151,10 +151,7 @@ export default async function handler(req: any, res: any) {
   }
 
   // Auth check
-  const authHeader = req.headers.authorization
-  if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.substring(7) !== ADMIN_PASSWORD) {
-    return res.status(401).json({ error: 'Unauthorized' })
-  }
+  if (!requireAdminBearer(req, res)) return
 
   const { newsletterId } = req.body
 

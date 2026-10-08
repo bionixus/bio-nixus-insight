@@ -1,6 +1,5 @@
 import { createClient } from '@sanity/client'
-
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'BioNixus2026!'
+import { requireAdminBearer } from '../src/server/adminAuth.js'
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -11,12 +10,46 @@ const sanityServer = createClient({
 })
 
 function checkAuth(req: any, res: any): boolean {
-  const authHeader = req.headers.authorization
-  if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.substring(7) !== ADMIN_PASSWORD) {
-    res.status(401).json({ error: 'Unauthorized' })
-    return false
-  }
-  return true
+  return requireAdminBearer(req, res)
+}
+
+/** Values the calendar GET filter and stats actually use. `all` means no type filter. */
+export const CALENDAR_QUERY_TYPES = ['all', 'newsletter', 'blog', 'social', 'report', 'campaign', 'announcement'] as const
+
+const CALENDAR_QUERY_TYPE_SET = new Set<string>(CALENDAR_QUERY_TYPES)
+
+const ISO_DATE_OR_DATETIME =
+  /^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{1,9}))?)?(?:Z|[+-]\d{2}:\d{2})?)?$/i
+
+export function isCalendarQueryDate(value: string): boolean {
+  const match = ISO_DATE_OR_DATETIME.exec(value)
+  if (!match) return false
+  const year = Number(match[1])
+  const month = Number(match[2])
+  const day = Number(match[3])
+  const hour = match[4] === undefined ? 0 : Number(match[4])
+  const minute = match[5] === undefined ? 0 : Number(match[5])
+  const second = match[6] === undefined ? 0 : Number(match[6])
+  if (month < 1 || month > 12 || hour > 23 || minute > 59 || second > 59) return false
+  const utc = new Date(Date.UTC(year, month - 1, day))
+  return utc.getUTCFullYear() === year && utc.getUTCMonth() === month - 1 && utc.getUTCDate() === day
+}
+
+function singleQueryValue(value: unknown): string | undefined | null {
+  if (value === undefined || value === null || value === '') return undefined
+  if (typeof value !== 'string') return null
+  return value
+}
+
+export function calendarQueryError(query: { start?: unknown; end?: unknown; type?: unknown } | undefined): string | null {
+  const source = query || {}
+  const start = singleQueryValue(source.start)
+  const end = singleQueryValue(source.end)
+  const type = singleQueryValue(source.type)
+  if (start === null || (typeof start === 'string' && !isCalendarQueryDate(start))) return 'Invalid start date'
+  if (end === null || (typeof end === 'string' && !isCalendarQueryDate(end))) return 'Invalid end date'
+  if (type === null || (typeof type === 'string' && !CALENDAR_QUERY_TYPE_SET.has(type))) return 'Invalid type'
+  return null
 }
 
 export default async function handler(req: any, res: any) {
@@ -202,6 +235,9 @@ async function handleEvents(req: any, res: any) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
+
+  const queryError = calendarQueryError(req.query)
+  if (queryError) return res.status(400).json({ error: queryError })
 
   try {
     const { start, end, type } = req.query

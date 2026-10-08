@@ -3,8 +3,12 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { QualificationForm } from '@/components/conversion/QualificationForm';
 import { GatedAssetForm } from '@/components/conversion/GatedAssetForm';
+import { EmailCaptureForm } from '@/components/conversion/EmailCaptureForm';
 import ContactSection from '@/components/ContactSection';
+import { CaseStudyContactGate } from '@/components/CaseStudyContactGate';
+import WhatsAppProposalWidget from '@/components/WhatsAppProposalWidget';
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import { FORMSPREE_ENDPOINT } from '@/lib/submitLeadDual';
 import { trackMeetingBooked } from '@/lib/analytics';
 
@@ -233,5 +237,155 @@ describe('GatedAssetForm (HighLevel only)', () => {
 
     expect(await screen.findByText(/could not save your request/i)).toBeInTheDocument();
     expect(click).not.toHaveBeenCalled();
+  });
+});
+
+const EMAIL_CHECK = 'Please check your email address and try again.';
+
+function mockHighLevelStatus(status: number, error: string) {
+  vi.stubGlobal(
+    'fetch',
+    vi.fn((input: RequestInfo) => {
+      const url = String(input);
+      if (url === FORMSPREE_ENDPOINT) return Promise.reject(new Error('offline'));
+      if (url === '/api/highlevel-lead') return json({ error }, status);
+      if (url === '/api/subscribe') return json({ success: true });
+      throw new Error(url);
+    }),
+  );
+}
+
+function stubLocation() {
+  Object.defineProperty(window, 'location', {
+    configurable: true,
+    value: { href: 'http://localhost/page', pathname: '/page', search: '' },
+  });
+  Object.defineProperty(window.location, 'href', {
+    configurable: true,
+    get: () => 'http://localhost/page',
+    set: () => {},
+  });
+}
+
+describe('lead forms show a HighLevel 400 email message', () => {
+  it('shows the server message on the email capture form and keeps the generic message for 502', async () => {
+    mockHighLevelStatus(400, EMAIL_CHECK);
+    render(
+      <EmailCaptureForm
+        formVariant="brief"
+        requestType="Brief"
+        subject="Brief"
+        sourcePage="/reports"
+        sourceUrl="https://www.bionixus.com/reports"
+        submitLabel="Send the brief"
+      />,
+    );
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.click(screen.getByRole('button', { name: /send the brief/i }));
+    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
+
+    mockHighLevelStatus(502, 'Could not save your request. Please try again.');
+    render(
+      <EmailCaptureForm
+        formVariant="brief-2"
+        requestType="Brief"
+        subject="Brief"
+        sourcePage="/reports"
+        sourceUrl="https://www.bionixus.com/reports"
+        submitLabel="Send another brief"
+      />,
+    );
+    fireEvent.change(screen.getAllByLabelText(/work email/i)[1], { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.click(screen.getByRole('button', { name: /send another brief/i }));
+    expect(await screen.findByText(/email digital@bionixus\.uk and we will send it/i)).toBeInTheDocument();
+    expect(screen.queryByText(/could not save your request/i)).not.toBeInTheDocument();
+  });
+
+  it('shows the server message on the contact form', async () => {
+    class Observer {
+      observe() {}
+      unobserve() {}
+      disconnect() {}
+    }
+    vi.stubGlobal('IntersectionObserver', Observer);
+    vi.stubGlobal('ResizeObserver', Observer);
+    mockHighLevelStatus(400, EMAIL_CHECK);
+    stubLocation();
+    render(
+      <MemoryRouter>
+        <LanguageProvider>
+          <ContactSection />
+        </LanguageProvider>
+      </MemoryRouter>,
+    );
+    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'Jane' } });
+    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
+    fireEvent.change(screen.getByLabelText(/country \/ region/i), { target: { value: 'United States' } });
+    fireEvent.change(screen.getByLabelText(/^phone/i), { target: { value: '+1 202 555 0143' } });
+    fireEvent.change(screen.getByLabelText(/how did you hear/i), { target: { value: 'Google Search' } });
+    fireEvent.change(screen.getByLabelText(/^message/i), { target: { value: 'Need a KSA ATU study' } });
+    fireEvent.click(screen.getByRole('checkbox', { name: /privacy policy/i }));
+    fireEvent.click(screen.getByRole('button', { name: /^submit$/i }));
+    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
+  });
+
+  it('shows the server message on the scoping-call form when HighLevel rejects the email', async () => {
+    mockHighLevelStatus(400, EMAIL_CHECK);
+    stubLocation();
+    await submitQualification();
+    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /pick a time for your call/i })).not.toBeInTheDocument();
+  });
+
+  it('shows the server message on the market-report contact gate', async () => {
+    mockHighLevelStatus(400, EMAIL_CHECK);
+    stubLocation();
+    render(
+      <MemoryRouter>
+        <LanguageProvider>
+          <CaseStudyContactGate
+            open
+            onOpenChange={() => {}}
+            caseStudyTitle="GCC Devices"
+            onSuccess={() => {}}
+            dialogTitle="Enter your details to browse and download the full report"
+            requestType="Market Report White Paper Access"
+            formVariant="whitepaper_gate_gcc-devices"
+          />
+        </LanguageProvider>
+      </MemoryRouter>,
+    );
+    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'Jane' } });
+    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
+    fireEvent.click(screen.getByRole('button', { name: /request access/i }));
+    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
+  });
+
+  it('shows the server message on the WhatsApp proposal widget', async () => {
+    mockHighLevelStatus(400, EMAIL_CHECK);
+    stubLocation();
+    vi.spyOn(window, 'open').mockImplementation(() => null);
+    render(
+      <MemoryRouter>
+        <LanguageProvider>
+          <TooltipProvider>
+            <WhatsAppProposalWidget />
+          </TooltipProvider>
+        </LanguageProvider>
+      </MemoryRouter>,
+    );
+    fireEvent.click(screen.getByRole('button', { name: /whatsapp proposal form/i }));
+    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'Jane' } });
+    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
+    fireEvent.change(screen.getByLabelText(/^phone/i), { target: { value: '+1 202 555 0143' } });
+    fireEvent.change(screen.getByLabelText(/^message/i), { target: { value: 'Need a proposal' } });
+    fireEvent.click(screen.getByRole('button', { name: /continue on whatsapp/i }));
+    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
   });
 });
