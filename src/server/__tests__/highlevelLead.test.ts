@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   countryForUpsert,
+  phoneLookupNumbers,
   planLeadWrite,
   processHighLevelLead,
   resetHighLevelLeadStateForTests,
@@ -53,6 +54,9 @@ function mockGhl(options?: {
   emailMatch?: MockContact | null;
   phoneMatch?: MockContact | null;
   disallowDuplicates?: boolean;
+  duplicateMatchingField?: string;
+  duplicateContactId?: string;
+  phoneMissNumbers?: string[];
   defs?: GhlCustomField[];
   lookupStatus?: number;
 }) {
@@ -72,8 +76,14 @@ function mockGhl(options?: {
         return new Response(JSON.stringify({ message: 'lookup failed' }), { status: options.lookupStatus });
       }
       const parsed = new URL(url);
-      const contact = parsed.searchParams.has('number') ? (options?.phoneMatch ?? null) : (options?.emailMatch ?? null);
-      return new Response(JSON.stringify({ contact }), { status: 200 });
+      if (parsed.searchParams.has('number')) {
+        const number = parsed.searchParams.get('number') || '';
+        if (options?.phoneMissNumbers?.includes(number)) {
+          return new Response(JSON.stringify({ contact: null }), { status: 200 });
+        }
+        return new Response(JSON.stringify({ contact: options?.phoneMatch ?? null }), { status: 200 });
+      }
+      return new Response(JSON.stringify({ contact: options?.emailMatch ?? null }), { status: 200 });
     }
     const pathname = new URL(url).pathname;
     if (method === 'POST' && (pathname === '/contacts' || pathname === '/contacts/')) {
@@ -84,13 +94,23 @@ function mockGhl(options?: {
             message: 'This location does not allow duplicated contacts.',
             error: 'Bad Request',
             statusCode: 400,
-            meta: { contactId: 'existing999' },
+            meta: {
+              contactId: options.duplicateContactId ?? 'existing999',
+              ...(options.duplicateMatchingField ? { matchingField: options.duplicateMatchingField } : {}),
+            },
           }),
           { status: 400 },
         );
       }
+      if (options?.failWhenPhone && body.phone) {
+        return new Response(JSON.stringify({ message: 'duplicate phone' }), { status: 400 });
+      }
       if (options?.failWhenCountry && body.country === options.failWhenCountry) {
         return new Response(JSON.stringify({ message: ['country must be valid'] }), { status: 422 });
+      }
+      if (options?.upsertStatus) {
+        const bodyJson = options.upsertJson ?? { message: 'nope' };
+        return new Response(JSON.stringify(bodyJson), { status: options.upsertStatus });
       }
       return new Response(JSON.stringify({ contact: { id: 'created123' } }), { status: 201 });
     }
@@ -127,9 +147,12 @@ function mockGhl(options?: {
   return { calls, fetchImpl };
 }
 
-function upsertBodies(calls: Call[]) {
+function createBodies(calls: Call[]) {
   return calls
-    .filter((call) => call.url.endsWith('/contacts/upsert'))
+    .filter((call) => {
+      const path = new URL(call.url).pathname;
+      return String(call.init.method || '').toUpperCase() === 'POST' && (path === '/contacts' || path === '/contacts/');
+    })
     .map((call) => JSON.parse(String(call.init.body)) as Record<string, unknown>);
 }
 
@@ -181,7 +204,7 @@ describe('processHighLevelLead', () => {
     expect(JSON.stringify(result.body)).not.toContain('pit-test-token');
   });
 
-  it('upserts, tags, and notes a lead without putting the token in the response', async () => {
+  it('creates a brand new lead when neither email nor phone matches', async () => {
     const { calls, fetchImpl } = mockGhl();
     const result = await processHighLevelLead(SAMPLE, {
       env: ENV,
@@ -189,24 +212,26 @@ describe('processHighLevelLead', () => {
       skipRateLimit: true,
       now: 1_700_000_000_000,
     });
-    expect(result).toEqual({ status: 200, body: { success: true, contactId: 'contact123', new: true } });
+    expect(result).toEqual({ status: 200, body: { success: true, contactId: 'created123', new: true } });
     expect(calls.map((call) => call.url)).toEqual([
       'https://services.leadconnectorhq.com/locations/SjwWFl3GxGB1WQ1LbzLq/customFields?model=contact',
       'https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=SjwWFl3GxGB1WQ1LbzLq&email=jane.doe%40pfizer.com',
       'https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=SjwWFl3GxGB1WQ1LbzLq&number=%2B12025550143',
-      'https://services.leadconnectorhq.com/contacts/upsert',
-      'https://services.leadconnectorhq.com/contacts/contact123/tags',
-      'https://services.leadconnectorhq.com/contacts/contact123/notes',
+      'https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=SjwWFl3GxGB1WQ1LbzLq&number=%2B1+202+555+0143',
+      'https://services.leadconnectorhq.com/contacts/',
+      'https://services.leadconnectorhq.com/contacts/created123/tags',
+      'https://services.leadconnectorhq.com/contacts/created123/notes',
     ]);
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
     const auth = calls[1].init.headers as Record<string, string>;
     expect(auth.Authorization).toBe('Bearer pit-test-token');
     expect(auth.Version).toBe('2021-07-28');
-    const upsert = upsertBodies(calls)[0];
-    expect(upsert.tags).toBeUndefined();
-    expect(upsert.phone).toBe('+1 202 555 0143');
-    const tags = JSON.parse(String(calls[4].init.body)) as { tags: string[] };
+    const created = createBodies(calls)[0];
+    expect(created.tags).toBeUndefined();
+    expect(created.phone).toBe('+1 202 555 0143');
+    const tags = JSON.parse(String(calls[5].init.body)) as { tags: string[] };
     expect(tags.tags).toEqual(['website-lead', 'form:contact_section', 'request:contact-request']);
-    const note = JSON.parse(String(calls[5].init.body)) as { body: string };
+    const note = JSON.parse(String(calls[6].init.body)) as { body: string };
     expect(note.body).toContain('Timeline: 1-3 months');
     expect(result.body.duplicatePhone).toBeUndefined();
     expect(JSON.stringify(result.body)).not.toContain('pit-test-token');
@@ -220,7 +245,7 @@ describe('processHighLevelLead', () => {
       skipRateLimit: true,
     });
     expect(result.status).toBe(200);
-    const bodies = upsertBodies(calls);
+    const bodies = createBodies(calls);
     expect(bodies).toHaveLength(2);
     expect(bodies[0].phone).toBe('+1 202 555 0143');
     expect(bodies[1].phone).toBeUndefined();
@@ -235,7 +260,7 @@ describe('processHighLevelLead', () => {
       skipRateLimit: true,
     });
     expect(result.status).toBe(200);
-    expect(upsertBodies(calls)[0].customFields).toBeUndefined();
+    expect(createBodies(calls)[0].customFields).toBeUndefined();
     error.mockRestore();
   });
 
@@ -280,7 +305,7 @@ describe('processHighLevelLead', () => {
       { env: ENV, fetchImpl, skipRateLimit: true },
     );
     expect(result.status).toBe(200);
-    const bodies = upsertBodies(calls);
+    const bodies = createBodies(calls);
     expect(bodies).toHaveLength(2);
     expect(bodies[0].country).toBe('Hong Kong SAR China');
     expect(bodies[1].country).toBeUndefined();
@@ -325,7 +350,8 @@ describe('processHighLevelLead', () => {
 
     const withBoundary = await processHighLevelLead({ workEmail: exactly254 }, base);
     expect(withBoundary.status).toBe(200);
-    expect(calls.filter((call) => call.url.endsWith('/contacts/upsert'))).toHaveLength(2);
+    expect(createBodies(calls)).toHaveLength(2);
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
   });
 
   it('returns 400 when HighLevel rejects the email and does not retry or leak the upstream message', async () => {
@@ -344,7 +370,8 @@ describe('processHighLevelLead', () => {
         body: { error: 'Please check your email address and try again.' },
       });
       expect(JSON.stringify(result.body)).not.toMatch(/must be an email|is invalid|Bad Request/i);
-      expect(calls.filter((call) => call.url.endsWith('/contacts/upsert'))).toHaveLength(1);
+      expect(createBodies(calls)).toHaveLength(1);
+      expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
       expect(calls.some((call) => call.url.includes('/tags'))).toBe(false);
       expect(error).toHaveBeenCalled();
       error.mockRestore();
@@ -358,7 +385,8 @@ describe('processHighLevelLead', () => {
     const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
     expect(result.status).toBe(502);
     expect(result.body).toEqual({ error: 'Could not save your request. Please try again.' });
-    expect(calls.filter((call) => call.url.endsWith('/contacts/upsert')).length).toBeGreaterThan(1);
+    expect(createBodies(calls).length).toBeGreaterThan(1);
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
     error.mockRestore();
     warn.mockRestore();
   });
@@ -479,10 +507,11 @@ describe('processHighLevelLead', () => {
       { ...SAMPLE, phone: '12' },
       { env: ENV, fetchImpl, skipRateLimit: true },
     );
-    expect(result).toEqual({ status: 200, body: { success: true, contactId: 'contact123', new: true } });
+    expect(result).toEqual({ status: 200, body: { success: true, contactId: 'created123', new: true } });
     expect(calls.some((call) => call.url.includes('number='))).toBe(false);
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
     expect(calls.some((call) => call.url.includes('/contacts/search/duplicate?'))).toBe(true);
-    const upsert = upsertBodies(calls)[0];
+    const upsert = createBodies(calls)[0];
     expect(upsert.phone).toBeUndefined();
     expect(upsert.email).toBe('jane.doe@pfizer.com');
     expect(result.body.duplicatePhone).toBeUndefined();
@@ -498,5 +527,115 @@ describe('processHighLevelLead', () => {
     const note = JSON.parse(String(calls.find((call) => call.url.endsWith('/notes'))?.init.body)) as { body: string };
     expect(note.body).toContain('Phone also used by contact otherContact1 (no email) — duplicate-phone check pending');
     expect(calls.some((call) => call.url.includes('otherContact1'))).toBe(false);
+  });
+
+  it('creates a new contact when every phone lookup misses, and does not upsert the existing owner', async () => {
+    const phone = '+44 0000 000000';
+    const { calls, fetchImpl } = mockGhl();
+    const result = await processHighLevelLead(
+      { ...SAMPLE, phone },
+      { env: ENV, fetchImpl, skipRateLimit: true },
+    );
+    expect(result).toEqual({ status: 200, body: { success: true, contactId: 'created123', new: true } });
+    expect(result.body.duplicatePhone).toBeUndefined();
+    const numbers = calls
+      .filter((call) => call.url.includes('number='))
+      .map((call) => new URL(call.url).searchParams.get('number'));
+    expect(numbers).toEqual(['+440000000000', '+44 0000 000000']);
+    const created = createBodies(calls);
+    expect(created).toHaveLength(1);
+    expect(created[0].phone).toBe('+44 0000 000000');
+    expect(created[0].email).toBe('jane.doe@pfizer.com');
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
+    expect(calls.some((call) => call.init.method === 'PUT')).toBe(false);
+    expect(calls.some((call) => call.url.includes('existingOwner'))).toBe(false);
+  });
+
+  it('finds a formatted phone on the raw lookup after E.164 misses', async () => {
+    const phone = '+44 0000 000000';
+    const { calls, fetchImpl } = mockGhl({
+      phoneMissNumbers: ['+440000000000'],
+      phoneMatch: { id: 'formattedOwner', email: 'owner@example.com' },
+    });
+    const result = await processHighLevelLead(
+      { ...SAMPLE, phone },
+      { env: ENV, fetchImpl, skipRateLimit: true },
+    );
+    expect(result).toEqual({
+      status: 200,
+      body: { success: true, contactId: 'created123', new: true, duplicatePhone: true },
+    });
+    const numbers = calls
+      .filter((call) => call.url.includes('number='))
+      .map((call) => new URL(call.url).searchParams.get('number'));
+    expect(numbers).toEqual(['+440000000000', '+44 0000 000000']);
+    expect(calls.some((call) => call.url.includes('formattedOwner') || call.url.endsWith('/contacts/upsert'))).toBe(false);
+    expect(calls.some((call) => call.init.method === 'PUT')).toBe(false);
+    const tags = JSON.parse(String(calls.find((call) => call.url.endsWith('/tags'))?.init.body)) as { tags: string[] };
+    expect(tags.tags).toContain('phone-duplicate');
+    const note = JSON.parse(String(calls.find((call) => call.url.endsWith('/notes'))?.init.body)) as { body: string };
+    expect(note.body).toContain('Phone also used by contact formattedOwner (owner@example.com) — duplicate-phone check pending');
+  });
+
+  it('treats a create duplicate error as a phone duplicate and does not update that contact', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const defs: GhlCustomField[] = [...DEFS, { id: 'ph1', fieldKey: 'contact.phone', dataType: 'PHONE' }];
+    const { calls, fetchImpl } = mockGhl({ disallowDuplicates: true, defs });
+    const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+    expect(result).toEqual({
+      status: 200,
+      body: { success: true, contactId: 'created123', new: true, duplicatePhone: true },
+    });
+    const created = createBodies(calls);
+    expect(created).toHaveLength(2);
+    expect(created[0].phone).toBe('+1 202 555 0143');
+    expect(created[1].phone).toBeUndefined();
+    expect(created[1].customFields).toEqual(
+      expect.arrayContaining([
+        { id: 'ph1', fieldValue: '+1 202 555 0143', field_value: '+1 202 555 0143' },
+      ]),
+    );
+    const tags = JSON.parse(String(calls.find((call) => call.url.endsWith('/tags'))?.init.body)) as { tags: string[] };
+    expect(tags.tags).toEqual([
+      'website-lead',
+      'form:contact_section',
+      'request:contact-request',
+      'phone-duplicate',
+      'phone-not-saved',
+    ]);
+    const note = JSON.parse(String(calls.find((call) => call.url.endsWith('/notes'))?.init.body)) as { body: string };
+    expect(note.body).toContain('Phone also used by contact existing999 (no email) — duplicate-phone check pending');
+    expect(note.body).toContain('Phone (not stored on the contact record): +1 202 555 0143');
+    expect(calls.some((call) => call.url.includes('existing999') || call.url.endsWith('/contacts/upsert'))).toBe(false);
+    expect(calls.some((call) => call.init.method === 'PUT')).toBe(false);
+    expect(warn).toHaveBeenCalledWith(expect.stringMatching(/existing999 left unchanged[\s\S]*Allow Duplicate Contact/));
+    warn.mockRestore();
+  });
+
+  it('updates the contact when the duplicate error says the match was the email', async () => {
+    const { calls, fetchImpl } = mockGhl({
+      disallowDuplicates: true,
+      duplicateMatchingField: 'email',
+      duplicateContactId: 'emailOwner1',
+    });
+    const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+    expect(result).toEqual({ status: 200, body: { success: true, contactId: 'emailOwner1', new: false } });
+    expect(result.body.duplicatePhone).toBeUndefined();
+    const put = calls.find((call) => call.init.method === 'PUT');
+    expect(put?.url).toBe('https://services.leadconnectorhq.com/contacts/emailOwner1');
+    expect(createBodies(calls)).toHaveLength(1);
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
+    const tags = JSON.parse(String(calls.find((call) => call.url.endsWith('/tags'))?.init.body)) as { tags: string[] };
+    expect(tags.tags).not.toContain('phone-duplicate');
+    expect(tags.tags).not.toContain('phone-not-saved');
+  });
+});
+
+describe('phoneLookupNumbers', () => {
+  it('tries E.164 and then the original string, and never more than two extras', () => {
+    expect(phoneLookupNumbers('+44 0000 000000')).toEqual(['+440000000000', '+44 0000 000000']);
+    expect(phoneLookupNumbers('+1 202 555 0143')).toEqual(['+12025550143', '+1 202 555 0143']);
+    expect(phoneLookupNumbers('12')).toEqual([]);
+    expect(phoneLookupNumbers('+44 0000 000000').length).toBeLessThanOrEqual(3);
   });
 });
