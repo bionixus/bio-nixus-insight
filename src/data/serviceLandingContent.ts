@@ -3069,6 +3069,164 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
       },
     ],
   },
+
+  /** Hub service: /healthcare-market-research/services/market-access ([BIO-1178] batch 4). */
+  'market-access': {
+    hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+    regulatory: {
+      heading: 'Regulatory and payer context for pharmaceutical market access research',
+      paragraphs: [
+        'Pharmaceutical market access research must reflect country-specific regulators — SFDA in Saudi Arabia, MOHAP and emirate authorities (DHA, DOH) in the UAE, MOH Kuwait, and MOPH Qatar — rather than a single Gulf average. BioNixus scopes studies around the approval, listing, pricing, and procurement pathways that actually gate uptake for your therapy across MENA, the UK, and EU5.',
+        'Centralized procurement (notably NUPCO in Saudi Arabia) and hospital formulary committees create step-changes in access that trial data alone rarely predicts. Research programmes therefore map institutional decision points alongside clinician champions who translate dossier claims into protocol behaviour.',
+        "SFDA's Economic Evaluation System (EES), mandatory from 1 July 2025, raises the bar for pharmacoeconomic and budget-impact evidence at registration. Access and HEOR modules designed for GCC markets should anticipate EES requirements early — not retrofit them at submission when deferral risk is already high.",
+        'UK NICE-aligned cost-effectiveness rituals and EU5 national HTA, rebate, and regional autonomy frameworks diverge from Gulf tender calendars. Comparable survey cores enable regional governance; local modules preserve the access realism that determines whether launch spend matches committee windows.',
+        'Ethics committee approvals, hospital data-use agreements, and MOH research permissions can extend timelines when not mapped during feasibility. BioNixus coordinates access paths before recruitment calendars lock so payer and clinician interviews land before decisive listing votes.',
+      ],
+    },
+    marketContext: {
+      heading: 'Why market access research requires local institutional evidence',
+      paragraphs: [
+        'GCC pharmaceutical spend is commonly cited in the low tens of billions USD (trade estimates 2024; BioNixus market analysis), with MENA pharmaceutical growth often described in a roughly 6–8% CAGR range (secondary analyst consensus 2023–2025). Specialty and chronic-care portfolios drive much of the innovative volume — yet uptake still hinges on formulary, tender, and reimbursement gates that syndicated trackers rarely surface with decision-stage specificity.',
+        'Willingness-to-pay exercises fail when they ignore procedural calendars, comparator acceptability rituals, and budget-impact skepticism that gate real uptake. BioNixus maps payer objections, formulary stewardship behaviour, and tender scoring dimensions so HEOR, medical, and brand teams refine dossiers before submission rather than after deferral.',
+        'Versus global vendors (IQVIA MENA, legacy Kantar Health footprints) and access consultancies (including ZS-style models) that underweight bilingual Gulf fieldwork or compress country pathways into one regional average, BioNixus emphasises GCC-native execution, access/HEOR depth, and proposal speed tied to observable committee rhythms.',
+        'Launch windows are shorter and access bars are higher than in many mature markets. Research that ties prescriber behaviour to payer and procurement reality reduces expensive rework before SFDA, MOHAP, MOH, MOPH, NICE, or EU5 HTA milestones.',
+        'Multinational manufacturers often run parallel GCC and EU cells within global access mandates. The strongest programmes align protocol design, objection coding, and readout formats so country insights roll up cleanly for regional leadership without losing local execution realism.',
+      ],
+    },
+    services: {
+      heading: 'Market access research services BioNixus delivers',
+      items: [
+        {
+          title: 'Access barrier diagnosis',
+          description:
+            'Structured qualitative and quantitative modules surface institutional objections, budget-impact thresholds, comparator acceptability issues, and formulary hesitations before global dossiers lock — coded by decision stage (registration, formulary, tender, post-listing defence).',
+        },
+        {
+          title: 'Payer and authority objection forensics',
+          description:
+            'Ranked hesitations by stakeholder type — formulary committees, HTA reviewers, hospital procurement leads, payer pharmacists — so medical and access teams know which evidence gap to close first.',
+        },
+        {
+          title: 'Pricing and value narrative testing',
+          description:
+            'Neutral vignettes and pre-specified reaction coding test value stories, outcomes-based access discussions, and tender scenario notes without promotional contamination that would fail compliance review.',
+        },
+        {
+          title: 'Formulary and influence mapping',
+          description:
+            'Stakeholder sequencing maps who accelerates versus defers listing, which institutions batch therapeutic switches, and where pharmacist substitution compresses choice after medical endorsement.',
+        },
+        {
+          title: 'HEOR and RWE integration',
+          description:
+            'Qualitative payer hesitations — extrapolation realism, subgroup fragility, adherence doubts — inform targeted HEOR refinement and real-world evidence priorities instead of static models misaligned with live stakeholder discourse.',
+        },
+        {
+          title: 'Launch sequencing alignment',
+          description:
+            'Country order, evidence sequencing, and affiliate resource allocation tied to registration timing, formulary cycles, and procurement windows that actually bind uptake across GCC, UK, and EU5 corridors.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'Market access research methodology',
+      paragraphs: [
+        'Objective lock to one access decision — listing, pricing, sequencing, or competitive defence — before instrument design prevents unfocused stakeholder lists that dilute actionable readouts. BioNixus requires single-objective clarity so recruitment, coding, and deliverables align to one commercial KPI owner.',
+        'Stakeholder sampling prioritises institutional influence and veto power over raw completion counts. Formulary chairs, HTA reviewers, procurement leads, and clinician champions who translate dossiers into protocol behaviour receive purposive weight; ceremonial titles without gate authority do not inflate sample vanity metrics.',
+        'Message and objection coding uses pre-specified frameworks aligned to decision stage so access and medical teams receive comparable insight packs across Saudi Arabia, UAE, Kuwait, Qatar, UK, and EU5 cells without forcing identical institutional assumptions.',
+        'Every engagement includes a 30/60/90 action roadmap linked to committee and tender calendars. Named owners for evidence-build, payer engagement, and message refinement tasks enable execution immediately after readout rather than secondary synthesis workshops that miss listing windows.',
+        'Audit-ready methodology appendices document recruitment, exclusion rules, limitation statements, and bilingual instrument QA for internal compliance, medical affairs sign-off, and procurement diligence.',
+      ],
+    },
+    useCases: {
+      heading: 'Common pharmaceutical market access research use cases',
+      paragraph:
+        'Market access research peaks when launch sequencing, formulary submission, pricing narrative design, or competitive defence requires local institutional evidence across Middle East and European corridors.',
+      areas: [
+        'Pre-launch barrier diagnosis',
+        'Formulary objection mapping',
+        'Pricing and value narrative testing',
+        'SFDA EES-aligned evidence planning',
+        'Tender and procurement scenario notes',
+        'Biosimilar defence qualitative modules',
+        'HEOR model assumption stress-testing',
+        'Multi-country launch sequencing',
+      ],
+    },
+    process: {
+      heading: 'Market access research engagement timeline',
+      steps: [
+        {
+          title: 'Objective and stakeholder lock',
+          body: 'Confirm decision gate, sample frame, and institutional paths — typically seven to twelve days to proposal for focused scopes. Feasibility maps committee calendars, ethics permissions, and recruitment sources before budget lock.',
+        },
+        {
+          title: 'Instrument and guide QA',
+          body: 'Bilingual materials, objection frameworks, and value-narrative vignettes reviewed for medical accuracy, promotional neutrality, and decision-stage specificity before field.',
+        },
+        {
+          title: 'Primary research field',
+          body: 'Depth interviews and/or quantitative modules with daily QC. Influence-weighted sampling and exclusion logs maintain audit readiness for medical affairs and compliance review.',
+        },
+        {
+          title: 'Action roadmap delivery',
+          body: 'Objection libraries, evidence-gap maps, pricing narrative tests, and a 30/60/90 plan with named owners synchronized to registration, formulary, and tender windows.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'Market access research outputs',
+      bullets: [
+        ...SERVICE_LANDING_DELIVERABLES,
+        'Objection library ranked by decision stage and stakeholder type',
+        'Tested value narrative variants with reaction coding',
+        'Launch sequencing and evidence-gap map tied to committee calendars',
+      ],
+    },
+    decisionBlueprint: {
+      why: 'Market access choices carry high financial risk when dossier claims stop converting to funded uptake — especially under SFDA EES, Gulf procurement, NICE, and EU5 HTA calendars.',
+      evidence:
+        'Barrier diagnosis and narrative testing before submission predict fewer late-stage rework cycles than dossier-first approaches that discover institutional objections only after deferral.',
+      next: 'Run barrier diagnosis first, map formulary and tender influence, then align the evidence package to stakeholders who move the decision — routed through the healthcare market research hub for country and therapy context.',
+    },
+    faqs: [
+      {
+        question: 'What is pharmaceutical market access research in the Middle East?',
+        answer:
+          'Market access research clarifies how payers, authorities, and institutional procurement bodies evaluate evidence, price, and implementation before a therapy reaches eligible patients. In GCC markets, that means mapping SFDA, MOHAP/DHA/DOH, MOH Kuwait, and MOPH Qatar pathways alongside NUPCO and hospital formulary committees — not treating the Gulf as one homogeneous payer. BioNixus maps objection patterns, comparator acceptability, budget-impact skepticism, and procedural calendars so HEOR, medical, and brand teams refine dossiers and launch sequencing with behavioural realism rather than generic willingness-to-pay exercises alone.',
+      },
+      {
+        question: 'How does market access research differ across GCC, UK, and EU5?',
+        answer:
+          'GCC contexts often feature consolidated procurement horizons and pharmacist substitution overlays; the UK applies NICE-aligned cost-effectiveness rituals; EU5 markets fragment by national HTA, rebate, and regional autonomy. GCC pharmaceutical spend is commonly cited in the low tens of billions USD (trade estimates 2024; BioNixus market analysis), but country pathways still diverge sharply. BioNixus embeds local modules while maintaining comparable cores for regional governance so affiliates receive one evidence architecture rather than incompatible country decks.',
+      },
+      {
+        question: 'Which stakeholders should market access studies include?',
+        answer:
+          'Payer pharmacists, formulary committees, HTA reviewers where applicable, hospital procurement leads, and clinician champions who translate dossier claims into protocol behaviour. Sampling reflects veto and acceleration power along the access route — not ceremonial titles. In Gulf institutions, tender evaluators and pharmacy directors often bind uptake even when medical endorsement remains high; studies that omit them misread listing risk.',
+      },
+      {
+        question: 'Can market access research integrate with HEOR modelling and RWE?',
+        answer:
+          'Yes. Qualitative payer hesitations — extrapolation realism, subgroup fragility, adherence doubts — inform targeted HEOR refinement and real-world evidence priorities instead of static models misaligned with live stakeholder discourse. BioNixus coordinates iterative loops so utilization metrics, treatment durations, and resource-use patterns can populate economic models without re-fielding primary data after submission.',
+      },
+      {
+        question: 'How does BioNixus differentiate from IQVIA MENA, Kantar, or ZS-style access consulting?',
+        answer:
+          'BioNixus emphasises GCC-native bilingual fieldwork, country-specific regulator and procurement mapping, integrated access/HEOR depth, and proposal speed tied to observable committee calendars. Global syndicated footprints and pure access consultancies often underweight Gulf institutional sequencing or compress MENA into one regional average. Sponsors receive audit-ready methodology appendices and 30/60/90 action roadmaps with named owners — not slide-only insight decks that require secondary synthesis before affiliates can execute.',
+      },
+      {
+        question: 'What deliverables come from a market access engagement?',
+        answer:
+          'Objection libraries ranked by decision stage, evidence-gap maps, pricing narrative tests, tender scenario notes, and executive summaries linking access risks to commercial KPI owners. Outputs connect to the healthcare market research hub, GCC market access guides, and related HEOR or RWE modules so brand, medical, and access teams share one behavioural evidence base across MENA, the UK, and EU5.',
+      },
+      {
+        question: 'How should teams sequence market access research before launch?',
+        answer:
+          'Run barrier diagnosis and influence mapping first, then align evidence packages and value narratives to the gates that bind uptake — registration timing, formulary cycles, procurement windows — before scaling field investment. BioNixus workshops optionally translate objection libraries into explicit launch gates: which markets can absorb spend now, which require HEOR refinement first, and which should wait for committee calendar alignment.',
+      },
+    ],
+  },
 };
 
 /** Shared expansion blocks merged at read time so every P0 landing page clears 2,000 words ([BIO-503]). */

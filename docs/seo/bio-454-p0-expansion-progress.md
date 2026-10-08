@@ -45,6 +45,30 @@
 
 Production verified 2026-06-22 via `node scripts/audit-thin-pages-bio448.mjs`.
 
+## BIO-1178 batch 4 reinforcement (2026-07-30)
+
+Reinforced the same five P0 pages with research-brief market context, longer FAQs, and a hub `market-access` `SERVICE_LANDING_CONTENT` entry (wired through `ServicePage` → `ExpandedServiceLandingContent`).
+
+| Path | Prior wc (BIO-448 inventory) | After BIO-1178 (local SSR) | Notes |
+|---|---:|---:|---|
+| `/healthcare-market-research/therapy/aesthetic-medicine` | 1413 | **2350w** | +GCC/MENA market-context section; 7 expanded FAQs |
+| `/healthcare-market-research/therapy/vaccines` | 1389 | **3472w** | +GCC/MENA market-context section; 7 expanded FAQs |
+| `/healthcare-market-research/therapy/diabetes` | 1385 | **3680w** | +GCC/MENA market-context section; 7 expanded FAQs |
+| `/healthcare-market-research/therapy/cardiology` | 1376 | **2351w** | +GCC/MENA market-context section; 7 expanded FAQs |
+| `/healthcare-market-research/services/market-access` | 1230 | **4130w** | Full `SERVICE_LANDING_CONTENT['market-access']` + FAQ merge |
+
+Files: `therapyExpandedPageContent.ts`, `therapyMarketReferenceContent.ts`, `serviceLandingContent.ts`, `ServicePage.tsx`.
+
+Local verification (2026-07-30):
+
+```bash
+npm run build:client && npm run build:server && npm run build:move-template
+NODE_ENV=production PORT=5174 node server.js
+SITE_AUDIT_BASE_URL=http://localhost:5174 node scripts/audit-thin-pages-bio448.mjs
+```
+
+All five target paths returned HTTP 200 and ≥2,000 main-content words.
+
 ## Completed pages (batch 5 — BIO-503 sprint 2026-06-21)
 
 | Path | Prod verify (2026-06-21) | Hub in first 200w | Status |
