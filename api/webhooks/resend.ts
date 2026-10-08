@@ -1,5 +1,13 @@
 import { createClient } from '@sanity/client'
-import crypto from 'crypto'
+import { Webhook } from 'svix'
+
+// Vercel parses JSON before the handler unless this is set, which destroys the
+// exact bytes Svix signed. Read the request stream and JSON.parse afterwards.
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+}
 
 const sanityServer = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -9,27 +17,94 @@ const sanityServer = createClient({
   token: process.env.SANITY_API_TOKEN?.trim(),
 })
 
+type HeaderValue = string | string[] | undefined
+type HeaderMap = Record<string, HeaderValue>
+
+function headerValue(headers: HeaderMap | undefined, name: string): string | undefined {
+  if (!headers) return undefined
+  const raw = headers[name] ?? headers[name.toLowerCase()]
+  if (Array.isArray(raw)) {
+    const first = raw.find((value) => typeof value === 'string' && value.length > 0)
+    return first
+  }
+  return typeof raw === 'string' && raw.length > 0 ? raw : undefined
+}
+
+function signatureHeader(headers: HeaderMap | undefined): string | undefined {
+  if (!headers) return undefined
+  const raw = headers['svix-signature'] ?? headers['Svix-Signature']
+  if (Array.isArray(raw)) {
+    const parts = raw.filter((value) => typeof value === 'string' && value.length > 0)
+    return parts.length > 0 ? parts.join(' ') : undefined
+  }
+  return typeof raw === 'string' && raw.length > 0 ? raw : undefined
+}
+
+async function readRawBody(req: AsyncIterable<Uint8Array | string> & { body?: unknown }): Promise<string> {
+  const body = req.body
+  if (typeof body === 'string') return body
+  if (body instanceof Uint8Array) return Buffer.from(body).toString('utf8')
+
+  if (typeof req[Symbol.asyncIterator] !== 'function') return ''
+
+  const chunks: Buffer[] = []
+  for await (const chunk of req) {
+    chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : Buffer.from(chunk))
+  }
+  return Buffer.concat(chunks).toString('utf8')
+}
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  // Verify webhook signature (Resend provides this)
-  const signature = req.headers['resend-signature']
-  const webhookSecret = process.env.RESEND_WEBHOOK_SECRET
-
-  if (webhookSecret) {
-    const expectedSignature = crypto
-      .createHmac('sha256', webhookSecret)
-      .update(JSON.stringify(req.body))
-      .digest('hex')
-
-    if (signature !== expectedSignature) {
-      return res.status(401).json({ error: 'Invalid signature' })
-    }
+  let rawBody: string
+  try {
+    rawBody = await readRawBody(req)
+  } catch (error) {
+    console.error('Resend webhook failed to read the raw body:', error)
+    return res.status(400).json({ error: 'Invalid JSON' })
   }
 
-  const event = req.body
+  const webhookSecret = process.env.RESEND_WEBHOOK_SECRET?.trim()
+  if (webhookSecret) {
+    const svixId = headerValue(req.headers, 'svix-id')
+    const svixTimestamp = headerValue(req.headers, 'svix-timestamp')
+    const svixSignature = signatureHeader(req.headers)
+
+    if (!svixId || !svixTimestamp || !svixSignature) {
+      console.error('Resend webhook rejected: missing Svix signature headers')
+      return res.status(401).json({ error: 'Invalid signature' })
+    }
+
+    try {
+      const webhook = new Webhook(webhookSecret)
+      webhook.verify(rawBody, {
+        'svix-id': svixId,
+        'svix-timestamp': svixTimestamp,
+        'svix-signature': svixSignature,
+      })
+    } catch (error) {
+      console.error('Resend webhook rejected: Svix signature verification failed:', error)
+      return res.status(401).json({ error: 'Invalid signature' })
+    }
+  } else {
+    console.warn('RESEND_WEBHOOK_SECRET is unset; processing Resend webhook without signature verification')
+  }
+
+  let event: any
+  try {
+    event = JSON.parse(rawBody)
+  } catch (error) {
+    console.error('Resend webhook body is not valid JSON:', error)
+    return res.status(400).json({ error: 'Invalid JSON' })
+  }
+
+  if (!event || typeof event !== 'object') {
+    console.log('Resend webhook payload was not a JSON object')
+    return res.status(200).json({ received: true })
+  }
 
   try {
     // Extract IDs from email tags
@@ -207,8 +282,9 @@ export default async function handler(req: any, res: any) {
 
     return res.status(200).json({ received: true })
   } catch (error: any) {
-    console.error('Webhook error:', error)
-    return res.status(500).json({ error: error.message })
+    // Resend disables endpoints that keep failing. A Sanity miss must not 5xx.
+    console.error('Resend webhook Sanity update failed; acknowledging with 200 so Resend does not retry:', error)
+    return res.status(200).json({ received: true })
   }
 }
 
