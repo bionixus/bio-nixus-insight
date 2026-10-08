@@ -1,6 +1,12 @@
 /**
- * Server-only HighLevel (LeadConnector) contact upsert for website leads.
+ * Server-only HighLevel (LeadConnector) contact write for website leads.
  * Tokens are read from the environment. Never import this module from client code.
+ *
+ * Lookup order: email (GET /contacts/search/duplicate), then E.164 phone.
+ * An email match is updated in place. A phone match with a different email is
+ * created as its own contact and tagged phone-duplicate so a workflow can
+ * confirm it. Upsert is only used when neither lookup matches, because upsert
+ * merges on phone and can overwrite another contact's email.
  *
  * Custom fields are matched by fieldKey against the live location. IDs are not
  * hard-coded. On BioNixus Global (SjwWFl3GxGB1WQ1LbzLq) the keys that exist are
@@ -93,6 +99,7 @@ type LeadResult = {
     success?: boolean;
     contactId?: string;
     new?: boolean;
+    duplicatePhone?: boolean;
     skipped?: boolean;
     error?: string;
   };
@@ -157,6 +164,19 @@ export function phoneForUpsert(raw: string | undefined): string | null {
   if (digits.length < 8 || digits.length > 15) return null;
   if (!/^[\d\s+().-]+$/.test(trimmed)) return null;
   return trimmed;
+}
+
+/**
+ * E.164 form used only for duplicate lookup. The contact record keeps phoneForUpsert.
+ * National numbers that start with 0 are not guessed into a country code.
+ */
+export function phoneToE164(raw: string | undefined): string | null {
+  const usable = phoneForUpsert(raw);
+  if (!usable) return null;
+  const digits = usable.replace(/\D/g, '');
+  if (usable.startsWith('+')) return `+${digits}`;
+  if (digits.startsWith('0')) return null;
+  return `+${digits}`;
 }
 
 /** Names HighLevel rejects on contact upsert. The original value still goes in the note. */
@@ -473,6 +493,308 @@ function createdFlag(json: unknown): boolean | undefined {
   return typeof value === 'boolean' ? value : undefined;
 }
 
+const PHONE_FIELD_KEY = /(^|\.)(phone|mobile|phone_number)$/i;
+const DUPLICATES_DISALLOWED = /does not allow duplicated contacts/i;
+const SAVE_ERROR = 'Could not save your request. Please try again.';
+
+type DuplicateContact = { id: string; email: string };
+
+function duplicateContactFrom(json: unknown): DuplicateContact | null {
+  if (!json || typeof json !== 'object') return null;
+  const contact = (json as { contact?: unknown }).contact;
+  if (!contact || typeof contact !== 'object') return null;
+  const record = contact as { id?: unknown; email?: unknown };
+  const id = typeof record.id === 'string' && /^[A-Za-z0-9]+$/.test(record.id) ? record.id : undefined;
+  if (!id) return null;
+  const email = typeof record.email === 'string' ? record.email.trim().toLowerCase() : '';
+  return { id, email };
+}
+
+function duplicatesDisallowed(response: GhlResponse) {
+  if (response.status !== 400 && response.status !== 422) return false;
+  return DUPLICATES_DISALLOWED.test(highLevelErrorText(response));
+}
+
+/** Present on the duplicate-blocked error. Never used as a write target. */
+function blockedDuplicateId(response: GhlResponse): string | undefined {
+  const json = response.json;
+  if (!json || typeof json !== 'object') return undefined;
+  const meta = (json as { meta?: { contactId?: unknown } }).meta;
+  const id = meta?.contactId;
+  return typeof id === 'string' && /^[A-Za-z0-9]+$/.test(id) ? id : undefined;
+}
+
+function saveFailure(): LeadResult {
+  return { status: 502, body: { error: SAVE_ERROR } };
+}
+
+function leadSaved(contactId: string | undefined, created: boolean | undefined, duplicatePhone = false): LeadResult {
+  return {
+    status: 200,
+    body: {
+      success: true,
+      ...(contactId ? { contactId } : {}),
+      ...(typeof created === 'boolean' ? { new: created } : {}),
+      ...(duplicatePhone ? { duplicatePhone: true } : {}),
+    },
+  };
+}
+
+function bodyForUpdate(body: Record<string, unknown>) {
+  const next = { ...body };
+  delete next.locationId;
+  return next;
+}
+
+function duplicatePhoneNote(other: DuplicateContact, storedPhone: string | null, original: string) {
+  const shown = other.email.trim() || 'no email';
+  const lines = [`Phone also used by contact ${other.id} (${shown}) — duplicate-phone check pending`];
+  if (storedPhone) lines.push(`Phone (not stored on the contact record): ${storedPhone}`);
+  if (original) lines.push(original);
+  return clip(lines.join('\n'), 5000);
+}
+
+function phoneStorageField(defs: GhlCustomField[], existing: unknown, phone: string) {
+  const used = new Set<string>();
+  if (Array.isArray(existing)) {
+    for (const item of existing) {
+      if (item && typeof item === 'object' && typeof (item as { id?: unknown }).id === 'string') {
+        used.add((item as { id: string }).id);
+      }
+    }
+  }
+  for (const def of defs) {
+    if (!def.id || used.has(def.id)) continue;
+    const phoneType = def.dataType === 'PHONE';
+    const keyMatch = Boolean(def.fieldKey && PHONE_FIELD_KEY.test(def.fieldKey));
+    if (!phoneType && !keyMatch) continue;
+    if (!textual(def)) continue;
+    return { id: def.id, fieldValue: phone, field_value: phone };
+  }
+  return null;
+}
+
+function withoutPhoneBody(plan: LeadWritePlan, defs: GhlCustomField[], phone: string) {
+  const base: Record<string, unknown> = { ...(plan.upsertWithoutPhone ?? plan.upsert) };
+  delete base.phone;
+  const extra = phoneStorageField(defs, base.customFields, phone);
+  if (extra) {
+    const fields = Array.isArray(base.customFields) ? [...base.customFields] : [];
+    fields.push(extra);
+    base.customFields = fields;
+  }
+  return base;
+}
+
+async function findDuplicateContact(
+  fetchImpl: typeof fetch,
+  apiKey: string,
+  locationId: string,
+  query: { email?: string; number?: string },
+): Promise<{ contact: DuplicateContact | null } | { failure: LeadResult }> {
+  const params = new URLSearchParams({ locationId });
+  if (query.email) params.set('email', query.email);
+  if (query.number) params.set('number', query.number);
+  let response: GhlResponse;
+  try {
+    response = await ghlFetch(fetchImpl, apiKey, `/contacts/search/duplicate?${params.toString()}`, 'GET');
+  } catch (error) {
+    console.error('[highlevel-lead] duplicate lookup failed', error instanceof Error ? error.message : 'unknown');
+    return { failure: saveFailure() };
+  }
+  if (response.ok) return { contact: duplicateContactFrom(response.json) };
+  if (response.status === 404 || response.status === 400 || response.status === 422) return { contact: null };
+  console.error('[highlevel-lead] duplicate lookup failed', response.status);
+  return { failure: saveFailure() };
+}
+
+async function attachTagsAndNote(
+  fetchImpl: typeof fetch,
+  apiKey: string,
+  contactId: string | undefined,
+  tags: string[],
+  note: string,
+) {
+  if (!contactId) {
+    console.error('[highlevel-lead] upsert succeeded without a contact id');
+    return;
+  }
+  const followUps: Promise<unknown>[] = [
+    ghlFetch(fetchImpl, apiKey, `/contacts/${contactId}/tags`, 'POST', { tags }).catch((error) => {
+      console.error('[highlevel-lead] tag update failed', error instanceof Error ? error.message : 'unknown');
+    }),
+  ];
+  if (note) {
+    followUps.push(
+      ghlFetch(fetchImpl, apiKey, `/contacts/${contactId}/notes`, 'POST', { body: note }).catch((error) => {
+        console.error('[highlevel-lead] note create failed', error instanceof Error ? error.message : 'unknown');
+      }),
+    );
+  }
+  const settled = await Promise.allSettled(followUps);
+  for (const item of settled) {
+    if (item.status === 'fulfilled' && item.value && typeof item.value === 'object' && 'ok' in item.value) {
+      const response = item.value as GhlResponse;
+      if (!response.ok) console.error('[highlevel-lead] follow-up failed', response.status);
+    }
+  }
+}
+
+async function upsertNewContact(
+  fetchImpl: typeof fetch,
+  apiKey: string,
+  plan: LeadWritePlan,
+): Promise<LeadResult> {
+  let payload = plan.upsert;
+  let upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
+  const rejected = rejectedEmailResult(upserted);
+  if (rejected) return rejected;
+  const retryableStatus = upserted.status === 400 || upserted.status === 409 || upserted.status === 422;
+  if (!upserted.ok && plan.upsertWithoutPhone && retryableStatus) {
+    console.warn('[highlevel-lead] retrying upsert without phone', upserted.status);
+    payload = plan.upsertWithoutPhone;
+    upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
+    const rejectedAfterPhone = rejectedEmailResult(upserted);
+    if (rejectedAfterPhone) return rejectedAfterPhone;
+  }
+  if (!upserted.ok && countryRejected(upserted)) {
+    const stripped = omitCountry(payload);
+    if (stripped) {
+      console.warn('[highlevel-lead] retrying upsert without country', upserted.status);
+      payload = stripped;
+      upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
+    }
+  }
+  const rejectedAfterRetry = rejectedEmailResult(upserted);
+  if (rejectedAfterRetry) return rejectedAfterRetry;
+  if (!upserted.ok) {
+    console.error('[highlevel-lead] upsert failed', upserted.status, errorMessage(upserted));
+    return saveFailure();
+  }
+  const contactId = contactIdFrom(upserted.json);
+  const created = createdFlag(upserted.json);
+  await attachTagsAndNote(fetchImpl, apiKey, contactId, plan.tags, plan.note);
+  return leadSaved(contactId, created);
+}
+
+async function updateMatchedContact(
+  fetchImpl: typeof fetch,
+  apiKey: string,
+  contactId: string,
+  plan: LeadWritePlan,
+): Promise<LeadResult> {
+  let payload = bodyForUpdate(plan.upsert);
+  const withoutPhone = plan.upsertWithoutPhone ? bodyForUpdate(plan.upsertWithoutPhone) : undefined;
+  let updated = await ghlFetch(fetchImpl, apiKey, `/contacts/${contactId}`, 'PUT', payload);
+  const rejected = rejectedEmailResult(updated);
+  if (rejected) return rejected;
+  const retryableStatus = updated.status === 400 || updated.status === 409 || updated.status === 422;
+  if (!updated.ok && withoutPhone && retryableStatus) {
+    console.warn('[highlevel-lead] retrying update without phone', updated.status);
+    payload = withoutPhone;
+    updated = await ghlFetch(fetchImpl, apiKey, `/contacts/${contactId}`, 'PUT', payload);
+    const rejectedAfterPhone = rejectedEmailResult(updated);
+    if (rejectedAfterPhone) return rejectedAfterPhone;
+  }
+  if (!updated.ok && countryRejected(updated)) {
+    const stripped = omitCountry(payload);
+    if (stripped) {
+      console.warn('[highlevel-lead] retrying update without country', updated.status);
+      payload = stripped;
+      updated = await ghlFetch(fetchImpl, apiKey, `/contacts/${contactId}`, 'PUT', payload);
+    }
+  }
+  const rejectedAfterRetry = rejectedEmailResult(updated);
+  if (rejectedAfterRetry) return rejectedAfterRetry;
+  if (!updated.ok) {
+    console.error('[highlevel-lead] update failed', updated.status, errorMessage(updated));
+    return saveFailure();
+  }
+  const id = contactIdFrom(updated.json) || contactId;
+  await attachTagsAndNote(fetchImpl, apiKey, id, plan.tags, plan.note);
+  return leadSaved(id, false);
+}
+
+async function createWithoutSharedPhone(
+  fetchImpl: typeof fetch,
+  apiKey: string,
+  defs: GhlCustomField[],
+  plan: LeadWritePlan,
+  other: DuplicateContact,
+  storedPhone: string,
+  blockedId?: string,
+): Promise<LeadResult> {
+  console.warn(
+    `[highlevel-lead] HighLevel refused a duplicate contact${blockedId ? ` (${blockedId} left unchanged)` : ''}. The location's Allow Duplicate Contact setting must be enabled.`,
+  );
+  let payload = withoutPhoneBody(plan, defs, storedPhone);
+  let created = await ghlFetch(fetchImpl, apiKey, '/contacts/', 'POST', payload);
+  const rejected = rejectedEmailResult(created);
+  if (rejected) return rejected;
+  if (!created.ok && countryRejected(created)) {
+    const stripped = omitCountry(payload);
+    if (stripped) {
+      console.warn('[highlevel-lead] retrying create without country', created.status);
+      payload = stripped;
+      created = await ghlFetch(fetchImpl, apiKey, '/contacts/', 'POST', payload);
+    }
+  }
+  const rejectedAfterRetry = rejectedEmailResult(created);
+  if (rejectedAfterRetry) return rejectedAfterRetry;
+  if (!created.ok) {
+    console.error('[highlevel-lead] create failed', created.status, errorMessage(created));
+    return saveFailure();
+  }
+  const id = contactIdFrom(created.json);
+  const note = duplicatePhoneNote(other, storedPhone, plan.note);
+  await attachTagsAndNote(fetchImpl, apiKey, id, [...plan.tags, 'phone-duplicate', 'phone-not-saved'], note);
+  return leadSaved(id, true, true);
+}
+
+async function createPhoneDuplicate(
+  fetchImpl: typeof fetch,
+  apiKey: string,
+  defs: GhlCustomField[],
+  plan: LeadWritePlan,
+  other: DuplicateContact,
+  storedPhone: string,
+): Promise<LeadResult> {
+  let created = await ghlFetch(fetchImpl, apiKey, '/contacts/', 'POST', plan.upsert);
+  const rejected = rejectedEmailResult(created);
+  if (rejected) return rejected;
+  if (duplicatesDisallowed(created)) {
+    return createWithoutSharedPhone(fetchImpl, apiKey, defs, plan, other, storedPhone, blockedDuplicateId(created));
+  }
+  if (!created.ok && countryRejected(created)) {
+    const stripped = omitCountry(plan.upsert);
+    if (stripped) {
+      console.warn('[highlevel-lead] retrying create without country', created.status);
+      created = await ghlFetch(fetchImpl, apiKey, '/contacts/', 'POST', stripped);
+      const rejectedAfterCountry = rejectedEmailResult(created);
+      if (rejectedAfterCountry) return rejectedAfterCountry;
+      if (duplicatesDisallowed(created)) {
+        return createWithoutSharedPhone(
+          fetchImpl,
+          apiKey,
+          defs,
+          plan,
+          other,
+          storedPhone,
+          blockedDuplicateId(created),
+        );
+      }
+    }
+  }
+  if (!created.ok) {
+    console.error('[highlevel-lead] create failed', created.status, errorMessage(created));
+    return saveFailure();
+  }
+  const id = contactIdFrom(created.json);
+  const note = duplicatePhoneNote(other, null, plan.note);
+  await attachTagsAndNote(fetchImpl, apiKey, id, [...plan.tags, 'phone-duplicate'], note);
+  return leadSaved(id, true, true);
+}
+
 export async function processHighLevelLead(rawBody: unknown, options: ProcessOptions = {}): Promise<LeadResult> {
   const env = options.env || process.env;
   const fetchImpl = options.fetchImpl || fetch;
@@ -508,74 +830,31 @@ export async function processHighLevelLead(rawBody: unknown, options: ProcessOpt
   const defs = await loadCustomFields(fetchImpl, apiKey, locationId, now);
   const plan = planLeadWrite(fields, locationId, defs);
 
-  let payload = plan.upsert;
-  let upserted: GhlResponse;
   try {
-    upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
-    const rejected = rejectedEmailResult(upserted);
-    if (rejected) return rejected;
-    const retryableStatus = upserted.status === 400 || upserted.status === 409 || upserted.status === 422;
-    if (!upserted.ok && plan.upsertWithoutPhone && retryableStatus) {
-      console.warn('[highlevel-lead] retrying upsert without phone', upserted.status);
-      payload = plan.upsertWithoutPhone;
-      upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
-      const rejectedAfterPhone = rejectedEmailResult(upserted);
-      if (rejectedAfterPhone) return rejectedAfterPhone;
+    const byEmail = await findDuplicateContact(fetchImpl, apiKey, locationId, { email: plan.email });
+    if ('failure' in byEmail) return byEmail.failure;
+    if (byEmail.contact?.email === plan.email) {
+      return await updateMatchedContact(fetchImpl, apiKey, byEmail.contact.id, plan);
     }
-    if (!upserted.ok && countryRejected(upserted)) {
-      const stripped = omitCountry(payload);
-      if (stripped) {
-        console.warn('[highlevel-lead] retrying upsert without country', upserted.status);
-        payload = stripped;
-        upserted = await ghlFetch(fetchImpl, apiKey, '/contacts/upsert', 'POST', payload);
+
+    const e164 = phoneToE164(fields.phone);
+    if (e164) {
+      const byPhone = await findDuplicateContact(fetchImpl, apiKey, locationId, { number: e164 });
+      if ('failure' in byPhone) return byPhone.failure;
+      if (byPhone.contact) {
+        if (byPhone.contact.email === plan.email) {
+          return await updateMatchedContact(fetchImpl, apiKey, byPhone.contact.id, plan);
+        }
+        const storedPhone = phoneForUpsert(fields.phone) || e164;
+        return await createPhoneDuplicate(fetchImpl, apiKey, defs, plan, byPhone.contact, storedPhone);
       }
     }
-    const rejectedAfterRetry = rejectedEmailResult(upserted);
-    if (rejectedAfterRetry) return rejectedAfterRetry;
+
+    return await upsertNewContact(fetchImpl, apiKey, plan);
   } catch (error) {
     console.error('[highlevel-lead] upsert error', error instanceof Error ? error.message : 'unknown');
-    return { status: 502, body: { error: 'Could not save your request. Please try again.' } };
+    return saveFailure();
   }
-
-  if (!upserted.ok) {
-    console.error('[highlevel-lead] upsert failed', upserted.status, errorMessage(upserted));
-    return { status: 502, body: { error: 'Could not save your request. Please try again.' } };
-  }
-
-  const contactId = contactIdFrom(upserted.json);
-  const created = createdFlag(upserted.json);
-  if (contactId) {
-    const followUps: Promise<unknown>[] = [
-      ghlFetch(fetchImpl, apiKey, `/contacts/${contactId}/tags`, 'POST', { tags: plan.tags }).catch((error) => {
-        console.error('[highlevel-lead] tag update failed', error instanceof Error ? error.message : 'unknown');
-      }),
-    ];
-    if (plan.note) {
-      followUps.push(
-        ghlFetch(fetchImpl, apiKey, `/contacts/${contactId}/notes`, 'POST', { body: plan.note }).catch((error) => {
-          console.error('[highlevel-lead] note create failed', error instanceof Error ? error.message : 'unknown');
-        }),
-      );
-    }
-    const settled = await Promise.allSettled(followUps);
-    for (const item of settled) {
-      if (item.status === 'fulfilled' && item.value && typeof item.value === 'object' && 'ok' in item.value) {
-        const response = item.value as GhlResponse;
-        if (!response.ok) console.error('[highlevel-lead] follow-up failed', response.status);
-      }
-    }
-  } else {
-    console.error('[highlevel-lead] upsert succeeded without a contact id');
-  }
-
-  return {
-    status: 200,
-    body: {
-      success: true,
-      ...(contactId ? { contactId } : {}),
-      ...(typeof created === 'boolean' ? { new: created } : {}),
-    },
-  };
 }
 
 export function clientIpFromHeaders(headers: Record<string, string | string[] | undefined> | undefined) {

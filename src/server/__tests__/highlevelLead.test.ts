@@ -42,6 +42,7 @@ const ENV = {
 };
 
 type Call = { url: string; init: RequestInit };
+type MockContact = { id: string; email?: string; phone?: string };
 
 function mockGhl(options?: {
   failWhenPhone?: boolean;
@@ -49,16 +50,60 @@ function mockGhl(options?: {
   customFieldsStatus?: number;
   upsertStatus?: number;
   upsertJson?: unknown;
+  emailMatch?: MockContact | null;
+  phoneMatch?: MockContact | null;
+  disallowDuplicates?: boolean;
+  defs?: GhlCustomField[];
+  lookupStatus?: number;
 }) {
   const calls: Call[] = [];
   const fetchImpl = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = String(input);
+    const method = String(init?.method || 'GET').toUpperCase();
     calls.push({ url, init: init || {} });
     if (url.includes('/customFields')) {
       if (options?.customFieldsStatus) {
         return new Response(JSON.stringify({ message: 'no scope' }), { status: options.customFieldsStatus });
       }
-      return new Response(JSON.stringify({ customFields: DEFS }), { status: 200 });
+      return new Response(JSON.stringify({ customFields: options?.defs ?? DEFS }), { status: 200 });
+    }
+    if (url.includes('/contacts/search/duplicate')) {
+      if (options?.lookupStatus) {
+        return new Response(JSON.stringify({ message: 'lookup failed' }), { status: options.lookupStatus });
+      }
+      const parsed = new URL(url);
+      const contact = parsed.searchParams.has('number') ? (options?.phoneMatch ?? null) : (options?.emailMatch ?? null);
+      return new Response(JSON.stringify({ contact }), { status: 200 });
+    }
+    const pathname = new URL(url).pathname;
+    if (method === 'POST' && (pathname === '/contacts' || pathname === '/contacts/')) {
+      const body = JSON.parse(String(init?.body || '{}')) as { phone?: string; country?: string };
+      if (options?.disallowDuplicates && body.phone) {
+        return new Response(
+          JSON.stringify({
+            message: 'This location does not allow duplicated contacts.',
+            error: 'Bad Request',
+            statusCode: 400,
+            meta: { contactId: 'existing999' },
+          }),
+          { status: 400 },
+        );
+      }
+      if (options?.failWhenCountry && body.country === options.failWhenCountry) {
+        return new Response(JSON.stringify({ message: ['country must be valid'] }), { status: 422 });
+      }
+      return new Response(JSON.stringify({ contact: { id: 'created123' } }), { status: 201 });
+    }
+    if (method === 'PUT' && /^\/contacts\/[A-Za-z0-9]+$/.test(pathname)) {
+      const id = pathname.split('/').pop();
+      const body = JSON.parse(String(init?.body || '{}')) as { phone?: string; country?: string };
+      if (options?.failWhenPhone && body.phone) {
+        return new Response(JSON.stringify({ message: 'duplicate phone' }), { status: 400 });
+      }
+      if (options?.failWhenCountry && body.country === options.failWhenCountry) {
+        return new Response(JSON.stringify({ message: ['country must be valid'] }), { status: 422 });
+      }
+      return new Response(JSON.stringify({ succeeded: true, contact: { id } }), { status: 200 });
     }
     if (url.endsWith('/contacts/upsert')) {
       const body = JSON.parse(String(init?.body || '{}')) as { phone?: string; country?: string };
@@ -69,8 +114,8 @@ function mockGhl(options?: {
         return new Response(JSON.stringify({ message: ['country must be valid'] }), { status: 422 });
       }
       if (options?.upsertStatus) {
-        const body = options.upsertJson ?? { message: 'nope' };
-        return new Response(JSON.stringify(body), { status: options.upsertStatus });
+        const bodyJson = options.upsertJson ?? { message: 'nope' };
+        return new Response(JSON.stringify(bodyJson), { status: options.upsertStatus });
       }
       return new Response(JSON.stringify({ new: true, contact: { id: 'contact123' } }), { status: 200 });
     }
@@ -147,6 +192,8 @@ describe('processHighLevelLead', () => {
     expect(result).toEqual({ status: 200, body: { success: true, contactId: 'contact123', new: true } });
     expect(calls.map((call) => call.url)).toEqual([
       'https://services.leadconnectorhq.com/locations/SjwWFl3GxGB1WQ1LbzLq/customFields?model=contact',
+      'https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=SjwWFl3GxGB1WQ1LbzLq&email=jane.doe%40pfizer.com',
+      'https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=SjwWFl3GxGB1WQ1LbzLq&number=%2B12025550143',
       'https://services.leadconnectorhq.com/contacts/upsert',
       'https://services.leadconnectorhq.com/contacts/contact123/tags',
       'https://services.leadconnectorhq.com/contacts/contact123/notes',
@@ -157,10 +204,11 @@ describe('processHighLevelLead', () => {
     const upsert = upsertBodies(calls)[0];
     expect(upsert.tags).toBeUndefined();
     expect(upsert.phone).toBe('+1 202 555 0143');
-    const tags = JSON.parse(String(calls[2].init.body)) as { tags: string[] };
+    const tags = JSON.parse(String(calls[4].init.body)) as { tags: string[] };
     expect(tags.tags).toEqual(['website-lead', 'form:contact_section', 'request:contact-request']);
-    const note = JSON.parse(String(calls[3].init.body)) as { body: string };
+    const note = JSON.parse(String(calls[5].init.body)) as { body: string };
     expect(note.body).toContain('Timeline: 1-3 months');
+    expect(result.body.duplicatePhone).toBeUndefined();
     expect(JSON.stringify(result.body)).not.toContain('pit-test-token');
   });
 
@@ -313,5 +361,142 @@ describe('processHighLevelLead', () => {
     expect(calls.filter((call) => call.url.endsWith('/contacts/upsert')).length).toBeGreaterThan(1);
     error.mockRestore();
     warn.mockRestore();
+  });
+
+  it('updates the email match and does not create or flag a phone duplicate', async () => {
+    const { calls, fetchImpl } = mockGhl({
+      emailMatch: { id: 'emailContact1', email: 'Jane.Doe@Pfizer.com', phone: '+1 202 555 0199' },
+      phoneMatch: { id: 'otherContact1', email: 'other@example.com' },
+    });
+    const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+    expect(result).toEqual({ status: 200, body: { success: true, contactId: 'emailContact1', new: false } });
+    expect(result.body.duplicatePhone).toBeUndefined();
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
+    expect(calls.some((call) => call.url.includes('number='))).toBe(false);
+    const put = calls.find((call) => call.init.method === 'PUT');
+    expect(put?.url).toBe('https://services.leadconnectorhq.com/contacts/emailContact1');
+    const putBody = JSON.parse(String(put?.init.body)) as { email?: string; phone?: string; locationId?: string };
+    expect(putBody.email).toBe('jane.doe@pfizer.com');
+    expect(putBody.phone).toBe('+1 202 555 0143');
+    expect(putBody.locationId).toBeUndefined();
+    const tags = JSON.parse(String(calls.find((call) => call.url.endsWith('/tags'))?.init.body)) as { tags: string[] };
+    expect(tags.tags).toEqual(['website-lead', 'form:contact_section', 'request:contact-request']);
+    expect(calls.some((call) => call.url.includes('otherContact1'))).toBe(false);
+  });
+
+  it('creates a new contact when the phone belongs to a different email', async () => {
+    const { calls, fetchImpl } = mockGhl({
+      emailMatch: { id: 'wrongPerson', email: '' },
+      phoneMatch: { id: 'otherContact1', email: 'other@example.com', phone: '+12025550143' },
+    });
+    const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+    expect(result).toEqual({
+      status: 200,
+      body: { success: true, contactId: 'created123', new: true, duplicatePhone: true },
+    });
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert'))).toBe(false);
+    expect(calls.some((call) => call.url.includes('otherContact1') || call.url.includes('wrongPerson'))).toBe(false);
+    const created = calls.filter((call) => new URL(call.url).pathname === '/contacts/');
+    expect(created).toHaveLength(1);
+    const body = JSON.parse(String(created[0].init.body)) as { email?: string; phone?: string };
+    expect(body.email).toBe('jane.doe@pfizer.com');
+    expect(body.phone).toBe('+1 202 555 0143');
+    const tags = JSON.parse(String(calls.find((call) => call.url.endsWith('/tags'))?.init.body)) as { tags: string[] };
+    expect(tags.tags).toEqual([
+      'website-lead',
+      'form:contact_section',
+      'request:contact-request',
+      'phone-duplicate',
+    ]);
+    const note = JSON.parse(String(calls.find((call) => call.url.endsWith('/notes'))?.init.body)) as { body: string };
+    expect(note.body.startsWith(
+      'Phone also used by contact otherContact1 (other@example.com) — duplicate-phone check pending',
+    )).toBe(true);
+    expect(note.body).toContain('Timeline: 1-3 months');
+  });
+
+  it('creates without the phone when the location disallows duplicate contacts', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const defs: GhlCustomField[] = [...DEFS, { id: 'ph1', fieldKey: 'contact.phone', dataType: 'PHONE' }];
+    const { calls, fetchImpl } = mockGhl({
+      phoneMatch: { id: 'otherContact1', email: 'other@example.com' },
+      disallowDuplicates: true,
+      defs,
+    });
+    const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+    expect(result).toEqual({
+      status: 200,
+      body: { success: true, contactId: 'created123', new: true, duplicatePhone: true },
+    });
+    const created = calls.filter((call) => new URL(call.url).pathname === '/contacts/');
+    expect(created).toHaveLength(2);
+    const first = JSON.parse(String(created[0].init.body)) as { phone?: string };
+    const second = JSON.parse(String(created[1].init.body)) as {
+      phone?: string;
+      customFields?: { id: string; fieldValue: string; field_value: string }[];
+    };
+    expect(first.phone).toBe('+1 202 555 0143');
+    expect(second.phone).toBeUndefined();
+    expect(second.customFields?.find((field) => field.id === 'ph1')).toEqual({
+      id: 'ph1',
+      fieldValue: '+1 202 555 0143',
+      field_value: '+1 202 555 0143',
+    });
+    const tags = JSON.parse(String(calls.find((call) => call.url.endsWith('/tags'))?.init.body)) as { tags: string[] };
+    expect(tags.tags).toEqual([
+      'website-lead',
+      'form:contact_section',
+      'request:contact-request',
+      'phone-duplicate',
+      'phone-not-saved',
+    ]);
+    const note = JSON.parse(String(calls.find((call) => call.url.endsWith('/notes'))?.init.body)) as { body: string };
+    expect(note.body).toContain(
+      'Phone also used by contact otherContact1 (other@example.com) — duplicate-phone check pending',
+    );
+    expect(note.body).toContain('Phone (not stored on the contact record): +1 202 555 0143');
+    expect(calls.some((call) => call.url.includes('existing999') || call.url.includes('otherContact1'))).toBe(false);
+    expect(calls.some((call) => call.init.method === 'PUT')).toBe(false);
+    expect(warn).toHaveBeenCalledWith(
+      expect.stringMatching(/existing999 left unchanged[\s\S]*Allow Duplicate Contact/),
+    );
+    warn.mockRestore();
+  });
+
+  it('returns 502 when duplicate lookup fails and does not upsert', async () => {
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const { calls, fetchImpl } = mockGhl({ lookupStatus: 500 });
+    const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+    expect(result.status).toBe(502);
+    expect(result.body).toEqual({ error: 'Could not save your request. Please try again.' });
+    expect(calls.some((call) => call.url.endsWith('/contacts/upsert') || call.init.method === 'PUT' || call.init.method === 'POST' && new URL(call.url).pathname === '/contacts/')).toBe(false);
+    error.mockRestore();
+  });
+
+  it('does not look up by phone when the number cannot be normalized', async () => {
+    const { calls, fetchImpl } = mockGhl();
+    const result = await processHighLevelLead(
+      { ...SAMPLE, phone: '12' },
+      { env: ENV, fetchImpl, skipRateLimit: true },
+    );
+    expect(result).toEqual({ status: 200, body: { success: true, contactId: 'contact123', new: true } });
+    expect(calls.some((call) => call.url.includes('number='))).toBe(false);
+    expect(calls.some((call) => call.url.includes('/contacts/search/duplicate?'))).toBe(true);
+    const upsert = upsertBodies(calls)[0];
+    expect(upsert.phone).toBeUndefined();
+    expect(upsert.email).toBe('jane.doe@pfizer.com');
+    expect(result.body.duplicatePhone).toBeUndefined();
+  });
+
+  it('uses (no email) when the phone owner has an empty email and leaves that contact unchanged', async () => {
+    const { calls, fetchImpl } = mockGhl({
+      phoneMatch: { id: 'otherContact1', email: '  ' },
+    });
+    const result = await processHighLevelLead(SAMPLE, { env: ENV, fetchImpl, skipRateLimit: true });
+    expect(result.body.duplicatePhone).toBe(true);
+    expect(result.body.new).toBe(true);
+    const note = JSON.parse(String(calls.find((call) => call.url.endsWith('/notes'))?.init.body)) as { body: string };
+    expect(note.body).toContain('Phone also used by contact otherContact1 (no email) — duplicate-phone check pending');
+    expect(calls.some((call) => call.url.includes('otherContact1'))).toBe(false);
   });
 });
