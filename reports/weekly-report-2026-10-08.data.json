@@ -1,0 +1,1018 @@
+{
+  "generatedAt": "2026-10-08",
+  "hasCurrentDates": true,
+  "hasPreviousDates": true,
+  "hasCurrentQueries": true,
+  "hasPreviousQueries": true,
+  "hasCurrentPages": true,
+  "hasPreviousPages": true,
+  "current": {
+    "days": 32,
+    "clicksPerDay": 51.625,
+    "impressionsPerDay": 4584.96875,
+    "ctrPct": 1.1259618726954246,
+    "avgPosition": 19.541368875196802,
+    "totalClicks": 1652,
+    "totalImpressions": 146719
+  },
+  "previous": {
+    "days": 7,
+    "clicksPerDay": 33.42857142857143,
+    "impressionsPerDay": 4448.142857142857,
+    "ctrPct": 0.7515174872338376,
+    "avgPosition": 25.80586761730417,
+    "totalClicks": 234,
+    "totalImpressions": 31137
+  },
+  "excludedQueries": {
+    "current": {
+      "excluded": [
+        "cairo hospitals healthcare 2023-2026"
+      ],
+      "matched": [
+        {
+          "query": "cairo hospitals healthcare 2023-2026",
+          "clicks": 0,
+          "impressions": 6645,
+          "position": 1.93
+        }
+      ],
+      "excludedClicks": 0,
+      "excludedImpressions": 6645,
+      "impressionsPerDay": 4377.3125,
+      "clicksPerDay": 51.625,
+      "ctrPct": 1.1793766152176706
+    },
+    "previous": {
+      "excluded": [
+        "cairo hospitals healthcare 2023-2026"
+      ],
+      "matched": [
+        {
+          "query": "cairo hospitals healthcare 2023-2026",
+          "clicks": 0,
+          "impressions": 152,
+          "position": 1.91
+        }
+      ],
+      "excludedClicks": 0,
+      "excludedImpressions": 152,
+      "impressionsPerDay": 4426.428571428572,
+      "clicksPerDay": 33.42857142857143,
+      "ctrPct": 0.7552041310311441
+    }
+  },
+  "targets": {
+    "impressionsPerDay": 15000,
+    "clicksPerDay": 450,
+    "ctrPct": 3,
+    "position": 5
+  },
+  "vsTargets": {
+    "impressionsPerDay": {
+      "value": 4584.96875,
+      "target": 15000,
+      "delta": -10415.03125,
+      "status": "below target"
+    },
+    "clicksPerDay": {
+      "value": 51.625,
+      "target": 450,
+      "delta": -398.375,
+      "status": "below target"
+    },
+    "ctrPct": {
+      "value": 1.1259618726954246,
+      "target": 3,
+      "delta": -1.8740381273045754,
+      "status": "below target"
+    },
+    "avgPosition": {
+      "value": 19.541368875196802,
+      "target": 5,
+      "delta": -14.541368875196802,
+      "status": "below target"
+    }
+  },
+  "vsLastWeek": {
+    "impressionsPerDay": 136.82589285714312,
+    "clicksPerDay": 18.19642857142857,
+    "ctrPct": 0.374444385461587,
+    "avgPosition": -6.264498742107367
+  },
+  "topPositionChanges": [
+    {
+      "query": "gcc herbal nanomedicine market",
+      "previousPosition": 87.14,
+      "currentPosition": 31.71,
+      "delta": -55.43
+    },
+    {
+      "query": "saudi arabia biopsy devices market",
+      "previousPosition": 12.7,
+      "currentPosition": 59.46,
+      "delta": 46.760000000000005
+    },
+    {
+      "query": "us doxorubicin market",
+      "previousPosition": 30.56,
+      "currentPosition": 73.19,
+      "delta": 42.629999999999995
+    },
+    {
+      "query": "pharmaceutical exporter uae",
+      "previousPosition": 20.97,
+      "currentPosition": 62.24,
+      "delta": 41.27
+    },
+    {
+      "query": "gcc medical writing market",
+      "previousPosition": 62.14,
+      "currentPosition": 23.25,
+      "delta": -38.89
+    },
+    {
+      "query": "gcc herbal medicinal products market",
+      "previousPosition": 71.29,
+      "currentPosition": 32.45,
+      "delta": -38.84
+    },
+    {
+      "query": "gcc pain patch market",
+      "previousPosition": 78,
+      "currentPosition": 39.75,
+      "delta": -38.25
+    },
+    {
+      "query": "gcc drug infusion system market",
+      "previousPosition": 70.33,
+      "currentPosition": 32.17,
+      "delta": -38.16
+    },
+    {
+      "query": "market analysis in healthcare",
+      "previousPosition": 81.5,
+      "currentPosition": 43.8,
+      "delta": -37.7
+    },
+    {
+      "query": "uk big data pharmaceutical advertising market",
+      "previousPosition": 86.33,
+      "currentPosition": 49.72,
+      "delta": -36.61
+    }
+  ],
+  "top10PageChurn": {
+    "entered": [
+      "https://www.bionixus.com/health-insurers-saudi-arabia",
+      "https://www.bionixus.com/fmcg-companies-kenya",
+      "https://www.bionixus.com/pharmaceutical-companies-indonesia",
+      "https://www.bionixus.com/biotech-companies-india"
+    ],
+    "left": [
+      "https://www.bionixus.com/pharmaceutical-companies-iraq",
+      "https://www.bionixus.com/pharmaceutical-companies-iran",
+      "https://www.bionixus.com/pharmaceutical-companies-bahrain",
+      "https://www.bionixus.com/insights/top-market-research-companies-egypt-2026"
+    ],
+    "curTop10": [
+      "https://www.bionixus.com/pharmaceutical-companies-egypt",
+      "https://www.bionixus.com/pharmaceutical-companies-uae",
+      "https://www.bionixus.com/pharmaceutical-companies-kuwait",
+      "https://www.bionixus.com/",
+      "https://www.bionixus.com/iqvia-alternative",
+      "https://www.bionixus.com/health-insurers-saudi-arabia",
+      "https://www.bionixus.com/fmcg-companies-kenya",
+      "https://www.bionixus.com/pharmaceutical-companies-indonesia",
+      "https://www.bionixus.com/pharmaceutical-companies-saudi-arabia",
+      "https://www.bionixus.com/biotech-companies-india"
+    ],
+    "prevTop10": [
+      "https://www.bionixus.com/pharmaceutical-companies-egypt",
+      "https://www.bionixus.com/pharmaceutical-companies-uae",
+      "https://www.bionixus.com/pharmaceutical-companies-iraq",
+      "https://www.bionixus.com/pharmaceutical-companies-saudi-arabia",
+      "https://www.bionixus.com/pharmaceutical-companies-iran",
+      "https://www.bionixus.com/",
+      "https://www.bionixus.com/pharmaceutical-companies-kuwait",
+      "https://www.bionixus.com/iqvia-alternative",
+      "https://www.bionixus.com/pharmaceutical-companies-bahrain",
+      "https://www.bionixus.com/insights/top-market-research-companies-egypt-2026"
+    ]
+  },
+  "lowCtrPage1Queries": [
+    {
+      "query": "fmcg",
+      "clicks": 5,
+      "impressions": 549,
+      "ctr": 0.91,
+      "position": 6.35
+    },
+    {
+      "query": "fmcg companies",
+      "clicks": 4,
+      "impressions": 305,
+      "ctr": 1.31,
+      "position": 5.63
+    },
+    {
+      "query": "pharmaceutical companies brazil therapeutic areas oncology cardiology",
+      "clicks": 0,
+      "impressions": 199,
+      "ctr": 0,
+      "position": 9.95
+    },
+    {
+      "query": "pharmaceutical",
+      "clicks": 1,
+      "impressions": 180,
+      "ctr": 0.56,
+      "position": 8.24
+    },
+    {
+      "query": "pharmaceutical companies in dubai",
+      "clicks": 0,
+      "impressions": 148,
+      "ctr": 0,
+      "position": 6.74
+    },
+    {
+      "query": "fmcg company",
+      "clicks": 0,
+      "impressions": 126,
+      "ctr": 0,
+      "position": 4.67
+    },
+    {
+      "query": "fmcg companies in pakistan",
+      "clicks": 0,
+      "impressions": 125,
+      "ctr": 0,
+      "position": 4.84
+    },
+    {
+      "query": "best services for pharmaceutical market access besides iqvia",
+      "clicks": 0,
+      "impressions": 91,
+      "ctr": 0,
+      "position": 4.14
+    },
+    {
+      "query": "pharma companies in uae",
+      "clicks": 1,
+      "impressions": 87,
+      "ctr": 1.15,
+      "position": 5.15
+    },
+    {
+      "query": "leading company in health sector peru",
+      "clicks": 0,
+      "impressions": 84,
+      "ctr": 0,
+      "position": 4.68
+    },
+    {
+      "query": "japan medical disposables market",
+      "clicks": 0,
+      "impressions": 84,
+      "ctr": 0,
+      "position": 8.68
+    },
+    {
+      "query": "looking for something better than iqvia",
+      "clicks": 0,
+      "impressions": 83,
+      "ctr": 0,
+      "position": 4.34
+    },
+    {
+      "query": "pharma companies in dubai",
+      "clicks": 0,
+      "impressions": 83,
+      "ctr": 0,
+      "position": 8.16
+    },
+    {
+      "query": "latest pharmaceutical market news brazil regulation science health",
+      "clicks": 0,
+      "impressions": 81,
+      "ctr": 0,
+      "position": 7.48
+    },
+    {
+      "query": "italy portable diagnostic devices market",
+      "clicks": 0,
+      "impressions": 77,
+      "ctr": 0,
+      "position": 6.34
+    },
+    {
+      "query": "medical companies in uae",
+      "clicks": 0,
+      "impressions": 76,
+      "ctr": 0,
+      "position": 9.04
+    },
+    {
+      "query": "gcc biologics market",
+      "clicks": 0,
+      "impressions": 74,
+      "ctr": 0,
+      "position": 6.23
+    },
+    {
+      "query": "pharmaceutical companies dubai",
+      "clicks": 0,
+      "impressions": 72,
+      "ctr": 0,
+      "position": 7.67
+    },
+    {
+      "query": "fmcg companies in oman",
+      "clicks": 0,
+      "impressions": 67,
+      "ctr": 0,
+      "position": 6.6
+    },
+    {
+      "query": "account level data",
+      "clicks": 0,
+      "impressions": 66,
+      "ctr": 0,
+      "position": 8.09
+    },
+    {
+      "query": "gcc medication management market",
+      "clicks": 0,
+      "impressions": 65,
+      "ctr": 0,
+      "position": 5.03
+    },
+    {
+      "query": "companies like iqvia",
+      "clicks": 0,
+      "impressions": 64,
+      "ctr": 0,
+      "position": 3.05
+    },
+    {
+      "query": "nielsen competitors",
+      "clicks": 0,
+      "impressions": 64,
+      "ctr": 0,
+      "position": 7.48
+    },
+    {
+      "query": "turkey diabetes market",
+      "clicks": 0,
+      "impressions": 59,
+      "ctr": 0,
+      "position": 6.88
+    },
+    {
+      "query": "qatar banks",
+      "clicks": 0,
+      "impressions": 57,
+      "ctr": 0,
+      "position": 9.37
+    },
+    {
+      "query": "which firms specialize in healthcare technology market research?",
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 3.84
+    },
+    {
+      "query": "italy medical device connectivity market",
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 8.98
+    },
+    {
+      "query": "egypt pharma for pharmaceutical",
+      "clicks": 0,
+      "impressions": 55,
+      "ctr": 0,
+      "position": 3.2
+    },
+    {
+      "query": "banks in germany",
+      "clicks": 0,
+      "impressions": 55,
+      "ctr": 0,
+      "position": 8.2
+    },
+    {
+      "query": "saudi arabia biosimilar market",
+      "clicks": 0,
+      "impressions": 53,
+      "ctr": 0,
+      "position": 8.11
+    },
+    {
+      "query": "febrile neutropenia market",
+      "clicks": 0,
+      "impressions": 53,
+      "ctr": 0,
+      "position": 8.87
+    },
+    {
+      "query": "pharmaceutical obesity treatments 2026",
+      "clicks": 0,
+      "impressions": 53,
+      "ctr": 0,
+      "position": 9.6
+    },
+    {
+      "query": "china medical device market access",
+      "clicks": 0,
+      "impressions": 50,
+      "ctr": 0,
+      "position": 9.22
+    },
+    {
+      "query": "health medicine news brazil 2026",
+      "clicks": 0,
+      "impressions": 50,
+      "ctr": 0,
+      "position": 9.28
+    },
+    {
+      "query": "iqvia alternatives",
+      "clicks": 0,
+      "impressions": 48,
+      "ctr": 0,
+      "position": 3.96
+    },
+    {
+      "query": "kantar egypt market research",
+      "clicks": 0,
+      "impressions": 48,
+      "ctr": 0,
+      "position": 9.58
+    },
+    {
+      "query": "nupco tender",
+      "clicks": 0,
+      "impressions": 47,
+      "ctr": 0,
+      "position": 9.45
+    },
+    {
+      "query": "italian banks",
+      "clicks": 0,
+      "impressions": 45,
+      "ctr": 0,
+      "position": 9.93
+    },
+    {
+      "query": "singapore ivd market access",
+      "clicks": 0,
+      "impressions": 44,
+      "ctr": 0,
+      "position": 1.68
+    },
+    {
+      "query": "cegedim analyst price target disagreement",
+      "clicks": 0,
+      "impressions": 43,
+      "ctr": 0,
+      "position": 4.19
+    },
+    {
+      "query": "pharmaceutical companies in dubai uae",
+      "clicks": 0,
+      "impressions": 43,
+      "ctr": 0,
+      "position": 8.58
+    },
+    {
+      "query": "pharmaceutical manufacturing companies in dubai",
+      "clicks": 0,
+      "impressions": 42,
+      "ctr": 0,
+      "position": 7.57
+    },
+    {
+      "query": "pharma egypt",
+      "clicks": 0,
+      "impressions": 39,
+      "ctr": 0,
+      "position": 5.13
+    },
+    {
+      "query": "what are top organizations in the brazilian consumer behavior research space",
+      "clicks": 0,
+      "impressions": 39,
+      "ctr": 0,
+      "position": 8.77
+    },
+    {
+      "query": "dubai pharma company",
+      "clicks": 0,
+      "impressions": 39,
+      "ctr": 0,
+      "position": 9.79
+    },
+    {
+      "query": "pharmaceutical suppliers",
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 9.95
+    },
+    {
+      "query": "dubai pharmaceutical companies",
+      "clicks": 0,
+      "impressions": 37,
+      "ctr": 0,
+      "position": 7.38
+    },
+    {
+      "query": "pharmaceutical industries in dubai",
+      "clicks": 0,
+      "impressions": 37,
+      "ctr": 0,
+      "position": 8.16
+    },
+    {
+      "query": "morocco banks",
+      "clicks": 0,
+      "impressions": 37,
+      "ctr": 0,
+      "position": 8.22
+    },
+    {
+      "query": "marketing research companies poland",
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 9.94
+    },
+    {
+      "query": "china vbp coronary stents 2020 announcement date effective date average price cut",
+      "clicks": 0,
+      "impressions": 34,
+      "ctr": 0,
+      "position": 3.68
+    },
+    {
+      "query": "european pharmaceuticals distributor kuwait",
+      "clicks": 0,
+      "impressions": 34,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "moroccan banks",
+      "clicks": 0,
+      "impressions": 34,
+      "ctr": 0,
+      "position": 7.74
+    },
+    {
+      "query": "medicine company in dubai",
+      "clicks": 0,
+      "impressions": 34,
+      "ctr": 0,
+      "position": 8.85
+    },
+    {
+      "query": "fmcg markaları",
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 7.3
+    },
+    {
+      "query": "pharma packing companies in uae",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 7.03
+    },
+    {
+      "query": "germany banks",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 7.44
+    },
+    {
+      "query": "pharmaceutical distribution companies in uae",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 9.66
+    },
+    {
+      "query": "top pharma company in dubai",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 9.97
+    },
+    {
+      "query": "medicine manufacturing companies in uae",
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 5.81
+    },
+    {
+      "query": "welche klinischen und regulatorischen meilensteine sind für bayers pharmapipeline zu erwarten?",
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 5.9
+    },
+    {
+      "query": "moroccan healthcare product competitors",
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 9.42
+    },
+    {
+      "query": "what are best obesity research companies",
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 2.03
+    },
+    {
+      "query": "school market research bahrain",
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "what are the top obesity research companies",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 4.89
+    },
+    {
+      "query": "what are the best iqvia alternatives for hcp audience targeting?",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 6.75
+    },
+    {
+      "query": "pharmaceutical analytics companies",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 9.32
+    },
+    {
+      "query": "rank the best obesity research companies",
+      "clicks": 0,
+      "impressions": 27,
+      "ctr": 0,
+      "position": 5.96
+    },
+    {
+      "query": "manufacturing companies in saudi arabia",
+      "clicks": 0,
+      "impressions": 27,
+      "ctr": 0,
+      "position": 7.04
+    },
+    {
+      "query": "pharma packing companies in dubai",
+      "clicks": 0,
+      "impressions": 27,
+      "ctr": 0,
+      "position": 7.3
+    },
+    {
+      "query": "pharmaceutical manufacturing companies in uae",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 6.64
+    },
+    {
+      "query": "oman pharma",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 6.92
+    },
+    {
+      "query": "top pharma marxet research firms global ranking",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "best pharma market research firms",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 8.68
+    },
+    {
+      "query": "research pharmaceutical colombia",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "top insurance companies in saudi arabia",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 5.96
+    },
+    {
+      "query": "in belgium, what are the top 10 brands in the \"e-commerce pharmacy\" industry associated with \"uitgebreid aanbod\"? list only real, existing brands, each enclosed in double quotes (e.g. \"nike\"). no explanations.",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 6.33
+    },
+    {
+      "query": "which firms provide premium healthcare, technology, and consumer expert research services?",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 7.12
+    },
+    {
+      "query": "real estate feasibility studies kuwait",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 8.21
+    },
+    {
+      "query": "pharmaceutical multinational companies",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 9.17
+    },
+    {
+      "query": "what are the best obesity research companies",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 1.48
+    },
+    {
+      "query": "egyptian pharmaceutical companies",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 3.26
+    },
+    {
+      "query": "bahrain pharmaceuticals",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 4.26
+    },
+    {
+      "query": "market research companies in dubai",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 4.35
+    },
+    {
+      "query": "شركات ادوية في الامارات",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 7.87
+    },
+    {
+      "query": "list of banks in qatar",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 9.39
+    },
+    {
+      "query": "top pharmaceutical companies in uae",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 5.05
+    },
+    {
+      "query": "oman pharmaceutical company",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 5.68
+    },
+    {
+      "query": "pharma market",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 6.64
+    },
+    {
+      "query": "strategic pharmaceutical export kuwait",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 2.14
+    },
+    {
+      "query": "saudi arabia manufacturing companies",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 3.33
+    },
+    {
+      "query": "what are top obesity research companies",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 5.43
+    },
+    {
+      "query": "in germany and austria, what are the top 10 brands in the \"healthcare market research\" industry associated with \"gesundheitsbranche\"? list only real, existing brands, each enclosed in double quotes (e.g. \"nike\"). no explanations.",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 7.19
+    },
+    {
+      "query": "qatar bank name list",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 8.76
+    },
+    {
+      "query": "market research company",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 9.38
+    },
+    {
+      "query": "best biotech company in india",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 9.81
+    },
+    {
+      "query": "welke bureaus zijn het meest betrouwbaar voor een medisch marktonderzoek?",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 1.35
+    },
+    {
+      "query": "iqvia alternative",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 3.55
+    },
+    {
+      "query": "kfda kuwait",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 4.3
+    },
+    {
+      "query": "consumer insights companies ksa",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 6.15
+    },
+    {
+      "query": "uk high street banks",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 7.95
+    },
+    {
+      "query": "medical insurance companies in saudi arabia",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 8.05
+    },
+    {
+      "query": "pharma",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 8.05
+    },
+    {
+      "query": "germany bank name",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 8.15
+    },
+    {
+      "query": "cegedim forecast and analysis",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 9.2
+    },
+    {
+      "query": "vbp china",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 9.8
+    }
+  ],
+  "mixMetrics": {
+    "exclUs": {
+      "clicks": 1589,
+      "impressions": 95488,
+      "ctrPct": 1.6640834450402147
+    },
+    "us": {
+      "clicks": 63,
+      "impressions": 51231,
+      "ctrPct": 0.12,
+      "sharePct": 34.91776797824412
+    },
+    "desktop": {
+      "clicks": 864,
+      "impressions": 116825,
+      "ctrPct": 0.74,
+      "sharePct": 79.62499744409382
+    },
+    "mobile": {
+      "clicks": 777,
+      "impressions": 29521,
+      "ctrPct": 2.63,
+      "sharePct": 20.120775087071205
+    },
+    "exclDeepRankPages": {
+      "clicks": 1621,
+      "impressions": 131379,
+      "ctrPct": 1.2338349355680893
+    },
+    "deepRankPages": {
+      "clicks": 43,
+      "impressions": 27726,
+      "ctrPct": 0.15508908605640914
+    },
+    "exclJapanGccDevices": {
+      "clicks": 1662,
+      "impressions": 158816,
+      "ctrPct": 1.0464940560145073
+    },
+    "japanDevices": {
+      "page": "https://www.bionixus.com/japan-medical-devices-market-report",
+      "clicks": 2,
+      "impressions": 284,
+      "ctr": 0.7,
+      "position": 18.55
+    },
+    "gccDevices": {
+      "page": "https://www.bionixus.com/gcc-medical-devices-market-report",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 20
+    },
+    "listicleCluster": {
+      "clicks": 101,
+      "impressions": 12011,
+      "ctrPct": 0.8408958454749812
+    },
+    "pharmaCompaniesCluster": {
+      "clicks": 619,
+      "impressions": 27999,
+      "ctrPct": 2.2107932426158077
+    },
+    "directoryMatrixCluster": {
+      "clicks": 1057,
+      "impressions": 55333,
+      "ctrPct": 1.9102524714004303
+    },
+    "siteCtrPct": 1.1259618726954246
+  },
+  "leads": null
+}
