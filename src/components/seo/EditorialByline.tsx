@@ -1,4 +1,5 @@
 import type { EditorialAuthor } from '@/data/editorialAuthors';
+import { PersonNameLink } from '@/components/seo/PersonNameLink';
 
 export function EditorialByline({
   author,
@@ -9,7 +10,7 @@ export function EditorialByline({
 }) {
   return (
     <p className="text-sm text-muted-foreground">
-      {published} · By {author.name}, {author.jobTitle}
+      {published} · By <PersonNameLink name={author.name} className="text-inherit no-underline" />, {author.jobTitle}
     </p>
   );
 }

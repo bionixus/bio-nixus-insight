@@ -4,6 +4,7 @@ import type { Language } from '@/lib/i18n'
 import { HOME_FAQ_SECTION_ID } from '@/lib/homePageFaq'
 import { buildHomeArticleJsonLdNodes, buildHomeServiceJsonLdNodes } from '@/lib/homePageJsonLd'
 import { buildAllGoogleLocalBusinesses } from '@/lib/seo/googleReviewsSchema'
+import { withAlsaadanyPersonJsonLd } from '@/data/editorialAuthors'
 
 // Mirrors the site's Language union rather than restating it — the local copy
 // had drifted and was missing pt and ru, so those pages could not pass their
@@ -381,12 +382,12 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       ...(props.about && props.about.length > 0
         ? { about: props.about.length === 1 ? { ...props.about[0] } : props.about.map((a) => ({ ...a })) }
         : {}),
-      author: {
+      author: withAlsaadanyPersonJsonLd({
         '@type': 'Person',
         name: props.authorName,
         ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
         ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
-      },
+      }),
       datePublished: published,
       dateModified: modified,
       publisher: {
@@ -535,14 +536,16 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
   const people = props.people || []
   const personNodes = people
     .filter((p) => isNonEmptyString(p.name))
-    .map((person) => ({
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: person.name,
-      ...(isNonEmptyString(person.jobTitle) ? { jobTitle: person.jobTitle } : {}),
-      ...(isNonEmptyString(person.sameAs) ? { sameAs: [toHttpsUrl(person.sameAs)] } : {}),
-      worksFor: { '@id': ORG_ID },
-    }))
+    .map((person) =>
+      withAlsaadanyPersonJsonLd({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: person.name,
+        ...(isNonEmptyString(person.jobTitle) ? { jobTitle: person.jobTitle } : {}),
+        ...(isNonEmptyString(person.sameAs) ? { sameAs: [toHttpsUrl(person.sameAs)] } : {}),
+        worksFor: { '@id': ORG_ID },
+      }),
+    )
 
   return [...buildAllGoogleLocalBusinesses(), ...personNodes]
 }

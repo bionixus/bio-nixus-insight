@@ -46,6 +46,8 @@ import {
   getRelatedResearchLinksForLocale,
 } from '@/lib/blogLocaleContent';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { PersonNameLink } from '@/components/seo/PersonNameLink';
+import { alsaadanyProfileUrl } from '@/data/editorialAuthors';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import BlogSiteExplorer from '@/components/BlogSiteExplorer';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
@@ -1254,7 +1256,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         }]}
         authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={post.authorLinkedIn || 'https://www.linkedin.com/in/mohammad-alsaadany'}
-        authorJobTitle={post.authorTitle?.trim() || 'Healthcare Market Research Lead'}
+        authorJobTitle={
+          post.authorTitle?.trim()
+          || (alsaadanyProfileUrl(post.authorName) ? 'Director' : 'Healthcare Market Research Lead')
+        }
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}
         breadcrumb={
@@ -1388,7 +1393,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                       </div>
                     )}
                     <div>
-                      <span className="text-[13px] font-medium text-white/85 block">{post.authorName}</span>
+                      <PersonNameLink name={post.authorName} className="text-[13px] font-medium text-white/85 block no-underline" />
                       {post.authorTitle && <span className="text-[11px] text-white/45 block">{post.authorTitle}</span>}
                     </div>
                   </div>
@@ -1443,7 +1448,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                         {post.authorName.charAt(0)}
                       </div>
                     )}
-                    <span className="text-[13px] font-medium text-white/85">{post.authorName}</span>
+                    <PersonNameLink name={post.authorName} className="text-[13px] font-medium text-white/85 no-underline" />
                   </div>
                 )}
                 {post.date && (
@@ -1868,7 +1873,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] font-extrabold tracking-[0.1em] uppercase mb-0.5" style={{ color: 'hsl(var(--accent))' }}>{blogUi.authorEyebrow}</p>
                     <p className="text-[15px] font-semibold text-primary">
-                      {post.authorLinkedIn ? (
+                      {alsaadanyProfileUrl(post.authorName) ? (
+                        <PersonNameLink name={post.authorName} className="hover:underline" />
+                      ) : post.authorLinkedIn ? (
                         <a href={post.authorLinkedIn} target="_blank" rel="noopener noreferrer" className="hover:underline">{post.authorName}</a>
                       ) : post.authorName}
                     </p>

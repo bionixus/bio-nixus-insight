@@ -19,6 +19,7 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { PersonNameLink } from '@/components/seo/PersonNameLink';
 
 const pageUrl = 'https://www.bionixus.com/fr/bionixus-market-research-middle-east';
 const englishSiblingUrl = 'https://www.bionixus.com/bionixus-market-research-middle-east';
@@ -893,7 +894,7 @@ const FrBionixusMarketResearchMiddleEast = () => {
                 Supervision éditoriale et méthodologique
               </p>
               <h2 className="text-2xl font-display font-semibold text-foreground mb-2">
-                {editorialLead}
+                <PersonNameLink name={editorialLead} className="text-inherit no-underline" />
               </h2>
               <p className="text-sm text-primary font-medium mb-3">
                 Conseiller Études de Marché Santé, BioNixus

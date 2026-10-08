@@ -21,6 +21,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { EmailCaptureForm } from '@/components/conversion/EmailCaptureForm';
+import { PersonNameLink } from '@/components/seo/PersonNameLink';
 
 const pageUrl = 'https://www.bionixus.com/bionixus-market-research-middle-east';
 const pageImage = 'https://www.bionixus.com/images/quant-hcp-survey-executive.png';
@@ -913,7 +914,9 @@ const BionixusMarketResearchMiddleEast = () => {
           <div className="container-wide max-w-5xl mx-auto">
             <article className="rounded-2xl border border-border bg-card p-6 md:p-8">
               <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Editorial and methodology oversight</p>
-              <h2 className="text-2xl font-display font-semibold text-foreground mb-2">{editorialLead}</h2>
+              <h2 className="text-2xl font-display font-semibold text-foreground mb-2">
+                <PersonNameLink name={editorialLead} className="text-inherit no-underline" />
+              </h2>
               <p className="text-sm text-primary font-medium mb-3">Healthcare Market Research Advisor, BioNixus</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 This page is reviewed against active GCC pharmaceutical market conditions and execution constraints. Last review date:
