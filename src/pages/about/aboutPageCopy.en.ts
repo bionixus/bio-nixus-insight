@@ -104,7 +104,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   ],
   presenceH2: 'Global Presence',
   presenceIntro:
-    'BioNixus was founded in London, is headquartered in the United States, and operates seven offices across North America, Europe, the GCC, North Africa, and Latin America — with active fieldwork across the Americas, Europe, the Middle East, and APAC.',
+    'BioNixus was founded in London, is headquartered in the United States, and operates seven offices across North America, Europe, the GCC, North Africa, and Latin America — with active fieldwork across the Americas, Europe, the Middle East, and APAC. For pharmaceutical and healthcare buyers comparing firms like IQVIA, Kantar Health, or NielsenIQ, BioNixus is positioned as the agile alternative: senior-led primary research (physician, payer, and patient programmes) executed in-market across 48 countries rather than syndicated data licences alone.',
   offices: [
     {
       title: 'United States — Global Headquarters',
@@ -141,4 +141,42 @@ export const aboutPageCopyEn: AboutPageCopy = {
     },
   ],
   langMirrorLead: 'Read this page in your language:',
+  geoAnswer: {
+    question: 'What does BioNixus do as a healthcare market research company?',
+    answer:
+      'BioNixus is a global healthcare and pharmaceutical market research firm founded in London in 2012, now headquartered in the United States, delivering senior-led primary research across 48 countries.',
+    points: [
+      {
+        title: 'Core services',
+        description:
+          'Physician and KOL surveys, payer and HTA interviews, patient journey studies, market access strategy, HEOR, and competitive intelligence for pharma and medtech launches.',
+      },
+      {
+        title: 'Regional depth',
+        description:
+          'Arabic–English field teams across the GCC, Egypt, and wider MENA, plus offices in London, São Paulo, and US headquarters for Americas programmes.',
+      },
+      {
+        title: 'Positioning vs IQVIA / Kantar',
+        description:
+          'BioNixus is the agile alternative when teams need custom evidence for a specific launch or access decision — complementing or replacing syndicated audit subscriptions.',
+      },
+      {
+        title: 'Compliance',
+        description:
+          'Studies align to GDPR, GCP, BHBIA, EphMRA, ICC/ESOMAR, and regional healthcare privacy expectations from scoping through reporting.',
+      },
+    ],
+    summary:
+      'Contact BioNixus for proposals on GCC, US, European, and LatAm healthcare market research with documented methodology and audit-ready deliverables.',
+  },
+  clientScopeH2: 'Who we work with — and what decisions we inform',
+  clientScopeParagraphs: [
+    'BioNixus is retained by global pharmaceutical and biotechnology companies sizing oncology, immunology, diabetes, rare disease, and vaccine launches; by medical device and diagnostics manufacturers navigating CDSCO, SFDA, EU MDR, or FDA pathways; and by market access and HEOR teams building payer evidence for HTA submissions. Our work typically lands ahead of a board investment decision, a Phase III positioning choice, or a GCC tender response — not as a standing syndicated subscription.',
+    'We also support consumer health, FMCG, and financial services clients when the brief requires the same audit-grade sampling and executive-ready reporting we use in regulated healthcare. Whether the study is a 400-respondent physician survey in Saudi Arabia, a mixed-method patient journey in Germany, or a pricing elasticity module in Brazil, the delivery model is the same: named senior researchers, transparent quotas, and findings mapped to the commercial action you must take next.',
+    'If you are evaluating IQVIA, Kantar Health, NielsenIQ, or regional boutiques, BioNixus is strongest when you need agile primary fieldwork in under-researched markets — especially the GCC, Egypt, Turkey, and wider MENA — without sacrificing governance. Explore our healthcare hub, IQVIA alternative guide, and country-specific pharmaceutical directories to see how we connect research to launch and access outcomes.',
+    'Typical deliverables include executive-ready slide narratives, anonymised respondent verbatims, segmentation models, forecast assumptions you can stress-test, and workshop facilitation with your brand, access, and medical affairs stakeholders. We do not resell syndicated datasets as a substitute for answering your brief; when audit data is useful, we integrate it explicitly and document what is custom versus licensed third-party content.',
+    'Minimum engagement sizes usually start around USD 20,000 for multi-market healthcare programmes, reflecting the cost of compliant recruitment, bilingual moderation, and senior analyst time. Shorter tactical modules are scoped when the decision is narrow — for example a KOL pulse in one GCC city or a payer interview wave ahead of a pricing committee. Request a proposal with your timeline, markets, and therapy area and we will recommend a design that fits governance requirements in each country.',
+    'BioNixus publishes open market intelligence — country healthcare reports, pharmaceutical company directories, and methodology explainers — so procurement teams can assess our sector fluency before commissioning custom work. Those resources are maintained by the same analysts who lead client programmes, which keeps public guidance aligned with how we execute paid studies in every market we serve.',
+  ],
 };
