@@ -12,6 +12,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { getCanonicalUrl, getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import GlobalReachSection from '@/components/home/GlobalReachSection';
 import IndustriesGatewaySection from '@/components/home/IndustriesGatewaySection';
 import {
@@ -265,6 +266,24 @@ const About = () => {
                 </p>
               </div>
             </div>
+            {copy.geoAnswer ? (
+              <GeoLLMAnswerBlock
+                className="mt-12"
+                question={copy.geoAnswer.question}
+                answer={copy.geoAnswer.answer}
+                points={copy.geoAnswer.points}
+                summary={copy.geoAnswer.summary}
+                pageUrl={canonicalUrl}
+              />
+            ) : null}
+            {copy.clientScopeH2 && copy.clientScopeParagraphs?.length ? (
+              <div className="mt-12 space-y-5 text-muted-foreground leading-relaxed sr sr-up">
+                <h3 className="text-lg font-display font-semibold text-foreground">{copy.clientScopeH2}</h3>
+                {copy.clientScopeParagraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
+            ) : null}
           </div>
         </section>
 

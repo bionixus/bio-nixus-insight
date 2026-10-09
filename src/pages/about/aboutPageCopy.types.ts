@@ -89,6 +89,16 @@ export interface AboutPageCopy {
   presenceIntro: string;
   offices: AboutOffice[];
   langMirrorLead: string;
+  /** Optional GEO / LLM answer-first block (English hub; omit on locale mirrors until translated). */
+  geoAnswer?: {
+    question: string;
+    answer: string;
+    points: { title: string; description: string }[];
+    summary?: string;
+  };
+  /** Extra narrative block for depth on the English About hub. */
+  clientScopeH2?: string;
+  clientScopeParagraphs?: string[];
 }
 
 export type AboutPageCopyMap = Record<Language, AboutPageCopy>;

@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -62,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-09',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -77,7 +78,7 @@ const jsonLd = [
     countryName: "India",
     marketSlug: "india",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-10-09",
   })
 ];
 
@@ -118,6 +119,29 @@ const IndiaMedicalDevicesMarketReport = () => (
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">India is among the world's fastest-growing medical device markets — fourth-largest in Asia and growing at 8% CAGR. The PLI scheme and Medical Device Parks are driving a domestic manufacturing transformation that is creating Indian-branded device companies with growing international ambitions, including in GCC markets.</p>
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
+          <GeoLLMAnswerBlock
+            className="mt-8"
+            question="What is the size of the India medical devices market in 2026?"
+            answer="India's medical devices market is approximately USD 11–13 billion in 2026, growing near 8% CAGR — fourth-largest in Asia and still ~75–85% import-dependent for advanced categories."
+            points={[
+              {
+                title: 'Regulation',
+                description:
+                  'CDSCO Medical Devices Rules 2017 classify devices A–D; foreign OEMs need an authorised Indian agent and Sugam portal filings.',
+              },
+              {
+                title: 'Manufacturing',
+                description:
+                  'PLI incentives and Medical Device Parks are accelerating domestic production in imaging, consumables, and select implants.',
+              },
+              {
+                title: 'Procurement',
+                description:
+                  'GeM public tenders and Apollo/Fortis/AIIMS biomedical committees shape volume — separate from price-capped stent categories.',
+              },
+            ]}
+            summary="BioNixus publishes this India medical devices market report for manufacturers planning CDSCO registration, hospital procurement, and GCC export strategy."
+          />
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="india" countryName="India" variant="medical-devices" />

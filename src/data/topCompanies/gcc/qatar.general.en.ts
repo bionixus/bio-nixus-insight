@@ -18,7 +18,7 @@ export const qatarGeneralEn: CountryListicleConfig = {
   ogLocale: 'en_QA',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-09-28',
+  dateModified: '2026-10-09',
   badge: '2026 Industry Guide',
   h1: 'Best Market Research Companies in Qatar (2026 Guide)',
   heroIntro:
@@ -38,6 +38,7 @@ export const qatarGeneralEn: CountryListicleConfig = {
     'Qatar is one of the wealthiest nations per capita in the world, with a GDP exceeding $220 billion and a population of approximately 3 million — of which roughly 85% are expatriates. The country\'s Qatar National Vision 2030 (QNV 2030) is driving economic diversification, healthcare investment, and consumer market growth that creates significant demand for rigorous market research.',
     'The pharmaceutical market in Qatar is valued at approximately $1.2 billion and growing steadily, supported by the Supreme Council of Health\'s (SCH/MoPH) national health strategy and significant investment in Hamad Medical Corporation (HMC) and Sidra Medicine. Research buyers in Qatar need partners familiar with the Ministry of Public Health (MoPH) regulatory framework and the Qatar Pharmaceutical Manufacturing Company landscape.',
     'For consumer research, Qatar\'s highly international demographic profile — with expatriate communities from South Asia, MENA, and the West — requires sophisticated multilingual sampling and demographic segmentation. Luxury, FMCG, financial services, and digital economy research are all growing categories. The right market research partner must combine global methodology standards with local Qatar execution capability and Arabic-English bilingual delivery.',
+    'Healthcare buyers in Doha increasingly commission mixed-method programmes that pair HMC and Sidra clinician insight with payer and procurement interviews — especially for biologics, rare disease, and medical devices where MoPH registration timelines and hospital committee adoption determine revenue more than syndicated audit data alone.',
   ],
   profilesTitle: '5 Market Research Companies in Qatar (2026)',
   firms: [
@@ -235,6 +236,16 @@ export const qatarGeneralEn: CountryListicleConfig = {
     {
       question: 'Does BioNixus conduct research in Qatar?',
       answer: 'Yes. BioNixus is a global market research and insights firm with GCC execution capability, serving clients in Qatar across consumer, FMCG, healthcare, and pharmaceutical research categories. Contact us to discuss your Qatar research requirements.',
+    },
+    {
+      question: 'Who are the best healthcare market research companies in Qatar for physician surveys?',
+      answer:
+        'For physician and KOL surveys tied to MoPH registration or hospital formulary decisions, BioNixus and IQVIA MENA are the most frequently shortlisted partners in Qatar. BioNixus specialises in custom primary research with HMC and Sidra networks; IQVIA leads on syndicated prescription analytics. Kantar MENAP is stronger for consumer brand tracking than clinical access studies.',
+    },
+    {
+      question: 'How does Qatar compare with the UAE for pharmaceutical market research?',
+      answer:
+        'Qatar operates under a single MoPH regulator with Hamad Medical Corporation dominating public procurement, while the UAE splits oversight across DHA, DOH, and MOHAP emirates. Fieldwork in Qatar is smaller in absolute sample size but higher per-capita spend; UAE projects often require multi-emirate quota design. BioNixus runs both markets with shared GCC methodology.',
     },
   ],
   relatedTitle: 'Related Resources',
