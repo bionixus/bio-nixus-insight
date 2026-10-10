@@ -16,11 +16,18 @@ import {
 } from '@/components/seo/DirectoryPremium';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import {
   getArPharmaDirectory,
+  type ArPharmaCompanyEntry,
   type ArPharmaCompanyType,
   type ArPharmaCountrySlug,
 } from '@/data/arPharmaDirectories';
+
+function resolveArCompanyProfile(company: ArPharmaCompanyEntry, marketLabel: string): string {
+  if (company.profileAr) return company.profileAr;
+  return `${company.name} (${company.type}) — ${company.focus}. ${company.notes} في أبحاث بيونيكسس لسوق ${marketLabel} نربط هذا الحساب بمسار التسجيل المحلي (الهيئة أو الوزارة أو المنظّم المعني)، بقناة المستشفى الحكومي أو الخاص أو التأمين، وبمسار الصيدلية أو المناقصة أو الموزّع حيث ينطبق. نبدأ من الموجز: علامة، جنيس، قناة شراء، ومستوى التحليل (حساب، عبوة، منطقة). نُكمّل بيانات التدقيق بمقابلات مشترين وصيادلة ومسؤولي توريد عند الحاجة — لا نستبدل اشتراك IQVIA أو نيلسن. الناتج موجز قابل للعرض خلال 48 ساعة من brief واضح. للتواصل: admin@bionixus.com أو نموذج العرض في هذه الصفحة.`;
+}
 
 type Props = {
   countrySlug: ArPharmaCountrySlug;
@@ -119,12 +126,64 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
 
         <DirectoryJumpNav
           items={[
+            { href: '#market-context', label: 'سياق السوق' },
             { href: '#companies', label: 'الشركات' },
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
           ]}
         />
+
+        {config.geoLLM ? (
+          <section className="section-padding py-12 bg-muted/20" id="market-context">
+            <div className="container-wide max-w-5xl mx-auto">
+              <GeoLLMAnswerBlock
+                question={config.geoLLM.question}
+                answer={config.geoLLM.answer}
+                points={config.geoLLM.points}
+                summary={config.geoLLM.summary}
+                pageUrl={citationUrl}
+              />
+            </div>
+          </section>
+        ) : null}
+
+        {config.contextSections?.map((section) => (
+          <section key={section.id} className="section-padding py-10" id={section.id}>
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">{section.title}</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+
+        {config.buyerGuideParagraphs?.length ? (
+          <section className="section-padding py-12 bg-muted/10" id="buyer-guide">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+                دليل المشتري الدوائي
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl">
+                {config.buyerGuideParagraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 52)}>{paragraph}</p>
+                ))}
+              </div>
+              <p className="mt-6 text-sm text-muted-foreground">
+                <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                  مركز أبحاث الرعاية الصحية في بيونيكسس
+                </Link>
+                {' · '}
+                <Link to={config.enPath} className="text-primary hover:underline font-medium">
+                  النسخة الإنجليزية من هذا الدليل
+                </Link>
+              </p>
+            </div>
+          </section>
+        ) : null}
 
         <section className="section-padding py-16 bg-muted/30" id="companies">
           <div className="container-wide max-w-5xl mx-auto">
@@ -168,6 +227,20 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
                 </tbody>
               </table>
             </div>
+            <div className="mt-12" id="company-profiles">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">ملفات مختصرة للشركات</h2>
+              <div className="space-y-8">
+                {config.companies.map((company) => (
+                  <article key={company.name} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{company.name}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {resolveArCompanyProfile(company, config.countryNameEn)}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
             <div className="mt-8">
               <ConversionCTA
                 variant="talk-to-research"

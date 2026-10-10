@@ -1,3 +1,10 @@
+import {
+  getArPharmaDirectoryModifiedDate,
+  mergeArPharmaDirectoryDepth,
+  type ArPharmaContextSection,
+  type ArPharmaGeoLLM,
+} from '@/data/arPharmaDirectoryDepth';
+
 export type ArPharmaCountrySlug = 'egypt' | 'uae' | 'saudi-arabia' | 'kuwait' | 'oman' | 'qatar';
 
 export type ArPharmaCompanyType = 'محلي' | 'متعدد الجنسيات' | 'إقليمي' | 'موزّع';
@@ -8,6 +15,8 @@ export type ArPharmaCompanyEntry = {
   type: ArPharmaCompanyType;
   focus: string;
   notes: string;
+  /** Optional long-form Arabic profile for SEO depth and LLM citations. */
+  profileAr?: string;
 };
 
 export type ArPharmaDirectoryConfig = {
@@ -26,6 +35,9 @@ export type ArPharmaDirectoryConfig = {
   enPath: string;
   publishedDate: string;
   modifiedDate: string;
+  geoLLM?: ArPharmaGeoLLM;
+  contextSections?: ArPharmaContextSection[];
+  buyerGuideParagraphs?: string[];
 };
 
 const PUBLISHED = '2026-09-02';
@@ -53,17 +65,105 @@ const EGYPT: ArPharmaDirectoryConfig = {
     { value: 'ابن سينا', label: 'أكبر موزّع وطني' },
   ],
   companies: [
-    { name: 'EIPICO', hq: 'مصر', type: 'محلي', focus: 'أدوية متعددة، جنيس، بدون وصفة', notes: 'أكبر مصنع خاص؛ خطوط إنتاج واسعة وحجم عبوات مرتفع' },
-    { name: 'EVA Pharma', hq: 'مصر', type: 'محلي', focus: 'جنيس ذو علامة، تصدير إقليمي', notes: 'حضور في عشرات الأسواق؛ قصة تصدير مصرية' },
-    { name: 'Amoun Pharmaceutical', hq: 'مصر', type: 'محلي', focus: 'بشري وبيطري', notes: 'محفظة محلية طويلة الأمد' },
-    { name: 'Global Napi Pharma', hq: 'مصر', type: 'محلي', focus: 'جنيس موجّه للتصدير', notes: 'مرافق بمعايير أوروبية؛ تصدير لا سوق محلي فقط' },
-    { name: 'Minapharm', hq: 'مصر', type: 'محلي', focus: 'بيوتكنولوجي وجنيس', notes: 'من أقدم الأسماء؛ ريادة بيولوجية محلية' },
-    { name: 'Pharco', hq: 'مصر', type: 'محلي', focus: 'التهاب الكبد والجنيس', notes: 'اسم التهاب الكبد سي في السوق المصري' },
-    { name: 'Pfizer', hq: 'الولايات المتحدة', type: 'متعدد الجنسيات', focus: 'أورام، لقاحات، أمراض نادرة', notes: 'محفظة مسجّلة لدى الهيئة؛ حضور مناقصات ومستشفيات' },
-    { name: 'Novartis', hq: 'سويسرا', type: 'متعدد الجنسيات', focus: 'أورام، مناعة، قلب', notes: 'حضور قوي في المستشفيات الخاصة والحكومية' },
-    { name: 'Sanofi', hq: 'فرنسا', type: 'متعدد الجنسيات', focus: 'سكري، لقاحات، صحة مستهلك', notes: 'إنتاج محلي إلى جانب الاستيراد' },
-    { name: 'Hikma Pharmaceuticals', hq: 'الأردن / المملكة المتحدة', type: 'إقليمي', focus: 'حقن وجنيس', notes: 'لاعب إقليمي يُعامل في مصر كحساب لا كهامش' },
-    { name: 'Ibn Sina Pharma', hq: 'مصر', type: 'موزّع', focus: 'توزيع وطني', notes: 'أكبر موزّع؛ الحساب الذي تسأله الفرق عندما ينقطع التغطية' },
+    {
+      name: 'EIPICO',
+      hq: 'مصر',
+      type: 'محلي',
+      focus: 'أدوية متعددة، جنيس، بدون وصفة',
+      notes: 'أكبر مصنع خاص؛ خطوط إنتاج واسعة وحجم عبوات مرتفع',
+      profileAr:
+        'إيبيكو أكبر مصنع دوائي خاص في مصر بعشرات خطوط الإنتاج وحجم عبوات سنوي يضعها في صدارة الجنيس والبدون وصفة. في أبحاث الحساب نُقارنها بإيفا وفاركو على العبوة والقناة لا على «حجم المكتب». المناقصات الحكومية والصيدليات الخاصة تظهران أحياناً انقطاع توريد يُفسَّر خطأً كضعف علامة.',
+    },
+    {
+      name: 'EVA Pharma',
+      hq: 'مصر',
+      type: 'محلي',
+      focus: 'جنيس ذو علامة، تصدير إقليمي',
+      notes: 'حضور في عشرات الأسواق؛ قصة تصدير مصرية',
+      profileAr:
+        'إيفا فارما نموذج التصدير المصري: جنيس ذو علامة في عشرات الأسواق. السؤال البحثي غالباً يفصل «حصة مصر» عن «حصة المصنع في الخارج». محفظتها تتنافس مع المبتكر في فئات محددة ومع إيبيكو في الجنيس العريض.',
+    },
+    {
+      name: 'Amoun Pharmaceutical',
+      hq: 'مصر',
+      type: 'محلي',
+      focus: 'بشري وبيطري',
+      notes: 'محفظة محلية طويلة الأمد',
+      profileAr:
+        'آمون محفظة بشري وبيطري طويلة الأمد في السوق المصري. تُذكر في موجزات الجنيس والمستشفى الحكومي. دراسة حساب تضعها في مجموعة المصنعين المحليين المتعدد التخصصات لا في فئة منفصلة عن إيبيكو.',
+    },
+    {
+      name: 'Global Napi Pharma',
+      hq: 'مصر',
+      type: 'محلي',
+      focus: 'جنيس موجّه للتصدير',
+      notes: 'مرافق بمعايير أوروبية؛ تصدير لا سوق محلي فقط',
+      profileAr:
+        'جلوبال نابي مرافق بمعايير أوروبية وتوجه تصدير. في الموجزات الدولية تُقاس كمصنع مصري للجنيس الخارجي. التسجيل المحلي والتصدير يتطلبان أسئلة توريد مختلفة عن المكتب متعدد الجنسيات.',
+    },
+    {
+      name: 'Minapharm',
+      hq: 'مصر',
+      type: 'محلي',
+      focus: 'بيوتكنولوجي وجنيس',
+      notes: 'من أقدم الأسماء؛ ريادة بيولوجية محلية',
+      profileAr:
+        'مينا فارم من أقدم الأسماء في البيولوجيا والجنيس في مصر. مهمة في موجزات البيوسيميلار والمستشفى. العينة تتضمن صيادلة مستشفى ومسؤولي توريد عند دراسة العبوة الحساسة للسعر.',
+    },
+    {
+      name: 'Pharco',
+      hq: 'مصر',
+      type: 'محلي',
+      focus: 'التهاب الكبد والجنيس',
+      notes: 'اسم التهاب الكبد سي في السوق المصري',
+      profileAr:
+        'فاركو مرتبطة بتاريخ التهاب الكبد C في السوق المصري. في فئات الكبد والجنيس تظهر في المقدمة قبل أسماء عالمية. أبحاث الوصفة في الكبد لا تُستمد من عينة باطنية عامة.',
+    },
+    {
+      name: 'Pfizer',
+      hq: 'الولايات المتحدة',
+      type: 'متعدد الجنسيات',
+      focus: 'أورام، لقاحات، أمراض نادرة',
+      notes: 'محفظة مسجّلة لدى الهيئة؛ حضور مناقصات ومستشفيات',
+      profileAr:
+        'فايزر محفظة أورام ولقاحات وأمراض نادرة مسجّلة لدى الهيئة. الحضور في المناقصات والمستشفيات الخاصة والتأمين يتطلب عينة منفصلة عن الجنيس المحلي. التسعير المرجعي يحدد سقف التفاوض.',
+    },
+    {
+      name: 'Novartis',
+      hq: 'سويسرا',
+      type: 'متعدد الجنسيات',
+      focus: 'أورام، مناعة، قلب',
+      notes: 'حضور قوي في المستشفيات الخاصة والحكومية',
+      profileAr:
+        'نوفارتس قوية في الأورام والمناعة والقلب في المستشفيات الحكومية والخاصة. تُقاس مع روش وAZ في التخصصي لا مع إيبيكو في الجنيس. قائمة المستشفى والتأمين تحدد العبوة الفعلية.',
+    },
+    {
+      name: 'Sanofi',
+      hq: 'فرنسا',
+      type: 'متعدد الجنسيات',
+      focus: 'سكري، لقاحات، صحة مستهلك',
+      notes: 'إنتاج محلي إلى جانب الاستيراد',
+      profileAr:
+        'سانوفي إنتاج محلي إلى جانب الاستيراد في السكري واللقاحات وصحة المستهلك. فرانشايز الإنسولين واللقاح تتطلب عينة منفصلة عن الأورام. الصيدلية والمستشفى قناتان مختلفتان.',
+    },
+    {
+      name: 'Hikma Pharmaceuticals',
+      hq: 'الأردن / المملكة المتحدة',
+      type: 'إقليمي',
+      focus: 'حقن وجنيس',
+      notes: 'لاعب إقليمي يُعامل في مصر كحساب لا كهامش',
+      profileAr:
+        'هيكما لاعب إقليمي في الحقن والجنيس. في مصر تُعامل كحساب مستشفى لا كهامش خليجي. دراسات الحقن تستهدف صيادلة مستشفى ومسؤولي شراء وليس تجزئة فقط.',
+    },
+    {
+      name: 'Ibn Sina Pharma',
+      hq: 'مصر',
+      type: 'موزّع',
+      focus: 'توزيع وطني',
+      notes: 'أكبر موزّع؛ الحساب الذي تسأله الفرق عندما ينقطع التغطية',
+      profileAr:
+        'ابن سينا أكبر موزّع وطني. كثير من فجوات «الحصة» في التدقيق تعود لتوريد الجملة لا لرفض الطبيب. أي موجز مصري جاد يضع أسئلة ابن سينا والجملة قبل توسيع عينة الأطباء.',
+    },
   ],
   faq: [
     {
@@ -435,12 +535,14 @@ const QATAR: ArPharmaDirectoryConfig = {
 export const AR_PHARMA_DIRECTORIES: ArPharmaDirectoryConfig[] = [EGYPT, UAE, KSA, KUWAIT, OMAN, QATAR];
 
 export function getArPharmaDirectory(country: ArPharmaCountrySlug): ArPharmaDirectoryConfig | undefined {
-  return AR_PHARMA_DIRECTORIES.find((d) => d.countrySlug === country);
+  const base = AR_PHARMA_DIRECTORIES.find((d) => d.countrySlug === country);
+  return base ? mergeArPharmaDirectoryDepth(base) : undefined;
 }
 
 export function getArPharmaDirectoryByPath(path: string): ArPharmaDirectoryConfig | undefined {
   const normalized = path.startsWith('/') ? path : `/${path}`;
-  return AR_PHARMA_DIRECTORIES.find((d) => d.path === normalized);
+  const base = AR_PHARMA_DIRECTORIES.find((d) => d.path === normalized);
+  return base ? mergeArPharmaDirectoryDepth(base) : undefined;
 }
 
 export function getArPharmaDirectorySitemapPages(): Array<{
@@ -449,9 +551,10 @@ export function getArPharmaDirectorySitemapPages(): Array<{
   priority: string;
   changefreq: string;
 }> {
+  const lastmod = getArPharmaDirectoryModifiedDate();
   return AR_PHARMA_DIRECTORIES.map((d) => ({
     path: d.path,
-    lastmod: d.modifiedDate,
+    lastmod,
     priority: '0.75',
     changefreq: 'monthly',
   }));
