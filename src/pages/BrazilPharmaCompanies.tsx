@@ -67,6 +67,10 @@ const faqItems = [
   { q: 'How does SUS affect pharmaceutical companies in Brazil?', a: 'The Unified Health System (SUS) is a major public purchaser. CONITEC recommendations and federal/state procurement shape access for many therapies, alongside a large private retail and insurance market.' },
   { q: 'Do foreign companies need a local presence to sell in Brazil?', a: 'Foreign manufacturers typically need ANVISA registration, a local responsible company for regulatory and pharmacovigilance duties, and distribution partnerships covering retail pharmacy and institutional channels.' },
   { q: 'Which local companies lead Brazilian pharma?', a: 'EMS, Hypera Pharma, Eurofarma, Aché, Biolab, Cristália, União Química, and Blau Farmacêutica are among the most frequently cited Brazilian manufacturers across generics, branded Rx, hospital injectables, and consumer health.' },
+  {
+    q: 'How is GLP-1 and obesity demand shaping the Brazilian market?',
+    a: 'Metabolic franchises (insulin and GLP-1 receptor agonists) are a major growth driver for multinational offices such as Novo Nordisk and Eli Lilly, while local chains like Raia Drogasil expand OTC and consumer-health adjacencies. Launch and access research should separate SUS incorporation timelines from private retail uptake.',
+  },
 ];
 
 const BrazilPharmaCompanies = () => {

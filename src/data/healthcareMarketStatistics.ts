@@ -21,7 +21,7 @@ export interface MarketStatRegion {
   stats: MarketStat[];
 }
 
-export const MARKET_STATISTICS_LAST_UPDATED = '2026-07-22';
+export const MARKET_STATISTICS_LAST_UPDATED = '2026-10-10';
 
 export const MARKET_STATISTICS: MarketStatRegion[] = [
   {
@@ -84,6 +84,13 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
       { stat: 'Cardiovascular disease is the leading cause of mortality across all six GCC member states, accounting for 28–38% of deaths.', source: 'GCC Ministry of Health national statistics, 2023–2024' },
       { stat: 'The GCC records approximately 35,000+ new cancer diagnoses per year combined; breast and colorectal cancers are the most prevalent.', source: 'National cancer registries, 2023' },
       { stat: 'Type 2 diabetes affects approximately 17.2% of Egyptian adults (an estimated 11.9 million people).', source: 'IDF Diabetes Atlas, 2023' },
+      { stat: "Egypt's population is estimated at 109.3 million in 2026 — the largest in the Arab world.", source: 'World Bank' },
+      {
+        stat: "Egypt's pharmaceutical market is commonly framed at approximately USD 5.8 billion with high single-digit year-over-year growth.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/egypt-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
       {
         stat: "Egypt's healthcare market is estimated at USD 25–30 billion in 2026, growing at 8–10% CAGR through 2030.",
         source: 'BioNixus market analysis',
@@ -189,6 +196,18 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
         sourceHref: '/canada-healthcare-market-report',
       },
       { stat: 'Approximately 5.3 million Spanish adults have diabetes (14.8% prevalence).', source: 'Sociedad Española de Diabetes (SED), 2023' },
+      {
+        stat: "Italy's pharmaceutical market is valued at over EUR 30 billion — among the largest in Europe.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/healthcare-market-research/italy',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Brazil is Latin America's largest pharmaceutical market, with public and private channels split between ANVISA-regulated manufacturers, SUS/CONITEC access, and retail pharmacy chains.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
   },
 ];
