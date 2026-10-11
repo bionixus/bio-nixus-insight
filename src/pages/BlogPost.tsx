@@ -1378,10 +1378,6 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         )}
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
-        {heroCoverImage && visibleBreadcrumbItems ? (
-          // The cover hero has a fixed height, so on phones a long title pushes in-hero crumbs out of view.
-          <BreadcrumbNav items={visibleBreadcrumbItems} className="md:hidden px-6" />
-        ) : null}
         {heroCoverImage ? (
           <div
             className="relative w-full overflow-hidden bg-navy-deep group"
@@ -1524,6 +1520,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
         {/* ── CONTENT GRID ──────────────────────────────────────────────── */}
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          {heroCoverImage && visibleBreadcrumbItems ? (
+            // The cover hero has a fixed height and sits under the fixed navbar, so on phones a long
+            // title pushes the in-hero trail out of view; show it here instead.
+            <BreadcrumbNav items={visibleBreadcrumbItems} className="md:hidden bg-transparent px-1 pt-5 pb-0" />
+          ) : null}
           <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pt-8 pb-20 items-start">
 
             {/* ── ARTICLE MAIN ───────────────────────────────────────────── */}
