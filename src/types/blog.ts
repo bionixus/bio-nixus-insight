@@ -41,6 +41,16 @@ export interface BlogPostSchemaExtras {
   /** Replaces the default `about` Thing built from the category. */
   about?: ReadonlyArray<Record<string, unknown>>;
   itemList?: { name: string; description?: string; items: BlogPostItemListEntry[] };
+  /** Secondary headline on the article node, e.g. the dek shown under the h1. */
+  alternativeHeadline?: string;
+  /** Sources cited in the body, emitted as the article's `citation` list. */
+  citation?: ReadonlyArray<Record<string, unknown>>;
+  /** Organisations or works named in the body, emitted as `mentions`. */
+  mentions?: ReadonlyArray<Record<string, unknown>>;
+  /** ISO 8601 duration for the reading time, e.g. "PT14M". */
+  timeRequired?: string;
+  /** Sets copyrightYear, with the sitewide Organization as copyrightHolder. */
+  copyrightYear?: number;
 }
 
 export interface BlogPost {

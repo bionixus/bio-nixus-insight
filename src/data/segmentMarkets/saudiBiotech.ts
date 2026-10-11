@@ -2292,6 +2292,10 @@ const biologics: SegmentMarketContent = {
     { to: '/market-reports/saudi-arabia-immunology-biologics-market-report', label: 'Saudi Arabia immunology & biologics market report 2026' },
     { to: '/market-reports/saudi-arabia-biosimilars-market-report', label: 'Saudi Arabia biosimilars market report' },
     { to: '/biosimilar-market-entry-saudi-arabia', label: 'Saudi Arabia biosimilar market entry guide' },
+    {
+      to: '/blog/biosimilar-market-entry-research-saudi-arabia',
+      label: 'Biosimilar market entry research in Saudi Arabia after the SFDA 2026 guideline',
+    },
     { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market 2026 (biologics segment)' },
     { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research Saudi Arabia' },
     { to: '/saudi-arabia-biotechnology-market', label: 'Saudi Arabia biotechnology market' },
