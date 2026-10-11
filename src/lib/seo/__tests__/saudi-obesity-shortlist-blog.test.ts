@@ -10,6 +10,7 @@ import { BLOG_FORCE_INDEX_SLUGS, BLOG_HARDCODED_SEO_SLUGS } from '@/lib/blog-rob
 import { GOOGLE_OFFICES } from '@/data/googleLocations';
 import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import { getCrawlerStubForSlug, shouldCrawlerIndexBlogSlug } from '../../../../blog-crawler-stubs.mjs';
+import { stripDefaultOrganizationJsonLd } from '../../../../lib/strip-industries-insights-org.mjs';
 import {
   SAUDI_OBESITY_SHORTLIST,
   SAUDI_OBESITY_SHORTLIST_BODY_HTML,
@@ -45,6 +46,8 @@ const sitemapScript = readFileSync(join(root, 'scripts/generate-sitemap.mjs'), '
 const sitemapXml = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');
 const llms = readFileSync(join(root, 'public/llms.txt'), 'utf8');
 const indexHtml = readFileSync(join(root, 'index.html'), 'utf8');
+const ssrFunctionSource = readFileSync(join(root, 'api/indexnow-key.ts'), 'utf8');
+const serverSource = readFileSync(join(root, 'server.js'), 'utf8');
 
 // Parsed JSON-LD is untyped JSON read by property path in the assertions below.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -211,8 +214,9 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     expect(webPage.breadcrumb).toEqual({ '@id': `${SAUDI_OBESITY_SHORTLIST_URL}#breadcrumb` });
   });
 
-  it('keeps the Organization node to the verified fact set', () => {
+  it('keeps the Organization node to the verified facts and the four current offices', () => {
     const orgs = byType('Organization');
+    expect(orgs).toHaveLength(1);
     const pageOrg = orgs.find((node) => typeof node.description === 'string' && node.description.includes('127 studies'));
     expect(pageOrg).toBeDefined();
     expect(pageOrg!['@id']).toBe('https://www.bionixus.com/#organization');
@@ -222,6 +226,14 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     }
     const localities = pageOrg!.address.map((address: JsonLdNode) => address.addressLocality);
     expect(localities).toEqual(['Sheridan', 'London', 'Sheikh Zayed', 'Dubai']);
+    const office = Object.fromEntries(
+      pageOrg!.address.map((address: JsonLdNode) => [address.addressLocality, address]),
+    ) as Record<string, JsonLdNode>;
+    expect(office.Sheridan).toMatchObject({ addressRegion: 'WY', addressCountry: 'US' });
+    expect(office.London).toMatchObject({ postalCode: 'EC1V 2NX', addressCountry: 'GB' });
+    // The Cairo office's Google Business Profile address is in Sheikh Zayed, Giza.
+    expect(office['Sheikh Zayed']).toMatchObject({ addressRegion: 'Giza', addressCountry: 'EG' });
+    expect(office.Dubai.streetAddress).toContain('Thuraya Tower 1');
     expect(pageOrg!.description).toContain(SAO_PAULO_PHRASE);
     const excludedMaps = GOOGLE_OFFICES.filter((office) => office.id === 'sa' || office.id === 'kw').map(
       (office) => office.mapsUrl,
@@ -243,9 +255,21 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     expect(places.map((match) => match[1])).not.toContain('São Paulo');
   });
 
-  it('keeps São Paulo out of the sitewide Organization block this page also ships', () => {
+  it('keeps São Paulo out of the sitewide Organization block', () => {
     expect(JSON.stringify(buildCanonicalOrganization())).not.toContain('São Paulo');
     expect(indexHtml).not.toContain('São Paulo');
+  });
+
+  it('drops the template Organization, which lists every Google listing, from this page only', () => {
+    const page = stripDefaultOrganizationJsonLd(indexHtml, SAUDI_OBESITY_SHORTLIST_PATH);
+    expect(page).toContain('<!-- org-schema:start --><!-- org-schema:end -->');
+    expect(page).not.toMatch(/"Organization"|Al Khobar|Salmiya/);
+    expect(stripDefaultOrganizationJsonLd(indexHtml, '/blog/turkey-pharmaceutical-market-2026-titck-top-companies')).toBe(
+      indexHtml,
+    );
+    for (const source of [ssrFunctionSource, serverSource]) {
+      expect(source).toMatch(/stripDefaultOrganizationJsonLd\(/);
+    }
   });
 
   it('mirrors the visible FAQ exactly in FAQPage', () => {
