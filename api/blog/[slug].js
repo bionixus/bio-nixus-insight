@@ -110,7 +110,7 @@ const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   _updatedAt,
   "author": author->name,
   "authorSlug": author->slug.current,
-  "authorTitle": author->title,
+  "authorTitle": coalesce(authorJobTitle, author->title),
   "authorLinkedIn": author->linkedIn,
   "coverImageCaption": mainImage.caption,
   "seoKeywords": seo.keywords,
@@ -427,6 +427,8 @@ export default async function handler(req, res) {
     const ogImageAlt = esc(post.ogImageAlt || post.coverImageAlt || documentTitle);
     const url = `${BASE}${pagePath}`;
     const author = post.author || DEFAULT_AUTHOR_NAME;
+    const authorJobTitle =
+      industriesInsight && post.author && typeof post.authorTitle === 'string' ? post.authorTitle.trim() : '';
     const modifiedAt = post.updatedAt || post._updatedAt || post.publishedAt || '';
     const heading = industriesInsight && post.title ? esc(post.title) : title;
     const category =
@@ -644,7 +646,7 @@ export default async function handler(req, res) {
     <header>
       <h1>${heading}</h1>
       ${post.publishedAt ? `<time datetime="${esc(post.publishedAt)}">${new Date(post.publishedAt).toLocaleDateString(isArabic ? 'ar-EG' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>` : ''}
-      ${author ? `<p>By ${esc(author)}</p>` : ''}
+      ${author ? `<p>By ${esc(author)}${authorJobTitle ? `, ${esc(authorJobTitle)}` : ''}</p>` : ''}
       ${category ? `<p>Category: ${esc(category)}</p>` : ''}
     </header>
     ${summaryHtml}

@@ -150,7 +150,7 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "ogImageAlt": openGraph.ogImage.alt,
   "authorName": author->name,
   "authorSlug": author->slug.current,
-  "authorTitle": author->title,
+  "authorTitle": coalesce(authorJobTitle, author->title),
   "authorImage": author->image.asset->url,
   "authorLinkedIn": author->linkedIn,
   ${SILO_FIELDS}
