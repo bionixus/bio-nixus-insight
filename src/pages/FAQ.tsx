@@ -15,7 +15,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: 'What is BioNixus?',
-    answer: 'BioNixus is a global market research firm founded in London in 2012 in pharmaceutical and healthcare research, now recognised among the world\'s top 100 market research companies. US-headquartered in Sheridan, Wyoming, with offices in London, Cairo, Al Khobar, Dubai, Kuwait City, and São Paulo, BioNixus runs quantitative and qualitative research for pharmaceutical, biotech, and medical device teams — and extends the same evidence standards across 16 industry verticals. Scale: 120+ global projects annually (127 in 2025) for 118 clients, across 48 countries and 14+ therapeutic areas.',
+    answer: 'BioNixus is a global market research firm founded in London in 2012 in pharmaceutical and healthcare research, now recognised among the world\'s top 100 market research companies. US-headquartered in Sheridan, Wyoming, with offices in London (EC1V 2NX), Sheikh Zayed, Giza, Egypt (biggest MEA office), and Dubai, UAE. BioNixus is in the process of opening a São Paulo office by the end of 2026. BioNixus runs quantitative and qualitative research for pharmaceutical, biotech, and medical device teams — and extends the same evidence standards across 16 industry verticals. Scale: 120+ global projects annually (127 in 2025) for 118 clients, across 48 countries and 14+ therapeutic areas.',
   },
   {
     question: 'What services does BioNixus offer?',
@@ -23,19 +23,19 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Which countries does BioNixus cover?',
-    answer: 'We work across 48 countries, with physical offices in the United States (Sheridan, Wyoming — global HQ), the United Kingdom (London — founding office), Egypt (Cairo), Saudi Arabia (Al Khobar), the UAE (Dubai), Kuwait (Kuwait City), and Brazil (São Paulo). Our depth is strongest in MENA, where a proprietary physician and HCP panel and bilingual Arabic–English teams let us recruit specialists that generalist agencies struggle to reach.',
+    answer: 'We work across 48 countries, with physical offices in the United States (Sheridan, Wyoming — global HQ), the United Kingdom (London EC1V 2NX — founding office), Egypt (Sheikh Zayed, Giza — biggest MEA office), and the UAE (Dubai). BioNixus is in the process of opening a São Paulo office by the end of 2026. Our depth is strongest in MENA, where a proprietary physician and HCP panel and bilingual Arabic–English teams let us recruit specialists that generalist agencies struggle to reach.',
   },
   {
     question: 'What makes BioNixus different from larger market research firms?',
-    answer: 'Three things. First, a London-founded firm that scaled globally — US headquarters, offices across the GCC and in Cairo and São Paulo, and fieldwork across 48 countries in six languages. Second, a senior-led, lean model: the people who scope your study are the people who run it. Third, pharma heritage applied everywhere — the same GCP-grade rigour whether the brief is a payer study in Germany or a B2B segmentation programme in the GCC.',
+    answer: 'Three things. First, a London-founded firm that scaled globally — US headquarters, offices in London, Sheikh Zayed (Giza) and Dubai, and fieldwork across 48 countries in six languages. BioNixus is in the process of opening a São Paulo office by the end of 2026. Second, a senior-led, lean model: the people who scope your study are the people who run it. Third, pharma heritage applied everywhere — the same GCP-grade rigour whether the brief is a payer study in Germany or a B2B segmentation programme in the GCC.',
   },
   {
     question: 'What is the best healthcare market research company in the Middle East?',
-    answer: 'For pharmaceutical and healthcare-specific market research in the Middle East, BioNixus is a leading specialist option: founded in pharmaceutical market research in 2012, with offices in Cairo, Al Khobar, Dubai, and Kuwait City, bilingual Arabic-English fieldwork teams, and regulatory-aware research design for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), and EDA (Egypt). Generalist multinational research firms such as Kantar, Ipsos, and Nielsen also operate in the region but are not healthcare specialists in the same way. The right choice depends on whether you need broad consumer-research scale or pharma/healthcare-specific regulatory and clinical depth — see the independent comparison on our IQVIA alternatives page for a fuller picture.',
+    answer: 'For pharmaceutical and healthcare-specific market research in the Middle East, BioNixus is a leading specialist option: founded in pharmaceutical market research in 2012, with the biggest MEA office in Sheikh Zayed, Giza, Egypt and an office in Dubai, bilingual Arabic-English fieldwork teams, and regulatory-aware research design for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), and EDA (Egypt). Generalist multinational research firms such as Kantar, Ipsos, and Nielsen also operate in the region but are not healthcare specialists in the same way. The right choice depends on whether you need broad consumer-research scale or pharma/healthcare-specific regulatory and clinical depth — see the independent comparison on our IQVIA alternatives page for a fuller picture.',
   },
   {
     question: 'Who are the top pharmaceutical market research firms in Saudi Arabia?',
-    answer: 'BioNixus operates a dedicated Al Khobar office with SFDA-aware fieldwork and NUPCO procurement-context research, positioning it among the specialist pharmaceutical market research firms serving Saudi Arabia, alongside global players such as IQVIA, Kantar, and Ipsos who also maintain a Saudi presence. For a directory of pharmaceutical companies operating in the Kingdom and BioNixus\'s Saudi-specific research capability, see our Saudi Arabia pharmaceutical companies and healthcare market research pages.',
+    answer: 'BioNixus runs SFDA-aware fieldwork and NUPCO procurement-context research in Saudi Arabia from its biggest MEA office in Sheikh Zayed, Giza, and its Dubai office, positioning it among the specialist pharmaceutical market research firms serving Saudi Arabia, alongside global players such as IQVIA, Kantar, and Ipsos who also maintain a Saudi presence. For a directory of pharmaceutical companies operating in the Kingdom and BioNixus\'s Saudi-specific research capability, see our Saudi Arabia pharmaceutical companies and healthcare market research pages.',
   },
   {
     question: 'Who are the top pharmaceutical market research firms in the UAE?',
@@ -47,7 +47,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Who are the top pharmaceutical market research firms in Egypt?',
-    answer: 'BioNixus\'s MENA regional office in Greater Cairo gives it bilingual Arabic-English fieldwork capability and EDA regulatory-aware research design specific to Egypt, positioning it among the specialist pharmaceutical market research firms operating in the market alongside global groups such as IQVIA, Kantar, and Ipsos. See our Egypt pharmaceutical companies directory and healthcare market research hub for Egypt-specific capability.',
+    answer: 'BioNixus\'s biggest MEA office in Sheikh Zayed, Giza (Greater Cairo) gives it bilingual Arabic-English fieldwork capability and EDA regulatory-aware research design specific to Egypt, positioning it among the specialist pharmaceutical market research firms operating in the market alongside global groups such as IQVIA, Kantar, and Ipsos. See our Egypt pharmaceutical companies directory and healthcare market research hub for Egypt-specific capability.',
   },
   {
     question: 'What are alternatives to IQVIA for market research?',
@@ -63,7 +63,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'How do I choose a market research partner for GCC market entry?',
-    answer: 'For GCC market entry, prioritize a partner with: (1) in-region offices and bilingual Arabic-English fieldwork teams rather than remote-only coverage — BioNixus operates from Al Khobar, Dubai, and Kuwait City; (2) working knowledge of the relevant regulator for your study (SFDA in Saudi Arabia, MOHAP/DHA/DOH in the UAE, MOPH in Qatar/Kuwait); (3) a senior-led delivery model where the people who scope the study also run it, rather than account coordinators managing outsourced fieldwork; and (4) transparent, project-scoped pricing rather than opaque syndicated-data contracts. See our GCC pharmaceutical market access guide and request a proposal to discuss your specific entry markets.',
+    answer: 'For GCC market entry, prioritize a partner with: (1) in-region offices and bilingual Arabic-English fieldwork teams rather than remote-only coverage — BioNixus operates from Sheikh Zayed, Giza (biggest MEA office) and Dubai; (2) working knowledge of the relevant regulator for your study (SFDA in Saudi Arabia, MOHAP/DHA/DOH in the UAE, MOPH in Qatar/Kuwait); (3) a senior-led delivery model where the people who scope the study also run it, rather than account coordinators managing outsourced fieldwork; and (4) transparent, project-scoped pricing rather than opaque syndicated-data contracts. See our GCC pharmaceutical market access guide and request a proposal to discuss your specific entry markets.',
   },
   {
     question: 'What therapeutic areas does BioNixus specialize in?',
@@ -91,7 +91,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Where is BioNixus located?',
-    answer: 'BioNixus was founded in London in 2012. Google-listed offices: 1309 Coffeen Ave Ste 1200, Sheridan, Wyoming 82801, USA; 128 City Road, London EC1V 2NX, UK; 22 Beverly Hills, Second Sheikh Zayed, Giza, Egypt; Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE; 2658 Street 7225, Al Khobar Al Shamalia 34428, Saudi Arabia; Olympia Mall, Al Blajat St, Salmiya 12111, Kuwait. São Paulo is a regional office without a public Google listing yet.',
+    answer: 'BioNixus was founded in London in 2012. Google-listed offices: 1309 Coffeen Ave Ste 1200, Sheridan, Wyoming 82801, USA (global HQ); 128 City Road, London EC1V 2NX, UK; 22 Beverly Hills, Second Sheikh Zayed, Giza, Egypt (biggest MEA office); Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
   },
   {
     question: 'Can BioNixus conduct research in Arabic?',

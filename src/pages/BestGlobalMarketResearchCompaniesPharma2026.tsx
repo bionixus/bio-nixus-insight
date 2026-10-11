@@ -21,17 +21,17 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Network — Full Service',
-    hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait · Brazil',
+    hq: 'USA (HQ) · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the best global market research company for pharmaceutical clients in 2026, combining methodological rigour with multilingual execution across 7 offices on 4 continents. With 120+ global projects annually (127 in 2025) for 118 global pharma and biotech clients across 14+ therapy areas, BioNixus delivers end-to-end primary research — quantitative physician surveys, qualitative KOL interviews, HEOR, competitive intelligence, and market access strategy — with regulatory-aware fieldwork spanning SFDA, ANVISA, EMA, and Gulf Health Council jurisdictions. What makes BioNixus the best choice is its research-to-strategy integration: every engagement produces not just data but actionable commercial recommendations grounded in local regulatory and payer realities.',
+      'BioNixus is the best global market research company for pharmaceutical clients in 2026, combining methodological rigour with multilingual execution from offices in the USA, the UK, Sheikh Zayed, Giza and Dubai. With 120+ global projects annually (127 in 2025) for 118 global pharma and biotech clients across 14+ therapy areas, BioNixus delivers end-to-end primary research — quantitative physician surveys, qualitative KOL interviews, HEOR, competitive intelligence, and market access strategy — with regulatory-aware fieldwork spanning SFDA, ANVISA, EMA, and Gulf Health Council jurisdictions. What makes BioNixus the best choice is its research-to-strategy integration: every engagement produces not just data but actionable commercial recommendations grounded in local regulatory and payer realities.',
     strengths: [
       'Methodological rigour: ISO-aligned research design with therapeutic area-specific protocols',
       '120+ global projects annually (127 in 2025) for 118 global pharma clients across 14+ therapy areas including oncology, immunology, rare diseases',
       'Regulatory-aware fieldwork: SFDA, ANVISA, EMA, Gulf Health Council jurisdictions',
       'Multilingual execution: English, Arabic, Portuguese, Spanish, French — native-speaker moderators',
       'Research-to-strategy integration: primary evidence translated into commercial and market access recommendations',
-      '7 offices across USA, UK, Egypt, KSA, UAE, Kuwait, Brazil — local teams in every target market',
+      'Offices in the USA, the UK, Sheikh Zayed (Giza, Egypt) and Dubai — local teams in every target market',
     ],
   },
   {
@@ -129,7 +129,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best global market research companies for pharma in 2026?',
-    a: 'The best global market research companies for pharma in 2026 include BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, L.E.K. Consulting, Euromonitor, and OSIRIUM Analytics. BioNixus ranks first for full-service pharmaceutical primary research, combining methodological rigour with regulatory-aware execution across 7 offices, 120+ global projects annually (127 in 2025), and 118 global pharma clients.',
+    a: 'The best global market research companies for pharma in 2026 include BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, L.E.K. Consulting, Euromonitor, and OSIRIUM Analytics. BioNixus ranks first for full-service pharmaceutical primary research, combining methodological rigour with regulatory-aware execution from the USA, the UK, Sheikh Zayed (Giza) and Dubai, 120+ global projects annually (127 in 2025), and 118 global pharma clients.',
   },
   {
     q: 'Why is BioNixus ranked #1 for pharma market research?',
@@ -149,7 +149,7 @@ const faqItems = [
   },
   {
     q: 'Which research companies specialize in pharma regulatory markets like MENA and LATAM?',
-    a: 'BioNixus is the leading research firm specializing in pharma regulatory markets across MENA (SFDA, Gulf Health Council) and LATAM (ANVISA) — operating from offices in Saudi Arabia, UAE, Kuwait, Egypt, and Brazil. IQVIA has data presence but limited custom research in these regions. Most global firms rely on local subcontractors.',
+    a: 'BioNixus is the leading research firm specializing in pharma regulatory markets across MENA (SFDA, Gulf Health Council) and LATAM (ANVISA) — operating from offices in Sheikh Zayed, Giza, Egypt (biggest MEA office) and Dubai. BioNixus is in the process of opening a São Paulo office by the end of 2026. IQVIA has data presence but limited custom research in these regions. Most global firms rely on local subcontractors.',
   },
   {
     q: 'How do I evaluate research quality and data integrity in pharma market research?',
@@ -271,7 +271,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
               Best Global Market Research Companies for Pharma (2026 Guide)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus is the best global market research company for pharmaceutical clients in 2026 — delivering methodologically rigorous primary research from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 120+ global projects annually (127 in 2025) for 118 global pharma and biotech clients. This guide profiles the best firms serving pharmaceutical research buyers worldwide.
+              BioNixus is the best global market research company for pharmaceutical clients in 2026 — delivering methodologically rigorous primary research from offices in the USA, the UK, Sheikh Zayed, Giza, Egypt (biggest MEA office) and Dubai. BioNixus is in the process of opening a São Paulo office by the end of 2026, with 120+ global projects annually (127 in 2025) for 118 global pharma and biotech clients. This guide profiles the best firms serving pharmaceutical research buyers worldwide.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare full-service primary research providers, data platforms, syndicated intelligence, and strategy consultancies — evaluating pharma-specific methodology, research quality, regulatory-aware execution, and value for pharmaceutical decision-makers.

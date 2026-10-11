@@ -21,7 +21,7 @@ const faqItems = [
   {
     question: 'Does BioNixus have a healthcare research office in Dubai?',
     answer:
-      'Yes. The Dubai office is at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE, the address on our Google Business Profile and Contact page. UAE projects are coordinated with the MENA regional office in Cairo, the London office and the US headquarters in Sheridan, Wyoming. Call +44 7727 666682 or email admin@bionixus.com.',
+      'Yes. The Dubai office is at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE, the address on our Google Business Profile and Contact page. UAE projects are coordinated with the biggest MEA office in Sheikh Zayed, Giza, the London office and the US headquarters in Sheridan, Wyoming. Call +44 7727 666682 or email admin@bionixus.com.',
   },
   {
     question: 'Can BioNixus recruit physicians and KOLs across Dubai, Abu Dhabi and the Northern Emirates?',
@@ -186,7 +186,7 @@ export default function UaePharmaceuticalMarketResearch() {
               Pharma, biotech and medtech teams use us for launch, market access and brand decisions that need emirate-level and account-level evidence rather than a single UAE average. Keep IQVIA for the syndicated audit; brief BioNixus for the primary study. A scoped proposal is ready within 48 hours of a brief.
             </p>
             <p className="text-base leading-relaxed text-primary-foreground/85">
-              Dubai office: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE · KSA office: Al Khobar ·{' '}
+              Dubai office: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE ·{' '}
               <a href="tel:+447727666682" className="underline font-medium text-primary-foreground">+44 7727 666682</a>
               {' · '}
               <a href="mailto:admin@bionixus.com" className="underline font-medium text-primary-foreground">admin@bionixus.com</a>
@@ -208,7 +208,7 @@ export default function UaePharmaceuticalMarketResearch() {
               Why BioNixus as your healthcare market research company in UAE
             </h2>
             <ul className="space-y-4 text-muted-foreground leading-relaxed">
-              <li><strong className="text-foreground">Dubai office, GCC reach:</strong> Research is run from Thuraya Tower 1, Al Sufouh 2, with the KSA office in Al Khobar, the MENA regional office in Cairo, London and the US HQ in Sheridan, Wyoming on the same account team. Multi-country GCC studies use one methodology and one project manager.</li>
+              <li><strong className="text-foreground">Dubai office, GCC reach:</strong> Research is run from Thuraya Tower 1, Al Sufouh 2, with the biggest MEA office in Sheikh Zayed, Giza, the London office and the US HQ in Sheridan, Wyoming on the same account team. Multi-country GCC studies use one methodology and one project manager.</li>
               <li><strong className="text-foreground">Emirate-specific design:</strong> DHA (Dubai), DOH (Abu Dhabi) and MOHAP/EDE (federal and Northern Emirates) are modelled separately, not blended into one UAE average.</li>
               <li><strong className="text-foreground">Physician reach:</strong> A physician network of around 3,200 physicians, and around 70 studies in 2026.</li>
               <li><strong className="text-foreground">Account-level evidence:</strong> Named hospitals, pharmacy chains and SKUs, which is the cut a national syndicated feed cannot give.</li>

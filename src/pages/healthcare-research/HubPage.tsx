@@ -303,7 +303,7 @@ export default function HubPage() {
       ? (hubContent.trustSignals as { label: string; value: string }[])
       : [
         { label: 'US Headquarters', value: 'Sheridan, WY' },
-        { label: 'Global Offices', value: 'London · Giza · Dubai · Al Khobar · Salmiya' },
+        { label: 'Global Offices', value: 'London · Sheikh Zayed (Giza) · Dubai' },
         { label: 'Core Markets', value: 'Americas, Europe, MENA, Asia' },
         { label: 'Methods', value: 'CATI, CAPI, IDIs, Quant' },
         { label: 'Compliance', value: 'ESOMAR / GDPR / HIPAA-aware' },
@@ -738,7 +738,7 @@ export default function HubPage() {
             <strong className="text-foreground">BioNixus is headquartered in Sheridan, Wyoming (USA)</strong> at
             1309 Coffeen Ave — our primary corporate office and global programme management hub. US-based leadership
             coordinates multi-country pharmaceutical and healthcare research across the Americas, Europe, MENA, and
-            Asia-Pacific, with regional execution teams in London, Cairo, Dubai, and Al Khobar.
+            Asia-Pacific, with regional execution teams in London, Sheikh Zayed (Giza, Egypt), and Dubai.
           </p>
           <p>
             For US clients, that means FDA- and HIPAA-aware study design, payer and PBM-context research, and
@@ -1148,7 +1148,7 @@ export default function HubPage() {
             {[
               {
                 title: 'US headquarters, global reach',
-                desc: 'Programmes are managed from Sheridan, Wyoming (USA) with regional execution in London, Cairo, Dubai, and Al Khobar — so US and international clients share one accountable project office.',
+                desc: 'Programmes are managed from Sheridan, Wyoming (USA) with regional execution in London, Sheikh Zayed (Giza, Egypt), and Dubai — so US and international clients share one accountable project office.',
               },
               {
                 title: 'Fieldwork that holds up to a DHA audit',

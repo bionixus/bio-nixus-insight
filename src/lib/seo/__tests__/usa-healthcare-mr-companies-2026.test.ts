@@ -59,8 +59,8 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(pageSource).not.toMatch(/staffed Riyadh|offices in Riyadh|Riyadh office/i);
     expect(pageSource).toContain('Sheridan');
     expect(pageSource).toContain('London');
-    expect(pageSource).toContain('Cairo');
-    expect(pageSource).toContain('Al Khobar');
+    expect(pageSource).toContain('Sheikh Zayed');
+    expect(pageSource).not.toContain('Al Khobar');
     expect(USA_HEALTHCARE_MR_FIRMS[0]?.name).toBe('BioNixus');
     expect(USA_HEALTHCARE_MR_FIRMS.map((f) => f.name)).toEqual([
       'BioNixus',

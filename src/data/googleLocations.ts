@@ -4,7 +4,7 @@
  * Do not invent streets. Update this file when GBP NAP changes.
  */
 
-export type GoogleOfficeId = 'us' | 'uk' | 'eg' | 'ae' | 'sa' | 'kw';
+export type GoogleOfficeId = 'us' | 'uk' | 'eg' | 'ae';
 
 export type GoogleOffice = {
   id: GoogleOfficeId;
@@ -94,7 +94,7 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
     schemaId: `${BASE}/#eg-localbusiness`,
     name: 'BioNixus Egypt',
     description:
-      'BioNixus Egypt — market research office in Sheikh Zayed, Giza.',
+      'BioNixus Egypt — biggest MEA office, in Sheikh Zayed, Giza (Greater Cairo).',
     telephone: '+20-120-688-2323',
     url: BASE,
     mapsUrl: 'https://share.google/Fhbb1PvbESItLDNSc',
@@ -123,44 +123,6 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
       streetAddress: 'Thuraya Tower 1, 5th Floor, Al Sufouh 2',
       addressLocality: 'Dubai',
       addressCountry: 'AE',
-    },
-    openingHours: { dayOfWeek: MENA_WEEK, opens: '09:00', closes: '17:00' },
-    includeReviews: false,
-  },
-  {
-    id: 'sa',
-    schemaId: `${BASE}/#sa-localbusiness`,
-    name: 'BioNixus Saudi Arabia',
-    description:
-      'BioNixus Saudi Arabia — market research office in Al Khobar Al Shamalia.',
-    telephone: '+966-50-182-5336',
-    url: BASE,
-    mapsUrl: 'https://share.google/Zv2GWYA71ULqo3wEU',
-    placeId: '/g/11w2k6k2d9',
-    address: {
-      streetAddress: '2658 Street 7225, Al Aashir, Al Khobar Al Shamalia',
-      addressLocality: 'Al Khobar',
-      postalCode: '34428',
-      addressCountry: 'SA',
-    },
-    openingHours: { dayOfWeek: MENA_WEEK, opens: '09:00', closes: '17:00' },
-    includeReviews: false,
-  },
-  {
-    id: 'kw',
-    schemaId: `${BASE}/#kw-localbusiness`,
-    name: 'BioNixus Kuwait',
-    description:
-      'BioNixus Kuwait — market research office at Olympia Mall, Salmiya.',
-    telephone: '+965-6502-3130',
-    url: BASE,
-    mapsUrl: 'https://share.google/IVQ1EAwF7wktCnYvk',
-    placeId: '/g/11sgzlvsf0',
-    address: {
-      streetAddress: 'Olympia Mall, Al Blajat St',
-      addressLocality: 'Salmiya',
-      postalCode: '12111',
-      addressCountry: 'KW',
     },
     openingHours: { dayOfWeek: MENA_WEEK, opens: '09:00', closes: '17:00' },
     includeReviews: false,

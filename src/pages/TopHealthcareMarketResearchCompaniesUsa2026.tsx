@@ -36,14 +36,14 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Primary Healthcare Market Research',
-    hq: 'USA (HQ — Sheridan, WY) · London · Cairo · Dubai · Al Khobar',
+    hq: 'USA (HQ — Sheridan, WY) · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     bestFor:
       'Account-level and SKU-level primary fieldwork — named hospitals, cities, HCP ATU, pharmacy mystery shop, and competitor intelligence the dashboard cannot cut',
     overview:
-      'BioNixus is the primary-research complement US pharmaceutical and medtech affiliates brief when IQVIA or NielsenIQ dashboards cannot name the account. Headquartered in Sheridan, Wyoming, with offices in London, Cairo, Dubai, and Al Khobar, the firm fields IRB-compliant HCP surveys, KOL mapping across major academic medical centres, PBM and CMS payer interviews, pharmacy mystery shops, and brand-versus-competitor work at hospital, IDN, and SKU level. Keep syndicated IQVIA for national Rx measurement and NielsenIQ for retail audits. Brief BioNixus for the cut those feeds miss. All US studies run under 45 CFR Part 46 and HIPAA/HITECH.',
+      'BioNixus is the primary-research complement US pharmaceutical and medtech affiliates brief when IQVIA or NielsenIQ dashboards cannot name the account. Headquartered in Sheridan, Wyoming, with offices in London, Sheikh Zayed (Giza, Egypt), and Dubai, the firm fields IRB-compliant HCP surveys, KOL mapping across major academic medical centres, PBM and CMS payer interviews, pharmacy mystery shops, and brand-versus-competitor work at hospital, IDN, and SKU level. Keep syndicated IQVIA for national Rx measurement and NielsenIQ for retail audits. Brief BioNixus for the cut those feeds miss. All US studies run under 45 CFR Part 46 and HIPAA/HITECH.',
     strengths: [
       'Account-level and SKU-level primary research for named US hospitals, IDNs, cities, and pharmacies',
       'IRB-compliant HCP ATU, KOL mapping, and HIPAA/HITECH patient fieldwork',
@@ -714,7 +714,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 BioNixus is included and is transparent about its participation. Offices cited: Sheridan, Wyoming
-                (HQ); London; Cairo; Dubai; Al Khobar. For corrections,{' '}
+                (HQ); London; Sheikh Zayed (Giza); Dubai. For corrections,{' '}
                 <Link to="/contact" className="text-primary hover:underline">
                   contact the team
                 </Link>

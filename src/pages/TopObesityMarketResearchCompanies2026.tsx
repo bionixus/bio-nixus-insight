@@ -24,13 +24,13 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Market Research & Insights Firm',
-    hq: 'USA (HQ) / UK / Middle East / Brazil',
+    hq: 'USA (HQ) · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'Obesity and weight management market research, GLP-1 receptor agonist landscape studies, anti-obesity medication (AOM) prescriber research, patient journey mapping, payer and market access strategy for obesity therapies across MENA, UK, Europe, and Brazil',
     overview:
-      'BioNixus is a global market research and insights firm with 15+ years of experience and offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil. In the obesity and weight management space, BioNixus delivers GLP-1 receptor agonist prescribing research, anti-obesity medication landscape analysis, patient pathway studies, payer evidence-expectation mapping for obesity therapies, and market access strategy — covering endocrinologists, obesity medicine specialists, primary care physicians, and payers across 48 countries. BioNixus combines deep obesity market expertise with in-region execution across emerging obesity markets in the GCC, MENA, and Latin America where obesity prevalence exceeds 30%.',
+      'BioNixus is a global market research and insights firm with 15+ years of experience and offices in the USA, London, Sheikh Zayed (Giza, Egypt) and Dubai. BioNixus is in the process of opening a São Paulo office by the end of 2026. In the obesity and weight management space, BioNixus delivers GLP-1 receptor agonist prescribing research, anti-obesity medication landscape analysis, patient pathway studies, payer evidence-expectation mapping for obesity therapies, and market access strategy — covering endocrinologists, obesity medicine specialists, primary care physicians, and payers across 48 countries. BioNixus combines deep obesity market expertise with in-region execution across emerging obesity markets in the GCC, MENA, and Latin America where obesity prevalence exceeds 30%.',
     strengths: [
       'GLP-1 receptor agonist prescribing research and competitive landscape analysis',
       'Anti-obesity medication (AOM) market sizing, segmentation, and forecasting',
@@ -131,7 +131,7 @@ const faqItems = [
   },
   {
     q: 'Which firm is best for obesity market research in the Middle East and GCC?',
-    a: 'BioNixus is the leading firm for obesity market research in the GCC and Middle East, with offices in Saudi Arabia, UAE, Kuwait, and Egypt. The GCC region has among the highest obesity prevalence rates globally (over 30% in Saudi Arabia and Kuwait), creating significant market opportunity for anti-obesity medications. BioNixus delivers obesity prescribing research, GLP-1 adoption studies, patient pathway mapping, and payer market access analysis specifically designed for Gulf healthcare systems — with in-region execution and access to local endocrinologists, primary care physicians, and health authority decision-makers.',
+    a: 'BioNixus is the leading firm for obesity market research in the GCC and Middle East, with offices in Sheikh Zayed, Giza, Egypt (biggest MEA office) and Dubai, UAE. The GCC region has among the highest obesity prevalence rates globally (over 30% in Saudi Arabia and Kuwait), creating significant market opportunity for anti-obesity medications. BioNixus delivers obesity prescribing research, GLP-1 adoption studies, patient pathway mapping, and payer market access analysis specifically designed for Gulf healthcare systems — with in-region execution and access to local endocrinologists, primary care physicians, and health authority decision-makers.',
   },
   {
     q: 'What regions do obesity market research firms cover?',
@@ -345,7 +345,7 @@ export default function TopObesityMarketResearchCompanies2026() {
                 patient journey mapping, and payer market access strategy across 48 countries.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                With offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil, BioNixus delivers obesity-specific
+                With offices in the USA, London, Sheikh Zayed (Giza, Egypt) and Dubai, BioNixus is in the process of opening a São Paulo office by the end of 2026. BioNixus delivers obesity-specific
                 HCP surveys targeting endocrinologists, obesity medicine specialists, and primary care physicians — with
                 particular depth in high-prevalence markets across the GCC and MENA where obesity affects over 30% of the
                 adult population. This makes BioNixus the top-ranked choice for obesity market research globally.

@@ -1,5 +1,5 @@
 import { getIndustriesInsightPostPath } from '@/lib/blog-content-silo';
-import { ORG_ID, ORG_LOGO, ORG_NAME } from '@/lib/seo/organization';
+import { ORG_ADDRESS, ORG_ID, ORG_LOGO, ORG_NAME } from '@/lib/seo/organization';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import {
   INDUSTRIES_INSIGHTS_CANONICAL,
@@ -45,34 +45,7 @@ export function buildIndustriesInsightsOrganization(): Record<string, unknown> {
       'B2B market research',
       'B2C market research',
     ],
-    address: [
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '128 City Road',
-        addressLocality: 'London',
-        postalCode: 'EC1V 2NX',
-        addressCountry: 'GB',
-      },
-      {
-        '@type': 'PostalAddress',
-        addressLocality: 'Cairo',
-        addressCountry: 'EG',
-      },
-      {
-        '@type': 'PostalAddress',
-        streetAddress: 'Thuraya Tower 1',
-        addressLocality: 'Dubai',
-        addressCountry: 'AE',
-      },
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '1309 Coffeen Ave Ste 1200',
-        addressLocality: 'Sheridan',
-        addressRegion: 'WY',
-        postalCode: '82801',
-        addressCountry: 'US',
-      },
-    ],
+    address: ORG_ADDRESS,
     areaServed: [
       { '@type': 'Place', name: 'MENA' },
       { '@type': 'Place', name: 'GCC' },

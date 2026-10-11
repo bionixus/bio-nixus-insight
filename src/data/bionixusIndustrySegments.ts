@@ -71,7 +71,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
       'Pharmaceutical and healthcare research is the discipline BioNixus was founded on in London in 2012, and it remains the core of the firm. Everything else we do in B2B and B2C markets borrows the standards we set here: verified respondents, defensible sampling, and evidence built for a decision rather than a slide library.',
     bodyParagraphs: [
       'This is the home silo for life-sciences buyers. If your work touches a molecule, a device, a diagnosis, or a pharmacy shelf, the pages below connect to deep country and therapy coverage — physician and HCP surveys, KOL and payer research, market access and HTA support, real-world evidence, and launch readiness across the EU5, the GCC, North Africa, and the Americas.',
-      'BioNixus was founded in London and is now US-headquartered in Sheridan, Wyoming, with a MENA regional office in Greater Cairo. That footprint lets us run American and European programmes to the same standard as our GCC and North Africa fieldwork, and to benchmark a launch across all three regions inside one evidence framework.',
+      'BioNixus was founded in London and is now US-headquartered in Sheridan, Wyoming, with the biggest MEA office in Sheikh Zayed, Giza (Greater Cairo). That footprint lets us run American and European programmes to the same standard as our GCC and North Africa fieldwork, and to benchmark a launch across all three regions inside one evidence framework.',
     ],
     buyerContext:
       'Who briefs us here: medical affairs, commercial and brand teams, market access and HEOR leads, MedTech and diagnostics marketers, biotech founders preparing for launch, and consumer-health teams sizing OTC and pharmacy demand.',

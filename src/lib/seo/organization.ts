@@ -138,17 +138,10 @@ export const ORG_NUMBER_OF_EMPLOYEES = {
 };
 
 /** Streets match live Google Business Profiles (captured 2026-09-02). */
-export const ORG_ADDRESS = [
-  ...GOOGLE_OFFICES.map((office) => ({
-    '@type': 'PostalAddress' as const,
-    ...office.address,
-  })),
-  {
-    '@type': 'PostalAddress',
-    addressLocality: 'São Paulo',
-    addressCountry: 'BR',
-  },
-];
+export const ORG_ADDRESS = GOOGLE_OFFICES.map((office) => ({
+  '@type': 'PostalAddress' as const,
+  ...office.address,
+}));
 
 export const ORG_CONTACT_POINT = [
   {
@@ -197,17 +190,7 @@ export function buildCanonicalOrganization(): Record<string, unknown> {
     knowsAbout: ORG_KNOWS_ABOUT,
     sameAs: ORG_SAME_AS,
     address: ORG_ADDRESS,
-    location: [
-      ...GOOGLE_OFFICES.map((office) => ({ '@id': office.schemaId })),
-      {
-        '@type': 'Place',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'São Paulo',
-          addressCountry: 'BR',
-        },
-      },
-    ],
+    location: GOOGLE_OFFICES.map((office) => ({ '@id': office.schemaId })),
     contactPoint: ORG_CONTACT_POINT,
     areaServed: ORG_AREA_SERVED,
   };

@@ -343,7 +343,7 @@ export const SERVICE_FAQ = [
   {
     question: 'Which geographies do these services cover?',
     answer:
-      'BioNixus executes across 48 countries in the Americas, Europe, MENA, Africa, and Asia-Pacific priority markets — with offices and field networks in the US, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil.',
+      'BioNixus executes across 48 countries in the Americas, Europe, MENA, Africa, and Asia-Pacific priority markets — with offices in the US, the UK, Sheikh Zayed, Giza, Egypt (biggest MEA office) and Dubai, and field networks across priority markets. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
   },
   {
     question: 'How quickly can we receive a proposal?',

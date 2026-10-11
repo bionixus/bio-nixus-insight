@@ -26,7 +26,7 @@ export const LATAM_COVERAGE_SENTENCE =
   'BioNixus is fully operational in LATAM, covered from the US office in Sheridan, Wyoming, with a strong network of local consultants, and is in the process of opening a São Paulo office by the end of 2026.';
 
 export const INDUSTRIES_INSIGHTS_ORG_DESCRIPTION =
-  'BioNixus is a global market research firm across FMCG, retail, real estate, financial services, automotive, technology, telecom, energy, hospitality, education and other B2B and B2C industries. Founded in 2012, BioNixus has served 118 clients and completed 127 studies so far in 2026 across 48 countries. Offices are in London (EC1V 2NX), Cairo, Dubai (Thuraya Tower 1) and the US headquarters in Sheridan, Wyoming. ' +
+  'BioNixus is a global market research firm across FMCG, retail, real estate, financial services, automotive, technology, telecom, energy, hospitality, education and other B2B and B2C industries. Founded in 2012, BioNixus has served 118 clients and completed 127 studies so far in 2026 across 48 countries. Offices are in London (EC1V 2NX), Sheikh Zayed, Giza, Egypt (biggest MEA office), Dubai (Thuraya Tower 1) and the US headquarters in Sheridan, Wyoming. ' +
   LATAM_COVERAGE_SENTENCE;
 
 export type HubRegionId = 'mena-gcc' | 'usa' | 'europe' | 'apac' | 'latam' | 'can-anz-cn' | 'africa';
@@ -80,7 +80,7 @@ const REGION_COPY: Record<HubRegionId, { title: string; description: string }> =
   'mena-gcc': {
     title: 'MENA and GCC',
     description:
-      'Country studies, firm rankings and company directories across Saudi Arabia, the UAE, Egypt and the wider Middle East. BioNixus has offices in Cairo and Dubai (Thuraya Tower 1).',
+      'Country studies, firm rankings and company directories across Saudi Arabia, the UAE, Egypt and the wider Middle East. BioNixus has offices in Sheikh Zayed, Giza and Dubai (Thuraya Tower 1).',
   },
   usa: {
     title: 'United States',

@@ -878,7 +878,7 @@ const egyptObesity: SegmentMarketContent = {
     { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   ],
   intro: [
-    'BioNixus provides obesity and GLP-1 market research in Egypt — physician and KAP surveys on semaglutide and tirzepatide, patient-journey and persistence studies, and access interviews framed around EDA registration and pricing reality. Fieldwork runs in Arabic and English from our MENA Cairo office. Custom projects typically cost $10,000–$60,000. A scoped proposal is returned within one working day.',
+    'BioNixus provides obesity and GLP-1 market research in Egypt — physician and KAP surveys on semaglutide and tirzepatide, patient-journey and persistence studies, and access interviews framed around EDA registration and pricing reality. Fieldwork runs in Arabic and English from our Sheikh Zayed, Giza office (biggest MEA office). Custom projects typically cost $10,000–$60,000. A scoped proposal is returned within one working day.',
     'EDA-aware primary research on anti-obesity medicines, specialist prescribing, and self-pay patient economics is the brief — not a syndicated MENA average. Egypt’s obesity and incretin opportunity is shaped by three commercial facts: a large addressable metabolic population, a regulator (the Egyptian Drug Authority, EDA) that publishes product assessment and formulary materials for GLP-1 class agents, and a treatment market where out-of-pocket payment often decides initiation and persistence more than a single national benefit design.',
     'BioNixus researches those facts with commissioned fieldwork from Cairo. Egypt is not modelled by allocating a Gulf percentage to the local market.',
   ],
@@ -905,7 +905,7 @@ const egyptObesity: SegmentMarketContent = {
       {
         title: 'Arabic fieldwork is required',
         description:
-          'Physicians and patients outside tertiary English-comfortable settings need Arabic interviewing, coordinated from the MENA Cairo office.',
+          'Physicians and patients outside tertiary English-comfortable settings need Arabic interviewing, coordinated from the Sheikh Zayed, Giza office (biggest MEA office).',
       },
     ],
     summary:
@@ -1014,7 +1014,7 @@ const egyptObesity: SegmentMarketContent = {
       'Egypt should not be modelled as a small copy of Saudi Arabia or the UAE. Public provision, private hospitals, and cash-pay clinics coexist, and pharmacy retail is a major dispensing surface for incretin products. Specialists, especially endocrinology, set clinical direction, while private weight-management and aesthetic-leaning clinics can drive consumer-like initiation for self-pay patients.',
       'Regulatory reality starts with the Egyptian Drug Authority (EDA). For planning research, BioNixus uses public EDA materials — the Wegovy (semaglutide) public assessment report and the endocrine national formulary listings of GLP-1 receptor agonists — as context for discussion guides. Real-world initiation, stock, and payment mix are then validated in primary interviews. Those documents are not treated as an efficacy claim or as a market-size source.',
       'Egypt’s universal health insurance expansion and unified procurement are strategically important for many chronic therapies. BioNixus does not assume that expansion covers anti-obesity indications or specific molecules. Public coverage is a hypothesis to test with stakeholders. Self-pay is modelled as a core demand pool until interviews show otherwise.',
-      'Fieldwork is coordinated from the MENA office in Cairo, in Arabic and English. Regional support sits in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Al Khobar, London, Sheridan WY, and São Paulo.',
+      'Fieldwork is coordinated from the biggest MEA office in Sheikh Zayed, Giza, in Arabic and English. Regional support sits in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), London and Sheridan, Wyoming. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
     ],
   },
   geoSignals: {
@@ -1085,7 +1085,7 @@ const egyptObesity: SegmentMarketContent = {
   whyBionixus: [
     'Egypt is treated as its own market, not a MENA residual or a Gulf percentage allocated to Cairo.',
     'Instruments and deliverables name semaglutide and tirzepatide.',
-    'Arabic and English fieldwork runs from the MENA Cairo office.',
+    'Arabic and English fieldwork runs from the Sheikh Zayed, Giza office (biggest MEA office).',
     'Self-pay economics are separated from aspirational coverage assumptions.',
     'Public EDA materials are cited as context, and unverified payer claims stay open questions.',
     'Custom engagements typically cost $10,000–$60,000. The physician network is about 3,200 physicians, and BioNixus is running about 70 studies in 2026.',
@@ -1121,7 +1121,7 @@ const egyptObesity: SegmentMarketContent = {
     {
       question: 'Who does obesity GLP-1 market research in Egypt?',
       answer:
-        'BioNixus runs custom obesity and GLP-1 market research in Egypt, including physician surveys, patient-journey studies, and channel work, with Arabic fieldwork from our Cairo office. Typical custom project fees are $10,000–$60,000.',
+        'BioNixus runs custom obesity and GLP-1 market research in Egypt, including physician surveys, patient-journey studies, and channel work, with Arabic fieldwork from our Sheikh Zayed, Giza office (biggest MEA office). Typical custom project fees are $10,000–$60,000.',
     },
     {
       question: 'Can BioNixus research the semaglutide and tirzepatide market in Egypt?',
@@ -1141,7 +1141,7 @@ const egyptObesity: SegmentMarketContent = {
     {
       question: 'Do you run Arabic-language physician and patient studies in Egypt?',
       answer:
-        'Yes. Egypt obesity studies are fielded in Arabic and English as respondents prefer, coordinated from the MENA Cairo office.',
+        'Yes. Egypt obesity studies are fielded in Arabic and English as respondents prefer, coordinated from the Sheikh Zayed, Giza office (biggest MEA office).',
     },
     {
       question: 'How is this different from a syndicated Egypt GLP-1 report?',

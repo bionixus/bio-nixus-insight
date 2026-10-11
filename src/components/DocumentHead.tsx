@@ -237,7 +237,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/about') {
     return clampDescription(
-      'Founded in London in 2012 — now US-headquartered with offices across the GCC, Cairo, and São Paulo. Global pharma & healthcare market research for 118 clients across 48 countries.'
+      'Founded in London in 2012. US HQ in Sheridan, Wyoming, with offices in London, Sheikh Zayed (Giza, Egypt) and Dubai. Pharma and healthcare market research across 48 countries.'
     );
   }
 

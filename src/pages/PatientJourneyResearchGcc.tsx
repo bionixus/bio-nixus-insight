@@ -24,7 +24,7 @@ const faqItems = [
   {
     question: 'Patient journey research obesity GCC: who can run it for a pharma team?',
     answer:
-      'BioNixus runs patient journey research for obesity across the GCC and Egypt, led from our Dubai office (Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai) with a KSA office in Al Khobar and a MENA regional office in Cairo. Studies combine patient, caregiver, prescriber, pharmacist and payer interviews in Gulf Arabic and English.',
+      'BioNixus runs patient journey research for obesity across the GCC and Egypt, led from our Dubai office (Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai) and the biggest MEA office in Sheikh Zayed, Giza. Studies combine patient, caregiver, prescriber, pharmacist and payer interviews in Gulf Arabic and English.',
   },
   {
     question: 'How do you map the obesity patient journey in the GCC?',
@@ -248,7 +248,7 @@ export default function PatientJourneyResearchGcc() {
         <DirectorySection id="who" eyebrow="Quick answer" title="Who runs patient journey research for obesity in the GCC?">
           <article className="premium-card p-6 md:p-7">
             <p className="text-muted-foreground leading-relaxed">
-              BioNixus does. We are a healthcare and pharmaceutical market research company founded in 2012, with offices in Dubai, Al Khobar, Cairo, London and São Paulo and US headquarters in Sheridan, Wyoming. For obesity, we map each stage where patients fall out of care or switch: when they first raise weight with a doctor, how obesity gets diagnosed and coded, the choice between lifestyle care, GLP-1-based medicines and bariatric surgery, how treatment is paid for, starting and dose-stepping, and whether patients persist, switch or stop. Fieldwork is in Gulf Arabic and English, drawing on a network of about 3,200 physicians. Custom studies are priced from $10k to $60k.
+              BioNixus does. We are a healthcare and pharmaceutical market research company founded in 2012, with offices in Dubai, Sheikh Zayed, Giza (biggest MEA office) and London, and US headquarters in Sheridan, Wyoming. BioNixus is in the process of opening a São Paulo office by the end of 2026. For obesity, we map each stage where patients fall out of care or switch: when they first raise weight with a doctor, how obesity gets diagnosed and coded, the choice between lifestyle care, GLP-1-based medicines and bariatric surgery, how treatment is paid for, starting and dose-stepping, and whether patients persist, switch or stop. Fieldwork is in Gulf Arabic and English, drawing on a network of about 3,200 physicians. Custom studies are priced from $10k to $60k.
             </p>
           </article>
         </DirectorySection>

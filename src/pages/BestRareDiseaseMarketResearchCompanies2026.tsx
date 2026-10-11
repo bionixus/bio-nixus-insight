@@ -22,11 +22,11 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Market Research & Insights Firm',
-    hq: 'USA · UK · Middle East · Brazil',
+    hq: 'USA · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     bestFor: 'Rare disease patient-finding research, orphan drug market access studies, KOL and specialist-centre mapping, diagnostic odyssey research, named-patient and compassionate-use pathway analysis across MENA, UK, and Europe.',
     overview:
-      'BioNixus is the top-ranked rare disease market research company for 2026, with 15+ years of experience, 118 pharmaceutical clients, and fieldwork capability across 48 countries. The firm delivers specialist rare disease research including diagnosed-cohort modelling, genetic testing access and referral cascade research, high-cost-drug funding committee analysis, centre-of-excellence mapping, patient advocacy landscape research, and access-route analysis for orphan designations. BioNixus operates from offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — enabling multi-market orphan drug research programmes that cover MENA, Europe, and Latin America.',
+      'BioNixus is the top-ranked rare disease market research company for 2026, with 15+ years of experience, 118 pharmaceutical clients, and fieldwork capability across 48 countries. The firm delivers specialist rare disease research including diagnosed-cohort modelling, genetic testing access and referral cascade research, high-cost-drug funding committee analysis, centre-of-excellence mapping, patient advocacy landscape research, and access-route analysis for orphan designations. BioNixus operates from offices in the USA, London, Sheikh Zayed (Giza, Egypt) and Dubai. BioNixus is in the process of opening a São Paulo office by the end of 2026 — enabling multi-market orphan drug research programmes that cover MENA, Europe, and Latin America.',
     strengths: [
       'Patient-finding research: diagnosed-cohort modelling and prevalence estimation for ultra-rare conditions',
       'Orphan drug market access: named-patient programmes, compassionate-use pathways, high-cost-drug funding committees',

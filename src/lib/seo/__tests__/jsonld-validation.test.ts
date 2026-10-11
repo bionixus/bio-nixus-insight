@@ -66,7 +66,7 @@ describe('Homepage schema bundle', () => {
     expect(website.potentialAction).toBeUndefined();
   });
 
-  it('emits all six Google LocalBusiness listings with matching NAP', () => {
+  it('emits the four current Google LocalBusiness listings with matching NAP', () => {
     const nodes = buildSchemas(props);
     const offices = nodes.filter((n) => n['@type'] === 'LocalBusiness');
     expect(offices.map((n) => n.name)).toEqual([
@@ -74,8 +74,6 @@ describe('Homepage schema bundle', () => {
       'BioNixus UK',
       'BioNixus Egypt',
       'BioNixus UAE',
-      'BioNixus Saudi Arabia',
-      'BioNixus Kuwait',
     ]);
     const uk = offices.find((n) => n.name === 'BioNixus UK') as Record<string, unknown>;
     expect(uk.aggregateRating).toBeTruthy();
@@ -88,12 +86,15 @@ describe('Homepage schema bundle', () => {
     expect((offices.find((n) => n.name === 'BioNixus UAE') as any).address.streetAddress).toContain(
       'Thuraya Tower 1',
     );
-    expect((offices.find((n) => n.name === 'BioNixus Saudi Arabia') as any).address.addressLocality).toBe(
-      'Al Khobar',
+    expect((offices.find((n) => n.name === 'BioNixus Egypt') as any).address.streetAddress).toContain(
+      '22 Beverly Hills, Second Sheikh Zayed',
     );
-    expect((offices.find((n) => n.name === 'BioNixus Kuwait') as any).address.addressLocality).toBe(
-      'Salmiya',
+    expect((offices.find((n) => n.name === 'BioNixus Egypt') as any).address.addressLocality).toBe(
+      'Sheikh Zayed',
     );
+    expect((offices.find((n) => n.name === 'BioNixus Egypt') as any).address.addressRegion).toBe('Giza');
+    const addressBlob = JSON.stringify(offices.map((office) => office.address));
+    expect(addressBlob).not.toMatch(/Khobar|Salmiya|S[aã]o Paulo/i);
   });
 });
 

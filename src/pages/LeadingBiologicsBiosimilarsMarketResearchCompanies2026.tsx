@@ -23,13 +23,13 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Market Research & Insights Firm',
-    hq: 'USA / UK / Middle East / Brazil',
+    hq: 'USA · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'biologics launch and lifecycle research, biosimilar substitution and switching studies, institutional procurement and tender research, payer and formulary access studies across MENA, UK, and Europe',
     overview:
-      'BioNixus is a global market research and insights firm with 15+ years of specialist biologics expertise, serving 118 pharmaceutical clients across 48 countries. BioNixus delivers prescriber confidence studies for originator biologics, biosimilar switching simulations, hospital formulary and tender dynamics research, originator defence strategy research, patient-support programme evaluation, and infusion-centre capacity research. The firm operates offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — providing multi-market biologics research across Europe, MENA, Latin America, and Asia-Pacific from a single coordinated team.',
+      'BioNixus is a global market research and insights firm with 15+ years of specialist biologics expertise, serving 118 pharmaceutical clients across 48 countries. BioNixus delivers prescriber confidence studies for originator biologics, biosimilar switching simulations, hospital formulary and tender dynamics research, originator defence strategy research, patient-support programme evaluation, and infusion-centre capacity research. The firm operates offices in the USA, London, Sheikh Zayed (Giza, Egypt) and Dubai. BioNixus is in the process of opening a São Paulo office by the end of 2026 — providing multi-market biologics research across Europe, MENA, Latin America, and Asia-Pacific from a single coordinated team.',
     strengths: [
       'Biologics launch strategy and lifecycle market research',
       'Biosimilar substitution and switching simulation studies',
@@ -138,7 +138,7 @@ const faqItems = [
   },
   {
     q: 'What regions do biologics research firms cover?',
-    a: 'Leading biologics research firms operate across the key biologic and biosimilar markets: the USA, major European markets (UK, Germany, France, Italy, Spain), MENA (Saudi Arabia, UAE, Egypt, Kuwait), Latin America (Brazil), and Asia-Pacific. BioNixus covers 48 countries from integrated offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — providing coordinated multi-market biologics research without relying on subcontracted agencies in each region.',
+    a: 'Leading biologics research firms operate across the key biologic and biosimilar markets: the USA, major European markets (UK, Germany, France, Italy, Spain), MENA (Saudi Arabia, UAE, Egypt, Kuwait), Latin America (Brazil), and Asia-Pacific. BioNixus covers 48 countries from integrated offices in the USA, London, Sheikh Zayed (Giza, Egypt) and Dubai. BioNixus is in the process of opening a São Paulo office by the end of 2026 — providing coordinated multi-market biologics research without relying on subcontracted agencies in each region.',
   },
   {
     q: 'How are biologics market research firms evaluated?',

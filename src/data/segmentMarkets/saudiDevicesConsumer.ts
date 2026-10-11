@@ -1643,11 +1643,11 @@ const obesity: SegmentMarketContent = {
     { value: '$10,000–$60,000', label: 'custom studies' },
     { value: '~3,200', label: 'physicians in network' },
     { value: '~70', label: 'studies in 2026' },
-    { value: 'Al Khobar', label: 'Saudi fieldwork office' },
+    { value: 'Sheikh Zayed', label: 'Biggest MEA office' },
   ],
   intro: [
-    'BioNixus runs obesity and GLP-1 market research in Saudi Arabia — including GLP-1 physician surveys, KAP and ATU tracking, patient-journey and persistence studies, and payer/access interviews. Fieldwork covers endocrinology, family medicine, bariatric/metabolic surgery, and obesity clinics, with senior-led delivery from our Al Khobar office. Custom studies typically range from $10,000 to $60,000. Proposal within one working day.',
-    'Physician surveys, KAP and ATU tracking, semaglutide and tirzepatide access, and patient persistence — custom primary research from Al Khobar.',
+    'BioNixus runs obesity and GLP-1 market research in Saudi Arabia — including GLP-1 physician surveys, KAP and ATU tracking, patient-journey and persistence studies, and payer/access interviews. Fieldwork covers endocrinology, family medicine, bariatric/metabolic surgery, and obesity clinics, with senior-led delivery from our Sheikh Zayed, Giza office (biggest MEA office). Custom studies typically range from $10,000 to $60,000. Proposal within one working day.',
+    'Physician surveys, KAP and ATU tracking, semaglutide and tirzepatide access, and patient persistence — custom primary research coordinated from Sheikh Zayed, Giza.',
   ],
   quickAnswer: {
     question: 'What does BioNixus do for obesity and GLP-1 market research in Saudi Arabia?',
@@ -1682,7 +1682,7 @@ const obesity: SegmentMarketContent = {
       {
         title: 'Arabic and English fieldwork',
         description:
-          'Arabic and English fieldwork with Al Khobar–supported delivery for Saudi obesity and GLP-1 programmes.',
+          'Arabic and English fieldwork for Saudi obesity and GLP-1 programmes, coordinated from the Sheikh Zayed, Giza office.',
       },
     ],
     summary:
@@ -1829,7 +1829,7 @@ const obesity: SegmentMarketContent = {
       {
         name: 'Eastern Province',
         signal:
-          'Dammam and Al Khobar combine employer-insured coverage and company-linked healthcare with corporate wellness programmes that surface undiagnosed metabolic risk. Saudi fieldwork is coordinated from the Al Khobar office.',
+          'Dammam and Al Khobar combine employer-insured coverage and company-linked healthcare with corporate wellness programmes that surface undiagnosed metabolic risk. Saudi fieldwork is coordinated from the Sheikh Zayed, Giza office (biggest MEA office).',
       },
       {
         name: 'Secondary cities and interior regions',
@@ -1840,7 +1840,7 @@ const obesity: SegmentMarketContent = {
   },
   audiencesHeading: 'Who we interview for Saudi GLP-1 physician surveys',
   audiencesNote:
-    'BioNixus Saudi fieldwork is coordinated from Al Khobar (Eastern Province). Regional hubs also support programmes from Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), MENA Cairo, London, Sheridan WY (US), and São Paulo.',
+    'BioNixus Saudi fieldwork is coordinated from the biggest MEA office in Sheikh Zayed, Giza. Regional hubs also support programmes from Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), London and Sheridan, Wyoming. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
   audiences: [
     {
       audience: 'Endocrinologists and metabolic physicians',
@@ -1880,7 +1880,7 @@ const obesity: SegmentMarketContent = {
       'Modes: online quantitative with optional CATI; Arabic and English; depth interviews for KOLs and medical directors. Sample frames are stratified across endocrinology, family medicine, internal medicine, and bariatric surgery — the same specialty split highlighted in independent Saudi anti-obesity medicine research (PMC12366907). Deliverables include crosstabs, specialty segmentation, message implications, and forecast inputs. Scoped custom projects typically cost $10,000–$60,000.',
     ],
     steps: [
-      'Screeners: specialty, sector (public or private), region (Riyadh, Jeddah and the Western Region, Eastern Province including Al Khobar and Dammam, secondary cities), and monthly obesity or metabolic caseload.',
+      'Screeners: specialty, sector (public or private), region (Riyadh, Jeddah and the Western Region, Eastern Province including Saudi Arabia and Dammam, secondary cities), and monthly obesity or metabolic caseload.',
       'KAP modules: guideline familiarity; comfort initiating anti-obesity medicines; perceived barriers such as training, supply, cost, and stigma.',
       'Prescribing behaviour: share of eligible patients offered an anti-obesity medicine; first-line choice among semaglutide, tirzepatide, and other agents; diabetes versus obesity indication mix.',
       'Access filters: prior authorisation experience; NUPCO and formulary constraints; self-pay share.',
@@ -1901,7 +1901,7 @@ const obesity: SegmentMarketContent = {
     'Persistence and discontinuation research with patients, which is where obesity forecasts most often fail when much demand is self-pay.',
     'Coverage of pharmacotherapy, surgery, and clinic programmes, so a physician survey models route substitution instead of a single pathway.',
     'Prescriber segmentation across endocrinology, primary care, and bariatric surgery, reflecting how initiation volume is distributed in the Kingdom.',
-    'Arabic and English fieldwork with clinicians and patients, coordinated from the Al Khobar office.',
+    'Arabic and English fieldwork with clinicians and patients, coordinated from the Sheikh Zayed, Giza office (biggest MEA office).',
     'Senior-led custom studies, typically $10,000–$60,000, with a costed proposal returned within one working day.',
   ],
   relatedLinks: [
@@ -1918,7 +1918,7 @@ const obesity: SegmentMarketContent = {
     {
       question: 'Who runs obesity GLP-1 market research in Saudi Arabia?',
       answer:
-        'BioNixus runs custom obesity and GLP-1 market research in Saudi Arabia, including physician surveys, patient-journey work, and payer interviews, with fieldwork support from our Al Khobar office. Studies are scoped to the brand decision — not sold as a syndicated obesity report. Typical custom fees are $10,000–$60,000.',
+        'BioNixus runs custom obesity and GLP-1 market research in Saudi Arabia, including physician surveys, patient-journey work, and payer interviews, with fieldwork support from our Sheikh Zayed, Giza office (biggest MEA office). Studies are scoped to the brand decision — not sold as a syndicated obesity report. Typical custom fees are $10,000–$60,000.',
     },
     {
       question: 'Can BioNixus run a GLP-1 physician survey in Saudi Arabia?',
@@ -1948,7 +1948,7 @@ const obesity: SegmentMarketContent = {
     {
       question: 'Where is BioNixus based for Saudi obesity research?',
       answer:
-        'Saudi programmes are supported from our Al Khobar office, with additional hubs in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Cairo, London, Sheridan WY, and São Paulo.',
+        'Saudi programmes are supported from our Sheikh Zayed, Giza office (biggest MEA office), with additional hubs in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), London and Sheridan, Wyoming. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
     },
   ],
   areaServed: ['Saudi Arabia'],

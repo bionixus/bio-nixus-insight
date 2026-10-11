@@ -329,9 +329,9 @@ describe('ContactSection ("Request a proposal")', () => {
   it('lists the current regional offices without Al Khobar', () => {
     render(withProviders(<ContactSection premium />));
     const block = screen.getByText('Regional representation').parentElement as HTMLElement;
-    expect(block).toHaveTextContent('Cairo, Egypt');
+    expect(block).toHaveTextContent('Sheikh Zayed, Giza (Cairo, Egypt)');
     expect(block).toHaveTextContent('Dubai, UAE');
-    expect(block).toHaveTextContent('São Paulo, Brazil');
+    expect(block).toHaveTextContent('in the process of opening a São Paulo office by the end of 2026');
     expect(block).not.toHaveTextContent(/al khobar|kuwait/i);
   });
 

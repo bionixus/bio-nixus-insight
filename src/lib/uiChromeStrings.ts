@@ -122,9 +122,9 @@ const en: UiChromeStrings = {
     coverAlt: 'Blog post cover',
   },
   coverageMap: {
-    alt: 'BioNixus global research coverage map showing Google-listed offices in Sheridan, London, Sheikh Zayed, Dubai, Al Khobar, Salmiya, and São Paulo.',
+    alt: 'BioNixus global research coverage map showing offices in Sheridan (US headquarters), London, Sheikh Zayed in Giza, Egypt, and Dubai.',
     caption:
-      'Google-listed offices: Sheridan (US HQ), London, Sheikh Zayed (Egypt), Dubai, Al Khobar (KSA), Salmiya (Kuwait), plus São Paulo — bilingual Arabic–English fieldwork across GCC and MENA markets, with GDPR-aligned European programmes.',
+      'Offices: Sheridan, Wyoming (US HQ), London EC1V 2NX, Sheikh Zayed, Giza, Egypt (biggest MEA office), and Dubai, UAE. BioNixus is in the process of opening a São Paulo office by the end of 2026. Bilingual Arabic–English fieldwork across GCC and MENA markets, with GDPR-aligned European programmes.',
   },
   chart: {
     forecastYear: '26E',
@@ -195,9 +195,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Titelbild des Beitrags',
     },
     coverageMap: {
-      alt: 'Karte der globalen Forschungspräsenz von BioNixus mit Büros in Sheridan (US-Hauptsitz), London, Kairo, Riad, Dubai, Kuwait-Stadt und São Paulo.',
+      alt: 'Karte der globalen Forschungspräsenz von BioNixus mit Büros in Sheridan (US-Hauptsitz), London, Sheikh Zayed (Giza, Ägypten) und Dubai.',
       caption:
-        'Büros in Sheridan (US-Hauptsitz), London, Kairo, Riad, Dubai, Kuwait-Stadt und São Paulo — zweisprachige arabisch-englische Feldforschung in GCC- und MENA-Märkten, ergänzt um DSGVO-konforme europäische Programme.',
+        'Büros: Sheridan, Wyoming (US-Hauptsitz), London EC1V 2NX, Sheikh Zayed, Giza, Ägypten (größtes MEA-Büro) und Dubai, VAE. BioNixus ist dabei, bis Ende 2026 ein Büro in São Paulo zu eröffnen. Zweisprachige arabisch-englische Feldforschung in GCC- und MENA-Märkten, ergänzt um DSGVO-konforme europäische Programme.',
     },
     chart: {
       forecastYear: '26P',
@@ -266,9 +266,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Image de couverture de l’article',
     },
     coverageMap: {
-      alt: 'Carte de la couverture mondiale des études BioNixus, avec des bureaux à Sheridan (siège américain), Londres, Le Caire, Riyad, Dubaï, Koweït et São Paulo.',
+      alt: 'Carte de la couverture mondiale des études BioNixus, avec des bureaux à Sheridan (siège américain), Londres, Sheikh Zayed (Gizeh, Égypte) et Dubaï.',
       caption:
-        'Bureaux à Sheridan (siège américain), Londres, Le Caire, Riyad, Dubaï, Koweït et São Paulo — terrain bilingue arabe-anglais sur les marchés du CCG et de la région MENA, complété par des programmes européens conformes au RGPD.',
+        'Bureaux : Sheridan, Wyoming (siège américain), Londres EC1V 2NX, Sheikh Zayed, Gizeh, Égypte (plus grand bureau MEA) et Dubaï, EAU. BioNixus est en train d’ouvrir un bureau à São Paulo d’ici fin 2026. Terrain bilingue arabe-anglais sur les marchés du CCG et de la région MENA, complété par des programmes européens conformes au RGPD.',
     },
     chart: {
       forecastYear: '26P',
@@ -337,9 +337,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Imagen de portada del artículo',
     },
     coverageMap: {
-      alt: 'Mapa de la cobertura global de investigación de BioNixus con oficinas en Sheridan (sede en EE. UU.), Londres, El Cairo, Riad, Dubái, Kuwait y São Paulo.',
+      alt: 'Mapa de la cobertura global de investigación de BioNixus con oficinas en Sheridan (sede en EE. UU.), Londres, Sheikh Zayed (Guiza, Egipto) y Dubái.',
       caption:
-        'Oficinas en Sheridan (sede en EE. UU.), Londres, El Cairo, Riad, Dubái, Kuwait y São Paulo — trabajo de campo bilingüe árabe-inglés en los mercados del CCG y MENA, con programas europeos conformes al RGPD.',
+        'Oficinas: Sheridan, Wyoming (sede en EE. UU.), Londres EC1V 2NX, Sheikh Zayed, Guiza, Egipto (mayor oficina MEA) y Dubái, EAU. BioNixus está en proceso de abrir una oficina en São Paulo para finales de 2026. Trabajo de campo bilingüe árabe-inglés en los mercados del CCG y MENA, con programas europeos conformes al RGPD.',
     },
     chart: {
       forecastYear: '26P',
@@ -408,9 +408,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Imagem de capa do artigo',
     },
     coverageMap: {
-      alt: 'Mapa da cobertura global de pesquisa da BioNixus com escritórios em Sheridan (sede nos EUA), Londres, Cairo, Riade, Dubai, Cidade do Kuwait e São Paulo.',
+      alt: 'Mapa da cobertura global de pesquisa da BioNixus com escritórios em Sheridan (sede nos EUA), Londres, Sheikh Zayed (Gizé, Egito) e Dubai.',
       caption:
-        'Escritórios em Sheridan (sede nos EUA), Londres, Cairo, Riade, Dubai, Cidade do Kuwait e São Paulo — trabalho de campo bilíngue árabe-inglês nos mercados do CCG e MENA, com programas europeus alinhados ao GDPR.',
+        'Escritórios: Sheridan, Wyoming (sede nos EUA), Londres EC1V 2NX, Sheikh Zayed, Gizé, Egito (maior escritório MEA) e Dubai, EAU. A BioNixus está em processo de abertura de um escritório em São Paulo até o final de 2026. Trabalho de campo bilíngue árabe-inglês nos mercados do CCG e MENA, com programas europeus alinhados ao GDPR.',
     },
     chart: {
       forecastYear: '26P',
@@ -483,9 +483,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Обложка статьи',
     },
     coverageMap: {
-      alt: 'Карта глобального охвата исследований BioNixus с офисами в Шеридане (штаб-квартира в США), Лондоне, Каире, Эр-Рияде, Дубае, Эль-Кувейте и Сан-Паулу.',
+      alt: 'Карта глобального охвата исследований BioNixus с офисами в Шеридане (штаб-квартира в США), Лондоне, Шейх-Зайеде (Гиза, Египет) и Дубае.',
       caption:
-        'Офисы в Шеридане (штаб-квартира в США), Лондоне, Каире, Эр-Рияде, Дубае, Эль-Кувейте и Сан-Паулу — двуязычные арабо-английские полевые исследования на рынках ССАГПЗ и MENA, а также европейские программы, соответствующие GDPR.',
+        'Офисы: Шеридан, Вайоминг (штаб-квартира в США), Лондон EC1V 2NX, Шейх-Зайед, Гиза, Египет (крупнейший офис MEA) и Дубай, ОАЭ. BioNixus в процессе открытия офиса в Сан-Паулу к концу 2026 года. Двуязычные арабо-английские полевые исследования на рынках ССАГПЗ и MENA, а также европейские программы, соответствующие GDPR.',
     },
     chart: {
       forecastYear: '26П',
@@ -558,9 +558,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: '文章封面图',
     },
     coverageMap: {
-      alt: 'BioNixus 全球研究覆盖地图，标注谢里丹（美国总部）、伦敦、开罗、利雅得、迪拜、科威特城与圣保罗七处办公室。',
+      alt: 'BioNixus 全球研究覆盖地图，标注谢里丹（美国总部）、伦敦、谢赫扎耶德（吉萨，埃及）与迪拜办公室。',
       caption:
-        '办公室分布于谢里丹（美国总部）、伦敦、开罗、利雅得、迪拜、科威特城与圣保罗——在海湾国家与中东北非市场开展阿拉伯语与英语双语实地调研，并配套符合 GDPR 的欧洲项目。',
+        '办公室：美国总部谢里丹（怀俄明州）、伦敦 EC1V 2NX、埃及吉萨谢赫扎耶德（最大的中东及非洲办公室）与阿联酋迪拜。BioNixus 正在筹备于 2026 年底开设圣保罗办公室。在海湾国家与中东北非市场开展阿拉伯语与英语双语实地调研，并配套符合 GDPR 的欧洲项目。',
     },
     chart: {
       forecastYear: '二六预估',
@@ -633,9 +633,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'صورة غلاف المقال',
     },
     coverageMap: {
-      alt: 'خريطة التغطية البحثية العالمية لبيونكسس تُظهر المكاتب في شيريدان (المقر الأمريكي) ولندن والقاهرة والرياض ودبي ومدينة الكويت وساو باولو.',
+      alt: 'خريطة التغطية البحثية العالمية لبيونكسس تُظهر المكاتب في شيريدان (المقر الأمريكي) ولندن والشيخ زايد (الجيزة، مصر) ودبي.',
       caption:
-        'مكاتب في شيريدان (المقر الأمريكي) ولندن والقاهرة والرياض ودبي ومدينة الكويت وساو باولو — عمل ميداني ثنائي اللغة بالعربية والإنجليزية في أسواق الخليج والشرق الأوسط وشمال أفريقيا، مع برامج أوروبية متوافقة مع GDPR.',
+        'المكاتب: شيريدان، وايومنغ (المقر الأمريكي)، لندن EC1V 2NX، الشيخ زايد، الجيزة، مصر (أكبر مكتب في الشرق الأوسط وأفريقيا) ودبي، الإمارات. بيونكسس في طور افتتاح مكتب في ساو باولو بنهاية 2026. عمل ميداني ثنائي اللغة بالعربية والإنجليزية في أسواق الخليج والشرق الأوسط وشمال أفريقيا، مع برامج أوروبية متوافقة مع GDPR.',
     },
     chart: {
       forecastYear: '٢٦ تقديري',

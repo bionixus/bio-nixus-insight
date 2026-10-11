@@ -30,7 +30,7 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Indication-level PRF · recruitment · brand tracker',
-    hq: 'USA (HQ) / UK / Middle East / Brazil',
+    hq: 'USA (HQ) · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
@@ -387,7 +387,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
             </div>
             <div className="cover-foot">
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Sheikh Zayed (Giza) · Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>

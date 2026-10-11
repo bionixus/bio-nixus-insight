@@ -122,7 +122,8 @@ describe('industries insights schema', () => {
     expect(addresses).not.toMatch(/Paulo/i);
     expect(addresses).not.toMatch(/Khobar/i);
     expect(addresses).toContain('EC1V 2NX');
-    expect(addresses).toContain('Cairo');
+    expect(addresses).toContain('Sheikh Zayed');
+    expect(addresses).toContain('Giza');
     expect(addresses).toContain('Thuraya Tower 1');
     expect(addresses).toContain('Sheridan');
   });

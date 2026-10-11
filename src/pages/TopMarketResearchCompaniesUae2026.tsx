@@ -39,7 +39,7 @@ const PAGE_DESCRIPTION =
 const REVIEWED_LINE =
   'Last reviewed 28 September 2026 · Ranking 2026 · UAE · Dubai, Abu Dhabi, Northern Emirates';
 const BIONIXUS_UAE_HQ =
-  'Sheridan, Wyoming (USA) · London · Dubai · Cairo · Al Khobar (KSA) | 48 countries';
+  'Sheridan, Wyoming (USA) · London · Dubai · Sheikh Zayed (Giza) | 48 countries';
 
 const rankedFirms: FirmProfile[] = [
   {
@@ -52,11 +52,11 @@ const rankedFirms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     bestFor:
       'custom primary research, bilingual Arabic–English fieldwork, account-level brand vs competitor data and DHA/DOH/MOHAP-aware healthcare studies',
-    overview: `BioNixus is a global market research company headquartered in Sheridan, Wyoming (USA), with offices in London, Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Cairo (MENA regional office) and Al Khobar (KSA), and fieldwork networks across ${STATS.countries} countries. Since ${BIONIXUS_MR_STATS.since} the firm has run ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually (${BIONIXUS_MR_STATS.projects2025} in 2025) for ${BIONIXUS_MR_STATS.clients} global clients spanning consumer goods, retail, financial services, technology, and regulated industries — with especially deep experience in pharmaceutical and healthcare, where sampling rigour, compliance, and evidence quality standards are most demanding. That regulated-industry discipline carries into every engagement: usage & attitude studies, brand tracking, segmentation, concept and pricing tests, retail and shopper research, and board-ready mixed-method programmes. In the UAE, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and premium lifestyle clients — with multilingual fieldwork across Dubai, Abu Dhabi, and the Northern Emirates for an expatriate-majority, multicultural audience. The firm’s deepest methodological bench comes from regulated pharmaceutical and healthcare work (DHA, DOH, MOHAP-aligned stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.`,
+    overview: `BioNixus is a global market research company headquartered in Sheridan, Wyoming (USA), with offices in London, Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2) and Sheikh Zayed, Giza, Egypt (biggest MEA office), and fieldwork networks across ${STATS.countries} countries. Since ${BIONIXUS_MR_STATS.since} the firm has run ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually (${BIONIXUS_MR_STATS.projects2025} in 2025) for ${BIONIXUS_MR_STATS.clients} global clients spanning consumer goods, retail, financial services, technology, and regulated industries — with especially deep experience in pharmaceutical and healthcare, where sampling rigour, compliance, and evidence quality standards are most demanding. That regulated-industry discipline carries into every engagement: usage & attitude studies, brand tracking, segmentation, concept and pricing tests, retail and shopper research, and board-ready mixed-method programmes. In the UAE, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and premium lifestyle clients — with multilingual fieldwork across Dubai, Abu Dhabi, and the Northern Emirates for an expatriate-majority, multicultural audience. The firm’s deepest methodological bench comes from regulated pharmaceutical and healthcare work (DHA, DOH, MOHAP-aligned stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.`,
     strengths: [
       ...BIONIXUS_MR_STRENGTHS_BASE,
       'Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2',
-      'KSA office in Al Khobar, with the MENA regional office in Cairo',
+      'Biggest MEA office in Sheikh Zayed, Giza',
       'Multilingual consumer fieldwork across Dubai, Abu Dhabi, and the Northern Emirates',
       `Founded ${BIONIXUS_MR_STATS.since} · ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually · ${BIONIXUS_MR_STATS.projects2025} in 2025 · ${BIONIXUS_MR_STATS.clients} global clients`,
     ],
@@ -326,7 +326,7 @@ const faqItems = [
   },
   {
     q: 'Does BioNixus have an office in Dubai?',
-    a: 'Yes. BioNixus\'s Dubai office is at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE, the same address listed on its Google Business Profile and Contact page. Global coordination runs with the US headquarters in Sheridan, Wyoming, the London office and the MENA regional office in Cairo. Call +44 7727 666682 or email admin@bionixus.com.',
+    a: 'Yes. BioNixus\'s Dubai office is at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE, the same address listed on its Google Business Profile and Contact page. Global coordination runs with the US headquarters in Sheridan, Wyoming, the London office and the biggest MEA office in Sheikh Zayed, Giza. Call +44 7727 666682 or email admin@bionixus.com.',
   },
   {
     q: 'Which market research agencies operate in Dubai and Abu Dhabi?',
@@ -489,7 +489,7 @@ export default function TopMarketResearchCompaniesUae2026() {
           networkLine={
             <>
               <div>
-                Dubai office: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE · US HQ: Sheridan, Wyoming · London · MENA regional office: Cairo · KSA office: Al Khobar ·{' '}
+                Dubai office: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE · US HQ: Sheridan, Wyoming · London · Biggest MEA office: Sheikh Zayed, Giza ·{' '}
                 <a href="tel:+447727666682">+44 7727 666682</a> ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>

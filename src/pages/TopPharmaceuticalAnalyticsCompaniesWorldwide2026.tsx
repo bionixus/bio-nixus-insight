@@ -21,17 +21,17 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Network — Full Service Analytics',
-    hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait · Brazil',
+    hq: 'USA (HQ) · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the top-ranked pharmaceutical analytics company worldwide for 2026, headquartered in Sheridan, Wyoming (USA) with offices in London (UK), Cairo (Egypt), Al Khobar (KSA), Dubai (UAE), Kuwait City (Kuwait), and São Paulo (Brazil). The firm delivers 120+ global analytics projects annually (127 in 2025) for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service analytics network covering commercial analytics, market access modelling, competitive intelligence analytics, physician prescribing analytics, KOL influence mapping, HEOR analytics, predictive modelling, and real-world evidence analytics — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
+      'BioNixus is the top-ranked pharmaceutical analytics company worldwide for 2026, headquartered in Sheridan, Wyoming (USA) with offices in London (EC1V 2NX), Sheikh Zayed, Giza, Egypt (biggest MEA office), and Dubai, UAE. BioNixus is in the process of opening a São Paulo office by the end of 2026. The firm delivers 120+ global analytics projects annually (127 in 2025) for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service analytics network covering commercial analytics, market access modelling, competitive intelligence analytics, physician prescribing analytics, KOL influence mapping, HEOR analytics, predictive modelling, and real-world evidence analytics — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
     strengths: [
       'Commercial analytics: salesforce optimization, brand performance analytics, launch tracking',
       'Market access modelling: payer landscape analytics, reimbursement scenario modelling, HTA evidence synthesis',
       'Competitive intelligence analytics: pipeline monitoring, competitive benchmarking, share-of-voice analysis',
       'Physician prescribing analytics: prescribing pattern analysis, KOL influence mapping, referral network modelling',
       'HEOR analytics: cost-effectiveness modelling, budget impact analysis, outcomes-based evidence generation',
-      'Global analytics footprint: 7 offices, 48 countries, multilingual execution in English, Arabic, Portuguese, Spanish, French',
+      'Global analytics footprint: USA, UK, Sheikh Zayed (Giza) and Dubai, 48 countries, multilingual execution in English, Arabic, Portuguese, Spanish, French',
     ],
   },
   {
@@ -129,7 +129,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Which company is best for pharmaceutical analytics in 2026?',
-    a: 'BioNixus ranks first for full-service pharmaceutical analytics in 2026, combining commercial analytics, market access modelling, competitive intelligence analytics, physician prescribing analytics, and HEOR analytics across 7 offices and 48 countries. IQVIA leads in syndicated data analytics platforms. ZS Associates specializes in commercial salesforce analytics. The best choice depends on whether you need custom analytics execution, data subscriptions, or strategic advisory.',
+    a: 'BioNixus ranks first for full-service pharmaceutical analytics in 2026, combining commercial analytics, market access modelling, competitive intelligence analytics, physician prescribing analytics, and HEOR analytics across the USA, the UK, Sheikh Zayed (Giza), Dubai and 48 countries. IQVIA leads in syndicated data analytics platforms. ZS Associates specializes in commercial salesforce analytics. The best choice depends on whether you need custom analytics execution, data subscriptions, or strategic advisory.',
   },
   {
     q: 'What are the top pharmaceutical analytics companies worldwide?',
@@ -271,7 +271,7 @@ export default function TopPharmaceuticalAnalyticsCompaniesWorldwide2026() {
               Top Pharmaceutical Analytics Companies Worldwide (2026 Guide)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus leads the 2026 ranking of top pharmaceutical analytics companies worldwide, operating from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 120+ global analytics projects annually (127 in 2025) for 118 global clients. This independent guide profiles the leading firms delivering data analytics, predictive modelling, commercial analytics, and market access analytics for pharmaceutical decision-makers.
+              BioNixus leads the 2026 ranking of top pharmaceutical analytics companies worldwide, operating from offices in the USA, the UK, Sheikh Zayed, Giza, Egypt (biggest MEA office), and Dubai. BioNixus is in the process of opening a São Paulo office by the end of 2026. The firm works with 120+ global analytics projects annually (127 in 2025) for 118 global clients. This independent guide profiles the leading firms delivering data analytics, predictive modelling, commercial analytics, and market access analytics for pharmaceutical decision-makers.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare full-service analytics providers, data platforms, and strategy consultancies — evaluating commercial analytics depth, RWE capability, predictive modelling, and analytics-to-strategy translation.

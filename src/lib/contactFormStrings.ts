@@ -90,7 +90,11 @@ const en: ContactFormStrings = {
   },
   phoneFieldLabel: 'Phone',
   regionalRepresentationLabel: 'Regional representation',
-  regionalOffices: ['Cairo, Egypt', 'Dubai, UAE', 'São Paulo, Brazil'],
+  regionalOffices: [
+    'Sheikh Zayed, Giza (Cairo, Egypt)',
+    'Dubai, UAE',
+    'in the process of opening a São Paulo office by the end of 2026',
+  ],
   submitting: 'Sending…',
   premiumFormSubcopy:
     'Tell us the markets, sector, and decision at stake. We respond with a scoped plan — typically within one business day.',
@@ -155,7 +159,11 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Telefon',
     regionalRepresentationLabel: 'Regionale Vertretung',
-    regionalOffices: ['Kairo, Ägypten', 'Dubai, VAE', 'São Paulo, Brasilien'],
+    regionalOffices: [
+      'Sheikh Zayed, Giza (Kairo, Ägypten)',
+      'Dubai, VAE',
+      'dabei, bis Ende 2026 ein Büro in São Paulo zu eröffnen',
+    ],
     submitting: 'Wird gesendet…',
     premiumFormSubcopy:
       'Nennen Sie uns Markt, Indikation und die anstehende Entscheidung. Sie erhalten einen abgegrenzten Projektplan — in der Regel innerhalb eines Werktags.',
@@ -217,7 +225,11 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Téléphone',
     regionalRepresentationLabel: 'Représentation régionale',
-    regionalOffices: ['Le Caire, Égypte', 'Dubaï, Émirats arabes unis', 'São Paulo, Brésil'],
+    regionalOffices: [
+      'Sheikh Zayed, Gizeh (Le Caire, Égypte)',
+      'Dubaï, Émirats arabes unis',
+      'en train d’ouvrir un bureau à São Paulo d’ici fin 2026',
+    ],
     submitting: 'Envoi…',
     premiumFormSubcopy:
       'Indiquez-nous le marché, l’aire thérapeutique et la décision en jeu. Nous répondons avec un plan cadré — généralement sous un jour ouvré.',
@@ -279,7 +291,11 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Teléfono',
     regionalRepresentationLabel: 'Representación regional',
-    regionalOffices: ['El Cairo, Egipto', 'Dubái, Emiratos Árabes Unidos', 'São Paulo, Brasil'],
+    regionalOffices: [
+      'Sheikh Zayed, Guiza (El Cairo, Egipto)',
+      'Dubái, Emiratos Árabes Unidos',
+      'en proceso de abrir una oficina en São Paulo para finales de 2026',
+    ],
     submitting: 'Enviando…',
     premiumFormSubcopy:
       'Cuéntenos el mercado, el área terapéutica y la decisión en juego. Respondemos con un plan acotado, normalmente en un día hábil.',
@@ -341,7 +357,11 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Telefone',
     regionalRepresentationLabel: 'Representação regional',
-    regionalOffices: ['Cairo, Egito', 'Dubai, Emirados Árabes Unidos', 'São Paulo, Brasil'],
+    regionalOffices: [
+      'Sheikh Zayed, Gizé (Cairo, Egito)',
+      'Dubai, Emirados Árabes Unidos',
+      'em processo de abertura de um escritório em São Paulo até o final de 2026',
+    ],
     submitting: 'A enviar…',
     premiumFormSubcopy:
       'Diga-nos o mercado, a área terapêutica e a decisão em causa. Respondemos com um plano delimitado — normalmente dentro de um dia útil.',
@@ -403,7 +423,11 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Телефон',
     regionalRepresentationLabel: 'Региональное представительство',
-    regionalOffices: ['Каир, Египет', 'Дубай, ОАЭ', 'Сан-Паулу, Бразилия'],
+    regionalOffices: [
+      'Шейх-Зайед, Гиза (Каир, Египет)',
+      'Дубай, ОАЭ',
+      'в процессе открытия офиса в Сан-Паулу к концу 2026 года',
+    ],
     submitting: 'Отправка…',
     premiumFormSubcopy:
       'Расскажите о рынке, терапевтической области и предстоящем решении. Мы ответим планом работ с чёткими границами — как правило, в течение одного рабочего дня.',
@@ -465,7 +489,11 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: '电话',
     regionalRepresentationLabel: '区域代表处',
-    regionalOffices: ['埃及开罗', '阿联酋迪拜', '巴西圣保罗'],
+    regionalOffices: [
+      '谢赫扎耶德，吉萨（开罗，埃及）',
+      '阿联酋迪拜',
+      '正在筹备于2026年底开设圣保罗办公室',
+    ],
     submitting: '正在提交…',
     premiumFormSubcopy:
       '请告诉我们目标市场、治疗领域以及需要支持的决策。我们通常会在一个工作日内回复一份明确界定范围的研究方案。',
@@ -527,7 +555,11 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'الهاتف',
     regionalRepresentationLabel: 'التمثيل الإقليمي',
-    regionalOffices: ['القاهرة، مصر', 'دبي، الإمارات العربية المتحدة', 'ساو باولو، البرازيل'],
+    regionalOffices: [
+      'الشيخ زايد، الجيزة (القاهرة، مصر)',
+      'دبي، الإمارات العربية المتحدة',
+      'في طور افتتاح مكتب في ساو باولو بنهاية 2026',
+    ],
     submitting: 'جارٍ الإرسال…',
     premiumFormSubcopy:
       'أخبرنا بالسوق والمجال العلاجي والقرار المطروح. نرد بخطة بحث محددة النطاق — عادةً خلال يوم عمل واحد.',

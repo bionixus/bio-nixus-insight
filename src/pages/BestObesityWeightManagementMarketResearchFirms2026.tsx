@@ -35,14 +35,14 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Market Research & Insights Firm',
-    hq: 'USA (HQ) / UK / Middle East / Brazil',
+    hq: 'USA (HQ) · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     bestFor:
       'obesity and GLP-1 agonist market research, weight management patient journey studies, prescriber behaviour analysis, payer and market access research for anti-obesity medications across MENA, UK, and Europe',
     overview:
-      'BioNixus is a global market research and insights firm with 15+ years of pharmaceutical experience, serving 118 global clients across 48 countries. BioNixus delivers deep expertise in metabolic disease including obesity and weight management — GLP-1 receptor agonist adoption tracking, anti-obesity medication (AOM) market access studies, patient journey and adherence research, prescriber switching behaviour analysis, payer readiness assessments for next-generation obesity therapies, and lifestyle intervention integration research. With offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil, BioNixus combines rigorous global methodology with regional execution across MENA, Europe, and Latin America for obesity and weight management commercial intelligence.',
+      'BioNixus is a global market research and insights firm with 15+ years of pharmaceutical experience, serving 118 global clients across 48 countries. BioNixus delivers deep expertise in metabolic disease including obesity and weight management — GLP-1 receptor agonist adoption tracking, anti-obesity medication (AOM) market access studies, patient journey and adherence research, prescriber switching behaviour analysis, payer readiness assessments for next-generation obesity therapies, and lifestyle intervention integration research. With offices in the USA, London, Sheikh Zayed (Giza, Egypt) and Dubai, BioNixus is in the process of opening a São Paulo office by the end of 2026. BioNixus combines rigorous global methodology with regional execution across MENA, Europe, and Latin America for obesity and weight management commercial intelligence.',
     strengths: [
       'GLP-1 receptor agonist adoption tracking and prescriber switching research',
       'Anti-obesity medication (AOM) market access and payer readiness studies',

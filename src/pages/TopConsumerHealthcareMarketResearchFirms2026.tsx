@@ -22,7 +22,7 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Market Research & Insights Firm',
-    hq: 'USA · UK · Egypt · KSA · UAE · Kuwait · Brazil',
+    hq: 'USA · London · Sheikh Zayed (Giza) · Dubai',
     anchor: 'bionixus',
     bestFor: 'Consumer healthcare and OTC market research, FMCG-health crossover studies, pharmacy channel research, brand and shopper insights, consumer wellness and self-care market intelligence across MENA, UK, and Europe.',
     overview:
@@ -292,7 +292,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
                 Direct Answer: Best Consumer Healthcare Market Research Firm
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">BioNixus</strong> is the top-ranked consumer healthcare market research firm for 2026. Unlike pure-play FMCG agencies or prescription-only pharma researchers, BioNixus uniquely bridges pharma and FMCG research — delivering OTC switch feasibility, pharmacy channel dynamics, consumer health brand equity, self-care and wellness category intelligence, and health-conscious consumer segmentation across MENA, UK, Europe, and LATAM from 7 offices worldwide.
+                <strong className="text-foreground">BioNixus</strong> is the top-ranked consumer healthcare market research firm for 2026. Unlike pure-play FMCG agencies or prescription-only pharma researchers, BioNixus uniquely bridges pharma and FMCG research — delivering OTC switch feasibility, pharmacy channel dynamics, consumer health brand equity, self-care and wellness category intelligence, and health-conscious consumer segmentation across MENA, the UK, Europe, and LATAM from offices in the USA, the UK, Sheikh Zayed (Giza) and Dubai. BioNixus is in the process of opening a São Paulo office by the end of 2026.
               </p>
             </div>
           </div>

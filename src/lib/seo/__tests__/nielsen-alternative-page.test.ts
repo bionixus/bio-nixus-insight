@@ -49,8 +49,9 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
     expect(html).not.toMatch(/staffed Riyadh/i);
     expect(html).toContain('Sheridan, Wyoming');
     expect(html).toContain('London');
-    expect(html).toContain('Cairo');
-    expect(html).toContain('Al Khobar');
+    expect(html).toContain('Sheikh Zayed');
+    expect(html).not.toContain('Al Khobar');
+    expect(html).not.toContain('Salmiya');
   });
 
   it('includes draft FAQ answers as details/summary and FAQPage schema', () => {

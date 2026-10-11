@@ -197,8 +197,9 @@ export default function BionixusIndustriesInsights() {
             <div className="bx-prose">
               <p>
                 BioNixus was founded in 2012 and has served 118 clients across 48 countries, with 127 studies
-                so far in 2026. Offices are in London (EC1V 2NX), Cairo and Dubai (Thuraya Tower 1), with the
-                US headquarters in Sheridan, Wyoming. {LATAM_COVERAGE_SENTENCE}
+                so far in 2026. Offices are in London (EC1V 2NX), Sheikh Zayed, Giza, Egypt (biggest MEA
+                office) and Dubai (Thuraya Tower 1), with the US headquarters in Sheridan, Wyoming.{' '}
+                {LATAM_COVERAGE_SENTENCE}
               </p>
               <p>
                 The index below links {pageCount} published non-pharma industry, country and city pages,
