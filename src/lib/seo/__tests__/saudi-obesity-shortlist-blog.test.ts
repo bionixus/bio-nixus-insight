@@ -8,6 +8,7 @@ import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { hardcodedSeoPosts } from '@/data/blog-posts-index';
 import { BLOG_FORCE_INDEX_SLUGS, BLOG_HARDCODED_SEO_SLUGS } from '@/lib/blog-robots';
 import { GOOGLE_OFFICES } from '@/data/googleLocations';
+import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import { getCrawlerStubForSlug, shouldCrawlerIndexBlogSlug } from '../../../../blog-crawler-stubs.mjs';
 import {
   SAUDI_OBESITY_SHORTLIST,
@@ -32,6 +33,7 @@ import {
 
 const PHRASE_WHO = 'who does obesity market research in saudi arabia';
 const PHRASE_GLP1 = 'obesity glp-1 market research saudi arabia';
+const SAO_PAULO_PHRASE = 'in the process of opening a São Paulo office by the end of 2026';
 
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
@@ -40,6 +42,7 @@ const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
 const sitemapScript = readFileSync(join(root, 'scripts/generate-sitemap.mjs'), 'utf8');
 const sitemapXml = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');
 const llms = readFileSync(join(root, 'public/llms.txt'), 'utf8');
+const indexHtml = readFileSync(join(root, 'index.html'), 'utf8');
 
 // Parsed JSON-LD is untyped JSON read by property path in the assertions below.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -201,12 +204,31 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
       expect(pageOrg!.description).toContain(fact);
     }
     const localities = pageOrg!.address.map((address: JsonLdNode) => address.addressLocality);
-    expect(localities).toEqual(['Sheridan', 'London', 'Sheikh Zayed', 'Dubai', 'São Paulo']);
+    expect(localities).toEqual(['Sheridan', 'London', 'Sheikh Zayed', 'Dubai']);
+    expect(pageOrg!.description).toContain(SAO_PAULO_PHRASE);
     const excludedMaps = GOOGLE_OFFICES.filter((office) => office.id === 'sa' || office.id === 'kw').map(
       (office) => office.mapsUrl,
     );
     for (const url of excludedMaps) expect(pageOrg!.sameAs).not.toContain(url);
     expect(pageOrg!.sameAs).toContain('https://www.linkedin.com/company/bionixus/');
+  });
+
+  it('mentions São Paulo only as an office being opened, never as an address or Place', () => {
+    const countMentions = (value: string) => value.split('São Paulo').length - 1;
+    const countPhrase = (value: string) => value.split(SAO_PAULO_PHRASE).length - 1;
+    const visible = text(html);
+    expect(countPhrase(visible)).toBe(1);
+    expect(countMentions(visible)).toBe(countPhrase(visible));
+    const graph = JSON.stringify(jsonLd);
+    expect(countPhrase(graph)).toBeGreaterThanOrEqual(1);
+    expect(countMentions(graph)).toBe(countPhrase(graph));
+    const places = jsonLd.flatMap((node) => [...JSON.stringify(node).matchAll(/"addressLocality":"([^"]+)"/g)]);
+    expect(places.map((match) => match[1])).not.toContain('São Paulo');
+  });
+
+  it('keeps São Paulo out of the sitewide Organization block this page also ships', () => {
+    expect(JSON.stringify(buildCanonicalOrganization())).not.toContain('São Paulo');
+    expect(indexHtml).not.toContain('São Paulo');
   });
 
   it('mirrors the visible FAQ exactly in FAQPage', () => {
