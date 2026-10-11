@@ -46,6 +46,62 @@ export const SAUDI_OBESITY_SHORTLIST_HERO_IMAGE =
 export const SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT =
   'Navy and gold BioNixus artwork for the Saudi Arabia obesity market research shortlist: anonymous provider bars grouped into three research types';
 
+type ArticleFigure = {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
+/** In-content charts. The cover and hero JPEGs stay the social card and the on-page hero. */
+export const SAUDI_OBESITY_SHORTLIST_FIGURES: ArticleFigure[] = [
+  {
+    src: '/images/blog/who-does-obesity-market-research-saudi-arabia-research-types.webp',
+    alt: 'Diagram of three Saudi obesity research types: custom primary research, data and analytics, and report publishers',
+    caption:
+      'Three research types answer different questions about obesity in Saudi Arabia. Provider names are in the comparison table.',
+    width: 800,
+    height: 640,
+  },
+  {
+    src: '/images/blog/who-does-obesity-market-research-saudi-arabia-prevalence.webp',
+    alt: 'Bar chart comparing Saudi adult obesity estimates: 20.2 percent measured, 23.1 percent self-reported, and 40.1 percent modelled',
+    caption:
+      'Adult obesity estimates for Saudi Arabia. The Ministry of Health measured adults in 2019 (20.2%), GASTAT used self-report in 2024 (23.1%), and WHO’s 2024 model is 40.1% (uncertainty 34.7% to 45.8%). The methods differ, so the figures are not interchangeable.',
+    width: 800,
+    height: 620,
+  },
+  {
+    src: '/images/blog/who-does-obesity-market-research-saudi-arabia-first-line-choice.webp',
+    alt: 'Bar chart of first-line anti-obesity medicines named by 92 Saudi clinicians in 2024, led by semaglutide at 45.7 percent',
+    caption:
+      'First-line anti-obesity medicine named by 92 Saudi clinicians surveyed in 2024 (AlOtaibi et al., 2025). This is a convenience sample, not a national prescribing share.',
+    width: 800,
+    height: 700,
+  },
+  {
+    src: '/images/blog/who-does-obesity-market-research-saudi-arabia-glp1-payment.webp',
+    alt: 'Split chart of GLP-1 payment among Eastern Province users: 59.6 percent covered and 40.4 percent out of pocket',
+    caption:
+      'Payment route among GLP-1 users in an Eastern Province survey, December 2024 (Alhussain et al., 2026): 59.6% insurance or government support and 40.4% out of pocket. One region, not a national coverage rate.',
+    width: 800,
+    height: 560,
+  },
+  {
+    src: '/images/blog/who-does-obesity-market-research-saudi-arabia-study-measures.webp',
+    alt: 'Checklist of eight measures for a Saudi Arabia obesity and GLP-1 market research study',
+    caption:
+      'Eight topics a Saudi obesity or GLP-1 study brief usually needs, drawn from the public evidence gaps described in this article.',
+    width: 800,
+    height: 760,
+  },
+];
+
+function figureHtml(figure: ArticleFigure): string {
+  return `<figure class="article-figure"><img src="${figure.src}" alt="${figure.alt}" width="${figure.width}" height="${figure.height}" loading="lazy" decoding="async"><figcaption>${figure.caption}</figcaption></figure>`;
+}
+
 export const SAUDI_OBESITY_SHORTLIST_META_TITLE = 'Who Does Obesity Market Research in Saudi Arabia? (2026)';
 
 export const SAUDI_OBESITY_SHORTLIST_META_DESCRIPTION =
@@ -80,7 +136,7 @@ export const SAUDI_OBESITY_SHORTLIST_TAGS = [
 
 const ACCESSED = 'accessed 11 October 2026';
 
-type Reference = { id: string; label: string; url: string; vendor?: boolean };
+type Reference = { id: string; label: string; url?: string; vendor?: boolean };
 
 const REFERENCES: Reference[] = [
   {
@@ -166,67 +222,31 @@ const REFERENCES: Reference[] = [
   {
     id: 'euromonitor',
     label: 'Euromonitor International. Weight Management and Wellbeing in Saudi Arabia. Report page, October 2025.',
-    url: 'https://www.euromonitor.com/weight-management-and-wellbeing-in-saudi-arabia/report',
     vendor: true,
   },
   {
     id: 'grand-view',
     label: 'Grand View Research. Saudi Arabia GLP-1 Agonists Weight Loss Drugs Market Outlook (Horizon databook page).',
-    url: 'https://www.grandviewresearch.com/horizon/outlook/glp-1-agonists-weight-loss-drugs-market/saudi-arabia',
     vendor: true,
   },
   {
     id: 'imarc-weight-loss',
     label: 'IMARC Group. Saudi Arabia Weight Loss Market report page, last updated 30 September 2026.',
-    url: 'https://www.imarcgroup.com/saudi-arabia-weight-loss-market',
     vendor: true,
   },
   {
     id: 'imarc-weight-management',
     label: 'IMARC Group. Saudi Arabia Weight Management Market report page.',
-    url: 'https://www.imarcgroup.com/saudi-arabia-weight-management-market',
     vendor: true,
   },
   {
     id: 'ken-research',
     label: 'Ken Research. Saudi Arabia Obesity Treatment Devices and Therapeutics Market. Report page, November 2025.',
-    url: 'https://www.kenresearch.com/saudi-arabia-obesity-treatment-devices-and-therapeutics-market',
     vendor: true,
   },
   {
     id: '6wresearch',
     label: '6Wresearch. Saudi Arabia AntiObesity Prescription Drugs Market (2026–2032). Report page, updated September 2026.',
-    url: 'https://www.6wresearch.com/industry-report/saudi-arabia-antiobesity-prescription-drugs-market',
-    vendor: true,
-  },
-  {
-    id: 'iqvia-mea',
-    label: 'IQVIA. IQVIA Middle East & Africa.',
-    url: 'https://www.iqvia.com/locations/middle-east-and-africa',
-    vendor: true,
-  },
-  {
-    id: 'iqvia-about',
-    label: 'IQVIA. About IQVIA Middle East & Africa (office locations, including Riyadh).',
-    url: 'https://www.iqvia.com/locations/middle-east-and-africa/about-iqvia-mea',
-    vendor: true,
-  },
-  {
-    id: 'iqvia-pi',
-    label: 'IQVIA. Primary intelligence solutions for Middle East and Africa.',
-    url: 'https://www.iqvia.com/locations/middle-east-and-africa/solutions/primary-intelligence',
-    vendor: true,
-  },
-  {
-    id: 'ipsos-custom',
-    label: 'Ipsos Saudi Arabia. Healthcare custom research.',
-    url: 'https://www.ipsos.com/en-sa/custom-research',
-    vendor: true,
-  },
-  {
-    id: 'ipsos-contact',
-    label: 'Ipsos Saudi Arabia. Contact (Riyadh office).',
-    url: 'https://www.ipsos.com/en-sa/contact',
     vendor: true,
   },
 ];
@@ -236,8 +256,9 @@ const REFERENCE_BY_ID = new Map(REFERENCES.map((ref) => [ref.id, ref]));
 function cite(id: string, text: string): string {
   const ref = REFERENCE_BY_ID.get(id);
   if (!ref) throw new Error(`Unknown reference: ${id}`);
-  const rel = ref.vendor ? 'nofollow noopener noreferrer' : 'noopener noreferrer';
-  return `<a href="${ref.url}" target="_blank" rel="${rel}">${text}</a>`;
+  // Competitor and report-publisher pages stay in the bibliography as plain text.
+  if (ref.vendor || !ref.url) return text;
+  return `<a href="${ref.url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
 }
 
 type ShortlistEntry = BlogPostItemListEntry & {
@@ -261,7 +282,6 @@ export const SAUDI_OBESITY_SHORTLIST: ShortlistEntry[] = [
   },
   {
     name: 'IQVIA',
-    url: 'https://www.iqvia.com',
     researchType: 'Data, analytics and integrated custom and syndicated research',
     saudiOffer: 'Riyadh office; Middle East &amp; Africa solutions including Primary Intelligence and real-world evidence; no Saudi obesity-specific page found',
     bestFor: 'Teams that want new research tied to IQVIA data and analytics',
@@ -270,7 +290,6 @@ export const SAUDI_OBESITY_SHORTLIST: ShortlistEntry[] = [
   },
   {
     name: 'Ipsos',
-    url: 'https://www.ipsos.com/en-sa',
     researchType: 'Full-service research with a healthcare practice',
     saudiOffer: 'Riyadh office; healthcare custom research with professionals, payers and patients; no Saudi obesity-specific page found',
     bestFor: 'Multi-country programmes run through one global supplier',
@@ -279,7 +298,6 @@ export const SAUDI_OBESITY_SHORTLIST: ShortlistEntry[] = [
   },
   {
     name: 'Euromonitor International',
-    url: 'https://www.euromonitor.com',
     researchType: 'Syndicated consumer market report',
     saudiOffer: 'Weight Management and Wellbeing in Saudi Arabia (October 2025): meal replacement, OTC obesity, slimming teas, supplement drinks, weight-loss supplements',
     bestFor: 'Consumer health and OTC category size and brand shares',
@@ -288,7 +306,6 @@ export const SAUDI_OBESITY_SHORTLIST: ShortlistEntry[] = [
   },
   {
     name: 'Grand View Research',
-    url: 'https://www.grandviewresearch.com',
     researchType: 'Desk-research databook',
     saudiOffer: 'Saudi Arabia GLP-1 agonists weight loss drugs market outlook',
     bestFor: 'A quick third-party revenue estimate to triangulate',
@@ -296,7 +313,6 @@ export const SAUDI_OBESITY_SHORTLIST: ShortlistEntry[] = [
   },
   {
     name: 'IMARC Group',
-    url: 'https://www.imarcgroup.com',
     researchType: 'Desk-research reports',
     saudiOffer: 'Saudi Arabia weight loss market (updated September 2026) and weight management market reports',
     bestFor: 'Broad weight-loss category sizing across products and services',
@@ -304,7 +320,6 @@ export const SAUDI_OBESITY_SHORTLIST: ShortlistEntry[] = [
   },
   {
     name: 'Ken Research',
-    url: 'https://www.kenresearch.com',
     researchType: 'Report publisher',
     saudiOffer: 'Saudi Arabia obesity treatment devices and therapeutics market (November 2025)',
     bestFor: 'A combined devices-and-therapies landscape',
@@ -312,7 +327,6 @@ export const SAUDI_OBESITY_SHORTLIST: ShortlistEntry[] = [
   },
   {
     name: '6Wresearch',
-    url: 'https://www.6wresearch.com',
     researchType: 'Report publisher',
     saudiOffer: 'Saudi Arabia anti-obesity prescription drugs market (2026–2032) and related obesity reports',
     bestFor: 'A prescription-segment overview',
@@ -331,10 +345,12 @@ ${SAUDI_OBESITY_SHORTLIST.map(
 </table>`;
 
 const REFERENCES_HTML = `<ol>
-${REFERENCES.map(
-  (ref) =>
-    `<li id="ref-${ref.id}">${ref.label} <a href="${ref.url}" target="_blank" rel="${ref.vendor ? 'nofollow noopener noreferrer' : 'noopener noreferrer'}">Source</a> (${ACCESSED}).</li>`,
-).join('\n')}
+${REFERENCES.map((ref) => {
+  const source = ref.url
+    ? ` <a href="${ref.url}" target="_blank" rel="noopener noreferrer">Source</a>`
+    : '';
+  return `<li id="ref-${ref.id}">${ref.label}${source} (${ACCESSED}).</li>`;
+}).join('\n')}
 </ol>`;
 
 export const SAUDI_OBESITY_SHORTLIST_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
@@ -373,15 +389,17 @@ const NARRATIVE_HTML = `<p>Saudi Arabia’s obesity market changed shape in 2025
 
 <ul>
 <li><strong>Custom primary-research firms</strong> survey and interview the people who make treatment and funding decisions: physicians, patients, pharmacists and payers. The work is commissioned by one client for one decision. BioNixus works here, and Ipsos and IQVIA also offer custom healthcare research.</li>
-<li><strong>Data and analytics companies</strong> sell or integrate prescription, hospital and patient data. IQVIA, whose Primary Intelligence page cites prescription data from more than 80 countries and hospital data from 40, is the example on this list (${cite('iqvia-pi', 'IQVIA')}).</li>
+<li><strong>Data and analytics companies</strong> sell or integrate prescription, hospital and patient data. IQVIA, whose Primary Intelligence page cites prescription data from more than 80 countries and hospital data from 40, is the example on this list.</li>
 <li><strong>Report publishers</strong> sell off-the-shelf sizing and forecasts. Euromonitor International, Grand View Research, IMARC Group, Ken Research and 6Wresearch all publish Saudi weight-management or obesity reports.</li>
 </ul>
 
 <p>If your question is “how big is the category?”, a report may be enough. If it is “why do Saudi endocrinologists start, switch or stop a GLP-1 medicine, and what would change that?”, only primary research can answer it. That split drives the shortlist below.</p>
 
+${figureHtml(SAUDI_OBESITY_SHORTLIST_FIGURES[0])}
+
 <h2 id="obesity-glp-1-market-research-saudi-arabia-shortlist">Obesity GLP-1 market research Saudi Arabia: which firms are on the 2026 shortlist?</h2>
 
-<p>The table summarises each organisation’s own pages as ${ACCESSED}. Source links are in the provider profiles and the references.</p>
+<p>The table summarises each organisation’s own pages as ${ACCESSED}. Sources are named in the provider profiles and the references.</p>
 
 ${SHORTLIST_TABLE_HTML}
 
@@ -389,7 +407,7 @@ ${SHORTLIST_TABLE_HTML}
 
 <p>We started from the organisations that appear in search results for Saudi obesity and regional healthcare market research queries. We kept only those whose own website shows a Saudi obesity, weight-management or GLP-1 product, or a healthcare research practice serving Saudi Arabia, and we left out any firm we could not verify that way. We grouped providers by research type instead of ranking them on one score, because a market-size report and a prescriber survey are not substitutes for each other.</p>
 
-<p class="methodology"><strong>Disclosure:</strong> BioNixus publishes this guide and is one of the firms listed. We describe every provider, including ourselves, by what it publicly offers, and we link to the page each statement comes from.</p>
+<p class="methodology"><strong>Disclosure:</strong> BioNixus publishes this guide and is one of the firms listed. We describe every provider, including ourselves, by what it publicly offers, and we name the source of each statement.</p>
 
 <h2 id="provider-profiles">What does each provider offer for Saudi obesity research?</h2>
 
@@ -399,11 +417,11 @@ ${SHORTLIST_TABLE_HTML}
 
 <h3>IQVIA: data and analytics with integrated custom research</h3>
 
-<p>IQVIA Middle East &amp; Africa describes forecasting and trend analysis, real-world evidence studies, and technology and commercial-effectiveness solutions delivered by a local team, and it lists Primary Intelligence, Commercial Analytics and Real World Evidence among its regional solutions (${cite('iqvia-mea', 'IQVIA Middle East &amp; Africa')}). Riyadh is among its regional offices (${cite('iqvia-about', 'IQVIA locations')}). On its Primary Intelligence page, IQVIA says it integrates “custom and syndicated research” with IQVIA data and analytics (${cite('iqvia-pi', 'IQVIA Primary Intelligence')}). We did not find a Saudi obesity-specific page. IQVIA suits teams that want new research tied to IQVIA data; if you are weighing that against an independent primary-research partner, see our <a href="/iqvia-alternative-saudi-arabia">IQVIA alternative in Saudi Arabia</a> page.</p>
+<p>IQVIA Middle East &amp; Africa describes forecasting and trend analysis, real-world evidence studies, and technology and commercial-effectiveness solutions delivered by a local team, and it lists Primary Intelligence, Commercial Analytics and Real World Evidence among its regional solutions. Riyadh is among its regional offices. On its Primary Intelligence page, IQVIA says it integrates “custom and syndicated research” with IQVIA data and analytics. We did not find a Saudi obesity-specific page. IQVIA suits teams that want new research tied to IQVIA data; if you are weighing that against an independent primary-research partner, see our <a href="/iqvia-alternative-saudi-arabia">IQVIA alternative in Saudi Arabia</a> page.</p>
 
 <h3>Ipsos: full-service research with a Riyadh office</h3>
 
-<p>Ipsos lists an office in Riyadh on its Saudi website (${cite('ipsos-contact', 'Ipsos Saudi Arabia')}) and describes healthcare custom research that integrates the views of healthcare professionals, payers and patients across the product lifecycle, in more than 50 countries (${cite('ipsos-custom', 'Ipsos healthcare custom research')}). We did not find a Saudi obesity-specific page. Ipsos suits buyers who want one global supplier for a multi-country programme.</p>
+<p>Ipsos lists an office in Riyadh on its Saudi website and describes healthcare custom research that integrates the views of healthcare professionals, payers and patients across the product lifecycle, in more than 50 countries. We did not find a Saudi obesity-specific page. Ipsos suits buyers who want one global supplier for a multi-country programme.</p>
 
 <h3>Euromonitor International: consumer weight management, not prescription GLP-1</h3>
 
@@ -433,6 +451,8 @@ ${SHORTLIST_TABLE_HTML}
 
 <p>GASTAT’s Health Determinants Statistics Publication 2024 reports that 23.1% of adults aged 15 and over were obese (BMI of 30 or more) and 45.1% were overweight, based on self-reported data from the National Health Survey; 14.6% of children aged 2 to 14 were obese (${cite('gastat-2024', 'GASTAT')}). The Ministry of Health’s 2019 World Health Survey, run with GASTAT and the Saudi Health Council, weighed and measured respondents: 20.2% of 7,890 adults aged 18 and over were obese, or 22.0% age-standardised (${cite('moh-whs-2019', 'Ministry of Health')}). WHO’s Global Health Observatory models measured height and weight for adults aged 18 and over and estimates age-standardised adult obesity in Saudi Arabia at 40.1% in 2024, with an uncertainty range of 34.7% to 45.8% (${cite('who-gho', 'WHO')}). All three are authoritative, but they come from different years and methods. A forecast built on one rather than another changes the addressable population substantially, so ask every provider which baseline it uses and why.</p>
 
+${figureHtml(SAUDI_OBESITY_SHORTLIST_FIGURES[1])}
+
 <h3>What the SFDA has approved and flagged</h3>
 
 <p>Three SFDA documents frame the 2026 prescription landscape. On 2 August 2026 the SFDA approved Foundayo (orforglipron), taken orally once daily, for weight management in adults with obesity, or with overweight and at least one weight-related condition. The SFDA cited two 72-week phase 3 trials: in ATTAIN-1 (3,127 adults without diabetes) the 36 mg dose reduced body weight by 11.2% against 2.1% with placebo, and in ATTAIN-2 (1,613 adults with type 2 diabetes) by 9.6% against 2.5% (${cite('sfda-foundayo', 'SFDA')}). A letter to healthcare professionals dated 9 September 2026 and agreed with the SFDA says the Saudi product information for Wegovy, Ozempic and Rybelsus will be updated with information on non-arteritic anterior ischaemic optic neuropathy (NAION). It lists Wegovy’s weight-management indications for adults with a BMI of 30 or more, or 27 or more with a weight-related comorbidity, and for adolescents aged 12 and above with obesity (${cite('sfda-naion', 'SFDA, September 2026')}). A letter dated 2 September 2025 and issued at the SFDA’s request reminded prescribers of the risk of acute pancreatitis across 13 GLP-1 receptor agonist brands (${cite('sfda-pancreatitis', 'SFDA, September 2025')}).</p>
@@ -443,6 +463,8 @@ ${SHORTLIST_TABLE_HTML}
 
 <p>The most detailed published picture is a national survey of 92 clinicians (71 family physicians, 20 endocrinologists and one bariatric surgeon) fielded between May and August 2024. Asked which classes of anti-obesity medicine they prescribe, 97.8% named GLP-1 receptor agonists and 44.6% the dual GIP/GLP-1 class. Asked for one first-line agent, 45.7% chose semaglutide, 26.1% tirzepatide, 25.0% liraglutide and 3.3% orlistat. When choosing between GLP-1 and dual GIP/GLP-1 agonists, 83.7% cited availability, 47.8% effectiveness and 45.7% dosing frequency. Endocrinologists prescribed anti-obesity medicines far more often: 65.0% did so always or often, against 14.1% of family physicians. They were also more likely to weigh cost (75.0% against 36.6%) and insurance (45.0% against 18.3%). Only 15.3% of respondents had formal obesity training, and the authors note that some institutions let only endocrinologists prescribe these medicines (${cite('alotaibi-2025', 'AlOtaibi et al., 2025, Table 3')}). The sample is small, was recruited by convenience and includes almost no surgeons. That is the gap a commissioned, specialty-stratified survey closes.</p>
 
+${figureHtml(SAUDI_OBESITY_SHORTLIST_FIGURES[2])}
+
 <h3>Patients: diagnosis, use and access</h3>
 
 <p>The Saudi arm of the ACTION-IO study surveyed 1,000 people with obesity and 200 healthcare professionals between June and September 2018. Only 46% of the people with obesity had received a diagnosis, 44% had a follow-up appointment scheduled and 5% had maintained their weight loss for more than a year (${cite('action-io-2021', 'Alfadda et al., 2021')}). Those data predate the current generation of GLP-1 medicines, and the newer patient surveys are regional. In an online survey of 1,264 overweight or obese adults in the Eastern Province in December 2024, 18.2% had ever used a GLP-1 receptor agonist and 14.2% were using one; 70.4% of users had started on a doctor’s recommendation and 36.5% on their own decision (${cite('alhussain-2026', 'Alhussain et al., 2026')}). Among 365 adults who had used an anti-obesity medicine, surveyed at three Jeddah hospitals between June 2025 and February 2026, 59.7% obtained their medicine through a doctor’s prescription, 28.8% through pharmacist dispensing and 8.2% online (${cite('tobaiqy-2026', 'Tobaiqy et al., 2026')}). ${cite('alhussain-2026', 'Alhussain and colleagues')} also report a Ministry of Health campaign, launched in August 2025, to enforce prescription requirements for weight-loss medicines. Each sample comes from a single region, so national evidence on persistence and access is still missing.</p>
@@ -450,6 +472,8 @@ ${SHORTLIST_TABLE_HTML}
 <h3>Who pays for obesity treatment?</h3>
 
 <p>The Council of Health Insurance’s Essential Benefit Package, the mandatory basic policy for private health insurance (version effective 1 October 2022), covers approved bariatric surgery when BMI exceeds 40, or 35 with complications, but marks anti-obesity pharmacotherapy as “not covered by essential benefit package”. CHI’s Gold and Platinum packages are optional benefits an employer can add by agreement with its insurer, so drug coverage depends on the policy (${cite('chi-ebp', 'CHI')}). In the Eastern Province survey, 59.6% of GLP-1 users were covered by insurance or government support and 40.4% paid out of pocket (${cite('alhussain-2026', 'Alhussain et al., 2026')}); in the Jeddah survey, 49% disagreed that the cost of their medicine was reasonable (${cite('tobaiqy-2026', 'Tobaiqy et al., 2026')}). Payer research therefore has to separate public, insured and self-pay patients from the start.</p>
+
+${figureHtml(SAUDI_OBESITY_SHORTLIST_FIGURES[3])}
 
 <h3>Local and generic competition</h3>
 
@@ -469,6 +493,8 @@ ${SHORTLIST_TABLE_HTML}
 <li><strong>Competitive entry.</strong> Model switching to non-originator liraglutide and semaglutide brands, and to generic tirzepatide once it launches.</li>
 <li><strong>Sizing baseline.</strong> State whether a model uses the Ministry of Health’s measured, GASTAT’s self-reported or WHO’s modelled prevalence, and test the range.</li>
 </ol>
+
+${figureHtml(SAUDI_OBESITY_SHORTLIST_FIGURES[4])}
 
 <p>For fieldwork design, see our guide to <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>; for the adjacent diabetes market, see the <a href="/market-reports/saudi-arabia-diabetes-market-report">Saudi Arabia diabetes market report</a>.</p>
 
@@ -548,7 +574,7 @@ export const SAUDI_OBESITY_SHORTLIST_FAQ: { question: string; answer: string }[]
   {
     question: 'Why does BioNixus appear on its own shortlist?',
     answer:
-      'BioNixus publishes this guide and runs custom primary research, which is one of the three research types compared. We disclose that interest and describe every provider, including BioNixus, using what each organisation publishes about itself, with links to the source pages.',
+      'BioNixus publishes this guide and runs custom primary research, which is one of the three research types compared. We disclose that interest and describe every provider, including BioNixus, using what each organisation publishes about itself, and we name the source of each statement.',
   },
   {
     question: 'Does Saudi data protection law apply to obesity market research?',
@@ -698,6 +724,12 @@ export const SAUDI_OBESITY_SHORTLIST_HARDCODED_POST: BlogPost = {
         'Eight organisations that run or publish obesity and GLP-1 research on Saudi Arabia, grouped by research type.',
       items: SAUDI_OBESITY_SHORTLIST.map(({ name, url, description, id }) => ({ name, url, description, id })),
     },
+    contentImages: SAUDI_OBESITY_SHORTLIST_FIGURES.map((figure) => ({
+      url: `https://www.bionixus.com${figure.src}`,
+      width: figure.width,
+      height: figure.height,
+      caption: figure.caption,
+    })),
   },
   body: SAUDI_OBESITY_SHORTLIST_BODY_HTML,
 };

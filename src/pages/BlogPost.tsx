@@ -1287,6 +1287,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         emitWebPage={post.schemaExtras?.emitWebPage}
         imageAlt={post.schemaExtras?.emitWebPage ? socialImageAlt : undefined}
         organization={post.schemaExtras?.organization}
+        contentImages={post.schemaExtras?.contentImages}
         authorNode={post.schemaExtras?.author}
         authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={authorLinkedIn}

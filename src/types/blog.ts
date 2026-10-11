@@ -41,6 +41,8 @@ export interface BlogPostSchemaExtras {
   /** Replaces the default `about` Thing built from the category. */
   about?: ReadonlyArray<Record<string, unknown>>;
   itemList?: { name: string; description?: string; items: BlogPostItemListEntry[] };
+  /** In-article figures, emitted after the primary cover ImageObject. */
+  contentImages?: ReadonlyArray<{ url: string; width: number; height: number; caption: string }>;
 }
 
 export interface BlogPost {

@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
@@ -20,6 +20,7 @@ import {
   SAUDI_OBESITY_SHORTLIST_DISPLAY_TITLE,
   SAUDI_OBESITY_SHORTLIST_EXECUTIVE_SUMMARY_HTML,
   SAUDI_OBESITY_SHORTLIST_FAQ,
+  SAUDI_OBESITY_SHORTLIST_FIGURES,
   SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
   SAUDI_OBESITY_SHORTLIST_HERO_IMAGE,
   SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT,
@@ -194,7 +195,8 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
       '@id': `${SAUDI_OBESITY_SHORTLIST_URL}#webpage`,
       url: SAUDI_OBESITY_SHORTLIST_URL,
     });
-    expect(article.image).toMatchObject({
+    const images = Array.isArray(article.image) ? article.image : [article.image];
+    expect(images[0]).toMatchObject({
       '@type': 'ImageObject',
       '@id': `${SAUDI_OBESITY_SHORTLIST_URL}#primaryimage`,
       url: `https://www.bionixus.com${SAUDI_OBESITY_SHORTLIST_COVER_IMAGE}`,
@@ -202,6 +204,15 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
       height: 630,
       caption: SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT,
     });
+    expect(images.slice(1)).toEqual(
+      SAUDI_OBESITY_SHORTLIST_FIGURES.map((figure) => ({
+        '@type': 'ImageObject',
+        url: `https://www.bionixus.com${figure.src}`,
+        width: figure.width,
+        height: figure.height,
+        caption: figure.caption,
+      })),
+    );
     expect(article.author['@type']).toBe('Person');
     expect(article.publisher).toMatchObject({
       '@type': 'Organization',
@@ -286,9 +297,14 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
 
   it('lists the same providers in the ItemList and the comparison table', () => {
     const [itemList] = byType('ItemList');
-    const names = itemList.itemListElement.map((entry: JsonLdNode) => entry.item.name);
+    const names = itemList.itemListElement.map((entry: JsonLdNode) => entry.item?.name ?? entry.name);
     expect(names).toEqual(SAUDI_OBESITY_SHORTLIST.map((entry) => entry.name));
     expect(itemList.itemListElement[0].item['@id']).toBe('https://www.bionixus.com/#organization');
+    expect(itemList.itemListElement[0].item.url).toBe('https://www.bionixus.com');
+    for (const entry of itemList.itemListElement.slice(1)) {
+      expect(entry.item).toBeUndefined();
+      expect(JSON.stringify(entry)).not.toMatch(/https?:\/\//);
+    }
     const table = /<table>[\s\S]*?<\/table>/.exec(SAUDI_OBESITY_SHORTLIST_BODY_HTML)?.[0] ?? '';
     const firstCells = [...table.matchAll(/<tr><td>([^<]+)<\/td>/g)].map((m) => m[1]);
     expect(firstCells).toEqual(names);
@@ -347,23 +363,95 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: copy rules', () =
     expect(allCopy).not.toMatch(/\$\s?\d[\d,]*(?:k|,000)/i);
   });
 
-  it('cites every reference inline before the reference list', () => {
+  it('cites every linked reference inline, and keeps competitor bibliography entries unlinked', () => {
     const [narrative, referenceList] = SAUDI_OBESITY_SHORTLIST_BODY_HTML.split('<h2 id="references">');
-    const referenceUrls = [...referenceList.matchAll(/<li id="ref-[^"]+">[\s\S]*?<a href="([^"]+)"/g)].map((m) => m[1]);
-    expect(referenceUrls.length).toBeGreaterThan(20);
-    for (const url of referenceUrls) expect(narrative).toContain(`href="${url}"`);
+    const items = [...referenceList.matchAll(/<li id="ref-([^"]+)">([\s\S]*?)<\/li>/g)];
+    const linked = items.filter(([, , html]) => html.includes('<a '));
+    const unlinked = items.filter(([, , html]) => !html.includes('<a '));
+    expect(linked.length).toBeGreaterThanOrEqual(16);
+    expect(unlinked.map(([, id]) => id)).toEqual([
+      'euromonitor',
+      'grand-view',
+      'imarc-weight-loss',
+      'imarc-weight-management',
+      'ken-research',
+      '6wresearch',
+    ]);
+    for (const [, , html] of linked) {
+      const url = /href="([^"]+)"/.exec(html)?.[1] ?? '';
+      expect(narrative).toContain(`href="${url}"`);
+    }
+    for (const [, , html] of unlinked) {
+      expect(html).not.toMatch(/https?:\/\/|<a /);
+      expect(narrative).toContain(text(html).split('.')[0]);
+    }
+    expect(referenceList).not.toMatch(/iqvia|ipsos/i);
   });
 
-  it('opens external citations in a new tab and nofollows vendor pages', () => {
+  it('opens external citations in a new tab', () => {
     const external = [...SAUDI_OBESITY_SHORTLIST_BODY_HTML.matchAll(/<a href="(https?:[^"]+)"([^>]*)>/g)];
     expect(external.length).toBeGreaterThan(30);
     for (const [, href, attrs] of external) {
       expect(attrs).toContain('target="_blank"');
       expect(attrs).toMatch(/rel="[^"]*noopener/);
-      if (/euromonitor|grandviewresearch|imarcgroup|kenresearch|6wresearch|iqvia|ipsos/.test(href)) {
-        expect(attrs).toContain('nofollow');
-      }
+      expect(href).not.toMatch(
+        /iqvia\.com|ipsos\.com|kantar\.com|euromonitor\.com|grandviewresearch\.com|imarcgroup\.com|kenresearch\.com|6wresearch\.com/i,
+      );
     }
+  });
+
+  const COMPETITOR_HOSTS = [
+    'iqvia.com',
+    'ipsos.com',
+    'kantar.com',
+    'kantarhealth.com',
+    'kantarworldpanel.com',
+    'euromonitor.com',
+    'grandviewresearch.com',
+    'imarcgroup.com',
+    'kenresearch.com',
+    '6wresearch.com',
+  ];
+
+  it('fails if any competitor or report-publisher domain is linked', () => {
+    const corpus = [
+      SAUDI_OBESITY_SHORTLIST_EXECUTIVE_SUMMARY_HTML,
+      SAUDI_OBESITY_SHORTLIST_BODY_HTML,
+      JSON.stringify(SAUDI_OBESITY_SHORTLIST_FAQ),
+      JSON.stringify(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.schemaExtras),
+      JSON.stringify(SAUDI_OBESITY_SHORTLIST),
+      html,
+      JSON.stringify(jsonLd),
+    ].join('\n');
+    const urls = [...corpus.matchAll(/https?:\/\/[^\s"'<>\\]+/g)].map((match) => match[0].replace(/[),.;]+$/, ''));
+    const hits = urls.filter((url) => {
+      try {
+        const host = new URL(url).hostname.replace(/^www\./, '').toLowerCase();
+        return COMPETITOR_HOSTS.some((domain) => host === domain || host.endsWith(`.${domain}`));
+      } catch {
+        return false;
+      }
+    });
+    expect(hits).toEqual([]);
+    const visible = text(html);
+    for (const name of ['IQVIA', 'Ipsos', 'Euromonitor International', 'Grand View Research', 'IMARC Group', 'Ken Research', '6Wresearch']) {
+      expect(visible).toContain(name);
+    }
+  });
+
+  it('places lazy-loaded in-content figures with alt text, captions and files under 120 KB', () => {
+    for (const figure of SAUDI_OBESITY_SHORTLIST_FIGURES) {
+      expect(figure.src.endsWith('.webp')).toBe(true);
+      const file = statSync(join(root, 'public', figure.src));
+      expect(file.size).toBeGreaterThan(5 * 1024);
+      expect(file.size).toBeLessThanOrEqual(120 * 1024);
+      expect(html).toContain(
+        `src="${figure.src}" alt="${figure.alt}" width="${figure.width}" height="${figure.height}" loading="lazy"`,
+      );
+      expect(html).toContain(`<figcaption>${figure.caption}</figcaption>`);
+    }
+    expect(html).toContain(`src="${SAUDI_OBESITY_SHORTLIST_HERO_IMAGE}"`);
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.ogImage).toBe(SAUDI_OBESITY_SHORTLIST_COVER_IMAGE);
   });
 });
 
