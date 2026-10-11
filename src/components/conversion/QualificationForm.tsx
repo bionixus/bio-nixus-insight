@@ -15,7 +15,7 @@ const ERROR_EMAIL = 'admin@bionixus.com';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Scheduling link shown on the thank-you state. */
-export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://schedule.bionixus.com/meeting-with-bionixus';
+export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://research.bionixus.co.uk/widget/bookings/bionixus';
 
 export type QualificationFormProps = {
   /** Unique id for analytics + Formspree formVariant tagging, e.g. 'pharma_companies_uae_cta' */

@@ -94,7 +94,7 @@ describe('QualificationForm dual submit', () => {
     await submitQualification();
     expect(await screen.findByRole('link', { name: /pick a time for your call/i })).toHaveAttribute(
       'href',
-      'https://schedule.bionixus.com/meeting-with-bionixus',
+      'https://research.bionixus.co.uk/widget/bookings/bionixus',
     );
     expect(hrefs.join(' ')).not.toContain('mailto:');
     const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
