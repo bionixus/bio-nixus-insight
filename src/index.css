@@ -673,6 +673,14 @@
     max-width: 100%;
     height: auto;
   }
+  /* Table cells keep whole words. The wrapper scrolls instead of splitting them. */
+  .prose-table-wrap :is(th, td) {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .prose-table-wrap td {
+    white-space: normal;
+  }
   .prose-body table {
     @apply w-full border-collapse text-sm;
     min-width: 480px;
