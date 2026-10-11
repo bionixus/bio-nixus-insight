@@ -1520,7 +1520,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
         {/* ── CONTENT GRID ──────────────────────────────────────────────── */}
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pt-8 pb-20 items-start">
+          <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pt-8 pb-20 items-start">
 
             {/* ── ARTICLE MAIN ───────────────────────────────────────────── */}
             <article
