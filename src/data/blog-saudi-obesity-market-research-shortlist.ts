@@ -25,6 +25,9 @@ export const SAUDI_OBESITY_SHORTLIST_URL = `https://www.bionixus.com${SAUDI_OBES
  */
 export const SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME: string | undefined = undefined;
 
+/** Optional public profile (e.g. LinkedIn) for that author; becomes the Person url and sameAs. */
+export const SAUDI_OBESITY_SHORTLIST_AUTHOR_PROFILE_URL: string | undefined = undefined;
+
 export const SAUDI_OBESITY_SHORTLIST_COVER_IMAGE =
   '/images/blog/who-does-obesity-market-research-saudi-arabia-cover.jpg';
 
@@ -571,23 +574,32 @@ export const SAUDI_OBESITY_SHORTLIST_ORGANIZATION: Record<string, unknown> = {
   ],
 };
 
-const rosterAuthor = SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME
-  ? [...MENA_AUTHORS, ...WESTERN_AUTHORS].find((author) => author.name === SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME)
-  : undefined;
+export type ShortlistAuthor = Pick<BlogPost, 'authorName' | 'authorTitle' | 'authorLinkedIn'> & {
+  schema?: Record<string, unknown>;
+};
 
-if (SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME && isAlsaadanyDisplayName(SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME)) {
-  throw new Error('Mohammad Alsaadany cannot be credited on a market research comparison page.');
+/**
+ * Byline fields and Person JSON-LD for a roster name. Unknown names still get a
+ * Person node; Mohammad Alsaadany is rejected because this is a comparison page.
+ */
+export function resolveShortlistAuthor(name: string | undefined, profileUrl?: string): ShortlistAuthor {
+  if (!name) return {};
+  if (isAlsaadanyDisplayName(name)) {
+    throw new Error('Mohammad Alsaadany cannot be credited on a market research comparison page.');
+  }
+  const roster = [...MENA_AUTHORS, ...WESTERN_AUTHORS].find((author) => author.name === name);
+  const person = roster
+    ? personAuthorJsonLd(roster)
+    : { '@type': 'Person', name, worksFor: { '@type': 'Organization', '@id': ORG_ID, name: ORG_NAME } };
+  return {
+    authorName: name,
+    authorTitle: roster?.jobTitle,
+    authorLinkedIn: profileUrl,
+    schema: { ...person, ...(profileUrl ? { url: profileUrl, sameAs: [profileUrl] } : {}) },
+  };
 }
 
-const authorNode: Record<string, unknown> | undefined = rosterAuthor
-  ? personAuthorJsonLd(rosterAuthor)
-  : SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME
-    ? {
-        '@type': 'Person',
-        name: SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME,
-        worksFor: { '@type': 'Organization', '@id': ORG_ID, name: ORG_NAME },
-      }
-    : undefined;
+const AUTHOR = resolveShortlistAuthor(SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME, SAUDI_OBESITY_SHORTLIST_AUTHOR_PROFILE_URL);
 
 export const SAUDI_OBESITY_SHORTLIST_HARDCODED_POST: BlogPost = {
   id: 'hardcoded-saudi-obesity-market-research-shortlist',
@@ -614,8 +626,9 @@ export const SAUDI_OBESITY_SHORTLIST_HARDCODED_POST: BlogPost = {
   seoMetaDescription: SAUDI_OBESITY_SHORTLIST_META_DESCRIPTION,
   seoCanonicalUrl: SAUDI_OBESITY_SHORTLIST_URL,
   seoNoIndex: false,
-  authorName: SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME,
-  authorTitle: rosterAuthor?.jobTitle,
+  authorName: AUTHOR.authorName,
+  authorTitle: AUTHOR.authorTitle,
+  authorLinkedIn: AUTHOR.authorLinkedIn,
   publishedAtIso: SAUDI_OBESITY_SHORTLIST_PUBLISHED_ISO,
   updatedAtIso: SAUDI_OBESITY_SHORTLIST_UPDATED_ISO,
   tableOfContents: SAUDI_OBESITY_SHORTLIST_TABLE_OF_CONTENTS,
@@ -631,7 +644,7 @@ export const SAUDI_OBESITY_SHORTLIST_HARDCODED_POST: BlogPost = {
   schemaExtras: {
     emitWebPage: true,
     organization: SAUDI_OBESITY_SHORTLIST_ORGANIZATION,
-    author: authorNode,
+    author: AUTHOR.schema,
     about: [
       { '@type': 'MedicalCondition', name: 'Obesity' },
       { '@type': 'Country', name: 'Saudi Arabia' },
