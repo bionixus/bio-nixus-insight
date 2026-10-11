@@ -82,6 +82,11 @@ const REFERENCES: Reference[] = [
     url: 'https://www.who.int/data/gho/data/indicators/indicator-details/GHO/prevalence-of-obesity-among-adults-bmi-%3D-30-(age-standardized-estimate)-(-)',
   },
   {
+    id: 'moh-whs-2019',
+    label: 'Ministry of Health, with GASTAT and the Saudi Health Council. World Health Survey Saudi Arabia (KSAWHS) 2019: Preliminary Report. Table 6.3 (Body Mass Index) and age-standardised core health indicators.',
+    url: 'https://www.moh.gov.sa/en/Ministry/Statistics/Population-Health-Indicators/Documents/World-Health-Survey-Saudi-Arabia.pdf',
+  },
+  {
     id: 'sfda-foundayo',
     label: 'Saudi Food and Drug Authority (SFDA). SFDA Approves Registration of “Foundayo” for Weight Management. News release, 2 August 2026.',
     url: 'https://www.sfda.gov.sa/en/news/19225',
@@ -107,6 +112,11 @@ const REFERENCES: Reference[] = [
     url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5075383/',
   },
   {
+    id: 'chi-ebp',
+    label: 'Council of Health Insurance (CHI). Basic Health Insurance Policy: Updated Essential Benefit Package (effective 1 October 2022), including the bariatric surgery bundle and the optional Gold and Platinum benefit guidance.',
+    url: 'https://www.chi.gov.sa/en/knowledge-center/health-insurance-policies/unified%20policy/Updated%20Essential%20Benefit%20Package%20%20(%20effective%201%20October%202022).pdf',
+  },
+  {
     id: 'alotaibi-2025',
     label: 'AlOtaibi HF, et al. Saudi Healthcare Providers’ Perspectives and Clinical Practice of Anti-Obesity Medications: A National Survey. Saudi J Med Med Sci. 2025;13(3):222–230. doi:10.4103/sjmms.sjmms_672_24.',
     url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12366907/',
@@ -115,6 +125,16 @@ const REFERENCES: Reference[] = [
     id: 'action-io-2021',
     label: 'Alfadda AA, et al. Perceptions, attitudes, and barriers toward obesity management in Saudi Arabia: Data from the ACTION-IO study. Saudi J Gastroenterol. 2021;27(3):166–172. doi:10.4103/sjg.sjg_500_20.',
     url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8265404/',
+  },
+  {
+    id: 'alhussain-2026',
+    label: 'Alhussain K, et al. Prevalence and Factors Associated with GLP-1 Receptor Agonist Use for Weight Management Among Overweight and Obese Adults in the Eastern Province of Saudi Arabia. Healthcare (Basel). 2026;14(3):345. doi:10.3390/healthcare14030345.',
+    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12897281/',
+  },
+  {
+    id: 'tobaiqy-2026',
+    label: 'Tobaiqy MA, et al. Patient Experiences and Safety Concerns Regarding GLP-1 Receptor Agonists for Obesity: A Cross-Sectional Survey in Jeddah, Saudi Arabia. Saudi Med J. 2026;47(9):1516–1523. doi:10.15537/1658-3175.8842.',
+    url: 'https://smj.researchcommons.org/journal/vol47/iss9/10/',
   },
   {
     id: 'avalon-2026',
@@ -174,6 +194,12 @@ const REFERENCES: Reference[] = [
     vendor: true,
   },
   {
+    id: 'iqvia-about',
+    label: 'IQVIA. About IQVIA Middle East & Africa (office locations, including Riyadh).',
+    url: 'https://www.iqvia.com/locations/middle-east-and-africa/about-iqvia-mea',
+    vendor: true,
+  },
+  {
     id: 'iqvia-pi',
     label: 'IQVIA. Primary intelligence solutions for Middle East and Africa.',
     url: 'https://www.iqvia.com/locations/middle-east-and-africa/solutions/primary-intelligence',
@@ -225,7 +251,7 @@ export const SAUDI_OBESITY_SHORTLIST: ShortlistEntry[] = [
     name: 'IQVIA',
     url: 'https://www.iqvia.com',
     researchType: 'Data, analytics and integrated custom and syndicated research',
-    saudiOffer: 'Middle East &amp; Africa solutions including Primary Intelligence and real-world evidence; no Saudi obesity-specific page found',
+    saudiOffer: 'Riyadh office; Middle East &amp; Africa solutions including Primary Intelligence and real-world evidence; no Saudi obesity-specific page found',
     bestFor: 'Teams that want new research tied to IQVIA data and analytics',
     description:
       'Healthcare data and analytics with integrated custom and syndicated research across the Middle East and Africa.',
@@ -319,12 +345,13 @@ const NARRATIVE_HTML = `<p>Saudi Arabia’s obesity market changed shape in 2025
 <div class="value-box">
 <p><strong>Quick facts: obesity and GLP-1 in Saudi Arabia, October 2026</strong></p>
 <ul>
-<li><strong>23.1%</strong> of adults aged 15 and over were obese and 45.1% overweight in GASTAT’s 2024 National Health Survey, which uses self-reported height and weight (${cite('gastat-2024', 'GASTAT')}).</li>
-<li><strong>40.1%</strong> is WHO’s modelled, age-standardised estimate of adult (18+) obesity in Saudi Arabia for 2024, built from measured height and weight (${cite('who-gho', 'WHO')}).</li>
-<li><strong>14.6%</strong> of children aged 2 to 14 were obese in the same GASTAT release (${cite('gastat-2024', 'GASTAT')}).</li>
+<li><strong>20.2% to 40.1%:</strong> adult obesity estimates by method, from 20.2% measured in the Ministry of Health’s 2019 World Health Survey (ages 18+; ${cite('moh-whs-2019', 'MOH')}) and 23.1% self-reported in GASTAT’s 2024 National Health Survey (ages 15+; ${cite('gastat-2024', 'GASTAT')}) to 40.1% modelled by WHO for 2024 (ages 18+, age-standardised; ${cite('who-gho', 'WHO')}).</li>
+<li><strong>14.6%</strong> of children aged 2 to 14 were obese in GASTAT’s 2024 release (${cite('gastat-2024', 'GASTAT')}).</li>
 <li><strong>2 August 2026:</strong> the SFDA approved Foundayo (orforglipron), taken orally once a day, for weight management (${cite('sfda-foundayo', 'SFDA')}).</li>
 <li><strong>13 brands, 5 companies:</strong> the SFDA’s September 2025 GLP-1 safety letter covers products from Novo Nordisk, Eli Lilly, Sanofi, Boston Oncology Arabia and AJA Pharmaceutical Industries (${cite('sfda-pancreatitis', 'SFDA')}).</li>
-<li><strong>97.8%</strong> of 92 clinicians in a 2024 national survey named GLP-1 receptor agonists as their first-line anti-obesity medicine (${cite('alotaibi-2025', 'AlOtaibi et al., 2025')}).</li>
+<li><strong>97.8%</strong> of 92 clinicians in a 2024 national survey said they prescribe GLP-1 receptor agonists for obesity; semaglutide was the most common first-line choice, at 45.7% (${cite('alotaibi-2025', 'AlOtaibi et al., 2025')}).</li>
+<li><strong>Not covered:</strong> anti-obesity pharmacotherapy is outside the Council of Health Insurance’s essential benefit package for private insurance, which does cover approved bariatric surgery (${cite('chi-ebp', 'CHI')}).</li>
+<li><strong>40.4%</strong> of GLP-1 users paid out of pocket in a December 2024 survey of 1,264 overweight or obese adults in the Eastern Province (${cite('alhussain-2026', 'Alhussain et al., 2026')}).</li>
 </ul>
 </div>
 
@@ -360,7 +387,7 @@ ${SHORTLIST_TABLE_HTML}
 
 <h3>IQVIA: data and analytics with integrated custom research</h3>
 
-<p>IQVIA Middle East &amp; Africa describes forecasting and trend analysis, real-world evidence studies, and technology and commercial-effectiveness solutions delivered by a local team, and it lists Primary Intelligence, Commercial Analytics and Real World Evidence among its regional solutions (${cite('iqvia-mea', 'IQVIA Middle East &amp; Africa')}). Its Primary Intelligence page says it integrates “custom and syndicated research” with IQVIA data and analytics (${cite('iqvia-pi', 'IQVIA Primary Intelligence')}). We did not find a Saudi obesity-specific page. IQVIA suits teams that want new research tied to IQVIA data; if you are weighing that against an independent primary-research partner, see our <a href="/iqvia-alternative-saudi-arabia">IQVIA alternative in Saudi Arabia</a> page.</p>
+<p>IQVIA Middle East &amp; Africa describes forecasting and trend analysis, real-world evidence studies, and technology and commercial-effectiveness solutions delivered by a local team, and it lists Primary Intelligence, Commercial Analytics and Real World Evidence among its regional solutions (${cite('iqvia-mea', 'IQVIA Middle East &amp; Africa')}), and it lists an office in Riyadh (${cite('iqvia-about', 'IQVIA locations')}). Its Primary Intelligence page says it integrates “custom and syndicated research” with IQVIA data and analytics (${cite('iqvia-pi', 'IQVIA Primary Intelligence')}). We did not find a Saudi obesity-specific page. IQVIA suits teams that want new research tied to IQVIA data; if you are weighing that against an independent primary-research partner, see our <a href="/iqvia-alternative-saudi-arabia">IQVIA alternative in Saudi Arabia</a> page.</p>
 
 <h3>Ipsos: full-service research with a Riyadh office</h3>
 
@@ -390,9 +417,9 @@ ${SHORTLIST_TABLE_HTML}
 
 <p>The public evidence base is thinner than the commercial interest suggests. For the wider healthcare context, see the <a href="/saudi-arabia-healthcare-market-report">Saudi Arabia healthcare market report</a> and our <a href="/blog/saudi-arabia-healthcare-market-2026">Saudi Arabia healthcare market 2026</a> briefing.</p>
 
-<h3>Two official baselines, 17 points apart</h3>
+<h3>Three prevalence baselines, three methods</h3>
 
-<p>GASTAT’s Health Determinants Statistics Publication 2024 reports that 23.1% of adults aged 15 and over were obese (BMI of 30 or more) and 45.1% were overweight, based on self-reported data from the National Health Survey; 14.6% of children aged 2 to 14 were obese (${cite('gastat-2024', 'GASTAT')}). WHO’s Global Health Observatory, which models measured height and weight for adults aged 18 and over, estimates age-standardised adult obesity in Saudi Arabia at 40.1% in 2024, with an uncertainty range of 34.7% to 45.8% (${cite('who-gho', 'WHO')}). Both are authoritative figures, but they measure different things. A forecast built on one rather than the other changes the addressable population substantially, so ask every provider which baseline it uses and why.</p>
+<p>GASTAT’s Health Determinants Statistics Publication 2024 reports that 23.1% of adults aged 15 and over were obese (BMI of 30 or more) and 45.1% were overweight, based on self-reported data from the National Health Survey; 14.6% of children aged 2 to 14 were obese (${cite('gastat-2024', 'GASTAT')}). The Ministry of Health’s 2019 World Health Survey, run with GASTAT and the Saudi Health Council, weighed and measured respondents: 20.2% of 7,890 adults aged 18 and over were obese, or 22.0% age-standardised (${cite('moh-whs-2019', 'Ministry of Health')}). WHO’s Global Health Observatory models measured height and weight for adults aged 18 and over and estimates age-standardised adult obesity in Saudi Arabia at 40.1% in 2024, with an uncertainty range of 34.7% to 45.8% (${cite('who-gho', 'WHO')}). All three are authoritative, but they come from different years and methods. A forecast built on one rather than another changes the addressable population substantially, so ask every provider which baseline it uses and why.</p>
 
 <h3>What the SFDA has approved and flagged</h3>
 
@@ -402,11 +429,15 @@ ${SHORTLIST_TABLE_HTML}
 
 <h3>How Saudi physicians prescribe today</h3>
 
-<p>The most detailed published picture is a national survey of 92 clinicians (71 family physicians, 20 endocrinologists and one bariatric surgeon) fielded between May and August 2024. GLP-1 receptor agonists were the first-line choice of 97.8% of respondents: 45.7% chose semaglutide first, 26.1% tirzepatide and 25.0% liraglutide. Availability was the most cited factor in choosing a medicine (83.7% of respondents), ahead of effectiveness (47.8%) and dosing frequency (45.7%). Endocrinologists prescribed anti-obesity medicines much more often than family physicians (90.0% against about 61%), and only 15.3% of respondents had formal training in obesity (${cite('alotaibi-2025', 'AlOtaibi et al., 2025')}). The sample is small, was recruited by convenience and includes almost no surgeons. That is the gap a commissioned, specialty-stratified survey closes.</p>
+<p>The most detailed published picture is a national survey of 92 clinicians (71 family physicians, 20 endocrinologists and one bariatric surgeon) fielded between May and August 2024. Asked which classes of anti-obesity medicine they prescribe, 97.8% named GLP-1 receptor agonists and 44.6% the dual GIP/GLP-1 class. Asked for one first-line agent, 45.7% chose semaglutide, 26.1% tirzepatide, 25.0% liraglutide and 3.3% orlistat. When choosing between GLP-1 and dual GIP/GLP-1 agonists, 83.7% cited availability, 47.8% effectiveness and 45.7% dosing frequency. Endocrinologists prescribed anti-obesity medicines far more often: 65.0% did so always or often, against 14.1% of family physicians. They were also more likely to weigh cost (75.0% against 36.6%) and insurance (45.0% against 18.3%). Only 15.3% of respondents had formal obesity training, and the authors note that some institutions let only endocrinologists prescribe these medicines (${cite('alotaibi-2025', 'AlOtaibi et al., 2025, Table 3')}). The sample is small, was recruited by convenience and includes almost no surgeons. That is the gap a commissioned, specialty-stratified survey closes.</p>
 
-<h3>Patients: diagnosis and persistence</h3>
+<h3>Patients: diagnosis, use and access</h3>
 
-<p>The Saudi arm of the ACTION-IO study surveyed 1,000 people with obesity and 200 healthcare professionals between June and September 2018. Only 46% of the people with obesity had received a diagnosis, 44% had a follow-up appointment scheduled and 5% had maintained their weight loss for more than a year (${cite('action-io-2021', 'Alfadda et al., 2021')}). Those data were collected before the current generation of GLP-1 medicines, so patient journey and persistence evidence needs refreshing.</p>
+<p>The Saudi arm of the ACTION-IO study surveyed 1,000 people with obesity and 200 healthcare professionals between June and September 2018. Only 46% of the people with obesity had received a diagnosis, 44% had a follow-up appointment scheduled and 5% had maintained their weight loss for more than a year (${cite('action-io-2021', 'Alfadda et al., 2021')}). Those data predate the current generation of GLP-1 medicines, and the newer patient surveys are regional. In an online survey of 1,264 overweight or obese adults in the Eastern Province in December 2024, 18.2% had ever used a GLP-1 receptor agonist and 14.2% were using one; 70.4% of users had started on a doctor’s recommendation and 36.5% on their own decision (${cite('alhussain-2026', 'Alhussain et al., 2026')}). Among 365 adults who had used an anti-obesity medicine, surveyed at three Jeddah hospitals between June 2025 and February 2026, 59.7% obtained their medicine through a doctor’s prescription, 28.8% through pharmacist dispensing and 8.2% online (${cite('tobaiqy-2026', 'Tobaiqy et al., 2026')}). ${cite('alhussain-2026', 'Alhussain and colleagues')} also report a Ministry of Health campaign, launched in August 2025, to enforce prescription requirements for weight-loss medicines. Each sample comes from a single region, so national evidence on persistence and access is still missing.</p>
+
+<h3>Who pays for obesity treatment?</h3>
+
+<p>The Council of Health Insurance’s Essential Benefit Package, the mandatory basic policy for private health insurance (version effective 1 October 2022), covers approved bariatric surgery when BMI exceeds 40, or 35 with complications, but marks anti-obesity pharmacotherapy as “not covered by essential benefit package”. CHI’s Gold and Platinum packages are optional benefits an employer can add by agreement with its insurer, so drug coverage depends on the policy (${cite('chi-ebp', 'CHI')}). In the Eastern Province survey, 59.6% of GLP-1 users were covered by insurance or government support and 40.4% paid out of pocket (${cite('alhussain-2026', 'Alhussain et al., 2026')}); in the Jeddah survey, 49% disagreed that the cost of their medicine was reasonable (${cite('tobaiqy-2026', 'Tobaiqy et al., 2026')}). Payer research therefore has to separate public, insured and self-pay patients from the start.</p>
 
 <h3>Local and generic competition</h3>
 
@@ -418,13 +449,13 @@ ${SHORTLIST_TABLE_HTML}
 
 <ol>
 <li><strong>Prescriber segments.</strong> Recruit endocrinology, family medicine, internal medicine and bariatric surgery, and report each separately; the 2024 survey shows how differently they prescribe.</li>
-<li><strong>Molecule choice and availability.</strong> Measure first-line choice by molecule and the role of supply; 83.7% of respondents in that survey cited availability as a factor.</li>
+<li><strong>Molecule choice and availability.</strong> Measure first-line choice by molecule and the role of supply; in that survey, 83.7% cited availability when choosing between GLP-1 and dual GIP/GLP-1 agonists.</li>
 <li><strong>Oral against injectable.</strong> Test how prescribers and patients weigh a once-daily oral option such as orforglipron against weekly injections.</li>
 <li><strong>Safety communications.</strong> Track awareness of the 2025 pancreatitis reminder and the 2026 NAION update, and whether either changes initiation or monitoring.</li>
-<li><strong>Patient journey and persistence.</strong> Map diagnosis, follow-up and discontinuation; the latest published Saudi patient data are from 2018.</li>
-<li><strong>Access route.</strong> Separate public, insured and self-pay pathways before sizing demand. Our <a href="/saudi-payer-market-access-research">Saudi payer and market access research</a> and <a href="/blog/nupco-saudi-arabia-tendering-guide">NUPCO tendering guide</a> cover the public side.</li>
+<li><strong>Patient journey and persistence.</strong> Map diagnosis, follow-up and discontinuation; the latest national data on diagnosis and follow-up are from 2018, and newer patient surveys each cover one region.</li>
+<li><strong>Access route.</strong> Separate public, insured and self-pay pathways, and prescription, pharmacy and online supply, before sizing demand; CHI’s essential benefit package does not cover anti-obesity pharmacotherapy. Our <a href="/saudi-payer-market-access-research">Saudi payer and market access research</a> and <a href="/blog/nupco-saudi-arabia-tendering-guide">NUPCO tendering guide</a> cover the public side.</li>
 <li><strong>Competitive entry.</strong> Model switching to non-originator liraglutide and semaglutide brands, and to generic tirzepatide once it launches.</li>
-<li><strong>Sizing baseline.</strong> State whether a model uses GASTAT’s self-reported or WHO’s modelled prevalence, and test both.</li>
+<li><strong>Sizing baseline.</strong> State whether a model uses the Ministry of Health’s measured, GASTAT’s self-reported or WHO’s modelled prevalence, and test the range.</li>
 </ol>
 
 <p>For fieldwork design, see our guide to <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>; for the adjacent diabetes market, see the <a href="/market-reports/saudi-arabia-diabetes-market-report">Saudi Arabia diabetes market report</a>.</p>
@@ -448,7 +479,7 @@ ${SHORTLIST_TABLE_HTML}
 <ul>
 <li>How many endocrinologists, family physicians, internal medicine physicians and bariatric surgeons will you recruit, and from which regions?</li>
 <li>Will results be reported by specialty and by public or private practice?</li>
-<li>Which prevalence baseline will you use for sizing, GASTAT’s or WHO’s, and why?</li>
+<li>Which prevalence baseline will you use for sizing (the Ministry of Health’s measured survey, GASTAT’s self-reported survey or WHO’s model), and why?</li>
 <li>Does your molecule list cover every SFDA-registered brand relevant to the brief, including non-originator brands and orforglipron?</li>
 <li>How will you handle health data? Saudi Arabia’s Personal Data Protection Law applies to processing of personal data in the Kingdom and classes health data as sensitive data. It came into force on 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}; ${cite('pdpl-text', 'PDPL text')}).</li>
 <li>Are questionnaires and discussion guides available in both Arabic and English?</li>
@@ -485,7 +516,7 @@ export const SAUDI_OBESITY_SHORTLIST_FAQ: { question: string; answer: string }[]
   {
     question: 'How common is obesity in Saudi Arabia?',
     answer:
-      'GASTAT’s 2024 National Health Survey found that 23.1% of adults aged 15 and over were obese and 45.1% were overweight, based on self-reported height and weight, and that 14.6% of children aged 2 to 14 were obese. WHO’s modelled estimate, which is age-standardised for adults aged 18 and over and built from measured height and weight, is 40.1% for 2024. The two figures use different methods, so check which one a forecast uses.',
+      'GASTAT’s 2024 National Health Survey found that 23.1% of adults aged 15 and over were obese and 45.1% were overweight, based on self-reported height and weight, and that 14.6% of children aged 2 to 14 were obese. The Ministry of Health’s 2019 World Health Survey, which measured height and weight, found that 20.2% of adults aged 18 and over were obese (22.0% age-standardised). WHO’s modelled estimate, which is age-standardised for adults aged 18 and over and built from measured height and weight, is 40.1% for 2024. The figures use different methods, so check which one a forecast uses.',
   },
   {
     question: 'Which obesity medicines has the SFDA approved?',
@@ -493,9 +524,14 @@ export const SAUDI_OBESITY_SHORTLIST_FAQ: { question: string; answer: string }[]
       'The SFDA approved Foundayo (orforglipron), a once-daily oral GLP-1 receptor agonist, for weight management on 2 August 2026. An SFDA-hosted letter from September 2026 lists Wegovy’s weight-management indications for adults and for adolescents aged 12 and above, and a September 2025 SFDA safety letter covers 13 GLP-1 receptor agonist brands from five companies, used for type 2 diabetes and weight management according to their Saudi labels. The Ministry of Health’s second-edition obesity guideline lists orlistat and liraglutide as SFDA-approved obesity medicines.',
   },
   {
+    question: 'Does health insurance in Saudi Arabia cover GLP-1 weight-loss medicines?',
+    answer:
+      'Not under the basic policy. The Council of Health Insurance’s Essential Benefit Package for private health insurance, in the version effective 1 October 2022, marks anti-obesity pharmacotherapy as not covered, while covering approved bariatric surgery when BMI exceeds 40, or 35 with complications. Optional Gold and Platinum packages let employers add benefits by agreement with their insurer. In a December 2024 survey of overweight and obese adults in the Eastern Province, 40.4% of GLP-1 users paid out of pocket and 59.6% were covered by insurance or government support.',
+  },
+  {
     question: 'Which physicians should a Saudi GLP-1 prescriber survey include?',
     answer:
-      'At a minimum, endocrinologists, family physicians, internal medicine physicians and bariatric surgeons, reported separately. In a 2024 national survey of 92 Saudi clinicians, 90.0% of endocrinologists prescribed anti-obesity medicines against about 61% of family physicians, and the sample included only one bariatric surgeon, so specialty quotas matter.',
+      'At a minimum, endocrinologists, family physicians, internal medicine physicians and bariatric surgeons, reported separately. In a 2024 national survey of 92 Saudi clinicians, 65.0% of endocrinologists prescribed anti-obesity medicines always or often, against 14.1% of family physicians, and the sample included only one bariatric surgeon, so specialty quotas matter.',
   },
   {
     question: 'Why does BioNixus appear on its own shortlist?',
