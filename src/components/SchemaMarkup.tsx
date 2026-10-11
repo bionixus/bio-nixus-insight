@@ -78,6 +78,8 @@ type BlogSchemaProps = {
   organization?: Record<string, unknown>
   /** Replaces the Person built from authorName / authorUrl / authorJobTitle. */
   authorNode?: Record<string, unknown>
+  /** In-article figures appended after the primary cover ImageObject. */
+  contentImages?: ReadonlyArray<{ url: string; width: number; height: number; caption: string }>
 }
 
 type ServiceSchemaProps = {
@@ -217,7 +219,14 @@ export function isValidSchemaNode(node: Record<string, unknown>): boolean {
       imageOk = true
     }
     if (!imageOk && Array.isArray(img) && img.length > 0) {
-      imageOk = img.every((e) => isNonEmptyString(String(e)))
+      imageOk = img.every((entry) => {
+        if (isNonEmptyString(entry)) return true
+        if (entry !== null && typeof entry === 'object' && !Array.isArray(entry)) {
+          const image = entry as Record<string, unknown>
+          return image['@type'] === 'ImageObject' && isNonEmptyString(image.url)
+        }
+        return false
+      })
     }
     const mainEntityOk =
       node.mainEntityOfPage === undefined ||
@@ -378,6 +387,14 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       caption: props.imageAlt?.trim() || props.headline,
     }
 
+    const contentImageObjects = (props.contentImages ?? []).map((image) => ({
+      '@type': 'ImageObject',
+      url: toHttpsUrl(image.url),
+      width: image.width,
+      height: image.height,
+      caption: image.caption,
+    }))
+
     const articleNode: Record<string, unknown> = {
       '@context': 'https://schema.org',
       '@type': schemaType,
@@ -390,7 +407,7 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       url: pageUrlHttps,
       headline: props.headline,
       description: props.description,
-      image: primaryImageObject,
+      image: contentImageObjects.length > 0 ? [primaryImageObject, ...contentImageObjects] : primaryImageObject,
       ...(props.articleSection?.trim()
         ? { articleSection: props.articleSection.trim() }
         : {}),

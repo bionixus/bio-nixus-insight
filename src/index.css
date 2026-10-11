@@ -673,6 +673,15 @@
     max-width: 100%;
     height: auto;
   }
+  article .prose-body figure.article-figure {
+    @apply my-8 overflow-hidden rounded-xl border border-border bg-card;
+  }
+  article .prose-body figure.article-figure img {
+    @apply block w-full h-auto;
+  }
+  article .prose-body figure.article-figure figcaption {
+    @apply border-t border-border px-4 py-3 text-sm leading-relaxed text-muted-foreground;
+  }
   /* Table cells keep whole words. The wrapper scrolls instead of splitting them. */
   .prose-table-wrap :is(th, td) {
     overflow-wrap: normal;

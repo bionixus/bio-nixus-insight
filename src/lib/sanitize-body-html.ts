@@ -12,9 +12,11 @@ const BODY_SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
     'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'br', 'hr',
     'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'a', 'blockquote',
     'table', 'thead', 'tbody', 'tr', 'th', 'td', 'sub', 'sup',
+    'figure', 'figcaption', 'img',
   ],
   allowedAttributes: {
     a: ['href', 'name', 'target', 'rel', 'class', 'style', 'id'],
+    img: ['src', 'alt', 'width', 'height', 'loading', 'decoding'],
     '*': ['class', 'style', 'id'],
   },
   allowedSchemes: ['http', 'https', 'mailto', 'tel'],
