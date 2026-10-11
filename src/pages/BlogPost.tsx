@@ -1273,7 +1273,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             ? [...therapyStaticBlogBundle.schemaMentions]
             : isQ2PharmaBlogEn && q2PharmaSchemaBundle?.mentions?.length
               ? [...q2PharmaSchemaBundle.mentions]
-              : undefined
+              : post.schemaExtras?.mentions?.length
+                ? [...post.schemaExtras.mentions]
+                : undefined
         }
         about={
           post.schemaExtras?.about?.length
@@ -1288,6 +1290,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         imageAlt={post.schemaExtras?.emitWebPage ? socialImageAlt : undefined}
         organization={post.schemaExtras?.organization}
         authorNode={post.schemaExtras?.author}
+        alternativeHeadline={post.schemaExtras?.alternativeHeadline}
+        citations={post.schemaExtras?.citation}
+        timeRequired={post.schemaExtras?.timeRequired}
+        copyrightYear={post.schemaExtras?.copyrightYear}
         authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={authorLinkedIn}
         authorJobTitle={

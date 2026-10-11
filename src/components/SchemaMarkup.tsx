@@ -78,6 +78,14 @@ type BlogSchemaProps = {
   organization?: Record<string, unknown>
   /** Replaces the Person built from authorName / authorUrl / authorJobTitle. */
   authorNode?: Record<string, unknown>
+  /** `alternativeHeadline` on the article node. */
+  alternativeHeadline?: string
+  /** Works cited in the body (`citation` on the article node). */
+  citations?: ReadonlyArray<Record<string, unknown>>
+  /** ISO 8601 reading time (`timeRequired`). */
+  timeRequired?: string
+  /** Emits copyrightYear with the sitewide Organization as copyrightHolder. */
+  copyrightYear?: number
 }
 
 type ServiceSchemaProps = {
@@ -389,6 +397,7 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       },
       url: pageUrlHttps,
       headline: props.headline,
+      ...(props.alternativeHeadline?.trim() ? { alternativeHeadline: props.alternativeHeadline.trim() } : {}),
       description: props.description,
       image: primaryImageObject,
       ...(props.articleSection?.trim()
@@ -399,6 +408,13 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         : {}),
       ...(typeof props.wordCount === 'number' && props.wordCount > 0
         ? { wordCount: Math.round(props.wordCount) }
+        : {}),
+      ...(props.timeRequired?.trim() ? { timeRequired: props.timeRequired.trim() } : {}),
+      ...(props.citations && props.citations.length > 0
+        ? { citation: props.citations.map((c) => ({ ...c })) }
+        : {}),
+      ...(typeof props.copyrightYear === 'number'
+        ? { copyrightYear: props.copyrightYear, copyrightHolder: { '@id': ORG_ID } }
         : {}),
       ...(props.schemaMentions && props.schemaMentions.length > 0
         ? { mentions: props.schemaMentions.map((m) => ({ ...m })) }
