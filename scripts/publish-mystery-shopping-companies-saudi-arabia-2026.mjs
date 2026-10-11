@@ -6,12 +6,12 @@
  * Run:
  *   node scripts/generate-mystery-shopping-saudi-arabia-cover.mjs
  *   node scripts/publish-mystery-shopping-companies-saudi-arabia-2026.mjs --dry-run
- *   node scripts/publish-mystery-shopping-companies-saudi-arabia-2026.mjs [--author=<slug>] [--published-at=<ISO>]
- * Sync: node scripts/publish-mystery-shopping-companies-saudi-arabia-2026.mjs --sync-existing [--author=<slug>]
+ *   node scripts/publish-mystery-shopping-companies-saudi-arabia-2026.mjs [--author=<slug>] [--author-title="<title>"] [--published-at=<ISO>]
+ * Sync: node scripts/publish-mystery-shopping-companies-saudi-arabia-2026.mjs --sync-existing [--author=<slug>] [--author-title="<title>"]
  *
- * The author is a single setting: AUTHOR_SLUG in scripts/data/mystery-shopping-companies-saudi-arabia-2026.mjs,
- * or --author=<slug> for one run. With neither, the post has no author reference and the site
- * shows its default byline.
+ * The author is set in one place: AUTHOR_SLUG and AUTHOR_JOB_TITLE in
+ * scripts/data/mystery-shopping-companies-saudi-arabia-2026.mjs, or --author / --author-title for one
+ * run. With no author slug, the post has no author reference and the site shows its default byline.
  */
 
 import fs from 'node:fs';
@@ -21,6 +21,7 @@ import { createClient } from '@sanity/client';
 import {
   ARTICLE,
   ARTICLE_URL,
+  AUTHOR_JOB_TITLE,
   AUTHOR_SLUG,
   BODY_HTML_FILE,
   SLUG,
@@ -65,6 +66,7 @@ const apiVersion = process.env.SANITY_API_VERSION || '2024-01-01';
 const dryRun = process.argv.includes('--dry-run');
 const syncExisting = process.argv.includes('--sync-existing');
 const authorSlug = argValue('author') ?? AUTHOR_SLUG;
+const authorJobTitle = argValue('author-title') ?? (authorSlug === AUTHOR_SLUG ? AUTHOR_JOB_TITLE : null);
 const publishedAtArg = argValue('published-at');
 
 const bodyHtml = fs.readFileSync(path.join(root, BODY_HTML_FILE), 'utf8');
@@ -154,6 +156,7 @@ async function resolveReferences(client) {
 function referenceFields({ author, categories, related }) {
   return {
     ...(author ? { author: { _type: 'reference', _ref: author._id } } : {}),
+    ...(author && authorJobTitle ? { authorJobTitle } : {}),
     categories: categories.map((c) => ({ _type: 'reference', _ref: c._id, _key: `cat-${c.slug}` })),
     relatedPosts: related.map((p) => ({ _type: 'reference', _ref: p._id, _key: `related-${p.slug}` })),
   };
@@ -206,7 +209,9 @@ async function main() {
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
     fs.writeFileSync(outPath, `${JSON.stringify(doc, null, 2)}\n`);
     console.log(`Dry run written to ${outPath}`);
-    console.log(`Author: ${refs.author ? `${refs.author.name} (${authorSlug})` : 'none (site default byline)'}`);
+    console.log(
+      `Author: ${refs.author ? `${refs.author.name} (${authorSlug})${authorJobTitle ? `, ${authorJobTitle}` : ''}` : 'none (site default byline)'}`,
+    );
     console.log(`Reading time: ${doc.readingTime} min · Categories: ${refs.categories.map((c) => c.slug).join(', ') || 'none'} · Related: ${refs.related.length}`);
     return;
   }
@@ -226,18 +231,18 @@ async function main() {
       process.exit(1);
     }
     const { author, ...otherRefs } = referenceFields(refs);
-    await client
-      .patch(existingId)
-      .set({
-        ...buildSharedContent(),
-        ...otherRefs,
-        ...(author ? { author } : {}),
-        seo: buildSeo(),
-        'openGraph.ogTitle': ARTICLE.seo.metaTitle,
-        'openGraph.ogDescription': ARTICLE.seo.metaDescription,
-        updatedAt: new Date().toISOString(),
-      })
-      .commit();
+    let patch = client.patch(existingId).set({
+      ...buildSharedContent(),
+      ...otherRefs,
+      ...(author ? { author } : {}),
+      seo: buildSeo(),
+      'openGraph.ogTitle': ARTICLE.seo.metaTitle,
+      'openGraph.ogDescription': ARTICLE.seo.metaDescription,
+      updatedAt: new Date().toISOString(),
+    });
+    // A new author must not inherit the previous author's job title.
+    if (author && !authorJobTitle) patch = patch.unset(['authorJobTitle']);
+    await patch.commit();
     console.log('Synced blogPost:', existingId);
     console.log('Article URL:', ARTICLE_URL);
     console.log('Insights hub:', HUB_URL);

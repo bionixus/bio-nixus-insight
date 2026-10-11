@@ -4,11 +4,14 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   ARTICLE,
   ARTICLE_URL,
+  AUTHOR_JOB_TITLE,
+  AUTHOR_SLUG,
   BODY_HTML_FILE,
   SLUG,
 } from '../../../scripts/data/mystery-shopping-companies-saudi-arabia-2026.mjs';
 import { getIndustriesInsightHowTo } from '../../../lib/industries-insight-jsonld.mjs';
 import { checkNode, walk } from '../../../scripts/seo/verify-schema-properties.mjs';
+import { WESTERN_AUTHORS } from '@/data/editorialAuthors';
 
 const fetchMock = vi.hoisted(() => vi.fn());
 
@@ -22,6 +25,8 @@ const root = join(__dirname, '..', '..', '..');
 const bodyHtml = readFileSync(join(root, BODY_HTML_FILE), 'utf8');
 const COVER = 'https://cdn.sanity.io/images/h2whvvpo/production/0000000000000000000000000000000000000000-1200x630.jpg';
 const SHARE_IMAGE = `${COVER}?w=1200&h=630&fit=crop&fm=jpg&q=90`;
+const AUTHOR_NAME = WESTERN_AUTHORS.find((author) => author.slug === AUTHOR_SLUG)?.name;
+const PERSON_ID = `https://www.bionixus.com/#person-${AUTHOR_SLUG}`;
 
 function crawlerDoc(overrides: Record<string, unknown> = {}) {
   return {
@@ -44,9 +49,9 @@ function crawlerDoc(overrides: Record<string, unknown> = {}) {
     publishedAt: '2026-10-11T12:00:00.000Z',
     updatedAt: '2026-10-12T09:30:00.000Z',
     _updatedAt: '2026-10-12T09:30:05Z',
-    author: null,
-    authorSlug: null,
-    authorTitle: null,
+    author: AUTHOR_NAME,
+    authorSlug: AUTHOR_SLUG,
+    authorTitle: AUTHOR_JOB_TITLE,
     authorLinkedIn: null,
     seoKeywords: ARTICLE.seo.keywords,
     category: ARTICLE.category,
@@ -134,7 +139,7 @@ describe('api/blog crawler HTML — industries insight article', () => {
     expect(meta(html, 'property', 'og:image:alt')).toEqual([ARTICLE.cover.alt]);
     expect(meta(html, 'property', 'article:published_time')).toEqual(['2026-10-11T12:00:00.000Z']);
     expect(meta(html, 'property', 'article:modified_time')).toEqual(['2026-10-12T09:30:00.000Z']);
-    expect(meta(html, 'property', 'article:author')).toEqual(['BioNixus Research Team']);
+    expect(meta(html, 'property', 'article:author')).toEqual(['Sarah Chen']);
     expect(meta(html, 'property', 'article:section')).toEqual(['B2C Market Research']);
     expect(meta(html, 'property', 'article:tag')).toEqual(ARTICLE.tags);
     expect(meta(html, 'name', 'twitter:card')).toEqual(['summary_large_image']);
@@ -144,13 +149,14 @@ describe('api/blog crawler HTML — industries insight article', () => {
     expect(meta(html, 'name', 'twitter:image:alt')).toEqual([ARTICLE.cover.alt]);
   });
 
-  it('emits a vocabulary-valid graph with BlogPosting, Organization, ImageObject, BreadcrumbList, FAQPage and HowTo', async () => {
+  it('emits a vocabulary-valid graph with BlogPosting, Organization, Person, ImageObject, BreadcrumbList, FAQPage and HowTo', async () => {
     fetchMock.mockResolvedValue(crawlerDoc());
     const html = (await render({ slug: SLUG, industriesInsight: '1' })).body;
     const nodes = jsonLd(html);
     expect(nodes.map((n) => n['@type'])).toEqual([
       'BlogPosting',
       'Organization',
+      'Person',
       'ImageObject',
       'BreadcrumbList',
       'FAQPage',
@@ -160,7 +166,7 @@ describe('api/blog crawler HTML — industries insight article', () => {
     for (const node of nodes) for (const [entry, path] of walk(node)) checkNode(entry, path, issues);
     expect(issues).toEqual([]);
 
-    const [article, organization, image, breadcrumb, faqPage, howTo] = nodes;
+    const [article, organization, , image, breadcrumb, faqPage, howTo] = nodes;
     expect(article).toMatchObject({
       '@id': `${ARTICLE_URL}#blogPosting`,
       url: ARTICLE_URL,
@@ -173,7 +179,7 @@ describe('api/blog crawler HTML — industries insight article', () => {
       keywords: ARTICLE.seo.keywords.join(', '),
       mainEntityOfPage: { '@type': 'WebPage', url: ARTICLE_URL },
       image: { '@type': 'ImageObject', '@id': `${ARTICLE_URL}#primaryimage`, url: SHARE_IMAGE, width: 1200, height: 630 },
-      author: { '@type': 'Organization', name: 'BioNixus Research Team' },
+      author: { '@type': 'Person', '@id': PERSON_ID },
       publisher: {
         '@id': 'https://www.bionixus.com/#organization',
         logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 200, height: 57 },
@@ -218,23 +224,37 @@ describe('api/blog crawler HTML — industries insight article', () => {
     expect(nav).not.toMatch(/healthcare-market-research|pharmaceutical|\/blog"/);
   });
 
-  it('adds a Person node and names the author everywhere once an author is set', async () => {
-    fetchMock.mockResolvedValue(
-      crawlerDoc({ author: 'Dina Ibrahim', authorSlug: 'dina-ibrahim', authorTitle: null, authorLinkedIn: null }),
-    );
+  it('names Sarah Chen, Global Research Manager, in the byline, article:author and Person node', async () => {
+    fetchMock.mockResolvedValue(crawlerDoc());
     const html = (await render({ slug: SLUG, industriesInsight: '1' })).body;
     const nodes = jsonLd(html);
-    const personId = 'https://www.bionixus.com/#person-dina-ibrahim';
-    const person = nodes.find((n) => n['@type'] === 'Person')!;
-    expect(person).toMatchObject({
-      '@id': personId,
-      name: 'Dina Ibrahim',
-      worksFor: { '@id': 'https://www.bionixus.com/#organization' },
-    });
-    expect(person.jobTitle).toBeUndefined();
-    expect(nodes[0]).toMatchObject({ author: { '@id': personId } });
-    expect(meta(html, 'property', 'article:author')).toEqual(['Dina Ibrahim']);
-    expect(html).toContain('<p>By Dina Ibrahim</p>');
+    const person = {
+      '@type': 'Person',
+      '@id': PERSON_ID,
+      name: 'Sarah Chen',
+      jobTitle: 'Global Research Manager',
+      worksFor: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    };
+    expect(nodes.find((n) => n['@type'] === 'Person')).toEqual({ '@context': 'https://schema.org', ...person });
+    expect(nodes[0].author).toEqual(person);
+    expect(meta(html, 'property', 'article:author')).toEqual(['Sarah Chen']);
+    expect(html).toContain('<p>By Sarah Chen, Global Research Manager</p>');
+  });
+
+  it('asks Sanity for the job title set on the post before the author profile title', async () => {
+    fetchMock.mockResolvedValue(crawlerDoc());
+    await render({ slug: SLUG, industriesInsight: '1' });
+    expect(fetchMock.mock.calls[0][0]).toContain('"authorTitle": coalesce(authorJobTitle, author->title)');
+  });
+
+  it('falls back to the BioNixus Research Team byline when the post has no author', async () => {
+    fetchMock.mockResolvedValue(crawlerDoc({ author: null, authorSlug: null, authorTitle: null }));
+    const html = (await render({ slug: SLUG, industriesInsight: '1' })).body;
+    const nodes = jsonLd(html);
+    expect(nodes.some((n) => n['@type'] === 'Person')).toBe(false);
+    expect(nodes[0]).toMatchObject({ author: { '@type': 'Organization', name: 'BioNixus Research Team' } });
+    expect(meta(html, 'property', 'article:author')).toEqual(['BioNixus Research Team']);
+    expect(html).toContain('<p>By BioNixus Research Team</p>');
   });
 
   it('leaves healthcare posts on their existing crawler output', async () => {
@@ -243,6 +263,8 @@ describe('api/blog crawler HTML — industries insight article', () => {
     const types = jsonLd(html).map((n) => n['@type']);
     expect(types).toEqual(['Article', 'BreadcrumbList', 'FAQPage']);
     expect(meta(html, 'property', 'article:modified_time')).toEqual([]);
+    expect(meta(html, 'property', 'article:author')).toEqual([]);
+    expect(html).toContain('<p>By Sarah Chen</p>');
     expect(html).toContain('https://www.bionixus.com/healthcare-market-research');
   });
 });

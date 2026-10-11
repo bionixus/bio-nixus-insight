@@ -5,6 +5,8 @@ import {
   ARTICLE,
   ARTICLE_PATH,
   ARTICLE_URL,
+  AUTHOR_JOB_TITLE,
+  AUTHOR_SLUG,
   BODY_HTML_FILE,
   SLUG,
   TARGET_KEYWORD,
@@ -23,6 +25,7 @@ import { CTR_SEO_BY_PATH as SERVER_CTR_SEO } from '@/server/ctr-seo-overrides.js
 import {
   ALSAADANY_PROFILE_URL as ROSTER_ALSAADANY_PROFILE_URL,
   ALSAADANY_SAME_AS_URL as ROSTER_ALSAADANY_SAME_AS_URL,
+  WESTERN_AUTHORS,
   withAlsaadanyPersonJsonLd,
 } from '@/data/editorialAuthors';
 import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
@@ -34,6 +37,8 @@ const root = join(__dirname, '..', '..', '..', '..');
 const bodyHtml = readFileSync(join(root, BODY_HTML_FILE), 'utf8');
 const sitemapXml = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');
 const keyword = TARGET_KEYWORD.toLowerCase();
+const rosterAuthor = WESTERN_AUTHORS.find((author) => author.slug === AUTHOR_SLUG);
+const PERSON_ID = `https://www.bionixus.com/#person-${AUTHOR_SLUG}`;
 
 const h2s = [...bodyHtml.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map(([, id, text]) => ({ id, text }));
 const hrefs = [...bodyHtml.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
@@ -183,6 +188,12 @@ describe('Mystery shopping companies Saudi Arabia — content and SEO', () => {
     );
     expect(items).toEqual(howTo.steps);
   });
+
+  it('credits Sarah Chen, Global Research Manager, an existing Sanity author', () => {
+    expect(AUTHOR_SLUG).toBe('sarah-chen');
+    expect(rosterAuthor?.name).toBe('Sarah Chen');
+    expect(AUTHOR_JOB_TITLE).toBe('Global Research Manager');
+  });
 });
 
 describe('Mystery shopping article — shared JSON-LD helpers', () => {
@@ -232,6 +243,9 @@ describe('Mystery shopping article — React BlogPosting graph', () => {
     seoKeywords: ARTICLE.seo.keywords,
     publishedAtIso: '2026-10-11T12:00:00.000Z',
     updatedAtIso: '2026-10-12T09:30:00.000Z',
+    authorName: rosterAuthor?.name,
+    authorSlug: AUTHOR_SLUG,
+    authorTitle: AUTHOR_JOB_TITLE,
   };
 
   function graphFor(post: BlogPost) {
@@ -283,9 +297,16 @@ describe('Mystery shopping article — React BlogPosting graph', () => {
     return issues;
   }
 
-  it('emits valid BlogPosting, BreadcrumbList, FAQPage, ImageObject and HowTo nodes', () => {
+  it('emits valid BlogPosting, BreadcrumbList, FAQPage, Person, ImageObject and HowTo nodes', () => {
     const nodes = graphFor(basePost);
-    expect(nodes.map((n) => n['@type'])).toEqual(['BlogPosting', 'BreadcrumbList', 'FAQPage', 'ImageObject', 'HowTo']);
+    expect(nodes.map((n) => n['@type'])).toEqual([
+      'BlogPosting',
+      'BreadcrumbList',
+      'FAQPage',
+      'Person',
+      'ImageObject',
+      'HowTo',
+    ]);
     expect(nodes.every((n) => isValidSchemaNode(JSON.parse(JSON.stringify(n))))).toBe(true);
     expect(vocabularyIssues(nodes)).toEqual([]);
 
@@ -301,7 +322,7 @@ describe('Mystery shopping article — React BlogPosting graph', () => {
       mainEntityOfPage: { '@type': 'WebPage', url: ARTICLE_URL },
       image: { '@type': 'ImageObject', '@id': `${ARTICLE_URL}#primaryimage`, width: 1200, height: 630 },
       publisher: { logo: { url: 'https://www.bionixus.com/bionixus-logo.webp', width: 200, height: 57 } },
-      author: { '@type': 'Organization', name: 'BioNixus Research Team', url: 'https://www.bionixus.com' },
+      author: { '@type': 'Person', '@id': PERSON_ID },
     });
   });
 
@@ -312,15 +333,25 @@ describe('Mystery shopping article — React BlogPosting graph', () => {
     expect(faqPage.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }))).toEqual(ARTICLE.faq);
   });
 
-  it('adds a standalone Person and links it from the article once an author is set', () => {
-    const nodes = graphFor({ ...basePost, authorName: 'Dina Ibrahim', authorSlug: 'dina-ibrahim' });
-    const personId = 'https://www.bionixus.com/#person-dina-ibrahim';
-    expect(nodes.find((n) => n['@type'] === 'Person')).toMatchObject({
-      '@id': personId,
-      name: 'Dina Ibrahim',
-      worksFor: { '@id': 'https://www.bionixus.com/#organization' },
+  it('describes Sarah Chen, Global Research Manager, as the Person the article credits', () => {
+    const nodes = graphFor(basePost);
+    const person = {
+      '@type': 'Person',
+      '@id': PERSON_ID,
+      name: 'Sarah Chen',
+      jobTitle: 'Global Research Manager',
+      worksFor: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    };
+    expect(nodes.find((n) => n['@type'] === 'Person')).toEqual({ '@context': 'https://schema.org', ...person });
+    expect(nodes[0].author).toEqual(person);
+  });
+
+  it('credits the BioNixus Research Team when no author is set', () => {
+    const nodes = graphFor({ ...basePost, authorName: undefined, authorSlug: undefined, authorTitle: undefined });
+    expect(nodes.some((n) => n['@type'] === 'Person')).toBe(false);
+    expect(nodes[0]).toMatchObject({
+      author: { '@type': 'Organization', name: 'BioNixus Research Team', url: 'https://www.bionixus.com' },
     });
-    expect(nodes[0]).toMatchObject({ author: { '@id': personId } });
     expect(vocabularyIssues(nodes)).toEqual([]);
   });
 });

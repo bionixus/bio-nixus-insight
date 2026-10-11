@@ -13,14 +13,19 @@ export const BODY_HTML_FILE = `scripts/data/${SLUG}-body.html`;
 export const TARGET_KEYWORD = 'mystery shopping companies Saudi Arabia';
 
 /**
- * Author setting: a Sanity author slug, or null to publish without a byline.
- * Without one the site falls back to its default byline, "BioNixus Research Team".
- * Existing Sanity authors: dina-ibrahim, mohammad-ashour (MENA roster for GCC pages per
- * .cursor/rules/editorial-authors.mdc), laura-mcconaughey, sarah-chen, martha-devito,
- * anna-cuban, armela-belba, ivona-gunjova, mohammad-alsaadany, bionixus-market-research.
- * Override per run with --author=<slug>.
+ * Author setting: a Sanity author slug (null publishes with the site default byline,
+ * "BioNixus Research Team") and the job title shown with that author on this post.
+ * The publish script stores the title on the post as `authorJobTitle`; the site prefers it
+ * over the title on the author's Sanity profile.
+ * The site owner chose this author, so it stays even though GCC pages normally use the MENA
+ * roster in .cursor/rules/editorial-authors.mdc.
+ * Existing Sanity authors: dina-ibrahim, mohammad-ashour, laura-mcconaughey, sarah-chen,
+ * martha-devito, anna-cuban, armela-belba, ivona-gunjova, mohammad-alsaadany,
+ * bionixus-market-research.
+ * Override per run with --author=<slug> and --author-title="<job title>".
  */
-export const AUTHOR_SLUG = null;
+export const AUTHOR_SLUG = 'sarah-chen';
+export const AUTHOR_JOB_TITLE = 'Global Research Manager';
 
 export const ARTICLE = {
   title: 'Mystery Shopping Companies Saudi Arabia: How to Run a Programme That Holds Up (2026 Guide)',
