@@ -17,6 +17,7 @@ import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
 import { getContactFormStrings } from '@/lib/contactFormStrings';
 import { trackLeadSubmitted } from '@/lib/analytics';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
 import { focusFirstInvalidField, leadFallbackMailto, revealStatus } from '@/lib/formFeedback';
 
 type ContactValidation = {
@@ -99,8 +100,6 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
   const v = (key: keyof ContactValidation) => validation?.[key] ?? '';
   const place = (key: string, fallback: string) => c[key] ?? fallback;
 
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -113,7 +112,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
     const rawEmail = (data.get('workEmail') as string)?.trim() || '';
     if (!rawEmail) {
       next.workEmail = v('workEmail') || 'Work email is required';
-    } else if (!EMAIL_RE.test(rawEmail)) {
+    } else if (!isValidLeadEmail(rawEmail)) {
       next.workEmail = v('emailFormat') || 'Please enter a valid email address';
     }
 
@@ -227,9 +226,8 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
         } catch {
           // Newsletter subscribe is optional once the lead itself is saved.
         }
-      } else if (result.highLevelStatus === 400 && result.error) {
+      } else if (result.invalidEmail && result.error) {
         setSubmitError(result.error);
-        focusFirstInvalidField(form, { workEmail: result.error });
       } else {
         setSubmitError(result.networkError ? v('error') : result.error || v('error'));
         setFallbackMailto(mailtoFor(result.networkError || result.error));
@@ -671,7 +669,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
 
                   <div aria-live="polite">
                     {submitError ? (
-                      <p className="text-sm text-destructive" role="alert">
+                      <p className="text-sm text-destructive focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
                         {submitError}
                         {fallbackMailto ? (
                           <>

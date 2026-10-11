@@ -9,9 +9,9 @@ import { languages } from '@/lib/i18n';
 import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { getWhatsAppWidgetStrings } from '@/lib/whatsappWidgetStrings';
 import { isLeadHoneypot, submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
 import { focusFirstInvalidField, revealStatus } from '@/lib/formFeedback';
 const COOKIE_CONSENT_KEY = 'bionixus-cookie-consent';
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
 const WHATSAPP_NUMBER = BIONIXUS_PHONE_UK.replace(/\D/g, '');
 const CONTACT_PATHS = new Set(languages.map((lang) => localizedContactPath(lang.code)));
@@ -179,7 +179,7 @@ export default function WhatsAppProposalWidget() {
     if (!firstName) next.firstName = v('firstName') || 'First name is required';
     if (!lastName) next.lastName = v('lastName') || 'Last name is required';
     if (!workEmail) next.workEmail = v('workEmail') || 'Work email is required';
-    else if (!EMAIL_REGEX.test(workEmail)) next.workEmail = v('emailFormat') || 'Please enter a valid email address';
+    else if (!isValidLeadEmail(workEmail)) next.workEmail = v('emailFormat') || 'Please enter a valid email address';
     if (!company) next.company = v('company') || 'Company is required';
     if (!phone) next.phone = copy.phoneRequired;
     else if (!PHONE_REGEX.test(phone)) next.phone = v('phoneFormat') || 'Please enter a valid phone number';
@@ -304,7 +304,12 @@ export default function WhatsAppProposalWidget() {
                   </a>
                 ) : null}
                 {submitError ? (
-                  <p className="mt-2 text-xs text-destructive md:mt-3 md:text-sm" role="alert">
+                  <p
+                    className="mt-2 text-xs text-destructive focus:outline-none md:mt-3 md:text-sm"
+                    role="alert"
+                    tabIndex={-1}
+                    ref={revealStatus}
+                  >
                     {submitError}
                   </p>
                 ) : null}
@@ -443,7 +448,12 @@ export default function WhatsAppProposalWidget() {
                 </p>
 
                 {submitError ? (
-                  <p className="mb-2 text-xs text-destructive md:text-sm" role="alert">
+                  <p
+                    className="mb-2 text-xs text-destructive focus:outline-none md:text-sm"
+                    role="alert"
+                    tabIndex={-1}
+                    ref={revealStatus}
+                  >
                     {submitError}
                   </p>
                 ) : null}

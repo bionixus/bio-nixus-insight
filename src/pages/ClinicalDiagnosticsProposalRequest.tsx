@@ -12,6 +12,7 @@ import {
 } from '@/data/clinicalDiagnosticsOffering';
 import '@/styles/clinical-diagnostics-proposal.css';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
 import { focusFirstInvalidField, revealStatus } from '@/lib/formFeedback';
 
 const PAGE_PATH = '/clinical-diagnostics-proposal-request';
@@ -35,6 +36,7 @@ export default function ClinicalDiagnosticsProposalRequest() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const jsonLd = [
     {
@@ -55,13 +57,14 @@ export default function ClinicalDiagnosticsProposalRequest() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
+    setSubmitError(null);
     const form = e.currentTarget;
     const data = new FormData(form);
     const email = (data.get('workEmail') as string)?.trim() || '';
     const next: Record<string, string> = {};
     if (!(data.get('firstName') as string)?.trim()) next.firstName = 'Please enter your first name.';
     if (!(data.get('lastName') as string)?.trim()) next.lastName = 'Please enter your last name.';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.workEmail = 'Please enter a valid work email.';
+    if (!isValidLeadEmail(email)) next.workEmail = 'Please enter a valid work email.';
     if (!(data.get('company') as string)?.trim()) next.company = 'Please enter your company.';
     if (!(data.get('country') as string)?.trim()) next.country = 'Please select a country or market.';
     if (!data.get('consent')) next.consent = 'Please agree to the privacy policy.';
@@ -83,13 +86,12 @@ export default function ClinicalDiagnosticsProposalRequest() {
     try {
       const result = await submitLeadDual(data);
       if (!result.ok) {
-        setError(result.highLevelStatus === 400 && result.error ? result.error : GENERIC_ERROR);
-        if (result.highLevelStatus === 400) focusFirstInvalidField(form, { workEmail: 'invalid' });
+        setSubmitError(result.invalidEmail && result.error ? result.error : GENERIC_ERROR);
         return;
       }
       setSubmitted(true);
     } catch {
-      setError(GENERIC_ERROR);
+      setSubmitError(GENERIC_ERROR);
     } finally {
       setSubmitting(false);
     }
@@ -231,6 +233,10 @@ export default function ClinicalDiagnosticsProposalRequest() {
                     {error ? (
                       <p className="text-sm text-red-700" role="alert">
                         {error}
+                      </p>
+                    ) : submitError ? (
+                      <p className="text-sm text-red-700 focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
+                        {submitError}
                       </p>
                     ) : null}
                   </div>

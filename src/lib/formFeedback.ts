@@ -16,8 +16,10 @@ export function focusFirstInvalidField(form: HTMLFormElement | null, errors: Rec
 }
 
 /**
- * Ref callback for success and error panels: moves focus to the panel and scrolls it into view.
- * Keep it a stable module-level reference so React only calls it on mount.
+ * Ref callback for success panels and server-error alerts: moves focus to the element and
+ * scrolls it into view. Keep it a stable module-level reference so React only calls it on
+ * mount; clear the message when a new submit starts so a repeated error mounts again.
+ * Validation errors use `focusFirstInvalidField` instead, so focus lands on the field.
  */
 export function revealStatus(element: HTMLElement | null) {
   if (!element) return;

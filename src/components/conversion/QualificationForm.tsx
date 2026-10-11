@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
 import { trackLeadSubmitted, trackFormStart, trackMeetingBooked, trackMeetingLinkClicked } from '@/lib/analytics';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
 import { focusFirstInvalidField, leadFallbackMailto, revealStatus } from '@/lib/formFeedback';
 import {
   QUALIFICATION_FORM_MARKETS,
@@ -16,7 +17,6 @@ const ERROR_EMAIL = 'admin@bionixus.com';
 const GENERIC_ERROR = 'Something went wrong — please try again or email us directly.';
 const FREE_MAIL_WARNING =
   'That looks like a personal email address. A company email helps us respond faster — press the button again to send it anyway.';
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Scheduling link shown on the thank-you state. */
 export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://research.bionixus.co.uk/widget/bookings/bionixus';
@@ -71,7 +71,7 @@ export function QualificationForm({
     const rawEmail = (data.get('workEmail') as string)?.trim() || '';
     if (!rawEmail) {
       next.workEmail = 'Work email is required';
-    } else if (!EMAIL_RE.test(rawEmail)) {
+    } else if (!isValidLeadEmail(rawEmail)) {
       next.workEmail = 'Please enter a valid email address';
     }
     if (!(data.get('company') as string)?.trim()) next.company = 'Company is required';
@@ -160,9 +160,8 @@ export function QualificationForm({
           trackMeetingBooked({ formId, sourceContext, need, budget, timeline, markets });
         }
         onSuccess?.();
-      } else if (result.highLevelStatus === 400 && result.error) {
+      } else if (result.invalidEmail && result.error) {
         setSubmitError(result.error);
-        focusFirstInvalidField(form, { workEmail: result.error });
       } else {
         setSubmitError(result.networkError ? GENERIC_ERROR : result.error || GENERIC_ERROR);
         setFallbackMailto(mailtoFor(result.networkError || result.error));
@@ -367,12 +366,12 @@ export function QualificationForm({
 
       <div aria-live="polite">
         {freeMailWarning && !submitError ? (
-          <p className="text-sm text-amber-700" role="alert">
+          <p className="text-sm text-amber-700 focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
             {freeMailWarning}
           </p>
         ) : null}
         {submitError ? (
-          <p className="text-sm text-destructive" role="alert">
+          <p className="text-sm text-destructive focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
             {submitError}
             {fallbackMailto ? (
               <>

@@ -13,9 +13,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
 import { focusFirstInvalidField, revealStatus } from '@/lib/formFeedback';
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
 
 /** Mirrors contact.validation in i18n; `phone` has no counterpart there. */
@@ -109,7 +109,7 @@ export function CaseStudyContactGate({
     if (!firstName) next.firstName = v('firstName');
     if (!lastName) next.lastName = v('lastName');
     if (!workEmail) next.workEmail = v('workEmail');
-    else if (!EMAIL_REGEX.test(workEmail)) next.workEmail = v('emailFormat');
+    else if (!isValidLeadEmail(workEmail)) next.workEmail = v('emailFormat');
     if (!company) next.company = v('company');
     if (phone && !PHONE_REGEX.test(phone)) next.phone = v('phoneFormat') || 'Please enter a valid phone number';
 
@@ -138,9 +138,8 @@ export function CaseStudyContactGate({
       const result = await submitLeadDual(data);
       if (result.ok) {
         setSucceeded(true);
-      } else if (result.highLevelStatus === 400 && result.error) {
+      } else if (result.invalidEmail && result.error) {
         setSubmitError(result.error);
-        focusFirstInvalidField(form, { workEmail: result.error });
       } else if (result.networkError) {
         setSubmitError(v('error'));
       } else {
@@ -276,7 +275,7 @@ export function CaseStudyContactGate({
           </div>
           <div aria-live="polite">
             {submitError ? (
-              <p className="text-sm text-destructive" role="alert">
+              <p className="text-sm text-destructive focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
                 {submitError}
               </p>
             ) : null}

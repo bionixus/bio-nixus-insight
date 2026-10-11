@@ -13,6 +13,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths, getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { ClientPortalDialog } from '@/components/ClientPortalDialog';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail, LEAD_EMAIL_CHECK_ERROR } from '@/lib/leadEmailValidation';
+import { revealStatus } from '@/lib/formFeedback';
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -51,6 +53,11 @@ const Footer = () => {
     const name = nlName.trim();
     const email = nlEmail.trim();
     if (!name || !email || !nlConsent) return;
+    if (!isValidLeadEmail(email)) {
+      setNlStatus('error');
+      setNlError(LEAD_EMAIL_CHECK_ERROR);
+      return;
+    }
     setNlLoading(true);
     setNlStatus('idle');
     setNlError(null);
@@ -88,7 +95,7 @@ const Footer = () => {
     } else {
       setNlStatus('error');
       setNlError(
-        (leadResult?.highLevelStatus === 400 && leadResult.error) ||
+        (leadResult?.invalidEmail && leadResult.error) ||
           (typeof subscribed?.error === 'string' ? subscribed.error : null),
       );
     }
@@ -211,7 +218,7 @@ const Footer = () => {
                 </form>
               )}
               {nlStatus === 'error' && (
-                <p className="text-red-300 text-sm mt-1" role="alert">
+                <p className="text-red-300 text-sm mt-1 focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
                   {nlError || f.newsletterError || 'Something went wrong. Try again.'}
                 </p>
               )}
