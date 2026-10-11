@@ -149,8 +149,8 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: server render', (
     expect(metaContent(head, 'property', 'og:image:width')).toEqual(['1200']);
     expect(metaContent(head, 'property', 'og:image:height')).toEqual(['630']);
     expect(metaContent(head, 'property', 'og:image:alt')).toEqual([SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT]);
-    expect(metaContent(head, 'property', 'article:published_time')).toEqual(['2026-10-11T12:00:00.000Z']);
-    expect(metaContent(head, 'property', 'article:modified_time')).toEqual(['2026-10-11T12:00:00.000Z']);
+    expect(metaContent(head, 'property', 'article:published_time')).toEqual(['2026-10-12T12:00:00.000Z']);
+    expect(metaContent(head, 'property', 'article:modified_time')).toEqual(['2026-10-12T12:00:00.000Z']);
     expect(metaContent(head, 'property', 'article:author')).toHaveLength(1);
     expect(metaContent(head, 'property', 'article:section')).toEqual(['Market Research']);
     expect(metaContent(head, 'property', 'article:tag')).toEqual(SAUDI_OBESITY_SHORTLIST_TAGS);
@@ -180,8 +180,8 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     const [article] = byType('BlogPosting');
     expect(article.headline).toBe(SAUDI_OBESITY_SHORTLIST_DISPLAY_TITLE);
     expect(article.description).toBe(SAUDI_OBESITY_SHORTLIST_META_DESCRIPTION);
-    expect(article.datePublished).toBe('2026-10-11T12:00:00.000Z');
-    expect(article.dateModified).toBe('2026-10-11T12:00:00.000Z');
+    expect(article.datePublished).toBe('2026-10-12T12:00:00.000Z');
+    expect(article.dateModified).toBe('2026-10-12T12:00:00.000Z');
     expect(article.inLanguage).toBe('en');
     expect(article.articleSection).toBe('Market Research');
     expect(article.keywords).toBe(SAUDI_OBESITY_SHORTLIST_TAGS.join(', '));
@@ -365,9 +365,10 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: registration', ()
     expect(vercel.rewrites[ssrIndex].has).toBeUndefined();
   });
 
-  it('is listed in the sitemap source, the committed sitemap and llms.txt', () => {
-    expect(sitemapScript).toContain(`path: '${SAUDI_OBESITY_SHORTLIST_PATH}'`);
-    expect(sitemapXml).toContain(`<loc>${SAUDI_OBESITY_SHORTLIST_URL}</loc>`);
+  it('is listed in the sitemap source, the committed sitemap and llms.txt, dated 12 October 2026', () => {
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.date).toBe('12 Oct 2026');
+    expect(sitemapScript).toContain(`path: '${SAUDI_OBESITY_SHORTLIST_PATH}', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12'`);
+    expect(sitemapXml).toMatch(new RegExp(`<loc>${SAUDI_OBESITY_SHORTLIST_URL}</loc>\\s*<lastmod>2026-10-12</lastmod>`));
     expect(llms).toContain(SAUDI_OBESITY_SHORTLIST_URL);
   });
 });

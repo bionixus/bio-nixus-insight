@@ -484,7 +484,7 @@ const staticPages = [
   { path: '/blog/uae-healthcare-market-overview-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/uae-healthcare-market-trends-2025', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/uae-healthcare-market-trends-2026', priority: '0.88', changefreq: 'monthly' },
-  { path: '/blog/who-does-obesity-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-11' },
+  { path: '/blog/who-does-obesity-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/pharmaceutical-market-research-methods-mena', priority: '0.83', changefreq: 'monthly' },

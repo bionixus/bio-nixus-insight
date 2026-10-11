@@ -62,8 +62,8 @@ export const SAUDI_OBESITY_SHORTLIST_BREADCRUMB_LABEL = 'Saudi obesity research 
 export const SAUDI_OBESITY_SHORTLIST_EXCERPT =
   'A sourced 2026 shortlist of eight providers that run or publish obesity and GLP-1 research on Saudi Arabia, grouped by research type, with SFDA, GASTAT and WHO facts and a buyer’s checklist.';
 
-export const SAUDI_OBESITY_SHORTLIST_PUBLISHED_ISO = '2026-10-11T12:00:00.000Z';
-export const SAUDI_OBESITY_SHORTLIST_UPDATED_ISO = '2026-10-11T12:00:00.000Z';
+export const SAUDI_OBESITY_SHORTLIST_PUBLISHED_ISO = '2026-10-12T12:00:00.000Z';
+export const SAUDI_OBESITY_SHORTLIST_UPDATED_ISO = '2026-10-12T12:00:00.000Z';
 
 export const SAUDI_OBESITY_SHORTLIST_CATEGORY = 'Market Research';
 
@@ -649,7 +649,7 @@ export const SAUDI_OBESITY_SHORTLIST_HARDCODED_POST: BlogPost = {
   slug: SAUDI_OBESITY_SHORTLIST_SLUG,
   title: SAUDI_OBESITY_SHORTLIST_DISPLAY_TITLE,
   excerpt: SAUDI_OBESITY_SHORTLIST_EXCERPT,
-  date: '11 Oct 2026',
+  date: '12 Oct 2026',
   category: SAUDI_OBESITY_SHORTLIST_CATEGORY,
   country: 'Saudi Arabia',
   language: 'en',
