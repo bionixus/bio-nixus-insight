@@ -37,6 +37,7 @@ const CRITICAL_PATHS = [
   '/bionixus-market-research-middle-east',
   '/gcc-pharmaceutical-market-research',
   '/saudi-arabia-medical-devices-market-report',
+  '/blog/who-does-obesity-market-research-saudi-arabia',
 ];
 
 let serverEntry;
