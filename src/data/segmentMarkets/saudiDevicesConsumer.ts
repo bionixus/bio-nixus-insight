@@ -1906,6 +1906,10 @@ const obesity: SegmentMarketContent = {
   ],
   relatedLinks: [
     { to: '/gcc-obesity-market', label: 'GCC & MENA obesity / GLP-1 hub' },
+    {
+      to: '/blog/who-does-obesity-market-research-saudi-arabia',
+      label: 'Who does obesity market research in Saudi Arabia? 2026 shortlist',
+    },
     { to: '/uae-obesity-market', label: 'UAE obesity market research' },
     { to: '/kuwait-obesity-market', label: 'Kuwait obesity market research' },
     { to: '/patient-journey-research-gcc#obesity', label: 'Obesity patient journey research (GCC)' },
