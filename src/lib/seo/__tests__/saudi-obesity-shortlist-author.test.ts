@@ -1,6 +1,6 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
-import { ALSAADANY_AUTHOR, ALSAADANY_PROFILE_URL } from '@/data/editorialAuthors';
+import { ALSAADANY_AUTHOR, ALSAADANY_PROFILE_URL, WESTERN_AUTHORS } from '@/data/editorialAuthors';
 import {
   SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
   SAUDI_OBESITY_SHORTLIST_PATH,
@@ -8,31 +8,18 @@ import {
   resolveShortlistAuthor,
 } from '@/data/blog-saudi-obesity-market-research-shortlist';
 
-const PROFILE_URL = 'https://www.linkedin.com/in/example-profile';
+const AUTHOR = 'Laura McConaughey';
+const TITLE = 'Global Research Manager';
 
-vi.mock('@/data/blog-posts-index', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@/data/blog-posts-index')>();
-  const shortlist = await import('@/data/blog-saudi-obesity-market-research-shortlist');
-  const author = shortlist.resolveShortlistAuthor('Dina Ibrahim', 'https://www.linkedin.com/in/example-profile');
-  const post = {
-    ...shortlist.SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
-    authorName: author.authorName,
-    authorTitle: author.authorTitle,
-    authorLinkedIn: author.authorLinkedIn,
-    schemaExtras: { ...shortlist.SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.schemaExtras, author: author.schema },
-  };
-  return {
-    ...actual,
-    hardcodedSeoPosts: actual.hardcodedSeoPosts.map((item) => (item.slug === post.slug ? post : item)),
-    getHardcodedPostBySlug: (slug: string) =>
-      slug === shortlist.SAUDI_OBESITY_SHORTLIST_SLUG ? post : actual.getHardcodedPostBySlug(slug),
-  };
-});
+const countText = (html: string, value: string) => html.split(`>${value}<`).length - 1;
 
-describe('Saudi obesity shortlist author wiring', () => {
-  it('ships with no byline until an editor sets one', () => {
-    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.authorName).toBeUndefined();
-    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.schemaExtras?.author).toBeUndefined();
+describe('Saudi obesity shortlist author', () => {
+  it('gives the six Western roster authors the Global Research Manager title', () => {
+    expect(WESTERN_AUTHORS.map(({ name, jobTitle }) => [name, jobTitle])).toEqual(
+      ['Laura McConaughey', 'Sarah Chen', 'Martha DeVito', 'Anna Cuban', 'Armela Belba', 'Ivona Gunjova'].map(
+        (name) => [name, TITLE],
+      ),
+    );
   });
 
   it('resolves Mohammad Alsaadany from the roster like any other author', () => {
@@ -48,7 +35,10 @@ describe('Saudi obesity shortlist author wiring', () => {
     expect(resolveShortlistAuthor('Dr. Mohammad Alsaadany').schema).toMatchObject({ url: ALSAADANY_PROFILE_URL });
   });
 
-  it('puts a roster author in the byline, the Person node and article:author', async () => {
+  it('credits Laura McConaughey in the visible byline, the Person node and article:author', async () => {
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.authorName).toBe(AUTHOR);
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.authorTitle).toBe(TITLE);
+
     HelmetProvider.canUseDOM = false;
     const { render } = await import('@/entry-server');
     const { html, helmetData } = await render(SAUDI_OBESITY_SHORTLIST_PATH, {
@@ -59,9 +49,10 @@ describe('Saudi obesity shortlist author wiring', () => {
     });
     const head = [helmetData.meta, helmetData.script].map((part) => part.toString()).join('\n');
 
-    expect(html).toContain('Dina Ibrahim');
-    expect(html).toContain('Healthcare Analyst, GCC');
-    expect(head).toMatch(/property="article:author" content="Dina Ibrahim"/);
+    // Hero byline and the author card at the end of the article.
+    expect(countText(html, AUTHOR)).toBeGreaterThanOrEqual(2);
+    expect(countText(html, TITLE)).toBeGreaterThanOrEqual(2);
+    expect(head).toMatch(new RegExp(`property="article:author" content="${AUTHOR}"`));
 
     const nodes = [...head.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/g)].map(
       (match) => JSON.parse(match[1]) as Record<string, unknown>,
@@ -69,11 +60,9 @@ describe('Saudi obesity shortlist author wiring', () => {
     const article = nodes.find((node) => node['@type'] === 'BlogPosting');
     expect(article?.author).toEqual({
       '@type': 'Person',
-      name: 'Dina Ibrahim',
-      jobTitle: 'Healthcare Analyst, GCC',
+      name: AUTHOR,
+      jobTitle: TITLE,
       worksFor: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-      url: PROFILE_URL,
-      sameAs: [PROFILE_URL],
     });
   }, 120_000);
 });

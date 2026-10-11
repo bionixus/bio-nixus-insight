@@ -28,7 +28,7 @@ export const SAUDI_OBESITY_SHORTLIST_URL = `https://www.bionixus.com${SAUDI_OBES
  * title. Undefined keeps the template default ("BioNixus Research Team") in JSON-LD and
  * article:author, with no visible byline.
  */
-export const SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME: string | undefined = undefined;
+export const SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME: string | undefined = 'Laura McConaughey';
 
 /** Optional public profile (e.g. LinkedIn) for that author; becomes the Person url and sameAs. */
 export const SAUDI_OBESITY_SHORTLIST_AUTHOR_PROFILE_URL: string | undefined = undefined;
