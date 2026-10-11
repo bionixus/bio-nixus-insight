@@ -12,7 +12,7 @@ export const DATELINE = 'SÃO PAULO — 30 May 2026'
 
 export const SPOKESPERSON_NAME = 'Laura McConaughey'
 
-export const SPOKESPERSON_TITLE = 'Research Director'
+export const SPOKESPERSON_TITLE = 'Global Research Manager'
 
 export const SEO_META_TITLE = 'BioNixus São Paulo Office Q2 2026 | LATAM Expansion'
 

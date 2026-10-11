@@ -161,7 +161,7 @@ export const TURKEY_PHARMA_2026_HARDCODED_POST: BlogPost = {
   seoMetaDescription: TURKEY_PHARMA_2026_META_DESCRIPTION,
   seoCanonicalUrl: `https://www.bionixus.com/blog/${TURKEY_PHARMA_2026_SLUG}`,
   authorName: 'Laura McConaughey',
-  authorTitle: 'Research Director, BioNixus Healthcare Market Research',
+  authorTitle: 'Global Research Manager',
   publishedAtIso: TURKEY_PHARMA_2026_PUBLISHED_ISO,
   updatedAtIso: TURKEY_PHARMA_2026_UPDATED_ISO,
   tableOfContents: TURKEY_PHARMA_2026_TABLE_OF_CONTENTS,
