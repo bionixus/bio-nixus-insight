@@ -915,7 +915,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         {/* Skeleton loader */}
         <div className="animate-pulse">
           <div className="w-full bg-primary/10" style={{ minHeight: '420px' }} />
-          <div className="max-w-screen-xl mx-auto px-6 pt-8 grid lg:grid-cols-[1fr_272px] gap-10">
+          <div className="max-w-screen-xl mx-auto px-6 pt-8 grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_272px] gap-10">
             <div className="space-y-4">
               <div className="h-3 bg-muted rounded w-24" />
               <div className="h-6 bg-muted rounded w-3/4" />
@@ -1478,13 +1478,13 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
         {/* ── CONTENT GRID ──────────────────────────────────────────────── */}
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pt-8 pb-20 items-start">
+          <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pt-8 pb-20 items-start">
 
             {/* ── ARTICLE MAIN ───────────────────────────────────────────── */}
             <article
               dir={isRtlArticle ? 'rtl' : 'ltr'}
               lang={articleLocale}
-              className="rounded-3xl border border-border/70 bg-card/35 shadow-[0_32px_90px_-40px_rgb(15_23_42/0.22)] ring-1 ring-border/60 backdrop-blur-sm px-4 py-8 sm:px-7 sm:py-10 md:px-10 md:py-11"
+              className="min-w-0 rounded-3xl border border-border/70 bg-card/35 shadow-[0_32px_90px_-40px_rgb(15_23_42/0.22)] ring-1 ring-border/60 backdrop-blur-sm px-4 py-8 sm:px-7 sm:py-10 md:px-10 md:py-11"
             >
 
               {/* Tags + Share toolbar */}

@@ -663,6 +663,15 @@
   .prose-table-wrap {
     @apply w-full overflow-x-auto my-8 rounded-xl border border-border;
     -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+  /* Keep images and long tokens inside the article column on narrow viewports. */
+  article .prose-body {
+    overflow-wrap: anywhere;
+  }
+  article .prose-body img {
+    max-width: 100%;
+    height: auto;
   }
   .prose-body table {
     @apply w-full border-collapse text-sm;
