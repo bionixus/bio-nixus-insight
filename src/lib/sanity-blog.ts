@@ -149,7 +149,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "ogImageUrl": openGraph.ogImage.asset->url,
   "ogImageAlt": openGraph.ogImage.alt,
   "authorName": author->name,
-  "authorTitle": author->title,
+  "authorSlug": author->slug.current,
+  "authorTitle": coalesce(authorJobTitle, author->title),
   "authorImage": author->image.asset->url,
   "authorLinkedIn": author->linkedIn,
   ${SILO_FIELDS}
@@ -251,6 +252,9 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
         out.seoMetaDescription = raw.seo.metaDescription;
         out.seoCanonicalUrl = raw.seo.canonicalUrl;
         out.seoNoIndex = resolveBlogSeoNoIndex(p.slug ?? p._id, raw.seo.noIndex);
+        if (Array.isArray(raw.seo.keywords)) {
+          out.seoKeywords = raw.seo.keywords.filter((k): k is string => typeof k === 'string' && k.trim() !== '');
+        }
       }
       if (raw.openGraph) {
         out.ogTitle = raw.openGraph.ogTitle;
@@ -259,6 +263,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       if (raw.ogImageUrl) out.ogImage = raw.ogImageUrl;
       if (typeof raw.ogImageAlt === 'string' && raw.ogImageAlt.trim()) out.ogImageAlt = raw.ogImageAlt.trim();
       if (raw.authorName) out.authorName = raw.authorName;
+      if (raw.authorSlug) out.authorSlug = raw.authorSlug;
       if (raw.authorTitle) out.authorTitle = raw.authorTitle;
       if (raw.authorImage) out.authorImage = raw.authorImage;
       if (raw.authorLinkedIn) out.authorLinkedIn = raw.authorLinkedIn;
@@ -538,6 +543,7 @@ interface RawSanityPost {
     metaDescription?: string;
     canonicalUrl?: string;
     noIndex?: boolean;
+    keywords?: string[];
   };
   openGraph?: {
     ogTitle?: string;
@@ -546,6 +552,7 @@ interface RawSanityPost {
   ogImageUrl?: string;
   ogImageAlt?: string;
   authorName?: string;
+  authorSlug?: string;
   authorTitle?: string;
   authorImage?: string;
   authorLinkedIn?: string;

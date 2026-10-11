@@ -91,6 +91,13 @@ export default function MysteryShopRetailBrief() {
               defaultMarkets={[country]}
             />
             <p className="mt-8 text-sm text-muted-foreground">
+              <Link
+                to="/bionixus-industries/insights/mystery-shopping-companies-saudi-arabia-2026"
+                className="text-primary underline"
+              >
+                Mystery shopping in Saudi Arabia: 2026 guide
+              </Link>
+              {' · '}
               <Link to="/retail-companies-uae" className="text-primary underline">
                 Retail companies in the UAE
               </Link>

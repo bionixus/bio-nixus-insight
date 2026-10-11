@@ -61,6 +61,15 @@ type BlogSchemaProps = {
   breadcrumb: BreadcrumbItem[]
   faqItems?: FaqItem[]
   itemList?: { name: string; items: ItemListEntry[] }
+  /** Words in the article body, for Article `wordCount`. */
+  wordCount?: number
+  /** Replaces the Person built from authorName (industries posts share it with the crawler). */
+  authorNode?: Record<string, unknown>
+  /** `@id` for the primary ImageObject, so standalone nodes can reference it. */
+  imageId?: string
+  imageCaption?: string
+  /** Standalone nodes appended after the article graph (Person, ImageObject, HowTo). */
+  extraNodes?: ReadonlyArray<Record<string, unknown>>
 }
 
 type ServiceSchemaProps = {
@@ -116,6 +125,9 @@ const ORG_ID = `${BASE_URL}/#organization`
 const WEBSITE_ID = `${BASE_URL}/#website`
 const ORG_IMAGE = `${BASE_URL}/og-image.png`
 const PUBLISHER_LOGO_IMAGE = `${BASE_URL}/bionixus-logo.webp`
+/** Intrinsic size of public/bionixus-logo.webp. */
+const PUBLISHER_LOGO_WIDTH = 200
+const PUBLISHER_LOGO_HEIGHT = 57
 
 function toHttpsUrl(url: string): string {
   if (!url) return BASE_URL
@@ -351,10 +363,11 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
 
     const primaryImageObject = {
       '@type': 'ImageObject',
+      ...(props.imageId ? { '@id': props.imageId } : {}),
       url: imageUrlHttps,
       width: imgWidth,
       height: imgHeight,
-      caption: props.headline,
+      caption: props.imageCaption?.trim() || props.headline,
     }
 
     const articleNode: Record<string, unknown> = {
@@ -382,12 +395,14 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       ...(props.about && props.about.length > 0
         ? { about: props.about.length === 1 ? { ...props.about[0] } : props.about.map((a) => ({ ...a })) }
         : {}),
-      author: withAlsaadanyPersonJsonLd({
-        '@type': 'Person',
-        name: props.authorName,
-        ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
-        ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
-      }),
+      author: props.authorNode
+        ? { ...props.authorNode }
+        : withAlsaadanyPersonJsonLd({
+            '@type': 'Person',
+            name: props.authorName,
+            ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
+            ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
+          }),
       datePublished: published,
       dateModified: modified,
       publisher: {
@@ -397,12 +412,13 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         logo: {
           '@type': 'ImageObject',
           url: PUBLISHER_LOGO_IMAGE,
-          width: 512,
-          height: 512,
+          width: PUBLISHER_LOGO_WIDTH,
+          height: PUBLISHER_LOGO_HEIGHT,
         },
       },
       inLanguage,
       isAccessibleForFree: true,
+      ...(props.wordCount && props.wordCount > 0 ? { wordCount: props.wordCount } : {}),
     }
 
     const nodes: Record<string, unknown>[] = [articleNode, buildBreadcrumb(props.breadcrumb)]
@@ -424,6 +440,10 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
           description: item.description,
         })),
       })
+    }
+
+    if (props.pageType === 'blog' && props.extraNodes && props.extraNodes.length > 0) {
+      nodes.push(...props.extraNodes.map((node) => ({ ...node })))
     }
 
     return nodes
@@ -468,8 +488,8 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         logo: {
           '@type': 'ImageObject',
           url: PUBLISHER_LOGO_IMAGE,
-          width: 512,
-          height: 512,
+          width: PUBLISHER_LOGO_WIDTH,
+          height: PUBLISHER_LOGO_HEIGHT,
         },
       },
       inLanguage,

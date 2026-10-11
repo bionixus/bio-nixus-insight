@@ -401,6 +401,21 @@ export function getBlogPostUiStrings(locale: BlogArticleLocale): BlogPostUiStrin
   return UI[locale];
 }
 
+/** Industries-silo articles are published in English and are not pharma research. */
+const INDUSTRIES_EN_OVERRIDES: Pick<BlogPostUiStrings, 'sidebarCtaTitle' | 'relatedResearchDescription'> = {
+  sidebarCtaTitle: 'Need market research for your team?',
+  relatedResearchDescription:
+    'For deeper industry insight, explore our B2B and B2C research hubs and country coverage.',
+};
+
+export function getBlogPostUiStringsForSilo(
+  locale: BlogArticleLocale,
+  contentSilo: 'healthcare' | 'industries',
+): BlogPostUiStrings {
+  const base = UI[locale];
+  return contentSilo === 'industries' && locale === 'en' ? { ...base, ...INDUSTRIES_EN_OVERRIDES } : base;
+}
+
 export function getBlogArticleIndexPath(locale: BlogArticleLocale, contentSilo?: string): string {
   if (locale === 'ar') return '/ar/blog';
   if (locale === 'de') return '/de/blog';

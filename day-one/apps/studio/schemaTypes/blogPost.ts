@@ -145,6 +145,14 @@ export const blogPost = defineType({
       to: [{ type: 'author' }],
     }),
     defineField({
+      name: 'authorJobTitle',
+      title: 'Author Job Title (this post)',
+      type: 'string',
+      description:
+        "Shown under the author's name on this post and used in its Person schema. Leave empty to use the title on the author's profile.",
+      hidden: ({ parent }) => !parent?.author,
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
