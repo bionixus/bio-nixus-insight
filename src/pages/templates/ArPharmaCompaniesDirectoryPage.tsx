@@ -21,6 +21,12 @@ import {
   type ArPharmaCompanyType,
   type ArPharmaCountrySlug,
 } from '@/data/arPharmaDirectories';
+import {
+  getArPharmaLlmCitationBlock,
+  getArPharmaNarrative,
+  getArPharmaProcurementDeepDive,
+  getArPharmaWordCountSupplement,
+} from '@/data/arPharmaDirectoryNarratives';
 
 type Props = {
   countrySlug: ArPharmaCountrySlug;
@@ -36,6 +42,19 @@ const TYPE_BADGE: Record<ArPharmaCompanyType, string> = {
 export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
   const config = getArPharmaDirectory(countrySlug);
   if (!config) return null;
+
+  const narrative = getArPharmaNarrative(countrySlug);
+  const procurementDeepDive = getArPharmaProcurementDeepDive(countrySlug);
+  const llmCitation = getArPharmaLlmCitationBlock(countrySlug);
+  const wordSupplement = getArPharmaWordCountSupplement(countrySlug);
+  const faqItems = [...config.faq, ...narrative.extraFaq];
+  const companiesByType = config.companies.reduce<Record<ArPharmaCompanyType, typeof config.companies>>(
+    (acc, company) => {
+      acc[company.type] = acc[company.type] ? [...acc[company.type], company] : [company];
+      return acc;
+    },
+    {} as Record<ArPharmaCompanyType, typeof config.companies>,
+  );
 
   const citationUrl = `https://www.bionixus.com${config.path}`;
   const enUrl = `https://www.bionixus.com${config.enPath}`;
@@ -81,7 +100,7 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
             ],
           })}
         </script>
-        <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, config.faq))}</script>
+        <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
       <OpenGraphMeta
         title={pageTitle}
@@ -106,7 +125,15 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
           ]}
           kicker="دليل شركات الأدوية 2026"
           h1={config.h1}
-          lead={config.introLead}
+          lead={
+            <>
+              {config.introLead}{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                أبحاث السوق في الرعاية الصحية
+              </Link>{' '}
+              عبر بيونيكسس.
+            </>
+          }
           rest={<p>{config.introRest}</p>}
           stats={config.stats}
           actions={
@@ -119,12 +146,75 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
 
         <DirectoryJumpNav
           items={[
+            { href: '#market-context', label: 'السوق' },
             { href: '#companies', label: 'الشركات' },
+            { href: '#categories', label: 'التصنيف' },
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
           ]}
         />
+
+        <section className="section-padding py-16" id="market-context">
+          <div className="container-wide max-w-5xl mx-auto space-y-14">
+            {narrative.sections.map((section) => (
+              <article key={section.id} id={section.id} className="max-w-4xl">
+                <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">{section.title}</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                  ))}
+                </div>
+              </article>
+            ))}
+            <article id={narrative.competitiveLandscape.id} className="max-w-4xl">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+                {narrative.competitiveLandscape.title}
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                {narrative.competitiveLandscape.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section className="section-padding py-16 bg-muted/20" id="field-research">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">{narrative.fieldResearchTitle}</h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+              {narrative.fieldResearchParagraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-16 bg-muted/30" id="growth-drivers">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-8">{narrative.growthDriversTitle}</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {narrative.growthDrivers.map((driver) => (
+                <div key={driver.heading} className="bg-card border border-border rounded-xl p-6">
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{driver.heading}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{driver.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-16" id="procurement">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">{procurementDeepDive.title}</h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+              {procurementDeepDive.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="section-padding py-16 bg-muted/30" id="companies">
           <div className="container-wide max-w-5xl mx-auto">
@@ -181,7 +271,29 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
           </div>
         </section>
 
-        <section className="section-padding py-16" id="related">
+        <section className="section-padding py-16" id="categories">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">تصنيف الشركات حسب النوع</h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">{narrative.categoryIntro}</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {(Object.keys(companiesByType) as ArPharmaCompanyType[]).map((type) => (
+                <div key={type} className="bg-card border border-border rounded-xl p-6">
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{type}</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {companiesByType[type].map((company) => (
+                      <li key={company.name} className="flex flex-col gap-0.5">
+                        <span className="font-medium text-foreground">{company.name}</span>
+                        <span>{company.focus}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-16 bg-muted/30" id="related">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">روابط ذات صلة</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -192,7 +304,31 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
           </div>
         </section>
 
-        <PharmaCompaniesFaqSection items={config.faq} title="أسئلة متكررة" contained />
+        <PharmaCompaniesFaqSection items={faqItems} title="أسئلة متكررة" contained />
+
+        {wordSupplement.length > 0 ? (
+          <section className="section-padding py-12 bg-muted/10" id="research-notes">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-4">ملاحظات للباحثين وفرق الوصول للسوق</h2>
+              <div className="space-y-3 text-sm text-muted-foreground leading-relaxed max-w-4xl">
+                {wordSupplement.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="section-padding py-16 bg-muted/20" id="llm-citation">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">{llmCitation.title}</h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+              {llmCitation.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="section-padding py-12" id="methodology">
           <div className="container-wide max-w-5xl mx-auto">

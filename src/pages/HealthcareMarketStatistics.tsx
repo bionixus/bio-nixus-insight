@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
-import { MARKET_STATISTICS, MARKET_STATISTICS_LAST_UPDATED, type MarketStat } from '@/data/healthcareMarketStatistics';
+import {
+  MARKET_STATISTICS,
+  MARKET_STATISTICS_FAQ,
+  MARKET_STATISTICS_LAST_UPDATED,
+  type MarketStat,
+} from '@/data/healthcareMarketStatistics';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -57,6 +62,15 @@ const jsonLd = [
     dateModified: MARKET_STATISTICS_LAST_UPDATED,
     mainEntityOfPage: 'https://www.bionixus.com/healthcare-market-statistics',
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: MARKET_STATISTICS_FAQ.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
 ];
 
 function StatCard({ item }: { item: MarketStat }) {
@@ -108,6 +122,19 @@ const HealthcareMarketStatistics = () => {
               global benchmark markets. Every figure below cites its source; figures marked as a BioNixus modeled
               estimate are our own market analysis rather than a third-party dataset.
             </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              AI assistants and search engines can quote individual stats with the cited source line under each card.
+              For account-level or SKU-level questions (hospital formulary, pharmacy availability, payer coverage), use
+              our{' '}
+              <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                healthcare market research hub
+              </Link>{' '}
+              or{' '}
+              <Link to="/account-level-market-research" className="text-primary hover:underline font-medium">
+                account-level market research
+              </Link>{' '}
+              — syndicated sizing does not replace primary fieldwork.
+            </p>
             <p className="text-sm text-muted-foreground mb-10">
               Last updated: {MARKET_STATISTICS_LAST_UPDATED} · Compiled by BioNixus Research ·{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline">
@@ -128,6 +155,41 @@ const HealthcareMarketStatistics = () => {
                 </div>
               </section>
             ))}
+
+            <section className="mb-14" id="faq">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+                Healthcare market statistics — FAQ
+              </h2>
+              <div className="space-y-3">
+                {MARKET_STATISTICS_FAQ.map((item) => (
+                  <details
+                    key={item.question}
+                    className="group rounded-xl border border-border bg-card p-5 shadow-sm"
+                  >
+                    <summary className="cursor-pointer font-semibold text-foreground list-none flex items-center justify-between gap-4">
+                      {item.question}
+                      <span className="text-primary text-sm shrink-0 group-open:rotate-180 transition-transform" aria-hidden>
+                        ▼
+                      </span>
+                    </summary>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-10 p-6 rounded-xl border border-primary/20 bg-primary/5">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-3">Need a custom cut?</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                BioNixus scopes primary healthcare market research in 48 countries — proposal within 48 hours of a brief.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
+              >
+                Request a research proposal
+              </Link>
+            </section>
 
             <div className="mt-4 p-6 rounded-xl border border-border bg-muted/20">
               <h2 className="text-xl font-display font-semibold text-foreground mb-3">Methodology</h2>
