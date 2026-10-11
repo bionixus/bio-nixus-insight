@@ -1,15 +1,18 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { QualificationForm } from '@/components/conversion/QualificationForm';
 import { GatedAssetForm } from '@/components/conversion/GatedAssetForm';
 import { EmailCaptureForm } from '@/components/conversion/EmailCaptureForm';
 import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
 import { CaseStudyContactGate } from '@/components/CaseStudyContactGate';
 import WhatsAppProposalWidget from '@/components/WhatsAppProposalWidget';
+import ClinicalDiagnosticsProposalRequest from '@/pages/ClinicalDiagnosticsProposalRequest';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import { FORMSPREE_ENDPOINT } from '@/lib/submitLeadDual';
+import { FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT } from '@/lib/submitLeadDual';
 import { trackMeetingBooked } from '@/lib/analytics';
 
 vi.mock('@/lib/analytics', async (importOriginal) => ({
@@ -17,25 +20,10 @@ vi.mock('@/lib/analytics', async (importOriginal) => ({
   trackMeetingBooked: vi.fn(),
 }));
 
-function mockChannels(options: { formspreeOk: boolean; highLevelOk: boolean }) {
-  vi.stubGlobal(
-    'fetch',
-    vi.fn((input: RequestInfo) => {
-      const url = String(input);
-      if (url === FORMSPREE_ENDPOINT) {
-        return options.formspreeOk
-          ? json({ ok: true })
-          : json({ error: 'Form quota exceeded' }, 422);
-      }
-      if (url === '/api/highlevel-lead') {
-        return options.highLevelOk
-          ? json({ success: true, contactId: 'c1' })
-          : json({ error: 'Could not save your request. Please try again.' }, 502);
-      }
-      throw new Error(url);
-    }),
-  );
-}
+const EMAIL_CHECK = 'Please check your email address and try again.';
+const SAVE_ERROR = 'Could not save your request. Please try again.';
+
+type ChannelMode = 'ok' | 'fail' | 'offline' | 'email400' | 'rate429';
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -44,23 +32,87 @@ function json(body: unknown, status = 200) {
   });
 }
 
-async function submitQualification(options: { budget?: string } = {}) {
-  render(
-    <MemoryRouter>
-      <QualificationForm formId="pharma_companies_uae_cta" />
-    </MemoryRouter>,
-  );
-  fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
-  fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
-  fireEvent.change(screen.getByLabelText(/^role/i), { target: { value: 'Access lead' } });
-  fireEvent.change(screen.getByLabelText(/what do you need/i), {
-    target: { value: 'Primary market research' },
+function mockChannels(options: { formspree: ChannelMode; highLevel: ChannelMode; subscribe?: 'ok' | 'fail' }) {
+  const fetchMock = vi.fn((input: RequestInfo) => {
+    const url = String(input);
+    if (url === FORMSPREE_ENDPOINT) {
+      if (options.formspree === 'ok') return Promise.resolve(json({ ok: true }));
+      if (options.formspree === 'offline') return Promise.reject(new Error('offline'));
+      return Promise.resolve(json({ error: 'Form quota exceeded' }, 422));
+    }
+    if (url === HIGHLEVEL_LEAD_ENDPOINT) {
+      if (options.highLevel === 'ok') return Promise.resolve(json({ success: true, contactId: 'c1' }));
+      if (options.highLevel === 'offline') return Promise.reject(new Error('offline'));
+      if (options.highLevel === 'email400') return Promise.resolve(json({ error: EMAIL_CHECK }, 400));
+      if (options.highLevel === 'rate429') return Promise.resolve(json({ error: 'Too many requests' }, 429));
+      return Promise.resolve(json({ error: SAVE_ERROR }, 502));
+    }
+    if (url === '/api/subscribe') {
+      return Promise.resolve(
+        options.subscribe === 'fail' ? json({ error: 'Internal server error' }, 500) : json({ success: true }),
+      );
+    }
+    throw new Error(url);
   });
-  if (options.budget) {
-    fireEvent.change(screen.getByLabelText(/budget range/i), { target: { value: options.budget } });
-  }
-  fireEvent.click(screen.getByRole('button', { name: /book a 30-minute scoping call/i }));
+  vi.stubGlobal('fetch', fetchMock);
+  return fetchMock;
 }
+
+function calledUrls() {
+  return (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
+}
+
+function bodyFor(url: string) {
+  const call = (fetch as ReturnType<typeof vi.fn>).mock.calls.find((c) => String(c[0]) === url);
+  return JSON.parse(String(call?.[1]?.body));
+}
+
+const hrefWrites: string[] = [];
+const scrollIntoView = vi.fn();
+
+/** Server errors must land on screen: the alert takes focus and is scrolled into view, and Formspree is skipped. */
+function expectRevealedServerError(alert: HTMLElement, text: string | RegExp = EMAIL_CHECK) {
+  expect(alert).toHaveTextContent(text);
+  expect(alert).toHaveFocus();
+  expect(scrollIntoView.mock.contexts).toContain(alert);
+  expect(scrollIntoView).toHaveBeenLastCalledWith({ block: 'center' });
+}
+
+function expectFormspreeSkipped() {
+  expect(calledUrls()).toContain(HIGHLEVEL_LEAD_ENDPOINT);
+  expect(calledUrls()).not.toContain(FORMSPREE_ENDPOINT);
+}
+
+function stubLocation(pathname = '/page') {
+  const href = `http://localhost${pathname}`;
+  Object.defineProperty(window, 'location', {
+    configurable: true,
+    value: { href, pathname, search: '' },
+  });
+  Object.defineProperty(window.location, 'href', {
+    configurable: true,
+    get: () => href,
+    set: (value: string) => {
+      hrefWrites.push(value);
+    },
+  });
+}
+
+class Observer {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+beforeEach(() => {
+  hrefWrites.length = 0;
+  scrollIntoView.mockClear();
+  HTMLElement.prototype.scrollIntoView = scrollIntoView;
+  vi.spyOn(console, 'warn').mockImplementation(() => {});
+  vi.stubGlobal('IntersectionObserver', Observer);
+  vi.stubGlobal('ResizeObserver', Observer);
+  stubLocation();
+});
 
 afterEach(() => {
   vi.unstubAllGlobals();
@@ -68,208 +120,373 @@ afterEach(() => {
   vi.mocked(trackMeetingBooked).mockClear();
 });
 
-describe('QualificationForm dual submit', () => {
-  it('shows the scheduling link when HighLevel succeeds and Formspree is over quota', async () => {
-    mockChannels({ formspreeOk: false, highLevelOk: true });
-    const hrefs: string[] = [];
-    const original = window.location;
-    Object.defineProperty(window, 'location', {
-      configurable: true,
-      value: {
-        ...original,
-        href: 'http://localhost/page',
-        assign: (value: string) => {
-          hrefs.push(value);
-        },
-      },
-    });
-    Object.defineProperty(window.location, 'href', {
-      configurable: true,
-      get: () => 'http://localhost/page',
-      set: (value: string) => {
-        hrefs.push(value);
-      },
-    });
+function withProviders(node: React.ReactNode) {
+  return (
+    <HelmetProvider>
+      <MemoryRouter>
+        <LanguageProvider>
+          <TooltipProvider>{node}</TooltipProvider>
+        </LanguageProvider>
+      </MemoryRouter>
+    </HelmetProvider>
+  );
+}
 
-    await submitQualification();
-    expect(await screen.findByRole('link', { name: /pick a time for your call/i })).toHaveAttribute(
+function fillQualification(email = 'buyer@pfizer.com', budget?: string) {
+  render(
+    <MemoryRouter>
+      <QualificationForm formId="contact-hero-scoping-call" sourceContext="Contact page" />
+    </MemoryRouter>,
+  );
+  fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: email } });
+  fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
+  fireEvent.change(screen.getByLabelText(/^role/i), { target: { value: 'Access lead' } });
+  fireEvent.change(screen.getByLabelText(/what do you need/i), { target: { value: 'Primary market research' } });
+  if (budget) fireEvent.change(screen.getByLabelText(/budget range/i), { target: { value: budget } });
+}
+
+function submitQualification() {
+  fireEvent.click(screen.getByRole('button', { name: /book a 30-minute scoping call/i }));
+}
+
+describe('QualificationForm ("Book a call")', () => {
+  it('posts to HighLevel and Formspree and shows a focused confirmation', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillQualification();
+    submitQualification();
+    expect(screen.getByRole('button', { name: /sending/i })).toBeDisabled();
+
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent(/your scoping call request is in/i);
+    expect(status).toHaveFocus();
+    expect(screen.getByRole('link', { name: /pick a time for your call/i })).toHaveAttribute(
       'href',
-      'https://schedule.bionixus.com/meeting-with-bionixus',
+      'https://research.bionixus.co.uk/widget/bookings/bionixus',
     );
-    expect(hrefs.join(' ')).not.toContain('mailto:');
-    const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
-    expect(urls).toContain(FORMSPREE_ENDPOINT);
-    expect(urls).toContain('/api/highlevel-lead');
-    const formspreeCall = (fetch as ReturnType<typeof vi.fn>).mock.calls.find((call) => String(call[0]) === FORMSPREE_ENDPOINT);
-    const body = formspreeCall?.[1]?.body as FormData;
-    expect(body.get('requestType')).toBe('Scoping Call Request');
+    expect(calledUrls()).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]));
+    expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({
+      form: 'contact-hero-scoping-call',
+      requestType: 'Scoping Call Request',
+      email: 'buyer@pfizer.com',
+      company: 'Pfizer',
+      role: 'Access lead',
+      need: 'Primary market research',
+      pageUrl: 'http://localhost/page',
+    });
     expect(trackMeetingBooked).toHaveBeenCalledWith(
-      expect.objectContaining({ formId: 'pharma_companies_uae_cta', need: 'Primary market research' }),
+      expect.objectContaining({ formId: 'contact-hero-scoping-call', need: 'Primary market research' }),
     );
   });
 
-  it('routes an under-$20K budget to HighLevel only and answers by email instead of a call', async () => {
-    mockChannels({ formspreeOk: true, highLevelOk: true });
-    Object.defineProperty(window, 'location', {
-      configurable: true,
-      value: { href: 'http://localhost/page', pathname: '/page', search: '' },
-    });
+  it('confirms when only HighLevel saves the lead', async () => {
+    mockChannels({ formspree: 'fail', highLevel: 'ok' });
+    fillQualification();
+    submitQualification();
+    expect(await screen.findByRole('status')).toHaveTextContent(/your scoping call request is in/i);
+  });
 
-    await submitQualification({ budget: 'Under $20K' });
-    expect(await screen.findByText(/we'll reply by email/i)).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: /pick a time for your call/i })).not.toBeInTheDocument();
-    const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
-    expect(urls).toEqual(['/api/highlevel-lead']);
-    const hlCall = (fetch as ReturnType<typeof vi.fn>).mock.calls[0];
-    const payload = JSON.parse(String(hlCall?.[1]?.body));
-    expect(payload.requestType).toBe('Research Enquiry (below minimum)');
-    expect(payload.qualified).toBe('no');
+  it('confirms when only Formspree saves the lead', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'fail' });
+    fillQualification();
+    submitQualification();
+    expect(await screen.findByRole('status')).toHaveTextContent(/your scoping call request is in/i);
+  });
+
+  it('sends under-$20K budgets to both destinations and answers by email', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillQualification('buyer@pfizer.com', 'Under $20K');
+    submitQualification();
+    expect(await screen.findByRole('status')).toHaveTextContent(/we'll reply by email/i);
+    expect(calledUrls()).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]));
+    expect(bodyFor(HIGHLEVEL_LEAD_ENDPOINT)).toMatchObject({
+      requestType: 'Research Enquiry (below minimum)',
+      qualified: 'no',
+    });
     expect(trackMeetingBooked).not.toHaveBeenCalled();
   });
 
-  it('keeps the mailto fallback when both channels fail', async () => {
-    mockChannels({ formspreeOk: false, highLevelOk: false });
-    const hrefs: string[] = [];
-    Object.defineProperty(window, 'location', {
-      configurable: true,
-      value: {
-        href: 'http://localhost/page',
-      },
-    });
-    Object.defineProperty(window.location, 'href', {
-      configurable: true,
-      get: () => 'http://localhost/page',
-      set: (value: string) => {
-        hrefs.push(value);
-      },
-    });
+  it('shows the personal-email warning next to the button, then sends on the second press', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillQualification('mohammad.test@gmail.com');
+    submitQualification();
+    expect(await screen.findByRole('alert')).toHaveTextContent(/personal email address/i);
+    expect(fetch).not.toHaveBeenCalled();
 
-    await submitQualification();
-    expect(await screen.findByText(/form quota exceeded/i)).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: /pick a time for your call/i })).not.toBeInTheDocument();
-    expect(hrefs.some((href) => href.startsWith('mailto:admin@bionixus.com'))).toBe(true);
+    submitQualification();
+    expect(await screen.findByRole('status')).toHaveTextContent(/your scoping call request is in/i);
+    expect(calledUrls()).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]));
   });
-});
 
-describe('ContactSection (HighLevel only)', () => {
-  it('saves to HighLevel, never posts to Formspree, and still subscribes', async () => {
-    class Observer {
-      observe() {}
-      unobserve() {}
-      disconnect() {}
-    }
-    vi.stubGlobal('IntersectionObserver', Observer);
-    vi.stubGlobal('ResizeObserver', Observer);
-    mockChannels({ formspreeOk: false, highLevelOk: true });
-    const hrefs: string[] = [];
-    Object.defineProperty(window, 'location', {
-      configurable: true,
-      value: { href: 'http://localhost/contact', pathname: '/contact', search: '' },
-    });
-    Object.defineProperty(window.location, 'href', {
-      configurable: true,
-      get: () => 'http://localhost/contact',
-      set: (value: string) => {
-        hrefs.push(value);
-      },
-    });
-
+  it('focuses the first invalid field when required answers are missing', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
     render(
       <MemoryRouter>
-        <LanguageProvider>
-          <ContactSection />
-        </LanguageProvider>
+        <QualificationForm formId="f" />
       </MemoryRouter>,
     );
+    submitQualification();
+    expect(await screen.findByText('Work email is required')).toBeInTheDocument();
+    expect(screen.getByLabelText(/work email/i)).toHaveFocus();
+    expect(screen.getByLabelText(/work email/i)).toHaveAttribute('aria-invalid', 'true');
+    expect(fetch).not.toHaveBeenCalled();
+  });
 
-    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'Jane' } });
-    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
-    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
-    fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
-    fireEvent.change(screen.getByLabelText(/country \/ region/i), { target: { value: 'United States' } });
-    fireEvent.change(screen.getByLabelText(/^phone/i), { target: { value: '+1 202 555 0143' } });
-    fireEvent.change(screen.getByLabelText(/how did you hear/i), { target: { value: 'Google Search' } });
-    fireEvent.change(screen.getByLabelText(/^message/i), { target: { value: 'Need a KSA ATU study' } });
-    fireEvent.click(screen.getByRole('checkbox', { name: /privacy policy/i }));
-    fireEvent.click(screen.getByRole('button', { name: /^submit$/i }));
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    fillQualification();
+    submitQualification();
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expectFormspreeSkipped();
+  });
 
-    expect(await screen.findByText(/thank you/i)).toBeInTheDocument();
-    expect(hrefs.join(' ')).not.toContain('mailto:');
-    const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
-    expect(urls).not.toContain(FORMSPREE_ENDPOINT);
-    expect(urls).toContain('/api/highlevel-lead');
-    expect(urls).toContain('/api/subscribe');
+  it('keeps the lead through Formspree and confirms when HighLevel is rate limited', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'rate429' });
+    fillQualification();
+    submitQualification();
+    expect(await screen.findByRole('status')).toHaveTextContent(/scoping call request is in/i);
+    expect(calledUrls()).toEqual([HIGHLEVEL_LEAD_ENDPOINT, FORMSPREE_ENDPOINT]);
+  });
+
+  it('rejects an email the server would refuse before sending anything', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillQualification(`${'a'.repeat(65)}@pfizer.com`);
+    submitQualification();
+    expect(await screen.findByText('Please enter a valid email address')).toBeInTheDocument();
+    expect(screen.getByLabelText(/work email/i)).toHaveFocus();
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it('reveals the personal-email warning next to the button', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillQualification('someone@gmail.com');
+    submitQualification();
+    const warning = await screen.findByRole('alert');
+    expect(warning).toHaveTextContent(/personal email address/i);
+    expect(warning).toHaveFocus();
+    expect(scrollIntoView.mock.contexts).toContain(warning);
+  });
+
+  it('shows an inline error with a prefilled email link instead of navigating to mailto:', async () => {
+    mockChannels({ formspree: 'offline', highLevel: 'fail' });
+    fillQualification();
+    submitQualification();
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent(SAVE_ERROR);
+    const link = screen.getByRole('link', { name: /email your request to admin@bionixus\.com/i });
+    expect(link.getAttribute('href')).toMatch(/^mailto:admin@bionixus\.com\?subject=/);
+    expect(decodeURIComponent(link.getAttribute('href') || '')).toContain('Company: Pfizer');
+    expect(hrefWrites).toEqual([]);
+    expect(screen.getByRole('button', { name: /book a 30-minute scoping call/i })).not.toBeDisabled();
   });
 });
 
-describe('GatedAssetForm (HighLevel only)', () => {
-  it('starts the download when HighLevel succeeds without touching Formspree', async () => {
-    mockChannels({ formspreeOk: false, highLevelOk: true });
+function fillContact() {
+  fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'BioNixus TEST' } });
+  fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'delete' } });
+  fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
+  fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
+  fireEvent.change(screen.getByLabelText(/country \/ region/i), { target: { value: 'United States' } });
+  fireEvent.change(screen.getByLabelText(/^phone/i), { target: { value: '+1 202 555 0143' } });
+  fireEvent.change(screen.getByLabelText(/how did you hear/i), { target: { value: 'Google Search' } });
+  fireEvent.change(screen.getByLabelText(/^message/i), { target: { value: 'Need a KSA ATU study' } });
+  fireEvent.click(screen.getByRole('checkbox', { name: /privacy policy/i }));
+}
+
+describe('ContactSection ("Request a proposal")', () => {
+  it('posts to HighLevel and Formspree, subscribes, and focuses the confirmation', async () => {
+    stubLocation('/contact');
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    const scroll = vi.fn();
+    HTMLElement.prototype.scrollIntoView = scroll;
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
+    expect(screen.getByRole('button', { name: /sending/i })).toBeDisabled();
+
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent(/thank you/i);
+    expect(status).toHaveFocus();
+    expect(scroll).toHaveBeenCalledWith({ block: 'center' });
+    expect(screen.queryByRole('button', { name: /send proposal request/i })).not.toBeInTheDocument();
+    await waitFor(() => expect(calledUrls()).toContain('/api/subscribe'));
+    expect(calledUrls()).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]));
+    expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({
+      form: 'contact_section',
+      requestType: 'Contact Request',
+      pageUrl: 'http://localhost/contact',
+      firstName: 'BioNixus TEST',
+      lastName: 'delete',
+      email: 'buyer@pfizer.com',
+      phone: '+1 202 555 0143',
+      country: 'United States',
+      referralSource: 'Google Search',
+      message: 'Need a KSA ATU study',
+    });
+    expect(hrefWrites).toEqual([]);
+  });
+
+  it('lists the current regional offices without Al Khobar', () => {
+    render(withProviders(<ContactSection premium />));
+    const block = screen.getByText('Regional representation').parentElement as HTMLElement;
+    expect(block).toHaveTextContent('Cairo, Egypt');
+    expect(block).toHaveTextContent('Dubai, UAE');
+    expect(block).toHaveTextContent('São Paulo, Brazil');
+    expect(block).not.toHaveTextContent(/al khobar|kuwait/i);
+  });
+
+  it('focuses the first missing field instead of failing silently', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    render(withProviders(<ContactSection premium />));
+    fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
+    expect(await screen.findByText(/please enter your first name/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/first name/i)).toHaveFocus();
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it('scrolls the HighLevel 400 email message into view and focuses it instead of the email field', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
+    const alert = await screen.findByRole('alert');
+    expectRevealedServerError(alert);
+    expect(screen.getByLabelText(/work email/i)).not.toHaveFocus();
+    expectFormspreeSkipped();
+    expect(calledUrls()).not.toContain('/api/subscribe');
+  });
+
+  it('keeps the lead through Formspree and confirms when HighLevel is rate limited', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'rate429' });
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent(/thank you/i);
+    expect(calledUrls()).toEqual(expect.arrayContaining([HIGHLEVEL_LEAD_ENDPOINT, FORMSPREE_ENDPOINT]));
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+
+  it('reveals the same server error again on the next attempt', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    const button = () => screen.getByRole('button', { name: /send proposal request/i });
+    fireEvent.click(button());
+    expectRevealedServerError(await screen.findByRole('alert'));
+
+    button().focus();
+    scrollIntoView.mockClear();
+    fireEvent.click(button());
+    await waitFor(() => expect(scrollIntoView).toHaveBeenCalled());
+    expectRevealedServerError(await screen.findByRole('alert'));
+  });
+
+  it('rejects a malformed email on the field before sending anything', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'jane@pfizer' } });
+    fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
+    await waitFor(() => expect(screen.getByLabelText(/work email/i)).toHaveFocus());
+    expect(screen.getByLabelText(/work email/i)).toHaveAttribute('aria-invalid', 'true');
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it('shows an inline error and email link when both destinations fail', async () => {
+    mockChannels({ formspree: 'fail', highLevel: 'fail' });
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent(SAVE_ERROR);
+    const fallback = alert.querySelector('a');
+    expect(fallback).toHaveTextContent('admin@bionixus.com');
+    expect(fallback?.getAttribute('href')).toMatch(/^mailto:admin@bionixus\.com\?subject=/);
+    expect(hrefWrites).toEqual([]);
+    expect(calledUrls()).not.toContain('/api/subscribe');
+  });
+});
+
+describe('GatedAssetForm (sample downloads)', () => {
+  function fillGated() {
+    render(<GatedAssetForm formId="sample_pdf" reportName="GCC Devices" pdfPath="/samples/gcc-devices.pdf" />);
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
+    fireEvent.change(screen.getByLabelText(/country of interest/i), { target: { value: 'Saudi Arabia' } });
+    fireEvent.click(screen.getByRole('button', { name: /get the sample pdf/i }));
+  }
+
+  it('posts to both destinations, starts the download, and confirms', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
     const clicks: string[] = [];
     vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
       clicks.push(this.getAttribute('href') || '');
     });
-
-    render(
-      <GatedAssetForm formId="sample_pdf" reportName="GCC Devices" pdfPath="/samples/gcc-devices.pdf" />,
-    );
-    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
-    fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
-    fireEvent.change(screen.getByLabelText(/country of interest/i), { target: { value: 'Saudi Arabia' } });
-    fireEvent.click(screen.getByRole('button', { name: /get the sample pdf/i }));
-
-    expect(await screen.findByText(/your download has started/i)).toBeInTheDocument();
+    fillGated();
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent(/your download has started/i);
+    expect(screen.getByRole('link', { name: /download the gcc devices directly/i })).toBeInTheDocument();
     expect(clicks).toContain('/samples/gcc-devices.pdf');
-    const urls = (fetch as ReturnType<typeof vi.fn>).mock.calls.map((call) => String(call[0]));
-    expect(urls).not.toContain(FORMSPREE_ENDPOINT);
+    expect(calledUrls()).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]));
+    expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({ form: 'sample_pdf', reportName: 'GCC Devices' });
   });
 
-  it('does not download when HighLevel fails', async () => {
-    mockChannels({ formspreeOk: false, highLevelOk: false });
+  it('shows the error and does not download when both destinations fail', async () => {
+    mockChannels({ formspree: 'fail', highLevel: 'fail' });
     const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
-    render(
-      <GatedAssetForm formId="sample_pdf" reportName="GCC Devices" pdfPath="/samples/gcc-devices.pdf" />,
-    );
-    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
-    fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
-    fireEvent.change(screen.getByLabelText(/country of interest/i), { target: { value: 'Saudi Arabia' } });
-    fireEvent.click(screen.getByRole('button', { name: /get the sample pdf/i }));
+    fillGated();
+    expectRevealedServerError(await screen.findByRole('alert'), SAVE_ERROR);
+    expect(click).not.toHaveBeenCalled();
+  });
 
-    expect(await screen.findByText(/could not save your request/i)).toBeInTheDocument();
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+    fillGated();
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expectFormspreeSkipped();
     expect(click).not.toHaveBeenCalled();
   });
 });
 
-const EMAIL_CHECK = 'Please check your email address and try again.';
+describe('EmailCaptureForm (report briefs)', () => {
+  function renderCapture(label = 'Send the brief') {
+    render(
+      <EmailCaptureForm
+        formVariant="brief"
+        requestType="Brief"
+        subject="Brief"
+        sourcePage="/reports"
+        sourceUrl="https://www.bionixus.com/reports"
+        submitLabel={label}
+      />,
+    );
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.click(screen.getByRole('button', { name: new RegExp(label, 'i') }));
+  }
 
-function mockHighLevelStatus(status: number, error: string) {
-  vi.stubGlobal(
-    'fetch',
-    vi.fn((input: RequestInfo) => {
-      const url = String(input);
-      if (url === FORMSPREE_ENDPOINT) return Promise.reject(new Error('offline'));
-      if (url === '/api/highlevel-lead') return json({ error }, status);
-      if (url === '/api/subscribe') return json({ success: true });
-      throw new Error(url);
-    }),
-  );
-}
-
-function stubLocation() {
-  Object.defineProperty(window, 'location', {
-    configurable: true,
-    value: { href: 'http://localhost/page', pathname: '/page', search: '' },
+  it('posts to both destinations and confirms', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    renderCapture();
+    expect(await screen.findByRole('status')).toHaveTextContent(/we will send this to your work email/i);
+    expect(calledUrls()).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]));
+    expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({
+      form: 'brief',
+      email: 'buyer@pfizer.com',
+      pageUrl: 'https://www.bionixus.com/reports',
+    });
   });
-  Object.defineProperty(window.location, 'href', {
-    configurable: true,
-    get: () => 'http://localhost/page',
-    set: () => {},
-  });
-}
 
-describe('lead forms show a HighLevel 400 email message', () => {
-  it('shows the server message on the email capture form and keeps the generic message for 502', async () => {
-    mockHighLevelStatus(400, EMAIL_CHECK);
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    renderCapture();
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expectFormspreeSkipped();
+  });
+
+  it('rejects an address over 254 characters before sending anything', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
     render(
       <EmailCaptureForm
         formVariant="brief"
@@ -280,104 +497,74 @@ describe('lead forms show a HighLevel 400 email message', () => {
         submitLabel="Send the brief"
       />,
     );
-    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
+    const long = `${'a'.repeat(64)}@${'b'.repeat(63)}.${'c'.repeat(63)}.${'d'.repeat(58)}.com`;
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: long } });
     fireEvent.click(screen.getByRole('button', { name: /send the brief/i }));
-    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
-
-    mockHighLevelStatus(502, 'Could not save your request. Please try again.');
-    render(
-      <EmailCaptureForm
-        formVariant="brief-2"
-        requestType="Brief"
-        subject="Brief"
-        sourcePage="/reports"
-        sourceUrl="https://www.bionixus.com/reports"
-        submitLabel="Send another brief"
-      />,
-    );
-    fireEvent.change(screen.getAllByLabelText(/work email/i)[1], { target: { value: 'buyer@pfizer.com' } });
-    fireEvent.click(screen.getByRole('button', { name: /send another brief/i }));
-    expect(await screen.findByText(/email digital@bionixus\.uk and we will send it/i)).toBeInTheDocument();
-    expect(screen.queryByText(/could not save your request/i)).not.toBeInTheDocument();
+    expect(await screen.findByRole('alert')).toHaveTextContent('Please enter a valid work email.');
+    expect(screen.getByLabelText(/work email/i)).toHaveFocus();
+    expect(fetch).not.toHaveBeenCalled();
   });
 
-  it('shows the server message on the contact form', async () => {
-    class Observer {
-      observe() {}
-      unobserve() {}
-      disconnect() {}
-    }
-    vi.stubGlobal('IntersectionObserver', Observer);
-    vi.stubGlobal('ResizeObserver', Observer);
-    mockHighLevelStatus(400, EMAIL_CHECK);
-    stubLocation();
-    render(
-      <MemoryRouter>
-        <LanguageProvider>
-          <ContactSection />
-        </LanguageProvider>
-      </MemoryRouter>,
-    );
-    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'Jane' } });
-    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
-    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
-    fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
-    fireEvent.change(screen.getByLabelText(/country \/ region/i), { target: { value: 'United States' } });
-    fireEvent.change(screen.getByLabelText(/^phone/i), { target: { value: '+1 202 555 0143' } });
-    fireEvent.change(screen.getByLabelText(/how did you hear/i), { target: { value: 'Google Search' } });
-    fireEvent.change(screen.getByLabelText(/^message/i), { target: { value: 'Need a KSA ATU study' } });
-    fireEvent.click(screen.getByRole('checkbox', { name: /privacy policy/i }));
-    fireEvent.click(screen.getByRole('button', { name: /^submit$/i }));
-    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
+  it('shows the fallback message when both destinations fail', async () => {
+    mockChannels({ formspree: 'fail', highLevel: 'fail' });
+    renderCapture();
+    expect(await screen.findByRole('alert')).toHaveTextContent(/email admin@bionixus\.com and we will send it/i);
   });
+});
 
-  it('shows the server message on the scoping-call form when HighLevel rejects the email', async () => {
-    mockHighLevelStatus(400, EMAIL_CHECK);
-    stubLocation();
-    await submitQualification();
-    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: /pick a time for your call/i })).not.toBeInTheDocument();
-  });
-
-  it('shows the server message on the market-report contact gate', async () => {
-    mockHighLevelStatus(400, EMAIL_CHECK);
-    stubLocation();
+describe('CaseStudyContactGate (case-study and white-paper gates)', () => {
+  function renderGate(onSuccess = vi.fn(), onOpenChange = vi.fn()) {
     render(
-      <MemoryRouter>
-        <LanguageProvider>
-          <CaseStudyContactGate
-            open
-            onOpenChange={() => {}}
-            caseStudyTitle="GCC Devices"
-            onSuccess={() => {}}
-            dialogTitle="Enter your details to browse and download the full report"
-            requestType="Market Report White Paper Access"
-            formVariant="whitepaper_gate_gcc-devices"
-          />
-        </LanguageProvider>
-      </MemoryRouter>,
+      withProviders(
+        <CaseStudyContactGate
+          open
+          onOpenChange={onOpenChange}
+          caseStudyTitle="GCC Devices"
+          onSuccess={onSuccess}
+          dialogTitle="Enter your details to browse and download the full report"
+          requestType="Market Report White Paper Access"
+          formVariant="whitepaper_gate_gcc-devices"
+        />,
+      ),
     );
     fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'Jane' } });
     fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
     fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'buyer@pfizer.com' } });
     fireEvent.change(screen.getByLabelText(/^company/i), { target: { value: 'Pfizer' } });
     fireEvent.click(screen.getByRole('button', { name: /request access/i }));
-    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
+    return { onSuccess, onOpenChange };
+  }
+
+  it('posts to both destinations, confirms, and unlocks on Continue', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    const { onSuccess, onOpenChange } = renderGate();
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent(/your details are saved/i);
+    expect(screen.getByText(/thank you — access unlocked/i)).toBeInTheDocument();
+    expect(onSuccess).not.toHaveBeenCalled();
+    expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({
+      form: 'whitepaper_gate_gcc-devices',
+      caseStudyTitle: 'GCC Devices',
+      requestType: 'Market Report White Paper Access',
+    });
+
+    fireEvent.click(screen.getByRole('button', { name: /^continue$/i }));
+    expect(onSuccess).toHaveBeenCalledTimes(1);
+    expect(onOpenChange).toHaveBeenCalledWith(false);
   });
 
-  it('shows the server message on the WhatsApp proposal widget', async () => {
-    mockHighLevelStatus(400, EMAIL_CHECK);
-    stubLocation();
-    vi.spyOn(window, 'open').mockImplementation(() => null);
-    render(
-      <MemoryRouter>
-        <LanguageProvider>
-          <TooltipProvider>
-            <WhatsAppProposalWidget />
-          </TooltipProvider>
-        </LanguageProvider>
-      </MemoryRouter>,
-    );
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    const { onSuccess } = renderGate();
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expectFormspreeSkipped();
+    expect(onSuccess).not.toHaveBeenCalled();
+  });
+});
+
+describe('WhatsAppProposalWidget', () => {
+  function fillWidget() {
+    render(withProviders(<WhatsAppProposalWidget />));
     fireEvent.click(screen.getByRole('button', { name: /whatsapp proposal form/i }));
     fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'Jane' } });
     fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
@@ -386,6 +573,112 @@ describe('lead forms show a HighLevel 400 email message', () => {
     fireEvent.change(screen.getByLabelText(/^phone/i), { target: { value: '+1 202 555 0143' } });
     fireEvent.change(screen.getByLabelText(/^message/i), { target: { value: 'Need a proposal' } });
     fireEvent.click(screen.getByRole('button', { name: /continue on whatsapp/i }));
-    expect(await screen.findByText(EMAIL_CHECK)).toBeInTheDocument();
+  }
+
+  it('posts to both destinations and confirms', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    vi.spyOn(window, 'open').mockImplementation(() => null);
+    fillWidget();
+    expect(await screen.findByRole('status')).toBeInTheDocument();
+    await waitFor(() =>
+      expect(calledUrls()).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT])),
+    );
+    expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({ form: 'whatsapp_proposal_widget', phone: '+1 202 555 0143' });
+  });
+
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    vi.spyOn(window, 'open').mockImplementation(() => null);
+    fillWidget();
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expectFormspreeSkipped();
+  });
+});
+
+describe('ClinicalDiagnosticsProposalRequest', () => {
+  function fillClinical() {
+    render(withProviders(<ClinicalDiagnosticsProposalRequest />));
+    const form = screen.getByRole('button', { name: /register & receive the full proposal/i }).closest('form') as HTMLFormElement;
+    const field = (name: string) => form.querySelector(`[name="${name}"]`) as HTMLInputElement;
+    fireEvent.change(field('firstName'), { target: { value: 'Jane' } });
+    fireEvent.change(field('lastName'), { target: { value: 'Doe' } });
+    fireEvent.change(field('workEmail'), { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.change(field('company'), { target: { value: 'Pfizer' } });
+    fireEvent.change(field('country'), { target: { value: 'Saudi Arabia' } });
+    fireEvent.click(screen.getByRole('checkbox', { name: /processing my details/i }));
+    fireEvent.click(screen.getByRole('button', { name: /register & receive the full proposal/i }));
+  }
+
+  it('posts to both destinations and confirms', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillClinical();
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent(/your request is registered/i);
+    expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({
+      form: 'clinical_diagnostics_proposal_request',
+      country: 'Saudi Arabia',
+    });
+  });
+
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    fillClinical();
+    await waitFor(() =>
+      expect(screen.getAllByRole('alert').some((node) => node.textContent?.includes(EMAIL_CHECK))).toBe(true),
+    );
+    const alert = screen.getAllByRole('alert').find((node) => node.textContent?.includes(EMAIL_CHECK)) as HTMLElement;
+    expectRevealedServerError(alert);
+    expectFormspreeSkipped();
+  });
+
+  it('names the missing field instead of relying on browser tooltips', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    render(withProviders(<ClinicalDiagnosticsProposalRequest />));
+    fireEvent.click(screen.getByRole('button', { name: /register & receive the full proposal/i }));
+    const alerts = await screen.findAllByRole('alert');
+    expect(alerts.some((node) => node.textContent?.includes('Please enter your first name.'))).toBe(true);
+    expect(fetch).not.toHaveBeenCalled();
+  });
+});
+
+describe('Footer newsletter', () => {
+  function fillNewsletter() {
+    render(withProviders(<Footer />));
+    fireEvent.change(screen.getByLabelText('Your name'), { target: { value: 'Ana' } });
+    fireEvent.change(screen.getByLabelText('Work email'), { target: { value: 'reader@novartis.com' } });
+    fireEvent.click(screen.getByRole('checkbox', { name: /receive monthly/i }));
+    fireEvent.click(screen.getByRole('button', { name: /^subscribe$/i }));
+  }
+
+  it('subscribes and saves the lead to HighLevel and Formspree', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillNewsletter();
+    expect(await screen.findByRole('status')).toHaveTextContent(/check your email to verify/i);
+    expect(calledUrls()).toEqual(
+      expect.arrayContaining(['/api/subscribe', FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]),
+    );
+    expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({
+      form: 'footer_newsletter',
+      email: 'reader@novartis.com',
+      firstName: 'Ana',
+      requestType: 'Newsletter Signup',
+    });
+  });
+
+  it('shows an error when every destination fails', async () => {
+    mockChannels({ formspree: 'fail', highLevel: 'fail', subscribe: 'fail' });
+    fillNewsletter();
+    expectRevealedServerError(await screen.findByRole('alert'), /internal server error|something went wrong/i);
+  });
+
+  it('rejects a malformed email before calling any endpoint', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    render(withProviders(<Footer />));
+    fireEvent.change(screen.getByLabelText('Your name'), { target: { value: 'Ana' } });
+    fireEvent.change(screen.getByLabelText('Work email'), { target: { value: 'reader..x@novartis.com' } });
+    fireEvent.click(screen.getByRole('checkbox', { name: /receive monthly/i }));
+    fireEvent.click(screen.getByRole('button', { name: /^subscribe$/i }));
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expect(fetch).not.toHaveBeenCalled();
   });
 });

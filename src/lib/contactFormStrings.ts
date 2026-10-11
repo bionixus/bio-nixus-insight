@@ -2,7 +2,7 @@
  * Contact form copy that sits outside the `t.contact` i18n bundle.
  *
  * Select/checkbox options are `value -> label` maps on purpose: the **value** is
- * submitted to Formspree and copied into the fallback mailto, so it stays English
+ * submitted to HighLevel and Formspree and copied into the fallback mailto, so it stays English
  * for lead triage, while the **label** is what the visitor reads.
  *
  * English is the complete shape; every other locale is deep-merged over it, so a
@@ -25,7 +25,9 @@ export type ContactFormStrings = {
   referralOptions: Record<string, string>;
   phoneFieldLabel: string;
   regionalRepresentationLabel: string;
-  regionalOffices: [string, string, string, string];
+  regionalOffices: string[];
+  /** Submit button label while the request is in flight. */
+  submitting: string;
   premiumFormSubcopy: string;
   premiumEyebrow: string;
   premiumHeading: string;
@@ -88,7 +90,8 @@ const en: ContactFormStrings = {
   },
   phoneFieldLabel: 'Phone',
   regionalRepresentationLabel: 'Regional representation',
-  regionalOffices: ['Dubai, UAE', 'Al Khobar, Saudi Arabia', 'Kuwait City, Kuwait', 'Cairo, Egypt'],
+  regionalOffices: ['Cairo, Egypt', 'Dubai, UAE', 'São Paulo, Brazil'],
+  submitting: 'Sending…',
   premiumFormSubcopy:
     'Tell us the markets, sector, and decision at stake. We respond with a scoped plan — typically within one business day.',
   premiumEyebrow: 'Direct channels',
@@ -152,12 +155,8 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Telefon',
     regionalRepresentationLabel: 'Regionale Vertretung',
-    regionalOffices: [
-      'Dubai, VAE',
-      'Al Khobar, Saudi-Arabien',
-      'Kuwait-Stadt, Kuwait',
-      'Kairo, Ägypten',
-    ],
+    regionalOffices: ['Kairo, Ägypten', 'Dubai, VAE', 'São Paulo, Brasilien'],
+    submitting: 'Wird gesendet…',
     premiumFormSubcopy:
       'Nennen Sie uns Markt, Indikation und die anstehende Entscheidung. Sie erhalten einen abgegrenzten Projektplan — in der Regel innerhalb eines Werktags.',
     premiumEyebrow: 'Direkte Kontaktwege',
@@ -218,12 +217,8 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Téléphone',
     regionalRepresentationLabel: 'Représentation régionale',
-    regionalOffices: [
-      'Dubaï, Émirats arabes unis',
-      'Al Khobar, Arabie saoudite',
-      'Koweït, Koweït',
-      'Le Caire, Égypte',
-    ],
+    regionalOffices: ['Le Caire, Égypte', 'Dubaï, Émirats arabes unis', 'São Paulo, Brésil'],
+    submitting: 'Envoi…',
     premiumFormSubcopy:
       'Indiquez-nous le marché, l’aire thérapeutique et la décision en jeu. Nous répondons avec un plan cadré — généralement sous un jour ouvré.',
     premiumEyebrow: 'Contacts directs',
@@ -284,12 +279,8 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Teléfono',
     regionalRepresentationLabel: 'Representación regional',
-    regionalOffices: [
-      'Dubái, Emiratos Árabes Unidos',
-      'Al Khobar, Arabia Saudí',
-      'Ciudad de Kuwait, Kuwait',
-      'El Cairo, Egipto',
-    ],
+    regionalOffices: ['El Cairo, Egipto', 'Dubái, Emiratos Árabes Unidos', 'São Paulo, Brasil'],
+    submitting: 'Enviando…',
     premiumFormSubcopy:
       'Cuéntenos el mercado, el área terapéutica y la decisión en juego. Respondemos con un plan acotado, normalmente en un día hábil.',
     premiumEyebrow: 'Canales directos',
@@ -350,12 +341,8 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Telefone',
     regionalRepresentationLabel: 'Representação regional',
-    regionalOffices: [
-      'Dubai, Emirados Árabes Unidos',
-      'Al Khobar, Arábia Saudita',
-      'Cidade do Kuwait, Kuwait',
-      'Cairo, Egito',
-    ],
+    regionalOffices: ['Cairo, Egito', 'Dubai, Emirados Árabes Unidos', 'São Paulo, Brasil'],
+    submitting: 'A enviar…',
     premiumFormSubcopy:
       'Diga-nos o mercado, a área terapêutica e a decisão em causa. Respondemos com um plano delimitado — normalmente dentro de um dia útil.',
     premiumEyebrow: 'Canais diretos',
@@ -416,12 +403,8 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'Телефон',
     regionalRepresentationLabel: 'Региональное представительство',
-    regionalOffices: [
-      'Дубай, ОАЭ',
-      'Эль-Хубар, Саудовская Аравия',
-      'Эль-Кувейт, Кувейт',
-      'Каир, Египет',
-    ],
+    regionalOffices: ['Каир, Египет', 'Дубай, ОАЭ', 'Сан-Паулу, Бразилия'],
+    submitting: 'Отправка…',
     premiumFormSubcopy:
       'Расскажите о рынке, терапевтической области и предстоящем решении. Мы ответим планом работ с чёткими границами — как правило, в течение одного рабочего дня.',
     premiumEyebrow: 'Прямые контакты',
@@ -482,7 +465,8 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: '电话',
     regionalRepresentationLabel: '区域代表处',
-    regionalOffices: ['阿联酋迪拜', '沙特阿拉伯胡拜尔', '科威特科威特城', '埃及开罗'],
+    regionalOffices: ['埃及开罗', '阿联酋迪拜', '巴西圣保罗'],
+    submitting: '正在提交…',
     premiumFormSubcopy:
       '请告诉我们目标市场、治疗领域以及需要支持的决策。我们通常会在一个工作日内回复一份明确界定范围的研究方案。',
     premiumEyebrow: '直接联系方式',
@@ -543,12 +527,8 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: 'الهاتف',
     regionalRepresentationLabel: 'التمثيل الإقليمي',
-    regionalOffices: [
-      'دبي، الإمارات العربية المتحدة',
-      'الخبر، المملكة العربية السعودية',
-      'مدينة الكويت، الكويت',
-      'القاهرة، مصر',
-    ],
+    regionalOffices: ['القاهرة، مصر', 'دبي، الإمارات العربية المتحدة', 'ساو باولو، البرازيل'],
+    submitting: 'جارٍ الإرسال…',
     premiumFormSubcopy:
       'أخبرنا بالسوق والمجال العلاجي والقرار المطروح. نرد بخطة بحث محددة النطاق — عادةً خلال يوم عمل واحد.',
     premiumEyebrow: 'قنوات الاتصال المباشر',

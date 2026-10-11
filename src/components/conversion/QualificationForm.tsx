@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
 import { trackLeadSubmitted, trackFormStart, trackMeetingBooked, trackMeetingLinkClicked } from '@/lib/analytics';
-import { submitLeadDual, submitScopingCallLead } from '@/lib/submitLeadDual';
+import { submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
+import { focusFirstInvalidField, leadFallbackMailto, revealStatus } from '@/lib/formFeedback';
 import {
   QUALIFICATION_FORM_MARKETS,
   QUALIFICATION_FORM_NEEDS,
@@ -12,13 +14,15 @@ import {
 } from '@/data/qualificationFormOptions';
 
 const ERROR_EMAIL = 'admin@bionixus.com';
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const GENERIC_ERROR = 'Something went wrong — please try again or email us directly.';
+const FREE_MAIL_WARNING =
+  'That looks like a personal email address. A company email helps us respond faster — press the button again to send it anyway.';
 
 /** Scheduling link shown on the thank-you state. */
-export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://schedule.bionixus.com/meeting-with-bionixus';
+export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://research.bionixus.co.uk/widget/bookings/bionixus';
 
 export type QualificationFormProps = {
-  /** Unique id for analytics + Formspree formVariant tagging, e.g. 'pharma_companies_uae_cta' */
+  /** Unique id for analytics and the `formVariant` sent to HighLevel and Formspree, e.g. 'pharma_companies_uae_cta' */
   formId: string;
   /** Optional context label shown in the form and sent with the submission, e.g. a report/page name. */
   sourceContext?: string;
@@ -42,6 +46,7 @@ export function QualificationForm({
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [fallbackMailto, setFallbackMailto] = useState<string | null>(null);
   const [freeMailWarning, setFreeMailWarning] = useState<string | null>(null);
   const [freeMailAcknowledged, setFreeMailAcknowledged] = useState(false);
   const [started, setStarted] = useState(false);
@@ -66,7 +71,7 @@ export function QualificationForm({
     const rawEmail = (data.get('workEmail') as string)?.trim() || '';
     if (!rawEmail) {
       next.workEmail = 'Work email is required';
-    } else if (!EMAIL_RE.test(rawEmail)) {
+    } else if (!isValidLeadEmail(rawEmail)) {
       next.workEmail = 'Please enter a valid email address';
     }
     if (!(data.get('company') as string)?.trim()) next.company = 'Company is required';
@@ -74,11 +79,16 @@ export function QualificationForm({
     if (!(data.get('need') as string)?.trim()) next.need = 'Please select what you need';
 
     setErrors(next);
-    if (Object.keys(next).length > 0) return;
+    setSubmitError(null);
+    setFallbackMailto(null);
+    if (Object.keys(next).length > 0) {
+      focusFirstInvalidField(form, next);
+      return;
+    }
 
-    // Soft-block: free-mail domain gets one warning, then submission proceeds on the next attempt.
+    // Soft-block: a free-mail domain gets one warning next to the button, then the next press sends.
     if (rawEmail && isFreeMailDomain(rawEmail) && !freeMailAcknowledged) {
-      setFreeMailWarning('Please use your company email — our buyers have work email.');
+      setFreeMailWarning(FREE_MAIL_WARNING);
       setFreeMailAcknowledged(true);
       return;
     }
@@ -117,12 +127,27 @@ export function QualificationForm({
     data.set('markets', markets);
     data.set('qualified', isBelowMinimum ? 'no' : budget ? 'yes' : 'unspecified-budget');
 
+    const mailtoFor = (errorDetails?: string) =>
+      leadFallbackMailto(
+        ERROR_EMAIL,
+        `Scoping call request — ${company || rawEmail}`,
+        {
+          Email: rawEmail,
+          Company: company,
+          Role: role,
+          Need: need,
+          Markets: markets,
+          Timeline: timeline,
+          Budget: budget,
+          Source: sourceContext || '',
+          Page: currentUrl,
+        },
+        errorDetails,
+      );
+
     setSubmitting(true);
-    setSubmitError(null);
     try {
-      // Scoping-call requests are the only leads that also go to Formspree (email alert) — see submitLeadDual.
-      // Below-minimum budgets are saved to HighLevel only and answered by email.
-      const result = isBelowMinimum ? await submitLeadDual(data) : await submitScopingCallLead(data);
+      const result = await submitLeadDual(data);
       if (result.skipped) {
         setSubmitted(true);
         return;
@@ -135,36 +160,15 @@ export function QualificationForm({
           trackMeetingBooked({ formId, sourceContext, need, budget, timeline, markets });
         }
         onSuccess?.();
-      } else if (result.networkError) {
-        setSubmitError('Something went wrong — please try again or email us directly.');
-        redirectToErrorEmail({
-          rawEmail,
-          company,
-          role,
-          need,
-          markets,
-          timeline,
-          budget,
-          sourceContext,
-          errorDetails: result.networkError,
-        });
+      } else if (result.invalidEmail && result.error) {
+        setSubmitError(result.error);
       } else {
-        setSubmitError(result.error || 'Something went wrong — please try again or email us directly.');
-        redirectToErrorEmail({ rawEmail, company, role, need, markets, timeline, budget, sourceContext });
+        setSubmitError(result.networkError ? GENERIC_ERROR : result.error || GENERIC_ERROR);
+        setFallbackMailto(mailtoFor(result.networkError || result.error));
       }
     } catch (err) {
-      setSubmitError('Something went wrong — please try again or email us directly.');
-      redirectToErrorEmail({
-        rawEmail,
-        company,
-        role,
-        need,
-        markets,
-        timeline,
-        budget,
-        sourceContext,
-        errorDetails: err instanceof Error ? err.message : 'network error',
-      });
+      setSubmitError(GENERIC_ERROR);
+      setFallbackMailto(mailtoFor(err instanceof Error ? err.message : 'network error'));
     } finally {
       setSubmitting(false);
     }
@@ -172,7 +176,7 @@ export function QualificationForm({
 
   if (submitted && belowMinimum) {
     return (
-      <div className="text-center py-4">
+      <div className="text-center py-4 focus:outline-none" role="status" aria-live="polite" tabIndex={-1} ref={revealStatus}>
         <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-xl font-bold text-primary">
           ✓
         </div>
@@ -191,7 +195,7 @@ export function QualificationForm({
 
   if (submitted) {
     return (
-      <div className="text-center py-4">
+      <div className="text-center py-4 focus:outline-none" role="status" aria-live="polite" tabIndex={-1} ref={revealStatus}>
         <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-xl font-bold text-primary">
           ✓
         </div>
@@ -238,13 +242,13 @@ export function QualificationForm({
         <input
           id={`${formId}-workEmail`}
           name="workEmail"
+          aria-invalid={Boolean(errors.workEmail)}
           type="email"
           required
           className={`w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.workEmail ? 'border-destructive' : 'border-input'}`}
           placeholder="you@company.com"
         />
         {errors.workEmail && <p className="text-xs text-destructive mt-1">{errors.workEmail}</p>}
-        {freeMailWarning && <p className="text-xs text-amber-600 mt-1">{freeMailWarning}</p>}
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
@@ -255,6 +259,7 @@ export function QualificationForm({
           <input
             id={`${formId}-company`}
             name="company"
+          aria-invalid={Boolean(errors.company)}
             type="text"
             required
             className={`w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.company ? 'border-destructive' : 'border-input'}`}
@@ -268,6 +273,7 @@ export function QualificationForm({
           <input
             id={`${formId}-role`}
             name="role"
+          aria-invalid={Boolean(errors.role)}
             type="text"
             required
             className={`w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.role ? 'border-destructive' : 'border-input'}`}
@@ -283,6 +289,7 @@ export function QualificationForm({
         <select
           id={`${formId}-need`}
           name="need"
+          aria-invalid={Boolean(errors.need)}
           required
           defaultValue={defaultNeed ?? ''}
           className={`w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.need ? 'border-destructive' : 'border-input'}`}
@@ -357,42 +364,35 @@ export function QualificationForm({
         </div>
       </div>
 
-      {submitError && <p className="text-sm text-destructive">{submitError}</p>}
+      <div aria-live="polite">
+        {freeMailWarning && !submitError ? (
+          <p className="text-sm text-amber-700 focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
+            {freeMailWarning}
+          </p>
+        ) : null}
+        {submitError ? (
+          <p className="text-sm text-destructive focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
+            {submitError}
+            {fallbackMailto ? (
+              <>
+                {' '}
+                <a href={fallbackMailto} className="font-medium underline">
+                  Email your request to {ERROR_EMAIL}
+                </a>
+              </>
+            ) : null}
+          </p>
+        ) : null}
+      </div>
 
       <button
         type="submit"
         disabled={submitting}
+        aria-busy={submitting}
         className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {submitting ? 'Sending…' : 'Book a 30-minute scoping call'}
       </button>
     </form>
   );
-}
-
-function redirectToErrorEmail(fields: {
-  rawEmail: string;
-  company: string;
-  role: string;
-  need: string;
-  markets: string;
-  timeline: string;
-  budget: string;
-  sourceContext?: string;
-  errorDetails?: string;
-}) {
-  const subject = encodeURIComponent(`Scoping call request — ${fields.company || fields.rawEmail}`);
-  const body = encodeURIComponent(
-    `--- FORM DATA ---\n` +
-      `Email: ${fields.rawEmail}\n` +
-      `Company: ${fields.company}\n` +
-      `Role: ${fields.role}\n` +
-      `Need: ${fields.need}\n` +
-      `Markets: ${fields.markets}\n` +
-      `Timeline: ${fields.timeline}\n` +
-      `Budget: ${fields.budget}\n` +
-      (fields.sourceContext ? `Source: ${fields.sourceContext}\n` : '') +
-      `\n--- NOTE ---\nThe online form encountered an error${fields.errorDetails ? ` (${fields.errorDetails})` : ''}. Please process this inquiry manually.`,
-  );
-  window.location.href = `mailto:${ERROR_EMAIL}?subject=${subject}&body=${body}`;
 }

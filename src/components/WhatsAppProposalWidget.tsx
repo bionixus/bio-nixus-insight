@@ -9,8 +9,9 @@ import { languages } from '@/lib/i18n';
 import { getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { getWhatsAppWidgetStrings } from '@/lib/whatsappWidgetStrings';
 import { isLeadHoneypot, submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
+import { focusFirstInvalidField, revealStatus } from '@/lib/formFeedback';
 const COOKIE_CONSENT_KEY = 'bionixus-cookie-consent';
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
 const WHATSAPP_NUMBER = BIONIXUS_PHONE_UK.replace(/\D/g, '');
 const CONTACT_PATHS = new Set(languages.map((lang) => localizedContactPath(lang.code)));
@@ -178,7 +179,7 @@ export default function WhatsAppProposalWidget() {
     if (!firstName) next.firstName = v('firstName') || 'First name is required';
     if (!lastName) next.lastName = v('lastName') || 'Last name is required';
     if (!workEmail) next.workEmail = v('workEmail') || 'Work email is required';
-    else if (!EMAIL_REGEX.test(workEmail)) next.workEmail = v('emailFormat') || 'Please enter a valid email address';
+    else if (!isValidLeadEmail(workEmail)) next.workEmail = v('emailFormat') || 'Please enter a valid email address';
     if (!company) next.company = v('company') || 'Company is required';
     if (!phone) next.phone = copy.phoneRequired;
     else if (!PHONE_REGEX.test(phone)) next.phone = v('phoneFormat') || 'Please enter a valid phone number';
@@ -186,7 +187,10 @@ export default function WhatsAppProposalWidget() {
 
     setErrors(next);
     setSubmitError(null);
-    if (Object.keys(next).length > 0) return;
+    if (Object.keys(next).length > 0) {
+      focusFirstInvalidField(form, next);
+      return;
+    }
 
     const currentUrl = window.location.href;
     const currentPath = window.location.pathname;
@@ -275,7 +279,13 @@ export default function WhatsAppProposalWidget() {
 
           <div className="flex max-h-[min(62dvh,24rem)] flex-col overflow-hidden p-0 md:max-h-[min(70vh,560px)]">
             {submitted ? (
-              <div className="p-3 text-center md:p-5">
+              <div
+                className="p-3 text-center focus:outline-none md:p-5"
+                role="status"
+                aria-live="polite"
+                tabIndex={-1}
+                ref={revealStatus}
+              >
                 <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-base font-bold text-primary md:mb-4 md:h-12 md:w-12 md:text-lg">
                   ✓
                 </div>
@@ -293,7 +303,16 @@ export default function WhatsAppProposalWidget() {
                     {copy.openWhatsAppAgain}
                   </a>
                 ) : null}
-                {submitError ? <p className="mt-2 text-xs text-destructive md:mt-3 md:text-sm">{submitError}</p> : null}
+                {submitError ? (
+                  <p
+                    className="mt-2 text-xs text-destructive focus:outline-none md:mt-3 md:text-sm"
+                    role="alert"
+                    tabIndex={-1}
+                    ref={revealStatus}
+                  >
+                    {submitError}
+                  </p>
+                ) : null}
               </div>
             ) : (
               <form
@@ -428,11 +447,21 @@ export default function WhatsAppProposalWidget() {
                   {copy.privacyAfter}
                 </p>
 
-                {submitError ? <p className="mb-2 text-xs text-destructive md:text-sm">{submitError}</p> : null}
+                {submitError ? (
+                  <p
+                    className="mb-2 text-xs text-destructive focus:outline-none md:text-sm"
+                    role="alert"
+                    tabIndex={-1}
+                    ref={revealStatus}
+                  >
+                    {submitError}
+                  </p>
+                ) : null}
 
                 <button
                   type="submit"
                   disabled={submitting}
+                  aria-busy={submitting}
                   className="w-full rounded-md bg-accent py-2 text-sm font-semibold text-accent-foreground transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70 md:rounded-lg md:py-3 md:text-base"
                 >
                   {submitting ? copy.submitting : copy.submitButton}
