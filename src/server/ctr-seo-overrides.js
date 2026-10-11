@@ -835,6 +835,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Who does obesity market research in Saudi Arabia? A sourced 2026 shortlist of 8 providers for obesity GLP-1 market research Saudi Arabia teams can act on.',
   },
+  '/blog/biosimilar-market-entry-research-saudi-arabia': {
+    title: 'Biosimilar Market Entry Research Saudi Arabia: SFDA 2026',
+    description:
+      'Biosimilar market entry research Saudi Arabia: what the SFDA 2026 guideline changes, how price caps and NUPCO tenders work, and what to research first.',
+  },
 };
 
 /**

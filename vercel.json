@@ -1058,6 +1058,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/who-does-obesity-market-research-saudi-arabia"
     },
     {
+      "source": "/blog/biosimilar-market-entry-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/biosimilar-market-entry-research-saudi-arabia"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
