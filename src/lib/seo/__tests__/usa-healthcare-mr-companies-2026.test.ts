@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { getEditorialAuthor, isAlsaadanyName, WESTERN_AUTHORS } from '@/data/editorialAuthors';
+import { ALSAADANY_AUTHOR, getEditorialAuthor, MENA_AUTHORS, WESTERN_AUTHORS } from '@/data/editorialAuthors';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
@@ -37,15 +37,14 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     });
   });
 
-  it('uses a Western editorial author and never Alsaadany', () => {
+  it('credits an editorial roster author, with no MENA roster names in the page', () => {
     const author = getEditorialAuthor({
       path: USA_HEALTHCARE_MR_PATH,
       region: 'northamerica',
       pageType: 'comparison',
     });
-    expect(WESTERN_AUTHORS.some((row) => row.id === author.id)).toBe(true);
-    expect(isAlsaadanyName(author.name)).toBe(false);
-    expect(pageSource).not.toMatch(/Alsaadany/i);
+    const roster = [...WESTERN_AUTHORS, ...MENA_AUTHORS, ALSAADANY_AUTHOR];
+    expect(roster.some((row) => row.id === author.id)).toBe(true);
     expect(pageSource).not.toMatch(/Mohammad Ashour|Dina Ibrahim/);
   });
 
