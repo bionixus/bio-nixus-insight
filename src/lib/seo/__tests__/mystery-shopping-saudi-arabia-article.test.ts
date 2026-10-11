@@ -190,7 +190,11 @@ describe('Mystery shopping article — shared JSON-LD helpers', () => {
     expect(ALSAADANY_PROFILE_URL).toBe(ROSTER_ALSAADANY_PROFILE_URL);
     expect(ALSAADANY_SAME_AS_URL).toBe(ROSTER_ALSAADANY_SAME_AS_URL);
     const person = buildPersonNode({ name: 'Mohammad Alsaadany', slug: 'mohammad-alsaadany', jobTitle: 'MEA Director' });
-    const roster = withAlsaadanyPersonJsonLd({ '@type': 'Person', name: 'Mohammad Alsaadany', jobTitle: 'MEA Director' });
+    const roster = withAlsaadanyPersonJsonLd<{ '@type': string; name: string; jobTitle?: string; url?: string; sameAs?: string[] }>({
+      '@type': 'Person',
+      name: 'Mohammad Alsaadany',
+      jobTitle: 'MEA Director',
+    });
     expect(person?.url).toBe(roster.url);
     expect(person?.sameAs).toEqual(roster.sameAs);
   });
