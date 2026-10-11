@@ -12,9 +12,13 @@ import {
 } from '@/data/clinicalDiagnosticsOffering';
 import '@/styles/clinical-diagnostics-proposal.css';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { focusFirstInvalidField, revealStatus } from '@/lib/formFeedback';
 
 const PAGE_PATH = '/clinical-diagnostics-proposal-request';
 const PAGE_URL = `https://www.bionixus.com${PAGE_PATH}`;
+
+const GENERIC_ERROR =
+  'Something went wrong. Email admin@bionixus.com with your company name and we will send the deck.';
 
 const COUNTRY_OPTIONS = [
   'Saudi Arabia',
@@ -53,13 +57,18 @@ export default function ClinicalDiagnosticsProposalRequest() {
     setError(null);
     const form = e.currentTarget;
     const data = new FormData(form);
-    const email = (data.get('workEmail') as string)?.trim();
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('Please enter a valid work email.');
-      return;
-    }
-    if (!data.get('consent')) {
-      setError('Please agree to the privacy policy.');
+    const email = (data.get('workEmail') as string)?.trim() || '';
+    const next: Record<string, string> = {};
+    if (!(data.get('firstName') as string)?.trim()) next.firstName = 'Please enter your first name.';
+    if (!(data.get('lastName') as string)?.trim()) next.lastName = 'Please enter your last name.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.workEmail = 'Please enter a valid work email.';
+    if (!(data.get('company') as string)?.trim()) next.company = 'Please enter your company.';
+    if (!(data.get('country') as string)?.trim()) next.country = 'Please select a country or market.';
+    if (!data.get('consent')) next.consent = 'Please agree to the privacy policy.';
+    const firstError = Object.values(next)[0];
+    if (firstError) {
+      setError(firstError);
+      focusFirstInvalidField(form, next);
       return;
     }
 
@@ -73,18 +82,14 @@ export default function ClinicalDiagnosticsProposalRequest() {
     setSubmitting(true);
     try {
       const result = await submitLeadDual(data);
-      if (result.skipped) return;
       if (!result.ok) {
-        setError(
-          result.highLevelStatus === 400 && result.error
-            ? result.error
-            : 'Something went wrong. Email digital@bionixus.uk with your company name and we will send the deck.',
-        );
+        setError(result.highLevelStatus === 400 && result.error ? result.error : GENERIC_ERROR);
+        if (result.highLevelStatus === 400) focusFirstInvalidField(form, { workEmail: 'invalid' });
         return;
       }
       setSubmitted(true);
     } catch {
-      setError('Something went wrong. Email digital@bionixus.uk with your company name and we will send the deck.');
+      setError(GENERIC_ERROR);
     } finally {
       setSubmitting(false);
     }
@@ -94,7 +99,7 @@ export default function ClinicalDiagnosticsProposalRequest() {
     <div className="cd-proposal-site min-h-screen">
       <SEOHead
         title="Register for Clinical Diagnostics Proposal | BioNixus"
-        description="Register to receive the full BioNixus QC and immunohematology market assessment proposal for Saudi Arabia and Türkiye. Complete methodology deck without."
+        description="Register for the full BioNixus QC and immunohematology market assessment proposal for Saudi Arabia and Türkiye: complete methodology deck, no pricing online."
         canonical={PAGE_PATH}
         jsonLd={jsonLd}
       />
@@ -139,7 +144,7 @@ export default function ClinicalDiagnosticsProposalRequest() {
                   within one business day with a link to the complete HTML proposal and optional alignment call.
                 </p>
 
-                <form onSubmit={handleSubmit} className="max-w-xl space-y-4 font-[family-name:var(--cd-sans)]">
+                <form onSubmit={handleSubmit} noValidate className="max-w-xl space-y-4 font-[family-name:var(--cd-sans)]">
                   <input
                     type="text"
                     name="hp_company"
@@ -222,10 +227,17 @@ export default function ClinicalDiagnosticsProposalRequest() {
                       .
                     </span>
                   </label>
-                  {error && <p className="text-sm text-red-700">{error}</p>}
+                  <div aria-live="polite">
+                    {error ? (
+                      <p className="text-sm text-red-700" role="alert">
+                        {error}
+                      </p>
+                    ) : null}
+                  </div>
                   <button
                     type="submit"
                     disabled={submitting}
+                    aria-busy={submitting}
                     className="cd-btn-gold border-0 cursor-pointer disabled:opacity-60"
                   >
                     {submitting ? 'Submitting…' : 'Register & receive the full proposal'}
@@ -233,7 +245,13 @@ export default function ClinicalDiagnosticsProposalRequest() {
                 </form>
               </>
             ) : (
-              <div className="cd-request-panel">
+              <div
+                className="cd-request-panel focus:outline-none"
+                role="status"
+                aria-live="polite"
+                tabIndex={-1}
+                ref={revealStatus}
+              >
                 <h2 className="cd-section-title">Thank you — your request is registered</h2>
                 <p className="text-[#3D4A5C] mb-6 max-w-lg mx-auto leading-relaxed">
                   You can open the full proposal deck now (methodology, matrices, timeline — no pricing section). Our team

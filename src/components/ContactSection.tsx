@@ -17,6 +17,7 @@ import { CONTACT_FORM_COUNTRIES } from '@/data/contactFormCountries';
 import { getContactFormStrings } from '@/lib/contactFormStrings';
 import { trackLeadSubmitted } from '@/lib/analytics';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { focusFirstInvalidField, leadFallbackMailto, revealStatus } from '@/lib/formFeedback';
 
 type ContactValidation = {
   firstName?: string;
@@ -68,42 +69,7 @@ const REFERRAL_OPTIONS = [
   'Other',
 ] as const;
 
-const ERROR_EMAIL = 'digital@bionixus.uk';
-
-type ErrorEmailFields = {
-  firstName: string;
-  lastName: string;
-  workEmail: string;
-  company: string;
-  phone: string;
-  country: string;
-  researchInterest: string;
-  timeline: string;
-  budget: string;
-  referralSource: string;
-  message: string;
-};
-
-function sendErrorEmail(fields: ErrorEmailFields, errorDetails: string) {
-  const subject = encodeURIComponent('Meeting With BioNixus Team');
-  const body = encodeURIComponent(
-    `I'd like to schedule a meeting with BioNixus team to discuss more about BioNixus Market Research Services.\n\n` +
-    `--- FORM DATA ---\n` +
-    `First Name: ${fields.firstName}\n` +
-    `Last Name: ${fields.lastName}\n` +
-    `Email: ${fields.workEmail}\n` +
-    `Company: ${fields.company}\n` +
-    (fields.phone ? `Phone: ${fields.phone}\n` : '') +
-    (fields.country ? `Country: ${fields.country}\n` : '') +
-    (fields.researchInterest ? `Research Interest: ${fields.researchInterest}\n` : '') +
-    (fields.timeline ? `Timeline: ${fields.timeline}\n` : '') +
-    (fields.budget ? `Budget: ${fields.budget}\n` : '') +
-    (fields.referralSource ? `Referral Source: ${fields.referralSource}\n` : '') +
-    `\nMessage:\n${fields.message}\n\n` +
-    `--- NOTE ---\nThe online form encountered an error (${errorDetails}). Please process this inquiry manually.`
-  );
-  window.location.href = `mailto:${ERROR_EMAIL}?subject=${subject}&body=${body}`;
-}
+const ERROR_EMAIL = 'admin@bionixus.com';
 
 type ContactSectionProps = {
   /** When true (homepage only), show a short CTA instead of the full proposal form to avoid near-duplicate HTML vs `/contact`. */
@@ -125,6 +91,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [fallbackMailto, setFallbackMailto] = useState<string | null>(null);
   const basePath = languagePaths[language] || '/';
   const form = getContactFormStrings(language);
   const c = t.contact as Record<string, string | undefined>;
@@ -161,7 +128,11 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
 
     setErrors(next);
     setSubmitError(null);
-    if (Object.keys(next).length > 0) return;
+    setFallbackMailto(null);
+    if (Object.keys(next).length > 0) {
+      focusFirstInvalidField(form, next);
+      return;
+    }
 
     const firstName = (data.get('firstName') as string)?.trim() || '';
     const lastName = (data.get('lastName') as string)?.trim() || '';
@@ -196,10 +167,26 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
     data.set('utmContent', utmContent);
     data.set('utmTerm', utmTerm);
 
-    const errorFields: ErrorEmailFields = {
-      firstName, lastName, workEmail, company, phone, country,
-      researchInterest, timeline, budget, referralSource, message,
-    };
+    const mailtoFor = (errorDetails?: string) =>
+      leadFallbackMailto(
+        ERROR_EMAIL,
+        `Proposal request — ${firstName} ${lastName}`.trim(),
+        {
+          'First name': firstName,
+          'Last name': lastName,
+          Email: workEmail,
+          Company: company,
+          Phone: phone,
+          Country: country,
+          'Research interest': researchInterest,
+          Timeline: timeline,
+          Budget: budget,
+          'Referral source': referralSource,
+          Message: message,
+          Page: currentUrl,
+        },
+        errorDetails,
+      );
 
     setSubmitting(true);
     try {
@@ -240,18 +227,16 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
         } catch {
           // Newsletter subscribe is optional once the lead itself is saved.
         }
-      } else if (result.networkError) {
-        setSubmitError(v('error'));
-        sendErrorEmail(errorFields, `Network/client error: ${result.networkError}`);
+      } else if (result.highLevelStatus === 400 && result.error) {
+        setSubmitError(result.error);
+        focusFirstInvalidField(form, { workEmail: result.error });
       } else {
-        const errorMsg = result.error || v('error');
-        setSubmitError(errorMsg);
-        sendErrorEmail(errorFields, errorMsg);
+        setSubmitError(result.networkError ? v('error') : result.error || v('error'));
+        setFallbackMailto(mailtoFor(result.networkError || result.error));
       }
     } catch (err) {
-      const errorMsg = err instanceof Error ? err.message : v('error');
       setSubmitError(v('error'));
-      sendErrorEmail(errorFields, `Network/client error: ${errorMsg}`);
+      setFallbackMailto(mailtoFor(err instanceof Error ? err.message : 'network error'));
     } finally {
       setSubmitting(false);
     }
@@ -396,7 +381,14 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
       }
     >
       {submitted ? (
-        <div className="success-message text-center" lang={language}>
+        <div
+          className="success-message text-center focus:outline-none"
+          lang={language}
+          role="status"
+          aria-live="polite"
+          tabIndex={-1}
+          ref={revealStatus}
+        >
           <div className="success-icon w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-primary">
             ✓
           </div>
@@ -677,20 +669,33 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
                     {errors.consent && <p className="text-sm text-destructive mt-1">{errors.consent}</p>}
                   </div>
 
-                  {submitError && (
-                    <p className="text-sm text-destructive">{submitError}</p>
-                  )}
+                  <div aria-live="polite">
+                    {submitError ? (
+                      <p className="text-sm text-destructive" role="alert">
+                        {submitError}
+                        {fallbackMailto ? (
+                          <>
+                            {' '}
+                            <a href={fallbackMailto} className="font-medium underline">
+                              {ERROR_EMAIL}
+                            </a>
+                          </>
+                        ) : null}
+                      </p>
+                    ) : null}
+                  </div>
 
                   <button
                     type="submit"
                     disabled={submitting}
+                    aria-busy={submitting}
                     className={`w-full py-4 font-semibold transition-opacity disabled:opacity-70 disabled:cursor-not-allowed ${
                       premium
                         ? 'bg-accent text-accent-foreground rounded-md hover:brightness-105'
                         : 'bg-primary text-primary-foreground rounded-lg hover:opacity-90'
                     }`}
                   >
-                    {submitting ? '...' : t.contact.submitButton}
+                    {submitting ? form.submitting : t.contact.submitButton}
                   </button>
                 </form>
               </>
