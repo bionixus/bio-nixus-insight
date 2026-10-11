@@ -49,7 +49,9 @@
 6. After each task, output a DEPLOY CHECKLIST of files changed.
 
 ## Editorial authors
-- USA, Canada, Europe: European or American names from the Sanity author roster (`src/data/editorialAuthors.ts`). Never Arab names on those pages.
-- Middle East / GCC / MENA: keep Arab names (Mohammad Ashour, Dina Ibrahim).
-- Never attribute Mohammad Alsaadany on “best / top market research companies” comparison pages.
-- Blogs: retarget authors to this rule and republish unless GSC shows position ≤ 20 or clicks > 0.
+- New articles in every region, the Middle East included, rotate six authors
+ from the Sanity roster (`WESTERN_AUTHORS` in `src/data/editorialAuthors.ts`),
+ all titled Global Research Manager: Laura McConaughey, Sarah Chen, Martha
+ DeVito, Anna Cuban, Armela Belba and Ivona Gunjova.
+- Blogs: when a live blog's author changes, republish it, unless GSC shows
+ position ≤ 20 or clicks > 0; those URLs keep the live author.

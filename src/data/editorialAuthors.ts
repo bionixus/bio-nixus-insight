@@ -21,7 +21,7 @@ export type EditorialAuthor = {
   jobTitle: string;
 };
 
-/** European / American names in Sanity — use on USA, Canada, and Europe. */
+/** The six authors rotated on new articles in every region, all titled Global Research Manager. */
 export const WESTERN_AUTHORS: readonly EditorialAuthor[] = [
   {
     id: '5373a02d-e67d-4415-9739-33ee8f4da7e2',
@@ -61,7 +61,7 @@ export const WESTERN_AUTHORS: readonly EditorialAuthor[] = [
   },
 ] as const;
 
-/** Arab names in Sanity — use on Middle East / GCC / MENA (not Alsaadany on comparison pages). */
+/** MENA roster in Sanity; getEditorialAuthor() returns these for Middle East paths. */
 export const MENA_AUTHORS: readonly EditorialAuthor[] = [
   {
     id: 'SIsz67NbFQI3M2UuZVXjTU',
@@ -306,7 +306,7 @@ export function getEditorialAuthor(options: {
   if (region === 'mena') {
     return pickStable(MENA_AUTHORS, options.path);
   }
-  // APAC / LATAM / unscoped comparison pages: Western names, never Alsaadany.
+  // APAC / LATAM / unscoped pages use the six rotating authors.
   return pickStable(WESTERN_AUTHORS, options.path);
 }
 
