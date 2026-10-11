@@ -19,7 +19,7 @@ const FREE_MAIL_WARNING =
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Scheduling link shown on the thank-you state. */
-export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://schedule.bionixus.com/meeting-with-bionixus';
+export const QUALIFICATION_FORM_SCHEDULING_URL: string | null = 'https://research.bionixus.co.uk/widget/bookings/bionixus';
 
 export type QualificationFormProps = {
   /** Unique id for analytics and the `formVariant` sent to HighLevel and Formspree, e.g. 'pharma_companies_uae_cta' */

@@ -144,7 +144,7 @@ describe('QualificationForm ("Book a call")', () => {
     expect(status).toHaveFocus();
     expect(screen.getByRole('link', { name: /pick a time for your call/i })).toHaveAttribute(
       'href',
-      'https://schedule.bionixus.com/meeting-with-bionixus',
+      'https://research.bionixus.co.uk/widget/bookings/bionixus',
     );
     expect(calledUrls()).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]));
     expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({
