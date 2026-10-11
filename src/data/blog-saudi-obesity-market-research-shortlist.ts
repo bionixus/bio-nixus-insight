@@ -34,6 +34,13 @@ export const SAUDI_OBESITY_SHORTLIST_COVER_IMAGE =
 export const SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT =
   'BioNixus navy and gold cover: who does obesity market research in Saudi Arabia, a 2026 shortlist of obesity and GLP-1 firms';
 
+/** Text-free version of the cover for the on-page hero and blog cards, where the h1 sits over the image. */
+export const SAUDI_OBESITY_SHORTLIST_HERO_IMAGE =
+  '/images/blog/who-does-obesity-market-research-saudi-arabia-hero.jpg';
+
+export const SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT =
+  'Navy and gold BioNixus artwork for the Saudi Arabia obesity market research shortlist: anonymous provider bars grouped into three research types';
+
 export const SAUDI_OBESITY_SHORTLIST_META_TITLE = 'Who Does Obesity Market Research in Saudi Arabia? (2026)';
 
 export const SAUDI_OBESITY_SHORTLIST_META_DESCRIPTION =
@@ -649,8 +656,8 @@ export const SAUDI_OBESITY_SHORTLIST_HARDCODED_POST: BlogPost = {
   breadcrumbLabel: SAUDI_OBESITY_SHORTLIST_BREADCRUMB_LABEL,
   displaySubtitle: SAUDI_OBESITY_SHORTLIST_DISPLAY_SUBTITLE,
   tags: [...SAUDI_OBESITY_SHORTLIST_TAGS],
-  coverImage: SAUDI_OBESITY_SHORTLIST_COVER_IMAGE,
-  coverImageAlt: SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT,
+  coverImage: SAUDI_OBESITY_SHORTLIST_HERO_IMAGE,
+  coverImageAlt: SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT,
   ogImage: SAUDI_OBESITY_SHORTLIST_COVER_IMAGE,
   ogImageAlt: SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT,
   ogTitle: SAUDI_OBESITY_SHORTLIST_META_TITLE,

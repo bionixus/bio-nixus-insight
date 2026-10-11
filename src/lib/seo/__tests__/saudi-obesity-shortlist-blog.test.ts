@@ -20,6 +20,8 @@ import {
   SAUDI_OBESITY_SHORTLIST_EXECUTIVE_SUMMARY_HTML,
   SAUDI_OBESITY_SHORTLIST_FAQ,
   SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
+  SAUDI_OBESITY_SHORTLIST_HERO_IMAGE,
+  SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT,
   SAUDI_OBESITY_SHORTLIST_META_DESCRIPTION,
   SAUDI_OBESITY_SHORTLIST_META_TITLE,
   SAUDI_OBESITY_SHORTLIST_PATH,
@@ -104,8 +106,16 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: server render', (
     expect(countWords(visible)).toBeGreaterThan(2500);
   });
 
+  it('puts the text-free artwork behind the h1 and keeps the titled card for social sharing', () => {
+    expect(html).toContain(`src="${SAUDI_OBESITY_SHORTLIST_HERO_IMAGE}" alt="${SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT}"`);
+    expect(html).not.toContain(`src="${SAUDI_OBESITY_SHORTLIST_COVER_IMAGE}"`);
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.ogImage).toBe(SAUDI_OBESITY_SHORTLIST_COVER_IMAGE);
+  });
+
   it('renders a visible breadcrumb trail that matches the BreadcrumbList', () => {
     const nav = /<nav[^>]*aria-label="Breadcrumb"[\s\S]*?<\/nav>/.exec(html)?.[0] ?? '';
+    // The hero is dark; the critical CSS would otherwise give the <nav> a white background.
+    expect(nav).toMatch(/^<nav[^>]*class="[^"]*\bbg-transparent\b/);
     expect(text(nav)).toBe('Home / Blog / Saudi obesity research shortlist');
     const crumbs = jsonLd.find((node) => node['@type'] === 'BreadcrumbList');
     expect(crumbs?.itemListElement.map((item: JsonLdNode) => item.name)).toEqual([

@@ -1,5 +1,8 @@
 /**
- * Cover / OG image for /blog/who-does-obesity-market-research-saudi-arabia (1200×630 JPEG).
+ * Images for /blog/who-does-obesity-market-research-saudi-arabia (both 1200×630 JPEG):
+ * - `-cover.jpg`: titled card for Open Graph, Twitter and the JSON-LD ImageObject.
+ * - `-hero.jpg`: the same artwork with no text, used as the on-page hero and blog card image,
+ *   because BlogPost.tsx lays the h1 over the cover and baked-in text would clash with it.
  * Brand palette from src/index.css; display type is Playfair Display (falls back to Georgia),
  * labels are Inter. The right-hand panel is an anonymous "8 providers · 3 research types"
  * motif: no company names, logos or people.
@@ -12,7 +15,9 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const outPath = path.join(root, 'public/images/blog/who-does-obesity-market-research-saudi-arabia-cover.jpg');
+const outDir = path.join(root, 'public/images/blog');
+const COVER_PATH = path.join(outDir, 'who-does-obesity-market-research-saudi-arabia-cover.jpg');
+const HERO_PATH = path.join(outDir, 'who-does-obesity-market-research-saudi-arabia-hero.jpg');
 
 const NAVY_DEEP = '#101C30';
 const NAVY_MEDIUM = '#22345A';
@@ -27,8 +32,8 @@ const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 const PANEL = { x: 724, y: 112, w: 404, h: 408 };
 const BAR_X = 792;
 
-/** @param {{ label: string; y: number; bars: { w: number; pick?: boolean }[]; gap: number; h: number }} tier */
-function tierSvg({ label, y, bars, gap, h }) {
+/** @param {{ label: string; y: number; bars: { w: number; pick?: boolean }[]; gap: number; h: number; withText: boolean }} tier */
+function tierSvg({ label, y, bars, gap, h, withText }) {
   const rows = bars
     .map((bar, i) => {
       const cy = y + 26 + i * gap;
@@ -41,11 +46,31 @@ function tierSvg({ label, y, bars, gap, h }) {
         <rect x="${BAR_X}" y="${cy - h / 2}" width="${bar.w}" height="${h}" rx="${h / 2}" ${fill}/>`;
     })
     .join('\n');
-  return `<text x="${PANEL.x + 32}" y="${y}" fill="${CREAM}" font-family="${SANS}" font-size="15" font-weight="600">${label}</text>
+  const heading = withText
+    ? `<text x="${PANEL.x + 32}" y="${y}" fill="${CREAM}" font-family="${SANS}" font-size="15" font-weight="600">${label}</text>`
+    : `<rect x="${PANEL.x + 32}" y="${y - 11}" width="${label.length * 6.5}" height="9" rx="4.5" fill="${CREAM}" fill-opacity="0.5"/>`;
+  return `${heading}
   ${rows}`;
 }
 
-const svg = `<?xml version="1.0" encoding="UTF-8"?>
+const TITLE_BLOCK = `<rect x="72" y="70" width="352" height="34" rx="17" fill="${GOLD}" fill-opacity="0.12" stroke="${GOLD}" stroke-opacity="0.8"/>
+  <text x="94" y="92" fill="${GOLD_LIGHT}" font-family="${SANS}" font-size="13.5" font-weight="700" letter-spacing="2.4">OBESITY · GLP-1 · SAUDI ARABIA</text>
+
+  <text font-family="${SERIF}" font-weight="700" font-size="58" letter-spacing="-0.6">
+    <tspan x="72" y="192" fill="${CREAM}">Who does obesity</tspan>
+    <tspan x="72" y="262" fill="${CREAM}">market research in</tspan>
+    <tspan x="72" y="332" fill="${GOLD_LIGHT}">Saudi Arabia?</tspan>
+  </text>
+
+  <rect x="72" y="366" width="76" height="4" rx="2" fill="${GOLD}"/>
+  <text x="72" y="414" fill="${CREAM}" fill-opacity="0.92" font-family="${SANS}" font-size="25" font-weight="600">A 2026 shortlist: 8 providers compared</text>
+  <text x="72" y="450" fill="${MUTED}" font-family="${SANS}" font-size="19.5" font-weight="500">by research type, with SFDA, GASTAT and WHO evidence</text>
+
+  <text x="72" y="560" fill="${GOLD}" font-family="${SERIF}" font-size="27" font-weight="700">BioNixus Insights</text>
+  <text x="72" y="592" fill="#7F93AE" font-family="${SANS}" font-size="14" font-weight="600" letter-spacing="2.2">HEALTHCARE &amp; PHARMACEUTICAL MARKET RESEARCH</text>`;
+
+/** @param {{ withText: boolean }} options */
+const coverSvg = ({ withText }) => `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -82,39 +107,33 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <circle cx="1130" cy="560" r="300" fill="none" stroke="${GOLD_LIGHT}" stroke-opacity="0.06" stroke-width="1.5"/>
   <rect x="0" y="0" width="1200" height="6" fill="url(#goldBar)"/>
 
-  <rect x="72" y="70" width="352" height="34" rx="17" fill="${GOLD}" fill-opacity="0.12" stroke="${GOLD}" stroke-opacity="0.8"/>
-  <text x="94" y="92" fill="${GOLD_LIGHT}" font-family="${SANS}" font-size="13.5" font-weight="700" letter-spacing="2.4">OBESITY · GLP-1 · SAUDI ARABIA</text>
-
-  <text font-family="${SERIF}" font-weight="700" font-size="58" letter-spacing="-0.6">
-    <tspan x="72" y="192" fill="${CREAM}">Who does obesity</tspan>
-    <tspan x="72" y="262" fill="${CREAM}">market research in</tspan>
-    <tspan x="72" y="332" fill="${GOLD_LIGHT}">Saudi Arabia?</tspan>
-  </text>
-
-  <rect x="72" y="366" width="76" height="4" rx="2" fill="${GOLD}"/>
-  <text x="72" y="414" fill="${CREAM}" fill-opacity="0.92" font-family="${SANS}" font-size="25" font-weight="600">A 2026 shortlist: 8 providers compared</text>
-  <text x="72" y="450" fill="${MUTED}" font-family="${SANS}" font-size="19.5" font-weight="500">by research type, with SFDA, GASTAT and WHO evidence</text>
-
-  <text x="72" y="560" fill="${GOLD}" font-family="${SERIF}" font-size="27" font-weight="700">BioNixus Insights</text>
-  <text x="72" y="592" fill="#7F93AE" font-family="${SANS}" font-size="14" font-weight="600" letter-spacing="2.2">HEALTHCARE &amp; PHARMACEUTICAL MARKET RESEARCH</text>
+  ${withText ? TITLE_BLOCK : ''}
 
   <g filter="url(#panelShadow)">
     <rect x="${PANEL.x}" y="${PANEL.y}" width="${PANEL.w}" height="${PANEL.h}" rx="22" fill="${NAVY_DEEP}" fill-opacity="0.72" stroke="${GOLD_LIGHT}" stroke-opacity="0.38"/>
   </g>
-  <text x="${PANEL.x + 32}" y="${PANEL.y + 40}" fill="${GOLD_LIGHT}" font-family="${SANS}" font-size="12.5" font-weight="700" letter-spacing="2.4">8 PROVIDERS · 3 RESEARCH TYPES</text>
+  ${
+    withText
+      ? `<text x="${PANEL.x + 32}" y="${PANEL.y + 40}" fill="${GOLD_LIGHT}" font-family="${SANS}" font-size="12.5" font-weight="700" letter-spacing="2.4">8 PROVIDERS · 3 RESEARCH TYPES</text>`
+      : `<rect x="${PANEL.x + 32}" y="${PANEL.y + 30}" width="214" height="9" rx="4.5" fill="${GOLD_LIGHT}" fill-opacity="0.7"/>`
+  }
   <rect x="${PANEL.x + 32}" y="${PANEL.y + 56}" width="${PANEL.w - 64}" height="1" fill="${CREAM}" fill-opacity="0.16"/>
 
-  ${tierSvg({ label: 'Custom primary research', y: 206, gap: 28, h: 14, bars: [{ w: 290, pick: true }, { w: 236 }] })}
-  ${tierSvg({ label: 'Data and analytics', y: 306, gap: 28, h: 14, bars: [{ w: 262 }] })}
-  ${tierSvg({ label: 'Report publishers', y: 378, gap: 22, h: 11, bars: [{ w: 280 }, { w: 248 }, { w: 268 }, { w: 220 }, { w: 244 }] })}
+  ${tierSvg({ label: 'Custom primary research', y: 206, gap: 28, h: 14, withText, bars: [{ w: 290, pick: true }, { w: 236 }] })}
+  ${tierSvg({ label: 'Data and analytics', y: 306, gap: 28, h: 14, withText, bars: [{ w: 262 }] })}
+  ${tierSvg({ label: 'Report publishers', y: 378, gap: 22, h: 11, withText, bars: [{ w: 280 }, { w: 248 }, { w: 268 }, { w: 220 }, { w: 244 }] })}
 </svg>`;
 
-fs.mkdirSync(path.dirname(outPath), { recursive: true });
-await sharp(Buffer.from(svg), { density: 144 })
-  .resize(1200, 630, { fit: 'cover' })
-  .jpeg({ quality: 90, progressive: true, mozjpeg: true })
-  .toFile(outPath);
-
-const meta = await sharp(outPath).metadata();
-const { size } = fs.statSync(outPath);
-console.log(`Cover written: ${path.relative(root, outPath)} (${meta.width}×${meta.height}, ${(size / 1024).toFixed(1)} KB)`);
+fs.mkdirSync(outDir, { recursive: true });
+for (const [outPath, withText] of [
+  [COVER_PATH, true],
+  [HERO_PATH, false],
+]) {
+  await sharp(Buffer.from(coverSvg({ withText })), { density: 144 })
+    .resize(1200, 630, { fit: 'cover' })
+    .jpeg({ quality: 90, progressive: true, mozjpeg: true })
+    .toFile(outPath);
+  const meta = await sharp(outPath).metadata();
+  const { size } = fs.statSync(outPath);
+  console.log(`Written: ${path.relative(root, outPath)} (${meta.width}×${meta.height}, ${(size / 1024).toFixed(1)} KB)`);
+}
