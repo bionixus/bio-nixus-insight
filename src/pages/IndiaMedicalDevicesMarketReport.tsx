@@ -47,6 +47,18 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
     question: 'How does BioNixus support Indian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Indian medical device manufacturers in entering GCC and MENA markets. India\'s growing medtech manufacturing base — particularly in diagnostics, consumables, and commodity medical supplies — has strong natural markets in GCC countries where Indian-manufactured products have established procurement histories. BioNixus provides SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and GCC-wide regulatory pathway intelligence; NUPCO and hospital procurement data; distributor network mapping; and primary research with biomedical engineers and procurement managers. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
+  {
+    question: 'Which Indian hospital chains matter most for premium device uptake?',
+    answer: 'Apollo Hospitals, Fortis Healthcare, Max Healthcare, and Manipal Hospitals operate the largest private installed bases for imaging, cardiac, and orthopaedic platforms. Government empanelment under Ayushman Bharat drives volume in tier-2 cities through different price points. A study that only samples metro consultants misses half of the procurement logic — BioNixus segments by chain, empanelment status, and procedure volume when the brief requires account-level evidence.',
+  },
+  {
+    question: 'How do Indian device companies balance PLI manufacturing with GCC tenders?',
+    answer: 'PLI incentives favour incremental domestic production in notified categories, while GCC tenders (especially NUPCO and HMC frameworks) reward documented quality, prior supply history, and local distributor reach. Indian OEMs often win consumables and imaging service bundles before premium implant platforms. BioNixus maps which SKU stories travel to Riyadh or Doha versus which remain India-only, using procurement interviews rather than import statistics alone.',
+  },
+  {
+    question: 'Where should I start for India device market sizing versus account data?',
+    answer: 'Use this report and linked India healthcare pages for regulatory and segment context. Brief BioNixus when you need hospital, distributor, or SKU-level evidence — syndicated imports data alone will not show which chain actually stocks your device.',
+  },
 ], 'india');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/india-medical-devices-market-report');
@@ -62,7 +74,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-11',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -77,7 +89,7 @@ const jsonLd = [
     countryName: "India",
     marketSlug: "india",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-10-11",
   })
 ];
 
@@ -117,7 +129,17 @@ const IndiaMedicalDevicesMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">India is among the world's fastest-growing medical device markets — fourth-largest in Asia and growing at 8% CAGR. The PLI scheme and Medical Device Parks are driving a domestic manufacturing transformation that is creating Indian-branded device companies with growing international ambitions, including in GCC markets.</p>
-          <p className="text-muted-foreground leading-relaxed">See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Public procurement runs through Ayushman Bharat empanelled hospitals and state health programmes, while premium private chains (Apollo, Fortis, Max) set international price points for imaging and implants. CDSCO classification (Classes A–D) and NPPA price caps on selected implant categories mean commercial teams must model channel mix, not import volume alone. BioNixus fields procurement and biomedical engineer interviews when the brief stops at a named hospital or distributor — complementing syndicated India device audits.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            For procurement-led studies, BioNixus interviews biomedical engineers, central store managers, and distributor principals — not only clinicians — because CDSCO registration and hospital committee approval are separate gates from monthly purchase orders. Device tenders often split between state hospitals, CGHS empanelled centres, and corporate chains; we document which channel your SKU actually wins before scaling a GCC export story.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link>,{' '}
+            <Link to="/pharmaceutical-companies-india" className="text-primary hover:underline font-medium">pharmaceutical companies in India</Link>, and{' '}
+            <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.
+          </p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="india" countryName="India" variant="medical-devices" />

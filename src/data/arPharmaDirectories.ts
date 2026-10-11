@@ -29,6 +29,7 @@ export type ArPharmaDirectoryConfig = {
 };
 
 const PUBLISHED = '2026-09-02';
+const MODIFIED = '2026-10-11';
 
 function pathFor(country: ArPharmaCountrySlug): string {
   return `/ar/pharmaceutical-companies-${country}`;
@@ -97,7 +98,7 @@ const EGYPT: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-egypt',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const UAE: ArPharmaDirectoryConfig = {
@@ -164,7 +165,7 @@ const UAE: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-uae',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const KSA: ArPharmaDirectoryConfig = {
@@ -231,7 +232,7 @@ const KSA: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-saudi-arabia',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const KUWAIT: ArPharmaDirectoryConfig = {
@@ -297,7 +298,7 @@ const KUWAIT: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-kuwait',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const OMAN: ArPharmaDirectoryConfig = {
@@ -363,7 +364,7 @@ const OMAN: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-oman',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const QATAR: ArPharmaDirectoryConfig = {
@@ -429,7 +430,7 @@ const QATAR: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-qatar',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 export const AR_PHARMA_DIRECTORIES: ArPharmaDirectoryConfig[] = [EGYPT, UAE, KSA, KUWAIT, OMAN, QATAR];

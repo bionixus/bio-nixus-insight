@@ -21,7 +21,7 @@ export interface MarketStatRegion {
   stats: MarketStat[];
 }
 
-export const MARKET_STATISTICS_LAST_UPDATED = '2026-07-22';
+export const MARKET_STATISTICS_LAST_UPDATED = '2026-10-11';
 
 export const MARKET_STATISTICS: MarketStatRegion[] = [
   {
@@ -189,6 +189,52 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
         sourceHref: '/canada-healthcare-market-report',
       },
       { stat: 'Approximately 5.3 million Spanish adults have diabetes (14.8% prevalence).', source: 'Sociedad Española de Diabetes (SED), 2023' },
+      {
+        stat: "Egypt's pharmaceutical market is estimated at USD 5.5–6.5 billion in 2026 with roughly 90% of medicines produced domestically.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/pharmaceutical-companies-egypt',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Brazil's healthcare market is estimated at USD 155–175 billion in 2026 — the largest in Latin America.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "India's medical devices market is estimated at USD 14–16 billion in 2026, among the fastest-growing in Asia-Pacific.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/india-medical-devices-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
+  },
+];
+
+export const MARKET_STATISTICS_FAQ: { question: string; answer: string }[] = [
+  {
+    question: 'How should I cite these healthcare market statistics?',
+    answer:
+      'Each card names its primary source (WHO, IDF, national registries, or industry bodies). Figures labeled BioNixus modeled estimate are internal market-sizing ranges tied to a BioNixus report page when sourceHref is present. For client deliverables, cite the original source where third-party; cite BioNixus only for modeled estimates.',
+  },
+  {
+    question: 'Are these statistics updated for 2026?',
+    answer:
+      'The page is refreshed when underlying BioNixus report pages or major third-party releases change. The dateModified field in schema reflects the last editorial pass; individual stats retain their originating source year where the upstream dataset is older.',
+  },
+  {
+    question: 'How is this page different from IQVIA or syndicated dashboards?',
+    answer:
+      'This is a curated, citation-forward reference for sizing and epidemiology — not account-level sales. BioNixus primary research answers hospital, pharmacy, payer, and SKU questions that national audits cannot. Use syndicated data for category totals; brief BioNixus when the decision stops at a named account.',
+  },
+  {
+    question: 'Which regions have the deepest stat coverage?',
+    answer:
+      'MENA and GCC include Saudi, UAE, Egypt, and GCC-wide device sizing. Asia-Pacific covers China, Japan, India, South Korea, and Singapore. Global includes US, UK, Germany, Brazil, Canada, and Spain benchmarks for cross-market models.',
+  },
+  {
+    question: 'Can BioNixus provide a custom data cut?',
+    answer:
+      'Yes. Request a scoped proposal via the contact form or admin@bionixus.com. Typical custom cuts combine sourced epidemiology with primary fieldwork in 48 countries; proposals are returned within 48 hours of a brief.',
   },
 ];
