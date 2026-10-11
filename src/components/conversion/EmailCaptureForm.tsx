@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { revealStatus } from '@/lib/formFeedback';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -15,11 +16,7 @@ type EmailCaptureFormProps = {
   onSubmitClick?: () => void;
 };
 
-/**
- * Work-email capture that used to full-page POST to Formspree.
- * JS submits Formspree and HighLevel together and stays on the page.
- * Without JS the form still posts to Formspree.
- */
+/** One-field work-email capture for report and summary requests; saved to HighLevel and Formspree. */
 export function EmailCaptureForm({
   formVariant,
   requestType,
@@ -42,6 +39,7 @@ export function EmailCaptureForm({
     const email = (data.get('email') as string)?.trim() || '';
     if (!EMAIL_RE.test(email)) {
       setError('Please enter a valid work email.');
+      form.querySelector<HTMLInputElement>('input[name="email"]')?.focus();
       return;
     }
     onSubmitClick?.();
@@ -49,11 +47,14 @@ export function EmailCaptureForm({
     setSubmitting(true);
     try {
       const result = await submitLeadDual(data);
-      if (result.ok) setSubmitted(true);
+      if (result.ok) {
+        setSubmitted(true);
+        form.reset();
+      }
       else if (result.highLevelStatus === 400 && result.error) setError(result.error);
-      else setError('Something went wrong. Email digital@bionixus.uk and we will send it.');
+      else setError('Something went wrong. Email admin@bionixus.com and we will send it.');
     } catch {
-      setError('Something went wrong. Email digital@bionixus.uk and we will send it.');
+      setError('Something went wrong. Email admin@bionixus.com and we will send it.');
     } finally {
       setSubmitting(false);
     }
@@ -61,7 +62,7 @@ export function EmailCaptureForm({
 
   if (submitted) {
     return (
-      <p className="text-sm text-foreground" role="status">
+      <p className="text-sm text-foreground focus:outline-none" role="status" aria-live="polite" tabIndex={-1} ref={revealStatus}>
         Thanks — we will send this to your work email within one business day.
       </p>
     );
@@ -69,7 +70,6 @@ export function EmailCaptureForm({
 
   return (
     <form
-      method="POST"
       onSubmit={handleSubmit}
       className="grid sm:grid-cols-[1fr_auto] gap-3"
       noValidate
@@ -98,14 +98,21 @@ export function EmailCaptureForm({
           type="email"
           name="email"
           required
+          aria-invalid={Boolean(error)}
+          aria-describedby={error ? `${formVariant}-email-error` : undefined}
           placeholder={placeholder}
           className="h-11 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
         />
-        {error ? <p className="mt-2 text-sm text-destructive">{error}</p> : null}
+        {error ? (
+          <p id={`${formVariant}-email-error`} className="mt-2 text-sm text-destructive" role="alert">
+            {error}
+          </p>
+        ) : null}
       </div>
       <button
         type="submit"
         disabled={submitting}
+        aria-busy={submitting}
         className="inline-flex items-center justify-center rounded-lg bg-primary px-5 h-11 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {submitting ? 'Sending…' : submitLabel}

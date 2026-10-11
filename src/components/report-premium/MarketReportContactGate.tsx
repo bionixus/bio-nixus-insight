@@ -8,7 +8,7 @@ interface MarketReportContactGateProps {
   onSuccess: () => void;
 }
 
-/** Contact gate for gated market-report white papers (Formspree via shared case-study gate). */
+/** Contact gate for gated market-report white papers (shared case-study gate: HighLevel + Formspree). */
 export function MarketReportContactGate({
   open,
   onOpenChange,

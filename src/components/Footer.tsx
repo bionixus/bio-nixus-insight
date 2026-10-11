@@ -12,6 +12,7 @@ import {
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths, getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { ClientPortalDialog } from '@/components/ClientPortalDialog';
+import { submitLeadDual } from '@/lib/submitLeadDual';
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -36,6 +37,7 @@ const Footer = () => {
   const [nlConsent, setNlConsent] = useState(false);
   const [nlLoading, setNlLoading] = useState(false);
   const [nlStatus, setNlStatus] = useState<'idle' | 'success' | 'already' | 'error'>('idle');
+  const [nlError, setNlError] = useState<string | null>(null);
   const f = t.footer as Record<string, string>;
   const footerExtra = t.footer as typeof t.footer & {
     clientReviewsLink?: string;
@@ -46,30 +48,51 @@ const Footer = () => {
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!nlName.trim() || !nlEmail.trim() || !nlConsent) return;
+    const name = nlName.trim();
+    const email = nlEmail.trim();
+    if (!name || !email || !nlConsent) return;
     setNlLoading(true);
     setNlStatus('idle');
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName: nlName.trim(), email: nlEmail.trim(), language }),
-      });
-      const data = await res.json();
-      if (data.success && data.alreadySubscribed) {
-        setNlStatus('already');
-      } else if (data.success) {
-        setNlStatus('success');
-        setNlName('');
-        setNlEmail('');
-      } else {
-        setNlStatus('error');
-      }
-    } catch {
+    setNlError(null);
+
+    const lead = new FormData();
+    lead.set('firstName', name);
+    lead.set('email', email);
+    lead.set('language', language);
+    lead.set('consent', 'Newsletter opt-in');
+    lead.set('formVariant', 'footer_newsletter');
+    lead.set('requestType', 'Newsletter Signup');
+    lead.set('_subject', `Newsletter signup — ${name}`);
+
+    const subscribe = fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ firstName: name, email, language, source: 'footer_newsletter' }),
+    }).then(async (res) => (await res.json().catch(() => ({}))) as {
+      success?: boolean;
+      alreadySubscribed?: boolean;
+      error?: string;
+    });
+
+    const [subscribeSettled, leadSettled] = await Promise.allSettled([subscribe, submitLeadDual(lead)]);
+    const subscribed = subscribeSettled.status === 'fulfilled' ? subscribeSettled.value : null;
+    const leadResult = leadSettled.status === 'fulfilled' ? leadSettled.value : null;
+
+    if (subscribed?.success && subscribed.alreadySubscribed) {
+      setNlStatus('already');
+    } else if (subscribed?.success || leadResult?.ok) {
+      setNlStatus('success');
+      setNlName('');
+      setNlEmail('');
+      setNlConsent(false);
+    } else {
       setNlStatus('error');
-    } finally {
-      setNlLoading(false);
+      setNlError(
+        (leadResult?.highLevelStatus === 400 && leadResult.error) ||
+          (typeof subscribed?.error === 'string' ? subscribed.error : null),
+      );
     }
+    setNlLoading(false);
   };
 
   const handleLogoClick = () => {
@@ -125,12 +148,13 @@ const Footer = () => {
               <p className="text-primary-foreground/60 text-sm mb-3">
                 {f.newsletterDesc || 'Get healthcare insights delivered to your inbox.'}
               </p>
+              <div aria-live="polite">
               {nlStatus === 'already' ? (
-                <p className="text-amber-300 text-sm font-medium">
+                <p className="text-amber-300 text-sm font-medium" role="status">
                   ✉ {f.newsletterAlready || 'You are already subscribed — check your email for our latest updates!'}
                 </p>
               ) : nlStatus === 'success' ? (
-                <p className="text-green-300 text-sm font-medium">
+                <p className="text-green-300 text-sm font-medium" role="status">
                   ✓ {f.newsletterSuccess || 'Check your email to verify!'}
                 </p>
               ) : (
@@ -141,6 +165,8 @@ const Footer = () => {
                       value={nlName}
                       onChange={(e) => setNlName(e.target.value)}
                       placeholder={f.newsletterPlaceholder || 'Your name'}
+                      aria-label={f.newsletterPlaceholder || 'Your name'}
+                      autoComplete="name"
                       required
                       className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-white/40 transition-colors"
                     />
@@ -149,12 +175,15 @@ const Footer = () => {
                       value={nlEmail}
                       onChange={(e) => setNlEmail(e.target.value)}
                       placeholder={f.newsletterEmailPlaceholder || 'Work email'}
+                      aria-label={f.newsletterEmailPlaceholder || 'Work email'}
+                      autoComplete="email"
                       required
                       className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-white/40 transition-colors"
                     />
                     <button
                       type="submit"
                       disabled={nlLoading || !nlConsent}
+                      aria-busy={nlLoading}
                       className="px-4 py-2 rounded-lg bg-white text-primary font-semibold text-sm hover:bg-white/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
                     >
                       {nlLoading
@@ -182,10 +211,11 @@ const Footer = () => {
                 </form>
               )}
               {nlStatus === 'error' && (
-                <p className="text-red-300 text-sm mt-1">
-                  {f.newsletterError || 'Something went wrong. Try again.'}
+                <p className="text-red-300 text-sm mt-1" role="alert">
+                  {nlError || f.newsletterError || 'Something went wrong. Try again.'}
                 </p>
               )}
+              </div>
             </div>
 
             <div className="flex gap-4">

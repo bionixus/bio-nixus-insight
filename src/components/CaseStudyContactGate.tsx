@@ -13,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { focusFirstInvalidField, revealStatus } from '@/lib/formFeedback';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s+\-().]{8,}$/;
@@ -57,6 +58,7 @@ export function CaseStudyContactGate({
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [succeeded, setSucceeded] = useState(false);
 
   const c = t.contact as Record<string, string | undefined>;
   const validation = (t.contact as { validation?: ContactGateValidation }).validation;
@@ -64,6 +66,29 @@ export function CaseStudyContactGate({
   const cs = (t as { caseStudiesPage?: Record<string, string> }).caseStudiesPage ?? {};
   const optional = cs.optional ?? 'Optional';
   const title = dialogTitle ?? (cs.requestAccessTitle ?? 'Enter your details to view this case study');
+  const successTitle = cs.accessGrantedTitle ?? 'Thank you — access unlocked';
+  const successBody =
+    cs.accessGrantedBody ?? 'Your details are saved and our team may follow up. Continue to open the content.';
+  const continueLabel = cs.continueLabel ?? 'Continue';
+
+  /** Unlocks the gated content once the visitor leaves the confirmation, however they close it. */
+  const finish = () => {
+    setSucceeded(false);
+    onSuccess();
+    onOpenChange(false);
+  };
+
+  const handleOpenChange = (next: boolean) => {
+    if (!next && succeeded) {
+      finish();
+      return;
+    }
+    if (!next) {
+      setErrors({});
+      setSubmitError(null);
+    }
+    onOpenChange(next);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -90,7 +115,10 @@ export function CaseStudyContactGate({
 
     setErrors(next);
     setSubmitError(null);
-    if (Object.keys(next).length > 0) return;
+    if (Object.keys(next).length > 0) {
+      focusFirstInvalidField(form, next);
+      return;
+    }
 
     data.set('_subject', `New Form Submission - ${firstName} ${lastName}`);
     data.set('requestType', requestType);
@@ -108,10 +136,11 @@ export function CaseStudyContactGate({
     setSubmitting(true);
     try {
       const result = await submitLeadDual(data);
-      if (result.skipped) return;
       if (result.ok) {
-        onSuccess();
-        onOpenChange(false);
+        setSucceeded(true);
+      } else if (result.highLevelStatus === 400 && result.error) {
+        setSubmitError(result.error);
+        focusFirstInvalidField(form, { workEmail: result.error });
       } else if (result.networkError) {
         setSubmitError(v('error'));
       } else {
@@ -125,13 +154,30 @@ export function CaseStudyContactGate({
   };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
+          <DialogTitle>{succeeded ? successTitle : title}</DialogTitle>
           <DialogDescription>{caseStudyTitle}</DialogDescription>
         </DialogHeader>
-        <form method="POST" onSubmit={handleSubmit} className="space-y-4">
+        {succeeded ? (
+          <div
+            className="space-y-4 text-center focus:outline-none"
+            role="status"
+            aria-live="polite"
+            tabIndex={-1}
+            ref={revealStatus}
+          >
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-lg font-bold text-primary">
+              ✓
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{successBody}</p>
+            <Button type="button" onClick={finish} className="w-full">
+              {continueLabel}
+            </Button>
+          </div>
+        ) : (
+        <form onSubmit={handleSubmit} noValidate className="space-y-4">
           <input
             type="text"
             name="hp_company"
@@ -147,6 +193,7 @@ export function CaseStudyContactGate({
               <Input
                 id="gate-firstName"
                 name="firstName"
+                aria-invalid={Boolean(errors.firstName)}
                 placeholder={c.firstNamePlaceholder}
                 required
                 className={errors.firstName ? 'border-destructive' : ''}
@@ -160,6 +207,7 @@ export function CaseStudyContactGate({
               <Input
                 id="gate-lastName"
                 name="lastName"
+                aria-invalid={Boolean(errors.lastName)}
                 placeholder={c.lastNamePlaceholder}
                 required
                 className={errors.lastName ? 'border-destructive' : ''}
@@ -174,6 +222,7 @@ export function CaseStudyContactGate({
             <Input
               id="gate-workEmail"
               name="workEmail"
+              aria-invalid={Boolean(errors.workEmail)}
               type="email"
               placeholder={c.workEmailPlaceholder}
               required
@@ -188,6 +237,7 @@ export function CaseStudyContactGate({
             <Input
               id="gate-company"
               name="company"
+              aria-invalid={Boolean(errors.company)}
               placeholder={c.companyPlaceholder}
               required
               className={errors.company ? 'border-destructive' : ''}
@@ -203,6 +253,7 @@ export function CaseStudyContactGate({
             <Input
               id="gate-phone"
               name="phone"
+              aria-invalid={Boolean(errors.phone)}
               type="tel"
               placeholder="+44 20 7123 4567"
               className={errors.phone ? 'border-destructive' : ''}
@@ -223,18 +274,23 @@ export function CaseStudyContactGate({
               className="resize-none"
             />
           </div>
-          {submitError && (
-            <p className="text-sm text-destructive">{submitError}</p>
-          )}
+          <div aria-live="polite">
+            {submitError ? (
+              <p className="text-sm text-destructive" role="alert">
+                {submitError}
+              </p>
+            ) : null}
+          </div>
           <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
+            <Button type="button" variant="outline" onClick={() => handleOpenChange(false)}>
               {cs.close ?? 'Close'}
             </Button>
-            <Button type="submit" disabled={submitting}>
-              {submitting ? '...' : (cs.requestAccess ?? 'Request access')}
+            <Button type="submit" disabled={submitting} aria-busy={submitting}>
+              {submitting ? (cs.sending ?? 'Sending…') : (cs.requestAccess ?? 'Request access')}
             </Button>
           </DialogFooter>
         </form>
+        )}
       </DialogContent>
     </Dialog>
   );
