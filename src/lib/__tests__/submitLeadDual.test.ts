@@ -192,16 +192,67 @@ describe('submitLeadDual posts every lead to HighLevel and Formspree', () => {
     expect(callFor(fetchMock, FORMSPREE_ENDPOINT)).toBeUndefined();
   });
 
-  it.each([422, 429])('does not post to Formspree after any other HighLevel %i', async (status) => {
+  it('does not post to Formspree when HighLevel rejects the input with a 422', async () => {
     vi.spyOn(console, 'warn').mockImplementation(() => {});
     const fetchMock = mockFetch({
       formspree: () => Promise.resolve(jsonResponse({ ok: true })),
-      highLevel: () => Promise.resolve(jsonResponse({ error: 'Too many requests' }, status)),
+      highLevel: () => Promise.resolve(jsonResponse({ error: 'Please check your email address and try again.' }, 422)),
     });
     const result = await submitLeadDual(leadForm());
-    expect(result).toMatchObject({ ok: false, formspreeSkipped: true, highLevelStatus: status, error: 'Too many requests' });
-    expect(result.invalidEmail).toBeUndefined();
+    expect(result).toMatchObject({
+      ok: false,
+      invalidEmail: true,
+      formspreeSkipped: true,
+      highLevelStatus: 422,
+      error: 'Please check your email address and try again.',
+    });
     expect(callFor(fetchMock, FORMSPREE_ENDPOINT)).toBeUndefined();
+  });
+
+  it.each([
+    [429, 'Too many requests'],
+    [401, 'Unauthorized'],
+    [403, 'Forbidden'],
+    [404, 'Not found'],
+    [500, 'Internal error'],
+    [502, 'Could not save your request. Please try again.'],
+    [503, 'Lead capture is not configured'],
+  ])('keeps the lead in Formspree after a HighLevel %i', async (status, message) => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const fetchMock = mockFetch({
+      formspree: () => Promise.resolve(jsonResponse({ ok: true })),
+      highLevel: () => Promise.resolve(jsonResponse({ error: message }, status)),
+    });
+    const result = await submitLeadDual(leadForm());
+    expect(result).toMatchObject({ ok: true, formspreeOk: true, highLevelOk: false, highLevelStatus: status });
+    expect(result.formspreeSkipped).toBeUndefined();
+    expect(result.invalidEmail).toBeUndefined();
+    expect(result.error).toBeUndefined();
+    expect(callFor(fetchMock, FORMSPREE_ENDPOINT)).toBeDefined();
+    expect(warn).toHaveBeenCalledWith(expect.stringContaining('highlevel failed for contact_section'), status, message);
+  });
+
+  it('keeps the lead in Formspree when HighLevel returns a non-JSON 404 page', async () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const fetchMock = mockFetch({
+      formspree: () => Promise.resolve(jsonResponse({ ok: true })),
+      highLevel: () => Promise.resolve(new Response('<html>Not Found</html>', { status: 404 })),
+    });
+    const result = await submitLeadDual(leadForm());
+    expect(result).toMatchObject({ ok: true, formspreeOk: true, highLevelOk: false, highLevelStatus: 404 });
+    expect(callFor(fetchMock, FORMSPREE_ENDPOINT)).toBeDefined();
+  });
+
+  it('fails with the HighLevel message when HighLevel is rate limited and Formspree also fails', async () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    mockFetch({
+      formspree: () => Promise.resolve(jsonResponse({ error: 'Form quota exceeded' }, 422)),
+      highLevel: () => Promise.resolve(jsonResponse({ error: 'Too many requests' }, 429)),
+    });
+    const result = await submitLeadDual(leadForm());
+    expect(result).toMatchObject({ ok: false, formspreeOk: false, highLevelOk: false, error: 'Too many requests' });
+    expect(result.invalidEmail).toBeUndefined();
+    expect(result.formspreeSkipped).toBeUndefined();
   });
 
   it('falls back to Formspree when HighLevel is unreachable', async () => {

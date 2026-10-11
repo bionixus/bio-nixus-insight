@@ -23,9 +23,9 @@ export type DualLeadResult = {
   highLevelError?: string;
   /** HTTP status from `/api/highlevel-lead` when the response arrived. */
   highLevelStatus?: number;
-  /** HighLevel rejected the lead with a 4xx, so it was not sent to Formspree. */
+  /** HighLevel rejected the input (400 or 422), so the lead was not sent to Formspree. */
   formspreeSkipped?: boolean;
-  /** The email failed the shared rule in the browser or HighLevel answered 400; `error` says what to fix. */
+  /** The email failed the shared rule in the browser or HighLevel rejected the input (400/422); `error` says what to fix. */
   invalidEmail?: boolean;
   /** User-facing error. Unset when `ok`. */
   error?: string;
@@ -150,18 +150,24 @@ function reportChannelFailure(channel: 'formspree' | 'highlevel', form: string, 
   });
 }
 
-/** Formspree is a backup for HighLevel outages, so it only runs when HighLevel did not reject the input. */
-function highLevelAllowsFormspree(highLevel: ChannelResult): boolean {
-  if (highLevel.ok || highLevel.networkError) return true;
-  return (highLevel.status ?? 0) >= 500;
+/** Statuses where `/api/highlevel-lead` rejected the visitor's input itself, so there is no lead to keep. */
+const HIGHLEVEL_INPUT_REJECTED = new Set([400, 422]);
+
+/**
+ * Formspree is skipped only when HighLevel rejected the input. Rate limits (429), auth or
+ * config problems (401/403), a missing route (404), 5xx and network errors are outages on
+ * our side, so Formspree still receives the lead.
+ */
+function highLevelRejectedInput(highLevel: ChannelResult): boolean {
+  return !highLevel.ok && highLevel.status !== undefined && HIGHLEVEL_INPUT_REJECTED.has(highLevel.status);
 }
 
 /**
  * POST a website lead to HighLevel (`/api/highlevel-lead`), then to Formspree.
  * The email is checked first with the server's rule, so an address HighLevel would
- * reject never reaches either destination. A HighLevel 4xx is a rejected lead and
- * Formspree is skipped; after a HighLevel success, 5xx, or network error Formspree is
- * posted and the submission succeeds when either destination accepts it. Failures are
+ * reject never reaches either destination. A HighLevel 400 or 422 is a rejected lead and
+ * Formspree is skipped; after any other HighLevel result Formspree is posted and the
+ * submission succeeds when either destination accepts it. Failures are
  * logged and sent to GA4 as `lead_channel_failed` so a silent outage shows up.
  */
 export async function submitLeadDual(data: FormData): Promise<DualLeadResult> {
@@ -179,10 +185,10 @@ export async function submitLeadDual(data: FormData): Promise<DualLeadResult> {
   const highLevel = await postHighLevel(payload);
   if (!highLevel.ok) reportChannelFailure('highlevel', form, highLevel);
 
-  if (!highLevelAllowsFormspree(highLevel)) {
+  if (highLevelRejectedInput(highLevel)) {
     return {
       ok: false,
-      invalidEmail: highLevel.status === 400 || undefined,
+      invalidEmail: true,
       formspreeOk: false,
       formspreeSkipped: true,
       highLevelOk: false,

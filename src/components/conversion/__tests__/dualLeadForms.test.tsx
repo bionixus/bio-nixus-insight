@@ -23,7 +23,7 @@ vi.mock('@/lib/analytics', async (importOriginal) => ({
 const EMAIL_CHECK = 'Please check your email address and try again.';
 const SAVE_ERROR = 'Could not save your request. Please try again.';
 
-type ChannelMode = 'ok' | 'fail' | 'offline' | 'email400';
+type ChannelMode = 'ok' | 'fail' | 'offline' | 'email400' | 'rate429';
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -44,6 +44,7 @@ function mockChannels(options: { formspree: ChannelMode; highLevel: ChannelMode;
       if (options.highLevel === 'ok') return Promise.resolve(json({ success: true, contactId: 'c1' }));
       if (options.highLevel === 'offline') return Promise.reject(new Error('offline'));
       if (options.highLevel === 'email400') return Promise.resolve(json({ error: EMAIL_CHECK }, 400));
+      if (options.highLevel === 'rate429') return Promise.resolve(json({ error: 'Too many requests' }, 429));
       return Promise.resolve(json({ error: SAVE_ERROR }, 502));
     }
     if (url === '/api/subscribe') {
@@ -239,6 +240,14 @@ describe('QualificationForm ("Book a call")', () => {
     expectFormspreeSkipped();
   });
 
+  it('keeps the lead through Formspree and confirms when HighLevel is rate limited', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'rate429' });
+    fillQualification();
+    submitQualification();
+    expect(await screen.findByRole('status')).toHaveTextContent(/scoping call request is in/i);
+    expect(calledUrls()).toEqual([HIGHLEVEL_LEAD_ENDPOINT, FORMSPREE_ENDPOINT]);
+  });
+
   it('rejects an email the server would refuse before sending anything', async () => {
     mockChannels({ formspree: 'ok', highLevel: 'ok' });
     fillQualification(`${'a'.repeat(65)}@pfizer.com`);
@@ -345,6 +354,17 @@ describe('ContactSection ("Request a proposal")', () => {
     expect(screen.getByLabelText(/work email/i)).not.toHaveFocus();
     expectFormspreeSkipped();
     expect(calledUrls()).not.toContain('/api/subscribe');
+  });
+
+  it('keeps the lead through Formspree and confirms when HighLevel is rate limited', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'rate429' });
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
+    const status = await screen.findByRole('status');
+    expect(status).toHaveTextContent(/thank you/i);
+    expect(calledUrls()).toEqual(expect.arrayContaining([HIGHLEVEL_LEAD_ENDPOINT, FORMSPREE_ENDPOINT]));
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
   });
 
   it('reveals the same server error again on the next attempt', async () => {
