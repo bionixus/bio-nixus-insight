@@ -46,6 +46,7 @@ import {
   getRelatedResearchLinksForLocale,
 } from '@/lib/blogLocaleContent';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
 import { alsaadanyProfileUrl, authorLinkedInForDisplay } from '@/data/editorialAuthors';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
@@ -1170,6 +1171,28 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
   const authorLinkedIn = authorLinkedInForDisplay(post.authorName, post.authorLinkedIn);
 
+  const breadcrumbLabel =
+    post.breadcrumbLabel?.trim() && articleLocale === 'en' && resolvedSilo !== 'industries'
+      ? post.breadcrumbLabel.trim()
+      : undefined;
+  const visibleBreadcrumbItems = breadcrumbLabel
+    ? [
+        { name: 'Home', href: '/' },
+        { name: localizedArticleIndexLabel, href: localizedArticleIndexPath },
+        { name: breadcrumbLabel, href: pathClean },
+      ]
+    : null;
+
+  // The sr-only dash keeps the extracted <h1> text readable as one sentence pair.
+  const heroSubtitle = post.displaySubtitle?.trim() ? (
+    <>
+      <span className="sr-only"> — </span>
+      <span className="mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl">
+        {post.displaySubtitle.trim()}
+      </span>
+    </>
+  ) : null;
+
   return (
     // Delegated handler: internal <a href="/..."> links inside HTML bodies
     // SPA-navigate instead of triggering a full page reload.
@@ -1252,10 +1275,19 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               ? [...q2PharmaSchemaBundle.mentions]
               : undefined
         }
-        about={[{
-          '@type': 'Thing',
-          name: post.category?.trim() || 'Healthcare market research',
-        }]}
+        about={
+          post.schemaExtras?.about?.length
+            ? [...post.schemaExtras.about]
+            : [{
+                '@type': 'Thing',
+                name: post.category?.trim() || 'Healthcare market research',
+              }]
+        }
+        wordCount={post.wordCount}
+        emitWebPage={post.schemaExtras?.emitWebPage}
+        imageAlt={post.schemaExtras?.emitWebPage ? socialImageAlt : undefined}
+        organization={post.schemaExtras?.organization}
+        authorNode={post.schemaExtras?.author}
         authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={authorLinkedIn}
         authorJobTitle={
@@ -1287,7 +1319,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               : [
                   { name: 'Home', item: 'https://www.bionixus.com/' },
                   { name: 'Blog', item: 'https://www.bionixus.com/blog' },
-                  { name: articleDisplayTitle, item: pageUrl },
+                  { name: breadcrumbLabel ?? articleDisplayTitle, item: pageUrl },
                 ]
         }
         faqItems={mergedBlogFaqItems}
@@ -1305,7 +1337,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             ? GCC_PHARMACOECONOMICS_SCHEMA_ITEM_LIST
             : isTherapyStaticBlogEn && therapyStaticBlogBundle?.itemListSchema
               ? therapyStaticBlogBundle.itemListSchema
-              : undefined}
+              : post.schemaExtras?.itemList}
       />
       <Helmet>
         <title>{documentTitle}</title>
@@ -1368,9 +1400,13 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
 
             <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
-              <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
-                <ArrowLeft className={`w-3.5 h-3.5${isRtlArticle ? ' rotate-180' : ''}`} /> {blogUi.backTo(localizedArticleIndexLabel)}
-              </Link>
+              {visibleBreadcrumbItems ? (
+                <BreadcrumbNav tone="on-dark" items={visibleBreadcrumbItems} className="px-0 pt-0 pb-0 mb-5" />
+              ) : (
+                <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
+                  <ArrowLeft className={`w-3.5 h-3.5${isRtlArticle ? ' rotate-180' : ''}`} /> {blogUi.backTo(localizedArticleIndexLabel)}
+                </Link>
+              )}
 
               {post.category && (
                 <div className="mb-4">
@@ -1382,6 +1418,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
               <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] tracking-[-0.02em] text-white max-w-4xl mb-5 text-balance">
                 {articleDisplayTitle}
+                {heroSubtitle}
               </h1>
 
               <div className="flex flex-wrap items-center">
@@ -1427,9 +1464,13 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
             <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.06]" style={{ background: 'hsl(var(--accent))' }} />
             <div className="max-w-screen-xl mx-auto px-6 md:px-10">
-              <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
-                <ArrowLeft className={`w-3.5 h-3.5${isRtlArticle ? ' rotate-180' : ''}`} /> {blogUi.backTo(localizedArticleIndexLabel)}
-              </Link>
+              {visibleBreadcrumbItems ? (
+                <BreadcrumbNav tone="on-dark" items={visibleBreadcrumbItems} className="px-0 pt-0 pb-0 mb-6" />
+              ) : (
+                <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
+                  <ArrowLeft className={`w-3.5 h-3.5${isRtlArticle ? ' rotate-180' : ''}`} /> {blogUi.backTo(localizedArticleIndexLabel)}
+                </Link>
+              )}
               {post.category && (
                 <div className="mb-4">
                   <span className="inline-flex px-3 py-1 text-[10px] font-extrabold tracking-[0.12em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>
@@ -1439,6 +1480,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               )}
               <h1 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.18] tracking-[-0.02em] max-w-4xl mb-5 text-balance">
                 {articleDisplayTitle}
+                {heroSubtitle}
               </h1>
               <div className="flex flex-wrap items-center">
                 {post.authorName && (
