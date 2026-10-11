@@ -1378,6 +1378,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         )}
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
+        {heroCoverImage && visibleBreadcrumbItems ? (
+          // The cover hero has a fixed height, so on phones a long title pushes in-hero crumbs out of view.
+          <BreadcrumbNav items={visibleBreadcrumbItems} className="md:hidden px-6" />
+        ) : null}
         {heroCoverImage ? (
           <div
             className="relative w-full overflow-hidden bg-navy-deep group"
@@ -1401,7 +1405,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
             <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
               {visibleBreadcrumbItems ? (
-                <BreadcrumbNav tone="on-dark" items={visibleBreadcrumbItems} className="px-0 pt-0 pb-0 mb-5" />
+                <BreadcrumbNav tone="on-dark" items={visibleBreadcrumbItems} className="hidden md:block px-0 pt-0 pb-0 mb-5" />
               ) : (
                 <Link to={localizedArticleIndexPath} className="inline-flex items-center gap-1.5 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
                   <ArrowLeft className={`w-3.5 h-3.5${isRtlArticle ? ' rotate-180' : ''}`} /> {blogUi.backTo(localizedArticleIndexLabel)}

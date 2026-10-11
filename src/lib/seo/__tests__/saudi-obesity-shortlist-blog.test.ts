@@ -113,10 +113,14 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: server render', (
   });
 
   it('renders a visible breadcrumb trail that matches the BreadcrumbList', () => {
-    const nav = /<nav[^>]*aria-label="Breadcrumb"[\s\S]*?<\/nav>/.exec(html)?.[0] ?? '';
-    // The hero is dark; the critical CSS would otherwise give the <nav> a white background.
-    expect(nav).toMatch(/^<nav[^>]*class="[^"]*\bbg-transparent\b/);
-    expect(text(nav)).toBe('Home / Blog / Saudi obesity research shortlist');
+    const navs = [...html.matchAll(/<nav[^>]*aria-label="Breadcrumb"[\s\S]*?<\/nav>/g)].map((m) => m[0]);
+    const classOf = (nav: string) => /^<nav[^>]*class="([^"]*)"/.exec(nav)?.[1].split(/\s+/) ?? [];
+    // Phones get a light trail above the fixed-height hero; wider screens get the on-dark trail inside it.
+    expect(navs).toHaveLength(2);
+    const [phone, wide] = navs;
+    expect(classOf(phone)).toContain('md:hidden');
+    expect(classOf(wide)).toEqual(expect.arrayContaining(['hidden', 'md:block', 'bg-transparent']));
+    for (const nav of navs) expect(text(nav)).toBe('Home / Blog / Saudi obesity research shortlist');
     const crumbs = jsonLd.find((node) => node['@type'] === 'BreadcrumbList');
     expect(crumbs?.itemListElement.map((item: JsonLdNode) => item.name)).toEqual([
       'Home',
