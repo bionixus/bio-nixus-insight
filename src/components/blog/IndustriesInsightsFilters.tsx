@@ -51,8 +51,8 @@ export default function IndustriesInsightsFilters({
     state.industry !== ALL_INDUSTRIES;
 
   return (
-    <section className="bx-section cream !py-10" aria-label="Filter industry insights">
-      <div className="bx-inner">
+    <section className="border-b border-[#EDE9E3] bg-[#F4F2ED] py-10" aria-label="Filter industry insights">
+      <div className="container-wide mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl border border-border/80 bg-card/95 p-4 md:p-6 shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-sm">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="grid flex-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
