@@ -1,4 +1,5 @@
 import { trackGaEvent } from '@/lib/analytics';
+import { leadEmailProblem } from '@/lib/leadEmailValidation';
 
 /** Formspree form that emails every website lead to the team. */
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgozewew';
@@ -22,6 +23,10 @@ export type DualLeadResult = {
   highLevelError?: string;
   /** HTTP status from `/api/highlevel-lead` when the response arrived. */
   highLevelStatus?: number;
+  /** HighLevel rejected the lead with a 4xx, so it was not sent to Formspree. */
+  formspreeSkipped?: boolean;
+  /** The email failed the shared rule in the browser or HighLevel answered 400; `error` says what to fix. */
+  invalidEmail?: boolean;
   /** User-facing error. Unset when `ok`. */
   error?: string;
   /** Set when the submission failed and both destinations failed at the network level. */
@@ -145,9 +150,18 @@ function reportChannelFailure(channel: 'formspree' | 'highlevel', form: string, 
   });
 }
 
+/** Formspree is a backup for HighLevel outages, so it only runs when HighLevel did not reject the input. */
+function highLevelAllowsFormspree(highLevel: ChannelResult): boolean {
+  if (highLevel.ok || highLevel.networkError) return true;
+  return (highLevel.status ?? 0) >= 500;
+}
+
 /**
- * POST a website lead to HighLevel (`/api/highlevel-lead`) and Formspree in parallel.
- * The submission succeeds when either destination accepts it; a failure on one side is
+ * POST a website lead to HighLevel (`/api/highlevel-lead`), then to Formspree.
+ * The email is checked first with the server's rule, so an address HighLevel would
+ * reject never reaches either destination. A HighLevel 4xx is a rejected lead and
+ * Formspree is skipped; after a HighLevel success, 5xx, or network error Formspree is
+ * posted and the submission succeeds when either destination accepts it. Failures are
  * logged and sent to GA4 as `lead_channel_failed` so a silent outage shows up.
  */
 export async function submitLeadDual(data: FormData): Promise<DualLeadResult> {
@@ -156,32 +170,32 @@ export async function submitLeadDual(data: FormData): Promise<DualLeadResult> {
   }
 
   const payload = enrichLeadPayload(formDataToLeadPayload(data));
+  const emailProblem = leadEmailProblem(payload.workEmail || payload.email || '');
+  if (emailProblem) {
+    return { ok: false, invalidEmail: true, formspreeOk: false, highLevelOk: false, error: emailProblem };
+  }
+
   const form = payload.formVariant || 'website_form';
-  const [formspreeSettled, highLevelSettled] = await Promise.allSettled([
-    postFormspree(payload),
-    postHighLevel(payload),
-  ]);
-
-  const formspree: ChannelResult =
-    formspreeSettled.status === 'fulfilled'
-      ? formspreeSettled.value
-      : { ok: false, networkError: 'Formspree request failed' };
-  const highLevel: ChannelResult =
-    highLevelSettled.status === 'fulfilled'
-      ? highLevelSettled.value
-      : { ok: false, networkError: 'HighLevel request failed' };
-
-  if (!formspree.ok) reportChannelFailure('formspree', form, formspree);
+  const highLevel = await postHighLevel(payload);
   if (!highLevel.ok) reportChannelFailure('highlevel', form, highLevel);
 
-  // A HighLevel 400 means the visitor's email failed validation. Formspree checks less, so
-  // its 200 would confirm a lead nobody can reply to; show the message so they can fix it.
-  const highLevelClientError = highLevel.status === 400 && highLevel.error ? highLevel.error : undefined;
-  const ok = !highLevelClientError && (formspree.ok || highLevel.ok);
-  const error = ok ? undefined : highLevelClientError || highLevel.error || formspree.error;
-  const networkError =
-    !ok && formspree.networkError && highLevel.networkError ? highLevel.networkError : undefined;
+  if (!highLevelAllowsFormspree(highLevel)) {
+    return {
+      ok: false,
+      invalidEmail: highLevel.status === 400 || undefined,
+      formspreeOk: false,
+      formspreeSkipped: true,
+      highLevelOk: false,
+      highLevelError: highLevel.error,
+      highLevelStatus: highLevel.status,
+      error: highLevel.error,
+    };
+  }
 
+  const formspree = await postFormspree(payload);
+  if (!formspree.ok) reportChannelFailure('formspree', form, formspree);
+
+  const ok = formspree.ok || highLevel.ok;
   return {
     ok,
     formspreeOk: formspree.ok,
@@ -191,7 +205,7 @@ export async function submitLeadDual(data: FormData): Promise<DualLeadResult> {
     formspreeStatus: formspree.status,
     highLevelError: highLevel.error || highLevel.networkError,
     highLevelStatus: highLevel.status,
-    error,
-    networkError,
+    error: ok ? undefined : highLevel.error || formspree.error,
+    networkError: !ok && formspree.networkError && highLevel.networkError ? highLevel.networkError : undefined,
   };
 }

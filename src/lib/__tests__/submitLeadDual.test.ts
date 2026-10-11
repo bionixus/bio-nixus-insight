@@ -112,17 +112,20 @@ describe('submitLeadDual posts every lead to HighLevel and Formspree', () => {
     expect(body).not.toHaveProperty('hp_company');
   });
 
-  it('starts both posts before either response returns', async () => {
+  it('waits for HighLevel before posting to Formspree', async () => {
+    let releaseHighLevel: (response: Response) => void = () => {};
     const fetchMock = mockFetch({
-      formspree: () => new Promise(() => {}),
-      highLevel: () => new Promise(() => {}),
+      formspree: () => Promise.resolve(jsonResponse({ ok: true })),
+      highLevel: () => new Promise<Response>((resolveResponse) => (releaseHighLevel = resolveResponse)),
     });
     const pending = submitLeadDual(leadForm());
-    await Promise.resolve();
-    await Promise.resolve();
-    const urls = fetchMock.mock.calls.map((call) => String(call[0]));
-    expect(urls).toEqual(expect.arrayContaining([FORMSPREE_ENDPOINT, HIGHLEVEL_LEAD_ENDPOINT]));
-    pending.catch(() => {});
+    await new Promise((r) => setTimeout(r, 0));
+    expect(fetchMock.mock.calls.map((call) => String(call[0]))).toEqual([HIGHLEVEL_LEAD_ENDPOINT]);
+
+    releaseHighLevel(jsonResponse({ success: true }));
+    const result = await pending;
+    expect(fetchMock.mock.calls.map((call) => String(call[0]))).toEqual([HIGHLEVEL_LEAD_ENDPOINT, FORMSPREE_ENDPOINT]);
+    expect(result).toMatchObject({ ok: true, formspreeOk: true, highLevelOk: true });
   });
 
   it('succeeds on HighLevel alone and logs the Formspree failure', async () => {
@@ -171,16 +174,75 @@ describe('submitLeadDual posts every lead to HighLevel and Formspree', () => {
     expect(result.networkError).toBeUndefined();
   });
 
-  it('treats a HighLevel 400 email rejection as a failure even when Formspree accepted', async () => {
+  it('does not post to Formspree when HighLevel rejects the email with a 400', async () => {
     vi.spyOn(console, 'warn').mockImplementation(() => {});
-    mockFetch({
+    const fetchMock = mockFetch({
       formspree: () => Promise.resolve(jsonResponse({ ok: true })),
       highLevel: () => Promise.resolve(jsonResponse({ error: 'Please check your email address and try again.' }, 400)),
     });
     const result = await submitLeadDual(leadForm());
-    expect(result.ok).toBe(false);
-    expect(result.highLevelStatus).toBe(400);
-    expect(result.error).toBe('Please check your email address and try again.');
+    expect(result).toMatchObject({
+      ok: false,
+      invalidEmail: true,
+      formspreeSkipped: true,
+      formspreeOk: false,
+      highLevelStatus: 400,
+      error: 'Please check your email address and try again.',
+    });
+    expect(callFor(fetchMock, FORMSPREE_ENDPOINT)).toBeUndefined();
+  });
+
+  it.each([422, 429])('does not post to Formspree after any other HighLevel %i', async (status) => {
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const fetchMock = mockFetch({
+      formspree: () => Promise.resolve(jsonResponse({ ok: true })),
+      highLevel: () => Promise.resolve(jsonResponse({ error: 'Too many requests' }, status)),
+    });
+    const result = await submitLeadDual(leadForm());
+    expect(result).toMatchObject({ ok: false, formspreeSkipped: true, highLevelStatus: status, error: 'Too many requests' });
+    expect(result.invalidEmail).toBeUndefined();
+    expect(callFor(fetchMock, FORMSPREE_ENDPOINT)).toBeUndefined();
+  });
+
+  it('falls back to Formspree when HighLevel is unreachable', async () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const fetchMock = mockFetch({
+      formspree: () => Promise.resolve(jsonResponse({ ok: true })),
+      highLevel: () => Promise.reject(new Error('offline')),
+    });
+    const result = await submitLeadDual(leadForm());
+    expect(result).toMatchObject({ ok: true, formspreeOk: true, highLevelOk: false, highLevelError: 'offline' });
+    expect(callFor(fetchMock, FORMSPREE_ENDPOINT)).toBeDefined();
+  });
+
+  it.each([
+    ['a malformed address', 'jane@pfizer'],
+    ['a local part over 64 characters', `${'a'.repeat(65)}@pfizer.com`],
+    ['an address over 254 characters', `${'a'.repeat(64)}@${'b'.repeat(63)}.${'c'.repeat(63)}.${'d'.repeat(58)}.com`],
+  ])('sends nothing for %s', async (_label, email) => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal('fetch', fetchMock);
+    const data = leadForm();
+    data.set('workEmail', email);
+    const result = await submitLeadDual(data);
+    expect(result).toMatchObject({
+      ok: false,
+      invalidEmail: true,
+      formspreeOk: false,
+      highLevelOk: false,
+      error: 'Please check your email address and try again.',
+    });
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('sends nothing when the lead has no email', async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal('fetch', fetchMock);
+    const data = leadForm();
+    data.delete('workEmail');
+    const result = await submitLeadDual(data);
+    expect(result).toMatchObject({ ok: false, invalidEmail: true, error: 'A valid email is required' });
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 
   it('reports a network error only when both destinations are unreachable', async () => {
@@ -230,7 +292,24 @@ describe('lead form surfaces', () => {
       expect(src, file).not.toContain('leadconnectorhq.com');
       expect(src, file).not.toContain('fetch(FORMSPREE_ENDPOINT');
       expect(src, file).toMatch(/role="(status|alert)"/);
+      expect(src, file).toContain('isValidLeadEmail');
+      expect(src, file).not.toMatch(/\[\^\\s@\]\+@/);
     }
+  });
+
+  it('reveals server-error alerts with the shared helper instead of focusing the email field', () => {
+    for (const file of LEAD_SURFACES) {
+      const src = readFileSync(resolve(ROOT, file), 'utf8');
+      expect(src, file).toMatch(/role="alert"\s+tabIndex=\{-1\}\s+ref=\{revealStatus\}/);
+      expect(src, file).not.toContain('highLevelStatus === 400');
+      expect(src, file).not.toMatch(/focusFirstInvalidField\(form, \{ workEmail: (result\.error|'invalid') \}\)/);
+    }
+  });
+
+  it('uses one email rule on the server and in the browser', () => {
+    const server = readFileSync(resolve(ROOT, 'src/server/highlevelLead.ts'), 'utf8');
+    expect(server).toContain("from '../lib/leadEmailValidation.js'");
+    expect(server).not.toMatch(/const EMAIL_RE\b/);
   });
 
   it('never navigates the visitor to a mailto: URL on failure', () => {
