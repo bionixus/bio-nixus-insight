@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
 import { trackLeadSubmitted, trackFormStart } from '@/lib/analytics';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
 import { focusFirstInvalidField, revealStatus } from '@/lib/formFeedback';
 import { QUALIFICATION_FORM_MARKETS } from '@/data/qualificationFormOptions';
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const GENERIC_ERROR = 'Something went wrong — please try again, or email admin@bionixus.com and we will send it.';
 const FREE_MAIL_WARNING =
   'That looks like a personal email address. A company email helps us follow up — press the button again to continue anyway.';
@@ -41,7 +41,7 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
     const rawEmail = (data.get('workEmail') as string)?.trim() || '';
     if (!rawEmail) {
       next.workEmail = 'Work email is required';
-    } else if (!EMAIL_RE.test(rawEmail)) {
+    } else if (!isValidLeadEmail(rawEmail)) {
       next.workEmail = 'Please enter a valid email address';
     }
     if (!(data.get('company') as string)?.trim()) next.company = 'Company is required';
@@ -97,9 +97,6 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         document.body.appendChild(link);
         link.click();
         link.remove();
-      } else if (result.highLevelStatus === 400 && result.error) {
-        setSubmitError(result.error);
-        focusFirstInvalidField(form, { workEmail: result.error });
       } else {
         setSubmitError(result.error || GENERIC_ERROR);
       }
@@ -190,12 +187,12 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
 
       <div aria-live="polite">
         {freeMailWarning && !submitError ? (
-          <p className="text-sm text-amber-700" role="alert">
+          <p className="text-sm text-amber-700 focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
             {freeMailWarning}
           </p>
         ) : null}
         {submitError ? (
-          <p className="text-sm text-destructive" role="alert">
+          <p className="text-sm text-destructive focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
             {submitError}
           </p>
         ) : null}

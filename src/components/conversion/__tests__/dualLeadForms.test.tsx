@@ -67,6 +67,20 @@ function bodyFor(url: string) {
 }
 
 const hrefWrites: string[] = [];
+const scrollIntoView = vi.fn();
+
+/** Server errors must land on screen: the alert takes focus and is scrolled into view, and Formspree is skipped. */
+function expectRevealedServerError(alert: HTMLElement, text: string | RegExp = EMAIL_CHECK) {
+  expect(alert).toHaveTextContent(text);
+  expect(alert).toHaveFocus();
+  expect(scrollIntoView.mock.contexts).toContain(alert);
+  expect(scrollIntoView).toHaveBeenLastCalledWith({ block: 'center' });
+}
+
+function expectFormspreeSkipped() {
+  expect(calledUrls()).toContain(HIGHLEVEL_LEAD_ENDPOINT);
+  expect(calledUrls()).not.toContain(FORMSPREE_ENDPOINT);
+}
 
 function stubLocation(pathname = '/page') {
   const href = `http://localhost${pathname}`;
@@ -91,6 +105,8 @@ class Observer {
 
 beforeEach(() => {
   hrefWrites.length = 0;
+  scrollIntoView.mockClear();
+  HTMLElement.prototype.scrollIntoView = scrollIntoView;
   vi.spyOn(console, 'warn').mockImplementation(() => {});
   vi.stubGlobal('IntersectionObserver', Observer);
   vi.stubGlobal('ResizeObserver', Observer);
@@ -214,12 +230,32 @@ describe('QualificationForm ("Book a call")', () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 
-  it('shows the HighLevel 400 email message', async () => {
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
     mockChannels({ formspree: 'ok', highLevel: 'email400' });
     fillQualification();
     submitQualification();
-    expect(await screen.findByRole('alert')).toHaveTextContent(EMAIL_CHECK);
+    expectRevealedServerError(await screen.findByRole('alert'));
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expectFormspreeSkipped();
+  });
+
+  it('rejects an email the server would refuse before sending anything', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillQualification(`${'a'.repeat(65)}@pfizer.com`);
+    submitQualification();
+    expect(await screen.findByText('Please enter a valid email address')).toBeInTheDocument();
+    expect(screen.getByLabelText(/work email/i)).toHaveFocus();
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it('reveals the personal-email warning next to the button', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    fillQualification('someone@gmail.com');
+    submitQualification();
+    const warning = await screen.findByRole('alert');
+    expect(warning).toHaveTextContent(/personal email address/i);
+    expect(warning).toHaveFocus();
+    expect(scrollIntoView.mock.contexts).toContain(warning);
   });
 
   it('shows an inline error with a prefilled email link instead of navigating to mailto:', async () => {
@@ -299,13 +335,42 @@ describe('ContactSection ("Request a proposal")', () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 
-  it('shows the HighLevel 400 email message', async () => {
+  it('scrolls the HighLevel 400 email message into view and focuses it instead of the email field', async () => {
     mockChannels({ formspree: 'ok', highLevel: 'email400' });
     render(withProviders(<ContactSection premium />));
     fillContact();
     fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
-    expect(await screen.findByRole('alert')).toHaveTextContent(EMAIL_CHECK);
-    expect(screen.getByLabelText(/work email/i)).toHaveFocus();
+    const alert = await screen.findByRole('alert');
+    expectRevealedServerError(alert);
+    expect(screen.getByLabelText(/work email/i)).not.toHaveFocus();
+    expectFormspreeSkipped();
+    expect(calledUrls()).not.toContain('/api/subscribe');
+  });
+
+  it('reveals the same server error again on the next attempt', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    const button = () => screen.getByRole('button', { name: /send proposal request/i });
+    fireEvent.click(button());
+    expectRevealedServerError(await screen.findByRole('alert'));
+
+    button().focus();
+    scrollIntoView.mockClear();
+    fireEvent.click(button());
+    await waitFor(() => expect(scrollIntoView).toHaveBeenCalled());
+    expectRevealedServerError(await screen.findByRole('alert'));
+  });
+
+  it('rejects a malformed email on the field before sending anything', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    render(withProviders(<ContactSection premium />));
+    fillContact();
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: 'jane@pfizer' } });
+    fireEvent.click(screen.getByRole('button', { name: /send proposal request/i }));
+    await waitFor(() => expect(screen.getByLabelText(/work email/i)).toHaveFocus());
+    expect(screen.getByLabelText(/work email/i)).toHaveAttribute('aria-invalid', 'true');
+    expect(fetch).not.toHaveBeenCalled();
   });
 
   it('shows an inline error and email link when both destinations fail', async () => {
@@ -351,7 +416,16 @@ describe('GatedAssetForm (sample downloads)', () => {
     mockChannels({ formspree: 'fail', highLevel: 'fail' });
     const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
     fillGated();
-    expect(await screen.findByRole('alert')).toHaveTextContent(SAVE_ERROR);
+    expectRevealedServerError(await screen.findByRole('alert'), SAVE_ERROR);
+    expect(click).not.toHaveBeenCalled();
+  });
+
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'email400' });
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+    fillGated();
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expectFormspreeSkipped();
     expect(click).not.toHaveBeenCalled();
   });
 });
@@ -384,10 +458,31 @@ describe('EmailCaptureForm (report briefs)', () => {
     });
   });
 
-  it('shows the HighLevel 400 email message', async () => {
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
     mockChannels({ formspree: 'ok', highLevel: 'email400' });
     renderCapture();
-    expect(await screen.findByRole('alert')).toHaveTextContent(EMAIL_CHECK);
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expectFormspreeSkipped();
+  });
+
+  it('rejects an address over 254 characters before sending anything', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    render(
+      <EmailCaptureForm
+        formVariant="brief"
+        requestType="Brief"
+        subject="Brief"
+        sourcePage="/reports"
+        sourceUrl="https://www.bionixus.com/reports"
+        submitLabel="Send the brief"
+      />,
+    );
+    const long = `${'a'.repeat(64)}@${'b'.repeat(63)}.${'c'.repeat(63)}.${'d'.repeat(58)}.com`;
+    fireEvent.change(screen.getByLabelText(/work email/i), { target: { value: long } });
+    fireEvent.click(screen.getByRole('button', { name: /send the brief/i }));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Please enter a valid work email.');
+    expect(screen.getByLabelText(/work email/i)).toHaveFocus();
+    expect(fetch).not.toHaveBeenCalled();
   });
 
   it('shows the fallback message when both destinations fail', async () => {
@@ -438,10 +533,11 @@ describe('CaseStudyContactGate (case-study and white-paper gates)', () => {
     expect(onOpenChange).toHaveBeenCalledWith(false);
   });
 
-  it('shows the HighLevel 400 email message', async () => {
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
     mockChannels({ formspree: 'ok', highLevel: 'email400' });
     const { onSuccess } = renderGate();
-    expect(await screen.findByRole('alert')).toHaveTextContent(EMAIL_CHECK);
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expectFormspreeSkipped();
     expect(onSuccess).not.toHaveBeenCalled();
   });
 });
@@ -470,11 +566,12 @@ describe('WhatsAppProposalWidget', () => {
     expect(bodyFor(FORMSPREE_ENDPOINT)).toMatchObject({ form: 'whatsapp_proposal_widget', phone: '+1 202 555 0143' });
   });
 
-  it('shows the HighLevel 400 email message', async () => {
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
     mockChannels({ formspree: 'ok', highLevel: 'email400' });
     vi.spyOn(window, 'open').mockImplementation(() => null);
     fillWidget();
-    expect(await screen.findByRole('alert')).toHaveTextContent(EMAIL_CHECK);
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expectFormspreeSkipped();
   });
 });
 
@@ -503,11 +600,15 @@ describe('ClinicalDiagnosticsProposalRequest', () => {
     });
   });
 
-  it('shows the HighLevel 400 email message', async () => {
+  it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
     mockChannels({ formspree: 'ok', highLevel: 'email400' });
     fillClinical();
-    const alerts = await screen.findAllByRole('alert');
-    expect(alerts.some((node) => node.textContent?.includes(EMAIL_CHECK))).toBe(true);
+    await waitFor(() =>
+      expect(screen.getAllByRole('alert').some((node) => node.textContent?.includes(EMAIL_CHECK))).toBe(true),
+    );
+    const alert = screen.getAllByRole('alert').find((node) => node.textContent?.includes(EMAIL_CHECK)) as HTMLElement;
+    expectRevealedServerError(alert);
+    expectFormspreeSkipped();
   });
 
   it('names the missing field instead of relying on browser tooltips', async () => {
@@ -547,6 +648,17 @@ describe('Footer newsletter', () => {
   it('shows an error when every destination fails', async () => {
     mockChannels({ formspree: 'fail', highLevel: 'fail', subscribe: 'fail' });
     fillNewsletter();
-    expect(await screen.findByRole('alert')).toHaveTextContent(/internal server error|something went wrong/i);
+    expectRevealedServerError(await screen.findByRole('alert'), /internal server error|something went wrong/i);
+  });
+
+  it('rejects a malformed email before calling any endpoint', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    render(withProviders(<Footer />));
+    fireEvent.change(screen.getByLabelText('Your name'), { target: { value: 'Ana' } });
+    fireEvent.change(screen.getByLabelText('Work email'), { target: { value: 'reader..x@novartis.com' } });
+    fireEvent.click(screen.getByRole('checkbox', { name: /receive monthly/i }));
+    fireEvent.click(screen.getByRole('button', { name: /^subscribe$/i }));
+    expectRevealedServerError(await screen.findByRole('alert'));
+    expect(fetch).not.toHaveBeenCalled();
   });
 });

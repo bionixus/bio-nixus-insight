@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { submitLeadDual } from '@/lib/submitLeadDual';
 import { revealStatus } from '@/lib/formFeedback';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const GENERIC_ERROR = 'Something went wrong. Email admin@bionixus.com and we will send it.';
 
 type EmailCaptureFormProps = {
   formVariant: string;
@@ -31,13 +32,15 @@ export function EmailCaptureForm({
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
     const email = (data.get('email') as string)?.trim() || '';
-    if (!EMAIL_RE.test(email)) {
+    setSubmitError(null);
+    if (!isValidLeadEmail(email)) {
       setError('Please enter a valid work email.');
       form.querySelector<HTMLInputElement>('input[name="email"]')?.focus();
       return;
@@ -51,10 +54,9 @@ export function EmailCaptureForm({
         setSubmitted(true);
         form.reset();
       }
-      else if (result.highLevelStatus === 400 && result.error) setError(result.error);
-      else setError('Something went wrong. Email admin@bionixus.com and we will send it.');
+      else setSubmitError(result.invalidEmail && result.error ? result.error : GENERIC_ERROR);
     } catch {
-      setError('Something went wrong. Email admin@bionixus.com and we will send it.');
+      setSubmitError(GENERIC_ERROR);
     } finally {
       setSubmitting(false);
     }
@@ -99,13 +101,23 @@ export function EmailCaptureForm({
           name="email"
           required
           aria-invalid={Boolean(error)}
-          aria-describedby={error ? `${formVariant}-email-error` : undefined}
+          aria-describedby={error || submitError ? `${formVariant}-email-error` : undefined}
           placeholder={placeholder}
           className="h-11 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
         />
         {error ? (
           <p id={`${formVariant}-email-error`} className="mt-2 text-sm text-destructive" role="alert">
             {error}
+          </p>
+        ) : submitError ? (
+          <p
+            id={`${formVariant}-email-error`}
+            className="mt-2 text-sm text-destructive focus:outline-none"
+            role="alert"
+            tabIndex={-1}
+            ref={revealStatus}
+          >
+            {submitError}
           </p>
         ) : null}
       </div>
