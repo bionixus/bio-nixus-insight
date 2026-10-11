@@ -50,11 +50,13 @@ export interface BlogPost {
   seoMetaDescription?: string;
   seoCanonicalUrl?: string;
   seoNoIndex?: boolean;
+  seoKeywords?: string[];
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
   ogImageAlt?: string;
   authorName?: string;
+  authorSlug?: string;
   authorTitle?: string;
   authorImage?: string;
   authorLinkedIn?: string;

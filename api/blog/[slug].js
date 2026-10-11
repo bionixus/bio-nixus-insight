@@ -19,6 +19,12 @@ import { prepareBlogBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
 import { fixBrokenInternalHref, fixBrokenInternalHrefsInHtml } from '../../lib/fix-broken-internal-hrefs.mjs';
 import { handlePressReleaseCrawler } from '../../lib/press-crawler-html.mjs';
 import { resolveLegacyRedirect } from '../../lib/legacy-redirects.mjs';
+import {
+  DEFAULT_AUTHOR_NAME,
+  buildIndustriesInsightGraph,
+  countWords,
+  htmlToPlainText,
+} from '../../lib/industries-insight-jsonld.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -100,7 +106,14 @@ const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   "ogImage": openGraph.ogImage.asset->url,
   "ogImageAlt": openGraph.ogImage.alt,
   publishedAt,
+  updatedAt,
+  _updatedAt,
   "author": author->name,
+  "authorSlug": author->slug.current,
+  "authorTitle": author->title,
+  "authorLinkedIn": author->linkedIn,
+  "coverImageCaption": mainImage.caption,
+  "seoKeywords": seo.keywords,
   category,
   "categoryTitle": category->title,
   "categories": categories[]->title,
@@ -198,6 +211,33 @@ function buildRelatedInternalLinksNav(slug) {
         `<li><a href="${esc(href)}">${esc(label)}</a></li>`,
     )
     .join('\n      ');
+  return `<nav class="related-internal" aria-label="Related pages on this site">
+    <h2>Explore related pages</h2>
+    <ul>
+      ${items}
+    </ul>
+  </nav>`;
+}
+
+/** Industries-silo outlinks; never the healthcare hub (see .cursor/rules/industry-silo-linking.mdc). */
+const INDUSTRIES_RELATED_LINKS_BY_SLUG = {
+  'mystery-shopping-companies-saudi-arabia-2026': [
+    ['Retail market research company in Saudi Arabia', `${BASE}/saudi-arabia-retail-market-research`],
+    ['GCC mystery-shop retail brief', `${BASE}/templates/mystery-shop-retail-brief`],
+  ],
+};
+
+function buildIndustriesRelatedLinksNav(slug) {
+  const links = [
+    ...(INDUSTRIES_RELATED_LINKS_BY_SLUG[slug] ?? []),
+    ['B2B and B2C industry insights hub', `${BASE}/bionixus-industries/insights`],
+    ['BioNixus industries hub', `${BASE}/bionixus-industries`],
+    ['B2C industries market research', `${BASE}/b2c-industries`],
+    ['B2B industries market research', `${BASE}/b2b-industries`],
+    ['Market research by industry in KSA, UAE, and Egypt', `${BASE}/market-research-by-industry`],
+    ['Contact BioNixus about a market research project', `${BASE}/contact`],
+  ];
+  const items = links.map(([label, href]) => `<li><a href="${esc(href)}">${esc(label)}</a></li>`).join('\n      ');
   return `<nav class="related-internal" aria-label="Related pages on this site">
     <h2>Explore related pages</h2>
     <ul>
@@ -370,24 +410,25 @@ export default async function handler(req, res) {
     const rawBodyText =
       typeof post?.body === 'string' ? post.body : portableTextToPlain(Array.isArray(post?.body) ? post.body : []);
     const metaOverride = getBlogMetaDescriptionOverride(slug);
-    const description = ctr?.description
-      ? esc(ctr.description)
-      : esc(
-          buildSeoDescription({
-            preferred:
-              metaOverride ||
-              pickLocalizedString(post.seoMetaDescription, contentLocale) ||
-              pickLocalizedString(post.excerpt, contentLocale),
-            bodySource: rawBodyText,
-            fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
-          }),
-        );
+    const descriptionText = ctr?.description
+      ? ctr.description
+      : buildSeoDescription({
+          preferred:
+            metaOverride ||
+            pickLocalizedString(post.seoMetaDescription, contentLocale) ||
+            pickLocalizedString(post.excerpt, contentLocale),
+          bodySource: rawBodyText,
+          fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
+        });
+    const description = esc(descriptionText);
     const image = pickCrawlerShareImage(post);
     const ogTitle = post.ogTitle ? esc(post.ogTitle) : title;
     const ogDescription = post.ogDescription ? esc(post.ogDescription) : description;
     const ogImageAlt = esc(post.ogImageAlt || post.coverImageAlt || documentTitle);
     const url = `${BASE}${pagePath}`;
-    const author = post.author || 'BioNixus Research Team';
+    const author = post.author || DEFAULT_AUTHOR_NAME;
+    const modifiedAt = post.updatedAt || post._updatedAt || post.publishedAt || '';
+    const heading = industriesInsight && post.title ? esc(post.title) : title;
     const category =
       typeof post.category === 'string'
         ? post.category
@@ -483,38 +524,69 @@ export default async function handler(req, res) {
     });
 
     // BreadcrumbList JSON-LD
-    const breadcrumbJsonLd = JSON.stringify(
-      industriesInsight
-        ? {
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: 'Industries',
-                item: `${BASE}/bionixus-industries`,
-              },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: 'Industry Insights',
-                item: `${BASE}/bionixus-industries/insights`,
-              },
-              { '@type': 'ListItem', position: 4, name: post.title || slug, item: url },
-            ],
-          }
-        : {
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
-              { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog` },
-              { '@type': 'ListItem', position: 3, name: post.title || slug, item: url },
-            ],
-          },
-    );
+    const breadcrumbItems = industriesInsight
+      ? [
+          { name: 'Home', item: BASE },
+          { name: 'Industries', item: `${BASE}/bionixus-industries` },
+          { name: 'Industry Insights', item: `${BASE}/bionixus-industries/insights` },
+          { name: post.title || slug, item: url },
+        ]
+      : [
+          { name: 'Home', item: BASE },
+          { name: 'Blog', item: `${BASE}/blog` },
+          { name: post.title || slug, item: url },
+        ];
+    const breadcrumbJsonLd = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbItems.map((entry, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: entry.name,
+        item: entry.item,
+      })),
+    });
+
+    let structuredDataHtml = `<script type="application/ld+json">${articleJsonLd}</script>
+  <script type="application/ld+json">${breadcrumbJsonLd}</script>
+  ${faqJsonLd}`;
+    if (industriesInsight) {
+      const keywordSource =
+        Array.isArray(post.seoKeywords) && post.seoKeywords.length > 0 ? post.seoKeywords : post.tags;
+      const graph = buildIndustriesInsightGraph({
+        slug: String(slug),
+        pageUrl: url,
+        headline: post.title || documentTitle,
+        description: descriptionText,
+        image: {
+          url: image,
+          width: 1200,
+          height: 630,
+          caption: post.coverImageAlt || post.title || documentTitle,
+        },
+        datePublished: post.publishedAt,
+        dateModified: modifiedAt,
+        inLanguage: contentLocale,
+        articleSection: category,
+        keywords: (Array.isArray(keywordSource) ? keywordSource : []).filter(
+          (k) => typeof k === 'string' && k.trim(),
+        ),
+        wordCount: countWords(htmlToPlainText(articleBodyHtml)),
+        author: post.author
+          ? {
+              name: post.author,
+              slug: post.authorSlug,
+              jobTitle: post.authorTitle,
+              linkedIn: post.authorLinkedIn,
+            }
+          : null,
+        breadcrumb: breadcrumbItems,
+        faq: post.faq,
+      });
+      structuredDataHtml = graph
+        .map((node) => `<script type="application/ld+json">${JSON.stringify(node).replace(/</g, '\\u003c')}</script>`)
+        .join('\n  ');
+    }
 
     const html = `<!DOCTYPE html>
 <html${htmlDocumentAttrs(isArabic)}>
@@ -542,6 +614,8 @@ export default async function handler(req, res) {
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="${ogImageAlt}">
   ${post.publishedAt ? `<meta property="article:published_time" content="${esc(post.publishedAt)}">` : ''}
+  ${industriesInsight && modifiedAt ? `<meta property="article:modified_time" content="${esc(modifiedAt)}">` : ''}
+  ${industriesInsight ? `<meta property="article:author" content="${esc(author)}">` : ''}
   ${category ? `<meta property="article:section" content="${esc(category)}">` : ''}
   ${Array.isArray(post.tags) ? post.tags.map((t) => `<meta property="article:tag" content="${esc(t)}">`).join('\n  ') : ''}
 
@@ -556,21 +630,19 @@ export default async function handler(req, res) {
   <link rel="canonical" href="${url}">
 
   <!-- Structured Data -->
-  <script type="application/ld+json">${articleJsonLd}</script>
-  <script type="application/ld+json">${breadcrumbJsonLd}</script>
-  ${faqJsonLd}
+  ${structuredDataHtml}
 </head>
 <body${isArabic ? ' dir="rtl"' : ''}>
   <nav aria-label="Breadcrumb">
     ${
       industriesInsight
-        ? `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/bionixus-industries">Industries</a> &gt; <a href="${BASE}/bionixus-industries/insights">Industry Insights</a> &gt; <span>${title}</span>`
+        ? `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/bionixus-industries">Industries</a> &gt; <a href="${BASE}/bionixus-industries/insights">Industry Insights</a> &gt; <span>${heading}</span>`
         : `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>${title}</span>`
     }
   </nav>
   <article${isArabic ? ' dir="rtl" lang="ar"' : ''}>
     <header>
-      <h1>${title}</h1>
+      <h1>${heading}</h1>
       ${post.publishedAt ? `<time datetime="${esc(post.publishedAt)}">${new Date(post.publishedAt).toLocaleDateString(isArabic ? 'ar-EG' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>` : ''}
       ${author ? `<p>By ${esc(author)}</p>` : ''}
       ${category ? `<p>Category: ${esc(category)}</p>` : ''}
@@ -579,7 +651,7 @@ export default async function handler(req, res) {
     <div class="article-body">
       ${articleBodyHtml || `<p>${description}</p>`}
     </div>
-    ${buildRelatedInternalLinksNav(String(slug))}
+    ${industriesInsight ? buildIndustriesRelatedLinksNav(String(slug)) : buildRelatedInternalLinksNav(String(slug))}
     ${faqHtml}
   </article>
 </body>

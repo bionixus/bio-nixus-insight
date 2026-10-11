@@ -58,10 +58,12 @@ import {
   getBlogArticleIndexLabel,
   getBlogArticleIndexPath,
   getBlogPostUiStrings,
+  getBlogPostUiStringsForSilo,
   isRtlBlogLocale,
   resolveBlogArticleLocale,
   BLOG_DATE_LOCALE,
 } from '@/lib/blogPostUiStrings';
+import { buildIndustriesInsightSchemaExtras } from '@/lib/industriesInsightSchema';
 import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -955,7 +957,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   }
 
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
-  const blogUi = getBlogPostUiStrings(articleLocale);
+  const blogUi = getBlogPostUiStringsForSilo(articleLocale, resolvedSilo);
   const localizedArticleIndexPath =
     articleLocale === 'en' ? articleIndexPath : getBlogArticleIndexPath(articleLocale, resolvedSilo);
   const localizedArticleIndexLabel =
@@ -977,7 +979,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             ? therapyStaticBlogBundle!.displayTitle
             : post.title;
   const bodySourceForMeta = typeof post.body === 'string' ? post.body : post.excerpt || post.title;
-  const ctrSeo = slug ? getCtrSeo(`/blog/${slug}`) : null;
+  const ctrSeo = slug
+    ? getCtrSeo(resolvedSilo === 'industries' ? getIndustriesInsightPostPath(slug) : `/blog/${slug}`)
+    : null;
   let titleCore = dedupePipeBioNixusTail(post.seoMetaTitle || post.title || 'BioNixus');
   if (ctrSeo) {
     titleCore = ctrSeo.title;
@@ -1170,6 +1174,22 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
   const authorLinkedIn = authorLinkedInForDisplay(post.authorName, post.authorLinkedIn);
 
+  const industriesSchema =
+    resolvedSilo === 'industries' && slug
+      ? buildIndustriesInsightSchemaExtras({
+          post,
+          slug,
+          pageUrl,
+          imageUrl: resolvedOgImageUrl,
+          imageWidth: SOCIAL_OG_WIDTH,
+          imageHeight: SOCIAL_OG_HEIGHT,
+          body: getBodyToRender(post, slug, { isArBlog: isArabicArticle }),
+          inLanguage: articleLocale,
+          headline: articleDisplayTitle,
+          authorLinkedIn,
+        })
+      : null;
+
   return (
     // Delegated handler: internal <a href="/..."> links inside HTML bodies
     // SPA-navigate instead of triggering a full page reload.
@@ -1244,18 +1264,31 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           (isQ2PharmaBlogEn ? q2PharmaSchemaBundle?.articleSection : undefined) ||
           undefined
         }
-        keywords={displayBlogTags.length > 0 ? [...displayBlogTags] : undefined}
-        schemaMentions={
-          isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaMentions?.length
-            ? [...therapyStaticBlogBundle.schemaMentions]
-            : isQ2PharmaBlogEn && q2PharmaSchemaBundle?.mentions?.length
-              ? [...q2PharmaSchemaBundle.mentions]
-              : undefined
+        keywords={
+          industriesSchema?.keywords ?? (displayBlogTags.length > 0 ? [...displayBlogTags] : undefined)
         }
-        about={[{
-          '@type': 'Thing',
-          name: post.category?.trim() || 'Healthcare market research',
-        }]}
+        schemaMentions={
+          industriesSchema?.mentions
+            ? [...industriesSchema.mentions]
+            : isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaMentions?.length
+              ? [...therapyStaticBlogBundle.schemaMentions]
+              : isQ2PharmaBlogEn && q2PharmaSchemaBundle?.mentions?.length
+                ? [...q2PharmaSchemaBundle.mentions]
+                : undefined
+        }
+        about={
+          industriesSchema?.about
+            ? [...industriesSchema.about]
+            : [{
+                '@type': 'Thing',
+                name: post.category?.trim() || 'Healthcare market research',
+              }]
+        }
+        wordCount={industriesSchema?.wordCount}
+        authorNode={industriesSchema?.authorNode}
+        imageId={industriesSchema?.imageId}
+        imageCaption={industriesSchema?.imageCaption}
+        extraNodes={industriesSchema?.extraNodes}
         authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={authorLinkedIn}
         authorJobTitle={
@@ -1769,6 +1802,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                   {getRelatedResearchLinksForLocale(articleLocale, {
                     isGccComparisonEn,
                     isQuantMrMaEn,
+                    isIndustriesSilo: resolvedSilo === 'industries',
                   }).map(({ to, label }) => (
                     <Link
                       key={to}
@@ -1961,6 +1995,12 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               market={post.country || undefined}
               ctaId={`blog_${slug}_end`}
               ctaLocation="blog_post_end"
+              {...(resolvedSilo === 'industries'
+                ? {
+                    description:
+                      'Primary B2B and B2C research: mystery shopping, customer experience, brand and market studies. Start with a 30-minute scoping call.',
+                  }
+                : {})}
               {...(slug === 'nupco-saudi-arabia-tendering-guide'
                 ? {
                     headline: 'Preparing a NUPCO tender bid?',
