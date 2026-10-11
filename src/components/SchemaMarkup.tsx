@@ -33,6 +33,10 @@ type HomeSchemaProps = {
 type ItemListEntry = {
   name: string
   description: string
+  /** When set, the entry is emitted as an Organization `item` with this URL. */
+  url?: string
+  /** Entity @id for that Organization item. */
+  id?: string
 }
 
 type BlogSchemaProps = {
@@ -60,7 +64,20 @@ type BlogSchemaProps = {
   about?: ReadonlyArray<Record<string, unknown>>
   breadcrumb: BreadcrumbItem[]
   faqItems?: FaqItem[]
-  itemList?: { name: string; items: ItemListEntry[] }
+  itemList?: { name: string; description?: string; items: ItemListEntry[] }
+  /** Words in the visible article text (`wordCount` on the article node). */
+  wordCount?: number
+  /** Alt text for the primary image; becomes the ImageObject caption. */
+  imageAlt?: string
+  /**
+   * Emits a WebPage node for `mainEntityOfPage`, linked by `@id` to the article,
+   * the primary ImageObject and the BreadcrumbList.
+   */
+  emitWebPage?: boolean
+  /** Page-level Organization node; must keep the sitewide `@id`. */
+  organization?: Record<string, unknown>
+  /** Replaces the Person built from authorName / authorUrl / authorJobTitle. */
+  authorNode?: Record<string, unknown>
 }
 
 type ServiceSchemaProps = {
@@ -348,13 +365,17 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
     const imgWidth = props.ogImageWidth ?? 1200
     const imgHeight = props.ogImageHeight ?? 630
     const schemaType = props.pageType === 'blog' ? 'BlogPosting' : 'Article'
+    const webPageId = `${pageUrlHttps}#webpage`
+    const primaryImageId = `${pageUrlHttps}#primaryimage`
+    const breadcrumbId = `${pageUrlHttps}#breadcrumb`
 
     const primaryImageObject = {
       '@type': 'ImageObject',
+      ...(props.emitWebPage ? { '@id': primaryImageId, contentUrl: imageUrlHttps } : {}),
       url: imageUrlHttps,
       width: imgWidth,
       height: imgHeight,
-      caption: props.headline,
+      caption: props.imageAlt?.trim() || props.headline,
     }
 
     const articleNode: Record<string, unknown> = {
@@ -363,7 +384,7 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       '@id': `${pageUrlHttps}#${props.pageType === 'blog' ? 'blogPosting' : 'article'}`,
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `${pageUrlHttps}#webpage`,
+        '@id': webPageId,
         url: pageUrlHttps,
       },
       url: pageUrlHttps,
@@ -376,18 +397,23 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       ...(props.keywords && props.keywords.length > 0
         ? { keywords: props.keywords.join(', ') }
         : {}),
+      ...(typeof props.wordCount === 'number' && props.wordCount > 0
+        ? { wordCount: Math.round(props.wordCount) }
+        : {}),
       ...(props.schemaMentions && props.schemaMentions.length > 0
         ? { mentions: props.schemaMentions.map((m) => ({ ...m })) }
         : {}),
       ...(props.about && props.about.length > 0
         ? { about: props.about.length === 1 ? { ...props.about[0] } : props.about.map((a) => ({ ...a })) }
         : {}),
-      author: withAlsaadanyPersonJsonLd({
-        '@type': 'Person',
-        name: props.authorName,
-        ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
-        ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
-      }),
+      author: props.authorNode
+        ? { ...props.authorNode }
+        : withAlsaadanyPersonJsonLd({
+            '@type': 'Person',
+            name: props.authorName,
+            ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
+            ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
+          }),
       datePublished: published,
       dateModified: modified,
       publisher: {
@@ -405,7 +431,32 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       isAccessibleForFree: true,
     }
 
-    const nodes: Record<string, unknown>[] = [articleNode, buildBreadcrumb(props.breadcrumb)]
+    const breadcrumbNode = buildBreadcrumb(props.breadcrumb)
+    const nodes: Record<string, unknown>[] = [
+      articleNode,
+      props.emitWebPage ? { ...breadcrumbNode, '@id': breadcrumbId } : breadcrumbNode,
+    ]
+
+    if (props.emitWebPage) {
+      nodes.push({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': webPageId,
+        url: pageUrlHttps,
+        name: props.headline,
+        description: props.description,
+        inLanguage,
+        isPartOf: { '@id': WEBSITE_ID },
+        primaryImageOfPage: { '@id': primaryImageId },
+        breadcrumb: { '@id': breadcrumbId },
+        datePublished: published,
+        dateModified: modified,
+      })
+    }
+
+    if (props.organization) {
+      nodes.push({ '@context': 'https://schema.org', ...props.organization, '@type': 'Organization', '@id': ORG_ID })
+    }
 
     if (props.faqItems && props.faqItems.length > 0) {
       nodes.push(buildFaq(props.faqItems, inLanguage, pageUrlHttps))
@@ -416,12 +467,22 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: props.itemList.name,
+        ...(props.itemList.description ? { description: props.itemList.description } : {}),
         itemListOrder: 'https://schema.org/ItemListUnordered',
         itemListElement: props.itemList.items.map((item, idx) => ({
           '@type': 'ListItem',
           position: idx + 1,
-          name: item.name,
-          description: item.description,
+          ...(item.url
+            ? {
+                item: {
+                  '@type': 'Organization',
+                  ...(item.id ? { '@id': item.id } : {}),
+                  name: item.name,
+                  url: item.url,
+                  description: item.description,
+                },
+              }
+            : { name: item.name, description: item.description }),
         })),
       })
     }

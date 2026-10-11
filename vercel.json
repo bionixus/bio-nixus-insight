@@ -1054,6 +1054,10 @@
       "destination": "/home-staging.html"
     },
     {
+      "source": "/blog/who-does-obesity-market-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/who-does-obesity-market-research-saudi-arabia"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {

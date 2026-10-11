@@ -19,6 +19,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'turkey-pharmaceutical-market-2026-titck-top-companies',
   'nmpa-class-iii-registration-timeline-2026',
   'china-device-vbp-rounds-explained',
+  'who-does-obesity-market-research-saudi-arabia',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -104,6 +105,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'China Device VBP Rounds Explained 2026: Price Cuts & Volume Commitments',
     description:
       'How China’s medical device Volume-Based Procurement works in 2026: stent and joint price-cut examples, win vs lose outcomes, renewals, and private-hospital escape valves.',
+  },
+  'who-does-obesity-market-research-saudi-arabia': {
+    title: 'Who Does Obesity Market Research in Saudi Arabia? (2026)',
+    description:
+      'Who does obesity market research in Saudi Arabia? A sourced 2026 shortlist of 8 providers for obesity GLP-1 market research Saudi Arabia teams can act on.',
   },
 };
 

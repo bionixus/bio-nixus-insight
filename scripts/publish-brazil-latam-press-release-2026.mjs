@@ -17,6 +17,7 @@ import {
   SUBHEADLINE,
   DATELINE,
   SPOKESPERSON_NAME,
+  SPOKESPERSON_TITLE,
   SEO_META_TITLE,
   SEO_META_DESCRIPTION,
   OG_DESCRIPTION,
@@ -132,12 +133,12 @@ async function ensureAuthorTitle(client) {
     { name: AUTHOR_NAME },
   )
   if (!author?._id) {
-    console.warn(`Author "${AUTHOR_NAME}" not found in Sanity; quote still uses Research Director in release body.`)
+    console.warn(`Author "${AUTHOR_NAME}" not found in Sanity; quote still uses ${SPOKESPERSON_TITLE} in release body.`)
     return
   }
-  if (author.title !== 'Research Director') {
-    await client.patch(author._id).set({ title: 'Research Director' }).commit()
-    console.log(`Updated author ${AUTHOR_NAME} title → Research Director`)
+  if (author.title !== SPOKESPERSON_TITLE) {
+    await client.patch(author._id).set({ title: SPOKESPERSON_TITLE }).commit()
+    console.log(`Updated author ${AUTHOR_NAME} title → ${SPOKESPERSON_TITLE}`)
   }
 }
 
@@ -186,7 +187,7 @@ async function main() {
     console.log('Created pressRelease:', created._id)
   }
 
-  console.log('Spokesperson:', `${SPOKESPERSON_NAME}, Research Director`)
+  console.log('Spokesperson:', `${SPOKESPERSON_NAME}, ${SPOKESPERSON_TITLE}`)
   console.log('URL:', `https://www.bionixus.com/news/${SLUG}`)
   console.log('Studio:', `https://${projectId}.sanity.studio`)
 }

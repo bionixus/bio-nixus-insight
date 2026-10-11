@@ -29,6 +29,7 @@ export const LEGACY_SLUG_CLUSTERS = {
   'rare-disease-orphan-drug-saudi-arabia-sfda-2026': 'saudi',
   'patient-journey-mapping-saudi-arabia': 'saudi',
   'top-healthcare-market-research-firms-saudi-arabia': 'saudi',
+  'who-does-obesity-market-research-saudi-arabia': 'saudi',
   'quantitative-healthcare-market-research-ksa': 'saudi',
   'top-therapy-areas-pharma-growth-saudi-arabia': 'saudi',
   'pharmacies-saudi-arabia-market-research-marketing-automation': 'saudi',
@@ -95,6 +96,7 @@ export const LEGACY_SLUG_TITLES = {
   'top-healthcare-market-research-companies-uae': 'top UAE healthcare market research companies',
   'top-healthcare-market-research-companies-kuwait': 'top Kuwait healthcare market research companies',
   'top-healthcare-market-research-firms-saudi-arabia': 'top Saudi healthcare research firms',
+  'who-does-obesity-market-research-saudi-arabia': 'who does obesity market research in Saudi Arabia',
   'quantitative-healthcare-market-research-uae': 'quantitative healthcare research in the UAE',
   'pharmaceutical-market-entry-saudi-arabia-2026-guide': 'Saudi Arabia pharma market entry guide',
   'foundayo-orforglipron-fda-approval-2026': 'Foundayo oral GLP-1 FDA approval',
@@ -200,6 +202,7 @@ export const CLUSTER_RELATED_SLUGS = {
   ],
   saudi: [
     'saudi-arabia-healthcare-market-2026',
+    'who-does-obesity-market-research-saudi-arabia',
     'nupco-saudi-arabia-tendering-guide',
     'sfda-drug-registration-guide',
     'pharmaceutical-market-entry-saudi-arabia-2026-guide',

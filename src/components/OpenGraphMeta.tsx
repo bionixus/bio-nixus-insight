@@ -51,7 +51,10 @@ export default function OpenGraphMeta({
   article,
 }: OpenGraphMetaProps) {
   const trimmedTags = Array.isArray(article?.tags) ? article.tags.map((t) => t.trim()).filter(Boolean) : [];
+  const isArticle = type === 'article';
 
+  // Keep these as direct <Helmet> children: react-helmet-async replaces the meta
+  // tags collected inside a Fragment with the outer meta list, dropping them.
   return (
     <Helmet>
       <meta property="og:type" content={type} />
@@ -72,17 +75,13 @@ export default function OpenGraphMeta({
         <meta key={alt} property="og:locale:alternate" content={alt} />
       ))}
 
-      {type === 'article' ? (
-        <>
-          {article?.publishedTime ? <meta property="article:published_time" content={article.publishedTime} /> : null}
-          {article?.modifiedTime ? <meta property="article:modified_time" content={article.modifiedTime} /> : null}
-          {article?.author ? <meta property="article:author" content={article.author} /> : null}
-          {article?.section ? <meta property="article:section" content={article.section} /> : null}
-          {trimmedTags.map((tag) => (
-            <meta key={tag} property="article:tag" content={tag} />
-          ))}
-        </>
-      ) : null}
+      {isArticle && article?.publishedTime ? <meta property="article:published_time" content={article.publishedTime} /> : null}
+      {isArticle && article?.modifiedTime ? <meta property="article:modified_time" content={article.modifiedTime} /> : null}
+      {isArticle && article?.author ? <meta property="article:author" content={article.author} /> : null}
+      {isArticle && article?.section ? <meta property="article:section" content={article.section} /> : null}
+      {isArticle
+        ? trimmedTags.map((tag) => <meta key={`article-tag-${tag}`} property="article:tag" content={tag} />)
+        : null}
 
       <meta name="twitter:card" content="summary_large_image" />
       {twitterSite ? <meta name="twitter:site" content={twitterSite} /> : null}

@@ -21,47 +21,47 @@ export type EditorialAuthor = {
   jobTitle: string;
 };
 
-/** European / American names in Sanity — use on USA, Canada, and Europe. */
+/** The six authors rotated on new articles in every region, all titled Global Research Manager. */
 export const WESTERN_AUTHORS: readonly EditorialAuthor[] = [
   {
     id: '5373a02d-e67d-4415-9739-33ee8f4da7e2',
     name: 'Laura McConaughey',
     slug: 'laura-mcconaughey',
-    jobTitle: 'Senior Healthcare Analyst',
+    jobTitle: 'Global Research Manager',
   },
   {
     id: '498ba300-bfab-4a76-b256-b2139d4d66fe',
     name: 'Sarah Chen',
     slug: 'sarah-chen',
-    jobTitle: 'Healthcare Market Research Analyst',
+    jobTitle: 'Global Research Manager',
   },
   {
     id: '6263dcc8-994f-4cd1-9228-7e92332659d3',
     name: 'Martha DeVito',
     slug: 'martha-devito',
-    jobTitle: 'Principal Research Analyst',
+    jobTitle: 'Global Research Manager',
   },
   {
     id: '7acabff7-aae6-4d8a-a667-91e21a235bcb',
     name: 'Anna Cuban',
     slug: 'anna-cuban',
-    jobTitle: 'Research Analyst',
+    jobTitle: 'Global Research Manager',
   },
   {
     id: '4e924019-dd92-48cf-899b-3bd63c266dd3',
     name: 'Armela Belba',
     slug: 'armela-belba',
-    jobTitle: 'European Research Lead',
+    jobTitle: 'Global Research Manager',
   },
   {
     id: '5e67519a-1cdc-4b57-a881-29391db4accd',
     name: 'Ivona Gunjova',
     slug: 'ivona-gunjova',
-    jobTitle: 'Healthcare Research Analyst',
+    jobTitle: 'Global Research Manager',
   },
 ] as const;
 
-/** Arab names in Sanity — use on Middle East / GCC / MENA (not Alsaadany on comparison pages). */
+/** MENA roster in Sanity; getEditorialAuthor() returns these for Middle East paths. */
 export const MENA_AUTHORS: readonly EditorialAuthor[] = [
   {
     id: 'SIsz67NbFQI3M2UuZVXjTU',
@@ -306,7 +306,7 @@ export function getEditorialAuthor(options: {
   if (region === 'mena') {
     return pickStable(MENA_AUTHORS, options.path);
   }
-  // APAC / LATAM / unscoped comparison pages: Western names, never Alsaadany.
+  // APAC / LATAM / unscoped pages use the six rotating authors.
   return pickStable(WESTERN_AUTHORS, options.path);
 }
 

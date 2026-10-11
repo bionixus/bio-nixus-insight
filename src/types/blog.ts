@@ -22,6 +22,27 @@ export interface BlogPostCtaSection {
   buttonUrl?: string;
 }
 
+export interface BlogPostItemListEntry {
+  name: string;
+  description: string;
+  url?: string;
+  /** Entity @id for the entry's Organization item (e.g. the sitewide BioNixus node). */
+  id?: string;
+}
+
+/** Opt-in JSON-LD additions for hardcoded posts; Sanity posts never set these. */
+export interface BlogPostSchemaExtras {
+  /** WebPage node linked by @id to the article, cover ImageObject and BreadcrumbList. */
+  emitWebPage?: boolean;
+  /** Page-level Organization node (keeps the sitewide @id). */
+  organization?: Record<string, unknown>;
+  /** Author node; omit to keep the template's default author. */
+  author?: Record<string, unknown>;
+  /** Replaces the default `about` Thing built from the category. */
+  about?: ReadonlyArray<Record<string, unknown>>;
+  itemList?: { name: string; description?: string; items: BlogPostItemListEntry[] };
+}
+
 export interface BlogPost {
   id: string;
   slug: string;
@@ -40,6 +61,16 @@ export interface BlogPost {
   industrySegment?: 'b2b' | 'b2c';
   industrySlug?: string;
   readingTime?: number;
+  /** Words in the visible article text; emitted as `wordCount` in JSON-LD. */
+  wordCount?: number;
+  /**
+   * Last-crumb label. When set, the hero shows a visible Home / Blog / label trail
+   * and the BreadcrumbList JSON-LD uses the same label.
+   */
+  breadcrumbLabel?: string;
+  /** Dek rendered inside the hero <h1>, under the title. */
+  displaySubtitle?: string;
+  schemaExtras?: BlogPostSchemaExtras;
   tags?: string[];
   tableOfContents?: { heading?: string; anchor?: string }[];
   executiveSummary?: string | unknown[];

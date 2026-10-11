@@ -15,6 +15,7 @@ import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.
 import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
 import { LEGACY_REDIRECTS, lookupRedirect } from '../lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-redirects.mjs';
+import { stripDefaultOrganizationJsonLd } from '../lib/strip-industries-insights-org.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -595,10 +596,13 @@ function injectHtml(
     );
   // Do not inject nodes into #root after renderToString. A share <aside> that
   // is not in the React tree makes hydrateRoot throw and client-render the page.
-  return ensureCtrOgTags(
-    ensureCanonicalTag(
-      ensureImageTitleAttributes(
-        ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+  return stripDefaultOrganizationJsonLd(
+    ensureCtrOgTags(
+      ensureCanonicalTag(
+        ensureImageTitleAttributes(
+          ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+        ),
+        pathname,
       ),
       pathname,
     ),
