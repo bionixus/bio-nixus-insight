@@ -78,6 +78,7 @@ BioNixus provides four coordinated evidence pillars for Saudi Arabia pharma mark
 - **Pricing and elasticity research**: promo sensitivity, bundle optimisation, and tier testing
 - **New product development**: concept testing, packaging evaluation, flavour and formulation screening
 - **MENA and GCC shopper insights**: Arabic-English bilingual execution; urban and suburban retail environments
+- **Mystery shopping (Saudi Arabia and GCC)**: scenario design from service standards, visit sampling, PDPL-aware data handling and scorecards — [Mystery shopping companies Saudi Arabia: 2026 guide](https://www.bionixus.com/bionixus-industries/insights/mystery-shopping-companies-saudi-arabia-2026)
 
 ### Manufacturing and Industrial Market Research
 - **Procurement and sourcing intelligence**: supplier selection criteria and TCO analysis
