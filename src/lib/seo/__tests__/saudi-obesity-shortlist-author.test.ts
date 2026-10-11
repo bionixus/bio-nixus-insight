@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
+import { ALSAADANY_AUTHOR, ALSAADANY_PROFILE_URL } from '@/data/editorialAuthors';
 import {
   SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
   SAUDI_OBESITY_SHORTLIST_PATH,
@@ -34,9 +35,17 @@ describe('Saudi obesity shortlist author wiring', () => {
     expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.schemaExtras?.author).toBeUndefined();
   });
 
-  it('rejects Mohammad Alsaadany on this comparison page', () => {
-    expect(() => resolveShortlistAuthor('Mohammad Alsaadany')).toThrow(/comparison page/);
-    expect(() => resolveShortlistAuthor('Dr. Mohammad Alsaadany')).toThrow(/comparison page/);
+  it('resolves Mohammad Alsaadany from the roster like any other author', () => {
+    const author = resolveShortlistAuthor('Mohammad Alsaadany');
+    expect(author.authorName).toBe('Mohammad Alsaadany');
+    expect(author.authorTitle).toBe(ALSAADANY_AUTHOR.jobTitle);
+    expect(author.schema).toMatchObject({
+      '@type': 'Person',
+      name: 'Mohammad Alsaadany',
+      jobTitle: ALSAADANY_AUTHOR.jobTitle,
+      url: ALSAADANY_PROFILE_URL,
+    });
+    expect(resolveShortlistAuthor('Dr. Mohammad Alsaadany').schema).toMatchObject({ url: ALSAADANY_PROFILE_URL });
   });
 
   it('puts a roster author in the byline, the Person node and article:author', async () => {

@@ -7,7 +7,13 @@
  * Every provider statement summarises that provider's own page (accessed 2026-10-11).
  */
 import type { BlogPost, BlogPostItemListEntry } from '@/types/blog';
-import { MENA_AUTHORS, WESTERN_AUTHORS, isAlsaadanyDisplayName, personAuthorJsonLd } from '@/data/editorialAuthors';
+import {
+  ALSAADANY_AUTHOR,
+  MENA_AUTHORS,
+  WESTERN_AUTHORS,
+  personAuthorJsonLd,
+  withAlsaadanyPersonJsonLd,
+} from '@/data/editorialAuthors';
 import { GOOGLE_OFFICES } from '@/data/googleLocations';
 import { ORG_ID, ORG_LOGO, ORG_NAME, ORG_SAME_AS } from '@/lib/seo/organization';
 
@@ -18,10 +24,9 @@ export const SAUDI_OBESITY_SHORTLIST_PATH = `/blog/${SAUDI_OBESITY_SHORTLIST_SLU
 export const SAUDI_OBESITY_SHORTLIST_URL = `https://www.bionixus.com${SAUDI_OBESITY_SHORTLIST_PATH}`;
 
 /**
- * Byline. Set this to a name from the Sanity roster in src/data/editorialAuthors.ts.
- * This is a MENA comparison page: the editorial rule allows Mohammad Ashour or
- * Dina Ibrahim and never Mohammad Alsaadany. Undefined keeps the template default
- * ("BioNixus Research Team") in JSON-LD and article:author, with no visible byline.
+ * Byline. A name from the Sanity roster in src/data/editorialAuthors.ts, which supplies the job
+ * title. Undefined keeps the template default ("BioNixus Research Team") in JSON-LD and
+ * article:author, with no visible byline.
  */
 export const SAUDI_OBESITY_SHORTLIST_AUTHOR_NAME: string | undefined = undefined;
 
@@ -618,19 +623,17 @@ export type ShortlistAuthor = Pick<BlogPost, 'authorName' | 'authorTitle' | 'aut
   schema?: Record<string, unknown>;
 };
 
-/**
- * Byline fields and Person JSON-LD for a roster name. Unknown names still get a
- * Person node; Mohammad Alsaadany is rejected because this is a comparison page.
- */
+/** Byline fields and Person JSON-LD for a roster name. Unknown names still get a Person node. */
 export function resolveShortlistAuthor(name: string | undefined, profileUrl?: string): ShortlistAuthor {
   if (!name) return {};
-  if (isAlsaadanyDisplayName(name)) {
-    throw new Error('Mohammad Alsaadany cannot be credited on a market research comparison page.');
-  }
-  const roster = [...MENA_AUTHORS, ...WESTERN_AUTHORS].find((author) => author.name === name);
+  const roster = [...MENA_AUTHORS, ...WESTERN_AUTHORS, ALSAADANY_AUTHOR].find((author) => author.name === name);
   const person = roster
     ? personAuthorJsonLd(roster)
-    : { '@type': 'Person', name, worksFor: { '@type': 'Organization', '@id': ORG_ID, name: ORG_NAME } };
+    : withAlsaadanyPersonJsonLd({
+        '@type': 'Person',
+        name,
+        worksFor: { '@type': 'Organization', '@id': ORG_ID, name: ORG_NAME },
+      });
   return {
     authorName: name,
     authorTitle: roster?.jobTitle,

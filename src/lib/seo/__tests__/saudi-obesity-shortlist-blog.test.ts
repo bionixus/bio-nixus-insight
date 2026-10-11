@@ -317,12 +317,10 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: copy rules', () =
     expect(SAUDI_OBESITY_SHORTLIST_TABLE_OF_CONTENTS.map((item) => item.anchor)).toEqual(ids);
   });
 
-  it('states no prices, no Al Khobar or Kuwait office, no client names and never credits Alsaadany', () => {
+  it('states no prices and no Al Khobar or Kuwait office', () => {
     expect(allCopy).not.toMatch(/Khobar/i);
     expect(allCopy).not.toMatch(/Kuwait office|Salmiya/i);
     expect(allCopy).not.toMatch(/\$\s?\d[\d,]*(?:k|,000)/i);
-    expect(allCopy).not.toMatch(/Alsaadany|السعداني/i);
-    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.authorName ?? '').not.toMatch(/Alsaadany/i);
   });
 
   it('cites every reference inline before the reference list', () => {
