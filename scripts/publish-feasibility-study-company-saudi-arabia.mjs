@@ -29,7 +29,7 @@ const ARTICLE_EXCERPT =
   'A sourced 2026 guide to what the market section of a Saudi feasibility study must prove — demand, price, city mix, channels and competition — and how primary research makes the chapter bankable for SIDF and other lenders.';
 const SEO_META_TITLE = 'Feasibility Study Company Saudi Arabia (2026 Guide)';
 const SEO_META_DESCRIPTION =
-  'What a feasibility study company in Saudi Arabia must prove in the market section: demand, price, channels, competition and SIDF-ready primary evidence.';
+  'Feasibility study company Saudi Arabia: what the 2026 market section must prove — demand, price, channels, competition and SIDF-ready primary evidence.';
 const COVER_ALT =
   'BioNixus navy and gold cover: feasibility study company Saudi Arabia — what the market section must prove in 2026';
 const HERO_ALT =

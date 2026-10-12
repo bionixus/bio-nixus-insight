@@ -115,7 +115,7 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
   'feasibility-study-company-saudi-arabia': {
     title: 'Feasibility Study Company Saudi Arabia (2026 Guide)',
     description:
-      'What a feasibility study company in Saudi Arabia must prove in the market section: demand, price, channels, competition and SIDF-ready primary evidence.',
+      'Feasibility study company Saudi Arabia: what the 2026 market section must prove — demand, price, channels, competition and SIDF-ready primary evidence.',
   },
 };
 

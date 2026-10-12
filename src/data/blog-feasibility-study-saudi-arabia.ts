@@ -38,7 +38,7 @@ export const SAUDI_FEASIBILITY_GEMINI_COVER_PENDING = true;
 export const SAUDI_FEASIBILITY_META_TITLE = 'Feasibility Study Company Saudi Arabia (2026 Guide)';
 
 export const SAUDI_FEASIBILITY_META_DESCRIPTION =
-  'What a feasibility study company in Saudi Arabia must prove in the market section: demand, price, channels, competition and SIDF-ready primary evidence.';
+  'Feasibility study company Saudi Arabia: what the 2026 market section must prove — demand, price, channels, competition and SIDF-ready primary evidence.';
 
 export const SAUDI_FEASIBILITY_DISPLAY_TITLE =
   'Feasibility Studies in Saudi Arabia: What the Market Section Must Prove';

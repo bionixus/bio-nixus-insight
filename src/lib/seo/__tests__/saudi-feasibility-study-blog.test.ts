@@ -306,6 +306,10 @@ describe('/bionixus-industries/insights/feasibility-study-company-saudi-arabia: 
       title: SAUDI_FEASIBILITY_META_TITLE,
       description: SAUDI_FEASIBILITY_META_DESCRIPTION,
     });
+    expect(getCtrSeo(`/blog/${SAUDI_FEASIBILITY_SLUG}`)).toEqual({
+      title: SAUDI_FEASIBILITY_META_TITLE,
+      description: SAUDI_FEASIBILITY_META_DESCRIPTION,
+    });
     expect(getCrawlerStubForSlug(SAUDI_FEASIBILITY_SLUG)).toEqual({
       title: SAUDI_FEASIBILITY_META_TITLE,
       description: SAUDI_FEASIBILITY_META_DESCRIPTION,
