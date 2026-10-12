@@ -1939,8 +1939,9 @@ async function main() {
   const lastmodFloor = {
     [`${BASE}/blog/kol-mapping-pharma-middle-east`]: '2026-09-29',
     [`${BASE}/patient-journey-research-gcc`]: '2026-10-05',
-    [`${BASE}/gcc-obesity-market`]: '2026-10-05',
-    [`${BASE}/saudi-arabia-obesity-market`]: '2026-10-05',
+    [`${BASE}/gcc-obesity-market`]: '2026-10-12',
+    [`${BASE}/saudi-arabia-obesity-market`]: '2026-10-12',
+    [`${BASE}/insights/top-market-research-companies-saudi-arabia-2026`]: '2026-10-12',
     [`${BASE}/uae-obesity-market`]: '2026-10-05',
     [`${BASE}/kuwait-obesity-market`]: '2026-10-05',
     [`${BASE}/egypt-obesity-market`]: '2026-10-05',
