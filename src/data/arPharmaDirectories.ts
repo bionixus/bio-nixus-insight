@@ -29,6 +29,7 @@ export type ArPharmaDirectoryConfig = {
 };
 
 const PUBLISHED = '2026-09-02';
+const MODIFIED = '2026-10-12';
 
 function pathFor(country: ArPharmaCountrySlug): string {
   return `/ar/pharmaceutical-companies-${country}`;
@@ -64,6 +65,15 @@ const EGYPT: ArPharmaDirectoryConfig = {
     { name: 'Sanofi', hq: 'فرنسا', type: 'متعدد الجنسيات', focus: 'سكري، لقاحات، صحة مستهلك', notes: 'إنتاج محلي إلى جانب الاستيراد' },
     { name: 'Hikma Pharmaceuticals', hq: 'الأردن / المملكة المتحدة', type: 'إقليمي', focus: 'حقن وجنيس', notes: 'لاعب إقليمي يُعامل في مصر كحساب لا كهامش' },
     { name: 'Ibn Sina Pharma', hq: 'مصر', type: 'موزّع', focus: 'توزيع وطني', notes: 'أكبر موزّع؛ الحساب الذي تسأله الفرق عندما ينقطع التغطية' },
+    { name: 'Egyptian Group for Pharmaceutical Industries', hq: 'مصر', type: 'محلي', focus: 'متعدد التخصصات', notes: 'مجموعة تصنيع وطنية مركزية في المنافسة المحلية' },
+    { name: 'Memphis Pharmaceuticals', hq: 'مصر', type: 'محلي', focus: 'جنيس', notes: 'لاعب محلي من الستينيات؛ حضور في المستشفيات الحكومية' },
+    { name: 'Kahira Pharmaceuticals', hq: 'مصر', type: 'محلي', focus: 'قطاع عام', notes: 'تصنيع حكومي؛ حساب مناقصات وقوائم مركزية' },
+    { name: 'Alexandria Pharma (AXPH)', hq: 'مصر', type: 'محلي', focus: 'جنيس', notes: 'من أقدم الأسماء المصرفة؛ حضور إسكندرية والدلتا' },
+    { name: 'AstraZeneca', hq: 'المملكة المتحدة / السويد', type: 'متعدد الجنسيات', focus: 'أورام وجهاز تنفسي', notes: 'محفظة مسجّلة؛ نمو في المستشفيات الخاصة' },
+    { name: 'GSK', hq: 'المملكة المتحدة', type: 'متعدد الجنسيات', focus: 'لقاحات وجهاز تنفسي', notes: 'لقاحات ومضادات فيروسات؛ حضور حكومي وخاص' },
+    { name: 'Roche', hq: 'سويسرا', type: 'متعدد الجنسيات', focus: 'أورام وأمراض الدم', notes: 'أورام قوية في المستشفيات المرجعية' },
+    { name: 'MSD (Merck)', hq: 'الولايات المتحدة', type: 'متعدد الجنسيات', focus: 'أورام ولقاحات', notes: 'مبتكر في المستشفيات الجامعية والخاصة' },
+    { name: 'AbbVie', hq: 'الولايات المتحدة', type: 'متعدد الجنسيات', focus: 'مناعة وأورام', notes: 'محفظة المناعة تتنافس مع الجنيس المحلي على السعر' },
   ],
   faq: [
     {
@@ -86,6 +96,22 @@ const EGYPT: ArPharmaDirectoryConfig = {
       q: 'كيف نطلب دراسة من بيونيكسس؟',
       a: 'عرض خلال 48 ساعة من موجز قابل للتنفيذ. التسعير بالمشروع والدولة. النموذج أدناه أو admin@bionixus.com.',
     },
+    {
+      q: 'كم يبلغ حجم سوق الدواء في مصر تقريباً؟',
+      a: 'يُقدّر سوق الأدوية في مصر بنحو 5.8 مليار دولار أمريكي في 2026 مع نمو سنوي قرب 9%. مع أكثر من 109 مليون نسمة، الإنفاق للفرد منخفض لكنه يرتفع مع التأمين الصحي الشامل وتوسيع التغطية. المحلي يحتفظ بحوالي 56% من قيمة السوق رغم أن 90% من الحجم يُنتج محلياً — فجوة بين الحجم والقيمة تعكس تسعير الهيئة والجنيس.',
+    },
+    {
+      q: 'كم شركة دوائية تعمل في مصر؟',
+      a: 'يعمل أكثر من 120 شركة دوائية بين مصنع محلي ومكتب متعدد الجنسيات وموزّع. هذا الدليل يركز على الحسابات التي تسأل عنها فرق الاستراتيجية والوصول — لا يُعدّ تعداداً كاملاً لكل ترخيص EDA.',
+    },
+    {
+      q: 'ما الفرق بين دراسة مصر والخليج؟',
+      a: 'في الخليج الاستيراد والتأمين الخاص يهيمنان؛ في مصر التصنيع والتسعير الحكومي والموزّع الوطني (ابن سينا) يشكّلان المحور. نفس الاستبيان لا يصلح للسوقين.',
+    },
+    {
+      q: 'هل تغطي بيونيكسس الصيدليات والمستشفيات في المحافظات؟',
+      a: 'نعم عندما يذكر الموجز المحافظة أو الشبكة المستهدفة. القاهرة والإسكندرية والدلتا وصعيد مصر قنوات مختلفة في التوزيع والتسعير؛ نصمم العينة على ذلك لا على «مصر» ككتلة واحدة. العروض خلال 48 ساعة من موجز يحدد العلامة والمنافس والقناة.',
+    },
   ],
   related: [
     { to: '/ar/insights/top-market-research-companies-egypt-2026', label: 'أفضل شركات أبحاث السوق في مصر (2026)' },
@@ -97,7 +123,7 @@ const EGYPT: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-egypt',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const UAE: ArPharmaDirectoryConfig = {
@@ -164,7 +190,7 @@ const UAE: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-uae',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const KSA: ArPharmaDirectoryConfig = {
@@ -231,7 +257,7 @@ const KSA: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-saudi-arabia',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const KUWAIT: ArPharmaDirectoryConfig = {
@@ -286,6 +312,14 @@ const KUWAIT: ArPharmaDirectoryConfig = {
       q: 'أين دليل الأبحاث بالكويت؟',
       a: 'الصفحة الإنجليزية /insights/top-market-research-companies-kuwait-2026 والدليل الإنجليزي /pharmaceutical-companies-kuwait. هذه الصفحة بالعربية للشركات الدوائية.',
     },
+    {
+      q: 'كيف يعمل تسجيل الدواء في الكويت؟',
+      a: 'وزارة الصحة تضبط التسجيل والاستيراد. المنتج المسجّل يحتاج موزّعاً فعّالاً للوصول إلى المستشفى والصيدلية. التأخير غالباً في التوزيع أو التسعير لا في «وعي الطبيب» فقط — لذلك نضع كيورا وعلي عبد الوهاب في نفس الجدول مع فايزر ونوفارتس.',
+    },
+    {
+      q: 'ما حجم سوق الدواء في الكويت؟',
+      a: 'سوق صغير سكانيّاً لكن إنفاقاً مرتفعاً للفرد ضمن الخليج. الحجم المطلق أقل من السعودية والإمارات؛ الحسابات قليلة ومركّزة. دراسة جيدة في الكويت تعمق في الموزّع والمستشفى لا في عينة واسعة ضعيفة.',
+    },
   ],
   related: [
     { to: '/insights/top-market-research-companies-kuwait-2026', label: 'أفضل شركات أبحاث السوق في الكويت (إنجليزي)' },
@@ -297,7 +331,7 @@ const KUWAIT: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-kuwait',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const OMAN: ArPharmaDirectoryConfig = {
@@ -363,7 +397,7 @@ const OMAN: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-oman',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 const QATAR: ArPharmaDirectoryConfig = {
@@ -429,7 +463,7 @@ const QATAR: ArPharmaDirectoryConfig = {
   ],
   enPath: '/pharmaceutical-companies-qatar',
   publishedDate: PUBLISHED,
-  modifiedDate: PUBLISHED,
+  modifiedDate: MODIFIED,
 };
 
 export const AR_PHARMA_DIRECTORIES: ArPharmaDirectoryConfig[] = [EGYPT, UAE, KSA, KUWAIT, OMAN, QATAR];

@@ -63,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-10-12',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -78,7 +78,7 @@ const jsonLd = [
     countryName: "Brazil",
     marketSlug: "brazil",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-08-22",
+    modifiedDate: "2026-10-12",
   })
 ];
 
@@ -121,6 +121,43 @@ const BrazilHealthcareMarketReport = () => (
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="healthcare" />
+
+        <section className="section-padding bg-muted/20" id="brazil-regional-hubs">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Regional manufacturing and hospital hubs in Brazil
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              São Paulo state concentrates the majority of ANVISA-licensed pharmaceutical plants, distributor headquarters,
+              and private hospital groups that set reference pricing for innovative medicines. Campinas, Guarulhos, and the
+              ABC industrial corridor host domestic champions and multinational secondary packaging sites serving both SUS
+              tenders and the supplementary insurance channel. Rio de Janeiro and Minas Gerais add oncology and infectious-disease
+              centres tied to Fiocruz and state university hospitals — a different prescribing culture from São Paulo&apos;s
+              premium private networks.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              For medical devices, the same geography applies: imaging and surgical equipment flow through São Paulo-based
+              distributors into Hospital Albert Einstein, Hospital Sírio-Libanês, and Rede D&apos;Or, while public tenders
+              route through state purchasing consortia with CMED-adjacent price scrutiny on select categories. BioNixus maps
+              account-level availability and tender outcomes when syndicated audits cannot split Einstein from SUS volume.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Compare Brazil with other Americas markets via our{' '}
+              <Link to="/pharmaceutical-companies-brazil" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Brazil directory
+              </Link>
+              ,{' '}
+              <Link to="/brazil-medical-devices-market-report" className="text-primary hover:underline font-medium">
+                Brazil medical devices market report
+              </Link>
+              , and the{' '}
+              <Link to="/healthcare-market-statistics" className="text-primary hover:underline font-medium">
+                healthcare market statistics hub
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
