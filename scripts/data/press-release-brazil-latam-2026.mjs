@@ -45,6 +45,30 @@ function block(style, key, parts, markDefs = []) {
   }
 }
 
+/** Sanity still stores the Q2 2026 opening. Serve the approved office facts instead. */
+export function applyLatamOfficeFacts(release) {
+  if (!release || release.slug !== SLUG) return release
+  return {
+    ...release,
+    headline: HEADLINE,
+    subheadline: SUBHEADLINE,
+    dateline: DATELINE,
+    boilerplate: BOILERPLATE,
+    heroImageAlt: HERO_ALT,
+    seo: {
+      ...(release.seo || {}),
+      metaTitle: SEO_META_TITLE,
+      metaDescription: SEO_META_DESCRIPTION,
+    },
+    openGraph: {
+      ...(release.openGraph || {}),
+      ogTitle: SEO_META_TITLE,
+      ogDescription: SEO_META_DESCRIPTION,
+    },
+    ...(release.body ? { body: buildPressReleaseBody() } : {}),
+  }
+}
+
 export function buildPressReleaseBody() {
   const quoteKey = 'quote'
   const servicesKey = 'services-h2'

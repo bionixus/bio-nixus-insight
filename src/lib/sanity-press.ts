@@ -11,6 +11,7 @@ import {
 } from '@/lib/pressReleaseVisibility'
 import type { PressRelease, PressReleaseListItem } from '@/types/pressRelease'
 import type { PortableTextBlock } from '@portabletext/types'
+import { applyLatamOfficeFacts } from '../../scripts/data/press-release-brazil-latam-2026.mjs'
 
 type RawPressRelease = {
   _id: string
@@ -123,7 +124,10 @@ export async function fetchSanityPressReleasesWithClient(
 ): Promise<PressReleaseListItem[]> {
   const rows = await client.fetch<RawPressRelease[]>(LIST_QUERY)
   return filterPublicPressReleases(
-    (rows || []).map((r) => mapRawToListItem(r)).filter((r): r is PressReleaseListItem => r !== null),
+    (rows || [])
+      .map((r) => mapRawToListItem(r))
+      .filter((r): r is PressReleaseListItem => r !== null)
+      .map((item) => applyLatamOfficeFacts(item) as PressReleaseListItem),
   )
 }
 
@@ -133,7 +137,7 @@ export async function fetchSanityPressReleaseBySlugWithClient(
 ): Promise<PressRelease | null> {
   const raw = await client.fetch<RawPressRelease | null>(BY_SLUG_QUERY, { slug })
   const mapped = mapRawToPressRelease(raw)
-  return assertPublicPressRelease(mapped)
+  return assertPublicPressRelease(mapped ? (applyLatamOfficeFacts(mapped) as PressRelease) : mapped)
 }
 
 export async function fetchSanityPressReleases(): Promise<PressReleaseListItem[]> {

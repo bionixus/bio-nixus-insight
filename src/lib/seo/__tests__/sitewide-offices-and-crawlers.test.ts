@@ -5,6 +5,11 @@ import { GOOGLE_OFFICES, officeRoleLabel } from '@/data/googleLocations';
 import { hardcodedSeoPosts } from '@/data/blog-posts-index';
 import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import { buildGoogleLocalBusiness } from '@/lib/seo/googleReviewsSchema';
+import {
+  applyLatamOfficeFacts,
+  HEADLINE,
+  SUBHEADLINE,
+} from '../../../../scripts/data/press-release-brazil-latam-2026.mjs';
 
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
@@ -43,6 +48,22 @@ describe('office roster', () => {
     expect(dubai.department).toEqual({ '@type': 'Organization', name: 'Field office' });
     const sheridan = buildGoogleLocalBusiness(GOOGLE_OFFICES.find((office) => office.id === 'us')!);
     expect((sheridan.department as { name: string }).name).toContain('US headquarters');
+  });
+});
+
+describe('LATAM press copy', () => {
+  it('replaces the Sanity claim that a São Paulo office already opened', () => {
+    const corrected = applyLatamOfficeFacts({
+      slug: 'bionixus-brazil-office-latam-expansion-2026',
+      headline: 'BioNixus Expands Latin America Presence with São Paulo Office Opening in Q2 2026',
+      subheadline: 'New Brazil hub strengthens quantitative research.',
+      body: [{ _type: 'block' }],
+    }) as { headline: string; subheadline: string; body: unknown };
+    expect(corrected.headline).toBe(HEADLINE);
+    expect(corrected.subheadline).toBe(SUBHEADLINE);
+    expect(JSON.stringify(corrected)).not.toMatch(/Q2 2026|Brazil hub|São Paulo hub/);
+    expect(corrected.subheadline).toContain('in the process of opening a São Paulo office by the end of 2026');
+    expect(Array.isArray(corrected.body)).toBe(true);
   });
 });
 
