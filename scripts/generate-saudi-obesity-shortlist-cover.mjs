@@ -1,11 +1,11 @@
 /**
  * Images for /blog/who-does-obesity-market-research-saudi-arabia (both 1200×630 JPEG):
  * - `-cover.jpg`: titled card for Open Graph, Twitter and the JSON-LD ImageObject.
- * - `-hero.jpg`: the same artwork with no text, used as the on-page hero and blog card image,
- *   because BlogPost.tsx lays the h1 over the cover and baked-in text would clash with it.
- * Brand palette from src/index.css; display type is Playfair Display (falls back to Georgia),
- * labels are Inter. The right-hand panel is an anonymous "8 providers · 3 research types"
- * motif: no company names, logos or people.
+ * - `-hero.jpg`: the same artwork with no text, used as the on-page hero and blog card,
+ *   because BlogPost.tsx lays the h1 over the image.
+ * Scene: a Riyadh skyline with an abstract GLP-1 research motif (peptide ring, oral tablet,
+ * unbranded pen). No people, logos, client names, prices, or provider bars.
+ * Brand palette from src/index.css. Display type is Playfair Display (falls back to Georgia).
  *
  *   node scripts/generate-saudi-obesity-shortlist-cover.mjs
  */
@@ -20,120 +20,148 @@ const COVER_PATH = path.join(outDir, 'who-does-obesity-market-research-saudi-ara
 const HERO_PATH = path.join(outDir, 'who-does-obesity-market-research-saudi-arabia-hero.jpg');
 
 const NAVY_DEEP = '#101C30';
-const NAVY_MEDIUM = '#22345A';
-const NAVY_END = '#283F5E';
+const NAVY_MID = '#1A2C4A';
+const NAVY_END = '#243652';
 const GOLD = '#F5A503';
 const GOLD_LIGHT = '#F7C948';
 const CREAM = '#F8F6F2';
 const MUTED = '#9EB0C8';
-const SERIF = "'Playfair Display', Georgia, 'Times New Roman', serif";
+const SERIF = "Georgia, 'Times New Roman', serif";
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif";
 
-const PANEL = { x: 724, y: 112, w: 404, h: 408 };
-const BAR_X = 792;
+const TITLE_BLOCK = `
+  <rect x="64" y="78" width="392" height="36" rx="18" fill="${GOLD}" fill-opacity="0.14" stroke="${GOLD}" stroke-opacity="0.85"/>
+  <text x="86" y="102" fill="${GOLD_LIGHT}" font-family="${SANS}" font-size="14" font-weight="700" letter-spacing="2.2">OBESITY · GLP-1 · SAUDI ARABIA</text>
+  <text font-family="${SERIF}" font-weight="700" font-size="52" letter-spacing="-0.5">
+    <tspan x="64" y="196" fill="${CREAM}">Who does obesity</tspan>
+    <tspan x="64" y="258" fill="${CREAM}">market research in</tspan>
+    <tspan x="64" y="320" fill="${GOLD_LIGHT}">Saudi Arabia?</tspan>
+  </text>
+  <rect x="64" y="352" width="72" height="4" rx="2" fill="${GOLD}"/>
+  <text x="64" y="400" fill="${CREAM}" fill-opacity="0.92" font-family="${SANS}" font-size="24" font-weight="600">A 2026 shortlist of eight providers</text>
+  <text x="64" y="548" fill="${GOLD}" font-family="${SERIF}" font-size="26" font-weight="700">BioNixus Insights</text>
+  <text x="64" y="578" fill="#7F93AE" font-family="${SANS}" font-size="13" font-weight="600" letter-spacing="1.8">HEALTHCARE MARKET RESEARCH</text>`;
 
-/** @param {{ label: string; y: number; bars: { w: number; pick?: boolean }[]; gap: number; h: number; withText: boolean }} tier */
-function tierSvg({ label, y, bars, gap, h, withText }) {
-  const rows = bars
-    .map((bar, i) => {
-      const cy = y + 26 + i * gap;
-      const marker = bar.pick
-        ? `<circle cx="${PANEL.x + 44}" cy="${cy}" r="10" fill="${GOLD}"/>
-           <path d="M ${PANEL.x + 39} ${cy} l 3.6 3.8 l 6.6 -7.4" fill="none" stroke="${NAVY_DEEP}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`
-        : `<circle cx="${PANEL.x + 44}" cy="${cy}" r="4.5" fill="none" stroke="${GOLD_LIGHT}" stroke-opacity="0.55" stroke-width="1.5"/>`;
-      const fill = bar.pick ? `fill="url(#goldBar)"` : `fill="${CREAM}" fill-opacity="0.24"`;
-      return `${marker}
-        <rect x="${BAR_X}" y="${cy - h / 2}" width="${bar.w}" height="${h}" rx="${h / 2}" ${fill}/>`;
-    })
-    .join('\n');
-  const heading = withText
-    ? `<text x="${PANEL.x + 32}" y="${y}" fill="${CREAM}" font-family="${SANS}" font-size="15" font-weight="600">${label}</text>`
-    : `<rect x="${PANEL.x + 32}" y="${y - 11}" width="${label.length * 6.5}" height="9" rx="4.5" fill="${CREAM}" fill-opacity="0.5"/>`;
-  return `${heading}
-  ${rows}`;
+function peptide(cx, cy) {
+  const dots = Array.from({ length: 9 }, (_, i) => {
+    const t = i / 8;
+    return {
+      x: cx - 78 + t * 156,
+      y: cy + Math.sin(t * Math.PI * 2) * 46,
+    };
+  });
+  const d = dots.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+  const circles = dots
+    .map(
+      (p, i) =>
+        `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${i % 2 === 0 ? 8 : 6}" fill="${i % 2 === 0 ? GOLD : CREAM}"/>`,
+    )
+    .join('');
+  return `<path d="${d}" fill="none" stroke="${GOLD_LIGHT}" stroke-width="2.2" stroke-linecap="round"/>${circles}`;
 }
 
-const TITLE_BLOCK = `<rect x="72" y="70" width="352" height="34" rx="17" fill="${GOLD}" fill-opacity="0.12" stroke="${GOLD}" stroke-opacity="0.8"/>
-  <text x="94" y="92" fill="${GOLD_LIGHT}" font-family="${SANS}" font-size="13.5" font-weight="700" letter-spacing="2.4">OBESITY · GLP-1 · SAUDI ARABIA</text>
+/** Geometric Riyadh silhouette: split-crown tower, sphere tower, and plain blocks. No labels. */
+function skyline() {
+  const baseline = 620;
+  const blocks = [
+    [620, 64, 96],
+    [692, 34, 140],
+    [734, 52, 108],
+    [796, 26, 168],
+    [830, 58, 120],
+    [898, 36, 150],
+    [944, 24, 176],
+    [978, 62, 112],
+    [1050, 48, 132],
+    [1108, 56, 100],
+  ];
+  const rects = blocks
+    .map(([x, w, h]) => {
+      const y = baseline - h;
+      return `<rect x="${x}" y="${y}" width="${w}" height="${h + 20}" rx="2"/>`;
+    })
+    .join('');
+  const crownX = 796;
+  const crownTop = baseline - 168;
+  const sphereX = 956;
+  const sphereTop = baseline - 176;
+  return `<g fill="#0C1728" stroke="${GOLD_LIGHT}" stroke-opacity="0.7" stroke-width="1.4">
+    ${rects}
+    <polygon points="${crownX},${crownTop + 36} ${crownX + 13},${crownTop - 18} ${crownX + 26},${crownTop + 36}"/>
+    <circle cx="${sphereX}" cy="${sphereTop - 8}" r="16" fill="#0C1728"/>
+  </g>`;
+}
 
-  <text font-family="${SERIF}" font-weight="700" font-size="58" letter-spacing="-0.6">
-    <tspan x="72" y="192" fill="${CREAM}">Who does obesity</tspan>
-    <tspan x="72" y="262" fill="${CREAM}">market research in</tspan>
-    <tspan x="72" y="332" fill="${GOLD_LIGHT}">Saudi Arabia?</tspan>
-  </text>
-
-  <rect x="72" y="366" width="76" height="4" rx="2" fill="${GOLD}"/>
-  <text x="72" y="414" fill="${CREAM}" fill-opacity="0.92" font-family="${SANS}" font-size="25" font-weight="600">A 2026 shortlist: 8 providers compared</text>
-  <text x="72" y="450" fill="${MUTED}" font-family="${SANS}" font-size="19.5" font-weight="500">by research type, with SFDA, GASTAT and WHO evidence</text>
-
-  <text x="72" y="560" fill="${GOLD}" font-family="${SERIF}" font-size="27" font-weight="700">BioNixus Insights</text>
-  <text x="72" y="592" fill="#7F93AE" font-family="${SANS}" font-size="14" font-weight="600" letter-spacing="2.2">HEALTHCARE &amp; PHARMACEUTICAL MARKET RESEARCH</text>`;
+function motif() {
+  return `
+    <circle cx="910" cy="268" r="176" fill="none" stroke="${GOLD}" stroke-opacity="0.28" stroke-width="1.5"/>
+    <circle cx="910" cy="268" r="132" fill="#101C30" fill-opacity="0.35" stroke="${GOLD_LIGHT}" stroke-opacity="0.85" stroke-width="2.5"/>
+    ${peptide(910, 268)}
+    <g transform="translate(690 360)">
+      <ellipse cx="46" cy="28" rx="46" ry="28" fill="${CREAM}" stroke="${GOLD}" stroke-width="3"/>
+      <path d="M 18 28 H 74" stroke="${GOLD}" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    </g>
+    <g transform="translate(1088 168)">
+      <rect x="18" y="36" width="36" height="132" rx="18" fill="${CREAM}"/>
+      <rect x="18" y="36" width="36" height="46" rx="16" fill="${GOLD}"/>
+      <rect x="30" y="8" width="12" height="32" rx="3" fill="${GOLD_LIGHT}"/>
+      <path d="M 36 0 L 42 10 H 30 Z" fill="${CREAM}"/>
+    </g>`;
+}
 
 /** @param {{ withText: boolean }} options */
-const coverSvg = ({ withText }) => `<?xml version="1.0" encoding="UTF-8"?>
+function coverSvg({ withText }) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="${NAVY_DEEP}"/>
-      <stop offset="55%" stop-color="${NAVY_MEDIUM}"/>
+      <stop offset="48%" stop-color="${NAVY_MID}"/>
       <stop offset="100%" stop-color="${NAVY_END}"/>
     </linearGradient>
-    <radialGradient id="glow" cx="78%" cy="18%" r="55%">
-      <stop offset="0%" stop-color="${GOLD}" stop-opacity="0.20"/>
+    <radialGradient id="glow" cx="76%" cy="42%" r="48%">
+      <stop offset="0%" stop-color="${GOLD}" stop-opacity="0.28"/>
+      <stop offset="70%" stop-color="${GOLD}" stop-opacity="0.05"/>
       <stop offset="100%" stop-color="${GOLD}" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="${GOLD}"/>
-      <stop offset="55%" stop-color="${GOLD_LIGHT}"/>
-      <stop offset="100%" stop-color="${GOLD}"/>
+      <stop offset="100%" stop-color="${GOLD_LIGHT}"/>
     </linearGradient>
-    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.3" fill="${CREAM}" fill-opacity="0.07"/>
-    </pattern>
-    <radialGradient id="dotFade" cx="82%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-    </radialGradient>
-    <mask id="dotMask"><rect width="1200" height="630" fill="url(#dotFade)"/></mask>
-    <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity="0.35"/>
-    </filter>
   </defs>
-
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
-  <rect width="1200" height="630" fill="url(#dots)" mask="url(#dotMask)"/>
-  <circle cx="1130" cy="560" r="230" fill="none" stroke="${GOLD_LIGHT}" stroke-opacity="0.10" stroke-width="1.5"/>
-  <circle cx="1130" cy="560" r="300" fill="none" stroke="${GOLD_LIGHT}" stroke-opacity="0.06" stroke-width="1.5"/>
-  <rect x="0" y="0" width="1200" height="6" fill="url(#goldBar)"/>
-
-  ${withText ? TITLE_BLOCK : ''}
-
-  <g filter="url(#panelShadow)">
-    <rect x="${PANEL.x}" y="${PANEL.y}" width="${PANEL.w}" height="${PANEL.h}" rx="22" fill="${NAVY_DEEP}" fill-opacity="0.72" stroke="${GOLD_LIGHT}" stroke-opacity="0.38"/>
+  <g fill="none" stroke="${GOLD_LIGHT}" stroke-opacity="0.12" stroke-width="1.2">
+    <path d="M -20 470 C 220 390, 480 520, 760 430 S 1180 360, 1240 410"/>
+    <path d="M -20 510 C 260 430, 520 560, 800 470 S 1200 400, 1240 450"/>
   </g>
-  ${
-    withText
-      ? `<text x="${PANEL.x + 32}" y="${PANEL.y + 40}" fill="${GOLD_LIGHT}" font-family="${SANS}" font-size="12.5" font-weight="700" letter-spacing="2.4">8 PROVIDERS · 3 RESEARCH TYPES</text>`
-      : `<rect x="${PANEL.x + 32}" y="${PANEL.y + 30}" width="214" height="9" rx="4.5" fill="${GOLD_LIGHT}" fill-opacity="0.7"/>`
-  }
-  <rect x="${PANEL.x + 32}" y="${PANEL.y + 56}" width="${PANEL.w - 64}" height="1" fill="${CREAM}" fill-opacity="0.16"/>
-
-  ${tierSvg({ label: 'Custom primary research', y: 206, gap: 28, h: 14, withText, bars: [{ w: 290, pick: true }, { w: 236 }] })}
-  ${tierSvg({ label: 'Data and analytics', y: 306, gap: 28, h: 14, withText, bars: [{ w: 262 }] })}
-  ${tierSvg({ label: 'Report publishers', y: 378, gap: 22, h: 11, withText, bars: [{ w: 280 }, { w: 248 }, { w: 268 }, { w: 220 }, { w: 244 }] })}
+  ${skyline()}
+  ${motif()}
+  <rect x="0" y="0" width="1200" height="7" fill="url(#goldBar)"/>
+  ${withText ? TITLE_BLOCK : ''}
 </svg>`;
+}
 
 fs.mkdirSync(outDir, { recursive: true });
 for (const [outPath, withText] of [
   [COVER_PATH, true],
   [HERO_PATH, false],
 ]) {
-  await sharp(Buffer.from(coverSvg({ withText })), { density: 144 })
-    .resize(1200, 630, { fit: 'cover' })
+  const svg = coverSvg({ withText });
+  if (!withText && /<text[\s>]/.test(svg)) {
+    throw new Error('Hero variant must not contain text');
+  }
+  await sharp(Buffer.from(svg))
+    .resize(1200, 630, { fit: 'fill' })
     .jpeg({ quality: 90, progressive: true, mozjpeg: true })
     .toFile(outPath);
   const meta = await sharp(outPath).metadata();
   const { size } = fs.statSync(outPath);
+  if (meta.width !== 1200 || meta.height !== 630) {
+    throw new Error(`${outPath} is ${meta.width}×${meta.height}, expected 1200×630`);
+  }
+  if (size > 300 * 1024) {
+    throw new Error(`${outPath} is ${(size / 1024).toFixed(1)} KB, over the 300 KB OG budget`);
+  }
   console.log(`Written: ${path.relative(root, outPath)} (${meta.width}×${meta.height}, ${(size / 1024).toFixed(1)} KB)`);
 }

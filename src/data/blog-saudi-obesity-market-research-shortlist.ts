@@ -37,14 +37,14 @@ export const SAUDI_OBESITY_SHORTLIST_COVER_IMAGE =
   '/images/blog/who-does-obesity-market-research-saudi-arabia-cover.jpg';
 
 export const SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT =
-  'BioNixus navy and gold cover: who does obesity market research in Saudi Arabia, a 2026 shortlist of obesity and GLP-1 firms';
+  'BioNixus cover: who does obesity market research in Saudi Arabia, a Riyadh skyline with a GLP-1 research motif';
 
 /** Text-free version of the cover for the on-page hero and blog cards, where the h1 sits over the image. */
 export const SAUDI_OBESITY_SHORTLIST_HERO_IMAGE =
   '/images/blog/who-does-obesity-market-research-saudi-arabia-hero.jpg';
 
 export const SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT =
-  'Navy and gold BioNixus artwork for the Saudi Arabia obesity market research shortlist: anonymous provider bars grouped into three research types';
+  'Text-free BioNixus artwork of a Riyadh skyline, a research ring, and an abstract GLP-1 pen and tablet';
 
 type ArticleFigure = {
   src: string;
