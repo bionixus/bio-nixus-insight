@@ -147,8 +147,15 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
 
   const introLinks = content.introLinks ?? [];
 
+  const reviewedLine = lastUpdatedLabel
+    ? content.dateLabel === 'Last reviewed'
+      ? `Last reviewed: ${lastUpdatedLabel}`
+      : `${content.dateLabel ?? 'Updated'} ${lastUpdatedLabel}`
+    : undefined;
+
   const jumpItems = [
     { href: '#answer', label: 'Answer' },
+    ...(content.comparisonTable ? [{ href: '#comparison', label: 'Comparison' }] : []),
     ...(content.rankedList ? [{ href: '#ranked-list', label: 'Ranking' }] : []),
     { href: '#research', label: 'Research' },
     { href: '#drivers', label: 'Drivers' },
@@ -207,7 +214,7 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
               </>
             ) : undefined
           }
-          metaLine={lastUpdatedLabel ? `${content.dateLabel ?? 'Updated'} ${lastUpdatedLabel}` : undefined}
+          metaLine={reviewedLine}
           stats={
             content.heroStats ?? [
               { value: content.geoLabel, label: 'Market' },
@@ -235,6 +242,44 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
             pageUrl={content.canonical}
           />
         </DirectorySection>
+
+        {content.comparisonTable ? (
+          <DirectorySection
+            id="comparison"
+            surface="cream"
+            eyebrow="Fit"
+            title={content.comparisonTable.heading}
+          >
+            <div className="overflow-x-auto rounded-2xl border border-[#EDE9E3] shadow-[0_16px_50px_rgba(6,16,31,0.05)]">
+              <table className="directory-table">
+                <thead>
+                  <tr>
+                    {content.comparisonTable.columns.map((col) => (
+                      <th key={col} scope="col">
+                        {col}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {content.comparisonTable.rows.map((row) => (
+                    <tr key={row.need}>
+                      <th scope="row" className="font-semibold text-foreground text-left">
+                        {row.need}
+                      </th>
+                      <td className="text-muted-foreground leading-relaxed">{row.who}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {content.comparisonTable.footnote ? (
+              <p className="text-xs text-muted-foreground leading-relaxed mt-4 max-w-3xl">
+                {content.comparisonTable.footnote}
+              </p>
+            ) : null}
+          </DirectorySection>
+        ) : null}
 
         {content.rankedList ? (
           <DirectorySection

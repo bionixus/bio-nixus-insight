@@ -74,6 +74,16 @@ export type SegmentMarketContent = {
     }>;
     footnote?: string;
   };
+  /**
+   * Unlinked fit table (publisher names stay plain text). Rendered under the quick answer.
+   * Do not put competitor URLs in the cells.
+   */
+  comparisonTable?: {
+    heading: string;
+    columns: [string, string];
+    rows: Array<{ need: string; who: string }>;
+    footnote?: string;
+  };
   /** ISO date (YYYY-MM-DD). Shown as "Updated" under the H1 and emitted as dateModified. */
   lastUpdated?: string;
   /**

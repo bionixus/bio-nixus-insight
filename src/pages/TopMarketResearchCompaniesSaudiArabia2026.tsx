@@ -43,7 +43,7 @@ const PAGE_TITLE = 'Top Market Research Companies in Saudi Arabia (2026)';
 const PAGE_H1 = 'Top Market Research Companies in Saudi Arabia: 2026 Ranking of KSA Research Firms and Market Analysis Firms';
 const PAGE_DESCRIPTION =
   'Top market research companies in Saudi Arabia 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ and local KSA market analysis firms.';
-const PAGE_LAST_MODIFIED = '2026-09-03';
+const PAGE_LAST_MODIFIED = '2026-10-12';
 
 const firms: FirmProfile[] = [
   {
@@ -395,6 +395,8 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
               <Link to="/healthcare-market-research">healthcare market research</Link> cluster; for a consumer-only
               shortlist see{' '}
               <Link to="/insights/top-consumer-insights-companies-ksa-2026">top consumer insights companies in KSA</Link>.
+              {' '}
+              <Link to="/saudi-arabia-obesity-market">Who does obesity market research in Saudi Arabia?</Link>
             </>
           }
           chips={[
