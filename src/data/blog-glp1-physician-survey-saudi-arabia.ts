@@ -105,7 +105,7 @@ function figureHtml(figure: ArticleFigure): string {
 export const GLP1_PHYSICIAN_SURVEY_META_TITLE = 'GLP-1 Physician Survey Saudi Arabia: 2026 Methods Guide';
 
 export const GLP1_PHYSICIAN_SURVEY_META_DESCRIPTION =
-  "How to design a GLP-1 physician survey Saudi Arabia brand teams can act on: published KAP findings, specialty quotas, and BioNixus's 3,200-physician reach.";
+  'How to design a GLP-1 physician survey Saudi Arabia brand teams can act on: published KAP findings, specialty quotas, and BioNixus 3,200-physician reach.';
 
 export const GLP1_PHYSICIAN_SURVEY_DISPLAY_TITLE =
   'What Saudi Physicians Say About GLP-1s: Designing a GLP-1 Prescriber Survey in KSA';

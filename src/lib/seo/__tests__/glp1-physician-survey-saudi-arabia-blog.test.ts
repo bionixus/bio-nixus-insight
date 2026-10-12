@@ -104,6 +104,7 @@ describe('/blog/glp-1-physician-survey-saudi-arabia: server render', () => {
     }
     expect(html).toMatch(/<details[\s>]/);
     expect(countWords(visible)).toBeGreaterThan(1800);
+    expect(GLP1_PHYSICIAN_SURVEY_WORD_COUNT).toBe(4034);
   });
 
   it('puts the text-free artwork behind the h1 and keeps the titled card for social sharing', () => {
@@ -417,7 +418,8 @@ describe('/blog/glp-1-physician-survey-saudi-arabia: copy rules', () => {
     const script = readFileSync(join(root, 'scripts/generate-glp1-physician-survey-cover.mjs'), 'utf8');
     expect(script).toContain('gemini-2.5-flash-image');
     expect(script).toMatch(/Gemini cover is pending/);
-    expect(script).not.toMatch(/pollinations|openai|dall-e|flux/i);
+    expect(script).toContain('GoogleGenAI');
+    expect(script).not.toMatch(/from ['"]@pollinations|openai\.images|dall-e|generate-photoreal-blog-cover/);
     if (existsSync(cover) || existsSync(hero)) {
       for (const file of [cover, hero].filter(existsSync)) {
         const metaNote = `${file} exists; confirm it was generated with a Gemini image model before merge.`;

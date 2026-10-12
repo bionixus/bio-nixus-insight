@@ -25,7 +25,7 @@ const key = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || process.
 if (!key) {
   console.error(`Gemini cover is pending.
 No GEMINI_API_KEY / GOOGLE_API_KEY / GOOGLE_GENAI_API_KEY in this environment.
-Do not generate these files with Pollinations, Sharp SVG, Cursor GenerateImage, or any other substitute.
+Do not generate these files with a substitute image model.
 Reserved paths:
   ${path.relative(root, COVER_PATH)}  (1200×630 OG)
   ${path.relative(root, HERO_PATH)}   (1200×630 text-free hero)
