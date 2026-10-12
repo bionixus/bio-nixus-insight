@@ -38,6 +38,7 @@ const CRITICAL_PATHS = [
   '/gcc-pharmaceutical-market-research',
   '/saudi-arabia-medical-devices-market-report',
   '/blog/who-does-obesity-market-research-saudi-arabia',
+  '/blog/glp-1-physician-survey-saudi-arabia',
 ];
 
 let serverEntry;
