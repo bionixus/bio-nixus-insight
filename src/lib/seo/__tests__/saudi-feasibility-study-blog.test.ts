@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import sharp from 'sharp';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
 import { render } from '@/entry-server';
@@ -414,15 +415,15 @@ describe('/bionixus-industries/insights/feasibility-study-company-saudi-arabia: 
     expect(llms).toContain(SAUDI_FEASIBILITY_URL);
   });
 
-  it('keeps the Gemini cover pending until a Gemini image model writes the 1200×630 files', () => {
+  it('keeps the hero and OG card at 1200 by 630 once the cover is no longer pending', async () => {
+    expect(SAUDI_FEASIBILITY_GEMINI_COVER_PENDING).toBe(false);
     const cover = join(root, 'public', SAUDI_FEASIBILITY_COVER_IMAGE);
     const hero = join(root, 'public', SAUDI_FEASIBILITY_HERO_IMAGE);
-    if (SAUDI_FEASIBILITY_GEMINI_COVER_PENDING) {
-      expect(existsSync(cover)).toBe(false);
-      expect(existsSync(hero)).toBe(false);
-    } else {
-      expect(existsSync(cover)).toBe(true);
-      expect(existsSync(hero)).toBe(true);
+    expect(existsSync(cover)).toBe(true);
+    expect(existsSync(hero)).toBe(true);
+    for (const file of [cover, hero]) {
+      const meta = await sharp(file).metadata();
+      expect(meta).toMatchObject({ width: 1200, height: 630, format: 'jpeg' });
     }
   });
 });

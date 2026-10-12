@@ -4,7 +4,7 @@
  * on /bionixus-industries/insights/feasibility-study-company-saudi-arabia
  *
  * Author is always Laura McConaughey (WESTERN_AUTHORS id).
- * Cover/OG images upload only after the Gemini image script has written the JPEGs.
+ * Cover/OG images upload from the Playwright-rendered JPEGs.
  *
  *   node scripts/publish-feasibility-study-company-saudi-arabia.mjs
  *   node scripts/publish-feasibility-study-company-saudi-arabia.mjs --sync-existing
@@ -233,7 +233,7 @@ async function main() {
 
   const coverPath = path.join(root, 'public/images/blog', COVER_FILENAME);
   const heroPath = path.join(root, 'public/images/blog', HERO_FILENAME);
-  const hasGeminiCover = fs.existsSync(coverPath) && fs.existsSync(heroPath);
+  const hasCover = fs.existsSync(coverPath) && fs.existsSync(heroPath);
 
   const patchFields = {
     ...shared,
@@ -267,12 +267,12 @@ async function main() {
       process.exit(1);
     }
     const patch = client.patch(existingId).set(patchFields);
-    if (hasGeminiCover) {
+    if (hasCover) {
       const mainImage = await uploadImage(client, heroPath, HERO_ALT, HERO_FILENAME);
       const ogImage = await uploadImage(client, coverPath, COVER_ALT, `og-${COVER_FILENAME}`);
       patch.set({ mainImage, 'openGraph.ogImage': ogImage });
     } else {
-      console.log('Gemini cover pending — left mainImage / openGraph.ogImage unchanged.');
+      console.log('Cover JPEGs missing — left mainImage / openGraph.ogImage unchanged.');
     }
     await patch.commit();
     console.log('Synced blogPost:', existingId);
@@ -321,11 +321,11 @@ async function main() {
     body: [],
   };
 
-  if (hasGeminiCover) {
+  if (hasCover) {
     doc.mainImage = await uploadImage(client, heroPath, HERO_ALT, HERO_FILENAME);
     doc.openGraph.ogImage = await uploadImage(client, coverPath, COVER_ALT, `og-${COVER_FILENAME}`);
   } else {
-    console.log('Gemini cover pending — creating the document without mainImage / openGraph.ogImage.');
+    console.log('Cover JPEGs missing — creating the document without mainImage / openGraph.ogImage.');
   }
 
   const created = await client.create(doc);
