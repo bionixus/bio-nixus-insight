@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import sharp from 'sharp';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
 import { render } from '@/entry-server';
@@ -412,20 +413,20 @@ describe('/blog/glp-1-physician-survey-saudi-arabia: copy rules', () => {
     expect(GLP1_PHYSICIAN_SURVEY_HARDCODED_POST.ogImage).toBe(GLP1_PHYSICIAN_SURVEY_COVER_IMAGE);
   });
 
-  it('reserves Gemini cover paths and does not ship a substitute generator output', () => {
+  it('keeps the hero and OG card at 1200 by 630 and ships a Playwright cover generator', async () => {
     const cover = join(root, 'public', GLP1_PHYSICIAN_SURVEY_COVER_IMAGE);
     const hero = join(root, 'public', GLP1_PHYSICIAN_SURVEY_HERO_IMAGE);
-    const script = readFileSync(join(root, 'scripts/generate-glp1-physician-survey-cover.mjs'), 'utf8');
-    expect(script).toContain('gemini-2.5-flash-image');
-    expect(script).toMatch(/Gemini cover is pending/);
-    expect(script).toContain('GoogleGenAI');
-    expect(script).not.toMatch(/from ['"]@pollinations|openai\.images|dall-e|generate-photoreal-blog-cover/);
-    if (existsSync(cover) || existsSync(hero)) {
-      for (const file of [cover, hero].filter(existsSync)) {
-        const metaNote = `${file} exists; confirm it was generated with a Gemini image model before merge.`;
-        expect(statSync(file).size, metaNote).toBeGreaterThan(5 * 1024);
-      }
+    expect(existsSync(cover)).toBe(true);
+    expect(existsSync(hero)).toBe(true);
+    for (const file of [cover, hero]) {
+      const meta = await sharp(file).metadata();
+      expect(meta).toMatchObject({ width: 1200, height: 630, format: 'jpeg' });
     }
+    const script = readFileSync(join(root, 'scripts/generate-glp1-physician-survey-cover.mjs'), 'utf8');
+    expect(script).toMatch(/playwright/);
+    expect(script).toMatch(/from 'sharp'/);
+    expect(script).not.toMatch(/gemini-2\.5-flash-image|Gemini cover is pending|GoogleGenAI/);
+    expect(script).not.toMatch(/from ['"]@pollinations|openai\.images|dall-e|generate-photoreal-blog-cover/);
   });
 });
 
