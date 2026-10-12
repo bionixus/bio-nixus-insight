@@ -59,6 +59,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('financial-services-market-research-egypt-2026'),
     label: 'Financial services market research in Egypt 2026',
   },
+  {
+    to: getIndustriesInsightPostPath('feasibility-study-company-saudi-arabia'),
+    label: 'Feasibility studies in Saudi Arabia: what the market section must prove',
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */
