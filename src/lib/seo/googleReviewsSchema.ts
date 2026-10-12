@@ -2,7 +2,7 @@ import {
   BIONIXUS_UK_AGGREGATE_RATING,
   BIONIXUS_UK_GOOGLE_REVIEWS,
 } from '@/data/googleReviewsUk';
-import { GOOGLE_OFFICES, type GoogleOffice } from '@/data/googleLocations';
+import { GOOGLE_OFFICES, officeRoleLabel, type GoogleOffice } from '@/data/googleLocations';
 import { ORG_ID } from '@/lib/seo/organization';
 
 const BASE_URL = 'https://www.bionixus.com';
@@ -41,6 +41,10 @@ export function buildGoogleLocalBusiness(office: GoogleOffice): Record<string, u
     telephone: office.telephone,
     image: `${BASE_URL}/og-image.png`,
     parentOrganization: { '@id': ORG_ID },
+    department: {
+      '@type': 'Organization',
+      name: officeRoleLabel(office),
+    },
     address: postalAddress(office),
     hasMap: office.mapsUrl,
     sameAs: [office.mapsUrl],

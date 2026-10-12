@@ -122,9 +122,9 @@ const en: UiChromeStrings = {
     coverAlt: 'Blog post cover',
   },
   coverageMap: {
-    alt: 'BioNixus global research coverage map showing Google-listed offices in Sheridan, London, Sheikh Zayed, Dubai, Al Khobar, Salmiya, and São Paulo.',
+    alt: 'BioNixus global research coverage map showing regional leadership offices in Sheridan, London and Sheikh Zayed, and field offices in Dubai, Al Khobar and Salmiya.',
     caption:
-      'Google-listed offices: Sheridan (US HQ), London, Sheikh Zayed (Egypt), Dubai, Al Khobar (KSA), Salmiya (Kuwait), plus São Paulo — bilingual Arabic–English fieldwork across GCC and MENA markets, with GDPR-aligned European programmes.',
+      'Regional leadership offices: Sheridan (US headquarters), London and Sheikh Zayed (Egypt). Field offices: Dubai, Al Khobar (KSA) and Salmiya (Kuwait). Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
   },
   chart: {
     forecastYear: '26E',
@@ -195,9 +195,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Titelbild des Beitrags',
     },
     coverageMap: {
-      alt: 'Karte der globalen Forschungspräsenz von BioNixus mit Büros in Sheridan (US-Hauptsitz), London, Kairo, Riad, Dubai, Kuwait-Stadt und São Paulo.',
+      alt: 'Karte der globalen Forschungspräsenz von BioNixus mit regionaler Leitung in Sheridan, London und Kairo sowie Außenstellen in Dubai, Al Khobar und Kuwait.',
       caption:
-        'Büros in Sheridan (US-Hauptsitz), London, Kairo, Riad, Dubai, Kuwait-Stadt und São Paulo — zweisprachige arabisch-englische Feldforschung in GCC- und MENA-Märkten, ergänzt um DSGVO-konforme europäische Programme.',
+        'Regionale Leitung: Sheridan (US-Hauptsitz), London und Kairo. Außenstellen: Dubai, Al Khobar und Kuwait. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
     },
     chart: {
       forecastYear: '26P',
@@ -266,9 +266,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Image de couverture de l’article',
     },
     coverageMap: {
-      alt: 'Carte de la couverture mondiale des études BioNixus, avec des bureaux à Sheridan (siège américain), Londres, Le Caire, Riyad, Dubaï, Koweït et São Paulo.',
+      alt: 'Carte de la couverture mondiale des études BioNixus, avec une direction régionale à Sheridan, Londres et Le Caire, et des bureaux de terrain à Dubaï, Al Khobar et Koweït.',
       caption:
-        'Bureaux à Sheridan (siège américain), Londres, Le Caire, Riyad, Dubaï, Koweït et São Paulo — terrain bilingue arabe-anglais sur les marchés du CCG et de la région MENA, complété par des programmes européens conformes au RGPD.',
+        'Direction régionale : Sheridan (siège américain), Londres et Le Caire. Bureaux de terrain : Dubaï, Al Khobar et Koweït. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
     },
     chart: {
       forecastYear: '26P',
@@ -337,9 +337,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Imagen de portada del artículo',
     },
     coverageMap: {
-      alt: 'Mapa de la cobertura global de investigación de BioNixus con oficinas en Sheridan (sede en EE. UU.), Londres, El Cairo, Riad, Dubái, Kuwait y São Paulo.',
+      alt: 'Mapa de la cobertura global de investigación de BioNixus con liderazgo regional en Sheridan, Londres y El Cairo, y oficinas de campo en Dubái, Al Khobar y Kuwait.',
       caption:
-        'Oficinas en Sheridan (sede en EE. UU.), Londres, El Cairo, Riad, Dubái, Kuwait y São Paulo — trabajo de campo bilingüe árabe-inglés en los mercados del CCG y MENA, con programas europeos conformes al RGPD.',
+        'Liderazgo regional: Sheridan (sede en EE. UU.), Londres y El Cairo. Oficinas de campo: Dubái, Al Khobar y Kuwait. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
     },
     chart: {
       forecastYear: '26P',
@@ -408,9 +408,9 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       coverAlt: 'Imagem de capa do artigo',
     },
     coverageMap: {
-      alt: 'Mapa da cobertura global de pesquisa da BioNixus com escritórios em Sheridan (sede nos EUA), Londres, Cairo, Riade, Dubai, Cidade do Kuwait e São Paulo.',
+      alt: 'Mapa da cobertura global de pesquisa da BioNixus com liderança regional em Sheridan, Londres e Cairo, e escritórios de campo em Dubai, Al Khobar e Kuwait.',
       caption:
-        'Escritórios em Sheridan (sede nos EUA), Londres, Cairo, Riade, Dubai, Cidade do Kuwait e São Paulo — trabalho de campo bilíngue árabe-inglês nos mercados do CCG e MENA, com programas europeus alinhados ao GDPR.',
+        'Liderança regional: Sheridan (sede nos EUA), Londres e Cairo. Escritórios de campo: Dubai, Al Khobar e Kuwait. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
     },
     chart: {
       forecastYear: '26P',

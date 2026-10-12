@@ -1014,7 +1014,7 @@ const egyptObesity: SegmentMarketContent = {
       'Egypt should not be modelled as a small copy of Saudi Arabia or the UAE. Public provision, private hospitals, and cash-pay clinics coexist, and pharmacy retail is a major dispensing surface for incretin products. Specialists, especially endocrinology, set clinical direction, while private weight-management and aesthetic-leaning clinics can drive consumer-like initiation for self-pay patients.',
       'Regulatory reality starts with the Egyptian Drug Authority (EDA). For planning research, BioNixus uses public EDA materials — the Wegovy (semaglutide) public assessment report and the endocrine national formulary listings of GLP-1 receptor agonists — as context for discussion guides. Real-world initiation, stock, and payment mix are then validated in primary interviews. Those documents are not treated as an efficacy claim or as a market-size source.',
       'Egypt’s universal health insurance expansion and unified procurement are strategically important for many chronic therapies. BioNixus does not assume that expansion covers anti-obesity indications or specific molecules. Public coverage is a hypothesis to test with stakeholders. Self-pay is modelled as a core demand pool until interviews show otherwise.',
-      'Fieldwork is coordinated from the MENA office in Cairo, in Arabic and English. Regional support sits in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Al Khobar, London, Sheridan WY, and São Paulo.',
+      'Fieldwork is coordinated from the Cairo regional leadership office, in Arabic and English. The Al Khobar and Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2) field offices, the London regional leadership office, and US headquarters in Sheridan, Wyoming, support the same programmes. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
     ],
   },
   geoSignals: {
@@ -1088,7 +1088,7 @@ const egyptObesity: SegmentMarketContent = {
     'Arabic and English fieldwork runs from the MENA Cairo office.',
     'Self-pay economics are separated from aspirational coverage assumptions.',
     'Public EDA materials are cited as context, and unverified payer claims stay open questions.',
-    'Custom engagements typically cost $10,000–$60,000. The physician network is about 3,200 physicians, and BioNixus is running about 70 studies in 2026.',
+    'Custom engagements typically cost $10,000–$60,000. The physician network is about 3,200 physicians, and BioNixus has completed 127 studies year-to-date in 2026.',
     'Senior-led delivery when a syndicated obesity PDF cannot answer an affiliate decision.',
   ],
   citations: [

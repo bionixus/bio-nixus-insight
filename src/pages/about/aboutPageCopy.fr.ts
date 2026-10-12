@@ -99,13 +99,16 @@ export const aboutPageCopyFr: AboutPageCopy = {
   presenceIntro:
     'Fondée à Londres, siège aux États-Unis, programmes MENA depuis le Grand Caire — fieldwork actif Amériques, Europe, Moyen-Orient et APAC.',
   offices: [
-    { title: 'États-Unis — Siège mondial', lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
-    { title: 'Royaume-Uni — Londres (siège fondateur)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
+    { title: 'États-Unis — Direction régionale (siège mondial)', lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
+    { title: 'Royaume-Uni — Direction régionale (Londres)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
-      title: 'Égypte — Grand Caire (bureau régional MENA)',
+      title: 'Égypte — Direction régionale (Grand Caire)',
       lines: ['Opérations MENA et hub terrain bilingue pour le GCC, l’Afrique du Nord et le Moyen-Orient.', '+20 120 688 2323'],
       linkLabel: 'Recherche marché Égypte',
     },
+    { title: 'Arabie saoudite — Bureau de terrain (Al Khobar)', lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'] },
+    { title: 'Émirats arabes unis — Bureau de terrain (Dubaï)', lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'] },
+    { title: 'Koweït — Bureau de terrain (Salmiya)', lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'] },
   ],
   langMirrorLead: 'Lire cette page dans votre langue :',
 };

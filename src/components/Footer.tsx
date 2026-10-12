@@ -9,6 +9,7 @@ import {
   BIONIXUS_PHONE_US,
   BIONIXUS_PHONE_US_DISPLAY,
 } from '@/components/report-conversion/constants';
+import { GOOGLE_OFFICES, officeRoleLabel } from '@/data/googleLocations';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths, getLocalizedPathForLanguage, localizedContactPath } from '@/lib/seo';
 import { ClientPortalDialog } from '@/components/ClientPortalDialog';
@@ -376,41 +377,23 @@ const Footer = () => {
                   admin@bionixus.com
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://maps.app.goo.gl/cqLtV7gy8jGxq4JV8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  {t.footer.locationUs}
-                </a>
-              </li>
+              {GOOGLE_OFFICES.map((office) => (
+                <li key={office.id}>
+                  <a
+                    href={office.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={office.address.streetAddress}
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    {officeRoleLabel(office)}: {office.address.addressLocality}
+                    {office.address.addressRegion ? `, ${office.address.addressRegion}` : ''}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a href={`tel:${phoneLines[0].tel}`} className="hover:text-primary-foreground transition-colors">
                   {phoneLines[0].label}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://maps.app.goo.gl/h8eEUQ9V3TryGF1t7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="128 City Road, London, England EC1V 2NX, GB"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  {t.footer.locationUk}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://share.google/TlyheRVZ5L1sFKPQy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  Dubai, UAE
                 </a>
               </li>
               <li>

@@ -1,3 +1,4 @@
+import { GOOGLE_OFFICES, officeRoleLabel } from '@/data/googleLocations';
 import { getIndustriesInsightPostPath } from '@/lib/blog-content-silo';
 import { ORG_ID, ORG_LOGO, ORG_NAME } from '@/lib/seo/organization';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
@@ -45,34 +46,20 @@ export function buildIndustriesInsightsOrganization(): Record<string, unknown> {
       'B2B market research',
       'B2C market research',
     ],
-    address: [
-      {
+    address: GOOGLE_OFFICES.map((office) => ({
+      '@type': 'PostalAddress',
+      ...office.address,
+    })),
+    location: GOOGLE_OFFICES.map((office) => ({
+      '@type': 'Place',
+      '@id': office.schemaId,
+      name: office.name,
+      description: officeRoleLabel(office),
+      address: {
         '@type': 'PostalAddress',
-        streetAddress: '128 City Road',
-        addressLocality: 'London',
-        postalCode: 'EC1V 2NX',
-        addressCountry: 'GB',
+        ...office.address,
       },
-      {
-        '@type': 'PostalAddress',
-        addressLocality: 'Cairo',
-        addressCountry: 'EG',
-      },
-      {
-        '@type': 'PostalAddress',
-        streetAddress: 'Thuraya Tower 1',
-        addressLocality: 'Dubai',
-        addressCountry: 'AE',
-      },
-      {
-        '@type': 'PostalAddress',
-        streetAddress: '1309 Coffeen Ave Ste 1200',
-        addressLocality: 'Sheridan',
-        addressRegion: 'WY',
-        postalCode: '82801',
-        addressCountry: 'US',
-      },
-    ],
+    })),
     areaServed: [
       { '@type': 'Place', name: 'MENA' },
       { '@type': 'Place', name: 'GCC' },

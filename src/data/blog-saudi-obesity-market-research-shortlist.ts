@@ -14,7 +14,7 @@ import {
   personAuthorJsonLd,
   withAlsaadanyPersonJsonLd,
 } from '@/data/editorialAuthors';
-import { GOOGLE_OFFICES } from '@/data/googleLocations';
+import { GOOGLE_OFFICES, officeRoleLabel } from '@/data/googleLocations';
 import { ORG_ID, ORG_LOGO, ORG_NAME, ORG_SAME_AS } from '@/lib/seo/organization';
 
 export const SAUDI_OBESITY_SHORTLIST_SLUG = 'who-does-obesity-market-research-saudi-arabia';
@@ -413,7 +413,7 @@ ${SHORTLIST_TABLE_HTML}
 
 <h3>BioNixus: custom primary research for obesity and GLP-1 decisions</h3>
 
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Its healthcare and pharmaceutical research covers the Middle East and North Africa from offices in Cairo (its largest office in the Middle East and Africa), Dubai and London, with US headquarters in Sheridan, Wyoming, and it is in the process of opening a São Paulo office by the end of 2026. For Saudi obesity work, BioNixus designs each study around one brand decision, such as prescriber initiation and switching, patient persistence or payer and access barriers, instead of selling a standard report. The scope is set out on our page for <a href="/saudi-arabia-obesity-market">obesity and GLP-1 market research in Saudi Arabia</a>, with regional context in <a href="/gcc-obesity-market">GCC obesity market research</a> and <a href="/patient-journey-research-gcc">obesity patient journey research in the GCC</a>.</p>
+<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Its healthcare and pharmaceutical research covers the Middle East and North Africa from regional leadership offices in Cairo (its largest office in the Middle East and Africa), London and Sheridan, Wyoming (US headquarters), and from field offices in Dubai, Al Khobar and Salmiya, Kuwait, and it is in the process of opening a São Paulo office by the end of 2026. For Saudi obesity work, BioNixus designs each study around one brand decision, such as prescriber initiation and switching, patient persistence or payer and access barriers, instead of selling a standard report. The scope is set out on our page for <a href="/saudi-arabia-obesity-market">obesity and GLP-1 market research in Saudi Arabia</a>, with regional context in <a href="/gcc-obesity-market">GCC obesity market research</a> and <a href="/patient-journey-research-gcc">obesity patient journey research in the GCC</a>.</p>
 
 <h3>IQVIA: data and analytics with integrated custom research</h3>
 
@@ -615,13 +615,6 @@ export const SAUDI_OBESITY_SHORTLIST_READING_TIME = Math.ceil(
     READING_WORDS_PER_MINUTE,
 );
 
-/** Offices in the verified fact set; Al Khobar and Kuwait stay out of this page. */
-const ARTICLE_OFFICE_IDS = new Set(['us', 'uk', 'eg', 'ae']);
-
-const ARTICLE_SAME_AS = ORG_SAME_AS.filter(
-  (url) => !GOOGLE_OFFICES.some((office) => !ARTICLE_OFFICE_IDS.has(office.id) && office.mapsUrl === url),
-);
-
 export const SAUDI_OBESITY_SHORTLIST_ORGANIZATION: Record<string, unknown> = {
   '@type': 'Organization',
   '@id': ORG_ID,
@@ -630,12 +623,22 @@ export const SAUDI_OBESITY_SHORTLIST_ORGANIZATION: Record<string, unknown> = {
   logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 512, height: 512 },
   foundingDate: '2012',
   description:
-    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians, with healthcare and pharmaceutical market research across the Middle East and North Africa. It has offices in London, Cairo and Dubai, US headquarters in Sheridan, Wyoming, and is in the process of opening a São Paulo office by the end of 2026.',
-  address: GOOGLE_OFFICES.filter((office) => ARTICLE_OFFICE_IDS.has(office.id)).map((office) => ({
+    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026.',
+  address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,
   })),
-  sameAs: ARTICLE_SAME_AS,
+  location: GOOGLE_OFFICES.map((office) => ({
+    '@type': 'Place',
+    '@id': office.schemaId,
+    name: office.name,
+    description: officeRoleLabel(office),
+    address: {
+      '@type': 'PostalAddress',
+      ...office.address,
+    },
+  })),
+  sameAs: ORG_SAME_AS,
   knowsAbout: [
     'Obesity market research',
     'GLP-1 market research',

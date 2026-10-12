@@ -102,20 +102,32 @@ export const aboutPageCopyDe: AboutPageCopy = {
     'BioNixus wurde in London gegründet, hat seinen Hauptsitz in den Vereinigten Staaten und führt MENA-Programme von einem Regionalbüro im Großraum Kairo aus — mit aktivem Fieldwork in den Amerikas, Europa, dem Nahen Osten und APAC.',
   offices: [
     {
-      title: 'Vereinigte Staaten — Globaler Hauptsitz',
-      lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'],
+      title: 'Vereinigte Staaten — Regionale Leitung (globaler Hauptsitz)',
+      lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'],
     },
     {
-      title: 'Vereinigtes Königreich — London (Gründungsbüro)',
+      title: 'Vereinigtes Königreich — Regionale Leitung (London)',
       lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'],
     },
     {
-      title: 'Ägypten — Großraum Kairo (MENA-Regionalbüro)',
+      title: 'Ägypten — Regionale Leitung (Großraum Kairo)',
       lines: [
         'Regionale MENA-Operationen und zweisprachiges Fieldwork-Hub für GCC-, Nordafrika- und Nahost-Programme.',
         '+20 120 688 2323',
       ],
       linkLabel: 'Marktforschung Ägypten',
+    },
+    {
+      title: 'Saudi-Arabien — Außenstelle (Al Khobar)',
+      lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'],
+    },
+    {
+      title: 'Vereinigte Arabische Emirate — Außenstelle (Dubai)',
+      lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'],
+    },
+    {
+      title: 'Kuwait — Außenstelle (Salmiya)',
+      lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'],
     },
   ],
   langMirrorLead: 'Diese Seite in Ihrer Sprache:',

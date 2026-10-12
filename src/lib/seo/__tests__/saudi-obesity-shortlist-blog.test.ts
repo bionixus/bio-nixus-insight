@@ -225,18 +225,18 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     expect(webPage.breadcrumb).toEqual({ '@id': `${SAUDI_OBESITY_SHORTLIST_URL}#breadcrumb` });
   });
 
-  it('keeps the Organization node to the verified facts and the four current offices', () => {
+  it('keeps the Organization node to the verified facts and all six labelled offices', () => {
     const orgs = byType('Organization');
     expect(orgs).toHaveLength(1);
     const pageOrg = orgs.find((node) => typeof node.description === 'string' && node.description.includes('127 studies'));
     expect(pageOrg).toBeDefined();
     expect(pageOrg!['@id']).toBe('https://www.bionixus.com/#organization');
     expect(pageOrg!.foundingDate).toBe('2012');
-    for (const fact of ['118 clients', '48 countries', '127 studies', '3,200 physicians']) {
+    for (const fact of ['118 clients', '48 countries', '127 studies', '3,200 physicians', 'Field offices']) {
       expect(pageOrg!.description).toContain(fact);
     }
     const localities = pageOrg!.address.map((address: JsonLdNode) => address.addressLocality);
-    expect(localities).toEqual(['Sheridan', 'London', 'Sheikh Zayed', 'Dubai']);
+    expect(localities).toEqual(['Sheridan', 'London', 'Sheikh Zayed', 'Dubai', 'Al Khobar', 'Salmiya']);
     const office = Object.fromEntries(
       pageOrg!.address.map((address: JsonLdNode) => [address.addressLocality, address]),
     ) as Record<string, JsonLdNode>;
@@ -245,11 +245,19 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     // The Cairo office's Google Business Profile address is in Sheikh Zayed, Giza.
     expect(office['Sheikh Zayed']).toMatchObject({ addressRegion: 'Giza', addressCountry: 'EG' });
     expect(office.Dubai.streetAddress).toContain('Thuraya Tower 1');
+    expect(office['Al Khobar'].streetAddress).toContain('Al Khobar Al Shamalia');
+    expect(office.Salmiya.streetAddress).toContain('Olympia Mall');
     expect(pageOrg!.description).toContain(SAO_PAULO_PHRASE);
-    const excludedMaps = GOOGLE_OFFICES.filter((office) => office.id === 'sa' || office.id === 'kw').map(
-      (office) => office.mapsUrl,
-    );
-    for (const url of excludedMaps) expect(pageOrg!.sameAs).not.toContain(url);
+    const labels = pageOrg!.location.map((place: JsonLdNode) => place.description);
+    expect(labels).toEqual([
+      'Regional leadership office (US headquarters)',
+      'Regional leadership office',
+      'Regional leadership office',
+      'Field office',
+      'Field office',
+      'Field office',
+    ]);
+    for (const listed of GOOGLE_OFFICES) expect(pageOrg!.sameAs).toContain(listed.mapsUrl);
     expect(pageOrg!.sameAs).toContain('https://www.linkedin.com/company/bionixus/');
   });
 
@@ -357,9 +365,8 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: copy rules', () =
     expect(SAUDI_OBESITY_SHORTLIST_TABLE_OF_CONTENTS.map((item) => item.anchor)).toEqual(ids);
   });
 
-  it('states no prices and no Al Khobar or Kuwait office', () => {
-    expect(allCopy).not.toMatch(/Khobar/i);
-    expect(allCopy).not.toMatch(/Kuwait office|Salmiya/i);
+  it('states no prices and labels Al Khobar and Kuwait as field offices', () => {
+    expect(allCopy).toMatch(/field offices in Dubai, Al Khobar and Salmiya, Kuwait/i);
     expect(allCopy).not.toMatch(/\$\s?\d[\d,]*(?:k|,000)/i);
   });
 
@@ -467,7 +474,9 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: registration', ()
     const sources = vercel.rewrites.map((rewrite) => rewrite.source);
     const ssrIndex = sources.indexOf(SAUDI_OBESITY_SHORTLIST_PATH);
     const crawlerIndex = vercel.rewrites.findIndex(
-      (rewrite) => rewrite.source === '/blog/:slug' && rewrite.destination === '/api/blog/:slug',
+      (rewrite) =>
+        rewrite.source === '/blog/:slug' &&
+        rewrite.destination === '/api/indexnow-key?__ssr=1&url=/blog/:slug',
     );
     expect(ssrIndex).toBeGreaterThanOrEqual(0);
     expect(ssrIndex).toBeLessThan(crawlerIndex);

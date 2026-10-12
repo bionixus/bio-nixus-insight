@@ -26,7 +26,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   h1Emphasis: 'built on pharma, the most regulated industry we serve,',
   h1After: ' and expanded to be trusted across industries',
   heroSubheadBeforeSa:
-    'BioNixus was founded in London in 2012 in pharmaceutical market research — the most regulated industry we serve. As clients stretched across the Middle East and the Americas, we opened offices in Cairo, Al Khobar, Dubai, Kuwait City, and São Paulo, and established US global headquarters in Wyoming. That GCP-grade discipline now extends to B2B and B2C programmes across 48 countries — with dedicated ',
+    'BioNixus was founded in London in 2012 in pharmaceutical market research — the most regulated industry we serve. As clients stretched across the Middle East and the Americas, we opened a regional leadership office in Cairo and field offices in Al Khobar, Dubai and Kuwait City, and established US global headquarters in Wyoming. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. That GCP-grade discipline now extends to B2B and B2C programmes across 48 countries — with dedicated ',
   heroLinkSa: 'healthcare market research in Saudi Arabia',
   heroSubheadBeforeUae: ', the ',
   heroLinkUae: 'UAE',
@@ -51,7 +51,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
     'We answered by growing where the work was, not where it was easy. A ',
   storyAct2LinkCairo: 'regional office in Greater Cairo',
   storyAct2P2AfterLink:
-    ', followed by offices in Al Khobar, Dubai, Kuwait City, and São Paulo, gave us Arabic–English field teams, physician access across the GCC and North Africa, and on-the-ground execution that desk research could never replicate. US headquarters in Sheridan, Wyoming followed — not as a relocation, but as the natural home for a firm whose clients and ambition had become genuinely global. London remained our European base and the place where BioNixus began.',
+    ', followed by field offices in Al Khobar, Dubai and Kuwait City, gave us Arabic–English field teams, physician access across the GCC and North Africa, and on-the-ground execution that desk research could never replicate. US headquarters in Sheridan, Wyoming followed — not as a relocation, but as the natural home for a firm whose clients and ambition had become genuinely global. London remained our European regional leadership office and the place where BioNixus began. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026.',
   storyAct3H3: 'Today — among the top 100 globally',
   storyAct3P1:
     "That arc — London roots, GCC and Cairo regional depth, American headquarters — has carried BioNixus into the company of the world's top 100 market research firms. We field across 48 countries and 14+ therapeutic areas, in English, Arabic, French, German, Spanish, and Chinese. The pharma discipline we forged under regulation now extends to B2B and B2C programmes in 16 industry verticals — because clients asked us to bring the same standard everywhere.",
@@ -69,7 +69,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   differentiators: [
     {
       title: 'Global reach, regional execution',
-      body: 'Founded in London, headquartered in the United States, with offices in Cairo, Al Khobar, Dubai, Kuwait City, and São Paulo — BioNixus fields across 48 countries in six languages. Our Arabic–English teams across the GCC and North Africa know the regulators that govern healthcare decisions — SFDA, DHA, MOHAP, and the EDA — and the clinical nuances that shape how treatments are prescribed in each market.',
+      body: 'Founded in London, headquartered in the United States, with regional leadership in Cairo and field offices in Al Khobar, Dubai and Kuwait City — BioNixus fields across 48 countries in six languages. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. Our Arabic–English teams across the GCC and North Africa know the regulators that govern healthcare decisions — SFDA, DHA, MOHAP, and the EDA — and the clinical nuances that shape how treatments are prescribed in each market.',
     },
     {
       title: 'Pharma heritage, multi-industry rigour',
@@ -104,40 +104,36 @@ export const aboutPageCopyEn: AboutPageCopy = {
   ],
   presenceH2: 'Global Presence',
   presenceIntro:
-    'BioNixus was founded in London, is headquartered in the United States, and operates seven offices across North America, Europe, the GCC, North Africa, and Latin America — with active fieldwork across the Americas, Europe, the Middle East, and APAC.',
+    'BioNixus was founded in London and is headquartered in the United States. Regional leadership offices are in Sheridan, Wyoming, London and Cairo. Field offices are in Al Khobar, Dubai and Kuwait. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. Fieldwork is active across the Americas, Europe, the Middle East and APAC.',
   offices: [
     {
-      title: 'United States — Global Headquarters',
+      title: 'United States — Regional leadership (global headquarters)',
       lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'],
     },
     {
-      title: 'United Kingdom — London (Founding Office)',
+      title: 'United Kingdom — Regional leadership (London)',
       lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'],
     },
     {
-      title: 'Egypt — Sheikh Zayed, Giza',
+      title: 'Egypt — Regional leadership (Sheikh Zayed, Giza)',
       lines: ['22 Beverly Hills, Second Sheikh Zayed', 'Sheikh Zayed, Giza 3240232', '+20 120 688 2323'],
       linkLabel: 'Egypt market research',
     },
     {
-      title: 'Saudi Arabia — Al Khobar',
+      title: 'Saudi Arabia — Field office (Al Khobar)',
       lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'],
       linkLabel: 'Saudi Arabia market research',
       linkPath: '/market-research-saudi-arabia-pharmaceutical',
     },
     {
-      title: 'United Arab Emirates — Dubai',
+      title: 'United Arab Emirates — Field office (Dubai)',
       lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'],
       linkLabel: 'UAE market research',
       linkPath: '/uae-pharmaceutical-market-research',
     },
     {
-      title: 'Kuwait — Salmiya',
+      title: 'Kuwait — Field office (Salmiya)',
       lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'],
-    },
-    {
-      title: 'Brazil — São Paulo',
-      lines: ['Latin America market entry and ANVISA-aware, Portuguese-language research.'],
     },
   ],
   langMirrorLead: 'Read this page in your language:',
