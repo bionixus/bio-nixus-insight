@@ -22,7 +22,7 @@
     "ogImage": {
       "path": "public/images/blog/obesity-market-research-kuwait-cover.jpg",
       "alt": "BioNixus navy and gold cover: obesity market research Kuwait, who funds GLP-1s and what payers need to see in 2026",
-      "geminiPending": true
+      "geminiPending": false
     }
   },
   "title": "Kuwait Obesity Research: Who Funds GLP-1s and What Payers Need to See",
@@ -42,8 +42,8 @@
   "mainImage": {
     "path": "public/images/blog/obesity-market-research-kuwait-hero.jpg",
     "alt": "Navy and gold BioNixus artwork for obesity market research in Kuwait: three GLP-1 funding routes and a payer evidence pack",
-    "caption": "BioNixus-branded hero for obesity market research Kuwait (Gemini cover pending)",
-    "geminiPending": true
+    "caption": "BioNixus-branded hero for obesity market research Kuwait",
+    "geminiPending": false
   },
   "categories": [
     {
@@ -209,6 +209,6 @@
     "6Wresearch. Kuwait and GCC obesity treatment and anti-obesity drug report pages. (accessed 12 October 2026)."
   ],
   "factCheckedAt": "2026-10-12T15:00:00.000Z",
-  "geminiCoverPending": true,
-  "coverNote": "mainImage and openGraph.ogImage require a NEW BioNixus-branded 1200×630 JPEG from a Google Gemini image model. Do not substitute another generator."
+  "geminiCoverPending": false,
+  "coverNote": "mainImage and openGraph.ogImage are the Playwright-rendered BioNixus JPEGs at public/images/blog/obesity-market-research-kuwait-{hero,cover}.jpg."
 }

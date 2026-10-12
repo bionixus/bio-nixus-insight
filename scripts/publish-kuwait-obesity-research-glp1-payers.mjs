@@ -3,15 +3,15 @@
  * Fills every healthcare-silo blogPost field. Author is Anna Cuban
  * (Sanity id 7acabff7-aae6-4d8a-a667-91e21a235bcb), Global Research Manager.
  *
- * Cover requirement: a NEW BioNixus-branded 1200×630 image from a Google Gemini
- * image model. This script will not upload a substitute image.
+ * Cover requirement: the Playwright-rendered BioNixus JPEGs at
+ * public/images/blog/obesity-market-research-kuwait-{cover,hero}.jpg.
  *
  *   node scripts/publish-kuwait-obesity-research-glp1-payers.mjs --dry-run
  *   node scripts/publish-kuwait-obesity-research-glp1-payers.mjs
  *   node scripts/publish-kuwait-obesity-research-glp1-payers.mjs --sync-existing
  *
  * Requires repo-root .env: SANITY_PROJECT_ID, SANITY_DATASET, SANITY_TOKEN (write)
- * and the Gemini JPEGs at:
+ * and the cover JPEGs at:
  *   public/images/blog/obesity-market-research-kuwait-cover.jpg
  *   public/images/blog/obesity-market-research-kuwait-hero.jpg
  */
@@ -73,7 +73,7 @@ function withKeys(items) {
   }));
 }
 
-function geminiCoverPending() {
+function coverMissing() {
   return !fs.existsSync(COVER_PATH) || !fs.existsSync(HERO_PATH);
 }
 
@@ -174,7 +174,7 @@ async function main() {
   const payload = loadPayload();
 
   if (dryRun) {
-    const pending = geminiCoverPending();
+    const pending = coverMissing();
     console.log(
       JSON.stringify(
         {
@@ -182,7 +182,7 @@ async function main() {
           dryRun: true,
           author: payload.author,
           fields: KUWAIT_OBESITY_SANITY_FIELDS,
-          geminiCoverPending: pending,
+          coverMissing: pending,
           coverPath: COVER_PATH,
           heroPath: HERO_PATH,
           sourceCount: payload.sources.length,
@@ -193,18 +193,17 @@ async function main() {
       ),
     );
     if (pending) {
-      console.error('Gemini cover pending. Will not publish until Gemini 2.5 Flash Image / Imagen JPEGs exist.');
+      console.error('Cover JPEGs missing. Run node scripts/generate-kuwait-obesity-research-cover.mjs');
     }
     return;
   }
 
-  if (geminiCoverPending()) {
-    console.error(`Gemini cover pending.
-Need a Gemini 2.5 Flash Image / Imagen generation (BioNixus navy #101C30, gold #F5A503, logo).
-Write 1200×630 JPEGs to:
+  if (coverMissing()) {
+    console.error(`Cover JPEGs missing.
+Run: node scripts/generate-kuwait-obesity-research-cover.mjs
+Expected:
   ${path.relative(root, COVER_PATH)}
-  ${path.relative(root, HERO_PATH)}
-Do not generate these files with another model.`);
+  ${path.relative(root, HERO_PATH)}`);
     process.exit(2);
   }
 

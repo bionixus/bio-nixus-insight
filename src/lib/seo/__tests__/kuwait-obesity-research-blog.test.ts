@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import sharp from 'sharp';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
 import { render } from '@/entry-server';
@@ -405,14 +406,19 @@ describe('/blog/obesity-market-research-kuwait: copy rules', () => {
     }
   });
 
-  it('documents that the Gemini cover JPEGs are still pending', () => {
+  it('keeps the hero and OG card at 1200 by 630 and ships a Playwright cover generator', async () => {
     const cover = join(root, 'public', KUWAIT_OBESITY_RESEARCH_COVER_IMAGE);
     const hero = join(root, 'public', KUWAIT_OBESITY_RESEARCH_HERO_IMAGE);
-    expect(existsSync(cover)).toBe(false);
-    expect(existsSync(hero)).toBe(false);
+    expect(existsSync(cover)).toBe(true);
+    expect(existsSync(hero)).toBe(true);
+    for (const file of [cover, hero]) {
+      const meta = await sharp(file).metadata();
+      expect(meta).toMatchObject({ width: 1200, height: 630, format: 'jpeg' });
+    }
     const coverScript = readFileSync(join(root, 'scripts/generate-kuwait-obesity-research-cover.mjs'), 'utf8');
-    expect(coverScript).toMatch(/Gemini 2\.5 Flash Image|Imagen via Gemini/);
-    expect(coverScript).toMatch(/Do not generate these files with another model/);
+    expect(coverScript).toMatch(/playwright/);
+    expect(coverScript).toMatch(/from 'sharp'/);
+    expect(coverScript).not.toMatch(/gemini-2\.5-flash-image|Gemini cover pending|Imagen via Gemini/);
   });
 });
 
@@ -445,7 +451,7 @@ describe('/blog/obesity-market-research-kuwait: Sanity payload', () => {
     'factCheckedAt',
   ] as const;
 
-  it('fills every healthcare-silo blogPost field with Anna Cuban and a Gemini-pending cover', () => {
+  it('fills every healthcare-silo blogPost field with Anna Cuban and a ready cover', () => {
     const payload = JSON.parse(
       readFileSync(join(root, 'scripts/data/obesity-market-research-kuwait.json'), 'utf8'),
     ) as Record<string, unknown>;
@@ -458,16 +464,15 @@ describe('/blog/obesity-market-research-kuwait: Sanity payload', () => {
       name: 'Anna Cuban',
       jobTitle: 'Global Research Manager',
     });
-    expect(payload.geminiCoverPending).toBe(true);
+    expect(payload.geminiCoverPending).toBe(false);
     expect((payload.sources as unknown[]).length).toBe(21);
     expect((payload.faq as unknown[]).length).toBe(KUWAIT_OBESITY_RESEARCH_FAQ.length);
     expect((payload.bodyHtml as string)).toContain('Obesity market research Kuwait');
     expect((payload.bodyHtml as string)).toContain('href="/kuwait-obesity-market"');
     const publishScript = readFileSync(join(root, 'scripts/publish-kuwait-obesity-research-glp1-payers.mjs'), 'utf8');
-    expect(publishScript).toMatch(/Gemini cover pending/);
     expect(publishScript).toMatch(/7acabff7-aae6-4d8a-a667-91e21a235bcb/);
     expect(publishScript).toMatch(/process\.exit\(2\)/);
-    expect(publishScript).toMatch(/Do not generate these files with another model/);
+    expect(publishScript).not.toMatch(/Do not generate these files with another model/);
   });
 });
 
