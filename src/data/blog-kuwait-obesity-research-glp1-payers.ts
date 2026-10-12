@@ -462,7 +462,7 @@ ${figureHtml(KUWAIT_OBESITY_RESEARCH_FIGURES[4])}
 
 <p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
 
-<p>Choose BioNixus when the decision depends on why Kuwaiti and expatriate patients, public-hospital specialists and payers act as they do, rather than on a GCC category total. Each study is built around one decision — a tender, a restriction, a launch sequence — and is reported for brand, medical and access teams. The delivery commitment is guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews.</p>
+<p>Choose BioNixus when the decision depends on why Kuwaiti and expatriate patients, public-hospital specialists and payers act as they do, rather than on a GCC category total. Each study is built around one decision — a tender, a restriction, a launch sequence — and is reported for brand, medical and access teams. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews.</p>
 
 <p>See also <a href="/healthcare-market-research/kuwait">healthcare market research in Kuwait</a>, <a href="/pharmaceutical-market-research-kuwait">pharmaceutical market research in Kuwait</a> and <a href="/insights/top-market-research-companies-kuwait-2026">top market research companies in Kuwait</a>, and our <a href="/insights/best-obesity-weight-management-market-research-firms-2026">global ranking of obesity market research firms</a>.</p>
 
@@ -510,7 +510,7 @@ export const KUWAIT_OBESITY_RESEARCH_FAQ: { question: string; answer: string }[]
   {
     question: 'Why commission BioNixus for obesity market research in Kuwait?',
     answer:
-      'BioNixus runs custom primary research from a Salmiya field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a tender, a restriction or a launch — and the delivery commitment is guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'BioNixus runs custom primary research from a Salmiya field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a tender, a restriction or a launch — and the delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
   },
 ];
 
