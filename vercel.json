@@ -1076,6 +1076,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/who-does-obesity-market-research-saudi-arabia"
     },
     {
+      "source": "/blog/obesity-market-research-kuwait",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
