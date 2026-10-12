@@ -21,6 +21,7 @@ import {
   type ArPharmaCompanyType,
   type ArPharmaCountrySlug,
 } from '@/data/arPharmaDirectories';
+import { getArPharmaDeepSections } from '@/data/arPharmaDirectoryDeepContent';
 
 type Props = {
   countrySlug: ArPharmaCountrySlug;
@@ -36,6 +37,7 @@ const TYPE_BADGE: Record<ArPharmaCompanyType, string> = {
 export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
   const config = getArPharmaDirectory(countrySlug);
   if (!config) return null;
+  const deepSections = getArPharmaDeepSections(countrySlug);
 
   const citationUrl = `https://www.bionixus.com${config.path}`;
   const enUrl = `https://www.bionixus.com${config.enPath}`;
@@ -180,6 +182,19 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
             </div>
           </div>
         </section>
+
+        {deepSections.map((section) => (
+          <section key={section.id} className="section-padding py-16 bg-background" id={section.id}>
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">{section.heading}</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
 
         <section className="section-padding py-16" id="related">
           <div className="container-wide max-w-5xl mx-auto">

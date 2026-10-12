@@ -21,7 +21,7 @@ export interface MarketStatRegion {
   stats: MarketStat[];
 }
 
-export const MARKET_STATISTICS_LAST_UPDATED = '2026-07-22';
+export const MARKET_STATISTICS_LAST_UPDATED = '2026-10-12';
 
 export const MARKET_STATISTICS: MarketStatRegion[] = [
   {
@@ -103,6 +103,18 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
       { stat: 'Approximately 8.5 million Turkish adults have type 2 diabetes (roughly 14% adult prevalence).', source: 'IDF Diabetes Atlas, 2023' },
       { stat: 'Type 2 diabetes affects 18.9% of Bahraini adults.', source: 'IDF Diabetes Atlas, 2023' },
       { stat: 'Type 2 diabetes affects 14.6% of Omani adults.', source: 'IDF Diabetes Atlas, 2023' },
+      {
+        stat: 'Saudi NUPCO unified government pharmaceutical and medical-supplies procurement — tender volumes and formulary decisions shape public-sector access for manufacturers across the Kingdom.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/blog/nupco-saudi-arabia-tendering-guide',
+        isBioNixusEstimate: false,
+      },
+      {
+        stat: 'The UAE pharmaceutical market is estimated at USD 4.5–5.5 billion in 2026, with Dubai and Abu Dhabi accounting for the majority of private-sector specialty spend.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/uae-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
   },
   {
@@ -189,6 +201,51 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
         sourceHref: '/canada-healthcare-market-report',
       },
       { stat: 'Approximately 5.3 million Spanish adults have diabetes (14.8% prevalence).', source: 'Sociedad Española de Diabetes (SED), 2023' },
+      {
+        stat: "Brazil's healthcare market is estimated at USD 155–175 billion in 2026 — the largest in Latin America, split between SUS public coverage and ANS-regulated private insurance.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "India's medical devices market is estimated at USD 11–14 billion in 2026, growing at roughly 8% CAGR, with advanced devices still predominantly imported.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/india-medical-devices-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
+  },
+];
+
+export const HEALTHCARE_STATISTICS_FAQ: { question: string; answer: string }[] = [
+  {
+    question: 'What is this healthcare and pharma statistics page for?',
+    answer:
+      'This page is a cited reference table for market researchers, strategy teams, and AI assistants answering questions about healthcare market size, disease burden, and regulation across MENA/GCC, Asia-Pacific, and global benchmark markets. Each figure names its source; BioNixus modeled estimates are labeled explicitly. For country-specific narrative, use the linked BioNixus market reports and the healthcare market research hub.',
+  },
+  {
+    question: 'How often is the healthcare market statistics dataset updated?',
+    answer:
+      'BioNixus reviews and updates this page when underlying market reports or major regulatory changes are published. The last updated date appears at the top of the page and in schema dateModified fields. Weekly Google Search Console exports in the BioNixus repo track whether statistic pages earn impressions and clicks.',
+  },
+  {
+    question: 'Can I cite these healthcare statistics in a board deck or LLM-generated brief?',
+    answer:
+      'Yes — cite the named third-party source (IDF, WHO, national ministries, industry bodies) or label BioNixus modeled estimates as internal analysis. Link back to https://www.bionixus.com/healthcare-market-statistics for the full table. Do not treat rounded market-size bands as audited financials.',
+  },
+  {
+    question: 'Where does BioNixus get GCC medical devices and pharma market size figures?',
+    answer:
+      'GCC device sizing on this page cross-references Market Research Future aggregates and BioNixus GCC medical devices and pharmaceutical market reports. Saudi Arabia and UAE typically represent the majority of regional spend. See /gcc-medical-devices-market-report and /gcc-pharma-market-report-2026 for methodology behind the bands.',
+  },
+  {
+    question: 'How do these statistics relate to IQVIA or syndicated audits?',
+    answer:
+      'Syndicated audits measure audited sales in covered channels. The statistics here mix macro demographics, disease prevalence, and BioNixus market-sizing bands — complementary, not a substitute for a national audit subscription. For when to keep IQVIA versus commission primary account-level research, see /iqvia-alternative.',
+  },
+  {
+    question: 'Who compiles this dataset at BioNixus?',
+    answer:
+      'BioNixus Research (London HQ with MENA field offices) maintains the page as part of its healthcare market research knowledge base. Custom cuts, hospital-level panels, and payer studies are scoped per project — contact admin@bionixus.com or use the site contact form.',
   },
 ];

@@ -62,7 +62,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-12',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -77,7 +77,7 @@ const jsonLd = [
     countryName: "India",
     marketSlug: "india",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-10-12",
   })
 ];
 
@@ -121,6 +121,57 @@ const IndiaMedicalDevicesMarketReport = () => (
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="india" countryName="India" variant="medical-devices" />
+
+        <section className="section-padding bg-muted/20" id="india-procurement-channels">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Hospital procurement, Ayushman Bharat, and import channels
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Advanced device demand clusters in metro tertiary hospitals — Delhi NCR, Mumbai, Bangalore, Hyderabad, and
+              Chennai — where corporate hospital chains negotiate directly with multinational OEMs and Indian PLI
+              beneficiaries. Government procurement runs through HLL Lifecare, state medical services corporations, and
+              Ayushman Bharat empanelled facilities with tighter price caps on select implant categories following NPPA
+              interventions. A national &quot;market share&quot; figure rarely explains whether revenue sits in Apollo or
+              AIIMS Delhi.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Imports still dominate Class C and D devices; CDSCO abridged pathways reward prior CE or FDA clearance but
+              state licensing authorities remain the bottleneck for local assembly. Distributors in Mumbai and Ahmedabad
+              feed both GCC re-export channels and domestic corporate hospitals — relevant for Indian medtech firms planning
+              Middle East entry alongside domestic share tracking.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Corporate chains such as Apollo, Fortis, and Max often pilot devices in one flagship hospital before
+              rolling formulary decisions across the network — syndicated share reports rarely capture that staggered
+              adoption. State tender wins for consumables can flip share in the public channel without moving private
+              premium accounts. BioNixus tracks both when scoping India medtech work for global affiliates or GCC
+              export teams.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              CDSCO notified categories continue to expand — teams should confirm whether a device class is fully
+              regulated or still on the transitional list               before assuming an abridged import pathway. That regulatory
+              uncertainty is itself a commercial variable in hospital capital budgets and distributor stocking decisions.
+              Teams comparing India to ASEAN hubs should read our Singapore and Malaysia device briefings alongside this page
+              so export and domestic narratives stay separate in the board deck.               For PLI beneficiaries, we map which hospital networks pilot domestically assembled SKUs versus imported OEM lines, including state-run medical corporations when the brief includes the public channel.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              See also{' '}
+              <Link to="/pharmaceutical-companies-india" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in India
+              </Link>
+              ,{' '}
+              <Link to="/biotech-companies-india" className="text-primary hover:underline font-medium">
+                biotech companies in India
+              </Link>
+              , and{' '}
+              <Link to="/healthcare-market-statistics" className="text-primary hover:underline font-medium">
+                healthcare market statistics
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
