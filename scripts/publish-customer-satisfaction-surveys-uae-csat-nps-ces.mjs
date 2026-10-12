@@ -3,8 +3,8 @@
  * /bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces
  *
  * Author must be Ivona Gunjova (not the first author in the roster).
- * Cover JPEG is reserved for a Gemini image-model pass — this script publishes
- * without an image when the file is missing (GEMINI COVER PENDING).
+ * Cover JPEGs come from scripts/generate-uae-csat-nps-ces-cover.mjs.
+ * This script publishes without an image only if those files are missing.
  *
  * Run:
  *   node scripts/publish-customer-satisfaction-surveys-uae-csat-nps-ces.mjs
@@ -230,7 +230,7 @@ async function resolveIvonaId(client) {
 async function main() {
   if (!projectId || !dataset || !token) {
     console.error('Missing SANITY_PROJECT_ID, SANITY_DATASET, or SANITY_TOKEN in .env');
-    console.error('GEMINI COVER PENDING. Sanity publish skipped until credentials and the Gemini cover are available.');
+    console.error('Sanity publish skipped until SANITY credentials are available.');
     process.exit(1);
   }
 
@@ -248,7 +248,7 @@ async function main() {
   const coverPath = path.join(root, 'public/images/blog', COVER_FILENAME);
   const hasCover = fs.existsSync(coverPath);
   if (!hasCover) {
-    console.warn('GEMINI COVER PENDING — no cover JPEG at', coverPath);
+    console.warn('Cover JPEG missing at', coverPath);
     console.warn('Publishing the document without mainImage / openGraph.ogImage.');
   }
 
@@ -320,7 +320,7 @@ async function main() {
     console.log('Synced blogPost:', existingId);
     console.log('Author:', IVONA_NAME, authorId);
     console.log('Article URL:', ARTICLE_URL);
-    if (!hasCover) console.log('GEMINI COVER PENDING');
+    if (!hasCover) console.log('Cover JPEG missing');
     return;
   }
 
@@ -370,7 +370,7 @@ async function main() {
   console.log('Article URL:', ARTICLE_URL);
   console.log('Insights hub:', 'https://www.bionixus.com/bionixus-industries/insights');
   console.log('Studio:', `https://${projectId}.sanity.studio/desk/blogPost;${created._id}`);
-  if (!hasCover) console.log('GEMINI COVER PENDING');
+  if (!hasCover) console.log('Cover JPEG missing');
 }
 
 main().catch((err) => {

@@ -1,5 +1,6 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import sharp from 'sharp';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
 import { render } from '@/entry-server';
@@ -105,11 +106,20 @@ describe('/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-n
     expect(countWords(visible)).toBeGreaterThan(1800);
   });
 
-  it('reserves the Gemini cover for social cards and the hero path behind the h1', () => {
+  it('puts the text-free artwork behind the h1 and keeps the titled card for social sharing', () => {
     expect(html).toContain(`src="${UAE_CSAT_HERO_IMAGE}" alt="${UAE_CSAT_HERO_IMAGE_ALT}"`);
     expect(html).not.toContain(`src="${UAE_CSAT_COVER_IMAGE}"`);
     expect(UAE_CSAT_HARDCODED_POST.ogImage).toBe(UAE_CSAT_COVER_IMAGE);
     expect(UAE_CSAT_HARDCODED_POST.ogImageAlt).toBe(UAE_CSAT_COVER_IMAGE_ALT);
+  });
+
+  it('keeps the hero and OG card at 1200 by 630', async () => {
+    for (const file of [UAE_CSAT_HERO_IMAGE, UAE_CSAT_COVER_IMAGE]) {
+      const dest = join(root, 'public', file);
+      expect(existsSync(dest)).toBe(true);
+      const meta = await sharp(dest).metadata();
+      expect(meta).toMatchObject({ width: 1200, height: 630, format: 'jpeg' });
+    }
   });
 
   it('uses the exact title, description, canonical and robots tags', () => {
