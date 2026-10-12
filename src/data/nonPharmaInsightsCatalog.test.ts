@@ -110,21 +110,41 @@ describe('industries insights schema', () => {
     ).toBe(true);
   });
 
-  it('describes a global multi-industry firm and omits São Paulo and Al Khobar from addresses', () => {
+  it('describes a global multi-industry firm and keeps six labelled offices, with no São Paulo address', () => {
     const org = schemas.find((node) => node['@type'] === 'Organization') as {
       description: string;
       address: Array<Record<string, string>>;
+      location: Array<{ description: string; address: { addressLocality: string } }>;
     };
     expect(org.description).toBe(INDUSTRIES_INSIGHTS_ORG_DESCRIPTION);
     expect(org.description.startsWith('BioNixus is a global market research firm')).toBe(true);
     expect(org.description).not.toMatch(/pharmaceutical/i);
+    expect(org.description).toContain('Field offices are in Dubai');
+    expect(org.description).toContain('Al Khobar');
     const addresses = JSON.stringify(org.address);
     expect(addresses).not.toMatch(/Paulo/i);
-    expect(addresses).not.toMatch(/Khobar/i);
     expect(addresses).toContain('EC1V 2NX');
-    expect(addresses).toContain('Cairo');
+    expect(addresses).toContain('Second Sheikh Zayed');
     expect(addresses).toContain('Thuraya Tower 1');
     expect(addresses).toContain('Sheridan');
+    expect(addresses).toContain('Al Khobar');
+    expect(addresses).toContain('Salmiya');
+    expect(org.location.map((place) => place.description)).toEqual([
+      'Regional leadership office (US headquarters)',
+      'Regional leadership office',
+      'Regional leadership office',
+      'Field office',
+      'Field office',
+      'Field office',
+    ]);
+    expect(org.location.map((place) => place.address.addressLocality)).toEqual([
+      'Sheridan',
+      'London',
+      'Sheikh Zayed',
+      'Dubai',
+      'Al Khobar',
+      'Salmiya',
+    ]);
   });
 });
 

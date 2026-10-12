@@ -933,6 +933,16 @@ async function startServer() {
     res.type('html').sendFile(gfkAltEgyptAbsolutePath);
   });
 
+  /** Staging homepage. noindex for every user agent; production also sends X-Robots-Tag via vercel.json. */
+  const homeStagingAbsolutePath = path.resolve(
+    __dirname,
+    isProduction ? path.join('dist/client', 'home-staging.html') : path.join('public', 'home-staging.html'),
+  );
+  app.get(['/home-staging', '/home-staging.html'], (_req, res) => {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    res.type('html').sendFile(homeStagingAbsolutePath);
+  });
+
   const serveGatedHtmlReport = (publicPath, confRelativePath) => {
     const absolutePath = path.resolve(
       __dirname,

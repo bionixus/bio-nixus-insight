@@ -15,7 +15,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: 'What is BioNixus?',
-    answer: 'BioNixus is a global market research firm founded in London in 2012 in pharmaceutical and healthcare research, now recognised among the world\'s top 100 market research companies. US-headquartered in Sheridan, Wyoming, with offices in London, Cairo, Al Khobar, Dubai, Kuwait City, and São Paulo, BioNixus runs quantitative and qualitative research for pharmaceutical, biotech, and medical device teams — and extends the same evidence standards across 16 industry verticals. Scale: 120+ global projects annually (127 in 2025) for 118 clients, across 48 countries and 14+ therapeutic areas.',
+    answer: 'BioNixus is a global market research firm founded in London in 2012 in pharmaceutical and healthcare research, now recognised among the world\'s top 100 market research companies. US-headquartered in Sheridan, Wyoming, with regional leadership offices in London and Cairo and field offices in Al Khobar, Dubai and Kuwait City. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. BioNixus runs quantitative and qualitative research for pharmaceutical, biotech, and medical device teams — and extends the same evidence standards across 16 industry verticals. Scale: 120+ global projects annually (127 in 2025) for 118 clients, across 48 countries and 14+ therapeutic areas.',
   },
   {
     question: 'What services does BioNixus offer?',
@@ -23,11 +23,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Which countries does BioNixus cover?',
-    answer: 'We work across 48 countries, with physical offices in the United States (Sheridan, Wyoming — global HQ), the United Kingdom (London — founding office), Egypt (Cairo), Saudi Arabia (Al Khobar), the UAE (Dubai), Kuwait (Kuwait City), and Brazil (São Paulo). Our depth is strongest in MENA, where a proprietary physician and HCP panel and bilingual Arabic–English teams let us recruit specialists that generalist agencies struggle to reach.',
+    answer: 'We work across 48 countries. Regional leadership offices are in the United States (Sheridan, Wyoming — global headquarters), the United Kingdom (London) and Egypt (Cairo, Sheikh Zayed). Field offices are in Saudi Arabia (Al Khobar), the UAE (Dubai) and Kuwait (Salmiya). Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. Our depth is strongest in MENA, where a proprietary physician and HCP panel and bilingual Arabic–English teams let us recruit specialists that generalist agencies struggle to reach.',
   },
   {
     question: 'What makes BioNixus different from larger market research firms?',
-    answer: 'Three things. First, a London-founded firm that scaled globally — US headquarters, offices across the GCC and in Cairo and São Paulo, and fieldwork across 48 countries in six languages. Second, a senior-led, lean model: the people who scope your study are the people who run it. Third, pharma heritage applied everywhere — the same GCP-grade rigour whether the brief is a payer study in Germany or a B2B segmentation programme in the GCC.',
+    answer: 'Three things. First, a London-founded firm that scaled globally — US headquarters, regional leadership in London and Cairo, field offices across the GCC, and fieldwork across 48 countries in six languages. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. Second, a senior-led, lean model: the people who scope your study are the people who run it. Third, pharma heritage applied everywhere — the same GCP-grade rigour whether the brief is a payer study in Germany or a B2B segmentation programme in the GCC.',
   },
   {
     question: 'What is the best healthcare market research company in the Middle East?',
@@ -91,7 +91,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Where is BioNixus located?',
-    answer: 'BioNixus was founded in London in 2012. Google-listed offices: 1309 Coffeen Ave Ste 1200, Sheridan, Wyoming 82801, USA; 128 City Road, London EC1V 2NX, UK; 22 Beverly Hills, Second Sheikh Zayed, Giza, Egypt; Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE; 2658 Street 7225, Al Khobar Al Shamalia 34428, Saudi Arabia; Olympia Mall, Al Blajat St, Salmiya 12111, Kuwait. São Paulo is a regional office without a public Google listing yet.',
+    answer: 'BioNixus was founded in London in 2012. Regional leadership offices: 1309 Coffeen Ave Ste 1200, Sheridan, Wyoming 82801, USA (global headquarters); 128 City Road, London EC1V 2NX, UK; 22 Beverly Hills, Second Sheikh Zayed, Giza 3240232, Egypt. Field offices: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE; 2658 Street 7225, Al Khobar Al Shamalia 34428, Saudi Arabia; Olympia Mall, Al Blajat St, Salmiya 12111, Kuwait. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
   },
   {
     question: 'Can BioNixus conduct research in Arabic?',

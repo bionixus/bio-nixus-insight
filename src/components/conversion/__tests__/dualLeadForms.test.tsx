@@ -326,13 +326,16 @@ describe('ContactSection ("Request a proposal")', () => {
     expect(hrefWrites).toEqual([]);
   });
 
-  it('lists the current regional offices without Al Khobar', () => {
+  it('lists regional leadership offices and field offices', () => {
     render(withProviders(<ContactSection premium />));
     const block = screen.getByText('Regional representation').parentElement as HTMLElement;
-    expect(block).toHaveTextContent('Cairo, Egypt');
-    expect(block).toHaveTextContent('Dubai, UAE');
-    expect(block).toHaveTextContent('São Paulo, Brazil');
-    expect(block).not.toHaveTextContent(/al khobar|kuwait/i);
+    expect(block).toHaveTextContent('Regional leadership: Sheridan, Wyoming (US headquarters)');
+    expect(block).toHaveTextContent('Regional leadership: London, United Kingdom');
+    expect(block).toHaveTextContent('Regional leadership: Sheikh Zayed, Giza (Cairo)');
+    expect(block).toHaveTextContent('Field office: Al Khobar, Saudi Arabia');
+    expect(block).toHaveTextContent('Field office: Dubai, UAE');
+    expect(block).toHaveTextContent('Field office: Salmiya, Kuwait');
+    expect(block).not.toHaveTextContent(/São Paulo/i);
   });
 
   it('focuses the first missing field instead of failing silently', async () => {

@@ -1642,7 +1642,7 @@ const obesity: SegmentMarketContent = {
   heroStats: [
     { value: '$10,000–$60,000', label: 'custom studies' },
     { value: '~3,200', label: 'physicians in network' },
-    { value: '~70', label: 'studies in 2026' },
+    { value: '127', label: 'studies year-to-date in 2026' },
     { value: 'Al Khobar', label: 'Saudi fieldwork office' },
   ],
   intro: [
@@ -1686,7 +1686,7 @@ const obesity: SegmentMarketContent = {
       },
     ],
     summary:
-      'BioNixus GLP-1 physician surveys in Saudi Arabia stratify endocrinology, family medicine, internal medicine, and bariatric surgery; instruments run in Arabic or English; custom projects typically cost $10,000–$60,000. BioNixus works with about 3,200 physicians across its healthcare network and expects about 70 studies in 2026.',
+      'BioNixus GLP-1 physician surveys in Saudi Arabia stratify endocrinology, family medicine, internal medicine, and bariatric surgery; instruments run in Arabic or English; custom projects typically cost $10,000–$60,000. BioNixus works with about 3,200 physicians across its healthcare network and has completed 127 studies year-to-date in 2026.',
   },
   sourceNotes: {
     heading: 'Key figures for Saudi obesity and GLP-1 market research',
@@ -1699,7 +1699,7 @@ const obesity: SegmentMarketContent = {
       },
       {
         text:
-          'BioNixus delivery facts: about 3,200 physicians in the healthcare network; about 70 studies in 2026; custom obesity and GLP-1 projects typically $10,000–$60,000.',
+          'BioNixus delivery facts: about 3,200 physicians in the healthcare network; 127 studies year-to-date in 2026; custom obesity and GLP-1 projects typically $10,000–$60,000.',
       },
     ],
   },
@@ -1840,7 +1840,7 @@ const obesity: SegmentMarketContent = {
   },
   audiencesHeading: 'Who we interview for Saudi GLP-1 physician surveys',
   audiencesNote:
-    'BioNixus Saudi fieldwork is coordinated from Al Khobar (Eastern Province). Regional hubs also support programmes from Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), MENA Cairo, London, Sheridan WY (US), and São Paulo.',
+    'BioNixus Saudi fieldwork is coordinated from the Al Khobar field office (Eastern Province). Regional leadership sits in Cairo, London and Sheridan, Wyoming (US headquarters). Field offices also include Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2) and Kuwait (Salmiya). Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
   audiences: [
     {
       audience: 'Endocrinologists and metabolic physicians',
@@ -1952,7 +1952,7 @@ const obesity: SegmentMarketContent = {
     {
       question: 'Where is BioNixus based for Saudi obesity research?',
       answer:
-        'Saudi programmes are supported from our Al Khobar office, with additional hubs in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Cairo, London, Sheridan WY, and São Paulo.',
+        'Saudi programmes are supported from the Al Khobar field office. Regional leadership is in Cairo, London and Sheridan, Wyoming (US headquarters). Field offices also include Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2) and Kuwait (Salmiya). Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
     },
   ],
   areaServed: ['Saudi Arabia'],

@@ -90,13 +90,16 @@ export const aboutPageCopyZh: AboutPageCopy = {
   presenceH2: '全球布局',
   presenceIntro: 'BioNixus 创立于伦敦，总部在美国，MENA 项目由大开罗区域办公室运营——在美洲、欧洲、中东与 APAC 活跃开展现场研究。',
   offices: [
-    { title: '美国——全球总部', lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
-    { title: '英国——伦敦（创始办公室）', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
+    { title: '美国——区域领导办公室（全球总部）', lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
+    { title: '英国——区域领导办公室（伦敦）', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
-      title: '埃及——大开罗（MENA 区域办公室）',
+      title: '埃及——区域领导办公室（大开罗）',
       lines: ['MENA 区域运营与阿英双语现场中心，服务 GCC、北非与中东更广泛项目。', '+20 120 688 2323'],
       linkLabel: '埃及市场研究',
     },
+    { title: '沙特阿拉伯——驻地办公室（胡拜尔）', lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'] },
+    { title: '阿联酋——驻地办公室（迪拜）', lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'] },
+    { title: '科威特——驻地办公室（萨尔米亚）', lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'] },
   ],
   langMirrorLead: '阅读其他语言版本：',
 };

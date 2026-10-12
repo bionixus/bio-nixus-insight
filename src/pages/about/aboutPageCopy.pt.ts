@@ -99,13 +99,16 @@ export const aboutPageCopyPt: AboutPageCopy = {
   presenceIntro:
     'Fundada em Londres, com sede nos EUA e programas MENA a partir do Grande Cairo — fieldwork ativo nas Américas, Europa, Médio Oriente e APAC.',
   offices: [
-    { title: 'Estados Unidos — Sede global', lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
-    { title: 'Reino Unido — Londres (escritório fundador)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
+    { title: 'Estados Unidos — Liderança regional (sede global)', lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
+    { title: 'Reino Unido — Liderança regional (Londres)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
-      title: 'Egito — Grande Cairo (escritório regional MENA)',
+      title: 'Egito — Liderança regional (Grande Cairo)',
       lines: ['Operações MENA e hub bilingue de fieldwork para GCC, Norte de África e Médio Oriente.', '+20 120 688 2323'],
       linkLabel: 'Pesquisa de mercado Egito',
     },
+    { title: 'Arábia Saudita — Escritório de campo (Al Khobar)', lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'] },
+    { title: 'Emirados Árabes Unidos — Escritório de campo (Dubai)', lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'] },
+    { title: 'Kuwait — Escritório de campo (Salmiya)', lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'] },
   ],
   langMirrorLead: 'Leia esta página no seu idioma:',
 };

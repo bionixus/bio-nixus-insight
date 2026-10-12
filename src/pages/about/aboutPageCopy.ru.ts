@@ -98,13 +98,16 @@ export const aboutPageCopyRu: AboutPageCopy = {
   presenceIntro:
     'Основана в Лондоне, штаб-квартира в США, программы MENA из Большого Кaire — активное полевое присутствие в Americas, Europe, Middle East и APAC.',
   offices: [
-    { title: 'США — глобальная штаб-квартира', lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
-    { title: 'Великобритания — Лондон (офис-основатель)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
+    { title: 'США — региональное руководство (глобальная штаб-квартира)', lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
+    { title: 'Великобритания — региональное руководство (Лондон)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
-      title: 'Египет — Большой Каир (региональный офис MENA)',
+      title: 'Египет — региональное руководство (Большой Каир)',
       lines: ['Региональные операции MENA и двуязычный полевой центр для GCC, Северной Африки и Ближнего Востока.', '+20 120 688 2323'],
       linkLabel: 'Исследования рынка Египта',
     },
+    { title: 'Саудовская Аравия — полевой офис (Эль-Хубар)', lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'] },
+    { title: 'ОАЭ — полевой офис (Дубай)', lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'] },
+    { title: 'Кувейт — полевой офис (Сальмия)', lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'] },
   ],
   langMirrorLead: 'Читать на других языках:',
 };

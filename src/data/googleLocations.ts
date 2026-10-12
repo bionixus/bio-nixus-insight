@@ -6,8 +6,12 @@
 
 export type GoogleOfficeId = 'us' | 'uk' | 'eg' | 'ae' | 'sa' | 'kw';
 
+/** USA, London and Cairo lead the firm. Al Khobar, Dubai and Kuwait are field offices. */
+export type OfficeTier = 'leadership' | 'field';
+
 export type GoogleOffice = {
   id: GoogleOfficeId;
+  tier: OfficeTier;
   schemaId: string;
   /** GBP display name */
   name: string;
@@ -44,10 +48,11 @@ const MENA_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
 export const GOOGLE_OFFICES: GoogleOffice[] = [
   {
     id: 'us',
+    tier: 'leadership',
     schemaId: `${BASE}/#us-localbusiness`,
     name: 'BioNixus LLC USA',
     description:
-      'BioNixus LLC USA — global headquarters and corporate office in Sheridan, Wyoming.',
+      'BioNixus LLC USA — regional leadership office and global headquarters in Sheridan, Wyoming.',
     telephone: '+1-888-465-5557',
     url: BASE,
     mapsUrl: 'https://maps.app.goo.gl/cqLtV7gy8jGxq4JV8',
@@ -68,10 +73,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'uk',
+    tier: 'leadership',
     schemaId: `${BASE}/#uk-localbusiness`,
     name: 'BioNixus UK',
     description:
-      'BioNixus UK — pharmaceutical and healthcare market research corporate office in London.',
+      'BioNixus UK — regional leadership office for pharmaceutical and healthcare market research in London.',
     telephone: '+44-7727-666682',
     url: BASE,
     mapsUrl: 'https://maps.app.goo.gl/h8eEUQ9V3TryGF1t7',
@@ -91,10 +97,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'eg',
+    tier: 'leadership',
     schemaId: `${BASE}/#eg-localbusiness`,
     name: 'BioNixus Egypt',
     description:
-      'BioNixus Egypt — market research office in Sheikh Zayed, Giza.',
+      'BioNixus Egypt — regional leadership office in Sheikh Zayed, Giza.',
     telephone: '+20-120-688-2323',
     url: BASE,
     mapsUrl: 'https://share.google/Fhbb1PvbESItLDNSc',
@@ -111,10 +118,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'ae',
+    tier: 'field',
     schemaId: `${BASE}/#ae-localbusiness`,
     name: 'BioNixus UAE',
     description:
-      'BioNixus UAE — market research office in Al Thuraya Tower 1, Al Sufouh 2, Dubai.',
+      'BioNixus UAE — field office in Al Thuraya Tower 1, Al Sufouh 2, Dubai.',
     telephone: '+44-7727-666682',
     url: BASE,
     mapsUrl: 'https://share.google/TlyheRVZ5L1sFKPQy',
@@ -129,10 +137,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'sa',
+    tier: 'field',
     schemaId: `${BASE}/#sa-localbusiness`,
     name: 'BioNixus Saudi Arabia',
     description:
-      'BioNixus Saudi Arabia — market research office in Al Khobar Al Shamalia.',
+      'BioNixus Saudi Arabia — field office in Al Khobar Al Shamalia.',
     telephone: '+966-50-182-5336',
     url: BASE,
     mapsUrl: 'https://share.google/Zv2GWYA71ULqo3wEU',
@@ -148,10 +157,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'kw',
+    tier: 'field',
     schemaId: `${BASE}/#kw-localbusiness`,
     name: 'BioNixus Kuwait',
     description:
-      'BioNixus Kuwait — market research office at Olympia Mall, Salmiya.',
+      'BioNixus Kuwait — field office at Olympia Mall, Salmiya.',
     telephone: '+965-6502-3130',
     url: BASE,
     mapsUrl: 'https://share.google/IVQ1EAwF7wktCnYvk',
@@ -173,4 +183,10 @@ export function getGoogleOffice(id: GoogleOfficeId): GoogleOffice {
   const office = GOOGLE_OFFICES.find((item) => item.id === id);
   if (!office) throw new Error(`Unknown Google office: ${id}`);
   return office;
+}
+
+/** Visible and schema label. US headquarters stays inside the leadership tier. */
+export function officeRoleLabel(office: Pick<GoogleOffice, 'id' | 'tier'>): string {
+  if (office.id === 'us') return 'Regional leadership office (US headquarters)';
+  return office.tier === 'leadership' ? 'Regional leadership office' : 'Field office';
 }

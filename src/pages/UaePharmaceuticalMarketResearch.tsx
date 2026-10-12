@@ -190,7 +190,7 @@ export default function UaePharmaceuticalMarketResearch() {
               <a href="tel:+447727666682" className="underline font-medium text-primary-foreground">+44 7727 666682</a>
               {' · '}
               <a href="mailto:admin@bionixus.com" className="underline font-medium text-primary-foreground">admin@bionixus.com</a>
-              {' · '}Founded 2012 · Physician network of around 3,200 physicians · Around 70 studies in 2026 · 48 countries · 118 clients
+              {' · '}Founded 2012 · Physician network of around 3,200 physicians · 127 studies year-to-date in 2026 · 48 countries · 118 clients
             </p>
             <p className="text-base leading-relaxed text-primary-foreground/85 mt-4">
               For regional context, start from the{' '}
@@ -210,7 +210,7 @@ export default function UaePharmaceuticalMarketResearch() {
             <ul className="space-y-4 text-muted-foreground leading-relaxed">
               <li><strong className="text-foreground">Dubai office, GCC reach:</strong> Research is run from Thuraya Tower 1, Al Sufouh 2, with the KSA office in Al Khobar, the MENA regional office in Cairo, London and the US HQ in Sheridan, Wyoming on the same account team. Multi-country GCC studies use one methodology and one project manager.</li>
               <li><strong className="text-foreground">Emirate-specific design:</strong> DHA (Dubai), DOH (Abu Dhabi) and MOHAP/EDE (federal and Northern Emirates) are modelled separately, not blended into one UAE average.</li>
-              <li><strong className="text-foreground">Physician reach:</strong> A physician network of around 3,200 physicians, and around 70 studies in 2026.</li>
+              <li><strong className="text-foreground">Physician reach:</strong> A physician network of around 3,200 physicians, and 127 studies year-to-date in 2026.</li>
               <li><strong className="text-foreground">Account-level evidence:</strong> Named hospitals, pharmacy chains and SKUs, which is the cut a national syndicated feed cannot give.</li>
               <li><strong className="text-foreground">Bilingual execution:</strong> Arabic–English screeners, moderation and reporting as standard.</li>
               <li><strong className="text-foreground">Governance:</strong> ICH-GCP-aligned fieldwork, GDPR-compliant data handling and informed consent for every respondent.</li>
@@ -300,7 +300,7 @@ export default function UaePharmaceuticalMarketResearch() {
               </table>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Therapy areas include oncology, diabetes, respiratory, vaccines, cardiovascular, rare disease and more. BioNixus has completed around 70 studies in 2026.
+              Therapy areas include oncology, diabetes, respiratory, vaccines, cardiovascular, rare disease and more. BioNixus has completed 127 studies year-to-date in 2026.
             </p>
           </div>
         </section>
