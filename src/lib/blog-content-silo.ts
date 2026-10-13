@@ -67,6 +67,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('customer-satisfaction-surveys-uae-csat-nps-ces'),
     label: 'Customer satisfaction surveys in the UAE: CSAT, NPS and CES',
   },
+  {
+    to: getIndustriesInsightPostPath('market-entry-research-saudi-arabia'),
+    label: 'Market entry research for Saudi Arabia: a non-pharma playbook',
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */

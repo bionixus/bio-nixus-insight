@@ -23,6 +23,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'feasibility-study-company-saudi-arabia',
   'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'market-entry-research-saudi-arabia',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -131,6 +132,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',
     description:
       'Customer satisfaction survey company UAE guide to CSAT, NPS and CES — how an NPS survey company Saudi Arabia brief should specify the recommend question.',
+  },
+  'market-entry-research-saudi-arabia': {
+    title: 'Market Entry Research Saudi Arabia (2026 Playbook)',
+    description:
+      'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',

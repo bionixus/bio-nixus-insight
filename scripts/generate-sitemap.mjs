@@ -115,6 +115,7 @@ const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-202
 const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'gcc-pharmaceuticals-market-arabic-2026',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'market-entry-research-saudi-arabia',
 ]);
 
 const LEGACY_REDIRECT_PATHS = Object.keys(LEGACY_REDIRECTS);
@@ -552,6 +553,7 @@ const staticPages = [
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
   { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-12' },
   { path: '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
+  { path: '/bionixus-industries/insights/market-entry-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1428,6 +1430,7 @@ const STATIC_PAGE_FILES = {
   ],
   '/blog/glp-1-physician-survey-saudi-arabia': ['src/data/blog-glp1-physician-survey-saudi-arabia.ts'],
   '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces': ['src/data/blog-uae-csat-nps-ces-surveys.ts'],
+  '/bionixus-industries/insights/market-entry-research-saudi-arabia': ['src/data/blog-market-entry-research-saudi-arabia.ts'],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],
   '/blog/hematology-market-research-saudi-arabia': ['src/data/blog-hematology-market-research-saudi-arabia.ts'],
