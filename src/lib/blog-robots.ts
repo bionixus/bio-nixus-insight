@@ -21,6 +21,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'feasibility-study-company-saudi-arabia',
   'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'brand-tracking-research-agency-dubai',
   'obesity-market-research-kuwait',
 ]);
 
@@ -41,6 +42,7 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'feasibility-study-company-saudi-arabia',
   'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'brand-tracking-research-agency-dubai',
   'obesity-market-research-kuwait',
 ]);
 

@@ -1103,6 +1103,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/feasibility-study-company-saudi-arabia"
     },
     {
+      "source": "/bionixus-industries/insights/brand-tracking-research-agency-dubai",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/brand-tracking-research-agency-dubai"
+    },
+    {
       "source": "/bionixus-industries/insights/:slug",
       "has": [
         {

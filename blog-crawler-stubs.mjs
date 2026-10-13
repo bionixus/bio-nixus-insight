@@ -23,6 +23,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'feasibility-study-company-saudi-arabia',
   'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'brand-tracking-research-agency-dubai',
   'obesity-market-research-kuwait',
 ]);
 
@@ -129,6 +130,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',
     description:
       'Customer satisfaction survey company UAE guide to CSAT, NPS and CES — how an NPS survey company Saudi Arabia brief should specify the recommend question.',
+  },
+  'brand-tracking-research-agency-dubai': {
+    title: 'Brand Tracking Research Agency Dubai: Custom Tracker',
+    description:
+      'Brand tracking research agency Dubai guide: custom tracker vs syndicated data, bilingual UAE fieldwork from a Dubai field office, KPIs that move budgets.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
