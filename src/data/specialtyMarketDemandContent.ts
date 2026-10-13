@@ -1175,6 +1175,8 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
   h1: 'Febrile Neutropenia Market: Supportive-Care & Protocol Intelligence',
   intro: [
     'The febrile neutropenia market is driven by oncology regimen intensity, hospital prophylaxis protocols, and biosimilar G-CSF competition more than consumer awareness. BioNixus researches oncologists, oncology pharmacists, and tender stakeholders to forecast switching and protocol stickiness — including Gulf hospital settings where supportive-care injectables move through frameworks.',
+    'Febrile neutropenia (FN) prophylaxis is a protocol decision, not a retail pharmacy choice. Hospital oncology committees set primary versus secondary prophylaxis rules by regimen myelosuppression grade; pharmacy and tenders then determine which G-CSF molecule or biosimilar is stocked. Manufacturers need intelligence on all three layers — clinical protocol, substitution behaviour, and award mechanics — before forecasting share.',
+    'BioNixus programmes map inpatient FN pathways (fever work-up, antibiotic bundles, length-of-stay targets) alongside outpatient day-clinic prophylaxis because administration setting changes device preference, nursing workload, and brand stickiness. GCC modules cover NUPCO and emirate hospital frameworks where pegfilgrastim and filgrastim biosimilars compete on price, dual-source policy, and perceived immunogenicity risk.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1200,6 +1202,33 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'Primary prophylaxis is triggered by regimen risk (e.g., high-risk chemotherapy schedules); secondary prophylaxis follows a documented FN episode. Research samples must segment by line of therapy and setting — inpatient versus day clinic — because the same brand can win protocol inclusion yet lose pharmacy substitution after a tender rebid.',
+      'In the GCC, supportive-care injectables often move through central tenders with mid-year supplementary awards when shortages occur. A forecast that ignores dual-source hospital policies or nursing administration preferences will overstate switch speed after biosimilar listing.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Signals BioNixus tracks for FN and G-CSF markets',
+    items: [
+      {
+        label: 'Regimen mix shifts',
+        signal:
+          'New immuno-oncology combinations and dose-dense schedules change the eligible prophylaxis pool faster than label expansions alone.',
+      },
+      {
+        label: 'Biosimilar tender awards',
+        signal:
+          'Hospital pharmacies accelerate substitution within 30–90 days of framework changes when supply reliability is proven.',
+      },
+      {
+        label: 'Guideline updates',
+        signal:
+          'Society prophylaxis thresholds and FN definition changes alter primary versus secondary prophylaxis rates in academic centres first.',
+      },
+      {
+        label: 'Length-of-stay pressure',
+        signal:
+          'Hospitals favour prophylaxis regimens that reduce FN admissions and simplify outpatient monitoring.',
+      },
     ],
   },
   audiences: [
@@ -1214,12 +1243,33 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     { to: '/gcc-generic-injectables-market', label: 'GCC generic injectables market' },
     { to: '/healthcare-market-research/therapy/oncology', label: 'Oncology market research' },
     { to: '/market-reports/gcc-oncology-market-report', label: 'GCC oncology market report' },
+    { to: '/biosimilar-market-entry-saudi-arabia', label: 'Biosimilar entry in Saudi Arabia' },
   ],
   faqs: [
     {
       question: 'What drives the febrile neutropenia market?',
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
+    },
+    {
+      question: 'What is febrile neutropenia market research?',
+      answer:
+        'Primary research with oncologists, oncology pharmacists, and hospital procurement on prophylaxis protocols, G-CSF brand or biosimilar switching, and FN admission pathways — not syndicated sales audits alone.',
+    },
+    {
+      question: 'How do biosimilars affect the FN supportive-care market?',
+      answer:
+        'Tender-led hospitals switch filgrastim and pegfilgrastim biosimilars quickly when supply is reliable; oncologists may still resist switching stable patients. BioNixus measures stated versus realised substitution.',
+    },
+    {
+      question: 'Does BioNixus cover GCC hospital tenders for G-CSF?',
+      answer:
+        'Yes — modules map NUPCO and emirate hospital framework dynamics, dual-source rules, and nursing administration preferences that determine post-award uptake.',
+    },
+    {
+      question: 'How long does an FN market access study take?',
+      answer:
+        'Scoping and instrument design typically take two to three weeks; fieldwork three to six weeks depending on hospital access; synthesis two weeks. GCC multi-country harmonisation adds parallel ethics and recruiter lead time.',
     },
   ],
   priority: 'next',
