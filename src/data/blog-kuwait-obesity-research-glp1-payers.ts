@@ -32,7 +32,7 @@ export const KUWAIT_OBESITY_RESEARCH_COVER_IMAGE =
   '/images/blog/obesity-market-research-kuwait-cover.jpg';
 
 export const KUWAIT_OBESITY_RESEARCH_COVER_IMAGE_ALT =
-  'BioNixus navy and gold cover: obesity market research Kuwait, who funds GLP-1s and what payers need to see in 2026';
+  'BioNixus navy and gold cover for obesity market research in Kuwait, 2026';
 
 export const KUWAIT_OBESITY_RESEARCH_HERO_IMAGE =
   '/images/blog/obesity-market-research-kuwait-hero.jpg';

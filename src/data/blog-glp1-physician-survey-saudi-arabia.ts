@@ -37,7 +37,7 @@ export const GLP1_PHYSICIAN_SURVEY_COVER_IMAGE =
   '/images/blog/glp-1-physician-survey-saudi-arabia-cover.jpg';
 
 export const GLP1_PHYSICIAN_SURVEY_COVER_IMAGE_ALT =
-  'BioNixus navy and gold cover for a GLP-1 physician survey Saudi Arabia methods guide, 2026';
+  'BioNixus navy and gold cover for a Saudi GLP-1 physician survey methods guide, 2026';
 
 export const GLP1_PHYSICIAN_SURVEY_HERO_IMAGE =
   '/images/blog/glp-1-physician-survey-saudi-arabia-hero.jpg';

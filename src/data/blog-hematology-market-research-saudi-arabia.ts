@@ -33,7 +33,7 @@ export const HEMATOLOGY_KSA_AUTHOR_PROFILE_URL: string | undefined = undefined;
 export const HEMATOLOGY_KSA_COVER_IMAGE = '/images/blog/hematology-market-research-saudi-arabia-cover.jpg';
 
 export const HEMATOLOGY_KSA_COVER_IMAGE_ALT =
-  'BioNixus navy and gold cover: hematology market research Saudi Arabia for sickle cell, thalassemia and gene therapy before launch';
+  'BioNixus navy and gold cover for hematology market research in Saudi Arabia, 2026';
 
 export const HEMATOLOGY_KSA_HERO_IMAGE = '/images/blog/hematology-market-research-saudi-arabia-hero.jpg';
 
