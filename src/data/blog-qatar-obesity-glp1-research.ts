@@ -31,7 +31,7 @@ export const QATAR_OBESITY_GLP1_AUTHOR_PROFILE_URL: string | undefined = undefin
 export const QATAR_OBESITY_GLP1_COVER_IMAGE = '/images/blog/qatar-obesity-glp1-market-research-cover.jpg';
 
 export const QATAR_OBESITY_GLP1_COVER_IMAGE_ALT =
-  'BioNixus navy and gold cover: Qatar obesity GLP-1 market research after Wegovy and oral GLP-1 approval, 2026';
+  'BioNixus navy and gold cover for Qatar obesity GLP-1 market research, 2026';
 
 export const QATAR_OBESITY_GLP1_HERO_IMAGE = '/images/blog/qatar-obesity-glp1-market-research-hero.jpg';
 

@@ -11,6 +11,7 @@
  */
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createClient } from '@sanity/client';
@@ -113,6 +114,8 @@ function withKeys(items) {
 }
 
 function loadHardcodedArticle() {
+  const articleModule = path.join(root, 'src/data/blog-market-entry-research-saudi-arabia.ts');
+  const dumpPath = path.join(os.tmpdir(), `saudi-market-entry-payload-${process.pid}.mjs`);
   const dump = `
     import {
       SAUDI_MARKET_ENTRY_BODY_HTML,
@@ -120,7 +123,7 @@ function loadHardcodedArticle() {
       SAUDI_MARKET_ENTRY_FAQ,
       SAUDI_MARKET_ENTRY_READING_TIME,
       SAUDI_MARKET_ENTRY_TABLE_OF_CONTENTS,
-    } from './src/data/blog-market-entry-research-saudi-arabia.ts';
+    } from ${JSON.stringify(articleModule)};
     process.stdout.write(JSON.stringify({
       bodyHtml: SAUDI_MARKET_ENTRY_BODY_HTML,
       executiveSummaryHtml: SAUDI_MARKET_ENTRY_EXECUTIVE_SUMMARY_HTML,
@@ -129,16 +132,21 @@ function loadHardcodedArticle() {
       readingTime: SAUDI_MARKET_ENTRY_READING_TIME,
     }));
   `;
-  const result = spawnSync('npx', ['vite-node', '--eval', dump], {
-    cwd: root,
-    encoding: 'utf8',
-    maxBuffer: 8 * 1024 * 1024,
-  });
-  if (result.status !== 0) {
-    throw new Error(`vite-node failed to load the hardcoded article:\n${result.stderr || result.stdout}`);
+  fs.writeFileSync(dumpPath, dump);
+  try {
+    const result = spawnSync('npx', ['vite-node', dumpPath], {
+      cwd: root,
+      encoding: 'utf8',
+      maxBuffer: 8 * 1024 * 1024,
+    });
+    if (result.status !== 0) {
+      throw new Error(`vite-node failed to load the hardcoded article:\n${result.stderr || result.stdout}`);
+    }
+    const line = result.stdout.trim().split('\n').at(-1);
+    return JSON.parse(line);
+  } finally {
+    fs.rmSync(dumpPath, { force: true });
   }
-  const line = result.stdout.trim().split('\n').at(-1);
-  return JSON.parse(line);
 }
 
 function htmlToPlain(html) {
