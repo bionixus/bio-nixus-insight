@@ -11,6 +11,7 @@
  */
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createClient } from '@sanity/client';
@@ -105,6 +106,8 @@ function withKeys(items) {
 }
 
 function loadHardcodedArticle() {
+  const articleModule = path.join(root, 'src/data/blog-brand-tracking-research-agency-dubai.ts');
+  const dumpPath = path.join(os.tmpdir(), `dubai-brand-tracking-payload-${process.pid}.mjs`);
   const dump = `
     import {
       DUBAI_BRAND_TRACKING_BODY_HTML,
@@ -112,7 +115,7 @@ function loadHardcodedArticle() {
       DUBAI_BRAND_TRACKING_FAQ,
       DUBAI_BRAND_TRACKING_READING_TIME,
       DUBAI_BRAND_TRACKING_TABLE_OF_CONTENTS,
-    } from './src/data/blog-brand-tracking-research-agency-dubai.ts';
+    } from ${JSON.stringify(articleModule)};
     process.stdout.write(JSON.stringify({
       bodyHtml: DUBAI_BRAND_TRACKING_BODY_HTML,
       executiveSummaryHtml: DUBAI_BRAND_TRACKING_EXECUTIVE_SUMMARY_HTML,
@@ -121,16 +124,21 @@ function loadHardcodedArticle() {
       readingTime: DUBAI_BRAND_TRACKING_READING_TIME,
     }));
   `;
-  const result = spawnSync('npx', ['vite-node', '--eval', dump], {
-    cwd: root,
-    encoding: 'utf8',
-    maxBuffer: 8 * 1024 * 1024,
-  });
-  if (result.status !== 0) {
-    throw new Error(`vite-node failed to load the hardcoded article:\n${result.stderr || result.stdout}`);
+  fs.writeFileSync(dumpPath, dump);
+  try {
+    const result = spawnSync('npx', ['vite-node', dumpPath], {
+      cwd: root,
+      encoding: 'utf8',
+      maxBuffer: 8 * 1024 * 1024,
+    });
+    if (result.status !== 0) {
+      throw new Error(`vite-node failed to load the hardcoded article:\n${result.stderr || result.stdout}`);
+    }
+    const line = result.stdout.trim().split('\n').at(-1);
+    return JSON.parse(line);
+  } finally {
+    fs.rmSync(dumpPath, { force: true });
   }
-  const line = result.stdout.trim().split('\n').at(-1);
-  return JSON.parse(line);
 }
 
 function htmlToPlain(html) {
