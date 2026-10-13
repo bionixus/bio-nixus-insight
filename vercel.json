@@ -1092,6 +1092,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/qatar-obesity-glp1-market-research"
     },
     {
+      "source": "/blog/hematology-market-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/hematology-market-research-saudi-arabia"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
