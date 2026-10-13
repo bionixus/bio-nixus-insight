@@ -21,6 +21,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'china-device-vbp-rounds-explained',
   'who-does-obesity-market-research-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'obesity-market-research-kuwait',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -116,6 +117,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',
     description:
       'Customer satisfaction survey company UAE guide to CSAT, NPS and CES — how an NPS survey company Saudi Arabia brief should specify the recommend question.',
+  },
+  'obesity-market-research-kuwait': {
+    title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
+    description:
+      'Obesity market research Kuwait: who funds GLP-1s, what MOH and private payers need to see, and how BioNixus designs 2026 access studies for brand teams.',
   },
 };
 
