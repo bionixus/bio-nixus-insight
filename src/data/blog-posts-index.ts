@@ -12,6 +12,7 @@ import { UAE_HEALTHCARE_TRENDS_2025_HARDCODED_POST } from '@/data/blog-uae-healt
 import { UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST } from '@/data/blog-uae-healthcare-trends-2026';
 import { SAUDI_OBESITY_SHORTLIST_HARDCODED_POST } from '@/data/blog-saudi-obesity-market-research-shortlist';
 import { UAE_CSAT_HARDCODED_POST } from '@/data/blog-uae-csat-nps-ces-surveys';
+import { SAUDI_MARKET_ENTRY_HARDCODED_POST } from '@/data/blog-market-entry-research-saudi-arabia';
 import { KUWAIT_OBESITY_RESEARCH_HARDCODED_POST } from '@/data/blog-kuwait-obesity-research-glp1-payers';
 
 /**
@@ -34,6 +35,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST,
   SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
   UAE_CSAT_HARDCODED_POST,
+  SAUDI_MARKET_ENTRY_HARDCODED_POST,
   KUWAIT_OBESITY_RESEARCH_HARDCODED_POST,
 ];
 
