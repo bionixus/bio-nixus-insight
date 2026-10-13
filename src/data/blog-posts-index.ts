@@ -15,7 +15,10 @@ import { SAUDI_FEASIBILITY_HARDCODED_POST } from '@/data/blog-feasibility-study-
 import { GLP1_PHYSICIAN_SURVEY_HARDCODED_POST } from '@/data/blog-glp1-physician-survey-saudi-arabia';
 import { UAE_CSAT_HARDCODED_POST } from '@/data/blog-uae-csat-nps-ces-surveys';
 import { DUBAI_BRAND_TRACKING_HARDCODED_POST } from '@/data/blog-brand-tracking-research-agency-dubai';
+import { SAUDI_MARKET_ENTRY_HARDCODED_POST } from '@/data/blog-market-entry-research-saudi-arabia';
 import { KUWAIT_OBESITY_RESEARCH_HARDCODED_POST } from '@/data/blog-kuwait-obesity-research-glp1-payers';
+import { QATAR_OBESITY_GLP1_HARDCODED_POST } from '@/data/blog-qatar-obesity-glp1-research';
+import { HEMATOLOGY_KSA_HARDCODED_POST } from '@/data/blog-hematology-market-research-saudi-arabia';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -40,7 +43,10 @@ export const hardcodedSeoPosts: BlogPost[] = [
   GLP1_PHYSICIAN_SURVEY_HARDCODED_POST,
   UAE_CSAT_HARDCODED_POST,
   DUBAI_BRAND_TRACKING_HARDCODED_POST,
+  SAUDI_MARKET_ENTRY_HARDCODED_POST,
   KUWAIT_OBESITY_RESEARCH_HARDCODED_POST,
+  QATAR_OBESITY_GLP1_HARDCODED_POST,
+  HEMATOLOGY_KSA_HARDCODED_POST,
 ];
 
 /** Helper to find a hardcoded post by slug */

@@ -42,7 +42,10 @@ const CRITICAL_PATHS = [
   '/blog/glp-1-physician-survey-saudi-arabia',
   '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces',
   '/bionixus-industries/insights/brand-tracking-research-agency-dubai',
+  '/bionixus-industries/insights/market-entry-research-saudi-arabia',
   '/blog/obesity-market-research-kuwait',
+  '/blog/qatar-obesity-glp1-market-research',
+  '/blog/hematology-market-research-saudi-arabia',
 ];
 
 let serverEntry;

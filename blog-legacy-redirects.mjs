@@ -60,6 +60,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces',
   '/blog/brand-tracking-research-agency-dubai':
     '/bionixus-industries/insights/brand-tracking-research-agency-dubai',
+  '/blog/market-entry-research-saudi-arabia':
+    '/bionixus-industries/insights/market-entry-research-saudi-arabia',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':

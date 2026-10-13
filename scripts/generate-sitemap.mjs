@@ -116,6 +116,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'gcc-pharmaceuticals-market-arabic-2026',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'brand-tracking-research-agency-dubai',
+  'market-entry-research-saudi-arabia',
 ]);
 
 const LEGACY_REDIRECT_PATHS = Object.keys(LEGACY_REDIRECTS);
@@ -493,6 +494,8 @@ const staticPages = [
   { path: '/bionixus-industries/insights/brand-tracking-research-agency-dubai', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/blog/glp-1-physician-survey-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/blog/obesity-market-research-kuwait', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
+  { path: '/blog/qatar-obesity-glp1-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
+  { path: '/blog/hematology-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/pharmaceutical-market-research-methods-mena', priority: '0.83', changefreq: 'monthly' },
@@ -552,6 +555,7 @@ const staticPages = [
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
   { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-13' },
   { path: '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
+  { path: '/bionixus-industries/insights/market-entry-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1431,7 +1435,10 @@ const STATIC_PAGE_FILES = {
   '/bionixus-industries/insights/brand-tracking-research-agency-dubai': [
     'src/data/blog-brand-tracking-research-agency-dubai.ts',
   ],
+  '/bionixus-industries/insights/market-entry-research-saudi-arabia': ['src/data/blog-market-entry-research-saudi-arabia.ts'],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
+  '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],
+  '/blog/hematology-market-research-saudi-arabia': ['src/data/blog-hematology-market-research-saudi-arabia.ts'],
   '/pt/services': ['src/data/servicesHubContent.pt.ts', 'src/pages/Services.tsx'],
   '/ru/services': ['src/data/servicesHubContent.ru.ts', 'src/pages/Services.tsx'],
   '/services/quantitative-research': ['src/pages/ServiceDetail.tsx', 'src/data/seo/serviceDeepContent.ts'],

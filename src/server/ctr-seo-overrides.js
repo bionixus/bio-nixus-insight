@@ -875,10 +875,30 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Brand tracking research agency Dubai guide: custom tracker vs syndicated data, bilingual UAE fieldwork from a Dubai field office, KPIs that move budgets.',
   },
+  '/blog/market-entry-research-saudi-arabia': {
+    title: 'Market Entry Research Saudi Arabia (2026 Playbook)',
+    description:
+      'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.',
+  },
+  '/bionixus-industries/insights/market-entry-research-saudi-arabia': {
+    title: 'Market Entry Research Saudi Arabia (2026 Playbook)',
+    description:
+      'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
       'Obesity market research Kuwait: who funds GLP-1s, what MOH and private payers need to see, and how BioNixus designs 2026 access studies for brand teams.',
+  },
+  '/blog/qatar-obesity-glp1-market-research': {
+    title: 'Qatar Obesity GLP-1 Market Research: Wegovy to Oral',
+    description:
+      'Qatar obesity GLP-1 market research after Wegovy and MOPH oral GLP-1 approval: what STEPS, HMC cover and private prices mean for 2026 brand-team studies.',
+  },
+  '/blog/hematology-market-research-saudi-arabia': {
+    title: 'Hematology Market Research Saudi Arabia: Launch 2026',
+    description:
+      'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
   },
 };
 
