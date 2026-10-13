@@ -1076,6 +1076,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/who-does-obesity-market-research-saudi-arabia"
     },
     {
+      "source": "/blog/glp-1-physician-survey-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/glp-1-physician-survey-saudi-arabia"
+    },
+    {
       "source": "/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces",
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces"
     },

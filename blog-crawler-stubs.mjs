@@ -20,6 +20,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'nmpa-class-iii-registration-timeline-2026',
   'china-device-vbp-rounds-explained',
   'who-does-obesity-market-research-saudi-arabia',
+  'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'obesity-market-research-kuwait',
 ]);
@@ -112,6 +113,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Who Does Obesity Market Research in Saudi Arabia? (2026)',
     description:
       'Who does obesity market research in Saudi Arabia? A sourced 2026 shortlist of 8 providers for obesity GLP-1 market research Saudi Arabia teams can act on.',
+  },
+  'glp-1-physician-survey-saudi-arabia': {
+    title: 'GLP-1 Physician Survey Saudi Arabia: 2026 Methods Guide',
+    description:
+      'How to design a GLP-1 physician survey Saudi Arabia brand teams can act on: published KAP findings, specialty quotas, and BioNixus 3,200-physician reach.',
   },
   'customer-satisfaction-surveys-uae-csat-nps-ces': {
     title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',
