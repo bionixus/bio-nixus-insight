@@ -39,6 +39,9 @@ const CRITICAL_PATHS = [
   '/saudi-arabia-medical-devices-market-report',
   '/blog/who-does-obesity-market-research-saudi-arabia',
   '/bionixus-industries/insights/feasibility-study-company-saudi-arabia',
+  '/blog/glp-1-physician-survey-saudi-arabia',
+  '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces',
+  '/blog/obesity-market-research-kuwait',
 ];
 
 let serverEntry;

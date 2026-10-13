@@ -56,6 +56,8 @@ export const REDIRECT_HREF_REWRITES = {
   '/top-market-research-companies-brazil-2026': '/insights/top-market-research-companies-brazil-2026',
   '/blog/financial-services-market-research-egypt-2026':
     '/bionixus-industries/insights/financial-services-market-research-egypt-2026',
+  '/blog/customer-satisfaction-surveys-uae-csat-nps-ces':
+    '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':
