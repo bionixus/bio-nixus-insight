@@ -840,6 +840,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Who does obesity market research in Saudi Arabia? A sourced 2026 shortlist of 8 providers for obesity GLP-1 market research Saudi Arabia teams can act on.',
   },
+  '/blog/customer-satisfaction-surveys-uae-csat-nps-ces': {
+    title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',
+    description:
+      'Customer satisfaction survey company UAE guide to CSAT, NPS and CES — how an NPS survey company Saudi Arabia brief should specify the recommend question.',
+  },
+  '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces': {
+    title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',
+    description:
+      'Customer satisfaction survey company UAE guide to CSAT, NPS and CES — how an NPS survey company Saudi Arabia brief should specify the recommend question.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:

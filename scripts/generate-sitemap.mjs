@@ -112,7 +112,10 @@ const SAUDI_PHARMA_MARKET_2026_AR_SLUG = 'سوق-الدواء-السعودي-202
  * Arabic-only blog slugs: skip Sanity `/blog/{slug}` row (301 → `/ar/blog/…`).
  * Canonical URL is listed under extraStaticSitemapPages as `/ar/blog/…` only.
  */
-const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set(['gcc-pharmaceuticals-market-arabic-2026']);
+const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
+  'gcc-pharmaceuticals-market-arabic-2026',
+  'customer-satisfaction-surveys-uae-csat-nps-ces',
+]);
 
 const LEGACY_REDIRECT_PATHS = Object.keys(LEGACY_REDIRECTS);
 
@@ -544,6 +547,7 @@ const staticPages = [
   { path: '/bahrain-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
   { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-11' },
+  { path: '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1415,6 +1419,7 @@ const STATIC_PAGE_FILES = {
   '/blog/uae-healthcare-market-trends-2025': ['src/data/blog-uae-healthcare-trends-2025.ts'],
   '/blog/uae-healthcare-market-trends-2026': ['src/data/blog-uae-healthcare-trends-2026.ts'],
   '/blog/who-does-obesity-market-research-saudi-arabia': ['src/data/blog-saudi-obesity-market-research-shortlist.ts'],
+  '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces': ['src/data/blog-uae-csat-nps-ces-surveys.ts'],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/pt/services': ['src/data/servicesHubContent.pt.ts', 'src/pages/Services.tsx'],
   '/ru/services': ['src/data/servicesHubContent.ru.ts', 'src/pages/Services.tsx'],
