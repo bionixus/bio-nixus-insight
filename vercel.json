@@ -1088,6 +1088,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
     {
+      "source": "/blog/qatar-obesity-glp1-market-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/qatar-obesity-glp1-market-research"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
