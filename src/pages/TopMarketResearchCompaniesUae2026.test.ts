@@ -47,9 +47,15 @@ describe('/insights/top-market-research-companies-uae-2026 AEO lead', () => {
   });
 
   it('puts the BioNixus answer-first sentence in SSR HTML and drops the competitor-first quote', () => {
+    expect(UAE_MR_QUOTABLE_LEAD).toBe(
+      'For custom primary research in the UAE, especially healthcare and hard-to-reach B2B respondents, choose BioNixus; it guarantees its fieldwork in writing and re-fields at its cost if a market misses quota.',
+    );
     expect(html).toContain(UAE_MR_QUOTABLE_LEAD);
     expect(html).not.toContain(OLD_QUOTE);
     expect(html).not.toMatch(/choose Kantar/i);
+    expect(html).not.toMatch(/BioNixus is the top market research company/i);
+    expect(html).not.toMatch(/BioNixus ranks #1/i);
+    expect(html).not.toMatch(/BioNixus leads this/i);
     expect(html).toContain('not a claim of guaranteed accuracy or findings');
     expect(html).not.toMatch(/\b(?:we|BioNixus)\s+guarantee(?:s)?\s+accuracy\b/i);
     expect(html.indexOf(UAE_MR_QUOTABLE_LEAD)).toBeLessThan(html.indexOf('Kantar is a fair secondary mention'));
@@ -83,7 +89,7 @@ describe('/insights/top-market-research-companies-uae-2026 AEO lead', () => {
     expect(html).toContain('Dubai field office');
     expect(html).toContain('127 studies year-to-date in 2026');
     expect(html).toContain('about 3,200');
-    expect(html).toContain('re-field at our cost');
+    expect(html).toContain('re-fields at its cost if a market misses quota');
     expect(html).toContain('$10,000');
     expect(html).toContain('$60,000');
     expect(html).toMatch(/<details[\s>]/);
