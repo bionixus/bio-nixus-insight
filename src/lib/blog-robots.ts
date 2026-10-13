@@ -19,6 +19,8 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'china-device-vbp-rounds-explained',
   'who-does-obesity-market-research-saudi-arabia',
   'glp-1-physician-survey-saudi-arabia',
+  'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'obesity-market-research-kuwait',
 ]);
 
 export const BLOG_HARDCODED_SEO_SLUGS = new Set([
@@ -36,6 +38,8 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'china-device-vbp-rounds-explained',
   'who-does-obesity-market-research-saudi-arabia',
   'glp-1-physician-survey-saudi-arabia',
+  'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'obesity-market-research-kuwait',
 ]);
 
 export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {

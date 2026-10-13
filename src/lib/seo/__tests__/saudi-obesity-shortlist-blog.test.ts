@@ -1,10 +1,12 @@
 import { readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import sharp from 'sharp';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
 import { render } from '@/entry-server';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { getBlogHeroPreloadUrl } from '@/lib/image-utils';
 import { hardcodedSeoPosts } from '@/data/blog-posts-index';
 import { BLOG_FORCE_INDEX_SLUGS, BLOG_HARDCODED_SEO_SLUGS } from '@/lib/blog-robots';
 import { GOOGLE_OFFICES } from '@/data/googleLocations';
@@ -114,6 +116,19 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: server render', (
     expect(html).toContain(`src="${SAUDI_OBESITY_SHORTLIST_HERO_IMAGE}" alt="${SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT}"`);
     expect(html).not.toContain(`src="${SAUDI_OBESITY_SHORTLIST_COVER_IMAGE}"`);
     expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.ogImage).toBe(SAUDI_OBESITY_SHORTLIST_COVER_IMAGE);
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.coverImage).toBe(SAUDI_OBESITY_SHORTLIST_HERO_IMAGE);
+    expect(getBlogHeroPreloadUrl(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.coverImage)).toBe(
+      SAUDI_OBESITY_SHORTLIST_HERO_IMAGE,
+    );
+    expect(SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT).toContain('Riyadh skyline');
+    expect(SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT).toContain('Riyadh skyline');
+  });
+
+  it('keeps the hero and OG card at 1200 by 630', async () => {
+    for (const file of [SAUDI_OBESITY_SHORTLIST_HERO_IMAGE, SAUDI_OBESITY_SHORTLIST_COVER_IMAGE]) {
+      const meta = await sharp(join(root, 'public', file)).metadata();
+      expect(meta).toMatchObject({ width: 1200, height: 630, format: 'jpeg' });
+    }
   });
 
   it('renders a visible breadcrumb trail that matches the BreadcrumbList', () => {
