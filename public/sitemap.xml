@@ -534,7 +534,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -555,6 +555,12 @@
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/feasibility-study-company-saudi-arabia</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces</loc>
@@ -1364,8 +1370,26 @@
     <priority>0.88</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/blog/glp-1-physician-survey-saudi-arabia</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/blog/obesity-market-research-kuwait</loc>
     <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/qatar-obesity-glp1-market-research</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/hematology-market-research-saudi-arabia</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>

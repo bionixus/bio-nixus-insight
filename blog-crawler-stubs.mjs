@@ -20,9 +20,13 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'nmpa-class-iii-registration-timeline-2026',
   'china-device-vbp-rounds-explained',
   'who-does-obesity-market-research-saudi-arabia',
+  'feasibility-study-company-saudi-arabia',
+  'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'market-entry-research-saudi-arabia',
   'obesity-market-research-kuwait',
+  'qatar-obesity-glp1-market-research',
+  'hematology-market-research-saudi-arabia',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -114,6 +118,16 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     description:
       'Who does obesity market research in Saudi Arabia? A sourced 2026 shortlist of 8 providers for obesity GLP-1 market research Saudi Arabia teams can act on.',
   },
+  'feasibility-study-company-saudi-arabia': {
+    title: 'Feasibility Study Company Saudi Arabia (2026 Guide)',
+    description:
+      'Feasibility study company Saudi Arabia: what the 2026 market section must prove — demand, price, channels, competition and SIDF-ready primary evidence.',
+  },
+  'glp-1-physician-survey-saudi-arabia': {
+    title: 'GLP-1 Physician Survey Saudi Arabia: 2026 Methods Guide',
+    description:
+      'How to design a GLP-1 physician survey Saudi Arabia brand teams can act on: published KAP findings, specialty quotas, and BioNixus 3,200-physician reach.',
+  },
   'customer-satisfaction-surveys-uae-csat-nps-ces': {
     title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',
     description:
@@ -128,6 +142,16 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
       'Obesity market research Kuwait: who funds GLP-1s, what MOH and private payers need to see, and how BioNixus designs 2026 access studies for brand teams.',
+  },
+  'qatar-obesity-glp1-market-research': {
+    title: 'Qatar Obesity GLP-1 Market Research: Wegovy to Oral',
+    description:
+      'Qatar obesity GLP-1 market research after Wegovy and MOPH oral GLP-1 approval: what STEPS, HMC cover and private prices mean for 2026 brand-team studies.',
+  },
+  'hematology-market-research-saudi-arabia': {
+    title: 'Hematology Market Research Saudi Arabia: Launch 2026',
+    description:
+      'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
   },
 };
 
