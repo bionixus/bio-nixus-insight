@@ -22,6 +22,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'obesity-market-research-kuwait',
+  'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
 ]);
 
@@ -43,6 +44,7 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'obesity-market-research-kuwait',
+  'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
 ]);
 
