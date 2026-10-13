@@ -60,6 +60,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'Financial services market research in Egypt 2026',
   },
   {
+    to: getIndustriesInsightPostPath('feasibility-study-company-saudi-arabia'),
+    label: 'Feasibility studies in Saudi Arabia: what the market section must prove',
+  },
+  {
     to: getIndustriesInsightPostPath('customer-satisfaction-surveys-uae-csat-nps-ces'),
     label: 'Customer satisfaction surveys in the UAE: CSAT, NPS and CES',
   },

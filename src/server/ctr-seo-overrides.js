@@ -840,6 +840,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Who does obesity market research in Saudi Arabia? A sourced 2026 shortlist of 8 providers for obesity GLP-1 market research Saudi Arabia teams can act on.',
   },
+  '/bionixus-industries/insights/feasibility-study-company-saudi-arabia': {
+    title: 'Feasibility Study Company Saudi Arabia (2026 Guide)',
+    description:
+      'Feasibility study company Saudi Arabia: what the 2026 market section must prove — demand, price, channels, competition and SIDF-ready primary evidence.',
+  },
+  '/blog/feasibility-study-company-saudi-arabia': {
+    title: 'Feasibility Study Company Saudi Arabia (2026 Guide)',
+    description:
+      'Feasibility study company Saudi Arabia: what the 2026 market section must prove — demand, price, channels, competition and SIDF-ready primary evidence.',
+  },
   '/blog/glp-1-physician-survey-saudi-arabia': {
     title: 'GLP-1 Physician Survey Saudi Arabia: 2026 Methods Guide',
     description:

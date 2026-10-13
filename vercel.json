@@ -1099,6 +1099,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/:slug"
     },
     {
+      "source": "/bionixus-industries/insights/feasibility-study-company-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/feasibility-study-company-saudi-arabia"
+    },
+    {
       "source": "/bionixus-industries/insights/:slug",
       "has": [
         {
