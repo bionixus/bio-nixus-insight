@@ -870,6 +870,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Obesity market research Kuwait: who funds GLP-1s, what MOH and private payers need to see, and how BioNixus designs 2026 access studies for brand teams.',
   },
+  '/blog/hematology-market-research-saudi-arabia': {
+    title: 'Hematology Market Research Saudi Arabia: Launch 2026',
+    description:
+      'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
+  },
 };
 
 /**

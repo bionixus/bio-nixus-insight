@@ -42,6 +42,7 @@ const CRITICAL_PATHS = [
   '/blog/glp-1-physician-survey-saudi-arabia',
   '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces',
   '/blog/obesity-market-research-kuwait',
+  '/blog/hematology-market-research-saudi-arabia',
 ];
 
 let serverEntry;

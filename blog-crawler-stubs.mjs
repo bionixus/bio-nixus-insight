@@ -24,6 +24,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'obesity-market-research-kuwait',
+  'hematology-market-research-saudi-arabia',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -134,6 +135,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
       'Obesity market research Kuwait: who funds GLP-1s, what MOH and private payers need to see, and how BioNixus designs 2026 access studies for brand teams.',
+  },
+  'hematology-market-research-saudi-arabia': {
+    title: 'Hematology Market Research Saudi Arabia: Launch 2026',
+    description:
+      'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
   },
 };
 
