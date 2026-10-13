@@ -68,6 +68,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'Customer satisfaction surveys in the UAE: CSAT, NPS and CES',
   },
   {
+    to: getIndustriesInsightPostPath('brand-tracking-research-agency-dubai'),
+    label: 'Brand tracking in Dubai and the UAE: a tracker that moves budgets',
+  },
+  {
     to: getIndustriesInsightPostPath('market-entry-research-saudi-arabia'),
     label: 'Market entry research for Saudi Arabia: a non-pharma playbook',
   },

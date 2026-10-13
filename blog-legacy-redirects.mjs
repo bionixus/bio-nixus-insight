@@ -58,6 +58,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/financial-services-market-research-egypt-2026',
   '/blog/customer-satisfaction-surveys-uae-csat-nps-ces':
     '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces',
+  '/blog/brand-tracking-research-agency-dubai':
+    '/bionixus-industries/insights/brand-tracking-research-agency-dubai',
   '/blog/market-entry-research-saudi-arabia':
     '/bionixus-industries/insights/market-entry-research-saudi-arabia',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':

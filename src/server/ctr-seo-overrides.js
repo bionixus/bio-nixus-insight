@@ -865,6 +865,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Customer satisfaction survey company UAE guide to CSAT, NPS and CES — how an NPS survey company Saudi Arabia brief should specify the recommend question.',
   },
+  '/blog/brand-tracking-research-agency-dubai': {
+    title: 'Brand Tracking Research Agency Dubai: Custom Tracker',
+    description:
+      'Brand tracking research agency Dubai guide: custom tracker vs syndicated data, bilingual UAE fieldwork from a Dubai field office, KPIs that move budgets.',
+  },
+  '/bionixus-industries/insights/brand-tracking-research-agency-dubai': {
+    title: 'Brand Tracking Research Agency Dubai: Custom Tracker',
+    description:
+      'Brand tracking research agency Dubai guide: custom tracker vs syndicated data, bilingual UAE fieldwork from a Dubai field office, KPIs that move budgets.',
+  },
   '/blog/market-entry-research-saudi-arabia': {
     title: 'Market Entry Research Saudi Arabia (2026 Playbook)',
     description:
