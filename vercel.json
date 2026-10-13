@@ -1088,6 +1088,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
     {
+      "source": "/blog/hematology-market-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/hematology-market-research-saudi-arabia"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
@@ -1097,6 +1101,10 @@
         }
       ],
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/:slug"
+    },
+    {
+      "source": "/bionixus-industries/insights/feasibility-study-company-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/feasibility-study-company-saudi-arabia"
     },
     {
       "source": "/bionixus-industries/insights/:slug",
