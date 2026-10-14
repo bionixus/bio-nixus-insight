@@ -63,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-10-14',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -117,6 +117,30 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Commercial teams should plan Brazil as <strong className="text-foreground">two markets in one country</strong>:
+            SUS-driven volume and reference pricing for hospital-administered therapies, and ANS/private tier uptake for
+            oncology, immunology, and novel devices at international price bands. ANVISA registration timelines (12–36
+            months depending on track) and CONITEC cost-effectiveness thresholds determine whether SUS uptake is realistic;
+            Albert Einstein, Sírio-Libanês, and other premium networks often lead private adoption before public
+            incorporation. Compare device dynamics in our{' '}
+            <Link to="/brazil-medical-devices-market-report" className="text-primary hover:underline font-medium">
+              Brazil medical devices market report
+            </Link>
+            .
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            BioNixus uses Brazil market context when advising Latin American manufacturers on{' '}
+            <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">
+              GCC pharmaceutical entry
+            </Link>
+            , and when benchmarking Gulf payers against CONITEC-style HTA evidence expectations. For account-level brand
+            and competitor work that syndicated panels cannot cut, see{' '}
+            <Link to="/account-level-market-research" className="text-primary hover:underline font-medium">
+              account-level market research
+            </Link>
+            .
+          </p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
