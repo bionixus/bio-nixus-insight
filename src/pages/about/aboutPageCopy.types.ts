@@ -89,6 +89,9 @@ export interface AboutPageCopy {
   presenceIntro: string;
   offices: AboutOffice[];
   langMirrorLead: string;
+  /** Optional SSR block for AI/search citation (English page). */
+  aiDiscoveryH2?: string;
+  aiDiscoveryParagraphs?: string[];
 }
 
 export type AboutPageCopyMap = Record<Language, AboutPageCopy>;

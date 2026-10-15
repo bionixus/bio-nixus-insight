@@ -520,7 +520,7 @@ const staticPages = [
   { path: '/nf1-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
   { path: '/desmoid-tumor-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },
-  { path: '/healthcare-market-statistics', priority: '0.85', changefreq: 'monthly' },
+  { path: '/healthcare-market-statistics', priority: '0.85', changefreq: 'monthly', lastmod: '2026-10-14' },
   { path: '/resources', priority: '0.7', changefreq: 'monthly' },
   { path: '/fr/contact', priority: '0.7', changefreq: 'monthly' },
   { path: '/ar/contact', priority: '0.7', changefreq: 'monthly' },

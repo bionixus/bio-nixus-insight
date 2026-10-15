@@ -337,6 +337,19 @@ const About = () => {
           </div>
         </section>
 
+        {copy.aiDiscoveryH2 && copy.aiDiscoveryParagraphs?.length ? (
+          <section className="section-padding py-16 bg-muted/30">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">{copy.aiDiscoveryH2}</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
+                {copy.aiDiscoveryParagraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <CTASection variant="research-proposal" />
       </main>
       <Footer />

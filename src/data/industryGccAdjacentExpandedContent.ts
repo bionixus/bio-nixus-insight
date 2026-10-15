@@ -9,6 +9,7 @@ const ADJACENT_INDUSTRIES: ReadonlySet<MatrixIndustrySlug> = new Set([
   'medtech',
   'biotech',
   'consumer-health',
+  'retail',
 ]);
 
 const SHARED_DELIVERABLES = [
@@ -39,6 +40,14 @@ const COUNTRY_REGULATORY: Record<MatrixCountrySlug, CountryIndustryRegulatory> =
       'Clinical trial feasibility and site identification modules should map SFDA-approved centres, genetic testing infrastructure, and referral pathways for rare-disease or precision portfolios.',
       'Arabic–English depth interviews with KOLs, pharmacists, and payer-facing administrators preserve nuance for global sponsors while maintaining audit-ready governance.',
       'BioNixus pairs Saudi biotech modules with HEOR consulting and pharma fieldwork when launch planning spans hospital, payer, and community channels.',
+    ],
+    retail: [
+      'Retail market research in Saudi Arabia must separate Saudi national households from expatriate catchments, Riyadh from Jeddah and Eastern Province formats, and hypermarket from quick-commerce missions — GASTAT population splits make a single “KSA shopper” average misleading for launch models.',
+      'Vision 2030 entertainment districts and giga-mall openings shifted footfall but did not homogenise category demand; grocery, fashion, electronics, and pharmacy-led retail follow different competitive sets (Panda, Tamimi, Carrefour, Lulu, BinDawood, Nahdi).',
+      'VAT at 15% (ZATCA) requires shelf-price studies to state tax-inclusive tags and app-only promo mechanics; comparing Saudi shelves to UAE or Egypt without currency and tax notes biases price elasticities.',
+      'Quick-commerce and marketplace discovery changed promo attribution; stated-preference surveys under-report app vouchers — pair quant with mystery shopping or digital journey modules when facings and wait times drive choice.',
+      'Ramadan, back-to-school, and domestic tourism seasons shift basket mix; tracking waves need explicit seasonal cells rather than rolling annual averages alone.',
+      'Arabic–English shopper and category-manager modules are standard; executive interviews with listing teams complement consumer quant when the decision is planogram or national listing.',
     ],
     'consumer-health': [
       'Consumer health and OTC research in Saudi Arabia spans SFDA-adjacent product categories, pharmacy retail chains, e-pharmacy growth, and Wasfaty e-prescription dynamics that reshape OTC adjacency.',
