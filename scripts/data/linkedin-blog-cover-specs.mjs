@@ -12,6 +12,45 @@ function skylineBlocks(blocks, baseline = 552) {
 }
 
 export const LINKEDIN_BLOG_COVERS = {
+  'iqvia-alternative-uae-primary-research': {
+    cover: 'iqvia-alternative-uae-primary-research-cover.jpg',
+    hero: 'iqvia-alternative-uae-primary-research-hero.jpg',
+    badge: 'UAE  ·  PRIMARY RESEARCH',
+    lines: ['Keep the audit,', 'add primary'],
+    goldLine: 'UAE brand teams',
+    sub: 'Syndicated plus custom · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 90 518, 200 578, 320 534 S 470 522, 560 554 V 630 H 0 Z" fill="#0A1422"/>
+      <g fill="#0C1728" stroke="${GOLD_LIGHT}" stroke-width="1.6">
+        ${skylineBlocks([
+          [48, 28, 96],
+          [84, 36, 168, true],
+          [128, 22, 124],
+          [158, 48, 210],
+          [214, 30, 150],
+          [252, 40, 188, true],
+          [300, 24, 112],
+          [332, 52, 236],
+          [392, 28, 140],
+          [428, 44, 176],
+        ])}
+      </g>
+      <g>
+        <rect x="72" y="88" width="196" height="168" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.2"/>
+        <rect x="92" y="196" width="28" height="40" rx="4" fill="${GOLD}"/>
+        <rect x="132" y="168" width="28" height="68" rx="4" fill="${GOLD_LIGHT}"/>
+        <rect x="172" y="148" width="28" height="88" rx="4" fill="${GOLD}"/>
+        <rect x="212" y="128" width="28" height="108" rx="4" fill="${CREAM}"/>
+        <rect x="292" y="88" width="196" height="168" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2.2"/>
+        <circle cx="340" cy="148" r="18" fill="none" stroke="${GOLD}" stroke-width="2.2"/>
+        <circle cx="388" cy="148" r="18" fill="${GOLD}" fill-opacity="0.3" stroke="${GOLD}" stroke-width="2.2"/>
+        <circle cx="436" cy="148" r="18" fill="none" stroke="${GOLD_LIGHT}" stroke-width="2.2"/>
+        <path d="M 320 196 H 460 M 320 218 H 428" stroke="${CREAM}" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+      </g>`,
+      'glowI',
+    ),
+  },
   'how-to-choose-healthcare-market-research-agency-saudi-arabia': {
     cover: 'how-to-choose-healthcare-market-research-agency-saudi-arabia-cover.jpg',
     hero: 'how-to-choose-healthcare-market-research-agency-saudi-arabia-hero.jpg',
