@@ -1088,6 +1088,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/market-entry-research-saudi-arabia"
     },
     {
+      "source": "/bionixus-industries/insights/consumer-survey-company-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/consumer-survey-company-saudi-arabia"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },

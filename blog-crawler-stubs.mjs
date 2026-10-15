@@ -25,6 +25,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'brand-tracking-research-agency-dubai',
   'market-entry-research-saudi-arabia',
+  'consumer-survey-company-saudi-arabia',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -143,6 +144,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Market Entry Research Saudi Arabia (2026 Playbook)',
     description:
       'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.',
+  },
+  'consumer-survey-company-saudi-arabia': {
+    title: 'Consumer Survey Company Saudi Arabia: 2026 Methods',
+    description:
+      'Consumer survey company Saudi Arabia guide to sampling, Arabic/English, online vs CATI/F2F, women respondents, regions, costs and how to choose a firm.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',

@@ -165,6 +165,7 @@ Commissioned primary research scopes. Each page covers one geography and one mar
 ## Insights & Evidence
 - [Insights & Blog](https://www.bionixus.com/blog)
 - [Market entry research Saudi Arabia (2026 playbook)](https://www.bionixus.com/bionixus-industries/insights/market-entry-research-saudi-arabia): sourced non-pharma playbook for US, UK and European firms — demand, MISA registration, cities, channels and price before committing capital
+- [Consumer survey company Saudi Arabia (2026 methods)](https://www.bionixus.com/bionixus-industries/insights/consumer-survey-company-saudi-arabia): sourced guide to sampling, Arabic/English, online vs CATI/F2F, women respondents, regions, costs and how to choose a firm
 - [GCC Clinical Trials Market 2026](https://www.bionixus.com/blog/gcc-clinical-trials-market-2026)
 - [How Pharmaceutical Market Research Works in MENA](https://www.bionixus.com/blog/pharmaceutical-market-research-methods-mena)
 - [Saudi Arabia Healthcare Market 2026](https://www.bionixus.com/blog/saudi-arabia-healthcare-market-2026)

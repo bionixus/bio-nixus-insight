@@ -311,14 +311,18 @@ export async function fetchIndustriesInsightsWithClient(
   client: SanityClient,
   limit = BLOG_INDEX_POST_LIMIT,
 ): Promise<BlogPost[]> {
+  const hardcodedIndustries = filterPostsBySilo([...hardcodedSeoPosts], 'industries');
   try {
     const raw = await client.fetch<RawSanityPost[]>(INDUSTRIES_INSIGHTS_QUERY, {
       limit: Math.max(1, Math.min(limit, BLOG_INDEX_POST_LIMIT)),
     });
-    return sortPostsNewestFirst(raw.map((p) => mapRawToPost(p)!).filter(Boolean));
+    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean).map(overlayHardcodedSeoPost);
+    const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
+    const extra = hardcodedIndustries.filter((p) => !sanitySlugs.has(p.slug));
+    return sortPostsNewestFirst([...sanityPosts, ...extra]);
   } catch (err) {
     console.error('Failed to fetch industries insights from Sanity CMS', err);
-    return [];
+    return sortPostsNewestFirst(hardcodedIndustries);
   }
 }
 
