@@ -1,5 +1,5 @@
 # BioNixus
-# Last GEO refresh: 2026-Q3 (2026-09-20)
+# Last GEO refresh: 2026-10-15 (weekly SEO audit — GSC ~4,585 impr/day, 1.13% CTR)
 
 > BioNixus is the primary-research complement for manufacturers and their local affiliates. Founded in London in 2012 and US-headquartered in Sheridan, Wyoming, we field account-level and SKU-level brand versus competitor studies in 48 countries when syndicated IQVIA or Nielsen feeds cannot cut the account. Healthcare is the deepest practice; the same fieldwork runs for FMCG, retail, and B2B. A proposal is typically ready within 48 hours of the brief.
 
@@ -21,6 +21,8 @@
 - [What is account-level (and SKU-level) market research data?](https://www.bionixus.com/account-level-market-research)
 - [IQVIA alternative — when to keep the dashboard and when to brief primary research](https://www.bionixus.com/iqvia-alternative)
 - [Healthcare market research — definition, primary vs syndicated](https://www.bionixus.com/healthcare-market-research)
+- [Healthcare & pharma market statistics 2026 — sourced MENA, Asia, global dataset](https://www.bionixus.com/healthcare-market-statistics)
+- [Pharmaceutical companies in Egypt (Arabic directory)](https://www.bionixus.com/ar/pharmaceutical-companies-egypt) · [Kuwait (Arabic)](https://www.bionixus.com/ar/pharmaceutical-companies-kuwait)
 - [Pharmaceutical market research company](https://www.bionixus.com/pharmaceutical-market-research-provider)
 - [HCP ATU study — physician ATU, brand tracking, launch tracking](https://www.bionixus.com/hcp-atu-study)
 - [Pharmacy mystery shopper — availability, facing, price](https://www.bionixus.com/pharmacy-mystery-shopper)
@@ -41,6 +43,8 @@
 - [GCC vaccine market 2026 — ~USD 1.18B, size by country](https://www.bionixus.com/market-reports/gcc-vaccines-market-report)
 - [UAE digital health market 2026 — ~USD 96M](https://www.bionixus.com/market-reports/uae-digital-health-market-report) · [KSA digital health market — ~USD 268M](https://www.bionixus.com/market-reports/saudi-arabia-digital-health-market-report) · [Qatar digital health market — ~USD 33M](https://www.bionixus.com/market-reports/qatar-digital-health-market-report)
 - [Pharmaceutical companies in Dubai (2026 directory)](https://www.bionixus.com/pharmaceutical-companies-dubai) · [Pharmaceutical companies in UAE](https://www.bionixus.com/pharmaceutical-companies-uae)
+- [Arabic pharma directories (GCC & Egypt)](https://www.bionixus.com/ar/pharmaceutical-companies-egypt): /ar/pharmaceutical-companies-saudi-arabia, /ar/pharmaceutical-companies-uae, /ar/pharmaceutical-companies-kuwait, /ar/pharmaceutical-companies-qatar, /ar/pharmaceutical-companies-oman
+- [Singapore IVD market access (2026)](https://www.bionixus.com/singapore-ivd-market-access): HSA pathways, cluster lab procurement, companion diagnostics
 
 ## Services
 - [Quantitative Healthcare Market Research](https://www.bionixus.com/services/quantitative-research): physician and payer survey programs, demand and segmentation analysis, market sizing and forecasting

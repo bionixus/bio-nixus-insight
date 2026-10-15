@@ -28,6 +28,28 @@ const COMMERCIAL_DELIVERABLES = [
 type CountryIndustryKey = `${MatrixCountrySlug}:${MatrixIndustrySlug}`;
 
 const PAGE_ENHANCEMENTS: Partial<Record<CountryIndustryKey, PageEnhancement>> = {
+  'saudi-arabia:retail': {
+    heroTagline: 'Vision 2030 retail · bilingual shopper research · decision-ready evidence',
+    heroIntro:
+      'Saudi Arabia’s retail market is restructuring around giga-projects, e-commerce penetration, VAT-aware pricing, and a population split that is roughly 55% Saudi nationals and 45% expatriates (GASTAT). Retail market research in Saudi Arabia must separate Riyadh family grocers from Jeddah tourism-facing formats, hypermarket chains from quick-commerce apps, and Saudi households from non-Saudi catchments — not a single “KSA retail” average. BioNixus fields shopper surveys, channel audits, and executive interviews in Arabic and English with Riyadh, Jeddah, and Eastern Province quotas.',
+    uniquenessParagraphs: [
+      'Vision 2030 and entertainment-led destinations (Riyadh Season, giga-malls, and mixed-use districts) changed where Saudis spend — but they did not homogenise demand. A brand that wins in Riyadh Boulevard may still fail in Dammam hypermarkets; research briefs must name city, format, and nationality mix before sample design locks.',
+      'VAT at 15% (ZATCA) means shelf-price studies must state whether tags are VAT-inclusive and how promotions interact with loyalty apps — especially when comparing Saudi operators to UAE or Egyptian benchmarks.',
+      'Quick-commerce and marketplace apps altered discovery and promo mechanics; mystery shopping and digital journey modules should run alongside stated-preference surveys because respondents under-report app-only deals in phone surveys.',
+      'Grocery, fashion, electronics, and pharmacy-led retail sit in different competitive sets — Panda, Tamimi, Carrefour, Lulu, BinDawood, and Nahdi each imply different shopper missions. BioNixus maps account-level retail intelligence before national extrapolation.',
+      'Women’s workforce participation and youth demographics shift category growth — quota by gender and age prevents Riyadh-only skew in national launch models.',
+      'For multinational retailers sequencing GCC entry, Saudi modules can harmonise with UAE retail research using consistent instruments — with explicit notes where visa status and channel law differ.',
+      'Syndicated retail measurement (NielsenIQ, Kantar) sizes categories; BioNixus primary research explains why share moved — facings, promo depth, stock-outs, and staff prompts that panels miss.',
+      'See also /b2c-industries, /saudi-arabia-hospitality-market-research, and /blog/market-entry-research-saudi-arabia for adjacent entry playbooks.',
+      'Shopper mission research should tag hypermarket, discounter, convenience, and pharmacy-led retail separately — Nahdi and other pharmacy chains compete on health & beauty missions that pure grocery trackers misclassify.',
+      'Ramadan and back-to-school seasons shift basket composition; tracking waves should include pre/post seasonal cells rather than rolling annual averages only.',
+      'Saudi youth unemployment and Saudization policies influence hiring and in-store service quality — mystery shopping captures execution gaps syndicated NPS misses.',
+      'Omnichannel returns and exchange policies affect fashion and electronics more than grocery; category-specific screeners prevent unqualified respondents.',
+      'For price research, state currency (SAR), VAT inclusion, and promo mechanics (bundle, loyalty points, app-only vouchers) in the brief before field opens.',
+      'Executive interviews with category managers at Panda, Tamimi, or Lulu complement shopper quant when the decision is listing or planogram reset.',
+      'BioNixus proposes written feasibility within one week; field-ready instruments typically follow in 2–4 weeks after sign-off.',
+    ],
+  },
   'egypt:financial-services': {
     heroTagline: 'CBE inclusion context · bilingual fieldwork · decision-ready evidence',
     heroIntro:

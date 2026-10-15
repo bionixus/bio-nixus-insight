@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04",
+  "generatedAt": "2026-10-15",
   "source": "data/gsc/current-week/Pages.csv",
   "minImpressions": 100,
   "freezeWeeks": 8,
@@ -1155,8 +1155,11 @@
     },
     "/singapore-ivd-market-access": {
       "impressions": 145,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-10-15",
+      "override": {
+        "title": "Singapore IVD Market Access (2026) | HSA & Hospital Labs",
+        "description": "Singapore IVD market access — HSA pathways, SingHealth / NUHS / NHG lab procurement, companion diagnostics, and primary research when assays are registered but not ordered."
+      }
     },
     "/singapore-medical-devices-market-report": {
       "impressions": 614,

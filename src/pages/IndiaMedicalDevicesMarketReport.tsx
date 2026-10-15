@@ -47,6 +47,10 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
     question: 'How does BioNixus support Indian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Indian medical device manufacturers in entering GCC and MENA markets. India\'s growing medtech manufacturing base — particularly in diagnostics, consumables, and commodity medical supplies — has strong natural markets in GCC countries where Indian-manufactured products have established procurement histories. BioNixus provides SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and GCC-wide regulatory pathway intelligence; NUPCO and hospital procurement data; distributor network mapping; and primary research with biomedical engineers and procurement managers. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
+  {
+    question: 'Which Indian medtech clusters matter for export and GCC tenders?',
+    answer: 'Andhra Pradesh MedTech Zone (AMTZ), Telangana and Tamil Nadu device parks, and Himachal Pradesh clusters concentrate PLI beneficiaries and shared testing infrastructure. Wipro GE, Trivitron, Skanray, and L&T MedTech anchor imaging and monitoring; domestic consumables leaders supply gloves, syringes, and wound care at scale. For GCC entry, Indian OEMs often compete on price in disposables while partnering for imaging service contracts. BioNixus maps which cluster narrative (PLI-backed local manufacturing vs import-reliant premium devices) resonates with Saudi NUPCO, UAE hospital groups, and Egyptian procurement — and where physician preference still favours US/EU brands despite Indian registration.',
+  },
 ], 'india');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/india-medical-devices-market-report');
@@ -62,7 +66,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-14',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -117,10 +121,57 @@ const IndiaMedicalDevicesMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">India is among the world's fastest-growing medical device markets — fourth-largest in Asia and growing at 8% CAGR. The PLI scheme and Medical Device Parks are driving a domestic manufacturing transformation that is creating Indian-branded device companies with growing international ambitions, including in GCC markets.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            <strong className="text-foreground">CDSCO classification under MDR 2017</strong> remains the gating item for
+            every import and domestic device: Class A/B registration versus Class C/D approval, State Licensing Authority
+            manufacturing licences, and the Sugam portal for dossier tracking. Approximately three quarters of advanced
+            device demand is still import-led (US, Germany, Japan, China), so procurement research must separate{' '}
+            <em>registered</em> from <em>listed on hospital tender</em> from <em>installed base in cath labs and imaging
+            suites</em>. NPPA stent and knee implant price caps are a reminder that India can intervene abruptly in
+            high-spend categories — risk planning should include regulatory pricing scenarios, not only volume forecasts.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Hospital groups (Apollo, Fortis, Max, Narayana) and Ayushman Bharat PM-JAY empanelment shape uptake for
+            implants and diagnostics differently from metro private cash pay. BioNixus fields{' '}
+            <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">
+              healthcare market research
+            </Link>{' '}
+            with biomedical engineers, procurement managers, and distributor mapping for Indian OEMs expanding to{' '}
+            <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
+              GCC medical devices
+            </Link>{' '}
+            and for multinationals prioritising India as a manufacturing hub under PLI.
+          </p>
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="india" countryName="India" variant="medical-devices" />
+
+        <section className="section-padding bg-muted/20" id="india-medtech-procurement">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Hospital procurement and tender dynamics in India
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Government medical colleges and district hospitals run centralized tenders with long lead times and
+              L1 pricing pressure; corporate hospital chains negotiate enterprise rates and service bundles for
+              imaging, cath lab, and ICU capital equipment. A device may be CDSCO-approved yet absent from a state
+              tender list — commercial teams should map <strong className="text-foreground">tender visibility</strong>{' '}
+              separately from registration status. BioNixus primary research interviews biomedical engineers, store
+              managers, and cath-lab heads to explain why a competitor wins on service contracts even when list price
+              is higher.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              For exporters, India PLI beneficiaries increasingly pitch GCC hospitals on cost-competitive disposables
+              and selected capital equipment; success depends on SFDA/MOHAP clearance and distributor credibility, not
+              factory capacity alone. Use this report with our{' '}
+              <Link to="/pharmaceutical-companies-india" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in India
+              </Link>{' '}
+              directory when your programme spans drug–device combination products or shared hospital accounts.
+            </p>
+          </div>
+        </section>
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">

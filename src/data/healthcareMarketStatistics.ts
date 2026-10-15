@@ -21,7 +21,7 @@ export interface MarketStatRegion {
   stats: MarketStat[];
 }
 
-export const MARKET_STATISTICS_LAST_UPDATED = '2026-07-22';
+export const MARKET_STATISTICS_LAST_UPDATED = '2026-10-14';
 
 export const MARKET_STATISTICS: MarketStatRegion[] = [
   {
@@ -103,6 +103,18 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
       { stat: 'Approximately 8.5 million Turkish adults have type 2 diabetes (roughly 14% adult prevalence).', source: 'IDF Diabetes Atlas, 2023' },
       { stat: 'Type 2 diabetes affects 18.9% of Bahraini adults.', source: 'IDF Diabetes Atlas, 2023' },
       { stat: 'Type 2 diabetes affects 14.6% of Omani adults.', source: 'IDF Diabetes Atlas, 2023' },
+      {
+        stat: "Qatar's healthcare market is estimated at USD 9–11 billion in 2026, with pharmaceutical spend a growing share of public and private insurance budgets.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/qatar-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Kuwait's pharmaceutical market is forecast to reach approximately USD 2.9 billion by 2027, growing at roughly 3.5% annually.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/kuwait-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
   },
   {
@@ -155,6 +167,18 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
       { stat: 'Approximately 9% of Singaporean adults aged 18–69 have diabetes.', source: 'Singapore National Health Survey, 2022' },
       { stat: "44% of Australia's population holds private hospital insurance cover.", source: 'Australian Prudential Regulation Authority (APRA), 2024' },
       { stat: 'Approximately 1.3 million Australians have diagnosed diabetes, of which 85% is type 2.', source: 'Australian Institute of Health and Welfare, Diabetes Snapshot, 2024' },
+      {
+        stat: "India's medical devices market is estimated at USD 11–14 billion in 2026, growing at approximately 8% CAGR.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/india-medical-devices-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Singapore's medical devices market is estimated at USD 1.3–1.6 billion in 2026, driven by private hospitals and regional export hubs.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/singapore-medical-devices-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
   },
   {
@@ -189,6 +213,18 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
         sourceHref: '/canada-healthcare-market-report',
       },
       { stat: 'Approximately 5.3 million Spanish adults have diabetes (14.8% prevalence).', source: 'Sociedad Española de Diabetes (SED), 2023' },
+      {
+        stat: "Brazil's healthcare market is estimated at USD 155–175 billion in 2026 — the largest in Latin America.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Brazil's pharmaceutical market is estimated at USD 26–30 billion in 2026, regulated by ANVISA with SUS incorporation via CONITEC HTA.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
   },
 ];
