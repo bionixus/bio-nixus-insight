@@ -885,6 +885,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.',
   },
+  '/blog/b2b-market-research-uae': {
+    title: 'B2B Market Research UAE: Recruiting Decision-Makers',
+    description:
+      'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
+  },
+  '/bionixus-industries/insights/b2b-market-research-uae': {
+    title: 'B2B Market Research UAE: Recruiting Decision-Makers',
+    description:
+      'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
