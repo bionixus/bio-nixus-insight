@@ -1116,6 +1116,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia"
     },
     {
+      "source": "/blog/thiqa-obesity-reimbursement-abu-dhabi",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/thiqa-obesity-reimbursement-abu-dhabi"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
