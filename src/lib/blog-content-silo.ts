@@ -76,6 +76,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'Market entry research for Saudi Arabia: a non-pharma playbook',
   },
   {
+    to: getIndustriesInsightPostPath('consumer-survey-company-saudi-arabia'),
+    label: 'Consumer survey research in Saudi Arabia: sampling, language and mode',
+  },
+  {
     to: getIndustriesInsightPostPath('b2b-market-research-uae'),
     label: 'B2B market research in the UAE: reaching hard-to-reach decision-makers',
   },

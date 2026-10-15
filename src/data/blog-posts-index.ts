@@ -16,6 +16,7 @@ import { GLP1_PHYSICIAN_SURVEY_HARDCODED_POST } from '@/data/blog-glp1-physician
 import { UAE_CSAT_HARDCODED_POST } from '@/data/blog-uae-csat-nps-ces-surveys';
 import { DUBAI_BRAND_TRACKING_HARDCODED_POST } from '@/data/blog-brand-tracking-research-agency-dubai';
 import { SAUDI_MARKET_ENTRY_HARDCODED_POST } from '@/data/blog-market-entry-research-saudi-arabia';
+import { SAUDI_CONSUMER_SURVEY_HARDCODED_POST } from '@/data/blog-consumer-survey-company-saudi-arabia';
 import { UAE_B2B_MR_HARDCODED_POST } from '@/data/blog-b2b-market-research-uae';
 import { KUWAIT_OBESITY_RESEARCH_HARDCODED_POST } from '@/data/blog-kuwait-obesity-research-glp1-payers';
 import { QATAR_OBESITY_GLP1_HARDCODED_POST } from '@/data/blog-qatar-obesity-glp1-research';
@@ -47,6 +48,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   UAE_CSAT_HARDCODED_POST,
   DUBAI_BRAND_TRACKING_HARDCODED_POST,
   SAUDI_MARKET_ENTRY_HARDCODED_POST,
+  SAUDI_CONSUMER_SURVEY_HARDCODED_POST,
   UAE_B2B_MR_HARDCODED_POST,
   KUWAIT_OBESITY_RESEARCH_HARDCODED_POST,
   QATAR_OBESITY_GLP1_HARDCODED_POST,

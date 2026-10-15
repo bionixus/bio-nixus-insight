@@ -35,11 +35,13 @@ const DEFAULT_COVER_IMAGES = [blogImage1, blogImage2, blogImage3];
 
 function getImageSrc(url: string | undefined, index: number): string {
   if (url?.startsWith("http")) return optimizeSanityImage(url, 400, 250);
+  if (url?.startsWith("/")) return url;
   return DEFAULT_COVER_IMAGES[index % DEFAULT_COVER_IMAGES.length];
 }
 
 function getFeaturedImageSrc(url: string | undefined): string {
   if (url?.startsWith("http")) return optimizeSanityImage(url, 960, 540);
+  if (url?.startsWith("/")) return url;
   return DEFAULT_COVER_IMAGES[0];
 }
 

@@ -62,6 +62,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/brand-tracking-research-agency-dubai',
   '/blog/market-entry-research-saudi-arabia':
     '/bionixus-industries/insights/market-entry-research-saudi-arabia',
+  '/blog/consumer-survey-company-saudi-arabia':
+    '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
   '/blog/b2b-market-research-uae': '/bionixus-industries/insights/b2b-market-research-uae',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
