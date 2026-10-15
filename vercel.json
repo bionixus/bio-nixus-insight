@@ -1096,6 +1096,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/b2b-market-research-uae"
     },
     {
+      "source": "/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
@@ -1143,7 +1147,7 @@
           "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit|ChatGPT-User|OAI-SearchBot|GPTBot|ClaudeBot|Claude-User|Claude-SearchBot|PerplexityBot|Perplexity-User|CCBot|Google-Extended|Applebot-Extended|MistralAI-User|Amazonbot|Meta-ExternalAgent|DuckAssistBot|YouBot|anthropic-ai|Applebot|cohere-ai|Bytespider).*"
         }
       ],
-      "destination": "/api/blog/:slug?industriesInsight=1"
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/:slug"
     },
     {
       "source": "/news/:slug",

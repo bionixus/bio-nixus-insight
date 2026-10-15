@@ -1380,10 +1380,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         {heroCoverImage ? (
-          <div
-            className="relative w-full overflow-hidden bg-navy-deep group"
-            style={{ minHeight: '380px', maxHeight: '560px', aspectRatio: '21 / 9' }}
-          >
+          <div className="relative w-full bg-navy-deep group min-h-[380px] md:min-h-[480px]">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
               src={optimizeSanityImage(heroCoverImage, 1400, 600)}
               alt={post.coverImageAlt || articleDisplayTitle || 'Article cover image'}
@@ -1399,8 +1397,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsl(220 47% 10% / 0.45) 0%, transparent 55%)' }} />
             {/* Gold top accent line */}
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
+            </div>
 
-            <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
+            <div className="relative z-10 flex min-h-[380px] flex-col justify-end px-6 pb-8 pt-16 md:min-h-[480px] md:px-10 md:pb-10">
               {visibleBreadcrumbItems ? (
                 <BreadcrumbNav tone="on-dark" items={visibleBreadcrumbItems} className="hidden md:block px-0 pt-0 pb-0 mb-5" />
               ) : (
