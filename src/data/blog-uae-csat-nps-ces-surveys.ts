@@ -339,7 +339,7 @@ const NARRATIVE_HTML = `<p>Retail, hospitality and financial-services teams in t
 <li>What will you <em>not</em> claim? A supplier that quotes an unpublished “UAE NPS average” is guessing.</li>
 </ul>
 
-<p>Related industry reading on this hub includes <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services market research in Egypt (2026)</a> and <a href="/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026">online market research and social listening for brand growth</a>.</p>
+<p>Related industry reading on this hub includes <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/kantar-alternative-middle-east">a Kantar alternative in the GCC</a>, <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services market research in Egypt (2026)</a> and <a href="/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026">online market research and social listening for brand growth</a>.</p>
 
 <h2 id="why-bionixus">Why choose BioNixus for CSAT, NPS and CES in the UAE and Saudi Arabia?</h2>
 
