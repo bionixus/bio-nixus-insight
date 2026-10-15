@@ -26,9 +26,12 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'brand-tracking-research-agency-dubai',
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
+  'b2b-market-research-uae',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
+  'iqvia-alternative-uae-primary-research',
+  'how-to-choose-healthcare-market-research-agency-saudi-arabia',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -150,6 +153,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     description:
       'Consumer survey company Saudi Arabia guide to sampling, Arabic/English, online vs CATI/F2F, women respondents, regions, costs and how to choose a firm.',
   },
+  'b2b-market-research-uae': {
+    title: 'B2B Market Research UAE: Recruiting Decision-Makers',
+    description:
+      'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
+  },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
@@ -164,6 +172,16 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Hematology Market Research Saudi Arabia: Launch 2026',
     description:
       'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
+  },
+  'iqvia-alternative-uae-primary-research': {
+    title: 'IQVIA Alternative UAE Primary Research: Keep Audit',
+    description:
+      'IQVIA alternative UAE primary research for brand teams that keep syndicated audits and add custom physician, payer and patient studies from a Dubai office.',
+  },
+  'how-to-choose-healthcare-market-research-agency-saudi-arabia': {
+    title: 'Healthcare Market Research Agency Saudi Arabia: 10 Questions',
+    description:
+      'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.',
   },
 };
 

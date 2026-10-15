@@ -587,6 +587,12 @@
     <priority>0.88</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/b2b-market-research-uae</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/bionixus-market-research-middle-east</loc>
     <lastmod>2026-09-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-market-research-middle-east" />
@@ -1402,6 +1408,18 @@
   <url>
     <loc>https://www.bionixus.com/blog/hematology-market-research-saudi-arabia</loc>
     <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/iqvia-alternative-uae-primary-research</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia</loc>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
