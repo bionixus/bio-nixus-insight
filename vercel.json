@@ -1088,6 +1088,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/market-entry-research-saudi-arabia"
     },
     {
+      "source": "/bionixus-industries/insights/b2b-market-research-uae",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/b2b-market-research-uae"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
@@ -1102,6 +1106,10 @@
     {
       "source": "/blog/iqvia-alternative-uae-primary-research",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/iqvia-alternative-uae-primary-research"
+    },
+    {
+      "source": "/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia"
     },
     {
       "source": "/blog/:slug",

@@ -117,6 +117,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'brand-tracking-research-agency-dubai',
   'market-entry-research-saudi-arabia',
+  'b2b-market-research-uae',
 ]);
 
 const LEGACY_REDIRECT_PATHS = Object.keys(LEGACY_REDIRECTS);
@@ -497,6 +498,7 @@ const staticPages = [
   { path: '/blog/qatar-obesity-glp1-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/blog/hematology-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/blog/iqvia-alternative-uae-primary-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
+  { path: '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/pharmaceutical-market-research-methods-mena', priority: '0.83', changefreq: 'monthly' },
@@ -554,9 +556,10 @@ const staticPages = [
   { path: '/bahrain-healthcare-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bahrain-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
-  { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-13' },
+  { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/bionixus-industries/insights/market-entry-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
+  { path: '/bionixus-industries/insights/b2b-market-research-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1437,10 +1440,14 @@ const STATIC_PAGE_FILES = {
     'src/data/blog-brand-tracking-research-agency-dubai.ts',
   ],
   '/bionixus-industries/insights/market-entry-research-saudi-arabia': ['src/data/blog-market-entry-research-saudi-arabia.ts'],
+  '/bionixus-industries/insights/b2b-market-research-uae': ['src/data/blog-b2b-market-research-uae.ts'],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],
   '/blog/hematology-market-research-saudi-arabia': ['src/data/blog-hematology-market-research-saudi-arabia.ts'],
   '/blog/iqvia-alternative-uae-primary-research': ['src/data/blog-iqvia-alternative-uae-primary-research.ts'],
+  '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia': [
+    'src/data/blog-how-to-choose-healthcare-market-research-agency-saudi-arabia.ts',
+  ],
   '/pt/services': ['src/data/servicesHubContent.pt.ts', 'src/pages/Services.tsx'],
   '/ru/services': ['src/data/servicesHubContent.ru.ts', 'src/pages/Services.tsx'],
   '/services/quantitative-research': ['src/pages/ServiceDetail.tsx', 'src/data/seo/serviceDeepContent.ts'],
