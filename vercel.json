@@ -1104,6 +1104,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/hematology-market-research-saudi-arabia"
     },
     {
+      "source": "/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
