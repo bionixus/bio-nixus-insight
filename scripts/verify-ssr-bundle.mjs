@@ -46,6 +46,7 @@ const CRITICAL_PATHS = [
   '/blog/obesity-market-research-kuwait',
   '/blog/qatar-obesity-glp1-market-research',
   '/blog/hematology-market-research-saudi-arabia',
+  '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia',
 ];
 
 let serverEntry;

@@ -496,6 +496,7 @@ const staticPages = [
   { path: '/blog/obesity-market-research-kuwait', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/blog/qatar-obesity-glp1-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/blog/hematology-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
+  { path: '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/pharmaceutical-market-research-methods-mena', priority: '0.83', changefreq: 'monthly' },
@@ -1439,6 +1440,9 @@ const STATIC_PAGE_FILES = {
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],
   '/blog/hematology-market-research-saudi-arabia': ['src/data/blog-hematology-market-research-saudi-arabia.ts'],
+  '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia': [
+    'src/data/blog-how-to-choose-healthcare-market-research-agency-saudi-arabia.ts',
+  ],
   '/pt/services': ['src/data/servicesHubContent.pt.ts', 'src/pages/Services.tsx'],
   '/ru/services': ['src/data/servicesHubContent.ru.ts', 'src/pages/Services.tsx'],
   '/services/quantitative-research': ['src/pages/ServiceDetail.tsx', 'src/data/seo/serviceDeepContent.ts'],

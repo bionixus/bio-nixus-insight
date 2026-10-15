@@ -12,6 +12,44 @@ function skylineBlocks(blocks, baseline = 552) {
 }
 
 export const LINKEDIN_BLOG_COVERS = {
+  'how-to-choose-healthcare-market-research-agency-saudi-arabia': {
+    cover: 'how-to-choose-healthcare-market-research-agency-saudi-arabia-cover.jpg',
+    hero: 'how-to-choose-healthcare-market-research-agency-saudi-arabia-hero.jpg',
+    badge: 'SAUDI ARABIA  ·  BUYER GUIDE',
+    lines: ['10 questions for', 'a KSA MR agency'],
+    goldLine: 'Before you brief',
+    sub: 'Fieldwork, PDPL, access · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 90 518, 200 578, 320 534 S 470 522, 560 554 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="72" y="86" width="420" height="72" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <circle cx="110" cy="122" r="16" fill="${GOLD}"/>
+        <rect x="140" y="108" width="320" height="10" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.7"/>
+        <rect x="140" y="128" width="220" height="8" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+
+        <rect x="72" y="178" width="420" height="72" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <circle cx="110" cy="214" r="16" fill="${GOLD_LIGHT}"/>
+        <rect x="140" y="200" width="300" height="10" rx="4" fill="${GOLD}" fill-opacity="0.55"/>
+        <rect x="140" y="220" width="180" height="8" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+
+        <rect x="72" y="270" width="420" height="72" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <circle cx="110" cy="306" r="16" fill="${GOLD}"/>
+        <rect x="140" y="292" width="280" height="10" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.7"/>
+        <rect x="140" y="312" width="200" height="8" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+
+        <rect x="96" y="372" width="64" height="180" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="180" y="332" width="64" height="220" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="264" y="392" width="64" height="160" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="348" y="352" width="64" height="200" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="112" y="390" width="32" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="196" y="350" width="32" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+        <rect x="280" y="410" width="32" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="364" y="370" width="32" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+      </g>`,
+      'glowQ',
+    ),
+  },
   'hematology-market-research-saudi-arabia': {
     cover: 'hematology-market-research-saudi-arabia-cover.jpg',
     hero: 'hematology-market-research-saudi-arabia-hero.jpg',
