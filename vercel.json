@@ -1096,6 +1096,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/b2b-market-research-uae"
     },
     {
+      "source": "/bionixus-industries/insights/nielsen-alternative-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/nielsen-alternative-saudi-arabia"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },

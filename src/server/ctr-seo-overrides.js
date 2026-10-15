@@ -905,6 +905,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
   },
+  '/blog/nielsen-alternative-saudi-arabia': {
+    title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
+    description:
+      'Nielsen alternative Saudi Arabia: syndicated vs custom research Saudi Arabia — when a retail audit fits, when custom work is needed, how to combine both.',
+  },
+  '/bionixus-industries/insights/nielsen-alternative-saudi-arabia': {
+    title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
+    description:
+      'Nielsen alternative Saudi Arabia: syndicated vs custom research Saudi Arabia — when a retail audit fits, when custom work is needed, how to combine both.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
