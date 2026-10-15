@@ -28,6 +28,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
+  'iqvia-alternative-uae-primary-research',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -158,6 +159,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Hematology Market Research Saudi Arabia: Launch 2026',
     description:
       'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
+  },
+  'iqvia-alternative-uae-primary-research': {
+    title: 'IQVIA Alternative UAE Primary Research: Keep Audit',
+    description:
+      'IQVIA alternative UAE primary research for brand teams that keep syndicated audits and add custom physician, payer and patient studies from a Dubai office.',
   },
 };
 

@@ -26,6 +26,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
+  'iqvia-alternative-uae-primary-research',
 ]);
 
 export const BLOG_HARDCODED_SEO_SLUGS = new Set([
@@ -50,6 +51,7 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
+  'iqvia-alternative-uae-primary-research',
 ]);
 
 export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {
