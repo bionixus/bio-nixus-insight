@@ -315,10 +315,15 @@ export async function fetchIndustriesInsightsWithClient(
     const raw = await client.fetch<RawSanityPost[]>(INDUSTRIES_INSIGHTS_QUERY, {
       limit: Math.max(1, Math.min(limit, BLOG_INDEX_POST_LIMIT)),
     });
-    return sortPostsNewestFirst(raw.map((p) => mapRawToPost(p)!).filter(Boolean));
+    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean).map(overlayHardcodedSeoPost);
+    const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
+    const newHardcoded = hardcodedSeoPosts.filter(
+      (p) => !sanitySlugs.has(p.slug) && p.contentSilo === 'industries',
+    );
+    return sortPostsNewestFirst([...sanityPosts, ...newHardcoded]);
   } catch (err) {
     console.error('Failed to fetch industries insights from Sanity CMS', err);
-    return [];
+    return sortPostsNewestFirst(filterPostsBySilo([...hardcodedSeoPosts], 'industries'));
   }
 }
 

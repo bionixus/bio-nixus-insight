@@ -75,6 +75,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('market-entry-research-saudi-arabia'),
     label: 'Market entry research for Saudi Arabia: a non-pharma playbook',
   },
+  {
+    to: getIndustriesInsightPostPath('b2b-market-research-uae'),
+    label: 'B2B market research in the UAE: reaching hard-to-reach decision-makers',
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */

@@ -1088,6 +1088,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/market-entry-research-saudi-arabia"
     },
     {
+      "source": "/bionixus-industries/insights/b2b-market-research-uae",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/b2b-market-research-uae"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
