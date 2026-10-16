@@ -27,6 +27,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
+  'nielsen-alternative-saudi-arabia',
   'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'obesity-market-research-kuwait',
@@ -160,6 +161,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'B2B Market Research UAE: Recruiting Decision-Makers',
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
+  },
+  'nielsen-alternative-saudi-arabia': {
+    title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
+    description:
+      'Nielsen alternative Saudi Arabia: syndicated vs custom research Saudi Arabia — when a retail audit fits, when custom work is needed, how to combine both.',
   },
   'government-customer-satisfaction-research-saudi-arabia': {
     title: 'Government Customer Satisfaction Survey Saudi Arabia',
