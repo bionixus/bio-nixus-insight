@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, ClipboardList } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
@@ -13,9 +13,13 @@ import {
   DirectoryJumpNav,
   DirectoryLinkTile,
   DirectoryOutlineLink,
+  DirectoryDriverCard,
+  DirectorySection,
 } from '@/components/seo/DirectoryPremium';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { AR_PHARMA_SHARED_CLOSING_PARAGRAPHS } from '@/data/arPharmaDirectoryExpansion';
 import {
   getArPharmaDirectory,
   type ArPharmaCompanyType,
@@ -107,7 +111,12 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
           kicker="دليل شركات الأدوية 2026"
           h1={config.h1}
           lead={config.introLead}
-          rest={<p>{config.introRest}</p>}
+          rest={
+            <>
+              <p>{config.introRest}</p>
+              {config.introExtended ? <p className="mt-4">{config.introExtended}</p> : null}
+            </>
+          }
           stats={config.stats}
           actions={
             <>
@@ -119,12 +128,56 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
 
         <DirectoryJumpNav
           items={[
+            { href: '#market-structure', label: 'السوق' },
             { href: '#companies', label: 'الشركات' },
+            { href: '#growth-drivers', label: 'محفّزات' },
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
           ]}
         />
+
+        {config.geoLLM ? (
+          <div className="section-padding pt-4 pb-0">
+            <div className="container-wide max-w-5xl mx-auto">
+              <GeoLLMAnswerBlock
+                question={config.geoLLM.question}
+                answer={config.geoLLM.answer}
+                points={config.geoLLM.points}
+                summary={config.geoLLM.summary}
+              />
+            </div>
+          </div>
+        ) : null}
+
+        {config.channelHeading && config.channelBody ? (
+          <DirectorySection
+            id="channels"
+            surface="cream"
+            eyebrow="هيكل السوق"
+            title={config.channelHeading}
+            body={config.channelBody}
+          >
+            {null}
+          </DirectorySection>
+        ) : null}
+
+        {config.sections && config.sections.length > 0 ? (
+          <DirectorySection id="market-structure" eyebrow="سياق السوق والتنظيم">
+            <div className="space-y-12">
+              {config.sections.map((sec) => (
+                <div key={sec.heading}>
+                  <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">{sec.heading}</h2>
+                  <div className="space-y-4 max-w-3xl">
+                    {sec.paragraphs.map((p, i) => (
+                      <p key={i} className="text-muted-foreground leading-relaxed">{p}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
 
         <section className="section-padding py-16 bg-muted/30" id="companies">
           <div className="container-wide max-w-5xl mx-auto">
@@ -181,6 +234,42 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
           </div>
         </section>
 
+        {config.growthDrivers && config.growthDrivers.length > 0 ? (
+          <DirectorySection
+            id="growth-drivers"
+            surface="cream"
+            eyebrow="ما يتحرك في السوق"
+            title="محفّزات تغيّر الحساب والعبوة"
+          >
+            <div className="grid md:grid-cols-3 gap-5">
+              {config.growthDrivers.map((driver) => (
+                <DirectoryDriverCard key={driver.title} title={driver.title} desc={driver.desc} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {config.fieldNotes && config.fieldNotes.length > 0 ? (
+          <DirectorySection
+            id="bionixus-fieldwork"
+            eyebrow="عمل ميداني"
+            title="كيف تدرس بيونيكسس شركات الأدوية في هذا السوق"
+            body="الحسابات في الجدول أعلاه هي التي يعمل معها فرقنا. ما يُطلب عادةً في برنامج حساب أو عبوة:"
+          >
+            <ul className="grid md:grid-cols-2 gap-3">
+              {config.fieldNotes.map((note) => (
+                <li
+                  key={note}
+                  className="flex items-start gap-3 text-sm text-foreground bg-[#FFFEFB] rounded-2xl border border-[#EDE9E3] p-5"
+                >
+                  <ClipboardList className="w-4 h-4 text-[#C9A84C] mt-0.5 shrink-0" aria-hidden />
+                  <span>{note}</span>
+                </li>
+              ))}
+            </ul>
+          </DirectorySection>
+        ) : null}
+
         <section className="section-padding py-16" id="related">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">روابط ذات صلة</h2>
@@ -193,6 +282,15 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
         </section>
 
         <PharmaCompaniesFaqSection items={config.faq} title="أسئلة متكررة" contained />
+
+        <section className="section-padding py-12" id="bionixus-positioning">
+          <div className="container-wide max-w-5xl mx-auto space-y-4">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">بيونيكسس والبحث الأولي في هذا السوق</h2>
+            {AR_PHARMA_SHARED_CLOSING_PARAGRAPHS.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-muted-foreground leading-relaxed">{paragraph}</p>
+            ))}
+          </div>
+        </section>
 
         <section className="section-padding py-12" id="methodology">
           <div className="container-wide max-w-5xl mx-auto">

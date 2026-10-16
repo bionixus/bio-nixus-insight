@@ -21,7 +21,7 @@ export interface MarketStatRegion {
   stats: MarketStat[];
 }
 
-export const MARKET_STATISTICS_LAST_UPDATED = '2026-07-22';
+export const MARKET_STATISTICS_LAST_UPDATED = '2026-10-16';
 
 export const MARKET_STATISTICS: MarketStatRegion[] = [
   {
@@ -189,6 +189,94 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
         sourceHref: '/canada-healthcare-market-report',
       },
       { stat: 'Approximately 5.3 million Spanish adults have diabetes (14.8% prevalence).', source: 'Sociedad Española de Diabetes (SED), 2023' },
+      {
+        stat: "Brazil's healthcare market is estimated at USD 155–175 billion in 2026 — the largest in Latin America.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Brazil's pharmaceutical market is estimated at USD 26–30 billion in 2026, regulated by ANVISA with SUS/CONITEC incorporation and CMED reference pricing.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      { stat: 'Approximately 16.8 million Brazilian adults live with diabetes (15.7% prevalence).', source: 'IDF Diabetes Atlas, 2023' },
+    ],
+  },
+  {
+    region: 'Regulatory & access benchmarks',
+    intro:
+      'Policy and access mechanisms that shape pharmaceutical and device commercial decisions — cited for market-entry and HEOR teams comparing regions.',
+    stats: [
+      {
+        stat: "Saudi SFDA's Economic Evaluation System (EES) is mandatory for selected pharmaceutical registration and pricing pathways from 1 July 2025.",
+        source: 'SFDA Economic Evaluation Studies Guideline (2024) and Pharmacoeconomic Submission Portal Manual (January 2025)',
+      },
+      {
+        stat: 'UAE pharmaceutical registration is split across MOHAP (federal), DHA (Dubai), and DOH (Abu Dhabi) — formulary and insurance rules differ by emirate.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/uae-pharmaceutical-market-research',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: 'Egyptian Drug Authority (EDA) oversees registration, pricing, and pharmacovigilance for 120+ local manufacturers producing ~90% of domestic medicine volume.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/egypt-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Germany's G-BA AMNOG health technology assessment applies to new pharmaceuticals with measurable added benefit after launch.",
+        source: 'Federal Joint Committee (G-BA), AMNOG framework',
+        sourceHref: '/germany-healthcare-market-report',
+      },
+      {
+        stat: "France's HAS transparency commission (CT) and CEPS price negotiation govern reimbursed innovative medicines after AMM marketing authorisation.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/france-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Italy's AIFA CTS innovation classification and CPR price negotiation sit alongside 20 regional SSR formularies beyond national listing.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/healthcare-market-research-italy',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: 'UK NICE technology appraisals and NHS England commissioning policies gate access to high-cost medicines and devices in England.',
+        source: 'NICE and NHS England published guidance',
+        sourceHref: '/uk-healthcare-market-report',
+      },
+      {
+        stat: 'US FDA approval is necessary but not sufficient for access — Medicare coverage, PBM formularies, and hospital P&T committees drive uptake.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/usa-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "China's Volume-Based Procurement (VBP) national tenders have cut prices on high-volume molecules and devices in successive waves since 2019.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/china-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "India's National List of Essential Medicines (NLEM) and state tendering influence public-sector volumes for generics and biosimilars.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/india-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: 'Japan MHLW NHI price listing and biennial price revisions apply to pharmaceuticals and devices under the universal NHI system.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/japan-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: 'South Korea HIRA positive reimbursement listing requires pharmacoeconomic evidence for innovative drugs under the single-payer NHI.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/south-korea-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
     ],
   },
 ];
