@@ -396,7 +396,7 @@ describe('/bionixus-industries/insights/feasibility-study-company-saudi-arabia: 
     const crawlerIndex = vercel.rewrites.findIndex(
       (rewrite) =>
         rewrite.source === '/bionixus-industries/insights/:slug' &&
-        rewrite.destination === '/api/blog/:slug?industriesInsight=1',
+        rewrite.destination === '/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/:slug',
     );
     expect(ssrIndex).toBeGreaterThanOrEqual(0);
     expect(ssrIndex).toBeLessThan(crawlerIndex);

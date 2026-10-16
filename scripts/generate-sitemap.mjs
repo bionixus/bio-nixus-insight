@@ -120,6 +120,10 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
   'uae-drug-pricing-ede-takeover-launch-research',
+  'chinese-companies-entering-saudi-arabia-and-the-uae',
+  'nielsen-alternative-saudi-arabia',
+  'government-customer-satisfaction-research-saudi-arabia',
+  'kantar-alternative-middle-east',
 ]);
 
 const LEGACY_REDIRECT_PATHS = Object.keys(LEGACY_REDIRECTS);
@@ -502,6 +506,8 @@ const staticPages = [
   { path: '/blog/iqvia-alternative-uae-primary-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/uae-drug-pricing-ede-takeover-launch-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/blog/nupco-tender-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/blog/thiqa-obesity-reimbursement-abu-dhabi', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/pharmaceutical-market-research-methods-mena', priority: '0.83', changefreq: 'monthly' },
@@ -559,11 +565,15 @@ const staticPages = [
   { path: '/bahrain-healthcare-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bahrain-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
-  { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-15' },
+  { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-16' },
   { path: '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/bionixus-industries/insights/market-entry-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/bionixus-industries/insights/consumer-survey-company-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/b2b-market-research-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
+  { path: '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/bionixus-industries/insights/nielsen-alternative-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
+  { path: '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
+  { path: '/bionixus-industries/insights/kantar-alternative-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1448,6 +1458,18 @@ const STATIC_PAGE_FILES = {
     'src/data/blog-consumer-survey-company-saudi-arabia.ts',
   ],
   '/bionixus-industries/insights/b2b-market-research-uae': ['src/data/blog-b2b-market-research-uae.ts'],
+  '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae': [
+    'src/data/blog-chinese-companies-entering-ksa-uae.ts',
+  ],
+  '/bionixus-industries/insights/nielsen-alternative-saudi-arabia': [
+    'src/data/blog-nielsen-alternative-saudi-arabia.ts',
+  ],
+  '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia': [
+    'src/data/blog-government-customer-satisfaction-saudi-arabia.ts',
+  ],
+  '/bionixus-industries/insights/kantar-alternative-middle-east': [
+    'src/data/blog-kantar-alternative-middle-east.ts',
+  ],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],
   '/blog/hematology-market-research-saudi-arabia': ['src/data/blog-hematology-market-research-saudi-arabia.ts'],
@@ -1458,6 +1480,10 @@ const STATIC_PAGE_FILES = {
   '/blog/uae-drug-pricing-ede-takeover-launch-research': [
     'src/data/blog-uae-drug-pricing-ede-takeover-launch-research.ts',
   ],
+  '/blog/nupco-tender-market-research-saudi-arabia': [
+    'src/data/blog-nupco-tender-market-research-saudi-arabia.ts',
+  ],
+  '/blog/thiqa-obesity-reimbursement-abu-dhabi': ['src/data/blog-thiqa-obesity-reimbursement-abu-dhabi.ts'],
   '/pt/services': ['src/data/servicesHubContent.pt.ts', 'src/pages/Services.tsx'],
   '/ru/services': ['src/data/servicesHubContent.ru.ts', 'src/pages/Services.tsx'],
   '/services/quantitative-research': ['src/pages/ServiceDetail.tsx', 'src/data/seo/serviceDeepContent.ts'],
