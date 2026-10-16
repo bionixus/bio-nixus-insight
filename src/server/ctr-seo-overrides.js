@@ -915,6 +915,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Government customer satisfaction survey Saudi Arabia: Vision 2030, DGA CSAT, Absher/Tawakkalna, Arabic fieldwork and citizen satisfaction research KSA.',
   },
+  '/blog/kantar-alternative-middle-east': {
+    title: 'Kantar Alternative Middle East: When Specialists Fit',
+    description:
+      'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.',
+  },
+  '/bionixus-industries/insights/kantar-alternative-middle-east': {
+    title: 'Kantar Alternative Middle East: When Specialists Fit',
+    description:
+      'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
@@ -939,6 +949,11 @@ export const CTR_SEO_BY_PATH = {
     title: 'Healthcare Market Research Agency Saudi Arabia: 10 Questions',
     description:
       'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.',
+  },
+  '/blog/thiqa-obesity-reimbursement-abu-dhabi': {
+    title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
+    description:
+      'Thiqa obesity reimbursement and Abu Dhabi GLP-1 coverage: DOH BMI gates, 5% weight-loss rules, and what obesity market research UAE must measure in 2026.',
   },
 };
 

@@ -1100,6 +1100,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia"
     },
     {
+      "source": "/bionixus-industries/insights/kantar-alternative-middle-east",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/kantar-alternative-middle-east"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
@@ -1118,6 +1122,10 @@
     {
       "source": "/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia"
+    },
+    {
+      "source": "/blog/thiqa-obesity-reimbursement-abu-dhabi",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/thiqa-obesity-reimbursement-abu-dhabi"
     },
     {
       "source": "/blog/:slug",

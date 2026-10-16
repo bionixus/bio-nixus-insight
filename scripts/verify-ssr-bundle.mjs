@@ -46,11 +46,13 @@ const CRITICAL_PATHS = [
   '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
   '/bionixus-industries/insights/b2b-market-research-uae',
   '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia',
+  '/bionixus-industries/insights/kantar-alternative-middle-east',
   '/blog/obesity-market-research-kuwait',
   '/blog/qatar-obesity-glp1-market-research',
   '/blog/hematology-market-research-saudi-arabia',
   '/blog/iqvia-alternative-uae-primary-research',
   '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  '/blog/thiqa-obesity-reimbursement-abu-dhabi',
 ];
 
 let serverEntry;
