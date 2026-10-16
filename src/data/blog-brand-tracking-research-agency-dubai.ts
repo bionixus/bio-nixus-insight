@@ -319,7 +319,7 @@ const NARRATIVE_HTML = `<p>Brand teams in the UAE often buy a shared category in
 <li>What will you <em>not</em> claim? A supplier that quotes an unpublished “UAE brand-health average” is guessing.</li>
 </ul>
 
-<p>Related industry reading on this hub includes <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE (CSAT, NPS and CES)</a> and <a href="/bionixus-industries/insights/feasibility-study-company-saudi-arabia">feasibility studies in Saudi Arabia</a>.</p>
+<p>Related industry reading on this hub includes <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/nielsen-alternative-saudi-arabia">syndicated vs custom research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/kantar-alternative-middle-east">a Kantar alternative in the GCC</a>, <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE (CSAT, NPS and CES)</a> and <a href="/bionixus-industries/insights/feasibility-study-company-saudi-arabia">feasibility studies in Saudi Arabia</a>.</p>
 
 <h2 id="why-bionixus">Why choose BioNixus for brand tracking in Dubai and the UAE?</h2>
 
