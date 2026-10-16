@@ -65,6 +65,8 @@ export const REDIRECT_HREF_REWRITES = {
   '/blog/consumer-survey-company-saudi-arabia':
     '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
   '/blog/b2b-market-research-uae': '/bionixus-industries/insights/b2b-market-research-uae',
+  '/blog/australia-gcc-market-entry-research':
+    '/bionixus-industries/insights/australia-gcc-market-entry-research',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':

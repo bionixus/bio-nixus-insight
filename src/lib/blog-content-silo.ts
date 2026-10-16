@@ -83,6 +83,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('b2b-market-research-uae'),
     label: 'B2B market research in the UAE: reaching hard-to-reach decision-makers',
   },
+  {
+    to: getIndustriesInsightPostPath('australia-gcc-market-entry-research'),
+    label: "Australian exporters' guide to Saudi and UAE market research",
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */
