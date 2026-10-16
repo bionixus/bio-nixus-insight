@@ -960,6 +960,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.',
   },
+  '/blog/nupco-tender-market-research-saudi-arabia': {
+    title: 'NUPCO Tender Market Research for Saudi Oncology 2026',
+    description:
+      'NUPCO tender market research for Saudi oncology and specialty bids: what vial lists, award ranks and centre facts a 2026 bid team must commission first.',
+  },
   '/blog/thiqa-obesity-reimbursement-abu-dhabi': {
     title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
     description:

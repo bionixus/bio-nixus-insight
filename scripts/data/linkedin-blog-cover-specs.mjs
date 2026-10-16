@@ -99,6 +99,49 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowI',
     ),
   },
+  'nupco-tender-market-research-saudi-arabia': {
+    cover: 'nupco-tender-market-research-saudi-arabia-cover.jpg',
+    hero: 'nupco-tender-market-research-saudi-arabia-hero.jpg',
+    badge: 'NUPCO  ·  SAUDI ARABIA',
+    lines: ['NUPCO tender', 'market research'],
+    goldLine: 'Before an oncology bid',
+    sub: 'Framework lists and award evidence · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 90 518, 200 578, 320 534 S 470 522, 560 554 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="72" y="86" width="280" height="200" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.2"/>
+        <rect x="96" y="110" width="180" height="10" rx="4" fill="${GOLD}"/>
+        <rect x="96" y="134" width="140" height="8" rx="4" fill="${CREAM}" fill-opacity="0.28"/>
+        <rect x="96" y="158" width="200" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+        <rect x="96" y="190" width="52" height="72" rx="8" fill="${GOLD}" fill-opacity="0.22" stroke="${GOLD}" stroke-width="1.6"/>
+        <rect x="160" y="206" width="52" height="56" rx="8" fill="${GOLD_LIGHT}" fill-opacity="0.2" stroke="${GOLD_LIGHT}" stroke-width="1.6"/>
+        <rect x="224" y="174" width="52" height="88" rx="8" fill="${CREAM}" fill-opacity="0.16" stroke="${CREAM}" stroke-width="1.6"/>
+
+        <rect x="372" y="86" width="116" height="200" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2.2"/>
+        <circle cx="430" cy="148" r="28" fill="none" stroke="${GOLD}" stroke-width="3"/>
+        <path d="M 430 132 V 148 H 446" fill="none" stroke="${GOLD}" stroke-width="3" stroke-linecap="round"/>
+        <rect x="396" y="196" width="68" height="10" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.7"/>
+        <rect x="396" y="216" width="48" height="8" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+
+        <rect x="72" y="312" width="136" height="200" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <text x="140" y="360" text-anchor="middle" fill="${GOLD}" font-size="28" font-weight="700" font-family="Georgia, serif">01</text>
+        <rect x="96" y="384" width="88" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="96" y="408" width="64" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
+
+        <rect x="228" y="312" width="136" height="200" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <text x="296" y="360" text-anchor="middle" fill="${GOLD_LIGHT}" font-size="28" font-weight="700" font-family="Georgia, serif">02</text>
+        <rect x="252" y="384" width="88" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="252" y="408" width="72" height="8" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.45"/>
+
+        <rect x="384" y="312" width="136" height="200" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <text x="452" y="360" text-anchor="middle" fill="${GOLD}" font-size="28" font-weight="700" font-family="Georgia, serif">03</text>
+        <rect x="408" y="384" width="88" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="408" y="408" width="56" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
+      </g>`,
+      'glowN',
+    ),
+  },
   'how-to-choose-healthcare-market-research-agency-saudi-arabia': {
     cover: 'how-to-choose-healthcare-market-research-agency-saudi-arabia-cover.jpg',
     hero: 'how-to-choose-healthcare-market-research-agency-saudi-arabia-hero.jpg',

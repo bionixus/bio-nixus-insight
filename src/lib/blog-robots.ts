@@ -33,6 +33,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'hematology-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'nupco-tender-market-research-saudi-arabia',
   'thiqa-obesity-reimbursement-abu-dhabi',
 ]);
 
@@ -65,6 +66,7 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'hematology-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'nupco-tender-market-research-saudi-arabia',
   'thiqa-obesity-reimbursement-abu-dhabi',
 ]);
 
