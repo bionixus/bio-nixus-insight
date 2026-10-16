@@ -905,6 +905,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
   },
+  '/blog/government-customer-satisfaction-research-saudi-arabia': {
+    title: 'Government Customer Satisfaction Survey Saudi Arabia',
+    description:
+      'Government customer satisfaction survey Saudi Arabia: Vision 2030, DGA CSAT, Absher/Tawakkalna, Arabic fieldwork and citizen satisfaction research KSA.',
+  },
+  '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia': {
+    title: 'Government Customer Satisfaction Survey Saudi Arabia',
+    description:
+      'Government customer satisfaction survey Saudi Arabia: Vision 2030, DGA CSAT, Absher/Tawakkalna, Arabic fieldwork and citizen satisfaction research KSA.',
+  },
   '/blog/kantar-alternative-middle-east': {
     title: 'Kantar Alternative Middle East: When Specialists Fit',
     description:

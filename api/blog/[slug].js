@@ -367,6 +367,7 @@ export default async function handler(req, res) {
     const ctr = getCtrSeo(pagePath);
     const documentTitle = ctr?.title || seoTitleWithBrandOnce(titleCore);
     const title = esc(documentTitle);
+    const headline = esc(post.title || documentTitle);
     const rawBodyText =
       typeof post?.body === 'string' ? post.body : portableTextToPlain(Array.isArray(post?.body) ? post.body : []);
     const metaOverride = getBlogMetaDescriptionOverride(slug);
@@ -564,13 +565,13 @@ export default async function handler(req, res) {
   <nav aria-label="Breadcrumb">
     ${
       industriesInsight
-        ? `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/bionixus-industries">Industries</a> &gt; <a href="${BASE}/bionixus-industries/insights">Industry Insights</a> &gt; <span>${title}</span>`
+        ? `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/bionixus-industries">Industries</a> &gt; <a href="${BASE}/bionixus-industries/insights">Industry Insights</a> &gt; <span>${headline}</span>`
         : `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>${title}</span>`
     }
   </nav>
   <article${isArabic ? ' dir="rtl" lang="ar"' : ''}>
     <header>
-      <h1>${title}</h1>
+      <h1>${industriesInsight ? headline : title}</h1>
       ${post.publishedAt ? `<time datetime="${esc(post.publishedAt)}">${new Date(post.publishedAt).toLocaleDateString(isArabic ? 'ar-EG' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>` : ''}
       ${author ? `<p>By ${esc(author)}</p>` : ''}
       ${category ? `<p>Category: ${esc(category)}</p>` : ''}
