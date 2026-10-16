@@ -36,8 +36,10 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
   const sanitySlug = resolveSanityBlogSlug(slug);
   let blogPost: BlogPost | null = null;
   let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
+  let sanityLookup: 'found' | 'missing' | 'error' = 'missing';
   try {
     blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
+    sanityLookup = blogPost ? 'found' : 'missing';
     if (blogPost) {
       relatedPosts = await fetchRelatedPostsWithClient(
         sanitySlug,
@@ -51,12 +53,14 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
     }
   } catch {
     blogPost = null;
+    sanityLookup = 'error';
   }
   blogPost = resolveBlogPostForRoute(slug, blogPost);
   return {
     pageType: 'blog-post',
     blogSlug: slug,
     blogPost,
+    blogPostLookup: blogPost ? 'found' : sanityLookup,
     relatedPosts,
     lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
   };
@@ -366,6 +370,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
         pageType: 'blog-post',
         blogSlug: slug,
         blogPost: null,
+        blogPostLookup: 'missing',
         relatedPosts: { related: [], prev: null, next: null },
         lcpPreloadImageUrl: undefined,
       };

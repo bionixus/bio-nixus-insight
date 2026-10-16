@@ -66,6 +66,7 @@ import {
 import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import NotFound from '@/pages/NotFound';
 import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp, Calendar, Clock, MapPin, AlignLeft, List, ArrowUpRight } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
@@ -935,6 +936,22 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         <Footer />
       </div>
     );
+  }
+
+  const isIndustriesInsightArticle = /^\/bionixus-industries\/insights\/[^/]+$/.test(
+    (pathname.split('?')[0] || '').replace(/\/+$/, '') || '/',
+  );
+  const ssrBlogPostLookup =
+    ssrBlogBundle && typeof routeData.blogPostLookup === 'string' ? routeData.blogPostLookup : undefined;
+  const industriesLookupFailed = ssrBlogPostLookup === 'error' || isError;
+  const postIsKnownIndustries = Boolean(post && resolveContentSilo(post) === 'industries');
+  if (
+    isIndustriesInsightArticle &&
+    !industriesLookupFailed &&
+    !postIsKnownIndustries &&
+    (!isLoading || Boolean(post))
+  ) {
+    return <NotFound />;
   }
 
   if (!post && (isError || !sanityPost)) {
