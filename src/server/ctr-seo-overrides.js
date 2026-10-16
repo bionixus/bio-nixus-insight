@@ -134,10 +134,15 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // CTR test (2026-10-07): mirror high-impression queries "companies like iqvia" / "iqvia competitors" @ pos ~3
+    title: 'Companies Like IQVIA: Top 10 Alternatives Ranked (2026)',
     description:
-      'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
+      'Companies like IQVIA and IQVIA competitors ranked for healthcare market research in 2026 — primary vs syndicated data, GCC and USA execution, and when BioNixus wins vs global vendors.',
+  },
+  '/real-world-evidence': {
+    title: 'Real World Evidence (RWE) for Pharma | BioNixus EMEA & MENA',
+    description:
+      'Real world evidence (RWE) for pharmaceutical teams: HTA-ready study design, EU/UK and GCC execution, HEOR bridge modules, and decision-ready outputs for payers and medical affairs.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     title: 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide',

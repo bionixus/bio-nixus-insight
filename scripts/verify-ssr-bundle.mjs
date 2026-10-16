@@ -32,6 +32,7 @@ const CRITICAL_PATHS = [
   '/fr/healthcare-market-research/france',
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
   '/market-research-uae',
+  '/real-world-evidence',
   '/real-world-evidence-gcc',
   '/gcc-medical-devices-market-report',
   '/bionixus-market-research-middle-east',

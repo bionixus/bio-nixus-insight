@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04",
+  "generatedAt": "2026-10-07",
   "source": "data/gsc/current-week/Pages.csv",
   "minImpressions": 100,
   "freezeWeeks": 8,
@@ -813,10 +813,10 @@
     },
     "/iqvia-alternative": {
       "impressions": 3608,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-10-07",
       "override": {
-        "title": "IQVIA Alternatives & Competitors: Top 10 Ranked (2026)",
-        "description": "IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits."
+        "title": "Companies Like IQVIA: Top 10 Alternatives Ranked (2026)",
+        "description": "Companies like IQVIA and IQVIA competitors ranked for healthcare market research in 2026 — primary vs syndicated data, GCC and USA execution, and when BioNixus wins vs global vendors."
       }
     },
     "/italy-medical-devices-market-report": {

@@ -220,6 +220,170 @@ export const SERVICE_LANDING_CONTENT: Record<string, ServiceLandingExpandedConte
     ],
   },
 
+  'real-world-evidence': {
+    hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+    regulatory: {
+      heading: 'Regulatory and HTA context for pharmaceutical real-world evidence',
+      paragraphs: [
+        'Real-world evidence (RWE) sits at the intersection of clinical development, pharmacovigilance, and market access. In Europe, EMA guidance on RWE and registry-based studies expects transparent cohort definitions, pre-specified analysis plans, and documented limitations — not retrospective data fishing. BioNixus designs protocols so medical affairs and access teams can defend methods in NICE, HAS, G-BA, and AIFA-informed discussions.',
+        'In the United Kingdom, NICE increasingly weighs real-world treatment sequences, comparator use, and burden-of-illness context alongside trial endpoints. RWE that reflects NHS pathway reality — not imported US denominators — strengthens technology appraisal submissions and managed access negotiations.',
+        'GDPR and UK GDPR govern how patient-level and clinician-identifiable data are collected, stored, and transferred. BioNixus scopes EU and UK modules with data-minimization, lawful-basis documentation, and sponsor-ready privacy narratives before fieldwork begins.',
+        'In the Middle East and GCC, SFDA Economic Evaluation System (EES) requirements from July 2025 elevate the role of locally generated RWE and HEOR inputs at registration. Global programs should route Gulf-specific observational work through dedicated execution (see our real world evidence GCC hub) rather than extrapolating Levant or European cohorts.',
+        'FDA and other regulators continue to accept fit-for-purpose RWE for certain safety and effectiveness questions, but acceptance depends on data quality and traceability — not volume alone. BioNixus aligns US-facing modules with FDA RWE framework principles when sponsors need transatlantic evidence packages.',
+        'HTA bodies reward RWE that answers a specific decision: unmet need, treatment switching, persistence, resource use, or subgroup effectiveness. Studies without a locked decision objective rarely survive second-round committee scrutiny, regardless of sample size.',
+      ],
+    },
+    marketContext: {
+      heading: 'Why pharmaceutical teams invest in RWE now',
+      paragraphs: [
+        'Launch and lifecycle teams face shorter windows between approval, pricing, and uptake — especially in competitive immunology, oncology, and metabolic categories. RWE closes gaps when RCTs are underpowered for rare subgroups, lack long-term follow-up, or do not reflect real-world comorbidity and adherence patterns.',
+        'Payers and hospital committees increasingly ask for evidence beyond pivotal trials: comparative effectiveness in local practice, budget-impact drivers, and safety in broader populations. Syndicated claims dashboards rarely answer those questions with enough geographic or specialty fidelity.',
+        'Medical affairs needs credible narratives for publications, advisory boards, and MSL conversations grounded in how physicians actually treat — not idealized trial protocols. Mixed-methods RWE links quantitative pathway data with qualitative depth on clinical reasoning.',
+        'Against global data platforms (IQVIA, Optum, flat-file vendors), BioNixus differentiates on principal-led design, primary field execution in EMEA and MENA, and outputs mapped to one decision — rather than multi-year data subscriptions that average away market nuance.',
+        'Manufacturers running parallel EU, UK, and Gulf cells within one global mandate need harmonized metrics with country appendices. BioNixus architects roll-up frameworks so regional leadership receives comparable readouts without losing local execution realism.',
+        'HEOR and market access teams benefit when RWE collection is structured to populate economic models — treatment duration, resource use, switching rates — without re-fielding primary research. Dual-use design reduces cycle time and evidence production cost.',
+      ],
+    },
+    services: {
+      heading: 'Real-world evidence services BioNixus delivers',
+      items: [
+        {
+          title: 'Fit-for-purpose RWE protocol design',
+          description:
+            'Single-decision scoping with explicit cohorts, endpoints, and analysis plans — aligned to HTA, payer, medical, or regulatory milestones before fieldwork locks.',
+        },
+        {
+          title: 'Retrospective chart review and structured clinical interviews',
+          description:
+            'Facility-level extraction where governance permits, with inclusion logs, missing-data handling, and audit-ready flow diagrams for committee review.',
+        },
+        {
+          title: 'Prospective observational cohorts and registries',
+          description:
+            'Specialist-recruited cohorts with incidence-aware sampling, daily QC, and role verification when primary collection is required.',
+        },
+        {
+          title: 'Treatment pathway and switching studies',
+          description:
+            'Quantitative mapping of sequences, persistence, and switch triggers — essential for biologics, biosimilars, and crowded therapeutic classes.',
+        },
+        {
+          title: 'RWE-to-HEOR bridge modules',
+          description:
+            'Outputs structured for budget-impact, cost-effectiveness, and pharmacoeconomic narratives — including links to HEOR consulting where scoped.',
+        },
+        {
+          title: 'Patient-reported and clinician-reported outcomes',
+          description:
+            'Validated instruments with cognitive debriefing; bilingual Arabic–English modules for Middle East programs when required.',
+        },
+        {
+          title: 'Evidence synthesis with primary field insight',
+          description:
+            'Structured literature and registry review combined with primary qual/quant so conclusions are defensible in cross-functional forums.',
+        },
+        {
+          title: 'Cross-market harmonization and roll-up',
+          description:
+            'Comparable metrics across EU, UK, and selected MENA markets with country-specific limitation statements and appendices.',
+        },
+      ],
+    },
+    methodology: {
+      heading: 'Methodology and quality governance for RWE',
+      paragraphs: [
+        'Pre-specified analysis plans, documented deviation rules, and sensitivity analyses are non-negotiable. BioNixus treats messy real-world data as expected — and documents every analytical choice stakeholders will challenge.',
+        'Role validation, duplicate checks, and eligibility verification run throughout fieldwork with sponsor-visible quality funnels — not only at database lock.',
+        'Every engagement includes a methodology appendix: data sources, cohort flow, statistical methods, and limitation statements written for medical, access, compliance, and regulator-facing reviewers.',
+        'When RWE feeds payer dossiers or HTA submissions, exhibits are formatted so health economics teams can reuse tables without rebuilding narratives from raw exports.',
+        'Cross-functional readouts align commercial, medical, and access on one evidence interpretation — reducing incompatible messaging across functions.',
+        'Missing data and protocol deviations trigger pre-agreed sensitivity pathways so committees see robustness, not only best-case scenarios.',
+      ],
+    },
+    useCases: {
+      heading: 'Therapy areas where RWE creates the most value',
+      paragraph:
+        'Demand concentrates where trial data alone rarely satisfies payer or committee scrutiny — high-cost specialty, chronic maintenance, and switch-heavy categories.',
+      areas: [
+        'Oncology and haemato-oncology',
+        'Immunology and inflammatory disease',
+        'Diabetes and obesity',
+        'Rare disease and orphan drugs',
+        'Cardiovascular and metabolic risk',
+        'Respiratory biologics',
+        'Biosimilars and switching',
+        'Vaccines and preventive care',
+      ],
+    },
+    process: {
+      heading: 'Typical RWE engagement timeline',
+      steps: [
+        {
+          title: 'Scope and feasibility',
+          body: 'Align on one decision objective, map data sources and recruitment feasibility, and lock a protocol skeleton within two to three weeks.',
+        },
+        {
+          title: 'Ethics and governance',
+          body: 'Secure IRB/ethics, hospital data-use agreements, and GDPR documentation where EU or UK data is involved before active field.',
+        },
+        {
+          title: 'Field and extraction',
+          body: 'Execute chart review, survey, or cohort modules with daily QC and documented inclusion/exclusion logs.',
+        },
+        {
+          title: 'Analysis and synthesis',
+          body: 'Run pre-specified analyses, document deviations, and draft stakeholder-ready summaries with sensitivity outputs.',
+        },
+        {
+          title: 'Activation readout',
+          body: 'Deliver insight deck, 30/60/90 action plan, and HEOR-ready exhibits where scoped — with cross-functional alignment session.',
+        },
+      ],
+    },
+    deliverables: {
+      heading: 'RWE program outputs',
+      bullets: SERVICE_LANDING_DELIVERABLES,
+    },
+    decisionBlueprint: {
+      why: 'RWE bridges clinical trial results and payer expectations when access and pricing choices carry high financial risk.',
+      evidence:
+        'Protocol quality, transparent assumptions, and documented limitations predict whether RWE survives committee scrutiny better than sample size alone.',
+      next: 'Prioritize one decision objective, align protocol scope with your access or medical milestone, and run a feasibility sprint before committing to full field.',
+    },
+    faqs: [
+      {
+        question: 'What is real world evidence (RWE) in pharmaceutical strategy?',
+        answer:
+          'RWE is insight from real-world data and primary field evidence — practice patterns, pathways, payer behaviour, and outcomes outside tightly controlled trials. It supports HTA, medical affairs, regulatory dialogue, and commercial prioritization when RCTs alone do not answer stakeholder questions.',
+      },
+      {
+        question: 'How does BioNixus approach RWE differently from large global data platforms?',
+        answer:
+          'BioNixus combines principal-led study design with hands-on EMEA and MENA execution. Protocols align to your decision and geography rather than defaulting to a single proprietary dataset or subscription dashboard.',
+      },
+      {
+        question: 'Can BioNixus support RWE for GCC and Middle East markets?',
+        answer:
+          'Yes. Gulf-specific programs run through our real world evidence GCC hub with SFDA, MOHAP, DHA, and MOPH-aware feasibility. Global hubs link to country spokes for localized pathway research.',
+      },
+      {
+        question: 'How does RWE support HTA and payer engagement in Europe and the UK?',
+        answer:
+          'HTA bodies expect local practice, comparator context, and burden-of-illness evidence. BioNixus structures RWE to clarify treatment sequences and resource use so value stories align with NICE, HAS, G-BA, and similar expectations alongside economic models.',
+      },
+      {
+        question: 'What governance standards apply to BioNixus RWE?',
+        answer:
+          'Protocol-level QC, documented assumptions, recruitment verification, GDPR-aware handling for EU/UK data, and culturally appropriate engagement across Middle East healthcare systems.',
+      },
+      {
+        question: 'How quickly can an RWE program move from brief to field?',
+        answer:
+          'After objective alignment and protocol sign-off, many programs enter field setup within a few weeks. Timelines depend on specialty, geography, and institutional approvals — scoped honestly up front.',
+      },
+    ],
+  },
+
   'healthcare-market-research-agency-gcc': {
     hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
     regulatory: {

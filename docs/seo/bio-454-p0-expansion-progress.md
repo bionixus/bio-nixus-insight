@@ -99,6 +99,14 @@ P0 candidates with research briefs from `bio-448-thin-page-research-briefs.csv`:
 
 All have research briefs with regulatory refs, internal links, and competitor intel.
 
+## Completed pages (batch 9 — RWE global hub, 2026-10-07)
+
+| Path | Prior prod wc | Local SSR verify | Status |
+|---|---:|---:|---|
+| `/real-world-evidence` | ~1,057 | **~2,710w** | **Wired + deploy pending** |
+
+Migrated to `StrategicServicePage` + `serviceLandingContent['real-world-evidence']` (HTA/EU/UK/MENA modules, LLM answer block, country spokes).
+
 ## Next batch
 
 Re-run production audit after deploy; any remaining thin hub therapy/service pages from `docs/seo/bio-448-thin-page-inventory.csv` become the next P0 queue.
