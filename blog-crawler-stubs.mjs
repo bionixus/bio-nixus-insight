@@ -33,6 +33,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'hematology-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'thiqa-obesity-reimbursement-abu-dhabi',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -188,6 +189,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Healthcare Market Research Agency Saudi Arabia: 10 Questions',
     description:
       'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.',
+  },
+  'thiqa-obesity-reimbursement-abu-dhabi': {
+    title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
+    description:
+      'Thiqa obesity reimbursement and Abu Dhabi GLP-1 coverage: DOH BMI gates, 5% weight-loss rules, and what obesity market research UAE must measure in 2026.',
   },
 };
 

@@ -940,6 +940,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.',
   },
+  '/blog/thiqa-obesity-reimbursement-abu-dhabi': {
+    title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
+    description:
+      'Thiqa obesity reimbursement and Abu Dhabi GLP-1 coverage: DOH BMI gates, 5% weight-loss rules, and what obesity market research UAE must measure in 2026.',
+  },
 };
 
 /**
