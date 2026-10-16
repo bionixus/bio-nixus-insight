@@ -5,6 +5,8 @@
 
 const NOISE_KEYS = new Set([
   '__ssr',
+  // Vercel rewrite occasionally leaks `:path` as a public query param (e.g. /de?path=de%2F).
+  'path',
   'trk',
   'utm_source',
   'utm_medium',

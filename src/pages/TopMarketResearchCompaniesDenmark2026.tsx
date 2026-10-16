@@ -666,6 +666,11 @@ export default function TopMarketResearchCompaniesDenmark2026() {
                 </Link>
                 .
               </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+                Danish buyers should shortlist vendors on Medicinrådet and AMGROS fluency, not global brand recognition alone:
+                the firms that rank highest for your programme are those that can field Danish-speaking HCP and payer interviews
+                on your timeline and document GDPR-compliant handling for any EU personal data in the study.
+              </p>
             </div>
           </div>
         </section>
