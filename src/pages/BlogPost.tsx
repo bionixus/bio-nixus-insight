@@ -66,6 +66,7 @@ import {
 import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import NotFound from '@/pages/NotFound';
 import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp, Calendar, Clock, MapPin, AlignLeft, List, ArrowUpRight } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
@@ -937,6 +938,22 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     );
   }
 
+  const isIndustriesInsightArticle = /^\/bionixus-industries\/insights\/[^/]+$/.test(
+    (pathname.split('?')[0] || '').replace(/\/+$/, '') || '/',
+  );
+  const ssrBlogPostLookup =
+    ssrBlogBundle && typeof routeData.blogPostLookup === 'string' ? routeData.blogPostLookup : undefined;
+  const industriesLookupFailed = ssrBlogPostLookup === 'error' || isError;
+  const postIsKnownIndustries = Boolean(post && resolveContentSilo(post) === 'industries');
+  if (
+    isIndustriesInsightArticle &&
+    !industriesLookupFailed &&
+    !postIsKnownIndustries &&
+    (!isLoading || Boolean(post))
+  ) {
+    return <NotFound />;
+  }
+
   if (!post && (isError || !sanityPost)) {
     return (
       <div className="min-h-screen bg-background">
@@ -1380,10 +1397,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         {heroCoverImage ? (
-          <div
-            className="relative w-full overflow-hidden bg-navy-deep group"
-            style={{ minHeight: '380px', maxHeight: '560px', aspectRatio: '21 / 9' }}
-          >
+          <div className="relative w-full bg-navy-deep group min-h-[380px] md:min-h-[480px]">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
               src={optimizeSanityImage(heroCoverImage, 1400, 600)}
               alt={post.coverImageAlt || articleDisplayTitle || 'Article cover image'}
@@ -1399,8 +1414,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsl(220 47% 10% / 0.45) 0%, transparent 55%)' }} />
             {/* Gold top accent line */}
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
+            </div>
 
-            <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
+            <div className="relative z-10 flex min-h-[380px] flex-col justify-end px-6 pb-8 pt-16 md:min-h-[480px] md:px-10 md:pb-10">
               {visibleBreadcrumbItems ? (
                 <BreadcrumbNav tone="on-dark" items={visibleBreadcrumbItems} className="hidden md:block px-0 pt-0 pb-0 mb-5" />
               ) : (
