@@ -119,6 +119,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
+  'uae-drug-pricing-ede-takeover-launch-research',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
   'nielsen-alternative-saudi-arabia',
   'government-customer-satisfaction-research-saudi-arabia',
@@ -504,6 +505,7 @@ const staticPages = [
   { path: '/blog/hematology-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/blog/iqvia-alternative-uae-primary-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
+  { path: '/blog/uae-drug-pricing-ede-takeover-launch-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/nupco-tender-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/thiqa-obesity-reimbursement-abu-dhabi', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
@@ -1474,6 +1476,9 @@ const STATIC_PAGE_FILES = {
   '/blog/iqvia-alternative-uae-primary-research': ['src/data/blog-iqvia-alternative-uae-primary-research.ts'],
   '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia': [
     'src/data/blog-how-to-choose-healthcare-market-research-agency-saudi-arabia.ts',
+  ],
+  '/blog/uae-drug-pricing-ede-takeover-launch-research': [
+    'src/data/blog-uae-drug-pricing-ede-takeover-launch-research.ts',
   ],
   '/blog/nupco-tender-market-research-saudi-arabia': [
     'src/data/blog-nupco-tender-market-research-saudi-arabia.ts',
