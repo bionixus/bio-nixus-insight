@@ -119,6 +119,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
+  'europe-to-gcc-market-entry-research',
   'uae-drug-pricing-ede-takeover-launch-research',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
   'nielsen-alternative-saudi-arabia',
@@ -570,6 +571,7 @@ const staticPages = [
   { path: '/bionixus-industries/insights/market-entry-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/bionixus-industries/insights/consumer-survey-company-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/b2b-market-research-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
+  { path: '/bionixus-industries/insights/europe-to-gcc-market-entry-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/bionixus-industries/insights/nielsen-alternative-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
@@ -1458,6 +1460,9 @@ const STATIC_PAGE_FILES = {
     'src/data/blog-consumer-survey-company-saudi-arabia.ts',
   ],
   '/bionixus-industries/insights/b2b-market-research-uae': ['src/data/blog-b2b-market-research-uae.ts'],
+  '/bionixus-industries/insights/europe-to-gcc-market-entry-research': [
+    'src/data/blog-europe-to-gcc-market-entry-research.ts',
+  ],
   '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae': [
     'src/data/blog-chinese-companies-entering-ksa-uae.ts',
   ],
