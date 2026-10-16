@@ -31,6 +31,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
+  'rare-disease-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
   'thiqa-obesity-reimbursement-abu-dhabi',
@@ -179,6 +180,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Hematology Market Research Saudi Arabia: Launch 2026',
     description:
       'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
+  },
+  'rare-disease-market-research-saudi-arabia': {
+    title: 'Rare Disease Market Research Saudi Arabia: 2026 Gaps',
+    description:
+      'Rare disease market research Saudi Arabia: how to size small orphan populations, close evidence gaps, and brief SFDA, NUPCO and CHI before a 2026 launch.',
   },
   'iqvia-alternative-uae-primary-research': {
     title: 'IQVIA Alternative UAE Primary Research: Keep Audit',

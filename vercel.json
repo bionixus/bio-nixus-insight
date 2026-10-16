@@ -1112,6 +1112,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/hematology-market-research-saudi-arabia"
     },
     {
+      "source": "/blog/rare-disease-market-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/rare-disease-market-research-saudi-arabia"
+    },
+    {
       "source": "/blog/iqvia-alternative-uae-primary-research",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/iqvia-alternative-uae-primary-research"
     },

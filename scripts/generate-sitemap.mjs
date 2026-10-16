@@ -499,6 +499,7 @@ const staticPages = [
   { path: '/blog/obesity-market-research-kuwait', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/blog/qatar-obesity-glp1-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/blog/hematology-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
+  { path: '/blog/rare-disease-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/iqvia-alternative-uae-primary-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/thiqa-obesity-reimbursement-abu-dhabi', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
@@ -1455,6 +1456,7 @@ const STATIC_PAGE_FILES = {
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],
   '/blog/hematology-market-research-saudi-arabia': ['src/data/blog-hematology-market-research-saudi-arabia.ts'],
+  '/blog/rare-disease-market-research-saudi-arabia': ['src/data/blog-rare-disease-market-research-saudi-arabia.ts'],
   '/blog/iqvia-alternative-uae-primary-research': ['src/data/blog-iqvia-alternative-uae-primary-research.ts'],
   '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia': [
     'src/data/blog-how-to-choose-healthcare-market-research-agency-saudi-arabia.ts',
