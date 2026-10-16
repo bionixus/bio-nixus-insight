@@ -27,6 +27,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
+  'europe-to-gcc-market-entry-research',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -157,6 +158,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'B2B Market Research UAE: Recruiting Decision-Makers',
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
+  },
+  'europe-to-gcc-market-entry-research': {
+    title: 'Europe-to-GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Europe-to-GCC market entry research for European brands: six-country sequencing, VAT, G-Mark, channels and price before a brand committee commits capital.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
