@@ -1096,6 +1096,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/b2b-market-research-uae"
     },
     {
+      "source": "/bionixus-industries/insights/kantar-alternative-middle-east",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/kantar-alternative-middle-east"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },

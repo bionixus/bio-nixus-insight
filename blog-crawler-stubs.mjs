@@ -27,6 +27,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
+  'kantar-alternative-middle-east',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -157,6 +158,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'B2B Market Research UAE: Recruiting Decision-Makers',
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
+  },
+  'kantar-alternative-middle-east': {
+    title: 'Kantar Alternative Middle East: When Specialists Fit',
+    description:
+      'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
