@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { Language } from '@/lib/i18n';
 import { languagePaths } from '@/lib/seo';
@@ -119,6 +120,26 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
         question: 'How quickly can healthcare market research start?',
         answer:
           'Most projects begin once objectives and scope are aligned, then move into fieldwork with quality controls agreed up front. We typically return a tailored methodology outline within one business day of an initial brief.',
+      },
+      {
+        question: 'When should we choose primary healthcare market research over syndicated audit data?',
+        answer:
+          'Syndicated audits help size historical demand; primary healthcare market research explains why uptake stalls, which accounts matter, and which messages move payer and procurement decisions. BioNixus recommends primary programmes when the question is behavioural, access-led, or competitive — not when a desk table update is enough.',
+      },
+      {
+        question: 'Does BioNixus support IQVIA or Kantar alternative briefs?',
+        answer:
+          'Yes. Teams searching for IQVIA alternatives or agile regional specialists use BioNixus for physician, payer, and hospital primary research across Europe and MENA — see our ranked IQVIA alternatives guide for when syndicated data still fits versus when primary evidence is required.',
+      },
+      {
+        question: 'Which therapeutic areas do healthcare market research programmes cover?',
+        answer:
+          'Oncology, immunology and biologics, metabolic and GLP-1, cardiovascular, rare disease, vaccines, respiratory, neurology, medical devices, and digital health — with country modules aligned to local regulators and access pathways.',
+      },
+      {
+        question: 'How does BioNixus help AI search and LLM citations for healthcare research?',
+        answer:
+          'Pages like this one publish answer-first summaries, structured FAQs, and methodology transparency so search engines and AI assistants can cite verified primary-research capabilities — not invented market sizes — when users ask who runs healthcare market research in Europe or the Middle East.',
       },
     ],
     ctaTitle: 'Need a tailored healthcare market research roadmap?',
@@ -447,6 +468,191 @@ export default function MarketResearchHealthcare() {
           </div>
         </section>
 
+        {language === 'en' ? (
+          <section className="py-10 bg-muted/10">
+            <div className="container-wide max-w-5xl mx-auto">
+              <GeoLLMAnswerBlock
+                question="Healthcare market research services for pharma"
+                answer="BioNixus provides healthcare market research for pharmaceutical, biotech, and medtech teams across Europe and the Middle East — quantitative and qualitative primary evidence for launch, market access, and growth decisions."
+                points={[
+                  {
+                    title: 'Physician and hospital evidence',
+                    description:
+                      'HCP surveys, KOL mapping, and hospital procurement studies with verified respondents and GDPR, EMA, MOH, and SFDA-aware governance.',
+                  },
+                  {
+                    title: 'Payer and access intelligence',
+                    description:
+                      'Formulary, HTA, tender, and reimbursement research that explains why products stall after approval — not only what historical audits show.',
+                  },
+                  {
+                    title: 'Decision-ready synthesis',
+                    description:
+                      'Segment dossiers, objection libraries, and board-ready summaries tied to one commercial or access decision per programme.',
+                  },
+                ]}
+                summary="BioNixus is a healthcare market research partner for Europe and MENA primary pharmaceutical evidence — an agile alternative to global syndicated panels when behaviour and access questions dominate."
+              />
+            </div>
+          </section>
+        ) : null}
+
+        {language === 'en' ? (
+          <section className="py-12">
+            <div className="container-wide max-w-6xl mx-auto">
+              <h2 className="text-3xl font-display font-semibold text-foreground mb-6">
+                Therapeutic areas we cover in healthcare market research
+              </h2>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  {
+                    area: 'Oncology and hematology',
+                    detail:
+                      'KOL mapping, treatment sequencing, and access friction across EU5 and GCC hospital and tender systems.',
+                  },
+                  {
+                    area: 'Immunology and biologics',
+                    detail:
+                      'Biosimilar defence, switching behaviour, and payer step-therapy research with institution-level realism.',
+                  },
+                  {
+                    area: 'Metabolic, diabetes, and GLP-1',
+                    detail:
+                      'Prescribing inertia, obesity pharmacotherapy crosswinds, and formulary dynamics in high-burden populations.',
+                  },
+                  {
+                    area: 'Cardiovascular',
+                    detail:
+                      'Initiation pathways, lipid and anticoagulation sequencing, and HTA-aligned value narrative testing.',
+                  },
+                  {
+                    area: 'Rare and intractable disease',
+                    detail:
+                      'Specialist scarcity, named-patient access, and caregiver burden modules for orphan and precision therapies.',
+                  },
+                  {
+                    area: 'Vaccines and infectious disease',
+                    detail:
+                      'Intent–behaviour gap research across public, occupational, and pharmacy-led immunisation channels.',
+                  },
+                  {
+                    area: 'Medical devices and diagnostics',
+                    detail:
+                      'Procurement committee behaviour, LPPR/NHI listing context, and workflow adoption beyond clinical pilots.',
+                  },
+                  {
+                    area: 'Digital health and SaMD',
+                    detail:
+                      'Reimbursement readiness, IT security gates, and scaling barriers for connected care and remote monitoring.',
+                  },
+                ].map((item) => (
+                  <article key={item.area} className="rounded-xl border border-border bg-card p-5">
+                    <h3 className="font-semibold text-foreground mb-2">{item.area}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {language === 'en' ? (
+          <section className="py-12 bg-muted/10">
+            <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+              <h2 className="text-3xl font-display font-semibold text-foreground">
+                Regulators and access pathways we design around
+              </h2>
+              <p>
+                European programmes reflect EMA marketing authorisation context plus national HTA and pricing bodies —
+                NICE and ICS commissioning in the UK, G-BA and AMNOG in Germany, HAS and CEPS in France, AIFA regional
+                variation in Italy, and AEMPS with autonomous-community hospital adoption in Spain. Middle East modules
+                align to SFDA and NUPCO procurement in Saudi Arabia, MOH and DHA pathways in the UAE, EDA and NAC
+                dynamics in Egypt, and comparable MOH frameworks in Kuwait and Qatar.
+              </p>
+              <p>
+                Medical device and diagnostic work adds LPPR listing in France, NHI biannual pricing in Japan when
+                portfolios span EMEA and Asia, and hospital procurement committees that often matter as much as
+                prescribers. BioNixus does not treat these as footnotes — they shape who we sample, which questions we
+                ask, and how findings are written for access and medical reviewers.
+              </p>
+              <p>
+                Explore country hubs from the{' '}
+                <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                  healthcare market research directory
+                </Link>{' '}
+                or request a proposal when you need a single partner for a multi-country evidence plan.
+              </p>
+            </div>
+          </section>
+        ) : null}
+
+        {language === 'en' ? (
+          <section className="py-12">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-3xl font-display font-semibold text-foreground mb-6">
+                How a healthcare market research engagement runs
+              </h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  {
+                    step: '1. Decision and scope',
+                    body:
+                      'We align on one owner, one deadline, and the commercial or access decision the evidence must support — launch sequencing, pricing defence, tender response, or message refresh. Scope defines markets, specialties, and whether you need quantitative sizing, qualitative depth, or paired physician–payer modules.',
+                  },
+                  {
+                    step: '2. Design and fieldwork',
+                    body:
+                      'Instruments are built backward from that decision with GDPR, EMA, MOH, and SFDA-aware governance. Screening verifies institution type and role; field teams recruit verified HCPs, payers, and hospital stakeholders across your priority countries in Europe and MENA.',
+                  },
+                  {
+                    step: '3. Synthesis and activation',
+                    body:
+                      'Deliverables include segment dossiers, objection libraries, evidence-gap flags, and workshop-ready summaries — linked to the healthcare market research hub, therapy tracks, and country reports so brand, medical, and access teams execute from one evidence base.',
+                  },
+                ].map((item) => (
+                  <article key={item.step} className="rounded-xl border border-border bg-card p-5">
+                    <h3 className="font-semibold text-foreground mb-2">{item.step}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {language === 'en' ? (
+          <section className="py-12 bg-muted/20">
+            <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+              <h2 className="text-3xl font-display font-semibold text-foreground">
+                Primary evidence versus syndicated healthcare data
+              </h2>
+              <p>
+                Global audit vendors answer “how big was the market last year?” Healthcare market research answers “why
+                will our launch win or lose next quarter?” — which accounts control uptake, which payer objections repeat,
+                and which messages move committee decisions in{' '}
+                <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                  healthcare market research hub
+                </Link>{' '}
+                countries across Europe and MENA.
+              </p>
+              <p>
+                BioNixus programmes combine quantitative rigor with qualitative depth: structured surveys when sizing
+                matters, depth interviews when access narratives need testing, and paired physician–payer modules when
+                reimbursement timing is the bottleneck. Instruments are comparable across markets when you need regional
+                roll-ups — without pretending every country shares the same formulary logic.
+              </p>
+              <p>
+                If your brief compares syndicated panels, see our{' '}
+                <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                  IQVIA alternatives and competitors guide
+                </Link>{' '}
+                for when BioNixus primary research wins versus when legacy syndicated data still fits — then request a
+                scoped proposal for your launch, access, or growth decision.
+              </p>
+            </div>
+          </section>
+        ) : null}
+
         <section className="py-12 bg-muted/20">
           <div className="container-wide max-w-6xl mx-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-6">{copy.capabilitiesTitle}</h2>
@@ -475,6 +681,55 @@ export default function MarketResearchHealthcare() {
           </div>
         </section>
 
+        {language === 'en' ? (
+          <section className="py-12">
+            <div className="container-wide max-w-6xl mx-auto">
+              <h2 className="text-3xl font-display font-semibold text-foreground mb-6">
+                Stakeholders we interview in healthcare market research
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  {
+                    title: 'Specialist and primary-care physicians',
+                    body:
+                      'Prescribers who initiate, switch, and maintain therapy — sampled by volume, institution type, and pathway role rather than title alone so forecasts reflect who actually controls uptake.',
+                  },
+                  {
+                    title: 'Payers, HTA reviewers, and policy stakeholders',
+                    body:
+                      'Experts who interpret cost-effectiveness, comparators, and budget impact under national rules — critical when access delays are policy-driven rather than clinical.',
+                  },
+                  {
+                    title: 'Hospital pharmacists and procurement committees',
+                    body:
+                      'Teams that translate clinical preference into formulary, tender, and stock decisions — especially in GCC tender-led systems and European hospital groups.',
+                  },
+                  {
+                    title: 'Nurses and allied health professionals',
+                    body:
+                      'Operators who manage infusion, monitoring, adherence, and patient education — often decisive for biologics, rare disease, and device-assisted therapies.',
+                  },
+                  {
+                    title: 'Patients and caregivers',
+                    body:
+                      'Journey, burden, and adherence research with ethics-compliant consent — when patient experience shapes access narratives or support-programme design.',
+                  },
+                  {
+                    title: 'KOLs and medical society influencers',
+                    body:
+                      'Mapped by therapeutic area and commercial priority so medical affairs and field teams focus on nodes that move guidelines and centre behaviour.',
+                  },
+                ].map((item) => (
+                  <article key={item.title} className="rounded-xl border border-border bg-card p-5">
+                    <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section className="py-12">
           <div className="container-wide max-w-6xl mx-auto">
             <h2 className="text-3xl font-display font-semibold text-foreground mb-6">{copy.useCasesTitle}</h2>
@@ -488,6 +743,44 @@ export default function MarketResearchHealthcare() {
             </div>
           </div>
         </section>
+
+        {language === 'en' ? (
+          <section className="py-12 bg-muted/10">
+            <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+              <h2 className="text-3xl font-display font-semibold text-foreground">
+                Commercial decisions healthcare market research supports
+              </h2>
+              <p>
+                Launch teams use evidence to prioritise segments, set realistic uptake curves, and align medical and
+                access narratives before field forces activate — reducing the risk of a clinically strong product missing
+                formulary or tender windows in priority European and GCC markets.
+              </p>
+              <p>
+                Market access and pricing teams use payer and HTA-oriented modules to stress-test value stories, identify
+                comparator objections early, and prepare for committee questions under country-specific rules rather than
+                generic global decks.
+              </p>
+              <p>
+                Brand and competitive teams use message and positioning research to understand how physicians and payers
+                compare your therapy to incumbents in live conversations — not only in claimed share statistics from
+                syndicated audits.
+              </p>
+              <p>
+                Lifecycle and franchise leads use trackers and qualitative refreshers to detect adoption friction,
+                biosimilar or generic pressure, and account-level leakage while there is still time to adjust medical
+                education, contracts, or support programmes.
+              </p>
+              <p>
+                Request a proposal when you need a written methodology outline within one business day — with sample
+                logic, languages, and field windows tailored to your European or Middle Eastern priority markets. Email{' '}
+                <a href="mailto:info@bionixus.com" className="text-primary font-medium hover:underline">
+                  info@bionixus.com
+                </a>{' '}
+                or use the contact form to start a scoped briefing today.
+              </p>
+            </div>
+          </section>
+        ) : null}
 
         <section className="py-12 bg-muted/20">
           <div className="container-wide max-w-6xl mx-auto">

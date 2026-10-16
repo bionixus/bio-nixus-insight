@@ -299,6 +299,48 @@ export default function HealthcareMarketResearchJapan() {
           </div>
         </section>
 
+        {/* DPC procurement and hospital committees */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              DPC hospitals, procurement committees, and adoption timelines
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                In Japan, PMDA approval and NHI listing are necessary but not sufficient for uptake at scale. DPC
+                (Diagnosis Procedure Combination) acute-care hospitals manage bundled per-diem economics — novel
+                procedures and high-cost therapies must often secure DPC code assignment, pharmacy and therapeutics
+                committee alignment, and nursing operational capacity before budgets release. BioNixus maps these
+                institutional gates alongside prescriber preference so launch plans reflect procurement reality, not
+                only clinical enthusiasm at university centres.
+              </p>
+              <p>
+                Prefecture-level health administration and hospital group purchasing add another layer: the same NHI
+                price can produce different adoption speeds depending on local budget pressure, competitor contracts,
+                and medical society communication. Our hospital procurement modules interview pharmacists, committee
+                chairs, and department heads who translate Chuikyo pricing into stock decisions and protocol updates.
+              </p>
+              <p>
+                For global portfolios, Japanese modules benchmark against{' '}
+                <Link to="/healthcare-market-research-south-korea" className="text-primary underline font-medium">
+                  South Korea
+                </Link>
+                ,{' '}
+                <Link to="/healthcare-market-research-usa" className="text-primary underline font-medium">
+                  USA
+                </Link>
+                , or EU5 cells with shared metrics — while keeping Japanese-language fieldwork and PMDA/NHI context
+                intact for affiliates executing locally.
+              </p>
+              <p>
+                Timing matters: missing an April or October NHI listing window can delay revenue by six months even when
+                clinical demand is strong. BioNixus aligns fieldwork calendars with Chuikyo cycles and hospital budget
+                seasons so evidence lands before committees lock formularies — not after competitors occupy share.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
