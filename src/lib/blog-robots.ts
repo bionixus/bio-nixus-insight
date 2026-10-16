@@ -30,6 +30,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'hematology-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'uae-drug-pricing-ede-takeover-launch-research',
 ]);
 
 export const BLOG_HARDCODED_SEO_SLUGS = new Set([
@@ -58,6 +59,7 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'hematology-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'uae-drug-pricing-ede-takeover-launch-research',
 ]);
 
 export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {

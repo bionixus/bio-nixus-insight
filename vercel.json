@@ -1116,6 +1116,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia"
     },
     {
+      "source": "/blog/uae-drug-pricing-ede-takeover-launch-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/uae-drug-pricing-ede-takeover-launch-research"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
