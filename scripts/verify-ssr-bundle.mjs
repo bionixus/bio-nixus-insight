@@ -52,6 +52,7 @@ const CRITICAL_PATHS = [
   '/blog/iqvia-alternative-uae-primary-research',
   '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia',
   '/blog/thiqa-obesity-reimbursement-abu-dhabi',
+  '/blog/oral-glp-1-uae-market-research',
 ];
 
 let serverEntry;

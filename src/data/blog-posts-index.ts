@@ -25,6 +25,7 @@ import { HEMATOLOGY_KSA_HARDCODED_POST } from '@/data/blog-hematology-market-res
 import { IQVIA_UAE_PRIMARY_HARDCODED_POST } from '@/data/blog-iqvia-alternative-uae-primary-research';
 import { CHOOSE_AGENCY_KSA_HARDCODED_POST } from '@/data/blog-how-to-choose-healthcare-market-research-agency-saudi-arabia';
 import { THIQA_OBESITY_HARDCODED_POST } from '@/data/blog-thiqa-obesity-reimbursement-abu-dhabi';
+import { ORAL_GLP1_UAE_HARDCODED_POST } from '@/data/blog-oral-glp1-uae-orforglipron';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -59,6 +60,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   IQVIA_UAE_PRIMARY_HARDCODED_POST,
   CHOOSE_AGENCY_KSA_HARDCODED_POST,
   THIQA_OBESITY_HARDCODED_POST,
+  ORAL_GLP1_UAE_HARDCODED_POST,
 ];
 
 /** Helper to find a hardcoded post by slug */

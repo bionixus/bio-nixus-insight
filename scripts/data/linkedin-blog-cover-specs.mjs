@@ -12,6 +12,52 @@ function skylineBlocks(blocks, baseline = 552) {
 }
 
 export const LINKEDIN_BLOG_COVERS = {
+  'oral-glp-1-uae-market-research': {
+    cover: 'oral-glp-1-uae-market-research-cover.jpg',
+    hero: 'oral-glp-1-uae-market-research-hero.jpg',
+    badge: 'UAE  ·  ORAL GLP-1  ·  2026',
+    lines: ['Oral GLP-1', 'UAE uptake'],
+    goldLine: 'Prescriber research',
+    sub: 'Tablets after EDE registration · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 548 C 100 512, 220 576, 340 532 S 490 524, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g fill="#0C1728" stroke="${GOLD_LIGHT}" stroke-width="1.6">
+        ${skylineBlocks([
+          [36, 24, 88],
+          [68, 32, 152, true],
+          [108, 20, 112],
+          [136, 44, 198],
+          [188, 26, 136],
+          [222, 36, 176, true],
+          [266, 20, 102],
+          [294, 48, 220],
+        ])}
+      </g>
+      <g>
+        <ellipse cx="168" cy="168" rx="118" ry="52" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.4"/>
+        <path d="M 168 116 A 118 52 0 0 0 168 220" fill="${GOLD}" fill-opacity="0.88"/>
+        <ellipse cx="168" cy="168" rx="22" ry="22" fill="${CREAM}" fill-opacity="0.2" stroke="${GOLD_LIGHT}" stroke-width="1.6"/>
+        <g transform="translate(338 92) rotate(18)">
+          <rect x="0" y="0" width="28" height="132" rx="14" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+          <rect x="6" y="10" width="16" height="36" rx="8" fill="${GOLD}" fill-opacity="0.35"/>
+          <rect x="10" y="-16" width="8" height="22" rx="2" fill="${GOLD_LIGHT}"/>
+        </g>
+        <path d="M 168 230 C 168 278, 248 292, 318 318" fill="none" stroke="${GOLD}" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="168" cy="230" r="7" fill="${GOLD}"/>
+        <circle cx="318" cy="318" r="7" fill="${GOLD_LIGHT}"/>
+        <rect x="92" y="348" width="78" height="152" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="188" y="318" width="78" height="182" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="284" y="288" width="78" height="212" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="380" y="258" width="78" height="242" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="110" y="368" width="42" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="206" y="338" width="42" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+        <rect x="302" y="308" width="42" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="398" y="278" width="42" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+      </g>`,
+      'glowOral',
+    ),
+  },
   'thiqa-obesity-reimbursement-abu-dhabi': {
     cover: 'thiqa-obesity-reimbursement-abu-dhabi-cover.jpg',
     hero: 'thiqa-obesity-reimbursement-abu-dhabi-hero.jpg',

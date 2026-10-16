@@ -34,6 +34,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
   'thiqa-obesity-reimbursement-abu-dhabi',
+  'oral-glp-1-uae-market-research',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -194,6 +195,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
     description:
       'Thiqa obesity reimbursement and Abu Dhabi GLP-1 coverage: DOH BMI gates, 5% weight-loss rules, and what obesity market research UAE must measure in 2026.',
+  },
+  'oral-glp-1-uae-market-research': {
+    title: 'Oral GLP-1 UAE Market Research After Foundayo 2026',
+    description:
+      'Oral GLP-1 UAE market research after EDE approved Foundayo on 3 Apr 2026: what brand teams must measure on orforglipron prescriber and patient uptake.',
   },
 };
 
