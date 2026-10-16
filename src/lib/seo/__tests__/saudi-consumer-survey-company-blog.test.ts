@@ -92,8 +92,10 @@ describe('/bionixus-industries/insights/consumer-survey-company-saudi-arabia: se
   it('ships the full article, the FAQ and one h1 in the initial HTML', () => {
     const h1s = [...html.matchAll(/<h1[\s>][\s\S]*?<\/h1>/g)].map((m) => text(m[0]));
     expect(h1s).toHaveLength(1);
-    expect(h1s[0]).toContain(SAUDI_CONSUMER_SURVEY_DISPLAY_TITLE);
+    expect(h1s[0].startsWith(SAUDI_CONSUMER_SURVEY_DISPLAY_TITLE)).toBe(true);
     expect(h1s[0]).toContain(SAUDI_CONSUMER_SURVEY_DISPLAY_SUBTITLE);
+    expect(h1s[0]).not.toBe(SAUDI_CONSUMER_SURVEY_META_TITLE);
+    expect(h1s[0]).not.toContain(SAUDI_CONSUMER_SURVEY_META_TITLE);
     const visible = text(html);
     expect(visible.toLowerCase()).toContain('consumer survey company saudi arabia');
     expect(visible.toLowerCase()).toContain('consumer research saudi arabia');
@@ -397,7 +399,7 @@ describe('/bionixus-industries/insights/consumer-survey-company-saudi-arabia: re
     const crawlerIndex = vercel.rewrites.findIndex(
       (rewrite) =>
         rewrite.source === '/bionixus-industries/insights/:slug' &&
-        rewrite.destination === '/api/blog/:slug?industriesInsight=1',
+        rewrite.destination === '/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/:slug',
     );
     expect(ssrIndex).toBeGreaterThanOrEqual(0);
     expect(ssrIndex).toBeLessThan(crawlerIndex);
