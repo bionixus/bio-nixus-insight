@@ -120,6 +120,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
   'kantar-alternative-middle-east',
+  'chinese-ev-brands-saudi-uae-consumer-research',
 ]);
 
 const LEGACY_REDIRECT_PATHS = Object.keys(LEGACY_REDIRECTS);
@@ -559,12 +560,13 @@ const staticPages = [
   { path: '/bahrain-healthcare-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bahrain-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/bionixus-industries', priority: '0.80', changefreq: 'monthly' },
-  { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-15' },
+  { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-16' },
   { path: '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/bionixus-industries/insights/market-entry-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/bionixus-industries/insights/consumer-survey-company-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/b2b-market-research-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/kantar-alternative-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
+  { path: '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1451,6 +1453,9 @@ const STATIC_PAGE_FILES = {
   '/bionixus-industries/insights/b2b-market-research-uae': ['src/data/blog-b2b-market-research-uae.ts'],
   '/bionixus-industries/insights/kantar-alternative-middle-east': [
     'src/data/blog-kantar-alternative-middle-east.ts',
+  ],
+  '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research': [
+    'src/data/blog-chinese-ev-brands-saudi-uae-consumer-research.ts',
   ],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],

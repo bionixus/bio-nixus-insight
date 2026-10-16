@@ -1100,6 +1100,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/kantar-alternative-middle-east"
     },
     {
+      "source": "/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },

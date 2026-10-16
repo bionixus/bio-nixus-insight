@@ -19,6 +19,7 @@ import { SAUDI_MARKET_ENTRY_HARDCODED_POST } from '@/data/blog-market-entry-rese
 import { SAUDI_CONSUMER_SURVEY_HARDCODED_POST } from '@/data/blog-consumer-survey-company-saudi-arabia';
 import { UAE_B2B_MR_HARDCODED_POST } from '@/data/blog-b2b-market-research-uae';
 import { KANTAR_ALT_ME_HARDCODED_POST } from '@/data/blog-kantar-alternative-middle-east';
+import { CHINESE_EV_GULF_HARDCODED_POST } from '@/data/blog-chinese-ev-brands-saudi-uae-consumer-research';
 import { KUWAIT_OBESITY_RESEARCH_HARDCODED_POST } from '@/data/blog-kuwait-obesity-research-glp1-payers';
 import { QATAR_OBESITY_GLP1_HARDCODED_POST } from '@/data/blog-qatar-obesity-glp1-research';
 import { HEMATOLOGY_KSA_HARDCODED_POST } from '@/data/blog-hematology-market-research-saudi-arabia';
@@ -53,6 +54,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   SAUDI_CONSUMER_SURVEY_HARDCODED_POST,
   UAE_B2B_MR_HARDCODED_POST,
   KANTAR_ALT_ME_HARDCODED_POST,
+  CHINESE_EV_GULF_HARDCODED_POST,
   KUWAIT_OBESITY_RESEARCH_HARDCODED_POST,
   QATAR_OBESITY_GLP1_HARDCODED_POST,
   HEMATOLOGY_KSA_HARDCODED_POST,

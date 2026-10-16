@@ -28,6 +28,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
   'kantar-alternative-middle-east',
+  'chinese-ev-brands-saudi-uae-consumer-research',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -164,6 +165,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Kantar Alternative Middle East: When Specialists Fit',
     description:
       'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.',
+  },
+  'chinese-ev-brands-saudi-uae-consumer-research': {
+    title: 'Chinese EV Consumer Research Saudi UAE (2026 Guide)',
+    description:
+      'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
