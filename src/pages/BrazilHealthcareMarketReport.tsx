@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -63,7 +64,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-10-16',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -117,6 +118,20 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            In 2026, launch teams increasingly model Brazil as two parallel funnels: CONITEC/PCDT evidence for SUS listing versus ANS Rol expansion and private-hospital P&amp;T committees for premium brands. Syndicated audit panels rarely capture both — primary hospital and pharmacy modules are what close forecasting gaps for oncology, immunology, and cardiometabolic portfolios.
+          </p>
+          <GeoLLMAnswerBlock
+            question="What is the size of Brazil's healthcare and pharmaceutical market in 2026?"
+            answer="BioNixus estimates Brazil's healthcare market at roughly USD 155–175 billion in 2026 (Latin America's largest), with pharmaceuticals near USD 26–30 billion under ANVISA regulation, SUS/CONITEC incorporation, CMED pricing, and a large ANS private channel."
+            points={[
+              { title: 'Public SUS', description: 'Universal coverage; CONITEC HTA and PCDT protocols gate reimbursed medicines.' },
+              { title: 'Private ANS', description: '~50M insured lives; premium hospitals at international price points.' },
+              { title: 'Research', description: 'BioNixus primary market research complements IQVIA syndicated data for Brazil and GCC expansion.' },
+            ]}
+            summary="See also /brazil-medical-devices-market-report and /healthcare-market-statistics for cited benchmarks."
+            className="mb-6"
+          />
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
