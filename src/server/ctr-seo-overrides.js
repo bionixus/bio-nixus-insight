@@ -905,6 +905,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
   },
+  '/blog/chinese-companies-entering-saudi-arabia-and-the-uae': {
+    title: 'Chinese Companies Entering Saudi Arabia and the UAE',
+    description:
+      'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
+  },
+  '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae': {
+    title: 'Chinese Companies Entering Saudi Arabia and the UAE',
+    description:
+      'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
+  },
   '/blog/nielsen-alternative-saudi-arabia': {
     title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
     description:

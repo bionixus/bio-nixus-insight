@@ -84,6 +84,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'B2B market research in the UAE: reaching hard-to-reach decision-makers',
   },
   {
+    to: getIndustriesInsightPostPath('chinese-companies-entering-saudi-arabia-and-the-uae'),
+    label: 'Chinese companies entering Saudi Arabia and the UAE: market research playbook',
+  },
+  {
     to: getIndustriesInsightPostPath('nielsen-alternative-saudi-arabia'),
     label: 'Syndicated vs custom research in Saudi Arabia: when each fits',
   },
