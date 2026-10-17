@@ -154,48 +154,99 @@ function sharedContent(article) {
   };
 }
 
+/** Dotted paths such as seo.focusKeyword are valid only in patch().set(). */
+export function omitDottedKeys(fields) {
+  return Object.fromEntries(Object.entries(fields).filter(([key]) => !key.includes('.')));
+}
+
+function authorRef(authorId) {
+  return { _type: 'reference', _ref: authorId };
+}
+
+function categoryRefs(article, categoryRef) {
+  return categoryRef ? [{ _type: 'reference', _ref: categoryRef, _key: `cat-${article.slug}` }] : [];
+}
+
+function nestedSeo(article) {
+  return {
+    metaTitle: article.seoMetaTitle,
+    metaDescription: article.seoMetaDescription,
+    focusKeyword: article.focusKeyword,
+    keywords: article.keywords || [],
+    canonicalUrl: article.seoCanonicalUrl,
+    noIndex: false,
+  };
+}
+
+function nestedOpenGraph(article) {
+  return {
+    ogTitle: article.ogTitle || article.seoMetaTitle,
+    ogDescription: article.ogDescription || article.seoMetaDescription,
+  };
+}
+
+/** Stable document id so a second create of the same article is a no-op. */
+export function socialArticleDocumentId(slug) {
+  return `social-2026-10-18.${slug}`;
+}
+
+/** Patch payload. Keeps dotted seo.* and openGraph.* paths for set(). */
+export function buildPatchFields(article, authorId, categoryRef) {
+  return {
+    ...sharedContent(article),
+    author: authorRef(authorId),
+    categories: categoryRefs(article, categoryRef),
+  };
+}
+
+/**
+ * Create payload. Nested seo and openGraph already carry the values, so every
+ * dotted key from the patch payload is dropped. Sanity create() rejects names
+ * such as seo.focusKeyword.
+ */
+export function buildCreateDocument(article, authorId, categoryRef) {
+  const document = {
+    _id: socialArticleDocumentId(article.slug),
+    _type: 'blogPost',
+    seo: nestedSeo(article),
+    openGraph: nestedOpenGraph(article),
+    ...omitDottedKeys(sharedContent(article)),
+    slug: { _type: 'slug', current: article.slug },
+    publishedAt: article.publishedAtIso,
+    updatedAt: article.updatedAtIso || article.publishedAtIso,
+    author: authorRef(authorId),
+    categories: categoryRefs(article, categoryRef),
+    body: [],
+  };
+  const dotted = Object.keys(document).filter((key) => key.includes('.'));
+  if (dotted.length > 0) {
+    throw new Error(`create() cannot set dotted attributes: ${dotted.join(', ')}`);
+  }
+  return document;
+}
+
 async function publishOne(client, article, authorId) {
-  const existingId = await client.fetch(`*[_type == "blogPost" && slug.current == $slug][0]._id`, {
+  const existingIds = await client.fetch(`*[_type == "blogPost" && slug.current == $slug]._id`, {
     slug: article.slug,
   });
+  const ids = Array.isArray(existingIds) ? existingIds.filter(Boolean) : [];
   const categoryRef =
     (await client.fetch(
       `*[_type == "category" && (title == $title || slug.current == "market-access")][0]._id`,
       { title: article.category },
     )) || (await client.fetch(`*[_type == "category"][0]._id`));
-  const fields = {
-    ...sharedContent(article),
-    author: { _type: 'reference', _ref: authorId },
-    categories: categoryRef ? [{ _type: 'reference', _ref: categoryRef, _key: `cat-${article.slug}` }] : [],
-  };
+  const patchFields = buildPatchFields(article, authorId, categoryRef);
 
-  if (existingId) {
-    await client.patch(existingId).set(fields).commit();
-    console.log('Updated blogPost:', existingId);
+  if (ids.length > 0) {
+    for (const id of ids) {
+      await client.patch(id).set(patchFields).commit();
+      console.log('Updated blogPost:', id);
+    }
   } else {
-    const created = await client.create({
-      _type: 'blogPost',
-      seo: {
-        metaTitle: article.seoMetaTitle,
-        metaDescription: article.seoMetaDescription,
-        focusKeyword: article.focusKeyword,
-        keywords: article.keywords || [],
-        canonicalUrl: article.seoCanonicalUrl,
-        noIndex: false,
-      },
-      openGraph: {
-        ogTitle: article.ogTitle || article.seoMetaTitle,
-        ogDescription: article.ogDescription || article.seoMetaDescription,
-      },
-      ...sharedContent(article),
-      slug: { _type: 'slug', current: article.slug },
-      publishedAt: article.publishedAtIso,
-      updatedAt: article.updatedAtIso || article.publishedAtIso,
-      author: { _type: 'reference', _ref: authorId },
-      categories: categoryRef ? [{ _type: 'reference', _ref: categoryRef, _key: `cat-${article.slug}` }] : [],
-      body: [],
-    });
+    const document = buildCreateDocument(article, authorId, categoryRef);
+    const created = await client.createIfNotExists(document);
     console.log('Created blogPost:', created._id);
+    await client.patch(created._id).set(patchFields).commit();
   }
   console.log('Article URL:', article.seoCanonicalUrl);
   console.log('Words:', htmlToPlain(article.bodyHtml || article.body).split(/\s+/).filter(Boolean).length);
@@ -229,7 +280,15 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+function isDirectExecution() {
+  const entry = process.argv[1];
+  if (!entry) return false;
+  return path.resolve(entry) === fileURLToPath(import.meta.url);
+}
+
+if (isDirectExecution()) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
