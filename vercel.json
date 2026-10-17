@@ -1160,6 +1160,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/uae-drug-pricing-ede-takeover-launch-research"
     },
     {
+      "source": "/blog/dubai-essential-drug-list-formulary-submission",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/dubai-essential-drug-list-formulary-submission"
+    },
+    {
       "source": "/blog/nupco-tender-market-research-saudi-arabia",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/nupco-tender-market-research-saudi-arabia"
     },

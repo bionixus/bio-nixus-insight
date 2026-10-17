@@ -43,6 +43,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
   'uae-drug-pricing-ede-takeover-launch-research',
+  'dubai-essential-drug-list-formulary-submission',
   'nupco-tender-market-research-saudi-arabia',
   'car-t-saudi-arabia-market-research',
   'saudi-health-insurance-payer-research',
@@ -258,6 +259,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'UAE Drug Pricing After EDE Takeover: Launch Research',
     description:
       'UAE drug pricing after the Emirates Drug Establishment takeover: what launch research must prove for first price, May 2026 repricing and payer listing.',
+  },
+  'dubai-essential-drug-list-formulary-submission': {
+    title: 'Dubai Essential Drug List Formulary Submission 2026',
+    description:
+      'Dubai Essential Drug List formulary submission: what DDC coding, EBP formulary limits and local evidence an affiliate should commission before listing.',
   },
   'nupco-tender-market-research-saudi-arabia': {
     title: 'NUPCO Tender Market Research for Saudi Oncology 2026',

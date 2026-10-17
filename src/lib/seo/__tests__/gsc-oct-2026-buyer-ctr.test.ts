@@ -17,6 +17,7 @@ import { NUPCO_TENDER_BODY_HTML } from '@/data/blog-nupco-tender-market-research
 import { IQVIA_UAE_PRIMARY_BODY_HTML } from '@/data/blog-iqvia-alternative-uae-primary-research';
 import { THIQA_OBESITY_BODY_HTML } from '@/data/blog-thiqa-obesity-reimbursement-abu-dhabi';
 import { UAE_EDE_BODY_HTML } from '@/data/blog-uae-drug-pricing-ede-takeover-launch-research';
+import { DEDL_FORMULARY_BODY_HTML } from '@/data/blog-dubai-essential-drug-list-formulary-submission';
 
 const root = process.cwd();
 const hubSource = readFileSync(join(root, 'src/pages/healthcare-research/HubPage.tsx'), 'utf8');
@@ -53,6 +54,7 @@ const OCT_KSA_UAE_BLOGS = [
   { body: IQVIA_UAE_PRIMARY_BODY_HTML, saudi: false },
   { body: THIQA_OBESITY_BODY_HTML, saudi: false },
   { body: UAE_EDE_BODY_HTML, saudi: false },
+  { body: DEDL_FORMULARY_BODY_HTML, saudi: false },
 ];
 
 function firstFiftyWords(text: string): string {
@@ -148,7 +150,7 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
   });
 
   it('links the company hub from every 11–17 Oct KSA/UAE blog and the Saudi buyer page from every Saudi article', () => {
-    expect(OCT_KSA_UAE_BLOGS).toHaveLength(8);
+    expect(OCT_KSA_UAE_BLOGS).toHaveLength(9);
     for (const article of OCT_KSA_UAE_BLOGS) {
       expect(article.body).toContain('href="/healthcare-market-research"');
       if (article.saudi) {
