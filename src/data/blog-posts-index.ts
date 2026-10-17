@@ -23,6 +23,7 @@ import { CHINESE_KSA_UAE_HARDCODED_POST } from '@/data/blog-chinese-companies-en
 import { NIELSEN_KSA_HARDCODED_POST } from '@/data/blog-nielsen-alternative-saudi-arabia';
 import { KSA_GOV_CSAT_HARDCODED_POST } from '@/data/blog-government-customer-satisfaction-saudi-arabia';
 import { KANTAR_ALT_ME_HARDCODED_POST } from '@/data/blog-kantar-alternative-middle-east';
+import { CHINESE_EV_GULF_HARDCODED_POST } from '@/data/blog-chinese-ev-brands-saudi-uae-consumer-research';
 import { KUWAIT_OBESITY_RESEARCH_HARDCODED_POST } from '@/data/blog-kuwait-obesity-research-glp1-payers';
 import { QATAR_OBESITY_GLP1_HARDCODED_POST } from '@/data/blog-qatar-obesity-glp1-research';
 import { HEMATOLOGY_KSA_HARDCODED_POST } from '@/data/blog-hematology-market-research-saudi-arabia';
@@ -64,6 +65,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   NIELSEN_KSA_HARDCODED_POST,
   KSA_GOV_CSAT_HARDCODED_POST,
   KANTAR_ALT_ME_HARDCODED_POST,
+  CHINESE_EV_GULF_HARDCODED_POST,
   KUWAIT_OBESITY_RESEARCH_HARDCODED_POST,
   QATAR_OBESITY_GLP1_HARDCODED_POST,
   HEMATOLOGY_KSA_HARDCODED_POST,

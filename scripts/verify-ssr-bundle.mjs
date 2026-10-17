@@ -50,6 +50,7 @@ const CRITICAL_PATHS = [
   '/bionixus-industries/insights/nielsen-alternative-saudi-arabia',
   '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia',
   '/bionixus-industries/insights/kantar-alternative-middle-east',
+  '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research',
   '/blog/obesity-market-research-kuwait',
   '/blog/qatar-obesity-glp1-market-research',
   '/blog/hematology-market-research-saudi-arabia',

@@ -103,6 +103,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('kantar-alternative-middle-east'),
     label: 'Kantar alternative Middle East: what buyers should compare',
   },
+  {
+    to: getIndustriesInsightPostPath('chinese-ev-brands-saudi-uae-consumer-research'),
+    label: 'Chinese EV brands in the Gulf: consumer research before launch',
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */
