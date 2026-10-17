@@ -8,7 +8,12 @@ import {
   KSA_GOV_CSAT_PATH,
   KSA_GOV_CSAT_SLUG,
 } from '@/data/blog-government-customer-satisfaction-saudi-arabia';
-import { IQVIA_UAE_PRIMARY_SLUG } from '@/data/blog-iqvia-alternative-uae-primary-research';
+import {
+  IQVIA_UAE_PRIMARY_HARDCODED_POST,
+  IQVIA_UAE_PRIMARY_PATH,
+  IQVIA_UAE_PRIMARY_SLUG,
+} from '@/data/blog-iqvia-alternative-uae-primary-research';
+import { HEALTHCARE_BLOG_INDEX_PATH, INDUSTRIES_INSIGHTS_INDEX_PATH } from '@/lib/blog-content-silo';
 
 const UNKNOWN_SLUG = 'this-slug-does-not-exist';
 const UNKNOWN_PATH = `/bionixus-industries/insights/${UNKNOWN_SLUG}`;
@@ -27,7 +32,7 @@ describe('industries insight slug SSR status', () => {
     HelmetProvider.canUseDOM = false;
   });
 
-  it('renders an unknown industries slug as NotFound so Express returns 404 and noindex', async () => {
+  it('renders an unknown industries slug as a closest-page redirect shell', async () => {
     const result = await render(UNKNOWN_PATH, {
       pageType: 'blog-post',
       blogSlug: UNKNOWN_SLUG,
@@ -36,12 +41,11 @@ describe('industries insight slug SSR status', () => {
       relatedPosts: { related: [], prev: null, next: null },
     });
     const head = headFrom(result.helmetData);
-    expect(result.html).toContain('data-route-status="404"');
+    expect(result.html).toContain(`data-slug-redirect="${INDUSTRIES_INSIGHTS_INDEX_PATH}"`);
     expect(result.html).not.toContain('This Slug Does Not Exist');
-    expect(metaContent(head, 'robots')).toContain('noindex, nofollow');
-    expect(metaContent(head, 'robots').some((value) => value.startsWith('index,follow'))).toBe(false);
-    expect(metaContent(head, 'prerender-status')).toContain('404');
-    expect(isSsrNotFoundPage(head, result.html)).toBe(true);
+    expect(result.html).not.toContain('data-route-status="404"');
+    expect(metaContent(head, 'prerender-status')).not.toContain('404');
+    expect(isSsrNotFoundPage(head, result.html)).toBe(false);
   });
 
   it('keeps a known hardcoded industries post indexable', async () => {
@@ -63,21 +67,21 @@ describe('industries insight slug SSR status', () => {
     expect(isSsrNotFoundPage(head, result.html)).toBe(false);
   });
 
-  it('404s a healthcare article requested on the industries path', async () => {
+  it('redirects a healthcare article requested on the industries path to its blog canonical', async () => {
     const result = await render(`/bionixus-industries/insights/${IQVIA_UAE_PRIMARY_SLUG}`, {
       pageType: 'blog-post',
       blogSlug: IQVIA_UAE_PRIMARY_SLUG,
-      blogPost: null,
-      blogPostLookup: 'missing',
+      blogPost: IQVIA_UAE_PRIMARY_HARDCODED_POST,
+      blogPostLookup: 'found',
       relatedPosts: { related: [], prev: null, next: null },
     });
     const head = headFrom(result.helmetData);
-    expect(result.html).toContain('data-route-status="404"');
-    expect(result.html).not.toContain('Keep IQVIA, Add Primary Research');
-    expect(isSsrNotFoundPage(head, result.html)).toBe(true);
+    expect(result.html).toContain(`data-slug-redirect="${IQVIA_UAE_PRIMARY_PATH}"`);
+    expect(result.html).not.toContain('data-route-status="404"');
+    expect(isSsrNotFoundPage(head, result.html)).toBe(false);
   });
 
-  it('does not 404 an industries slug when the Sanity lookup failed', async () => {
+  it('keeps the soft-miss page when the Sanity lookup failed', async () => {
     const result = await render(UNKNOWN_PATH, {
       pageType: 'blog-post',
       blogSlug: UNKNOWN_SLUG,
@@ -86,11 +90,13 @@ describe('industries insight slug SSR status', () => {
       relatedPosts: { related: [], prev: null, next: null },
     });
     const head = headFrom(result.helmetData);
+    expect(result.html).toContain('This Slug Does Not Exist');
+    expect(result.html).not.toContain('data-slug-redirect');
     expect(result.html).not.toContain('data-route-status="404"');
     expect(isSsrNotFoundPage(head, result.html)).toBe(false);
   });
 
-  it('leaves an unknown /blog/ slug on the existing soft-miss page', async () => {
+  it('renders an unknown /blog/ slug as a closest-page redirect shell', async () => {
     const result = await render(`/blog/${UNKNOWN_SLUG}`, {
       pageType: 'blog-post',
       blogSlug: UNKNOWN_SLUG,
@@ -99,7 +105,8 @@ describe('industries insight slug SSR status', () => {
       relatedPosts: { related: [], prev: null, next: null },
     });
     const head = headFrom(result.helmetData);
-    expect(result.html).toContain('This Slug Does Not Exist');
+    expect(result.html).toContain(`data-slug-redirect="${HEALTHCARE_BLOG_INDEX_PATH}"`);
+    expect(result.html).not.toContain('This Slug Does Not Exist');
     expect(result.html).not.toContain('data-route-status="404"');
     expect(isSsrNotFoundPage(head, result.html)).toBe(false);
   });
