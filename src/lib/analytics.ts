@@ -2,6 +2,17 @@ import { hasAnalyticsConsent } from '@/lib/consent';
 
 type EventParams = Record<string, string | number | boolean | undefined>;
 
+/**
+ * Page path sent to analytics. Keeps the query string, including utm_*, gclid,
+ * and fbclid. Callers must read this from the live location and must not
+ * replace the URL before the hit is queued.
+ */
+export function analyticsPagePath(loc?: { pathname?: string; search?: string }): string {
+  const pathname = loc?.pathname ?? (typeof window !== 'undefined' ? window.location.pathname : '');
+  const search = loc?.search ?? (typeof window !== 'undefined' ? window.location.search : '');
+  return `${pathname}${search}`;
+}
+
 /** Fires a GA4 event via gtag, gated on cookie consent. Shared by GA4EventTracker and CTA/lead instrumentation. */
 export function trackGaEvent(eventName: string, params: EventParams = {}) {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
@@ -15,7 +26,7 @@ export function trackCtaClick(params: { ctaId: string; ctaLocation: string; targ
     cta_id: params.ctaId,
     cta_location: params.ctaLocation,
     target_url: params.targetUrl,
-    page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+    page_path: analyticsPagePath(),
   });
 }
 
@@ -23,7 +34,7 @@ export function trackCtaClick(params: { ctaId: string; ctaLocation: string; targ
 export function trackLeadSubmitted(params: { formId?: string }) {
   trackGaEvent('lead_submitted', {
     form_id: params.formId,
-    page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+    page_path: analyticsPagePath(),
   });
 }
 
@@ -46,7 +57,7 @@ export function trackMeetingBooked(params: {
     budget: params.budget || undefined,
     timeline: params.timeline || undefined,
     markets: params.markets || undefined,
-    page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+    page_path: analyticsPagePath(),
   });
 }
 
@@ -56,7 +67,7 @@ export function trackMeetingLinkClicked(params: { formId: string; sourceContext?
     form_id: params.formId,
     source_context: params.sourceContext || undefined,
     target_url: params.targetUrl,
-    page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+    page_path: analyticsPagePath(),
   });
 }
 

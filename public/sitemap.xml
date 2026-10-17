@@ -127,6 +127,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/ar/blog/pharmaceutical-market-research-middle-east-gcc</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/ar/blog/saudi-pharma-market-2026</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/ar/blog/quantitative-market-research-and-market-access</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -557,6 +569,12 @@
     <priority>0.88</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/australia-gcc-market-entry-research</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/europe-to-gcc-market-entry-research</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -589,6 +607,12 @@
   <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/market-entry-research-saudi-arabia</loc>
     <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research</loc>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
@@ -874,6 +898,12 @@
   <url>
     <loc>https://www.bionixus.com/blog/gcc-pharmacy-market-2026</loc>
     <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1456,6 +1486,18 @@
   <url>
     <loc>https://www.bionixus.com/blog/who-does-obesity-market-research-saudi-arabia</loc>
     <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/rare-disease-market-research-saudi-arabia</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/oral-glp-1-uae-market-research</loc>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>

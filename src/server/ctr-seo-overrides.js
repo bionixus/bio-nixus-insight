@@ -909,6 +909,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
   },
+  '/blog/australia-gcc-market-entry-research': {
+    title: 'Australia GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Australia GCC market entry research playbook for exporters: prove demand, CEPA tariffs, cities, halal and price in Saudi Arabia and UAE before you ship.',
+  },
+  '/bionixus-industries/insights/australia-gcc-market-entry-research': {
+    title: 'Australia GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Australia GCC market entry research playbook for exporters: prove demand, CEPA tariffs, cities, halal and price in Saudi Arabia and UAE before you ship.',
+  },
   '/blog/europe-to-gcc-market-entry-research': {
     title: 'Europe-to-GCC Market Entry Research (2026 Playbook)',
     description:
@@ -959,6 +969,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.',
   },
+  '/blog/chinese-ev-brands-saudi-uae-consumer-research': {
+    title: 'Chinese EV Consumer Research Saudi UAE (2026 Guide)',
+    description:
+      'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
+  },
+  '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research': {
+    title: 'Chinese EV Consumer Research Saudi UAE (2026 Guide)',
+    description:
+      'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
@@ -973,6 +993,11 @@ export const CTR_SEO_BY_PATH = {
     title: 'Hematology Market Research Saudi Arabia: Launch 2026',
     description:
       'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
+  },
+  '/blog/rare-disease-market-research-saudi-arabia': {
+    title: 'Rare Disease Market Research Saudi Arabia: 2026 Gaps',
+    description:
+      'Rare disease market research Saudi Arabia: how to size small orphan populations, close evidence gaps, and brief SFDA, NUPCO and CHI before a 2026 launch.',
   },
   '/blog/iqvia-alternative-uae-primary-research': {
     title: 'IQVIA Alternative UAE Primary Research: Keep Audit',
@@ -998,6 +1023,11 @@ export const CTR_SEO_BY_PATH = {
     title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
     description:
       'Thiqa obesity reimbursement and Abu Dhabi GLP-1 coverage: DOH BMI gates, 5% weight-loss rules, and what obesity market research UAE must measure in 2026.',
+  },
+  '/blog/oral-glp-1-uae-market-research': {
+    title: 'Oral GLP-1 UAE Market Research After Foundayo 2026',
+    description:
+      'Oral GLP-1 UAE market research after EDE approved Foundayo on 3 Apr 2026: what brand teams must measure on orforglipron prescriber and patient uptake.',
   },
 };
 
