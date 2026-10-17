@@ -12,6 +12,92 @@ function skylineBlocks(blocks, baseline = 552) {
 }
 
 export const LINKEDIN_BLOG_COVERS = {
+  'oral-glp-1-uae-market-research': {
+    cover: 'oral-glp-1-uae-market-research-cover.jpg',
+    hero: 'oral-glp-1-uae-market-research-hero.jpg',
+    badge: 'UAE  ·  ORAL GLP-1  ·  2026',
+    lines: ['Oral GLP-1', 'UAE uptake'],
+    goldLine: 'Prescriber research',
+    sub: 'Tablets after EDE registration · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 548 C 100 512, 220 576, 340 532 S 490 524, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g fill="#0C1728" stroke="${GOLD_LIGHT}" stroke-width="1.6">
+        ${skylineBlocks([
+          [36, 24, 88],
+          [68, 32, 152, true],
+          [108, 20, 112],
+          [136, 44, 198],
+          [188, 26, 136],
+          [222, 36, 176, true],
+          [266, 20, 102],
+          [294, 48, 220],
+        ])}
+      </g>
+      <g>
+        <ellipse cx="168" cy="168" rx="118" ry="52" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.4"/>
+        <path d="M 168 116 A 118 52 0 0 0 168 220" fill="${GOLD}" fill-opacity="0.88"/>
+        <ellipse cx="168" cy="168" rx="22" ry="22" fill="${CREAM}" fill-opacity="0.2" stroke="${GOLD_LIGHT}" stroke-width="1.6"/>
+        <g transform="translate(338 92) rotate(18)">
+          <rect x="0" y="0" width="28" height="132" rx="14" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+          <rect x="6" y="10" width="16" height="36" rx="8" fill="${GOLD}" fill-opacity="0.35"/>
+          <rect x="10" y="-16" width="8" height="22" rx="2" fill="${GOLD_LIGHT}"/>
+        </g>
+        <path d="M 168 230 C 168 278, 248 292, 318 318" fill="none" stroke="${GOLD}" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="168" cy="230" r="7" fill="${GOLD}"/>
+        <circle cx="318" cy="318" r="7" fill="${GOLD_LIGHT}"/>
+        <rect x="92" y="348" width="78" height="152" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="188" y="318" width="78" height="182" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="284" y="288" width="78" height="212" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="380" y="258" width="78" height="242" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="110" y="368" width="42" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="206" y="338" width="42" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+        <rect x="302" y="308" width="42" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="398" y="278" width="42" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+      </g>`,
+      'glowOral',
+    ),
+  },
+  'rare-disease-market-research-saudi-arabia': {
+    cover: 'rare-disease-market-research-saudi-arabia-cover.jpg',
+    hero: 'rare-disease-market-research-saudi-arabia-hero.jpg',
+    badge: 'RARE DISEASE  ·  SAUDI ARABIA',
+    lines: ['Saudi rare-disease', 'market research'],
+    goldLine: 'Small cohorts, open gaps',
+    sub: 'Diagnosed patients and payer evidence · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 548 C 110 516, 230 576, 350 534 S 500 526, 560 552 V 630 H 0 Z" fill="#0A1422"/>
+      <g fill="none" stroke="${GOLD}" stroke-width="2.2">
+        <path d="M 96 96 C 128 56, 176 56, 208 96 C 240 136, 288 136, 320 96"/>
+        <path d="M 96 96 C 128 136, 176 136, 208 96 C 240 56, 288 56, 320 96"/>
+      </g>
+      <circle cx="96" cy="96" r="6" fill="${GOLD}"/>
+      <circle cx="208" cy="96" r="6" fill="${GOLD_LIGHT}"/>
+      <circle cx="320" cy="96" r="6" fill="${GOLD}"/>
+      <g>
+        <rect x="80" y="188" width="108" height="108" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <circle cx="134" cy="232" r="16" fill="${GOLD}" fill-opacity="0.28" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="216" y="188" width="108" height="108" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <circle cx="246" cy="218" r="7" fill="${GOLD}"/>
+        <circle cx="278" cy="248" r="7" fill="${GOLD_LIGHT}"/>
+        <circle cx="300" cy="226" r="7" fill="${CREAM}"/>
+        <rect x="352" y="188" width="108" height="108" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="372" y="248" width="18" height="28" rx="3" fill="${GOLD}"/>
+        <rect x="396" y="228" width="18" height="48" rx="3" fill="${GOLD_LIGHT}"/>
+        <rect x="420" y="208" width="18" height="68" rx="3" fill="${CREAM}"/>
+      </g>
+      <g fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2">
+        <rect x="108" y="328" width="88" height="186" rx="14"/>
+        <rect x="216" y="298" width="88" height="216" rx="14"/>
+        <rect x="324" y="348" width="88" height="166" rx="14"/>
+      </g>
+      <circle cx="152" cy="392" r="14" fill="${GOLD}" fill-opacity="0.35" stroke="${GOLD}" stroke-width="2"/>
+      <circle cx="260" cy="372" r="14" fill="${GOLD_LIGHT}" fill-opacity="0.35" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+      <circle cx="368" cy="412" r="14" fill="${GOLD}" fill-opacity="0.2" stroke="${GOLD}" stroke-width="2"/>`,
+      'glowR',
+    ),
+  },
   'thiqa-obesity-reimbursement-abu-dhabi': {
     cover: 'thiqa-obesity-reimbursement-abu-dhabi-cover.jpg',
     hero: 'thiqa-obesity-reimbursement-abu-dhabi-hero.jpg',
@@ -187,6 +273,48 @@ export const LINKEDIN_BLOG_COVERS = {
         <rect x="408" y="408" width="56" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
       </g>`,
       'glowN',
+    ),
+  },
+  'saudi-health-insurance-payer-research': {
+    cover: 'saudi-health-insurance-payer-research-cover.jpg',
+    hero: 'saudi-health-insurance-payer-research-hero.jpg',
+    badge: 'CHI  ·  SAUDI ARABIA',
+    lines: ['Saudi health', 'insurance payers'],
+    goldLine: 'CHI and Dhaman',
+    sub: 'Formulary evidence before a claim · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 548 C 110 516, 240 574, 360 534 S 510 526, 560 552 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="64" y="72" width="432" height="168" rx="18" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.2"/>
+        <rect x="88" y="96" width="168" height="14" rx="4" fill="${GOLD}"/>
+        <rect x="88" y="124" width="220" height="8" rx="4" fill="${CREAM}" fill-opacity="0.28"/>
+        <rect x="88" y="146" width="180" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+        <rect x="88" y="176" width="72" height="40" rx="8" fill="${GOLD}" fill-opacity="0.22" stroke="${GOLD}" stroke-width="1.6"/>
+        <rect x="176" y="176" width="72" height="40" rx="8" fill="${GOLD_LIGHT}" fill-opacity="0.2" stroke="${GOLD_LIGHT}" stroke-width="1.6"/>
+        <rect x="264" y="176" width="72" height="40" rx="8" fill="${CREAM}" fill-opacity="0.16" stroke="${CREAM}" stroke-width="1.6"/>
+        <circle cx="420" cy="156" r="34" fill="none" stroke="${GOLD}" stroke-width="3"/>
+        <path d="M 406 156 L 416 166 L 440 140" fill="none" stroke="${GOLD}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <rect x="64" y="268" width="132" height="196" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <text x="130" y="316" text-anchor="middle" fill="${GOLD}" font-size="28" font-weight="700" font-family="Georgia, serif">01</text>
+        <rect x="88" y="340" width="84" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="88" y="364" width="64" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
+        <rect x="88" y="388" width="72" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+
+        <rect x="214" y="268" width="132" height="196" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <text x="280" y="316" text-anchor="middle" fill="${GOLD_LIGHT}" font-size="28" font-weight="700" font-family="Georgia, serif">02</text>
+        <rect x="238" y="340" width="84" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="238" y="364" width="72" height="8" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.45"/>
+        <rect x="238" y="388" width="56" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+
+        <rect x="364" y="268" width="132" height="196" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <text x="430" y="316" text-anchor="middle" fill="${GOLD}" font-size="28" font-weight="700" font-family="Georgia, serif">03</text>
+        <rect x="388" y="340" width="84" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="388" y="364" width="56" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
+        <rect x="388" y="388" width="68" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+      </g>`,
+      'glowChi',
     ),
   },
   'how-to-choose-healthcare-market-research-agency-saudi-arabia': {

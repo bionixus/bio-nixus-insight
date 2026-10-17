@@ -65,8 +65,12 @@ export const REDIRECT_HREF_REWRITES = {
   '/blog/consumer-survey-company-saudi-arabia':
     '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
   '/blog/b2b-market-research-uae': '/bionixus-industries/insights/b2b-market-research-uae',
+  '/blog/australia-gcc-market-entry-research':
+    '/bionixus-industries/insights/australia-gcc-market-entry-research',
   '/blog/europe-to-gcc-market-entry-research':
     '/bionixus-industries/insights/europe-to-gcc-market-entry-research',
+  '/blog/new-zealand-exporters-gcc-market-research':
+    '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research',
   '/blog/chinese-companies-entering-saudi-arabia-and-the-uae':
     '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae',
   '/blog/nielsen-alternative-saudi-arabia':
@@ -75,6 +79,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia',
   '/blog/kantar-alternative-middle-east':
     '/bionixus-industries/insights/kantar-alternative-middle-east',
+  '/blog/chinese-ev-brands-saudi-uae-consumer-research':
+    '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':

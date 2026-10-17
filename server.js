@@ -131,9 +131,9 @@ const GENERIC_DEFAULT_TITLES = new Set([
 
 /** GSC CTR overrides — keep in sync with BlogPost.tsx EGYPT/KUWAIT constants */
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra';
 const EGYPT_HEALTHCARE_2026_META =
-  'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.';
+  'Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview.';
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_TITLE = 'April Healthcare Kuwait | Healthcare 2026 | BioNixus';
 const KUWAIT_HEALTHCARE_2026_META =
@@ -185,7 +185,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/insights/top-consumer-insights-companies-ksa-2026') return 'Consumer Insights Companies KSA 2026 | BioNixus';
   if (path === '/insights/top-market-research-companies-uae-2026') return 'Top Market Research Company in UAE: 2026 Ranking | BioNixus';
   if (path === '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026') return 'شركات أبحاث السوق في الإمارات 2026 | بيونيكسس';
-  if (path === '/insights/top-market-research-companies-dubai-2026') return '6 Best Market Research Companies in Dubai (2026) | UAE Agency Rankings | BioNixus';
+  if (path === '/insights/top-market-research-companies-dubai-2026') return 'Market Research Companies in Dubai 2026 | Ranked Guide';
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return '6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-riyadh-2026') return '6 Best Market Research Companies in Riyadh (2026) | KSA Agency Rankings | BioNixus';
   if (path === '/insights/top-oncology-market-research-companies-2026') return 'Top Oncology Market Research Companies 2026 | BioNixus';
@@ -218,7 +218,7 @@ function buildFallbackTitle(pathname) {
     return `${industryLabel} Market Research Company in ${countryLabel} (2026) | ${titleSuffix} | BioNixus`;
   }
 
-  if (path === '/healthcare-market-research') return 'Healthcare Market Research by Country | US HQ · Global Coverage | BioNixus';
+  if (path === '/healthcare-market-research') return 'Healthcare Market Research Company | Saudi, UAE & GCC';
   if (path === '/fr/healthcare-market-research') return 'Recherche de marché santé et pharma | Europe et MENA | BioNixus';
   if (path === '/fr/healthcare-market-research/france') return 'Études de marché pharmaceutique France | HAS et ANSM | BioNixus';
   if (path === `/${SKYRIZI_ROOT_SLUG}`) return SKYRIZI_ROOT_TITLE;
@@ -414,7 +414,7 @@ function buildFallbackDescription(pathname) {
     return 'محفظة BioNixus الاستراتيجية: قدرات أبحاث السوق الصحي والدوائي والمستهلك عبر أوروبا والشرق الأوسط وأفريقيا.';
   }
   if (path === '/healthcare-market-research') {
-    return 'US-headquartered healthcare market research from BioNixus — physician, payer, and hospital evidence across 20+ countries: USA, Canada, Brazil, UK, Europe, GCC, MENA, and Asia-Pacific with local fieldwork.';
+    return 'Healthcare market research company for Saudi Arabia, the UAE and the GCC. Primary HCP fieldwork vs IQVIA syndicated. $10k–$60k. 48-hour proposal from BioNixus.';
   }
   if (path === '/fr/healthcare-market-research') {
     return 'Études de marché pharmaceutique et santé en Europe et au Moyen-Orient : preuves médecins, payeurs et hôpitaux pour lancement, accès au marché et croissance — BioNixus.';

@@ -105,7 +105,7 @@ describe('/blog/glp-1-physician-survey-saudi-arabia: server render', () => {
     }
     expect(html).toMatch(/<details[\s>]/);
     expect(countWords(visible)).toBeGreaterThan(1800);
-    expect(GLP1_PHYSICIAN_SURVEY_WORD_COUNT).toBe(4034);
+    expect(GLP1_PHYSICIAN_SURVEY_WORD_COUNT).toBe(4055);
   });
 
   it('puts the text-free artwork behind the h1 and keeps the titled card for social sharing', () => {
@@ -386,6 +386,7 @@ describe('/blog/glp-1-physician-survey-saudi-arabia: copy rules', () => {
   it('links the required hub, obesity market and buyer-shortlist pages in the opening', () => {
     const firstWords = text(GLP1_PHYSICIAN_SURVEY_BODY_HTML).split(/\s+/).slice(0, 200).join(' ');
     expect(GLP1_PHYSICIAN_SURVEY_BODY_HTML).toContain('href="/healthcare-market-research"');
+    expect(GLP1_PHYSICIAN_SURVEY_BODY_HTML).toContain('href="/healthcare-market-research/saudi-arabia"');
     expect(GLP1_PHYSICIAN_SURVEY_BODY_HTML).toContain('href="/saudi-arabia-obesity-market"');
     expect(GLP1_PHYSICIAN_SURVEY_BODY_HTML).toContain('href="/blog/who-does-obesity-market-research-saudi-arabia"');
     expect(firstWords.toLowerCase()).toMatch(/healthcare market research/);

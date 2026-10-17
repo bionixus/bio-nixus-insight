@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
+import { canonicalRedirectTarget, isSsrNotFoundPage, publicPathFromRewrite } from '../seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 import {
@@ -650,25 +650,9 @@ async function handleSsrRequest(
     : '';
   const fallbackUrl = req.url || '/';
 
-  /** Merge rewrite path with passthrough public query (trk/utm). Skip Vercel SSR internals. */
-  const buildPublicPathAndQuery = (pathWithOptionalQuery: string): string => {
-    const pathOnly = (pathWithOptionalQuery.split('?')[0] || '/').split('#')[0];
-    const params = new URLSearchParams(
-      pathWithOptionalQuery.includes('?')
-        ? pathWithOptionalQuery.slice(pathWithOptionalQuery.indexOf('?') + 1).split('#')[0]
-        : '',
-    );
-    const q = req.query ?? {};
-    for (const [key, raw] of Object.entries(q)) {
-      const lower = key.toLowerCase();
-      // `__ssr` + `url` are Vercel rewrite internals — never treat as public query.
-      if (lower === 'url' || lower === '__ssr') continue;
-      const val = Array.isArray(raw) ? raw[0] : raw;
-      if (typeof val === 'string') params.set(key, val);
-    }
-    const qs = params.toString();
-    return qs ? `${pathOnly}?${qs}` : pathOnly;
-  };
+  /** Merge the rewrite path with the browser query. Drop the capture leak (`path`). */
+  const buildPublicPathAndQuery = (pathWithOptionalQuery: string): string =>
+    publicPathFromRewrite(pathWithOptionalQuery, req.query ?? {});
 
   let url: string;
   if (normalizedRewrittenPath) {

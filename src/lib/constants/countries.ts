@@ -47,15 +47,20 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     relatedCountries: ['uae', 'kuwait'],
     relatedTherapies: ['diabetes', 'oncology', 'respiratory', 'immunology'],
     keyStats: [
-      { label: 'Pharma Market Size', value: '$10B+ annually' },
       { label: 'Key Regulator', value: 'SFDA' },
-      { label: 'BioNixus Projects', value: '50+ completed KSA studies' },
+      { label: 'Central procurement', value: 'NUPCO tenders' },
+      { label: 'KSA field office', value: 'Al Khobar' },
       { label: 'Strategic Context', value: 'Vision 2030 healthcare transformation' },
     ],
     faqQuestions: [
       {
         question: KSA_HUB_COMPANIES_COPY.faqQuestion,
         answer: KSA_HUB_COMPANIES_COPY.faqAnswer,
+      },
+      {
+        question: 'What does a healthcare market research company in Saudi Arabia cost?',
+        answer:
+          'Custom programmes with BioNixus typically run from $10,000 to $60,000 depending on countries, sample and method. A written proposal follows within 48 hours of a brief. Guarantees in writing cover replacing non-qualifying respondents, the contracted minimum sample, re-field at our cost, and a credited pilot fee — not guaranteed accuracy of findings.',
       },
       {
         question: 'Who provides healthcare market research in Saudi Arabia?',

@@ -84,8 +84,16 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'B2B market research in the UAE: reaching hard-to-reach decision-makers',
   },
   {
+    to: getIndustriesInsightPostPath('australia-gcc-market-entry-research'),
+    label: "Australian exporters' guide to Saudi and UAE market research",
+  },
+  {
     to: getIndustriesInsightPostPath('europe-to-gcc-market-entry-research'),
     label: 'Europe-to-GCC market entry research: what European brands need to know',
+  },
+  {
+    to: getIndustriesInsightPostPath('new-zealand-exporters-gcc-market-research'),
+    label: 'New Zealand exporters GCC market research: dairy, meat and food proof',
   },
   {
     to: getIndustriesInsightPostPath('chinese-companies-entering-saudi-arabia-and-the-uae'),
@@ -102,6 +110,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
   {
     to: getIndustriesInsightPostPath('kantar-alternative-middle-east'),
     label: 'Kantar alternative Middle East: what buyers should compare',
+  },
+  {
+    to: getIndustriesInsightPostPath('chinese-ev-brands-saudi-uae-consumer-research'),
+    label: 'Chinese EV brands in the Gulf: consumer research before launch',
   },
 ] as const;
 
