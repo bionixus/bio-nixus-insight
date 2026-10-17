@@ -6,7 +6,7 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
-import { STATS } from '@/lib/companyStats';
+import { STATS, STATS_PROJECTS_PHRASE } from '@/lib/companyStats';
 import { BIONIXUS_PHONE_UK, BIONIXUS_PHONE_UK_DISPLAY } from '@/components/report-conversion/constants';
 import { OncologyPremiumStyles } from '@/pages/oncology-listicle/OncologyPremiumStyles';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
@@ -407,8 +407,7 @@ export default function TopHematologyMarketResearchCompanies2026() {
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
-                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
-                annually · {STATS.projects2025} in 2025
+                {STATS.clients} clients · {STATS.countries} countries · {STATS_PROJECTS_PHRASE}
               </div>
             </div>
           </div>

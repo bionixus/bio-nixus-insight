@@ -19,7 +19,8 @@ export const aboutPageCopyAr: AboutPageCopy = {
   ctaPrimary: 'طلب عرض',
   ctaSecondary: 'استكشف القطاعات',
   metrics: [
-    { value: '120+', label: 'مشروعًا عالميًا سنويًا' },
+    { value: '127', label: 'دراسة منذ بداية 2026' },
+    { value: '120', label: 'دراسة في 2025' },
     { value: '118', label: 'عميلًا عالميًا' },
     { value: '48', label: 'دولة مغطاة' },
     { value: '16', label: 'قطاعًا صناعيًا' },

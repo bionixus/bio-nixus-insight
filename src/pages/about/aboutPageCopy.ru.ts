@@ -19,7 +19,8 @@ export const aboutPageCopyRu: AboutPageCopy = {
   ctaPrimary: 'Запросить предложение',
   ctaSecondary: 'Изучить отрасли',
   metrics: [
-    { value: '120+', label: 'Глобальных проектов ежегодно' },
+    { value: '127', label: 'Исследований с начала 2026' },
+    { value: '120', label: 'Исследований в 2025' },
     { value: '118', label: 'Глобальных клиентов' },
     { value: '48', label: 'Стран покрытия' },
     { value: '16', label: 'Отраслевых вертикалей' },

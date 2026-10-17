@@ -131,7 +131,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Global projects annually"
+          label: "studies a year (127 in 2026 YTD)"
         },
         {
           value: "16",
@@ -320,7 +320,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Projekte branchenübergreifend"
+          label: "Studien pro Jahr (127 in 2026 bis heute)"
         },
         {
           value: "16",
@@ -509,7 +509,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Projets multi-secteurs"
+          label: "études par an (127 depuis début 2026)"
         },
         {
           value: "16",
@@ -698,7 +698,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Proyectos multisectoriales"
+          label: "estudios al año (127 en 2026 hasta ahora)"
         },
         {
           value: "16",
@@ -887,7 +887,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Projetos multisectoriais"
+          label: "estudos por ano (127 em 2026 até agora)"
         },
         {
           value: "16",
@@ -1076,7 +1076,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Проекты по отраслям"
+          label: "исследований в год (127 с начала 2026)"
         },
         {
           value: "16",
@@ -1265,7 +1265,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "一百二十+",
-          label: "每年全球项目"
+          label: "每年研究（2026年至今127项）"
         },
         {
           value: "十六",
@@ -1453,8 +1453,8 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       intro: "نفس انضباط العيّنة والتحليل بقيادة خبراء كبار الذي بنيناه للصناعة الدوائية يمتد الآن إلى أسواق الشركات والمستهلكين.",
       stats: [
         {
-          value: "١٢٧+",
-          label: "مشاريع عبر القطاعات"
+          value: "١٢٠+",
+          label: "دراسة سنويًا (١٢٧ في ٢٠٢٦ حتى الآن)"
         },
         {
           value: "١٦",
@@ -1522,7 +1522,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "محفظة استراتيجية",
-        description: "نظرة شاملة: ١٢٧+ مشروعاً، ١١٨ عميلاً عالمياً، أبحاث صحية واستهلاكية في مصر والشرق الأوسط وشمال أفريقيا.",
+        description: "نظرة شاملة: ١٢٠+ دراسة سنويًا (١٢٠ في ٢٠٢٥؛ ١٢٧ في ٢٠٢٦ حتى الآن)، ١١٨ عميلاً عالمياً، أبحاث صحية واستهلاكية في مصر والشرق الأوسط وشمال أفريقيا.",
         label: "تركيز مصر",
         hint: "اطلع على محفظة أبحاث السوق"
       },
@@ -1540,7 +1540,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "جميع القطاعات",
-        description: "استكشف أبحاث الأدوية و الشركات و المستهلكين — نفس الصرامة في ١٢٧+ مشروعاً عبر ١٦ قطاعاً.",
+        description: "استكشف أبحاث الأدوية و الشركات و المستهلكين — نفس الصرامة في ١٢٠+ دراسة سنويًا (١٢٠ في ٢٠٢٥؛ ١٢٧ في ٢٠٢٦ حتى الآن) عبر ١٦ قطاعاً.",
         label: "عبر القطاعات",
         hint: "استكشف مركز القطاعات"
       },
@@ -1588,7 +1588,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "موثوق به من",
-      stats: "١١٨ عميلاً عالمياً · ١٢٧+ مشروعاً · ٤٨ دولة"
+      stats: "١١٨ عميلاً عالمياً · ١٢٠+ دراسة سنويًا (١٢٧ في ٢٠٢٦ حتى الآن) · ٤٨ دولة"
     },
     videoEmbed: {
       transcriptLabel: "النص"

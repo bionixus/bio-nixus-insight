@@ -33,7 +33,7 @@ export const bionixusIndustriesPageCopyRu: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Основана в Лондоне', sub: 'Корни в британских фарма-исследованиях' },
-    { value: '120+', label: 'Глобальных проектов ежегодно', sub: 'в 48 странах' },
+    { value: '120+', label: 'Исследований в год', sub: '120 в 2025; 127 с начала 2026' },
     { value: '118', label: 'Обслуженных клиентов', sub: 'от pharma до consumer' },
     { value: '16', label: 'Отраслевых вертикалей', sub: 'и растёт' },
   ],

@@ -3,14 +3,19 @@ import type { SourcedMetric } from '@/data/contentAccuracy/types';
 /** Verified or labelled claims reused on hub and service pages. */
 export const BIONIXUS_MARKETING_CLAIMS = {
   completedProjectsMena: {
-    label: 'Global projects annually',
+    label: 'Studies a year',
     value: '120+',
     source: 'BioNixus internal project records (2026)',
   } satisfies SourcedMetric,
-  projects2025: {
-    label: 'Projects delivered in 2025',
-    value: '127',
+  studies2025: {
+    label: 'Studies in 2025',
+    value: '120',
     source: 'BioNixus internal project records (2025)',
+  } satisfies SourcedMetric,
+  studies2026Ytd: {
+    label: 'Studies in 2026 year-to-date',
+    value: '127',
+    source: 'BioNixus internal project records (2026)',
   } satisfies SourcedMetric,
   globalClients: {
     label: 'Global clients served',

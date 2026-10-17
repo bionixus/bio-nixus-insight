@@ -33,7 +33,7 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'تأسست في لندن', sub: 'جذور في الأبحاث الدوائية البريطانية' },
-    { value: '120+', label: 'مشروعًا عالميًا سنويًا', sub: 'في 48 دولة' },
+    { value: '120+', label: 'دراسة سنويًا', sub: '120 في 2025؛ 127 منذ بداية 2026' },
     { value: '118', label: 'عميلًا خدمناهم', sub: 'من pharma إلى consumer' },
     { value: '16', label: 'قطاعًا صناعيًا', sub: 'وما زال يتوسع' },
   ],
