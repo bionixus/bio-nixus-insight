@@ -970,6 +970,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
   },
+  '/blog/rare-disease-market-research-saudi-arabia': {
+    title: 'Rare Disease Market Research Saudi Arabia: 2026 Gaps',
+    description:
+      'Rare disease market research Saudi Arabia: how to size small orphan populations, close evidence gaps, and brief SFDA, NUPCO and CHI before a 2026 launch.',
+  },
   '/blog/iqvia-alternative-uae-primary-research': {
     title: 'IQVIA Alternative UAE Primary Research: Keep Audit',
     description:
