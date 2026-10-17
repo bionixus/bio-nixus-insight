@@ -403,7 +403,7 @@ describe('/bionixus-industries/insights/australia-gcc-market-entry-research: reg
     const crawlerIndex = vercel.rewrites.findIndex(
       (rewrite) =>
         rewrite.source === '/bionixus-industries/insights/:slug' &&
-        rewrite.destination === '/api/blog/:slug?industriesInsight=1',
+        rewrite.destination === '/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/:slug',
     );
     expect(ssrIndex).toBeGreaterThanOrEqual(0);
     expect(ssrIndex).toBeLessThan(crawlerIndex);
@@ -411,6 +411,7 @@ describe('/bionixus-industries/insights/australia-gcc-market-entry-research: reg
       `/api/indexnow-key?__ssr=1&url=${AU_GCC_ENTRY_PATH}`,
     );
     expect(vercel.rewrites[ssrIndex].has).toBeUndefined();
+    expect(JSON.stringify(vercel.rewrites)).not.toContain('/api/blog/:slug?industriesInsight=1');
   });
 
   it('is listed in the sitemap source, the committed sitemap and llms.txt, dated 16 October 2026', () => {

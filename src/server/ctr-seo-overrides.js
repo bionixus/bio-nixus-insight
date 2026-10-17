@@ -915,6 +915,66 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Australia GCC market entry research playbook for exporters: prove demand, CEPA tariffs, cities, halal and price in Saudi Arabia and UAE before you ship.',
   },
+  '/blog/europe-to-gcc-market-entry-research': {
+    title: 'Europe-to-GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Europe-to-GCC market entry research for European brands: six-country sequencing, VAT, G-Mark, channels and price before a brand committee commits capital.',
+  },
+  '/bionixus-industries/insights/europe-to-gcc-market-entry-research': {
+    title: 'Europe-to-GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Europe-to-GCC market entry research for European brands: six-country sequencing, VAT, G-Mark, channels and price before a brand committee commits capital.',
+  },
+  '/blog/chinese-companies-entering-saudi-arabia-and-the-uae': {
+    title: 'Chinese Companies Entering Saudi Arabia and the UAE',
+    description:
+      'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
+  },
+  '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae': {
+    title: 'Chinese Companies Entering Saudi Arabia and the UAE',
+    description:
+      'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
+  },
+  '/blog/nielsen-alternative-saudi-arabia': {
+    title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
+    description:
+      'Nielsen alternative Saudi Arabia: syndicated vs custom research Saudi Arabia — when a retail audit fits, when custom work is needed, how to combine both.',
+  },
+  '/bionixus-industries/insights/nielsen-alternative-saudi-arabia': {
+    title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
+    description:
+      'Nielsen alternative Saudi Arabia: syndicated vs custom research Saudi Arabia — when a retail audit fits, when custom work is needed, how to combine both.',
+  },
+  '/blog/government-customer-satisfaction-research-saudi-arabia': {
+    title: 'Government Customer Satisfaction Survey Saudi Arabia',
+    description:
+      'Government customer satisfaction survey Saudi Arabia: Vision 2030, DGA CSAT, Absher/Tawakkalna, Arabic fieldwork and citizen satisfaction research KSA.',
+  },
+  '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia': {
+    title: 'Government Customer Satisfaction Survey Saudi Arabia',
+    description:
+      'Government customer satisfaction survey Saudi Arabia: Vision 2030, DGA CSAT, Absher/Tawakkalna, Arabic fieldwork and citizen satisfaction research KSA.',
+  },
+  '/blog/kantar-alternative-middle-east': {
+    title: 'Kantar Alternative Middle East: When Specialists Fit',
+    description:
+      'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.',
+  },
+  '/bionixus-industries/insights/kantar-alternative-middle-east': {
+    title: 'Kantar Alternative Middle East: When Specialists Fit',
+    description:
+      'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.',
+  },
+  '/blog/chinese-ev-brands-saudi-uae-consumer-research': {
+    title: 'Chinese EV Consumer Research Saudi UAE (2026 Guide)',
+    description:
+      'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
+  },
+  '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research': {
+    title: 'Chinese EV Consumer Research Saudi UAE (2026 Guide)',
+    description:
+      'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
@@ -930,6 +990,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
   },
+  '/blog/rare-disease-market-research-saudi-arabia': {
+    title: 'Rare Disease Market Research Saudi Arabia: 2026 Gaps',
+    description:
+      'Rare disease market research Saudi Arabia: how to size small orphan populations, close evidence gaps, and brief SFDA, NUPCO and CHI before a 2026 launch.',
+  },
   '/blog/iqvia-alternative-uae-primary-research': {
     title: 'IQVIA Alternative UAE Primary Research: Keep Audit',
     description:
@@ -939,6 +1004,26 @@ export const CTR_SEO_BY_PATH = {
     title: 'Healthcare Market Research Agency Saudi Arabia: 10 Questions',
     description:
       'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.',
+  },
+  '/blog/uae-drug-pricing-ede-takeover-launch-research': {
+    title: 'UAE Drug Pricing After EDE Takeover: Launch Research',
+    description:
+      'UAE drug pricing after the Emirates Drug Establishment takeover: what launch research must prove for first price, May 2026 repricing and payer listing.',
+  },
+  '/blog/nupco-tender-market-research-saudi-arabia': {
+    title: 'NUPCO Tender Market Research for Saudi Oncology 2026',
+    description:
+      'NUPCO tender market research for Saudi oncology and specialty bids: what vial lists, award ranks and centre facts a 2026 bid team must commission first.',
+  },
+  '/blog/thiqa-obesity-reimbursement-abu-dhabi': {
+    title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
+    description:
+      'Thiqa obesity reimbursement and Abu Dhabi GLP-1 coverage: DOH BMI gates, 5% weight-loss rules, and what obesity market research UAE must measure in 2026.',
+  },
+  '/blog/oral-glp-1-uae-market-research': {
+    title: 'Oral GLP-1 UAE Market Research After Foundayo 2026',
+    description:
+      'Oral GLP-1 UAE market research after EDE approved Foundayo on 3 Apr 2026: what brand teams must measure on orforglipron prescriber and patient uptake.',
   },
 };
 

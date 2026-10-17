@@ -559,25 +559,25 @@
       "statusCode": 301
     },
     {
-      "source": "/:path((?!api/).*)",
+      "source": "/:splat((?!api/).*)",
       "has": [
         {
           "type": "query",
           "key": "__ssr"
         }
       ],
-      "destination": "/:path",
+      "destination": "/:splat",
       "statusCode": 301
     },
     {
-      "source": "/:path((?!api/).*)",
+      "source": "/:splat((?!api/).*)",
       "has": [
         {
           "type": "query",
           "key": "trk"
         }
       ],
-      "destination": "/:path",
+      "destination": "/:splat",
       "statusCode": 301
     },
     {
@@ -951,7 +951,7 @@
       "statusCode": 301
     },
     {
-      "source": "/:path(.*)",
+      "source": "/:splat(.*)",
       "has": [
         {
           "type": "host",
@@ -963,11 +963,11 @@
           "value": "http"
         }
       ],
-      "destination": "https://www.bionixus.com/:path",
+      "destination": "https://www.bionixus.com/:splat",
       "statusCode": 301
     },
     {
-      "source": "/:path(.*)",
+      "source": "/:splat(.*)",
       "has": [
         {
           "type": "host",
@@ -979,18 +979,18 @@
           "value": "http"
         }
       ],
-      "destination": "https://www.bionixus.com/:path",
+      "destination": "https://www.bionixus.com/:splat",
       "statusCode": 301
     },
     {
-      "source": "/:path(.*)",
+      "source": "/:splat(.*)",
       "has": [
         {
           "type": "host",
           "value": "bionixus.com"
         }
       ],
-      "destination": "https://www.bionixus.com/:path",
+      "destination": "https://www.bionixus.com/:splat",
       "statusCode": 301
     }
   ],
@@ -1100,6 +1100,30 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/australia-gcc-market-entry-research"
     },
     {
+      "source": "/bionixus-industries/insights/europe-to-gcc-market-entry-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/europe-to-gcc-market-entry-research"
+    },
+    {
+      "source": "/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae"
+    },
+    {
+      "source": "/bionixus-industries/insights/nielsen-alternative-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/nielsen-alternative-saudi-arabia"
+    },
+    {
+      "source": "/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia"
+    },
+    {
+      "source": "/bionixus-industries/insights/kantar-alternative-middle-east",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/kantar-alternative-middle-east"
+    },
+    {
+      "source": "/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
@@ -1112,12 +1136,32 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/hematology-market-research-saudi-arabia"
     },
     {
+      "source": "/blog/rare-disease-market-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/rare-disease-market-research-saudi-arabia"
+    },
+    {
       "source": "/blog/iqvia-alternative-uae-primary-research",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/iqvia-alternative-uae-primary-research"
     },
     {
       "source": "/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia"
+    },
+    {
+      "source": "/blog/uae-drug-pricing-ede-takeover-launch-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/uae-drug-pricing-ede-takeover-launch-research"
+    },
+    {
+      "source": "/blog/nupco-tender-market-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/nupco-tender-market-research-saudi-arabia"
+    },
+    {
+      "source": "/blog/thiqa-obesity-reimbursement-abu-dhabi",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/thiqa-obesity-reimbursement-abu-dhabi"
+    },
+    {
+      "source": "/blog/oral-glp-1-uae-market-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/oral-glp-1-uae-market-research"
     },
     {
       "source": "/blog/:slug",
@@ -1147,7 +1191,7 @@
           "value": ".*(facebookexternalhit|Facebot|facebot|Twitterbot|twitterbot|LinkedInBot|linkedinbot|WhatsApp|whatsapp|Slackbot|slackbot|TelegramBot|telegrambot|Discordbot|discordbot|Googlebot|googlebot|bingbot|Bingbot|Pinterestbot|pinterestbot|redditbot|Redditbot|AhrefsBot|ahrefsbot|AhrefsSiteAudit|ChatGPT-User|OAI-SearchBot|GPTBot|ClaudeBot|Claude-User|Claude-SearchBot|PerplexityBot|Perplexity-User|CCBot|Google-Extended|Applebot-Extended|MistralAI-User|Amazonbot|Meta-ExternalAgent|DuckAssistBot|YouBot|anthropic-ai|Applebot|cohere-ai|Bytespider).*"
         }
       ],
-      "destination": "/api/blog/:slug?industriesInsight=1"
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/:slug"
     },
     {
       "source": "/news/:slug",
@@ -1180,8 +1224,8 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/"
     },
     {
-      "source": "/:path((?!api/).*)",
-      "destination": "/api/indexnow-key?__ssr=1&url=/:path"
+      "source": "/:splat((?!api/).*)",
+      "destination": "/api/indexnow-key?__ssr=1&url=/:splat"
     }
   ]
 }
