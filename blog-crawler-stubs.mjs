@@ -43,6 +43,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
   'uae-drug-pricing-ede-takeover-launch-research',
   'nupco-tender-market-research-saudi-arabia',
+  'car-t-saudi-arabia-market-research',
   'saudi-health-insurance-payer-research',
   'thiqa-obesity-reimbursement-abu-dhabi',
   'oral-glp-1-uae-market-research',
@@ -251,6 +252,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'NUPCO Tender Market Research for Saudi Oncology 2026',
     description:
       'NUPCO tender market research for Saudi oncology and specialty bids: what vial lists, award ranks and centre facts a 2026 bid team must commission first.',
+  },
+  'car-t-saudi-arabia-market-research': {
+    title: 'CAR-T Saudi Arabia Market Research at Tertiary Centres',
+    description:
+      'CAR-T Saudi Arabia market research for ADC and bispecific adoption at KFSHRC and KAMC: centre capacity, P-T and listed vials a 2026 brief must measure.',
   },
   'saudi-health-insurance-payer-research': {
     title: 'Saudi Health Insurance Payer Research: CHI Formularies',

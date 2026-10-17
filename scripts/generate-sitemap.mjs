@@ -512,6 +512,7 @@ const staticPages = [
   { path: '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/uae-drug-pricing-ede-takeover-launch-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/nupco-tender-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/blog/car-t-saudi-arabia-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/saudi-health-insurance-payer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/thiqa-obesity-reimbursement-abu-dhabi', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/oral-glp-1-uae-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
@@ -1507,6 +1508,7 @@ const STATIC_PAGE_FILES = {
   '/blog/nupco-tender-market-research-saudi-arabia': [
     'src/data/blog-nupco-tender-market-research-saudi-arabia.ts',
   ],
+  '/blog/car-t-saudi-arabia-market-research': ['src/data/blog-car-t-saudi-arabia-market-research.ts'],
   '/blog/saudi-health-insurance-payer-research': [
     'src/data/blog-saudi-health-insurance-payer-research.ts',
   ],

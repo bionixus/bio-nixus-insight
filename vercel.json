@@ -1160,6 +1160,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/nupco-tender-market-research-saudi-arabia"
     },
     {
+      "source": "/blog/car-t-saudi-arabia-market-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/car-t-saudi-arabia-market-research"
+    },
+    {
       "source": "/blog/saudi-health-insurance-payer-research",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/saudi-health-insurance-payer-research"
     },
