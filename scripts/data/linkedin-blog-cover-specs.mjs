@@ -12,6 +12,46 @@ function skylineBlocks(blocks, baseline = 552) {
 }
 
 export const LINKEDIN_BLOG_COVERS = {
+  'rare-disease-market-research-saudi-arabia': {
+    cover: 'rare-disease-market-research-saudi-arabia-cover.jpg',
+    hero: 'rare-disease-market-research-saudi-arabia-hero.jpg',
+    badge: 'RARE DISEASE  ·  SAUDI ARABIA',
+    lines: ['Saudi rare-disease', 'market research'],
+    goldLine: 'Small cohorts, open gaps',
+    sub: 'Diagnosed patients and payer evidence · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 548 C 110 516, 230 576, 350 534 S 500 526, 560 552 V 630 H 0 Z" fill="#0A1422"/>
+      <g fill="none" stroke="${GOLD}" stroke-width="2.2">
+        <path d="M 96 96 C 128 56, 176 56, 208 96 C 240 136, 288 136, 320 96"/>
+        <path d="M 96 96 C 128 136, 176 136, 208 96 C 240 56, 288 56, 320 96"/>
+      </g>
+      <circle cx="96" cy="96" r="6" fill="${GOLD}"/>
+      <circle cx="208" cy="96" r="6" fill="${GOLD_LIGHT}"/>
+      <circle cx="320" cy="96" r="6" fill="${GOLD}"/>
+      <g>
+        <rect x="80" y="188" width="108" height="108" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <circle cx="134" cy="232" r="16" fill="${GOLD}" fill-opacity="0.28" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="216" y="188" width="108" height="108" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <circle cx="246" cy="218" r="7" fill="${GOLD}"/>
+        <circle cx="278" cy="248" r="7" fill="${GOLD_LIGHT}"/>
+        <circle cx="300" cy="226" r="7" fill="${CREAM}"/>
+        <rect x="352" y="188" width="108" height="108" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="372" y="248" width="18" height="28" rx="3" fill="${GOLD}"/>
+        <rect x="396" y="228" width="18" height="48" rx="3" fill="${GOLD_LIGHT}"/>
+        <rect x="420" y="208" width="18" height="68" rx="3" fill="${CREAM}"/>
+      </g>
+      <g fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2">
+        <rect x="108" y="328" width="88" height="186" rx="14"/>
+        <rect x="216" y="298" width="88" height="216" rx="14"/>
+        <rect x="324" y="348" width="88" height="166" rx="14"/>
+      </g>
+      <circle cx="152" cy="392" r="14" fill="${GOLD}" fill-opacity="0.35" stroke="${GOLD}" stroke-width="2"/>
+      <circle cx="260" cy="372" r="14" fill="${GOLD_LIGHT}" fill-opacity="0.35" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+      <circle cx="368" cy="412" r="14" fill="${GOLD}" fill-opacity="0.2" stroke="${GOLD}" stroke-width="2"/>`,
+      'glowR',
+    ),
+  },
   'thiqa-obesity-reimbursement-abu-dhabi': {
     cover: 'thiqa-obesity-reimbursement-abu-dhabi-cover.jpg',
     hero: 'thiqa-obesity-reimbursement-abu-dhabi-hero.jpg',
