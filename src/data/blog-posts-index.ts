@@ -26,6 +26,7 @@ import { KANTAR_ALT_ME_HARDCODED_POST } from '@/data/blog-kantar-alternative-mid
 import { KUWAIT_OBESITY_RESEARCH_HARDCODED_POST } from '@/data/blog-kuwait-obesity-research-glp1-payers';
 import { QATAR_OBESITY_GLP1_HARDCODED_POST } from '@/data/blog-qatar-obesity-glp1-research';
 import { HEMATOLOGY_KSA_HARDCODED_POST } from '@/data/blog-hematology-market-research-saudi-arabia';
+import { RARE_DISEASE_KSA_HARDCODED_POST } from '@/data/blog-rare-disease-market-research-saudi-arabia';
 import { IQVIA_UAE_PRIMARY_HARDCODED_POST } from '@/data/blog-iqvia-alternative-uae-primary-research';
 import { CHOOSE_AGENCY_KSA_HARDCODED_POST } from '@/data/blog-how-to-choose-healthcare-market-research-agency-saudi-arabia';
 import { UAE_EDE_HARDCODED_POST } from '@/data/blog-uae-drug-pricing-ede-takeover-launch-research';
@@ -66,6 +67,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   KUWAIT_OBESITY_RESEARCH_HARDCODED_POST,
   QATAR_OBESITY_GLP1_HARDCODED_POST,
   HEMATOLOGY_KSA_HARDCODED_POST,
+  RARE_DISEASE_KSA_HARDCODED_POST,
   IQVIA_UAE_PRIMARY_HARDCODED_POST,
   CHOOSE_AGENCY_KSA_HARDCODED_POST,
   UAE_EDE_HARDCODED_POST,
