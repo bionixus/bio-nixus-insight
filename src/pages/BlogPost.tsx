@@ -1892,7 +1892,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               <BlogSiteExplorer locale={articleLocale} />
 
               {/* FAQ — uses <details>/<summary> so answers are always in server-rendered HTML */}
-              {mergedBlogFaqItems.length > 0 && (
+              {mergedBlogFaqItems.length > 0 && !post.faqInBody && (
                 <section className="mt-12" aria-label={blogUi.faqHeading}>
                   <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-6 flex items-center gap-3">
                     <span className="inline-flex px-2 py-0.5 text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>{blogUi.faqBadge}</span>

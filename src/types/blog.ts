@@ -77,6 +77,11 @@ export interface BlogPost {
   tableOfContents?: { heading?: string; anchor?: string }[];
   executiveSummary?: string | unknown[];
   faq?: BlogPostFaqItem[];
+  /**
+   * The article HTML already contains the FAQ prose. Schema still uses `faq`,
+   * and the template accordion is skipped so the questions are not repeated.
+   */
+  faqInBody?: boolean;
   ctaSection?: BlogPostCtaSection;
   // SEO / OG / Author
   seoMetaTitle?: string;

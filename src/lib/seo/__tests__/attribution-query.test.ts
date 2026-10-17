@@ -41,6 +41,14 @@ describe('attribution query is not a redirect', () => {
     expect(target.full).not.toContain('path=');
   });
 
+  it('keeps a ref query on the URL so the page is not redirected', () => {
+    const input = '/blog/medicare-globe-model-part-b-account-level-2027?ref=linkedin';
+    const target = canonicalRedirectTarget(input);
+    expect(target.changed).toBe(false);
+    expect(target.full).toBe(input);
+    expect(isAttributionQueryKey('ref')).toBe(false);
+  });
+
   it('still strips internal flags and a trailing slash without dropping utm', () => {
     expect(canonicalRedirectTarget('/contact?__ssr=1').full).toBe('/contact');
     expect(canonicalRedirectTarget('/contact?trk=newsletter').full).toBe('/contact');
