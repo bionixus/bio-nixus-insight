@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04",
+  "generatedAt": "2026-10-17",
   "source": "data/gsc/current-week/Pages.csv",
   "minImpressions": 100,
   "freezeWeeks": 8,
@@ -171,10 +171,10 @@
     },
     "/blog/healthcare-overview-egypt-market-2026": {
       "impressions": 7143,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-10-17",
       "override": {
-        "title": "Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide",
-        "description": "Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus."
+        "title": "Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra",
+        "description": "Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview."
       }
     },
     "/blog/healthcare-overview-kuwait-market-2026": {
@@ -450,10 +450,10 @@
     },
     "/healthcare-market-research": {
       "impressions": 4561,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-10-17",
       "override": {
-        "title": "Healthcare Market Research Companies | Who to Brief",
-        "description": "BioNixus is the primary healthcare market research company. Keep IQVIA, Kantar, Ipsos for syndicated. Custom account/SKU fieldwork. 48-hour proposal."
+        "title": "Healthcare Market Research Company | Saudi, UAE & GCC",
+        "description": "Healthcare market research company for Saudi Arabia, the UAE and the GCC. Primary HCP fieldwork vs IQVIA syndicated. $10k–$60k. 48-hour proposal from BioNixus."
       }
     },
     "/healthcare-market-research-singapore": {
@@ -483,10 +483,10 @@
     },
     "/healthcare-market-research/saudi-arabia": {
       "impressions": 2765,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-10-17",
       "override": {
-        "title": "Healthcare Market Research Companies in Saudi Arabia | SFDA & NUPCO | BioNixus",
-        "description": "Healthcare market research companies in Saudi Arabia: SFDA-aware HCP surveys, NUPCO tenders, Arabic fieldwork in Riyadh, Jeddah & Dammam. Request a proposal."
+        "title": "Healthcare Market Research Company in Saudi Arabia",
+        "description": "Healthcare market research company in Saudi Arabia: SFDA-aware HCP surveys, NUPCO tenders, Arabic fieldwork in Riyadh, Jeddah & Al Khobar. Request a proposal."
       }
     },
     "/healthcare-market-research/services/kol-mapping": {
@@ -702,10 +702,10 @@
     },
     "/insights/top-market-research-companies-dubai-2026": {
       "impressions": 224,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-10-17",
       "override": {
-        "title": "6 Best Market Research Companies in Dubai (2026) | Ranked Guide",
-        "description": "Top market research companies in Dubai 2026 — ranked UAE buyer guide for consumer, healthcare & pharma fieldwork. Compare BioNixus, Kantar & NielsenIQ."
+        "title": "Market Research Companies in Dubai 2026 | Ranked Guide",
+        "description": "Market research companies in Dubai compared for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. Ranked buyer guide."
       }
     },
     "/insights/top-market-research-companies-egypt-2026": {
@@ -813,10 +813,10 @@
     },
     "/iqvia-alternative": {
       "impressions": 3608,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-10-17",
       "override": {
-        "title": "IQVIA Alternatives & Competitors: Top 10 Ranked (2026)",
-        "description": "IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits."
+        "title": "IQVIA vs Competitors: Primary Research Compared 2026",
+        "description": "Compare IQVIA competitors for healthcare research: when syndicated audits still fit, and when BioNixus wins on primary HCP fieldwork. 48-hour proposal."
       }
     },
     "/italy-medical-devices-market-report": {
@@ -982,10 +982,10 @@
     },
     "/nielsen-alternative": {
       "impressions": 747,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-10-17",
       "override": {
-        "title": "Nielsen Competitors: NielsenIQ Alternatives Compared (2026)",
-        "description": "Nielsen competitors compared: when NielsenIQ retail audits are enough, and when to brief BioNixus for named accounts, traditional trade and SKU-level cuts."
+        "title": "NielsenIQ vs Competitors: Audit or Fieldwork (2026)",
+        "description": "Nielsen competitors compared: keep NielsenIQ for national retail audits, brief BioNixus for named accounts, traditional trade and SKU-level cuts in 2026."
       }
     },
     "/pharmaceutical-companies": {
