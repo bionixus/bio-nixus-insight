@@ -104,6 +104,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'Chinese companies entering Saudi Arabia and the UAE: market research playbook',
   },
   {
+    to: getIndustriesInsightPostPath('chinese-companies-egypt-market-research'),
+    label: 'Chinese Brands in Egypt and North Africa: What to Research',
+  },
+  {
     to: getIndustriesInsightPostPath('nielsen-alternative-saudi-arabia'),
     label: 'Syndicated vs custom research in Saudi Arabia: when each fits',
   },

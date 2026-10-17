@@ -32,6 +32,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'uk-market-entry-research',
   'new-zealand-exporters-gcc-market-research',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
+  'chinese-companies-egypt-market-research',
   'nielsen-alternative-saudi-arabia',
   'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
@@ -203,6 +204,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Chinese Companies Entering Saudi Arabia and the UAE',
     description:
       'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
+  },
+  'chinese-companies-egypt-market-research': {
+    title: 'Chinese Companies Egypt Market Research: 2026 Guide',
+    description:
+      'Chinese companies Egypt market research for Cairo and North Africa brands: demand, 14% VAT, GAFI licence and SCZone proof before the HQ remits capital.',
   },
   'nielsen-alternative-saudi-arabia': {
     title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
