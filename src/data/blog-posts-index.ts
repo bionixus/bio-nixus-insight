@@ -30,6 +30,7 @@ import { IQVIA_UAE_PRIMARY_HARDCODED_POST } from '@/data/blog-iqvia-alternative-
 import { CHOOSE_AGENCY_KSA_HARDCODED_POST } from '@/data/blog-how-to-choose-healthcare-market-research-agency-saudi-arabia';
 import { UAE_EDE_HARDCODED_POST } from '@/data/blog-uae-drug-pricing-ede-takeover-launch-research';
 import { NUPCO_TENDER_HARDCODED_POST } from '@/data/blog-nupco-tender-market-research-saudi-arabia';
+import { CART_KSA_HARDCODED_POST } from '@/data/blog-car-t-saudi-arabia-market-research';
 import { THIQA_OBESITY_HARDCODED_POST } from '@/data/blog-thiqa-obesity-reimbursement-abu-dhabi';
 
 /**
@@ -70,6 +71,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   CHOOSE_AGENCY_KSA_HARDCODED_POST,
   UAE_EDE_HARDCODED_POST,
   NUPCO_TENDER_HARDCODED_POST,
+  CART_KSA_HARDCODED_POST,
   THIQA_OBESITY_HARDCODED_POST,
 ];
 
