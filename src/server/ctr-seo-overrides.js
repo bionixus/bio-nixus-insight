@@ -1019,6 +1019,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'NUPCO tender market research for Saudi oncology and specialty bids: what vial lists, award ranks and centre facts a 2026 bid team must commission first.',
   },
+  '/blog/saudi-health-insurance-payer-research': {
+    title: 'Saudi Health Insurance Payer Research: CHI Formularies',
+    description:
+      'Saudi health insurance payer research on CHI, the Dhaman formulary and insurer lists: what a 2026 launch team must commission before a private claim pays.',
+  },
   '/blog/thiqa-obesity-reimbursement-abu-dhabi': {
     title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
     description:

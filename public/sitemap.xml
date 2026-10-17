@@ -1427,7 +1427,7 @@
     <loc>https://www.bionixus.com/blog/thiqa-obesity-reimbursement-abu-dhabi</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/top-therapy-areas-pharma-growth-saudi-arabia</loc>
@@ -1492,6 +1492,12 @@
   <url>
     <loc>https://www.bionixus.com/blog/rare-disease-market-research-saudi-arabia</loc>
     <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/saudi-health-insurance-payer-research</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
