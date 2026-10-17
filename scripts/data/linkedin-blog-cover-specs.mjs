@@ -12,6 +12,50 @@ function skylineBlocks(blocks, baseline = 552) {
 }
 
 export const LINKEDIN_BLOG_COVERS = {
+  'diabetes-market-research-uae-2026-price-cuts': {
+    cover: 'diabetes-market-research-uae-2026-price-cuts-cover.jpg',
+    hero: 'diabetes-market-research-uae-2026-price-cuts-hero.jpg',
+    badge: 'UAE  ·  DIABETES  ·  2026',
+    lines: ['Diabetes research', 'in the UAE'],
+    goldLine: 'After the 2026 cuts',
+    sub: 'Price, switching and listing evidence',
+    motif: glowMotif(
+      `
+      <path d="M 0 548 C 100 512, 220 576, 340 532 S 490 524, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g fill="#0C1728" stroke="${GOLD_LIGHT}" stroke-width="1.6">
+        ${skylineBlocks([
+          [40, 24, 96],
+          [72, 34, 160, true],
+          [114, 22, 118],
+          [144, 46, 204],
+          [198, 28, 140],
+          [234, 38, 182, true],
+          [280, 22, 108],
+          [310, 50, 228],
+        ])}
+      </g>
+      <g>
+        <circle cx="176" cy="168" r="78" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.4"/>
+        <circle cx="176" cy="168" r="52" fill="none" stroke="${GOLD_LIGHT}" stroke-width="6"/>
+        <circle cx="176" cy="168" r="8" fill="${GOLD}"/>
+        <path d="M 176 168 L 210 132" stroke="${CREAM}" stroke-width="4" stroke-linecap="round"/>
+        <rect x="300" y="88" width="196" height="168" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2.2"/>
+        <rect x="324" y="196" width="28" height="40" rx="4" fill="${GOLD}"/>
+        <rect x="364" y="168" width="28" height="68" rx="4" fill="${GOLD_LIGHT}"/>
+        <rect x="404" y="148" width="28" height="88" rx="4" fill="${GOLD}"/>
+        <rect x="444" y="128" width="28" height="108" rx="4" fill="${CREAM}"/>
+        <rect x="92" y="348" width="78" height="152" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="188" y="318" width="78" height="182" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="284" y="288" width="78" height="212" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="380" y="258" width="78" height="242" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="110" y="368" width="42" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="206" y="338" width="42" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+        <rect x="302" y="308" width="42" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="398" y="278" width="42" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+      </g>`,
+      'glowDiabetes',
+    ),
+  },
   'oral-glp-1-uae-market-research': {
     cover: 'oral-glp-1-uae-market-research-cover.jpg',
     hero: 'oral-glp-1-uae-market-research-hero.jpg',

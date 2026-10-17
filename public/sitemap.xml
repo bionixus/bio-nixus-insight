@@ -84,7 +84,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/bionixus-industries</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/bionixus-industries" />
@@ -110,37 +110,25 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/blog/%d8%a3%d8%a8%d8%ad%d8%a7%d8%ab-%d8%a7%d9%84%d8%b3%d9%88%d9%82-%d8%a7%d9%84%d8%af%d9%88%d8%a7%d8%a6%d9%8a%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%b4%d8%b1%d9%82-%d8%a7%d9%84%d8%a3%d9%88%d8%b3%d8%b7-%d9%88-%d8%af%d9%88%d9%84-%d8%a7%d9%84%d8%ae%d9%84%d9%8a%d8%ac-%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/blog/%d8%b3%d9%88%d9%82-%d8%a7%d9%84%d8%af%d9%88%d8%a7%d8%a1-%d8%a7%d9%84%d8%b3%d8%b9%d9%88%d8%af%d9%8a-2026</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/blog/gcc-pharmaceuticals-market-arabic-2026</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/ar/blog/pharmaceutical-market-research-middle-east-gcc</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/ar/blog/saudi-pharma-market-2026</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/ar/blog/quantitative-market-research-and-market-access</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -539,6 +527,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/australia-gcc-market-entry-research</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/b2b-market-research-uae</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -557,6 +551,12 @@
     <priority>0.88</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/consumer-survey-company-saudi-arabia</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -569,32 +569,14 @@
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/bionixus-industries/insights/australia-gcc-market-entry-research</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/europe-to-gcc-market-entry-research</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/bionixus-industries/insights/uk-market-entry-research</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/bionixus-industries/insights/new-zealand-exporters-gcc-market-research</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/feasibility-study-company-saudi-arabia</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -623,16 +605,16 @@
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/new-zealand-exporters-gcc-market-research</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/nielsen-alternative-saudi-arabia</loc>
@@ -645,6 +627,12 @@
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/uk-market-entry-research</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/bionixus-market-research-middle-east</loc>
@@ -758,6 +746,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/blog/car-t-saudi-arabia-market-research</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/blog/cenrifki-tolebrutinib-nrspms-ema-chmp-2026</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -800,6 +794,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/blog/diabetes-market-research-uae-2026-price-cuts</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/blog/digital-therapeutics-regulation-mena-markets</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -808,6 +808,12 @@
   <url>
     <loc>https://www.bionixus.com/blog/eaeu-farmacevticheskiy-dostup-2026</loc>
     <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/egypt-eda-decree-480-drug-pricing-2026</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -890,6 +896,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/blog/gcc-clinical-trials-market-2026</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -914,12 +926,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bionixus.com/blog/gcc-pharmaceutical-market-comparison-uae-saudi-kuwait</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.bionixus.com/blog/gesundheitsmarkt-deutschland-2026</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -927,7 +933,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/glp-1-physician-survey-saudi-arabia</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1118,6 +1124,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/blog/medicare-globe-model-part-b-account-level-2027</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/blog/medtech-singapore-2026-market-hsa-registration</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -1185,7 +1197,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/obesity-market-research-kuwait</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1204,6 +1216,18 @@
   <url>
     <loc>https://www.bionixus.com/blog/oncology-uae-2026-cancer-care-outlook</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/oral-glp-1-uae-market-research</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1328,8 +1352,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/blog/rare-disease-market-research-saudi-arabia</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/blog/rare-disease-orphan-drug-saudi-arabia-sfda-2026</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/blog/rasonque-daraxonrasib-pancreatic-ema-chmp-2026</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1388,6 +1424,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bionixus.com/blog/saudi-health-insurance-payer-research</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bionixus.com/blog/saudi-healthcare-market-research-guide-ar-2026</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -1437,9 +1479,9 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/thiqa-obesity-reimbursement-abu-dhabi</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/blog/top-therapy-areas-pharma-growth-saudi-arabia</loc>
@@ -1498,60 +1540,6 @@
   <url>
     <loc>https://www.bionixus.com/blog/who-does-obesity-market-research-saudi-arabia</loc>
     <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/rare-disease-market-research-saudi-arabia</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/car-t-saudi-arabia-market-research</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/saudi-health-insurance-payer-research</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/oral-glp-1-uae-market-research</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/egypt-eda-decree-480-drug-pricing-2026</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/medicare-globe-model-part-b-account-level-2027</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  <url>
-    <loc>https://www.bionixus.com/blog/rasonque-daraxonrasib-pancreatic-ema-chmp-2026</loc>
-    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
@@ -1764,7 +1752,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/de/bionixus-industries</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/bionixus-industries" />
@@ -1962,7 +1950,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/egypt-healthcare-market-research</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2070,7 +2058,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/es/bionixus-industries</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/bionixus-industries" />
@@ -2185,7 +2173,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/faq</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2263,7 +2251,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/fr/bionixus-industries</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/bionixus-industries" />
@@ -2791,181 +2779,181 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/abu-dhabi</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/algeria</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/australia</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/bahrain</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/brazil</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/canada</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/china</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/denmark</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/dubai</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/egypt</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/europe</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/france</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/germany</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/india</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/iraq</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/italy</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/japan</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/jeddah</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/jordan</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/kenya</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/kuwait</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/lebanon</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/libya</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/mexico</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/morocco</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/nigeria</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/norway</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/oman</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/qatar</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/riyadh</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2977,67 +2965,67 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/services/kol-mapping</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/services/physician-insights</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/services/qualitative-research</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/services/quantitative-research</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/singapore</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/south-africa</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/south-korea</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/spain</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/sweden</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/switzerland</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/aesthetic-medicine</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -3049,103 +3037,103 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/biosimilars</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/cardiology</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/cardiovascular</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/dermatology</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/diabetes</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/digital-health</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/immunology</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/neurology-cns</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/oncology</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/rare-diseases</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/respiratory</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/therapy/vaccines</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/tunisia</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/turkey</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/uae</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/uk</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/healthcare-market-research/united-states</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -3208,7 +3196,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/best-global-market-research-companies-pharma-2026</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
@@ -3556,7 +3544,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-global-healthcare-market-research-companies-2026</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
@@ -3712,7 +3700,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-healthcare-market-research-companies-mena-2026</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3772,7 +3760,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-healthcare-market-research-companies-saudi-arabia-2026</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -3898,7 +3886,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-market-research-companies-argentina-2026</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights/top-market-research-companies-argentina-2026" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.bionixus.com/es/insights/top-empresas-investigacion-mercado-argentina-2026" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/insights/top-market-research-companies-argentina-2026" />
@@ -3919,7 +3907,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-market-research-companies-brazil-2026</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights/top-market-research-companies-brazil-2026" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/insights/top-market-research-companies-brasil-2026" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/insights/top-market-research-companies-brazil-2026" />
@@ -3958,7 +3946,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-market-research-companies-egypt-2026</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/insights/top-market-research-companies-egypt-2026" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.bionixus.com/ar/insights/top-market-research-companies-egypt-2026" />
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.bionixus.com/zh/insights/top-market-research-companies-egypt-2026" />
@@ -3980,7 +3968,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-market-research-companies-gcc-2026</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.87</priority>
   </url>
@@ -4400,13 +4388,13 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-pharma-market-research-companies-middle-east-2026</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.87</priority>
   </url>
   <url>
     <loc>https://www.bionixus.com/insights/top-pharmaceutical-analytics-companies-worldwide-2026</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
@@ -6140,7 +6128,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/market-research</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -6882,7 +6870,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/pharmaceutical-market-research-bahrain</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -7050,7 +7038,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/pharmaceutical-therapy-areas</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -7122,7 +7110,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/pt/bionixus-industries</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/bionixus-industries" />
@@ -7587,7 +7575,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/ru/bionixus-industries</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/bionixus-industries" />
@@ -8365,7 +8353,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh/bionixus-industries</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/bionixus-industries" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/bionixus-industries" />
@@ -8449,7 +8437,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/zh/services</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/services" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.bionixus.com/pt/services" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.bionixus.com/de/services" />

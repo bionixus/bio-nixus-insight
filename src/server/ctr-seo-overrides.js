@@ -1034,6 +1034,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'UAE drug pricing after the Emirates Drug Establishment takeover: what launch research must prove for first price, May 2026 repricing and payer listing.',
   },
+  '/blog/diabetes-market-research-uae-2026-price-cuts': {
+    title: 'Diabetes Market Research UAE After 2026 Price Cuts',
+    description:
+      'Diabetes market research UAE after the 2026 EDE list cuts: what brand teams should commission on price, switching, pharmacy behaviour and payer listing.',
+  },
   '/blog/nupco-tender-market-research-saudi-arabia': {
     title: 'NUPCO Tender Market Research for Saudi Oncology 2026',
     description:
