@@ -27,6 +27,10 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
+  'europe-to-gcc-market-entry-research',
+  'chinese-companies-entering-saudi-arabia-and-the-uae',
+  'nielsen-alternative-saudi-arabia',
+  'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
@@ -34,6 +38,8 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'rare-disease-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'uae-drug-pricing-ede-takeover-launch-research',
+  'nupco-tender-market-research-saudi-arabia',
   'thiqa-obesity-reimbursement-abu-dhabi',
 ]);
 
@@ -161,6 +167,26 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
   },
+  'europe-to-gcc-market-entry-research': {
+    title: 'Europe-to-GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Europe-to-GCC market entry research for European brands: six-country sequencing, VAT, G-Mark, channels and price before a brand committee commits capital.',
+  },
+  'chinese-companies-entering-saudi-arabia-and-the-uae': {
+    title: 'Chinese Companies Entering Saudi Arabia and the UAE',
+    description:
+      'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
+  },
+  'nielsen-alternative-saudi-arabia': {
+    title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
+    description:
+      'Nielsen alternative Saudi Arabia: syndicated vs custom research Saudi Arabia — when a retail audit fits, when custom work is needed, how to combine both.',
+  },
+  'government-customer-satisfaction-research-saudi-arabia': {
+    title: 'Government Customer Satisfaction Survey Saudi Arabia',
+    description:
+      'Government customer satisfaction survey Saudi Arabia: Vision 2030, DGA CSAT, Absher/Tawakkalna, Arabic fieldwork and citizen satisfaction research KSA.',
+  },
   'kantar-alternative-middle-east': {
     title: 'Kantar Alternative Middle East: When Specialists Fit',
     description:
@@ -195,6 +221,16 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Healthcare Market Research Agency Saudi Arabia: 10 Questions',
     description:
       'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.',
+  },
+  'uae-drug-pricing-ede-takeover-launch-research': {
+    title: 'UAE Drug Pricing After EDE Takeover: Launch Research',
+    description:
+      'UAE drug pricing after the Emirates Drug Establishment takeover: what launch research must prove for first price, May 2026 repricing and payer listing.',
+  },
+  'nupco-tender-market-research-saudi-arabia': {
+    title: 'NUPCO Tender Market Research for Saudi Oncology 2026',
+    description:
+      'NUPCO tender market research for Saudi oncology and specialty bids: what vial lists, award ranks and centre facts a 2026 bid team must commission first.',
   },
   'thiqa-obesity-reimbursement-abu-dhabi': {
     title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',

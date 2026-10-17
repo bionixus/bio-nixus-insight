@@ -25,6 +25,10 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
+  'europe-to-gcc-market-entry-research',
+  'chinese-companies-entering-saudi-arabia-and-the-uae',
+  'nielsen-alternative-saudi-arabia',
+  'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
@@ -32,6 +36,8 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'rare-disease-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'uae-drug-pricing-ede-takeover-launch-research',
+  'nupco-tender-market-research-saudi-arabia',
   'thiqa-obesity-reimbursement-abu-dhabi',
 ]);
 
@@ -56,6 +62,10 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'market-entry-research-saudi-arabia',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
+  'europe-to-gcc-market-entry-research',
+  'chinese-companies-entering-saudi-arabia-and-the-uae',
+  'nielsen-alternative-saudi-arabia',
+  'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
@@ -63,6 +73,8 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'rare-disease-market-research-saudi-arabia',
   'iqvia-alternative-uae-primary-research',
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'uae-drug-pricing-ede-takeover-launch-research',
+  'nupco-tender-market-research-saudi-arabia',
   'thiqa-obesity-reimbursement-abu-dhabi',
 ]);
 

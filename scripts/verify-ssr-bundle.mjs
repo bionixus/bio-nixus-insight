@@ -45,6 +45,10 @@ const CRITICAL_PATHS = [
   '/bionixus-industries/insights/market-entry-research-saudi-arabia',
   '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
   '/bionixus-industries/insights/b2b-market-research-uae',
+  '/bionixus-industries/insights/europe-to-gcc-market-entry-research',
+  '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae',
+  '/bionixus-industries/insights/nielsen-alternative-saudi-arabia',
+  '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia',
   '/bionixus-industries/insights/kantar-alternative-middle-east',
   '/blog/obesity-market-research-kuwait',
   '/blog/qatar-obesity-glp1-market-research',
@@ -52,6 +56,8 @@ const CRITICAL_PATHS = [
   '/blog/rare-disease-market-research-saudi-arabia',
   '/blog/iqvia-alternative-uae-primary-research',
   '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  '/blog/uae-drug-pricing-ede-takeover-launch-research',
+  '/blog/nupco-tender-market-research-saudi-arabia',
   '/blog/thiqa-obesity-reimbursement-abu-dhabi',
 ];
 
