@@ -142,6 +142,48 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowN',
     ),
   },
+  'saudi-health-insurance-payer-research': {
+    cover: 'saudi-health-insurance-payer-research-cover.jpg',
+    hero: 'saudi-health-insurance-payer-research-hero.jpg',
+    badge: 'CHI  ·  SAUDI ARABIA',
+    lines: ['Saudi health', 'insurance payers'],
+    goldLine: 'CHI and Dhaman',
+    sub: 'Formulary evidence before a claim · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 548 C 110 516, 240 574, 360 534 S 510 526, 560 552 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="64" y="72" width="432" height="168" rx="18" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.2"/>
+        <rect x="88" y="96" width="168" height="14" rx="4" fill="${GOLD}"/>
+        <rect x="88" y="124" width="220" height="8" rx="4" fill="${CREAM}" fill-opacity="0.28"/>
+        <rect x="88" y="146" width="180" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+        <rect x="88" y="176" width="72" height="40" rx="8" fill="${GOLD}" fill-opacity="0.22" stroke="${GOLD}" stroke-width="1.6"/>
+        <rect x="176" y="176" width="72" height="40" rx="8" fill="${GOLD_LIGHT}" fill-opacity="0.2" stroke="${GOLD_LIGHT}" stroke-width="1.6"/>
+        <rect x="264" y="176" width="72" height="40" rx="8" fill="${CREAM}" fill-opacity="0.16" stroke="${CREAM}" stroke-width="1.6"/>
+        <circle cx="420" cy="156" r="34" fill="none" stroke="${GOLD}" stroke-width="3"/>
+        <path d="M 406 156 L 416 166 L 440 140" fill="none" stroke="${GOLD}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <rect x="64" y="268" width="132" height="196" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <text x="130" y="316" text-anchor="middle" fill="${GOLD}" font-size="28" font-weight="700" font-family="Georgia, serif">01</text>
+        <rect x="88" y="340" width="84" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="88" y="364" width="64" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
+        <rect x="88" y="388" width="72" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+
+        <rect x="214" y="268" width="132" height="196" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <text x="280" y="316" text-anchor="middle" fill="${GOLD_LIGHT}" font-size="28" font-weight="700" font-family="Georgia, serif">02</text>
+        <rect x="238" y="340" width="84" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="238" y="364" width="72" height="8" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.45"/>
+        <rect x="238" y="388" width="56" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+
+        <rect x="364" y="268" width="132" height="196" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <text x="430" y="316" text-anchor="middle" fill="${GOLD}" font-size="28" font-weight="700" font-family="Georgia, serif">03</text>
+        <rect x="388" y="340" width="84" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="388" y="364" width="56" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
+        <rect x="388" y="388" width="68" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+      </g>`,
+      'glowChi',
+    ),
+  },
   'how-to-choose-healthcare-market-research-agency-saudi-arabia': {
     cover: 'how-to-choose-healthcare-market-research-agency-saudi-arabia-cover.jpg',
     hero: 'how-to-choose-healthcare-market-research-agency-saudi-arabia-hero.jpg',

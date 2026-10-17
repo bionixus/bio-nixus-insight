@@ -508,6 +508,7 @@ const staticPages = [
   { path: '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/uae-drug-pricing-ede-takeover-launch-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/nupco-tender-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/blog/saudi-health-insurance-payer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/thiqa-obesity-reimbursement-abu-dhabi', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
@@ -1487,6 +1488,9 @@ const STATIC_PAGE_FILES = {
   ],
   '/blog/nupco-tender-market-research-saudi-arabia': [
     'src/data/blog-nupco-tender-market-research-saudi-arabia.ts',
+  ],
+  '/blog/saudi-health-insurance-payer-research': [
+    'src/data/blog-saudi-health-insurance-payer-research.ts',
   ],
   '/blog/thiqa-obesity-reimbursement-abu-dhabi': ['src/data/blog-thiqa-obesity-reimbursement-abu-dhabi.ts'],
   '/pt/services': ['src/data/servicesHubContent.pt.ts', 'src/pages/Services.tsx'],

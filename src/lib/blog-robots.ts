@@ -37,6 +37,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
   'uae-drug-pricing-ede-takeover-launch-research',
   'nupco-tender-market-research-saudi-arabia',
+  'saudi-health-insurance-payer-research',
   'thiqa-obesity-reimbursement-abu-dhabi',
 ]);
 
@@ -73,6 +74,7 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
   'uae-drug-pricing-ede-takeover-launch-research',
   'nupco-tender-market-research-saudi-arabia',
+  'saudi-health-insurance-payer-research',
   'thiqa-obesity-reimbursement-abu-dhabi',
 ]);
 
