@@ -534,7 +534,7 @@
   </url>
   <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -577,6 +577,12 @@
   <url>
     <loc>https://www.bionixus.com/bionixus-industries/insights/europe-to-gcc-market-entry-research</loc>
     <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.bionixus.com/bionixus-industries/insights/new-zealand-exporters-gcc-market-research</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>

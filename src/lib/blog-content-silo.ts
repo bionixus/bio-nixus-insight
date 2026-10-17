@@ -92,6 +92,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'Europe-to-GCC market entry research: what European brands need to know',
   },
   {
+    to: getIndustriesInsightPostPath('new-zealand-exporters-gcc-market-research'),
+    label: 'New Zealand exporters GCC market research: dairy, meat and food proof',
+  },
+  {
     to: getIndustriesInsightPostPath('chinese-companies-entering-saudi-arabia-and-the-uae'),
     label: 'Chinese companies entering Saudi Arabia and the UAE: market research playbook',
   },

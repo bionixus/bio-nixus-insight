@@ -17,7 +17,7 @@ import {
 
 export const INDUSTRIES_INSIGHTS_PATH = '/bionixus-industries/insights';
 export const INDUSTRIES_INSIGHTS_CANONICAL = 'https://www.bionixus.com/bionixus-industries/insights';
-export const INDUSTRIES_INSIGHTS_DATE_MODIFIED = '2026-10-16';
+export const INDUSTRIES_INSIGHTS_DATE_MODIFIED = '2026-10-17';
 export const INDUSTRIES_INSIGHTS_TITLE = 'Global Industry Market Research Insights | BioNixus';
 export const INDUSTRIES_INSIGHTS_DESCRIPTION =
   'BioNixus is a global market research firm across FMCG, retail, finance, real estate, automotive, technology and energy. Founded 2012, 118 clients, 48 countries.';
