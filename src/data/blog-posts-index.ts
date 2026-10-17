@@ -23,6 +23,7 @@ import { EU_GCC_ENTRY_HARDCODED_POST } from '@/data/blog-europe-to-gcc-market-en
 import { UK_ENTRY_HARDCODED_POST } from '@/data/blog-uk-market-entry-research';
 import { NZ_GCC_EXPORT_HARDCODED_POST } from '@/data/blog-nz-exporters-gcc-market-research';
 import { CHINESE_KSA_UAE_HARDCODED_POST } from '@/data/blog-chinese-companies-entering-ksa-uae';
+import { CN_EGYPT_HARDCODED_POST } from '@/data/blog-chinese-companies-egypt-market-research';
 import { NIELSEN_KSA_HARDCODED_POST } from '@/data/blog-nielsen-alternative-saudi-arabia';
 import { KSA_GOV_CSAT_HARDCODED_POST } from '@/data/blog-government-customer-satisfaction-saudi-arabia';
 import { KANTAR_ALT_ME_HARDCODED_POST } from '@/data/blog-kantar-alternative-middle-east';
@@ -76,6 +77,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   UK_ENTRY_HARDCODED_POST,
   NZ_GCC_EXPORT_HARDCODED_POST,
   CHINESE_KSA_UAE_HARDCODED_POST,
+  CN_EGYPT_HARDCODED_POST,
   NIELSEN_KSA_HARDCODED_POST,
   KSA_GOV_CSAT_HARDCODED_POST,
   KANTAR_ALT_ME_HARDCODED_POST,

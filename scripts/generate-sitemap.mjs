@@ -125,6 +125,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'new-zealand-exporters-gcc-market-research',
   'uae-drug-pricing-ede-takeover-launch-research',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
+  'chinese-companies-egypt-market-research',
   'nielsen-alternative-saudi-arabia',
   'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
@@ -589,6 +590,7 @@ const staticPages = [
   { path: '/bionixus-industries/insights/uk-market-entry-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/bionixus-industries/insights/chinese-companies-egypt-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/bionixus-industries/insights/nielsen-alternative-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/kantar-alternative-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
@@ -1491,6 +1493,9 @@ const STATIC_PAGE_FILES = {
   ],
   '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae': [
     'src/data/blog-chinese-companies-entering-ksa-uae.ts',
+  ],
+  '/bionixus-industries/insights/chinese-companies-egypt-market-research': [
+    'src/data/blog-chinese-companies-egypt-market-research.ts',
   ],
   '/bionixus-industries/insights/nielsen-alternative-saudi-arabia': [
     'src/data/blog-nielsen-alternative-saudi-arabia.ts',

@@ -75,6 +75,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research',
   '/blog/chinese-companies-entering-saudi-arabia-and-the-uae':
     '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae',
+  '/blog/chinese-companies-egypt-market-research':
+    '/bionixus-industries/insights/chinese-companies-egypt-market-research',
   '/blog/nielsen-alternative-saudi-arabia':
     '/bionixus-industries/insights/nielsen-alternative-saudi-arabia',
   '/blog/government-customer-satisfaction-research-saudi-arabia':
