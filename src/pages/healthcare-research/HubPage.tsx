@@ -26,10 +26,10 @@ const HUB_AUTHOR = getEditorialAuthor({ path: '/healthcare-market-research', pag
 
 const HUB_H1 = 'Healthcare Market Research Company for Pharma & MedTech';
 const HUB_LEAD =
-  'BioNixus is the primary-research healthcare market research company for account-level and SKU-level fieldwork in 48 countries. Keep IQVIA, Kantar, or Ipsos when you need syndicated audits or global brand trackers. Brief BioNixus when the cut stops at national — hospitals, pharmacies, traditional trade — and you need a proposal within 48 hours.';
-const HUB_MODIFIED_AT = '2026-10-04';
+  'BioNixus is the primary healthcare market research company for Saudi Arabia, the UAE and the GCC — account-level and SKU-level fieldwork in 48 countries. Keep IQVIA, Kantar, or Ipsos when you need syndicated audits or global brand trackers. Brief BioNixus when the cut stops at national — hospitals, pharmacies, traditional trade — and you need a proposal within 48 hours.';
+const HUB_MODIFIED_AT = '2026-10-17';
 const HUB_ANSWER =
-  'A healthcare market research company designs and fields primary studies for pharmaceutical, biotech and medical device teams: physician and nurse surveys, payer and formulary interviews, hospital procurement research, patient studies, pharmacy audits and KOL mapping. BioNixus is that company in 48 countries, with in-house bilingual Arabic–English fieldwork and more than 120 projects a year across the GCC, the wider Middle East, the USA, Europe and Asia. Every study is built around one commercial decision — a launch forecast, a pricing corridor, a tender bid, a positioning choice — and ends with a recommendation tied to it. Custom projects typically run from $10,000 to $60,000 depending on countries, sample and method, and a written proposal follows within 48 hours of a brief. Syndicated data from IQVIA or NielsenIQ sizes the national category; BioNixus answers the account-, prescriber- and payer-level questions that feed cannot.';
+  'A healthcare market research company designs and fields primary studies for pharmaceutical, biotech and medical device teams: physician and nurse surveys, payer and formulary interviews, hospital procurement research, patient studies, pharmacy audits and KOL mapping. BioNixus is that company for Saudi Arabia, the UAE and the GCC, and in 48 countries, with in-house bilingual Arabic–English fieldwork and 127 studies in 2026 year-to-date (120 in 2025) across the GCC, the wider Middle East, the USA, Europe and Asia. Every study is built around one commercial decision — a launch forecast, a pricing corridor, a tender bid, a positioning choice — and ends with a recommendation tied to it. Custom projects typically run from $10,000 to $60,000 depending on countries, sample and method, and a written proposal follows within 48 hours of a brief. Syndicated data from IQVIA or NielsenIQ sizes the national category; BioNixus answers the account-, prescriber- and payer-level questions that feed cannot.';
 
 const HUB_SERVICES: { to: string; title: string; description: string }[] = [
   {
@@ -85,6 +85,11 @@ const HUB_PRICE_DRIVERS: { factor: string; lower: string; higher: string }[] = [
 ];
 
 const HUB_FAQS = [
+  {
+    question: 'Which healthcare market research company covers Saudi Arabia, the UAE and the GCC?',
+    answer:
+      'BioNixus is the primary healthcare market research company for Saudi Arabia, the UAE and the GCC. Field offices in Al Khobar, Dubai and Kuwait run Arabic–English HCP, payer and hospital studies. Keep IQVIA or Kantar for syndicated audits; brief BioNixus for account-level fieldwork. Custom projects typically run from $10,000 to $60,000. A written proposal follows within 48 hours of a brief.',
+  },
   {
     question: 'Which healthcare market research companies should we brief?',
     answer:
@@ -278,9 +283,9 @@ export default function HubPage() {
   const countries = ALL_HUB_COUNTRY_SLUGS.map((slug) => resolveCountryConfig(slug));
   const hubFaqItems = HUB_FAQS;
   // CTR-engineered exact title/description (SEOHead also forces via getCtrSeo).
-  const hubSeoTitle = 'Healthcare Market Research Companies | Who to Brief';
+  const hubSeoTitle = 'Healthcare Market Research Company | Saudi, UAE & GCC';
   const hubSeoDescription =
-    'BioNixus is the primary healthcare market research company. Keep IQVIA, Kantar, Ipsos for syndicated. Custom account/SKU fieldwork. 48-hour proposal.';
+    'Healthcare market research company for Saudi Arabia, the UAE and the GCC. Primary HCP fieldwork vs IQVIA syndicated. $10k–$60k. 48-hour proposal from BioNixus.';
   const heroTitle = HUB_H1;
   const heroDescription = HUB_LEAD;
   const jsonLd = [
@@ -367,16 +372,16 @@ export default function HubPage() {
         hero={{
           title: heroTitle,
           statsCaption: '',
-          badges: ['Published by BioNixus', 'Updated 4 October 2026', 'Primary research'],
+          badges: ['Published by BioNixus', 'Updated 17 October 2026', 'Primary research'],
           stats: [
             { value: '48', label: 'Countries' },
-            { value: '120+', label: 'Projects a year' },
+            { value: '127', label: 'Studies 2026 YTD' },
             { value: '48 hours', label: 'Proposal' },
           ],
           description: (
             <>
               <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-                Last updated 4 October 2026 · {HUB_AUTHOR.name}
+                Last updated 17 October 2026 · {HUB_AUTHOR.name}
               </p>
               <p>{heroDescription}</p>
               <p className="mt-4 text-sm text-muted-foreground max-w-3xl">

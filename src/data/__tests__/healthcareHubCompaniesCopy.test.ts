@@ -23,10 +23,10 @@ describe('KSA + UAE healthcare hub companies paste kit', () => {
   it('ships the KSA title, H1, opening, and FAQ on the country hub config', () => {
     const config = COUNTRY_CONFIGS['saudi-arabia'];
     expect(config.metaTitle).toBe(KSA_HUB_COMPANIES_COPY.title);
-    expect(config.h1).toBe('Healthcare market research companies in Saudi Arabia');
+    expect(config.h1).toBe('Healthcare Market Research Company in Saudi Arabia');
     expect(firstFiftyWords(KSA_HUB_COMPANIES_COPY.opening)).toBe(KSA_HUB_COMPANIES_COPY.opening);
     expect(config.faqQuestions[0]).toEqual({
-      question: 'What are the top healthcare market research companies in Saudi Arabia?',
+      question: KSA_HUB_COMPANIES_COPY.faqQuestion,
       answer: KSA_HUB_COMPANIES_COPY.faqAnswer,
     });
     expect(KSA_HUB_COMPANIES_COPY.faqAnswer).not.toMatch(/ranked #1/i);
