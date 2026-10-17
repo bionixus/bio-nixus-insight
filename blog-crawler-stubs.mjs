@@ -30,6 +30,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'australia-gcc-market-entry-research',
   'europe-to-gcc-market-entry-research',
   'uk-market-entry-research',
+  'us-market-entry-research-for-foreign-companies',
   'new-zealand-exporters-gcc-market-research',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
   'nielsen-alternative-saudi-arabia',
@@ -193,6 +194,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'UK Market Entry Research: GCC and US Playbook 2026',
     description:
       'UK market entry research for GCC and US companies: four nations, 20% VAT, UKCA or CE, Companies House and price before a Riyadh or Dubai committee commits.',
+  },
+  'us-market-entry-research-for-foreign-companies': {
+    title: 'US Market Entry Research for Foreign Companies 2026',
+    description:
+      'US market entry research for foreign companies: CFIUS, 50-state sales tax, FDA and price before a Riyadh, Dubai, London or Brazilian committee commits.',
   },
   'new-zealand-exporters-gcc-market-research': {
     title: 'New Zealand Exporters GCC Market Research 2026 Guide',
