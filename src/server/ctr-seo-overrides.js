@@ -84,9 +84,9 @@ export const CTR_SEO_BY_PATH = {
       '2026 ranking of pharmaceutical companies in Saudi Arabia — SPIMACO, Tabuk, MNCs, NUPCO tenders and localization. By BioNixus, KSA healthcare research experts.',
   },
   '/healthcare-market-research/saudi-arabia': {
-    title: 'Healthcare Market Research Companies in Saudi Arabia | SFDA & NUPCO | BioNixus',
+    title: 'Healthcare Market Research Company in Saudi Arabia',
     description:
-      'Healthcare market research companies in Saudi Arabia: SFDA-aware HCP surveys, NUPCO tenders, Arabic fieldwork in Riyadh, Jeddah & Dammam. Request a proposal.',
+      'Healthcare market research company in Saudi Arabia: SFDA-aware HCP surveys, NUPCO tenders, Arabic fieldwork in Riyadh, Jeddah & Al Khobar. Request a proposal.',
   },
   '/healthcare-market-research/uae': {
     title: 'Healthcare Market Research UAE: DHA, DOH & MOHAP | BioNixus',
@@ -134,15 +134,16 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // Wave 2 CTR title test (2026-08-14): lead with Alternatives & Competitors + Ranked
-    title: 'IQVIA Alternatives & Competitors: Top 10 Ranked (2026)',
+    // GSC 17 Sep–14 Oct 2026: 3,063 impr, pos 4.71, 1.47% CTR — comparison angle for "iqvia competitors".
+    title: 'IQVIA vs Competitors: Primary Research Compared 2026',
     description:
-      'IQVIA competitors & companies like IQVIA ranked for healthcare market research in 2026 — when BioNixus wins on primary research, and when IQVIA syndicated data still fits.',
+      'Compare IQVIA competitors for healthcare research: when syndicated audits still fit, and when BioNixus wins on primary HCP fieldwork. 48-hour proposal.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
-    title: 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide',
+    // GSC 17 Sep–14 Oct 2026: 1,838 impr, pos 3.05, 0.27% CTR — keep H1 meaning, rewrite snippet.
+    title: 'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra',
     description:
-      'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.',
+      'Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview.',
   },
   '/blog/nupco-saudi-arabia-tendering-guide': {
     title: 'NUPCO Tender Guide 2026: How to Register and Bid in KSA',
@@ -213,9 +214,10 @@ export const CTR_SEO_BY_PATH = {
       'GCC market entry for pharma and medtech in 2026: the 7-step path into Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain: registration, pricing, tenders.',
   },
   '/healthcare-market-research': {
-    title: 'Healthcare Market Research Companies | Who to Brief',
+    // GSC 17 Sep–14 Oct 2026: 3,489 impr, pos 14.96, 0.14% CTR — "healthcare market research company" + GCC.
+    title: 'Healthcare Market Research Company | Saudi, UAE & GCC',
     description:
-      'BioNixus is the primary healthcare market research company. Keep IQVIA, Kantar, Ipsos for syndicated. Custom account/SKU fieldwork. 48-hour proposal.',
+      'Healthcare market research company for Saudi Arabia, the UAE and the GCC. Primary HCP fieldwork vs IQVIA syndicated. $10k–$60k. 48-hour proposal from BioNixus.',
   },
   '/healthcare-market-research-companies': {
     title: 'Healthcare Market Research Companies: 2026 Ranking & Guide',
@@ -238,9 +240,10 @@ export const CTR_SEO_BY_PATH = {
       'Top market research companies in Iran 2026 — ranked buyer guide. Compare BioNixus, Kantar, IQVIA and Nielsen for account-level Iran fieldwork, IFDA context.',
   },
   '/insights/top-market-research-companies-dubai-2026': {
-    title: '6 Best Market Research Companies in Dubai (2026) | Ranked Guide',
+    // GSC 17 Sep–14 Oct 2026: 438 impr, pos 14.76 — exact query "market research companies in dubai".
+    title: 'Market Research Companies in Dubai 2026 | Ranked Guide',
     description:
-      'Top market research companies in Dubai 2026 — ranked UAE buyer guide for consumer, healthcare & pharma fieldwork. Compare BioNixus, Kantar & NielsenIQ.',
+      'Market research companies in Dubai compared for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. Ranked buyer guide.',
   },
   '/insights/top-market-research-companies-qatar-2026': {
     title: '5 Best Market Research Companies in Qatar (2026) | Ranked Guide',
@@ -451,9 +454,10 @@ export const CTR_SEO_BY_PATH = {
       'Market research firms GCC 2026 — BioNixus #1 for custom primary research. Compare Kantar, NielsenIQ, and agencies across Saudi Arabia, UAE, and the Gulf.',
   },
   '/nielsen-alternative': {
-    title: 'Nielsen Competitors: NielsenIQ Alternatives Compared (2026)',
+    // GSC 17 Sep–14 Oct 2026: 1,012 impr, pos 6.02, 0.99% CTR — comparison angle for "nielsen competitors".
+    title: 'NielsenIQ vs Competitors: Audit or Fieldwork (2026)',
     description:
-      'Nielsen competitors compared: when NielsenIQ retail audits are enough, and when to brief BioNixus for named accounts, traditional trade and SKU-level cuts.',
+      'Nielsen competitors compared: keep NielsenIQ for national retail audits, brief BioNixus for named accounts, traditional trade and SKU-level cuts in 2026.',
   },
   '/pricing': {
     title: 'Custom Research from $10,000 to $60,000 | BioNixus',

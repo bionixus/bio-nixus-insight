@@ -297,9 +297,13 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
             <>
               BioNixus is the custom primary-research firm for pharmaceutical affiliates in Saudi Arabia. Keep IQVIA
               and Kantar for syndicated audits. This 2026 ranking then compares SFDA-aware firms for HCP, KOL,
-              NUPCO, and Vision 2030 programmes. All-industry ranking:{' '}
+              NUPCO, and Vision 2030 programmes.               All-industry ranking:{' '}
               <Link to="/insights/top-market-research-companies-saudi-arabia-2026">
                 top market research companies in Saudi Arabia
+              </Link>
+              . Buyer hub:{' '}
+              <Link to="/healthcare-market-research/saudi-arabia">
+                healthcare market research company in Saudi Arabia
               </Link>
               . Regional cut:{' '}
               <Link to="/insights/top-healthcare-market-research-companies-mena-2026">
@@ -664,6 +668,7 @@ export default function TopHealthcareMarketResearchCompaniesSaudiArabia2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/healthcare-market-research/saudi-arabia', label: 'Healthcare market research company in Saudi Arabia', desc: 'SFDA-aware HCP, NUPCO and Arabic fieldwork buyer hub.' },
                 { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: 'Top Market Research Companies in Saudi Arabia', desc: 'Cross-industry ranking — BioNixus #1 for custom primary research.' },
                 { to: '/insights/top-consumer-insights-companies-ksa-2026', label: 'Consumer Insights Companies KSA', desc: 'Brand, U&A, shopper, and segmentation firm rankings for KSA.' },
                 { to: '/healthcare-market-research', label: 'Top Healthcare Market Research Companies', desc: 'How BioNixus compares with global healthcare market research companies and agencies.' },

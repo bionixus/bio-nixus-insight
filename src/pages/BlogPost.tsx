@@ -309,12 +309,11 @@ const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
 const EGYPT_HEALTHCARE_2026_DISPLAY_TITLE =
   'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.';
-const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_DISPLAY_TITLE;
-const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026 — public tertiary, private groups & UHI rollout mapped with EDA pharma access context from BioNixus Egypt research.';
+  'Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview.';
+const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_TITLE;
+const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION = EGYPT_HEALTHCARE_2026_META_DESCRIPTION;
 
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE =
@@ -999,6 +998,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const localizedArticleIndexLabel =
     articleLocale === 'en' ? articleIndexLabel : getBlogArticleIndexLabel(articleLocale, resolvedSilo);
   const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
+  const isSaudiHealthcareBlog =
+    Boolean(slug) &&
+    !pathClean.startsWith('/bionixus-industries') &&
+    /(saudi-arabia|nupco-|sfda-|(^|-)ksa($|-))/.test(slug);
   const isKuwaitHealthcare2026 = slug === KUWAIT_HEALTHCARE_2026_SLUG;
   const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
   const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
@@ -1611,6 +1614,26 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                   </div>
                 </aside>
               )}
+
+              {isSaudiHealthcareBlog ? (
+                <p className="mb-8 text-[15px] text-muted-foreground leading-relaxed">
+                  For the Kingdom buyer briefing, open the{' '}
+                  <Link
+                    to="/healthcare-market-research/saudi-arabia"
+                    className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    healthcare market research company in Saudi Arabia
+                  </Link>{' '}
+                  page, then the{' '}
+                  <Link
+                    to="/healthcare-market-research"
+                    className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    healthcare market research company
+                  </Link>{' '}
+                  hub for Saudi Arabia, the UAE and the GCC.
+                </p>
+              ) : null}
 
               {/* Table of contents — inline grid */}
               {localizedTableOfContents && localizedTableOfContents.length > 0 && (

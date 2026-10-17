@@ -28,6 +28,9 @@ const entryPath = path.join(root, '..', 'dist', 'server', 'server-entry.js');
 const CRITICAL_PATHS = [
   '/',
   '/healthcare-market-research',
+  '/healthcare-market-research/saudi-arabia',
+  '/blog/healthcare-overview-egypt-market-2026',
+  '/insights/top-market-research-companies-dubai-2026',
   '/fr/healthcare-market-research',
   '/fr/healthcare-market-research/france',
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
