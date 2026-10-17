@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   cardLive: '实时',
   chartNonHealthcare: '非医疗健康专区',
   chartHealthcare: '医疗健康专区',
-  cardFoot: '自 2012 年起 · 每年 120+ 个项目 · 2025 年 127 个 · 118 位客户 · 48 国',
+  cardFoot: '自 2012 年起 · 每年 120+ 个项目 · 2025 年 120 个；2026 年至今 127 个 · 118 位客户 · 48 国',
   regionRibbon: [
     '北美',
     'LATAM',

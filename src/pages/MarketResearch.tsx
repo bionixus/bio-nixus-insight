@@ -315,7 +315,7 @@ export default function MarketResearch() {
                   </div>
                 </div>
                 <div className="bx-card-foot">
-                  <strong>48 countries</strong> fielded · 120+ global projects annually (127 in 2025)
+                  <strong>48 countries</strong> fielded · 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026)
                 </div>
               </div>
             </div>

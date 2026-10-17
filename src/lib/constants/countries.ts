@@ -466,7 +466,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       {
         question: 'What are the top market research companies in Egypt?',
         answer:
-          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, Nielsen, AMRB, YouGov, Infomine, and Alkoun MEA. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with a 15-year track record and 120+ global projects annually (127 in 2025).',
+          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, Nielsen, AMRB, YouGov, Infomine, and Alkoun MEA. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with a 15-year track record and 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026).',
       },
       {
         question: 'How does BioNixus run pharmaceutical market research in Egypt?',

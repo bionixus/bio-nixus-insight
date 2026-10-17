@@ -53,7 +53,7 @@ export const translations = {
       subtitle:
         'BioNixus is a global primary market research firm that delivers account-level and SKU-level brand versus competitor data in 48 countries. Syndicated data feeds miss subaccounts, traditional trade, and country-level breakdowns. Field teams run the study; a proposal is ready within 48 hours of your brief.',
       trustStripPrimary: 'Trusted by',
-      trustStripStats: '118 global clients · 120+ projects annually · 127 in 2025 · 48 countries · founded 2012',
+      trustStripStats: '118 global clients · 120+ projects annually · 120 in 2025; 127 studies year-to-date in 2026 · 48 countries · founded 2012',
       valueProposition:
         'Every study starts from a commercial question your marketing team has to answer: how do we stack up vs competitors in this country, at this account, on this SKU? You get fieldwork and a decision pack — not a generic data dump.',
       serviceHighlights: [
@@ -461,7 +461,7 @@ export const translations = {
       subtitle:
         'BioNixus ist ein globaler Erkenntnis- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen pharmazeutischen, Biotechnologie- und Medizintechnik-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
       trustStripPrimary: 'Vertrauenswürdig bei',
-      trustStripStats: '118 globale Kunden · 120+ Projekte jährlich · 127 im Jahr 2025 · 48 Länder',
+      trustStripStats: '118 globale Kunden · 120+ Projekte jährlich · 120 im Jahr 2025; 127 Studien im Jahr 2026 bis heute · 48 Länder',
       valueProposition:
         'Jedes Mandat beginnt mit einer echten vertrieblichen Frage, nicht mit einem generischen Datenexport. Sie erhalten belastbare quantitative und qualitative Erkenntnisse — zugeschnitten auf Entscheidung, Markt und regulatorische Realität — von der Marktgrößenanalyse vor der Markteinführung bis zur Optimierung nach der Markteinführung.',
       serviceHighlights: [

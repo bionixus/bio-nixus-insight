@@ -48,7 +48,7 @@ const CLIENT_REVIEWS_FAQ = [
   {
     question: 'How many clients has BioNixus worked with?',
     answer:
-      'BioNixus is recommended by more than 118 happy clients worldwide, with 120+ global projects annually (127 in 2025) across 48 countries and 14+ therapeutic areas since 2012.',
+      'BioNixus is recommended by more than 118 happy clients worldwide, with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) across 48 countries and 14+ therapeutic areas since 2012.',
   },
   {
     question: 'Can I speak with a reference client?',
@@ -150,7 +150,7 @@ const ClientReviews = () => {
                 </span>
               </div>
               <div className="rounded-xl bg-white/10 border border-white/20 px-5 py-3 font-semibold">
-                120+ global projects annually (127 in 2025)
+                120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026)
               </div>
             </div>
           </div>

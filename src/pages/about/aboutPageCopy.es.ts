@@ -49,7 +49,7 @@ export const aboutPageCopyEs: AboutPageCopy = {
   storyAct3P1:
     'Ese arco — raíces londinenses, profundidad MENA, sede americana — llevó a BioNixus al grupo de las 100 principales firmas globales de investigación de mercado. Operamos en 48 países y más de 14 áreas terapéuticas, en seis idiomas. La disciplina pharma forjada bajo regulación se extiende a B2B y B2C en 16 verticales porque los clientes pidieron el mismo estándar en todas partes.',
   storyAct3P2BeforePharma:
-    '120+ proyectos globales al año (127 en 2025) para 118 clientes globales. El equipo que define el alcance sigue siendo el que entrega — como en Londres. Lo que cambió es cuántos mercados — e industrias — confían en nosotros. Explore nuestra ',
+    '120+ proyectos globales al año (120 en 2025; 127 estudios en lo que va de 2026) para 118 clientes globales. El equipo que define el alcance sigue siendo el que entrega — como en Londres. Lo que cambió es cuántos mercados — e industrias — confían en nosotros. Explore nuestra ',
   storyAct3LinkPharma: 'investigación pharma y sanitaria',
   storyAct3P2Mid1: ', el ',
   storyAct3LinkIndustries: 'hub de industrias',

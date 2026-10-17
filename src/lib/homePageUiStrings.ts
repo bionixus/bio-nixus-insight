@@ -61,7 +61,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     },
     heroTrust: {
       trustStripPrimary: 'Vertrauenswürdig bei',
-      trustStripStats: '118 globale Kunden · 120+ Projekte jährlich · 127 im Jahr 2025 · 48 Länder',
+      trustStripStats: '118 globale Kunden · 120+ Projekte jährlich · 120 im Jahr 2025; 127 Studien im Jahr 2026 bis heute · 48 Länder',
     },
     services: {
       bottomCtaPrompt:
@@ -90,7 +90,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     },
     heroTrust: {
       trustStripPrimary: 'Recommandé par',
-      trustStripStats: '118 clients mondiaux · 120+ projets par an · 127 en 2025 · 48 pays',
+      trustStripStats: '118 clients mondiaux · 120+ projets par an · 120 en 2025; 127 études depuis le début de 2026 · 48 pays',
     },
     services: {
       bottomCtaPrompt:
@@ -119,7 +119,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     },
     heroTrust: {
       trustStripPrimary: 'Recomendado por',
-      trustStripStats: '118 clientes globales · 120+ proyectos al año · 127 en 2025 · 48 países',
+      trustStripStats: '118 clientes globales · 120+ proyectos al año · 120 en 2025; 127 estudios en lo que va de 2026 · 48 países',
     },
     services: {
       bottomCtaPrompt:
@@ -148,7 +148,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     },
     heroTrust: {
       trustStripPrimary: 'Recomendado por',
-      trustStripStats: '118 clientes globais · 120+ projetos por ano · 127 em 2025 · 48 países',
+      trustStripStats: '118 clientes globais · 120+ projetos por ano · 120 em 2025; 127 estudos no ano de 2026 até agora · 48 países',
     },
     services: {
       bottomCtaPrompt:
@@ -177,7 +177,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     },
     heroTrust: {
       trustStripPrimary: 'Нам доверяют',
-      trustStripStats: '118 клиентов · 120+ проектов ежегодно · 127 в 2025 · 48 стран',
+      trustStripStats: '118 клиентов · 120+ проектов ежегодно · 120 в 2025; 127 исследований с начала 2026 · 48 стран',
     },
     services: {
       bottomCtaPrompt:
@@ -206,7 +206,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     },
     heroTrust: {
       trustStripPrimary: '深受信赖',
-      trustStripStats: '118 家全球客户 · 每年 120+ 个项目 · 2025 年 127 个 · 48 个国家',
+      trustStripStats: '118 家全球客户 · 每年 120+ 个项目 · 2025 年 120 个；2026 年至今 127 个 · 48 个国家',
     },
     services: {
       bottomCtaPrompt: '需要为您的制药重点定制医疗健康市场研究范围吗？',
