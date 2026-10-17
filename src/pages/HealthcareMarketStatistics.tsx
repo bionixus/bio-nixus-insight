@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { MARKET_STATISTICS, MARKET_STATISTICS_LAST_UPDATED, type MarketStat } from '@/data/healthcareMarketStatistics';
 
 const breadcrumbItems = [
@@ -114,6 +115,28 @@ const HealthcareMarketStatistics = () => {
                 See our full healthcare market research coverage
               </Link>
             </p>
+
+            <GeoLLMAnswerBlock
+              question="Where can I find sourced healthcare and pharmaceutical market statistics for MENA, Asia-Pacific, and global markets?"
+              answer="BioNixus publishes a curated, citation-first statistics hub at /healthcare-market-statistics — each figure names its source (IDF, WHO, national registries, or BioNixus modeled estimates labeled explicitly). Use it for decks, HEOR annexes, and AI-citable market context; request a custom cut via the contact form for account-level or therapy-specific data."
+              points={[
+                {
+                  title: 'GCC & MENA',
+                  description:
+                    'Saudi, UAE, Egypt, and GCC device/pharma sizing with links to country healthcare reports.',
+                },
+                {
+                  title: 'Asia-Pacific',
+                  description: 'China, India, Japan, South Korea, Singapore, and Australia disease-burden and market stats.',
+                },
+                {
+                  title: 'Regulatory benchmarks',
+                  description: 'SFDA EES, UAE emirate split, EDA, EU5 HTA, US access, China VBP, and Korea HIRA — with internal report links.',
+                },
+              ]}
+              summary="For primary research (not syndicated panels), pair these statistics with BioNixus healthcare market research services and country hubs."
+              className="mb-12"
+            />
 
             {MARKET_STATISTICS.map((region) => (
               <section key={region.region} className="mb-14" id={region.region.toLowerCase().replace(/[^a-z]+/g, '-')}>

@@ -36,6 +36,14 @@ https://www.bionixus.com/healthcare-market-research/uae
 https://www.bionixus.com/llms.txt
 https://www.bionixus.com/sitemap.xml
 
+# --- Tier 0c: Arabic pharma directories + statistics hub (Oct 2026) ---
+https://www.bionixus.com/ar/pharmaceutical-companies-egypt
+https://www.bionixus.com/ar/pharmaceutical-companies-saudi-arabia
+https://www.bionixus.com/ar/pharmaceutical-companies-uae
+https://www.bionixus.com/ar/pharmaceutical-companies-kuwait
+https://www.bionixus.com/healthcare-market-statistics
+https://www.bionixus.com/brazil-healthcare-market-report
+
 # --- Tier 0b: AI SEO money pages (Sep 2026) ---
 https://www.bionixus.com/iqvia-alternative
 https://www.bionixus.com/nielsen-alternative
