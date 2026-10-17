@@ -1096,6 +1096,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/b2b-market-research-uae"
     },
     {
+      "source": "/bionixus-industries/insights/australia-gcc-market-entry-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/australia-gcc-market-entry-research"
+    },
+    {
       "source": "/bionixus-industries/insights/europe-to-gcc-market-entry-research",
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/europe-to-gcc-market-entry-research"
     },

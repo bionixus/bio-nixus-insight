@@ -905,6 +905,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
   },
+  '/blog/australia-gcc-market-entry-research': {
+    title: 'Australia GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Australia GCC market entry research playbook for exporters: prove demand, CEPA tariffs, cities, halal and price in Saudi Arabia and UAE before you ship.',
+  },
+  '/bionixus-industries/insights/australia-gcc-market-entry-research': {
+    title: 'Australia GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Australia GCC market entry research playbook for exporters: prove demand, CEPA tariffs, cities, halal and price in Saudi Arabia and UAE before you ship.',
+  },
   '/blog/europe-to-gcc-market-entry-research': {
     title: 'Europe-to-GCC Market Entry Research (2026 Playbook)',
     description:

@@ -65,6 +65,8 @@ export const REDIRECT_HREF_REWRITES = {
   '/blog/consumer-survey-company-saudi-arabia':
     '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
   '/blog/b2b-market-research-uae': '/bionixus-industries/insights/b2b-market-research-uae',
+  '/blog/australia-gcc-market-entry-research':
+    '/bionixus-industries/insights/australia-gcc-market-entry-research',
   '/blog/europe-to-gcc-market-entry-research':
     '/bionixus-industries/insights/europe-to-gcc-market-entry-research',
   '/blog/chinese-companies-entering-saudi-arabia-and-the-uae':
