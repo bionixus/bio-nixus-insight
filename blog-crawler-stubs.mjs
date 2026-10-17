@@ -28,6 +28,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
   'europe-to-gcc-market-entry-research',
+  'uk-market-entry-research',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
   'nielsen-alternative-saudi-arabia',
   'government-customer-satisfaction-research-saudi-arabia',
@@ -170,6 +171,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Europe-to-GCC Market Entry Research (2026 Playbook)',
     description:
       'Europe-to-GCC market entry research for European brands: six-country sequencing, VAT, G-Mark, channels and price before a brand committee commits capital.',
+  },
+  'uk-market-entry-research': {
+    title: 'UK Market Entry Research: GCC and US Playbook 2026',
+    description:
+      'UK market entry research for GCC and US companies: four nations, 20% VAT, UKCA or CE, Companies House and price before a Riyadh or Dubai committee commits.',
   },
   'chinese-companies-entering-saudi-arabia-and-the-uae': {
     title: 'Chinese Companies Entering Saudi Arabia and the UAE',

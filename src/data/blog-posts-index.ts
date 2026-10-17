@@ -19,6 +19,7 @@ import { SAUDI_MARKET_ENTRY_HARDCODED_POST } from '@/data/blog-market-entry-rese
 import { SAUDI_CONSUMER_SURVEY_HARDCODED_POST } from '@/data/blog-consumer-survey-company-saudi-arabia';
 import { UAE_B2B_MR_HARDCODED_POST } from '@/data/blog-b2b-market-research-uae';
 import { EU_GCC_ENTRY_HARDCODED_POST } from '@/data/blog-europe-to-gcc-market-entry-research';
+import { UK_ENTRY_HARDCODED_POST } from '@/data/blog-uk-market-entry-research';
 import { CHINESE_KSA_UAE_HARDCODED_POST } from '@/data/blog-chinese-companies-entering-ksa-uae';
 import { NIELSEN_KSA_HARDCODED_POST } from '@/data/blog-nielsen-alternative-saudi-arabia';
 import { KSA_GOV_CSAT_HARDCODED_POST } from '@/data/blog-government-customer-satisfaction-saudi-arabia';
@@ -59,6 +60,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   SAUDI_CONSUMER_SURVEY_HARDCODED_POST,
   UAE_B2B_MR_HARDCODED_POST,
   EU_GCC_ENTRY_HARDCODED_POST,
+  UK_ENTRY_HARDCODED_POST,
   CHINESE_KSA_UAE_HARDCODED_POST,
   NIELSEN_KSA_HARDCODED_POST,
   KSA_GOV_CSAT_HARDCODED_POST,

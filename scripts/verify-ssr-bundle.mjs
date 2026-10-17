@@ -46,6 +46,7 @@ const CRITICAL_PATHS = [
   '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
   '/bionixus-industries/insights/b2b-market-research-uae',
   '/bionixus-industries/insights/europe-to-gcc-market-entry-research',
+  '/bionixus-industries/insights/uk-market-entry-research',
   '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae',
   '/bionixus-industries/insights/nielsen-alternative-saudi-arabia',
   '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia',

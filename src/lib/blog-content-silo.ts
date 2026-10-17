@@ -88,6 +88,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'Europe-to-GCC market entry research: what European brands need to know',
   },
   {
+    to: getIndustriesInsightPostPath('uk-market-entry-research'),
+    label: 'UK market entry research: a guide for GCC and US companies',
+  },
+  {
     to: getIndustriesInsightPostPath('chinese-companies-entering-saudi-arabia-and-the-uae'),
     label: 'Chinese companies entering Saudi Arabia and the UAE: market research playbook',
   },

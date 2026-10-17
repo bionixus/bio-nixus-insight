@@ -1100,6 +1100,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/europe-to-gcc-market-entry-research"
     },
     {
+      "source": "/bionixus-industries/insights/uk-market-entry-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/uk-market-entry-research"
+    },
+    {
       "source": "/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae",
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae"
     },
