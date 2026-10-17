@@ -64,6 +64,7 @@ const CRITICAL_PATHS = [
   '/blog/iqvia-alternative-uae-primary-research',
   '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia',
   '/blog/uae-drug-pricing-ede-takeover-launch-research',
+  '/blog/dubai-essential-drug-list-formulary-submission',
   '/blog/nupco-tender-market-research-saudi-arabia',
   '/blog/car-t-saudi-arabia-market-research',
   '/blog/saudi-health-insurance-payer-research',
