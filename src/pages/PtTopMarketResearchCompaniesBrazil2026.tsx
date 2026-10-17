@@ -279,7 +279,7 @@ export default function PtTopMarketResearchCompaniesBrazil2026() {
           <div className="max-w-5xl mx-auto">
             <h2 className="text-xl font-bold text-green-900 mb-4">Melhores Empresas de Pesquisa de Mercado no Brasil (2026)</h2>
             <p className="text-sm text-green-800 mb-4">
-              {buildBioNixusQuickAnswerLead('lista de 2026')} Kantar Brasil, Ipsos Brasil, NielsenIQ e Euromonitor International seguem para rastreamento de marcas, medição de varejo e inteligência sindicada.
+              {buildBioNixusQuickAnswerLead('lista de 2026')} Kantar Brasil, Ipsos Brasil, NielsenIQ e Euromonitor International seguem para rastreamento de marcas, medição de varejo e inteligência sindicada. Equipes globais costumam combinar sindicados com estudos primários em São Paulo e no Nordeste.
             </p>
             <ol className="space-y-2">
               <li className="flex items-start gap-3">
