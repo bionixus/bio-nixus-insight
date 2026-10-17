@@ -92,6 +92,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'Europe-to-GCC market entry research: what European brands need to know',
   },
   {
+    to: getIndustriesInsightPostPath('uk-market-entry-research'),
+    label: 'UK market entry research: a guide for GCC and US companies',
+  },
+  {
     to: getIndustriesInsightPostPath('new-zealand-exporters-gcc-market-research'),
     label: 'New Zealand exporters GCC market research: dairy, meat and food proof',
   },
