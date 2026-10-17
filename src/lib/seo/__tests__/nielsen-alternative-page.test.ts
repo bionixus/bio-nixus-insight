@@ -22,9 +22,9 @@ function extractJsonLd(document: string): Array<Record<string, unknown>> {
 
 describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
   it('ships unique title, meta, one H1, canonical, and OG/Twitter tags', () => {
-    expect(html).toContain('<title>Nielsen Competitors: NielsenIQ Alternatives Compared (2026)</title>');
+    expect(html).toContain('<title>NielsenIQ vs Competitors: Audit or Fieldwork (2026)</title>');
     expect(html).toMatch(
-      /<meta name="description" content="Nielsen competitors compared: when NielsenIQ retail audits are enough, and when to brief BioNixus for named accounts, traditional trade and SKU-level cuts\.">/,
+      /<meta name="description" content="Nielsen competitors compared: keep NielsenIQ for national retail audits, brief BioNixus for named accounts, traditional trade and SKU-level cuts in 2026\.">/,
     );
     const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '';
     const description =
@@ -84,7 +84,7 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
     expect(schemas.some((node) => node['@type'] === 'ItemList')).toBe(true);
     expect(schemas.some((node) => node['@type'] === 'BreadcrumbList')).toBe(true);
     const page = schemas.find((node) => node['@type'] === 'WebPage');
-    expect(page?.dateModified).toBe('2026-10-04');
+    expect(page?.dateModified).toBe('2026-10-17');
     expect(page?.url).toBe('https://www.bionixus.com/nielsen-alternative');
   });
 
@@ -117,8 +117,8 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
       expect(legacyRedirects[source]).toBe('/nielsen-alternative');
     }
     const ctr = getCtrSeo('/nielsen-alternative');
-    expect(ctr?.title).toBe('Nielsen Competitors: NielsenIQ Alternatives Compared (2026)');
-    expect(ctr?.description).toContain('when NielsenIQ retail audits are enough');
+    expect(ctr?.title).toBe('NielsenIQ vs Competitors: Audit or Fieldwork (2026)');
+    expect(ctr?.description).toContain('keep NielsenIQ for national retail audits');
   });
 
   it('adds a small reciprocal Nielsen link on the IQVIA alternative page', () => {

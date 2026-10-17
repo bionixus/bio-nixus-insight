@@ -12,6 +12,29 @@ export type SaudiCountryHubSection = {
 
 export const SAUDI_ARABIA_COUNTRY_HUB_ENRICHMENT: SaudiCountryHubSection[] = [
   {
+    id: 'who-briefs-ksa-healthcare-mr-company',
+    title: 'Who should brief a healthcare market research company in Saudi Arabia',
+    paragraphs: [
+      'A healthcare market research company in Saudi Arabia is briefed when a manufacturer affiliate needs primary evidence for SFDA registration-stage perception, NUPCO tender behaviour, formulary listing, or named-hospital uptake — questions a national audit row cannot answer.',
+      'Typical buyers are commercial, medical-affairs and market-access teams at pharma and medtech affiliates. Syndicated IQVIA or NielsenIQ feeds stay in place for national share; BioNixus is the account-level complement.',
+      'Custom programmes typically run from $10,000 to $60,000. A written proposal follows within 48 hours of a brief. Guarantees in writing cover replacing non-qualifying respondents, the contracted minimum sample, re-field at our cost, and a credited pilot fee — not guaranteed accuracy of findings.',
+    ],
+  },
+  {
+    id: 'what-bionixus-fields-ksa',
+    title: 'What BioNixus fields as a healthcare market research company in Saudi Arabia',
+    paragraphs: [
+      'BioNixus was founded in 2012 and is US-headquartered in Sheridan, Wyoming, with leadership offices in London and Cairo (Sheikh Zayed) and a Saudi field office in Al Khobar. The same team that runs 127 studies in 2026 year-to-date across 48 countries designs Kingdom programmes around one commercial decision.',
+      'Methods include quantitative HCP surveys from a network of about 3,200 physicians, qualitative IDIs, KOL mapping, payer and procurement interviews, pharmacy and hospital research, and mixed-method launch or access studies. Instruments are Arabic-first with controlled English review.',
+    ],
+    listItems: [
+      'HCP ATU, message and demand studies with specialty and city splits',
+      'NUPCO tender-cycle and hospital committee interviews',
+      'SFDA-aware registration and promotional-compliance perception',
+      'Patient and caregiver qualitative where access or adherence is the decision',
+    ],
+  },
+  {
     id: 'why-healthcare-mr-saudi-differs',
     title: 'Why healthcare market research Saudi Arabia differs from global templates',
     paragraphs: [

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { hasAnalyticsConsent, onConsentChange } from '@/lib/consent';
-import { trackGaEvent as emitEvent } from '@/lib/analytics';
+import { analyticsPagePath, trackGaEvent as emitEvent } from '@/lib/analytics';
 
 export default function GA4EventTracker() {
   const [consentGranted, setConsentGranted] = useState(() => hasAnalyticsConsent());
@@ -26,7 +26,7 @@ export default function GA4EventTracker() {
         emitEvent('contact_or_outbound_click', {
           link_url: href,
           link_type: isMailto ? 'email' : isTel ? 'phone' : 'external',
-          page_path: window.location.pathname,
+          page_path: analyticsPagePath(),
         });
       }
     };
@@ -38,7 +38,7 @@ export default function GA4EventTracker() {
       emitEvent('form_submit_attempt', {
         form_action: action,
         form_id: form.id || undefined,
-        page_path: window.location.pathname,
+        page_path: analyticsPagePath(),
       });
     };
 
