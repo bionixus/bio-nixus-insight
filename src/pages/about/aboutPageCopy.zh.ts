@@ -19,7 +19,8 @@ export const aboutPageCopyZh: AboutPageCopy = {
   ctaPrimary: '索取方案',
   ctaSecondary: '探索行业',
   metrics: [
-    { value: '120+', label: '每年全球项目' },
+    { value: '127', label: '2026年至今研究' },
+    { value: '120', label: '2025年研究' },
     { value: '118', label: '全球客户' },
     { value: '48', label: '覆盖国家' },
     { value: '16', label: '行业垂直' },

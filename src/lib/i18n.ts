@@ -185,7 +185,7 @@ export const translations = {
     stats: {
       title: 'What you can brief internally',
       items: [
-        { value: '120+', label: 'Studies per year' },
+        { value: '120+', label: 'studies a year (127 in 2026 YTD)' },
         { value: '118', label: 'Clients' },
         { value: '48', label: 'Countries' },
         { value: '48h', label: 'Brief to proposal' },
@@ -686,7 +686,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Abgedeckte Länder' },
         { value: '14+', label: 'Therapiegebiete' },
-        { value: '120+', label: 'Globale Projekte jährlich' },
+        { value: '120+', label: 'Studien pro Jahr (127 in 2026 bis heute)' },
         { value: '118', label: 'Globale Kunden' },
       ],
     },
@@ -984,7 +984,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Pays Couverts' },
         { value: '14+', label: 'Aires Thérapeutiques' },
-        { value: '120+', label: 'Projets mondiaux par an' },
+        { value: '120+', label: 'études par an (127 depuis début 2026)' },
         { value: '118', label: 'Clients mondiaux' },
       ],
     },
@@ -1282,7 +1282,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Países Cubiertos' },
         { value: '14+', label: 'Áreas Terapéuticas' },
-        { value: '120+', label: 'Proyectos globales al año' },
+        { value: '120+', label: 'estudios al año (127 en 2026 hasta ahora)' },
         { value: '118', label: 'Clientes globales' },
       ],
     },
@@ -1579,7 +1579,7 @@ export const translations = {
       items: [
         { value: '48', label: '覆盖国家' },
         { value: '14+', label: '治疗领域' },
-        { value: '120+', label: '每年全球项目' },
+        { value: '120+', label: '每年研究（2026年至今127项）' },
         { value: '118', label: '全球客户' },
       ],
     },
@@ -1881,7 +1881,7 @@ export const translations = {
       items: [
         { value: '48', label: 'دولة مغطاة' },
         { value: '+14', label: 'مجال علاجي' },
-        { value: '+120', label: 'مشروعًا عالميًا سنويًا' },
+        { value: '+120', label: 'دراسة سنويًا (١٢٧ في ٢٠٢٦ حتى الآن)' },
         { value: '118', label: 'عميلًا عالميًا' },
       ],
     },
@@ -2229,7 +2229,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Países Atendidos' },
         { value: '14+', label: 'Áreas Terapêuticas' },
-        { value: '120+', label: 'Projetos globais por ano' },
+        { value: '120+', label: 'estudos por ano (127 em 2026 até agora)' },
         { value: '118', label: 'Clientes globais' },
       ],
     },
@@ -2573,7 +2573,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Охваченных стран' },
         { value: '14+', label: 'Терапевтических областей' },
-        { value: '120+', label: 'Глобальных проектов ежегодно' },
+        { value: '120+', label: 'исследований в год (127 с начала 2026)' },
         { value: '118', label: 'Глобальных клиентов' },
       ],
     },

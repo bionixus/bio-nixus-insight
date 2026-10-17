@@ -19,7 +19,8 @@ export const aboutPageCopyDe: AboutPageCopy = {
   ctaPrimary: 'Angebot anfordern',
   ctaSecondary: 'Branchen entdecken',
   metrics: [
-    { value: '120+', label: 'Globale Projekte jährlich' },
+    { value: '127', label: 'Studien 2026 bis heute' },
+    { value: '120', label: 'Studien im Jahr 2025' },
     { value: '118', label: 'Globale Kunden' },
     { value: '48', label: 'Abgedeckte Länder' },
     { value: '16', label: 'Branchenvertikalen' },

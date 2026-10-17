@@ -299,7 +299,7 @@ export default function BestGlobalMarketResearchCompaniesPharma2026() {
               </div>
               <div>
                 <p className="text-3xl md:text-4xl font-display font-bold">120+</p>
-                <p className="text-primary-foreground/70 text-sm mt-1">Global projects annually</p>
+                <p className="text-primary-foreground/70 text-sm mt-1">Studies a year (127 in 2026 YTD)</p>
               </div>
             </div>
           </div>

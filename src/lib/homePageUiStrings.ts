@@ -233,7 +233,7 @@ export const homePageUiStrings: Record<Language, HomePageUiOverlay> = {
     },
     heroTrust: {
       trustStripPrimary: 'موثوق به من',
-      trustStripStats: '١١٨ عميلاً عالمياً · ١٢٧+ مشروعاً · ٤٨ دولة',
+      trustStripStats: '١١٨ عميلاً عالمياً · ١٢٠+ دراسة سنويًا (١٢٧ في ٢٠٢٦ حتى الآن) · ٤٨ دولة',
     },
     services: {
       bottomCtaPrompt: 'هل تحتاج نطاقاً مخصصاً لأبحاث السوق الصحي وفق أولوياتك الدوائية؟',

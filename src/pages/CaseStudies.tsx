@@ -199,7 +199,7 @@ const CaseStudies = () => {
             {/* Authority stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
               {[
-                { icon: <TrendingUp className="w-5 h-5" />, value: STATS.projectsAnnual, label: 'Global projects annually' },
+                { icon: <TrendingUp className="w-5 h-5" />, value: STATS.projectsAnnual, label: 'Studies a year (127 in 2026 YTD)' },
                 { icon: <Globe className="w-5 h-5" />, value: STATS.countries, label: 'Countries Covered' },
                 { icon: <FlaskConical className="w-5 h-5" />, value: STATS.therapyAreas, label: 'Therapeutic Areas' },
                 { icon: <Users className="w-5 h-5" />, value: STATS.clients, label: 'Clients Served' },

@@ -8,7 +8,7 @@ import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { ScopingCallAgenda } from '@/components/conversion/ScopingCallAgenda';
 import { ScopingCallButton } from '@/components/conversion/ScopingCallButton';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
-import { STATS } from '@/lib/companyStats';
+import { STATS, STATS_PROJECTS_PHRASE } from '@/lib/companyStats';
 import { BIONIXUS_PHONE_UK, BIONIXUS_PHONE_UK_DISPLAY } from '@/components/report-conversion/constants';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
@@ -234,8 +234,7 @@ export default function Pricing() {
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
-                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
-                annually · {STATS.projects2025} in 2025
+                {STATS.clients} clients · {STATS.countries} countries · {STATS_PROJECTS_PHRASE}
               </div>
             </div>
           </div>

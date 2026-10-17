@@ -63,7 +63,7 @@ const firms: FirmProfile[] = [
       ...BIONIXUS_MR_STRENGTHS_BASE,
       'Consumer and FMCG fieldwork across Riyadh, Jeddah, and the Eastern Province',
       'Vision 2030 retail, services, and digital-economy category research',
-      `Founded ${BIONIXUS_MR_STATS.since} · ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually · ${BIONIXUS_MR_STATS.projects2025} in 2025 · ${BIONIXUS_MR_STATS.clients} global clients`,
+      `Founded ${BIONIXUS_MR_STATS.since} · ${BIONIXUS_MR_STATS.projectsAnnual} studies a year (${BIONIXUS_MR_STATS.studies2025} in 2025; ${BIONIXUS_MR_STATS.studies2026Ytd} in 2026 YTD) · ${BIONIXUS_MR_STATS.clients} global clients`,
     ],
   },
   {
@@ -265,7 +265,7 @@ const faqItems = [
   },
   {
     q: 'Does BioNixus conduct market research in Saudi Arabia?',
-    a: `Yes. BioNixus has conducted market research since ${BIONIXUS_MR_STATS.since}, with ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually (${BIONIXUS_MR_STATS.projects2025} in 2025) for ${BIONIXUS_MR_STATS.clients} global clients and Saudi execution across consumer, FMCG, healthcare, and multi-industry programmes. Email admin@bionixus.com for a proposal within 48 hours.`,
+    a: `Yes. BioNixus has conducted market research since ${BIONIXUS_MR_STATS.since}, with ${BIONIXUS_MR_STATS.projectsAnnual} studies a year (${BIONIXUS_MR_STATS.studies2025} in 2025; ${BIONIXUS_MR_STATS.studies2026Ytd} in 2026 YTD) for ${BIONIXUS_MR_STATS.clients} global clients and Saudi execution across consumer, FMCG, healthcare, and multi-industry programmes. Email admin@bionixus.com for a proposal within 48 hours.`,
   },
 ];
 

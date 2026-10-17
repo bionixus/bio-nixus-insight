@@ -33,7 +33,7 @@ export const bionixusIndustriesPageCopyPt: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Fundada em Londres', sub: 'Raízes em pesquisa farmacêutica no Reino Unido' },
-    { value: '120+', label: 'Projetos globais por ano', sub: 'em 48 países' },
+    { value: '120+', label: 'Estudos por ano', sub: '120 em 2025; 127 em 2026 até agora' },
     { value: '118', label: 'Clientes servidos', sub: 'de pharma a consumo' },
     { value: '16', label: 'Verticais setoriais', sub: 'e a crescer' },
   ],

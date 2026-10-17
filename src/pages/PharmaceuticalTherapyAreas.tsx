@@ -371,11 +371,11 @@ export default function PharmaceuticalTherapyAreas() {
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">
-                  Global projects annually
+                  Studies a year
                 </p>
                 <p className="text-3xl font-semibold text-foreground">120+</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  127 projects delivered in 2025 for global and regional pharmaceutical clients.
+                  120 in 2025; 127 in 2026 year-to-date for global and regional pharmaceutical clients.
                 </p>
               </article>
             </div>

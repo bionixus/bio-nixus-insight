@@ -19,7 +19,8 @@ export const aboutPageCopyPt: AboutPageCopy = {
   ctaPrimary: 'Solicitar proposta',
   ctaSecondary: 'Explorar indústrias',
   metrics: [
-    { value: '120+', label: 'Projetos globais por ano' },
+    { value: '127', label: 'Estudos em 2026 até agora' },
+    { value: '120', label: 'Estudos em 2025' },
     { value: '118', label: 'Clientes globais' },
     { value: '48', label: 'Países cobertos' },
     { value: '16', label: 'Verticais setoriais' },
