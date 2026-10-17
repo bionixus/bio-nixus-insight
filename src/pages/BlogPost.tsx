@@ -10,10 +10,10 @@ import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog'
 import {
   getBlogIndexLabelForPost,
   getBlogIndexPathForPost,
-  getIndustriesInsightPostPath,
   INDUSTRIES_INSIGHTS_INDEX_PATH,
   resolveContentSilo,
 } from '@/lib/blog-content-silo';
+import { missingArticleRedirect } from '@/lib/missing-article-redirect';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import {
   BLOG_INDEX_ROBOTS,
@@ -66,7 +66,6 @@ import {
 import { useInitialData } from '@/contexts/InitialDataContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import NotFound from '@/pages/NotFound';
 import { ArrowLeft, BarChart3, CheckCircle2, ShieldCheck, TrendingUp, Calendar, Clock, MapPin, AlignLeft, List, ArrowUpRight } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
 import type { BlogPost as BlogPostType } from '@/types/blog';
@@ -310,12 +309,11 @@ const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
 const EGYPT_HEALTHCARE_2026_DISPLAY_TITLE =
   'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.';
-const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_DISPLAY_TITLE;
-const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026 — public tertiary, private groups & UHI rollout mapped with EDA pharma access context from BioNixus Egypt research.';
+  'Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview.';
+const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_TITLE;
+const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION = EGYPT_HEALTHCARE_2026_META_DESCRIPTION;
 
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE =
@@ -867,20 +865,45 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const executiveSummary =
     post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug, { isArBlog: isArabicArticle }) : null;
 
+  const requestPath = (pathname.split('?')[0] || '').replace(/\/+$/, '') || '/';
+  const ssrBlogPostLookup =
+    ssrBlogBundle && typeof routeData.blogPostLookup === 'string' ? routeData.blogPostLookup : undefined;
+  const lookupFailed = ssrBlogPostLookup === 'error' || isError;
+  const isEnglishArticlePath = /^\/(?:blog|bionixus-industries\/insights)\/[^/]+$/.test(requestPath);
+  const foundRedirect =
+    post && slug && isEnglishArticlePath && !lookupFailed
+      ? missingArticleRedirect({
+          pathname: requestPath,
+          slug,
+          lookup: 'found',
+          post,
+        })
+      : null;
+  const confirmedMissing =
+    Boolean(slug) &&
+    isEnglishArticlePath &&
+    !lookupFailed &&
+    !post &&
+    !fallbackPost &&
+    (ssrBlogPostLookup === 'missing' || !isLoading);
+  const missingRedirect = confirmedMissing
+    ? missingArticleRedirect({
+        pathname: requestPath,
+        slug: slug!,
+        lookup: 'missing',
+        post: null,
+      })
+    : null;
+  const clientRedirectTo = foundRedirect?.redirectTo ?? missingRedirect?.redirectTo ?? null;
+
   useEffect(() => {
     if (slug?.startsWith('fallback-')) {
       const target = pathname.startsWith('/de/') ? '/de/blog' : '/blog';
       window.location.replace(target);
       return;
     }
-    if (
-      slug &&
-      !isArBlog &&
-      post &&
-      resolveContentSilo(post) === 'industries' &&
-      pathname.startsWith('/blog/')
-    ) {
-      navigate(getIndustriesInsightPostPath(slug), { replace: true });
+    if (clientRedirectTo) {
+      navigate(clientRedirectTo, { replace: true });
     }
     const bar = document.getElementById('blog-rp');
     if (!bar) return;
@@ -892,7 +915,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     };
     window.addEventListener('scroll', update, { passive: true });
     return () => window.removeEventListener('scroll', update);
-  }, [post, slug, pathname, isArBlog, navigate]);
+  }, [post, slug, pathname, isArBlog, navigate, clientRedirectTo]);
 
   if (!slug) {
     return (
@@ -938,20 +961,16 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     );
   }
 
-  const isIndustriesInsightArticle = /^\/bionixus-industries\/insights\/[^/]+$/.test(
-    (pathname.split('?')[0] || '').replace(/\/+$/, '') || '/',
-  );
-  const ssrBlogPostLookup =
-    ssrBlogBundle && typeof routeData.blogPostLookup === 'string' ? routeData.blogPostLookup : undefined;
-  const industriesLookupFailed = ssrBlogPostLookup === 'error' || isError;
-  const postIsKnownIndustries = Boolean(post && resolveContentSilo(post) === 'industries');
-  if (
-    isIndustriesInsightArticle &&
-    !industriesLookupFailed &&
-    !postIsKnownIndustries &&
-    (!isLoading || Boolean(post))
-  ) {
-    return <NotFound />;
+  if (clientRedirectTo) {
+    return (
+      <div className="min-h-screen bg-background" data-slug-redirect={clientRedirectTo}>
+        <Navbar />
+        <main className="px-6 py-16 max-w-3xl mx-auto" lang={errorLocale} dir={isRtlBlogLocale(errorLocale) ? 'rtl' : 'ltr'}>
+          <p className="text-muted-foreground">{errorUi.articleNotFound}</p>
+        </main>
+        <Footer />
+      </div>
+    );
   }
 
   if (!post && (isError || !sanityPost)) {
@@ -979,6 +998,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const localizedArticleIndexLabel =
     articleLocale === 'en' ? articleIndexLabel : getBlogArticleIndexLabel(articleLocale, resolvedSilo);
   const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
+  const isSaudiHealthcareBlog =
+    Boolean(slug) &&
+    !pathClean.startsWith('/bionixus-industries') &&
+    /(saudi-arabia|nupco-|sfda-|(^|-)ksa($|-))/.test(slug);
   const isKuwaitHealthcare2026 = slug === KUWAIT_HEALTHCARE_2026_SLUG;
   const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
   const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
@@ -1591,6 +1614,26 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                   </div>
                 </aside>
               )}
+
+              {isSaudiHealthcareBlog ? (
+                <p className="mb-8 text-[15px] text-muted-foreground leading-relaxed">
+                  For the Kingdom buyer briefing, open the{' '}
+                  <Link
+                    to="/healthcare-market-research/saudi-arabia"
+                    className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    healthcare market research company in Saudi Arabia
+                  </Link>{' '}
+                  page, then the{' '}
+                  <Link
+                    to="/healthcare-market-research"
+                    className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    healthcare market research company
+                  </Link>{' '}
+                  hub for Saudi Arabia, the UAE and the GCC.
+                </p>
+              ) : null}
 
               {/* Table of contents — inline grid */}
               {localizedTableOfContents && localizedTableOfContents.length > 0 && (

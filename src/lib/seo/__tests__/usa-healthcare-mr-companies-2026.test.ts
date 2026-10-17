@@ -120,7 +120,7 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
       new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-09-28</lastmod>`),
     );
     expect(llms).toContain(`https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`);
-    expect(llms).toContain('# Last GEO refresh: 2026-Q3 (2026-09-20)');
+    expect(llms).toContain('# Last GEO refresh: 2026-Q4 (2026-10-17)');
     expect(llmsFull).toContain(`https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`);
     expect(hub).toContain(USA_HEALTHCARE_MR_PATH);
     expect(pageSource).not.toContain('/blog/top-healthcare-market-research-companies-usa');

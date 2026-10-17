@@ -112,10 +112,11 @@ export function buildCountryPageSchemas(config: CountryConfig) {
       ? {
           ...buildProfessionalServiceSchema(),
           '@id': `${pageUrl}#service`,
-          name: hubCompaniesCopy?.h1 ?? 'Healthcare market research companies in Saudi Arabia',
+          name: hubCompaniesCopy?.h1 ?? 'Healthcare Market Research Company in Saudi Arabia',
+          dateModified: '2026-10-17',
           serviceType: 'Healthcare Market Research',
           description:
-            'Primary healthcare market research companies in Saudi Arabia — SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah, and Eastern Province. IQVIA remains the syndicated audit; BioNixus is the account-level complement.',
+            'Healthcare market research company in Saudi Arabia — SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah, and Al Khobar. IQVIA remains the syndicated audit; BioNixus is the account-level complement.',
           url: pageUrl,
           areaServed: [
             {

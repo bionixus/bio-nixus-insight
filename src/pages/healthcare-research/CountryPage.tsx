@@ -315,7 +315,11 @@ export default function CountryPage() {
                 </>
               ) : config.slug === 'saudi-arabia' && hubCompaniesCopy ? (
                 <>
-                  {hubCompaniesCopy.opening} See the{' '}
+                  {hubCompaniesCopy.opening} Start from the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                    healthcare market research company
+                  </Link>{' '}
+                  hub for Saudi Arabia, the UAE and the GCC. See the{' '}
                   <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
                     IQVIA alternative
                   </Link>{' '}
@@ -378,6 +382,13 @@ export default function CountryPage() {
           ),
         }}
         tocItems={[
+          ...(config.slug === 'saudi-arabia'
+            ? [
+                { href: '#who-briefs-ksa-healthcare-mr-company', label: 'Who should brief' },
+                { href: '#what-bionixus-fields-ksa', label: 'What we field' },
+                { href: '#why-healthcare-mr-saudi-differs', label: 'Why KSA differs' },
+              ]
+            : []),
           { href: '#key-indicators', label: 'Market indicators' },
           { href: '#market-overview', label: 'Market overview' },
           { href: '#capabilities', label: 'Capabilities' },

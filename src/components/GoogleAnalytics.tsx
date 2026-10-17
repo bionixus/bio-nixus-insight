@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { hasAnalyticsConsent, onConsentChange } from '@/lib/consent';
+import { analyticsPagePath } from '@/lib/analytics';
 
 /**
  * Google Analytics (GA4) Tracker Component.
@@ -31,7 +32,10 @@ export default function GoogleAnalytics() {
                     window.dataLayer?.push(args as unknown as any[]);
                 };
                 window.gtag('js', new Date());
-                window.gtag('config', gaId, { page_path: window.location.pathname });
+                window.gtag('config', gaId, {
+                    page_path: analyticsPagePath(),
+                    page_location: window.location.href,
+                });
             };
 
             if (document.readyState === 'complete') {
@@ -43,10 +47,11 @@ export default function GoogleAnalytics() {
             }
         } else {
             window.gtag('config', gaId, {
-                page_path: location.pathname,
+                page_path: analyticsPagePath(location),
+                page_location: window.location.href,
             });
         }
-    }, [location.pathname, gaId, gtmId, consentGranted]);
+    }, [location.pathname, location.search, gaId, gtmId, consentGranted]);
 
     if (!gaId || gtmId || !consentGranted) return null;
 
