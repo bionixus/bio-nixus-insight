@@ -49,7 +49,7 @@ export const aboutPageCopyFr: AboutPageCopy = {
   storyAct3P1:
     'Cet arc — racines londoniennes, profondeur MENA, siège américain — a porté BioNixus parmi les 100 premières sociétés mondiales de recherche marché. Nous sommes actifs dans 48 pays et plus de 14 aires thérapeutiques, en six langues. La discipline pharma forgée sous régulation s’étend désormais aux verticales B2B et B2C (16 secteurs), parce que les clients nous ont demandé le même standard partout.',
   storyAct3P2BeforePharma:
-    '120+ projets mondiaux par an (127 en 2025) pour 118 clients mondiaux. L’équipe qui cadrage votre étude est celle qui la livre — comme à Londres. Ce qui a changé, c’est le nombre de marchés — et de secteurs — qui nous font confiance. Explorez notre ',
+    '120+ projets mondiaux par an (120 en 2025; 127 études depuis le début de 2026) pour 118 clients mondiaux. L’équipe qui cadrage votre étude est celle qui la livre — comme à Londres. Ce qui a changé, c’est le nombre de marchés — et de secteurs — qui nous font confiance. Explorez notre ',
   storyAct3LinkPharma: 'recherche pharma & santé',
   storyAct3P2Mid1: ', le ',
   storyAct3LinkIndustries: 'hub industries',

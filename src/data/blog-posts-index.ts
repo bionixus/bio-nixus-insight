@@ -39,6 +39,11 @@ import { CART_KSA_HARDCODED_POST } from '@/data/blog-car-t-saudi-arabia-market-r
 import { CHI_PAYER_HARDCODED_POST } from '@/data/blog-saudi-health-insurance-payer-research';
 import { THIQA_OBESITY_HARDCODED_POST } from '@/data/blog-thiqa-obesity-reimbursement-abu-dhabi';
 import { ORAL_GLP1_UAE_HARDCODED_POST } from '@/data/blog-oral-glp1-uae-orforglipron';
+import { socialArticle as socialArticle0 } from '@/data/blog-medicare-globe-model-part-b-account-level-2027';
+import { socialArticle as socialArticle1 } from '@/data/blog-rasonque-daraxonrasib-pancreatic-ema-chmp-2026';
+import { socialArticle as socialArticle2 } from '@/data/blog-gazya-obinutuzumab-lupus-anvisa-brazil-access-2026';
+import { socialArticle as socialArticle3 } from '@/data/blog-orzeyful-oveporexton-narcolepsy-japan-china-launch-2026';
+import { socialArticle as socialArticle4 } from '@/data/blog-egypt-eda-decree-480-drug-pricing-2026';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -87,6 +92,11 @@ export const hardcodedSeoPosts: BlogPost[] = [
   CHI_PAYER_HARDCODED_POST,
   THIQA_OBESITY_HARDCODED_POST,
   ORAL_GLP1_UAE_HARDCODED_POST,
+  socialArticle0,
+  socialArticle1,
+  socialArticle2,
+  socialArticle3,
+  socialArticle4,
 ];
 
 /** Helper to find a hardcoded post by slug */

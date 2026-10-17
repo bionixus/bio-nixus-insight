@@ -1180,6 +1180,26 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/oral-glp-1-uae-market-research"
     },
     {
+      "source": "/blog/medicare-globe-model-part-b-account-level-2027",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/medicare-globe-model-part-b-account-level-2027"
+    },
+    {
+      "source": "/blog/rasonque-daraxonrasib-pancreatic-ema-chmp-2026",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/rasonque-daraxonrasib-pancreatic-ema-chmp-2026"
+    },
+    {
+      "source": "/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026"
+    },
+    {
+      "source": "/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026"
+    },
+    {
+      "source": "/blog/egypt-eda-decree-480-drug-pricing-2026",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/egypt-eda-decree-480-drug-pricing-2026"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {

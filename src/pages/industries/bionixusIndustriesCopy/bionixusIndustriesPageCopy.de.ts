@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyDe: BionixusIndustriesPageCopy = {
   cardLive: 'Live',
   chartNonHealthcare: 'Nicht-Gesundheits-Silo',
   chartHealthcare: 'Gesundheitssilo',
-  cardFoot: 'Seit 2012 · 120+ Projekte jährlich · 127 im Jahr 2025 · 118 Kunden · 48 Länder',
+  cardFoot: 'Seit 2012 · 120+ Projekte jährlich · 120 im Jahr 2025; 127 Studien im Jahr 2026 bis heute · 118 Kunden · 48 Länder',
   regionRibbon: [
     'Nordamerika',
     'LATAM',

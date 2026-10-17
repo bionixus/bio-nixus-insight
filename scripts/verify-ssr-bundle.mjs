@@ -69,6 +69,11 @@ const CRITICAL_PATHS = [
   '/blog/saudi-health-insurance-payer-research',
   '/blog/thiqa-obesity-reimbursement-abu-dhabi',
   '/blog/oral-glp-1-uae-market-research',
+  '/blog/medicare-globe-model-part-b-account-level-2027',
+  '/blog/rasonque-daraxonrasib-pancreatic-ema-chmp-2026',
+  '/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026',
+  '/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
+  '/blog/egypt-eda-decree-480-drug-pricing-2026',
 ];
 
 let serverEntry;

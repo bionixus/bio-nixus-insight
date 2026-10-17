@@ -1059,6 +1059,31 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Oral GLP-1 UAE market research after EDE approved Foundayo on 3 Apr 2026: what brand teams must measure on orforglipron prescriber and patient uptake.',
   },
+  '/blog/medicare-globe-model-part-b-account-level-2027': {
+    title: "Medicare GLOBE Model: A Guide for Part B Brand Teams",
+    description:
+      "The Medicare GLOBE Model ties some Part B rebates to prices in 19 countries, but only in areas covering about 25% of Original Medicare. What to plan now.",
+  },
+  '/blog/rasonque-daraxonrasib-pancreatic-ema-chmp-2026': {
+    title: "Rasonque CHMP Opinion: EU Launch Planning | BioNixus",
+    description:
+      "CHMP backed Rasonque (daraxonrasib) for previously treated metastatic pancreatic cancer after a phased review. What EU launch and access teams should plan.",
+  },
+  '/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026': {
+    title: "Gazya for Lupus in Brazil: Access Planning | BioNixus",
+    description:
+      "Anvisa approved Gazya (obinutuzumab) for active SLE on 13 Oct 2026. How CONITEC, ANS coverage rules and rheumatology accounts shape access in Brazil.",
+  },
+  '/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026': {
+    title: "ORZEYFUL Launch in Japan and China: Lessons | BioNixus",
+    description:
+      "Takeda launched ORZEYFUL (oveporexton) for narcolepsy type 1 in Japan and China. What the Japan NHI price file and labels mean for APAC launch planning.",
+  },
+  '/blog/egypt-eda-decree-480-drug-pricing-2026': {
+    title: "EDA Decree 480: Egypt's New Drug Pricing Rules | BioNixus",
+    description:
+      "Egypt's EDA Decree 480/2026 links repricing to FX, inflation and rates, sets a 15-country basket and a generic ladder. What commercial teams should plan.",
+  },
 };
 
 /**

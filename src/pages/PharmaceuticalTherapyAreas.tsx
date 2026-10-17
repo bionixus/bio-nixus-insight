@@ -297,7 +297,7 @@ export default function PharmaceuticalTherapyAreas() {
         />
         <meta
           property="og:description"
-          content="Therapy-area pharmaceutical market research across 12 areas, with 120+ global projects annually (127 in 2025). BioNixus delivers launch, access, and growth evidence for MENA, UK, and Europe."
+          content="Therapy-area pharmaceutical market research across 12 areas, with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026). BioNixus delivers launch, access, and growth evidence for MENA, UK, and Europe."
         />
         {jsonLd.map((schema, index) => (
           <script key={`therapy-areas-schema-${index}`} type="application/ld+json">

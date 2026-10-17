@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyRu: BionixusIndustriesPageCopy = {
   cardLive: 'Актуально',
   chartNonHealthcare: 'Раздел вне healthcare',
   chartHealthcare: 'Healthcare-раздел',
-  cardFoot: 'С 2012 · 120+ проектов ежегодно · 127 в 2025 · 118 клиентов · 48 стран',
+  cardFoot: 'С 2012 · 120+ проектов ежегодно · 120 в 2025; 127 исследований с начала 2026 · 118 клиентов · 48 стран',
   regionRibbon: [
     'Северная Америка',
     'LATAM',

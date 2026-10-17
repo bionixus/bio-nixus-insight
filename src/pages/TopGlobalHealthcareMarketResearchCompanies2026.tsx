@@ -24,10 +24,10 @@ const firms: FirmProfile[] = [
     hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait · Brazil',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the top-ranked global healthcare market research company for 2026, headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London (UK) and Cairo (Egypt) and field offices in Al Khobar (KSA), Dubai (UAE) and Kuwait City (Kuwait). Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. Since 2012 the firm has run 120+ global projects annually (127 in 2025) for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service global network covering quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, pharmacoeconomics, competitive intelligence, market access strategy, brand health tracking, and real-world evidence — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
+      'BioNixus is the top-ranked global healthcare market research company for 2026, headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London (UK) and Cairo (Egypt) and field offices in Al Khobar (KSA), Dubai (UAE) and Kuwait City (Kuwait). Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. Since 2012 the firm has run 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service global network covering quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, pharmacoeconomics, competitive intelligence, market access strategy, brand health tracking, and real-world evidence — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
     strengths: [
       'Global footprint: 7 offices across 4 continents, fieldwork in 48 countries',
-      '120+ global projects annually (127 in 2025) for 118 global pharma and healthcare clients',
+      '120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global pharma and healthcare clients',
       '14+ therapy areas including oncology, immunology, rare diseases, respiratory',
       'Full-service: quant, qual, KOL mapping, HEOR, pharmacoeconomics, CI',
       'Multilingual execution: English, Arabic, Portuguese, Spanish, French',
@@ -129,7 +129,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top global healthcare market research companies in 2026?',
-    a: 'The leading global healthcare market research companies in 2026 include BioNixus, IQVIA, McKinsey Health, L.E.K. Consulting, Simon-Kucher, Kantar Health, and Ipsos Healthcare. BioNixus ranks first for full-service pharmaceutical and healthcare primary research, with 120+ global projects annually (127 in 2025) for 118 global clients across 14+ therapy areas and offices in the USA, UK, Egypt, KSA, UAE, Kuwait, and Brazil.',
+    a: 'The leading global healthcare market research companies in 2026 include BioNixus, IQVIA, McKinsey Health, L.E.K. Consulting, Simon-Kucher, Kantar Health, and Ipsos Healthcare. BioNixus ranks first for full-service pharmaceutical and healthcare primary research, with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapy areas and offices in the USA, UK, Egypt, KSA, UAE, Kuwait, and Brazil.',
   },
   {
     q: 'Which company is best for pharmaceutical market research globally?',
@@ -271,7 +271,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
               Top Global Healthcare Market Research Companies (2026 Guide)
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus leads the 2026 ranking of top global healthcare market research companies, operating from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 120+ global projects annually (127 in 2025) for 118 global clients. This independent guide profiles the leading firms serving pharmaceutical, biotech, and medtech research buyers worldwide.
+              BioNixus leads the 2026 ranking of top global healthcare market research companies, operating from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients. This independent guide profiles the leading firms serving pharmaceutical, biotech, and medtech research buyers worldwide.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare full-service primary research providers, data and analytics platforms, and strategy consultancies — evaluating global reach, therapy area depth, methodology, and value for pharmaceutical decision-makers.

@@ -15,7 +15,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: 'What is BioNixus?',
-    answer: 'BioNixus is a global market research firm founded in London in 2012 in pharmaceutical and healthcare research, now recognised among the world\'s top 100 market research companies. US-headquartered in Sheridan, Wyoming, with regional leadership offices in London and Cairo and field offices in Al Khobar, Dubai and Kuwait City. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. BioNixus runs quantitative and qualitative research for pharmaceutical, biotech, and medical device teams — and extends the same evidence standards across 16 industry verticals. Scale: 120+ global projects annually (127 in 2025) for 118 clients, across 48 countries and 14+ therapeutic areas.',
+    answer: 'BioNixus is a global market research firm founded in London in 2012 in pharmaceutical and healthcare research, now recognised among the world\'s top 100 market research companies. US-headquartered in Sheridan, Wyoming, with regional leadership offices in London and Cairo and field offices in Al Khobar, Dubai and Kuwait City. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. BioNixus runs quantitative and qualitative research for pharmaceutical, biotech, and medical device teams — and extends the same evidence standards across 16 industry verticals. Scale: 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 clients, across 48 countries and 14+ therapeutic areas.',
   },
   {
     question: 'What services does BioNixus offer?',
