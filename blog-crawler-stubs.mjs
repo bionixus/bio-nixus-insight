@@ -46,6 +46,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'how-to-choose-healthcare-market-research-agency-saudi-arabia',
   'uae-drug-pricing-ede-takeover-launch-research',
   'dubai-essential-drug-list-formulary-submission',
+  'diabetes-market-research-uae-2026-price-cuts',
   'nupco-tender-market-research-saudi-arabia',
   'car-t-saudi-arabia-market-research',
   'saudi-health-insurance-payer-research',
@@ -276,6 +277,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Dubai Essential Drug List Formulary Submission 2026',
     description:
       'Dubai Essential Drug List formulary submission: what DDC coding, EBP formulary limits and local evidence an affiliate should commission before listing.',
+  },
+  'diabetes-market-research-uae-2026-price-cuts': {
+    title: 'Diabetes Market Research UAE After 2026 Price Cuts',
+    description:
+      'Diabetes market research UAE after the 2026 EDE list cuts: what brand teams should commission on price, switching, pharmacy behaviour and payer listing.',
   },
   'nupco-tender-market-research-saudi-arabia': {
     title: 'NUPCO Tender Market Research for Saudi Oncology 2026',

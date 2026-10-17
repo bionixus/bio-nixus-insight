@@ -1172,6 +1172,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/dubai-essential-drug-list-formulary-submission"
     },
     {
+      "source": "/blog/diabetes-market-research-uae-2026-price-cuts",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/diabetes-market-research-uae-2026-price-cuts"
+    },
+    {
       "source": "/blog/nupco-tender-market-research-saudi-arabia",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/nupco-tender-market-research-saudi-arabia"
     },
