@@ -390,7 +390,7 @@ export async function fetchSanityPostBySlugWithClient(
   } catch (err) {
     console.error('Sanity fetch error for slug:', slug, err);
     if (hardcodedFallback) return hardcodedFallback;
-    return null;
+    throw err;
   }
 }
 
