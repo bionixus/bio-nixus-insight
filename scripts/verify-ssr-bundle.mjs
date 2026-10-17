@@ -60,6 +60,7 @@ const CRITICAL_PATHS = [
   '/blog/uae-drug-pricing-ede-takeover-launch-research',
   '/blog/nupco-tender-market-research-saudi-arabia',
   '/blog/thiqa-obesity-reimbursement-abu-dhabi',
+  '/blog/oral-glp-1-uae-market-research',
 ];
 
 let serverEntry;

@@ -1156,6 +1156,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/thiqa-obesity-reimbursement-abu-dhabi"
     },
     {
+      "source": "/blog/oral-glp-1-uae-market-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/oral-glp-1-uae-market-research"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
