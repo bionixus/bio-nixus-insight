@@ -84,8 +84,28 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     label: 'B2B market research in the UAE: reaching hard-to-reach decision-makers',
   },
   {
+    to: getIndustriesInsightPostPath('europe-to-gcc-market-entry-research'),
+    label: 'Europe-to-GCC market entry research: what European brands need to know',
+  },
+  {
+    to: getIndustriesInsightPostPath('chinese-companies-entering-saudi-arabia-and-the-uae'),
+    label: 'Chinese companies entering Saudi Arabia and the UAE: market research playbook',
+  },
+  {
+    to: getIndustriesInsightPostPath('nielsen-alternative-saudi-arabia'),
+    label: 'Syndicated vs custom research in Saudi Arabia: when each fits',
+  },
+  {
+    to: getIndustriesInsightPostPath('government-customer-satisfaction-research-saudi-arabia'),
+    label: 'Government customer satisfaction research in Saudi Arabia: Vision 2030 service quality',
+  },
+  {
     to: getIndustriesInsightPostPath('kantar-alternative-middle-east'),
     label: 'Kantar alternative Middle East: what buyers should compare',
+  },
+  {
+    to: getIndustriesInsightPostPath('chinese-ev-brands-saudi-uae-consumer-research'),
+    label: 'Chinese EV brands in the Gulf: consumer research before launch',
   },
 ] as const;
 

@@ -10,10 +10,10 @@ import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog'
 import {
   getBlogIndexLabelForPost,
   getBlogIndexPathForPost,
-  getIndustriesInsightPostPath,
   INDUSTRIES_INSIGHTS_INDEX_PATH,
   resolveContentSilo,
 } from '@/lib/blog-content-silo';
+import { missingArticleRedirect } from '@/lib/missing-article-redirect';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import {
   BLOG_INDEX_ROBOTS,
@@ -866,20 +866,45 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const executiveSummary =
     post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug, { isArBlog: isArabicArticle }) : null;
 
+  const requestPath = (pathname.split('?')[0] || '').replace(/\/+$/, '') || '/';
+  const ssrBlogPostLookup =
+    ssrBlogBundle && typeof routeData.blogPostLookup === 'string' ? routeData.blogPostLookup : undefined;
+  const lookupFailed = ssrBlogPostLookup === 'error' || isError;
+  const isEnglishArticlePath = /^\/(?:blog|bionixus-industries\/insights)\/[^/]+$/.test(requestPath);
+  const foundRedirect =
+    post && slug && isEnglishArticlePath && !lookupFailed
+      ? missingArticleRedirect({
+          pathname: requestPath,
+          slug,
+          lookup: 'found',
+          post,
+        })
+      : null;
+  const confirmedMissing =
+    Boolean(slug) &&
+    isEnglishArticlePath &&
+    !lookupFailed &&
+    !post &&
+    !fallbackPost &&
+    (ssrBlogPostLookup === 'missing' || !isLoading);
+  const missingRedirect = confirmedMissing
+    ? missingArticleRedirect({
+        pathname: requestPath,
+        slug: slug!,
+        lookup: 'missing',
+        post: null,
+      })
+    : null;
+  const clientRedirectTo = foundRedirect?.redirectTo ?? missingRedirect?.redirectTo ?? null;
+
   useEffect(() => {
     if (slug?.startsWith('fallback-')) {
       const target = pathname.startsWith('/de/') ? '/de/blog' : '/blog';
       window.location.replace(target);
       return;
     }
-    if (
-      slug &&
-      !isArBlog &&
-      post &&
-      resolveContentSilo(post) === 'industries' &&
-      pathname.startsWith('/blog/')
-    ) {
-      navigate(getIndustriesInsightPostPath(slug), { replace: true });
+    if (clientRedirectTo) {
+      navigate(clientRedirectTo, { replace: true });
     }
     const bar = document.getElementById('blog-rp');
     if (!bar) return;
@@ -891,7 +916,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     };
     window.addEventListener('scroll', update, { passive: true });
     return () => window.removeEventListener('scroll', update);
-  }, [post, slug, pathname, isArBlog, navigate]);
+  }, [post, slug, pathname, isArBlog, navigate, clientRedirectTo]);
 
   if (!slug) {
     return (
@@ -932,6 +957,18 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             </div>
           </div>
         </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (clientRedirectTo) {
+    return (
+      <div className="min-h-screen bg-background" data-slug-redirect={clientRedirectTo}>
+        <Navbar />
+        <main className="px-6 py-16 max-w-3xl mx-auto" lang={errorLocale} dir={isRtlBlogLocale(errorLocale) ? 'rtl' : 'ltr'}>
+          <p className="text-muted-foreground">{errorUi.articleNotFound}</p>
+        </main>
         <Footer />
       </div>
     );
@@ -1380,10 +1417,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         {heroCoverImage ? (
-          <div
-            className="relative w-full overflow-hidden bg-navy-deep group"
-            style={{ minHeight: '380px', maxHeight: '560px', aspectRatio: '21 / 9' }}
-          >
+          <div className="relative w-full bg-navy-deep group min-h-[380px] md:min-h-[480px]">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
               src={optimizeSanityImage(heroCoverImage, 1400, 600)}
               alt={post.coverImageAlt || articleDisplayTitle || 'Article cover image'}
@@ -1399,8 +1434,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsl(220 47% 10% / 0.45) 0%, transparent 55%)' }} />
             {/* Gold top accent line */}
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
+            </div>
 
-            <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
+            <div className="relative z-10 flex min-h-[380px] flex-col justify-end px-6 pb-8 pt-16 md:min-h-[480px] md:px-10 md:pb-10">
               {visibleBreadcrumbItems ? (
                 <BreadcrumbNav tone="on-dark" items={visibleBreadcrumbItems} className="hidden md:block px-0 pt-0 pb-0 mb-5" />
               ) : (

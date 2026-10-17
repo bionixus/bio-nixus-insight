@@ -10,7 +10,8 @@ import {
   fetchRelatedPostsWithClient,
   type RelatedPostsData,
 } from '@/lib/sanity-blog';
-import { getIndustriesInsightPostPath, resolveContentSilo } from '@/lib/blog-content-silo';
+import { resolveContentSilo } from '@/lib/blog-content-silo';
+import { missingArticleRedirect } from '@/lib/missing-article-redirect';
 import type { BlogPost } from '@/types/blog';
 import type { PressRelease, PressReleaseListItem } from '@/types/pressRelease';
 import {
@@ -36,8 +37,10 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
   const sanitySlug = resolveSanityBlogSlug(slug);
   let blogPost: BlogPost | null = null;
   let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
+  let sanityLookup: 'found' | 'missing' | 'error' = 'missing';
   try {
     blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
+    sanityLookup = blogPost ? 'found' : 'missing';
     if (blogPost) {
       relatedPosts = await fetchRelatedPostsWithClient(
         sanitySlug,
@@ -51,12 +54,14 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
     }
   } catch {
     blogPost = null;
+    sanityLookup = 'error';
   }
   blogPost = resolveBlogPostForRoute(slug, blogPost);
   return {
     pageType: 'blog-post',
     blogSlug: slug,
     blogPost,
+    blogPostLookup: blogPost ? 'found' : sanityLookup,
     relatedPosts,
     lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
   };
@@ -173,6 +178,20 @@ function decodePathSegment(encoded: string): string {
   } catch {
     return encoded;
   }
+}
+
+function articleRedirectOrData(
+  pathname: string,
+  slug: string,
+  data: Record<string, unknown>,
+): Record<string, unknown> {
+  const redirect = missingArticleRedirect({
+    pathname,
+    slug,
+    lookup: typeof data.blogPostLookup === 'string' ? data.blogPostLookup : undefined,
+    post: (data.blogPost as BlogPost | null) ?? null,
+  });
+  return redirect ?? data;
 }
 
 export async function fetchRouteData(url: string): Promise<Record<string, unknown>> {
@@ -360,32 +379,14 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   if (industriesInsightPostMatch) {
     const slug = decodePathSegment(industriesInsightPostMatch[1]);
     const data = await fetchBlogPostRouteData(slug);
-    const post = data.blogPost as BlogPost | null;
-    if (post && resolveContentSilo(post) !== 'industries') {
-      return {
-        pageType: 'blog-post',
-        blogSlug: slug,
-        blogPost: null,
-        relatedPosts: { related: [], prev: null, next: null },
-        lcpPreloadImageUrl: undefined,
-      };
-    }
-    return data;
+    return articleRedirectOrData(path, slug, data);
   }
 
   const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
   if (blogPostMatch) {
     const slug = decodePathSegment(blogPostMatch[1]);
     const data = await fetchBlogPostRouteData(slug);
-    const post = data.blogPost as BlogPost | null;
-    if (post && resolveContentSilo(post) === 'industries') {
-      return {
-        pageType: 'redirect',
-        statusCode: 301,
-        redirectTo: getIndustriesInsightPostPath(slug),
-      };
-    }
-    return data;
+    return articleRedirectOrData(path, slug, data);
   }
 
   if (path === `/${SKYRIZI_ROOT_SLUG}` || path === `/${SKYRIZI_ROOT_SLUG}/`) {
