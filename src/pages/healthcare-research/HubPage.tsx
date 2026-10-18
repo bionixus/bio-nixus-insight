@@ -514,8 +514,8 @@ export default function HubPage() {
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
             US, Japanese, Chinese and Singapore teams that need primary fieldwork in Saudi Arabia, the UAE or Egypt
-            should start on the corridor money pages — not the domestic country directories. BioNixus does not claim
-            offices in Japan, China or Singapore. Custom work is $10,000–$60,000.
+            should start on the corridor money pages — not the domestic country directories. Work is delivered from
+            BioNixus US, UK and Cairo leadership offices and its Gulf field teams. Custom work is $10,000–$60,000.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
