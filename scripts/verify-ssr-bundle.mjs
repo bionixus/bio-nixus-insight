@@ -80,9 +80,7 @@ const CRITICAL_PATHS = [
   '/blog/egypt-eda-decree-480-drug-pricing-2026',
   '/market-research/usa',
   '/market-research/japan',
-  '/ja/market-research/japan',
   '/market-research/china',
-  '/zh/market-research/china',
   '/market-research/singapore',
 ];
 

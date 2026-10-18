@@ -520,8 +520,8 @@ export default function HubPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               { to: '/market-research/usa', title: 'MENA market research company USA', note: 'US pharma to GCC, plus US market entry' },
-              { to: '/market-research/japan', title: 'Japan-to-MEA research', note: 'Japanese affiliates; Japanese twin at /ja/' },
-              { to: '/market-research/china', title: 'China-to-MEA research', note: 'Chinese brands; Simplified Chinese twin at /zh/' },
+              { to: '/market-research/japan', title: 'Japan-to-MEA research', note: 'Japanese affiliates booking Gulf fieldwork' },
+              { to: '/market-research/china', title: 'China-to-MEA research', note: 'Chinese brands booking Gulf fieldwork' },
               { to: '/market-research/singapore', title: 'Singapore-to-MEA research', note: 'APAC HQs booking Gulf fieldwork' },
             ].map((item) => (
               <HealthcareNavCard key={item.to} to={item.to} title={item.title} description={item.note} />

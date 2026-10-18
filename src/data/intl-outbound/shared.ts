@@ -38,9 +38,7 @@ export const BASE = 'https://www.bionixus.com';
 export const PATHS = {
   usa: '/market-research/usa',
   japan: '/market-research/japan',
-  japanJa: '/ja/market-research/japan',
   china: '/market-research/china',
-  chinaZh: '/zh/market-research/china',
   singapore: '/market-research/singapore',
 } as const;
 
@@ -56,22 +54,10 @@ export const INTL_HREFLANG_BY_PATH: Record<string, Array<{ lang: string; href: s
   [PATHS.japan]: [
     { lang: 'x-default', href: abs(PATHS.japan) },
     { lang: 'en', href: abs(PATHS.japan) },
-    { lang: 'ja', href: abs(PATHS.japanJa) },
-  ],
-  [PATHS.japanJa]: [
-    { lang: 'x-default', href: abs(PATHS.japan) },
-    { lang: 'en', href: abs(PATHS.japan) },
-    { lang: 'ja', href: abs(PATHS.japanJa) },
   ],
   [PATHS.china]: [
     { lang: 'x-default', href: abs(PATHS.china) },
     { lang: 'en', href: abs(PATHS.china) },
-    { lang: 'zh-Hans', href: abs(PATHS.chinaZh) },
-  ],
-  [PATHS.chinaZh]: [
-    { lang: 'x-default', href: abs(PATHS.china) },
-    { lang: 'en', href: abs(PATHS.china) },
-    { lang: 'zh-Hans', href: abs(PATHS.chinaZh) },
   ],
   [PATHS.singapore]: [
     { lang: 'x-default', href: abs(PATHS.singapore) },

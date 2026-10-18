@@ -1280,16 +1280,8 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/market-research/japan"
     },
     {
-      "source": "/ja/market-research/japan",
-      "destination": "/api/indexnow-key?__ssr=1&url=/ja/market-research/japan"
-    },
-    {
       "source": "/market-research/china",
       "destination": "/api/indexnow-key?__ssr=1&url=/market-research/china"
-    },
-    {
-      "source": "/zh/market-research/china",
-      "destination": "/api/indexnow-key?__ssr=1&url=/zh/market-research/china"
     },
     {
       "source": "/market-research/singapore",

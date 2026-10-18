@@ -62,7 +62,7 @@ export const JAPAN_EN_INTL_PAGE: IntlMoneyPage = {
       id: 'who-this-is-for',
       heading: 'Who inside a Japanese company briefs Middle East research?',
       paragraphs: [
-        `Middle East market research for Japanese companies is commissioned by the affiliate or the overseas business unit that owns Saudi Arabia, the UAE, Egypt or a wider GCC P&amp;L — not by the Japan domestic insights team that already has Intage or Macromill on contract. Typical buyers sit in Tokyo, Osaka or a US or European regional HQ and must take a Gulf question to a Japanese investment committee. This page is the English money page for that outbound brief. The Japanese-language twin is {link:/ja/market-research/japan|日本企業向け中東市場調査}. Start from the {link:/healthcare-market-research|healthcare market research} hub when the file is a physician or payer study.`,
+        `Middle East market research for Japanese companies is commissioned by the affiliate or the overseas business unit that owns Saudi Arabia, the UAE, Egypt or a wider GCC P&amp;L — not by the Japan domestic insights team that already has Intage or Macromill on contract. Typical buyers sit in Tokyo, Osaka or a US or European regional HQ and must take a Gulf question to a Japanese investment committee. This page is the English money page for that outbound brief. Briefs can be written in Japanese or English; the protocol and the steering-committee readout stay in English. Start from the {link:/healthcare-market-research|healthcare market research} hub when the file is a physician or payer study.`,
         `Takeda, Astellas, Daiichi Sankyo, Eisai, Otsuka and their peers already run global insights stacks. Those stacks are strong in Japan and in the United States. They are thinner when the decision is an SFDA file, a NUPCO tender, a DHA formulary or an Egypt EDA price. The same gap shows up for Japanese corporates in automotive, energy, food and industrial equipment. Domestic Japan head terms such as “market research company Japan” belong to Intage and Macromill and are not the job of this page. See {link:/insights/top-market-research-companies-japan-2026|top market research companies in Japan} and {link:/healthcare-market-research/japan|healthcare market research in Japan} for the Japan-side directories.`,
         `BioNixus was founded in ${FACTS.founded}. Headquarters are in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. The firm has served ${FACTS.clients} clients in ${FACTS.countries} countries and has run ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025), with ${FACTS.physicians} physicians in the wider network. Custom pricing is ${FACTS.priceLow}–${FACTS.priceHigh}. ${DELIVERY.apac}`,
       ],
@@ -107,7 +107,7 @@ export const JAPAN_EN_INTL_PAGE: IntlMoneyPage = {
       id: 'how-we-work',
       heading: 'How a Japanese affiliate briefs BioNixus',
       paragraphs: [
-        `Tokyo or Osaka writes the commercial question in Japanese or English. Sheridan or London turns it into a protocol. Al Khobar, Dubai and Kuwait recruit. Cairo joins for Egypt. The first deliverable is a written proposal within 48 hours of a usable brief. The second is a fieldwork plan that names countries, quotas, language and the quality gates. The third is a readout a Japanese investment committee can interrogate in English. A Japanese-language page is already live at {link:/ja/market-research/japan|／ja／market-research／japan} and is flagged for native review.`,
+        `Tokyo or Osaka writes the commercial question in Japanese or English. Sheridan or London turns it into a protocol. Al Khobar, Dubai and Kuwait recruit. Cairo joins for Egypt. The first deliverable is a written proposal within 48 hours of a usable brief. The second is a fieldwork plan that names countries, quotas, language and the quality gates. The third is a readout a Japanese investment committee can interrogate in English. A Japanese-language page is in native review and is not live on this site yet.`,
         `A Japanese-language cell inside a Gulf study is appropriate when the respondent is a Japanese firm, a Japanese hospital visitor, or a Japanese expatriate buyer. It is not a substitute for Arabic when the prescriber, the tender committee or the consumer is Saudi, Emirati or Egyptian. That is the most common design error we see on Japan-to-MEA briefs.`,
         `Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. The written guarantees are: ${GUARANTEES}. The slogan is “${FACTS.slogan}” BioNixus never claims guaranteed accuracy. To brief Middle East market research for Japanese companies, use the {link:/contact|contact form} or email {ext:mailto:admin@bionixus.com|admin@bionixus.com}. United States {ext:tel:+18884655557|+1-888-465-5557}. United Kingdom {ext:tel:+447727666682|+44 7727 666682}. Al Khobar {ext:tel:+966501825336|+966 50 182 5336}.`,
         `Japanese teams that also own a US cost centre should read {link:/market-research/usa|MENA market research company USA}. APAC HQs booking from Singapore should read {link:/market-research/singapore|Middle East market research for Singapore companies}. Healthcare country hubs that sit under the same brief are {link:/healthcare-market-research/saudi-arabia|Saudi Arabia}, {link:/healthcare-market-research/uae|the UAE} and {link:/healthcare-market-research/egypt|Egypt}. ${DELIVERY.apac}`,
@@ -144,7 +144,7 @@ export const JAPAN_EN_INTL_PAGE: IntlMoneyPage = {
     {
       question: 'Is there a Japanese-language page?',
       answer:
-        'Yes. The Japanese twin is /ja/market-research/japan. It is written for native reading and flagged for native review. Hreflang pairs the two URLs.',
+        'Not yet. A Japanese-language page is in native review. Until it publishes, brief this English page. Do not treat an unpublished Japanese URL as live.',
     },
     {
       question: 'Do you guarantee the accuracy of the findings?',
@@ -153,7 +153,6 @@ export const JAPAN_EN_INTL_PAGE: IntlMoneyPage = {
     },
   ],
   relatedLinks: [
-    { to: PATHS.japanJa, label: '日本企業向け中東市場調査' },
     { to: PATHS.usa, label: 'MENA market research company USA' },
     { to: PATHS.china, label: 'Middle East market research for Chinese companies' },
     { to: PATHS.singapore, label: 'Middle East market research for Singapore companies' },
