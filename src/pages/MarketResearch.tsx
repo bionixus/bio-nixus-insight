@@ -395,7 +395,7 @@ export default function MarketResearch() {
               <Link to="/market-research/china">China-to-MEA</Link>
               {' · '}
               <Link to="/market-research/singapore">Singapore-to-MEA</Link>
-              . BioNixus does not claim offices in Japan, China or Singapore.
+              . Work is delivered from BioNixus US, UK and Cairo leadership offices and its Gulf field teams.
             </p>
           </div>
         </section>

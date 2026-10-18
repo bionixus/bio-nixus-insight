@@ -20,11 +20,11 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
   nativeReviewRequired: false,
   title: 'Middle East Market Research, Chinese Companies 2026',
   description:
-    'China-to-MEA market research for Chinese brands: Saudi and UAE demand, Egypt entry, Arabic fieldwork. No Shanghai office. $10k–$60k. Proposal in 48 hours.',
+    'China-to-MEA research for Chinese brands: Saudi and UAE demand, Egypt entry, from US, UK and Cairo offices with Gulf field teams. $10k–$60k. 48-hour proposal.',
   h1: 'Middle East Market Research for Chinese Companies',
   primaryKeyword: 'Middle East market research for Chinese companies',
   quickAnswer:
-    'BioNixus runs China-to-MEA market research for Chinese companies from Sheridan, Wyoming, with Arabic–English fieldwork in Al Khobar, Dubai, Kuwait and Cairo. There is no China office. The live KSA/UAE playbook and the Egypt insight sit next to this money page. Custom work is $10,000–$60,000. Scope is guaranteed in writing, not findings.',
+    'BioNixus runs China-to-MEA market research for Chinese companies from leadership offices in the USA (Sheridan, Wyoming), the United Kingdom (London) and Cairo (Sheikh Zayed), with Arabic–English fieldwork in Al Khobar, Dubai, Kuwait and Cairo. The live KSA/UAE playbook and the Egypt insight sit next to this money page. Custom work is $10,000–$60,000. Scope is guaranteed in writing, not findings.',
   breadcrumbLabel: 'China',
   dateModified: INTL_DATE_MODIFIED,
   coverImage: '/images/intl-outbound/china-cover.jpg',
@@ -44,7 +44,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
     {
       title: 'China-to-MEA, not a mainland panel',
       description:
-        'Mainland HQs brief Sheridan or London. Fieldwork is in the Gulf and Cairo. BioNixus does not claim a China office.',
+        'Mainland HQs brief Sheridan or London. Fieldwork is delivered by Gulf field teams and the Cairo leadership office.',
     },
     {
       title: 'Two live playbooks already exist',
@@ -64,7 +64,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       paragraphs: [
         `Middle East market research for Chinese companies is the commissioned file a Shenzhen, Shanghai, Beijing or Suzhou headquarters needs before it remits capital to Saudi Arabia, the UAE, Egypt or a wider Africa plan. The buyer is usually an overseas-investment, international-business or brand team, not the domestic China insights vendor. This English money page sits next to the Simplified Chinese twin {link:/zh/market-research/china|中国企业中东市场调研}. Start from the {link:/healthcare-market-research|healthcare market research} hub for physician and payer work, and from the {link:/bionixus-industries|industries hub} for non-pharma briefs.`,
         `The live article {link:/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae|Chinese companies entering Saudi Arabia and the UAE} already owns the keyword “Chinese companies Saudi market entry”. The live article {link:/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research|Chinese EV brands in the Gulf} owns the EV consumer brief. A Chinese-companies-Egypt insight is in draft as of 18 October 2026 (pull request 287). This money page does not duplicate those playbooks. It is the service URL they should convert into.`,
-        `BioNixus was founded in ${FACTS.founded} and is headquartered in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. ${FACTS.clients} clients, ${FACTS.countries} countries, ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025), ${FACTS.physicians} physicians, ${FACTS.priceLow}–${FACTS.priceHigh} custom pricing. BioNixus is ${OFFICES.saoPaulo}. There is no Shanghai, Beijing or Shenzhen office to list.`,
+        `BioNixus was founded in ${FACTS.founded} and is headquartered in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. ${FACTS.clients} clients, ${FACTS.countries} countries, ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025), ${FACTS.physicians} physicians, ${FACTS.priceLow}–${FACTS.priceHigh} custom pricing. BioNixus is ${OFFICES.saoPaulo}. China-to-MEA work is delivered from those US, UK and Cairo leadership offices and the Gulf field teams.`,
       ],
     },
     {
@@ -80,7 +80,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       id: 'egypt-africa',
       heading: 'Egypt and Africa are a different file from the Gulf',
       paragraphs: [
-        `Chinese companies Egypt market research is a Cairo file. The BioNixus edge is the Cairo leadership office in Sheikh Zayed, not a claim of a mainland China premises. Egypt has its own VAT, GAFI and EDA stack. Do not copy a Dubai free-zone plan onto a Cairo factory or a North Africa distributor. The dedicated Egypt insight is not yet merged; until it is, this page and the KSA/UAE playbook are the live URLs.`,
+        `Chinese companies Egypt market research is a Cairo file. The BioNixus edge is the Cairo leadership office in Sheikh Zayed, which owns that sample with the Gulf field teams. Egypt has its own VAT, GAFI and EDA stack. Do not copy a Dubai free-zone plan onto a Cairo factory or a North Africa distributor. The dedicated Egypt insight is not yet merged; until it is, this page and the KSA/UAE playbook are the live URLs.`,
         `Sibling outbound pages help a global Chinese HQ that also books work from a US or Singapore cost centre: {link:/market-research/usa|MENA market research company USA}, {link:/market-research/japan|Middle East market research for Japanese companies} and {link:/market-research/singapore|Middle East market research for Singapore companies}. Australian exporters using the same Gulf seats should read {link:/bionixus-industries/insights/australia-gcc-market-entry-research|Australia–GCC market entry research}.`,
         `A Mandarin cell is correct when the Gulf counterparty is a Chinese SOE, a Chinese contractor or a Chinese distributor. It is incorrect when the prescriber is a Saudi oncologist or the shopper is an Emirati household. Write the language plan into the protocol before the first interview is booked.`,
       ],
@@ -100,7 +100,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       paragraphs: [
         `A typical China-to-MEA healthcare file is a named specialty, country quotas, and an Arabic–English instrument. Automotive, industrial and consumer files use the same Gulf field offices for buyers and households. Four to eight weeks is normal once the protocol is signed. A small qualitative cell can be faster. A 300-interview launch ATU cannot. BioNixus will not invent a one-week national study to win a request-for-proposal.`,
         `The live KSA/UAE playbook and the live Chinese EV consumer article remain the supporting URLs. This money page is the conversion URL those readers should request fieldwork on. A Chinese-companies-Egypt insight is still in draft as of 18 October 2026. Until it is live, say Egypt in the first sentence of the form. Do not treat the playbooks and this page as duplicate URLs.`,
-        `Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. The 48-hour proposal clock starts when the decision, countries, respondents, language and committee date are named. BioNixus does not claim a China office. Mainland teams brief Sheridan or London. Fieldwork runs from Al Khobar, Dubai, Kuwait and Cairo.`,
+        `Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. The 48-hour proposal clock starts when the decision, countries, respondents, language and committee date are named. Mainland teams brief Sheridan or London. Fieldwork is delivered from the US, UK and Cairo leadership offices and the Gulf field teams in Al Khobar, Dubai and Kuwait.`,
       ],
     },
     {
@@ -112,7 +112,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
         `To brief China-to-MEA research, use the {link:/contact|contact form} or email {ext:mailto:admin@bionixus.com|admin@bionixus.com}. United States {ext:tel:+18884655557|+1-888-465-5557}. United Kingdom {ext:tel:+447727666682|+44 7727 666682}. Al Khobar {ext:tel:+966501825336|+966 50 182 5336}.`,
         `Mainland HQs that also book from a US or Singapore cost centre should keep the corridors on separate money pages: {link:/market-research/usa|MENA market research company USA}, {link:/market-research/japan|Middle East market research for Japanese companies} and {link:/market-research/singapore|Middle East market research for Singapore companies}. Healthcare country hubs under the same brief are {link:/healthcare-market-research/saudi-arabia|Saudi Arabia}, {link:/healthcare-market-research/uae|the UAE} and {link:/healthcare-market-research/egypt|Egypt}.`,
         `A China domestic healthcare tracker is a different job. Keep {link:/healthcare-market-research/china|healthcare market research in China} and {link:/insights/top-healthcare-market-research-companies-china-2026|top healthcare market research companies in China} for the mainland sample. Do not merge a China HCP tracker and a Gulf physician survey into one mean. If a Shanghai committee asks for that average, write the refusal into the proposal. The usable file is a set of country cuts.`,
-        `ODI paperwork, MISA activity lists and free-zone incorporation are counsel jobs. BioNixus names the buyer, the city, the channel and the price the committee can interrogate. We do not file the licence. We do not claim a Shanghai, Beijing or Shenzhen office. We do not claim guaranteed accuracy of findings. The written guarantees stay on scope, replacement, minimum sample, re-field and the pilot credit.`,
+        `ODI paperwork, MISA activity lists and free-zone incorporation are counsel jobs. BioNixus names the buyer, the city, the channel and the price the committee can interrogate. We do not file the licence. Delivery stays with the US, UK and Cairo leadership offices and the Gulf field teams. We do not claim guaranteed accuracy of findings. The written guarantees stay on scope, replacement, minimum sample, re-field and the pilot credit.`,
         `If the same headquarters also owns an Egypt factory, a North Africa distributor, or an Africa price file, say so in the first sentence. Cairo leadership in Sheikh Zayed owns that sample. Do not copy a Dubai free-zone plan onto a Cairo plant. Do not average Egypt into a GCC cell. The dedicated Egypt insight remains in draft; this money page is the live conversion URL until that article merges. Automotive, industrial and consumer files use the same Gulf field offices. Keep the live KSA/UAE playbook and the live EV article as supporting URLs, not as duplicate service pages. A Shanghai committee that wants one mean across China and Saudi cells will get a written refusal.`,
       ],
     },
@@ -121,15 +121,15 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       heading: 'ODI paperwork is not a demand file',
       paragraphs: [
         `Mainland investment committees often arrive with an outbound-direct-investment file, a free-zone quote and a bilateral trade printout. Those documents are real. They do not name the buyer. MFA China’s Saudi and UAE pages, the SPA stock count and the WAM resident count are the same class of evidence: dated, official, and silent on whether a second brand will sell. BioNixus will cite them. It will not multiply them into a TAM.`,
-        `A China-to-MEA brief that starts with the licence instead of the customer will waste a cycle. Write the city, the channel and the respondent first. Counsel files MISA, the free zone and the ODI path. BioNixus fields the interviews. The two jobs stay separate on the proposal. Custom work remains ${FACTS.priceLow}–${FACTS.priceHigh}. A written proposal follows within 48 hours of a usable brief. Scope is guaranteed in writing. Findings are not. BioNixus does not claim an office in China.`,
+        `A China-to-MEA brief that starts with the licence instead of the customer will waste a cycle. Write the city, the channel and the respondent first. Counsel files MISA, the free zone and the ODI path. BioNixus fields the interviews. The two jobs stay separate on the proposal. Custom work remains ${FACTS.priceLow}–${FACTS.priceHigh}. A written proposal follows within 48 hours of a usable brief. Scope is guaranteed in writing. Findings are not. Delivery stays with the US, UK and Cairo leadership offices and the Gulf field teams.`,
       ],
     },
   ],
   faqs: [
     {
-      question: 'Do you have an office in China?',
+      question: 'Where is China-to-MEA research delivered from?',
       answer:
-        'No. BioNixus does not claim an office in China. Headquarters are in Sheridan, Wyoming. Leadership offices are the USA, the United Kingdom (London) and Cairo (Sheikh Zayed). Field offices are Al Khobar, Dubai and Kuwait. Mainland teams brief those offices for Middle East and Africa fieldwork.',
+        'From BioNixus leadership offices in the USA (Sheridan, Wyoming), the United Kingdom (London) and Cairo (Sheikh Zayed), with Gulf field teams in Al Khobar, Dubai and Kuwait. Mainland teams brief those offices for Middle East and Africa fieldwork.',
     },
     {
       question: 'Is this the same page as Chinese companies entering Saudi Arabia and the UAE?',

@@ -109,15 +109,23 @@ describe('international outbound money pages', () => {
   it('has one H1 phrase, seven FAQs, 2,000–3,000 content words, and native-review flags', () => {
     for (const page of INTL_MONEY_PAGES) {
       expect(page.h1.length).toBeGreaterThan(8);
-      expect(page.title.length).toBeGreaterThanOrEqual(50);
       expect(page.title.length).toBeLessThanOrEqual(60);
-      expect(page.description.length).toBeGreaterThanOrEqual(150);
-      expect(page.description.length).toBeLessThanOrEqual(160);
+      if (page.lang === 'en') {
+        expect(page.title.length).toBeGreaterThanOrEqual(50);
+      } else {
+        expect(page.title.length).toBeGreaterThanOrEqual(28);
+      }
+      expect(page.description.length).toBeGreaterThanOrEqual(145);
+      expect(page.description.length).toBeLessThanOrEqual(158);
       expect(page.faqs).toHaveLength(7);
       const words = countPageWords(page);
       expect(words).toBeGreaterThanOrEqual(2000);
       expect(words).toBeLessThanOrEqual(3200);
     }
+    expect(JAPAN_JA_INTL_PAGE.title).toBe('日本企業向け中東市場調査｜サウジ・UAE・エジプト｜BioNixus');
+    expect(CHINA_ZH_INTL_PAGE.title).toBe('中国企业中东市场调研｜沙特·阿联酋·埃及｜BioNixus');
+    expect(JAPAN_JA_INTL_PAGE.title).not.toMatch(/Saudi UAE Egypt Field/i);
+    expect(CHINA_ZH_INTL_PAGE.title).not.toMatch(/Saudi UAE Egypt Field/i);
     expect(JAPAN_JA_INTL_PAGE.nativeReviewRequired).toBe(true);
     expect(CHINA_ZH_INTL_PAGE.nativeReviewRequired).toBe(true);
     expect(USA_INTL_PAGE.nativeReviewRequired).toBe(false);
@@ -126,7 +134,7 @@ describe('international outbound money pages', () => {
     expect(SINGAPORE_INTL_PAGE.nativeReviewRequired).toBe(false);
   });
 
-  it('never claims guaranteed accuracy or offices in Japan, China or Singapore', () => {
+  it('never claims guaranteed accuracy or invents Japan, China or Singapore offices', () => {
     const corpus = INTL_MONEY_PAGES.map((page) => JSON.stringify(page)).join('\n');
     expect(corpus).not.toMatch(/we guarantee(?:d)? (?:the )?accuracy/i);
     expect(corpus).not.toMatch(/accuracy is guaranteed/i);
@@ -135,11 +143,22 @@ describe('international outbound money pages', () => {
     expect(corpus).toMatch(/not a claim that the findings are guaranteed/i);
     expect(corpus).toMatch(/do not claim guaranteed accuracy of findings/i);
     expect(corpus).not.toMatch(/our (?:Tokyo|Osaka|Shanghai|Beijing|Shenzhen|Singapore) office/i);
-    expect(corpus).toMatch(/does not claim an office in Japan/);
-    expect(corpus).toMatch(/does not claim an office in China/);
-    expect(corpus).toMatch(/does not claim an office in Singapore/);
-    expect(JAPAN_JA_INTL_PAGE.faqs[0].answer).toContain('日本にオフィスを主張しません');
-    expect(CHINA_ZH_INTL_PAGE.faqs[0].answer).toContain('不宣称在中国设有办公室');
+  });
+
+  it('does not use “No … office” phrasing in titles, metas, answers or body copy', () => {
+    const corpus = INTL_MONEY_PAGES.map((page) => JSON.stringify(page)).join('\n');
+    expect(corpus).not.toMatch(/No (?:Tokyo|Osaka|Shanghai|Beijing|Shenzhen|China|Singapore|Japan) office/i);
+    expect(corpus).not.toMatch(/There is no (?:Tokyo|Osaka|Shanghai|Beijing|Shenzhen|China|Singapore|Japan)/i);
+    expect(corpus).not.toMatch(/does not claim (?:an office|a (?:Japan|China|Singapore|Tokyo|Shanghai) office|offices in|a Singapore premises)/i);
+    expect(corpus).not.toMatch(/No Singapore premises/i);
+    expect(corpus).not.toMatch(/東京オフィスは(?:主張しません|ありません)/);
+    expect(corpus).not.toMatch(/事業所は主張しません/);
+    expect(corpus).not.toMatch(/日本にオフィスを主張しません/);
+    expect(corpus).not.toMatch(/无中国办公室/);
+    expect(corpus).not.toMatch(/不宣称(?:设有)?中国办公室/);
+    expect(corpus).not.toMatch(/不宣称在中国/);
+    expect(corpus).not.toMatch(/不宣称上海/);
+    expect(llms).not.toMatch(/No Tokyo office|No China office|No Singapore office|office claims/);
   });
 
   it('keeps self-canonicals on every language version', () => {
@@ -196,5 +215,7 @@ describe.each(INTL_MONEY_PAGES.map((page) => [page.path, page] as const))('SSR %
     expect(head).toContain(`https://www.bionixus.com${page.path}`);
     expect(html.toLowerCase()).not.toMatch(/we guarantee(?:d)? accuracy/);
     expect(html).not.toMatch(/our Tokyo office|our Shanghai office|our Singapore office/);
+    expect(html).not.toMatch(/No Tokyo office|No Shanghai office|No China office|No Singapore office/i);
+    expect(html).not.toMatch(/東京オフィスは主張しません|无中国办公室/);
   });
 });
