@@ -81,6 +81,12 @@ export const americasMarketIntelligence: Record<string, MarketIntelligence> = {
       { step: 7, action: "ANS incorporation for private insurance", body: "ANS", timeline: "90-day statutory review", notes: "Rol de Procedimentos e Eventos em Saúde — mandatory benefit basket for private plans; significant coverage for ~50M insured" },
     ],
     majorHospitals: [
+      { name: "Hospital das Clínicas da USP (São Paulo)", type: 'academic', beds: "2,200+ beds", specialties: "Largest academic hospital complex in Latin America; oncology, transplant, rare disease reference" },
+      { name: "Hospital Sírio-Libanês", type: 'private', beds: "900 beds", specialties: "Premium oncology and cardiology; international patient volume; São Paulo flagship" },
+      { name: "Hospital Israelita Albert Einstein", type: 'private', beds: "700 beds", specialties: "Oncology, cardiology, neurology; top private payer channel in São Paulo" },
+      { name: "Instituto Nacional de Câncer (INCA)", type: 'public', beds: "200 beds (specialist cancer centre)", specialties: "National cancer reference; SUS high-cost oncology protocols and CONITEC precedents" },
+      { name: "Hospital de Clínicas de Porto Alegre (HCPA)", type: 'academic', beds: "750 beds", specialties: "Southern Brazil academic anchor; rheumatology and immunology KOL density" },
+      { name: "Rede D'Or São Luiz", type: 'private', beds: "6,500+ beds (network)", specialties: "Largest private hospital group; ANS channel volume and premium device uptake" },
     ],
     accessTimeline: {
       regulatoryApproval: "12–24 months (priority)",

@@ -137,7 +137,7 @@ export const CTR_SEO_BY_PATH = {
     // GSC 17 Sep–14 Oct 2026: 3,063 impr, pos 4.71, 1.47% CTR — comparison angle for "iqvia competitors".
     title: 'IQVIA vs Competitors: Primary Research Compared 2026',
     description:
-      'Compare IQVIA competitors for healthcare research: when syndicated audits still fit, and when BioNixus wins on primary HCP fieldwork. 48-hour proposal.',
+      'IQVIA competitors and companies like IQVIA compared: syndicated audits vs primary HCP fieldwork, hospital data, and MENA access. 48-hour proposal.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     // GSC 17 Sep–14 Oct 2026: 1,838 impr, pos 3.05, 0.27% CTR — keep H1 meaning, rewrite snippet.

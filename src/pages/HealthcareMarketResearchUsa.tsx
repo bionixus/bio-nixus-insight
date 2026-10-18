@@ -335,6 +335,46 @@ export default function HealthcareMarketResearchUsa() {
         </ReportPremiumSection>
 
         <ReportPremiumSection
+          id="usa-market-context"
+          title="US healthcare market context for research buyers (2026)"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              The United States remains the world&apos;s largest pharmaceutical and medical-device market by revenue —
+              and the most fragmented for access. Roughly 330 million residents sit behind thousands of payer contracts,
+              6,000+ hospitals, and three dominant PBMs that influence most insured lives. That scale is why US teams
+              license syndicated data nationally yet still commission primary research when a launch, IRA negotiation, or
+              IDN contract is on the line.
+            </p>
+            <p>
+              Medicare Advantage enrollment now covers more than half of Medicare beneficiaries, shifting medical and
+              pharmacy benefit design toward plan-specific prior authorization and step therapy — patterns that national
+              claims feeds smooth over. Medicaid managed care and 340B hospital purchasing add further channel complexity
+              for oncology and specialty products. BioNixus US modules map those channels at account level: which AMC
+              oncology chairs influence pathway updates, which PBM medical directors gate GLP-1 or PCSK9 access, and
+              which GPO-affiliated systems still run independent P&amp;T votes.
+            </p>
+            <p>
+              For portfolio teams benchmarking the US against EU5 or GCC, see{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                healthcare market research programmes
+              </Link>
+              ,{' '}
+              <Link to="/pharmaceutical-market-research-usa" className="text-primary font-medium hover:underline">
+                USA pharmaceutical market research
+              </Link>
+              , and the{' '}
+              <Link to="/usa-healthcare-market-report" className="text-primary font-medium hover:underline">
+                USA healthcare market report
+              </Link>
+              . Custom US primary research is typically scoped from USD 10,000–60,000 with a 48-hour proposal turnaround.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
           id="syndicated-vs-primary"
           title="When US affiliates brief BioNixus vs IQVIA or NielsenIQ"
           variant="muted"
