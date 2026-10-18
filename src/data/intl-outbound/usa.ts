@@ -6,6 +6,7 @@ import {
   JETRO_MEA_REPORTS,
   MFA_CHINA_KSA,
   OFFICES,
+  DELIVERY,
   INTL_HREFLANG_BY_PATH,
   PATHS,
   SPA_CHINESE_KSA,
@@ -21,11 +22,11 @@ export const USA_INTL_PAGE: IntlMoneyPage = {
   nativeReviewRequired: false,
   title: 'MENA Market Research Company USA: Pharma Fieldwork',
   description:
-    'US-registered MENA market research for pharma and medtech: GCC physician surveys, Saudi and UAE entry, plus US market entry. $10k–$60k. 48-hour proposal.',
+    'Work is delivered from the BioNixus US office. MENA research for US pharma: GCC physician surveys, Saudi and UAE entry, plus US market entry. $10k–$60k.',
   h1: 'MENA Market Research Company USA',
   primaryKeyword: 'MENA market research company USA',
   quickAnswer:
-    'BioNixus is a US-registered MENA market research company for US pharma and medtech teams that need primary fieldwork in Saudi Arabia, the UAE, Egypt and the wider GCC. Headquarters sit in Sheridan, Wyoming. Field offices are Al Khobar, Dubai and Kuwait. Custom studies run $10,000–$60,000. Scope is guaranteed in writing, not findings.',
+    'BioNixus is a US-registered MENA market research company for US pharma and medtech teams that need primary fieldwork in Saudi Arabia, the UAE, Egypt and the wider GCC. Work is delivered from the BioNixus US office. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. Custom studies run $10,000–$60,000. Scope is guaranteed in writing, not findings.',
   breadcrumbLabel: 'USA',
   dateModified: INTL_DATE_MODIFIED,
   coverImage: '/images/intl-outbound/usa-cover.jpg',
@@ -65,7 +66,7 @@ export const USA_INTL_PAGE: IntlMoneyPage = {
       paragraphs: [
         `US brand, insights and market-access teams brief a {link:/healthcare-market-research|healthcare market research} partner when the decision sits in the Middle East or Africa and the dashboard they already buy does not cut far enough. The typical buyer is a US affiliate or a global insights lead in New Jersey, California, Illinois or Massachusetts who must take a Saudi, UAE or Egypt question to a US steering committee. This page is the money page for that outbound brief. It is not a domestic “market research company USA” directory — that comparison already lives on {link:/insights/top-healthcare-market-research-companies-usa-2026|top healthcare market research companies in the USA} and {link:/healthcare-market-research-usa|healthcare market research USA}.`,
         `Two other buyers use the same page. First, foreign firms entering the United States — Gulf, European and Brazilian sponsors who need US market-entry research before they remit capital. Second, US consumer, automotive and B2B teams that need the same GCC fieldwork the pharma practice already runs. Start from the {link:/bionixus-industries|industries hub} when the brief is not a physician or payer file.`,
-        `BioNixus was founded in ${FACTS.founded} and is headquartered in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. The firm has served ${FACTS.clients} clients in ${FACTS.countries} countries and has run ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025). Custom pricing is ${FACTS.priceLow}–${FACTS.priceHigh}. ${FACTS.reviews} client reviews sit on public profiles. BioNixus is ${OFFICES.saoPaulo}; Latin America is covered today from the US office with local consultants. Outbound MEA work is delivered from those US, UK and Cairo leadership offices and the Gulf field teams.`,
+        `BioNixus was founded in ${FACTS.founded} and is headquartered in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. The firm has served ${FACTS.clients} clients in ${FACTS.countries} countries and has run ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025). Custom pricing is ${FACTS.priceLow}–${FACTS.priceHigh}. ${FACTS.reviews} client reviews sit on public profiles. ${DELIVERY.usa} ${DELIVERY.latam}`,
       ],
     },
     {
@@ -91,7 +92,7 @@ export const USA_INTL_PAGE: IntlMoneyPage = {
       heading: 'US market entry research for foreign companies',
       paragraphs: [
         `The second job on this page is inbound. US market entry research for foreign companies is the commissioned file a Riyadh, Dubai, London or São Paulo committee needs before it funds a US subsidiary, a distributor, or an FDA-facing launch. The questions are not the same as a GCC physician survey. They include who the US buyer is, which state and channel, what tax and import file applies, and whether the first vehicle is a distributor, a state-registered seller, or a US entity. A dedicated industries insight for that brief is in draft as of 18 October 2026; until it is live, this money page is the indexed URL.`,
-        `Gulf sponsors often arrive with a free-zone company and a US warehouse plan. That is not a demand file. European and Brazilian sponsors often arrive with a CE or ANVISA dossier and assume FDA plus one national payer story. The United States is fifty state tax regimes, a federal import stack, and commercial payers that do not behave like NUPCO or NICE. BioNixus scopes the research from Sheridan. It does not file the licence. Counsel and a registered agent do that. The research names the customer, the price and the channel the committee can interrogate.`,
+        `Gulf sponsors often arrive with a free-zone company and a US warehouse plan. That is not a demand file. European sponsors brief the USA and UK offices; ${DELIVERY.europe} Brazilian and other LATAM sponsors brief Sheridan with local field teams; ${DELIVERY.latam} The United States is fifty state tax regimes, a federal import stack, and commercial payers that do not behave like NUPCO or NICE. BioNixus scopes the research from Sheridan. It does not file the licence. Counsel and a registered agent do that. The research names the customer, the price and the channel the committee can interrogate.`,
         `Inbound US work still uses the same written guarantees as outbound MEA work. Scope, timing, replacement of non-qualifying respondents, a minimum sample, re-field at our cost, and a pilot fee credited to the main field. The tagline remains “${FACTS.slogan}” Findings are not guaranteed. Never read that sentence as guaranteed accuracy.`,
       ],
     },
@@ -118,7 +119,7 @@ export const USA_INTL_PAGE: IntlMoneyPage = {
       heading: 'Pricing, guarantees and what we will not claim',
       paragraphs: [
         `Custom studies typically run from ${FACTS.priceLow} to ${FACTS.priceHigh}. The price moves with countries, how hard the respondents are to reach, method and sample size. A written proposal follows within 48 hours of a usable brief. The written guarantees are: ${GUARANTEES}. The slogan is “${FACTS.slogan}” That is a scope guarantee. It is not a claim of guaranteed accuracy, guaranteed findings, or a guaranteed forecast.`,
-        `Work is delivered from leadership offices in the USA, the United Kingdom and Cairo, with Gulf field teams in Al Khobar, Dubai and Kuwait. São Paulo is only described as ${OFFICES.saoPaulo}. Fieldwork in Japan, China or Singapore is scoped from Sheridan with local partners. MEA fieldwork is scoped from the Gulf and Cairo offices named above.`,
+        `${DELIVERY.usa} Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. Fieldwork in Japan, China or Singapore is scoped from Sheridan with local partners.`,
         `To brief a MENA market research company USA programme, use the {link:/contact|contact form} or email {ext:mailto:admin@bionixus.com|admin@bionixus.com}. In the United States call {ext:tel:+18884655557|+1-888-465-5557}. In the United Kingdom call {ext:tel:+447727666682|+44 7727 666682}. In the Kingdom call the Al Khobar field office on {ext:tel:+966501825336|+966 50 182 5336}.`,
       ],
     },
@@ -127,7 +128,7 @@ export const USA_INTL_PAGE: IntlMoneyPage = {
     {
       question: 'Is BioNixus a MENA market research company the US can contract?',
       answer:
-        'Yes. BioNixus is a US-registered primary research firm headquartered in Sheridan, Wyoming, with MEA fieldwork run from Al Khobar, Dubai, Kuwait and Cairo. US pharma and medtech teams contract the Sheridan office and receive Arabic–English field execution in the GCC and Egypt. Custom work is $10,000–$60,000. A proposal follows within 48 hours of a brief.',
+        'Yes. BioNixus is a US-registered primary research firm headquartered in Sheridan, Wyoming. Work is delivered from the BioNixus US office. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. US pharma and medtech teams contract Sheridan and receive Arabic–English field execution in the GCC and Egypt. Custom work is $10,000–$60,000. A proposal follows within 48 hours of a brief.',
     },
     {
       question: 'What is Middle East healthcare market research for US pharma?',
@@ -147,7 +148,7 @@ export const USA_INTL_PAGE: IntlMoneyPage = {
     {
       question: 'Do you also do US market entry research for foreign companies?',
       answer:
-        'Yes. Gulf, European and Brazilian sponsors brief Sheridan for demand, channel, tax and FDA-context research before they fund a US vehicle. BioNixus does the research. It does not file the licence or replace US counsel. Scope is guaranteed in writing. Findings are not.',
+        'Yes. Gulf sponsors brief Sheridan. European sponsors: work is delivered from the USA and UK offices. Brazilian and LATAM sponsors: work is delivered from the USA offices and our field teams in Brazil and LATAM. BioNixus does the research. It does not file the licence or replace US counsel. Scope is guaranteed in writing. Findings are not.',
     },
     {
       question: 'Are you an HCP survey company USA for domestic US physicians?',

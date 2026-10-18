@@ -318,8 +318,7 @@ export default function BionixusIndustries() {
               </h2>
               <p className="bx-lead center">
                 Non-pharma and pharma teams booking Gulf or Egypt fieldwork from those markets should use the corridor
-                money pages. Work is delivered from BioNixus US, UK and Cairo leadership offices and its Gulf field
-                teams.
+                money pages. Work is delivered from the USA and UK offices.
               </p>
             </div>
             <div className="bx-next-grid">
