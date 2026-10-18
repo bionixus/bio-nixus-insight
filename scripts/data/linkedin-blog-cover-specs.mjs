@@ -795,4 +795,49 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowE',
     ),
   },
+  'china-biotech-export-controls-pharma-deals-2026': {
+    cover: 'china-biotech-export-controls-pharma-deals-2026-cover.jpg',
+    hero: 'china-biotech-export-controls-pharma-deals-2026-hero.jpg',
+    badge: 'CHINA  ·  BIOTECH  ·  2026',
+    lines: ['China biotech', 'export controls'],
+    goldLine: 'Draft catalogue',
+    sub: 'Deal, licence and Gulf access · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 90 518, 200 578, 320 534 S 470 522, 560 554 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="64" y="72" width="200" height="248" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="88" y="96" width="152" height="12" rx="4" fill="${GOLD}"/>
+        <rect x="88" y="128" width="120" height="8" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+        <rect x="88" y="152" width="140" height="8" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.55"/>
+        <rect x="88" y="176" width="100" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+        <rect x="88" y="208" width="152" height="72" rx="10" fill="#101C30" stroke="${GOLD_LIGHT}" stroke-width="1.6"/>
+        <circle cx="124" cy="244" r="14" fill="${GOLD}"/>
+        <rect x="148" y="232" width="72" height="8" rx="4" fill="${CREAM}" fill-opacity="0.28"/>
+        <rect x="148" y="252" width="56" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
+
+        <rect x="284" y="72" width="216" height="112" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="308" y="100" width="48" height="56" rx="8" fill="${GOLD}"/>
+        <rect x="368" y="108" width="28" height="40" rx="6" fill="${GOLD_LIGHT}"/>
+        <rect x="408" y="88" width="28" height="60" rx="6" fill="${CREAM}"/>
+
+        <rect x="284" y="204" width="216" height="116" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="308" y="232" width="168" height="10" rx="4" fill="${GOLD}" fill-opacity="0.7"/>
+        <rect x="308" y="256" width="128" height="8" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+        <rect x="308" y="280" width="148" height="8" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.45"/>
+
+        <rect x="80" y="348" width="72" height="184" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="168" y="308" width="72" height="224" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="256" y="368" width="72" height="164" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="344" y="328" width="72" height="204" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="432" y="388" width="72" height="144" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="96" y="368" width="40" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="184" y="328" width="40" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+        <rect x="272" y="388" width="40" height="8" rx="2" fill="${GOLD}"/>
+        <rect x="360" y="348" width="40" height="8" rx="2" fill="${GOLD_LIGHT}"/>
+        <rect x="448" y="408" width="40" height="8" rx="2" fill="${GOLD}"/>
+      </g>`,
+      'glowChinaExport',
+    ),
+  },
 };
