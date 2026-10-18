@@ -355,6 +355,42 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowQ',
     ),
   },
+  'dubai-essential-drug-list-formulary-submission': {
+    cover: 'dubai-essential-drug-list-formulary-submission-cover.jpg',
+    hero: 'dubai-essential-drug-list-formulary-submission-hero.jpg',
+    badge: 'DUBAI  ·  FORMULARY  ·  2026',
+    lines: ['Dubai Essential', 'Drug List'],
+    goldLine: 'Formulary evidence',
+    sub: 'DDC, EBP and local RWE · 2026',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 90 518, 200 578, 320 534 S 470 522, 560 554 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="64" y="72" width="432" height="72" rx="14" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="80" y="92" width="28" height="32" rx="6" fill="${GOLD}"/>
+        <rect x="120" y="96" width="240" height="10" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.75"/>
+        <rect x="120" y="116" width="160" height="8" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+
+        <rect x="64" y="160" width="432" height="72" rx="14" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="80" y="180" width="28" height="32" rx="6" fill="${GOLD_LIGHT}"/>
+        <rect x="120" y="184" width="220" height="10" rx="4" fill="${GOLD}" fill-opacity="0.6"/>
+        <rect x="120" y="204" width="140" height="8" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+
+        <rect x="64" y="248" width="200" height="200" rx="16" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <text x="164" y="300" text-anchor="middle" fill="${GOLD}" font-size="28" font-weight="700" font-family="Georgia, serif">01</text>
+        <rect x="88" y="324" width="152" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="88" y="348" width="112" height="8" rx="4" fill="${GOLD}" fill-opacity="0.45"/>
+        <rect x="88" y="372" width="128" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+
+        <rect x="280" y="248" width="216" height="200" rx="16" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <text x="388" y="300" text-anchor="middle" fill="${GOLD_LIGHT}" font-size="28" font-weight="700" font-family="Georgia, serif">02</text>
+        <rect x="304" y="324" width="168" height="8" rx="4" fill="${CREAM}" fill-opacity="0.25"/>
+        <rect x="304" y="348" width="120" height="8" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.5"/>
+        <rect x="304" y="372" width="144" height="8" rx="4" fill="${CREAM}" fill-opacity="0.18"/>
+      </g>`,
+      'glowDedl',
+    ),
+  },
   'uae-drug-pricing-ede-takeover-launch-research': {
     cover: 'uae-drug-pricing-ede-takeover-launch-research-cover.jpg',
     hero: 'uae-drug-pricing-ede-takeover-launch-research-hero.jpg',

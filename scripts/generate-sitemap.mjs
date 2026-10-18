@@ -125,6 +125,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'us-market-entry-research-for-foreign-companies',
   'new-zealand-exporters-gcc-market-research',
   'uae-drug-pricing-ede-takeover-launch-research',
+  'dubai-essential-drug-list-formulary-submission',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
   'chinese-companies-egypt-market-research',
   'nielsen-alternative-saudi-arabia',
@@ -514,6 +515,7 @@ const staticPages = [
   { path: '/blog/iqvia-alternative-uae-primary-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/blog/uae-drug-pricing-ede-takeover-launch-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/blog/dubai-essential-drug-list-formulary-submission', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/nupco-tender-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/car-t-saudi-arabia-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/saudi-health-insurance-payer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
@@ -1524,6 +1526,9 @@ const STATIC_PAGE_FILES = {
   ],
   '/blog/uae-drug-pricing-ede-takeover-launch-research': [
     'src/data/blog-uae-drug-pricing-ede-takeover-launch-research.ts',
+  ],
+  '/blog/dubai-essential-drug-list-formulary-submission': [
+    'src/data/blog-dubai-essential-drug-list-formulary-submission.ts',
   ],
   '/blog/nupco-tender-market-research-saudi-arabia': [
     'src/data/blog-nupco-tender-market-research-saudi-arabia.ts',
