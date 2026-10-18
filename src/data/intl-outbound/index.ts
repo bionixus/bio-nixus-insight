@@ -1,15 +1,18 @@
 import { CHINA_EN_INTL_PAGE } from './chinaEn';
+import { CHINA_ZH_INTL_PAGE } from './chinaZh';
 import { JAPAN_EN_INTL_PAGE } from './japanEn';
+import { JAPAN_JA_INTL_PAGE } from './japanJa';
 import { PATHS } from './shared';
 import { SINGAPORE_INTL_PAGE } from './singapore';
 import type { IntlMoneyPage } from './types';
 import { USA_INTL_PAGE } from './usa';
 
-/** English money pages only. JA/ZH twins are held for native review. */
 export const INTL_MONEY_PAGES: readonly IntlMoneyPage[] = [
   USA_INTL_PAGE,
   JAPAN_EN_INTL_PAGE,
+  JAPAN_JA_INTL_PAGE,
   CHINA_EN_INTL_PAGE,
+  CHINA_ZH_INTL_PAGE,
   SINGAPORE_INTL_PAGE,
 ];
 
@@ -31,7 +34,9 @@ export function getIntlMoneyHreflang(pathname: string): IntlMoneyPage['hreflang'
 
 export {
   CHINA_EN_INTL_PAGE,
+  CHINA_ZH_INTL_PAGE,
   JAPAN_EN_INTL_PAGE,
+  JAPAN_JA_INTL_PAGE,
   SINGAPORE_INTL_PAGE,
   USA_INTL_PAGE,
 };

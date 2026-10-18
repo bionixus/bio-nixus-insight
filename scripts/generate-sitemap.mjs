@@ -201,7 +201,9 @@ const extraStaticSitemapPages = [
   // International outbound money pages (Japan / USA / China / Singapore, 18 Oct 2026).
   { path: '/market-research/usa', priority: '0.9', changefreq: 'weekly', lastmod: '2026-10-18' },
   { path: '/market-research/japan', priority: '0.9', changefreq: 'weekly', lastmod: '2026-10-18' },
+  { path: '/ja/market-research/japan', priority: '0.88', changefreq: 'weekly', lastmod: '2026-10-18' },
   { path: '/market-research/china', priority: '0.9', changefreq: 'weekly', lastmod: '2026-10-18' },
+  { path: '/zh/market-research/china', priority: '0.88', changefreq: 'weekly', lastmod: '2026-10-18' },
   { path: '/market-research/singapore', priority: '0.9', changefreq: 'weekly', lastmod: '2026-10-18' },
 
   // Localized routes declared in src/routes.tsx that no generator loop covered.
@@ -1050,8 +1052,8 @@ function buildStaticRoutes() {
 
 const hreflangGroups = [
   { en: '/', pt: '/pt', de: '/de', fr: '/fr', es: '/es', ar: '/ar', 'zh-CN': '/zh', ru: '/ru', 'x-default': '/' },
-  { en: '/market-research/japan', 'x-default': '/market-research/japan' },
-  { en: '/market-research/china', 'x-default': '/market-research/china' },
+  { en: '/market-research/japan', ja: '/ja/market-research/japan', 'x-default': '/market-research/japan' },
+  { en: '/market-research/china', 'zh-Hans': '/zh/market-research/china', 'x-default': '/market-research/china' },
   { en: '/market-research/usa', 'x-default': '/market-research/usa' },
   { en: '/market-research/singapore', 'x-default': '/market-research/singapore' },
   {
@@ -1776,7 +1778,9 @@ const STATIC_PAGE_FILES = {
   '/ru/insights': ['src/pages/Insights.tsx', 'src/data/insightsHubContent.ts'],
   '/market-research/usa': ['src/data/intl-outbound/usa.ts', 'src/pages/IntlOutboundMarketResearchPage.tsx'],
   '/market-research/japan': ['src/data/intl-outbound/japanEn.ts', 'src/pages/IntlOutboundMarketResearchPage.tsx'],
+  '/ja/market-research/japan': ['src/data/intl-outbound/japanJa.ts', 'src/pages/IntlOutboundMarketResearchPage.tsx'],
   '/market-research/china': ['src/data/intl-outbound/chinaEn.ts', 'src/pages/IntlOutboundMarketResearchPage.tsx'],
+  '/zh/market-research/china': ['src/data/intl-outbound/chinaZh.ts', 'src/pages/IntlOutboundMarketResearchPage.tsx'],
   '/market-research/singapore': ['src/data/intl-outbound/singapore.ts', 'src/pages/IntlOutboundMarketResearchPage.tsx'],
   '/bionixus-industries': ['src/pages/industries/BionixusIndustries.tsx'],
   '/de/bionixus-industries': ['src/pages/industries/bionixusIndustriesCopy/bionixusIndustriesPageCopy.de.ts', 'src/pages/industries/BionixusIndustries.tsx'],
