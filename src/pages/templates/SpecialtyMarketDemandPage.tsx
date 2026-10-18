@@ -36,6 +36,7 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
       serviceType: `${content.segmentLabel} market research`,
       description: content.description,
       url: content.canonical,
+      ...(content.dateModified ? { dateModified: content.dateModified } : {}),
       ...(content.areaServed?.length
         ? {
             areaServed: content.areaServed.map((name) => ({ '@type': 'Country', name })),
@@ -80,8 +81,19 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
               ))}
               {content.hubLink ? (
                 <p className="mt-3">
-                  Start from our <Link to={content.hubLink.to}>{content.hubLink.label}</Link> for broader programme
-                  design, or request a scoped briefing for this market.
+                  Start from our <Link to={content.hubLink.to}>{content.hubLink.label}</Link>
+                  {content.earlyLinks?.length ? (
+                    <>
+                      {', then the '}
+                      {content.earlyLinks.map((link, i) => (
+                        <span key={link.to}>
+                          {i > 0 ? (i === content.earlyLinks!.length - 1 ? ' and ' : ', ') : null}
+                          <Link to={link.to}>{link.label}</Link>
+                        </span>
+                      ))}
+                    </>
+                  ) : null}{' '}
+                  for programme design, or request a scoped briefing for this market.
                 </p>
               ) : null}
             </>

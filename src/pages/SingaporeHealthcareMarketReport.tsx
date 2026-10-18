@@ -70,7 +70,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-18',
     mainEntityOfPage: 'https://www.bionixus.com/singapore-healthcare-market-report',
   },
   {
@@ -85,7 +85,7 @@ const jsonLd = [
     countryName: "Singapore",
     marketSlug: "singapore",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-10-18",
   })
 ];
 
@@ -125,7 +125,7 @@ const SingaporeHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Singapore is disproportionately important relative to its 5.9M population — it is Southeast Asia's regulatory gateway (Access Consortium member), the regional HQ hub for 50+ global pharma companies, and the destination for medical tourism from across ASEAN. Its regulatory infrastructure and Biopolis life sciences ecosystem make it among the world's most efficient pharma hubs. The public system is financed through the government's "3Ms" framework — Medisave, MediShield Life, and Medifund — and delivered through three integrated public healthcare clusters (SingHealth, NUHS, and NHG), while HSA and ACE together govern the path from product registration through to public-hospital subsidy listing. For multinational manufacturers, Singapore functions simultaneously as a compact commercial market, a regional regulatory reference point, and a launchpad into the rest of ASEAN.</p>
-          <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed">For IVD lab and cluster access, see <Link to="/singapore-ivd-market-access" className="text-primary hover:underline font-medium">Singapore IVD market access</Link>. For agency shortlists, see <Link to="/insights/top-market-research-companies-singapore-2026" className="text-primary hover:underline font-medium">top market research companies in Singapore 2026</Link>. For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="singapore" countryName="Singapore" variant="healthcare" />
@@ -170,7 +170,12 @@ const SingaporeHealthcareMarketReport = () => (
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
               <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. For Singapore's manufacturing base and key device makers, see{' '}
-              <Link to="/blog/medtech-singapore-2026-market-hsa-registration" className="text-primary hover:underline font-medium">MedTech in Singapore 2026: Market Size, HSA Registration &amp; Key Players</Link>.
+              <Link to="/blog/medtech-singapore-2026-market-hsa-registration" className="text-primary hover:underline font-medium">MedTech in Singapore 2026: Market Size, HSA Registration &amp; Key Players</Link>
+              . For assay and lab-access briefs, see{' '}
+              <Link to="/singapore-ivd-market-access" className="text-primary hover:underline font-medium">Singapore IVD market access</Link>
+              {' '}and the{' '}
+              <Link to="/insights/top-market-research-companies-singapore-2026" className="text-primary hover:underline font-medium">top market research companies in Singapore 2026</Link>
+              {' '}ranking.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

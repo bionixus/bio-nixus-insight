@@ -35,6 +35,7 @@ const IRREGULAR_IMPORTS: Record<string, Importer> = {
   '/gcc-anesthesia-surgical-market-report': () => import('@/pages/GccAnesthesiaSurgicalMarket'),
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement': () =>
     import('@/pages/BlogPost'),
+  '/singapore-ivd-market-access': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
 };
 
 /** Dynamic-slug routes matched by prefix. */
@@ -145,6 +146,7 @@ const IRREGULAR_LAZY: Record<string, unknown> = {
   '/medical-device-companies-saudi-arabia': reportLazyPages.SaudiMedicalDeviceCompanies,
   '/gcc-anesthesia-surgical-market-report': reportLazyPages.GccAnesthesiaSurgicalMarket,
   '/uae-influenza-vaccine-report': reportLazyPages.UaeInfluenzaVaccineReport,
+  '/singapore-ivd-market-access': seoLazyPages.SpecialtyMarketDemandPage,
 };
 
 function resolveLazyComponent(pathname: string): unknown {

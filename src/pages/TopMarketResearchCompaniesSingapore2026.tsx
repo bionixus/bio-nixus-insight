@@ -227,7 +227,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
       'Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    dateModified: '2026-10-18',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -313,7 +313,16 @@ export default function TopMarketResearchCompaniesSingapore2026() {
               An independent guide to the leading market research companies operating in Singapore for 2026.
               This article profiles seven firms across healthcare, pharmaceutical, and consumer research — comparing
               capabilities, methodologies, Singapore-specific expertise, and what to look for when shortlisting a
-              research partner for the Singapore pharmaceutical and healthcare market.
+              research partner for the Singapore pharmaceutical and healthcare market. For HSA lab and cluster assay
+              briefs, start with{' '}
+              <Link to="/singapore-ivd-market-access" className="text-primary hover:underline font-medium">
+                Singapore IVD market access
+              </Link>
+              . For manufacturer and distributor lists, see{' '}
+              <Link to="/pharmaceutical-companies-singapore" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Singapore
+              </Link>
+              .
             </p>
             <p className="text-sm text-muted-foreground">
               Published June 2026 · By BioNixus Research Team · 14 min read
@@ -721,6 +730,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/singapore-ivd-market-access', label: 'Singapore IVD market access', desc: 'HSA pathways, SingHealth/NUHS/NHG lab algorithms, and assays that stay registered but unused.' },
                 { to: '/pharmaceutical-companies-singapore', label: 'Pharmaceutical companies in Singapore', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
                 {
                   to: '/insights/top-healthcare-market-research-companies-singapore-2026',

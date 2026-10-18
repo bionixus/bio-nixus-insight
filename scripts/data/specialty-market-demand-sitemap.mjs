@@ -40,11 +40,16 @@ const NEXT_SLUGS = new Set([
   'febrile-neutropenia-market',
 ]);
 
-/** @returns {{ path: string, priority: string, changefreq: string }[]} */
+const LASTMOD_BY_SLUG = {
+  'singapore-ivd-market-access': '2026-10-18',
+};
+
+/** @returns {{ path: string, priority: string, changefreq: string, lastmod?: string }[]} */
 export function getSpecialtyMarketDemandSitemapPages() {
   return SPECIALTY_MARKET_DEMAND_SLUGS.map((slug) => ({
     path: `/${slug}`,
     priority: NOW_SLUGS.has(slug) ? '0.90' : NEXT_SLUGS.has(slug) ? '0.86' : '0.84',
     changefreq: 'monthly',
+    ...(LASTMOD_BY_SLUG[slug] ? { lastmod: LASTMOD_BY_SLUG[slug] } : {}),
   }));
 }

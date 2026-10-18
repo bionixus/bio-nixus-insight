@@ -62,7 +62,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-18',
     mainEntityOfPage: 'https://www.bionixus.com/singapore-medical-devices-market-report',
   },
   {
@@ -77,7 +77,7 @@ const jsonLd = [
     countryName: "Singapore",
     marketSlug: "singapore",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-10-18",
   })
 ];
 
@@ -117,7 +117,7 @@ const SingaporeMedicalDevicesMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Singapore is the premium medical device market and regional distribution hub for Southeast Asia — analogous to Dubai's role in the Middle East. Access Consortium membership, excellent logistics infrastructure, and a premium medical tourism sector make Singapore a critical strategic node for any Asia-Pacific device commercialisation strategy.</p>
-          <p className="text-muted-foreground leading-relaxed">See also: <Link to="/singapore-healthcare-market-report" className="text-primary hover:underline font-medium">Singapore Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed">See also: <Link to="/singapore-ivd-market-access" className="text-primary hover:underline font-medium">Singapore IVD market access</Link>, the <Link to="/insights/top-market-research-companies-singapore-2026" className="text-primary hover:underline font-medium">top market research companies in Singapore 2026</Link> ranking, the <Link to="/singapore-healthcare-market-report" className="text-primary hover:underline font-medium">Singapore Healthcare Market Report</Link>, and the <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="singapore" countryName="Singapore" variant="medical-devices" />

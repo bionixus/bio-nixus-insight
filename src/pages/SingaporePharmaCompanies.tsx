@@ -89,6 +89,8 @@ const config: CountryCompaniesGuideConfig = {
     { q: 'Is Singapore a good ASEAN market-entry base?', a: 'Yes — HSA approval supports ASEAN reliance pathways, Zuellig/DKSH distribution reaches every regional market, and Singapore\'s medical-tourism channel provides early premium adoption evidence for regional payers.' },
   ],
   relatedLinks: [
+    { to: '/singapore-ivd-market-access', label: 'Singapore IVD market access' },
+    { to: '/insights/top-market-research-companies-singapore-2026', label: 'Top market research companies in Singapore 2026' },
     { to: '/singapore-healthcare-market-report', label: 'Singapore healthcare market report 2026' },
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
     { to: '/pharmaceutical-companies-malaysia', label: 'Pharmaceutical companies in Malaysia' },
@@ -104,7 +106,7 @@ const config: CountryCompaniesGuideConfig = {
     'BioNixus proprietary research (ASEAN, 2024–2026)',
   ],
   publishedDate: '2026-08-22',
-  modifiedDate: '2026-08-22',
+  modifiedDate: '2026-10-18',
   conversion: {
     routingHint: 'Mention HSA registration, ACE subsidy strategy, or APAC regional research for a faster routed response.',
     emailSubject: 'Singapore pharma market research — BioNixus',

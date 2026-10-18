@@ -15,6 +15,8 @@ export type SpecialtyMarketDemandContent = {
   h1: string;
   intro: string[];
   hubLink?: { to: string; label: string };
+  earlyLinks?: Array<{ to: string; label: string }>;
+  dateModified?: string;
   researchTopics: Array<{ name: string; detail: string }>;
   demandDrivers: { heading: string; drivers: Array<{ title: string; detail: string }> };
   marketStructure: { heading: string; paragraphs: string[] };
@@ -790,15 +792,20 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
   segmentLabel: 'Singapore IVD Market Access',
   badge: 'Singapore · IVD Access',
   breadcrumbLabel: 'Singapore IVD Market Access',
-  title: 'Singapore IVD Market Access Research | BioNixus',
+  title: 'Singapore IVD Market Access: HSA, Labs & Hospitals',
   description:
-    'Singapore IVD market access research — HSA device pathways, hospital lab procurement, cluster testing algorithms, and reimbursement-adjacent adoption.',
+    'Singapore IVD market access: HSA pathways, SingHealth/NUHS/NHG lab algorithms, and assays that stay registered but unused. Primary research. 48h proposal.',
   canonical: `${BASE}/singapore-ivd-market-access`,
-  h1: 'Singapore IVD Market Access: Lab, Hospital & Regulatory Intelligence',
+  h1: 'Singapore IVD market access',
+  dateModified: '2026-10-18',
   intro: [
-    'IVD market access in Singapore is won inside hospital laboratories and cluster testing algorithms as much as at HSA registration. BioNixus researches pathologists, lab directors, and procurement committees to show which assays clear volume barriers — and which stall as “registered but unused.”',
+    'Singapore IVD market access is decided inside hospital laboratories and cluster testing algorithms as much as at HSA registration. An assay can sit on the register and still miss SingHealth, NUHS, or NHG menus if lab directors, pathologists, and cluster procurement do not adopt it. We interview those buyers, map algorithm lock-in, and separate registered-but-unused SKUs from assays that actually run.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  earlyLinks: [
+    { to: '/insights/top-market-research-companies-singapore-2026', label: 'Singapore market research companies ranking' },
+    { to: '/pharmaceutical-companies-singapore', label: 'pharmaceutical companies in Singapore' },
+  ],
   researchTopics: [
     { name: 'Lab director & pathologist interviews', detail: 'Algorithm fit, turnaround, and trust barriers for new assays.' },
     { name: 'HSA IVD pathway mapping', detail: 'Classification and evidence expectations for commercial sequencing.' },
@@ -832,11 +839,18 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
+    { to: '/insights/top-market-research-companies-singapore-2026', label: 'Top market research companies in Singapore 2026' },
+    { to: '/pharmaceutical-companies-singapore', label: 'Pharmaceutical companies in Singapore' },
     { to: '/clinical-diagnostics-market-research', label: 'Clinical diagnostics market research' },
     { to: '/singapore-medtech-manufacturing-market', label: 'Singapore MedTech manufacturing market' },
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
   ],
   faqs: [
+    {
+      question: 'What is Singapore IVD market access?',
+      answer:
+        'Singapore IVD market access is HSA registration plus lab validation, cluster algorithm inclusion, and procurement so an assay actually runs at SingHealth, NUHS, or NHG — not only sits on the register.',
+    },
     {
       question: 'What does IVD market access mean in Singapore?',
       answer:
