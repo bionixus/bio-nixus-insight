@@ -5,6 +5,7 @@ import {
   INTL_DATE_MODIFIED,
   JETRO_MEA_REPORTS,
   OFFICES,
+  DELIVERY,
   INTL_HREFLANG_BY_PATH,
   PATHS,
 } from './shared';
@@ -18,11 +19,11 @@ export const SINGAPORE_INTL_PAGE: IntlMoneyPage = {
   nativeReviewRequired: false,
   title: 'Singapore MEA Market Research Company | 2026 Guide',
   description:
-    'Middle East research for Singapore and APAC HQs: GCC entry and SEA hub work, from US, UK and Cairo offices with Gulf field teams. $10k–$60k. 48-hour proposal.',
+    'Middle East research for Singapore and APAC HQs: GCC entry and SEA hub work. Delivered from the US, UK, Dubai and Cairo offices. $10k–$60k. 48-hour proposal.',
   h1: 'Middle East Market Research for Singapore Companies',
   primaryKeyword: 'Middle East market research for Singapore companies',
   quickAnswer:
-    'BioNixus runs Middle East market research for Singapore companies and APAC regional HQs from leadership offices in the USA (Sheridan, Wyoming), the United Kingdom (London) and Cairo (Sheikh Zayed), with Arabic–English fieldwork in Al Khobar, Dubai, Kuwait and Cairo. The same team can add a Southeast Asia entry module. Custom work is $10,000–$60,000. Scope is guaranteed in writing.',
+    'BioNixus runs Middle East market research for Singapore companies and APAC regional HQs. Work is delivered from the US, UK, Dubai and Cairo offices. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. The same team can add a Southeast Asia entry module. Custom work is $10,000–$60,000. Scope is guaranteed in writing.',
   breadcrumbLabel: 'Singapore',
   dateModified: INTL_DATE_MODIFIED,
   coverImage: '/images/intl-outbound/singapore-cover.jpg',
@@ -43,7 +44,7 @@ export const SINGAPORE_INTL_PAGE: IntlMoneyPage = {
     {
       title: 'APAC HQ, MEA fieldwork',
       description:
-        'Singapore regional HQs brief Sheridan or London. Gulf field teams and the Cairo leadership office run the sample.',
+        'Singapore regional HQs brief the US, UK, Dubai and Cairo offices. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews.',
     },
     {
       title: 'SEA hub that also covers MEA',
@@ -63,7 +64,7 @@ export const SINGAPORE_INTL_PAGE: IntlMoneyPage = {
       paragraphs: [
         `Middle East market research for Singapore companies is commissioned by APAC regional headquarters of pharma, medtech, consumer and industrial firms that sit in Singapore and own a Gulf or Africa P&amp;L. The second buyer is a Singapore SME or scale-up using an Enterprise Singapore programme to test the UAE or Saudi Arabia. This page is the English money page for both. Start from the {link:/healthcare-market-research|healthcare market research} hub for physician and payer work, and from the {link:/bionixus-industries|industries hub} for non-pharma briefs.`,
         `Domestic Singapore head terms — healthcare market research Singapore, market research companies Singapore — already have pages: {link:/healthcare-market-research/singapore|healthcare market research in Singapore}, {link:/insights/top-healthcare-market-research-companies-singapore-2026|top healthcare market research companies in Singapore} and {link:/insights/top-market-research-companies-singapore-2026|top market research companies in Singapore}. Those pages stay on the Singapore-side job. This money page stays on APAC-to-GCC and, where scoped, Southeast Asia market entry research.`,
-        `BioNixus was founded in ${FACTS.founded} and is headquartered in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. ${FACTS.clients} clients, ${FACTS.countries} countries, ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025), ${FACTS.physicians} physicians, ${FACTS.priceLow}–${FACTS.priceHigh}. BioNixus is ${OFFICES.saoPaulo}. Singapore-booked MEA work is delivered from those US, UK and Cairo leadership offices and the Gulf field teams.`,
+        `BioNixus was founded in ${FACTS.founded} and is headquartered in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. ${FACTS.clients} clients, ${FACTS.countries} countries, ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025), ${FACTS.physicians} physicians, ${FACTS.priceLow}–${FACTS.priceHigh}. ${DELIVERY.apac}`,
       ],
     },
     {
@@ -111,7 +112,7 @@ export const SINGAPORE_INTL_PAGE: IntlMoneyPage = {
         `To brief Middle East market research for Singapore companies, use the {link:/contact|contact form} or email {ext:mailto:admin@bionixus.com|admin@bionixus.com}. United States {ext:tel:+18884655557|+1-888-465-5557}. United Kingdom {ext:tel:+447727666682|+44 7727 666682}. Al Khobar {ext:tel:+966501825336|+966 50 182 5336}.`,
         `Singapore HQs that also own a Japan or China outbound P&amp;L should open {link:/market-research/japan|Middle East market research for Japanese companies} and {link:/market-research/china|Middle East market research for Chinese companies}. US cost centres that share the same Gulf seats should open {link:/market-research/usa|MENA market research company USA}. Healthcare country hubs under the same brief are {link:/healthcare-market-research/saudi-arabia|Saudi Arabia}, {link:/healthcare-market-research/uae|the UAE} and {link:/healthcare-market-research/egypt|Egypt}.`,
         `A Singapore domestic HSA or public-hospital file is a different job. Keep {link:/healthcare-market-research/singapore|healthcare market research in Singapore} and the 2026 Singapore listicles for that sample. Do not merge a city-state HCP tracker and a Gulf physician survey into one mean. If an APAC committee asks for that average, write the refusal into the proposal.`,
-        `Enterprise Singapore programmes, JETRO desks and Austrade pages are useful public context. They are not a named physician or buyer sample. BioNixus does not resell those programmes. Fieldwork is delivered from the US, UK and Cairo leadership offices and the Gulf field teams. The written guarantees stay on scope, replacement, minimum sample, re-field and the pilot credit. Findings are not guaranteed.`,
+        `Enterprise Singapore programmes, JETRO desks and Austrade pages are useful public context. They are not a named physician or buyer sample. BioNixus does not resell those programmes. ${DELIVERY.apac} The written guarantees stay on scope, replacement, minimum sample, re-field and the pilot credit. Findings are not guaranteed.`,
         `When the same HQ wants a Malaysia, Indonesia or Vietnam module beside the Gulf file, say so in the first sentence. The protocol office can run both. The instruments stay separate. Languages, regulators and channel maps differ. A single method note is fine. A single questionnaire is not.`,
         `Healthcare APAC-to-GCC briefs still use the Gulf physician and payer panels, not a Singapore HSA sample. Non-pharma briefs use the same Al Khobar, Dubai and Kuwait offices for buyers and consumers. Cairo joins for Egypt. Custom work stays inside ${FACTS.priceLow}–${FACTS.priceHigh}. A written proposal follows within 48 hours of a usable brief. BioNixus never claims guaranteed accuracy. A Singapore HQ that wants one mean across ASEAN and GCC cells will get a written refusal. Keep Enterprise Singapore programmes as public context. Keep this page as the fieldwork request. Japanese and Chinese sister HQs that share the Singapore office should still open their own money pages so the keyword and the hreflang stay clean.`,
       ],
@@ -122,7 +123,7 @@ export const SINGAPORE_INTL_PAGE: IntlMoneyPage = {
       paragraphs: [
         `A Singapore HQ is a cost centre and a protocol office, not a substitute for Arabic fieldwork. The physicians, payers and buyers still sit in Riyadh, Jeddah, Dubai, Abu Dhabi or Cairo. Booking the work from Marina Bay or one-north does not make the sample Singaporean. Keep the HSA and public-hospital file on the Singapore healthcare pages. Keep the Gulf file here.`,
         `The same is true of a Southeast Asia module. Malaysia, Indonesia, Thailand, Vietnam and the Philippines are local-partner jobs scoped from Sheridan. They are not a guaranteed ASEAN panel. Write which corridor is in scope in the first sentence. If the APAC committee wants one mean across Jakarta and Jeddah, the proposal will refuse that average in writing.`,
-        `Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. A written proposal follows within 48 hours of a usable brief. Enterprise Singapore programmes remain public context. Delivery stays with the US, UK and Cairo leadership offices and the Gulf field teams. Scope is guaranteed in writing. Findings are not.`,
+        `Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. A written proposal follows within 48 hours of a usable brief. Enterprise Singapore programmes remain public context. ${DELIVERY.apac} Scope is guaranteed in writing. Findings are not.`,
       ],
     },
   ],
@@ -130,7 +131,7 @@ export const SINGAPORE_INTL_PAGE: IntlMoneyPage = {
     {
       question: 'Where is Singapore-booked MEA research delivered from?',
       answer:
-        'From BioNixus leadership offices in the USA (Sheridan, Wyoming), the United Kingdom (London) and Cairo (Sheikh Zayed), with Gulf field teams in Al Khobar, Dubai and Kuwait. Singapore HQs brief those offices.',
+        'Work is delivered from the US, UK, Dubai and Cairo offices. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. Singapore HQs brief those offices.',
     },
     {
       question: 'What is Middle East market research for Singapore companies?',

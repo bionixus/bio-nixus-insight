@@ -18,7 +18,16 @@ export const FACTS = {
 export const OFFICES = {
   leadership: 'USA (Sheridan, WY), the United Kingdom (London) and Cairo (Sheikh Zayed)',
   field: 'Al Khobar, Dubai and Kuwait',
-  saoPaulo: 'in the process of opening a São Paulo office by the end of 2026',
+} as const;
+
+/** Region-specific “delivered from” lines. Do not mix these. */
+export const DELIVERY = {
+  usa: 'Work is delivered from the BioNixus US office.',
+  apac: 'Work is delivered from the US, UK, Dubai and Cairo offices.',
+  europe: 'Work is delivered from the USA and UK offices.',
+  latam: 'Work is delivered from the USA offices and our field teams in Brazil and LATAM.',
+  apacJa: '案件は米国・英国・ドバイ・カイロ拠点から届けます。',
+  apacZh: '项目由美国、英国、迪拜、开罗办公室交付。',
 } as const;
 
 export const GUARANTEES =

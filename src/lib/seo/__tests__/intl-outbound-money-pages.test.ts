@@ -10,6 +10,7 @@ import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import {
   CHINA_EN_INTL_PAGE,
   CHINA_ZH_INTL_PAGE,
+  DELIVERY,
   INTL_MONEY_PAGES,
   JAPAN_EN_INTL_PAGE,
   JAPAN_JA_INTL_PAGE,
@@ -115,8 +116,16 @@ describe('international outbound money pages', () => {
       } else {
         expect(page.title.length).toBeGreaterThanOrEqual(28);
       }
-      expect(page.description.length).toBeGreaterThanOrEqual(145);
-      expect(page.description.length).toBeLessThanOrEqual(158);
+      if (page.lang === 'en') {
+        expect(page.description.length).toBeGreaterThanOrEqual(145);
+        expect(page.description.length).toBeLessThanOrEqual(158);
+      } else if (page.lang === 'ja') {
+        expect(page.description.length).toBeGreaterThanOrEqual(110);
+        expect(page.description.length).toBeLessThanOrEqual(120);
+      } else {
+        expect(page.description.length).toBeGreaterThanOrEqual(75);
+        expect(page.description.length).toBeLessThanOrEqual(90);
+      }
       expect(page.faqs).toHaveLength(7);
       const words = countPageWords(page);
       expect(words).toBeGreaterThanOrEqual(2000);
@@ -159,6 +168,47 @@ describe('international outbound money pages', () => {
     expect(corpus).not.toMatch(/不宣称在中国/);
     expect(corpus).not.toMatch(/不宣称上海/);
     expect(llms).not.toMatch(/No Tokyo office|No China office|No Singapore office|office claims/);
+  });
+
+  it('uses region-specific delivery lines and never claims a São Paulo office', () => {
+    const corpus = INTL_MONEY_PAGES.map((page) => JSON.stringify(page)).join('\n');
+    const marketResearch = readFileSync(join(root, 'src/pages/MarketResearch.tsx'), 'utf8');
+
+    expect(USA_INTL_PAGE.description).toContain(DELIVERY.usa);
+    expect(USA_INTL_PAGE.quickAnswer).toContain(DELIVERY.usa);
+    expect(JSON.stringify(USA_INTL_PAGE)).toContain(DELIVERY.latam);
+    expect(JSON.stringify(USA_INTL_PAGE)).toContain(DELIVERY.europe);
+
+    for (const page of [JAPAN_EN_INTL_PAGE, CHINA_EN_INTL_PAGE, SINGAPORE_INTL_PAGE]) {
+      expect(page.description).toMatch(/Delivered from the US, UK, Dubai and Cairo offices/);
+      expect(JSON.stringify(page)).toContain(DELIVERY.apac);
+    }
+    expect(JAPAN_JA_INTL_PAGE.description).toContain('米国・英国・ドバイ・カイロ拠点');
+    expect(JSON.stringify(JAPAN_JA_INTL_PAGE)).toContain(DELIVERY.apacJa);
+    expect(CHINA_ZH_INTL_PAGE.description).toContain('美国、英国、迪拜、开罗办公室');
+    expect(JSON.stringify(CHINA_ZH_INTL_PAGE)).toContain(DELIVERY.apacZh);
+
+    expect(hub).toContain(DELIVERY.europe);
+    expect(industries).toContain(DELIVERY.europe);
+    expect(marketResearch).toContain(DELIVERY.europe);
+    expect(llms).toContain(DELIVERY.usa);
+    expect(llms).toContain(DELIVERY.apac);
+
+    expect(corpus).not.toMatch(/US, UK and Cairo leadership offices/);
+    expect(corpus).not.toMatch(/from US, UK and Cairo offices with Gulf field teams/);
+    expect(hub).not.toMatch(/US, UK and Cairo leadership offices/);
+    expect(industries).not.toMatch(/US, UK and Cairo leadership offices/);
+    expect(marketResearch).not.toMatch(/US, UK and Cairo leadership offices/);
+    expect(llms).not.toMatch(/US, UK and Cairo leadership offices/);
+    expect(llms).not.toMatch(/Delivered from US, UK and Cairo offices and Gulf field teams/);
+
+    expect(corpus).not.toMatch(/São Paulo office|Sao Paulo office|サンパウロ事務所|圣保罗办公室/);
+    expect(JAPAN_JA_INTL_PAGE.description).not.toMatch(/日本の現地法人が対象です|英語版あり/);
+    expect(CHINA_ZH_INTL_PAGE.description).not.toMatch(/沙特与阿联酋须拆开|英文对照页已上线/);
+    expect((JAPAN_JA_INTL_PAGE.description.match(/。/g) ?? []).length).toBeGreaterThanOrEqual(2);
+    expect((JAPAN_JA_INTL_PAGE.description.match(/。/g) ?? []).length).toBeLessThanOrEqual(3);
+    expect((CHINA_ZH_INTL_PAGE.description.match(/。/g) ?? []).length).toBeGreaterThanOrEqual(2);
+    expect((CHINA_ZH_INTL_PAGE.description.match(/。/g) ?? []).length).toBeLessThanOrEqual(3);
   });
 
   it('keeps self-canonicals on every language version', () => {

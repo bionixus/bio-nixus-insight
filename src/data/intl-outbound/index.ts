@@ -45,6 +45,7 @@ export {
   countContentWords,
   countLatinWords,
   countPageWords,
+  DELIVERY,
   INTL_DATE_MODIFIED,
   INTL_HREFLANG_BY_PATH,
 } from './shared';

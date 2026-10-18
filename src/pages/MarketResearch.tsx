@@ -395,7 +395,7 @@ export default function MarketResearch() {
               <Link to="/market-research/china">China-to-MEA</Link>
               {' · '}
               <Link to="/market-research/singapore">Singapore-to-MEA</Link>
-              . Work is delivered from BioNixus US, UK and Cairo leadership offices and its Gulf field teams.
+              . Work is delivered from the USA and UK offices.
             </p>
           </div>
         </section>
