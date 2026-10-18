@@ -1172,6 +1172,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/dubai-essential-drug-list-formulary-submission"
     },
     {
+      "source": "/blog/china-biotech-export-controls-pharma-deals-2026",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/china-biotech-export-controls-pharma-deals-2026"
+    },
+    {
       "source": "/blog/diabetes-market-research-uae-2026-price-cuts",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/diabetes-market-research-uae-2026-price-cuts"
     },

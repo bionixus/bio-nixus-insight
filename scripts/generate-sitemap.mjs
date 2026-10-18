@@ -127,6 +127,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'uae-drug-pricing-ede-takeover-launch-research',
   'dubai-essential-drug-list-formulary-submission',
   'diabetes-market-research-uae-2026-price-cuts',
+  'china-biotech-export-controls-pharma-deals-2026',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
   'chinese-companies-egypt-market-research',
   'nielsen-alternative-saudi-arabia',
@@ -524,6 +525,7 @@ const staticPages = [
   { path: '/blog/uae-drug-pricing-ede-takeover-launch-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/dubai-essential-drug-list-formulary-submission', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/diabetes-market-research-uae-2026-price-cuts', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
+  { path: '/blog/china-biotech-export-controls-pharma-deals-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-18' },
   { path: '/blog/nupco-tender-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/car-t-saudi-arabia-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/saudi-health-insurance-payer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
@@ -1544,6 +1546,9 @@ const STATIC_PAGE_FILES = {
   ],
   '/blog/diabetes-market-research-uae-2026-price-cuts': [
     'src/data/blog-diabetes-market-research-uae-2026-price-cuts.ts',
+  ],
+  '/blog/china-biotech-export-controls-pharma-deals-2026': [
+    'src/data/blog-china-biotech-export-controls-pharma-deals-2026.ts',
   ],
   '/blog/nupco-tender-market-research-saudi-arabia': [
     'src/data/blog-nupco-tender-market-research-saudi-arabia.ts',
