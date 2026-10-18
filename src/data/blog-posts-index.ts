@@ -21,6 +21,7 @@ import { UAE_B2B_MR_HARDCODED_POST } from '@/data/blog-b2b-market-research-uae';
 import { AU_GCC_ENTRY_HARDCODED_POST } from '@/data/blog-australia-gcc-market-entry-research';
 import { EU_GCC_ENTRY_HARDCODED_POST } from '@/data/blog-europe-to-gcc-market-entry-research';
 import { UK_ENTRY_HARDCODED_POST } from '@/data/blog-uk-market-entry-research';
+import { US_ENTRY_HARDCODED_POST } from '@/data/blog-us-market-entry-research';
 import { NZ_GCC_EXPORT_HARDCODED_POST } from '@/data/blog-nz-exporters-gcc-market-research';
 import { CHINESE_KSA_UAE_HARDCODED_POST } from '@/data/blog-chinese-companies-entering-ksa-uae';
 import { CN_EGYPT_HARDCODED_POST } from '@/data/blog-chinese-companies-egypt-market-research';
@@ -75,6 +76,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   AU_GCC_ENTRY_HARDCODED_POST,
   EU_GCC_ENTRY_HARDCODED_POST,
   UK_ENTRY_HARDCODED_POST,
+  US_ENTRY_HARDCODED_POST,
   NZ_GCC_EXPORT_HARDCODED_POST,
   CHINESE_KSA_UAE_HARDCODED_POST,
   CN_EGYPT_HARDCODED_POST,

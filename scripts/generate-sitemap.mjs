@@ -122,6 +122,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'australia-gcc-market-entry-research',
   'europe-to-gcc-market-entry-research',
   'uk-market-entry-research',
+  'us-market-entry-research-for-foreign-companies',
   'new-zealand-exporters-gcc-market-research',
   'uae-drug-pricing-ede-takeover-launch-research',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
@@ -588,6 +589,7 @@ const staticPages = [
   { path: '/bionixus-industries/insights/australia-gcc-market-entry-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/bionixus-industries/insights/europe-to-gcc-market-entry-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/bionixus-industries/insights/uk-market-entry-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
+  { path: '/bionixus-industries/insights/us-market-entry-research-for-foreign-companies', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/bionixus-industries/insights/chinese-companies-egypt-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
@@ -1487,6 +1489,9 @@ const STATIC_PAGE_FILES = {
   ],
   '/bionixus-industries/insights/uk-market-entry-research': [
     'src/data/blog-uk-market-entry-research.ts',
+  ],
+  '/bionixus-industries/insights/us-market-entry-research-for-foreign-companies': [
+    'src/data/blog-us-market-entry-research.ts',
   ],
   '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research': [
     'src/data/blog-nz-exporters-gcc-market-research.ts',

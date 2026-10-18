@@ -51,6 +51,7 @@ const CRITICAL_PATHS = [
   '/bionixus-industries/insights/australia-gcc-market-entry-research',
   '/bionixus-industries/insights/europe-to-gcc-market-entry-research',
   '/bionixus-industries/insights/uk-market-entry-research',
+  '/bionixus-industries/insights/us-market-entry-research-for-foreign-companies',
   '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research',
   '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae',
   '/bionixus-industries/insights/chinese-companies-egypt-market-research',

@@ -71,6 +71,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/europe-to-gcc-market-entry-research',
   '/blog/uk-market-entry-research':
     '/bionixus-industries/insights/uk-market-entry-research',
+  '/blog/us-market-entry-research-for-foreign-companies':
+    '/bionixus-industries/insights/us-market-entry-research-for-foreign-companies',
   '/blog/new-zealand-exporters-gcc-market-research':
     '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research',
   '/blog/chinese-companies-entering-saudi-arabia-and-the-uae':
