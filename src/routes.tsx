@@ -684,6 +684,8 @@ const rawRoutes: RouteObject[] = [
   { path: '/market-research/japan', element: <IntlOutboundMarketResearchPage /> },
   { path: '/market-research/china', element: <IntlOutboundMarketResearchPage /> },
   { path: '/market-research/singapore', element: <IntlOutboundMarketResearchPage /> },
+  { path: '/ja/market-research/japan', element: <IntlOutboundMarketResearchPage /> },
+  { path: '/zh/market-research/china', element: <IntlOutboundMarketResearchPage /> },
   { path: '/market-research/:industrySlug', element: <IndustryGlobalHubPage /> },
   { path: '/pharmaceutical-market-research-australia', element: <AustraliaPharmaceuticalMarketResearch /> },
   { path: '/pharmaceutical-market-research-canada', element: <CanadaPharmaceuticalMarketResearch /> },

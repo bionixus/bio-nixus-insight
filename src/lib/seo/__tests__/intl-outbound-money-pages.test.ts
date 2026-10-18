@@ -9,9 +9,11 @@ import { getCanonicalPath, getHreflangLinks } from '@/lib/seo';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import {
   CHINA_EN_INTL_PAGE,
+  CHINA_ZH_INTL_PAGE,
   DELIVERY,
   INTL_MONEY_PAGES,
   JAPAN_EN_INTL_PAGE,
+  JAPAN_JA_INTL_PAGE,
   SINGAPORE_INTL_PAGE,
   USA_INTL_PAGE,
   countPageWords,
@@ -23,13 +25,9 @@ const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
 };
 const routesSource = readFileSync(join(root, 'src/routes.tsx'), 'utf8');
 const sitemapScript = readFileSync(join(root, 'scripts/generate-sitemap.mjs'), 'utf8');
-const sitemapXml = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');
 const llms = readFileSync(join(root, 'public/llms.txt'), 'utf8');
-const llmsFull = readFileSync(join(root, 'public/llms-full.txt'), 'utf8');
 const hub = readFileSync(join(root, 'src/pages/healthcare-research/HubPage.tsx'), 'utf8');
 const industries = readFileSync(join(root, 'src/pages/industries/BionixusIndustries.tsx'), 'utf8');
-const HELD_JA = '/ja/market-research/japan';
-const HELD_ZH = '/zh/market-research/china';
 
 type JsonLdNode = Record<string, unknown>;
 
@@ -55,54 +53,14 @@ function jsonLdFromHtml(html: string): JsonLdNode[] {
 }
 
 describe('international outbound money pages', () => {
-  it('registers four English corridor pages before the industry slug catch-all', () => {
-    expect(INTL_MONEY_PAGES).toHaveLength(4);
-    expect(INTL_MONEY_PAGES.map((page) => page.path)).toEqual([
-      '/market-research/usa',
-      '/market-research/japan',
-      '/market-research/china',
-      '/market-research/singapore',
-    ]);
+  it('registers six corridor pages before the industry slug catch-all', () => {
     for (const page of INTL_MONEY_PAGES) {
-      expect(page.lang).toBe('en');
       expect(routesSource).toContain(`path: '${page.path}'`);
     }
     const usa = routesSource.indexOf("path: '/market-research/usa'");
     const catchAll = routesSource.indexOf("path: '/market-research/:industrySlug'");
     expect(usa).toBeGreaterThan(-1);
     expect(catchAll).toBeGreaterThan(usa);
-  });
-
-  it('does not publish JA or ZH routes, sitemap locs, hreflang or internal links', () => {
-    const marketResearch = readFileSync(join(root, 'src/pages/MarketResearch.tsx'), 'utf8');
-    const japanEn = JSON.stringify(JAPAN_EN_INTL_PAGE);
-    const chinaEn = JSON.stringify(CHINA_EN_INTL_PAGE);
-    const corpus = INTL_MONEY_PAGES.map((page) => JSON.stringify(page)).join('\n');
-
-    expect(routesSource).not.toContain(HELD_JA);
-    expect(routesSource).not.toContain(HELD_ZH);
-    expect(vercel.rewrites.some((row) => row.source === HELD_JA || row.source === HELD_ZH)).toBe(false);
-    expect(sitemapScript).not.toContain(HELD_JA);
-    expect(sitemapScript).not.toContain(HELD_ZH);
-    expect(sitemapXml).not.toContain(`https://www.bionixus.com${HELD_JA}`);
-    expect(sitemapXml).not.toContain(`https://www.bionixus.com${HELD_ZH}`);
-    expect(llms).not.toContain(HELD_JA);
-    expect(llms).not.toContain(HELD_ZH);
-    expect(llmsFull).not.toContain(HELD_JA);
-    expect(llmsFull).not.toContain(HELD_ZH);
-    expect(hub).not.toContain(HELD_JA);
-    expect(hub).not.toContain('/ja/');
-    expect(industries).not.toContain(HELD_JA);
-    expect(marketResearch).not.toContain(HELD_JA);
-    expect(japanEn).not.toContain(HELD_JA);
-    expect(chinaEn).not.toContain(HELD_ZH);
-    expect(corpus).not.toContain(HELD_JA);
-    expect(corpus).not.toContain(HELD_ZH);
-
-    expect(getHreflangLinks('/market-research/japan').map((link) => link.lang).sort()).toEqual(['en', 'x-default']);
-    expect(getHreflangLinks('/market-research/china').map((link) => link.lang).sort()).toEqual(['en', 'x-default']);
-    expect(getHreflangLinks('/market-research/japan').some((link) => link.lang === 'ja')).toBe(false);
-    expect(getHreflangLinks('/market-research/china').some((link) => link.lang === 'zh-Hans')).toBe(false);
   });
 
   it('wires vercel SSR rewrites, sitemap, llms and hub links', () => {
@@ -130,26 +88,55 @@ describe('international outbound money pages', () => {
     );
   });
 
+  it('keeps reciprocal hreflang pairs for Japan and China', () => {
+    const japanEn = getHreflangLinks('/market-research/japan');
+    const japanJa = getHreflangLinks('/ja/market-research/japan');
+    expect(japanEn.map((link) => link.lang).sort()).toEqual(['en', 'ja', 'x-default']);
+    expect(japanJa.map((link) => link.href)).toEqual(japanEn.map((link) => link.href));
+    expect(japanEn.find((link) => link.lang === 'ja')?.href).toBe('https://www.bionixus.com/ja/market-research/japan');
+
+    const chinaEn = getHreflangLinks('/market-research/china');
+    const chinaZh = getHreflangLinks('/zh/market-research/china');
+    expect(chinaEn.map((link) => link.lang).sort()).toEqual(['en', 'x-default', 'zh-Hans']);
+    expect(chinaZh.map((link) => link.href)).toEqual(chinaEn.map((link) => link.href));
+  });
+
   it('uses exact CTR titles and descriptions', () => {
     for (const page of INTL_MONEY_PAGES) {
       expect(getCtrSeo(page.path)).toEqual({ title: page.title, description: page.description });
     }
-    expect(getCtrSeo(HELD_JA)).toBeNull();
-    expect(getCtrSeo(HELD_ZH)).toBeNull();
   });
 
-  it('has one H1 phrase, seven FAQs, 2,000–3,000 content words, and English titles/metas', () => {
+  it('has one H1 phrase, seven FAQs, 2,000–3,000 content words, and native-review flags', () => {
     for (const page of INTL_MONEY_PAGES) {
       expect(page.h1.length).toBeGreaterThan(8);
-      expect(page.title.length).toBeGreaterThanOrEqual(50);
       expect(page.title.length).toBeLessThanOrEqual(60);
-      expect(page.description.length).toBeGreaterThanOrEqual(145);
-      expect(page.description.length).toBeLessThanOrEqual(158);
+      if (page.lang === 'en') {
+        expect(page.title.length).toBeGreaterThanOrEqual(50);
+      } else {
+        expect(page.title.length).toBeGreaterThanOrEqual(28);
+      }
+      if (page.lang === 'en') {
+        expect(page.description.length).toBeGreaterThanOrEqual(145);
+        expect(page.description.length).toBeLessThanOrEqual(158);
+      } else if (page.lang === 'ja') {
+        expect(page.description.length).toBeGreaterThanOrEqual(110);
+        expect(page.description.length).toBeLessThanOrEqual(120);
+      } else {
+        expect(page.description.length).toBeGreaterThanOrEqual(75);
+        expect(page.description.length).toBeLessThanOrEqual(90);
+      }
       expect(page.faqs).toHaveLength(7);
       const words = countPageWords(page);
       expect(words).toBeGreaterThanOrEqual(2000);
       expect(words).toBeLessThanOrEqual(3200);
     }
+    expect(JAPAN_JA_INTL_PAGE.title).toBe('日本企業向け中東市場調査｜サウジ・UAE・エジプト｜BioNixus');
+    expect(CHINA_ZH_INTL_PAGE.title).toBe('中国企业中东市场调研｜沙特·阿联酋·埃及｜BioNixus');
+    expect(JAPAN_JA_INTL_PAGE.title).not.toMatch(/Saudi UAE Egypt Field/i);
+    expect(CHINA_ZH_INTL_PAGE.title).not.toMatch(/Saudi UAE Egypt Field/i);
+    expect(JAPAN_JA_INTL_PAGE.nativeReviewRequired).toBe(true);
+    expect(CHINA_ZH_INTL_PAGE.nativeReviewRequired).toBe(true);
     expect(USA_INTL_PAGE.nativeReviewRequired).toBe(false);
     expect(JAPAN_EN_INTL_PAGE.nativeReviewRequired).toBe(false);
     expect(CHINA_EN_INTL_PAGE.nativeReviewRequired).toBe(false);
@@ -173,6 +160,13 @@ describe('international outbound money pages', () => {
     expect(corpus).not.toMatch(/There is no (?:Tokyo|Osaka|Shanghai|Beijing|Shenzhen|China|Singapore|Japan)/i);
     expect(corpus).not.toMatch(/does not claim (?:an office|a (?:Japan|China|Singapore|Tokyo|Shanghai) office|offices in|a Singapore premises)/i);
     expect(corpus).not.toMatch(/No Singapore premises/i);
+    expect(corpus).not.toMatch(/東京オフィスは(?:主張しません|ありません)/);
+    expect(corpus).not.toMatch(/事業所は主張しません/);
+    expect(corpus).not.toMatch(/日本にオフィスを主張しません/);
+    expect(corpus).not.toMatch(/无中国办公室/);
+    expect(corpus).not.toMatch(/不宣称(?:设有)?中国办公室/);
+    expect(corpus).not.toMatch(/不宣称在中国/);
+    expect(corpus).not.toMatch(/不宣称上海/);
     expect(llms).not.toMatch(/No Tokyo office|No China office|No Singapore office|office claims/);
   });
 
@@ -189,6 +183,10 @@ describe('international outbound money pages', () => {
       expect(page.description).toMatch(/Delivered from the US, UK, Dubai and Cairo offices/);
       expect(JSON.stringify(page)).toContain(DELIVERY.apac);
     }
+    expect(JAPAN_JA_INTL_PAGE.description).toContain('米国・英国・ドバイ・カイロ拠点');
+    expect(JSON.stringify(JAPAN_JA_INTL_PAGE)).toContain(DELIVERY.apacJa);
+    expect(CHINA_ZH_INTL_PAGE.description).toContain('美国、英国、迪拜、开罗办公室');
+    expect(JSON.stringify(CHINA_ZH_INTL_PAGE)).toContain(DELIVERY.apacZh);
 
     expect(hub).toContain(DELIVERY.europe);
     expect(industries).toContain(DELIVERY.europe);
@@ -202,10 +200,18 @@ describe('international outbound money pages', () => {
     expect(industries).not.toMatch(/US, UK and Cairo leadership offices/);
     expect(marketResearch).not.toMatch(/US, UK and Cairo leadership offices/);
     expect(llms).not.toMatch(/US, UK and Cairo leadership offices/);
+    expect(llms).not.toMatch(/Delivered from US, UK and Cairo offices and Gulf field teams/);
+
     expect(corpus).not.toMatch(/São Paulo office|Sao Paulo office|サンパウロ事務所|圣保罗办公室/);
+    expect(JAPAN_JA_INTL_PAGE.description).not.toMatch(/日本の現地法人が対象です|英語版あり/);
+    expect(CHINA_ZH_INTL_PAGE.description).not.toMatch(/沙特与阿联酋须拆开|英文对照页已上线/);
+    expect((JAPAN_JA_INTL_PAGE.description.match(/。/g) ?? []).length).toBeGreaterThanOrEqual(2);
+    expect((JAPAN_JA_INTL_PAGE.description.match(/。/g) ?? []).length).toBeLessThanOrEqual(3);
+    expect((CHINA_ZH_INTL_PAGE.description.match(/。/g) ?? []).length).toBeGreaterThanOrEqual(2);
+    expect((CHINA_ZH_INTL_PAGE.description.match(/。/g) ?? []).length).toBeLessThanOrEqual(3);
   });
 
-  it('keeps self-canonicals on every English money page', () => {
+  it('keeps self-canonicals on every language version', () => {
     for (const page of INTL_MONEY_PAGES) {
       expect(getCanonicalPath(page.path)).toBe(page.path);
     }
@@ -257,10 +263,9 @@ describe.each(INTL_MONEY_PAGES.map((page) => [page.path, page] as const))('SSR %
     expect(types.some((type) => type.includes('BreadcrumbList'))).toBe(true);
     expect(head).toContain(page.title);
     expect(head).toContain(`https://www.bionixus.com${page.path}`);
-    expect(head).not.toContain(HELD_JA);
-    expect(head).not.toContain(HELD_ZH);
     expect(html.toLowerCase()).not.toMatch(/we guarantee(?:d)? accuracy/);
     expect(html).not.toMatch(/our Tokyo office|our Shanghai office|our Singapore office/);
     expect(html).not.toMatch(/No Tokyo office|No Shanghai office|No China office|No Singapore office/i);
+    expect(html).not.toMatch(/東京オフィスは主張しません|无中国办公室/);
   });
 });

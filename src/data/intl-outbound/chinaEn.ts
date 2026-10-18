@@ -63,7 +63,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       id: 'who-this-is-for',
       heading: 'Who inside a Chinese company briefs Middle East research?',
       paragraphs: [
-        `Middle East market research for Chinese companies is the commissioned file a Shenzhen, Shanghai, Beijing or Suzhou headquarters needs before it remits capital to Saudi Arabia, the UAE, Egypt or a wider Africa plan. The buyer is usually an overseas-investment, international-business or brand team, not the domestic China insights vendor. This English money page is the live conversion URL. Briefs can be written in Mandarin or English; the protocol and the committee readout stay in English. Start from the {link:/healthcare-market-research|healthcare market research} hub for physician and payer work, and from the {link:/bionixus-industries|industries hub} for non-pharma briefs.`,
+        `Middle East market research for Chinese companies is the commissioned file a Shenzhen, Shanghai, Beijing or Suzhou headquarters needs before it remits capital to Saudi Arabia, the UAE, Egypt or a wider Africa plan. The buyer is usually an overseas-investment, international-business or brand team, not the domestic China insights vendor. This English money page sits next to the Simplified Chinese twin {link:/zh/market-research/china|中国企业中东市场调研}. Start from the {link:/healthcare-market-research|healthcare market research} hub for physician and payer work, and from the {link:/bionixus-industries|industries hub} for non-pharma briefs.`,
         `The live article {link:/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae|Chinese companies entering Saudi Arabia and the UAE} already owns the keyword “Chinese companies Saudi market entry”. The live article {link:/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research|Chinese EV brands in the Gulf} owns the EV consumer brief. A Chinese-companies-Egypt insight is in draft as of 18 October 2026 (pull request 287). This money page does not duplicate those playbooks. It is the service URL they should convert into.`,
         `BioNixus was founded in ${FACTS.founded} and is headquartered in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. ${FACTS.clients} clients, ${FACTS.countries} countries, ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025), ${FACTS.physicians} physicians, ${FACTS.priceLow}–${FACTS.priceHigh} custom pricing. ${DELIVERY.apac}`,
       ],
@@ -109,7 +109,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       heading: 'How a mainland HQ briefs BioNixus',
       paragraphs: [
         `Mainland teams brief Sheridan or London in English or Mandarin. Fieldwork is designed with the Dubai and Al Khobar offices in Arabic and English. Cairo joins for Egypt. The first deliverable is a written proposal within 48 hours. Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. The written guarantees are: ${GUARANTEES}. The slogan is “${FACTS.slogan}” BioNixus never claims guaranteed accuracy.`,
-        `A Simplified Chinese page is in native review and is not live on this site yet. Until it publishes, this English URL is the conversion page. Baidu visibility depends on Baidu Webmaster Tools, not Google; that sign-up is a measurement task, not a claim that a Chinese URL already ranks on Baidu.`,
+        `The Simplified Chinese page at {link:/zh/market-research/china|／zh／market-research／china} is written for mainland reading and flagged for native review. Hreflang pairs the two URLs. Baidu visibility depends on Baidu Webmaster Tools, not Google; that sign-up is a measurement task, not a claim that the page already ranks on Baidu.`,
         `To brief China-to-MEA research, use the {link:/contact|contact form} or email {ext:mailto:admin@bionixus.com|admin@bionixus.com}. United States {ext:tel:+18884655557|+1-888-465-5557}. United Kingdom {ext:tel:+447727666682|+44 7727 666682}. Al Khobar {ext:tel:+966501825336|+966 50 182 5336}.`,
         `Mainland HQs that also book from a US or Singapore cost centre should keep the corridors on separate money pages: {link:/market-research/usa|MENA market research company USA}, {link:/market-research/japan|Middle East market research for Japanese companies} and {link:/market-research/singapore|Middle East market research for Singapore companies}. Healthcare country hubs under the same brief are {link:/healthcare-market-research/saudi-arabia|Saudi Arabia}, {link:/healthcare-market-research/uae|the UAE} and {link:/healthcare-market-research/egypt|Egypt}.`,
         `A China domestic healthcare tracker is a different job. Keep {link:/healthcare-market-research/china|healthcare market research in China} and {link:/insights/top-healthcare-market-research-companies-china-2026|top healthcare market research companies in China} for the mainland sample. Do not merge a China HCP tracker and a Gulf physician survey into one mean. If a Shanghai committee asks for that average, write the refusal into the proposal. The usable file is a set of country cuts.`,
@@ -155,7 +155,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
     {
       question: 'Is there a Simplified Chinese page?',
       answer:
-        'Not yet. A Simplified Chinese page is in native review. Until it publishes, brief this English page. Do not treat an unpublished Chinese URL as live.',
+        'Yes. /zh/market-research/china. It is flagged for native review. Hreflang pairs it with this English URL.',
     },
     {
       question: 'Do you guarantee the accuracy of the findings?',
@@ -164,6 +164,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
     },
   ],
   relatedLinks: [
+    { to: PATHS.chinaZh, label: '中国企业中东市场调研' },
     { to: PATHS.usa, label: 'MENA market research company USA' },
     { to: PATHS.japan, label: 'Middle East market research for Japanese companies' },
     { to: PATHS.singapore, label: 'Middle East market research for Singapore companies' },
