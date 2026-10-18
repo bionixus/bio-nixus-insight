@@ -126,6 +126,7 @@ export const IndustryCountryBofuPage = lazy(() => import('@/pages/templates/Indu
 export const IndustryGlobalHubPage = lazy(() => import('@/pages/IndustryGlobalHubPage'));
 export const IndustrySegmentPage = lazy(() => import('@/pages/industries/IndustrySegmentPage'));
 export const Insights = lazy(() => import('@/pages/Insights'));
+export const IntlOutboundMarketResearchPage = lazy(() => import('@/pages/IntlOutboundMarketResearchPage'));
 export const IqviaAlternative = lazy(() => import('@/pages/IqviaAlternative'));
 export const IrelandPharmaceuticalMarketResearch = lazy(() => import('@/pages/IrelandPharmaceuticalMarketResearch'));
 export const ItalyPharmaceuticalMarketResearch = lazy(() => import('@/pages/ItalyPharmaceuticalMarketResearch'));
@@ -432,6 +433,7 @@ const seoPageLoaders: Record<string, () => Promise<unknown>> = {
   "IndustryGlobalHubPage": () => import('@/pages/IndustryGlobalHubPage'),
   "IndustrySegmentPage": () => import('@/pages/industries/IndustrySegmentPage'),
   "Insights": () => import('@/pages/Insights'),
+  "IntlOutboundMarketResearchPage": () => import('@/pages/IntlOutboundMarketResearchPage'),
   "IqviaAlternative": () => import('@/pages/IqviaAlternative'),
   "IrelandPharmaceuticalMarketResearch": () => import('@/pages/IrelandPharmaceuticalMarketResearch'),
   "ItalyPharmaceuticalMarketResearch": () => import('@/pages/ItalyPharmaceuticalMarketResearch'),
@@ -858,6 +860,12 @@ const seoPathToExport: Record<string, string> = {
   "/market-research-saudi": "MarketResearchSaudi",
   "/market-research-saudi-arabia-pharmaceutical": "MarketResearchSaudiArabiaPharmaceutical",
   "/market-research-uae": "MarketResearchUae",
+  "/market-research/usa": "IntlOutboundMarketResearchPage",
+  "/market-research/japan": "IntlOutboundMarketResearchPage",
+  "/market-research/china": "IntlOutboundMarketResearchPage",
+  "/market-research/singapore": "IntlOutboundMarketResearchPage",
+  "/ja/market-research/japan": "IntlOutboundMarketResearchPage",
+  "/zh/market-research/china": "IntlOutboundMarketResearchPage",
   "/market-research/:industrySlug": "IndustryGlobalHubPage",
   "/market-study": "WhatIsMarketStudy",
   "/media": "Media",

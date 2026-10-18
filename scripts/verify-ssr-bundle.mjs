@@ -74,6 +74,12 @@ const CRITICAL_PATHS = [
   '/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026',
   '/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   '/blog/egypt-eda-decree-480-drug-pricing-2026',
+  '/market-research/usa',
+  '/market-research/japan',
+  '/ja/market-research/japan',
+  '/market-research/china',
+  '/zh/market-research/china',
+  '/market-research/singapore',
 ];
 
 let serverEntry;
@@ -108,7 +114,14 @@ for (const pathname of CRITICAL_PATHS) {
       .replace(/<[^>]+>/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
-    const wordCount = mainText ? mainText.split(' ').filter(Boolean).length : 0;
+    const cjkChars = mainText.match(/[\u3040-\u30ff\u3400-\u9fff]/g)?.length ?? 0;
+    const latinWords = mainText
+      .replace(/[\u3040-\u30ff\u3400-\u9fff]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .split(' ')
+      .filter(Boolean).length;
+    const wordCount = latinWords + Math.round(cjkChars / 2);
     if (wordCount < 500) {
       throw new Error(`render returned thin SSR content (${wordCount} words)`);
     }
