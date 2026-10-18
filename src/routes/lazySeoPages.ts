@@ -864,8 +864,6 @@ const seoPathToExport: Record<string, string> = {
   "/market-research/japan": "IntlOutboundMarketResearchPage",
   "/market-research/china": "IntlOutboundMarketResearchPage",
   "/market-research/singapore": "IntlOutboundMarketResearchPage",
-  "/ja/market-research/japan": "IntlOutboundMarketResearchPage",
-  "/zh/market-research/china": "IntlOutboundMarketResearchPage",
   "/market-research/:industrySlug": "IndustryGlobalHubPage",
   "/market-study": "WhatIsMarketStudy",
   "/media": "Media",

@@ -4776,15 +4776,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.84</priority>
   </url>
-    <url>
-    <loc>https://www.bionixus.com/ja/market-research/japan</loc>
-    <lastmod>2026-10-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/market-research/japan" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.bionixus.com/ja/market-research/japan" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/market-research/japan" />
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
-  </url>
 <url>
     <loc>https://www.bionixus.com/japan-general-surgical-devices-market</loc>
     <lastmod>2026-10-17</lastmod>
@@ -6281,7 +6272,6 @@
     <loc>https://www.bionixus.com/market-research/china</loc>
     <lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/market-research/china" />
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.bionixus.com/zh/market-research/china" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/market-research/china" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -6320,7 +6310,6 @@
     <loc>https://www.bionixus.com/market-research/japan</loc>
     <lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/market-research/japan" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.bionixus.com/ja/market-research/japan" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/market-research/japan" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -8483,15 +8472,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/market-research-healthcare" />
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
-  </url>
-    <url>
-    <loc>https://www.bionixus.com/zh/market-research/china</loc>
-    <lastmod>2026-10-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bionixus.com/market-research/china" />
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.bionixus.com/zh/market-research/china" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bionixus.com/market-research/china" />
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
   </url>
 <url>
     <loc>https://www.bionixus.com/zh/methodology</loc>
