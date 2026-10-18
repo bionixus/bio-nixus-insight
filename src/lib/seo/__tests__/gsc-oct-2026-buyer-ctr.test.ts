@@ -18,6 +18,7 @@ import { IQVIA_UAE_PRIMARY_BODY_HTML } from '@/data/blog-iqvia-alternative-uae-p
 import { THIQA_OBESITY_BODY_HTML } from '@/data/blog-thiqa-obesity-reimbursement-abu-dhabi';
 import { UAE_EDE_BODY_HTML } from '@/data/blog-uae-drug-pricing-ede-takeover-launch-research';
 import { DEDL_FORMULARY_BODY_HTML } from '@/data/blog-dubai-essential-drug-list-formulary-submission';
+import { DIABETES_UAE_CUTS_BODY_HTML } from '@/data/blog-diabetes-market-research-uae-2026-price-cuts';
 
 const root = process.cwd();
 const hubSource = readFileSync(join(root, 'src/pages/healthcare-research/HubPage.tsx'), 'utf8');
@@ -55,6 +56,7 @@ const OCT_KSA_UAE_BLOGS = [
   { body: THIQA_OBESITY_BODY_HTML, saudi: false },
   { body: UAE_EDE_BODY_HTML, saudi: false },
   { body: DEDL_FORMULARY_BODY_HTML, saudi: false },
+  { body: DIABETES_UAE_CUTS_BODY_HTML, saudi: false },
 ];
 
 function firstFiftyWords(text: string): string {
