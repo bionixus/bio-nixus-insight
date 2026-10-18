@@ -90,9 +90,7 @@ export function buildSanityPayload(mod) {
     /^Short answer:\s*/i,
     '',
   );
-  const firstParagraph = stripHtml(mod.CHINA_BIOTECH_EXPORT_BODY_HTML.split('<h2')[0])
-    .replace(/^China biotech export controls[\s\S]*?This briefing uses only published sources\./, '')
-    .trim();
+  const firstParagraph = stripHtml(mod.CHINA_BIOTECH_EXPORT_EXECUTIVE_SUMMARY_HTML).split(/(?<=\.)\s+/)[0] ?? '';
 
   return {
     seo: {

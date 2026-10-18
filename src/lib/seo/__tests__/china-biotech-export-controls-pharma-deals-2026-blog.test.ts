@@ -94,8 +94,10 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: server render',
     expect(h1s).toHaveLength(1);
     expect(h1s[0]).toContain(CHINA_BIOTECH_EXPORT_DISPLAY_TITLE);
     expect(h1s[0]).toContain(CHINA_BIOTECH_EXPORT_DISPLAY_SUBTITLE);
-    expect(h1s[0].toLowerCase()).toContain(PHRASE);
+    expect(CHINA_BIOTECH_EXPORT_DISPLAY_TITLE.toLowerCase()).not.toContain(':');
     const visible = text(html);
+    expect(visible).toContain('Our take');
+    expect(visible).toContain('What to watch before 15 November');
     expect(visible).toContain('What are China biotech export controls in the 16 October 2026 draft?');
     expect(visible).toContain('Ivona Gunjova');
     expect(visible).toContain('Global Research Manager');
@@ -107,9 +109,9 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: server render',
     }
     expect(html).toMatch(/<details[\s>]/);
     expect(html).toMatch(/<article[^>]*\slang="en"/);
-    expect(countWords(visible)).toBeGreaterThan(2500);
-    expect(CHINA_BIOTECH_EXPORT_WORD_COUNT).toBeGreaterThanOrEqual(3800);
-    expect(CHINA_BIOTECH_EXPORT_WORD_COUNT).toBeLessThanOrEqual(5000);
+    expect(countWords(visible)).toBeGreaterThan(1400);
+    expect(CHINA_BIOTECH_EXPORT_WORD_COUNT).toBeGreaterThanOrEqual(1800);
+    expect(CHINA_BIOTECH_EXPORT_WORD_COUNT).toBeLessThanOrEqual(2000);
   });
 
   it('links the research hub and the China-to-MEA page, and sibling blogs once', () => {
@@ -346,11 +348,15 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: copy rules', ()
     });
   });
 
-  it('places the exact target phrase in the title, meta, answer-first summary and H2s', () => {
+  it('places the exact target phrase in the title, meta, opening and H2s', () => {
     const summary = text(CHINA_BIOTECH_EXPORT_EXECUTIVE_SUMMARY_HTML);
-    const summaryWords = countWords(summary.replace(/^Short answer:\s*/, ''));
-    expect(summaryWords).toBeGreaterThanOrEqual(40);
-    expect(summaryWords).toBeLessThanOrEqual(60);
+    const summaryWords = countWords(summary);
+    expect(summaryWords).toBeGreaterThanOrEqual(80);
+    expect(summaryWords).toBeLessThanOrEqual(220);
+    expect(summary).not.toMatch(/Short answer:/i);
+    const firstSentence = summary.split(/(?<=\.)\s+/)[0] ?? '';
+    expect(firstSentence).toMatch(/16 October 2026/);
+    expect(firstSentence).toMatch(/40 technologies|40 items/);
     const h2s = [...CHINA_BIOTECH_EXPORT_BODY_HTML.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map((m) =>
       text(m[1]).toLowerCase(),
     );
@@ -358,10 +364,12 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: copy rules', ()
     expect(CHINA_BIOTECH_EXPORT_META_DESCRIPTION.toLowerCase()).toContain(PHRASE);
     expect(summary.toLowerCase()).toContain(PHRASE);
     expect(h2s.filter((h2) => h2.includes(PHRASE)).length).toBeGreaterThanOrEqual(2);
+    expect(h2s).toContain('our take');
     expect(CHINA_BIOTECH_EXPORT_BODY_HTML.toLowerCase()).toContain('does not have a china office');
     expect(allCopy).not.toMatch(/legal advice to|this is legal advice/i);
     expect(allCopy).toMatch(/not legal advice/i);
     expect(allCopy).toMatch(/not yet final law|still a draft|not a finished statute/i);
+    expect(CHINA_BIOTECH_EXPORT_HARDCODED_POST.ctaSection?.buttonUrl).toContain('/market-research/china');
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {
