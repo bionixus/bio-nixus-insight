@@ -214,9 +214,9 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
       'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
   },
   'chinese-companies-egypt-market-research': {
-    title: 'Chinese Companies Egypt Market Research: 2026 Guide',
+    title: 'Chinese Companies Egypt Market Research: Plain Guide',
     description:
-      'Chinese companies Egypt market research for Cairo and North Africa brands: demand, 14% VAT, GAFI licence and SCZone proof before the HQ remits capital.',
+      'Chinese companies Egypt market research in plain steps: who will buy, which city, the price after 14% VAT, and which licence to use before you send money.',
   },
   'nielsen-alternative-saudi-arabia': {
     title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',

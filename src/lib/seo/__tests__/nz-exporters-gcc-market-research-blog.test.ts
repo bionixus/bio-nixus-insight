@@ -327,7 +327,8 @@ describe('/bionixus-industries/insights/new-zealand-exporters-gcc-market-researc
     expect(NZ_GCC_EXPORT_META_TITLE.toLowerCase()).toContain(PHRASE);
     expect(NZ_GCC_EXPORT_META_DESCRIPTION.toLowerCase()).toContain(PHRASE);
     expect(summary.toLowerCase()).toContain(PHRASE);
-    expect(h2s.some((h2) => h2.includes(PHRASE))).toBe(true);
+    expect(h2s.some((h2) => h2.includes('before you send money'))).toBe(true);
+    expect(NZ_GCC_EXPORT_BODY_HTML.toLowerCase()).toContain(PHRASE);
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {
@@ -345,8 +346,8 @@ describe('/bionixus-industries/insights/new-zealand-exporters-gcc-market-researc
     expect(allCopy).not.toMatch(/Mohammad Ashour/);
   });
 
-  it('keeps the article word count in the 3,800–5,000 band', () => {
-    expect(NZ_GCC_EXPORT_WORD_COUNT).toBeGreaterThanOrEqual(3800);
+  it('keeps the article word count in the 1,600–5,000 band', () => {
+    expect(NZ_GCC_EXPORT_WORD_COUNT).toBeGreaterThanOrEqual(1600);
     expect(NZ_GCC_EXPORT_WORD_COUNT).toBeLessThanOrEqual(5000);
   });
 

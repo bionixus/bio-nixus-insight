@@ -63,6 +63,7 @@ export type UiChromeStrings = {
     uaeFirms: string;
     egyptFirms: string;
     gccFirms: string;
+    usaHealthcareFirms: string;
     rankings: string;
     compare: string;
     more: string;
@@ -142,6 +143,7 @@ const en: UiChromeStrings = {
     uaeFirms: 'Market research firms UAE',
     egyptFirms: 'Market research firms Egypt',
     gccFirms: 'Market research firms GCC',
+    usaHealthcareFirms: 'Healthcare market research companies USA',
     rankings: 'Rankings',
     compare: 'Compare',
     more: 'Also in this library',

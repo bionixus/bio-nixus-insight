@@ -61,6 +61,7 @@ export function HomeExploreResearchSection({
   ];
 
   const rankings: ExploreLink[] = [
+    { to: '/insights/top-healthcare-market-research-companies-usa-2026', label: explore.usaHealthcareFirms },
     { to: '/insights/top-market-research-companies-saudi-arabia-2026', label: explore.ksaFirms },
     { to: '/insights/top-market-research-companies-uae-2026', label: explore.uaeFirms },
     { to: '/insights/top-market-research-companies-egypt-2026', label: explore.egyptFirms },

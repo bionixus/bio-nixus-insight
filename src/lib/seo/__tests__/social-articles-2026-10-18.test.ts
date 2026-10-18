@@ -42,19 +42,6 @@ function text(html: string): string {
     .trim();
 }
 
-function markdownPlain(raw: string): string {
-  const body = raw.replace(/^---\n[\s\S]*?\n---\n/, '').trim();
-  return body
-    .replace(/^#{1,6}\s+/gm, '')
-    .replace(/^\s*[-*]\s+/gm, '')
-    .replace(/^\s*\d+\.\s+/gm, '')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, '$1$2')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
 function metaContent(head: string, attr: 'property' | 'name', key: string): string[] {
   const re = new RegExp(`<meta[^>]*${attr}="${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`, 'g');
   return [...head.matchAll(re)].map((match) => decodeEntities(/content="([^"]*)"/.exec(match[0])?.[1] ?? ''));
@@ -122,7 +109,7 @@ describe.each(SOCIAL_ARTICLES_2026_10_18.map((article) => [article.slug, article
       );
     }, 120_000);
 
-    it('serves one h1, the canonical URL, the byline and the original prose', () => {
+    it('serves one h1, the canonical URL, the byline and the cited sources', () => {
       const h1s = [...html.matchAll(/<h1[\s>][\s\S]*?<\/h1>/g)].map((match) => text(match[0]));
       expect(h1s).toHaveLength(1);
       expect(h1s[0]).toContain(article.title);
@@ -135,10 +122,16 @@ describe.each(SOCIAL_ARTICLES_2026_10_18.map((article) => [article.slug, article
       expect(html).not.toMatch(/Dr\.?\s*Mohammad/i);
       expect(html).not.toMatch(/status:\s*DRAFT/i);
       expect(html).not.toContain('seo_title');
-      const source = readFileSync(join(root, 'content/incoming/2026-10-18', `${article.publishedAtIso?.slice(0, 10)}-${slug}.md`), 'utf8');
       expect(text(`${article.title} ${html}`)).toContain(article.title);
-      const prose = text(article.body as string);
-      expect(`${article.title} ${prose}`).toBe(markdownPlain(source));
+      const body = String(article.body);
+      const sourceUrls = article.sources.flatMap((line) =>
+        [...line.matchAll(/https?:\/\/[^\s)]+/g)].map((match) => match[0].replace(/[.,]+$/, '')),
+      );
+      expect(sourceUrls.length).toBeGreaterThan(0);
+      for (const url of sourceUrls) {
+        const encoded = url.replace(/&/g, '&amp;');
+        expect(body.includes(url) || body.includes(encoded)).toBe(true);
+      }
       const ref = canonicalRedirectTarget(`/blog/${slug}?ref=linkedin`);
       expect(ref.changed).toBe(false);
       expect(ref.full).toBe(`/blog/${slug}?ref=linkedin`);

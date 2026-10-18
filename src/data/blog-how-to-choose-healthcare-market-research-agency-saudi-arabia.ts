@@ -62,9 +62,9 @@ export const CHOOSE_AGENCY_KSA_FIGURES: ArticleFigure[] = [
   },
   {
     src: '/images/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia-hospitals.webp',
-    alt: 'Bar chart of Saudi hospitals in 2023: Riyadh 109, Makkah 95 and 295 in other regions, of 499 total',
+    alt: 'Illustration of the 2023 Saudi hospital count published by the statistics authority',
     caption:
-      'GASTAT’s 2023 healthcare-establishments file: 499 hospitals. Riyadh 109 and Makkah 95 together hold 204. A “national” physician sample that is mostly Riyadh is not a national sample.',
+      'The 2023 healthcare-establishments file counts 499 hospitals, 23.8 beds per 10,000 people, and 113,300 doctors. A sample from one city is a city sample unless the brief asked for that city.',
     width: 800,
     height: 560,
   },
@@ -88,7 +88,7 @@ export const CHOOSE_AGENCY_KSA_FIGURES: ArticleFigure[] = [
     src: '/images/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia-scorecard.webp',
     alt: 'Red amber green scorecard for scoring a Saudi healthcare market research agency proposal',
     caption:
-      'Score each answer red, amber or green. Green means a named in-Kingdom team, a PDPL plan for health data, region and nationality splits, and a written replacement and minimum-sample clause. Red is a Dubai average and a syndicated market-size slide.',
+      'Score the proposal against the questions on this page. A syndicated market-size slide is not in-Kingdom fieldwork.',
     width: 800,
     height: 640,
   },
@@ -104,15 +104,15 @@ export const CHOOSE_AGENCY_KSA_META_DESCRIPTION =
   'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.';
 
 export const CHOOSE_AGENCY_KSA_DISPLAY_TITLE =
-  'How to Choose a Healthcare Market Research Agency in Saudi Arabia: 10 Questions to Ask';
+  'Questions to ask before you hire a research firm';
 
 export const CHOOSE_AGENCY_KSA_DISPLAY_SUBTITLE =
-  'Healthcare market research agency Saudi Arabia: a 2026 buyer checklist';
+  'A healthcare market research agency Saudi Arabia brief, in plain words';
 
 export const CHOOSE_AGENCY_KSA_BREADCRUMB_LABEL = 'Choose a Saudi healthcare research agency';
 
 export const CHOOSE_AGENCY_KSA_EXCERPT =
-  'A sourced 2026 checklist of ten questions to ask a healthcare market research agency in Saudi Arabia: in-Kingdom fieldwork, PDPL, SFDA, NUPCO, CHI, sample quality, and what belongs in writing.';
+  'A plain checklist for hiring a firm to interview doctors, patients or payers in Saudi Arabia, and the published numbers that do not replace those interviews.';
 
 export const CHOOSE_AGENCY_KSA_PUBLISHED_ISO = '2026-10-15T12:00:00.000Z';
 export const CHOOSE_AGENCY_KSA_UPDATED_ISO = '2026-10-15T12:00:00.000Z';
@@ -440,216 +440,84 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const CHOOSE_AGENCY_KSA_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What is a healthcare market research agency Saudi Arabia?', anchor: 'what-is-a-healthcare-market-research-agency-saudi-arabia' },
-  { heading: 'Why Saudi Arabia is not a GCC average', anchor: 'why-saudi-arabia-is-not-a-gcc-average' },
-  { heading: 'The 10 questions at a glance', anchor: 'the-10-questions' },
-  { heading: '1. Where is the fieldwork actually run?', anchor: 'q1-where-is-the-fieldwork-run' },
-  { heading: '2. Can you recruit the right respondents?', anchor: 'q2-can-you-recruit-the-right-respondents' },
-  { heading: '3. How do you handle PDPL and research ethics?', anchor: 'q3-how-do-you-handle-pdpl-and-ethics' },
-  { heading: '4. How do you prove sample quality?', anchor: 'q4-how-do-you-prove-sample-quality' },
-  { heading: '5. Will results split by region, nationality and channel?', anchor: 'q5-will-results-split-by-region-nationality-channel' },
-  { heading: '6. Do you separate SFDA, NUPCO and CHI?', anchor: 'q6-do-you-separate-sfda-nupco-and-chi' },
-  { heading: '7. What methods will you run in-Kingdom?', anchor: 'q7-what-methods-will-you-run-in-kingdom' },
-  { heading: '8. Who owns the data, and can you re-cut it?', anchor: 'q8-who-owns-the-data' },
-  { heading: '9. What is guaranteed in writing?', anchor: 'q9-what-is-guaranteed-in-writing' },
-  { heading: '10. Can you show therapy-area work without breaking confidentiality?', anchor: 'q10-can-you-show-therapy-area-work' },
-  { heading: 'How to choose a healthcare market research agency Saudi Arabia', anchor: 'how-to-choose-a-healthcare-market-research-agency-saudi-arabia' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What this agency does', anchor: 'what-is-a-healthcare-market-research-agency-saudi-arabia' },
+  { heading: 'Why the Kingdom is not a GCC average', anchor: 'why-saudi-arabia-is-not-a-gcc-average' },
+  { heading: 'The 10 questions', anchor: 'the-10-questions' },
+  { heading: 'Where the fieldwork runs', anchor: 'q1-where-is-the-fieldwork-run' },
+  { heading: 'Who you can recruit', anchor: 'q2-can-you-recruit-the-right-respondents' },
+  { heading: 'Health data and ethics', anchor: 'q3-how-do-you-handle-pdpl-and-ethics' },
+  { heading: 'How sample quality is proved', anchor: 'q4-how-do-you-prove-sample-quality' },
+  { heading: 'Splits the tables must show', anchor: 'q5-will-results-split-by-region-nationality-channel' },
+  { heading: 'SFDA, NUPCO and CHI are separate', anchor: 'q6-do-you-separate-sfda-nupco-and-chi' },
+  { heading: 'Methods that fit the decision', anchor: 'q7-what-methods-will-you-run-in-kingdom' },
+  { heading: 'Who owns the tables', anchor: 'q8-who-owns-the-data' },
+  { heading: 'What the written guarantee covers', anchor: 'q9-what-is-guaranteed-in-writing' },
+  { heading: 'Therapy-area proof', anchor: 'q10-can-you-show-therapy-area-work' },
+  { heading: 'How to use the list', anchor: 'how-to-choose-a-healthcare-market-research-agency-saudi-arabia' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const CHOOSE_AGENCY_KSA_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A healthcare market research agency Saudi Arabia brief should prove in-Kingdom fieldwork, Arabic instruments, PDPL handling of health data, and sample quality, then split results by region, nationality and public versus CHI versus military channels. Ask who recruits, who owns the data, what is guaranteed in writing, and whether SFDA, NUPCO and CHI are treated as separate decisions.</p>`;
+export const CHOOSE_AGENCY_KSA_EXECUTIVE_SUMMARY_HTML = `<p>A healthcare market research agency Saudi Arabia should show in-Kingdom fieldwork, Arabic and English instruments, and a plan for health data. Ask who recruits, who owns the tables, and what is guaranteed in writing. Split results by region, nationality and payer. Treat SFDA, NUPCO and CHI as separate decisions.</p>`;
 
-const NARRATIVE_HTML = `<p>Choosing a healthcare market research agency in Saudi Arabia is a fieldwork and access problem before it is a brand-name problem. The Kingdom had 35.3 million residents in mid-2024 and 499 hospitals in 2023, with Riyadh and Makkah alone holding 204 of them (${cite('mygov-stats', 'my.gov.sa')}; ${cite('gastat-health-2023', 'GASTAT 2023')}). A Dubai-managed “GCC average”, or a syndicated diagnostics-market slide, will not tell a brand team how a Riyadh Ministry of Health cluster, an Eastern CHI-insured private hospital and a National Guard Pharmacy and Therapeutics committee will each treat the same product. This checklist sits on our <a href="/healthcare-market-research">healthcare market research company</a> hub for Saudi Arabia, the UAE and the GCC, the <a href="/healthcare-market-research/saudi-arabia">healthcare market research company in Saudi Arabia</a> buyer page, and next to our ranking of <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">top healthcare market research companies in Saudi Arabia in 2026</a>.</p>
+const NARRATIVE_HTML = `<p>A healthcare market research agency Saudi Arabia should field the study in the Kingdom. Start with the <a href="/healthcare-market-research">healthcare market research</a> hub and the <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">ranking of healthcare market research companies in Saudi Arabia</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 agency brief has to survive, October 2026</strong></p>
-<ul>
-<li><strong>35,300,280</strong> residents in 2024 on the national portal; GASTAT’s mid-2024 estimate is 35.3 million, up 4.7% from mid-2023 (${cite('mygov-stats', 'my.gov.sa')}; ${cite('gastat-pop-pub', 'GASTAT 2024')})</li>
-<li><strong>499 hospitals</strong> in 2023: Riyadh 109, Makkah 95; <strong>23.8 beds</strong> per 10,000 population (${cite('gastat-health-2023', 'GASTAT')})</li>
-<li><strong>113,300 medical doctors</strong> in 2023, of whom 64,813 were non-Saudi and 48,487 Saudi (${cite('gastat-health-2023', 'GASTAT')})</li>
-<li><strong>More than 14 million</strong> CHI private-insurance beneficiaries in Q3 2025 — 4.5 million Saudi and 9.5 million non-Saudi (${cite('chi-14m', 'CHI, 27 October 2025')})</li>
-<li><strong>20 health clusters</strong> launched in the first phase of health-sector transformation; life expectancy <strong>79.7 years</strong> in 2024; primary-care coverage <strong>97.5%</strong>; Healthcare Quality Index <strong>70.4%</strong> in 2025 (${cite('vision-2025', 'Vision 2030 Annual Report 2025')})</li>
-<li><strong>31+ million</strong> Sehati (Sehhaty) app beneficiaries in the 2025 Health Sector Transformation report (${cite('hstp-2025', 'HSTP 2025')})</li>
-<li><strong>NUPCO</strong> is PIF-owned, founded in 2009, registered capital SAR 1.5 billion, and runs unified procurement for government health entities (${cite('pif-nupco', 'PIF')}; ${cite('nupco-overview', 'NUPCO')})</li>
-<li><strong>Health data is Sensitive Data</strong> under the Saudi Personal Data Protection Law; extra controls sit in Article 23 of the Law and Article 26 of the Implementing Regulation (${cite('pdpl-text', 'PDPL')}; ${cite('pdpl-impl', 'Implementing Regulation')})</li>
-</ul>
-</div>
+<h2 id="what-is-a-healthcare-market-research-agency-saudi-arabia">What this agency does</h2>
+<p>It designs and fields commissioned research with physicians, pharmacists, payers, procurement leads, patients and caregivers. The usual decision is a formulary, a NUPCO tender, a CHI benefit, a launch forecast, or share of treated patients. Country context sits on <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>. The regional page is the <a href="/healthcare-market-research-agency-gcc">healthcare market research agency GCC</a> briefing.</p>
+<p>It is not a syndicated market-size PDF. ${cite('grand-view', 'Grand View Research')} and ${cite('imarc', 'IMARC')} sell outlook pages. Those pages can sketch category spend. They cannot say which cluster will start a product. ${cite('iqvia', 'IQVIA')}, ${cite('ipsos', 'Ipsos')} and ${cite('kantar', 'Kantar')} also sell custom work beside audits. Ask for the custom workstream, not the audit extract.</p>
 
-<h2 id="what-is-a-healthcare-market-research-agency-saudi-arabia">What is a healthcare market research agency Saudi Arabia?</h2>
-
-<p>It is a firm that designs and fields commissioned primary research with the people who diagnose, treat, fund and supply care in the Kingdom — physicians, pharmacists, payers, procurement leads, patients and caregivers — and reports the result as evidence for one decision. That decision is usually a formulary addition, a NUPCO tender, a CHI benefit question, a launch forecast or a share-of-treated-patients tracker. Country context sits on <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>. The regional sibling is our <a href="/healthcare-market-research-agency-gcc">healthcare market research agency GCC</a> page.</p>
-
-<p>It is not a syndicated market-size PDF. Report publishers such as ${cite('grand-view', 'Grand View Research')} and ${cite('imarc', 'IMARC Group')} sell Saudi healthcare and pharmaceutical outlooks that often occupy neighbouring queries. Those pages can triangulate category spend. They cannot tell you which Riyadh cluster will start a product, which Eastern CHI-insured hospital will list it, or why a non-Saudi internist in Jeddah will not. ${cite('iqvia', 'IQVIA')}, ${cite('ipsos', 'Ipsos')} and ${cite('kantar', 'Kantar')} also sell custom healthcare work alongside audits and trackers. The buyer’s job is to insist that the proposal in front of you is the custom workstream, not the audit extract.</p>
-
-<p>A usable healthcare market research agency in Saudi Arabia usually needs:</p>
-
-<ul>
-<li>An in-Kingdom field office or a named, contracted Saudi field partner — not a slide that says “MENA coverage”.</li>
-<li>Arabic and English instruments, and interviewers who can run both.</li>
-<li>Quotas that split region, nationality and public versus private versus military or National Guard.</li>
-<li>A written PDPL plan for health data, including any transfer outside the Kingdom (${cite('pdpl-text', 'PDPL Article 29')}; ${cite('sdaia-regs', 'SDAIA transfer regulation')})</li>
-<li>A method that matches the decision: anonymous patient-record forms for treated share, in-depth interviews for P&amp;T objections, a structured physician survey for initiation and switch. A physician-survey design is set out on <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>.</li>
-</ul>
-
-<h2 id="why-saudi-arabia-is-not-a-gcc-average">Why Saudi Arabia is not a GCC average</h2>
-
-<p>The population file alone is enough to kill a Gulf-average brief. GASTAT’s mid-2024 estimate is 35.3 million residents, up 1.6 million from mid-2023, a 4.7% annual increase (${cite('gastat-pop-pub', 'GASTAT publication')}; ${cite('gastat-pop-2024', 'GASTAT statistics')}). The national portal prints 35,300,280 (${cite('mygov-stats', 'my.gov.sa')}). Saudis were 55.6% and non-Saudis 44.4%; males were 62.1% (${cite('gastat-pop-pub', 'GASTAT')}). Entitlement and out-of-pocket exposure still have to be researched by nationality.</p>
-
-<p>The workforce file is the second reason. In 2023 the Kingdom had 113,300 medical doctors: 64,813 non-Saudi and 48,487 Saudi; 72,261 male and 41,039 female. Dentists were 25,970, nurses 213,110, pharmacists 36,810 (${cite('gastat-health-2023', 'GASTAT workforce')}). A plan that assumes “Saudi consultants in Riyadh, English only” will miss the physicians who write the scripts. The Ministry of Health Statistical Yearbook is the regional cut of the same system (${cite('moh-yearbook', 'MOH yearbook page')}; ${cite('moh-yearbook-2023', 'Yearbook 2023 PDF')}).</p>
-
+<h2 id="why-saudi-arabia-is-not-a-gcc-average">Why the Kingdom is not a GCC average</h2>
+<p>GASTAT’s mid-2024 estimate is 35.3 million residents, up 4.7% from mid-2023 (${cite('gastat-pop-pub', 'GASTAT publication')}; ${cite('gastat-pop-2024', 'GASTAT statistics')}). The national portal prints 35,300,280 (${cite('mygov-stats', 'my.gov.sa')}). Those are two published population files. Do not merge them. Saudis were 55.6% and non-Saudis 44.4%. Males were 62.1% (${cite('gastat-pop-pub', 'GASTAT')}).</p>
+<p>In 2023 the Kingdom had 113,300 medical doctors: 48,487 Saudi and 64,813 non-Saudi. The same file counts 72,261 male and 41,039 female doctors, 25,970 dentists, 213,110 nurses and 36,810 pharmacists (${cite('gastat-health-2023', 'GASTAT')}). GASTAT counted 499 hospitals. Riyadh Region had 109. Makkah Region had 95. Beds were 23.8 per 10,000 population, 37.7 in the Northern Borders and 36.7 in Al-Baha (${cite('gastat-health-2023', 'GASTAT')}). The Ministry of Health Statistical Yearbook is the regional cut (${cite('moh-yearbook', 'MOH yearbook page')}; ${cite('moh-yearbook-2023', 'Yearbook 2023 PDF')}).</p>
+<p>Vision 2030’s 2025 report records life expectancy of 79.7 years in 2024, primary-care coverage of 97.5%, and a Healthcare Quality Index of 70.4% in 2025, above a 60% target. The first phase launched 20 health clusters (${cite('vision-2025', 'Vision 2030 2025 report')}; ${cite('vision-page', 'annual-reports page')}). The Ministry of Health released the 2025 Health Sector Annual Report on 15 February 2026 (${cite('moh-hstp-news', 'MOH, 15 February 2026')}). The programme report adds more than 31 million Sehati app beneficiaries (${cite('hstp-2025', 'HSTP 2025')}).</p>
 ${figureHtml(CHOOSE_AGENCY_KSA_FIGURES[1])}
 
-<p>The hospital file is the third. GASTAT counted 499 hospitals in 2023. Riyadh Region had 109; Makkah Region had 95 (${cite('gastat-health-2023', 'GASTAT')}). That is 204 of 499, or about two in five, in two regions. Beds were 23.8 per 10,000 population nationally, but 37.7 in the Northern Borders and 36.7 in Al-Baha (${cite('gastat-health-2023', 'GASTAT')}). Capacity, referral and waiting time are regional. A sample that is 80% Riyadh KOLs is a Riyadh study.</p>
-
-<p>The transformation file is the fourth. Vision 2030’s 2025 annual report records life expectancy of 79.7 years in 2024, primary-care coverage of 97.5%, and a Healthcare Quality Index of 70.4% in 2025, above a 60% target. It also records completion of the first phase of health-sector transformation with the launch of 20 health clusters (${cite('vision-2025', 'Vision 2030 2025 report')}; ${cite('vision-page', 'annual-reports page')}). The Ministry of Health released the 2025 Health Sector Annual Report on 15 February 2026 (${cite('moh-hstp-news', 'MOH, 15 February 2026')}). The Health Sector Transformation Program’s own 2025 report adds more than 31 million Sehati app beneficiaries (${cite('hstp-2025', 'HSTP 2025')}). “MOH physician” is not one decision-maker. It is a cluster, a specialty and a hospital P&amp;T.</p>
-
-<p>Neighbouring systems are not substitutes. Compare <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a>, <a href="/healthcare-market-research/egypt">Egypt</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a>. A Saudi CHI or NUPCO answer is not a DHA, DOH or DHAMAN answer.</p>
-
-<h2 id="the-10-questions">The 10 questions at a glance</h2>
-
-<p>Use these ten questions on every proposal. They are written for a pharmaceutical, medical-device or healthcare buyer who has to defend the study to medical, access and finance. They sit beside ESOMAR’s buyer questions for online sample (${cite('esomar-37', 'ESOMAR 37 Questions')}; ${cite('esomar-28', '2012 28 Questions')}) and ISO 20252’s service requirements for market, opinion and social research (${cite('iso-20252-2026', 'ISO 20252:2026')}). They are not a substitute for those documents. They add the Saudi access and PDPL layer those documents do not write for you.</p>
-
+<h2 id="the-10-questions">The 10 questions</h2>
+<p>Ask these before you award the study. A green answer names a place, a quota, a statute or a table. A red answer hides behind a GCC average.</p>
 ${QUESTIONS_TABLE_HTML}
 
+<h2 id="q1-where-is-the-fieldwork-run">Where the fieldwork runs</h2>
+<p>Ask which team will book the interviews, and in which city. A named Al Khobar, Riyadh or Jeddah team, or a named subcontract, is a green answer. “GCC coverage” run only from Dubai is not a Kingdom sample. Physicians, payers and hospital committees do not share one diary.</p>
 ${figureHtml(CHOOSE_AGENCY_KSA_FIGURES[0])}
 
-<h2 id="q1-where-is-the-fieldwork-run">1. Where is the fieldwork actually run?</h2>
+<h2 id="q2-can-you-recruit-the-right-respondents">Who you can recruit</h2>
+<p>Ask for specialty, sector, language and the n in each cell. Arabic and English instruments are both required. Physicians, pharmacists, payers and patients are four frames. A convenience panel with no quotas will not recover the hospital mix above.</p>
 
-<p>Ask for the office that will recruit, the office that will interview, and the office that will quality-check — then ask which of those three is in the Kingdom. BioNixus runs Saudi healthcare fieldwork from an Al Khobar field office. “We cover the GCC from Dubai” is a routing answer, not a field force.</p>
+<h2 id="q3-how-do-you-handle-pdpl-and-ethics">Health data and ethics</h2>
+<p>Health data is Sensitive Data under the Personal Data Protection Law (${cite('pdpl-text', 'PDPL')}). Article 23 adds controls. Article 29 sets conditions for a transfer outside the Kingdom. Article 36 can mean imprisonment of up to two years, or a fine of up to three million riyals, or both (${cite('pdpl-text', 'PDPL')}). Article 26 of the Implementing Regulation covers documented processing of health data (${cite('pdpl-impl', 'Implementing Regulation')}). SDAIA publishes the law, the regulation and the transfer rules (${cite('sdaia-regs', 'SDAIA regulations')}), and a guide for controllers and processors (${cite('sdaia-guide', 'SDAIA guide')}).</p>
+<p>Chart review is a different gate. The National Committee of Bioethics oversees research on living creatures (${cite('ncbe-home', 'NCBE')}; ${cite('ncbe-who', 'NCBE')}). Its standards page hosts the law, the implementing regulations and model consent forms (${cite('ncbe-standards', 'NCBE standards')}). “We follow GDPR” does not answer either gate.</p>
 
-<p>A serious proposal names the cities. Riyadh holds 109 of the 499 hospitals; Makkah Region holds 95 (${cite('gastat-health-2023', 'GASTAT 2023')}). Jeddah, Dammam/Khobar/Qatif and Jazan are the usual next cuts for specialty work. If the study is obesity or GLP-1, the published physician papers already show how specialty and city change the result — see our <a href="/blog/glp-1-physician-survey-saudi-arabia">GLP-1 physician survey Saudi Arabia</a> methods guide and the <a href="/blog/who-does-obesity-market-research-saudi-arabia">obesity research shortlist</a>. If the study is hematology, Eastern and Jazan prevalence is not a Riyadh prevalence; that briefing is on <a href="/blog/hematology-market-research-saudi-arabia">hematology market research Saudi Arabia</a>.</p>
-
-<p>Ask who the subcontractors are. A European healthcare agency that buys a Saudi consumer panel and relabels it as “HCP fieldwork” is not a healthcare market research agency in Saudi Arabia. Write the subcontract into the contract, including PDPL processor clauses (${cite('pdpl-impl', 'Implementing Regulation Article 26')})</p>
-
-<p><strong>Green:</strong> a named Saudi field office or a named Saudi field partner, with city-level interviewing. <strong>Red:</strong> “MENA coverage” and a project manager in Europe who has never sat in a Riyadh waiting room.</p>
-
-<h2 id="q2-can-you-recruit-the-right-respondents">2. Can you recruit the right respondents?</h2>
-
-<p>Ask for the frame, not the promise. “Fifty physicians” is not a sample. Fifty endocrinologists, internists and family physicians, split by Riyadh / Jeddah / Eastern, by public versus private versus military, and by Saudi versus non-Saudi, is a sample. GASTAT’s 2023 workforce file is why the last split matters: 64,813 of 113,300 doctors were non-Saudi (${cite('gastat-health-2023', 'GASTAT')})</p>
-
-<p>Ask which respondent types the brief actually needs:</p>
-
-<ul>
-<li><strong>Treating physicians</strong> for initiation, switch and treated share — anonymous patient-record forms beat opinion questions.</li>
-<li><strong>Pharmacists</strong> for stock, substitution and CHI-claim friction.</li>
-<li><strong>Payers and P&amp;T members</strong> as four seats, not one: MOH cluster, NUPCO, CHI, hospital committee (${cite('ppri-2024', 'PPRI 2024')}; ${cite('chi-formulary', 'CHI formulary')})</li>
-<li><strong>Patients and caregivers</strong> when persistence, out-of-pocket and journey are the decision. CHI’s essential benefit package is the private-insurance baseline, not a clinical guideline (${cite('chi-ebp', 'CHI Essential Benefit Package')})</li>
-</ul>
-
-<p>Ask for the language of the instrument and of the interview. Front-line clinics do not all run in English. A bilingual guide is a minimum on any patient or primary-care brief. Ask how the agency will find the respondent: hospital lists, licensed-professional frames, client-supplied lists, or an online HCP panel. ESOMAR’s 37 Questions exist so that the last of those four is not a black box (${cite('esomar-37', 'ESOMAR 37')})</p>
-
-<p><strong>Green:</strong> a quota table with specialty, sector, region, nationality and language, and a named frame. <strong>Red:</strong> “KOLs and physicians, n=30, online, English.”</p>
-
-<h2 id="q3-how-do-you-handle-pdpl-and-ethics">3. How do you handle PDPL and research ethics?</h2>
-
-<p>This is the question that separates a healthcare agency from a consumer-panel shop. The Saudi Personal Data Protection Law classifies Health Data as Sensitive Data. Health Data is any personal data related to an individual’s physical, mental or psychological condition, or to health services received (${cite('pdpl-text', 'PDPL Article 1')})</p>
-
-<p>Article 23 of the Law requires extra controls for health data, including restricting access to medical files to the minimum staff needed to provide the health service, and restricting processing to what is needed for health services or health-insurance programmes (${cite('pdpl-text', 'PDPL Article 23')}). Article 26 of the Implementing Regulation adds documented processing stages, role-based access, processor-contract clauses, and a minimum-necessary rule, and it points controllers at Ministry of Health, Saudi Health Council, Saudi Central Bank and CHI requirements (${cite('pdpl-impl', 'Implementing Regulation')})</p>
-
-<p>Article 29 sets the conditions for transferring personal data outside the Kingdom: an adequate level of protection, a minimum transfer, and no prejudice to national security or vital interests, with exceptions set out in the Regulations (${cite('pdpl-text', 'PDPL Article 29')}; ${cite('sdaia-regs', 'SDAIA regulations page')}). SDAIA’s controller-and-processor guide is the practical reading list (${cite('sdaia-guide', 'SDAIA PDPL guide')}). Article 36 of the Law attaches imprisonment of up to two years, or a fine of up to three million riyals, or both, to disclosing or publishing Sensitive Data in violation of the Law with intent to harm or to gain (${cite('pdpl-text', 'PDPL Article 36')})</p>
-
-<p>Commercial market research is not automatically “research on living creatures.” The National Committee of Bioethics sets standards for biological research ethics, oversees local committees, and publishes the Law of Ethics of Research on Living Creatures and its implementing regulations (${cite('ncbe-who', 'NCBE')}; ${cite('ncbe-standards', 'NCBE standards')}; ${cite('ncbe-home', 'NCBE portal')}). If your brief is a hospital chart review, a prospective clinical protocol, or the collection of biological samples, ask which NCBE-registered local committee will review it. If your brief is a double-blind physician interview with no medical-record extract, ask the agency to say so in writing and to apply PDPL and the ICC/ESOMAR Code instead (${cite('esomar-2025', 'ICC/ESOMAR Code 2025')})</p>
-
-<p>The 2025 ICC/ESOMAR Code, updated in July 2025, states that participation must be voluntary and based on clear information, that consent is a freely given, specific and informed indication of agreement, and that re-contact needs the data subject’s agreement except for quality control, adverse-event reporting or law (${cite('esomar-2025', 'ICC/ESOMAR')})</p>
-
-<p><strong>Green:</strong> a one-page PDPL note that names controller and processor, storage location, transfer legal basis, retention, and the ethics regime (commercial MR versus NCBE/IRB). <strong>Red:</strong> “We are GDPR compliant” as the entire Saudi answer.</p>
-
-<h2 id="q4-how-do-you-prove-sample-quality">4. How do you prove sample quality?</h2>
-
-<p>Ask how the agency knows the internist is an internist. Then ask what happens when they are not. BioNixus replaces non-qualifying respondents at no cost to the client and writes a minimum sample into the contract. That is a quality clause. “Best efforts” is not.</p>
-
-<p>Where the sample is online, use ESOMAR’s buyer questions. The 2012 “28 Questions to Help Buyers of Online Samples” set the original transparency list for sources, recruitment and quality controls (${cite('esomar-28', 'ESOMAR 28 Questions, 2012')}). ESOMAR’s current publication is the 37 Questions, which updates and replaces that 2012 document and is meant as a conversation with the sample provider, not a tick-box score (${cite('esomar-37', 'ESOMAR 37 Questions')}). Ask for the agency’s written answers on source mix, de-duplication, identity validation, and how Saudi HCP sample is built — not a global consumer-panel appendix.</p>
-
-<p>ISO 20252:2026, published in September 2026, sets vocabulary and service requirements for market, opinion and social research, including insights and data analytics. It does not apply to direct marketing (${cite('iso-20252-2026', 'ISO 20252:2026')}). The Market Research Society records a three-year transition from the 2019 edition, with certification to the 2026 standard mandatory from September 2029, and retention of primary records for 12 months and project research records for 24 months unless the client agrees otherwise (${cite('mrs-iso-20252', 'MRS')})</p>
-
-<p>Ask whether the agency is certified to ISO 20252, works to it, or neither. Certification is not a legal requirement in Saudi Arabia. Documentation of sampling, fieldwork and quality control is still the difference between a study finance will accept and a study it will send back.</p>
-
-<p><strong>Green:</strong> identity check, de-duplication, a replacement clause, and either ISO 20252 certification or a written “we work to” statement plus ESOMAR 37 answers for any online cell. <strong>Red:</strong> an open link, a gift-voucher panel, and no way to prove the respondent’s licence.</p>
-
-<h2 id="q5-will-results-split-by-region-nationality-channel">5. Will results split by region, nationality and channel?</h2>
-
-<p>Ask for the banner. If the proposal offers one national percentage, it is not yet a Saudi healthcare study. The 2023 hospital file already shows why region is not optional: 109 of 499 hospitals sit in Riyadh Region and 95 in Makkah Region (${cite('gastat-health-2023', 'GASTAT')})</p>
-
-<p>Nationality is the second banner. Mid-2024 residents were 55.6% Saudi and 44.4% non-Saudi (${cite('gastat-pop-pub', 'GASTAT 2024')}). CHI’s Q3 2025 insurance file is even more skewed: 4.5 million Saudi and 9.5 million non-Saudi beneficiaries inside a private-insurance total of more than 14 million (${cite('chi-14m', 'CHI')})</p>
-
+<h2 id="q4-how-do-you-prove-sample-quality">How sample quality is proved</h2>
+<p>ESOMAR’s 37 questions replaced the 2012 list of 28 questions (${cite('esomar-37', 'ESOMAR 37')}; ${cite('esomar-28', 'ESOMAR 28')}). The July 2025 ICC/ESOMAR code requires voluntary participation (${cite('esomar-2025', 'ICC/ESOMAR')}). ISO 20252:2026 was published in September 2026. It does not cover direct marketing (${cite('iso-20252-2026', 'ISO')}). Certification to the 2026 edition is mandatory from September 2029. Primary records are kept 12 months and project records 24 months, unless agreed otherwise (${cite('mrs-iso-20252', 'MRS')}). An open link with no identity check is not a sample plan.</p>
 ${figureHtml(CHOOSE_AGENCY_KSA_FIGURES[2])}
 
-<p>Channel is the third banner. Public MOH clusters, military and National Guard hospitals, CHI-insured private groups and self-pay are different wallets and different P&amp;T calendars (${cite('ppri-2024', 'PPRI 2024')}). CHI itself is only the private-insurance regulator. In January 2025 it reported more than 13 million beneficiaries; by 27 October 2025 that official print was more than 14 million for the third quarter (${cite('chi-13m', 'CHI, 7 January 2025')}; ${cite('chi-14m', 'CHI, 27 October 2025')}). Fourteen million privately insured people are not 35.3 million residents. A forecast that treats CHI coverage as “the Saudi market” will be sent back.</p>
+<h2 id="q5-will-results-split-by-region-nationality-channel">Splits the tables must show</h2>
+<p>Ask for region, nationality, and public versus CHI versus military. One national percentage hides the decision. CHI reported more than 13 million private-insurance beneficiaries on 7 January 2025 (${cite('chi-13m', 'CHI, 7 January 2025')}). A release dated 27 October 2025 reports more than 14 million in Q3 2025, of whom 4.5 million were Saudi and 9.5 million were non-Saudi (${cite('chi-14m', 'CHI, 27 October 2025')}). Do not average the two releases. People with private insurance are not the 35.3 million residents.</p>
 
-<p>Vision 2030’s cluster model is the fourth reason to refuse a single national cell. The 2025 annual report records 20 health clusters in the first transformation phase (${cite('vision-2025', 'Vision 2030')}). Ask the agency which clusters it will recruit from, and whether it can name them.</p>
-
-<p><strong>Green:</strong> a dummy banner with region, nationality and channel, and a minimum cell size. <strong>Red:</strong> “nationally representative physicians, n=100.”</p>
-
-<h2 id="q6-do-you-separate-sfda-nupco-and-chi">6. Do you separate SFDA, NUPCO and CHI?</h2>
-
-<p>Ask the agency to draw the access map before it draws the sample. The Saudi Food and Drug Authority is the competent authority for marketing authorisation of medicines and medical devices (${cite('sfda-home', 'SFDA')}). Authorisation is not reimbursement and it is not a tender award. PPRI’s 2024 Saudi pricing note describes SFDA pricing, NUPCO group purchasing, hospital Pharmacy and Therapeutics committees, and CHI control of private reimbursement as separate layers (${cite('ppri-2024', 'PPRI 2024')})</p>
-
-<p>NUPCO is the National Unified Procurement Company. It was established in 2009, is fully owned by the Public Investment Fund, and has a registered capital of SAR 1.5 billion (${cite('pif-nupco', 'PIF')}). It provides unified procurement, warehousing and distribution of pharmaceuticals, medical devices and supplies for government health entities (${cite('nupco-overview', 'NUPCO overview')}; ${cite('nupco-services', 'NUPCO services')}). A NUPCO interview is a government-supply interview. It is not a CHI interview.</p>
-
-<p>CHI writes the private-insurance rules. Its Essential Benefit Package is the baseline private policy (${cite('chi-ebp', 'CHI EBP')}). Its drug formulary is an open list of SFDA-registered medicines; additions go through a hospital P&amp;T committee or the assigned medical director (${cite('chi-formulary', 'CHI formulary')}). That is why “talk to payers” is an incomplete brief. You need to say which payer, in which hospital, under which benefit.</p>
-
+<h2 id="q6-do-you-separate-sfda-nupco-and-chi">SFDA, NUPCO and CHI are separate</h2>
+<p>SFDA grants marketing authorisation (${cite('sfda-home', 'SFDA')}). NUPCO was founded in 2009, is fully owned by the Public Investment Fund, and has registered capital of SAR 1.5 billion (${cite('pif-nupco', 'PIF')}; ${cite('nupco-overview', 'NUPCO')}). It buys pharmaceuticals, devices and supplies for government health entities (${cite('nupco-services', 'NUPCO services')}). CHI’s Essential Benefit Package took effect on 1 October 2022 (${cite('chi-ebp', 'CHI EBP')}). The CHI formulary is an open list of SFDA-registered medicines. Addition requests go through a hospital Pharmacy and Therapeutics Committee or the assigned medical director (${cite('chi-formulary', 'CHI formulary')}). PPRI describes SFDA pricing, NUPCO purchasing and hospital committees as separate steps (${cite('ppri-2024', 'PPRI 2024')}). One “payer” interview is four missing interviews.</p>
 ${figureHtml(CHOOSE_AGENCY_KSA_FIGURES[3])}
 
-<p>Access strategy for the registration and pricing layer sits on <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a>. Health-economics support sits on <a href="/heor-consulting-saudi-arabia">HEOR consulting in Saudi Arabia</a>. Company context sits on <a href="/pharmaceutical-companies-saudi-arabia">pharmaceutical companies in Saudi Arabia</a>.</p>
+<h2 id="q7-what-methods-will-you-run-in-kingdom">Methods that fit the decision</h2>
+<p>Tie the method to one decision. A prescribing diary, an interview, a phone survey or an online survey can each be right. A syndicated market-size PDF is not a method for a tender or a formulary. Say which instrument answers which question.</p>
 
-<p><strong>Green:</strong> four discussion guides, or four clearly marked blocks in one guide, for SFDA/pricing, NUPCO, CHI and hospital P&amp;T. <strong>Red:</strong> a single “payer n=8” line.</p>
+<h2 id="q8-who-owns-the-data">Who owns the tables</h2>
+<p>The client should own the tables and be able to re-cut them. State who is controller and who is processor, and how a transfer outside the Kingdom will meet Article 29. An agency-owned panel that cannot be re-cut is a red answer. Do not reuse respondent addresses for sales.</p>
 
-<h2 id="q7-what-methods-will-you-run-in-kingdom">7. What methods will you run in-Kingdom?</h2>
+<h2 id="q9-what-is-guaranteed-in-writing">What the written guarantee covers</h2>
+<p>Ask what is guaranteed in writing before you compare fees. A usable line names the minimum sample, replacement of people who do not qualify, re-fielding if that sample is missed, and a pilot fee credited to the main study. That covers delivery. It does not cover what the interviews will find.</p>
 
-<p>Ask which method answers the decision, then ask where it will be fielded. A share-of-treated-patients question wants anonymous patient-record forms completed by treating physicians, with incident and prevalent cases quota-controlled separately. A P&amp;T-objection question wants in-depth interviews. An initiation-and-switch question wants a structured physician survey. A journey question wants patients and caregivers in Arabic. A syndicated outlook from ${cite('grand-view', 'Grand View Research')} or ${cite('imarc', 'IMARC Group')} answers none of those. Neither does an ${cite('iqvia', 'IQVIA')} audit extract, an ${cite('ipsos', 'Ipsos')} brand tracker, or a ${cite('kantar', 'Kantar')} usage-and-attitude deck, unless the proposal says that custom module is what you are buying.</p>
-
-<p>Ask about mode. Computer-assisted telephone, online, face-to-face and hybrid each have a different non-response pattern. ISO 20252 exists so that the mode, the sampling plan and the quality steps are documented (${cite('iso-20252-2026', 'ISO 20252:2026')}). Do not change from online to mall-intercept mid-study without a bridge sample.</p>
-
-<p>Ask whether the instrument is in Arabic and English, and who translated it. Back-translation is a method. Google Translate in the project manager’s browser is not. Ask how adverse events will be handled if a physician or patient mentions a named product in an interview; ICC/ESOMAR treats adverse-event reporting as a lawful reason to re-contact (${cite('esomar-2025', 'ICC/ESOMAR Code')})</p>
-
-<p><strong>Green:</strong> a method paragraph that names the unit of observation (chart, interview, survey), the mode, the language and the decision. <strong>Red:</strong> “qual + quant mix” with no instrument and no n per cell.</p>
-
-<h2 id="q8-who-owns-the-data">8. Who owns the data, and can you re-cut it?</h2>
-
-<p>Ask who owns the tables, the transcripts, the recordings and the panel identities. Then ask what happens when the medical director changes the question after fieldwork. A study that cannot be re-bannered by cluster, nationality or CHI versus MOH will be re-fielded at your cost. Write client ownership of deliverables into the contract, and write the agency’s right to keep de-identified methodological records for the ISO 20252 retention window (${cite('mrs-iso-20252', 'MRS retention')})</p>
-
-<p>Ask where the personal data will sit. If any identified or identifiable health data will leave the Kingdom, ask for the Article 29 basis, the adequacy assessment, and the minimum-transfer argument (${cite('pdpl-text', 'PDPL Article 29')}; ${cite('sdaia-regs', 'SDAIA')})</p>
-
-<p>Ask whether the agency will append client CRM data. The ICC/ESOMAR Code requires informed consent for participation and restricts re-contact (${cite('esomar-2025', 'ICC/ESOMAR')}). A tracker is not a remarketing list. A physician interview is not a sales lead.</p>
-
-<p><strong>Green:</strong> client-owned tables, a named storage location, a PDPL transfer paragraph if needed, and a re-cut fee or a re-cut included. <strong>Red:</strong> agency-owned data, “insights only,” and no file you can take to HEOR.</p>
-
-<h2 id="q9-what-is-guaranteed-in-writing">9. What is guaranteed in writing?</h2>
-
-<p>Ask what happens when the sample falls short, when a respondent fails a quality check, and when the instrument breaks in pilot. Then read the contract. BioNixus writes four delivery guarantees: non-qualifying respondents are replaced at no cost; a minimum sample is committed; if the field fails that sample, we re-field at our cost; the pilot fee is credited to the main study. The tagline is Guaranteed in writing. That guarantee covers the agreed scope and timeline. It does not cover the accuracy of findings, and it is not a guarantee of a particular result.</p>
-
-<p>Ask the other agencies the same four questions. “Best efforts,” “indicative n,” and “subject to fieldwork feasibility” are not guarantees. They are exits. ISO 20252’s service requirements exist so that feasibility, sampling and quality control are agreed before fieldwork, not after (${cite('iso-20252-2026', 'ISO')})</p>
-
-<p>Ask for the price as a range against a specified n and method, not as a teaser. BioNixus prices typical custom studies at $10k–$60k. A 200-physician treated-share PRF with payer interviews will sit at a different point on that range than a 12-interview P&amp;T exploratory. If a proposal is far below the range and promises a national HCP sample, ask which of questions 1–8 has been dropped.</p>
-
-<p><strong>Green:</strong> minimum n, replacement, re-field, credited pilot, and a price tied to that n. <strong>Red:</strong> a discounted “GCC healthcare snapshot” with no sample clause.</p>
-
-<h2 id="q10-can-you-show-therapy-area-work">10. Can you show therapy-area work without breaking confidentiality?</h2>
-
-<p>Ask for methods, not logos. A wall of unnamed “top-10 pharma” marks is not evidence that the agency can recruit Eastern hematologists or CHI formulary leads. Ask for a redacted discussion guide, a dummy banner, a published methods page, and two therapy-area examples that match your brief. Our own published Saudi methods pages are the <a href="/blog/glp-1-physician-survey-saudi-arabia">GLP-1 physician survey</a>, the <a href="/blog/who-does-obesity-market-research-saudi-arabia">obesity shortlist</a> and the <a href="/blog/hematology-market-research-saudi-arabia">hematology launch briefing</a>. The vendor comparison for the Kingdom is <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">top healthcare market research companies in Saudi Arabia 2026</a>, with a longer firm list on <a href="/blog/top-healthcare-market-research-firms-saudi-arabia">top healthcare market research firms in Saudi Arabia</a>.</p>
-
-<p>Ask how the agency will handle confidentiality in the other direction. Physician interviews in a small specialty — transplant, gene therapy, certain rare-disease clinics — can identify a hospital even when the name is stripped. The PDPL’s health-data minimum-necessary rule and the ICC/ESOMAR duty not to harm participants both apply (${cite('pdpl-text', 'PDPL')}; ${cite('esomar-2025', 'ICC/ESOMAR')})</p>
-
-<p><strong>Green:</strong> a redacted instrument, a dummy banner, and a therapy-area methods page. <strong>Red:</strong> a logo wall and a confidentiality excuse that also prevents any methods discussion.</p>
-
-<h2 id="how-to-choose-a-healthcare-market-research-agency-saudi-arabia">How to choose a healthcare market research agency Saudi Arabia</h2>
-
-<p>Score each of the ten answers red, amber or green, then refuse to average them. One red on PDPL or on in-Kingdom fieldwork is enough to drop the proposal, even if the price is attractive. Two ambers on splits and access layers means the study will be re-cut or re-fielded after the first steering committee. Ten greens is the brief you can take to medical and finance.</p>
-
+<h2 id="q10-can-you-show-therapy-area-work">Therapy-area proof</h2>
+<p>Ask for named study types, a methods page and a redacted instrument. A logo wall of unnamed clients is not a credential. The example should match the decision you are buying, such as a tender, a formulary or a treated-patient share.</p>
 ${figureHtml(CHOOSE_AGENCY_KSA_FIGURES[4])}
 
-<p>Gate the proposal in order: location and PDPL first; then sample and splits; then access layers, method and data ownership; then written guarantees and therapy-area proof. Write the decision in one sentence at the top of the statement of work. The <a href="/healthcare-market-research">healthcare market research hub</a> is the service map; the <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">2026 Saudi healthcare ranking</a> is the vendor map.</p>
+<h2 id="how-to-choose-a-healthcare-market-research-agency-saudi-arabia">How to use the list</h2>
+<p>Use the ten questions when you decide how to choose a healthcare market research agency. Score the proposal on fieldwork city, recruitment quotas, health-data roles, sample checks, the three access bodies, data ownership and the written guarantee. Drop any bid that offers one national percentage.</p>
 
-<h2 id="why-bionixus">Why choose BioNixus as your healthcare market research agency in Saudi Arabia?</h2>
-
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
-
-<p>Choose BioNixus when the decision depends on why Saudi physicians, payers and patients act as they do, rather than on a syndicated market-size total. Each study is built around one decision — a formulary, a tender, a launch forecast — and is reported as share of treated patients or as a named access objection. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, free replacement of non-qualifying respondents, a minimum sample, re-field at our cost if that sample is missed, and a pilot fee credited to the main study. It does not cover the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews.</p>
-
-<p>See also <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>, <a href="/healthcare-market-research-agency-gcc">healthcare market research agency GCC</a>, <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>, <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a> and <a href="/pharmaceutical-companies-saudi-arabia">pharmaceutical companies in Saudi Arabia</a>.</p>
-
-<p>To brief a Saudi healthcare study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. There are field offices in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Work in Latin America is covered today from the US office with local consultants.</p>
+<p>The line “Guaranteed in writing” covers scope, timing, replacement of respondents who do not qualify, the minimum sample, re-fielding if that sample is missed, and a credited pilot. It does not cover what the interviews will find. BioNixus has 40 client reviews.</p>
+<p>Use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -661,39 +529,39 @@ ${REFERENCES_SECTION_HTML}`;
 
 export const CHOOSE_AGENCY_KSA_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What is a healthcare market research agency in Saudi Arabia?',
+    question: 'What is a healthcare market research agency Saudi Arabia?',
     answer:
-      'A healthcare market research agency in Saudi Arabia designs and fields commissioned primary research with physicians, pharmacists, payers, patients and caregivers in the Kingdom, and reports the result for one decision — a formulary, a NUPCO tender, a CHI benefit question or a launch forecast. It is not a syndicated market-size report.',
+      'A firm that fields commissioned interviews with physicians, pharmacists, payers and patients in the Kingdom, for one decision. It is not a syndicated market-size report.',
   },
   {
     question: 'How do I choose a healthcare market research agency in Saudi Arabia?',
     answer:
-      'Ask ten questions: where fieldwork is run, who is recruited, how PDPL and ethics are handled, how sample quality is proved, whether results split by region, nationality and channel, whether SFDA, NUPCO and CHI are separate, which methods are fielded, who owns the data, what is guaranteed in writing, and what therapy-area proof exists. One red on in-Kingdom fieldwork or PDPL is enough to drop the proposal.',
+      'Ask where the fieldwork runs, who recruits, how health data are handled, and what is guaranteed in writing. Split results by region, nationality and payer. Treat SFDA, NUPCO and CHI as separate decisions.',
   },
   {
     question: 'Does a healthcare market research agency in Saudi Arabia need a local office?',
     answer:
-      'It needs in-Kingdom recruitment and interviewing, whether that is its own field office or a named, contracted Saudi field partner with PDPL processor clauses. A Dubai or European project-management slide is not a Saudi field force. BioNixus runs Saudi healthcare fieldwork from an Al Khobar field office.',
+      'Ask for an in-Kingdom team or a named subcontract in Al Khobar, Riyadh or Jeddah. A slide that says GCC coverage from Dubai only is not a Kingdom sample.',
   },
   {
     question: 'What does PDPL mean for healthcare interviews in Saudi Arabia?',
     answer:
-      'The Saudi Personal Data Protection Law classifies health data as Sensitive Data and adds extra access and processing controls. Cross-border transfer has its own conditions. Commercial interviews sit under PDPL and the ICC/ESOMAR Code. Hospital chart review, clinical protocols and biological samples sit under the National Committee of Bioethics and a local IRB.',
+      'Health data is Sensitive Data. Article 23 adds controls. Article 26 of the Implementing Regulation covers processing. Article 36 can mean up to two years or a fine of up to three million riyals.',
   },
   {
     question: 'How is NUPCO different from CHI for research design?',
     answer:
-      'NUPCO is the PIF-owned national unified procurement company for government health entities. CHI regulates private health insurance — more than 14 million beneficiaries in Q3 2025 — and publishes the essential benefit package and an SFDA-registered drug formulary. They are different wallets and need different interviews. SFDA marketing authorisation is a third decision; hospital P&T is a fourth.',
+      'NUPCO, founded in 2009 and owned by the Public Investment Fund, buys for government health entities. CHI runs private insurance and the Essential Benefit Package. A tender interview is not a formulary interview.',
   },
   {
     question: 'What should a healthcare market research proposal guarantee in writing?',
     answer:
-      'A minimum sample, free replacement of non-qualifying respondents, re-field at the agency’s cost if that sample is missed, and a credited pilot. Those are delivery guarantees. They are not a guarantee of findings or of a particular result. Ask for the price against that n, not as a teaser.',
+      'A minimum sample, replacement of people who do not qualify, re-fielding if that sample is missed, and a credited pilot. That covers delivery. It does not cover what the interviews will find.',
   },
   {
     question: 'Why commission BioNixus for healthcare market research in Saudi Arabia?',
     answer:
-      'BioNixus runs custom primary research from an Al Khobar field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision and reported as share of treated patients or a named access objection. The delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'Custom studies run from the Al Khobar field office, with a network of about 3,200 physicians, usually at $10k–$60k. Guaranteed in writing covers scope and sample. It does not cover what the interviews will find.',
   },
 ];
 
@@ -828,7 +696,7 @@ export const CHOOSE_AGENCY_KSA_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Choosing a healthcare market research agency in Saudi Arabia?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes physician, patient and payer research around it, from an Al Khobar field office and a network of about 3,200 physicians.',
+      'Tell us the Saudi decision you need to make. BioNixus scopes the study around that decision. Custom work is usually $10k–$60k.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

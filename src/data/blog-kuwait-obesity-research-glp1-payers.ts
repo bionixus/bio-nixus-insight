@@ -101,10 +101,10 @@ export const KUWAIT_OBESITY_RESEARCH_META_DESCRIPTION =
   'Obesity market research Kuwait: who funds GLP-1s, what MOH and private payers need to see, and how BioNixus designs 2026 access studies for brand teams.';
 
 export const KUWAIT_OBESITY_RESEARCH_DISPLAY_TITLE =
-  'Kuwait Obesity Research: Who Funds GLP-1s and What Payers Need to See';
+  'Who pays for GLP-1 weight-loss medicines in Kuwait?';
 
 export const KUWAIT_OBESITY_RESEARCH_DISPLAY_SUBTITLE =
-  'Obesity market research Kuwait: funding, tenders and evidence';
+  'Obesity market research Kuwait: public supply, insurance and cash';
 
 export const KUWAIT_OBESITY_RESEARCH_BREADCRUMB_LABEL = 'Kuwait obesity GLP-1 research';
 

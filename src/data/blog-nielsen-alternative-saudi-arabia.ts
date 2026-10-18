@@ -44,15 +44,15 @@ export const NIELSEN_KSA_META_DESCRIPTION =
   'Nielsen alternative Saudi Arabia: syndicated vs custom research Saudi Arabia — when a retail audit fits, when custom work is needed, how to combine both.';
 
 export const NIELSEN_KSA_DISPLAY_TITLE =
-  'Syndicated Retail Measurement vs Custom Primary Research in Saudi Arabia: When Each Fits and How to Combine Them';
+  'When to keep a Saudi retail audit and when to add your own study';
 
 export const NIELSEN_KSA_DISPLAY_SUBTITLE =
-  'Keep the syndicated audit. Add the shopper and account file.';
+  'What sold is one question. Why shoppers bought is another.';
 
 export const NIELSEN_KSA_BREADCRUMB_LABEL = 'Nielsen alternative Saudi Arabia';
 
 export const NIELSEN_KSA_EXCERPT =
-  'A sourced 2026 guide to Nielsen alternative Saudi Arabia work: keep syndicated retail measurement for what sold, then add custom primary research for why shoppers acted and for traditional-trade, e-commerce and named-account cuts.';
+  'Keep the retail measurement feed for what sold. Add your own interviews when the meeting needs shoppers, small shops, websites, or a named account.';
 
 export const NIELSEN_KSA_PUBLISHED_ISO = '2026-10-15T12:00:00.000Z';
 export const NIELSEN_KSA_UPDATED_ISO = '2026-10-15T12:00:00.000Z';
@@ -231,221 +231,127 @@ export function countWords(html: string): number {
 }
 
 export const NIELSEN_KSA_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  {
-    heading: 'What does a Nielsen alternative Saudi Arabia brief actually mean?',
-    anchor: 'what-brief-means',
-  },
-  {
-    heading: 'What syndicated retail measurement is built to do',
-    anchor: 'what-syndicated-does',
-  },
-  {
-    heading: 'What custom primary research is built to do',
-    anchor: 'what-custom-does',
-  },
-  { heading: 'When the syndicated audit is the right buy', anchor: 'when-syndicated-fits' },
-  { heading: 'When custom research is the right buy', anchor: 'when-custom-fits' },
-  {
-    heading: 'How to combine syndicated vs custom research Saudi Arabia',
-    anchor: 'how-to-combine',
-  },
-  { heading: 'What a 2026 combination programme costs', anchor: 'costs' },
-  { heading: 'How to choose a Nielsen alternative in Saudi Arabia', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'Two different jobs', anchor: 'two-jobs' },
+  { heading: 'What the trade figures show', anchor: 'trade-figures' },
+  { heading: 'What a store audit is built to see', anchor: 'what-the-audit-sees' },
+  { heading: 'When your own study is the right buy', anchor: 'when-custom-fits' },
+  { heading: 'How to use both', anchor: 'how-to-use-both' },
+  { heading: 'Language, tax and personal data', anchor: 'language-tax-data' },
+  { heading: 'Who fields the extra layer', anchor: 'who-fields' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const NIELSEN_KSA_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A Nielsen alternative Saudi Arabia programme is not a swap-out of the retail audit. Keep syndicated measurement for what sold and at what price. Add custom primary research for why shoppers acted and for traditional-trade, e-commerce and named-account cuts. Syndicated vs custom research Saudi Arabia is a combination, not a replacement.</p>`;
+export const NIELSEN_KSA_EXECUTIVE_SUMMARY_HTML = `<p>A Nielsen alternative Saudi Arabia plan keeps the retail audit for what sold and at what price. Syndicated vs custom research Saudi Arabia is the extra study: interviews on why shoppers chose, and on shops or websites the audit does not cover. Publish both series. Do not blend them into one number.</p>`;
 
-const NARRATIVE_HTML = `<p>Brand and retail teams searching for a Nielsen alternative Saudi Arabia usually already have a syndicated retail feed. They are not asking for a cheaper clone of that feed. They are asking what the feed cannot tell the next listing, pricing or shopper meeting. This guide sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma FMCG and retail briefs. It is not an SFDA or physician-survey file.</p>
+const NARRATIVE_HTML = `<p>Teams searching for a Nielsen alternative Saudi Arabia usually already have a syndicated retail feed. They are asking what that feed cannot tell the next listing, pricing or shopper meeting. This note sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for non-pharma grocery and retail briefs. Related pages include <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a>, <a href="/saudi-arabia-fmcg-market-research">FMCG market research in Saudi Arabia</a> and <a href="/uae-retail-market-research">retail market research in the UAE</a>.</p>
 
-<p>The respectful default is to keep the syndicated audit for what sold, where and at what price, then commission custom primary research for why it sold and for the cuts the audit is not built to produce. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026 (120 in 2025). Custom work is $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. See the <a href="/bionixus-industries">industries hub</a>, <a href="/b2c-industries">B2C market research</a> and <a href="/consumer-market-research">consumer market research</a>. The global comparison of when a national retail audit is enough lives on our <a href="/nielsen-alternative">Nielsen alternative</a> page; this briefing is the Kingdom-specific method.</p>
+<p>The respectful default is to keep the audit for what sold, where, and at what price. Add your own research for why it sold, and for the cuts the audit is not built to produce. The global version of that argument is on the <a href="/nielsen-alternative">Nielsen alternative</a> page. This note is the Kingdom method.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 Saudi retail brief can cite, October 2026</strong></p>
-<ul>
-<li><strong>SAR 919 billion</strong> of wholesale and retail operating revenues in 2024, up 8.5% from SAR 846.8 billion in 2023. Retail excluding motor vehicles was SAR 410.3 billion (44.6% of the 2024 total) (${cite('gastat-wr-2024', 'GASTAT')}; ${cite('gastat-wr-2023', 'GASTAT 2023')}).</li>
-<li><strong>16.7%</strong> of 2024 business-sector operating revenues sat in wholesale and retail, on a SAR 5,500 billion business-sector total that grew 3.9%. The same activity took 20.7% of gross fixed capital formation (${cite('gastat-sbs-2024', 'GASTAT')}).</li>
-<li><strong>36.3%</strong> of SME operating revenues, and <strong>65.0%</strong> of micro-establishment (1–5 employee) operating revenues, came from wholesale and retail (${cite('gastat-sme-2024', 'GASTAT')}).</li>
-<li><strong>1.8 million</strong> POS terminals and SAR 162.2 billion of POS sales in Q2 2024; Mada e-commerce grew 19.3% year on year against 5.9% for POS (${cite('sama-qed-q2-2024', 'SAMA')}).</li>
-<li><strong>SAR 44.42 billion</strong> of Mada e-commerce in Q1 2024, up 22% from SAR 36.53 billion a year earlier, across 263 million transactions — credit cards excluded (${cite('spa-mada-q1-2024', 'SPA')}).</li>
-<li><strong>35,300,280</strong> residents at mid-2024, about 55.6% Saudi and 44.4% non-Saudi (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}). Food and beverages took 27.9% of household monetary consumption in 2023 (${cite('gastat-hies-2023', 'GASTAT')}).</li>
-</ul>
-</div>
+<h2 id="two-jobs">Two different jobs</h2>
 
-<h2 id="what-brief-means">What does a Nielsen alternative Saudi Arabia brief actually mean?</h2>
+<p>A standing retail measurement service reports what moved through cooperating stores: volume, value, share, distribution and price, on a shared geography and calendar. A 2019 United Nations statistics workshop paper describes the classic build as a Retail Index from store audits, plus barcode-level scan feeds, often called ScanTrack. Those feeds are typically delivered monthly. They cover sales, share, distribution and price. ${cite('un-rms-2019', 'UN Statistics Division')}</p>
 
-<p>A Nielsen alternative Saudi Arabia brief is not a request to cancel a retail-measurement subscription. It is a request to add a second layer. Syndicated retail measurement — NielsenIQ Retail Measurement Services is the name most FMCG teams use — is built to report what moved through cooperating stores: volume, value, share, distribution, price and promotion, on a consistent geography and calendar (${cite('un-rms-2019', 'UN Statistics workshop')}). Custom primary research is built to report why a shopper, a store buyer or a traditional-trade owner acted, in a named city, in a named language, on a named SKU or mission.</p>
+<p>Your own study reports why a shopper, a store buyer, or a small-shop owner acted, in a named city, in a named language, on a named product. Those are different products. The audit is the right tool for national modern-trade movement. Interviews are the right tool for shopper language, named accounts, traditional trade and some online missions.</p>
 
-<p>Those are different products. Scoring them on one “data quality” axis is a category error. The audit is the right quality bar for national modern-trade movement. Custom fieldwork is the right quality bar for shopper language, named accounts, traditional trade and e-commerce missions. BioNixus sells the second product. It does not sell a second national POS universe.</p>
+<p>ISO 20252:2026 sets vocabulary and service requirements for market, opinion and social research, including insights and data analytics. ${cite('iso-20252-2026', 'ISO')}</p>
 
-<p>The Kingdom’s official series show why the two layers are not interchangeable. Wholesale and retail operating revenues grew 8.5% in 2024, faster than the 3.9% growth of the whole business sector (${cite('gastat-wr-2024', 'GASTAT')}; ${cite('gastat-sbs-2024', 'GASTAT')}). Retail excluding vehicles is 44.6% of that trade book — SAR 410.3 billion — but it is not one channel (${cite('gastat-wr-2024', 'GASTAT')}). Micro establishments take 65.0% of their operating revenue from wholesale and retail (${cite('gastat-sme-2024', 'GASTAT')}). Mada e-commerce grew more than three times as fast as POS in Q2 2024 (${cite('sama-qed-q2-2024', 'SAMA')}). A national modern-trade cell can describe the cooperating store book. It cannot, by design, be the traditional-trade tail, the credit-card-excluded digital basket, or the Riyadh-versus-Jeddah shopper file.</p>
+<p>The 2025 ICC/ESOMAR Code says participation is voluntary and based on clear information, and that consent is a freely given, specific and informed indication of agreement. ${cite('esomar-2025', 'ICC/ESOMAR')}</p>
 
-<p>Write five specifications before anyone is asked to “replace Nielsen”:</p>
+<p>Those rules apply to the interview layer. They are not a substitute for a point-of-sale universe.</p>
 
-<ul>
-<li><strong>What decision is the next meeting making?</strong> A national share trend, a listing in a named banner, a price pack, a traditional-trade route, or an e-commerce mission. Each decision needs a different evidence type.</li>
-<li><strong>Which channel is in scope?</strong> Cooperating modern trade, independent grocery, wholesale cash-and-carry, pharmacy, or digital. GASTAT’s retail total is not a channel (${cite('gastat-wr-2024', 'GASTAT')}).</li>
-<li><strong>Which city?</strong> The Basic Law names Riyadh as the capital (${cite('boe-basic-law', 'Basic Law of Governance')}). A Kingdom average hides the only city that can carry the first warehouse.</li>
-<li><strong>Which buyer?</strong> Saudi household shopper, non-Saudi working-age resident, or visitor. Mid-2024 residents were 55.6% Saudi and 44.4% non-Saudi (${cite('gastat-pop-2024', 'GASTAT')}). Census 2022 already showed the same split at 58.4% / 41.6% (${cite('spa-census-2022', 'SPA')}).</li>
-<li><strong>Which language?</strong> Arabic is the Kingdom’s language (${cite('boe-basic-law', 'Basic Law')}). English is widely used among non-Saudis. Language of interview is a sample decision.</li>
-</ul>
+<h2 id="trade-figures">What the trade figures show</h2>
 
-<p>Desktop TAM and a syndicated dashboard can frame those questions. They cannot answer the last four. Adjacent country pages include <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a>, <a href="/saudi-arabia-fmcg-market-research">FMCG market research in Saudi Arabia</a> and the <a href="/food-beverage-companies-saudi-arabia">food and beverage company index for Saudi Arabia</a>. Named-account cuts follow the same logic as <a href="/account-level-market-research">account-level market research</a>.</p>
+<p>GASTAT’s structural statistics for wholesale and retail put 2024 operating revenues at SAR 919 billion, up 8.5%. ${cite('gastat-wr-2024', 'GASTAT, 2024')}</p>
 
-<h2 id="what-syndicated-does">What syndicated retail measurement is built to do</h2>
+<p>The 2023 key results put operating revenues at SAR 846.8 billion. ${cite('gastat-wr-2023', 'GASTAT, 2023')}</p>
 
-<p>Syndicated retail measurement is a standing service. Clients subscribe to a shared universe, a shared SKU dictionary and a shared calendar. A public United Nations Statistics workshop paper on scanner data describes the classic construction: a Retail Index built from store audits, plus barcode-level scan feeds (often called ScanTrack), typically delivered monthly, covering sales and share in volume and value, retail selling price, and numeric and weighted distribution (${cite('un-rms-2019', 'UN Statistics workshop')}). That is what most FMCG teams mean when they say “Nielsen” or “NielsenIQ” in a Saudi briefing email.</p>
+<p>Inside the 2024 trade book, retail excluding motor vehicles was SAR 410.3 billion, 44.6% of the total. That retail cell was SAR 369.9 billion in 2023. Wholesale excluding vehicles was SAR 305.0 billion in 2024, 33.2%. Sale and repair of motor vehicles was SAR 203.6 billion, 22.2%. ${cite('gastat-wr-2024', 'GASTAT')}</p>
 
-<p>The product is valuable because it is consistent. Last month and this month sit on the same geography. A promotion can be read against a year-ago cell. A brand can see whether a SKU gained distribution or velocity. None of that requires BioNixus. If the next meeting is “did we grow in modern trade, nationally, on this barcode?”, the syndicated feed is the tool that was built for the job.</p>
+<p>Those three cells are not one barcode universe. GASTAT publishes them separately.</p>
 
-<p>The Kingdom now has the electronic-payment density that makes scan-based measurement possible at scale. SAMA’s Q2 2024 bulletin recorded about 1.8 million POS terminals, 2,519.1 million POS transactions and SAR 162.2 billion of POS sales in the quarter, with POS value up 5.9% year on year (${cite('sama-qed-q2-2024', 'SAMA')}). Domestic banks had issued about 48.8 million ATM cards (${cite('sama-qed-q2-2024', 'SAMA')}). Coverage in any market is still a function of which retailers share POS and which stores are audited. That contract is between the subscriber and the measurement firm. This briefing does not guess it.</p>
+<p>Across the whole business sector, 2024 operating revenues were SAR 5,500 billion, up 3.9%. Wholesale and retail were 16.7% of that total, and 20.7% of gross fixed capital formation. ${cite('gastat-sbs-2024', 'GASTAT Structural Business Statistics')}</p>
 
-<p>What the method is built to see, when the universe includes the relevant doors:</p>
+<p>Trade revenue grew faster than the whole business sector in that pair of releases. 8.5% is the trade figure. 3.9% is the business-sector figure. Do not blend them.</p>
 
-<ul>
-<li>SKU-level volume, value and share in the cooperating store set, on a consistent period (${cite('un-rms-2019', 'UN Statistics workshop')}).</li>
-<li>Distribution and price, including promotional price, in those doors (${cite('un-rms-2019', 'UN Statistics workshop')}).</li>
-<li>National or contracted-geography trend that a brand team can put next to last year.</li>
-<li>A shared language with retailers who already sit the same dashboard in listing meetings.</li>
-</ul>
+<p>Small and medium establishments took 36.3% of their operating revenues from wholesale and retail. Micro establishments, with 1 to 5 employees, took 65.0% of their operating revenue from the same activity. Micro operating revenue was SAR 478.7 billion. Small establishments, with 6 to 49 employees, took SAR 444.5 billion, and wholesale and retail were 35.1% of that. Medium establishments, with 50 to 249 employees, took 19.6% of operating revenue from wholesale and retail. The activity was also 42.9% of SME operating expenditure. ${cite('gastat-sme-2024', 'GASTAT SME statistics')}</p>
 
-<p>What the method is not built to be, even at full contracted coverage:</p>
+<p>The smaller the door, the more the activity is trade. A cooperating modern-trade feed is not designed to be that pyramid.</p>
 
-<ul>
-<li>A shopper’s reason for switching, stocking up, or walking past the fixture.</li>
-<li>A named-account negotiation file (the banner’s own POS is a different data share).</li>
-<li>The traditional-trade tail of micro retailers that GASTAT still treats as a large share of SME wholesale-and-retail revenue (${cite('gastat-sme-2024', 'GASTAT')}).</li>
-<li>The digital basket paid with credit cards, which SAMA’s Mada e-commerce series explicitly excludes (${cite('spa-mada-q1-2024', 'SPA')}).</li>
-<li>A bilingual instrument, a city quota, or a female-shopper cell. Those are sample-design jobs (${cite('boe-basic-law', 'Basic Law')}; ${cite('gastat-pop-2024', 'GASTAT')}).</li>
-</ul>
+<h2 id="what-the-audit-sees">What a store audit is built to see</h2>
 
-<p>Keep the subscription if you already have one. The rest of this briefing is about the layer you add.</p>
+<p>Keep or buy the syndicated feed when the next meeting is about movement in cooperating modern trade and the barcode already exists. The UN workshop paper lists sales and share in volume and value, retail selling price, and numeric and weighted distribution as the core outputs, typically monthly. ${cite('un-rms-2019', 'UN workshop paper')}</p>
 
-<h2 id="what-custom-does">What custom primary research is built to do</h2>
+<p>The Kingdom’s card-present economy is large. The Saudi Central Bank’s second-quarter 2024 bulletin recorded about 1.8 million point-of-sale terminals and SAR 162.2 billion of point-of-sale sales. Point-of-sale value was up 5.9% year on year. The same bulletin recorded about 2,519.1 million point-of-sale transactions, and about 48.8 million ATM cards issued by domestic banks. Mada e-commerce grew 19.3% year on year in that quarter. ${cite('sama-qed-q2-2024', 'Saudi Central Bank')}</p>
 
-<p>Custom primary research is a commissioned study. The client names the decision, the sample, the language, the cities and the deliverable. ISO 20252:2026 sets vocabulary and service requirements for market, opinion and social research, including insights and data analytics (${cite('iso-20252-2026', 'ISO')}). The ICC/ESOMAR International Code requires that participation be voluntary and based on clear information, and that consent be a freely given, specific and informed indication of agreement (${cite('esomar-2025', 'ICC/ESOMAR')}). Those are the quality bars for the custom layer. They are not a substitute for a POS universe.</p>
+<p>19.3% and 5.9% are two growth rates in one bulletin. This note does not turn them into a single multiple.</p>
 
-<p>In Saudi Arabia the custom layer has four jobs the audit is not designed to do.</p>
+<p>Coverage is still a function of which retailers share data and which stores are audited. That contract sits between the subscriber and the measurement firm. This note does not guess it.</p>
 
-<p><strong>Explain the shopper.</strong> GASTAT’s 2023 household survey put food and beverages at 27.9% of final monetary consumption and housing, water, electricity, gas and other fuels at 14.1% (${cite('gastat-hies-2023', 'GASTAT')}). Average monthly consumption was SAR 10,884 overall, SAR 16,028 in Saudi households and SAR 5,574 in non-Saudi households (${cite('gastat-hies-2023', 'GASTAT')}). A willingness-to-pay cell that averages those two groups is not a price. A U&amp;A, a shopper-mission study or a pack test has to name the buyer. The audit reports the barcode. Custom work reports the person.</p>
+<p>The feed is built to show whether a listed product gained distribution or velocity in the cooperating set. It is not built to show why a shopper switched, what a Jeddah independent stocked, or whether a buyer will list a product that is not yet on the shelf.</p>
 
-<p><strong>Reach the doors the feed is not built around.</strong> Micro establishments (1–5 employees) took SAR 478.7 billion of operating revenue in 2024, and 65.0% of that revenue sat in wholesale and retail (${cite('gastat-sme-2024', 'GASTAT')}). Small establishments (6–49 employees) took SAR 444.5 billion, with wholesale and retail contributing 35.1% (${cite('gastat-sme-2024', 'GASTAT')}). That tail is independent grocery, bakalas, wholesale cash-and-carry and specialist independents. Store intercepts, retailer interviews and mystery shops are how you describe it. A cooperating modern-trade POS universe is a different product.</p>
+<h2 id="when-custom-fits">When your own study is the right buy</h2>
 
-<p><strong>Separate the digital basket.</strong> Seventy-one percent of 15–74-year-olds had bought goods or services online in GASTAT’s 2025 ICT survey; among Saudis the rate was 80.2%, and among Saudi females 82.8%. Clothing, footwear and sports goods were 88.8% of those online baskets; cosmetics were 40.2% (${cite('gastat-ict-2025', 'GASTAT')}). CST’s 2024 internet report put penetration at 99% and mobile data use at 48 GB a month (${cite('cst-internet-2024', 'CST')}). SAMA then shows the payment split: Mada e-commerce grew 19.3% year on year in Q2 2024 while POS grew 5.9% (${cite('sama-qed-q2-2024', 'SAMA')}). SPA, citing SAMA, put Q1 2024 Mada e-commerce at SAR 44.42 billion across 263 million transactions, and stated that the series does not include credit cards (${cite('spa-mada-q1-2024', 'SPA')}). A store scan is not that basket. Custom e-commerce missions, platform intercepts and digital-journey interviews are.</p>
+<p>Commission interviews when the meeting cannot act on a national cooperating-store cell.</p>
 
-<p><strong>Name the account.</strong> Listing, ranging and promotional support are decided by a buyer in a named banner, not by a national share cell. Account-level interviews, store checks and mystery shops produce the file that meeting needs. See <a href="/account-level-market-research">account-level market research</a> for the method, and keep the Saudi sample on a Saudi frame.</p>
+<p>Shoppers do not share one basket. GASTAT’s 2023 household survey put food and beverages at 27.9% of monetary consumption, and housing, water, electricity, gas and other fuels at 14.1%. Average monthly consumption was SAR 10,884 overall, SAR 16,028 in Saudi households and SAR 5,574 in non-Saudi households. ${cite('gastat-hies-2023', 'GASTAT household survey')}</p>
 
-<p>If the study interviews residents, the Personal Data Protection Law applies to personal data processed in the Kingdom. SDAIA’s controller-and-processor guide records the in-force date as 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('pdpl-text', 'PDPL text')}; ${cite('sdaia-guide', 'SDAIA')}). Write the legal basis, the retention rule and the deletion path into the method note before the first incentive is paid. Price work has to state whether the shelf price includes the 15% VAT that ZATCA requires on taxable sales (${cite('zatca-vat', 'ZATCA')}; ${cite('boe-vat', 'VAT Law')}).</p>
+<p>A price cell that averages SAR 16,028 and SAR 5,574 is not a price. Name the buyer.</p>
 
-<h2 id="when-syndicated-fits">When the syndicated audit is the right buy</h2>
+<p>Online is a different basket. GASTAT’s 2025 ICT survey found that 99.0% of people aged 15 to 74 used the internet, and 71% had bought goods or services online. Among Saudis the online-purchase rate was 80.2%. Among Saudi females it was 82.8%. Clothing, footwear and sports goods were 88.8% of those online baskets. Cosmetics were 40.2%. ${cite('gastat-ict-2025', 'GASTAT ICT survey')}</p>
 
-<p>Keep or buy syndicated retail measurement when the next meeting is about movement in cooperating modern trade and the barcode already exists. Typical 2026 Saudi uses:</p>
+<p>The Communications, Space and Technology Commission’s Saudi Internet Report 2024 reports 99% penetration and 48 GB of mobile data a month. ${cite('cst-internet-2024', 'CST')}</p>
 
-<table>
-<thead><tr><th>Decision</th><th>Why the audit fits</th><th>What not to ask it</th></tr></thead>
-<tbody>
-<tr><td>National modern-trade share, this period versus last year</td><td>Consistent geography, SKU dictionary and calendar (${cite('un-rms-2019', 'UN Statistics workshop')})</td><td>Why a shopper switched, or what a Jeddah independent stocked</td></tr>
-<tr><td>Distribution and price of a listed SKU</td><td>Numeric and weighted distribution and retail selling price are core RMS outputs (${cite('un-rms-2019', 'UN Statistics workshop')})</td><td>Whether a buyer will list a SKU that is not yet on shelf</td></tr>
-<tr><td>Promotion post-evaluation in cooperating doors</td><td>Promotional price and volume sit on the same period as the base (${cite('un-rms-2019', 'UN Statistics workshop')})</td><td>Whether the mechanic was understood in Arabic, or noticed at all</td></tr>
-<tr><td>A shared dashboard with a retailer who already sits the same feed</td><td>A common language in the listing meeting</td><td>The retailer’s own P&amp;L, which they will not put in a syndicated cell</td></tr>
-</tbody>
-</table>
+<p>99.0% of people aged 15 to 74, and 99% penetration, are two published internet figures. State which one you mean.</p>
 
-<p>The official backdrop supports using the audit for the modern-trade book. Retail excluding vehicles grew from SAR 369.9 billion in 2023 to SAR 410.3 billion in 2024 (${cite('gastat-wr-2023', 'GASTAT 2023')}; ${cite('gastat-wr-2024', 'GASTAT')}). POS terminals number about 1.8 million (${cite('sama-qed-q2-2024', 'SAMA')}). That is a large, card-present, store-based economy. If your SKU lives there, and the question is “what happened?”, the feed is the right first screen.</p>
+<p>The Saudi Press Agency, citing the Saudi Central Bank’s May statistical bulletin, said Mada e-commerce reached SAR 44.42 billion in the first quarter of 2024, up 22% from SAR 36.53 billion a year earlier, across 263 million transactions. Credit-card transactions are excluded. ${cite('spa-mada-q1-2024', 'Saudi Press Agency')}</p>
 
-<p>Do not stretch it. Wholesale excluding vehicles was still SAR 305.0 billion in 2024 — 33.2% of the trade total — and sale and repair of motor vehicles was SAR 203.6 billion (22.2%) (${cite('gastat-wr-2024', 'GASTAT')}). Those are not an FMCG barcode universe. GASTAT publishes them separately for a reason.</p>
+<p>A store scan is not that basket. A category paid mainly by credit card is outside that Mada series.</p>
 
-<h2 id="when-custom-fits">When custom research is the right buy</h2>
+<p>The Ministry of Commerce counted 40,953 e-commerce commercial registrations in the fourth quarter of 2024, up 10% year on year, inside a commercial-record stock of more than 1.6 million. ${cite('mc-q4-2024', 'Ministry of Commerce')}</p>
 
-<p>Commission custom primary research when the next meeting cannot act on a national cooperating-store cell. The official series tell you when that is true.</p>
+<p>Foreign direct investment into wholesale and retail was SAR 18 billion in 2024, 15% of inflows, level with construction. ${cite('gastat-fdi-2024', 'GASTAT FDI')}</p>
 
-<h3>Traditional trade and the SME tail</h3>
+<p>New capital can still walk into banners that already have a measurement feed. The feed will not tell a new brand whether that banner will range it. Account interviews will.</p>
 
-<p>Wholesale and retail contributed 36.3% of SME operating revenues in 2024 and 42.9% of SME operating expenditure (${cite('gastat-sme-2024', 'GASTAT')}). For micro establishments the wholesale-and-retail share of revenue was 65.0%; for small establishments 35.1%; for medium establishments (50–249 employees) 19.6% (${cite('gastat-sme-2024', 'GASTAT')}). The smaller the door, the more the activity is trade. A national modern-trade feed is not designed to be that pyramid. Retailer interviews, store intercepts, mystery shops and a named traditional-trade sample are. BioNixus fields those from the Al Khobar field office with bilingual teams. That is practice, not a claim that any syndicated universe is “wrong.”</p>
+<h2 id="how-to-use-both">How to use both</h2>
 
-<h3>E-commerce missions</h3>
+<p>Syndicated vs custom research Saudi Arabia is a stack, not a switch. The brand meeting should see both layers, labelled. A national share and a Riyadh shopper study are not one number.</p>
 
-<p>Ministry of Commerce counted 40,953 e-commerce commercial registrations in Q4 2024, up 10% year on year, inside a commercial-record stock of more than 1.6 million (${cite('mc-q4-2024', 'Ministry of Commerce')}). Mada e-commerce in Q1 2024 was SAR 44.42 billion, up 22%, and the series excludes credit cards (${cite('spa-mada-q1-2024', 'SPA')}). In Q2 2024 the same Mada e-commerce series grew 19.3% year on year against 5.9% for POS (${cite('sama-qed-q2-2024', 'SAMA')}). GASTAT’s ICT survey already showed 71% of 15–74s buying online, with clothing at 88.8% of those baskets (${cite('gastat-ict-2025', 'GASTAT')}). Custom work is the right buy when the brief is a platform mission, a quick-commerce catchment, or a credit-card-heavy category the Mada series does not see. Pair it with <a href="/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026">online market research and social listening for brand growth</a> if the brand also needs conversation, not only conversion.</p>
+<p>A practical sequence is short. Read the recent audit periods for the category in cooperating modern trade. Map the three channel layers against the official series: retail excluding vehicles, the small-shop tail, and the Mada series plus the credit-card gap. Commission interviews only for the decision the audit cannot close. Return a pack that keeps the audit chart on one page and the interview evidence on the next.</p>
 
-<h3>Named accounts and new SKUs</h3>
+<p>If the first-year plan is one city, spend the interviews on that city and keep the audit for the national modern-trade screen. If the plan is a traditional-trade route in the Eastern Province, field it from the Al Khobar field office. If the same sponsor runs a tracker in Dubai, keep the samples separate.</p>
 
-<p>A SKU that is not yet listed has no scan history. A listing meeting needs the buyer’s criteria, the fixture constraint and the promotional ask. FDI into wholesale and retail was SAR 18 billion in 2024 — 15% of inflows, level with construction (${cite('gastat-fdi-2024', 'GASTAT')}). New capital is still walking into banners that already have a measurement feed. The feed will not tell a new brand whether that banner will range it. Account interviews will. See <a href="/account-level-market-research">account-level market research</a>.</p>
+<h2 id="language-tax-data">Language, tax and personal data</h2>
 
-<h3>City, language and shopper cells</h3>
+<p>The Basic Law says Arabic is the language of the Kingdom and Riyadh is the capital. ${cite('boe-basic-law', 'Basic Law of Governance')}</p>
 
-<p>Riyadh, Jeddah / Makkah and the Eastern Province are not interchangeable catchments. The Basic Law names Riyadh as the capital (${cite('boe-basic-law', 'Basic Law')}). A Kingdom average hides the only city that can carry the first warehouse. Arabic is the Kingdom’s language; mid-2024 non-Saudis were 44.4% of residents and many sit interviews in English (${cite('boe-basic-law', 'Basic Law')}; ${cite('gastat-pop-2024', 'GASTAT')}). Saudi households spent SAR 16,028 a month in 2023; non-Saudi households spent SAR 5,574 (${cite('gastat-hies-2023', 'GASTAT')}). Custom quotas, bilingual instruments and city cells are how you stop averaging those groups. The sampling, language and mode rules are in our <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey company Saudi Arabia guide</a>. The city test is in the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>.</p>
+<p>Riyadh, Jeddah and the Eastern Province are not interchangeable catchments. A Kingdom average hides the city that has to carry the first warehouse.</p>
 
-<p>Compare method, not numbers, with <a href="/uae-retail-market-research">retail market research in the UAE</a> if the same sponsor is sequencing both markets. The instruments can be siblinged. The samples cannot.</p>
+<p>GASTAT’s mid-2024 population estimate is 35.3 million. About 55.6% were Saudi and 44.4% were non-Saudi. ${cite('gastat-pop-2024', 'GASTAT population')}</p>
 
-<h2 id="how-to-combine">How to combine syndicated vs custom research Saudi Arabia</h2>
+<p>The national portal lists the 2024 population as 35,300,280. ${cite('mygov-stats', 'my.gov.sa')}</p>
 
-<p>Syndicated vs custom research Saudi Arabia is a stack, not a switch. The brand meeting should see both layers, labelled, never averaged. Seven workstreams cover a 2026 FMCG or retail brief:</p>
+<p>Census 2022, reported by the Saudi Press Agency, counted 32,175,224 people, of whom 18.8 million were Saudi (58.4%). The median age was 29. ${cite('spa-census-2022', 'Saudi Press Agency')}</p>
 
-<table>
-<thead><tr><th>Workstream</th><th>Layer</th><th>Question it answers</th></tr></thead>
-<tbody>
-<tr><td>Keep the syndicated audit</td><td>Syndicated RMS</td><td>What sold in cooperating modern trade, at what price and distribution, this period versus last year (${cite('un-rms-2019', 'UN Statistics workshop')})?</td></tr>
-<tr><td>Split the three channel layers</td><td>Desk plus custom</td><td>Which volume is modern trade, which is the SME/traditional tail (${cite('gastat-sme-2024', 'GASTAT')}), and which is digital (${cite('sama-qed-q2-2024', 'SAMA')})?</td></tr>
-<tr><td>Named-account file</td><td>Custom interviews and store checks</td><td>What will this banner list, range and promote?</td></tr>
-<tr><td>Shopper U&amp;A or missions</td><td>Custom survey / qualitative</td><td>Why did the household choose, switch or walk past — in which language, in which city (${cite('gastat-hies-2023', 'GASTAT')}; ${cite('boe-basic-law', 'Basic Law')})?</td></tr>
-<tr><td>Traditional-trade sample</td><td>Custom intercepts and retailer interviews</td><td>What does the micro and small door actually stock and reorder (${cite('gastat-sme-2024', 'GASTAT')})?</td></tr>
-<tr><td>E-commerce missions</td><td>Custom digital intercepts</td><td>What is in the basket the Mada series sees — and what credit-card or platform behaviour it does not (${cite('spa-mada-q1-2024', 'SPA')})?</td></tr>
-<tr><td>Combined brand-meeting pack</td><td>Both layers, labelled</td><td>What should we do next, with the audit for “what” and the custom file for “why” and “where else”?</td></tr>
-</tbody>
-</table>
+<p>58.4% Saudi is the 2022 census. 55.6% Saudi is the mid-2024 estimate. They are different dates. Do not average them. Many non-Saudi residents sit interviews in English. Language of interview is a sample decision.</p>
 
-<p>Do not blend the bases. A national RMS share and a Riyadh shopper U&amp;A are not one number. Publish both. If the first-year plan is a single city, spend the custom n on that city and keep the audit for the national modern-trade screen. If the first-year plan is a traditional-trade route in the Eastern Province, the Al Khobar field office is the operational reason BioNixus can field it. If the same sponsor is running a tracker in Dubai, sibling the instruments and keep the samples separate — see <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai and the UAE</a>.</p>
+<p>Shelf prices have to say whether they include VAT. The standard rate is 15%. ${cite('zatca-vat', 'ZATCA')} Article 2 of the VAT law sets that 15% standard rate. ${cite('boe-vat', 'VAT law')}</p>
 
-<p>A practical sequence for a 2026 launch or relaunch:</p>
+<p>If the study interviews residents, the Personal Data Protection Law applies. ${cite('pdpl-text', 'Personal Data Protection Law')}</p>
 
-<ol>
-<li>Read the last four audit periods for the category in cooperating modern trade. That is the “what happened” screen.</li>
-<li>Map the three channel layers against official series: retail excluding vehicles at SAR 410.3 billion (${cite('gastat-wr-2024', 'GASTAT')}), the SME/micro tail (${cite('gastat-sme-2024', 'GASTAT')}), and Mada e-commerce plus the credit-card gap (${cite('spa-mada-q1-2024', 'SPA')}; ${cite('sama-qed-q2-2024', 'SAMA')}).</li>
-<li>Commission the custom layer only for the decision the audit cannot close — listing, shopper why, traditional-trade ranging, or digital mission.</li>
-<li>Field bilingual, city-quota, PDPL-compliant interviews (${cite('boe-basic-law', 'Basic Law')}; ${cite('pdpl-text', 'PDPL')}; ${cite('iso-20252-2026', 'ISO')}; ${cite('esomar-2025', 'ICC/ESOMAR')}).</li>
-<li>Return a pack that keeps the audit chart on one page and the custom evidence on the next. Do not average them.</li>
-</ol>
+<p>SDAIA’s guide records that the law came into force on 14 September 2023, with a grace period that ran to 14 September 2024. ${cite('sdaia-guide', 'SDAIA')}</p>
 
-<p>That sequence is the Nielsen alternative Saudi Arabia programme BioNixus actually sells. It is complementary. The global version of the same argument is on <a href="/nielsen-alternative">Nielsen alternative</a>. Pair this guide with the <a href="/bionixus-industries/insights/feasibility-study-company-saudi-arabia">feasibility-study note</a> when the custom chapter feeds a wider investment file, and with <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a> if the same brand also needs a CSAT or NPS module.</p>
+<p>Write the legal basis into the method note before the first incentive is paid.</p>
 
-<h2 id="costs">What a 2026 combination programme costs</h2>
+<h2 id="who-fields">Who fields the extra layer</h2>
 
-<p>BioNixus prices custom primary research in Saudi Arabia between $10,000 and $60,000. The range is the scope, not a rate card. Syndicated retail-measurement subscription fees are not public and are not BioNixus’s invoice. Cost on the custom layer moves with five choices:</p>
+<p>BioNixus prices the interview layer from $10,000 to $60,000. Syndicated subscription fees are not public, and they are not this invoice. The tagline is “Guaranteed in writing.” That covers the agreed scope, the timing, the minimum sample, replacement of non-qualifying respondents, and re-field if an agreed quota is missed. Forty client reviews sit on the firm’s public profiles. The findings are not part of that promise.</p>
 
-<ul>
-<li><strong>Decision.</strong> A one-city shopper U&amp;A sits at the lower end. A three-city traditional-trade plus named-account plus e-commerce pack sits higher.</li>
-<li><strong>Channel.</strong> Online CAWI among internet-using 15–74s is the least expensive complete when the task is short — 99.0% of that age band used the internet in 2025 (${cite('gastat-ict-2025', 'GASTAT')}). Store intercepts, retailer interviews and mystery shops add travel and gender-appropriate staffing.</li>
-<li><strong>Cities.</strong> One Riyadh cell is cheaper than Riyadh plus Jeddah plus the Eastern Province. A four-cell national design is a different study from a single-city launch check.</li>
-<li><strong>Language.</strong> Dual Arabic–English authoring, two cognitive pilots and bilingual coding cost more than an English grid with Arabic labels. They are also the difference between a readable file and a wording artefact (${cite('boe-basic-law', 'Basic Law')}).</li>
-<li><strong>Incidence and quotas.</strong> A Saudi-female, 25–34, Riyadh, category-user cell is a different incidence from an all-adult national splash. The official sex and nationality splits tell you which one you are buying (${cite('gastat-pop-2024', 'GASTAT')}).</li>
-</ul>
+<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026. Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Cairo in Sheikh Zayed. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
 
-<p>The invoice is not buying a guaranteed finding. BioNixus guarantees, in writing: the agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. Accuracy of findings is not a claim we make. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” Price work has to carry the 15% VAT rule (${cite('zatca-vat', 'ZATCA')}). Do not compare that project band with an unpublished RMS subscription.</p>
+<p>Ask any firm, including BioNixus, whether it will add a layer next to the audit or ask you to cancel the audit. The defensible answer is to add the layer. Ask which official series will be used, which channel is out of scope, whether results will be cut by city, and how personal data will be handled.</p>
 
-<h2 id="how-to-choose">How to choose a Nielsen alternative in Saudi Arabia</h2>
-
-<p>Ask every firm, including BioNixus, to answer these questions in writing before you sign:</p>
-
-<ol>
-<li>Will you replace the syndicated audit, or add a custom layer next to it? (The only defensible answer is add.)</li>
-<li>Which official series will you use for trade structure, SME mix, e-commerce and population, and what is the date of each series (${cite('gastat-wr-2024', 'GASTAT')}; ${cite('gastat-sme-2024', 'GASTAT')}; ${cite('sama-qed-q2-2024', 'SAMA')}; ${cite('gastat-pop-2024', 'GASTAT')})?</li>
-<li>Which channel is in scope — cooperating modern trade, traditional trade, e-commerce — and which is explicitly out of scope?</li>
-<li>Will the study report by city, or only as “Saudi Arabia”?</li>
-<li>How many interviews will you complete, in which language, and with which nationality, sex and age quotas (${cite('boe-basic-law', 'Basic Law')}; ${cite('gastat-pop-2024', 'GASTAT')})?</li>
-<li>What is guaranteed in writing — scope, minimum sample and re-field, or the findings themselves?</li>
-<li>How will personal data from respondents be processed under the PDPL (${cite('pdpl-text', 'PDPL')}), and which research code will the field follow (${cite('iso-20252-2026', 'ISO')}; ${cite('esomar-2025', 'ICC/ESOMAR')})?</li>
-</ol>
-
-<p>Global measurement networks are strong at the standing modern-trade feed. Local fieldwork houses are often strong at CAPI routing. A primary-research firm is hired to design the custom layer against official series and to hand it back labelled next to the feed you already buy. BioNixus does that job and will work alongside your existing measurement contract. It will not ask you to cancel it.</p>
-
-<p>Compare partners on the <a href="/insights/top-consumer-insights-companies-ksa-2026">2026 ranking of consumer insights companies in KSA</a> and the <a href="/insights/top-market-research-companies-saudi-arabia-2026">2026 ranking of market research companies in Saudi Arabia</a>. Related industry reading on this hub includes <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">market entry research for Saudi Arabia</a> and <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai and the UAE</a>. Browse country entry points on <a href="/market-research-by-industry">market research by industry</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for syndicated vs custom research in Saudi Arabia?</h2>
-
-<p>BioNixus is not a retail-measurement network and not a panel reseller. It is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026, after 120 in 2025. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, the minimum sample and the re-field — not the accuracy of a finding.</p>
-
-<p>US teams brief Sheridan. UK and European teams brief London. Fieldwork for the Kingdom is designed with the Al Khobar field office and bilingual Arabic–English teams. To brief a Nielsen alternative Saudi Arabia programme — keep the audit, add the custom layer — use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<p>To brief the interview layer, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>.</p>`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -464,39 +370,39 @@ ${REFERENCES_HTML}`;
 
 export const NIELSEN_KSA_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does a Nielsen alternative Saudi Arabia brief actually mean?',
+    question: 'What does this kind of brief mean?',
     answer:
-      'It means keep the syndicated retail audit for what sold in cooperating modern trade, then add custom primary research for why shoppers and buyers acted and for traditional-trade, e-commerce and named-account cuts. It is not a request to cancel a measurement subscription.',
+      'It means keeping a retail-measurement subscription for what sold, where and at what price, and adding interviews for why shoppers acted and for shops, accounts and websites the audit is not built to cover. It is not a request to cancel the feed.',
   },
   {
-    question: 'Is BioNixus a replacement for NielsenIQ in Saudi Arabia?',
+    question: 'Is BioNixus a replacement for a retail-measurement feed in Saudi Arabia?',
     answer:
-      'No. Complementary. Keep NielsenIQ or any syndicated retail-measurement feed for national modern-trade movement, distribution and price. Brief BioNixus for the shopper, account, traditional-trade and digital-mission file that feed is not built to produce. The smart default is to run both.',
+      'No. Complementary. Keep the syndicated feed for national modern-trade movement, distribution and price. Brief BioNixus for the shopper, account, traditional-trade and digital-mission file that feed is not built to produce. The sensible default is to run both.',
   },
   {
-    question: 'When is syndicated retail measurement the right buy in Saudi Arabia?',
+    question: 'When is the retail audit the right buy?',
     answer:
-      'When the next meeting is about SKU movement, share, distribution or promotional price in cooperating modern trade, on a consistent geography and calendar. Retail excluding vehicles was SAR 410.3 billion in 2024, and SAMA recorded about 1.8 million POS terminals in Q2 2024. Do not ask the audit why a shopper switched or what an independent stocked.',
+      'When the next meeting is about what happened to a listed barcode in cooperating modern trade: share, distribution, price and promotion, this period versus last year. A 2019 UN workshop paper describes that product as a store audit plus barcode scans, typically monthly.',
   },
   {
-    question: 'When is custom primary research the right buy?',
+    question: 'When are interviews the right buy?',
     answer:
-      'When the decision is a named-account listing, a traditional-trade route, an e-commerce mission, a city launch, or a bilingual shopper why. Micro establishments take 65.0% of their operating revenue from wholesale and retail. Mada e-commerce grew 19.3% year on year in Q2 2024 against 5.9% for POS, and the Mada series excludes credit cards.',
+      'When the meeting needs a shopper’s reason, a named account, a small-shop route, or an online mission the Mada series does not see. Credit-card payments are outside the Mada e-commerce series the Saudi Press Agency described for the first quarter of 2024.',
   },
   {
-    question: 'How should syndicated vs custom research Saudi Arabia be combined?',
+    question: 'How should the two layers be combined?',
     answer:
-      'Keep the audit chart on one page and the custom evidence on the next. Split modern trade, the SME/traditional tail and digital. Do not average the bases. A national RMS share and a Riyadh shopper U&A are not one number. Field the custom layer under ISO 20252 and the ICC/ESOMAR Code, with PDPL in the method note.',
+      'Put the audit chart on one page and the interview evidence on the next. Label each base. A national share and a Riyadh shopper study are not one number. If the first year is one city, spend the interviews on that city and keep the audit for the national screen.',
   },
   {
-    question: 'How much does custom research in Saudi Arabia cost with BioNixus?',
+    question: 'How much does the interview layer cost with BioNixus?',
     answer:
-      'Custom programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, cities, mode, language and whether the output is a one-off U&A or a multi-channel pack. Syndicated subscription fees are not public and are a different invoice. The scope, minimum sample, respondent replacement and re-field are guaranteed in writing. Findings are not.',
+      'Custom programmes are priced from $10,000 to $60,000. The price moves with cities, mode, language and whether the output is one shopper study or a wider pack. Subscription fees for a retail audit are a different invoice. The scope, the minimum sample, respondent replacement and re-field are guaranteed in writing. The findings are not part of that promise.',
   },
   {
-    question: 'Why brief BioNixus rather than another custom fieldwork house?',
+    question: 'Why brief BioNixus next to a feed you already buy?',
     answer:
-      'BioNixus writes the custom layer against official series and hands it back labelled next to the feed you already buy. It will not ask you to cancel that feed. US teams brief Sheridan; UK and European teams brief London EC1V 2NX; Kingdom fieldwork is designed with the Al Khobar field office. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not finding accuracy.',
+      'BioNixus writes the interview layer against official series and hands it back labelled next to the feed. It will not ask you to cancel that feed. Kingdom fieldwork is designed with the Al Khobar field office. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That promise is the scope, not the accuracy of a finding.',
   },
 ];
 

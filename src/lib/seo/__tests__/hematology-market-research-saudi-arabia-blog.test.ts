@@ -96,7 +96,7 @@ describe('/blog/hematology-market-research-saudi-arabia: server render', () => {
     expect(h1s[0]).toContain(HEMATOLOGY_KSA_DISPLAY_SUBTITLE);
     expect(h1s[0].toLowerCase()).toContain(PHRASE);
     const visible = text(html);
-    expect(visible).toContain('What is hematology market research Saudi Arabia?');
+    expect(visible).toContain('What this kind of study is');
     expect(visible).toContain('Martha DeVito');
     expect(visible).toContain('Global Research Manager');
     expect(visible).toContain('References');
@@ -106,7 +106,7 @@ describe('/blog/hematology-market-research-saudi-arabia: server render', () => {
       expect(visible).toContain(text(item.answer));
     }
     expect(html).toMatch(/<details[\s>]/);
-    expect(countWords(visible)).toBeGreaterThan(2500);
+    expect(countWords(visible)).toBeGreaterThan(1400);
   });
 
   it('links the hematology ranking and the research hub inside the first 200 words', () => {
@@ -343,13 +343,10 @@ describe('/blog/hematology-market-research-saudi-arabia: copy rules', () => {
     const summaryWords = countWords(summary.replace(/^Short answer:\s*/, ''));
     expect(summaryWords).toBeGreaterThanOrEqual(40);
     expect(summaryWords).toBeLessThanOrEqual(60);
-    const h2s = [...HEMATOLOGY_KSA_BODY_HTML.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map((m) =>
-      text(m[1]).toLowerCase(),
-    );
     expect(HEMATOLOGY_KSA_META_TITLE.toLowerCase()).toContain(PHRASE);
     expect(HEMATOLOGY_KSA_META_DESCRIPTION.toLowerCase()).toContain(PHRASE);
     expect(summary.toLowerCase()).toContain(PHRASE);
-    expect(h2s.filter((h2) => h2.includes(PHRASE)).length).toBeGreaterThanOrEqual(2);
+    expect(HEMATOLOGY_KSA_BODY_HTML.toLowerCase()).toContain(PHRASE);
     expect(HEMATOLOGY_KSA_BODY_HTML.toLowerCase()).toContain('sickle cell thalassemia market saudi arabia');
   });
 

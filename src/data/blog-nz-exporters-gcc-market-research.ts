@@ -42,15 +42,15 @@ export const NZ_GCC_EXPORT_META_DESCRIPTION =
   'New Zealand exporters GCC market research for dairy and meat: Saudi and UAE demand, CEPA, SFDA lists, MPI halal and VAT before a first Gulf container.';
 
 export const NZ_GCC_EXPORT_DISPLAY_TITLE =
-  'Market research in New Zealand for exporters targeting the GCC';
+  'What New Zealand Food Exporters Should Check in the Gulf';
 
 export const NZ_GCC_EXPORT_DISPLAY_SUBTITLE =
-  'Dairy, meat and food proof before a first Saudi or UAE container';
+  'Name the product, the country, and the halal file before a container leaves';
 
 export const NZ_GCC_EXPORT_BREADCRUMB_LABEL = 'New Zealand exporters GCC market research';
 
 export const NZ_GCC_EXPORT_EXCERPT =
-  'A sourced 2026 playbook for New Zealand exporters GCC market research: what dairy, meat and food exporters must prove on Saudi and UAE demand, CEPA versus the unsigned GCC FTA, SFDA lists, MPI halal and VAT before a first Gulf container.';
+  'A plain guide for New Zealand dairy and meat exporters looking at the Gulf: which trade figures to quote, and which halal and tax questions to settle before a container leaves.';
 
 export const NZ_GCC_EXPORT_PUBLISHED_ISO = '2026-10-17T12:00:00.000Z';
 export const NZ_GCC_EXPORT_UPDATED_ISO = '2026-10-17T12:00:00.000Z';
@@ -300,182 +300,90 @@ export function countWords(html: string): number {
 }
 
 export const NZ_GCC_EXPORT_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What does New Zealand exporters GCC market research have to answer?', anchor: 'what-new-zealand-exporters-gcc-market-research-answers' },
-  { heading: 'Why a New Zealand file cannot be copied into the Gulf', anchor: 'nz-file-cannot-copy' },
-  { heading: 'Official numbers that frame a 2026 brief', anchor: 'official-numbers' },
-  { heading: 'What CEPA buys — and what the unsigned GCC FTA does not', anchor: 'cepa-versus-gcc-fta' },
-  { heading: 'Halal, SFDA lists and UAE food files', anchor: 'halal-sfda-uae' },
-  { heading: 'How to sequence UAE, Saudi Arabia and the four smaller states', anchor: 'how-to-sequence' },
-  { heading: 'The five proofs a New Zealand committee must demand', anchor: 'five-proofs' },
-  { heading: 'How the brief changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a New Zealand-to-GCC research partner', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to settle before you send money', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'Two agreements, and only one is in force', anchor: 'agreements' },
+  { heading: 'Halal papers and import lists', anchor: 'halal' },
+  { heading: 'Six countries, four published VAT rates', anchor: 'six-countries' },
+  { heading: 'How the questions change by product', anchor: 'by-sector' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const NZ_GCC_EXPORT_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> New Zealand exporters GCC market research must prove who will buy a named dairy or meat SKU, in which GCC state, at what VAT-inclusive price, through which channel, and under which SFDA or UAE food file, before a first container. A TAM or a CEPA tariff line is not the study.</p>`;
+export const NZ_GCC_EXPORT_EXECUTIVE_SUMMARY_HTML = `<p>New Zealand exporters GCC market research names the product, the Gulf country, the price after VAT, and the halal certificate before a container leaves. Saudi Arabia and the UAE are separate buyers. A regional export total is not a shopper.</p>`;
 
-const NARRATIVE_HTML = `<p>New Zealand dairy, meat and food teams often arrive with a Stats NZ destination line, an MPI halal certificate and a Dubai re-export quote, then treat that pack as New Zealand exporters GCC market research. It is not. Entry research has to name the buyer, the state, the price including the local VAT, the channel and the food-control file before a Wellington, Hamilton or London committee commits a first container. This playbook sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma exporters — dairy, red meat, horticulture, honey, industrial ingredients — not for SFDA drug or MOHAP files.</p>
+const NARRATIVE_HTML = `<p>New Zealand dairy and meat teams often treat the Gulf as one customer. The six states are separate markets. Before a container leaves, name who will buy, in which country, at what price after tax, and which halal or import file the shipment needs. This page is a plain guide to New Zealand exporters GCC market research. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for food and industrial exporters, not for medicines.</p>
 
-<p>The Kingdom-only file is a different job. If the first operating SKU is Saudi, use the sourced <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry research playbook</a> for demand, registration, cities, channels and price. Do not paste that file across the other five states, and do not treat a UAE CEPA tariff as a six-country passport. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>If the first company is in Saudi Arabia, use the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry research</a> page for that country’s company questions. This page is the export, tariff, and food-control file. Related pages cover <a href="/uae-fmcg-market-research">FMCG research in the UAE</a>, <a href="/saudi-arabia-fmcg-market-research">FMCG research in Saudi Arabia</a>, and <a href="/qatar-retail-market-research">retail research in Qatar</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 New Zealand-to-GCC brief can cite, October 2026</strong></p>
+<h2 id="what-to-prove">What to settle before you send money</h2>
 <ul>
-<li><strong>NZ$3.14 billion</strong> of goods and services exports to the six GCC states in the year ended June 2025, against <strong>NZ$537.51 million</strong> of imports — a surplus of NZ$2.61 billion and two-way trade of NZ$3.68 billion. Treated as one market, the GCC was New Zealand’s sixth-largest export destination (2.9% of global exports) (${cite('mfat-gcc-facts', 'MFAT GCC key facts')} ).</li>
-<li><strong>85% / 73% concentration:</strong> in the year to March 2025, 85% of New Zealand’s GCC exports went to the UAE and Saudi Arabia, and 73% were dairy and meat (${cite('mfat-july-2025', 'MFAT, July 2025')} ). That is a trade fact, not a catchment for a first SKU.</li>
-<li><strong>NZ$766 million</strong> of dairy and <strong>NZ$53 million</strong> of red meat to the UAE in the year to March 2025, inside NZ$1.28 billion of goods and services exports and NZ$1.44 billion of two-way trade (${cite('mfat-uae-facts', 'MFAT UAE key facts')} ).</li>
-<li><strong>CEPA in force, GCC FTA not.</strong> The New Zealand–UAE CEPA entered into force on 28 August 2025 with 98.5% of goods exports duty-free from day one, including all dairy, red meat, horticultural and industrial products (${cite('mfat-uae-overview', 'MFAT CEPA overview')} ). The NZ–GCC FTA concluded on 31 October 2024 and still requires Cabinet approval for signature (${cite('nz-treaties-gcc', 'New Zealand Treaties Online')} ).</li>
-<li><strong>Four published VAT rates, not one:</strong> 5% in the UAE since 1 January 2018 (${cite('mof-vat', 'UAE Ministry of Finance')} ); 5% in Oman (${cite('oman-vat', 'Oman Tax Authority')} ); 10% in Bahrain from 1 January 2022 (${cite('bahrain-vat', 'Bahrain National Portal')} ); 15% in Saudi Arabia (${cite('zatca-vat', 'ZATCA')} ). Qatar and Kuwait do not appear on those official rate pages. Do not invent a Gulf VAT.</li>
-</ul>
-</div>
-
-<h2 id="what-new-zealand-exporters-gcc-market-research-answers">What does New Zealand exporters GCC market research have to answer?</h2>
-
-<p>New Zealand exporters GCC market research tells a New Zealand sponsor whether a named offer will sell, at a named price, in a named GCC state, through a named channel, under a named food-control and tax treatment. It is not a freight or company-formation checklist. Five questions separate a usable study from a slide nobody can defend:</p>
-
-<ul>
-<li><strong>Who buys?</strong> A retail buyer, a food-service specifier, a dairy reconstitutor, a hotel chef, a distributor or a government procurer. GCC-Stat’s 61.5 million people in 2024 are not one basket (${cite('gccstat-portal', 'GCC-Stat')} ).</li>
-<li><strong>In which state — and which city?</strong> In the year to March 2025, 85% of New Zealand’s GCC exports landed in the UAE and Saudi Arabia (${cite('mfat-july-2025', 'MFAT, July 2025')} ). That is not permission to average Dubai with Riyadh, or to treat a Jebel Ali re-export as a Kingdom sale.</li>
-<li><strong>At what price, including which VAT?</strong> A willingness-to-pay range that uses the rate of the state of supply — 5%, 10% or 15% where a rate is published — not a New Zealand-dollar ex-VAT farmgate copied across (${cite('mof-vat', 'UAE Ministry of Finance')}; ${cite('bahrain-vat', 'Bahrain National Portal')}; ${cite('zatca-vat', 'ZATCA')} ).</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to if you miss. Whole milk powder into a reconstitutor is not lamb into a hotel, and neither is honey into a pharmacy aisle.</li>
-<li><strong>Under which file and which vehicle?</strong> An MPI halal certificate is a New Zealand export statement (${cite('mpi-halal', 'MPI')} ). An SFDA approved-establishment listing is a Kingdom import statement (${cite('sfda-list', 'SFDA')} ). A Dubai free-zone licence is not a Saudi trading entity, and ZAD registration is not Ghad registration (${cite('uae-food', 'u.ae')}; ${cite('sfda-clearance', 'SFDA food clearance')} ).</li>
+<li><strong>Which product, and which country.</strong> Dairy and meat are the bulk of the Saudi profile. A UAE duty rate is not a Saudi duty rate.</li>
+<li><strong>Who pays.</strong> An importer, a hotel, or a retailer. A national export total is not that person.</li>
+<li><strong>What price, after tax.</strong> Use the VAT rate of the country on the invoice.</li>
+<li><strong>Which certificate.</strong> A tariff preference is not a halal certificate. A certificate is not a place on an approved-establishment list.</li>
 </ul>
 
-<p>Desktop TAM can frame those questions. It cannot answer them. Adjacent pages include <a href="/uae-fmcg-market-research">FMCG market research in the UAE</a>, <a href="/saudi-arabia-fmcg-market-research">FMCG market research in Saudi Arabia</a>, <a href="/food-beverage-companies-uae">food and beverage companies in the UAE</a> and <a href="/food-beverage-companies-saudi-arabia">food and beverage companies in Saudi Arabia</a>. Kingdom-only proofs stay on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>.</p>
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its period. A year to June, a year to March, and a calendar year are different.</p>
+<ul>
+<li><strong>GCC, year ended June 2025.</strong> Goods and services exports were NZ$3.14 billion. Imports were NZ$537.51 million. Two-way trade was NZ$3.68 billion. Treated as one market, the GCC was New Zealand’s sixth-largest export destination, at 2.9% of global exports (${cite('mfat-gcc-facts', 'MFAT')}).</li>
+<li><strong>Year to March 2025.</strong> MFAT’s July 2025 note says GCC exports were almost NZ$3 billion, almost 50% higher than the same period in 2022. 85% went to the UAE and Saudi Arabia. 73% was dairy and meat. The six states rank as the sixth-largest export market if they are treated as one country (${cite('mfat-july-2025', 'MFAT, July 2025')}).</li>
+<li><strong>UAE, year to March 2025.</strong> Goods and services exports were NZ$1.28 billion. Two-way trade was NZ$1.44 billion. Dairy was NZ$766 million, industrial products NZ$264 million, horticulture NZ$51 million, red meat NZ$53 million, and travel services NZ$37 million. The UAE is a top-20 export market. MFAT also says more than 70% of New Zealand’s trade is covered by free-trade agreements (${cite('mfat-uae-facts', 'MFAT')}).</li>
+<li><strong>Middle East, year ending December 2025.</strong> This series is wider than the GCC. Total exports were NZ$3.416 billion, 3.0% of New Zealand’s exports. The UAE was NZ$1.463 billion and Saudi Arabia NZ$1.446 billion. Dairy was NZ$2.429 billion, 8.4% of New Zealand’s global dairy exports, including whole milk powder of NZ$1.208 billion and butter, fat, and cream of NZ$617 million. Meat was NZ$331 million, of which sheep was NZ$147 million and beef NZ$125 million (${cite('mfat-iran-2026', 'MFAT, March 2026')}). Do not paste this Middle East total onto a GCC-only slide.</li>
+<li><strong>Saudi Arabia over a decade.</strong> The August 2025 snapshot says exports grew from NZ$750 million in the year ending 2015 to NZ$1.14 billion in the year ending 2024. Dairy and meat make up the bulk. Services exports were NZ$31 million in 2024, of which travel, including international education, was NZ$12 million. The source series is the Stats NZ Trade Dashboard (${cite('mfat-saudi-snapshot', 'MFAT, August 2025')}).</li>
+<li><strong>Milk powder.</strong> Exports were NZ$9.7 billion in the year ended April 2024. Among the listed destinations, the UAE was NZ$538.6 million, Saudi Arabia NZ$411.1 million, and Oman NZ$101.5 million (${cite('stats-milk', 'Stats NZ')}). The trade dashboard, updated 2 September 2026, separates goods (overseas merchandise trade) from services (international trade) (${cite('stats-dashboard', 'Stats NZ, 2 September 2026')}).</li>
+<li><strong>The region headline.</strong> The GCC statistical portal’s 2024 headlines are a population of 61.5 million and GDP of USD 2.3 trillion (${cite('gccstat-portal', 'GCC-Stat')}). That is not an order for one product.</li>
+</ul>
 
-<h2 id="nz-file-cannot-copy">Why can a New Zealand file not be copied into the Gulf?</h2>
+<h2 id="agreements">Two agreements, and only one is in force</h2>
+<p>The New Zealand–UAE agreement entered into force on 28 August 2025. MFAT lists it under agreements in force (${cite('mfat-uae-cepa', 'MFAT')}). From that date, 98.5% of New Zealand goods exports are duty-free, including all dairy, red meat, horticultural products, and industrial products. Duty-free access rises to 99% by 2027. A bilateral investment treaty entered into force on 14 November 2025 (${cite('mfat-uae-overview', 'MFAT')}). Customs says the agreement was signed on 26 September 2024 and sets transition rules for goods in transit or in storage at entry into force (${cite('customs-cepa', 'New Zealand Customs')}).</p>
+<p>The Gulf agreement is a different document. Negotiations concluded on 31 October 2024. MFAT’s overview says it is not in force. Tariffs are to be eliminated on 99% of New Zealand exports over ten years. Together with the UAE agreement, MFAT says 50.8% of Gulf trade would be covered on day one. A sub-committee on trade in food products is mandated to consider halal standards. MFAT describes the GCC as the ninth-largest economy in the world. Year-to-June 2024 exports were NZ$2.6 billion (${cite('mfat-gcc-overview', 'MFAT')}). The agreement home page lists it under “concluded but not in force” (${cite('mfat-gcc-home', 'MFAT')}).</p>
+<p>After conclusion, the text goes through legal verification for signature. New Zealand’s process after signature includes select-committee review, public submissions, and implementing legislation. The Gulf text complements the UAE agreement (${cite('mfat-gcc-timeline', 'MFAT timeline')}). Treaties Online says the agreement now requires Cabinet approval for signature (${cite('nz-treaties-gcc', 'New Zealand Treaties Online')}). Quote that status. A concluded text that is not in force is not a duty rate on today’s invoice.</p>
 
-<p>A Waikato, Canterbury or Hawke’s Bay instrument with Arabic labels is not a Gulf entry file. Three official series show why.</p>
+<h2 id="halal">Halal papers and import lists</h2>
+<p>MPI says a halal establishment must have a programme approved by an Approved Halal Organisation and must be registered with MPI. Destination overseas market-access requirements are password-protected. The certificate may be an organisation halal certificate, an MPI sanitary certificate, or both (${cite('mpi-halal', 'MPI')}).</p>
+<p>Dairy and meat are different notices. The 2021 dairy notice covers dairy material and dairy products that will be labelled as halal or that need a halal certificate (${cite('mpi-dairy-docs', 'MPI dairy notice')}). The 2021 animal-products notice covers meat, poultry, gelatine, and non-dairy fats and oils labelled as halal. It does not apply to dairy (${cite('mpi-halal-notice', 'MPI animal-products notice')}).</p>
+<p>The list of Approved Halal Organisations, as of 23 July 2026, sets country-by-country scopes. Those scopes include Saudi Food and Drug Authority listings and United Arab Emirates Ministry of Industry and Advanced Technology food-manufacturing scopes (${cite('mpi-aho', 'MPI, 23 July 2026')}).</p>
+<p>On the Saudi side, the April 2025 clearance guide says importers register on Ghad and clear through Fasah. A halal certificate is required where the rules require one. Meat, poultry, and raw gelatine need a halal slaughter certificate. Labelling follows SFDA.FD/GSO 9. Halal food follows SFDA.FD/GSO 2055-1. Dairy needs a health certificate, and import from an accredited establishment may be required. Meat needs a health certificate and a halal slaughter certificate, and import from an accredited establishment (${cite('sfda-clearance', 'SFDA, April 2025')}). The establishment list says import is permitted only from approved establishments (${cite('sfda-list', 'SFDA')}). The August 2024 list of New Zealand dairy plants marks establishments Active or Delisting (${cite('sfda-nz-dairy', 'SFDA, August 2024')}). Read the row for the plant that will actually ship.</p>
+<p>In the UAE, Federal Law No. 10 of 2015 says no food may be imported for the first time without approval from the Ministry of Climate Change and Environment. Ministerial Decree No. 239 of 2018 says imported food, locally produced food, or food with a modified label or composition must be registered in ZAD before it is handled in the market. Pork or alcohol without permission can mean prison of not less than a month and a fine of up to AED 500,000. Dubai and Sharjah food safety sit with the municipal authorities. Abu Dhabi sits with ADAFSA (${cite('uae-food', 'u.ae')}). ZADI is the unified inspection between Dubai Customs and Dubai Municipality for food-import requests, re-export, label assessment, and a search of foods registered with the municipality (${cite('zadi', 'Dubai Trade')}).</p>
 
-<p>First, the buyer mix is not a New Zealand age pyramid. The UAE’s 2024 population is 11.29 million (${cite('fcsc-unified-2025', 'FCSC')} ). Saudi Arabia’s mid-2024 population is 35.3 million (${cite('gastat-pop-2024', 'GASTAT')} ). Qatar’s end-September 2024 count is 3,139,213 (${cite('npc-qatar', 'National Planning Council')} ). Kuwait’s beginning-2025 estimate is 4,881,254 (${cite('csb-kuwait', 'Central Statistical Bureau')} ). Oman’s NCSI portal on 12 October 2026 shows 3,080,117 Omanis and 2,384,521 expatriates, or 5,464,638 people (${cite('ncsi-oman', 'NCSI')} ). Nationals and expatriates do not share one dairy or meat basket inside a single state, let alone across six.</p>
+<h2 id="six-countries">Six countries, four published VAT rates</h2>
+<ul>
+<li><strong>UAE.</strong> The 2024 population in the unified-numbers release is 11.29 million (${cite('fcsc-unified-2025', 'FCSC')}). VAT has been 5% since 1 January 2018, with mandatory registration above AED 375,000 (${cite('mof-vat', 'UAE Ministry of Finance')}).</li>
+<li><strong>Saudi Arabia.</strong> The mid-2024 population estimate is 35.3 million (${cite('gastat-pop-2024', 'GASTAT')}). Standard VAT is 15% (${cite('zatca-vat', 'ZATCA')}).</li>
+<li><strong>Qatar.</strong> 3,139,213 people at the end of September 2024 (${cite('npc-qatar', 'Qatar National Planning Council')}).</li>
+<li><strong>Kuwait.</strong> 4,881,254 at the beginning of 2025 (${cite('csb-kuwait', 'Kuwait Central Statistical Bureau')}).</li>
+<li><strong>Oman.</strong> On 12 October 2026 the portal showed 3,080,117 Omanis and 2,384,521 expatriates, 5,464,638 in total (${cite('ncsi-oman', 'Oman NCSI')}). VAT is 5% on most goods and services (${cite('oman-vat', 'Oman Tax Authority')}).</li>
+<li><strong>Bahrain.</strong> Standard VAT has been 10% since 1 January 2022, with mandatory registration above BHD 37,500 (${cite('bahrain-vat', 'Bahrain National Portal')}).</li>
+</ul>
+<p>The VAT pages cited here are the UAE, Oman, Bahrain, and Saudi Arabia. A price card for Qatar or Kuwait needs its own official rate page. This article does not supply one.</p>
 
-<p>Second, the trade already exists — and it is not a proxy for SKU demand. MFAT’s June 2025 GCC totals put New Zealand goods and services exports at NZ$3.14 billion (${cite('mfat-gcc-facts', 'MFAT GCC key facts')} ). The July 2025 note puts almost NZ$3 billion in the year to March 2025, almost 50% above the same period in 2022, with 73% dairy and meat (${cite('mfat-july-2025', 'MFAT, July 2025')} ). Stats NZ’s milk-powder table for the year ended April 2024 still sends NZ$538.6 million to the UAE, NZ$411.1 million to Saudi Arabia and NZ$101.5 million to Oman inside a NZ$9.7 billion global powder trade (${cite('stats-milk', 'Stats NZ')} ). None of those lines tells a brand whether a named buyer in Dubai, Riyadh or Muscat will pay a named invoice for a named SKU.</p>
+<h2 id="by-sector">How the questions change by product</h2>
+<ul>
+<li><strong>Dairy.</strong> Use the dairy notice, the Saudi health certificate, and the August 2024 plant list. The UAE duty-free treatment from 28 August 2025 is a UAE fact. It is not a Saudi fact.</li>
+<li><strong>Meat.</strong> Use the animal-products notice, which does not cover dairy, plus the halal slaughter certificate. The 73% dairy-and-meat share is a trade mix, not a shopper in one city.</li>
+<li><strong>A third country.</strong> Oman appears on the milk-powder list. Qatar retail research is linked above for a Doha shop. Do not add those countries as a footnote after a Dubai field period.</li>
+</ul>
 
-<p>Third, the legal stack is not one Gulf passport. The UAE CEPA is in force; the six-country FTA is not. Treaties Online is explicit: after 31 October 2024, “the GCC FTA now requires Cabinet approval for signature” (${cite('nz-treaties-gcc', 'New Zealand Treaties Online')}; ${cite('mfat-gcc-home', 'MFAT GCC FTA')} ). Halal, labelling and establishment lists stay national even after a UAE preference (${cite('mpi-halal', 'MPI')}; ${cite('sfda-clearance', 'SFDA food clearance')}; ${cite('uae-food', 'u.ae')} ).</p>
-
-<h2 id="official-numbers">Which official numbers should a 2026 brief start from?</h2>
-
-<p>Use official series as the frame, then replace the frame with primary evidence for the SKU. Label each series. Do not blend year-ends.</p>
-
-<h3>The GCC trade frame</h3>
-
-<p>Open MFAT’s June 2025 GCC key facts first. Goods and services exports to the six states were NZ$3.14 billion; imports NZ$537.51 million; two-way trade NZ$3.68 billion. The GCC was New Zealand’s sixth-largest export market and twelfth-largest two-way partner, with the UAE and Saudi Arabia the key markets. The six states together are described as the ninth-largest economy in the world on that page (${cite('mfat-gcc-facts', 'MFAT GCC key facts')} ).</p>
-
-<p>The FTA overview still carries a June 2024 export total of NZ$2.6 billion (${cite('mfat-gcc-overview', 'MFAT GCC overview')} ). That is history, not the 2026 brief. The July 2025 note is the concentration file: year to March 2025, almost NZ$3 billion, 85% to the UAE and Saudi Arabia, 73% dairy and meat (${cite('mfat-july-2025', 'MFAT, July 2025')} ).</p>
-
-<h3>The UAE seat a dairy exporter already has</h3>
-
-<p>MFAT’s UAE key facts put goods and services exports at NZ$1.28 billion in the year to March 2025 and two-way trade at NZ$1.44 billion. The UAE is a top-20 export market. The composition of that year is not a “GCC mix”: dairy NZ$766 million, industrial products NZ$264 million, horticulture NZ$51 million, red meat NZ$53 million, travel services NZ$37 million (${cite('mfat-uae-facts', 'MFAT UAE key facts')} ). Powder already has a UAE line in the Stats NZ April 2024 table (${cite('stats-milk', 'Stats NZ')} ). A first consumer cheese or a first food-service lamb cut still needs a named buyer.</p>
-
-<h3>The Saudi seat is larger than a re-export story</h3>
-
-<p>MFAT’s August 2025 Saudi snapshot, drawing on the Stats NZ Trade Dashboard, puts New Zealand’s Saudi exports at NZ$1.14 billion in the year ending 2024, up from NZ$750 million in 2015. Dairy and meat make up the bulk; dairy drove the growth; services were NZ$31 million in 2024 (${cite('mfat-saudi-snapshot', 'MFAT Saudi snapshot')} ). The March 2026 Middle East table — a wider regional cut — puts Saudi total exports at NZ$1.446 billion for calendar 2025 (${cite('mfat-iran-2026', 'MFAT, March 2026')} ). Do not average the two series.</p>
-
-<h3>What the wider Middle East table adds — and what it does not</h3>
-
-<p>MFAT’s March 2026 conflict note is useful for product mix and dangerous if you relabel it as “GCC”. For the year ending December 2025 it records NZ$3.416 billion of New Zealand exports to the Middle East region (3.0% of global exports): UAE NZ$1.463 billion and Saudi Arabia NZ$1.446 billion, then Oman, Kuwait, Bahrain and Qatar far behind. Dairy was NZ$2.429 billion (8.4% of New Zealand’s global dairy exports), of which whole milk powder NZ$1.208 billion and butter, fat and cream NZ$617 million. Meat was NZ$331 million (sheep NZ$147 million, beef NZ$125 million) (${cite('mfat-iran-2026', 'MFAT, March 2026')} ). Those are exposure numbers, not a SKU forecast.</p>
-
-<table>
-<thead><tr><th>Series to open first</th><th>What it measures</th><th>What it is not</th></tr></thead>
-<tbody>
-<tr><td>MFAT GCC key facts, year ended June 2025</td><td>NZ$3.14 billion exports to the six states (${cite('mfat-gcc-facts', 'MFAT GCC key facts')} )</td><td>A SKU forecast</td></tr>
-<tr><td>MFAT UAE key facts, year to March 2025</td><td>Dairy NZ$766 million; red meat NZ$53 million (${cite('mfat-uae-facts', 'MFAT UAE key facts')} )</td><td>A Saudi invoice</td></tr>
-<tr><td>MFAT Saudi snapshot, year ending 2024</td><td>NZ$1.14 billion total; dairy-led growth (${cite('mfat-saudi-snapshot', 'MFAT Saudi snapshot')} )</td><td>A 2026 shelf price</td></tr>
-<tr><td>Stats NZ milk powder, year ended April 2024</td><td>UAE NZ$538.6 million; Saudi NZ$411.1 million; Oman NZ$101.5 million (${cite('stats-milk', 'Stats NZ')} )</td><td>Cheese, butter or lamb demand</td></tr>
-<tr><td>MFAT Middle East table, year ending December 2025</td><td>Product mix including powder NZ$1.208 billion (${cite('mfat-iran-2026', 'MFAT, March 2026')} )</td><td>A GCC-only file</td></tr>
-</tbody>
-</table>
-
-<p>Pull live cuts from the ${cite('stats-dashboard', 'Stats NZ trade dashboard')} when the brief needs a later month. Keep the vintage on the slide.</p>
-
-<h2 id="cepa-versus-gcc-fta">What does CEPA buy — and what does the unsigned GCC FTA not buy?</h2>
-
-<p>New Zealand counsel still writes “Gulf FTA access” and “set up in Dubai, sell everywhere.” Neither sentence survives the MFAT pages.</p>
-
-<p>The UAE CEPA is New Zealand’s first free trade agreement in the Middle East. It was signed on 26 September 2024 and entered into force on 28 August 2025 (${cite('customs-cepa', 'New Zealand Customs')}; ${cite('mfat-uae-cepa', 'MFAT CEPA')} ). From that date, 98.5% of New Zealand goods exports can access the UAE duty-free, including all dairy, red meat, horticultural and industrial products; that share rises to 99% by 2027. A Bilateral Investment Treaty entered into force on 14 November 2025 (${cite('mfat-uae-overview', 'MFAT CEPA overview')} ). Preference still needs origin, a correct entry, and a food-control file.</p>
-
-<p>The NZ–GCC FTA is a different instrument. Negotiations concluded on 31 October 2024 (${cite('mfat-gcc-home', 'MFAT GCC FTA')} ). When it enters into force, tariffs would be eliminated on 99% of New Zealand’s exports over ten years; together with the UAE agreement, 50.8% of Gulf trade on day one. The text includes a Sub-Committee on Trade in Food Products mandated to consider halal standards (${cite('mfat-gcc-overview', 'MFAT GCC overview')} ). After signature, New Zealand still has select-committee review and implementing legislation (${cite('mfat-gcc-timeline', 'MFAT timeline')} ). Treaties Online is the 2026 status line: Cabinet approval for signature is still required (${cite('nz-treaties-gcc', 'New Zealand Treaties Online')} ).</p>
-
-<p>Tariff preference is not shelf access. CEPA does not register a product in ZAD, does not put a plant on the SFDA list, and does not replace GSO 9 Arabic labelling (${cite('uae-food', 'u.ae')}; ${cite('sfda-list', 'SFDA')}; ${cite('sfda-clearance', 'SFDA food clearance')} ). Write the tariff into the P&amp;L. Write the food file into the method note.</p>
-
-<h2 id="halal-sfda-uae">What must the halal, SFDA and UAE food files actually say?</h2>
-
-<p>New Zealand product teams treat an MPI halal certificate as a Gulf passport. MPI’s own page is narrower. Halal products — meat or dairy — first have to meet New Zealand food-safety law. Every halal establishment needs a programme that records which markets it can export to. An Approved Halal Organisation assesses and approves that programme and issues halal certificates. Premises must also be registered with MPI. Destination OMARs are password-protected; the exporter has to apply to read them. Some markets need an AHO certificate, some need an MPI sanitary certificate, some need both (${cite('mpi-halal', 'MPI')} ).</p>
-
-<p>Dairy and meat are different notices. The 2021 dairy notice is the file for dairy material and dairy products to be labelled as halal or to obtain a halal certificate on export (${cite('mpi-dairy-docs', 'MPI dairy export documents')} ). The 2021 animal-products notice covers meat, poultry, gelatine and non-dairy fats and oils labelled as halal for export, and it expressly does not apply to dairy (${cite('mpi-halal-notice', 'MPI halal animal-products notice')} ). MPI’s 23 July 2026 AHO list is the living table of which bodies are recognised for which country scopes, including SFDA processed-food and perishable-animal-product scopes and MOIAT food-manufacturing scopes for the UAE (${cite('mpi-aho', 'MPI AHO list, 23 July 2026')} ). A certificate issued against the wrong notice, or by a body that is not listed for that market, is not “entering the GCC.”</p>
-
-<p>Saudi import is a Kingdom file, not a New Zealand file. SFDA’s April 2025 clearance guide requires the importer to register the establishment and the products on Ghad and to submit clearance through Fasah. A licensed warehouse is required except for narrow sample exemptions. Pre-packaged labels must meet SFDA.FD/GSO 9; health and nutrition claims have their own regulations; SFDA.FD/GSO 2055-1 is the halal-food technical regulation on the general-specifications table. Dairy shipments need a health certificate; import from accredited establishments may be required depending on the country list. Meat and poultry need a health certificate and a halal slaughter certificate from centres accredited by the Saudi Halal Center, and import from accredited establishments (${cite('sfda-clearance', 'SFDA food clearance')} ). The country list itself is blunt: “Import is permitted only from approved establishments” (${cite('sfda-list', 'SFDA')} ). SFDA publishes a dedicated New Zealand dairy-establishment PDF (${cite('sfda-nz-dairy', 'SFDA New Zealand dairy list')} ). A plant that is not on the live list is not a Saudi SKU, whatever MPI has signed.</p>
-
-<p>The UAE is an emirate stack sitting under a federal food law. Federal Law No. 10 of 2015 says no food may be imported into the country for the first time without Ministry of Climate Change and Environment approval. Ministerial Decree No. 239 of 2018 requires imported or locally produced food — or food whose label, ingredients or composition has changed — to be registered in the ZAD electronic system before it is handled in UAE markets. Dealing in pork or alcohol, or their by-products, without permission carries a prison term of not less than a month and a fine of up to AED 500,000; false descriptions attract AED 10,000 to AED 100,000 (${cite('uae-food', 'u.ae')} ). In Dubai, ZADI is the single window for food-import requests, re-export and label assessment against UAE standards, with unified inspection between Dubai Customs and Dubai Municipality (${cite('zadi', 'Dubai Trade ZADI')} ). Abu Dhabi food safety sits with ADAFSA; Sharjah with the Sharjah programme (${cite('uae-food', 'u.ae')} ). A DIFC or Jebel Ali holding company does not replace those files. A first UAE SKU and a first Saudi SKU are two registration jobs.</p>
-
-<h2 id="how-to-sequence">How should a New Zealand exporter sequence the six states?</h2>
-
-<p>Sequence is a research question, not a slogan. The 85% UAE-plus-Saudi concentration is the right place to start and the wrong place to stop (${cite('mfat-july-2025', 'MFAT, July 2025')} ).</p>
-
-<p><strong>UAE first</strong> is the usual New Zealand habit because the dairy invoice is already the largest GCC line — NZ$766 million in the year to March 2025 — and because Dubai is already a re-export and aviation seat (${cite('mfat-uae-facts', 'MFAT UAE key facts')} ). That habit is rational for a regional showroom, a free-zone holding company, a reconstitutor who already buys powder, or a first English-language food-service seat. It is a poor habit for a first consumer SKU that will live on Saudi family demand, or for a first industrial ingredient paid in Riyadh. CEPA preference applies to the UAE, not to the other five states (${cite('mfat-uae-overview', 'MFAT CEPA overview')} ). Dubai resident counts and UAE licence counts are UAE facts, developed on <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> and <a href="/uae-fmcg-market-research">UAE FMCG market research</a>. They are not a Kingdom catchment.</p>
-
-<p><strong>Saudi Arabia first</strong> is the usual habit when the tonnes, the tickets or the households sit in the Kingdom. The 2024 snapshot is NZ$1.14 billion, dairy-led (${cite('mfat-saudi-snapshot', 'MFAT Saudi snapshot')} ). The population is 35.3 million (${cite('gastat-pop-2024', 'GASTAT')} ) and VAT is 15% (${cite('zatca-vat', 'ZATCA')} ) — a different price architecture from Dubai’s 5%. Kingdom-only proofs live on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>. This article will not repeat them. Opening in Dubai “to learn the Gulf” and then copying the instrument into Riyadh is two studies paid as one. Shipping CEPA-preferential UAE stock across the causeway as if it were a Saudi SKU is waiting for an SFDA hold, not “entering the GCC.”</p>
-
-<p><strong>Qatar, Kuwait, Oman and Bahrain</strong> are not one residual cell. The March 2026 Middle East table still shows how small they are beside the two large markets: Oman NZ$155 million, Kuwait NZ$153 million, Bahrain NZ$96 million, Qatar NZ$62 million in calendar 2025 (${cite('mfat-iran-2026', 'MFAT, March 2026')} ). Oman already appears as a NZ$101.5 million milk-powder destination (${cite('stats-milk', 'Stats NZ')} ). Bahrain’s 10% VAT is the published rate a causeway-adjacent retail file has to carry (${cite('bahrain-vat', 'Bahrain National Portal')} ). Adding the four states as a 10% uplift on a UAE-plus-Saudi file is not entry research. Sibling the instruments on <a href="/qatar-retail-market-research">Qatar retail market research</a>, <a href="/kuwait-retail-market-research">Kuwait retail market research</a>, <a href="/oman-retail-market-research">Oman retail market research</a> and <a href="/bahrain-retail-market-research">Bahrain retail market research</a>.</p>
-
-<p>A practical sequence, when the evidence supports it: name the first commercial state from buyer interviews; price that state with its own VAT and food file; decide whether a second state is a second commercial SKU or only a regional seat; keep Saudi and UAE proofs on their own pages; add the four smaller states only when a named buyer can be shown. The unsigned GCC FTA is not a 2026 tariff assumption (${cite('nz-treaties-gcc', 'New Zealand Treaties Online')} ).</p>
-
-<h2 id="five-proofs">What five proofs must a New Zealand committee demand?</h2>
-
-<table>
-<thead><tr><th>Proof the committee owes itself</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand</td><td>A defined buyer, a unit of demand and a state that matches the first container</td><td>A “GCC” market-size figure with no country split</td></tr>
-<tr><td>Price, including tax</td><td>Paid-for willingness-to-pay or current invoice evidence, stated with the VAT of the state of supply (${cite('mof-vat', 'UAE Ministry of Finance')}; ${cite('zatca-vat', 'ZATCA')}; ${cite('bahrain-vat', 'Bahrain National Portal')} )</td><td>A New Zealand-dollar ex-VAT farmgate pasted onto a Gulf shelf</td></tr>
-<tr><td>State and catchment</td><td>UAE, Saudi, Qatar, Kuwait, Oman or Bahrain volumes that respect national versus expatriate structure (${cite('fcsc-unified-2025', 'FCSC')}; ${cite('gastat-pop-2024', 'GASTAT')} )</td><td>A Gulf average presented as the first-year plan</td></tr>
-<tr><td>Channel and substitution</td><td>Who specifies, who distributes, what the buyer switches to if you miss — Australian, European or local Gulf supply</td><td>A channel map with no interviews</td></tr>
-<tr><td>File and vehicle</td><td>The SFDA list or UAE ZAD/ZADI registration, the MPI AHO scope, and the first legal vehicle in the state of sale (${cite('sfda-list', 'SFDA')}; ${cite('uae-food', 'u.ae')}; ${cite('mpi-aho', 'MPI AHO list')} )</td><td>A slide that says “CEPA covers the GCC” or “MPI halal is accepted everywhere”</td></tr>
-</tbody>
-</table>
-
-<p>Those five tests are the entry study. Primary work is usually structured interviews with the people who specify or pay in the first commercial state; a quantitative check on price, substitution and catchment in Arabic and English; country quotas that match the first site; and a source table that separates official series, exporter quotations and fieldwork. Kingdom sampling sits on the <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">Saudi consumer-survey methods guide</a>.</p>
-
-<p>BioNixus prices that custom work between $10,000 and $60,000, depending on sample, countries and whether the output is a stand-alone entry file or a chapter inside a wider feasibility. The scope, timing and deliverables are guaranteed in writing. Accuracy of findings is not a claim we make.</p>
-
-<h2 id="sector-notes">How does the brief change by sector?</h2>
-
-<h3>Dairy and ingredients</h3>
-
-<p>Start from the official destination split, then replace it with a reconstitutor, a food-service operator or a retail buyer. Year to March 2025 UAE dairy was NZ$766 million (${cite('mfat-uae-facts', 'MFAT UAE key facts')} ). Year ended April 2024 milk powder already had UAE, Saudi and Oman lines inside a NZ$9.7 billion global powder trade (${cite('stats-milk', 'Stats NZ')} ). Calendar 2025 Middle East dairy was NZ$2.429 billion, with whole milk powder NZ$1.208 billion and butter, fat and cream NZ$617 million (${cite('mfat-iran-2026', 'MFAT, March 2026')} ). Those chapters still need the dairy halal notice, the SFDA dairy-establishment list where the first sale is Saudi, ZAD/ZADI where the first sale is the UAE, Arabic/English on-pack copy, and the VAT of the state of supply (${cite('mpi-dairy-docs', 'MPI dairy export documents')}; ${cite('sfda-nz-dairy', 'SFDA New Zealand dairy list')}; ${cite('uae-food', 'u.ae')} ). A powder invoice is not a cheese forecast. See <a href="/uae-fmcg-market-research">FMCG market research in the UAE</a> and <a href="/saudi-arabia-fmcg-market-research">FMCG market research in Saudi Arabia</a>.</p>
-
-<h3>Red meat and food service</h3>
-
-<p>UAE red meat was NZ$53 million in the year to March 2025 — two orders of magnitude below dairy (${cite('mfat-uae-facts', 'MFAT UAE key facts')} ). Calendar 2025 Middle East meat was NZ$331 million, of which sheep NZ$147 million and beef NZ$125 million (${cite('mfat-iran-2026', 'MFAT, March 2026')} ). That mix is why a hotel or catering specifier interview is usually the first meat brief, not a household panel. SFDA meat clearance needs a halal slaughter certificate and an accredited establishment (${cite('sfda-clearance', 'SFDA food clearance')} ). MPI’s animal-products notice, not the dairy notice, is the New Zealand export file (${cite('mpi-halal-notice', 'MPI halal animal-products notice')} ). Pair the work with <a href="/uae-hospitality-market-research">hospitality market research in the UAE</a> when the first plate is a hotel, and with the hospitality notes on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi playbook</a> when the first plate is in the Kingdom.</p>
-
-<h3>Horticulture, honey and packaged foods</h3>
-
-<p>UAE horticulture was NZ$51 million in the year to March 2025 (${cite('mfat-uae-facts', 'MFAT UAE key facts')} ). CEPA puts horticultural products in the day-one duty-free basket for the UAE (${cite('mfat-uae-overview', 'MFAT CEPA overview')} ). SFDA still wants a phytosanitary certificate for fresh produce and grains, and GSO 9 Arabic on pre-packaged lines (${cite('sfda-clearance', 'SFDA food clearance')} ). Honey sits on its own SFDA New Zealand establishment list; do not assume a dairy listing covers it. A tracker that mixes overnight visitors with residents is a different instrument; see <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a> and <a href="/b2c-industries">B2C market research</a>.</p>
-
-<h2 id="how-to-choose">How should you choose a New Zealand-to-GCC research partner?</h2>
-
-<p>Ask every firm, including BioNixus, to answer in writing before you sign:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for NZ–GCC trade, UAE CEPA, Saudi exports, milk powder, population and VAT, and what is the date of each series?</li>
-<li>Will the study report by GCC state — and by city inside the first state — or only as “the Gulf”?</li>
-<li>How many interviews or surveys will you complete, in which language, and with which quotas?</li>
-<li>Which VAT rate, and which SFDA list, UAE ZAD/ZADI file and MPI AHO scope, does the brief assume (${cite('mof-vat', 'UAE Ministry of Finance')}; ${cite('sfda-list', 'SFDA')}; ${cite('mpi-aho', 'MPI AHO list')} )?</li>
-<li>Is the first vehicle a UAE free-zone seat, a UAE mainland trader, a Saudi trading entity, or something else — and are you writing the demand chapter or the incorporation chapter?</li>
-<li>Is the NZ–GCC FTA treated as in force, or as concluded-but-not-signed (${cite('nz-treaties-gcc', 'New Zealand Treaties Online')} )?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
+<li>Which export figure will you quote, and what is the period: June, March, or December?</li>
+<li>Is the first sample the UAE, Saudi Arabia, or another state?</li>
+<li>Which halal notice applies, dairy or meat, and which establishment row is Active?</li>
+<li>Will you treat the Gulf agreement as not in force until the official pages say otherwise?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>Which VAT rate is printed on the price card?</li>
 </ol>
+<p>A certificate house and a research firm do different jobs. BioNixus measures demand.</p>
 
-<p>New Zealand trade-promotion desks can cite MFAT and Stats NZ. They cannot run the interviews. Incorporation houses that rank for “company setup Dubai” file the vehicle; they are not automatically strong at demand evidence. BioNixus does the second job and will work alongside your existing counsel. Start with the 2026 rankings of <a href="/insights/top-market-research-companies-new-zealand-2026">market research companies in New Zealand</a>, <a href="/insights/top-market-research-companies-uae-2026">market research companies in the UAE</a> and <a href="/insights/top-market-research-companies-saudi-arabia-2026">market research companies in Saudi Arabia</a> — then brief a Gulf field design, not a ranking slide.</p>
-
-<p>Related reading includes the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>, <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC market entry research</a>, <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> and <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for New Zealand exporters GCC market research?</h2>
-
-<p>BioNixus is a primary market research firm, not a company-formation house or a New Zealand trade-promotion desk. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>The invoice is not buying a guaranteed finding. BioNixus guarantees, in writing: the agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. Accuracy of findings is not a claim we make.</p>
-
-<p>New Zealand teams can brief London. Fieldwork for the Emirates is designed with the Dubai field office at Thuraya Tower 1; fieldwork for the Kingdom is designed with the Al Khobar field office; Kuwait work sits with the Salmiya field office. To brief New Zealand exporters GCC market research, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United Kingdom and from New Zealand numbers routed via London call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -494,39 +402,39 @@ ${REFERENCES_HTML}`;
 
 export const NZ_GCC_EXPORT_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does New Zealand exporters GCC market research have to prove?',
+    question: 'What should a New Zealand exporter research before a first Gulf container?',
     answer:
-      'It has to prove addressable demand, price including the VAT of the state of supply, country or catchment, channel, and the food-control file plus legal vehicle, with dated, auditable evidence. A single Gulf TAM or a CEPA tariff line is not New Zealand exporters GCC market research. Primary interviews and bilingual surveys are what make the brief usable for a New Zealand investment committee.',
+      'Name the product, the country, the price after that country’s VAT, and the halal or import file. A regional export total does not name the buyer.',
   },
   {
-    question: 'Is the NZ–GCC free trade agreement in force in 2026?',
+    question: 'Is the New Zealand–GCC trade agreement in force?',
     answer:
-      'No. Negotiations concluded on 31 October 2024. New Zealand Treaties Online states that the GCC FTA now requires Cabinet approval for signature. After signature, New Zealand still has select-committee review and implementing legislation. Do not write “FTA access across the Gulf” into a 2026 launch memo.',
+      'MFAT lists it as concluded on 31 October 2024 and not in force. Treaties Online says it requires Cabinet approval for signature. The UAE agreement is a different document. It entered into force on 28 August 2025.',
   },
   {
-    question: 'Does the UAE CEPA replace Saudi SFDA listing?',
+    question: 'Which export figures are safe to quote?',
     answer:
-      'No. The CEPA entered into force on 28 August 2025 and makes 98.5% of New Zealand goods exports to the UAE duty-free from day one, including all dairy, red meat, horticultural and industrial products. It does not register a product in Saudi Ghad, put a plant on the SFDA approved-establishment list, or replace GSO 9 Arabic labelling.',
+      'For the year ended June 2025, MFAT puts GCC goods and services exports at NZ$3.14 billion. For the year to March 2025, 85% of GCC exports went to the UAE and Saudi Arabia, and 73% was dairy and meat. The December 2025 Middle East total is a wider region. Keep the periods apart.',
   },
   {
-    question: 'Can a New Zealand exporter treat the GCC as one market?',
+    question: 'Does a UAE duty cut cover dairy into Saudi Arabia?',
     answer:
-      'No. In the year to March 2025, 85% of New Zealand’s GCC exports went to the UAE and Saudi Arabia, but those two states do not share a VAT rate, a food-control stack or a buyer mix. Published VAT rates are 5% in the UAE and Oman, 10% in Bahrain and 15% in Saudi Arabia. Qatar and Kuwait do not appear on those official rate pages.',
+      'No. Duty-free treatment for dairy under the UAE agreement dates from 28 August 2025 and applies to the UAE. Saudi clearance still asks for the health certificate, and import is permitted only from approved establishments.',
   },
   {
-    question: 'Which official numbers should a 2026 New Zealand-to-GCC brief use?',
+    question: 'Which halal notice covers milk, and which covers meat?',
     answer:
-      'Start from MFAT’s June 2025 GCC totals (NZ$3.14 billion exports), the UAE March 2025 composition (dairy NZ$766 million), the Saudi 2024 snapshot (NZ$1.14 billion), Stats NZ milk powder for the year ended April 2024, the March 2026 Middle East product table labelled as such, GCC-Stat’s 61.5 million people and USD 2.3 trillion GDP, and the national population and VAT pages cited here. Label each series.',
+      'The 2021 dairy notice covers dairy that will be labelled halal or that needs a halal certificate. The 2021 animal-products notice covers meat, poultry, gelatine, and non-dairy fats and oils. It does not apply to dairy.',
   },
   {
-    question: 'How much does custom New Zealand exporters GCC market research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom market entry programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, number of countries, mode and whether the output is a stand-alone entry file or a chapter inside a wider study. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the cities, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus from London rather than a New Zealand trade desk?',
+    question: 'Why brief BioNixus rather than relying only on a certificate checklist?',
     answer:
-      'Trade desks cite MFAT and Stats NZ. BioNixus proves demand. New Zealand teams can brief London EC1V 2NX; fieldwork is designed with the Dubai, Al Khobar and Salmiya field offices. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'A checklist names the paper. BioNixus measures demand, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

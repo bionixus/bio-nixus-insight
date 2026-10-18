@@ -42,15 +42,15 @@ export const UK_ENTRY_META_DESCRIPTION =
   'UK market entry research for GCC and US companies: four nations, 20% VAT, UKCA or CE, Companies House and price before a Riyadh or Dubai committee commits.';
 
 export const UK_ENTRY_DISPLAY_TITLE =
-  'UK market entry research: a guide for GCC and US companies';
+  'What to Research Before Selling into the UK';
 
 export const UK_ENTRY_DISPLAY_SUBTITLE =
-  'Four nations, 20% VAT, UKCA or CE and price before capital is committed';
+  'Name the nation, the VAT, and the product mark before you send money';
 
 export const UK_ENTRY_BREADCRUMB_LABEL = 'UK market entry research';
 
 export const UK_ENTRY_EXCERPT =
-  'A sourced 2026 playbook for UK market entry research: what GCC and US companies must prove on four-nation demand, 20% VAT, UKCA or CE, channels and price before they commit capital.';
+  'A plain guide for Gulf and US companies looking at the UK: which official figures to quote, and which tax and product-mark questions to settle first.';
 
 export const UK_ENTRY_PUBLISHED_ISO = '2026-10-17T12:00:00.000Z';
 export const UK_ENTRY_UPDATED_ISO = '2026-10-17T12:00:00.000Z';
@@ -233,193 +233,72 @@ export function countWords(html: string): number {
 }
 
 export const UK_ENTRY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What does UK market entry research have to answer?', anchor: 'what-uk-market-entry-research-answers' },
-  { heading: 'Why a Gulf or US playbook cannot be copied into the UK', anchor: 'gulf-or-us-playbook-cannot-copy' },
-  { heading: 'Official numbers that frame a 2026 UK entry brief', anchor: 'official-numbers' },
-  { heading: 'Four nations, two marks and one Companies House file', anchor: 'four-nations-two-marks' },
-  { heading: 'What a G-Mark or an FDA file does not buy you', anchor: 'gmark-or-fda-is-not-ukca' },
-  { heading: 'How GCC briefs differ from US briefs', anchor: 'gcc-versus-us-briefs' },
-  { heading: 'The five proofs a Riyadh, Dubai or US committee must demand', anchor: 'five-proofs' },
-  { heading: 'How the brief changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a UK market entry research partner', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to settle before you send money', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'England, Scotland, Wales, and Northern Ireland', anchor: 'four-nations' },
+  { heading: 'VAT, corporation tax, and a UK company', anchor: 'tax-and-company' },
+  { heading: 'UKCA, CE, and the Gulf deal that is not in force', anchor: 'marks' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const UK_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> UK market entry research must prove who will buy, in which nation, at what price including 20% VAT, through which channel and under which mark before a GCC or US company commits capital. A UK TAM or G-Mark file is not entry research. Primary interviews make the brief usable.</p>`;
+export const UK_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p>UK market entry research names the nation, the buyer, the price after 20% VAT, and the product mark before a Gulf or US company sends money. England, Scotland, Wales, and Northern Ireland are not one shop. A trade total is not an order.</p>`;
 
-const NARRATIVE_HTML = `<p>Gulf and US commercial teams often arrive with a single “UK” TAM, a G-Mark or FDA file and a London office quote, then treat that pack as UK market entry research. It is not. Entry research has to name the buyer, the nation, the price including 20% VAT, the channel and the mark before a Riyadh, Dubai or US committee commits a warehouse, a hire or a first invoice. This playbook sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma GCC and US companies — retail, FMCG, technology, hospitality, industrials, financial services — not for MHRA or NICE files.</p>
+const NARRATIVE_HTML = `<p>Gulf and US companies often treat the UK as one shop. England, Scotland, Wales, and Northern Ireland are different places to sell. Before money is sent, name who will buy, in which nation, at what price after tax, and which product mark applies. This page is a plain guide to UK market entry research. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for consumer and industrial brands, not for medicines.</p>
 
-<p>The Kingdom-only file is a different job. If the first operating SKU is still Saudi, use the sourced <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry research playbook</a>. The reverse corridor — European brands entering the six GCC states — lives on the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC market entry research playbook</a>. Do not paste either file onto England, Scotland, Wales or Northern Ireland. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>If the first company is still in Saudi Arabia, use the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry research</a> page. European brands going the other way are on the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC market entry research</a> page. A UK shelf is a different job. Retail buyers in the UAE are covered on <a href="/uae-retail-market-research">UAE retail research</a> when the comparison is a Dubai price, not a London price.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 UK entry brief can cite, October 2026</strong></p>
+<h2 id="what-to-prove">What to settle before you send money</h2>
 <ul>
-<li><strong>69,281,400</strong> people in the UK at mid-2024, up 755,300 (1.1%) on mid-2023. England grew 1.2%, Scotland 0.7%, Wales 0.6% and Northern Ireland 0.4%. Net international migration was 738,700 (1,235,300 arrivals and 496,500 leavers). Natural change was only +16,200 (662,100 births and 645,900 deaths) (${cite('ons-pop', 'ONS mid-year population estimates, mid-2024')} ).</li>
-<li><strong>£2,884,006 million</strong> of UK GDP at current market prices in 2024, with 1.1% real growth, on the ONS regional economic activity bulletin. London accounted for £656,291 million of that GDP, 9.1 million people and £72,201 per head (${cite('ons-regional-gdp', 'ONS regional GDP, 1998 to 2024')} ). Those are labelled series. They are not a catchment for a first store.</li>
-<li><strong>£25.2 billion</strong> of UK–UAE total trade in the four quarters to Q1 2026 (UK exports £15.7 billion, imports £9.5 billion); the UAE was the UK’s 20th trading partner and 1.3% of UK trade. End-2024 UK outward FDI in the UAE was £4.2 billion; UAE inward FDI in the UK was £7.0 billion (${cite('dbt-uae', 'DBT UAE factsheet, 24 September 2026')} ).</li>
-<li><strong>£13.4 billion</strong> of UK–Saudi total trade in the same four quarters (UK exports £9.6 billion, −24.0%; imports £3.8 billion, +17.2%); Saudi Arabia was the 25th partner and 0.7% of UK trade. End-2024 UK outward FDI in Saudi Arabia was £6.5 billion; inward Saudi FDI in the UK is not published on that factsheet because of disclosure (${cite('dbt-saudi', 'DBT Saudi Arabia factsheet, 24 September 2026')} ).</li>
-<li><strong>20% standard VAT</strong> since 4 January 2011, with a 5% reduced rate and a 0% zero rate (${cite('vat-rates', 'GOV.UK VAT rates')} ). The VAT registration threshold is £90,000 from 1 April 2024; the deregistration threshold is £88,000 (${cite('vat-thresholds', 'GOV.UK VAT thresholds')} ). A 5% UAE or 15% Saudi shelf price is not a UK shelf price.</li>
-</ul>
-</div>
-
-<h2 id="what-uk-market-entry-research-answers">What does UK market entry research have to answer?</h2>
-
-<p>UK market entry research tells a GCC or US sponsor whether a named offer will sell, at a named price, in a named UK nation, through a named channel, under a named conformity and tax treatment. It is not a company-formation checklist. Five questions separate a usable study from a slide nobody can defend:</p>
-
-<ul>
-<li><strong>Who buys?</strong> A household, a contractor, a hotel buyer, a distributor or a public procurer. ONS’s 69,281,400 people at mid-2024 are not one basket (${cite('ons-pop', 'ONS')} ). DBT’s start-of-2025 private-sector count of 5,690,265 businesses is not one buying committee (${cite('bpe-2025', 'Business population estimates 2025')} ).</li>
-<li><strong>In which nation — and which city?</strong> England grew 1.2% in the mid-2024 year; Scotland 0.7%; Wales 0.6%; Northern Ireland 0.4% (${cite('ons-pop', 'ONS')} ). London’s £656,291 million of 2024 GDP is a regional fact, not permission to average Manchester with Edinburgh or Belfast (${cite('ons-regional-gdp', 'ONS regional GDP')} ).</li>
-<li><strong>At what price, including which VAT?</strong> A willingness-to-pay range that uses the UK standard rate of 20% where that rate applies — not a dirham, riyal or dollar ex-VAT ASP copied across (${cite('vat-rates', 'GOV.UK VAT rates')} ).</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to if you miss. A Saudi industrial invoice and a California SaaS contract do not share one UK distributor.</li>
-<li><strong>Under which mark and which vehicle?</strong> Great Britain currently allows UKCA or CE for placing many products on the market; Northern Ireland generally requires CE under the Windsor Framework, and UKCA alone is not sufficient (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')} ). A Dubai free-zone licence or a Delaware C-corp is not a UK trading entity. An overseas company that opens a UK establishment files OS IN01 within one month, with a £124 fee (${cite('overseas-company', 'GOV.UK overseas company registration')} ).</li>
+<li><strong>Which nation.</strong> A London buyer is not a buyer in Glasgow, Cardiff, or Belfast. The business counts below are the frame.</li>
+<li><strong>What price, after VAT.</strong> The standard rate is 20%. A 5% UAE shelf price or a 15% Saudi shelf price is a different invoice.</li>
+<li><strong>Which mark.</strong> Great Britain can use UKCA or CE. Northern Ireland generally requires CE. UKCA alone is not enough there.</li>
+<li><strong>Which company form.</strong> An overseas company that opens a UK establishment has a filing, a fee, and a clock.</li>
 </ul>
 
-<p>Desktop TAM can frame those questions. It cannot answer them. Adjacent pages include <a href="/market-research-by-industry#country-uk">UK coverage on the industry matrix</a>, the 2026 ranking of <a href="/insights/top-market-research-companies-uk-2026">market research companies in the United Kingdom</a>, <a href="/uae-retail-market-research">retail market research in the UAE</a> and <a href="/uae-technology-market-research">technology market research in the UAE</a>. Kingdom-only proofs stay on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>.</p>
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its release date. A population, a GDP total, and a trade factsheet measure different things.</p>
+<ul>
+<li><strong>People.</strong> At mid-2024 the UK population was 69,281,400, up 755,300 (1.1%). Net international migration was 738,700. Natural change was +16,200. The release date is 30 July 2025 (${cite('ons-pop', 'Office for National Statistics')}).</li>
+<li><strong>GDP.</strong> UK GDP at current market prices was £2,884,006 million in 2024, with real growth of 1.1%. London accounted for £656,291 million, 9.1 million people, and £72,201 per head (${cite('ons-regional-gdp', 'ONS')}). London’s share is not a catchment for a first store outside London.</li>
+<li><strong>Foreign investment.</strong> The 2024 FDI release, published 27 January 2026, puts the inward position at £2,127.6 billion, from £2,203.0 billion. Inward flows were £13.4 billion, from £41.3 billion. The outward position was £1,856.1 billion (${cite('ons-fdi', 'ONS, 27 January 2026')}).</li>
+<li><strong>Trade with the United States, 2024.</strong> Goods imports were £57.1 billion and goods exports £59.3 billion. Services imports were £61.2 billion and services exports £137.0 billion. Other business services were £30.5 billion imported and £61.2 billion exported (${cite('ons-us-trade', 'ONS')}).</li>
+<li><strong>Trade with the UAE.</strong> The factsheet dated 24 September 2026 puts total trade in the four quarters to Q1 2026 at £25.2 billion: UK exports £15.7 billion and imports £9.5 billion. The UAE was the 20th partner and 1.3% of UK trade. At the end of 2024, UK outward FDI in the UAE was £4.2 billion, and UAE inward FDI in the UK was £7.0 billion (${cite('dbt-uae', 'Department for Business and Trade, 24 September 2026')}).</li>
+<li><strong>Trade with Saudi Arabia.</strong> The same date’s factsheet puts total trade in those four quarters at £13.4 billion: UK exports £9.6 billion, down 24.0%, and imports £3.8 billion, up 17.2%. Saudi Arabia was the 25th partner and 0.7% of UK trade. UK outward FDI in Saudi Arabia was £6.5 billion at the end of 2024. Inward Saudi FDI in the UK is not published on that sheet because of disclosure (${cite('dbt-saudi', 'Department for Business and Trade, 24 September 2026')}).</li>
+</ul>
 
-<h2 id="gulf-or-us-playbook-cannot-copy">Why can a Gulf or US playbook not be copied into the UK?</h2>
+<h2 id="four-nations">England, Scotland, Wales, and Northern Ireland</h2>
+<p>At the start of 2025 there were 5,690,265 private-sector businesses. Of those, 5.64 million were small (0 to 49 staff), 38,435 were medium, and 8,335 were large. SMEs were 99.85%. England had 5.0 million, Scotland 361,000, Wales 194,000, and Northern Ireland 139,000. London had 1.042 million and the South East 877,000, 34% combined. The release marks these as official statistics in development (${cite('bpe-2025', 'Department for Business and Trade')}). A national average hides the nation where the first invoice will be paid.</p>
+<p>The Companies House register, for April 2025 to March 2026, held 5,479,045 companies at year end, with 815,277 incorporations and 787,120 dissolutions (${cite('companies-register', 'Companies House')}). Register size is not a count of buyers.</p>
 
-<p>A Riyadh, Dubai or Houston instrument with British spelling is not a UK entry file. Three official series show why.</p>
+<h2 id="tax-and-company">VAT, corporation tax, and a UK company</h2>
+<p>Standard VAT has been 20% since 4 January 2011. The reduced rate is 5%. The zero rate is 0% (${cite('vat-rates', 'HMRC')}). You must register if VAT-taxable turnover for the last 12 months went over the threshold, or if you expect it to go over in the next 30 days (${cite('vat-register', 'HMRC')}). The registration threshold is £90,000 from 1 April 2024. The deregistration threshold is £88,000 (${cite('vat-thresholds', 'HMRC')}).</p>
+<p>For the financial year 2026, the main corporation-tax rate is 25% on profits over £250,000. The small-profits rate is 19% on profits of £50,000 or less. Marginal relief sits between those bands (${cite('ct-rates', 'HMRC')}). Finance Act 2025, section 13, is the charge and the main rate for that financial year (${cite('finance-act-2025', 'Finance Act 2025')}).</p>
+<p>An overseas company that opens a UK establishment must file form OS IN01 within one month. The fee is £124. Identity verification applies to directors (${cite('overseas-company', 'Companies House')}). The obligations page is the place to read registration, filing, and disclosure for that establishment (${cite('overseas-obligations', 'Companies House')}). A filing is not proof that someone will buy.</p>
 
-<p>First, the buyer mix is not a GCC age pyramid and not a US census tract. The UK added 755,300 people in the year to mid-2024, almost all from net international migration of 738,700; natural change was only +16,200 (${cite('ons-pop', 'ONS')} ). England, Scotland, Wales and Northern Ireland did not grow at the same rate. Do not invent a four-nation headcount from those growth rates.</p>
+<h2 id="marks">UKCA, CE, and the Gulf deal that is not in force</h2>
+<p>In Great Britain, products can use UKCA or CE under the Product Safety and Metrology (Amendment) Regulations 2024. UKCA may appear on a label or an accompanying document until 23:00 on 31 December 2027. Northern Ireland generally requires CE under the Windsor Framework. UKCA alone is not sufficient there (${cite('ukca-ce', 'Department for Business and Trade')}).</p>
+<p>The UK–GCC trade deal is a separate document, and it is about selling to the Gulf, not about a UK shelf. The conclusion summary, updated 10 June 2026, says negotiations concluded on 20 May 2026, that the legal text was still being finalised, and that signature and ratification would follow. The summary says the deal is not in force. It records GCC combined GDP of £1.8 trillion and UK–GCC trade of £53 billion (ONS, 2025). The long-run model in that summary is a UK GDP boost of £3.7 billion a year, wages of +£1.9 billion, and bilateral trade that could rise 19.8%, or an extra £15.5 billion, versus 2040 projections. It also records £580 million of duties removed in full and £360 million on day one (${cite('uk-gcc-fta', 'UK government, 10 June 2026')}). Those are the summary’s modelled figures. They are not a UK price.</p>
+<p>If the study collects personal data, the ICO’s research provisions sit under UK GDPR and the Data Protection Act 2018, including Article 89 safeguards for archiving, scientific or historical research, and statistics (${cite('ico-research', 'ICO')}). Section 19, as enacted, says research processing must not cause substantial damage or substantial distress, and must not be used for decisions about particular people except approved medical research (${cite('dpa-s19', 'Data Protection Act 2018')}).</p>
+<p>ISO 20252:2026 is the vocabulary and service-requirements standard for market, opinion, and social research (${cite('iso-20252-2026', 'ISO')}). The Market Research Society says the 2026 edition replaces the 2019 edition, and that certification to the 2026 standard is mandatory from September 2029 (${cite('mrs-iso-20252', 'Market Research Society')}). The ICC/ESOMAR code is the 2025 international code (${cite('esomar-2025', 'ICC/ESOMAR')}). A logo is not a finding about UK buyers.</p>
 
-<p>Second, the trade already exists — and it is not a proxy for SKU demand. In the four quarters to Q1 2026 the UAE was a £25.2 billion UK trading partner and Saudi Arabia a £13.4 billion partner (${cite('dbt-uae', 'DBT UAE factsheet')}; ${cite('dbt-saudi', 'DBT Saudi Arabia factsheet')} ). UK–US goods trade in 2024 was £57.1 billion of imports and £59.3 billion of exports; services were larger still, with £137.0 billion of UK exports including £61.2 billion of other business services (${cite('ons-us-trade', 'ONS UK trade with the United States, 2024')} ). None of those seats tells a brand whether a named buyer in Birmingham, Glasgow or Belfast will pay a named invoice.</p>
-
-<p>Third, the legal stack is not GCC VAT, not G-Mark, and not FDA. Standard UK VAT is 20% (${cite('vat-rates', 'GOV.UK VAT rates')} ). Corporation tax for financial year 2026 is 25% on profits over £250,000 and 19% on profits of £50,000 or less, with marginal relief between those bands (${cite('ct-rates', 'GOV.UK Corporation Tax rates')}; ${cite('finance-act-2025', 'Finance Act 2025, section 13')} ). Great Britain currently accepts UKCA or CE; Northern Ireland generally requires CE (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')} ). The UK–GCC trade deal is not a 2026 tariff assumption: negotiations concluded on 20 May 2026, the legal text is still being finalised, and the deal is not in force (${cite('uk-gcc-fta', 'UK–GCC conclusion summary')} ). A 2026 launch memo that writes “FTA access” is selling a signature that has not happened.</p>
-
-<h2 id="official-numbers">Which official numbers should a 2026 UK entry brief start from?</h2>
-
-<p>Use official series as the frame, then replace the frame with primary evidence for the SKU. Label every vintage. Do not blend ONS tables.</p>
-
-<h3>The UK demand frame</h3>
-
-<p>Open the mid-2024 population bulletin first. The UK estimate is 69,281,400. The annual change of +755,300 (1.1%) was the highest annual numerical growth in at least 75 years on that bulletin. England grew 1.2%, Scotland 0.7%, Wales 0.6% and Northern Ireland 0.4%. International inflows were 1,235,300 and outflows 496,500. Births were 662,100 and deaths 645,900 (${cite('ons-pop', 'ONS mid-year population estimates, mid-2024')} ). A “70 million UK consumers” slide that then budgets one London warehouse is not a first-year plan.</p>
-
-<p>GDP sits on a different labelled bulletin. The ONS regional economic activity release for 1998 to 2024 puts UK GDP at current market prices at £2,884,006 million in 2024, with real GDP growth of 1.1% in that table. London’s GDP was £656,291 million; the region had 9.1 million people and £72,201 of GDP per head (${cite('ons-regional-gdp', 'ONS regional GDP')} ). Use that series as written. Do not mix it with another ONS GDP vintage.</p>
-
-<p>The business population is a third labelled series, and DBT marks the 2025 estimates as official statistics in development. At the start of 2025 the UK had 5,690,265 private-sector businesses: 5.64 million small (0–49 employees), 38,435 medium and 8,335 large. SMEs were 99.85% of the count. England had 5.0 million, Scotland 361,000, Wales 194,000 and Northern Ireland 139,000. London (1.042 million) and the South East (877,000) together held 34% (${cite('bpe-2025', 'Business population estimates 2025')} ). Those are business counts, not a named specifier list.</p>
-
-<h3>The investment and US-trade frame</h3>
-
-<p>ONS’s 2024 FDI bulletin, released 27 January 2026, puts the UK inward FDI position at £2,127.6 billion, down from £2,203.0 billion, with inward flows of £13.4 billion against £41.3 billion a year earlier. The outward position was £1,856.1 billion (${cite('ons-fdi', 'ONS FDI 2024')} ). A large inward stock is not a signal that a named SKU will clear.</p>
-
-<p>The US corridor is already a services story. In 2024 the UK imported £57.1 billion of US goods and exported £59.3 billion; it imported £61.2 billion of US services and exported £137.0 billion. Other business services were £30.5 billion imported and £61.2 billion exported (${cite('ons-us-trade', 'ONS UK–US trade 2024')} ). Those export lines are not a UK TAM.</p>
-
-<h3>The GCC corridor frame — and the deal that is not in force</h3>
-
-<p>DBT’s 24 September 2026 factsheets are the right GCC trade vintage for a 2026 committee. For the four quarters to Q1 2026:</p>
-
-<table>
-<thead><tr><th>Partner</th><th>Total trade</th><th>UK exports</th><th>UK imports</th><th>Share / rank</th><th>End-2024 FDI</th></tr></thead>
-<tbody>
-<tr><td>United Arab Emirates</td><td>£25.2 billion</td><td>£15.7 billion</td><td>£9.5 billion</td><td>1.3% of UK trade; 20th partner</td><td>UK outward £4.2 billion; UAE inward in the UK £7.0 billion (${cite('dbt-uae', 'DBT UAE factsheet')} )</td></tr>
-<tr><td>Saudi Arabia</td><td>£13.4 billion</td><td>£9.6 billion (−24.0%)</td><td>£3.8 billion (+17.2%)</td><td>0.7% of UK trade; 25th partner</td><td>UK outward £6.5 billion; inward not available due to disclosure (${cite('dbt-saudi', 'DBT Saudi Arabia factsheet')} )</td></tr>
-</tbody>
-</table>
-
-<p>Those two partners are where Gulf goods and services already land in UK statistics. They remain two licence stacks on the Gulf side and one UK stack here. A Dubai free-zone company does not replace a UK establishment; a MISA file does not replace Companies House. For the outbound Gulf job see the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC playbook</a> and the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi playbook</a>. For Chinese sponsors using the same Gulf seats, see <a href="/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae">Chinese companies entering Saudi Arabia and the UAE</a>.</p>
-
-<p>The UK–GCC deal is context, not a 2026 duty line. The conclusion summary, updated 10 June 2026, records that negotiations concluded on 20 May 2026. The legal text is still being finalised; signature and ratification follow. The agreement is not yet in force. It cites ONS 2025 UK–GCC trade of £53 billion and a GCC combined GDP of £1.8 trillion. The long-run modelled effects — a £3.7 billion a year boost to UK GDP, wages +£1.9 billion, bilateral trade 19.8% higher than 2040 projections (an extra £15.5 billion), £580 million of duties removed in full and £360 million on day one — are government estimates of a deal that has not been signed (${cite('uk-gcc-fta', 'UK–GCC conclusion summary')} ). Do not write them as 2026 landed costs.</p>
-
-<h2 id="four-nations-two-marks">How do four nations, two marks and Companies House differ from a Gulf or US file?</h2>
-
-<p>Gulf counsel still writes “the UK is London” and “VAT is like the UAE.” US counsel still writes “register a Ltd the way we registered a Delaware C-corp” and “CE is done.” None of those sentences survives an official page.</p>
-
-<table>
-<thead><tr><th>Rule the UK file must carry</th><th>Published fact</th><th>What a GCC or US price file must not do</th></tr></thead>
-<tbody>
-<tr><td>Standard VAT</td><td>20% since 4 January 2011; reduced 5%; zero 0% (${cite('vat-rates', 'GOV.UK VAT rates')} )</td><td>Paste a 5% UAE, 15% Saudi or US sales-tax-exclusive ASP onto a UK shelf</td></tr>
-<tr><td>VAT registration</td><td>Threshold £90,000 from 1 April 2024; deregistration £88,000. Register if the last 12 months, or the next 30 days, exceed the threshold (${cite('vat-thresholds', 'GOV.UK VAT thresholds')}; ${cite('vat-register', 'GOV.UK register for VAT')} )</td><td>Assume a GCC VAT registration travels, or that a US sales-tax permit is the analogue</td></tr>
-<tr><td>Corporation tax, FY 2026</td><td>Main rate 25% above £250,000; small profits rate 19% at or below £50,000; marginal relief between (${cite('ct-rates', 'GOV.UK Corporation Tax rates')}; ${cite('finance-act-2025', 'Finance Act 2025, section 13')} )</td><td>Build a “UK margin” on UAE 9% federal corporate tax or on US federal-plus-state assumptions</td></tr>
-<tr><td>Great Britain product mark</td><td>UKCA or CE may be used to place products on the GB market under the 2024 amendment regulations. UKCA may appear on a label or accompanying document until 23:00 on 31 December 2027 (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')} )</td><td>Ship G-Mark-only or FDA-only product and call it UK-ready</td></tr>
-<tr><td>Northern Ireland</td><td>CE is generally required under the Windsor Framework; UKCA alone is not sufficient (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')} )</td><td>Treat Belfast as a GB warehouse with the same mark file</td></tr>
-<tr><td>UK establishment</td><td>An overseas company that opens a UK establishment files OS IN01 within one month; fee £124; directors are subject to identity verification (${cite('overseas-company', 'GOV.UK overseas company registration')}; ${cite('overseas-obligations', 'Companies House overseas-company obligations')} )</td><td>Treat a Dubai free zone, a Delaware C-corp or a London virtual office as the trading vehicle</td></tr>
-</tbody>
-</table>
-
-<p>Companies House is a volume fact, not a demand curve. In the financial year 1 April 2025 to 31 March 2026 the register stood at 5,479,045. Incorporations were 815,277 and dissolutions 787,120 (${cite('companies-register', 'Companies House register activities 2025–26')} ). That is how many legal persons exist, not how many will buy. Pair it with 8,335 large private-sector businesses at the start of 2025 against 5.64 million small ones (${cite('bpe-2025', 'Business population estimates 2025')} ). A B2B entry that samples “UK companies” without a size, nation and sector quota is sampling the long tail.</p>
-
-<p>The four nations are four catchments even when the legal vehicle is one. England held 5.0 million of the 5.69 million private-sector businesses at the start of 2025; Scotland 361,000; Wales 194,000; Northern Ireland 139,000. London plus the South East held 34% (${cite('bpe-2025', 'Business population estimates 2025')} ). A Heathrow warehouse is a logistics choice, not a Scotland or Northern Ireland demand proof. Browse <a href="/market-research-by-industry">market research by industry</a> for the UK country block.</p>
-
-<h2 id="gmark-or-fda-is-not-ukca">What does a G-Mark or an FDA file not buy you?</h2>
-
-<p>Gulf product teams treat the Gulf Conformity Mark as a passport. US product teams treat an FDA 510(k), an EPA mark or a UL listing the same way. GOV.UK’s GB page is narrower: for placing products on the market in Great Britain, UKCA or CE may be used under the Product Safety and Metrology (Amendment) Regulations 2024. UKCA marking may be on a label or in an accompanying document until 23:00 on 31 December 2027. Northern Ireland is not the same market. Under the Windsor Framework, CE is generally required there; UKCA alone is not sufficient (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')} ).</p>
-
-<p>A G-Mark technical file can feed a notified-body or approved-body assessment. It is not a substitute for UKCA or CE on a regulated SKU in Great Britain, and it is not a substitute for CE in Northern Ireland. An FDA letter is an FDA letter. Shipping G-Mark-only or FDA-only product into a regulated UK category is waiting for a customs hold, not “entering the UK.” Write plug type, voltage, language and the mark into the instrument the same way you write VAT. The reverse lesson is on the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC playbook</a>: CE is an EEA statement, not a Gulf statement.</p>
-
-<h2 id="gcc-versus-us-briefs">How should a GCC brief differ from a US brief?</h2>
-
-<p>The five proofs below are shared. The starting mistakes are not.</p>
-
-<p><strong>GCC sponsors</strong> — typically a Riyadh or Dubai commercial team — usually over-index on London, under-index on VAT, and import a Gulf VAT and mark file. The UAE is already a £25.2 billion UK trading partner and a £7.0 billion inward investor (${cite('dbt-uae', 'DBT UAE factsheet')} ). Saudi Arabia is a £13.4 billion trading partner with £6.5 billion of UK outward FDI in the Kingdom (${cite('dbt-saudi', 'DBT Saudi Arabia factsheet')} ). Those stocks are not SKU demand, 5% or 15% is not a UK shelf, and the UK–GCC deal is not live (${cite('uk-gcc-fta', 'UK–GCC conclusion summary')} ). Use <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> for the Gulf committee that sponsors the UK file, then interview in the UK.</p>
-
-<p><strong>US sponsors</strong> usually over-index on a single “UK” P&amp;L, under-index on Northern Ireland, and import an FDA or UL file. UK services exports to the United States were £137.0 billion in 2024 against £61.2 billion of imports, with other business services at £61.2 billion exported (${cite('ons-us-trade', 'ONS UK–US trade 2024')} ). A US sponsor that already invoices UK clients still needs a named buyer, a nation, a channel and a mark for the next SKU. Delaware incorporation is not OS IN01 (${cite('overseas-company', 'GOV.UK overseas company registration')} ). US sales tax is not 20% VAT (${cite('vat-rates', 'GOV.UK VAT rates')} ). Brief Sheridan when the budget sits there; field the UK interviews from London EC1V 2NX.</p>
-
-<p>A practical sequence, when the evidence supports it: name the first commercial nation from interviews, not from the largest GDP cell; price it with 20% VAT where the standard rate applies; treat Northern Ireland as a CE file if it is in the first SKU (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')} ); decide whether London is a commercial SKU or only a seat; keep Saudi and UAE proofs on those playbooks; and leave the UK–GCC deal in the 2027 context section until it is in force (${cite('uk-gcc-fta', 'UK–GCC conclusion summary')} ).</p>
-
-<h2 id="five-proofs">What five proofs must a Riyadh, Dubai or US committee demand?</h2>
-
-<table>
-<thead><tr><th>Proof the committee owes itself</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand</td><td>A defined buyer, a unit of demand and a nation that matches the first site (${cite('ons-pop', 'ONS')}; ${cite('bpe-2025', 'Business population estimates 2025')} )</td><td>A single “UK” market-size figure with no nation split</td></tr>
-<tr><td>Price, including tax</td><td>Paid-for willingness-to-pay or current invoice evidence, stated with 20% VAT where the standard rate applies (${cite('vat-rates', 'GOV.UK VAT rates')} )</td><td>A dirham, riyal or dollar ASP pasted onto a UK shelf</td></tr>
-<tr><td>Nation and catchment</td><td>England, Scotland, Wales or Northern Ireland volumes that respect London’s GDP weight without treating London as the country (${cite('ons-regional-gdp', 'ONS regional GDP')} )</td><td>A UK average presented as the first-year plan</td></tr>
-<tr><td>Channel and substitution</td><td>Who specifies, who distributes, what the buyer switches to if you miss</td><td>A channel map with no interviews</td></tr>
-<tr><td>Mark and vehicle</td><td>UKCA or CE in Great Britain, CE in Northern Ireland if the SKU is sold there, and the first legal vehicle — UK company or overseas establishment (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')}; ${cite('overseas-company', 'GOV.UK overseas company registration')} )</td><td>A slide that says “G-Mark is accepted in the UK” or “FDA covers Britain”</td></tr>
-</tbody>
-</table>
-
-<p>Those five tests are the entry study. Everything else is context, and context does not repay a launch budget.</p>
-
-<p>Primary work is usually a short, named programme: structured interviews with the people who specify or pay in the first commercial nation; a quantitative check on price, substitution and catchment; nation quotas that match the first site, not a convenience panel in one London postcode; and a source table that separates official series, supplier quotations and fieldwork. ISO 20252:2026 is the current vocabulary and service-requirements standard; MRS records that it replaces the 2019 edition, with certification to the 2026 standard mandatory from September 2029 (${cite('iso-20252-2026', 'ISO 20252:2026')}; ${cite('mrs-iso-20252', 'MRS')} ). It is a quality-system claim, not a finding. The ICC/ESOMAR 2025 code is the conduct frame (${cite('esomar-2025', 'ICC/ESOMAR 2025')} ).</p>
-
-<p>If the study interviews residents or employees, the UK GDPR research provisions apply. The ICO’s research guidance covers archiving, scientific or historical research and statistical purposes, with Article 89 safeguards (${cite('ico-research', 'ICO research provisions')} ). Section 19 of the Data Protection Act 2018 adds that research processing must not cause substantial damage or substantial distress, and must not be used to make decisions about particular people except in approved medical research (${cite('dpa-s19', 'DPA 2018, section 19')} ). Write the legal basis into the method note before you field.</p>
-
-<p>BioNixus prices that custom work between $10,000 and $60,000, depending on sample, nations and whether the output is a stand-alone entry file or a chapter inside a wider feasibility. The scope, timing and deliverables are guaranteed in writing. Accuracy of findings is not a claim we make.</p>
-
-<h2 id="sector-notes">How does the brief change by sector?</h2>
-
-<h3>Retail, FMCG and consumer brands</h3>
-
-<p>Start from the official population split, then replace it with a catchment. A West London tourist-facing format, a Birmingham grocer, an Edinburgh shop and a Belfast basket do not share a demand curve (${cite('ons-pop', 'ONS')} ). Price work has to state 20% VAT where the standard rate applies (${cite('vat-rates', 'GOV.UK VAT rates')} ). UAE–UK trade of £25.2 billion in the four quarters to Q1 2026 is a customs chapter, not a SKU forecast (${cite('dbt-uae', 'DBT UAE factsheet')} ). See <a href="/uae-retail-market-research">retail market research in the UAE</a> for the Gulf range, then sibling the UK instrument. Kingdom sampling notes stay on the <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">Saudi consumer-survey methods guide</a>. For B2C methods see <a href="/b2c-industries">B2C market research</a>.</p>
-
-<h3>Hospitality, travel retail and visitor catchments</h3>
-
-<p>Use national visitor series as the frame, then prove the competitive set. “UK tourism” as one occupancy curve mis-specifies length of stay and the named substitutes in London versus Edinburgh versus Manchester. A tracker that mixes overnight visitors with residents is a different instrument; see <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a> for the split, then rebuild the UK quotas. Do not interview Dubai mall traffic as a proxy for a Heathrow airside set.</p>
-
-<h3>Technology, industrials and B2B</h3>
-
-<p>Other business services were £61.2 billion of UK exports to the United States in 2024 (${cite('ons-us-trade', 'ONS UK–US trade 2024')} ). That is why US exporters already have a UK invoice — and why a B2B entry still has to recruit the buying committee. DBT’s 8,335 large private-sector businesses at the start of 2025 are the seats most industrial briefs need; the 5.64 million small businesses are not a substitute sample (${cite('bpe-2025', 'Business population estimates 2025')} ). Use <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> for the Gulf specifier who signs the UK budget, and <a href="/uae-technology-market-research">technology market research in the UAE</a> when the first SKU is a Gulf technology offer moving west.</p>
-
-<h3>Food, beverage and regulated consumer goods</h3>
-
-<p>Saudi–UK trade of £13.4 billion in the four quarters to Q1 2026 is a customs chapter, not a food SKU forecast (${cite('dbt-saudi', 'DBT Saudi Arabia factsheet')} ). Regulated packs still need UKCA or CE, UK on-pack copy, and 20% VAT where the standard rate applies (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')}; ${cite('vat-rates', 'GOV.UK VAT rates')} ). A G-Mark appliance that also heats food is two assessments, not one. An FDA facility registration is not a UK retail pack. If Northern Ireland is in the first SKU, the mark file is a CE file (${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')} ).</p>
-
-<h2 id="how-to-choose">How should you choose a UK market entry research partner?</h2>
-
-<p>Ask every firm, including BioNixus, to answer in writing before you sign:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for UK population, regional GDP, FDI, UK–US trade, UK–UAE and UK–Saudi trade, VAT, corporation tax, Companies House and UKCA/CE, and what is the date of each series?</li>
-<li>Will the study report by UK nation — and by city inside the first nation — or only as “the UK”?</li>
-<li>How many interviews or surveys will you complete, in which language, and with which quotas?</li>
-<li>Which VAT rate, and which mark (UKCA, CE, or both), does the brief assume (${cite('vat-rates', 'GOV.UK VAT rates')}; ${cite('ukca-ce', 'GOV.UK UKCA and CE guidance')} )?</li>
-<li>Is the first vehicle a UK company, an overseas-company establishment under OS IN01, or something else — and are you writing the demand chapter or the incorporation chapter (${cite('overseas-company', 'GOV.UK overseas company registration')} )?</li>
-<li>How will personal data be processed under the UK GDPR research provisions and DPA 2018 section 19 (${cite('ico-research', 'ICO')}; ${cite('dpa-s19', 'DPA 2018, section 19')} )?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
+<li>Which nation is the first sample, and which city?</li>
+<li>Is the price card on the 20% standard rate, the 5% reduced rate, or the zero rate?</li>
+<li>Is the product for Great Britain, Northern Ireland, or both, and which mark does that imply?</li>
+<li>Will you treat the UK–GCC summary of 10 June 2026 as a Gulf document that is not in force, rather than as a UK demand figure?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>How will respondent data be handled under the research provisions?</li>
 </ol>
 
-<p>London incorporation houses are often strong at Companies House paperwork. They are not automatically strong at demand evidence. A Gulf trade-promotion desk can cite the DBT factsheets; a US commercial desk can cite the ONS UK–US article. Neither can run the interviews. BioNixus does the demand job and will work alongside your counsel. Ask for ISO 20252:2026 and the ICC/ESOMAR 2025 code in writing (${cite('iso-20252-2026', 'ISO 20252:2026')}; ${cite('mrs-iso-20252', 'MRS')}; ${cite('esomar-2025', 'ICC/ESOMAR 2025')} ).</p>
-
-<p>Related reading includes the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC market entry playbook</a>, the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>, <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae">Chinese companies entering Saudi Arabia and the UAE</a> and <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>. Browse <a href="/market-research-by-industry">market research by industry</a> and the 2026 rankings of <a href="/insights/top-market-research-companies-uk-2026">market research companies in the United Kingdom</a>, <a href="/insights/top-market-research-companies-usa-2026">the USA</a>, <a href="/insights/top-market-research-companies-uae-2026">the UAE</a> and <a href="/insights/top-market-research-companies-saudi-arabia-2026">Saudi Arabia</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for UK market entry research?</h2>
-
-<p>BioNixus is a primary market research firm, not a company-formation house or a trade-promotion desk. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>The invoice is not buying a guaranteed finding. BioNixus guarantees, in writing: the agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. Accuracy of findings is not a claim we make.</p>
-
-<p>GCC teams brief the Al Khobar or Dubai field office and take the UK interviews from London. US teams brief Sheridan and take the same London field. To brief UK market entry research, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In the United States call <a href="tel:+18884655557">+1 888 465 5557</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -438,39 +317,39 @@ ${REFERENCES_HTML}`;
 
 export const UK_ENTRY_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does UK market entry research have to prove?',
+    question: 'What should a Gulf or US company research before selling in the UK?',
     answer:
-      'It has to prove addressable demand, price including 20% VAT where the standard rate applies, nation or catchment, channel, and the conformity mark plus legal vehicle, with dated, auditable evidence. A single UK TAM, a G-Mark file or an FDA letter is not UK market entry research. Primary interviews are what make the brief usable for a Riyadh, Dubai or US investment committee.',
+      'Name the nation, the buyer, the price after 20% VAT where the standard rate applies, and whether the product needs UKCA, CE, or both. A UK trade total does not answer those questions.',
   },
   {
-    question: 'Is the UK–GCC free trade agreement in force in 2026?',
+    question: 'Is the UK–GCC trade deal in force?',
     answer:
-      'No. Negotiations concluded on 20 May 2026. The UK government summary, updated 10 June 2026, states that the legal text is still being finalised, after which the deal will be signed and ratified. It is not in force. Modelled long-run effects such as a £3.7 billion a year GDP boost are estimates of a future agreement, not 2026 landed costs.',
+      'The UK government’s summary, updated on 10 June 2026, says the deal is not in force. Negotiations concluded on 20 May 2026. The summary said the legal text was still being finalised, then signature and ratification. Quote that page. It is not a UK shelf price.',
   },
   {
-    question: 'Can a GCC or US company treat the UK as one market?',
+    question: 'Are England, Scotland, Wales, and Northern Ireland one sample?',
     answer:
-      'No. England, Scotland, Wales and Northern Ireland did not grow at the same rate in the year to mid-2024, and Northern Ireland generally requires CE under the Windsor Framework while Great Britain currently allows UKCA or CE. London’s £656,291 million of 2024 GDP is a regional fact, not a four-nation catchment.',
+      'No. At the start of 2025 the business-population release counted 5.0 million private-sector businesses in England, 361,000 in Scotland, 194,000 in Wales, and 139,000 in Northern Ireland. Northern Ireland generally requires CE. UKCA alone is not sufficient there.',
   },
   {
-    question: 'Does a G-Mark or an FDA file replace UKCA or CE?',
+    question: 'When does a seller have to register for VAT?',
     answer:
-      'No. Great Britain currently allows UKCA or CE for placing many products on the market. UKCA may appear on a label or accompanying document until 23:00 on 31 December 2027. Northern Ireland generally requires CE; UKCA alone is not sufficient. A G-Mark or FDA file can feed an assessment. It is not a substitute for the UK mark on a regulated SKU.',
+      'Register if VAT-taxable turnover for the last 12 months went over the threshold, or if you expect it to go over in the next 30 days. The registration threshold is £90,000 from 1 April 2024. The deregistration threshold is £88,000.',
   },
   {
-    question: 'Which official numbers should a 2026 UK entry brief use?',
+    question: 'What does an overseas company file when it opens a UK establishment?',
     answer:
-      'Start from ONS mid-2024 population (69,281,400), ONS regional GDP 2024, ONS FDI 2024, ONS UK–US trade 2024, the September 2026 DBT UAE and Saudi factsheets, GOV.UK VAT and corporation-tax pages, Companies House 2025–26 register activities, DBT business population estimates 2025, and the UKCA/CE guidance. Label each series.',
+      'Form OS IN01 within one month. The fee is £124. Identity verification applies to directors. The filing is not proof of demand.',
   },
   {
-    question: 'How much does custom UK market entry research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom market entry programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, number of nations, mode and whether the output is a stand-alone entry file or a chapter inside a wider study. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the cities, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus from London rather than a formation agent?',
+    question: 'Why brief BioNixus rather than relying only on a Companies House form?',
     answer:
-      'Incorporation houses file the vehicle. BioNixus proves demand. GCC teams brief Al Khobar or Dubai; US teams brief Sheridan; fieldwork is designed from London EC1V 2NX. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'The form opens the establishment. BioNixus measures demand. The London office is a leadership office. Dubai and Al Khobar are field offices. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

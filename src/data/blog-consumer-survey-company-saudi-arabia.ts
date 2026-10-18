@@ -44,15 +44,15 @@ export const SAUDI_CONSUMER_SURVEY_META_DESCRIPTION =
   'Consumer survey company Saudi Arabia guide to sampling, Arabic/English, online vs CATI/F2F, women respondents, regions, costs and how to choose a firm.';
 
 export const SAUDI_CONSUMER_SURVEY_DISPLAY_TITLE =
-  'Consumer Survey Research in Saudi Arabia: Sampling, Language and Mode';
+  'How to sample shoppers in Saudi Arabia';
 
 export const SAUDI_CONSUMER_SURVEY_DISPLAY_SUBTITLE =
-  'How to brief a consumer survey company in the Kingdom';
+  'Language, city, and who is actually in the household';
 
 export const SAUDI_CONSUMER_SURVEY_BREADCRUMB_LABEL = 'Consumer survey company Saudi Arabia';
 
 export const SAUDI_CONSUMER_SURVEY_EXCERPT =
-  'A sourced 2026 guide to consumer survey research in Saudi Arabia: how to sample a 35.3 million population, when Arabic and English both belong on the instrument, when online is enough, how to reach women, which cities to quota, and what custom work costs.';
+  'A plain guide to Saudi consumer surveys: who is in the sample, which language, which mode, and which cities.';
 
 export const SAUDI_CONSUMER_SURVEY_PUBLISHED_ISO = '2026-10-15T12:00:00.000Z';
 export const SAUDI_CONSUMER_SURVEY_UPDATED_ISO = '2026-10-15T12:00:00.000Z';
@@ -220,202 +220,137 @@ export function countWords(html: string): number {
 }
 
 export const SAUDI_CONSUMER_SURVEY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What does a consumer survey company Saudi Arabia brief have to specify?', anchor: 'what-brief-specifies' },
-  { heading: 'How should you sample a 35.3 million population that is not one buyer?', anchor: 'sampling-frame' },
-  { heading: 'Arabic and English: why a bilingual instrument is not two labels', anchor: 'arabic-english' },
-  { heading: 'Online vs CATI vs face-to-face: what official usage actually implies', anchor: 'online-cati-f2f' },
-  { heading: 'How to recruit women respondents without biasing the file', anchor: 'women-respondents' },
-  { heading: 'How should consumer research Saudi Arabia set regional quotas?', anchor: 'regions-quotas' },
-  { heading: 'What a 2026 consumer survey costs — and what the price is buying', anchor: 'costs' },
-  { heading: 'How to choose a consumer survey company in Saudi Arabia', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What the brief has to name', anchor: 'what-to-name' },
+  { heading: 'One population, more than one buyer', anchor: 'one-population' },
+  { heading: 'Arabic, English, and the mode', anchor: 'language-and-mode' },
+  { heading: 'Women in the sample', anchor: 'women' },
+  { heading: 'Cities, not one national number', anchor: 'cities' },
+  { heading: 'Personal data and price', anchor: 'data-and-price' },
+  { heading: 'Who fields the work', anchor: 'who-fields' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const SAUDI_CONSUMER_SURVEY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A consumer survey company Saudi Arabia brief must lock the buyer, the language, the mode and the city quotas before fieldwork starts. Online is not automatic because internet use is near-universal. Arabic and English are not interchangeable labels. Women are not a residual cell. A national TAM is not a sample.</p>`;
+export const SAUDI_CONSUMER_SURVEY_EXECUTIVE_SUMMARY_HTML = `<p>A consumer survey company Saudi Arabia brief names who buys, in which language, in which cities, and with quotas for sex and nationality. Saudis and non-Saudis do not share one age structure or one shopping basket. Wide internet access does not retire phone interviews or a visit to the household.</p>`;
 
-const NARRATIVE_HTML = `<p>Brand, retail and services teams still buy a “KSA online sample” and treat the output as consumer research Saudi Arabia. It is not. A consumer survey has to name who buys, in which language, through which mode, in which cities, and with which sex and nationality quotas — before the first invitation is sent. This guide sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma briefs. It is not an SFDA or physician-survey file.</p>
+const NARRATIVE_HTML = `<p>A “KSA online sample” is often treated as the whole market. It is not. A consumer survey company Saudi Arabia brief has to name who buys, in which language, through which mode, in which cities, and with which sex and nationality quotas, before the first invitation is sent. This note sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for non-pharma briefs. See <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a> and <a href="/uae-retail-market-research">retail market research in the UAE</a> when the same sponsor is sequencing both markets.</p>
 
-<p>Search results for “consumer survey company Saudi Arabia” mix panel farms, Dubai fieldwork houses and generic MENA consultancies. Few say how the sample was built. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026 (120 in 2025). Custom work is $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. See the <a href="/bionixus-industries">industries hub</a>, <a href="/b2c-industries">B2C market research</a> and <a href="/consumer-market-research">consumer market research</a>.</p>
+<h2 id="what-to-name">What the brief has to name</h2>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 Saudi consumer survey can cite, October 2026</strong></p>
-<ul>
-<li><strong>35,300,280</strong> people at mid-2024: about 19.6 million Saudis (55.6%) and about 15.7 million non-Saudis (44.4%), up 4.7% from mid-2023. Non-Saudis were 75.6% of the increase; males were 70.8% (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}).</li>
-<li><strong>32,175,224</strong> people in Census 2022, of whom 18.8 million were Saudi (58.4%) and 13.4 million non-Saudi (41.6%). The median age was 29. Sixty-three percent of Saudis were under 30 (${cite('spa-census-2022', 'Saudi Press Agency')}).</li>
-<li><strong>99.0%</strong> of individuals aged 15–74 used the internet in 2025: 99.0% of males, 98.9% of females, 99.3% of Saudis and 98.6% of non-Saudis. Daily use was 96.8%. Mobile access was 98.4%. Social-media use among internet users was 96.2% (${cite('gastat-ict-2025', 'GASTAT')}).</li>
-<li><strong>99%</strong> internet penetration in the CST Saudi Internet Report 2024, with average mobile data consumption of 48 GB per person per month — three times the global average (${cite('cst-internet-2024', 'CST')}).</li>
-<li><strong>SAR 11,839</strong> average monthly household disposable income and <strong>SAR 10,884</strong> average monthly consumption in the 2023 household survey (122,325 households). Saudi households spent SAR 16,028; non-Saudi households spent SAR 5,574 (${cite('gastat-hies-2023', 'GASTAT')}).</li>
-<li><strong>33.7%</strong> Saudi female labour-force participation in Q3 2025, against Vision 2030’s original target of lifting women’s participation from 22% to 30% (${cite('gastat-lfs-q3-2025', 'GASTAT')}; ${cite('vision-2030-overview', 'Vision 2030')}).</li>
-</ul>
-</div>
+<p>Who is the unit? A Saudi household shopper, a non-Saudi resident, a visitor, or a teenager with a phone. GASTAT’s mid-2024 population estimate is 35.3 million. Saudis and non-Saudis do not share one age structure or one basket. ${cite('gastat-pop-2024', 'GASTAT')}</p>
 
-<h2 id="what-brief-specifies">What does a consumer survey company Saudi Arabia brief have to specify?</h2>
+<p>The national portal lists the 2024 population as 35,300,280. ${cite('mygov-stats', 'my.gov.sa')}</p>
 
-<p>A consumer survey company Saudi Arabia programme is not “n=1,000 online, KSA.” It tells a brand whether a named offer will be noticed, chosen and paid for — by a named buyer, in a named city, in a named language. Five specifications separate a usable file from a dashboard nobody can defend:</p>
+<p>Census 2022, reported by the Saudi Press Agency, counted 32,175,224 people. 18.8 million were Saudi, 58.4%. 13.4 million were non-Saudi, 41.6%. The median age was 29. Sixty-three percent of Saudis were under 30. ${cite('spa-census-2022', 'Saudi Press Agency')}</p>
 
-<ul>
-<li><strong>Who is the unit?</strong> A Saudi household shopper, a non-Saudi labour-camp resident, a visitor, a card-holder or a teen with a phone. GASTAT’s mid-2024 population is 35.3 million, but Saudis and non-Saudis do not share one age structure or one basket (${cite('gastat-pop-2024', 'GASTAT')}). Census 2022 already showed the same split at 58.4% / 41.6% (${cite('spa-census-2022', 'SPA')}).</li>
-<li><strong>In which language?</strong> The Basic Law states that the Kingdom’s language is Arabic (${cite('boe-basic-law', 'Basic Law of Governance')}). English is widely used among non-Saudis and in some urban categories. A single-language instrument is a sample decision, not a translation afterthought.</li>
-<li><strong>Through which mode?</strong> Online (CAWI), telephone (CATI) or face-to-face (CAPI / intercept). GASTAT’s own labour-force survey still mixes CAPI field visits and CATI on about 96,000 dwellings a quarter (${cite('gastat-lfs-q3-2025', 'GASTAT')}). Near-universal internet use does not retire those modes.</li>
-<li><strong>In which cities?</strong> Riyadh, Jeddah and the Eastern Province are not interchangeable catchments. A Kingdom average hides the only city that can carry the first store, the first campaign or the first warehouse.</li>
-<li><strong>With which sex and nationality quotas?</strong> Among Saudis, males and females were 50.1% and 49.9% in mid-2024. Among non-Saudis, males were 77.2% and females 22.8% (${cite('gastat-pop-2024', 'GASTAT')}). A convenience panel that is 70% male is describing the non-Saudi working-age pyramid, not a Saudi family shopper.</li>
-</ul>
+<p>58.4% Saudi is the 2022 census. The mid-2024 estimate is a later figure. Do not average the two shares.</p>
 
-<p>Desktop TAM can frame those questions. It cannot answer them. Adjacent country pages include <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a>, <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a> and <a href="/saudi-arabia-financial-services-market-research">financial services market research in Saudi Arabia</a>.</p>
+<p>In which language? The Basic Law says the Kingdom’s language is Arabic and the capital is Riyadh. ${cite('boe-basic-law', 'Basic Law of Governance')}</p>
 
-<p>If the study interviews residents, the Personal Data Protection Law applies to personal data processed in the Kingdom. SDAIA’s controller-and-processor guide records the in-force date as 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('pdpl-text', 'PDPL text')}; ${cite('sdaia-guide', 'SDAIA')}). Write the legal basis, the retention rule and the deletion path into the method note before the first incentive is paid.</p>
+<p>English is widely used among non-Saudis and in some urban categories. A single-language questionnaire is a sample decision.</p>
 
-<h2 id="sampling-frame">How should you sample a 35.3 million population that is not one buyer?</h2>
+<p>Through which mode? Online, telephone, or face to face. GASTAT’s own labour-force survey still mixes field visits and phone interviews. ${cite('gastat-lfs-q3-2025', 'GASTAT labour force')}</p>
 
-<p>The sampling error that wrecks Saudi consumer files is not a small n. It is a frame that treats 35.3 million residents as one buyer. Official series show why that frame fails.</p>
+<p>Near-universal internet use does not retire those modes.</p>
 
-<h3>Nationality is the first split, not a banner</h3>
+<h2 id="one-population">One population, more than one buyer</h2>
 
-<p>GASTAT’s mid-2024 estimate puts Saudis at 55.6% and non-Saudis at 44.4%. The 2023–2024 increase of 1.6 million people was 75.6% non-Saudi and 70.8% male (${cite('gastat-pop-2024', 'GASTAT')}). Census 2022, the frame underneath those estimates, counted 32,175,224 people, 18.8 million of them Saudi (${cite('spa-census-2022', 'SPA')}). A Saudi-family grocery and a labour-camp telecom offer do not share one buyer. Mixing them without quotas describes neither group.</p>
+<p>GASTAT’s mid-2024 estimate puts Saudis at 55.6% and non-Saudis at 44.4%. The 2023–2024 increase of 1.6 million people was 75.6% non-Saudi and 70.8% male. Among Saudis, males and females were 50.1% and 49.9%. Among non-Saudis, males were 77.2% and females 22.8%. Among Saudis, 33.5% were aged 0 to 14 and 62.7% were of working age, 15 to 64. Among non-Saudis those shares were 8.6% and 89.9%. Saudis aged 65 and over were 3.8% of Saudis. ${cite('gastat-pop-2024', 'GASTAT')}</p>
 
-<p>The age structures are not close. Among Saudis, 33.5% were aged 0–14 and 62.7% were of working age (15–64) in mid-2024. Among non-Saudis those shares were 8.6% and 89.9% (${cite('gastat-pop-2024', 'GASTAT')}). Census 2022 put the median age at 29 and said 63% of Saudis were under 30 (${cite('spa-census-2022', 'SPA')}). Vision 2030 already treated “more than half of the Saudi population below age 25” as a planning fact (${cite('vision-2030-overview', 'Vision 2030')}). A sample that is short of Saudi 18–34s is short of the buyers most FMCG, entertainment and fintech briefs are chasing.</p>
+<p>A convenience panel that is 70% male is describing a male-heavy non-Saudi age structure. It is not a Saudi family shopper. A Saudi-family grocery and a labour-camp telecom offer do not share one buyer.</p>
 
-<h3>The basket is not one basket</h3>
+<p>Vision 2030 already treated “more than half of the Saudi population below age 25” as a planning fact. ${cite('vision-2030-overview', 'Vision 2030')}</p>
 
-<p>The 2023 Household Income and Consumption Expenditure Survey — 122,325 households drawn from Census 2022 — is the official proof that a “KSA household” is two households. Average monthly disposable income was SAR 11,839 (Saudi mean SAR 18,056; non-Saudi mean SAR 5,428). The medians were lower: SAR 7,362 overall, SAR 13,655 Saudi and SAR 3,657 non-Saudi. Average monthly consumption was SAR 10,884, SAR 16,028 and SAR 5,574 respectively; per-capita consumption was SAR 3,533 versus SAR 1,961 (${cite('gastat-hies-2023', 'GASTAT')}). A willingness-to-pay cell that averages those two groups is not a price.</p>
+<p>The 2023 household survey is the official proof that a “KSA household” is not one household. It covered 122,325 households. Average monthly disposable income was SAR 11,839. The Saudi mean was SAR 18,056. The non-Saudi mean was SAR 5,428. The medians were lower: SAR 7,362 overall, SAR 13,655 Saudi and SAR 3,657 non-Saudi. Average monthly consumption was SAR 10,884, SAR 16,028 and SAR 5,574. Per-capita consumption was SAR 3,533 versus SAR 1,961. Food and beverages took 27.9% of final monetary consumption. Housing, water, electricity, gas and other fuels took 14.1%. ${cite('gastat-hies-2023', 'GASTAT household survey')}</p>
 
-<p>Food and beverages took 27.9% of final monetary consumption; housing, water, electricity, gas and other fuels took 14.1% (${cite('gastat-hies-2023', 'GASTAT')}). Those shares frame a grocery or utilities brief; they are not SKU evidence. Price work still has to state whether the shelf price includes the 15% VAT that ZATCA requires on taxable sales (${cite('zatca-vat', 'ZATCA')}; ${cite('boe-vat', 'VAT Law')}).</p>
+<p>A willingness-to-pay cell that averages SAR 16,028 and SAR 5,574 is not a price. Those shares frame a grocery or utilities brief. They are not evidence for one product.</p>
 
-<h3>What a defensible sample looks like</h3>
+<h2 id="language-and-mode">Arabic, English, and the mode</h2>
 
-<p>Write the quotas before the panel is rented. A typical national consumer survey Saudi Arabia design for a household brand locks, at minimum:</p>
+<p>Write the questionnaire in the language the buyer thinks in. If the buyer thinks in Arabic, write the Arabic first. Test both languages. GASTAT’s ICT survey asks about internet use, device access and online purchases in the last three months. That reference period has to be the same in both languages. ${cite('gastat-ict-method', 'GASTAT ICT methodology')}</p>
 
-<ul>
-<li>nationality (Saudi / non-Saudi) to the mid-2024 55.6 / 44.4 split, or to the buyer the brief actually wants (${cite('gastat-pop-2024', 'GASTAT')});</li>
-<li>sex inside each nationality — near parity for Saudis, a male-heavy cell only if the buyer is the non-Saudi working-age population (${cite('gastat-pop-2024', 'GASTAT')});</li>
-<li>age bands that respect the Saudi youth bulge (Census 2022: 63% of Saudis under 30; ${cite('spa-census-2022', 'SPA')});</li>
-<li>city or region cells for Riyadh, Jeddah / Makkah and the Eastern Province, plus an “other regions” cell if the claim is national;</li>
-<li>language of interview, recorded as a variable, not only as a field setting.</li>
-</ul>
+<p>Record the language of the interview. Gulf Arabic, Egyptian Arabic and Levantine Arabic are not one script. The show-card has to match the person in front of you.</p>
 
-<p>Incidence then does the rest. A north-Riyadh villa file and a prepaid-telecom file among non-Saudi males are not the same n. BioNixus sets the quotas against the official series, then replaces the series with the completed interviews.</p>
+<p>The case for online fieldwork looks strong on a slide. In 2025, 99.0% of people aged 15 to 74 used the internet: 99.0% of males, 98.9% of females, 99.3% of Saudis and 98.6% of non-Saudis. Daily use was 96.8%. Mobile access was 98.4%. Home use was 98.7%. Social-media use among internet users was 96.2%. Seventy-one percent had bought goods or services online. Among Saudis the rate was 80.2%. Among Saudi females it was 82.8%, against 77.6% for Saudi males. Clothing, footwear and sports goods were 88.8% of those online baskets. Cosmetics were 40.2%. Among internet users, 97.1% of females and 95.7% of males used social networks. 56.4% of females and 57.7% of males looked up information on goods or services. ${cite('gastat-ict-2025', 'GASTAT ICT survey')}</p>
 
-<h2 id="arabic-english">Arabic and English: why a bilingual instrument is not two labels</h2>
+<p>The CST Saudi Internet Report 2024 reports 99% penetration and average mobile data use of 48 GB a month. ${cite('cst-internet-2024', 'CST')}</p>
 
-<p>The Basic Law is unambiguous: the Kingdom’s language is Arabic, and its capital is Riyadh (${cite('boe-basic-law', 'Basic Law of Governance')}). The Bureau of Experts’ English text is a guidance translation; the Arabic text governs. That is the legal starting point for any consumer instrument fielded in the Kingdom. It is not a style preference.</p>
+<p>99.0% of people aged 15 to 74, and 99% penetration, are two published figures. Say which one you mean. Coverage is not a response rate. Daily users still refuse long questionnaires.</p>
 
-<p>It is also not an argument for Arabic-only fieldwork. Mid-2024 non-Saudis were 44.4% of the population, and 89.9% of them were of working age (${cite('gastat-pop-2024', 'GASTAT')}). Many sit interviews in English or another non-Arabic language. A grocery U&amp;A among Saudi women in Riyadh is an Arabic instrument. A fintech file among non-Saudi males in the same city often needs English as the lead language. The mistake is to field one language and then “translate the open ends.”</p>
+<p>The Kingdom’s own surveys still mix modes. The labour-force survey for the third quarter of 2025 collected data through field visits and phone interviews, using computer-assisted personal and telephone interviewing, on about 96,000 dwellings a quarter, drawn from the Census 2022 dwelling frame. ${cite('gastat-lfs-q3-2025', 'GASTAT')}</p>
 
-<p>A bilingual Saudi consumer survey has four jobs, not one:</p>
+<p>The 2023 household survey sent interviewers to 122,325 households. ${cite('gastat-hies-2023', 'GASTAT')}</p>
 
-<ul>
-<li><strong>Author in the language of the decision-maker.</strong> If the buyer thinks in Arabic, write the Arabic first. Back-translation from English is how “value for money” becomes a phrase no Riyadh shopper would say.</li>
-<li><strong>Cognitive-test both languages.</strong> A five-person Arabic pilot and a five-person English pilot will catch the items that flip meaning. GASTAT’s own ICT survey asks about internet use, device access and online purchases in the last three months — a reference period that has to be identical in both languages (${cite('gastat-ict-method', 'GASTAT')}).</li>
-<li><strong>Record language of interview.</strong> Language is a variable. A file that cannot split Arabic and English completes is a file that cannot say whether a brand problem is a brand problem or a wording problem.</li>
-<li><strong>Do not treat Gulf Arabic, Egyptian Arabic and Levantine Arabic as one script.</strong> The interviewer and the show-card have to match the respondent in front of them. A Dubai-authored Gulf instrument is closer than a Cairo instrument, and it is still not a Jeddah instrument until you test it.</li>
-</ul>
+<p>Census 2022 combined self-enumeration with more than one million follow-up phone calls and 900,000 field visits. ${cite('spa-census-2022', 'Saudi Press Agency')}</p>
 
-<p>Among internet users aged 15–74 in 2025, 97.1% of females and 95.7% of males used social networks; 56.4% of females and 57.7% of males looked up information on goods or services (${cite('gastat-ict-2025', 'GASTAT')}). Those rates do not prove an item is comprehensible. Only a bilingual pilot does. For CSAT or tracker work that also runs in the UAE, sibling the instruments; do not copy them. The recommend-question discipline on <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a> is the same; the sample is not. Compare method, not numbers, with <a href="/uae-retail-market-research">retail market research in the UAE</a> if the sponsor is sequencing both markets.</p>
+<p>If the statistics office still needs visits and phone calls to describe the same population, “online is representative because internet use is 99%” is a coverage claim. It is not a sampling frame.</p>
 
-<h2 id="online-cati-f2f">Online vs CATI vs face-to-face: what official usage actually implies</h2>
+<p>Use online when the buyer is aged 15 to 74, the task is short, and the category already lives on a phone. Use the phone when you need a mid-length interview or people who will not open a panel link. Use a household or store-exit visit when the category has to be shown, not only described. Mixed mode is the default for a file that will be argued in an investment committee.</p>
 
-<p>The case for online-only Saudi fieldwork looks obvious on a slide. GASTAT’s 2025 ICT survey found that 99.0% of individuals aged 15–74 used the internet, 96.8% used it at least daily, 98.4% used a mobile phone to get online, and 98.7% used it at home (${cite('gastat-ict-2025', 'GASTAT')}). CST’s 2024 internet report put penetration at 99% and average mobile data use at 48 GB a month, three times the global average (${cite('cst-internet-2024', 'CST')}). Seventy-one percent of 15–74s had bought goods or services online; among Saudis the rate was 80.2%, and among Saudi females it was 82.8% — higher than Saudi males at 77.6%. Clothing, footwear and sports goods were 88.8% of those online baskets; cosmetics were 40.2% (${cite('gastat-ict-2025', 'GASTAT')}).</p>
+<h2 id="women">Women in the sample</h2>
 
-<p>That is a strong case for mobile-first CAWI when the buyer is an internet-using 15–74-year-old and the task is short. It is not a case for retiring CATI and face-to-face.</p>
+<p>Among Saudis, women were 49.9% of the mid-2024 estimate, against 50.1% male. Among non-Saudis, women were 22.8%. ${cite('gastat-pop-2024', 'GASTAT')}</p>
 
-<h3>The Kingdom’s own surveys still mix modes</h3>
+<p>A file that is 30% female is either a non-Saudi labour sample or a failed Saudi household sample. Write the sex quota inside each nationality before fieldwork.</p>
 
-<p>GASTAT’s labour-force survey for Q3 2025 collected data “through field visits and telephonic interviews” using CAPI and CATI, on a sample of about 96,000 dwellings a quarter, drawn from the Census 2022 dwelling frame (${cite('gastat-lfs-q3-2025', 'GASTAT')}). The 2023 household income and consumption survey sent interviewers to 122,325 households (${cite('gastat-hies-2023', 'GASTAT')}). Census 2022 itself combined self-enumeration with more than one million follow-up phone calls and 900,000 field visits (${cite('spa-census-2022', 'SPA')}). If the national statistics office still needs CAPI and CATI to describe the same population, a brand tracker that claims “online is representative because internet use is 99%” is selling coverage, not a frame.</p>
+<p>Vision 2030 set a target to lift women’s workforce participation from 22% to 30%. It also noted that more than 50% of university graduates were female. ${cite('vision-2030-overview', 'Vision 2030')}</p>
 
-<h3>Coverage is not cooperation</h3>
+<p>GASTAT’s third-quarter 2025 labour-force survey put Saudi female participation at 33.7%, the employment-to-population ratio at 29.7%, and unemployment at 12.1%, against Saudi male participation of 64.3%. Saudi female youth aged 15 to 24 had a participation rate of 17.6% and unemployment of 24.2%. ${cite('gastat-lfs-q3-2025', 'GASTAT')}</p>
 
-<p>Internet use at 99.0% among 15–74s is coverage, not a response rate. Daily users still refuse panels and abandon long grids. Non-Saudis were 44.4% of mid-2024 residents and 89.9% of working age (${cite('gastat-pop-2024', 'GASTAT')}); many live in compounds and labour accommodation that online panels under-cover. Saudis aged 65 and over were 3.8% of Saudis (${cite('gastat-pop-2024', 'GASTAT')}) — the share an online-only grocery or banking file will miss if older decision-makers are in scope.</p>
+<p>The original 30% participation target has been crossed in that survey. The brief still has to say whether the buyer is an employed Saudi woman, a household shopper outside the labour force, or both.</p>
 
-<h3>When each mode earns its invoice</h3>
+<p>Internet use in 2025 was 98.9% among females aged 15 to 74 and 99.2% among Saudi females. ${cite('gastat-ict-2025', 'GASTAT')}</p>
 
-<table>
-<thead><tr><th>Mode</th><th>Use it when</th><th>Do not use it when</th></tr></thead>
-<tbody>
-<tr><td>Online (CAWI), mobile-first</td><td>The buyer is 15–74, the task is short, and the category already lives on a phone — 98.4% of 15–74s get online that way, and 96.2% of internet users are on social networks (${cite('gastat-ict-2025', 'GASTAT')})</td><td>The brief needs a household roster, a long price grid, a low-literacy cell, or a labour-camp catchment the panel cannot see</td></tr>
-<tr><td>CATI</td><td>You need a probability-leaning contact from a number frame, a mid-length interview, or a check on people who will not open a panel link. GASTAT still uses it for the labour-force survey (${cite('gastat-lfs-q3-2025', 'GASTAT')})</td><td>The questionnaire needs show-cards, a shelf set or a 40-minute U&amp;A</td></tr>
-<tr><td>Face-to-face (CAPI / intercept)</td><td>You need a household, a store exit, a mall catchment or a category that is shown, not described. The household income survey is the official proof that CAPI still scales (${cite('gastat-hies-2023', 'GASTAT')})</td><td>The brief is a weekly brand tracker that cannot wait on interviewer routing</td></tr>
-</tbody>
-</table>
+<p>An online design can reach women. It will not if the panel is built for a male click-stream. A household visit that only fields male interviewers will miss or distort female respondents in some households. BioNixus fields gender-appropriate interviewer teams for household work. That is a fieldwork practice. It is not a statute.</p>
 
-<p>Mixed mode is the default for any file that will be argued in an investment committee. Online fills the 15–74 mass. CATI or CAPI fills the cells the panel will not. WhatsApp recruitment is a contact channel, not a mode; a browser interview is still CAWI and still needs the same quotas. A brand-health tracker that has to move a budget follows the same rule as the Dubai tracker note on this hub: custom beats a shared category index. See <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai and the UAE</a> for the tracker logic, and keep the Saudi sample on a Saudi frame.</p>
+<p>The statute that changed mobility is the 26 September 2017 decree authorising driving licences for women, implemented from June 2018. ${cite('embassy-driving', 'Embassy of Saudi Arabia, 26 September 2017')}</p>
 
-<h2 id="women-respondents">How to recruit women respondents without biasing the file</h2>
+<p>The Traffic Law, as reported by the Saudi Press Agency, provides driving licences for males and females alike. ${cite('spa-driving', 'Saudi Press Agency')}</p>
 
-<p>Women are not a residual quota in consumer research Saudi Arabia. Among Saudis they are half the population: 49.9% in the mid-2024 estimates, against 50.1% male (${cite('gastat-pop-2024', 'GASTAT')}). Among non-Saudis they are 22.8% (${cite('gastat-pop-2024', 'GASTAT')}). A file that is 30% female is therefore either a non-Saudi labour sample in disguise or a failed Saudi household sample. Write the sex quota inside each nationality before fieldwork, not as a “boost” after the first 400 completes.</p>
+<p>Mobility is better than it was in 2017. That is not a reason to treat one night-time central location as a national sample of women.</p>
 
-<p>The economic reason is in the official series, not in a slogan. Vision 2030 set a target to lift women’s workforce participation from 22% to 30% (${cite('vision-2030-overview', 'Vision 2030')}). GASTAT’s Q3 2025 labour-force survey put Saudi female participation at 33.7%, the employment-to-population ratio at 29.7% and unemployment at 12.1%, against Saudi male participation of 64.3% (${cite('gastat-lfs-q3-2025', 'GASTAT')}). The original 30% target has been crossed. The brief still has to decide whether the buyer is an employed Saudi woman, a household shopper outside the labour force, or both.</p>
+<h2 id="cities">Cities, not one national number</h2>
 
-<p>Online access is not the barrier. In 2025, internet use was 98.9% among females aged 15–74 and 99.2% among Saudi females (${cite('gastat-ict-2025', 'GASTAT')}). Saudi females were more likely than Saudi males to buy online (82.8% versus 77.6%) and slightly more likely to use social networks (97.1% versus 95.7%) (${cite('gastat-ict-2025', 'GASTAT')}). An online-only design can reach women. It will not if the panel is built for a male click-stream.</p>
+<p>Consumer research Saudi Arabia that reports a single “KSA” number hides the decision the commercial team can act on: where to put the first stock, the first store, or the first media weight. The Basic Law names Riyadh as the capital. ${cite('boe-basic-law', 'Basic Law')}</p>
 
-<p>Face-to-face is where the bias is operational. A household CAPI wave that only fields male interviewers will miss or distort female respondents in conservative households. BioNixus fields gender-appropriate interviewer teams for household work and female moderators for female groups. That is practice, not a statute. The statute that changed access is the 26 September 2017 royal decree authorising driving licences for women, implemented from June 2018 (${cite('embassy-driving', 'Saudi Embassy')}; ${cite('spa-driving', 'SPA')}). Mobility is better than it was in 2017. It is not a reason to treat a night-time central location or a family-floor mall intercept as a national female sample.</p>
+<p>Riyadh, Jeddah and the Eastern Province are not interchangeable. Household income in the 2023 survey is published as a Kingdom average, SAR 11,839 disposable and SAR 10,884 consumption. That average is not a north-Riyadh villa file. ${cite('gastat-hies-2023', 'GASTAT')}</p>
 
-<p>Youth compounds the design. Saudi female youth aged 15–24 had a participation rate of 17.6% and unemployment of 24.2% in Q3 2025 (${cite('gastat-lfs-q3-2025', 'GASTAT')}). Vision 2030 already noted that more than 50% of university graduates were female (${cite('vision-2030-overview', 'Vision 2030')}). A beauty or entertainment brief that treats “Saudi women 18–24” as a convenience cell on a male-heavy panel is measuring whoever clicked, not that graduate cohort.</p>
+<p>Jeddah and the wider Makkah region mix residents with visitors. Vision 2030’s 2025 annual-report page puts tourists at 123 million in 2025, more than 30 million of them international, with US$81 billion of tourism spending across 5,937 licensed facilities. ${cite('vision-2025-page', 'Vision 2030')} ${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}</p>
 
-<p>Write four rules into the proposal:</p>
+<p>A Jeddah mall intercept that does not screen resident versus visitor is a tourism study in disguise.</p>
 
-<ul>
-<li>sex quotas inside Saudi and non-Saudi cells, not a single female percentage for the whole file;</li>
-<li>female interviewers and moderators for household, in-home and female-only qualitative work;</li>
-<li>central locations and time slots that a woman can actually attend, including family-friendly venues;</li>
-<li>a refusal and replacement rule that does not silently substitute a male household member.</li>
-</ul>
+<p>The Eastern Province is the industrial and compound catchment. A national average that is mostly Riyadh completes will not describe it. Males were 70.8% of the 2023–2024 population increase and non-Saudis were 75.6% of it. ${cite('gastat-pop-2024', 'GASTAT')}</p>
 
-<p>BioNixus replaces non-qualifying respondents at no charge, honours a written minimum sample, and will re-field at our cost if the agreed quotas are missed. The pilot fee is credited to the main field. Those are the guarantees. They are not a claim that the findings are guaranteed.</p>
+<p>A compound-heavy catchment will show that first. A Saudi family grocery will not.</p>
 
-<h2 id="regions-quotas">How should consumer research Saudi Arabia set regional quotas?</h2>
+<p>Housing makes the same point at national scale. The Housing Program says the Saudi-family homeownership rate reached 66.24% in 2025, against a 70% Vision 2030 target. ${cite('vision-housing', 'Vision 2030 Housing Program')}</p>
 
-<p>Consumer research Saudi Arabia that reports a single “KSA” number is hiding the only decision the commercial team can act on: where to put the first stock, the first store or the first media weight. The Basic Law names Riyadh as the capital (${cite('boe-basic-law', 'Basic Law of Governance')}). GASTAT’s population, labour and household publications then report by administrative region. A brief that cannot say Riyadh, Jeddah or the Eastern Province is not a national brief. It is an unlocated one.</p>
+<p>That is a Kingdom rate. It is not a Riyadh apartment catchment. The 2025 annual report is the place that rate is also recorded. ${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}</p>
 
-<p>The three catchments that carry most consumer launches are not interchangeable:</p>
+<p>The Ministry of Finance published a Pre-Budget Statement for fiscal year 2026. Use it as the dated fiscal frame around a 2026 wave. Do not treat it as a city forecast. ${cite('mof-prebudget-2026', 'Ministry of Finance')}</p>
 
-<ul>
-<li><strong>Riyadh</strong> is the capital, the RHQ magnet and the first warehouse for most national brands. Household income and consumption in the official 2023 survey are published as Kingdom averages — SAR 11,839 disposable and SAR 10,884 consumption — which are not a north-Riyadh villa file (${cite('gastat-hies-2023', 'GASTAT')}).</li>
-<li><strong>Jeddah and the wider Makkah region</strong> mix residents with a visitor load that Vision 2030 now publishes at national scale: 123 million tourists in 2025, more than 30 million of them international, and US$81 billion of tourism spending across 5,937 licensed facilities (${cite('vision-2025-page', 'Vision 2030')}; ${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}). A Jeddah mall intercept that does not screen resident versus visitor is a tourism study in disguise.</li>
-<li><strong>The Eastern Province</strong> — Dammam, Khobar, Dhahran — is the industrial and compound catchment. BioNixus’s Al Khobar field office sits in that catchment for a reason. A national average that is mostly Riyadh completes will not describe it.</li>
-</ul>
+<p>A practical national design is four cells: Riyadh, Jeddah and Makkah, the Eastern Province, and other regions. If the first-year plan is one city, spend the sample on that city.</p>
 
-<p>Housing makes the same point at national scale. Vision 2030’s Housing Program says the Saudi-family homeownership rate reached 66.24% in 2025, against a 70% Vision 2030 target (${cite('vision-housing', 'Vision 2030 Housing Program')}; ${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}). That is a Kingdom rate, not a Riyadh apartment catchment. The Ministry of Finance Pre-Budget Statement for FY 2026 is the dated fiscal frame around any 2026 wave (${cite('mof-prebudget-2026', 'Ministry of Finance')}).</p>
+<h2 id="data-and-price">Personal data and price</h2>
 
-<p>A practical national design is four cells: Riyadh, Jeddah / Makkah, Eastern Province, and other regions. Weight to the official population series after fieldwork and publish both bases. If the first-year plan is a single city, spend the n on that city. The <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a> uses the same city test. Males were 70.8% of the 2023–2024 population increase and non-Saudis were 75.6% of it (${cite('gastat-pop-2024', 'GASTAT')}) — a compound-heavy catchment will show that first; a Saudi family grocery will not. If the same sponsor is comparing the Kingdom with the UAE, keep the instruments siblinged and the samples separate. See <a href="/uae-retail-market-research">retail market research in the UAE</a> and <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services research in Egypt</a>.</p>
+<p>If the study interviews residents, the Personal Data Protection Law applies to personal data processed in the Kingdom. ${cite('pdpl-text', 'Personal Data Protection Law')}</p>
 
-<h2 id="costs">What a 2026 consumer survey costs — and what the price is buying</h2>
+<p>SDAIA’s guide records that the law came into force on 14 September 2023, with a grace period that ran to 14 September 2024. ${cite('sdaia-guide', 'SDAIA')}</p>
 
-<p>BioNixus prices custom consumer survey research in Saudi Arabia between $10,000 and $60,000. The range is the scope, not a rate card. Cost moves with five choices:</p>
+<p>Write the legal basis, the retention rule and the deletion path into the method note before the first incentive is paid.</p>
 
-<ul>
-<li><strong>Mode.</strong> Mobile CAWI is the least expensive complete when the buyer is an internet-using 15–74-year-old (${cite('gastat-ict-2025', 'GASTAT')}). CATI adds interviewer time. CAPI and mall intercepts add travel, gender-appropriate staffing and venue costs. GASTAT still pays for CAPI and CATI when the file has to describe households (${cite('gastat-lfs-q3-2025', 'GASTAT')}; ${cite('gastat-hies-2023', 'GASTAT')}).</li>
-<li><strong>Cities.</strong> One Riyadh cell is cheaper than Riyadh plus Jeddah plus the Eastern Province. A four-cell national design is a different study from a single-city launch check.</li>
-<li><strong>Language.</strong> Dual Arabic–English authoring, two cognitive pilots and bilingual coding cost more than an English grid with Arabic labels. They are also the difference between a readable file and a wording artefact (${cite('boe-basic-law', 'Basic Law of Governance')}).</li>
-<li><strong>Incidence and quotas.</strong> A Saudi-female, 25–34, Riyadh, category-user cell is a different incidence from an all-adult national splash. The official sex and nationality splits tell you which one you are buying (${cite('gastat-pop-2024', 'GASTAT')}).</li>
-<li><strong>Waves and decision support.</strong> A one-off U&amp;A sits at the lower end. A quarterly brand tracker with a CSAT or NPS module, or an entry study that has to feed a feasibility chapter, sits higher.</li>
-</ul>
+<p>Price work has to state whether the shelf price includes the 15% VAT on taxable sales. ${cite('zatca-vat', 'ZATCA')} Article 2 of the VAT law sets that 15% standard rate. ${cite('boe-vat', 'VAT law')}</p>
 
-<p>The invoice is not buying a guaranteed finding. BioNixus guarantees, in writing: the agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. Accuracy of findings is not a claim we make. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” Price work has to carry the 15% VAT rule (${cite('zatca-vat', 'ZATCA')}). Pair this guide with the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a> and the <a href="/bionixus-industries/insights/feasibility-study-company-saudi-arabia">feasibility-study note</a> when the study feeds a wider file.</p>
+<p>Ask any firm which official series it will use, whether results will be cut by city, how many interviews it will complete, which mode it will use for which cell, how women respondents will be recruited, and what is covered in writing.</p>
 
-<h2 id="how-to-choose">How to choose a consumer survey company in Saudi Arabia</h2>
+<p>Compare partners on the <a href="/insights/top-consumer-insights-companies-ksa-2026">2026 ranking of consumer insights companies in KSA</a>.</p>
 
-<p>Ask every firm, including BioNixus, to answer these questions in writing before you sign:</p>
+<h2 id="who-fields">Who fields the work</h2>
 
-<ol>
-<li>Which official series will you use for population, income and internet use, and what is the date of each series (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('gastat-hies-2023', 'GASTAT')}; ${cite('gastat-ict-2025', 'GASTAT')})?</li>
-<li>Will the study report by city, or only as “Saudi Arabia”?</li>
-<li>How many interviews will you complete, in which language, and with which nationality, sex and age quotas?</li>
-<li>Which mode will you use for which cell, and why is online not the whole design (${cite('gastat-lfs-q3-2025', 'GASTAT')})?</li>
-<li>How will women respondents be recruited, interviewed and, if needed, replaced?</li>
-<li>What is guaranteed in writing — scope, minimum sample and re-field, or the findings themselves?</li>
-<li>How will personal data from respondents be processed under the PDPL (${cite('pdpl-text', 'PDPL')})?</li>
-</ol>
+<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That covers the scope, the minimum sample, replacement of non-qualifying respondents, and re-field if an agreed quota is missed. It does not cover the accuracy of a finding.</p>
 
-<p>Global networks that rank for consumer panels are often strong at syndicated brand health and fast online n. They are not automatically strong at a custom, bilingual, city-quota file. Local fieldwork houses are often strong at CAPI routing, not at sample design. A primary-research firm is hired to do both. BioNixus does that job and will work alongside your existing panel or counsel.</p>
+<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Cairo in Sheikh Zayed. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
 
-<p>Compare partners on the <a href="/insights/top-consumer-insights-companies-ksa-2026">2026 ranking of consumer insights companies in KSA</a> and the <a href="/insights/top-market-research-companies-saudi-arabia-2026">2026 ranking of market research companies in Saudi Arabia</a>. Related industry reading on this hub includes <a href="/bionixus-industries/insights/nielsen-alternative-saudi-arabia">syndicated vs custom research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia">government customer satisfaction research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">market entry research for Saudi Arabia</a>, <a href="/bionixus-industries/insights/kantar-alternative-middle-east">a Kantar alternative in the GCC</a>, <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a> and <a href="/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026">online market research and social listening for brand growth</a>. Browse country entry points on <a href="/market-research-by-industry">market research by industry</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for consumer survey research in Saudi Arabia?</h2>
-
-<p>BioNixus is not a panel reseller. It is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026, after 120 in 2025. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, the minimum sample and the re-field — not the accuracy of a finding.</p>
-
-<p>US teams brief Sheridan. UK and European teams brief London. Fieldwork for the Kingdom is designed with the Al Khobar field office and bilingual Arabic–English teams, including gender-appropriate CAPI and female moderators where the brief needs them. To brief a consumer survey company Saudi Arabia programme, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<p>Fieldwork for the Kingdom is designed with the Al Khobar field office and bilingual teams, including women interviewers where the household brief needs them. To brief a study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -434,39 +369,39 @@ ${REFERENCES_HTML}`;
 
 export const SAUDI_CONSUMER_SURVEY_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does a consumer survey company Saudi Arabia brief have to specify?',
+    question: 'What does the brief have to specify?',
     answer:
-      'It has to specify the buyer, the language, the mode, the city quotas and the sex and nationality splits before fieldwork starts. A national TAM slide is not a sample. Primary bilingual interviews are what make consumer research Saudi Arabia usable.',
+      'Who buys, in which language, through which mode, in which cities, and with which sex and nationality quotas. GASTAT’s mid-2024 population is 35.3 million. Saudis were 55.6% and non-Saudis 44.4%. Census 2022 was a different date: 58.4% Saudi. Do not average those shares. A national market-size slide is not a sample plan.',
   },
   {
-    question: 'Can I run a Saudi consumer survey online only?',
+    question: 'Can the survey be online only?',
     answer:
-      'Yes, when the buyer is an internet-using 15–74-year-old and the task is short. GASTAT’s 2025 ICT survey found 99.0% internet use in that age band, 96.8% daily use and 98.4% mobile access. Online is still not a national household frame: the labour-force survey still mixes CAPI and CATI on about 96,000 dwellings a quarter, and the 2023 household survey sent interviewers to 122,325 homes.',
+      'Online fits a short task among people aged 15 to 74. In 2025, 99.0% of that age band used the internet and 71% had bought online. GASTAT’s labour-force survey still uses field visits and phone interviews on about 96,000 dwellings a quarter. The 2023 household survey visited 122,325 households. Coverage is not a response rate.',
   },
   {
     question: 'Should the questionnaire be in Arabic or English?',
     answer:
-      'Author in the language of the decision-maker, then field both when the sample includes Saudis and non-Saudis. The Basic Law states that the Kingdom’s language is Arabic. Mid-2024 non-Saudis were 44.4% of residents and 89.9% of working age, and many of them sit interviews in English. Record language of interview as a variable and cognitive-test both versions.',
+      'The Basic Law says Arabic is the language of the Kingdom. Write Arabic first when the buyer thinks in Arabic. Many non-Saudi residents, 44.4% of the mid-2024 population, sit interviews in English. Test both versions. Record the language of the interview. The ICT survey’s “last three months” period has to match in both languages.',
   },
   {
-    question: 'How should women respondents be recruited in Saudi Arabia?',
+    question: 'How should women respondents be recruited?',
     answer:
-      'Set sex quotas inside the Saudi and non-Saudi cells, not a single female percentage. Saudis were 49.9% female in mid-2024; non-Saudis were 22.8% female. Saudi female labour-force participation was 33.7% in Q3 2025. Internet use among females aged 15–74 was 98.9%, so online can reach women — household CAPI still needs gender-appropriate interviewers. Driving licences since June 2018 do not make a night-time central location a national female sample.',
+      'Among Saudis, women were 49.9% of the mid-2024 estimate. Among non-Saudis they were 22.8%. Set the sex quota inside each nationality. Saudi female labour-force participation was 33.7% in the third quarter of 2025. Internet use among women aged 15 to 74 was 98.9%. Household visits need women interviewers where the household requires it.',
   },
   {
-    question: 'Which regions should a national consumer survey cover?',
+    question: 'Which regions should a national survey cover?',
     answer:
-      'At minimum Riyadh, Jeddah / Makkah and the Eastern Province, plus an other-regions cell if you will claim a national number. A single “KSA” average hides the only city that can carry the first store. Screen residents versus visitors in Jeddah: Vision 2030 recorded 123 million tourists in 2025. If the first-year plan is one city, spend the n on that city.',
+      'Riyadh is the capital under the Basic Law. Jeddah and Makkah mix residents with visitors: the 2025 Vision report page cites 123 million tourists, more than 30 million of them international. The Eastern Province is a different catchment. A Kingdom income average is not a single-city file. If the first year is one city, spend the sample there.',
   },
   {
-    question: 'How much does custom consumer research in Saudi Arabia cost with BioNixus?',
+    question: 'How much does custom consumer research cost with BioNixus?',
     answer:
-      'Custom consumer survey programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, cities, mode, language and whether the output is a one-off U&A or a tracker. The scope, minimum sample, respondent replacement and re-field are guaranteed in writing. Findings are not.',
+      'Custom programmes are priced from $10,000 to $60,000. The price moves with mode, cities, language and quotas. The scope, the minimum sample, respondent replacement and re-field are guaranteed in writing. The findings are not part of that promise. Shelf prices should state the 15% VAT.',
   },
   {
-    question: 'Why brief BioNixus rather than a global panel farm?',
+    question: 'Why brief BioNixus rather than a panel reseller?',
     answer:
-      'Panel farms sell completes. BioNixus writes the frame against official series and fields it with bilingual, gender-appropriate teams from the Al Khobar field office. US teams brief Sheridan; UK and European teams brief London EC1V 2NX. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not finding accuracy.',
+      'A panel reseller sells completes. BioNixus writes the quotas against the official series and fields them with bilingual teams from the Al Khobar field office. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That promise is the scope, not the accuracy of a finding.',
   },
 ];
 

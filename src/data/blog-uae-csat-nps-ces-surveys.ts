@@ -46,15 +46,15 @@ export const UAE_CSAT_META_DESCRIPTION =
   'Customer satisfaction survey company UAE guide to CSAT, NPS and CES — how an NPS survey company Saudi Arabia brief should specify the recommend question.';
 
 export const UAE_CSAT_DISPLAY_TITLE =
-  'Customer Satisfaction Surveys in the UAE: CSAT, NPS and CES Done Right';
+  'How an NPS survey company Saudi Arabia should write the recommend question';
 
 export const UAE_CSAT_DISPLAY_SUBTITLE =
-  'NPS survey company Saudi Arabia: CSAT, NPS and CES design';
+  'CSAT, effort, and a score you can act on';
 
 export const UAE_CSAT_BREADCRUMB_LABEL = 'UAE CSAT, NPS and CES surveys';
 
 export const UAE_CSAT_EXCERPT =
-  'A sourced 2026 guide to CSAT, NPS and CES in the UAE and Saudi Arabia: what each metric answers, how to specify the recommend and effort questions, bilingual Arabic-English fieldwork from Dubai, and UAE and Saudi personal-data rules.';
+  'How to choose CSAT, NPS or CES in the UAE and Saudi Arabia, and how to write the recommend question before fieldwork starts.';
 
 export const UAE_CSAT_PUBLISHED_ISO = '2026-10-12T12:00:00.000Z';
 export const UAE_CSAT_UPDATED_ISO = '2026-10-12T12:00:00.000Z';
@@ -172,182 +172,119 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const UAE_CSAT_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What does a customer satisfaction survey company UAE measure?', anchor: 'what-a-customer-satisfaction-survey-company-uae-measures' },
-  { heading: 'CSAT, NPS and CES compared', anchor: 'csat-nps-ces-compared' },
-  { heading: 'How to run CSAT in the UAE', anchor: 'how-to-run-csat-in-the-uae' },
-  { heading: 'NPS survey company Saudi Arabia: how to design the recommend question', anchor: 'nps-survey-company-saudi-arabia-recommend-question' },
-  { heading: 'CES done right', anchor: 'ces-done-right' },
-  { heading: 'Driver analysis that moves the score', anchor: 'driver-analysis' },
-  { heading: 'Bilingual Arabic-English fieldwork from Dubai', anchor: 'bilingual-arabic-english-from-dubai' },
-  { heading: 'Sampling, modes and closed-loop follow-up', anchor: 'sampling-modes-closed-loop' },
-  { heading: 'UAE and Saudi personal-data rules for CX surveys', anchor: 'uae-saudi-personal-data-rules' },
-  { heading: 'What Dubai and Saudi government programmes measure', anchor: 'dubai-saudi-government-measurement' },
-  { heading: 'How to choose a CX research partner', anchor: 'choosing-a-cx-research-partner' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'Which question are you asking?', anchor: 'which-question' },
+  { heading: 'How the three scores are built', anchor: 'how-scores-are-built' },
+  { heading: 'The recommend question', anchor: 'recommend-question' },
+  { heading: 'Effort, and what moves the score', anchor: 'effort' },
+  { heading: 'What Dubai and Saudi programmes already publish', anchor: 'public-programmes' },
+  { heading: 'Personal data and consent', anchor: 'personal-data' },
+  { heading: 'How to choose a firm', anchor: 'how-to-choose' },
+  { heading: 'Who fields the work', anchor: 'who-fields' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const UAE_CSAT_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A customer satisfaction survey company UAE programme should pick one decision, then choose CSAT, NPS or CES — or a short combination — and design bilingual Arabic-English fieldwork around it. An NPS survey company Saudi Arabia brief must lock the 0–10 recommend wording, the follow-up why, and closed-loop rules before fieldwork starts.</p>`;
+export const UAE_CSAT_EXECUTIVE_SUMMARY_HTML = `<p>A customer satisfaction survey company UAE programme should pick one decision, then choose CSAT, NPS, or CES. An NPS survey company Saudi Arabia brief should lock the 0–10 recommend wording, the follow-up why, and the closed loop before fieldwork. Public programmes in Dubai and the Kingdom already publish their own scores.</p>`;
 
-const NARRATIVE_HTML = `<p>Retail, hospitality and financial-services teams in the UAE often ask for “an NPS study” when the decision is actually about a single transaction, a journey or a relationship. This guide sets out how a customer satisfaction survey company UAE brief should choose among CSAT, NPS and CES, how an NPS survey company Saudi Arabia specification should write the recommend question, and which public measurement programmes already exist in Dubai and the Kingdom. It sits in our <a href="/bionixus-industries/insights">industry insights</a> series, next to <a href="/b2c-industries">B2C market research</a> and country pages such as <a href="/uae-retail-market-research">UAE retail market research</a> and <a href="/saudi-arabia-retail-market-research">Saudi retail market research</a>.</p>
+const NARRATIVE_HTML = `<p>Teams often ask for “an NPS study” when the real question is about one visit, one journey, or the whole relationship. This note says how a customer satisfaction survey company UAE brief should choose among CSAT, NPS and CES. It also says how to write the recommend question for Saudi work. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>, next to <a href="/b2c-industries">B2C market research</a>, <a href="/uae-retail-market-research">UAE retail market research</a> and <a href="/saudi-arabia-retail-market-research">Saudi retail market research</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: CSAT, NPS and CES for UAE and Saudi briefs, October 2026</strong></p>
+<p>Name the moment before you name the acronym. A branch visit, a delivery, a claims call, a hotel stay, an onboarding journey, or the relationship as a whole. Then pick the score that matches that moment. Mixing three scores with no plan produces three numbers and no action.</p>
+
+<h2 id="which-question">Which question are you asking?</h2>
+
+<p>CSAT asks how satisfied someone was with a named experience. NPS asks how likely they are to recommend. CES asks how much effort a request took. They are not substitutes.</p>
+
+<p>The American Customer Satisfaction Index describes satisfaction as a weighted average of three questions. It sits in a cause-and-effect model. Expectations, perceived quality and perceived value lead to satisfaction. Satisfaction then leads to complaints and loyalty. ${cite('acsi-science', 'ACSI')}</p>
+
+<p>A single five-point “how satisfied were you?” item is not that three-question construct. If a brief says “run ACSI”, say whether you want the three questions or only a satisfaction label.</p>
+
+<p>Bain’s account of the Net Promoter System treats the follow-up “why” and the closed loop as part of the measurement, not an optional extra. ${cite('nps-introducing', 'Bain')}</p>
+
+<h2 id="how-scores-are-built">How the three scores are built</h2>
+
+<p>The published Net Promoter question asks how likely you are to recommend the company to a friend or colleague, on a scale from 0 to 10. People who choose 9 or 10 are promoters. People who choose 7 or 8 are passives. People who choose 0 to 6 are detractors. The score is the percentage of promoters minus the percentage of detractors. ${cite('nps-measuring', 'Net Promoter System')}</p>
+
+<p>Bain’s published loyalty pattern is why the follow-up matters. Promoters account for more than 80% of referrals. Detractors account for more than 80% of negative word of mouth. Passives repurchase and refer at rates up to 50% lower. In Bain’s account, companies that lead their industries on this score grow more than twice as fast as competitors. Those findings are not a UAE or Saudi private-sector benchmark. They are reasons to collect the “why”, to close the loop, and to report the three groups separately. NPS is a registered trademark of Bain & Company, Fred Reichheld and Satmetrix Systems. Using the name does not, by itself, make the study the full system. ${cite('nps-introducing', 'Bain')}</p>
+
+<p>The original Customer Effort Score was published by Matthew Dixon, Karen Freeman and Nicholas Toman in the July–August 2010 Harvard Business Review. The item was: “How much effort did you personally have to put forth to handle your request?” The scale ran from 1, very low effort, to 5, very high effort. The research covered more than 75,000 contact-centre and self-service customers. Customers with a low-effort experience reported 94% repurchase intent, 88% intent to increase spend, and 1% negative word-of-mouth intent. Customers with a high-effort experience reported 81% negative word-of-mouth intent. In those service interactions, the effort score predicted behaviour better than satisfaction or the recommend score. ${cite('hbr-ces-2010', 'Harvard Business Review, 2010')}</p>
+
+<p>Later “easy” wordings and 1–7 scales appear in vendor decks. They are not the 2010 item. If you want the 2010 score, write that sentence and that scale. If you want a later variant, name the variant. Do not compare it with the 2010 findings.</p>
+
+<p>Effort fits a claim, a return, a card dispute, a hotel complaint, or a government transaction. It is a weak relationship metric.</p>
+
+<h2 id="recommend-question">The recommend question</h2>
+
+<p>An NPS survey company Saudi Arabia brief should start from the published item, not from a local paraphrase. Lock these points in writing before fieldwork.</p>
 <ul>
-<li><strong>NPS construction:</strong> one 0–10 “how likely are you to recommend” item; promoters 9–10, passives 7–8, detractors 0–6; NPS = % promoters − % detractors (${cite('nps-measuring', 'Net Promoter System')}).</li>
-<li><strong>Loyalty pattern Bain reports:</strong> promoters account for more than 80% of referrals; detractors account for more than 80% of negative word of mouth; passives repurchase and refer at rates up to 50% lower; NPS leaders grow more than twice as fast as competitors (${cite('nps-introducing', 'Bain')}).</li>
-<li><strong>Original CES (2010):</strong> “How much effort did you personally have to put forth to handle your request?”, 1 = very low effort to 5 = very high effort, among more than 75,000 contact-centre and self-service customers (${cite('hbr-ces-2010', 'Dixon, Freeman and Toman, HBR')}).</li>
-<li><strong>Low-effort vs high-effort service:</strong> low-effort customers reported 94% repurchase intent, 88% intent to increase spend and 1% negative word-of-mouth intent; high-effort customers reported 81% negative word-of-mouth intent. In that service-interaction research, CES outperformed CSAT and NPS (${cite('hbr-ces-2010', 'HBR')}).</li>
-<li><strong>ACSI construct:</strong> satisfaction is a weighted average of three questions, sitting in a cause-and-effect model from expectations, quality and value through to complaints and loyalty (${cite('acsi-science', 'ACSI')}).</li>
-<li><strong>Dubai government, 2024 (released 18 January 2025):</strong> Customer Happiness 93.8%, Employee Happiness 86.7%, Mystery Shopper 95.8%; top customer-happiness scores were Mohammed Bin Rashid Housing Establishment 98.75%, DEWA 97.01% and Islamic Affairs 96.99% — the twentieth year of those surveys (${cite('dubai-dgep-2024', 'Dubai Media Office')}).</li>
-<li><strong>UAE PDPL:</strong> Federal Decree-Law No. 45 of 2021, in force 2 January 2022; processing generally needs the data subject’s consent; the UAE Data Office is the federal regulator (${cite('uae-pdpl-portal', 'u.ae')}).</li>
-<li><strong>Saudi PDPL:</strong> in force 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}).</li>
-</ul>
-</div>
-
-<h2 id="what-a-customer-satisfaction-survey-company-uae-measures">What does a customer satisfaction survey company UAE measure?</h2>
-
-<p>A useful customer satisfaction survey company UAE programme measures the decision the score must inform, not a generic “happiness” number. Three questions separate a usable study from a dashboard that nobody owns:</p>
-
-<ul>
-<li><strong>Which moment?</strong> A single interaction (a branch visit, a delivery, a claims call), a journey (onboarding, renewal, after-sales) or the relationship as a whole.</li>
-<li><strong>Which metric?</strong> CSAT for that moment, CES for the effort of getting something done, NPS for likelihood to recommend the relationship. Mixing them without a plan produces three scores and no action.</li>
-<li><strong>Which action?</strong> Closed-loop recovery for detractors, process redesign for high-effort steps, or offer and experience work for passives. Bain’s system treats the follow-up “why” and the closed loop as part of measurement, not an optional extra (${cite('nps-introducing', 'Bain')}).</li>
+<li>The exact recommend wording in Arabic and in English. Say whether the object is the brand, the branch, the app, or the last product.</li>
+<li>The scale is 0 to 10. Label 0 “not at all likely” and 10 “extremely likely”, unless you are deliberately running a different item. If you change the scale, do not call it NPS.</li>
+<li>One reason question immediately after the score, plus permission to contact people again.</li>
+<li>Cuts by city, channel and how long the person has been a customer, if the team will use those cuts.</li>
 </ul>
 
-<p>Private-sector UAE CSAT or NPS league tables are not cited here. Published government programmes, listed later, show how Dubai and federal entities already separate customer happiness, employee happiness, mystery shopping and real-time feedback. A commercial brief should be at least as precise about channel, language and sample as those programmes are.</p>
+<p>Report promoters, passives and detractors. Do not publish only the net number.</p>
 
-<p>For shopper evidence that a survey cannot see — facings, staff prompts, wait times — pair the tracker with a <a href="/templates/mystery-shop-retail-brief">mystery-shop retail brief</a> and the account map on <a href="/retail-companies-uae">retail companies in the UAE</a>.</p>
+<p>Write the satisfaction item against a moment the operations team can change. “How satisfied are you with Brand X in the UAE?” is a relationship question wearing a satisfaction label. A better item names the last purchase, the last checkout, the last call, or the last stay.</p>
 
-<h2 id="csat-nps-ces-compared">CSAT, NPS and CES compared</h2>
+<p>Lock the scale and the top-box rule. A 1–5 item scored as “percent who chose 4 or 5” is not comparable with a 1–7 mean. Arabic and English versions need the same meaning. “Satisfied” and “happy” are not automatic synonyms. SMS, an in-app intercept, a phone interview and a face-to-face exit reach different people.</p>
 
-<p>The three metrics answer different questions. They are not interchangeable, and a 2026 brief should name the wording and the scale, not only the acronym.</p>
+<p>A score without a cause tells the board that something moved. It does not say what to change. Keep a short list of drivers that one team can own: waiting time, staff courtesy, first-contact resolution, price clarity, digital completion, delivery accuracy. Code open answers in Arabic and English to the same list.</p>
 
-<table>
-<thead><tr><th>Metric</th><th>Core question (as published)</th><th>Typical scale</th><th>Best for</th></tr></thead>
-<tbody>
-<tr><td>CSAT</td><td>How satisfied are you with [this interaction / product / service]?</td><td>Often 1–5 or 1–7; ACSI uses a three-question weighted average (${cite('acsi-science', 'ACSI')})</td><td>A named moment you can fix this quarter</td></tr>
-<tr><td>NPS</td><td>How likely is it that you would recommend [company] to a friend or colleague?</td><td>0–10; 9–10 promoters, 7–8 passives, 0–6 detractors (${cite('nps-measuring', 'Net Promoter System')})</td><td>Relationship health and referral risk</td></tr>
-<tr><td>CES (2010 original)</td><td>How much effort did you personally have to put forth to handle your request?</td><td>1 = very low effort to 5 = very high effort (${cite('hbr-ces-2010', 'HBR')})</td><td>Service and self-service friction</td></tr>
-</tbody>
-</table>
+<h2 id="effort">Effort, and what moves the score</h2>
 
-<p>ACSI’s published model is a cause-and-effect system: customer expectations, perceived quality and perceived value drive satisfaction; satisfaction then drives complaints and loyalty (${cite('acsi-science', 'ACSI')}). That is why a single five-point “how satisfied were you?” item is not the same as an ACSI-style construct, and why a brief that says “run ACSI” must say whether it wants the three-question index or only a satisfaction label.</p>
+<p>The ACSI model is a reminder that satisfaction sits between quality and value on one side, and complaints and loyalty on the other. ${cite('acsi-science', 'ACSI')}</p>
 
-<p>NPS® is a registered trademark of Bain &amp; Company, Fred Reichheld and Satmetrix Systems (${cite('nps-introducing', 'Bain')}). Using the name in a questionnaire does not, by itself, make the study a Net Promoter System: the published system also includes the reason question and a closed loop with detractors, passives and promoters.</p>
+<p>A driver such as “brand image” with no operational owner will not change the next wave. Report each driver by emirate or city, channel, tenure and language. An average can hide the only group that is leaving.</p>
 
-<h2 id="how-to-run-csat-in-the-uae">How should you run CSAT in the UAE?</h2>
+<p>Bain describes follow-up with the customer as part of the system, not only a score. ${cite('nps-introducing', 'Bain')}</p>
 
-<p>Write the CSAT item against a moment the operations team can change. “How satisfied are you with your overall experience of Brand X in the UAE?” is a relationship question wearing a CSAT label. Better items name the event: the last in-store purchase, the last app checkout, the last contact-centre call, the last hotel stay.</p>
+<p>Name who calls detractors, in which language, and what they are allowed to offer. The 2025 ICC/ESOMAR Code says participation is voluntary and consent must be freely given, specific and informed. ${cite('esomar-2025', 'ICC/ESOMAR Code')}</p>
 
-<p>Then lock four design choices before scripting:</p>
+<p>That applies to an incentive, to “this call may be recorded”, and to any join of customer-record fields.</p>
 
+<h2 id="public-programmes">What Dubai and Saudi programmes already publish</h2>
+
+<p>Federal and emirate programmes already separate several tools. The UAE government portal describes a Customer Happiness Charter for federal services. The tools include customer-happiness studies, a Happiness Meter, mystery shopper studies, the Government Services Observatory, and Customer Pulse, a post-transaction survey for a suggestion, a complaint or a compliment. ${cite('uae-happiness', 'u.ae')}</p>
+
+<p>The Global Star Rating System was launched in 2011. It rates service centres from 2 to 7 stars after an independent evaluation. The assessment includes customer-satisfaction and mystery-shopper results. ${cite('uae-star-rating', 'u.ae')}</p>
+
+<p>On 18 January 2025 the Dubai Media Office reported that Sheikh Hamdan bin Mohammed approved the 2024 Dubai Government Excellence Programme results. Average customer happiness was 93.8%. Employee happiness was 86.7%. The mystery shopper score was 95.8%. The highest customer-happiness scores were the Mohammed Bin Rashid Housing Establishment at 98.75%, the Dubai Electricity and Water Authority at 97.01%, and the Islamic Affairs and Charitable Activities Department at 96.99%. The mystery shopper work covered service centres, call centres, websites and mobile applications. The office said 2024 was the twentieth year of those studies. ${cite('dubai-dgep-2024', 'Dubai Media Office, 18 January 2025')}</p>
+
+<p>Those figures are government-entity scores. They are not private-sector satisfaction or recommend norms.</p>
+
+<p>In Saudi Arabia, the National Center for Performance Measurement (Adaa) publishes beneficiary-satisfaction work on named services. On 12 June 2024 the Saudi Press Agency reported that Adaa had measured satisfaction with 81 Hajj 1445 services across 18 government agencies. ${cite('spa-hajj-1445', 'Saudi Press Agency, 12 June 2024')}</p>
+
+<p>A commercial recommend score in the Kingdom should be equally explicit about which service, which brands, and which dates it covers. The method for a <a href="/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia">government customer satisfaction survey in Saudi Arabia</a> is a separate brief.</p>
+
+<h2 id="personal-data">Personal data and consent</h2>
+
+<p>UAE Federal Decree-Law No. 45 of 2021 came into force on 2 January 2022. The official portal says the law applies to processing of personal data through electronic systems, inside or outside the country. Processing without the owner’s consent is prohibited except where it is necessary to protect a public interest or to carry out legal procedures and rights. The data owner may ask for correction and may restrict or stop processing. The UAE Data Office is the federal regulator. ${cite('uae-pdpl-portal', 'u.ae')} ${cite('uae-pdpl-text', 'UAE Legislation')}</p>
+
+<p>Saudi Arabia’s Personal Data Protection Law came into force on 14 September 2023. SDAIA’s guide records a one-year grace period that ran to 14 September 2024. ${cite('sdaia-guide', 'SDAIA')}</p>
+
+<p>Ask where identifiable answers and audio files will be stored, who can see open answers, and how a respondent withdraws. Ticket IDs, phone numbers and spend bands are personal data. A “research exemption” slide is not a written lawful basis.</p>
+
+<h2 id="how-to-choose">How to choose a firm</h2>
+
+<p>Ask these questions in the proposal.</p>
 <ol>
-<li><strong>Scale and top-box rule.</strong> A 1–5 item scored as “% who chose 4 or 5” is not comparable to a 1–7 item scored as a mean. Write the scale and the reporting rule in the brief.</li>
-<li><strong>Language.</strong> Arabic and English versions must be conceptually equivalent, not word-for-word calques. “Satisfied” and “happy” are used differently in UAE government programmes; do not switch labels mid-tracker.</li>
-<li><strong>Channel.</strong> SMS after a visit, in-app intercept, CATI and face-to-face exit interviews reach different customers. A mall intercept in Dubai is not a substitute for a national mobile sample.</li>
-<li><strong>Drivers.</strong> Follow the rating with a short, structured reason list and one open “why” so the score has a cause, not only a trend line.</li>
-</ol>
-
-<p>Hospitality and banking journeys split across emirates. A UAE hospitality CSAT that only samples Dubai beach resorts will not describe Abu Dhabi corporate stays; see <a href="/uae-hospitality-market-research">UAE hospitality market research</a> and <a href="/uae-financial-services-market-research">UAE financial services market research</a> when the brief is sector-specific.</p>
-
-<h2 id="nps-survey-company-saudi-arabia-recommend-question">NPS survey company Saudi Arabia: how to design the recommend question</h2>
-
-<p>An NPS survey company Saudi Arabia brief should start from the published item, not from a local paraphrase. The Net Promoter System asks how likely the customer is to recommend the company to a friend or colleague, on a 0–10 scale. Respondents who choose 9 or 10 are promoters, 7 or 8 are passives, and 0 to 6 are detractors. The score is the percentage of promoters minus the percentage of detractors (${cite('nps-measuring', 'Net Promoter System')}).</p>
-
-<p>Bain’s published loyalty pattern is why the follow-up questions matter. Promoters account for more than 80% of referrals. Detractors account for more than 80% of negative word of mouth. Passives look satisfied on a CSAT-style item but repurchase and refer at rates up to 50% lower. Companies that lead their industries in NPS grow more than twice as fast as competitors, in Bain’s account of the system (${cite('nps-introducing', 'Bain')}). None of those findings is a Saudi or UAE private-sector benchmark. They are reasons to collect the “why”, to close the loop, and to report promoters, passives and detractors separately — not only the net score.</p>
-
-<p>Specify, in writing, before fieldwork:</p>
-
-<ul>
-<li>The exact recommend wording in Arabic and in English, including whether the object is the brand, the branch, the app or the last product.</li>
-<li>That the scale is 0–10 with 0 labelled “not at all likely” and 10 “extremely likely”, unless you are deliberately running a non-NPS variant (in which case do not call it NPS).</li>
-<li>One reason question immediately after the score, plus permission to recontact detractors.</li>
-<li>Whether results will be cut by city (Riyadh, Jeddah, Dammam / Al Khobar), by channel, and by customer tenure.</li>
-<li>How Saudi personal-data rules will be met — the Kingdom’s Personal Data Protection Law came into force on 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}).</li>
-</ul>
-
-<p>Saudi retail, hospitality and banking programmes need the same city and channel cuts as the UAE. Use <a href="/saudi-arabia-hospitality-market-research">Saudi hospitality market research</a> and <a href="/saudi-arabia-financial-services-market-research">Saudi financial services market research</a> when the NPS object is a hotel group or a bank rather than a grocer.</p>
-
-<h2 id="ces-done-right">How do you do CES right?</h2>
-
-<p>The original Customer Effort Score, published by Matthew Dixon, Karen Freeman and Nicholas Toman in the July–August 2010 <em>Harvard Business Review</em>, asked: “How much effort did you personally have to put forth to handle your request?” on a scale from 1 (very low effort) to 5 (very high effort). The research covered more than 75,000 contact-centre and self-service interactions. Customers who had a low-effort experience reported 94% repurchase intent, 88% intent to increase spend and 1% negative word-of-mouth intent. Customers who had a high-effort experience reported 81% negative word-of-mouth intent. In those service interactions, CES predicted behaviour better than CSAT or NPS (${cite('hbr-ces-2010', 'HBR')}).</p>
-
-<p>Later commercial “CES 2.0” wordings and 1–7 “made it easy” scales circulate in vendor decks. They are not the 2010 HBR item, and this guide does not treat any later wording as official. If you want CES, write the exact sentence and the exact scale in the brief. If you want a later variant, name the variant and do not compare the score to the 2010 findings above.</p>
-
-<p>CES belongs on effortful journeys: a claim, a return, a SIM replacement, a card dispute, a hotel complaint, a government transaction. It is a poor relationship metric. Do not replace NPS with CES because a dashboard has only one slot.</p>
-
-<h2 id="driver-analysis">What driver analysis actually moves the score?</h2>
-
-<p>A score without drivers tells the board that something moved, not what to change. Two layers are enough for most UAE and Saudi CX programmes:</p>
-
-<ol>
-<li><strong>Structured drivers,</strong> shown to every respondent after the rating: waiting time, staff courtesy, first-contact resolution, price clarity, digital completion, delivery accuracy. Keep the list short enough that each item can be owned by one team.</li>
-<li><strong>Open reason text,</strong> coded in Arabic and English to the same codebook, so a complaint written in Gulf Arabic is not dumped in “other”.</li>
-</ol>
-
-<p>ACSI’s published architecture is a reminder that satisfaction sits between perceived quality/value and downstream loyalty (${cite('acsi-science', 'ACSI')}). A driver that does not map to an operational owner — “brand image”, “overall excellence” — will not move the next wave. Report each driver by segment (emirate or city, channel, tenure, language of interview) or the average will hide the only group that is leaving.</p>
-
-<h2 id="bilingual-arabic-english-from-dubai">Why run bilingual Arabic-English fieldwork from Dubai?</h2>
-
-<p>UAE and Saudi customers switch language by channel and by moment. An English-only app intercept under-represents Arabic-preferring shoppers; an Arabic-only mall intercept under-represents expatriate cardholders. The instrument, the invitation and the interviewer prompts all need both languages, with the same meaning, not a same-word translation.</p>
-
-<p>BioNixus fields this work from the Dubai field office in Thuraya Tower 1, Al Sufouh 2, with a Saudi field office in Al Khobar and a Kuwait field office in Salmiya. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London (EC1V 2NX) and Sheikh Zayed, Giza. Arabic-English scripting, back-translation and interviewer briefing sit with the same team that writes the CSAT, NPS or CES item, so the scale labels do not drift between languages.</p>
-
-<p>Compare partners on the <a href="/insights/top-market-research-companies-uae-2026">2026 UAE market research companies ranking</a>, the <a href="/insights/top-market-research-companies-dubai-2026">Dubai ranking</a> and the <a href="/insights/top-market-research-companies-saudi-arabia-2026">Saudi Arabia ranking</a>.</p>
-
-<h2 id="sampling-modes-closed-loop">How should sampling, modes and the closed loop work?</h2>
-
-<p>Sampling is the part of a CX brief that most often fails quietly. Decide, then write down:</p>
-
-<ul>
-<li><strong>Who is in universe.</strong> Last-30-day purchasers, active app users, guests who stayed, or all account holders? A relationship NPS on “everyone who ever bought” will not match an operational CSAT on last week’s tickets.</li>
-<li><strong>Mode.</strong> Online, CATI, face-to-face or mixed. Mode effects are large on recommend scales; do not change mode mid-tracker without a bridge sample.</li>
-<li><strong>Quota or weighting.</strong> Emirate or city, nationality band, channel, and value tier if the commercial team will cut results that way.</li>
-<li><strong>Closed loop.</strong> Bain describes the system as including a follow-up with the customer, not only a score (${cite('nps-introducing', 'Bain')}). Name who calls detractors, in which language, within how many hours, and what they are allowed to offer.</li>
-<li><strong>Research ethics.</strong> The 2025 ICC/ESOMAR Code states that participation is voluntary and that consent must be freely given, specific and informed (${cite('esomar-2025', 'ICC/ESOMAR Code 2025')}). That applies to incentive text, to “this call may be recorded”, and to any append of CRM data.</li>
-</ul>
-
-<h2 id="uae-saudi-personal-data-rules">Which UAE and Saudi personal-data rules apply to CX surveys?</h2>
-
-<p>UAE Federal Decree-Law No. 45 of 2021, the Personal Data Protection Law, came into force on 2 January 2022. The official portal states that the law applies to processing of personal data, in full or in part, through electronic systems, inside or outside the country; that processing without the owner’s consent is prohibited except where it is necessary to protect a public interest or to carry out legal procedures and rights; and that the data owner may request correction and may restrict or stop processing. The UAE Data Office, affiliated with the Cabinet, is the federal data regulator (${cite('uae-pdpl-portal', 'u.ae')}; ${cite('uae-pdpl-text', 'UAE Legislation')}).</p>
-
-<p>Saudi Arabia’s Personal Data Protection Law came into force on 14 September 2023. SDAIA’s controller-and-processor guide records a one-year grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}). Ask any supplier where identifiable survey and audio files will be stored, who can see open-ended answers, and how a respondent withdraws.</p>
-
-<p>Do not treat a “research exemption” as a substitute for a written lawful basis. If the CX programme appends ticket IDs, phone numbers or spend bands, that is personal-data processing, not a generic poll.</p>
-
-<h2 id="dubai-saudi-government-measurement">What do Dubai and Saudi government programmes already measure?</h2>
-
-<p>Commercial teams in the UAE are not writing on a blank page. Federal and emirate programmes already separate several CX instruments.</p>
-
-<p>The UAE Government portal describes a Customer Happiness Charter for federal government services and a set of tools used to apply it: the Emirates Government Services Excellence Programme, customer-happiness studies, a Happiness Meter, Mystery Shopper studies, the Government Services Observatory (real-time satisfaction by website, app and customer-happiness centre) and Customer Pulse (a post-transaction survey that captures a suggestion, complaint or compliment) (${cite('uae-happiness', 'u.ae')}). The Global Star Rating System, launched in 2011, rates service centres from 2 to 7 stars after independent evaluation; the assessment report includes customer-satisfaction and mystery-shopper results (${cite('uae-star-rating', 'u.ae')}).</p>
-
-<p>Dubai publishes a separate, scored programme. On 18 January 2025 the Dubai Media Office reported that Sheikh Hamdan bin Mohammed approved the 2024 Dubai Government Excellence Programme results: average customer happiness 93.8%, employee happiness 86.7% and Mystery Shopper 95.8%. The highest 2024 customer-happiness scores were Mohammed Bin Rashid Housing Establishment at 98.75%, the Dubai Electricity and Water Authority at 97.01% and the Islamic Affairs and Charitable Activities Department at 96.99%. The Mystery Shopper work covered service centres, call centres, websites and mobile applications. 2024 was the twentieth year of the customer-happiness, employee-happiness and mystery-shopping studies (${cite('dubai-dgep-2024', 'Dubai Media Office')}). Those figures are government-entity scores. They are not private-sector UAE CSAT or NPS norms.</p>
-
-<p>In Saudi Arabia, the National Center for Performance Measurement (Adaa) publishes beneficiary-satisfaction work on named service packages. On 12 June 2024 the Saudi Press Agency reported that Adaa had measured beneficiary satisfaction with 81 Hajj 1445 services across 18 government agencies (${cite('spa-hajj-1445', 'SPA')}). A commercial NPS in the Kingdom should be equally explicit about which service, which agencies or brands, and which dates it covers.</p>
-
-<h2 id="choosing-a-cx-research-partner">How do you choose a CX research partner?</h2>
-
-<p>Ask every customer satisfaction survey company UAE shortlist, and every NPS survey company Saudi Arabia shortlist, to answer these in the proposal — not in a capabilities slide:</p>
-
-<ul>
-<li>Will you write the CSAT, NPS or CES item, in Arabic and English, in the proposal, including the scale labels?</li>
+<li>Will you write the satisfaction, recommend or effort item, in Arabic and English, including the scale labels?</li>
 <li>Which moment, journey or relationship does that item measure, and which team owns the drivers?</li>
-<li>What sample size, quotas and mode will you use in Dubai, Abu Dhabi and the Northern Emirates — or in Riyadh, Jeddah and the Eastern Province?</li>
-<li>How will you close the loop with detractors, and in which language?</li>
-<li>Where will personal data sit, and how do you meet the UAE PDPL and the Saudi PDPL?</li>
-<li>What will you <em>not</em> claim? A supplier that quotes an unpublished “UAE NPS average” is guessing.</li>
-</ul>
+<li>What sample, quotas and mode will you use in Dubai, Abu Dhabi and the Northern Emirates, or in Riyadh, Jeddah and the Eastern Province?</li>
+<li>How will you close the loop, and in which language?</li>
+<li>Where will personal data sit?</li>
+</ol>
 
-<p>Related industry reading on this hub includes <a href="/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia">government customer satisfaction research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/kantar-alternative-middle-east">a Kantar alternative in the GCC</a>, <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services market research in Egypt (2026)</a> and <a href="/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026">online market research and social listening for brand growth</a>.</p>
+<p>A supplier that quotes an unpublished “UAE NPS average” is guessing.</p>
 
-<h2 id="why-bionixus">Why choose BioNixus for CSAT, NPS and CES in the UAE and Saudi Arabia?</h2>
+<p>Customers switch language by channel. An English-only app intercept under-represents Arabic-preferring shoppers. An Arabic-only mall intercept under-represents expatriate cardholders. The invitation, the questionnaire and the interviewer prompts need the same meaning in both languages.</p>
 
-<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has completed 127 studies so far in 2026. Custom CX programmes are typically priced from $10,000 to $60,000 depending on sample, markets, mode and reporting. The firm’s tagline is “Guaranteed in writing.” That refers to the scope, timetable and deliverables in the proposal — not to a promised score or a guaranteed finding.</p>
+<h2 id="who-fields">Who fields the work</h2>
 
-<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is fully operational in LATAM, covered from the US office in Sheridan, Wyoming, with a strong network of local consultants, and is in the process of opening a São Paulo office by the end of 2026.</p>
+<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has completed 127 studies so far in 2026. Custom programmes are priced from $10,000 to $60,000. The tagline is “Guaranteed in writing.” That covers the agreed scope, timetable and deliverables. It does not cover a promised score.</p>
 
-<p>Choose BioNixus when the decision needs a specified CSAT, NPS or CES item, bilingual fieldwork, driver analysis and a closed loop — not a recycled benchmark. To brief a programme, use the <a href="/contact">BioNixus contact form</a>, email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a> or call <a href="tel:+18884655557">+1-888-465-5557</a>.</p>`;
+<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
+
+<p>Arabic and English scripting sit with the same team that writes the item, so the scale labels do not drift. To brief a programme, use the <a href="/contact">BioNixus contact form</a>, email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a> or call <a href="tel:+18884655557">+1-888-465-5557</a>.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -359,39 +296,39 @@ ${REFERENCES_SECTION_HTML}`;
 
 export const UAE_CSAT_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does a customer satisfaction survey company UAE measure?',
+    question: 'What does a satisfaction study in the UAE need to name?',
     answer:
-      'A customer satisfaction survey company UAE programme should measure a named moment, journey or relationship, then assign CSAT, NPS or CES to that object. CSAT fits a single interaction, CES fits the effort of completing a request, and NPS fits likelihood to recommend the relationship. The brief should also lock language (Arabic and English), channel, sample and a closed loop — not only the acronym.',
+      'Name the moment, the journey, or the relationship. CSAT fits a single interaction. The effort score fits the work of completing a request. The recommend score fits likelihood to recommend the relationship. Lock the language, the channel, the sample and a closed loop before fieldwork.',
   },
   {
     question: 'What is the difference between CSAT, NPS and CES?',
     answer:
-      'CSAT asks how satisfied the customer was with a named experience. NPS, as published by the Net Promoter System, asks how likely they are to recommend the company on a 0–10 scale and subtracts the percentage of detractors (0–6) from the percentage of promoters (9–10). The original CES, published in Harvard Business Review in 2010, asks how much effort the customer personally had to put forth to handle a request, from 1 (very low) to 5 (very high). Later CES wordings exist; write the exact item in the brief.',
+      'CSAT asks how satisfied someone was with a named experience. The Net Promoter System asks how likely they are to recommend the company on a 0–10 scale, then subtracts the share of detractors (0–6) from the share of promoters (9–10). The 2010 Harvard Business Review effort item asks how much effort the person had to put forth, from 1 (very low) to 5 (very high). Later wordings exist. Write the exact item in the brief.',
   },
   {
-    question: 'How should an NPS survey company Saudi Arabia design the recommend question?',
+    question: 'How should the recommend question be written for Saudi Arabia?',
     answer:
-      'Use the published 0–10 recommend item, with 9–10 as promoters, 7–8 as passives and 0–6 as detractors, and calculate NPS as the promoter share minus the detractor share. Add a why question immediately after the score, collect permission to recontact, and report city, channel and tenure cuts. Saudi Arabia’s Personal Data Protection Law came into force on 14 September 2023, with a grace period to 14 September 2024 — say how identifiable answers will be stored.',
+      'Use the published 0–10 recommend item, with 9–10 as promoters, 7–8 as passives and 0–6 as detractors. Add a why question straight after the score, and ask permission to make contact again. Report city, channel and tenure if the team will use those cuts. The Saudi personal-data law came into force on 14 September 2023. The published grace period ran to 14 September 2024. Say where identifiable answers will be stored.',
   },
   {
-    question: 'Does UAE personal data law apply to customer satisfaction surveys?',
+    question: 'Does UAE personal-data law apply to these surveys?',
     answer:
-      'Yes, when the survey processes personal data. Federal Decree-Law No. 45 of 2021 came into force on 2 January 2022. The official portal states that processing generally requires the data owner’s consent, except where it is necessary to protect a public interest or to carry out legal procedures and rights, and that the UAE Data Office is the federal regulator. Treat ticket IDs, phone numbers and appended CRM fields as personal data.',
+      'Yes, when the survey processes personal data. Federal Decree-Law No. 45 of 2021 came into force on 2 January 2022. The official portal says processing generally requires the data owner’s consent, with stated exceptions, and that the UAE Data Office is the federal regulator. Treat ticket IDs, phone numbers and appended customer fields as personal data.',
   },
   {
-    question: 'What did Dubai’s 2024 government customer happiness programme report?',
+    question: 'What did Dubai’s 2024 government happiness programme report?',
     answer:
-      'On 18 January 2025 the Dubai Media Office reported 2024 Dubai Government Excellence Programme averages of 93.8% customer happiness, 86.7% employee happiness and 95.8% on the Mystery Shopper survey. The highest customer-happiness scores were Mohammed Bin Rashid Housing Establishment (98.75%), DEWA (97.01%) and Islamic Affairs (96.99%). Those are government-entity scores, not private-sector CSAT or NPS norms, and 2024 marked the twentieth year of the studies.',
+      'On 18 January 2025 the Dubai Media Office reported 2024 averages of 93.8% customer happiness, 86.7% employee happiness and 95.8% on the mystery shopper survey. The highest customer-happiness scores were Mohammed Bin Rashid Housing Establishment (98.75%), DEWA (97.01%) and Islamic Affairs (96.99%). Those are government-entity scores. The office said 2024 was the twentieth year of the studies.',
   },
   {
     question: 'How much does a custom CSAT or NPS programme cost with BioNixus?',
     answer:
-      'Custom CSAT, NPS and CES programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, number of markets, mode (online, CATI, face-to-face or mixed) and reporting depth. Multi-country UAE-and-Saudi scopes stay inside that range when the instrument is shared.',
+      'Custom programmes are priced from $10,000 to $60,000. The price moves with sample size, markets, mode and reporting. The scope, timetable and deliverables are guaranteed in writing. A promised score is not.',
   },
   {
-    question: 'Why run bilingual Arabic-English CSAT fieldwork from Dubai?',
+    question: 'Why field in Arabic and English?',
     answer:
-      'UAE and Saudi customers switch language by channel. An English-only intercept misses Arabic-preferring shoppers; an Arabic-only mall sample misses expatriate account holders. BioNixus scripts, back-translates and fields both languages from the Dubai field office, with further field offices in Al Khobar and Salmiya, Kuwait.',
+      'Customers switch language by channel. An English-only intercept misses Arabic-preferring shoppers. An Arabic-only mall sample misses expatriate account holders. Script both languages so the scale labels mean the same thing. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait.',
   },
 ];
 

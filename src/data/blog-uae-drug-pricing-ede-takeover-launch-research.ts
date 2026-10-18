@@ -53,15 +53,15 @@ export const UAE_EDE_FIGURES: ArticleFigure[] = [
     src: '/images/blog/uae-drug-pricing-ede-takeover-launch-research-timeline.webp',
     alt: 'Timeline of Emirates Drug Establishment legal and service transfer dates from 2023 to 2026',
     caption:
-      'Published dates a 2026 UAE launch file has to keep separate: Federal Decree-Law 28/2023 (25–30 September 2023), Federal Decree-Law 38/2024 in force 2 January 2025, MOHAP’s transfer of 44 services on 5 January 2026, and EDE Decision 12/2026 on the 168-product list.',
+      'Keep the legal dates apart: Decree-Law 28 of 2023, Decree-Law 38 of 2024 in force on 2 January 2025, and the transfer of 44 services on 5 January 2026. Decision 12 of 2026 has its own press date and its own Gazette dates.',
     width: 800,
     height: 640,
   },
   {
     src: '/images/blog/uae-drug-pricing-ede-takeover-launch-research-cuts.webp',
-    alt: 'Bar chart of published May 2026 UAE list-price cuts for Zocor 40 mg, Xalatan, Invega 9 mg and Alunbrig 180 mg',
+    alt: 'Illustration that Gulf News reported different percentage cuts on a 168-medicine list',
     caption:
-      'Gulf News (26 May 2026) examples from EDE Decision 12/2026: Zocor 40 mg fell from AED 166.50 to AED 67.50 (about 59.5%); Xalatan from AED 89 to AED 43 (about 51.7%); Invega 9 mg from AED 843 to AED 416; Alunbrig 180 mg from AED 26,433 to AED 21,108. Do not average them into one “UAE cut”.',
+      'Gulf News, last updated 26 May 2026, reported cuts of about 5–60 percent, including about 59.5 percent for Zocor 40 mg and about 51.7 percent for Xalatan. Those figures are the newspaper’s. This page has not inspected the Arabic Gazette.',
     width: 800,
     height: 640,
   },
@@ -101,15 +101,15 @@ export const UAE_EDE_META_DESCRIPTION =
   'UAE drug pricing after the Emirates Drug Establishment takeover: what launch research must prove for first price, May 2026 repricing and payer listing.';
 
 export const UAE_EDE_DISPLAY_TITLE =
-  'Launching a drug in the UAE after the EDE takeover: pricing, repricing and the research behind them';
+  'A new regulator does not collapse four dates into one';
 
 export const UAE_EDE_DISPLAY_SUBTITLE =
-  'UAE drug pricing and UAE launch research after the Emirates Drug Establishment change';
+  'UAE drug pricing after the Emirates Drug Establishment change';
 
 export const UAE_EDE_BREADCRUMB_LABEL = 'UAE drug pricing after EDE';
 
 export const UAE_EDE_EXCERPT =
-  'A sourced 2026 briefing on UAE drug pricing after the Emirates Drug Establishment takeover: what the January 2026 service transfer moved, what Decision 12 of 2026 cut, and what launch research still has to prove before first price and after a list cut.';
+  'A plain guide to who now sets a UAE medicine price, which 2026 dates must stay apart, and what a launch study still has to ask.';
 
 export const UAE_EDE_PUBLISHED_ISO = '2026-10-16T12:00:00.000Z';
 export const UAE_EDE_UPDATED_ISO = '2026-10-16T12:00:00.000Z';
@@ -401,166 +401,68 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const UAE_EDE_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What is UAE drug pricing after the EDE takeover?', anchor: 'what-is-uae-drug-pricing-after-the-ede-takeover' },
-  { heading: 'What did the EDE takeover actually move?', anchor: 'what-did-the-ede-takeover-actually-move' },
-  { heading: 'How does UAE drug pricing get set and reset?', anchor: 'how-does-uae-drug-pricing-get-set-and-reset' },
-  { heading: 'What did Decision 12 of 2026 change on the shelf?', anchor: 'what-did-decision-12-of-2026-change' },
-  { heading: 'Why a priced marketing authorisation is not access', anchor: 'why-a-priced-marketing-authorisation-is-not-access' },
-  { heading: 'What should UAE launch research measure after EDE?', anchor: 'what-should-uae-launch-research-measure-after-ede' },
-  { heading: 'How should you commission the study?', anchor: 'how-to-commission' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'Who the Establishment is', anchor: 'who-ede-is' },
+  { heading: 'What moved in January 2026', anchor: 'what-moved' },
+  { heading: 'Four dates for one price list', anchor: 'four-dates' },
+  { heading: 'How a single price is filed', anchor: 'how-a-price-is-filed' },
+  { heading: 'A price is not a paid prescription', anchor: 'not-a-prescription' },
+  { heading: 'Questions to put in the brief', anchor: 'questions' },
+  { heading: 'How to brief BioNixus', anchor: 'how-to-brief' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const UAE_EDE_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> UAE drug pricing after the Emirates Drug Establishment takeover is the federal list price EDE now sets and can cut, plus the separate payer listing that still sits with DHA, DOH and insurers. UAE launch research has to measure first price, repricing risk and who will fund the product after a list cut.</p>`;
+export const UAE_EDE_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> UAE drug pricing is now a job of the Emirates Drug Establishment, the federal body that took over medicine regulation. A launch file has to keep the legal dates, the press dates and the Gazette dates apart. This briefing has not read the Arabic Gazette text of the 2026 price decision.</p>`;
 
-const NARRATIVE_HTML = `<p>UAE drug pricing is a research problem again, not only a regulatory filing. On 5 January 2026 the Ministry of Health and Prevention transferred 44 core services to the Emirates Drug Establishment, including the re-pricing of individual medical products and the publication of regulated-medicine price lists (${cite('mohap-44-2026', 'MOHAP, 5 January 2026')}). In May 2026 the same authority cut the retail prices of 168 chronic- and critical-care products (${cite('gulf-news-168', 'Gulf News, 26 May 2026')}). What a brand, HEOR or market-access team still cannot buy off the shelf is the first-price file the Drugs Pricing Committee will accept, which analog on that 168-product list can pull a net price, and which DHA, DOH or insurer wallet will fund the script after the list moves. This briefing uses only published sources. It sits alongside our <a href="/healthcare-market-research">healthcare market research company</a> hub for Saudi Arabia, the UAE and the GCC, and, for the payer-process map this page does not repeat, our <a href="/uae-pricing-reimbursement-strategy">UAE pricing and reimbursement strategy</a> page.</p>
+const NARRATIVE_HTML = `<p>UAE drug pricing is a federal rule plus an emirate decision about who pays. This page sits on the <a href="/healthcare-market-research">healthcare market research</a> hub and next to the <a href="/uae-pricing-reimbursement-strategy">UAE pricing and reimbursement</a> guide. UAE launch research asks what price the Establishment set, and then whether a named payer will fund the pack. Those are two questions.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: UAE drug pricing and the EDE takeover, October 2026</strong></p>
-<ul>
-<li><strong>25–30 September 2023:</strong> Federal Decree-Law No. 28 of 2023 established the UAE Drug Corporation / Emirates Drug Establishment — issued 25 September, Official Gazette 29 September No. 760, effective 30 September (${cite('uae-leg-28-2023', 'UAE Legislation')}).</li>
-<li><strong>2 January 2025:</strong> Federal Decree-Law No. 38 of 2024 on medical products, pharmacists and pharmaceutical establishments came into force (${cite('uae-leg-38-2024', 'UAE Legislation')}; ${cite('baker-mckenzie-2025', 'Baker McKenzie, 14 January 2025')}).</li>
-<li><strong>5 January 2026:</strong> MOHAP transferred 44 core services in full to EDE, including individual-product re-pricing and publication of regulated-medicine price lists (${cite('mohap-44-2026', 'MOHAP')}).</li>
-<li><strong>168 products</strong> had retail prices cut under EDE Decision No. 12 of 2026; published reductions ran from about 5% to nearly 60%, with Zocor 40 mg about 59.5% and Xalatan about 51.7% (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Two dates, one decision:</strong> Gulf News reported a 30 May 2026 pharmacy effective date; a legal-database listing of the same Decision 12 records issuance on 22 April 2026, Official Gazette No. 822 on 30 April 2026, and entry into force on 12 June 2026 (${cite('gulf-news-168', 'Gulf News')}; ${cite('eastlaws-12-2026', 'Eastlaws listing')}).</li>
-<li><strong>20 pricing decisions</strong> in the first half of 2026, inside a half-year in which EDE approved 942 products and carried out 2,030 inspection visits (${cite('wam-h1-2026', 'WAM, 22 September 2026')}).</li>
-<li><strong>11.29 million</strong> residents in 2024, up 5.7% from 10.68 million in 2023 (${cite('fcsc-2024', 'FCSC Unified UAE Numbers')}).</li>
-<li><strong>11.8%</strong> of adults 18+ had diabetes or were on diabetes medication in the last official published national health survey — a 2017–2018 figure, not a 2026 treated-share (${cite('mohap-nhs', 'MOHAP National Health Survey')}).</li>
-</ul>
-</div>
-
-<h2 id="what-is-uae-drug-pricing-after-the-ede-takeover">What is UAE drug pricing after the EDE takeover?</h2>
-
-<p>It is the federal public price the Emirates Drug Establishment now sets for a medicine that has marketing approval, the later decisions that can cut that price, and the commissioned work that tells a launch team whether a DHA, DOH or insurer committee will still fund the product after the list moves. It is not a syndicated UAE pharmaceutical market-size slide.</p>
-
-<p>Report publishers such as Grand View Research, IMARC and IQVIA sell UAE pharmaceutical outlooks and audits. Those pages often occupy the query “UAE drug pricing”. ${cite('grand-view', 'Grand View Research')}, ${cite('imarc', 'IMARC Group')} and ${cite('iqvia', 'IQVIA')} are useful for a first cut of national audit context. They do not say what country-of-origin certificate the Drugs Pricing Committee will accept, which analog on the 168-product list sits next to your brand, or whether a Dubai Drug Code or an Abu Dhabi wallet will carry the product after a cut. Those answers require a custom brief. Country context sits on <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a> and <a href="/uae-pharmaceutical-market-research">UAE pharmaceutical market research</a>.</p>
-
-<p>A usable UAE launch research file after EDE usually needs:</p>
-
-<ul>
-<li>A reconstructed first-price pack: country-of-origin certificate, Gulf and European reference prices, and the Decision 140/2013 mark-up path the committee still cites (${cite('ede-repricing', 'EDE re-pricing card')}; ${cite('chambers-2026', 'Chambers Life Sciences 2026')}).</li>
-<li>A dose-level map of every analog on Decision 12/2026 and a watch on the other published pricing decisions in the same half-year (${cite('gulf-news-168', 'Gulf News')}; ${cite('wam-h1-2026', 'WAM')}).</li>
-<li>Payer and Pharmacy and Therapeutics interviews that treat DHA, DOH and private insurers as different decisions — the process map is on <a href="/uae-pricing-reimbursement-strategy">UAE pricing and reimbursement strategy</a>, not in this briefing.</li>
-<li>Arabic and English instruments, and sites in Dubai, Abu Dhabi and at least one northern emirate — not a Gulf average.</li>
-</ul>
-
-<p>The unit of observation is the price certificate and the payer committee, not a vial forecast. Neighbouring systems are not a substitute. Compare <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a> rather than importing an SFDA or MOH price into an EDE file.</p>
-
-<h2 id="what-did-the-ede-takeover-actually-move">What did the EDE takeover actually move?</h2>
-
-<p>The Establishment is older than the January 2026 service transfer. Federal Decree-Law No. 28 of 2023 created the UAE Drug Corporation — the English legislation title — on 25 September 2023, with Official Gazette publication on 29 September 2023 (No. 760) and legal effect on 30 September 2023 (${cite('uae-leg-28-2023', 'UAE Legislation')}; ${cite('lexis-28-2023', 'Lexis Middle East')}). The EDE portal’s own Arabic copy says the Establishment was founded on 29 September (${cite('ede-gov', 'EDE portal')}). Use the legislation dates for legal effect. Use 5 January 2026 for the service transfer a launch team will feel in the filing queue.</p>
-
-<p>Federal Decree-Law No. 38 of 2024 then replaced Federal Law No. 8 of 2019 on medical products, the pharmacy profession and pharmaceutical establishments. The UAE Legislation portal lists issuance on 1 October 2024 and effect on 2 January 2025 (${cite('uae-leg-38-2024', 'UAE Legislation')}). Baker McKenzie’s 14 January 2025 note records a one-year grace period from that effective date and says the law was written to facilitate EDE’s take-over of responsibilities from MOHAP (${cite('baker-mckenzie-2025', 'Baker McKenzie')}).</p>
-
-<p>The take-over that changed the filing address is the 5 January 2026 MOHAP statement. MOHAP wrote that it had transferred a set of services to EDE “to unify mandates, clarify institutional roles, and strengthen integration,” and that the restructuring included the <em>full</em> transfer of 44 core services, with EDE now solely responsible for their administration, regulation and oversight (${cite('mohap-44-2026', 'MOHAP, 5 January 2026')}). The services named on that page include:</p>
-
-<ul>
-<li>re-pricing of individual medical products;</li>
-<li>registration and renewal of manufacturers of medical products;</li>
-<li>certificates for pharmaceutical products intended for export;</li>
-<li>renewal of registration for pharmaceutical products derived from natural sources;</li>
-<li>publication of price lists for regulated medicines;</li>
-<li>accreditation certificates for clinical studies or bioequivalence centres; and</li>
-<li>certificates reflecting amendments to registered pharmaceutical products (${cite('mohap-44-2026', 'MOHAP')}).</li>
-</ul>
-
-<p>MOHAP’s companion list page tells applicants to submit the transferred-category requests through the EDE portal at www.ede.gov.ae (${cite('mohap-mte', 'MOHAP service-list page')}). That is the operational meaning of “takeover” for a 2026 launch team: the price-list and re-pricing queue now sits at EDE, not at the ministry desk that used to issue the ministerial pricing decision.</p>
-
+<h2 id="who-ede-is">Who the Establishment is</h2>
+<p>The Emirates Drug Establishment is the federal body for medicines. People also call it the UAE Drug Corporation. Federal Decree-Law No. 28 of 2023 set it up. The law was issued on 25 September 2023, published in Official Gazette No. 760 on 29 September 2023, and took effect on 30 September 2023 (${cite('uae-leg-28-2023', 'UAE Legislation')}). A Lexis Middle East note of the same decree records the Hijri date and says the decree considered Federal Law No. 8 of 2019 on medical products and the pharmacy profession (${cite('lexis-28-2023', 'Lexis Middle East')}). The Establishment’s own site says it was founded on 29 September. Its published contacts are the toll-free number <a href="tel:80033784">800 33784</a> and <a href="mailto:info@ede.gov.ae">info@ede.gov.ae</a>. The legal dates still come from the legislation portal, not from that search line (${cite('ede-gov', 'Emirates Drug Establishment portal')}).</p>
+<p>Federal Decree-Law No. 38 of 2024 now governs medical products, pharmacists and pharmaceutical establishments. It was issued on 1 October 2024 and took effect on 2 January 2025 (${cite('uae-leg-38-2024', 'UAE Legislation, Decree-Law 38 of 2024')}). The English text on FAOLEX is the place to read the duties. Article 20 is about Board pricing rules. Article 22 requires at least two licensed importers. Article 7 gives a marketing approval of five years and says renewal is filed 90 days before expiry. Article 36 names a Pharmaceutical Policy Committee (${cite('faolex-38-2024', 'FAOLEX English text')}). Marketing approval means the product may be sold. It is not a promise that an insurer will pay.</p>
+<p>Baker McKenzie, writing on 14 January 2025, said the law was in force on 2 January 2025, with a one-year grace period, and that it was written to help the Establishment take responsibilities from the Ministry of Health and Prevention (${cite('baker-mckenzie-2025', 'Baker McKenzie, 14 January 2025')}). That sentence is the law firm’s description of the grace period. It is not a later status report.</p>
 ${figureHtml(UAE_EDE_FIGURES[0])}
 
-<p>Not everything moved. EnterpriseAM, reporting the ministry statement the next morning, wrote that some services were only “partially” transferred — facility licensing, advertising and emergency-drug approval described as still co-managed — and that narcotics and high-sensitivity controlled substances remained under the ministry (${cite('enterprise-am-2026', 'EnterpriseAM, 6 January 2026')}). NAVLIN Daily, on 12 January 2026, reported that the ministry keeps control of five key areas, including issuing prescription books for controlled medicine and approving narcotics for private hospitals (${cite('navlin-2026', 'NAVLIN Daily')}). A launch brief that treats “EDE now owns all drug regulation” as a fact will mis-state a controlled-drug or advertising file. Split the 44 fully transferred services from the residual ministry list before you write the regulatory workplan.</p>
-
-<p>EDE’s own first-half 2026 record, issued through WAM on 22 September 2026, is the first official activity count after that transfer: 2,030 inspection and regulatory visits by 30 June 2026, 828 non-compliant advertisements, 20 pricing decisions, 38 circulars, and 942 product approvals, of which 420 were conventional or biological medicines (63 of them innovator products), 376 healthcare products and 146 medical devices. Local manufacturing accounted for 247 UAE-made products — WAM’s phrase is “more than a quarter of the total” (${cite('wam-h1-2026', 'WAM, 22 September 2026')}). Those are regulator activity counts. They are not a demand forecast.</p>
-
+<h2 id="what-moved">What moved in January 2026</h2>
+<p>On 5 January 2026 the ministry said it had fully transferred 44 core services to the Establishment. The list includes re-pricing of an individual product and publication of regulated-medicine price lists (${cite('mohap-44-2026', 'Ministry of Health and Prevention, 5 January 2026')}). The service-list page tells applicants to file transferred-category applications on the Establishment’s portal (${cite('mohap-mte', 'ministry service list')}).</p>
+<p>Do not turn “44 services” into “every health service”. EnterpriseAM, on 6 January 2026, reported that some services were only partly transferred. It described facility licensing, advertising and emergency-drug approval as co-managed, and said narcotics and high-sensitivity controlled substances stayed with the ministry (${cite('enterprise-am-2026', 'EnterpriseAM, 6 January 2026')}). NAVLIN Daily, on 12 January 2026, summarised the same shift, including re-pricing, manufacturer registration, export certificates and drug quality control. It reported that the ministry keeps five areas, including prescription books for controlled medicine and narcotics approval for private hospitals (${cite('navlin-2026', 'NAVLIN, 12 January 2026')}). Quote each report for what it actually lists. Do not merge them into one unofficial leftover list.</p>
 ${figureHtml(UAE_EDE_FIGURES[2])}
+<p>On 22 September 2026 the Emirates News Agency published the Establishment’s record to 30 June 2026. The figures are 2,030 inspection visits, 828 non-compliant advertisements, 20 pricing decisions, and 942 product approvals. Of those approvals, 420 were conventional or biological products, including 63 innovator products, and 247 were UAE-made. The same release records a February multi-importer mechanism and names Foundayo, Inpefa, Baxfendy and EURneffy (${cite('wam-h1-2026', 'Emirates News Agency, 22 September 2026')}). Twenty pricing decisions is a count of decisions. It is not a count of patients.</p>
+<p>A separate release, on 3 April 2026, said the Establishment had approved Foundayo (orforglipron), an oral GLP-1 receptor agonist for chronic weight management, and that the UAE was the second country to register it. GLP-1 here means a medicine that acts on a gut-hormone receptor. The release said availability was expected from May 2026. That expectation belongs to the April release. This page does not report later sales. Director-General Dr Fatima Al Kaabi is quoted on obesity as a priority associated with more than 200 diseases and at least 13 cancers. The release states that people on the highest dose in the trials recorded an average weight loss of 12.4 percent (${cite('wam-foundayo', 'Emirates News Agency, 3 April 2026')}). That 12.4 percent is the release’s statement about the trial dose. It is not a UAE pharmacy audit, and it is not a result for the other products named in the half-year note.</p>
 
-<p>The same WAM note is also the public record that EDE is now approving first-in-region and second-in-world products on compressed clocks. Foundayo (orforglipron) was approved on 3 April 2026, making the UAE the second country to register Eli Lilly’s oral GLP-1 for chronic weight management, with expected availability from May 2026 (${cite('wam-foundayo', 'WAM, 3 April 2026')}; ${cite('wam-h1-2026', 'WAM H1 note')}). WAM’s H1 wrap also names Inpefa (sotagliflozin) as a second-country approval, Baxfendy (baxdrostat) as a first-country approval, and EURneffy as the region’s first epinephrine nasal spray (${cite('wam-h1-2026', 'WAM')}). Approval speed is not the same as a published public price, and a published public price is not the same as a payer listing. That gap is the research question.</p>
-
-<h2 id="how-does-uae-drug-pricing-get-set-and-reset">How does UAE drug pricing get set and reset?</h2>
-
-<p>Article 20 of Federal Decree-Law No. 38 of 2024 is the current statutory sentence: marketing a medical product that has marketing approval requires a specific price, “determined in accordance with the general rules issued by a decision of the BOD” — the EDE Board of Directors (${cite('faolex-38-2024', 'FAOLEX English text, Article 20')}). Article 36 creates a Pharmaceutical Policy Committee, reporting to the President, to propose policies on circulation, pricing and monitoring; the Cabinet is to decide its formation and working system (${cite('faolex-38-2024', 'Article 36')}). Chambers’ 2026 UAE Life Sciences chapter repeats that EDE controls pharmaceutical and medical-device prices and that this committee is the dedicated policy body (${cite('chambers-2026', 'Chambers')}).</p>
-
-<p>The mark-up path that 2025 EDE pricing decisions still recite is older than EDE. Ministerial Decision No. 140 of 2013 unified the factory import price on a CIF basis in US dollars. Chambers describes Pharmacy Price as Import Price + 15%, then a public sale add-on of 28%, 24% or 20% of Import Price according to whether that import price is below AED 250, AED 250–500, or above AED 500, with EDE retaining discretion (${cite('chambers-2026', 'Chambers Life Sciences 2026')}). Chairman’s Decision No. 49 of 2025 still lists Decision 140/2013 in its recitals (${cite('reallaw-49-2025', 'EDE Decision 49/2025 listing')}). The National’s 2013 report said retail prices of more than 6,600 medicines would be cut by up to 40% under that unification (${cite('national-2013', 'The National')}). A first-price model still has to show that working. It is not a 2026 circular that republishes the arithmetic in English.</p>
-
-<p>Re-pricing is a separate service with a published evidence list. The EDE card for “Re-Pricing of a Single Medical Product” tells the company to attach a country-of-origin pricing certificate that includes the proposed UAE price, to explain the justifications, and to supply reference prices from Gulf and European countries. The price is determined on the approval of the Drugs Pricing Committee. Fees are AED 1,000 for the re-pricing request and AED 500 for a new pricing certificate (${cite('ede-repricing', 'EDE re-pricing card')}). Two research points sit inside that card. First, the comparator basket the committee is told to look at is Gulf plus Europe, not a global lowest-price screen the company invents. Second, the card still says a “ministerial decision” will then be issued. After 5 January 2026 the public price decisions in this briefing are Chairman-of-the-Board decisions, not ministry decisions (${cite('gulf-news-168', 'Decision 12/2026')}; ${cite('reallaw-49-2025', 'Decision 49/2025')}). A launch file that still addresses the cover letter to the old ministry pricing desk is already out of date.</p>
-
-<p>Chambers also records Cabinet Decision No. 90 of 2021 — the implementing regulation of the 2019 law, still in force to the extent it does not contradict Decree-Law 38/2024 — as providing that prices set by EDE or MOHAP may not be discounted or altered except by EDE or MOHAP themselves (${cite('chambers-2026', 'Chambers')}; ${cite('baker-mckenzie-2025', 'Baker McKenzie on residual 2019 regulations')}). That is why a “discount to win a tender” story is not a UAE private-pharmacy plan. The published lever after the takeover is an EDE pricing decision, not an off-invoice pharmacy cut.</p>
-
-<p>Supply rules now sit in the same statute as the price. Article 22 requires the marketing-right holder to appoint at least two EDE-licensed pharmaceutical establishments as importers, to appoint one or more licensed distributors, to designate one main establishment for licensing, pharmacovigilance and lifecycle management, and to have all designated establishments actually carry out import operations during the calendar year (${cite('faolex-38-2024', 'Article 22')}). Baker McKenzie notes that this continues the two-importer rule introduced by Law No. 11 of 2023 amending the 2019 law (${cite('baker-mckenzie-2025', 'Baker McKenzie')}). WAM’s H1 2026 wrap says that in February EDE approved a mechanism requiring companies to appoint more than one importer for each medical product marketed in the UAE (${cite('wam-h1-2026', 'WAM')}). Marketing approval itself is valid for five years, with the renewal request due 90 days before expiry (${cite('faolex-38-2024', 'Article 7')}). UAE launch research that stops at the price certificate, and never names the two importers or tests whether both imported last year, has not finished the access file.</p>
-
-<h2 id="what-did-decision-12-of-2026-change">What did Decision 12 of 2026 change on the shelf?</h2>
-
-<p>Decision No. (12) of 2026 is the first large, named EDE list-cut a 2026 launch team can put in a slide. Gulf News, updating on 26 May 2026, reported that EDE had reduced the retail prices of 168 pharmaceutical products across the UAE, covering cardiovascular disease, diabetes, hypertension, cancer, thrombosis and stroke, cholesterol disorders, gastrointestinal disease, psychological and neurological disorders, eye disease and asthma, in multiple dosages, and that pharmacies had already begun showing the revised prices. The same report said discounts ranged from approximately 5% to nearly 60% for some high-cost vital and biologic medicines, with Zocor 40 mg about 59.5% and Xalatan about 51.7% (${cite('gulf-news-168', 'Gulf News, 26 May 2026')}).</p>
-
-<p>The published AED pairs in that report are the numbers a launch model can use. They are not a class average.</p>
-
-<ul>
-<li><strong>Cholesterol.</strong> Zocor 10 mg, 20 mg and 40 mg were unified at AED 67.50, from AED 83.50, AED 91.50 and AED 166.50 (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Glaucoma.</strong> Xalatan 0.005% fell from AED 89 to AED 43; GANFORT from AED 114 to AED 99.50; Combigan from AED 94 to AED 78.50 (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Oncology.</strong> Alunbrig 180 mg from AED 26,433 to AED 21,108; Alunbrig 90 mg from AED 19,824 to AED 12,520; Alunbrig 30 mg from AED 6,608 to AED 4,173; Xeloda 150 mg from AED 347 to AED 241 (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Heart failure.</strong> Verquvo 2.5 mg from AED 257 to AED 244; Verquvo 10 mg from AED 499.50 to AED 474.50 (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Type 2 diabetes.</strong> Amaryl 1 mg from AED 25 to AED 19; Amaryl 2 mg from AED 39.50 to AED 32; Amaryl 3 mg from AED 57.50 to AED 47.50 (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Hypertension.</strong> Renitec 10 mg from AED 64 to AED 48; Renitec 20 mg from AED 83 to AED 62; Aprovel 150 mg from AED 99.50 to AED 63.50; Aprovel 300 mg from AED 117 to AED 85 (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Anticoagulation.</strong> Pradaxa 110 mg from AED 220 to AED 198; Pradaxa 150 mg from AED 438.50 to AED 394.50 (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Psychiatry.</strong> Invega 3 mg from AED 449.50 to AED 381.50; Invega 6 mg from AED 562 to AED 381.50; Invega 9 mg from AED 843 to AED 416 (${cite('gulf-news-168', 'Gulf News')}).</li>
-<li><strong>Severe eosinophilic asthma.</strong> Nucala 100 mg vial and pre-filled syringe unified at AED 5,142, from AED 6,212.50 (${cite('gulf-news-168', 'Gulf News')}).</li>
-</ul>
-
+<h2 id="four-dates">Four dates for one price list</h2>
+<p>Gulf News, in an article last updated on 26 May 2026, reported Emirates Drug Establishment Decision No. 12 of 2026. It reported a pharmacy date of 30 May 2026, cuts of about 5 to 60 percent, and examples of about 59.5 percent for Zocor 40 mg and about 51.7 percent for Xalatan. The newspaper is also the source of the dirham pairs quoted around that decision (${cite('gulf-news-168', 'Gulf News, 26 May 2026')}). Treat those percentages as the newspaper’s account. Do not average them into one national cut.</p>
 ${figureHtml(UAE_EDE_FIGURES[1])}
+<p>An Eastlaws listing of Decision No. 12 of 2026 gives different dates. It lists issuance on 22 April 2026, publication on 30 April 2026 in Official Gazette No. 822, and entry into force on 12 June 2026. This briefing has not inspected the Arabic Official Gazette page. The Eastlaws listing is cited for the Gazette metadata. It is not a substitute for the Arabic Official Gazette text (${cite('eastlaws-12-2026', 'Eastlaws listing')}). The 30 May pharmacy date in Gulf News and the 12 June in-force date on the listing are not the same sentence. Keep them apart. Do not describe either date as still ahead. Both dates are earlier than October 2026.</p>
 
-<p>Two dates now sit on the same decision, and a launch file should keep both. Gulf News, writing on 26 May 2026, said the decision “will come into effect at the end of the current month (May 30)” and that pharmacies had already reflected the new prices (${cite('gulf-news-168', 'Gulf News')}). A commercial legal-database listing of Decision of the Chairman of the Board No. 12 of 2026 records issuance on 22 April 2026, publication on 30 April 2026 in Official Gazette No. 822, and a date of entry into force of 12 June 2026 (${cite('eastlaws-12-2026', 'Eastlaws listing')}). This briefing has not inspected the Arabic Official Gazette page itself. The research instruction is: do not collapse a press-reported pharmacy date and a Gazette entry-into-force date into one cell. Ask the agency which date it used for “list in force,” and put the other date in the footnote.</p>
+<h2 id="how-a-price-is-filed">How a single price is filed</h2>
+<p>The Establishment’s service card for re-pricing one medical product asks for a country-of-origin pricing certificate, justifications, and Gulf plus European reference prices. The Drugs Pricing Committee approves the file. The published fees are AED 1,000 plus AED 500 for a new certificate (${cite('ede-repricing', 're-pricing service card')}). A fee is the cost of the application. It is not the future list price.</p>
+<p>Chambers, in its 2026 life-sciences comparison, says the Establishment controls pharmaceutical and medical-device prices, and that Cabinet Decision 90 of 2021 bars unauthorised discounts. It recites Decision 140 of 2013 on CIF mark-ups in US dollars: 15 percent at the pharmacy step, then a sale mark-up of 28, 24 or 20 percent depending on the import-price band (${cite('chambers-2026', 'Chambers, Life Sciences 2026')}). CIF means the import price including cost, insurance and freight. A 2025 decision on the pricing of certain products, listed by realLaw, still cites Ministerial Decision 140 of 2013 in its recital, along with Decree-Laws 28 of 2023 and 38 of 2024 (${cite('reallaw-49-2025', 'Decision 49 of 2025 listing')}). The recital shows that the 2013 instrument was still being cited in 2025. It does not reprint the 2013 table.</p>
+<p>The National’s contemporary report of the 2013 change said retail prices of more than 6,600 medicines would be cut by up to 40 percent, under a system that put imported medicines on a US-dollar cost and reduced agent and pharmacy margins (${cite('national-2013', 'The National, 2013 coverage')}). That is a 2013 news report. It is not Decision 12 of 2026.</p>
+<p>The Establishment’s legislations page lists Decree-Law 28 of 2023 and Chairman Decision No. 47 of 2025, which adopted the National Essential Medicines List and was published on Thursday 19 June 2025 (${cite('ede-legislations', 'Establishment legislations page')}). A Dubai Health Authority copy of that decision is signed by Dr Thani Ahmed Al Zeyoudi and dated 19 June 2025, with the 2025 list attached (${cite('dha-neml-pdf', 'Dubai Health Authority copy')}). The World Health Organization’s English copy of the same national list is dated 3 June 2026 in its repository (${cite('who-neml-2025', 'World Health Organization repository')}). Being on an essential list is not the same fact as a 2026 percentage cut.</p>
 
-<p>Decision 12 is also not the whole 2026 pricing programme. WAM’s official H1 count is 20 pricing decisions, covering adjustments as well as reductions (${cite('wam-h1-2026', 'WAM')}). A forecast that treats the 168-product cut as a one-off event, and does not watch the next Chairman’s pricing table, will be sent back the first time an analog moves again. The therapeutic spread in Decision 12 — diabetes tablets next to a lung-cancer TKI next to an asthma biologic — is the other warning. A chronic-care launch and an oncology launch are now in the same federal list-cut machine. They are not in the same payer committee.</p>
-
-<h2 id="why-a-priced-marketing-authorisation-is-not-access">Why a priced marketing authorisation is not access</h2>
-
-<p>EDE can approve a product quickly and still leave the funding question open. Foundayo is the clean example. WAM reported the 3 April 2026 approval, second-country status, expected May 2026 availability, and a 12.4% mean weight-loss figure at the highest trial dose (${cite('wam-foundayo', 'WAM, 3 April 2026')}). The same release quotes Director-General Dr Fatima Al Kaabi on obesity as an EDE priority because it is associated with more than 200 diseases and at least 13 cancers (${cite('wam-foundayo', 'WAM')}). None of that is a published public price, a Dubai Drug Code, or an insurer prior-authorisation rule. A launch model that converts “second country to approve” into “funded in May” has skipped the research.</p>
-
+<h2 id="not-a-prescription">A price is not a paid prescription</h2>
+<p>The country is large enough that a national price is still not a local prescription. The statistics centre’s December 2025 file puts the 2024 population at about 11.29 million, up 5.7 percent from 10.68 million in 2023, with about 200 nationalities (${cite('fcsc-2024', 'Federal Competitiveness and Statistics Centre')}). The ministry’s National Health Survey, which started in October 2017 and covered 10,000 families with a 94 percent response, found diabetes in 11.8 percent of adults over 18, down from 18.9 percent in 2010. Diabetes there means high blood glucose or taking diabetes medication on the survey day. The ministry’s note is the last official STEPS-style national figure cited here. It is not a 2026 prevalence, and it is not the volume of any priced brand (${cite('mohap-nhs', 'National Health Survey')}).</p>
+<p>A United Nations Development Programme investment case repeats the 11.8 percent figure. It describes Abu Dhabi’s Thiqa programme for UAE nationals and Dubai’s Saada programme, and it says employers in both emirates must cover employees, with national rules also requiring cover for expatriate workers and their dependents (${cite('undp-ncd', 'UNDP investment case')}). Thiqa is Abu Dhabi’s government scheme for nationals. Saada is the Dubai programme named in that case. Neither programme is the Establishment’s price list.</p>
 ${figureHtml(UAE_EDE_FIGURES[3])}
-
-<p>The federal list price is one layer. Emirate payer listing is another. The hospital or insurer wallet is a third. This page does not repeat the DHA / DOH / MOHAP formulary walkthrough — that sits on <a href="/uae-pricing-reimbursement-strategy">UAE pricing and reimbursement strategy</a> and on <a href="/uae-market-access-research">UAE market access research</a>. What the published 2026 record adds is that the first layer has a new owner and a demonstrated willingness to cut 168 SKUs at once.</p>
-
-<p>Insurance remains an emirate statute, not an EDE circular. Dubai Law No. 11 of 2013 makes health insurance mandatory in the emirate, including special development zones and free zones such as DIFC, and requires the entities named in Article 9 to enrol UAE nationals, residents and visitors (${cite('dubai-law-11-2013', 'Law 11/2013')}). Dubai.ae states that employers, including free-zone employers, must cover employees, that sponsors must cover dependents, and that Dubai citizens and government employees are eligible under Enaya (${cite('dubai-ae-insurance', 'Dubai.ae')}). The UNDP / Gulf Health Council NCD investment case describes Abu Dhabi’s Thiqa programme for UAE nationals, Dubai’s Saada programme, and employer-mandated cover for expatriate employees in both emirates (${cite('undp-ncd', 'UNDP NCD investment case')}). A product can have an EDE public price and still sit outside the benefit design of a basic plan. That is a payer-research question, not a pricing-certificate question.</p>
-
-<p>Two published lists now sit beside the EDE price list, and they are not the same list. EDE Chairman Decision No. 47 of 2025, dated 19 June 2025 and signed by Dr Thani Ahmed Al Zeyoudi as Chairman, adopted the UAE National Essential Medicines List (${cite('ede-legislations', 'EDE legislations page')}; ${cite('dha-neml-pdf', 'Decision 47/2025 PDF')}). WHO posted an English 2025 NEML file dated 3 June 2026 (${cite('who-neml-2025', 'WHO')}). In Dubai, General Circular 12/2018 defines the Dubai Drug Code list as every drug registered with DHA Pharmacy Services, with a unique code that already includes pack size and price (${cite('ddc-2018', 'GC 12/2018')}). A molecule can be priced by EDE, coded in DDC, absent from NEML, or the reverse. UAE launch research has to say which list the forecast is using.</p>
-
-<p>The treated population is also not the resident population. FCSC’s 2024 official estimate is 11.29 million residents, up 5.7% from 10.68 million in 2023, with about 200 nationalities (${cite('fcsc-2024', 'FCSC')}). The last official published national diabetes figure is 11.8% of adults 18+ from the 2017–2018 National Health Survey of 10,000 families, down from 18.9% in 2010 (${cite('mohap-nhs', 'MOHAP')}; ${cite('undp-ncd', 'UNDP')}). Decision 12 cut Amaryl 1 mg, 2 mg and 3 mg (${cite('gulf-news-168', 'Gulf News')}). That is not a 2026 treated-diabetes count, and it is not a DPP-4 or SGLT2 share. A diabetes or obesity launch that applies 11.8% to 11.29 million and calls it demand will be sent back. For the therapy-area design, see <a href="/diabetes-market-research-uae">diabetes market research in the UAE</a> and the 2026 context on <a href="/blog/uae-healthcare-market-trends-2026">UAE healthcare market trends 2026</a>.</p>
-
-<h2 id="what-should-uae-launch-research-measure-after-ede">What should UAE launch research measure after EDE?</h2>
-
-<p>Design the study backwards from the decision — a first-price filing, a re-pricing request, a DHA or DOH listing, or a private-insurer prior-authorisation rule — not from a national market-size slide.</p>
-
-${WORKSTREAM_TABLE_HTML}
-
+<p>Dubai has its own insurance law. Law No. 11 of 2013 covers the emirate, including special development zones and free zones such as the Dubai International Financial Centre. Article 9’s entities must enrol nationals, residents and visitors as the law requires (${cite('dubai-law-11-2013', 'Dubai Law 11 of 2013')}). The dubai.ae page says that cover is mandatory, that employers including free zones must insure employees, that sponsors must cover dependents, and that Dubai citizens and government employees are eligible under Enaya (${cite('dubai-ae-insurance', 'dubai.ae')}). Enaya is that government scheme. It is not a federal price.</p>
+<p>Inside Dubai claims, the Dubai Drug Code is the list of drugs registered with the pharmacy department. A 2018 circular defines it as a comprehensive list. Each registered drug gets a code that includes route, dosage, form, pack size, price, manufacturer, registered owner and source (${cite('ddc-2018', 'General Circular 12 of 2018')}). A code is how a claim names a pack. It is not proof that Decision 12 changed that pack.</p>
 ${figureHtml(UAE_EDE_FIGURES[4])}
+<p>${cite('grand-view', 'Grand View Research')}, ${cite('imarc', 'IMARC')} and ${cite('iqvia', 'IQVIA')} publish UAE market outlooks or audit commentary. Use them as category context. They do not replace the pricing-committee file or a payer interview.</p>
 
-<p>The table and the seven-workstream figure are the brief. Two extra research notes sit outside the rows. First, WAM’s note that Novo Nordisk will put a regional distribution centre in the UAE to serve up to 70 countries is a logistics fact, not a substitute for the two named Article 22 importers (${cite('wam-h1-2026', 'WAM')}; ${cite('faolex-38-2024', 'Article 22')}). Second, Foundayo’s second-country approval on 3 April 2026 and May 2026 availability statement are published (${cite('wam-foundayo', 'WAM')}); an oral-GLP-1 file still has to produce a first-price pack, a dual-importer map and plan-specific obesity-cover interviews. It should not invent an EDE public price that is not on a current list. HEOR design for a class-level budget impact sits on <a href="/blog/gcc-pharmacoeconomics">GCC pharmacoeconomics</a> and <a href="/real-world-evidence-gcc">real-world evidence in the GCC</a>.</p>
-
-<h2 id="how-to-commission">How should you commission the study?</h2>
-
+<h2 id="questions">Questions to put in the brief</h2>
+<p>Write the decision in one line. It might be the first price of a named pack, or what happens to prescribing after a named cut.</p>
 <ul>
-<li>How many pricing-committee-adjacent, DHA, DOH and insurer respondents will you recruit, and from which emirates — Dubai, Abu Dhabi and at least one northern emirate?</li>
-<li>Will results be reported by public versus private channel, by nationality, and by new versus current treated patients?</li>
-<li>Which Decision 12 analogs, and which of the other H1 2026 pricing decisions, sit in the discussion guide?</li>
-<li>Will the first-price reconstruction show the country-of-origin certificate, the Gulf/Europe basket, and the Decision 140/2013 path as three workings, not one “UAE price”?</li>
-<li>Are questionnaires available in Arabic and English?</li>
-<li>Who owns the data, and can it be re-cut after the next Chairman’s pricing table?</li>
+<li><strong>Which date.</strong> Issuance on 22 April 2026, Gazette publication on 30 April 2026, the press pharmacy date of 30 May 2026, and the listed in-force date of 12 June 2026 stay in separate cells.</li>
+<li><strong>Which text.</strong> Gulf News percentages stay labelled as Gulf News. This briefing has not inspected the Arabic Official Gazette page.</li>
+<li><strong>Which service.</strong> Re-pricing moved on 5 January 2026. EnterpriseAM and NAVLIN both say some controlled-medicine work stayed with the ministry. Quote the report you are using.</li>
+<li><strong>Which payer.</strong> A Board price, a Thiqa or Saada benefit, and a Dubai Drug Code are three records.</li>
+<li><strong>Which number you will not call demand.</strong> Population, the 11.8 percent diabetes survey, 942 approvals and 20 pricing decisions are not prescription counts.</li>
 </ul>
+<p>Report the result as a share of the patients the study defined, at named sites. Ask for Arabic and English instruments. Ask the agency to attach the clause or the news paragraph it is using.</p>
 
-<p>Desk-research market-size reports remain useful for a first cut of audit context. Grand View Research, IMARC and IQVIA publish UAE pharmaceutical pages that often appear for this query. Use them to triangulate national spend. Do not take them to an EDE pricing committee or a DHA listing meeting as the evidence pack for a first price or a list-cut response.</p>
-
-<p>A physician-survey design that is siblinged to Saudi work should still keep the samples separate — see <a href="/blog/glp-1-physician-survey-saudi-arabia">GLP-1 physician survey methods in Saudi Arabia</a> for the instrument discipline, not for the UAE price. For the vendor comparison, see <a href="/insights/top-healthcare-market-research-companies-uae-2026">top healthcare market research companies in the UAE 2026</a> and <a href="/pharmaceutical-companies-uae">pharmaceutical companies in the UAE</a>.</p>
-
-<h2 id="why-bionixus">Why choose BioNixus for UAE launch research after the EDE takeover?</h2>
-
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
-
-<p>Choose BioNixus when the decision depends on why EDE, DHA, DOH and insurer medical directors will accept a first price or absorb a list cut, rather than on a syndicated UAE pharmaceutical total. Each study is built around one decision — a pricing certificate, a re-pricing request, a listing or a prior-authorisation rule — and is reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews. The written guarantees are: replace non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field.</p>
-
-<p>See also <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a>, <a href="/uae-pricing-reimbursement-strategy">UAE pricing and reimbursement strategy</a>, <a href="/uae-market-access-research">UAE market access research</a> and the <a href="/insights/top-healthcare-market-research-companies-uae-2026">2026 UAE healthcare market research ranking</a>.</p>
-
-<p>To brief a UAE first-price, re-pricing or post-cut listing study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<h2 id="how-to-brief">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. Custom studies are usually priced at $10k–$60k. The firm has 40 client reviews on its public profiles. The line “Guaranteed in writing” covers the agreed scope and timeline. It does not cover what the interviews will find.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
+<p>To brief a pricing study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. Name the pack, the date you are treating as the price event, and the payer.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -574,37 +476,37 @@ export const UAE_EDE_FAQ: { question: string; answer: string }[] = [
   {
     question: 'What is UAE drug pricing after the EDE takeover?',
     answer:
-      'UAE drug pricing after the EDE takeover is the federal public price the Emirates Drug Establishment now sets for a medicine that has marketing approval, plus the later decisions that can cut that price. MOHAP transferred 44 core services, including individual-product re-pricing and publication of regulated-medicine price lists, to EDE on 5 January 2026. A priced marketing authorisation is not DHA, DOH or insurer listing.',
+      'It is the set of rules for a medicine’s price after the Emirates Drug Establishment took on pricing work from the Ministry of Health and Prevention. The Establishment was created by Decree-Law 28 of 2023. Decree-Law 38 of 2024, in force on 2 January 2025, gives the Board a pricing role. A federal price is not an insurer’s decision to pay.',
   },
   {
-    question: 'When did the Emirates Drug Establishment take over drug pricing from MOHAP?',
+    question: 'When did the ministry transfer pricing services?',
     answer:
-      'EDE was established by Federal Decree-Law No. 28 of 2023 (issued 25 September 2023, effective 30 September 2023). Federal Decree-Law No. 38 of 2024, in force on 2 January 2025, gave the EDE Board the power to set the pricing rules. The filing-address change is the 5 January 2026 MOHAP transfer of 44 services, including re-pricing and price-list publication.',
+      'On 5 January 2026 the ministry said 44 core services had moved, including individual-product re-pricing and price-list publication. Later news reports said some controlled-medicine work stayed with the ministry. Quote the report rather than treating 44 as every service.',
   },
   {
-    question: 'What did EDE Decision 12 of 2026 change?',
+    question: 'What did Decision 12 of 2026 change?',
     answer:
-      'Decision No. 12 of 2026 reduced retail prices of 168 pharmaceutical products used for chronic and critical illnesses. Gulf News reported reductions from about 5% to nearly 60%, with Zocor 40 mg about 59.5% and Xalatan about 51.7%, and a pharmacy effective date of 30 May 2026. A legal-database listing of the same decision records Official Gazette publication on 30 April 2026 and entry into force on 12 June 2026. Keep both dates in the file.',
+      'Gulf News, last updated 26 May 2026, reported a 168-medicine cut of about 5 to 60 percent, a pharmacy date of 30 May 2026, and examples of about 59.5 percent for Zocor 40 mg and about 51.7 percent for Xalatan. An Eastlaws listing gives issuance on 22 April 2026, Gazette No. 822 on 30 April 2026, and in-force on 12 June 2026. This briefing has not inspected the Arabic Official Gazette page.',
   },
   {
-    question: 'Is a UAE EDE price the same as reimbursement?',
+    question: 'Does a marketing approval set the reimbursed price?',
     answer:
-      'No. Article 20 of Decree-Law 38/2024 requires a specific EDE-set price before marketing. Dubai Law 11 of 2013 and Abu Dhabi’s Thiqa / employer rules still decide who pays. DHA’s Dubai Drug Code and EDE’s 2025 National Essential Medicines List are separate lists. Commission payer interviews; do not treat the federal list price as a listing.',
+      'No. Article 7 of Decree-Law 38 of 2024 is about a five-year marketing approval. Article 20 is about Board pricing. Dubai insurance and the Dubai Drug Code are further records. Approval, list price and a paid claim are three steps.',
   },
   {
-    question: 'What evidence does EDE ask for to re-price a medicine?',
+    question: 'What does the re-pricing service ask for?',
     answer:
-      'The published EDE re-pricing card asks for a country-of-origin pricing certificate that includes the proposed UAE price, written justifications, and reference prices from Gulf and European countries. The Drugs Pricing Committee approves the price. Fees are AED 1,000 for the request and AED 500 for a new pricing certificate. After January 2026 the public decision is an EDE Chairman’s decision, even if older cards still say “ministerial”.',
+      'The Establishment’s service card asks for a country-of-origin certificate, justifications, and Gulf and European reference prices. The published fees are AED 1,000 plus AED 500 for a new certificate. The fee is not the list price.',
   },
   {
-    question: 'What should UAE launch research measure in 2026?',
+    question: 'Is the 11.8 percent diabetes figure current demand?',
     answer:
-      'UAE launch research should reconstruct the first-price file, map Decision 12 analogs and later pricing decisions, name the two Article 22 importers, interview DHA, DOH and insurer medical directors separately, measure treated-patient share rather than census prevalence, and test budget impact after a list cut. A syndicated UAE pharmaceutical market-size report does not answer those questions.',
+      'No. It is the National Health Survey result for adults over 18 in a survey that started in 2017: 11.8 percent, down from 18.9 percent in 2010. It is not a 2026 treated share and it is not the volume of a priced brand.',
   },
   {
-    question: 'Why commission BioNixus for UAE launch research after the EDE takeover?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'BioNixus runs custom primary research from a Dubai field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a pricing certificate, a re-pricing request or a listing — and reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'Custom studies are usually $10k–$60k. Guaranteed in writing covers the agreed scope and timeline. It does not cover what the interviews will find. The firm has 40 client reviews on its public profiles.',
   },
 ];
 
@@ -732,7 +634,7 @@ export const UAE_EDE_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning first-price or post-cut listing research in the UAE?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes EDE pricing, physician and payer research around it, from a Dubai field office and a network of about 3,200 physicians.',
+      'Tell us the pricing decision you need to make. BioNixus scopes the study around that decision. Custom work is usually $10k–$60k.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

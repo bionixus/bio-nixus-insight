@@ -46,15 +46,15 @@ export const KSA_GOV_CSAT_META_DESCRIPTION =
   'Government customer satisfaction survey Saudi Arabia: Vision 2030, DGA CSAT, Absher/Tawakkalna, Arabic fieldwork and citizen satisfaction research KSA.';
 
 export const KSA_GOV_CSAT_DISPLAY_TITLE =
-  'Government Customer Satisfaction Research in Saudi Arabia: Vision 2030 Service Quality';
+  'How Saudi ministries measure satisfaction with a service';
 
 export const KSA_GOV_CSAT_DISPLAY_SUBTITLE =
-  'Citizen satisfaction research KSA: DGA, Absher, Tawakkalna and fieldwork';
+  'Platform scores, Absher, Tawakkalna, and the journey you still have to study';
 
 export const KSA_GOV_CSAT_BREADCRUMB_LABEL = 'Government customer satisfaction survey Saudi Arabia';
 
 export const KSA_GOV_CSAT_EXCERPT =
-  'A sourced 2026 guide to government customer satisfaction survey work in Saudi Arabia: what Vision 2030 and the DGA already measure, how Absher and Tawakkalna sit in a brief, which Arabic fieldwork rules apply, and how to choose a firm for citizen satisfaction research KSA.';
+  'What Saudi digital-government scores already cover, and what a new satisfaction study still has to name before the first invitation goes out.';
 
 export const KSA_GOV_CSAT_PUBLISHED_ISO = '2026-10-15T16:00:00.000Z';
 export const KSA_GOV_CSAT_UPDATED_ISO = '2026-10-15T16:00:00.000Z';
@@ -243,185 +243,142 @@ export function countWords(html: string): number {
 }
 
 export const KSA_GOV_CSAT_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  {
-    heading: 'What does a government customer satisfaction survey Saudi Arabia brief have to specify?',
-    anchor: 'what-brief-specifies',
-  },
-  {
-    heading: 'Why Vision 2030 made government service quality a measured KPI',
-    anchor: 'vision-2030-service-quality',
-  },
-  {
-    heading: 'What the DGA Digital Experience Maturity Index already measures',
-    anchor: 'dga-dxmi',
-  },
-  {
-    heading: 'Absher, Tawakkalna and Nafath: channels, not a sample frame',
-    anchor: 'absher-tawakkalna',
-  },
-  {
-    heading: 'How Adaa measures beneficiary journeys and mystery shopping',
-    anchor: 'adaa-beneficiary',
-  },
-  {
-    heading: 'Methods for a custom government CSAT in the Kingdom',
-    anchor: 'methods',
-  },
-  {
-    heading: 'How should citizen satisfaction research KSA run Arabic fieldwork?',
-    anchor: 'arabic-fieldwork',
-  },
-  {
-    heading: 'How to choose a government CSAT research firm',
-    anchor: 'how-to-choose',
-  },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What the brief has to name', anchor: 'what-to-name' },
+  { heading: 'What the maturity index already scores', anchor: 'maturity-index' },
+  { heading: 'Absher, Tawakkalna and Nafath', anchor: 'channels' },
+  { heading: 'Journeys, entities and Hajj', anchor: 'journeys' },
+  { heading: 'Arabic fieldwork', anchor: 'arabic-fieldwork' },
+  { heading: 'How to choose a firm', anchor: 'how-to-choose' },
+  { heading: 'Who fields the work', anchor: 'who-fields' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const KSA_GOV_CSAT_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A government customer satisfaction survey Saudi Arabia brief must name the service, the channel and the metric before fieldwork. DGA already scores platforms with CSAT; a custom study measures the journey you own. Citizen satisfaction research KSA needs an Arabic instrument, city quotas and a PDPL basis — not a copied DXMI rank.</p>`;
+export const KSA_GOV_CSAT_EXECUTIVE_SUMMARY_HTML = `<p>A government customer satisfaction survey Saudi Arabia brief has to name the service, the channel, and the metric before fieldwork. The Digital Government Authority already scores platforms with CSAT. Citizen satisfaction research KSA needs an Arabic questionnaire, city quotas, and a personal-data basis. A maturity rank is not that study.</p>`;
 
-const NARRATIVE_HTML = `<p>Ministries, programme offices and their consultants still ask for “an NPS for KSA government” and treat a Digital Experience Maturity Index rank as the answer. It is not. A government customer satisfaction survey Saudi Arabia brief has to name the service, the channel, the beneficiary and the decision the score will change — before the first invitation is sent. This guide sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma public-sector and citizen-experience briefs. It is not an SFDA or physician-survey file.</p>
+const NARRATIVE_HTML = `<p>Ministries still ask for “an NPS for government” and treat a maturity rank as the answer. It is not. A government customer satisfaction survey Saudi Arabia brief has to name the service, the channel, the beneficiary and the decision the score will change, before the first invitation is sent. This note sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for public-sector and citizen-experience briefs. See <a href="/saudi-arabia-public-sector-market-research">public-sector market research in Saudi Arabia</a> and <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a> for the recommend-question rules. The Saudi public-sector frame is not the Dubai frame.</p>
 
-<p>Search results mix panel farms, Dubai CX houses and generic “e-government” decks. Few say which official programme they are copying, and fewer say what they will not claim. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026 (120 in 2025). Custom work is $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. See the <a href="/bionixus-industries">industries hub</a>, <a href="/b2b-industries">B2B market research</a> and <a href="/saudi-arabia-public-sector-market-research">public-sector market research in Saudi Arabia</a>.</p>
+<h2 id="what-to-name">What the brief has to name</h2>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 government CSAT in the Kingdom can cite, October 2026</strong></p>
-<ul>
-<li><strong>86.71%</strong> overall on the Digital Government Authority’s 2025 Digital Experience Maturity Index (Advanced), covering 50 platforms, up 1.67 percentage points from 85.04% on 39 platforms in 2024 (${cite('dga-dxmi-2025', 'DGA DXMI 2025')}; ${cite('ntp-2025', 'NTP 2025')}).</li>
-<li><strong>Absher 93.95%</strong>, ZATCA 93.25% and Tawakkalna 91.89% led the 2025 index. Beneficiary satisfaction across platforms was 87.09% (Advanced, +4.75 points); user experience 88.53%; complaints handling 80.05%; digital inclusion 75.30% (Competent). The “Evaluate Your Digital Experience” CSAT launched on 26 February 2025 and drew more than 370,000 participating beneficiaries (${cite('dga-dxmi-2025', 'DGA')}).</li>
-<li><strong>61 platforms</strong> are in scope for the 2026 DXMI cycle, still scored on four perspectives and 20 themes, with beneficiary satisfaction measured by CSAT (${cite('dga-dxmi-2026', 'DGA 2026 guideline')}).</li>
-<li><strong>UN EGDI rank 6</strong> of 193 in 2024 (score 0.9602), up 25 places from rank 31 in 2022. DGA reports fourth globally on the Online Service Index, seventh on e-participation, and Riyadh third among 193 cities (${cite('un-egdi', 'UN EGDI')}; ${cite('dga-egdi-news', 'DGA')}; ${cite('vision-2025-report', 'Vision 2030 Annual Report 2025')}).</li>
-<li><strong>1,300+ services</strong> on Tawakkalna in the Vision 2030 2025 annual-report account; SDAIA’s live statistics list 33 million Tawakkalna users, 1,000+ services, 77 countries and 7 languages (${cite('vision-2025-page', 'Vision 2030')}; ${cite('sdaia-tawakkalna', 'SDAIA')}).</li>
-<li><strong>448,243,708</strong> Absher electronic transactions in 2025 (417,370,816 Individuals; 30,872,892 Business). Unified digital identities passed 28 million in December 2024 and exceeded 32 million by the 2025 transaction release, with 1,140+ entities reachable via Nafath (${cite('spa-absher-id', 'SPA, 25 December 2024')}; ${cite('spa-absher-2025', 'SPA, 14 May 2026')}).</li>
-</ul>
-</div>
+<p>Which service? A national ID, a traffic fine, a Hajj booking, a labour file, a subsidy, or “government” as a whole. The National Center for Performance Measurement, Adaa, already splits measurement into journeys and entities. ${cite('adaa-beneficiary', 'Adaa')} Its FAQs say Adaa measures beneficiary satisfaction at journey level and at entity level, and that it is organisationally linked to the Prime Minister. ${cite('adaa-faqs', 'Adaa FAQs')}</p>
 
-<h2 id="what-brief-specifies">What does a government customer satisfaction survey Saudi Arabia brief have to specify?</h2>
+<p>Which channel? Absher Individuals, Absher Business, Tawakkalna, a ministry portal, a service centre, a call centre, or a mixed journey that starts on Nafath. The 2025 Digital Experience Maturity Index treated Tawakkalna as an authorised digital channel. It is not a synonym for every government interaction. ${cite('dga-dxmi-2025', 'Digital Government Authority')}</p>
 
-<p>A government customer satisfaction survey Saudi Arabia programme is not “run NPS on Absher.” It tells a ministry, a Vision 2030 programme office or a concessionaire whether a named service is usable, trusted and completed — by a named beneficiary, on a named channel, in a named city. Five specifications separate a usable file from a dashboard nobody can defend:</p>
+<p>Which metric? The Authority’s beneficiary-satisfaction perspective is a CSAT survey, not a recommend score. The 2026 guideline keeps that CSAT instrument. ${cite('dga-dxmi-2026', 'DGA 2026 guideline')}</p>
 
-<ul>
-<li><strong>Which service?</strong> Issuing a national ID, paying a traffic fine, booking Hajj, opening a labour-file, collecting a subsidy, or “government” as a whole. Adaa already splits measurement into journeys and entities (${cite('adaa-beneficiary', 'Adaa')}; ${cite('adaa-faqs', 'Adaa FAQs')}). A brief that does not name the service is copying a league table.</li>
-<li><strong>Which channel?</strong> Absher Individuals, Absher Business, Tawakkalna, a ministry portal, a service centre, a call centre, or a mixed journey that starts on Nafath. DGA’s 2025 index treated Tawakkalna as an authorised digital channel, not as a synonym for every government interaction (${cite('dga-dxmi-2025', 'DGA DXMI 2025')}).</li>
-<li><strong>Which metric?</strong> CSAT for a named transaction, effort for a completion, mystery shopping for a centre, or a journey index. DGA’s beneficiary-satisfaction perspective is a CSAT survey, not NPS (${cite('dga-dxmi-2025', 'DGA')}; ${cite('dga-dxmi-2026', 'DGA 2026 guideline')}). If you want NPS, write the 0–10 recommend item and do not call the DGA score NPS. The recommend-question discipline on <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a> is the same; the Saudi public-sector frame is not.</li>
-<li><strong>Which beneficiary?</strong> Saudi citizen, resident, visitor, Hajj guest, or a business user on Absher Business. Mid-2024 residents were 35.3 million, 55.6% Saudi and 44.4% non-Saudi (${cite('gastat-pop-2024', 'GASTAT')}). A citizen-only quota and a resident-wide quota are different studies.</li>
-<li><strong>Which decision?</strong> Close a complaint loop, redesign a step, defend a Vision 2030 KPI, or compare a concessionaire with a ministry baseline. A score without an owner is a press release.</li>
-</ul>
+<p>If you want a recommend score, write the 0–10 item. Do not call the Authority’s score a recommend score.</p>
 
-<p>Desktop TAM can frame those questions. It cannot answer them. Adjacent pages include <a href="/saudi-arabia-public-sector-market-research">public-sector market research in Saudi Arabia</a>, <a href="/market-research/public-sector">public-sector market research</a> and the consumer-side sibling <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>.</p>
+<p>Which beneficiary? Citizen, resident, visitor, Hajj guest, or a business user. GASTAT’s mid-2024 population was 35.3 million. Saudis were 55.6%. Non-Saudis were 44.4%. ${cite('gastat-pop-2024', 'GASTAT')}</p>
 
-<p>If the study identifies respondents, the Personal Data Protection Law applies. SDAIA’s controller-and-processor guide records the in-force date as 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('pdpl-text', 'PDPL')}; ${cite('sdaia-guide', 'SDAIA')}). Write the legal basis, the retention rule and the deletion path into the method note before the first incentive is paid. The 2025 ICC/ESOMAR Code still requires participation to be voluntary and consent to be freely given, specific and informed (${cite('esomar-2025', 'ICC/ESOMAR')}).</p>
+<p>A citizen-only quota and a resident-wide quota are different studies.</p>
 
-<h2 id="vision-2030-service-quality">Why Vision 2030 made government service quality a measured KPI</h2>
+<h2 id="maturity-index">What the maturity index already scores</h2>
 
-<p>Vision 2030 did not ask ministries to “feel digital.” It asked them to move on published indices. The 2025 annual report records that Saudi Arabia improved 25 places on the UN E-Government Development Index between 2022 and 2024, exceeding the interim target, on the way to a top-five ambition by 2030 (${cite('vision-2025-report', 'Vision 2030 Annual Report 2025')}). The UN series itself puts the Kingdom at rank 6 of 193 in 2024 with an EGDI of 0.9602, against rank 31 in 2022 (${cite('un-egdi', 'UN EGDI')}). DGA’s readout of the same report is more granular: fourth globally on the Online Service Index, seventh on e-participation, and Riyadh third among 193 cities (${cite('dga-egdi-news', 'DGA')}).</p>
+<p>The Digital Government Authority launched the Digital Experience Maturity Index in 2022 under Article 4 of its statute, to measure platform maturity and beneficiary satisfaction. ${cite('dga-cx-page', 'DGA Digital Experience')}</p>
 
-<p>That is why a government CSAT brief in 2026 is a performance brief, not a communications brief. The National Transformation Program publishes the Digital Experience Maturity Index as a tracked KPI: 77.26% in 2022, 80.68% in 2023, 85.04% in 2024 and 86.71% in 2025, against a 90% target (${cite('ntp-2025', 'NTP 2025')}). A custom study that “explains” those numbers without naming the service will be compared with DGA’s platform scores in the first steering meeting. Write the comparison rule in the proposal.</p>
+<p>The 2025 report, version 1.0, puts overall maturity at 86.71%, Advanced, across 50 platforms. Beneficiary satisfaction was 87.09%, up 4.75 points, Advanced. User experience was 88.53%, up 0.10, Advanced. Complaints handling was 80.05%, up 0.11, Competent. Digital inclusion, introduced as a 2025 sub-index, was 75.30%, Competent. The “Evaluate Your Digital Experience” survey launched on 26 February 2025 and drew more than 370,000 participating beneficiaries. ${cite('dga-dxmi-2025', 'DXMI 2025')}</p>
 
-<p>The same annual report states 87% public trust in government performance and first place globally on the 2025 Edelman Trust Barometer government-trust reading (${cite('vision-2025-report', 'Vision 2030')}). Those figures are national trust readings. They are not a CSAT for traffic, housing, Hajj or a municipal counter. Citizen satisfaction research KSA that quotes them as a category norm is mixing constructs. Use them as context; measure the journey you own.</p>
+<p>The top ten overall scores in that report were Absher 93.95%, the Zakat, Tax and Customs Authority platform 93.25%, Tawakkalna 91.89%, Etimad 91.43%, Qiwa 91.06%, Ehsan 90.95%, the Ministry of Tourism portal 90.78%, GOSI 90.35%, Sehhaty 89.71% and Senaei 89.58%. Those are platform scores. Absher’s 93.95% does not describe a municipal counter in Abha.</p>
 
-<p>Paperless delivery is now the default claim. The Vision 2030 2025 annual-report page says more than 1,300 services are available through Tawakkalna (${cite('vision-2025-page', 'Vision 2030')}). That is a catalogue size. It is not evidence that a given beneficiary completed a given service without friction. The research question is still: which step failed, for whom, in which language, in which city.</p>
+<p>The National Transformation Program publishes the same index as a tracked series: 77.26% in 2022, 80.68% in 2023, 85.04% in 2024 and 86.71% in 2025, against a 90% target. ${cite('ntp-2025', 'National Transformation Program, 2025')}</p>
 
-<h2 id="dga-dxmi">What the DGA Digital Experience Maturity Index already measures</h2>
+<p>The 2025 result is 1.67 points above the 2024 result of 85.04% on 39 platforms. State both years. Do not treat 86.71% as a citizen score for one journey.</p>
 
-<p>The Digital Government Authority launched the Digital Experience Maturity Index in 2022 under Article 4 of its statute, which instructs the Authority to issue measurements, indicators, tools and reports on digital-government performance and beneficiary satisfaction (${cite('dga-cx-page', 'DGA Digital Experience')}). The index is annual. It is a platform-maturity score, not a population CSAT.</p>
+<p>The 2026 introductory guideline, version 5.0, keeps four perspectives and 20 themes. It expands the target list to 61 platforms. Beneficiary satisfaction still uses CSAT. ${cite('dga-dxmi-2026', 'DXMI 2026 guideline')}</p>
 
-<p>The 2025 report is the file a 2026 brief has to know by heart. Overall maturity reached 86.71% at the Advanced level across 50 digital platforms, 1.67 points above 2024, when 39 platforms were assessed at 85.04% (${cite('dga-dxmi-2025', 'DGA DXMI 2025')}). Four perspectives sit under the total:</p>
+<p>A custom study that repeats that CSAT on the same platforms, in the same window, is a weak use of the budget. A custom study of a journey the index does not score is a different brief.</p>
 
-<table>
-<thead><tr><th>Perspective (2025)</th><th>Result</th><th>Level</th><th>What it is</th></tr></thead>
-<tbody>
-<tr><td>Beneficiary satisfaction</td><td>87.09% (+4.75 vs 2024)</td><td>Advanced</td><td>User CSAT, including “Evaluate Your Digital Experience” (${cite('dga-dxmi-2025', 'DGA')})</td></tr>
-<tr><td>User experience</td><td>88.53% (+0.10)</td><td>Advanced</td><td>Expert assessment of usability, availability, accessibility, integration, personalisation (${cite('dga-dxmi-2025', 'DGA')})</td></tr>
-<tr><td>Complaints handling</td><td>80.05% (+0.11)</td><td>Competent</td><td>Channels, response and resolution (${cite('dga-dxmi-2025', 'DGA')})</td></tr>
-<tr><td>Digital inclusion (sub-index)</td><td>75.30%</td><td>Competent</td><td>Access for persons with disabilities and the elderly; introduced as a 2025 sub-index (${cite('dga-dxmi-2025', 'DGA')})</td></tr>
-</tbody>
-</table>
+<p>Vision 2030’s 2025 annual report says the UN E-Government Development Index rose 25 places between 2022 and 2024, and that public trust in government performance was 87%. ${cite('vision-2025-report', 'Vision 2030 Annual Report 2025')}</p>
 
-<p>The top ten overall scores in 2025 were Absher 93.95%, the Zakat, Tax and Customs Authority platform 93.25%, Tawakkalna 91.89%, Etimad 91.43%, Qiwa 91.06%, Ehsan 90.95%, the Ministry of Tourism portal 90.78%, GOSI 90.35%, Sehhaty 89.71% and Senaei 89.58% (${cite('dga-dxmi-2025', 'DGA DXMI 2025')}). Those are platform scores. They are not private-sector CSAT norms, and they are not a ministry-wide citizen score. Absher’s 93.95% does not describe a municipal counter in Abha.</p>
+<p>The UN series itself puts Saudi Arabia at rank 6 of 193 in 2024, with an EGDI of 0.9602, very high, against rank 31 in 2022. ${cite('un-egdi', 'UN E-Government Knowledgebase')}</p>
 
-<p>Beneficiary satisfaction in 2025 was fed by the “Evaluate Your Digital Experience” survey, launched on 26 February, with more than 370,000 participating beneficiaries (${cite('dga-dxmi-2025', 'DGA')}). The 2026 introductory guideline keeps CSAT as the user-satisfaction instrument, restates the four perspectives and 20 themes, and expands the target list to 61 platforms (${cite('dga-dxmi-2026', 'DGA 2026 guideline')}). A custom government customer satisfaction survey Saudi Arabia programme that duplicates that CSAT on the same platforms, in the same window, is wasting the budget. A custom programme that measures a journey DGA does not score — a mixed digital/in-person Hajj path, a concessionaire counter, a complaint close-loop — is the brief BioNixus is hired for.</p>
+<p>The Authority’s readout of the same 2024 report is more granular. It says fourth globally in digital services, sixth overall on EGDI, fourth on the Online Service Index, seventh on e-participation, and Riyadh third among 193 cities. ${cite('dga-egdi-news', 'Digital Government Authority')}</p>
 
-<p>DGA’s own method is mixed: beneficiary CSAT, expert UX review, evidence on complaints systems, and field visits to platform headquarters (${cite('dga-dxmi-2025', 'DGA')}). That is a useful reminder for commercial teams. A single WhatsApp poll is not an equivalent of the national index, and it should not be presented as one.</p>
+<p>Sixth overall and fourth on the Online Service Index are different rankings in that readout. Do not collapse them. The 87% trust figure is a national trust reading. It is not a satisfaction score for traffic, housing, Hajj or a municipal counter.</p>
 
-<h2 id="absher-tawakkalna">Absher, Tawakkalna and Nafath: channels, not a sample frame</h2>
+<p>The Vision 2030 annual-report page says more than 1,300 services are available through Tawakkalna, and it describes paperless government service delivery. ${cite('vision-2025-page', 'Vision 2030')}</p>
 
-<p>Absher and Tawakkalna are the two channels almost every government CSAT deck names. They are not interchangeable, and neither is a population frame.</p>
+<p>A catalogue size is not evidence that a given person completed a given service without friction.</p>
 
-<p>Absher is the Ministry of Interior’s service stack: Individuals, Business and Government. On 25 December 2024 the ministry told the Saudi Press Agency that unified digital identities issued through Absher had surpassed 28 million, unlocking Interior services and more than 500 government and private entities through Nafath (${cite('spa-absher-id', 'SPA')}). The 14 May 2026 SPA release on 2025 operations put executed electronic transactions at 448,243,708 — 417,370,816 on Absher Individuals, including 331,480,864 digital-wallet document views, and 30,872,892 on Absher Business — with unified digital identities above 32 million and more than 1,140 entities reachable via Nafath (${cite('spa-absher-2025', 'SPA')}). Those are transaction and identity counts. A user who opened a wallet is not a completed-service CSAT respondent. Quota on completed transactions if that is the universe; do not quota on “has Absher.”</p>
+<h2 id="channels">Absher, Tawakkalna and Nafath</h2>
 
-<p>Tawakkalna is SDAIA’s super-app. SDAIA’s published statistics list 33 million users, more than 1,000 services, more than 200 card types, availability in 77 countries and seven languages, and first place among 39 government platforms in the 2024 DXMI (${cite('sdaia-tawakkalna', 'SDAIA')}). Vision 2030’s 2025 annual-report page states that more than 1,300 services sit on Tawakkalna (${cite('vision-2025-page', 'Vision 2030')}). In DGA’s 2025 index Tawakkalna scored 91.89% overall, third behind Absher and ZATCA, and led the beneficiary-satisfaction perspective (${cite('dga-dxmi-2025', 'DGA')}). A brief that says “survey Tawakkalna users” still has to say which service inside the app, in which language, after which event.</p>
+<p>On 25 December 2024 the Ministry of Interior told the Saudi Press Agency that digital identities issued via Absher had surpassed 28 million, with access to more than 500 entities via Nafath. ${cite('spa-absher-id', 'Saudi Press Agency, 25 December 2024')}</p>
 
-<p>Nafath is the national access layer, not a CX metric. Interior’s 2024 and 2025 Absher releases both treat Nafath as the gate to other entities (${cite('spa-absher-id', 'SPA')}; ${cite('spa-absher-2025', 'SPA')}). Login success is a technology KPI. Satisfaction with the service behind the login is a different item. Do not collapse them.</p>
+<p>On 14 May 2026 the Saudi Press Agency reported that Absher executed 448,243,708 electronic transactions in 2025. Individuals accounted for 417,370,816. Business accounted for 30,872,892. Unified digital identities exceeded 32 million. More than 1,140 entities were reachable via Nafath. ${cite('spa-absher-2025', 'Saudi Press Agency, 14 May 2026')}</p>
 
-<p>Internet access is not the constraint it was a decade ago. GASTAT’s 2025 ICT survey found 99.0% of individuals aged 15–74 used the internet, with 98.4% mobile access (${cite('gastat-ict-2025', 'GASTAT')}). Online intercepts can reach that band. They still miss in-person centre users, elderly beneficiaries who need assisted digital journeys — the inclusion gap DGA scored at 75.30% Competent (${cite('dga-dxmi-2025', 'DGA')}) — and anyone whose last government contact was a counter, not an app.</p>
+<p>28 million is the December 2024 identity count. 32 million is the later 2025-operations release. Do not average them. Those are identity and transaction counts. A person who opened a wallet is not a completed-service respondent.</p>
 
-<h2 id="adaa-beneficiary">How Adaa measures beneficiary journeys and mystery shopping</h2>
+<p>SDAIA’s Tawakkalna statistics list 33 million users, more than 1,000 services, availability in 77 countries and 7 languages, and first place among 39 platforms in the 2024 maturity index. ${cite('sdaia-tawakkalna', 'SDAIA')}</p>
 
-<p>The National Center for Performance Measurement (Adaa) is the other official measurement system a government CSAT brief has to sit beside. Adaa’s published mandate is to improve public entities by measuring the quality of government services and beneficiary satisfaction with them, at two levels: the beneficiary journey (a partial measurement across the entities in that journey) and the entity (a complete measurement of that entity’s services, digital and in-person) (${cite('adaa-beneficiary', 'Adaa')}; ${cite('adaa-faqs', 'Adaa FAQs')}). Hajj and Umrah are the worked examples on the mandate page (${cite('adaa-beneficiary', 'Adaa')}).</p>
+<p>More than 1,000 services on SDAIA’s page, and more than 1,300 on the Vision 2030 page, are two published catalogue figures. Do not blend them. A brief that says “survey Tawakkalna users” still has to name the service inside the app, the language, and the event that triggered the invite.</p>
 
-<p>That split is the one commercial teams skip. A ministry wants an “entity CSAT.” A Vision 2030 programme office wants a “journey CSAT.” They are not the same n, the same questionnaire or the same report. Write which Adaa level you are mirroring — or say, in the proposal, that you are not mirroring Adaa and why.</p>
+<p>Nafath is the access layer in both Absher releases. Login success is a technology measure. Satisfaction with the service behind the login is a different item.</p>
 
-<p>Hajj is where the method is most public. On 12 June 2024 the Saudi Press Agency reported that Adaa had measured beneficiary satisfaction with 81 Hajj 1445 services across 18 government agencies (${cite('spa-hajj-1445', 'SPA')}). Mystery shopping sits inside that system: shoppers perform the rituals and rate procedure ease, centres, electronic systems, staff, speed and outputs (${cite('spa-hajj-1445', 'SPA')}). The Ministry of Hajj and Umrah’s 1447 AH note describes a further expansion: more than 3 million pilgrims and Umrah performers from 177 nationalities measured in 2025, against 50 nationalities in 2022, collected through field interviews, the Nusuk application, a Mystery Guest programme, focus groups (more than 200 employees) and technical solutions, across seven journey stages from registration to departure (${cite('hajj-1447', 'Ministry of Hajj and Umrah')}).</p>
+<p>GASTAT’s 2025 ICT survey found that 99.0% of people aged 15 to 74 used the internet, and 98.4% used mobile access. ${cite('gastat-ict-2025', 'GASTAT')}</p>
 
-<p>A commercial government customer satisfaction survey Saudi Arabia that ignores those programmes will be asked, in the first steering meeting, why its n, its items and its mystery-shop protocol differ. Answer that in the proposal. Pair a Hajj or Umrah CSAT with the hospitality country page only when the object is a hotel or a transport concession, not when the object is a rite: see <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a>.</p>
+<p>Online invites can reach that band. They still miss in-person centre users and people whose last contact was a counter. Digital inclusion in the 2025 index was 75.30%, Competent, covering access for persons with disabilities and the elderly. ${cite('dga-dxmi-2025', 'DXMI 2025')}</p>
 
-<h2 id="methods">Methods for a custom government CSAT in the Kingdom</h2>
+<h2 id="journeys">Journeys, entities and Hajj</h2>
 
-<p>Pick the method from the decision, not from a vendor menu. Four designs cover almost every 2026 public-sector brief.</p>
+<p>A ministry often wants an entity score. A programme office often wants a journey score. They are not the same questionnaire. Hajj and Umrah are the worked examples on Adaa’s mandate page. ${cite('adaa-beneficiary', 'Adaa')}</p>
 
-<table>
-<thead><tr><th>Design</th><th>Use when</th><th>Do not use when</th></tr></thead>
-<tbody>
-<tr><td>Transactional CSAT (DGA-style)</td><td>You own a named digital service and need a score comparable in construct, not in number, to DGA’s CSAT (${cite('dga-dxmi-2025', 'DGA')})</td><td>You need a recommend score, a mystery-shop of a centre, or a multi-entity journey</td></tr>
-<tr><td>Journey index (Adaa-style)</td><td>The beneficiary crosses agencies — Hajj, labour, housing, a start-up licence (${cite('adaa-beneficiary', 'Adaa')})</td><td>You only need one platform’s digital UX</td></tr>
-<tr><td>Mystery shop / mystery guest</td><td>The failure is at a counter, a holy-site service, a call centre or a script (${cite('spa-hajj-1445', 'SPA')}; ${cite('hajj-1447', 'Ministry of Hajj')})</td><td>The universe is app-only and there is no physical step</td></tr>
-<tr><td>Mixed mode (CAWI + CATI + CAPI)</td><td>You will claim a national or city citizen number, including assisted-digital and centre users (${cite('gastat-ict-2025', 'GASTAT')}; ${cite('dga-dxmi-2025', 'DGA inclusion')})</td><td>The buyer is a 15–74 app user and the task is a two-minute intercept</td></tr>
-</tbody>
-</table>
+<p>On 12 June 2024 the Saudi Press Agency reported that Adaa had measured beneficiary satisfaction with 81 Hajj 1445 services across 18 government agencies. Mystery shopping sits inside that system. ${cite('spa-hajj-1445', 'Saudi Press Agency, 12 June 2024')}</p>
 
-<p>Write the item. “Satisfied,” “happy” and “the service met my expectations” are not interchangeable. DGA’s 2025 beneficiary-satisfaction themes include general satisfaction and expectations, quality of information and content, and beneficiary support (${cite('dga-dxmi-2025', 'DGA')}). If you want a DGA-adjacent construct, lock those themes. If you want NPS, lock the 0–10 recommend wording in Arabic and English and do not report it against 86.71%. The sibling <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">UAE CSAT, NPS and CES guide</a> sets that wording rule; reuse the discipline, not the Dubai scores.</p>
+<p>The Ministry of Hajj and Umrah’s note on Hajj 1447 AH describes a wider measurement. More than 3 million pilgrims and Umrah performers from 177 nationalities were measured in 2025, versus 50 nationalities in 2022. The note lists five collection methods. ${cite('hajj-1447', 'Ministry of Hajj and Umrah')}</p>
 
-<p>Sampling follows the beneficiary, not the app install base. A citizen-only housing CSAT should track Saudi / non-Saudi and city cells against GASTAT’s mid-2024 55.6 / 44.4 split and the Riyadh–Jeddah–Eastern geography, or say that it is a single-city file (${cite('gastat-pop-2024', 'GASTAT')}). An Absher Business file is a B2B sample: name the role, as on <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>. An online-only file in a 99.0% internet-using 15–74 band is still not a national household frame (${cite('gastat-ict-2025', 'GASTAT')}).</p>
+<p>The current description of that expansion also includes field interviews, the Nusuk application, a mystery-guest programme, focus groups of more than 200 employees, and technical solutions, across seven journey stages from registration to departure. Say which of those methods your file will use, and which it will not.</p>
 
-<p>Closed loop is part of the method when the sponsor can recontact. DGA’s complaints perspective is the official reminder that channels, response and resolution are scored separately from CSAT (${cite('dga-dxmi-2025', 'DGA')}). Name who calls a detractor, in which language, within how many hours, and what they may offer. ISO 20252:2026 is the service-requirement standard to ask a supplier to name (${cite('iso-20252-2026', 'ISO 20252:2026')}). ESOMAR is the consent standard (${cite('esomar-2025', 'ICC/ESOMAR')}).</p>
+<p>A commercial study that ignores those programmes should say, in the proposal, why its sample, its items and its mystery-shop protocol differ.</p>
 
-<h2 id="arabic-fieldwork">How should citizen satisfaction research KSA run Arabic fieldwork?</h2>
+<h2 id="arabic-fieldwork">Arabic fieldwork</h2>
 
-<p>The Basic Law is unambiguous: the language of the Kingdom is Arabic, and the capital is Riyadh (${cite('boe-basic-law', 'Basic Law of Governance')}). Citizen satisfaction research KSA that fields English first and back-translates is starting in the wrong language. Author the CSAT item, the scale labels and the closed-loop script in Arabic, then produce a conceptually equivalent English version for non-Saudi residents and for bilingual digital users. Record language of interview as a variable.</p>
+<p>Citizen satisfaction research KSA starts in Arabic. The Basic Law says Arabic is the language of the Kingdom and Riyadh is the capital. ${cite('boe-basic-law', 'Basic Law of Governance')}</p>
 
-<p>Non-Saudis were 44.4% of mid-2024 residents (${cite('gastat-pop-2024', 'GASTAT')}). Many complete Absher and Tawakkalna journeys in English or in another non-Arabic language; Tawakkalna itself is published in seven languages (${cite('sdaia-tawakkalna', 'SDAIA')}). A Hajj mystery-guest file has a different language mix again: the Ministry of Hajj’s 2025 measurement covered 177 nationalities (${cite('hajj-1447', 'Ministry of Hajj and Umrah')}). One Arabic script does not cover Gulf, Egyptian and Levantine respondents, and it does not cover a Malay- or Urdu-preferring pilgrim. Cognitive-test the versions you will actually field.</p>
+<p>Author the item, the scale labels and the follow-up script in Arabic. Then produce an English version with the same meaning for non-Saudi residents and bilingual digital users. Record the language of the interview.</p>
 
-<p>Gender-appropriate interviewing still matters on household CAPI and at some centres, even when the digital channel is universal. Internet use among females aged 15–74 was statistically level with males in GASTAT’s 2025 ICT survey (${cite('gastat-ict-2025', 'GASTAT')}). That fact licenses an online female cell; it does not license a mixed-gender night-time intercept as a national female sample. Digital inclusion is the other fieldwork constraint DGA has now scored: 75.30% Competent in 2025, with accessibility for persons with disabilities and the elderly called out as a sub-index (${cite('dga-dxmi-2025', 'DGA')}). If those groups are in universe, assisted-digital and CAPI cells belong in the design.</p>
+<p>Non-Saudis were 44.4% of mid-2024 residents. ${cite('gastat-pop-2024', 'GASTAT')}</p>
 
-<p>Mode effects on satisfaction items are large. Do not change from in-app intercept to CATI mid-tracker without a bridge sample. DGA’s own 2025 cycle mixed a public CSAT, expert UX review and headquarters field visits (${cite('dga-dxmi-2025', 'DGA')}). Adaa’s Hajj work mixes surveys, mystery guests and focus groups (${cite('hajj-1447', 'Ministry of Hajj')}). A custom tracker should be at least as explicit about mode as those programmes are.</p>
+<p>Tawakkalna is published in seven languages. ${cite('sdaia-tawakkalna', 'SDAIA')}</p>
 
-<p>Personal data from identifiable CSAT and audio files is PDPL processing, in force 14 September 2023 (${cite('pdpl-text', 'PDPL')}; ${cite('sdaia-guide', 'SDAIA')}). Ask where open ends live, who can see a national ID or Iqama appended to a ticket, and how a respondent withdraws. A “research exemption” slide is not a lawful basis.</p>
+<p>A Hajj file has another language mix. The 2025 measurement covered 177 nationalities. ${cite('hajj-1447', 'Ministry of Hajj and Umrah')}</p>
 
-<h2 id="how-to-choose">How to choose a government CSAT research firm</h2>
+<p>One Arabic script does not cover every dialect, and it does not cover a pilgrim who prefers another language. Test the versions you will actually field.</p>
 
-<p>Ask every government customer satisfaction survey Saudi Arabia shortlist to answer these in the proposal — not in a capabilities slide:</p>
+<p>Internet use among women aged 15 to 74 was level with men in the 2025 ICT survey. ${cite('gastat-ict-2025', 'GASTAT')}</p>
 
+<p>That licenses an online cell of women. It does not make a mixed night-time intercept a national sample of women. If people with disabilities or older beneficiaries are in the universe, the 75.30% inclusion score is a reason to plan assisted and in-person cells. ${cite('dga-dxmi-2025', 'DXMI inclusion')}</p>
+
+<p>The 2025 ICC/ESOMAR Code says participation is voluntary and consent must be freely given, specific and informed. ${cite('esomar-2025', 'ICC/ESOMAR')}</p>
+
+<p>ISO 20252:2026 is the service-requirements standard to ask a supplier to name. ${cite('iso-20252-2026', 'ISO')}</p>
+
+<p>Personal data from identifiable answers and audio files is processing under the Personal Data Protection Law. ${cite('pdpl-text', 'Personal Data Protection Law')}</p>
+
+<p>SDAIA’s guide records that the law came into force on 14 September 2023, with a grace period that ran to 14 September 2024. ${cite('sdaia-guide', 'SDAIA')}</p>
+
+<p>Ask where open answers live, who can see a national ID or iqama joined to a ticket, and how a respondent withdraws.</p>
+
+<p>Invoices for taxable supplies have to carry the 15% VAT rate in the ZATCA implementing-regulation amendments of 19 November 2024. ${cite('zatca-vat', 'ZATCA')}</p>
+
+<h2 id="how-to-choose">How to choose a firm</h2>
+
+<p>Ask these questions in the proposal.</p>
 <ol>
-<li>Which official series will you sit beside — DGA DXMI, Adaa journey/entity, or both — and what will you <em>not</em> claim against 86.71% or Absher’s 93.95% (${cite('dga-dxmi-2025', 'DGA')})?</li>
-<li>Which service, channel and beneficiary are in universe, and how do Absher, Tawakkalna and Nafath enter the sample as channels rather than as the frame (${cite('spa-absher-2025', 'SPA')}; ${cite('sdaia-tawakkalna', 'SDAIA')})?</li>
-<li>Will the CSAT item, scale labels and closed-loop script be written in Arabic first, with a tested English twin (${cite('boe-basic-law', 'Basic Law')})?</li>
-<li>Which mode will you use for which cell, and why is an app intercept not the whole design (${cite('gastat-ict-2025', 'GASTAT')}; ${cite('dga-dxmi-2025', 'DGA inclusion')})?</li>
-<li>How will personal data be processed under the PDPL (${cite('pdpl-text', 'PDPL')}; ${cite('sdaia-guide', 'SDAIA')})?</li>
-<li>What is guaranteed in writing — scope, minimum sample and re-field, or the findings themselves?</li>
-<li>Will invoices carry 15% VAT where the supply is taxable (${cite('zatca-vat', 'ZATCA')})?</li>
+<li>Which official series will you sit beside, the maturity index, Adaa’s journey or entity measures, or both? What will you not claim against 86.71% or Absher’s 93.95%?</li>
+<li>Which service, channel and beneficiary are in the universe?</li>
+<li>Will the item be written in Arabic first, with a tested English twin?</li>
+<li>Which mode will you use for which cell, and why is an app intercept not the whole design?</li>
+<li>How will personal data be processed?</li>
+<li>What is covered in writing: the scope, the minimum sample and re-field, or the findings?</li>
+<li>Will invoices carry 15% VAT where the supply is taxable?</li>
 </ol>
 
-<p>Global CX networks that rank for NPS dashboards are often strong at a shared platform score. They are not automatically strong at an Arabic, city-quota, mixed-mode citizen file that has to survive a Vision 2030 steering committee. Local fieldwork houses are often strong at CAPI routing, not at sample design against DGA and Adaa. A primary-research firm is hired to do both. BioNixus does that job and will work alongside an existing panel or counsel.</p>
+<h2 id="who-fields">Who fields the work</h2>
 
-<p>Compare partners on the <a href="/insights/top-market-research-companies-saudi-arabia-2026">2026 ranking of market research companies in Saudi Arabia</a> and the matching <a href="/insights/top-public-sector-market-research-companies-saudi-arabia-2026">public-sector ranking</a>. Related industry reading on this hub includes <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a>, <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a> and <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">market entry research for Saudi Arabia</a>. Browse country entry points on <a href="/market-research-by-industry">market research by industry</a>.</p>
+<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That covers the scope, the minimum sample, replacement of non-qualifying respondents, and re-field if an agreed quota is missed. It does not cover the accuracy of a finding.</p>
 
-<h2 id="why-bionixus">Why brief BioNixus for government customer satisfaction research in Saudi Arabia?</h2>
+<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Cairo in Sheikh Zayed. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
 
-<p>BioNixus is not a panel reseller and it is not a dashboard vendor. It is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026, after 120 in 2025. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, the minimum sample, replacement of non-qualifying respondents at no charge, re-field at our cost if agreed quotas are missed, and a pilot fee credited to the main field — not the accuracy of a finding.</p>
-
-<p>US teams brief Sheridan. UK and European teams brief London. Fieldwork for the Kingdom is designed with the Al Khobar field office and bilingual Arabic–English teams, including gender-appropriate CAPI and female moderators where the brief needs them. To brief a government customer satisfaction survey Saudi Arabia programme, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<p>Fieldwork for the Kingdom is designed with the Al Khobar field office and bilingual teams. To brief a study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -440,39 +397,39 @@ ${REFERENCES_HTML}`;
 
 export const KSA_GOV_CSAT_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does a government customer satisfaction survey Saudi Arabia brief have to specify?',
+    question: 'What does the brief have to specify?',
     answer:
-      'It has to specify the service, the channel, the beneficiary, the metric and the decision the score will change before fieldwork starts. DGA’s Digital Experience Maturity Index already scores platforms with CSAT. A custom study is hired to measure the journey the brief owns, not to reprint 86.71%.',
+      'The service, the channel, the beneficiary, the metric and the decision the score will change. The Digital Government Authority’s beneficiary measure is a CSAT survey, not a recommend score. Adaa already splits journeys from entities. A maturity rank is not a study of the journey you own.',
   },
   {
-    question: 'Is the DGA Digital Experience Maturity Index a substitute for a custom CSAT?',
+    question: 'Is the Digital Experience Maturity Index a substitute for your own study?',
     answer:
-      'No. The 2025 index scored 50 platforms at 86.71% Advanced, with Absher at 93.95% and Tawakkalna at 91.89%, using a CSAT survey that drew more than 370,000 participating beneficiaries. Those are platform-maturity scores. They are not a municipal-counter CSAT, a Hajj journey index or an NPS. The 2026 cycle expands the list to 61 platforms; it still does not replace a custom file.',
+      'No, when the journey is not one of the scored platforms. The 2025 index was 86.71% overall across 50 platforms. The 2026 guideline targets 61 platforms and still uses CSAT for beneficiary satisfaction. A custom file should say what it will not claim against those scores.',
   },
   {
-    question: 'How should citizen satisfaction research KSA treat Absher and Tawakkalna?',
+    question: 'How should Absher and Tawakkalna be treated?',
     answer:
-      'Treat them as channels. Absher executed 448,243,708 electronic transactions in 2025 and has more than 32 million unified digital identities. Tawakkalna has 33 million users and more than 1,000 services on SDAIA’s statistics, and more than 1,300 services in Vision 2030’s 2025 account. Having the app is not a completed-service sample. Quota on the event you need to score.',
+      'As channels, not as the population. The 14 May 2026 Absher release reported 448,243,708 electronic transactions in 2025 and identities above 32 million. SDAIA lists 33 million Tawakkalna users and more than 1,000 services. The Vision 2030 page says more than 1,300 services. Name the service inside the app.',
   },
   {
-    question: 'How should Arabic fieldwork run for a government CSAT?',
+    question: 'How should Arabic fieldwork run?',
     answer:
-      'Author in Arabic first: the Basic Law states that the Kingdom’s language is Arabic. Field a tested English twin where non-Saudis (44.4% of mid-2024 residents) or seven-language Tawakkalna users sit the interview. Record language as a variable. Online can reach the 99.0% internet-using 15–74 band; CAPI and assisted-digital cells still cover centres and the inclusion gap DGA scored at 75.30%.',
+      'The Basic Law says Arabic is the language of the Kingdom. Write the item in Arabic first, then an English version with the same meaning. Record the language of the interview. Tawakkalna is published in seven languages. A Hajj file covered 177 nationalities in the 2025 measurement.',
   },
   {
     question: 'What did Adaa already measure on Hajj?',
     answer:
-      'Adaa measures beneficiary satisfaction at journey level and entity level. For Hajj 1445 it measured 81 services across 18 government agencies, including mystery shopping. The Ministry of Hajj and Umrah reports that 2025 measurement covered more than 3 million pilgrims and Umrah performers from 177 nationalities, using field interviews, Nusuk, Mystery Guest, focus groups and technical solutions.',
+      'On 12 June 2024 the Saudi Press Agency reported satisfaction measurement for 81 Hajj 1445 services across 18 government agencies. The Ministry of Hajj and Umrah later described a 1447 AH expansion: more than 3 million pilgrims and Umrah performers from 177 nationalities in 2025, versus 50 nationalities in 2022, using five collection methods.',
   },
   {
-    question: 'How much does custom government CSAT research in Saudi Arabia cost with BioNixus?',
+    question: 'How much does this work cost with BioNixus?',
     answer:
-      'Custom government customer satisfaction programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, cities, mode, language and whether the output is a one-off CSAT or a tracker. The scope, minimum sample, respondent replacement and re-field are guaranteed in writing. Findings are not. Taxable supplies carry 15% VAT.',
+      'Custom programmes are priced from $10,000 to $60,000. The scope, the minimum sample, replacement of non-qualifying respondents and re-field are guaranteed in writing. The findings are not part of that promise. Ask whether 15% VAT sits on the invoice.',
   },
   {
-    question: 'Why brief BioNixus rather than reuse a DGA score?',
+    question: 'Why brief BioNixus rather than reuse a platform score?',
     answer:
-      'DGA scores platforms. BioNixus writes the frame against official series and fields a bilingual, gender-appropriate instrument from the Al Khobar field office. US teams brief Sheridan; UK and European teams brief London EC1V 2NX. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not finding accuracy.',
+      'A platform score describes that platform. It does not describe a mixed digital and in-person journey the index does not score. Fieldwork is designed with the Al Khobar field office. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That promise is the scope, not the accuracy of a finding.',
   },
 ];
 

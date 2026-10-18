@@ -43,15 +43,15 @@ export const KANTAR_ALT_ME_META_DESCRIPTION =
   'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.';
 
 export const KANTAR_ALT_ME_DISPLAY_TITLE =
-  'Kantar Alternative Middle East: What Buyers Should Compare, and When a Specialist Fits Better';
+  'When to Use a Specialist Instead of a Global Research Firm';
 
 export const KANTAR_ALT_ME_DISPLAY_SUBTITLE =
-  'A 2026 guide to a market research agency alternative in the GCC';
+  'What Gulf buyers should compare before they hire';
 
 export const KANTAR_ALT_ME_BREADCRUMB_LABEL = 'Kantar alternative Middle East';
 
 export const KANTAR_ALT_ME_EXCERPT =
-  'A sourced 2026 guide to a Kantar alternative Middle East for custom research: what GCC buyers should compare, when a large global agency still fits, and when a specialist market research agency alternative GCC is the better brief.';
+  'A plain guide for buyers comparing a global research firm with a specialist for a named Gulf state, a named buyer, and a price after tax.';
 
 export const KANTAR_ALT_ME_PUBLISHED_ISO = '2026-10-15T12:00:00.000Z';
 export const KANTAR_ALT_ME_UPDATED_ISO = '2026-10-15T12:00:00.000Z';
@@ -238,200 +238,73 @@ export function countWords(html: string): number {
 }
 
 export const KANTAR_ALT_ME_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  {
-    heading: 'What does a Kantar alternative Middle East brief actually mean?',
-    anchor: 'what-kantar-alternative-middle-east-means',
-  },
-  {
-    heading: 'Official numbers that frame a 2026 GCC custom brief',
-    anchor: 'official-numbers',
-  },
-  {
-    heading: 'What buyers should compare',
-    anchor: 'what-buyers-should-compare',
-  },
-  {
-    heading: 'When a large global agency still fits',
-    anchor: 'when-global-agency-fits',
-  },
-  {
-    heading: 'When a specialist market research agency alternative GCC fits better',
-    anchor: 'when-specialist-market-research-agency-alternative-gcc-fits',
-  },
-  {
-    heading: 'Country by country, not a pan-GCC average',
-    anchor: 'country-by-country',
-  },
-  {
-    heading: 'What custom GCC research costs',
-    anchor: 'costs',
-  },
-  {
-    heading: 'How to brief the work',
-    anchor: 'how-to-brief',
-  },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to compare before you hire', anchor: 'what-to-compare' },
+  { heading: 'Six countries, not one sample', anchor: 'six-countries' },
+  { heading: 'What the public record says about Kantar', anchor: 'kantar-record' },
+  { heading: 'Tax, language, and personal data', anchor: 'rules' },
+  { heading: 'When a global firm still fits', anchor: 'when-global' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const KANTAR_ALT_ME_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A Kantar alternative Middle East brief is custom, named-sample work beside a global tracker, not a switch-off. Compare sample, country quotas, language, data law and what is guaranteed in writing. A specialist market research agency alternative GCC fits when the study is one or two Gulf states, a named buyer, or a category the panel does not cover.</p>`;
+export const KANTAR_ALT_ME_EXECUTIVE_SUMMARY_HTML = `<p>A Kantar alternative Middle East is a specialist for a named Gulf state, a named buyer, and a price after tax. A market research agency alternative GCC fits when the six countries should not be one sample. A global tracker answers a different question.</p>`;
 
-const NARRATIVE_HTML = `<p>US, UK and European commercial teams who search “Kantar alternative Middle East” are usually not asking for a cheaper clone of a global tracker. They already have a preferred-supplier list. They need custom research that names a buyer, a city and a price in the GCC. This guide sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma briefs — FMCG, retail, financial services, technology, energy, industrials, hospitality — not for a healthcare formulary file.</p>
+const NARRATIVE_HTML = `<p>A buyer who searches for a Kantar alternative Middle East is usually comparing a global firm with a specialist. The six Gulf states are separate markets. Before you hire, name the state, the person who will answer, the language, and the price after tax. This page explains when a market research agency alternative GCC is the better brief. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>.</p>
 
-<p>BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a>, <a href="/b2b-industries">B2B market research</a> and <a href="/b2c-industries">B2C market research</a>.</p>
+<p>A global tracker can measure a brand across many countries on one method. A custom study names who specifies, who pays, and in which city. Related pages cover <a href="/uae-technology-market-research">technology research in the UAE</a>, <a href="/saudi-arabia-retail-market-research">retail research in Saudi Arabia</a>, and <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B research in the UAE</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 GCC custom brief can cite, October 2026</strong></p>
+<h2 id="what-to-compare">What to compare before you hire</h2>
 <ul>
-<li><strong>Six member states</strong> — the United Arab Emirates, Bahrain, Saudi Arabia, Oman, Qatar and Kuwait — signed the GCC Charter in Abu Dhabi on 25 May 1981 (${cite('gcc-members', 'GCC Member States')}; ${cite('gcc-charter', 'GCC Charter')} ). They are not one sampling frame.</li>
-<li><strong>World Bank 2024 population:</strong> Saudi Arabia 35,300,280; UAE 10,986,400; Oman 5,281,538; Kuwait 4,897,263; Qatar 2,857,822; Bahrain 1,588,670 (${cite('wb-pop', 'World Bank SP.POP.TOTL')} ). Adding those six published figures gives about 60.9 million people. That sum is a labelled total of six series, not a GCC census.</li>
-<li><strong>National series can differ from World Bank.</strong> GASTAT and my.gov.sa put Saudi Arabia at 35.3 million / 35,300,280 in 2024 (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}). FCSC’s Unified UAE Numbers puts the UAE at 11.29 million in 2024 (${cite('fcsc-unified-2025', 'FCSC')}), against World Bank’s 10,986,400. Write the source on the slide.</li>
-<li><strong>World Bank 2024 GDP (current US$, billion):</strong> Saudi Arabia 1,239.8; UAE 552.3; Qatar 219.2; Kuwait 160.2; Oman 107.1; Bahrain 47.1 (${cite('wb-gdp', 'World Bank NY.GDP.MKTP.CD')} ). Bahrain is not a scaled-down Saudi Arabia.</li>
-<li><strong>WPP, 12 July 2019,</strong> described Kantar as a global data, research, consulting and analytics business offering insights into customers and consumers in over 100 countries, and recorded that WPP launched Kantar in 1992. The 60% sale to Bain Capital Private Equity completed for about 90% of the business on 5 December 2019 (${cite('wpp-kantar-2019', 'WPP, 12 July 2019')}; ${cite('wpp-kantar-completion', 'WPP, 5 December 2019')} ). Those are 2019 corporate facts, not a 2026 quality score.</li>
-<li><strong>THE KANTAR GROUP LIMITED</strong> (Companies House 02887671) is an active UK private limited company, incorporated 14 January 1994, SIC 70100 (activities of head offices), with a registered office at South Bank Central, 30 Stamford Street, London (${cite('ch-kantar-group', 'Companies House')} ). A London holding-company address is not a Gulf sample plan.</li>
-</ul>
-</div>
-
-<h2 id="what-kantar-alternative-middle-east-means">What does a Kantar alternative Middle East brief actually mean?</h2>
-
-<p>A Kantar alternative Middle East search is usually a procurement sentence, not an insult. Large global agencies exist because brand tracking, creative testing and multi-country consumer measurement are real jobs. WPP’s 2019 sale announcement is the public, dated description we will use: Kantar is a data, research, consulting and analytics business built to offer customer and consumer insight at global scale (${cite('wpp-kantar-2019', 'WPP')} ). That is a category. It is not a finding about any 2026 wave, and this article does not invent 2026 revenues, GCC office counts or panel sizes.</p>
-
-<p>Custom research is a different job. It has to name who specifies, who pays, in which state, in which language, at what price, through which channel. A pan-GCC deck that averages Saudi Arabia’s 35.3 million people with Bahrain’s 1.59 million is not that job (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('wb-pop', 'World Bank')} ). Neither is a consumer panel dropped on a named B2B buying committee. Adjacent how-to pages on this hub include <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a> and <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">market entry research for Saudi Arabia</a>.</p>
-
-<p>Three questions separate a usable Kantar alternative Middle East brief from a slogan:</p>
-<ul>
-<li><strong>What must stay?</strong> If a multi-country tracker already answers brand health with a comparable methodology, keep it. Do not force a single-vendor RFP onto a tracker and a custom study.</li>
-<li><strong>What is missing?</strong> Named accounts, SKU cuts, traditional trade, a category the panel does not live in, a city quota, a bilingual instrument, a PDPL basis, a written replacement rule.</li>
-<li><strong>Who can prove the missing cut?</strong> A specialist that will field in the states you named, in the languages you named, and put the sample in writing. That is the market research agency alternative GCC buyers are actually hiring.</li>
+<li><strong>The job.</strong> Brand tracking, creative testing, and multi-country consumer measurement are one kind of work. A named buying committee in one city is another.</li>
+<li><strong>The geography.</strong> Name the states. A sample that says only “GCC” is not a sample.</li>
+<li><strong>The price, after tax.</strong> UAE VAT and Saudi VAT are different rates. Put the rate on the research invoice and on the product price card.</li>
+<li><strong>The quality claim.</strong> Ask which edition of the research standard is in scope, and which annexes. A logo is not a Gulf sample plan.</li>
+<li><strong>The first contact.</strong> Researchers identify themselves, and participation is voluntary. Direct marketing dressed up as research fails that rule.</li>
 </ul>
 
-<p>ISO 20252:2026 is the current vocabulary and service-requirements standard for market, opinion and social research, including insights and data analytics. It does not apply only to global networks. The Market Research Society records that the 2026 edition replaces 2019, with certification to 2026 mandatory from September 2029, and that a Statement of Applicability must name which annexes are in scope (${cite('iso-20252-2026', 'ISO 20252:2026')}; ${cite('mrs-iso-20252', 'MRS')} ). Ask for the SoA. Do not treat a logo as a Gulf sample.</p>
+<h2 id="six-countries">Six countries, not one sample</h2>
+<p>The secretariat lists six members: the United Arab Emirates, Bahrain, Saudi Arabia, Oman, Qatar, and Kuwait (${cite('gcc-members', 'GCC Secretariat')}). The Charter was signed in Abu Dhabi on 25 May 1981. Its preamble names the same six states. The same text records that the Council was formed of the six states that met in Riyadh on 4 February 1981 (${cite('gcc-charter', 'GCC Charter')}).</p>
+<p>World Bank population for 2024, total persons: Saudi Arabia 35,300,280; the UAE 10,986,400; Oman 5,281,538; Kuwait 4,897,263; Qatar 2,857,822; Bahrain 1,588,670 (${cite('wb-pop', 'World Bank')}). Saudi Arabia’s published count is far larger than Bahrain’s. A few hundred online completes drawn from one emirate are not a six-country sample.</p>
+<p>National offices can publish a different 2024 figure. GASTAT’s mid-2024 estimate is 35.3 million, and the national portal lists 35,300,280 (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}). FCSC’s unified numbers put the UAE at 11.29 million in 2024, with about 200 nationalities and an economic participation rate of 81.4% (${cite('fcsc-unified-2025', 'FCSC')}). World Bank’s UAE figure is 10,986,400. Write the source on the slide. The gap is a source note.</p>
+<p>World Bank GDP for 2024, current dollars, in billions: Saudi Arabia 1,239.8; the UAE 552.3; Qatar 219.2; Kuwait 160.2; Oman 107.1; Bahrain 47.1 (${cite('wb-gdp', 'World Bank')}). Bahrain is not a small copy of Saudi Arabia. On 15 June 2025, WAM, citing FCSC, said UAE GDP reached AED 1,776 billion in 2024, with 4% growth (${cite('wam-gdp-2024', 'WAM, 15 June 2025')}). That is a UAE national account. It does not say whether a named buyer in Abu Dhabi will specify you.</p>
 
-<h2 id="official-numbers">Which official numbers should a 2026 GCC custom brief start from?</h2>
+<h2 id="kantar-record">What the public record says about Kantar</h2>
+<p>On 12 July 2019, WPP described Kantar as a global data, research, consulting, and analytics business offering insight in over 100 countries, and said WPP launched Kantar in 1992 (${cite('wpp-kantar-2019', 'WPP, 12 July 2019')}). On 5 December 2019, WPP said the sale of 60% of Kantar to Bain Capital Private Equity had completed, for approximately 90% of the business (${cite('wpp-kantar-completion', 'WPP, 5 December 2019')}). Those are 2019 corporate facts. They are not a score for a 2026 study.</p>
+<p>The Kantar Group Limited, company 02887671, is an active UK private limited company, incorporated on 14 January 1994. Its SIC code is 70100, activities of head offices. The registered office is South Bank Central, 30 Stamford Street, London, SE1 9LQ (${cite('ch-kantar-group', 'Companies House')}). A London holding-company address is not a Gulf sample plan.</p>
+<p>Use that public record for what it is: a description of a global business. Keep the global firm when the brief is the job that scale was built for. A tracker, a creative test, or a multi-country consumer measure with one method is that job. A missing local cut is a different job.</p>
 
-<p>Use official series as the frame. Then replace the frame with named interviews. Do not invent a “Middle East market size.”</p>
+<h2 id="rules">Tax, language, and personal data</h2>
+<p>UAE VAT has been 5% since 1 January 2018 (${cite('mof-vat', 'UAE Ministry of Finance')}). Article 3 of the VAT law sets the standard rate at 5% (${cite('fta-vat-law', 'Federal Tax Authority')}). Saudi Arabia’s standard rate is 15% (${cite('zatca-vat', 'ZATCA')}). Article 2 of the VAT law states that 15% rate (${cite('boe-vat', 'VAT Law')}). A willingness-to-pay question that pastes a US or UK price onto a Riyadh or Dubai invoice is the same kind of error as pasting a shop price onto a tender.</p>
+<p>Article 1 of the Basic Law of Governance says Arabic is the language and Riyadh is the capital (${cite('boe-basic-law', 'Basic Law of Governance')}). An English-only questionnaire in Saudi consumer work is a coverage decision. Where the payer and the specifier do not share a language, write both.</p>
+<p>UAE Federal Decree-Law No. 45 of 2021 has been in force since 2 January 2022 (${cite('uae-pdpl-portal', 'u.ae')}). The text, at Articles 4, 6, and 17, is the place to read the processing rules. As cited from that text: processing without the owner’s consent is prohibited except in listed cases; consent must be clear, simple, unambiguous, and able to be withdrawn; Article 17 gives the data subject a right to object to processing for statistical surveys unless the processing is necessary for the public interest (${cite('uae-pdpl-text', 'UAE legislation')}).</p>
+<p>Saudi Arabia’s personal-data law is a different statute (${cite('sdaia-pdpl', 'SDAIA')}). The guide records that it has been in force since 14 September 2023, with a grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA guide')}).</p>
+<p>The ICC/ESOMAR code, Article 4, says researchers must identify themselves promptly, that participation must be voluntary and based on clear information about the purpose, and that re-contact needs agreement except for quality control, adverse-event reporting, or law (${cite('esomar-2025', 'ICC/ESOMAR, 2025')}).</p>
+<p>ISO 20252:2026 is the vocabulary and service-requirements standard for market, opinion, and social research, including insights and data analytics. Edition 4 was published in September 2026. It does not apply to non-research activities such as direct marketing (${cite('iso-20252-2026', 'ISO')}). The Market Research Society says the 2026 edition replaces 2019, that certification to the 2026 standard is mandatory from September 2029, and that a Statement of Applicability must name which annexes are in scope (${cite('mrs-iso-20252', 'Market Research Society')}). Ask for that statement.</p>
 
-<h3>Six states, not one catchment</h3>
+<h2 id="when-global">When a global firm still fits</h2>
+<p>Keep the global network when the brief matches the 2019 description: customer and consumer insight at the scale of a business offering it in over 100 countries. That scale is the point of a comparable multi-country measure.</p>
+<p>A specialist fits when the missing cut is local and custom. The GDP spread, from $1,239.8 billion in Saudi Arabia to $47.1 billion in Bahrain, is the commercial reason. The population spread is the sampling reason. The two personal-data laws are the compliance reason. Name one, two, or three states. Quota them. The Charter lists six members, not one blended consumer.</p>
+<p>Saudi Arabia is the first file when the warehouse, the headquarters seat, or the shop is in the Kingdom. Start from 35.3 million people and the 15% VAT invoice. The UAE is the first file when the buyer or the licence is there. Start from 11.29 million people and 5% VAT. Qatar, Kuwait, Oman, and Bahrain are first files when the plant, the tender, or the hotel is there. Use the World Bank cells as the frame, then replace the frame with named interviews.</p>
 
-<p>The GCC Secretariat lists six members: the United Arab Emirates, Bahrain, Saudi Arabia, Oman, Qatar and Kuwait (${cite('gcc-members', 'GCC Secretariat')} ). The Charter’s preamble names the same six, and records that the Council was formed of the six states that met in Riyadh on 4 February 1981; the Charter was signed in Abu Dhabi on 25 May 1981 (${cite('gcc-charter', 'GCC Charter')} ). A sample plan that says “GCC” without naming the states is not a sample plan.</p>
-
-<p>World Bank’s 2024 population series is the comparable six-country file. Saudi Arabia is 35,300,280; the UAE 10,986,400; Oman 5,281,538; Kuwait 4,897,263; Qatar 2,857,822; Bahrain 1,588,670 (${cite('wb-pop', 'World Bank')} ). Saudi Arabia is more than twenty times Bahrain on that series. A 400-complete “GCC CAWI” that draws 80% of completes from two Dubai free zones is a Dubai convenience sample with a Gulf label.</p>
-
-<p>Where a national statistical office publishes a different 2024 figure, write both. GASTAT’s mid-2024 estimate is 35.3 million; my.gov.sa lists 35,300,280 (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}). FCSC puts the UAE at 11.29 million in 2024, with about 200 nationalities and an 81.4% economic participation rate (${cite('fcsc-unified-2025', 'FCSC')} ). World Bank’s UAE figure is 10,986,400 (${cite('wb-pop', 'World Bank')} ). The gap is a source note, not a rounding error you can hide in a pan-GCC average.</p>
-
-<h3>The economies those samples sit in</h3>
-
-<p>World Bank 2024 GDP (current US$, billion) is Saudi Arabia 1,239.8; UAE 552.3; Qatar 219.2; Kuwait 160.2; Oman 107.1; Bahrain 47.1 (${cite('wb-gdp', 'World Bank')} ). Adding those six published figures gives about $2.33 trillion. Again, that is a labelled total of six series. It is not a demand curve for a named SKU.</p>
-
-<p>FCSC’s Unified UAE Numbers puts 2024 UAE GDP at AED 1.78 trillion at constant prices, with 4% constant-price growth and a 75.5% non-oil share in the WAM readout of the same release (${cite('fcsc-unified-2025', 'FCSC')}; ${cite('wam-gdp-2024', 'WAM')} ). Those are UAE national accounts. They do not answer whether a named facilities manager in Abu Dhabi will specify you. For that cut see <a href="/uae-technology-market-research">technology market research in the UAE</a> and <a href="/uae-financial-services-market-research">financial services market research in the UAE</a>.</p>
-
-<h3>Tax and language that sit on the instrument</h3>
-
-<p>UAE VAT has been 5% since 1 January 2018 (${cite('mof-vat', 'Ministry of Finance')}; ${cite('fta-vat-law', 'VAT Decree-Law')} ). Saudi VAT is 15% at the standard rate (${cite('zatca-vat', 'ZATCA')}; ${cite('boe-vat', 'VAT Law, Article 2')} ). A willingness-to-pay item that pastes a US or UK ex-tax ASP onto a Riyadh or Dubai invoice is the same error as pasting a consumer shelf price onto a tender. State the tax treatment in the instrument, and ask it again on the research invoice.</p>
-
-<p>Arabic is the language of the Kingdom under Article 1 of the Basic Law of Governance; Riyadh is the capital (${cite('boe-basic-law', 'Basic Law')} ). English-only instruments in Saudi consumer or public-facing B2B work are a coverage decision, not a default. Dual Arabic–English instruments are the usual starting point for GCC custom work that has to be defended in a London, New York or Frankfurt committee. Compare the method — not the numbers — with <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a> and <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a>.</p>
-
-<h2 id="what-buyers-should-compare">What should buyers compare on a Kantar alternative Middle East shortlist?</h2>
-
-<p>Ask every firm, including BioNixus, to answer these in writing before you sign. A market research agency alternative GCC that cannot answer them is a slide with a skyline.</p>
-
-<table>
-<thead><tr><th>What to compare</th><th>What “good” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Job of the brief</td><td>Tracker kept for brand health; custom study scoped for the missing cut</td><td>A single RFP that treats a 100-country consumer stack and a 30-depth Dubai file as the same product (${cite('wpp-kantar-2019', 'WPP 2019 description')})</td></tr>
-<tr><td>Geography</td><td>Named GCC states, with quotas. Six members, not one average (${cite('gcc-members', 'GCC Secretariat')})</td><td>“GCC” as a single cell drawn from one emirate</td></tr>
-<tr><td>Sample proof</td><td>Universe in one sentence; screener on seat, authority, language, tenure</td><td>A consumer panel labelled “decision-makers”</td></tr>
-<tr><td>Language</td><td>Arabic and/or English as the seats actually speak, with KSA Arabic as the official language (${cite('boe-basic-law', 'Basic Law')})</td><td>English-only as a silent default</td></tr>
-<tr><td>Data law</td><td>UAE PDPL and/or Saudi PDPL named, with a legal basis and a place for the data (${cite('uae-pdpl-text', 'UAE PDPL')}; ${cite('sdaia-pdpl', 'SDAIA PDPL')})</td><td>Client lists treated as a free pass</td></tr>
-<tr><td>Quality system</td><td>ISO 20252:2026 Statement of Applicability naming annexes (${cite('iso-20252-2026', 'ISO')}; ${cite('mrs-iso-20252', 'MRS')})</td><td>A logo with no SoA</td></tr>
-<tr><td>Contact rules</td><td>Identify promptly; participation voluntary; re-contact agreed (${cite('esomar-2025', 'ICC/ESOMAR Article 4')})</td><td>Mystery outreach or sales dressed as research</td></tr>
-<tr><td>Tax on the fee</td><td>5% UAE VAT and/or 15% Saudi VAT stated (${cite('mof-vat', 'UAE MoF')}; ${cite('zatca-vat', 'ZATCA')})</td><td>A net fee that ignores the invoice</td></tr>
-<tr><td>What is guaranteed</td><td>Scope, timing, minimum sample, replacements, re-field, credited pilot</td><td>A guarantee of findings or accuracy</td></tr>
-<tr><td>Where the work sits</td><td>Named field offices and who recruits</td><td>A holding-company address offered as fieldwork (${cite('ch-kantar-group', 'Companies House')})</td></tr>
-</tbody>
-</table>
-
-<p>Those ten tests are the study. Everything else — a photograph of a marina, a Vision slogan, an unpublished “GCC brand-health average” — is context. Context does not repay a launch budget.</p>
-
-<p>On data law, be specific. UAE Federal Decree-Law No. 45 of 2021 applies to personal data of people in the UAE. Processing without the owner’s consent is prohibited except in listed cases. Consent must be clear, simple, unambiguous and withdrawable. Article 17 gives the data subject the right to object to processing intended for statistical surveys unless the processing is necessary to serve the public interest (${cite('uae-pdpl-portal', 'u.ae')}; ${cite('uae-pdpl-text', 'PDPL')} ). Saudi PDPL, in the SDAIA English text, applies to processing of personal data relating to individuals in the Kingdom by any means, including processing from outside the Kingdom; SDAIA’s controller guide records the law in force from 14 September 2023 with a grace period to 14 September 2024 (${cite('sdaia-pdpl', 'SDAIA')}; ${cite('sdaia-guide', 'SDAIA guide')} ). Write the legal basis into the method note. Do not assume a UK or US privacy notice covers Riyadh or Dubai respondents.</p>
-
-<p>On contact, ICC/ESOMAR Article 4 is the public rule: researchers must identify themselves promptly, participation must be voluntary and based on clear information about the purpose and nature of the research, and re-contact needs agreement except for quality control, adverse-event reporting or law (${cite('esomar-2025', 'ICC/ESOMAR')} ). Direct marketing dressed as research fails that code. So does a mystery approach that hides the research purpose. Ask the shortlist how first contact is worded. Then read the wording.</p>
-
-<p>On quality systems, ISO 20252:2026 sets terms, definitions and service requirements for providers of market, opinion and social research, including insights and data analytics. It does not apply to non-research activities such as direct marketing (${cite('iso-20252-2026', 'ISO')} ). MRS records that the 2026 edition updates requirements for automated techniques and AI, splits sampling and panel management into Annex A and Annex G, and still requires a Statement of Applicability for attested services, including subcontracted work. Certification to 2026 is mandatory from September 2029 (${cite('mrs-iso-20252', 'MRS')} ). A specialist and a global network can both hold the standard. The SoA tells you which annexes they actually attest. Ask for it.</p>
-
-<h2 id="when-global-agency-fits">When does a large global agency still fit?</h2>
-
-<p>Keep the global network when the brief is the job that network was built to do. WPP’s 2019 description is the public, dated frame: a data, research, consulting and analytics business offering customer and consumer insight in over 100 countries (${cite('wpp-kantar-2019', 'WPP')} ). That scale is the point of a tracker, a creative test, or a multi-country consumer measurement with a comparable methodology. It is not a defect.</p>
-
-<p>Stay with a large global agency, including Kantar where you already buy it, when:</p>
-<ul>
-<li>the question is brand health, equity or creative, and a standardised wave already exists across many countries;</li>
-<li>a large consumer panel already covers the category, and the question is attitudinal rather than a named account;</li>
-<li>procurement needs a preferred-supplier relationship that can field the same instrument in dozens of markets;</li>
-<li>the deliverable is a tracker wave, not a commercial cut of facings, offtake, a named banner or a B2B seat.</li>
-</ul>
-
-<p>None of those bullets is a claim that a specialist cannot run a tracker. They are a claim about fit. A $10,000 to $60,000 custom file is the wrong tool for a 20-country brand-track. A 20-country brand-track is the wrong tool for 24 named procurement leads in Riyadh and Abu Dhabi. Most teams run both. Our commercial page on a <a href="/kantar-alternative">Kantar alternative for brand and shopper work</a> is the complement-not-switch argument in shorter form. This article is the GCC custom-research buyer file.</p>
-
-<h2 id="when-specialist-market-research-agency-alternative-gcc-fits">When does a specialist market research agency alternative GCC fit better?</h2>
-
-<p>A specialist market research agency alternative GCC fits when the missing cut is local, named and custom. The World Bank 2024 GDP spread — $1,239.8 billion in Saudi Arabia against $47.1 billion in Bahrain — is the commercial reason (${cite('wb-gdp', 'World Bank')} ). The population spread is the sampling reason (${cite('wb-pop', 'World Bank')} ). The legal split is the compliance reason (${cite('sdaia-pdpl', 'SDAIA')}; ${cite('uae-pdpl-text', 'UAE PDPL')} ).</p>
-
-<p>Brief a specialist when one or more of these is true:</p>
-<ul>
-<li><strong>The geography is one, two or three GCC states,</strong> not a 100-country wave. Name them. Quota them. The Charter lists six members, not a blended “Gulf consumer” (${cite('gcc-charter', 'GCC Charter')} ).</li>
-<li><strong>The seat is named.</strong> A chief procurement officer, a hotel buyer, a plant manager, a category captain. Consumer-panel completes are not that seat. See <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>.</li>
-<li><strong>The category is not on a grocery panel.</strong> Technology, energy, industrials, real estate, B2B financial services, hospitality fit-out. Adjacent country pages include <a href="/uae-energy-market-research">energy market research in the UAE</a> and <a href="/saudi-arabia-technology-market-research">technology market research in Saudi Arabia</a>.</li>
-<li><strong>The instrument must be bilingual,</strong> with Arabic as the Kingdom’s official language where the seats are Saudi (${cite('boe-basic-law', 'Basic Law')} ), and with English where the payer and the specifier do not share a language.</li>
-<li><strong>The budget is a project, not an enterprise MSA.</strong> BioNixus prices custom programmes from $10,000 to $60,000. That is the only price this article will quote, because it is the price we will put in a proposal. Global tracker fees are not public here; ask the incumbent directly.</li>
-<li><strong>You need replacements in writing.</strong> BioNixus replaces non-qualifying respondents at no charge, holds a minimum sample in the proposal, re-fields at our cost if a quota cell fails, and credits a pilot fee against the main study. Those are scope guarantees. They are not a guarantee that the findings are accurate.</li>
-</ul>
-
-<p>A specialist is not “better” in the abstract. It is better for that brief. The respectful test is: if the global network already answers the question, keep it. If it does not, add the custom file. Do not cancel a tracker to make a point.</p>
-
-<h2 id="country-by-country">Why is a pan-GCC average the wrong default?</h2>
-
-<p>Because the official series will not carry it. Saudi Arabia’s 35.3 million people and $1,239.8 billion of 2024 GDP are not Bahrain’s 1.59 million and $47.1 billion (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('wb-pop', 'World Bank')}; ${cite('wb-gdp', 'World Bank')} ). UAE VAT is 5%; Saudi VAT is 15% (${cite('mof-vat', 'UAE MoF')}; ${cite('zatca-vat', 'ZATCA')} ). UAE PDPL and Saudi PDPL are different statutes (${cite('uae-pdpl-text', 'UAE Legislation')}; ${cite('sdaia-pdpl', 'SDAIA')} ). Arabic is the Kingdom’s official language (${cite('boe-basic-law', 'Basic Law')} ). None of that is a ranking of the six states. It is a reason not to average them.</p>
-
-<p>Write the first proposal as a set of countries:</p>
-<ul>
-<li><strong>Saudi Arabia</strong> when the first warehouse, the first RHQ seat or the first retail facing sits in the Kingdom. Start from GASTAT’s 35.3 million and the 15% VAT invoice (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('boe-vat', 'VAT Law')} ). See <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">market entry research for Saudi Arabia</a> and <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>.</li>
-<li><strong>UAE</strong> when the first free-zone headquarters, the first Dubai or Abu Dhabi buyer, or the first mainland licence sits there. Start from FCSC’s 11.29 million and 5% VAT (${cite('fcsc-unified-2025', 'FCSC')}; ${cite('mof-vat', 'MoF')} ). See <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> and <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a>.</li>
-<li><strong>Qatar, Kuwait, Oman, Bahrain</strong> when the first tender, the first plant or the first hotel sits there. Use the World Bank 2024 population and GDP cells as the frame, then replace the frame with named interviews (${cite('wb-pop', 'World Bank')}; ${cite('wb-gdp', 'World Bank')} ). Do not add them as a footnote after a Dubai field period.</li>
-</ul>
-
-<p>Compare partners on the <a href="/insights/top-market-research-companies-uae-2026">2026 ranking of market research companies in the UAE</a> and the <a href="/insights/top-market-research-companies-saudi-arabia-2026">2026 ranking of market research companies in Saudi Arabia</a>. Browse country entry points on <a href="/market-research-by-industry">market research by industry</a>.</p>
-
-<h2 id="costs">What does custom GCC research cost?</h2>
-
-<p>BioNixus prices custom programmes from $10,000 to $60,000, depending on sample, states, mode, language and whether the output is a stand-alone decision file or a chapter inside a wider entry or feasibility study. That is the only price this article will quote. Syndicated “GCC market reports” and unpublished rate cards are not a substitute for a scoped primary study, and they are not cited here.</p>
-
-<p>What moves a brief inside that band is seniority of the seat, number of completes, mode, language, the mix of states, and VAT on the research invoice. A named C-level or procurement lead costs more than a category manager. Twenty depths in one state is a different job from 80 structured interviews across Riyadh, Jeddah, Dubai and Abu Dhabi. Dual Arabic–English instruments are not optional if the specifier and the payer do not share a language. If the supplier is UAE VAT-registered, 5% sits on the fee for taxable supplies (${cite('mof-vat', 'MoF')}; ${cite('fta-vat-law', 'FTA')} ). If the supply is taxable in the Kingdom, 15% is the standard rate (${cite('zatca-vat', 'ZATCA')}; ${cite('boe-vat', 'Article 2')} ). Ask for the tax treatment in the proposal, the same way you ask it in the instrument.</p>
-
-<p>A $10,000 brief is typically a focused qualitative file: a defined buyer, one or two states, a short interview guide, and a decision note. A $60,000 brief is typically a mixed-method file: named depths plus a structured wave, more than one state, a price module, and a source table a credit committee can audit. Neither number is a market-size forecast, and neither is a guarantee of a finding.</p>
-
-<p>The proposal should state, in writing: the sample, the states, the language, the mode, the timetable, the deliverables, the VAT treatment, and the guarantees — replacement of non-qualifying respondents, the minimum sample, re-field at our cost, and a credited pilot. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<h2 id="how-to-brief">How should you brief a Kantar alternative Middle East study?</h2>
-
-<p>Send one page, not a 40-slide RFP that was written for a global tracker. Include:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>The decision the committee owes itself in one sentence.</li>
-<li>The GCC states in scope, and which is the first field market.</li>
-<li>The seat — who specifies, who pays — and the language of interview.</li>
-<li>What you already buy (tracker, audit, panel) and what that file does not show.</li>
-<li>The PDPL basis if you will supply names (${cite('sdaia-pdpl', 'SDAIA')}; ${cite('uae-pdpl-text', 'UAE PDPL')} ).</li>
-<li>Whether 5% UAE VAT or 15% Saudi VAT should sit on the research invoice (${cite('mof-vat', 'UAE MoF')}; ${cite('zatca-vat', 'ZATCA')} ).</li>
-<li>What must be guaranteed in writing, and what must not be.</li>
+<li>Is this a tracker kept for brand health, or a custom study for a missing cut?</li>
+<li>Which of the six states are in the sample, and what is the quota for each?</li>
+<li>What is the Statement of Applicability, and which annexes are in scope?</li>
+<li>How will the first contact identify the research and keep participation voluntary?</li>
+<li>Which personal-data law applies if you will supply names?</li>
+<li>Should 5% UAE VAT or 15% Saudi VAT sit on the research invoice?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
 </ol>
+<p>What moves a study inside the usual fee band is the seniority of the person interviewed, the number of completes, the mode, the language, the mix of states, and the tax on the invoice. Twenty interviews in one state are a different job from a larger set across Riyadh, Jeddah, Dubai, and Abu Dhabi. Compare the written answers, not the brand names.</p>
 
-<p>ICC/ESOMAR still applies at first contact with respondents: identify the research organisation, keep participation voluntary, and do not hide the purpose (${cite('esomar-2025', 'ICC/ESOMAR')} ). ISO 20252:2026 is a quality-system claim, not a finding (${cite('iso-20252-2026', 'ISO')} ). Ask both of the specialist and of the incumbent. Then compare the written answers, not the brand names.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus as a market research agency alternative GCC?</h2>
-
-<p>BioNixus is not a syndicated data vendor and not a holding company. It is a primary market research firm that writes the chapter a US, UK or European commercial committee can interrogate. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>US teams brief the Sheridan headquarters. UK and European teams brief London. Fieldwork for the GCC is designed with the Dubai, Al Khobar and Salmiya field offices and bilingual Arabic–English teams. To brief a Kantar alternative Middle East custom study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom and at the Dubai field office call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -450,39 +323,39 @@ ${REFERENCES_HTML}`;
 
 export const KANTAR_ALT_ME_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does a Kantar alternative Middle East brief actually mean?',
+    question: 'When is a Kantar alternative Middle East the right brief?',
     answer:
-      'It usually means custom, named-sample work in one or more GCC states beside a global tracker, not a switch-off of that tracker. WPP’s 12 July 2019 announcement described Kantar as a global data, research, consulting and analytics business. Keep that job where it still answers the question. Add a custom file for the cut the tracker does not show.',
+      'When the job is a named buyer in a named Gulf state, not a multi-country tracker. WPP’s 12 July 2019 note describes Kantar as a global insight business in over 100 countries. That scale fits a tracker. A custom local cut is a different job.',
   },
   {
-    question: 'Should we replace a large global agency such as Kantar?',
+    question: 'When does a market research agency alternative GCC fit?',
     answer:
-      'Not as a default. Keep a multi-country brand-track or consumer measurement that is doing its job. Brief a specialist when you need named buyers, city quotas, bilingual instruments, or a category the panel does not cover. Most teams run both. Do not force a single-vendor RFP onto two different products.',
+      'When the six countries should not be one sample. World Bank 2024 population runs from 35,300,280 in Saudi Arabia to 1,588,670 in Bahrain. GDP runs from $1,239.8 billion to $47.1 billion. Name the states and quota them.',
   },
   {
-    question: 'What should buyers compare on a market research agency alternative GCC shortlist?',
+    question: 'Can the six Gulf states be one cell?',
     answer:
-      'Compare the job of the brief, named GCC states, sample proof, language, UAE and Saudi PDPL, the ISO 20252:2026 Statement of Applicability, ICC/ESOMAR first-contact rules, VAT on the invoice, and what is guaranteed in writing. A London holding-company address is not a Gulf field plan. A logo is not a sample.',
+      'The Charter, signed in Abu Dhabi on 25 May 1981, names six members. VAT is 5% in the UAE and 15% in Saudi Arabia. Arabic is the language of the Kingdom under the Basic Law. A single “GCC” cell hides those differences.',
   },
   {
-    question: 'When does a specialist market research agency alternative GCC fit better?',
+    question: 'Which population figure should a slide use?',
     answer:
-      'When the study is one, two or three Gulf states, a named B2B seat, a category off the grocery panel, a bilingual instrument, a $10,000 to $60,000 project budget, or a written replacement rule. World Bank 2024 GDP runs from $1,239.8 billion in Saudi Arabia to $47.1 billion in Bahrain; those are not one catchment.',
+      'Write the source. World Bank puts the UAE at 10,986,400 in 2024. FCSC puts the UAE at 11.29 million. GASTAT and the national portal put Saudi Arabia at 35.3 million, or 35,300,280. The gap is a source note.',
   },
   {
-    question: 'Do we need one study for all six GCC states?',
+    question: 'What should the contract say about quality and contact?',
     answer:
-      'No. The GCC Charter names six members. World Bank 2024 population runs from 35.3 million in Saudi Arabia to 1.59 million in Bahrain. Quota the states that will take the first warehouse, the first tender or the first facing. A pan-GCC average drawn from one emirate is a convenience sample.',
+      'ISO 20252:2026 is the current service standard. The Market Research Society says certification to that edition is mandatory from September 2029, with a Statement of Applicability. ICC/ESOMAR Article 4 says researchers identify themselves and that participation is voluntary.',
   },
   {
-    question: 'How much does custom GCC research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom programmes from BioNixus are typically $10,000 to $60,000 depending on sample, states, mode, language and whether the output is a stand-alone file or a chapter inside a wider study. The scope, timing, minimum sample, replacement of non-qualifying respondents and re-field are guaranteed in writing. Findings are not guaranteed. Ask whether 5% UAE VAT or 15% Saudi VAT sits on the research invoice.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the states, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus rather than only the incumbent global network?',
+    question: 'Why brief BioNixus for a local cut?',
     answer:
-      'Because the missing cut is usually local and named. US teams brief Sheridan; UK and European teams brief London EC1V 2NX; fieldwork is designed with field offices in Dubai, Al Khobar and Salmiya, Kuwait. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'BioNixus measures demand in the states you name, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

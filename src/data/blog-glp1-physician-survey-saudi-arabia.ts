@@ -72,9 +72,9 @@ export const GLP1_PHYSICIAN_SURVEY_FIGURES: ArticleFigure[] = [
   },
   {
     src: '/images/blog/glp-1-physician-survey-saudi-arabia-specialty-gap.webp',
-    alt: 'Bar chart showing 65.0 percent of endocrinologists versus 14.1 percent of family physicians prescribe anti-obesity medicines always or often',
+    alt: 'Bar chart showing 65.0 percent of endocrinologists versus 14.1 percent of family physicians in the two highest prescribing-frequency answers',
     caption:
-      'How often 92 Saudi clinicians prescribed anti-obesity medicines in 2024 (AlOtaibi et al., 2025, Table 3). Always or often: 65.0% of endocrinologists versus 14.1% of family physicians.',
+      'How often 92 Saudi clinicians prescribed anti-obesity medicines in 2024 (AlOtaibi et al., 2025, Table 3). The two highest frequency answers: 65.0% of endocrinologists versus 14.1% of family physicians.',
     width: 800,
     height: 560,
   },
@@ -106,15 +106,15 @@ export const GLP1_PHYSICIAN_SURVEY_META_DESCRIPTION =
   'How to design a GLP-1 physician survey Saudi Arabia brand teams can act on: published KAP findings, specialty quotas, and BioNixus 3,200-physician reach.';
 
 export const GLP1_PHYSICIAN_SURVEY_DISPLAY_TITLE =
-  'What Saudi Physicians Say About GLP-1s: Designing a GLP-1 Prescriber Survey in KSA';
+  'What Saudi physicians have said about GLP-1 medicines';
 
 export const GLP1_PHYSICIAN_SURVEY_DISPLAY_SUBTITLE =
-  'GLP-1 physician survey Saudi Arabia: a 2026 methods guide';
+  'GLP-1 physician survey Saudi Arabia: how to read the published surveys';
 
 export const GLP1_PHYSICIAN_SURVEY_BREADCRUMB_LABEL = 'GLP-1 physician survey Saudi Arabia';
 
 export const GLP1_PHYSICIAN_SURVEY_EXCERPT =
-  'A methods guide to designing a GLP-1 physician survey in Saudi Arabia. It cites published academic surveys of Saudi physicians, shows what those papers can and cannot answer, and sets out sample, specialty and access rules for a commissioned study.';
+  'A plain reading of published Saudi physician surveys on GLP-1 medicines: what each sample measured, and what a new survey still has to ask.';
 
 export const GLP1_PHYSICIAN_SURVEY_PUBLISHED_ISO = '2026-10-12T12:00:00.000Z';
 export const GLP1_PHYSICIAN_SURVEY_UPDATED_ISO = '2026-10-12T12:00:00.000Z';
@@ -274,153 +274,75 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const GLP1_PHYSICIAN_SURVEY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What should a GLP-1 physician survey in Saudi Arabia answer?', anchor: 'what-a-glp-1-physician-survey-in-saudi-arabia-should-answer' },
-  { heading: 'What have published Saudi physician surveys already found?', anchor: 'published-saudi-physician-glp-1-surveys' },
-  { heading: 'Where do academic KAP surveys stop?', anchor: 'where-academic-surveys-stop' },
-  { heading: 'How to design a GLP-1 physician survey Saudi Arabia teams can field', anchor: 'how-to-design-a-glp-1-physician-survey-saudi-arabia' },
-  { heading: 'What should the questionnaire measure?', anchor: 'what-the-questionnaire-should-measure' },
-  { heading: 'How should fieldwork, language and data protection work?', anchor: 'fieldwork-language-and-data-protection' },
-  { heading: 'Why BioNixus for a Saudi GLP-1 prescriber survey?', anchor: 'why-bionixus' },
+  { heading: 'What should the survey answer?', anchor: 'what-the-survey-should-answer' },
+  { heading: 'What have published surveys found?', anchor: 'published-surveys' },
+  { heading: 'Where do these surveys stop?', anchor: 'where-surveys-stop' },
+  { heading: 'How should you design the next one?', anchor: 'how-to-design' },
+  { heading: 'What does Saudi data law require?', anchor: 'data-protection' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const GLP1_PHYSICIAN_SURVEY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A GLP-1 physician survey Saudi Arabia brand teams can act on should start from published academic surveys, then add specialty quotas, region quotas and access questions. Those papers show a specialty gap and a knowledge–attitude split. BioNixus fields that design from about 3,200 physicians.</p>`;
+export const GLP1_PHYSICIAN_SURVEY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A GLP-1 physician survey Saudi Arabia teams can use should start from the published papers. Those papers show a specialty gap and a split between knowledge and attitude. They are not a national prescribing rate. A new survey needs named specialty quotas, region quotas and a question on who is allowed to prescribe.</p>`;
 
-const NARRATIVE_HTML = `<p>Academic surveys already describe what some Saudi physicians say about GLP-1 medicines, but they were not built for a brand decision. This methods guide shows how to design a <strong>GLP-1 physician survey in Saudi Arabia</strong> from those papers, and how BioNixus fields the study from a network of about 3,200 physicians. It sits in our <a href="/healthcare-market-research">healthcare market research company</a> hub for Saudi Arabia, the UAE and the GCC, and on the <a href="/healthcare-market-research/saudi-arabia">healthcare market research company in Saudi Arabia</a> buyer page, next to <a href="/saudi-arabia-obesity-market">obesity and GLP-1 market research in Saudi Arabia</a> and the buyer shortlist <a href="/blog/who-does-obesity-market-research-saudi-arabia">who does obesity market research in Saudi Arabia</a>.</p>
+const NARRATIVE_HTML = `<p>A GLP-1 physician survey Saudi Arabia teams can use has to start from the published papers, then ask what those papers left out. A GLP-1 medicine copies a gut hormone. Doctors use some of them for diabetes and for weight loss. The papers below are surveys of clinicians. They are not a count of patients on treatment, and they are not a national sales figure. This page sits on the <a href="/healthcare-market-research">healthcare market research</a> hub and the <a href="/healthcare-market-research/saudi-arabia">healthcare market research page for Saudi Arabia</a>, next to <a href="/saudi-arabia-obesity-market">obesity and GLP-1 research in Saudi Arabia</a> and <a href="/blog/who-does-obesity-market-research-saudi-arabia">who does obesity market research in Saudi Arabia</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: published Saudi physician evidence on GLP-1s, October 2026</strong></p>
-<ul>
-<li><strong>92 clinicians</strong> completed a national anti-obesity survey between May and August 2024: 71 family physicians, 20 endocrinologists and one bariatric surgeon (${cite('alotaibi-2025', 'AlOtaibi et al., 2025')}).</li>
-<li><strong>97.8%</strong> of those clinicians said they prescribe a GLP-1 receptor agonist class; asked for one first-line agent, 45.7% named semaglutide, 26.1% tirzepatide, 25.0% liraglutide and 3.3% orlistat (${cite('alotaibi-2025', 'AlOtaibi et al., 2025, Table 3')}).</li>
-<li><strong>65.0% versus 14.1%:</strong> endocrinologists prescribed anti-obesity medicines always or often, against 14.1% of family physicians (${cite('alotaibi-2025', 'AlOtaibi et al., 2025, Table 3')}).</li>
-<li><strong>399 physicians</strong> completed a nationwide KAP survey on SGLT-2 inhibitors and GLP-1 receptor agonists between December 2024 and November 2025: 78.4% had adequate GLP-1 knowledge, 23.6% a positive attitude and 75.4% met the authors’ practice threshold (${cite('alrasheed-2026', 'Alrasheed et al., 2026')}).</li>
-<li><strong>90.0%</strong> of those 399 physicians said medication availability and patient accessibility were always a prescribing barrier (${cite('alrasheed-2026', 'Alrasheed et al., 2026, Table 2')}).</li>
-<li><strong>25.5%</strong> of 51 National Guard physicians in Madinah said they were authorised to prescribe a GLP-1 receptor agonist; 72.5% said they were not (${cite('turjoman-2025', 'Turjoman et al., 2025, Table 1')}).</li>
-<li><strong>40.4%</strong> of GLP-1 users in an Eastern Province patient survey paid out of pocket (December 2024; ${cite('alhussain-2026', 'Alhussain et al., 2026')}).</li>
-</ul>
-</div>
+<h2 id="what-the-survey-should-answer">What should the survey answer?</h2>
+<p>A brand team usually needs four answers. Who starts a medicine. Which molecule they choose. What blocks the prescription. Whether that pattern differs by specialty, city and sector. A published knowledge quiz can be a baseline. It does not replace a study built around one decision.</p>
 
-<h2 id="what-a-glp-1-physician-survey-in-saudi-arabia-should-answer">What should a GLP-1 physician survey in Saudi Arabia answer?</h2>
-
-<p>A commissioned GLP-1 physician survey in Saudi Arabia is a decision instrument, not a knowledge quiz. Brand, medical and access teams usually need to know who starts, switches or stops a medicine, which molecule they choose, what blocks initiation, and whether that pattern differs by specialty, sector and region. Published academic surveys already answer parts of that question. They do not replace a study built around one brand decision.</p>
-
-<p>Use a published KAP paper when you need a public baseline. Commission a new survey when you need to compare products, test an oral against an injectable, measure persistence, or report endocrinology, family medicine, internal medicine and bariatric surgery separately with usable cell sizes. That is the split this guide is written around. For the wider obesity evidence base, see <a href="/saudi-arabia-obesity-market">obesity and GLP-1 market research in Saudi Arabia</a>.</p>
-
-<h2 id="published-saudi-physician-glp-1-surveys">What have published Saudi physician surveys already found?</h2>
-
-<p>Four physician or HCP surveys now form the public baseline. A fifth, mixed-profession KAP study from Qassim University is useful as context and is not a physician-only sample. The table uses each paper’s own methods section (${ACCESSED}).</p>
-
+<h2 id="published-surveys">What have published surveys found?</h2>
+<p>Four clinician surveys are the public baseline. A fifth study, from Qassim University, mixes physicians with nurses and pharmacists. The table uses each paper’s own methods.</p>
 ${STUDY_TABLE_HTML}
-
 ${figureHtml(GLP1_PHYSICIAN_SURVEY_FIGURES[0])}
 
-<h3>AlOtaibi et al., 2025: national anti-obesity prescribing</h3>
-
-<p>${cite('alotaibi-2025', 'AlOtaibi and colleagues')} ran a cross-sectional electronic survey between May and August 2024. They targeted certified family physicians, endocrinologists and bariatric surgeons through department heads and the Saudi Society of Endocrinology and Metabolism and the Saudi Society of Family and Community Medicine. Ninety-two clinicians completed it. The authors could not calculate a response rate. Cronbach’s alpha was 0.75. Central ethics approval was 2024-86.</p>
-
-<p>The sample was 64.1% male, mean age 37.4 years (standard deviation 10.2), 77.2% family medicine, 21.7% endocrinology and 1.1% bariatric surgery. Nearly half (44.6%) had been in practice for fewer than five years. The Central region accounted for 59.8% of respondents, and 67.4% worked in the governmental sector. Only 15.3% had obesity-focused training or certification.</p>
-
-<p>Asked which classes they prescribe (select all), 97.8% named a GLP-1 receptor agonist and 44.6% a dual GIP/GLP-1 agonist. Asked for one first-line agent, 45.7% chose semaglutide, 26.1% tirzepatide, 25.0% liraglutide and 3.3% orlistat. The paper’s prose calls 97.8% “first-line”; Table 3 separates the select-all class question from the single first-line question. Use the table.</p>
-
+<h3>A 2024 survey of 92 clinicians</h3>
+<p>${cite('alotaibi-2025', 'AlOtaibi and colleagues')} ran an online survey from May to August 2024. They invited family physicians, endocrinologists and bariatric surgeons. Ninety-two clinicians finished it. The authors could not calculate a response rate. Cronbach’s alpha was 0.75. The ethics approval number was 2024-86.</p>
+<p>The sample was 64.1% male. Mean age was 37.4 years (standard deviation 10.2). Family medicine was 77.2%. Endocrinology was 21.7%. Bariatric surgery was 1.1%. Nearly half, 44.6%, had practised for fewer than five years. The Central region was 59.8% of respondents. The governmental sector was 67.4%. Only 15.3% had obesity-focused training.</p>
+<p>On a select-all question, 97.8% named a GLP-1 receptor agonist and 44.6% named a dual GIP/GLP-1 agonist. On a separate question that asked for one first-line agent, 45.7% chose semaglutide, 26.1% tirzepatide, 25.0% liraglutide and 3.3% orlistat. The paper’s prose calls 97.8% first-line. Table 3 keeps the two questions apart. Use the table. The 97.8% figure is not a national share.</p>
 ${figureHtml(GLP1_PHYSICIAN_SURVEY_FIGURES[1])}
-
-<p>Frequency of prescribing is the sharper finding. Overall, 25.0% prescribed anti-obesity medicines always or often, 42.4% sometimes and 32.6% rarely or never. Endocrinologists did so always or often at 65.0%, against 14.1% of family physicians. Combining always, often and sometimes, 90.0% of endocrinologists and 60.6% of family physicians prescribed at all. Endocrinology had an odds ratio of 9.97 (95% CI 3.36–29.60) for more frequent prescribing; family medicine had an odds ratio of 0.11 (95% CI 0.32–0.40). Prior obesity training had an odds ratio of 2.45 (95% CI 1.07–5.64).</p>
-
+<p>Overall, 25.0% prescribed anti-obesity medicines in the paper’s two highest frequency answers, 42.4% sometimes, and 32.6% in the two lowest answers. Endocrinologists were in the two highest answers at 65.0%. Family physicians were at 14.1%. Adding the middle answer, 90.0% of endocrinologists and 60.6% of family physicians prescribed at some frequency. The odds ratio for endocrinology and more frequent prescribing was 9.97 (95% confidence interval 3.36 to 29.60). For family medicine it was 0.11 (0.32 to 0.40). Prior obesity training had an odds ratio of 2.45 (1.07 to 5.64).</p>
 ${figureHtml(GLP1_PHYSICIAN_SURVEY_FIGURES[2])}
+<p>When choosing between a GLP-1 and a dual agonist, 83.7% cited availability, 47.8% effectiveness and 45.7% dosing frequency. Cost influenced the choice for 75.0% of endocrinologists and 36.6% of family physicians. Insurance did so for 45.0% and 18.3%. Prescription limits were named by 33.8% of family physicians and 10.0% of endocrinologists. The authors note that some hospitals limit these medicines to endocrinologists.</p>
+<p>Family physicians were more likely to name the Saudi guideline (46.5%). Endocrinologists were more likely to name AACE/ACE (75.0%). For indications, 79.3% used a body mass index over 30. And 52.2% used a body mass index of 27 to 29.9 with a weight-related condition.</p>
 
-<p>When choosing between a GLP-1 and a dual GIP/GLP-1 agonist, 83.7% cited availability, 47.8% effectiveness and 45.7% dosing frequency. Cost influenced choice for 75.0% of endocrinologists and 36.6% of family physicians; insurance for 45.0% and 18.3%. Prescription privileges were named by 33.8% of family physicians and 10.0% of endocrinologists. The authors note that some institutions restrict these medicines to endocrinologists.</p>
-
-<h3>Alrasheed et al., 2026: nationwide KAP on GLP-1 and SGLT-2</h3>
-
-<p>${cite('alrasheed-2026', 'Alrasheed and colleagues')} surveyed 399 physicians who regularly manage type 2 diabetes, from December 2024 to November 2025, using Microsoft Forms and invitations through WhatsApp and the Saudi Commission for Health Specialties. They could not calculate a response rate. The protocol was approved by the King Saud University Medical City institutional review board. Specialties were family medicine (177 of 351 with a sub-specialty; 50.4%), internal medicine (114; 32.5%), endocrinology (37; 10.5%), cardiology (15; 4.3%) and nephrology (8; 2.3%). Specialists were 59.6% of the sample, residents 24.8%, general practitioners 12.0% and consultants 3.5%. Most practised in Riyadh (71.7%).</p>
-
-<p>Adequate knowledge was defined as at least five of eight items correct. That threshold was met by 91.0% for SGLT-2 inhibitors and 78.4% for GLP-1 receptor agonists. Only 23.6% met the authors’ cut for a positive attitude (at least 11 points on a nine-item scale). Appropriate practice (at least 13 of 16) was met by 75.4%. The GLP-1 knowledge scale had a KR-20 of 0.37, which the authors report; treat that knowledge share as a threshold result on a weak scale, not as a validated competency score. Attitude Cronbach’s alpha was 0.70 and practice 0.80.</p>
-
+<h3>A 2024–25 survey of 399 physicians</h3>
+<p>${cite('alrasheed-2026', 'Alrasheed and colleagues')} surveyed 399 physicians who regularly manage type 2 diabetes, from December 2024 to November 2025. They could not calculate a response rate. Among 351 physicians with a sub-specialty, family medicine was 177 (50.4%), internal medicine 114 (32.5%), endocrinology 37 (10.5%), cardiology 15 (4.3%) and nephrology 8 (2.3%). Specialists were 59.6% of the sample, residents 24.8%, general practitioners 12.0% and consultants 3.5%. Most practised in Riyadh (71.7%).</p>
+<p>Adequate knowledge meant at least five of eight items correct. That bar was met by 91.0% for SGLT-2 inhibitors and 78.4% for GLP-1 receptor agonists. Only 23.6% met the authors’ bar for a positive attitude. Appropriate practice was met by 75.4%. The GLP-1 knowledge scale had a KR-20 of 0.37. Treat 78.4% as a score on a weak scale, not as a national competency rate. Attitude Cronbach’s alpha was 0.70. Practice was 0.80.</p>
 ${figureHtml(GLP1_PHYSICIAN_SURVEY_FIGURES[3])}
+<p>Availability and patient access were a barrier on the paper’s strongest response for 90.0% of respondents (359 of 399). When benefits and risks were similar, 35.6% preferred an SGLT-2 inhibitor over a GLP-1 on that same strongest response. Attitude and practice were the most strongly correlated pair (Spearman ρ = 0.67). After adjustment, ages 56 to 65 had higher odds of inappropriate practice than ages 25 to 35 (adjusted odds ratio 8.68, 95% confidence interval 2.34 to 37.2). Specialists had lower odds than general practitioners (0.23, 0.09 to 0.57). GLP-1 knowledge was not independently tied to practice in that model. The authors also cite a Saudi review in which 19% of eligible patients with type 2 diabetes received an SGLT-2 inhibitor or a GLP-1 receptor agonist. That 19% is the review they cite. It is not this survey’s own count of patients.</p>
 
-<p>Availability and patient accessibility were always a barrier for 90.0% of respondents (359 of 399). When benefits and risks were similar, 35.6% always preferred an SGLT-2 inhibitor over a GLP-1 receptor agonist. Attitude and practice were the most strongly correlated pair (Spearman ρ = 0.67). After adjustment, older age raised the odds of inappropriate practice (ages 56–65 versus 25–35: adjusted odds ratio 8.68, 95% CI 2.34–37.2). Specialists had lower odds of inappropriate practice than general practitioners (0.23, 95% CI 0.09–0.57). GLP-1 knowledge was not independently associated with practice in the adjusted model. The authors also cite a Saudi multicenter review in which only 19% of eligible patients with type 2 diabetes received an SGLT-2 inhibitor or GLP-1 receptor agonist.</p>
+<h3>Fifty-one physicians in Madinah</h3>
+<p>${cite('turjoman-2025', 'Turjoman and colleagues')} surveyed 51 physicians at Prince Mohammed bin Abdulaziz Hospital and its primary-care clinics. The ethics number was KAIMRC western-region IRB 2453/23. The paper was received on 26 November 2024 and published on 23 March 2025. Internal medicine was 58.8%. Family medicine was 41.2%. Most respondents were under 35 (92.2%) and had two years of experience or less (62.7%). Only 13.7% were board-certified. Authority to prescribe a GLP-1 was yes for 25.5%, no for 72.5% and unknown for 2.0%.</p>
+<p>The median knowledge score was 10.0 of 13 (interquartile range 8.0 to 11.0). Knowledge items were scored correctly by 77.2%. In one cut, good knowledge was 49.0%, fair 31.4% and poor 19.6%. Good attitude was 19.6%, fair 17.6% and poor 62.7%. Good practice was 23.5%, fair 17.6% and poor 58.8%. On a different cut, 51.6% showed a positive attitude and 55.2% showed good practice. Family medicine had a higher share of good knowledge than internal medicine (66.7% versus 36.7%). Board-certified physicians had good practice at 71.4%, against 13.0% of residents. The authors say not every physician at the site finished the form.</p>
 
-<h3>Turjoman et al., 2025: National Guard, Madinah</h3>
+<h3>ACTION-IO in 2018</h3>
+<p>The Saudi arm of ACTION-IO (${cite('action-io-2021', 'Alfadda et al., 2021')}; ClinicalTrials.gov NCT03584191) surveyed 1,000 people with obesity and 200 healthcare professionals between June and September 2018. Of the people with obesity, 46% had received an obesity diagnosis, 44% had a follow-up appointment, and 5% had kept their weight loss for more than a year. Bariatric surgeons were not eligible. This was fielded before current GLP-1 use for weight loss. It is a conversation baseline. It is not a prescribing share. The healthcare-professional form took 28 minutes.</p>
 
-<p>${cite('turjoman-2025', 'Turjoman and colleagues')} surveyed 51 physicians at Prince Mohammed bin Abdulaziz Hospital and its primary-care clinics (KAIMRC western-region IRB 2453/23). The paper was received on 26 November 2024 and published on 23 March 2025. Internal medicine was 58.8% of the sample and family medicine 41.2%. Most respondents were under 35 (92.2%) and had two years of experience or less (62.7%). Only 13.7% were board-certified. Prescription authority for a GLP-1 receptor agonist was yes for 25.5%, no for 72.5% and unknown for 2.0%.</p>
+<h3>A mixed sample in Qassim</h3>
+<p>${cite('aldhobaib-2021', 'Aldhobaib and colleagues')} approached 154 health professionals at Qassim University in 2020–21 (ethics 20.02.08). One hundred and twelve agreed (72.7%) and 107 were analysed after five incomplete forms were dropped. About half were physicians, 33.6% were nurses and 16.8% were pharmacists. Overall correct response was 73.5% for knowledge, 78.5% for attitude and 80.3% for practice. This is a campus sample of several professions. It is not a national physician survey.</p>
 
-<p>Median knowledge score was 10.0 of 13 (interquartile range 8.0 to 11.0). Knowledge items were scored correctly by 77.2% of participants. Categorised scores: good knowledge 49.0%, fair 31.4%, poor 19.6%; good attitude 19.6%, fair 17.6%, poor 62.7%; good practice 23.5%, fair 17.6%, poor 58.8%. The authors also report that 51.6% showed a positive attitude on agree or strongly-agree items and that 55.2% showed good practice on utilisation items — a different cut from the good/fair/poor bands. Family medicine had a higher share of good knowledge than internal medicine (66.7% versus 36.7%). Board-certified physicians had good practice at 71.4%, against 13.0% of residents. The authors say not all physicians at the site completed the questionnaire, so the sample is not the whole institution.</p>
-
-<h3>ACTION-IO Saudi Arabia, 2018: the pre-GLP-1 HCP baseline</h3>
-
-<p>The Saudi arm of ACTION-IO (${cite('action-io-2021', 'Alfadda et al., 2021')}; NCT03584191) surveyed 1,000 people with obesity and 200 healthcare professionals between June and September 2018. Of people with obesity, 46% had received an obesity diagnosis, 44% had a follow-up appointment and 5% had maintained their weight loss for more than a year. That is the last national HCP-and-patient pair before current-generation GLP-1 use. It is a barrier and conversation baseline, not a prescribing baseline.</p>
-
-<h3>Aldhobaib et al., 2021: mixed health professionals in Qassim</h3>
-
-<p>${cite('aldhobaib-2021', 'Aldhobaib and colleagues')} approached 154 health professionals at Qassim University in 2020–21 (ethics 20.02.08). One hundred and twelve agreed (72.7% response) and 107 were analysed after five incomplete forms were dropped. About half were physicians, 33.6% nurses and 16.8% pharmacists. Overall correct response was 73.5% for knowledge, 78.5% for attitude and 80.3% for practice. This is a mixed-profession campus sample, not a national physician survey. Use it to show that GLP-1 KAP work in Saudi Arabia is older than the 2024–25 papers, not as a prescribing share.</p>
-
-<h2 id="where-academic-surveys-stop">Where do academic KAP surveys stop?</h2>
-
-<p>Those papers are the right place to start a GLP-1 physician survey in Saudi Arabia. They are the wrong place to stop. Each one says so in its limitations.</p>
-
+<h2 id="where-surveys-stop">Where do these surveys stop?</h2>
 <ul>
-<li><strong>Convenience samples and unknown response rates.</strong> AlOtaibi and Alrasheed both say they could not calculate a response rate. Turjoman says not every physician at the site completed the form. You cannot treat any of the percentages as a national share.</li>
-<li><strong>Specialty cells are too small for a brand decision.</strong> AlOtaibi has 20 endocrinologists and one bariatric surgeon. Alrasheed has 37 endocrinologists, 15 cardiologists and eight nephrologists. A launch or switch study needs planned quotas, not whatever arrives in a convenience link.</li>
-<li><strong>Riyadh and the Central region dominate.</strong> AlOtaibi’s Central share is 59.8%. Alrasheed’s Riyadh share is 71.7%. Eastern, Western, Southern and Northern practice is under-measured.</li>
-<li><strong>Instruments mix diabetes and obesity, and some scales are weak.</strong> Alrasheed’s GLP-1 knowledge KR-20 is 0.37. AlOtaibi’s 97.8% figure is a select-all class question that the prose labels first-line. A brand questionnaire has to keep class, molecule, indication and first-line as separate items.</li>
-<li><strong>Access is named, not measured by payer type.</strong> Alrasheed’s 90.0% availability barrier and AlOtaibi’s cost and insurance splits do not separate public, insured and self-pay pathways. In the Eastern Province, 40.4% of GLP-1 users paid out of pocket and 59.6% were covered by insurance or government support (${cite('alhussain-2026', 'Alhussain et al., 2026')}).</li>
-<li><strong>Patients and pharmacies sit outside the physician instrument.</strong> Alhussain’s Eastern Province survey (1,264 overweight or obese adults, December 2024) found lifetime GLP-1 use of 18.2% and current use of 14.2%; 70.4% of users started on a doctor’s recommendation and 36.5% on their own decision. ${cite('tobaiqy-2026', 'Tobaiqy et al., 2026')} surveyed 365 adults who had used an anti-obesity medicine at three Jeddah hospitals between June 2025 and February 2026. ${cite('alhomoud-2025', 'Alhomoud et al., 2025')} surveyed 211 community pharmacists in Qassim; 67.3% named high medication cost as a barrier. A physician survey still needs a patient or pharmacy module if access and unsupervised use are in the brief.</li>
+<li>AlOtaibi and Alrasheed could not calculate a response rate. Turjoman says the form was not completed by every physician on site. Do not treat any percentage as a national share.</li>
+<li>AlOtaibi has 20 endocrinologists and one bariatric surgeon. Alrasheed has 37 endocrinologists, 15 cardiologists and eight nephrologists. Those cells are small.</li>
+<li>AlOtaibi’s Central share is 59.8%. Alrasheed’s Riyadh share is 71.7%. Other regions are thinly measured.</li>
+<li>Alrasheed’s GLP-1 knowledge KR-20 is 0.37. AlOtaibi’s 97.8% is a select-all class question.</li>
+<li>In the Eastern Province, 40.4% of GLP-1 users paid themselves and 59.6% had insurance or government support (${cite('alhussain-2026', 'Alhussain et al., 2026')}). That patient survey is not a physician survey.</li>
 </ul>
+<p>Alhussain’s survey covered 1,264 adults with overweight or obesity in December 2024. Lifetime GLP-1 use was 18.2%. Current use was 14.2%. Among users, 70.4% started on a doctor’s recommendation and 36.5% on their own decision. The paper also notes a Ministry of Health campaign, launched in August 2025, on prescription rules for weight-loss medicines. ${cite('tobaiqy-2026', 'Tobaiqy and colleagues')} surveyed 365 adults who had used an anti-obesity medicine at three hospitals in Jeddah between June 2025 and February 2026. ${cite('alhomoud-2025', 'Alhomoud and colleagues')} surveyed 211 community pharmacists in Qassim. High medicine cost was named as a barrier by 67.3%. A physician survey does not replace those studies.</p>
 
-<h2 id="how-to-design-a-glp-1-physician-survey-saudi-arabia">How to design a GLP-1 physician survey Saudi Arabia teams can field</h2>
-
-<p>Design backwards from the decision. Then set the sample so each cell can support that decision. The published papers tell you which cells collapse if you do not plan them.</p>
-
-<ol>
-<li><strong>Set specialty quotas, then report them separately.</strong> Recruit endocrinology, family medicine, internal medicine and bariatric surgery as named cells. AlOtaibi’s always-or-often gap (65.0% versus 14.1%) is the reason. Cardiology and nephrology belong in a diabetes-and-ASCVD brief; they were 4.3% and 2.3% of Alrasheed’s sub-specialty group.</li>
-<li><strong>Quota region and sector.</strong> Do not let Riyadh or the Central region fill the sample. Split governmental, private and mixed practice. AlOtaibi’s overall governmental share was 67.4%.</li>
-<li><strong>Record prescription authority before you ask about choice.</strong> Turjoman’s 25.5% authorisation rate, and AlOtaibi’s note on endocrinology-only privileges, mean a “what do you prescribe?” item is meaningless if the respondent cannot write the script.</li>
-<li><strong>Keep class, molecule and line of therapy on separate items.</strong> Repeat AlOtaibi’s select-all class list and the single first-line item. Do not collapse them. Include semaglutide, tirzepatide, liraglutide, orlistat and any oral GLP-1 the brief needs.</li>
-<li><strong>Measure availability, cost and insurance as named barriers, then by payer type.</strong> Alrasheed’s 90.0% “always” barrier is a prompt, not a coverage rate. Pair it with public, insured and self-pay routes, and with Alhussain’s out-of-pocket finding.</li>
-<li><strong>Set a sample size for the smallest decision cell, not for the total.</strong> A convenience n of 92 or 51 cannot support a four-specialty, four-region read. Brief the smallest cell first (often bariatric surgery or a region-by-specialty cut), then build the total.</li>
-<li><strong>Field in Arabic and English, and time the interview.</strong> ACTION-IO’s Saudi healthcare-professional completion time was 28 minutes. A brand survey should be shorter if you want consultants, not only residents.</li>
-<li><strong>State what the study will not claim.</strong> It will not be a national census. It will be a quota-controlled read of named specialties and regions, with every number tied to a question.</li>
-</ol>
-
+<h2 id="how-to-design">How should you design the next one?</h2>
+<p>Set the smallest cell first. Then build the total. Name endocrinology, family medicine, internal medicine and bariatric surgery as separate cells. Record whether the respondent may prescribe before you ask what they prescribe. Keep class, molecule and line of therapy as separate questions. Split governmental and private practice. Do not let Riyadh fill the sample. Field in Arabic and English. ACTION-IO’s professional form took 28 minutes. A shorter form is easier to finish.</p>
 ${figureHtml(GLP1_PHYSICIAN_SURVEY_FIGURES[4])}
+<p>For how interviews are run, see <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>.</p>
 
-<h2 id="what-the-questionnaire-should-measure">What should the questionnaire measure?</h2>
+<h2 id="data-protection">What does Saudi data law require?</h2>
+<p>The Personal Data Protection Law applies to personal data in the Kingdom. It classes health data as sensitive data (${cite('sdaia-guide', 'SDAIA guide')}; ${cite('pdpl-text', 'law text')}). Ask how consent, storage and transfer will work, and who owns the file after delivery. ACTION-IO named Novo Nordisk as sponsor. A custom study can hide the product name. It still has to name the fieldwork firm to the respondent.</p>
 
-<p>The instrument should reuse the public questions that already work, then add the brand items those papers omitted.</p>
-
-<ul>
-<li><strong>Eligibility and authority.</strong> Specialty, years in practice, region, sector, share of patients with obesity or type 2 diabetes, obesity training, and whether the respondent is authorised to prescribe a GLP-1 or dual agonist.</li>
-<li><strong>Guidelines in use.</strong> AlOtaibi found family physicians more likely to name the Saudi guideline (46.5%) and endocrinologists more likely to name AACE/ACE (75.0%). Ask which document they actually follow.</li>
-<li><strong>Initiation frequency and indication.</strong> Always / often / sometimes / rarely / never, then BMI and comorbidity rules. AlOtaibi: 79.3% used BMI over 30 as an indication; 52.2% used BMI 27–29.9 with a weight-related comorbidity.</li>
-<li><strong>Class and first-line molecule.</strong> Select-all class, then one first-line agent, then reasons for choosing between GLP-1 and dual agonists (availability, effectiveness, dosing, preference, adverse effects).</li>
-<li><strong>Oral against injectable.</strong> The public physician papers do not test a once-daily oral option against a weekly injection. If that is in the brief, add a pairwise choice. Do not infer it from the 2024 first-line list.</li>
-<li><strong>Safety and discontinuation.</strong> AlOtaibi’s questionnaire asked which side effects prompted discontinuation, including severe nausea and vomiting and acute pancreatitis. Reuse that list. Add any SFDA letter the medical team wants tracked.</li>
-<li><strong>Access and supply.</strong> Availability at the institution, insurance, cost, and whether the patient can obtain the medicine without a prescription. Alhussain reports a Ministry of Health campaign, launched in August 2025, to enforce prescription requirements for weight-loss medicines.</li>
-<li><strong>Attitude items that predict practice.</strong> Alrasheed’s knowledge score did not independently predict a positive attitude. If you only ask knowledge items, you will miss the hesitancy those authors found.</li>
-</ul>
-
-<p>For fieldwork mechanics, see <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>. For who else runs obesity work in the Kingdom, see <a href="/blog/who-does-obesity-market-research-saudi-arabia">who does obesity market research in Saudi Arabia</a>.</p>
-
-<h2 id="fieldwork-language-and-data-protection">How should fieldwork, language and data protection work?</h2>
-
-<p>Field the questionnaire in Arabic and English. AlOtaibi and Alrasheed used English-language online forms circulated through societies, department heads or the SCFHS; Turjoman used a validated English questionnaire in one National Guard site. A brand sample that includes governmental family physicians outside Riyadh will need an Arabic instrument that has been checked by a Saudi clinician, not only translated.</p>
-
-<p>Recruit on quotas, not on an open link. The published papers used convenience or society-broadcast methods and then warned about selection. A commissioned study should name the target n by specialty and region before the first invitation goes out, and should stop a cell when it is full.</p>
-
-<p>Saudi Arabia’s Personal Data Protection Law applies to processing of personal data in the Kingdom and classes health data as sensitive data (${cite('sdaia-guide', 'SDAIA')}; ${cite('pdpl-text', 'PDPL text')}). Ask any supplier how consent, storage, retention and cross-border transfer of physician answers will be handled, and who owns the data after delivery.</p>
-
-<p>Do not hide the sponsor when the interview is about a named brand. ACTION-IO disclosed Novo Nordisk as sponsor. A custom study can stay blinded to the product, but the fieldwork house and the data-protection controller still have to be named to the respondent.</p>
-
-<h2 id="why-bionixus">Why BioNixus for a Saudi GLP-1 prescriber survey?</h2>
-
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k, set by sample, specialties and whether a patient or payer module is added. The firm’s tagline is “Guaranteed in writing.” That guarantee is contractual scope and delivery, not a claim about accuracy or findings. Where reviews are discussed, write 40 client reviews.</p>
-
-<p>Healthcare and pharmaceutical research in the Middle East and North Africa is run from regional leadership offices in Sheridan, Wyoming (US headquarters), London (EC1V 2NX) and Cairo (Sheikh Zayed, Giza), and from field offices in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered from the US office with a local consultant network.</p>
-
-<p>Choose BioNixus when the decision depends on why Saudi endocrinologists, family physicians or surgeons start, switch or stop a GLP-1 medicine, and when a published KAP paper is not enough. Each study is built around that decision, reported by specialty and region, and delivered in a form brand, medical and access teams can use. The same team scopes the adjacent patient and payer work on <a href="/saudi-arabia-obesity-market">obesity and GLP-1 market research in Saudi Arabia</a>.</p>
-
-<p>To brief a GLP-1 physician survey in Saudi Arabia, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. There are field offices in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Work in Latin America is covered today from the US office with local consultants.</p>
+<p>The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find. BioNixus has 40 client reviews.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -432,39 +354,39 @@ ${REFERENCES_SECTION_HTML}`;
 
 export const GLP1_PHYSICIAN_SURVEY_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What is a GLP-1 physician survey in Saudi Arabia?',
+    question: 'What is this page for?',
     answer:
-      'A GLP-1 physician survey in Saudi Arabia is a structured questionnaire of practising clinicians — typically endocrinologists, family physicians, internal medicine physicians and bariatric surgeons — about if, when and why they start, switch or stop a GLP-1 or dual GIP/GLP-1 medicine. Academic KAP papers already exist. A commissioned survey adds specialty quotas, molecule-level choice and access questions tied to one brand decision.',
+      'It explains what published Saudi clinician surveys say about GLP-1 medicines, and what they do not say. A GLP-1 medicine copies a gut hormone and is used for diabetes and for weight loss. A survey of 92 or 399 doctors is not a national prescribing rate.',
   },
   {
-    question: 'What have published Saudi physician surveys already found about GLP-1s?',
+    question: 'What did the 2024 survey of 92 clinicians find?',
     answer:
-      'In a 2024 national survey of 92 clinicians, 97.8% said they prescribe a GLP-1 receptor agonist class and 45.7% named semaglutide as first-line; endocrinologists prescribed anti-obesity medicines always or often at 65.0%, against 14.1% of family physicians. In a 2024–25 nationwide survey of 399 physicians, 78.4% had adequate GLP-1 knowledge but only 23.6% a positive attitude, and 90.0% said availability and access were always a barrier. A Madinah National Guard survey of 51 physicians found that only 25.5% were authorised to prescribe a GLP-1 receptor agonist.',
+      'On a select-all question, 97.8% named a GLP-1 receptor agonist. On a separate first-line question, 45.7% named semaglutide, 26.1% tirzepatide, 25.0% liraglutide and 3.3% orlistat. Endocrinologists were in the two highest prescribing-frequency answers at 65.0%, against 14.1% of family physicians. The authors could not calculate a response rate.',
   },
   {
-    question: 'Why is 97.8% not the national first-line GLP-1 share?',
+    question: 'Why is 97.8% not a national first-line share?',
     answer:
-      'In AlOtaibi et al., 2025, 97.8% is the share of 92 clinicians who selected the GLP-1 receptor agonist class on a select-all question. The first-line question is separate: semaglutide 45.7%, tirzepatide 26.1%, liraglutide 25.0% and orlistat 3.3%. The sample was a convenience sample, not a census, and included only one bariatric surgeon.',
+      'In AlOtaibi and colleagues, 2025, 97.8% is the share of 92 clinicians who selected the GLP-1 class on a select-all question. The first-line question is separate. The sample is a convenience sample, with one bariatric surgeon.',
   },
   {
-    question: 'Which specialties should a Saudi GLP-1 prescriber survey include?',
+    question: 'What did the larger 2024–25 physician survey find?',
     answer:
-      'At a minimum, endocrinology, family medicine, internal medicine and bariatric surgery, reported separately, with prescription authority recorded first. AlOtaibi et al. show how differently endocrinologists and family physicians prescribe. A diabetes-and-cardiovascular brief should also quota cardiology and nephrology, which were small cells in Alrasheed et al., 2026.',
+      'Of 399 physicians, 78.4% met the authors’ GLP-1 knowledge bar and 23.6% met their positive-attitude bar. Availability and access were a barrier on the strongest response for 90.0%. The GLP-1 knowledge scale had a KR-20 of 0.37. In Madinah, 25.5% of 51 National Guard physicians said they were allowed to prescribe a GLP-1.',
   },
   {
-    question: 'How does BioNixus field a GLP-1 physician survey in Saudi Arabia?',
+    question: 'Which specialties should a new survey separate?',
     answer:
-      'BioNixus designs the questionnaire around one decision, sets specialty and region quotas from the gaps in the published papers, and fields it from a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. The work is guaranteed in writing as to scope and delivery, not as to findings. Brief the study on the contact form or at admin@bionixus.com.',
+      'Endocrinology, family medicine, internal medicine and bariatric surgery, reported as separate cells, with prescription authority recorded first. A diabetes brief can also quota cardiology and nephrology. Those cells were small in the published papers.',
   },
   {
-    question: 'Does Saudi data protection law apply to a physician survey?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Saudi Arabia’s Personal Data Protection Law applies to the processing of personal data in the Kingdom and classes health data as sensitive data. Ask any provider how consent, storage, retention and transfer of physician answers will be handled, and who owns the dataset after delivery.',
+      'Custom studies are usually $10k–$60k. The network is about 3,200 physicians. The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Should a GLP-1 physician survey also include patients or pharmacists?',
+    question: 'Does Saudi data law apply?',
     answer:
-      'Yes, if the decision depends on how the medicine is obtained or paid for. Alhussain et al., 2026, found that 36.5% of Eastern Province GLP-1 users started on their own decision and that 40.4% paid out of pocket. Alhomoud et al., 2025, surveyed 211 community pharmacists in Qassim. Those sources sit next to a physician survey; they do not replace it.',
+      'Yes. The Personal Data Protection Law applies to personal data in the Kingdom and classes health data as sensitive data. Ask how consent, storage and transfer will work. Patient and pharmacist surveys answer different questions: in one Eastern Province study, 40.4% of GLP-1 users paid themselves, and 36.5% started on their own decision.',
   },
 ];
 

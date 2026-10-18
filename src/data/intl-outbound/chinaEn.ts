@@ -21,11 +21,11 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
   nativeReviewRequired: false,
   title: 'Middle East Market Research, Chinese Companies 2026',
   description:
-    'China-to-MEA research for Chinese brands: Saudi and UAE demand, Egypt entry. Delivered from the US, UK, Dubai and Cairo offices. $10k–$60k. 48-hour proposal.',
+    'China-to-MEA research for Chinese brands: who will buy in Saudi Arabia, the UAE, and Egypt. Delivered from the US, UK, Dubai and Cairo offices. $10k–$60k.',
   h1: 'Middle East Market Research for Chinese Companies',
   primaryKeyword: 'Middle East market research for Chinese companies',
   quickAnswer:
-    'BioNixus runs China-to-MEA market research for Chinese companies. Work is delivered from the US, UK, Dubai and Cairo offices. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. The live KSA/UAE playbook and the Egypt insight sit next to this money page. Custom work is $10,000–$60,000. Scope is guaranteed in writing, not findings.',
+    'BioNixus runs China-to-MEA market research for Chinese companies. Work is delivered from the US, UK, Dubai and Cairo offices. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. The Saudi and UAE article and the Egypt article sit next to this page. Custom work is $10,000–$60,000. Scope is guaranteed in writing, not findings.',
   breadcrumbLabel: 'China',
   dateModified: INTL_DATE_MODIFIED,
   coverImage: '/images/intl-outbound/china-cover.jpg',
@@ -33,7 +33,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
   coverAlt:
     'BioNixus navy and gold cover: Middle East market research for Chinese companies — China to GCC and Egypt',
   heroAlt:
-    'Navy and gold BioNixus artwork for China to Middle East and Africa market research, with the repo logo and no stock photograph',
+    'Navy and gold BioNixus artwork for China to Middle East and Africa market research, with the BioNixus logo and no stock photograph',
   areaServed: [
     { '@type': 'Country', name: 'China' },
     { '@type': 'Country', name: 'Saudi Arabia' },
@@ -50,7 +50,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
     {
       title: 'Two live playbooks already exist',
       description:
-        'Chinese companies entering Saudi Arabia and the UAE, and Chinese EV consumer research in the Gulf, are live. This page is the money page those articles should convert to.',
+        'The Saudi and UAE article, the Egypt article, and the Chinese EV article are live. This page is where you ask for the interviews.',
     },
     {
       title: 'Arabic first, Mandarin only when needed',
@@ -63,8 +63,8 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       id: 'who-this-is-for',
       heading: 'Who inside a Chinese company briefs Middle East research?',
       paragraphs: [
-        `Middle East market research for Chinese companies is the commissioned file a Shenzhen, Shanghai, Beijing or Suzhou headquarters needs before it remits capital to Saudi Arabia, the UAE, Egypt or a wider Africa plan. The buyer is usually an overseas-investment, international-business or brand team, not the domestic China insights vendor. This English money page is the live conversion URL. Briefs can be written in Mandarin or English; the protocol and the committee readout stay in English. Start from the {link:/healthcare-market-research|healthcare market research} hub for physician and payer work, and from the {link:/bionixus-industries|industries hub} for non-pharma briefs.`,
-        `The live article {link:/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae|Chinese companies entering Saudi Arabia and the UAE} already owns the keyword “Chinese companies Saudi market entry”. The live article {link:/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research|Chinese EV brands in the Gulf} owns the EV consumer brief. A Chinese-companies-Egypt insight is in draft as of 18 October 2026 (pull request 287). This money page does not duplicate those playbooks. It is the service URL they should convert into.`,
+        `Middle East market research for Chinese companies is the study a Shenzhen, Shanghai, Beijing or Suzhou headquarters needs before it sends money to Saudi Arabia, the UAE, Egypt or a wider Africa plan. The buyer is usually an overseas-investment, international-business or brand team, not the research firm used inside China. This English page is where you ask for the interviews. Briefs can be written in Mandarin or English. The questionnaire and the committee readout stay in English. Start from the {link:/healthcare-market-research|healthcare market research} hub for physician and payer work, and from the {link:/bionixus-industries|industries hub} for other briefs.`,
+        `The article {link:/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae|Chinese companies entering Saudi Arabia and the UAE} is the Saudi and UAE checklist. The article {link:/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research|Chinese EV brands in the Gulf} is the consumer checklist for cars. The article {link:/bionixus-industries/insights/chinese-companies-egypt-market-research|Chinese companies in Egypt} is the Egypt checklist. This page is where you ask BioNixus to do the interviews. It does not repeat those checklists.`,
         `BioNixus was founded in ${FACTS.founded} and is headquartered in ${FACTS.hq}. Leadership offices are ${OFFICES.leadership}. Field offices are ${OFFICES.field}. ${FACTS.clients} clients, ${FACTS.countries} countries, ${FACTS.studies2026} studies in 2026 year-to-date (${FACTS.studies2025} in 2025), ${FACTS.physicians} physicians, ${FACTS.priceLow}–${FACTS.priceHigh} custom pricing. ${DELIVERY.apac}`,
       ],
     },
@@ -73,15 +73,15 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       heading: 'What official China–Gulf series a brief may cite',
       paragraphs: [
         `Use dated official series. Do not invent a TAM. MFA China publishes the bilateral pages for Saudi Arabia and the UAE ({ext:${MFA_CHINA_KSA}|MFA China — Saudi Arabia}; {ext:${MFA_CHINA_UAE}|MFA China — UAE}). The Saudi Press Agency recorded more than 750 Chinese companies in the Kingdom and Chinese investment above SAR 31 billion ({ext:${SPA_CHINESE_KSA}|SPA, 25 September 2025}). The Abu Dhabi Chamber, via WAM, put the UAE figures at more than 400,000 Chinese residents and over 17,000 Chinese companies ({ext:${WAM_CHINESE_UAE}|WAM, 11 June 2026}). Those figures describe stock. They do not prove that a second excavator brand, a second EV badge or a second OTC SKU will sell.`,
-        `沙特市场调研 and 阿联酋市场调研 are not the same study. Saudi Arabia and the UAE are two licence stacks, two VAT rates and two Arabic instruments. A mainland HQ that files one “GCC” TAM will be asked in committee which city, which channel and which ODI path. The KSA/UAE playbook walks through those questions. This money page is where the team requests the fieldwork.`,
-        `Healthcare China-to-MEA briefs — 中东医药市场调研 — use the Gulf physician and payer panels, not a China-side HCP tracker. See {link:/healthcare-market-research/saudi-arabia|Saudi Arabia}, {link:/healthcare-market-research/uae|the UAE} and {link:/healthcare-market-research/egypt|Egypt}. Domestic China healthcare research already has {link:/healthcare-market-research/china|healthcare market research in China} and {link:/insights/top-healthcare-market-research-companies-china-2026|top healthcare market research companies in China}. Those pages stay on the China-side job. This page stays on the outbound job.`,
+        `A Saudi study and a UAE study are not the same study. The two countries have different licences, different VAT rates, and different Arabic questionnaires. A headquarters in China that files one Gulf total will be asked which city, which seller, and which outbound-investment path. The Saudi and UAE checklist walks through those questions. This page is where the team asks for the interviews.`,
+        `Healthcare research for Chinese companies in the Middle East uses Gulf physicians and payers, not a China physician tracker. See {link:/healthcare-market-research/saudi-arabia|Saudi Arabia}, {link:/healthcare-market-research/uae|the UAE} and {link:/healthcare-market-research/egypt|Egypt}. Research inside China already has {link:/healthcare-market-research/china|healthcare market research in China} and {link:/insights/top-healthcare-market-research-companies-china-2026|top healthcare market research companies in China}. Those pages stay on the China job. This page stays on the Middle East job.`,
       ],
     },
     {
       id: 'egypt-africa',
       heading: 'Egypt and Africa are a different file from the Gulf',
       paragraphs: [
-        `Chinese companies Egypt market research is a Cairo file. The BioNixus edge is the Cairo leadership office in Sheikh Zayed, which owns that sample with the Gulf field teams. Egypt has its own VAT, GAFI and EDA stack. Do not copy a Dubai free-zone plan onto a Cairo factory or a North Africa distributor. The dedicated Egypt insight is not yet merged; until it is, this page and the KSA/UAE playbook are the live URLs.`,
+        `Chinese companies in Egypt need a Cairo file. The Cairo leadership office is in Sheikh Zayed. Egypt has its own VAT, its own investment licence, and its own drug regulator. Do not copy a Dubai free-zone plan onto a Cairo factory. Read {link:/bionixus-industries/insights/chinese-companies-egypt-market-research|the Egypt checklist} before you send money.`,
         `Sibling outbound pages help a global Chinese HQ that also books work from a US or Singapore cost centre: {link:/market-research/usa|MENA market research company USA}, {link:/market-research/japan|Middle East market research for Japanese companies} and {link:/market-research/singapore|Middle East market research for Singapore companies}. Australian exporters using the same Gulf seats should read {link:/bionixus-industries/insights/australia-gcc-market-entry-research|Australia–GCC market entry research}.`,
         `A Mandarin cell is correct when the Gulf counterparty is a Chinese SOE, a Chinese contractor or a Chinese distributor. It is incorrect when the prescriber is a Saudi oncologist or the shopper is an Emirati household. Write the language plan into the protocol before the first interview is booked.`,
       ],
@@ -99,22 +99,22 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       id: 'sample-timeline',
       heading: 'Sample, timeline and how this page sits next to the live playbooks',
       paragraphs: [
-        `A typical China-to-MEA healthcare file is a named specialty, country quotas, and an Arabic–English instrument. Automotive, industrial and consumer files use the same Gulf field offices for buyers and households. Four to eight weeks is normal once the protocol is signed. A small qualitative cell can be faster. A 300-interview launch ATU cannot. BioNixus will not invent a one-week national study to win a request-for-proposal.`,
-        `The live KSA/UAE playbook and the live Chinese EV consumer article remain the supporting URLs. This money page is the conversion URL those readers should request fieldwork on. A Chinese-companies-Egypt insight is still in draft as of 18 October 2026. Until it is live, say Egypt in the first sentence of the form. Do not treat the playbooks and this page as duplicate URLs.`,
-        `Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. The 48-hour proposal clock starts when the decision, countries, respondents, language and committee date are named. Mainland teams brief the US, UK, Dubai and Cairo offices. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. ${DELIVERY.apac}`,
+        `A China-to-Middle East healthcare file names the specialty, the country quotas, and an Arabic and English questionnaire. Car, industrial, and consumer files use the same Gulf field offices for buyers and households. The proposal states the timing after the protocol is signed. A small set of interviews is a different study from a large physician survey. BioNixus will not promise a national study in one week.`,
+        `The Saudi and UAE checklist and the Chinese EV article remain the supporting pages. This page is where those readers request the interviews. For Egypt, use {link:/bionixus-industries/insights/chinese-companies-egypt-market-research|the Egypt checklist} and say Egypt in the first sentence of the form. These pages answer different questions.`,
+        `Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. A proposal is written after the brief names the decision, the countries, the respondents, and the language. Mainland teams brief the US, UK, Dubai and Cairo offices. Al Khobar, Dubai and Kuwait field teams run Saudi, UAE and Kuwait interviews. ${DELIVERY.apac}`,
       ],
     },
     {
       id: 'how-we-work',
       heading: 'How a mainland HQ briefs BioNixus',
       paragraphs: [
-        `Mainland teams brief Sheridan or London in English or Mandarin. Fieldwork is designed with the Dubai and Al Khobar offices in Arabic and English. Cairo joins for Egypt. The first deliverable is a written proposal within 48 hours. Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. The written guarantees are: ${GUARANTEES}. The slogan is “${FACTS.slogan}” BioNixus never claims guaranteed accuracy.`,
+        `Mainland teams brief Sheridan or London in English or Mandarin. Fieldwork is designed with the Dubai and Al Khobar offices in Arabic and English. Cairo joins for Egypt. The first deliverable is a written proposal once the brief is usable. Custom work is ${FACTS.priceLow}–${FACTS.priceHigh}. The written guarantees are: ${GUARANTEES}. The slogan is “${FACTS.slogan}” BioNixus never claims guaranteed accuracy.`,
         `A Simplified Chinese page is in native review and is not live on this site yet. Until it publishes, this English URL is the conversion page. Baidu visibility depends on Baidu Webmaster Tools, not Google; that sign-up is a measurement task, not a claim that a Chinese URL already ranks on Baidu.`,
         `To brief China-to-MEA research, use the {link:/contact|contact form} or email {ext:mailto:admin@bionixus.com|admin@bionixus.com}. United States {ext:tel:+18884655557|+1-888-465-5557}. United Kingdom {ext:tel:+447727666682|+44 7727 666682}. Al Khobar {ext:tel:+966501825336|+966 50 182 5336}.`,
-        `Mainland HQs that also book from a US or Singapore cost centre should keep the corridors on separate money pages: {link:/market-research/usa|MENA market research company USA}, {link:/market-research/japan|Middle East market research for Japanese companies} and {link:/market-research/singapore|Middle East market research for Singapore companies}. Healthcare country hubs under the same brief are {link:/healthcare-market-research/saudi-arabia|Saudi Arabia}, {link:/healthcare-market-research/uae|the UAE} and {link:/healthcare-market-research/egypt|Egypt}.`,
+        `A Chinese headquarters that also books work from the United States or Singapore should keep each country on its own page: {link:/market-research/usa|MENA market research company USA}, {link:/market-research/japan|Middle East market research for Japanese companies} and {link:/market-research/singapore|Middle East market research for Singapore companies}. Healthcare pages for the same brief are {link:/healthcare-market-research/saudi-arabia|Saudi Arabia}, {link:/healthcare-market-research/uae|the UAE} and {link:/healthcare-market-research/egypt|Egypt}.`,
         `A China domestic healthcare tracker is a different job. Keep {link:/healthcare-market-research/china|healthcare market research in China} and {link:/insights/top-healthcare-market-research-companies-china-2026|top healthcare market research companies in China} for the mainland sample. Do not merge a China HCP tracker and a Gulf physician survey into one mean. If a Shanghai committee asks for that average, write the refusal into the proposal. The usable file is a set of country cuts.`,
         `ODI paperwork, MISA activity lists and free-zone incorporation are counsel jobs. BioNixus names the buyer, the city, the channel and the price the committee can interrogate. We do not file the licence. ${DELIVERY.apac} We do not claim guaranteed accuracy of findings. The written guarantees stay on scope, replacement, minimum sample, re-field and the pilot credit.`,
-        `If the same headquarters also owns an Egypt factory, a North Africa distributor, or an Africa price file, say so in the first sentence. Cairo leadership in Sheikh Zayed owns that sample. Do not copy a Dubai free-zone plan onto a Cairo plant. Do not average Egypt into a GCC cell. The dedicated Egypt insight remains in draft; this money page is the live conversion URL until that article merges. Automotive, industrial and consumer files use the same Gulf field offices. Keep the live KSA/UAE playbook and the live EV article as supporting URLs, not as duplicate service pages. A Shanghai committee that wants one mean across China and Saudi cells will get a written refusal.`,
+        `If the same headquarters also owns an Egypt factory, a North Africa distributor, or an Africa price file, say so in the first sentence. Cairo leadership in Sheikh Zayed owns that sample. Do not copy a Dubai free-zone plan onto a Cairo plant. Do not average Egypt into a Gulf cell. Use {link:/bionixus-industries/insights/chinese-companies-egypt-market-research|the Egypt checklist}. Car, industrial, and consumer files use the same Gulf field offices. Keep the Saudi and UAE checklist and the EV article as supporting pages. Do not average China and Saudi Arabia into one number.`,
       ],
     },
     {
@@ -122,7 +122,7 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
       heading: 'ODI paperwork is not a demand file',
       paragraphs: [
         `Mainland investment committees often arrive with an outbound-direct-investment file, a free-zone quote and a bilateral trade printout. Those documents are real. They do not name the buyer. MFA China’s Saudi and UAE pages, the SPA stock count and the WAM resident count are the same class of evidence: dated, official, and silent on whether a second brand will sell. BioNixus will cite them. It will not multiply them into a TAM.`,
-        `A China-to-MEA brief that starts with the licence instead of the customer will waste a cycle. Write the city, the channel and the respondent first. Counsel files MISA, the free zone and the ODI path. BioNixus fields the interviews. The two jobs stay separate on the proposal. Custom work remains ${FACTS.priceLow}–${FACTS.priceHigh}. A written proposal follows within 48 hours of a usable brief. Scope is guaranteed in writing. Findings are not. ${DELIVERY.apac}`,
+        `A China-to-Middle East brief that starts with the licence instead of the customer will waste a cycle. Write the city, the channel, and the respondent first. Counsel files the Saudi investment registration, the free zone, and the outbound-investment path. BioNixus fields the interviews. The two jobs stay separate on the proposal. Custom work remains ${FACTS.priceLow}–${FACTS.priceHigh}. A proposal is written after the brief is usable. Scope is guaranteed in writing. Findings are not. ${DELIVERY.apac}`,
       ],
     },
   ],
@@ -135,22 +135,22 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
     {
       question: 'Is this the same page as Chinese companies entering Saudi Arabia and the UAE?',
       answer:
-        'No. That live playbook is the supporting article. This is the service money page those readers should convert on. Use both. Do not treat them as duplicate URLs.',
+        'No. That article is the checklist. This page is where you ask for the interviews. Use both. They answer different questions.',
     },
     {
-      question: 'Can you run 沙特市场调研 and 阿联酋市场调研 as one study?',
+      question: 'Can Saudi Arabia and the UAE be one study?',
       answer:
         'Only if the decision is truly regional and the instrument is designed that way. Otherwise they are two samples — two licences, two VAT rates, two city lists. Most mainland investment committees need the split.',
     },
     {
       question: 'Do you cover Chinese companies Egypt market research?',
       answer:
-        'Yes, from the Cairo leadership office. A dedicated Egypt insight is in draft. Until it is live, brief this page and say Egypt in the first sentence of the form.',
+        'Yes, from the Cairo leadership office. Read the checklist for Chinese companies in Egypt, then say Egypt in the first sentence of the form.',
     },
     {
       question: 'Do you run Chinese EV Gulf consumer research?',
       answer:
-        'Yes. The live article on Chinese EV brands in the Gulf is the playbook. This money page is the conversion URL. Automotive fieldwork uses the same Dubai and Al Khobar offices.',
+        'Yes. The article on Chinese EV brands in the Gulf is the checklist. This page is where you ask for the interviews. Car fieldwork uses the same Dubai and Al Khobar offices.',
     },
     {
       question: 'Is there a Simplified Chinese page?',
@@ -175,6 +175,10 @@ export const CHINA_EN_INTL_PAGE: IntlMoneyPage = {
     {
       to: '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research',
       label: 'Chinese EV brands in the Gulf',
+    },
+    {
+      to: '/bionixus-industries/insights/chinese-companies-egypt-market-research',
+      label: 'Chinese companies in Egypt',
     },
   ],
   hreflang: INTL_HREFLANG_BY_PATH[PATHS.china],

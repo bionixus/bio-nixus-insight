@@ -63,7 +63,7 @@ const jsonLd = [
     author: personAuthorJsonLd(getEditorialAuthor({ path: '/usa-healthcare-market-report', countrySlug: 'united-states', pageType: 'article' })),
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-09-05',
+    dateModified: '2026-10-18',
     mainEntityOfPage: 'https://www.bionixus.com/usa-healthcare-market-report',
   },
   {
@@ -117,7 +117,7 @@ const UsaHealthcareMarketReport = () => (
               <div><p className="text-3xl font-display font-bold text-primary">$175–200B</p><p className="text-xs text-muted-foreground mt-1">Medical devices 2026 (MDMA/AdvaMed)</p></div>
             </div>
           </div>
-          <p className="text-muted-foreground leading-relaxed mb-4">The United States is the world's largest and most commercially significant healthcare market, accounting for approximately 45% of global pharmaceutical revenues. CMS Office of the Actuary (NHE projections 2025–34, June 2026) sizes 2026 national health expenditure at USD 6.017 trillion. The Inflation Reduction Act drug price negotiations represent the most significant structural change to US pharmaceutical commercial models since the Medicare Modernization Act of 2003 — reshaping launch strategy, pricing architecture, and international reference pricing dynamics for all global pharmaceutical companies.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">The United States is the world's largest and most commercially significant healthcare market, accounting for approximately 45% of global pharmaceutical revenues. CMS Office of the Actuary (NHE projections 2025–34, June 2026) sizes 2026 national health expenditure at USD 6.017 trillion. The Inflation Reduction Act drug price negotiations represent the most significant structural change to US pharmaceutical commercial models since the Medicare Modernization Act of 2003 — reshaping launch strategy, pricing architecture, and international reference pricing dynamics for all global pharmaceutical companies. For the buyer shortlist, see <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="text-primary hover:underline font-medium">healthcare market research companies in the USA</Link> and the <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>

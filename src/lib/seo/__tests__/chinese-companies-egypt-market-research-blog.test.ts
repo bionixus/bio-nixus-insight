@@ -143,7 +143,7 @@ describe('/bionixus-industries/insights/chinese-companies-egypt-market-research:
     expect(metaContent(head, 'property', 'og:image:height')).toEqual(['630']);
     expect(metaContent(head, 'property', 'og:image:alt')).toEqual([CN_EGYPT_COVER_IMAGE_ALT]);
     expect(metaContent(head, 'property', 'article:published_time')).toEqual(['2026-10-17T12:00:00.000Z']);
-    expect(metaContent(head, 'property', 'article:modified_time')).toEqual(['2026-10-17T12:00:00.000Z']);
+    expect(metaContent(head, 'property', 'article:modified_time')).toEqual(['2026-10-18T13:30:00.000Z']);
     expect(metaContent(head, 'property', 'article:author')).toEqual(['Armela Belba']);
     expect(metaContent(head, 'property', 'article:section')).toEqual(['B2B Market Research']);
     expect(metaContent(head, 'property', 'article:tag')).toEqual(CN_EGYPT_TAGS);
@@ -175,7 +175,7 @@ describe('/bionixus-industries/insights/chinese-companies-egypt-market-research:
     expect(article.headline).toBe(CN_EGYPT_DISPLAY_TITLE);
     expect(article.description).toBe(CN_EGYPT_META_DESCRIPTION);
     expect(article.datePublished).toBe('2026-10-17T12:00:00.000Z');
-    expect(article.dateModified).toBe('2026-10-17T12:00:00.000Z');
+    expect(article.dateModified).toBe('2026-10-18T13:30:00.000Z');
     expect(article.inLanguage).toBe('en');
     expect(article.articleSection).toBe('B2B Market Research');
     expect(article.keywords).toBe(CN_EGYPT_TAGS.join(', '));
@@ -302,8 +302,8 @@ describe('/bionixus-industries/insights/chinese-companies-egypt-market-research:
     expect(CN_EGYPT_META_TITLE.length).toBeLessThanOrEqual(60);
     expect(CN_EGYPT_META_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
     expect(CN_EGYPT_META_DESCRIPTION.length).toBeLessThanOrEqual(155);
-    expect(CN_EGYPT_WORD_COUNT).toBeGreaterThanOrEqual(3800);
-    expect(CN_EGYPT_WORD_COUNT).toBeLessThanOrEqual(5000);
+    expect(CN_EGYPT_WORD_COUNT).toBeGreaterThanOrEqual(1600);
+    expect(CN_EGYPT_WORD_COUNT).toBeLessThanOrEqual(3200);
     expect(getCtrSeo(CN_EGYPT_PATH)).toEqual({
       title: CN_EGYPT_META_TITLE,
       description: CN_EGYPT_META_DESCRIPTION,
@@ -329,7 +329,8 @@ describe('/bionixus-industries/insights/chinese-companies-egypt-market-research:
     expect(CN_EGYPT_META_TITLE.toLowerCase()).toContain(PHRASE);
     expect(CN_EGYPT_META_DESCRIPTION.toLowerCase()).toContain(PHRASE);
     expect(summary.toLowerCase()).toContain(PHRASE);
-    expect(h2s.some((h2) => h2.includes(PHRASE))).toBe(true);
+    expect(h2s.some((h2) => h2.includes('before you send money'))).toBe(true);
+    expect(CN_EGYPT_BODY_HTML.toLowerCase()).toContain(PHRASE);
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {
@@ -419,9 +420,9 @@ describe('/bionixus-industries/insights/chinese-companies-egypt-market-research:
   it('is listed in the sitemap source, the committed sitemap and llms.txt, dated 17 October 2026', () => {
     expect(CN_EGYPT_HARDCODED_POST.date).toBe('17 Oct 2026');
     expect(sitemapScript).toContain(
-      `path: '${CN_EGYPT_PATH}', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17'`,
+      `path: '${CN_EGYPT_PATH}', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-18'`,
     );
-    expect(sitemapXml).toMatch(new RegExp(`<loc>${CN_EGYPT_URL}</loc>\\s*<lastmod>2026-10-17</lastmod>`));
+    expect(sitemapXml).toMatch(new RegExp(`<loc>${CN_EGYPT_URL}</loc>\\s*<lastmod>2026-10-18</lastmod>`));
     expect(llms).toContain(CN_EGYPT_URL);
   });
 

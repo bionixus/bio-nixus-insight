@@ -271,9 +271,9 @@ export const CTR_SEO_BY_PATH = {
       'Top pharmaceutical analytics companies worldwide 2026 — real-world data, HEOR, syndicated Rx analytics & primary research ranked for pharma buyers.',
   },
   '/insights/top-healthcare-market-research-companies-usa-2026': {
-    title: 'Top Healthcare Market Research Companies in the USA (2026)',
+    title: 'Healthcare Market Research Companies in the USA (2026)',
     description:
-      'Top healthcare market research companies in the USA (2026). Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail.',
+      'Healthcare market research companies in the USA for 2026. Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail.',
   },
   '/insights/top-market-research-companies-saudi-arabia-2026': {
     title: 'Top Market Research Companies in Saudi Arabia (2026)',
@@ -970,14 +970,14 @@ export const CTR_SEO_BY_PATH = {
       'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
   },
   '/blog/chinese-companies-egypt-market-research': {
-    title: 'Chinese Companies Egypt Market Research: 2026 Guide',
+    title: 'Chinese Companies Egypt Market Research: Plain Guide',
     description:
-      'Chinese companies Egypt market research for Cairo and North Africa brands: demand, 14% VAT, GAFI licence and SCZone proof before the HQ remits capital.',
+      'Chinese companies Egypt market research in plain steps: who will buy, which city, the price after 14% VAT, and which licence to use before you send money.',
   },
   '/bionixus-industries/insights/chinese-companies-egypt-market-research': {
-    title: 'Chinese Companies Egypt Market Research: 2026 Guide',
+    title: 'Chinese Companies Egypt Market Research: Plain Guide',
     description:
-      'Chinese companies Egypt market research for Cairo and North Africa brands: demand, 14% VAT, GAFI licence and SCZone proof before the HQ remits capital.',
+      'Chinese companies Egypt market research in plain steps: who will buy, which city, the price after 14% VAT, and which licence to use before you send money.',
   },
   '/blog/nielsen-alternative-saudi-arabia': {
     title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
@@ -1127,12 +1127,12 @@ export const CTR_SEO_BY_PATH = {
   '/market-research/china': {
     title: 'Middle East Market Research, Chinese Companies 2026',
     description:
-      'China-to-MEA research for Chinese brands: Saudi and UAE demand, Egypt entry. Delivered from the US, UK, Dubai and Cairo offices. $10k–$60k. 48-hour proposal.',
+      'China-to-MEA research for Chinese brands: who will buy in Saudi Arabia, the UAE, and Egypt. Delivered from the US, UK, Dubai and Cairo offices. $10k–$60k.',
   },
   '/market-research/singapore': {
     title: 'Singapore MEA Market Research Company | 2026 Guide',
     description:
-      'Middle East research for Singapore and APAC HQs: GCC entry and SEA hub work. Delivered from the US, UK, Dubai and Cairo offices. $10k–$60k. 48-hour proposal.',
+      'Middle East research for Singapore and APAC HQs: who buys in the Gulf. Delivered from the US, UK, Dubai and Cairo offices. Custom studies are $10k–$60k.',
   },
 };
 

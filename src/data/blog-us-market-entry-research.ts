@@ -41,15 +41,15 @@ export const US_ENTRY_META_DESCRIPTION =
   'US market entry research for foreign companies: CFIUS, 50-state sales tax, FDA and price before a Riyadh, Dubai, London or Brazilian committee commits.';
 
 export const US_ENTRY_DISPLAY_TITLE =
-  'US Market Entry Research for Middle East, European and Brazilian Companies';
+  'What Foreign Companies Should Research Before Selling in the US';
 
 export const US_ENTRY_DISPLAY_SUBTITLE =
-  'A 2026 playbook: CFIUS, 50-state tax, FDA and price';
+  'Name the state, the sales tax, and the product file before you send money';
 
 export const US_ENTRY_BREADCRUMB_LABEL = 'US market entry research for foreign companies';
 
 export const US_ENTRY_EXCERPT =
-  'A sourced 2026 playbook for US market entry research for foreign companies: what Saudi, UAE, European and Brazilian teams must prove on state demand, sales tax, FDA, CBP, CFIUS and price before they commit capital.';
+  'A plain guide for Saudi, UAE, European, and Brazilian companies looking at the United States: which official figures to quote, and which tax and product questions to settle first.';
 
 export const US_ENTRY_PUBLISHED_ISO = '2026-10-17T12:00:00.000Z';
 export const US_ENTRY_UPDATED_ISO = '2026-10-17T12:00:00.000Z';
@@ -252,199 +252,80 @@ export function countWords(html: string): number {
 }
 
 export const US_ENTRY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  {
-    heading: 'What does US market entry research for foreign companies have to answer?',
-    anchor: 'what-us-market-entry-research-answers',
-  },
-  {
-    heading: 'Why a Gulf, European or Brazilian playbook cannot be copied into the US',
-    anchor: 'home-playbook-cannot-copy',
-  },
-  { heading: 'Official numbers that frame a 2026 US entry brief', anchor: 'official-numbers' },
-  { heading: 'Fifty states, no federal VAT, CFIUS and one FDA file', anchor: 'fifty-states-cfius-fda' },
-  { heading: 'What a G-Mark, CE or ANVISA file does not buy you', anchor: 'gmark-ce-anvisa-not-fda' },
-  { heading: 'How Saudi and UAE briefs differ from European and Brazilian briefs', anchor: 'gcc-europe-brazil-briefs' },
-  { heading: 'The five proofs a Riyadh, Dubai, London or Brazilian committee must demand', anchor: 'five-proofs' },
-  { heading: 'How the brief changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a US market entry research partner', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to settle before you send money', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'The states did not move together', anchor: 'states' },
+  { heading: 'Tax, customs, and a product file', anchor: 'tax-and-product' },
+  { heading: 'Investment screening is not a product approval', anchor: 'cfius' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const US_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> US market entry research for foreign companies must prove who will buy, in which state, at what price including sales tax, through which channel and under which FDA, CBP and CFIUS file before a Saudi, UAE, European or Brazilian company commits capital. A US TAM or G-Mark file is not entry research. Primary interviews make the brief usable.</p>`;
+export const US_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p>US market entry research for foreign companies names the state, the buyer, the sales-tax rule, and the product file before a committee sends money. The fifty states did not move as one market. A national GDP figure is not an order.</p>`;
 
-const NARRATIVE_HTML = `<p>Saudi and UAE commercial teams often arrive with a single “US” TAM, a G-Mark or SFDA file and a Delaware quote, then treat that pack as US market entry research for foreign companies. It is not. Entry research has to name the buyer, the state, the price including sales tax, the channel and the FDA, CBP and — where the transaction is a covered investment — CFIUS file before a Riyadh or Dubai committee commits a warehouse, a hire or a first invoice. European and Brazilian sponsors make the same mistake with a CE mark or an ANVISA letter. This playbook sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma Middle East, European and Brazilian companies — retail, FMCG, technology, hospitality, industrials, financial services — not for an FDA drug or CMS file.</p>
+const NARRATIVE_HTML = `<p>Saudi, UAE, European, and Brazilian companies often treat the United States as one shop. The states are separate markets. Before money is sent, name who will buy, in which state, at what price after that state’s sales tax, and which product file applies. This page is a plain guide to US market entry research for foreign companies. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for consumer and industrial brands, not for medicines.</p>
 
-<p>If the first operating SKU is still Saudi, use the sourced <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry research playbook</a>. The reverse corridor lives on the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC market entry research playbook</a>. The UK-bound file is on the <a href="/bionixus-industries/insights/uk-market-entry-research">UK market entry research playbook</a>. Do not paste those files onto Texas, California, Florida or New York. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>If the first company is still in Saudi Arabia, use the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry research</a> page. European brands going to the Gulf are on the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC market entry research</a> page. A Dubai shelf price is a different invoice. See <a href="/uae-retail-market-research">UAE retail research</a> when that comparison is the point.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 US entry brief can cite</strong></p>
+<h2 id="what-to-prove">What to settle before you send money</h2>
 <ul>
-<li><strong>341,784,857</strong> residents on 1 July 2025 (Vintage 2025). The country added 1.8 million people (0.5%) from 1 July 2024. Net international migration fell from 2.7 million to 1.3 million. Natural change was near 519,000 (${cite('census-pop-pr', 'Census Bureau, 27 January 2026')}; ${cite('census-qf', 'Census QuickFacts')} ).</li>
-<li><strong>California 39,355,309</strong>, Texas 31,709,821, Florida 23,462,518 and New York 20,002,427 on 1 July 2025. Those four states are four catchments. The South held 133,833,983 people on 1 July 2025, up 6.0% from the 2020 estimates base (${cite('census-pop-pr', 'Census Bureau')}; ${cite('census-south', 'Census Bureau, 25 June 2026')} ).</li>
-<li><strong>Real GDP +2.1%</strong> in 2025 from the 2024 annual level, on BEA’s third estimate of the fourth quarter and year 2025, released 9 April 2026. Real GDP increased in all 50 states and the District of Columbia (${cite('bea-gdp-2025', 'BEA GDP third estimate, 9 April 2026')} ). A national growth rate is not a first-state plan.</li>
-<li><strong>US$31.4 billion</strong> of US goods exports to the UAE and US$7.7 billion of goods imports in 2025 (surplus US$23.8 billion) (${cite('census-uae', 'U.S. Census Bureau, UAE goods')} ). <strong>US$14.1 billion</strong> of US goods exports to Saudi Arabia and US$10.5 billion of goods imports in 2025 (surplus US$3.6 billion), after a 2024 surplus of only US$292.1 million (${cite('census-sa', 'U.S. Census Bureau, Saudi goods')} ). Those are customs chapters, not SKU demand.</li>
-<li><strong>No federal VAT.</strong> Federal corporation tax is 21% of taxable income (${cite('irs-p542', 'IRS Publication 542')} ). After <em>South Dakota v. Wayfair, Inc.</em>, a state may require an out-of-state seller to collect sales tax on economic nexus alone (${cite('wayfair', 'South Dakota v. Wayfair, 585 U.S. 162 (2018)')} ). A 5% UAE or 15% Saudi shelf price is not a US shelf price.</li>
-</ul>
-</div>
-
-<h2 id="what-us-market-entry-research-answers">What does US market entry research for foreign companies have to answer?</h2>
-
-<p>US market entry research for foreign companies tells a Saudi, UAE, European or Brazilian sponsor whether a named offer will sell, at a named price, in a named US state, through a named channel, under a named FDA, CBP and tax treatment — and, if the vehicle is an acquisition or a covered real-estate deal, under a named CFIUS path. It is not a formation checklist or a SelectUSA brochure. Five questions separate a usable study from a slide nobody can defend:</p>
-
-<ul>
-<li><strong>Who buys?</strong> A household, a contractor, a hotel buyer, a distributor or a public procurer. Census Vintage 2025’s 341,784,857 residents are not one basket (${cite('census-qf', 'Census QuickFacts')} ). The 5,934,950 employer firms in 2023 and 31,985,874 nonemployer establishments in 2024 are not one buying committee (${cite('census-qf', 'Census QuickFacts')} ).</li>
-<li><strong>In which state — and which metro?</strong> California lost population between 1 July 2024 and 1 July 2025; Texas added 391,243 people; Florida added 196,680 (${cite('census-pop-pr', 'Census Bureau')} ). A Dallas warehouse is logistics, not a New York or California demand proof.</li>
-<li><strong>At what price, including which tax?</strong> A willingness-to-pay range that states the destination state’s sales-tax treatment — not a dirham, riyal, euro or real ex-VAT ASP copied across. There is no US federal VAT. The federal corporate rate is 21% (${cite('irs-p542', 'IRS Publication 542')} ). Economic nexus can create a collection duty without a storefront (${cite('wayfair', 'Wayfair')} ).</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to if you miss. A Saudi industrial invoice, a Dubai free-zone distributor and a Brazilian wholesale contract do not share one US channel.</li>
-<li><strong>Under which file and which vehicle?</strong> Food for US consumption generally needs an FDA food-facility registration and prior notice; FDA does not license the importer (${cite('fda-import', 'FDA importing food')}; ${cite('fda-ffr', 'FDA registration and listing')} ). Goods need a CBP-compliant entry; Partner Government Agencies can add commodity rules; Section 321 de minimis is $800 fair retail value for qualified shipments, not a brand strategy (${cite('cbp-trade', 'CBP basic importing')} ). A covered investment or covered real-estate transaction can sit in CFIUS (${cite('treasury-cfius', 'Treasury CFIUS')} ). A Dubai free-zone licence, a German GmbH or a Brazilian Ltda is not a US trading entity.</li>
+<li><strong>Which state.</strong> California, Texas, Florida, and New York are four catchments. A national population is the frame.</li>
+<li><strong>Who pays.</strong> A household, a retailer, a hospital buyer, or a distributor. Employer counts are not that person.</li>
+<li><strong>What price, after the state’s sales tax.</strong> A 5% UAE shelf price or a 15% Saudi shelf price is not a US shelf price.</li>
+<li><strong>Which product file.</strong> Food has an FDA file. A covered investment has a CFIUS file. They are not the same document.</li>
 </ul>
 
-<p>Desktop TAM can frame those questions. It cannot answer them. Adjacent pages include <a href="/market-research-by-industry">market research by industry</a>, the 2026 ranking of <a href="/insights/top-market-research-companies-usa-2026">market research companies in the USA</a> and <a href="/uae-retail-market-research">retail market research in the UAE</a>. Kingdom-only proofs stay on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>.</p>
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its date. Goods trade, GDP, and a programme total are different series.</p>
+<ul>
+<li><strong>People.</strong> From 1 July 2024 to 1 July 2025 the resident population grew 1.8 million (0.5%) to 341.8 million. Net international migration was 1.3 million, from 2.7 million. Natural change was near 519,000. On 1 July 2025, California was 39,355,309, Texas 31,709,821, Florida 23,462,518, and New York 20,002,427. The release date is 27 January 2026 (${cite('census-pop-pr', 'U.S. Census Bureau')}). QuickFacts puts the 1 July 2025 population at 341,784,857, up 3.1% from an April 2020 base of 331,516,113. Employer establishments in 2023 were 8,361,342. Employer firms were 5,934,950. Nonemployer establishments in 2024 were 31,985,874. In 2020–2024, 22.3% of people spoke a language other than English at home, and 14.1% were foreign-born. Median household income in 2024 dollars was $80,734. Total retail sales in 2022 were $6,974,691,329 thousand (${cite('census-qf', 'Census QuickFacts')}).</li>
+<li><strong>The South.</strong> From 1 April 2020 to 1 July 2025 the United States went from 331,516,113 to 341,784,857, up 10,268,744 (3.1%). The South went from 126,281,605 to 133,833,983, up 7,552,378 (6.0%). Ages 65 and over went from 55,628,091 to 64,617,088, up 16.2%. The release date is 25 June 2026 (${cite('census-south', 'Census Bureau, 25 June 2026')}).</li>
+<li><strong>GDP.</strong> BEA’s 9 April 2026 release says real GDP rose 0.5% at a seasonally adjusted annual rate in the fourth quarter of 2025, and 2.1% for 2025 from the 2024 annual level. Real GDP increased in all 50 states and the District of Columbia. The PCE price index rose 2.6% in 2025 (${cite('bea-gdp-2025', 'Bureau of Economic Analysis, 9 April 2026')}). A national growth rate is not a first-state plan.</li>
+<li><strong>Foreign investment.</strong> The position was $5.86 trillion at the end of 2025, up $266.0 billion, led by $182.4 billion from Europe (Germany $49.0 billion; Canada $39.2 billion). By foreign parent, Japan was $776.3 billion, the Netherlands $751.8 billion, Canada $747.3 billion, and the United Kingdom $738.3 billion. By ultimate beneficial owner, Japan was $827.1 billion, Canada $819.8 billion, and Germany $706.2 billion. Manufacturing was 42.8% ($2.51 trillion), of which chemicals were $835.9 billion. U.S. direct investment abroad was $7.14 trillion. The release date is 21 July 2026 (${cite('bea-fdi-2025', 'BEA, 21 July 2026')}).</li>
+<li><strong>A programme total is not that position.</strong> SelectUSA says that since inception it has facilitated more than $535 billion in investment, supporting over 290,000 U.S. jobs. The page says that is a programme-facilitation total, not the BEA position (${cite('selectusa', 'SelectUSA')}).</li>
+</ul>
 
-<h2 id="home-playbook-cannot-copy">Why a Gulf, European or Brazilian playbook cannot be copied into the US</h2>
+<h2 id="states">The states did not move together</h2>
+<p>The South’s population rose 6.0% from the 2020 base. The United States rose 3.1%. The four large states above are four samples. A study that draws most of its interviews from one metro area and labels the file “US” is a one-city file.</p>
+<p>Goods trade is also country by country, in millions of dollars, not seasonally adjusted.</p>
+<ul>
+<li><strong>Saudi Arabia.</strong> 2025 exports 14,107.7, imports 10,486.8, balance 3,620.9. 2024 exports 13,146.5, imports 12,854.5, balance 292.1 (${cite('census-sa', 'Census Bureau')}).</li>
+<li><strong>United Arab Emirates.</strong> 2025 exports 31,435.8, imports 7,680.2, balance 23,755.6. 2024 exports 27,025.1, imports 7,400.7, balance 19,624.5 (${cite('census-uae', 'Census Bureau')}).</li>
+<li><strong>Brazil.</strong> 2025 exports 54,329.2, imports 39,881.5, balance 14,447.7. 2024 exports 49,012.9, imports 42,313.9, balance 6,699.0 (${cite('census-br', 'Census Bureau')}).</li>
+<li><strong>European Union.</strong> 2025 exports 412,548.3, imports 632,896.5, balance −220,348.1 (${cite('census-eu', 'Census Bureau')}).</li>
+<li><strong>United Kingdom.</strong> 2025 exports 97,393.8, imports 64,784.4, balance 32,609.4 (${cite('census-uk', 'Census Bureau')}).</li>
+<li><strong>Germany.</strong> 2025 exports 82,822.1, imports 155,827.9, balance −73,005.8 (${cite('census-de', 'Census Bureau')}).</li>
+</ul>
+<p>A Country Commercial Guide is an official market and regulatory overview. It is a desktop frame, not primary demand evidence for a named product (${cite('ita-ccg', 'International Trade Administration')}). A USTR country page is a policy frame, not a product forecast (${cite('ustr-regions', 'USTR')}).</p>
 
-<p>A home-market instrument with American spelling is not a US entry file. Three official series show why.</p>
+<h2 id="tax-and-product">Tax, customs, and a product file</h2>
+<p>Corporations, including qualified personal-service corporations, figure federal income tax by multiplying taxable income by 21% (${cite('irs-p542', 'IRS Publication 542')}).</p>
+<p>In South Dakota v. Wayfair, Inc. (2018), the Supreme Court said a state may require an out-of-state seller to collect and remit sales tax where the seller has a substantial economic nexus with the state, even without a physical presence (${cite('wayfair', 'Supreme Court, 2018')}). The sales-tax question is state by state.</p>
+<p>Importers and exporters share responsibility for compliance. Partner government agencies may set commodity-specific requirements. Section 321 of the Tariff Act, as amended, authorises an administrative exemption from duty and tax for qualified imports of not more than $800 fair retail value. The customs page was last modified on 10 February 2026 (${cite('cbp-trade', 'Customs and Border Protection')}).</p>
+<p>For food, importers are responsible for products that are safe, sanitary, and labelled to U.S. requirements. The FDA says it is not authorised to approve, certify, license, or otherwise sanction individual food importers, products, labels, or shipments. That page is not a product file. Facilities that manufacture, process, pack, or hold food must be registered, and prior notice of incoming shipments must be provided (${cite('fda-import', 'FDA')}). Owners, operators, or agents in charge of a domestic or foreign facility that manufactures, processes, packs, or holds food for consumption in the United States must register the facility, unless exempt under 21 CFR 1.226 (${cite('fda-ffr', 'FDA')}).</p>
 
-<p>First, the buyer mix is not a GCC age pyramid, not an EU NUTS region and not a Brazilian census tract. Vintage 2025 growth was almost all from net international migration after that flow halved; natural change was only about 519,000 (${cite('census-pop-pr', 'Census Bureau')} ). Persons 65 and over rose from 55,628,091 on 1 April 2020 to 64,617,088 on 1 July 2025 (+16.2%), while the under-18 population fell (${cite('census-south', 'Census Bureau, 25 June 2026')} ). Language other than English is spoken at home by 22.3% of people aged 5 and over; 14.1% of residents are foreign-born (${cite('census-qf', 'Census QuickFacts')} ). Those are national averages, not a named buyer.</p>
+<h2 id="cfius">Investment screening is not a product approval</h2>
+<p>CFIUS is an interagency committee authorised to review certain foreign investments in U.S. businesses, and certain real-estate transactions by foreign persons, for their effect on national security (${cite('treasury-cfius', 'U.S. Treasury')}). The investor guide says CFIUS reviews certain foreign-investment and real-estate transactions for national-security effect only (${cite('selectusa-guide', 'SelectUSA Investor Guide')}).</p>
+<p>The annual report for calendar 2025, released 7 August 2026, records 347 notices and declarations of covered transactions or covered real-estate transactions. 67 percent of distinct transactions cleared in the 30-day declaration assessment or the initial 45-day notice review. Treasury launched the Known Investor Pilot Program. Mandatory filing requirements apply to certain transactions involving critical technology, critical infrastructure, and sensitive personal data (${cite('treasury-cfius-2025', 'Treasury, 7 August 2026')}). A clearance percentage is not a demand figure. Do not write “CFIUS approved the SKU.” A standard goods sale is a different question from a covered investment.</p>
+<p>ISO 20252:2026 is the service-requirements standard for market research (${cite('iso-20252-2026', 'ISO')}). The Market Research Society says certification to the 2026 standard is mandatory from September 2029, replacing the 2019 edition (${cite('mrs-iso-20252', 'Market Research Society')}). The ICC/ESOMAR code is the 2025 code (${cite('esomar-2025', 'ICC/ESOMAR')}).</p>
 
-<p>Second, the trade already exists and is not SKU demand. In 2025 the United States ran a US$23.8 billion goods surplus with the UAE and a US$3.6 billion goods surplus with Saudi Arabia (${cite('census-uae', 'Census UAE goods')}; ${cite('census-sa', 'Census Saudi goods')} ). The same year it ran a US$14.4 billion goods surplus with Brazil, a US$32.6 billion goods surplus with the United Kingdom, a US$73.0 billion goods deficit with Germany and a US$220.3 billion goods deficit with the European Union (${cite('census-br', 'Census Brazil goods')}; ${cite('census-uk', 'Census UK goods')}; ${cite('census-de', 'Census Germany goods')}; ${cite('census-eu', 'Census EU goods')} ). None of those seats names a Houston, Atlanta or Chicago invoice.</p>
-
-<p>Third, the legal stack is not GCC VAT, G-Mark, CE or ANVISA. There is no federal sales tax or VAT. Federal corporation tax is 21% (${cite('irs-p542', 'IRS Publication 542')} ). CBP and Partner Government Agencies police the border; FDA registration is not an FDA licence (${cite('cbp-trade', 'CBP')}; ${cite('fda-import', 'FDA importing food')} ). CFIUS reviews certain investments and certain real estate, not a container of biscuits (${cite('treasury-cfius', 'Treasury CFIUS')} ). SelectUSA, ITA country commercial guides and USTR country pages frame policy and investment; they are not interviews (${cite('selectusa', 'SelectUSA')}; ${cite('ita-ccg', 'ITA Country Commercial Guides')}; ${cite('ustr-regions', 'USTR countries and regions')} ).</p>
-
-<h2 id="official-numbers">Which official numbers should a 2026 US entry brief start from?</h2>
-
-<p>Use official series as the frame, then replace the frame with primary evidence for the SKU. Label every vintage. Do not blend Census and BEA vintages as one table.</p>
-
-<h3>The US demand frame</h3>
-
-<p>Open Vintage 2025 first. QuickFacts puts the 1 July 2025 estimate at 341,784,857 and growth from the 1 April 2020 estimates base (331,516,113) at 3.1% (${cite('census-qf', 'Census QuickFacts')} ). The 27 January 2026 press release is the narrative vintage: +1.8 million (0.5%); net international migration 1.3 million, down 53.8% from 2.7 million; natural change near 519,000 (${cite('census-pop-pr', 'Census Bureau')} ). A “340 million US consumers” slide with one New Jersey warehouse is not a first-year plan. The four largest states on 1 July 2025 were California (39,355,309), Texas (31,709,821), Florida (23,462,518) and New York (20,002,427). California, Hawaii, New Mexico, Vermont and West Virginia lost population. Texas added 391,243 people; Florida 196,680; North Carolina 145,907 (${cite('census-pop-pr', 'Census Bureau')} ). From the 2020 estimates base to 1 July 2025 the South added 7,552,378 people (6.0%), to 133,833,983. Ages 65 and over rose 16.2% while the under-18 population fell 2.4% (${cite('census-south', 'Census Bureau, 25 June 2026')} ). A young GCC age pyramid pasted onto a Florida retirement catchment is the wrong instrument.</p>
-
-<p>The business population is a third labelled series: 8,361,342 employer establishments and 5,934,950 employer firms in 2023, and 31,985,874 nonemployer establishments in 2024 (${cite('census-qf', 'Census QuickFacts')} ). Those are establishment counts, not a named specifier list. Sampling “US companies” without a size, state and sector quota is sampling the long tail.</p>
-
-<h3>The investment frame — BEA first, SelectUSA second</h3>
-
-<p>BEA’s 21 July 2026 direct-investment release is the right FDI vintage. The inward position was $5.86 trillion at the end of 2025, up $266.0 billion, of which Europe added $182.4 billion (Germany +$49.0 billion; Canada +$39.2 billion) (${cite('bea-fdi-2025', 'BEA direct investment 2025')} ). By foreign parent, Japan ($776.3 billion), the Netherlands ($751.8 billion), Canada ($747.3 billion) and the United Kingdom ($738.3 billion) held more than half. Manufacturing held 42.8% ($2.51 trillion), of which chemicals $835.9 billion — ownership, not a TAM.</p>
-
-<p>SelectUSA is the Commerce desk that facilitates inbound investment. Its program page reports more than $535 billion facilitated since inception and more than 290,000 US jobs supported — a program total, not the BEA stock, and not a SKU forecast (${cite('selectusa', 'SelectUSA')} ). The Investor Guide is a first-step legal note, including CFIUS; it is still not interviews (${cite('selectusa-guide', 'SelectUSA Investor Guide')} ). ITA country commercial guides and USTR regional pages belong in the appendix (${cite('ita-ccg', 'ITA Country Commercial Guides')}; ${cite('ustr-regions', 'USTR')} ).</p>
-
-<h3>The corridor frame — Gulf first, then Europe and Brazil</h3>
-
-<p>Census goods tables are the right trade vintage. Figures are millions of US dollars, not seasonally adjusted. Calendar 2025:</p>
-
-<table>
-<thead><tr><th>Partner</th><th>US goods exports</th><th>US goods imports</th><th>Balance</th></tr></thead>
-<tbody>
-<tr><td>United Arab Emirates</td><td>US$31,435.8 million</td><td>US$7,680.2 million</td><td>+US$23,755.6 million (${cite('census-uae', 'Census UAE')} )</td></tr>
-<tr><td>Saudi Arabia</td><td>US$14,107.7 million</td><td>US$10,486.8 million</td><td>+US$3,620.9 million (${cite('census-sa', 'Census Saudi Arabia')} )</td></tr>
-<tr><td>Brazil</td><td>US$54,329.2 million</td><td>US$39,881.5 million</td><td>+US$14,447.7 million (${cite('census-br', 'Census Brazil')} )</td></tr>
-<tr><td>United Kingdom</td><td>US$97,393.8 million</td><td>US$64,784.4 million</td><td>+US$32,609.4 million (${cite('census-uk', 'Census UK')} )</td></tr>
-<tr><td>Germany</td><td>US$82,822.1 million</td><td>US$155,827.9 million</td><td>−US$73,005.8 million (${cite('census-de', 'Census Germany')} )</td></tr>
-<tr><td>European Union</td><td>US$412,548.3 million</td><td>US$632,896.5 million</td><td>−US$220,348.1 million (${cite('census-eu', 'Census EU')} )</td></tr>
-</tbody>
-</table>
-
-<p>The UAE corridor is already the larger Gulf goods surplus. Saudi Arabia’s 2025 surplus follows a 2024 surplus of only US$292.1 million (${cite('census-sa', 'Census Saudi Arabia')} ). UAE exports rose from US$27.0 billion in 2024 to US$31.4 billion in 2025 (${cite('census-uae', 'Census UAE')} ). Those two Gulf seats remain two licence stacks on the Gulf side and fifty state stacks here. A Dubai free-zone company does not replace a US importer of record. For the outbound Gulf job see the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC playbook</a> and the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi playbook</a>. For Chinese sponsors using the same Gulf seats, see <a href="/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae">Chinese companies entering Saudi Arabia and the UAE</a>. Europe is already inside the BEA stock: German parents added $49.0 billion in 2025 and the UK remains a top-four parent at $738.3 billion (${cite('bea-fdi-2025', 'BEA')} ). A CE mark that already moves a US$220.3 billion EU goods-import line is still not an FDA letter (${cite('census-eu', 'Census EU')} ). Brazil is the Western Hemisphere goods-surplus partner here: US$54.3 billion of US exports and US$39.9 billion of imports in 2025 (${cite('census-br', 'Census Brazil')} ). ANVISA is a Brazilian statement, not a US statement.</p>
-
-<h2 id="fifty-states-cfius-fda">How do fifty states, no federal VAT, CFIUS and FDA differ from a Gulf, EU or Brazilian file?</h2>
-
-<p>Gulf counsel still writes “the US is New York.” European counsel still writes “CE is done.” Brazilian counsel still writes “ANVISA covers the pack.” None of those sentences survives an official page.</p>
-
-<table>
-<thead><tr><th>Rule the US file must carry</th><th>Published fact</th><th>What a Gulf, EU or Brazilian price file must not do</th></tr></thead>
-<tbody>
-<tr><td>No federal VAT / sales tax</td><td>The United States does not levy a federal VAT. Federal corporation tax is 21% of taxable income (${cite('irs-p542', 'IRS Publication 542')} )</td><td>Paste a 5% UAE, 15% Saudi, 20% UK or Brazilian ICMS-exclusive ASP onto a US shelf</td></tr>
-<tr><td>State and local sales tax; economic nexus</td><td>A state may require an out-of-state seller to collect sales tax on economic nexus, even without physical presence (${cite('wayfair', 'Wayfair')} )</td><td>Assume a single “US tax” or that Delaware settles every state’s collection duty</td></tr>
-<tr><td>CBP entry and Partner Government Agencies</td><td>Importers share compliance responsibility with CBP. Commodity rules can come from Partner Government Agencies. Section 321 de minimis is $800 fair retail value for qualified shipments (${cite('cbp-trade', 'CBP basic importing')} )</td><td>Treat a de minimis test, a courier account or a Gulf free-zone invoice as the trading vehicle</td></tr>
-<tr><td>FDA food-facility registration and prior notice</td><td>Domestic and foreign facilities that manufacture, process, pack or hold food for US consumption must register unless exempt. FDA does not approve, certify or license the importer (${cite('fda-ffr', 'FDA registration')}; ${cite('fda-import', 'FDA importing food')} )</td><td>Ship on a G-Mark, CE, SFDA or ANVISA file and call it US-ready</td></tr>
-<tr><td>CFIUS on covered investments, not on every container</td><td>CFIUS reviews certain foreign-investment and certain real-estate transactions for national-security effect. 347 notices and declarations were filed in 2025; 67% of distinct transactions cleared in the 30-day declaration or 45-day notice review (${cite('treasury-cfius', 'Treasury CFIUS')}; ${cite('treasury-cfius-2025', 'CFIUS annual report 2025')} )</td><td>Write “CFIUS approved the SKU” or treat a product import as a covered transaction</td></tr>
-<tr><td>Fifty catchments</td><td>California 39.4 million, Texas 31.7 million, Florida 23.5 million, New York 20.0 million on 1 July 2025 (${cite('census-pop-pr', 'Census Bureau')} )</td><td>Treat a single coastal warehouse as national demand</td></tr>
-</tbody>
-</table>
-
-<p>CFIUS is a national-security review of certain investments, including some real estate — not a product mark. Treasury continues to enforce mandatory filings for certain critical-technology, critical-infrastructure and sensitive-personal-data deals and launched a Known Investor Pilot Program (${cite('treasury-cfius-2025', 'CFIUS annual report 2025')} ). A Riyadh family office buying a US industrial asset and a Dubai brand shipping a food SKU are two different files. The $800 Section 321 threshold is a qualified-shipment exemption, not a channel strategy (${cite('cbp-trade', 'CBP')} ). Pair CBP with the 8,361,342 employer establishments in 2023 when the first buyer is a firm (${cite('census-qf', 'Census QuickFacts')} ).</p>
-
-<h2 id="gmark-ce-anvisa-not-fda">What does a G-Mark, a CE mark or an ANVISA file not buy you?</h2>
-
-<p>Gulf product teams treat the Gulf Conformity Mark as a passport. European teams treat CE the same way. Brazilian teams treat an ANVISA letter as if it travelled. FDA’s food-import page is narrower: importers must ensure the product is safe, sanitary and labeled to US requirements; FDA does not approve or license the importer. Facilities that produce, store or handle food for US consumption must be registered, and prior notice must be filed (${cite('fda-import', 'FDA importing food')}; ${cite('fda-ffr', 'FDA registration and listing')} ).</p>
-
-<p>A G-Mark, CE or ANVISA file can feed a US assessment. It is not a substitute for FDA registration or CBP entry. Shipping on those files alone is waiting for a hold. Write voltage, English on-pack copy and the FDA file into the instrument the same way you write sales tax. The reverse lesson is on the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC playbook</a>: CE is an EEA statement, not a Gulf or US statement. CBP will still apply Partner Government Agency rules (${cite('cbp-trade', 'CBP')} ). A SelectUSA conversation about a factory site does not replace that file (${cite('selectusa', 'SelectUSA')} ).</p>
-
-<h2 id="gcc-europe-brazil-briefs">How should a Saudi or UAE brief differ from a European or Brazilian brief?</h2>
-
-<p>The five proofs below are shared. The starting mistakes are not. This playbook leads with the Gulf seats because BioNixus already fields Arabic–English work from Al Khobar and Dubai, and because Census already records the two largest Middle East goods corridors in this brief.</p>
-
-<p><strong>Saudi sponsors</strong> usually over-index on New York or California and import a 15% VAT and SFDA file. US goods exports to Saudi Arabia were US$14.1 billion in 2025 and imports US$10.5 billion (${cite('census-sa', 'Census Saudi Arabia')} ). Those tonnes are not SKU demand, and an SFDA clearance is not an FDA registration (${cite('fda-import', 'FDA')} ). Use the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi playbook</a> when the first operating SKU is still in the Kingdom, then interview in the first US state.</p>
-
-<p><strong>UAE sponsors</strong> usually over-index on a free-zone invoice. US goods exports to the UAE were US$31.4 billion in 2025 — more than double the Saudi export line — with a US$23.8 billion surplus (${cite('census-uae', 'Census UAE')} ). A Jebel Ali trader who already ships to a US wholesaler still needs a named buyer, a state and a tax treatment. Section 321’s $800 de minimis line is not a brand (${cite('cbp-trade', 'CBP')} ). See <a href="/uae-retail-market-research">retail market research in the UAE</a> for the Gulf range. Use <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> when the Gulf committee sits in Dubai.</p>
-
-<p><strong>European sponsors</strong> usually import a CE file and a single “US” P&amp;L. The EU was a US$632.9 billion goods-import partner in 2025 against US$412.5 billion of US exports; Germany alone was US$155.8 billion of imports (${cite('census-eu', 'Census EU')}; ${cite('census-de', 'Census Germany')} ). The UK was a surplus partner at US$97.4 billion of US exports (${cite('census-uk', 'Census UK')} ). German parents added $49.0 billion to the inward position in 2025; UK parents sit at $738.3 billion (${cite('bea-fdi-2025', 'BEA')} ). Brief London when the budget sits there; field the US interviews from Sheridan.</p>
-
-<p><strong>Brazilian sponsors</strong> usually import an ANVISA file and under-index on English on-pack. US goods exports to Brazil were US$54.3 billion in 2025 and imports US$39.9 billion (${cite('census-br', 'Census Brazil')} ). Portuguese-language research for the Brazilian committee is a different instrument from English interviews with the US specifier. Latin America is covered today from the US office with a local consultant network.</p>
-
-<p>A practical sequence: name the first commercial state from interviews; price it with that state’s sales tax and, where the vehicle is a C corporation, the 21% federal overlay (${cite('irs-p542', 'IRS Publication 542')}; ${cite('wayfair', 'Wayfair')} ); treat FDA and CBP as the goods file (${cite('fda-import', 'FDA')}; ${cite('cbp-trade', 'CBP')} ); treat CFIUS as an investment file only when the transaction is covered (${cite('treasury-cfius', 'Treasury CFIUS')} ); and leave SelectUSA, ITA and USTR pages in the appendix (${cite('selectusa', 'SelectUSA')}; ${cite('ita-ccg', 'ITA')}; ${cite('ustr-regions', 'USTR')} ).</p>
-
-<h2 id="five-proofs">What five proofs must a Riyadh, Dubai, London or Brazilian committee demand?</h2>
-
-<table>
-<thead><tr><th>Proof the committee owes itself</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand</td><td>A defined buyer, a unit of demand and a state that matches the first site (${cite('census-pop-pr', 'Census Bureau')}; ${cite('census-qf', 'Census QuickFacts')} )</td><td>A single “US” market-size figure with no state split</td></tr>
-<tr><td>Price, including tax</td><td>Paid-for willingness-to-pay or invoice evidence, stated with the destination state’s sales-tax treatment and, where relevant, 21% federal corporation tax (${cite('irs-p542', 'IRS Publication 542')}; ${cite('wayfair', 'Wayfair')} )</td><td>A dirham, riyal, euro or real ASP pasted onto a US shelf</td></tr>
-<tr><td>State and catchment</td><td>State volumes that treat California, Texas, Florida and New York as separate cells (${cite('census-pop-pr', 'Census Bureau')} )</td><td>A US average presented as the first-year plan</td></tr>
-<tr><td>Channel and substitution</td><td>Who specifies, who distributes, what the buyer switches to if you miss</td><td>A channel map with no interviews</td></tr>
-<tr><td>File and vehicle</td><td>FDA registration and prior notice where the SKU is food for US consumption; CBP entry; CFIUS only if the vehicle is a covered investment or covered real estate; a US importer or US company as the trading vehicle (${cite('fda-import', 'FDA')}; ${cite('cbp-trade', 'CBP')}; ${cite('treasury-cfius', 'Treasury CFIUS')} )</td><td>A slide that says “G-Mark is accepted,” “CE covers America” or “ANVISA is enough”</td></tr>
-</tbody>
-</table>
-
-<p>Those five tests are the study.</p>
-
-<p>Primary work is usually a short, named programme: interviews with the people who specify or pay in the first commercial state; a quantitative check on price, substitution and catchment; state quotas that match the first site; bilingual design only where the sponsor committee needs it; and a source table that separates official series, quotations and fieldwork. ISO 20252:2026 is the current vocabulary and service-requirements standard; MRS records that it replaces the 2019 edition, with certification to the 2026 standard mandatory from September 2029 (${cite('iso-20252-2026', 'ISO 20252:2026')}; ${cite('mrs-iso-20252', 'MRS')} ). It is a quality-system claim, not a finding. The ICC/ESOMAR 2025 code is the conduct frame (${cite('esomar-2025', 'ICC/ESOMAR 2025')} ).</p>
-
-<p>BioNixus prices that custom work between $10,000 and $60,000, depending on sample, states and whether the output is a stand-alone entry file or a chapter inside a wider feasibility. The scope, timing and deliverables are guaranteed in writing. Accuracy of findings is not a claim we make.</p>
-
-<h2 id="sector-notes">How does the brief change by sector?</h2>
-
-<h3>Retail, FMCG and consumer brands</h3>
-
-<p>Start from the official population split, then replace it with a catchment. A Manhattan format, a Houston grocer and a Miami basket do not share a demand curve (${cite('census-pop-pr', 'Census Bureau')} ). Language other than English at home is 22.3% nationally; that average hides Spanish-first tracts and Arabic-speaking pockets that a Gulf brand will over-read (${cite('census-qf', 'Census QuickFacts')} ). Price work has to state the destination state’s sales tax (${cite('wayfair', 'Wayfair')} ). See <a href="/uae-retail-market-research">retail market research in the UAE</a> for the Gulf range and the <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">Saudi consumer-survey methods guide</a> for Kingdom sampling.</p>
-
-<h3>Hospitality, travel retail and visitor catchments</h3>
-
-<p>Use national visitor series as the frame, then prove the competitive set. “US tourism” as one occupancy curve mis-specifies New York versus Orlando. See <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a> for the visitor-versus-resident split, then rebuild the US quotas. Florida added 196,680 residents in the year to 1 July 2025; that is a resident increment, not a hotel forecast (${cite('census-pop-pr', 'Census Bureau')} ).</p>
-
-<h3>Technology, industrials and B2B</h3>
-
-<p>BEA’s manufacturing inward position was $2.51 trillion at end-2025, 42.8% of the stock (${cite('bea-fdi-2025', 'BEA')} ). That is why European industrials already have a US invoice — and why a B2B entry still has to recruit the buying committee. QuickFacts’ 5,934,950 employer firms in 2023 are the seats most industrial briefs need; the 31,985,874 nonemployers are not a substitute sample (${cite('census-qf', 'Census QuickFacts')} ). Use <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> for the Gulf specifier who signs the US budget. CFIUS belongs here when the vehicle is a covered investment, not a standard goods sale (${cite('treasury-cfius-2025', 'CFIUS annual report 2025')} ).</p>
-
-<h3>Food, beverage and regulated consumer goods</h3>
-
-<p>Saudi–US and Brazil–US goods totals are customs chapters, not food SKU forecasts (${cite('census-sa', 'Census Saudi Arabia')}; ${cite('census-br', 'Census Brazil')} ). Regulated packs still need FDA facility registration, prior notice, US on-pack copy and the destination state’s sales tax (${cite('fda-import', 'FDA')}; ${cite('fda-ffr', 'FDA registration')}; ${cite('wayfair', 'Wayfair')} ). An SFDA or ANVISA registration is not a US retail pack. CBP will still apply Partner Government Agency rules at the port (${cite('cbp-trade', 'CBP')} ). 2022 retail sales of $6,974,691,329 thousand are an Economic Census total, not a first-SKU forecast (${cite('census-qf', 'Census QuickFacts')} ).</p>
-
-<h2 id="how-to-choose">How should you choose a US market entry research partner?</h2>
-
-<p>Ask every firm, including BioNixus, to answer in writing:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for population, state totals, GDP, FDI, the six corridor goods tables, corporation tax, sales-tax nexus, CBP, FDA and CFIUS, and what is the date of each series?</li>
-<li>Will the study report by US state — and by metro inside the first state — or only as “the US”?</li>
-<li>How many interviews or surveys will you complete, in which language, and with which quotas?</li>
-<li>Which sales-tax treatment, and which FDA / CBP file, does the brief assume (${cite('wayfair', 'Wayfair')}; ${cite('fda-import', 'FDA')}; ${cite('cbp-trade', 'CBP')} )?</li>
-<li>Is the first vehicle a US company, a US importer of record, or a covered CFIUS transaction — and are you writing the demand chapter or the incorporation chapter (${cite('treasury-cfius', 'Treasury CFIUS')} )?</li>
-<li>How will you keep SelectUSA, ITA and USTR pages in the appendix instead of in the finding (${cite('selectusa', 'SelectUSA')}; ${cite('ita-ccg', 'ITA')}; ${cite('ustr-regions', 'USTR')} )?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
+<li>Which state is the first sample, and which city?</li>
+<li>Which sales-tax rule is on the price card?</li>
+<li>Is the product a food that needs facility registration and prior notice, or something else?</li>
+<li>Is any part of the deal a covered investment, or is it a standard goods sale?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>Which Census or BEA series will you quote, and what is its date?</li>
 </ol>
 
-<p>Delaware incorporation houses are often strong at company paperwork. They are not automatically strong at demand evidence. A Gulf, European or Brazilian trade desk can cite the Census goods tables or BEA FDI. None of them can run the interviews. BioNixus does the demand job and will work alongside your counsel. Ask for ISO 20252:2026 and the ICC/ESOMAR 2025 code in writing (${cite('iso-20252-2026', 'ISO 20252:2026')}; ${cite('mrs-iso-20252', 'MRS')}; ${cite('esomar-2025', 'ICC/ESOMAR 2025')} ).</p>
-
-<p>Related reading: the <a href="/bionixus-industries/insights/uk-market-entry-research">UK market entry research playbook</a>, the <a href="/bionixus-industries/insights/europe-to-gcc-market-entry-research">Europe-to-GCC playbook</a>, the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi playbook</a>, <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> and <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>. Browse <a href="/market-research-by-industry">market research by industry</a> and the 2026 rankings for <a href="/insights/top-market-research-companies-usa-2026">the USA</a>, <a href="/insights/top-market-research-companies-uae-2026">the UAE</a>, <a href="/insights/top-market-research-companies-saudi-arabia-2026">Saudi Arabia</a> and <a href="/insights/top-market-research-companies-uk-2026">the United Kingdom</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for US market entry research?</h2>
-
-<p>BioNixus is a primary market research firm, not a company-formation house or a trade-promotion desk. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>The invoice is not buying a guaranteed finding. BioNixus guarantees, in writing: agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. Accuracy of findings is not a claim we make.</p>
-
-<p>Saudi and UAE teams brief the Al Khobar or Dubai field office and take the US interviews from Sheridan. European teams brief London. Brazilian teams brief Sheridan, with Latin America covered from the US office. To brief US market entry research for foreign companies, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1 888 465 5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call Al Khobar on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -463,39 +344,39 @@ ${REFERENCES_HTML}`;
 
 export const US_ENTRY_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does US market entry research for foreign companies have to prove?',
+    question: 'What should a foreign company research before selling in the United States?',
     answer:
-      'It has to prove addressable demand, price including the destination state’s sales tax, state or catchment, channel, and the FDA, CBP and — where the vehicle is a covered investment — CFIUS file, with dated evidence. A single US TAM, a G-Mark file, a CE mark or an ANVISA letter is not US market entry research. Primary interviews make the brief usable for a Riyadh, Dubai, London or Brazilian committee.',
+      'Name the state, the buyer, the sales-tax rule, and the product file. A national population or a goods-trade total does not answer those questions.',
   },
   {
-    question: 'Can a Saudi or UAE company treat the United States as one market?',
+    question: 'Can the United States be treated as one market?',
     answer:
-      'No. California, Texas, Florida and New York did not move together in the year to 1 July 2025 — California lost population while Texas added 391,243 people and Florida added 196,680. There is no federal VAT. State sales-tax collection can follow economic nexus after Wayfair. A Dubai free-zone invoice is not a US importer of record.',
+      'The states did not move together. From the 2020 estimates base to 1 July 2025, the South’s population rose 6.0% and the United States rose 3.1%. California, Texas, Florida, and New York are four separate counts. Use the state where the first invoice will be paid.',
   },
   {
-    question: 'Does a G-Mark, CE mark or ANVISA file replace FDA or CBP?',
+    question: 'Which trade figures are safe to quote?',
     answer:
-      'No. Food for US consumption generally needs an FDA food-facility registration and prior notice. FDA does not approve, certify or license the importer. CBP still requires a compliant entry and may apply Partner Government Agency rules. A G-Mark, CE or ANVISA file can feed an assessment. It is not a substitute for the US file.',
+      'Use the Census goods tables in millions of dollars, with the year on the line. In 2025, exports to the UAE were 31,435.8 and exports to Saudi Arabia were 14,107.7. The EU, UK, Germany, and Brazil tables are separate series. Do not add them into one “foreign” total.',
   },
   {
-    question: 'Does every foreign company need a CFIUS filing to sell into the US?',
+    question: 'Does a CFIUS review approve the product?',
     answer:
-      'No. CFIUS reviews certain foreign-investment and certain real-estate transactions for national-security effect. Treasury’s 2025 report records 347 notices and declarations and a 67% clearance rate in the 30-day declaration or 45-day notice window. A standard goods sale is a CBP and, where relevant, FDA file. Do not write “CFIUS approved the SKU.”',
+      'Do not write “CFIUS approved the SKU.” CFIUS reviews certain investments and real-estate transactions for national-security effect only. A standard goods sale is a different question. The FDA import page is also not a product approval: FDA says it does not sanction individual products, labels, or shipments.',
   },
   {
-    question: 'Which official numbers should a 2026 US entry brief use?',
+    question: 'What did the Supreme Court say about sales tax?',
     answer:
-      'Start from Census Vintage 2025 (341,784,857 on 1 July 2025), the 27 January 2026 Census growth release, BEA’s third-estimate 2025 GDP, BEA direct investment 2025, Census goods tables for the UAE, Saudi Arabia, Brazil, the EU, the UK and Germany, IRS Publication 542 (21% corporation tax), Wayfair, FDA import and registration pages, CBP basic importing, and the August 2026 CFIUS annual report. Label each series.',
+      'In South Dakota v. Wayfair (2018), the Court said a state may require an out-of-state seller with substantial economic nexus to collect and remit sales tax, even without a physical presence. The question is state by state.',
   },
   {
-    question: 'How much does custom US market entry research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom programmes from BioNixus are typically $10,000 to $60,000 depending on sample, states, mode and whether the output is a stand-alone entry file or a chapter inside a wider study. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the states, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus from Sheridan rather than a formation agent?',
+    question: 'Why brief BioNixus rather than relying only on a trade table?',
     answer:
-      'Incorporation houses file the vehicle. BioNixus proves demand. Saudi and UAE teams brief Al Khobar or Dubai; European teams brief London; Brazilian teams brief Sheridan. Fieldwork is designed from Sheridan, Wyoming. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'A Census table describes shipments. BioNixus measures demand. The Sheridan office is the US headquarters. Dubai and Al Khobar are field offices. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

@@ -41,15 +41,15 @@ export const UAE_B2B_MR_META_DESCRIPTION =
   'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.';
 
 export const UAE_B2B_MR_DISPLAY_TITLE =
-  'B2B Market Research in the UAE: Reaching Hard-to-Reach Decision-Makers';
+  'How to reach the people who buy in the UAE';
 
 export const UAE_B2B_MR_DISPLAY_SUBTITLE =
-  'Methods, recruitment, costs and how to choose a Dubai firm';
+  'Named buyers, emirates, and a price that states the tax';
 
 export const UAE_B2B_MR_BREADCRUMB_LABEL = 'B2B market research UAE';
 
 export const UAE_B2B_MR_EXCERPT =
-  'A sourced 2026 guide to B2B market research UAE: how to reach hard-to-reach decision-makers, which methods and recruitment work, what custom work costs, and how to choose a B2B market research company Dubai.';
+  'How to brief business research in the UAE: who specifies, who pays, which emirate, and which official figures are only a frame.';
 
 export const UAE_B2B_MR_PUBLISHED_ISO = '2026-10-15T12:00:00.000Z';
 export const UAE_B2B_MR_UPDATED_ISO = '2026-10-15T12:00:00.000Z';
@@ -207,181 +207,136 @@ export function countWords(html: string): number {
 }
 
 export const UAE_B2B_MR_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What does B2B market research UAE have to prove?', anchor: 'what-b2b-market-research-uae-proves' },
-  { heading: 'Why UAE B2B decision-makers are hard to reach', anchor: 'why-decision-makers-are-hard-to-reach' },
-  { heading: 'Official numbers that frame a 2026 B2B brief', anchor: 'official-numbers' },
-  { heading: 'Methods that reach the buying committee', anchor: 'methods' },
-  { heading: 'How to recruit named B2B respondents', anchor: 'recruitment' },
-  { heading: 'What B2B market research in the UAE costs', anchor: 'costs' },
-  { heading: 'How to choose a B2B market research company Dubai', anchor: 'choose-b2b-market-research-company-dubai' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What the brief has to name', anchor: 'what-to-name' },
+  { heading: 'The economy buyers sit in', anchor: 'the-economy' },
+  { heading: 'Licences, Dubai, and the tax on the quote', anchor: 'licences-and-tax' },
+  { heading: 'How to reach the person who can sign', anchor: 'how-to-reach' },
+  { heading: 'Rules for the interview', anchor: 'interview-rules' },
+  { heading: 'How to choose a firm', anchor: 'how-to-choose' },
+  { heading: 'Who fields the work', anchor: 'who-fields' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const UAE_B2B_MR_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> B2B market research UAE must name the buyer, the committee, the emirate and the price before a commercial team commits. A B2B market research company Dubai that fields a consumer panel will miss the people who specify and pay. Named interviews, bilingual recruitment and a written sample plan make the brief usable.</p>`;
+export const UAE_B2B_MR_EXECUTIVE_SUMMARY_HTML = `<p>B2B market research UAE names who specifies the purchase, who pays, and which emirate the deal sits in, including 5% VAT where it applies. A B2B market research company Dubai brief that only fields a consumer panel misses those people. Official figures are the frame. Interviews with named buyers answer the brief.</p>`;
 
-const NARRATIVE_HTML = `<p>US, UK and European commercial teams often brief “a UAE B2B study” and receive a pan-Gulf deck, a consumer panel and a national TAM. That is not B2B market research UAE. The work has to name who specifies, who pays, in which emirate, at what price, through which channel. This guide sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma briefs — technology, financial services, energy, industrials, logistics, hospitality buyers — not for MOHAP or DHA files.</p>
+const NARRATIVE_HTML = `<p>A “UAE business study” often comes back as a Gulf slide, a consumer panel and a national market size. That is not B2B market research UAE. The work has to name who specifies, who pays, in which emirate, at what price, and through which channel. This note sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for technology, financial services, energy, industrials, logistics and hospitality buyers. See <a href="/uae-technology-market-research">technology market research in the UAE</a>, <a href="/uae-financial-services-market-research">financial services market research in the UAE</a> and <a href="/saudi-arabia-technology-market-research">technology market research in Saudi Arabia</a> when the same sponsor is sequencing both markets.</p>
 
-<p>BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<h2 id="what-to-name">What the brief has to name</h2>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 UAE B2B brief can cite, October 2026</strong></p>
-<ul>
-<li><strong>11.29 million</strong> people in 2024, up 5.7% from 10.68 million in 2023, with about 200 nationalities and an 81.4% economic participation rate (${cite('fcsc-unified-2025', 'FCSC Unified UAE Numbers')}).</li>
-<li><strong>AED 1.78 trillion</strong> of GDP at constant prices in 2024, or AED 2.028 trillion at current prices, with a 75.5% non-oil share (${cite('fcsc-unified-2025', 'FCSC')}; ${cite('wam-gdp-2024', 'WAM')}).</li>
-<li><strong>1,388,654 licences</strong> on the federal business register, with 260,000 new licences in 2024. Trade-activity licences are the largest published cell (589,648), ahead of professional and technical activities (262,891) and construction (175,593). FCSC notes that activity counts are calculated per activity on a licence (${cite('fcsc-unified-2025', 'FCSC')}).</li>
-<li><strong>AED 52.3 billion</strong> of estimated FDI capital into Dubai in 2024, up 33% from AED 39.26 billion in 2023, across 1,826 announced projects and 1,117 greenfield projects (${cite('dubai-fdi-2024', 'DET Dubai FDI Monitor')}; ${cite('mediaoffice-fdi-2025', 'Dubai Media Office')}).</li>
-<li><strong>4.580 million</strong> Dubai residents by the end of 2025 on the emirate’s register-based count, with 6.392 million people present at peak daytime hours (${cite('digital-dubai-pop-2025', 'Digital Dubai')}).</li>
-<li><strong>5% standard VAT</strong> since 1 January 2018, and 9% corporate tax on taxable income above AED 375,000 (${cite('mof-vat', 'Ministry of Finance')}; ${cite('fta-vat-law', 'VAT Decree-Law')}; ${cite('cabinet-116-ct', 'Cabinet Decision 116/2022')}).</li>
-</ul>
-</div>
+<p>Five questions separate a usable file from a slide nobody can defend.</p>
 
-<h2 id="what-b2b-market-research-uae-proves">What does B2B market research UAE have to prove?</h2>
+<p>Who buys? A procurement lead, a technical specifier, a channel partner, a facilities manager, a hotel buyer, or a government procurer. The Federal Competitiveness and Statistics Centre’s 2024 labour market puts 63.8% of employment in services and 34.5% in manufacturing and construction. Those are not one buying committee. The same release counts 61 local, Gulf and foreign banks and 557 branches. ${cite('fcsc-unified-2025', 'FCSC')}</p>
 
-<p>B2B market research UAE is the work that tells a sponsor whether a named offer will be specified and paid for, by a named role, in a named emirate, through a named channel, at a named price that includes the UAE’s 5% VAT where the supply is taxable (${cite('mof-vat', 'Ministry of Finance')}; ${cite('fta-vat-law', 'Article 3')}). It is not a free-zone brochure, and it is not a consumer U&amp;A with “B2B” in the title. Five questions separate a usable study from a slide that nobody can defend in a London, New York or Frankfurt committee:</p>
+<p>Where? Dubai, Abu Dhabi and the northern emirates are different catchments. The National Economic Register looks up a licence, an activity or a trade name by the emirate licensing authority. It is not one “UAE company” file. Dubai DET and Abu Dhabi DED are separate authorities. ${cite('uae-ner', 'National Economic Register')}</p>
 
-<ul>
-<li><strong>Who buys?</strong> A procurement lead, a technical specifier, a channel partner, a facilities manager, a hotel buyer or a government procurer. FCSC’s 2024 labour market puts 63.8% of employment in services and 34.5% in manufacturing and construction (${cite('fcsc-unified-2025', 'FCSC')}). Those are not one buying committee.</li>
-<li><strong>Where?</strong> Dubai, Abu Dhabi and the northern emirates are not interchangeable catchments. A Dubai free-zone headquarters and a mainland Abu Dhabi operating company do not share one invoice path. The National Economic Register is organised by licensing authority, not as a single “UAE company” file (${cite('uae-ner', 'u.ae NER')}).</li>
-<li><strong>At what price?</strong> A willingness-to-pay range that states whether the quote includes 5% VAT, and whether the buyer is VAT-registered above the AED 375,000 threshold (${cite('fta-vat-law', 'FTA')}; ${cite('fta-vat-obligations', 'FTA VAT obligations')}).</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to if you miss. DET’s 2024 FDI capital mix — hotels and tourism 14%, real estate 14%, software and IT 9.2%, building materials 9%, financial services 6.8% — is a map of demand sectors, not a channel proof (${cite('dubai-fdi-2024', 'DET')}).</li>
-<li><strong>Under which licence?</strong> Mainland DET or DED, a free zone, or a financial free zone. The NER lists separate licensing authorities for Dubai DET, Abu Dhabi DED and the other emirates (${cite('uae-ner', 'u.ae')}).</li>
-</ul>
+<p>At what price? Say whether the quote includes 5% VAT, and whether the buyer is registered. VAT was introduced on 1 January 2018 at a standard rate of 5%. ${cite('mof-vat', 'Ministry of Finance')} Article 3 of the VAT decree-law sets that 5% standard rate. ${cite('fta-vat-law', 'Federal Tax Authority')}</p>
 
-<p>Desktop TAM can frame those questions. Named interviews with the people who hold the budget answer them. Adjacent country pages for the same commercial questions include <a href="/uae-technology-market-research">technology market research in the UAE</a>, <a href="/uae-financial-services-market-research">financial services market research in the UAE</a> and <a href="/uae-energy-market-research">energy market research in the UAE</a>.</p>
+<p>Registration is mandatory when taxable supplies and imports exceeded AED 375,000 in the previous 12 months, or are expected to exceed that threshold in the next 30 days. ${cite('fta-vat-obligations', 'Federal Tax Authority')}</p>
 
-<h2 id="why-decision-makers-are-hard-to-reach">Why are UAE B2B decision-makers hard to reach?</h2>
+<p>Corporate tax is separate. Cabinet Decision No. 116 of 2022 subjects taxable income above AED 375,000 to corporate tax at 9%. ${cite('cabinet-116-ct', 'Cabinet Decision 116 of 2022')}</p>
 
-<p>The UAE is a large, open labour market with a small number of people who can actually sign. That is the recruitment problem. FCSC puts the 2024 population at 11.29 million, with about 200 nationalities and an 81.4% economic participation rate — 93% for males and 56% for females. Unemployment is 1.9%, among the lowest published ILO comparators in that release (${cite('fcsc-unified-2025', 'FCSC')}). A high participation rate is not a sampling frame for chief procurement officers.</p>
+<p>That 9% is a fact about the buyer’s profit. It is not the research fee. State the tax treatment in the questionnaire the same way you state it in the proposal.</p>
 
-<p>Three structural facts make the buyer hard to book.</p>
+<h2 id="the-economy">The economy buyers sit in</h2>
 
-<p>First, the licence universe is wide and split. FCSC’s business register counts 1,388,654 licences and 260,000 new licences in 2024, with 118,000 more in the first seven months of 2025. Activity cells are counted per activity on a licence, so they are not 1.4 million unique companies (${cite('fcsc-unified-2025', 'FCSC')}). A recruiter who treats “UAE businesses” as one panel is mixing free-zone shells, mainland traders and professional firms. The NER is the official place to look up a licence, an activity or a trade name (${cite('uae-ner', 'u.ae NER')}).</p>
+<p>Use official series as the frame. Then replace the frame with named interviews. Do not invent a “UAE business market size.”</p>
 
-<p>Second, Dubai is not the UAE, and the daytime city is not the resident city. Digital Dubai’s end-2025 resident count is 4.580 million, up 7.5%. The same release puts 6.392 million people in the emirate at peak daytime hours, including more than 1.812 million temporarily present (${cite('digital-dubai-pop-2025', 'Digital Dubai')}). An interview with a visiting regional director in a DIFC office is not a Dubai-resident buyer interview. FDI inflows create new buying seats and rotate the people who occupy them (${cite('dubai-fdi-2024', 'DET')}; ${cite('mediaoffice-fdi-2025', 'Dubai Media Office')}).</p>
+<p>FCSC’s Unified UAE Numbers, December 2025, puts the 2024 population at 11.29 million, up 5.7% from 10.68 million in 2023, with about 200 nationalities. The economic participation rate was 81.4%: 93% for males and 56% for females. Unemployment was 1.9%. GDP at constant prices was AED 1.78 trillion. GDP at current prices was AED 2.028 trillion. Constant-price growth was 4%. Non-oil GDP was AED 1.34 trillion, up 5%. Oil and natural gas were 24.5% of the constant-price total. ${cite('fcsc-unified-2025', 'FCSC Unified UAE Numbers')}</p>
 
-<p>Third, the buying seat is a committee, and the calendar is not yours. Private-sector normal hours are 8 hours a day or 48 hours a week, reduced by two hours in Ramadan, with a paid weekly rest of not less than one day set in the contract or work regulation — not a single mandated weekend (${cite('uae-working-hours', 'u.ae')}; ${cite('mohre-rights', 'MOHRE')}). A recruiter who only calls Sunday–Thursday will miss buyers whose weekend is Friday–Saturday, and a recruiter who only calls Monday–Friday will miss the reverse. Gatekeepers, bilingual assistants and “send a deck” filters sit in front of the person who can talk about price. Consumer-panel vendors skip that stack. Named-sample B2B work cannot.</p>
+<p>On 15 June 2025 the Emirates News Agency, citing that FCSC release, reported real GDP of AED 1,776 billion, a 75.5% non-oil share, and the fastest growth in transport and storage (9.6%), construction (8.4%) and financial and insurance activities (7%). Within non-oil GDP, trade contributed 16.8%, manufacturing 13.5%, and financial and insurance activities 13.2%. ${cite('wam-gdp-2024', 'Emirates News Agency, 15 June 2025')}</p>
 
-<p>Compare the method — not the numbers — with <a href="/saudi-arabia-technology-market-research">technology market research in Saudi Arabia</a> if the same sponsor is sequencing UAE and KSA, and with <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services research in Egypt</a> for the same buyer-committee discipline.</p>
+<p>The Central Bank of the UAE’s 2024 annual report estimated real GDP growth at 3.9% in 2024. The same report forecast 4.7% in 2025 and 5.7% in 2026. ${cite('cbuae-2024', 'Central Bank of the UAE')}</p>
 
-<h2 id="official-numbers">Which official numbers should a 2026 B2B brief start from?</h2>
+<p>Those are two labelled growth series. FCSC and WAM report 4% for 2024. The Central Bank’s report estimates 3.9% for 2024 and then forecasts later years. Do not blend them into one rate. The 4.7% and 5.7% figures are that report’s forecasts. They are not a new official out-turn.</p>
 
-<p>Use official series as the frame. Then replace the frame with named interviews. Do not invent a “UAE B2B market size.”</p>
+<p>National accounts are not a demand curve for a named product. A technology brief still has to interview the people who specify the kit. A banking brief still has to sit with people inside that 61-bank universe.</p>
 
-<h3>The economy that buyers sit in</h3>
+<h2 id="licences-and-tax">Licences, Dubai, and the tax on the quote</h2>
 
-<p>FCSC’s Unified UAE Numbers puts 2024 GDP at AED 1.78 trillion at constant prices and AED 2.028 trillion at current prices, with 4% constant-price growth and non-oil GDP of AED 1.34 trillion (+5%). Oil and natural gas are 24.5% of the constant-price total (${cite('fcsc-unified-2025', 'FCSC')}). WAM, citing the same FCSC release on 15 June 2025, reports real GDP of AED 1,776 billion, a 75.5% non-oil share, and fastest growth in transport and storage (+9.6%), construction (+8.4%) and financial and insurance (+7%). Within non-oil GDP, trade contributed 16.8%, manufacturing 13.5% and financial and insurance 13.2% (${cite('wam-gdp-2024', 'WAM')}).</p>
+<p>The licence universe is wide and split. FCSC’s business register counts 1,388,654 licences and 260,000 new licences in 2024, with 118,000 more in the first seven months of 2025. Activity cells are counted per activity on a licence, so they are not 1.4 million unique companies. Trade-activity licences are the largest published cell, at 589,648, ahead of professional and technical activities at 262,891 and construction at 175,593. Owners on the register reached 2,215,877 by July 2025. Finance licences are listed at 53,579, transportation at 48,541, real estate at 40,818, and foreign-company licences at 17,934. ${cite('fcsc-unified-2025', 'FCSC')}</p>
 
-<p>The Central Bank of the UAE’s 2024 annual report estimates real GDP growth at 3.9% in 2024 and forecasts 4.7% in 2025 and 5.7% in 2026, with the 2023 out-turn sourced to FCSC and the 2024–2026 figures to CBUAE (${cite('cbuae-2024', 'CBUAE')}). Write it that way: two labelled series, not one blended growth rate. An entry memo that quotes only the 2026 forecast, and not the 2024 out-turn, is selling a slogan.</p>
+<p>A recruiter who treats “UAE businesses” as one panel is mixing free-zone shells, mainland traders and professional firms. The National Economic Register is the official place to look up a live licence. ${cite('uae-ner', 'u.ae')}</p>
 
-<p>Those are national accounts. They are not a demand curve for a named SKU. A technology brief still has to interview the people who specify software, data centres or industrial kit — see <a href="/uae-technology-market-research">UAE technology market research</a>. A banking or insurance brief still has to sit with the 61 local, Gulf and foreign banks and 557 branches on FCSC’s 2024 count (${cite('fcsc-unified-2025', 'FCSC')}) — see <a href="/uae-financial-services-market-research">UAE financial services market research</a>.</p>
+<p>Dubai is not the UAE, and the daytime city is not the resident city. Digital Dubai’s end-2025 resident count is 4.580 million, up 7.5%. The same release puts 6.392 million people in the emirate at peak daytime hours, including more than 1.812 million temporarily present. ${cite('digital-dubai-pop-2025', 'Digital Dubai')}</p>
 
-<h3>The investment and licence frame</h3>
+<p>An interview with a visiting regional director is not a Dubai-resident buyer interview.</p>
 
-<p>DET’s Dubai FDI Monitor is the official file for capital into the emirate. In 2024 Dubai attracted an estimated AED 52.3 billion (USD 14.24 billion) of FDI capital, up 33% from AED 39.26 billion, the highest value since 2020 in that report. Announced projects reached 1,826 (+11%). Greenfield projects reached 1,117, ranking Dubai first globally for greenfield project attraction for a fourth year on fDi Markets, with a 6.2% global share and 55% of Middle East greenfield projects in that ranking. Estimated jobs created through FDI were 58,680, up 31% from 44,745. D33, launched in January 2023, aims to double Dubai’s GDP and sets an FDI pipeline of AED 650 billion over ten years (${cite('dubai-fdi-2024', 'DET')}; ${cite('mediaoffice-fdi-2025', 'Dubai Media Office')}).</p>
+<p>Dubai’s Department of Economy and Tourism reported an estimated AED 52.3 billion of FDI capital in 2024, or USD 14.24 billion, up 33% from AED 39.26 billion in 2023. The report calls that the highest value since 2020 in its series. Announced projects reached 1,826, up 11%. Greenfield projects reached 1,117. Estimated jobs created through FDI were 58,680, up 31% from 44,745. D33, launched in January 2023, aims to double Dubai’s GDP and sets an FDI pipeline of AED 650 billion over ten years. Capital by sector in 2024 was led by hotels and tourism at 14% and real estate at 14%, then software and IT services at 9.2%, building materials at 9%, and financial services at 6.8%. Projects by source were led by the United Kingdom at 17%, India at 15%, and the United States at 14%. ${cite('dubai-fdi-2024', 'Dubai FDI Monitor')}</p>
 
-<p>Capital by sector in 2024 was led by hotels and tourism (14%) and real estate (14%), then software and IT services (9.2%), building materials (9%) and financial services (6.8%). Projects by source were led by the United Kingdom (17%), India (15%) and the United States (14%) (${cite('dubai-fdi-2024', 'DET')}). Those shares tell a sponsor where new buying seats are appearing. They do not tell you whether a named facilities manager will sign your invoice.</p>
+<p>On 9 March 2025 the Dubai Media Office, citing DET and fDi Markets, said Dubai ranked as the world’s top destination for greenfield FDI for a fourth year, with a 6.2% global share and 55% of Middle East greenfield projects in that ranking. ${cite('mediaoffice-fdi-2025', 'Dubai Media Office, 9 March 2025')}</p>
 
-<p>On the licence side, FCSC’s register is the federal frame: 1,388,654 licences, 2,215,877 owners to July 2025, 260,000 new licences in 2024. Finance licences are listed at 53,579, transportation at 48,541, real estate at 40,818, foreign-company licences at 17,934 (${cite('fcsc-unified-2025', 'FCSC')}). Lookup of a live licence sits on the National Economic Register, which integrates emirate licensing authorities including Dubai DET and Abu Dhabi DED (${cite('uae-ner', 'u.ae NER')}). A sample plan that cannot say which of those cells it is drawing from is not a B2B sample plan.</p>
+<p>Those shares show where new buying seats are appearing. They do not show whether a named facilities manager will sign your invoice.</p>
 
-<h3>The tax that sits on the quote</h3>
+<p>Commercial property supplies are taxable at 5%. ${cite('fta-vat-law', 'VAT decree-law')}</p>
 
-<p>VAT was introduced on 1 January 2018 at a standard rate of 5%. The Decree-Law imposes that 5% on any supply or import under Article 2, unless a zero-rate or exemption applies. Commercial property supplies are taxable at 5%. A business must register when taxable supplies and imports exceeded AED 375,000 in the previous 12 months, or are expected to exceed that threshold in the next 30 days (${cite('mof-vat', 'Ministry of Finance')}; ${cite('fta-vat-law', 'FTA')}; ${cite('fta-vat-obligations', 'FTA')}).</p>
+<p>If the research supplier is VAT-registered, ask whether 5% sits on the research invoice. ${cite('mof-vat', 'Ministry of Finance')}</p>
 
-<p>Corporate tax is 9% on taxable income above AED 375,000 in the tax period (${cite('cabinet-116-ct', 'Cabinet Decision 116/2022')}). That is a buyer P&amp;L fact, not a research-fee fact. A B2B price exercise that pastes a US or UK ex-tax ASP onto a UAE invoice is the same error as pasting a consumer shelf price onto a tender. State the tax treatment in the instrument.</p>
+<h2 id="how-to-reach">How to reach the person who can sign</h2>
 
-<h2 id="methods">Which methods reach the buying committee?</h2>
+<p>A high participation rate is not a list of chief procurement officers. The buying seat is a committee. Private-sector normal hours are 8 hours a day or 48 hours a week, reduced by two hours in Ramadan. ${cite('uae-working-hours', 'u.ae')}</p>
 
-<p>The method follows the decision. If the committee needs to know whether a named buyer will specify you, you interview that buyer. If it needs a price band, you run a structured trade-off with people who actually see invoices. If it needs a channel map, you interview the distributor and the specifier, not one or the other. A B2B market research company Dubai that leads with an online consumer panel is answering a different question.</p>
+<p>MOHRE’s worker-rights note covers the maximum normal hours and a weekly rest. ${cite('mohre-rights', 'MOHRE')}</p>
 
-<table>
-<thead><tr><th>Decision the committee owes itself</th><th>Method that can prove it</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Will this role specify us?</td><td>Named in-depth interviews with specifiers and budget holders, in Arabic and/or English, screened on category responsibility</td><td>A consumer CAWI with a “work in this industry” quota</td></tr>
-<tr><td>At what price, including 5% VAT?</td><td>Structured trade-off or invoice evidence with VAT stated (${cite('fta-vat-law', 'FTA')})</td><td>A US or UK ASP pasted onto a UAE quote</td></tr>
-<tr><td>Which emirate and which licence?</td><td>Quotas by Dubai, Abu Dhabi and northern emirates, and by mainland versus free zone (${cite('uae-ner', 'NER')})</td><td>A “UAE” average from one free-zone cluster</td></tr>
-<tr><td>Who else is on the committee?</td><td>Snowball from the named buyer to the specifier, user and payer, with each seat coded</td><td>One interview treated as the organisation</td></tr>
-<tr><td>What will they switch to if we miss?</td><td>A substitution item and a named competitive set</td><td>A brand-list awareness question from a B2C tracker</td></tr>
-</tbody>
-</table>
+<p>The paid weekly rest is not less than one day. It is set in the contract or the work regulation. It is not one mandated weekend for every firm. A recruiter who only calls one weekday pattern will miss buyers on the other pattern.</p>
 
-<p>Those five tests are the study. Everything else — PESTLE pages, Vision 2031 slogans, a photograph of a marina — is context. Context does not repay a launch budget. A first commercial file is typically 20 to 40 named depth interviews, bilingual, with a source table that separates official series (FCSC, DET, FTA), supplier quotations and fieldwork. Add a structured price or substitution wave only after the seats are named.</p>
+<p>Write the universe in one sentence before anyone is screened. For a bank brief, that sentence can start from the 61 banks and 557 branches on the 2024 register, then name wholesale versus retail. ${cite('fcsc-unified-2025', 'FCSC')}</p>
 
-<p>Qualitative depth is the default for hard-to-reach seats: there is no reliable C-suite panel equivalent to a grocery panel. Mini-groups of channel partners work when the decision is distribution. CATI still reaches industrial buyers who will not open a survey link. CAWI works for named middle-management samples once role, spend and emirate are locked. A depth first wave, then a short structured wave, keeps the committee’s language in the questionnaire.</p>
+<p>Screen on proofs, not on a job-title list. Licence type, emirate, and mainland or free zone. ${cite('uae-ner', 'National Economic Register')}</p>
 
-<p>ISO 20252:2026 is the current vocabulary and service-requirements standard for market, opinion and social research, including insights and data analytics. The Market Research Society records that it replaces the 2019 edition, with certification to the 2026 standard mandatory from September 2029 (${cite('iso-20252-2026', 'ISO 20252:2026')}; ${cite('mrs-iso-20252', 'MRS')}). It is a quality-system claim, not a finding. Do not treat the logo as a substitute for a named sample plan.</p>
+<p>Then the seat: specifies, uses, pays, or all three. Then a budget, a tender, a shortlist, or a signature in the last 12 months. Then the language of the interview. Then months in the UAE seat, because project inflows rotate people. ${cite('dubai-fdi-2024', 'DET')}</p>
 
-<p>ICC/ESOMAR’s 2025 Code requires researchers to identify themselves promptly, to make participation voluntary and based on clear information about the purpose and nature of the research, and to seek agreement before re-contact except for quality control, adverse-event reporting or law (${cite('esomar-2025', 'ICC/ESOMAR')} ). A mystery approach that hides the research purpose fails that code. Direct marketing dressed as research fails it too.</p>
+<p>The method follows the decision. If the committee needs to know whether a named buyer will specify you, interview that buyer. If it needs a price band, talk to people who see invoices, and state the VAT. ${cite('fta-vat-law', 'Federal Tax Authority')}</p>
 
-<p>If the study processes personal data of people in the UAE, Federal Decree-Law No. 45 of 2021 applies. Processing without the owner’s consent is prohibited except in listed cases. Consent must be clear, simple, unambiguous and withdrawable. Article 17 gives the data subject the right to object to processing intended for statistical surveys unless the processing is necessary to serve the public interest (${cite('uae-pdpl-portal', 'u.ae')}; ${cite('uae-pdpl-text', 'PDPL')} ). Write the legal basis into the method note. Client-supplied contact lists are not a free pass; they are a consent problem until proven otherwise.</p>
+<p>Quota by emirate, and by mainland versus free zone. One interview is not the organisation. A consumer awareness list is not a substitution question.</p>
 
-<h2 id="recruitment">How should you recruit named B2B respondents in the UAE?</h2>
+<p>ISO 20252:2026 is the vocabulary and service-requirements standard for market, opinion and social research, including insights and data analytics. ${cite('iso-20252-2026', 'ISO')}</p>
 
-<p>Recruitment is the product. The questionnaire is the easy part. A B2B market research UAE sample is a list of people who can be shown to hold the seat, not a panel of people who clicked “I work in construction.”</p>
+<p>The Market Research Society says the 2026 edition replaces the 2019 edition, and that certification to the 2026 standard is mandatory from September 2029. ${cite('mrs-iso-20252', 'Market Research Society')}</p>
 
-<p>Start from a named universe. For a technology brief that is “companies in Dubai that bought cloud or data-centre services in the last 12 months, with the person who specified or signed.” For an industrial brief that is “mainland and free-zone manufacturers in the FCSC manufacturing-activity cell, with the plant or procurement lead.” For a bank brief that is “the 61 banks and 557 branches on the 2024 register, sampled by wholesale versus retail mandate” (${cite('fcsc-unified-2025', 'FCSC')}). If the universe cannot be written in one sentence, the recruiter cannot screen it.</p>
+<p>The logo is a quality-system claim. It is not a finding. It is not a substitute for a named sample plan.</p>
 
-<p>Then write the screener as a set of proofs, not a job-title list:</p>
-<ul>
-<li>organisation: licence type, emirate, mainland or free zone, category of activity (${cite('uae-ner', 'NER')});</li>
-<li>seat: specifies, uses, pays, or all three;</li>
-<li>authority: a budget, a tender, a shortlist or a signature in the last 12 months;</li>
-<li>language of interview: Arabic, English, or bilingual;</li>
-<li>tenure: months in the UAE seat, because FDI project inflows rotate people (${cite('dubai-fdi-2024', 'DET')}).</li>
-</ul>
+<h2 id="interview-rules">Rules for the interview</h2>
 
-<p>Outreach has to identify the research organisation at first contact, state that participation is voluntary, and say what the interview is for (${cite('esomar-2025', 'ICC/ESOMAR')} ). That usually means a named recruiter, a bilingual invitation, and a gatekeeper path through an executive assistant. It does not mean scraping a professional network and sending a disguised sales email. It does not mean dropping a consumer-panel invitation into a LinkedIn in-box and calling the completes “C-suite.”</p>
+<p>The 2025 ICC/ESOMAR Code requires researchers to identify themselves promptly. Participation must be voluntary and based on clear information about the purpose of the research. Re-contact needs agreement, except for quality control, adverse-event reporting, or the law. ${cite('esomar-2025', 'ICC/ESOMAR')}</p>
 
-<p>Hard-to-reach seats in this market typically need a mix of:</p>
-<ul>
-<li>client-permitted named lists, with a documented PDPL basis (${cite('uae-pdpl-text', 'PDPL')} );</li>
-<li>recruiter databases built from public registers and prior consented research, not from purchased consumer files;</li>
-<li>referral from a completed interview to the next seat on the same committee, with a fresh consent;</li>
-<li>appointment setting inside the respondent’s own working week, including Ramadan hours (${cite('uae-working-hours', 'u.ae')}; ${cite('mohre-rights', 'MOHRE')}).</li>
-</ul>
+<p>A mystery approach that hides the research purpose fails that code. A sales email dressed as research fails it too. Incentives should be disclosed and should match the time. A client discount is marketing, not research.</p>
 
-<p>Incentives must be disclosed, proportionate to the time and the seniority of the seat, and not a client discount or a sales offer — those are marketing, not research (${cite('esomar-2025', 'ICC/ESOMAR')} ). A chief procurement officer and a plant supervisor do not share one incentive. The incentive is a token for time. It is not a fee for a preferred answer.</p>
+<p>If the study processes personal data of people in the UAE, Federal Decree-Law No. 45 of 2021 applies. It came into force on 2 January 2022. ${cite('uae-pdpl-portal', 'u.ae')}</p>
 
-<p>Quality control is where B2B files usually break. BioNixus replaces non-qualifying respondents at no charge, holds a minimum sample in the proposal, re-fields at our cost if a quota cell fails, and credits a pilot fee against the main study. Those are scope guarantees. They are not a guarantee that the findings are accurate. Record job title, category responsibility, emirate, language and a recording or detailed notes against every complete. If a complete cannot be shown to match the screener, it does not go in the file.</p>
+<p>Articles 4, 6 and 17 of the law cover the processing rules, consent, and the data subject’s rights. Processing without consent is prohibited except in listed cases. Consent must be clear, simple, unambiguous and able to be withdrawn. Article 17 gives the data subject the right to object to processing intended for statistical surveys, unless the processing is necessary to serve the public interest. ${cite('uae-pdpl-text', 'Personal data law')}</p>
 
-<p>Dubai versus Abu Dhabi is the quota most Western briefs skip. Digital Dubai’s 4.580 million resident count is a Dubai number (${cite('digital-dubai-pop-2025', 'Digital Dubai')}). FCSC’s 11.29 million is a UAE number (${cite('fcsc-unified-2025', 'FCSC')}). A study that interviews 30 people in Dubai Internet City and labels the result “UAE B2B” is a Dubai convenience sample. Put Abu Dhabi in the first proposal if the first warehouse, the first tender or the first bank relationship sits there. Put the northern emirates in if the first plant sits there. Do not add them as a footnote after fieldwork.</p>
+<p>Write the legal basis into the method note. A client-supplied contact list is not a free pass.</p>
 
-<h2 id="costs">What does B2B market research in the UAE cost?</h2>
+<p>Replace completes that fail the screener. Record the job, the category responsibility, the emirate and the language against every complete. A Dubai Internet City convenience sample is not a UAE file. Digital Dubai’s 4.580 million is a Dubai resident count. ${cite('digital-dubai-pop-2025', 'Digital Dubai')}</p>
 
-<p>BioNixus prices custom B2B programmes from $10,000 to $60,000, depending on sample, emirates, mode and whether the output is a stand-alone decision file or a chapter inside a wider entry or feasibility study. That is the only price this article will quote, because it is the price we will put in a proposal. Syndicated “UAE B2B market reports” and unpublished rate cards are not a substitute for a scoped primary study, and they are not cited here.</p>
+<p>FCSC’s 11.29 million is a UAE number. ${cite('fcsc-unified-2025', 'FCSC')}</p>
 
-<p>What moves a brief inside that band is seniority of the seat, number of completes, mode, language, emirate and licence mix, and VAT on the research invoice. A named C-level or procurement lead costs more than a category manager. Twenty depths in one emirate is a different job from 80 structured interviews across Dubai, Abu Dhabi and Sharjah. Dual Arabic–English instruments are not optional if the specifier and the payer do not share a language. One free-zone cluster is cheaper than a mainland-plus-free-zone design that respects the NER split (${cite('uae-ner', 'NER')}). If the supplier is UAE VAT-registered, 5% sits on the fee for taxable supplies (${cite('mof-vat', 'Ministry of Finance')}; ${cite('fta-vat-law', 'FTA')}). Ask for the tax treatment in the proposal, the same way you ask the buyer’s tax treatment in the instrument.</p>
+<p>Put Abu Dhabi in the first proposal if the first warehouse, the first tender, or the first bank relationship sits there.</p>
 
-<p>A $10,000 brief is typically a focused qualitative file: a defined buyer, one or two emirates, a short interview guide, and a decision note. A $60,000 brief is typically a mixed-method file: named depths plus a structured wave, more than one emirate, a price module, and a source table a credit committee can audit. Neither number is a market-size forecast, and neither is a guarantee of a finding.</p>
+<h2 id="how-to-choose">How to choose a firm</h2>
 
-<p>Do not confuse research cost with the cost of being wrong. DET’s 2024 FDI capital into Dubai was AED 52.3 billion (${cite('dubai-fdi-2024', 'DET')}). Entering on a consumer panel and a national TAM defers the named-buyer question until after the lease, the hire or the inventory is committed.</p>
-
-<p>The proposal should state, in writing: the sample, the emirates, the language, the mode, the timetable, the deliverables, the VAT treatment, and the guarantees — replacement of non-qualifying respondents, the minimum sample, re-field at our cost, and a credited pilot. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<h2 id="choose-b2b-market-research-company-dubai">How should you choose a B2B market research company Dubai?</h2>
-
-<p>Ask every firm, including BioNixus, to answer these questions in writing before you sign. A B2B market research company Dubai that cannot answer them is a fieldwork broker with a skyline on the website.</p>
+<p>A B2B market research company Dubai should answer these questions in writing before you sign.</p>
 <ol>
 <li>Which official series will you use for population, GDP, licences, FDI and tax, and what is the date of each series?</li>
-<li>Will the study report by emirate and by mainland versus free zone, or only as “UAE”?</li>
-<li>How many named interviews or surveys will you complete, in which language, and with which role quotas?</li>
-<li>How will you prove that each complete holds the seat — and what happens if a complete fails the screener?</li>
-<li>Where will personal data sit, and how do you meet the PDPL consent and objection rules, including Article 17 on statistical surveys (${cite('uae-pdpl-text', 'PDPL')})?</li>
-<li>Will you identify BioNixus or your legal entity at first contact, and keep participation voluntary, as the 2025 ICC/ESOMAR Code requires (${cite('esomar-2025', 'ICC/ESOMAR')} )?</li>
-<li>What is guaranteed in writing — scope, timing and replacements, or the findings themselves?</li>
+<li>Will the study report by emirate, and by mainland versus free zone, or only as “UAE”?</li>
+<li>How many named interviews will you complete, in which language, and with which role quotas?</li>
+<li>How will you prove that each complete holds the seat, and what happens if a complete fails the screener?</li>
+<li>Where will personal data sit, including the objection rule on statistical surveys?</li>
+<li>Will you identify the research organisation at first contact?</li>
+<li>What is covered in writing: the scope, the timing and the replacements, or the findings?</li>
 </ol>
 
-<p>Local incorporation houses that rank for “company setup Dubai” are often strong at DET paperwork. They are not automatically strong at demand evidence. A syndicated vendor describes last year’s sales. A primary-research firm proves whether a named buyer will specify you. BioNixus does the second job and will work alongside your existing counsel.</p>
+<p>An incorporation house files an activity. A syndicated vendor describes last year’s sales. A primary-research firm has to show whether a named buyer will specify you.</p>
 
-<p>Dubai as a field office is not the same as Dubai as a claimed headquarters. BioNixus fields UAE B2B work from the Dubai field office at Thuraya Tower 1, 5th Floor, Al Sufouh 2, with regional leadership in Sheridan, London and Cairo. Ask every shortlisted B2B market research company Dubai whether the recruiters, the moderators and the sample sit in the UAE, and whether Abu Dhabi is a quota or an afterthought.</p>
+<p>Dubai as a field office is not the same as Dubai as a claimed headquarters. Ask whether the recruiters and the sample sit in the UAE, and whether Abu Dhabi is a quota or an afterthought.</p>
 
-<p>Compare partners on the <a href="/insights/top-market-research-companies-uae-2026">2026 ranking of market research companies in the UAE</a>. Related industry reading on this hub includes <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">market entry research for Saudi Arabia</a>, <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a>, <a href="/bionixus-industries/insights/kantar-alternative-middle-east">a Kantar alternative in the GCC</a>, <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a> and <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services research in Egypt</a>. See <a href="/market-research-by-industry">market research by industry</a>.</p>
+<h2 id="who-fields">Who fields the work</h2>
 
-<h2 id="why-bionixus">Why brief BioNixus for B2B market research in the UAE?</h2>
+<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That covers the scope, the timing, replacement of non-qualifying respondents, a minimum sample, and re-field if an agreed quota is missed. It does not cover the accuracy of a forecast.</p>
 
-<p>BioNixus is not a company-formation house and not a syndicated data vendor. It is a primary market research firm that writes the chapter a US, UK or European commercial committee can actually interrogate. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
+<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Cairo in Sheikh Zayed. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
 
-<p>US teams brief the Sheridan headquarters. UK and European teams brief London. Fieldwork for the UAE is designed with the Dubai field office and bilingual Arabic–English teams. To brief B2B market research UAE, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom and at the Dubai field office call <a href="tel:+447727666682">+44 7727 666682</a>.</p>`;
+<p>US teams brief Sheridan. UK and European teams brief London. UAE fieldwork is designed with the Dubai field office and bilingual Arabic–English teams. To brief a study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom and at the Dubai field office call <a href="tel:+447727666682">+44 7727 666682</a>.</p>`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -400,39 +355,39 @@ ${REFERENCES_HTML}`;
 
 export const UAE_B2B_MR_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does B2B market research UAE have to prove?',
+    question: 'What does a UAE business study have to prove?',
     answer:
-      'It has to prove who specifies and who pays, in which emirate, at what price including 5% VAT, through which channel and under which licence, with dated official series and named interviews. A national TAM slide is not B2B market research UAE. Consumer panels do not reach the buying committee.',
+      'Who specifies and who pays, in which emirate, at what price including 5% VAT where the supply is taxable, and under which licence. A national market-size slide is not that proof. A consumer panel does not reach the buying committee.',
   },
   {
-    question: 'Why are UAE B2B decision-makers hard to reach?',
+    question: 'Why are the buyers hard to reach?',
     answer:
-      'The licence universe is large and split across emirates and free zones, Dubai’s daytime population is not its resident count, and the buying seat is a committee behind gatekeepers. FCSC counted 1,388,654 licences in its Unified UAE Numbers; Digital Dubai counted 4.580 million Dubai residents and 6.392 million people present at peak daytime hours at end-2025. A convenience sample in one free zone is not a UAE B2B file.',
+      'The licence register is large and split across emirates and free zones. FCSC counted 1,388,654 licences. Digital Dubai counted 4.580 million Dubai residents at the end of 2025, and 6.392 million people present at peak daytime hours. The buying seat is a committee. A convenience sample in one free zone is not a UAE file.',
   },
   {
-    question: 'How do you recruit named B2B respondents in the UAE?',
+    question: 'How do you recruit named respondents?',
     answer:
-      'Write a universe in one sentence, screen on organisation, seat, authority, language and tenure, identify the research organisation at first contact, and keep participation voluntary under the 2025 ICC/ESOMAR Code. Use consented named lists, recruiter databases and committee referrals. Do not treat a consumer panel as C-suite. Replace completes that fail the screener.',
+      'Write the universe in one sentence. Screen on the organisation, the seat, the authority, the language and the tenure. Identify the research organisation at first contact. Keep participation voluntary under the 2025 ICC/ESOMAR Code. Replace completes that fail the screener.',
   },
   {
-    question: 'Which methods should a 2026 UAE B2B brief use?',
+    question: 'Which method should the brief use?',
     answer:
-      'Named in-depth interviews with specifiers and budget holders are the default for hard-to-reach seats. Add a structured price or substitution wave only after the seats are named. Quota by emirate and by mainland versus free zone. State VAT in the price module. ISO 20252:2026 is the current quality-system standard; it is not a finding.',
+      'Named interviews with the people who specify and the people who pay are the default for hard-to-reach seats. Add a structured price question only after those seats are named. Quota by emirate and by mainland versus free zone. State VAT in the price module. ISO 20252:2026 is the current quality-system standard. It is not a finding.',
   },
   {
-    question: 'How much does custom B2B market research cost with BioNixus?',
+    question: 'How much does custom work cost with BioNixus?',
     answer:
-      'Custom B2B programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, emirates, mode, language and whether the output is a stand-alone file or a chapter inside a wider study. The scope, timing, minimum sample, replacement of non-qualifying respondents and re-field are guaranteed in writing. Findings are not guaranteed. Ask whether 5% VAT sits on the research invoice.',
+      'Custom programmes are priced from $10,000 to $60,000. The price moves with the sample, the emirates, the mode and the language. The scope, the timing, the minimum sample, replacement of non-qualifying respondents and re-field are guaranteed in writing. The findings are not part of that promise. Ask whether 5% VAT sits on the invoice.',
   },
   {
-    question: 'How should you choose a B2B market research company Dubai?',
+    question: 'How should you choose a firm in Dubai?',
     answer:
-      'Ask for the official series and their dates, emirate and licence quotas, named role completes, screener proofs, PDPL basis, ESOMAR identification at first contact, and what is guaranteed in writing. Incorporation houses file activities. Syndicated vendors describe last year’s sales. A primary-research firm proves whether a named buyer will specify you. BioNixus does the third job from a Dubai field office, not as a claimed headquarters.',
+      'Ask for the official series and their dates, emirate and licence quotas, named role completes, screener proofs, the personal-data basis, and identification at first contact. Ask what is guaranteed in writing. An incorporation house files activities. A primary-research firm has to prove whether a named buyer will specify you.',
   },
   {
-    question: 'Why brief BioNixus from Sheridan or London rather than a Dubai setup firm?',
+    question: 'Why brief BioNixus from Sheridan or London?',
     answer:
-      'Incorporation houses file the activity. BioNixus proves demand. US teams brief the Sheridan headquarters; UK and European teams brief London EC1V 2NX; fieldwork is designed with the Dubai field office at Thuraya Tower 1, Al Sufouh 2. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'US teams brief the Sheridan headquarters. UK and European teams brief London EC1V 2NX. Fieldwork is designed with the Dubai field office. Forty client reviews sit on the firm’s public profiles. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. The tagline is “Guaranteed in writing.” That promise is the scope, not the accuracy of a forecast.',
   },
 ];
 

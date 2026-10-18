@@ -1,6 +1,6 @@
 /**
  * Creates or syncs Sanity blogPost
- * "Chinese Brands in Egypt and North Africa: What to Research"
+ * "Chinese Companies in Egypt: What to Research First"
  * on /bionixus-industries/insights/chinese-companies-egypt-market-research
  *
  * Author is always Armela Belba (WESTERN_AUTHORS id).
@@ -26,17 +26,18 @@ const COVER_FILENAME = `${SLUG}-cover.jpg`;
 const HERO_FILENAME = `${SLUG}-hero.jpg`;
 const AUTHOR_NAME = 'Armela Belba';
 const AUTHOR_ID = '4e924019-dd92-48cf-899b-3bd63c266dd3';
-const ARTICLE_H1 = 'Chinese Brands in Egypt and North Africa: What to Research';
+const ARTICLE_H1 = 'Chinese Companies in Egypt: What to Research First';
 const ARTICLE_EXCERPT =
-  'A sourced 2026 guide to Chinese companies Egypt market research: what a mainland HQ must prove on Egyptian demand, 14% VAT, cities, channels, GAFI or SCZone vehicles and outbound-investment paperwork before it remits capital to Egypt or the Maghreb.';
-const SEO_META_TITLE = 'Chinese Companies Egypt Market Research: 2026 Guide';
+  'A plain guide for Chinese companies entering Egypt: who will buy, in which city, at what price after tax, and which licence to use before sending money from China.';
+const SEO_META_TITLE = 'Chinese Companies Egypt Market Research: Plain Guide';
 const SEO_META_DESCRIPTION =
-  'Chinese companies Egypt market research for Cairo and North Africa brands: demand, 14% VAT, GAFI licence and SCZone proof before the HQ remits capital.';
+  'Chinese companies Egypt market research in plain steps: who will buy, which city, the price after 14% VAT, and which licence to use before you send money.';
 const COVER_ALT =
   'BioNixus navy and gold cover: Chinese companies Egypt market research — 2026 guide to brands in Egypt and North Africa';
 const HERO_ALT =
   'Navy and gold BioNixus artwork for Chinese companies Egypt market research: Egypt demand, licence, cities and channel';
 const PUBLISHED_AT = '2026-10-17T12:00:00.000Z';
+const UPDATED_AT = '2026-10-18T13:30:00.000Z';
 const TAGS = [
   'Chinese companies',
   'Egypt',
@@ -189,7 +190,7 @@ function buildSharedContent(article) {
     ctaSection: {
       title: 'Planning research for a China-to-Egypt market entry?',
       description:
-        'BioNixus scopes primary demand research for Chinese companies Egypt market research briefs. Custom work is $10,000–$60,000. The scope is guaranteed in writing.',
+        'BioNixus scopes buyer interviews for Chinese companies entering Egypt. Custom work is $10,000 to $60,000. The scope is guaranteed in writing.',
       buttonText: 'Request a proposal',
       buttonUrl: 'https://www.bionixus.com/contact',
     },
@@ -273,7 +274,7 @@ async function main() {
     'seo.noIndex': false,
     'openGraph.ogTitle': SEO_META_TITLE,
     'openGraph.ogDescription': SEO_META_DESCRIPTION,
-    updatedAt: PUBLISHED_AT,
+    updatedAt: UPDATED_AT,
   };
 
   if (syncExisting) {

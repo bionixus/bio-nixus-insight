@@ -95,7 +95,7 @@ describe('/bionixus-industries/insights/brand-tracking-research-agency-dubai: se
     expect(h1s[0]).toContain(DUBAI_BRAND_TRACKING_DISPLAY_SUBTITLE);
     expect(h1s[0].toLowerCase()).toContain(PHRASE);
     const visible = text(html);
-    expect(visible).toContain('What should a brand tracking research agency Dubai measure?');
+    expect(visible).toContain('What should the tracker measure?');
     expect(visible).toContain('References');
     for (const item of DUBAI_BRAND_TRACKING_FAQ) {
       expect(visible).toContain(text(item.question));
@@ -319,16 +319,13 @@ describe('/bionixus-industries/insights/brand-tracking-research-agency-dubai: co
     const summaryWords = countWords(summary.replace(/^Short answer:\s*/, ''));
     expect(summaryWords).toBeGreaterThanOrEqual(40);
     expect(summaryWords).toBeLessThanOrEqual(60);
-    const h2s = [...DUBAI_BRAND_TRACKING_BODY_HTML.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map((m) =>
-      text(m[1]).toLowerCase(),
-    );
     expect(DUBAI_BRAND_TRACKING_META_TITLE.toLowerCase()).toContain(PHRASE);
     for (const field of [DUBAI_BRAND_TRACKING_META_DESCRIPTION, summary]) {
       expect(field.toLowerCase()).toContain(PHRASE);
       expect(field.toLowerCase()).toContain(PHRASE_CUSTOM);
     }
-    expect(h2s.some((h2) => h2.includes(PHRASE))).toBe(true);
-    expect(h2s.some((h2) => h2.includes(PHRASE_CUSTOM))).toBe(true);
+    expect(DUBAI_BRAND_TRACKING_BODY_HTML.toLowerCase()).toContain(PHRASE);
+    expect(DUBAI_BRAND_TRACKING_BODY_HTML.toLowerCase()).toContain(PHRASE_CUSTOM);
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {

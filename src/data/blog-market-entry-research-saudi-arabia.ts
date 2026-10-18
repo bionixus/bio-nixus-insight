@@ -43,15 +43,15 @@ export const SAUDI_MARKET_ENTRY_META_DESCRIPTION =
   'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.';
 
 export const SAUDI_MARKET_ENTRY_DISPLAY_TITLE =
-  'Market Entry Research for Saudi Arabia: A Non-Pharma Playbook';
+  'What to Research Before Entering Saudi Arabia';
 
 export const SAUDI_MARKET_ENTRY_DISPLAY_SUBTITLE =
-  'What US, UK and European firms must validate before they enter';
+  'Name the buyer, the city, the price, and the licence before you send money';
 
 export const SAUDI_MARKET_ENTRY_BREADCRUMB_LABEL = 'Market entry research Saudi Arabia';
 
 export const SAUDI_MARKET_ENTRY_EXCERPT =
-  'A sourced 2026 playbook for market entry research Saudi Arabia: what US, UK and European firms must prove on demand, MISA registration, cities, channels and price before they commit capital.';
+  'A plain guide for US, UK, and European firms looking at Saudi Arabia: which official figures to quote, and which licence and price questions to settle first.';
 
 export const SAUDI_MARKET_ENTRY_PUBLISHED_ISO = '2026-10-13T12:00:00.000Z';
 export const SAUDI_MARKET_ENTRY_UPDATED_ISO = '2026-10-13T12:00:00.000Z';
@@ -217,165 +217,80 @@ export function countWords(html: string): number {
 }
 
 export const SAUDI_MARKET_ENTRY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What does market entry research Saudi Arabia have to answer?', anchor: 'what-entry-research-answers' },
-  { heading: 'Why US, UK and European firms cannot copy a GCC playbook', anchor: 'western-firms-cannot-copy-gcc' },
-  { heading: 'Official numbers that frame a 2026 entry brief', anchor: 'official-numbers' },
-  { heading: 'What MISA registration actually requires', anchor: 'misa-registration' },
-  { heading: 'When an RHQ is the entry vehicle — and when it is not', anchor: 'rhq-vehicle' },
-  { heading: 'The five proofs an entry study must deliver', anchor: 'five-proofs' },
-  { heading: 'How the brief changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a market entry research partner', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to settle before you send money', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'What the June 2026 guide actually asks for', anchor: 'registration' },
+  { heading: 'A regional headquarters is a different vehicle', anchor: 'rhq' },
+  { heading: 'How the questions change by product', anchor: 'by-sector' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const SAUDI_MARKET_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Market entry research Saudi Arabia must prove who will buy, in which cities, at what price, through which channel and under which MISA activity before a US, UK or European firm commits capital. A national TAM slide is not entry research. Primary interviews make the brief usable.</p>`;
+export const SAUDI_MARKET_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p>Market entry research Saudi Arabia names the buyer, the city, the price after 15% VAT, and the licence before a US, UK, or European firm sends money. A population total is not an order. Interviews show who will pay the invoice.</p>`;
 
-const NARRATIVE_HTML = `<p>US, UK and European commercial teams often arrive in the Kingdom with a Gulf deck and a single “KSA” TAM. That is not market entry research Saudi Arabia. Entry research has to name the buyer, the city, the price, the channel and the MISA activity before capital, a lease or a hire is committed. This playbook sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma briefs — retail, technology, hospitality, financial services, industrials — not for SFDA or NUPCO files.</p>
+const NARRATIVE_HTML = `<p>US, UK, and European firms often arrive with one national market size and a plan to “get a licence.” Saudi Arabia is one country, and the cities inside it are different places to sell. Before money is sent, name who will buy, in which city, at what price after tax, and which activity will be registered. This page is a plain guide to market entry research Saudi Arabia. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for consumer and industrial brands, not for medicines.</p>
 
-<p>Search results for the phrase are a mix of incorporation shops and generic MENA consultancies. Few of those pages say how demand was measured. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>A population total and a licence are the frame. Interviews show who will pay. Related pages cover <a href="/saudi-arabia-retail-market-research">retail research in Saudi Arabia</a> and <a href="/uae-retail-market-research">retail research in the UAE</a>. A Dubai mall intercept is not a Riyadh household.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 Saudi entry brief can cite, October 2026</strong></p>
+<h2 id="what-to-prove">What to settle before you send money</h2>
 <ul>
-<li><strong>35.3 million</strong> people at mid-2024, or 35,300,280 on the national statistics portal: about 19.6 million Saudis (55.6%) and about 15.7 million non-Saudis (44.4%), growing 4.7% from mid-2023 (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}).</li>
-<li><strong>SAR 119 billion</strong> of FDI inflows in 2024, up 24% from SAR 96 billion in 2023. Outflows were SAR 39 billion. Net flows were SAR 80 billion. The FDI stock reached SAR 977 billion. The United States recorded the largest net inflow (SAR 11 billion), ahead of the UAE (SAR 9 billion), France (SAR 4 billion) and the Netherlands (SAR 2 billion) (${cite('gastat-fdi-2024', 'GASTAT')}).</li>
-<li><strong>SAR 17 billion to SAR 388 billion:</strong> the National Investment Strategy aims to raise annual FDI more than twenty-fold from 2019 to 2030, and to lift investment (gross fixed capital formation) from 22% of GDP to 30% (${cite('misa-nis', 'MISA')}; ${cite('investsaudi-nis', 'Invest Saudi')}). Vision 2030’s 2025 annual report says FDI reached 2.8% of GDP in 2025 and remained below the 5.7% target (${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}).</li>
-<li><strong>US$14.1 billion</strong> of US goods exports to Saudi Arabia and US$10.5 billion of goods imports in 2025, after US$13.1 billion of exports and US$12.9 billion of imports in 2024 (${cite('census-us-sa', 'U.S. Census Bureau')}).</li>
-<li><strong>£16.1 billion</strong> of UK–Saudi goods and services trade in the four quarters to the end of Q4 2024: UK exports £13.0 billion and imports £3.1 billion. Goods were £4.3 billion of those exports; services were £8.7 billion. Saudi Arabia was the UK’s 24th-largest trading partner (${cite('uk-dbt-factsheet', 'UK Department for Business and Trade')}).</li>
-<li><strong>123 million</strong> tourists in 2025, more than 30 million of them international, and US$81 billion of tourism spending, across 5,937 licensed tourism facilities (${cite('vision-2025-page', 'Vision 2030')}; ${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}).</li>
-</ul>
-</div>
-
-<h2 id="what-entry-research-answers">What does market entry research Saudi Arabia have to answer?</h2>
-
-<p>Market entry research Saudi Arabia is the work that tells a sponsor whether a named offer will sell, at a named price, in named cities, through a named channel, under a named investment activity. It is not a company-formation checklist, and it is not a Vision 2030 brochure. Five questions separate a usable study from a slide that nobody can defend in a London, New York or Frankfurt investment committee:</p>
-
-<ul>
-<li><strong>Who buys?</strong> A household, a contractor, a hotel buyer, a distributor or a government procurer. GASTAT’s mid-2024 population is 35.3 million, but Saudis and non-Saudis do not share one age structure or one basket (${cite('gastat-pop-2024', 'GASTAT')}).</li>
-<li><strong>Where?</strong> Riyadh, Jeddah and the Eastern Province are not interchangeable catchments. A Kingdom average hides the only city that can carry the first warehouse or the first store.</li>
-<li><strong>At what price?</strong> A willingness-to-pay range that includes the Kingdom’s standard 15% VAT, not a US or UK ex-VAT ASP copied across (${cite('zatca-vat', 'ZATCA')}; ${cite('boe-vat', 'VAT Law')}).</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to if you miss.</li>
-<li><strong>Under which activity?</strong> MISA now registers investors against ISIC4 activities that are either available or restricted. The June 2026 Investor Guide does not treat every activity as 100% foreign-owned by default (${cite('misa-guide-2026', 'MISA')}).</li>
+<li><strong>Who buys.</strong> The mid-2024 population estimate is 35.3 million, or 35,300,280 on the national statistics portal: about 19.6 million Saudis (55.6%) and about 15.7 million non-Saudis (44.4%), up 4.7% from mid-2023 (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}). GASTAT attributes 70.8% of the 2023–2024 increase to males and 75.6% of the increase to non-Saudis. Labour-heavy formats move with that inflow. Family retail moves with the Saudi age structure. Those totals are a frame. Your customer list is smaller.</li>
+<li><strong>Which city.</strong> Riyadh, Jeddah, and the Eastern Province are different places to sell.</li>
+<li><strong>What price, after tax.</strong> The standard VAT rate is 15% of the value of the supply or import (${cite('zatca-vat', 'ZATCA')}; ${cite('boe-vat', 'VAT Law, Article 2')}). A US or UK price before tax is a different number.</li>
+<li><strong>Which activity.</strong> The June 2026 guide registers activities that are available or restricted. It does not treat every activity as fully foreign-owned.</li>
+<li><strong>Which vehicle.</strong> A trading company and a regional headquarters answer different questions. The headquarters vehicle is not allowed to take commercial revenue except for activities the licence permits.</li>
 </ul>
 
-<p>Desktop TAM built on a single syndicated report can frame those questions. It cannot answer them. Primary interviews and bilingual surveys can. That is the gap this playbook is written to close. Adjacent country pages for the same commercial questions include <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a>, <a href="/saudi-arabia-technology-market-research">technology market research in Saudi Arabia</a> and <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a>.</p>
-
-<h2 id="western-firms-cannot-copy-gcc">Why can US, UK and European firms not copy a GCC playbook?</h2>
-
-<p>A Dubai instrument with Arabic labels is not a Saudi entry file. Three official series show why Western sponsors should not treat “the Gulf” as one market.</p>
-
-<p>First, the buyer mix is not a UAE expat mix. GASTAT attributes 70.8% of the 2023–2024 population increase to males and 75.6% of the increase to non-Saudis. Saudis were 55.6% of the mid-2024 total; non-Saudis were 44.4% (${cite('gastat-pop-2024', 'GASTAT')}). Labour-heavy formats move with that in-flow. Family retail, schools and home-related categories move with the Saudi age pyramid. A UAE mall intercept will not describe either group.</p>
-
-<p>Second, the trade already exists — and it is not a proxy for SKU demand. The US Census Bureau records US$14.1 billion of goods exports to Saudi Arabia and US$10.5 billion of goods imports in 2025, after a 2024 goods surplus of only US$292 million (${cite('census-us-sa', 'U.S. Census Bureau')}). The UK Department for Business and Trade, using ONS totals for the four quarters to the end of Q4 2024, puts UK–Saudi trade at £16.1 billion, with UK exports of £13.0 billion — two-thirds of them services — and imports of £3.1 billion. Saudi Arabia was the UK’s 24th-largest trading partner and 0.9% of total UK trade. The UK’s outward FDI stock in the Kingdom was £6.2 billion at the end of 2023 (${cite('uk-dbt-factsheet', 'UK Department for Business and Trade')}). Those are bilateral trade and stock figures. They do not tell a manufacturer whether a named buyer in Riyadh will pay a named invoice.</p>
-
-<p>Third, European capital is already in the official FDI register, and it is still not a demand curve. In 2024 France recorded SAR 4 billion of net FDI inflows and the Netherlands SAR 2 billion, behind the United States at SAR 11 billion (${cite('gastat-fdi-2024', 'GASTAT')}). A French or Dutch parent that already has a holding company still needs city-level proof for the first operating SKU. Compare the method — not the numbers — with <a href="/uae-retail-market-research">retail market research in the UAE</a> and <a href="/uae-technology-market-research">technology market research in the UAE</a> if the same sponsor is sequencing UAE and KSA. The instruments are not interchangeable.</p>
-
-<h2 id="official-numbers">Which official numbers should a 2026 entry brief start from?</h2>
-
-<p>Use official series as the frame. Then replace the frame with primary evidence for the SKU. Do not invent giga-project revenues.</p>
-
-<h3>The investment frame</h3>
-
-<p>MISA’s National Investment Strategy is explicit: triple investment between 2019 and 2030; raise FDI from SAR 17 billion in 2019 to SAR 388 billion in 2030; raise GFCF from 22% of GDP to 30%. Priority sectors on the ministry’s own page are green energy, technology, healthcare and biotechnology, and mobility and logistics (${cite('misa-nis', 'MISA')}). Invest Saudi’s strategy PDF restates the 2030 FDI objective as about 5.7% of GDP and a GFCF volume of SAR 2 trillion (${cite('investsaudi-nis', 'Invest Saudi')}). Vision 2030’s 2025 annual report then records the gap: FDI was 2.8% of GDP in 2025, “remaining below the target despite higher inflows” (${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}). An entry memo that quotes only the 2030 target, and not the 2025 out-turn, is selling a slogan.</p>
-
-<p>On the official annual register series, 2024 inflows were SAR 119 billion and the stock was SAR 977 billion (${cite('gastat-fdi-2024', 'GASTAT')}). That is the right way to write the frame: a dated official series, then the SKU evidence underneath it.</p>
-
-<h3>The growth and fiscal frame</h3>
-
-<p>Vision 2030’s 2025 report says non-oil activities now account for 55% of real GDP, that the economy has surpassed US$1 trillion, and that more than 1,000 reforms and 1,200 measures have been implemented, “including allowing 100% foreign ownership in most sectors.” Digital platforms reduced requirements for investment licences by 54% (${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}). Write it that way: “most sectors,” not “every activity.”</p>
-
-<p>The Ministry of Finance’s Pre-Budget Statement for FY 2026, published on 30 September 2025, projected 2026 expenditure of about SAR 1,313 billion, revenue of about SAR 1,147 billion and a deficit of 3.3% of GDP (${cite('mof-news-2026', 'Ministry of Finance')}; ${cite('mof-prebudget-2026', 'Ministry of Finance Pre-Budget PDF')}). A market-entry model that ignores the fiscal year it is dated in will look stale the first time a credit committee opens the source table.</p>
-
-<h3>The consumer and visitor frame</h3>
-
-<p>Housing and tourism are the two official series Western consumer brands most often misuse. Vision 2030’s Housing Program says the Saudi-family homeownership rate reached 66.24% in 2025, against a 65% annual target and a 70% Vision 2030 target (${cite('vision-housing', 'Vision 2030 Housing Program')}; ${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}). The 2025 annual-report landing page records 123 million tourists, more than 30 million international visitors, US$81 billion of tourism spending and 5,937 licensed tourism facilities (${cite('vision-2025-page', 'Vision 2030')}). Those are national totals. They are not a hotel-level occupancy proof and not a catchment for a Riyadh villa file.</p>
-
-<h2 id="misa-registration">What does MISA registration actually require?</h2>
-
-<p>Western counsel still writes “get a MISA licence.” The June 2026 Investor Guide describes <em>investment registration</em> under the Investment Law and its Executive Regulations. Registration is available for approved economic activities open to investment (ISIC4), according to whether the activity category is available or restricted (${cite('misa-guide-2026', 'MISA')}).</p>
-
-<p>For a standard establishment registration the guide asks for a foreign commercial register certified by the Saudi Embassy, identity documents where a GCC national is a partner, the last fiscal year’s financial statements authenticated by the embassy, and the activity-specific papers in Section 05.00. Holders of the Special Residency Permit are exempt from the first three of those documents. The estimated processing time is 10 working days. The fee is determined by the ministry on approval and must be paid within 15 business days of notification, or the registration is void (${cite('misa-guide-2026', 'MISA')}).</p>
-
-<p>Section 05.00 is where 100% ownership stops being a slogan. The same guide sets a minimum capital of SAR 30,000,000 for “100% Foreign Commercial,” plus a presence in at least three regional or global markets. Commercial activity with a Saudi partner is listed at SAR 26,666,667 with 25% Saudi participation. Communications activities list a 40% Saudi share; supportive communications activities list 30%. One-hundred-percent foreign engineering consulting asks for a presence in four countries and at least ten years of experience. One-hundred-percent foreign legal activity asks for a letter of approval from the Ministry of Justice (${cite('misa-guide-2026', 'MISA')}). If a consultant tells you every Western brand can own 100% of every activity, ask which ISIC code they mean.</p>
-
-<p>Registration is not a commercial registration, a municipality licence, a ZATCA file or a labour file. The RHQ Investor Manual lists those as later steps on the operating journey — trade name, commercial registration, Chamber of Commerce, labour and GOSI, Zakat and Tax, municipality (${cite('rhq-manual', 'RHQ Investor Manual')}). Market entry research has to start before that stack is built, or the activity code and the demand evidence will not match.</p>
-
-<h2 id="rhq-vehicle">When is an RHQ the entry vehicle — and when is it not?</h2>
-
-<p>The Regional Headquarters programme was launched in 2021. The Royal Commission for Riyadh City oversees it with MISA, with the aim of making Riyadh the premier MENA destination for regional headquarters (${cite('rcrc-rhq', 'Royal Commission for Riyadh City')}). It is the right vehicle for a US, UK or European group that already operates in the region and wants to direct that region from Riyadh. It is the wrong vehicle for a first commercial SKU.</p>
-
-<p>The official portal and the Investor Manual are aligned on the tests. The multinational must have a presence in at least two countries other than Saudi Arabia and the country of its headquarters, through subsidiaries or branches, and it must operate in MENA. The RHQ is a separate Saudi LLC or a registered foreign branch. It “shall not engage in direct commercial operations that generate revenue, except for activities permitted under the RHQ License.” Mandatory strategic-direction and management functions, plus at least three optional support activities, must start within one year. The RHQ must employ at least 15 full-time staff specialised in RHQ operations within one year, including at least three senior executives such as an executive director or vice president (${cite('rhq-portal', 'RHQ portal')}; ${cite('rhq-manual', 'RHQ Investor Manual')}).</p>
-
-<p>That is why an RHQ brief and a trading-entity brief need different research. An RHQ study tests whether the regional mandate, the 15-person team and the optional functions can be staffed and governed from Riyadh. A trading-entity study tests whether named buyers will pay. Do not brief one to answer the other. Incentives listed in the manual — human-capital benefits, tax incentives, premium residency and end-to-end support — are programme features, not a demand forecast (${cite('rhq-manual', 'RHQ Investor Manual')}).</p>
-
-<h2 id="five-proofs">What five proofs must an entry study deliver?</h2>
-
-<table>
-<thead><tr><th>Proof the committee owes itself</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand</td><td>A defined buyer, a unit of demand and a geography that matches the first site</td><td>A national market-size figure with no city split</td></tr>
-<tr><td>Price, including tax</td><td>Paid-for willingness-to-pay or current invoice evidence, stated with the 15% VAT rule (${cite('zatca-vat', 'ZATCA')})</td><td>A US or UK ASP pasted onto a Saudi shelf</td></tr>
-<tr><td>City and catchment</td><td>Riyadh, Jeddah or Eastern Province volumes that respect Saudi versus non-Saudi structure (${cite('gastat-pop-2024', 'GASTAT')})</td><td>A “KSA” average presented as the first-year plan</td></tr>
-<tr><td>Channel and substitution</td><td>Who specifies, who distributes, what the buyer switches to if you miss</td><td>A channel map with no interviews</td></tr>
-<tr><td>Activity and ownership</td><td>The ISIC activity, the available-or-restricted flag, and any Section 05.00 capital or share rule (${cite('misa-guide-2026', 'MISA')})</td><td>A slide that says “100% foreign ownership” with no activity code</td></tr>
-</tbody>
-</table>
-
-<p>Those five tests are the entry study. Everything else — PESTLE pages, giga-project photographs, a quotation from Vision 2030 — is context. Context does not repay a launch budget.</p>
-
-<p>Primary work for a Saudi entry brief is usually a short, named programme:</p>
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its source and its year. A target and an out-turn belong in separate sentences.</p>
 <ul>
-<li>structured interviews with the people who specify or pay — contractors, distributors, procurement leads, household decision-makers, hotel buyers;</li>
-<li>a quantitative check on price, substitution and catchment, in Arabic and English;</li>
-<li>city quotas that match the first site, not a convenience panel in one mall;</li>
-<li>a source table that separates official series, supplier quotations and fieldwork.</li>
+<li><strong>Foreign investment, 2024.</strong> Inflows were SAR 119 billion, up 24% from SAR 96 billion in 2023. Outflows were SAR 39 billion. Net flows were SAR 80 billion. The stock reached SAR 977 billion. The largest net inflow was the United States at SAR 11 billion, then the UAE at SAR 9 billion, France at SAR 4 billion, and the Netherlands at SAR 2 billion (${cite('gastat-fdi-2024', 'GASTAT')}).</li>
+<li><strong>The 2030 target, and the 2025 out-turn.</strong> The National Investment Strategy aims to raise annual foreign investment from SAR 17 billion in 2019 to SAR 388 billion in 2030, more than twenty-fold, and to lift gross fixed capital formation from 22% of GDP to 30%. The ministry’s page names green energy, technology, healthcare and biotechnology, and mobility and logistics (${cite('misa-nis', 'MISA')}). Invest Saudi’s strategy text restates the 2030 foreign-investment objective as about 5.7% of GDP and a gross-fixed-capital volume of SAR 2 trillion (${cite('investsaudi-nis', 'Invest Saudi')}). The 2025 annual report says foreign investment reached 2.8% of GDP in 2025 and remained below the 5.7% target (${cite('vision-2025-ar', 'Vision 2030 annual report')}). Quote the target and the out-turn. An entry memo that quotes only 2030 is selling a slogan.</li>
+<li><strong>The same report’s other lines.</strong> It says non-oil activities account for 55% of real GDP, that the economy has surpassed US$1 trillion, and that more than 1,000 reforms and 1,200 measures have been implemented, “including allowing 100% foreign ownership in most sectors.” It also says digital platforms reduced requirements for investment licences by 54%. Write “most sectors.” The activity guide below is where that sentence stops.</li>
+<li><strong>The budget year.</strong> On 30 September 2025, the Ministry of Finance published the pre-budget statement for FY 2026. It projected expenditure of about SAR 1,313 billion, revenue of about SAR 1,147 billion, and a deficit of 3.3% of GDP (${cite('mof-news-2026', 'Ministry of Finance')}; ${cite('mof-prebudget-2026', 'Pre-budget statement')}).</li>
+<li><strong>Visitors and housing.</strong> The 2025 annual-report page records 123 million tourists, more than 30 million of them international, US$81 billion of tourism spending, and 5,937 licensed tourism facilities (${cite('vision-2025-page', 'Vision 2030')}). The housing programme says the Saudi-family homeownership rate reached 66.24% in 2025, against a 65% annual target and a 70% Vision 2030 target (${cite('vision-housing', 'Housing Program')}). Those are national totals. They are not hotel occupancy, and they are not a villa price in one neighbourhood.</li>
+<li><strong>US goods.</strong> The Census Bureau records US$14.1 billion of US goods exports to Saudi Arabia and US$10.5 billion of goods imports in 2025, after US$13.1 billion of exports and US$12.9 billion of imports in 2024. The 2024 goods surplus was US$292 million (${cite('census-us-sa', 'U.S. Census Bureau')}).</li>
+<li><strong>UK trade.</strong> The Department for Business and Trade factsheet released 19 June 2025, using official totals for the four quarters to the end of Q4 2024, puts UK–Saudi trade at £16.1 billion. UK exports were £13.0 billion and imports £3.1 billion. Goods were £4.3 billion of those exports. Services were £8.7 billion. Saudi Arabia was the UK’s 24th-largest trading partner (${cite('uk-dbt-factsheet', 'UK Department for Business and Trade, 19 June 2025')}). A services-heavy export total is not an order for one product.</li>
 </ul>
 
-<p>If the study interviews residents or employees, the Personal Data Protection Law applies to personal data processed in the Kingdom. The English text of the law comes into force 720 days after publication in the Official Gazette. SDAIA’s controller-and-processor guide records the in-force date as 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('pdpl-text', 'PDPL text')}; ${cite('sdaia-guide', 'SDAIA')}). Write the legal basis into the method note.</p>
+<h2 id="registration">What the June 2026 guide actually asks for</h2>
+<p>The Investor Guide, 13th edition, uploaded June 2026, describes investment registration under the Investment Law and its executive regulations. Registration is for approved activities, coded in ISIC4, and the category is either available or restricted (${cite('misa-guide-2026', 'MISA, June 2026')}).</p>
+<p>For a standard establishment registration, the guide asks for a foreign commercial register certified by the Saudi Embassy, identity documents where a GCC national is a partner, the last fiscal year’s financial statements authenticated by the embassy, and the activity papers in Section 05.00. Holders of the Special Residency Permit are exempt from the first three of those documents. The estimated processing time is 10 working days. The fee is set by the ministry on approval and must be paid within 15 business days of notification, or the registration is void.</p>
+<p>Section 05.00 is where ownership depends on the activity. The guide sets a minimum capital of SAR 30,000,000 for “100% Foreign Commercial,” plus a presence in at least three regional or global markets. Commercial activity with a Saudi partner is listed at SAR 26,666,667 with 25% Saudi participation. Communications activities list a 40% Saudi share. Supportive communications activities list 30%. Fully foreign engineering consulting asks for a presence in four countries and at least ten years of experience. Fully foreign legal activity asks for a letter of approval from the Ministry of Justice. Ask which code the project will actually register. “Most sectors” in the annual report is not this table.</p>
+<p>Registration is not a commercial registration, a municipality licence, a tax file, or a labour file. The regional-headquarters manual lists later steps on the operating journey: trade name, commercial registration, Chamber of Commerce, labour and GOSI, Zakat and tax, and the municipality (${cite('rhq-manual', 'RHQ Investor Manual')}).</p>
 
-<p>BioNixus prices that custom work between $10,000 and $60,000, depending on sample, cities and whether the output is a stand-alone entry file or a chapter inside a wider feasibility. The scope, timing and deliverables are guaranteed in writing. Accuracy of findings is not a claim we make.</p>
+<h2 id="rhq">A regional headquarters is a different vehicle</h2>
+<p>The programme was launched in 2021. The Royal Commission for Riyadh City oversees it with the Ministry of Investment, with the aim of making Riyadh a destination for regional headquarters (${cite('rcrc-rhq', 'Royal Commission for Riyadh City')}).</p>
+<p>The portal and the manual use the same tests. The group must have a presence in at least two countries other than Saudi Arabia and the country of its headquarters, through subsidiaries or branches, and it must operate in the wider region. The headquarters is a separate Saudi limited company or a registered foreign branch. It “shall not engage in direct commercial operations that generate revenue, except for activities permitted under the RHQ License.” Mandatory strategic-direction and management functions, plus at least three optional support activities, must start within one year. The office must employ at least 15 full-time staff specialised in headquarters operations within one year, including at least three senior executives such as an executive director or vice president (${cite('rhq-portal', 'RHQ portal')}).</p>
+<p>The manual lists incentives: human-capital benefits, tax incentives, premium residency, and end-to-end support. Those are programme features. They are not a sales forecast. A trading-entity study asks whether named buyers will pay. A headquarters study asks whether the mandate and the 15-person team can be staffed from Riyadh. They are two briefs.</p>
+<p>If interviews collect personal data, the personal-data law applies to processing in the Kingdom. The English text comes into force 720 days after publication in the Official Gazette. The controller guide records the in-force date as 14 September 2023, with a grace period to 14 September 2024 (${cite('pdpl-text', 'Personal Data Protection Law')}; ${cite('sdaia-guide', 'SDAIA')}).</p>
 
-<h2 id="sector-notes">How does the brief change by sector?</h2>
+<h2 id="by-sector">How the questions change by product</h2>
+<ul>
+<li><strong>Shops and packaged goods.</strong> Start from the 55.6% / 44.4% split, then replace it with a catchment. State whether the shelf price includes 15% VAT.</li>
+<li><strong>Hotels.</strong> Use the visitor totals above, then name the competitive set in one city. A national arrival figure is not occupancy.</li>
+<li><strong>Technology and business sales.</strong> Technology and mobility are on the strategy’s priority list. Recruit the person who specifies the order. Say whether the first vehicle can take revenue, or whether it is a headquarters that cannot, except for permitted activities.</li>
+<li><strong>Housing.</strong> The 66.24% homeownership rate and the 70% target are the frame. A Riyadh villa file and a Jeddah apartment file are different studies. If the same sponsor is comparing Egypt, see <a href="/egypt-real-estate-market-research">real estate research in Egypt</a>.</li>
+</ul>
 
-<h3>Retail, FMCG and consumer</h3>
-
-<p>Start from the official population split — 55.6% Saudi, 44.4% non-Saudi — then replace it with a catchment (${cite('gastat-pop-2024', 'GASTAT')}). A Riyadh family grocer and a Jeddah tourist-facing format do not share a demand curve. Price work has to state whether the shelf price includes the 15% VAT that ZATCA requires registered persons to charge on taxable sales (${cite('zatca-vat', 'ZATCA')}). See <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a> and <a href="/b2c-industries">B2C market research</a>.</p>
-
-<h3>Hospitality and visitor catchments</h3>
-
-<p>Use the official visitor totals — 123 million tourists, more than 30 million international, US$81 billion of spending, 5,937 licensed facilities in 2025 — then prove the competitive set (${cite('vision-2025-page', 'Vision 2030')}). A national arrivals figure is not a hotel-level occupancy proof. A hospitality entry still needs length-of-stay, corporate versus leisure mix and a named set of substitutes. See <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a>.</p>
-
-<h3>Technology, B2B and financial services</h3>
-
-<p>Technology and mobility sit on MISA’s NIS priority list (${cite('misa-nis', 'MISA')}). A B2B or fintech entry has to recruit the actual buyer committee, not a consumer panel, and it has to say whether the first legal vehicle is a trading entity or an RHQ that cannot take commercial revenue (${cite('rhq-portal', 'RHQ portal')}). Use <a href="/saudi-arabia-technology-market-research">technology market research in Saudi Arabia</a> and <a href="/saudi-arabia-financial-services-market-research">financial services market research in Saudi Arabia</a>. The same buyer-committee discipline is the one used on <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services research in Egypt</a>.</p>
-
-<h3>Real estate and industrial sites</h3>
-
-<p>Housing’s own numbers — 66.24% Saudi-family homeownership in 2025, 70% by 2030 — are the frame, not the catchment (${cite('vision-housing', 'Vision 2030 Housing Program')}). A Riyadh villa file and a Jeddah apartment file do not share a demand curve. Cross-check the method against <a href="/saudi-arabia-real-estate-market-research">real estate market research in Saudi Arabia</a> and, if the same sponsor is comparing North Africa, <a href="/egypt-real-estate-market-research">real estate market research in Egypt</a>.</p>
-
-<h2 id="how-to-choose">How should you choose a market entry research partner?</h2>
-
-<p>Ask every firm, including BioNixus, to answer these questions in writing before you sign:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for population, FDI, trade and growth, and what is the date of each series?</li>
-<li>Will the study report by city, or only as “Saudi Arabia”?</li>
-<li>How many interviews or surveys will you complete, in which language, and with which quotas?</li>
-<li>Which ISIC activity, and which Section 05.00 capital or share rule, does the brief assume (${cite('misa-guide-2026', 'MISA')})?</li>
-<li>Is the first vehicle a trading entity or an RHQ that cannot take commercial revenue (${cite('rhq-manual', 'RHQ Investor Manual')})?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
-<li>How will personal data from respondents be processed under the PDPL (${cite('pdpl-text', 'PDPL')})?</li>
+<li>Which official figures will you use, and what is the year of each one?</li>
+<li>Which city is the first sample, and how will Saudis and non-Saudis be split?</li>
+<li>Which ISIC activity, and which Section 05.00 capital or share rule, does the brief assume?</li>
+<li>Is the first vehicle a trading company, or a headquarters that cannot take commercial revenue except as the licence allows?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>How will personal data be handled under the personal-data law?</li>
 </ol>
+<p>A registration firm files the company. A research firm measures demand. Many projects need both. BioNixus does the demand work.</p>
 
-<p>Local incorporation houses that rank for “company setup Saudi Arabia” are often strong at MISA paperwork and Arabic submission format. They are not automatically strong at demand evidence. A primary-research firm is the reverse. Many Western entry files need both: counsel who can file the activity, and a fieldwork team that can prove the tonnes or the tickets. BioNixus does the second job and will work alongside your existing counsel.</p>
-
-<p>Related industry reading on this hub includes <a href="/bionixus-industries/insights/nielsen-alternative-saudi-arabia">syndicated vs custom research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/kantar-alternative-middle-east">a Kantar alternative in the GCC</a>, <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a>, <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026">online market research and social listening for brand growth</a> and <a href="/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea">wood-boards trackers in the Middle East and Africa</a>. Browse country entry points on <a href="/market-research-by-industry">market research by industry</a> and compare partners on the <a href="/insights/top-market-research-companies-saudi-arabia-2026">2026 ranking of market research companies in Saudi Arabia</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for market entry research in Saudi Arabia?</h2>
-
-<p>BioNixus is not a company-formation house. It is a primary market research firm that writes the chapter a US, UK or European investment committee can actually interrogate. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>US teams brief the Sheridan headquarters. UK and European teams brief London. Fieldwork for the Kingdom is designed with the Al Khobar field office and bilingual Arabic–English teams. To brief market entry research Saudi Arabia, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -394,39 +309,39 @@ ${REFERENCES_HTML}`;
 
 export const SAUDI_MARKET_ENTRY_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does market entry research Saudi Arabia have to prove?',
+    question: 'What should a foreign firm research before entering Saudi Arabia?',
     answer:
-      'It has to prove addressable demand, price including 15% VAT, city or catchment, channel and the MISA activity with dated, auditable evidence. A national TAM slide is not market entry research Saudi Arabia. Primary interviews and bilingual surveys are what make the brief usable for a US, UK or European investment committee.',
+      'Name the buyer, the city, the price after 15% VAT, and the activity that will be registered. A population total or a 2030 investment target does not answer those questions.',
   },
   {
-    question: 'Do US, UK and European firms still need a MISA licence in 2026?',
+    question: 'Does 100% foreign ownership apply to every activity?',
     answer:
-      'The June 2026 MISA Investor Guide describes investment registration under the Investment Law, not a general foreign-investment licence. Registration is available for approved ISIC4 activities that are either available or restricted. The estimated processing time is 10 working days. The fee is set on approval and must be paid within 15 business days or the registration is void. Registration is not a commercial registration or a ZATCA file.',
+      'The 2025 annual report says reforms included 100% foreign ownership in most sectors. The June 2026 guide still splits activities into available and restricted, and Section 05.00 sets capital and share rules by activity. Ask which code you are registering.',
   },
   {
-    question: 'Can a Western firm own 100% of a Saudi company?',
+    question: 'Which official numbers are safe to quote?',
     answer:
-      'Vision 2030’s 2025 annual report says reforms included allowing 100% foreign ownership in most sectors. The Investor Guide still sets extra rules by activity. One-hundred-percent foreign commercial is listed at SAR 30 million of capital plus a presence in at least three regional or global markets. Communications, engineering and legal activities carry their own share or approval tests. Ask which ISIC code you are registering.',
+      'The mid-2024 population is 35.3 million, about 55.6% Saudi. Foreign-investment inflows in 2024 were SAR 119 billion and the stock was SAR 977 billion. The 2025 annual report puts foreign investment at 2.8% of GDP, below the 5.7% target. Quote the year with the figure.',
   },
   {
-    question: 'When is a Regional Headquarters the right entry vehicle?',
+    question: 'When is a regional headquarters the wrong brief?',
     answer:
-      'When a multinational already has a presence in at least two countries besides its headquarters and Saudi Arabia, operates in MENA, and wants to direct that region from Riyadh. The RHQ must be a separate LLC or foreign branch, must not take commercial revenue except as the licence allows, and must hire at least 15 full-time staff including three senior executives within one year. It is the wrong vehicle for a first trading SKU.',
+      'When the first question is whether a named buyer will pay. The headquarters rules say the vehicle shall not engage in direct commercial operations that generate revenue, except for activities the licence permits. It also sets a 15-person staffing test within one year. A trading company is a different study.',
   },
   {
-    question: 'Which official numbers should a 2026 Saudi entry brief use?',
+    question: 'What did the pre-budget statement project for 2026?',
     answer:
-      'Start from GASTAT’s mid-2024 population of 35.3 million, GASTAT’s 2024 FDI inflows of SAR 119 billion, MISA’s NIS targets (FDI from SAR 17 billion in 2019 to SAR 388 billion in 2030), Vision 2030’s 2.8% of GDP FDI out-turn in 2025, the Housing Program’s 66.24% homeownership, 123 million tourists in 2025, US Census goods trade, and the UK’s £16.1 billion of trade in the four quarters to Q4 2024. Label each series. Do not invent giga-project revenues.',
+      'On 30 September 2025, the Ministry of Finance projected expenditure of about SAR 1,313 billion, revenue of about SAR 1,147 billion, and a deficit of 3.3% of GDP. That is a fiscal projection. It is not a product forecast.',
   },
   {
-    question: 'How much does custom market entry research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom market entry programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, number of cities, mode and whether the output is a stand-alone entry file or a chapter inside a wider study. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the cities, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus from Sheridan or London rather than a Riyadh setup firm?',
+    question: 'Why brief BioNixus rather than a firm that only files the registration?',
     answer:
-      'Incorporation houses file the activity. BioNixus proves demand. US teams brief the Sheridan headquarters; UK and European teams brief London EC1V 2NX; fieldwork is designed with the Al Khobar field office. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'A registration firm files the activity. BioNixus measures demand, with a field office in Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

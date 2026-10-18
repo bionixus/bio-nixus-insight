@@ -52,25 +52,25 @@ type ArticleFigure = {
 export const RARE_DISEASE_KSA_FIGURES: ArticleFigure[] = [
   {
     src: '/images/blog/rare-disease-market-research-saudi-arabia-consanguinity.webp',
-    alt: 'Bar chart of published Saudi consanguinity rates by settlement and region from El-Mouzan 2007',
+    alt: 'Chart from a published study of how cousin marriage varies by region in Saudi Arabia',
     caption:
-      'El-Mouzan’s 2004–2005 household sample put national consanguinity at 56% (first-degree cousins 33.6%). Rural settlements were 59.5%, urban 54.7%, Madina 67.2% and Al-Baha 42.1%. A national average hides the launch geography.',
+      'El-Mouzan and colleagues studied how common cousin marriage is in different Saudi regions. A national paper is not a forecast for one disease in one city.',
     width: 800,
     height: 640,
   },
   {
     src: '/images/blog/rare-disease-market-research-saudi-arabia-approvals.webp',
-    alt: 'Bar chart of orphan-drug approvals compared by Balkhi and colleagues through July 2020',
+    alt: 'Chart from a paper comparing orphan-drug policy in Saudi Arabia, the United States and the European Union',
     caption:
-      'Balkhi and colleagues counted 753 US, 435 EU and 253 SFDA orphan-drug registrations through July 2020 — 31% of the US/EU set. That is a registration gap, not a 2026 treated-patient count.',
+      'Balkhi and colleagues compared orphan-drug policy in Saudi Arabia, the United States and the European Union. A registration comparison is not a count of patients treated.',
     width: 800,
     height: 580,
   },
   {
     src: '/images/blog/rare-disease-market-research-saudi-arabia-sma.webp',
-    alt: 'Bar chart of a modelled Saudi SMA living population by type from AlJumah 2022',
+    alt: 'Chart from a Saudi study of how often people carry a spinal muscular atrophy gene',
     caption:
-      'AlJumah and colleagues found a 2.6% SMN1 carrier rate in 4,198 volunteers and modelled 2,265 people living with SMA. NUPCO’s NPT0045/25 list later published tender quantities, not those headcounts.',
+      'Al Jumah and colleagues studied spinal muscular atrophy carrier frequency in Saudi Arabia. NUPCO’s rare-disease list publishes tender quantities, not a count of people treated.',
     width: 800,
     height: 620,
   },
@@ -78,7 +78,7 @@ export const RARE_DISEASE_KSA_FIGURES: ArticleFigure[] = [
     src: '/images/blog/rare-disease-market-research-saudi-arabia-access.webp',
     alt: 'Five published access layers for a Saudi orphan drug from designation to hospital formulary',
     caption:
-      'Five published layers a 2026 orphan brief has to keep separate: SFDA orphan-drug designation, the NADR accelerator, NUPCO or iNUPCO supply, hospital Pharmacy and Therapeutics, and CHI private reimbursement. Registration is not the same as a treated-patient count.',
+      'Keep orphan-drug designation, the NADR programme, the NUPCO list and the CHI Dhaman formulary as separate files. A registration is not a count of patients treated.',
     width: 800,
     height: 700,
   },
@@ -86,7 +86,7 @@ export const RARE_DISEASE_KSA_FIGURES: ArticleFigure[] = [
     src: '/images/blog/rare-disease-market-research-saudi-arabia-brief.webp',
     alt: 'Checklist of seven rare disease market research workstreams for a Saudi orphan launch',
     caption:
-      'Seven workstreams rare disease market research Saudi Arabia should cover before an orphan launch: diagnosed-cohort epidemiology, diagnostic yield, centre map, labelled eligibility, payer and NUPCO access, the patient journey, and share of treated patients.',
+      'A useful brief names who is diagnosed, which hospital sees them, whether the label fits, and who pays. A syndicated market total does not answer those questions.',
     width: 800,
     height: 760,
   },
@@ -102,15 +102,15 @@ export const RARE_DISEASE_KSA_META_DESCRIPTION =
   'Rare disease market research Saudi Arabia: how to size small orphan populations, close evidence gaps, and brief SFDA, NUPCO and CHI before a 2026 launch.';
 
 export const RARE_DISEASE_KSA_DISPLAY_TITLE =
-  'Rare Disease Market Research in Saudi Arabia: Small Populations, Big Evidence Gaps';
+  'A rare-disease forecast needs a diagnosed cohort';
 
 export const RARE_DISEASE_KSA_DISPLAY_SUBTITLE =
-  'Rare disease market research Saudi Arabia for orphan launches';
+  'Rare disease market research Saudi Arabia before an orphan launch';
 
 export const RARE_DISEASE_KSA_BREADCRUMB_LABEL = 'Saudi rare disease research';
 
 export const RARE_DISEASE_KSA_EXCERPT =
-  'A sourced 2026 briefing on rare disease market research in Saudi Arabia: how SFDA now defines rare, why 370,000 residents is not a launch funnel, and what is still unpublished after NADR, NUPCO lists and a 2025 payer Delphi.';
+  'A plain guide to Saudi orphan-drug files: the NADR programme, the tender list, and why a carrier study or a workshop is not a count of patients treated.';
 
 export const RARE_DISEASE_KSA_PUBLISHED_ISO = '2026-10-16T12:00:00.000Z';
 export const RARE_DISEASE_KSA_UPDATED_ISO = '2026-10-16T12:00:00.000Z';
@@ -402,171 +402,79 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const RARE_DISEASE_KSA_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What is rare disease market research Saudi Arabia?', anchor: 'what-is-rare-disease-market-research-saudi-arabia' },
-  { heading: 'How large is the published rare-disease population?', anchor: 'how-large-is-the-published-rare-disease-population' },
-  { heading: 'What do consanguinity and genome data change for a forecast?', anchor: 'what-consanguinity-and-genome-data-change' },
-  { heading: 'What has SFDA published that a launch brief can use?', anchor: 'what-sfda-has-published' },
-  { heading: 'What do NUPCO lists and the 2025 payer Delphi show?', anchor: 'what-nupco-and-payer-delphi-show' },
-  { heading: 'What should rare disease market research Saudi Arabia measure?', anchor: 'what-should-rare-disease-market-research-saudi-arabia-measure' },
-  { heading: 'How should you commission the study?', anchor: 'how-to-commission' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What the regulator has published', anchor: 'regulator' },
+  { heading: 'A tender quantity is not a patient', anchor: 'tender' },
+  { heading: 'Papers that describe the system', anchor: 'system-papers' },
+  { heading: 'Papers that describe families and genes', anchor: 'gene-papers' },
+  { heading: 'What not to do with those papers', anchor: 'what-not-to-do' },
+  { heading: 'Questions to put in the brief', anchor: 'questions' },
+  { heading: 'How to brief BioNixus', anchor: 'how-to-brief' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const RARE_DISEASE_KSA_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Rare disease market research Saudi Arabia is commissioned work on who is diagnosed, which centre treats them, and which wallet funds an orphan drug. A global market-size slide does not answer those questions. SFDA writes that more than 370,000 residents live with a rare disease, but there is still no published national registry a launch model can use.</p>`;
+export const RARE_DISEASE_KSA_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Rare disease market research Saudi Arabia asks who is actually diagnosed, which hospital sees them, and who will pay. An orphan-drug designation, a tender quantity and a gene-carrier study answer different questions. Do not turn any one of them into national demand.</p>`;
 
-const NARRATIVE_HTML = `<p>Rare disease market research Saudi Arabia is a diagnosed-cohort and access problem before it is a sizing problem. The Saudi Food and Drug Authority now writes that a disease is rare when it affects fewer than one in 2,000 people, and that more than 370,000 people in the Kingdom live with a rare disease (${cite('sfda-nadr-2026', 'SFDA NADR, August 2026')}). What a brand, HEOR or market-access team still cannot buy off the shelf is who is diagnosed, which centre treats them, and which wallet will pay. This briefing uses only published sources. It sits alongside our <a href="/healthcare-market-research">healthcare market research hub</a> and our ranking of <a href="/insights/best-rare-disease-market-research-companies-2026">best rare disease market research companies in 2026</a>. For sickle cell disease, β-thalassemia and Casgevy, use the separate <a href="/blog/hematology-market-research-saudi-arabia">hematology market research Saudi Arabia briefing</a> rather than this page.</p>
+const NARRATIVE_HTML = `<p>Rare disease market research Saudi Arabia is the work of finding a diagnosed group of patients, not of stretching a national percentage. This page sits on <a href="/healthcare-market-research">healthcare market research</a>, beside the ranking of <a href="/insights/best-rare-disease-market-research-companies-2026">rare-disease research firms</a> and the <a href="/blog/hematology-market-research-saudi-arabia">hematology briefing for Saudi Arabia</a>. An orphan drug is a medicine developed for a rare condition. A carrier study counts people who can pass a gene on. A tender list counts packs a buyer might order. Those are three files.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: rare disease market research in Saudi Arabia, October 2026</strong></p>
-<ul>
-<li><strong>Fewer than 1 in 2,000</strong> people is SFDA’s community definition of a rare disease. Orphan-drug designation and the NADR accelerator use a tighter prevalence cut of <strong>fewer than 5 in 10,000</strong> (${cite('sfda-nadr-2026', 'SFDA NADR')}; ${cite('sfda-odd-2024', 'SFDA ODD guidance')}).</li>
-<li><strong>More than 370,000</strong> people live with a rare disease in Saudi Arabia, according to the same August 2026 framework — the highest prevalence SFDA attributes to the Middle East and Africa region (${cite('sfda-nadr-2026', 'SFDA NADR')}). That is an official estimate, not a national registry extract.</li>
-<li><strong>56%</strong> of households in El-Mouzan’s 2004–2005 national sample were consanguineous (33.6% first-degree cousins). El-Hazmi’s earlier series of 3,212 families was 57.7% (${cite('el-mouzan-2007', 'El-Mouzan et al., 2007')}; ${cite('el-hazmi-1995', 'El-Hazmi et al., 1995')}).</li>
-<li><strong>1:1,043</strong> newborns in the 2005–2012 national screen of 775,000 infants had one of 16 metabolic or endocrine disorders (${cite('alfadhel-2017-nbs', 'Alfadhel et al., 2017')}). A single tertiary IEM series was <strong>1:591</strong> (${cite('alfadhel-2016-iem', 'Alfadhel et al., 2016')}).</li>
-<li><strong>27%</strong> of the first 1,013 KFSH&amp;RC diagnostic panels and <strong>43%</strong> of exomes received a pathogenic or likely pathogenic result (${cite('monies-2017', 'Monies et al., 2017')}).</li>
-<li><strong>253</strong> SFDA orphan-drug registrations versus 753 FDA and 435 EMA through July 2020 (${cite('balkhi-2023', 'Balkhi et al., 2023')}).</li>
-<li><strong>2,265</strong> people living with SMA in a 2022 modelled national estimate, from a 2.6% carrier rate in 4,198 volunteers (${cite('aljumah-2022', 'AlJumah et al., 2022')}).</li>
-<li><strong>396</strong> CF patients with a positive CFTR variant in the 1992–2017 KFSH&amp;RC series; p.Phe508del was 12%, not the 66–75% Western share (${cite('banjar-2021', 'Banjar et al., 2021')}).</li>
-<li><strong>35.3 million</strong> residents in mid-2024, of whom 19.6 million were Saudi (${cite('gastat-2024', 'GASTAT 2024')}).</li>
-</ul>
-</div>
-
-<h2 id="what-is-rare-disease-market-research-saudi-arabia">What is rare disease market research Saudi Arabia?</h2>
-
-<p>It is commissioned primary research on how rare and ultra-rare conditions are suspected, diagnosed, treated, funded and referred in the Kingdom. For a 2026 orphan, enzyme-replacement, antisense, small-interfering-RNA or gene-therapy launch, the unit of observation is the patient chart and the payer committee, not a vial and not a syndicated “rare disease market” total.</p>
-
-<p>Report publishers such as Grand View Research, IMARC Group and Fortune Business Insights sell Middle East or Saudi rare-disease outlooks. Those pages often occupy the query “rare disease market research Saudi Arabia”. ${cite('grand-view', 'Grand View Research')}, ${cite('imarc', 'IMARC')} and ${cite('fortune-bi', 'Fortune Business Insights')} are useful for a first cut of category language. They do not say how many patients have a molecular diagnosis, which hospital can infuse an enzyme or a one-time vector, or whether a product is on a NUPCO framework or a hospital formulary. Those answers require a custom brief. The global vendor comparison for that brief is our page on <a href="/insights/best-rare-disease-market-research-companies-2026">best rare disease market research companies in 2026</a>.</p>
-
-<p>A usable rare-disease study in Saudi Arabia usually needs anonymous patient-record forms from treating geneticists, metabolic physicians or indication-specific clinics; results split by region, public versus military or National Guard versus private, and nationality; and payer interviews that treat MOH, NUPCO, CHI and each hospital formulary as different decisions (${cite('gastat-2024', 'GASTAT')}; ${cite('ppri-2024', 'PPRI 2024')}; ${cite('chi-formulary', 'CHI')}). Do not apply an Eastern CF or SMA rate to 35.3 million residents and call it demand. Instruments should be Arabic and English, with sites in Riyadh, Jeddah/Makkah and the Eastern Province — not a Gulf average.</p>
-
-<p>Country context sits on <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>, <a href="/healthcare-market-research/therapy/rare-diseases">rare disease therapy research</a>, <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a> and <a href="/heor-consulting-saudi-arabia">HEOR consulting in Saudi Arabia</a>. A commercial sizing cut also sits on the <a href="/market-reports/saudi-arabia-rare-diseases-market-report">Saudi Arabia rare diseases market report</a>. This page is the research brief, not that report.</p>
-
-<h2 id="how-large-is-the-published-rare-disease-population">How large is the published rare-disease population?</h2>
-
-<p>Ask every provider which baseline it uses. SFDA’s August 2026 rare-disease framework is now the official headline: more than 370,000 people living with a rare disease, the highest prevalence the Authority attributes to the Middle East and Africa, against a global stock of about 350 million people and more than 10,000 named rare diseases (${cite('sfda-nadr-2026', 'SFDA NADR')}). Three years earlier, Balkhi and colleagues still wrote that a published national prevalence total was unavailable (${cite('balkhi-2023', 'Balkhi et al., 2023')}). The 370,000 figure closed that silence. It did not create a patient-level registry a launch model can audit.</p>
-
-<p>The June 2023 Saudi Health Council workshop that Abozaid and colleagues later published is the reason that gap still matters. Fifty-nine stakeholders — physicians, pharmacists, P&amp;T members, regulators and payers — voted a comprehensive patient registry as their first priority, ahead of a national rare-disease strategy and a national reference centre. Participants said that without registry data it is difficult to track patients, estimate prevalence or allocate resources, and that ICD coding for rare diseases was not in routine use (${cite('abozaid-2025-workshop', 'Abozaid et al., 2025')}). Balkhi noted that the National Health Information Center had established national registries for cancer, neural-tube defects and hearing impairment — not a pan-rare-disease file (${cite('balkhi-2023', 'Balkhi et al., 2023')}).</p>
-
-<p>What the published record does give, by method:</p>
-
-<ul>
-<li><strong>Newborn screening, 16 disorders.</strong> Alfadhel and colleagues reviewed 775,000 newborns from 139 hospitals between 1 August 2005 and 31 December 2012. They confirmed 743 cases, an overall incidence of 1:1,043. Congenital hypothyroidism was 1:7,175 and congenital adrenal hyperplasia 1:7,908. The highest inborn-error incidence on the panel was propionic acidaemia at 1:14,000 (${cite('alfadhel-2017-nbs', 'Alfadhel et al., 2017')}).</li>
-<li><strong>Tertiary IEM incidence.</strong> At King Abdulaziz Medical City in Riyadh, 187 of 110,601 live births over 13 years had an inborn error of metabolism, or 1:591 (169 per 100,000). Combined with Moammar’s Eastern-Province series (1:667), the two-centre cumulative incidence was 1:635. Including referred cases that were not born at KAMC moved the figure to 1:432 — a reminder that referral centres inflate incidence if the denominator is not live births at that hospital (${cite('alfadhel-2016-iem', 'Alfadhel et al., 2016')}).</li>
-<li><strong>A modelled SMA national headcount.</strong> AlJumah and colleagues tested 4,198 Saudi volunteers and found one SMN1 copy in 108 of them, a 2.6% carrier frequency (3.7% in females, 1.6% in males). They estimated birth incidence at 32 per 100,000 and a living population of 2,265: 188 type I, 1,213 type II and 864 type III (${cite('aljumah-2022', 'AlJumah et al., 2022')}). A 2024 Communications Medicine paper reused that 1-in-38 carrier frequency with the Saudi inbreeding coefficient and arrived at 1 in 3,192 live births — consistent with 32 per 100,000 (${cite('alharbi-2024', 'Alharbi et al., 2024')}). Those are modelled totals. They are not a 2026 treated-patient tracker.</li>
-<li><strong>A CF referral series, not a census.</strong> Banjar and colleagues reviewed 396 patients with confirmed CF and a positive CFTR variant referred to KFSH&amp;RC from 1992 to 2017. The East held 145 (37%) at a published prevalence of 1:3,000; the North was 1:2,000; other regions were 1:70,000 to 1:90,000. Ten variants made up about 80% of alleles. p.Phe508del was 12%, against the 66–75% Western share the authors cite. Parental consanguinity in the CF cohort was 85% (${cite('banjar-2021', 'Banjar et al., 2021')}). A CFTR-modulator brief that imports a US F508del mix will mis-state Saudi eligibility. The authors also warn that their screen reflected about 80% of Saudi CF patients — the other fifth is unpublished.</li>
-</ul>
-
-<p>Do not average those four methods. A 370,000 official estimate, a 1:1,043 NBS incidence, a 2,265 modelled SMA stock and a 396-patient CF clinic file answer four different questions. The launch model has to name which one it used.</p>
-
-<h2 id="what-consanguinity-and-genome-data-change">What do consanguinity and genome data change for a forecast?</h2>
-
-<p>High consanguinity is why several recessive conditions that are ultra-rare in Europe sit at screening-detectable frequencies in parts of the Kingdom. It is not a single national multiplier.</p>
-
-${figureHtml(RARE_DISEASE_KSA_FIGURES[0])}
-
-<p>El-Mouzan and colleagues’ 2004–2005 household sample remains the most usable national split: 56% overall, 33.6% first-degree cousins, 22.4% other relations, 59.5% rural and 54.7% urban, with Madina at 67.2% and Al-Baha at 42.1% (${cite('el-mouzan-2007', 'El-Mouzan et al., 2007')}). El-Hazmi’s 3,212-family series put the overall rate at 57.7%, first-cousin marriages at 28.4%, and a provincial range of 52.1–67.7%, with Samtah at 80.6% (${cite('el-hazmi-1995', 'El-Hazmi et al., 1995')}). The two papers agree on the order of magnitude and disagree on the geography. Commission current, region-split fieldwork rather than importing 56% into every governorate.</p>
-
-<p>The genetic architecture is not “one founder mutation per disease”. In the first 1,013 families sequenced at the KFSH&amp;RC diagnostic laboratory between March and December 2016, panels solved 27% of cases and exomes 43%. Autosomal recessive variants accounted for 71% of positives and were homozygous in 97%. Only 33% of the recessive positives were founder mutations as the authors defined them. The other 67% were private. One hundred and sixty-six of 279 disease genes (43%) were reported as novel (${cite('monies-2017', 'Monies et al., 2017')}).</p>
-
-<p>A later Arab founder-variant analysis, built on 18,360 exomes and genomes, identified 2,908 medically relevant founder variants; about 34% were absent from gnomAD. Founder variants supported 224 novel gene–disease links. In that laboratory’s diagnostic reports, 39.5% were based on a founder variant, and 19.41% of tested individuals carried at least one pathogenic founder variant (${cite('abouelhoda-2024', 'Abouelhoda et al.')}).</p>
-
-<p>The Saudi Human Genome Program was launched to sequence 100,000 genomes. A Ministry of Health knowledge-management paper reports more than 65,000 samples sequenced, 7,500 variants identified and about 3,000 novel causative mutations associated with more than 1,230 rare genetic disorders (${cite('moh-shgp', 'MOH / SHGP')}). SFDA’s NADR framework now names Saudi genomic and biobank data as acceptable supporting evidence for disease characterisation (${cite('sfda-nadr-2026', 'SFDA NADR')}). That is a regulatory door. It is not a published, indication-level eligible-patient file a brand team can drop into a forecast.</p>
-
-<p>The research implication is simple. A launch model that treats “Saudi rare disease” as one founder-enriched pool will over-count conditions that are private and under-count the diagnostic miss. The KFSH&amp;RC laboratory left 57–73% of tested families without a solved result, depending on the assay (${cite('monies-2017', 'Monies et al., 2017')}). Improving diagnosis often expands the treatable pool faster than incidence changes. That is why <a href="/healthcare-market-research/therapy/rare-diseases">rare disease therapy research</a> starts with patient-finding, not with a vial forecast.</p>
-
-<h2 id="what-sfda-has-published">What has SFDA published that a launch brief can use?</h2>
-
-<p>Two definitions now sit on official SFDA paper, and they are not the same number.</p>
-
-<p>The community definition in the NADR framework is fewer than one in 2,000 people (${cite('sfda-nadr-2026', 'SFDA NADR')}). The orphan-drug designation guidance, and NADR eligibility criterion 1, use fewer than five in 10,000 individuals in Saudi Arabia — or, in the ODD guidance, a financial-viability test if prevalence is higher (${cite('sfda-odd-2024', 'SFDA ODD guidance')}; ${cite('sfda-nadr-2026', 'SFDA NADR')}). Abozaid’s systematic review of global rare-disease definitions is the place to put those cuts against FDA’s 200,000-person threshold and EMA’s five-in-10,000 rule (${cite('abozaid-2025-definitions', 'Abozaid et al., 2025')}). A brief that quotes “rare” without saying which SFDA cut it used will be sent back.</p>
-
-<p>The designation stack a 2026 dossier can actually name:</p>
-
-<ul>
-<li><strong>Orphan Drug Designation</strong> — at any stage before the marketing-authorisation application; incentives include pre-submission meetings, priority review and scientific advice (${cite('sfda-odd-2024', 'SFDA ODD guidance')}).</li>
-<li><strong>Research and Investigational Drugs (RAID)</strong> — products still in development, not yet authorised anywhere, with a commitment to run trials in Saudi Arabia (${cite('sfda-nadr-2026', 'SFDA NADR, Table 1')}).</li>
-<li><strong>Breakthrough Medicines Program</strong> — a major advantage in a serious condition, not yet registered with any authority; request by the end of Phase 2 (${cite('sfda-nadr-2026', 'SFDA NADR')}).</li>
-<li><strong>NADR</strong> — issued 5 August 2026, in force 5 September 2026. Review of NADR eligibility and a parallel ODD request is 20 working days from a complete submission. The marketing-authorisation application must follow within six months unless a rolling-submission exception is granted. Evidence flexibilities include natural-history controls, adaptive and N-of-1 designs, surrogate endpoints and Saudi genomic data (${cite('sfda-nadr-2026', 'SFDA NADR')}).</li>
-</ul>
-
-<p>SFDA representatives at the 2023 workshop said registration times for some orphan drugs had fallen to as little as eight months, from four to five years, after an “early dialogue” approach (${cite('abozaid-2025-workshop', 'Abozaid et al., 2025')}). Balkhi’s mid-2020 census — 253 SFDA registrations against 753 FDA and 435 EMA, or 31% of that collective list — is the last published stocktake. It predates the June 2023 ODD guidance and the 2026 NADR framework (${cite('balkhi-2023', 'Balkhi et al., 2023')}). Do not use 253 as a 2026 on-market count. Do use it as the last public gap measurement.</p>
-
-${figureHtml(RARE_DISEASE_KSA_FIGURES[1])}
-
-<p>A designation is not a formulary listing. CHI’s formulary is an open list of SFDA-registered medicines; additions go through a hospital P&amp;T committee (${cite('chi-formulary', 'CHI')}). Government supply still runs through hospital P&amp;T and, for national purchasing, NUPCO (${cite('ppri-2024', 'PPRI 2024')}). The 2025 Delphi of 19 formulary-decision experts — from MOH, National Guard Health Affairs, King Saud Medical City, KFSH&amp;RC and King Fahd Medical City — reached consensus on 88 statements. Economic and budgetary constraints produced the most statements. Experts also flagged inconsistent reimbursement decisions, difficult managed-entry agreements, the absence of a dedicated institutional DRD committee, and patients moving between institutions to find a wallet that would pay (${cite('abu-esba-2025', 'Abu Esba et al., 2025')}). Al-Jedai and colleagues had already argued that conventional cost-effectiveness and budget-impact methods are often insufficient for orphan drugs and gene therapies in the Kingdom (${cite('aljedai-2024', 'Al-Jedai et al., 2024')}).</p>
-
-<h2 id="what-nupco-and-payer-delphi-show">What do NUPCO lists and the 2025 payer Delphi show?</h2>
-
-<p>NUPCO’s open framework for immunology and rare-disease medicines, NPT0045/25, opened on 3 November 2025 and closed on 19 January 2026 (${cite('nupco-npt0045-page', 'NUPCO tender page')}). The published item list is one of the few official quantity files a 2026 brief can cite. It is a tender list. It is not an award table and it is not a treated-patient tracker.</p>
-
-<p>Lines a rare-disease launch team can actually name from that PDF:</p>
-
-<ul>
-<li><strong>Odevixibat</strong> 200 mcg, 4,800 capsules; 600 mcg, 5,970 capsules (${cite('nupco-npt0045-list', 'NUPCO NPT0045/25 item list')}).</li>
-<li><strong>Nusinersen</strong> 12 mg/5 ml, 388 vials; <strong>risdiplam</strong> 60 mg/80 ml, 828 bottles; <strong>onasemnogene abeparvovec</strong>, 6 units (${cite('nupco-npt0045-list', 'NUPCO')}).</li>
-<li><strong>Enzyme-replacement lines</strong> including imiglucerase 400 IU (22,216 vials), alglucosidase alfa 50 mg (8,779 vials), laronidase (14,582 vials) and elosulfase alfa (56,839 vials) (${cite('nupco-npt0045-list', 'NUPCO')}).</li>
-<li><strong>Tafamidis</strong> 61 mg, 5,220 capsules — a transthyretin-amyloidosis product sitting on the same immunology-and-rare-disease list (${cite('nupco-npt0045-list', 'NUPCO')}).</li>
-</ul>
-
-<p>SFDA’s vutrisiran page, last updated 30 September 2026, lists the approved use as hereditary ATTR amyloidosis in adults with stage 1 or stage 2 polyneuropathy (${cite('sfda-vutrisiran', 'SFDA')}). Spinraza and Zolgensma both have SDI entries for 5q SMA (${cite('sfda-spinraza', 'SFDA SDI, Spinraza')}; ${cite('sfda-zolgensma', 'SFDA SDI, Zolgensma')}). Registration plus a NUPCO line still does not say how many patients started, persisted or switched.</p>
-
-<p>A 23 August 2026 iNUPCO marketplace notice, as summarised by a tender aggregator, named vutrisiran 25 mg/0.5 ml, odevixibat 200 mcg, Trikafta 100 mg oral granules and CUTX-101 (copper histidine) 250 mg/vial among insured pharmaceutical items (${cite('inupco-2026-notice', 'BidDetail / iNUPCO notice')}). Treat that as a marketplace signal. It is not an SFDA label for Trikafta granules or CUTX-101, and it is not a published award. A brief that converts those four names into a 2026 demand forecast has left the published record.</p>
-
-${figureHtml(RARE_DISEASE_KSA_FIGURES[2])}
-
-<p>SMA is the cleanest worked example of the evidence gap. The 2022 carrier study modelled 2,265 people living with SMA (${cite('aljumah-2022', 'AlJumah et al., 2022')}). A 2020 clinician survey of 72 physicians found that 39% already had patients on nusinersen, that 8.3% had prescribed onasemnogene abeparvovec but none of those patients had started, and that 64.3% said only supportive care was available in their setting (${cite('sma-ksa-2021', 'Al-Muhaizea et al., 2021')}). NUPCO’s 2025 item list then published 388 nusinersen vials, 828 risdiplam bottles and 6 onasemnogene units (${cite('nupco-npt0045-list', 'NUPCO')}). Those three sources — a modelled stock, a 2020 clinic survey and a 2025 tender list — cannot be averaged into one “SMA market”. They are the reason the study exists.</p>
-
-<p>Cystic fibrosis is the genotype warning. Banjar’s 396-patient file puts p.Phe508del at 12% (${cite('banjar-2021', 'Banjar et al., 2021')}). A Trikafta granules listing on an iNUPCO notice does not tell a brand team how many of those 396, or of the unpublished remainder, carry a responsive CFTR variant (${cite('inupco-2026-notice', 'iNUPCO notice')}). Chart-level genotypes have to be collected in the Kingdom.</p>
-
-<p>Sickle cell disease and transfusion-dependent β-thalassemia are a different brief. Premarital files, hydroxyurea persistence, matched-sibling transplant and Casgevy’s authorised-treatment-centre layer are already sourced on <a href="/blog/hematology-market-research-saudi-arabia">hematology market research Saudi Arabia</a>. Do not copy that funnel into an SMA, CF, ATTR or lysosomal-storage forecast.</p>
-
+<h2 id="regulator">What the regulator has published</h2>
+<p>The Saudi Food and Drug Authority, the SFDA, published a regulatory framework called the New Accelerator Program for Drugs for Rare Diseases, NADR, version 1.0. It was issued on 5 August 2026 and came into force on 5 September 2026 (${cite('sfda-nadr-2026', 'SFDA NADR framework')}). The accelerator is a pathway for rare-disease drugs. It is not a census of patients.</p>
+<p>The Authority also publishes Guidance for Orphan Drug Designation, document DS-G-101-V1.1 (${cite('sfda-odd-2024', 'SFDA orphan-drug designation guidance')}). Orphan-drug designation is the status a company asks for when it wants a rare-disease medicine treated under that guidance. Designation is not a hospital order, and it is not proof that a patient has been found.</p>
+<p>Named products already have public drug-information pages. The vutrisiran page, for the brand Amvuttra, was last updated on 30 September 2026 (${cite('sfda-vutrisiran', 'SFDA, vutrisiran')}). Spinraza, the brand for nusinersen, is listed as a 12 mg solution for injection (${cite('sfda-spinraza', 'SFDA, Spinraza')}). Zolgensma, the brand for onasemnogene abeparvovec, is on the same drug-information system (${cite('sfda-zolgensma', 'SFDA, Zolgensma')}). A page on that system tells you the product is described there. It does not tell you how many people received it last quarter.</p>
 ${figureHtml(RARE_DISEASE_KSA_FIGURES[3])}
 
-<p>The 2025 Delphi is the payer-layer source a HEOR team should read before writing the discussion guide. None of the 19 experts reported a dedicated institutional committee for drugs for rare diseases, and there is no unified HTA process for them. Outcome-based agreements break when the contract sits at one hospital and follow-up sits at another. Participants described patients crossing institutions to find a wallet (${cite('abu-esba-2025', 'Abu Esba et al., 2025')}). A NUPCO representative at the 2023 workshop had already asked for better demand forecasts, especially for unregistered or non-formulary orphans (${cite('abozaid-2025-workshop', 'Abozaid et al., 2025')}). That is a research product: a bottom-up treated-patient and eligible-patient file, not a global epidemiology slide.</p>
+<h2 id="tender">A tender quantity is not a patient</h2>
+<p>NUPCO, the National Unified Procurement Company, runs an open framework for immunology and rare-disease medicines, tender NPT0045/25 (${cite('nupco-npt0045-page', 'NUPCO NPT0045/25')}). The item list publishes tender quantities. The list itself says those quantities are not awards and not treated-patient counts (${cite('nupco-npt0045-list', 'NPT0045/25 item list')}). Read the quantity as a planning number. Then ask the hospital what was dispensed.</p>
+<p>A BidDetail notice dated 23 August 2026 summarises an iNUPCO marketplace listing for insured pharmaceutical items (${cite('inupco-2026-notice', 'BidDetail, 23 August 2026')}). iNUPCO is the electronic marketplace. The notice is not an SFDA label and not a published award. Do not quote it as either.</p>
+<p>The Council of Health Insurance publishes the CHI Drug Formulary, called Dhaman (${cite('chi-formulary', 'CHI Dhaman formulary')}). That is the private-insurance list. It is not the NUPCO framework. A 2024 country note on the Saudi health system and medicine prices is a third file again (${cite('ppri-2024', 'PPRI 2024')}). Use it for the pricing context. Do not use it as a rare-disease headcount. The General Authority for Statistics publishes 2024 population estimates (${cite('gastat-2024', 'GASTAT, 2024')}). Residents are the backdrop. They are not the diagnosed cohort.</p>
 
-<h2 id="what-should-rare-disease-market-research-saudi-arabia-measure">What should rare disease market research Saudi Arabia measure?</h2>
+<h2 id="system-papers">Papers that describe the system</h2>
+<p>Several papers discuss policy. Cite them for the question they actually studied.</p>
+<ul>
+<li>Abozaid and colleagues reported policy insights from a multi-stakeholder workshop on a rare-disease and orphan-drug ecosystem (${cite('abozaid-2025-workshop', 'Frontiers in Pharmacology, 2025')}). A workshop is not a patient registry.</li>
+<li>Abu Esba and colleagues used a Delphi exercise on the challenges of evaluating and reimbursing rare-disease drugs (${cite('abu-esba-2025', 'Journal of Pharmaceutical Policy and Practice, 2025')}). A Delphi records expert agreement. It does not count patients.</li>
+<li>Balkhi and colleagues compared orphan-drug policies in Saudi Arabia, the United States and the European Union (${cite('balkhi-2023', 'Saudi Pharmaceutical Journal, 2023')}). A policy comparison is not a 2026 treated-patient count.</li>
+<li>A separate Abozaid review, in BMJ Open in 2025, gathered how different countries define a rare disease and an orphan drug (${cite('abozaid-2025-definitions', 'BMJ Open, 2025')}). Definitions differ. Do not import one country’s cutoff and call it the SFDA rule unless the SFDA guidance says so.</li>
+<li>Al-Jedai and colleagues describe a step toward a national multi-criteria framework for health decisions (${cite('aljedai-2024', 'Value in Health Regional Issues, 2024')}). The paper’s title calls it a step toward that framework. It is not, by itself, the form a NUPCO buyer fills in.</li>
+</ul>
+${figureHtml(RARE_DISEASE_KSA_FIGURES[1])}
+<p>${cite('grand-view', 'Grand View Research')}, ${cite('imarc', 'IMARC')} and ${cite('fortune-bi', 'Fortune Business Insights')} sell rare-disease and orphan-drug outlooks. Those pages are syndicated sizing. They are not a diagnosed cohort. A company that takes only that slide to a hospital committee will be asked where the patients are.</p>
 
-<p>Design the study backwards from the decision — a hospital formulary, a NUPCO cycle, a CHI addition, a NADR or ODD file, or a first-centre capacity plan.</p>
+<h2 id="gene-papers">Papers that describe families and genes</h2>
+<p>Cousin marriage, called consanguinity when the spouses are relatives, is studied because some rare conditions are more common when parents share ancestry. It is still not a forecast for one drug.</p>
+<ul>
+<li>El-Mouzan and colleagues measured how consanguinity varies by region (${cite('el-mouzan-2007', 'Saudi Medical Journal, 2007')}). A national pattern can hide the city where a clinic actually sits.</li>
+<li>El-Hazmi and colleagues also studied consanguinity in the Saudi population (${cite('el-hazmi-1995', 'Journal of Medical Genetics, 1995')}). That is an earlier paper. Do not average it with the later one into a single rate this page does not calculate.</li>
+<li>Monies and colleagues described genetic diseases found in the first 1,000 diagnostic panels and exomes (${cite('monies-2017', 'Human Genetics, 2017')}). An exome test reads the coding parts of a person’s genes. One thousand tests are a laboratory series. They are not the national population.</li>
+<li>A Ministry of Health paper by Alhashem and colleagues discusses genetic data sharing and artificial intelligence from a cross-section of the Saudi human genome (${cite('moh-shgp', 'Ministry of Health')}). Data sharing is not a treatment count.</li>
+<li>Abouelhoda and colleagues write about Arab founder variants, gene changes that trace back to a shared ancestor, and what they mean for clinical genomics (${cite('abouelhoda-2024', 'Med, 2025')}). A founder variant can explain why a condition clusters. It does not name the hospital that will infuse a drug.</li>
+</ul>
+${figureHtml(RARE_DISEASE_KSA_FIGURES[0])}
+<p>Screening and single-disease papers have the same limit. Alfadhel and colleagues reported the incidence of disorders found by the expanded newborn screening programme (${cite('alfadhel-2017-nbs', 'Journal of Paediatrics and Child Health, 2017')}). A later paper from the same lead author is a thirteen-year review of inborn errors of metabolism at one tertiary centre (${cite('alfadhel-2016-iem', 'Orphanet Journal of Rare Diseases, 2016')}). An inborn error of metabolism is an inherited problem in how the body handles food components. A centre series is not every hospital in the Kingdom.</p>
+<p>Spinal muscular atrophy, SMA, is a genetic condition that weakens muscles. Al Jumah and colleagues studied how often people in Saudi Arabia carry an SMA gene (${cite('aljumah-2022', 'Molecular Genetics and Genomic Medicine, 2022')}). Alharbi and colleagues discuss SMA genetic epidemiology and the case for premarital genomic screening in Arab populations (${cite('alharbi-2024', 'Communications Medicine, 2024')}). Al-Muhaizea and colleagues published a 2020 update on how SMA is managed in Saudi Arabia (${cite('sma-ksa-2021', 'Frontiers in Pediatrics, 2021')}). Management advice is not a count of people on Spinraza or Zolgensma. A carrier frequency is not the number of people living with the disease, unless the paper you are quoting is explicitly a prevalence model and you cite that model’s own limits.</p>
+${figureHtml(RARE_DISEASE_KSA_FIGURES[2])}
+<p>Cystic fibrosis is another inherited disease, tied to changes in a gene called CFTR. Banjar and colleagues mapped where those gene changes are found in Saudi Arabia (${cite('banjar-2021', 'International Journal of Pediatrics and Adolescent Medicine, 2021')}). A map of mutations is not a map of treated patients. Do not replace it with a genotype mix from Europe or the United States.</p>
 
-${WORKSTREAM_TABLE_HTML}
+<h2 id="what-not-to-do">What not to do with those papers</h2>
+<p>Do not multiply a carrier rate by the population estimates and call the result demand. The carrier papers and the population publication answer different questions. Do not treat a NUPCO quantity as the number of people treated. The list says it is not that. Do not treat a marketplace notice as an award. Do not treat a workshop or a Delphi as a registry. Do not treat orphan-drug designation as a chair that is already filled.</p>
+<p>If two papers describe the same topic years apart, quote both with their years. Do not blend them into a newer number they did not publish.</p>
 
+<h2 id="questions">Questions to put in the brief</h2>
+<p>Write the decision first. It might be a NADR file, a place on the NPT0045/25 list, a Dhaman question, or the first centre that will actually see the patient.</p>
 ${figureHtml(RARE_DISEASE_KSA_FIGURES[4])}
-
 <ul>
-<li><strong>Epidemiology baseline.</strong> Name whether the model uses SFDA’s 370,000 headline, Alfadhel’s 1:1,043 NBS file, AlJumah’s 2,265 SMA model or Banjar’s 396 CF patients — and test the others (${cite('sfda-nadr-2026', 'SFDA')}; ${cite('alfadhel-2017-nbs', 'Alfadhel 2017')}; ${cite('aljumah-2022', 'AlJumah')}; ${cite('banjar-2021', 'Banjar')}).</li>
-<li><strong>Diagnostic yield.</strong> Solved versus unsolved, time to diagnosis, and which assay. Monies’ 27/43% split is a 2016 laboratory series, not a 2026 national rate (${cite('monies-2017', 'Monies et al., 2017')}).</li>
-<li><strong>Eligibility.</strong> Age, genotype, stage and fitness from charts. Vutrisiran’s SFDA use is adult stage 1–2 hATTR polyneuropathy; Zolgensma’s SDI entry is type 1 or up to three SMN2 copies (${cite('sfda-vutrisiran', 'SFDA')}; ${cite('sfda-zolgensma', 'SFDA SDI')}).</li>
-<li><strong>Payer layer.</strong> MOH, National Guard, military, KFSH&amp;RC and CHI-insured private, interviewed separately (${cite('ppri-2024', 'PPRI 2024')}; ${cite('abu-esba-2025', 'Abu Esba et al., 2025')}).</li>
-<li><strong>Share of treated patients.</strong> Anonymous PRFs so new starts and continuing patients are two numbers. See the <a href="/insights/best-rare-disease-market-research-companies-2026">rare-disease ranking</a>.</li>
+<li><strong>Which definition.</strong> Say whether the brief uses the SFDA designation guidance or a definition from the BMJ Open review. They are not interchangeable by default.</li>
+<li><strong>Which cohort.</strong> Name the test that confirms the diagnosis, and the hospitals that run it. The first 1,000 exomes are not that list unless those hospitals are in the sample.</li>
+<li><strong>Which product page.</strong> If the drug is vutrisiran, Spinraza or Zolgensma, cite the drug-information page for what it is. Then measure use separately.</li>
+<li><strong>Which supply route.</strong> Keep the NPT0045/25 framework, the August 2026 marketplace notice and a hospital purchase apart.</li>
+<li><strong>Which family fact.</strong> If cousin marriage matters for this disease, say which paper and which region. Do not use one national sentence for every city.</li>
+<li><strong>Which payer.</strong> Dhaman is the private list. NUPCO is the government framework. Ask which wallet funds the named centre.</li>
 </ul>
+<p>Report the result as a share of diagnosed patients who are treated, at named centres. Ask for Arabic and English instruments. Ask the agency which paper it will not convert into a national total.</p>
 
-<p>For neighbouring systems do not import a Gulf average. Compare <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a>, <a href="/healthcare-market-research/egypt">Egypt</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a>. A Saudi CHI or NUPCO answer is not a DHAMAN or UAE Thiqa answer. A budget-impact that only prices the invoice, and ignores the admissions and supportive care payers already fund, answers the wrong question. That design sits on <a href="/budget-impact-model-saudi-arabia">budget-impact modelling in Saudi Arabia</a>.</p>
-
-<h2 id="how-to-commission">How should you commission the study?</h2>
-
-<ul>
-<li>How many geneticists, metabolic physicians, neuromuscular or indication-specific specialists will you recruit, and from which cities — Riyadh, Jeddah and the Eastern Province at minimum?</li>
-<li>Will results be reported by nationality, by public versus military/National Guard versus private, and by new versus current cases?</li>
-<li>Which prevalence baseline will you use, and why?</li>
-<li>Will the discussion guide treat SFDA designation, NADR, NUPCO, hospital P&amp;T and CHI as five layers, not one “orphan access” share?</li>
-<li>Are questionnaires available in Arabic and English?</li>
-<li>Who owns the data, and can it be re-cut after a formulary question changes?</li>
-</ul>
-
-<p>Desk-research rare-disease outlooks remain useful for a first cut of category language. Grand View Research, IMARC Group and Fortune Business Insights publish pages that often appear for this query. Use them to triangulate how competitors talk about the category. Do not take them to a P&amp;T meeting as the evidence pack for an enzyme, an siRNA or a gene therapy.</p>
-
-<p>A physician-survey design is covered on <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>. For the access dossier, see <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a>, <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">top healthcare market research companies in Saudi Arabia</a> and <a href="/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia">how to choose a healthcare market research agency in Saudi Arabia</a>.</p>
-
-<h2 id="why-bionixus">Why choose BioNixus for rare disease market research in Saudi Arabia?</h2>
-
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
-
-<p>Choose BioNixus when the decision depends on why Saudi geneticists, metabolic teams and payers act as they do, rather than on a syndicated rare-disease market total. Each study is built around one decision — a formulary, a tender, a NADR file or a first-centre plan — and is reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews.</p>
-
-<p>See also <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>, <a href="/pharmaceutical-companies-saudi-arabia">pharmaceutical companies in Saudi Arabia</a>, <a href="/healthcare-market-research/therapy/rare-diseases">rare disease therapy research</a>, the <a href="/blog/hematology-market-research-saudi-arabia">Saudi hematology briefing</a> and the <a href="/insights/best-rare-disease-market-research-companies-2026">2026 rare-disease ranking</a>.</p>
-
-<p>To brief a Saudi orphan, SMA, CF, ATTR, lysosomal-storage or NADR-path study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<h2 id="how-to-brief">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. Custom studies are usually priced at $10k–$60k. The firm has 40 client reviews on its public profiles. The line “Guaranteed in writing” covers the agreed scope and timeline. It does not cover what the interviews will find.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
+<p>To brief a rare-disease study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. Say which diagnosis, which hospital and which decision the study has to answer.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -580,37 +488,37 @@ export const RARE_DISEASE_KSA_FAQ: { question: string; answer: string }[] = [
   {
     question: 'What is rare disease market research Saudi Arabia?',
     answer:
-      'Rare disease market research Saudi Arabia is commissioned primary research on how rare and ultra-rare conditions are diagnosed, treated, funded and referred in the Kingdom. It covers diagnosed-cohort epidemiology, diagnostic yield, centre maps, labelled eligibility, NUPCO and hospital-formulary access, and share of treated patients. It is not a syndicated rare-disease market-size report.',
+      'It is commissioned research on who is diagnosed with a rare condition, which hospital sees them, and who pays. A tender quantity and a gene-carrier study do not answer that on their own.',
   },
   {
-    question: 'How many people in Saudi Arabia live with a rare disease?',
+    question: 'Does the SFDA publish a patient count for every rare disease?',
     answer:
-      'SFDA’s August 2026 NADR framework writes that more than 370,000 people in Saudi Arabia live with a rare disease, and that a disease is rare when it affects fewer than one in 2,000 people. That is an official estimate, not a national registry extract. Newborn screening of 775,000 infants in 2005–2012 found one of 16 disorders in 1:1,043 births. Do not average those methods into one launch funnel.',
+      'The sources on this page do not. They include the NADR framework, in force from 5 September 2026, and guidance on orphan-drug designation. Designation is a regulatory status. It is not a census.',
   },
   {
-    question: 'What is SFDA’s NADR program?',
+    question: 'What is NADR?',
     answer:
-      'NADR is SFDA’s New Accelerator Program for Drugs for Rare Diseases. The framework is dated 5 August 2026 and took effect on 5 September 2026. Eligibility uses a prevalence of fewer than 5 in 10,000 plus unmet need. Review of a complete designation request is 20 working days, and the marketing-authorisation application should follow within six months. Designation is not a formulary listing.',
+      'NADR is the SFDA’s New Accelerator Program for Drugs for Rare Diseases, version 1.0. It was issued on 5 August 2026 and came into force on 5 September 2026. It is a pathway for medicines. It is not a list of patients treated.',
   },
   {
     question: 'Does a NUPCO listing mean patients are being treated?',
     answer:
-      'No. NUPCO’s NPT0045/25 immunology and rare-disease item list published tender quantities — including 388 nusinersen vials, 828 risdiplam bottles, 6 onasemnogene units and two odevixibat strengths. Those figures are listed supply, not awards and not a treated-patient count. A 2025 Delphi of 19 Saudi formulary experts still put economic constraints first and flagged inconsistent reimbursement.',
+      'No. The NPT0045/25 item list publishes tender quantities and says those quantities are not awards or treated-patient counts. A marketplace notice is not an award either.',
   },
   {
-    question: 'Why does consanguinity matter for an orphan forecast?',
+    question: 'Why do cousin-marriage papers appear in an orphan-drug brief?',
     answer:
-      'El-Mouzan’s national household sample put consanguinity at 56%, with first-degree cousins at 33.6% and large regional splits (Madina 67.2%, Al-Baha 42.1%). High consanguinity raises the frequency of some recessive conditions, but Monies’ first 1,013 KFSH&RC families found that only 33% of recessive positives were founder mutations. The rest were private. Do not apply one national multiplier to every indication.',
+      'El-Mouzan and El-Hazmi studied how common cousin marriage is in Saudi Arabia, including regional differences. That context can matter for some inherited diseases. It is not the number of people who will receive a named drug.',
   },
   {
-    question: 'Should a CF or SMA brief use Western genotype shares?',
+    question: 'Can a spinal muscular atrophy brief use a foreign genotype mix?',
     answer:
-      'No. In Banjar’s 396-patient KFSH&RC CF series, p.Phe508del was 12%, not the 66–75% Western share. AlJumah modelled 2,265 people living with SMA from a 2.6% Saudi carrier rate. Importing a US or EU genotype or incidence mix will mis-state labelled eligibility. Collect chart-level genotypes and SMN2 copy numbers in the Kingdom.',
+      'Not as a substitute for Saudi evidence. Al Jumah and colleagues studied carrier frequency in Saudi Arabia. Banjar and colleagues mapped cystic fibrosis gene changes in Saudi Arabia. Use the paper that matches the disease and the country.',
   },
   {
-    question: 'Why commission BioNixus for rare disease market research in Saudi Arabia?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'BioNixus runs custom primary research from an Al Khobar field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a formulary, a tender or a NADR file — and reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'Custom studies are usually $10k–$60k. Guaranteed in writing covers the agreed scope and timeline. It does not cover what the interviews will find. The firm has 40 client reviews on its public profiles.',
   },
 ];
 
@@ -738,7 +646,7 @@ export const RARE_DISEASE_KSA_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning rare disease or orphan-drug research in Saudi Arabia?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes geneticist, patient and payer research around it, from an Al Khobar field office and a network of about 3,200 physicians.',
+      'Tell us the orphan-drug decision you need to make. BioNixus scopes the study around that decision. Custom work is usually $10k–$60k.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

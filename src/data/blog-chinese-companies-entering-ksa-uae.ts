@@ -43,15 +43,15 @@ export const CHINESE_KSA_UAE_META_DESCRIPTION =
   'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.';
 
 export const CHINESE_KSA_UAE_DISPLAY_TITLE =
-  'Chinese companies entering Saudi Arabia and the UAE: market research playbook';
+  'Chinese Companies in Saudi Arabia and the UAE: What to Research First';
 
 export const CHINESE_KSA_UAE_DISPLAY_SUBTITLE =
-  'What a mainland headquarters must prove in both markets before it commits capital';
+  'Name the buyer, the city, the price, and the licence in each country';
 
 export const CHINESE_KSA_UAE_BREADCRUMB_LABEL = 'Chinese companies entering KSA and the UAE';
 
 export const CHINESE_KSA_UAE_EXCERPT =
-  'A sourced 2026 market research playbook for Chinese companies entering Saudi Arabia and the UAE: what a mainland HQ must prove on demand, licence, cities, channels, RMB settlement and outbound-investment paperwork before it remits capital.';
+  'A plain guide for Chinese companies looking at Saudi Arabia and the UAE: which official figures to quote, and which questions only buyer interviews can answer.';
 
 export const CHINESE_KSA_UAE_PUBLISHED_ISO = '2026-10-16T12:00:00.000Z';
 export const CHINESE_KSA_UAE_UPDATED_ISO = '2026-10-16T12:00:00.000Z';
@@ -258,167 +258,94 @@ export function countWords(html: string): number {
 }
 
 export const CHINESE_KSA_UAE_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What must Chinese companies entering Saudi Arabia and the UAE prove first?', anchor: 'what-must-prove-first' },
-  { heading: 'Why a mainland HQ cannot copy a Western Gulf deck', anchor: 'cannot-copy-western-deck' },
-  { heading: 'Official numbers that frame a 2026 China brief', anchor: 'official-numbers' },
-  { heading: 'Two markets, not one Gulf corridor', anchor: 'two-markets' },
-  { heading: 'The five proofs a China investment committee still owes itself', anchor: 'five-proofs' },
-  { heading: 'Which vehicle in which market — without repeating the Saudi licence file', anchor: 'vehicles' },
-  { heading: 'What mainland ODI paperwork changes about the research brief', anchor: 'odi-paperwork' },
-  { heading: 'How the brief changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a research partner for a China-to-Gulf file', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to settle before you send money', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'Saudi Arabia and the UAE are two markets', anchor: 'two-markets' },
+  { heading: 'Which legal setup you are actually choosing', anchor: 'setup' },
+  { heading: 'What changes because the parent company is in China', anchor: 'china-rules' },
+  { heading: 'How the questions change by product', anchor: 'by-sector' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const CHINESE_KSA_UAE_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Chinese companies entering Saudi Arabia and the UAE must prove who will buy, in which city, at what VAT-inclusive price, through which channel and under which licence in each market before a mainland HQ remits capital. A customs invoice is not a demand file. Primary interviews make the brief usable.</p>`;
+export const CHINESE_KSA_UAE_EXECUTIVE_SUMMARY_HTML = `<p>Chinese companies entering Saudi Arabia and the UAE should name the buyer, the city, the price after tax, and the licence in each country before a headquarters in China sends money. Saudi Arabia and the UAE are separate markets. A customs total describes shipments. Interviews show who will pay the invoice.</p>`;
 
-const NARRATIVE_HTML = `<p>Chinese commercial teams often arrive with a Belt and Road slide, a Jebel Ali warehouse and a single “GCC” TAM. That is not a brief for Chinese companies entering Saudi Arabia and the UAE. Entry research has to name the buyer, the city, the price, the channel and the licence in each market before a mainland headquarters remits capital. This playbook sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma briefs, not for SFDA or NUPCO files.</p>
+const NARRATIVE_HTML = `<p>Chinese companies often treat Saudi Arabia and the UAE as one Gulf market. They are separate markets. Before a headquarters in China sends money, name who will buy, in which city, at what price after tax, and through which seller. Also name the licence in that country. This page is a plain guide to Chinese companies entering Saudi Arabia and the UAE. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for consumer and industrial brands, not for medicines.</p>
 
-<p>The Kingdom-side licence, ISIC activity and Regional Headquarters tests are already written for US, UK and European sponsors in our <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>. This article does not repeat that file. It is the China-side brief: two markets, outbound-investment paperwork, RMB settlement and a buyer that is not a Shenzhen export invoice. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. See the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>The activity tests for a Saudi licence are already written in the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>. This article does not repeat that file. It will not reprint the staffing tests. Use that page for the Saudi licence. Use this page for two markets, for the papers a parent company in China still files, and for renminbi settlement.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 China-to-Gulf brief can cite, October 2026</strong></p>
+<h2 id="what-to-prove">What to settle before you send money</h2>
+<p>A trade total describes shipments. Interviews with buyers show whether someone will pay your invoice. Answer these questions in each country.</p>
 <ul>
-<li><strong>USD 108.16 billion</strong> of China–Saudi goods trade in 2025 (exports USD 53.42 billion; imports USD 54.74 billion), after USD 107.53 billion in 2024. China imported 80.759 million tons of Saudi crude in 2025 and 78.639 million tons in 2024 (${cite('mfa-ksa-zh', 'MFA China, July 2026 update')}; ${cite('mfa-ksa-en', 'MFA China English page')}).</li>
-<li><strong>USD 108.0 billion</strong> of China–UAE goods trade in 2025 (exports USD 72.88 billion; imports USD 35.12 billion), after USD 101.838 billion in 2024. China imported 37.513 million tons of UAE crude in 2025 (${cite('mfa-uae-zh', 'MFA China, July 2026 update')}; ${cite('mfa-uae-en', 'MFA China English page')}).</li>
-<li><strong>SAR 403 billion</strong> is how Saudi Industry Minister Bandar Alkhorayef stated 2024 bilateral trade in Beijing — about the same USD 107.5 billion the Chinese MFA records for 2024, at a 3.75 riyal rate (${cite('spa-forum-2025', 'Saudi Press Agency')}).</li>
-<li><strong>14.6% / 27.5%:</strong> China was the main destination for Saudi merchandise exports and the first source of Saudi merchandise imports in 2025 (${cite('gastat-itr-2025', 'GASTAT')}).</li>
-<li><strong>More than 750</strong> Chinese companies operate in Saudi Arabia; Chinese investment in the Kingdom rose about 30% in 2024 to exceed SAR 31 billion (${cite('spa-forum-2025', 'Saudi Press Agency')}).</li>
-<li><strong>More than 400,000</strong> Chinese residents and <strong>over 17,000</strong> Chinese companies in the UAE, as stated by the Abu Dhabi Chamber via WAM in June 2026 (${cite('wam-adcci-2026', 'WAM')}).</li>
-<li><strong>US$111.5 billion</strong> of UAE–China non-oil trade in 2025, up 24.5%, with a stated aim of US$200 billion of bilateral trade by 2030 (${cite('wam-moft-2026', 'WAM / MoFT')}; ${cite('wam-committee-2025', 'WAM')}).</li>
+<li><strong>Who buys.</strong> GASTAT’s mid-2024 population estimate is 35.3 million people, about 55.6% Saudi and 44.4% non-Saudi (${cite('gastat-pop-2024', 'GASTAT')}). The UAE’s 2024 population was about 11.29 million, up 5.7% from 10.68 million (${cite('fcsc-unified-2025', 'FCSC')}). Those totals are a frame. Your customer list is smaller.</li>
+<li><strong>Which city.</strong> Riyadh, Jeddah, and the Eastern Province are different places to sell. So are Dubai, Abu Dhabi, and Sharjah. One Gulf average hides the first site.</li>
+<li><strong>What price, after tax.</strong> Saudi Arabia’s standard VAT is 15% (${cite('zatca-vat', 'ZATCA')}). The UAE introduced VAT on 1 January 2018 at 5%, with mandatory registration above AED 375,000 (${cite('uae-vat', 'UAE Ministry of Finance')}). Corporate tax is 9% on taxable income above AED 375,000 (${cite('cabinet-116-ct', 'Cabinet Decision 116 of 2022')}). A factory price in yuan is a different number from a shelf price in Riyadh or Dubai.</li>
+<li><strong>Who sells it.</strong> Name who recommends the product, who keeps it in stock, who pays, and what the buyer uses today.</li>
+<li><strong>Which licence.</strong> The MISA Investor Guide, 13th edition, June 2026, covers investment registration and ISIC4 activity categories (${cite('misa-guide-2026', 'MISA')}). In the UAE, Federal Decree-Law No. 26 of 2020 and No. 32 of 2021 allow full foreign ownership of commercial companies. Strategic-impact activities remain restricted. The government page was updated on 6 April 2026 (${cite('uae-ownership', 'u.ae')}). A permit is not proof of sales.</li>
+<li><strong>Whether the parent company in China can send the money.</strong> State Council Decree 837 has applied since 1 July 2026. Articles 11 and 12 keep encouraged, restricted, and prohibited categories, and they keep approval or filing and funds registration (${cite('sc-837', 'Decree 837')}). Companies still file with the National Development and Reform Commission under Order 11 of 2017, effective 1 March 2018 (${cite('ndrc-11', 'NDRC Order 11')}), and with the Ministry of Commerce under Order 3 of 2014, effective 6 October 2014 (${cite('mofcom-3', 'MOFCOM Order 3')}). A market study does not replace those filings.</li>
 </ul>
-</div>
+<p>Desktop research can frame the questions. Interviews and surveys answer them. Related pages cover <a href="/saudi-arabia-retail-market-research">retail research in Saudi Arabia</a>, <a href="/uae-retail-market-research">retail research in the UAE</a>, and <a href="/uae-technology-market-research">technology research in the UAE</a>.</p>
 
-<h2 id="what-must-prove-first">What must Chinese companies entering Saudi Arabia and the UAE prove first?</h2>
-
-<p>Chinese companies entering Saudi Arabia and the UAE have to answer five commercial questions in each market, then a sixth question that a Western sponsor never files: can the mainland parent actually remit the capital under current outbound-investment rules? The five commercial questions are the same ones any investment committee should ask. The sixth is China-specific.</p>
-
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its source and its year. These series measure different things, so keep them in separate sentences.</p>
 <ul>
-<li><strong>Who buys?</strong> GASTAT’s mid-2024 population is 35.3 million (55.6% Saudi, 44.4% non-Saudi); the UAE’s 2024 population is about 11.29 million (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('fcsc-unified-2025', 'FCSC')}). A Shenzhen export invoice describes neither mix.</li>
-<li><strong>Where?</strong> Riyadh, Jeddah and the Eastern Province are not interchangeable with Dubai, Abu Dhabi and Sharjah. A “GCC average” hides the first site.</li>
-<li><strong>At what price?</strong> A range that includes the Kingdom’s 15% VAT or the UAE’s 5% VAT, not an ex-factory RMB list (${cite('zatca-vat', 'ZATCA')}; ${cite('uae-vat', 'UAE Ministry of Finance')}).</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to. Jebel Ali re-export is not Riyadh sell-through.</li>
-<li><strong>Under which licence?</strong> MISA registers ISIC4 activities as available or restricted (${cite('misa-guide-2026', 'MISA')}). Most UAE mainland activities can be 100% foreign-owned; strategic-impact activities cannot (${cite('uae-ownership', 'u.ae')}).</li>
-<li><strong>Can the parent remit?</strong> NDRC filing or approval, a MOFCOM certificate and funds registration still sit under State Council Decree No. 837, in force from 1 July 2026 (${cite('ndrc-11', 'NDRC Order 11')}; ${cite('mofcom-3', 'MOFCOM Order 3')}; ${cite('sc-837', 'State Council Decree 837')}).</li>
+<li><strong>Saudi trade.</strong> China’s foreign ministry puts 2024 China–Saudi goods trade at USD 107.53 billion, and Saudi crude imports at 78.639 million tons. The two countries formed a comprehensive strategic partnership in January 2016 (${cite('mfa-ksa-en', 'Ministry of Foreign Affairs')}). The July 2026 update puts 2025 trade at USD 108.16 billion and crude imports at 80.759 million tons. In November 2022, Saudi Arabia became a destination for Chinese group tourism (${cite('mfa-ksa-zh', 'Ministry of Foreign Affairs, July 2026')}).</li>
+<li><strong>UAE trade.</strong> The English page puts 2024 China–UAE goods trade at USD 101.838 billion, and UAE crude imports at 35.5353 million tons. The comprehensive strategic partnership dates from July 2018. Mutual visa exemption has been in force since 16 January 2018 (${cite('mfa-uae-en', 'Ministry of Foreign Affairs')}). The July 2026 update puts 2025 trade at USD 108.0 billion and crude imports at 37.513 million tons. It also says a Chinese-language programme covers 181 UAE public schools (${cite('mfa-uae-zh', 'Ministry of Foreign Affairs, July 2026')}).</li>
+<li><strong>Saudi shares.</strong> GASTAT says China accounted for 14.6% of Saudi merchandise exports and 27.5% of Saudi merchandise imports in 2025 (${cite('gastat-itr-2025', 'GASTAT')}). A share of national trade is not an order for one product.</li>
+<li><strong>What a minister said.</strong> On 25 September 2025, Industry Minister Bandar Alkhorayef said 2024 trade was about SAR 403 billion, that Chinese investment exceeded SAR 31 billion, and that more than 750 Chinese companies operate in the Kingdom. The Saudi-Chinese Business Forum that day signed 42 investment agreements (${cite('spa-forum-2025', 'Saudi Press Agency')}). That speech is a different series from the foreign-ministry totals. Do not convert one into the other.</li>
+<li><strong>What WAM reported.</strong> The report of the UAE–China Investment Cooperation Committee on 21 April 2025 put 2024 bilateral trade at US$102 billion, up 7%, and restated an aim of US$200 billion by 2030 (${cite('wam-committee-2025', 'WAM, 21 April 2025')}). On 13 April 2026, WAM reported non-oil trade of US$111.5 billion in 2025, up 24.5%, and said China was about 11% of UAE non-oil trade (${cite('wam-moft-2026', 'WAM, 13 April 2026')}). The non-oil figure is not the full customs total.</li>
+<li><strong>Companies and residents.</strong> On 11 June 2026, WAM reported an Abu Dhabi Chamber delegation to Shanghai. The report said the UAE had more than 400,000 Chinese residents and over 17,000 Chinese companies, and that new Chinese Chamber memberships rose 85% in 2025 (${cite('wam-adcci-2026', 'WAM, 11 June 2026')}). A company count is not a demand curve. A new brand is entering a crowded field.</li>
+<li><strong>Investment.</strong> GASTAT’s 2024 figures are inflows of SAR 119 billion and a stock of SAR 977 billion. The published top net inflows were the United States, the UAE, France, and the Netherlands. China is not in that top four (${cite('gastat-fdi-2024', 'GASTAT')}). Dubai’s 2024 FDI report lists India, the United States, France, the United Kingdom, and Switzerland as the top five sources of estimated FDI capital. China is not in that top five (${cite('dubai-fdi-2024', 'Dubai DET')}). Greenfield capital and a count of companies are different series.</li>
+<li><strong>The UAE economy.</strong> On 15 June 2025, WAM, citing FCSC, said UAE GDP reached AED 1,776 billion in 2024, with 4% growth (${cite('wam-gdp-2024', 'WAM, 15 June 2025')}). That is a national account. It is not a forecast for one product.</li>
 </ul>
 
-<p>Desktop TAM can frame those questions. It cannot answer them. Primary interviews and bilingual surveys can. Adjacent country pages for the same commercial questions include <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a>, <a href="/saudi-arabia-technology-market-research">technology market research in Saudi Arabia</a>, <a href="/uae-retail-market-research">retail market research in the UAE</a> and <a href="/uae-technology-market-research">technology market research in the UAE</a>.</p>
+<h2 id="two-markets">Saudi Arabia and the UAE are two markets</h2>
+<p>Visa rules, school programmes, and tourism access do not make the two countries one buyer. The UAE’s mutual visa exemption with China has been in force since 16 January 2018. Saudi group tourism for Chinese travellers dates from November 2022. The 181 schools are a UAE education fact. None of those facts names the person who pays an invoice in Riyadh.</p>
+<p>The population mix is different. Saudis are about 55.6% of the mid-2024 total. The UAE figure of 11.29 million is a national total, and the 400,000 Chinese residents are a community count from the June 2026 chamber report. A labour camp in the Eastern Province, a Saudi family grocery, and a Dubai interview with Chinese residents are three groups. Keep the samples separate.</p>
+<p>The tax and data rules are different too. Fifteen per cent VAT in Saudi Arabia is not 5% VAT in the UAE, and the 9% corporate tax applies above AED 375,000 of UAE taxable income. Saudi Arabia’s personal-data law has been in force since 14 September 2023, with a grace period to 14 September 2024 (${cite('pdpl-ksa', 'SDAIA')}). The UAE’s Federal Decree-Law No. 45 of 2021 has been in force since 2 January 2022 (${cite('uae-pdpl', 'u.ae')}). If interviews collect names, follow the law of the country where the interview happens. A plan to store respondent files in China is a legal question for counsel, not a line in a questionnaire.</p>
+<p>A free-zone office in Dubai can be a regional base. If the first warehouse is in Saudi Arabia, that office is not the entry. Read the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a> for the activity rules, then come back here for demand, remittance, and the order of the two markets.</p>
 
-<h2 id="cannot-copy-western-deck">Why can a mainland HQ not copy a Western Gulf deck?</h2>
+<h2 id="setup">Which legal setup you are actually choosing</h2>
+<p>A plan that says “open in Dubai, then sell the Gulf” mixes several choices.</p>
+<ul>
+<li><strong>UAE mainland company.</strong> Full foreign ownership applies to commercial companies under the two decree-laws. Strategic-impact activities remain restricted. Ask which activity your project falls under. An ownership rule is not a sales forecast.</li>
+<li><strong>UAE free zone.</strong> A free-zone licence is permission to operate in that zone. It is not the same document as a mainland invoice to a buyer in Abu Dhabi or Riyadh.</li>
+<li><strong>Saudi investment registration.</strong> The June 2026 guide describes registration against activity categories. The walk-through of those categories is in the Saudi playbook. This page does not repeat that file.</li>
+<li><strong>Renminbi clearing.</strong> In December 2015, the Central Bank of the UAE and the People’s Bank of China agreed a bilateral swap and an RMB clearing centre in the UAE. The central bank’s press release is dated 19 July 2018 (${cite('cbuae-rmb', 'Central Bank of the UAE')}). The People’s Bank designated the Agricultural Bank of China, Dubai Branch, as the clearing bank on 9 December 2016. The branch opened on 10 May 2017 (${cite('abc-dubai', 'Agricultural Bank of China')}). Clearing makes treasury easier. It does not tell you whether a buyer in Jeddah will take the product.</li>
+</ul>
 
-<p>A London or New York instrument translated into Mandarin is not a China-to-Gulf file. Four official series show why.</p>
+<h2 id="china-rules">What changes because the parent company is in China</h2>
+<p>A parent company in China has to clear outbound investment as well as the local licence. Decree 837, in force since 1 July 2026, keeps the categories and keeps approval, filing, and funds registration. Order 11 and Order 3 are the two older measures those filings still sit under.</p>
+<p>Name one country and one setup in the filing. A form that says “GCC” will be rewritten. Keep official statistics in a different section from your interviews. If the product, the data, or the technicians may fall in a restricted category, find that out before you design the study. BioNixus writes the demand chapter. It does not file the certificate.</p>
 
-<p>First, the trade already exists — and it is not a proxy for SKU demand. China’s foreign ministry and GASTAT’s 14.6% / 27.5% 2025 shares, cited in the box, are bilateral customs totals (${cite('mfa-ksa-zh', 'MFA China')}; ${cite('mfa-uae-zh', 'MFA China')}; ${cite('gastat-itr-2025', 'GASTAT')}). They do not tell a manufacturer whether a named buyer in Riyadh or Industrial City Abu Dhabi will pay a named invoice.</p>
+<h2 id="by-sector">How the questions change by product</h2>
+<ul>
+<li><strong>Cars and equipment.</strong> The September 2025 forum signed 42 agreements, and the minister said more than 750 Chinese companies already operate in the Kingdom. Name the first city, the first dealer, and the rival a buyer would choose. The company count is the field you are walking into.</li>
+<li><strong>Construction and sites.</strong> The June 2026 chamber report is a count of companies and of new memberships. It is not a list of projects or payment terms. A second contractor needs a named project and a named payer.</li>
+<li><strong>Packaged goods and electronics.</strong> Start from the 55.6% / 44.4% split, then replace it with the neighbourhoods where you will sell. State whether the shelf price includes 15% VAT or 5% VAT. The 17,000-company figure in the UAE is a crowded channel, not a household basket. See the retail pages linked above.</li>
+<li><strong>Energy equipment.</strong> Crude tonnage is the import line on both foreign-ministry pages. Talk to the utility or the contractor. A consumer panel answers a different question. Technology buyers in the UAE are covered on the technology page linked above.</li>
+<li><strong>Travel.</strong> Group tourism from November 2022, and visa-free travel with the UAE since January 2018, are access facts. They are not hotel occupancy. A visitor survey in one city is a different study from a national arrival total.</li>
+<li><strong>Payments and personal data.</strong> Use the Saudi law and the UAE law as the starting point if any respondent file, card record, or staff list might leave the country. Ask counsel how each law applies. A research firm does not clear that transfer by itself.</li>
+</ul>
 
-<p>Second, the stock of Chinese firms is already large, and it is still not a demand curve. The Saudi industry minister said more than 750 Chinese companies operate in the Kingdom and that Chinese investment there rose about 30% in 2024 to exceed SAR 31 billion (${cite('spa-forum-2025', 'Saudi Press Agency')}). The Abu Dhabi Chamber, via WAM, put the UAE figures at more than 400,000 Chinese residents and over 17,000 Chinese companies (${cite('wam-adcci-2026', 'WAM')}). A second excavator brand walking into Jubail is walking into competitors, not an empty corridor.</p>
-
-<p>Third, the tax stack is not a China domestic stack and is not one Gulf stack. The Kingdom’s standard VAT is 15% (${cite('zatca-vat', 'ZATCA')}). The UAE’s is 5%, with mandatory registration above AED 375,000, and corporate tax of 9% above AED 375,000 of taxable income (${cite('uae-vat', 'UAE Ministry of Finance')}; ${cite('cabinet-116-ct', 'Cabinet Decision 116/2022')}). A Yiwu ex-factory list will not survive either rule unless the study states the tax-inclusive invoice. The <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a> walks the MISA activity rules. A Chinese sponsor still has to read them — and then add the UAE mainland-versus-free-zone choice that Western KSA-only files can skip.</p>
-
-<p>Fourth, the interview is not a domestic Chinese panel. The UAE has had comprehensive mutual visa exemption with China since 16 January 2018 (${cite('mfa-uae-en', 'MFA China')}). Saudi Arabia became an approved destination for Chinese group tourism in November 2022 (${cite('mfa-ksa-zh', 'MFA China')}). Chinese-language education is official policy — two Confucius Institutes and four university programmes in the Kingdom; 181 UAE public schools on the “Hundred Schools” project (${cite('mfa-ksa-zh', 'MFA China')}; ${cite('mfa-uae-zh', 'MFA China')}). Mandarin is useful for the sponsor team. Fieldwork still has to run in Arabic and English, with Mandarin reserved for the Chinese distributor or HQ interview.</p>
-
-<h2 id="official-numbers">Which official numbers should a 2026 China brief start from?</h2>
-
-<p>Use official series as the frame. Then replace the frame with primary evidence for the SKU. Do not invent giga-project revenues, and do not treat a minister’s forum speech as a city-level catchment.</p>
-
-<h3>The trade frame</h3>
-
-<p>Write the trade the way the two foreign ministries write it, with the year on the line — the box totals and crude tonnages (${cite('mfa-ksa-en', 'MFA China')}; ${cite('mfa-ksa-zh', 'MFA China')}; ${cite('mfa-uae-en', 'MFA China')}; ${cite('mfa-uae-zh', 'MFA China')}). Two official speakers add a policy overlay you should not mix with those customs totals. Sheikh Mansour bin Zayed put 2024 bilateral trade at US$102 billion, up 7%, and restated the aim of US$200 billion by 2030 (${cite('wam-committee-2025', 'WAM')}). In April 2026 the UAE Minister of Foreign Trade reported <em>non-oil</em> trade of US$111.5 billion in 2025 and said China accounts for about 11% of UAE non-oil trade, first in imports and 11th in non-oil exports (${cite('wam-moft-2026', 'WAM')}). In Beijing in September 2025, Saudi Industry Minister Alkhorayef put 2024 trade at about SAR 403 billion — the same 2024 MFA total at a 3.75 riyal rate — and said China is the Kingdom’s largest source of machinery, electronics, transport equipment and consumer goods (${cite('spa-forum-2025', 'Saudi Press Agency')}). Label each series. Do not add them together.</p>
-
-<h3>The investment and firm-count frame</h3>
-
-<p>GASTAT’s 2024 FDI register is the right national frame for the Kingdom: inflows SAR 119 billion, stock SAR 977 billion. The published top net-inflow sources were the United States (SAR 11 billion), the UAE (SAR 9 billion), France (SAR 4 billion) and the Netherlands (SAR 2 billion) (${cite('gastat-fdi-2024', 'GASTAT')}). China is not in that published top-four list. Quote both the minister’s “more than 750 companies” and “more than SAR 31 billion” line (${cite('spa-forum-2025', 'Saudi Press Agency')}) and the register’s published peers. Then replace both with the SKU evidence.</p>
-
-<p>Dubai’s 2024 FDI highlights report is the matching UAE warning. The top five source countries by estimated FDI capital were India (21.5%), the United States (13.7%), France (11%), the United Kingdom (10%) and Switzerland (6.9%) (${cite('dubai-fdi-2024', 'Dubai DET')}). China is not in that top five. The Abu Dhabi Chamber can still report 17,000-plus Chinese companies and an 85% rise in new Chinese memberships in 2025 (${cite('wam-adcci-2026', 'WAM')}). Greenfield capital and company count are different series. Do not conflate them.</p>
-
-<h3>The people and language frame</h3>
-
-<p>Start from the official populations, then replace them with a catchment. The Kingdom: 35.3 million at mid-2024, 55.6% Saudi and 44.4% non-Saudi (${cite('gastat-pop-2024', 'GASTAT')}). The UAE: about 11.29 million in 2024, up 5.7% from 10.68 million (${cite('fcsc-unified-2025', 'FCSC')}). UAE GDP was AED 1,776 billion in 2024 (${cite('wam-gdp-2024', 'WAM')}). More than 400,000 Chinese residents can support a Mandarin distributor network (${cite('wam-adcci-2026', 'WAM')}). They are not the Saudi family grocery. A Dubai Chinese-resident-only sample describes an enclave, not a launch.</p>
-
-<h2 id="two-markets">Why are Saudi Arabia and the UAE not one Gulf corridor?</h2>
-
-<p>Chinese groups often sequence the UAE first because the visa is visa-free, the free zones are familiar, and the Chinese resident base is already in the hundreds of thousands (${cite('mfa-uae-en', 'MFA China')}; ${cite('wam-adcci-2026', 'WAM')}). That is a hub decision, not a Kingdom demand proof.</p>
-
-<p>The buyer is different. Saudis are 55.6% of the Kingdom’s mid-2024 population; the UAE Unified Numbers booklet does not publish an Emirati split, and the 400,000 Chinese-resident figure is a community count, not a census cell (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('fcsc-unified-2025', 'FCSC')}; ${cite('wam-adcci-2026', 'WAM')}). A labour-heavy Eastern Province format, a Saudi family grocery and a Dubai Chinese-resident intercept are three groups. Keep the instruments siblinged and the samples separate. The method note on <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a> is the Kingdom-side sampling file; do not paste it onto Dubai.</p>
-
-<p>The tax, ownership and data stacks are different. Fifteen per cent VAT and MISA activity registration in the Kingdom versus 5% VAT, 9% corporate tax above AED 375,000, and 100% foreign ownership of most mainland activities in the UAE (${cite('zatca-vat', 'ZATCA')}; ${cite('misa-guide-2026', 'MISA')}; ${cite('uae-vat', 'UAE Ministry of Finance')}; ${cite('cabinet-116-ct', 'Cabinet Decision 116/2022')}; ${cite('uae-ownership', 'u.ae')}). The Kingdom’s PDPL has been in force since 14 September 2023 (${cite('pdpl-ksa', 'SDAIA')}). The UAE’s Federal Decree-Law No. 45 of 2021 has been in force since 2 January 2022 and sets its own cross-border transfer rules (${cite('uae-pdpl', 'u.ae')}). If the first-year plan is a Riyadh warehouse, a UAE free-zone licence is a regional office, not the entry. “We will host respondent files in China” is not a method. Compare the method — not the numbers — with <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> and the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>.</p>
-
-<h2 id="five-proofs">What five proofs must a China investment committee still demand?</h2>
-
-<table>
-<thead><tr><th>Proof the committee owes itself</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand in one market</td><td>A defined buyer, a unit of demand and a geography that matches the first site</td><td>A “GCC” or “Belt and Road” TAM with no city split</td></tr>
-<tr><td>Price, including tax</td><td>Paid-for willingness-to-pay or current invoice evidence, stated with 15% VAT in KSA or 5% VAT in the UAE (${cite('zatca-vat', 'ZATCA')}; ${cite('uae-vat', 'UAE Ministry of Finance')})</td><td>An ex-factory RMB list pasted onto a Riyadh or Dubai shelf</td></tr>
-<tr><td>City and catchment</td><td>Riyadh, Jeddah or Eastern Province volumes that respect Saudi versus non-Saudi structure; or Dubai versus Abu Dhabi versus the Northern Emirates (${cite('gastat-pop-2024', 'GASTAT')})</td><td>A Chinese-resident intercept presented as the first-year plan</td></tr>
-<tr><td>Channel and substitution</td><td>Who specifies, who distributes, what the buyer switches to if you miss — including other Chinese brands already in the 750-company or 17,000-company stock (${cite('spa-forum-2025', 'SPA')}; ${cite('wam-adcci-2026', 'WAM')})</td><td>A Jebel Ali re-export map with no end-buyer interviews</td></tr>
-<tr><td>Licence, ownership and remittance</td><td>The KSA ISIC activity or the UAE mainland/free-zone/strategic-impact flag, plus the NDRC/MOFCOM/SAFE path the parent will actually file (${cite('misa-guide-2026', 'MISA')}; ${cite('uae-ownership', 'u.ae')}; ${cite('sc-837', 'Decree 837')})</td><td>A slide that says “100% foreign ownership” or “Belt and Road support” with no activity code</td></tr>
-</tbody>
-</table>
-
-<p>Those five tests are the entry study. A NEOM photograph, a Vision 2030 quotation or a Belt and Road memorandum is context. Context does not repay a launch budget. Primary work is usually structured interviews in Arabic and English with the people who specify or pay; a Mandarin cell only where the buyer is itself a Chinese firm; a quantitative check on price and catchment with the VAT rule on the card; city quotas that match the first site; and a source table that separates official series, quotations, ODI filings and fieldwork. Write the PDPL basis for each country into the method note (${cite('pdpl-ksa', 'SDAIA')}; ${cite('uae-pdpl', 'u.ae')}). BioNixus prices that custom work between $10,000 and $60,000. BioNixus guarantees, in writing: the agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. Accuracy of findings is not a claim we make.</p>
-
-<h2 id="vehicles">Which vehicle in which market — and what this article will not repeat?</h2>
-
-<p>Chinese counsel often writes “open a Dubai free zone, then sell the Gulf.” That sentence hides three different legal objects.</p>
-
-<p>In the UAE, Federal Decree-Law No. 26 of 2020, later consolidated by No. 32 of 2021, allows 100% foreign ownership of most mainland companies. Strategic-impact activities — including security and defence, telecommunications, banks, exchange, financing, insurance and commercial agencies — are not automatically 100% foreign-owned (${cite('uae-ownership', 'u.ae')}). A free-zone licence is a third object: it is not a mainland onshore invoice. The <a href="/bionixus-industries/insights/b2b-market-research-uae">UAE B2B research note</a> is the file for recruiting the people who will sit on that invoice.</p>
-
-<p>In the Kingdom, the June 2026 MISA Investor Guide describes investment registration against ISIC4 activities that are available or restricted. Registration is not a commercial registration or a ZATCA file (${cite('misa-guide-2026', 'MISA')}). The activity-level capital, share and experience tests are walked, for a Western sponsor, in the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>. Read that file for the licence stack and come back here for demand, remittance and two-market sequencing. Do not commission one study to answer both. An RHQ is a fourth object — right for a group that already operates in the region, wrong for a first trading SKU. This article will not reprint the staffing tests.</p>
-
-<p>RMB settlement is a fifth object, not a substitute. The Central Bank of the UAE and the People’s Bank of China agreed a bilateral swap and an RMB Clearing Centre in December 2015; the Agricultural Bank of China Dubai Branch was designated the UAE RMB clearing bank on 9 December 2016 and opened on 10 May 2017 (${cite('cbuae-rmb', 'CBUAE')}; ${cite('abc-dubai', 'Agricultural Bank of China')}). That centre makes treasury easier. It does not tell you whether a Jeddah contractor will accept the SKU.</p>
-
-<h2 id="odi-paperwork">What does mainland ODI paperwork change about the research brief?</h2>
-
-<p>A Western sponsor files a board paper and a local licence. A Chinese sponsor also files an outbound-investment path. That path is not market research, but it changes what the research has to put on one page.</p>
-
-<p>NDRC Order No. 11 (2017), in force since 1 March 2018, governs the project: sensitive projects need approval; other projects are generally record-filed (${cite('ndrc-11', 'NDRC Order 11')}). MOFCOM Order No. 3 (2014) governs the investing enterprise and issues the Enterprise Outbound Investment Certificate (${cite('mofcom-3', 'MOFCOM Order 3')}). State Council Decree No. 837, in force from 1 July 2026, sits above both. Article 11 tells the authorities to specify encouraged, restricted and prohibited outbound investment. Article 12 keeps approval or filing, information reporting and cross-border funds registration in place. Article 5 is the sentence a research firm may write on a proposal: investors “make their own decisions, bear their own risks and assume responsibility for their own profits and losses” (${cite('sc-837', 'State Council Decree 837')}). BioNixus will not pretend a Gulf demand study is an ODI approval. It will write city, price and channel evidence a Beijing committee can attach to the filing.</p>
-
-<p>Three consequences follow. Name one market and one vehicle — an ODI filing that says “GCC” will be rewritten. Separate official series from fieldwork. Flag restricted or export-controlled equipment, data or technicians under Articles 13 and 14 of Decree 837 before the sample is designed (${cite('sc-837', 'State Council Decree 837')}). If the same sponsor is writing a feasibility chapter, use the <a href="/bionixus-industries/insights/feasibility-study-company-saudi-arabia">Saudi feasibility-study note</a> for the market-section tests and keep this playbook for China-side sequencing.</p>
-
-<h2 id="sector-notes">How does the brief change by sector?</h2>
-
-<h3>Automotive, machinery and industrial equipment</h3>
-
-<p>China’s MFA lists vehicles, ships and mechanical and electrical products among the main exports to both markets (${cite('mfa-ksa-en', 'MFA China')}; ${cite('mfa-uae-zh', 'MFA China')}). Alkhorayef’s Beijing list adds smart vehicles to 42 agreements worth more than USD 1.74 billion (${cite('spa-forum-2025', 'Saudi Press Agency')}). The entry study still has to name the first city, the first dealer or EPC, and the substitute — often another of the 750-plus Chinese firms already in the Kingdom (${cite('spa-forum-2025', 'Saudi Press Agency')}). See <a href="/saudi-arabia-technology-market-research">technology market research in Saudi Arabia</a> and <a href="/uae-energy-market-research">energy market research in the UAE</a>.</p>
-
-<h3>Construction, contracting and building materials</h3>
-
-<p>Twenty-three per cent of Chinese activities registered with the Abu Dhabi Chamber sit in construction (${cite('wam-adcci-2026', 'WAM')}). The Saudi industry minister pointed to NEOM, Jubail and Jazan as places where Chinese firms already contribute (${cite('spa-forum-2025', 'Saudi Press Agency')}). A second contractor needs a named pipeline and payment cycle, not a Vision 2030 reprint. Pair the method with <a href="/saudi-arabia-real-estate-market-research">real estate market research in Saudi Arabia</a> when the SKU is a finish rather than a contract.</p>
-
-<h3>Electronics, FMCG and the Chinese-resident channel</h3>
-
-<p>Wholesale and retail trade is 42% of the Chinese activities the Abu Dhabi Chamber reported (${cite('wam-adcci-2026', 'WAM')}). That channel can move a first container through Dubai. It cannot prove a Saudi family basket. Start from the 55.6% / 44.4% official split, then replace it with a catchment (${cite('gastat-pop-2024', 'GASTAT')}). State whether the shelf includes 15% or 5% VAT (${cite('zatca-vat', 'ZATCA')}; ${cite('uae-vat', 'UAE Ministry of Finance')}). See <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a>, <a href="/uae-retail-market-research">retail market research in the UAE</a> and <a href="/b2c-industries">B2C market research</a>.</p>
-
-<h3>Energy equipment and industrial sites</h3>
-
-<p>Crude still dominates the import side of both ledgers (${cite('mfa-ksa-en', 'MFA China')}; ${cite('mfa-uae-en', 'MFA China')}). The UAE–China committee restated energy as a 2030 priority (${cite('wam-committee-2025', 'WAM')}). Recruit the utility, the EPC or the industrial city — not a consumer panel — and name the vehicle. Use <a href="/uae-energy-market-research">energy market research in the UAE</a> and <a href="/saudi-arabia-energy-market-research">energy market research in Saudi Arabia</a>.</p>
-
-<h3>Hospitality, travel and the new Chinese visitor</h3>
-
-<p>Saudi Arabia has been an approved destination for Chinese group tourism since November 2022 (${cite('mfa-ksa-zh', 'MFA China')}). The UAE has had comprehensive mutual visa exemption since January 2018 (${cite('mfa-uae-en', 'MFA China')}). Those are access facts, not hotel occupancy. See <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a> and <a href="/uae-hospitality-market-research">hospitality market research in the UAE</a>.</p>
-
-<h2 id="how-to-choose">How should you choose a research partner for a China-to-Gulf file?</h2>
-
-<p>Ask every firm, including BioNixus, to answer these questions in writing before you sign:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for trade, FDI, population and tax, and what is the date of each series?</li>
-<li>Will the study report Saudi Arabia and the UAE as two samples, or only as “the Gulf”?</li>
-<li>How many interviews, in which language, and is the Mandarin cell a channel cell or a substitute for Arabic?</li>
-<li>Which KSA ISIC activity or UAE mainland / free-zone / strategic-impact flag does the brief assume (${cite('misa-guide-2026', 'MISA')}; ${cite('uae-ownership', 'u.ae')})?</li>
-<li>Is the first vehicle a trading entity, a free zone, a mainland company or an RHQ?</li>
-<li>What ODI path will the parent file, and will the source table attach to it (${cite('sc-837', 'State Council Decree 837')})?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
-<li>How will personal data be processed under the Saudi PDPL and the UAE PDPL, including any transfer to China (${cite('pdpl-ksa', 'SDAIA')}; ${cite('uae-pdpl', 'u.ae')})?</li>
+<li>Which official figures will you use, and what is the date of each one?</li>
+<li>Will the study report Saudi Arabia and the UAE as two samples, or will the label say “the Gulf”?</li>
+<li>How many interviews, and in which language? Fieldwork for local buyers is in Arabic and English. Add Mandarin only when the buyer is a Chinese company.</li>
+<li>Which Saudi activity category, or which UAE choice — mainland, free zone, or a strategic-impact activity — does the brief assume?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>How will personal data be handled in each country, including any transfer to China?</li>
 </ol>
+<p>A firm that registers companies handles paperwork. A research firm measures demand. Many projects need both. BioNixus does the demand work.</p>
 
-<p>Incorporation houses that rank for “company setup Dubai” or “MISA licence” are strong at paperwork. They are not automatically strong at demand evidence. Many Chinese files need both: counsel who can file the activity and the ODI papers, and a fieldwork team that can prove the tonnes. BioNixus does the second job. Related reading includes the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook for Western firms</a>, <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a> and <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a>. Convert a China-to-MEA fieldwork brief on <a href="/market-research/china">Middle East market research for Chinese companies</a>. Sister outbound pages are <a href="/market-research/usa">MENA market research company USA</a>, <a href="/market-research/japan">Middle East market research for Japanese companies</a> and <a href="/market-research/singapore">Middle East market research for Singapore companies</a>. Browse <a href="/market-research-by-industry">market research by industry</a> and the 2026 rankings of <a href="/insights/top-market-research-companies-saudi-arabia-2026">market research companies in Saudi Arabia</a> and <a href="/insights/top-market-research-companies-uae-2026">in the UAE</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for a China-to-Gulf entry file?</h2>
-
-<p>BioNixus is not a company-formation house and is not a mainland ODI agent. It is a primary market research firm that writes the chapter a Shenzhen, Shanghai or Beijing committee can interrogate. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed. Dubai (Thuraya Tower 1), Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>Mainland teams brief Sheridan or London. Fieldwork is designed with the Dubai and Al Khobar field offices in Arabic and English; a Mandarin cell is added only when the buyer is itself a Chinese firm. To brief research for Chinese companies entering Saudi Arabia and the UAE, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English. A Mandarin cell is added only when the buyer is a Chinese firm.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>. To commission the interviews, start from <a href="/market-research/china">Middle East market research for Chinese companies</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -437,39 +364,39 @@ ${REFERENCES_HTML}`;
 
 export const CHINESE_KSA_UAE_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What must Chinese companies entering Saudi Arabia and the UAE prove before they remit capital?',
+    question: 'What should a Chinese company research before sending money to Saudi Arabia or the UAE?',
     answer:
-      'They must prove addressable demand, price including 15% Saudi VAT or 5% UAE VAT, city, channel and the licence in each market, with dated official series and primary interviews. A customs invoice or a Belt and Road slide is not that file. The parent also has to name the outbound-investment path it will file.',
+      'Name the buyer, the city, the price after Saudi Arabia’s 15% VAT or the UAE’s 5% VAT, and the seller who will stock the product. Also name the licence in that country. A trade total does not answer those questions.',
   },
   {
-    question: 'Can a Chinese firm treat the UAE and Saudi Arabia as one Gulf launch?',
+    question: 'Can Saudi Arabia and the UAE be one launch?',
     answer:
-      'No. Buyer mix, VAT, ownership rules and data-protection laws differ. The UAE has mutual visa exemption with China and a large Chinese resident base. The Kingdom has a Saudi-majority population and MISA activity registration. Sequence a hub if you want to. Do not paste one sample onto both markets.',
+      'No. The population mix, the VAT rate, the ownership rules, and the data-protection laws differ. You can open a hub in one country. Use a separate sample for the other.',
   },
   {
-    question: 'Does 100% foreign ownership apply to Chinese companies in both markets?',
+    question: 'Does full foreign ownership apply in both countries?',
     answer:
-      'In the UAE, Federal Decree-Law No. 26 of 2020 and No. 32 of 2021 allow 100% foreign ownership of most mainland companies; strategic-impact activities still need extra approvals. In Saudi Arabia the June 2026 MISA Investor Guide still sets extra tests by ISIC activity. Ask which code you are registering. The licence walk-through is in the Saudi market-entry playbook, not here.',
+      'In the UAE, Federal Decree-Law No. 26 of 2020 and No. 32 of 2021 allow full foreign ownership of commercial companies. Strategic-impact activities remain restricted. In Saudi Arabia, the June 2026 MISA guide covers investment registration and activity categories. The licence walk-through is in the Saudi market-entry playbook.',
   },
   {
-    question: 'Which official trade and investment numbers should a 2026 China brief use?',
+    question: 'Which official numbers are safe to quote?',
     answer:
-      'Start from MFA China’s 2025 totals — USD 108.16 billion with Saudi Arabia and USD 108.0 billion with the UAE — GASTAT’s 14.6% / 27.5% shares, SPA’s more than 750 Chinese companies and SAR 31 billion-plus of Chinese investment, WAM’s 400,000-plus Chinese residents and 17,000-plus companies in the UAE, and the US$200 billion 2030 aim. Label each series.',
+      'Quote each figure with its source and year. China’s foreign ministry published a 2024 total and a 2025 total for each country. On 25 September 2025, Minister Alkhorayef spoke of more than 750 Chinese companies and Chinese investment above SAR 31 billion. On 11 June 2026, WAM reported more than 400,000 Chinese residents and over 17,000 Chinese companies in the UAE. GASTAT’s 2024 foreign-investment top four does not include China.',
   },
   {
-    question: 'Does a Gulf demand study replace NDRC, MOFCOM or SAFE paperwork?',
+    question: 'Does a demand study replace Chinese outbound-investment filings?',
     answer:
-      'No. NDRC Order 11, MOFCOM Order 3 and State Council Decree 837 (in force 1 July 2026) still govern approval or filing and funds registration. BioNixus writes the demand chapter a committee can attach. It does not file the certificate.',
+      'No. Since 1 July 2026, State Council Decree 837 has kept approval, filing, and funds registration. Companies still file with the NDRC and the Ministry of Commerce. BioNixus can write the demand chapter. It does not file the certificate.',
   },
   {
-    question: 'How much does custom China-to-Gulf entry research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom programmes from BioNixus are typically $10,000 to $60,000 depending on sample, cities, language cells and whether the output is a stand-alone file. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the cities, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus rather than a setup firm in Dubai or Riyadh?',
+    question: 'Why brief BioNixus rather than a firm that only registers companies?',
     answer:
-      'Incorporation houses file the activity. BioNixus proves demand. Mainland teams brief Sheridan or London; fieldwork is designed with the Dubai and Al Khobar field offices. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'A registration firm files the company. BioNixus measures demand, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

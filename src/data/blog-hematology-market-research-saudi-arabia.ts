@@ -101,15 +101,15 @@ export const HEMATOLOGY_KSA_META_DESCRIPTION =
   'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.';
 
 export const HEMATOLOGY_KSA_DISPLAY_TITLE =
-  'Sickle Cell, Thalassemia and Gene Therapy in Saudi Arabia: What Pharma Needs to Research Before Launch';
+  'Sickle cell, thalassemia and gene therapy in Saudi Arabia';
 
 export const HEMATOLOGY_KSA_DISPLAY_SUBTITLE =
-  'Hematology market research Saudi Arabia for a 2026 launch';
+  'Hematology market research Saudi Arabia before a gene-therapy launch';
 
 export const HEMATOLOGY_KSA_BREADCRUMB_LABEL = 'Saudi hematology gene therapy research';
 
 export const HEMATOLOGY_KSA_EXCERPT =
-  'A sourced 2026 briefing on hematology market research in Saudi Arabia: how common sickle cell disease and β-thalassemia remain after two decades of premarital screening, what hydroxyurea and HSCT already do, and what is still unpublished after Casgevy’s SFDA approval.';
+  'A plain 2026 briefing on sickle cell disease and thalassemia in Saudi Arabia: screening figures, hydroxyurea, transplant, and what is published after the Casgevy approval.';
 
 export const HEMATOLOGY_KSA_PUBLISHED_ISO = '2026-10-13T12:00:00.000Z';
 export const HEMATOLOGY_KSA_UPDATED_ISO = '2026-10-13T12:00:00.000Z';
@@ -425,160 +425,68 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const HEMATOLOGY_KSA_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What is hematology market research Saudi Arabia?', anchor: 'what-is-hematology-market-research-saudi-arabia' },
-  { heading: 'How common is the sickle cell thalassemia market Saudi Arabia?', anchor: 'how-common-is-the-sickle-cell-thalassemia-market-saudi-arabia' },
-  { heading: 'What does hydroxyurea use tell a launch team?', anchor: 'what-hydroxyurea-use-tells-a-launch-team' },
-  { heading: 'What does HSCT already do that gene therapy must sit beside?', anchor: 'what-hsct-already-does' },
-  { heading: 'Casgevy is approved. What is not yet published?', anchor: 'casgevy-approved-what-is-unpublished' },
-  { heading: 'What should hematology market research Saudi Arabia measure before launch?', anchor: 'what-should-hematology-market-research-saudi-arabia-measure' },
-  { heading: 'How should you commission the study?', anchor: 'how-to-commission' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What this kind of study is', anchor: 'what-this-study-is' },
+  { heading: 'How common are sickle cell and thalassemia?', anchor: 'how-common' },
+  { heading: 'What do the hydroxyurea studies show?', anchor: 'hydroxyurea' },
+  { heading: 'What do transplant papers show?', anchor: 'transplant' },
+  { heading: 'What is published about Casgevy?', anchor: 'casgevy' },
+  { heading: 'What should a study ask?', anchor: 'what-to-ask' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const HEMATOLOGY_KSA_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Hematology market research Saudi Arabia is the commissioned work that tells a brand team who has sickle cell disease or transfusion-dependent thalassemia, who is already on hydroxyurea or heading to transplant, and who a payer will fund for a one-time gene therapy. A diagnostics-market-size report does not answer those questions.</p>`;
+export const HEMATOLOGY_KSA_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Hematology market research Saudi Arabia names who has sickle cell disease or transfusion-dependent thalassemia, who is already on hydroxyurea, and which payer would fund a one-time gene therapy. A diagnostics sales total does not answer those questions. Screening files and clinic charts count different people. Do not average the published rates.</p>`;
 
-const NARRATIVE_HTML = `<p>Hematology market research Saudi Arabia is a launch and access problem before it is a sizing problem. Premarital screening has been mandatory since 2004, Casgevy (exagamglogene autotemcel) has held an SFDA marketing authorisation since 9 January 2024, and hydroxyurea and matched-sibling transplant already sit in the pathway (${cite('moh-healthy-marriage', 'Ministry of Health')}; ${cite('vertex-2024', 'Vertex, 9 January 2024')}). What a brand, HEOR or market-access team still cannot buy off the shelf is who is eligible, who is already treated, which wallet will pay, and which centre can infuse a one-time CRISPR product. This briefing uses only published sources. It sits alongside our <a href="/healthcare-market-research">healthcare market research company</a> hub for Saudi Arabia, the UAE and the GCC, the <a href="/healthcare-market-research/saudi-arabia">healthcare market research company in Saudi Arabia</a> buyer page, and our ranking of <a href="/insights/top-hematology-market-research-companies-2026">top hematology market research companies in 2026</a>.</p>
+const NARRATIVE_HTML = `<p>This page is a plain guide to hematology market research Saudi Arabia. Sickle cell disease and beta-thalassemia are inherited blood disorders. Hydroxyurea is a daily medicine used in sickle cell disease. A stem-cell transplant replaces blood-forming cells. Casgevy (exagamglogene autotemcel) is a one-time gene therapy. The Saudi Food and Drug Authority, the SFDA, authorised it on 9 January 2024 (${cite('vertex-2024', 'Vertex')}). The sickle cell thalassemia market Saudi Arabia is not one number. A screening file and a clinic chart count different people. Read this with the <a href="/healthcare-market-research">healthcare market research</a> hub, the <a href="/healthcare-market-research/saudi-arabia">Saudi Arabia page</a>, and the <a href="/insights/top-hematology-market-research-companies-2026">ranking of hematology research firms</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: sickle cell, thalassemia and gene therapy in Saudi Arabia, October 2026</strong></p>
-<ul>
-<li><strong>4.7%</strong> of 1,871,184 adults in the 2011–2018 premarital programme had HbS, mostly as sickle-cell trait (4.4% HbSA; 0.3% HbSS) (${cite('aljabry-2024', 'Aljabry et al., 2024')}).</li>
-<li><strong>1.2%</strong> of the same cohort had β-thalassemia (1.1% trait; 0.05% disease genotypes) (${cite('aljabry-2024', 'Aljabry et al., 2024')}).</li>
-<li><strong>134.1 per 1,000</strong> people examined in the Eastern region tested positive for the sickle-cell gene in 2004–2009, against 13.5–13.7 in the Northern and Central regions (${cite('memish-2011-regions', 'Memish et al., 2011')}).</li>
-<li><strong>56%</strong> of 2,816 SCD clinic patients in Qatif and Hofuf had a hydroxyurea prescription in 2021–2023 (${cite('alsaffar-2024', 'Alsaffar et al., 2024')}). A 2022 Eastern survey found only <strong>38.1%</strong> currently taking it (${cite('cureus-hu-2022', 'Cureus 2022')}).</li>
-<li><strong>129</strong> children received matched-related-donor HSCT for severe SCD at KFSH&amp;RC Riyadh from 2006 to 2020; 10-year overall survival was 94% and event-free survival 91% (${cite('aljefri-2025', 'Al-Jefri et al., 2025')}).</li>
-<li><strong>9 January 2024:</strong> SFDA granted Casgevy marketing authorisation for people aged 12 years and older with SCD and recurrent vaso-occlusive crises, or with transfusion-dependent β-thalassemia — the first product through the SFDA Breakthrough pathway (${cite('vertex-2024', 'Vertex')}; ${cite('sfda-casgevy', 'SFDA')}).</li>
-<li><strong>SAR 181,899 (US$48,506)</strong> mean annual societal cost per adult SCD patient in an Eastern-region sample of 217; healthcare was US$21,415 of that (${cite('shdaifat-2024', 'Shdaifat et al., 2024')}).</li>
-<li><strong>35.3 million</strong> residents in mid-2024, of whom 19.6 million were Saudi (${cite('gastat-2024', 'GASTAT 2024')}).</li>
-</ul>
-</div>
+<h2 id="what-this-study-is">What this kind of study is</h2>
+<p>It is commissioned work on who is diagnosed, who is treated, who pays, and which centre can give a one-time product. ${cite('grand-view', 'Grand View Research')} publishes a hematology diagnostics outlook of USD 18.3 million for 2024. That figure is instruments and reagents. It is not a count of patients with repeated pain crises, and it is not a formulary decision. ${cite('6wresearch', '6Wresearch')} and ${cite('ken-research', 'Ken Research')} also sell diagnostics report pages. Use them for laboratory spend. Do not take them to a hospital committee as the gene-therapy file.</p>
+<p>Premarital screening has been required under the Healthy Marriage programme, by Council of Ministers Resolution no. 4/B/54504 dated 15/11/1424 H (${cite('moh-healthy-marriage', 'Ministry of Health')}). Government supply still runs through hospital pharmacy committees and, for national buying, NUPCO (${cite('ppri-2024', 'PPRI 2024')}). The Council of Health Insurance formulary is a list of SFDA-registered medicines. Additions go through a hospital committee or the assigned medical director (${cite('chi-formulary', 'CHI formulary')}).</p>
+<p>For the wider setting, see <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access</a> and <a href="/heor-consulting-saudi-arabia">health-economics work in Saudi Arabia</a>.</p>
 
-<h2 id="what-is-hematology-market-research-saudi-arabia">What is hematology market research Saudi Arabia?</h2>
-
-<p>It is commissioned primary research on how sickle cell disease, β-thalassemia and — where relevant — malignant hematology are diagnosed, treated, funded and referred in the Kingdom. For a 2026 gene-therapy or disease-modifying launch, the unit of observation is the patient chart and the payer committee, not a vial and not a hematology-analyzer forecast.</p>
-
-<p>Report publishers such as Grand View Research, 6Wresearch and Ken Research sell Saudi hematology <em>diagnostics</em> outlooks. Those pages often occupy the query “hematology market research Saudi Arabia”. ${cite('grand-view', 'Grand View Research')}’s public outlook puts the diagnostics category at USD 18.3 million in 2024. That is a reagent and instrument total. It does not say how many patients have recurrent VOCs, who is on hydroxyurea, which hospital can run apheresis and myeloablation, or whether Casgevy is on a formulary. Those answers require a custom brief. The global vendor comparison for that brief is our page on <a href="/insights/top-hematology-market-research-companies-2026">top hematology market research companies in 2026</a>.</p>
-
-<p>A usable hematology study in Saudi Arabia usually needs:</p>
-
-<ul>
-<li>Anonymous patient-record forms completed by treating hematologists, with incident and prevalent cases quota-controlled separately.</li>
-<li>Results split by region (Eastern, Jazan, Makkah, Riyadh and other), by public versus military or National Guard versus private, and by nationality.</li>
-<li>Payer and Pharmacy and Therapeutics interviews that treat MOH, NUPCO, CHI and each hospital formulary as different decisions (${cite('ppri-2024', 'PPRI 2024')}; ${cite('chi-formulary', 'CHI')}).</li>
-<li>Arabic and English instruments, and sites in Dammam/Qatif, Jazan, Jeddah and Riyadh — not a Gulf average.</li>
-</ul>
-
-<p>Country context sits on <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>, <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a> and <a href="/heor-consulting-saudi-arabia">HEOR consulting in Saudi Arabia</a>.</p>
-
-<h2 id="how-common-is-the-sickle-cell-thalassemia-market-saudi-arabia">How common is the sickle cell thalassemia market Saudi Arabia?</h2>
-
-<p>Ask every provider which baseline it uses. Premarital screening measures adults who reach marriage age. It under-counts children who die early and the more severe Western phenotype (${cite('jastaniah-2011', 'Jastaniah, 2011')}). Newborn and clinic counts are different methods. They are not a time series.</p>
-
-<p>The first two programme years (2004–2005) screened 488,315 people: sickle-cell trait 4.20%, sickle-cell disease 0.26%, thalassemia trait 3.22%, thalassemia disease 0.07%. Among 2,375 high-risk couples the programme reached by telephone, 89.6% still married (${cite('alhamdan-2007', 'Alhamdan et al., 2007')}). The Healthy Marriage programme now runs through more than 160 accredited governmental centres and more than 70 private centres nationwide (${cite('riyadh-pms-2024', 'Al-Shroby et al., 2024')}).</p>
-
-<p>The six-year national file (2004–2009) examined 1,572,140 people. Sickle-cell positivity was 45.1 per 1,000 (42.4 carriers, 2.7 cases). β-thalassemia positivity was 18.5 per 1,000 (18.0 carriers, 0.5 cases). The Eastern region was 134.1 per 1,000 for sickle cell and 59.0 per 1,000 for β-thalassemia. At-risk couples fell from 10.1 to 4.0 per 1,000, and voluntary cancellation of those proposals rose from 9.2% to 51.9%. The East held 58% of detected at-risk marriages (${cite('memish-2011-outcomes', 'Memish and Saeedi, 2011')}; ${cite('memish-2011-regions', 'Memish et al., 2011')}).</p>
-
+<h2 id="how-common">How common are sickle cell and thalassemia?</h2>
+<p>Do not average these rates. They use different tests and different ages. None of them is national demand for a medicine.</p>
+<p>In 2004–2005, 488,315 people were screened. Sickle-cell trait was 4.20%. Sickle-cell disease was 0.26%. Thalassemia trait was 3.22%. Thalassemia disease was 0.07%. Of 2,375 high-risk couples reached by telephone, 89.6% were still married (${cite('alhamdan-2007', 'Alhamdan et al., 2007')}).</p>
+<p>From 2004 to 2009, 1,572,140 people were examined. Sickle-cell positivity was 45.1 per 1,000 (42.4 carriers and 2.7 cases). Beta-thalassemia positivity was 18.5 per 1,000 (18.0 carriers and 0.5 cases). At-risk couples fell from 10.1 to 4.0 per 1,000. Voluntary cancellation of those proposals rose from 9.2% to 51.9%. The East held 58% of detected at-risk marriages (${cite('memish-2011-outcomes', 'Memish and Saeedi, 2011')}). In the same years the Eastern region was 134.1 per 1,000 for the sickle-cell gene and 59.0 per 1,000 for beta-thalassemia, against 13.5 to 13.7 per 1,000 for sickle cell in the Northern and Central regions (${cite('memish-2011-regions', 'Memish et al., 2011')}).</p>
 ${figureHtml(HEMATOLOGY_KSA_FIGURES[0])}
+<p>From 2011 to 2018, Aljabry and colleagues used 1,871,184 people, mean age 30.2. Abnormal results were 6.0%. HbS was found in 88,431 people (4.7%): HbSA in 83,013 (4.4%) and HbSS in 4,728 (0.3%). Beta-thalassemia was found in 22,420 people (1.2%): 21,512 with trait and 908 with disease genotypes. Among sickle-cell disease presentations, 87.3% were HbSS, 12.5% were HbS-beta thalassemia, and 0.2% were HbSC or HbSD. The Eastern and Jazan regions were five and six times Riyadh. There was no clear 2011–2018 trend in sickle-cell trait (387 to 471 per 10,000) or sickle-cell disease (24 to 31 per 10,000) (${cite('aljabry-2024', 'Aljabry et al., 2024')}).</p>
+<p>A 2011–2015 cut put sickle-cell trait at 135.7 per 1,000 in Jazan and 114.4 per 1,000 in the East, and sickle-cell disease at 9.8 per 1,000 in the East (${cite('alsaeed-2018', 'Alsaeed et al., 2018')}). A review of Eastern newborn screening reported about 21% trait and 2.6% disease, higher than Eastern premarital figures of about 17% and 1.2%, because premarital screening misses children who do not reach marriage age. The same review describes a milder Eastern pattern and a more severe Western pattern (${cite('jastaniah-2011', 'Jastaniah, 2011')}).</p>
+<p>A community survey of 45,682 Saudi children and adolescents found 108 with sickle cell disease, or 24 per 10,000 (${cite('alqurashi-2008', 'Al-Qurashi et al., 2008')}). Applying 1 to 3 per 1,000 to about 18.8 million Saudi nationals in the 2022 census, one paper estimated 18,800 to 56,000 people living with the disease (${cite('aljudaibi-2025', 'Al-Judaibi et al., 2025')}). Vertex’s approval note said “thousands” (${cite('vertex-2024', 'Vertex')}). Those are three methods. Do not hide the range.</p>
+<p>In mid-2024 the statistics authority estimated 35.3 million residents, 19.6 million of them Saudi and about 15.7 million not Saudi (${cite('gastat-2024', 'GASTAT')}). Do not apply an Eastern screening rate to 35.3 million people and call it demand. The programme now runs through more than 160 government centres and more than 70 private centres (${cite('riyadh-pms-2024', 'Al-Shroby et al., 2024')}).</p>
 
-<p>The largest later file is Aljabry and colleagues’ 2011–2018 extract from the SEHA platform: 1,871,184 people, mean age 30.2. Abnormal results 6.0%. HbS 88,431 people (4.7%), of which HbSA 83,013 (4.4%) and HbSS 4,728 (0.3%). β-thalassemia 22,420 people (1.2%): 21,512 trait, 908 disease genotypes. Among sickle-cell <em>disease</em> presentations, 87.3% were HbSS, 12.5% HbS-β thalassemia, and 0.2% HbSC or HbSD. The Eastern and Jazan regions were five and six times Riyadh. There was no significant 2011–2018 trend in sickle-cell trait (387–471 per 10,000) or sickle-cell disease (24–31 per 10,000) (${cite('aljabry-2024', 'Aljabry et al., 2024')}).</p>
-
-<p>Alsaeed and colleagues’ 2011–2015 cut puts sickle-cell trait at 135.7 per 1,000 in Jazan and 114.4 per 1,000 in the Eastern region, and sickle-cell disease at 9.8 per 1,000 in the East (${cite('alsaeed-2018', 'Alsaeed et al., 2018')}). Jastaniah, reviewing Eastern newborn screening, reported about 21% trait and 2.6% disease in that regional newborn series — higher than the Eastern premarital figures of about 17% and 1.2% — because premarital screening misses children who do not survive to marriage (${cite('jastaniah-2011', 'Jastaniah, 2011')}).</p>
-
-<p>A community survey of 45,682 Saudi children and adolescents found 108 with SCD, or 24 per 10,000 (${cite('alqurashi-2008', 'Al-Qurashi et al., 2008')}). Applying a 1–3 per 1,000 modelled prevalence to about 18.8 million Saudi nationals in the 2022 census, Al-Judaibi and colleagues estimated 18,800–56,000 people living with SCD (${cite('aljudaibi-2025', 'Al-Judaibi et al., 2025')}). Vertex’s approval note said only “thousands” (${cite('vertex-2024', 'Vertex')}). Those three headcounts are three methods. A launch model that picks one and hides the range will be sent back.</p>
-
-<p>The addressable adult population is also split by nationality. GASTAT’s mid-2024 estimate is 35.3 million residents, 19.6 million of them Saudi and about 15.7 million non-Saudi (${cite('gastat-2024', 'GASTAT')}). Premarital files describe people seeking a marriage certificate. Entitlement, hospital channel and out-of-pocket exposure still have to be researched by nationality. Do not apply an Eastern premarital rate to 35.3 million residents and call it demand.</p>
-
-<p>Two clinical phenotypes sit inside the same national label. Eastern disease is often the milder Arab-Indian haplotype, with higher fetal hemoglobin and more persistent splenomegaly; Western disease is more often the severe Benin haplotype (${cite('jastaniah-2011', 'Jastaniah, 2011')}). A gene-therapy forecast that treats “Saudi SCD” as one severity will mis-state both VOC burden and eligibility.</p>
-
-<h2 id="what-hydroxyurea-use-tells-a-launch-team">What does hydroxyurea use tell a launch team?</h2>
-
-<p>Hydroxyurea is the disease-modifying layer a gene-therapy or new-agent brief has to sit beside. The published Saudi numbers do not agree, because they do not measure the same thing.</p>
-
-<p>Alsaffar and colleagues reviewed 2,816 SCD clinic records from Al-Qatif Central Hospital and King Fahad Hospital in Hofuf (June 2021–May 2023) and found a 56% prevalence of hydroxyurea <em>prescription</em>. Younger patients were more often prescribed it; young males more than young females, with the pattern reversing after age 36. Hydroxyurea users were also more likely to have paracetamol, NSAIDs and opioids co-prescribed. The authors read that pattern as a compliance and adherence problem, not as proof of 56% persistent use (${cite('alsaffar-2024', 'Alsaffar et al., 2024')}).</p>
-
-<p>A 2022 Eastern-region survey of 202 patients and caregivers found 38.1% currently using hydroxyurea, 15.8% who had stopped, and 46% who had never used it. Among never-users, 40.9% said it was never offered and 34.4% had never heard of it (${cite('cureus-hu-2022', 'Cureus 2022')}). In Jazan, Gohal and colleagues found that more than 80% of participating parents said one or more of their children were receiving hydroxyurea — a parent-reported pediatric figure, not a national adult share (${cite('gohal-2022', 'Gohal et al., 2022')}).</p>
-
+<h2 id="hydroxyurea">What do the hydroxyurea studies show?</h2>
+<p>The published shares do not measure the same thing. Do not turn any one of them into a national treated share.</p>
+<p>A review of 2,816 clinic records at Al-Qatif Central Hospital and King Fahad Hospital in Hofuf, from June 2021 to May 2023, found a hydroxyurea prescription in 56%. Younger patients were prescribed it more often. Hydroxyurea users were also more likely to have paracetamol, anti-inflammatory drugs and opioids prescribed. The authors read that pattern as a problem of staying on the medicine, not as proof that 56% were taking it (${cite('alsaffar-2024', 'Alsaffar et al., 2024')}).</p>
+<p>A 2022 Eastern survey of 202 patients and caregivers found 38.1% currently using hydroxyurea, 15.8% who had stopped, and 46% who had not used it. Among those who had not used it, 40.9% said it was not offered and 34.4% said they had not heard of it (${cite('cureus-hu-2022', 'Cureus, 2022')}). In Jazan, more than 80% of participating parents said one or more of their children were receiving hydroxyurea. That is a parent report about children. It is not a national adult share (${cite('gohal-2022', 'Gohal et al., 2022')}).</p>
 ${figureHtml(HEMATOLOGY_KSA_FIGURES[1])}
+<p>A single-centre group of 156 patients (mean age 12.69; mean dose 16.52 mg/kg/day) reported a mean drop of 1.36 pain crises per patient per year after at least 12 months (${cite('alanazi-2022', 'Al-Anazi et al., 2022')}). At King Saud Medical City in Riyadh, 82 eligible children had an 80% reduction in crises and a 73% shorter stay (${cite('binsaad-2020', 'Bin-Saad et al., 2020')}). Those are local results. They are not a 2026 national tracker.</p>
+<p>Two later medicines should not be assumed as a 2026 step from these papers. The European Medicines Agency recommended revoking crizanlizumab (Adakveo) on 26 May 2023 (${cite('ema-adakveo', 'EMA')}). The U.S. Food and Drug Administration wrote in September 2024 about Pfizer’s voluntary withdrawal of voxelotor (Oxbryta) (${cite('fda-oxbryta', 'FDA')}). Ask what centres did after those notices. Do not invent an SFDA status that is not on an SFDA page.</p>
 
-<p>Where hydroxyurea is used, the published effect sizes are local. A single-centre cohort of 156 patients (mean age 12.69; mean dose 16.52 mg/kg/day) reported a mean reduction of 1.36 vaso-occlusive events per patient per year after at least 12 months (${cite('alanazi-2022', 'Al-Anazi et al., 2022')}). At King Saud Medical City in Riyadh, 82 eligible children had an 80% reduction in VOC and a 73% shorter length of stay after hydroxyurea (${cite('binsaad-2020', 'Bin-Saad et al., 2020')}). Those are effectiveness papers. They are not a 2026 treated-share tracker.</p>
+<h2 id="transplant">What do transplant papers show?</h2>
+<p>A matched related-donor transplant is the curative option these centres have published. It is the comparison a Casgevy brief will be asked about.</p>
+<p>Al-Jefri and colleagues reported 129 children, aged 14 or under at transplant, who received a matched related-donor transplant for severe sickle cell disease at King Faisal Specialist Hospital in Riyadh between January 2006 and December 2020. The reasons were cerebral vessel disease in 74 (57%), repeated pain crises in 47 (36%), repeated acute chest syndrome in 5 (4%) and bone death in 3 (2%). Median age was 9.1 years. Ten-year overall survival was 94%. Event-free survival was 91%. With one conditioning regimen, overall survival was 97.4%. Acute graft-versus-host disease occurred in 20% and chronic disease in 9%. Among patients older than 13 at last follow-up, 46% had a long-term complication, including gonadal failure. Hydroxyurea use before transplant was described as variable in 60%. In the cerebral-vessel group, 52% were on monthly transfusion with iron removal (${cite('aljefri-2025', 'Al-Jefri et al., 2025')}).</p>
+<p>A 2020 review said the same hospital had performed about 200 matched-sibling transplants for sickle cell disease by December 2018. The authors called that figure a centre questionnaire, not a registry extract (${cite('alsultan-2020', 'Alsultan et al., 2020')}). Across four leading Saudi transplant centres, 6,184 transplants of all kinds had been performed by late 2016, 5,340 of them at the Riyadh hospital, which opened its unit in 1984 (${cite('aljurf-2020', 'Aljurf et al., 2020')}).</p>
+<p>These papers are mostly about children with a matched sibling. They do not say how many people aged 12 to 35 without a matched sibling are referred or declined. See also <a href="/insights/top-hematology-market-research-companies-2026">how chart reviews differ from a centre case series</a>.</p>
 
-<p>Two later disease-modifying agents cannot be assumed as a 2026 step. The European Medicines Agency recommended revoking crizanlizumab (Adakveo) in May 2023 (${cite('ema-adakveo', 'EMA, 26 May 2023')}). The U.S. FDA announced Pfizer’s voluntary withdrawal of voxelotor (Oxbryta) in September 2024 (${cite('fda-oxbryta', 'FDA, September 2024')}). A Saudi brief should ask what centres did after those global actions. It should not invent an SFDA status that is not on a current SFDA page.</p>
-
-<h2 id="what-hsct-already-does">What does HSCT already do that gene therapy must sit beside?</h2>
-
-<p>Allogeneic transplant from a matched related donor is the curative option Saudi tertiary centres already publish. It is the comparator a Casgevy brief will be asked about.</p>
-
-<p>Al-Jefri and colleagues reported 129 consecutive children (age at transplant ≤14) who received matched-related-donor HSCT for severe SCD at KFSH&amp;RC Riyadh between January 2006 and December 2020. Indications were cerebral vasculopathy in 74 (57%), recurrent VOC in 47 (36%), recurrent acute chest syndrome in 5 (4%) and osteonecrosis in 3 (2%). Median age was 9.1 years. Ten-year overall survival was 94% and event-free survival 91%; with busulfan/cyclophosphamide/ATLG, OS was 97.4%. Acute GVHD occurred in 20% and chronic GVHD in 9%. Among patients older than 13 at last follow-up, 46% had a long-term complication, including gonadal failure (${cite('aljefri-2025', 'Al-Jefri et al., 2025')}). Variable hydroxyurea compliance before transplant was 60%; 52% of the cerebral-vasculopathy group were on regular monthly transfusion with iron chelation (${cite('aljefri-2025', 'Al-Jefri et al., 2025')}).</p>
-
-<p>A 2020 Eastern Mediterranean review said KFSH&amp;RC had performed approximately 200 matched-sibling SCD transplants by December 2018 — the authors labelled that figure a centre questionnaire, not a registry extract (${cite('alsultan-2020', 'Alsultan et al., 2020')}). Across four leading Saudi HSCT centres, 6,184 transplants had been performed by late 2016, 5,340 of them at KFSH&amp;RC Riyadh, which opened the first unit in the WHO Eastern Mediterranean Region in 1984 (${cite('aljurf-2020', 'Aljurf et al., 2020')}).</p>
-
-<p>Those papers describe matched-related-donor, mostly pediatric, myeloablative transplant. They do not describe how many 12- to 35-year-olds without a matched sibling are referred, wait-listed or declined. That gap is the gene-therapy research question. See also <a href="/insights/top-hematology-market-research-companies-2026">how hematology PRFs differ from transplant-centre case series</a>.</p>
-
-<h2 id="casgevy-approved-what-is-unpublished">Casgevy is approved. What is not yet published?</h2>
-
-<p>On 9 January 2024 Vertex announced that SFDA had granted marketing authorisation for CASGEVY (exagamglogene autotemcel) for people 12 years of age and older with SCD or transfusion-dependent β-thalassemia. It was the first medicine evaluated through SFDA Breakthrough Designation and Vertex’s first Saudi approval. Vertex wrote that Saudi Arabia has “among the highest prevalence rates of SCD and TDT in the world, with thousands of patients.” One authorized treatment centre was already activated. Vertex said it was working to qualify additional hospitals, including King Faisal Specialist Hospital, and “to secure listing on hospital formularies to support reimbursement as soon as possible” (${cite('vertex-2024', 'Vertex, 9 January 2024')}; ${cite('nasdaq-vertex-2024', 'Nasdaq / Vertex')}). The Nasdaq version of the same release names the Ministry of National Guard Health Affairs as that first ATC (${cite('nasdaq-vertex-2024', 'Nasdaq / Vertex')}).</p>
-
-<p>The SFDA approval page still lists those two indications — SCD with recurrent VOCs, and TDT, both from age 12 — and was last updated on 30 September 2026 (${cite('sfda-casgevy', 'SFDA')}). The May 2024 handling guide, approved by SFDA, repeats the same label and the mobilisation rules (no G-CSF in SCD; stop hydroxyurea, crizanlizumab and voxelotor before mobilisation) (${cite('sfda-handling', 'SFDA handling guide')}).</p>
-
-<p>What the public record does <em>not</em> yet give a launch team:</p>
-
-<ul>
-<li>A brand-level public formulary or NUPCO award for Casgevy. Vertex’s own January 2024 language was that listing still had to be secured (${cite('vertex-2024', 'Vertex')}). CHI’s formulary is an SFDA-registered essential list; additions go through a hospital P&amp;T committee (${cite('chi-formulary', 'CHI')}). Government inclusion still runs through hospital P&amp;T and, for national supply, NUPCO (${cite('ppri-2024', 'PPRI 2024')}).</li>
-<li>A published treated-patient count. SFDA lists an ongoing Phase 4 registry of patients treated with exa-cel in the Kingdom (protocol 290-103, Vertex-sponsored, status Ongoing as of 8 May 2025) (${cite('sfda-registry', 'SFDA registry')}). The page does not publish n.</li>
-<li>A published eligible-patient funnel by region, genotype, VOC count, transfusion dependence, age band or centre.</li>
-<li>A published outcomes-based or managed-entry contract. A January–February 2025 Delphi of 19 Saudi policymakers, clinicians, health economists and formulary leads reached consensus on 88 statements about drugs for rare diseases. Economic and budgetary constraints ranked highest; experts also flagged inconsistent reimbursement decisions and difficulty with managed-entry agreements (${cite('abu-esba-2025', 'Abu Esba et al., 2025')}).</li>
-</ul>
-
+<h2 id="casgevy">What is published about Casgevy?</h2>
+<p>On 9 January 2024 Vertex said the SFDA had authorised Casgevy for people aged 12 and older with sickle cell disease or transfusion-dependent beta-thalassemia. Vertex called it the first medicine through the SFDA breakthrough route and Vertex’s first Saudi approval. The note said Saudi Arabia has among the highest rates, “with thousands of patients.” One authorised treatment centre was already active. Vertex said it was working to qualify more hospitals, including King Faisal Specialist Hospital, and to secure formulary listing (${cite('vertex-2024', 'Vertex')}). The same release, as carried by Nasdaq, names the Ministry of National Guard Health Affairs as that first centre (${cite('nasdaq-vertex-2024', 'Nasdaq / Vertex')}).</p>
+<p>The SFDA page still lists both indications, from age 12, and was last updated on 30 September 2026 (${cite('sfda-casgevy', 'SFDA')}). The May 2024 handling guide, approved by the SFDA, restates the same age and indications (${cite('sfda-handling', 'SFDA handling guide')}).</p>
+<p>The public record does not give a treated-patient count. The SFDA lists a Phase 4 registry of patients treated with exa-cel (protocol 290-103, Vertex, status Ongoing as of 8 May 2025). The page does not publish how many people are in it (${cite('sfda-registry', 'SFDA registry')}). A 2025 Delphi of 19 Saudi policymakers, clinicians, economists and formulary leads reached consensus on 88 statements about drugs for rare diseases. Budget limits ranked highest. The group also flagged uneven reimbursement and difficulty with managed-entry agreements (${cite('abu-esba-2025', 'Abu Esba et al., 2025')}). That paper is not a Casgevy contract.</p>
 ${figureHtml(HEMATOLOGY_KSA_FIGURES[2])}
-
-<p>Payers already fund SCD. Shdaifat and colleagues interviewed 217 Saudi adults in Dammam Medical Complex and Al-Qatif Central Hospital and estimated SAR 181,899 (US$48,506) per patient per year from a societal perspective: SAR 80,306 (US$21,415) healthcare and SAR 101,594 (US$27,092) productivity (${cite('shdaifat-2024', 'Shdaifat et al., 2024')}). A single-centre pediatric chart review of 100 patients (mean age 10.21; 96% HbSS) put mean annual direct medical cost at US$26,626, or US$14,605 after adjustment; 61% had had at least one red-cell exchange, 45% at least one VOC, and 59% at least one hospitalisation in 12 months (${cite('healthcare-costs-2025', 'Healthcare 2025')}). A budget-impact that only prices the gene-therapy invoice, and ignores VOC admissions and exchange transfusion, answers the wrong question. That design sits on <a href="/budget-impact-model-saudi-arabia">budget-impact modelling in Saudi Arabia</a>.</p>
-
+<p>Payers already fund sickle cell care. One study of 217 Saudi adults in Dammam and Qatif estimated SAR 181,899 (US$48,506) per patient per year from a societal view: SAR 80,306 (US$21,415) for healthcare and SAR 101,594 (US$27,092) for lost work (${cite('shdaifat-2024', 'Shdaifat et al., 2024')}). A chart review of 100 children (mean age 10.21; 96% HbSS) put mean annual direct medical cost at US$26,626, or US$14,605 after adjustment. In 12 months, 61% had at least one red-cell exchange, 45% at least one pain crisis, and 59% at least one hospital stay (${cite('healthcare-costs-2025', 'Healthcare, 2025')}). A model that prices only the gene-therapy invoice leaves those costs out. See <a href="/budget-impact-model-saudi-arabia">budget-impact work in Saudi Arabia</a>.</p>
 ${figureHtml(HEMATOLOGY_KSA_FIGURES[3])}
 
-<h2 id="what-should-hematology-market-research-saudi-arabia-measure">What should hematology market research Saudi Arabia measure before launch?</h2>
-
-<p>Design the study backwards from the decision — a hospital formulary, a NUPCO cycle, a CHI addition, or a first-ATC capacity plan.</p>
-
+<h2 id="what-to-ask">What should a study ask?</h2>
 ${WORKSTREAM_TABLE_HTML}
-
 ${figureHtml(HEMATOLOGY_KSA_FIGURES[4])}
+<p>State which baseline the model uses, and test the others. Split new cases from people already in care. Ask about age 12 and older, repeated pain crises or transfusion-dependent thalassemia, hydroxyurea use, and whether a matched sibling is available. Interview Ministry of Health, National Guard, military and private channels separately (${cite('ppri-2024', 'PPRI')}).</p>
+<p>Do not import a Gulf average. Compare <a href="/healthcare-market-research/uae">the UAE</a>, <a href="/healthcare-market-research/egypt">Egypt</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a>. A Saudi insurance answer is not an answer from another Gulf payer. Survey design is covered on <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>.</p>
 
-<ul>
-<li><strong>Epidemiology baseline.</strong> State whether the model uses Aljabry 2011–2018 (adults at marriage), Alsaeed regional rates, Al-Qurashi’s pediatric 24 per 10,000, Jastaniah’s Eastern newborn pair, or the 18,800–56,000 modelled range — and test the others.</li>
-<li><strong>Eligibility for the labelled indication.</strong> Age 12+, recurrent VOCs or TDT, genotype (HbSS vs HbS-β), and fitness for mobilisation and busulfan conditioning (${cite('sfda-casgevy', 'SFDA')}; ${cite('sfda-handling', 'handling guide')}).</li>
-<li><strong>Hydroxyurea layer.</strong> Prescription versus current use versus persistence, by region and by public versus other channels.</li>
-<li><strong>HSCT layer.</strong> Who has a matched sibling, who is referred, who is declined, and what families are told about fertility (${cite('aljefri-2025', 'Al-Jefri et al., 2025')}).</li>
-<li><strong>Payer and ATC layer.</strong> MOH, National Guard, military, KFSH&amp;RC, CHI-insured private and self-pay, interviewed separately (${cite('ppri-2024', 'PPRI 2024')}).</li>
-<li><strong>Share of treated patients.</strong> Anonymous PRFs so new starts and continuing patients are two numbers, as set out on the <a href="/insights/top-hematology-market-research-companies-2026">hematology ranking</a>.</li>
-</ul>
-
-<p>For neighbouring systems do not import a Gulf average. Compare <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a>, <a href="/healthcare-market-research/egypt">Egypt</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a>. A Saudi CHI or NUPCO answer is not a DHAMAN or UAE Thiqa answer.</p>
-
-<h2 id="how-to-commission">How should you commission the study?</h2>
-
-<ul>
-<li>How many hematologists, pediatric hematologists and transplant physicians will you recruit, and from which regions — Eastern, Jazan, Makkah and Riyadh at minimum?</li>
-<li>Will results be reported by nationality, by public versus military/National Guard versus private, and by new versus current cases?</li>
-<li>Which prevalence baseline will you use, and why?</li>
-<li>Will the discussion guide treat hydroxyurea, HSCT and Casgevy as three layers, not one “hematology” share?</li>
-<li>Are questionnaires available in Arabic and English?</li>
-<li>Who owns the data, and can it be re-cut after a formulary question changes?</li>
-</ul>
-
-<p>Desk-research diagnostics reports remain useful for a first cut of laboratory capacity. Grand View Research, 6Wresearch and Ken Research publish Saudi hematology-diagnostics pages that often appear for this query. Use them to triangulate analyzer and reagent spend. Do not take them to a P&amp;T meeting as the evidence pack for a gene therapy.</p>
-
-<p>A physician-survey design is covered on <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>. For the access dossier, see <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a> and <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">top healthcare market research companies in Saudi Arabia</a>.</p>
-
-<h2 id="why-bionixus">Why choose BioNixus for hematology market research in Saudi Arabia?</h2>
-
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
-
-<p>Choose BioNixus when the decision depends on why Saudi hematologists, transplant teams and payers act as they do, rather than on a diagnostics-market total. Each study is built around one decision — a formulary, a tender, an ATC capacity plan — and is reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews.</p>
-
-<p>See also <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>, <a href="/pharmaceutical-companies-saudi-arabia">pharmaceutical companies in Saudi Arabia</a>, <a href="/blog/top-healthcare-market-research-firms-saudi-arabia">top healthcare market research firms in Saudi Arabia</a> and the <a href="/insights/top-hematology-market-research-companies-2026">2026 hematology ranking</a>.</p>
-
-<p>To brief a Saudi sickle-cell, thalassemia or gene-therapy study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. There are field offices in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Work in Latin America is covered today from the US office with local consultants.</p>
+<p>The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find. BioNixus has 40 client reviews.</p>
+<p>See also <a href="/pharmaceutical-companies-saudi-arabia">pharmaceutical companies in Saudi Arabia</a>, <a href="/blog/top-healthcare-market-research-firms-saudi-arabia">healthcare research firms in Saudi Arabia</a> and <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">the 2026 company list</a>.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -590,39 +498,39 @@ ${REFERENCES_SECTION_HTML}`;
 
 export const HEMATOLOGY_KSA_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What is hematology market research Saudi Arabia?',
+    question: 'What does this page cover?',
     answer:
-      'Hematology market research Saudi Arabia is commissioned primary research on how sickle cell disease, β-thalassemia and related hematology are diagnosed, treated, funded and referred in the Kingdom. It covers regional prevalence, hydroxyurea use, transplant referral, payer and formulary decisions, and authorized treatment centres for gene therapy. It is not a syndicated hematology-diagnostics market-size report.',
+      'It sets out published figures on sickle cell disease and beta-thalassemia in Saudi Arabia, on hydroxyurea and transplant, and on the January 2024 Casgevy authorisation. A diagnostics sales total is not a count of patients a payer will fund.',
   },
   {
     question: 'How common is sickle cell disease in Saudi Arabia?',
     answer:
-      'In the 2011–2018 premarital file, 4.7% of 1,871,184 adults had HbS (4.4% trait, 0.3% HbSS). The 2004–2009 file put Eastern sickle-cell positivity at 134.1 per 1,000 against 13.5–13.7 in the Northern and Central regions. A 2008 child survey found 24 per 10,000. These are different methods; do not average them into one national patient count.',
+      'The figures use different methods. A 2011–2018 premarital file found HbS in 4.7% of 1,871,184 adults, mostly as trait. A community survey of children found 24 per 10,000. One paper estimated 18,800 to 56,000 people by applying 1 to 3 per 1,000 to the 2022 Saudi population. Do not average them, and do not treat a screening rate as demand.',
   },
   {
     question: 'Is Casgevy approved in Saudi Arabia?',
     answer:
-      'Yes. SFDA granted marketing authorisation on 9 January 2024 for people aged 12 years and older with sickle cell disease and recurrent vaso-occlusive crises, or with transfusion-dependent β-thalassemia. The SFDA page still listed those indications on 30 September 2026. Approval is not the same as a published formulary listing or a published treated-patient count.',
+      'Vertex said on 9 January 2024 that the SFDA authorised Casgevy for people aged 12 and older with sickle cell disease and repeated pain crises, or with transfusion-dependent beta-thalassemia. The SFDA page still listed those indications when it was updated on 30 September 2026.',
   },
   {
-    question: 'Who can infuse Casgevy in Saudi Arabia?',
+    question: 'Which centre was named at approval?',
     answer:
-      'Vertex’s January 2024 approval note said one authorized treatment centre was already activated and named, in the Nasdaq version of the release, the Ministry of National Guard Health Affairs as that first centre. Vertex was working to qualify additional hospitals, including King Faisal Specialist Hospital, and to secure hospital-formulary listing. A later public list of every ATC was not found for this briefing.',
+      'Vertex said one authorised treatment centre was already active, and the Nasdaq version of the release names the Ministry of National Guard Health Affairs. Vertex also said it was working to qualify more hospitals, including King Faisal Specialist Hospital, and to secure formulary listing. A public treated-patient count was not on the registry page.',
   },
   {
-    question: 'Does hydroxyurea already cover most Saudi sickle cell patients?',
+    question: 'Does one hydroxyurea percentage cover the country?',
     answer:
-      'The published figures disagree because they measure different things. A 2021–2023 chart review of 2,816 Eastern clinic patients found a 56% hydroxyurea prescription rate. A 2022 Eastern survey found 38.1% current use, and 40.9% of never-users said it was never offered. Jazan parents reported more than 80% of children on hydroxyurea. Commission a current, region-split persistence study rather than importing one of those rates.',
+      'No. A Qatif and Hofuf chart review found a prescription in 56% of 2,816 records. An Eastern survey found 38.1% currently using it. A Jazan parent survey is a different measure again. Prescription is not the same as staying on the medicine.',
   },
   {
-    question: 'What do Saudi payers need to see for a gene therapy?',
+    question: 'What have payers already published?',
     answer:
-      'A Saudi-specific eligible-patient funnel, budget impact against VOC admissions and exchange transfusion they already fund, ATC capacity, and how the product sits beside matched-sibling HSCT. A 2025 Delphi of 19 Saudi experts on drugs for rare diseases put economic constraints first and flagged inconsistent reimbursement and difficult managed-entry agreements. A regional diagnostics-market slide does not answer those questions.',
+      'One Eastern study of 217 adults estimated SAR 181,899 per patient per year from a societal view. A chart review of 100 children put adjusted direct medical cost at US$14,605 a year. A 2025 Delphi of 19 experts ranked budget limits highest for rare-disease drugs. None of those papers is a Casgevy price.',
   },
   {
-    question: 'Why commission BioNixus for hematology market research in Saudi Arabia?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'BioNixus runs custom primary research from an Al Khobar field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a formulary, a tender or an ATC plan — and reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'Custom studies are usually $10k–$60k. The network is about 3,200 physicians. The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find.',
   },
 ];
 

@@ -104,15 +104,15 @@ export const DEDL_FORMULARY_META_DESCRIPTION =
   'Dubai Essential Drug List formulary submission: what DDC coding, EBP formulary limits and local evidence an affiliate should commission before listing.';
 
 export const DEDL_FORMULARY_DISPLAY_TITLE =
-  'Dubai Essential Drug List (DEDL): How to Build the Evidence for a Formulary Listing';
+  'Which Dubai list are you actually filing for?';
 
 export const DEDL_FORMULARY_DISPLAY_SUBTITLE =
-  'Dubai Essential Drug List formulary submission for manufacturer affiliates';
+  'A Dubai Essential Drug List formulary submission, list by list';
 
 export const DEDL_FORMULARY_BREADCRUMB_LABEL = 'Dubai Essential Drug List formulary';
 
 export const DEDL_FORMULARY_EXCERPT =
-  'A sourced 2026 briefing on Dubai Essential Drug List formulary submission: which published lists sit behind the DEDL search term, what the Essential Benefits Plan actually pays, and what local evidence a manufacturer affiliate should commission before a Dubai listing.';
+  'A plain guide to the Dubai Drug Code, the Essential Benefits Plan, the national essential list, and the facility list. They are not one filing.';
 
 export const DEDL_FORMULARY_PUBLISHED_ISO = '2026-10-17T12:00:00.000Z';
 export const DEDL_FORMULARY_UPDATED_ISO = '2026-10-17T12:00:00.000Z';
@@ -410,183 +410,89 @@ ${REFERENCES.map((ref) => {
 
 export const DEDL_FORMULARY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
   {
-    heading: 'What is a Dubai Essential Drug List formulary submission?',
+    heading: 'What this submission is',
     anchor: 'what-is-a-dubai-essential-drug-list-formulary-submission',
   },
   {
-    heading: 'Which published lists sit behind that search term?',
+    heading: 'Which published lists sit behind the name',
     anchor: 'which-published-lists-sit-behind-that-search-term',
   },
   {
-    heading: 'What does the Essential Benefits Plan actually pay for?',
+    heading: 'What the Essential Benefits Plan pays',
     anchor: 'what-does-the-essential-benefits-plan-actually-pay-for',
   },
   {
-    heading: 'How does a product get a Dubai Drug Code?',
+    heading: 'How a product gets a code',
     anchor: 'how-does-a-product-get-a-dubai-drug-code',
   },
   {
-    heading: 'Why a coded price is not a funded listing',
+    heading: 'A code is not a funded listing',
     anchor: 'why-a-coded-price-is-not-a-funded-listing',
   },
   {
-    heading: 'What local evidence do UAE payers publish that they want?',
+    heading: 'What local evidence payers publish',
     anchor: 'what-local-evidence-do-uae-payers-publish-that-they-want',
   },
   {
-    heading: 'What should a Dubai Essential Drug List formulary submission measure?',
+    heading: 'What the study should measure',
     anchor: 'what-should-a-dubai-essential-drug-list-formulary-submission-measure',
   },
-  { heading: 'How should you commission the study?', anchor: 'how-to-commission' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'How to commission the study', anchor: 'how-to-commission' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const DEDL_FORMULARY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A Dubai Essential Drug List formulary submission is the evidence pack that asks whether a product will be coded, restricted to a formulary and funded under Dubai insurance. Official pages do not publish a list named DEDL. They publish a weekly Drug Code and an Essential Benefits Plan cap. Commission local <a href="/healthcare-market-research">healthcare market research</a> before you file.</p>`;
+export const DEDL_FORMULARY_EXECUTIVE_SUMMARY_HTML = `<p>A Dubai Essential Drug List formulary submission asks whether a product will get a code, sit on a formulary and be paid for in Dubai. Official pages do not publish a list named DEDL. They publish a weekly Drug Code and a medicines cap. Commission local <a href="/healthcare-market-research">healthcare market research</a> before you file.</p>`;
 
-const NARRATIVE_HTML = `<p>A Dubai Essential Drug List formulary submission is a research problem before it is a portal upload. Manufacturer affiliates searching that phrase are usually trying to get a product onto the reimbursable outpatient list that sits under Dubai’s mandatory health insurance. Official DHA and ISAHD pages do not publish a document titled “Dubai Essential Drug List” or the acronym DEDL. They publish a weekly <em>Dubai Drug Code</em>, an Essential Benefits Plan whose medicines line is “restricted to formulary products where available,” and — at federal level — a 2025 National Essential Medicines List. What a brand, HEOR or local-affiliate team still cannot buy off the shelf is which of those lists the forecast is using, which wallet will fund the script after a code exists, and what local evidence a UAE payer will accept beside the global RCT. This briefing uses only published sources. It sits alongside our <a href="/healthcare-market-research">healthcare market research company</a> hub for Saudi Arabia, the UAE and the GCC.</p>
+const NARRATIVE_HTML = `<p>A Dubai Essential Drug List formulary submission asks three questions. Will the product get a Dubai Drug Code? Will a formulary restrict it? Will a Dubai plan pay? Official pages do not publish a list named DEDL. Read this with the <a href="/healthcare-market-research">healthcare market research</a> hub. The federal pricing handover is on the <a href="/blog/uae-drug-pricing-ede-takeover-launch-research">EDE takeover briefing</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: Dubai listing layers, October 2026</strong></p>
-<ul>
-<li><strong>Law No. 11 of 2013</strong> makes health insurance mandatory in Dubai, including free zones such as DIFC; DHA approves packages, prices and co-insurance (${cite('dubai-law-11-2013', 'Law 11/2013')}; ${cite('dubai-ae-insurance', 'Dubai.ae')}).</li>
-<li><strong>Essential Benefits Plan</strong> is the minimum standard for any health-insurance policy issued in Dubai. From 1 January 2025 the medicines line is AED 2,500 a year including coinsurance, 30% per prescription, restricted to formulary products where available (${cite('gc-03-2024', 'GC 03/2024')}).</li>
-<li><strong>AED 1,500</strong> was the previous EBP medicines cap in PD 01/2021 (${cite('pd-01-2021', 'PD 01/2021')}). Do not mix the two vintages.</li>
-<li><strong>Weekly, not quarterly, on the public DDC calendar:</strong> DHA Pharmacy Services releases Dubai Drug Code updates every Monday; utilization starts on Thursday (${cite('ddc-2018', 'GC 12/2018')}; ${cite('eclaimlink-ddc', 'eClaimLink')}).</li>
-<li><strong>Twenty Participating Insurers</strong> were permitted to sell the EBP to the low-salary band for calendar year 2025 (${cite('gc-06-2024', 'GC 06/2024')}).</li>
-<li><strong>19 June 2025:</strong> EDE Chairman Decision No. 47 of 2025 adopted the UAE National Essential Medicines List (${cite('ede-legislations', 'EDE')})</li>
-<li><strong>5 January 2026:</strong> MOHAP transferred 44 core services in full to EDE, including individual-product re-pricing and publication of regulated-medicine price lists (${cite('mohap-44-2026', 'MOHAP')})</li>
-<li><strong>11.29 million</strong> residents in 2024 (${cite('fcsc-2024', 'FCSC Unified UAE Numbers')}). That is a population, not a treated-patient count.</li>
-</ul>
-</div>
+<h2 id="what-is-a-dubai-essential-drug-list-formulary-submission">What this submission is</h2>
+<p>It is the evidence pack for a code, a formulary rule and a payer. ${cite('grand-view', 'Grand View Research')}, ${cite('imarc', 'IMARC')} and ${cite('iqvia', 'IQVIA')} sell national outlooks. Those pages do not say which Dubai list the forecast is using.</p>
+<p>Do not plan to a quarterly “DEDL committee.” The public record cited here does not name one. It names a weekly code release, dated insurance circulars, and a facility list a committee may create (${cite('ddc-2018', 'GC 12/2018')}; ${cite('gc-03-2024', 'GC 03/2024')}; ${cite('dha-pharmacy-2021', 'DHA Pharmacy Guidelines 2021')}).</p>
 
-<h2 id="what-is-a-dubai-essential-drug-list-formulary-submission">What is a Dubai Essential Drug List formulary submission?</h2>
-
-<p>It is the commissioned file that tells a manufacturer affiliate whether a product will receive a Dubai Drug Code, whether an insurer will treat it as a formulary product under the Essential Benefits Plan or an enhanced policy, and whether a Dubai hospital formulary will stock it. It is not a syndicated UAE pharmaceutical market-size slide, and it is not a federal price certificate.</p>
-
-<p>${cite('grand-view', 'Grand View Research')}, ${cite('imarc', 'IMARC Group')} and ${cite('iqvia', 'IQVIA')} sell UAE pharmaceutical outlooks that often occupy this query. They do not say whether the SKU has a DDC code, sits inside the AED 2,500 EBP cap, or will be added by a facility committee. Country context sits on <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a> and <a href="/uae-pharmaceutical-market-research">UAE pharmaceutical market research</a>.</p>
-
-<p>Affiliate teams often plan to a quarterly committee calendar. The public DHA record cited here does not name a quarterly “DEDL committee” or a 60-day filing window. What it does name is a weekly DDC release, EBP Table of Benefits updates by dated circular, and facility formularies that a multidisciplinary committee may create (${cite('ddc-2018', 'GC 12/2018')}; ${cite('gc-03-2024', 'GC 03/2024')}; ${cite('dha-pharmacy-2021', 'DHA Pharmacy Guidelines 2021')}). Commission the brief to the published cadence. Do not invent a committee that is not on a current public circular.</p>
-
-<p>A usable Dubai Essential Drug List formulary submission file usually needs a four-list map (${cite('ddc-2018', 'GC 12/2018')}; ${cite('ede-legislations', 'EDE Decision 47/2025')}), the pharmaceutical-company DDC pack eClaimLink still asks for (${cite('eclaimlink-ddc', 'eClaimLink')}), payer interviews that split Participating Insurers from enhanced-plan medical directors (${cite('isahd-ebp', 'ISAHD')}; ${cite('gc-06-2024', 'GC 06/2024')}), and Arabic plus English instruments in Dubai and at least one comparison emirate.</p>
-
-<p>The unit of observation is the code, the benefit line and the facility committee, not a vial forecast. Compare <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a> rather than importing an SFDA listing into a Dubai insurance file.</p>
-
-<h2 id="which-published-lists-sit-behind-that-search-term">Which published lists sit behind that search term?</h2>
-
-<p>Four published lists now sit where industry slides write “DEDL”. They are not one list.</p>
-
-<p><strong>The Dubai Drug Code</strong> is the comprehensive list of all drugs registered with DHA’s Pharmacy Services department. GC 12/2018 assigns each registered drug a unique code that already includes route, dosage, form, pack size, price, manufacturer, registered owner and source — MOH, DHA or private hospital (${cite('ddc-2018', 'GC 12/2018')}). eClaimLink still publishes that list as a current coding set (${cite('eclaimlink-home', 'eClaimLink')}). A DDC code is how a payer and a provider identify the SKU on a claim. It is not, by itself, a promise that the Essential Benefits Plan will pay.</p>
-
-<p><strong>The Essential Benefits Plan Table of Benefits</strong> is the minimum standard for any health-insurance policy issued in Dubai. GC 03/2024, dated 23 July 2024 and in force from 1 January 2025, writes the medicines line as: cost of drugs and medicines up to an annual limit of AED 2,500 including coinsurance; restricted to formulary products where available; 30% payable by the insured on each and every prescription; no cover for drugs and medicines in excess of the annual limit (${cite('gc-03-2024', 'GC 03/2024')}). The circular does not attach a public molecule list. The restriction is the published rule. The list that implements it is the research question.</p>
-
-<p><strong>The UAE National Essential Medicines List</strong> is a federal essential-medicines instrument, not a Dubai insurance formulary. EDE Chairman Decision No. 47 of 2025, dated 19 June 2025, adopted the 2025 NEML (${cite('ede-legislations', 'EDE legislations page')}; ${cite('ede-neml-2025', 'EDE NEML attachment')}; ${cite('dha-neml-pdf', 'DHA-hosted Decision 47/2025 PDF')}). WHO posted an English 2025 NEML file dated 3 June 2026 (${cite('who-neml-2025', 'WHO')}). A molecule can sit on the NEML and still lack a DDC code, or the reverse.</p>
-
-<p><strong>A facility formulary</strong> is a hospital or clinic list. DHA’s 2021 Pharmacy Guidelines define a formulary as the medications the healthcare organization or facility has decided may be prescribed and ordered. The pharmacy should create that list; a drug formulary may be created by a multidisciplinary committee; selection is based on efficacy, safety, economics and the services the facility provides; the medication-management system is to be reviewed at least once within 24 months (${cite('dha-pharmacy-2021', 'DHA Pharmacy Guidelines 2021')}). That 24-month review is the closest published review cadence for a Dubai facility list. It is not a quarterly emirate-wide vote.</p>
-
+<h2 id="which-published-lists-sit-behind-that-search-term">Which published lists sit behind the name</h2>
+<p>Four lists are easy to collapse into one word. They are not one list.</p>
+<p>The Dubai Drug Code is the list of drugs registered with DHA Pharmacy Services. Each code includes route, form, pack size, price and source (${cite('ddc-2018', 'GC 12/2018')}). eClaimLink still publishes that set (${cite('eclaimlink-home', 'eClaimLink')}). A code identifies the SKU on a claim. It is not a promise that the Essential Benefits Plan will pay.</p>
+<p>The Essential Benefits Plan restricts drugs to formulary products where a formulary exists (${cite('gc-03-2024', 'GC 03/2024')}). That is an insurance rule, not a hospital list.</p>
+<p>The 2025 National Essential Medicines List is federal. EDE Chairman Decision No. 47 of 2025, dated 19 June 2025, adopted it (${cite('ede-legislations', 'EDE legislations')}; ${cite('ede-neml-2025', 'NEML attachment')}; ${cite('dha-neml-pdf', 'DHA-hosted Decision 47/2025')}). WHO posted an English file on 3 June 2026 (${cite('who-neml-2025', 'WHO')}). A molecule can sit on that list and still lack a Dubai code.</p>
+<p>A facility formulary is the list a hospital or clinic allows. DHA’s 2021 Pharmacy Guidelines say a multidisciplinary committee may create it, and that the medication-management system is reviewed at least once within 24 months (${cite('dha-pharmacy-2021', 'DHA Pharmacy Guidelines 2021')}). That review is not an emirate-wide quarterly vote.</p>
 ${figureHtml(DEDL_FORMULARY_FIGURES[0])}
 
-<p>A Dubai Essential Drug List formulary submission that collapses those four layers into one “listed / not listed” cell will be sent back the first time a medical director asks which list the model used.</p>
-
-<h2 id="what-does-the-essential-benefits-plan-actually-pay-for">What does the Essential Benefits Plan actually pay for?</h2>
-
-<p>Law No. 11 of 2013 is the statute. It applies across the Emirate, including special development zones and free zones such as the Dubai International Financial Centre. Article 5 gives DHA the duties to pre-qualify insurers and to approve health-insurance packages, their prices and co-insurance. Article 7 requires the entities determined in Article 9 to enrol UAE nationals, residents and visitors (${cite('dubai-law-11-2013', 'Law 11/2013')}). Dubai.ae states the operational reading: employers, including free-zone employers, must cover employees; sponsors must cover dependents; Dubai citizens and government employees are eligible under Enaya (${cite('dubai-ae-insurance', 'Dubai.ae')}). The UNDP / Gulf Health Council NCD investment case describes Dubai’s Saada programme beside Abu Dhabi’s Thiqa programme and employer-mandated cover for expatriate employees (${cite('undp-ncd', 'UNDP NCD investment case')}).</p>
-
-<p>ISAHD’s Participating Insurers page writes the coverage floor in one sentence: the Law requires all residents to have a level of health insurance that meets or exceeds the minimum benefits stipulated by DHA, and those benefits form the Essential Benefits Plan. Only Participating Insurers may sell that plan to residents earning AED 4,000 or less per month (${cite('isahd-ebp', 'ISAHD')}; ${cite('isahd-employer', 'ISAHD Employer Pack')})</p>
-
-<p>GC 06/2024 named twenty Participating Insurers permitted to provide the approved EBP for the low-salary band from 1 January 2025 to 31 December 2025, including Dubai Insurance, Orient, GIG AXA, Sukoon, MetLife, ADNIC, Liva, Medgulf and Cigna’s Dubai branch (${cite('gc-06-2024', 'GC 06/2024')}). That list is a 2025 permit. A 2026 brief should ask which current circular replaced it. It should not treat the twenty names as a permanent roster.</p>
-
-<p>The medicines arithmetic changed once in the public record this decade. PD 01/2021 set the EBP drugs line at AED 1,500 a year including coinsurance (${cite('pd-01-2021', 'PD 01/2021')}). GC 03/2024 raised that annual limit to AED 2,500 from 1 January 2025, restated the 30% coinsurance and the formulary restriction, set the Index Rate band at AED 550–750 per member per year plus VAT (± AED 25), and kept an annual upper aggregate claims limit of AED 150,000 (${cite('gc-03-2024', 'GC 03/2024')}).</p>
-
+<h2 id="what-does-the-essential-benefits-plan-actually-pay-for">What the Essential Benefits Plan pays</h2>
+<p>Law No. 11 of 2013 applies across Dubai, including free zones such as DIFC. DHA approves packages, prices and co-insurance (${cite('dubai-law-11-2013', 'Law 11/2013')}). Employers, including free-zone employers, must cover employees. Sponsors cover dependents. Dubai citizens and government employees are eligible under Enaya (${cite('dubai-ae-insurance', 'Dubai.ae')}). The UNDP investment case describes Dubai’s Saada programme beside Abu Dhabi’s Thiqa programme (${cite('undp-ncd', 'UNDP')}).</p>
+<p>Only Participating Insurers may sell the Essential Benefits Plan to residents earning AED 4,000 or less a month (${cite('isahd-ebp', 'ISAHD')}; ${cite('isahd-employer', 'ISAHD Employer Pack')}). GC 06/2024 named twenty of those insurers for 1 January 2025 to 31 December 2025 (${cite('gc-06-2024', 'GC 06/2024')}). That roster is a 2025 permit. Do not treat it as permanent.</p>
+<p>PD 01/2021 set the medicines line at AED 1,500 a year, including coinsurance (${cite('pd-01-2021', 'PD 01/2021')}). From 1 January 2025 the cap is AED 2,500, including coinsurance, with 30% per prescription and a formulary restriction (${cite('gc-03-2024', 'GC 03/2024')}). The same circular sets an Index Rate of AED 550–750 per member per year, plus or minus AED 25, and an annual aggregate claims limit of AED 150,000. On 7 October 2025, new Policy Directives revoked and replaced named earlier circulars (${cite('gc-05-2025', 'GC 05-2025')}). A 2026 brief writes to the Dubai Health Insurance Corporation as well as Pharmacy Services.</p>
 ${figureHtml(DEDL_FORMULARY_FIGURES[1])}
 
-<p>Three research points sit inside that medicines line. First, the EBP is the minimum for <em>any</em> Dubai policy, not only the low-salary product (${cite('gc-03-2024', 'GC 03/2024')}). An enhanced plan can pay more, but it cannot pay less than this floor. Second, “restricted to formulary products where available” is the published gate. The circular does not publish the molecule list that implements it. Third, AED 2,500 including 30% coinsurance is a small annual pharmacy budget for a specialty SKU. A product that will never fit inside that cap is not an EBP play. It is an enhanced-plan, hospital-inpatient or self-pay play. Those are three different interviews.</p>
-
-<p>On 7 October 2025 the Dubai Health Insurance Corporation told the market that new Policy Directives revoke and replace a named set of earlier ISAHD circulars (${cite('gc-05-2025', 'GC 05-2025')}). The insurance regulator a 2026 brief writes to is DHIC as well as DHA Pharmacy Services. A cover letter that still addresses only a 2018 coding desk is already incomplete.</p>
-
-<h2 id="how-does-a-product-get-a-dubai-drug-code">How does a product get a Dubai Drug Code?</h2>
-
-<p>eClaimLink publishes the pharmaceutical-company steps. The company downloads the DDC registration form, fills every field, and emails DHA Pharmacy Services with the form, a MOH product-registration certificate for a MOH-registered item — or a MOH receipt of the registration file for an item still under registration — and an updated invoice showing cost and selling prices. Pharmacy Services accepts and assigns a code, rejects with reasons, or asks for more information. Updates release every Monday. The updated list is available on eClaimLink under DHD &gt; Codes &amp; Lists &gt; Dubai Drug Code. Utilization starts on Thursday (${cite('eclaimlink-ddc', 'eClaimLink DDC registration')}; ${cite('ddc-2018', 'GC 12/2018')})</p>
-
+<h2 id="how-does-a-product-get-a-dubai-drug-code">How a product gets a code</h2>
+<p>The company files a registration form, a MOH certificate or a receipt, and an invoice with cost and selling prices. Updates release every Monday. Utilization starts on Thursday (${cite('eclaimlink-ddc', 'eClaimLink DDC registration')}; ${cite('ddc-2018', 'GC 12/2018')}).</p>
+<p>On 5 January 2026, MOHAP transferred 44 core services to the Emirates Drug Establishment, including individual-product re-pricing and price lists (${cite('mohap-44-2026', 'MOHAP, 5 January 2026')}). Federal Decree-Law No. 28 of 2023 was issued on 25 September 2023 and took effect on 30 September 2023 (${cite('uae-leg-28-2023', 'UAE Legislation')}). Federal Decree-Law No. 38 of 2024 was issued on 1 October 2024 and took effect on 2 January 2025. Article 20 requires a Board-set price before marketing (${cite('uae-leg-38-2024', 'UAE Legislation')}; ${cite('faolex-38-2024', 'FAOLEX Article 20')}). A pack that shows only an old ministry certificate, and never the EDE price, is incomplete. Re-pricing fees are AED 1,000 plus AED 500 (${cite('ede-repricing', 'EDE re-pricing')}).</p>
 ${figureHtml(DEDL_FORMULARY_FIGURES[2])}
+<p>WAM’s first-half 2026 note, to 30 June 2026, counts 942 product approvals, 20 pricing decisions and 2,030 inspection visits (${cite('wam-h1-2026', 'WAM')}). Those are regulator counts. They are not a Dubai Drug Code count, and they are not a treated-patient forecast.</p>
 
-<p>Two 2026 facts now sit on that form. First, the public page still says “MOH product registration certificate.” On 5 January 2026 MOHAP transferred 44 core services in full to the Emirates Drug Establishment, including individual-product re-pricing and publication of regulated-medicine price lists, and told applicants to use the EDE portal (${cite('mohap-44-2026', 'MOHAP, 5 January 2026')}). Federal Decree-Law No. 28 of 2023 established the UAE Drug Corporation on 25 September 2023, with effect on 30 September 2023 (${cite('uae-leg-28-2023', 'UAE Legislation')}). Federal Decree-Law No. 38 of 2024, in force 2 January 2025, is the current medical-products statute; Article 20 requires a specific Board-set price before marketing (${cite('uae-leg-38-2024', 'UAE Legislation')}; ${cite('faolex-38-2024', 'FAOLEX Article 20')}). A DDC pack that still attaches only an old ministry certificate, and never shows the EDE price, is a research gap. Ask the agency which certificate Pharmacy Services accepted on the last three Monday releases.</p>
+<h2 id="why-a-coded-price-is-not-a-funded-listing">A code is not a funded listing</h2>
+<p>A Monday release lets a claim be coded. It does not put the product on an Essential Benefits formulary or on a facility list. Interview the wallet that will see the claim. The wider map sits on <a href="/uae-pricing-reimbursement-strategy">UAE pricing and reimbursement strategy</a>. A Dubai answer is not a Thiqa answer. See <a href="/healthcare-market-research/saudi-arabia">Saudi Arabia</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a>.</p>
 
-<p>Second, the weekly Monday/Thursday rhythm is the published coding calendar. It is the opposite of a quarterly freeze. A launch model that holds a SKU “until the next quarter” because someone said DEDL meets quarterly has not read GC 12/2018. The coding file can move every week. The EBP formulary restriction and the facility committee can still say no after the code exists.</p>
-
-<p>WAM’s official first-half 2026 EDE record is the federal activity count sitting behind that certificate: 942 product approvals by 30 June 2026, 20 pricing decisions, 2,030 inspection visits (${cite('wam-h1-2026', 'WAM, 22 September 2026')}). Those are regulator counts. They are not a Dubai treated-patient forecast, and they are not a DDC assignment count.</p>
-
-<h2 id="why-a-coded-price-is-not-a-funded-listing">Why a coded price is not a funded listing</h2>
-
-<p>Three wallets can sit on the same SKU. The federal public price is one. Emirate insurance listing is another. The hospital or enhanced-plan wallet is a third. The federal price layer after the EDE takeover — first price, Decision 12 of 2026 list cuts, dual importers — is the subject of our <a href="/blog/uae-drug-pricing-ede-takeover-launch-research">UAE drug pricing after the EDE takeover</a> briefing. This page does not repeat that file. What it adds is the Dubai insurance and coding layer that briefing leaves open.</p>
-
-<p>EDE’s re-pricing card still asks for a country-of-origin pricing certificate, justifications, and Gulf plus European reference prices, with Drugs Pricing Committee approval and fees of AED 1,000 plus AED 500 for a new certificate (${cite('ede-repricing', 'EDE re-pricing card')}). That card can produce a public price. GC 12/2018 can then produce a DDC code that already carries a price field (${cite('ddc-2018', 'GC 12/2018')}). Neither step writes the product onto an insurer formulary. GC 03/2024 still restricts EBP medicines to formulary products where available and still stops paying at AED 2,500 (${cite('gc-03-2024', 'GC 03/2024')}). A facility committee can still decline to stock the SKU (${cite('dha-pharmacy-2021', 'DHA Pharmacy Guidelines')})</p>
-
-<p>The process map for DHA, DOH and residual northern-emirate payer tracks sits on <a href="/uae-pricing-reimbursement-strategy">UAE pricing and reimbursement strategy</a>. The research instruction on this page is narrower: do not treat a Monday DDC release as a listing. Interview the wallet that will see the claim.</p>
-
-<h2 id="what-local-evidence-do-uae-payers-publish-that-they-want">What local evidence do UAE payers publish that they want?</h2>
-
-<p>The honest split is by emirate. Dubai’s published insurance circulars set a benefit floor, a formulary restriction and a coding calendar. They do not publish a health-technology-assessment dossier checklist. Abu Dhabi does.</p>
-
-<p>The Department of Health — Abu Dhabi’s April 2023 RWE guideline applies to research using real-world data in Abu Dhabi, or elsewhere if the outcome will be submitted to DOH for regulatory, clinical or reimbursement decisions (${cite('doh-rwe-2023', 'DOH RWE guideline, April 2023')}). It requires fit-for-purpose data — relevance and reliability — and says following the guideline does not guarantee a favourable decision (${cite('doh-rwe-2023', 'DOH RWE')})</p>
-
-<p>The June 2025 Health Technology Assessment Guidelines are written for Abu Dhabi and apply to pharmaceutical companies, marketing-authorisation holders and DOH-authorised health payers (${cite('doh-hta-2025', 'DOH HTA, June 2025')}). Epidemiology of the target indication is mandatory. If UAE data are not available, prefer Arab or Middle East references and adapt them (${cite('doh-hta-2025', 'DOH HTA §3.5.3')}). RWE is not mandated, but may be requested in class reviews and is often accepted to supplement RCT data (${cite('doh-hta-2025', 'DOH HTA §3.5.7.3')}). GCC is named as the most relevant setting after the local one (${cite('doh-hta-2025', 'DOH HTA §3.6.2.6')}). Budget-impact rules recommend a three-year period, no discounting, and no co-payments in the technology cost. Products with expected annual utilization under AED 10 million, or per-patient cost under AED 100,000 a year, are listed among the out-of-scope examples (${cite('doh-hta-2025', 'DOH HTA')})</p>
-
-<p>DOH’s managed-entry / risk-sharing policy adds a further published ask: the department evaluates the company’s cost-effectiveness model and may request more data; monitoring runs at defined intervals; the company has no access to patient-confidential data (${cite('doh-mea', 'DOH MEA/RSA policy')})</p>
-
-<p>The HTA guide also records a data-residency constraint a fieldwork brief has to state: Federal Law No. (2) of 2019 on ICT in healthcare does not permit storing, developing or transferring health data related to health services provided in the UAE outside the country (${cite('doh-hta-2025', 'DOH HTA appendix')})</p>
-
+<h2 id="what-local-evidence-do-uae-payers-publish-that-they-want">What local evidence payers publish</h2>
+<p>Dubai’s circulars set a cap, a formulary restriction and a coding calendar. They do not publish a health-technology-assessment checklist. Abu Dhabi does.</p>
+<p>The April 2023 real-world evidence guideline applies when the file will go to the Department of Health for a regulatory, clinical or reimbursement decision. Following it does not guarantee a favourable decision (${cite('doh-rwe-2023', 'DOH RWE 2023')}).</p>
+<p>The June 2025 assessment guide makes local epidemiology mandatory. Real-world evidence may be requested in a class review. After the local setting, the Gulf is the next relevant one. Annual utilization under AED 10 million is out of scope, as is a per-patient cost under AED 100,000 a year (${cite('doh-hta-2025', 'DOH HTA 2025')}). Federal Law No. 2 of 2019 does not allow health data from UAE services to be stored or transferred outside the country (${cite('doh-hta-2025', 'DOH HTA')}). The managed-entry policy says the department may ask for more data, and the company has no access to patient-confidential data (${cite('doh-mea', 'DOH managed entry')}).</p>
 ${figureHtml(DEDL_FORMULARY_FIGURES[3])}
+<p>The last official national survey put adult diabetes at 11.8% in 2017–2018, down from 18.9% in 2010 (${cite('mohap-nhs', 'MOHAP National Health Survey')}; ${cite('undp-ncd', 'UNDP')}). That is not a 2026 Dubai treated share. FCSC puts the 2024 population at about 11.29 million, up 5.7% from 10.68 million, across about 200 nationalities (${cite('fcsc-2024', 'FCSC')}). Do not turn that residency count into patients on one SKU.</p>
 
-<p>None of that is a DHA circular. It is still the published UAE-payer record on local evidence. A manufacturer affiliate that will later file in Abu Dhabi, or whose enhanced Dubai plans will ask the same questions, should commission the local epidemiology and analog-outcomes file now. A brief that waits until a DOH class review to discover it has only a US RCT has skipped the research. For the Thiqa obesity example of an emirate-specific payer rule, see <a href="/blog/thiqa-obesity-reimbursement-abu-dhabi">Thiqa obesity reimbursement in Abu Dhabi</a>.</p>
-
-<p>Dubai’s own published numbers do not fill that gap. The last official national health survey put adult diabetes at 11.8% — a 2017–2018 figure, not a 2026 Dubai treated share (${cite('mohap-nhs', 'MOHAP National Health Survey')}; ${cite('undp-ncd', 'UNDP')}). FCSC’s 2024 population of about 11.29 million, up 5.7% from 10.68 million in 2023, is a residency count across about 200 nationalities (${cite('fcsc-2024', 'FCSC')}). It is not an eligible-patient funnel for a specialty SKU.</p>
-
-<h2 id="what-should-a-dubai-essential-drug-list-formulary-submission-measure">What should a Dubai Essential Drug List formulary submission measure?</h2>
-
-<p>Design the study backwards from the decision — a DDC assignment, an EBP or enhanced-plan formulary question, or a named hospital Pharmacy and Therapeutics addition.</p>
-
+<h2 id="what-should-a-dubai-essential-drug-list-formulary-submission-measure">What the study should measure</h2>
+<p>Name the list the model uses. Then separate the code, the insurance rule and the facility stock.</p>
 ${WORKSTREAM_TABLE_HTML}
-
 ${figureHtml(DEDL_FORMULARY_FIGURES[4])}
+<p>Commission anonymous prescribing diaries for new and continuing patients, by cover type. Ask what the payer already spends inside and above the AED 2,500 medicines cap. A budget that prices only the new invoice, and ignores the cap and the 30% coinsurance, answers the wrong question.</p>
 
-<ul>
-<li><strong>List identity.</strong> Name the DDC extract, EBP restriction, 2025 NEML or facility list the model uses (${cite('ddc-2018', 'GC 12/2018')}; ${cite('ede-neml-2025', 'NEML 2025')}).</li>
-<li><strong>DDC coding file.</strong> Certificate, invoice, Monday release, Thursday utilization (${cite('eclaimlink-ddc', 'eClaimLink')}; ${cite('mohap-44-2026', 'MOHAP')}).</li>
-<li><strong>EBP versus enhanced wallet.</strong> AED 2,500 cap, 30% coinsurance, Participating Insurer versus enhanced director (${cite('gc-03-2024', 'GC 03/2024')}).</li>
-<li><strong>Treated-patient share.</strong> Anonymous PRFs: new versus continuing, basic versus enhanced, Dubai versus Abu Dhabi.</li>
-<li><strong>Local real-world evidence.</strong> Epidemiology and analog outcomes to the published DOH RWE and HTA rules (${cite('doh-rwe-2023', 'DOH RWE')}; ${cite('doh-hta-2025', 'DOH HTA')}).</li>
-<li><strong>Budget impact after the cap.</strong> Class spend inside the EBP medicines line and on enhanced plans, not a global invoice only.</li>
-<li><strong>Facility formulary.</strong> Which multidisciplinary committee will stock the SKU (${cite('dha-pharmacy-2021', 'DHA Pharmacy Guidelines')}).</li>
-</ul>
+<h2 id="how-to-commission">How to commission the study</h2>
+<p>Name the SKU, the Monday release you are aiming at, and whether the script sits on the Essential Benefits Plan or an enhanced plan. State the data-residency rule before recruitment. Report share of treated patients, not a national market-size total.</p>
 
-<p>A Dubai EBP answer is not a Thiqa answer and is not a NUPCO award. See <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a>.</p>
-
-<h2 id="how-to-commission">How should you commission the study?</h2>
-
-<ul>
-<li>How many Dubai payers, TPAs and hospital pharmacists will you recruit, and will you split Participating Insurers from enhanced-plan medical directors?</li>
-<li>Will results be reported by basic versus enhanced cover, by Emirati versus expatriate, and by new versus current cases?</li>
-<li>Which list identity will you use as the base case — DDC, EBP restriction, NEML or a named facility — and why?</li>
-<li>Will the discussion guide treat coding, insurance restriction and facility stock as three layers, not one “DEDL” share?</li>
-<li>Are questionnaires available in Arabic and English?</li>
-<li>Where will identifiable health data sit, given the ICT-in-healthcare residency rule the DOH HTA guide records (${cite('doh-hta-2025', 'DOH HTA')})?</li>
-<li>Who owns the data, and can it be re-cut after a circular changes the EBP line again?</li>
-</ul>
-
-<p>Grand View Research, IMARC and IQVIA publish UAE pharmaceutical pages that often appear for this query. Use them to triangulate category spend. Do not take them to a payer meeting as the evidence pack for a Dubai Essential Drug List formulary submission.</p>
-
-<p>A physician-survey design sits on <a href="/uae-pharmaceutical-market-research">UAE pharmaceutical market research</a>. For the federal price layer after EDE, use the EDE briefing already linked. For the access-process map this page does not repeat, use <a href="/uae-pricing-reimbursement-strategy">UAE pricing and reimbursement strategy</a>.</p>
-
-<h2 id="why-bionixus">Why BioNixus</h2>
-
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
-
-<p>Choose BioNixus when the decision depends on why Dubai payers, hospital pharmacists and treating physicians act as they do, rather than on a UAE market-size total. Each study is built around one decision — a DDC file, an EBP or enhanced-plan question, a facility formulary — and is reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews.</p>
-
-<p>See also <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a>, <a href="/pharmaceutical-companies-uae">pharmaceutical companies in the UAE</a> and <a href="/insights/top-pharmaceutical-market-research-companies-uae-2026">top pharmaceutical market research companies in the UAE</a>.</p>
-
-<p>To brief a Dubai Essential Drug List formulary submission study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. There are field offices in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Work in Latin America is covered today from the US office with local consultants.</p>
+<p>The line “Guaranteed in writing” covers scope, timing, replacement of respondents who do not qualify, the minimum sample, re-fielding if that sample is missed, and a credited pilot. It does not cover what the interviews will find. BioNixus has 40 client reviews.</p>
+<p>Use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -600,37 +506,37 @@ export const DEDL_FORMULARY_FAQ: { question: string; answer: string }[] = [
   {
     question: 'What is a Dubai Essential Drug List formulary submission?',
     answer:
-      'A Dubai Essential Drug List formulary submission is the commissioned evidence pack that asks whether a product will receive a Dubai Drug Code, whether an insurer will treat it as a formulary product under the Essential Benefits Plan or an enhanced policy, and whether a Dubai facility formulary will stock it. Official pages do not publish a list named DEDL. The work is primary research, not a syndicated UAE market-size report.',
+      'The evidence pack that asks whether a product will get a Dubai Drug Code, sit on a formulary and be paid for in Dubai. Official pages do not publish a list named DEDL.',
   },
   {
     question: 'Does DHA publish a list officially named the Dubai Essential Drug List?',
     answer:
-      'The official circulars cited in this briefing do not use the title “Dubai Essential Drug List” or the acronym DEDL. They publish the Dubai Drug Code (every drug registered with DHA Pharmacy Services), an Essential Benefits Plan medicines line restricted to formulary products where available, the federal 2025 National Essential Medicines List, and facility formularies under the 2021 Pharmacy Guidelines. Treat DEDL as the search term; name the list you mean.',
+      'No. The published pieces are a weekly Dubai Drug Code, an Essential Benefits Plan that restricts drugs to formulary products, a 2025 national essential-medicines list, and facility formularies.',
   },
   {
     question: 'How often is the Dubai Drug Code updated?',
     answer:
-      'GC 12/2018 and the eClaimLink registration page say DHA Pharmacy Services releases DDC updates once weekly every Monday and that utilization starts on Thursday. That is the published coding calendar. This briefing did not find a current public DHA circular that names a quarterly DEDL committee.',
+      'DHA Pharmacy Services releases updates every Monday. Utilization starts on Thursday. That is a coding calendar, not a quarterly committee.',
   },
   {
     question: 'What does the Essential Benefits Plan pay for medicines?',
     answer:
-      'From 1 January 2025, GC 03/2024 sets the EBP drugs line at AED 2,500 a year including coinsurance, 30% payable by the insured on each prescription, restricted to formulary products where available, and no cover above the annual limit. PD 01/2021 had set that cap at AED 1,500. The EBP is also the minimum standard for any health-insurance policy issued in Dubai.',
+      'From 1 January 2025 the medicines cap is AED 2,500 a year, including coinsurance, with 30% per prescription. The earlier cap was AED 1,500. Cover above the cap is not in the basic plan. Only Participating Insurers may sell the plan to residents earning AED 4,000 or less a month.',
   },
   {
     question: 'Is a Dubai Drug Code the same as reimbursement?',
     answer:
-      'No. A DDC code identifies the SKU on a claim and already includes a price field. Reimbursement still depends on the Essential Benefits Plan or enhanced-plan formulary rule and on whether a facility stocks the product. A federal EDE public price is a third layer. Commission payer interviews; do not treat Monday’s code release as a listing.',
+      'No. A code identifies the pack and already includes a price. Payment still depends on the plan’s formulary rule and on whether a facility stocks the product. A federal public price is a third layer.',
   },
   {
     question: 'What local evidence do UAE payers ask for?',
     answer:
-      'Abu Dhabi’s April 2023 RWE guideline and June 2025 HTA guidelines ask for local epidemiology, accept real-world evidence to supplement RCTs, and may request RWE in class reviews. Dubai’s published insurance circulars set a cap and a formulary restriction rather than an HTA dossier checklist. If any UAE wallet will see the file, commission the local epidemiology and analog-outcomes study now. Following those guides does not guarantee a favourable decision.',
+      'Abu Dhabi’s 2023 real-world evidence guide and June 2025 assessment guide ask for local epidemiology. Real-world evidence may be requested. Dubai’s circulars set a cap and a formulary restriction. Following the guides does not guarantee a favourable decision.',
   },
   {
     question: 'Why commission BioNixus for a Dubai formulary brief?',
     answer:
-      'BioNixus runs custom primary research from a Dubai field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a DDC file, an EBP or enhanced-plan question, or a facility formulary — and reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'Custom studies run from the Dubai field office, with a network of about 3,200 physicians, usually at $10k–$60k. Guaranteed in writing covers scope and sample. It does not cover what the interviews will find.',
   },
 ];
 
@@ -654,9 +560,7 @@ const FAQ_WORD_COUNT = DEDL_FORMULARY_FAQ.reduce(
 );
 
 export const DEDL_FORMULARY_WORD_COUNT =
-  countWords(DEDL_FORMULARY_EXECUTIVE_SUMMARY_HTML) +
-  countWords(DEDL_FORMULARY_BODY_HTML) +
-  FAQ_WORD_COUNT;
+  countWords(DEDL_FORMULARY_EXECUTIVE_SUMMARY_HTML) + countWords(NARRATIVE_HTML) + FAQ_WORD_COUNT;
 
 const READING_WORDS_PER_MINUTE = 225;
 
@@ -760,7 +664,7 @@ export const DEDL_FORMULARY_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning a Dubai Essential Drug List formulary submission?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes payer, pharmacist and physician research around it, from a Dubai field office and a network of about 3,200 physicians.',
+      'Tell us which Dubai list the decision is about. BioNixus scopes the study around that list. Custom work is usually $10k–$60k.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

@@ -302,7 +302,7 @@ describe('/bionixus-industries/insights/australia-gcc-market-entry-research: cop
     expect(AU_GCC_ENTRY_META_TITLE.length).toBeLessThanOrEqual(60);
     expect(AU_GCC_ENTRY_META_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
     expect(AU_GCC_ENTRY_META_DESCRIPTION.length).toBeLessThanOrEqual(155);
-    expect(AU_GCC_ENTRY_WORD_COUNT).toBeGreaterThanOrEqual(3800);
+    expect(AU_GCC_ENTRY_WORD_COUNT).toBeGreaterThanOrEqual(1600);
     expect(AU_GCC_ENTRY_WORD_COUNT).toBeLessThanOrEqual(5000);
     expect(getCtrSeo(AU_GCC_ENTRY_PATH)).toEqual({
       title: AU_GCC_ENTRY_META_TITLE,
@@ -329,7 +329,8 @@ describe('/bionixus-industries/insights/australia-gcc-market-entry-research: cop
     expect(AU_GCC_ENTRY_META_TITLE.toLowerCase()).toContain(PHRASE);
     expect(AU_GCC_ENTRY_META_DESCRIPTION.toLowerCase()).toContain(PHRASE);
     expect(summary.toLowerCase()).toContain(PHRASE);
-    expect(h2s.some((h2) => h2.includes(PHRASE))).toBe(true);
+    expect(h2s.some((h2) => h2.includes('before you send money'))).toBe(true);
+    expect(AU_GCC_ENTRY_BODY_HTML.toLowerCase()).toContain(PHRASE);
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {

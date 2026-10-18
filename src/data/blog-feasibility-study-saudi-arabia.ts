@@ -40,15 +40,15 @@ export const SAUDI_FEASIBILITY_META_DESCRIPTION =
   'Feasibility study company Saudi Arabia: what the 2026 market section must prove — demand, price, channels, competition and SIDF-ready primary evidence.';
 
 export const SAUDI_FEASIBILITY_DISPLAY_TITLE =
-  'Feasibility Studies in Saudi Arabia: What the Market Section Must Prove';
+  'What the market chapter of a Saudi feasibility study must prove';
 
 export const SAUDI_FEASIBILITY_DISPLAY_SUBTITLE =
-  'How a feasibility study company in Saudi Arabia should evidence demand';
+  'Demand, price, city, and the file a lender will read';
 
 export const SAUDI_FEASIBILITY_BREADCRUMB_LABEL = 'Saudi feasibility study market section';
 
 export const SAUDI_FEASIBILITY_EXCERPT =
-  'A sourced 2026 guide to what the market section of a Saudi feasibility study must prove — demand, price, city mix, channels and competition — and how primary research makes the chapter bankable for SIDF and other lenders.';
+  'What a Saudi feasibility study has to show about buyers, price and place before capital is committed, using official figures and a source for every number.';
 
 export const SAUDI_FEASIBILITY_PUBLISHED_ISO = '2026-10-12T12:00:00.000Z';
 export const SAUDI_FEASIBILITY_UPDATED_ISO = '2026-10-12T12:00:00.000Z';
@@ -195,166 +195,108 @@ export function countWords(html: string): number {
 }
 
 export const SAUDI_FEASIBILITY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What a feasibility study company in Saudi Arabia must deliver', anchor: 'what-the-company-delivers' },
-  { heading: 'Why lenders stress-test the market section', anchor: 'why-the-market-section' },
-  { heading: 'What the market section must prove', anchor: 'five-tests' },
-  { heading: 'Official numbers a 2026 market section should start from', anchor: 'official-numbers' },
-  { heading: 'Primary research versus desktop sizing', anchor: 'primary-versus-desktop' },
-  { heading: 'How the proof changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a feasibility study company in Saudi Arabia', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What the lender actually asks for', anchor: 'what-lenders-ask' },
+  { heading: 'What the investment ministry asks for', anchor: 'what-misa-asks' },
+  { heading: 'Who the buyers are', anchor: 'who-buys' },
+  { heading: 'Investment, growth and housing', anchor: 'official-figures' },
+  { heading: 'Personal data', anchor: 'personal-data' },
+  { heading: 'How to choose a firm', anchor: 'how-to-choose' },
+  { heading: 'Who writes the market chapter', anchor: 'who-writes' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const SAUDI_FEASIBILITY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A feasibility study company in Saudi Arabia must prove who will buy, in which cities, at what price, through which channel and against which competitors. SIDF treats a feasibility study as mandatory on loan files under SAR 1 billion and then reviews financial, technical and marketing aspects. Primary evidence, not a national TAM slide, makes the market section bankable.</p>`;
+export const SAUDI_FEASIBILITY_EXECUTIVE_SUMMARY_HTML = `<p>A feasibility study company in Saudi Arabia has to show who will buy, in which cities, at what price, and against which competitors. SIDF treats a feasibility study as mandatory on loan files under SAR 1 billion, then reviews the financial, technical, and marketing sides. Official series frame the chapter. Interviews have to prove the project.</p>`;
 
-const NARRATIVE_HTML = `<p>A feasibility study company in Saudi Arabia is hired to answer one question before capital is committed: will this project sell, at a price that services the debt, in the cities where you plan to build? That is a market question. The technical and financial chapters cannot rescue a market section that was copied from a generic MENA report. This guide sets out what that chapter must prove in 2026, using only official statistics, and how BioNixus’s primary research fills it. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for sponsors, lenders and development-fund applicants — not for pharmaceutical briefs.</p>
+const NARRATIVE_HTML = `<p>A feasibility study company in Saudi Arabia is hired to answer one question before capital is committed. Will this project sell, at a price that can service the debt, in the cities where you plan to build? The technical chapter and the financial model cannot rescue a market chapter copied from a generic regional report. This note sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for sponsors, lenders and development-fund applicants.</p>
 
-<p>Search results for “feasibility study company Saudi Arabia” are full of Riyadh consultancies that write bankable reports. Few of those pages say how demand was measured. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>The market chapter has to show demand that is located, priced, channelled, dated and auditable. A national market-size slide with no city split fails that test. So does one selling price copied from another Gulf market.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a Saudi market section can cite in October 2026</strong></p>
-<ul>
-<li><strong>35.3 million</strong> people at mid-2024, or 35,300,280 on the national statistics portal: 19.6 million Saudis (55.6%) and about 15.7 million non-Saudis (44.4%), growing 4.7% from mid-2023 (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}).</li>
-<li><strong>SAR 119 billion</strong> of FDI inflows in 2024, up 24% from SAR 96 billion in 2023, with an FDI stock of SAR 977 billion. Manufacturing took SAR 35 billion of 2024 inflows (29%); wholesale and retail and construction each took SAR 18 billion (15%) (${cite('gastat-fdi-2024', 'GASTAT')}).</li>
-<li><strong>SAR 48.4 billion</strong> net FDI inflows in Q4 2025, up 90% from SAR 25.5 billion in Q4 2024; gross inflows that quarter were about SAR 50.6 billion (${cite('gastat-fdi-q4-2025', 'GASTAT')}). Quarterly and annual FDI series use different methods — do not add them together.</li>
-<li><strong>SAR 17 billion to SAR 388 billion:</strong> the National Investment Strategy aims to raise annual FDI more than twenty-fold from 2019 to 2030, and to lift investment (gross fixed capital formation) from 22% of GDP to 30% (${cite('misa-nis', 'MISA')}; ${cite('investsaudi-nis', 'Invest Saudi')}). Vision 2030’s 2025 annual report says FDI reached 2.8% of GDP in 2025 and remained below the target (${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}).</li>
-<li><strong>55.6%</strong> of real GDP came from non-oil activities in the first half of 2025, against 45.4% in 2016 (${cite('mof-prebudget-2026', 'Ministry of Finance')}).</li>
-<li><strong>66.24%</strong> Saudi-family homeownership at the end of 2025, from a 47% baseline, against a 70% Vision 2030 target (${cite('vision-housing', 'Vision 2030 Housing Program')}; ${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}).</li>
-</ul>
-</div>
+<h2 id="what-lenders-ask">What the lender actually asks for</h2>
 
-<h2 id="what-the-company-delivers">What does a feasibility study company in Saudi Arabia actually deliver?</h2>
+<p>SIDF’s general requirements, written for projects costing less than SAR 1 billion, say a feasibility study is mandatory. The same note says submitting the file does not necessarily guarantee loan approval. The stated purpose is to clarify project scope, justification, and the technical, marketing, legal, financial and ownership sides. ${cite('sidf-req', 'SIDF requirements')}</p>
 
-<p>A complete study still has four chapters: market, technical, financial and legal. Sponsors often buy the financial model and treat the market chapter as a literature review. That is the wrong split for a Saudi credit file. SIDF’s loan-requirements PDF, written for projects costing less than SAR 1 billion, says its purpose is to clarify “project scope, justification, technical, marketing, legal, financial aspects, and ownership.” It states, in those words, that “Submitting a feasibility study is mandatory,” and it warns that submitting the file “does not necessarily guarantee loan approval” (${cite('sidf-req', 'SIDF')}).</p>
+<p>On the project-financing page, SIDF describes medium- to long-term factory loans of up to 20 years. After the portal application, the next stages exist so SIDF can assess the financial, technical and marketing sides before it decides. The published service time is four months if every document arrives on time. ${cite('sidf-project', 'SIDF project financing')}</p>
 
-<p>On the Project Financing page, SIDF describes medium- to long-term factory loans of up to 20 years. After the initial portal application, the next stages exist so SIDF can assess the project’s “financial, technical, and marketing aspects” before it decides. The published service time is four months if every document arrives on time (${cite('sidf-project', 'SIDF')}). The Promising Factories soft-loan window, last updated on 14 July 2026, again lists a “feasibility study along with project implementation plan” among the eligibility tests, and it funds up to 50% of project cost (${cite('sidf-promising', 'SIDF')}).</p>
+<p>The Promising Factories soft-loan window was last modified on 14 July 2026. It again lists a feasibility study and a project implementation plan among the eligibility tests. It funds up to 50% of project cost. ${cite('sidf-promising', 'SIDF Promising Factories')}</p>
 
-<p>The Ministry of Investment’s Investor Guide (English file uploaded in May 2025) is stricter than many consultancy pages imply. The general registration checklist asks for a certified foreign commercial register, identity documents, authenticated financial statements and activity-specific papers. It does <em>not</em> list a full feasibility study as a universal MISA registration document. The one place the guide requires market feasibility work is the technical-liaison-office activity: that office “shall perform market feasibility studies on the type of the company’s activity” and send an annual summary to the ministry (${cite('misa-investor-guide', 'MISA')}). If a consultant tells you MISA always wants a 200-page study, ask which activity code they mean.</p>
+<p>Marketing sits on the same plane as the technical review and the financial review. That is why the market chapter has to name the buyer, the price, the city, the channel and the competitors. A policy slogan is not an offtake.</p>
 
-<h2 id="why-the-market-section">Why do lenders stress-test the market section?</h2>
+<h2 id="what-misa-asks">What the investment ministry asks for</h2>
 
-<p>A plant can be engineered and still fail if no one buys the output at the modelled price. SIDF’s own language puts marketing on the same plane as technical and financial review (${cite('sidf-project', 'SIDF')}; ${cite('sidf-req', 'SIDF')}). That is why the market section has to be a proof, not a brochure. It has to show demand that is:</p>
-<ul>
-<li>located — named cities or regions, not “the Kingdom”;</li>
-<li>priced — a willingness-to-pay range, not a single optimistic ASP;</li>
-<li>channelled — who specifies, who pays, who can switch;</li>
-<li>dated — a year and a method on every figure;</li>
-<li>auditable — a sample, a source table or a named official series.</li>
-</ul>
-<p>Desktop TAM built on a single syndicated report cannot carry those five tests. Primary interviews and surveys can. That is the gap a feasibility study company in Saudi Arabia should close before the financial model is frozen.</p>
+<p>The Ministry of Investment’s Investor Guide, the English file uploaded in May 2025, does not list a full feasibility study as a document for every registration. The general checklist asks for a certified foreign commercial register, identity documents, authenticated financial statements and activity-specific papers. The guide does require market feasibility work for a technical liaison office. That office shall perform market feasibility studies on the type of the company’s activity and send an annual summary to the ministry. Restricted activities still carry the extra papers in Section 05.00. ${cite('misa-investor-guide', 'MISA Investor Guide')}</p>
 
-<h2 id="five-tests">What must the market section prove?</h2>
+<p>The National Investment Strategy says the aim is to triple investment between 2019 and 2030, to raise annual foreign direct investment from SAR 17 billion in 2019 to SAR 388 billion in 2030, and to lift gross fixed capital formation from 22% of GDP to 30%. Priority sectors named on the ministry’s page are green energy, technology, healthcare and biotechnology, mobility and logistics. ${cite('misa-nis', 'MISA')}</p>
 
-<table>
-<thead><tr><th>Proof the chapter owes the lender</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand</td><td>A defined buyer, a unit of demand and a geography that matches the plant or site</td><td>A national market-size figure with no city split</td></tr>
-<tr><td>Who pays, and at what price</td><td>Paid-for willingness-to-pay or current invoice evidence, by segment</td><td>A single average selling price copied from another GCC market</td></tr>
-<tr><td>Where demand sits</td><td>City or region volumes that respect Saudi versus non-Saudi age structure</td><td>A Riyadh-only sample presented as a Kingdom forecast</td></tr>
-<tr><td>Channel and substitution</td><td>Who specifies, who distributes, what the buyer switches to if you miss</td><td>A channel map with no interviews</td></tr>
-<tr><td>Competition and local content</td><td>Named alternatives, import versus local supply, and a Saudization or local-content implication where the licence requires it</td><td>A logo slide of “competitors” with no share or switching evidence</td></tr>
-</tbody>
-</table>
+<p>Invest Saudi’s strategy PDF restates the 2030 foreign-investment objective as about 5.7% of GDP, and a gross fixed capital formation volume of SAR 2 trillion. ${cite('investsaudi-nis', 'Invest Saudi')}</p>
 
-<p>Those five tests are the market section. Everything else in the chapter — PESTLE pages, Vision 2030 quotations, photographs of giga-projects — is context. Context does not repay a loan.</p>
+<p>Vision 2030’s 2025 annual report then records the gap. Foreign direct investment was 2.8% of GDP in 2025, and the report says it remained below the target despite higher inflows. The same report says more than 1,000 reforms and 1,200 measures have been implemented, including allowing 100% foreign ownership in most sectors, and that digital platforms reduced requirements for investment licences by 54%. Write “most sectors”. Do not write “every activity”. ${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}</p>
 
-<h3>1. Addressable demand, not national TAM</h3>
+<h2 id="who-buys">Who the buyers are</h2>
 
-<p>GASTAT’s mid-2024 population is 35.3 million, with Saudis at 55.6% and non-Saudis at 44.4%. Among Saudis, 62.7% were of working age (15–64); among non-Saudis, 89.9% were (${cite('gastat-pop-2024', 'GASTAT')}). A consumer product, a clinic, a school and a factory selling into contractors do not share one “per capita” math. Write the buyer first, then the headcount that could become that buyer, then the share you can defend.</p>
+<p>GASTAT’s mid-2024 population estimate is 35.3 million. Saudis were 55.6% and non-Saudis were 44.4%. The estimate grew 4.7% from mid-2023. Among Saudis, 62.7% were of working age, 15 to 64. Among non-Saudis, 89.9% were. Of the 2023–2024 population increase, 70.8% was male and 75.6% was non-Saudi. ${cite('gastat-pop-2024', 'GASTAT')}</p>
 
-<h3>2. Price and who writes the cheque</h3>
+<p>The national statistics portal lists the 2024 population as 35,300,280. ${cite('mygov-stats', 'my.gov.sa')}</p>
 
-<p>Housing demand is a worked example. Vision 2030’s Housing Program says homeownership among Saudi families rose from 47% to more than 66.24% by the end of 2025, on the way to a 70% target by 2030. Sakani has supported over a million families, “with a third now living in their dream home.” Ejar has registered more than 4.5 million leases (${cite('vision-housing', 'Vision 2030 Housing Program')}). The 2024 Housing Program report says the rate reached 65.4% in 2024 and that the original 2020 stepping-stone of 60% was already met, which is why the 2030 bar was raised to 70% (${cite('housing-2024-ar', 'Housing Program Annual Report 2024')}). A residential feasibility that ignores Sakani eligibility, REDF/SRC mortgages and Ejar tenure is not a Saudi market section. It is a Dubai instrument with Arabic labels.</p>
+<p>Those two population figures are the same estimate, one rounded and one written in full. A consumer product, a clinic, a school and a factory selling to contractors do not share one “per person” sum. Write the buyer first. Then write the headcount that could become that buyer.</p>
 
-<h3>3. City and region, not “KSA”</h3>
+<p>Labour-heavy formats move with the non-Saudi inflow. Family housing and school places move with the Saudi age structure. If the site is in Riyadh, Jeddah or the Eastern Province, say so. Do not borrow a national average for a single city.</p>
 
-<p>The same GASTAT release attributes 70.8% of the 2023–2024 population increase to males and 75.6% of the increase to non-Saudis (${cite('gastat-pop-2024', 'GASTAT')}). Labour-heavy formats (camps, quick-service food, some industrial catchments) move with that in-flow. Family housing and school places move with the Saudi age pyramid. If the site is in Riyadh, Jeddah or the Eastern Province, say so, and do not borrow a national average.</p>
+<h2 id="official-figures">Investment, growth and housing</h2>
 
-<h3>4. Channel and substitution</h3>
+<p>On GASTAT’s 2024 annual foreign-investment series, inflows were SAR 119 billion, up 24% from SAR 96 billion in 2023. The stock was SAR 977 billion. Manufacturing took SAR 35 billion of 2024 inflows, 29%. Wholesale and retail, and construction, each took SAR 18 billion, 15%. The United Arab Emirates held the largest stock, SAR 161 billion. The United States had the largest net inflow, SAR 11 billion. Manufacturing held the largest stock by activity, SAR 277 billion, 28% of the total. Financial and insurance activities held SAR 126 billion, 13%. ${cite('gastat-fdi-2024', 'GASTAT FDI 2024')}</p>
 
-<p>SIDF will read the marketing chapter against the technical one: the same tonnes have to be sold through a named route. For industrial files that means offtake, distributor or contractor interviews, not a brochure claim that “Vision 2030 will create demand.” For retail and hospitality it means a catchment, a competing set and a substitution product. Write the question the interviewer asked.</p>
+<p>GASTAT’s fourth-quarter 2025 release is a different series. Net inflows that quarter were SAR 48.4 billion, up 90% from SAR 25.5 billion in the fourth quarter of 2024. Gross inflows that quarter were about SAR 50.6 billion. ${cite('gastat-fdi-q4-2025', 'GASTAT FDI, Q4 2025')}</p>
 
-<h3>5. Competition and local content</h3>
+<p>Do not add the quarterly net figure to the 2024 annual inflow. Label each series. A model that mixes them will be sent back.</p>
 
-<p>Manufacturing already holds the largest FDI stock in the official 2024 register series — SAR 277 billion, 28% of the SAR 977 billion total — and it took the largest 2024 inflow (${cite('gastat-fdi-2024', 'GASTAT')}). A new line that cannot say who already supplies the same SKU, from where, and at what landed cost is not ready for that chapter. Where a licence or a SIDF window asks for local content, the market section has to show that the buyer will actually pay for the local product.</p>
+<p>The Ministry of Finance announced the Pre-Budget Statement for fiscal year 2026 on 30 September 2025. ${cite('mof-news-2026', 'Ministry of Finance, 30 September 2025')}</p>
 
-<h2 id="official-numbers">Which official numbers should a 2026 market section start from?</h2>
+<p>That statement put 2025 real GDP growth at about 4.4% and 2026 at about 4.6%, with non-oil activity growing about 5.0% in 2025. It projected 2026 expenditure of about SAR 1,313 billion, revenue of about SAR 1,147 billion, and a deficit of 3.3% of GDP. Saudi unemployment was 6.8% in the second quarter of 2025, down from 12.3% in 2016. Private-sector Saudi employment was about 2.5 million by the end of that quarter. International tourists in the first quarter of 2025 were about 9.6 million. The statement said the Kingdom ranked third worldwide for international-tourist growth in that snapshot. Non-oil activities were 55.6% of real GDP in the first half of 2025, against 45.4% in 2016. ${cite('mof-prebudget-2026', 'Ministry of Finance Pre-Budget Statement')}</p>
 
-<p>Use official series as the frame, then replace the frame with primary evidence for the SKU. Do not invent giga-project revenues. The figures below are the ones this article could verify.</p>
+<p>The mid-year fiscal report for 2026 then updated the year. Real GDP in the first half of 2026 was 0.9% lower than a year earlier, because oil activity fell about 11.4% while non-oil activity rose 1.8%. The report said non-oil activity for 2026 was then expected to grow 3.2%. The overall unemployment rate was 3.0% in the second quarter of 2026. The Saudi unemployment rate was 6.5%. ${cite('mof-midyear-2026', 'Ministry of Finance mid-year report')}</p>
 
-<h3>The investment frame</h3>
+<p>A study dated after that mid-year report should not repeat the September 2025 line of about 4.6% growth for 2026 as if the later report did not exist. State the date of every macro input. The 4.4% and 4.6% figures are what the September 2025 statement said. They are not a blend with the mid-year result.</p>
 
-<p>MISA’s National Investment Strategy is explicit: triple investment between 2019 and 2030; raise FDI from SAR 17 billion in 2019 to SAR 388 billion in 2030; raise GFCF from 22% of GDP to 30% (${cite('misa-nis', 'MISA')}). Invest Saudi’s strategy PDF restates the 2030 FDI objective as about 5.7% of GDP and a GFCF volume of SAR 2 trillion (${cite('investsaudi-nis', 'Invest Saudi')}). Vision 2030’s 2025 annual report then records the gap: FDI was 2.8% of GDP in 2025, “remaining below the target despite higher inflows” (${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}). A market section that quotes only the 2030 target, and not the 2025 out-turn, is selling a slogan.</p>
+<p>The 9.6 million tourist figure is a national arrivals number from that pre-budget statement. It is not a hotel-level occupancy proof. A hospitality chapter still needs a competitive set, a length-of-stay assumption, and a source for corporate versus leisure mix. See <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a>.</p>
 
-<p>On the official annual register series, 2024 inflows were SAR 119 billion and the stock was SAR 977 billion, with the United Arab Emirates holding the largest stock (SAR 161 billion) and the United States the largest net inflow (SAR 11 billion) (${cite('gastat-fdi-2024', 'GASTAT')}). GASTAT’s Q4 2025 release is a different, later cut: net inflows of SAR 48.4 billion that quarter (${cite('gastat-fdi-q4-2025', 'GASTAT')}). Keep the two series labelled. A model that mixes them will be sent back.</p>
+<p>Housing is a worked example of price and who pays. The Vision 2030 Housing Program page says homeownership among Saudi families rose from a 47% baseline to more than 66.24% by the end of 2025, against a 70% target. Sakani has supported over a million families, with a third now living in their home. Ejar has registered more than 4.5 million leases. ${cite('vision-housing', 'Vision 2030 Housing Program')}</p>
 
-<h3>The growth frame — and the mid-2026 revision</h3>
+<p>The 2024 Housing Program report says the rate reached 65.4% in 2024, and that the original 2020 stepping-stone of 60% had already been met, which is why the 2030 bar was raised to 70%. ${cite('housing-2024-ar', 'Housing Program Annual Report 2024')}</p>
 
-<p>The Ministry of Finance’s Pre-Budget Statement for FY 2026, published on 30 September 2025, put 2025 real GDP growth at about 4.4% and 2026 at about 4.6%, with non-oil activity growing about 5.0% in 2025. It projected 2026 expenditure of about SAR 1,313 billion, revenue of about SAR 1,147 billion and a deficit of 3.3% of GDP. Saudi unemployment was 6.8% in the second quarter of 2025, down from 12.3% in 2016. Private-sector Saudi employment was about 2.5 million by the end of that quarter. First-quarter 2025 international tourists were about 9.6 million (${cite('mof-news-2026', 'Ministry of Finance')}; ${cite('mof-prebudget-2026', 'Ministry of Finance Pre-Budget PDF')}).</p>
+<p>65.4% is the 2024 report. 66.24% is the later program-page figure for the end of 2025. Do not average them. A residential file that ignores Sakani eligibility, mortgages and Ejar tenure is not a Saudi market chapter.</p>
 
-<p>The mid-year FY 2026 fiscal report then updated the year: real GDP in the first half of 2026 was 0.9% lower than a year earlier, because oil activity fell about 11.4% while non-oil activity rose 1.8%. Non-oil activity for 2026 was then expected to grow 3.2%. The overall unemployment rate was 3.0% in the second quarter of 2026, and the Saudi unemployment rate was 6.5% (${cite('mof-midyear-2026', 'Ministry of Finance mid-year report')}). A feasibility dated after that report that still uses the September 2025 pre-budget 4.6% 2026 growth line, with no footnote, will look stale. State the date of every macro input.</p>
+<p>Prove the catchment. A Riyadh villa file and a Jeddah apartment file do not share a demand curve. If the same sponsor is comparing sites, the method can be checked against <a href="/saudi-arabia-real-estate-market-research">real estate market research in Saudi Arabia</a>, <a href="/uae-real-estate-market-research">real estate market research in the UAE</a> and <a href="/egypt-real-estate-market-research">real estate market research in Egypt</a>. The samples are not interchangeable.</p>
 
-<h3>The 100% ownership reform — without over-claiming</h3>
+<p>A new factory line still has to say who already supplies the same product, from where, and at what landed cost. Where a licence or a SIDF window asks for local content, the chapter has to show a buyer for that local product.</p>
 
-<p>Vision 2030’s 2025 annual report says more than 1,000 reforms and 1,200 measures have been implemented, “including allowing 100% foreign ownership in most sectors,” and that digital platforms reduced requirements for investment licences by 54% (${cite('vision-2025-ar', 'Vision 2030 Annual Report 2025')}). That is the right way to write it: “most sectors,” not “every activity.” Restricted activities still carry the extra papers in Section 05.00 of the Investor Guide (${cite('misa-investor-guide', 'MISA')}).</p>
+<h2 id="personal-data">Personal data</h2>
 
-<h2 id="primary-versus-desktop">When is primary research the market section, and when is a desktop file enough?</h2>
+<p>If the study interviews residents or employees, the Personal Data Protection Law applies to personal data processed in the Kingdom. It came into force on 14 September 2023. SDAIA’s guide records a one-year grace period that ran to 14 September 2024. ${cite('sdaia-guide', 'SDAIA')} ${cite('pdpl-text', 'Personal Data Protection Law')}</p>
 
-<p>A desktop file is enough when the decision is “is this category growing?” and you only need an official or syndicated frame. It is not enough when the decision is “will these buyers pay this price at this site?” SIDF’s marketing review is the second kind of decision (${cite('sidf-project', 'SIDF')}).</p>
+<p>Write the legal basis into the method note. A desktop file is enough when the decision is only “is this category growing?” and an official series can answer it. It is not enough when the decision is “will these buyers pay this price at this site?”</p>
 
-<p>Primary work for a Saudi market section is usually a short, named programme:</p>
-<ul>
-<li>structured interviews with the people who specify or pay — contractors, distributors, procurement leads, household decision-makers, hotel buyers;</li>
-<li>a quantitative check on price, substitution and catchment, in Arabic and English;</li>
-<li>a documented sample, with city quotas that match the site, not a convenience panel in one mall;</li>
-<li>a source table that separates official series, supplier quotations and fieldwork.</li>
-</ul>
+<h2 id="how-to-choose">How to choose a firm</h2>
 
-<p>If the study interviews residents or employees, Saudi Arabia’s Personal Data Protection Law applies to personal data processed in the Kingdom. It came into force on 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}; ${cite('pdpl-text', 'PDPL text')}). Write the legal basis into the method note.</p>
-
-<p>BioNixus prices that custom work between $10,000 and $60,000, depending on sample, cities and whether the output is a chapter inside your study or a stand-alone demand file. The scope, timing and deliverables are guaranteed in writing. Accuracy of findings is not a claim we make. Adjacent country pages for the same industrial questions include <a href="/saudi-arabia-real-estate-market-research">real estate market research in Saudi Arabia</a>, <a href="/saudi-arabia-energy-market-research">energy market research in Saudi Arabia</a> and <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a>.</p>
-
-<h2 id="sector-notes">How does the proof change by sector?</h2>
-
-<h3>Industrial and SIDF files</h3>
-
-<p>Start from the official FDI mix — manufacturing, then trade, then construction (${cite('gastat-fdi-2024', 'GASTAT')}) — then replace it with offtake evidence. SIDF’s Promising Factories window also asks whether the project raises local content (${cite('sidf-promising', 'SIDF')}). The market section has to show a buyer for that local content, not only a policy target. NIS priority sectors on the ministry’s own page are green energy, technology, healthcare and biotechnology, mobility and logistics (${cite('misa-nis', 'MISA')}). Name the sector you are actually in.</p>
-
-<h3>Housing and real estate</h3>
-
-<p>Use the Housing Program’s own numbers: 66.24% homeownership at end-2025, 70% by 2030, Sakani support for over a million families, more than 4.5 million Ejar leases (${cite('vision-housing', 'Vision 2030 Housing Program')}). Then prove the catchment. A Riyadh villa file and a Jeddah apartment file do not share a demand curve. Cross-check the method against <a href="/uae-real-estate-market-research">real estate market research in the UAE</a> and <a href="/egypt-real-estate-market-research">real estate market research in Egypt</a> if the same sponsor is comparing GCC and North African sites — the instruments are not interchangeable.</p>
-
-<h3>Hospitality and visitor catchments</h3>
-
-<p>The Ministry of Finance recorded about 9.6 million international tourists in the first quarter of 2025 and said the Kingdom ranked third worldwide for international-tourist growth in that snapshot (${cite('mof-prebudget-2026', 'Ministry of Finance')}). That is a national arrivals figure, not a hotel-level occupancy proof. A hospitality market section still needs a competitive set, a length-of-stay assumption and a source for corporate versus leisure mix. See <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a>.</p>
-
-<h3>B2B services and financial services</h3>
-
-<p>Financial and insurance activities held SAR 126 billion of the 2024 FDI stock (13%) (${cite('gastat-fdi-2024', 'GASTAT')}). A B2B feasibility — a warehouse, a B2B brand, a payments node — has to recruit the actual buyer committee, not a consumer panel. That discipline is the same one we use on <a href="/saudi-arabia-financial-services-market-research">financial services market research in Saudi Arabia</a>.</p>
-
-<h2 id="how-to-choose">How should you choose a feasibility study company in Saudi Arabia?</h2>
-
-<p>Ask every firm, including BioNixus, to answer these questions in writing before you sign:</p>
+<p>Ask these questions in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for population, FDI and growth, and what is the date of each series?</li>
+<li>Which official series will you use for population, foreign investment and growth, and what is the date of each series?</li>
 <li>Will the market chapter report by city, or only as “Saudi Arabia”?</li>
 <li>How many interviews or surveys will you complete, in which language, and with which quotas?</li>
 <li>How will you separate official statistics, supplier quotations and fieldwork in the source table?</li>
-<li>If this file goes to SIDF, who writes the marketing chapter that SIDF will score against the technical one?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
-<li>How will personal data from respondents be processed under the PDPL (${cite('pdpl-text', 'PDPL')})?</li>
+<li>If the file goes to SIDF, who writes the marketing chapter that will be read against the technical one?</li>
+<li>What is covered in writing: the scope and the timing, or the findings?</li>
+<li>How will personal data be processed?</li>
 </ol>
 
-<p>Local feasibility consultancies that rank for the keyword are often strong at financial modelling and Arabic submission format. They are not automatically strong at demand evidence. A primary-research firm is the reverse. Many bankable files need both: a modeller who can speak SIDF’s templates, and a fieldwork team that can prove the tonnes. BioNixus does the second job and will work alongside your existing modeller.</p>
+<p>Many bankable files need two skills. A modeller who can speak the lender’s template. A fieldwork team that can prove the demand. BioNixus does the second job and will work alongside an existing modeller.</p>
 
-<h2 id="why-bionixus">Why brief BioNixus for the market section?</h2>
+<h2 id="who-writes">Who writes the market chapter</h2>
 
-<p>BioNixus is not a general feasibility house. It is a primary market research firm that writes the chapter lenders actually send back. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
+<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That covers the scope, the timing and the deliverables. It does not cover the accuracy of a forecast.</p>
 
-<p>Use this article with the <a href="/insights/top-real-estate-market-research-companies-saudi-arabia-2026">2026 ranking of real estate market research companies in Saudi Arabia</a>, the matching <a href="/insights/top-real-estate-market-research-companies-uae-2026">UAE real estate ranking</a>, and the other industry notes on the <a href="/bionixus-industries/insights">industry insights hub</a> — including <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services research in Egypt</a> and <a href="/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea">wood-boards trackers in the Middle East and Africa</a>. Browse country entry points on <a href="/market-research-by-industry">market research by industry</a>.</p>
+<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Cairo in Sheikh Zayed. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
 
-<p>To brief a Saudi feasibility market section, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the Kingdom you can also call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<p>To brief a market chapter, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -373,39 +315,39 @@ ${REFERENCES_HTML}`;
 
 export const SAUDI_FEASIBILITY_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does a feasibility study company in Saudi Arabia have to prove in the market section?',
+    question: 'What does the market chapter have to prove?',
     answer:
-      'It has to prove addressable demand, price, city or region, channel and competition with dated, auditable evidence. SIDF treats a feasibility study as mandatory on loan files under SAR 1 billion and then reviews financial, technical and marketing aspects. A national TAM slide is not a market section.',
+      'Who will buy, in which cities, at what price, through which channel, and against which competitors. Each figure needs a year and a method. SIDF treats a feasibility study as mandatory on loan files under SAR 1 billion, then reviews the financial, technical and marketing sides. A national market-size slide is not that chapter.',
   },
   {
     question: 'Does the Ministry of Investment require a feasibility study for every licence?',
     answer:
-      'The May 2025 MISA Investor Guide does not list a full feasibility study as a universal registration document. It does require technical liaison offices to perform market feasibility studies on the parent company’s activity and to file an annual summary. Activity-specific papers in Section 05.00 still apply. Ask which ISIC activity you are registering.',
+      'The May 2025 Investor Guide does not list a full feasibility study as a document for every registration. It does require a technical liaison office to perform market feasibility studies on the company’s activity and to file an annual summary. Activity-specific papers in Section 05.00 still apply.',
   },
   {
     question: 'Is a feasibility study mandatory for SIDF financing?',
     answer:
-      'Yes, for the loan files SIDF describes in its General Requirements PDF (projects costing less than SAR 1 billion). The Promising Factories soft-loan window also lists a feasibility study and implementation plan. Submission does not guarantee approval.',
+      'Yes, for the loan files SIDF describes for projects costing less than SAR 1 billion. The Promising Factories window, updated on 14 July 2026, also lists a feasibility study and an implementation plan, and funds up to 50% of project cost. Submission does not necessarily guarantee loan approval.',
   },
   {
-    question: 'Which official numbers should a 2026 Saudi market section use?',
+    question: 'Which official numbers should the chapter start from?',
     answer:
-      'Start from GASTAT’s mid-2024 population of 35.3 million, GASTAT’s 2024 FDI inflows of SAR 119 billion, MISA’s NIS targets (FDI from SAR 17 billion in 2019 to SAR 388 billion in 2030), Vision 2030’s 2.8% of GDP FDI out-turn in 2025, the Housing Program’s 66.24% homeownership at end-2025, and the Ministry of Finance growth series — including the mid-2026 revision. Label annual versus quarterly FDI. Do not invent giga-project revenues.',
+      'Start from GASTAT’s mid-2024 population of 35.3 million, listed as 35,300,280 on the national portal, and from 2024 foreign-investment inflows of SAR 119 billion. Keep the Q4 2025 net inflow of SAR 48.4 billion in its own series. The September 2025 pre-budget statement and the later mid-year 2026 report are different dates. Homeownership was 65.4% in the 2024 housing report and more than 66.24% at the end of 2025 on the Housing Program page.',
   },
   {
-    question: 'When do you need primary research instead of a desktop feasibility?',
+    question: 'When do you need interviews instead of a desktop file?',
     answer:
-      'When a lender or investment committee must believe that named buyers will pay a named price at a named site. Desktop work can frame the official series. Primary interviews and surveys prove the SKU. BioNixus prices that custom work from $10,000 to $60,000.',
+      'When a lender has to believe that named buyers will pay a named price at a named site. A desktop file can frame the official series. Interviews and surveys have to prove the project. BioNixus prices that custom work from $10,000 to $60,000.',
   },
   {
     question: 'How does BioNixus work with an existing feasibility consultant?',
     answer:
-      'BioNixus writes or rebuilds the market chapter — sample, bilingual fieldwork, source table — and your modeller keeps the SIDF or bank template. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'BioNixus writes or rebuilds the market chapter, including the sample, the fieldwork and the source table. Your modeller can keep the lender’s template. The scope, timing and deliverables are guaranteed in writing. The findings are not part of that promise.',
   },
   {
-    question: 'Where does BioNixus publish non-pharma feasibility and industry research?',
+    question: 'Where does BioNixus publish this kind of industry research?',
     answer:
-      'On /bionixus-industries/insights. Healthcare and pharmaceutical articles stay on the healthcare blog. Country industry pages such as Saudi real estate, energy and hospitality market research sit in the industries silo.',
+      'On the industry insights hub at /bionixus-industries/insights. Country pages for Saudi, UAE and Egyptian real estate sit in the industries section. Healthcare articles stay on the healthcare blog.',
   },
 ];
 

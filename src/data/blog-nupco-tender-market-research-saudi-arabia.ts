@@ -55,7 +55,7 @@ export const NUPCO_TENDER_FIGURES: ArticleFigure[] = [
     src: '/images/blog/nupco-tender-market-research-saudi-arabia-vials.webp',
     alt: 'Bar chart of selected vial quantities on NUPCO oncology framework NPT0047/25',
     caption:
-      'Selected published quantities on NUPCO NPT0047/25, the open oncology framework (item list dated 25 December 2025). Daratumumab SC 15 ml 21,915 vials; pembrolizumab 4 ml 22,610; trastuzumab deruxtecan 32,535; bevacizumab 16 ml 31,619; rituximab 50 ml 46,900; axicabtagene ciloleucel 64. A list quantity is not a treated-patient count.',
+      'The 25 December 2025 list for NPT0047/25 runs to 316 lines. One of them is daratumumab subcutaneous 15 ml, at 21,915 vials. A list quantity is not a count of patients treated.',
     width: 800,
     height: 720,
   },
@@ -63,7 +63,7 @@ export const NUPCO_TENDER_FIGURES: ArticleFigure[] = [
     src: '/images/blog/nupco-tender-market-research-saudi-arabia-incidence.webp',
     alt: 'Bar chart of the most common cancers among Saudi adults in the 2024 Saudi Cancer Registry',
     caption:
-      'Most common cancers among Saudi adults in 2024 (Saudi Cancer Registry / National Cancer Center). Breast 21.4%; colorectal 13.5%; thyroid 9.4%. Incidence is the epidemiology file. It does not say which of those patients will be treated from a NUPCO award.',
+      'The 2024 Saudi Cancer Registry says breast cancer was 21.4 percent of Saudi adult cases. A share of new cancers is not the volume of a tender award.',
     width: 800,
     height: 580,
   },
@@ -79,7 +79,7 @@ export const NUPCO_TENDER_FIGURES: ArticleFigure[] = [
     src: '/images/blog/nupco-tender-market-research-saudi-arabia-awards.webp',
     alt: 'Award ranks on NUPCO NPT0050-25 for abiraterone acetate 500 mg tablets',
     caption:
-      'NUPCO NPT0050-25 final Phase 2 result for abiraterone acetate 500 mg: first award Abroten (Al-Dawaa / Jodas); second Abiraterone SPC (Zimmo / Sudair); third Stamagen; fourth Zytiga (Cigalah / Patheon). A first award is not exclusive supply. Rank is a research question.',
+      'The NPT0050-25 Phase 2 result ranks suppliers for abiraterone 500 mg from first to fourth. A first award is not exclusive volume.',
     width: 800,
     height: 620,
   },
@@ -103,14 +103,14 @@ export const NUPCO_TENDER_META_DESCRIPTION =
   'NUPCO tender market research for Saudi oncology and specialty bids: what vial lists, award ranks and centre facts a 2026 bid team must commission first.';
 
 export const NUPCO_TENDER_DISPLAY_TITLE =
-  'NUPCO Tenders in Saudi Arabia: What Market Research an Oncology or Specialty Bid Needs (2026)';
+  'A tender list is not the number of patients treated';
 
-export const NUPCO_TENDER_DISPLAY_SUBTITLE = 'NUPCO tender market research for a 2026 bid';
+export const NUPCO_TENDER_DISPLAY_SUBTITLE = 'NUPCO tender market research before you price a bid';
 
 export const NUPCO_TENDER_BREADCRUMB_LABEL = 'NUPCO tender market research Saudi Arabia';
 
 export const NUPCO_TENDER_EXCERPT =
-  'A sourced 2026 briefing on NUPCO tender market research in Saudi Arabia: what published oncology framework lists, multi-award ranks and iNUPCO notices already show, and what a bid team still has to commission before it prices a specialty SKU.';
+  'A plain guide to NUPCO’s oncology framework, multi-supplier awards, and the iNUPCO notices a bid team should not confuse with patients treated.';
 
 export const NUPCO_TENDER_PUBLISHED_ISO = '2026-10-16T12:00:00.000Z';
 export const NUPCO_TENDER_UPDATED_ISO = '2026-10-16T12:00:00.000Z';
@@ -377,165 +377,70 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const NUPCO_TENDER_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What is NUPCO tender market research?', anchor: 'what-is-nupco-tender-market-research' },
-  { heading: 'What do published NUPCO oncology lists already show?', anchor: 'what-published-nupco-oncology-lists-show' },
-  { heading: 'How does an open framework change the bid question?', anchor: 'how-an-open-framework-changes-the-bid' },
-  { heading: 'What do multi-award lists tell a specialty team?', anchor: 'what-multi-award-lists-tell-a-specialty-team' },
-  { heading: 'What does iNUPCO add that a framework list does not?', anchor: 'what-inupco-adds' },
-  { heading: 'How should incidence and centre capacity sit beside a vial list?', anchor: 'incidence-and-centre-capacity' },
-  { heading: 'What should NUPCO tender market research measure before a bid?', anchor: 'what-should-nupco-tender-market-research-measure' },
-  { heading: 'How should you commission the study?', anchor: 'how-to-commission' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'Who NUPCO is', anchor: 'who-nupco-is' },
+  { heading: 'What the oncology framework lists', anchor: 'oncology-framework' },
+  { heading: 'A first award is not the only award', anchor: 'award-rank' },
+  { heading: 'The marketplace is a different door', anchor: 'marketplace' },
+  { heading: 'Cancer counts are not vial counts', anchor: 'cancer-counts' },
+  { heading: 'How to read one line on the list', anchor: 'how-to-read-a-line' },
+  { heading: 'Questions to put in the brief', anchor: 'questions' },
+  { heading: 'How to brief BioNixus', anchor: 'how-to-brief' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const NUPCO_TENDER_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> NUPCO tender market research is the commissioned work that tells an oncology or specialty bid team which listed vials a hospital will actually order, which award rank will be used, and which centre can infuse the product. A published NUPCO item list is the starting file. It is not the evidence pack for a 2026 bid.</p>`;
+export const NUPCO_TENDER_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> NUPCO tender market research asks which quantity was listed, which supplier won which rank, and which hospital will actually order. A framework list is a planning file. It is not a count of patients treated. Cancer-registry shares answer a different question. Do not mix them.</p>`;
 
-const NARRATIVE_HTML = `<p>NUPCO tender market research is a bid-evidence problem before it is a procurement-process problem. The National Unified Procurement Company publishes oncology frameworks, multi-award result files and iNUPCO marketplace notices. What a brand, market-access or local-affiliate team still cannot buy off the shelf is which of those listed vials a hospital will order, which award rank the pharmacy will dispense, and which centre can prepare a bispecific or a CAR-T. This briefing uses only published sources. It sits alongside our <a href="/healthcare-market-research">healthcare market research company</a> hub for Saudi Arabia, the UAE and the GCC, the <a href="/healthcare-market-research/saudi-arabia">healthcare market research company in Saudi Arabia</a> buyer page, and our <a href="/market-reports/saudi-arabia-oncology-market-report">Saudi Arabia oncology market report</a>. The older process note is the <a href="/blog/nupco-saudi-arabia-tendering-guide">NUPCO Saudi Arabia tendering guide</a>; this page is the research brief for an oncology or specialty bid.</p>
+const NARRATIVE_HTML = `<p>A bid team that needs NUPCO tender market research is trying to price an offer, not to quote a national cancer rate. This page sits on <a href="/healthcare-market-research">healthcare market research</a> and next to the <a href="/market-reports/saudi-arabia-oncology-market-report">Saudi Arabia oncology market report</a>. NUPCO is the National Unified Procurement Company. It buys medicines and supplies for government health bodies. A row on its list is a planning quantity. The patient who receives the drug is a separate fact.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: NUPCO tenders and Saudi oncology, October 2026</strong></p>
-<ul>
-<li><strong>2009:</strong> NUPCO was established with registered capital of SAR 1.5 billion and is fully owned by the Public Investment Fund (${cite('pif-nupco', 'PIF')}; ${cite('nupco-overview', 'NUPCO')}).</li>
-<li><strong>NPT0047/25</strong> is the open oncology framework: 316 line items; submission deadline 4 February 2026; bid opening 5 February 2026 (${cite('npt0047-page', 'NUPCO tender page')}; ${cite('npt0047-list', 'item list')}).</li>
-<li><strong>21,915 vials</strong> of daratumumab 120 mg/ml subcutaneous injection, 15 ml, sit on that list (NUPCO code 5120241600000), plus 3,120 of the 20 ml IV vial and 4,000 of the 5 ml IV vial (${cite('npt0047-list', 'NPT0047/25 list')}).</li>
-<li><strong>22,610</strong> pembrolizumab 25 mg/ml 4 ml vials, <strong>32,535</strong> trastuzumab deruxtecan 100 mg vials and <strong>64</strong> axicabtagene ciloleucel units are on the same schedule (${cite('npt0047-list', 'NPT0047/25 list')}).</li>
-<li><strong>Three calendar years</strong> is the published validity of awarded NPT0047/25 offers, with six-monthly update windows (${cite('npt0047-terms', 'NPT0047/25 terms §9.1')}).</li>
-<li><strong>Four awards</strong> sit on abiraterone acetate 500 mg in the NPT0050-25 Phase 2 result, with the originator Zytiga listed fourth (${cite('npt0050-phase2', 'NPT0050-25 Phase 2')}).</li>
-<li><strong>27,771</strong> new cancers were reported to the Saudi Cancer Registry in 2024; breast was 21.4% of Saudi adult cases (${cite('scr-2024', 'SCR 2024')}).</li>
-<li><strong>516 hospitals</strong> in 2024, 115 of them in Riyadh Region (${cite('gastat-health-2024', 'GASTAT 2024')}). Mid-2024 residents: <strong>35.3 million</strong> (${cite('gastat-pop-2024', 'GASTAT')}).</li>
-</ul>
-</div>
+<h2 id="who-nupco-is">Who NUPCO is</h2>
+<p>NUPCO’s own overview says it was founded in 2009 and is fully owned by the Public Investment Fund (${cite('nupco-overview', 'NUPCO')}). The Fund’s portfolio page gives the same founding year and a registered capital of SAR 1.5 billion (${cite('pif-nupco', 'Public Investment Fund')}). The Ministry of Health, announcing the website on 20 May 2009, cited Royal Decree M/71 and the same capital (${cite('moh-nupco-2009', 'Ministry of Health, 20 May 2009')}). Those three pages agree on the year and the capital. They do not agree, because they do not try, on how many vials a hospital will draw down next quarter.</p>
+<p>A 2024 pricing note from the Pharmaceutical Pricing and Reimbursement Information network puts the pieces in order. The Saudi Food and Drug Authority’s cost-insurance-freight price is the ceiling. NUPCO runs group purchasing. Each hospital’s pharmacy and therapeutics committee still decides what to stock. Private reimbursement sits with CCHI, the council that oversees cooperative health insurance (${cite('ppri-2024', 'PPRI 2024')}). The Council of Health Insurance, on 27 October 2025, said private insurance covered more than 14 million beneficiaries in the third quarter of 2025 (${cite('chi-14m', 'Council of Health Insurance')}). Its Dhaman list is an open formulary of SFDA-registered medicines (${cite('chi-formulary', 'CHI Dhaman formulary')}). A private claim is not a NUPCO award.</p>
 
-<h2 id="what-is-nupco-tender-market-research">What is NUPCO tender market research?</h2>
-
-<p>It is commissioned primary research on how a NUPCO-listed oncology or specialty product will be ordered, dispensed, infused and paid for in the Kingdom. For a 2026 bid the unit of observation is the hospital pharmacy, the day unit and the payer committee, not the line on the PDF. NUPCO tender market research answers who will pull the SKU, at which award rank, from which wallet, and at which centre. It does not replace the official notice.</p>
-
-<p>NUPCO itself is the centralized procurement, warehousing and distribution company for pharmaceuticals, medical equipment and supplies to public hospitals and medical centres. It was founded in 2009, is fully owned by the Public Investment Fund, and states a Vision 2030 role that includes spending efficiency and local content (${cite('nupco-overview', 'NUPCO overview')}; ${cite('pif-nupco', 'PIF')}). The Ministry of Health’s 2009 launch note cites Royal Decree no. M/71 dated 15/8/1428 H and the same SAR 1.5 billion capital (${cite('moh-nupco-2009', 'Ministry of Health, 20 May 2009')}). PPRI’s 2024 country note is the independent description a bid team can take into a governance meeting: the SFDA cost-insurance-freight price is the ceiling for tendering; NUPCO runs national group purchasing; each hospital Pharmacy and Therapeutics committee still sets inclusion against a budget; private reimbursement sits under the Council of Health Insurance (${cite('ppri-2024', 'PPRI 2024')}).</p>
-
-<p>Report publishers such as Grand View Research, IMARC Group and Fortune Business Insights sell Saudi or GCC oncology outlooks. Those pages often occupy the query a bid team types after it sees a NUPCO list. ${cite('grand-view', 'Grand View Research')}, ${cite('imarc', 'IMARC')} and ${cite('fortune', 'Fortune Business Insights')} are useful for a first cut of category language. They do not say how many of the 21,915 listed daratumumab SC vials will be issued, whether a second-rank award will be dispensed, or whether a CAR-T unit at 64 listed doses has an authorized chair. Those answers require a custom brief. Therapy-area context sits on our <a href="/market-reports/saudi-arabia-oncology-market-report">Saudi Arabia oncology market report</a> and the ranking of <a href="/insights/top-oncology-market-research-companies-2026">top oncology market research companies in 2026</a>.</p>
-
-<p>A usable NUPCO bid study in Saudi Arabia usually needs:</p>
-
-<ul>
-<li>Anonymous patient-record forms completed by treating oncologists and hematologists, with incident and prevalent cases quota-controlled separately.</li>
-<li>Hospital-pharmacy and procurement interviews that treat first, second and later awards as different behaviours (${cite('npt0050-phase2', 'NPT0050-25 Phase 2')}).</li>
-<li>Results split by public Ministry of Health, military or National Guard, KFSH&amp;RC and CHI-insured private (${cite('ppri-2024', 'PPRI 2024')}; ${cite('chi-formulary', 'CHI')}).</li>
-<li>Arabic and English instruments, and sites in Riyadh, Jeddah and Dammam/Khobar — not a Gulf average.</li>
-</ul>
-
-<p>Country context sits on <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>, <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a> and <a href="/heor-consulting-saudi-arabia">HEOR consulting in Saudi Arabia</a>. The process mechanics — bidder registration, document packs, portal login — remain on the <a href="/blog/nupco-saudi-arabia-tendering-guide">NUPCO tendering guide</a>.</p>
-
-<h2 id="what-published-nupco-oncology-lists-show">What do published NUPCO oncology lists already show?</h2>
-
-<p>Start with the file NUPCO has already posted. NPT0047/25 is titled as an open framework agreement for oncology medicines. The English tender page gives a submission deadline of Wednesday 4 February 2026 and a bid opening of Thursday 5 February 2026 (${cite('npt0047-page', 'NUPCO NPT0047/25 page')}). The item list posted on 25 December 2025 — and the copy still on the site in June 2026 — runs to 316 lines (${cite('npt0047-list', 'December 2025 list')}; ${cite('npt0047-list-2026', 'June 2026 copy')}).</p>
-
-<p>That list is already a demand signal. It is not a treated-share tracker. Daratumumab 120 mg/ml subcutaneous injection, 15 ml, is listed at 21,915 vials, plus 3,120 of the 20 ml IV vial and 4,000 of the 5 ml IV vial (${cite('npt0047-list', 'NPT0047/25 list')}). Pembrolizumab 25 mg/ml, 4 ml, is 22,610 vials. Bevacizumab 25 mg/ml is 31,619 of the 16 ml vial. Rituximab 10 mg/ml, 50 ml, is 46,900 vials (${cite('npt0047-list', 'NPT0047/25 list')}).</p>
-
-<p>Antibody-drug conjugates and cell therapy sit on the same PDF. Trastuzumab deruxtecan 100 mg is 32,535 vials. Sacituzumab govitecan 180 mg is 4,950. Axicabtagene ciloleucel is 64 units. The two teclistamab presentations add 970 vials (${cite('npt0047-list', 'NPT0047/25 list')}). Those rows are why a “national oncology tender” slide that averages vials is useless. Capecitabine 500 mg at 2,783,130 units and a CAR-T at 64 units are not the same research problem.</p>
-
-<p>Oral targeted therapy looks like national volume until someone asks about persistence. Abemaciclib 150 mg is 374,054 tablets; osimertinib mesylate 80 mg is 124,050; apalutamide 60 mg is 683,840 (${cite('npt0047-list', 'NPT0047/25 list')}). Those figures are planning quantities for a framework window. They are not prevalence and they are not a forecast of what a second-rank award will issue.</p>
-
+<h2 id="oncology-framework">What the oncology framework lists</h2>
+<p>NPT0047/25 is an open framework for oncology medicines. The English page set the deadline at 4 February 2026 and the opening at 5 February 2026 (${cite('npt0047-page', 'NUPCO NPT0047/25 page')}). Those dates are what the page printed. They are not a forecast of orders after the opening. The item list dated 25 December 2025 runs to 316 lines. One line is daratumumab, subcutaneous, 15 ml, at 21,915 vials (${cite('npt0047-list', '25 December 2025 list')}). A June 2026 copy of the list was still the same 316-line oncology schedule (${cite('npt0047-list-2026', 'June 2026 copy')}).</p>
 ${figureHtml(NUPCO_TENDER_FIGURES[0])}
+<p>The terms describe an open framework, updates every six months, and validity for three years from the final results. They also apply SFDA rules, local-content rules, and a Rasd requirement (${cite('npt0047-terms', 'NPT0047/25 terms')}). Read the tender file for what Rasd checks. Do not guess it from a market-size page. The National Cancer Center’s goals include local content for cancer drugs and devices (${cite('ncc-goals', 'National Cancer Center')}). A local-content rule is a bid condition. It is not a volume of patients.</p>
+<p>A different framework, NPT0045/25, covers immunology and rare-disease items. Its list includes odevixibat 200 micrograms at 4,800 and odevixibat 600 micrograms at 5,970 (${cite('npt0045-list', 'NPT0045/25 list')}). Those are tender quantities on a rare-disease framework. They are not oncology vials, and they are not people treated. Do not drop them into an NPT0047/25 total.</p>
 
-<p>Amivantamab 50 mg/ml, 7 ml, is already on the oncology framework at 554 vials (${cite('npt0047-list', 'NPT0047/25 list')}). That is the official, countable specialty example a 2026 brief can use. Newer bispecifics and marketplace-only SKUs have to be checked against the live NUPCO notice, not against a third-party tender aggregator. If the SKU is not on NPT0047/25, the next published place to look is an iNUPCO medicines notice or a sister framework such as NPT0045/25 for immunology and rare diseases (${cite('npt0045-list', 'NPT0045/25 list')}; ${cite('ndp0731-page', 'NDP0731/26')}).</p>
-
-<h2 id="how-an-open-framework-changes-the-bid">How does an open framework change the bid question?</h2>
-
-<p>NPT0047/25 is not a one-shot sealed tender that locks a single winner for a fixed quantity. The terms define an open framework: new suppliers may join after award; joining or a price update does not disturb purchase orders already placed; awarded prices stay in force until NUPCO publishes the update (${cite('npt0047-terms', 'NPT0047/25 terms §1.1.13')}). Section 7.6 says NUPCO will open updates every six months, including when SFDA or local-content certificates were incomplete at first close, and every year for items that drew no offer. Updated awarded prices must not exceed the prices already agreed (${cite('npt0047-terms', '§7.6')}).</p>
-
-<p>Section 9.1 is the line a forecast has to print in the footnote. Awarded offers remain valid for three calendar years from the date the final results of the open agreement are announced. Beneficiary entities may request or add quantities during that period. Supply of contracted quantities may continue for up to six months after the competition period ends (${cite('npt0047-terms', '§1.1.14.3 and §9.1')}). Bid validity is 120 days from opening, extendable by the same period. The first delivery after a purchase order is due within 120 days (${cite('npt0047-terms', '§3.3.1 and §7.5.1.3')}).</p>
-
-<p>Registration is a bid gate, not a later workstream. Each item needs an SFDA registration certificate or a current SFDA GMP, or — if unregistered — a GMP from the country of origin (${cite('npt0047-terms', '§1.5.1.7–1.5.1.8')}). Offers that have passed SFDA technical evaluation are treated as registered at opening. If none exists, the committee may consider a factory SFDA-registered in the country of origin and a product approved by a named stringent authority (${cite('npt0047-terms', '§5.2')}). A winner that offered an unregistered item must file the SFDA dossier within three months of the final-results announcement (${cite('npt0047-terms', '§8.1')}).</p>
-
-<p>Local content is in the same pack. The terms apply the national economic-participation policy and the local-content preference rules, including price-preference mechanics and a baseline local-content certificate for items on the mandatory list. NUPCO may exclude or downgrade an offer that omits that certificate (${cite('npt0047-terms', '§1.1.8–1.1.11')}). The National Cancer Center’s own strategic goals include following local content for cancer drugs and devices (${cite('ncc-goals', 'NCC strategic goals')}). A bid narrative that talks only about price, and ignores the local-content file, is incomplete on NUPCO’s own terms.</p>
-
-<p>Two further rules change how a brand team should brief research. First, “pharmaceutical market-entry agreements” do not apply to the items in this competition (${cite('npt0047-terms', '§1.1.12')}). Do not import a managed-entry story from another Gulf dossier and call it a NUPCO answer. Second, beneficiaries are NUPCO or government health entities (${cite('npt0047-terms', '§1.1.5')}). CHI-insured private volume is a different wallet (${cite('chi-formulary', 'CHI')}; ${cite('ppri-2024', 'PPRI 2024')}). Rasd traceability is a supply condition, not a commercial extra (${cite('npt0047-terms', '§8.28')}).</p>
-
-<h2 id="what-multi-award-lists-tell-a-specialty-team">What do multi-award lists tell a specialty team?</h2>
-
-<p>A published award file is the second document a bid team should read before it commissions fieldwork. NPT0050-25 is a national medicines competition — the January 2025 item list is headed WASFATY — and the Phase 2 final-result PDF still on NUPCO’s site in June 2026 prints first, second, third and fourth awards on the same NUPCO code (${cite('npt0050-items', 'NPT0050-25 items')}; ${cite('npt0050-phase2', 'Phase 2 result')}). That is the mechanism a specialty or oncology oral team has to research. It is not a biosimilar-market-size brief, and it is not a substitute for the <a href="/blog/nupco-saudi-arabia-tendering-guide">tendering-process guide</a>.</p>
-
-<p>Abiraterone acetate is the clean published example because it sits in both files. NPT0047/25 lists 484,511 of the 250 mg tablet and 146,700 of the 500 mg tablet (${cite('npt0047-list', 'NPT0047/25 list')}). The NPT0050-25 Phase 2 result then awards the 500 mg code four ways: first Abroten (Al-Dawaa / Jodas); second Abiraterone SPC (Zimmo / Sudair); third Stamagen; fourth Zytiga (Cigalah / Patheon) (${cite('npt0050-phase2', 'NPT0050-25 Phase 2')}). The 250 mg code is also a four-rank file (${cite('npt0050-phase2', 'NPT0050-25 Phase 2')}).</p>
-
+<h2 id="award-rank">A first award is not the only award</h2>
+<p>NPT0050-25 is a different competition. The Phase 2 final result ranks more than one supplier against the same code. For abiraterone 500 mg it records a first award through a fourth (${cite('npt0050-phase2', 'NPT0050-25 Phase 2 result')}). A first rank is not a statement that the other ranks supply nothing. Ask the hospital which rank it dispenses, and when it switches.</p>
 ${figureHtml(NUPCO_TENDER_FIGURES[3])}
+<p>The items list for that competition carries the header WASFATY (${cite('npt0050-items', 'NPT0050-25 items list')}). Wasfaty is the name printed on the file. Treat the list as tied to that prescribing channel, and ask which prescriptions actually move through it. Do not treat the header as a national consumption audit.</p>
 
-<p>Those ranks are the research question. A first award is not a statement that every hospital will dispense that trade name. A fourth award is not a statement that the originator is out of the market. The unpublished facts are the ones a P&amp;T committee will ask: when does a pharmacist move to rank 2, 3 or 4; is the trigger stock-out, patient-level exception, or a written substitution protocol; and does the same rank order hold in a National Guard hospital as in a Ministry of Health cluster. Commission those interviews. Do not average the four trade names into one “abiraterone share.”</p>
-
-<p>The same Phase 2 file shows the mechanism on other specialty codes — including four awards on an adalimumab pre-filled syringe (${cite('npt0050-phase2', 'NPT0050-25 Phase 2')}). That is useful only as proof that multi-award is not an oncology-oral quirk. It is not a reason to turn this brief into a biosimilar entry study. Keep molecule, rank and channel in separate cells.</p>
-
-<h2 id="what-inupco-adds">What does iNUPCO add that a framework list does not?</h2>
-
-<p>iNUPCO is NUPCO’s electronic marketplace. The live tenders list and the individual notices treat iNUPCO medicines competitions as a different ID series (NDP, not NPT). NDP0731/26 opened on Monday 10 August 2026, with submission and bid opening on Monday 17 August 2026 (${cite('ndp0731-page', 'NUPCO NDP0731/26')}). NDP0911/26 opened for document sale on Wednesday 7 October 2026, with submission and bid opening on Wednesday 14 October 2026 (${cite('ndp0911-page', 'NUPCO NDP0911/26')}; ${cite('nupco-tenders-list', 'tenders list')}).</p>
-
-<p>The August terms file is the published rule-set for that marketplace event. Offers are submitted in SRM/iNupco. The item must be SFDA-registered, with the registration certificate attached, or — if there is no SFDA file — hold a US FDA, EMA or CE certificate. The offer must be usable by all government health entities and placed on the electronic marketplace (${cite('ndp0731-terms', 'NDP0731/26 terms')}). Local-content preference rules still apply. Alternative offers may be submitted in the same system if they match the technical specification (${cite('ndp0731-terms', 'NDP0731/26 terms')}).</p>
-
-<p>That is a different buying event from NPT0047/25. A framework lot is a scheduled oncology basket with a three-year awarded-price window. An iNUPCO notice can add or refresh individual medicines for the marketplace between those cycles. Amivantamab is already a framework line at 554 vials (${cite('npt0047-list', 'NPT0047/25 list')}). A rare-disease capsule such as odevixibat is a NPT0045/25 line — 4,800 of the 200 mcg capsule and 5,970 of the 600 mcg capsule — not an oncology-framework line (${cite('npt0045-list', 'NPT0045/25 list')}). If a brand team is bidding a SKU that is not on NPT0047/25, the first research task is to name the notice it is actually on. Do not quote a third-party aggregator for a molecule until the official NUPCO PDF lists it.</p>
-
+<h2 id="marketplace">The marketplace is a different door</h2>
+<p>iNUPCO is the electronic marketplace, not the same document as an open framework. NDP0731/26, an iNUPCO medicines tender, opened on 10 August 2026 with submission on 17 August 2026 (${cite('ndp0731-page', 'NDP0731/26')}). Its terms cover offers on the SRM and iNUPCO systems, registration with the SFDA or acceptance by the US, European or CE routes, and use by government entities (${cite('ndp0731-terms', 'NDP0731/26 terms')}). CE here means a conformity mark used for some devices. A government-entity rule is not a private-hospital rule.</p>
+<p>NDP0911/26 is another iNUPCO medicines competition. The page set documents on 7 October 2026 and submission on 14 October 2026 (${cite('ndp0911-page', 'NDP0911/26')}). NUPCO’s live tenders list showed NDP0911/26 as an iNUPCO medicines competition (${cite('nupco-tenders-list', 'NUPCO tenders list')}). Quote the dates the page printed. Do not describe a closed submission window as still ahead.</p>
 ${figureHtml(NUPCO_TENDER_FIGURES[2])}
 
-<p>The operational implication is simple and usually missed. Hospital buyers can satisfy a ward from a framework award, from an iNUPCO marketplace add, or from a local purchase that never appears on either PDF. NUPCO tender market research has to ask which path the last ten issues of the SKU actually took. The <a href="/nupco-tender-calendar-events-2026">NUPCO tender calendar</a> is the planning page for when those windows cluster. This article is the evidence page for what to measure inside a window.</p>
-
-<h2 id="incidence-and-centre-capacity">How should incidence and centre capacity sit beside a vial list?</h2>
-
-<p>Ask every provider which epidemiology file it is using. The Saudi Cancer Registry is the official incidence series. It was established in 1992 and is published by the National Cancer Center at the Saudi Health Council (${cite('scr-about', 'SCR page')}; ${cite('scr-index', 'annual reports')}). In 2024 the registry recorded 27,771 newly diagnosed cases: 11,831 males and 15,940 females; 22,728 Saudi and 4,981 non-Saudi (${cite('scr-2024', 'SCR 2024')}). Among analysed Saudis, crude incidence was 94.1 per 100,000 in males and 134.4 per 100,000 in females; age-standardised rates were 141.2 and 181.8 (${cite('scr-2024', 'SCR 2024')}).</p>
-
-<p>Among Saudi adults in 2024, breast cancer was the most common site at 21.4% of cases (4,668), then colorectal cancer at 13.5% and thyroid cancer at 9.4% (${cite('scr-2024', 'SCR 2024')}). In Saudi males, colorectal cancer was first at 18.3% (1,623 cases). In Saudi females, breast was 35.7% (4,601 cases) (${cite('scr-2024', 'SCR 2024')}). Childhood cancer is a different list: leukaemia 32.0% (${cite('scr-2024', 'SCR 2024')}).</p>
-
+<h2 id="cancer-counts">Cancer counts are not vial counts</h2>
+<p>The Saudi Cancer Registry was established in 1992 (${cite('scr-about', 'Saudi Cancer Registry')}). The National Cancer Center hosts the annual reports (${cite('scr-index', 'annual reports')}). In 2024 the registry recorded 27,771 new cases, 22,728 of them in Saudi nationals. Breast cancer was 21.4 percent of Saudi adult cases (${cite('scr-2024', 'Saudi Cancer Registry, 2024')}). The 2023 report recorded 25,864 newly diagnosed cases (${cite('scr-2023', 'Saudi Cancer Registry, 2023')}). Those are two years. Do not average them, and do not turn 21.4 percent into a share of NPT0047/25 vials.</p>
 ${figureHtml(NUPCO_TENDER_FIGURES[1])}
+<p>Hospitals are a third file, and the two statistical years do not match because they are different years. In 2023 the General Authority for Statistics counted 499 hospitals, 109 in Riyadh and 95 in Makkah (${cite('gastat-health-2023', 'GASTAT, 2023')}). In 2024 it counted 516 hospitals, 115 in Riyadh and 99 in Makkah (${cite('gastat-health-2024', 'GASTAT, 2024')}). Mid-2024 residents were 35.3 million (${cite('gastat-pop-2024', 'GASTAT population')}). The national platform prints that estimate as 35,300,280 (${cite('mygov-stats', 'my.gov.sa')}). One population figure, two pages. It is not a tender volume. Vision 2030’s Health Sector Transformation Program includes the SEHA Virtual Hospital, which connects more than 150 hospitals (${cite('vision-hstp', 'Vision 2030 health programme')}). A connected hospital is not a hospital that will draw a listed vial.</p>
+<p>${cite('grand-view', 'Grand View Research')}, ${cite('imarc', 'IMARC')} and ${cite('fortune', 'Fortune Business Insights')} sell Saudi or Gulf oncology outlooks. Use them for category language. Do not take them to a bid meeting as the evidence of what a hospital will order.</p>
 
-<p>Those percentages are not a NUPCO volume. A breast-cancer incidence share of 21.4% does not tell a bid team how many of the 32,535 listed trastuzumab deruxtecan vials, or the 20,710 trastuzumab 420–440 mg vials, will be issued in Riyadh versus Jeddah (${cite('npt0047-list', 'NPT0047/25 list')}; ${cite('scr-2024', 'SCR 2024')}). The 2023 registry year was 25,864 new cases (${cite('scr-2023', 'SCR 2023')}). That year-on-year step is a registry series, not a consumption series. Do not multiply 27,771 by a global treated-share and call it tender demand.</p>
+<h2 id="how-to-read-a-line">How to read one line on the list</h2>
+<p>Take a single row and give it four labels before anyone turns it into a forecast. The first label is the tender number. Daratumumab at 21,915 vials belongs to NPT0047/25. Odevixibat belongs to NPT0045/25. Abiraterone’s ranked awards belong to NPT0050-25. Mixing those rows makes a chart that no buyer can use.</p>
+<p>The second label is the kind of number. A list quantity is what the framework published. An award rank is who was placed first, second, third or fourth. An order is what a named hospital later asks to receive. The terms let the framework be updated every six months and keep an award valid for three years from the final results. A quantity can therefore change inside that window. The December 2025 list and the June 2026 copy are two looks at the same 316-line schedule, not two markets.</p>
+<p>The third label is the rule that sits on the offer. The SFDA price ceiling, the local-content goal and the Rasd check are bid conditions. They do not measure demand. The fourth label is the wallet. A government hospital buying through NUPCO, a hospital committee choosing what to stock, and a CHI claim for one of the more than 14 million privately insured people are three decisions. SEHA’s link across more than 150 hospitals does not choose among them.</p>
+<p>If a model has only one of those labels, send it back. The missing labels are the study.</p>
 
-<p>Centre capacity is the third file. GASTAT counted 499 hospitals in 2023 — 109 in Riyadh Region and 95 in Makkah Region — and 23.8 beds per 10,000 population (${cite('gastat-health-2023', 'GASTAT 2023')}). The 2024 establishments bulletin raises the hospital count to 516, with 115 in Riyadh Region and 99 in Makkah Region, and 23.4 beds and 36.8 physicians per 10,000 (${cite('gastat-health-2024', 'GASTAT 2024')}). Mid-2024 residents were 35.3 million, listed on the national platform as 35,300,280 (${cite('gastat-pop-2024', 'GASTAT')}; ${cite('mygov-stats', 'my.gov.sa')}). Two regions still hold more than two in five hospitals. A sample that is 80% Riyadh KOLs is a Riyadh study.</p>
-
-<p>Vision 2030’s Health Sector Transformation Program is the policy wrapper: access, facility modernization, private-sector investment, prevention and e-health, including SEHA Virtual Hospital, launched in 2022 and connecting more than 150 hospitals (${cite('vision-hstp', 'Vision 2030 HSTP')}). It does not publish a NUPCO-ready list of infusion chairs or authorized CAR-T sites. The 64 axicabtagene ciloleucel units and the 970 teclistamab vials on NPT0047/25 are why a bid brief has to name centres, not regions (${cite('npt0047-list', 'NPT0047/25 list')}). Map those centres with <a href="/kol-mapping-saudi-arabia-oncology">oncology KOL mapping in Saudi Arabia</a> and the <a href="/healthcare-market-research/therapy/oncology">oncology therapy research</a> programmes, not with a national bed rate.</p>
-
-<p>Private insurance is the fourth file, and it is not NUPCO. CHI’s Dhaman formulary is an open list of SFDA-registered medicines; additions go through a hospital P&amp;T committee or the assigned medical director (${cite('chi-formulary', 'CHI')}). In Q3 2025 CHI counted more than 14 million private-insurance beneficiaries (${cite('chi-14m', 'CHI, 27 October 2025')}). PPRI’s 2024 note is the split a bid team should keep: government medicines sit against a hospital P&amp;T budget; private medicines depend on the insurer and the prescriber, under CHI (${cite('ppri-2024', 'PPRI 2024')}). A NUPCO win does not automatically fill a CHI claim.</p>
-
-<h2 id="what-should-nupco-tender-market-research-measure">What should NUPCO tender market research measure before a bid?</h2>
-
-<p>Design the study backwards from the decision — a framework offer, an iNUPCO marketplace add, a hospital formulary, or a CHI addition. NUPCO tender market research that starts from a syndicated oncology-market-size slide will be sent back.</p>
-
-${WORKSTREAM_TABLE_HTML}
-
+<h2 id="questions">Questions to put in the brief</h2>
+<p>Write the decision in one line. It might be a price for one line on NPT0047/25, a rank on NPT0050-25, or a choice between the framework and the marketplace.</p>
 ${figureHtml(NUPCO_TENDER_FIGURES[4])}
-
 <ul>
-<li><strong>Listed versus treated demand.</strong> State the NUPCO code and the list quantity. Then measure incident starts, continuing patients and pharmacy issues. Daratumumab SC at 21,915 vials and axicabtagene ciloleucel at 64 units cannot share one conversion factor (${cite('npt0047-list', 'NPT0047/25 list')}).</li>
-<li><strong>Award rank and substitution.</strong> Read the latest official result file. If the code is multi-award, interview pharmacy on when ranks 2–4 are used (${cite('npt0050-phase2', 'NPT0050-25 Phase 2')}).</li>
-<li><strong>Open-framework refresh.</strong> Time competitor surveillance to the six-month update and the three-year validity clock (${cite('npt0047-terms', 'NPT0047/25 terms')}).</li>
-<li><strong>iNUPCO versus framework.</strong> Name the notice. NDP0731/26 and NDP0911/26 are marketplace events; NPT0047/25 is the oncology framework (${cite('ndp0731-page', 'NDP0731/26')}; ${cite('npt0047-page', 'NPT0047/25')}).</li>
-<li><strong>Centre and infusion capacity.</strong> Split Riyadh, Jeddah and Eastern tertiary sites from the rest of the 516 hospitals (${cite('gastat-health-2024', 'GASTAT 2024')}).</li>
-<li><strong>Payer wallet.</strong> Interview MOH/NUPCO, military/National Guard, KFSH&amp;RC and CHI as four decisions (${cite('ppri-2024', 'PPRI 2024')}; ${cite('chi-formulary', 'CHI')}).</li>
-<li><strong>SFDA and local-content readiness.</strong> Confirm registration status and the local-content certificate before the next update window (${cite('npt0047-terms', 'NPT0047/25 terms')}).</li>
+<li><strong>Which list.</strong> Name the tender number. NPT0047/25, NPT0045/25, NPT0050-25, NDP0731/26 and NDP0911/26 are different files.</li>
+<li><strong>Which quantity.</strong> The 21,915 daratumumab vials and the 316-line length are planning figures. Ask what the named hospital orders.</li>
+<li><strong>Which rank.</strong> For abiraterone 500 mg, ask which of the four ranks is dispensed. Do not assume the first award is the only supply.</li>
+<li><strong>Which door.</strong> A framework and an iNUPCO notice can both exist. Ask which one the hospital uses for this product.</li>
+<li><strong>Which wallet.</strong> NUPCO, a hospital committee and CHI are separate decisions in the 2024 pricing note.</li>
+<li><strong>Which epidemiology you will not use as volume.</strong> Breast cancer at 21.4 percent of Saudi adult cases is not a vial forecast. The 2023 and 2024 case totals stay in their own years.</li>
 </ul>
+<p>Report results as a share of patients treated at named hospitals, or as orders placed, and say which. Ask for Arabic and English instruments. Ask which tender PDF and which date the agency will quote.</p>
 
-<p>Report brand trackers as share of treated patients, not as a share of listed vials and not as a diagnostics-market total. For neighbouring systems do not import a Gulf average. Compare <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a>, <a href="/healthcare-market-research/egypt">Egypt</a> and <a href="/healthcare-market-research/kuwait">Kuwait</a>. A NUPCO or CHI answer is not a UAE Thiqa answer. Budget-impact design that prices only the award, and ignores admissions and chair time the payer already funds, sits on <a href="/budget-impact-model-saudi-arabia">budget-impact modelling in Saudi Arabia</a>.</p>
-
-<h2 id="how-to-commission">How should you commission the study?</h2>
-
-<ul>
-<li>How many medical oncologists, hematologists, hospital pharmacists and procurement leads will you recruit, and from which regions — Riyadh, Jeddah/Makkah and the Eastern Province at minimum?</li>
-<li>Will results be reported by nationality, by public versus military/National Guard versus private, and by new versus current cases?</li>
-<li>Which NUPCO notice is in scope — NPT0047/25, NPT0045/25, NPT0050-25, an iNUPCO NDP, or a named hospital formulary — and why?</li>
-<li>Will the discussion guide treat list quantity, award rank and issued packs as three numbers, not one “tender volume”?</li>
-<li>Are questionnaires available in Arabic and English?</li>
-<li>Who owns the data, and can it be re-cut after a six-month framework update?</li>
-</ul>
-
-<p>Desk-research oncology reports remain useful for a first cut of category language. Grand View Research, IMARC Group and Fortune Business Insights publish Saudi or GCC oncology pages that often appear for this query. Use them to triangulate how other people talk about the market. Do not take them to a NUPCO clarification meeting as the evidence pack for a specialty SKU.</p>
-
-<p>A physician-survey design is covered on <a href="/physician-survey-saudi-arabia">physician surveys in Saudi Arabia</a>. Agency selection questions — field office, PDPL, SFDA, NUPCO and CHI panels — sit on <a href="/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia">how to choose a healthcare market research agency in Saudi Arabia</a>. For the access dossier, see <a href="/sfda-market-access-strategy-saudi-arabia">SFDA market access strategy</a>, the <a href="/gcc-market-access-guide">GCC market access guide</a> and <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">top healthcare market research companies in Saudi Arabia</a>.</p>
-
-<h2 id="why-bionixus">Why choose BioNixus for NUPCO tender market research?</h2>
-
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
-
-<p>Choose BioNixus when the decision depends on why Saudi oncologists, hospital pharmacists and payers will pull a listed SKU, rather than on a syndicated oncology-market total. Each study is built around one decision and reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. BioNixus has 40 client reviews. Guarantees in writing are: replace non-qualifying respondents free, a minimum sample, re-field at our cost if agreed quotas are missed, and a pilot fee credited to the main field.</p>
-
-<p>See also <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>, <a href="/pharmaceutical-companies-saudi-arabia">pharmaceutical companies in Saudi Arabia</a>, the <a href="/market-reports/saudi-arabia-oncology-market-report">Saudi Arabia oncology market report</a> and the <a href="/insights/top-oncology-market-research-companies-2026">2026 oncology ranking</a>.</p>
-
-<p>To brief NUPCO tender market research for an oncology or specialty bid, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<h2 id="how-to-brief">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. Custom studies are usually priced at $10k–$60k. The firm has 40 client reviews on its public profiles. The line “Guaranteed in writing” covers the agreed scope and timeline. It does not cover what the interviews will find.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
+<p>To brief a tender study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. Say which tender number and which decision the study has to answer.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -549,37 +454,37 @@ export const NUPCO_TENDER_FAQ: { question: string; answer: string }[] = [
   {
     question: 'What is NUPCO tender market research?',
     answer:
-      'NUPCO tender market research is commissioned primary research on how a NUPCO-listed oncology or specialty product will be ordered, dispensed, infused and paid for in Saudi Arabia. It covers listed versus treated demand, award rank, framework refresh, iNUPCO versus framework, centre capacity, payer wallet, and SFDA plus local-content readiness.',
+      'It is commissioned research on what a NUPCO list counts, which supplier rank a hospital uses, and what is actually ordered. The list is not a count of patients treated.',
   },
   {
-    question: 'What is NPT0047/25 and what does it list for oncology?',
+    question: 'What is NPT0047/25?',
     answer:
-      'NPT0047/25 is NUPCO’s open oncology framework. The official page set the deadline at 4 February 2026 and bid opening at 5 February 2026. The 316-line list includes 21,915 daratumumab SC 15 ml vials, 22,610 pembrolizumab 4 ml vials and 64 axicabtagene ciloleucel units. Those figures are planning quantities, not treated-patient counts.',
+      'It is NUPCO’s open framework for oncology medicines. The page set the deadline at 4 February 2026 and the opening at 5 February 2026. The 25 December 2025 list has 316 lines, including 21,915 vials of daratumumab subcutaneous 15 ml.',
   },
   {
-    question: 'How long does a NUPCO oncology framework award last?',
+    question: 'How long does an award on that framework last?',
     answer:
-      'The NPT0047/25 terms say awarded offers remain valid for three calendar years from the final-results announcement, with supply able to continue for up to six months after the competition ends. NUPCO can open updates every six months, including for new joiners. Bid validity at opening is 120 days.',
+      'The terms say an award stays valid for three years from the final results, with updates every six months. They also apply SFDA rules, local-content rules and a Rasd check. Read the tender file for what Rasd requires.',
   },
   {
-    question: 'Do NUPCO awards give one supplier exclusive volume?',
+    question: 'Does a NUPCO award give one supplier all the volume?',
     answer:
-      'Not on the published multi-award files. The NPT0050-25 Phase 2 result lists first through fourth awards on the same NUPCO code. Abiraterone acetate 500 mg is awarded to Abroten, Abiraterone SPC, Stamagen and Zytiga in that order. A first award is not a statement that every hospital will dispense that trade name. Rank behaviour has to be researched at pharmacy level.',
+      'Not on the evidence of NPT0050-25. The Phase 2 result ranks abiraterone 500 mg from a first award to a fourth. Ask which rank the hospital dispenses.',
   },
   {
-    question: 'What is iNUPCO and how is it different from an NPT framework?',
+    question: 'What is iNUPCO?',
     answer:
-      'iNUPCO is NUPCO’s electronic marketplace. 2026 medicines notices in the NDP series — including NDP0731/26 in August and NDP0911/26 in October — let government health entities buy individual items through SRM/iNupco. NPT0047/25 is a scheduled oncology framework with a three-year awarded-price window. A SKU can sit on one, the other, or both. Name the notice before you brief the study.',
+      'It is NUPCO’s electronic marketplace, separate from an open framework such as NPT0047/25. NDP0731/26 and NDP0911/26 are marketplace competitions with their own dates. A marketplace notice is not the oncology framework list.',
   },
   {
-    question: 'How common is cancer in Saudi Arabia, and does that equal tender volume?',
+    question: 'Does the cancer registry equal tender volume?',
     answer:
-      'The Saudi Cancer Registry recorded 27,771 new cases in 2024, of which 22,728 were Saudi. Breast cancer was 21.4% of Saudi adult cases, colorectal 13.5% and thyroid 9.4%. Incidence is the epidemiology file. It does not say how many listed vials will be issued or which hospital can infuse a bispecific or a CAR-T. Do not convert registry cases into NUPCO demand without a treated-patient study.',
+      'No. The 2024 registry recorded 27,771 new cases, and breast cancer was 21.4 percent of Saudi adult cases. The 2023 report recorded 25,864 cases. Neither figure is a NUPCO order.',
   },
   {
-    question: 'Why commission BioNixus for NUPCO tender market research in Saudi Arabia?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'BioNixus runs custom primary research from an Al Khobar field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision and reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'Custom studies are usually $10k–$60k. Guaranteed in writing covers the agreed scope and timeline. It does not cover what the interviews will find. The firm has 40 client reviews on its public profiles.',
   },
 ];
 
@@ -707,7 +612,7 @@ export const NUPCO_TENDER_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning NUPCO tender market research for a Saudi oncology or specialty bid?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes oncologist, hospital-pharmacy and payer research around it, from an Al Khobar field office and a network of about 3,200 physicians.',
+      'Tell us the bid decision you need to make. BioNixus scopes the study around that decision. Custom work is usually $10k–$60k.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

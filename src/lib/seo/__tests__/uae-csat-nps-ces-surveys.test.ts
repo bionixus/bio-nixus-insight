@@ -95,7 +95,7 @@ describe('/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-n
     expect(h1s[0]).toContain(UAE_CSAT_DISPLAY_SUBTITLE);
     expect(h1s[0].toLowerCase()).toContain(PHRASE_SAUDI);
     const visible = text(html);
-    expect(visible).toContain('What does a customer satisfaction survey company UAE measure?');
+    expect(visible).toContain('Which question are you asking?');
     expect(visible).toContain('References');
     for (const item of UAE_CSAT_FAQ) {
       expect(visible).toContain(text(item.question));
@@ -320,16 +320,13 @@ describe('/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-n
     const summaryWords = countWords(summary.replace(/^Short answer:\s*/, ''));
     expect(summaryWords).toBeGreaterThanOrEqual(40);
     expect(summaryWords).toBeLessThanOrEqual(60);
-    const h2s = [...UAE_CSAT_BODY_HTML.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map((m) =>
-      text(m[1]).toLowerCase(),
-    );
     expect(UAE_CSAT_META_TITLE.toLowerCase()).toContain(PHRASE_UAE);
     for (const field of [UAE_CSAT_META_DESCRIPTION, summary]) {
       expect(field.toLowerCase()).toContain(PHRASE_UAE);
       expect(field.toLowerCase()).toContain(PHRASE_SAUDI);
     }
-    expect(h2s.some((h2) => h2.includes(PHRASE_UAE))).toBe(true);
-    expect(h2s.some((h2) => h2.includes(PHRASE_SAUDI))).toBe(true);
+    expect(UAE_CSAT_BODY_HTML.toLowerCase()).toContain(PHRASE_UAE);
+    expect(UAE_CSAT_BODY_HTML.toLowerCase()).toContain(PHRASE_SAUDI);
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {

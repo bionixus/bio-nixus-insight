@@ -50,25 +50,25 @@ type ArticleFigure = {
 export const ORAL_GLP1_UAE_FIGURES: ArticleFigure[] = [
   {
     src: '/images/blog/oral-glp-1-uae-market-research-timeline.webp',
-    alt: 'Timeline of oral GLP-1 events in 2026: FDA Foundayo 1 April, EDE Foundayo 3 April, May availability, Wegovy pill 3 June',
+    alt: 'Timeline of 2026 oral GLP-1 dates: US approval on 1 April, UAE approval reported on 3 April, and a Wegovy pill launch reported on 3 June',
     caption:
-      'Four dated events in 2026: US approval on 1 April, EDE registration on 3 April, expected UAE availability from May, and the Wegovy pill launch on 3 June. Registration is not initiation or persistence.',
+      'The US regulator approved Foundayo on 1 April 2026. Emirates News Agency reported UAE approval on 3 April 2026. Novo Nordisk reported a Wegovy pill launch in the UAE on 3 June 2026. Approval is not a count of prescriptions.',
     width: 800,
     height: 620,
   },
   {
     src: '/images/blog/oral-glp-1-uae-market-research-efficacy.webp',
-    alt: 'Bar chart of published oral GLP-1 weight-loss estimands: Foundayo ATTAIN-1 11.2 and 12.4 percent versus OASIS 4 13.6 and 16.6 percent',
+    alt: 'Chart reminding readers that Foundayo and oral semaglutide trials are separate studies',
     caption:
-      'Published oral GLP-1 weight-loss figures are not a head-to-head. ATTAIN-1 (no diabetes, 72 weeks): 11.2% treatment-regimen and 12.4% efficacy estimand at the highest dose. OASIS 4 (oral semaglutide 25 mg, 64 weeks): 13.6% treatment-policy and 16.6% trial-product. Different trials, different estimands.',
+      'These are separate studies, not a head-to-head. Novo Nordisk said on 17 September 2025 that oral semaglutide 25 mg delivered 16.6% weight loss in a published obesity study. Do not paste that figure onto orforglipron.',
     width: 800,
     height: 640,
   },
   {
     src: '/images/blog/oral-glp-1-uae-market-research-prevalence.webp',
-    alt: 'Bar chart of UAE adult obesity estimates: MOHAP 22.4 percent, NHS 27.8 percent, Novo 28 percent, WHO GHO 31.6 percent',
+    alt: 'Bar chart of separate UAE adult obesity figures from MoHAP surveys and a WHO age-standardised estimate',
     caption:
-      'Adult obesity in the UAE. MoHAP’s 2024–25 survey measured 22.4%. The 2017–18 NHS measured 27.8%. Novo’s June 2026 launch note used 28%. WHO’s 2024 age-standardised model is 31.6%. The methods differ, so the figures are not a time series.',
+      'MoHAP’s 2024–25 survey measured adult obesity at 22.4%. The 2017–18 survey measured 27.8% of 4,971 adults. A WHO age-standardised estimate for 2024 is 31.6%. The methods differ. Do not average them.',
     width: 800,
     height: 620,
   },
@@ -100,15 +100,15 @@ export const ORAL_GLP1_UAE_META_DESCRIPTION =
   'Oral GLP-1 UAE market research after EDE approved Foundayo on 3 Apr 2026: what brand teams must measure on orforglipron prescriber and patient uptake.';
 
 export const ORAL_GLP1_UAE_DISPLAY_TITLE =
-  'Oral GLP-1s in the UAE: Researching Prescriber and Patient Uptake of Orforglipron';
+  'A daily weight-loss pill is not yet a prescription count';
 
 export const ORAL_GLP1_UAE_DISPLAY_SUBTITLE =
-  'Oral GLP-1 UAE market research after EDE approved Foundayo';
+  'Oral GLP-1 UAE market research after the 2026 approvals';
 
 export const ORAL_GLP1_UAE_BREADCRUMB_LABEL = 'Oral GLP-1 UAE orforglipron research';
 
 export const ORAL_GLP1_UAE_EXCERPT =
-  'A sourced 2026 briefing on oral GLP-1 UAE market research after EDE approved Foundayo (orforglipron) on 3 April 2026: what brand teams still need to measure on prescriber and patient uptake before they treat registration as demand.';
+  'A plain guide to the 2026 oral weight-loss pill approvals in the UAE, which obesity figures not to mix, and what a prescriber study still has to ask.';
 
 export const ORAL_GLP1_UAE_PUBLISHED_ISO = '2026-10-16T12:00:00.000Z';
 export const ORAL_GLP1_UAE_UPDATED_ISO = '2026-10-16T12:00:00.000Z';
@@ -424,139 +424,67 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const ORAL_GLP1_UAE_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What is oral GLP-1 UAE market research?', anchor: 'what-is-oral-glp-1-uae-market-research' },
-  { heading: 'What did EDE approve for orforglipron UAE on 3 April 2026?', anchor: 'what-did-ede-approve-for-orforglipron-uae' },
-  { heading: 'How does Foundayo compare with injectables and the Wegovy pill?', anchor: 'how-does-foundayo-compare' },
-  { heading: 'How common is obesity and diabetes in the UAE?', anchor: 'how-common-is-obesity-in-the-uae' },
-  { heading: 'What has six months of oral uptake actually shown?', anchor: 'what-has-six-months-of-oral-uptake-shown' },
-  { heading: 'What should oral GLP-1 UAE market research measure?', anchor: 'what-should-oral-glp-1-uae-market-research-measure' },
-  { heading: 'How should you commission the study?', anchor: 'how-to-commission' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What was approved, and by whom', anchor: 'what-was-approved' },
+  { heading: 'Two pills, two studies', anchor: 'two-pills' },
+  { heading: 'Obesity figures that do not match', anchor: 'obesity-figures' },
+  { heading: 'Registration is not a paid prescription', anchor: 'not-a-prescription' },
+  { heading: 'Questions to put in the brief', anchor: 'questions' },
+  { heading: 'How to brief BioNixus', anchor: 'how-to-brief' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const ORAL_GLP1_UAE_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Oral GLP-1 UAE market research now turns on uptake, not registration. The Emirates Drug Establishment approved Foundayo (orforglipron) on 3 April 2026, making the UAE the second country to list it. Brand teams still need who initiates, who switches from injectables, and who stays on therapy, not a GCC market-size report.</p>`;
+export const ORAL_GLP1_UAE_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Oral GLP-1 UAE market research asks who will prescribe a daily weight-loss tablet, who will keep taking it, and who will pay. An approval is not a prescription count. The obesity surveys on this page use different methods. Do not average them into one national demand figure.</p>`;
 
-const NARRATIVE_HTML = `<p>Oral GLP-1 UAE market research is an uptake problem before it is a sizing problem. This briefing sits alongside our <a href="/healthcare-market-research">healthcare market research hub</a> and our page on <a href="/uae-obesity-market">UAE obesity market insights</a>. On 3 April 2026 the Emirates Drug Establishment approved Foundayo (orforglipron), a once-daily oral GLP-1 receptor agonist for chronic weight management, and WAM reported that the UAE was the second country in the world to register it (${cite('wam-ede-foundayo', 'WAM, 3 April 2026')}). Two days earlier the US FDA had approved the same molecule (${cite('fda-cnpv', 'FDA, 1 April 2026')}). What a brand, medical or access team still cannot buy off the shelf is who will start a tablet rather than a pen, who will switch, which oral brand they will stay on, and which wallet will pay. This briefing uses only published sources.</p>
+const NARRATIVE_HTML = `<p>Oral GLP-1 UAE market research starts when a regulator says a tablet may be sold. It does not start from a national obesity percentage. GLP-1 drugs copy a gut hormone. Some are weekly injections. The new question is the tablet. This page sits beside the <a href="/uae-obesity-market">UAE obesity market</a> and the <a href="/healthcare-market-research">healthcare market research</a> hub. Abu Dhabi’s payer rules are a separate file on <a href="/blog/thiqa-obesity-reimbursement-abu-dhabi">Thiqa obesity reimbursement</a>. Qatar is a different country, covered on <a href="/blog/qatar-obesity-glp1-market-research">GLP-1 research in Qatar</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: orforglipron UAE and oral GLP-1s, October 2026</strong></p>
-<ul>
-<li><strong>1 April 2026:</strong> FDA approved Foundayo (orforglipron) as a once-daily tablet for adults with obesity, or overweight with at least one weight-related comorbidity, 50 days after filing (${cite('fda-cnpv', 'FDA')}; ${cite('lilly-fda', 'Lilly')}).</li>
-<li><strong>3 April 2026:</strong> EDE approved Foundayo, making the UAE the second country to register it (${cite('wam-ede-foundayo', 'WAM')}; ${cite('gulf-news-ede', 'Gulf News')}).</li>
-<li><strong>May 2026:</strong> WAM said the product was expected to become available to eligible patients from May (${cite('wam-ede-foundayo', 'WAM')}).</li>
-<li><strong>12.4%</strong> on-treatment mean weight loss at the highest ATTAIN-1 dose versus <strong>11.1–11.2%</strong> on the treatment-regimen estimand (${cite('wam-ede-foundayo', 'WAM')}; ${cite('lilly-fda', 'Lilly')}; ${cite('nejm-attain1', 'NEJM ATTAIN-1')}).</li>
-<li><strong>3 June 2026:</strong> Novo launched the Wegovy pill in the UAE, first country outside the United States (${cite('novo-zawya', 'Novo / ZAWYA')}; ${cite('cnbc-wegovy-uae', 'CNBC')}).</li>
-<li><strong>22.4%</strong> adult obesity in MoHAP’s 2024–2025 survey (${cite('mohap-nhs-2025', 'MoHAP')}), not the 2017–18 NHS figure of <strong>27.8%</strong> (${cite('uae-nhs-2018', 'UAE NHS 2017–18')}).</li>
-<li><strong>20.7%</strong> IDF diabetes prevalence in adults 20–79 in 2024, 1.27 million adults, 64% undiagnosed (${cite('idf-uae', 'IDF Atlas')}).</li>
-<li><strong>11,294,243</strong> UAE residents in 2024 (${cite('gulf-news-pop', 'FCSC via Gulf News')}; ${cite('fcsc-unified', 'FCSC')}).</li>
-</ul>
-</div>
-
-<h2 id="what-is-oral-glp-1-uae-market-research">What is oral GLP-1 UAE market research?</h2>
-
-<p>It is commissioned primary research on how once-daily incretin tablets are prescribed, paid for, taken and continued in the United Arab Emirates after EDE registration. For a 2026 Foundayo or oral-semaglutide brief, the unit of observation is the initiating physician, the first-fill patient and the wallet — not a vial, not a GCC obesity-market total, and not a US LillyDirect list price.</p>
-
-<p>Report publishers such as Grand View Research, 6Wresearch and Ken Research sell UAE or GCC obesity and weight-management outlooks. Those pages often occupy the query “oral GLP-1 UAE market research”. ${cite('grand-view', 'Grand View Research')}’s public category pages do not say how many endocrinologists will start a tablet in a cash clinic in Dubai, how many Thiqa adults will still be reimbursed at month four, or how Foundayo and the Wegovy pill split new starts. Those answers require a custom brief. The global vendor comparison for that brief is our ranking of <a href="/insights/best-obesity-weight-management-market-research-firms-2026">best obesity and weight-management market research firms in 2026</a>.</p>
-
-<p>A usable oral GLP-1 study in the UAE needs anonymous physician record forms with oral versus injectable as two columns; splits by emirate, wallet and nationality; a guide that treats Foundayo, the Wegovy pill and weekly injectables as three layers; and Arabic and English instruments in Dubai, Abu Dhabi and at least one Northern Emirates city. Country execution lives on <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a> and <a href="/uae-market-access-research">UAE market access research</a>. Neighbouring-system briefs that answer different questions — and that this article does not repeat — are <a href="/blog/thiqa-obesity-reimbursement-abu-dhabi">Thiqa obesity reimbursement in Abu Dhabi</a> and <a href="/blog/qatar-obesity-glp1-market-research">Qatar obesity GLP-1 market research</a>.</p>
-
-<h2 id="what-did-ede-approve-for-orforglipron-uae">What did EDE approve for orforglipron UAE on 3 April 2026?</h2>
-
-<p>Start with who regulates the product. The Emirates Drug Establishment is the UAE’s federal medicines authority, established in late September 2023 and described on its own site as the only federal body responsible for medical and pharmaceutical products (${cite('ede-home', 'EDE')}; ${cite('uae-health-authorities', 'u.ae')}). MoHAP later transferred 44 core pharmaceutical-sector services to EDE so that registration sits in one federal house (${cite('mohap-ede-transfer', 'MoHAP')}). An EDE approval is a federal marketing authorisation. It is not a Thiqa listing, a DHA formulary tick, or a pharmacy-stocking date.</p>
-
-<p>WAM’s 3 April 2026 dispatch is the primary public record for orforglipron UAE. It says EDE approved Foundayo (orforglipron) for chronic weight management, making the UAE the second country in the world to register the Eli Lilly tablet, a once-daily oral GLP-1 “without food or water intake restrictions.” Dr Fatima Al Kaabi, EDE Director-General, tied the timing to the UAE’s willingness to adopt new obesity medicines. Roberta Marinelli, Eli Lilly META Hub, said the tablet gave eligible patients another option. WAM added that the highest-dose trial arm recorded 12.4% mean weight loss, and that the treatment was expected to become available to eligible patients from May 2026 (${cite('wam-ede-foundayo', 'WAM')}). Gulf News and ZAWYA carried the same facts the same day (${cite('gulf-news-ede', 'Gulf News')}; ${cite('zawya-wam-ede', 'ZAWYA / WAM')}). <em>The National</em> the next day named the 1 April FDA decision as the first-country event and restated May availability (${cite('national-apr', 'The National, 4 April 2026')}).</p>
-
-<p>The US label is a clinical reference, not a UAE price list. FDA approved Foundayo on 1 April 2026 for use with diet and activity in adults with obesity or with overweight plus a comorbidity. The starting dosage is 0.8 mg, then 2.5 mg after at least 30 days, then 5.5 mg, with further steps to 9 mg, 14.5 mg or 17.2 mg (${cite('fda-cnpv', 'FDA')}; ${cite('lilly-fda', 'Lilly')}; ${cite('fda-label', 'US PI')}). Lilly wrote that Foundayo should not be used with other GLP-1 receptor agonists and that safety in children is not established (${cite('lilly-fda', 'Lilly')}). Whether the UAE pack copies those steps is a labelling question, not a fact this briefing invents.</p>
-
+<h2 id="what-was-approved">What was approved, and by whom</h2>
+<p>The Emirates Drug Establishment, EDE, is the federal medicines authority. Its own site says it was established on 29 September 2023 (${cite('ede-home', 'Emirates Drug Establishment')}). The UAE government portal lists the health regulators and the split between the ministry, the emirate health authorities, and the drug establishment (${cite('uae-health-authorities', 'UAE government portal')}). The Ministry of Health and Prevention has transferred 44 core pharmaceutical services to EDE (${cite('mohap-ede-transfer', 'Ministry of Health and Prevention')}). Pricing and registration questions now start at EDE. A ministry page from an earlier year is not the current filing desk.</p>
+<p>Orforglipron UAE approval was reported on 3 April 2026. Orforglipron is the generic name. Foundayo is Eli Lilly’s brand. The Emirates News Agency said EDE had approved a new oral obesity treatment and described the UAE as the second country to do so (${cite('wam-ede-foundayo', 'Emirates News Agency, 3 April 2026')}). ZAWYA carried that agency copy and described a shift away from injections (${cite('zawya-wam-ede', 'ZAWYA, 3 April 2026')}). Gulf News reported a daily weight-loss pill with no injections (${cite('gulf-news-ede', 'Gulf News, 3 April 2026')}). On 4 April 2026, The National wrote that the UAE-approved daily pill was to be made available the next month (${cite('national-apr', 'The National, 4 April 2026')}). That is what the paper said in April. This page does not turn that sentence into a later sales figure.</p>
 ${figureHtml(ORAL_GLP1_UAE_FIGURES[0])}
+<p>The US Food and Drug Administration approved the same new molecule on 1 April 2026, and called it the first new molecular entity cleared under its National Priority Voucher program (${cite('fda-cnpv', 'US FDA, 1 April 2026')}). A new molecular entity is a drug whose active ingredient has not been approved before. Lilly’s own announcement the same day called Foundayo the only GLP-1 pill for weight loss that can be taken at any time of day, without food or water restrictions (${cite('lilly-fda', 'Eli Lilly, 1 April 2026')}). The US prescribing information is titled FOUNDAYO (orforglipron) tablets, with initial US approval in 2026 and application number NDA 220934 (${cite('fda-label', 'US prescribing information')}). A US label is not a UAE price, and it is not a UAE prescription count.</p>
+<p>On 5 August 2026 The National published a further article on new UAE-approved weight-loss pills (${cite('national-aug', 'The National, 5 August 2026')}). Use it as a later news report. Do not read the headline as a measured share of patients.</p>
 
-<p>Al Kaabi told WAM that obesity is an EDE priority because it is associated with more than 200 diseases and at least 13 cancers (${cite('wam-ede-foundayo', 'WAM')}). That is a regulator’s rationale for speed, not an eligible-patient funnel.</p>
-
-${SEQUENCE_TABLE_HTML}
-
-<p>Lilly said it had submitted orforglipron in more than 40 countries (${cite('lilly-fda', 'Lilly')}). Qatar’s later oral GLP-1 approval sits on our <a href="/blog/qatar-obesity-glp1-market-research">Qatar obesity GLP-1 market research</a> briefing; do not import Hamad entitlement into a UAE forecast.</p>
-
-<h2 id="how-does-foundayo-compare">How does Foundayo compare with injectables and the Wegovy pill?</h2>
-
-<p>Foundayo is a small-molecule, non-peptide oral GLP-1 receptor agonist that Lilly says can be taken any time of day without food or water restrictions (${cite('lilly-fda', 'Lilly')}; ${cite('wam-ede-foundayo', 'WAM')}). Oral semaglutide, <em>The National</em> reported, must be taken in the morning on an empty stomach, with a 30-minute wait before food or drink (${cite('national-aug', 'The National, 5 August 2026')}).</p>
-
-<p>ATTAIN-1 randomised 3,127 adults with obesity, or overweight plus a comorbidity, who did not have diabetes. The primary end point was percent body-weight change at 72 weeks (${cite('lilly-fda', 'Lilly')}; ${cite('nejm-attain1', 'NEJM')}). On the treatment-regimen estimand — everyone as randomised — mean weight change was −7.5% at 6 mg, −8.4% at 12 mg and −11.2% at 36 mg, against −2.1% with placebo. At 36 mg, 54.6% lost 10% or more, 36.0% lost 15% or more and 18.4% lost 20% or more (${cite('nejm-attain1', 'NEJM ATTAIN-1')}). Lilly’s US launch note quotes a different estimand: people who stayed on the highest dose lost 12.4% against 0.9% with placebo; across randomised participants the figures were 11.1% versus 2.1% (${cite('lilly-fda', 'Lilly')}). WAM’s 12.4% is the on-treatment number. A forecast that treats 12.4% as the expected loss in every starter is using the wrong estimand.</p>
-
-<p>ATTAIN-2 randomised 1,613 adults with obesity or overweight and type 2 diabetes. On the treatment-regimen estimand at 72 weeks, orforglipron 5.5 mg, 9 mg and 17.2 mg reduced body weight by 5.1%, 7.0% and 9.6% against 2.5% with placebo, and reduced HbA1c by 1.22% to 1.66% against 0.47% (${cite('lilly-attain2', 'Lilly Medical')}; ${cite('lancet-attain2', 'Horn et al., Lancet 2025')}). 1,444 participants (89.5%) completed the study and 1,284 (79.6%) completed treatment (${cite('lilly-attain2', 'Lilly Medical')}). That is a diabetes trial, not a UAE persistence rate. Adverse events in ATTAIN-1 that led to discontinuation ran from 5.3% to 10.3% against 2.7% with placebo; the most common events were gastrointestinal (${cite('nejm-attain1', 'NEJM')}). Lilly’s US safety summary lists a boxed warning on medullary thyroid carcinoma and MEN2, in line with the GLP-1 class (${cite('lilly-fda', 'Lilly')}; ${cite('fda-label', 'US PI')}).</p>
-
+<h2 id="two-pills">Two pills, two studies</h2>
+<p>Foundayo is not the only oral GLP-1 in the news. On 3 June 2026 Novo Nordisk said it had launched the Wegovy pill in the UAE (${cite('novo-zawya', 'Novo Nordisk, via ZAWYA, 3 June 2026')}). CNBC described that launch as the first one outside the United States (${cite('cnbc-wegovy-uae', 'CNBC, 3 June 2026')}). Wegovy’s tablet uses semaglutide, a different molecule from orforglipron. Khaleej Times wrote on 18 June 2026 about prices, doses and first-time interest in the Wegovy pill (${cite('khaleej-wegovy', 'Khaleej Times, 18 June 2026')}). This briefing does not copy a price the article does not put in the reference line. Ask the pharmacy what was actually charged.</p>
+<p>The clinical papers are also separate. ATTAIN-1 is a New England Journal of Medicine paper on orforglipron for obesity, registered as NCT05869903 (${cite('nejm-attain1', 'ATTAIN-1')}). ATTAIN-2, in The Lancet in 2025, studied orforglipron for obesity in people who also have type 2 diabetes (${cite('lancet-attain2', 'ATTAIN-2')}). Lilly’s medical site asks how Foundayo compared with placebo in ATTAIN-2 (${cite('lilly-attain2', 'Lilly Medical')}). The reference line does not carry a percentage for that comparison, so this page will not invent one.</p>
+<p>Oral semaglutide has its own trial. OASIS 4, also in the New England Journal of Medicine in 2025, studied a 25 mg tablet in adults with overweight or obesity (${cite('nejm-oasis4', 'OASIS 4')}). On 17 September 2025 Novo Nordisk said that 25 mg dose delivered 16.6 percent weight loss in the published study (${cite('novo-oasis4', 'Novo Nordisk, 17 September 2025')}). That sentence belongs to oral semaglutide. It is not an orforglipron result, and the two trials are not a head-to-head.</p>
 ${figureHtml(ORAL_GLP1_UAE_FIGURES[1])}
+<p>A US paper in JAMA Network Open studied how often adults with overweight or obesity stop and restart GLP-1 drugs (${cite('jama-discontinue', 'JAMA Network Open, 2025')}). The reference line does not give a percentage, and the patients were in the United States. Do not paste a US stopping rate onto a UAE clinic.</p>
 
-<p>Two months after Foundayo’s EDE approval, a second oral GLP-1 entered the same pharmacies. On 3 June 2026 Novo Nordisk launched the Wegovy pill (oral semaglutide) in the UAE and called it the first country outside the United States to make that tablet available (${cite('novo-zawya', 'Novo / ZAWYA')}; ${cite('cnbc-wegovy-uae', 'CNBC')}). Novo’s note says EDE and FDA have approved the 25 mg tablet for weight management, and that it is the only weight-loss pill those two regulators have also approved to reduce major adverse cardiovascular events in adults with established cardiovascular disease and obesity or overweight (${cite('novo-zawya', 'Novo / ZAWYA')}). OASIS 4, in 307 adults without diabetes, reported a 64-week treatment-policy mean change of −13.6% versus −2.2% with placebo, and a trial-product estimand of 16.6% versus 2.7% if participants adhered (${cite('nejm-oasis4', 'Wharton et al., NEJM 2025')}; ${cite('novo-oasis4', 'Novo, 17 September 2025')}). Novo’s UAE launch copy rounded the on-treatment figure to about 17% and said one in three people lost 20% or more (${cite('novo-zawya', 'Novo / ZAWYA')}).</p>
-
-<p>Those two programmes are not a head-to-head: different molecules, sample sizes (3,127 versus 307), durations (72 versus 64 weeks) and estimands. A launch model that treats 16.6% versus 12.4% as a UAE switching rule is misusing the trials (${cite('national-aug', 'The National')}). What a UAE brand team can research is how physicians actually choose: food rules, cardiovascular labelling, GI experience, cold-chain, and cash price. Khaleej Times’ pharmacy quotes for Wegovy-pill packs of 30 were Dh779 at 1.5 mg and 4 mg, Dh1,199 at 9 mg and Dh1,610 at 25 mg, with the paper warning that prices vary (${cite('khaleej-wegovy', 'Khaleej Times, 18 June 2026')}). A public Foundayo UAE circular with named strengths and dirham prices was not found for this briefing. Do not paste US LillyDirect self-pay figures into an Emirates forecast (${cite('lilly-fda', 'Lilly')}).</p>
-
-<h2 id="how-common-is-obesity-in-the-uae">How common is obesity and diabetes in the UAE?</h2>
-
-<p>Ask every provider which baseline it uses. Do not average them, and do not apply any of them to 11.3 million residents and call the product orforglipron demand.</p>
-
-<p>The newest official measured file is MoHAP’s National Health and Nutrition Survey 2024–2025, published with the Federal Competitiveness and Statistics Centre and described as WHO-endorsed. Among adults aged 18 and over, 22.4% were living with obesity, 25.9% had high blood pressure, 12.5% had elevated blood glucose, 54.2% had high cholesterol, 59.1% did not do enough physical activity, and 8.7% smoked (${cite('mohap-nhs-2025', 'MoHAP')}; ${cite('wam-mohap-survey', 'WAM, 6 January 2026')}). Gulf News said the fieldwork reached 20,000 households — 40% citizens and 60% residents — plus 2,000 people in workers’ accommodations, and that obesity prevalence had fallen 14.8% between 2010 and 2025 in the ministry’s comparison (${cite('gulf-news-survey', 'Gulf News')}). Childhood obesity in the same survey was 16.1% at ages 6–17 (${cite('mohap-nhs-2025', 'MoHAP')}). Foundayo’s US label is adult-only (${cite('lilly-fda', 'Lilly')}). A paediatric column does not belong in an orforglipron uptake model unless EDE has published a paediatric indication, which WAM did not.</p>
-
-<p>The older measured file, still sitting in many slide packs, is the 2017–18 National Health Survey: 4,971 adults with measurements and 27.8% obesity (${cite('uae-nhs-2018', 'UAE NHS 2017–18')}). That is the file our <a href="/blog/thiqa-obesity-reimbursement-abu-dhabi">Thiqa obesity reimbursement</a> briefing uses when it discusses Abu Dhabi entitlement. It is not a 2026 treated-patient count, and 22.4% is not “the same survey, updated.” Different years, different instruments, different samples.</p>
-
-${figureHtml(ORAL_GLP1_UAE_FIGURES[2])}
-
-<p>Two modelled or sponsor figures sit beside those surveys. WHO’s Global Health Observatory age-standardised adult obesity estimate for the United Arab Emirates in 2024 is 31.6% (${cite('owid-gho', 'WHO GHO via Our World in Data')}; ${cite('who-gho', 'WHO GHO')}). Novo’s 3 June 2026 UAE launch note said 28% of adults in the UAE are living with obesity and that almost 7.5 million people are projected to be living with obesity or overweight by 2035 (${cite('novo-zawya', 'Novo / ZAWYA')}). 28% is Novo’s figure in a product launch. It is not MoHAP’s 22.4%, and it is not WHO’s 31.6%. State the baseline. Test the others.</p>
-
-<p>Diabetes is a parallel denominator, not a substitute. IDF’s Atlas puts 1,274.2 thousand adults aged 20–79 with diabetes in the UAE in 2024, an age-standardised prevalence of 20.7%, with 64.0% undiagnosed (${cite('idf-uae', 'IDF')}; ${cite('owid-diabetes', 'IDF via Our World in Data')}). MoHAP’s survey found 12.5% with elevated blood glucose (${cite('mohap-nhs-2025', 'MoHAP')}). Those percentages are not interchangeable. ATTAIN-2’s 9.6% weight loss at the top dose is the diabetes-and-obesity trial (${cite('lilly-attain2', 'Lilly Medical')}). A brief that dumps every GLP-1 patient into one obesity column will mix a diabetes indication, an obesity indication and an off-label cash start.</p>
-
-<p>The resident count is 11,294,243 in 2024, up 5.7% from 10,678,556, with men 64% and women 36% (${cite('gulf-news-pop', 'FCSC via Gulf News')}; ${cite('fcsc-unified', 'FCSC')}). Applying 22.4% to 11.3 million residents and calling the product “Foundayo patients” is wrong on age, on nationality, on indication and on who will pay. Most residents are not UAE nationals. Thiqa is a nationals programme in Abu Dhabi; that payer architecture is documented on <a href="/blog/thiqa-obesity-reimbursement-abu-dhabi">Thiqa obesity reimbursement</a>, and this article does not retell the BMI bands or the four-month activity gate.</p>
-
-<h2 id="what-has-six-months-of-oral-uptake-shown">What has six months of oral uptake actually shown?</h2>
-
-<p>By early August 2026 — three months after WAM’s May availability window, and two months after the Wegovy pill launch — UAE clinicians and pharmacists were willing to talk to newspapers. That is field colour. It is not a panel.</p>
-
-<p>Dr Noor Naji, internal-medicine consultant at Burjeel Medical City, told <em>The National</em> she had been prescribing both Foundayo and Wegovy oral pills since they became available. The tablets were “not created to replace the injectables, which are still showing more efficacy.” First-time patients preferred tablets; some injectable users wanted to switch (${cite('national-aug', 'The National, 5 August 2026')}). That is the new-versus-switch split a PRF has to force. Dr Yasmeen Ajaz, endocrinologist at Medcare Hospital in Al Safa, Dubai, pointed to needle anxiety, travel and lifestyle (${cite('national-aug', 'The National')}). Rania Alkhani, pharmacy manager at International Modern Hospital Dubai, added that tablets do not need refrigeration, unlike pens, and that injectables were still preferred by patients seeking greater weight loss (${cite('national-aug', 'The National')}).</p>
-
-<p>One published patient illustrates a switch, not a rate. Juma Elsa Alsuwaidi, 33, a police officer in Abu Dhabi, had a BMI of 42 on Mounjaro, asked to switch to Foundayo because of weekly vomiting, and told the paper that by August he had lost 21 kg with diet, exercise and the tablet (${cite('national-aug', 'The National')}). Useful as a journey hypothesis. Useless as a persistence parameter.</p>
-
-<p><em>The National</em> also reported two numbers that need a source tag in any forecast. First, “on average, pens cost around $200 a month, while oral pills cost around $150 a month” (${cite('national-aug', 'The National')}). That is a journalist’s round figure across products, not an EDE price circular and not a Thiqa reimbursement tariff. Second, “patients must have a BMI above 30, or a BMI of 27 if they also have a weight-related comorbidity, to qualify for a GLP-1 prescription in either injectable or oral form” (${cite('national-aug', 'The National')}). That is a clinical initiation statement in a newspaper. It is not the Thiqa obesity-medicine reimbursement rule, which is stricter on BMI bands, listed complications and a four-month effectiveness test — see <a href="/blog/thiqa-obesity-reimbursement-abu-dhabi">Thiqa obesity reimbursement</a> rather than repeating that policy here. A brief that treats “BMI 27 with comorbidity” as automatic Abu Dhabi payment will overstate insured volume.</p>
-
-<p>The Wegovy-pill launch generated the only named dirham points found for this briefing. Khaleej Times, 15 days after Novo’s 3 June launch, quoted pharmacies at Dh779 to Dh1,610 per 30-tablet pack depending on dose (${cite('khaleej-wegovy', 'Khaleej Times')}). Aster Pharmacy’s retail COO said a significant share of inquiries came from people who had never used a weight-loss medicine. DarDoc, a digital platform, said it had hundreds of patients on a waiting list and was “dispensing a prescription approximately every 17 minutes” (${cite('khaleej-wegovy', 'Khaleej Times')}). That last figure is a company operations claim. It is not a national incidence rate, and it is about oral semaglutide, not Foundayo.</p>
-
-${figureHtml(ORAL_GLP1_UAE_FIGURES[3])}
-
-<p>What six months of coverage still does not give a launch team is a public Foundayo dirham circular, a treated-patient or oral-versus-injectable file from DHA, DOH or EHS, a UAE persistence curve, or a brand-level Thiqa, Daman or DHA covering fact. Registration is federal. Payment is local. Keep them apart. In a US claims cohort of 125,474 adults initiating dual-label GLP-1s, 53.6% had discontinued by one year — 46.5% of those with type 2 diabetes and 64.8% of those without (${cite('jama-discontinue', 'Rodriguez et al., JAMA Network Open 2025')}). That is a reason to measure UAE continuation. It is not a UAE input.</p>
-
-<h2 id="what-should-oral-glp-1-uae-market-research-measure">What should oral GLP-1 UAE market research measure?</h2>
-
-<p>Design the study backwards from the decision — a UAE forecast that must stop treating pens and tablets as one class, a Foundayo-versus-Wegovy-pill share target, a cash-clinic launch, or a Thiqa conversation that still has to respect Abu Dhabi’s separate obesity-medicine rules.</p>
-
-${WORKSTREAM_TABLE_HTML}
-
-${figureHtml(ORAL_GLP1_UAE_FIGURES[4])}
-
-<p>Keep the seven workstreams as separate quotas, not one “oral GLP-1 share.” Newspaper clinicians already say first-time patients prefer tablets and that injectables still win on expected weight loss (${cite('national-aug', 'The National')}). Aster’s first-time inquiries (${cite('khaleej-wegovy', 'Khaleej Times')}) and Alsuwaidi’s Mounjaro-to-Foundayo switch (${cite('national-aug', 'The National')}) are two populations. Food and water rules (${cite('wam-ede-foundayo', 'WAM')}), MACE labelling on the Wegovy pill (${cite('novo-zawya', 'Novo')}) and cash price belong in the brand tracker. Do not import the four-month Thiqa funnel into a Dubai cash model; send that brief to <a href="/blog/thiqa-obesity-reimbursement-abu-dhabi">Thiqa obesity reimbursement</a>. ATTAIN-1’s 5.3–10.3% AE discontinuation is a trial ceiling, not a clinic curve (${cite('nejm-attain1', 'NEJM')}). US one-year discontinuation of 53.6% is a cautionary analogue for 4- and 12-month persistence (${cite('jama-discontinue', 'Rodriguez et al.')}). DarDoc’s telehealth claim (${cite('khaleej-wegovy', 'Khaleej Times')}) is a reason to sample that channel, not to treat it as the market.</p>
-
-<p>For neighbouring systems do not import a Gulf average. Qatar’s oral GLP-1 approval and Hamad cover for Wegovy injections are a different access story — see <a href="/blog/qatar-obesity-glp1-market-research">Qatar obesity GLP-1 market research</a>. Kuwait’s public-versus-expatriate funding split is on <a href="/blog/obesity-market-research-kuwait">obesity market research Kuwait</a>. A Saudi CHI or Wasfaty answer is not an EDE or Thiqa answer. See also <a href="/gcc-obesity-market">GCC obesity market research</a> and <a href="/patient-journey-research-gcc">GCC patient-journey research</a>.</p>
-
-<p>Grand View Research, 6Wresearch and Ken Research publish UAE obesity pages that often appear for this query. Use them to triangulate a category total. Do not take them to a launch meeting as the evidence pack for oral-versus-injectable mix or 12-month persistence.</p>
-
-<h2 id="how-to-commission">How should you commission the study?</h2>
-
+<h2 id="obesity-figures">Obesity figures that do not match</h2>
+<p>Quote each obesity figure with its survey and its year. They are not one time series.</p>
 <ul>
-<li>How many endocrinologists, internists, family physicians and private-clinic prescribers, and from which emirates — Dubai, Abu Dhabi and at least one Northern Emirates city?</li>
-<li>Will results split oral versus injectable, Foundayo versus Wegovy pill, new versus switch, and Thiqa versus other plans versus self-pay?</li>
-<li>Which prevalence baseline — MoHAP 2024–25 (22.4%), NHS 2017–18 (27.8%), Novo’s 28%, or WHO’s 31.6% (${cite('mohap-nhs-2025', 'MoHAP')}; ${cite('uae-nhs-2018', 'NHS 2017–18')}; ${cite('novo-zawya', 'Novo')}; ${cite('owid-gho', 'WHO GHO')})?</li>
-<li>Does the guide treat food-and-water rules, refrigeration, GI drop-off and cardiovascular labelling as separate criteria?</li>
-<li>Arabic and English instruments, and Hindi or Urdu if the cash-clinic sample needs it? MoHAP already runs those four languages (${cite('mohap-nhs-2025', 'MoHAP')}).</li>
-<li>Who owns the data, and can it be re-cut after an EDE variation or a Thiqa revision?</li>
+<li>The Ministry of Health and Prevention’s National Health and Nutrition Survey for 2024–2025 measured adult obesity at 22.4 percent (${cite('mohap-nhs-2025', 'Ministry of Health and Prevention')}). The Emirates News Agency released that survey on 6 January 2026 (${cite('wam-mohap-survey', 'Emirates News Agency, 6 January 2026')}). Gulf News covered the same survey’s findings on smoking and exercise (${cite('gulf-news-survey', 'Gulf News')}).</li>
+<li>The ministry’s National Health Survey for 2017–2018 measured 4,971 adults and found 27.8 percent obese (${cite('uae-nhs-2018', 'National Health Survey 2017–2018')}). That is an earlier survey, with its own method.</li>
+<li>The World Health Organization’s indicator for adult obesity uses a body mass index of 30 or above and is age-standardised (${cite('who-gho', 'World Health Organization')}). Our World in Data, using that indicator, puts the UAE figure for 2024 at 31.6 percent (${cite('owid-gho', 'Our World in Data')}). Age-standardised means the rate is adjusted so a young country and an older country can be compared. A clinic does not treat an age-standardised person.</li>
 </ul>
+${figureHtml(ORAL_GLP1_UAE_FIGURES[2])}
+<p>Do not subtract 27.8 from 31.6, or 22.4 from 27.8, and call the gap a rise or a fall. The methods differ. None of these rates is the number of people who will be prescribed a tablet.</p>
+<p>Diabetes figures are a second topic. The International Diabetes Federation says 1,274.2 thousand adults aged 20 to 79 in the UAE had diabetes in 2024, a prevalence of 20.7 percent, with 64.0 percent undiagnosed (${cite('idf-uae', 'International Diabetes Federation')}). Our World in Data repeats the 20.7 percent for 2024 (${cite('owid-diabetes', 'Our World in Data, diabetes')}). Undiagnosed means the atlas’s estimate of people who have diabetes and do not know it. It is not a queue for a weight-loss pill. ATTAIN-2 is the study that enrolled people with both obesity and type 2 diabetes. The atlas is not that study.</p>
+<p>The population frame is smaller than a “Gulf” slide and larger than a clinic. The Federal Competitiveness and Statistics Centre puts the 2024 population at about 11.29 million (${cite('fcsc-unified', 'Federal statistics centre')}). Gulf News printed the centre’s count as 11,294,243 residents in 2024, against 10,678,556 in 2023 (${cite('gulf-news-pop', 'Gulf News')}). Those two sentences are the same estimate, one of them rounded. They are not the number of adults with obesity, and they are not the number who will pay for a pill.</p>
 
-<p>A physician-survey design for a neighbouring GLP-1 market is on <a href="/blog/glp-1-physician-survey-saudi-arabia">GLP-1 physician survey Saudi Arabia</a>. For UAE access context see <a href="/uae-market-access-research">UAE market access research</a> and <a href="/insights/top-pharmaceutical-market-research-companies-uae-2026">top pharmaceutical market research companies in the UAE 2026</a>.</p>
+<h2 id="not-a-prescription">Registration is not a paid prescription</h2>
+<p>An EDE approval answers one question: the product may be registered. It does not say a pharmacy has stock, a doctor has written the first prescription, a patient is still taking it three months later, or an insurer is paying. Keep those steps apart.</p>
+${figureHtml(ORAL_GLP1_UAE_FIGURES[3])}
+<p>${cite('grand-view', 'Grand View Research')}, ${cite('6wresearch', '6Wresearch')} and ${cite('ken-research', 'Ken Research')} publish UAE and Gulf obesity outlooks that often appear for this search. They are category pages. They do not record which tablet a Dubai endocrinologist started last week. Use them as background. Commission the prescriber study for the decision.</p>
 
-<h2 id="why-bionixus">Why choose BioNixus for oral GLP-1 UAE market research?</h2>
+<h2 id="questions">Questions to put in the brief</h2>
+<p>Write one decision at the top of the brief. It might be a forecast split between tablet and injection, a brand choice inside the tablet class, or a plan for clinics that take cash rather than insurance.</p>
+${figureHtml(ORAL_GLP1_UAE_FIGURES[4])}
+<ul>
+<li><strong>Which product.</strong> Ask about orforglipron and oral semaglutide in separate questions. Do not let a respondent “pick a pill” and then blend the answers.</li>
+<li><strong>Which event the respondent means.</strong> US approval was 1 April 2026. The UAE approval was reported on 3 April 2026. The Wegovy pill launch was reported on 3 June 2026. The National’s April line about the next month is an April statement.</li>
+<li><strong>New start or switch.</strong> A patient leaving an injection is not the same as a patient starting treatment for the first time.</li>
+<li><strong>Who pays.</strong> Abu Dhabi’s Thiqa rules are not Dubai’s rules. Ask which wallet, in which emirate.</li>
+<li><strong>Which obesity number the forecast uses.</strong> 22.4 percent, 27.8 percent and 31.6 percent cannot sit in one cell. Name the source.</li>
+<li><strong>What “still taking it” means.</strong> The US discontinuation paper is not a UAE rate. Measure continuation in the UAE sample.</li>
+</ul>
+<p>Report results as a share of patients treated, by product and emirate. Ask for Arabic and English instruments. Ask the agency to show the date on every official figure.</p>
 
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with local consultants.</p>
-
-<p>Choose BioNixus when the decision depends on why UAE prescribers and patients start, switch or stop an oral GLP-1, rather than on a syndicated obesity-market total. Each study is built around one decision and reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. BioNixus has 40 client reviews.</p>
-
-<p>See also <a href="/healthcare-market-research/uae">healthcare market research in the UAE</a>, <a href="/uae-obesity-market">UAE obesity market insights</a>, <a href="/blog/thiqa-obesity-reimbursement-abu-dhabi">Thiqa obesity reimbursement</a> and <a href="/blog/qatar-obesity-glp1-market-research">Qatar obesity GLP-1 market research</a>. To brief an orforglipron UAE study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<h2 id="how-to-brief">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. Custom studies are usually priced at $10k–$60k. The firm has 40 client reviews on its public profiles. The line “Guaranteed in writing” covers the agreed scope and timeline. It does not cover what the interviews will find.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
+<p>To brief an oral GLP-1 study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. Say which pill, which emirate and which decision the study has to answer.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -570,37 +498,37 @@ export const ORAL_GLP1_UAE_FAQ: { question: string; answer: string }[] = [
   {
     question: 'What is oral GLP-1 UAE market research?',
     answer:
-      'Oral GLP-1 UAE market research is commissioned primary research on how once-daily incretin tablets are prescribed, paid for, taken and continued in the United Arab Emirates after EDE registration. It covers oral versus injectable mix, Foundayo versus the Wegovy pill, new starts versus switchers, channel and nationality, and persistence. It is not a syndicated GCC obesity market-size report.',
+      'It is commissioned research on who prescribes a daily weight-loss tablet in the UAE, who keeps taking it, and who pays. An approval notice is not that study.',
   },
   {
-    question: 'Did EDE approve orforglipron in the UAE?',
+    question: 'Did the Emirates Drug Establishment approve orforglipron?',
     answer:
-      'Yes. WAM reported on 3 April 2026 that the Emirates Drug Establishment approved Foundayo (orforglipron) for chronic weight management, making the UAE the second country in the world to register the Eli Lilly tablet. The US FDA had approved the same product on 1 April 2026. Approval is not the same as a published UAE price list, a Thiqa listing, or a treated-patient count.',
+      'The Emirates News Agency reported on 3 April 2026 that the Establishment had approved a new oral obesity treatment, and described the UAE as the second country to do so. Lilly’s brand name for orforglipron is Foundayo. The US regulator had approved it two days earlier.',
   },
   {
-    question: 'When did Foundayo become available in the UAE?',
+    question: 'When did newspapers say the pill would be available?',
     answer:
-      'WAM said the treatment was expected to become available to eligible patients from May 2026. The National in August 2026 reported that UAE clinicians had been prescribing Foundayo and the Wegovy pill since those products became available. A public first-dispense circular with emirate-level stocking dates was not found for this briefing.',
+      'On 4 April 2026 The National wrote that the UAE-approved daily pill was to be made available the next month. That is the paper’s April statement. It is not a later count of prescriptions.',
   },
   {
     question: 'How does Foundayo compare with the Wegovy pill?',
     answer:
-      'They are different molecules in different trials. Foundayo is a small-molecule oral GLP-1 that WAM and Lilly say can be taken without food or water restrictions. The Wegovy pill is oral semaglutide 25 mg, launched in the UAE on 3 June 2026, taken on an empty stomach, and carrying an additional MACE indication in people with established cardiovascular disease. ATTAIN-1’s highest-dose treatment-regimen loss was 11.2%; OASIS 4’s treatment-policy loss was 13.6%. Those figures are not a head-to-head.',
+      'They are different molecules. Novo Nordisk and CNBC reported a Wegovy pill launch in the UAE on 3 June 2026. Novo said on 17 September 2025 that oral semaglutide 25 mg delivered 16.6 percent weight loss in its published study. That figure is not an orforglipron result. The trials are not a head-to-head.',
   },
   {
     question: 'How common is obesity in the UAE?',
     answer:
-      'MoHAP’s National Health and Nutrition Survey 2024–2025 found 22.4% of adults aged 18 and over living with obesity. The 2017–18 National Health Survey measured 27.8%. WHO’s 2024 age-standardised model is 31.6%. Novo’s June 2026 launch note used 28%. These are different methods; do not average them into one Foundayo denominator.',
+      'It depends which file you open. The 2024–25 ministry survey measured 22.4 percent. The 2017–18 survey measured 27.8 percent of 4,971 adults. A WHO age-standardised estimate for 2024 is 31.6 percent. Do not average them.',
   },
   {
-    question: 'Does Thiqa automatically cover oral GLP-1s after EDE approval?',
+    question: 'Does an EDE approval mean Thiqa will pay?',
     answer:
-      'No. EDE registration is a federal marketing authorisation. Thiqa obesity-medicine payment in Abu Dhabi is a separate Department of Health policy with BMI, complication, certified-prescriber and four-month effectiveness rules. That policy is explained on BioNixus’s Thiqa obesity reimbursement briefing. A newspaper BMI 27-with-comorbidity initiation statement is not a Thiqa reimbursement rule.',
+      'No. Registration, pharmacy stock, the first prescription, continuation and the payer are separate questions. Abu Dhabi’s Thiqa rules are a different document from an EDE approval.',
   },
   {
-    question: 'Why commission BioNixus for oral GLP-1 UAE market research?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'BioNixus runs custom primary research from a Dubai field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a forecast split, a brand tracker or a cash-clinic plan — and reported as share of treated patients. The delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'Custom studies are usually $10k–$60k. Guaranteed in writing covers the agreed scope and timeline. It does not cover what the interviews will find. The firm has 40 client reviews on its public profiles.',
   },
 ];
 
@@ -728,7 +656,7 @@ export const ORAL_GLP1_UAE_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning oral GLP-1 or orforglipron research in the UAE?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes prescriber, patient and payer research around it, from a Dubai field office and a network of about 3,200 physicians.',
+      'Tell us the prescribing decision you need to make. BioNixus scopes the study around that decision. Custom work is usually $10k–$60k.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

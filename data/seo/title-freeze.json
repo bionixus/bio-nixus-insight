@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17",
+  "generatedAt": "2026-10-18",
   "source": "data/gsc/current-week/Pages.csv",
   "minImpressions": 100,
   "freezeWeeks": 8,
@@ -676,10 +676,10 @@
     },
     "/insights/top-healthcare-market-research-companies-usa-2026": {
       "impressions": 1205,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-10-18",
       "override": {
-        "title": "Top Healthcare Market Research Companies in the USA (2026)",
-        "description": "Top healthcare market research companies in the USA (2026). Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail."
+        "title": "Healthcare Market Research Companies in the USA (2026)",
+        "description": "Healthcare market research companies in the USA for 2026. Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail."
       }
     },
     "/insights/top-market-research-companies-abu-dhabi-2026": {

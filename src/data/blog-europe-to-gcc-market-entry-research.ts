@@ -42,15 +42,15 @@ export const EU_GCC_ENTRY_META_DESCRIPTION =
   'Europe-to-GCC market entry research for European brands: six-country sequencing, VAT, G-Mark, channels and price before a brand committee commits capital.';
 
 export const EU_GCC_ENTRY_DISPLAY_TITLE =
-  'Europe-to-GCC market entry research: what European brands need to know';
+  'What European Brands Should Check Before Selling in the Gulf';
 
 export const EU_GCC_ENTRY_DISPLAY_SUBTITLE =
-  'Six-country sequencing, VAT, G-Mark and price before capital is committed';
+  'Name the country, the tax, and the product rule before you send money';
 
 export const EU_GCC_ENTRY_BREADCRUMB_LABEL = 'Europe-to-GCC market entry research';
 
 export const EU_GCC_ENTRY_EXCERPT =
-  'A sourced 2026 playbook for Europe-to-GCC market entry research: what European brands must prove on six-country sequencing, VAT, G-Mark, channels and price before they commit capital.';
+  'A plain guide for European brands looking at the six Gulf states: which trade and tax figures to quote, and which questions only buyers can answer.';
 
 export const EU_GCC_ENTRY_PUBLISHED_ISO = '2026-10-16T12:00:00.000Z';
 export const EU_GCC_ENTRY_UPDATED_ISO = '2026-10-16T12:00:00.000Z';
@@ -269,205 +269,92 @@ export function countWords(html: string): number {
 }
 
 export const EU_GCC_ENTRY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What does Europe-to-GCC market entry research have to answer?', anchor: 'what-europe-to-gcc-market-entry-research-answers' },
-  { heading: 'Why a European playbook cannot be copied into the Gulf', anchor: 'european-playbook-cannot-copy' },
-  { heading: 'Official numbers that frame a 2026 Europe-to-GCC brief', anchor: 'official-numbers' },
-  { heading: 'Six countries, six tax and licence stacks', anchor: 'six-country-stacks' },
-  { heading: 'What a CE mark does not buy you', anchor: 'ce-versus-gmark' },
-  { heading: 'How to sequence UAE, Saudi Arabia and the four smaller states', anchor: 'how-to-sequence' },
-  { heading: 'The five proofs a European committee must demand', anchor: 'five-proofs' },
-  { heading: 'How the brief changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a Europe-to-GCC research partner', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to settle before you send money', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'Six countries, four published VAT rates', anchor: 'six-countries' },
+  { heading: 'What Germany, France, and Italy already ship', anchor: 'member-states' },
+  { heading: 'Tariffs, the CE mark, and the Gulf mark', anchor: 'marks' },
+  { heading: 'How the questions change by product', anchor: 'by-sector' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const EU_GCC_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Europe-to-GCC market entry research must prove who will buy, in which of the six states, at what price including the local VAT, through which channel and under which conformity mark before a European brand commits capital. A single Gulf TAM or a CE certificate is not entry research. Primary interviews make the brief usable.</p>`;
+export const EU_GCC_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p>Europe-to-GCC market entry research names the European country, the Gulf country, the price after VAT, and the product rule before a brand sends money. The six Gulf states are separate markets. A regional trade total is not an order. Ask who will pay the invoice.</p>`;
 
-const NARRATIVE_HTML = `<p>European brand teams often arrive with a single “GCC” TAM, a CE technical file and a Dubai free-zone quote, then treat that pack as Europe-to-GCC market entry research. It is not. Entry research has to name the buyer, the state, the price including the local VAT, the channel and the conformity mark before a London, Frankfurt, Paris or Milan committee commits a warehouse, a hire or a first container. This playbook sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma European brands — retail, FMCG, technology, hospitality, industrials, financial services — not for SFDA or MOHAP files.</p>
+const NARRATIVE_HTML = `<p>European brand teams often arrive with one Gulf sales total and a CE file. The six Gulf states are separate markets. Before a warehouse or a first container is committed, name who will buy, in which state and city, at what price after tax, and which product rule applies. This page is a plain guide to Europe-to-GCC market entry research. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for consumer and industrial brands, not for medicines.</p>
 
-<p>The Kingdom-only file is a different job. If the first operating SKU is Saudi, use the sourced <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry research playbook</a> for demand, registration, cities, channels and price. Do not paste that file across the other five states. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>If the first operating company is in Saudi Arabia, use the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry research</a> page for that country’s licence questions. This page is the six-country trade and tax frame. Related selling pages include <a href="/uae-retail-market-research">retail research in the UAE</a> and <a href="/qatar-retail-market-research">retail research in Qatar</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 Europe-to-GCC brief can cite, October 2026</strong></p>
+<h2 id="what-to-prove">What to settle before you send money</h2>
 <ul>
-<li><strong>€165.555 billion</strong> of EU–GCC goods trade in 2025: EU exports €109.969 billion and imports €55.585 billion, a surplus of €54.384 billion. Exports grew 10.3% from 2024; imports fell 13.4% (${cite('eurostat-gcc-2025', 'Eurostat Comext factsheet')} ).</li>
-<li><strong>€110.3 billion</strong> of EU goods exports to the Gulf in 2025 on the Commission’s rounded series, led by machinery and appliances (€32.2 billion, 29.2%), transport equipment (€18.3 billion, 16.5%) and chemicals (€16.1 billion, 14.6%). The GCC was the EU’s sixth-largest export market. Two-way services trade was €84.4 billion in 2024; EU outward FDI stock in the GCC was €163.1 billion and inward FDI stock was €189.8 billion (${cite('ec-gulf', 'European Commission DG Trade')} ).</li>
-<li><strong>€44.4 billion</strong> of UAE imports from the EU in 2024 and <strong>€36.8 billion</strong> of Saudi imports from the EU — 81% of the six-country import total in that Eurostat table. The EU ranked first or second as a supplier in five of the six states, and sixth in Oman (${cite('eeas-newsletter', 'EU–GCC Dialogue newsletter, citing Eurostat')} ).</li>
-<li><strong>61.5 million</strong> people and <strong>USD 2.3 trillion</strong> of current-price GDP in the GCC in 2024 on the GCC-Stat portal headlines (${cite('gccstat-portal', 'GCC-Stat')} ). Those are regional totals. They are not a catchment for a first store or a first warehouse.</li>
-<li><strong>Four published VAT rates, not one:</strong> 5% in the UAE since 1 January 2018 (${cite('mof-vat', 'UAE Ministry of Finance')} ); 5% in Oman (${cite('oman-vat', 'Oman Tax Authority')} ); 10% in Bahrain from 1 January 2022 (${cite('bahrain-vat', 'Bahrain National Portal')} ); 15% in Saudi Arabia (${cite('zatca-vat', 'ZATCA')} ). Qatar and Kuwait do not appear on those official rate pages. Do not invent a Gulf VAT.</li>
-</ul>
-</div>
-
-<h2 id="what-europe-to-gcc-market-entry-research-answers">What does Europe-to-GCC market entry research have to answer?</h2>
-
-<p>Europe-to-GCC market entry research tells a European sponsor whether a named offer will sell, at a named price, in a named GCC state, through a named channel, under a named conformity and tax treatment. It is not a company-formation checklist. Five questions separate a usable study from a slide nobody can defend:</p>
-
-<ul>
-<li><strong>Who buys?</strong> A household, a contractor, a hotel buyer, a distributor or a government procurer. GCC-Stat’s 61.5 million people in 2024 are not one basket (${cite('gccstat-portal', 'GCC-Stat')} ).</li>
-<li><strong>In which state — and which city?</strong> The UAE and Saudi Arabia took €81.2 billion of the €99.3 billion of GCC imports from the EU in 2024 (${cite('eeas-newsletter', 'EU–GCC Dialogue newsletter')} ). That is a trade fact, not permission to average Dubai with Riyadh.</li>
-<li><strong>At what price, including which VAT?</strong> A willingness-to-pay range that uses the rate of the state of supply — 5%, 10% or 15% where a rate is published — not a euro ex-VAT ASP copied across (${cite('mof-vat', 'UAE Ministry of Finance')}; ${cite('bahrain-vat', 'Bahrain National Portal')}; ${cite('zatca-vat', 'ZATCA')} ).</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to if you miss. A German machinery export and an Italian fashion invoice do not share one distributor.</li>
-<li><strong>Under which mark and which vehicle?</strong> A CE mark is an EEA statement (${cite('ce-marking', 'European Commission')} ). A Gulf Conformity Mark is a GCC statement for regulated categories (${cite('gso-gmark', 'GSO')} ). A Dubai free-zone licence is not a Saudi trading entity.</li>
+<li><strong>Which European country is shipping, and which Gulf country is buying.</strong> A German export line is not a French one. A Dubai buyer is not a Riyadh buyer.</li>
+<li><strong>Who pays.</strong> A household, a hotel, a contractor, or a distributor. A population total is the frame, not the customer list.</li>
+<li><strong>What price, after the tax of that state.</strong> The cited VAT pages publish four rates. Paste the rate of the state of supply onto the price card.</li>
+<li><strong>Which product rule.</strong> A CE mark answers a European question. A Gulf conformity mark answers a different one, and only for the product categories the Gulf rules cover.</li>
+<li><strong>Where the personal data will sit.</strong> If names move to Europe, the EU transfer rules and the UAE personal-data law can both matter.</li>
 </ul>
 
-<p>Desktop TAM can frame those questions. It cannot answer them. Adjacent pages include <a href="/uae-retail-market-research">retail market research in the UAE</a>, <a href="/uae-technology-market-research">technology market research in the UAE</a>, <a href="/qatar-retail-market-research">retail market research in Qatar</a> and <a href="/kuwait-retail-market-research">retail market research in Kuwait</a>. Kingdom-only proofs stay on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>.</p>
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its source and its year. The Commission’s rounded series and Eurostat’s goods table are not the same line.</p>
+<ul>
+<li><strong>Eurostat goods, 2025.</strong> EU goods imports from the six Gulf states were €55,585 million. Exports were €109,969 million. The total was €165,555 million. The same table, as used in the current brief, shows exports up 10.3% from 2024 and imports down 13.4% (${cite('eurostat-gcc-2025', 'Eurostat')}).</li>
+<li><strong>The Commission’s rounded series.</strong> The trade-relations page puts 2025 EU goods exports to the Gulf at €110.3 billion, led by machinery and appliances (€32.2 billion, 29.2%), transport equipment (€18.3 billion, 16.5%), and chemicals (€16.1 billion, 14.6%). It calls the Gulf the EU’s sixth-largest export market. Two-way services trade was €84.4 billion in 2024. EU outward FDI stock in the Gulf was €163.1 billion, and inward stock was €189.8 billion (${cite('ec-gulf', 'European Commission')}). Keep this series next to Eurostat’s, not added to it.</li>
+<li><strong>The 2024 country table.</strong> A Eurostat table in the EU–GCC economic newsletter gives 2024 imports from the EU as: UAE €44.4 billion (11.9% of that state’s imports, EU rank 2); Saudi Arabia €36.8 billion (19.0%, rank 2); Qatar €7.3 billion (21.0%, rank 1); Kuwait €5.7 billion (19.7%, rank 1); Oman €3.3 billion (7.4%, rank 6); Bahrain €1.8 billion (14.2%, rank 2). The same table puts EU imports from Saudi Arabia at €33.1 billion and from the UAE at €11.2 billion. UAE imports from the EU rose 13%. Saudi imports from the EU rose 8%. The UAE and Saudi lines are €81.2 billion of €99.3 billion of Gulf imports from the EU in that table (${cite('eeas-newsletter', 'EU–GCC newsletter')}).</li>
+<li><strong>The regional headline.</strong> The GCC statistical portal’s headline indicators are a population of 61.5 million and GDP of USD 2.3 trillion in 2024 (${cite('gccstat-portal', 'GCC-Stat')}). That is a region total. It is not a catchment for a first store.</li>
+</ul>
 
-<h2 id="european-playbook-cannot-copy">Why can a European playbook not be copied into the Gulf?</h2>
+<h2 id="six-countries">Six countries, four published VAT rates</h2>
+<p>Write the population that belongs to each state.</p>
+<ul>
+<li><strong>UAE.</strong> FCSC’s 2024 series, as used beside this brief, is a population of 11.29 million, about 200 nationalities, and an economic participation rate of 81.4% (${cite('fcsc-unified-2025', 'FCSC')}). VAT has been 5% since 1 January 2018, with mandatory registration above AED 375,000 (${cite('mof-vat', 'UAE Ministry of Finance')}). Corporate tax is 0% on taxable income up to AED 375,000 and 9% above that, from the first financial year starting on or after 1 June 2023 (${cite('uae-ct', 'u.ae')}).</li>
+<li><strong>Saudi Arabia.</strong> The mid-2024 population estimate is 35.3 million (${cite('gastat-pop-2024', 'GASTAT')}). Standard VAT is 15% (${cite('zatca-vat', 'ZATCA')}).</li>
+<li><strong>Qatar.</strong> The planning council’s monthly series shows 3,139,213 people at the end of September 2024 (${cite('npc-qatar', 'Qatar National Planning Council')}).</li>
+<li><strong>Kuwait.</strong> The statistics bureau’s headline estimate at the beginning of 2025 is 4,881,254 (${cite('csb-kuwait', 'Kuwait Central Statistical Bureau')}).</li>
+<li><strong>Oman.</strong> On 12 October 2026, the statistics portal showed 3,080,117 Omanis and 2,384,521 expatriates, 5,464,638 in total (${cite('ncsi-oman', 'Oman NCSI')}). The tax-rate page lists VAT at 5% on most goods and services, and income tax of 15% on institutions and commercial companies (${cite('oman-vat', 'Oman Tax Authority')}). Those are two taxes. Keep them in separate sentences.</li>
+<li><strong>Bahrain.</strong> Standard VAT has been 10% since 1 January 2022. The National Bureau for Revenue collects it. Mandatory registration sits above BHD 37,500 (${cite('bahrain-vat', 'Bahrain National Portal')}).</li>
+</ul>
+<p>The four VAT pages above are the UAE, Oman, Bahrain, and Saudi Arabia. This brief does not cite a Qatar VAT rate or a Kuwait VAT rate. A price card for those two states needs its own official page.</p>
+<p>Trade talks are also country by country. The Commission’s agreements page lists the EU–UAE FTA as being negotiated, and lists the regional EU–GCC FTA as suspended since 2008 for the other five states (${cite('eu-agreements', 'European Commission, trade agreements')}). The Gulf-relations page says strategic-partnership negotiations were proposed to each Gulf state in July 2025, and that EU–UAE FTA talks were launched in April 2025 (${cite('eu-gulf-relations', 'European Commission')}). The joint statement of the 29th Joint Council, on 6 October 2025, explores the possibility of resuming regional FTA negotiations (${cite('consilium-joint', 'Council of the EU, 6 October 2025')}). Treat each sentence as the status on that page. A suspended regional text is not a tariff you can print on a 2026 invoice.</p>
 
-<p>A Munich, Lyon or Bologna instrument with Arabic labels is not a Gulf entry file. Three official series show why.</p>
+<h2 id="member-states">What Germany, France, and Italy already ship</h2>
+<p>A member-state series helps when the first container has a home country. It still does not name the buyer.</p>
+<ul>
+<li><strong>Germany.</strong> Destatis’s preliminary 2025 ranking, published 20 February 2026, puts German goods exports to the UAE at €11.390 billion (27th destination) and to Saudi Arabia at €8.914 billion (35th). Combined turnover ranks the UAE 36th at €13.257 billion and Saudi Arabia 43rd at €10.052 billion (${cite('destatis-2025', 'Destatis, 20 February 2026')}).</li>
+<li><strong>France and Saudi Arabia.</strong> French customs, via the Treasury note published 3 March 2025, put 2024 goods trade excluding military equipment at €7.6 billion: exports €3.596 billion, down 13%, and imports €3.995 billion. Aerospace was 23% of those exports (€816 million). Saudi Arabia was France’s 33rd customer and 33rd supplier (${cite('tresor-sa', 'French Treasury, 3 March 2025')}).</li>
+<li><strong>France and the UAE.</strong> The Treasury note published 8 June 2026 says France–UAE goods trade reached €10.8 billion in 2025, with an €8.5 billion French surplus. Aerospace and space were €4.4 billion of those exports. Perfumes and cosmetics were €843 million. France’s 2024 share of the UAE market was 3.0% (${cite('tresor-uae', 'French Treasury, 8 June 2026')}).</li>
+<li><strong>Italy.</strong> The Abu Dhabi embassy page records €7.9 billion of Italian goods exports to the UAE in 2024, up 19.4% (${cite('italy-uae', 'Italian Embassy, Abu Dhabi')}). The Riyadh embassy’s 21 March 2025 briefing records €6.2 billion of Italian goods exports to Saudi Arabia in 2024, up 27.9% (${cite('italy-sa', 'Italian Embassy, Riyadh, 21 March 2025')}).</li>
+</ul>
 
-<p>First, the buyer mix is not a European age pyramid. The UAE’s 2024 population is 11.29 million, with about 200 nationalities and an 81.4% economic participation rate (${cite('fcsc-unified-2025', 'FCSC')} ). Saudi Arabia’s mid-2024 population is 35.3 million (${cite('gastat-pop-2024', 'GASTAT')} ). Qatar’s end-September 2024 count is 3,139,213 (${cite('npc-qatar', 'National Planning Council')} ). Kuwait’s beginning-2025 estimate is 4,881,254 (${cite('csb-kuwait', 'Central Statistical Bureau')} ). Oman’s NCSI portal on 12 October 2026 shows 3,080,117 Omanis and 2,384,521 expatriates, or 5,464,638 people (${cite('ncsi-oman', 'NCSI')} ). Nationals and expatriates do not share one basket inside a single state, let alone across six.</p>
+<h2 id="marks">Tariffs, the CE mark, and the Gulf mark</h2>
+<p>The Gulf Conformity Mark was approved on 24 May 2009. It is compulsory for product categories that are subject to Gulf technical regulations. Priority was given to toys and low-voltage devices. It is not a quality mark (${cite('gso-gmark', 'GCC Standardization Organization')}). The toys scheme (GSO-TY) has a certificate validity of five years. The low-voltage scheme (GSO-LV) has a validity of three years (${cite('gso-schemes', 'GSO scheme details')}).</p>
+<p>CE marking means a product sold in the European Economic Area has been assessed against EU safety, health, and environmental rules. It is not a mark of origin, and it is not an approval by the EU (${cite('ce-marking', 'European Commission')}). A CE file does not replace a Gulf certificate where the product category requires one.</p>
+<p>On personal data, the EU regulation of 4 May 2016 governs transfers to countries outside the EU in Chapter V (${cite('gdpr', 'Regulation (EU) 2016/679')}). The UAE’s Federal Decree-Law No. 45 of 2021 has been in force since 2 January 2022 (${cite('uae-pdpl-portal', 'u.ae')}). Articles 22 and 23 of that law cover cross-border transfer (${cite('uae-pdpl-text', 'UAE legislation')}). If respondent names move between the Gulf and Europe, ask counsel which rule applies. A research firm does not clear that transfer by itself.</p>
 
-<p>Second, the trade already exists — and it is not a proxy for SKU demand. Eurostat’s 2025 factsheet puts EU goods exports to the GCC 6 at €109.969 billion. Manufactures were 83.1% of those exports; machinery and transport equipment alone were €50.513 billion (${cite('eurostat-gcc-2025', 'Eurostat Comext')} ). Destatis, the French Trésor and the Italian embassies in Abu Dhabi and Riyadh publish member-state seats for the same year or the year before; those figures sit in the next section. None of them tells a brand whether a named buyer in Dubai, Riyadh or Doha will pay a named invoice for a named SKU.</p>
+<h2 id="by-sector">How the questions change by product</h2>
+<ul>
+<li><strong>Shops and packaged goods.</strong> Start from the population of the first state, then replace it with a catchment. A Dubai format, a Riyadh grocer, and a Doha shop are three studies. State which VAT sits on the shelf. France’s €843 million of perfume and cosmetics exports to the UAE in 2025 is a customs chapter, not an order for one line.</li>
+<li><strong>Machinery and equipment.</strong> Machinery was 29.2% of the Commission’s 2025 export mix, and transport equipment was 16.5%. Germany’s €11.390 billion of goods exports to the UAE is not a named buyer in Abu Dhabi. Recruit the person who specifies the order.</li>
+<li><strong>A second or third state.</strong> Qatar, Kuwait, Oman, and Bahrain are four populations and, where a VAT page exists, their own rate. Adding them as a small uplift on a UAE-plus-Saudi file hides the first site. Qatar retail research is linked above for a Doha shop.</li>
+</ul>
 
-<p>Third, the legal stack is not the Single Market. The EU and the GCC launched FTA negotiations in 1990 and suspended them in 2008 (${cite('ec-gulf', 'European Commission DG Trade')}; ${cite('eu-agreements', 'EU trade agreements')} ). The 29th EU–GCC Joint Council on 6 October 2025 recorded that both sides are exploring a possible resumption; it did not announce an agreement in force (${cite('consilium-joint', 'EU–GCC Joint Statement')} ). A bilateral EU–UAE FTA was agreed in principle on 10 April 2025, formally launched on 28 May 2025, and had a first round on 24 June 2025. It is listed as being negotiated. Strategic Partnership Agreement negotiations were proposed to each GCC state in July 2025 (${cite('eu-gulf-relations', 'EU–Gulf relations')} ). The six GCC states do not receive GSP preference (${cite('ec-gulf', 'European Commission DG Trade')}; ${cite('eu-agreements', 'EU trade agreements')} ). A 2026 launch memo that writes “FTA access” is selling a negotiation, not a tariff line.</p>
-
-<h2 id="official-numbers">Which official numbers should a 2026 Europe-to-GCC brief start from?</h2>
-
-<p>Use official series as the frame, then replace the frame with primary evidence for the SKU.</p>
-
-<h3>The EU–GCC trade frame</h3>
-
-<p>Open two labelled 2025 series, not one blended number. Eurostat Comext records EU–GCC goods trade of €165.555 billion: imports €55.585 billion (2.2% of extra-EU imports), exports €109.969 billion (4.2% of extra-EU exports), surplus €54.384 billion. Share in total EU trade was 3.2%. Export growth from 2024 to 2025 was 10.3%; import growth was −13.4%. Average annual export growth from 2021 to 2025 was 10.8% (${cite('eurostat-gcc-2025', 'Eurostat Comext')} ).</p>
-
-<p>The Commission’s Gulf page rounds the same year to €165.7 billion of goods trade (+1.1% on 2024), €55.4 billion of imports (−13.7%) and €110.3 billion of exports (+10.6%). Imports were led by mineral products (€39.2 billion, 70.7%) and base metals (€4.6 billion, 8.4%). The EU was the GCC’s second-biggest trade partner in 2025 (10.9% of GCC goods trade with the world; 14.3% of GCC imports; 7.4% of GCC exports). The GCC was the EU’s sixth-biggest trading partner, sixth-biggest export destination and eleventh-biggest importer (${cite('ec-gulf', 'European Commission DG Trade')} ).</p>
-
-<p>Services and investment sit on 2024. Two-way services trade was €84.4 billion — EU imports €28.2 billion and exports €56.2 billion. EU outward FDI stock in the GCC was €163.1 billion; inward FDI stock was €189.8 billion (${cite('ec-gulf', 'European Commission DG Trade')} ). In the UAE FTA box on the same page, the Commission writes that EU–UAE goods trade is worth €55 billion (19th-biggest goods partner), bilateral services trade is worth €39 billion (11th-biggest services partner), and “the EU’s investment in the UAE reached €186 billion.” EU exports to the UAE “have risen by 15% since last year, and by more than 48% since 2019” (${cite('ec-gulf', 'European Commission DG Trade')} ). Those are Commission wording. They are not a six-country demand curve.</p>
-
-<h3>The country split European brands most often hide</h3>
-
-<p>The EU–GCC Dialogue newsletter, prepared in Q4 2025 from Eurostat, publishes the 2024 country table that a “GCC average” slide usually drops. GCC imports from the EU in 2024 were:</p>
-
-<table>
-<thead><tr><th>GCC state</th><th>Imports from the EU, 2024</th><th>EU share of that state’s imports</th><th>EU rank as supplier</th></tr></thead>
-<tbody>
-<tr><td>United Arab Emirates</td><td>€44.4 billion</td><td>11.9%</td><td>2</td></tr>
-<tr><td>Saudi Arabia</td><td>€36.8 billion</td><td>19.0%</td><td>2</td></tr>
-<tr><td>Qatar</td><td>€7.3 billion</td><td>21.0%</td><td>1</td></tr>
-<tr><td>Kuwait</td><td>€5.7 billion</td><td>19.7%</td><td>1</td></tr>
-<tr><td>Oman</td><td>€3.3 billion</td><td>7.4%</td><td>6</td></tr>
-<tr><td>Bahrain</td><td>€1.8 billion</td><td>14.2%</td><td>2</td></tr>
-</tbody>
-</table>
-
-<p>Source: ${cite('eeas-newsletter', 'EU–GCC Dialogue newsletter, citing Eurostat')} . The same table puts EU imports from Saudi Arabia at €33.1 billion and from the UAE at €11.2 billion in 2024. UAE imports from the EU rose 13%; Saudi imports from the EU rose 8%. The two large markets are where European goods already land. They remain two licence stacks, two VAT rates and two buying cultures.</p>
-
-<h3>What member-state series add — and what they do not</h3>
-
-<p>Member-state series help when the first container is German, French or Italian. Destatis’s preliminary 2025 ranking, published 20 February 2026, puts German goods exports to the UAE at €11.390 billion (27th destination) and to Saudi Arabia at €8.914 billion (35th). Combined turnover ranks the UAE 36th at €13.257 billion and Saudi Arabia 43rd at €10.052 billion (${cite('destatis-2025', 'Destatis')} ).</p>
-
-<p>French Customs, via the Trésor, put 2024 France–Saudi goods trade (excluding military equipment) at €7.6 billion: exports €3.596 billion (−13%) and imports €3.995 billion. Aerospace was 23% of those exports (€816 million). Saudi Arabia was France’s 33rd customer and 33rd supplier (${cite('tresor-sa', 'Direction générale du Trésor')} ). France–UAE goods trade reached €10.8 billion in 2025 with an €8.5 billion French surplus. Aerospace and space were €4.4 billion of those 2025 exports; perfumes and cosmetics were €843 million. France’s 2024 UAE share was 3.0% (${cite('tresor-uae', 'Direction générale du Trésor')} ).</p>
-
-<p>Italy’s embassy pages record €7.9 billion of 2024 exports to the UAE (+19.4%) and €6.2 billion to Saudi Arabia (+27.9%) (${cite('italy-uae', 'Italian Embassy Abu Dhabi')}; ${cite('italy-sa', 'Italian Embassy Riyadh')} ). Those are export seats. They still need a named buyer in the state of first sale.</p>
-
-<h2 id="six-country-stacks">How do the six tax and licence stacks differ?</h2>
-
-<p>European counsel still writes “GCC VAT is 5%” and “set up in Dubai, sell everywhere.” Neither sentence survives an official rate page.</p>
-
-<table>
-<thead><tr><th>State</th><th>Published standard VAT</th><th>What a European price file must not do</th></tr></thead>
-<tbody>
-<tr><td>United Arab Emirates</td><td>5% from 1 January 2018; mandatory VAT registration above AED 375,000 (${cite('mof-vat', 'UAE Ministry of Finance')} )</td><td>Paste a euro ex-VAT ASP onto a Dubai shelf</td></tr>
-<tr><td>Oman</td><td>5% basic rate on most goods and services (${cite('oman-vat', 'Oman Tax Authority')} )</td><td>Assume the UAE file travels on the Batinah</td></tr>
-<tr><td>Bahrain</td><td>10% from 1 January 2022; mandatory registration above BHD 37,500 (${cite('bahrain-vat', 'Bahrain National Portal')} )</td><td>Keep a 5% Gulf assumption after 2022</td></tr>
-<tr><td>Saudi Arabia</td><td>15% standard rate (${cite('zatca-vat', 'ZATCA')} )</td><td>Use the UAE 5% as a Kingdom shelf price</td></tr>
-<tr><td>Qatar</td><td>No standard VAT rate on the official pages cited in this brief</td><td>Invent a 5% “GCC VAT”</td></tr>
-<tr><td>Kuwait</td><td>No standard VAT rate on the official pages cited in this brief</td><td>Invent a 5% “GCC VAT”</td></tr>
-</tbody>
-</table>
-
-<p>The UAE also levies federal corporate tax at 0% on taxable income up to AED 375,000 and 9% above that threshold, from the first financial year starting on or after 1 June 2023 (${cite('uae-ct', 'u.ae')} ). Oman’s Tax Authority publishes a 15% income tax on institutions and commercial companies and a 10% withholding tax on specified payments to non-residents (${cite('oman-vat', 'Oman Tax Authority')} ). Those are operating-cost facts, not a demand curve. A “Gulf margin” built on German or French VAT recovery will mis-state both the shelf and the P&amp;L.</p>
-
-<p>Licence stacks are equally un-copied. The UAE’s National Economic Register is organised by emirate licensing authority — mainland Dubai DET, Abu Dhabi DED and free zones are different seats — so a B2B brief has to name the emirate and the licence; see <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>. Saudi registration, RHQ rules and city catchments live on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>, not here. Qatar, Kuwait, Oman and Bahrain each keep their own commercial registration, municipality and labour files. A DIFC holding company or a Luxembourg SOPARFI does not replace them. Start the research before the stack is built, or the activity code and the demand evidence will not match.</p>
-
-<p>GCC-Stat’s 61.5 million people and USD 2.3 trillion GDP in 2024 are the regional frame, not a catchment (${cite('gccstat-portal', 'GCC-Stat')} ). A “60 million GCC consumers” slide that then budgets one Dubai warehouse is not a first-year plan.</p>
-
-<h2 id="ce-versus-gmark">What does a CE mark not buy you?</h2>
-
-<p>European product teams treat the CE mark as a passport. The Commission’s own page is narrower: CE marking signifies that products sold in the EEA meet the relevant EU safety, health and environmental rules. It is not an EU safety approval and not a mark of origin (${cite('ce-marking', 'European Commission')} ). It is an EEA statement, not a Gulf statement.</p>
-
-<p>The Gulf Conformity Mark is the GCC analogue for categories under GCC technical regulations. GSO’s Board approved the regulation on 24 May 2009 in Muscat. It is not a quality mark; it signifies conformity with essential health, safety and environment requirements. Affixing is compulsory for those regulated categories. Priority was given to toys and low-voltage devices. The mark must be at least 5 mm high, clear and permanent, and must carry the notified body’s number. The declaration of conformity is retained for at least ten years (${cite('gso-gmark', 'GSO')} ).</p>
-
-<p>GSO’s scheme table is the list to open before a first container. Children’s toys (GSO-TY) carry a five-year certificate. Low-voltage electrical equipment and appliances (GSO-LV) carry a three-year Gulf-wide certificate. Water-conservation products sit on a three-year Gulf-wide scheme. Some member-state-only schemes — scooters, national low-voltage, gas appliances — are not a six-country passport (${cite('gso-schemes', 'GSO scheme details')} ). A CE technical file can feed a notified-body assessment. It is not a substitute for the G-Mark on a regulated toy or appliance. Shipping CE-only product into a regulated category is waiting for a customs hold, not “entering the GCC.”</p>
-
-<p>National marks sit on top. Arabic and English appear in the G-Mark application flow. A European IFU that exists only in German, French or Italian is not a Gulf label. Write language into the brief the same way you write voltage, plug type and the notified-body number (${cite('gso-gmark', 'GSO')} ).</p>
-
-<h2 id="how-to-sequence">How should a European brand sequence the six states?</h2>
-
-<p>Sequence is a research question, not a slogan. The 2024 Eurostat country table is the right place to start and the wrong place to stop (${cite('eeas-newsletter', 'EU–GCC Dialogue newsletter')} ).</p>
-
-<p><strong>UAE first</strong> is the usual European habit because the import flow is the largest — €44.4 billion from the EU in 2024 — and because Dubai is already a regional sales seat (${cite('eeas-newsletter', 'EU–GCC Dialogue newsletter')} ). That habit is rational for a regional showroom, a free-zone holding company or a first English-language B2B seat. It is a poor habit for a first consumer SKU that will live on Saudi family demand, or for a first industrial invoice paid in Riyadh. Dubai resident counts and UAE licence counts are UAE facts, developed on <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> and <a href="/uae-retail-market-research">UAE retail market research</a>. They are not a Kingdom catchment.</p>
-
-<p><strong>Saudi Arabia first</strong> is the usual habit when the tonnes, the tickets or the households sit in the Kingdom. Saudi imports from the EU were €36.8 billion in 2024; Saudi exports to the EU were €33.1 billion (${cite('eeas-newsletter', 'EU–GCC Dialogue newsletter')} ). The population is 35.3 million (${cite('gastat-pop-2024', 'GASTAT')} ) and VAT is 15% (${cite('zatca-vat', 'ZATCA')} ) — a different price architecture from Dubai. Kingdom-only proofs live on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>. This article will not repeat them. Opening in Dubai “to learn the Gulf” and then copying the instrument into Riyadh is two studies paid as one.</p>
-
-<p><strong>Qatar, Kuwait, Oman and Bahrain</strong> are not one residual cell. Combined they imported €18.1 billion from the EU in 2024 (${cite('eeas-newsletter', 'EU–GCC Dialogue newsletter')} ). The EU is first-ranked supplier in Qatar and Kuwait on that table, and sixth in Oman. Qatar’s 3.14 million people and Kuwait’s 4.88 million are small by European standards and rich by the same standards (${cite('npc-qatar', 'National Planning Council')}; ${cite('csb-kuwait', 'CSB')} ). Oman’s 5.46 million mix a large national share with a large expatriate share (${cite('ncsi-oman', 'NCSI')} ). Bahrain’s 10% VAT is the published rate a causeway-adjacent retail file has to carry (${cite('bahrain-vat', 'Bahrain National Portal')} ). Adding the four states as a 10% uplift on a UAE-plus-Saudi file is not entry research. Use <a href="/qatar-retail-market-research">Qatar retail market research</a>, <a href="/qatar-technology-market-research">Qatar technology market research</a>, <a href="/kuwait-retail-market-research">Kuwait retail market research</a>, <a href="/oman-retail-market-research">Oman retail market research</a> and <a href="/bahrain-retail-market-research">Bahrain retail market research</a>. Sibling the instruments. Do not copy them.</p>
-
-<p>A practical sequence, when the evidence supports it: (1) name the first commercial state from buyer interviews, not from the largest EU export line; (2) price that state with its own VAT and mark; (3) decide whether a second state is a second commercial SKU or only a regional seat; (4) keep Saudi proofs on the Saudi playbook and UAE proofs on the UAE pages; (5) add Qatar, Kuwait, Oman or Bahrain only when a named buyer in that state can be shown. The EU–UAE FTA negotiation and a possible regional FTA are 2027 context, not a 2026 tariff assumption (${cite('ec-gulf', 'European Commission DG Trade')}; ${cite('consilium-joint', 'EU–GCC Joint Statement')} ).</p>
-
-<h2 id="five-proofs">What five proofs must a European committee demand?</h2>
-
-<table>
-<thead><tr><th>Proof the committee owes itself</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand</td><td>A defined buyer, a unit of demand and a state that matches the first site</td><td>A “GCC” market-size figure with no country split</td></tr>
-<tr><td>Price, including tax</td><td>Paid-for willingness-to-pay or current invoice evidence, stated with the VAT of the state of supply (${cite('mof-vat', 'UAE Ministry of Finance')}; ${cite('zatca-vat', 'ZATCA')}; ${cite('bahrain-vat', 'Bahrain National Portal')} )</td><td>A euro or sterling ASP pasted onto a Gulf shelf</td></tr>
-<tr><td>State and catchment</td><td>UAE, Saudi, Qatar, Kuwait, Oman or Bahrain volumes that respect national versus expatriate structure (${cite('fcsc-unified-2025', 'FCSC')}; ${cite('gastat-pop-2024', 'GASTAT')} )</td><td>A Gulf average presented as the first-year plan</td></tr>
-<tr><td>Channel and substitution</td><td>Who specifies, who distributes, what the buyer switches to if you miss</td><td>A channel map with no interviews</td></tr>
-<tr><td>Mark and vehicle</td><td>The G-Mark or national conformity category, if regulated, and the first legal vehicle in the state of sale (${cite('gso-gmark', 'GSO')}; ${cite('ce-marking', 'European Commission')} )</td><td>A slide that says “CE is accepted in the GCC”</td></tr>
-</tbody>
-</table>
-
-<p>Those five tests are the entry study. Everything else is context, and context does not repay a launch budget.</p>
-
-<p>Primary work is usually a short, named programme: structured interviews with the people who specify or pay in the first commercial state; a quantitative check on price, substitution and catchment in Arabic and English (and a third European language only when the buyer uses it); country quotas that match the first site, not a convenience panel in one Dubai mall; and a source table that separates official series, supplier quotations and fieldwork.</p>
-
-<p>If the study interviews residents or employees, two data-protection stacks apply. Any transfer of personal data to a third country must meet Chapter V of Regulation (EU) 2016/679 — adequacy, appropriate safeguards, or a listed derogation (${cite('gdpr', 'GDPR')} ). The six GCC states are third countries for that purpose. In the UAE, Federal Decree-Law No. 45 of 2021 has been in force since 2 January 2022; Articles 22 and 23 set the cross-border tests (${cite('uae-pdpl-portal', 'u.ae')}; ${cite('uae-pdpl-text', 'UAE PDPL')} ). Kingdom sample rules sit in the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi playbook</a>. Write the legal basis into the method note before you field.</p>
-
-<p>BioNixus prices that custom work between $10,000 and $60,000, depending on sample, countries and whether the output is a stand-alone entry file or a chapter inside a wider feasibility. The scope, timing and deliverables are guaranteed in writing. Accuracy of findings is not a claim we make.</p>
-
-<h2 id="sector-notes">How does the brief change by sector?</h2>
-
-<h3>Retail, FMCG and consumer brands</h3>
-
-<p>Start from the official population split in the first state, then replace it with a catchment. A Dubai tourist-facing format, a Riyadh family grocer, a Doha compound shop and a Muscat national-heavy basket do not share a demand curve (${cite('fcsc-unified-2025', 'FCSC')}; ${cite('gastat-pop-2024', 'GASTAT')}; ${cite('npc-qatar', 'National Planning Council')}; ${cite('ncsi-oman', 'NCSI')} ). Price work has to state which VAT sits on the shelf. French cosmetics exports to the UAE of €843 million in 2025 are a customs chapter, not a SKU forecast (${cite('tresor-uae', 'Direction générale du Trésor')} ). See <a href="/uae-retail-market-research">retail market research in the UAE</a>, <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a> and <a href="/b2c-industries">B2C market research</a>. Kingdom sampling, Arabic and mode sit on the <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">Saudi consumer-survey methods guide</a>.</p>
-
-<h3>Hospitality, travel retail and visitor catchments</h3>
-
-<p>Use national visitor series as the frame, then prove the competitive set. “GCC tourism” as one occupancy curve mis-specifies length of stay, corporate versus leisure mix and the named substitutes in Dubai versus Riyadh versus Doha. Pair the file with <a href="/uae-hospitality-market-research">hospitality market research in the UAE</a> and, if the first rooms are in the Kingdom, with the hospitality notes on the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi playbook</a>. A tracker that mixes overnight visitors with residents is a different instrument; see <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a>.</p>
-
-<h3>Technology, industrials and B2B</h3>
-
-<p>Machinery and appliances were 29.2% of EU goods exports to the GCC in 2025 (€32.2 billion) and transport equipment 16.5% (€18.3 billion) on the Commission’s rounded series (${cite('ec-gulf', 'European Commission DG Trade')} ). That is why German and Italian capital-goods exporters already have a Gulf invoice — and why a B2B entry still has to recruit the actual buying committee. A Destatis export line of €11.390 billion to the UAE is not a named specifier in Abu Dhabi (${cite('destatis-2025', 'Destatis')} ). Use <a href="/uae-technology-market-research">technology market research in the UAE</a>, <a href="/qatar-technology-market-research">technology market research in Qatar</a> and <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>. The same buyer-committee discipline is used on <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services research in Egypt</a>.</p>
-
-<h3>Food, beverage and regulated consumer goods</h3>
-
-<p>Foodstuffs, beverages and tobacco were €5.826 billion of EU goods exports to the GCC in 2025; food and live animals were €8.674 billion on the SITC grouping (${cite('eurostat-gcc-2025', 'Eurostat Comext')} ). Those chapters still need G-Mark or national conformity where the category is regulated, Arabic/English on-pack copy, and the VAT of the state of supply (${cite('gso-gmark', 'GSO')}; ${cite('mof-vat', 'UAE Ministry of Finance')} ). A CE-marked appliance that also heats food is two assessments, not one. Do not brief a single “Halal plus CE” slide as the entry file.</p>
-
-<h2 id="how-to-choose">How should you choose a Europe-to-GCC research partner?</h2>
-
-<p>Ask every firm, including BioNixus, to answer in writing before you sign:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for EU–GCC trade, member-state exports, population and VAT, and what is the date of each series?</li>
-<li>Will the study report by GCC state — and by city inside the first state — or only as “the Gulf”?</li>
-<li>How many interviews or surveys will you complete, in which language, and with which quotas?</li>
-<li>Which VAT rate, and which G-Mark or national conformity category, does the brief assume (${cite('mof-vat', 'UAE Ministry of Finance')}; ${cite('gso-gmark', 'GSO')} )?</li>
-<li>Is the first vehicle a UAE free-zone seat, a UAE mainland trader, a Saudi trading entity, or something else — and are you writing the demand chapter or the incorporation chapter?</li>
-<li>How will personal data move under GDPR Chapter V and, if the sample sits in the UAE, under Federal Decree-Law No. 45 of 2021 (${cite('gdpr', 'GDPR')}; ${cite('uae-pdpl-text', 'UAE PDPL')} )?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
+<li>Which official figures will you use, and will Eurostat and the Commission’s rounded series stay in separate sentences?</li>
+<li>Which Gulf state is the first sample, and which city?</li>
+<li>Which VAT rate is printed on the price card?</li>
+<li>Does this product need a Gulf conformity certificate, a CE file, or both?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>How will personal data move if any of it goes to Europe?</li>
 </ol>
+<p>A customs total describes shipments. Interviews describe who will pay. BioNixus does the interview work.</p>
 
-<p>Local incorporation houses that rank for “company setup Dubai” are often strong at free-zone paperwork. They are not automatically strong at demand evidence. A European trade-promotion desk can cite Destatis, the Trésor or ISTAT. It cannot run the interviews. Many European entry files need both: counsel who can file the vehicle, and a fieldwork team that can prove the tonnes or the tickets. BioNixus does the second job and will work alongside your existing counsel.</p>
-
-<p>Related industry reading includes the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a>, <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a> and <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a>. Browse <a href="/market-research-by-industry">market research by industry</a> and the 2026 rankings of <a href="/insights/top-market-research-companies-uae-2026">market research companies in the UAE</a> and <a href="/insights/top-market-research-companies-saudi-arabia-2026">market research companies in Saudi Arabia</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for Europe-to-GCC market entry research?</h2>
-
-<p>BioNixus is a primary market research firm, not a company-formation house or a European trade-promotion desk. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>The invoice is not buying a guaranteed finding. BioNixus guarantees, in writing: the agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. Accuracy of findings is not a claim we make.</p>
-
-<p>European teams brief London. Fieldwork for the Emirates is designed with the Dubai field office at Thuraya Tower 1; fieldwork for the Kingdom is designed with the Al Khobar field office; Kuwait work sits with the Salmiya field office. To brief Europe-to-GCC market entry research, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United Kingdom and from European numbers call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -486,39 +373,39 @@ ${REFERENCES_HTML}`;
 
 export const EU_GCC_ENTRY_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does Europe-to-GCC market entry research have to prove?',
+    question: 'What should a European brand research before selling in a Gulf state?',
     answer:
-      'It has to prove addressable demand, price including the VAT of the state of supply, country or catchment, channel, and the conformity mark plus legal vehicle, with dated, auditable evidence. A single Gulf TAM or a CE certificate is not Europe-to-GCC market entry research. Primary interviews and bilingual surveys are what make the brief usable for a European investment committee.',
+      'Name the European country that is shipping, the Gulf state and city, the price after that state’s VAT, and the product rule. A regional trade total does not answer those questions.',
   },
   {
-    question: 'Is the EU–GCC free trade agreement in force in 2026?',
+    question: 'Can the six Gulf states be one launch?',
     answer:
-      'No. The EU and the GCC launched FTA negotiations in 1990 and suspended them in 2008. The 29th Joint Council on 6 October 2025 said both sides are exploring a possible resumption. A bilateral EU–UAE FTA was formally launched on 28 May 2025 and is listed as being negotiated. The six GCC states do not receive GSP preference. Do not write “FTA access” into a 2026 launch memo.',
+      'No. The 2024 country table gives a separate import figure for each state. VAT pages publish 5% in the UAE, 5% in Oman, 10% in Bahrain, and 15% in Saudi Arabia. Use a separate sample for the first state.',
   },
   {
-    question: 'Can a European brand treat the GCC as one market?',
+    question: 'Which trade figures are safe to quote?',
     answer:
-      'No. The UAE and Saudi Arabia took €81.2 billion of the €99.3 billion of GCC imports from the EU in 2024, but they do not share a VAT rate, a licence stack or a buyer mix. Published VAT rates are 5% in the UAE and Oman, 10% in Bahrain and 15% in Saudi Arabia. Qatar and Kuwait do not appear on those official rate pages.',
+      'Eurostat’s 2025 goods total is €165,555 million. The Commission’s rounded series puts 2025 goods exports at €110.3 billion. Keep the two series apart. The 2024 country table is the place to see the UAE and Saudi Arabia separately.',
   },
   {
-    question: 'Does a CE mark replace the Gulf Conformity Mark?',
+    question: 'Does a CE mark replace a Gulf conformity mark?',
     answer:
-      'No. CE marking is an EEA statement that a product meets the relevant EU harmonisation rules. The Gulf Conformity Mark is compulsory for product categories that sit under GCC technical regulations, with toys and low-voltage devices as the priority schemes. A CE technical file can feed a notified-body assessment. It is not a substitute for the G-Mark on a regulated toy or appliance.',
+      'No. CE marking is a European assessment. It is not a mark of origin and not an approval by the EU. The Gulf mark, approved on 24 May 2009, is compulsory for categories covered by Gulf technical regulations. It is not a quality mark.',
   },
   {
-    question: 'Which official numbers should a 2026 Europe-to-GCC brief use?',
+    question: 'Is there an EU–Gulf free-trade agreement a brand can use in 2026?',
     answer:
-      'Start from Eurostat’s 2025 EU–GCC goods totals (€165.555 billion trade, €109.969 billion EU exports), the Commission’s 2024 services and FDI stocks, the 2024 Eurostat country table, Destatis 2025, the French Trésor 2024–2025 series, Italian embassy 2024 export figures, GCC-Stat’s 61.5 million people and USD 2.3 trillion GDP, and the national population and VAT pages cited here. Label each series.',
+      'The Commission’s agreements page lists the regional FTA as suspended since 2008 for five of the states, and lists the EU–UAE FTA as being negotiated. The 6 October 2025 joint statement explores resuming regional talks. Quote the page. A suspended text is not a tariff on an invoice.',
   },
   {
-    question: 'How much does custom Europe-to-GCC market entry research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom market entry programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, number of countries, mode and whether the output is a stand-alone entry file or a chapter inside a wider study. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the cities, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus from London rather than a Dubai setup firm?',
+    question: 'Why brief BioNixus rather than relying only on a trade table?',
     answer:
-      'Incorporation houses file the vehicle. BioNixus proves demand. European teams brief London EC1V 2NX; fieldwork is designed with the Dubai, Al Khobar and Salmiya field offices. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'A trade table describes shipments. BioNixus measures demand, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

@@ -227,14 +227,14 @@ const comparisonCriteria = [
 ];
 
 export const USA_HEALTHCARE_MR_PATH = '/insights/top-healthcare-market-research-companies-usa-2026';
-export const USA_HEALTHCARE_MR_TITLE = 'Top Healthcare Market Research Companies in the USA (2026)';
+export const USA_HEALTHCARE_MR_TITLE = 'Healthcare Market Research Companies in the USA (2026)';
 export const USA_HEALTHCARE_MR_DESCRIPTION =
-  'Top healthcare market research companies in the USA (2026). Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail.';
-export const USA_HEALTHCARE_MR_H1 = 'Top healthcare market research companies in the USA';
+  'Healthcare market research companies in the USA for 2026. Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail.';
+export const USA_HEALTHCARE_MR_H1 = 'Healthcare market research companies in the USA';
 export const USA_HEALTHCARE_MR_CTA_ID = 'usa_healthcare_mr_companies_2026';
 export const USA_HEALTHCARE_MR_FIRMS = firms;
 export const USA_HEALTHCARE_MR_FAQS = faqItems;
-export const USA_HEALTHCARE_MR_DATE_MODIFIED = '2026-09-28';
+export const USA_HEALTHCARE_MR_DATE_MODIFIED = '2026-10-18';
 
 const CANONICAL = `https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`;
 const PAGE_AUTHOR = getEditorialAuthor({
@@ -331,9 +331,9 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
           breadcrumbs={[
             { name: 'Home', href: '/' },
             { name: 'Insights', href: '/insights' },
-            { name: 'Top healthcare market research companies in the USA', href: USA_HEALTHCARE_MR_PATH },
+            { name: 'Healthcare market research companies in the USA', href: USA_HEALTHCARE_MR_PATH },
           ]}
-          kicker="Healthcare & Pharma Research — 2026 Buyer Shortlist"
+          kicker="Healthcare market research companies in the USA — 2026 shortlist"
           h1={USA_HEALTHCARE_MR_H1}
           lead={
             <>
@@ -347,14 +347,15 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
           rest={
             <>
               Start from the{' '}
-              <Link to="/healthcare-market-research">healthcare market research hub</Link> for methodology, or the{' '}
+              <Link to="/healthcare-market-research">healthcare market research hub</Link> for methodology, the{' '}
+              <Link to="/pharmaceutical-companies-usa">pharmaceutical companies in the USA</Link> directory, or the{' '}
               <Link to="/iqvia-alternative">IQVIA alternative</Link> and{' '}
               <Link to="/nielsen-alternative">Nielsen alternative</Link> pages for the complement model. Cross-industry
               ranking:{' '}
               <Link to="/insights/top-market-research-companies-usa-2026">top market research companies in the USA</Link>.
             </>
           }
-          metaLine={`Updated 20 September 2026 · By ${PAGE_AUTHOR.name} · 14 min read`}
+          metaLine={`Updated 18 October 2026 · By ${PAGE_AUTHOR.name} · 14 min read`}
           stats={[
             { value: 'Primary', label: 'BioNixus brief' },
             { value: 'Syndicated', label: 'IQVIA / NielsenIQ' },
@@ -746,6 +747,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
                 { to: '/pharmacy-mystery-shopper', label: 'Pharmacy mystery shopper', desc: 'Availability, facing, and price in named pharmacies.' },
                 { to: '/pharmaceutical-competitor-intelligence', label: 'Pharmaceutical competitor intelligence', desc: 'Brand versus competitors at account and SKU level.' },
                 { to: '/pricing', label: 'Pricing', desc: '2026 planning bands — custom research from $10,000 to $60,000.' },
+                { to: '/pharmaceutical-companies-usa', label: 'Pharmaceutical companies in the USA', desc: 'Manufacturers, MNCs, and distributors the US research brief names.' },
                 { to: '/insights/top-market-research-companies-usa-2026', label: 'Top market research companies USA', desc: 'Cross-industry USA ranking — healthcare sister page is this URL.' },
                 { to: '/insights/top-healthcare-market-research-companies-canada-2026', label: 'Top healthcare MRC in Canada', desc: 'CADTH/pCPA-aware Canadian healthcare research shortlist.' },
                 { to: '/insights/top-healthcare-market-research-companies-uk-2026', label: 'Top healthcare MRC in the UK', desc: 'MHRA/NICE/NHS healthcare research companies.' },

@@ -22,6 +22,10 @@ const llms = readFileSync(join(root, 'public/llms.txt'), 'utf8');
 const llmsFull = readFileSync(join(root, 'public/llms-full.txt'), 'utf8');
 const sitemap = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');
 const hub = readFileSync(join(root, 'src/pages/healthcare-research/HubPage.tsx'), 'utf8');
+const iqviaHtml = readFileSync(join(root, 'public/conf/iqvia-alternative.html'), 'utf8');
+const homeExplore = readFileSync(join(root, 'src/components/home/HomeExploreResearchSection.tsx'), 'utf8');
+const usaCompanies = readFileSync(join(root, 'src/pages/UsaPharmaCompanies.tsx'), 'utf8');
+const usaGeneralListicle = readFileSync(join(root, 'src/pages/TopMarketResearchCompaniesUsa2026.tsx'), 'utf8');
 
 describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
   it('ships unique title, meta, H1, and CTR override in the 50–70 / 150–160 band', () => {
@@ -29,7 +33,7 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(USA_HEALTHCARE_MR_TITLE.length).toBeLessThanOrEqual(70);
     expect(USA_HEALTHCARE_MR_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
     expect(USA_HEALTHCARE_MR_DESCRIPTION.length).toBeLessThanOrEqual(160);
-    expect(USA_HEALTHCARE_MR_H1).toBe('Top healthcare market research companies in the USA');
+    expect(USA_HEALTHCARE_MR_H1).toBe('Healthcare market research companies in the USA');
     expect(pageSource.match(/<h1[\s>]/g)?.length ?? pageSource.match(/h1=\{USA_HEALTHCARE_MR_H1\}/g)?.length).toBe(1);
     expect(getCtrSeo(USA_HEALTHCARE_MR_PATH)).toEqual({
       title: USA_HEALTHCARE_MR_TITLE,
@@ -101,6 +105,7 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(pageSource).toContain('mailto:admin@bionixus.com');
     for (const path of [
       '/healthcare-market-research',
+      '/pharmaceutical-companies-usa',
       '/iqvia-alternative',
       '/nielsen-alternative',
       '/account-level-market-research',
@@ -114,15 +119,19 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
   });
 
   it('is wired into sitemap, llms buyer pages, and the healthcare hub', () => {
-    expect(USA_HEALTHCARE_MR_DATE_MODIFIED).toBe('2026-09-28');
+    expect(USA_HEALTHCARE_MR_DATE_MODIFIED).toBe('2026-10-18');
     expect(sitemap).toContain(`<loc>https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}</loc>`);
     expect(sitemap).toMatch(
-      new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-09-28</lastmod>`),
+      new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-10-18</lastmod>`),
     );
     expect(llms).toContain(`https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`);
     expect(llms).toContain('# Last GEO refresh: 2026-Q4 (2026-10-17)');
     expect(llmsFull).toContain(`https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`);
     expect(hub).toContain(USA_HEALTHCARE_MR_PATH);
+    expect(iqviaHtml).toContain(USA_HEALTHCARE_MR_PATH);
+    expect(homeExplore).toContain(USA_HEALTHCARE_MR_PATH);
+    expect(usaCompanies).toContain(`to="${USA_HEALTHCARE_MR_PATH}"`);
+    expect(usaGeneralListicle).toContain(`to="${USA_HEALTHCARE_MR_PATH}"`);
     expect(pageSource).not.toContain('/blog/top-healthcare-market-research-companies-usa');
   });
 });

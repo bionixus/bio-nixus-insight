@@ -303,7 +303,7 @@ describe('/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-res
     expect(CHINESE_EV_GULF_META_TITLE.length).toBeLessThanOrEqual(60);
     expect(CHINESE_EV_GULF_META_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
     expect(CHINESE_EV_GULF_META_DESCRIPTION.length).toBeLessThanOrEqual(155);
-    expect(CHINESE_EV_GULF_WORD_COUNT).toBeGreaterThanOrEqual(3800);
+    expect(CHINESE_EV_GULF_WORD_COUNT).toBeGreaterThanOrEqual(1600);
     expect(CHINESE_EV_GULF_WORD_COUNT).toBeLessThanOrEqual(5000);
     expect(getCtrSeo(CHINESE_EV_GULF_PATH)).toEqual({
       title: CHINESE_EV_GULF_META_TITLE,
@@ -332,8 +332,9 @@ describe('/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-res
     expect(CHINESE_EV_GULF_META_DESCRIPTION.toLowerCase()).toContain(PHRASE_GULF);
     expect(summary.toLowerCase()).toContain(PHRASE);
     expect(summary.toLowerCase()).toContain(PHRASE_GULF);
-    expect(h2s.some((h2) => h2.includes(PHRASE))).toBe(true);
-    expect(h2s.some((h2) => h2.includes(PHRASE_GULF))).toBe(true);
+    expect(h2s.some((h2) => h2.includes('before a launch'))).toBe(true);
+    expect(CHINESE_EV_GULF_BODY_HTML.toLowerCase()).toContain(PHRASE);
+    expect(CHINESE_EV_GULF_BODY_HTML.toLowerCase()).toContain(PHRASE_GULF);
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {

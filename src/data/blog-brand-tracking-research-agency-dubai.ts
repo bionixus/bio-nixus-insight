@@ -37,15 +37,15 @@ export const DUBAI_BRAND_TRACKING_META_DESCRIPTION =
   'Brand tracking research agency Dubai guide: custom tracker vs syndicated data, bilingual UAE fieldwork from a Dubai field office, KPIs that move budgets.';
 
 export const DUBAI_BRAND_TRACKING_DISPLAY_TITLE =
-  'Brand Tracking in Dubai and the UAE: Building a Tracker That Moves Budgets';
+  'What a brand tracking research agency Dubai should measure';
 
 export const DUBAI_BRAND_TRACKING_DISPLAY_SUBTITLE =
-  'Brand tracking research agency Dubai: custom vs syndicated';
+  'Residents, overnight visitors, and a score a budget meeting can use';
 
 export const DUBAI_BRAND_TRACKING_BREADCRUMB_LABEL = 'Brand tracking in Dubai and the UAE';
 
 export const DUBAI_BRAND_TRACKING_EXCERPT =
-  'A sourced 2026 guide to commissioning a brand tracking research agency Dubai programme: when a custom tracker beats a syndicated index, how to separate residents from visitors, and why BioNixus fields UAE waves from a Dubai field office.';
+  'How to brief brand tracking in Dubai: separate residents from overnight visitors, and decide when your own wave is more useful than a shared category index.';
 
 export const DUBAI_BRAND_TRACKING_PUBLISHED_ISO = '2026-10-13T12:00:00.000Z';
 export const DUBAI_BRAND_TRACKING_UPDATED_ISO = '2026-10-13T12:00:00.000Z';
@@ -169,165 +169,120 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const DUBAI_BRAND_TRACKING_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What should a brand tracking research agency Dubai measure?', anchor: 'what-a-brand-tracking-research-agency-dubai-measures' },
-  { heading: 'Custom tracker vs syndicated data', anchor: 'custom-tracker-vs-syndicated-data' },
-  { heading: 'The KPIs that move media and brand budgets', anchor: 'kpis-that-move-budgets' },
-  { heading: 'Mental availability is not awareness', anchor: 'mental-availability-is-not-awareness' },
-  { heading: 'How to sample residents, visitors and emirates', anchor: 'residents-visitors-emirates' },
-  { heading: 'Why Dubai is a field office, not the whole market', anchor: 'dubai-field-office' },
-  { heading: 'Advertising identification and personal-data rules', anchor: 'advertising-and-personal-data-rules' },
-  { heading: 'Cadence, campaign tags and the budget meeting', anchor: 'cadence-campaign-tags-budget-meeting' },
-  { heading: 'How to choose a brand tracking research agency Dubai', anchor: 'choosing-a-brand-tracking-research-agency-dubai' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What should the tracker measure?', anchor: 'what-to-measure' },
+  { heading: 'Your own wave or a shared index?', anchor: 'custom-or-shared' },
+  { heading: 'Who is actually in Dubai?', anchor: 'who-is-in-dubai' },
+  { heading: 'Memory, not one awareness score', anchor: 'memory' },
+  { heading: 'Ads and personal data', anchor: 'ads-and-data' },
+  { heading: 'How to choose a firm', anchor: 'how-to-choose' },
+  { heading: 'Who fields the work', anchor: 'who-fields' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const DUBAI_BRAND_TRACKING_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> A brand tracking research agency Dubai brief should name the budget decision first, then choose a custom tracker vs syndicated index when the brand set, category entry points or emirate cuts are missing from the shared questionnaire. Field Arabic-English waves from the Dubai field office and keep resident and visitor samples separate.</p>`;
+export const DUBAI_BRAND_TRACKING_EXECUTIVE_SUMMARY_HTML = `<p>A brand tracking research agency Dubai brief should name the budget decision first. The next choice is a custom tracker vs syndicated data. Residents, people in the city by day, and overnight visitors are different samples. Mental availability is the chance a buyer thinks of the brand in a buying situation. It is not one awareness score.</p>`;
 
-const NARRATIVE_HTML = `<p>Brand teams in the UAE often buy a shared category index and then discover, in the annual budget meeting, that it cannot answer the only question that matters: which line of spend to keep, cut or move. This guide sets out how a brand tracking research agency Dubai brief should compare a custom tracker with syndicated data, how to keep residents and overnight visitors in different samples, and why BioNixus fields the work from a Dubai field office rather than treating the city as headquarters. It sits in our <a href="/bionixus-industries/insights">industry insights</a> series, next to <a href="/b2c-industries">B2C market research</a> and country pages such as <a href="/uae-retail-market-research">UAE retail market research</a> and <a href="/saudi-arabia-retail-market-research">Saudi retail market research</a>.</p>
+const NARRATIVE_HTML = `<p>A shared category score can show that a brand moved. It often cannot show which line of spend to keep. This note is for a brand tracking research agency Dubai brief. It says what to measure, who belongs in the sample, and when your own wave is the better buy. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>, next to <a href="/b2c-industries">B2C market research</a>, <a href="/uae-retail-market-research">UAE retail market research</a> and <a href="/saudi-arabia-retail-market-research">Saudi retail market research</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: UAE and Dubai brand-tracking context, October 2026</strong></p>
+<p>Write the decision before you write the questionnaire. Keep a media channel, cut it, or move the money. Refresh a distinctive asset. Hold a launch. Change the pack or the price. The tracker should serve that meeting. A generic “brand health” number does not.</p>
+
+<h2 id="what-to-measure">What should the tracker measure?</h2>
+
+<p>Name the buyers. UAE residents, people who are in Dubai during the day, and overnight visitors are three groups. On 30 July 2026, Digital Dubai reported 4.580 million residents at the end of 2025, up 7.5%. The same release said 6.392 million people were present at peak daytime hours. More than 1.812 million of them were there temporarily, for work, tourism, study or shopping. The release also reported 19.6 million international visitors in 2025, about 96 million airport passengers, and real GDP growth of 5.4%. ${cite('digital-dubai-pop-2025', 'Digital Dubai')}</p>
+
+<p>On 9 February 2026 the Dubai Media Office, citing the Department of Economy and Tourism, reported a different visitor series. International overnight visitors were 19.59 million in 2025, up 5% from 18.72 million in 2024. December 2025 was 2.04 million visitors. Western Europe was 4.1 million (21%). The GCC was 2.99 million (15%). The wider MENA region was 2.17 million (11%). ${cite('mediaoffice-visitors-2025', 'Dubai Media Office, 9 February 2026')}</p>
+
+<p>These are two published visitor figures. This note does not blend 19.6 million and 19.59 million. Say which series you mean.</p>
+
+<p>The same 9 February 2026 release reported the 2025 hotel year. Inventory was 154,264 rooms across 827 establishments. Occupancy was 80.7%. Occupied room nights were 44.85 million. Average daily rate was AED 579. Revenue per available room was AED 467. ${cite('mediaoffice-visitors-2025', 'Dubai Media Office')}</p>
+
+<p>The 2024 hotel year was a different release. On 9 February 2025 the Dubai Media Office reported 18.72 million international visitors, up 9% from 17.15 million in 2023. Hotel inventory was 154,016 rooms across 832 establishments. Occupancy was 78.2%. Occupied room nights were 43.03 million. Average daily rate was AED 538. Revenue per available room was AED 421. The same releases say D33 aims to double the size of Dubai’s economy by 2033. ${cite('mediaoffice-visitors-2024', 'Dubai Media Office, 9 February 2025')}</p>
+
+<p>A beach-resort score that ignores overnight visitors is answering a resident question. A grocery score collected in a mall in December is easy to mix with visitors. Tag the universe on every row.</p>
+
+<h2 id="custom-or-shared">Your own wave or a shared index?</h2>
+
+<p>The practical choice is a custom tracker vs syndicated data. A shared index puts many brands on one questionnaire, one sample and one calendar. That is useful when you accept the publisher’s brand list, attribute list and city cuts. Your own wave measures the brands, situations, languages and emirates your budget meeting will argue about.</p>
+
+<p>Use the shared index for a category reading you will not edit. Use your own wave when the shared list misses a distinctive asset, the Arabic wording, the visitor-versus-resident split, or a competitor in another emirate. Many briefs need both. Publish them side by side. Do not average them into one score.</p>
+
+<p>ISO 20252:2026 is the vocabulary and service-requirements standard for market, opinion and social research, including insights and data analytics. Edition 4 was published in September 2026. It does not apply to non-research work such as direct marketing. ${cite('iso-20252-2026', 'ISO')}</p>
+
+<p>The Market Research Society says ISO 20252:2026 replaces the 2019 edition. Certification to the 2026 standard is mandatory from September 2029. Primary records are kept for 12 months, or as agreed. Project research records are kept for 24 months, or as agreed. ${cite('mrs-iso-20252', 'Market Research Society')}</p>
+
+<p>A tracker is research. A mailing that re-uses survey emails for sales is not covered by that standard.</p>
+
+<h2 id="who-is-in-dubai">Who is actually in Dubai?</h2>
+
+<p>The Federal Competitiveness and Statistics Centre published Unified UAE Numbers in December 2025. The 2024 population was 11.29 million, up 5.7% from 10.68 million in 2023. The release cites about 200 nationalities. The economic participation rate was 81.4%. It was 93% for males and 56% for females. ${cite('fcsc-unified-2025', 'FCSC')}</p>
+
+<p>Dubai is not the whole country. A mall sample in Dubai will hear more from visitors and from people who are in the city by day. It will hear less from Abu Dhabi households and from the Northern Emirates. Put the emirate on the quota if the media plan runs outside Dubai.</p>
+
+<p>Pick the frame in the proposal.</p>
 <ul>
-<li><strong>UAE population, 2024:</strong> 11.29 million, up 5.7% from 10.68 million in 2023; about 200 nationalities; economic participation 81.4% (males 93%, females 56%) (${cite('fcsc-unified-2025', 'FCSC Unified UAE Numbers')}).</li>
-<li><strong>Dubai residents, end-2025:</strong> 4.580 million on a register-based, real-time count, up about 332,000 or 7.5% versus end-2024 (${cite('digital-dubai-pop-2025', 'Digital Dubai')}).</li>
-<li><strong>Who is in the city by day:</strong> 6.392 million people present at peak daytime hours, including more than 1.812 million temporarily present for work, tourism, study or shopping (${cite('digital-dubai-pop-2025', 'Digital Dubai')}).</li>
-<li><strong>Overnight visitors:</strong> 18.72 million in 2024 (+9% from 17.15 million in 2023) and 19.59 million in 2025 (+5%) (${cite('mediaoffice-visitors-2024', 'Dubai Media Office, 2024')} ; ${cite('mediaoffice-visitors-2025', 'Dubai Media Office, 2025')}).</li>
-<li><strong>2025 visitor mix:</strong> Western Europe 4.1 million (21%), GCC 2.99 million (15%), wider MENA 2.17 million (11%); December 2025 was the first month above 2 million (2.04 million) (${cite('mediaoffice-visitors-2025', 'DET via Dubai Media Office')}).</li>
-<li><strong>Hotels, 2025:</strong> 154,264 rooms across 827 establishments; occupancy 80.7%; 44.85 million occupied room nights; ADR AED579; RevPAR AED467 (${cite('mediaoffice-visitors-2025', 'DET hospitality metrics')}).</li>
-<li><strong>Mental availability:</strong> the probability that a buyer notices, recognises or thinks of a brand in buying situations — not a single unaided-awareness score (${cite('eb-mental-availability', 'Ehrenberg-Bass / Byron Sharp')}).</li>
-<li><strong>Research standard:</strong> ISO 20252:2026, published September 2026, covers market, opinion and social research and does not apply to direct marketing (${cite('iso-20252-2026', 'ISO')}).</li>
-</ul>
-</div>
-
-<h2 id="what-a-brand-tracking-research-agency-dubai-measures">What should a brand tracking research agency Dubai measure?</h2>
-
-<p>A useful brand tracking research agency Dubai programme measures the decision the next budget meeting must take, not a generic “brand health” number. Three questions separate a tracker that moves spend from a dashboard that nobody owns:</p>
-
-<ul>
-<li><strong>Which decision?</strong> Keep or cut a media channel, fund a distinctive-asset refresh, hold a launch, or change the pack and price architecture.</li>
-<li><strong>Which buyers?</strong> UAE residents, Dubai’s daytime inflow, or overnight visitors. Digital Dubai’s register-based count puts end-2025 residents at 4.580 million, while peak daytime presence reaches 6.392 million and 2025 overnight visitors reached 19.59 million (${cite('digital-dubai-pop-2025', 'Digital Dubai')}; ${cite('mediaoffice-visitors-2025', 'Dubai Media Office, 2025')}). Those are three universes.</li>
-<li><strong>Which memory structures?</strong> Ehrenberg-Bass defines mental availability as the probability that a buyer will notice, recognise and/or think of a brand in buying situations, depending on the quality and quantity of memory structures — not on a single category-cued awareness item (${cite('eb-mental-availability', 'Byron Sharp')}).</li>
+<li>Residents usually live in the UAE. Cut them by emirate, nationality band and language. Retail, telecom, banking and most grocery media need this frame.</li>
+<li>People present by day matter for malls, food courts and petrol forecourts. Do not call that group the Dubai population.</li>
+<li>Overnight visitors matter for hotels, attractions, duty-free and destination campaigns. In the February 2026 tourism release, Western Europe was 4.1 million visitors, 21% of that overnight series.</li>
 </ul>
 
-<p>Private-sector UAE brand-equity league tables are not cited here. Official population, visitor and hotel series, listed above, are enough to show why a Dubai mall intercept is not a national tracker and why a visitor wave is not a resident media score. Write the universe, the competitor set and the budget question in the brief before anyone talks about sample size.</p>
+<p>Keep the three frames in separate scores. Weight them only if the commercial team will act on a blend, and write the blend rule down. A shift that comes from switching an English app intercept for an Arabic mall sample is a method change. It is not a brand movement.</p>
 
-<p>For shopper evidence a survey cannot see — facings, staff prompts, wait times — pair the tracker with a <a href="/templates/mystery-shop-retail-brief">mystery-shop retail brief</a> and the account map on <a href="/uae-retail-market-research">UAE retail market research</a>. Hospitality brands that live on occupied room nights should also read <a href="/uae-hospitality-market-research">UAE hospitality market research</a>.</p>
+<h2 id="memory">Memory, not one awareness score</h2>
 
-<h2 id="custom-tracker-vs-syndicated-data">Custom tracker vs syndicated data</h2>
+<p>Ehrenberg-Bass, in Byron Sharp’s note, defines mental availability as the probability that a buyer will notice, recognise and/or think of a brand in buying situations. It depends on the quality and quantity of memory structures. Mental availability is not awareness. It is not brand salience used as a synonym for awareness. ${cite('eb-mental-availability', 'Ehrenberg-Bass')}</p>
 
-<p>Syndicated brand indexes and shared category trackers have a job: they put many brands on one questionnaire, one sample and one reporting calendar. That is efficient when you need a category-level read and you accept the sponsor’s brand list, attribute list and city cuts. A custom tracker has a different job: it measures the brands, category entry points, languages and emirates that your budget meeting will actually argue about.</p>
+<p>Category entry points are the thoughts buyers have as they move into a purchase. Ehrenberg-Bass describes them as the building blocks of mental availability. ${cite('eb-ceps', 'Ehrenberg-Bass')}</p>
 
-<table>
-<thead><tr><th>Design choice</th><th>Syndicated index</th><th>Custom tracker</th></tr></thead>
-<tbody>
-<tr><td>Brand set</td><td>Whoever paid to be in the wave, plus a fixed competitor list</td><td>The set your media and sales teams will act on, including regional and private-label names</td></tr>
-<tr><td>Attributes and CEPs</td><td>Shared category language</td><td>Your category entry points and distinctive assets, written in Arabic and English</td></tr>
-<tr><td>Geography</td><td>Often “UAE” or “GCC” as one cell</td><td>Dubai, Abu Dhabi and the Northern Emirates as designed cuts</td></tr>
-<tr><td>Universe</td><td>Usually residents on a panel</td><td>Residents, visitors, or both — never mixed without a flag</td></tr>
-<tr><td>Cadence and tags</td><td>The publisher’s calendar</td><td>Waves timed to your flights, with campaign and channel tags</td></tr>
-<tr><td>Who owns the score</td><td>A shared dashboard</td><td>The team that can move the budget</td></tr>
-</tbody>
-</table>
+<p>A single “which brands come to mind in this category?” item uses one cue. The published point is that memory is situational. Ask which brands come to mind for a named situation. The situation is the entry point, not the brand’s advertising line.</p>
 
-<p>Use syndicated data when you need a cheap, comparable category temperature and you will not change the questionnaire. Use a custom tracker when the shared instrument cannot see your distinctive assets, your bilingual wording, your visitor-versus-resident split, or the competitor that is actually taking share in Al Ain or Sharjah. Many 2026 briefs need both: the index as context, the custom wave as the decision tool. Do not average them.</p>
+<p>Test colour, shape, a sound, the Arabic wordmark and the English wordmark as assets. Report the situations, not only a mean awareness score.</p>
 
-<p>ISO 20252:2026, published in September 2026, sets vocabulary and service requirements for market, opinion and social research, including insights and data analytics. It does not apply to non-research activities such as direct marketing (${cite('iso-20252-2026', 'ISO 20252:2026')}). A brand tracker is a research service. A CRM blast that re-uses survey emails is not. The Market Research Society records a three-year transition from the 2019 edition, with certification to the 2026 standard mandatory from September 2029, and retention of primary records for 12 months and project research records for 24 months unless the client agrees otherwise (${cite('mrs-iso-20252', 'MRS')}).</p>
+<p>Arabic and English versions need the same meaning. A word-for-word translation can flip an item. Test both languages. Record the language of the interview. If the two languages cannot be stacked, you have two studies.</p>
 
-<h2 id="kpis-that-move-budgets">Which KPIs actually move media and brand budgets?</h2>
+<h2 id="ads-and-data">Ads and personal data</h2>
 
-<p>A tracker that only reports unaided awareness will not survive a media-mix meeting. The KPIs that change spend are the ones a channel, a pack or a creative team can own.</p>
+<p>A question about whether an advertisement was seen is still research. The advertisement itself sits under media law.</p>
 
+<p>Federal Decree-Law No. 55 of 2023 on media regulation took effect on 1 December 2023. It was published in the Official Gazette on 31 October 2023, issue 762. ${cite('uae-media-law', 'UAE Legislation')}</p>
+
+<p>Article 20 of the published text says advertising must not violate media-content standards or harm the public interest. Advertisers must include something that clearly shows the material is advertising. ${cite('dda-media-law-pdf', 'Federal Decree-Law 55/2023, Article 20')}</p>
+
+<p>Cabinet Resolution No. 68 of 2024 is the executive regulation. It was issued on 10 June 2024, published on 31 July 2024, and came into force on 31 October 2024. Article 33 says advertisements must be clearly identified and separate from editorial content. They must not make misleading, exaggerated or exclusivity claims. Prior approval is required for real estate, medical, securities, education and food advertising. ${cite('cabinet-68-2024', 'Cabinet Resolution 68/2024')}</p>
+
+<p>If the questionnaire asks “did you see an ad”, show the execution that was identified as advertising.</p>
+
+<p>Federal Decree-Law No. 45 of 2021, the Personal Data Protection Law, came into force on 2 January 2022. The official portal says processing generally needs the data owner’s consent. The UAE Data Office is the federal regulator. The same page says Federal Law No. 15 of 2020 on consumer protection prohibits suppliers from using consumer data for marketing. ${cite('uae-pdpl-portal', 'u.ae')}</p>
+
+<p>The ICC/ESOMAR Code, updated in July 2025, says participation is voluntary and based on clear information. Re-contact needs agreement, except for quality control, adverse-event reporting, or the law. Consent is a freely given, specific and informed indication of agreement. ${cite('esomar-2025', 'ICC/ESOMAR Code')}</p>
+
+<p>That covers an incentive, a recording notice, and any join of customer-database fields. A tracker is not a remarketing list.</p>
+
+<h2 id="how-to-choose">How to choose a firm</h2>
+
+<p>Ask these questions in the proposal.</p>
 <ol>
-<li><strong>Mental availability by situation, not one awareness number.</strong> Sharp’s published definition is situational: higher mental availability means being easily noticed or thought of in many buying situations, for more buyers (${cite('eb-mental-availability', 'Ehrenberg-Bass')}). Report the situations, not only the mean.</li>
-<li><strong>Category entry points.</strong> Ehrenberg-Bass describes CEPs as the thoughts category buyers have as they move into a purchase — the building blocks of mental availability. A two-stage design elicits the CEPs, then quantifies how often each brand comes to mind for each one (${cite('eb-ceps', 'Ehrenberg-Bass CEPs')}).</li>
-<li><strong>Distinctive-asset recognition.</strong> Colour, shape, sonic cue, Arabic wordmark and English wordmark should be tested as assets, not as decoration on a slide.</li>
-<li><strong>Salience among the people who can buy this week.</strong> For a Dubai grocer that is residents and weekday shoppers. For a beach resort that is overnight visitors. DET’s 2025 hotel series — 80.7% occupancy, 44.85 million occupied room nights, ADR AED579 — is a reminder that hospitality demand is visitor-weighted (${cite('mediaoffice-visitors-2025', 'DET via Dubai Media Office')}).</li>
-<li><strong>Provenance of the score.</strong> Mode, language, emirate and universe must sit on the same page as the number. A two-point move that comes from switching an English app intercept for an Arabic mall sample is not a brand movement.</li>
+<li>What decision will the score change?</li>
+<li>Which universe does each score describe: residents, people present by day, or overnight visitors?</li>
+<li>Which emirates and nationality bands are cut, and what sample sits in each cell?</li>
+<li>What will you take from a shared index, and what will you refuse to splice into the custom score?</li>
+<li>Where will personal data sit, and how do you meet the UAE personal-data law and the 2025 re-contact rule?</li>
+<li>Which items are in Arabic and which are in English?</li>
 </ol>
 
-<p>D33, cited by Dubai’s leadership in the official tourism releases, aims to double the size of Dubai’s economy by 2033 (${cite('mediaoffice-visitors-2024', 'Dubai Media Office, 2024')}; ${cite('mediaoffice-visitors-2025', 'Dubai Media Office, 2025')}). Brand budgets in this market are being asked to support that growth story. A tracker that cannot say whether a flight built memory among residents, GCC visitors or Western European guests cannot tell finance which flight to repeat.</p>
+<p>A supplier that quotes an unpublished “UAE brand-health average” is guessing. Ask for the series, the date and the universe.</p>
 
-<h2 id="mental-availability-is-not-awareness">Why is mental availability not the same as awareness?</h2>
+<p>Set the calendar from the decision. A grocery or bank brand can use a quarterly resident wave. A hotel brand needs a visitor wave on the season, and a resident wave that is not taken in the middle of the peak inflow. A launch needs a wave before the flight, a wave during it, and a wave after it. Tag the channel and the execution.</p>
 
-<p>Most UAE tracker decks still open with unaided awareness. Sharp’s note is explicit: mental availability is much more than awareness, whether top-of-mind, recognition or recall, because those items usually use a single, a-situational cue — typically the product-category name the marketer uses. Mental availability is also not attitude. Familiarity tends to improve feeling, but the construct is about being thought of in buying situations, not about liking (${cite('eb-mental-availability', 'Byron Sharp')}).</p>
+<p>Every row should carry the wave date, the mode, the language, the emirate, the universe and the campaign tag. The meeting can then ask which tagged cell moved.</p>
 
-<p>That is why a custom tracker should ask, for each relevant situation: when you need X in the UAE this week, which brands come to mind? “X” is the CEP, not the brand’s advertising line. Ehrenberg-Bass’s published CEP work is a two-stage elicitation then a quantified brand-by-CEP matrix, including competitors (${cite('eb-ceps', 'Ehrenberg-Bass')}). A syndicated battery that only offers “quality”, “trust” and “value” will not tell you whether you own “after school in Dubai”, “hotel minibar”, or “Friday family lunch in Abu Dhabi”.</p>
+<h2 id="who-fields">Who fields the work</h2>
 
-<p>Arabic and English versions must be conceptually equivalent. “Top of mind” and a Gulf Arabic prompt for “what comes to you first” are not automatic translations. Back-translate the CEP list. Keep the same codebook for open ends. If the English wave and the Arabic wave cannot be stacked, you do not have a UAE tracker — you have two studies.</p>
+<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has completed 127 studies so far in 2026. Custom programmes are priced from $10,000 to $60,000. The tagline is “Guaranteed in writing.” That covers the agreed scope, timetable and deliverables. It does not cover a promised score.</p>
 
-<h2 id="residents-visitors-emirates">How should you sample residents, visitors and emirates?</h2>
+<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
 
-<p>The sampling error that kills UAE brand trackers is not the confidence interval. It is the universe.</p>
+<p>Dubai is where UAE waves are fielded. It is not the regional headquarters. Arabic and English scripting sit with the same team that writes the questions, so the scale labels do not drift between languages.</p>
 
-<p>FCSC’s official 2024 estimate puts the UAE at 11.29 million people, up from 10.68 million in 2023, with about 200 nationalities and an 81.4% economic participation rate (${cite('fcsc-unified-2025', 'FCSC')}). Dubai’s own end-2025 resident count is 4.580 million on a new register-based method. The same Digital Dubai release says the number of people in the emirate at peak daytime hours rises to 6.392 million, of whom more than 1.812 million are temporarily present, and that Dubai welcomed 19.6 million international visitors in 2025 (${cite('digital-dubai-pop-2025', 'Digital Dubai')}). DET’s official 2025 series, published by the Dubai Media Office, is 19.59 million overnight visitors, including 2.99 million from the GCC and 2.17 million from the wider MENA region (${cite('mediaoffice-visitors-2025', 'Dubai Media Office, 2025')}).</p>
-
-<p>Write the sample as three possible frames, then pick one or more:</p>
-
-<ul>
-<li><strong>Resident frame.</strong> People who usually live in the UAE, cut by emirate, nationality band and language of interview. Needed for retail, telecom, banking and most FMCG media that runs all year. See <a href="/uae-fmcg-market-research">UAE FMCG market research</a> and <a href="/uae-financial-services-market-research">UAE financial services market research</a> when the brand is a grocer or a bank.</li>
-<li><strong>Daytime-present frame.</strong> Useful only when the commercial question is about people who are in Dubai today — malls, food courts, petrol forecourts. Do not call this “the Dubai population”.</li>
-<li><strong>Overnight-visitor frame.</strong> Needed for hotels, attractions, duty-free and destination campaigns. Western Europe was Dubai’s largest 2025 source market at 4.1 million visitors (21%) (${cite('mediaoffice-visitors-2025', 'DET via Dubai Media Office')}). A visitor wave that only samples GCC guests will not describe that spend.</li>
-</ul>
-
-<p>Never mix the three frames in one score. Tag them. Weight them only if the brief says the commercial team will act on a blended number — and write the blend rule down. Mode effects on brand recall are large; do not change from online to mall intercept mid-tracker without a bridge sample. ISO 20252:2026’s sampling and fieldwork annexes exist so that those choices are documented, not improvised (${cite('iso-20252-2026', 'ISO')}; ${cite('mrs-iso-20252', 'MRS annexes')}).</p>
-
-<h2 id="dubai-field-office">Why is Dubai a field office, not the whole market?</h2>
-
-<p>Dubai is the easiest place in the UAE to field a wave. It is not the market. A brand tracking research agency Dubai that only interviews in Dubai malls will over-represent visitor and daytime-present shoppers and under-represent Abu Dhabi households and the Northern Emirates. The official series above is the reason: Dubai’s overnight visitors in 2025 (19.59 million) outnumber its residents (4.580 million) by more than four to one (${cite('mediaoffice-visitors-2025', 'Dubai Media Office, 2025')}; ${cite('digital-dubai-pop-2025', 'Digital Dubai')}).</p>
-
-<p>BioNixus treats Dubai as a field office. Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai (Thuraya Tower 1, Al Sufouh 2), Al Khobar and Salmiya, Kuwait. Arabic-English scripting, back-translation and interviewer briefing sit with the same team that writes the CEP list, so the scale labels do not drift between languages. Saudi and Kuwaiti cuts, when the brand is regional, run from the Al Khobar and Salmiya field offices on the same instrument.</p>
-
-<p>That is also why a UAE tracker should be designed next to a Kingdom read when the media plan is GCC-wide. Compare partners on the <a href="/insights/top-market-research-companies-uae-2026">2026 UAE market research companies ranking</a>, the <a href="/insights/top-market-research-companies-dubai-2026">Dubai ranking</a> and the <a href="/insights/top-market-research-companies-saudi-arabia-2026">Saudi Arabia ranking</a>.</p>
-
-<h2 id="advertising-and-personal-data-rules">Which advertising and personal-data rules apply to a tracker?</h2>
-
-<p>A tracker that asks whether an advertisement was seen is still research. The advertisement itself is regulated separately.</p>
-
-<p>Federal Decree-Law No. 55 of 2023 on media regulation took effect on 1 December 2023 (${cite('uae-media-law', 'UAE Legislation')}). Article 20 of the published text says it is not permissible to publish propaganda or advertising that violates the media-content standards or that would harm the public interest, and that all advertisers must include something that explicitly and clearly indicates that the material is advertising (${cite('dda-media-law-pdf', 'Federal Decree-Law 55/2023, Article 20')}).</p>
-
-<p>Cabinet Resolution No. 68 of 2024, the executive regulation, came into force on 31 October 2024. Article 33 requires advertisements to be clearly identified and separate from editorial content; forbids incorrect or misleading claims, exaggerations, assertions of exclusivity and competitor disparagement; requires disclosure of a paid endorsement; and requires prior approval for real estate, medical, securities and financial-services, education and food advertisements (${cite('cabinet-68-2024', 'Cabinet Resolution 68/2024')}).</p>
-
-<p>Those rules belong in the creative and claims work the tracker is judging. They also belong in the questionnaire: if you ask “did you see an ad”, show the execution that was legally identified as advertising, not an editorial clip.</p>
-
-<p>UAE Federal Decree-Law No. 45 of 2021, the Personal Data Protection Law, came into force on 2 January 2022. The official portal states that the law applies to processing of personal data through electronic systems, inside or outside the country; that processing without the owner’s consent is prohibited except where it is necessary to protect a public interest or to carry out legal procedures and rights; and that the UAE Data Office is the federal regulator. The same page records that Federal Law No. 15 of 2020 on Consumer Protection prohibits suppliers from using consumer data for marketing (${cite('uae-pdpl-portal', 'u.ae')}).</p>
-
-<p>The 2025 ICC/ESOMAR Code, updated in July 2025, states that participation must be voluntary and based on clear and accurate information about the purpose and nature of the research, and that re-contact needs the data subject’s agreement except for quality control, adverse-event reporting or a legal requirement. Consent, in the Code’s definitions, is a freely given, specific and informed indication of agreement (${cite('esomar-2025', 'ICC/ESOMAR Code 2025')}). That applies to incentive text, to “this interview may be recorded”, and to any append of CRM data. A tracker is not a remarketing list.</p>
-
-<h2 id="cadence-campaign-tags-budget-meeting">How should cadence, campaign tags and the budget meeting work?</h2>
-
-<p>Set the calendar from the decision, not from a vendor’s default.</p>
-
-<ul>
-<li><strong>Always-on brands</strong> (telecom, grocery, banking): a quarterly resident wave, with a small monthly pulse only if the media team will change spend inside the quarter.</li>
-<li><strong>Seasonal and visitor brands</strong> (hotels, attractions, Dubai Shopping Festival-linked retail): a visitor wave on the event, plus a resident wave that is not taken during the peak inflow. DET’s 2025 calendar included a first-ever December above 2 million overnight visitors (2.04 million) (${cite('mediaoffice-visitors-2025', 'Dubai Media Office, 2025')}). A December resident score collected in a mall next to those arrivals is not a resident score.</li>
-<li><strong>Launch and distinctive-asset work:</strong> a pre-wave, a mid-flight wave and a post-wave, each tagged with the channel and the execution that Article 20 requires to be identified as advertising (${cite('dda-media-law-pdf', 'Article 20')}).</li>
-</ul>
-
-<p>Every row in the data file should carry: wave date, mode, language, emirate, universe (resident / daytime-present / overnight visitor), campaign tag, and the exact CEP or asset shown. The budget meeting then asks one question: which tagged cell moved, and which spend sits against that cell? If the tracker cannot answer, it is a report, not a management tool.</p>
-
-<h2 id="choosing-a-brand-tracking-research-agency-dubai">How do you choose a brand tracking research agency Dubai?</h2>
-
-<p>Ask every brand tracking research agency Dubai shortlist to answer these in the proposal — not in a capabilities slide:</p>
-
-<ul>
-<li>Will you write the awareness, CEP and distinctive-asset items, in Arabic and English, in the proposal?</li>
-<li>Which universe — residents, daytime-present people, or overnight visitors — does each score describe?</li>
-<li>Which emirates and nationality bands will you cut, and what sample sits in each cell?</li>
-<li>What will you take from a syndicated index, and what will you not try to splice into the custom score?</li>
-<li>Where will personal data sit, and how do you meet the UAE PDPL and the 2025 ICC/ESOMAR re-contact rule (${cite('uae-pdpl-portal', 'u.ae')}; ${cite('esomar-2025', 'ICC/ESOMAR')} )?</li>
-<li>What will you <em>not</em> claim? A supplier that quotes an unpublished “UAE brand-health average” is guessing.</li>
-</ul>
-
-<p>Related industry reading on this hub includes <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/nielsen-alternative-saudi-arabia">syndicated vs custom research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/kantar-alternative-middle-east">a Kantar alternative in the GCC</a>, <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE (CSAT, NPS and CES)</a> and <a href="/bionixus-industries/insights/feasibility-study-company-saudi-arabia">feasibility studies in Saudi Arabia</a>.</p>
-
-<h2 id="why-bionixus">Why choose BioNixus for brand tracking in Dubai and the UAE?</h2>
-
-<p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has completed 127 studies so far in 2026. Custom brand-tracking programmes are typically priced from $10,000 to $60,000 depending on sample, markets, mode and reporting. The firm’s tagline is “Guaranteed in writing.” That refers to the scope, timetable and deliverables in the proposal — not to a promised score or a guaranteed finding.</p>
-
-<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is fully operational in LATAM, covered from the US office in Sheridan, Wyoming, with a strong network of local consultants, and is in the process of opening a São Paulo office by the end of 2026.</p>
-
-<p>Choose BioNixus when the decision needs a specified custom tracker, bilingual fieldwork from the Dubai field office, and KPIs a budget meeting can act on — not a recycled syndicated cell. To brief a programme, use the <a href="/contact">BioNixus contact form</a>, email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a> or call <a href="tel:+18884655557">+1-888-465-5557</a>.</p>`;
+<p>To brief a programme, use the <a href="/contact">BioNixus contact form</a>, email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a> or call <a href="tel:+18884655557">+1-888-465-5557</a>.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -339,39 +294,39 @@ ${REFERENCES_SECTION_HTML}`;
 
 export const DUBAI_BRAND_TRACKING_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does a brand tracking research agency Dubai measure?',
+    question: 'What should the tracker measure?',
     answer:
-      'A brand tracking research agency Dubai programme should measure the decision the next budget meeting must take — keep, cut or move a line of spend — then assign mental availability, category entry points and distinctive-asset recognition to the buyers who can act this week. Write the universe (residents, daytime-present people, or overnight visitors), the emirates and the languages before fieldwork starts.',
+      'Name the budget decision first. Then say whether the score is for residents, people in Dubai by day, or overnight visitors. Mental availability is the chance a buyer thinks of the brand in a buying situation. It is not one awareness score.',
   },
   {
-    question: 'When should I use a custom tracker instead of syndicated data?',
+    question: 'When is your own wave more useful than a shared index?',
     answer:
-      'Use a custom tracker when the shared questionnaire cannot see your brand set, your category entry points, your Arabic-English wording, your emirate cuts, or your resident-versus-visitor split. Use a syndicated index when you need a cheap category temperature and you accept the publisher’s brand list and calendar. Many briefs need both; do not average them.',
+      'Use a shared index when you accept its brand list, attributes and calendar. Use your own wave when you need your brands, your situations, Arabic and English wording, emirate cuts, or a resident-versus-visitor split. Many briefs need both. Do not average them.',
   },
   {
-    question: 'Why is Dubai described as a field office?',
+    question: 'Why is Dubai called a field office?',
     answer:
-      'Dubai is where BioNixus fields UAE waves — Thuraya Tower 1, Al Sufouh 2 — not the regional headquarters. Leadership offices are Sheridan, Wyoming; London (EC1V 2NX); and Sheikh Zayed, Giza. A Dubai-only mall sample is also not “the UAE”: official 2025 series put 4.580 million Dubai residents against 19.59 million overnight visitors.',
+      'BioNixus fields UAE waves from Dubai. Leadership offices are in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. A Dubai mall sample is also not the whole UAE.',
   },
   {
-    question: 'Should a UAE brand tracker mix residents and tourists?',
+    question: 'Should one score mix residents and tourists?',
     answer:
-      'No. Digital Dubai’s end-2025 resident count is 4.580 million, while DET recorded 19.59 million overnight visitors in 2025 and 6.392 million people present in Dubai at peak daytime hours. Keep resident, daytime-present and overnight-visitor frames in separate scores, each tagged on the data file.',
+      'Keep them separate. Digital Dubai reported 4.580 million residents at the end of 2025, and 6.392 million people present at peak daytime hours. On 9 February 2026 the Dubai Media Office reported 19.59 million overnight visitors in 2025. A separate Digital Dubai release reported 19.6 million international visitors in 2025. Tag each frame.',
   },
   {
-    question: 'Which UAE laws apply to brand tracking and the ads it evaluates?',
+    question: 'Which UAE rules apply to the survey and to the ads it asks about?',
     answer:
-      'Federal Decree-Law No. 45 of 2021 (PDPL) has been in force since 2 January 2022 and generally requires consent to process personal data. Federal Decree-Law No. 55 of 2023 requires advertising to be clearly identified. Cabinet Resolution 68/2024, in force 31 October 2024, adds the detailed advertising controls, including prior approval for real estate, medical, securities, education and food ads.',
+      'The personal-data law has been in force since 2 January 2022 and generally requires consent. Media Decree-Law 55 of 2023, effective 1 December 2023, requires advertising to be clearly identified. Cabinet Resolution 68 of 2024, in force 31 October 2024, adds controls that include prior approval for real estate, medical, securities, education and food ads.',
   },
   {
     question: 'How much does a custom brand-tracking programme cost with BioNixus?',
     answer:
-      'Custom brand-tracking programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, number of markets, mode (online, CATI, face-to-face or mixed) and reporting depth. Multi-emirate UAE scopes stay inside that range when the instrument is shared.',
+      'Custom programmes are priced from $10,000 to $60,000. The price moves with sample size, markets, mode and reporting. The scope, timetable and deliverables are guaranteed in writing. A promised score is not.',
   },
   {
-    question: 'What is mental availability in a brand tracker?',
+    question: 'What is mental availability?',
     answer:
-      'Ehrenberg-Bass defines mental availability as the probability that a buyer will notice, recognise and/or think of a brand in buying situations, based on the quality and quantity of memory structures. It is not the same as unaided awareness, recognition, recall or attitude. Category entry points are the situation cues that build it.',
+      'Ehrenberg-Bass defines it as the probability that a buyer will notice, recognise and/or think of a brand in buying situations, based on the quality and quantity of memory structures. Category entry points are the thoughts buyers have as they move into a purchase.',
   },
 ];
 

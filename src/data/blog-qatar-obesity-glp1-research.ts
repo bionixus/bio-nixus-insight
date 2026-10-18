@@ -99,15 +99,15 @@ export const QATAR_OBESITY_GLP1_META_DESCRIPTION =
   'Qatar obesity GLP-1 market research after Wegovy and MOPH oral GLP-1 approval: what STEPS, HMC cover and private prices mean for 2026 brand-team studies.';
 
 export const QATAR_OBESITY_GLP1_DISPLAY_TITLE =
-  "Qatar's GLP-1 Moment: Wegovy, Oral GLP-1 Approval and What to Research Next";
+  'Wegovy and an oral weight-loss medicine in Qatar';
 
 export const QATAR_OBESITY_GLP1_DISPLAY_SUBTITLE =
-  'Qatar obesity GLP-1 market research after Wegovy and oral approval';
+  'Qatar obesity GLP-1 market research after the 2025 launch and the 2026 approval';
 
 export const QATAR_OBESITY_GLP1_BREADCRUMB_LABEL = 'Qatar obesity GLP-1 research';
 
 export const QATAR_OBESITY_GLP1_EXCERPT =
-  'A sourced 2026 briefing on Qatar obesity GLP-1 market research: Wegovy’s May 2025 launch, the September 2026 Ministry of Public Health oral GLP-1 approval, and what brand teams still need to measure before they treat approval as demand.';
+  'A plain 2026 briefing on Wegovy in Qatar, the September 2026 oral GLP-1 approval, and which published figures are surveys rather than sales.';
 
 export const QATAR_OBESITY_GLP1_PUBLISHED_ISO = '2026-10-13T12:00:00.000Z';
 export const QATAR_OBESITY_GLP1_UPDATED_ISO = '2026-10-13T12:00:00.000Z';
@@ -273,7 +273,7 @@ export const QATAR_OBESITY_GLP1_SEQUENCE: SequenceEntry[] = [
   {
     name: 'Wegovy approved in Qatar',
     when: 'October 2024',
-    whatItMeans: 'A registered weekly injectable for chronic weight management, including adolescents aged 12 and above',
+    whatItMeans: 'The launch note says Qatar approved Wegovy in October 2024',
     description:
       'Wegovy (semaglutide 2.4 mg) was approved in Qatar in October 2024, according to the Ebn Sina / Novo Nordisk launch materials.',
   },
@@ -287,20 +287,11 @@ export const QATAR_OBESITY_GLP1_SEQUENCE: SequenceEntry[] = [
   {
     name: 'MOPH oral GLP-1 approval',
     when: 'September 2026',
-    whatItMeans: 'First oral GLP-1 approved for obesity in Qatar; entitlement and persistence are still unpublished',
+    whatItMeans: 'Lilly said this is the first oral GLP-1 approved for obesity in Qatar',
     description:
       'Qatar’s Ministry of Public Health approved Lilly’s once-daily oral GLP-1 for chronic weight management, the first oral GLP-1 for obesity in the country.',
   },
 ];
-
-const SEQUENCE_TABLE_HTML = `<table>
-<thead><tr><th>Dated event</th><th>What the source says</th><th>What it does not say</th><th>What to research</th></tr></thead>
-<tbody>
-<tr><td>October 2024 — Wegovy approved</td><td>The Ebn Sina / Novo Nordisk launch materials cite the Wegovy summary of product characteristics, approved in Qatar in October 2024 (${cite('wegovy-aamal', 'Aamal / Ebn Sina')})</td><td>Who was entitled, at what BMI, in which HMC clinics</td><td>Which specialties could initiate, and whether adolescents 12+ were in scope at launch</td></tr>
-<tr><td>1 May 2025 — Wegovy available</td><td>Ebn Sina Medical and Novo Nordisk announced availability (${cite('wegovy-aamal', 'Aamal')}; ${cite('wegovy-gulf-times', 'Gulf Times')})</td><td>National treated volume, persistence, or a public formulary list</td><td>Stock, wait lists, and how private clinics used the product after launch</td></tr>
-<tr><td>September 2026 — oral GLP-1 approved</td><td>Lilly said MOPH approved its once-daily oral GLP-1 for obesity; Qatar is the sixth market (${cite('lilly-zawya', 'Lilly / ZAWYA')}; ${cite('lilly-tribune', 'Qatar Tribune, 28 September 2026')})</td><td>A Ministry circular naming the brand, a public price list, or HMC entitlement</td><td>Whether the oral product is stocked, who may prescribe it, and how it is paid for</td></tr>
-</tbody>
-</table>`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -312,162 +303,93 @@ ${REFERENCES.map((ref) => {
 </ol>`;
 
 export const QATAR_OBESITY_GLP1_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'Qatar obesity GLP-1 market research: what changed in 2025–26?', anchor: 'qatar-obesity-glp-1-market-research-what-changed' },
-  { heading: 'How common is obesity and diabetes in Qatar?', anchor: 'how-common-is-obesity-in-qatar' },
-  { heading: 'What did the Wegovy launch change?', anchor: 'what-did-the-wegovy-launch-change' },
-  { heading: 'What did MOPH approve in September 2026?', anchor: 'what-did-moph-approve-in-september-2026' },
-  { heading: 'Who pays for GLP-1s in Qatar?', anchor: 'who-pays-for-glp-1s-in-qatar' },
-  { heading: 'What should Qatar obesity GLP-1 market research measure?', anchor: 'what-should-qatar-obesity-glp-1-market-research-measure' },
-  { heading: 'How should you commission the study?', anchor: 'how-to-commission' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What changed in 2025 and 2026?', anchor: 'what-changed' },
+  { heading: 'How common is obesity in Qatar?', anchor: 'how-common-is-obesity' },
+  { heading: 'What did the Wegovy launch change?', anchor: 'wegovy-launch' },
+  { heading: 'What did the ministry approve in September 2026?', anchor: 'oral-approval' },
+  { heading: 'Who pays?', anchor: 'who-pays' },
+  { heading: 'What should a study ask?', anchor: 'what-to-ask' },
+  { heading: 'How to brief a study', anchor: 'how-to-brief' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const QATAR_OBESITY_GLP1_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Qatar obesity GLP-1 market research now turns on access, not availability. Wegovy launched in May 2025 with Hamad Medical Corporation cover for Qatari patients and private cash prices. The Ministry of Public Health approved Lilly’s once-daily oral GLP-1 for obesity in September 2026. Brand teams still need persistence, nationality and channel evidence—not a GCC market-size report.</p>`;
+export const QATAR_OBESITY_GLP1_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Qatar obesity GLP-1 market research asks who can get these medicines and who pays. Wegovy, a weekly semaglutide injection, launched on 1 May 2025. A company manager said Hamad covers Qatari patients. Other patients pay cash. In September 2026 the health ministry approved a once-daily oral GLP-1 for obesity. A survey share is not a sales forecast.</p>`;
 
-const NARRATIVE_HTML = `<p>Qatar obesity GLP-1 market research is an access question, not a launch rumour. Wegovy (semaglutide 2.4 mg) has been available since 1 May 2025, and in September 2026 the Ministry of Public Health approved the country’s first oral GLP-1 for obesity. What brand, medical and access teams still lack is published evidence on who is entitled, who pays cash, and how an oral option will change initiation. This briefing uses only published sources. It sits alongside our <a href="/healthcare-market-research">healthcare market research hub</a> and our page on <a href="/gcc-obesity-market">GCC obesity market research</a>.</p>
+const NARRATIVE_HTML = `<p>This briefing is about Qatar obesity GLP-1 market research. A GLP-1 medicine copies a gut hormone. Doctors use some of them for weight loss. Wegovy is Novo Nordisk’s weekly injection. Its ingredient is semaglutide, at a 2.4 mg dose. Ebn Sina Medical and Novo Nordisk said it was available in Doha on 1 May 2025 (${cite('wegovy-aamal', 'Aamal / Ebn Sina')}; ${cite('wegovy-aamal-pdf', 'launch note')}). Their note says Qatar approved it in October 2024. In September 2026 the Ministry of Public Health approved a once-daily pill in the same drug class for obesity. The public record does not say who stays on treatment. It does not say who pays for the pill. Read this with the <a href="/healthcare-market-research">healthcare market research</a> hub and the page on the <a href="/gcc-obesity-market">GCC obesity market</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts: obesity and GLP-1s in Qatar, October 2026</strong></p>
+<h2 id="what-changed">What changed in 2025 and 2026?</h2>
+<p>Three dated events are in the public record. None of them counts patients on treatment.</p>
 <ul>
-<li><strong>33.4%</strong> of adults aged 18–69 were obese (BMI ≥ 30) in the official STEPS 2023–24 survey: 36.7% of women and 30.4% of men. Overweight including obesity (BMI ≥ 25) was 70.7% (${cite('moph-qhr-2024', 'Qatar Health Report 2024')}).</li>
-<li><strong>42.0%</strong> is WHO’s 2024 age-standardised modelled estimate for adults aged 18 and over (${cite('owid-gho', 'WHO GHO via Our World in Data')}).</li>
-<li><strong>37.8%</strong> obesity in a 2026 unweighted secondary analysis of the same STEPS survey (n = 5,696 with complete BMI); obesity among Qatari nationals in that cut was 40.3% (${cite('althani-2026', 'Al-Thani et al., 2026')}).</li>
-<li><strong>18.1%</strong> of STEPS adults had raised fasting glucose or were on glucose-lowering treatment; IDF’s 2024 age-standardised diabetes prevalence for adults 20–79 is 24.6% (${cite('moph-qhr-2024', 'Qatar Health Report 2024')}; ${cite('owid-diabetes', 'IDF via Our World in Data')}).</li>
-<li><strong>3,214,609</strong> residents at the end of December 2025, and <strong>3,370,611</strong> in March 2026, according to the National Planning Council (${cite('npc-pop-2025', 'NPC, via Marhaba')}; ${cite('npc-pop-2026', 'NPC, March 2026')}).</li>
-<li><strong>October 2024 / 1 May 2025:</strong> Wegovy approved, then launched by Ebn Sina Medical and Novo Nordisk (${cite('wegovy-aamal', 'Aamal / Ebn Sina')}).</li>
-<li><strong>Hamad cover for Qatari patients; QR 796–1,909 a month</strong> in the private market or for non-Qatari patients, according to Novo Nordisk’s Qatar general manager at the launch (${cite('wegovy-gulf-times', 'Gulf Times')}).</li>
-<li><strong>September 2026:</strong> MOPH approved Lilly’s once-daily oral GLP-1 for obesity — the first oral GLP-1 for that indication in Qatar, and the product’s sixth market (${cite('lilly-zawya', 'Lilly / ZAWYA')}; ${cite('lilly-tribune', 'Qatar Tribune')}).</li>
+<li>Ebn Sina Medical, part of Aamal, and Novo Nordisk announced Wegovy on 1 May 2025. The same materials say the product was approved in Qatar in October 2024 (${cite('wegovy-aamal', 'Aamal / Ebn Sina')}).</li>
+<li>Gulf Times quoted Novo Nordisk’s Qatar general manager, Manvendra Singh. He said Hamad Medical Corporation covers Wegovy for Qatari patients. He put private-market and non-Qatari monthly costs at QR 796 to QR 1,909, depending on the dose (${cite('wegovy-gulf-times', 'Gulf Times')}). That quote is not a published Hamad price list.</li>
+<li>Lilly said the Ministry of Public Health approved its once-daily oral GLP-1 for chronic weight management. Lilly called it the first oral GLP-1 approved for obesity in Qatar, and the sixth market for the product (${cite('lilly-zawya', 'Lilly / ZAWYA')}). Qatar Tribune published the same approval facts on 28 September 2026 (${cite('lilly-tribune', 'Qatar Tribune')}).</li>
 </ul>
-</div>
-
-<h2 id="qatar-obesity-glp-1-market-research-what-changed">Qatar obesity GLP-1 market research: what changed in 2025–26?</h2>
-
-<p>Three dated events now sit in every Qatar obesity brief. They are not substitutes for a treated-population model.</p>
-
-<ul>
-<li><strong>Registration, then launch, of a weekly injectable.</strong> Ebn Sina Medical, a subsidiary of Aamal, and Novo Nordisk announced on 1 May 2025 that Wegovy (semaglutide 2.4 mg) was available in Qatar. The launch materials describe it as the first once-weekly GLP-1 receptor agonist indicated for chronic weight management in adults and in adolescents aged 12 and above, and they cite an October 2024 Qatar approval (${cite('wegovy-aamal', 'Aamal / Ebn Sina')}; ${cite('wegovy-aamal-pdf', 'launch PDF')}).</li>
-<li><strong>A public-channel statement for Qatari patients.</strong> At the Doha launch, Novo Nordisk’s Qatar general manager said Wegovy was available out of pocket in the private market, that coverage was provided for Qatari patients at Hamad Medical Corporation, and that monthly private or non-Qatari costs ran from QR 796 to QR 1,909 by dose (${cite('wegovy-gulf-times', 'Gulf Times, 2 May 2025')}). That is a launch-day statement, not a published HMC formulary.</li>
-<li><strong>An oral option.</strong> In September 2026 Lilly said Qatar’s Ministry of Public Health had approved its once-daily oral GLP-1 receptor agonist for chronic weight management, making it the first oral GLP-1 approved for obesity in the country and the sixth market globally (${cite('lilly-zawya', 'Lilly / ZAWYA')}; ${cite('lilly-tribune', 'Qatar Tribune, 28 September 2026')}).</li>
-</ul>
-
-<p>Report publishers such as Grand View Research, 6Wresearch and Ken Research sell Qatar or GCC obesity and weight-management sizing. Those reports can triangulate a category total. They cannot tell you whether a Qatari patient will leave an HMC clinic with a weekly pen, whether a non-Qatari resident will pay cash, or whether an oral tablet will be initiated instead. That is the job of commissioned Qatar obesity GLP-1 market research.</p>
-
+<p>${cite('grand-view', 'Grand View Research')}, ${cite('6wresearch', '6Wresearch')} and ${cite('kenresearch', 'Ken Research')} sell Qatar or GCC obesity reports. A category total is not the same as who leaves a clinic with a pen, who pays cash, or who starts a tablet.</p>
 ${figureHtml(QATAR_OBESITY_GLP1_FIGURES[0])}
+<p>The Ministry’s Pharmacy and Drug Control Department registers manufacturers of medicines. Its Registration and Drug Pricing Section does that work. It also runs an e-system for agents, stores and private pharmacies (${cite('moph-pdc', 'Ministry of Public Health')}). An approval is not the same as a purchase by a public hospital.</p>
 
-${SEQUENCE_TABLE_HTML}
-
-<p>Registration sits in front of every channel. The Ministry of Public Health’s Pharmacy and Drug Control Department, through its Registration and Drug Pricing Section, registers pharmaceutical manufacturers and runs the e-system used by agents, stores and private pharmacies (${cite('moph-pdc', 'MOPH Pharmacy and Drug Control')}). A product that is approved but not bought into Hamad or Primary Health Care Corporation supply is, for volume purposes, a private-channel brand.</p>
-
-<h2 id="how-common-is-obesity-in-qatar">How common is obesity and diabetes in Qatar?</h2>
-
-<p>Ask every provider which prevalence baseline it uses. The published numbers are close in headline and different in method.</p>
-
-<p>The official figure a Ministry briefing will recognise is STEPS 2023–24. The Ministry of Public Health’s <em>Qatar Health Report 2024</em> says the survey ran from May 2023 to January 2024, selected 8,800 adults aged 18–69, and achieved an 84.6% response. Obesity (BMI ≥ 30) was 33.4% — 36.7% in women and 30.4% in men. Overweight including obesity (BMI ≥ 25) was 70.7%. Raised fasting glucose, or current glucose-lowering treatment, was 18.1%. Raised blood pressure, or current antihypertensive treatment, was 24.3% (${cite('moph-qhr-2024', 'Qatar Health Report 2024, Table 3')}).</p>
-
+<h2 id="how-common-is-obesity">How common is obesity in Qatar?</h2>
+<p>The published figures use different methods. Do not average them. A survey share is not national demand for a medicine.</p>
+<p>The Ministry of Public Health’s Qatar Health Report 2024 describes the STEPS survey of 2023–24. It ran from May 2023 to January 2024. It selected 8,800 adults aged 18 to 69. The response rate was 84.6%. Obesity, a body mass index of 30 or more, was 33.4%. It was 36.7% in women and 30.4% in men. Overweight including obesity, a body mass index of 25 or more, was 70.7%. Raised fasting glucose, or treatment for it, was 18.1%. Raised blood pressure, or treatment for it, was 24.3% (${cite('moph-qhr-2024', 'Qatar Health Report 2024')}).</p>
 ${figureHtml(QATAR_OBESITY_GLP1_FIGURES[3])}
-
-<p>A 2026 BMJ Open paper by Al-Thani and colleagues, including authors at the Ministry’s NCD Prevention Programs and the Qatar Metabolic Institute at Hamad Medical Corporation, re-analysed the same survey. It is an unweighted secondary analysis of 5,696 adults with complete BMI (52.9% men, 47.1% women, 43% Qatari, 57% non-Qatari). In that cut, 36.4% had overweight, 37.8% had obesity, and 74.2% had overweight or obesity. Obesity was 40.3% among Qatari nationals, 38.2% among women, and 44% among people aged 45 and over (${cite('althani-2026', 'Al-Thani et al., 2026')}). The authors excluded industrial-area workers, house helpers, pregnant people and anyone with missing BMI. That is why 37.8% is not a replacement for the Ministry’s 33.4%.</p>
-
+<p>A 2026 paper in BMJ Open re-analysed that survey. Al-Thani and colleagues used an unweighted cut of 5,696 adults with a complete body mass index. Obesity in that cut was 37.8%. Among Qatari nationals in the cut it was 40.3% (${cite('althani-2026', 'Al-Thani et al., 2026')}). That cut is not a replacement for the Ministry figure of 33.4%.</p>
 ${figureHtml(QATAR_OBESITY_GLP1_FIGURES[1])}
+<p>The World Health Organization’s Global Health Observatory publishes an age-standardised estimate of adult obesity. The indicator code is NCD_BMI_30A (${cite('who-gho', 'WHO')}). Our World in Data’s 2026 processing of that series puts Qatar’s 2024 figure at 42.04% for adults aged 18 and over (${cite('owid-gho', 'Our World in Data')}).</p>
+<p>The Health Report puts the population in August 2024 at 3,054,365 (${cite('moph-qhr-2024', 'Qatar Health Report 2024')}). The National Planning Council later published 3,214,609 residents at the end of December 2025, up 2.3% from December 2024 (${cite('npc-pop-2025', 'National Planning Council, via Marhaba')}). In March 2026 the same council published 3,370,611 residents, up 5.6% from 3,190,903 in March 2025 (${cite('npc-pop-2026', 'National Planning Council')}). The 2020 census counted 340,349 Qataris and 2,505,769 non-Qataris, a total of 2,846,118 (${cite('census-2020', '2020 census, via GLMM')}). A prevalence applied to every resident is not a count of people a public hospital will treat.</p>
+<p>Diabetes is a related condition. It is not a sales forecast. STEPS measured raised fasting glucose or treatment at 18.1% in adults aged 18 to 69 (${cite('moph-qhr-2024', 'Qatar Health Report 2024')}). The International Diabetes Federation, as processed by Our World in Data, puts age-standardised diabetes prevalence in adults aged 20 to 79 at 24.6% in 2024 (${cite('owid-diabetes', 'IDF via Our World in Data')}). The Atlas country page counts 409.3 thousand adults aged 20 to 79 with diabetes in 2024. It ranks Qatar fifth on age-standardised prevalence among countries and territories in the Atlas (${cite('idf-atlas', 'IDF Atlas')}).</p>
+<p>At the Wegovy launch, the Ebn Sina press statement said 41% of adults were obese and 46% of women were obese (${cite('wegovy-gulf-times', 'Gulf Times')}). That is a company figure from a launch. It is not the Ministry STEPS table. Do not place it next to 33.4% as if they were one series.</p>
+<p>For the wider Gulf picture, see <a href="/saudi-arabia-obesity-market">obesity research in Saudi Arabia</a>, <a href="/kuwait-obesity-market">Kuwait obesity research</a>, <a href="/uae-obesity-market">the UAE obesity market</a> and <a href="/egypt-obesity-market">Egypt obesity and GLP-1 research</a>.</p>
 
-<p>WHO’s Global Health Observatory models measured height and weight for adults aged 18 and over. Our World in Data’s 2026 processing of that GHO series puts age-standardised adult obesity in Qatar at 42.04% in 2024 (${cite('owid-gho', 'Our World in Data / WHO GHO')}; ${cite('who-gho', 'WHO GHO indicator')}). Use one baseline and test the others. Do not average them.</p>
-
-<p>The addressable adult population is also split by sex and by nationality. The Health Report puts the August 2024 population at 3,054,365, of whom 2,162,447 were male (70.8%) — a labour-migration pyramid, not a typical insured adult list (${cite('moph-qhr-2024', 'Qatar Health Report 2024')}). The National Planning Council later published 3,214,609 residents at the end of December 2025 and 3,370,611 in March 2026 (${cite('npc-pop-2025', 'NPC, via Marhaba')}; ${cite('npc-pop-2026', 'NPC, March 2026')}). The last published census nationality split in the sources we checked is December 2020: 340,349 Qataris and 2,505,769 non-Qataris in a total of 2,846,118 (${cite('census-2020', 'PSA census 2020, via GLMM')}). A prevalence applied to the whole 3.37 million overstates the publicly funded Qatari pool and understates the cash and insured-expat pool.</p>
-
-<p>Diabetes is the comorbidity that should sit in every GLP-1 brief. STEPS measured raised fasting glucose or treatment at 18.1% in adults 18–69 (${cite('moph-qhr-2024', 'Qatar Health Report 2024')}). The IDF Diabetes Atlas, as processed by Our World in Data, puts age-standardised diabetes prevalence in adults 20–79 at 24.6% in 2024 (${cite('owid-diabetes', 'IDF via Our World in Data')}). The Atlas country page counts 409.3 thousand adults 20–79 with diabetes in 2024 and ranks Qatar fifth globally on age-standardised prevalence (${cite('idf-atlas', 'IDF Atlas')}).</p>
-
-<p>At the 2025 Wegovy launch, Ebn Sina’s press statement said 41% of adults in Qatar were obese and 46% of women (${cite('wegovy-gulf-times', 'Gulf Times')}). That is a company figure from a launch event. It is not the Ministry STEPS table. Do not put it in a forecast beside 33.4% as if they were the same series.</p>
-
-<p>For the wider Gulf structure — public hospitals, private clinics, and the self-pay overflow — see <a href="/gcc-obesity-market">GCC obesity market research</a>, <a href="/saudi-arabia-obesity-market">obesity market research in Saudi Arabia</a>, <a href="/kuwait-obesity-market">Kuwait obesity market insights</a>, <a href="/uae-obesity-market">the UAE obesity market</a> and <a href="/egypt-obesity-market">Egypt obesity and GLP-1 research</a>.</p>
-
-<h2 id="what-did-the-wegovy-launch-change">What did the Wegovy launch change?</h2>
-
-<p>Until May 2025, a weekly semaglutide 2.4 mg product indicated for chronic weight management was not a launched brand in Qatar. The 1 May 2025 announcement changed that. Wegovy is indicated, with diet and activity, for adults with obesity (BMI ≥ 30) or overweight (BMI ≥ 27) plus a weight-related comorbidity, and for adolescents with obesity from the age of 12 (${cite('wegovy-aamal', 'Aamal / Ebn Sina')}).</p>
-
-<p>Two access facts from that week still matter for a 2026 brief.</p>
-
+<h2 id="wegovy-launch">What did the Wegovy launch change?</h2>
+<p>On 1 May 2025, Ebn Sina Medical and Novo Nordisk said Wegovy was available in Qatar. The materials say it was approved in October 2024 (${cite('wegovy-aamal', 'Aamal / Ebn Sina')}).</p>
+<p>Gulf Times reported two access points from that week.</p>
 <ul>
-<li><strong>Public channel, Qatari patients.</strong> Gulf Times reported Novo Nordisk Qatar general manager Manvendra Singh saying coverage is provided for Qatari patients at Hamad Medical Corporation, while the product was then available out of pocket in the private market (${cite('wegovy-gulf-times', 'Gulf Times')}). We did not find a published HMC brand-level formulary, BMI threshold, specialist restriction or wait-list rule. Treat the quote as a direction of travel, then research the clinic rules.</li>
-<li><strong>Private and non-Qatari cash prices.</strong> The same report put monthly costs for private hospitals and clinics, or for non-Qatari nationals, at QR 796 to QR 1,909 depending on dose (${cite('wegovy-gulf-times', 'Gulf Times')}). Those are launch-week prices quoted by the company. They are not a 2026 Ministry list.</li>
+<li>Hamad Medical Corporation coverage for Qatari patients, as stated by the Novo Nordisk manager (${cite('wegovy-gulf-times', 'Gulf Times')}). The paper does not publish a Hamad list, a body-mass cut-off, or a time limit.</li>
+<li>Private-market and non-Qatari monthly costs of QR 796 to QR 1,909 by dose (${cite('wegovy-gulf-times', 'Gulf Times')}). Those are launch-week figures quoted by the company. They are not a 2026 ministry list.</li>
 </ul>
+<p>On 14 November 2024 the Ministry launched a National Action Plan on Obesity, Diabetes, and Modifiable Risk Factors for Atherosclerotic Cardiovascular Disease for 2024 to 2030. Qatar News Agency reported 58 projects and a target of a 36% reduction in deaths from non-communicable diseases by 2030 (${cite('qna-action-plan', 'Qatar News Agency')}). The plan is policy. It is not a decision to pay for a drug.</p>
 
-<p>Primary Health Care Corporation is the screening and chronic-disease front door. As of 31 January 2024 it had 1,874,919 registered people and, in 2024, recorded 5,169,998 visits. Hamad Medical Corporation recorded 3,117,867 outpatient visits the same year. The Department of Healthcare Professions listed 9,487 physicians among 53,961 registered healthcare professionals (${cite('moph-qhr-2024', 'Qatar Health Report 2024')}). A GLP-1 forecast that ignores PHCC initiation versus HMC specialist initiation will misread both volume and mix.</p>
+<h2 id="oral-approval">What did the ministry approve in September 2026?</h2>
+<p>Lilly said Qatar’s Ministry of Public Health approved a once-daily oral GLP-1 receptor agonist for chronic weight management. Lilly said it is the first oral GLP-1 approved for obesity in Qatar, and the sixth market globally. The release describes adults with obesity, or adults who are overweight and have at least one related condition. It says the tablet can be taken at any time of day, without food and water restrictions (${cite('lilly-zawya', 'Lilly / ZAWYA')}). Qatar Tribune published the same approval facts on 28 September 2026 (${cite('lilly-tribune', 'Qatar Tribune')}).</p>
+<p>That Lilly release, as recorded in the source note, does not name a brand. On 22 September 2026, Al-Sharq reported that a health-sector source said the ministry had registered orforglipron, marketed as Foundayo. The source named strengths of 0.8 mg, 2.0 mg and 5.5 mg, and prices from QAR 849.50 to QAR 1,225.25. The paper said the product had begun to appear in some pharmacies. It is prescription-only, under a specialist in obesity treatment (${cite('foundayo-sharq', 'Al-Sharq')}). This is a newspaper account of a source. It is not a ministry price circular.</p>
+<p>Do not treat the Hamad statement about Wegovy as cover for the tablet. The Gulf Times quote is about Wegovy.</p>
 
-<p>On 14 November 2024, before the Wegovy launch, the Ministry launched the National Action Plan on Obesity, Diabetes, and Modifiable Risk Factors for Atherosclerotic Cardiovascular Disease 2024–2030. Qatar News Agency reported 58 projects, a slogan of “Together to Prevent Diabetes, Obesity, and ASCVD,” and a target of a 36% reduction in NCD mortality by 2030. Sheikh Dr Mohamed bin Hamad Al Thani said the plan was built on the 2012 and 2023 STEPS surveys. Professor Abdul Badi Abou Samra, then director of the Qatar Metabolic Institute, said comparing those two surveys showed that collective effort can curb obesity and diabetes prevalence (${cite('qna-action-plan', 'QNA, 14 November 2024')}). The plan is policy context. It is not a reimbursement decision.</p>
-
-<h2 id="what-did-moph-approve-in-september-2026">What did MOPH approve in September 2026?</h2>
-
-<p>This is the claim that has to be sourced tightly, because it is the news result that currently occupies “Qatar obesity GLP-1” search.</p>
-
-<p>Lilly’s Gulf release, carried by ZAWYA, said Eli Lilly’s once-daily oral GLP-1 receptor agonist for chronic weight management “has been approved by Qatar’s Ministry of Public Health (MOPH), making it the first oral GLP-1 treatment approved for obesity in the country.” Qatar is “the sixth market globally to approve this treatment.” The indication in that release is adults living with obesity, or adults who are overweight with at least one related comorbid condition. The same release says the tablet “can be taken at any time of day without restrictions on food and water intake,” and it frames the decision against the National Health Strategy 2024–2030, which identifies high rates of obesity among the country’s NCD challenges (${cite('lilly-zawya', 'Lilly / ZAWYA')}). Qatar Tribune published the same facts on 28 September 2026 (${cite('lilly-tribune', 'Qatar Tribune')}).</p>
-
-<p>The English Lilly release we read does not name the brand or the molecule. On 22 September 2026, Al-Sharq reported that a health-sector source said the Ministry had registered orforglipron, marketed as Foundayo, in 0.8 mg, 2.0 mg and 5.5 mg strengths, that it had begun to appear in some pharmacies, and that prices ranged from QAR 849.50 to QAR 1,225.25. The paper said the product is prescription-only and should be used under a specialist in obesity treatment (${cite('foundayo-sharq', 'Al-Sharq, 22 September 2026')}). That is a newspaper account of a source. It is not a Ministry circular. We did not find a public MOPH PDF that names Foundayo on the approval.</p>
-
-<p>What follows for research is therefore narrow:</p>
-
-<ul>
-<li>The Ministry has approved a once-daily oral GLP-1 for obesity. Lilly says Qatar is the sixth market and the first in-country oral GLP-1 for that indication.</li>
-<li>A Qatari newspaper attributed the registered product to Foundayo (orforglipron) and published three strengths and a price band. Confirm those details against the Pharmacy and Drug Control list before you put them in a forecast.</li>
-<li>No published HMC or PHCC entitlement for the oral product was found. Do not assume the Wegovy Hamad statement transfers to the tablet.</li>
-<li>Lilly’s release also warned about falsified medicines and told patients to use licensed pharmacies (${cite('lilly-zawya', 'Lilly / ZAWYA')}). Informal and social-media supply is a research question, not a rounding error.</li>
-</ul>
-
-<h2 id="who-pays-for-glp-1s-in-qatar">Who pays for GLP-1s in Qatar?</h2>
-
-<p>Three wallets appear in the public record. They are not interchangeable, and a forecast that blends them will overstate one group and understate the other.</p>
-
+<h2 id="who-pays">Who pays?</h2>
 ${figureHtml(QATAR_OBESITY_GLP1_FIGURES[2])}
-
 <ul>
-<li><strong>Hamad Medical Corporation, for Qatari patients, on Wegovy.</strong> The only published coverage statement we found is the May 2025 quote from Novo Nordisk’s Qatar general manager (${cite('wegovy-gulf-times', 'Gulf Times')}). It does not name a BMI cut-off, a specialist gate, a duration cap, or whether the oral product is in the same basket.</li>
-<li><strong>Private clinics and cash, including non-Qatari residents.</strong> The same quote put monthly private or non-Qatari costs at QR 796 to QR 1,909 by dose at launch (${cite('wegovy-gulf-times', 'Gulf Times')}). Al-Sharq’s September 2026 source put Foundayo pharmacy prices at QAR 849.50 to QAR 1,225.25 (${cite('foundayo-sharq', 'Al-Sharq')}). Those two bands are not a like-for-like comparison: one is a monthly injectable range from a company executive, the other is a newspaper price for named tablet strengths.</li>
-<li><strong>Mandatory private insurance for non-Qataris, as a legal wrapper, not a formulary.</strong> Law No. 22 of 2021, in force from 4 May 2022, requires non-Qatari nationals and visitors to hold private health insurance covering basic medical services. The earlier SEHA / National Health Insurance Company scheme was disbanded in 2015 (${cite('law-22', 'Clyde &amp; Co')}). The legal note we used does not publish an obesity-drug list. Do not treat “prescribed drugs are a basic service” as proof that a weight-management GLP-1 is a covered benefit. Check the scheme.</li>
+<li><strong>Hamad, for Qatari patients, for Wegovy.</strong> The only published coverage statement in these sources is the May 2025 quote (${cite('wegovy-gulf-times', 'Gulf Times')}).</li>
+<li><strong>Private clinics and non-Qatari residents.</strong> The same quote put monthly costs at QR 796 to QR 1,909 by dose (${cite('wegovy-gulf-times', 'Gulf Times')}). Al-Sharq’s source put Foundayo prices at QAR 849.50 to QAR 1,225.25 (${cite('foundayo-sharq', 'Al-Sharq')}). Those bands are not the same kind of price. One is a monthly injection range from a company manager. The other is a newspaper price for named tablet strengths.</li>
+<li><strong>Private insurance for non-Qataris.</strong> Law No. 22 of 2021 took effect on 4 May 2022. It requires non-Qatari nationals and visitors to hold private health insurance for basic medical services. The earlier SEHA scheme, run by the National Health Insurance Company, was disbanded in 2015 (${cite('law-22', 'Clyde &amp; Co')}). The legal note does not publish an obesity-drug list. Cover for basic services is not proof that a weight-loss GLP-1 is paid for.</li>
 </ul>
+<p>The 2020 census counted 340,349 Qataris in a population of 2,846,118 (${cite('census-2020', '2020 census')}). Al-Thani’s cut found obesity of 40.3% among Qatari nationals and 37.8% in the mixed sample (${cite('althani-2026', 'Al-Thani et al., 2026')}). Nationality and prevalence are different facts.</p>
 
-<p>Qataris and non-Qataris do not share one wallet. The 2020 census put Qatari nationals at 340,349 of 2,846,118 residents (${cite('census-2020', 'PSA census 2020, via GLMM')}). Al-Thani’s STEPS cut found higher obesity among Qataris (40.3%) than in the mixed eligible sample (37.8%) (${cite('althani-2026', 'Al-Thani et al., 2026')}). Entitlement follows nationality. Prevalence does not.</p>
-
-<h2 id="what-should-qatar-obesity-glp-1-market-research-measure">What should Qatar obesity GLP-1 market research measure?</h2>
-
-<p>Design the study backwards from the decision. For a launch sequence, a hospital listing, or a private-clinic plan after the oral approval, most briefs should cover:</p>
-
+<h2 id="what-to-ask">What should a study ask?</h2>
+<p>Ask separate questions. Do not turn a prevalence figure into a tender volume.</p>
 <ul>
-<li><strong>Prescriber segments.</strong> Endocrinology and the Qatar Metabolic Institute, family medicine at PHCC, internal medicine, bariatric surgery, and private obesity clinics, reported separately.</li>
-<li><strong>Indication and entitlement.</strong> Type 2 diabetes versus weight management; Qatari versus non-Qatari; HMC versus PHCC versus private. The Wegovy Hamad statement is Qatari-specific and injectable-specific until someone shows otherwise.</li>
-<li><strong>Oral versus injectable choice.</strong> Lilly’s release stresses once-daily dosing with no food or water restriction (${cite('lilly-zawya', 'Lilly / ZAWYA')}). That is a positioning claim. Measure whether physicians will start oral in injection-averse patients, switch from Wegovy, or keep the tablet for self-pay.</li>
-<li><strong>Supply, not just approval.</strong> Pharmacy and Drug Control registration (${cite('moph-pdc', 'MOPH')}), Hamad and PHCC stock, private-chain stock, and the informal channel Lilly warned about.</li>
-<li><strong>Price and persistence.</strong> There is no published Qatar discontinuation study for Wegovy. Launch cash prices and the Al-Sharq tablet band are starting points, not persistence.</li>
-<li><strong>Sizing baseline.</strong> State whether the model uses official STEPS 33.4% (adults 18–69, weighted), Al-Thani 37.8% (unweighted complete-BMI cut), the 40.3% Qatari cut, or WHO GHO 42.0% (modelled, 18+), and test the range.</li>
-<li><strong>National versus expatriate pathways.</strong> The population is majority male and majority non-Qatari. A single national share is not a tender number.</li>
-<li><strong>Policy context without policy overclaim.</strong> The 2024–2030 action plan has 58 projects and a 36% NCD-mortality target (${cite('qna-action-plan', 'QNA')}). Ask payers and clinic leads what, if anything, that changes in 2026 listing criteria.</li>
+<li>Who may start Wegovy, and who may start the oral product?</li>
+<li>Is the Hamad statement limited to Qatari patients and to Wegovy?</li>
+<li>Is the oral product in stock, and who may prescribe it?</li>
+<li>Which baseline is in the model: STEPS 33.4%, the Al-Thani cut of 37.8%, the Qatari cut of 40.3%, or the WHO figure of 42.04%?</li>
+<li>What, if anything, do clinic leads say the 2024–2030 plan changes in listing rules? The plan has 58 projects and a 36% mortality target (${cite('qna-action-plan', 'Qatar News Agency')}).</li>
 </ul>
-
 ${figureHtml(QATAR_OBESITY_GLP1_FIGURES[4])}
+<p>Compare <a href="/blog/who-does-obesity-market-research-saudi-arabia">who does obesity market research in Saudi Arabia</a> and <a href="/blog/obesity-market-research-kuwait">obesity market research in Kuwait</a>. Those pages describe other payment systems. Do not copy their answers into Qatar.</p>
 
-<p>For country context, compare <a href="/saudi-arabia-obesity-market">obesity market research in Saudi Arabia</a>, <a href="/kuwait-obesity-market">Kuwait obesity market insights</a>, <a href="/uae-obesity-market">the UAE obesity market</a> and <a href="/egypt-obesity-market">Egypt obesity and GLP-1 research</a>. The Saudi buyer’s shortlist, <a href="/blog/who-does-obesity-market-research-saudi-arabia">who does obesity market research in Saudi Arabia</a>, and the Kuwait funding brief, <a href="/blog/obesity-market-research-kuwait">obesity market research Kuwait</a>, answer different reimbursement systems — do not import CHI, Wasfaty or DHAMAN answers into Qatar. See also <a href="/insights/best-obesity-weight-management-market-research-firms-2026">the global ranking of obesity market research firms</a> and <a href="/patient-journey-research-gcc">obesity patient journey research in the GCC</a>.</p>
-
-<h2 id="how-to-commission">How should you commission the study?</h2>
-
+<h2 id="how-to-brief">How to brief a study</h2>
 <ul>
-<li>How many endocrinologists, PHCC family physicians, internists and bariatric surgeons will you recruit, and from which municipalities?</li>
-<li>Will results be reported by nationality and by HMC, PHCC and private practice?</li>
-<li>Which prevalence baseline will you use — STEPS 33.4%, Al-Thani 37.8%, the Qatari 40.3% cut, or WHO 42.0% — and why?</li>
-<li>Will the discussion guide treat Wegovy Hamad cover, private cash, and the September 2026 oral approval as three separate questions?</li>
-<li>Are questionnaires available in Arabic and English?</li>
-<li>Who owns the data, and can it be re-cut after a hospital listing question changes?</li>
+<li>Which specialties, and in which cities?</li>
+<li>Will results be split by nationality, and by Hamad, primary care and private practice?</li>
+<li>Which prevalence figure will the report use, and why?</li>
+<li>Are the questionnaires in Arabic and English?</li>
 </ul>
+<p>Desk reports from Grand View Research, 6Wresearch and Ken Research can frame a category. They are not the pack for a Hamad meeting or an insurer meeting.</p>
 
-<p>Desk-research reports remain useful for a first cut of category size. Grand View Research, 6Wresearch and Ken Research publish Qatar or GCC obesity pages that often appear for this query. Use them to triangulate. Do not use them as the evidence pack you take to a Hamad, PHCC or insurer meeting.</p>
-
-<h2 id="why-bionixus">Why choose BioNixus for Qatar obesity GLP-1 market research?</h2>
-
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
-
-<p>Choose BioNixus when the decision depends on why Qatari and non-Qatari patients, PHCC and Hamad specialists, and private clinics act as they do after Wegovy and the oral approval, rather than on a GCC category total. Each study is built around one decision — a listing, a private-clinic plan, a launch sequence — and is reported for brand, medical and access teams. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews.</p>
-
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026. Work in Latin America is covered today from the US office with local consultants.</p>
+<p>Use BioNixus when the question is why Qatari and non-Qatari patients, and Hamad, primary-care and private clinicians, act as they do. Each study is built around one decision. The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find. BioNixus has 40 client reviews.</p>
 <p>See also <a href="/healthcare-market-research/qatar">healthcare market research in Qatar</a>, <a href="/healthcare-market-research-qatar">the Qatar healthcare market research guide</a>, <a href="/pharmaceutical-market-research-qatar">pharmaceutical market research in Qatar</a>, <a href="/qatar-market-access-research">Qatar market access research</a> and <a href="/insights/top-healthcare-market-research-companies-qatar-2026">top healthcare market research companies in Qatar</a>.</p>
-
-<p>To brief a Qatar obesity or GLP-1 study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -479,39 +401,39 @@ ${REFERENCES_SECTION_HTML}`;
 
 export const QATAR_OBESITY_GLP1_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What is Qatar obesity GLP-1 market research?',
+    question: 'What does this page cover?',
     answer:
-      'Qatar obesity GLP-1 market research is commissioned primary research on how obesity and GLP-1 medicines are prescribed, funded and used in Qatar after Wegovy’s 2025 launch and the September 2026 oral GLP-1 approval. It covers Hamad Medical Corporation, Primary Health Care Corporation, private clinics, and the split between Qatari nationals and non-Qatari residents. It is not a syndicated GCC market-size report.',
+      'It covers published facts on Wegovy in Qatar and on the September 2026 oral GLP-1 approval. It separates survey shares from who can get a medicine and who pays. It is not a GCC sales forecast.',
   },
   {
     question: 'Did Qatar’s Ministry of Public Health approve an oral GLP-1 for obesity?',
     answer:
-      'Yes. Lilly said in September 2026 that MOPH approved its once-daily oral GLP-1 receptor agonist for chronic weight management, the first oral GLP-1 approved for obesity in Qatar and the product’s sixth market globally. Qatar Tribune published the same facts on 28 September 2026. Al-Sharq, citing a health-sector source on 22 September 2026, identified the registered product as Foundayo (orforglipron). A public Ministry PDF naming the brand was not found.',
+      'Lilly said in September 2026 that the ministry approved its once-daily oral GLP-1 for chronic weight management. Lilly called it the first oral GLP-1 approved for obesity in Qatar and the product’s sixth market. Qatar Tribune published the same facts on 28 September 2026. On 22 September 2026, Al-Sharq quoted a health-sector source who named orforglipron, marketed as Foundayo. That newspaper account is not a ministry price circular.',
   },
   {
     question: 'When did Wegovy launch in Qatar?',
     answer:
-      'Ebn Sina Medical and Novo Nordisk announced Wegovy (semaglutide 2.4 mg) availability on 1 May 2025. The launch materials say the product was approved in Qatar in October 2024 and is indicated for chronic weight management in adults and in adolescents aged 12 and above.',
+      'Ebn Sina Medical and Novo Nordisk said Wegovy (semaglutide 2.4 mg) was available on 1 May 2025. The launch note says Qatar approved it in October 2024.',
   },
   {
     question: 'Does Hamad Medical Corporation cover Wegovy?',
     answer:
-      'At the May 2025 launch, Novo Nordisk’s Qatar general manager told Gulf Times that coverage is provided for Qatari patients at Hamad Medical Corporation, while private-market and non-Qatari patients pay cash. A published brand-level HMC formulary, BMI rule or duration cap was not found. Do not assume the same cover applies to the oral product.',
+      'At the May 2025 launch, Novo Nordisk’s Qatar general manager told Gulf Times that Hamad covers Qatari patients, and that private-market and non-Qatari patients pay cash. The quote is not a published Hamad list. Do not treat it as cover for the oral product.',
   },
   {
     question: 'How common is obesity in Qatar?',
     answer:
-      'The official STEPS 2023–24 survey measured obesity in 33.4% of adults aged 18–69 (36.7% of women, 30.4% of men) and overweight including obesity in 70.7%. A 2026 unweighted secondary analysis of the same survey found 37.8% obesity overall and 40.3% among Qatari nationals. WHO’s 2024 age-standardised modelled estimate for adults 18+ is 42.0%. Use one baseline and test the others.',
+      'The official STEPS 2023–24 survey measured obesity in 33.4% of adults aged 18–69 (36.7% of women, 30.4% of men) and overweight including obesity in 70.7%. A 2026 unweighted cut of the same survey found 37.8% obesity and 40.3% among Qatari nationals. The WHO age-standardised estimate for 2024, via Our World in Data, is 42.04%. Use one figure. Do not average them.',
   },
   {
-    question: 'What should a 2026 Qatar GLP-1 study measure that a market-size report cannot?',
+    question: 'What can a market-size report not answer?',
     answer:
-      'Who may initiate at PHCC versus Hamad, whether the oral product is stocked and paid for, persistence after the launch cash prices, and how Qatari and non-Qatari pathways differ. Grand View, 6Wresearch and Ken Research can triangulate a category total. They cannot answer those questions.',
+      'It cannot say who may start Wegovy, whether the oral product is in stock, or who pays. Grand View Research, 6Wresearch and Ken Research publish category pages. They are not a Hamad or insurer file.',
   },
   {
-    question: 'Why commission BioNixus for Qatar obesity GLP-1 market research?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'BioNixus runs custom primary research from GCC field offices, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a listing, a private-clinic plan or a launch sequence — and the delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'Custom studies are usually $10k–$60k. The network is about 3,200 physicians. The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find.',
   },
 ];
 

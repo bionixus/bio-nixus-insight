@@ -2,7 +2,7 @@
  * Hardcoded industries insight:
  * /bionixus-industries/insights/chinese-companies-egypt-market-research
  *
- * Topic: Chinese Brands in Egypt and North Africa: What to Research.
+ * Topic: Chinese companies in Egypt — what to research first.
  * Target keyword: Chinese companies Egypt market research.
  * Audience: Mainland Chinese headquarters entering Egypt and the Maghreb.
  * Every statistic is cited inline to an official source. Unverified claims are omitted.
@@ -35,23 +35,23 @@ export const CN_EGYPT_HERO_IMAGE_ALT =
 /** False once the Playwright cover generator has written the 1200×630 JPEGs. */
 export const CN_EGYPT_COVER_PENDING = false;
 
-export const CN_EGYPT_META_TITLE = 'Chinese Companies Egypt Market Research: 2026 Guide';
+export const CN_EGYPT_META_TITLE = 'Chinese Companies Egypt Market Research: Plain Guide';
 
 export const CN_EGYPT_META_DESCRIPTION =
-  'Chinese companies Egypt market research for Cairo and North Africa brands: demand, 14% VAT, GAFI licence and SCZone proof before the HQ remits capital.';
+  'Chinese companies Egypt market research in plain steps: who will buy, which city, the price after 14% VAT, and which licence to use before you send money.';
 
-export const CN_EGYPT_DISPLAY_TITLE = 'Chinese Brands in Egypt and North Africa: What to Research';
+export const CN_EGYPT_DISPLAY_TITLE = 'Chinese Companies in Egypt: What to Research First';
 
 export const CN_EGYPT_DISPLAY_SUBTITLE =
-  'What a mainland headquarters must prove in Egypt before it remits capital';
+  'Who will buy, in which city, at what price, and under which licence';
 
-export const CN_EGYPT_BREADCRUMB_LABEL = 'Chinese companies Egypt market research';
+export const CN_EGYPT_BREADCRUMB_LABEL = 'Chinese companies in Egypt';
 
 export const CN_EGYPT_EXCERPT =
-  'A sourced 2026 guide to Chinese companies Egypt market research: what a mainland HQ must prove on Egyptian demand, 14% VAT, cities, channels, GAFI or SCZone vehicles and outbound-investment paperwork before it remits capital to Egypt or the Maghreb.';
+  'A plain guide for Chinese companies entering Egypt: who will buy, in which city, at what price after tax, and which licence to use before sending money from China.';
 
 export const CN_EGYPT_PUBLISHED_ISO = '2026-10-17T12:00:00.000Z';
-export const CN_EGYPT_UPDATED_ISO = '2026-10-17T12:00:00.000Z';
+export const CN_EGYPT_UPDATED_ISO = '2026-10-18T13:30:00.000Z';
 
 export const CN_EGYPT_CATEGORY = 'B2B Market Research';
 
@@ -232,173 +232,89 @@ export function countWords(html: string): number {
 }
 
 export const CN_EGYPT_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  { heading: 'What must Chinese companies Egypt market research prove first?', anchor: 'what-must-prove-first' },
-  { heading: 'Why a mainland HQ cannot copy a Gulf or Western Egypt deck', anchor: 'cannot-copy-gulf-deck' },
-  { heading: 'Official numbers that frame a 2026 China-to-Egypt brief', anchor: 'official-numbers' },
-  { heading: 'Egypt is not one North Africa corridor', anchor: 'not-one-corridor' },
-  { heading: 'The five proofs a China investment committee still owes itself', anchor: 'five-proofs' },
-  { heading: 'Which vehicle in Egypt — GAFI, free zone or SCZone', anchor: 'vehicles' },
-  { heading: 'What mainland ODI paperwork changes about the research brief', anchor: 'odi-paperwork' },
-  { heading: 'How the brief changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a research partner for a China-to-Egypt file', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to settle before you send money', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'Egypt is one country, not all of North Africa', anchor: 'not-one-market' },
+  { heading: 'Which legal setup you are actually choosing', anchor: 'setup' },
+  { heading: 'What changes because the parent company is in China', anchor: 'china-rules' },
+  { heading: 'How the questions change by product', anchor: 'by-sector' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const CN_EGYPT_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Chinese companies Egypt market research must prove who will buy, in which Egyptian city, at what 14% VAT-inclusive price, through which channel and under which GAFI or SCZone vehicle before a mainland HQ remits capital. A customs invoice is not a demand file. Primary interviews make the brief usable.</p>`;
+export const CN_EGYPT_EXECUTIVE_SUMMARY_HTML = `<p>Chinese companies Egypt market research names the buyer, the Egyptian city, the price after 14% VAT, and the licence before a headquarters in China sends money. A trade total describes shipments. Interviews with buyers show who will pay your invoice.</p>`;
 
-const NARRATIVE_HTML = `<p>Chinese commercial teams often arrive in Cairo with a Belt and Road slide, a Sokhna plot and a single “North Africa” TAM. That pack is not Chinese companies Egypt market research. Entry research has to name the Egyptian buyer, the city, the 14% VAT-inclusive price, the channel and the GAFI or SCZone vehicle before a mainland headquarters remits capital. This guide sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma briefs, not for an EDA file.</p>
+const NARRATIVE_HTML = `<p>Chinese companies often treat Egypt and the rest of North Africa as one market. They are separate markets. Before a headquarters in China sends money, name who will buy in Egypt, in which city, at what price after tax, and through which seller. Also name the Egyptian licence. This page is a plain guide to Chinese companies Egypt market research. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for consumer and industrial brands, not for medicines.</p>
 
-<p>The Gulf-side China brief is a different job. If the first operating SKU is still Riyadh or Dubai, use the sourced <a href="/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae">playbook for Chinese companies entering Saudi Arabia and the UAE</a>. Do not paste that file onto Egypt. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. The Cairo leadership office in Sheikh Zayed is the edge. See the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>Saudi Arabia and the UAE are a different job. If those are the first markets, use the <a href="/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae">guide for Chinese companies entering Saudi Arabia and the UAE</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 China-to-Egypt brief can cite, October 2026</strong></p>
+<h2 id="what-to-prove">What to settle before you send money</h2>
+<p>A trade total or a free-zone plot describes the setting. Interviews with buyers show whether someone will pay your invoice. Answer these questions for Egypt.</p>
 <ul>
-<li><strong>USD 20.79 billion</strong> of China–Egypt goods trade in 2025, after USD 17.378 billion in 2024 (Chinese exports USD 16.8 billion; imports USD 578 million). China has been Egypt’s largest trading partner for 14 consecutive years (${cite('mfa-eg-zh', 'MFA China, July 2026 update')}; ${cite('mfa-eg-en', 'MFA China English page')}; ${cite('mofcom-cctv', 'MOFCOM via CCTV')}).</li>
-<li><strong>USD 13.75 billion</strong> of bilateral trade in January–July 2026, up 23.2% (${cite('mofcom-cctv', 'MOFCOM via CCTV')}).</li>
-<li><strong>3,366</strong> Chinese companies operating in Egypt as of 16 September 2026, after GAFI’s CEO had put the stock at more than 2,000 firms and more than USD 8 billion of investment in November 2025 (${cite('gafi-mansour', 'GAFI')}; ${cite('gafi-heiba', 'Invest in Egypt / GAFI')}).</li>
-<li><strong>USD 284 million</strong> of new Chinese direct investment in Egypt in 2025, more than double the prior year (${cite('mofcom-cctv', 'MOFCOM via CCTV')}). Egypt’s own net FDI register is larger and not China-only: USD 12.2 billion in FY 2024/25 (${cite('gafi-fdi', 'GAFI')}).</li>
-<li><strong>Nearly 200</strong> firms, more than USD 3.8 billion invested and around 10,000 jobs in the TEDA Suez cooperation zone by end-2025 (${cite('teda-xinhua', 'Xinhua via TEDA')}; ${cite('mofcom-cctv', 'MOFCOM via CCTV')}).</li>
-<li><strong>106.556 million</strong> people at mid-2024 on CAPMAS’s national estimate in the UN Demographic Yearbook; the CBE’s inclusion frame is 70.5 million citizens aged 15 and above at end-2025 (${cite('un-dyb-pop', 'UNSD / CAPMAS')}; ${cite('cbe-inclusion', 'CBE')}).</li>
-<li><strong>About 360,000</strong> Chinese visitors to Egypt in 2025 (${cite('mfa-eg-zh', 'MFA China')}).</li>
+<li><strong>Who buys.</strong> Egypt’s official population estimate was about 106.6 million people in mid-2024 (${cite('un-dyb-pop', 'CAPMAS, via the UN')}). The Central Bank of Egypt says 70.5 million citizens were aged 15 or older at the end of 2025, and 54.7 million of them held an active account. The inclusion rate was 77.6% (${cite('cbe-inclusion', 'Central Bank of Egypt')}). Those totals are a frame. Your customer list is smaller.</li>
+<li><strong>Which city.</strong> Greater Cairo, Alexandria, the Nile Delta, Upper Egypt, and the Suez Canal zone are different places to sell. One “North Africa” average hides the first site.</li>
+<li><strong>What price, after tax.</strong> Egypt’s standard VAT is 14% (${cite('eta-vat', 'Egyptian Tax Authority')}). A factory price in yuan is a different number from a Cairo shelf price.</li>
+<li><strong>Who sells it.</strong> Name who recommends the product, who keeps it in stock, who pays, and what the buyer uses today.</li>
+<li><strong>Which Egyptian setup.</strong> Investment Law 72 of 2017 covers investment inside the country, investment zones, technology zones, and free zones (${cite('gafi-law-72', 'Law 72 of 2017')}). The Suez Canal Economic Zone is a separate regime. A Golden License, under Article 20 as amended in 2023, is one permit for set-up, building, and land (${cite('gafi-golden', 'GAFI Golden License guide')}). A permit is not proof of sales.</li>
+<li><strong>Whether the parent company in China can send the money.</strong> State Council Decree 837 has applied since 1 July 2026 (${cite('sc-837', 'Decree 837')}). Companies still file with the National Development and Reform Commission under Order 11 of 2017 (${cite('ndrc-11', 'NDRC Order 11')}) and with the Ministry of Commerce under Order 3 of 2014 (${cite('mofcom-3', 'MOFCOM Order 3')}). A market study does not replace those filings.</li>
 </ul>
-</div>
+<p>Desktop research can frame the questions. Interviews and surveys answer them. Related pages cover <a href="/egypt-retail-market-research">retail</a>, <a href="/egypt-fmcg-market-research">FMCG</a>, <a href="/egypt-automotive-market-research">automotive</a>, and <a href="/egypt-technology-market-research">technology</a> research in Egypt.</p>
 
-<h2 id="what-must-prove-first">What must Chinese companies Egypt market research prove first?</h2>
-
-<p>Chinese companies Egypt market research has to answer five commercial questions in Egypt, then a sixth that a Western sponsor never files: can the mainland parent remit the capital under current outbound-investment rules?</p>
-
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its source and its year. These series measure different things, so keep them in separate sentences.</p>
 <ul>
-<li><strong>Who buys?</strong> CAPMAS’s mid-2024 national estimate is 106.556 million (${cite('un-dyb-pop', 'UNSD / CAPMAS')}). The CBE’s end-2025 inclusion frame is 70.5 million citizens aged 15 and above, of whom 54.7 million hold an active transactional account (${cite('cbe-inclusion', 'CBE')}). A Shenzhen export invoice describes neither mix.</li>
-<li><strong>Where?</strong> Greater Cairo, Alexandria, the Delta, Upper Egypt and the Suez Canal Economic Zone are not interchangeable. A “North Africa average” hides the first site.</li>
-<li><strong>At what price?</strong> A range that includes Egypt’s 14% standard VAT, not an ex-factory RMB list (${cite('eta-vat', 'Egyptian Tax Authority')}).</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to. A Sokhna re-export map is not a Cairo sell-through.</li>
-<li><strong>Under which vehicle?</strong> Investment Law 72/2017 offers Internal Investment, Investment Zones, Technological Zones or Free Zones (${cite('gafi-law-72', 'Law 72/2017')}). SCZONE is a fifth object with its own incentive stack (${cite('sczone-sunrev', 'SCZONE')}). A Golden License is a sixth (${cite('gafi-golden', 'GAFI Golden License Guide')}).</li>
-<li><strong>Can the parent remit?</strong> NDRC filing or approval, a MOFCOM certificate and funds registration still sit under State Council Decree No. 837, in force from 1 July 2026 (${cite('ndrc-11', 'NDRC Order 11')}; ${cite('mofcom-3', 'MOFCOM Order 3')}; ${cite('sc-837', 'State Council Decree 837')}).</li>
+<li><strong>Trade.</strong> China’s foreign ministry put 2025 China–Egypt goods trade at $20.79 billion (${cite('mfa-eg-zh', 'Ministry of Foreign Affairs, July 2026')}). The 2024 total was $17.38 billion, almost all of it Chinese exports (${cite('mfa-eg-en', 'Ministry of Foreign Affairs')}). The commerce ministry reported $13.75 billion of trade in January–July 2026, up 23.2%, and said China has been Egypt’s largest trading partner for 14 years. It also said new Chinese direct investment in Egypt was $284 million in 2025 (${cite('mofcom-cctv', 'Ministry of Commerce, via CCTV')}). A customs total is not an order for one product.</li>
+<li><strong>Companies already there.</strong> On 16 September 2026, a GAFI deputy chief said 3,366 Chinese companies were operating in Egypt, in textiles, solar, chemicals, cars, and logistics (${cite('gafi-mansour', 'GAFI')}). In November 2025 the GAFI chief had said more than 2,000 companies and more than $8 billion of investment (${cite('gafi-heiba', 'GAFI, November 2025')}). Those are two dates. A new brand is entering a crowded field.</li>
+<li><strong>Investment.</strong> Egypt’s own accounts show $12.2 billion of foreign investment from all countries in the 2024/25 fiscal year (${cite('gafi-fdi', 'GAFI')}). That figure is not China-only. The $284 million figure above is the Chinese commerce ministry’s number for new Chinese investment.</li>
+<li><strong>The Suez zone.</strong> By the end of 2025, the China–Egypt TEDA zone reported nearly 200 companies, more than $3.8 billion invested, and about 10,000 jobs (${cite('teda-xinhua', 'Xinhua, via TEDA')}). That is the zone, not the whole of Egypt.</li>
 </ul>
 
-<p>Desktop TAM can frame those questions. It cannot answer them. Primary interviews and bilingual surveys can. Adjacent country pages for the same commercial questions include <a href="/egypt-retail-market-research">retail market research in Egypt</a>, <a href="/egypt-fmcg-market-research">FMCG market research in Egypt</a>, <a href="/egypt-automotive-market-research">automotive market research in Egypt</a> and <a href="/egypt-technology-market-research">technology market research in Egypt</a>.</p>
+<h2 id="not-one-market">Egypt is one country, not all of North Africa</h2>
+<p>China and Egypt opened diplomatic relations on 30 May 1956. That date does not show that Algeria, Morocco, or Tunisia will buy the same product.</p>
+<p>China’s foreign ministry published these 2024 goods-trade totals: Algeria $12.48 billion (${cite('mfa-algeria', 'Algeria')}), Morocco $9.04 billion (${cite('mfa-morocco', 'Morocco')}), and Tunisia $2.88 billion (${cite('mfa-tunisia', 'Tunisia')}). Tunisia’s 2025 total was $2.83 billion (${cite('mfa-tunisia-zh', 'Tunisia, 2025')}). Egypt’s 2025 total of $20.79 billion is larger than each of those. Adding the four countries into one market hides where you should start.</p>
+<p>Egypt’s 14% VAT and Investment Law stop at Egypt’s border. A free-zone licence in Sokhna is permission to operate in that zone. For work inside Egypt, see <a href="/market-research-egypt">market research in Egypt</a>.</p>
 
-<h2 id="cannot-copy-gulf-deck">Why can a mainland HQ not copy a Gulf or Western Egypt deck?</h2>
+<h2 id="setup">Which legal setup you are actually choosing</h2>
+<p>A plan that says “open in Sokhna, then sell across North Africa” mixes four choices.</p>
+<ul>
+<li><strong>Investment Law 72 of 2017.</strong> It applies to local and foreign investors. GAFI’s English text of the law describes a cash incentive for industrial projects equal to 35% to 55% of the income tax they pay. In November 2025, GAFI’s chief also told Chinese investors about a tax deduction of up to 50% of investment cost over seven years. Ask which rule your project can claim. An incentive is not a sales forecast.</li>
+<li><strong>Golden License.</strong> GAFI has said Haier Egypt received one. The licence is a permit for set-up. It is not a forecast of Cairo sales.</li>
+<li><strong>Suez Canal Economic Zone.</strong> In June 2025, SCZONE announced Sunrev Solar’s $200 million complex in Ain Sokhna and said operations were expected in the first half of 2026 (${cite('sczone-sunrev', 'SCZONE')}). SCZONE has also broken ground on two Chinese textile projects in Sokhna, together worth more than $55 million (${cite('sczone-textiles', 'SCZONE')}). A zone factory can be an export plant. Shoppers in Cairo are a separate question. See <a href="/egypt-energy-market-research">energy market research in Egypt</a>.</li>
+<li><strong>Selling to customers inside Egypt.</strong> In November 2025, GAFI’s chief named four zones he said would start operating by the end of 2026: 10th of Ramadan, New October, New Borg El-Arab, and New Alamein (${cite('gafi-heiba', 'GAFI, November 2025')}). Treat that as what was said in November 2025. If a free zone is still the plan, name the zone, the activity, and the end buyer.</li>
+</ul>
 
-<p>A Riyadh, Dubai or London instrument translated into Mandarin is not a China-to-Egypt file. Four official series show why.</p>
+<h2 id="china-rules">What changes because the parent company is in China</h2>
+<p>A Chinese parent has to clear outbound investment as well as the Egyptian licence. Decree 837 says investors make their own decisions and carry their own risk, and that approval, filing, and funds registration still apply.</p>
+<p>Name one country and one setup in the filing. Keep official statistics in a different section from your interviews. If the product, the data, or the technicians may be restricted, find that out before you design the study. BioNixus writes the demand chapter. It does not file the certificate.</p>
 
-<p>First, the trade already exists — and it is not a proxy for SKU demand. China’s foreign ministry and MOFCOM’s 14-year “largest partner” line, cited in the box, are bilateral customs totals (${cite('mfa-eg-en', 'MFA China')}; ${cite('mfa-eg-zh', 'MFA China')}; ${cite('mofcom-cctv', 'MOFCOM via CCTV')}). They do not tell a manufacturer whether a named buyer in 6th of October or Ain Sokhna will pay a named invoice. The 2024 ledger is also unbalanced: USD 16.8 billion of Chinese exports against USD 578 million of imports (${cite('mfa-eg-en', 'MFA China')}). That imbalance is a customs fact, not a shelf forecast.</p>
+<h2 id="by-sector">How the questions change by product</h2>
+<ul>
+<li><strong>Cars and equipment.</strong> GAFI’s September 2026 note already includes car manufacturing (${cite('gafi-mansour', 'GAFI')}). Name the first city, the first dealer, and the rival a buyer would choose.</li>
+<li><strong>Solar and energy equipment.</strong> Talk to the utility or the contractor. A consumer panel answers a different question.</li>
+<li><strong>Appliances, electronics, and packaged goods.</strong> Start from the adult and bank-account figures above, then replace them with the neighbourhoods where you will sell. State whether the shelf price includes 14% VAT.</li>
+<li><strong>Textiles.</strong> The Sokhna textile plants are export projects. They do not measure clothing sales inside Egypt.</li>
+<li><strong>Hotels and travel.</strong> China’s foreign ministry put Chinese visits to Egypt at about 360,000 in 2025 (${cite('mfa-eg-zh', 'Ministry of Foreign Affairs')}). That figure is arrivals, not hotel occupancy. A visitor survey in Luxor is a different study from a Red Sea resort. See <a href="/egypt-hospitality-market-research">hospitality market research in Egypt</a>.</li>
+<li><strong>Payments.</strong> The 77.6% inclusion rate is a starting point for a wallet or a card. It is not a credit model. See <a href="/egypt-financial-services-market-research">financial services market research in Egypt</a>.</li>
+</ul>
 
-<p>Second, the stock of Chinese firms is already large, and it is still not a demand curve. GAFI’s deputy CEO put the operating stock at 3,366 companies in September 2026 (${cite('gafi-mansour', 'GAFI')}). Ten months earlier the CEO had said more than 2,000 companies and more than USD 8 billion of investment (${cite('gafi-heiba', 'GAFI')}). Label both dates. A second appliance brand walking into 10th of Ramadan is walking into competitors, not an empty corridor.</p>
-
-<p>Third, the tax stack is not a China domestic stack and is not a Gulf stack. Egypt’s standard VAT has been 14% since the start of FY 2017/2018 (${cite('eta-vat', 'ETA')}). Law 72/2017 adds industrial cash incentives of 35% to 55% of income tax paid and a Golden License that consolidates set-up approvals (${cite('gafi-law-72', 'Law 72/2017')}; ${cite('gafi-golden', 'GAFI')}). A Yiwu ex-factory list will not survive a Cairo invoice unless the study states the tax-inclusive price and the vehicle.</p>
-
-<p>Fourth, the interview is not a domestic Chinese panel. Egypt has a China Cultural Center in Cairo since 2002, three Confucius Institutes, four Confucius classrooms, and Chinese as a university major in ten universities (${cite('mfa-eg-zh', 'MFA China')}). Organised Chinese group tourism has been in place since 2002; about 360,000 Chinese citizens visited in 2025 (${cite('mfa-eg-zh', 'MFA China')}; ${cite('mfa-eg-en', 'MFA China')}). Mandarin is useful for the sponsor team. Fieldwork still has to run in Arabic and English. A Luxor visitor intercept is not a Greater Cairo grocery.</p>
-
-<h2 id="official-numbers">Which official numbers should a 2026 China-to-Egypt brief start from?</h2>
-
-<p>Use official series as the frame. Then replace the frame with primary evidence for the SKU. Do not invent giga-project revenues or treat a forum speech as a city catchment.</p>
-
-<h3>The trade frame</h3>
-
-<p>Write the trade the way the two ministries write it, with the year on the line. MFA China’s English page still publishes the 2024 total of USD 17.378 billion. The July 2026 Chinese update and MOFCOM’s 2 September 2026 briefing both put 2025 at USD 20.79 billion, a record, and MOFCOM adds January–July 2026 at USD 13.75 billion, up 23.2% (${cite('mfa-eg-en', 'MFA China')}; ${cite('mfa-eg-zh', 'MFA China')}; ${cite('mofcom-cctv', 'MOFCOM via CCTV')}). The ledger first crossed USD 10 billion in 2013, at USD 10.213 billion (${cite('mfa-eg-zh', 'MFA China')}). Diplomatic relations date from 30 May 1956; the comprehensive strategic partnership from December 2014; the deepening joint statement from May 2024 (${cite('mfa-eg-en', 'MFA China')}). Those are political facts, not SKU demand. Label each series. Do not add them together.</p>
-
-<h3>The investment and firm-count frame</h3>
-
-<p>GAFI’s national FDI register is the right Egyptian frame: net inflows USD 12.2 billion in FY 2024/25, USD 11.1 billion in FY 2023/24 after stripping the USD 35 billion Ras El-Hekma deal, and USD 10 billion in FY 2022/23. In FY 2024/25 finance took 16.7% of net inflows, industry 16.2% and real estate 15.4% (${cite('gafi-fdi', 'GAFI')}). China is not broken out on that published sector page. MOFCOM’s 2025 “new direct investment” line of USD 284 million is a China-origin flow, not the national register (${cite('mofcom-cctv', 'MOFCOM via CCTV')}). Quote both. Then replace both with the SKU evidence.</p>
-
-<p>The firm-count series needs the same discipline. GAFI’s 3,366 operating companies (September 2026) and the November 2025 “more than 2,000 / more than USD 8 billion” line are different vintages (${cite('gafi-mansour', 'GAFI')}; ${cite('gafi-heiba', 'GAFI')}). TEDA’s nearly 200 zone residents, USD 3.8 billion and about 10,000 jobs are a zone stock, not a national stock (${cite('teda-xinhua', 'Xinhua via TEDA')}). SCZONE’s three-year USD 8.6 billion across 297 projects, or the chairman’s USD 11.6 billion over three and a half years with Chinese investors at about 50%, is a zone capital series (${cite('sczone-textiles', 'SCZONE')}; ${cite('teda-xinhua', 'Xinhua via TEDA')}). Do not conflate capital, company count and zone jobs.</p>
-
-<h3>The people and language frame</h3>
-
-<p>Start from the official population, then replace it with a catchment. CAPMAS’s mid-2024 national estimate in the UN Yearbook is 106.556 million (${cite('un-dyb-pop', 'UNSD / CAPMAS')}). The CBE’s adult frame is 70.5 million citizens aged 15 and above at end-2025, 54.7 million with an active transactional account, inclusion at 77.6% (${cite('cbe-inclusion', 'CBE')}). About 360,000 Chinese visitors can support a Mandarin hotel cell (${cite('mfa-eg-zh', 'MFA China')}). They are not the Egyptian family grocery.</p>
-
-<h2 id="not-one-corridor">Why is Egypt not one North Africa corridor?</h2>
-
-<p>Chinese groups often sequence Egypt first because the TEDA zone is familiar and the 70-year diplomatic file is the oldest in Africa (${cite('mfa-eg-en', 'MFA China')}). That is a hub decision, not a Maghreb demand proof.</p>
-
-<p>The official trade ledgers are different sizes. Algeria: USD 12.48 billion in 2024, China long the largest trading partner, comprehensive strategic partnership since February 2014 (${cite('mfa-algeria', 'MFA China')}). Morocco: USD 9.04 billion in 2024, strategic partnership since May 2016, visa-free entry for Chinese citizens since June 2016 (${cite('mfa-morocco', 'MFA China')}). Tunisia: USD 2.88 billion in 2024 and USD 2.83 billion in 2025, strategic partnership only since May 2024 (${cite('mfa-tunisia', 'MFA China')}; ${cite('mfa-tunisia-zh', 'MFA China')}). Egypt’s 2025 USD 20.79 billion ledger is larger than any of those three (${cite('mfa-eg-zh', 'MFA China')}). Adding them into one “North Africa TAM” hides the first site.</p>
-
-<p>The buyer, the tax and the vehicle are different. Egypt’s 14% VAT and Law 72/2017 stack do not travel to Casablanca or Algiers (${cite('eta-vat', 'ETA')}; ${cite('gafi-law-72', 'Law 72/2017')}). A Sokhna free-zone licence is not a Maghreb invoice. Sequence a Cairo hub if you want to. Do not paste one sample onto four states. See <a href="/market-research-egypt">market research in Egypt</a> and the 2026 ranking of <a href="/insights/top-market-research-companies-egypt-2026">market research companies in Egypt</a>.</p>
-
-<h2 id="five-proofs">What five proofs must a China investment committee still demand?</h2>
-
-<table>
-<thead><tr><th>Proof the committee owes itself</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand in Egypt</td><td>A defined buyer, a unit of demand and a geography that matches the first site</td><td>A “North Africa” or “Belt and Road” TAM with no city split</td></tr>
-<tr><td>Price, including tax</td><td>Paid-for willingness-to-pay or current invoice evidence, stated with 14% VAT (${cite('eta-vat', 'ETA')})</td><td>An ex-factory RMB list pasted onto a Cairo or Alexandria shelf</td></tr>
-<tr><td>City and catchment</td><td>Greater Cairo, Alexandria, Delta, Upper Egypt or SCZONE volumes that respect the adult inclusion frame (${cite('cbe-inclusion', 'CBE')}; ${cite('un-dyb-pop', 'CAPMAS')})</td><td>A Chinese-visitor intercept presented as the first-year plan</td></tr>
-<tr><td>Channel and substitution</td><td>Who specifies, who distributes, what the buyer switches to — including other Chinese brands already in the 3,366-company stock (${cite('gafi-mansour', 'GAFI')})</td><td>A Sokhna re-export map with no end-buyer interviews</td></tr>
-<tr><td>Vehicle, incentive and remittance</td><td>The Law 72/2017 vehicle or SCZONE flag, plus the NDRC/MOFCOM/SAFE path the parent will actually file (${cite('gafi-law-72', 'Law 72/2017')}; ${cite('sc-837', 'Decree 837')})</td><td>A slide that says “Golden License” or “Belt and Road support” with no activity code</td></tr>
-</tbody>
-</table>
-
-<p>Those five tests are the entry study. A SCZONE photograph is context, not a launch budget. Primary work is usually Arabic and English interviews with the people who specify or pay; a Mandarin cell only where the buyer is itself a Chinese firm; a quantitative check on price and catchment with the 14% VAT rule on the card; and a source table that separates official series from fieldwork. Write Law 151 of 2020 into the method note — addressees have one year from the Executive Regulations to reconcile their positions (${cite('pdpl-151', 'Law 151/2020')}). “We will host respondent files in China” is not a method. BioNixus prices that custom work between $10,000 and $60,000. BioNixus guarantees, in writing: the agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. Accuracy of findings is not a claim we make.</p>
-
-<h2 id="vehicles">Which vehicle in Egypt — and what this article will not pretend?</h2>
-
-<p>Chinese counsel often writes “open a Sokhna free zone, then sell North Africa.” That sentence hides four different legal objects.</p>
-
-<p>Law 72/2017 is the first object. It applies to domestic and foreign investment of any volume and offers four frameworks: Internal Investment, Investment Zones, Technological Zones or Free Zones (${cite('gafi-law-72', 'Law 72/2017')}). Industrial projects can receive a cash incentive of 35% to 55% of the income tax they pay (${cite('gafi-law-72', 'Law 72/2017')}). GAFI’s CEO has also described a reimbursement of up to 50% of investment cost through tax deductions over seven years when speaking to Chinese investors (${cite('gafi-heiba', 'GAFI')}). Those are incentive facts, not demand facts. Ask which article the project will actually claim.</p>
-
-<p>The Golden License is the second object. Article 20, as amended by Law 160 of 2023, is a comprehensive approval on set-up, operation, management, building licences and land allocation, granted by Council of Ministers decree and valid on its own (${cite('gafi-golden', 'GAFI Golden License Guide')} ). Haier Egypt used one; GAFI recorded a 13-month first phase, already exporting (${cite('gafi-heiba', 'GAFI')}). A Golden License is a permitting path, not a Cairo sell-through.</p>
-
-<p>SCZONE is the third object. Sunrev Solar’s USD 200 million Sokhna complex, the two Chinese textile grounds of more than USD 55 million, and the TEDA expansion of 2.86 square kilometres with USD 100 million of infrastructure are zone projects (${cite('sczone-sunrev', 'SCZONE')}; ${cite('sczone-textiles', 'SCZONE')}; ${cite('teda-xinhua', 'Xinhua via TEDA')}). A zone licence is not an onshore Egyptian invoice and is not a Maghreb invoice. See <a href="/egypt-energy-market-research">energy market research in Egypt</a> and <a href="/egypt-real-estate-market-research">real estate market research in Egypt</a>.</p>
-
-<p>A mainland company selling into Greater Cairo is the fourth object. GAFI’s CEO said existing free zones operate at nearly full capacity and that four new zones — 10th of Ramadan, New October, New Borg El-Arab and New Alamein — are due to start by the end of 2026 (${cite('gafi-heiba', 'GAFI')}). A brief that says “we will take a free-zone plot” still has to name which zone, which activity and which end-buyer.</p>
-
-<h2 id="odi-paperwork">What does mainland ODI paperwork change about the research brief?</h2>
-
-<p>A Western sponsor files a board paper and a local licence. A Chinese sponsor also files an outbound-investment path. That path is not market research, but it changes what the research has to put on one page.</p>
-
-<p>NDRC Order No. 11 (2017), in force since 1 March 2018, governs the project: sensitive projects need approval; other projects are generally record-filed (${cite('ndrc-11', 'NDRC Order 11')}). MOFCOM Order No. 3 (2014) governs the investing enterprise and issues the Enterprise Outbound Investment Certificate (${cite('mofcom-3', 'MOFCOM Order 3')}). State Council Decree No. 837, in force from 1 July 2026, sits above both. Article 11 tells the authorities to specify encouraged, restricted and prohibited outbound investment. Article 12 keeps approval or filing and funds registration in place. Article 5 is the sentence a research firm may write on a proposal: investors make their own decisions and bear their own risks (${cite('sc-837', 'State Council Decree 837')}). BioNixus writes the demand chapter a committee can attach. It does not file the certificate.</p>
-
-<p>Three consequences follow. Name one market and one vehicle — an ODI filing that says “North Africa” will be rewritten. Separate official series from fieldwork. Flag restricted equipment, data or technicians under Decree 837 before the sample is designed (${cite('sc-837', 'State Council Decree 837')}).</p>
-
-<h2 id="sector-notes">How does the brief change by sector?</h2>
-
-<h3>Automotive, tyres and industrial equipment</h3>
-
-<p>GAFI’s September 2026 list already includes automotive manufacturing (${cite('gafi-mansour', 'GAFI')}). BYD sat on the November 2025 Egypt–China Investment Forum panel (${cite('gafi-heiba', 'GAFI')}). The study still has to name the first city, the first dealer and the substitute — often another of the 3,366 Chinese firms already in the country (${cite('gafi-mansour', 'GAFI')}). See <a href="/egypt-automotive-market-research">automotive market research in Egypt</a>.</p>
-
-<h3>Solar, energy equipment and industrial sites</h3>
-
-<p>Sunrev Solar’s USD 200 million Sokhna complex is the official example: 2 GW of cells and 2 GW of modules in phase one, more than 1,800 direct jobs, operations expected in the first half of 2026 (${cite('sczone-sunrev', 'SCZONE')}). LONGi sat on the same November 2025 forum panel (${cite('gafi-heiba', 'GAFI')}). Recruit the utility or the EPC — not a consumer panel. Use <a href="/egypt-energy-market-research">energy market research in Egypt</a>.</p>
-
-<h3>Appliances, electronics, FMCG and the Chinese-resident channel</h3>
-
-<p>Haier’s Golden License and 13-month first phase, already exporting, is the official appliance case (${cite('gafi-heiba', 'GAFI')}). It still does not prove a second brand’s Cairo family basket. Start from the 70.5 million adults and the 54.7 million active accounts, then replace them with a catchment (${cite('cbe-inclusion', 'CBE')}). State whether the shelf includes 14% VAT (${cite('eta-vat', 'ETA')}). See <a href="/egypt-fmcg-market-research">FMCG market research in Egypt</a>, <a href="/egypt-retail-market-research">retail market research in Egypt</a> and <a href="/b2c-industries">B2C market research</a>.</p>
-
-<h3>Textiles, garments and export platforms</h3>
-
-<p>Textiles and ready-made garments sit on GAFI’s 3,366-company activity list (${cite('gafi-mansour', 'GAFI')}). SCZONE’s two Sokhna textile grounds — more than USD 25 million and about USD 30 million — are export-oriented zone projects, not a domestic apparel tracker (${cite('sczone-textiles', 'SCZONE')}). Keep the instrument on the named buyer and the named offtake.</p>
-
-<h3>Hospitality, travel and the Chinese visitor</h3>
-
-<p>Organised Chinese group tourism has been in place since 2002. MFA China puts 2025 arrivals at about 360,000 and lists the current direct passenger routes (${cite('mfa-eg-zh', 'MFA China')}; ${cite('mfa-eg-en', 'MFA China')}). Those are access facts, not hotel occupancy. A Luxor intercept is not a Red Sea resort file. See <a href="/egypt-hospitality-market-research">hospitality market research in Egypt</a>.</p>
-
-<h3>Financial services, payments and the banked adult</h3>
-
-<p>The CBE’s 77.6% inclusion rate and 54.7 million active accounts are the frame for a wallet, card or appliance-finance brief (${cite('cbe-inclusion', 'CBE')}). They are not a credit-risk model. Pair the method with <a href="/egypt-financial-services-market-research">financial services market research in Egypt</a> and the industries insight on <a href="/bionixus-industries/insights/financial-services-market-research-egypt-2026">financial services market research in Egypt (2026)</a>.</p>
-
-<h2 id="how-to-choose">How should you choose a research partner for a China-to-Egypt file?</h2>
-
-<p>Ask every firm, including BioNixus, to answer these questions in writing before you sign:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for trade, FDI, population, inclusion and tax, and what is the date of each series?</li>
-<li>Will the study report Egypt as one sample, or only as “North Africa”?</li>
-<li>How many interviews, in which language, and is the Mandarin cell a channel cell or a substitute for Arabic?</li>
-<li>Which Law 72/2017 vehicle or SCZONE flag does the brief assume (${cite('gafi-law-72', 'Law 72/2017')}; ${cite('sczone-sunrev', 'SCZONE')})?</li>
-<li>Is the first vehicle an onshore company, a free zone, a Golden License or a zone developer plot?</li>
-<li>What ODI path will the parent file, and will the source table attach to it (${cite('sc-837', 'State Council Decree 837')})?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
-<li>How will personal data be processed under Law 151 of 2020, including any transfer to China (${cite('pdpl-151', 'Law 151/2020')})?</li>
+<li>Which official figures will you use, and what is the date of each one?</li>
+<li>Is the study about Egypt, or will the label say “North Africa”?</li>
+<li>How many interviews, and in which language? Fieldwork for Egyptian buyers is in Arabic and English. Add Mandarin only when the buyer is a Chinese company.</li>
+<li>Which Egyptian setup does the brief assume?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>How will personal data be handled if any of it moves to China? Egypt’s personal data law is Law 151 of 2020 (${cite('pdpl-151', 'Law 151 of 2020')}). Ask counsel how it applies. Do not assume a research firm can move respondent files to China.</li>
 </ol>
+<p>A firm that registers companies handles paperwork. A research firm measures demand. Many projects need both. BioNixus does the demand work. You can also browse <a href="/market-research-by-industry">market research by industry</a>.</p>
 
-<p>Incorporation houses that rank for “company setup Cairo” are strong at paperwork. They are not automatically strong at demand evidence. Many Chinese files need both. BioNixus does the second job. Related reading includes <a href="/egypt-retail-market-research">retail market research in Egypt</a>, <a href="/egypt-technology-market-research">technology market research in Egypt</a>, <a href="/market-research-egypt">market research in Egypt</a> and the 2026 ranking of <a href="/insights/top-market-research-companies-egypt-2026">market research companies in Egypt</a>. Browse <a href="/market-research-by-industry">market research by industry</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for a China-to-Egypt entry file?</h2>
-
-<p>BioNixus is not a company-formation house and is not a mainland ODI agent. It is a primary market research firm that writes the chapter a Shenzhen or Beijing committee can interrogate. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are the US headquarters in Sheridan, Wyoming; London EC1V 2NX; and Cairo in Sheikh Zayed. Dubai (Thuraya Tower 1), Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>The edge on this corridor is the Cairo leadership office in Sheikh Zayed, Giza — 22 Beverly Hills, Second Sheikh Zayed — not a fly-in from Dubai. Mainland teams can still brief Sheridan or London. Fieldwork is designed from Sheikh Zayed in Arabic and English; a Mandarin cell is added only when the buyer is itself a Chinese firm. To brief Chinese companies Egypt market research, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In Egypt call the Sheikh Zayed office on <a href="tel:+201206882323">+20 120 688 2323</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza, at 22 Beverly Hills. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork for Egypt is designed in Arabic and English.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In Egypt call <a href="tel:+201206882323">+20 120 688 2323</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -417,39 +333,39 @@ ${REFERENCES_HTML}`;
 
 export const CN_EGYPT_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What must Chinese companies Egypt market research prove before a mainland HQ remits capital?',
+    question: 'What should a Chinese company research before sending money to Egypt?',
     answer:
-      'It must prove addressable demand, price including 14% Egyptian VAT, city, channel and the GAFI or SCZone vehicle, with dated official series and primary interviews. A customs invoice is not that file. The parent also has to name the outbound-investment path it will file.',
+      'Name the buyer, the city, the price after Egypt’s 14% VAT, and the seller who will stock the product. Also name the Egyptian licence. A trade total or a free-zone plot does not answer those questions.',
   },
   {
-    question: 'Can a Chinese firm treat Egypt, Algeria, Morocco and Tunisia as one North Africa launch?',
+    question: 'Can Egypt, Algeria, Morocco, and Tunisia be one launch?',
     answer:
-      'No. Trade ledgers, VAT and investment vehicles differ. Egypt’s 2025 goods trade with China was USD 20.79 billion; Algeria, Morocco and Tunisia are smaller and separately licensed. Sequence a Cairo hub if you want to. Do not paste one sample onto four states.',
+      'No. China publishes a separate trade total for each country. Egypt’s tax and investment rules do not apply in the others. You can start in Cairo. Use a separate sample for each country.',
   },
   {
-    question: 'Does a Golden License or a Sokhna free-zone plot replace demand research?',
+    question: 'Does a Golden License or a Sokhna plot replace demand research?',
     answer:
-      'No. A Golden License consolidates set-up approvals under Article 20 of Law 72/2017. A SCZONE plot is a zone vehicle. Neither names the buyer, the city or the VAT-inclusive price.',
+      'No. A Golden License is a permit for set-up, building, and land. A plot in the Suez Canal zone is a place to build. Neither one names the buyer, the city, or the price after tax.',
   },
   {
-    question: 'Which official trade and investment numbers should a 2026 China-to-Egypt brief use?',
+    question: 'Which official numbers are safe to quote?',
     answer:
-      'Start from MFA China’s 2025 total of USD 20.79 billion, the 2024 split of USD 17.378 billion, MOFCOM’s USD 284 million of 2025 new Chinese FDI, GAFI’s 3,366 companies and USD 12.2 billion national net FDI in FY 2024/25, and TEDA’s nearly 200 zone firms. Label each series.',
+      'Quote each figure with its source and year. China’s ministries put 2025 goods trade at $20.79 billion. GAFI said in September 2026 that 3,366 Chinese companies were operating in Egypt. Egypt’s $12.2 billion foreign-investment total is for every country, not only China.',
   },
   {
-    question: 'Does an Egypt demand study replace NDRC, MOFCOM or SAFE paperwork?',
+    question: 'Does a demand study replace Chinese outbound-investment filings?',
     answer:
-      'No. NDRC Order 11, MOFCOM Order 3 and State Council Decree 837 (in force 1 July 2026) still govern approval or filing and funds registration. BioNixus writes the demand chapter. It does not file the certificate.',
+      'No. Since 1 July 2026, State Council Decree 837 has set the rules. Companies still file with the NDRC and the Ministry of Commerce, and they still register the funds. BioNixus can write the demand chapter. It does not file the certificate.',
   },
   {
-    question: 'How much does custom China-to-Egypt entry research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom programmes from BioNixus are typically $10,000 to $60,000 depending on sample, cities and language cells. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the cities, and the languages. The written guarantee covers scope, timing, and deliverables. It does not guarantee what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus rather than a setup firm in Cairo or Sokhna?',
+    question: 'Why brief BioNixus rather than a company that only registers firms?',
     answer:
-      'Incorporation houses file the activity. BioNixus proves demand from the Sheikh Zayed leadership office. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'A registration firm files the company. BioNixus measures demand from the Sheikh Zayed office. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 
@@ -545,7 +461,7 @@ export const CN_EGYPT_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning research for a China-to-Egypt market entry?',
     description:
-      'BioNixus scopes primary demand research for Chinese companies Egypt market research briefs. Custom work is $10,000–$60,000. The scope is guaranteed in writing.',
+      'BioNixus scopes buyer interviews for Chinese companies entering Egypt. Custom work is $10,000 to $60,000. The scope is guaranteed in writing.',
     buttonText: 'Request a proposal',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

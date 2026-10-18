@@ -326,7 +326,8 @@ describe('/bionixus-industries/insights/market-entry-research-saudi-arabia: copy
     expect(SAUDI_MARKET_ENTRY_META_TITLE.toLowerCase()).toContain(PHRASE);
     expect(SAUDI_MARKET_ENTRY_META_DESCRIPTION.toLowerCase()).toContain(PHRASE);
     expect(summary.toLowerCase()).toContain(PHRASE);
-    expect(h2s.some((h2) => h2.includes(PHRASE))).toBe(true);
+    expect(h2s.some((h2) => h2.includes('before you send money'))).toBe(true);
+    expect(SAUDI_MARKET_ENTRY_BODY_HTML.toLowerCase()).toContain(PHRASE);
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {

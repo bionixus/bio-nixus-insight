@@ -195,7 +195,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
       'Independent guide to the leading market research companies in the USA for 2026: healthcare, pharma, and consumer research firms compared by capability, methodology, and US expertise.',
     url: CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-09-28',
+    dateModified: '2026-10-18',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -270,7 +270,11 @@ export default function TopMarketResearchCompaniesUsa2026() {
               <Link to="/healthcare-market-research" className="text-[#E8C56A] underline">
                 healthcare market research hub
               </Link>
-              .
+              {' '}or the{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="text-[#E8C56A] underline">
+                healthcare market research companies in the USA
+              </Link>
+              {' '}shortlist.
             </>
           }
           metaLine={`Updated September 2026 · By ${PAGE_AUTHOR.name} · 14 min read`}

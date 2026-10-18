@@ -109,7 +109,7 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
   },
   {
     to: getIndustriesInsightPostPath('chinese-companies-egypt-market-research'),
-    label: 'Chinese Brands in Egypt and North Africa: What to Research',
+    label: 'Chinese companies in Egypt: what to research first',
   },
   {
     to: getIndustriesInsightPostPath('nielsen-alternative-saudi-arabia'),

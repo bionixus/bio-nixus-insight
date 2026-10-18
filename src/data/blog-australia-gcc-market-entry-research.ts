@@ -41,15 +41,15 @@ export const AU_GCC_ENTRY_META_DESCRIPTION =
   'Australia GCC market entry research playbook for exporters: prove demand, CEPA tariffs, cities, halal and price in Saudi Arabia and UAE before you ship.';
 
 export const AU_GCC_ENTRY_DISPLAY_TITLE =
-  "Australian Exporters' Guide to Saudi and UAE Market Research";
+  'What Australian Exporters Should Check in Saudi Arabia and the UAE';
 
 export const AU_GCC_ENTRY_DISPLAY_SUBTITLE =
-  'What Australia GCC market entry research must prove in 2026';
+  'Name the buyer, the tariff, and the price before a container leaves';
 
 export const AU_GCC_ENTRY_BREADCRUMB_LABEL = 'Australia GCC market entry research';
 
 export const AU_GCC_ENTRY_EXCERPT =
-  'A sourced 2026 playbook for Australia GCC market entry research: what Australian exporters must prove on demand, CEPA tariffs, cities, channels, halal and price in Saudi Arabia and the UAE before they ship.';
+  'A plain guide for Australian exporters looking at Saudi Arabia and the UAE: which trade and tariff figures to quote, and which questions only buyers can answer.';
 
 export const AU_GCC_ENTRY_PUBLISHED_ISO = '2026-10-16T12:00:00.000Z';
 export const AU_GCC_ENTRY_UPDATED_ISO = '2026-10-16T12:00:00.000Z';
@@ -232,189 +232,83 @@ export function countWords(html: string): number {
 }
 
 export const AU_GCC_ENTRY_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  {
-    heading: 'What does Australia GCC market entry research have to answer?',
-    anchor: 'what-entry-research-answers',
-  },
-  {
-    heading: 'Why Australian exporters cannot treat the Gulf as one market',
-    anchor: 'not-one-gulf-market',
-  },
-  {
-    heading: 'Official numbers that frame a 2026 Australia–GCC brief',
-    anchor: 'official-numbers',
-  },
-  {
-    heading: 'What CEPA changes in the UAE — and what it does not change in Saudi Arabia',
-    anchor: 'cepa-vs-saudi',
-  },
-  {
-    heading: 'Halal, live sheep and the food-export brief',
-    anchor: 'halal-and-livestock',
-  },
-  {
-    heading: 'The five proofs an Australia–GCC entry study must deliver',
-    anchor: 'five-proofs',
-  },
-  { heading: 'How the brief changes by sector', anchor: 'sector-notes' },
-  { heading: 'How to choose a market research partner', anchor: 'how-to-choose' },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to settle before you send money', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'The UAE tariff deal, and what it does not cover', anchor: 'cepa' },
+  { heading: 'Saudi Arabia is a different file', anchor: 'saudi' },
+  { heading: 'Food, halal, and live sheep', anchor: 'food' },
+  { heading: 'How the questions change by product', anchor: 'by-sector' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const AU_GCC_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Australia GCC market entry research must prove who will buy in Saudi Arabia and the UAE, at what VAT-inclusive price, through which channel, under which licence and with which CEPA or halal treatment before an exporter ships. A single Gulf TAM is not entry research. Primary interviews in both markets are.</p>`;
+export const AU_GCC_ENTRY_EXECUTIVE_SUMMARY_HTML = `<p>Australia GCC market entry research names the buyer, the country, the price after VAT, and the tariff line before a container leaves Australia. Saudi Arabia and the UAE are separate markets. A two-way trade total is not an order. Ask who will pay.</p>`;
 
-const NARRATIVE_HTML = `<p>Australian food, mining, education and services teams still arrive with one “GCC” slide and a Sydney warehouse plan. That is not Australia GCC market entry research. Entry research has to name the buyer, the city, the VAT-inclusive price, the channel and the legal vehicle in Saudi Arabia and, separately, in the UAE before the first container is committed. This playbook sits on the <a href="/bionixus-industries/insights">industry insights hub</a> for non-pharma briefs — not SFDA or NUPCO files.</p>
+const NARRATIVE_HTML = `<p>Australian exporters often treat Saudi Arabia and the UAE as one Gulf order. They are separate markets. Before a container leaves, name who will buy, in which city, at what price after tax, and which tariff or halal rule applies. This page is a plain guide to Australia GCC market entry research. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for goods and services exporters, not for medicines.</p>
 
-<p>Search results for the phrase mix Austrade market pages with incorporation shops in Dubai. Few say how demand was measured. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026. Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a> and <a href="/b2b-industries">B2B market research</a>.</p>
+<p>A two-way trade total describes shipments. Interviews describe who will pay the invoice. Related pages cover <a href="/saudi-arabia-retail-market-research">retail research in Saudi Arabia</a>, <a href="/uae-retail-market-research">retail research in the UAE</a>, <a href="/saudi-arabia-education-market-research">education research in Saudi Arabia</a>, and <a href="/uae-education-market-research">education research in the UAE</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 Australia–GCC brief can cite, October 2026</strong></p>
+<h2 id="what-to-prove">What to settle before you send money</h2>
 <ul>
-<li><strong>A$12.7 billion</strong> of Australia–UAE two-way goods and services trade in 2024–25, and <strong>A$23.7 billion</strong> of two-way investment stock in 2024. The UAE is Australia’s largest trade and investment partner in the Middle East (${cite('dfat-uae-brief', 'DFAT UAE country brief')}; ${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}).</li>
-<li><strong>A$6,843 million</strong> of Australian goods and services exports to the UAE in calendar 2025, up 11.1% from A$6,159 million in 2024, ranking the UAE Australia’s 15th export market (${cite('dfat-top25-2025', 'DFAT top trade 2025')}; ${cite('dfat-uae-cef', 'DFAT UAE fact sheet')}).</li>
-<li><strong>A$2.8 billion</strong> of Australia–Saudi two-way goods and services trade in FY 2024–25 (${cite('dfat-ksa-brief', 'DFAT Saudi country brief')}). On the calendar-year fact sheet, goods and services trade was A$1,917.4 million in 2025, of which Australian exports were A$1,225.8 million (${cite('dfat-ksa-cef', 'DFAT Saudi fact sheet')}).</li>
-<li><strong>A$8.9 billion</strong> of approved commercial foreign-investment proposals from Saudi Arabia in the December quarter 2024, second only to the United States (A$14.2 billion). The UAE recorded A$1.8 billion in the same quarter, of A$54.7 billion approved across 351 commercial proposals (${cite('firb-q4-2024', 'FIRB Q4 2024')}; ${cite('dfat-ksa-brief', 'DFAT')}).</li>
-<li><strong>1 October 2025:</strong> the Australia–UAE CEPA entered into force. Tariffs are eliminated on over 99% of Australian goods exports to the UAE once fully implemented in 2029. Independent modelling estimates a potential annual increase in Australian goods exports of around A$678 million (${cite('dfat-cepa', 'DFAT CEPA')}; ${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}).</li>
-<li><strong>No GCC-wide FTA.</strong> Australia–GCC FTA negotiations began in July 2007, held four rounds, and have been paused since June 2009. DFAT’s 2025 snapshot for the six-member GCC is GDP of USD 2.4 trillion, GDP per capita of USD 37,958, a population of 62 million, and AUD 24.3 billion of two-way goods and services trade (${cite('dfat-gcc-fta', 'DFAT GCC FTA')}).</li>
-</ul>
-</div>
-
-<h2 id="what-entry-research-answers">What does Australia GCC market entry research have to answer?</h2>
-
-<p>Australia GCC market entry research is the work that tells a sponsor whether a named Australian offer will sell, at a named invoice, in named cities, through a named importer or distributor, under a named UAE or Saudi activity. It is not a packing-list check, and it is not a CEPA explainer. Five questions separate a usable study from a slide that nobody can defend in a Melbourne, Sydney or Perth investment committee:</p>
-
-<ul>
-<li><strong>Who buys?</strong> A household, a hotel buyer, a feeder mill, a contractor, a university, a procurement lead. The UAE’s 2024 population was 11.29 million, up 5.7% from 10.68 million in 2023, across about 200 nationalities (${cite('fcsc-unified', 'FCSC')}). Saudi Arabia’s mid-2024 population was 35.3 million (${cite('gastat-pop-2024', 'GASTAT')}). Those are not the same buyer mix.</li>
-<li><strong>Where?</strong> Dubai, Abu Dhabi, Sharjah, Riyadh, Jeddah and the Eastern Province are not interchangeable catchments. A “Gulf average” hides the only city that can carry the first container.</li>
-<li><strong>At what price?</strong> A willingness-to-pay range that includes the destination VAT: 5% in the UAE from 1 January 2018 (${cite('mof-uae-vat', 'UAE Ministry of Finance')}) and 15% in the Kingdom (${cite('zatca-vat', 'ZATCA')}). An Australian ex-works ASP copied across is not a Gulf invoice.</li>
-<li><strong>Through which channel?</strong> Who specifies, who stocks, who pays, and what the buyer switches to if you miss — including a local or third-country substitute that already has a CEPA or GCC preference you do not.</li>
-<li><strong>Under which treatment?</strong> In the UAE, which CEPA staging line and which free-zone or mainland vehicle. In Saudi Arabia, which MISA ISIC4 activity, because the June 2026 Investor Guide still splits activities into available and restricted (${cite('misa-guide-2026', 'MISA')}).</li>
+<li><strong>Who buys.</strong> The UAE’s 2024 population was 11.29 million, up 5.7% from 10.68 million, across about 200 nationalities (${cite('fcsc-unified', 'FCSC')}). Saudi Arabia’s mid-2024 population estimate is 35.3 million (${cite('gastat-pop-2024', 'GASTAT')}). Those totals are a frame. Your customer list is smaller.</li>
+<li><strong>Which country, then which city.</strong> Dubai is not Riyadh. Abu Dhabi is not Jeddah. A six-country average hides the first site.</li>
+<li><strong>What price, after tax.</strong> UAE VAT has been 5% since 1 January 2018 (${cite('mof-uae-vat', 'UAE Ministry of Finance')}). Saudi Arabia’s standard VAT is 15% (${cite('zatca-vat', 'ZATCA')}). An Australian ex-works price is a different number from a Gulf invoice.</li>
+<li><strong>Which tariff line.</strong> The Australia–UAE agreement is in force. There is no Australia–GCC free-trade agreement in force. Saudi Arabia is not a party to the UAE deal.</li>
+<li><strong>Which food rule, if the product is food.</strong> A tariff cut is not a halal certificate. A certificate is not a named buyer.</li>
 </ul>
 
-<p>Desktop TAM built on a single Austrade page can frame those questions. It cannot answer them. Primary interviews and bilingual surveys can. That is the gap this playbook is written to close. Adjacent country pages for the same commercial questions include <a href="/saudi-arabia-retail-market-research">retail market research in Saudi Arabia</a>, <a href="/uae-retail-market-research">retail market research in the UAE</a>, <a href="/saudi-arabia-fmcg-market-research">FMCG market research in Saudi Arabia</a> and <a href="/uae-fmcg-market-research">FMCG market research in the UAE</a>.</p>
-
-<h2 id="not-one-gulf-market">Why can Australian exporters not treat the Gulf as one market?</h2>
-
-<p>A Dubai instrument with Arabic labels is not a Saudi entry file, and a CEPA preference is not a GCC preference. Three official series show why.</p>
-
-<p>First, the trade already exists — and it is not one corridor. In calendar 2025 Australia exported A$6,843 million of goods and services to the UAE, 1.0% of all Australian goods and services exports, after A$6,159 million in 2024 (${cite('dfat-top25-2025', 'DFAT top trade 2025')}). The UAE fact sheet’s leading 2025 export lines were aluminium ores and concentrates including alumina (A$1,730.6 million), oil-seeds and oleaginous fruits (A$669.7 million), crude petroleum (A$488.6 million), gold (A$446.0 million), meat excluding beef (A$419.7 million) and vehicle parts and accessories (A$358.0 million) (${cite('dfat-uae-cef', 'DFAT UAE fact sheet')}). Saudi Arabia is a different list. The 2025 fact sheet’s leading Australian export lines to the Kingdom were meat excluding beef (A$372.9 million), education-related travel (A$303.0 million), beef (A$233.5 million), barley (A$212.4 million), ferrous waste and scrap (A$75.6 million) and medicaments including veterinary (A$65.6 million), on exports of A$1,225.8 million (${cite('dfat-ksa-cef', 'DFAT Saudi fact sheet')}). An alumina brief and a barley brief do not share a demand curve.</p>
-
-<p>Second, the legal treatment is not shared. The Australia–UAE CEPA entered into force on 1 October 2025. Negotiations began on 13 December 2023, concluded on 17 September 2024 and were signed on 6 November 2024 (${cite('dfat-cepa', 'DFAT CEPA')}). Most tariffs were eliminated on entry into force or locked at zero; the rest stage over three or five years, with full implementation in 2029 (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}). Saudi Arabia is not a party. Australia–GCC FTA talks have been paused since the fourth round in June 2009 (${cite('dfat-gcc-fta', 'DFAT GCC FTA')}). A preference earned in Dubai does not travel to Riyadh.</p>
-
-<p>Third, the buyer mix is not a single expat mix. FCSC records 11.29 million people in the UAE in 2024 and roughly 200 nationalities (${cite('fcsc-unified', 'FCSC')}). GASTAT’s mid-2024 Saudi estimate is 35.3 million (${cite('gastat-pop-2024', 'GASTAT')}). A mall intercept in Dubai will not describe a Riyadh family grocer, and a Riyadh contractor panel will not describe an Abu Dhabi hotel buyer. Compare the method — not the numbers — with <a href="/uae-hospitality-market-research">hospitality market research in the UAE</a> and <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a> if the same sponsor is sequencing both. The instruments are not interchangeable.</p>
-
-<h2 id="official-numbers">Which official numbers should a 2026 Australia–GCC brief start from?</h2>
-
-<p>Use official series as the frame. Then replace the frame with primary evidence for the SKU. Do not invent giga-project revenues, and do not add FY and calendar-year DFAT totals together.</p>
-
-<h3>The UAE frame</h3>
-
-<p>The headline goods totals sit in the facts box. Add the services layer: two-way services trade was A$4.6 billion in 2024–25 (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}). Write the period on every figure. An entry memo that quotes only the 2029 tariff end-state, and not the 1 October 2025 staging, is selling a slogan.</p>
-
-<p>CEPA also locks market access to more than 100 UAE services sectors, with foreign-equity caps of up to 100% in a range of subsectors, and gives Australian suppliers guaranteed access to UAE central-government procurement for the first time (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}). Those are access rules. They are not a named buyer’s willingness to pay.</p>
-
-<h3>The Saudi frame</h3>
-
-<p>The FY two-way total and the 2025 SKU lines are in the facts box and the corridor section. What the Saudi brief still adds is complementarity in agriculture, mining services, education and construction, and that Austrade is represented in Riyadh (${cite('dfat-ksa-brief', 'DFAT Saudi country brief')}). On the calendar-year sheet Saudi Arabia ranked 31st as an Australian export destination and 46th as a source (${cite('dfat-ksa-cef', 'DFAT Saudi fact sheet')}).</p>
-
-<p>Investment the other way still does not prove SKU demand. The FIRB quarter in the facts box is approved proposal value — A$8.9 billion from Saudi Arabia after A$0.1 billion in the prior quarter — not a Riyadh invoice (${cite('firb-q4-2024', 'FIRB Q4 2024')}).</p>
-
-<h3>The GCC frame — and its limit</h3>
-
-<p>The 2025 GCC snapshot in the facts box is a region total, not a first-year plan (${cite('dfat-gcc-fta', 'DFAT GCC FTA')}). The six members do not share a tariff schedule with Australia, a VAT rate or a buyer mix. This playbook specifies Saudi Arabia and the UAE because they are the two markets Australian exporters actually brief.</p>
-
-<h2 id="cepa-vs-saudi">What does CEPA change in the UAE — and what does it not change in Saudi Arabia?</h2>
-
-<p>CEPA is a UAE instrument. It is not a Saudi instrument. An Australia GCC market entry research file that pastes CEPA staging into a Kingdom chapter will fail the first credit-committee question.</p>
-
-<p>On goods, DFAT’s benefits page is specific. Frozen beef and sheep-meat tariffs to the UAE were eliminated on 1 October 2025, with duty-free access locked for fresh red meat and a range of staples. The UAE’s 5% tariff on canola seed and on honey fell on entry into force. Many aluminium duties, including alumina, were eliminated the same day, with the rest staging over three to five years. Gold was locked at zero, preventing a return to a previous 15% bound rate. Vehicle-parts tariffs fell on entry into force or over three years — DFAT calls the UAE Australia’s largest vehicle-parts export market. Cosmetics duties were eliminated on 1 October 2025. The bottled-and-sparkling-wine tariff was cut from 50% to 45%. Independent modelling puts the potential annual goods-export lift at around A$678 million (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}).</p>
-
-<p>On services, CEPA goes beyond the UAE’s WTO commitments. DFAT lists professional services, financial services, distribution, secondary and higher education, and tourism, among more than 100 sectors. Business visitors may stay three months in any 12-month period; intra-corporate transferees in manager and specialist roles may stay three years; contractual service suppliers may work up to three months. CEPA does not waive labour-market testing (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}).</p>
-
-<p>None of that staging applies in Saudi Arabia. A firm registering an activity in the Kingdom still faces the June 2026 MISA Investor Guide: ISIC4 activities that are available or restricted, an estimated 10 working days for a standard establishment registration, and Section 05.00 rules — including SAR 30,000,000 of capital plus a presence in at least three regional or global markets for 100% foreign commercial (${cite('misa-guide-2026', 'MISA')}). Registration is not a commercial registration, a municipality licence or a ZATCA file. Start the research before that stack is built, or the activity code and the demand evidence will not match.</p>
-
-<p>The wine line is a discipline test: the 45% CEPA rate is a UAE outcome and does not create a Saudi consumer-wine brief.</p>
-
-<h2 id="halal-and-livestock">What must a food-export brief prove on halal and live sheep?</h2>
-
-<p>Australian red-meat exports to both markets already sit near the top of DFAT’s 2025 lists: meat excluding beef was A$419.7 million to the UAE and A$372.9 million to Saudi Arabia, with beef a further A$233.5 million to the Kingdom (${cite('dfat-uae-cef', 'DFAT UAE fact sheet')}; ${cite('dfat-ksa-cef', 'DFAT Saudi fact sheet')}). CEPA removed the UAE frozen-red-meat tariff on day one (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}). A tariff line is still not a halal certificate, and a certificate is still not a named buyer.</p>
-
-<p>DAFF regulates export of halal red meat under the Australian Government Authorised Halal Program. Only product that complies with AGAHP and with known importing-country requirements is eligible for an official Australian halal certificate. Approved Islamic Organisations supervise the religious aspects, including training of Muslim slaughtermen, and must hold a department-approved arrangement that names the destination market (${cite('daff-agahp', 'DAFF AGAHP')}). Saudi Arabia added a further gate on 1 October 2024: DAFF’s market-access advice records that the Kingdom requires facility and shipment halal certificates to be issued via the Saudi Halal Centre platform (${cite('daff-maa-halal', 'DAFF MAA 2024-43')}). A study that interviews importers and food-service buyers without checking which AIO and which portal the SKU will actually use is incomplete.</p>
-
-<p>Live sheep is a separate, dated constraint. The Export Control Amendment (Ending Live Sheep Exports by Sea) Act 2024 received Royal Assent on 9 July 2024, commenced on 10 July 2024, and prohibits live sheep exports by sea from 1 May 2028. Until that date the trade continues without caps or quotas, still subject to ASEL, ESCAS and the Northern Hemisphere summer prohibition that begins on 1 May each year for shipments to or through the Middle East (${cite('daff-live-sheep', 'DAFF phase-out')}; ${cite('daff-gov-response', 'DAFF government response')}). The Australian Government committed A$139.7 million over five years from 2024–25, including A$97.3 million for business transition and A$27 million to enhance demand for sheep products and to diversify agri-food trade to the Middle East and North Africa (${cite('daff-gov-response', 'DAFF government response')}). An Australia GCC market entry research brief for sheep meat in 2026 has to say whether the sponsor is selling chilled or frozen carcases under AGAHP, live animals under the remaining sea-trade window, or both — and what the importer will substitute after 1 May 2028. Those are different demand curves.</p>
-
-<h2 id="five-proofs">What five proofs must an Australia–GCC entry study deliver?</h2>
-
-<table>
-<thead><tr><th>Proof the committee owes itself</th><th>What “proven” looks like</th><th>What fails the file</th></tr></thead>
-<tbody>
-<tr><td>Addressable demand</td><td>A defined buyer, a unit of demand and a geography that matches the first container or campus</td><td>A “GCC” market-size figure with no country split</td></tr>
-<tr><td>Price, including tax</td><td>Paid-for willingness-to-pay or current invoice evidence, stated with UAE 5% VAT or Saudi 15% VAT (${cite('mof-uae-vat', 'UAE Ministry of Finance')}; ${cite('zatca-vat', 'ZATCA')})</td><td>An Australian ex-works ASP pasted onto a Gulf shelf</td></tr>
-<tr><td>City and catchment</td><td>Dubai versus Abu Dhabi, or Riyadh versus Jeddah versus Eastern Province, with a nationality mix that matches the offer (${cite('fcsc-unified', 'FCSC')}; ${cite('gastat-pop-2024', 'GASTAT')})</td><td>A Gulf average presented as the first-year plan</td></tr>
-<tr><td>Channel, certificate and substitution</td><td>Who specifies, who distributes, which AGAHP AIO and which Saudi Halal Centre or UAE import file, and what the buyer switches to if you miss (${cite('daff-agahp', 'DAFF AGAHP')})</td><td>A channel map with no interviews</td></tr>
-<tr><td>Legal treatment</td><td>The CEPA staging line for a UAE SKU (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}), or the MISA ISIC activity and Section 05.00 rule for a Saudi vehicle (${cite('misa-guide-2026', 'MISA')})</td><td>A slide that says “FTA with the Gulf” when only the UAE CEPA is in force (${cite('dfat-gcc-fta', 'DFAT GCC FTA')})</td></tr>
-</tbody>
-</table>
-
-<p>Those five tests are the entry study. Vision 2030 photographs, a CEPA chapter dump and an Austrade quotation are context. Context does not repay a launch budget.</p>
-
-<p>Primary work for an Australia–GCC brief is usually a short, named programme:</p>
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its source and its year. A financial year and a calendar year are different periods.</p>
 <ul>
-<li>structured interviews with the people who specify or pay — importers, distributors, hotel and catering buyers, millers, contractors, university admissions leads;</li>
-<li>a quantitative check on price, substitution and catchment, in Arabic and English;</li>
-<li>separate UAE and Saudi samples, with city quotas that match the first site, not a convenience panel in one mall;</li>
-<li>a source table that separates official series, supplier quotations and fieldwork.</li>
+<li><strong>UAE trade.</strong> DFAT’s country brief puts two-way goods and services trade at A$12.7 billion in 2024–25, and two-way investment stock at A$23.7 billion in 2024 (${cite('dfat-uae-brief', 'DFAT UAE brief')}). In calendar 2025, Australian goods and services exports to the UAE were A$6,843 million, up 11.1% from A$6,159 million in 2024. That was 1.0% of Australian goods and services exports. The UAE ranked 15th (${cite('dfat-top25-2025', 'DFAT top 25, 2025')}).</li>
+<li><strong>What Australia sold the UAE.</strong> The 2025 fact sheet’s leading lines include aluminium ores and concentrates, including alumina, at A$1,730.6 million; oil-seeds and oleaginous fruits at A$669.7 million; crude petroleum at A$488.6 million; gold at A$446.0 million; and meat excluding beef at A$419.7 million. Vehicle parts were A$358.0 million (${cite('dfat-uae-cef', 'DFAT UAE fact sheet')}).</li>
+<li><strong>Saudi trade.</strong> DFAT puts two-way goods and services trade at A$2.8 billion in FY 2024–25 (${cite('dfat-ksa-brief', 'DFAT Saudi brief')}). On the calendar-year sheet, goods and services trade was A$1,917.4 million in 2025, of which Australian exports were A$1,225.8 million. Saudi Arabia ranked 31st as an export destination and 46th as a source. Meat excluding beef was A$372.9 million, beef a further A$233.5 million, and education-related travel A$303.0 million (${cite('dfat-ksa-cef', 'DFAT Saudi fact sheet')}). The same brief points to agriculture, mining services, education, and construction, and it says Austrade is represented in Riyadh.</li>
+<li><strong>Investment proposals.</strong> In the December quarter of 2024, approved commercial foreign-investment proposals from Saudi Arabia were A$8.9 billion, after A$0.1 billion in the prior quarter, second to the United States at A$14.2 billion. The UAE recorded A$1.8 billion in that quarter. The quarter’s commercial approvals were A$54.7 billion across 351 proposals (${cite('firb-q4-2024', 'FIRB, Q4 2024')}). Approved proposal value is not a Riyadh invoice.</li>
+<li><strong>The six-country snapshot.</strong> DFAT says Australia–GCC negotiations began in July 2007, held four rounds, and have been paused since June 2009. The 2025 snapshot for the six members is GDP of USD 2.4 trillion, GDP per capita of USD 37,958, a population of 62 million, and AUD 24.3 billion of two-way goods and services trade (${cite('dfat-gcc-fta', 'DFAT GCC FTA page')}). That is a region total. It is not a first-year plan.</li>
 </ul>
 
-<p>If the study interviews residents or employees in the UAE, Federal Decree-Law No. 45 of 2021 applies. The UAE Personal Data Protection Law came into force on 2 January 2022 and is the first federal framework for consent, correction, restriction and cross-border transfer; the UAE Data Office is the federal regulator (${cite('uae-pdpl', 'UAE Government')}). If the same study interviews residents or employees in the Kingdom, SDAIA’s controller-and-processor guide records the Personal Data Protection Law as in force from 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}). Write the legal basis into the method note for each country. Do not copy a UAE consent script onto a Saudi instrument.</p>
+<h2 id="cepa">The UAE tariff deal, and what it does not cover</h2>
+<p>The Australia–UAE Comprehensive Economic Partnership Agreement was signed on 6 November 2024 and entered into force on 1 October 2025 (${cite('dfat-cepa', 'DFAT CEPA')}). DFAT’s benefits page says negotiations began on 13 December 2023 and concluded on 17 September 2024. Most tariffs were eliminated on entry into force or locked at zero. The rest stage over three or five years, with full implementation in 2029. Tariffs are eliminated on over 99% of Australian goods exports once that staging is complete. Independent modelling puts a potential annual increase in Australian goods exports at around A$678 million. Two-way services trade was A$4.6 billion in 2024–25 (${cite('dfat-cepa-benefits', 'DFAT CEPA benefits')}).</p>
+<p>On goods, the same page is specific. Frozen beef and sheep-meat tariffs were eliminated on 1 October 2025, with duty-free access locked for fresh red meat and a range of staples. The UAE’s 5% tariff on canola seed and on honey fell on entry into force. Many aluminium duties, including alumina, were eliminated the same day, with the rest staging over three to five years. Gold was locked at zero, against a previous 15% bound rate. Vehicle-parts tariffs fall on entry into force or over three years. DFAT’s page calls the UAE Australia’s largest vehicle-parts export market. Cosmetics duties were eliminated on 1 October 2025. The bottled-and-sparkling-wine tariff was cut from 50% to 45%.</p>
+<p>On services, DFAT lists more than 100 sectors, including professional services, financial services, distribution, secondary and higher education, and tourism, with foreign-equity caps of up to 100% in a range of subsectors. Australian suppliers receive access to UAE central-government procurement. Business visitors may stay three months in any 12-month period. Intra-corporate transferees in manager and specialist roles may stay three years. Contractual service suppliers may work up to three months. The agreement does not waive labour-market testing. Access rules are not a named buyer’s willingness to pay.</p>
+<p>None of that staging applies in Saudi Arabia. Quote the 1 October 2025 start as well as the 2029 end-state. An entry memo that quotes only the end-state is selling a slogan.</p>
 
-<p>BioNixus prices that custom work between $10,000 and $60,000, depending on sample, cities and whether the output is a stand-alone entry file or a chapter inside a wider feasibility. The scope, timing and deliverables are guaranteed in writing. Accuracy of findings is not a claim we make. The written guarantees are: replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field.</p>
+<h2 id="saudi">Saudi Arabia is a different file</h2>
+<p>The June 2026 MISA guide covers investment registration, activity categories, fees, and special-category capital rules (${cite('misa-guide-2026', 'MISA, June 2026')}). This page does not walk those rules. A UAE tariff line does not register a Saudi activity.</p>
+<p>If the study interviews people in the UAE, Federal Decree-Law No. 45 of 2021 has been in force since 2 January 2022 (${cite('uae-pdpl', 'UAE government')}). If the same study interviews people in Saudi Arabia, the personal-data law has been in force since 14 September 2023, with a grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}). Write the basis for each country into the method note.</p>
 
-<h2 id="sector-notes">How does the brief change by sector?</h2>
+<h2 id="food">Food, halal, and live sheep</h2>
+<p>Meat excluding beef was A$419.7 million of exports to the UAE and A$372.9 million to Saudi Arabia in the 2025 fact sheets, with beef a further A$233.5 million to Saudi Arabia. The UAE frozen-red-meat tariff came off on day one of the agreement. A tariff line is still not a halal certificate.</p>
+<p>DAFF regulates halal red-meat exports under the Australian Government Authorised Halal Program. Product is eligible for an official Australian halal certificate when it complies with that program and with the importing country’s known requirements. Approved Islamic organisations supervise the religious side, including training of Muslim slaughtermen, and must hold an arrangement that names the destination (${cite('daff-agahp', 'DAFF')}). From 1 October 2024, Saudi Arabia has required facility and shipment halal certificates through the Saudi Halal Centre portal for milk and milk products as well, under DAFF’s market-access advice (${cite('daff-maa-halal', 'DAFF, MAA 2024-43')}). Ask which organisation and which portal the shipment will actually use.</p>
+<p>Live sheep by sea is a separate date. The prohibition starts on 1 May 2028 (${cite('daff-live-sheep', 'DAFF')}). The amending Act received Royal Assent on 9 July 2024. The government response records a A$139.7 million transition package, including A$97.3 million for business transition and A$27 million to support demand for sheep products and to diversify agri-food trade to the Middle East and North Africa (${cite('daff-gov-response', 'DAFF government response')}). A 2026 brief has to say whether the sponsor is selling chilled or frozen meat, live animals during the remaining window, or both.</p>
 
-<h3>Red meat, grains, dairy and packaged food</h3>
+<h2 id="by-sector">How the questions change by product</h2>
+<ul>
+<li><strong>Meat, grains, and packaged food.</strong> Start from the export lines above, then replace them with a buyer in one city. A Dubai hotel and a Riyadh grocer do not share a specification, a halal file, or a VAT-inclusive price.</li>
+<li><strong>Education.</strong> Education-related travel to Saudi Arabia was A$303.0 million in calendar 2025. The Department of Education’s series records 4,257 Saudi students commencing or continuing study in Australia in 2025, after 32,161 who had studied between 2005 and 2024 and were no longer enrolled in 2025 (${cite('education-gov-students', 'Department of Education')}). That is a headcount, not a campus profit. In the UAE, DFAT names University of Wollongong Dubai (1993), Murdoch University Dubai (2007), Curtin University Dubai (2018), Australian International School Sharjah, and Victorian International School Sharjah. The services schedule adds access for secondary and higher education. The study still has to name who pays: family, employer, or scholarship. Use the education pages linked above.</li>
+<li><strong>Alumina, minerals, and parts.</strong> Alumina and vehicle parts are UAE export lines, and the tariff staging is on the benefits page. A business sale has to recruit the person who specifies the order.</li>
+<li><strong>Hotels and visitors.</strong> The Vision 2030 annual-report page for 2025 records 123 million tourists, more than 30 million of them international, US$81 billion of tourism spending, and 5,937 licensed tourism facilities (${cite('vision-2025-page', 'Vision 2030')}). Those are Saudi national totals. They are not hotel occupancy, and they are not a UAE visitor mix.</li>
+</ul>
 
-<p>Start from the official export lines — meat excluding beef, beef, barley, oil-seeds — then replace them with a catchment (${cite('dfat-ksa-cef', 'DFAT Saudi fact sheet')}; ${cite('dfat-uae-cef', 'DFAT UAE fact sheet')}). A Dubai hotel chain and a Riyadh retail grocer do not share a specification, a halal file or a VAT-inclusive price. CEPA’s day-one frozen-red-meat preference is a UAE fact; AGAHP plus the Saudi Halal Centre portal is a Kingdom fact (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}; ${cite('daff-maa-halal', 'DAFF MAA 2024-43')}). Live-sheep sponsors must date the brief against 1 May 2028 (${cite('daff-live-sheep', 'DAFF phase-out')}). See <a href="/saudi-arabia-fmcg-market-research">FMCG market research in Saudi Arabia</a>, <a href="/uae-fmcg-market-research">FMCG market research in the UAE</a> and <a href="/b2c-industries">B2C market research</a>.</p>
-
-<h3>Education and professional training</h3>
-
-<p>Education-related travel was A$303.0 million of Australian exports to Saudi Arabia in calendar 2025 (${cite('dfat-ksa-cef', 'DFAT Saudi fact sheet')}). The Department of Education’s 2005–2025 student-count series records 4,257 Saudi students commencing or continuing study in Australia in 2025, after 32,161 who had studied between 2005 and 2024 and were no longer enrolled in 2025 (${cite('education-gov-students', 'Department of Education')}). That is a headcount series, not a campus P&amp;L. In the UAE, DFAT names University of Wollongong Dubai (the first private university in Dubai, 1993), Murdoch University Dubai (2007) and Curtin University Dubai (2018), plus Australian International School Sharjah and Victorian International School Sharjah (${cite('dfat-uae-brief', 'DFAT UAE country brief')}). CEPA adds market access for secondary and higher-education services (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}). An education entry study still has to prove who pays — family, employer or scholarship — in which emirate or Saudi city. Use <a href="/uae-education-market-research">education market research in the UAE</a> and <a href="/saudi-arabia-education-market-research">education market research in Saudi Arabia</a>.</p>
-
-<h3>Alumina, minerals, energy and vehicle parts</h3>
-
-<p>Alumina and aluminium ores were A$1,730.6 million of Australian exports to the UAE in 2025; vehicle parts were A$358.0 million (${cite('dfat-uae-cef', 'DFAT UAE fact sheet')}). CEPA eliminated many aluminium duties on 1 October 2025 and stages the rest; vehicle-parts tariffs fall on entry into force or over three years (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}). DFAT’s Saudi brief flags mining services and construction as areas of complementarity (${cite('dfat-ksa-brief', 'DFAT Saudi country brief')}). A B2B entry has to recruit the actual buyer committee, not a consumer panel, and it has to say whether the first legal vehicle is a UAE mainland or free-zone entity, a Saudi trading registration, or a regional office that cannot take commercial revenue. Use <a href="/uae-energy-market-research">energy market research in the UAE</a>, <a href="/saudi-arabia-energy-market-research">energy market research in Saudi Arabia</a> and the buyer-committee discipline on <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>.</p>
-
-<h3>Hospitality, tourism and visitor catchments</h3>
-
-<p>Vision 2030’s 2025 annual-report landing page records 123 million tourists, more than 30 million international visitors, US$81 billion of tourism spending and 5,937 licensed tourism facilities (${cite('vision-2025-page', 'Vision 2030')}). Those are national Saudi totals. They are not a hotel-level occupancy proof and not a UAE visitor mix. An Australian food-service or hotel-supply entry still needs length-of-stay, corporate versus leisure mix and a named set of substitutes in the first city. See <a href="/saudi-arabia-hospitality-market-research">hospitality market research in Saudi Arabia</a> and <a href="/uae-hospitality-market-research">hospitality market research in the UAE</a>.</p>
-
-<h3>Financial and professional services</h3>
-
-<p>CEPA’s services schedule is the UAE access frame — including financial services, professional services and a first-time government-procurement opening (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')}). A Saudi professional-services entry is a MISA activity question, not a CEPA question (${cite('misa-guide-2026', 'MISA')}). Use <a href="/uae-financial-services-market-research">financial services market research in the UAE</a> and <a href="/saudi-arabia-financial-services-market-research">financial services market research in Saudi Arabia</a>. Pair a capital-raise file with the <a href="/bionixus-industries/insights/feasibility-study-company-saudi-arabia">Saudi feasibility-study note</a> when the study feeds a lender pack.</p>
-
-<h2 id="how-to-choose">How should you choose a market research partner?</h2>
-
-<p>Ask every firm, including BioNixus, to answer these questions in writing before you sign:</p>
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Which official series will you use for trade, investment, population and VAT, and what is the date of each series — FY or calendar year, DFAT or GASTAT or FCSC?</li>
-<li>Will the study report Saudi Arabia and the UAE separately, by city, or only as “GCC”?</li>
-<li>How many interviews or surveys will you complete, in which language, and with which quotas?</li>
-<li>For a UAE SKU, which CEPA staging line does the brief assume (${cite('dfat-cepa-benefits', 'DFAT CEPA key benefits')})? For a Saudi vehicle, which ISIC activity and which Section 05.00 capital or share rule (${cite('misa-guide-2026', 'MISA')})?</li>
-<li>For food, which AGAHP Approved Islamic Organisation and which Saudi Halal Centre or UAE import file will the SKU actually use (${cite('daff-agahp', 'DAFF AGAHP')}; ${cite('daff-maa-halal', 'DAFF MAA 2024-43')})?</li>
-<li>What is guaranteed in writing — scope and timing, or the findings themselves?</li>
-<li>How will personal data from respondents be processed under the UAE PDPL and, if the sample includes the Kingdom, under the Saudi PDPL (${cite('uae-pdpl', 'UAE Government')}; ${cite('sdaia-guide', 'SDAIA')})?</li>
+<li>Which official figures will you use, and is each one a financial year or a calendar year?</li>
+<li>Will Saudi Arabia and the UAE be reported as two samples?</li>
+<li>How many interviews, in which language, and in which cities?</li>
+<li>For a UAE product, which staging line on the benefits page does the brief assume? For a Saudi activity, which registration does the brief assume?</li>
+<li>For food, which halal organisation and which Saudi or UAE import file will the shipment use?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>How will personal data be handled in each country?</li>
 </ol>
+<p>A trade agency can explain the tariff. A research firm measures demand. Many projects need both. BioNixus does the demand work.</p>
 
-<p>Austrade in Riyadh and DFAT’s CEPA desk are strong at official access rules, not at demand evidence. A primary-research firm is the reverse. Many Australian entry files need both. BioNixus does the second job and will work alongside your existing counsel.</p>
-
-<p>Related industry reading on this hub includes <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">market entry research for Saudi Arabia</a>, <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a>, <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a> and <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai and the UAE</a>. Sister outbound corridors from other booking centres are <a href="/market-research/singapore">Middle East market research for Singapore companies</a>, <a href="/market-research/usa">MENA market research company USA</a>, <a href="/market-research/japan">Middle East market research for Japanese companies</a> and <a href="/market-research/china">Middle East market research for Chinese companies</a>. Browse country entry points on <a href="/market-research-by-industry">market research by industry</a> and compare partners on the <a href="/insights/top-market-research-companies-saudi-arabia-2026">2026 ranking of market research companies in Saudi Arabia</a>, the <a href="/insights/top-market-research-companies-uae-2026">2026 ranking of market research companies in the UAE</a> and the <a href="/insights/top-market-research-companies-australia-2026">2026 ranking of market research companies in Australia</a>.</p>
-
-<h2 id="why-bionixus">Why brief BioNixus for Australia GCC market entry research?</h2>
-
-<p>BioNixus is not a company-formation house and it is not Austrade. It is a primary market research firm that writes the chapter an Australian investment committee can interrogate. Founded in 2012, it has served 118 clients in 48 countries and has run 127 studies so far in 2026. Custom pricing is $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. Regional leadership offices are Sheridan, Wyoming (US headquarters); London EC1V 2NX; and Cairo in Sheikh Zayed, the largest Middle East and Africa office. Dubai, Al Khobar and Salmiya, Kuwait, are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026; Latin America is covered today from the US office with a local consultant network. There is no Sydney office: Australian briefs are taken in London or Sheridan, UAE fieldwork from Dubai, Kingdom fieldwork from Al Khobar with bilingual Arabic–English teams. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.</p>
-
-<p>To brief Australia GCC market entry research, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. For Middle East, Africa and Asia call <a href="tel:+201206882323">+20 120 688 2323</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>. A Singapore headquarters booking the same Gulf work should start from <a href="/market-research/singapore">Middle East market research for Singapore companies</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -433,39 +327,39 @@ ${REFERENCES_HTML}`;
 
 export const AU_GCC_ENTRY_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does Australia GCC market entry research have to prove?',
+    question: 'What should an Australian exporter research before shipping to Saudi Arabia or the UAE?',
     answer:
-      'It has to prove addressable demand, price including VAT, city or catchment, channel and certificate, and the legal treatment — CEPA staging in the UAE or a MISA activity in Saudi Arabia — with dated, auditable evidence. A single Gulf TAM slide is not Australia GCC market entry research. Primary interviews in both markets are what make the brief usable for an Australian investment committee.',
+      'Name the buyer, the city, the price after 5% UAE VAT or 15% Saudi VAT, and the tariff or halal rule that applies. A two-way trade total does not answer those questions.',
   },
   {
-    question: 'Does the Australia–UAE CEPA cover Saudi Arabia?',
+    question: 'Does the Australia–UAE trade agreement cover Saudi Arabia?',
     answer:
-      'No. The Australia–UAE Comprehensive Economic Partnership Agreement entered into force on 1 October 2025 and applies to the UAE. Australia–GCC FTA negotiations have been paused since June 2009. A preference earned in Dubai does not travel to Riyadh. Write separate chapters.',
+      'No. The agreement was signed on 6 November 2024 and entered into force on 1 October 2025. Saudi Arabia is not a party. Australia–GCC talks have been paused since June 2009.',
   },
   {
-    question: 'How large is Australia’s trade with the UAE and Saudi Arabia?',
+    question: 'Which trade figures are safe to quote?',
     answer:
-      'DFAT records A$12.7 billion of Australia–UAE two-way goods and services trade in 2024–25 and A$6,843 million of calendar-2025 goods and services exports to the UAE, Australia’s 15th export market. Australia–Saudi two-way trade was A$2.8 billion in FY 2024–25; the calendar-2025 fact sheet shows A$1,917.4 million of goods and services trade and A$1,225.8 million of Australian exports. Label each series. Do not add them.',
+      'DFAT puts Australia–UAE two-way trade at A$12.7 billion in 2024–25, and calendar-2025 exports to the UAE at A$6,843 million. Australia–Saudi two-way trade was A$2.8 billion in FY 2024–25. Quote the period with the figure. A financial year and a calendar year are different.',
   },
   {
-    question: 'What happens to live sheep exports to the Middle East?',
+    question: 'Does a tariff cut replace a halal certificate?',
     answer:
-      'Live sheep exports by sea are prohibited from 1 May 2028. Until then the trade continues without caps or quotas, subject to existing welfare rules and the Northern Hemisphere summer prohibition. The Australian Government committed A$139.7 million over five years from 2024–25 to help the supply chain transition, including A$27 million to diversify agri-food trade to the Middle East and North Africa. Chilled and frozen halal meat is a different brief.',
+      'No. Frozen red-meat tariffs to the UAE were removed on 1 October 2025. Halal red meat still has to meet the Australian Government Authorised Halal Program and the importing country’s rules. From 1 October 2024, Saudi milk and milk-product certificates go through the Saudi Halal Centre portal.',
   },
   {
-    question: 'Which official numbers should a 2026 Australia–GCC brief use?',
+    question: 'What is the date on live sheep exports by sea?',
     answer:
-      'Start from DFAT’s UAE and Saudi fact sheets and country briefs, DFAT’s CEPA benefits page, DFAT’s GCC snapshot (USD 2.4 trillion GDP, 62 million people, AUD 24.3 billion two-way trade in 2025), FIRB’s Q4 2024 approved-proposal table, GASTAT’s mid-2024 population of 35.3 million, FCSC’s 2024 UAE population of 11.29 million, UAE 5% VAT and Saudi 15% VAT. Label each series. Do not invent giga-project revenues.',
+      'The phase-out page sets the prohibition at 1 May 2028. The amending Act received Royal Assent on 9 July 2024. The government response records a A$139.7 million transition package.',
   },
   {
-    question: 'How much does custom Australia GCC market entry research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom market entry programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, number of cities, mode and whether the output is a stand-alone entry file or a chapter inside a wider study. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed. Non-qualifying respondents are replaced free; missed quotas are re-fielded at our cost; a pilot fee is credited to the main field.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the cities, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus from London or Sheridan rather than a Dubai setup firm?',
+    question: 'Why brief BioNixus rather than relying only on a tariff note?',
     answer:
-      'Incorporation houses file the activity. BioNixus proves demand. Australian teams brief London EC1V 2NX or the Sheridan headquarters; UAE fieldwork is designed with the Dubai field office; Kingdom fieldwork is designed with the Al Khobar field office. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'A tariff note explains the rate. BioNixus measures demand, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

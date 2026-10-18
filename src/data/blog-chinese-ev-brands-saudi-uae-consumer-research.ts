@@ -43,15 +43,15 @@ export const CHINESE_EV_GULF_META_DESCRIPTION =
   'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.';
 
 export const CHINESE_EV_GULF_DISPLAY_TITLE =
-  'Chinese EV Brands in the Gulf: Consumer Research Before Launch';
+  'Chinese EV Brands in Saudi Arabia and the UAE: What to Ask Buyers';
 
 export const CHINESE_EV_GULF_DISPLAY_SUBTITLE =
-  'What Chinese EV brands must prove with Saudi and UAE buyers';
+  'Charging, price, and service are separate questions in each country';
 
 export const CHINESE_EV_GULF_BREADCRUMB_LABEL = 'Chinese EV consumer research Saudi UAE';
 
 export const CHINESE_EV_GULF_EXCERPT =
-  'A sourced 2026 guide to Chinese EV consumer research in Saudi Arabia and the UAE: what to prove on consideration, charging, total cost of ownership and aftersales before a Gulf launch budget is committed.';
+  'A plain guide for Chinese electric-car brands looking at Saudi Arabia and the UAE: which official figures to quote, and which questions only buyers and dealers can answer.';
 
 export const CHINESE_EV_GULF_PUBLISHED_ISO = '2026-10-16T12:00:00.000Z';
 export const CHINESE_EV_GULF_UPDATED_ISO = '2026-10-16T12:00:00.000Z';
@@ -234,184 +234,83 @@ export function countWords(html: string): number {
 }
 
 export const CHINESE_EV_GULF_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  {
-    heading: 'What does Chinese EV consumer research in Saudi Arabia and the UAE have to prove?',
-    anchor: 'what-chinese-ev-consumer-research-proves',
-  },
-  {
-    heading: 'Why a China or Europe instrument fails for Chinese EV brands in the Gulf',
-    anchor: 'china-europe-instrument-fails',
-  },
-  {
-    heading: 'Official numbers that frame a 2026 Gulf brief',
-    anchor: 'official-numbers',
-  },
-  {
-    heading: 'Saudi Arabia and the UAE are two samples, not one GCC cell',
-    anchor: 'two-samples',
-  },
-  {
-    heading: 'The six proofs a launch study must deliver',
-    anchor: 'six-proofs',
-  },
-  {
-    heading: 'How to sample buyers, not a national TAM',
-    anchor: 'sample-buyers',
-  },
-  {
-    heading: 'Dealer, charging and aftersales audits',
-    anchor: 'dealer-charging-audits',
-  },
-  {
-    heading: 'Conformity, VAT and personal-data rules the brief must lock',
-    anchor: 'conformity-vat-data',
-  },
-  {
-    heading: 'How to choose a Chinese EV consumer research partner',
-    anchor: 'how-to-choose',
-  },
-  { heading: 'Why BioNixus', anchor: 'why-bionixus' },
+  { heading: 'What to ask before a launch', anchor: 'what-to-prove' },
+  { heading: 'Official numbers, and what each one measures', anchor: 'official-numbers' },
+  { heading: 'Saudi Arabia and the UAE are two samples', anchor: 'two-samples' },
+  { heading: 'Showrooms, charging, and service', anchor: 'showrooms' },
+  { heading: 'Rules that belong on the price card', anchor: 'rules' },
+  { heading: 'Questions to ask any research firm', anchor: 'choose-a-partner' },
+  { heading: 'How to brief BioNixus', anchor: 'why-bionixus' },
   { heading: 'References', anchor: 'references' },
 ];
 
-export const CHINESE_EV_GULF_EXECUTIVE_SUMMARY_HTML = `<p><strong>Short answer:</strong> Chinese EV consumer research for Chinese EV brands in the Gulf must prove who will consider the brand, in which Saudi or UAE city, at what charging confidence and residual value, before a launch budget is committed. A China-side tracker is not the brief. Separate samples make the file usable.</p>`;
+export const CHINESE_EV_GULF_EXECUTIVE_SUMMARY_HTML = `<p>Chinese EV consumer research asks who will buy in Saudi Arabia and who will buy in the UAE, at what price after tax, and from which dealer. Chinese EV brands in the Gulf should not treat the two countries as one launch. A sales total is not a purchase.</p>`;
 
-const NARRATIVE_HTML = `<p>Chinese EV brands still arrive in the Gulf with a China-side tracker, a Europe residual curve and a single “GCC” TAM. That is not Chinese EV consumer research. A launch file has to name the buyer, the city, the charging story and the aftersales promise before a showroom lease or a model allocation is committed. This guide sits on the <a href="/bionixus-industries/insights">industry insights hub</a> and is written for non-pharma automotive briefs — not for SFDA or physician-survey files.</p>
+const NARRATIVE_HTML = `<p>Chinese electric-car teams often arrive with one Gulf sales total and one showroom plan. Saudi Arabia and the UAE are separate markets. Before a model is allocated, name who will consider the car, in which city, at what price after tax, and which dealer will service it. This page is a plain guide to Chinese EV consumer research. It is written for Chinese EV brands in the Gulf. It sits on the <a href="/bionixus-industries/insights">industry insights hub</a>. It is for cars, not for medicines.</p>
 
-<p>Search results for Chinese EV brands in Saudi Arabia and the UAE mix distributor press pages with syndicated sales recaps. Few of those pages say how consideration, range confidence or service trust were measured. BioNixus is a primary market research firm, founded in 2012, with 118 clients in 48 countries and 127 studies so far in 2026 (120 in 2025). Custom work is priced from $10,000 to $60,000. The delivery scope is guaranteed in writing. Findings are not. For the wider non-pharma practice see the <a href="/bionixus-industries">industries hub</a>, <a href="/b2c-industries">B2C market research</a> and <a href="/market-research/automotive">automotive market research</a>.</p>
+<p>A registration total describes vehicles already on the road. Interviews describe who will buy the next one. Related pages cover <a href="/saudi-arabia-automotive-market-research">automotive research in Saudi Arabia</a>, <a href="/uae-automotive-market-research">automotive research in the UAE</a>, and <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer surveys in Saudi Arabia</a>.</p>
 
-<div class="value-box">
-<p><strong>Quick facts a 2026 Gulf EV brief can cite, October 2026</strong></p>
+<h2 id="what-to-prove">What to ask before a launch</h2>
+<p>Answer these questions in each country before the launch budget is fixed.</p>
 <ul>
-<li><strong>Around 75,000</strong> electric cars were sold in the Middle East in 2025, up more than 40% year on year. The UAE remained the largest market, at almost 50% of regional sales, down from over 60% in 2023. Qatar and Saudi Arabia together now represent nearly 45% of regional demand (${cite('iea-trends', 'IEA Global EV Outlook 2026')}).</li>
-<li><strong>BYD holds about 60%</strong> of Middle East electric-car sales after entering the region in 2022. Tesla’s share has fallen to around 15%, from about half of sales when the market first scaled in 2020 (${cite('iea-trends', 'IEA')}).</li>
-<li><strong>More than 2.5 million</strong> Chinese electric cars were exported in 2025, double the year before, from about 16 million units produced in China. Electric models were more than 35% of China’s car exports, up from about 20% in 2024. Overseas sales of Chinese-made electric cars in the Middle East rose 60%. Many Middle East and African markets import more than 80% of their electric cars from China (${cite('iea-trade', 'IEA manufacturing chapter')}; ${cite('iea-pdf', 'IEA PDF')}).</li>
-<li><strong>UAE stock and sales, official:</strong> as of 2023, electric vehicles were about 3% of all vehicles and 13% of car sales. The national goal is 50% of vehicles on the road by 2050 (${cite('moei-2024', 'MoEI')}). On 1 August 2025 Abu Dhabi Mobility published 16,373 electric and 22,847 hybrid vehicles in Abu Dhabi, and 66,288 electric and 74,832 hybrid vehicles across all emirates (${cite('ad-mobility', 'Abu Dhabi Mobility')}). Dubai had more than 39,000 EVs by the end of the first quarter of 2025 (${cite('dewa-2025', 'DEWA')}).</li>
-<li><strong>Charging, official:</strong> UAEV planned 100 chargers in 2024 and 1,000 by 2030 (${cite('moei-2024', 'MoEI')}); the ministry later said it had installed more than 100 chargers in 2024 and aimed for more than 500 stations by the end of 2025 (${cite('wam-500', 'WAM')}). Dubai has more than 1,100 charging points (${cite('dewa-2025', 'DEWA')}). Abu Dhabi lists more than 1,200 public plugs and published tariffs of AED 1.20/kWh on fast DC and AED 0.70/kWh on AC (${cite('ad-mobility', 'Abu Dhabi Mobility')}). In the Kingdom, PIF (75%) and Saudi Electricity Company (25%) launched EVIQ on 8 October 2023 to install more than 5,000 fast chargers at more than 1,000 locations by 2030 (${cite('pif-eviq-launch', 'PIF')}; ${cite('pif-eviq-page', 'EVIQ portfolio')}).</li>
-<li><strong>Retail footprint, official OEM pages:</strong> Al-Futtaim BYD opened a third Saudi flagship in Dammam on 25 February 2025, later called Jazan its ninth showroom, and reported ten active showrooms by 25 August 2026 (${cite('byd-dammam', 'BYD KSA')}; ${cite('byd-jazan', 'BYD KSA Jazan')}; ${cite('byd-qassim', 'BYD KSA Riyadh and Al-Qassim')}). Geely opened a 15,800 m² Sheikh Zayed Road flagship on 20 June 2025 as its seventh UAE store and launched the EX5 (${cite('geely-dubai', 'Geely Auto')}). Chery, with AW Rostamani, opened a Dubai Sheikh Zayed Road showroom on 15 August 2024 (${cite('chery-uae', 'Chery UAE')}). In the Kingdom, Chery names Sanabel Modern Motors as exclusive dealer (${cite('chery-ksa', 'Chery Saudi Arabia')}).</li>
-</ul>
-</div>
-
-<h2 id="what-chinese-ev-consumer-research-proves">What does Chinese EV consumer research in Saudi Arabia and the UAE have to prove?</h2>
-
-<p>Chinese EV consumer research is not a brand-awareness slide and it is not a customs export total. It has to tell a launch committee whether a named buyer in a named city will consider a Chinese battery-electric or plug-in hybrid model, pay a price that includes 15% Saudi VAT where that tax applies, trust the charging story, and come back for service.</p>
-
-<ol>
-<li><strong>Who is the buyer?</strong> A Saudi family replacing a large SUV in Riyadh is not a Dubai expatriate replacing a compact crossover, and neither is a fleet manager buying twenty units. The brief names the person who signs, not “GCC consumers”.</li>
-<li><strong>What is the decision?</strong> Allocate a first model, open a third showroom, price against a Korean or Japanese incumbent, or decide whether a plug-in hybrid should lead the line. Chinese EV consumer research that cannot change one of those decisions is a tracking toy.</li>
-<li><strong>Which cities are in the sample?</strong> Riyadh, Jeddah and the Eastern Province are not interchangeable. Dubai, Abu Dhabi and Sharjah are not interchangeable. A national TAM of 35.3 million people at mid-2024 is not a sample (${cite('gastat-pop-2024', 'GASTAT')}).</li>
-<li><strong>What must be true about charging and service?</strong> Public plugs, home charging, highway range in summer and the nearest 3S workshop are part of the product. They belong in the questionnaire, not in a later operations appendix.</li>
-<li><strong>What evidence will the committee accept?</strong> Dated official series for the market frame. Primary interviews and bilingual surveys for demand. Mystery-shop scores for the dealer. A residual-value module only if used-car respondents are actually recruited.</li>
-</ol>
-
-<p>The IEA’s 2026 outlook is the right frame and the wrong substitute. It tells you the region sold around 75,000 electric cars in 2025 and that BYD now holds about 60% of those sales (${cite('iea-trends', 'IEA')}). It does not tell you whether a second Chinese brand can buy consideration in Jeddah. That is the job of Chinese EV consumer research. Pair the method with <a href="/saudi-arabia-automotive-market-research">automotive market research in Saudi Arabia</a> and <a href="/uae-automotive-market-research">automotive market research in the UAE</a>. The same sampling discipline sits on <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>.</p>
-
-<h2 id="china-europe-instrument-fails">Why a China or Europe instrument fails for Chinese EV brands in the Gulf</h2>
-
-<p>A China questionnaire assumes charging density, battery-swap familiarity and brand hierarchies that do not travel. A Europe questionnaire assumes a CO<sub>2</sub> tax and a residual curve built on diesel estates. Neither knows what a Gulf buyer means by “range”, “service” or “Chinese brand”.</p>
-
-<ul>
-<li><strong>The brand set is wrong.</strong> Put BYD, Geely and Chery next to Toyota, Nissan, Hyundai, Kia, Mercedes-Benz, BMW and Tesla — the set the buyer walks. Geely’s 20 June 2025 Dubai launch presented an ICE Monjaro and an electric EX5 in the same showroom (${cite('geely-dubai', 'Geely Auto')}). A BEV-only card overstates uniqueness.</li>
-<li><strong>The climate module is missing.</strong> Summer cabin cooling and highway legs are not optional. Abu Dhabi Mobility publishes an indicative 340 km average EV range (${cite('ad-mobility', 'Abu Dhabi Mobility')}). That is a planning cue. Measure believed range after a 45 °C afternoon.</li>
-<li><strong>The buyer is treated as one nationality.</strong> The Kingdom’s mid-2024 population was about 35.3 million (${cite('gastat-pop-2024', 'GASTAT')}). Many UAE buyers are expatriates who may leave before a residual story matures. Quota nationality, sex and language.</li>
+<li><strong>Who buys.</strong> A household replacing a car in Riyadh is a different person from a Dubai resident replacing a smaller car, and both differ from a fleet buyer. GASTAT’s mid-2024 population estimate is 35.3 million people (${cite('gastat-pop-2024', 'GASTAT')}). That total is a frame. It is not a sample.</li>
+<li><strong>Which city.</strong> Riyadh, Jeddah, and the Eastern Province are different places to sell. So are Dubai, Abu Dhabi, and Sharjah.</li>
+<li><strong>What price, after tax.</strong> Saudi Arabia’s standard VAT is 15%, under the VAT regulation amendments dated 19 November 2024 (${cite('zatca-vat', 'ZATCA')}). A price card that leaves the tax off is not a price.</li>
+<li><strong>Charging and service.</strong> Public plugs, home charging, and the nearest workshop are part of the product. Put them in the questionnaire.</li>
+<li><strong>Which dealer the buyer will actually meet.</strong> Use the company named on the brand’s own page, not a generic “Chinese brand” door.</li>
 </ul>
 
-<p>Chinese EV brands also face a local industrial story. Vision 2030 presents Ceer as the Kingdom’s first electric-vehicle brand, announced in 2022 by the Crown Prince and PIF, designed with Foxconn and using BMW component technology (${cite('vision-ceer', 'Vision 2030')}). The 2024 transformation report says Ceer aims to produce 500,000 vehicles a year by 2030 and around 30,000 jobs by 2034, with a Hyundai–PIF plant investment of over US$500 million (${cite('vision-2024', 'Vision 2030 Story of Transformation 2024')}). SPA reported on 30 November 2025 that NAVA and CEER will train 300 Saudi technicians (${cite('spa-nava', 'SPA')}). Those facts do not prove a Chinese brand will lose. They prove the consideration set now includes a Saudi-born EV name.</p>
+<h2 id="official-numbers">Official numbers, and what each one measures</h2>
+<p>Quote each figure with its source and its year. A regional sales total, a city stock figure, and a charger target measure different things.</p>
+<ul>
+<li><strong>Regional sales.</strong> The IEA’s 2026 chapter on electric-car trends says around 75,000 electric cars were sold in the Middle East in 2025, up more than 40% from the year before. The UAE was still the largest market, at almost 50% of regional sales, down from over 60% in 2023. Qatar and Saudi Arabia together were nearly 45% of regional demand. BYD held about 60% of Middle East electric-car sales after entering the region in 2022. Tesla’s share was around 15%, from about half of sales in 2020 (${cite('iea-trends', 'IEA, Trends in electric cars')}).</li>
+<li><strong>Chinese exports.</strong> The IEA’s manufacturing chapter says more than 2.5 million Chinese electric cars were exported in 2025, double the year before, from about 16 million units produced in China. Electric models were more than 35% of China’s car exports, up from about 20% in 2024. Overseas sales of Chinese-made electric cars in the Middle East rose 60%. Many Middle East and African markets import more than 80% of their electric cars from China (${cite('iea-trade', 'IEA, Manufacturing and trade')}; ${cite('iea-pdf', 'IEA Global EV Outlook 2026')}). An export total is not a purchase in Jeddah.</li>
+<li><strong>UAE stock and the 2050 goal.</strong> On 18 July 2024, the Ministry of Energy and Infrastructure said that, as of 2023, electric vehicles were about 3% of all vehicles and 13% of car sales, and that the national goal is 50% of vehicles on the road by 2050. The same statement said UAEV planned 100 chargers in 2024 and 1,000 by 2030 (${cite('moei-2024', 'Ministry of Energy and Infrastructure, 18 July 2024')}).</li>
+<li><strong>A 2025 station aim.</strong> On 10 February 2025, WAM reported that the ministry had installed more than 100 chargers in 2024 and aimed for more than 500 stations by the end of 2025 (${cite('wam-500', 'WAM, 10 February 2025')}). That sentence records the aim as it was stated in February 2025.</li>
+<li><strong>Dubai.</strong> DEWA’s 17 June 2025 update said Dubai had more than 39,000 electric vehicles by the end of the first quarter of 2025, and more than 1,100 charging points. DEWA also cited a Toluna survey in which 73% of the UAE population preferred to buy electric vehicles, and it reported 20,903 Green Charger accounts (${cite('dewa-2025', 'DEWA, 17 June 2025')}). The 73% figure is a named survey share. It is not a delivery forecast. The accounts are owners already on the network, not the whole launch market.</li>
+<li><strong>Abu Dhabi.</strong> On 1 August 2025, Abu Dhabi Mobility published 16,373 electric and 22,847 hybrid vehicles in Abu Dhabi, and 66,288 electric and 74,832 hybrid vehicles across all emirates. The page lists more than 1,200 public plugs, tariffs of AED 1.20 per kWh on fast DC and AED 0.70 per kWh on AC, and an indicative average range of 340 km (${cite('ad-mobility', 'Abu Dhabi Mobility')}). The 340 km figure is a planning cue on that page. Ask buyers what range they believe after a hot afternoon.</li>
+<li><strong>Saudi chargers.</strong> On 8 October 2023, the Public Investment Fund and Saudi Electricity Company launched the Electric Vehicle Infrastructure Company. The fund holds 75% and the utility 25%. The launch described more than 5,000 fast chargers at more than 1,000 locations by 2030 (${cite('pif-eviq-launch', 'PIF, 8 October 2023')}; ${cite('pif-eviq-page', 'PIF EVIQ page')}). That is a build-out target. This article does not cite a nationwide count of electric cars already registered in Saudi Arabia.</li>
+</ul>
 
-<p>None of this is an argument against Chinese product. The IEA records that Chinese-made electric cars already dominate many Middle East import mixes and that BYD’s regional share reached about 60% (${cite('iea-trends', 'IEA')}; ${cite('iea-trade', 'IEA')}). It is an argument against importing the instrument with the cars.</p>
+<h2 id="two-samples">Saudi Arabia and the UAE are two samples</h2>
+<p>The IEA chapter is useful because the UAE’s share of Middle East electric-car sales fell as Saudi Arabia and Qatar rose. A blended “Gulf” cell hides the market that is still forming. Write two samples. Sibling the questions so consideration, charging, and service can be compared. A Dubai script is a different study from a Riyadh script.</p>
+<p>The UAE already publishes public tariffs, a DEWA guest mode, and a Green Charger account tied to vehicle registration. The Kingdom’s public story, in the sources above, is the EVIQ fast-charger plan. A Dubai respondent can describe charging last month. A respondent in a city that does not yet have a public plug is answering a different question.</p>
+<p>City cuts belong in the design. If year one is Riyadh only, spend the sample on Riyadh. In the UAE, lock Dubai, Abu Dhabi, and one other emirate if the first stores are in more than one city. Chery’s 2024 Dubai opening left Abu Dhabi as a stated next step (${cite('chery-uae', 'Chery UAE')}). A sample that is almost all Dubai will miss that step.</p>
+<p>There is also a local industrial story. The Ceer project page presents Ceer as the Kingdom’s electric-vehicle brand, announced in 2022 by the Crown Prince and the Public Investment Fund, designed with Foxconn and using BMW component technology (${cite('vision-ceer', 'Vision 2030, Ceer')}). The 2024 transformation report says Ceer aims to produce 500,000 vehicles a year by 2030 and around 30,000 jobs by 2034, and it records a Hyundai–PIF plant investment of over US$500 million (${cite('vision-2024', 'Vision 2030, Story of Transformation 2024')}). On 30 November 2025, the Saudi Press Agency reported that NAVA and CEER will train 300 Saudi technicians (${cite('spa-nava', 'Saudi Press Agency, 30 November 2025')}). Those pages add a Saudi name to the set a buyer may consider. They do not, by themselves, say a Chinese brand will lose the sale.</p>
 
-<h2 id="official-numbers">Official numbers that frame a 2026 Gulf brief</h2>
+<h2 id="showrooms">Showrooms, charging, and service</h2>
+<p>Use the dates on each brand’s own page.</p>
+<ul>
+<li><strong>BYD in Saudi Arabia.</strong> Al-Futtaim opened a third Saudi flagship in Dammam on 25 February 2025 (${cite('byd-dammam', 'BYD KSA, 25 February 2025')}). The Jazan page calls that showroom the ninth (${cite('byd-jazan', 'BYD KSA, Jazan')}). By 25 August 2026, the brand reported ten active showrooms, including new sites in Riyadh and Al-Qassim (${cite('byd-qassim', 'BYD KSA, 25 August 2026')}). Ten showrooms are a service footprint. A brand with two doors cannot borrow that footprint in a residual-value question.</li>
+<li><strong>Geely in Dubai.</strong> On 20 June 2025, Geely opened a 15,800 square-metre flagship on Sheikh Zayed Road, described as its seventh UAE store, and launched the EX5. The same showroom presented an ICE Monjaro and the electric EX5. The page also describes 30 service bays and a 1,786 square-metre body shop (${cite('geely-dubai', 'Geely Auto, 20 June 2025')}). If a brand cannot show a workshop, do not test a workshop promise.</li>
+<li><strong>Chery.</strong> With AW Rostamani, Chery opened a Sheikh Zayed Road showroom in Dubai on 15 August 2024. In Saudi Arabia, Chery’s page names Sanabel Modern Motors as the dealer (${cite('chery-ksa', 'Chery Saudi Arabia')}).</li>
+</ul>
+<p>A useful dealer check is three visits on the same form: the showroom, the charging explanation, and a service booking two days later. In the showroom, note the language, whether the lead car is electric or petrol, whether a test drive is offered the same day, and whether the Saudi price includes 15% VAT. On charging, ask for the nearest fast plug, the wait for a home charger, Abu Dhabi’s published tariffs where they apply, how DEWA registration works, and whether the brand’s app or EVIQ is the network the salesperson describes. Then book a service slot. The square metres on Geely’s page are public. The visit tests the walk-in.</p>
+<p>Ask about range with the air conditioning on, for the kilometres the respondent actually drives. Separate people who have driven an electric car from people who have only seen one. Ask origin as a question about battery life, software, parts, and resale, then show the real warranty and the real workshop and ask again. For total cost, put 15% VAT on every Saudi price. Where the drive is in Abu Dhabi, the public tariffs are AED 1.20 and AED 0.70 per kWh. If EVIQ has not published a public tariff on the pages cited here, test what the buyer would pay for a home charger. Recruit used-car buyers if resale is the decision that stops the launch.</p>
 
-<p>Label every series. Do not average a Dubai stock figure with a Saudi charger target and call the result “GCC EV penetration”. The IEA figures in the box above are the sales ceiling (${cite('iea-trends', 'IEA Trends in electric cars')}; ${cite('iea-trade', 'IEA Manufacturing and trade')}; ${cite('iea-pdf', 'IEA PDF')}). They do not measure intent in Riyadh. Design the sample underneath them.</p>
+<h2 id="rules">Rules that belong on the price card</h2>
+<p>SASO’s technical-regulation list includes electric and autonomous vehicles (${cite('saso-regs', 'SASO')}). The electric-vehicle regulation, Version 3, was approved on 3 October 2024 and published on 3 January 2025 (${cite('saso-ev-pdf', 'SASO electric-vehicle regulation')}). The same SASO list dates an autonomous-vehicle regulation as approved on 17 July 2025, published on 31 October 2025, with a mandatory date of 29 April 2026. Write the battery, the connector, and the on-board charger into the showcard.</p>
+<p>The Ministry of Municipalities and Housing publishes technical requirements for electric-vehicle charging (${cite('momah-ev', 'MOMAH')}). The file covers battery-electric and plug-in hybrid vehicles. It points installers to the Water and Electricity Regulatory Authority framework, the Saudi Distribution Code, the Saudi Building Code, and SASO standards. It excludes ordinary hybrids that cannot plug in (${cite('momah-pdf', 'MOMAH charging requirements')}).</p>
+<p>Personal data has its own file. UAE Federal Decree-Law No. 45 of 2021 has been in force since 2 January 2022 (${cite('uae-pdpl-portal', 'u.ae')}). Saudi Arabia’s personal-data law has been in force since 14 September 2023, with a grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}). Survey files and showroom recordings that identify a person are personal data. The proposal should say where the file is stored.</p>
 
-<p>The UAE already publishes stock, chargers and a tariff. Use MoEI for the 2023 shares and the 2050 vehicle-mix goal, WAM for the 2025 station target, DEWA for Dubai’s end-Q1 2025 stock and 1,100-plus points, and Abu Dhabi Mobility for the 1 August 2025 table, Charge AD and the AED 1.20 / 0.70 public tariffs (${cite('moei-2024', 'MoEI')}; ${cite('wam-500', 'WAM')}; ${cite('dewa-2025', 'DEWA')}; ${cite('ad-mobility', 'Abu Dhabi Mobility')}). DEWA also cited a Toluna survey in which 73% of the UAE population preferred to buy EVs (${cite('dewa-2025', 'DEWA')}). That is a named commercial preference share, not a delivery forecast.</p>
-
-<p>Saudi Arabia publishes the industrial and charging build-out more clearly than the parc. This article does not cite a nationwide BEV-plus-PHEV stock census, because we did not find an official table that cleanly splits active electric stock. What is official is EVIQ’s 8 October 2023 launch as a 75/25 PIF–SEC venture for more than 5,000 fast chargers at more than 1,000 locations by 2030 (${cite('pif-eviq-launch', 'PIF press release')}; ${cite('pif-eviq-page', 'PIF EVIQ page')}). SASO’s Electric Vehicles regulation Version 3 was approved on 3 October 2024 and published on 3 January 2025 (${cite('saso-regs', 'SASO')}; ${cite('saso-ev-pdf', 'SASO EV regulation PDF')}). The Autonomous Vehicles regulation was approved on 17 July 2025, published on 31 October 2025 and becomes mandatory on 29 April 2026 (${cite('saso-regs', 'SASO')}). MOMAH’s charging file covers battery-electric and plug-in hybrid vehicles (${cite('momah-ev', 'MOMAH')}; ${cite('momah-pdf', 'MOMAH PDF')}). A study that ignores those dates will test a car the Kingdom will not register.</p>
-
-<h2 id="two-samples">Saudi Arabia and the UAE are two samples, not one GCC cell</h2>
-
-<p>The IEA’s regional chapter is useful precisely because it shows the UAE’s share of Middle East electric-car sales falling as Saudi Arabia and Qatar rise (${cite('iea-trends', 'IEA')}). That is a warning against a blended “Gulf” cell. A 2026 launch that is funded as one GCC wave will hide the market that is still forming.</p>
-
-<p>Write two samples. Sibling the instruments so consideration, charging and aftersales can be compared. Do not copy the UAE wording into a Riyadh CAPI script. The UAE already has published public tariffs, a DEWA guest-mode network and a Green Charger account tied to RTA registration (${cite('dewa-2025', 'DEWA')}; ${cite('ad-mobility', 'Abu Dhabi Mobility')}). The Kingdom is still building EVIQ’s fast-charge grid (${cite('pif-eviq-launch', 'PIF')}). A Dubai respondent can report last-month charging; a Qassim respondent may be answering a hypothetical.</p>
-
-<p>City cuts belong in the design. In the Kingdom, start with Riyadh, Jeddah / Makkah and the Eastern Province. BYD’s published network now includes Dammam, Jazan, Al-Qassim and multiple Riyadh and Jeddah sites (${cite('byd-dammam', 'BYD KSA')}; ${cite('byd-jazan', 'BYD KSA')}; ${cite('byd-qassim', 'BYD KSA')}). If year one is Riyadh only, spend the n on Riyadh. In the UAE, lock Dubai, Abu Dhabi and one Northern Emirates cell. Chery’s 2024 Dubai opening left Abu Dhabi as a stated next step (${cite('chery-uae', 'Chery UAE')}). An 80% Dubai sample will bless a network the brand has not built.</p>
-
-<p>Arabic and English both belong on the instrument. Back-translate and pilot both. Use the same bilingual rule as <a href="/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces">customer satisfaction surveys in the UAE</a> and <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a>. Quota sex in every city. A household SUV decision in Riyadh or Jeddah is often joint. If the client will not pay for that quota, write the limitation on page one.</p>
-
-<h2 id="six-proofs">The six proofs a launch study must deliver</h2>
-
-<p>A launch committee needs six proofs, each with a named item, a base and a decision rule.</p>
-
-<p><strong>1. Consideration, not awareness.</strong> Ask prompted consideration in the next replacement window, against the actual set, for a named body style. The IEA’s 60% BYD share is a sales outcome, not a score for a later arrival (${cite('iea-trends', 'IEA')}).</p>
-
-<p><strong>2. Origin trust.</strong> Do not ask a Likert on “made in China”. Ask what origin implies for battery life, software, crash safety, parts and resale, then show the real warranty and 3S footprint and re-ask. Geely’s Dubai flagship puts 30 service bays and a 1,786 m² body shop under the same roof as the EX5 (${cite('geely-dubai', 'Geely Auto')}). If the brand cannot show a workshop, do not test a workshop promise.</p>
-
-<p><strong>3. Range and climate confidence.</strong> Measure believed highway range with cabin cooling on, in summer, for the respondent’s weekly kilometres. Separate “I have driven an EV” from “I have only seen one”. Abu Dhabi’s 340 km cue is a benchmark the respondent may have heard, not the answer (${cite('ad-mobility', 'Abu Dhabi Mobility')}).</p>
-
-<p><strong>4. Charging confidence.</strong> Split home, workplace and public. Dubai respondents can use DEWA’s app or guest mode (${cite('dewa-2025', 'DEWA')}). Abu Dhabi respondents can be asked a cost item at AED 1.20/kWh DC and AED 0.70/kWh AC (${cite('ad-mobility', 'Abu Dhabi Mobility')}). In the Kingdom, test awareness of EVIQ and of any brand charger that will open in year one (${cite('pif-eviq-page', 'PIF')}).</p>
-
-<p><strong>5. Total cost of ownership, with tax on the page.</strong> The Kingdom’s standard VAT rate is 15% (${cite('zatca-vat', 'ZATCA')}). A price card that omits VAT is not a price card. Show monthly fuel against published UAE public tariffs where those apply. Do not invent a Saudi public-charger tariff EVIQ has not published. If it is unpublished, test willingness to pay for a home wall-box.</p>
-
-<p><strong>6. Residual value and aftersales.</strong> UAE expatriates need a three-year residual they can defend to a relocation timeline. Saudi family buyers need a five-to-seven-year service and parts story. Recruit used-car buyers if residual is go/no-go. Al-Futtaim’s BYD expansion to ten Saudi showrooms, including Al-Qassim, is a residual signal a two-showroom brand cannot borrow (${cite('byd-qassim', 'BYD KSA')}).</p>
-
-<p>If the launch is a fleet or ride-hailing bid, add a seventh proof: uptime and workshop turnaround, collected from fleet managers. That cell is B2B. Design it as a named-sample interview, the way <a href="/bionixus-industries/insights/b2b-market-research-uae">B2B market research in the UAE</a> recruits decision-makers, and keep it out of the household weights.</p>
-
-<h2 id="sample-buyers">How to sample buyers, not a national TAM</h2>
-
-<p>A national TAM is a ceiling. Chinese EV consumer research is a sample. Write the quotas before the panel is rented.</p>
-
-<p>A practical first-year retail design is n=600–800 category-eligible adults in Saudi Arabia and n=400–600 in the UAE: in-market to replace a household vehicle in 24 months, quota’d by city, sex, nationality and body-style budget including VAT. Online fills the 15–74 mass. CATI or CAPI fills women, older buyers and anyone the panel misses. WhatsApp is a contact channel, not a mode. DEWA’s 20,903 Green Charger accounts are a real owner pool, not the launch universe (${cite('dewa-2025', 'DEWA')}). Report EV owners separately from ICE intenders. Eight to twelve bilingual qualitative interviews per country write the charging and origin items; they do not replace the n.</p>
-
-<p>Do not buy “GCC n=1,000 online” and reweight it. The IEA’s 75,000 regional sales figure is a reminder that electric-car buyers are still a thin slice (${cite('iea-trends', 'IEA')}). A cheap dump of ICE owners who have never seen a public charger will report “interest” and will not predict a test drive. The <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">Saudi consumer-survey methods note</a> is the sampling companion. For licence, city and channel, use the <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">Saudi market-entry playbook</a> and keep this study as the demand chapter.</p>
-
-<h2 id="dealer-charging-audits">Dealer, charging and aftersales audits</h2>
-
-<p>Chinese EV brands are not only selling a car. They are selling a first service visit. The IEA can tell you BYD already has about 60% of regional electric-car sales (${cite('iea-trends', 'IEA')}). It cannot tell you whether a Chery or Geely dealer on Sheikh Zayed Road explains home charging in Arabic. That is an audit.</p>
-
-<p>Build three scored visits on the same form as the <a href="/templates/mystery-shop-retail-brief">retail mystery-shop brief</a>: showroom (language, ICE versus BEV lead, same-day test drive, VAT-inclusive price in the Kingdom) (${cite('zatca-vat', 'ZATCA')}); charging explanation (nearest DC point, wall-box lead time, Abu Dhabi’s published tariffs, DEWA registration, EVIQ versus a brand app that is not live) (${cite('ad-mobility', 'Abu Dhabi Mobility')}; ${cite('dewa-2025', 'DEWA')}; ${cite('pif-eviq-page', 'PIF')}); and a service booking two days later. Geely’s 15,800 m² flagship and Chery’s 2024 Dubai site are public facts; the audit tests the walk-in (${cite('geely-dubai', 'Geely Auto')}; ${cite('chery-uae', 'Chery UAE')}). BYD’s jump from three Saudi showrooms in 2025 toward a fivefold 2026 network is a reason to audit Jazan, not to copy Dammam (${cite('byd-jazan', 'BYD KSA')}; ${cite('byd-dammam', 'BYD KSA')}).</p>
-
-<p>Name the legal entity the respondent will meet: Sanabel Modern Motors for Chery in the Kingdom and Al-Futtaim for BYD KSA (${cite('chery-ksa', 'Chery Saudi Arabia')}; ${cite('byd-qassim', 'BYD KSA')}). Use the importer named on Geely’s Dubai release for that door (${cite('geely-dubai', 'Geely Auto')}). Pair the doors with <a href="/automotive-distributors-saudi-arabia">automotive distributors in Saudi Arabia</a> and <a href="/automotive-distributors-uae">automotive distributors in the UAE</a>.</p>
-
-<h2 id="conformity-vat-data">Conformity, VAT and personal-data rules the brief must lock</h2>
-
-<p>A consumer study that sells a non-registerable configuration is wasted money. Lock three legal facts before fieldwork starts.</p>
-
-<p><strong>Conformity.</strong> SASO’s Electric Vehicles regulation, Version 3, was approved on 3 October 2024 and published on 3 January 2025 (${cite('saso-regs', 'SASO')}; ${cite('saso-ev-pdf', 'SASO PDF')}). Write the imported battery, connector and on-board charger into the showcard. MOMAH’s charging file points installers to the Water and Electricity Regulatory Authority framework, the Saudi Distribution Code, the Saudi Building Code and SASO standards, and it excludes ordinary hybrids that cannot plug in (${cite('momah-pdf', 'MOMAH PDF')}; ${cite('momah-ev', 'MOMAH')}). SASO’s autonomous-vehicle regulation becomes mandatory on 29 April 2026 (${cite('saso-regs', 'SASO')}). Any “smart driving” claim has to match what will be legal on that date.</p>
-
-<p><strong>Price and tax.</strong> Put 15% VAT on every Saudi price card (${cite('zatca-vat', 'ZATCA')}). Put the published Abu Dhabi public-charging tariffs on every UAE TCO card that includes public DC (${cite('ad-mobility', 'Abu Dhabi Mobility')}). Do not invent a federal UAE purchase subsidy or a Saudi retail rebate the client cannot point to on an official page.</p>
-
-<p><strong>Personal data.</strong> UAE Federal Decree-Law No. 45 of 2021 came into force on 2 January 2022. Processing generally needs the data owner’s consent, with listed exceptions, and the UAE Data Office is the federal regulator (${cite('uae-pdpl-portal', 'u.ae')}). Saudi Arabia’s Personal Data Protection Law came into force on 14 September 2023, with a one-year grace period to 14 September 2024 (${cite('sdaia-guide', 'SDAIA')}). Identifiable survey files and showroom recordings are personal data. The proposal has to say where they are stored and how a respondent withdraws.</p>
-
-<h2 id="how-to-choose">How to choose a Chinese EV consumer research partner</h2>
-
-<p>Ask every shortlist to answer these in the proposal — not in a capabilities slide:</p>
-
+<h2 id="choose-a-partner">Questions to ask any research firm</h2>
+<p>Ask every firm, including BioNixus, to answer these in writing before you sign.</p>
 <ol>
-<li>Will Saudi Arabia and the UAE be two samples, with sibling instruments, or one “GCC” cell?</li>
-<li>Which official series frame the brief, and on which date? If the answer cannot name IEA 2025 Middle East sales, DEWA Q1 2025 Dubai stock, Abu Dhabi Mobility’s 1 August 2025 table, or EVIQ’s 2030 charger plan, the frame is a blog post (${cite('iea-trends', 'IEA')}; ${cite('dewa-2025', 'DEWA')}; ${cite('ad-mobility', 'Abu Dhabi Mobility')}; ${cite('pif-eviq-launch', 'PIF')}).</li>
-<li>What is the in-market screen, and how will EV owners be reported separately from ICE intenders?</li>
-<li>How will Arabic and English be scripted, back-translated and piloted? Who briefs the interviewers?</li>
-<li>How will women and non-Saudis / expatriates be quota’d in each city?</li>
-<li>Will the dealer audit use the live distributor named on each OEM page — Al-Futtaim, AW Rostamani, Sanabel — or a generic “Chinese brand” door (${cite('byd-qassim', 'BYD KSA')}; ${cite('geely-dubai', 'Geely Auto')}; ${cite('chery-uae', 'Chery UAE')}; ${cite('chery-ksa', 'Chery Saudi Arabia')})?</li>
-<li>Which SASO version and which charging framework sit on the showcard (${cite('saso-regs', 'SASO')}; ${cite('momah-pdf', 'MOMAH')})?</li>
-<li>Where will identifiable data sit under UAE PDPL and Saudi PDPL (${cite('uae-pdpl-portal', 'u.ae')}; ${cite('sdaia-guide', 'SDAIA')})?</li>
-<li>What is guaranteed in writing — scope, minimum sample, replacement of non-qualifying respondents, re-field at the agency’s cost, pilot fee credited — and what is not?</li>
-<li>What does the invoice cost, and which cities, modes and audits does that number buy?</li>
+<li>Which official series will you use, and what is the date of each one? A usable frame can name the IEA’s 2025 Middle East sales, DEWA’s first-quarter 2025 Dubai stock, Abu Dhabi Mobility’s 1 August 2025 table, and EVIQ’s 2030 charger plan.</li>
+<li>Will Saudi Arabia and the UAE be two samples?</li>
+<li>How many interviews, in which cities, and in which language?</li>
+<li>Will the dealer visits use the live distributor on each brand page — Al-Futtaim, AW Rostamani, Sanabel, and the importer named on Geely’s Dubai release?</li>
+<li>Which SASO version and which charging framework sit on the showcard?</li>
+<li>What is guaranteed: the work you will deliver, or the findings?</li>
+<li>Where will identifiable data sit under the UAE law and the Saudi law?</li>
 </ol>
+<p>A syndicated sales total can sit beside this work. It cannot replace the interviews. A firm that only lists distributors handles a different job. BioNixus does the demand work.</p>
 
-<p>Compare firms on the <a href="/insights/top-automotive-market-research-companies-saudi-arabia-2026">2026 ranking of automotive market research companies in Saudi Arabia</a> and the matching <a href="/insights/top-automotive-market-research-companies-uae-2026">UAE automotive ranking</a>. A syndicated tracker can sit beside this work; it cannot replace the launch module. The same split is argued on <a href="/bionixus-industries/insights/kantar-alternative-middle-east">a Kantar alternative in the Middle East</a>.</p>
-
-<h2 id="why-bionixus">Why BioNixus</h2>
-
-<p>BioNixus is a primary market research firm, founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026, after 120 in 2025. Custom Chinese EV consumer research programmes typically cost $10,000 to $60,000 depending on sample size, cities, mode and whether a dealer audit sits beside the survey. The delivery scope is guaranteed in writing. Findings are not. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.”</p>
-
-<p>What that guarantee covers: the agreed scope, timing and deliverables; replacement of non-qualifying respondents at no charge; a minimum sample; re-field at our cost if agreed quotas are missed; and a pilot fee credited to the main field. What it does not cover: the accuracy of a forecast, a residual curve, or a finding.</p>
-
-<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai (Thuraya Tower 1, Al Sufouh 2), Al Khobar and Salmiya, Kuwait. Latin America is covered from the US office with local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026. Chinese brand teams usually brief London or Sheridan; Gulf fieldwork is designed with Dubai and Al Khobar.</p>
-
-<p>Related industry reading includes <a href="/bionixus-industries/insights/market-entry-research-saudi-arabia">market entry research for Saudi Arabia</a>, <a href="/bionixus-industries/insights/consumer-survey-company-saudi-arabia">consumer survey research in Saudi Arabia</a>, <a href="/bionixus-industries/insights/brand-tracking-research-agency-dubai">brand tracking in Dubai</a> and <a href="/bionixus-industries/insights/kantar-alternative-middle-east">Kantar alternative research in the Middle East</a>. Convert the fieldwork brief on <a href="/market-research/china">Middle East market research for Chinese companies</a>. Country pages that sit with this brief include <a href="/saudi-arabia-automotive-market-research">Saudi automotive market research</a>, <a href="/uae-automotive-market-research">UAE automotive market research</a>, <a href="/saudi-arabia-retail-market-research">Saudi retail market research</a> and <a href="/uae-retail-market-research">UAE retail market research</a>.</p>
-
-<p>US teams brief Sheridan. UK, European and China-based teams brief London. Fieldwork for the Kingdom is designed with the Al Khobar field office; fieldwork for the UAE is designed with the Dubai field office. To brief Chinese EV consumer research, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom and at the Dubai field office call <a href="tel:+447727666682">+44 7727 666682</a>. In the Kingdom call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>`;
+<h2 id="why-bionixus">How to brief BioNixus</h2>
+<p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English.</p>
+<p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>
+`;
 
 const REFERENCES_HTML = `<ol>
 ${REFERENCES.map((ref) => {
@@ -430,39 +329,39 @@ ${REFERENCES_HTML}`;
 
 export const CHINESE_EV_GULF_FAQ: { question: string; answer: string }[] = [
   {
-    question: 'What does Chinese EV consumer research in Saudi Arabia and the UAE have to prove?',
+    question: 'What should Chinese EV consumer research prove before a launch in Saudi Arabia or the UAE?',
     answer:
-      'It has to prove consideration against the real competitive set, charging confidence, climate-adjusted range belief, a VAT-inclusive price the buyer will pay, and an aftersales story the buyer believes — in named cities, with dated official series as the frame. A China-side tracker or a single GCC TAM is not Chinese EV consumer research. Primary interviews, bilingual surveys and dealer audits make the brief usable.',
+      'Name the buyer, the city, the price after Saudi Arabia’s 15% VAT where that tax applies, the charging story, and the dealer who will service the car. A regional sales total does not answer those questions.',
   },
   {
-    question: 'Are Saudi Arabia and the UAE the same electric-car market in 2026?',
+    question: 'Can Chinese EV brands in the Gulf use one sample for Saudi Arabia and the UAE?',
     answer:
-      'No. The IEA’s Global EV Outlook 2026 puts Middle East electric-car sales at around 75,000 in 2025. The UAE still accounts for almost 50% of those sales, down from over 60% in 2023, while Qatar and Saudi Arabia together are now nearly 45%. Dubai already publishes EV stock, 1,100-plus charging points and a Green Charger account. The Kingdom’s official file is stronger on EVIQ’s 5,000-charger plan and SASO conformity than on a public BEV stock census. Design two samples.',
+      'No. The IEA’s 2026 outlook shows the UAE’s share of Middle East electric-car sales falling as Saudi Arabia and Qatar rise. Public charging tariffs are published for Abu Dhabi. The Saudi sources cited here describe the EVIQ charger plan. Use a separate sample for each country.',
   },
   {
-    question: 'Which official 2025–2026 numbers should a Gulf EV brief use?',
+    question: 'Which sales figures are safe to quote?',
     answer:
-      'Use IEA 2025 Middle East sales of around 75,000, BYD’s about 60% regional share, Chinese electric-car exports of more than 2.5 million, MoEI’s 3% stock and 13% 2023 sales shares, DEWA’s more-than-39,000 Dubai EVs at end-Q1 2025, Abu Dhabi Mobility’s 1 August 2025 stock table, WAM’s 500-station 2025 aim, PIF’s EVIQ 5,000-charger 2030 plan, SASO EV regulation dates, and GASTAT’s mid-2024 population of about 35.3 million. Label each series. Do not invent a national Saudi EV parc.',
+      'The IEA says around 75,000 electric cars were sold in the Middle East in 2025, and that BYD held about 60% of those sales. DEWA said Dubai had more than 39,000 electric vehicles by the end of the first quarter of 2025. Abu Dhabi Mobility’s 1 August 2025 table is a stock count, not a sales forecast. Quote each figure with its source.',
   },
   {
-    question: 'Do SASO and charging rules change the questionnaire?',
+    question: 'What did officials say about chargers?',
     answer:
-      'Yes. SASO’s Electric Vehicles regulation Version 3 was approved on 3 October 2024 and published on 3 January 2025. MOMAH’s charging-requirements file points installers to the Water and Electricity Regulatory Authority framework, the Saudi Distribution Code, the Saudi Building Code and SASO standards, and it excludes ordinary hybrids. Show the connector and body style that will actually be imported. In Abu Dhabi, put the published AED 1.20/kWh DC and AED 0.70/kWh AC tariffs on the TCO card.',
+      'On 18 July 2024, the UAE energy ministry said UAEV planned 100 chargers in 2024 and 1,000 by 2030. On 10 February 2025, WAM reported an aim of more than 500 stations by the end of 2025. On 8 October 2023, EVIQ’s launch described more than 5,000 fast chargers at more than 1,000 locations by 2030. Treat each line as what was said on that date.',
   },
   {
-    question: 'How should a 2026 Chinese EV sample be built?',
+    question: 'Which dealer names belong in the brief?',
     answer:
-      'Quota city, sex, nationality and replacement window before the panel is rented. A practical first-year design is n=600–800 category-eligible adults in Saudi Arabia and n=400–600 in the UAE, with EV owners reported separately from ICE intenders. Online fills the mass; CATI or CAPI fills the cells a panel will miss. Arabic and English both belong on the instrument. A “GCC n=1,000 online” dump is not a launch sample.',
+      'Al-Futtaim for BYD in Saudi Arabia, AW Rostamani for Chery’s 2024 Dubai showroom, and Sanabel Modern Motors on Chery’s Saudi page. Use the importer named on Geely’s 20 June 2025 Dubai release for that door.',
   },
   {
-    question: 'How much does custom Chinese EV consumer research cost with BioNixus?',
+    question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom programmes from BioNixus are typically $10,000 to $60,000 depending on sample size, number of cities, mode and whether a dealer and charging audit sits beside the survey. The scope, timing and deliverables are guaranteed in writing. Findings are not guaranteed.',
+      'Custom studies are usually $10,000 to $60,000, depending on the sample, the cities, and the languages. The written guarantee covers scope, timing, and deliverables. It does not cover what the interviews will find.',
   },
   {
-    question: 'Why brief BioNixus from London or Sheridan rather than a local distributor?',
+    question: 'Why brief BioNixus rather than a firm that only lists distributors?',
     answer:
-      'Distributors sell the car. BioNixus measures whether a named buyer will consider it. China, UK and European teams brief London EC1V 2NX; US teams brief Sheridan; fieldwork is designed with the Dubai and Al Khobar field offices. Forty client reviews sit on the firm’s public profiles. The tagline is “Guaranteed in writing.” That guarantee is the scope, not the accuracy of a forecast.',
+      'A distributor list names the door. BioNixus measures demand, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

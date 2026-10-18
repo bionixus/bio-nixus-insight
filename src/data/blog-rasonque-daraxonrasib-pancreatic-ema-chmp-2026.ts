@@ -1,6 +1,5 @@
 /**
  * Hardcoded SEO blog post: /blog/rasonque-daraxonrasib-pancreatic-ema-chmp-2026
- * Body prose is the incoming Markdown with the YAML front matter removed.
  * Author byline is Mohammad Alsaadany. Do not prefix the name with Dr.
  */
 import type { BlogPost } from '@/types/blog';
@@ -19,7 +18,7 @@ export const SOCIAL_PUBLISHED_ISO = "2026-10-19T12:00:00.000Z";
 export const SOCIAL_FAQ: { question: string; answer: string }[] = [
   {
     "question": "What is Rasonque (daraxonrasib)?",
-    "answer": "It is an oral RAS inhibitor from Revolution Medicines. The CHMP recommended it in October 2026 as monotherapy for adults with metastatic pancreatic adenocarcinoma who have had at least one prior systemic therapy."
+    "answer": "Rasonque (daraxonrasib) is an oral RAS inhibitor from Revolution Medicines. RAS is a protein that helps control cell growth. The CHMP, the European Medicines Agency's human medicines committee, recommended it in October 2026 as monotherapy for adults with metastatic pancreatic adenocarcinoma who have had at least one prior systemic therapy. A CHMP opinion is not a European Commission decision."
   },
   {
     "question": "When did the CHMP give its opinion?",
@@ -27,70 +26,170 @@ export const SOCIAL_FAQ: { question: string; answer: string }[] = [
   },
   {
     "question": "Is Rasonque approved in the EU yet?",
-    "answer": "Not yet. The European Commission must issue the marketing authorisation, which EMA says it will fast-track. Pricing and reimbursement then happen country by country."
+    "answer": "No. A CHMP opinion is not a Commission decision. The European Commission must issue the marketing authorisation. EMA says the Commission will fast-track that decision. Pricing and reimbursement then happen country by country."
   },
   {
     "question": "What is the Cancer Medicines Pathfinder?",
-    "answer": "An EMA project launched in 2023 to speed up the development and assessment of cancer medicines. It identified Rasonque as a high-priority medicine, which made it eligible for a phased review."
+    "answer": "An EMA project launched in 2023 to speed up the development and assessment of cancer medicines. EMA says it identified Rasonque as a high-priority medicine, which made it eligible for a phased review."
   },
   {
     "question": "Does Rasonque go through an EU joint clinical assessment?",
-    "answer": "Yes. EMA confirms daraxonrasib is in scope of the EU HTA Regulation, which has covered new cancer medicines since 12 January 2025."
+    "answer": "EMA says daraxonrasib is in scope of the EU HTA Regulation. That regulation has covered new cancer medicines since 12 January 2025. The joint assessment is separate from the Commission decision."
   },
   {
     "question": "What should launch teams research first?",
-    "answer": "Comparators used after first-line failure in each priority country, the decision process at high-volume treatment centres, and how oncologists read the survival and safety data."
+    "answer": "Which regimens oncologists use after first-line treatment fails, in each priority country, and how high-volume centres decide. Keep the EMA survival figures and the company's hazard ratio in separate sentences. They are not an average."
   }
 ];
-export const SOCIAL_BODY_HTML = "<p>Second-line metastatic pancreatic cancer has been one of the hardest settings in European oncology for a long time. Patients whose disease progresses after first treatment have few options, and the options they do have are chemotherapy regimens with real toxicity and modest benefit. On 15 October 2026, the European Medicines Agency's human medicines committee (CHMP) recommended a marketing authorisation for Rasonque (daraxonrasib), an oral RAS inhibitor for exactly this group.</p>\n\n<p>The clinical story matters, but this article is about something else: what the route to that opinion, and the access steps still ahead, mean for the Commercial Excellence, Marketing and Market Access teams who will have to turn a positive opinion into prescriptions, country by country and hospital by hospital.</p>\n\n<h2 id=\"what-the-chmp-recommended-for-rasonque\">What the CHMP recommended for Rasonque</h2>\n\n<h3 id=\"the-indication\">The indication</h3>\n\n<p>According to the EMA product page, the CHMP adopted a positive opinion for Rasonque as monotherapy for adult patients with metastatic pancreatic adenocarcinoma who have received at least one prior systemic therapy. The applicant is Revolution Medicines Netherlands B.V. The product will come as 100 mg and 150 mg film-coated tablets, and treatment should be started by physicians experienced in anticancer medicines.</p>\n\n<p>The opinion was one of six positive opinions on new medicines at the October 2026 CHMP meeting, held from 12 to 15 October. EMA's meeting highlights put the total for 2026 so far at 72 positive opinions on new medicines.</p>\n\n<h3 id=\"how-daraxonrasib-works\">How daraxonrasib works</h3>\n\n<p>EMA describes daraxonrasib as a RAS inhibitor. RAS proteins help control cell growth and survival, and in pancreatic adenocarcinoma, mutations in the RAS gene leave these proteins permanently switched on. Daraxonrasib binds a protein called cyclophilin A, and that pair then attaches to RAS and blocks its signalling. Revolution Medicines describes the molecule as an oral, RAS(ON) multi-selective, noncovalent, tri-complex inhibitor.</p>\n\n<h3 id=\"the-evidence-behind-the-opinion\">The evidence behind the opinion</h3>\n\n<p>The opinion rests on a phase 3, open-label, multinational study in 500 patients whose metastatic disease had worsened after prior systemic treatment. EMA reports that 92% had a confirmed RAS G12 mutation. In EMA's summary, median overall survival was 12.4 months with Rasonque against 6.7 months with chemotherapy, and median progression-free survival was 7.2 months against 3.6 months. EMA notes that the survival analysis used data collected up to 15 June 2026 and the progression-free survival analysis used data up to 10 February 2026.</p>\n\n<p>The company's release adds detail. It names the trial RASolute 302 and says the primary analysis in the intent-to-treat population showed a hazard ratio for death of 0.40, a 60% reduction in risk, with median overall survival of 13.2 months against 6.7 months. It describes the 12.4-month figure as coming from a later ad hoc analysis that was generally consistent with the primary one. Launch teams should expect clinicians to ask which number applies, so messaging needs to cite the source and the analysis clearly.</p>\n\n<p>EMA lists the most common side effects as diarrhoea, rash, stomatitis, nausea and vomiting.</p>\n\n<h2 id=\"us-label-versus-eu-opinion-a-difference-worth-tracking\">US label versus EU opinion: a difference worth tracking</h2>\n\n<p>Rasonque reached Europe after the United States. Revolution Medicines says the US Food and Drug Administration approved it on 26 August 2026. The US indication is slightly wider than the EU opinion: it covers adults with metastatic pancreatic adenocarcinoma who have received at least one prior systemic therapy, or who are not candidates for multiagent systemic therapy. The CHMP opinion covers only the first group.</p>\n\n<p>For global brand teams, that gap has practical effects. US launch materials, early adopter stories and real-world experience may describe patients who sit outside the European indication. European affiliates will need to make sure medical and promotional content follows the EU wording once product information is published. Physician research in Europe should also check whether oncologists expect a broader use than the label allows, since that expectation shapes their reaction to the launch.</p>\n\n<h2 id=\"how-large-is-the-patient-pool\">How large is the patient pool?</h2>\n\n<p>The company's release, citing published epidemiology, says that about 147,000 people are diagnosed with pancreatic cancer in Europe each year, that five-year survival remains below 10%, and that about 80% of patients are diagnosed after the disease has spread. These are company-cited figures, not EMA figures, and they describe all pancreatic cancer rather than the eligible second-line population.</p>\n\n<p>Turning them into a country forecast needs local inputs that public sources do not give: how many patients reach second-line treatment, how many are fit enough for it, and how many are tested for RAS mutations. Those are the numbers that primary research with treating oncologists can estimate country by country, and they will move the forecast more than any headline incidence figure.</p>\n\n<h2 id=\"the-cancer-medicines-pathfinder-and-the-phased-review\">The Cancer Medicines Pathfinder and the phased review</h2>\n\n<h3 id=\"what-the-pathfinder-is\">What the Pathfinder is</h3>\n\n<p>EMA launched the Cancer Medicines Pathfinder in 2023 to speed up the development and assessment of cancer medicines. One of its three pillars is to accelerate medicines that are critical to patient care by identifying high-priority products that address unmet medical needs. Rasonque was identified as one of those products.</p>\n\n<h3 id=\"how-the-phased-review-changed-the-timeline\">How the phased review changed the timeline</h3>\n\n<p>Under the phased review, the CHMP started assessing data several months before the complete application was expected. The review began in early July 2026, and the committee evaluated quality, non-clinical and clinical data in stages as the company submitted them. EMA says this cut the assessment to less than 150 days. A standard evaluation can take up to 210 active days and usually takes around a year overall once the clock stops for company responses are included.</p>\n\n<p>EMA also says that lessons from this review will inform the wider use of phased reviews under the EU's new pharmaceutical legislation, and that it will consider other medicines for this approach case by case.</p>\n\n<h3 id=\"why-a-faster-opinion-compresses-launch-planning\">Why a faster opinion compresses launch planning</h3>\n\n<p>A shorter review moves the regulatory date forward. It does not move the national pricing and reimbursement processes that follow. For a brand team, this means the window between \"we know the label\" and \"we need a country-ready value story\" is shorter than usual. Work that would normally happen during the last months of a standard review, such as testing positioning with oncologists or sizing the eligible population by country, has less time to run.</p>\n\n<h2 id=\"from-chmp-opinion-to-patient-access-in-europe\">From CHMP opinion to patient access in Europe</h2>\n\n<h3 id=\"the-european-commission-decision\">The European Commission decision</h3>\n\n<p>The CHMP opinion is an intermediate step. EMA says the European Commission will fast-track its decision on an EU-wide marketing authorisation. Revolution Medicines notes that, once granted, the authorisation will be valid in all EU member states and in Iceland, Norway and Liechtenstein, but not in the United Kingdom or Switzerland, which have their own processes.</p>\n\n<h3 id=\"orphan-status-still-under-review\">Orphan status still under review</h3>\n\n<p>Daraxonrasib received EU orphan designation for pancreatic cancer on 20 April 2026. EMA's product page notes that it will now review the available information to decide whether the orphan designation can be maintained at the point of authorisation. Teams should not treat orphan market exclusivity as settled until that review concludes.</p>\n\n<h3 id=\"national-price-and-reimbursement\">National price and reimbursement</h3>\n\n<p>EMA is explicit that after authorisation, price and reimbursement decisions are made by each Member State, based on the medicine's possible role in that country's health system. That is where the real launch sequence is set, and it is different in every market.</p>\n\n<h2 id=\"eu-joint-clinical-assessment-for-oncology-rasonque-is-in-scope\">EU joint clinical assessment for oncology: Rasonque is in scope</h2>\n\n<h3 id=\"what-a-joint-clinical-assessment-is\">What a joint clinical assessment is</h3>\n\n<p>The EU Health Technology Assessment Regulation, Regulation (EU) 2021/2282, created joint clinical assessments at EU level. The European Commission describes them as a scientific analysis of the relative effects of a health technology on health outcomes, intended to support national HTA. Since 12 January 2025, new cancer medicines and advanced therapy medicinal products have been in scope. Orphan medicines join from 13 January 2028, and other medicines covered by the regulation from 13 January 2030.</p>\n\n<p>EMA confirms that daraxonrasib falls under the HTA Regulation, and that its joint clinical assessment runs independently of the marketing authorisation review, coordinated by the HTA Secretariat within the European Commission.</p>\n\n<h3 id=\"what-the-regulation-asks-of-member-states\">What the regulation asks of Member States</h3>\n\n<p>The regulation sets the assessment scope in terms of patient population, intervention, comparators and health outcomes, requested jointly by Member States. It also says joint reports should contain no value judgements, since pricing and resource decisions belong to each country. Member States must give due consideration to published joint reports when they carry out their own national HTA.</p>\n\n<h3 id=\"timing-of-the-joint-report\">Timing of the joint report</h3>\n\n<p>For medicinal products, the regulation says the draft joint clinical assessment and summary reports should be endorsed no later than 30 days after the Commission decision granting a marketing authorisation. So the evidence package for national bodies arrives close to the approval itself.</p>\n\n<h3 id=\"why-the-comparator-question-matters-for-second-line-pancreatic-cancer\">Why the comparator question matters for second-line pancreatic cancer</h3>\n\n<p>In this setting, standard care varies with first-line treatment, patient fitness and local practice. When Member States request their comparators jointly, the scope can include several options. A value story built around one comparator may not answer what a particular national body or hospital committee asks. Primary research with oncologists in priority countries can show which regimens are actually used after first-line failure, and which comparisons will carry weight locally.</p>\n\n<p>For background on how the regulation works, see our <a href=\"/blog/european-hta-regulation-2026-pharmaceutical-market-access-guide\">guide to the European HTA Regulation</a>. For how orphan status fits into the European pathway, see our <a href=\"/blog/ema-orphan-drug-designation-guide-europe-2026\">EMA orphan drug designation guide</a>.</p>\n\n<h2 id=\"pancreatic-cancer-market-access-in-europe-an-account-level-view\">Pancreatic cancer market access in Europe: an account-level view</h2>\n\n<p>National reimbursement opens the door. Hospital and regional decisions decide how quickly patients come through it.</p>\n\n<h3 id=\"treatment-centres-not-just-countries\">Treatment centres, not just countries</h3>\n\n<p>Second-line metastatic pancreatic cancer is usually treated in oncology centres where a small number of physicians see a large share of patients. In most European systems, those centres also run their own formulary or drug committee reviews, sometimes with regional budget holders. Two centres in the same country can adopt a new medicine months apart.</p>\n\n<p>For an account-level plan, the useful questions are concrete:</p>\n\n<ul><li>Which centres treat the most patients after first-line failure?</li><li>Who sits on their drug committee, and what evidence do they ask for?</li><li>How do they currently sequence treatment after first-line chemotherapy?</li><li>What would make them add an oral option to their protocol?</li></ul>\n\n<h3 id=\"an-oral-medicine-changes-the-account-workflow\">An oral medicine changes the account workflow</h3>\n\n<p>Rasonque is a tablet taken once daily, according to the company. In a setting dominated by infused chemotherapy, that changes who handles the patient between visits. Dispensing may move from the infusion unit to the hospital or community pharmacy, depending on the country. Adherence and side effect management happen at home, which puts more weight on oncology nurses and pharmacists.</p>\n\n<h3 id=\"side-effect-management-will-shape-uptake\">Side effect management will shape uptake</h3>\n\n<p>The US prescribing information, quoted in the company's release, recommends starting prophylactic measures for skin reactions before the first dose, including topical corticosteroids, emollients and sunscreen, and considering oral antibiotics. EU product information will be published only after the Commission grants authorisation, so European protocols are not yet set. Even so, centres that already run structured supportive care for oral oncology medicines may adopt faster than those that do not. That is worth measuring before launch, not after.</p>\n\n<h3 id=\"biomarker-testing-and-the-label-wording\">Biomarker testing and the label wording</h3>\n\n<p>The indication recommended by the CHMP, as published on the EMA product page, does not name a specific RAS mutation. The company says the trial met its primary and key secondary endpoints both in patients with RAS G12 mutations and in the overall population, which included patients with or without an identified tumour RAS mutation. Even so, 92% of trial patients had a confirmed RAS G12 mutation, and many oncologists link RAS-targeted therapy with testing in their minds.</p>\n\n<p>That creates a research question with commercial weight. If clinicians believe a test result is needed before prescribing, centres with slow or patchy molecular testing may lag, even where the label does not require it. If they do not test, they may be less sure which patients will benefit most. Understanding current testing practice by centre, and what oncologists believe the label requires, helps a team decide where medical education is needed and which accounts are ready first.</p>\n\n<h3 id=\"prescription-level-questions-to-answer-early\">Prescription-level questions to answer early</h3>\n\n<p>A brand team planning a European launch needs to know, at the level of individual prescribers:</p>\n\n<ul><li>What share of their second-line patients would they consider for an oral RAS-targeted option?</li><li>Does RAS mutation status testing already happen routinely in their centre?</li><li>How do they weigh survival benefit against the side effect profile and the support it needs?</li><li>Which colleagues, such as pharmacists, nurses and committee chairs, influence the decision?</li></ul>\n\n<p>Survey waves among treating oncologists, repeated after launch, turn those answers into prescription-level tracking by centre type and country.</p>\n\n<h2 id=\"a-launch-readiness-checklist-for-rasonque-type-launches\">A launch readiness checklist for Rasonque-type launches</h2>\n\n<p>The details here are specific to daraxonrasib, but the pattern applies to any medicine that moves through a phased review into the joint clinical assessment process:</p>\n\n<ol><li><strong>Map comparators by country now.</strong> Find out what oncologists in each priority market actually use after first-line failure, so the evidence package answers the questions national bodies and hospital committees will ask.</li><li><strong>Build the account list early.</strong> Identify the high-volume treatment centres and their decision process before the Commission decision, not after.</li><li><strong>Test the clinical messages.</strong> Check how oncologists read the different survival figures and the safety profile, and which framing they trust.</li><li><strong>Plan for oral oncology support.</strong> Understand how centres manage side effects for oral cancer medicines today, and where support will be needed.</li><li><strong>Set a baseline.</strong> Measure current treatment patterns and intent to prescribe before launch, so later waves show real change.</li></ol>\n\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n\n<h3 id=\"what-is-rasonque-daraxonrasib\">What is Rasonque (daraxonrasib)?</h3>\n\n<p>It is an oral RAS inhibitor from Revolution Medicines. The CHMP recommended it in October 2026 as monotherapy for adults with metastatic pancreatic adenocarcinoma who have had at least one prior systemic therapy.</p>\n\n<h3 id=\"when-did-the-chmp-give-its-opinion\">When did the CHMP give its opinion?</h3>\n\n<p>The CHMP adopted its positive opinion on 15 October 2026, during its meeting from 12 to 15 October 2026.</p>\n\n<h3 id=\"is-rasonque-approved-in-the-eu-yet\">Is Rasonque approved in the EU yet?</h3>\n\n<p>Not yet. The European Commission must issue the marketing authorisation, which EMA says it will fast-track. Pricing and reimbursement then happen country by country.</p>\n\n<h3 id=\"what-is-the-cancer-medicines-pathfinder\">What is the Cancer Medicines Pathfinder?</h3>\n\n<p>An EMA project launched in 2023 to speed up the development and assessment of cancer medicines. It identified Rasonque as a high-priority medicine, which made it eligible for a phased review.</p>\n\n<h3 id=\"does-rasonque-go-through-an-eu-joint-clinical-assessment\">Does Rasonque go through an EU joint clinical assessment?</h3>\n\n<p>Yes. EMA confirms daraxonrasib is in scope of the EU HTA Regulation, which has covered new cancer medicines since 12 January 2025.</p>\n\n<h3 id=\"what-should-launch-teams-research-first\">What should launch teams research first?</h3>\n\n<p>Comparators used after first-line failure in each priority country, the decision process at high-volume treatment centres, and how oncologists read the survival and safety data.</p>\n\n<h2 id=\"plan-your-european-oncology-launch-research-with-bionixus\">Plan your European oncology launch research with BioNixus</h2>\n\n<p>BioNixus has run primary market research since 2012, with physician, payer and account-level fieldwork across 48 countries. For European oncology launches, we design studies around the treatment centres and prescribers who drive adoption, and the comparators national bodies will ask about. See our work on <a href=\"/healthcare-market-research/europe\">healthcare market research in Europe</a>.</p>\n\n<p>If you are preparing a European launch in oncology or another joint clinical assessment setting, <a href=\"/contact?ref=blog-rasonque-2026\">talk to our team</a>.</p>\n\n<p><em>This article summarises public regulatory information. It is not medical advice, and it does not promote any medicine.</em></p>\n\n<h2 id=\"sources\">Sources</h2>\n\n<p>All accessed 17 October 2026.</p>\n\n<ol><li>EMA news, \"EMA recommends authorisation of Rasonque for metastatic pancreatic cancer\", 15 October 2026: <a href=\"https://www.ema.europa.eu/en/news/ema-recommends-authorisation-rasonque-metastatic-pancreatic-cancer\">https://www.ema.europa.eu/en/news/ema-recommends-authorisation-rasonque-metastatic-pancreatic-cancer</a></li><li>EMA, Rasonque product page (opinion): <a href=\"https://www.ema.europa.eu/en/medicines/human/EPAR/rasonque\">https://www.ema.europa.eu/en/medicines/human/EPAR/rasonque</a></li><li>EMA, \"Meeting highlights from the CHMP 12-15 October 2026\", 16 October 2026: <a href=\"https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-12-15-october-2026\">https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-12-15-october-2026</a></li><li>EMA, Cancer Medicines Pathfinder: <a href=\"https://www.ema.europa.eu/en/human-regulatory-overview/research-development/cancer-medicines/cancer-medicines-pathfinder\">https://www.ema.europa.eu/en/human-regulatory-overview/research-development/cancer-medicines/cancer-medicines-pathfinder</a></li><li>EMA, orphan designation EU/3/26/3227 (daraxonrasib): <a href=\"https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu-3-26-3227\">https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu-3-26-3227</a></li><li>European Commission, \"Joint clinical assessments for medicinal products\": <a href=\"https://health.ec.europa.eu/health-technology-assessment/implementation-regulation-health-technology-assessment/joint-clinical-assessments-medicinal-products_en\">https://health.ec.europa.eu/health-technology-assessment/implementation-regulation-health-technology-assessment/joint-clinical-assessments-medicinal-products_en</a></li><li>Regulation (EU) 2021/2282 on health technology assessment, EUR-Lex: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32021R2282\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32021R2282</a></li><li>Revolution Medicines press release, 15 October 2026: <a href=\"https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-rasonquetm-daraxonrasib-receives-positive/\">https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-rasonquetm-daraxonrasib-receives-positive/</a></li><li>BioNixus, About page: <a href=\"/about\">https://www.bionixus.com/about</a></li></ol>";
+export const SOCIAL_BODY_HTML = `<p>Rasonque (daraxonrasib) is an oral RAS inhibitor from Revolution Medicines. RAS is a protein that helps control cell growth. On 15 October 2026 the CHMP recommended a marketing authorisation. The CHMP is the human medicines committee of the European Medicines Agency, the EMA. The recommendation is for adults with metastatic pancreatic adenocarcinoma who have already had at least one systemic therapy. Metastatic means the cancer has spread. A CHMP opinion is not a European Commission decision.</p>
+
+<p>Patients whose disease progresses after first treatment have few options. The options in wide use are chemotherapy. This article is about the opinion, the steps still ahead, and the questions a launch team can ask. It does not treat the medicine as approved in the European Union.</p>
+
+<h2 id="the-opinion">The opinion</h2>
+
+<p>The EMA product page says the CHMP adopted a positive opinion for Rasonque as monotherapy in that adult group. The applicant is Revolution Medicines Netherlands B.V. The page says the product will come as 100 mg and 150 mg film-coated tablets. It says treatment should be started by physicians experienced in anticancer medicines.</p>
+
+<p>The opinion was one of six positive opinions on new medicines at the October 2026 CHMP meeting, held from 12 to 15 October. EMA's meeting highlights put the 2026 total so far at 72 positive opinions on new medicines. A positive opinion is a recommendation. It is not the Commission decision that grants the authorisation.</p>
+
+<p>EMA describes daraxonrasib as a RAS inhibitor. In pancreatic adenocarcinoma, mutations in the RAS gene can leave these proteins switched on. EMA says daraxonrasib binds a protein called cyclophilin A, and that pair then attaches to RAS and blocks its signalling. Revolution Medicines describes the molecule as an oral, RAS(ON), multi-selective, noncovalent, tri-complex inhibitor. The company wording is the company's. The mechanism sentence above is EMA's.</p>
+
+<h2 id="survival-figures">Survival figures</h2>
+
+<p>The survival figures below come from different readings of the data. The company's hazard ratio is not an EMA result.</p>
+
+<p>EMA reports a phase 3, open-label, multinational study in 500 patients whose metastatic disease had worsened after prior systemic treatment. EMA says 92% had a confirmed RAS G12 mutation. In EMA's summary, median overall survival was 12.4 months with Rasonque against 6.7 months with chemotherapy. Median progression-free survival was 7.2 months against 3.6 months. EMA says the survival analysis used data collected up to 15 June 2026. It says the progression-free survival analysis used data up to 10 February 2026. Those medians are EMA's summary. This page does not average 12.4 with any other survival number.</p>
+
+<p>The company's release is a separate source. It names the trial RASolute 302. It says the primary analysis in the intent-to-treat population showed a hazard ratio for death of 0.40. The company describes that ratio as a 60% reduction in risk. That reading of the hazard ratio is the company's. It is not stated here as an EMA result. The company reports median overall survival of 13.2 months against 6.7 months. It describes the 12.4-month figure as a later ad hoc analysis, generally consistent with the primary one. 12.4 and 13.2 stay in separate sentences.</p>
+
+<p>EMA lists the most common side effects as diarrhoea, rash, stomatitis, nausea and vomiting. Stomatitis is inflammation of the mouth.</p>
+
+<h2 id="us-and-eu-wording">US and EU wording</h2>
+
+<p>Revolution Medicines says the US Food and Drug Administration approved Rasonque on 26 August 2026. The company says the US indication covers adults with metastatic pancreatic adenocarcinoma who have received at least one prior systemic therapy, or who are not candidates for multiagent systemic therapy. The CHMP opinion, as EMA publishes it, covers only the group that has already had systemic therapy.</p>
+
+<p>US materials may describe patients outside the CHMP wording. European content should follow the EU product information once the Commission publishes it. Until that text exists, do not treat the US wording as the EU indication.</p>
+
+<h2 id="patient-pool">Patient pool</h2>
+
+<p>The company's release, citing published epidemiology, says about 147,000 people are diagnosed with pancreatic cancer in Europe each year. It says five-year survival remains below 10%. It says about 80% of patients are diagnosed after the disease has spread. These are company-cited figures. They are not EMA figures. They describe pancreatic cancer. They do not describe the patients who reach a later line of treatment, who are fit for it, or who are tested for a RAS mutation.</p>
+
+<p>A country forecast needs local inputs the public sources here do not give. Oncologists in each country can describe how many of their patients reach a later line. That is a study. It is not a calculation from the headline.</p>
+
+<h2 id="pathfinder">Pathfinder</h2>
+
+<p>EMA launched the Cancer Medicines Pathfinder in 2023 to speed up development and assessment of cancer medicines. One pillar is to identify high-priority products that address an unmet need. EMA says Rasonque was identified as one of those products.</p>
+
+<p>Under the phased review, the CHMP started assessing data months before the complete application was expected. EMA says the review began in early July 2026. The committee evaluated quality, non-clinical and clinical data in stages. EMA says this cut the assessment to less than 150 days. EMA says a standard evaluation can take up to 210 active days, and usually takes around a year once clock stops for company replies are included.</p>
+
+<p>EMA says lessons from this review will inform wider use of phased reviews under new EU pharmaceutical legislation. It says other medicines will be considered case by case. A shorter assessment moves the opinion forward. It does not, by itself, move national pricing. A CHMP opinion is still not a Commission decision.</p>
+
+<h2 id="after-the-opinion">After the opinion</h2>
+
+<p>EMA says the European Commission will fast-track its decision on an EU-wide marketing authorisation. Revolution Medicines notes that, once granted, the authorisation will be valid in all EU member states and in Iceland, Norway and Liechtenstein. It says the authorisation will not cover the United Kingdom or Switzerland. Those sentences describe a future authorisation. They do not say the authorisation has been granted.</p>
+
+<p>Daraxonrasib received EU orphan designation for pancreatic cancer on 20 April 2026. An orphan designation is a status for a medicine aimed at a rare disease. EMA's product page says the agency will review whether the designation can be maintained at authorisation. Orphan market exclusivity is not settled until that review ends.</p>
+
+<p>EMA says that after authorisation, each Member State sets price and reimbursement. That step is national. It has not happened because the Commission decision has not happened.</p>
+
+<h2 id="joint-assessment">Joint assessment</h2>
+
+<p>Regulation (EU) 2021/2282 created joint clinical assessments. The European Commission describes them as a scientific analysis of the relative effects of a health technology on health outcomes, to support national assessment. Since 12 January 2025, new cancer medicines and advanced therapy medicinal products have been in scope. Orphan medicines join from 13 January 2028. Other medicines covered by the regulation join from 13 January 2030.</p>
+
+<p>EMA says daraxonrasib falls under the HTA Regulation. It says the joint clinical assessment runs independently of the marketing authorisation review. The HTA Secretariat in the European Commission coordinates it. A joint assessment is not the Commission marketing authorisation, and it is not a national price.</p>
+
+<p>The regulation sets the assessment scope as population, intervention, comparators and health outcomes, requested jointly by Member States. It says joint reports should contain no value judgement, because price and budget decisions belong to each country. Member States must give due consideration to a published joint report in their own assessment.</p>
+
+<p>For medicines, the regulation says the draft joint clinical assessment and summary should be endorsed no later than 30 days after the Commission decision that grants a marketing authorisation. The report is timed off a decision that has not yet been taken.</p>
+
+<p>In later-line pancreatic cancer, the regimen in use depends on the first treatment, on fitness and on local practice. A value story built on one comparator may not match what a national body asks. Oncologists in each priority country can say which regimens they use after first-line treatment fails. For the regulation itself, see the <a href="/blog/european-hta-regulation-2026-pharmaceutical-market-access-guide">guide to the European HTA Regulation</a>. For orphan status, see the <a href="/blog/ema-orphan-drug-designation-guide-europe-2026">EMA orphan drug designation guide</a>.</p>
+
+<h2 id="centres">Centres</h2>
+
+<p>National reimbursement, once it exists, is not the same as use in a named hospital. Later-line metastatic pancreatic cancer is usually treated in centres where a small number of physicians see many of the patients. Those centres often run their own drug committee. Two centres in one country can adopt a medicine months apart. Ask which centres treat patients after first-line failure, who sits on the committee, how they sequence treatment now, and what would make them add an oral option. Those are questions. They are not a claim that the Commission has approved the medicine.</p>
+
+<p>The company says Rasonque is a tablet taken once daily. That is the company's statement. In a setting built around infused chemotherapy, a tablet can move dispensing away from the infusion unit. EU product information will be published only after the Commission grants authorisation. The company's dose sentence is not the published EU label.</p>
+
+<p>The company's release quotes US prescribing information. That US text recommends starting skin-protection measures before the first dose, including topical corticosteroids, emollients and sunscreen, and considering oral antibiotics. That is US labelling, quoted by the company. It is not an EMA result, and it is not the EU product information. European protocols are not set until the Commission text exists.</p>
+
+<p>The CHMP indication, as the EMA product page publishes it, does not name a specific RAS mutation. The company says the trial met its primary and key secondary endpoints both in patients with RAS G12 mutations and in the overall population, which included patients with or without an identified tumour RAS mutation. EMA says 92% of trial patients had a confirmed RAS G12 mutation. If clinicians believe a test is required, centres with slow testing may move later, even where the opinion text does not require a test. That is a research question. It is not a label requirement this article adds.</p>
+
+<p>A prescriber study can ask what share of later-line patients a physician would consider, whether the centre already tests RAS status, how the physician reads the survival figures, and which colleagues influence the decision. Keep EMA's 12.4 months and the company's 13.2 months in separate questions. The hazard ratio of 0.40 is the company's reading, not an EMA finding.</p>
+
+<h2 id="checklist">Checklist</h2>
+
+<ol>
+<li>Map the regimens used after first-line failure in each priority country. Do not assume one European comparator.</li>
+<li>List high-volume centres and their committee steps before the Commission decision, not after it.</li>
+<li>Test how oncologists read EMA's medians and, separately, the company's hazard ratio and 13.2-month median.</li>
+<li>Ask how centres already support patients on oral cancer medicines. Do not import the US skin regimen as an EU rule.</li>
+<li>Measure current treatment patterns before any national reimbursement. A later wave then has a baseline.</li>
+</ol>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3 id="what-is-rasonque-daraxonrasib">What is Rasonque (daraxonrasib)?</h3>
+
+<p>Rasonque (daraxonrasib) is an oral RAS inhibitor from Revolution Medicines. RAS is a protein that helps control cell growth. The CHMP, the European Medicines Agency's human medicines committee, recommended it in October 2026 as monotherapy for adults with metastatic pancreatic adenocarcinoma who have had at least one prior systemic therapy. A CHMP opinion is not a European Commission decision.</p>
+
+<h3 id="when-did-the-chmp-give-its-opinion">When did the CHMP give its opinion?</h3>
+
+<p>The CHMP adopted its positive opinion on 15 October 2026, during its meeting from 12 to 15 October 2026.</p>
+
+<h3 id="is-rasonque-approved-in-the-eu-yet">Is Rasonque approved in the EU yet?</h3>
+
+<p>No. A CHMP opinion is not a Commission decision. The European Commission must issue the marketing authorisation. EMA says the Commission will fast-track that decision. Pricing and reimbursement then happen country by country.</p>
+
+<h3 id="what-is-the-cancer-medicines-pathfinder">What is the Cancer Medicines Pathfinder?</h3>
+
+<p>An EMA project launched in 2023 to speed up the development and assessment of cancer medicines. EMA says it identified Rasonque as a high-priority medicine, which made it eligible for a phased review.</p>
+
+<h3 id="does-rasonque-go-through-an-eu-joint-clinical-assessment">Does Rasonque go through an EU joint clinical assessment?</h3>
+
+<p>EMA says daraxonrasib is in scope of the EU HTA Regulation. That regulation has covered new cancer medicines since 12 January 2025. The joint assessment is separate from the Commission decision.</p>
+
+<h3 id="what-should-launch-teams-research-first">What should launch teams research first?</h3>
+
+<p>Which regimens oncologists use after first-line treatment fails, in each priority country, and how high-volume centres decide. Keep the EMA survival figures and the company's hazard ratio in separate sentences. They are not an average.</p>
+
+<h2 id="plan-your-european-oncology-launch-research-with-bionixus">Plan your European oncology launch research with BioNixus</h2>
+
+<p>BioNixus has run primary market research since 2012, with physician, payer and account fieldwork across 48 countries. See <a href="/healthcare-market-research/europe">healthcare market research in Europe</a>.</p>
+
+<p>If you are preparing a European oncology launch, <a href="/contact?ref=blog-rasonque-2026">talk to our team</a>.</p>
+
+<p><em>This article summarises public regulatory information. It is not medical advice, and it does not promote any medicine. A CHMP opinion is not a Commission decision.</em></p>
+
+<h2 id="sources">Sources</h2>
+
+<p>All accessed 17 October 2026.</p>
+
+<ol>
+<li>EMA news, "EMA recommends authorisation of Rasonque for metastatic pancreatic cancer", 15 October 2026: <a href="https://www.ema.europa.eu/en/news/ema-recommends-authorisation-rasonque-metastatic-pancreatic-cancer">https://www.ema.europa.eu/en/news/ema-recommends-authorisation-rasonque-metastatic-pancreatic-cancer</a></li>
+<li>EMA, Rasonque product page (opinion): <a href="https://www.ema.europa.eu/en/medicines/human/EPAR/rasonque">https://www.ema.europa.eu/en/medicines/human/EPAR/rasonque</a></li>
+<li>EMA, "Meeting highlights from the CHMP 12-15 October 2026", 16 October 2026: <a href="https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-12-15-october-2026">https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-12-15-october-2026</a></li>
+<li>EMA, Cancer Medicines Pathfinder: <a href="https://www.ema.europa.eu/en/human-regulatory-overview/research-development/cancer-medicines/cancer-medicines-pathfinder">https://www.ema.europa.eu/en/human-regulatory-overview/research-development/cancer-medicines/cancer-medicines-pathfinder</a></li>
+<li>EMA, orphan designation EU/3/26/3227 (daraxonrasib): <a href="https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu-3-26-3227">https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu-3-26-3227</a></li>
+<li>European Commission, "Joint clinical assessments for medicinal products": <a href="https://health.ec.europa.eu/health-technology-assessment/implementation-regulation-health-technology-assessment/joint-clinical-assessments-medicinal-products_en">https://health.ec.europa.eu/health-technology-assessment/implementation-regulation-health-technology-assessment/joint-clinical-assessments-medicinal-products_en</a></li>
+<li>Regulation (EU) 2021/2282 on health technology assessment, EUR-Lex: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32021R2282">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32021R2282</a></li>
+<li>Revolution Medicines press release, 15 October 2026: <a href="https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-rasonquetm-daraxonrasib-receives-positive/">https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-rasonquetm-daraxonrasib-receives-positive/</a></li>
+<li>BioNixus, About page: <a href="/about">https://www.bionixus.com/about</a></li>
+</ol>`;
 export const SOCIAL_TABLE_OF_CONTENTS: { heading: string; anchor: string }[] = [
-  {
-    "heading": "What the CHMP recommended for Rasonque",
-    "anchor": "what-the-chmp-recommended-for-rasonque"
-  },
-  {
-    "heading": "US label versus EU opinion: a difference worth tracking",
-    "anchor": "us-label-versus-eu-opinion-a-difference-worth-tracking"
-  },
-  {
-    "heading": "How large is the patient pool?",
-    "anchor": "how-large-is-the-patient-pool"
-  },
-  {
-    "heading": "The Cancer Medicines Pathfinder and the phased review",
-    "anchor": "the-cancer-medicines-pathfinder-and-the-phased-review"
-  },
-  {
-    "heading": "From CHMP opinion to patient access in Europe",
-    "anchor": "from-chmp-opinion-to-patient-access-in-europe"
-  },
-  {
-    "heading": "EU joint clinical assessment for oncology: Rasonque is in scope",
-    "anchor": "eu-joint-clinical-assessment-for-oncology-rasonque-is-in-scope"
-  },
-  {
-    "heading": "Pancreatic cancer market access in Europe: an account-level view",
-    "anchor": "pancreatic-cancer-market-access-in-europe-an-account-level-view"
-  },
-  {
-    "heading": "A launch readiness checklist for Rasonque-type launches",
-    "anchor": "a-launch-readiness-checklist-for-rasonque-type-launches"
-  },
-  {
-    "heading": "Frequently asked questions",
-    "anchor": "frequently-asked-questions"
-  },
-  {
-    "heading": "Plan your European oncology launch research with BioNixus",
-    "anchor": "plan-your-european-oncology-launch-research-with-bionixus"
-  },
-  {
-    "heading": "Sources",
-    "anchor": "sources"
-  }
+  { "heading": "The opinion", "anchor": "the-opinion" },
+  { "heading": "Survival figures", "anchor": "survival-figures" },
+  { "heading": "US and EU wording", "anchor": "us-and-eu-wording" },
+  { "heading": "Patient pool", "anchor": "patient-pool" },
+  { "heading": "Pathfinder", "anchor": "pathfinder" },
+  { "heading": "After the opinion", "anchor": "after-the-opinion" },
+  { "heading": "Joint assessment", "anchor": "joint-assessment" },
+  { "heading": "Centres", "anchor": "centres" },
+  { "heading": "Checklist", "anchor": "checklist" },
+  { "heading": "Frequently asked questions", "anchor": "frequently-asked-questions" },
+  { "heading": "Plan your European oncology launch research with BioNixus", "anchor": "plan-your-european-oncology-launch-research-with-bionixus" },
+  { "heading": "Sources", "anchor": "sources" }
 ];
-export const SOCIAL_WORD_COUNT = 2610;
-export const SOCIAL_READING_TIME = 12;
+export const SOCIAL_WORD_COUNT = 2245;
+export const SOCIAL_READING_TIME = 10;
 export const SOCIAL_KEYWORDS: string[] = [
   "Rasonque daraxonrasib",
   "daraxonrasib CHMP opinion",

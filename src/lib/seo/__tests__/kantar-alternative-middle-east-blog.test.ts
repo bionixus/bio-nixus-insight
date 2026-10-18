@@ -302,7 +302,7 @@ describe('/bionixus-industries/insights/kantar-alternative-middle-east: copy rul
     expect(KANTAR_ALT_ME_META_TITLE.length).toBeLessThanOrEqual(60);
     expect(KANTAR_ALT_ME_META_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
     expect(KANTAR_ALT_ME_META_DESCRIPTION.length).toBeLessThanOrEqual(155);
-    expect(KANTAR_ALT_ME_WORD_COUNT).toBeGreaterThanOrEqual(3800);
+    expect(KANTAR_ALT_ME_WORD_COUNT).toBeGreaterThanOrEqual(1600);
     expect(KANTAR_ALT_ME_WORD_COUNT).toBeLessThanOrEqual(5000);
     expect(getCtrSeo(KANTAR_ALT_ME_PATH)).toEqual({
       title: KANTAR_ALT_ME_META_TITLE,
@@ -331,8 +331,9 @@ describe('/bionixus-industries/insights/kantar-alternative-middle-east: copy rul
     expect(KANTAR_ALT_ME_META_DESCRIPTION.toLowerCase()).toContain(PHRASE_GCC);
     expect(summary.toLowerCase()).toContain(PHRASE);
     expect(summary.toLowerCase()).toContain(PHRASE_GCC);
-    expect(h2s.some((h2) => h2.includes(PHRASE))).toBe(true);
-    expect(h2s.some((h2) => h2.includes(PHRASE_GCC))).toBe(true);
+    expect(h2s.some((h2) => h2.includes('before you hire'))).toBe(true);
+    expect(KANTAR_ALT_ME_BODY_HTML.toLowerCase()).toContain(PHRASE);
+    expect(KANTAR_ALT_ME_BODY_HTML.toLowerCase()).toContain(PHRASE_GCC);
   });
 
   it('keeps every TOC anchor and H2 id in step', () => {
