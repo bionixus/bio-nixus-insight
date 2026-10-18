@@ -1116,6 +1116,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae"
     },
     {
+      "source": "/bionixus-industries/insights/chinese-companies-egypt-market-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-companies-egypt-market-research"
+    },
+    {
       "source": "/bionixus-industries/insights/nielsen-alternative-saudi-arabia",
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/nielsen-alternative-saudi-arabia"
     },
