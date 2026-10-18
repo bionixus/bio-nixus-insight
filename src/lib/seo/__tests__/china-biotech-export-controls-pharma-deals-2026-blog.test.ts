@@ -354,9 +354,20 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: copy rules', ()
     expect(summaryWords).toBeGreaterThanOrEqual(80);
     expect(summaryWords).toBeLessThanOrEqual(220);
     expect(summary).not.toMatch(/Short answer:/i);
-    const firstSentence = summary.split(/(?<=\.)\s+/)[0] ?? '';
-    expect(firstSentence).toMatch(/16 October 2026/);
-    expect(firstSentence).toMatch(/40 technologies|40 items/);
+    const firstParagraph = text(
+      CHINA_BIOTECH_EXPORT_EXECUTIVE_SUMMARY_HTML.match(/<p>([\s\S]*?)<\/p>/)?.[1] ?? '',
+    );
+    const openingSentences = firstParagraph.split(/(?<=\.)\s+/).filter(Boolean);
+    expect(openingSentences.length).toBeGreaterThanOrEqual(2);
+    expect(openingSentences.length).toBeLessThanOrEqual(3);
+    for (const sentence of openingSentences) {
+      expect(countWords(sentence)).toBeLessThanOrEqual(32);
+    }
+    expect(firstParagraph).toMatch(/16 October 2026/);
+    expect(firstParagraph).toMatch(/40 technologies|40 items/);
+    expect(firstParagraph).toMatch(/Ministry of Commerce/);
+    expect(firstParagraph).toMatch(/Ministry of Science and Technology/);
+    expect(firstParagraph).toMatch(/export-control catalogue/);
     const h2s = [...CHINA_BIOTECH_EXPORT_BODY_HTML.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map((m) =>
       text(m[1]).toLowerCase(),
     );

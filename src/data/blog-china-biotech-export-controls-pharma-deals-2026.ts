@@ -296,7 +296,7 @@ export const CHINA_BIOTECH_EXPORT_TABLE_OF_CONTENTS: { heading: string; anchor: 
   { heading: 'References', anchor: 'references' },
 ];
 
-export const CHINA_BIOTECH_EXPORT_EXECUTIVE_SUMMARY_HTML = `<p>China’s Ministry of Commerce and Ministry of Science and Technology on 16 October 2026 published a draft that would add 40 technologies, including five in biotech, to the country’s export-control catalogue — the official list of know-how that may not leave China, or may leave only with a licence — and that split now sits in front of every foreign buyer looking at a Chinese platform.</p>
+export const CHINA_BIOTECH_EXPORT_EXECUTIVE_SUMMARY_HTML = `<p>China wants to keep its best biotech platforms out of foreign hands. On 16 October 2026, its Ministry of Commerce and Ministry of Science and Technology published a draft that would add 40 technologies, five of them in biotech, to the export-control catalogue. That catalogue is the official list of know-how that may not leave China, or may leave only with a licence.</p>
 <p>China biotech export controls, in this draft, are a proposed add-on to a list the State already uses, not a new standalone law. The five biotech items cover cell and gene therapy — treatments that change or replace a patient’s cells or genes — siRNA (small interfering RNA, a medicine that turns a gene down), and some germ-related technology.</p>
 <p>The notice is still a draft. Comments close on 15 November 2026. This page is not legal advice. For the Gulf launch file that sits next to the legal read, start from our <a href="/healthcare-market-research">healthcare market research</a> hub.</p>`;
 
