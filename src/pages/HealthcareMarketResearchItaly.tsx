@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should teams budget Italian healthcare market research in 2026?',
+    answer:
+      'Focused Italian HCP attitude-and-usage or payer snapshot modules typically start from USD 10,000–25,000; full mixed-method programmes with multi-region SSR formulary mapping, IRCCS KOL networks, and AIFA-aligned HEOR support often run USD 35,000–60,000 depending on therapy scarcity and ethics requirements. BioNixus scopes deliverables to a single access or launch decision — AIFA CPR negotiation, regional PT listing, or launch sequencing — so Italian affiliates do not pay for undifferentiated syndicated tables they already license.',
+  },
 ];
 
 const jsonLd = [

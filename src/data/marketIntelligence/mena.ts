@@ -535,6 +535,12 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
       { step: 7, action: "Hospital formulary adoption", body: "MOH City Hospital pharmacy committees + Private hospital P&T committees", timeline: "3–6 months", notes: "City Hospitals Alliance (Şehir Hastaneleri) has joint procurement — critical for access to ~50,000-bed network" },
     ],
     majorHospitals: [
+      { name: "Hacettepe University Hospitals (Ankara)", type: 'academic', beds: "1,000+ beds", specialties: "National oncology and transplant reference; SGK high-volume teaching centre" },
+      { name: "Istanbul University Cerrahpaşa Faculty of Medicine", type: 'academic', beds: "1,400+ beds", specialties: "Cardiology, oncology, and internal medicine KOL hub for Marmara region" },
+      { name: "Acıbadem Maslak Hospital", type: 'private', beds: "364 beds", specialties: "Premium oncology and cardiology; medical tourism and private payer channel" },
+      { name: "Memorial Şişli Hospital", type: 'private', beds: "252 beds", specialties: "International patient oncology; private insurance and cash-pay adoption corridor" },
+      { name: "Ankara City Hospital (Şehir Hastanesi)", type: 'public', beds: "3,704 beds", specialties: "Mega public facility; joint procurement and SGK formulary influence" },
+      { name: "Medipol Mega University Hospital", type: 'private', beds: "470 beds", specialties: "Multi-specialty private network flagship; rapid biologic uptake in Istanbul" },
     ],
     accessTimeline: {
       regulatoryApproval: "",

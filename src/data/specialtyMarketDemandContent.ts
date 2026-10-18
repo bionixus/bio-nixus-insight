@@ -55,7 +55,9 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   h1: 'Singapore MedTech Manufacturing Market: Research & Commercial Intelligence',
   intro: [
     'Singapore’s MedTech manufacturing market is not a retail-device story — it is an industrial and export story. Multinationals and Asian OEMs concentrate sterile assembly, implant finishing, diagnostics cartridge production, and contract manufacturing in Jurong, Tuas Biomedical Park, and allied industrial estates because HSA oversight, IP protection, and ASEAN/APAC logistics sit in one jurisdiction. BioNixus runs primary research that turns that manufacturing footprint into commercial decisions: capacity benchmarking, buyer qualification, partner selection, and expansion timing.',
-    'Buyers searching “MedTech manufacturing Singapore” and “Singapore MedTech industry” need plant economics, regulatory manufacturing pathways, and hospital/OEM sourcing behaviour — not a generic MedTech market overview. Our programmes interview manufacturing directors, quality leads, procurement at export-focused OEMs, and hospital biomedical engineering teams that specify locally finished devices.',
+    'Buyers searching “MedTech manufacturing Singapore” and “Singapore MedTech industry” need plant economics, regulatory manufacturing pathways, and hospital/OEM sourcing behaviour — not a generic MedTech market overview. Our programmes interview manufacturing directors, quality leads, procurement at export-focused OEMs, and hospital biomedical engineering teams that specify locally finished devices in 2026.',
+    'Singapore competes with Malaysia, Thailand, and China on unit cost — but wins on audit readiness, English-language quality documentation, and predictable HSA manufacturing licence renewals. Research should quantify when those advantages justify a five to fifteen percent cost premium versus ASEAN alternatives, especially for sterile implants, active devices, and cartridge IVD where recall risk dwarfs labour savings.',
+    'For GCC and European affiliates, Singapore-finished SKUs often appear in tender dossiers as the “reference plant” even when volume ships from elsewhere. BioNixus traces how origin-of-manufacture statements, ISO 13485 certificates, and dual-source clauses travel into SFDA, MOHAP, and EU MDR technical files so manufacturing strategy matches what hospital buyers actually evaluate.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -88,6 +90,21 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
       name: 'Workforce & cost-to-serve research',
       detail:
         'Talent, wage, and total-cost-to-serve trade-offs versus alternative APAC manufacturing bases — for internal investment committees.',
+    },
+    {
+      name: 'Sterile & implant line qualification',
+      detail:
+        'How hospitals and OEMs score validation depth, environmental monitoring, and change-control discipline when approving Singapore-finished SKUs.',
+    },
+    {
+      name: 'CDMO shortlisting & SLA benchmarking',
+      detail:
+        'Primary intelligence on lead times, capacity reservations, and quality escalation paths across Singapore CDMOs versus captive plants.',
+    },
+    {
+      name: 'Post-market surveillance & field-action readiness',
+      detail:
+        'Mapping recall communication, distributor notification, and HSA reporting expectations that affect manufacturing location decisions.',
     },
   ],
   demandDrivers: {
@@ -123,6 +140,16 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
         detail:
           'Biomedical engineers and pharmacy buyers weight shortage history and documentation quality when specifying local finishers.',
       },
+      {
+        title: 'Green and sustainable manufacturing narratives',
+        detail:
+          'Cluster hospitals increasingly score energy use and waste streams when renewing device contracts — relevant for electrosurgical and sterilisation-heavy lines.',
+      },
+      {
+        title: 'Singapore–Malaysia cross-border subcontracting',
+        detail:
+          'Some Singapore plants finish or label while Johor sites run higher-volume assembly; research maps where quality agreements and HSA oversight still point to Singapore as origin.',
+      },
     ],
   },
   marketStructure: {
@@ -130,7 +157,10 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
     paragraphs: [
       'Singapore’s MedTech manufacturing base clusters around industrial biomedical estates with co-located test labs, sterile suppliers, and specialist logistics. Multinational captives sit alongside Asian OEM affiliates and independent CDMOs. Decision rights for capacity adds typically sit with regional manufacturing directors and global supply-chain committees — not Singapore sales teams alone.',
       'Commercial research must therefore separate three buyer contexts: (1) OEM partner selection for outsourced manufacture, (2) investment-committee diligence on plant expansion, and (3) hospital/public-procurement preference for Singapore-finished SKUs. BioNixus scopes modules to one of those decisions rather than mixing them into an undifferentiated “industry report.”',
-      'For manufacturers also selling into Gulf tenders, Singapore manufacturing credentials often travel with the product story — SFDA and MOHAP buyers ask about origin of manufacture, quality system, and dual sources. We link Singapore manufacturing intelligence to GCC access work when that is on the critical path.',
+      'For manufacturers also selling into Gulf tenders, Singapore manufacturing credentials often travel with the product story — SFDA and MOHAP buyers ask about origin of manufacture, quality system, and dual sources. We link Singapore manufacturing intelligence to GCC access work when that is on the critical path. The same evidence pack often supports EU MDR Annex XVI reviews when Singapore remains the declared finished-goods site.',
+      'Tuas Biomedical Park and Jurong industrial corridors remain the densest concentration of GDPMDS-licensed warehouses, sterilisation subcontractors, and calibration labs — shortening validation cycles for new lines. Field interviews focus on which suppliers hospitals trust when approving a line change versus a greenfield SKU.',
+      'EDB co-investment packages and JTC lease structures can shift the IRR on a brownfield expansion by several points; research modules document how peers structured headcount, training grants, and capital allowances in recent announcements without relying on marketing brochures.',
+      'When sponsors export into Japan, Korea, or Australia, Singapore plants often supply the English-language design history file and batch records while local affiliates handle language-specific labelling. Interview modules capture which documents hospital buyers in those markets still expect to originate from Singapore versus the destination country.',
     ],
   },
   signalGrid: {
@@ -158,25 +188,58 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
       },
     ],
   },
+  calendarBlocks: {
+    heading: 'Typical manufacturing research milestones (Singapore programmes)',
+    items: [
+      {
+        period: 'Weeks 1–2',
+        detail:
+          'Scope the single decision (CDMO shortlist, brownfield expansion, or hospital qualification), agree interview roster across quality, operations, and procurement, and lock NDA templates for plant-level conversations.',
+      },
+      {
+        period: 'Weeks 3–5',
+        detail:
+          'Field primary interviews and structured surveys; benchmark lead times, validation depth, and documentation packs against at least one ASEAN comparator site nominated by the sponsor.',
+      },
+      {
+        period: 'Weeks 6–8',
+        detail:
+          'Synthesis workshop with manufacturing and RA stakeholders — scorecard for partners or estates, evidence gaps for HSA or GCC filings, and recommended next-wave interviews if board approval requires more depth.',
+      },
+    ],
+  },
   audiences: [
     {
       audience: 'Manufacturing & quality directors',
-      description: 'Leaders choosing Singapore capacity, CDMO partners, or dual-source strategies.',
+      description:
+        'Leaders choosing Singapore capacity, CDMO partners, or dual-source strategies — we interview them on validation timelines, change-control pain points, and when they would re-shore a line from Malaysia or China.',
     },
     {
       audience: 'OEM and CDMO commercial teams',
-      description: 'Firms selling manufacturing slots or finished-device supply into APAC programmes.',
+      description:
+        'Firms selling manufacturing slots or finished-device supply into APAC programmes — research clarifies which hospital tenders require Singapore origin versus “ASEAN manufactured” and how SLAs are written.',
     },
     {
       audience: 'Hospital biomedical engineering & procurement',
-      description: 'Stakeholders who qualify Singapore-finished devices for cluster formularies and tenders.',
+      description:
+        'Stakeholders who qualify Singapore-finished devices for cluster formularies and tenders — including shortage history, service-level expectations, and documentation depth for implantable classes.',
     },
     {
       audience: 'Investment & corporate development',
-      description: 'Teams diligence plant expansions, JV structures, and China+1 manufacturing moves.',
+      description:
+        'Teams diligence plant expansions, JV structures, and China+1 manufacturing moves — with primary evidence on EDB packages peers received and headcount ramp assumptions.',
+    },
+    {
+      audience: 'Regulatory affairs & post-market teams',
+      description:
+        'RA leaders aligning HSA manufacturing licence renewals with EU MDR and GCC technical files — we map which plant changes trigger re-notification in each reference market.',
     },
   ],
-  whyBionixus: SHARED_WHY,
+  whyBionixus: [
+    ...SHARED_WHY,
+    'Singapore manufacturing modules can roll into GCC tender and SFDA registration workstreams without restarting stakeholder recruitment',
+    'Interview guides cover GDPMDS warehousing, sterilisation subcontractor oversight, and HSA inspection themes raised in 2024–2026 industry briefings',
+  ],
   relatedLinks: [
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
     { to: '/pharmaceutical-market-research-singapore', label: 'Pharmaceutical market research Singapore' },
@@ -204,6 +267,36 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
       question: 'Can Singapore manufacturing research link to GCC tenders?',
       answer:
         'Yes. Origin-of-manufacture and quality-system evidence often travels into SFDA and MOHAP tender dossiers; BioNixus connects Singapore manufacturing modules to GCC market-access research when needed.',
+    },
+    {
+      question: 'How long does a Singapore MedTech manufacturing research programme take?',
+      answer:
+        'Focused CDMO shortlisting or hospital buyer qualification modules typically complete in 4–6 weeks; multi-site capacity benchmarking with ASEAN comparator plants runs 8–12 weeks. Timelines depend on how many manufacturing and quality stakeholders must be interviewed under NDA.',
+    },
+    {
+      question: 'What is the difference between Singapore MedTech manufacturing and device market sizing?',
+      answer:
+        'Market sizing estimates retail or hospital demand in dollars or units. Manufacturing research answers where products are finished, who qualifies the plant, and which tenders require Singapore origin — decisions that sizing slides cannot support.',
+    },
+    {
+      question: 'Does BioNixus interview HSA directly?',
+      answer:
+        'Programmes rely on published HSA manufacturing licence requirements and primary interviews with quality leaders who have been through inspections — not informal regulator commentary. That keeps findings usable in board packs and supplier audits.',
+    },
+    {
+      question: 'Which Singapore estates matter most for MedTech manufacturing research?',
+      answer:
+        'Tuas Biomedical Park, Jurong industrial corridors, and selected Changi Business Park R&D offices anchor most sterile and implant finishing. Research samples by estate because logistics, sterilisation subcontractors, and talent pools differ materially between them.',
+    },
+    {
+      question: 'How does Singapore manufacturing research support China+1 strategy?',
+      answer:
+        'Boards use it to compare total cost-to-serve, audit readiness, and hospital qualification time against Malaysia, Thailand, and selected China sites — with primary quotes on when Singapore remains the reference plant despite higher unit cost.',
+    },
+    {
+      question: 'What budget should sponsors expect for Singapore MedTech manufacturing research?',
+      answer:
+        'Focused CDMO or hospital-qualification modules typically start near USD 12,000–22,000; multi-estate benchmarking with ASEAN comparator sites and quality-system deep dives often run USD 28,000–45,000. BioNixus scopes to one board decision so manufacturing RA teams are not paying for undifferentiated market-sizing slides.',
     },
   ],
   areaServed: ['Singapore'],
