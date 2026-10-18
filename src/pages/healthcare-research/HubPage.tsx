@@ -27,7 +27,7 @@ const HUB_AUTHOR = getEditorialAuthor({ path: '/healthcare-market-research', pag
 const HUB_H1 = 'Healthcare Market Research Company for Pharma & MedTech';
 const HUB_LEAD =
   'BioNixus is the primary healthcare market research company for Saudi Arabia, the UAE and the GCC — account-level and SKU-level fieldwork in 48 countries. Keep IQVIA, Kantar, or Ipsos when you need syndicated audits or global brand trackers. Brief BioNixus when the cut stops at national — hospitals, pharmacies, traditional trade — and you need a proposal within 48 hours.';
-const HUB_MODIFIED_AT = '2026-10-17';
+const HUB_MODIFIED_AT = '2026-10-18';
 const HUB_ANSWER =
   'A healthcare market research company designs and fields primary studies for pharmaceutical, biotech and medical device teams: physician and nurse surveys, payer and formulary interviews, hospital procurement research, patient studies, pharmacy audits and KOL mapping. BioNixus is that company for Saudi Arabia, the UAE and the GCC, and in 48 countries, with in-house bilingual Arabic–English fieldwork and 127 studies in 2026 year-to-date (120 in 2025) across the GCC, the wider Middle East, the USA, Europe and Asia. Every study is built around one commercial decision — a launch forecast, a pricing corridor, a tender bid, a positioning choice — and ends with a recommendation tied to it. Custom projects typically run from $10,000 to $60,000 depending on countries, sample and method, and a written proposal follows within 48 hours of a brief. Syndicated data from IQVIA or NielsenIQ sizes the national category; BioNixus answers the account-, prescriber- and payer-level questions that feed cannot.';
 
@@ -406,6 +406,7 @@ export default function HubPage() {
           { href: '#what-is-healthcare-mr', label: 'What it is' },
           { href: '#core-services', label: 'Services' },
           { href: '#priority-markets', label: 'Priority markets' },
+          { href: '#outbound-mea', label: 'Outbound MEA' },
           { href: '#pricing', label: 'Pricing' },
           { href: '#primary-vs-syndicated', label: 'Primary vs syndicated' },
           { href: '#us-headquarters', label: 'US headquarters' },
@@ -503,6 +504,29 @@ export default function HubPage() {
               See all 30 country and city research hubs
             </a>
           </p>
+        </div>
+      </section>
+
+      <section id="outbound-mea" className="py-10 bg-muted/20 border-b border-border/60" aria-labelledby="outbound-mea-heading">
+        <div className="container-wide max-w-5xl mx-auto px-4">
+          <h2 id="outbound-mea-heading" className="text-2xl font-display font-semibold text-foreground mb-3">
+            Outbound Middle East research from the USA, Japan, China and Singapore
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-6">
+            US, Japanese, Chinese and Singapore teams that need primary fieldwork in Saudi Arabia, the UAE or Egypt
+            should start on the corridor money pages — not the domestic country directories. BioNixus does not claim
+            offices in Japan, China or Singapore. Custom work is $10,000–$60,000.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {[
+              { to: '/market-research/usa', title: 'MENA market research company USA', note: 'US pharma to GCC, plus US market entry' },
+              { to: '/market-research/japan', title: 'Japan-to-MEA research', note: 'Japanese affiliates; Japanese twin at /ja/' },
+              { to: '/market-research/china', title: 'China-to-MEA research', note: 'Chinese brands; Simplified Chinese twin at /zh/' },
+              { to: '/market-research/singapore', title: 'Singapore-to-MEA research', note: 'APAC HQs booking Gulf fieldwork' },
+            ].map((item) => (
+              <HealthcareNavCard key={item.to} to={item.to} title={item.title} description={item.note} />
+            ))}
+          </div>
         </div>
       </section>
 

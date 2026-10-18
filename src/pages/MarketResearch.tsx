@@ -97,6 +97,7 @@ const PRIORITY_MARKETS = [
     extraLinks: [
       { to: '/healthcare-market-research/united-states', label: 'Healthcare hub' },
       { to: '/healthcare-market-research-usa', label: 'Market research overview' },
+      { to: '/market-research/usa', label: 'MENA outbound from the USA' },
     ],
   },
   {
@@ -384,6 +385,18 @@ export default function MarketResearch() {
                 <PriorityMarketCard key={market.slug} market={market} />
               ))}
             </div>
+            <p className="bx-lead mt-6">
+              Teams booking Gulf or Egypt fieldwork from the USA, Japan, China or Singapore should start on the corridor
+              pages:{' '}
+              <Link to="/market-research/usa">MENA market research company USA</Link>
+              {' · '}
+              <Link to="/market-research/japan">Japan-to-MEA</Link>
+              {' · '}
+              <Link to="/market-research/china">China-to-MEA</Link>
+              {' · '}
+              <Link to="/market-research/singapore">Singapore-to-MEA</Link>
+              . BioNixus does not claim offices in Japan, China or Singapore.
+            </p>
           </div>
         </section>
 
