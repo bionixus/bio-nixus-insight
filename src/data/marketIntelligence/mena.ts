@@ -552,6 +552,7 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
       { condition: "Cardiovascular disease", stat: "37% of all-cause mortality — #1 cause of death", source: "TÜİK Turkey Cause of Death Statistics 2023" },
       { condition: "Cancer", stat: "~260,000 new diagnoses/year; lung, breast, colorectal, prostate most prevalent", source: "Turkey Cancer Statistics 2023 (Sağlık Bakanlığı)" },
       { condition: "Diabetes", stat: "~8.5 million adults with T2DM (~14% adult prevalence)", source: "IDF Diabetes Atlas 2023" },
+      { condition: "COPD and asthma", stat: "~4.5 million adults with COPD; high urban air-quality burden in Istanbul and industrial zones", source: "Turkish Thoracic Society respiratory burden estimates (public summaries)" },
     ],
   },
 };

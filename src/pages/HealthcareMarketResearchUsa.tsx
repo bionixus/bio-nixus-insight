@@ -58,6 +58,11 @@ const faqItems = [
     answer:
       'Yes. US modules can run with comparable cells in the UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does BioNixus research GLP-1, biosimilar, or IRA-affected categories in the US?',
+    answer:
+      'US programmes for GLP-1 obesity and diabetes, oncology biosimilars, and IRA Maximum Fair Price cohorts combine PBM medical-director interviews, Medicare Advantage pharmacy benefit manager mapping, and hospital P&T committee panels — not national claims averages alone. BioNixus tracks which plans enforce step therapy, which IDNs run independent biosimilar substitution votes, and how medical directors interpret ICER or CMS guidance when IRA prices reset rebate negotiations. Outputs are decision-ready for brand, access, and HEOR teams updating 2026–2027 forecasts.',
+  },
 ];
 
 const jsonLd = [
@@ -83,7 +88,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-19',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',

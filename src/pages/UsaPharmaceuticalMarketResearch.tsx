@@ -61,6 +61,11 @@ const faqItems = [
     answer:
       'Yes. US modules can run standalone or with comparable cells in the UK, Germany, France, Brazil, Saudi Arabia, or UAE using consistent instruments — enabling global portfolio committees to benchmark US market dynamics against international markets with one research partner.',
   },
+  {
+    question: 'When should US affiliates brief BioNixus instead of a syndicated data vendor?',
+    answer:
+      'Syndicated audits answer share and trend questions at national level. Brief BioNixus when the decision is account-specific: a PBM medical director interview before formulary season, an IDN P&T vote simulation, or KOL mapping before an FDA advisory committee. Those questions need primary US fieldwork with IRB-compliant protocols — not extrapolation from claims extracts alone.',
+  },
 ];
 
 const geoPoints = [
@@ -105,7 +110,7 @@ const jsonLd = [
     url: PAGE_URL,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-05',
+    dateModified: '2026-10-19',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
   },
@@ -199,6 +204,8 @@ export default function UsaPharmaceuticalMarketResearch() {
           { href: '#quick-answer', label: 'Quick answer' },
           { href: '#why-bionixus', label: 'Why BioNixus' },
           { href: '#access-pathway', label: 'Access pathway' },
+          { href: '#specialty-pharmacy', label: 'Specialty pharmacy' },
+          { href: '#deliverables', label: 'Deliverables' },
           { href: '#stakeholders', label: 'Stakeholders' },
           { href: '#services', label: 'Services' },
           { href: `#${faqSectionId}`, label: 'FAQ' },
@@ -297,6 +304,72 @@ export default function UsaPharmaceuticalMarketResearch() {
               </li>
             ))}
           </ol>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="specialty-pharmacy"
+          title="Specialty pharmacy, biosimilars, and channel research in the US"
+          variant="cream"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              US pharmaceutical uptake is increasingly decided in specialty pharmacy networks, hospital outpatient
+              infusion centres, and 340B-qualified sites — not only at the PBM formulary tier printed on a benefit
+              summary. BioNixus maps those channels for oncology, immunology, GLP-1, and rare-disease launches: which
+              hub-and-spoke models control prior authorization, where white-bagging or buy-and-bill economics change
+              physician preference, and how integrated delivery networks route patients between medical and pharmacy
+              benefit managers.
+            </p>
+            <p>
+              Biosimilar and interchangeable biologic programmes add a second layer. FDA interchangeability designations
+              do not automatically translate into PBM substitution policy or hospital P&amp;T votes. US research modules
+              quantify prescriber comfort with pharmacy-level substitution, medical-director coverage criteria, and
+              patient-support programme influence — linking findings to{' '}
+              <Link to="/healthcare-market-research-usa" className="text-primary font-medium hover:underline">
+                US healthcare market research
+              </Link>{' '}
+              and{' '}
+              <Link to="/usa-healthcare-market-report" className="text-primary font-medium hover:underline">
+                USA healthcare market intelligence
+              </Link>{' '}
+              when affiliates need a single evidence thread from approval through account-level adoption.
+            </p>
+            <p>
+              For IRA-affected brands, research also tracks how medical directors re-weight formulary tiers once Maximum Fair
+              Prices publish — and whether hospital committees delay P&amp;T votes until gross-to-net models refresh. Those
+              timing questions rarely appear in syndicated dashboards but determine whether a launch hits or misses the first
+              full contract season after CMS publishes negotiated prices.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="deliverables"
+          title="Typical US pharmaceutical market research deliverables"
+          variant="muted"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <ul className="list-disc pl-6 space-y-3 text-muted-foreground leading-relaxed">
+            <li>
+              Physician quantitative surveys with verified NPI sampling, therapy-specific screeners, and message or
+              concept testing aligned to FDA promotional review boundaries.
+            </li>
+            <li>
+              PBM and health-plan medical director qualitative programmes covering formulary tier goals, utilization
+              management criteria, and IRA gross-to-net assumptions before contract season.
+            </li>
+            <li>
+              Hospital P&amp;T and GPO intelligence mapping Vizient, Premier, and HealthTrust contracting influence plus
+              independent committee voting patterns at priority IDNs.
+            </li>
+            <li>
+              KOL influence mapping across NCI-designated centres and community networks with publication, guideline, and
+              trial-investigator weighting for launch sequencing.
+            </li>
+          </ul>
         </ReportPremiumSection>
 
         <ReportPremiumSection id="stakeholders" title="US stakeholder coverage" countryName="United States" marketSlug="usa">
