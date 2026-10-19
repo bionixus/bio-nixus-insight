@@ -58,6 +58,11 @@ const faqItems = [
     answer:
       'Yes. US modules can run with comparable cells in the UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does BioNixus research GLP-1, biosimilar, or IRA-affected categories in the US?',
+    answer:
+      'US programmes for GLP-1 obesity and diabetes, oncology biosimilars, and IRA Maximum Fair Price cohorts combine PBM medical-director interviews, Medicare Advantage pharmacy benefit manager mapping, and hospital P&T committee panels — not national claims averages alone. BioNixus tracks which plans enforce step therapy, which IDNs run independent biosimilar substitution votes, and how medical directors interpret ICER or CMS guidance when IRA prices reset rebate negotiations. Outputs are decision-ready for brand, access, and HEOR teams updating 2026–2027 forecasts.',
+  },
 ];
 
 const jsonLd = [
@@ -83,7 +88,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-19',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -330,6 +335,46 @@ export default function HealthcareMarketResearchUsa() {
               ICER assessments carry payer influence despite no statutory authority — PBM formulary decisions increasingly
               cite ICER evidence. BioNixus conducts pre-ICER evidence strategy research and post-assessment payer impact
               studies.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="usa-market-context"
+          title="US healthcare market context for research buyers (2026)"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              The United States remains the world&apos;s largest pharmaceutical and medical-device market by revenue —
+              and the most fragmented for access. Roughly 330 million residents sit behind thousands of payer contracts,
+              6,000+ hospitals, and three dominant PBMs that influence most insured lives. That scale is why US teams
+              license syndicated data nationally yet still commission primary research when a launch, IRA negotiation, or
+              IDN contract is on the line.
+            </p>
+            <p>
+              Medicare Advantage enrollment now covers more than half of Medicare beneficiaries, shifting medical and
+              pharmacy benefit design toward plan-specific prior authorization and step therapy — patterns that national
+              claims feeds smooth over. Medicaid managed care and 340B hospital purchasing add further channel complexity
+              for oncology and specialty products. BioNixus US modules map those channels at account level: which AMC
+              oncology chairs influence pathway updates, which PBM medical directors gate GLP-1 or PCSK9 access, and
+              which GPO-affiliated systems still run independent P&amp;T votes.
+            </p>
+            <p>
+              For portfolio teams benchmarking the US against EU5 or GCC, see{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                healthcare market research programmes
+              </Link>
+              ,{' '}
+              <Link to="/pharmaceutical-market-research-usa" className="text-primary font-medium hover:underline">
+                USA pharmaceutical market research
+              </Link>
+              , and the{' '}
+              <Link to="/usa-healthcare-market-report" className="text-primary font-medium hover:underline">
+                USA healthcare market report
+              </Link>
+              . Custom US primary research is typically scoped from USD 10,000–60,000 with a 48-hour proposal turnaround.
             </p>
           </div>
         </ReportPremiumSection>
