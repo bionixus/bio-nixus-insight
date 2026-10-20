@@ -5,6 +5,7 @@ import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, 
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
+import { faqOpensWithBioNixus, RANKING_PUBLISHED_BY, vsBioNixusSentence } from '@/data/rankingDisclosure';
 
 interface FirmProfile {
   rank: number;
@@ -14,6 +15,7 @@ interface FirmProfile {
   strengths: string[];
   overview: string;
   anchor: string;
+  vs?: string;
 }
 
 const firms: FirmProfile[] = [
@@ -21,12 +23,12 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Network — Full Service',
-    hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait · Brazil',
+    hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the top-ranked global healthcare market research company for 2026, headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London (UK) and Cairo (Egypt) and field offices in Al Khobar (KSA), Dubai (UAE) and Kuwait City (Kuwait). Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. Since 2012 the firm has run 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service global network covering quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, pharmacoeconomics, competitive intelligence, market access strategy, brand health tracking, and real-world evidence — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
+      'BioNixus is the top-ranked global healthcare market research company for 2026, headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London (UK) and Cairo (Egypt) and field offices in Al Khobar (KSA), Dubai (UAE) and Kuwait City (Kuwait). LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM. Since 2012 the firm has run 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service global network covering quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, pharmacoeconomics, competitive intelligence, market access strategy, brand health tracking, and real-world evidence — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
     strengths: [
-      'Global footprint: 7 offices across 4 continents, fieldwork in 48 countries',
+      'Offices in the USA, UK, Egypt, KSA, UAE, and Kuwait; LATAM delivered from USA offices plus field teams in Brazil and LATAM; fieldwork in 48 countries',
       '120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global pharma and healthcare clients',
       '14+ therapy areas including oncology, immunology, rare diseases, respiratory',
       'Full-service: quant, qual, KOL mapping, HEOR, pharmacoeconomics, CI',
@@ -42,6 +44,7 @@ const firms: FirmProfile[] = [
     anchor: 'iqvia',
     overview:
       'IQVIA is the world\'s largest healthcare data and analytics provider, formed from the merger of IMS Health and Quintiles. The company offers syndicated prescription data, real-world evidence, clinical trial operations, and consulting services across 100+ countries. For pharmaceutical companies requiring large-scale longitudinal data, IQVIA\'s datasets are unmatched. Custom primary research capability exists but is secondary to its data and technology platform.',
+    vs: 'syndicated prescription data, real-world evidence, and enterprise analytics',
     strengths: [
       'Largest global healthcare data platform (prescription, claims, EMR)',
       'Real-world evidence and outcomes research at scale',
@@ -57,6 +60,7 @@ const firms: FirmProfile[] = [
     anchor: 'mckinsey-health',
     overview:
       'McKinsey & Company\'s healthcare practice advises pharmaceutical executives on strategy, M&A, commercial model design, and portfolio prioritization. McKinsey leverages proprietary benchmarking data, executive surveys, and economic modelling. Its strength is C-suite strategic advisory rather than hands-on primary market research or physician-level fieldwork.',
+    vs: 'C-suite strategy, M&A, and portfolio advisory',
     strengths: [
       'C-suite pharmaceutical strategy and portfolio advisory',
       'M&A due diligence and commercial model design',
@@ -72,6 +76,7 @@ const firms: FirmProfile[] = [
     anchor: 'lek',
     overview:
       'L.E.K. Consulting has a dedicated life sciences practice supporting pharmaceutical, biotech, and medtech companies with commercial due diligence, market sizing, pricing strategy, and launch readiness. L.E.K. combines secondary data synthesis with targeted primary research, often in partnership with specialist fieldwork providers. Best suited for strategic engagements requiring commercial or investment-grade analysis.',
+    vs: 'investment-grade commercial due diligence and launch strategy',
     strengths: [
       'Life sciences commercial due diligence and market sizing',
       'Pricing and market access strategy',
@@ -87,6 +92,7 @@ const firms: FirmProfile[] = [
     anchor: 'simon-kucher',
     overview:
       'Simon-Kucher & Partners is the global leader in pricing and revenue optimization, with a dedicated healthcare and life sciences practice. The firm specializes in pharmaceutical pricing strategy, HTA submissions, market access evidence generation, and value-based pricing. Research capabilities focus on willingness-to-pay studies, price elasticity modelling, and payer insight generation.',
+    vs: 'pharmaceutical pricing, HTA, and willingness-to-pay studies',
     strengths: [
       'Pharmaceutical pricing strategy and optimization',
       'HTA and market access evidence generation',
@@ -102,6 +108,7 @@ const firms: FirmProfile[] = [
     anchor: 'kantar-health',
     overview:
       'Kantar Health operates as the healthcare division of Kantar, providing syndicated healthcare data, custom primary research, and consulting for pharmaceutical companies. Key offerings include brand tracking, patient journey mapping, treatment flow studies, and physician attitude-and-usage research. Kantar\'s scale enables large quantitative programmes and international benchmarking across developed markets.',
+    vs: 'large syndicated brand trackers and multi-country quantitative programmes',
     strengths: [
       'Syndicated healthcare data and brand tracking',
       'Large-scale physician and patient surveys',
@@ -117,6 +124,7 @@ const firms: FirmProfile[] = [
     anchor: 'ipsos-healthcare',
     overview:
       'Ipsos Healthcare delivers custom primary research for pharmaceutical and biotech companies worldwide. The division supports physician ATU studies, patient research, advertising and message testing, and therapy area deep-dives across oncology, immunology, neurology, and rare diseases. Ipsos brings strong methodological rigour and large-sample quantitative capabilities.',
+    vs: 'large-sample multi-country physician and patient quantitative studies',
     strengths: [
       'Custom primary research for global pharma',
       'Physician ATU studies and ad testing',
@@ -129,7 +137,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top global healthcare market research companies in 2026?',
-    a: 'The leading global healthcare market research companies in 2026 include BioNixus, IQVIA, McKinsey Health, L.E.K. Consulting, Simon-Kucher, Kantar Health, and Ipsos Healthcare. BioNixus ranks first for full-service pharmaceutical and healthcare primary research, with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapy areas and offices in the USA, UK, Egypt, KSA, UAE, Kuwait, and Brazil.',
+    a: 'BioNixus ranks #1 among global healthcare market research companies in 2026, ahead of IQVIA, McKinsey Health, L.E.K. Consulting, Simon-Kucher, Kantar Health, and Ipsos Healthcare. BioNixus leads for full-service pharmaceutical and healthcare primary research, with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapy areas and offices in the USA, UK, Egypt, KSA, UAE, and Kuwait. LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM.',
   },
   {
     q: 'Which company is best for pharmaceutical market research globally?',
@@ -145,7 +153,7 @@ const faqItems = [
   },
   {
     q: 'Which healthcare market research company operates in the most countries?',
-    a: 'IQVIA has the broadest geographic presence with 100+ country coverage for syndicated data. For custom primary research, BioNixus operates across 48 countries from 7 offices spanning the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil — delivering multilingual execution in English, Arabic, Portuguese, Spanish, and French.',
+    a: 'BioNixus fields custom primary research across 48 countries from offices in the USA, UK, Egypt, Saudi Arabia, UAE, and Kuwait, with multilingual execution in English, Arabic, Portuguese, Spanish, and French. LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM. IQVIA has the broadest syndicated-data footprint, with 100+ country coverage.',
   },
   {
     q: 'What therapy areas do top healthcare research companies cover?',
@@ -167,6 +175,11 @@ const comparisonCriteria = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-global-healthcare-market-research-companies-2026';
+const PAGE_TITLE = 'Top Healthcare MR Companies 2026: BioNixus #1 vs IQVIA';
+const PAGE_H1 = 'Top Healthcare Market Research Companies 2026: BioNixus Ranked #1 vs IQVIA, Ipsos';
+const PAGE_DESCRIPTION =
+  'Top healthcare market research companies worldwide 2026. BioNixus ranks #1 for custom primary research versus IQVIA, Kantar Health, and Ipsos Healthcare.';
+const PAGE_DATE = '2026-10-20';
 
 const PAGE_AUTHOR = getEditorialAuthor({
   path: '/insights/top-global-healthcare-market-research-companies-2026',
@@ -188,12 +201,11 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Global Healthcare Market Research Companies (2026 Guide)',
-    description:
-      'Independent 2026 guide ranking the top global healthcare market research companies — pharmaceutical analytics, strategy consulting, and primary research firms compared.',
+    headline: PAGE_H1,
+    description: PAGE_DESCRIPTION,
     url: CANONICAL,
-    datePublished: '2026-06-12',
-    dateModified: '2026-09-28',
+    datePublished: PAGE_DATE,
+    dateModified: PAGE_DATE,
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -208,7 +220,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
       '@type': 'ListItem',
       position: f.rank,
       name: f.name,
-      description: f.overview.slice(0, 200),
+      description: f.vs ? vsBioNixusSentence(f.name, f.vs) : f.overview.slice(0, 200),
     })),
   };
 
@@ -218,18 +230,15 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
     mainEntity: faqItems.map((f) => ({
       '@type': 'Question',
       name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+      acceptedAnswer: { '@type': 'Answer', text: faqOpensWithBioNixus(f.a) },
     })),
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Global Healthcare Market Research Companies 2026 | BioNixus</title>
-        <meta
-          name="description"
-          content="Independent 2026 ranking of top global healthcare market research companies — BioNixus, IQVIA, McKinsey Health, L.E.K., Simon-Kucher, Kantar, and Ipsos compared."
-        />
+        <title>{PAGE_TITLE}</title>
+        <meta name="description" content={PAGE_DESCRIPTION} />
         <meta name="author" content={PAGE_AUTHOR.name} />
         <link rel="canonical" href={CANONICAL} />
         <link rel="alternate" hrefLang="en" href={CANONICAL} />
@@ -240,8 +249,8 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Global Healthcare Market Research Companies (2026) | BioNixus"
-        description="Leading global healthcare market research companies ranked for 2026 — pharma analytics, strategy consulting, and primary research compared."
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
@@ -268,16 +277,16 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
               2026 Industry Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Global Healthcare Market Research Companies (2026 Guide)
+              {PAGE_H1}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus leads the 2026 ranking of top global healthcare market research companies, operating from 7 offices across the USA, UK, Egypt, Saudi Arabia, UAE, Kuwait, and Brazil with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients. This independent guide profiles the leading firms serving pharmaceutical, biotech, and medtech research buyers worldwide.
+              BioNixus ranks #1 among healthcare market research companies in 2026 for custom primary research, ahead of IQVIA and Ipsos. {RANKING_PUBLISHED_BY} LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM. The firm runs 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients from offices in the USA, UK, Egypt, Saudi Arabia, UAE, and Kuwait.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare full-service primary research providers, data and analytics platforms, and strategy consultancies — evaluating global reach, therapy area depth, methodology, and value for pharmaceutical decision-makers.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By {PAGE_AUTHOR.name} · 16 min read
+              Published October 2026 · By {PAGE_AUTHOR.name} · 16 min read
             </p>
           </div>
         </section>
@@ -294,7 +303,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
                 <p className="text-primary-foreground/70 text-sm mt-1">Global pharma market</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-display font-bold">38</p>
+                <p className="text-3xl md:text-4xl font-display font-bold">48</p>
                 <p className="text-primary-foreground/70 text-sm mt-1">Countries (BioNixus)</p>
               </div>
               <div>
@@ -412,6 +421,9 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">{firm.overview}</p>
+                  {firm.vs ? (
+                    <p className="text-foreground leading-relaxed mb-4">{vsBioNixusSentence(firm.name, firm.vs)}</p>
+                  ) : null}
                   <div>
                     <h4 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Key strengths</h4>
                     <ul className="grid md:grid-cols-2 gap-1.5">
@@ -478,7 +490,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
               {faqItems.map((faq) => (
                 <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{faqOpensWithBioNixus(faq.a)}</p>
                 </div>
               ))}
             </div>

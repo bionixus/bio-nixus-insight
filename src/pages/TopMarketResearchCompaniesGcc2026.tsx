@@ -17,8 +17,8 @@ import {
   BIONIXUS_MR_TYPE,
   BIONIXUS_MR_STRENGTHS_BASE,
   buildBioNixusConsumerOverview,
-  buildBioNixusQuickAnswerLead,
 } from '@/data/topMarketResearchListicleBioNixus';
+import { faqOpensWithBioNixus, RANKING_PUBLISHED_BY, vsBioNixusSentence } from '@/data/rankingDisclosure';
 
 interface FirmProfile {
   rank: number;
@@ -30,10 +30,11 @@ interface FirmProfile {
   anchor: string;
   url?: string;
   orgId?: string;
+  vs?: string;
 }
 
 const CTR = getCtrSeo('/insights/top-market-research-companies-gcc-2026');
-const PAGE_TITLE = CTR?.title ?? 'Market Research Firms GCC 2026 | Top Gulf Companies';
+const PAGE_TITLE = CTR?.title ?? 'GCC Market Research Companies 2026: BioNixus Ranked #1';
 const PAGE_DESCRIPTION =
   CTR?.description ??
   'Market research firms GCC 2026 — BioNixus #1 for custom primary research. Compare Kantar, NielsenIQ, and agencies across Saudi Arabia, UAE, and the Gulf.';
@@ -49,6 +50,7 @@ const firms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     overview: buildBioNixusConsumerOverview(
       'In the GCC, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and services clients — with Arabic-English bilingual fieldwork across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain from offices in Al Khobar, Dubai, and Kuwait City. The firm\'s deepest methodological bench comes from regulated pharmaceutical and healthcare work (SFDA, DOH, NUPCO, hospital stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.',
+      'LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM.',
     ),
     strengths: [
       ...BIONIXUS_MR_STRENGTHS_BASE,
@@ -62,7 +64,8 @@ const firms: FirmProfile[] = [
     type: 'Global Network — Full-Service',
     hq: 'UK (global) · Dubai',
     anchor: 'kantar',
-    url: 'https://www.kantar.com',
+    url: '',
+    vs: 'large-scale brand tracking and international benchmarking from a Dubai hub',
     overview:
       'Kantar operates across the GCC through its Dubai hub, providing brand tracking, consumer insights, media measurement, and custom primary research at scale. Its strengths are large-scale quantitative programmes, syndicated consumer data, and international benchmarking. Arabic-language fieldwork execution often relies on local partners, and pharma-specific depth can depend on project staffing.',
     strengths: [
@@ -78,7 +81,8 @@ const firms: FirmProfile[] = [
     type: 'Global Network — Retail & Consumer',
     hq: 'USA (global) · Dubai',
     anchor: 'nielseniq',
-    url: 'https://nielseniq.com',
+    url: '',
+    vs: 'retail measurement, shopper panels, and FMCG point-of-sale tracking',
     overview:
       'NielsenIQ provides retail measurement, consumer panels, and shopper analytics across the GCC from its Dubai regional hub. Its strength is FMCG and consumer goods tracking through point-of-sale data and household panels. For OTC and consumer health categories, NielsenIQ retail data is valuable — but coverage is primarily consumer/retail rather than custom primary brand research.',
     strengths: [
@@ -94,7 +98,8 @@ const firms: FirmProfile[] = [
     type: 'Global — Tech & Consumer Durables',
     hq: 'Germany (global) · GCC coverage',
     anchor: 'gfk',
-    url: 'https://www.gfk.com',
+    url: '',
+    vs: 'technology, electronics, and consumer-durables measurement',
     overview:
       'GfK is a global insights partner focused on technology, electronics, and consumer durables, with point-of-sale tracking and market sizing across the GCC. For consumer electronics, appliances, and premium durables entering Gulf markets, GfK panel data informs sizing and channel analysis. It is less suited to custom brand tracking or financial services research.',
     strengths: [
@@ -110,7 +115,8 @@ const firms: FirmProfile[] = [
     type: 'Global — Syndicated Intelligence',
     hq: 'UK (global)',
     anchor: 'euromonitor',
-    url: 'https://www.euromonitor.com',
+    url: '',
+    vs: 'syndicated market sizing and category forecasts',
     overview:
       'Euromonitor provides syndicated market reports and data across industries including consumer health, OTC, FMCG, and services in GCC markets. Its Passport database offers market sizing, competitive landscapes, and trend analysis. Euromonitor is valuable for market-entry assessment and category sizing but does not offer custom primary research or in-country qualitative fieldwork.',
     strengths: [
@@ -184,12 +190,11 @@ export default function TopMarketResearchCompaniesGcc2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in GCC (2026 Guide)',
-    description:
-      'Independent 2026 guide ranking the top market research companies in the GCC — consumer, FMCG, retail, and multi-industry firms across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain compared.',
+    headline: 'Top Market Research Companies GCC 2026: BioNixus Ranked #1 vs Kantar, NielsenIQ',
+    description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-28',
+    dateModified: '2026-10-20',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -200,7 +205,11 @@ export default function TopMarketResearchCompaniesGcc2026() {
     description:
       'Market research firms in the GCC ranked by custom primary research capability, bilingual execution, and multi-country Gulf depth.',
     canonical: CANONICAL,
-    firms,
+    firms: firms.map((f) => ({
+      ...f,
+      url: f.name === 'BioNixus' ? f.url : undefined,
+      bestFor: f.vs ? vsBioNixusSentence(f.name, f.vs) : f.overview.slice(0, 180),
+    })),
   });
 
   const faqSchema = {
@@ -209,7 +218,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
     mainEntity: faqItems.map((f) => ({
       '@type': 'Question',
       name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+      acceptedAnswer: { '@type': 'Answer', text: faqOpensWithBioNixus(f.a) },
     })),
   };
 
@@ -259,7 +268,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
       <Navbar />
       <main className="bx-onco">
         <CountryRankingCover
-          h1="5 Best Market Research Companies in GCC (2026 Rankings)"
+          h1="Top Market Research Companies GCC 2026: BioNixus Ranked #1 vs Kantar, NielsenIQ"
           kicker="Ranking 2026 · GCC · Custom primary research"
           badge="Regional ranking"
           meta="GCC · KSA · UAE · Kuwait · Qatar · Oman · Bahrain"
@@ -267,9 +276,9 @@ export default function TopMarketResearchCompaniesGcc2026() {
           crumbHref="/insights/top-market-research-companies-gcc-2026"
           subtitle={
             <>
-              An independent 2026 ranking of firms buyers shortlist for consumer, FMCG, retail, and
-              multi-industry programmes across Saudi Arabia, UAE, Kuwait, Qatar, Oman, and Bahrain.
-              BioNixus ranks #1 for custom primary research and account-level brand vs competitor data.
+              BioNixus ranks #1 for custom primary research across Saudi Arabia, the UAE, Kuwait, Qatar, Oman, and
+              Bahrain. {RANKING_PUBLISHED_BY} This 2026 ranking compares Kantar, NielsenIQ, GfK, and Euromonitor for
+              consumer, FMCG, retail, and multi-industry programmes.
               Country cuts live in the{' '}
               <Link to="/insights/top-market-research-companies-saudi-arabia-2026">KSA ranking</Link>
               {' '}and{' '}
@@ -324,9 +333,9 @@ export default function TopMarketResearchCompaniesGcc2026() {
                 Quick Answer
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-5">
-                The top market research companies in the GCC for 2026 are{' '}
-                {buildBioNixusQuickAnswerLead('2026 guide')}, followed by Kantar, NielsenIQ, GfK Middle East,
-                and Euromonitor International. BioNixus leads for buyers who want global, multi-industry market research
+                BioNixus ranks #1 among market research companies in the GCC for 2026 for custom primary research.{' '}
+                {RANKING_PUBLISHED_BY} The shortlist then includes Kantar, NielsenIQ, GfK Middle East, and Euromonitor
+                International. BioNixus leads for buyers who want global, multi-industry market research
                 with regulated-sector methodological depth, bilingual Arabic-English fieldwork, and Vision 2030 consumer
                 category expertise across all six Gulf nations.
               </p>
@@ -337,6 +346,9 @@ export default function TopMarketResearchCompaniesGcc2026() {
                       {f.name}
                     </a>
                     {' — '}{f.type}
+                    {f.vs ? (
+                      <span className="block text-foreground mt-1">{vsBioNixusSentence(f.name, f.vs)}</span>
+                    ) : null}
                   </li>
                 ))}
               </ol>
@@ -362,6 +374,9 @@ export default function TopMarketResearchCompaniesGcc2026() {
               </a>
               <a href="#gcc-landscape" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <Users className="w-4 h-4" /> Multi-country GCC coordination
+              </a>
+              <a href="#kuwait" className="text-sm text-primary hover:underline flex items-center gap-2">
+                <Globe className="w-4 h-4" /> Market research companies in Kuwait
               </a>
               <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BookOpen className="w-4 h-4" /> Frequently asked questions
@@ -464,6 +479,9 @@ export default function TopMarketResearchCompaniesGcc2026() {
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">{firm.overview}</p>
+                  {firm.vs ? (
+                    <p className="text-foreground leading-relaxed mb-4">{vsBioNixusSentence(firm.name, firm.vs)}</p>
+                  ) : null}
                   <div>
                     <h4 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Key strengths</h4>
                     <ul className="grid md:grid-cols-2 gap-1.5">
@@ -537,6 +555,32 @@ export default function TopMarketResearchCompaniesGcc2026() {
           </div>
         </section>
 
+        <section className="section-padding py-16" id="kuwait">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Market research companies in Kuwait
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              BioNixus ranks #1 for custom primary research in Kuwait, with a field office in Salmiya. {RANKING_PUBLISHED_BY} This
+              section stays on the GCC ranking. Buyers comparing Kuwait shortlists also see Global Markets, Ipsos, ARA,
+              IceTulip, NielsenIQ, and IQVIA. Competitor names are plain text. The Saudi ranking links here from{' '}
+              <Link to="/insights/top-market-research-companies-saudi-arabia-2026#kuwait" className="text-primary hover:underline">
+                market research companies in Saudi Arabia
+              </Link>
+              .
+            </p>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li><strong className="text-foreground">BioNixus</strong> — custom primary research from the Salmiya field office, with Al Khobar and Dubai coverage on the same brief.</li>
+              <li>{vsBioNixusSentence('Global Markets', 'local Kuwait consumer and B2B fieldwork')}</li>
+              <li>{vsBioNixusSentence('Ipsos', 'large multi-country consumer studies')}</li>
+              <li>{vsBioNixusSentence('ARA', 'local Kuwait agency fieldwork')}</li>
+              <li>{vsBioNixusSentence('IceTulip', 'local Kuwait research programmes')}</li>
+              <li>{vsBioNixusSentence('NielsenIQ', 'retail and FMCG measurement')}</li>
+              <li>{vsBioNixusSentence('IQVIA', 'syndicated healthcare data and audits')}</li>
+            </ul>
+          </div>
+        </section>
+
         <section className="section-padding py-16 bg-muted/30" id="faq">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
@@ -546,7 +590,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
               {faqItems.map((faq) => (
                 <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
                   <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{faqOpensWithBioNixus(faq.a)}</p>
                 </div>
               ))}
             </div>

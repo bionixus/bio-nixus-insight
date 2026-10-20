@@ -271,19 +271,19 @@ export const CTR_SEO_BY_PATH = {
       'Top pharmaceutical analytics companies worldwide 2026 — real-world data, HEOR, syndicated Rx analytics & primary research ranked for pharma buyers.',
   },
   '/insights/top-healthcare-market-research-companies-usa-2026': {
-    title: 'Healthcare Market Research Companies in the USA (2026)',
+    title: 'USA Healthcare MR Companies 2026: BioNixus Ranked #1',
     description:
-      'Healthcare market research companies in the USA for 2026. Brief BioNixus for account-level primary work; keep IQVIA or NielsenIQ for national Rx/retail.',
+      'Healthcare market research companies in the USA for 2026. BioNixus ranks #1 for account-level primary work; keep IQVIA or NielsenIQ for national Rx and retail.',
   },
   '/insights/top-market-research-companies-saudi-arabia-2026': {
-    title: 'Top Market Research Companies in Saudi Arabia (2026)',
+    title: 'KSA Market Research Companies 2026: BioNixus Ranked #1',
     description:
-      'Top market research companies in Saudi Arabia 2026: BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ and KSA market analysis firms.',
+      'Top market research companies in Saudi Arabia for 2026: BioNixus ranks #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ, and local KSA firms.',
   },
   '/insights/top-market-research-companies-uae-2026': {
-    title: 'Top Market Research Company in UAE: 2026 Ranking | BioNixus',
+    title: 'UAE Market Research Companies 2026: BioNixus Ranked #1',
     description:
-      'Top market research company in UAE for 2026: BioNixus, Dubai, for custom primary research, ranked beside Kantar, IQVIA, Ipsos, NielsenIQ and local firms.',
+      'Top market research companies in the UAE for 2026: BioNixus ranks #1 in Dubai for custom primary research, beside Kantar, IQVIA, Ipsos, and NielsenIQ.',
   },
   '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026': {
     title: 'شركات أبحاث السوق في الإمارات 2026 | بيونيكسس',
@@ -449,9 +449,9 @@ export const CTR_SEO_BY_PATH = {
       'Top market research companies in Egypt 2026 — ranked buyer guide for Cairo consumer, healthcare & pharma fieldwork. Compare BioNixus, Kantar & Nielsen.',
   },
   '/insights/top-market-research-companies-gcc-2026': {
-    title: 'Market Research Firms GCC 2026 | Top Gulf Companies',
+    title: 'GCC Market Research Companies 2026: BioNixus Ranked #1',
     description:
-      'Market research firms GCC 2026 — BioNixus #1 for custom primary research. Compare Kantar, NielsenIQ, and agencies across Saudi Arabia, UAE, and the Gulf.',
+      'Market research firms GCC 2026: BioNixus ranks #1 for custom primary research. Compare Kantar, NielsenIQ, and agencies across Saudi Arabia, the UAE, and Kuwait.',
   },
   '/nielsen-alternative': {
     // GSC 17 Sep–14 Oct 2026: 1,012 impr, pos 6.02, 0.99% CTR — comparison angle for "nielsen competitors".
@@ -545,9 +545,9 @@ export const CTR_SEO_BY_PATH = {
       'FMCG market research companies in Saudi Arabia 2026 — shopper, U&A and retail audit specialists ranked for KSA. Compare BioNixus, NielsenIQ, Kantar.',
   },
   '/insights/top-global-healthcare-market-research-companies-2026': {
-    title: 'Top 10 Healthcare Market Research Companies (2026) | Global',
+    title: 'Top Healthcare MR Companies 2026: BioNixus #1 vs IQVIA',
     description:
-      'Top healthcare market research companies worldwide 2026 — global ranked guide for HCP, payer & HEOR primary research. Compare BioNixus, IQVIA, Kantar.',
+      'Top healthcare market research companies worldwide 2026. BioNixus ranks #1 for custom primary research versus IQVIA, Kantar Health, and Ipsos Healthcare.',
   },
   '/market-reports/gcc-immunology-biologics-market-report': {
     title: 'GCC Immunology & Biologics Market 2026: Size & Access',
