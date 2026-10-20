@@ -106,7 +106,7 @@ const config: CountryCompaniesGuideConfig = {
     'BioNixus proprietary research (ASEAN, 2024–2026)',
   ],
   publishedDate: '2026-08-22',
-  modifiedDate: '2026-10-18',
+  modifiedDate: '2026-10-20',
   conversion: {
     routingHint: 'Mention HSA registration, ACE subsidy strategy, or APAC regional research for a faster routed response.',
     emailSubject: 'Singapore pharma market research — BioNixus',

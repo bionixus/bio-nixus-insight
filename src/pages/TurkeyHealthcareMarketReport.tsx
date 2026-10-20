@@ -133,6 +133,16 @@ const TurkeyHealthcareMarketReport = () => (
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
               <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. For TITCK registration steps and a Turkey pharma company directory, see{' '}
               <Link to="/blog/turkey-pharmaceutical-market-2026-titck-top-companies" className="text-primary hover:underline font-medium">Turkey Pharmaceutical Market 2026: Size, TITCK &amp; Top Companies</Link>.
+              For commissioned primary research on Turkish hospital buyers, SGK reimbursement behaviour, and GCC export
+              positioning, see{' '}
+              <Link to="/healthcare-market-research-turkey" className="text-primary hover:underline font-medium">
+                healthcare market research Turkey
+              </Link>{' '}
+              and the{' '}
+              <Link to="/insights/top-market-research-companies-turkey-2026" className="text-primary hover:underline font-medium">
+                Turkey market research companies guide 2026
+              </Link>
+              .
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

@@ -83,7 +83,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-20',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -330,6 +330,47 @@ export default function HealthcareMarketResearchUsa() {
               ICER assessments carry payer influence despite no statutory authority — PBM formulary decisions increasingly
               cite ICER evidence. BioNixus conducts pre-ICER evidence strategy research and post-assessment payer impact
               studies.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="middle-east-bridge"
+          title="When US teams need Middle East and GCC evidence — not another US-only wave"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              A large share of US healthcare impressions on BioNixus come from teams that already buy IQVIA or NielsenIQ
+              nationally but cannot take a Saudi, UAE, or Egypt question to committee with US-only data. FDA approval and
+              PBM formulary placement do not describe MOHAP listing, SFDA pathways, or NUPCO tender behaviour. BioNixus
+              runs the primary Middle East and Africa modules — HCP attitude-and-usage, payer depth interviews, hospital
+              procurement, and launch-readiness — with instruments comparable to US cells when global portfolio committees
+              need one narrative.
+            </p>
+            <p>
+              US affiliates typically brief us when a brand plan adds GCC priority, when an IRA or PBM negotiation frees
+              budget for ex-US evidence, or when a US KOL network cannot recruit the hospital buyers who actually control
+              access in Riyadh, Dubai, or Cairo. See{' '}
+              <Link to="/market-research/usa" className="text-primary font-medium hover:underline">
+                market research for United States teams expanding into MENA
+              </Link>{' '}
+              and the{' '}
+              <Link to="/healthcare-market-research/united-states" className="text-primary font-medium hover:underline">
+                US healthcare hub page
+              </Link>{' '}
+              for how we scope cross-border programmes without duplicating syndicated US claims feeds.
+            </p>
+            <p>
+              Proposal turnaround remains 48 hours once objectives, markets, and respondent types are defined. Custom
+              primary research typically ranges from $10,000 to $60,000 depending on markets, sample size, and qualitative
+              depth.
+            </p>
+            <p>
+              Middle East modules use the same compliance bar as US work — documented consent, de-identified reporting,
+              and therapy-specific screeners — so global committees can compare cells without reconciling mismatched
+              methodologies.
             </p>
           </div>
         </ReportPremiumSection>

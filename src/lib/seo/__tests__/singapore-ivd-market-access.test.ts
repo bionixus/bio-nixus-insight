@@ -26,7 +26,7 @@ describe('/singapore-ivd-market-access', () => {
     expect(content.title).toBe(TITLE);
     expect(content.description).toBe(DESCRIPTION);
     expect(content.h1).toBe('Singapore IVD market access');
-    expect(content.dateModified).toBe('2026-10-18');
+    expect(content.dateModified).toBe('2026-10-20');
     expect(content.title.length).toBeGreaterThanOrEqual(50);
     expect(content.title.length).toBeLessThanOrEqual(60);
     expect(content.description.length).toBeGreaterThanOrEqual(150);
@@ -47,14 +47,14 @@ describe('/singapore-ivd-market-access', () => {
 
   it('receives first-screen inlinks from the Singapore listicle and both reports', () => {
     expect(listicle).toContain(`to="${PATH}"`);
-    expect(listicle).toContain("dateModified: '2026-10-18'");
+    expect(listicle).toContain("dateModified: '2026-10-20'");
     expect(healthcareReport).toContain(`to="${PATH}"`);
-    expect(healthcareReport).toContain("dateModified: '2026-10-18'");
+    expect(healthcareReport).toContain("dateModified: '2026-10-20'");
     expect(devicesReport).toContain(`to="${PATH}"`);
-    expect(devicesReport).toContain("dateModified: '2026-10-18'");
+    expect(devicesReport).toContain("dateModified: '2026-10-20'");
     expect(pharmaCompanies).toContain(`to: '${PATH}'`);
-    expect(pharmaCompanies).toContain("modifiedDate: '2026-10-18'");
-    expect(sitemap).toMatch(new RegExp(`${PATH}</loc>\\s*<lastmod>2026-10-18</lastmod>`));
+    expect(pharmaCompanies).toContain("modifiedDate: '2026-10-20'");
+    expect(sitemap).toMatch(new RegExp(`${PATH}</loc>\\s*<lastmod>2026-10-20</lastmod>`));
   });
 });
 
@@ -79,7 +79,7 @@ describe('/singapore-ivd-market-access SSR', () => {
     expect(html).toContain('href="/pharmaceutical-companies-singapore"');
     expect(html).toContain('<details');
     expect(html).toContain('What is Singapore IVD market access?');
-    expect(head).toContain('"dateModified":"2026-10-18"');
+    expect(head).toContain('"dateModified":"2026-10-20"');
   });
 });
 

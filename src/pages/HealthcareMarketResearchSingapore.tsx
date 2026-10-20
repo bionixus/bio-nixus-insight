@@ -297,8 +297,68 @@ export default function HealthcareMarketResearchSingapore() {
           </div>
         </section>
 
-        {/* Why choose BioNixus */}
+        {/* IVD and diagnostics access */}
         <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              IVD, companion diagnostics, and laboratory access in Singapore
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Singapore is one of the most laboratory-centralised healthcare systems in APAC. Public clusters —
+                SingHealth, NUHS, and NHG — run central laboratory networks that standardise analyser platforms, reagent
+                contracts, and test menus across restructured hospitals. HSA registration allows an in vitro diagnostic
+                to be supplied, but commercial access still depends on method validation, quality-control design, cluster
+                procurement, and clinical ordering behaviour. That is why teams brief BioNixus for{' '}
+                <Link to="/singapore-ivd-market-access" className="text-primary underline font-medium">
+                  Singapore IVD market access
+                </Link>{' '}
+                work alongside broader{' '}
+                <Link to="/clinical-diagnostics-market-research" className="text-primary underline font-medium">
+                  clinical diagnostics market research
+                </Link>
+                .
+              </p>
+              <p>
+                Companion diagnostics and high-complexity molecular panels face the steepest gates: parallel testing,
+                turnaround expectations at national cancer centres, and LIS middleware integration. We interview
+                laboratory directors, pathologists, biomedical engineering leads, and oncology orderers to explain why
+                registered assays remain off-menu — and what evidence shifts adoption. Programmes can link to the{' '}
+                <Link to="/singapore-medical-devices-market-report" className="text-primary underline font-medium">
+                  Singapore medical devices market report
+                </Link>{' '}
+                when capital equipment and disposables are part of the same access story.
+              </p>
+              <p>
+                For manufacturers using Singapore as an APAC pilot, we map validation sequencing, reference-laboratory
+                relationships, and cluster procurement calendars before ASEAN scale-out. Typical mixed-method IVD access
+                modules run six to ten weeks depending on assay class and respondent scarcity.
+              </p>
+              <p>
+                Singapore programmes can include paired physician–laboratory modules, procurement mystery shops on reagent
+                availability, and competitive objection libraries for incumbent analyser fleets. Deliverables are
+                structured for medical affairs, market access, and commercial leadership — with explicit evidence gaps and
+                recommended next-wave fieldwork rather than undifferentiated transcript packs.
+              </p>
+              <p>
+                If your brief spans both drug subsidy listing and laboratory adoption, we can run parallel workstreams —
+                ACE-oriented payer interviews for pharmaceuticals and lab-director modules for diagnostics — with a single
+                programme lead so timelines stay aligned ahead of launch.
+              </p>
+              <p>
+                Explore the{' '}
+                <Link to="/insights/top-healthcare-market-research-companies-singapore-2026" className="text-primary underline font-medium">
+                  Singapore healthcare market research companies shortlist
+                </Link>{' '}
+                when you are comparing agency models; this page describes BioNixus delivery for Singapore-specific access
+                and HCP programmes.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why choose BioNixus */}
+        <section className="section-padding py-10 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               Why pharmaceutical teams choose BioNixus in Singapore
@@ -335,6 +395,7 @@ export default function HealthcareMarketResearchSingapore() {
                 { to: '/insights/top-market-research-companies-singapore-2026', label: 'Top market research companies Singapore 2026' },
                 { to: '/insights/top-healthcare-market-research-companies-singapore-2026', label: 'Top healthcare MR companies Singapore 2026' },
                 { to: '/singapore-healthcare-market-report', label: 'Singapore healthcare market report' },
+                { to: '/singapore-ivd-market-access', label: 'Singapore IVD market access' },
               ].map((link) => (
                 <Link
                   key={link.to}
