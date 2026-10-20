@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { ALSAADANY_AUTHOR, getEditorialAuthor, MENA_AUTHORS, WESTERN_AUTHORS } from '@/data/editorialAuthors';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
+import { RANKING_PUBLISHED_BY } from '@/data/rankingDisclosure';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
 import {
   USA_HEALTHCARE_MR_CTA_ID,
@@ -33,7 +34,11 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(USA_HEALTHCARE_MR_TITLE.length).toBeLessThanOrEqual(70);
     expect(USA_HEALTHCARE_MR_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
     expect(USA_HEALTHCARE_MR_DESCRIPTION.length).toBeLessThanOrEqual(160);
-    expect(USA_HEALTHCARE_MR_H1).toBe('Healthcare market research companies in the USA');
+    expect(USA_HEALTHCARE_MR_H1).toBe(
+      'Top Healthcare Market Research Companies USA 2026: BioNixus Ranked #1 vs IQVIA',
+    );
+    expect(USA_HEALTHCARE_MR_TITLE).toContain('BioNixus');
+    expect(USA_HEALTHCARE_MR_H1).toContain('BioNixus');
     expect(pageSource.match(/<h1[\s>]/g)?.length ?? pageSource.match(/h1=\{USA_HEALTHCARE_MR_H1\}/g)?.length).toBe(1);
     expect(getCtrSeo(USA_HEALTHCARE_MR_PATH)).toEqual({
       title: USA_HEALTHCARE_MR_TITLE,
@@ -56,9 +61,9 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(pageSource).toContain('cannot name the account');
     expect(pageSource).toContain('Keep syndicated IQVIA');
     expect(pageSource).toContain('primary-research complement');
-    expect(pageSource).not.toMatch(/ranked #1/i);
-    expect(pageSource).not.toMatch(/ranks #1/i);
-    expect(pageSource).not.toMatch(/#1 healthcare market research company/i);
+    expect(pageSource).toMatch(/BioNixus ranks #1/);
+    expect(pageSource).toContain('RANKING_PUBLISHED_BY');
+    expect(RANKING_PUBLISHED_BY).toContain('Published by BioNixus');
     expect(pageSource).not.toMatch(/staffed Riyadh|offices in Riyadh|Riyadh office/i);
     expect(pageSource).toContain('Sheridan');
     expect(pageSource).toContain('London');
@@ -93,7 +98,8 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
       'How fast is a proposal?',
     ]));
     const replacement = USA_HEALTHCARE_MR_FAQS.find((row) => row.q.includes('replacement'));
-    expect(replacement?.a).toMatch(/^No\. Complementary\./);
+    expect(replacement?.a).toMatch(/Complementary/);
+    expect(pageSource).toContain('faqOpensWithBioNixus');
     const cost = USA_HEALTHCARE_MR_FAQS.find((row) => row.q.includes('cost'));
     expect(cost?.a).toContain('/pricing');
     expect(cost?.a).toContain('$10,000 to $60,000');
@@ -119,10 +125,10 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
   });
 
   it('is wired into sitemap, llms buyer pages, and the healthcare hub', () => {
-    expect(USA_HEALTHCARE_MR_DATE_MODIFIED).toBe('2026-10-18');
+    expect(USA_HEALTHCARE_MR_DATE_MODIFIED).toBe('2026-10-20');
     expect(sitemap).toContain(`<loc>https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}</loc>`);
     expect(sitemap).toMatch(
-      new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-10-18</lastmod>`),
+      new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-10-20</lastmod>`),
     );
     expect(llms).toContain(`https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`);
     expect(llms).toContain('# Last GEO refresh: 2026-Q4 (2026-10-17)');

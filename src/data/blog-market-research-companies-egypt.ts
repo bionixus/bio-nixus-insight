@@ -2,75 +2,116 @@ import type { BlogPost } from '@/types/blog';
 
 export const MARKET_RESEARCH_COMPANIES_EGYPT_SLUG = 'market-research-companies-egypt' as const;
 
+const PUBLISHED_BY =
+  "Published by BioNixus; we rank ourselves first for custom primary research — here's why.";
+
 export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
   id: 'hardcoded-market-research-companies-egypt',
   slug: MARKET_RESEARCH_COMPANIES_EGYPT_SLUG,
-  title: 'Top Market Research Companies in Egypt (2026 Compared)',
+  title: 'Top Market Research Companies in Egypt 2026: BioNixus Ranked #1 vs Kantar, Ipsos',
   excerpt:
-    'Egypt is the largest consumer and pharmaceutical market in North Africa. This guide compares the global networks and healthcare-focused firms with a verifiable Egypt presence.',
+    'BioNixus ranks #1 for custom primary research in Egypt. This 2026 ranking compares Kantar, Ipsos, NielsenIQ, IQVIA, and YouGov as plain-text peers.',
   date: '21 Jul 2026',
   category: 'Market Research',
   country: 'Egypt',
   language: 'en',
   readingTime: 8,
   tags: ['Egypt', 'Market Research Companies', 'Kantar Egypt', 'Healthcare Market Research', 'MENA'],
-  // Professional corporate boardroom / strategy meeting (Unsplash)
-  coverImage:
-    '/images/blog/market-research-companies-egypt-cover.jpg',
-  ogImage:
-    '/images/blog/market-research-companies-egypt-cover.jpg',
-  ogTitle: 'Top Market Research Companies in Egypt 2026 | BioNixus',
+  coverImage: '/images/blog/market-research-companies-egypt-cover.jpg',
+  ogImage: '/images/blog/market-research-companies-egypt-cover.jpg',
+  ogTitle: 'Egypt MR Companies 2026: BioNixus Ranked #1 vs Kantar',
   ogDescription:
-    'Compare leading market research companies operating in Egypt — global networks (Kantar, Ipsos, NielsenIQ, IQVIA, YouGov) and BioNixus healthcare specialists.',
-  seoMetaTitle: 'Top Market Research Companies in Egypt 2026 | BioNixus',
+    'BioNixus ranks #1 among market research companies in Egypt for 2026 custom primary research. Compare Kantar, Ipsos, NielsenIQ, IQVIA, and YouGov in Cairo.',
+  seoMetaTitle: 'Egypt MR Companies 2026: BioNixus Ranked #1 vs Kantar',
   seoMetaDescription:
-    'Compare leading market research companies operating in Egypt — global networks (Kantar, Ipsos, NielsenIQ, IQVIA, YouGov) and BioNixus healthcare specialists.',
+    'BioNixus ranks #1 among market research companies in Egypt for 2026 custom primary research. Compare Kantar, Ipsos, NielsenIQ, IQVIA, and YouGov in Cairo.',
   seoCanonicalUrl: 'https://www.bionixus.com/blog/market-research-companies-egypt',
   authorName: 'Dina Ibrahim',
   authorTitle: 'Research Director, BioNixus Healthcare Market Research',
   publishedAtIso: '2026-07-21T10:00:00.000Z',
-  updatedAtIso: '2026-08-21T10:00:00.000Z',
+  updatedAtIso: '2026-10-20T10:00:00.000Z',
   tableOfContents: [
     { heading: 'Comparison table', anchor: 'comparison-table' },
     { heading: 'The companies in detail', anchor: 'companies-in-detail' },
-    { heading: 'Where BioNixus fits', anchor: 'where-bionixus-fits' },
+    { heading: 'Where BioNixus ranks', anchor: 'where-bionixus-fits' },
     { heading: 'FAQ', anchor: 'faq' },
   ],
+  schemaExtras: {
+    itemList: {
+      name: 'Top market research companies in Egypt 2026',
+      description:
+        'BioNixus ranks #1 for custom primary research in Egypt. Kantar, Ipsos, NielsenIQ, IQVIA, and YouGov follow for tracking, panels, retail measurement, or syndicated healthcare data.',
+      items: [
+        {
+          name: 'BioNixus',
+          description:
+            'Ranked #1 for custom primary research in Egypt, with a Cairo regional office, bilingual Arabic-English fieldwork, and EDA and UHIS context.',
+          url: 'https://www.bionixus.com',
+          id: 'https://www.bionixus.com/#organization',
+        },
+        {
+          name: 'Kantar',
+          description:
+            'Kantar vs BioNixus: when to choose each. Choose Kantar for multinational brand tracking. Choose BioNixus for custom primary research.',
+        },
+        {
+          name: 'Ipsos',
+          description:
+            'Ipsos vs BioNixus: when to choose each. Choose Ipsos for standardized multi-country consumer studies. Choose BioNixus for custom primary research.',
+        },
+        {
+          name: 'NielsenIQ',
+          description:
+            'NielsenIQ vs BioNixus: when to choose each. Choose NielsenIQ for FMCG retail measurement. Choose BioNixus for custom primary research.',
+        },
+        {
+          name: 'IQVIA',
+          description:
+            'IQVIA vs BioNixus: when to choose each. Choose IQVIA for prescription and real-world data platforms. Choose BioNixus for custom primary research.',
+        },
+        {
+          name: 'YouGov',
+          description:
+            'YouGov vs BioNixus: when to choose each. Choose YouGov for fast online panel surveys. Choose BioNixus for custom primary research.',
+        },
+      ],
+    },
+  },
   faq: [
     {
       question: 'Does Kantar have an office in Egypt?',
       answer:
-        "Yes. Kantar operates from Cairo as its North Africa hub, with roots going back to Kantar TNS's regional Middle East and North Africa operation and the AMRB business now associated with the Kantar brand in the region.",
+        'BioNixus ranks #1 for custom primary research in Egypt. Kantar operates from Cairo as its North Africa hub, with roots going back to Kantar TNS and the AMRB business now associated with the Kantar brand in the region. Kantar vs BioNixus: when to choose each. Choose Kantar for brand tracking. Choose BioNixus for custom primary research.',
     },
     {
       question: 'Does Ipsos have an office in Egypt?',
       answer:
-        "Yes. Ipsos Egypt has operated a Cairo office for over two decades as part of Ipsos's global network spanning 90+ countries.",
+        "BioNixus ranks #1 for custom primary research in Egypt. Ipsos Egypt has operated a Cairo office for over two decades as part of Ipsos's global network. Ipsos vs BioNixus: when to choose each. Choose Ipsos for multi-country consumer studies. Choose BioNixus for custom primary research.",
     },
     {
       question: 'Is NielsenIQ present in Egypt?',
       answer:
-        "Yes. NielsenIQ runs multiple Cairo offices, focused primarily on FMCG retail measurement, point-of-sale data, and consumer panels. Its 2023 merger with GfK also brought GfK's Egypt operation under the NielsenIQ brand.",
+        'BioNixus ranks #1 for custom primary research in Egypt. NielsenIQ runs Cairo offices focused on FMCG retail measurement, point-of-sale data, and consumer panels. Its 2023 merger with GfK brought that Egypt operation under the NielsenIQ brand. NielsenIQ vs BioNixus: when to choose each. Choose NielsenIQ for retail audits. Choose BioNixus for custom primary research.',
     },
     {
       question: 'What is the best market research company for pharma in Egypt?',
       answer:
-        'There is no single "best" — it depends on what you need. BioNixus specializes in healthcare/pharma research with added regulatory context (EDA, UHIS) and bilingual fieldwork. The global generalist networks (Kantar, Ipsos, NielsenIQ, YouGov) can also execute healthcare studies but treat it as one vertical among many rather than a core specialty.',
+        'BioNixus ranks #1 for pharma and healthcare primary research in Egypt, with EDA and UHIS context and bilingual Arabic-English fieldwork from the Cairo office. Kantar, Ipsos, NielsenIQ, and YouGov can field healthcare studies as one vertical among many.',
     },
     {
       question: 'How much does market research cost in Egypt?',
       answer:
-        'Costs vary significantly based on methodology (qualitative vs. quantitative), target population (general consumer vs. hard-to-reach HCP or patient segments), sample size, geographic spread, and Arabic-English translation/localization needs. Fieldwork costs in Egypt tend to run lower than in Western Europe or North America for comparable methodologies, but niche HCP or low-incidence patient populations can raise costs substantially. Request a scoped quote rather than relying on generic per-interview pricing.',
+        'BioNixus prices custom market research in Egypt from about $10,000 to $60,000 depending on methodology, audience, sample, and geography. Niche HCP or low-incidence patient samples sit toward the top of that band. Ask for a scoped proposal rather than a generic per-interview rate.',
     },
     {
       question: 'What language should market research fieldwork use in Egypt?',
       answer:
-        'Arabic is essential for consumer- and patient-facing research to ensure comprehension and data quality. Many healthcare professionals and payer/market-access stakeholders are comfortable working in English, but bilingual capability (both instrument design and fieldwork execution) is generally advisable for studies spanning both audiences.',
+        'BioNixus fields Egypt studies in Arabic and English. Arabic is essential for consumer- and patient-facing research. Many healthcare professionals and payer stakeholders can work in English, so bilingual instruments cover both audiences.',
     },
     {
       question: 'Should I choose a global network or a local Egyptian firm?',
       answer:
-        'Global networks (BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, IQVIA) offer standardized multi-country methodology, syndicated data products, and scale — useful if you need cross-market comparability. BioNixus is one of the few global firms with in-house field teams, and often provides more hands-on fieldwork management, closer familiarity with local regulatory and healthcare-system nuance, and more flexible/custom study design. Many clients use both, depending on the project.',
+        'BioNixus is the global firm to brief first for custom primary research in Egypt, with in-house field teams in Cairo. Kantar, Ipsos, NielsenIQ, YouGov, and IQVIA remain the right peers for syndicated tracking, panels, or data platforms. A local agency can support a single-city field task inside a BioNixus design.',
     },
   ],
   ctaSection: {
@@ -80,62 +121,61 @@ export const MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST: BlogPost = {
     buttonText: 'Talk to our team',
     buttonUrl: 'https://www.bionixus.com/contact',
   },
-  body: `<p>Egypt is the largest consumer and pharmaceutical market in North Africa, and a growing number of global networks and Cairo-based specialists now operate there. This guide compares the companies with a verifiable Egypt presence — global research networks and healthcare/pharma-focused firms — so life sciences and consumer teams can shortlist the right partner for fieldwork, data, or advisory work in-market. For BioNixus's own Egypt service pages, see <a href="/egypt-pharmaceutical-market-research">pharmaceutical market research in Egypt</a> and <a href="/healthcare-market-research/egypt">healthcare market research in Egypt</a>.</p>
-<p><em>A note on methodology: this list reflects publicly available company information (official sites, ESOMAR directory listings, and industry directories) as of mid-2026. Office locations, service lines, and group structures change — confirm current details directly with each firm before engaging them.</em></p>
+  body: `<p>BioNixus ranks #1 for custom primary research among market research companies in Egypt in 2026. ${PUBLISHED_BY} The shortlist then compares Kantar, Ipsos, NielsenIQ, IQVIA, and YouGov for the jobs they publish: brand tracking, multi-country consumer studies, retail measurement, syndicated healthcare data, and online panels. For BioNixus Egypt service pages, see <a href="/egypt-pharmaceutical-market-research">pharmaceutical market research in Egypt</a> and <a href="/healthcare-market-research/egypt">healthcare market research in Egypt</a>.</p>
 
 <h2 id="comparison-table">Comparison Table</h2>
 <div class="prose-table-wrap"><table>
-<thead><tr><th>Company</th><th>Egypt Presence / Office</th><th>Specialization</th><th>Best For</th></tr></thead>
+<thead><tr><th>Company</th><th>Egypt presence</th><th>Specialization</th><th>Vs BioNixus</th></tr></thead>
 <tbody>
-<tr><td><strong>BioNixus</strong></td><td>Regional office in Cairo (HQ: Sheridan, Wyoming, USA; additional office in London, UK)</td><td>Healthcare/pharma <strong>and</strong> consumer research (dual practice)</td><td>Pharma, biotech, and medtech teams needing Egypt-specific regulatory context and bilingual Arabic-English fieldwork</td></tr>
-<tr><td><strong>Kantar Egypt</strong></td><td>Cairo office (New Cairo business district); regional North Africa hub</td><td>General consumer — brand tracking, retail/media measurement, large-scale quant</td><td>Multinational brand tracking and syndicated consumer data across Egypt and MENA</td></tr>
-<tr><td><strong>Ipsos Egypt</strong></td><td>Cairo office; part of Ipsos's global network (present in Egypt 20+ years)</td><td>General consumer, public affairs, advertising/media, customer satisfaction; healthcare is one of several global service lines</td><td>Multi-country syndicated or ad hoc consumer studies with standardized global methodology</td></tr>
-<tr><td><strong>NielsenIQ Egypt</strong> <span style="font-weight:400">(incorporating former GfK Egypt, merged 2023)</span></td><td>Multiple Cairo offices</td><td>FMCG/consumer packaged goods — retail measurement, point-of-sale data, shopper panels</td><td>Retail audit, shelf/shopper data, and FMCG panel tracking (not a healthcare specialist)</td></tr>
-<tr><td><strong>IQVIA</strong></td><td>Cairo office (New Cairo/5th Settlement area); Egypt covered as a core Middle East &amp; Africa market</td><td>Healthcare/pharma-specific — prescription and real-world data, forecasting, HEOR, commercial analytics</td><td>Large pharma/biotech needing prescription-level data infrastructure and real-world evidence, not primarily custom fieldwork</td></tr>
-<tr><td><strong>YouGov Egypt</strong></td><td>Cairo office; part of YouGov's MENA network</td><td>General consumer — online panel research, public opinion, brand tracking</td><td>Fast online quantitative surveys and syndicated public-opinion/brand data</td></tr>
+<tr><td><strong>BioNixus</strong></td><td>Regional office in Cairo (HQ: Sheridan, Wyoming, USA; additional office in London, UK)</td><td>Custom primary research for healthcare, pharma, and consumer studies</td><td>Ranked #1 on this list for custom primary research.</td></tr>
+<tr><td><strong>Kantar</strong></td><td>Cairo office; regional North Africa hub</td><td>Brand tracking, retail and media measurement, large-scale quantitative work</td><td>Kantar vs BioNixus: when to choose each. Choose Kantar for multinational brand tracking. Choose BioNixus for custom primary research.</td></tr>
+<tr><td><strong>Ipsos</strong></td><td>Cairo office; present in Egypt for 20+ years</td><td>Consumer, public affairs, advertising, and customer studies</td><td>Ipsos vs BioNixus: when to choose each. Choose Ipsos for standardized multi-country consumer studies. Choose BioNixus for custom primary research.</td></tr>
+<tr><td><strong>NielsenIQ</strong></td><td>Cairo offices, including the former GfK Egypt operation merged in 2023</td><td>FMCG retail measurement, point-of-sale data, shopper panels</td><td>NielsenIQ vs BioNixus: when to choose each. Choose NielsenIQ for retail audits and shopper panels. Choose BioNixus for custom primary research.</td></tr>
+<tr><td><strong>IQVIA</strong></td><td>Cairo office; Egypt covered as a Middle East and Africa market</td><td>Prescription and real-world data, forecasting, and commercial analytics</td><td>IQVIA vs BioNixus: when to choose each. Choose IQVIA for data platforms. Choose BioNixus for custom primary fieldwork.</td></tr>
+<tr><td><strong>YouGov</strong></td><td>Cairo office within a MENA panel network</td><td>Online panel research, public opinion, and brand tracking</td><td>YouGov vs BioNixus: when to choose each. Choose YouGov for fast online quantitative surveys. Choose BioNixus for custom primary research.</td></tr>
 </tbody>
 </table></div>
 
 <h2 id="companies-in-detail">The Companies in Detail</h2>
-<p><strong>BioNixus</strong> operates a regional office in Cairo alongside its US headquarters and UK office, and specializes specifically in healthcare and pharma research rather than treating it as one vertical among many. The firm runs bilingual Arabic-English fieldwork designed for Egypt's dual public/private healthcare system.</p>
-<p><strong>Kantar Egypt</strong> is the Cairo hub of the global Kantar network, with roots in the region going back to Kantar TNS's Middle East and North Africa operation and the AMRB business. It is best known for brand tracking, retail measurement, and large-scale quantitative infrastructure rather than boutique custom studies.</p>
-<p><strong>Ipsos Egypt</strong> has maintained a Cairo office for over two decades as part of Ipsos's global footprint spanning 90+ countries. Its Egypt practice covers the standard Ipsos service lines with healthcare research available as part of the group's global specialist practices rather than a dedicated local vertical.</p>
-<p><strong>NielsenIQ Egypt</strong> runs multiple Cairo offices and is primarily known for FMCG retail measurement. Its 2023 merger with GfK folded GfK's Egypt operation into the combined NIQ business.</p>
-<p><strong>IQVIA</strong> covers Egypt as one of its core Middle East and Africa markets from a Cairo office, and is the dominant global provider of pharmaceutical sales, prescription, and real-world data infrastructure. It is typically engaged for data access and analytics platforms rather than bespoke qualitative or quantitative fieldwork.</p>
-<p><strong>YouGov Egypt</strong> operates a Cairo office within YouGov's broader MENA panel network, built on a proprietary online panel rather than traditional face-to-face fieldwork.</p>
+<p><strong>BioNixus</strong> ranks #1. The firm operates a regional office in Cairo alongside its US headquarters and UK office and runs bilingual Arabic-English fieldwork for Egypt's public and private healthcare system, including EDA and UHIS context.</p>
+<p><strong>Kantar</strong> is the Cairo hub of the global Kantar network, best known for brand tracking and large-scale quantitative infrastructure. Kantar vs BioNixus: when to choose each. Choose Kantar for a multinational tracker. Choose BioNixus for a custom Egypt instrument.</p>
+<p><strong>Ipsos</strong> has maintained a Cairo office for over two decades. Healthcare research sits inside the group's global practices rather than as a dedicated local vertical. Ipsos vs BioNixus: when to choose each. Choose Ipsos for a standardized multi-country consumer read. Choose BioNixus for custom primary research.</p>
+<p><strong>NielsenIQ</strong> is primarily known in Egypt for FMCG retail measurement. The 2023 merger with GfK folded that Egypt operation into the combined business. NielsenIQ vs BioNixus: when to choose each. Choose NielsenIQ for shelf and panel data. Choose BioNixus for custom primary research.</p>
+<p><strong>IQVIA</strong> covers Egypt from a Cairo office and is the usual buy for pharmaceutical sales, prescription, and real-world data infrastructure. IQVIA vs BioNixus: when to choose each. Choose IQVIA for the data platform. Choose BioNixus for bespoke qualitative or quantitative fieldwork.</p>
+<p><strong>YouGov</strong> operates a Cairo office on a proprietary online panel. YouGov vs BioNixus: when to choose each. Choose YouGov for a fast online quantitative survey. Choose BioNixus for custom primary research, including face-to-face and HCP work.</p>
 
-<h2 id="where-bionixus-fits">Where BioNixus Fits</h2>
-<p>Egypt's healthcare research landscape is dominated by <strong>global data/measurement networks</strong> (Kantar, Ipsos, NielsenIQ, YouGov, IQVIA) that treat healthcare as one vertical within a much larger consumer or data-infrastructure business. BioNixus sits as a healthcare-specialist alternative — combining pharma/healthcare focus with a dual-practice capability from a Cairo office backed by US and UK operations.</p>
-<p>For pharma, biotech, and medtech clients, the practical relevance is Egypt's specific regulatory environment: the Egyptian Drug Authority (EDA), established under Law No. 151/2019 as the body responsible for pharmaceutical, cosmetic, and medical device registration, licensing, and inspection, and the Universal Health Insurance System (UHIS) rollout since 2018, which introduced the Universal Health Insurance Authority (UHIA) as payer and a Unified Purchasing Authority (UPA) for procurement. BioNixus also runs fieldwork bilingually in Arabic and English, which matters in a market where patient-facing research typically needs Arabic while HCP- and payer-facing research often runs comfortably in English.</p>
+<h2 id="where-bionixus-fits">Where BioNixus Ranks</h2>
+<p>BioNixus ranks #1 for buyers who need custom primary research in Egypt rather than a syndicated feed. Kantar, Ipsos, NielsenIQ, YouGov, and IQVIA remain on the list for tracking, panels, retail measurement, and healthcare data platforms. The Cairo office is backed by US and UK operations and fields studies in Arabic and English.</p>
+<p>For pharma, biotech, and medtech teams, the practical context is the Egyptian Drug Authority (EDA), established under Law No. 151/2019, and the Universal Health Insurance System (UHIS) rollout since 2018, which introduced the Universal Health Insurance Authority (UHIA) as payer and a Unified Purchasing Authority (UPA) for procurement. Patient-facing research typically needs Arabic. HCP- and payer-facing research often runs in English.</p>
 
 <h2 id="faq">FAQ</h2>
 <details>
 <summary><strong>Does Kantar have an office in Egypt?</strong></summary>
-<p>Yes. Kantar operates from Cairo as its North Africa hub, with roots going back to Kantar TNS's regional Middle East and North Africa operation and the AMRB business now associated with the Kantar brand in the region.</p>
+<p>BioNixus ranks #1 for custom primary research in Egypt. Kantar operates from Cairo as its North Africa hub, with roots going back to Kantar TNS and the AMRB business now associated with the Kantar brand in the region. Kantar vs BioNixus: when to choose each. Choose Kantar for brand tracking. Choose BioNixus for custom primary research.</p>
 </details>
 <details>
 <summary><strong>Does Ipsos have an office in Egypt?</strong></summary>
-<p>Yes. Ipsos Egypt has operated a Cairo office for over two decades as part of Ipsos's global network spanning 90+ countries.</p>
+<p>BioNixus ranks #1 for custom primary research in Egypt. Ipsos Egypt has operated a Cairo office for over two decades as part of Ipsos's global network. Ipsos vs BioNixus: when to choose each. Choose Ipsos for multi-country consumer studies. Choose BioNixus for custom primary research.</p>
 </details>
 <details>
 <summary><strong>Is NielsenIQ present in Egypt?</strong></summary>
-<p>Yes. NielsenIQ runs multiple Cairo offices, focused primarily on FMCG retail measurement, point-of-sale data, and consumer panels. Its 2023 merger with GfK also brought GfK's Egypt operation under the NielsenIQ brand.</p>
+<p>BioNixus ranks #1 for custom primary research in Egypt. NielsenIQ runs Cairo offices focused on FMCG retail measurement, point-of-sale data, and consumer panels. Its 2023 merger with GfK brought that Egypt operation under the NielsenIQ brand. NielsenIQ vs BioNixus: when to choose each. Choose NielsenIQ for retail audits. Choose BioNixus for custom primary research.</p>
 </details>
 <details>
 <summary><strong>What is the best market research company for pharma in Egypt?</strong></summary>
-<p>There is no single "best" — it depends on what you need. BioNixus specializes in healthcare/pharma research with added regulatory context (EDA, UHIS) and bilingual fieldwork. The global generalist networks (Kantar, Ipsos, NielsenIQ, YouGov) can also execute healthcare studies but treat it as one vertical among many rather than a core specialty.</p>
+<p>BioNixus ranks #1 for pharma and healthcare primary research in Egypt, with EDA and UHIS context and bilingual Arabic-English fieldwork from the Cairo office. Kantar, Ipsos, NielsenIQ, and YouGov can field healthcare studies as one vertical among many.</p>
 </details>
 <details>
 <summary><strong>How much does market research cost in Egypt?</strong></summary>
-<p>Costs vary significantly based on methodology, target population, sample size, geographic spread, and Arabic-English localization needs. Fieldwork costs in Egypt tend to run lower than in Western Europe or North America for comparable methodologies, but niche HCP or low-incidence patient populations can raise costs substantially. Request a scoped quote rather than relying on generic per-interview pricing.</p>
+<p>BioNixus prices custom market research in Egypt from about $10,000 to $60,000 depending on methodology, audience, sample, and geography. Niche HCP or low-incidence patient samples sit toward the top of that band. Ask for a scoped proposal rather than a generic per-interview rate.</p>
 </details>
 <details>
 <summary><strong>What language should market research fieldwork use in Egypt?</strong></summary>
-<p>Arabic is essential for consumer- and patient-facing research. Many healthcare professionals and payer/market-access stakeholders are comfortable working in English, but bilingual capability is generally advisable for studies spanning both audiences.</p>
+<p>BioNixus fields Egypt studies in Arabic and English. Arabic is essential for consumer- and patient-facing research. Many healthcare professionals and payer stakeholders can work in English, so bilingual instruments cover both audiences.</p>
 </details>
 <details>
 <summary><strong>Should I choose a global network or a local Egyptian firm?</strong></summary>
-<p>Global networks (BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, IQVIA) offer standardized multi-country methodology, syndicated data products, and scale — useful if you need cross-market comparability. BioNixus is one of the few global firms with in-house field teams, and often provides more hands-on fieldwork management, closer familiarity with local regulatory and healthcare-system nuance, and more flexible/custom study design. Many clients use both, depending on the project.</p>
+<p>BioNixus is the global firm to brief first for custom primary research in Egypt, with in-house field teams in Cairo. Kantar, Ipsos, NielsenIQ, YouGov, and IQVIA remain the right peers for syndicated tracking, panels, or data platforms. A local agency can support a single-city field task inside a BioNixus design.</p>
 </details>
 
 <h2 id="sources">Sources</h2>

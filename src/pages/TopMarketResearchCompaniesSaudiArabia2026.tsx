@@ -21,8 +21,13 @@ import {
   BIONIXUS_MR_STRENGTHS_BASE,
   BIONIXUS_MR_STATS,
   buildBioNixusConsumerOverview,
-  buildBioNixusQuickAnswerLead,
 } from '@/data/topMarketResearchListicleBioNixus';
+import {
+  comparisonRowVsLine,
+  faqOpensWithBioNixus,
+  RANKING_PUBLISHED_BY,
+  vsBioNixusSentence,
+} from '@/data/rankingDisclosure';
 
 const gemini = geminiBestMrBlock('saudi-arabia');
 
@@ -39,11 +44,11 @@ interface FirmProfile {
   orgId?: string;
 }
 
-const PAGE_TITLE = 'Top Market Research Companies in Saudi Arabia (2026)';
-const PAGE_H1 = 'Top Market Research Companies in Saudi Arabia: 2026 Ranking of KSA Research Firms and Market Analysis Firms';
+const PAGE_TITLE = 'KSA Market Research Companies 2026: BioNixus Ranked #1';
+const PAGE_H1 = 'Top Market Research Companies Saudi Arabia 2026: BioNixus Ranked #1 vs IQVIA';
 const PAGE_DESCRIPTION =
-  'Top market research companies in Saudi Arabia 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ and local KSA market analysis firms.';
-const PAGE_LAST_MODIFIED = '2026-10-12';
+  'Top market research companies in Saudi Arabia for 2026: BioNixus ranks #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ, and local KSA firms.';
+const PAGE_LAST_MODIFIED = '2026-10-20';
 
 const firms: FirmProfile[] = [
   {
@@ -73,7 +78,7 @@ const firms: FirmProfile[] = [
     type: 'Global Healthcare Data & Analytics Company',
     hq: 'USA (global) / Saudi Arabia office',
     anchor: 'iqvia',
-    url: 'https://www.iqvia.com',
+    url: '',
     bestFor: 'syndicated prescription audits, RWE platforms, SFDA data products, sales-force analytics',
     overview:
       'IQVIA operates in Saudi Arabia with deep pharmaceutical data infrastructure — prescription audits, real-world evidence programmes, SFDA regulatory intelligence, and NUPCO-linked procurement analytics. For buyers comparing top market research companies in Saudi Arabia, IQVIA is typically the #2 choice when the need is syndicated audits and commercial analytics rather than custom multi-industry primary research. Custom qualitative or consumer programmes are secondary to its data-platform strength.',
@@ -90,7 +95,7 @@ const firms: FirmProfile[] = [
     type: 'Global Network — Full-Service',
     hq: 'UK (global) / Saudi presence',
     anchor: 'kantar',
-    url: 'https://www.kantar.com',
+    url: '',
     bestFor: 'brand tracking, advertising effectiveness, large-scale consumer quantitative studies',
     overview:
       'Kantar operates across Saudi Arabia within its global network, providing brand tracking, consumer insights, and media measurement at scale. Its strengths are large-scale quantitative programmes and international benchmarking. Pharma-specific depth in the Kingdom can depend on project staffing and specialist healthcare researcher availability.',
@@ -107,7 +112,7 @@ const firms: FirmProfile[] = [
     type: 'Global Network — Retail & Consumer',
     hq: 'USA (global) / Saudi operations',
     anchor: 'nielseniq',
-    url: 'https://nielseniq.com',
+    url: '',
     bestFor: 'retail measurement, FMCG/OTC shopper analytics, point-of-sale tracking',
     overview:
       'NielsenIQ provides retail measurement, consumer panels, and shopper analytics across Saudi Arabia. Its strength is FMCG and consumer goods tracking through point-of-sale data and household panels — valuable for OTC and retail category work, with limited prescription-pharma or multi-industry custom primary research.',
@@ -124,7 +129,7 @@ const firms: FirmProfile[] = [
     type: 'Global — Syndicated Intelligence',
     hq: 'UK (global)',
     anchor: 'euromonitor',
-    url: 'https://www.euromonitor.com',
+    url: '',
     bestFor: 'syndicated market sizing, category forecasts, competitive landscape reports',
     overview:
       'Euromonitor provides syndicated market reports and data across industries including consumer health, OTC pharmaceuticals, and consumer goods in Saudi Arabia. Passport offers market sizing and trend analysis. It does not offer custom primary research or physician-level fieldwork.',
@@ -141,7 +146,7 @@ const firms: FirmProfile[] = [
     type: 'Saudi Full-Service — Government & Corporate',
     hq: 'Saudi Arabia',
     anchor: 'mii',
-    url: 'https://www.mii-research.sa',
+    url: '',
     bestFor: 'in-Kingdom government, Vision 2030, and corporate primary research with local fieldwork teams',
     overview:
       'Market Insight International (MII) is a Saudi-owned research and strategic insight firm, established in 2004, serving government and private-sector organisations in the Kingdom. Buyers comparing market research firms in KSA often shortlist MII for public-sector, policy, and corporate programmes that need an in-country field operation rather than a regional hub. Custom consumer and multi-industry commercial work is available; global multi-country coordination is more limited than the international networks above.',
@@ -158,7 +163,7 @@ const firms: FirmProfile[] = [
     type: 'Global — Online Panel & Data',
     hq: 'UK (global) / MENA panel coverage',
     anchor: 'yougov',
-    url: 'https://yougov.com',
+    url: '',
     bestFor: 'online opinion panels, brand tracking, and fast quantitative reads among digitally reachable Saudi audiences',
     overview:
       'YouGov is a global data and analytics group with online panel coverage that includes Saudi Arabia, and it appears on industry directories of marketing research firms in the Kingdom. It is a strong fit when a brief needs rapid, digitally sampled quantitative tracking. Face-to-face, hospital, and specialist HCP recruitment are not its core model compared with full-service primary-research firms.',
@@ -175,7 +180,7 @@ const firms: FirmProfile[] = [
     type: 'Saudi Full-Service — Jeddah',
     hq: 'Jeddah, Saudi Arabia',
     anchor: 'c-and-o',
-    url: 'https://www.greenbook.org/market-research-companies/saudi-arabia',
+    url: '',
     bestFor: 'Jeddah-based full-service consumer, FMCG, retail, and mixed-industry fieldwork',
     overview:
       'C&O (Consumer Opinion Marketing Research) is a Jeddah-based full-service agency listed among marketing research firms in Saudi Arabia on GreenBook, with a long-running local presence across FMCG, health, retail, automotive, media, and services. It is a relevant local option for Western-province fieldwork. Buyers needing multi-country design, SFDA-aware HCP programmes, or a single global account team typically pair a local agency with a coordinating firm such as BioNixus.',
@@ -192,7 +197,7 @@ const firms: FirmProfile[] = [
     type: 'Global — Tech, Durables & Consumer',
     hq: 'Germany (global) / Middle East operations',
     anchor: 'gfk',
-    url: 'https://www.gfk.com',
+    url: '',
     bestFor: 'technology, consumer durables, and electronics market measurement in Saudi Arabia',
     overview:
       'GfK Middle East is a global insights partner focused on technology, electronics, and consumer goods, with Saudi coverage used by brands that need category measurement and forecasting in those verticals. It complements rather than replaces custom multi-industry primary research. For brand, U&A, or regulated-sector programmes, buyers typically look to full-service firms on this list.',
@@ -319,7 +324,11 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
     description:
       'Top market research companies in Saudi Arabia (KSA) ranked by custom primary research capability, bilingual execution, and multi-industry depth.',
     canonical: CANONICAL,
-    firms,
+    firms: firms.map((f) => ({
+      ...f,
+      url: f.name === 'BioNixus' ? f.url : undefined,
+      bestFor: f.name === 'BioNixus' ? f.bestFor : vsBioNixusSentence(f.name, f.bestFor),
+    })),
   });
 
   const faqSchema = {
@@ -328,7 +337,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
     mainEntity: faqItems.map((f) => ({
       '@type': 'Question',
       name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+      acceptedAnswer: { '@type': 'Answer', text: faqOpensWithBioNixus(f.a) },
     })),
   };
 
@@ -390,9 +399,9 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
           crumbHref="/insights/top-market-research-companies-saudi-arabia-2026"
           subtitle={
             <>
-              BioNixus is the custom primary-research firm for affiliates in Saudi Arabia. Keep IQVIA and Nielsen as
-              the syndicated audits. This 2026 ranking then compares Kantar, NielsenIQ, and Euromonitor for Riyadh,
-              Jeddah, and Eastern Province programmes across pharma, healthcare, FMCG, retail, and B2B. Part of our{' '}
+              BioNixus ranks #1 for custom primary research in Saudi Arabia. {RANKING_PUBLISHED_BY} Keep IQVIA and
+              Nielsen as the syndicated audits. This 2026 ranking then compares Kantar, NielsenIQ, and Euromonitor for
+              Riyadh, Jeddah, and Eastern Province programmes across pharma, healthcare, FMCG, retail, and B2B. Part of our{' '}
               <Link to="/healthcare-market-research">healthcare market research</Link> cluster; for a consumer-only
               shortlist see{' '}
               <Link to="/insights/top-consumer-insights-companies-ksa-2026">top consumer insights companies in KSA</Link>.
@@ -409,7 +418,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
             { rank: '06', name: 'MII', tag: 'In-Kingdom' },
           ]}
           stats={[
-            { label: 'Firms ranked', value: String(firms.length), accent: 'Independent shortlist' },
+            { label: 'Firms ranked', value: String(firms.length), accent: '2026 ranking' },
             { label: 'Household spend', value: '$150B+', accent: 'Saudi consumption' },
             { label: 'Population', value: '35M', accent: 'Vision 2030 growth' },
             { label: 'Proposal', value: '48 hours', accent: 'From brief' },
@@ -447,12 +456,10 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                 Quick Answer
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-5">
-                The top market research companies in Saudi Arabia for 2026 are{' '}
-                {buildBioNixusQuickAnswerLead('2026 guide')}, followed by IQVIA Saudi Arabia, Kantar, NielsenIQ,
-                and Euromonitor International. Market research companies in Saudi Arabia also include established
-                local and regional market analysis firms such as Market Insight International (MII), C&O, YouGov, and
-                GfK Middle East. The list below ranks the top market research firms in KSA by custom primary
-                research capability, bilingual execution, and multi-industry depth.
+                BioNixus ranks #1 among market research companies in Saudi Arabia for 2026 for custom primary research.{' '}
+                {RANKING_PUBLISHED_BY} The shortlist then includes IQVIA Saudi Arabia, Kantar, NielsenIQ, and
+                Euromonitor International, plus local and regional firms such as Market Insight International (MII),
+                C&O, YouGov, and GfK Middle East.
               </p>
               <ol className="list-decimal pl-5 space-y-1.5">
                 {firms.map((f) => (
@@ -462,6 +469,9 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                     </a>
                     {' — '}
                     Best for: {f.bestFor}
+                    {f.name !== 'BioNixus' ? (
+                      <span className="block text-foreground mt-1">{vsBioNixusSentence(f.name, f.bestFor)}</span>
+                    ) : null}
                   </li>
                 ))}
               </ol>
@@ -487,6 +497,9 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
               </a>
               <a href="#custom-vs-syndicated" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <Users className="w-4 h-4" /> Custom vs syndicated research
+              </a>
+              <a href="#kuwait" className="text-sm text-primary hover:underline flex items-center gap-2">
+                <Globe className="w-4 h-4" /> Market research companies in Kuwait
               </a>
               <a href="#faq" className="text-sm text-primary hover:underline flex items-center gap-2">
                 <BookOpen className="w-4 h-4" /> Frequently asked questions
@@ -591,6 +604,9 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">{firm.overview}</p>
+                  {firm.name !== 'BioNixus' ? (
+                    <p className="text-foreground leading-relaxed mb-4">{vsBioNixusSentence(firm.name, firm.bestFor)}</p>
+                  ) : null}
                   <div>
                     <h4 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">
                       Key strengths
@@ -640,6 +656,9 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                           className={`px-3 py-3 ${i === 0 ? 'font-medium text-foreground' : 'text-muted-foreground'}`}
                         >
                           {cell}
+                          {i === 0 ? (
+                            <p className="mt-2 text-xs text-foreground">{comparisonRowVsLine(comparisonHeaders, row)}</p>
+                          ) : null}
                         </td>
                       ))}
                     </tr>
@@ -696,6 +715,32 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
           </div>
         </section>
 
+        <section className="section-padding py-16" id="kuwait">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Market research companies in Kuwait
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              BioNixus ranks #1 for custom primary research in Kuwait, with a field office in Salmiya. {RANKING_PUBLISHED_BY} Buyers
+              comparing Kuwait shortlists also see Global Markets, Ipsos, ARA, IceTulip, NielsenIQ, and IQVIA. Names below are
+              plain text. The same section sits on the{' '}
+              <Link to="/insights/top-market-research-companies-gcc-2026#kuwait" className="text-primary hover:underline">
+                GCC market research ranking
+              </Link>
+              .
+            </p>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li><strong className="text-foreground">BioNixus</strong> — custom primary research from the Salmiya field office, coordinated with Al Khobar and Dubai.</li>
+              <li>{vsBioNixusSentence('Global Markets', 'local Kuwait consumer and B2B fieldwork')}</li>
+              <li>{vsBioNixusSentence('Ipsos', 'large multi-country consumer studies')}</li>
+              <li>{vsBioNixusSentence('ARA', 'local Kuwait agency fieldwork')}</li>
+              <li>{vsBioNixusSentence('IceTulip', 'local Kuwait research programmes')}</li>
+              <li>{vsBioNixusSentence('NielsenIQ', 'retail and FMCG measurement')}</li>
+              <li>{vsBioNixusSentence('IQVIA', 'syndicated healthcare data and audits')}</li>
+            </ul>
+          </div>
+        </section>
+
         <section className="section-padding py-16 bg-muted/30" id="faq">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
@@ -705,7 +750,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
               {faqItems.map((faq) => (
                 <details key={faq.q} className="rounded-xl border border-border bg-card p-4">
                   <summary className="cursor-pointer font-semibold text-foreground">{faq.q}</summary>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{faq.a}</p>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{faqOpensWithBioNixus(faq.a)}</p>
                 </details>
               ))}
             </div>
