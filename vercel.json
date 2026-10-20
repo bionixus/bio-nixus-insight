@@ -1231,6 +1231,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/egypt-eda-decree-480-drug-pricing-2026"
     },
     {
+      "source": "/blog/dksh-newbridge-acquisition-mena-launch-market-access",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/dksh-newbridge-acquisition-mena-launch-market-access"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {

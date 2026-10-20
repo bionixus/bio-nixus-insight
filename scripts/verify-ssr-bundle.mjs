@@ -79,6 +79,7 @@ const CRITICAL_PATHS = [
   '/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026',
   '/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   '/blog/egypt-eda-decree-480-drug-pricing-2026',
+  '/blog/dksh-newbridge-acquisition-mena-launch-market-access',
   '/market-research/usa',
   '/market-research/japan',
   '/market-research/china',

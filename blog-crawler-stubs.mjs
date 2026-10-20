@@ -58,6 +58,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'gazya-obinutuzumab-lupus-anvisa-brazil-access-2026',
   'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   'egypt-eda-decree-480-drug-pricing-2026',
+  'dksh-newbridge-acquisition-mena-launch-market-access',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -338,6 +339,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: "EDA Decree 480: Egypt's New Drug Pricing Rules | BioNixus",
     description:
       "Egypt's EDA Decree 480/2026 links repricing to FX, inflation and rates, sets a 15-country basket and a generic ladder. What commercial teams should plan.",
+  },
+  'dksh-newbridge-acquisition-mena-launch-market-access': {
+    title: 'DKSH to Acquire NewBridge: What It Means for MENA Launches (2026)',
+    description:
+      'DKSH agreed to acquire NewBridge Pharmaceuticals for USD 390 million. What the deal means for oncology and rare disease launch and market access planning across 14 MENA markets.',
   },
 };
 
