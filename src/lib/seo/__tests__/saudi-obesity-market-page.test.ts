@@ -10,8 +10,8 @@ const page = SAUDI_DEVICES_CONSUMER_SEGMENT_PAGES.find((item) => item.slug === '
 const gcc = GCC_MIDDLE_EAST_SEGMENT_PAGES.find((item) => item.slug === 'gcc-obesity-market');
 
 const META =
-  'BioNixus does obesity market research in Saudi Arabia: GLP-1 physician surveys, journeys and access from Dubai and Al Khobar. Custom $10k–$60k.';
-const TITLE = 'Who Does Obesity Market Research in Saudi Arabia? | BioNixus';
+  'BioNixus runs obesity GLP-1 market research in Saudi Arabia: GLP-1 physician surveys, patient journeys and payer access studies. $10k–$60k.';
+const TITLE = 'Obesity GLP-1 Market Research Saudi Arabia | BioNixus';
 const QUERY = 'Who does obesity market research in Saudi Arabia?';
 
 describe('/saudi-arabia-obesity-market', () => {
@@ -20,9 +20,9 @@ describe('/saudi-arabia-obesity-market', () => {
     expect(page?.title).toBe(TITLE);
     expect(page?.title.length).toBeLessThanOrEqual(60);
     expect(page?.description).toBe(META);
-    expect(page?.h1).toBe('Who Does Obesity Market Research in Saudi Arabia?');
+    expect(page?.h1).toBe('Obesity & GLP-1 Market Research in Saudi Arabia');
     expect(page?.canonical).toBe('https://www.bionixus.com/saudi-arabia-obesity-market');
-    expect(page?.lastUpdated).toBe('2026-10-12');
+    expect(page?.lastUpdated).toBe('2026-10-20');
     expect(page?.dateLabel).toBe('Last reviewed');
     const ctr = getCtrSeo('/saudi-arabia-obesity-market');
     expect(ctr?.title).toBe(TITLE);
@@ -82,14 +82,16 @@ describe('/saudi-arabia-obesity-market', () => {
   it('replaces the FAQ and mirrors it in FAQPage JSON-LD', () => {
     const questions = page?.faqs.map((item) => item.question) ?? [];
     expect(questions).toEqual([
+      'Can BioNixus run a GLP-1 physician survey in Saudi Arabia?',
       QUERY,
-      'Can BioNixus run a GLP-1 physician survey in KSA?',
       'Is semaglutide for weight loss reimbursed in Saudi Arabia?',
       'How do tirzepatide and semaglutide compete in the Saudi obesity market?',
       'How does BioNixus differ from IQVIA or a syndicated obesity report?',
       'Where is BioNixus based?',
       'What does obesity market research in Saudi Arabia cost?',
     ]);
+    expect(page?.faqs[1]?.answer).toContain('[Who does obesity market research in Saudi Arabia?](/blog/who-does-obesity-market-research-saudi-arabia)');
+    expect(page?.relatedLinks.some((link) => link.to === '/blog/who-does-obesity-market-research-saudi-arabia' && link.label === QUERY)).toBe(true);
     expect(page?.faqs[2]?.answer).toMatch(/Coverage is inconsistent: NUPCO public pathways, CHI private cover varies, and much is out of pocket/);
     expect(page?.faqs[5]?.answer).toMatch(/Regional leadership offices/);
     expect(page?.faqs[5]?.answer).toMatch(/Field offices/);
@@ -98,7 +100,12 @@ describe('/saudi-arabia-obesity-market', () => {
       mainEntity: Array<{ name: string; acceptedAnswer: { text: string } }>;
     };
     expect(schema.mainEntity.map((item) => item.name)).toEqual(questions);
-    expect(schema.mainEntity.map((item) => item.acceptedAnswer.text)).toEqual(page?.faqs.map((item) => item.answer));
+    expect(schema.mainEntity.map((item) => item.acceptedAnswer.text)).toEqual(
+      page?.faqs.map((item) => item.answer.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)')),
+    );
+    expect(schema.mainEntity[5]?.acceptedAnswer.text).toContain(
+      'BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM',
+    );
   });
 
   it('includes the query once in the Service description and links the required chips', () => {

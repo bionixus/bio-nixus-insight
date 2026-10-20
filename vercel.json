@@ -84,6 +84,21 @@
   ],
   "redirects": [
     {
+      "source": "/home-staging",
+      "destination": "/home-staging",
+      "statusCode": 410
+    },
+    {
+      "source": "/home-staging/",
+      "destination": "/home-staging",
+      "statusCode": 410
+    },
+    {
+      "source": "/home-staging.html",
+      "destination": "/home-staging",
+      "statusCode": 410
+    },
+    {
       "source": "/pharmaceutical-market-research-provider",
       "destination": "/pharmaceutical-market-research",
       "statusCode": 301
@@ -1066,10 +1081,6 @@
     {
       "source": "/premium-home-page",
       "destination": "/premium-home-page.html"
-    },
-    {
-      "source": "/home-staging",
-      "destination": "/home-staging.html"
     },
     {
       "source": "/blog/who-does-obesity-market-research-saudi-arabia",

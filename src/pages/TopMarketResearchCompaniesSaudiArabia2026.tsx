@@ -58,6 +58,7 @@ const firms: FirmProfile[] = [
       'custom primary research, account-level brand vs competitor data, bilingual Arabic-English fieldwork, SFDA-aware multi-industry programmes',
     overview: buildBioNixusConsumerOverview(
       'In Saudi Arabia, BioNixus runs custom primary research programmes — brand tracking, usage & attitude studies, segmentation, concept and pricing tests, B2B and stakeholder interviews, and market sizing — for pharmaceutical, healthcare, FMCG, financial services, technology, and services clients, with Arabic-English bilingual fieldwork across Riyadh, Jeddah, and the Eastern Province. The firm’s deepest methodological bench comes from regulated pharmaceutical and healthcare work (SFDA, NUPCO, hospital stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter. For a consumer-first shortlist see the separate ranking of consumer insights companies in KSA.',
+      'BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',
     ),
     strengths: [
       ...BIONIXUS_MR_STRENGTHS_BASE,

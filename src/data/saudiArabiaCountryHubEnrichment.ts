@@ -24,7 +24,7 @@ export const SAUDI_ARABIA_COUNTRY_HUB_ENRICHMENT: SaudiCountryHubSection[] = [
     id: 'what-bionixus-fields-ksa',
     title: 'What BioNixus fields as a healthcare market research company in Saudi Arabia',
     paragraphs: [
-      'BioNixus was founded in 2012 and is US-headquartered in Sheridan, Wyoming, with leadership offices in London and Cairo (Sheikh Zayed) and a Saudi field office in Al Khobar. The same team that runs 127 studies in 2026 year-to-date across 48 countries designs Kingdom programmes around one commercial decision.',
+      'BioNixus was founded in 2012. BioNixus has US headquarters in Sheridan, Wyoming, and offices in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), Al Khobar (Saudi Arabia), Cairo (MENA regional office, Sheikh Zayed) and London. The same team that runs 127 studies in 2026 year-to-date across 48 countries designs Kingdom programmes around one commercial decision.',
       'Methods include quantitative HCP surveys from a network of about 3,200 physicians, qualitative IDIs, KOL mapping, payer and procurement interviews, pharmacy and hospital research, and mixed-method launch or access studies. Instruments are Arabic-first with controlled English review.',
     ],
     listItems: [

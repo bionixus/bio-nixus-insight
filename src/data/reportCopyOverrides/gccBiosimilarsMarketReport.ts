@@ -11,7 +11,8 @@ type OverrideCopy = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 export const GCC_BIOSIMILARS_COPY: OverrideCopy = {
   slug: SLUG,
   title: 'GCC Biosimilars & Generic Injectables Market Report 2026',
-  metaTitle: 'GCC Biosimilars & Generic Injectables Market Report 2026 | BioNixus',
+  metaTitle: 'GCC Biosimilars Market Report 2026 | BioNixus',
+  modifiedDate: '2026-10-20',
   metaDescription:
     'GCC biosimilars and generic injectables market ~USD 1.55B in 2026 (BioNixus analysis), ~18% CAGR: NUPCO and MOHAP tenders, adalimumab and trastuzumab waves, hospital substitution—Gulf decision-ready intelligence.',
   heroLead:

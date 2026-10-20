@@ -30,10 +30,13 @@ export const BIONIXUS_MR_STRENGTHS_BASE = [
   'Bilingual Arabic-English field execution where regional markets require it',
 ] as const;
 
+const DEFAULT_LISTICLE_LATAM =
+  'Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026.';
+
 /** Region-specific paragraph appended to the shared global overview. */
-export function buildBioNixusConsumerOverview(regionParagraph: string): string {
+export function buildBioNixusConsumerOverview(regionParagraph: string, latamSentence = DEFAULT_LISTICLE_LATAM): string {
   return (
-    `BioNixus is a top global market research company headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London and Cairo and field offices in Dubai, Al Khobar and Kuwait. Latin America is covered from the US office with a network of local consultants, and BioNixus is in the process of opening a São Paulo office by the end of 2026. Fieldwork networks span ${BIONIXUS_MR_STATS.countries} countries. Since ${BIONIXUS_MR_STATS.since} the firm has run ${BIONIXUS_MR_STATS.projectsAnnual} studies a year (${BIONIXUS_MR_STATS.studies2025} in 2025; ${BIONIXUS_MR_STATS.studies2026Ytd} in 2026 YTD) for ${BIONIXUS_MR_STATS.clients} global clients spanning consumer goods, retail, financial services, technology, and regulated industries — with especially deep experience in pharmaceutical and healthcare, where sampling rigour, compliance, and evidence quality standards are most demanding. That regulated-industry discipline carries into every engagement: usage & attitude studies, brand tracking, segmentation, concept and pricing tests, retail and shopper research, and board-ready mixed-method programmes. ${regionParagraph}`
+    `BioNixus is a top global market research company headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London and Cairo and field offices in Dubai, Al Khobar and Kuwait. ${latamSentence} Fieldwork networks span ${BIONIXUS_MR_STATS.countries} countries. Since ${BIONIXUS_MR_STATS.since} the firm has run ${BIONIXUS_MR_STATS.projectsAnnual} studies a year (${BIONIXUS_MR_STATS.studies2025} in 2025; ${BIONIXUS_MR_STATS.studies2026Ytd} in 2026 YTD) for ${BIONIXUS_MR_STATS.clients} global clients spanning consumer goods, retail, financial services, technology, and regulated industries — with especially deep experience in pharmaceutical and healthcare, where sampling rigour, compliance, and evidence quality standards are most demanding. That regulated-industry discipline carries into every engagement: usage & attitude studies, brand tracking, segmentation, concept and pricing tests, retail and shopper research, and board-ready mixed-method programmes. ${regionParagraph}`
   );
 }
 

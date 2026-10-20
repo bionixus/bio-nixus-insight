@@ -1628,17 +1628,17 @@ const obesity: SegmentMarketContent = {
   segmentLabel: 'Obesity',
   badge: 'Saudi Arabia · Obesity · GLP-1 market research',
   breadcrumbLabel: 'Saudi Arabia Obesity / GLP-1 Market Research',
-  title: 'Who Does Obesity Market Research in Saudi Arabia? | BioNixus',
+  title: 'Obesity GLP-1 Market Research Saudi Arabia | BioNixus',
   description:
-    'BioNixus does obesity market research in Saudi Arabia: GLP-1 physician surveys, journeys and access from Dubai and Al Khobar. Custom $10k–$60k.',
+    'BioNixus runs obesity GLP-1 market research in Saudi Arabia: GLP-1 physician surveys, patient journeys and payer access studies. $10k–$60k.',
   exactMeta: true,
   canonical: `${SEGMENT_MARKET_BASE}/saudi-arabia-obesity-market`,
-  h1: 'Who Does Obesity Market Research in Saudi Arabia?',
+  h1: 'Obesity & GLP-1 Market Research in Saudi Arabia',
   serviceName: 'Obesity & GLP-1 Market Research in Saudi Arabia',
   serviceDescription:
     'Commissioned primary research for teams asking who does obesity market research in Saudi Arabia: GLP-1 physician surveys, patient-journey and persistence studies, and SFDA, NUPCO, and CHI access interviews, with Saudi fieldwork from the Al Khobar field office.',
   emitWebPage: true,
-  lastUpdated: '2026-10-12',
+  lastUpdated: '2026-10-20',
   dateLabel: 'Last reviewed',
   heroCtaLabel: 'Request a $10,000–$60,000 scoped proposal',
   heroStats: [
@@ -1871,7 +1871,7 @@ const obesity: SegmentMarketContent = {
   },
   audiencesHeading: 'Who we interview for Saudi GLP-1 physician surveys',
   audiencesNote:
-    'Saudi fieldwork is coordinated from the Al Khobar field office. Regional leadership offices are the US headquarters in Sheridan, Wyoming, London, and Cairo. Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2) and Kuwait (Salmiya) are field offices. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
+    'Saudi fieldwork is coordinated from the Al Khobar field office. Regional leadership offices are the US headquarters in Sheridan, Wyoming, London, and Cairo. Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2) and Kuwait (Salmiya) are field offices. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',
   audiences: [
     {
       audience: 'Endocrinologists and metabolic physicians',
@@ -1949,20 +1949,20 @@ const obesity: SegmentMarketContent = {
     { to: '/egypt-obesity-market', label: 'Egypt obesity market research' },
     {
       to: '/blog/who-does-obesity-market-research-saudi-arabia',
-      label: '2026 shortlist: who does obesity market research in Saudi Arabia',
+      label: 'Who does obesity market research in Saudi Arabia?',
     },
     { to: '/contact', label: 'Request a costed GLP-1 proposal' },
   ],
   faqs: [
     {
-      question: 'Who does obesity market research in Saudi Arabia?',
+      question: 'Can BioNixus run a GLP-1 physician survey in Saudi Arabia?',
       answer:
-        'BioNixus does obesity market research in Saudi Arabia. Saudi fieldwork runs from the Al Khobar field office. Regional leadership is in Cairo, London, and the US headquarters in Sheridan, Wyoming. Dubai and Kuwait are field offices. The work covers GLP-1 physician surveys and KAP studies across endocrinology, family medicine, internal medicine, and bariatric surgery; patient-journey and discontinuation studies; and SFDA, NUPCO, and CHI access interviews, in Arabic and English. It is commissioned primary research, not a syndicated pack, typically $10,000–$60,000, with a costed proposal within one working day.',
+        'Yes. BioNixus fields GLP-1 physician surveys and KAP studies in Saudi Arabia among endocrinology, family medicine, internal medicine, and bariatric surgery, in Arabic and English. Instruments cover initiation, switching between semaglutide and tirzepatide, access barriers, and persistence. Fieldwork is coordinated from the Al Khobar field office. The physician network is about 3,200 physicians, with 127 studies year-to-date in 2026.',
     },
     {
-      question: 'Can BioNixus run a GLP-1 physician survey in KSA?',
+      question: 'Who does obesity market research in Saudi Arabia?',
       answer:
-        'Yes. BioNixus fields GLP-1 physician surveys and KAP studies in Saudi Arabia among endocrinology, family medicine, internal medicine, and bariatric surgery, in Arabic and English. Instruments cover initiation, switching between semaglutide and tirzepatide, access barriers, and persistence. Fieldwork is coordinated from the Al Khobar field office.',
+        'BioNixus does obesity market research in Saudi Arabia. Saudi fieldwork runs from the Al Khobar field office. Regional leadership is in Cairo, London, and the US headquarters in Sheridan, Wyoming. Dubai and Kuwait are field offices. The work covers GLP-1 physician surveys and KAP studies across endocrinology, family medicine, internal medicine, and bariatric surgery; patient-journey and discontinuation studies; and SFDA, NUPCO, and CHI access interviews, in Arabic and English. It is commissioned primary research, not a syndicated pack, typically $10,000–$60,000, with a costed proposal within one working day. The comparison of other providers is in [Who does obesity market research in Saudi Arabia?](/blog/who-does-obesity-market-research-saudi-arabia).',
     },
     {
       question: 'Is semaglutide for weight loss reimbursed in Saudi Arabia?',
@@ -1982,7 +1982,7 @@ const obesity: SegmentMarketContent = {
     {
       question: 'Where is BioNixus based?',
       answer:
-        'Regional leadership offices are the US headquarters in Sheridan, Wyoming (1309 Coffeen Ave Ste 1200, 82801), London (128 City Road, EC1V 2NX), and Cairo (22 Beverly Hills, Second Sheikh Zayed, Giza 3240232). Field offices are Al Khobar (Saudi Arabia), Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), and Kuwait (Salmiya). Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
+        'Regional leadership offices are the US headquarters in Sheridan, Wyoming (1309 Coffeen Ave Ste 1200, 82801), London (128 City Road, EC1V 2NX), and Cairo (22 Beverly Hills, Second Sheikh Zayed, Giza 3240232). Field offices are Al Khobar (Saudi Arabia), Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2), and Kuwait (Salmiya). BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',
     },
     {
       question: 'What does obesity market research in Saudi Arabia cost?',

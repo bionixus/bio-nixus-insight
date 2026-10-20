@@ -27,7 +27,7 @@ export const RELATED_REPORT_SLUG = 'egypt-healthcare-market-report'
 export const PUBLISHED_AT = '2026-08-11T09:00:00.000Z'
 
 export const BOILERPLATE =
-  'BioNixus is a leading global market research and analytics firm, headquartered in the United States with a presence in more than 38 countries. The company has a track record of delivering projects across the pharmaceutical, healthcare, B2B and B2C sectors. In Egypt, BioNixus recently signed an agreement with one of the country\'s leading EGX-listed wood manufacturers, and works with more than ten pharmaceutical companies as well as leading FMCG and retail brands.'
+  'BioNixus is a leading global market research and analytics firm, headquartered in the United States with a presence in 48 countries. The company has a track record of delivering projects across the pharmaceutical, healthcare, B2B and B2C sectors. In Egypt, BioNixus recently signed an agreement with one of the country\'s leading EGX-listed wood manufacturers, and works with more than ten pharmaceutical companies as well as leading FMCG and retail brands.'
 
 export const HERO_ALT =
   'Dr. Mohammad Alsaadany, MEA Director at BioNixus, speaking at Bibliotheca Alexandrina during a formal presentation'

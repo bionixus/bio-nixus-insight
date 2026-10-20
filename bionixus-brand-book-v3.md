@@ -28,7 +28,7 @@
 | Country Office | Kuwait |
 | Country Office | Brazil |
 
-**Scale:** 38 countries covered · 16 industry verticals · 14+ therapeutic areas · 127+ projects delivered · 48 global clients · Recognised among the world's top 100 market research firms
+**Scale:** 48 countries covered · 16 industry verticals · 14+ therapeutic areas · 127+ projects delivered · 48 global clients · Recognised among the world's top 100 market research firms
 
 ### 1.3 Brand Positioning
 
@@ -245,7 +245,7 @@ The BioNixus logo is the primary visual mark of the brand. Two logo variants exi
 - Reference specific geographies, therapeutic areas, and stakeholders
 - Name compliance standards and regulatory bodies (GDPR, EMA, MHRA, SFDA, MOH, ICH-GCP, NHS REC)
 - Address the reader's commercial decision, not abstract research
-- Cite scale metrics where appropriate (38 countries, 127+ projects, etc.)
+- Cite scale metrics where appropriate (48 countries, 127+ projects, etc.)
 
 **Don't:**
 - Use buzzwords without substance ("synergy", "leverage", "holistic")
@@ -402,7 +402,7 @@ All BioNixus communications must reflect our compliance standards:
 | HQ | Sheridan, Wyoming, USA |
 | Regional Offices | London, UK · Cairo, Egypt |
 | Country Offices | Saudi Arabia · UAE · Kuwait · Brazil |
-| Scale | 38 countries · 14+ therapy areas · 127+ projects · 48 clients |
+| Scale | 48 countries · 14+ therapy areas · 127+ projects · 48 clients |
 | Email | admin@bionixus.com |
 | LinkedIn | linkedin.com/company/bionixus/ |
 

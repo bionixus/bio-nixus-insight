@@ -236,7 +236,7 @@ const rows = [
     'Global reach',
     'GlobalReachSection.tsx',
     'signal',
-    '6 continents · 38 countries',
+    '6 continents · 48 countries',
     'Full translation',
     '6 Kontinente · 38 Länder',
     '6 continents · 38 pays',
