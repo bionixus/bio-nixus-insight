@@ -6,7 +6,7 @@ import compression from 'compression';
 import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
 import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
-import { formatMetaDescriptionInRange } from './src/server/seo-meta.js';
+import { fitBrandedSeoTitle, formatMetaDescriptionInRange, titleHasBrandSuffix } from './src/server/seo-meta.js';
 import { getCtrSeo, isCtrSeoPath } from './lib/ctr-seo-overrides.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 import {
@@ -311,7 +311,7 @@ function buildFallbackTitle(pathname) {
   }
 
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar Entry Saudi Arabia (2026) | BioNixus';
+    return 'Biosimilar Market Entry Research Saudi Arabia | BioNixus';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -352,7 +352,8 @@ function truncateAtWordBoundary(text, max) {
   const slice = text.slice(0, Math.max(0, max - 1))
   const lastSpace = slice.lastIndexOf(' ')
   const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice
-  return `${cut.trim().replace(/[|,;:\-–—\s]+$/, '')}…`
+  const trimmed = cut.trim().replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '')
+  return `${trimmed}…`
 }
 
 /** Keep in sync with TITLE_MAX in src/lib/seo-meta.ts. */
@@ -363,6 +364,8 @@ function normalizeTitleLength(title, max = 60, pathname) {
   if (pathname && isCtrSeoPath(pathname)) return clean;
   // Hebrew / Arabic scripts: truncate by UTF-16 code units mangles SSR titles vs visible text.
   if (/[\u0590-\u08FF]/.test(clean)) return clean;
+  if (titleHasBrandSuffix(clean)) return fitBrandedSeoTitle(clean, max);
+
   if (clean.length <= max) return clean;
 
   for (const suffix of KNOWN_TITLE_SUFFIXES) {
@@ -544,7 +547,7 @@ function buildFallbackDescription(pathname) {
     return 'Oncology KOL mapping in Saudi Arabia: physician networks, influence scoring, utilization context, and GCC engagement—BioNixus.';
   }
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar entry in Saudi Arabia 2026: SFDA pathways, NUPCO dynamics, utilization research, and physician adoption—BioNixus.';
+    return 'BioNixus runs biosimilar market entry research in Saudi Arabia from Dubai: SFDA 2026 guideline, NUPCO tender and physician switching studies. $10k–$60k.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -933,14 +936,13 @@ async function startServer() {
     res.type('html').sendFile(gfkAltEgyptAbsolutePath);
   });
 
-  /** Staging homepage. noindex for every user agent; production also sends X-Robots-Tag via vercel.json. */
-  const homeStagingAbsolutePath = path.resolve(
-    __dirname,
-    isProduction ? path.join('dist/client', 'home-staging.html') : path.join('public', 'home-staging.html'),
-  );
-  app.get(['/home-staging', '/home-staging.html'], (_req, res) => {
+  /** Staging homepage is gone. Content file stays on disk; the route returns 410. */
+  app.get(['/home-staging', '/home-staging/', '/home-staging.html'], (_req, res) => {
+    res.status(410);
     res.setHeader('X-Robots-Tag', 'noindex, nofollow');
-    res.type('html').sendFile(homeStagingAbsolutePath);
+    res.type('html').send(
+      '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>410 Gone</title><meta name="robots" content="noindex, nofollow"></head><body><h1>410 Gone</h1><p>This page has been removed.</p></body></html>',
+    );
   });
 
   const serveGatedHtmlReport = (publicPath, confRelativePath) => {

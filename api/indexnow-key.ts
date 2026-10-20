@@ -16,6 +16,7 @@ import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
 import { LEGACY_REDIRECTS, lookupRedirect } from '../lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-redirects.mjs';
 import { stripDefaultOrganizationJsonLd } from '../lib/strip-industries-insights-org.mjs';
+import { fitBrandedSeoTitle, titleHasBrandSuffix } from '../src/server/seo-meta.js';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -208,7 +209,7 @@ function buildFallbackTitle(pathname: string): string {
   }
 
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar Entry Saudi Arabia (2026) | BioNixus';
+    return 'Biosimilar Market Entry Research Saudi Arabia | BioNixus';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -238,29 +239,33 @@ function decodeTitleEntities(s: string): string {
     .replace(/&#39;|&apos;/g, "'");
 }
 
+function truncateAtWordBoundary(text: string, max: number): string {
+  const slice = text.slice(0, Math.max(0, max - 1));
+  const lastSpace = slice.lastIndexOf(' ');
+  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice;
+  const trimmed = cut.trim().replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '');
+  return `${trimmed}…`;
+}
+
 function normalizeTitleLength(title: string, max = 60, pathname?: string): string {
   const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
   // CTR-engineered titles must ship exact (often >60 chars); do not clamp.
   if (pathname && isCtrSeoPath(pathname)) return clean;
   if (/[\u0590-\u08FF]/.test(clean)) return clean;
+  if (titleHasBrandSuffix(clean)) return fitBrandedSeoTitle(clean, max);
+
   if (clean.length <= max) return clean;
 
   for (const suffix of KNOWN_TITLE_SUFFIXES) {
     if (!clean.endsWith(suffix)) continue;
     const prefix = clean.slice(0, clean.length - suffix.length).trim();
     const prefixMax = Math.max(12, max - suffix.length - 1);
-    const truncated = prefix
-      .slice(0, prefixMax)
-      .trim()
-      .replace(/[|,;:\-–—\s]+$/, '');
-    return `${truncated} ${suffix}`;
+    if (prefix.length <= prefixMax) return `${prefix} ${suffix}`;
+    return `${truncateAtWordBoundary(prefix, prefixMax)} ${suffix}`;
   }
 
-  return clean
-    .slice(0, Math.max(0, max - 1))
-    .trim()
-    .replace(/[|,;:\-–—\s]+$/, '');
+  return truncateAtWordBoundary(clean, max);
 }
 
 function buildFallbackDescription(pathname: string): string {
@@ -372,7 +377,7 @@ function buildFallbackDescription(pathname: string): string {
     return 'Oncology KOL mapping in Saudi Arabia: physician networks, influence scoring, utilization context, and GCC engagement—BioNixus.';
   }
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar entry in Saudi Arabia 2026: SFDA pathways, NUPCO dynamics, utilization research, and physician adoption—BioNixus.';
+    return 'BioNixus runs biosimilar market entry research in Saudi Arabia from Dubai: SFDA 2026 guideline, NUPCO tender and physician switching studies. $10k–$60k.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';

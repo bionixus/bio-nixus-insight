@@ -15,6 +15,7 @@ const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
   headers: Array<{ source: string; headers: Array<{ key: string; value: string }> }>;
   rewrites: Array<{ source: string; destination: string; has?: unknown[] }>;
+  redirects: Array<{ source: string; destination: string; statusCode?: number }>;
 };
 
 describe('office roster', () => {
@@ -68,9 +69,20 @@ describe('LATAM press copy', () => {
 });
 
 describe('home-staging and blog crawler routing', () => {
-  it('noindexes /home-staging in HTML and in the Vercel header', () => {
+  it('returns 410 for /home-staging, keeps the content file, and omits it from the sitemap', () => {
     const html = readFileSync(join(root, 'public/home-staging.html'), 'utf8');
+    expect(html.length).toBeGreaterThan(200);
     expect(html).toContain('<meta name="robots" content="noindex, nofollow">');
+    const server = readFileSync(join(root, 'server.js'), 'utf8');
+    expect(server).toContain("app.get(['/home-staging', '/home-staging/', '/home-staging.html']");
+    expect(server).toContain('res.status(410)');
+    const gone = vercel.redirects.filter(
+      (entry) => entry.source === '/home-staging' || entry.source === '/home-staging.html' || entry.source === '/home-staging/',
+    );
+    expect(gone.map((entry) => entry.statusCode)).toEqual([410, 410, 410]);
+    expect(vercel.rewrites.some((entry) => entry.source === '/home-staging' || entry.source === '/home-staging.html')).toBe(
+      false,
+    );
     const header = vercel.headers.find((entry) => entry.source === '/home-staging');
     expect(header?.headers).toEqual([{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }]);
     const sitemap = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');

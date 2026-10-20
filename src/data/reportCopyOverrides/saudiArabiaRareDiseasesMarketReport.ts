@@ -12,7 +12,8 @@ type OverrideCopy = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 export const SAUDI_ARABIA_RARE_DISEASES_COPY: OverrideCopy = {
   slug: SLUG,
   title: 'Saudi Arabia Rare Diseases & Orphan Drugs Market Report 2026',
-  metaTitle: 'Saudi Arabia Precision Medicine & Rare Diseases Market Report 2026 | BioNixus',
+  metaTitle: 'Saudi Arabia Rare Disease Market Report 2026 | BioNixus',
+  modifiedDate: '2026-10-20',
   metaDescription:
     'Saudi Arabia precision medicine & rare diseases market ~USD 392M in 2026 (BioNixus analysis), ~18% CAGR: Saudi Genome Program, SFDA orphan pathway, oncology genomics, NUPCO high-cost funding—Gulf intelligence.',
   heroLead:

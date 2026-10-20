@@ -76,8 +76,9 @@ describe('ranking listicle fixes 2026-10-20', () => {
     const ksa = pages.get(PATHS[3])!.html;
     expect(ksa).toContain('BioNixus ranks #1 among market research companies in Saudi Arabia for 2026');
     expect(ksa).not.toContain('are BioNixus (ranked #1');
-    expect(ksa).toContain('delivered from USA offices plus field teams in Brazil and LATAM');
-    expect(ksa).not.toMatch(/São Paulo|Sao Paulo/);
+    expect(ksa).toContain(
+      'BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',
+    );
     expect(ksa).toContain('id="kuwait"');
   });
 
