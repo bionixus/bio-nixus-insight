@@ -134,6 +134,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'chinese-ev-brands-saudi-uae-consumer-research',
+  'market-research-companies-egypt',
 ]);
 
 const LEGACY_REDIRECT_PATHS = Object.keys(LEGACY_REDIRECTS);
@@ -536,6 +537,7 @@ const staticPages = [
   { path: '/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-21' },
   { path: '/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-22' },
   { path: '/blog/egypt-eda-decree-480-drug-pricing-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-23' },
+  { path: '/blog/market-research-companies-egypt', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/pharmaceutical-market-research-methods-mena', priority: '0.83', changefreq: 'monthly' },
@@ -718,7 +720,7 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-turkey-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-uae-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-uk-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-usa-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-10-18' },
+  { path: '/insights/top-healthcare-market-research-companies-usa-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/insights/top-healthcare-market-research-companies-europe-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-algeria-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-angola-2026', priority: '0.85', changefreq: 'monthly' },
@@ -2095,7 +2097,12 @@ async function main() {
     [`${BASE}/patient-journey-research-gcc`]: '2026-10-05',
     [`${BASE}/gcc-obesity-market`]: '2026-10-12',
     [`${BASE}/saudi-arabia-obesity-market`]: '2026-10-12',
-    [`${BASE}/insights/top-market-research-companies-saudi-arabia-2026`]: '2026-10-12',
+    [`${BASE}/insights/top-market-research-companies-saudi-arabia-2026`]: '2026-10-20',
+    [`${BASE}/insights/top-global-healthcare-market-research-companies-2026`]: '2026-10-20',
+    [`${BASE}/insights/top-healthcare-market-research-companies-usa-2026`]: '2026-10-20',
+    [`${BASE}/insights/top-market-research-companies-uae-2026`]: '2026-10-20',
+    [`${BASE}/insights/top-market-research-companies-gcc-2026`]: '2026-10-20',
+    [`${BASE}/blog/market-research-companies-egypt`]: '2026-10-20',
     [`${BASE}/uae-obesity-market`]: '2026-10-05',
     [`${BASE}/kuwait-obesity-market`]: '2026-10-05',
     [`${BASE}/egypt-obesity-market`]: '2026-10-05',
