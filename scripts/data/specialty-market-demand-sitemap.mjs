@@ -41,7 +41,7 @@ const NEXT_SLUGS = new Set([
 ]);
 
 const LASTMOD_BY_SLUG = {
-  'singapore-ivd-market-access': '2026-10-18',
+  'singapore-ivd-market-access': '2026-10-20',
 };
 
 /** @returns {{ path: string, priority: string, changefreq: string, lastmod?: string }[]} */

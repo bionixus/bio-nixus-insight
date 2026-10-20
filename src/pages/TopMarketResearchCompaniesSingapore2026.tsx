@@ -227,7 +227,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
       'Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-10-18',
+    dateModified: '2026-10-20',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

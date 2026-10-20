@@ -133,6 +133,16 @@ const BrazilHealthcareMarketReport = () => (
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
               <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. Read about our{' '}
               <Link to="/news/bionixus-brazil-office-latam-expansion-2026" className="text-primary hover:underline font-medium">LATAM coverage from the US office</Link>.
+              For commissioned ANVISA-aware HCP, payer, and hospital procurement research, see{' '}
+              <Link to="/brazil-healthcare-market-research" className="text-primary hover:underline font-medium">
+                healthcare market research Brazil
+              </Link>{' '}
+              and the{' '}
+              <Link to="/insights/top-market-research-companies-brazil-2026" className="text-primary font-medium hover:underline">
+                Brazil market research companies guide 2026
+              </Link>
+              . Commissioned studies typically include CONITEC-aware HEOR modules and private-hospital procurement depth
+              where launch teams need decision-grade qualitative evidence.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
