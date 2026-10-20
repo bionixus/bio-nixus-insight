@@ -537,6 +537,7 @@ const staticPages = [
   { path: '/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-21' },
   { path: '/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-22' },
   { path: '/blog/egypt-eda-decree-480-drug-pricing-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-23' },
+  { path: '/blog/dksh-newbridge-acquisition-mena-launch-market-access', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/blog/market-research-companies-egypt', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/blog/gcc-pharmacy-market-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/saudi-arabia-healthcare-market-2026', priority: '0.88', changefreq: 'monthly' },
@@ -1566,6 +1567,9 @@ const STATIC_PAGE_FILES = {
   '/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026': ['src/data/blog-gazya-obinutuzumab-lupus-anvisa-brazil-access-2026.ts'],
   '/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026': ['src/data/blog-orzeyful-oveporexton-narcolepsy-japan-china-launch-2026.ts'],
   '/blog/egypt-eda-decree-480-drug-pricing-2026': ['src/data/blog-egypt-eda-decree-480-drug-pricing-2026.ts'],
+  '/blog/dksh-newbridge-acquisition-mena-launch-market-access': [
+    'src/data/blog-dksh-newbridge-acquisition-mena-launch-market-access.ts',
+  ],
   '/pt/services': ['src/data/servicesHubContent.pt.ts', 'src/pages/Services.tsx'],
   '/ru/services': ['src/data/servicesHubContent.ru.ts', 'src/pages/Services.tsx'],
   '/services/quantitative-research': ['src/pages/ServiceDetail.tsx', 'src/data/seo/serviceDeepContent.ts'],

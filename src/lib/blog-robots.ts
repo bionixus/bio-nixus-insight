@@ -56,6 +56,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'gazya-obinutuzumab-lupus-anvisa-brazil-access-2026',
   'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   'egypt-eda-decree-480-drug-pricing-2026',
+  'dksh-newbridge-acquisition-mena-launch-market-access',
 ]);
 
 export const BLOG_HARDCODED_SEO_SLUGS = new Set([
@@ -110,6 +111,7 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'gazya-obinutuzumab-lupus-anvisa-brazil-access-2026',
   'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   'egypt-eda-decree-480-drug-pricing-2026',
+  'dksh-newbridge-acquisition-mena-launch-market-access',
 ]);
 
 export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {

@@ -11,8 +11,9 @@ const BODY_SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
     /* h1 stripped after demotion: hero owns the sole page h1 */
     'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'br', 'hr',
     'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'a', 'blockquote',
-    'table', 'thead', 'tbody', 'tr', 'th', 'td', 'sub', 'sup',
+    'table', 'caption', 'thead', 'tbody', 'tr', 'th', 'td', 'sub', 'sup',
     'figure', 'figcaption', 'img',
+    'details', 'summary',
   ],
   allowedAttributes: {
     a: ['href', 'name', 'target', 'rel', 'class', 'style', 'id'],
