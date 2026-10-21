@@ -20,6 +20,31 @@ function overlayHardcodedSeoPost(post: BlogPost): BlogPost {
   return getHardcodedPostBySlug(post.slug) ?? post;
 }
 
+/**
+ * Hardcoded SEO posts keep their copy. When that copy has no share image,
+ * the article hero and og:image use Sanity openGraph.ogImage, then mainImage.
+ * A local cover (for example the DKSH JPEG) is left as-is.
+ */
+export function applySanityShareImages<T extends BlogPost>(
+  base: T,
+  sanity: BlogPost | null | undefined,
+): T {
+  if (!sanity) return base;
+  if (base.ogImage?.trim() || base.coverImage?.trim()) return base;
+  const chosenUrl = sanity.ogImage?.trim() || sanity.coverImage?.trim();
+  if (!chosenUrl) return base;
+  const chosenAlt =
+    (sanity.ogImage?.trim() ? sanity.ogImageAlt?.trim() : sanity.coverImageAlt?.trim()) ||
+    sanity.ogImageAlt?.trim() ||
+    sanity.coverImageAlt?.trim();
+  return {
+    ...base,
+    ogImage: chosenUrl,
+    coverImage: chosenUrl,
+    ...(chosenAlt ? { ogImageAlt: chosenAlt, coverImageAlt: chosenAlt } : {}),
+  };
+}
+
 function stripHtml(input: string): string {
   return input.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 }
@@ -378,11 +403,15 @@ export async function fetchSanityPostBySlugWithClient(
   client: SanityClient,
 ): Promise<BlogPost | null> {
   const hardcodedFallback = getHardcodedPostBySlug(slug);
-  if (hardcodedFallback && isHardcodedSeoBlogSlug(slug)) return hardcodedFallback;
+  const hardcodedSeo = Boolean(hardcodedFallback && isHardcodedSeoBlogSlug(slug));
 
+  // Always hit the API client (sanityServer / getSanityClient set useCdn: false).
+  // Skipping this for hardcoded SEO posts dropped mainImage and openGraph.ogImage,
+  // so the hero and og:image stayed on /og-image.png after the Sanity asset was published.
   try {
     const raw = await client.fetch<RawSanityPost | null>(POST_BY_SLUG_QUERY, { slug });
     const mapped = mapRawToPost(raw, true);
+    if (hardcodedSeo && hardcodedFallback) return applySanityShareImages(hardcodedFallback, mapped);
     if (mapped) return mapped;
 
     if (hardcodedFallback) return hardcodedFallback;

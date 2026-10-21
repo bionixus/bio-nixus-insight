@@ -23,7 +23,9 @@ import { resolveLegacyRedirect } from '../../lib/legacy-redirects.mjs';
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
   dataset: process.env.VITE_SANITY_DATASET || 'production',
-  useCdn: true,
+  // The Sanity CDN (apicdn) can keep a document without mainImage / ogImage
+  // after those assets are published. Article reads go to the API.
+  useCdn: false,
   apiVersion: '2024-01-01',
 });
 

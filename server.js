@@ -21,6 +21,7 @@ import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.m
 import { LEGACY_REDIRECTS, lookupRedirect } from './lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from './lib/untranslated-locale-redirects.mjs';
 import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-org.mjs';
+import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -1157,7 +1158,7 @@ async function startServer() {
       // for real users and corrupts hydration of the surrounding subtree (the
       // "Expected server HTML to contain a matching <div> in <main>" warning). Page-level
       // imagery/social cards are handled inside the React tree and via OpenGraph meta tags.
-      const localizedPage = stripDefaultOrganizationJsonLd(ensureCtrOgTags(
+      const localizedPage = dedupeBlogOpenGraphTags(stripDefaultOrganizationJsonLd(ensureCtrOgTags(
         ensureCanonicalTag(
           ensureMetaDescriptionTag(
             ensureTitleTag(applyHtmlLang(page, req.path, initialData), req.path),
@@ -1166,7 +1167,7 @@ async function startServer() {
           req.path,
         ),
         req.path,
-      ), req.path);
+      ), req.path), req.path);
 
       res.status(statusCode).set({
         'Content-Type': 'text/html; charset=utf-8',

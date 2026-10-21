@@ -8,6 +8,7 @@ import {
   fetchSanityLatestInsightsWithClient,
   fetchIndustriesInsightsWithClient,
   fetchRelatedPostsWithClient,
+  applySanityShareImages,
   type RelatedPostsData,
 } from '@/lib/sanity-blog';
 import { resolveContentSilo } from '@/lib/blog-content-silo';
@@ -29,7 +30,7 @@ import { FR_FRANCE_CONTENT, FR_HUB_CONTENT } from '@/data/frHealthcareMarketRese
 
 function resolveBlogPostForRoute(slug: string, sanityPost: BlogPost | null): BlogPost | null {
   const hardcoded = getHardcodedPostBySlug(slug);
-  if (hardcoded && isHardcodedSeoBlogSlug(slug)) return hardcoded;
+  if (hardcoded && isHardcodedSeoBlogSlug(slug)) return applySanityShareImages(hardcoded, sanityPost);
   return sanityPost ?? hardcoded ?? null;
 }
 
@@ -63,7 +64,7 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
     blogPost,
     blogPostLookup: blogPost ? 'found' : sanityLookup,
     relatedPosts,
-    lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
+    lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.ogImage || blogPost?.coverImage),
   };
 }
 
@@ -358,7 +359,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       blogSlug: slug,
       blogPost,
       relatedPosts,
-      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
+      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.ogImage || blogPost?.coverImage),
     };
   }
 

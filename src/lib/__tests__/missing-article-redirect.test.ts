@@ -169,6 +169,6 @@ describe('fetchSanityPostBySlugWithClient outage', () => {
     } as unknown as SanityClient;
     const post = await fetchSanityPostBySlugWithClient(NIELSEN_KSA_SLUG, client);
     expect(post?.slug).toBe(NIELSEN_KSA_SLUG);
-    expect(client.fetch).not.toHaveBeenCalled();
+    expect(client.fetch).toHaveBeenCalled();
   });
 });
