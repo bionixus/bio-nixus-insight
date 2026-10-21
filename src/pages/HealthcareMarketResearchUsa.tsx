@@ -83,7 +83,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-21',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -178,6 +178,7 @@ export default function HealthcareMarketResearchUsa() {
           { href: '#methodology', label: 'Methodology' },
           { href: '#access', label: 'FDA · CMS · IRA' },
           { href: '#syndicated-vs-primary', label: 'Syndicated vs primary' },
+          { href: '#why-choose', label: 'Why BioNixus' },
           { href: `#${faqSectionId}`, label: 'FAQ' },
         ]}
         faq={{
@@ -370,6 +371,44 @@ export default function HealthcareMarketResearchUsa() {
               audience, and geography are defined.
             </p>
           </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="why-choose"
+          title="Why US pharmaceutical and medtech teams choose BioNixus"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              US affiliates keep syndicated contracts for national trending, but they brief BioNixus when a committee
+              question is account-specific: why a Southeast IDN still blocks prior auth, how community cardiologists
+              interpret IRA messaging, or which PBM medical director will not move a GLP-1 without new outcomes data.
+              We design each wave backward from that decision — sample frame, instrument, and analysis plan included —
+              so insights land in launch, access, and medical affairs workflows instead of living in a shared drive.
+            </p>
+            <p>
+              Execution stays IRB-aware and HIPAA-aligned: verified HCP recruitment, documented consent for patient
+              modules, and de-identified reporting suitable for regulatory and payer-facing teams. Oncology and rare
+              disease programmes extend into NCI-designated centres; device work pairs hospital value-analysis
+              committee interviews with SKU-level pharmacy checks when adoption stalls after FDA clearance.
+            </p>
+          </div>
+          <ul className="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-muted-foreground leading-relaxed">
+            {[
+              'IRB-compliant HCP and patient protocols under 45 CFR Part 46',
+              'PBM, CMS, and IDN P&T coverage in one primary-research partner',
+              'KOL mapping across AMC, NCI, and community IDN networks',
+              'IRA and ICER context built into access and payer modules',
+              'Global benchmarking cells in UK, EU5, GCC, and LATAM',
+              '48-hour proposal turnaround once objectives are defined',
+            ].map((point) => (
+              <li key={point.slice(0, 40)} className="flex gap-2">
+                <span className="text-primary flex-shrink-0">✓</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
         </ReportPremiumSection>
 
         <RelatedPages currentSlug="united-states" relatedCountries={['uk', 'germany']} relatedTherapies={['oncology', 'diabetes']} />

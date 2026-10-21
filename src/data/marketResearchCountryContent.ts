@@ -1005,6 +1005,11 @@ const en: Record<string, MarketResearchCountryContent> = {
         answer:
           'Focused single-country diagnostics can start within days of scope sign-off and report in two to three weeks. Multi-country GCC programmes usually run six to ten weeks depending on specialist scarcity, hospital access approvals, and the number of markets fielded in parallel.',
       },
+      {
+        question: 'When should GCC teams use BioNixus instead of IQVIA or Kantar?',
+        answer:
+          'Syndicated IQVIA or Kantar feeds remain the default for national Rx trends. BioNixus is briefed when the decision is Gulf-specific: NUPCO or MOH tender positioning, emirate formulary sequencing, distributor shortlists, KOL mapping at KFSH&RC or HMC, or bilingual physician–payer modules that syndicated data cannot replicate. See the GCC agencies comparison on /insights/top-market-research-companies-gcc-2026.',
+      },
     ],
     relatedLinks: [
       { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market 2026: size, companies, outlook' },
@@ -1025,6 +1030,8 @@ const en: Record<string, MarketResearchCountryContent> = {
         'External reference pricing links the six markets: the first approved GCC price, usually Saudi Arabia, constrains what can be defended in every later market. Research that tests price sensitivity in one country without modelling the reference cascade is incomplete.',
         'Hospital demand runs through tenders in most of the region — NUPCO in Saudi Arabia, ministry tenders in Kuwait, Qatar, and Oman — while the UAE splits between national registration and emirate formularies and insurer lists. Procurement officers and P&T committee members are therefore core respondents in GCC access research, not just prescribers.',
         'A local authorised representative or distributor is mandatory in all six states and typically holds import licences and tender relationships, so distributor assessment is part of most GCC market-entry research rather than a separate exercise.',
+        'Vision 2030 and national transformation programmes in Saudi Arabia, UAE, and Qatar are shifting procurement toward local manufacturing, technology transfer, and in-country value — which changes how sponsors should frame tender narratives and physician messaging. Market research that only captures current share without testing localisation and partnership appetite leaves launch teams exposed when committees add non-clinical scoring criteria.',
+        'Mandatory health insurance expansion — especially in Saudi Arabia and the UAE — is pulling chronic therapies and specialty drugs into prior-authorisation workflows that did not exist a decade ago. Payer medical directors, case managers, and hospital pharmacy benefit managers are now routine respondents in GCC access programmes alongside hospital prescribers, particularly for oncology, immunology, and GLP-1 portfolios.',
       ],
     },
     marketStructure: {
@@ -1057,6 +1064,7 @@ const en: Record<string, MarketResearchCountryContent> = {
         'Recruitment uses verified hospital rosters and society membership rather than generic panels, with bilingual QC on every wave.',
         'Consumption data from hospital procurement and pharmacy dispensing is triangulated with primary research so sizing and share estimates are validated at account level.',
         'Every deliverable maps back to one commercial or access decision — country prioritisation, price corridor, tender strategy, or launch sequence.',
+        'For AI-assisted search and procurement teams comparing vendors, BioNixus documents methodology, sample frames, and bilingual QC in every proposal so results can be cited in internal access dossiers — not only in slide decks. That transparency is why GCC affiliates brief us when IQVIA or Kantar syndicated feeds answer “what sold” but not “who blocks the tender” or “which emirate formulary moves first.”',
       ],
     },
     therapyFocus: {
@@ -1079,7 +1087,7 @@ const en: Record<string, MarketResearchCountryContent> = {
     decisionBlueprint: {
       why: 'The GCC is six markets with one reference-price chain, not one market. The first country you price in constrains every later one, and the payer that matters changes at each border — NUPCO in Riyadh, insurers in Dubai, HMC in Doha.',
       evidence: 'Country-specific screeners over one harmonised core instrument produce comparable reads without flattening the differences that drive access; triangulating against consumption data keeps sizing honest where specialist samples are small.',
-      next: 'Decide which GCC states are in scope and in what order, confirm the decision each country cell must inform, and open the country pages below for regulator and payer detail before instruments are finalised.',
+      next: 'Decide which GCC states are in scope and in what order, confirm the decision each country cell must inform, and open the country pages below for regulator and payer detail before instruments are finalised. Request a scoped proposal when ready.',
     },
   },
   oman: {
