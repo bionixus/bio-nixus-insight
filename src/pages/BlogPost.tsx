@@ -6,7 +6,7 @@ import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
 import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
-import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
+import { applySanityShareImages, fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
 import {
   getBlogIndexLabelForPost,
   getBlogIndexPathForPost,
@@ -852,7 +852,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const preferHardcodedPillar =
     Boolean(hardcodedPillar) && (isGccPharmacoeconomicsEn || isHardcodedSeoBlogSlug(slug));
   const post = preferHardcodedPillar
-    ? hardcodedPillar
+    ? applySanityShareImages(hardcodedPillar!, sanityPost)
     : sanityPost ?? hardcodedPillar ?? fallbackPost;
   const resolvedSilo = post ? resolveContentSilo(post) : 'healthcare';
   const articleLocale = resolveBlogArticleLocale(post, pathname);
@@ -1197,8 +1197,15 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
   const heroCoverImage =
     therapyStaticBundledCover ||
+    post.ogImage ||
     post.coverImage ||
     (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+  const heroImageAlt =
+    (heroCoverImage && heroCoverImage === post.ogImage ? post.ogImageAlt : undefined) ||
+    post.coverImageAlt ||
+    post.ogImageAlt ||
+    articleDisplayTitle ||
+    'Article cover image';
 
   const displayBlogTags =
     isTherapyStaticBlogEn
@@ -1424,7 +1431,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
               src={optimizeSanityImage(heroCoverImage, 1400, 600)}
-              alt={post.coverImageAlt || articleDisplayTitle || 'Article cover image'}
+              alt={heroImageAlt}
               className="w-full h-full object-cover opacity-[0.55] transition-transform duration-[6000ms] ease-in-out group-hover:scale-[1.03]"
               loading="eager"
               fetchPriority="high"

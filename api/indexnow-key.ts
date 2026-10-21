@@ -16,6 +16,7 @@ import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
 import { LEGACY_REDIRECTS, lookupRedirect } from '../lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-redirects.mjs';
 import { stripDefaultOrganizationJsonLd } from '../lib/strip-industries-insights-org.mjs';
+import { dedupeBlogOpenGraphTags } from '../lib/dedupe-blog-og-tags.mjs';
 import { fitBrandedSeoTitle, titleHasBrandSuffix } from '../src/server/seo-meta.js';
 
 type HelmetLike = {
@@ -601,11 +602,14 @@ function injectHtml(
     );
   // Do not inject nodes into #root after renderToString. A share <aside> that
   // is not in the React tree makes hydrateRoot throw and client-render the page.
-  return stripDefaultOrganizationJsonLd(
-    ensureCtrOgTags(
-      ensureCanonicalTag(
-        ensureImageTitleAttributes(
-          ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+  return dedupeBlogOpenGraphTags(
+    stripDefaultOrganizationJsonLd(
+      ensureCtrOgTags(
+        ensureCanonicalTag(
+          ensureImageTitleAttributes(
+            ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+          ),
+          pathname,
         ),
         pathname,
       ),

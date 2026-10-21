@@ -21,6 +21,12 @@ export const DKSH_NEWBRIDGE_DATE = '2026-10-20';
 export const DKSH_NEWBRIDGE_PUBLISHED_ISO = '2026-10-20T08:00:00.000Z';
 export const DKSH_NEWBRIDGE_FOCUS_KEYWORD = 'MENA specialty pharma market access';
 export const DKSH_NEWBRIDGE_OFFICIAL_SOURCE = 'https://www.nbpharma.com/news/details/54';
+export const DKSH_NEWBRIDGE_COVER_PATH =
+  '/images/blog/dksh-newbridge-acquisition-mena-launch-market-access-cover.jpg';
+export const DKSH_NEWBRIDGE_OG_IMAGE =
+  'https://www.bionixus.com/images/blog/dksh-newbridge-acquisition-mena-launch-market-access-cover.jpg';
+export const DKSH_NEWBRIDGE_COVER_ALT =
+  'Navy and gold BioNixus cover: DKSH to acquire NewBridge, shown as two linked circles above 14 dots for the MENA markets';
 
 export const DKSH_NEWBRIDGE_FAQ: { question: string; answer: string }[] = [
   {
@@ -369,6 +375,10 @@ export const DKSH_NEWBRIDGE_HARDCODED_POST: BlogPost & {
   seoNoIndex: false,
   ogTitle: DKSH_NEWBRIDGE_META_TITLE,
   ogDescription: DKSH_NEWBRIDGE_META_DESCRIPTION,
+  coverImage: DKSH_NEWBRIDGE_COVER_PATH,
+  coverImageAlt: DKSH_NEWBRIDGE_COVER_ALT,
+  ogImage: DKSH_NEWBRIDGE_OG_IMAGE,
+  ogImageAlt: DKSH_NEWBRIDGE_COVER_ALT,
   authorName: AUTHOR.name,
   authorTitle: AUTHOR.jobTitle,
   publishedAtIso: DKSH_NEWBRIDGE_PUBLISHED_ISO,

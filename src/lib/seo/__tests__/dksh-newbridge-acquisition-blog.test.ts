@@ -19,6 +19,8 @@ import {
   DKSH_NEWBRIDGE_OFFICIAL_SOURCE,
   DKSH_NEWBRIDGE_PATH,
   DKSH_NEWBRIDGE_SLUG,
+  DKSH_NEWBRIDGE_COVER_ALT,
+  DKSH_NEWBRIDGE_OG_IMAGE,
   DKSH_NEWBRIDGE_URL,
 } from '@/data/blog-dksh-newbridge-acquisition-mena-launch-market-access';
 
@@ -114,6 +116,14 @@ describe('/blog/dksh-newbridge-acquisition-mena-launch-market-access', () => {
     expect(html).toContain('href="/healthcare-market-research"');
     expect(html).toContain(DKSH_NEWBRIDGE_HARDCODED_POST.title);
     expect((html.match(/<h1\b/g) ?? []).length).toBe(1);
+    expect(head.match(/property="og:title"/g) ?? []).toHaveLength(1);
+    expect(head.match(/property="og:description"/g) ?? []).toHaveLength(1);
+    expect(head.match(/property="og:image"/g) ?? []).toHaveLength(1);
+    expect(head).toContain(`property="og:image" content="${DKSH_NEWBRIDGE_OG_IMAGE}"`);
+    expect(head).toContain(`property="og:image:alt" content="${DKSH_NEWBRIDGE_COVER_ALT}"`);
+    expect(head).toContain(`name="twitter:image" content="${DKSH_NEWBRIDGE_OG_IMAGE}"`);
+    expect(html).toContain(DKSH_NEWBRIDGE_OG_IMAGE.replace('https://www.bionixus.com', ''));
+    expect(html).toContain(DKSH_NEWBRIDGE_COVER_ALT);
   });
 
   it('renders the FAQ with details/summary and FAQPage schema, plus the fact-check table', () => {
