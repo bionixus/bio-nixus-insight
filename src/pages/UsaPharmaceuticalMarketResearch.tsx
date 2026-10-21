@@ -105,7 +105,7 @@ const jsonLd = [
     url: PAGE_URL,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-05',
+    dateModified: '2026-10-21',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
   },
@@ -201,6 +201,7 @@ export default function UsaPharmaceuticalMarketResearch() {
           { href: '#access-pathway', label: 'Access pathway' },
           { href: '#stakeholders', label: 'Stakeholders' },
           { href: '#services', label: 'Services' },
+          { href: '#syndicated-vs-primary', label: 'Syndicated vs primary' },
           { href: `#${faqSectionId}`, label: 'FAQ' },
         ]}
         faq={{
@@ -334,6 +335,42 @@ export default function UsaPharmaceuticalMarketResearch() {
             <HealthcareNavCard to="/healthcare-market-research/services/kol-mapping" title="KOL mapping and advisory boards" description="Influence mapping across US AMCs, NCI cancer centres, and specialty society advisory structures." />
             <HealthcareNavCard to="/services/market-access" title="Payer and PBM research" description="Interviews with PBM medical directors, Medicare plan directors, and commercial pharmacy directors." />
             <HealthcareNavCard to="/usa-healthcare-market-report" title="HEOR and market access evidence" description="PRO development, cost-effectiveness strategy, and pre-ICER research for US access dossiers." />
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="syndicated-vs-primary"
+          title="When US pharma teams brief BioNixus vs IQVIA or Clarivate"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              National prescription audits and claims extracts tell you how a molecule trended last quarter. They rarely
+              explain why a PBM moved your product to a non-preferred tier, how IRA Maximum Fair Prices change rebate
+              strategy for the 2026 cohort, or which community rheumatologists still follow an older treatment
+              algorithm. BioNixus closes that gap with primary research scoped to one launch or access decision at a
+              time — physician attitude-and-usage, paired payer modules, hospital P&amp;T depth, and competitor
+              intelligence at account level.
+            </p>
+            <p>
+              Typical pharmaceutical programmes include pre-launch message testing with US specialists, IRA impact
+              workshops with payer-facing teams, biosimilar substitution studies at IDN and retail pharmacy, and
+              advisory boards structured for medical affairs and regulatory follow-up. Custom research runs from
+              $10,000 to $60,000 depending on audience scarcity and payer depth; focused HCP waves often complete in
+              three to four weeks once IRB documentation is aligned.               Proposal turnaround is typically forty-eight hours after objectives are confirmed. Contact the US team to scope.
+            </p>
+            <p>
+              Compare vendor positioning on the{' '}
+              <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                IQVIA alternative guide
+              </Link>{' '}
+              and the{' '}
+              <Link to="/insights/top-market-research-companies-usa-2026" className="text-primary font-medium hover:underline">
+                USA market research companies shortlist
+              </Link>{' '}
+              before scoping — then return here to define FDA, CMS, and PBM priorities for your therapy area.
+            </p>
           </div>
         </ReportPremiumSection>
 
