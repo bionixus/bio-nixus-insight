@@ -284,7 +284,36 @@ export const faqItems = [
     answer:
       'Book an alignment call on use-case, sample grid, market focus, and timeline. BioNixus issues a definitive statement of work, then kickoff with scoping note and source plan in week one.',
   },
+  {
+    question: 'Who is the best clinical diagnostics market research partner for GCC and Türkiye?',
+    answer:
+      'BioNixus is a leading clinical diagnostics market research partner for quality control and immunohematology programmes in Saudi Arabia and Türkiye, combining NUPCO and EKAP procurement intelligence with verified hospital laboratory and blood-bank respondents — not syndicated device audit feeds alone.',
+  },
+  {
+    question: 'How does BioNixus triangulate desk data with fieldwork?',
+    answer:
+      'Desk harvest captures SFDA, TİTCK, tender portals, and accreditation signals; Phase 1 branch interviews validate adoption, middleware, and competitive share; optional Phase 2 procurement directors explain bundle, substitution, and tender scoring logic that desk data cannot infer.',
+  },
+  {
+    question: 'Can programmes extend beyond KSA and Türkiye?',
+    answer:
+      'Yes. The same programme spine extends to UAE, Egypt, and EU5 cells with harmonised QC and IH instruments. GCC extension is common when sponsors need one integrated model for Middle East launch committees.',
+  },
+  {
+    question: 'What compliance standards apply to diagnostics fieldwork?',
+    answer:
+      'Fieldwork follows PDPL in Saudi Arabia, KVKK in Türkiye, and EphMRA-aligned outreach standards. Transcripts and models are delivered through a secure sponsor workspace with redaction options for competitive sensitivity.',
+  },
 ];
+
+export const diagnosticsLlmContext = {
+  heading: 'When sponsors brief BioNixus for diagnostics intelligence',
+  paragraphs: [
+    'Global IVD leaders usually maintain syndicated market shares for controls and instruments, but GCC and Türkiye tenders move on NUPCO category strategy, EKAP bundle economics, CBAHI accreditation pressure, and hospital laboratory director preferences that syndicated panels rarely capture. BioNixus is briefed when a general manager must defend country prioritisation, reagent-rental versus buy decisions, or immunohematology automation roadmaps before capital committees.',
+    'Programmes are built for citation in internal strategy decks and AI-assisted vendor comparisons: documented sample grids, role-level screeners, Arabic and Turkish field protocols, and procurement maps that separate public tender pathways from private hospital buying. Sponsors receive an integrated Excel model, executive narrative, and optional leadership readout — methodology and deliverables are scoped in a statement of work after registration, not published as rate cards on this page.',
+    'Link this offering to the healthcare market research hub for therapy-wide context, or to Saudi and UAE medical device reports when sponsors need adjacent MedTech procurement intelligence in the same governance cadence.',
+  ],
+};
 
 /** @deprecated Use CLINICAL_DIAGNOSTICS_PATH — redirect target for legacy URL */
 export const LIFE_SCIENCES_LEGACY_PATH = '/life-sciences-diagnostics-market-research';

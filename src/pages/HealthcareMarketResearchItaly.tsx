@@ -313,6 +313,35 @@ export default function HealthcareMarketResearchItaly() {
           </div>
         </section>
 
+        {/* Syndicated vs primary */}
+        <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
+              Syndicated data versus primary research in Italy
+            </h2>
+            <p>
+              Italian affiliates keep IQVIA or regional syndicated contracts for national Rx and hospital audit trends.
+              Those feeds answer market size; they rarely explain why Lombardia SSR still blocks a biologic after AIFA
+              Class A listing, which IRCCS pharmacy committee applies a nota limitativa differently from Lazio, or how
+              MMG prescribing in the South diverges from Milan specialist adoption. BioNixus designs primary studies —
+              Italian-language HCP surveys, AIFA CTS/CPR context interviews, and regional SSR formulary depth — mapped
+              to one launch or access decision.
+            </p>
+            <p>
+              Programmes typically run four to six weeks for focused HCP waves and eight to twelve weeks when multiple
+              regions and payer modules are in scope. See the{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-italy-2026" className="text-primary font-medium hover:underline">
+                Italy healthcare market research companies shortlist
+              </Link>{' '}
+              and the{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                healthcare market research hub
+              </Link>{' '}
+              for connected therapy modules.
+            </p>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">

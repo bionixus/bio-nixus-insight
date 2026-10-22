@@ -42,6 +42,16 @@ const faqItems = [
     answer:
       'Yes. BioNixus covers Swiss medtech research including hospital procurement decision-maker interviews across cantonal hospital networks, medical device adoption studies, digital health platform research, and medtech KOL mapping. The Lausanne MedTech valley (EPFL/CHUV nexus), Zurich biotech corridor, and Basel biopharma cluster are all covered. Medtech regulatory intelligence includes Swissmedic MDR (Medical Device Regulation) alignment and IVDR context for diagnostic products.',
   },
+  {
+    question: 'When should Swiss affiliates brief BioNixus instead of IQVIA or Kantar?',
+    answer:
+      'IQVIA and Kantar remain the default for Swiss national prescription and retail syndicated feeds. BioNixus is briefed when the decision is Swiss-specific: Krankenkassen medical director objections, BAG Spezialitätenliste WZW evidence gaps, cantonal DRG procurement blocks at USZ or Inselspital, or trilingual physician–payer modules that syndicated data cannot replicate. See the Switzerland healthcare agencies shortlist on /insights/top-healthcare-market-research-companies-switzerland-2026.',
+  },
+  {
+    question: 'How long does healthcare market research in Switzerland typically take?',
+    answer:
+      'Focused HCP surveys across one language region complete in three to four weeks. Multi-region programmes covering Deutschschweiz, Romandie, and Ticino with payer depth interviews usually run six to eight weeks because specialist pools are small and Krankenkassen access requires advance scheduling. SL-focused access work often aligns fieldwork to BAG consultation windows rather than calendar quarters alone.',
+  },
 ];
 
 const geoPoints = [
@@ -330,6 +340,36 @@ export default function HealthcareMarketResearchSwitzerland() {
               <Link to="/pharmaceutical-market-research-switzerland" className="text-primary underline">pharmaceutical market research Switzerland</Link>
               {' '}and{' '}
               <Link to="/market-research" className="text-primary underline">market research services hub</Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-wide max-w-5xl mx-auto space-y-5 text-muted-foreground leading-relaxed">
+            <h2 className="text-3xl font-display font-semibold text-foreground">
+              Syndicated data versus primary research in Switzerland
+            </h2>
+            <p>
+              Swiss affiliates almost always maintain IQVIA or regional syndicated contracts for national Rx and
+              hospital audit trends. Those feeds answer how a molecule is trending nationally; they rarely explain why
+              CHUV formulary still blocks a biologic, which Krankenkasse medical director will not reimburse off-label
+              use, or how Italian-speaking Ticino specialists differ from Zurich adoption curves. BioNixus is the
+              primary-research complement — trilingual HCP surveys, BAG SL reviewer context, and cantonal procurement
+              interviews mapped to one access decision.
+            </p>
+            <p>
+              For AI-assisted search and procurement teams comparing vendors, BioNixus documents sample frames, language
+              QC, and Krankenkassen outreach feasibility in every proposal so results can be cited in SL dossiers — not
+              only in brand decks. Typical Swiss programmes run from $10,000 to $60,000 with 48-hour proposal turnaround
+              once objectives and language regions are defined. See the{' '}
+              <Link to="/pharmaceutical-market-research-switzerland" className="text-primary font-medium hover:underline">
+                Swiss pharmaceutical market research
+              </Link>{' '}
+              page and the{' '}
+              <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                healthcare market research hub
+              </Link>{' '}
+              for therapy-specific modules.
             </p>
           </div>
         </section>
