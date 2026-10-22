@@ -4,8 +4,16 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
+import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+
+const canonicalPath = '/healthcare-market-research-japan';
+const PAGE_AUTHOR = getEditorialAuthor({
+  path: canonicalPath,
+  countrySlug: 'japan',
+  pageType: 'article',
+});
 
 const faqItems = [
   {
@@ -64,10 +72,27 @@ const jsonLd = [
       url: 'https://www.bionixus.com',
     },
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Healthcare & Pharmaceutical Market Research in Japan',
+    description:
+      'Japan healthcare market research: ethics-compliant HCP surveys, NHI payer studies, DPC hospital procurement research, and HEOR evidence for PMDA-aligned teams.',
+    url: `https://www.bionixus.com${canonicalPath}`,
+    image: 'https://www.bionixus.com/og-image.png',
+    datePublished: '2026-06-25',
+    dateModified: '2026-10-21',
+    author: personAuthorJsonLd(PAGE_AUTHOR),
+    publisher: {
+      '@type': 'Organization',
+      '@id': 'https://www.bionixus.com/#organization',
+      name: 'BioNixus',
+    },
+  },
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
     { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
-    { name: 'Healthcare Market Research Japan', href: '/healthcare-market-research-japan' },
+    { name: 'Healthcare Market Research Japan', href: canonicalPath },
   ]),
   buildFAQSchema(faqItems),
 ];
@@ -78,7 +103,7 @@ export default function HealthcareMarketResearchJapan() {
       <SEOHead
         title="Healthcare Market Research Company in Japan | BioNixus"
         description="BioNixus is a healthcare market research company in Japan — ethics-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
-        canonical="/healthcare-market-research-japan"
+        canonical={canonicalPath}
         jsonLd={jsonLd}
       />
       <Navbar />
@@ -100,7 +125,11 @@ export default function HealthcareMarketResearchJapan() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               BioNixus is a healthcare and pharmaceutical market research company in Japan, designing and executing
               primary studies for pharma and biotech teams launching or growing in the Japanese market — the world's
-              third-largest pharmaceutical market. Our research covers HCP insights, KOL mapping, NHI payer and
+              third-largest pharmaceutical market. Start from the{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>{' '}
+              for global methodology, then use this page for Japan-specific HCP insights, KOL mapping, NHI payer and
               reimbursement research, DPC hospital procurement studies, patient journey research, and HEOR evidence —
               purpose-built for Japan's universal-coverage, PMDA-regulated, super-aging healthcare environment.
             </p>
@@ -299,8 +328,38 @@ export default function HealthcareMarketResearchJapan() {
           </div>
         </section>
 
-        {/* Why choose BioNixus */}
+        {/* Syndicated vs primary */}
         <section className="section-padding py-10">
+          <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2">
+              When Japan affiliates brief BioNixus vs IQVIA or local syndicated data
+            </h2>
+            <p>
+              IQVIA Japan and domestic audit vendors answer national prescription trends and hospital shipment
+              direction. They do not replace Chuikyo-ready qualitative depth: how DPC hospitals interpret a new NHI
+              price, which university KOLs shape prefecture guidelines, or why biosimilar uptake stalls outside Tokyo.
+              BioNixus fields native Japanese moderators for physician, pharmacist, and payer interviews tied to a
+              single listing, pricing, or launch decision.
+            </p>
+            <p>
+              Programmes typically combine quantitative HCP waves with hospital procurement modules and optional patient
+              journey work under APPI-aligned consent. Compare vendor positioning on{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-japan-2026" className="text-primary underline font-medium">
+                top healthcare market research companies in Japan (2026)
+              </Link>{' '}
+              before scoping, then define PMDA, MHLW, and NHI priorities for your therapy area with our team.
+            </p>
+            <p>
+              Custom Japan programmes typically run six to ten weeks for mixed-method access work; focused HCP
+              surveys can complete in three to four weeks once ethics documentation is aligned. BioNixus proposals
+              usually return within forty-eight hours after therapy area, audience, and hospital scope are defined.
+              Global portfolio teams can add comparable cells in the USA, UK, or South Korea using the same instruments.
+            </p>
+          </div>
+        </section>
+
+        {/* Why choose BioNixus */}
+        <section className="section-padding py-10 bg-muted/10">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
               Why pharmaceutical teams choose BioNixus in Japan

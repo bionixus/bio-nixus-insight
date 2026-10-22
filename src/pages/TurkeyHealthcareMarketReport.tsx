@@ -47,6 +47,11 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus serve Turkey-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Turkish pharmaceutical and medical device companies in expanding into GCC and MENA markets. Turkey\'s pharma industry (including major exporters such as Abdi İbrahim, Eczacıbaşı, Zentiva Turkey) has natural market connections to MENA. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; physician panel surveys; and comparative Turkey vs. GCC market intelligence. Turkey\'s medical device and pharmaceutical manufacturers — particularly generic and biosimilar producers — have significant commercial opportunities in GCC markets where BioNixus provides the access intelligence needed.',
   },
+  {
+    question: 'How do lira volatility and SGK reference pricing affect launch research in Turkey?',
+    answer:
+      'Turkish pharmaceutical economics are unusually sensitive to EUR and USD exchange rates because SGK reference pricing and periodic price decrees re-index many molecules against international baskets. A launch plan that assumes stable net prices can fail within a single budget cycle when the Central Bank moves or SGK publishes a new SUT revision. BioNixus models these scenarios in primary research: physician willingness-to-prescribe under reimbursement caps, hospital pharmacy substitution after biosimilar mandates, and private-hospital supplemental insurance uptake when public lists lag. Teams entering Turkey from the EU or MENA should pair desk intelligence on TİTCK timelines with qualitative depth on how cardiologists, oncologists, and endocrinologists actually sequence therapy when SGK criteria tighten mid-year.',
+  },
 ], 'turkey');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/turkey-healthcare-market-report');
@@ -62,7 +67,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-22',
     mainEntityOfPage: 'https://www.bionixus.com/turkey-healthcare-market-report',
   },
   {
@@ -77,7 +82,7 @@ const jsonLd = [
     countryName: "Turkey",
     marketSlug: "turkey",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-10-22",
   })
 ];
 

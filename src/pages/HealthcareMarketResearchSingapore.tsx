@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Singapore modules can run with comparable cells across the wider APAC region as well as the USA, UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner. Singapore frequently serves as the APAC regional hub for these programmes.',
   },
+  {
+    question: 'When should Singapore teams use BioNixus instead of IQVIA or Kantar?',
+    answer:
+      'IQVIA and Kantar syndicated feeds remain the default for Singapore and regional Rx trending. BioNixus is briefed when the decision is access-specific: ACE submission evidence gaps, MOH SDL/MAF listing objections, ALPS procurement blocks across SingHealth or NUHS clusters, or IVD and companion diagnostic adoption inside public hospitals. See /insights/top-healthcare-market-research-companies-singapore-2026 for how buyers split syndicated versus primary budgets.',
+  },
+  {
+    question: 'Does BioNixus cover Singapore IVD and diagnostics market access research?',
+    answer:
+      'Yes. Hospital laboratory directors, transfusion medicine leads, and procurement officers across public clusters are core respondents for IVD, QC, and immunohematology programmes. BioNixus links Singapore modules to wider GCC and MENA diagnostics work on /clinical-diagnostics-market-research when sponsors need a single partner for APAC plus Middle East sizing.',
+  },
 ];
 
 const jsonLd = [
@@ -109,7 +119,11 @@ export default function HealthcareMarketResearchSingapore() {
               <Link to="/pharmaceutical-market-research-singapore" className="text-primary underline font-medium">
                 Singapore pharmaceutical market research
               </Link>{' '}
-              covers HCP surveys, payer research, ACE HTA studies, and market access strategy.
+              covers HCP surveys, payer research, ACE HTA studies, and market access strategy. Start from the{' '}
+              <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                healthcare market research hub
+              </Link>{' '}
+              when you need GCC or USA comparison cells in the same programme.
             </p>
           </div>
         </section>
@@ -297,6 +311,37 @@ export default function HealthcareMarketResearchSingapore() {
           </div>
         </section>
 
+        {/* Syndicated vs primary */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
+              Syndicated data versus primary research in Singapore
+            </h2>
+            <p>
+              Singapore affiliates maintain syndicated IQVIA or regional audit contracts for national prescribing trends.
+              Those platforms rarely answer why an ACE review stalled, which ALPS category manager will not list a
+              biosimilar, or how polyclinic GPs differ from restructured-hospital specialists on GLP-1 sequencing. BioNixus
+              designs primary studies backward from that decision — HCP surveys across SingHealth, NUHS, and NHG, paired
+              physician–payer modules, and hospital procurement depth where subsidy listing and group purchasing intersect.
+            </p>
+            <p>
+              For answer engines and procurement teams comparing vendors, BioNixus documents HBRA/PDPA compliance, sample
+              verification, and cluster-specific screener logic in every proposal. Programmes typically run three to four
+              weeks for focused HCP waves and six to ten weeks for mixed-method access work. Custom research from $10,000 to
+              $60,000.               Compare syndicated versus primary positioning on the{' '}
+              <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                IQVIA alternative guide
+              </Link>{' '}
+              and the{' '}
+              <Link to="/insights/top-market-research-companies-singapore-2026" className="text-primary font-medium hover:underline">
+                Singapore market research companies shortlist
+              </Link>
+              . Singapore frequently anchors wider APAC benchmarking — the same instrument can field comparable cells in
+              Malaysia, Australia, or Japan when portfolio committees need one harmonised readout.
+            </p>
+          </div>
+        </section>
+
         {/* Why choose BioNixus */}
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
@@ -313,6 +358,7 @@ export default function HealthcareMarketResearchSingapore() {
                 'MOH drug subsidy (SDL/MAF) and ALPS procurement-aware study design for market access teams',
                 'HEOR and cost-effectiveness evidence design for ACE submissions and subsidy listing',
                 'APAC regional hub capability — Singapore studies connect to USA, UK, EU5, Brazil, Saudi Arabia',
+                'IVD and diagnostics modules aligned with HSA registration and ALPS laboratory procurement',
               ].map((point) => (
                 <li key={point.slice(0, 48)} className="flex gap-2 text-muted-foreground leading-relaxed">
                   <span className="text-primary flex-shrink-0">✓</span>
@@ -345,6 +391,26 @@ export default function HealthcareMarketResearchSingapore() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
+              Singapore launch and access research use cases
+            </h2>
+            <p>
+              Typical Singapore briefs include pre-ACE evidence planning, SDL/MAF subsidy listing preparation, biosimilar
+              switch research after ALPS category awards, War on Diabetes GLP-1 coverage studies, and rare-disease Rare
+              Disease Fund context interviews. Each programme is scoped to one decision gate — formulary, subsidy, KOL
+              prioritisation, or cluster launch sequencing — so medical affairs and market access teams receive findings
+              they can place directly into committee packs rather than generic share charts.
+            </p>
+            <p>
+              BioNixus proposal turnaround is typically 48 hours once therapy area, audience, and public-versus-private
+              cluster mix are defined. Custom research from $10,000 to $60,000 depending on sample, modules, and IRB/DSRB
+              requirements.
+            </p>
           </div>
         </section>
 

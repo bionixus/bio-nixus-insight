@@ -16,6 +16,7 @@ import {
   CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH,
   clinicalDiagnosticsMeta,
   faqItems,
+  diagnosticsLlmContext,
   fieldVolumeStats,
   governanceCadence,
   phase1BranchMatrix,
@@ -364,6 +365,18 @@ export default function ClinicalDiagnosticsMarketResearch() {
               <Link to={CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH} className="cd-btn-gold">
                 Register for the full proposal
               </Link>
+            </div>
+          </section>
+
+          <section className="cd-page">
+            <div className="cd-page-rule">
+              <span className="cd-page-rule-text">Intelligence brief</span>
+            </div>
+            <h2 className="cd-section-title mb-4">{diagnosticsLlmContext.heading}</h2>
+            <div className="space-y-4 text-[#3D4A5C] leading-relaxed max-w-3xl">
+              {diagnosticsLlmContext.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
             </div>
           </section>
 
