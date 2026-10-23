@@ -60,6 +60,43 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
       { condition: "Hepatitis C", stat: "Largest treated HCV population globally — WHO elimination programme (100M+ screened)", source: "WHO Egypt HCV Programme 2023" },
       { condition: "Cancer", stat: "~120,000 new cases/year; breast (females), liver (males) most prevalent", source: "NCI Egypt Cancer Registry 2022" },
     ],
+    therapySegments: [
+      {
+        area: "Oncology",
+        marketSize2026: "USD 900M–1.1B",
+        cagr: "12% CAGR",
+        keyDrivers:
+          "National Cancer Institute Cairo expansion, UHI oncology benefit expansion, and rising private oncology capacity in Cleopatra and Dar Al Fouad networks drive branded and biosimilar uptake.",
+      },
+      {
+        area: "Diabetes & metabolic",
+        marketSize2026: "USD 750–900M",
+        cagr: "10% CAGR",
+        keyDrivers:
+          "~20% adult T2DM prevalence; insulin and oral therapy volumes remain structurally large while GLP-1 adoption grows fastest in private and medical-tourism channels.",
+      },
+      {
+        area: "Cardiovascular",
+        marketSize2026: "USD 650–800M",
+        cagr: "8% CAGR",
+        keyDrivers:
+          "Hypertension and ischaemic heart disease dominate outpatient prescribing; UHI listing and CAPHI tender awards determine public-sector volume for statins, anticoagulants, and antihypertensives.",
+      },
+      {
+        area: "Anti-infectives & vaccines",
+        marketSize2026: "USD 500–650M",
+        cagr: "7% CAGR",
+        keyDrivers:
+          "Post-HCV programme infrastructure supports infectious disease research; childhood and adult vaccination programmes expand through MOH and UHI channels.",
+      },
+      {
+        area: "Immunology & biologics",
+        marketSize2026: "USD 350–450M",
+        cagr: "14% CAGR",
+        keyDrivers:
+          "Local biosimilar manufacturing (Eva Pharma, EIPICO) competes with imported biologics; UHI step-therapy and hospital committee criteria shape rheumatology and dermatology access.",
+      },
+    ],
   },
   'iraq': {
     slug: "iraq",
@@ -535,6 +572,42 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
       { step: 7, action: "Hospital formulary adoption", body: "MOH City Hospital pharmacy committees + Private hospital P&T committees", timeline: "3–6 months", notes: "City Hospitals Alliance (Şehir Hastaneleri) has joint procurement — critical for access to ~50,000-bed network" },
     ],
     majorHospitals: [
+      { name: "Hacettepe University Hospitals (Ankara)", type: 'academic', beds: "1,500+ beds", specialties: "National referral centre; oncology, transplant, paediatrics" },
+      { name: "Istanbul University Cerrahpaşa Medical Faculty Hospitals", type: 'academic', beds: "2,000+ beds", specialties: "Historic teaching cluster; internal medicine, surgery, oncology" },
+      { name: "Koç University Hospital (Istanbul)", type: 'private', beds: "400 beds", specialties: "Premium private; JCI-accredited; oncology and cardiology" },
+      { name: "Acıbadem Healthcare Group", type: 'private', beds: "Multi-site", specialties: "Largest private hospital network; medical tourism hub" },
+      { name: "City Hospitals (Şehir Hastaneleri) — national network", type: 'public', beds: "~50,000 beds network", specialties: "MOH mega-hospitals; centralised procurement and formulary committees" },
+      { name: "Ankara Bilkent City Hospital", type: 'public', beds: "3,810 beds", specialties: "One of Europe's largest hospital campuses; multi-specialty reference" },
+    ],
+    therapySegments: [
+      {
+        area: "Cardiovascular",
+        marketSize2026: "USD 1.4–1.7B",
+        cagr: "9% CAGR",
+        keyDrivers:
+          "High HTN and CAD burden; SGK SUT criteria govern statin, anticoagulant, and PCSK9 access with reference pricing tied to EU basket.",
+      },
+      {
+        area: "Oncology",
+        marketSize2026: "USD 900M–1.1B",
+        cagr: "13% CAGR",
+        keyDrivers:
+          "Immuno-oncology and targeted therapy adoption in Istanbul and Ankara academic centres; medical tourism oncology packages supplement SGK volumes.",
+      },
+      {
+        area: "Diabetes & metabolic",
+        marketSize2026: "USD 800M–1.0B",
+        cagr: "11% CAGR",
+        keyDrivers:
+          "~8.5 million adults with T2DM; insulin analogues and GLP-1 growth constrained by SUT reimbursement conditions and TL price revisions.",
+      },
+      {
+        area: "Immunology & biologics",
+        marketSize2026: "USD 600–750M",
+        cagr: "15% CAGR",
+        keyDrivers:
+          "Aggressive biosimilar substitution policy; rheumatology and dermatology biologics face step therapy and report-based prescribing (rapor koşulları).",
+      },
     ],
     accessTimeline: {
       regulatoryApproval: "",

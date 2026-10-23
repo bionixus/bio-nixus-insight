@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'When should Italian affiliates brief BioNixus instead of syndicated data vendors?',
+    answer:
+      'Syndicated audits answer national Rx trends; they rarely explain AIFA nota limitativa compliance, regional SSR PT delays, or IRCCS committee objections. BioNixus is briefed when launch, CPR negotiation, or SSR sequencing decisions need Italian-language HCP depth, payer interviews, and hospital procurement context that syndicated panels cannot supply at account level.',
+  },
 ];
 
 const jsonLd = [
