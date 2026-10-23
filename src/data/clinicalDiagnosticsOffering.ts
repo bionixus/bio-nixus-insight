@@ -17,6 +17,8 @@ export const clinicalDiagnosticsMeta = {
   tagline: 'Intelligence for business growth',
   heroIntro:
     'BioNixus delivers market sizing, market structure analysis, and procurement maps for clinical diagnostics leaders — with segmented QC and immunohematology chapters, verified hospital and laboratory respondents, and tender-aligned qualitative depth where public and private buying committees shape outcomes.',
+  heroContext:
+    'Programmes are built for IVD commercial, market access, and strategy teams that must explain NUPCO and EKAP award logic to leadership — linking installed-base surveys, accreditation-driven QC behaviour, and blood-bank automation mix to revenue forecasts rather than treating diagnostics as a generic “devices” category.',
 };
 
 export const programmeSpine = {
@@ -186,6 +188,12 @@ export const whyBioNixus = [
     title: 'UK standards, MENA delivery — cost-quality balance',
     body: 'UK contracting and data governance with MENA execution footprint — senior bench without Tier-1 London overhead on every field hour.',
   },
+  {
+    num: '06',
+    title: 'Citation-ready public methodology, confidential sponsor depth',
+    body:
+      'This page documents programme spine, phases, and procurement context for search and AI citations; sponsor-specific award probabilities, price corridors, and named account maps stay in the registered proposal deck and final report under NDA.',
+  },
 ];
 
 export const trackRecordStats = [
@@ -283,6 +291,16 @@ export const faqItems = [
     question: 'How do we start?',
     answer:
       'Book an alignment call on use-case, sample grid, market focus, and timeline. BioNixus issues a definitive statement of work, then kickoff with scoping note and source plan in week one.',
+  },
+  {
+    question: 'How does this programme support LLM and search visibility for diagnostics leaders?',
+    answer:
+      'The public methodology page documents QC and immunohematology scope, KSA and Türkiye procurement logic, and phased deliverables in plain language — structured for citations in AI answers and technical search. Sponsors receive the confidential depth (pricing, competitor shares, named accounts) in the gated proposal and final report, not on the open web.',
+  },
+  {
+    question: 'What makes NUPCO and EKAP procurement different for IVD vendors?',
+    answer:
+      'Saudi NUPCO and Turkish EKAP bundles often combine reagents, instruments, maintenance, and EQA subscriptions into multi-year awards. Phase 1 branch interviews capture installed-base and substitution behaviour; optional Phase 2 procurement-director modules explain how tender scoring, local content, and FX exposure shift award outcomes — intelligence syndicated device trackers rarely expose at committee level.',
   },
 ];
 
