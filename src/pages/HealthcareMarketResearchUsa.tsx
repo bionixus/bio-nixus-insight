@@ -83,7 +83,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-24',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -177,6 +177,7 @@ export default function HealthcareMarketResearchUsa() {
           { href: '#audiences', label: 'Audiences' },
           { href: '#methodology', label: 'Methodology' },
           { href: '#access', label: 'FDA · CMS · IRA' },
+          { href: '#employer-medicaid', label: 'Employer & MA' },
           { href: '#syndicated-vs-primary', label: 'Syndicated vs primary' },
           { href: `#${faqSectionId}`, label: 'FAQ' },
         ]}
@@ -330,6 +331,46 @@ export default function HealthcareMarketResearchUsa() {
               ICER assessments carry payer influence despite no statutory authority — PBM formulary decisions increasingly
               cite ICER evidence. BioNixus conducts pre-ICER evidence strategy research and post-assessment payer impact
               studies.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="employer-medicaid"
+          title="Employer, Medicare Advantage, and Medicaid channels in US research"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              National syndicated prescription feeds rarely explain why a product wins at a single integrated
+              delivery network or loses in a Medicare Advantage plan with aggressive step therapy. BioNixus maps
+              those micro-channels explicitly: self-insured employer plans (often administered by the same PBMs
+              that manage commercial lives), Medicare Advantage medical and pharmacy benefit managers, and state
+              Medicaid managed care organisations that run independent prior-authorisation libraries.
+            </p>
+            <p>
+              Research modules can pair hospital P&amp;T and IDN pharmacy directors with payer medical directors
+              and specialty pharmacy leads so formulary, medical policy, and dispensing rules are read as one
+              system. That structure is especially important for Part B buy-and-bill oncology, GLP-1 obesity
+              coverage in employer and MA books, and rare-disease therapies where hub services gate initiation.
+            </p>
+            <p>
+              Sponsors also use these modules to stress-test launch sequencing: which employer or MA plans to
+              target first, where medical policy lags pharmacy benefit design, and which hub or specialty pharmacy
+              partners create friction for first-fill rates — questions syndicated claims extracts rarely answer
+              with account-level clarity.
+            </p>
+            <p>
+              For teams comparing syndicated dashboards with primary evidence, see the{' '}
+              <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                IQVIA alternative guide
+              </Link>{' '}
+              and the{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="text-primary hover:underline">
+                USA healthcare market research companies shortlist
+              </Link>
+              .
             </p>
           </div>
         </ReportPremiumSection>

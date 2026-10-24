@@ -26,6 +26,7 @@ const config: CountryCompaniesGuideConfig = {
     'Singapore\'s domestic pharmaceutical market is modest — approximately US$1.3–1.6 billion for 5.9 million residents — but the country is Asia\'s pharmaceutical nerve centre: 60+ regional headquarters, world-scale manufacturing plants (GSK, Pfizer, Novartis, Sanofi, Amgen, MSD), and Zuellig Pharma\'s pan-Asian distribution platform are all based there.',
     'The HSA (Health Sciences Authority) is one of Asia\'s most respected regulators, offering abridged and verification routes that leverage prior FDA/EMA approvals — full new-drug registration takes 9–12 months, abridged significantly less. ACE (Agency for Care Effectiveness) conducts health technology assessment for public subsidy listing.',
     'Public healthcare (MOH clusters: SingHealth, NUHS, NHG) dominates volume through restructured hospitals and polyclinics, with drug subsidies tiered by ACE recommendations. The private sector — Raffles, Mount Elizabeth, Gleneagles — serves premium and medical-tourism demand at free pricing.',
+    'Regional headquarters use Singapore as the governance node for ASEAN pricing corridors, distributor appointments, and pharmacovigilance — so “small domestic market” understates how many portfolio decisions are actually taken on the island. Research with Singapore-based medical, access, and market-access leads often unlocks faster regional alignment than fielding only in larger patient-volume markets.',
   ],
   companies: [
     { name: 'GSK Singapore', hq: 'UK', type: 'MNC Office', therapeuticAreas: 'Vaccines, respiratory (regional HQ + plants)', notes: 'Major vaccine manufacturing site and APAC hub' },
@@ -106,7 +107,7 @@ const config: CountryCompaniesGuideConfig = {
     'BioNixus proprietary research (ASEAN, 2024–2026)',
   ],
   publishedDate: '2026-08-22',
-  modifiedDate: '2026-10-18',
+  modifiedDate: '2026-10-23',
   conversion: {
     routingHint: 'Mention HSA registration, ACE subsidy strategy, or APAC regional research for a faster routed response.',
     emailSubject: 'Singapore pharma market research — BioNixus',

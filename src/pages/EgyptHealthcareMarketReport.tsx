@@ -73,7 +73,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-23',
     mainEntityOfPage: 'https://www.bionixus.com/egypt-healthcare-market-report',
   },
   {

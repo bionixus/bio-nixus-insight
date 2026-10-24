@@ -95,6 +95,7 @@ export default function ClinicalDiagnosticsMarketResearch() {
               {clinicalDiagnosticsMeta.h1Accent}
             </p>
             <p className="cd-cover-sub">{clinicalDiagnosticsMeta.heroIntro}</p>
+            <p className="cd-cover-sub mt-4">{clinicalDiagnosticsMeta.heroContext}</p>
             <p className="text-sm text-white/75 mt-6 max-w-2xl">
               Saudi Arabia &amp; Türkiye · For the broader map see the{' '}
               <Link to="/healthcare-market-research" className="underline text-[#D4A84B]">
@@ -110,6 +111,33 @@ export default function ClinicalDiagnosticsMarketResearch() {
                 Speak with research director
               </Link>
             </div>
+          </section>
+
+          <section className="cd-page">
+            <div className="cd-page-rule">
+              <span className="cd-page-rule-text">03 · Evidence ladder</span>
+            </div>
+            <h2 className="cd-section-title">
+              From desk intelligence to<em> committee-grade procurement maps</em>
+            </h2>
+            <p className="cd-section-lede">
+              Every chapter tags confidence: published regulator and tender sources, verified branch interviews, and
+              modelled estimates where public data stops. That ladder lets medical, commercial, and access leaders cite
+              the same narrative in board packs, AI-assisted briefings, and NUPCO or EKAP negotiation prep — without
+              mixing syndicated device shares with unverified anecdotes. Sponsors receive the gap register so
+              follow-on field can close specific unknowns instead of re-running the whole programme.
+            </p>
+            <p className="text-sm text-[#3D4A5C] leading-relaxed">
+              For broader healthcare context, see{' '}
+              <Link to="/healthcare-market-research/saudi-arabia" className="text-[#0069A3] underline">
+                Saudi healthcare market research
+              </Link>{' '}
+              and{' '}
+              <Link to="/clinical-diagnostics-proposal-request" className="text-[#0069A3] underline">
+                register for the full proposal deck
+              </Link>
+              .
+            </p>
           </section>
 
           <section className="cd-page cd-page--break">
