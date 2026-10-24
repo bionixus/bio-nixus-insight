@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. New Zealand modules can run with comparable cells in the USA, UK, EU5 (Germany, France, Italy, Spain), Canada, Japan, Singapore, South Korea, and Australia — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does PHARMAC Factors for Consideration shape research design?',
+    answer:
+      'PHARMAC weighs clinical benefit, health need, cost-effectiveness, budget impact, and equity factors — not a single QALY line. Studies must surface clinician and patient evidence that maps to those nine Factors, plus PTAC committee dynamics, before a funding application is filed. BioNixus designs pre-submission qualitative and quantitative modules so access teams know which Factor gaps committees will challenge first.',
+  },
+  {
+    question: 'How is Māori and Pacific health equity incorporated in NZ fieldwork?',
+    answer:
+      'Research involving Māori communities follows Te Ara Tika and tikanga-aligned engagement — appropriate consultation, culturally safe moderation, and reporting that respects data sovereignty expectations. Pacific health networks are recruited where therapy burden or access inequity is material to PHARMAC equity arguments. This is operational methodology, not a generic diversity statement.',
+  },
 ];
 
 const jsonLd = [

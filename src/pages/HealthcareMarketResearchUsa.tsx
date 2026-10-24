@@ -83,7 +83,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-10-23',
+    dateModified: '2026-10-24',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',

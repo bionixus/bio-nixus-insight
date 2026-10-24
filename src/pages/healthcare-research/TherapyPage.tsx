@@ -675,7 +675,17 @@ export default function TherapyPage() {
                         { href: '#biosimilars-modules', label: 'Research modules' },
                         { href: '#biosimilars-execution', label: 'Defense & switching' },
                       ]
-                    : [];
+                    : area === 'cardiovascular'
+                      ? [
+                          { href: '#cardiovascular-pathway', label: 'Pathway research' },
+                          { href: '#cardiovascular-modules', label: 'Research modules' },
+                        ]
+                      : area === 'digital-health'
+                        ? [
+                            { href: '#digital-health-pathway', label: 'Adoption research' },
+                            { href: '#digital-health-modules', label: 'Research modules' },
+                          ]
+                        : [];
   const heroTitle = isBiologics
     ? 'Biologics market research services'
     : isImmunology
@@ -2121,6 +2131,131 @@ export default function TherapyPage() {
                 so brand, medical, and access teams synchronise on device economics and substitution behaviour before
                 scale-up.
               </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'cardiovascular' ? (
+        <>
+          <ReportPremiumSection
+            id="cardiovascular-pathway"
+            title="Cardiovascular pathway research: acute, chronic, and primary-care ownership"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Cardiovascular forecasts break when specialist enthusiasm is treated as long-term persistence.
+                BioNixus separates{' '}
+                <strong className="font-medium text-foreground">acute event pathways</strong>,{' '}
+                <strong className="font-medium text-foreground">secondary-prevention cascades</strong>, and{' '}
+                <strong className="font-medium text-foreground">chronic hypertension and heart-failure maintenance</strong>{' '}
+                — then maps who initiates, titrates, and owns adherence after discharge or first specialist visit.
+              </p>
+              <p>
+                Lipid, anticoagulation, SGLT2, and PCSK9 programmes each face different formulary step therapy and
+                pharmacist substitution rules in GCC tender hospitals versus UK ICB formularies. Comparable survey cores
+                let regional governance compare markets; local modules preserve channel realism.
+              </p>
+              <p>
+                Pair this guide with{' '}
+                <Link to="/healthcare-market-research/therapy/diabetes" className="text-primary underline">
+                  diabetes and metabolic research
+                </Link>
+                ,{' '}
+                <Link to="/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>
+                , and the{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research hub
+                </Link>{' '}
+                when cardiometabolic portfolios share payer committees.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="cardiovascular-modules"
+            title="Modules BioNixus integrates for cardiovascular engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Undertreatment and titration forensics:</strong> where
+                  guideline targets are known but not reached in primary care or post-discharge follow-up.
+                </li>
+                <li>
+                  <strong className="text-foreground">Cardiology–GP handoff mapping:</strong> initiation versus
+                  maintenance ownership for anticoagulation, lipid, and heart-failure therapy classes.
+                </li>
+                <li>
+                  <strong className="text-foreground">Value narrative testing:</strong> outcome messaging against
+                  payer step therapy, reference pricing, and hospital P&amp;T criteria in high-burden populations.
+                </li>
+              </ul>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'digital-health' ? (
+        <>
+          <ReportPremiumSection
+            id="digital-health-pathway"
+            title="Digital health adoption: workflow fit, evidence, and procurement readiness"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Digital health products stall when pilots succeed clinically but fail operationally. BioNixus tests{' '}
+                <strong className="font-medium text-foreground">workflow integration</strong>,{' '}
+                <strong className="font-medium text-foreground">clinician and patient trust</strong>, and{' '}
+                <strong className="font-medium text-foreground">reimbursement or budget-holder willingness</strong>{' '}
+                before scale-up — not just usability in isolation.
+              </p>
+              <p>
+                SaMD, remote monitoring, and care-pathway software face different evidence bars in GCC ministry
+                systems, NHS ICB procurement, and EU MDR-aware hospitals. Research identifies which budget pays
+                (capital, service line, or insurer innovation fund) and which committee must approve integration.
+              </p>
+              <p>
+                Connect findings to{' '}
+                <Link to="/healthcare-market-research/therapy/digital-health" className="text-primary underline">
+                  digital health hub context
+                </Link>
+                ,{' '}
+                <Link to="/clinical-diagnostics-market-research" className="text-primary underline">
+                  clinical diagnostics research
+                </Link>
+                , and{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research services
+                </Link>{' '}
+                when IVD-adjacent software shares hospital laboratory governance.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="digital-health-modules"
+            title="Modules BioNixus integrates for digital health engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Adoption and abandonment studies:</strong> where friction
+                  appears after week four of use, not only in onboarding.
+                </li>
+                <li>
+                  <strong className="text-foreground">Payer and procurement mapping:</strong> evidence packages
+                  committees expect before listing or tender award.
+                </li>
+                <li>
+                  <strong className="text-foreground">Stakeholder segmentation:</strong> clinical champions, IT
+                  governance, administrators, and patients weighted by decision influence.
+                </li>
+              </ul>
             </div>
           </ReportPremiumSection>
         </>

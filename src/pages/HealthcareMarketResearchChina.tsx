@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Chinese modules can run with comparable cells in Japan, South Korea, Singapore, Australia, and global markets — using consistent instruments. This enables global portfolio committees managing Asia-Pacific launch sequencing and NHSA-to-PMDA-to-HIRA payer benchmarking from one research partner.',
   },
+  {
+    question: 'How should teams research NRDL negotiation and VBP impact together?',
+    answer:
+      'NHSA NRDL listing and VBP tender outcomes interact: a therapy can win NRDL inclusion yet face rapid price erosion when a VBP round includes its molecule class or a close biosimilar substitute. BioNixus pairs physician prescribing research with hospital pharmacy and procurement interviews so teams model net price, volume, and substitution risk in the same programme rather than treating payer and tender dynamics as separate desk exercises.',
+  },
+  {
+    question: 'When should global affiliates brief BioNixus instead of syndicated China feeds alone?',
+    answer:
+      'Syndicated hospital or retail feeds answer national trend questions; they rarely explain why a Tier 3A centre delays formulary listing, how provincial PRLS rules differ from NRDL, or which KOL narratives move pharmacy committees under DRG cost pressure. BioNixus is the primary-research layer for those account-level decisions — scoped alongside syndicated contracts, not as a replacement for audited sales data.',
+  },
 ];
 
 const jsonLd = [
