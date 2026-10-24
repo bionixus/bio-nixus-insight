@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-23T04:03:33.639Z",
+    "generatedAt": "2026-10-24T04:07:24.302Z",
     "baseUrl": "https://www.bionixus.com",
     "wordThreshold": 2000,
     "totalAudited": 674,
@@ -1052,6 +1052,19 @@
       "error": null
     },
     {
+      "pathname": "/bionixus-industries",
+      "url": "https://www.bionixus.com/bionixus-industries",
+      "finalUrl": "https://www.bionixus.com/bionixus-industries",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Market Research Across Industries | BioNixus",
+      "h1": "One research firm guiding every industry we serve",
+      "wordCount": 1258,
+      "thin": true,
+      "gap": 742,
+      "error": null
+    },
+    {
       "pathname": "/pt/about",
       "url": "https://www.bionixus.com/pt/about",
       "finalUrl": "https://www.bionixus.com/pt/about",
@@ -1101,19 +1114,6 @@
       "wordCount": 1209,
       "thin": true,
       "gap": 791,
-      "error": null
-    },
-    {
-      "pathname": "/bionixus-industries",
-      "url": "https://www.bionixus.com/bionixus-industries",
-      "finalUrl": "https://www.bionixus.com/bionixus-industries",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Market Research Across Industries | BioNixus",
-      "h1": "One research firm guiding every industry we serve",
-      "wordCount": 1203,
-      "thin": true,
-      "gap": 797,
       "error": null
     },
     {
@@ -4341,6 +4341,19 @@
       "error": null
     },
     {
+      "pathname": "/uae-influenza-vaccine-report",
+      "url": "https://www.bionixus.com/uae-influenza-vaccine-report",
+      "finalUrl": "https://www.bionixus.com/uae-influenza-vaccine-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "UAE Influenza Vaccine Market Report 2026 | BioNixus",
+      "h1": "UAE Influenza Vaccine Report 2026: Seasonality, Procurement, Payer Access, and Competitive Landscape",
+      "wordCount": 4777,
+      "thin": false,
+      "gap": -2777,
+      "error": null
+    },
+    {
       "pathname": "/hta-studies-saudi-arabia",
       "url": "https://www.bionixus.com/hta-studies-saudi-arabia",
       "finalUrl": "https://www.bionixus.com/hta-studies-saudi-arabia",
@@ -4351,19 +4364,6 @@
       "wordCount": 4771,
       "thin": false,
       "gap": -2771,
-      "error": null
-    },
-    {
-      "pathname": "/uae-influenza-vaccine-report",
-      "url": "https://www.bionixus.com/uae-influenza-vaccine-report",
-      "finalUrl": "https://www.bionixus.com/uae-influenza-vaccine-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "UAE Influenza Vaccine Market Report 2026 | BioNixus",
-      "h1": "UAE Influenza Vaccine Report 2026: Seasonality, Procurement, Payer Access, and Competitive Landscape",
-      "wordCount": 4766,
-      "thin": false,
-      "gap": -2766,
       "error": null
     },
     {
@@ -4491,9 +4491,9 @@
       "inSitemap": true,
       "title": "Sweden Healthcare Market Research Report 2026 | BioNixus",
       "h1": "Sweden Healthcare Market Report 2026: TLV Reimbursement, NT-rådet Hospital Drug Recommendations, and Commercial Intelligence",
-      "wordCount": 4231,
+      "wordCount": 4245,
       "thin": false,
-      "gap": -2231,
+      "gap": -2245,
       "error": null
     },
     {
@@ -4835,6 +4835,19 @@
       "error": null
     },
     {
+      "pathname": "/qatar-healthcare-market-report",
+      "url": "https://www.bionixus.com/qatar-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/qatar-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Qatar Healthcare Market Report 2026 | BioNixus",
+      "h1": "Qatar Healthcare Market Report 2026: Pharmaceutical Intelligence, HMC Access, and HTA Landscape",
+      "wordCount": 3352,
+      "thin": false,
+      "gap": -1352,
+      "error": null
+    },
+    {
       "pathname": "/market-access",
       "url": "https://www.bionixus.com/market-access",
       "finalUrl": "https://www.bionixus.com/market-access",
@@ -4845,19 +4858,6 @@
       "wordCount": 3350,
       "thin": false,
       "gap": -1350,
-      "error": null
-    },
-    {
-      "pathname": "/qatar-healthcare-market-report",
-      "url": "https://www.bionixus.com/qatar-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/qatar-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Qatar Healthcare Market Report 2026 | BioNixus",
-      "h1": "Qatar Healthcare Market Report 2026: Pharmaceutical Intelligence, HMC Access, and HTA Landscape",
-      "wordCount": 3339,
-      "thin": false,
-      "gap": -1339,
       "error": null
     },
     {
@@ -5459,19 +5459,6 @@
       "error": null
     },
     {
-      "pathname": "/gcc-anesthesia-surgical-market-report",
-      "url": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
-      "finalUrl": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "GCC Anesthesia & Surgical Market 2026: Size & Country Data",
-      "h1": "GCC Anesthesia and Surgical Market Report 2026: Hospital Procedure Volumes and Drug Consumption Intelligence",
-      "wordCount": 2708,
-      "thin": false,
-      "gap": -708,
-      "error": null
-    },
-    {
       "pathname": "/bahrain-medical-devices-market-report",
       "url": "https://www.bionixus.com/bahrain-medical-devices-market-report",
       "finalUrl": "https://www.bionixus.com/bahrain-medical-devices-market-report",
@@ -5508,6 +5495,19 @@
       "wordCount": 2690,
       "thin": false,
       "gap": -690,
+      "error": null
+    },
+    {
+      "pathname": "/gcc-anesthesia-surgical-market-report",
+      "url": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
+      "finalUrl": "https://www.bionixus.com/gcc-anesthesia-surgical-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "GCC Anesthesia & Surgical Market 2026: Size & Country Data",
+      "h1": "GCC Anesthesia and Surgical Market Report 2026: Hospital Procedure Volumes and Drug Consumption Intelligence",
+      "wordCount": 2685,
+      "thin": false,
+      "gap": -685,
       "error": null
     },
     {
@@ -5875,19 +5875,6 @@
       "error": null
     },
     {
-      "pathname": "/saudi-arabia-healthcare-market-report",
-      "url": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Saudi Arabia Healthcare Market Report 2026 | BioNixus",
-      "h1": "Saudi Arabia Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Vision 2030 Strategy",
-      "wordCount": 2473,
-      "thin": false,
-      "gap": -473,
-      "error": null
-    },
-    {
       "pathname": "/pharmaceutical-market-research-sweden",
       "url": "https://www.bionixus.com/pharmaceutical-market-research-sweden",
       "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-sweden",
@@ -5914,6 +5901,19 @@
       "error": null
     },
     {
+      "pathname": "/saudi-arabia-healthcare-market-report",
+      "url": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Saudi Arabia Healthcare Market Report 2026 | BioNixus",
+      "h1": "Saudi Arabia Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Vision 2030 Strategy",
+      "wordCount": 2461,
+      "thin": false,
+      "gap": -461,
+      "error": null
+    },
+    {
       "pathname": "/pharmaceutical-market-research-switzerland",
       "url": "https://www.bionixus.com/pharmaceutical-market-research-switzerland",
       "finalUrl": "https://www.bionixus.com/pharmaceutical-market-research-switzerland",
@@ -5921,19 +5921,6 @@
       "inSitemap": true,
       "title": "Pharmaceutical Market Research Switzerland | BioNixus",
       "h1": "Pharmaceutical Market Research Company in Switzerland",
-      "wordCount": 2458,
-      "thin": false,
-      "gap": -458,
-      "error": null
-    },
-    {
-      "pathname": "/uae-healthcare-market-report",
-      "url": "https://www.bionixus.com/uae-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/uae-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "UAE Healthcare Market Report 2026: Size, Pharma & Devices",
-      "h1": "UAE Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Commercial Strategy",
       "wordCount": 2458,
       "thin": false,
       "gap": -458,
@@ -5963,6 +5950,19 @@
       "wordCount": 2449,
       "thin": false,
       "gap": -449,
+      "error": null
+    },
+    {
+      "pathname": "/uae-healthcare-market-report",
+      "url": "https://www.bionixus.com/uae-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/uae-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "UAE Healthcare Market Report 2026: Size, Pharma & Devices",
+      "h1": "UAE Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Commercial Strategy",
+      "wordCount": 2447,
+      "thin": false,
+      "gap": -447,
       "error": null
     },
     {
@@ -6226,19 +6226,6 @@
       "error": null
     },
     {
-      "pathname": "/usa-healthcare-market-report",
-      "url": "https://www.bionixus.com/usa-healthcare-market-report",
-      "finalUrl": "https://www.bionixus.com/usa-healthcare-market-report",
-      "status": 200,
-      "inSitemap": true,
-      "title": "USA Healthcare Market Research Report 2026 | BioNixus",
-      "h1": "USA Healthcare Market Report 2026: FDA Approval, Medicare IRA Negotiations, and Commercial Market Intelligence",
-      "wordCount": 2314,
-      "thin": false,
-      "gap": -314,
-      "error": null
-    },
-    {
       "pathname": "/egypt-medical-tourism-market",
       "url": "https://www.bionixus.com/egypt-medical-tourism-market",
       "finalUrl": "https://www.bionixus.com/egypt-medical-tourism-market",
@@ -6288,6 +6275,19 @@
       "wordCount": 2303,
       "thin": false,
       "gap": -303,
+      "error": null
+    },
+    {
+      "pathname": "/usa-healthcare-market-report",
+      "url": "https://www.bionixus.com/usa-healthcare-market-report",
+      "finalUrl": "https://www.bionixus.com/usa-healthcare-market-report",
+      "status": 200,
+      "inSitemap": true,
+      "title": "USA Healthcare Market Research Report 2026 | BioNixus",
+      "h1": "USA Healthcare Market Report 2026: FDA Approval, Medicare IRA Negotiations, and Commercial Market Intelligence",
+      "wordCount": 2300,
+      "thin": false,
+      "gap": -300,
       "error": null
     },
     {
@@ -9816,6 +9816,19 @@
       "error": null
     },
     {
+      "pathname": "/bionixus-industries",
+      "url": "https://www.bionixus.com/bionixus-industries",
+      "finalUrl": "https://www.bionixus.com/bionixus-industries",
+      "status": 200,
+      "inSitemap": true,
+      "title": "Market Research Across Industries | BioNixus",
+      "h1": "One research firm guiding every industry we serve",
+      "wordCount": 1258,
+      "thin": true,
+      "gap": 742,
+      "error": null
+    },
+    {
       "pathname": "/pt/about",
       "url": "https://www.bionixus.com/pt/about",
       "finalUrl": "https://www.bionixus.com/pt/about",
@@ -9865,19 +9878,6 @@
       "wordCount": 1209,
       "thin": true,
       "gap": 791,
-      "error": null
-    },
-    {
-      "pathname": "/bionixus-industries",
-      "url": "https://www.bionixus.com/bionixus-industries",
-      "finalUrl": "https://www.bionixus.com/bionixus-industries",
-      "status": 200,
-      "inSitemap": true,
-      "title": "Market Research Across Industries | BioNixus",
-      "h1": "One research firm guiding every industry we serve",
-      "wordCount": 1203,
-      "thin": true,
-      "gap": 797,
       "error": null
     },
     {
