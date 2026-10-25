@@ -267,6 +267,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'How long do neurology and CNS research programmes typically take?',
+      answer:
+        'Focused specialist surveys can complete in four to six weeks when centres are concentrated and IRB or ethics review is streamlined. Mixed-method programmes with caregiver modules, payer-adjacent interviews, and multi-country cells usually run eight to twelve weeks because scarce specialists and committee calendars extend recruitment.',
+    },
+    {
+      question: 'Can neurology research connect to rare-disease and gene-therapy modules?',
+      answer:
+        'Yes. Many CNS franchises overlap orphan pathways, managed-entry agreements, and centre-of-excellence concentration. Combined modules reduce duplicate outreach and clarify where medical affairs, access, and patient-finding investments should coordinate rather than compete for the same specialist bandwidth.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +298,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'What evidence do payers expect before funding digital health at scale?',
+      answer:
+        'Beyond safety and efficacy, committees increasingly ask for workflow time savings, budget impact, integration cost, and real-world utilisation persistence—not pilot satisfaction scores alone. BioNixus designs studies that document those gates explicitly so product and access teams know which evidence to generate before scale-up conversations.',
+    },
+    {
+      question: 'How does digital health research differ for SaMD versus connected devices?',
+      answer:
+        'Software-as-a-medical-device programmes face distinct regulatory classification, update governance, and liability questions compared with hardware-centric remote monitoring. Research modules reflect whether procurement is hospital IT-led, clinical-service-led, or payer innovation budget-led—each with different stakeholders and evidence formats.',
     },
   ],
   dermatology: [

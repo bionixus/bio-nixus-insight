@@ -278,6 +278,36 @@ export default function HealthcareMarketResearchItaly() {
           </div>
         </section>
 
+        {/* Syndicated vs primary */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Syndicated data versus primary research in Italy
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Italian affiliates typically maintain IQVIA or regional audit subscriptions for national prescription and
+                hospital feed trends. Those datasets answer volume questions but rarely explain why AIFA nota limitative
+                restrictions, regional PT Regionale delays, or IRCCS committee preferences block uptake after PFN listing.
+                BioNixus is the primary-research complement: Italian-language HCP and payer depth, SSR formulary mapping, and
+                KOL networks at INT Milan, IEO, and Policlinico Gemelli when the decision is access, sequencing, or
+                messaging—not another national share chart.
+              </p>
+              <p>
+                Start from the{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline font-medium">
+                  healthcare market research hub
+                </Link>{' '}
+                and{' '}
+                <Link to="/pharmaceutical-market-research-italy" className="text-primary underline font-medium">
+                  Italy pharmaceutical market research
+                </Link>{' '}
+                when scoping EU5+Nordics programmes that include an Italian cell.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Regulatory depth */}
         <section className="section-padding py-10 bg-muted/20">
           <div className="container-wide max-w-5xl mx-auto">

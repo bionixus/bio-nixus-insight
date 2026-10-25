@@ -77,7 +77,7 @@ const jsonLd = [
     countryName: "Turkey",
     marketSlug: "turkey",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-10-25",
   })
 ];
 
@@ -117,6 +117,9 @@ const TurkeyHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Turkey is the largest healthcare market between Europe and the GCC — a 87-million-population market with near-universal SGK coverage, EMA-aligned regulation, and the world's fourth-largest medical tourism sector. Its position at the Europe-MENA crossroads creates natural strategic relevance for pharmaceutical companies managing multi-regional portfolios.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Launch and access teams should model TİTCK registration reciprocity, SGK SUT listing cadence, and EUR-linked reference pricing together—not as sequential checkboxes—because exchange-rate revisions and hospital rebate negotiations can reset net economics within a single budget year. BioNixus triangulates physician panels with consumption analogues at tertiary centres when tenders or SUT criteria shift faster than syndicated audit refresh cycles.
+          </p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
