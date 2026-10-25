@@ -83,7 +83,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-10-25',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -177,6 +177,7 @@ export default function HealthcareMarketResearchUsa() {
           { href: '#audiences', label: 'Audiences' },
           { href: '#methodology', label: 'Methodology' },
           { href: '#access', label: 'FDA · CMS · IRA' },
+          { href: '#us-search-ctr', label: 'US search & AI' },
           { href: '#syndicated-vs-primary', label: 'Syndicated vs primary' },
           { href: `#${faqSectionId}`, label: 'FAQ' },
         ]}
@@ -335,6 +336,46 @@ export default function HealthcareMarketResearchUsa() {
         </ReportPremiumSection>
 
         <ReportPremiumSection
+          id="us-search-ctr"
+          title="Improving US search visibility and AI-assistant citations"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              US impressions are large but CTR remains structurally low when titles read like generic vendor lists and meta
+              descriptions omit the decision (PBM block, IRA exposure, IDN formulary loss). This page uses answer-first
+              blocks, structured FAQs, and Service plus Article schema so Google and AI assistants can cite BioNixus for
+              healthcare market research in the USA—not only rank syndicated comparison pages that never name a primary-research
+              partner.
+            </p>
+            <p>
+              Affiliates comparing syndicated vendors should still read the{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="text-primary font-medium hover:underline">
+                USA healthcare MR companies shortlist
+              </Link>{' '}
+              and{' '}
+              <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                IQVIA alternative guide
+              </Link>{' '}
+              when the brief requires account-level HCP and payer evidence beyond national audit feeds.
+            </p>
+            <p>
+              For multi-market portfolios, US cells can run in parallel with{' '}
+              <Link to="/healthcare-market-research/uk" className="text-primary font-medium hover:underline">
+                UK
+              </Link>
+              ,{' '}
+              <Link to="/healthcare-market-research/germany" className="text-primary font-medium hover:underline">
+                Germany
+              </Link>
+              , and GCC modules so global committees compare prescribing, payer, and access friction on one instrument
+              without reconciling incompatible vendor exports.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
           id="syndicated-vs-primary"
           title="When US affiliates brief BioNixus vs IQVIA or NielsenIQ"
           variant="muted"
@@ -368,6 +409,15 @@ export default function HealthcareMarketResearchUsa() {
               Typical US primary programmes run 3–4 weeks for focused HCP waves and 6–10 weeks for mixed-method access
               work including PBM interviews. Custom research from $10,000 to $60,000. Proposal turnaround is typically 48 hours once objectives,
               audience, and geography are defined.
+            </p>
+            <p>
+              Every US engagement documents IRB or exempt status, HIPAA handling, and de-identified reporting up front so
+              medical, legal, and procurement reviewers can approve fieldwork without restarting methodology discussions mid-study.
+            </p>
+            <p>
+              Contact the US routing team via the{' '}
+              <Link to="/contact" className="text-primary font-medium hover:underline">proposal form</Link> with therapy
+              area, payer priority (PBM, CMS, IDN), and timeline; most scopes receive a methods outline within two business days.
             </p>
           </div>
         </ReportPremiumSection>
