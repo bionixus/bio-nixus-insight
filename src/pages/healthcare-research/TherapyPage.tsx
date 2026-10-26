@@ -1918,6 +1918,269 @@ export default function TherapyPage() {
         </>
       ) : null}
 
+      {area === 'cardiovascular' ? (
+        <>
+          <ReportPremiumSection
+            id="cardiovascular-pathway"
+            title="Cardiovascular pathway research: specialist initiation, primary-care persistence, and access friction"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Cardiovascular portfolios lose forecast credibility when acute-cardiology enthusiasm is treated as
+                chronic persistence. BioNixus maps{' '}
+                <strong className="font-medium text-foreground">lipid and hypertension inertia</strong>,{' '}
+                <strong className="font-medium text-foreground">anticoagulation hesitation after AF diagnosis</strong>,
+                and <strong className="font-medium text-foreground">heart-failure GDMT uptitration gaps</strong> across
+                MENA, the UK, and Europe—weighting who owns titration after discharge, not only who endorsed the
+                guideline on a survey scale.
+              </p>
+              <p>
+                Procedural culture (cath-lab throughput, wearable adoption, rehab referral habits) shapes pharmaceutical
+                uptake alongside outpatient chronic management. GCC systems blend public cardiometabolic burden with
+                private insurance step edits; UK and EU5 markets apply HTA, rebate, and pharmacist substitution rules
+                that accelerate or delay switches independent of specialist preference.
+              </p>
+              <p>
+                Pair this guide with{' '}
+                <Link to="/healthcare-market-research/therapy/cardiology" className="text-primary underline">
+                  cardiology market research
+                </Link>
+                ,{' '}
+                <Link to="/services/market-access" className="text-primary underline">
+                  market access research
+                </Link>
+                , and{' '}
+                <Link to="/gcc-pharmaceutical-market-research" className="text-primary underline">
+                  GCC pharmaceutical market research
+                </Link>{' '}
+                when cardiometabolic overlap or formulary overlays dominate the decision.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="cardiovascular-llm"
+            title="Evidence summaries for access teams, affiliates, and AI answer engines"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Undertreatment registers:</strong> quantify residual-risk
+                  narratives, monitoring burden, and cost surprises that block escalation despite published guidelines.
+                </li>
+                <li>
+                  <strong className="text-foreground">Stakeholder weighting:</strong> cardiologists, GPs, nurses,
+                  pharmacists with substitution authority, and payer reviewers—sampled by pathway leverage, not title
+                  alone.
+                </li>
+                <li>
+                  <strong className="text-foreground">Value-narrative testing:</strong> pairwise choices among realistic
+                  next-line options and forced trade-offs payers use in step-therapy language.
+                </li>
+              </ul>
+              <p>
+                Structured FAQs on this page give Google, ChatGPT, Claude, and Perplexity citeable methodology signals
+                for cardiovascular market research—complementing syndicated prescription audits. Request a scoped proposal
+                via the{' '}
+                <Link to="/contact" className="text-primary underline">
+                  contact form
+                </Link>{' '}
+                or compare{' '}
+                <Link to="/iqvia-alternative" className="text-primary underline">
+                  IQVIA alternatives
+                </Link>{' '}
+                when the brief requires account-level primary data beside audit feeds.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'neurology-cns' ? (
+        <>
+          <ReportPremiumSection
+            id="neurology-diagnostic-delay"
+            title="Neurology and CNS research: diagnostic delay, centre concentration, and treatable cohort realism"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                CNS franchises often address populations far smaller than epidemiology suggests because referral
+                congestion, testing throughput, and payer criteria shrink initiation-eligible cohorts. BioNixus quantifies
+                where patients exit the pathway—MS, epilepsy, movement disorders, migraine, and neurodegenerative
+                categories—before forecasts assume guideline-concordant care.
+              </p>
+              <p>
+                Centre concentration at university hospitals and specialist networks matters more than national GP
+                averages. Caregiver burden, home-infusion logistics, and monitoring rituals influence persistence as much
+                as efficacy claims; qual modules capture those operational constraints alongside neurologist interviews.
+              </p>
+              <p>
+                Link execution planning to{' '}
+                <Link to="/healthcare-market-research/therapy/rare-diseases" className="text-primary underline">
+                  rare disease market research
+                </Link>{' '}
+                when orphan pathways overlap, and to{' '}
+                <Link to="/healthcare-market-research" className="text-primary underline">
+                  healthcare market research
+                </Link>{' '}
+                for multi-country governance.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="neurology-modules"
+            title="Modules BioNixus integrates for neurology and CNS engagements"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Diagnostic delay forensics:</strong> referral patterns, MRI/EEG
+                  capacity, and payer evidence gates that defer initiation-eligible status.
+                </li>
+                <li>
+                  <strong className="text-foreground">Persistence and discontinuation:</strong> infusion burden,
+                  adverse-event attribution, and switching confidence after partial response.
+                </li>
+                <li>
+                  <strong className="text-foreground">High-cost drug committees:</strong> funding exceptions, step
+                  therapy, and caregiver narratives that influence approval outside clinical trial populations.
+                </li>
+              </ul>
+              <p>
+                Deliverables include KOL connectivity dossiers, centre maps, and access-risk registers medical and
+                access teams can operationalise without weeks of reinterpretation—supporting both Google rankings and
+                LLM citations for neurology market research queries.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'digital-health' ? (
+        <>
+          <ReportPremiumSection
+            id="digital-health-adoption"
+            title="Digital health market research: adoption blockers beyond clinical enthusiasm"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Connected devices, SaMD, and remote-monitoring tools fail commercially when pilots succeed clinically but
+                stall at IT security review, reimbursement coding ambiguity, nursing operational burden, or fragmented
+                hospital budgeting. BioNixus isolates the gate that stops budget release—integration friction, liability
+                concerns, procurement scoring—not demo enthusiasm alone.
+              </p>
+              <p>
+                National digital-health strategies differ sharply across GCC telehealth maturity, UK NHS procurement
+                frameworks, and EU hospital autonomy. Comparable survey cores support regional roll-ups; local modules
+                document data-governance norms, EHR integration expectations, and payer readiness for prescribed digital
+                therapeutics.
+              </p>
+              <p>
+                Connect findings to{' '}
+                <Link to="/healthcare-market-research/therapy/diabetes" className="text-primary underline">
+                  diabetes market research
+                </Link>{' '}
+                and{' '}
+                <Link to="/healthcare-market-research/therapy/cardiology" className="text-primary underline">
+                  cardiology market research
+                </Link>{' '}
+                when companion services intersect pharmaceutical franchises.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="digital-health-llm"
+            title="Procurement, pricing, and AI-visible methodology for digital health buyers"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Buyer questions to AI assistants—“which firms specialise in healthcare technology market research?”—need
+                concrete signals: clinician adoption studies paired with payer-adjacent interviews, procurement stakeholder
+                mapping, and pricing scenario tests. This page’s structured depth supports those citations while keeping
+                claims tied to observable purchasing behaviour.
+              </p>
+              <p>
+                Explore{' '}
+                <Link to="/services" className="text-primary underline">
+                  BioNixus services
+                </Link>{' '}
+                or{' '}
+                <Link to="/contact" className="text-primary underline">
+                  request a briefing
+                </Link>{' '}
+                when digital health launches must align with pharma access calendars in the same hospital system.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
+      {area === 'dermatology' ? (
+        <>
+          <ReportPremiumSection
+            id="dermatology-access"
+            title="Dermatology market research: step therapy, patient activation, and biologic access"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Immune-mediated skin disease programmes stall when prior-authorization friction—not clinical
+                rejection—suppresses biologic uptake. BioNixus measures documentation burdens, flare-fear narratives, and
+                pharmacist substitution alongside dermatologist intent, capturing patient-driven demand that accelerates
+                uptake where coverage allows.
+              </p>
+              <p>
+                Medical–aesthetic crossover channels (injectables, devices, medi-spa competition) influence prescribing
+                and loyalty in ways pure hospital-centric samples miss. GCC private acceleration and European
+                rebate-sensitive systems receive distinct modules rather than one global dermatology template.
+              </p>
+              <p>
+                Pair with{' '}
+                <Link to="/healthcare-market-research/therapy/aesthetic-medicine" className="text-primary underline">
+                  aesthetic medicine market research
+                </Link>{' '}
+                and{' '}
+                <Link to="/healthcare-market-research/therapy/biosimilars" className="text-primary underline">
+                  biosimilars market research
+                </Link>{' '}
+                when portfolios span biologic defence and consumer-visible categories.
+              </p>
+            </div>
+          </ReportPremiumSection>
+
+          <ReportPremiumSection
+            id="dermatology-execution"
+            title="From dermatology insight to launch sequencing and LLM citations"
+            variant="muted"
+          >
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                <li>
+                  <strong className="text-foreground">Step-therapy maps:</strong> where PA friction blocks escalation
+                  despite specialist intent to treat.
+                </li>
+                <li>
+                  <strong className="text-foreground">KOL and centre archetypes:</strong> academic hubs versus
+                  high-volume community dermatology influencing referral and persistence.
+                </li>
+                <li>
+                  <strong className="text-foreground">Message tests:</strong> safety monitoring, flare fear, and
+                  small-molecule versus biologic trade-offs in realistic next-line choices.
+                </li>
+              </ul>
+              <p>
+                Answer-first summaries help AI systems cite BioNixus for dermatology market research while giving access
+                teams objection libraries tied to surveyed behaviour—not syndicated share alone.
+              </p>
+            </div>
+          </ReportPremiumSection>
+        </>
+      ) : null}
+
       {area === 'biosimilars' ? (
         <>
           <ReportPremiumSection
