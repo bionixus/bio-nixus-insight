@@ -14,6 +14,11 @@ import {
   INDUSTRIES_SILO_GROQ,
 } from '@/lib/blog-content-silo';
 import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
+import {
+  canonicalAlsaadanyJobTitle,
+  isAlsaadanyDisplayName,
+  replaceLegacyAlsaadanyPhrases,
+} from '@/data/editorialAuthors';
 
 function overlayHardcodedSeoPost(post: BlogPost): BlogPost {
   if (!isHardcodedSeoBlogSlug(post.slug)) return post;
@@ -225,7 +230,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       ? (p as RawSanityPost & { authorName: string }).authorName.trim()
       : '';
 
-  return {
+  const mapped: BlogPost = {
     id: p._id,
     slug: p.slug ?? p._id,
     title: p.title ?? 'Untitled',
@@ -291,6 +296,11 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     })()),
     language: p.language ?? undefined,
   };
+  const corrected = replaceLegacyAlsaadanyPhrases(mapped);
+  if (isAlsaadanyDisplayName(corrected.authorName)) {
+    corrected.authorTitle = canonicalAlsaadanyJobTitle(corrected.authorTitle);
+  }
+  return corrected;
 }
 
 /** Test Sanity connection. Returns { ok: true } or { ok: false, error: string }. */

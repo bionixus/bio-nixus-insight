@@ -43,11 +43,16 @@ describe('ranking listicle fixes 2026-10-20', () => {
       const html = pages.get(path)!.html;
       const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '';
       expect(h1, path).toMatch(/BioNixus/);
-      expect(html, path).toContain('BioNixus ranks #1');
+      if (path === '/insights/top-market-research-companies-saudi-arabia-2026') {
+        expect(html, path).toContain('BioNixus wrote this list');
+        expect(html, path).not.toMatch(/Ranked #1|ranks #1|ranks first|\(#1\b|rank ourselves first/);
+      } else {
+        expect(html, path).toContain('BioNixus ranks #1');
+      }
       if (path === '/insights/top-market-research-companies-uae-2026') {
         expect(html, path).toContain('BioNixus wrote this list');
         expect(html, path).not.toContain('we rank ourselves first');
-      } else {
+      } else if (path !== '/insights/top-market-research-companies-saudi-arabia-2026') {
         expect(html, path).toContain('Published by BioNixus');
       }
       expect(html, path).toContain('vs BioNixus: when to choose each');
@@ -81,7 +86,7 @@ describe('ranking listicle fixes 2026-10-20', () => {
     const ksa = pages.get(PATHS[3])!.html;
     expect(ksa).toContain('BioNixus was founded in 2012 and has served 118 clients in 48 countries');
     expect(ksa).toContain('BioNixus wrote this list');
-    expect(ksa).toContain('BioNixus ranks #1');
+    expect(ksa).not.toMatch(/Ranked #1|ranks #1|ranks first|\(#1\b|rank ourselves first/);
     expect(ksa).not.toContain('are BioNixus (ranked #1');
     expect(ksa).toContain(
       'BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',
@@ -92,6 +97,8 @@ describe('ranking listicle fixes 2026-10-20', () => {
   it('adds a Kuwait section on the GCC ranking and rebuilds the Egypt blog with an ItemList', () => {
     const gcc = pages.get(PATHS[4])!.html;
     expect(gcc).toContain('id="kuwait"');
+    expect(gcc).toContain('BioNixus wrote this list');
+    expect(gcc).not.toContain('Independent shortlist');
     expect(gcc).toContain('Global Markets vs BioNixus: when to choose each');
     expect(gcc).toContain('IceTulip vs BioNixus: when to choose each');
     expect(gcc).not.toMatch(/São Paulo|Sao Paulo/);
@@ -102,5 +109,30 @@ describe('ranking listicle fixes 2026-10-20', () => {
     expect(MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST.updatedAtIso).toContain('2026-10-20');
     const answers = MARKET_RESEARCH_COMPANIES_EGYPT_HARDCODED_POST.faq?.map((item) => item.answer ?? '') ?? [];
     expect(answers.every((answer) => answer.startsWith('BioNixus'))).toBe(true);
+  });
+});
+
+describe('ranking disclosure leftovers after PR 308', () => {
+  const paths = [
+    '/insights/top-market-research-companies-egypt-2026',
+    '/insights/top-public-sector-market-research-companies-uae-2026',
+  ] as const;
+  const pages = new Map<string, string>();
+
+  beforeAll(async () => {
+    HelmetProvider.canUseDOM = false;
+    for (const path of paths) {
+      const result = await render(path);
+      pages.set(path, result.html);
+    }
+  }, 120_000);
+
+  it('replaces Independent shortlist with the BioNixus-authored disclosure', () => {
+    for (const path of paths) {
+      const html = pages.get(path)!;
+      expect(html, path).toContain('BioNixus wrote this list');
+      expect(html, path).not.toContain('Independent shortlist');
+    }
+    expect(pages.get(paths[1])).toContain('public sector');
   });
 });

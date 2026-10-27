@@ -48,7 +48,7 @@ import {
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
-import { alsaadanyProfileUrl, authorLinkedInForDisplay } from '@/data/editorialAuthors';
+import { alsaadanyProfileUrl, authorLinkedInForDisplay, canonicalAlsaadanyJobTitle } from '@/data/editorialAuthors';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import BlogSiteExplorer from '@/components/BlogSiteExplorer';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
@@ -1339,8 +1339,9 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={authorLinkedIn}
         authorJobTitle={
-          post.authorTitle?.trim()
-          || (alsaadanyProfileUrl(post.authorName) ? 'Director' : 'Healthcare Market Research Lead')
+          alsaadanyProfileUrl(post.authorName)
+            ? canonicalAlsaadanyJobTitle(post.authorTitle)
+            : (post.authorTitle?.trim() || 'Healthcare Market Research Lead')
         }
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}

@@ -20,11 +20,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
+import { ALSAADANY_JOB_TITLE } from '@/data/editorialAuthors';
 
 const pageUrl = 'https://www.bionixus.com/fr/bionixus-market-research-middle-east';
 const englishSiblingUrl = 'https://www.bionixus.com/bionixus-market-research-middle-east';
 const pageImage = 'https://www.bionixus.com/images/quant-hcp-survey-executive.png';
-const lastUpdated = '2026-03-17';
+const lastUpdated = '2026-10-27';
 const editorialLead = 'Dr. Mohammad Alsaadany';
 const contactHref = '/fr/contact';
 
@@ -386,7 +387,7 @@ const FrBionixusMarketResearchMiddleEast = () => {
               </p>
               <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-white/5 text-primary-foreground/80 text-xs px-3 py-1 mb-4 ml-2">
                 <CalendarDays className="w-3.5 h-3.5 text-gold-warm" />
-                Dernière mise à jour : mars 2026
+                Dernière mise à jour : 27 octobre 2026
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-5 leading-tight">
                 Études pharmaceutiques Moyen-Orient qui accélèrent les décisions de lancement au CCG
@@ -897,7 +898,7 @@ const FrBionixusMarketResearchMiddleEast = () => {
                 <PersonNameLink name={editorialLead} className="text-inherit no-underline" />
               </h2>
               <p className="text-sm text-primary font-medium mb-3">
-                Conseiller Études de Marché Santé, BioNixus
+                {ALSAADANY_JOB_TITLE}, BioNixus
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Cette page est revue face aux conditions actives du marché pharmaceutique CCG et aux

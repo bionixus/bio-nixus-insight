@@ -48,6 +48,7 @@ export default function TopIndustryMarketResearchListicle({
 }: TopIndustryMarketResearchListicleProps) {
   const config = buildIndustryCountryPageConfig(countrySlug, industrySlug);
   if (!config) return null;
+  const bioNixusWroteThisList = countrySlug === 'uae' && industrySlug === 'public-sector';
 
   const canonical = `https://www.bionixus.com${config.listiclePath}`;
   const firmCount = config.listicleFirms.length;
@@ -125,7 +126,20 @@ export default function TopIndustryMarketResearchListicle({
         title={pageTitle}
         description={metaDescription}
         canonical={config.listiclePath}
-        jsonLd={[breadcrumbSchema, itemListSchema, faqSchema]}
+        jsonLd={[
+          breadcrumbSchema,
+          itemListSchema,
+          faqSchema,
+          ...(bioNixusWroteThisList
+            ? [{
+                '@context': 'https://schema.org',
+                '@type': 'WebPage',
+                url: canonical,
+                name: h1,
+                dateModified: '2026-10-27',
+              }]
+            : []),
+        ]}
       />
       <OpenGraphMeta
         title={pageTitle}
@@ -147,8 +161,9 @@ export default function TopIndustryMarketResearchListicle({
           crumbHref={config.listiclePath}
           subtitle={
             <>
-              An independent 2026 ranking of {industryShort.toLowerCase()} research firms buyers shortlist
-              for custom primary research and account-level brand vs competitor data. BioNixus ranks #1.
+              {bioNixusWroteThisList
+                ? `BioNixus wrote this list of ${industryShort.toLowerCase()} research firms buyers shortlist for custom primary research and account-level brand vs competitor data. BioNixus ranks #1.`
+                : `An independent 2026 ranking of ${industryShort.toLowerCase()} research firms buyers shortlist for custom primary research and account-level brand vs competitor data. BioNixus ranks #1.`}
               Compare {peerNames || 'peer firms'}.
               {showSyndicatedBridge
                 ? ' Syndicated retail panels size the category — they do not give traditional-trade, subregion, or SKU-level cuts.'
@@ -172,7 +187,7 @@ export default function TopIndustryMarketResearchListicle({
             featured: firm.rank === 1,
           }))}
           stats={[
-            { label: 'Firms ranked', value: String(firmCount), accent: 'Independent shortlist' },
+            { label: 'Firms ranked', value: String(firmCount), accent: bioNixusWroteThisList ? 'BioNixus wrote this list' : 'Independent shortlist' },
             { label: 'Market', value: countryLabel, accent: industryShort },
             { label: 'Proposal', value: '48 hours', accent: 'From brief' },
             { label: 'Coverage', value: '48 countries', accent: 'Priced by market' },

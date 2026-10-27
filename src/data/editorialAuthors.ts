@@ -3,6 +3,27 @@
  * Do not invent names. See .cursor/rules/editorial-authors.mdc.
  */
 
+import {
+  ALSAADANY_JOB_TITLE as ALSAADANY_JOB_TITLE_VALUE,
+  canonicalAlsaadanyJobTitle as canonicalAlsaadanyJobTitleValue,
+  replaceLegacyAlsaadanyPhrases as replaceLegacyAlsaadanyPhrasesValue,
+  replaceMeaDirectorTitle as replaceMeaDirectorTitleValue,
+} from '../../scripts/data/alsaadany-title.mjs';
+
+export const ALSAADANY_JOB_TITLE: string = ALSAADANY_JOB_TITLE_VALUE;
+
+export function canonicalAlsaadanyJobTitle(title: string | null | undefined): string {
+  return canonicalAlsaadanyJobTitleValue(title);
+}
+
+export function replaceMeaDirectorTitle(value: string): string {
+  return replaceMeaDirectorTitleValue(value);
+}
+
+export function replaceLegacyAlsaadanyPhrases<T>(value: T): T {
+  return replaceLegacyAlsaadanyPhrasesValue(value) as T;
+}
+
 export type EditorialRegion = 'west' | 'mena' | 'neutral';
 export type EditorialPageType = 'comparison' | 'article';
 export type ListicleRegionHint =
@@ -76,8 +97,6 @@ export const MENA_AUTHORS: readonly EditorialAuthor[] = [
     jobTitle: 'Healthcare Analyst, GCC',
   },
 ] as const;
-
-export const ALSAADANY_JOB_TITLE = 'AMEA Director (APAC, Middle East and Africa)';
 
 export const ALSAADANY_AUTHOR: EditorialAuthor = {
   id: '11ed7ad8-6b57-4358-ac18-a9f32105dab6',
@@ -217,7 +236,9 @@ export function authorLinkedInForDisplay(name: string | undefined, url: string |
 /**
  * Person / author JSON-LD for Mohammad Alsaadany.
  * Sets `url` to the English profile and appends the site root to `sameAs`.
- * Keeps an existing jobTitle; uses the AMEA Director title only when none is set.
+ * Legacy titles (MEA Director, Healthcare Market Research Advisor, the old
+ * welcome-email signature) become the AMEA Director title. Any other explicit
+ * jobTitle is kept.
  */
 export function withAlsaadanyPersonJsonLd<
   T extends {
@@ -231,7 +252,7 @@ export function withAlsaadanyPersonJsonLd<
   const raw = person.sameAs;
   const sameAs = [...(Array.isArray(raw) ? raw : raw ? [raw] : [])];
   if (!sameAs.includes(ALSAADANY_SAME_AS_URL)) sameAs.push(ALSAADANY_SAME_AS_URL);
-  const jobTitle = person.jobTitle && person.jobTitle.trim() ? person.jobTitle : ALSAADANY_JOB_TITLE;
+  const jobTitle = canonicalAlsaadanyJobTitle(person.jobTitle);
   return {
     ...person,
     url: ALSAADANY_PROFILE_URL,

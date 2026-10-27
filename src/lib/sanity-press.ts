@@ -11,7 +11,12 @@ import {
 } from '@/lib/pressReleaseVisibility'
 import type { PressRelease, PressReleaseListItem } from '@/types/pressRelease'
 import type { PortableTextBlock } from '@portabletext/types'
+import { replaceLegacyAlsaadanyPhrases } from '@/data/editorialAuthors'
 import { applyLatamOfficeFacts } from '../../scripts/data/press-release-brazil-latam-2026.mjs'
+
+function withLivePressCopy<T>(release: T): T {
+  return replaceLegacyAlsaadanyPhrases(applyLatamOfficeFacts(release))
+}
 
 type RawPressRelease = {
   _id: string
@@ -127,7 +132,7 @@ export async function fetchSanityPressReleasesWithClient(
     (rows || [])
       .map((r) => mapRawToListItem(r))
       .filter((r): r is PressReleaseListItem => r !== null)
-      .map((item) => applyLatamOfficeFacts(item) as PressReleaseListItem),
+      .map((item) => withLivePressCopy(item)),
   )
 }
 
@@ -137,7 +142,7 @@ export async function fetchSanityPressReleaseBySlugWithClient(
 ): Promise<PressRelease | null> {
   const raw = await client.fetch<RawPressRelease | null>(BY_SLUG_QUERY, { slug })
   const mapped = mapRawToPressRelease(raw)
-  return assertPublicPressRelease(mapped ? (applyLatamOfficeFacts(mapped) as PressRelease) : mapped)
+  return assertPublicPressRelease(mapped ? withLivePressCopy(mapped) : mapped)
 }
 
 export async function fetchSanityPressReleases(): Promise<PressReleaseListItem[]> {
