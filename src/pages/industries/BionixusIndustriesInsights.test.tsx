@@ -46,9 +46,9 @@ describe('industries insights hub design', () => {
     expect(text).toContain('A physician network of about 3,200');
     expect(text).toContain('Sheikh Zayed, the biggest MEA office');
     expect(text).toContain('in the process of opening a São Paulo office by the end of 2026');
-    expect(text).toContain('Field office: Al Khobar');
-    expect(text).toContain('Field office: Salmiya');
-    expect(text).toContain('Regional leadership office (US headquarters): Sheridan');
+    expect(text).toContain('partner office for KSA: Al Khobar');
+    expect(text).toContain('field office for Kuwait: Salmiya');
+    expect(text).toContain('Americas office and global HQ: Sheridan');
     const withoutApprovedSaoPaulo = text.split('in the process of opening a São Paulo office by the end of 2026').join('');
     expect(withoutApprovedSaoPaulo).not.toMatch(/São Paulo/);
     expect(text).not.toMatch(/guaranteed accuracy/i);

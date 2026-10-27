@@ -193,7 +193,8 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
 
   it('floors sitemap lastmod, lists the six URLs in llms.txt, and keeps SSR critical paths', () => {
     for (const path of GSC_PATHS) {
-      expect(sitemapScript).toContain(`[\`\${BASE}${path}\`]: '2026-10-17'`);
+      const floor = path === '/iqvia-alternative' ? '2026-10-27' : '2026-10-17';
+      expect(sitemapScript).toContain(`[\`\${BASE}${path}\`]: '${floor}'`);
     }
     expect(llms).toContain('# Last GEO refresh: 2026-Q4 (2026-10-17)');
     expect(llms).toContain('https://www.bionixus.com/healthcare-market-research');

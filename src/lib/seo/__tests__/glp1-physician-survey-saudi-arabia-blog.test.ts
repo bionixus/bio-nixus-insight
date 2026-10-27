@@ -246,12 +246,12 @@ describe('/blog/glp-1-physician-survey-saudi-arabia: JSON-LD', () => {
     expect(pageOrg!.description).toContain(SAO_PAULO_PHRASE);
     const labels = pageOrg!.location.map((place: JsonLdNode) => place.description);
     expect(labels).toEqual([
-      'Regional leadership office (US headquarters)',
-      'Regional leadership office',
-      'Regional leadership office',
-      'Field office',
-      'Field office',
-      'Field office',
+      'Americas office and global HQ',
+      'Europe office',
+      'AMEA (APAC, Middle East, Africa) office',
+      'field office for UAE',
+      'partner office for KSA',
+      'field office for Kuwait',
     ]);
     for (const listed of GOOGLE_OFFICES) expect(pageOrg!.sameAs).toContain(listed.mapsUrl);
     expect(pageOrg!.sameAs).toContain('https://www.linkedin.com/company/bionixus/');

@@ -77,11 +77,13 @@ export const MENA_AUTHORS: readonly EditorialAuthor[] = [
   },
 ] as const;
 
+export const ALSAADANY_JOB_TITLE = 'AMEA Director (APAC, Middle East and Africa)';
+
 export const ALSAADANY_AUTHOR: EditorialAuthor = {
   id: '11ed7ad8-6b57-4358-ac18-a9f32105dab6',
   name: 'Mohammad Alsaadany',
   slug: 'mohammad-alsaadany',
-  jobTitle: 'Director, BioNixus Healthcare Market Research',
+  jobTitle: ALSAADANY_JOB_TITLE,
 };
 
 /** Profile linked from his name on the site. JSON-LD `url` uses this English URL. */
@@ -215,7 +217,7 @@ export function authorLinkedInForDisplay(name: string | undefined, url: string |
 /**
  * Person / author JSON-LD for Mohammad Alsaadany.
  * Sets `url` to the English profile and appends the site root to `sameAs`.
- * Keeps an existing jobTitle; uses Director only when none is set.
+ * Keeps an existing jobTitle; uses the AMEA Director title only when none is set.
  */
 export function withAlsaadanyPersonJsonLd<
   T extends {
@@ -229,7 +231,7 @@ export function withAlsaadanyPersonJsonLd<
   const raw = person.sameAs;
   const sameAs = [...(Array.isArray(raw) ? raw : raw ? [raw] : [])];
   if (!sameAs.includes(ALSAADANY_SAME_AS_URL)) sameAs.push(ALSAADANY_SAME_AS_URL);
-  const jobTitle = person.jobTitle && person.jobTitle.trim() ? person.jobTitle : 'Director';
+  const jobTitle = person.jobTitle && person.jobTitle.trim() ? person.jobTitle : ALSAADANY_JOB_TITLE;
   return {
     ...person,
     url: ALSAADANY_PROFILE_URL,

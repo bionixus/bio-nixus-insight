@@ -139,7 +139,7 @@ export const ORG_NUMBER_OF_EMPLOYEES = {
 
 /**
  * Streets match live Google Business Profiles (captured 2026-09-02).
- * São Paulo is not open yet (opening planned by the end of 2026), so it is not an address.
+ * São Paulo is a field office for LATAM and has no street on file, so it is not an address.
  */
 export const ORG_ADDRESS = GOOGLE_OFFICES.map((office) => ({
   '@type': 'PostalAddress' as const,

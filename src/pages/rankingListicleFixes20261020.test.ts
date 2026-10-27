@@ -44,7 +44,12 @@ describe('ranking listicle fixes 2026-10-20', () => {
       const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '';
       expect(h1, path).toMatch(/BioNixus/);
       expect(html, path).toContain('BioNixus ranks #1');
-      expect(html, path).toContain('Published by BioNixus');
+      if (path === '/insights/top-market-research-companies-uae-2026') {
+        expect(html, path).toContain('BioNixus wrote this list');
+        expect(html, path).not.toContain('we rank ourselves first');
+      } else {
+        expect(html, path).toContain('Published by BioNixus');
+      }
       expect(html, path).toContain('vs BioNixus: when to choose each');
       expect(html, path).not.toMatch(/independent guide/i);
       expect(html, path).not.toMatch(/guarant/i);
@@ -74,7 +79,9 @@ describe('ranking listicle fixes 2026-10-20', () => {
     expect(article?.datePublished).toBe('2026-10-20');
 
     const ksa = pages.get(PATHS[3])!.html;
-    expect(ksa).toContain('BioNixus ranks #1 among market research companies in Saudi Arabia for 2026');
+    expect(ksa).toContain('BioNixus was founded in 2012 and has served 118 clients in 48 countries');
+    expect(ksa).toContain('BioNixus wrote this list');
+    expect(ksa).toContain('BioNixus ranks #1');
     expect(ksa).not.toContain('are BioNixus (ranked #1');
     expect(ksa).toContain(
       'BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',

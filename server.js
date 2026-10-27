@@ -548,7 +548,7 @@ function buildFallbackDescription(pathname) {
     return 'Oncology KOL mapping in Saudi Arabia: physician networks, influence scoring, utilization context, and GCC engagement—BioNixus.';
   }
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'BioNixus runs biosimilar market entry research in Saudi Arabia from Dubai: SFDA 2026 guideline, NUPCO tender and physician switching studies. $10k–$60k.';
+    return 'BioNixus runs biosimilar market entry research in Saudi Arabia from the Al Khobar partner office for KSA: SFDA, NUPCO and physician switching studies.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';

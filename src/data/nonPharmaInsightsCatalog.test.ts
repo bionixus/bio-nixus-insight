@@ -130,12 +130,12 @@ describe('industries insights schema', () => {
     expect(addresses).toContain('Al Khobar');
     expect(addresses).toContain('Salmiya');
     expect(org.location.map((place) => place.description)).toEqual([
-      'Regional leadership office (US headquarters)',
-      'Regional leadership office',
-      'Regional leadership office',
-      'Field office',
-      'Field office',
-      'Field office',
+      'Americas office and global HQ',
+      'Europe office',
+      'AMEA (APAC, Middle East, Africa) office',
+      'field office for UAE',
+      'partner office for KSA',
+      'field office for Kuwait',
     ]);
     expect(org.location.map((place) => place.address.addressLocality)).toEqual([
       'Sheridan',

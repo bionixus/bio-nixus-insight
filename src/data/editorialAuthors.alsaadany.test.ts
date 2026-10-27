@@ -55,9 +55,9 @@ describe('Alsaadany profile links', () => {
     ]);
   });
 
-  it('uses Director only when his Person node has no jobTitle', () => {
+  it('uses the AMEA Director title only when his Person node has no jobTitle', () => {
     const node = asPerson(withAlsaadanyPersonJsonLd({ '@type': 'Person' as const, name: 'Mohammad Alsaadany' }));
-    expect(node.jobTitle).toBe('Director');
+    expect(node.jobTitle).toBe('AMEA Director (APAC, Middle East and Africa)');
     expect(node.url).toBe(ALSAADANY_PROFILE_URL);
     expect(node.sameAs).toEqual([ALSAADANY_SAME_AS_URL]);
   });
@@ -84,7 +84,7 @@ describe('Alsaadany profile links', () => {
 
   it('keeps the roster jobTitle on his editorial author object', () => {
     const node = asPerson(personAuthorJsonLd(ALSAADANY_AUTHOR));
-    expect(node.jobTitle).toBe('Director, BioNixus Healthcare Market Research');
+    expect(node.jobTitle).toBe('AMEA Director (APAC, Middle East and Africa)');
     expect(node.url).toBe(ALSAADANY_PROFILE_URL);
     expect(node.sameAs).toEqual([ALSAADANY_SAME_AS_URL]);
   });

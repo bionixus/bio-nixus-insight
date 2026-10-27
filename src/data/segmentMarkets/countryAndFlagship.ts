@@ -312,9 +312,11 @@ const uaeObesity: SegmentMarketContent = {
   breadcrumbLabel: 'UAE Obesity Market',
   title: 'UAE Obesity Market Insights: GLP-1 & Bariatric | BioNixus',
   description:
-    'UAE obesity market insights on GLP-1 access and prescribing, bariatric surgery, insurance coverage in Dubai and Abu Dhabi, and self-pay patient behaviour.',
+    'UAE obesity market insights cover GLP-1 access and prescribing, bariatric surgery, insurance rules in Dubai and Abu Dhabi, and self-pay patient behaviour.',
+  exactMeta: true,
   canonical: `${SEGMENT_MARKET_BASE}/uae-obesity-market`,
-  lastUpdated: '2026-10-05',
+  serviceName: 'UAE Obesity Market Research',
+  lastUpdated: '2026-10-27',
   h1: 'UAE Obesity Market Insights: Access, Prescribing, and Patient Pathways',
   intro: [
     'UAE obesity market insights have to start with a commercial reality that separates this market from Europe or North America: a large share of weight-management treatment is paid for out of pocket, in private clinics, by patients who behave like consumers rather than passive recipients of care. BioNixus researches that behaviour directly — what triggers treatment, what patients pay, where they drop out, and which clinicians they trust.',
