@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
+import { CountryHealthcareMarketDepthSection } from '@/components/seo/CountryHealthcareMarketDepthSection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
@@ -380,6 +381,8 @@ export default function HealthcareMarketResearchItaly() {
             </div>
           </div>
         </section>
+
+        <CountryHealthcareMarketDepthSection marketKey="italy" />
 
         <CTASection variant="country" countryName="Italy" />
       </main>
