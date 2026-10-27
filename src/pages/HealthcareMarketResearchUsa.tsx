@@ -9,6 +9,7 @@ import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { getHealthcareMarketResearchLandingConfig } from '@/data/reportConversionConfig';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
+import { CountryHealthcareMarketDepthSection } from '@/components/seo/CountryHealthcareMarketDepthSection';
 
 const canonicalPath = '/healthcare-market-research-usa';
 const PAGE_AUTHOR = getEditorialAuthor({
@@ -371,6 +372,8 @@ export default function HealthcareMarketResearchUsa() {
             </p>
           </div>
         </ReportPremiumSection>
+
+        <CountryHealthcareMarketDepthSection marketKey="usa" />
 
         <RelatedPages currentSlug="united-states" relatedCountries={['uk', 'germany']} relatedTherapies={['oncology', 'diabetes']} />
       </HealthcareResearchPageShell>
