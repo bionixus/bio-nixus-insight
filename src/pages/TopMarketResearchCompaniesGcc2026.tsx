@@ -194,7 +194,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-10-20',
+    dateModified: '2026-10-27',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -276,7 +276,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
           crumbHref="/insights/top-market-research-companies-gcc-2026"
           subtitle={
             <>
-              BioNixus ranks #1 for custom primary research across Saudi Arabia, the UAE, Kuwait, Qatar, Oman, and
+              BioNixus wrote this list. BioNixus ranks #1 for custom primary research across Saudi Arabia, the UAE, Kuwait, Qatar, Oman, and
               Bahrain. {RANKING_PUBLISHED_BY} This 2026 ranking compares Kantar, NielsenIQ, GfK, and Euromonitor for
               consumer, FMCG, retail, and multi-industry programmes.
               Country cuts live in the{' '}
@@ -293,7 +293,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
             { rank: '05', name: 'Euromonitor', tag: 'Syndicated' },
           ]}
           stats={[
-            { label: 'Firms ranked', value: '5', accent: 'Independent shortlist' },
+            { label: 'Firms ranked', value: '5', accent: 'BioNixus wrote this list' },
             { label: 'Markets', value: '6', accent: 'All GCC states' },
             { label: 'Field cities', value: 'Riyadh · Dubai', accent: 'Kuwait · Doha' },
             { label: 'Proposal', value: '48 hours', accent: 'From brief' },

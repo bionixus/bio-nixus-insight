@@ -34,7 +34,7 @@ export const UAE_HUB_COMPANIES_COPY: HealthcareHubCompaniesCopy = {
   path: '/healthcare-market-research/uae',
   title: 'Healthcare Market Research UAE: DHA, DOH & MOHAP | BioNixus',
   description:
-    'UAE healthcare market research hub: DHA, DOH, MOHAP and EDE context, therapy priorities and reports from BioNixus Dubai. Hiring? See our company page.',
+    'UAE healthcare market research hub: DHA, DOH, MOHAP and EDE context and therapy priorities. Dubai is BioNixus\'s field office for UAE. See our company page.',
   h1: 'Healthcare Market Research in the UAE: Dubai, Abu Dhabi & Federal Hub',
   opening:
     'This is BioNixus\'s UAE healthcare market research hub, run from our field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2. If you are choosing a healthcare market research company in UAE, start with our company page.',

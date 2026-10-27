@@ -194,8 +194,10 @@ export function getGoogleOffice(id: GoogleOfficeId): GoogleOffice {
   return office;
 }
 
+export type OfficeRoleId = GoogleOfficeId | 'latam';
+
 /** Visible footer label and Organization location description. */
-export function officeRoleLabel(office: Pick<GoogleOffice, 'id'>): string {
+export function officeRoleLabel(office: { id: OfficeRoleId }): string {
   switch (office.id) {
     case 'us':
       return 'Americas office and global HQ';
@@ -209,9 +211,16 @@ export function officeRoleLabel(office: Pick<GoogleOffice, 'id'>): string {
       return 'partner office for KSA';
     case 'kw':
       return 'field office for Kuwait';
+    case 'latam':
+      return 'field office for LATAM';
     default: {
       const never: never = office.id;
       return never;
     }
   }
+}
+
+/** São Paulo has no street on file. Use this sentence instead of a PostalAddress. */
+export function saoPauloFieldOfficeSentence(): string {
+  return `São Paulo is a ${officeRoleLabel({ id: 'latam' })}.`;
 }

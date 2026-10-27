@@ -22,10 +22,11 @@ import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { EmailCaptureForm } from '@/components/conversion/EmailCaptureForm';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
+import { ALSAADANY_JOB_TITLE } from '@/data/editorialAuthors';
 
 const pageUrl = 'https://www.bionixus.com/bionixus-market-research-middle-east';
 const pageImage = 'https://www.bionixus.com/images/quant-hcp-survey-executive.png';
-const lastUpdated = '2026-03-17';
+const lastUpdated = '2026-10-27';
 const editorialLead = 'Dr. Mohammad Alsaadany';
 const contactHref = '/contact';
 
@@ -328,7 +329,7 @@ const BionixusMarketResearchMiddleEast = () => {
               </p>
               <p className="inline-flex items-center gap-2 rounded-full border border-border bg-background text-foreground text-xs px-3 py-1 mb-4 ml-2">
                 <CalendarDays className="w-3.5 h-3.5 text-primary" />
-                Last updated: March 2026
+                Last updated: 27 October 2026
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-5">
                 Middle East Pharmaceutical Market Research That Moves GCC Launch Decisions Faster
@@ -917,7 +918,7 @@ const BionixusMarketResearchMiddleEast = () => {
               <h2 className="text-2xl font-display font-semibold text-foreground mb-2">
                 <PersonNameLink name={editorialLead} className="text-inherit no-underline" />
               </h2>
-              <p className="text-sm text-primary font-medium mb-3">Healthcare Market Research Advisor, BioNixus</p>
+              <p className="text-sm text-primary font-medium mb-3">{ALSAADANY_JOB_TITLE}, BioNixus</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 This page is reviewed against active GCC pharmaceutical market conditions and execution constraints. Last review date:
                 {' '}

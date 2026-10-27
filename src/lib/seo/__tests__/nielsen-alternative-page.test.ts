@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { officeRoleLabel, saoPauloFieldOfficeSentence } from '@/data/googleLocations';
 
 const root = join(process.cwd());
 const html = readFileSync(join(root, 'public/conf/nielsen-alternative.html'), 'utf8');
@@ -84,7 +85,11 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
     expect(schemas.some((node) => node['@type'] === 'ItemList')).toBe(true);
     expect(schemas.some((node) => node['@type'] === 'BreadcrumbList')).toBe(true);
     const page = schemas.find((node) => node['@type'] === 'WebPage');
-    expect(page?.dateModified).toBe('2026-10-17');
+    expect(page?.dateModified).toBe('2026-10-27');
+    expect(html).toContain(saoPauloFieldOfficeSentence());
+    expect(html).toContain(officeRoleLabel({ id: 'latam' }));
+    expect(html).not.toMatch(/opening a São Paulo/i);
+    expect(html).not.toMatch(/"addressLocality":"São Paulo"/);
     expect(page?.url).toBe('https://www.bionixus.com/nielsen-alternative');
   });
 

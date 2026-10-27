@@ -52,7 +52,7 @@ describe('/insights/top-market-research-companies-uae-2026 AEO lead', () => {
     expect(html).toContain('BioNixus ranks #1');
     expect(html).toContain('BioNixus wrote this list');
     expect(html).not.toContain('we rank ourselves first for custom primary research');
-    expect(html).not.toMatch(/Independent shortlist/);
+    expect(html).not.toMatch(/Independent\s+shortlist/);
     expect(html).not.toContain(OLD_QUOTE);
     expect(html).not.toMatch(/guarant/i);
     expect(html).toContain('Kantar vs BioNixus: when to choose each');

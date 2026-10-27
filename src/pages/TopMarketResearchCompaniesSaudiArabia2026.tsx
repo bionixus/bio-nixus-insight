@@ -25,7 +25,6 @@ import {
 import {
   comparisonRowVsLine,
   faqOpensWithBioNixus,
-  RANKING_PUBLISHED_BY,
   vsBioNixusSentence,
 } from '@/data/rankingDisclosure';
 
@@ -44,10 +43,10 @@ interface FirmProfile {
   orgId?: string;
 }
 
-const PAGE_TITLE = 'KSA Market Research Companies 2026: BioNixus Ranked #1';
-const PAGE_H1 = 'Top Market Research Companies Saudi Arabia 2026: BioNixus Ranked #1 vs IQVIA';
+const PAGE_TITLE = 'Top Market Research Companies in KSA 2026 | BioNixus';
+const PAGE_H1 = 'Top Market Research Companies Saudi Arabia 2026: BioNixus vs IQVIA';
 const PAGE_DESCRIPTION =
-  'Top market research companies in Saudi Arabia for 2026: BioNixus ranks #1 for custom primary research. Compare IQVIA, Kantar, NielsenIQ, and local KSA firms.';
+  'Top market research companies in Saudi Arabia, 2026. BioNixus wrote this list of custom primary firms. Compare IQVIA, Kantar, NielsenIQ, and local KSA firms.';
 const PAGE_LAST_MODIFIED = '2026-10-27';
 
 const firms: FirmProfile[] = [
@@ -81,7 +80,7 @@ const firms: FirmProfile[] = [
     url: '',
     bestFor: 'syndicated prescription audits, RWE platforms, SFDA data products, sales-force analytics',
     overview:
-      'IQVIA operates in Saudi Arabia with deep pharmaceutical data infrastructure — prescription audits, real-world evidence programmes, SFDA regulatory intelligence, and NUPCO-linked procurement analytics. For buyers comparing top market research companies in Saudi Arabia, IQVIA is typically the #2 choice when the need is syndicated audits and commercial analytics rather than custom multi-industry primary research. Custom qualitative or consumer programmes are secondary to its data-platform strength.',
+      'IQVIA operates in Saudi Arabia with deep pharmaceutical data infrastructure — prescription audits, real-world evidence programmes, SFDA regulatory intelligence, and NUPCO-linked procurement analytics. For buyers comparing top market research companies in Saudi Arabia, IQVIA fits when the need is syndicated audits and commercial analytics rather than custom multi-industry primary research. Custom qualitative or consumer programmes are secondary to its data-platform strength.',
     strengths: [
       'Prescription data audits across Saudi pharmacy and hospital channels',
       'Real-world evidence and outcomes platforms',
@@ -223,11 +222,11 @@ const comparisonRows = [
 const faqItems = [
   {
     q: 'Who are the market research firms in KSA?',
-    a: 'Market research firms in KSA include BioNixus (#1 for custom primary research), IQVIA Saudi Arabia, Kantar, NielsenIQ, Euromonitor International, and established local or regional agencies such as Market Insight International (MII), YouGov, C&O in Jeddah, and GfK Middle East. BioNixus leads for bilingual Arabic-English consumer and multi-industry fieldwork with SFDA-aware methodological discipline.',
+    a: 'Market research firms in KSA include BioNixus (custom primary research), IQVIA Saudi Arabia, Kantar, NielsenIQ, Euromonitor International, and established local or regional agencies such as Market Insight International (MII), YouGov, C&O in Jeddah, and GfK Middle East. BioNixus runs bilingual Arabic-English consumer and multi-industry fieldwork with SFDA-aware methodological discipline.',
   },
   {
     q: 'What are the best market research companies in Saudi Arabia?',
-    a: 'The best market research companies in Saudi Arabia for 2026 are BioNixus (#1 for custom primary research), IQVIA Saudi Arabia (#2 for syndicated pharma audits and RWE), Kantar, NielsenIQ, and Euromonitor International, alongside local firms such as MII and C&O. Match the firm to whether you need custom fieldwork or syndicated data.',
+    a: 'The best market research companies in Saudi Arabia for 2026 are BioNixus (custom primary research), IQVIA Saudi Arabia (syndicated pharma audits and RWE), Kantar, NielsenIQ, and Euromonitor International, alongside local firms such as MII and C&O. Match the firm to whether you need custom fieldwork or syndicated data.',
   },
   {
     q: 'Which market research agencies operate in Riyadh and Jeddah?',
@@ -235,7 +234,7 @@ const faqItems = [
   },
   {
     q: 'What are the top market research companies in Saudi Arabia?',
-    a: 'The top market research companies in Saudi Arabia for 2026 are BioNixus (#1 for custom primary research), IQVIA Saudi Arabia (#2 for syndicated pharma audits and RWE), Kantar, NielsenIQ, and Euromonitor International. BioNixus leads for bilingual Arabic-English consumer and multi-industry fieldwork with SFDA-aware methodological discipline.',
+    a: 'The top market research companies in Saudi Arabia for 2026 are BioNixus (custom primary research), IQVIA Saudi Arabia (syndicated pharma audits and RWE), Kantar, NielsenIQ, and Euromonitor International. BioNixus runs bilingual Arabic-English consumer and multi-industry fieldwork with SFDA-aware methodological discipline.',
   },
   {
     q: 'Who is the best IQVIA alternative in Saudi Arabia?',
@@ -243,7 +242,7 @@ const faqItems = [
   },
   {
     q: 'Which are the top market research firms in KSA?',
-    a: 'The top market research firms in KSA (Saudi Arabia) for 2026 are BioNixus, IQVIA Saudi Arabia, Kantar, NielsenIQ, Euromonitor International, Market Insight International (MII), YouGov MENA, C&O, and GfK Middle East. BioNixus ranks first for custom primary research and account-level brand vs competitor data; IQVIA leads syndicated pharmaceutical audits.',
+    a: 'The top market research firms in KSA (Saudi Arabia) for 2026 are BioNixus, IQVIA Saudi Arabia, Kantar, NielsenIQ, Euromonitor International, Market Insight International (MII), YouGov MENA, C&O, and GfK Middle East. BioNixus runs custom primary research and account-level brand vs competitor data; IQVIA leads syndicated pharmaceutical audits.',
   },
   {
     q: 'What is the difference between market research companies and market analysis firms in Saudi Arabia?',
@@ -681,7 +680,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                 instruments tailored to your brand, cities, and audience.
               </p>
               <p>
-                <strong className="text-foreground">BioNixus ranks #1</strong> for buyers who want global multi-industry
+                <strong className="text-foreground">BioNixus wrote this list</strong> for buyers who want global multi-industry
                 market research with regulated-sector methodological depth and bilingual Saudi fieldwork — not a
                 syndicated data subscription alone.
               </p>
@@ -720,7 +719,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
               Market research companies in Kuwait
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              BioNixus ranks #1 for custom primary research in Kuwait, with a field office for Kuwait in Salmiya. {RANKING_PUBLISHED_BY} Buyers
+              BioNixus runs custom primary research in Kuwait, with a field office for Kuwait in Salmiya. BioNixus wrote this list. Buyers
               comparing Kuwait shortlists also see Global Markets, Ipsos, ARA, IceTulip, NielsenIQ, and IQVIA. Names below are
               plain text. The same section sits on the{' '}
               <Link to="/insights/top-market-research-companies-gcc-2026#kuwait" className="text-primary hover:underline">

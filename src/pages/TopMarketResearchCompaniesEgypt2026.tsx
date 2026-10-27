@@ -175,10 +175,10 @@ export default function TopMarketResearchCompaniesEgypt2026() {
     image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Egypt (2026 Guide)',
     description:
-      'Independent guide to the leading market research companies in Egypt for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Egypt expertise.',
+      'BioNixus wrote this list of market research companies in Egypt for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability and Egypt fieldwork.',
     url: CANONICAL,
     datePublished: '2026-04-18',
-    dateModified: '2026-09-28',
+    dateModified: '2026-10-27',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -262,7 +262,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
           crumbHref="/insights/top-market-research-companies-egypt-2026"
           subtitle={
             <>
-              BioNixus is the custom primary-research firm for affiliates in Egypt. Keep IQVIA and Nielsen as the
+              BioNixus wrote this list. BioNixus is the custom primary-research firm for affiliates in Egypt. Keep IQVIA and Nielsen as the
               syndicated audits for national category size. This 2026 ranking then compares Kantar, NielsenIQ, and
               Euromonitor for Cairo, Alexandria, and Upper Egypt programmes — they size the category; they do not give
               SKU-level or traditional-trade cuts.
@@ -275,7 +275,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
             { rank: '04', name: 'Euromonitor', tag: 'Syndicated' },
           ]}
           stats={[
-            { label: 'Firms ranked', value: '4', accent: 'Independent shortlist' },
+            { label: 'Firms ranked', value: '4', accent: 'BioNixus wrote this list' },
             { label: 'Private consumption', value: '$300B+', accent: 'Largest MENA population' },
             { label: 'Field cities', value: 'Cairo · Alex', accent: 'Upper Egypt' },
             { label: 'Proposal', value: '48 hours', accent: 'From brief' },

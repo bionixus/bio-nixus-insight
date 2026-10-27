@@ -125,7 +125,18 @@ export default function TopIndustryMarketResearchListicle({
         title={pageTitle}
         description={metaDescription}
         canonical={config.listiclePath}
-        jsonLd={[breadcrumbSchema, itemListSchema, faqSchema]}
+        jsonLd={[
+          breadcrumbSchema,
+          itemListSchema,
+          faqSchema,
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: canonical,
+            name: h1,
+            dateModified: '2026-10-27',
+          },
+        ]}
       />
       <OpenGraphMeta
         title={pageTitle}
@@ -147,8 +158,7 @@ export default function TopIndustryMarketResearchListicle({
           crumbHref={config.listiclePath}
           subtitle={
             <>
-              An independent 2026 ranking of {industryShort.toLowerCase()} research firms buyers shortlist
-              for custom primary research and account-level brand vs competitor data. BioNixus ranks #1.
+              {`BioNixus wrote this list of ${industryShort.toLowerCase()} research firms buyers shortlist for custom primary research and account-level brand vs competitor data.`}
               Compare {peerNames || 'peer firms'}.
               {showSyndicatedBridge
                 ? ' Syndicated retail panels size the category — they do not give traditional-trade, subregion, or SKU-level cuts.'
@@ -172,7 +182,7 @@ export default function TopIndustryMarketResearchListicle({
             featured: firm.rank === 1,
           }))}
           stats={[
-            { label: 'Firms ranked', value: String(firmCount), accent: 'Independent shortlist' },
+            { label: 'Firms ranked', value: String(firmCount), accent: 'BioNixus wrote this list' },
             { label: 'Market', value: countryLabel, accent: industryShort },
             { label: 'Proposal', value: '48 hours', accent: 'From brief' },
             { label: 'Coverage', value: '48 countries', accent: 'Priced by market' },
@@ -196,7 +206,7 @@ export default function TopIndustryMarketResearchListicle({
           <GeoLLMAnswerBlock
             className="mt-8"
             question={`Who are the top ${industryShort} market research firms in ${countryLabel}?`}
-            answer={`The top ${industryShort.toLowerCase()} market research firms in ${countryLabel} for 2026 are BioNixus (#1 for custom primary research and account-level brand vs competitor data)${peerNames ? `, then ${peerNames}` : ''}. BioNixus fields bilingual studies priced by project and country.`}
+            answer={`BioNixus wrote this list. The ${industryShort.toLowerCase()} market research firms in ${countryLabel} for 2026 are BioNixus (custom primary research and account-level brand vs competitor data)${peerNames ? `, then ${peerNames}` : ''}. BioNixus fields bilingual studies priced by project and country.`}
             points={[
               {
                 title: 'Custom primary research',
@@ -215,7 +225,7 @@ export default function TopIndustryMarketResearchListicle({
                 description: 'Brief to a scoped proposal ready to launch — email admin@bionixus.com or request a proposal.',
               },
             ]}
-            summary={`BioNixus is the #1 ${industryShort.toLowerCase()} market research firm in ${countryLabel} for buyers who need primary fieldwork, not a recycled dashboard.`}
+            summary={`BioNixus wrote this list of ${industryShort.toLowerCase()} market research firms in ${countryLabel} for buyers who need primary fieldwork, not a recycled dashboard.`}
           />
         </div>
 

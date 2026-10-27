@@ -548,7 +548,7 @@ export function buildIndustryCountryPageConfig(
       },
       {
         question: `Where is the top firms listicle for ${name.toLowerCase()} in ${country.label}?`,
-        answer: `See our independent 2026 guide at ${listiclePath} for firm comparisons; this page is BioNixus as your execution partner.`,
+        answer: `BioNixus wrote this list at ${listiclePath}; this page is BioNixus as your execution partner.`,
       },
     ],
     listicleFirms: buildListicleFirms(country, industry),
