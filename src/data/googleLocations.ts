@@ -6,7 +6,16 @@
 
 export type GoogleOfficeId = 'us' | 'uk' | 'eg' | 'ae' | 'sa' | 'kw';
 
-/** USA, London and Cairo lead the firm. Al Khobar, Dubai and Kuwait are field offices. */
+/**
+ * Standing office roles:
+ * USA = Americas office and global HQ
+ * UK = Europe office
+ * Cairo = AMEA (APAC, Middle East, Africa) office
+ * São Paulo = field office for LATAM (no street on file; not in this list)
+ * Al Khobar = partner office for KSA
+ * Kuwait = field office for Kuwait
+ * Dubai = field office for UAE
+ */
 export type OfficeTier = 'leadership' | 'field';
 
 export type GoogleOffice = {
@@ -52,7 +61,7 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
     schemaId: `${BASE}/#us-localbusiness`,
     name: 'BioNixus LLC USA',
     description:
-      'BioNixus LLC USA — regional leadership office and global headquarters in Sheridan, Wyoming.',
+      'BioNixus LLC USA — Americas office and global HQ in Sheridan, Wyoming.',
     telephone: '+1-888-465-5557',
     url: BASE,
     mapsUrl: 'https://maps.app.goo.gl/cqLtV7gy8jGxq4JV8',
@@ -77,7 +86,7 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
     schemaId: `${BASE}/#uk-localbusiness`,
     name: 'BioNixus UK',
     description:
-      'BioNixus UK — regional leadership office for pharmaceutical and healthcare market research in London.',
+      'BioNixus UK — Europe office in London.',
     telephone: '+44-7727-666682',
     url: BASE,
     mapsUrl: 'https://maps.app.goo.gl/h8eEUQ9V3TryGF1t7',
@@ -101,7 +110,7 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
     schemaId: `${BASE}/#eg-localbusiness`,
     name: 'BioNixus Egypt',
     description:
-      'BioNixus Egypt — regional leadership office in Sheikh Zayed, Giza.',
+      'BioNixus Egypt — AMEA (APAC, Middle East, Africa) office in Cairo (Sheikh Zayed, Giza).',
     telephone: '+20-120-688-2323',
     url: BASE,
     mapsUrl: 'https://share.google/Fhbb1PvbESItLDNSc',
@@ -122,7 +131,7 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
     schemaId: `${BASE}/#ae-localbusiness`,
     name: 'BioNixus UAE',
     description:
-      'BioNixus UAE — field office in Al Thuraya Tower 1, Al Sufouh 2, Dubai.',
+      'BioNixus UAE — field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai.',
     telephone: '+44-7727-666682',
     url: BASE,
     mapsUrl: 'https://share.google/TlyheRVZ5L1sFKPQy',
@@ -141,7 +150,7 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
     schemaId: `${BASE}/#sa-localbusiness`,
     name: 'BioNixus Saudi Arabia',
     description:
-      'BioNixus Saudi Arabia — field office in Al Khobar Al Shamalia.',
+      'BioNixus Saudi Arabia — partner office for KSA in Al Khobar.',
     telephone: '+966-50-182-5336',
     url: BASE,
     mapsUrl: 'https://share.google/Zv2GWYA71ULqo3wEU',
@@ -161,7 +170,7 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
     schemaId: `${BASE}/#kw-localbusiness`,
     name: 'BioNixus Kuwait',
     description:
-      'BioNixus Kuwait — field office at Olympia Mall, Salmiya.',
+      'BioNixus Kuwait — field office for Kuwait in Salmiya.',
     telephone: '+965-6502-3130',
     url: BASE,
     mapsUrl: 'https://share.google/IVQ1EAwF7wktCnYvk',
@@ -185,8 +194,24 @@ export function getGoogleOffice(id: GoogleOfficeId): GoogleOffice {
   return office;
 }
 
-/** Visible and schema label. US headquarters stays inside the leadership tier. */
-export function officeRoleLabel(office: Pick<GoogleOffice, 'id' | 'tier'>): string {
-  if (office.id === 'us') return 'Regional leadership office (US headquarters)';
-  return office.tier === 'leadership' ? 'Regional leadership office' : 'Field office';
+/** Visible footer label and Organization location description. */
+export function officeRoleLabel(office: Pick<GoogleOffice, 'id'>): string {
+  switch (office.id) {
+    case 'us':
+      return 'Americas office and global HQ';
+    case 'uk':
+      return 'Europe office';
+    case 'eg':
+      return 'AMEA (APAC, Middle East, Africa) office';
+    case 'ae':
+      return 'field office for UAE';
+    case 'sa':
+      return 'partner office for KSA';
+    case 'kw':
+      return 'field office for Kuwait';
+    default: {
+      const never: never = office.id;
+      return never;
+    }
+  }
 }

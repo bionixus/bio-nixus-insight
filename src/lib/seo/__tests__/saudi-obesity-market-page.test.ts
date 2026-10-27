@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { COUNTRY_FLAGSHIP_SEGMENT_PAGES } from '@/data/segmentMarkets/countryAndFlagship';
 import { GCC_MIDDLE_EAST_SEGMENT_PAGES } from '@/data/segmentMarkets/gccAndMiddleEast';
 import { SAUDI_DEVICES_CONSUMER_SEGMENT_PAGES } from '@/data/segmentMarkets/saudiDevicesConsumer';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
@@ -22,7 +23,7 @@ describe('/saudi-arabia-obesity-market', () => {
     expect(page?.description).toBe(META);
     expect(page?.h1).toBe('Obesity & GLP-1 Market Research in Saudi Arabia');
     expect(page?.canonical).toBe('https://www.bionixus.com/saudi-arabia-obesity-market');
-    expect(page?.lastUpdated).toBe('2026-10-20');
+    expect(page?.lastUpdated).toBe('2026-10-27');
     expect(page?.dateLabel).toBe('Last reviewed');
     const ctr = getCtrSeo('/saudi-arabia-obesity-market');
     expect(ctr?.title).toBe(TITLE);
@@ -34,7 +35,7 @@ describe('/saudi-arabia-obesity-market', () => {
     expect(page?.intro[0]).toMatch(/GLP-1 physician surveys/);
     expect(page?.intro[0]).toMatch(/patient-journey and persistence/);
     expect(page?.intro[0]).toMatch(/payer and access interviews/);
-    expect(page?.intro[0]).toMatch(/Al Khobar field office/);
+    expect(page?.intro[0]).toMatch(/Al Khobar partner office for KSA/);
     expect(page?.intro[0]).toMatch(/Cairo/);
     expect(page?.intro[0]).toMatch(/Sheridan/);
     expect(page?.intro[0]).toMatch(/not a syndicated pack/);
@@ -52,8 +53,9 @@ describe('/saudi-arabia-obesity-market', () => {
     expect(answerText).toMatch(/Patient journey and discontinuation|patient-journey and discontinuation/i);
     expect(answerText).toMatch(/SFDA, NUPCO, and CHI/);
     expect(answerText).toMatch(/Arabic and English/);
-    expect(answerText).toMatch(/Al Khobar field office/);
-    expect(answerText).toMatch(/field offices/);
+    expect(answerText).toMatch(/Al Khobar partner office for KSA/);
+    expect(answerText).toMatch(/field office for UAE/);
+    expect(answerText).toMatch(/field office for Kuwait/);
   });
 
   it('uses the confirmed hero stats', () => {
@@ -61,8 +63,7 @@ describe('/saudi-arabia-obesity-market', () => {
     expect(stats).toContain('$10,000–$60,000 custom studies');
     expect(stats).toContain('~3,200 physicians in network');
     expect(stats).toContain('127 studies year-to-date in 2026');
-    expect(stats).toContain('Al Khobar');
-    expect(stats).toContain('US HQ Sheridan, WY');
+    expect(stats).toContain('Al Khobar partner office for KSA');
   });
 
   it('compares publishers as plain text', () => {
@@ -93,9 +94,10 @@ describe('/saudi-arabia-obesity-market', () => {
     expect(page?.faqs[1]?.answer).toContain('[Who does obesity market research in Saudi Arabia?](/blog/who-does-obesity-market-research-saudi-arabia)');
     expect(page?.relatedLinks.some((link) => link.to === '/blog/who-does-obesity-market-research-saudi-arabia' && link.label === QUERY)).toBe(true);
     expect(page?.faqs[2]?.answer).toMatch(/Coverage is inconsistent: NUPCO public pathways, CHI private cover varies, and much is out of pocket/);
-    expect(page?.faqs[5]?.answer).toMatch(/Regional leadership offices/);
-    expect(page?.faqs[5]?.answer).toMatch(/Field offices/);
-    expect(page?.faqs[5]?.answer).toMatch(/in the process of opening a São Paulo office by the end of 2026/);
+    expect(page?.faqs[5]?.answer).toMatch(/Americas office and global HQ/);
+    expect(page?.faqs[5]?.answer).toMatch(/partner office for KSA/);
+    expect(page?.faqs[5]?.answer).toMatch(/São Paulo is a field office for LATAM/);
+    expect(page?.faqs[5]?.answer).not.toMatch(/in the process of opening a São Paulo office/);
     const schema = buildFAQSchema(page?.faqs ?? [], { pageUrl: page?.canonical }) as {
       mainEntity: Array<{ name: string; acceptedAnswer: { text: string } }>;
     };
@@ -103,7 +105,8 @@ describe('/saudi-arabia-obesity-market', () => {
     expect(schema.mainEntity.map((item) => item.acceptedAnswer.text)).toEqual(
       page?.faqs.map((item) => item.answer.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)')),
     );
-    expect(schema.mainEntity[5]?.acceptedAnswer.text).toContain(
+    expect(schema.mainEntity[5]?.acceptedAnswer.text).toContain('São Paulo is a field office for LATAM');
+    expect(schema.mainEntity[5]?.acceptedAnswer.text).not.toContain(
       'BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM',
     );
   });
@@ -137,5 +140,26 @@ describe('/saudi-arabia-obesity-market', () => {
     );
     expect(ranking).toContain('to="/saudi-arabia-obesity-market"');
     expect(ranking).toContain('Who does obesity market research in Saudi Arabia?');
+  });
+});
+
+describe('/uae-obesity-market schema id', () => {
+  it('gives the UAE obesity service a unique @id and a complete meta description', () => {
+    const uae = COUNTRY_FLAGSHIP_SEGMENT_PAGES.find((item) => item.slug === 'uae-obesity-market');
+    const kuwait = COUNTRY_FLAGSHIP_SEGMENT_PAGES.find((item) => item.slug === 'kuwait-obesity-market');
+    const sharedId = buildServiceSchema()['@id'];
+    const serviceId = (item: { serviceName?: string; canonical: string } | undefined) =>
+      item?.serviceName ? `${item.canonical}#service` : sharedId;
+
+    expect(uae?.description.length).toBeGreaterThanOrEqual(150);
+    expect(uae?.description.length).toBeLessThanOrEqual(160);
+    expect(uae?.description.endsWith('.')).toBe(true);
+    expect(uae?.exactMeta).toBe(true);
+    expect(getCtrSeo('/uae-obesity-market')?.description).toBe(uae?.description);
+    expect(serviceId(uae)).toBe('https://www.bionixus.com/uae-obesity-market#service');
+    expect(serviceId(gcc)).toBe(sharedId);
+    expect(serviceId(kuwait)).toBe(sharedId);
+    expect(serviceId(uae)).not.toBe(serviceId(gcc));
+    expect(serviceId(uae)).not.toBe(serviceId(kuwait));
   });
 });

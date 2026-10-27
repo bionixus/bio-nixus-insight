@@ -46,9 +46,11 @@ describe('office roster', () => {
     expect(locations.map((place) => place.description)).toEqual(GOOGLE_OFFICES.map(officeRoleLabel));
     expect(locations.every((place) => place.address.streetAddress.length > 0)).toBe(true);
     const dubai = buildGoogleLocalBusiness(GOOGLE_OFFICES.find((office) => office.id === 'ae')!);
-    expect(dubai.department).toEqual({ '@type': 'Organization', name: 'Field office' });
+    expect(dubai.department).toEqual({ '@type': 'Organization', name: 'field office for UAE' });
     const sheridan = buildGoogleLocalBusiness(GOOGLE_OFFICES.find((office) => office.id === 'us')!);
-    expect((sheridan.department as { name: string }).name).toContain('US headquarters');
+    expect((sheridan.department as { name: string }).name).toBe('Americas office and global HQ');
+    const khobar = buildGoogleLocalBusiness(GOOGLE_OFFICES.find((office) => office.id === 'sa')!);
+    expect((khobar.department as { name: string }).name).toBe('partner office for KSA');
   });
 });
 

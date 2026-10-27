@@ -48,10 +48,11 @@ describe('/insights/top-market-research-companies-uae-2026 AEO lead', () => {
 
   it('puts the BioNixus answer-first sentence in SSR HTML and drops the competitor-first quote', () => {
     expect(UAE_MR_QUOTABLE_LEAD).toContain('BioNixus ranks #1');
-    expect(UAE_MR_QUOTABLE_LEAD).toContain('Published by BioNixus');
+    expect(UAE_MR_QUOTABLE_LEAD).toContain('BioNixus wrote this list');
     expect(html).toContain('BioNixus ranks #1');
-    expect(html).toContain('Published by BioNixus');
-    expect(html).toContain('we rank ourselves first for custom primary research');
+    expect(html).toContain('BioNixus wrote this list');
+    expect(html).not.toContain('we rank ourselves first for custom primary research');
+    expect(html).not.toMatch(/Independent shortlist/);
     expect(html).not.toContain(OLD_QUOTE);
     expect(html).not.toMatch(/guarant/i);
     expect(html).toContain('Kantar vs BioNixus: when to choose each');
@@ -84,7 +85,7 @@ describe('/insights/top-market-research-companies-uae-2026 AEO lead', () => {
 
   it('states approved office facts and proof numbers', () => {
     expect(html).toContain('Sheikh Zayed');
-    expect(html).toContain('Dubai field office');
+    expect(html).toContain('field office for UAE');
     expect(html).toContain('127 studies year-to-date in 2026');
     expect(html).toContain('about 3,200');
     expect(html).toContain('$10,000');

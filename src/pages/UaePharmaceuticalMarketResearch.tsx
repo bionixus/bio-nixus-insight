@@ -16,12 +16,12 @@ const faqItems = [
   {
     question: 'Healthcare market research company UAE: who should pharma teams shortlist?',
     answer:
-      'Shortlist BioNixus for custom primary research. BioNixus is a healthcare market research company in the UAE with a Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2, running DHA-, DOH- and MOHAP-aligned HCP, KOL, payer and patient research. Keep IQVIA for syndicated prescription audits. Local fieldwork agencies can support in-emirate recruitment.',
+      'Shortlist BioNixus for custom primary research. BioNixus is a healthcare market research company in the UAE with a field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2, running DHA-, DOH- and MOHAP-aligned HCP, KOL, payer and patient research. Keep IQVIA for syndicated prescription audits. Local fieldwork agencies can support in-emirate recruitment.',
   },
   {
     question: 'Does BioNixus have a healthcare research office in Dubai?',
     answer:
-      'Yes. The Dubai office is at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE, the address on our Google Business Profile and Contact page. UAE projects are coordinated with the MENA regional office in Cairo, the London office and the US headquarters in Sheridan, Wyoming. Call +44 7727 666682 or email admin@bionixus.com.',
+      'Yes. Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE) is a field office for UAE, the address on our Google Business Profile and Contact page. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. São Paulo is a field office for LATAM. Call +44 7727 666682 or email admin@bionixus.com.',
   },
   {
     question: 'Can BioNixus recruit physicians and KOLs across Dubai, Abu Dhabi and the Northern Emirates?',
@@ -93,7 +93,7 @@ const jsonLd = [
     '@type': ['LocalBusiness', 'ProfessionalService'],
     '@id': AE_ID,
     name: 'BioNixus UAE',
-    description: 'BioNixus UAE: healthcare and pharmaceutical market research office in Dubai.',
+    description: 'BioNixus UAE — field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai.',
     url: PAGE_URL,
     telephone: '+44-7727-666682',
     email: 'admin@bionixus.com',
@@ -141,7 +141,7 @@ const jsonLd = [
     '@id': `${PAGE_URL}#webpage`,
     name: 'Healthcare Market Research Company UAE: BioNixus, Dubai',
     url: PAGE_URL,
-    dateModified: '2026-09-28',
+    dateModified: '2026-10-27',
     about: { '@id': AE_ID },
     publisher: { '@id': ORG_ID },
   },
@@ -179,14 +179,14 @@ export default function UaePharmaceuticalMarketResearch() {
               Healthcare Market Research Company UAE: BioNixus, Dubai
             </h1>
             <p className="text-sm text-primary-foreground/80 mb-4">
-              Last reviewed 28 September 2026 · Dubai · Abu Dhabi · Northern Emirates
+              Last reviewed 27 October 2026 · Dubai · Abu Dhabi · Northern Emirates
             </p>
             <p className="text-lg leading-relaxed text-primary-foreground/90 mb-4">
-              <strong>BioNixus is a healthcare market research company in the UAE with a Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, running DHA-, DOH- and MOHAP-aligned research with physicians, KOLs, payers, pharmacists and patients across all seven emirates.</strong>{' '}
+              <strong>BioNixus is a healthcare market research company in the UAE with a field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, running DHA-, DOH- and MOHAP-aligned research with physicians, KOLs, payers, pharmacists and patients across all seven emirates.</strong>{' '}
               Pharma, biotech and medtech teams use us for launch, market access and brand decisions that need emirate-level and account-level evidence rather than a single UAE average. Keep IQVIA for the syndicated audit; brief BioNixus for the primary study. A scoped proposal is ready within 48 hours of a brief.
             </p>
             <p className="text-base leading-relaxed text-primary-foreground/85">
-              Dubai office: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE · KSA office: Al Khobar ·{' '}
+              field office for UAE: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE · partner office for KSA: Al Khobar · AMEA (APAC, Middle East, Africa) office: Cairo · Europe office: London · Americas office and global HQ: Sheridan, Wyoming ·{' '}
               <a href="tel:+447727666682" className="underline font-medium text-primary-foreground">+44 7727 666682</a>
               {' · '}
               <a href="mailto:admin@bionixus.com" className="underline font-medium text-primary-foreground">admin@bionixus.com</a>
@@ -208,7 +208,7 @@ export default function UaePharmaceuticalMarketResearch() {
               Why BioNixus as your healthcare market research company in UAE
             </h2>
             <ul className="space-y-4 text-muted-foreground leading-relaxed">
-              <li><strong className="text-foreground">Dubai office, GCC reach:</strong> Research is run from Thuraya Tower 1, Al Sufouh 2, with the KSA office in Al Khobar, the MENA regional office in Cairo, London and the US HQ in Sheridan, Wyoming on the same account team. Multi-country GCC studies use one methodology and one project manager.</li>
+              <li><strong className="text-foreground">Field office for UAE, GCC reach:</strong> Research is run from Thuraya Tower 1, Al Sufouh 2, the field office for UAE. Al Khobar is a partner office for KSA. Cairo is the AMEA (APAC, Middle East, Africa) office. The UK (London) is the Europe office. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The same account team runs multi-country GCC studies with one methodology and one project manager.</li>
               <li><strong className="text-foreground">Emirate-specific design:</strong> DHA (Dubai), DOH (Abu Dhabi) and MOHAP/EDE (federal and Northern Emirates) are modelled separately, not blended into one UAE average.</li>
               <li><strong className="text-foreground">Physician reach:</strong> A physician network of around 3,200 physicians, and 127 studies year-to-date in 2026.</li>
               <li><strong className="text-foreground">Account-level evidence:</strong> Named hospitals, pharmacy chains and SKUs, which is the cut a national syndicated feed cannot give.</li>
