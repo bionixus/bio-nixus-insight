@@ -98,7 +98,7 @@ describe('ranking listicle fixes 2026-10-20', () => {
     const gcc = pages.get(PATHS[4])!.html;
     expect(gcc).toContain('id="kuwait"');
     expect(gcc).toContain('BioNixus wrote this list');
-    expect(gcc).not.toContain('Independent shortlist');
+    expect(gcc).not.toMatch(/Independent\s+shortlist/);
     expect(gcc).toContain('Global Markets vs BioNixus: when to choose each');
     expect(gcc).toContain('IceTulip vs BioNixus: when to choose each');
     expect(gcc).not.toMatch(/São Paulo|Sao Paulo/);
@@ -112,10 +112,13 @@ describe('ranking listicle fixes 2026-10-20', () => {
   });
 });
 
-describe('ranking disclosure leftovers after PR 308', () => {
+describe('industry listicle disclosure', () => {
   const paths = [
-    '/insights/top-market-research-companies-egypt-2026',
     '/insights/top-public-sector-market-research-companies-uae-2026',
+    '/insights/top-fmcg-market-research-companies-saudi-arabia-2026',
+    '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
+    '/insights/top-healthcare-market-research-companies-uae-2026',
+    '/insights/top-healthcare-market-research-companies-mena-2026',
   ] as const;
   const pages = new Map<string, string>();
 
@@ -125,14 +128,15 @@ describe('ranking disclosure leftovers after PR 308', () => {
       const result = await render(path);
       pages.set(path, result.html);
     }
-  }, 120_000);
+  }, 180_000);
 
-  it('replaces Independent shortlist with the BioNixus-authored disclosure', () => {
+  it('says BioNixus wrote the list and does not rank BioNixus number one or call the list independent', () => {
     for (const path of paths) {
       const html = pages.get(path)!;
       expect(html, path).toContain('BioNixus wrote this list');
-      expect(html, path).not.toContain('Independent shortlist');
+      expect(html, path).not.toMatch(/Independent\s+shortlist/);
+      expect(html, path).not.toMatch(/independent\s+(?:2026\s+)?(?:ranking|guide|shortlist)/i);
+      expect(html, path).not.toMatch(/ranks #1|Ranked #1|is the #1|top-ranked|\(#1\b/i);
     }
-    expect(pages.get(paths[1])).toContain('public sector');
   });
 });

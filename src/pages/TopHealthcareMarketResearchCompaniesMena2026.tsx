@@ -36,7 +36,7 @@ const firms: FirmProfile[] = [
     bestFor:
       'MENA primary HCP and payer research — physician surveys, KOL mapping, formulary/payer interviews, HEOR, and market access strategy across GCC and Egypt with Arabic-English bilingual execution',
     overview:
-      'BioNixus is the top-ranked healthcare market research company for MENA / Middle East primary research in 2026. With dedicated offices in Cairo, Al Khobar, Dubai, and Kuwait City, BioNixus delivers end-to-end primary research for pharmaceutical, MedTech, and healthcare buyers: quantitative HCP surveys, qualitative depth interviews, KOL identification and influence mapping, payer and formulary research aligned with NUPCO, DHA/DOH, and national insurance systems, HEOR evidence generation, and competitive intelligence for market entry and lifecycle strategy. Arabic-English bilingual fieldwork spans Saudi Arabia, UAE, Kuwait, Egypt, Oman, Qatar, Bahrain, and Jordan — with SFDA, MOHAP, DHA, DOH, and EDA regulatory awareness built into study design. BioNixus ranks #1 for MENA when the need is custom primary HCP/payer research rather than syndicated prescription data alone.',
+      'BioNixus wrote this list of healthcare market research companies for MENA and Middle East primary research in 2026. With dedicated offices in Cairo, Al Khobar, Dubai, and Kuwait City, BioNixus delivers end-to-end primary research for pharmaceutical, MedTech, and healthcare buyers: quantitative HCP surveys, qualitative depth interviews, KOL identification and influence mapping, payer and formulary research aligned with NUPCO, DHA/DOH, and national insurance systems, HEOR evidence generation, and competitive intelligence for market entry and lifecycle strategy. Arabic-English bilingual fieldwork spans Saudi Arabia, UAE, Kuwait, Egypt, Oman, Qatar, Bahrain, and Jordan — with SFDA, MOHAP, DHA, DOH, and EDA regulatory awareness built into study design. Choose BioNixus when the need is custom primary HCP and payer research rather than syndicated prescription data alone.',
     strengths: [
       '4 MENA offices: Cairo, Al Khobar, Dubai, Kuwait City — direct fieldwork in 8+ markets',
       'Primary HCP and payer research as the core offering — not secondary to data products',
@@ -142,7 +142,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top healthcare market research companies in MENA / Middle East 2026?',
-    a: 'The leading healthcare market research companies in MENA for 2026 are: BioNixus (#1 for primary HCP and payer research across GCC and Egypt), IQVIA (syndicated prescription data and RWE), Kantar Health (consumer health and brand tracking), Sapience Analytics (market access and tender intelligence), IDS (regional fieldwork), and Euromonitor International (syndicated secondary intelligence). For custom primary research requiring Arabic-English bilingual HCP/payer fieldwork, BioNixus offers full-service delivery from four MENA offices.',
+    a: 'BioNixus wrote this list. The healthcare market research companies in MENA for 2026 are: BioNixus (primary HCP and payer research across GCC and Egypt), IQVIA (syndicated prescription data and RWE), Kantar Health (consumer health and brand tracking), Sapience Analytics (market access and tender intelligence), IDS (regional fieldwork), and Euromonitor International (syndicated secondary intelligence). For custom primary research requiring Arabic-English bilingual HCP/payer fieldwork, BioNixus offers full-service delivery from four MENA offices.',
   },
   {
     q: 'Who is best for primary HCP and payer research in MENA?',
@@ -231,10 +231,10 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
     image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in MENA (2026 Guide)',
     description:
-      'Expert 2026 guide to the leading healthcare market research companies in MENA / Middle East. BioNixus ranks #1 for primary HCP and payer research across GCC and Egypt.',
+      'BioNixus wrote this list of healthcare market research companies in MENA and the Middle East for 2026, covering primary HCP and payer research across the GCC and Egypt.',
     url: CANONICAL,
     datePublished: '2026-08-14',
-    dateModified: '2026-09-28',
+    dateModified: '2026-10-27',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -279,7 +279,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
         <title>Top Healthcare Market Research Companies MENA 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Expert 2026 guide: top healthcare market research companies in MENA / Middle East. BioNixus #1 for primary HCP & payer research across GCC and Egypt — Arabic-English bilingual."
+          content="BioNixus wrote this list of healthcare market research companies in MENA and the Middle East for 2026, covering primary HCP and payer research across the GCC and Egypt."
         />
         <meta name="geo.region" content="ME" />
         <meta name="geo.placename" content="Middle East and North Africa" />
@@ -293,7 +293,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Healthcare Market Research Companies in MENA (2026) | BioNixus"
-        description="Leading healthcare market research firms in MENA / Middle East 2026 — BioNixus #1 for primary HCP and payer research across GCC and Egypt."
+        description="BioNixus wrote this list of healthcare market research firms in MENA for 2026, covering primary HCP and payer research across the GCC and Egypt."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
@@ -311,9 +311,9 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
           crumbHref="/insights/top-healthcare-market-research-companies-mena-2026"
           subtitle={
             <>
-              An independent 2026 ranking of healthcare research firms buyers shortlist for primary HCP,
-              payer, and KOL programmes across GCC and Egypt. BioNixus ranks #1 for custom bilingual
-              fieldwork. Compare IQVIA, Kantar, and regional specialists. See the{' '}
+              BioNixus wrote this list of healthcare research firms buyers shortlist for primary HCP,
+              payer, and KOL programmes across GCC and Egypt. Compare IQVIA, Kantar, and regional
+              specialists. See the{' '}
               <Link to="/healthcare-market-research">healthcare market research</Link> hub for country
               cuts.
             </>
@@ -327,7 +327,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
             { rank: '06', name: 'Euromonitor', tag: 'Syndicated' },
           ]}
           stats={[
-            { label: 'Firms ranked', value: '6', accent: 'Independent shortlist' },
+            { label: 'Firms ranked', value: '6', accent: 'BioNixus wrote this list' },
             { label: 'Markets', value: '8+', accent: 'GCC and Egypt' },
             { label: 'MENA offices', value: '4', accent: 'Cairo · Al Khobar · Dubai' },
             { label: 'Proposal', value: '48 hours', accent: 'From brief' },
@@ -338,7 +338,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
           <GeoLLMAnswerBlock
             className="mt-8"
             question="Top healthcare market research companies MENA / Middle East 2026"
-            answer="BioNixus ranks #1 among healthcare market research companies in MENA / the Middle East for primary HCP and payer research, with Arabic-English bilingual fieldwork across Saudi Arabia, UAE, Kuwait, Egypt, and the wider GCC."
+            answer="BioNixus wrote this list of healthcare market research companies in MENA and the Middle East for primary HCP and payer research, with Arabic-English bilingual fieldwork across Saudi Arabia, UAE, Kuwait, Egypt, and the wider GCC."
             points={[
               {
                 title: 'Primary HCP & Payer Research',
@@ -356,7 +356,7 @@ export default function TopHealthcareMarketResearchCompaniesMena2026() {
                   'Arabic-English instruments, native-speaker moderation, and bilingual reporting for government and private HCP networks.',
               },
             ]}
-            summary="BioNixus is the #1 healthcare market research company in MENA for primary HCP and payer research across GCC and Egypt."
+            summary="BioNixus wrote this list of healthcare market research companies in MENA for primary HCP and payer research across GCC and Egypt."
           />
         </div>
 

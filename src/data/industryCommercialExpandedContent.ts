@@ -65,7 +65,7 @@ const PAGE_ENHANCEMENTS: Partial<Record<CountryIndustryKey, PageEnhancement>> = 
       'The Central Bank of Egypt (CBE) governs banking supervision, payment systems, and financial inclusion; the Financial Regulatory Authority (FRA) oversees non-bank financial activities including capital markets and insurance. Product concept tests spanning both regulators require separate compliance review of instruments before field scales.',
       'Inclusion gains were uneven: women’s rate reached 71.4% and youth (15–35) 56.8% by early 2026 — research designs must quota by gender, age, urban/rural geography, and product type. Cairo-only samples systematically overstate digital adoption and credit appetite relative to Upper Egypt and peri-urban governorates.',
       'Mobile wallets and agent banking reach populations branch networks miss. BioNixus Egypt programmes combine governorate quotas, Arabic-first fieldwork, and explicit banked versus under-banked definitions — with wallet users separated from branch-only customers before national extrapolation.',
-      'For the 2026 firm comparison guide, see our independent listicle ranking top financial services market research companies in Egypt; this page is BioNixus as your execution partner with Cairo office coverage and healthcare-grade research governance.',
+      'For the 2026 firm comparison guide, BioNixus wrote this list of financial services market research companies in Egypt; this page is BioNixus as your execution partner with Cairo office coverage and healthcare-grade research governance.',
     ],
   },
 };
@@ -211,7 +211,7 @@ function buildCommercialExpandedContent(
     faqs: [
       {
         question: `Who is the best financial services market research company in ${country.label}?`,
-        answer: `BioNixus is a leading option for financial services in ${country.label}: Cairo-based bilingual fieldwork, CBE/FRA-aware design, and decision-ready outputs — see ${bofuPath} for company-intent detail and the 2026 firms listicle for independent comparisons.`,
+        answer: `BioNixus is a leading option for financial services in ${country.label}: Cairo-based bilingual fieldwork, CBE/FRA-aware design, and decision-ready outputs — see ${bofuPath} for company-intent detail. BioNixus wrote this list of 2026 firms.`,
       },
       {
         question: `What does financial services market research include in ${country.label}?`,
