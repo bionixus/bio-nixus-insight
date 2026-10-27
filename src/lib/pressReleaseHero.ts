@@ -14,7 +14,7 @@ const HERO_OVERRIDES: Record<string, { src: string; alt: string }> = {
   },
   'bionixus-egypt-new-administrative-capital-office-2026': {
     src: '/images/press/bionixus-egypt-nac-office-2026-cover.jpg',
-    alt: 'Dr. Mohammad Alsaadany, MEA Director at BioNixus, speaking at Bibliotheca Alexandrina',
+    alt: 'Dr. Mohammad Alsaadany, AMEA Director (APAC, Middle East and Africa) at BioNixus, speaking at Bibliotheca Alexandrina',
   },
 }
 

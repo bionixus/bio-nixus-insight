@@ -12,7 +12,7 @@ export const DATELINE = 'NEW ADMINISTRATIVE CAPITAL, EGYPT — August 11, 2026'
 
 export const SPOKESPERSON_NAME = 'Dr. Mohammad Alsaadany'
 
-export const SPOKESPERSON_TITLE = 'MEA Director'
+export const SPOKESPERSON_TITLE = 'AMEA Director (APAC, Middle East and Africa)'
 
 export const SEO_META_TITLE =
   'BioNixus Opens Egypt New Administrative Capital Office | MEA HQ'
@@ -30,10 +30,10 @@ export const BOILERPLATE =
   'BioNixus is a leading global market research and analytics firm, headquartered in the United States with a presence in 48 countries. The company has a track record of delivering projects across the pharmaceutical, healthcare, B2B and B2C sectors. In Egypt, BioNixus recently signed an agreement with one of the country\'s leading EGX-listed wood manufacturers, and works with more than ten pharmaceutical companies as well as leading FMCG and retail brands.'
 
 export const HERO_ALT =
-  'Dr. Mohammad Alsaadany, MEA Director at BioNixus, speaking at Bibliotheca Alexandrina during a formal presentation'
+  'Dr. Mohammad Alsaadany, AMEA Director (APAC, Middle East and Africa) at BioNixus, speaking at Bibliotheca Alexandrina during a formal presentation'
 
 export const HERO_CAPTION =
-  'Dr. Mohammad Alsaadany, MEA Director at BioNixus, announces the company\'s New Administrative Capital office plans.'
+  'Dr. Mohammad Alsaadany, AMEA Director (APAC, Middle East and Africa) at BioNixus, announces the company\'s New Administrative Capital office plans.'
 
 /** @param {string} key */
 function span(text, key, marks = []) {
@@ -60,7 +60,7 @@ export function buildPressReleaseBody() {
     ]),
     block('normal', 'p2', [
       {
-        text: 'The announcement was made by Dr. Mohammad Alsaadany, MEA Director at BioNixus. It marks the company\'s second office in Egypt, alongside its existing premises in Beverly Hills, Sheikh Zayed, Giza. From the New Administrative Capital, BioNixus will serve clients across the Gulf, the Levant, and North Africa.',
+        text: 'The announcement was made by Dr. Mohammad Alsaadany, AMEA Director (APAC, Middle East and Africa) at BioNixus. It marks the company\'s second office in Egypt, alongside its existing premises in Beverly Hills, Sheikh Zayed, Giza. From the New Administrative Capital, BioNixus will serve clients across the Gulf, the Levant, and North Africa.',
       },
     ]),
     block('normal', 'p3', [

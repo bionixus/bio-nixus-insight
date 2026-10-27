@@ -53,7 +53,7 @@ describe('18 October 2026 social articles', () => {
     expect(SOCIAL_AUTHOR_TITLE).toBe('Marketing and Digital Transformation Director at BioNixus Group');
     expect(SOCIAL_AUTHOR_TITLE).not.toMatch(/Dr\.?/);
     expect(ALSAADANY_AUTHOR.name).toBe('Mohammad Alsaadany');
-    expect(ALSAADANY_AUTHOR.jobTitle).toBe('Director, BioNixus Healthcare Market Research');
+    expect(ALSAADANY_AUTHOR.jobTitle).toBe('AMEA Director (APAC, Middle East and Africa)');
     expect(SOCIAL_ARTICLES_2026_10_18).toHaveLength(5);
     expect(packageJson).toContain(
       '"sanity:blog:social-2026-10-18": "node scripts/publish-social-articles-2026-10-18.mjs"',
