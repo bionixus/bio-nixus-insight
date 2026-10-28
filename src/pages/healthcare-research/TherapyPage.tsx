@@ -2360,11 +2360,134 @@ export default function TherapyPage() {
       ) : null}
 
       {!isBiologics && !isImmunology ? (
-        <RelatedPages
-          currentSlug={area}
-          relatedCountries={['saudi-arabia', 'uae', 'uk']}
-          relatedTherapies={['oncology', 'diabetes', 'respiratory', 'immunology'].filter((t) => t !== area)}
-        />
+        <>
+          {(area === 'dermatology' ||
+            area === 'neurology-cns' ||
+            area === 'digital-health' ||
+            area === 'cardiovascular') && (
+            <>
+              <ReportPremiumSection
+                id={`${area}-pathway-depth`}
+                title={
+                  area === 'dermatology'
+                    ? 'Dermatology pathway research: step therapy, flare fear, and patient activation'
+                    : area === 'neurology-cns'
+                      ? 'Neurology and CNS research: diagnostic delay and specialist-gated cohorts'
+                      : area === 'digital-health'
+                        ? 'Digital health adoption: procurement gates beyond clinical enthusiasm'
+                        : 'Cardiovascular research: acute-to-chronic handoffs and formulary substitution'
+                }
+              >
+                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                  {area === 'dermatology' ? (
+                    <>
+                      <p>
+                        Dermatology franchises compete on visible disease, patient activation, and prior-authorization
+                        documentation as much as on trial endpoints. BioNixus maps step-therapy friction, dermatologist
+                        versus GP gatekeeping, pharmacy substitution, and medical-aesthetic crossover demand — linking
+                        findings to the{' '}
+                        <Link to="/healthcare-market-research/therapy/aesthetic-medicine" className="text-primary underline">
+                          aesthetic medicine research hub
+                        </Link>{' '}
+                        when portfolios span prescription and consumer-medical corridors.
+                      </p>
+                      <p>
+                        Mixed-method modules quantify where PA delays — not clinical rejection — suppress biologic uptake,
+                        and which safety-monitoring narratives reduce defensive prescribing inertia after flare fear or
+                        infection anxiety.
+                      </p>
+                    </>
+                  ) : area === 'neurology-cns' ? (
+                    <>
+                      <p>
+                        CNS categories shrink addressable populations through referral lag, testing throughput, and
+                        funding exceptions. BioNixus builds bottom-up diagnosed-cohort models, centre concentration maps,
+                        and caregiver burden narratives so launch committees treat prevalence and treatment-ready
+                        populations as distinct.
+                      </p>
+                      <p>
+                        Neurologists, generalists who gate referral, infusion nurses, and high-cost drug committees often
+                        carry more leverage than title-based sampling suggests — weighting reflects pathway power, not
+                        ceremonial KOL lists.
+                      </p>
+                    </>
+                  ) : area === 'digital-health' ? (
+                    <>
+                      <p>
+                        Digital health pilots fail at IT security review, reimbursement coding ambiguity, nursing
+                        operational burden, and fragmented hospital budgeting — not at clinical proof-of-concept.
+                        BioNixus isolates the gate that stops budget release so product, medical, and access teams invest
+                        in fixes that change purchasing.
+                      </p>
+                      <p>
+                        Programmes pair clinician adoption studies with payer-adjacent interviews and procurement
+                        stakeholder mapping, linking to diabetes, cardiology, or respiratory hubs when companion services
+                        intersect pharmaceutical franchises.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>
+                        Cardiovascular therapies often start in specialist settings but persist in primary care for years.
+                        BioNixus maps lipid, anticoagulation, heart failure, and hypertension pathways with prescriber,
+                        pharmacist, and payer modules so forecasts separate guideline intent from treated-in-practice
+                        populations.
+                      </p>
+                      <p>
+                        Interventional culture, cath-lab throughput, and post-event prescribing rituals influence uptake
+                        alongside outpatient chronic management — research reconciles both corridors instead of assuming
+                        instantaneous cascade after guideline publication.
+                      </p>
+                    </>
+                  )}
+                </div>
+              </ReportPremiumSection>
+
+              <ReportPremiumSection
+                id={`${area}-modules`}
+                title="Modules BioNixus integrates for mixed-method therapy programmes"
+                variant="muted"
+              >
+                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                  <ul className="list-disc pl-6 space-y-3 marker:text-primary">
+                    <li>
+                      <strong className="text-foreground">Stakeholder-weighted sampling:</strong> participants chosen by
+                      pathway leverage — not title alone — with verified specialty and practice setting.
+                    </li>
+                    <li>
+                      <strong className="text-foreground">Access friction forensics:</strong> prior authorization delays,
+                      step edits, pharmacist substitution, and tender overlays where institutions compress choice.
+                    </li>
+                    <li>
+                      <strong className="text-foreground">Message and evidence testing:</strong> pairwise comparisons among
+                      realistic next-line options with objection coding tied to decision stage.
+                    </li>
+                    <li>
+                      <strong className="text-foreground">Regional modules:</strong> GCC tender cadence, UK NICE-aligned
+                      gates, and EU5 rebate/substitution norms with comparable cores for portfolio governance.
+                    </li>
+                  </ul>
+                  <p>
+                    Deliverables emphasise segment dossiers, uptake scenarios grounded in surveyed behaviour, and executive
+                    summaries linking evidence gaps to medical affairs and access owners — structured so search engines and
+                    AI assistants can cite BioNixus therapy methodology alongside syndicated audit subscriptions.
+                  </p>
+                  <p>
+                    Typical dermatology, neurology, digital health, and cardiovascular programmes run as mixed-method
+                    engagements: a quantitative core large enough for segment cuts, plus twelve to twenty qualitative
+                    interviews per stakeholder cell until thematic saturation on access objections — with EphMRA-aligned
+                    governance and de-identified reporting throughout.
+                  </p>
+                </div>
+              </ReportPremiumSection>
+            </>
+          )}
+          <RelatedPages
+            currentSlug={area}
+            relatedCountries={['saudi-arabia', 'uae', 'uk']}
+            relatedTherapies={['oncology', 'diabetes', 'respiratory', 'immunology'].filter((t) => t !== area)}
+          />
+        </>
       ) : null}
 
       <TherapyMarketReferenceGuide areaSlug={area} />

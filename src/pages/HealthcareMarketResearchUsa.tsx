@@ -6,6 +6,7 @@ import { HealthcareNavCard, HealthcareStatPanel } from '@/components/healthcare-
 import { ReportMidPageCta } from '@/components/report-conversion';
 import { ReportPremiumSection } from '@/components/report-premium';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { HealthcareMrCountryDepthSections } from '@/components/seo/HealthcareMrCountryDepthSections';
 import { getHealthcareMarketResearchLandingConfig } from '@/data/reportConversionConfig';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
@@ -371,6 +372,8 @@ export default function HealthcareMarketResearchUsa() {
             </p>
           </div>
         </ReportPremiumSection>
+
+        <HealthcareMrCountryDepthSections countryKey="usa" />
 
         <RelatedPages currentSlug="united-states" relatedCountries={['uk', 'germany']} relatedTherapies={['oncology', 'diabetes']} />
       </HealthcareResearchPageShell>
