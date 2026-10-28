@@ -2097,7 +2097,19 @@ async function main() {
   }
 
   const lastmodFloor = {
-    [`${BASE}/blog/kol-mapping-pharma-middle-east`]: '2026-09-29',
+    [`${BASE}/healthcare-market-research-netherlands`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research-spain`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research-canada`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research-sweden`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research-poland`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research-turkey`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research-usa`]: '2026-10-28',
+    [`${BASE}/turkey-healthcare-market-report`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research/therapy/dermatology`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research/therapy/neurology-cns`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research/therapy/digital-health`]: '2026-10-28',
+    [`${BASE}/healthcare-market-research/therapy/cardiovascular`]: '2026-10-28',
+    [`${BASE}/iqvia-alternative`]: '2026-10-28',
     [`${BASE}/patient-journey-research-gcc`]: '2026-10-05',
     [`${BASE}/gcc-obesity-market`]: '2026-10-12',
     [`${BASE}/saudi-arabia-obesity-market`]: '2026-10-27',
