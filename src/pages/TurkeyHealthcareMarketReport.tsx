@@ -62,7 +62,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-10-28',
     mainEntityOfPage: 'https://www.bionixus.com/turkey-healthcare-market-report',
   },
   {
@@ -77,7 +77,7 @@ const jsonLd = [
     countryName: "Turkey",
     marketSlug: "turkey",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-10-28",
   })
 ];
 
@@ -117,6 +117,22 @@ const TurkeyHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Turkey is the largest healthcare market between Europe and the GCC — a 87-million-population market with near-universal SGK coverage, EMA-aligned regulation, and the world's fourth-largest medical tourism sector. Its position at the Europe-MENA crossroads creates natural strategic relevance for pharmaceutical companies managing multi-regional portfolios.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Primary research priorities for Turkey in 2026 cluster on three operational questions: how SGK SUT criteria and
+            reference-pricing revisions affect launch sequencing after TİTCK registration; where pharmacist substitution
+            and hospital procurement compress choice despite specialist endorsement; and how medical tourism and private
+            pay corridors diverge from SGK-contracted facility behaviour for the same molecule. BioNixus fields prescriber,
+            pharmacist, and payer-adjacent modules — with bilingual Turkish–English instruments — so affiliates treat
+            “registered” and “reimbursed in practice” as distinct populations. Connect Turkey work to{' '}
+            <Link to="/healthcare-market-research-turkey" className="text-primary hover:underline font-medium">
+              healthcare market research Turkey
+            </Link>{' '}
+            services and the{' '}
+            <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+              global healthcare market research hub
+            </Link>{' '}
+            when portfolios span Europe and GCC access calendars.
+          </p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>

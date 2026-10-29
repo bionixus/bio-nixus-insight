@@ -6,6 +6,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { HealthcareMrCountryDepthSections } from '@/components/seo/HealthcareMrCountryDepthSections';
 
 const faqItems = [
   {
@@ -346,6 +347,8 @@ export default function HealthcareMarketResearchTurkey() {
             </div>
           </div>
         </section>
+
+        <HealthcareMrCountryDepthSections countryKey="turkey" />
 
         {/* FAQ */}
         <section className="section-padding py-8">
