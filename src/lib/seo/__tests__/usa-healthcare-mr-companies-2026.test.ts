@@ -35,7 +35,7 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(USA_HEALTHCARE_MR_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
     expect(USA_HEALTHCARE_MR_DESCRIPTION.length).toBeLessThanOrEqual(160);
     expect(USA_HEALTHCARE_MR_H1).toBe(
-      'Top Healthcare Market Research Companies USA 2026: BioNixus Ranked #1 vs IQVIA',
+      'Top Healthcare Market Research Companies USA 2026: BioNixus vs IQVIA',
     );
     expect(USA_HEALTHCARE_MR_TITLE).toContain('BioNixus');
     expect(USA_HEALTHCARE_MR_H1).toContain('BioNixus');
@@ -61,7 +61,8 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(pageSource).toContain('cannot name the account');
     expect(pageSource).toContain('Keep syndicated IQVIA');
     expect(pageSource).toContain('primary-research complement');
-    expect(pageSource).toMatch(/BioNixus ranks #1/);
+    expect(pageSource).toMatch(/BioNixus wrote this list/);
+    expect(pageSource).not.toMatch(/ranks #1|Ranked #1/);
     expect(pageSource).toContain('RANKING_PUBLISHED_BY');
     expect(RANKING_PUBLISHED_BY).toContain('Published by BioNixus');
     expect(pageSource).not.toMatch(/staffed Riyadh|offices in Riyadh|Riyadh office/i);

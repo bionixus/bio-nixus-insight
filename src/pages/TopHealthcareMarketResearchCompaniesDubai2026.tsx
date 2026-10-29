@@ -345,7 +345,7 @@ export default function TopHealthcareMarketResearchCompaniesDubai2026() {
                 { title: 'UAE Payer Research', description: 'Formulary and insurance intelligence across Daman/Thiqa, Essential Benefits Plan, and private insurers.' },
                 { title: 'Multilingual Fieldwork', description: 'English, Arabic, and multilingual instruments for Dubai\'s expat-majority HCP and patient populations.' },
               ]}
-              summary="BioNixus is the #1 healthcare market research company in Dubai for custom primary research requiring DHA awareness and in-emirate execution."
+              summary="BioNixus wrote this list. BioNixus is a leading healthcare market research company in Dubai for custom primary research requiring DHA awareness and in-emirate execution."
             />
           </div>
         </section>

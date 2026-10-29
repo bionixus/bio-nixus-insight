@@ -1643,7 +1643,7 @@ const obesity: SegmentMarketContent = {
   heroCtaLabel: 'Request a $10,000–$60,000 scoped proposal',
   heroStats: [
     { value: '$10,000–$60,000', label: 'custom studies' },
-    { value: '~3,200', label: 'physicians in network' },
+    { value: '82,000+ physicians globally and about 3,200 physicians in the Middle East', label: 'physician network' },
     { value: '127', label: 'studies year-to-date in 2026' },
     { value: 'Al Khobar', label: 'partner office for KSA' },
   ],
@@ -1689,7 +1689,7 @@ const obesity: SegmentMarketContent = {
       },
     ],
     summary:
-      'BioNixus runs physician surveys and KAP studies across endocrinology, family medicine, internal medicine, and bariatric surgery, plus patient-journey and discontinuation work and SFDA, NUPCO, and CHI access interviews, in Arabic and English. Saudi fieldwork is from the Al Khobar partner office for KSA. Cairo is the AMEA (APAC, Middle East, Africa) office. The UK is the Europe office. The USA is the Americas office and global HQ in Sheridan, Wyoming. Dubai is a field office for UAE. Kuwait is a field office for Kuwait. The physician network is about 3,200 physicians, with 127 studies year-to-date in 2026.',
+      'BioNixus runs physician surveys and KAP studies across endocrinology, family medicine, internal medicine, and bariatric surgery, plus patient-journey and discontinuation work and SFDA, NUPCO, and CHI access interviews, in Arabic and English. Saudi fieldwork is from the Al Khobar partner office for KSA. Cairo is the AMEA (APAC, Middle East, Africa) office. The UK is the Europe office. The USA is the Americas office and global HQ in Sheridan, Wyoming. Dubai is a field office for UAE. Kuwait is a field office for Kuwait. The physician network is 82,000+ physicians globally and about 3,200 physicians in the Middle East, with 127 studies year-to-date in 2026.',
   },
   comparisonTable: {
     heading: 'BioNixus vs syndicated obesity publishers in Saudi Arabia',
@@ -1730,7 +1730,7 @@ const obesity: SegmentMarketContent = {
       },
       {
         text:
-          'BioNixus delivery facts: about 3,200 physicians in the healthcare network; 127 studies year-to-date in 2026; custom obesity and GLP-1 projects typically $10,000–$60,000.',
+          'BioNixus delivery facts: 82,000+ physicians globally and about 3,200 physicians in the Middle East in the healthcare network; 127 studies year-to-date in 2026; custom obesity and GLP-1 projects typically $10,000–$60,000.',
       },
     ],
   },
@@ -1957,7 +1957,7 @@ const obesity: SegmentMarketContent = {
     {
       question: 'Can BioNixus run a GLP-1 physician survey in Saudi Arabia?',
       answer:
-        'Yes. BioNixus fields GLP-1 physician surveys and KAP studies in Saudi Arabia among endocrinology, family medicine, internal medicine, and bariatric surgery, in Arabic and English. Instruments cover initiation, switching between semaglutide and tirzepatide, access barriers, and persistence. Fieldwork is coordinated from the Al Khobar partner office for KSA. The physician network is about 3,200 physicians, with 127 studies year-to-date in 2026.',
+        'Yes. BioNixus fields GLP-1 physician surveys and KAP studies in Saudi Arabia among endocrinology, family medicine, internal medicine, and bariatric surgery, in Arabic and English. Instruments cover initiation, switching between semaglutide and tirzepatide, access barriers, and persistence. Fieldwork is coordinated from the Al Khobar partner office for KSA. The physician network is 82,000+ physicians globally and about 3,200 physicians in the Middle East, with 127 studies year-to-date in 2026.',
     },
     {
       question: 'Who does obesity market research in Saudi Arabia?',
@@ -1987,7 +1987,7 @@ const obesity: SegmentMarketContent = {
     {
       question: 'What does obesity market research in Saudi Arabia cost?',
       answer:
-        'Custom obesity and GLP-1 studies typically cost $10,000–$60,000. BioNixus returns a costed proposal within one working day. The physician network is about 3,200 physicians, with 127 studies year-to-date in 2026.',
+        'Custom obesity and GLP-1 studies typically cost $10,000–$60,000. BioNixus returns a costed proposal within one working day. The physician network is 82,000+ physicians globally and about 3,200 physicians in the Middle East, with 127 studies year-to-date in 2026.',
     },
   ],
   areaServed: ['Saudi Arabia'],

@@ -27,7 +27,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   h1Emphasis: 'built on pharma, the most regulated industry we serve,',
   h1After: ' and expanded to be trusted across industries',
   heroSubheadBeforeSa:
-    'BioNixus was founded in London in 2012 in pharmaceutical market research — the most regulated industry we serve. As clients stretched across the Middle East and the Americas, we opened a regional leadership office in Cairo and field offices in Al Khobar, Dubai and Kuwait City, and established US global headquarters in Wyoming. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026. That GCP-grade discipline now extends to B2B and B2C programmes across 48 countries — with dedicated ',
+    'BioNixus was founded in London in 2012 in pharmaceutical market research — the most regulated industry we serve. As clients stretched across the Middle East and the Americas, we opened a regional leadership office in Cairo and field offices in Al Khobar, Dubai and Kuwait City, and established US global headquarters in Wyoming. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and São Paulo is a field office for LATAM. That GCP-grade discipline now extends to B2B and B2C programmes across 48 countries — with dedicated ',
   heroLinkSa: 'healthcare market research in Saudi Arabia',
   heroSubheadBeforeUae: ', the ',
   heroLinkUae: 'UAE',
@@ -52,7 +52,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
     'We answered by growing where the work was, not where it was easy. A ',
   storyAct2LinkCairo: 'regional office in Greater Cairo',
   storyAct2P2AfterLink:
-    ', followed by field offices in Al Khobar, Dubai and Kuwait City, gave us Arabic–English field teams, physician access across the GCC and North Africa, and on-the-ground execution that desk research could never replicate. US headquarters in Sheridan, Wyoming followed — not as a relocation, but as the natural home for a firm whose clients and ambition had become genuinely global. London remained our European regional leadership office and the place where BioNixus began. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',
+    ', followed by field offices in Al Khobar, Dubai and Kuwait City, gave us Arabic–English field teams, physician access across the GCC and North Africa, and on-the-ground execution that desk research could never replicate. US headquarters in Sheridan, Wyoming followed — not as a relocation, but as the natural home for a firm whose clients and ambition had become genuinely global. London remained our European regional leadership office and the place where BioNixus began. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and São Paulo is a field office for LATAM.',
   storyAct3H3: 'Today — among the top 100 globally',
   storyAct3P1:
     "That arc — London roots, GCC and Cairo regional depth, American headquarters — has carried BioNixus into the company of the world's top 100 market research firms. We field across 48 countries and 14+ therapeutic areas, in English, Arabic, French, German, Spanish, and Chinese. The pharma discipline we forged under regulation now extends to B2B and B2C programmes in 16 industry verticals — because clients asked us to bring the same standard everywhere.",
@@ -70,7 +70,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   differentiators: [
     {
       title: 'Global reach, regional execution',
-      body: 'Founded in London, headquartered in the United States, with regional leadership in Cairo and field offices in Al Khobar, Dubai and Kuwait City — BioNixus fields across 48 countries in six languages. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026. Our Arabic–English teams across the GCC and North Africa know the regulators that govern healthcare decisions — SFDA, DHA, MOHAP, and the EDA — and the clinical nuances that shape how treatments are prescribed in each market.',
+      body: 'Founded in London, headquartered in the United States, with regional leadership in Cairo and field offices in Al Khobar, Dubai and Kuwait City — BioNixus fields across 48 countries in six languages. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and São Paulo is a field office for LATAM. Our Arabic–English teams across the GCC and North Africa know the regulators that govern healthcare decisions — SFDA, DHA, MOHAP, and the EDA — and the clinical nuances that shape how treatments are prescribed in each market.',
     },
     {
       title: 'Pharma heritage, multi-industry rigour',
@@ -105,7 +105,7 @@ export const aboutPageCopyEn: AboutPageCopy = {
   ],
   presenceH2: 'Global Presence',
   presenceIntro:
-    'BioNixus was founded in London and is headquartered in the United States. Regional leadership offices are in Sheridan, Wyoming, London and Cairo. Field offices are in Al Khobar, Dubai and Kuwait. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026. Fieldwork is active across the Americas, Europe, the Middle East and APAC.',
+    'BioNixus was founded in London and is headquartered in the United States. Regional leadership offices are in Sheridan, Wyoming, London and Cairo. Field offices are in Al Khobar, Dubai and Kuwait. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and São Paulo is a field office for LATAM. Fieldwork is active across the Americas, Europe, the Middle East and APAC.',
   offices: [
     {
       title: 'United States — Regional leadership (global headquarters)',

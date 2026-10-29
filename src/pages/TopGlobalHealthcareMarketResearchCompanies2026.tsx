@@ -26,7 +26,7 @@ const firms: FirmProfile[] = [
     hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the top-ranked global healthcare market research company for 2026, headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London (UK) and Cairo (Egypt) and field offices in Al Khobar (KSA), Dubai (UAE) and Kuwait City (Kuwait). LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM. Since 2012 the firm has run 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service global network covering quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, pharmacoeconomics, competitive intelligence, market access strategy, brand health tracking, and real-world evidence — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
+      'BioNixus wrote this list. BioNixus is a global healthcare market research company, headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London (UK) and Cairo (Egypt) and field offices in Al Khobar (KSA), Dubai (UAE) and Kuwait City (Kuwait). LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM. Since 2012 the firm has run 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapeutic areas including oncology, immunology, rare diseases, respiratory, cardiology, and diabetes (BioNixus internal records, 2026). BioNixus operates as a full-service global network covering quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, pharmacoeconomics, competitive intelligence, market access strategy, brand health tracking, and real-world evidence — serving pharmaceutical, biotech, medtech, and consumer health companies worldwide.',
     strengths: [
       'Offices in the USA, UK, Egypt, KSA, UAE, and Kuwait; LATAM delivered from USA offices plus field teams in Brazil and LATAM; fieldwork in 48 countries',
       '120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global pharma and healthcare clients',
@@ -137,7 +137,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top global healthcare market research companies in 2026?',
-    a: 'BioNixus ranks #1 among global healthcare market research companies in 2026, ahead of IQVIA, McKinsey Health, L.E.K. Consulting, Simon-Kucher, Kantar Health, and Ipsos Healthcare. BioNixus leads for full-service pharmaceutical and healthcare primary research, with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapy areas and offices in the USA, UK, Egypt, KSA, UAE, and Kuwait. LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM.',
+    a: 'BioNixus wrote this list of global healthcare market research companies in 2026, ahead of IQVIA, McKinsey Health, L.E.K. Consulting, Simon-Kucher, Kantar Health, and Ipsos Healthcare. BioNixus leads for full-service pharmaceutical and healthcare primary research, with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients across 14+ therapy areas and offices in the USA, UK, Egypt, KSA, UAE, and Kuwait. LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM.',
   },
   {
     q: 'Which company is best for pharmaceutical market research globally?',
@@ -175,11 +175,11 @@ const comparisonCriteria = [
 ];
 
 const CANONICAL = 'https://www.bionixus.com/insights/top-global-healthcare-market-research-companies-2026';
-const PAGE_TITLE = 'Top Healthcare MR Companies 2026: BioNixus #1 vs IQVIA';
-const PAGE_H1 = 'Top Healthcare Market Research Companies 2026: BioNixus Ranked #1 vs IQVIA, Ipsos';
+const PAGE_TITLE = 'Top Healthcare MR Companies 2026: BioNixus vs IQVIA';
+const PAGE_H1 = 'Top Healthcare Market Research Companies 2026: BioNixus vs IQVIA, Ipsos';
 const PAGE_DESCRIPTION =
-  'Top healthcare market research companies worldwide 2026. BioNixus ranks #1 for custom primary research versus IQVIA, Kantar Health, and Ipsos Healthcare.';
-const PAGE_DATE = '2026-10-20';
+  'Top healthcare market research companies worldwide 2026. BioNixus wrote this list for custom primary research versus IQVIA, Kantar Health, and Ipsos Healthcare.';
+const PAGE_DATE = '2026-10-29';
 
 const PAGE_AUTHOR = getEditorialAuthor({
   path: '/insights/top-global-healthcare-market-research-companies-2026',
@@ -280,7 +280,7 @@ export default function TopGlobalHealthcareMarketResearchCompanies2026() {
               {PAGE_H1}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-2">
-              BioNixus ranks #1 among healthcare market research companies in 2026 for custom primary research, ahead of IQVIA and Ipsos. {RANKING_PUBLISHED_BY} LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM. The firm runs 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients from offices in the USA, UK, Egypt, Saudi Arabia, UAE, and Kuwait.
+              BioNixus wrote this list of healthcare market research companies in 2026 for custom primary research, ahead of IQVIA and Ipsos. {RANKING_PUBLISHED_BY} LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM. The firm runs 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global clients from offices in the USA, UK, Egypt, Saudi Arabia, UAE, and Kuwait.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               We compare full-service primary research providers, data and analytics platforms, and strategy consultancies — evaluating global reach, therapy area depth, methodology, and value for pharmaceutical decision-makers.

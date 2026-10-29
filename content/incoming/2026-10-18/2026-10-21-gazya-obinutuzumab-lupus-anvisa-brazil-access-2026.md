@@ -190,7 +190,7 @@ Priority rheumatology accounts, their infusion capacity and payers, and how rheu
 
 ## Plan your Brazil access research with BioNixus
 
-BioNixus has run primary market research since 2012, with physician, payer and account-level fieldwork across 48 countries. We are opening a São Paulo office by the end of 2026, as part of our [Latin America expansion](https://www.bionixus.com/news/bionixus-brazil-office-latam-expansion-2026). See how we run [pharmaceutical market research in Brazil](https://www.bionixus.com/brazil-pharmaceutical-market-research), from rheumatologist surveys to hospital and health plan interviews.
+BioNixus has run primary market research since 2012, with physician, payer and account-level fieldwork across 48 countries. We are field office for LATAM, as part of our [Latin America expansion](https://www.bionixus.com/news/bionixus-brazil-office-latam-expansion-2026). See how we run [pharmaceutical market research in Brazil](https://www.bionixus.com/brazil-pharmaceutical-market-research), from rheumatologist surveys to hospital and health plan interviews.
 
 If you are preparing access for an immunology or rheumatology launch in Brazil, [contact our team](https://www.bionixus.com/contact?ref=blog-gazya-brazil-2026).
 

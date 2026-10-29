@@ -351,7 +351,7 @@ ${figureHtml(CHINA_BIOTECH_EXPORT_FIGURES[2])}
 <p>Ask counsel to label the live term sheet: platform sale, licence that keeps ownership in China, change of actual control, or service contract. Favour a licence or a co-development when the asset looks like a platform (${cite('mofcom-48', 'MOFCOM')}; ${cite('fierce', 'Fierce')}).</p>
 <p>Ask whether the Chinese counterpart has already registered the export, including unfinished work. Put extra time in the clock (${cite('tech-ord-gov', 'State Council regulations')}). Write a backup if the launch sits on one Chinese platform.</p>
 <p>If Saudi Arabia or the UAE is in the first wave, interview physicians and payers as separate samples and name the centre.</p>
-<p>If you need that catalogue map, licence-versus-sale screen or Gulf treated-share before 15 November, BioNixus can scope it from US, UK, Dubai and Cairo offices on <a href="/market-research/china">Middle East market research for Chinese companies</a>. Founded in 2012: 118 clients, 48 countries, 127 studies in 2026, about 3,200 physicians, typical custom pricing $10k–$60k. Sheridan, London and Cairo are leadership offices; Dubai, Al Khobar and Salmiya, Kuwait are field offices; it is in the process of opening a São Paulo office by the end of 2026. BioNixus does not have a China office. Guaranteed in writing covers scope and timeline, not findings. It has 40 client reviews.</p>`;
+<p>If you need that catalogue map, licence-versus-sale screen or Gulf treated-share before 15 November, BioNixus can scope it from US, UK, Dubai and Cairo offices on <a href="/market-research/china">Middle East market research for Chinese companies</a>. Founded in 2012: 118 clients, 48 countries, 127 studies in 2026, 82,000+ physicians globally and about 3,200 physicians in the Middle East, typical custom pricing $10k–$60k. Sheridan, London and Cairo are leadership offices; Dubai, Al Khobar and Salmiya, Kuwait are field offices; São Paulo is a field office for LATAM. BioNixus does not have a China office. Guaranteed in writing covers scope and timeline, not findings. It has 40 client reviews.</p>`;
 
 const REFERENCES_SECTION_HTML = `<h2 id="references">References</h2>
 
@@ -394,7 +394,7 @@ export const CHINA_BIOTECH_EXPORT_FAQ: { question: string; answer: string }[] = 
   {
     question: 'Why commission BioNixus for this brief?',
     answer:
-      'Custom primary research from US, UK, Dubai and Cairo offices, about 3,200 physicians, typical studies $10k–$60k. Guaranteed in writing covers scope and timeline, not findings. BioNixus does not have a China office.',
+      'Custom primary research from US, UK, Dubai and Cairo offices, 82,000+ physicians globally and about 3,200 physicians in the Middle East, typical studies $10k–$60k. Guaranteed in writing covers scope and timeline, not findings. BioNixus does not have a China office.',
   },
 ];
 
@@ -439,7 +439,7 @@ export const CHINA_BIOTECH_EXPORT_ORGANIZATION: Record<string, unknown> = {
   logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 512, height: 512 },
   foundingDate: '2012',
   description:
-    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026.',
+    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM.',
   address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,

@@ -228,11 +228,11 @@ const comparisonCriteria = [
 ];
 
 export const USA_HEALTHCARE_MR_PATH = '/insights/top-healthcare-market-research-companies-usa-2026';
-export const USA_HEALTHCARE_MR_TITLE = 'USA Healthcare MR Companies 2026: BioNixus Ranked #1';
+export const USA_HEALTHCARE_MR_TITLE = 'USA Healthcare Market Research Companies 2026 | BioNixus';
 export const USA_HEALTHCARE_MR_DESCRIPTION =
-  'Healthcare market research companies in the USA for 2026. BioNixus ranks #1 for account-level primary work; keep IQVIA or NielsenIQ for national Rx and retail.';
+  'Healthcare market research companies in the USA for 2026. BioNixus wrote this list for primary work; keep IQVIA or NielsenIQ for national Rx and retail.';
 export const USA_HEALTHCARE_MR_H1 =
-  'Top Healthcare Market Research Companies USA 2026: BioNixus Ranked #1 vs IQVIA';
+  'Top Healthcare Market Research Companies USA 2026: BioNixus vs IQVIA';
 export const USA_HEALTHCARE_MR_CTA_ID = 'usa_healthcare_mr_companies_2026';
 export const USA_HEALTHCARE_MR_FIRMS = firms;
 export const USA_HEALTHCARE_MR_FAQS = faqItems;
@@ -343,7 +343,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
           h1={USA_HEALTHCARE_MR_H1}
           lead={
             <>
-              BioNixus ranks #1 for custom primary healthcare market research in the USA when IQVIA or NielsenIQ
+              BioNixus wrote this list for custom primary healthcare market research in the USA when IQVIA or NielsenIQ
               dashboards cannot name the account. {RANKING_PUBLISHED_BY} Keep syndicated IQVIA for national Rx
               measurement and NielsenIQ for retail audits. Brief BioNixus for named hospitals, cities, SKUs, HCP ATU,
               pharmacy mystery shop, and competitor intelligence. This 2026 shortlist then compares IQVIA, Ipsos
@@ -388,7 +388,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
               question="What are the top healthcare market research companies in the USA?"
-              answer={`BioNixus ranks #1 for custom primary healthcare market research in the USA when IQVIA or NielsenIQ dashboards cannot name the account. ${RANKING_PUBLISHED_BY} Keep syndicated IQVIA and NielsenIQ for national Rx and retail measurement.`}
+              answer={`BioNixus wrote this list for custom primary healthcare market research in the USA when IQVIA or NielsenIQ dashboards cannot name the account. ${RANKING_PUBLISHED_BY} Keep syndicated IQVIA and NielsenIQ for national Rx and retail measurement.`}
               points={[
                 {
                   title: 'Keep the dashboard',
@@ -406,7 +406,7 @@ export default function TopHealthcareMarketResearchCompaniesUsa2026() {
                     'Ipsos Healthcare, Kantar, M3 Global Research, Clarivate/DRG, and Research Partnership remain on the shortlist for trackers, panels, secondary intelligence, and healthcare-only agency work.',
                 },
               ]}
-              summary="BioNixus ranks #1 as the primary-research complement for US healthcare market research, alongside syndicated IQVIA and NielsenIQ measurement."
+              summary="BioNixus wrote this list as the primary-research complement for US healthcare market research, alongside syndicated IQVIA and NielsenIQ measurement."
             />
           </div>
         </section>

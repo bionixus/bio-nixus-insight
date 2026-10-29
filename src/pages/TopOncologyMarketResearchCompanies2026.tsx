@@ -128,7 +128,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top oncology market research companies in 2026?',
-    a: 'Ranked by fit for treatment-pattern work — not headcount — the 2026 shortlist is BioNixus (indication-level anonymous PRFs with full history, new and current case recruitment, brand trackers as share of treated patients), IQVIA (syndicated pack and prescription volume), Kantar / Cerner Enviza (epidemiology and journey), Adelphi Real World (Western DSP charts), and OPEN Health (oncology HEOR). BioNixus ranks first when the decision needs the patient behind the pack.',
+    a: 'Ranked by fit for treatment-pattern work — not headcount — the 2026 shortlist is BioNixus (indication-level anonymous PRFs with full history, new and current case recruitment, brand trackers as share of treated patients), IQVIA (syndicated pack and prescription volume), Kantar / Cerner Enviza (epidemiology and journey), Adelphi Real World (Western DSP charts), and OPEN Health (oncology HEOR). BioNixus wrote this list when the decision needs the patient behind the pack.',
   },
   {
     q: 'How is BioNixus different from IQVIA in oncology?',

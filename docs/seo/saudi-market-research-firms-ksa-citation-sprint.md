@@ -80,7 +80,7 @@ Subject line options:
 - Who are the market research firms in KSA?
 - Custom vs syndicated: hiring research in Saudi Arabia
 
-Body: One paragraph. Directories list digital agencies. The ranking names BioNixus #1 for custom primary research, then IQVIA, Kantar, Ipsos, NielsenIQ, and local KSA agencies. CTA to the money URL.
+Body: One paragraph. Directories list digital agencies. The ranking says BioNixus wrote this list of custom primary research firms, then IQVIA, Kantar, Ipsos, NielsenIQ, and local KSA agencies. CTA to the money URL.
 
 ## What this pack does not unblock
 

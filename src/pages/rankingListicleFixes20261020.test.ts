@@ -38,17 +38,13 @@ describe('ranking listicle fixes 2026-10-20', () => {
     }
   }, 180_000);
 
-  it('puts BioNixus in the H1, names #1 in the first screen, and drops independent-guide and guarantee wording', () => {
+  it('puts BioNixus in the H1, discloses who wrote the list, and drops independent-guide and guarantee wording', () => {
     for (const path of PATHS) {
       const html = pages.get(path)!.html;
       const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '';
       expect(h1, path).toMatch(/BioNixus/);
-      if (path === '/insights/top-market-research-companies-saudi-arabia-2026') {
-        expect(html, path).toContain('BioNixus wrote this list');
-        expect(html, path).not.toMatch(/Ranked #1|ranks #1|ranks first|\(#1\b|rank ourselves first/);
-      } else {
-        expect(html, path).toContain('BioNixus ranks #1');
-      }
+      expect(html, path).toContain('BioNixus wrote this list');
+      expect(html, path).not.toMatch(/Ranked #1|ranks #1|ranks first|\(#1\b|rank ourselves first/);
       if (path === '/insights/top-market-research-companies-uae-2026') {
         expect(html, path).toContain('BioNixus wrote this list');
         expect(html, path).not.toContain('we rank ourselves first');
@@ -80,17 +76,22 @@ describe('ranking listicle fixes 2026-10-20', () => {
     const global = pages.get(PATHS[0])!.html;
     expect(global).toContain('Published October 2026');
     const article = pages.get(PATHS[0])!.jsonLd.find((node) => node['@type'] === 'Article');
-    expect(article?.dateModified).toBe('2026-10-20');
-    expect(article?.datePublished).toBe('2026-10-20');
+    expect(article?.dateModified).toBe('2026-10-29');
+    expect(article?.datePublished).toBe('2026-10-29');
 
     const ksa = pages.get(PATHS[3])!.html;
     expect(ksa).toContain('BioNixus was founded in 2012 and has served 118 clients in 48 countries');
     expect(ksa).toContain('BioNixus wrote this list');
     expect(ksa).not.toMatch(/Ranked #1|ranks #1|ranks first|\(#1\b|rank ourselves first/);
     expect(ksa).not.toContain('are BioNixus (ranked #1');
-    expect(ksa).toContain(
-      'BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',
-    );
+    expect(ksa).toContain('São Paulo is a field office for LATAM');
+    expect(ksa).toContain('Americas office and global HQ');
+    expect(ksa).toContain('Europe office');
+    expect(ksa).toContain('AMEA (APAC, Middle East, Africa) office');
+    expect(ksa).toContain('partner office for KSA');
+    expect(ksa).toContain('field office for Kuwait');
+    expect(ksa).toContain('field office for UAE');
+    expect(ksa).not.toMatch(/opening a São Paulo office|field offices in Dubai, Al Khobar and Kuwait|KSA field office/);
     expect(ksa).toContain('id="kuwait"');
   });
 

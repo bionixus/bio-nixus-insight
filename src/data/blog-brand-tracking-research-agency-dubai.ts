@@ -278,7 +278,7 @@ const NARRATIVE_HTML = `<p>A shared category score can show that a brand moved. 
 
 <p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has completed 127 studies so far in 2026. Custom programmes are priced from $10,000 to $60,000. The tagline is “Guaranteed in writing.” That covers the agreed scope, timetable and deliverables. It does not cover a promised score.</p>
 
-<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
+<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM.</p>
 
 <p>Dubai is where UAE waves are fielded. It is not the regional headquarters. Arabic and English scripting sit with the same team that writes the questions, so the scale labels do not drift between languages.</p>
 

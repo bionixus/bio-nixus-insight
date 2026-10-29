@@ -175,7 +175,7 @@ export const SOCIAL_BODY_HTML = `<p>Gazya for lupus in Brazil starts with a regu
 
 <h2 id="plan-your-brazil-access-research-with-bionixus">Plan your Brazil access research with BioNixus</h2>
 
-<p>BioNixus has run primary market research since 2012, with physician, payer and account fieldwork across 48 countries. We are opening a São Paulo office by the end of 2026, as part of our <a href="/news/bionixus-brazil-office-latam-expansion-2026">Latin America expansion</a>. See <a href="/brazil-pharmaceutical-market-research">pharmaceutical market research in Brazil</a>.</p>
+<p>BioNixus has run primary market research since 2012, with physician, payer and account fieldwork across 48 countries. We are field office for LATAM, as part of our <a href="/news/bionixus-brazil-office-latam-expansion-2026">Latin America expansion</a>. See <a href="/brazil-pharmaceutical-market-research">pharmaceutical market research in Brazil</a>.</p>
 
 <p>If you are preparing an immunology launch in Brazil, <a href="/contact?ref=blog-gazya-brazil-2026">contact our team</a>.</p>
 
@@ -282,7 +282,7 @@ export const socialArticle: BlogPost & {
   faqInBody: true,
   ctaSection: {
   "title": "Plan your Brazil access research with BioNixus",
-  "description": "BioNixus has run primary market research since 2012, with physician, payer and account-level fieldwork across 48 countries. We are opening a São Paulo office by the end of 2026, as part of our [Latin America expansion](https://www.bionixus.com/news/bionixus-brazil-office-latam-expansion-2026). See how we run [pharmaceutical market research in Brazil](https://www.bionixus.com/brazil-pharmaceutical-market-research), from rheumatologist surveys to hospital and health plan interviews.",
+  "description": "BioNixus has run primary market research since 2012, with physician, payer and account-level fieldwork across 48 countries. We are field office for LATAM, as part of our [Latin America expansion](https://www.bionixus.com/news/bionixus-brazil-office-latam-expansion-2026). See how we run [pharmaceutical market research in Brazil](https://www.bionixus.com/brazil-pharmaceutical-market-research), from rheumatologist surveys to hospital and health plan interviews.",
   "buttonText": "contact our team",
   "buttonUrl": "https://www.bionixus.com/contact?ref=blog-gazya-brazil-2026"
 },

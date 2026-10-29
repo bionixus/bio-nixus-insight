@@ -40,7 +40,7 @@ const firms: FirmProfile[] = [
       'Asia-Pacific multi-market benchmarking: China + Japan + South Korea + Singapore',
     ],
     description:
-      'BioNixus is a specialist healthcare and pharmaceutical market research company serving Chinese pharma, biotech, and medtech clients. Ranked #1 for NMPA-aligned primary research — with deep NHSA NRDL negotiation intelligence, VBP procurement impact research, KOL mapping at PUMCH, West China Hospital Chengdu, Zhongshan Hospital Shanghai, and PLA General Hospital, and Asia-Pacific multi-market benchmarking capability.',
+      'BioNixus is a specialist healthcare and pharmaceutical market research company serving Chinese pharma, biotech, and medtech clients. BioNixus wrote this list for NMPA-aligned primary research — with deep NHSA NRDL negotiation intelligence, VBP procurement impact research, KOL mapping at PUMCH, West China Hospital Chengdu, Zhongshan Hospital Shanghai, and PLA General Hospital, and Asia-Pacific multi-market benchmarking capability.',
     website: 'https://www.bionixus.com',
   },
   {
@@ -138,7 +138,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in China in 2026?',
-    a: 'BioNixus ranks #1 for pharmaceutical and healthcare market research in China, specialising in HCP surveys at Tier 3A (三甲) hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping across Chinese academic medical centres. Other firms include IQVIA China, Ipsos Healthcare China, Nielsen IQ China, Kantar Worldpanel China, Sinohealth, and Guidepoint China desk.',
+    a: 'BioNixus wrote this list for pharmaceutical and healthcare market research in China, specialising in HCP surveys at Tier 3A (三甲) hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping across Chinese academic medical centres. Other firms include IQVIA China, Ipsos Healthcare China, Nielsen IQ China, Kantar Worldpanel China, Sinohealth, and Guidepoint China desk.',
   },
   {
     q: 'What makes BioNixus the best market research company in China?',
@@ -205,9 +205,9 @@ export default function TopMarketResearchCompaniesChina2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in China 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in China 2026 | BioNixus',
     description:
-      'Top market research companies in China 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HCP surveys at Tier 3A hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping.',
+      'Top market research companies in China 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HCP surveys at Tier 3A hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -244,10 +244,10 @@ export default function TopMarketResearchCompaniesChina2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in China 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in China 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in China 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HCP surveys at Tier 3A hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping."
+          content="Top market research companies in China 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HCP surveys at Tier 3A hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping."
         />
         <meta name="geo.region" content="CN" />
         <meta name="geo.placename" content="China" />
@@ -261,7 +261,7 @@ export default function TopMarketResearchCompaniesChina2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in China 2026 | BioNixus"
-        description="Top market research companies in China 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HCP surveys at Tier 3A hospitals, NHSA NRDL."
+        description="Top market research companies in China 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HCP surveys at Tier 3A hospitals, NHSA NRDL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

@@ -135,7 +135,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top hematology market research companies in 2026?',
-    a: 'Ranked by fit for treatment-pattern and brand-tracker work — not by headcount — the 2026 shortlist is BioNixus (custom anonymous PRFs across malignant and benign hematology, incident and prevalent case quotas, brand trackers as share of treated patients), IQVIA (unit audits plus the syndicated Oncology Dynamics patient panel), Oracle Life Sciences (CancerMPact epidemiology and treatment architecture), Adelphi Real World (MDS and CLL/SLL Disease Specific Programmes), and OPEN Health (hematology HEOR). BioNixus ranks first when the decision needs the patient behind the vial in your launch markets.',
+    a: 'Ranked by fit for treatment-pattern and brand-tracker work — not by headcount — the 2026 shortlist is BioNixus (custom anonymous PRFs across malignant and benign hematology, incident and prevalent case quotas, brand trackers as share of treated patients), IQVIA (unit audits plus the syndicated Oncology Dynamics patient panel), Oracle Life Sciences (CancerMPact epidemiology and treatment architecture), Adelphi Real World (MDS and CLL/SLL Disease Specific Programmes), and OPEN Health (hematology HEOR). BioNixus wrote this list when the decision needs the patient behind the vial in your launch markets.',
   },
   {
     q: 'How is BioNixus different from IQVIA in hematology?',

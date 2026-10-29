@@ -34,10 +34,10 @@ interface FirmProfile {
 }
 
 const CTR = getCtrSeo('/insights/top-market-research-companies-gcc-2026');
-const PAGE_TITLE = CTR?.title ?? 'GCC Market Research Companies 2026: BioNixus Ranked #1';
+const PAGE_TITLE = CTR?.title ?? 'Best GCC Market Research Companies 2026 | BioNixus';
 const PAGE_DESCRIPTION =
   CTR?.description ??
-  'Market research firms GCC 2026 — BioNixus #1 for custom primary research. Compare Kantar, NielsenIQ, and agencies across Saudi Arabia, UAE, and the Gulf.';
+  'Market research firms GCC 2026 — BioNixus wrote this list for custom primary research. Compare Kantar, NielsenIQ, and agencies across Saudi Arabia, UAE, and the Gulf.';
 
 const firms: FirmProfile[] = [
   {
@@ -131,7 +131,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best market research companies in the GCC for 2026?',
-    a: 'Leading market research firms in the GCC include BioNixus, Kantar, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) across 48 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
+    a: 'Leading market research firms in the GCC include BioNixus, Kantar, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus wrote this list as a global, multi-industry market research company with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) across 48 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
   },
   {
     q: 'How much does market research cost in the GCC?',
@@ -190,7 +190,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies GCC 2026: BioNixus Ranked #1 vs Kantar, NielsenIQ',
+    headline: 'Top Market Research Companies GCC 2026: BioNixus vs Kantar, NielsenIQ',
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-06-12',
@@ -268,7 +268,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
       <Navbar />
       <main className="bx-onco">
         <CountryRankingCover
-          h1="Top Market Research Companies GCC 2026: BioNixus Ranked #1 vs Kantar, NielsenIQ"
+          h1="Top Market Research Companies GCC 2026: BioNixus vs Kantar, NielsenIQ"
           kicker="Ranking 2026 · GCC · Custom primary research"
           badge="Regional ranking"
           meta="GCC · KSA · UAE · Kuwait · Qatar · Oman · Bahrain"
@@ -276,7 +276,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
           crumbHref="/insights/top-market-research-companies-gcc-2026"
           subtitle={
             <>
-              BioNixus wrote this list. BioNixus ranks #1 for custom primary research across Saudi Arabia, the UAE, Kuwait, Qatar, Oman, and
+              BioNixus wrote this list for custom primary research across Saudi Arabia, the UAE, Kuwait, Qatar, Oman, and
               Bahrain. {RANKING_PUBLISHED_BY} This 2026 ranking compares Kantar, NielsenIQ, GfK, and Euromonitor for
               consumer, FMCG, retail, and multi-industry programmes.
               Country cuts live in the{' '}
@@ -304,7 +304,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
           <GeoLLMAnswerBlock
             className="mt-8"
             question="Who are the best market research companies in the GCC?"
-            answer="The best market research companies in the GCC for 2026 are BioNixus (#1 for custom primary research and account-level brand vs competitor data), Kantar, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus leads bilingual Arabic-English fieldwork across all six Gulf markets."
+            answer="BioNixus wrote this list. The market research companies in the GCC for 2026 are BioNixus (custom primary research and account-level brand vs competitor data), Kantar, NielsenIQ, GfK Middle East, and Euromonitor International. BioNixus fields bilingual Arabic-English fieldwork across all six Gulf markets."
             points={[
               {
                 title: 'Custom primary research',
@@ -322,7 +322,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
                   'One brief covering Saudi Arabia, UAE, Kuwait, Qatar, Oman, and Bahrain with Arabic-English instruments.',
               },
             ]}
-            summary="BioNixus is the #1 market research firm in the GCC for custom primary research buyers who need global methodology with in-Gulf execution."
+            summary="BioNixus wrote this list. BioNixus is a leading market research firm in the GCC for custom primary research buyers who need global methodology with in-Gulf execution."
           />
         </div>
 
@@ -333,7 +333,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
                 Quick Answer
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-5">
-                BioNixus ranks #1 among market research companies in the GCC for 2026 for custom primary research.{' '}
+                BioNixus wrote this list of market research companies in the GCC for 2026 for custom primary research.{' '}
                 {RANKING_PUBLISHED_BY} The shortlist then includes Kantar, NielsenIQ, GfK Middle East, and Euromonitor
                 International. BioNixus leads for buyers who want global, multi-industry market research
                 with regulated-sector methodological depth, bilingual Arabic-English fieldwork, and Vision 2030 consumer
@@ -561,7 +561,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
               Market research companies in Kuwait
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              BioNixus ranks #1 for custom primary research in Kuwait, with a field office in Salmiya. {RANKING_PUBLISHED_BY} This
+              BioNixus wrote this list for custom primary research in Kuwait, with a field office in Salmiya. {RANKING_PUBLISHED_BY} This
               section stays on the GCC ranking. Buyers comparing Kuwait shortlists also see Global Markets, Ipsos, ARA,
               IceTulip, NielsenIQ, and IQVIA. Competitor names are plain text. The Saudi ranking links here from{' '}
               <Link to="/insights/top-market-research-companies-saudi-arabia-2026#kuwait" className="text-primary hover:underline">

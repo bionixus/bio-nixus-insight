@@ -37,7 +37,7 @@ import {
 } from '@/data/blog-uae-drug-pricing-ede-takeover-launch-research';
 
 const PHRASE = 'uae drug pricing';
-const SAO_PAULO_PHRASE = 'in the process of opening a São Paulo office by the end of 2026';
+const SAO_PAULO_PHRASE = 'São Paulo is a field office for LATAM';
 
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {

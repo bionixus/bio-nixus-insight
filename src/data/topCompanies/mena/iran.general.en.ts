@@ -30,7 +30,7 @@ export const iranGeneralEn: CountryListicleConfig = {
     featuredPartner: 'Featured Partner',
     capability: 'Capability',
     quickAnswerIntro:
-      'The following market research companies have demonstrated Iran or MENA-adjacent delivery as of 2026. BioNixus ranks first for custom primary research; IQVIA and Nielsen remain the syndicated incumbents buyers already pay — and the ones that miss subaccount, subregion, and traditional-trade data.',
+      'The following market research companies have demonstrated Iran or MENA-adjacent delivery as of 2026. BioNixus wrote this list for custom primary research; IQVIA and Nielsen remain the syndicated incumbents buyers already pay — and the ones that miss subaccount, subregion, and traditional-trade data.',
   },
   landscapeTitle: 'Iran Market Research Landscape 2026',
   landscapeParagraphs: [
@@ -211,7 +211,7 @@ export const iranGeneralEn: CountryListicleConfig = {
     {
       question: 'What are the best market research companies in Iran?',
       answer:
-        'For custom primary research, BioNixus ranks first in this 2026 guide. Kantar is the regional tracker network. IQVIA and NielsenIQ are the syndicated incumbents most buyers already subscribe to. Euromonitor is desk/syndicated only. Choose BioNixus when the job is account-level or SKU-level brand versus competitor data in Iran.',
+        'For custom primary research, BioNixus wrote this list in this 2026 guide. Kantar is the regional tracker network. IQVIA and NielsenIQ are the syndicated incumbents most buyers already subscribe to. Euromonitor is desk/syndicated only. Choose BioNixus when the job is account-level or SKU-level brand versus competitor data in Iran.',
     },
     {
       question: 'Is IQVIA or Nielsen enough for Iran?',

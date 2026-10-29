@@ -1,7 +1,6 @@
 /** Shared ranking-page disclosure and competitor comparison lines. */
 
-export const RANKING_PUBLISHED_BY =
-  "Published by BioNixus; we rank ourselves first for custom primary research — here's why.";
+export const RANKING_PUBLISHED_BY = 'Published by BioNixus.';
 
 /** Visible and schema line: "{Name} vs BioNixus: when to choose each." */
 export function vsBioNixusSentence(name: string, when: string): string {

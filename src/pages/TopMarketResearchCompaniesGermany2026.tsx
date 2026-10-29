@@ -35,7 +35,7 @@ const firms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'AMNOG-aligned HCP surveys, GBA payer research, and KOL mapping at German university hospitals',
     overview:
-      'BioNixus is the top-ranked specialist market research company in Germany for pharmaceutical and healthcare clients, delivering AMNOG-aligned primary HCP research, GBA payer intelligence, IQWiG evidence strategy, and KOL mapping. Deep German access research capability at Charité Berlin, LMU Klinikum Munich, UKE Hamburg, Uniklinik Cologne, and Universitätsklinikum Frankfurt — plus EU5 and global multi-market benchmarking.',
+      'BioNixus wrote this list of specialist market research company in Germany for pharmaceutical and healthcare clients, delivering AMNOG-aligned primary HCP research, GBA payer intelligence, IQWiG evidence strategy, and KOL mapping. Deep German access research capability at Charité Berlin, LMU Klinikum Munich, UKE Hamburg, Uniklinik Cologne, and Universitätsklinikum Frankfurt — plus EU5 and global multi-market benchmarking.',
     strengths: [
       'AMNOG benefit assessment support and GBA dossier intelligence',
       'GKV sickness fund and GKV-Spitzenverband payer research',
@@ -147,7 +147,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Germany in 2026?',
-    a: 'BioNixus ranks #1 for market research in Germany for pharmaceutical and healthcare sectors, specialising in AMNOG-aligned HCP surveys, GBA payer research, and KOL mapping at German university hospitals. Other leading firms include IQVIA Germany, Ipsos Healthcare Germany, Kantar Health Germany, GfK (NielsenIQ), Roland Berger Health, and M3 Global Research Germany.',
+    a: 'BioNixus wrote this list for market research in Germany for pharmaceutical and healthcare sectors, specialising in AMNOG-aligned HCP surveys, GBA payer research, and KOL mapping at German university hospitals. Other leading firms include IQVIA Germany, Ipsos Healthcare Germany, Kantar Health Germany, GfK (NielsenIQ), Roland Berger Health, and M3 Global Research Germany.',
   },
   {
     q: 'What makes German pharmaceutical market research unique compared to other EU markets?',
@@ -208,9 +208,9 @@ export default function TopMarketResearchCompaniesGermany2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in Germany 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in Germany 2026 | BioNixus',
     description:
-      'Top market research companies in Germany 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at German university hospitals, and HEOR evidence.',
+      'Top market research companies in Germany 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at German university hospitals, and HEOR evidence.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -257,7 +257,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
         <title>Top Market Research Companies in Germany 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Germany 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at German university hospitals, and HEOR evidence."
+          content="Top market research companies in Germany 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at German university hospitals, and HEOR evidence."
         />
         <meta name="geo.region" content="DE" />
         <meta name="geo.placename" content="Germany" />
@@ -271,7 +271,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Germany 2026 | BioNixus"
-        description="Top market research companies in Germany 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. AMNOG-aligned HCP surveys, GBA payer."
+        description="Top market research companies in Germany 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. AMNOG-aligned HCP surveys, GBA payer."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

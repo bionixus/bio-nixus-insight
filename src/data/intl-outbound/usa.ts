@@ -51,7 +51,7 @@ export const USA_INTL_PAGE: IntlMoneyPage = {
     {
       title: 'Physician and account-level cuts',
       description:
-        'About 3,200 physicians across 48 countries, used when a syndicated US or GCC audit stops at the national average.',
+        '82,000+ physicians globally and about 3,200 physicians in the Middle East across 48 countries, used when a syndicated US or GCC audit stops at the national average.',
     },
     {
       title: 'Written scope, not a forecast promise',
