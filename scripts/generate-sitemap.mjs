@@ -425,7 +425,7 @@ const staticPages = [
   { path: '/pharmaceutical-competitor-intelligence', priority: '0.9', changefreq: 'monthly' },
   { path: '/gcc-pharma-market-report-2026', priority: '0.9', changefreq: 'monthly' },
   { path: '/kol-mapping-saudi-arabia-oncology', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-20' },
-  { path: '/physician-survey-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-20' },
+  { path: '/physician-survey-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-29' },
   { path: '/sfda-market-access-strategy-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/biosimilar-market-entry-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-27' },
   { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly' },

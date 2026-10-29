@@ -1,13 +1,26 @@
+import { AgencyResearchOffer } from '@/components/conversion/AgencyResearchOffer';
+import { PHYSICIAN_NETWORK_STATEMENT } from '@/data/agencyResearchOffer';
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 import { getServiceLandingContent } from '@/data/serviceLandingContent';
 
 const expandedContent = getServiceLandingContent('gcc-hcp-recruitment-market-research');
+const description =
+  'Physician recruitment in Saudi Arabia and GCC for pharmaceutical market research with specialist validation, quality controls, and compliant sample.';
 
 export default function GccHcpRecruitmentMarketResearch() {
   return (
     <StrategicServicePage
       title="Physician Recruitment in Saudi Arabia and GCC | BioNixus"
-      description="Physician recruitment in Saudi Arabia and GCC for pharmaceutical market research with specialist validation, quality controls, and compliant sample."
+      description={description}
+      serviceSchemaDescription={`${description} ${PHYSICIAN_NETWORK_STATEMENT}`}
+      publishedAt="2026-07-14"
+      modifiedAt="2026-10-29"
+      afterDelivery={
+        <AgencyResearchOffer
+          pageSlug="gcc-hcp-recruitment-market-research"
+          lead="When a client brief needs verified physician or HCP recruitment in Saudi Arabia and the wider GCC, BioNixus can deliver under your brand."
+        />
+      }
       canonicalUrl="https://www.bionixus.com/gcc-hcp-recruitment-market-research"
       breadcrumbLabel="GCC HCP Recruitment Market Research"
       h1="Physician Recruitment in Saudi Arabia and GCC"

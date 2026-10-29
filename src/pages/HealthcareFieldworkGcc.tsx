@@ -2,7 +2,9 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { AgencyResearchOffer } from '@/components/conversion/AgencyResearchOffer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { PHYSICIAN_NETWORK_STATEMENT } from '@/data/agencyResearchOffer';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { ExecutiveDecisionBlock, PremiumHero, ProofMetricGrid } from '@/components/page/PremiumPageSections';
 
@@ -52,12 +54,22 @@ const serviceSchema = {
     name: 'BioNixus',
     url: 'https://www.bionixus.com',
   },
-  description:
-    'Specialist healthcare fieldwork across all six GCC markets including role-verified HCP recruitment, bilingual Arabic/English field operations, and audit-ready dataset delivery.',
+  description: `Specialist healthcare fieldwork across all six GCC markets including role-verified HCP recruitment, bilingual Arabic/English field operations, and audit-ready dataset delivery. ${PHYSICIAN_NETWORK_STATEMENT}`,
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: 'Healthcare Fieldwork GCC | Specialist HCP Research | BioNixus',
+  datePublished: '2026-09-29',
+  dateModified: '2026-10-29',
 };
 
 const jsonLd = [
   serviceSchema,
+  webPageSchema,
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
     { name: 'Healthcare Fieldwork', href: '/healthcare-fieldwork-gcc' },
@@ -331,6 +343,11 @@ export default function HealthcareFieldworkGcc() {
               detail: 'All-in fieldwork cost for GCC HCP studies depending on method, specialty, and geography.',
             },
           ]}
+        />
+
+        <AgencyResearchOffer
+          pageSlug="healthcare-fieldwork-gcc"
+          lead="When a client brief needs verified healthcare fieldwork across one or more GCC markets, BioNixus can deliver under your brand."
         />
 
         <section className="section-padding py-10">

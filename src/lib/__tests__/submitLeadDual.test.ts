@@ -18,6 +18,7 @@ const LEAD_SURFACES = [
   'src/components/WhatsAppProposalWidget.tsx',
   'src/pages/ClinicalDiagnosticsProposalRequest.tsx',
   'src/components/conversion/EmailCaptureForm.tsx',
+  'src/components/conversion/AgencyResearchOffer.tsx',
   'src/components/Footer.tsx',
 ];
 
