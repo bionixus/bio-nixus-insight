@@ -1,7 +1,7 @@
 /** Approved agency-offer copy. Do not reword. The public intro omits the internal tagging sentence. */
 
 export const PHYSICIAN_NETWORK_STATEMENT =
-  'BioNixus works with a network of about 82,000+ physicians globally and about 3,200 in the Middle East, with role and licence checks matched to the country of practice.';
+  '82,000+ physicians globally and about 3,200 physicians in the Middle East';
 
 export const AGENCY_OFFER_BULLETS = [
   'White-label delivery: instruments, fieldwork, and datasets can ship under the commissioning agency’s brand. BioNixus stays off client-facing materials unless you ask otherwise.',

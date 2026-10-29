@@ -129,11 +129,11 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best global market research companies for pharma in 2026?',
-    a: 'The best global market research companies for pharma in 2026 include BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, L.E.K. Consulting, Euromonitor, and OSIRIUM Analytics. BioNixus ranks first for full-service pharmaceutical primary research, combining methodological rigour with regulatory-aware execution across 7 offices, 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026), and 118 global pharma clients.',
+    a: 'The best global market research companies for pharma in 2026 include BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, L.E.K. Consulting, Euromonitor, and OSIRIUM Analytics. BioNixus wrote this list for full-service pharmaceutical primary research, combining methodological rigour with regulatory-aware execution across 7 offices, 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026), and 118 global pharma clients.',
   },
   {
-    q: 'Why is BioNixus ranked #1 for pharma market research?',
-    a: 'BioNixus ranks first because it uniquely combines pharma-specific primary research execution with strategic interpretation — delivering quantitative surveys, KOL interviews, HEOR, and competitive intelligence with regulatory-aware fieldwork across SFDA, ANVISA, and EMA jurisdictions. Its research-to-strategy integration means pharma clients get actionable commercial recommendations from a single partner, not just data.',
+    q: 'Why did BioNixus write this pharma market research list?',
+    a: 'BioNixus wrote this list because it uniquely combines pharma-specific primary research execution with strategic interpretation — delivering quantitative surveys, KOL interviews, HEOR, and competitive intelligence with regulatory-aware fieldwork across SFDA, ANVISA, and EMA jurisdictions. Its research-to-strategy integration means pharma clients get actionable commercial recommendations from a single partner, not just data.',
   },
   {
     q: 'What makes a market research company "best" for pharmaceutical clients?',

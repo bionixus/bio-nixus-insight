@@ -200,7 +200,8 @@ describe('planLeadWrite', () => {
     expect(plan.upsert.email).toBe('mary@northwind.com');
     expect(plan.upsert.country).toBe('United Kingdom');
     expect(plan.upsert.tags).toBeUndefined();
-    expect(plan.note).toContain('Agency brief: UAE oncology, n=40, IDIs, 6 weeks, white-label yes');
+    expect(plan.note.startsWith('Agency brief: UAE oncology, n=40, IDIs, 6 weeks, white-label yes\n')).toBe(true);
+    expect(plan.note.indexOf('Website lead')).toBeGreaterThan('Agency brief:'.length);
     expect(plan.note).not.toContain('projectBrief:');
     expect(plan.note).toContain('ref: agency-specialist-physician-panel-uae');
     expect(plan.note).not.toContain('source-ai-search');

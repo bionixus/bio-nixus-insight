@@ -1,18 +1,14 @@
 import { AgencyResearchOffer } from '@/components/conversion/AgencyResearchOffer';
-import { PHYSICIAN_NETWORK_STATEMENT } from '@/data/agencyResearchOffer';
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 import { getServiceLandingContent } from '@/data/serviceLandingContent';
 
 const expandedContent = getServiceLandingContent('gcc-hcp-recruitment-market-research');
-const description =
-  'Physician recruitment in Saudi Arabia and GCC for pharmaceutical market research with specialist validation, quality controls, and compliant sample.';
 
 export default function GccHcpRecruitmentMarketResearch() {
   return (
     <StrategicServicePage
       title="Physician Recruitment in Saudi Arabia and GCC | BioNixus"
-      description={description}
-      serviceSchemaDescription={`${description} ${PHYSICIAN_NETWORK_STATEMENT}`}
+      description="Physician recruitment in Saudi Arabia and the GCC. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East."
       publishedAt="2026-07-14"
       modifiedAt="2026-10-29"
       afterDelivery={
@@ -26,7 +22,7 @@ export default function GccHcpRecruitmentMarketResearch() {
       h1="Physician Recruitment in Saudi Arabia and GCC"
       serviceType="Healthcare professional recruitment research"
       areaServed={['Saudi Arabia', 'GCC']}
-      intro="A GCC physician study is only as credible as the people who actually answered it. In markets where some specialties number in the dozens, sample quality is the study — not a logistics detail. BioNixus recruits verified specialists across Saudi Arabia and the wider Gulf with role and licence validation, incidence-aware quotas, and a quality funnel that is governed while fieldwork is live, not audited after the fact."
+      intro="A GCC physician study is only as credible as the people who actually answered it. In markets where some specialties number in the dozens, sample quality is the study — not a logistics detail. BioNixus recruits verified specialists across Saudi Arabia and the wider Gulf with role and licence validation, incidence-aware quotas, and a quality funnel that is governed while fieldwork is live, not audited after the fact. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. São Paulo is a field office for LATAM. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE."
       links={[
         { to: '/bionixus-market-research-middle-east', label: 'Back to Middle East pillar', primary: true },
         { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East', primary: true },

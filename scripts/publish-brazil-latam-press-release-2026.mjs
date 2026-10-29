@@ -1,5 +1,5 @@
 /**
- * Publishes Sanity pressRelease: LATAM covered from the US office; São Paulo office in process by the end of 2026.
+ * Publishes Sanity pressRelease: LATAM covered from the US office; São Paulo is a field office for LATAM.
  *
  * Requires repo-root .env: SANITY_PROJECT_ID, SANITY_DATASET, SANITY_TOKEN (Editor)
  * Run: node scripts/publish-brazil-latam-press-release-2026.mjs
@@ -73,7 +73,7 @@ async function ensureCoverImage(outPath) {
   <rect x="0" y="0" width="100%" height="6" fill="#b91c1c"/>
   <text x="80" y="120" fill="#f8fafc" font-family="Georgia, serif" font-size="42" font-weight="600">BioNixus</text>
   <text x="80" y="200" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="28">Latin America expansion</text>
-  <text x="80" y="260" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="22">LATAM from the US office · São Paulo office by end of 2026</text>
+  <text x="80" y="260" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="22">LATAM from the US office · São Paulo field office for LATAM</text>
   <text x="80" y="620" fill="#94a3b8" font-family="Helvetica, Arial, sans-serif" font-size="16">Healthcare &amp; pharmaceutical market research</text>
 </svg>`
   const buf = await sharp(Buffer.from(svg)).jpeg({ quality: 90, progressive: true }).toBuffer()

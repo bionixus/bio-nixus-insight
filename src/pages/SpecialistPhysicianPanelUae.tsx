@@ -1,18 +1,14 @@
 import { AgencyResearchOffer } from '@/components/conversion/AgencyResearchOffer';
-import { PHYSICIAN_NETWORK_STATEMENT } from '@/data/agencyResearchOffer';
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 import { getServiceLandingContent } from '@/data/serviceLandingContent';
 
 const expandedContent = getServiceLandingContent('specialist-physician-panel-uae');
-const description =
-  'Validated specialist physician panel UAE: DHA, DOH, and MOHAP licence-verified specialists across oncology, cardiology, endocrinology, rheumatology, and neurology. Advisory boards, conjoint studies, brand tracking, and concept testing with forty-eight to seventy-two hour advisory board recruitment.';
 
 export default function SpecialistPhysicianPanelUae() {
   return (
     <StrategicServicePage
       title="Specialist Physician Panel UAE | BioNixus"
-      description={description}
-      serviceSchemaDescription={`${description} ${PHYSICIAN_NETWORK_STATEMENT}`}
+      description="Validated specialist physician panel UAE: DHA, DOH, and MOHAP licence-verified specialists. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East."
       publishedAt="2026-06-24"
       modifiedAt="2026-10-29"
       afterDelivery={
@@ -26,7 +22,7 @@ export default function SpecialistPhysicianPanelUae() {
       serviceType="Specialist physician recruitment and panel management for pharmaceutical market research in the UAE"
       areaServed={['United Arab Emirates', 'Dubai', 'Abu Dhabi']}
       h1="Specialist Physician Panel UAE"
-      intro="BioNixus maintains validated UAE specialist physician panels across twelve plus therapy areas, with active licence verification against DHA, DOH, and MOHAP databases. Whether you need ten specialists for an advisory board in seventy-two hours or eighty for a quarterly brand tracking wave, our UAE physician panels deliver credible, verified respondents matched to your research objectives."
+      intro="BioNixus maintains validated UAE specialist physician panels across twelve plus therapy areas, with active licence verification against DHA, DOH, and MOHAP databases. Whether you need ten specialists for an advisory board in seventy-two hours or eighty for a quarterly brand tracking wave, our UAE physician panels deliver credible, verified respondents matched to your research objectives. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. São Paulo is a field office for LATAM. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE."
       links={[
         { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment market research', primary: true },
         { to: '/pharma-fieldwork-uae', label: 'Pharma fieldwork UAE', primary: true },

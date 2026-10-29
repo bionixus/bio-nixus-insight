@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { AgencyResearchOffer } from '@/components/conversion/AgencyResearchOffer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
-import { PHYSICIAN_NETWORK_STATEMENT } from '@/data/agencyResearchOffer';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { ExecutiveDecisionBlock, PremiumHero, ProofMetricGrid } from '@/components/page/PremiumPageSections';
 
@@ -54,7 +53,8 @@ const serviceSchema = {
     name: 'BioNixus',
     url: 'https://www.bionixus.com',
   },
-  description: `Specialist healthcare fieldwork across all six GCC markets including role-verified HCP recruitment, bilingual Arabic/English field operations, and audit-ready dataset delivery. ${PHYSICIAN_NETWORK_STATEMENT}`,
+  description:
+    'Specialist healthcare fieldwork across all six GCC markets. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. São Paulo is a field office for LATAM. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE.',
 };
 
 const webPageSchema = {
@@ -85,7 +85,7 @@ export default function HealthcareFieldworkGcc() {
         <title>Healthcare Fieldwork GCC | Specialist HCP Research | BioNixus</title>
         <meta
           name="description"
-          content="Healthcare fieldwork GCC with role-verified specialist recruitment, bilingual Arabic/English operations, incidence-aware sampling, and audit-ready data delivery across all six GCC markets."
+          content="Healthcare fieldwork GCC with role-verified specialist recruitment. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East."
         />
         <link rel="canonical" href={pageUrl} />
         {jsonLd.map((schema, index) => (
@@ -105,7 +105,7 @@ export default function HealthcareFieldworkGcc() {
         />
         <PremiumHero
           h1="Healthcare Fieldwork GCC"
-          intro="Pharmaceutical and medical device teams conducting primary research across the Gulf Cooperation Council face a distinctive set of operational realities: thin specialist pools, gatekeeper-heavy institutions, bilingual data requirements, and regulatory frameworks that differ meaningfully from European or North American norms. BioNixus designs and executes healthcare fieldwork across all six GCC markets — Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — with role-verified specialist cohorts, incidence-aware quota management, and audit-ready dataset delivery."
+          intro="Pharmaceutical and medical device teams conducting primary research across the Gulf Cooperation Council face a distinctive set of operational realities: thin specialist pools, gatekeeper-heavy institutions, bilingual data requirements, and regulatory frameworks that differ meaningfully from European or North American norms. BioNixus designs and executes healthcare fieldwork across all six GCC markets — Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — with role-verified specialist cohorts, incidence-aware quota management, and audit-ready dataset delivery. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. São Paulo is a field office for LATAM. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE."
           links={[
             { to: '/healthcare-fieldwork-middle-east', label: 'Healthcare fieldwork Middle East' },
             { to: '/gcc-hcp-recruitment-market-research', label: 'GCC HCP recruitment' },

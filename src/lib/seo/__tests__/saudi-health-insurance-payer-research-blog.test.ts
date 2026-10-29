@@ -38,7 +38,7 @@ import {
 
 const PHRASE = 'saudi health insurance payer research';
 const SECONDARY = 'chi dhaman formulary';
-const SAO_PAULO_PHRASE = 'in the process of opening a São Paulo office by the end of 2026';
+const SAO_PAULO_PHRASE = 'São Paulo is a field office for LATAM';
 
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {

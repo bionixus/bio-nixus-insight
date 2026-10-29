@@ -515,7 +515,7 @@ ${figureHtml(CHOOSE_AGENCY_KSA_FIGURES[4])}
 <p>Use the ten questions when you decide how to choose a healthcare market research agency. Score the proposal on fieldwork city, recruitment quotas, health-data roles, sample checks, the three access bodies, data ownership and the written guarantee. Drop any bid that offers one national percentage.</p>
 
 <h2 id="why-bionixus">How to brief BioNixus</h2>
-<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. There are field offices in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Work in Latin America is covered today from the US office with local consultants.</p>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. There are field offices in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM. Work in Latin America is covered today from the US office with local consultants.</p>
 <p>The line “Guaranteed in writing” covers scope, timing, replacement of respondents who do not qualify, the minimum sample, re-fielding if that sample is missed, and a credited pilot. It does not cover what the interviews will find. BioNixus has 40 client reviews.</p>
 <p>Use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
 
@@ -561,7 +561,7 @@ export const CHOOSE_AGENCY_KSA_FAQ: { question: string; answer: string }[] = [
   {
     question: 'Why commission BioNixus for healthcare market research in Saudi Arabia?',
     answer:
-      'Custom studies run from the Al Khobar field office, with a network of about 3,200 physicians, usually at $10k–$60k. Guaranteed in writing covers scope and sample. It does not cover what the interviews will find.',
+      'Custom studies run from the Al Khobar field office, with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, usually at $10k–$60k. Guaranteed in writing covers scope and sample. It does not cover what the interviews will find.',
   },
 ];
 
@@ -602,7 +602,7 @@ export const CHOOSE_AGENCY_KSA_ORGANIZATION: Record<string, unknown> = {
   logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 512, height: 512 },
   foundingDate: '2012',
   description:
-    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026.',
+    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM.',
   address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,

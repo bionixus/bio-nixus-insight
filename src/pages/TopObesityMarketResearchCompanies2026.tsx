@@ -115,7 +115,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top obesity market research companies in 2026?',
-    a: 'The leading obesity and weight management market research companies for 2026 are BioNixus (GLP-1 prescribing research, anti-obesity medication landscape, patient journey mapping, payer research across 48 countries), IQVIA (GLP-1 prescription audit data and treatment tracking), Kantar Health (patient experience and treatment satisfaction), Ipsos Healthcare (multi-country HCP surveys), and OPEN Health (obesity HEOR and market access evidence). BioNixus ranks first for its dedicated obesity research capability spanning GLP-1 competitive intelligence, AOM market access strategy, and multi-market execution including high-prevalence markets in the GCC and MENA.',
+    a: 'The leading obesity and weight management market research companies for 2026 are BioNixus (GLP-1 prescribing research, anti-obesity medication landscape, patient journey mapping, payer research across 48 countries), IQVIA (GLP-1 prescription audit data and treatment tracking), Kantar Health (patient experience and treatment satisfaction), Ipsos Healthcare (multi-country HCP surveys), and OPEN Health (obesity HEOR and market access evidence). BioNixus wrote this list for its dedicated obesity research capability spanning GLP-1 competitive intelligence, AOM market access strategy, and multi-market execution including high-prevalence markets in the GCC and MENA.',
   },
   {
     q: 'How does obesity market research differ from general pharmaceutical market research?',
@@ -348,7 +348,7 @@ export default function TopObesityMarketResearchCompanies2026() {
                 With offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil, BioNixus delivers obesity-specific
                 HCP surveys targeting endocrinologists, obesity medicine specialists, and primary care physicians — with
                 particular depth in high-prevalence markets across the GCC and MENA where obesity affects over 30% of the
-                adult population. This makes BioNixus the top-ranked choice for obesity market research globally.
+                adult population. BioNixus wrote this list of obesity market research companies.
               </p>
             </div>
           </div>

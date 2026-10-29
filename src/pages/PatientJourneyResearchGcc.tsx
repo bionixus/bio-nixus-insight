@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: 'Who do you interview in an obesity patient journey study?',
     answer:
-      'People living with obesity and, where relevant, family members. Endocrinologists and obesity physicians, family physicians, bariatric and metabolic surgeons, dietitians, community and hospital pharmacists, and payer, TPA or insurer medical directors. We recruit through a network of about 3,200 physicians.',
+      'People living with obesity and, where relevant, family members. Endocrinologists and obesity physicians, family physicians, bariatric and metabolic surgeons, dietitians, community and hospital pharmacists, and payer, TPA or insurer medical directors. We recruit through a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
   },
   {
     question: 'Does the obesity journey differ by payer in the GCC?',
@@ -248,7 +248,7 @@ export default function PatientJourneyResearchGcc() {
         <DirectorySection id="who" eyebrow="Quick answer" title="Who runs patient journey research for obesity in the GCC?">
           <article className="premium-card p-6 md:p-7">
             <p className="text-muted-foreground leading-relaxed">
-              BioNixus does. We are a healthcare and pharmaceutical market research company founded in 2012, with regional leadership in Cairo, London and Sheridan, Wyoming (US headquarters) and field offices in Dubai and Al Khobar. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026. For obesity, we map each stage where patients fall out of care or switch: when they first raise weight with a doctor, how obesity gets diagnosed and coded, the choice between lifestyle care, GLP-1-based medicines and bariatric surgery, how treatment is paid for, starting and dose-stepping, and whether patients persist, switch or stop. Fieldwork is in Gulf Arabic and English, drawing on a network of about 3,200 physicians. Custom studies are priced from $10k to $60k.
+              BioNixus does. We are a healthcare and pharmaceutical market research company founded in 2012, with regional leadership in Cairo, London and Sheridan, Wyoming (US headquarters) and field offices in Dubai and Al Khobar. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and São Paulo is a field office for LATAM. For obesity, we map each stage where patients fall out of care or switch: when they first raise weight with a doctor, how obesity gets diagnosed and coded, the choice between lifestyle care, GLP-1-based medicines and bariatric surgery, how treatment is paid for, starting and dose-stepping, and whether patients persist, switch or stop. Fieldwork is in Gulf Arabic and English, drawing on a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. Custom studies are priced from $10k to $60k.
             </p>
           </article>
         </DirectorySection>

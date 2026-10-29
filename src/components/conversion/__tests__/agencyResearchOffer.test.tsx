@@ -128,7 +128,7 @@ describe('agency research offer', () => {
       const src = readFileSync(resolve(ROOT, page.file), 'utf8');
       expect(src, page.file).toContain(page.lead);
       expect(src, page.file).toContain(`pageSlug="${page.slug}"`);
-      expect(src, page.file).toContain('PHYSICIAN_NETWORK_STATEMENT');
+      expect(src, page.file).toContain(PHYSICIAN_NETWORK_STATEMENT);
       expect(src, page.file).not.toContain('127 studies');
       expect(src, page.file).not.toContain('Field Partner Program');
     }
@@ -149,14 +149,16 @@ describe('agency research offer', () => {
     expect(html).not.toContain('Field Partner Program');
     expect(html).not.toContain('SCHS');
     expect(html).not.toContain('127 studies');
-    expect(html).toContain('Americas office and global HQ in Sheridan, Wyoming');
-    expect(html).toContain('Europe office in London');
-    expect(html).toContain('AMEA (APAC, Middle East, Africa) office in Cairo (Sheikh Zayed)');
-    expect(html).toContain('partner office for KSA in Al Khobar');
-    expect(html).toContain('field office for UAE in Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2)');
-    expect(html).toContain('GDPR (for data processed through our Europe office in London)');
+    expect(html).toContain('The USA (Sheridan, Wyoming) is the Americas office and global HQ.');
+    expect(html).toContain('The UK (London) is the Europe office.');
+    expect(html).toContain('Cairo is the AMEA (APAC, Middle East, Africa) office.');
+    expect(html).toContain('São Paulo is a field office for LATAM.');
+    expect(html).toContain('Al Khobar is a partner office for KSA.');
+    expect(html).toContain('Kuwait is a field office for Kuwait.');
+    expect(html).toContain('Dubai is a field office for UAE.');
     expect(html).toContain('Saudi Commission for Health Specialties (SCFHS)');
-    expect(html).toContain('82,000+ physicians globally and about 3,200 in the Middle East');
+    expect(html).toContain(PHYSICIAN_NETWORK_STATEMENT);
+    expect(html).not.toContain('about 82,000+');
     expect(html).toContain('"dateModified":"2026-10-29"');
   });
 });

@@ -127,7 +127,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top market research companies in the USA?',
-    a: 'Leading market research firms in the USA include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first for pharmaceutical and healthcare research, operating as a global network headquartered in the US with full-service capability, IRB-compliant HCP and payer research, PBM formulary expertise, and 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) across 48 countries as of 2026.',
+    a: 'Leading market research firms in the USA include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus wrote this list for pharmaceutical and healthcare research, operating as a global network headquartered in the US with full-service capability, IRB-compliant HCP and payer research, PBM formulary expertise, and 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) across 48 countries as of 2026.',
   },
   {
     q: 'How much does market research cost in the USA?',

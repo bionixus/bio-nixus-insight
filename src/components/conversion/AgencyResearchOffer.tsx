@@ -138,7 +138,9 @@ export function AgencyResearchOffer({ pageSlug, lead }: AgencyResearchOfferProps
           </Link>
           .
         </p>
-        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">{PHYSICIAN_NETWORK_STATEMENT}</p>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
+          BioNixus works with a network of {PHYSICIAN_NETWORK_STATEMENT}, with role and licence checks matched to the country of practice.
+        </p>
 
         <h3 className="text-xl font-display font-semibold text-foreground mb-3">Request an agency quote</h3>
         {submitted ? (

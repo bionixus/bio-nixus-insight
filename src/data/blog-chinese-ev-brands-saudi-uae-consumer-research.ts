@@ -308,7 +308,7 @@ const NARRATIVE_HTML = `<p>Chinese electric-car teams often arrive with one Gulf
 
 <h2 id="why-bionixus">How to brief BioNixus</h2>
 <p>BioNixus is a primary market research firm, founded in 2012. It has worked with 118 clients in 48 countries and has run 127 studies so far in 2026. Custom studies are priced from $10,000 to $60,000. Forty client reviews sit on the firm’s public profiles. The line “Guaranteed in writing” covers the agreed scope, timing, and deliverables. It does not cover what the research will find. Respondents who do not qualify are replaced at no charge.</p>
-<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English.</p>
+<p>Leadership offices are in Sheridan, Wyoming, London, and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar, and Salmiya, Kuwait. São Paulo is a field office for LATAM. Latin America is covered today from the US office with a local consultant network. Fieldwork is designed in Arabic and English.</p>
 <p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>. In the United States call <a href="tel:+18884655557">+1-888-465-5557</a>. In the United Kingdom call <a href="tel:+447727666682">+44 7727 666682</a>. In Saudi Arabia call the Al Khobar field office on <a href="tel:+966501825336">+966 50 182 5336</a>.</p>
 `;
 
@@ -391,7 +391,7 @@ export const CHINESE_EV_GULF_ORGANIZATION: Record<string, unknown> = {
   foundingDate: '2012',
   slogan: 'Guaranteed in writing.',
   description:
-    'BioNixus is a primary market research consultancy founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026, with custom pricing from $10,000 to $60,000. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026. Latin America is covered from the US office with a local consultant network.',
+    'BioNixus is a primary market research consultancy founded in 2012. It has served 118 clients in 48 countries and has run 127 studies so far in 2026, with custom pricing from $10,000 to $60,000. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM. Latin America is covered from the US office with a local consultant network.',
   address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,

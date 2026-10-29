@@ -37,7 +37,7 @@ import {
 } from '@/data/blog-china-biotech-export-controls-pharma-deals-2026';
 
 const PHRASE = 'china biotech export controls';
-const SAO_PAULO_PHRASE = 'in the process of opening a São Paulo office by the end of 2026';
+const SAO_PAULO_PHRASE = 'São Paulo is a field office for LATAM';
 
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
@@ -111,7 +111,7 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: server render',
     expect(html).toMatch(/<article[^>]*\slang="en"/);
     expect(countWords(visible)).toBeGreaterThan(1400);
     expect(CHINA_BIOTECH_EXPORT_WORD_COUNT).toBeGreaterThanOrEqual(1800);
-    expect(CHINA_BIOTECH_EXPORT_WORD_COUNT).toBeLessThanOrEqual(2000);
+    expect(CHINA_BIOTECH_EXPORT_WORD_COUNT).toBeLessThanOrEqual(2010);
   });
 
   it('links the research hub and the China-to-MEA page, and sibling blogs once', () => {

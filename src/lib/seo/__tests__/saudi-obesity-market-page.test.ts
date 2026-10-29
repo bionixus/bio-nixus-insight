@@ -61,7 +61,7 @@ describe('/saudi-arabia-obesity-market', () => {
   it('uses the confirmed hero stats', () => {
     const stats = page?.heroStats?.map((stat) => `${stat.value} ${stat.label}`).join(' | ');
     expect(stats).toContain('$10,000–$60,000 custom studies');
-    expect(stats).toContain('~3,200 physicians in network');
+    expect(stats).toContain('82,000+ physicians globally and about 3,200 physicians in the Middle East');
     expect(stats).toContain('127 studies year-to-date in 2026');
     expect(stats).toContain('Al Khobar partner office for KSA');
   });

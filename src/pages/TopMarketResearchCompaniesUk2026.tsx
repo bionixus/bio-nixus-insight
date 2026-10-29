@@ -136,7 +136,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in the UK in 2026?',
-    a: 'Leading market research companies in the UK in 2026 include BioNixus, IQVIA UK, Research Partnership, Adelphi Research, Ipsos UK, Lumanity, and Mtech Access. BioNixus ranks first for pharmaceutical and healthcare research, with MHRA- and NICE-aligned primary research, verified HCP recruitment at leading NHS trusts and academic medical centres, and deep payer intelligence across NICE technology appraisals, the SMC in Scotland, and the AWMSG in Wales.',
+    a: 'Leading market research companies in the UK in 2026 include BioNixus, IQVIA UK, Research Partnership, Adelphi Research, Ipsos UK, Lumanity, and Mtech Access. BioNixus wrote this list for pharmaceutical and healthcare research, with MHRA- and NICE-aligned primary research, verified HCP recruitment at leading NHS trusts and academic medical centres, and deep payer intelligence across NICE technology appraisals, the SMC in Scotland, and the AWMSG in Wales.',
   },
   {
     q: 'What is pharmaceutical market research in the UK?',
@@ -223,9 +223,9 @@ export default function TopMarketResearchCompaniesUk2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in the UK 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in the UK 2026 | BioNixus',
     description:
-      'Top market research companies in the UK 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. MHRA- and NICE-aligned HCP surveys, KOL mapping, and NHS payer research.',
+      'Top market research companies in the UK 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. MHRA- and NICE-aligned HCP surveys, KOL mapping, and NHS payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -265,7 +265,7 @@ export default function TopMarketResearchCompaniesUk2026() {
         <title>Top Market Research Companies in the UK (2026)</title>
         <meta
           name="description"
-          content="Top market research companies in the UK 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. MHRA- and NICE-aligned HCP surveys, KOL mapping, and NHS payer research."
+          content="Top market research companies in the UK 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. MHRA- and NICE-aligned HCP surveys, KOL mapping, and NHS payer research."
         />
         <meta name="geo.region" content="GB" />
         <meta name="geo.placename" content="United Kingdom" />
@@ -279,7 +279,7 @@ export default function TopMarketResearchCompaniesUk2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in the UK (2026) | BioNixus"
-        description="Top market research companies in the UK 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. MHRA- and NICE-aligned HCP surveys, KOL."
+        description="Top market research companies in the UK 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. MHRA- and NICE-aligned HCP surveys, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

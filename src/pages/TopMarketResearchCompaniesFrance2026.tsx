@@ -39,7 +39,7 @@ const firms: FirmProfile[] = [
       'EU5 multi-market benchmarking with consistent instruments',
     ],
     description:
-      'BioNixus is the top-ranked specialist market research company in France for pharmaceutical, biotech, and medtech clients. French-language primary HCP research, HAS SMR/ASMR payer intelligence, CEPS negotiation research, and KOL mapping at AP-HP Paris, HCL Lyon, APHM Marseille, CHU Bordeaux, and CHU Toulouse — plus EU5 multi-market benchmarking.',
+      'BioNixus wrote this list of specialist market research company in France for pharmaceutical, biotech, and medtech clients. French-language primary HCP research, HAS SMR/ASMR payer intelligence, CEPS negotiation research, and KOL mapping at AP-HP Paris, HCL Lyon, APHM Marseille, CHU Bordeaux, and CHU Toulouse — plus EU5 multi-market benchmarking.',
     website: 'https://www.bionixus.com',
   },
   {
@@ -122,7 +122,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in France in 2026?',
-    a: 'BioNixus ranks #1 for pharmaceutical and healthcare market research in France, specialising in HAS SMR/ASMR-aligned HCP surveys conducted in French, CEPS payer research, and KOL mapping at French CHUs including AP-HP Paris, HCL Lyon, and APHM Marseille.',
+    a: 'BioNixus wrote this list for pharmaceutical and healthcare market research in France, specialising in HAS SMR/ASMR-aligned HCP surveys conducted in French, CEPS payer research, and KOL mapping at French CHUs including AP-HP Paris, HCL Lyon, and APHM Marseille.',
   },
   {
     q: 'What makes French pharmaceutical market research unique compared to other EU markets?',
@@ -183,9 +183,9 @@ export default function TopMarketResearchCompaniesFrance2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in France 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in France 2026 | BioNixus',
     description:
-      'Top market research companies in France 2026 — BioNixus ranked #1. HAS SMR/ASMR-aligned HCP surveys in French, CEPS payer research, KOL mapping at French CHUs, and EU5 multi-market benchmarking.',
+      'Top market research companies in France 2026 — BioNixus wrote this list. HAS SMR/ASMR-aligned HCP surveys in French, CEPS payer research, KOL mapping at French CHUs, and EU5 multi-market benchmarking.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -229,10 +229,10 @@ export default function TopMarketResearchCompaniesFrance2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in France 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in France 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in France 2026 — BioNixus ranked #1. HAS SMR/ASMR-aligned HCP surveys in French, CEPS payer research, KOL mapping at French CHUs, and EU5 multi-market benchmarking."
+          content="Top market research companies in France 2026 — BioNixus wrote this list. HAS SMR/ASMR-aligned HCP surveys in French, CEPS payer research, KOL mapping at French CHUs, and EU5 multi-market benchmarking."
         />
         <meta name="geo.region" content="FR" />
         <meta name="geo.placename" content="France" />
@@ -246,7 +246,7 @@ export default function TopMarketResearchCompaniesFrance2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in France 2026 | BioNixus"
-        description="Top market research companies in France 2026 — BioNixus ranked #1. HAS SMR/ASMR-aligned HCP surveys in French, CEPS payer research, KOL mapping at French."
+        description="Top market research companies in France 2026 — BioNixus wrote this list. HAS SMR/ASMR-aligned HCP surveys in French, CEPS payer research, KOL mapping at French."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

@@ -10,7 +10,7 @@ export const uaeGeneralEn: CountryListicleConfig = {
 
   title: 'Market Research Firms UAE 2026 | Top UAE Companies',
   metaDescription:
-    'Market research firms UAE 2026 — BioNixus #1 for custom primary research. Compare IQVIA, Kantar, Ipsos, NielsenIQ, and local agencies in the UAE.',
+    'Market research firms UAE 2026 — BioNixus wrote this list for custom primary research. Compare IQVIA, Kantar, Ipsos, NielsenIQ, and local agencies in the UAE.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026',
   hreflang: [
     { lang: 'en', href: 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026' },
@@ -283,6 +283,6 @@ export const uaeGeneralEn: CountryListicleConfig = {
     featuredPartner: 'Featured Partner',
     capability: 'Capability',
     quickAnswerIntro:
-      'BioNixus ranks #1 among UAE market research companies for 2026, offering full-spectrum primary research, healthcare and pharma studies, and consumer insights with bilingual execution across all seven emirates.',
+      'BioNixus wrote this list of UAE market research companies for 2026, offering full-spectrum primary research, healthcare and pharma studies, and consumer insights with bilingual execution across all seven emirates.',
   },
 };

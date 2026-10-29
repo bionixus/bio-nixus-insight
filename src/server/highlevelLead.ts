@@ -277,11 +277,16 @@ export function buildNote(fields: Record<string, string>): string {
   const name = [fields.firstName, fields.lastName].filter(Boolean).join(' ').trim();
   const email = leadEmail(fields);
   const header = ['Website lead', name, email ? `<${email}>` : ''].filter(Boolean).join(' ');
-  const lines = [header];
+  const agencyBrief = fields.agencyBrief?.trim() ?? '';
+  const agencyBriefFirst = tagSlug(fields.formVariant) === 'agency-quote' && agencyBrief.length > 0;
+  const lines: string[] = [];
+  if (agencyBriefFirst) lines.push(`Agency brief: ${agencyBrief}`);
+  lines.push(header);
   const used = new Set<string>(NOTE_SKIP);
+  if (agencyBriefFirst) used.add('agencyBrief');
   for (const [key, label] of NOTE_LABELS) {
     const value = fields[key];
-    if (!value) continue;
+    if (!value || used.has(key)) continue;
     used.add(key);
     lines.push(`${label}: ${value}`);
   }

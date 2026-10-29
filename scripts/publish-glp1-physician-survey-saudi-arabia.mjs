@@ -37,7 +37,7 @@ const ARTICLE_EXCERPT =
   'A methods guide to designing a GLP-1 physician survey in Saudi Arabia. It cites published academic surveys of Saudi physicians, shows what those papers can and cannot answer, and sets out sample, specialty and access rules for a commissioned study.';
 const SEO_META_TITLE = 'GLP-1 Physician Survey Saudi Arabia: 2026 Methods Guide';
 const SEO_META_DESCRIPTION =
-  'How to design a GLP-1 physician survey Saudi Arabia brand teams can act on: published KAP findings, specialty quotas, and BioNixus 3,200-physician reach.';
+  'How to design a GLP-1 physician survey Saudi Arabia brand teams can act on: published KAP findings, specialty quotas, and BioNixus network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.';
 const COVER_ALT =
   'BioNixus navy and gold cover for a GLP-1 physician survey Saudi Arabia methods guide, 2026';
 const HERO_ALT =
@@ -187,7 +187,7 @@ function buildSharedContent(article) {
     ctaSection: {
       title: 'Planning a GLP-1 physician survey in Saudi Arabia?',
       description:
-        'Tell us the decision you need to make. BioNixus scopes a specialty-quota prescriber survey from a network of about 3,200 physicians. Custom studies are typically $10k–$60k. Guaranteed in writing.',
+        'Tell us the decision you need to make. BioNixus scopes a specialty-quota prescriber survey from a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. Custom studies are typically $10k–$60k. Guaranteed in writing.',
       buttonText: 'Talk to BioNixus',
       buttonUrl: 'https://www.bionixus.com/contact',
     },
