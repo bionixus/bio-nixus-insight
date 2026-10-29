@@ -61,7 +61,7 @@ export const SEGMENT_MARKET_INDEX: SegmentMarketIndexEntry[] = [
   { slug: 'middle-east-biologics-market', group: 'middle-east', label: 'Middle East biologics market' },
 
   { slug: 'uae-in-vitro-diagnostics-devices-market', group: 'country', label: 'UAE in-vitro diagnostics devices market' },
-  { slug: 'uae-obesity-market', group: 'country', label: 'UAE obesity market insights' },
+  { slug: 'uae-obesity-market', group: 'country', label: 'GLP-1 market research in the UAE' },
   { slug: 'kuwait-obesity-market', group: 'country', label: 'Kuwait obesity market insights' },
   { slug: 'egypt-obesity-market', group: 'country', label: 'Egypt obesity and GLP-1 market research' },
   { slug: 'egypt-medical-tourism-market', group: 'country', label: 'Egypt medical tourism market' },

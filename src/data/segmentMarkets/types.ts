@@ -86,6 +86,8 @@ export type SegmentMarketContent = {
   };
   /** ISO date (YYYY-MM-DD). Shown as "Updated" under the H1 and emitted as dateModified. */
   lastUpdated?: string;
+  /** Official or news citation URLs on the Article node. Do not put competitor hosts here. */
+  articleCitations?: string[];
   /**
    * When `webpage`, emit a WebPage node (dateModified = lastUpdated) instead of Article.
    * Other pages keep the Article node.

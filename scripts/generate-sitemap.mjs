@@ -2110,7 +2110,7 @@ async function main() {
     [`${BASE}/insights/top-market-research-companies-uae-2026`]: '2026-10-27',
     [`${BASE}/insights/top-market-research-companies-gcc-2026`]: '2026-10-27',
     [`${BASE}/blog/market-research-companies-egypt`]: '2026-10-20',
-    [`${BASE}/uae-obesity-market`]: '2026-10-27',
+    [`${BASE}/uae-obesity-market`]: '2026-10-29',
     [`${BASE}/kuwait-obesity-market`]: '2026-10-05',
     [`${BASE}/egypt-obesity-market`]: '2026-10-05',
     [`${BASE}/saudi-arabia-consumer-health-market-research`]: '2026-10-05',

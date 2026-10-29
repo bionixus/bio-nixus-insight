@@ -309,88 +309,174 @@ const uaeObesity: SegmentMarketContent = {
   geoLabel: 'UAE',
   segmentLabel: 'Obesity',
   badge: 'UAE Obesity Market Intelligence',
-  breadcrumbLabel: 'UAE Obesity Market',
-  title: 'UAE Obesity Market Insights: GLP-1 & Bariatric | BioNixus',
+  breadcrumbLabel: 'GLP-1 Market Research UAE',
+  title: 'GLP-1 Market Research UAE: Obesity & Access | BioNixus',
   description:
-    'UAE obesity market insights cover GLP-1 access and prescribing, bariatric surgery, insurance rules in Dubai and Abu Dhabi, and self-pay patient behaviour.',
+    'BioNixus runs GLP-1 market research in the UAE: prescriber surveys, Thiqa and Daman payer interviews and oral GLP-1 uptake studies. Custom research $10k–$60k.',
   exactMeta: true,
   canonical: `${SEGMENT_MARKET_BASE}/uae-obesity-market`,
-  serviceName: 'UAE Obesity Market Research',
-  lastUpdated: '2026-10-27',
-  h1: 'UAE Obesity Market Insights: Access, Prescribing, and Patient Pathways',
-  intro: [
-    'UAE obesity market insights have to start with a commercial reality that separates this market from Europe or North America: a large share of weight-management treatment is paid for out of pocket, in private clinics, by patients who behave like consumers rather than passive recipients of care. BioNixus researches that behaviour directly — what triggers treatment, what patients pay, where they drop out, and which clinicians they trust.',
-    'The clinical picture is layered. GLP-1 receptor agonists have moved weight management from a lifestyle conversation into a pharmacotherapy market, while bariatric and metabolic surgery retains a strong and established position in UAE tertiary and private hospitals. Endoscopic procedures, medically supervised weight-management programmes, and digital coaching all compete for the same patient. Understanding where a given patient enters that system, and why they switch, is the core commercial question.',
-    'Payer structure decides much of the rest. Mandatory health insurance in Dubai and Abu Dhabi, Thiqa coverage for Emirati nationals, and Daman and commercial plans across the private sector each apply their own rules to anti-obesity medication and surgery. BioNixus runs commissioned primary studies with prescribers, payers, clinic operators, and patients to establish what is actually reimbursed, what is self-funded, and how that shapes achievable volume.',
+  serviceName: 'GLP-1 Market Research UAE',
+  serviceType: 'Obesity and GLP-1 market research',
+  serviceDescription:
+    'Commissioned GLP-1 and obesity primary research in the UAE: prescriber surveys, Thiqa and Daman payer interviews, oral versus injectable uptake and patient persistence studies.',
+  emitWebPage: true,
+  lastUpdated: '2026-10-29',
+  dateLabel: 'Last reviewed',
+  h1: 'GLP-1 Market Research in the UAE: Obesity Prescribing, Access and Uptake',
+  heroCtaLabel: 'Request a scoped proposal',
+  articleCitations: [
+    'https://www.wam.ae/en/article/bzj40cj-emirates-drug-establishment-approves-oral-obesity',
+    'https://www.zawya.com/en/press-release/companies-news/wegovy-pill-launches-in-the-uae-as-novo-nordisk-expands-global-access-to-obesity-care-336047',
+    'https://www.cnbc.com/2026/06/03/novo-nordisk-wegovy-pill-uae-weight-loss-lilly.html',
+    'https://www.pharmaceuticalcommerce.com/view/wegovy-pills-uae-debut-is-a-distribution-story-not-just-a-market-entry',
+    'https://www.doh.gov.ae/-/media/9F8611EF0B7841F28E2AAE4614327F59.ashx',
+    'https://mohap.gov.ae/en/w/mohap-publishes-landmark-national-health-survey-showing-population-health-progress-and-guiding-stronger-preventive-care',
   ],
+  heroStats: [
+    { value: '$10,000–$60,000', label: 'custom research' },
+    { value: '82,000+', label: 'physicians globally' },
+    { value: 'about 3,200', label: 'physicians in the Middle East' },
+    { value: '118 clients', label: 'across 48 countries' },
+  ],
+  intro: [
+    'BioNixus runs GLP-1 market research in the UAE for obesity brand, access and launch teams, combining prescriber surveys, payer interviews and patient persistence studies. Dubai is a field office for UAE. Cairo is the AMEA (APAC, Middle East, Africa) office.',
+    'In 2026 the question changed from whether patients will start a GLP-1 to which GLP-1, paid by whom, and for how long. The Emirates Drug Establishment approved Foundayo (orforglipron) on 3 April 2026, and the Emirates News Agency described the UAE as the second country to register it. Novo Nordisk launched the Wegovy pill in the UAE on 3 June 2026. Insurers still draw different lines on weight-management coverage. BioNixus measures that directly: who prescribes, what payers cover, what patients pay, and where they stop.',
+  ],
+  introLinks: [{ to: '/healthcare-market-research', label: 'healthcare market research hub' }],
   quickAnswer: {
-    question: 'What do UAE obesity market insights need to cover before a launch?',
+    question: 'GLP-1 market research UAE: what should a 2026 study cover?',
     answer:
-      'Useful UAE obesity market insights combine four evidence layers: prescriber behaviour and GLP-1 initiation logic, the reimbursement boundary set by Dubai and Abu Dhabi insurance mandates including Thiqa and Daman plans, the competitive pull of bariatric surgery and private weight-management clinics, and self-pay patient economics. BioNixus assembles those layers through commissioned primary fieldwork rather than desk research.',
+      'A useful 2026 study covers four things: who initiates GLP-1 therapy for weight management and why, how patients choose between injectable and oral options, what Thiqa, Daman and commercial plans actually reimburse, and how long patients stay on treatment once they pay. BioNixus runs these as commissioned primary research.',
     points: [
       {
-        title: 'Self-pay is a primary channel, not an edge case',
+        title: 'Prescriber surveys',
         description:
-          'A significant share of pharmacotherapy and procedural weight management in the UAE is funded directly by patients, which makes price sensitivity, persistence, and clinic marketing central to forecasting.',
+          'Endocrinologists, family physicians, bariatric specialists and aesthetic-clinic prescribers, in English and Arabic, on initiation, dose escalation, and stop and switch decisions.',
       },
       {
-        title: 'Coverage rules differ by emirate and plan',
+        title: 'Oral versus injectable choice',
         description:
-          'Dubai and Abu Dhabi operate distinct insurance frameworks, and Thiqa, Daman, and commercial plans apply different criteria to anti-obesity medication and bariatric procedures.',
+          'Which patients move to Foundayo or the Wegovy pill, which stay on injectables, and why. Approval is not uptake.',
       },
       {
-        title: 'Surgery and pharmacotherapy compete and combine',
+        title: 'Thiqa, Daman and commercial coverage',
         description:
-          'Bariatric and metabolic surgery remains well established in UAE hospitals, so pharmacotherapy strategy has to account for substitution, bridging, and post-surgical maintenance use.',
+          'Abu Dhabi Thiqa rules, Daman and other commercial plans, prior authorisation and self-pay boundaries by emirate.',
       },
       {
-        title: 'Persistence determines real revenue',
+        title: 'Persistence and self-pay',
         description:
-          'Initiation is comparatively easy in a self-pay market; sustained use is not. BioNixus researches discontinuation triggers, cost fatigue, and switching between clinics and molecules.',
+          'Monthly spend tolerance, discontinuation triggers and clinic switching, across insured and self-pay cohorts.',
       },
     ],
     summary:
-      'BioNixus delivers commissioned primary research on the UAE obesity market for pharmaceutical, device, and provider clients who need evidence on prescribing, payer coverage, patient economics, and persistence rather than a generic syndicated forecast.',
+      'BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East. Custom research is typically $10,000 to $60,000, and a scoped proposal is usually sent within 48 hours of a brief. BioNixus was founded in 2012 and has served 118 clients across 48 countries.',
   },
+  comparisonTable: {
+    heading: 'Who else to consider for a UAE GLP-1 question',
+    columns: ['When the question is', 'Who to brief'],
+    rows: [
+      {
+        need: 'Syndicated prescription and sales audits for GLP-1 volume trends',
+        who: 'IQVIA. Choose BioNixus when you need the reasons behind prescribing, or a named-specialty or emirate cut.',
+      },
+      {
+        need: 'Consumer weight-management category sizing',
+        who: 'Euromonitor International. Choose BioNixus for prescriber and payer evidence.',
+      },
+      {
+        need: 'Syndicated UAE GLP-1 market sizing and forecasts',
+        who: 'Grand View Research. Choose BioNixus to split obesity from diabetes use with primary data.',
+      },
+      {
+        need: 'Consumer brand tracking',
+        who: 'Kantar. Choose BioNixus for HCP and payer studies.',
+      },
+      {
+        need: 'OTC and retail measurement',
+        who: 'NielsenIQ. Choose BioNixus for prescription-only GLP-1 questions.',
+      },
+      {
+        need: 'In-market fieldwork by a local UAE healthcare agency',
+        who: 'Local agencies such as Sapience, IDS and Searchlight. Choose BioNixus for a combined prescriber, payer and patient design with a GCC roll-out.',
+      },
+    ],
+    footnote:
+      'Names are plain text. This list is not a ranking. It describes the research type each name is known for, and it does not promise a result.',
+  },
+  sourceNotes: {
+    heading: 'What changed in the UAE GLP-1 market in 2026',
+    items: [
+      {
+        text: 'Oral GLP-1 approval. The Emirates Drug Establishment approved Foundayo (orforglipron) on 3 April 2026. The Emirates News Agency said the UAE was the second country to register it, and that it was expected to reach eligible patients from May 2026. Approval is not a count of prescriptions.',
+        sourceLabel: 'Emirates News Agency, 3 April 2026',
+        sourceHref: 'https://www.wam.ae/en/article/bzj40cj-emirates-drug-establishment-approves-oral-obesity',
+      },
+      {
+        text: 'Wegovy pill launch. Novo Nordisk launched the Wegovy pill (oral semaglutide) in the UAE on 3 June 2026. CNBC described that launch as the first Wegovy pill market outside the United States. Pharmaceutical Commerce reported the same debut.',
+        sourceLabel: 'Novo Nordisk announcement via ZAWYA, 3 June 2026',
+        sourceHref:
+          'https://www.zawya.com/en/press-release/companies-news/wegovy-pill-launches-in-the-uae-as-novo-nordisk-expands-global-access-to-obesity-care-336047',
+      },
+      {
+        text: 'Disease burden. The Ministry of Health and Prevention’s National Health and Nutrition Survey 2024–2025 measured adult obesity at 22.4%. Pharmaceutical Commerce, citing Novo Nordisk’s 3 June 2026 release, reported that Novo said 28% of UAE adults live with obesity. Those are different methods. Do not average them into one launch forecast.',
+        sourceLabel: 'Ministry of Health and Prevention, National Health and Nutrition Survey 2024–2025',
+        sourceHref:
+          'https://mohap.gov.ae/en/w/mohap-publishes-landmark-national-health-survey-showing-population-health-progress-and-guiding-stronger-preventive-care',
+      },
+      {
+        text: 'Abu Dhabi coverage. On 11 June 2025 the Department of Health – Abu Dhabi published a Thiqa reimbursement policy for obesity medications (DoH/Policy/TRP-OMM/HPS/V1/2025). Eligible adults are 18 or older. Coverage uses BMI and listed complications: BMI 30 or above with a listed complication, or BMI 40 or above with none, and includes GLP-1 agonists. The same policy sets a check after four months on weight loss and activity. Daman and other commercial plans set their own rules, and many patients self-pay. NAVLIN Daily reported the policy on 12 June 2025; the policy text is the rule.',
+        sourceLabel: 'Department of Health – Abu Dhabi, 11 June 2025',
+        sourceHref: 'https://www.doh.gov.ae/-/media/9F8611EF0B7841F28E2AAE4614327F59.ashx',
+      },
+      {
+        text: 'Market size, syndicated estimate, diabetes and obesity combined. Grand View Research’s UAE GLP-1 receptor agonist outlook puts revenue at US$257.2 million in 2025 and US$875.9 million by 2033 (15.3% CAGR, 2026–2033). Semaglutide had a 73.68% share in 2025, and tirzepatide is the fastest-growing product. That figure is not a BioNixus primary count of the weight-management share.',
+      },
+    ],
+  },
+  researchHeading: 'What a BioNixus GLP-1 study in the UAE measures',
   researchTopics: [
     {
-      name: 'GLP-1 prescribing and initiation behaviour',
+      name: 'GLP-1 prescriber survey',
       detail:
-        'Which specialties initiate incretin-based therapy, what clinical and cosmetic thresholds trigger a prescription, how dose escalation is managed, and where supply or cost interrupts treatment.',
+        'Quant and qual with endocrinologists, family physicians, bariatric specialists and aesthetic-clinic prescribers. Covers initiation triggers, dose escalation, and stop and switch decisions. Recruited from 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
+      link: { to: '/specialist-physician-panel-uae', label: 'Specialist physician panel UAE' },
     },
     {
-      name: 'Payer coverage and reimbursement mapping',
+      name: 'Oral versus injectable choice',
       detail:
-        'How Dubai and Abu Dhabi insurance frameworks, Thiqa coverage for nationals, and Daman and commercial plans treat anti-obesity medication, bariatric surgery, and follow-up care.',
+        'Which patients prescribers move to Foundayo or the Wegovy pill, which stay on injectables, and why.',
+      link: { to: '/blog/oral-glp-1-uae-market-research', label: 'Oral GLP-1 UAE market research' },
     },
     {
-      name: 'Bariatric and metabolic surgery pathways',
+      name: 'Payer and coverage mapping',
       detail:
-        'Referral routes into surgery, procedure selection, surgeon and hospital preference drivers, and how pharmacotherapy is changing the composition and timing of surgical caseloads.',
+        'Thiqa, Daman and commercial-plan criteria, prior authorisation and self-pay boundaries by emirate (Department of Health Abu Dhabi, Dubai Health Authority, and MOHAP or the Emirates Drug Establishment).',
+      link: { to: '/blog/thiqa-obesity-reimbursement-abu-dhabi', label: 'Thiqa obesity reimbursement in Abu Dhabi' },
     },
     {
-      name: 'Patient journey and self-pay economics',
+      name: 'Patient persistence and self-pay',
       detail:
-        'How patients discover treatment, what they are willing to pay monthly, how long they persist, and which cost, tolerability, or outcome factors cause them to stop or switch provider.',
+        'Monthly spend tolerance, discontinuation triggers and clinic switching, across insured and self-pay cohorts.',
+      link: { to: '/patient-journey-research-gcc', label: 'Obesity patient journey research (GCC)' },
     },
     {
-      name: 'Private clinic and provider landscape',
-      detail:
-        'Positioning, service models, and pricing logic of aesthetic, endocrine, and dedicated weight-management clinics, plus the role of hospital-affiliated metabolic programmes.',
+      name: 'Pharmacy and telehealth channel',
+      detail: 'Dispensing practice, stocking and telehealth prescribing routes for GLP-1 medicines.',
     },
     {
-      name: 'Medical tourism crossover',
-      detail:
-        'How inbound patients seeking bariatric and metabolic treatment in UAE facilities, and outbound patients travelling for lower-cost options, affect local demand and price expectations.',
+      name: 'GCC add-on cells',
+      detail: 'The same instrument run in Saudi Arabia, Kuwait or Egypt.',
+      link: { to: '/gcc-obesity-market', label: 'GCC obesity market' },
     },
   ],
   segmentBreakdown: {
     heading: 'Obesity treatment categories we research in the UAE',
     items: [
       {
-        label: 'GLP-1 and incretin-based pharmacotherapy',
+        label: 'Oral and injectable GLP-1 therapy',
         detail:
-          'The fastest-moving category, spanning endocrinology, bariatric medicine, and aesthetic clinic prescribing, with commercial outcomes driven by access, price, and persistence rather than efficacy alone.',
+          'Foundayo (orforglipron), the Wegovy pill (oral semaglutide), and injectable incretin therapy. Commercial outcomes depend on who starts treatment, who switches, who pays, and who stays on it.',
       },
       {
         label: 'Other prescription anti-obesity medication',
@@ -400,71 +486,65 @@ const uaeObesity: SegmentMarketContent = {
       {
         label: 'Bariatric and metabolic surgery',
         detail:
-          'Sleeve gastrectomy, bypass, and revisional procedures delivered in tertiary and private hospitals, with strong surgeon-led referral dynamics and established patient awareness.',
+          'Sleeve gastrectomy, bypass, and revisional procedures in tertiary and private hospitals. Pharmacotherapy can substitute, delay, or sit beside surgery.',
       },
       {
         label: 'Endoscopic and device-based interventions',
         detail:
-          'Intragastric balloons and endoscopic procedures positioned between pharmacotherapy and surgery, often marketed directly to self-pay patients by private clinics.',
+          'Intragastric balloons and endoscopic procedures positioned between pharmacotherapy and surgery, often offered to self-pay patients by private clinics.',
       },
       {
-        label: 'Medically supervised weight-management programmes',
+        label: 'Clinic programmes and telehealth',
         detail:
-          'Multidisciplinary clinic programmes combining dietetics, behavioural support, and pharmacotherapy, sold as packages and competing on outcomes, convenience, and brand.',
-      },
-      {
-        label: 'Digital and telehealth weight programmes',
-        detail:
-          'App-based coaching, remote prescribing models, and subscription services that lower the entry barrier for patients and create new competition for traditional clinic footfall.',
-      },
-      {
-        label: 'Nutraceutical and consumer weight products',
-        detail:
-          'Pharmacy and retail products that shape patient expectations and price anchors before any clinical consultation, and that often represent the first treatment attempt.',
+          'Multidisciplinary weight-management packages, remote prescribing and subscription coaching that compete with hospital metabolic programmes for the same patient.',
       },
     ],
   },
   demandDrivers: {
-    heading: 'What is driving the UAE obesity market',
+    heading: 'What is driving UAE GLP-1 and obesity research in 2026',
     drivers: [
       {
-        title: 'High metabolic disease burden',
+        title: 'Two oral GLP-1 launches',
         detail:
-          'Obesity, type 2 diabetes, and related cardiometabolic conditions are long-standing public health priorities in the UAE, sustaining clinical attention and policy focus on weight management.',
+          'Foundayo was approved on 3 April 2026 and the Wegovy pill launched on 3 June 2026. Brand teams now need evidence on oral versus injectable choice, not only on whether a GLP-1 will be used.',
       },
       {
-        title: 'Insurance mandates and coverage expansion',
+        title: 'Coverage still differs by plan',
         detail:
-          'Mandatory health insurance in Dubai and Abu Dhabi has built a large insured population, making payer policy on anti-obesity treatment a direct lever on addressable volume.',
+          'Abu Dhabi published a Thiqa obesity-medication policy on 11 June 2025. Daman and commercial plans apply their own rules. Many patients still self-pay.',
       },
       {
-        title: 'GLP-1 category awareness',
+        title: 'Diabetes and obesity use are mixed in syndicated sizing',
         detail:
-          'Public familiarity with incretin-based therapy has expanded treatment-seeking well beyond traditional clinical referral routes, pulling new patients into private clinics.',
-      },
-      {
-        title: 'A dense, competitive private sector',
-        detail:
-          'The UAE private provider market actively markets weight-management services, which accelerates patient acquisition but also intensifies price competition and switching.',
+          'Grand View Research’s UAE GLP-1 outlook combines both uses. A weight-management forecast still needs primary research on the obesity share.',
       },
       {
         title: 'Self-pay purchasing power',
         detail:
-          'A comparatively affluent patient base is willing to fund treatment directly, which shortens the path from awareness to initiation but makes persistence highly price sensitive.',
+          'A large share of weight-management treatment is paid directly by patients in private clinics. Initiation can be fast. Persistence is price sensitive.',
       },
       {
-        title: 'Medical tourism positioning',
+        title: 'Surgery remains a competing route',
         detail:
-          'UAE hospitals actively court regional patients for bariatric and metabolic care, adding non-resident demand that behaves differently from the domestic insured population.',
+          'Bariatric and metabolic surgery is established in UAE hospitals, so a pharmacotherapy forecast has to account for substitution, delay and combined use.',
+      },
+      {
+        title: 'Emirate rules are not one market',
+        detail:
+          'Dubai, Abu Dhabi and the northern emirates differ on insurance mandates, clinic density and what a patient will pay.',
       },
     ],
   },
   marketStructure: {
-    heading: 'How the UAE obesity market is structured',
+    heading: 'How UAE GLP-1 access is structured',
     paragraphs: [
-      'The UAE obesity market runs on parallel funding tracks. Emirati nationals covered under Thiqa in Abu Dhabi and comparable government-backed arrangements experience a different access pathway from expatriate residents on employer-funded plans, and both differ again from patients paying entirely out of pocket. Because criteria for anti-obesity medication and bariatric surgery vary by plan and emirate, the same clinical profile can result in fully covered treatment in one setting and full self-payment in another. Any credible forecast has to model those tracks separately.',
-      'Provision is dominated by the private sector in the weight-management space. Endocrinologists, bariatric surgeons, family medicine physicians, and aesthetic clinicians all prescribe or refer, and the boundaries between them are less rigid than in many markets. Dedicated weight-management clinics compete with hospital metabolic programmes and with telehealth services, marketing directly to consumers. This fragmentation means a manufacturer cannot reach the prescribing base through hospital key accounts alone; channel strategy has to reflect where patients actually present.',
-      'Competitive dynamics are therefore consumer-led as much as clinical. Patients compare monthly cost, expected results, and convenience across pharmacotherapy, surgery, and programme-based options, and they switch when cost or tolerability disappoints. Supply availability and pharmacy stocking also shape which product a patient ends up on. BioNixus studies this by interviewing prescribers, clinic operators, payers, and pharmacists, and by running patient research that captures decisions and drop-off points rather than stated intentions alone.',
+      'The UAE obesity market runs on parallel funding tracks. Emirati nationals covered under Thiqa in Abu Dhabi follow a written obesity-medication policy. Expatriate residents on employer-funded plans, and patients paying entirely out of pocket, follow different rules. The same clinical profile can be covered in one setting and self-funded in another. A forecast has to model those tracks separately.',
+      'Prescribing is not limited to hospital endocrinology. Endocrinologists, bariatric physicians, family physicians and aesthetic-clinic prescribers all initiate or refer, and dedicated weight-management clinics compete with hospital programmes and telehealth. A manufacturer cannot reach that base through hospital key accounts alone.',
+      'Patients compare monthly cost, expected results and convenience across oral GLP-1s, injectables, surgery and clinic programmes, and they switch when cost or tolerability disappoints. Pharmacy stocking also shapes which product a patient ends up on. BioNixus studies this with prescribers, payers, pharmacists and patients.',
+    ],
+    links: [
+      { to: '/uae-market-access-research', label: 'UAE market access research' },
+      { to: '/uae-pricing-reimbursement-strategy', label: 'UAE pricing and reimbursement' },
     ],
   },
   geoSignals: {
@@ -473,106 +553,130 @@ const uaeObesity: SegmentMarketContent = {
       {
         name: 'Dubai',
         signal:
-          'The densest private weight-management market in the country, with DHA-regulated clinics, strong consumer marketing, high self-pay willingness, and significant inbound medical tourism interest.',
+          'The densest private weight-management market, with DHA-regulated clinics, consumer marketing, high self-pay willingness and inbound interest. Dubai is a field office for UAE.',
       },
       {
         name: 'Abu Dhabi',
         signal:
-          'A more structured payer environment shaped by DoH Abu Dhabi policy, Thiqa coverage for nationals, and Daman plans, with tertiary hospital metabolic and bariatric programmes anchoring complex care.',
+          'A more structured payer environment. The Department of Health published the Thiqa obesity-medication policy on 11 June 2025, and Daman plans sit alongside tertiary hospital metabolic and bariatric programmes.',
       },
       {
         name: 'Sharjah and the northern emirates',
         signal:
-          'A more price-sensitive population mix where treatment decisions hinge on affordability, pharmacy access, and lower-cost clinic or programme options rather than premium services.',
+          'A more price-sensitive mix, where treatment decisions hinge on affordability, pharmacy access and lower-cost clinic options.',
       },
       {
         name: 'Al Ain and the Western Region',
         signal:
-          'Nationally weighted populations served by government-affiliated facilities, where covered pathways and specialist referral routes matter more than direct-to-consumer clinic marketing.',
+          'Nationally weighted populations served by government-affiliated facilities, where covered pathways and specialist referral matter more than direct-to-consumer clinic marketing.',
       },
     ],
   },
+  audiencesHeading: 'Who we interview for a UAE GLP-1 study',
+  audiencesNote:
+    'Dubai is a field office for UAE. Cairo is the AMEA (APAC, Middle East, Africa) office. The UK (London) is the Europe office. The USA (Sheridan, Wyoming) is the Americas office and global HQ. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. São Paulo is a field office for LATAM.',
   audiences: [
     {
       audience: 'Endocrinologists and bariatric physicians',
       description:
-        'Specialists who initiate and manage pharmacotherapy, set escalation and discontinuation thresholds, and act as referral gatekeepers into surgical pathways.',
+        'Specialists who initiate and manage pharmacotherapy, set escalation and discontinuation thresholds, and refer into surgical pathways.',
     },
     {
-      audience: 'Bariatric and metabolic surgeons',
+      audience: 'Family physicians and aesthetic-clinic prescribers',
       description:
-        'Surgical decision makers whose caseload composition, device and technique preferences, and views on pharmacotherapy substitution shape the procedural market.',
+        'High-volume and clinic-based prescribers whose initiation triggers and product choice are not visible in a hospital key-account list.',
     },
     {
       audience: 'Payers and insurance medical directors',
       description:
-        'Professionals who define coverage criteria, prior-authorisation requirements, and benefit design for weight-management medication and surgery across emirate frameworks.',
+        'People who set Thiqa, Daman and commercial-plan criteria, prior authorisation and the boundary between covered care and self-pay.',
     },
     {
-      audience: 'Private clinic owners and operators',
+      audience: 'Pharmacists and telehealth prescribers',
       description:
-        'Commercial decision makers in weight-management, endocrine, and aesthetic clinics who set pricing, choose which products to stock, and drive patient acquisition.',
+        'Dispensing and remote-prescribing routes that decide stocking, cash-pay presentation and where a patient is sent next.',
     },
     {
-      audience: 'Patients and treatment seekers',
+      audience: 'Patients, insured and self-pay',
       description:
-        'Insured and self-pay individuals whose motivations, affordability limits, and persistence behaviour determine the difference between initiation volume and sustained revenue.',
+        'People whose monthly spend tolerance and reasons for stopping determine the gap between a first prescription and sustained revenue.',
     },
   ],
+  methodologyHeading: 'How a UAE GLP-1 study is run',
   methodology: [
-    'Quantitative prescriber surveys with endocrinologists, bariatric physicians, and family medicine practitioners covering initiation criteria, product choice, and discontinuation triggers.',
-    'In-depth interviews with bariatric surgeons and hospital metabolic programme leads on referral flow, procedure mix, and the interaction between surgery and pharmacotherapy.',
-    'Payer research with insurance medical and pharmacy directors to establish coverage criteria, prior-authorisation practice, and appetite for expanding weight-management benefits.',
-    'Patient research across insured and self-pay cohorts capturing the treatment journey, monthly spend tolerance, persistence, and reasons for switching provider or product.',
-    'Clinic and pharmacy channel audits covering stocking, pricing presentation, package structures, and how weight-management services are marketed to consumers.',
+    'Prescriber surveys and depth interviews with endocrinologists, family physicians, bariatric specialists and aesthetic-clinic prescribers, in English and Arabic, across Dubai, Abu Dhabi and the northern emirates.',
+    'Payer interviews on Thiqa, Daman and commercial-plan criteria, prior authorisation and self-pay boundaries.',
+    'Patient research on oral versus injectable choice, monthly spend and discontinuation, split between insured and self-pay cohorts.',
+    'Pharmacy and telehealth channel work on stocking, dispensing and remote prescribing.',
+    'Optional GCC add-on cells in Saudi Arabia, Kuwait or Egypt on the same instrument.',
+    'Custom programmes typically price from $10,000 to $60,000. A scoped proposal is usually sent within 48 hours of a brief.',
   ],
+  whyHeading: 'Why teams brief BioNixus for GLP-1 market research in the UAE',
   whyBionixus: [
-    'We treat self-pay and insured demand as separate commercial models instead of blending them into a single misleading market number.',
-    'We recruit prescribers across endocrinology, bariatrics, family medicine, and aesthetic clinics, which is where UAE weight-management prescribing actually happens.',
-    'We research persistence and discontinuation, the variables that most often break optimistic obesity forecasts in this region.',
-    'We map coverage differences between Dubai and Abu Dhabi frameworks, including Thiqa and Daman plan behaviour, rather than assuming a single national payer rule.',
-    'We combine prescriber, payer, provider, and patient perspectives in one study so recommendations reflect the whole pathway.',
-    'We work bilingually and recruit both Emirati and expatriate respondents, which is essential when access differs by population segment.',
+    'The study is commissioned primary research: prescribers, payers and patients, not a resale of a syndicated GLP-1 outlook.',
+    'Oral and injectable choice, Thiqa and Daman coverage, and persistence are measured in one design.',
+    'Fieldwork is in English and Arabic across Dubai, Abu Dhabi and the northern emirates.',
+    'Recruitment draws on 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
+    'Dubai is a field office for UAE, and Cairo is the AMEA (APAC, Middle East, Africa) office.',
+    'Custom research is typically $10,000 to $60,000. BioNixus was founded in 2012 and has served 118 clients across 48 countries.',
   ],
   relatedLinks: [
-    { to: '/healthcare-market-research/uae', label: 'UAE Healthcare Market Research' },
-    { to: '/uae-healthcare-market-report', label: 'UAE Healthcare Market Report' },
-    { to: '/gcc-obesity-market', label: 'GCC Obesity Market' },
-    { to: '/saudi-arabia-obesity-market', label: 'Saudi Arabia Obesity Market' },
-    { to: '/kuwait-obesity-market', label: 'Kuwait Obesity Market' },
-    { to: '/uae-market-access-research', label: 'UAE Market Access Research' },
-    { to: '/patient-journey-research-gcc#obesity', label: 'Obesity patient journey research (GCC)' },
+    { to: '/healthcare-market-research', label: 'Healthcare market research' },
+    { to: '/blog/oral-glp-1-uae-market-research', label: 'Oral GLP-1 UAE market research' },
+    { to: '/blog/thiqa-obesity-reimbursement-abu-dhabi', label: 'Thiqa obesity reimbursement in Abu Dhabi' },
+    { to: '/specialist-physician-panel-uae', label: 'Specialist physician panel UAE' },
+    { to: '/diabetes-market-research-uae', label: 'Diabetes market research UAE' },
+    { to: '/market-reports/uae-diabetes-market-report', label: 'UAE diabetes market report' },
+    { to: '/uae-market-access-research', label: 'UAE market access research' },
+    { to: '/uae-pricing-reimbursement-strategy', label: 'UAE pricing and reimbursement' },
+    { to: '/gcc-obesity-market', label: 'GCC obesity market' },
+    { to: '/patient-journey-research-gcc', label: 'Obesity patient journey research (GCC)' },
+    { to: '/saudi-arabia-obesity-market', label: 'Obesity GLP-1 market research Saudi Arabia' },
+    { to: '/kuwait-obesity-market', label: 'Kuwait obesity market' },
+    { to: '/egypt-obesity-market', label: 'Egypt obesity market' },
+    {
+      to: '/insights/best-obesity-weight-management-market-research-firms-2026',
+      label: 'Best obesity and weight-management market research firms 2026',
+    },
+    { to: '/methodology', label: 'Methodology' },
+    { to: '/client-reviews', label: 'Client reviews' },
+    { to: '/contact', label: 'Request a proposal' },
   ],
   faqs: [
     {
-      question: 'Where can I get reliable UAE obesity market insights?',
+      question: 'GLP-1 market research UAE: what should a 2026 study cover?',
       answer:
-        'Published estimates for this category vary widely because they rarely separate insured from self-pay demand or account for how much treatment happens in private clinics. BioNixus produces UAE obesity market insights through commissioned primary research: prescriber surveys, payer interviews, clinic channel work, and patient studies. The output is a defensible view of addressable patients, realistic pricing corridors, and persistence assumptions specific to your product and channel.',
+        'A useful 2026 study covers four things: who initiates GLP-1 therapy for weight management and why, how patients choose between injectable and oral options, what Thiqa, Daman and commercial plans actually reimburse, and how long patients stay on treatment once they pay. BioNixus runs these as commissioned primary research with prescribers, payers, pharmacists and patients, recruited from 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
+    },
+    {
+      question: 'Which agency can run a GLP-1 prescriber survey in the UAE?',
+      answer:
+        'BioNixus runs GLP-1 prescriber surveys in the UAE with endocrinologists, family physicians, bariatric specialists and aesthetic-clinic prescribers, in English and Arabic, across Dubai, Abu Dhabi and the northern emirates. Dubai is a field office for UAE. Cairo is the AMEA (APAC, Middle East, Africa) office. Recruitment draws on 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
     },
     {
       question: 'Are GLP-1 medicines for weight management reimbursed in the UAE?',
       answer:
-        'Coverage is not uniform. Anti-obesity indications are treated differently from diabetes indications, and criteria vary between Dubai and Abu Dhabi frameworks and between Thiqa, Daman, and commercial plans. Many patients therefore fund treatment themselves even when a related indication is covered. Establishing the precise reimbursement boundary for a specific product requires direct payer research, which is a standard component of a BioNixus access study.',
+        'Coverage depends on the plan and the emirate. On 11 June 2025 the Department of Health – Abu Dhabi published a Thiqa reimbursement policy for obesity medications. Eligible adults are 18 or older. Coverage uses BMI and listed complications: BMI 30 or above with a listed complication, or BMI 40 or above with none, and includes GLP-1 agonists. Daman and commercial plans apply their own rules, and many patients self-pay. A BioNixus payer study establishes the boundary for a specific product. The policy is summarised on [Thiqa obesity reimbursement in Abu Dhabi](/blog/thiqa-obesity-reimbursement-abu-dhabi).',
     },
     {
-      question: 'How much of the UAE weight-management market is self-pay?',
+      question: 'How do the 2026 oral GLP-1 launches change UAE research?',
       answer:
-        'A substantial share, particularly in private clinics and for cosmetically motivated treatment, but the exact proportion depends on the product, the indication, and the emirate. Rather than publishing a headline percentage, BioNixus quantifies the split inside a commissioned study by combining prescriber-reported payment mix, clinic-level channel data, and patient research. That produces a segmented figure you can use for forecasting rather than a national average.',
+        'The Emirates Drug Establishment approved Foundayo (orforglipron) on 3 April 2026. The Emirates News Agency described the UAE as the second country to register it and said it was expected to reach eligible patients from May 2026. Novo Nordisk launched the Wegovy pill in the UAE on 3 June 2026, reported as its first market outside the United States. Approval is not uptake: brand teams now need prescriber and patient evidence on oral versus injectable choice, switching and persistence. See [oral GLP-1 UAE market research](/blog/oral-glp-1-uae-market-research).',
     },
     {
-      question: 'Is bariatric surgery declining because of GLP-1 therapy in the UAE?',
+      question: 'How big is the UAE GLP-1 market?',
       answer:
-        'The relationship is more complex than substitution. Pharmacotherapy attracts patients who would never have considered surgery, delays surgery for some candidates, and creates pre-operative optimisation and post-operative maintenance use for others. UAE surgeons report different effects depending on their referral base and patient mix. BioNixus measures this directly through surgeon interviews and referral-pathway research instead of extrapolating from other markets.',
+        'Grand View Research estimates UAE GLP-1 receptor agonist revenue at US$257.2 million in 2025, rising to US$875.9 million by 2033 (15.3% CAGR, 2026–2033), with semaglutide the largest product (73.68% share in 2025) and tirzepatide the fastest-growing. That figure covers diabetes and obesity use together, so a launch forecast still needs primary research on the weight-management share.',
     },
     {
-      question: 'Does medical tourism affect the UAE obesity market?',
+      question: 'How much does a UAE GLP-1 study cost?',
       answer:
-        'Yes, in both directions. UAE hospitals actively attract regional patients for bariatric and metabolic care, adding demand that is typically self-funded and price-comparative. At the same time, some residents travel abroad for lower-cost surgery. Both flows influence local pricing expectations and clinic positioning, so BioNixus includes non-resident demand as a distinct segment when the client is forecasting procedural volume.',
+        'BioNixus custom research programmes typically price from $10,000 to $60,000, depending on sample, specialties, emirates and method. A scoped proposal is usually sent within 48 hours of a brief.',
     },
     {
-      question: 'Which stakeholders does BioNixus interview for a UAE obesity study?',
+      question: 'Where is BioNixus UAE research delivered from?',
       answer:
-        'A typical study combines endocrinologists, bariatric physicians and surgeons, family medicine prescribers, aesthetic and weight-management clinic operators, insurance medical and pharmacy directors, community pharmacists, and patients across insured and self-pay cohorts. We recruit in English and Arabic and cover Dubai, Abu Dhabi, and the northern emirates, because prescribing behaviour and affordability differ meaningfully between them.',
+        'Dubai is a field office for UAE. Cairo is the AMEA (APAC, Middle East, Africa) office. The UK (London) is the Europe office. The USA (Sheridan, Wyoming) is the Americas office and global HQ. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. São Paulo is a field office for LATAM. BioNixus was founded in 2012 and has served 118 clients across 48 countries.',
     },
   ],
   areaServed: ['United Arab Emirates'],
