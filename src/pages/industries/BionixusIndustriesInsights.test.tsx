@@ -43,13 +43,13 @@ describe('industries insights hub design', () => {
 
     const text = container.textContent ?? '';
     expect(text).toContain('Global market research across industries');
-    expect(text).toContain('A physician network of about 3,200');
+    expect(text).toContain('A physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East');
     expect(text).toContain('Sheikh Zayed, the biggest MEA office');
-    expect(text).toContain('in the process of opening a São Paulo office by the end of 2026');
+    expect(text).toContain('São Paulo is a field office for LATAM');
     expect(text).toContain('partner office for KSA: Al Khobar');
     expect(text).toContain('field office for Kuwait: Salmiya');
     expect(text).toContain('Americas office and global HQ: Sheridan');
-    const withoutApprovedSaoPaulo = text.split('in the process of opening a São Paulo office by the end of 2026').join('');
+    const withoutApprovedSaoPaulo = text.split('São Paulo is a field office for LATAM').join('');
     expect(withoutApprovedSaoPaulo).not.toMatch(/São Paulo/);
     expect(text).not.toMatch(/guaranteed accuracy/i);
     expect(text).not.toMatch(/priced from/i);

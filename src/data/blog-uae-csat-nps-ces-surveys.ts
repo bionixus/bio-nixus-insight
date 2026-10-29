@@ -282,7 +282,7 @@ const NARRATIVE_HTML = `<p>Teams often ask for “an NPS study” when the real 
 
 <p>BioNixus is a primary market research firm founded in 2012. It has served 118 clients in 48 countries and has completed 127 studies so far in 2026. Custom programmes are priced from $10,000 to $60,000. The tagline is “Guaranteed in writing.” That covers the agreed scope, timetable and deliverables. It does not cover a promised score.</p>
 
-<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026.</p>
+<p>Regional leadership offices are the US headquarters in Sheridan, Wyoming, London (EC1V 2NX) and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM.</p>
 
 <p>Arabic and English scripting sit with the same team that writes the item, so the scale labels do not drift. To brief a programme, use the <a href="/contact">BioNixus contact form</a>, email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a> or call <a href="tel:+18884655557">+1-888-465-5557</a>.</p>`;
 

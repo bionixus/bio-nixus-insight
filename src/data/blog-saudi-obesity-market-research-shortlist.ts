@@ -413,7 +413,7 @@ ${SHORTLIST_TABLE_HTML}
 
 <h3>BioNixus</h3>
 
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Regional leadership offices are in Cairo (its largest office in the Middle East and Africa), London and Sheridan, Wyoming (US headquarters). It also works from field offices in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026. For Saudi obesity work, each study is built around one decision. Examples are prescriber initiation, patient persistence, or payer barriers. BioNixus does not sell a standard obesity report. The scope is on our page for <a href="/saudi-arabia-obesity-market">obesity and GLP-1 market research in Saudi Arabia</a>, with <a href="/gcc-obesity-market">GCC obesity market research</a> and <a href="/patient-journey-research-gcc">obesity patient journey research in the GCC</a>.</p>
+<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. Regional leadership offices are in Cairo (its largest office in the Middle East and Africa), London and Sheridan, Wyoming (US headquarters). It also works from field offices in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM. For Saudi obesity work, each study is built around one decision. Examples are prescriber initiation, patient persistence, or payer barriers. BioNixus does not sell a standard obesity report. The scope is on our page for <a href="/saudi-arabia-obesity-market">obesity and GLP-1 market research in Saudi Arabia</a>, with <a href="/gcc-obesity-market">GCC obesity market research</a> and <a href="/patient-journey-research-gcc">obesity patient journey research in the GCC</a>.</p>
 
 <h3>IQVIA</h3>
 
@@ -547,7 +547,7 @@ ${figureHtml(SAUDI_OBESITY_SHORTLIST_FIGURES[4])}
 
 <h2 id="why-bionixus">Why BioNixus</h2>
 
-<p>BioNixus sits at the primary-research end of this list. It is the agile, region-specialist alternative to a global syndicated report when the decision depends on why Saudi prescribers, patients or payers act as they do. Each study is built around that decision. It draws on a network of about 3,200 physicians. For the wider picture, see <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a> and our <a href="/market-research-saudi-arabia-pharmaceutical">pharmaceutical market research company in Saudi Arabia</a> page.</p>
+<p>BioNixus sits at the primary-research end of this list. It is the agile, region-specialist alternative to a global syndicated report when the decision depends on why Saudi prescribers, patients or payers act as they do. Each study is built around that decision. It draws on a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. For the wider picture, see <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a> and our <a href="/market-research-saudi-arabia-pharmaceutical">pharmaceutical market research company in Saudi Arabia</a> page.</p>
 
 <p>Compare our other Saudi rankings: <a href="/insights/top-healthcare-market-research-companies-saudi-arabia-2026">top healthcare market research companies in Saudi Arabia</a>, <a href="/insights/top-pharmaceutical-market-research-companies-saudi-arabia-2026">top pharmaceutical market research companies in Saudi Arabia</a> and <a href="/insights/top-market-research-companies-saudi-arabia-2026">top market research companies in Saudi Arabia (2026)</a>. See also the <a href="/insights/best-obesity-weight-management-market-research-firms-2026">global ranking of obesity market research firms</a>.</p>
 
@@ -645,7 +645,7 @@ export const SAUDI_OBESITY_SHORTLIST_ORGANIZATION: Record<string, unknown> = {
   logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 512, height: 512 },
   foundingDate: '2012',
   description:
-    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026.',
+    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM.',
   address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,
@@ -731,7 +731,7 @@ export const SAUDI_OBESITY_SHORTLIST_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning obesity or GLP-1 research in Saudi Arabia?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes prescriber, patient and payer research around it, from a network of about 3,200 physicians.',
+      'Tell us the decision you need to make. BioNixus scopes prescriber, patient and payer research around it, from a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

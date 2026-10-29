@@ -26,7 +26,7 @@ const faqItems = [
   {
     question: 'Can BioNixus recruit physicians and KOLs across Dubai, Abu Dhabi and the Northern Emirates?',
     answer:
-      'Yes. We recruit from a physician network of around 3,200 physicians, by specialty, care setting and emirate, verify eligibility and keep audit trails for field integrity. Respondents include specialists, GPs, pharmacists, P&T committee members, hospital procurement leads, insurers and KOLs.',
+      'Yes. We recruit from a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, by specialty, care setting and emirate, verify eligibility and keep audit trails for field integrity. Respondents include specialists, GPs, pharmacists, P&T committee members, hospital procurement leads, insurers and KOLs.',
   },
   {
     question: 'How does BioNixus run market access research for DHA, DOH, MOHAP and EDE?',
@@ -54,7 +54,7 @@ const services = [
   {
     name: 'HCP research',
     deliverable:
-      'Quantitative physician surveys (CATI, online, face-to-face) and qualitative IDIs by specialty, care setting and emirate. Brand trackers, ATU, message testing, launch readiness. Recruited from a physician network of around 3,200 physicians.',
+      'Quantitative physician surveys (CATI, online, face-to-face) and qualitative IDIs by specialty, care setting and emirate. Brand trackers, ATU, message testing, launch readiness. Recruited from a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
   },
   {
     name: 'KOL research and mapping',
@@ -190,7 +190,7 @@ export default function UaePharmaceuticalMarketResearch() {
               <a href="tel:+447727666682" className="underline font-medium text-primary-foreground">+44 7727 666682</a>
               {' · '}
               <a href="mailto:admin@bionixus.com" className="underline font-medium text-primary-foreground">admin@bionixus.com</a>
-              {' · '}Founded 2012 · Physician network of around 3,200 physicians · 127 studies year-to-date in 2026 · 48 countries · 118 clients
+              {' · '}Founded 2012 · physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East · 127 studies year-to-date in 2026 · 48 countries · 118 clients
             </p>
             <p className="text-base leading-relaxed text-primary-foreground/85 mt-4">
               For regional context, start from the{' '}
@@ -210,7 +210,7 @@ export default function UaePharmaceuticalMarketResearch() {
             <ul className="space-y-4 text-muted-foreground leading-relaxed">
               <li><strong className="text-foreground">Field office for UAE, GCC reach:</strong> Research is run from Thuraya Tower 1, Al Sufouh 2, the field office for UAE. Al Khobar is a partner office for KSA. Cairo is the AMEA (APAC, Middle East, Africa) office. The UK (London) is the Europe office. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The same account team runs multi-country GCC studies with one methodology and one project manager.</li>
               <li><strong className="text-foreground">Emirate-specific design:</strong> DHA (Dubai), DOH (Abu Dhabi) and MOHAP/EDE (federal and Northern Emirates) are modelled separately, not blended into one UAE average.</li>
-              <li><strong className="text-foreground">Physician reach:</strong> A physician network of around 3,200 physicians, and 127 studies year-to-date in 2026.</li>
+              <li><strong className="text-foreground">Physician reach:</strong> a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, and 127 studies year-to-date in 2026.</li>
               <li><strong className="text-foreground">Account-level evidence:</strong> Named hospitals, pharmacy chains and SKUs, which is the cut a national syndicated feed cannot give.</li>
               <li><strong className="text-foreground">Bilingual execution:</strong> Arabic–English screeners, moderation and reporting as standard.</li>
               <li><strong className="text-foreground">Governance:</strong> ICH-GCP-aligned fieldwork, GDPR-compliant data handling and informed consent for every respondent.</li>

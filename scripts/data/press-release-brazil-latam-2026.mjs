@@ -3,10 +3,10 @@
 export const SLUG = 'bionixus-brazil-office-latam-expansion-2026'
 
 export const HEADLINE =
-  'BioNixus Covers Latin America from the US Office and Is Opening a São Paulo Office by the End of 2026'
+  'BioNixus Covers Latin America from the US Office and São Paulo Is a Field Office for LATAM'
 
 export const SUBHEADLINE =
-  'Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.'
+  'Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.'
 
 export const DATELINE = 'SHERIDAN, WYOMING — 30 May 2026'
 
@@ -14,17 +14,17 @@ export const SPOKESPERSON_NAME = 'Laura McConaughey'
 
 export const SPOKESPERSON_TITLE = 'Global Research Manager'
 
-export const SEO_META_TITLE = 'São Paulo Office by End of 2026 | BioNixus'
+export const SEO_META_TITLE = 'São Paulo Field Office for LATAM | BioNixus'
 
 export const SEO_META_DESCRIPTION =
-  'Latin America is covered from the US office with local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026 for pharma research.'
+  'Latin America is covered from the US office with local consultants. São Paulo is a field office for LATAM for pharma research.'
 
 export const OG_DESCRIPTION = SEO_META_DESCRIPTION
 
 export const RELATED_REPORT_SLUG = 'brazil-healthcare-market-report'
 
 export const BOILERPLATE =
-  'BioNixus is a healthcare and pharmaceutical market research firm headquartered in the United States, serving life sciences teams in North America, EMEA, the GCC, and Latin America. The company delivers quantitative physician research, qualitative KOL programmes, payer and HTA intelligence, and launch and market access strategy. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.'
+  'BioNixus is a healthcare and pharmaceutical market research firm headquartered in the United States, serving life sciences teams in North America, EMEA, the GCC, and Latin America. The company delivers quantitative physician research, qualitative KOL programmes, payer and HTA intelligence, and launch and market access strategy. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.'
 
 export const HERO_ALT =
   'São Paulo business district skyline at dusk representing BioNixus expansion in Brazil and Latin America healthcare market research'
@@ -77,7 +77,7 @@ export function buildPressReleaseBody() {
   return [
     block('normal', 'lead', [
       {
-        text: 'BioNixus, a healthcare and pharmaceutical market research firm, covers Latin America from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026. The work gives international and regional life sciences clients local fieldwork capacity, faster access to Brazilian payer and regulatory context, and continuity with BioNixus programmes already delivered in the United States, Canada, EMEA, and the GCC.',
+        text: 'BioNixus, a healthcare and pharmaceutical market research firm, covers Latin America from the US office with a network of local consultants. São Paulo is a field office for LATAM. The work gives international and regional life sciences clients local fieldwork capacity, faster access to Brazilian payer and regulatory context, and continuity with BioNixus programmes already delivered in the United States, Canada, EMEA, and the GCC.',
       },
     ]),
     block('normal', 'p2', [
@@ -102,7 +102,7 @@ export function buildPressReleaseBody() {
     ]),
     block('normal', quoteKey, [
       {
-        text: `“LATAM is a primary growth engine for many of our clients—not a secondary market,” said ${SPOKESPERSON_NAME}, ${SPOKESPERSON_TITLE} at BioNixus. “Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026, so we can pair local execution with the cross-market comparability teams expect when they run US, European, and GCC studies in parallel. Our goal is decision-ready evidence on international quality standards, with Brazilian regulatory and access nuance built in from the first protocol.”`,
+        text: `“LATAM is a primary growth engine for many of our clients—not a secondary market,” said ${SPOKESPERSON_NAME}, ${SPOKESPERSON_TITLE} at BioNixus. “Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM, so we can pair local execution with the cross-market comparability teams expect when they run US, European, and GCC studies in parallel. Our goal is decision-ready evidence on international quality standards, with Brazilian regulatory and access nuance built in from the first protocol.”`,
       },
     ]),
     block('h2', servicesKey, [{ text: 'Expanded services in LATAM' }]),
@@ -113,13 +113,13 @@ export function buildPressReleaseBody() {
     ]),
     block('normal', 'svc2', [
       {
-        text: 'Multi-country LATAM programmes are coordinated from the US office, with a network of local consultants, so sponsors retain one methodology owner and harmonised reporting. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
+        text: 'Multi-country LATAM programmes are coordinated from the US office, with a network of local consultants, so sponsors retain one methodology owner and harmonised reporting. São Paulo is a field office for LATAM.',
       },
     ]),
     block('h2', whyKey, [{ text: 'Why Brazil, why now' }]),
     block('normal', 'why1', [
       {
-        text: 'Demand has increased for programmes that combine US and EU governance with LATAM execution speed. Brazil’s scale and complex reimbursement environment are covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026. Media and partners may register interest via the BioNixus press contact page.',
+        text: 'Demand has increased for programmes that combine US and EU governance with LATAM execution speed. Brazil’s scale and complex reimbursement environment are covered from the US office with a network of local consultants. São Paulo is a field office for LATAM. Media and partners may register interest via the BioNixus press contact page.',
       },
     ]),
     block('normal', 'cta', [

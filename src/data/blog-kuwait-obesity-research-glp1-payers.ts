@@ -460,7 +460,7 @@ ${figureHtml(KUWAIT_OBESITY_RESEARCH_FIGURES[4])}
 
 <h2 id="why-bionixus">Why choose BioNixus for obesity market research in Kuwait?</h2>
 
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and it is in the process of opening a São Paulo office by the end of 2026. LATAM work is covered from the US office with a strong local consultant network.</p>
+<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. Custom study pricing is typically $10k–$60k. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London EC1V 2NX and Cairo (Sheikh Zayed, Giza). Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices, and São Paulo is a field office for LATAM. LATAM work is covered from the US office with a strong local consultant network.</p>
 
 <p>Choose BioNixus when the decision depends on why Kuwaiti and expatriate patients, public-hospital specialists and payers act as they do, rather than on a GCC category total. Each study is built around one decision — a tender, a restriction, a launch sequence — and is reported for brand, medical and access teams. The delivery commitment is Guaranteed in writing. That guarantee covers the agreed scope and timeline, not the accuracy of findings. Where reviews are relevant, BioNixus has 40 client reviews.</p>
 
@@ -510,7 +510,7 @@ export const KUWAIT_OBESITY_RESEARCH_FAQ: { question: string; answer: string }[]
   {
     question: 'Why commission BioNixus for obesity market research in Kuwait?',
     answer:
-      'BioNixus runs custom primary research from a Salmiya field office, with a network of about 3,200 physicians, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a tender, a restriction or a launch — and the delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
+      'BioNixus runs custom primary research from a Salmiya field office, with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, and prices typical custom studies at $10k–$60k. The work is designed around one decision — a tender, a restriction or a launch — and the delivery commitment is Guaranteed in writing. That guarantee covers scope and timeline, not findings.',
   },
 ];
 
@@ -555,7 +555,7 @@ export const KUWAIT_OBESITY_RESEARCH_ORGANIZATION: Record<string, unknown> = {
   logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 512, height: 512 },
   foundingDate: '2012',
   description:
-    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026.',
+    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM.',
   address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,
@@ -644,7 +644,7 @@ export const KUWAIT_OBESITY_RESEARCH_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning obesity or GLP-1 research in Kuwait?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes prescriber, patient and payer research around it, from a Salmiya field office and a network of about 3,200 physicians.',
+      'Tell us the decision you need to make. BioNixus scopes prescriber, patient and payer research around it, from a Salmiya field office and a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

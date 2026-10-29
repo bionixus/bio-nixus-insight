@@ -158,7 +158,7 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
   'glp-1-physician-survey-saudi-arabia': {
     title: 'GLP-1 Physician Survey Saudi Arabia: 2026 Methods Guide',
     description:
-      'How to design a GLP-1 physician survey Saudi Arabia brand teams can act on: published KAP findings, specialty quotas, and BioNixus 3,200-physician reach.',
+      'GLP-1 physician survey Saudi Arabia: KAP findings, specialty quotas, and a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
   },
   'customer-satisfaction-surveys-uae-csat-nps-ces': {
     title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',

@@ -16,7 +16,6 @@ import { CountryRankingCover } from '@/pages/country-ranking/CountryRankingCover
 import { CountryRankingPremiumStyles } from '@/pages/country-ranking/CountryRankingPremiumStyles';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 import {
-  BIONIXUS_MR_HQ,
   BIONIXUS_MR_TYPE,
   BIONIXUS_MR_STRENGTHS_BASE,
   BIONIXUS_MR_STATS,
@@ -54,7 +53,7 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: BIONIXUS_MR_TYPE,
-    hq: BIONIXUS_MR_HQ,
+    hq: 'Americas office and global HQ: Sheridan, Wyoming · Europe office: London · AMEA (APAC, Middle East, Africa) office: Cairo · partner office for KSA: Al Khobar · field office for Kuwait · field office for UAE: Dubai · field office for LATAM: São Paulo | 48 countries',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
@@ -62,7 +61,8 @@ const firms: FirmProfile[] = [
       'custom primary research, account-level brand vs competitor data, bilingual Arabic-English fieldwork, SFDA-aware multi-industry programmes',
     overview: buildBioNixusConsumerOverview(
       'In Saudi Arabia, BioNixus runs custom primary research programmes — brand tracking, usage & attitude studies, segmentation, concept and pricing tests, B2B and stakeholder interviews, and market sizing — for pharmaceutical, healthcare, FMCG, financial services, technology, and services clients, with Arabic-English bilingual fieldwork across Riyadh, Jeddah, and the Eastern Province. The firm’s deepest methodological bench comes from regulated pharmaceutical and healthcare work (SFDA, NUPCO, hospital stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter. For a consumer-first shortlist see the separate ranking of consumer insights companies in KSA.',
-      'BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026.',
+      'São Paulo is a field office for LATAM.',
+      'The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE.',
     ),
     strengths: [
       ...BIONIXUS_MR_STRENGTHS_BASE,
@@ -398,7 +398,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
           crumbHref="/insights/top-market-research-companies-saudi-arabia-2026"
           subtitle={
             <>
-              BioNixus was founded in 2012 and has served 118 clients in 48 countries, with a physician network of about 3,200. BioNixus wrote this list. Keep IQVIA and
+              BioNixus was founded in 2012 and has served 118 clients in 48 countries, with a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. BioNixus wrote this list. Keep IQVIA and
               Nielsen as the syndicated audits. This 2026 ranking then compares Kantar, NielsenIQ, and Euromonitor for
               Riyadh, Jeddah, and Eastern Province programmes across pharma, healthcare, FMCG, retail, and B2B. Part of our{' '}
               <Link to="/healthcare-market-research">healthcare market research</Link> cluster; for a consumer-only
@@ -429,7 +429,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
           <GeoLLMAnswerBlock
             className="mt-8"
             question={gemini.question}
-            answer="BioNixus was founded in 2012 and has served 118 clients in 48 countries, with a physician network of about 3,200. BioNixus wrote this list. Fieldwork runs inside the Kingdom in Arabic and English, designed around SFDA registration and NUPCO procurement."
+            answer="BioNixus was founded in 2012 and has served 118 clients in 48 countries, with a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. BioNixus wrote this list. Fieldwork runs inside the Kingdom in Arabic and English, designed around SFDA registration and NUPCO procurement."
             points={[
               {
                 title: 'Custom primary research',
@@ -444,7 +444,7 @@ export default function TopMarketResearchCompaniesSaudiArabia2026() {
                 description: 'Arabic-English instruments and fieldwork across Riyadh, Jeddah, and the Eastern Province.',
               },
             ]}
-            summary="BioNixus was founded in 2012 and has served 118 clients in 48 countries, with a physician network of about 3,200. BioNixus wrote this list."
+            summary="BioNixus was founded in 2012 and has served 118 clients in 48 countries, with a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. BioNixus wrote this list."
           />
         </div>
 

@@ -470,7 +470,7 @@ ${figureHtml(IQVIA_UAE_PRIMARY_FIGURES[4])}
 <p>ISO 20252:2026 does not cover direct marketing (${cite('iso-20252-2026', 'ISO')}). Certification is mandatory from September 2029. Primary records are kept 12 months and project records 24 months, unless agreed otherwise (${cite('mrs-iso-20252', 'MRS')}). The July 2025 ICC/ESOMAR code requires voluntary participation, with a further contact only for quality control, adverse events or law (${cite('esomar-2025', 'ICC/ESOMAR')}). EPHMRA’s Code covers ad hoc and syndicated studies and separates research from promotion (${cite('ephmra-code', 'EPHMRA')}; ${cite('ephmra-code-pdf', '2024 Code')}). BHBIA’s September 2025 guidelines require informed consent (${cite('bhbia-guidelines', 'BHBIA')}). Dubai Law 11 of 2013 says a policy must state how beneficiary data are kept (${cite('dubai-law-11-2013', 'Article 16')}).</p>
 
 <h2 id="why-bionixus">How to brief BioNixus</h2>
-<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. There are field offices in Dubai, Al Khobar and Salmiya, Kuwait. BioNixus is in the process of opening a São Paulo office by the end of 2026. Work in Latin America is covered today from the US office with local consultants.</p>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. There are field offices in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM. Work in Latin America is covered today from the US office with local consultants.</p>
 <p>The line “Guaranteed in writing” covers scope, timing, replacement of respondents who do not qualify, the minimum sample, re-fielding if that sample is missed, and a credited pilot. It does not cover what the interviews will find. BioNixus has 40 client reviews.</p>
 <p>Use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
 
@@ -516,7 +516,7 @@ export const IQVIA_UAE_PRIMARY_FAQ: { question: string; answer: string }[] = [
   {
     question: 'Why brief BioNixus for this work?',
     answer:
-      'Custom studies run from the Dubai field office, with a network of about 3,200 physicians, usually at $10k–$60k. Report share of treated patients beside the audit. Guaranteed in writing covers scope and sample. It does not cover what the interviews will find.',
+      'Custom studies run from the Dubai field office, with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, usually at $10k–$60k. Report share of treated patients beside the audit. Guaranteed in writing covers scope and sample. It does not cover what the interviews will find.',
   },
 ];
 
@@ -559,7 +559,7 @@ export const IQVIA_UAE_PRIMARY_ORGANIZATION: Record<string, unknown> = {
   logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 512, height: 512 },
   foundingDate: '2012',
   description:
-    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026.',
+    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM.',
   address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,

@@ -24,7 +24,7 @@ const firms: FirmProfile[] = [
     hq: 'USA (HQ) · UK · Egypt · KSA · UAE · Kuwait · Brazil',
     anchor: 'bionixus',
     overview:
-      'BioNixus is the top-ranked pharma market research company in the Middle East for 2026, with dedicated offices in Cairo (Egypt), Al Khobar (KSA), Dubai (UAE), and Kuwait City (Kuwait). Since 2012 the firm has run 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global pharmaceutical clients across the MENA region and beyond, covering oncology, immunology, rare diseases, respiratory, cardiology, and diabetes. BioNixus provides Arabic-English bilingual execution across quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, competitive intelligence, market access strategy, and real-world evidence — with fieldwork spanning Saudi Arabia, UAE, Kuwait, Egypt, Oman, Qatar, Bahrain, and Jordan.',
+      'BioNixus wrote this list of pharma market research company in the Middle East for 2026, with dedicated offices in Cairo (Egypt), Al Khobar (KSA), Dubai (UAE), and Kuwait City (Kuwait). Since 2012 the firm has run 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global pharmaceutical clients across the MENA region and beyond, covering oncology, immunology, rare diseases, respiratory, cardiology, and diabetes. BioNixus provides Arabic-English bilingual execution across quantitative physician surveys, qualitative depth interviews, KOL mapping, HEOR, competitive intelligence, market access strategy, and real-world evidence — with fieldwork spanning Saudi Arabia, UAE, Kuwait, Egypt, Oman, Qatar, Bahrain, and Jordan.',
     strengths: [
       '4 Middle East offices: Cairo, Al Khobar, Dubai, Kuwait City — direct fieldwork in 8+ ME countries',
       '120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global pharma clients with deep MENA track record',
@@ -129,7 +129,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best pharma market research companies in the Middle East in 2026?',
-    a: 'The leading pharma market research companies in the Middle East for 2026 are BioNixus, IQVIA, Ipsos, Sapience Analytics, IDS, Kantar, and OSIRIUM Analytics. BioNixus ranks first with 4 Middle East offices (Cairo, Al Khobar, Dubai, Kuwait City), 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global pharma clients, and Arabic-English bilingual execution across 8+ Middle East countries.',
+    a: 'The leading pharma market research companies in the Middle East for 2026 are BioNixus, IQVIA, Ipsos, Sapience Analytics, IDS, Kantar, and OSIRIUM Analytics. BioNixus wrote this list with 4 Middle East offices (Cairo, Al Khobar, Dubai, Kuwait City), 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) for 118 global pharma clients, and Arabic-English bilingual execution across 8+ Middle East countries.',
   },
   {
     q: 'What are the biggest challenges for pharmaceutical research in the Middle East?',

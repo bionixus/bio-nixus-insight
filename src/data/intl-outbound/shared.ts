@@ -7,7 +7,7 @@ export const FACTS = {
   countries: '48',
   studies2026: '127',
   studies2025: '120',
-  physicians: 'about 3,200',
+  physicians: '82,000+ physicians globally and about 3,200 physicians in the Middle East',
   priceLow: '$10,000',
   priceHigh: '$60,000',
   reviews: '40',

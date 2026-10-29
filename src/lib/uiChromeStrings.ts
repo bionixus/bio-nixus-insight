@@ -125,7 +125,7 @@ const en: UiChromeStrings = {
   coverageMap: {
     alt: 'BioNixus global research coverage map showing regional leadership offices in Sheridan, London and Sheikh Zayed, and field offices in Dubai, Al Khobar and Salmiya.',
     caption:
-      'Regional leadership offices: Sheridan (US headquarters), London and Sheikh Zayed (Egypt). Field offices: Dubai, Al Khobar (KSA) and Salmiya (Kuwait). Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
+      'Regional leadership offices: Sheridan (US headquarters), London and Sheikh Zayed (Egypt). Field offices: Dubai, Al Khobar (KSA) and Salmiya (Kuwait). Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
   },
   chart: {
     forecastYear: '26E',
@@ -199,7 +199,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
     coverageMap: {
       alt: 'Karte der globalen Forschungspräsenz von BioNixus mit regionaler Leitung in Sheridan, London und Kairo sowie Außenstellen in Dubai, Al Khobar und Kuwait.',
       caption:
-        'Regionale Leitung: Sheridan (US-Hauptsitz), London und Kairo. Außenstellen: Dubai, Al Khobar und Kuwait. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
+        'Regionale Leitung: Sheridan (US-Hauptsitz), London und Kairo. Außenstellen: Dubai, Al Khobar und Kuwait. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
     },
     chart: {
       forecastYear: '26P',
@@ -270,7 +270,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
     coverageMap: {
       alt: 'Carte de la couverture mondiale des études BioNixus, avec une direction régionale à Sheridan, Londres et Le Caire, et des bureaux de terrain à Dubaï, Al Khobar et Koweït.',
       caption:
-        'Direction régionale : Sheridan (siège américain), Londres et Le Caire. Bureaux de terrain : Dubaï, Al Khobar et Koweït. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
+        'Direction régionale : Sheridan (siège américain), Londres et Le Caire. Bureaux de terrain : Dubaï, Al Khobar et Koweït. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
     },
     chart: {
       forecastYear: '26P',
@@ -341,7 +341,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
     coverageMap: {
       alt: 'Mapa de la cobertura global de investigación de BioNixus con liderazgo regional en Sheridan, Londres y El Cairo, y oficinas de campo en Dubái, Al Khobar y Kuwait.',
       caption:
-        'Liderazgo regional: Sheridan (sede en EE. UU.), Londres y El Cairo. Oficinas de campo: Dubái, Al Khobar y Kuwait. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
+        'Liderazgo regional: Sheridan (sede en EE. UU.), Londres y El Cairo. Oficinas de campo: Dubái, Al Khobar y Kuwait. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
     },
     chart: {
       forecastYear: '26P',
@@ -412,7 +412,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
     coverageMap: {
       alt: 'Mapa da cobertura global de pesquisa da BioNixus com liderança regional em Sheridan, Londres e Cairo, e escritórios de campo em Dubai, Al Khobar e Kuwait.',
       caption:
-        'Liderança regional: Sheridan (sede nos EUA), Londres e Cairo. Escritórios de campo: Dubai, Al Khobar e Kuwait. Latin America is covered from the US office with a network of local consultants. BioNixus is in the process of opening a São Paulo office by the end of 2026.',
+        'Liderança regional: Sheridan (sede nos EUA), Londres e Cairo. Escritórios de campo: Dubai, Al Khobar e Kuwait. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
     },
     chart: {
       forecastYear: '26P',

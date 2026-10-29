@@ -360,7 +360,7 @@ export default function BionixusIndustriesInsights() {
               ))}
             </ul>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              A physician network of about 3,200. {LATAM_COVERAGE_SENTENCE}
+              A physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. {LATAM_COVERAGE_SENTENCE}
             </p>
           </div>
         </section>

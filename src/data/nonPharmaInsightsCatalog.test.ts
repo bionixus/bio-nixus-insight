@@ -62,7 +62,7 @@ describe('non-pharma insights hub catalog', () => {
     expect(latam?.description).toContain('fully operational in LATAM');
     expect(latam?.description).toContain('covered from the US office');
     expect(latam?.description).toContain('strong network of local consultants');
-    expect(latam?.description).toContain('in the process of opening a São Paulo office by the end of 2026');
+    expect(latam?.description).toContain('São Paulo is a field office for LATAM');
   });
 
   it('does not mention Al Khobar or a current São Paulo office', () => {

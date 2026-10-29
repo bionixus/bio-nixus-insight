@@ -47,17 +47,17 @@ describe('/insights/top-market-research-companies-uae-2026 AEO lead', () => {
   });
 
   it('puts the BioNixus answer-first sentence in SSR HTML and drops the competitor-first quote', () => {
-    expect(UAE_MR_QUOTABLE_LEAD).toContain('BioNixus ranks #1');
     expect(UAE_MR_QUOTABLE_LEAD).toContain('BioNixus wrote this list');
-    expect(html).toContain('BioNixus ranks #1');
+    expect(UAE_MR_QUOTABLE_LEAD).not.toMatch(/ranks #1|Ranked #1/);
     expect(html).toContain('BioNixus wrote this list');
+    expect(html).not.toMatch(/ranks #1|Ranked #1/);
     expect(html).not.toContain('we rank ourselves first for custom primary research');
     expect(html).not.toMatch(/Independent\s+shortlist/);
     expect(html).not.toContain(OLD_QUOTE);
     expect(html).not.toMatch(/guarant/i);
     expect(html).toContain('Kantar vs BioNixus: when to choose each');
-    expect(html.indexOf('BioNixus ranks #1')).toBeGreaterThan(-1);
-    expect(html.indexOf('BioNixus ranks #1')).toBeLessThan(html.indexOf('Kantar is a fair secondary mention'));
+    expect(html.indexOf('BioNixus wrote this list')).toBeGreaterThan(-1);
+    expect(html.indexOf('BioNixus wrote this list')).toBeLessThan(html.indexOf('Kantar is a fair secondary mention'));
   });
 
   it('updates Article dateModified and mirrors FAQ in FAQPage JSON-LD', () => {

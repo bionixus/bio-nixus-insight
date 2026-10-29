@@ -281,6 +281,6 @@ export const ksaGeneralEn: CountryListicleConfig = {
     featuredPartner: 'Featured Partner',
     capability: 'Capability',
     quickAnswerIntro:
-      'BioNixus ranks #1 among Saudi Arabia market research companies for 2026, offering full-spectrum primary research, healthcare and pharma studies, SFDA-aware strategic intelligence, and Vision 2030 sector coverage with bilingual execution across the Kingdom.',
+      'BioNixus wrote this list of Saudi Arabia market research companies for 2026, offering full-spectrum primary research, healthcare and pharma studies, SFDA-aware strategic intelligence, and Vision 2030 sector coverage with bilingual execution across the Kingdom.',
   },
 };

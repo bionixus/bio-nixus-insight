@@ -135,7 +135,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Singapore in 2026?',
-    a: 'Leading market research companies in Singapore in 2026 include BioNixus, IQVIA Singapore, Ipsos Singapore, Kantar, Milieu Insight, Blackbox Research, and Rakuten Insight. BioNixus ranks first for pharmaceutical and healthcare research, with HSA- and ACE-aligned primary research, verified HCP recruitment across the SingHealth, NUHS, and NHG public healthcare clusters, and deep payer intelligence across MOH drug subsidy mechanisms and the ACE health technology assessment process.',
+    a: 'Leading market research companies in Singapore in 2026 include BioNixus, IQVIA Singapore, Ipsos Singapore, Kantar, Milieu Insight, Blackbox Research, and Rakuten Insight. BioNixus wrote this list for pharmaceutical and healthcare research, with HSA- and ACE-aligned primary research, verified HCP recruitment across the SingHealth, NUHS, and NHG public healthcare clusters, and deep payer intelligence across MOH drug subsidy mechanisms and the ACE health technology assessment process.',
   },
   {
     q: 'What is pharmaceutical market research in Singapore?',
@@ -222,9 +222,9 @@ export default function TopMarketResearchCompaniesSingapore2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in Singapore 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in Singapore 2026 | BioNixus',
     description:
-      'Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research.',
+      'Top market research companies in Singapore 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-10-18',
@@ -264,7 +264,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
         <title>Top Market Research Companies in Singapore 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research."
+          content="Top market research companies in Singapore 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research."
         />
         <meta name="geo.region" content="SG" />
         <meta name="geo.placename" content="Singapore" />
@@ -278,7 +278,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Singapore 2026 | BioNixus"
-        description="Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL."
+        description="Top market research companies in Singapore 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

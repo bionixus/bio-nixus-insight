@@ -386,7 +386,7 @@ ${figureHtml(QATAR_OBESITY_GLP1_FIGURES[4])}
 <p>Desk reports from Grand View Research, 6Wresearch and Ken Research can frame a category. They are not the pack for a Hamad meeting or an insurer meeting.</p>
 
 <h2 id="why-bionixus">How to brief BioNixus</h2>
-<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of about 3,200 physicians. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices. BioNixus is in the process of opening a São Paulo office by the end of 2026. Work in Latin America is covered today from the US office with local consultants.</p>
+<p>BioNixus is a primary market research firm for pharmaceutical, medical device and healthcare companies. It was founded in 2012. It has served 118 clients in 48 countries. It has run 127 studies so far in 2026. It works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. Custom studies are usually priced at $10k–$60k. Leadership offices are in Sheridan, Wyoming, London EC1V 2NX, and Sheikh Zayed, Giza. Dubai, Al Khobar and Salmiya, Kuwait (Olympia Mall) are field offices. São Paulo is a field office for LATAM. Work in Latin America is covered today from the US office with local consultants.</p>
 <p>Use BioNixus when the question is why Qatari and non-Qatari patients, and Hamad, primary-care and private clinicians, act as they do. Each study is built around one decision. The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find. BioNixus has 40 client reviews.</p>
 <p>See also <a href="/healthcare-market-research/qatar">healthcare market research in Qatar</a>, <a href="/healthcare-market-research-qatar">the Qatar healthcare market research guide</a>, <a href="/pharmaceutical-market-research-qatar">pharmaceutical market research in Qatar</a>, <a href="/qatar-market-access-research">Qatar market access research</a> and <a href="/insights/top-healthcare-market-research-companies-qatar-2026">top healthcare market research companies in Qatar</a>.</p>
 <p>To brief a study, use the <a href="/contact">contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
@@ -433,7 +433,7 @@ export const QATAR_OBESITY_GLP1_FAQ: { question: string; answer: string }[] = [
   {
     question: 'What does a BioNixus study cost, and what is guaranteed?',
     answer:
-      'Custom studies are usually $10k–$60k. The network is about 3,200 physicians. The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find.',
+      'Custom studies are usually $10k–$60k. The network is 82,000+ physicians globally and about 3,200 physicians in the Middle East. The line “Guaranteed in writing” covers the agreed scope, timing and deliverables. It does not cover what the interviews will find.',
   },
 ];
 
@@ -478,7 +478,7 @@ export const QATAR_OBESITY_GLP1_ORGANIZATION: Record<string, unknown> = {
   logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 512, height: 512 },
   foundingDate: '2012',
   description:
-    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. It is in the process of opening a São Paulo office by the end of 2026.',
+    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, with healthcare and pharmaceutical market research across the Middle East and North Africa. Regional leadership offices are in Sheridan, Wyoming (US headquarters), London and Sheikh Zayed, Giza. Field offices are in Dubai, Al Khobar and Salmiya, Kuwait. São Paulo is a field office for LATAM.',
   address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,
@@ -564,7 +564,7 @@ export const QATAR_OBESITY_GLP1_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning obesity or GLP-1 research in Qatar?',
     description:
-      'Tell us the decision you need to make. BioNixus scopes prescriber, patient and payer research around Wegovy access and the oral GLP-1 approval, from GCC field offices and a network of about 3,200 physicians.',
+      'Tell us the decision you need to make. BioNixus scopes prescriber, patient and payer research around Wegovy access and the oral GLP-1 approval, from GCC field offices and a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },

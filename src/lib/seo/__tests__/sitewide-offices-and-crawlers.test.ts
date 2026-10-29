@@ -65,7 +65,7 @@ describe('LATAM press copy', () => {
     expect(corrected.headline).toBe(HEADLINE);
     expect(corrected.subheadline).toBe(SUBHEADLINE);
     expect(JSON.stringify(corrected)).not.toMatch(/Q2 2026|Brazil hub|São Paulo hub/);
-    expect(corrected.subheadline).toContain('in the process of opening a São Paulo office by the end of 2026');
+    expect(corrected.subheadline).toContain('São Paulo is a field office for LATAM');
     expect(Array.isArray(corrected.body)).toBe(true);
   });
 });
