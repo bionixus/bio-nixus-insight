@@ -172,7 +172,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
   if (path === '/strategic-portfolio') return 'BioNixus Strategic Portfolio | Market Research & Consulting';
   if (path === '/ar/strategic-portfolio') return 'محفظة BioNixus الاستراتيجية | أبحاث السوق والاستشارات';
-  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Best Market Research Companies in Egypt (2026) | Ranked';
+  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Best Market Research Companies in Egypt (2026) | BioNixus';
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return '5 أفضل شركات أبحاث السوق في مصر (2026) | دليل المشترين | BioNixus';
   if (path === '/insights/top-market-research-companies-brazil-2026') return '5 Best Market Research Companies in Brazil (2026) | LATAM Agency Rankings | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-brazil-2026') return '5 Best Healthcare Market Research Firms in Brazil (2026) | ANVISA Specialists | BioNixus';
@@ -186,7 +186,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/insights/top-consumer-insights-companies-ksa-2026') return 'Consumer Insights Companies KSA 2026 | BioNixus';
   if (path === '/insights/top-market-research-companies-uae-2026') return 'Best UAE Market Research Companies 2026 | BioNixus';
   if (path === '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026') return 'شركات أبحاث السوق في الإمارات 2026 | بيونيكسس';
-  if (path === '/insights/top-market-research-companies-dubai-2026') return 'Market Research Companies in Dubai 2026 | Ranked Guide';
+  if (path === '/insights/top-market-research-companies-dubai-2026') return 'Market Research Companies in Dubai 2026 | BioNixus';
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return '6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-riyadh-2026') return '6 Best Market Research Companies in Riyadh (2026) | KSA Agency Rankings | BioNixus';
   if (path === '/insights/top-oncology-market-research-companies-2026') return 'Top Oncology Market Research Companies 2026 | BioNixus';

@@ -189,7 +189,7 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
       'Independent guide to the leading market research companies in Abu Dhabi for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Abu Dhabi expertise.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-09-28',
+    dateModified: '2026-10-29',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

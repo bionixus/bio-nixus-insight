@@ -355,7 +355,7 @@ export const KANTAR_ALT_ME_FAQ: { question: string; answer: string }[] = [
   {
     question: 'Why brief BioNixus for a local cut?',
     answer:
-      'BioNixus measures demand in the states you name, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
+      'BioNixus measures demand in the states you name, with a field office for UAE in Dubai and a partner office for KSA in Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

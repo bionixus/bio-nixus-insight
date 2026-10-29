@@ -118,7 +118,7 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
       'Healthcare Market Research Company in Saudi Arabia',
     );
     expect(getCtrSeo('/insights/top-market-research-companies-dubai-2026')?.title).toBe(
-      'Market Research Companies in Dubai 2026 | Ranked Guide',
+      'Market Research Companies in Dubai 2026 | BioNixus',
     );
     expect(hubSource).not.toContain('/home-staging');
     expect(blogPostSource).toContain("EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026'");
@@ -181,14 +181,14 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
   });
 
   it('refreshes Dubai for market research companies in dubai and links UAE healthcare pages', () => {
-    expect(dubaiSource).toContain('Market Research Companies in Dubai: 2026 Ranked Guide');
+    expect(dubaiSource).toContain('Market Research Companies in Dubai 2026 | BioNixus');
     expect(dubaiSource).toContain('Who are the market research companies in Dubai?');
     expect(dubaiSource).toContain('to="/healthcare-market-research/uae"');
     expect(dubaiSource).toContain('to="/insights/top-healthcare-market-research-companies-dubai-2026"');
     expect(dubaiSource).toContain('to="/insights/top-healthcare-market-research-companies-uae-2026"');
     expect(dubaiSource).toContain('to="/insights/top-pharmaceutical-market-research-companies-uae-2026"');
     expect(dubaiSource).toContain('to="/pharmaceutical-market-research-dubai"');
-    expect(dubaiSource).toContain("dateModified: '2026-10-17'");
+    expect(dubaiSource).toContain("dateModified: '2026-10-29'");
   });
 
   it('floors sitemap lastmod, lists the six URLs in llms.txt, and keeps SSR critical paths', () => {
@@ -273,8 +273,8 @@ describe('GSC 17 Sep–14 Oct 2026 SSR titles, H1s and FAQs', () => {
   });
 
   it('SSRs the Dubai ranking with the 2026 H1, FAQPage and UAE healthcare links', () => {
-    expect(dubaiHead).toContain('Market Research Companies in Dubai 2026 | Ranked Guide');
-    expect(h1Text(dubaiHtml)).toBe('Market Research Companies in Dubai: 2026 Ranked Guide');
+    expect(dubaiHead).toContain('Market Research Companies in Dubai 2026 | BioNixus');
+    expect(h1Text(dubaiHtml)).toBe('Market Research Companies in Dubai 2026 | BioNixus');
     expect(dubaiHtml.match(/<h1[\s>]/g)?.length).toBe(1);
     expect(dubaiHtml).toContain('href="/healthcare-market-research/uae"');
     const faq = extractJsonLd(dubaiHead).find((node) => node['@type'] === 'FAQPage') as {

@@ -188,12 +188,12 @@ export default function TopMarketResearchCompaniesDubai2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Market Research Companies in Dubai 2026 | Ranked Guide',
+    headline: 'Market Research Companies in Dubai 2026 | BioNixus',
     description:
-      'Independent guide to the leading market research companies in Dubai for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Dubai expertise.',
+      'Market research companies in Dubai for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. BioNixus wrote this list.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-10-17',
+    dateModified: '2026-10-29',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -242,10 +242,10 @@ export default function TopMarketResearchCompaniesDubai2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Market Research Companies in Dubai 2026 | Ranked Guide</title>
+        <title>Market Research Companies in Dubai 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Market research companies in Dubai compared for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. Ranked buyer guide."
+          content="Market research companies in Dubai for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. BioNixus wrote this list."
         />
         <meta name="geo.region" content="AE-DU" />
         <meta name="geo.placename" content="Dubai" />
@@ -260,8 +260,8 @@ export default function TopMarketResearchCompaniesDubai2026() {
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Market Research Companies in Dubai 2026 | Ranked Guide"
-        description="Market research companies in Dubai compared for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. Ranked buyer guide."
+        title="Market Research Companies in Dubai 2026 | BioNixus"
+        description="Market research companies in Dubai for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. BioNixus wrote this list."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}
         type="article"
@@ -289,7 +289,7 @@ export default function TopMarketResearchCompaniesDubai2026() {
               2026 Industry Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Market Research Companies in Dubai: 2026 Ranked Guide
+              Market Research Companies in Dubai 2026 | BioNixus
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
               Market research companies in Dubai compared for 2026: an independent buyer guide to six firms

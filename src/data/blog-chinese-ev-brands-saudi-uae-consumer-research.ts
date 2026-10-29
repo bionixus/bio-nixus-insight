@@ -361,7 +361,7 @@ export const CHINESE_EV_GULF_FAQ: { question: string; answer: string }[] = [
   {
     question: 'Why brief BioNixus rather than a firm that only lists distributors?',
     answer:
-      'A distributor list names the door. BioNixus measures demand, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
+      'A distributor list names the door. BioNixus measures demand, with a field office for UAE in Dubai and a partner office for KSA in Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

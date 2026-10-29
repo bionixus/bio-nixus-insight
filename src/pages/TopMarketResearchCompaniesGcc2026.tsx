@@ -49,7 +49,7 @@ const firms: FirmProfile[] = [
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     overview: buildBioNixusConsumerOverview(
-      'In the GCC, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and services clients — with Arabic-English bilingual fieldwork across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain from offices in Al Khobar, Dubai, and Kuwait City. The firm\'s deepest methodological bench comes from regulated pharmaceutical and healthcare work (SFDA, DOH, NUPCO, hospital stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.',
+      'In the GCC, BioNixus runs consumer brand tracking, usage & attitude studies, segmentation, concept and pricing tests, and retail/shopper research for FMCG, financial services, technology, and services clients — with Arabic-English bilingual fieldwork across Saudi Arabia, UAE, Kuwait, Oman, Qatar, and Bahrain from a partner office for KSA in Al Khobar, a field office for UAE in Dubai, and a field office for Kuwait. The firm\'s deepest methodological bench comes from regulated pharmaceutical and healthcare work (SFDA, DOH, NUPCO, hospital stakeholder research), which general-market buyers benefit from when sample quality, compliance, and board-ready evidence matter.',
       'LATAM coverage is delivered from USA offices plus field teams in Brazil and LATAM.',
     ),
     strengths: [
@@ -194,7 +194,7 @@ export default function TopMarketResearchCompaniesGcc2026() {
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-10-27',
+    dateModified: '2026-10-29',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

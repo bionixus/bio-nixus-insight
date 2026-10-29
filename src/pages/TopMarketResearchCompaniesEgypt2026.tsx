@@ -153,7 +153,7 @@ const PAGE_AUTHOR = getEditorialAuthor({
   pageType: 'comparison',
 });
 const CTR = getCtrSeo('/insights/top-market-research-companies-egypt-2026');
-const PAGE_TITLE = CTR?.title ?? 'Best Market Research Companies in Egypt (2026) | Ranked';
+const PAGE_TITLE = CTR?.title ?? 'Best Market Research Companies in Egypt (2026) | BioNixus';
 const PAGE_DESCRIPTION =
   CTR?.description ??
   'Top market research companies in Egypt 2026 — ranked buyer guide for Cairo consumer, healthcare & pharma fieldwork. Compare BioNixus, Kantar & Nielsen.';
@@ -178,7 +178,7 @@ export default function TopMarketResearchCompaniesEgypt2026() {
       'BioNixus wrote this list of market research companies in Egypt for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability and Egypt fieldwork.',
     url: CANONICAL,
     datePublished: '2026-04-18',
-    dateModified: '2026-10-27',
+    dateModified: '2026-10-29',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

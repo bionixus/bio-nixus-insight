@@ -49,7 +49,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     keyStats: [
       { label: 'Key Regulator', value: 'SFDA' },
       { label: 'Central procurement', value: 'NUPCO tenders' },
-      { label: 'KSA field office', value: 'Al Khobar' },
+      { label: 'partner office for KSA', value: 'Al Khobar' },
       { label: 'Strategic Context', value: 'Vision 2030 healthcare transformation' },
     ],
     faqQuestions: [

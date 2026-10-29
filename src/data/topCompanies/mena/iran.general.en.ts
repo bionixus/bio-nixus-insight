@@ -6,7 +6,7 @@ export const iranGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'mena',
   country: 'Iran',
-  title: '5 Best Market Research Companies in Iran (2026) | Ranked',
+  title: '5 Best Market Research Companies in Iran (2026) | BioNixus',
   metaDescription:
     'Top market research companies in Iran 2026 — ranked buyer guide. Compare BioNixus, Kantar, IQVIA and Nielsen for account-level Iran fieldwork, IFDA context.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-iran-2026',

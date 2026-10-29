@@ -102,7 +102,11 @@ describe('ranking listicle fixes 2026-10-20', () => {
     expect(gcc).not.toMatch(/Independent\s+shortlist/);
     expect(gcc).toContain('Global Markets vs BioNixus: when to choose each');
     expect(gcc).toContain('IceTulip vs BioNixus: when to choose each');
-    expect(gcc).not.toMatch(/São Paulo|Sao Paulo/);
+    expect(gcc).toContain('São Paulo is a field office for LATAM');
+    expect(gcc).toContain('Americas office and global HQ');
+    expect(gcc).toContain('partner office for KSA');
+    expect(gcc).toContain('field office for UAE');
+    expect(gcc).not.toMatch(/opening a São Paulo office|KSA field office|UAE field office|field offices in Dubai/);
 
     const egypt = pages.get(PATHS[5])!;
     expect(egypt.html).toContain('Kantar vs BioNixus: when to choose each');

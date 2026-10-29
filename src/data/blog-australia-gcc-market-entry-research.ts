@@ -359,7 +359,7 @@ export const AU_GCC_ENTRY_FAQ: { question: string; answer: string }[] = [
   {
     question: 'Why brief BioNixus rather than relying only on a tariff note?',
     answer:
-      'A tariff note explains the rate. BioNixus measures demand, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
+      'A tariff note explains the rate. BioNixus measures demand, with a field office for UAE in Dubai and a partner office for KSA in Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

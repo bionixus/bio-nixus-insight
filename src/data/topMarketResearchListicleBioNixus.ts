@@ -16,7 +16,7 @@ export const BIONIXUS_MR_STATS = {
 } as const;
 
 export const BIONIXUS_MR_HQ =
-  'USA (HQ) · UK · Egypt · KSA field office · UAE field office · Kuwait field office | 48 countries';
+  'Americas office and global HQ: Sheridan, Wyoming · Europe office: London · AMEA (APAC, Middle East, Africa) office: Cairo · partner office for KSA: Al Khobar · field office for Kuwait · field office for UAE: Dubai · field office for LATAM: São Paulo | 48 countries';
 
 export const BIONIXUS_MR_TYPE = 'Global Market Research — Multi-Industry';
 
@@ -31,10 +31,10 @@ export const BIONIXUS_MR_STRENGTHS_BASE = [
 ] as const;
 
 const DEFAULT_LISTICLE_LATAM =
-  'Latin America is covered from the US office with a network of local consultants, and São Paulo is a field office for LATAM.';
+  'Latin America is covered from the US office with a network of local consultants.';
 
 const DEFAULT_OFFICE_LEAD =
-  'BioNixus is a top global market research company headquartered in Sheridan, Wyoming (USA), with regional leadership offices in London and Cairo and field offices in Dubai, Al Khobar and Kuwait.';
+  'The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. São Paulo is a field office for LATAM. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE.';
 
 /** Region-specific paragraph appended to the shared global overview. */
 export function buildBioNixusConsumerOverview(
