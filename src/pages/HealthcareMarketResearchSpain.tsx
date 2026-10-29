@@ -7,6 +7,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { HealthcareMrCountryDepthSections } from '@/components/seo/HealthcareMrCountryDepthSections';
 
 const PAGE_URL = 'https://www.bionixus.com/healthcare-market-research-spain';
 const ORG_ID = 'https://www.bionixus.com/#organization';
@@ -267,6 +268,8 @@ export default function HealthcareMarketResearchSpain() {
             </p>
           </div>
         </section>
+
+        <HealthcareMrCountryDepthSections countryKey="spain" />
 
         <section className="py-12">
           <div className="container-wide max-w-5xl mx-auto">

@@ -287,6 +287,37 @@ export default function BrazilHealthcareMarketResearch() {
             </div>
           </section>
 
+          <section className="section-padding bg-white" id="brazil-research-programmes">
+            <div className="container-wide max-w-4xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+                How BioNixus designs Brazil healthcare market research
+              </h2>
+              <p>
+                Brazil programmes start from one decision — SUS incorporation evidence, ANS private-channel positioning, or
+                medical-device tender pull-through — not from a generic “Latin America tracker.” BioNixus scopes sample
+                frames across SUS-contracted facilities and ANS-affiliated networks separately because prescribing,
+                reimbursement, and procurement behaviour diverge materially between channels.
+              </p>
+              <p>
+                Fieldwork uses Portuguese-language instruments reviewed by local medical writers, CEP ethics clearance
+                where patient or identifiable health data is collected, and LGPD-aligned consent and storage. Mixed-method
+                designs pair quantitative physician or patient surveys with qualitative payer-adjacent and hospital
+                pharmacy modules so affiliate leadership sees both metrics and the operational rationale behind them.
+              </p>
+              <p>
+                Cross-link early to the{' '}
+                <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                  healthcare market research hub
+                </Link>{' '}
+                for therapy-area spokes, GCC expansion modules for Brazilian exporters, and{' '}
+                <Link to="/insights/top-market-research-companies-brazil-2026" className="text-primary hover:underline font-medium">
+                  Brazil market research company comparisons
+                </Link>{' '}
+                when procurement needs a ranked vendor shortlist alongside fieldwork.
+              </p>
+            </div>
+          </section>
+
           {/* Related intelligence */}
           <section className="section-padding bg-white" id="related-intelligence">
             <div className="container-wide max-w-4xl mx-auto">

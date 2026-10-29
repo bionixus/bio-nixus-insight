@@ -6,6 +6,7 @@ import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import {
   DirectoryDriverCard,
   DirectoryFaqList,
@@ -114,6 +115,19 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
 
         <DirectoryJumpNav items={jumpItems} />
 
+        {content.geoLlm ? (
+          <section className="section-padding py-10 bg-muted/10">
+            <div className="container-wide max-w-5xl mx-auto">
+              <GeoLLMAnswerBlock
+                question={content.geoLlm.question}
+                answer={content.geoLlm.answer}
+                points={content.geoLlm.points}
+                summary={content.geoLlm.summary}
+              />
+            </div>
+          </section>
+        ) : null}
+
         <DirectorySection
           id="research"
           eyebrow="Coverage"
@@ -171,6 +185,38 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             ))}
           </div>
         </DirectorySection>
+
+        {content.supplementalSections?.length ? (
+          <>
+            {content.supplementalSections.map((section, index) => (
+              <DirectorySection
+                key={section.id}
+                id={section.id}
+                surface={index % 2 === 1 ? 'cream' : undefined}
+                eyebrow="Depth"
+                title={section.title}
+              >
+                <div className="space-y-4 max-w-3xl">
+                  {section.paragraphs.map((para) => (
+                    <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
+                  {section.bullets?.length ? (
+                    <ul className="mt-4 grid sm:grid-cols-1 gap-2">
+                      {section.bullets.map((point) => (
+                        <li key={point.slice(0, 40)} className="flex gap-2 text-muted-foreground leading-relaxed">
+                          <span className="text-[#C9A84C] flex-shrink-0">✓</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              </DirectorySection>
+            ))}
+          </>
+        ) : null}
 
         <DirectorySection
           id="why"
