@@ -230,23 +230,23 @@ export const CTR_SEO_BY_PATH = {
       'Top market research companies in Angola 2026 — ranked buyer guide for Luanda fieldwork, Portuguese-language studies & healthcare research. Compare BioNixus & peers.',
   },
   '/insights/top-market-research-companies-iraq-2026': {
-    title: '5 Best Market Research Companies in Iraq (2026) | Ranked Guide',
+    title: '5 Best Market Research Companies in Iraq (2026) | BioNixus',
     description:
       'Top market research companies in Iraq 2026 — ranked buyer guide for Baghdad, Erbil & KRG fieldwork. Compare BioNixus, Kantar & regional partners.',
   },
   '/insights/top-market-research-companies-iran-2026': {
-    title: '5 Best Market Research Companies in Iran (2026) | Ranked',
+    title: '5 Best Market Research Companies in Iran (2026) | BioNixus',
     description:
       'Top market research companies in Iran 2026 — ranked buyer guide. Compare BioNixus, Kantar, IQVIA and Nielsen for account-level Iran fieldwork, IFDA context.',
   },
   '/insights/top-market-research-companies-dubai-2026': {
     // GSC 17 Sep–14 Oct 2026: 438 impr, pos 14.76 — exact query "market research companies in dubai".
-    title: 'Market Research Companies in Dubai 2026 | Ranked Guide',
+    title: 'Market Research Companies in Dubai 2026 | BioNixus',
     description:
-      'Market research companies in Dubai compared for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. Ranked buyer guide.',
+      'Market research companies in Dubai for 2026 — BioNixus, Kantar, Ipsos and NielsenIQ for consumer, healthcare and pharma fieldwork. BioNixus wrote this list.',
   },
   '/insights/top-market-research-companies-qatar-2026': {
-    title: '5 Best Market Research Companies in Qatar (2026) | Ranked Guide',
+    title: '5 Best Market Research Companies in Qatar (2026) | BioNixus',
     description:
       'Market research companies in Qatar 2026 — ranked guide for Doha fieldwork, HMC procurement context & GCC healthcare research. Compare BioNixus & peers.',
   },
@@ -256,7 +256,7 @@ export const CTR_SEO_BY_PATH = {
       'Best obesity & weight management market research firms 2026 — GLP-1, anti-obesity medication access, prescriber behaviour & patient journey studies ranked.',
   },
   '/insights/top-pharma-market-research-companies-middle-east-2026': {
-    title: 'Top Pharma Market Research Companies Middle East 2026 | Ranked',
+    title: 'Top Pharma Market Research Companies Middle East 2026 | BioNixus',
     description:
       'Top pharmaceutical market research companies Middle East 2026 — SFDA, MOHAP/DHA & GCC fieldwork ranked. Compare BioNixus, IQVIA MENA, Kantar.',
   },
@@ -266,7 +266,7 @@ export const CTR_SEO_BY_PATH = {
       'Healthcare market research companies Colombia 2026 — INVIMA-aware HCP, EPS/PBS payer & HEOR firms ranked for Bogotá, Medellín & national fieldwork.',
   },
   '/insights/top-pharmaceutical-analytics-companies-worldwide-2026': {
-    title: 'Top Pharmaceutical Analytics Companies Worldwide 2026 | Ranked',
+    title: 'Top Pharmaceutical Analytics Companies Worldwide 2026 | BioNixus',
     description:
       'Top pharmaceutical analytics companies worldwide 2026 — real-world data, HEOR, syndicated Rx analytics & primary research ranked for pharma buyers.',
   },
@@ -444,7 +444,7 @@ export const CTR_SEO_BY_PATH = {
       'Jascayd (nerandomilast) at EMA CHMP in 2026 — IPF approval status, launch markets and what it means for pulmonary fibrosis care. Analysis by BioNixus.',
   },
   '/insights/top-market-research-companies-egypt-2026': {
-    title: 'Best Market Research Companies in Egypt (2026) | Ranked',
+    title: 'Best Market Research Companies in Egypt (2026) | BioNixus',
     description:
       'Top market research companies in Egypt 2026 — ranked buyer guide for Cairo consumer, healthcare & pharma fieldwork. Compare BioNixus, Kantar & Nielsen.',
   },
@@ -470,77 +470,77 @@ export const CTR_SEO_BY_PATH = {
       'Account-level market research cuts brand vs competitor data by customer account — not only a national average. SKU-level adds the product cut syndicated audits miss.',
   },
   '/insights/top-fmcg-market-research-companies-egypt-2026': {
-    title: 'FMCG Market Research Firms Egypt 2026 | Ranked',
+    title: 'FMCG Market Research Firms Egypt 2026 | BioNixus',
     description:
       'FMCG market research firms Egypt 2026 — BioNixus wrote this list for custom primary research in Cairo and Upper Egypt. Compare NielsenIQ, Kantar, and local agencies.',
   },
   '/insights/top-fmcg-market-research-companies-oman-2026': {
-    title: 'FMCG Market Research Firms Oman 2026 | Ranked',
+    title: 'FMCG Market Research Firms Oman 2026 | BioNixus',
     description:
       'FMCG market research firms Oman 2026 — BioNixus wrote this list for custom primary research. Compare NielsenIQ and agencies for traditional-trade cuts syndicated panels miss.',
   },
   '/insights/top-fmcg-market-research-companies-kuwait-2026': {
-    title: 'FMCG Market Research Firms Kuwait 2026 | Ranked',
+    title: 'FMCG Market Research Firms Kuwait 2026 | BioNixus',
     description:
       'FMCG market research firms Kuwait 2026 — BioNixus wrote this list for custom primary research. Compare NielsenIQ and agencies for account-level brand vs competitor data.',
   },
   '/insights/top-real-estate-market-research-companies-saudi-arabia-2026': {
-    title: 'Real Estate Market Research KSA 2026 | Ranked',
+    title: 'Real Estate Market Research KSA 2026 | BioNixus',
     description:
       'Real estate market research firms KSA 2026 — BioNixus wrote this list for primary fieldwork. Nielsen and IQVIA do not cover this category. Compare agencies and request a proposal.',
   },
   '/insights/top-real-estate-market-research-companies-egypt-2026': {
-    title: 'Real Estate Market Research Egypt 2026 | Ranked',
+    title: 'Real Estate Market Research Egypt 2026 | BioNixus',
     description:
       'Real estate market research firms Egypt 2026 — BioNixus wrote this list for primary fieldwork. A category Nielsen and IQVIA do not audit. Compare agencies in Cairo.',
   },
   '/insights/top-financial-services-market-research-companies-uae-2026': {
-    title: 'Banking Market Research Firms UAE 2026 | Ranked',
+    title: 'Banking Market Research Firms UAE 2026 | BioNixus',
     description:
       'Banking and financial services market research firms UAE 2026 — BioNixus wrote this list for custom primary research. Nielsen does not cover this category.',
   },
   '/insights/top-financial-services-market-research-companies-egypt-2026': {
-    title: 'Banking Market Research Firms Egypt 2026 | Ranked',
+    title: 'Banking Market Research Firms Egypt 2026 | BioNixus',
     description:
       'Banking and financial services market research firms Egypt 2026 — BioNixus wrote this list for custom primary research. A category Nielsen and IQVIA do not audit.',
   },
   '/insights/top-market-research-companies-morocco-2026': {
-    title: 'Best Market Research Companies in Morocco (2026) | Ranked',
+    title: 'Best Market Research Companies in Morocco (2026) | BioNixus',
     description:
       'Top market research companies in Morocco 2026 — ranked guide for Casablanca & Rabat consumer, healthcare and pharma fieldwork. Compare BioNixus & peers.',
   },
   '/insights/top-healthcare-market-research-companies-poland-2026': {
-    title: 'Healthcare Market Research Companies Poland 2026 | Ranked',
+    title: 'Healthcare Market Research Companies Poland 2026 | BioNixus',
     description:
       'Poland healthcare market research companies 2026 — NFZ payer research, Warsaw & Kraków HCP fieldwork ranked. Compare BioNixus and leading Polish firms.',
   },
   '/insights/top-healthcare-market-research-companies-belgium-2026': {
-    title: 'Healthcare Market Research Companies Belgium 2026 | Ranked',
+    title: 'Healthcare Market Research Companies Belgium 2026 | BioNixus',
     description:
       'Belgium healthcare market research companies 2026 — INAMI/RIZIV payer research, Brussels HCP fieldwork and EU HQ studies ranked. Compare BioNixus & peers.',
   },
   '/insights/top-healthcare-market-research-companies-peru-2026': {
-    title: 'Healthcare Market Research Companies Peru 2026 | Ranked',
+    title: 'Healthcare Market Research Companies Peru 2026 | BioNixus',
     description:
       'Peru healthcare market research companies 2026 — DIGEMID-aware HCP research, EsSalud/SIS payer studies and Lima fieldwork ranked. Compare BioNixus & peers.',
   },
   '/insights/top-market-research-companies-sweden-2026': {
-    title: 'Best Market Research Companies in Sweden (2026) | Ranked',
+    title: 'Best Market Research Companies in Sweden (2026) | BioNixus',
     description:
       'Top market research companies in Sweden 2026 — ranked guide for Stockholm & Gothenburg consumer, healthcare and B2B fieldwork. Compare BioNixus & peers.',
   },
   '/insights/top-market-research-companies-lebanon-2026': {
-    title: 'Best Market Research Companies in Lebanon (2026) | Ranked',
+    title: 'Best Market Research Companies in Lebanon (2026) | BioNixus',
     description:
       'Top market research companies in Lebanon 2026 — ranked guide for Beirut consumer, healthcare and pharma fieldwork. Compare BioNixus and regional partners.',
   },
   '/insights/top-market-research-companies-canada-2026': {
-    title: 'Best Market Research Companies in Canada (2026) | Ranked',
+    title: 'Best Market Research Companies in Canada (2026) | BioNixus',
     description:
       'Top market research companies in Canada 2026 — ranked guide for Toronto, Montreal & Vancouver consumer, healthcare and B2B research. Compare BioNixus & peers.',
   },
   '/insights/top-fmcg-market-research-companies-saudi-arabia-2026': {
-    title: 'FMCG Market Research Companies Saudi Arabia 2026 | Ranked',
+    title: 'FMCG Market Research Companies Saudi Arabia 2026 | BioNixus',
     description:
       'FMCG market research companies in Saudi Arabia 2026 — shopper, U&A and retail audit specialists ranked for KSA. Compare BioNixus, NielsenIQ, Kantar.',
   },

@@ -225,7 +225,7 @@ export default function TopPharmaMarketResearchCompaniesMiddleEast2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Pharma Market Research Companies Middle East 2026 | Ranked</title>
+        <title>Top Pharma Market Research Companies Middle East 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top pharmaceutical market research companies Middle East 2026 — SFDA, MOHAP/DHA & GCC fieldwork ranked. Compare BioNixus, IQVIA MENA, Kantar & Ipsos."

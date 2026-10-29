@@ -434,7 +434,7 @@ export const NZ_GCC_EXPORT_FAQ: { question: string; answer: string }[] = [
   {
     question: 'Why brief BioNixus rather than relying only on a certificate checklist?',
     answer:
-      'A checklist names the paper. BioNixus measures demand, with field offices in Dubai and Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
+      'A checklist names the paper. BioNixus measures demand, with a field office for UAE in Dubai and a partner office for KSA in Al Khobar. Forty client reviews sit on the firm’s public profiles. “Guaranteed in writing” means the scope, not the forecast.',
   },
 ];
 

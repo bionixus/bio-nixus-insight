@@ -123,7 +123,7 @@ const en: UiChromeStrings = {
     coverAlt: 'Blog post cover',
   },
   coverageMap: {
-    alt: 'BioNixus global research coverage map showing regional leadership offices in Sheridan, London and Sheikh Zayed, and field offices in Dubai, Al Khobar and Salmiya.',
+    alt: 'BioNixus global research coverage map showing regional leadership offices in Sheridan, London and Sheikh Zayed, and a field office for UAE in Dubai, a partner office for KSA in Al Khobar, and a field office for Kuwait in Salmiya.',
     caption:
       'Regional leadership offices: Sheridan (US headquarters), London and Sheikh Zayed (Egypt). Field offices: Dubai, Al Khobar (KSA) and Salmiya (Kuwait). Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
   },

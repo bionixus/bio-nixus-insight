@@ -354,7 +354,7 @@ describe('/blog/glp-1-physician-survey-saudi-arabia: copy rules', () => {
   });
 
   it('labels Al Khobar and Kuwait as field offices and keeps the written guarantee', () => {
-    expect(allCopy).toMatch(/field offices in Dubai, Al Khobar and Salmiya, Kuwait/i);
+    expect(allCopy).toMatch(/a field office for UAE in Dubai, a partner office for KSA in Al Khobar, and a field office for Kuwait in Salmiya/i);
     expect(allCopy).toMatch(/Guaranteed in writing/);
     expect(allCopy).toMatch(/\$10k–\$60k/);
   });

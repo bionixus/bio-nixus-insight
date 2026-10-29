@@ -381,7 +381,7 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: copy rules', () =
   });
 
   it('states no prices and labels Al Khobar and Kuwait as field offices', () => {
-    expect(allCopy).toMatch(/field offices in Dubai, Al Khobar and Salmiya, Kuwait/i);
+    expect(allCopy).toMatch(/a field office for UAE in Dubai, a partner office for KSA in Al Khobar, and a field office for Kuwait in Salmiya/i);
     expect(allCopy).not.toMatch(/\$\s?\d[\d,]*(?:k|,000)/i);
   });
 
