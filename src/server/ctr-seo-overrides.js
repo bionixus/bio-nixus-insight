@@ -825,9 +825,9 @@ export const CTR_SEO_BY_PATH = {
       'BioNixus runs obesity GLP-1 market research in Saudi Arabia: GLP-1 physician surveys, patient journeys and payer access studies. $10k–$60k.',
   },
   '/uae-obesity-market': {
-    title: 'UAE Obesity Market Insights: GLP-1 & Bariatric | BioNixus',
+    title: 'GLP-1 Market Research UAE: Obesity & Access | BioNixus',
     description:
-      'UAE obesity market insights cover GLP-1 access and prescribing, bariatric surgery, insurance rules in Dubai and Abu Dhabi, and self-pay patient behaviour.',
+      'BioNixus runs GLP-1 market research in the UAE: prescriber surveys, Thiqa and Daman payer interviews and oral GLP-1 uptake studies. Custom research $10k–$60k.',
   },
   '/blog/kol-mapping-pharma-middle-east': {
     title: 'KOL Mapping Guide for Middle East Pharma | BioNixus',
