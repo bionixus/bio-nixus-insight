@@ -41,6 +41,8 @@ const TEXTUAL_TYPES = new Set(['TEXT', 'LARGE_TEXT', 'PHONE', 'NUMERICAL']);
 const NOTE_LABELS: [string, string][] = [
   ['requestType', 'Request type'],
   ['formVariant', 'Form'],
+  ['agencyBrief', 'Agency brief'],
+  ['ref', 'ref'],
   ['sourcePage', 'Page'],
   ['sourceUrl', 'URL'],
   ['reportName', 'Report'],
@@ -75,6 +77,7 @@ const NOTE_SKIP = new Set<string>([
   'phone',
   'company',
   'companyName',
+  'tags',
 ]);
 
 export type GhlCustomField = {
@@ -223,24 +226,67 @@ function tagSlug(value: string | undefined) {
     .slice(0, 80);
 }
 
+const AGENCY_QUOTE_TAGS = ['source-ai-search', 'agency-quote'] as const;
+
 export function leadTags(formVariant: string | undefined, requestType?: string): string[] {
   const tags = ['website-lead'];
   const variant = tagSlug(formVariant);
   if (variant) tags.push(`form:${variant}`);
   const request = tagSlug(requestType);
   if (request) tags.push(`request:${request}`);
+  if (variant === 'agency-quote') {
+    for (const tag of AGENCY_QUOTE_TAGS) {
+      if (!tags.includes(tag)) tags.push(tag);
+    }
+  }
   return tags;
+}
+
+/**
+ * Agency quote forms post a single Name, Agency, and Project brief.
+ * HighLevel contacts need firstName/lastName, companyName, and a note line
+ * prefixed "Agency brief:". Other website forms already send those fields.
+ */
+export function applyAgencyQuoteMapping(fields: Record<string, string>): Record<string, string> {
+  const next = { ...fields };
+  const rawName = next.name?.trim();
+  if (rawName && !next.firstName) {
+    const splitAt = rawName.indexOf(' ');
+    if (splitAt === -1) {
+      next.firstName = rawName;
+    } else {
+      next.firstName = rawName.slice(0, splitAt);
+      const lastName = rawName.slice(splitAt + 1).trim();
+      if (lastName && !next.lastName) next.lastName = lastName;
+    }
+  }
+  if (rawName) delete next.name;
+
+  const agency = next.agency?.trim();
+  if (agency && !next.companyName && !next.company) next.companyName = agency;
+  if (agency) delete next.agency;
+
+  const brief = next.projectBrief?.trim();
+  if (brief && !next.agencyBrief) next.agencyBrief = brief;
+  if (brief) delete next.projectBrief;
+
+  return next;
 }
 
 export function buildNote(fields: Record<string, string>): string {
   const name = [fields.firstName, fields.lastName].filter(Boolean).join(' ').trim();
   const email = leadEmail(fields);
   const header = ['Website lead', name, email ? `<${email}>` : ''].filter(Boolean).join(' ');
-  const lines = [header];
+  const agencyBrief = fields.agencyBrief?.trim() ?? '';
+  const agencyBriefFirst = tagSlug(fields.formVariant) === 'agency-quote' && agencyBrief.length > 0;
+  const lines: string[] = [];
+  if (agencyBriefFirst) lines.push(`Agency brief: ${agencyBrief}`);
+  lines.push(header);
   const used = new Set<string>(NOTE_SKIP);
+  if (agencyBriefFirst) used.add('agencyBrief');
   for (const [key, label] of NOTE_LABELS) {
     const value = fields[key];
-    if (!value) continue;
+    if (!value || used.has(key)) continue;
     used.add(key);
     lines.push(`${label}: ${value}`);
   }
@@ -326,16 +372,17 @@ export function planLeadWrite(
   locationId: string,
   defs: GhlCustomField[],
 ): LeadWritePlan {
-  const note = buildNote(fields);
-  const customFields = mapCustomFields(fields, defs, note);
-  const upsert = buildUpsertBody(fields, locationId, customFields, true);
+  const normalized = applyAgencyQuoteMapping(fields);
+  const note = buildNote(normalized);
+  const customFields = mapCustomFields(normalized, defs, note);
+  const upsert = buildUpsertBody(normalized, locationId, customFields, true);
   const plan: LeadWritePlan = {
-    email: leadEmail(fields),
+    email: leadEmail(normalized),
     upsert,
-    tags: leadTags(fields.formVariant, fields.requestType),
+    tags: leadTags(normalized.formVariant, normalized.requestType),
     note,
   };
-  if (upsert.phone) plan.upsertWithoutPhone = buildUpsertBody(fields, locationId, customFields, false);
+  if (upsert.phone) plan.upsertWithoutPhone = buildUpsertBody(normalized, locationId, customFields, false);
   return plan;
 }
 

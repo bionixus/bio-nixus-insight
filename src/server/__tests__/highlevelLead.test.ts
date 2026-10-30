@@ -178,6 +178,59 @@ describe('planLeadWrite', () => {
     expect(plan.note).toContain('Role: Market Access Lead');
   });
 
+  it('maps an agency quote into a contact, an Agency brief note, and the agency tags', () => {
+    const plan = planLeadWrite(
+      {
+        name: 'Mary Ann Smith',
+        agency: 'Northwind Research',
+        email: 'mary@northwind.com',
+        country: 'United Kingdom',
+        projectBrief: 'UAE oncology, n=40, IDIs, 6 weeks, white-label yes',
+        tags: 'source-ai-search,agency-quote,ignore-me',
+        ref: 'agency-specialist-physician-panel-uae',
+        formVariant: 'agency-quote',
+        requestType: 'Agency quote',
+      },
+      'SjwWFl3GxGB1WQ1LbzLq',
+      DEFS,
+    );
+    expect(plan.upsert.firstName).toBe('Mary');
+    expect(plan.upsert.lastName).toBe('Ann Smith');
+    expect(plan.upsert.companyName).toBe('Northwind Research');
+    expect(plan.upsert.email).toBe('mary@northwind.com');
+    expect(plan.upsert.country).toBe('United Kingdom');
+    expect(plan.upsert.tags).toBeUndefined();
+    expect(plan.note.startsWith('Agency brief: UAE oncology, n=40, IDIs, 6 weeks, white-label yes\n')).toBe(true);
+    expect(plan.note.indexOf('Website lead')).toBeGreaterThan('Agency brief:'.length);
+    expect(plan.note).not.toContain('projectBrief:');
+    expect(plan.note).toContain('ref: agency-specialist-physician-panel-uae');
+    expect(plan.note).not.toContain('source-ai-search');
+    expect(plan.tags).toEqual([
+      'website-lead',
+      'form:agency-quote',
+      'request:agency-quote',
+      'source-ai-search',
+      'agency-quote',
+    ]);
+  });
+
+  it('tags an agency quote even when the tags field is omitted, and leaves a one-word name without a last name', () => {
+    const plan = planLeadWrite(
+      {
+        name: 'Cher',
+        agency: 'Northwind Research',
+        email: 'cher@northwind.com',
+        formVariant: 'agency-quote',
+      },
+      'SjwWFl3GxGB1WQ1LbzLq',
+      [],
+    );
+    expect(plan.upsert.firstName).toBe('Cher');
+    expect(plan.upsert.lastName).toBeUndefined();
+    expect(plan.tags).toContain('source-ai-search');
+    expect(plan.tags).toContain('agency-quote');
+  });
+
   it('sends Türkiye as Turkey because HighLevel rejects the CLDR name', () => {
     expect(countryForUpsert('Türkiye')).toBe('Turkey');
     const plan = planLeadWrite({ ...SAMPLE, country: 'Türkiye' }, 'SjwWFl3GxGB1WQ1LbzLq', DEFS);

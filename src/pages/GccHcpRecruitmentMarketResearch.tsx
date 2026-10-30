@@ -1,3 +1,4 @@
+import { AgencyResearchOffer } from '@/components/conversion/AgencyResearchOffer';
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 import { getServiceLandingContent } from '@/data/serviceLandingContent';
 
@@ -8,6 +9,14 @@ export default function GccHcpRecruitmentMarketResearch() {
     <StrategicServicePage
       title="Physician Recruitment in Saudi Arabia and GCC | BioNixus"
       description="Physician recruitment in Saudi Arabia and the GCC. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East."
+      publishedAt="2026-07-14"
+      modifiedAt="2026-10-29"
+      afterDelivery={
+        <AgencyResearchOffer
+          pageSlug="gcc-hcp-recruitment-market-research"
+          lead="When a client brief needs verified physician or HCP recruitment in Saudi Arabia and the wider GCC, BioNixus can deliver under your brand."
+        />
+      }
       canonicalUrl="https://www.bionixus.com/gcc-hcp-recruitment-market-research"
       breadcrumbLabel="GCC HCP Recruitment Market Research"
       h1="Physician Recruitment in Saudi Arabia and GCC"

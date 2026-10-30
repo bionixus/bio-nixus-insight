@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { AgencyResearchOffer } from '@/components/conversion/AgencyResearchOffer';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { ExecutiveDecisionBlock, PremiumHero, ProofMetricGrid } from '@/components/page/PremiumPageSections';
@@ -56,8 +57,19 @@ const serviceSchema = {
     'Specialist healthcare fieldwork across all six GCC markets. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. São Paulo is a field office for LATAM. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE.',
 };
 
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: 'Healthcare Fieldwork GCC | Specialist HCP Research | BioNixus',
+  datePublished: '2026-09-29',
+  dateModified: '2026-10-29',
+};
+
 const jsonLd = [
   serviceSchema,
+  webPageSchema,
   buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
     { name: 'Healthcare Fieldwork', href: '/healthcare-fieldwork-gcc' },
@@ -331,6 +343,11 @@ export default function HealthcareFieldworkGcc() {
               detail: 'All-in fieldwork cost for GCC HCP studies depending on method, specialty, and geography.',
             },
           ]}
+        />
+
+        <AgencyResearchOffer
+          pageSlug="healthcare-fieldwork-gcc"
+          lead="When a client brief needs verified healthcare fieldwork across one or more GCC markets, BioNixus can deliver under your brand."
         />
 
         <section className="section-padding py-10">
