@@ -76,7 +76,8 @@ export function GeoLLMAnswerBlock({
   return (
     <article
       id="geo-answer"
-      className={`rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 ${className}`}
+      data-geo-answer="true"
+      className={`geo-llm-answer rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 ${className}`}
     >
       {emitSchema && (
         <Helmet>

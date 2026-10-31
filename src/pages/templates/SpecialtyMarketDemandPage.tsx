@@ -16,6 +16,9 @@ import {
   DirectoryOutlineLink,
   DirectorySection,
 } from '@/components/seo/DirectoryPremium';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
+import { ExpandedServiceLandingContent } from '@/components/page/ExpandedServiceLandingContent';
+import { getSpecialtyMarketDemandExpanded } from '@/data/specialtyMarketDemandExpanded';
 
 /**
  * Shared template for GSC demand-driven specialty market pages
@@ -23,6 +26,7 @@ import {
  */
 export default function SpecialtyMarketDemandPage({ content }: { content: SpecialtyMarketDemandContent }) {
   const canonicalPath = `/${content.slug}`;
+  const expandedContent = content.expandedKey ? getSpecialtyMarketDemandExpanded(content.expandedKey) : undefined;
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Healthcare Market Research', href: '/healthcare-market-research' },
@@ -114,6 +118,18 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
 
         <DirectoryJumpNav items={jumpItems} />
 
+        {content.geoAnswer ? (
+          <section className="container mx-auto px-4 py-10 max-w-5xl" aria-labelledby="geo-answer-heading">
+            <GeoLLMAnswerBlock
+              question={content.geoAnswer.question}
+              answer={content.geoAnswer.answer}
+              points={content.geoAnswer.points}
+              summary={content.geoAnswer.summary}
+              pageUrl={content.canonical}
+            />
+          </section>
+        ) : null}
+
         <DirectorySection
           id="research"
           eyebrow="Coverage"
@@ -202,6 +218,12 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
         <DirectorySection id="faq" eyebrow="Questions" title="Frequently asked questions">
           <DirectoryFaqList items={content.faqs.map((item) => ({ q: item.question, a: item.answer }))} />
         </DirectorySection>
+
+        {expandedContent ? (
+          <section className="container mx-auto px-4 pb-4 max-w-4xl">
+            <ExpandedServiceLandingContent content={expandedContent} />
+          </section>
+        ) : null}
 
         <CTASection variant="research-proposal" />
       </main>
