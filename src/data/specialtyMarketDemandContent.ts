@@ -28,6 +28,17 @@ export type SpecialtyMarketDemandContent = {
   faqs: Array<{ question: string; answer: string }>;
   areaServed?: string[];
   priority: 'now' | 'next' | 'later';
+  /** ISO date for Service schema dateModified — bump on substantive edits. */
+  dateModified?: string;
+  /** Key into specialtyMarketDemandExpanded.ts for 2,000+ word SSR modules. */
+  expandedKey?: 'japan-medical-disposables-market' | 'italy-portable-diagnostic-devices-market' | 'gcc-medication-management-market';
+  /** Answer-first block for generative search / chat citation. */
+  geoAnswer?: {
+    question: string;
+    answer: string;
+    points: Array<{ title: string; description: string }>;
+    summary?: string;
+  };
 };
 
 const BASE = 'https://www.bionixus.com';
@@ -935,11 +946,43 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Japan Medical Disposables Market',
   title: 'Japan Medical Disposables Market Research | BioNixus',
   description:
-    'Japan medical disposables market research — hospital consumables, infection-control products, tender dynamics, and procurement behaviour intelligence from.',
+    'Japan medical disposables market research — hospital consumables, infection-control products, GPO tender dynamics, and nursing-led procurement behaviour from BioNixus.',
   canonical: `${BASE}/japan-medical-disposables-market`,
   h1: 'Japan Medical Disposables Market: Procurement & Adoption Intelligence',
+  dateModified: '2026-10-31',
+  expandedKey: 'japan-medical-disposables-market',
+  geoAnswer: {
+    question: 'What drives the Japan medical disposables market?',
+    answer:
+      'Japan’s medical disposables market is driven by infection-control standards, nursing workflow usability, and group purchasing standardization—not retail demand. Hospitals keep premium SKUs when ward usability and sterility confidence beat small unit-price gaps; GPO and re-tender cycles flip volume when procurement scores service continuity and dual-source resilience.',
+    points: [
+      {
+        title: 'Infection-control governance',
+        description:
+          'MHLW-aligned prevention programmes and accreditation metrics make infection-control committees co-owners of drape, antiseptic, and PPE choices alongside procurement.',
+      },
+      {
+        title: 'Nursing workflow veto power',
+        description:
+          'Ward managers reject disposables that add steps to line care or medication rounds even after tender awards—usability research predicts delisting before price complaints surface.',
+      },
+      {
+        title: 'GPO standardization',
+        description:
+          'Group purchasing and hospital-chain contracts concentrate volume; winning a standardization vote matters more than incremental account calls in many categories.',
+      },
+      {
+        title: 'Domestic vs import diligence',
+        description:
+          'Japanese manufacturers remain reference suppliers; imports must clear labelling, sterility, and service expectations—research tests when “made in Japan” still wins at parity usability.',
+      },
+    ],
+    summary:
+      'BioNixus runs primary research with infection-control, nursing, and procurement stakeholders so disposables manufacturers forecast Japan standardization and tender outcomes with evidence—not syndicated averages.',
+  },
   intro: [
     'Japan’s medical disposables market is high-volume, committee-governed, and sensitive to infection-control standards and total cost. BioNixus researches nursing, infection control, and procurement stakeholders to show which SKUs earn formulary permanency versus perpetual trial status.',
+    'Search interest in “Japan medical disposables market” reflects hospital buyers and export strategists trying to understand GPO dynamics, nursing veto points, and post-shortage resilience weighting—not consumer PPE demand. Our programmes map SKU-level decision cells before quant waves so segment cuts reflect real committee behaviour.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -965,10 +1008,27 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them.',
+      'High-turn SKUs often survive on nursing familiarity after tenders compress unit price—BioNixus quantifies workflow veto risk before sponsors commit to aggressive undercut strategies.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Hospital segment signals',
+    items: [
+      { label: 'University hospitals', signal: 'Infection-control publication can veto GPO awards; nursing trial data is mandatory before national standardization.' },
+      { label: 'Medical corporations', signal: 'Patient experience metrics elevate premium disposables when infection rates are public-facing quality indicators.' },
+      { label: 'Public prefectural networks', signal: 'Budget caps dominate list price, but MOH quality audits still fund targeted infection-control upgrades.' },
+      { label: 'Export-linked OEMs', signal: 'Domestic preference data supports GCC tender narratives when Japanese manufacturing credentials are part of the value story.' },
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Typical Japan hospital purchasing rhythm',
+    items: [
+      { period: 'Q1–Q2', detail: 'Many chains run infection-control SKU reviews ahead of fiscal year start; nursing trial windows open for pack redesign proposals.' },
+      { period: 'Q3', detail: 'GPO re-tender preparation intensifies; materials management requests continuity plans and dual-source documentation.' },
+      { period: 'Q4', detail: 'Award announcements and phased ward rollouts; poor nursing adoption triggers delayed implementation into the next cycle.' },
     ],
   },
   audiences: [
-    { audience: 'Infection-control leads', description: 'Policy gatekeepers for many disposable categories.' },
     { audience: 'Ward nursing managers', description: 'Daily users who veto poor workflow products.' },
     { audience: 'Hospital procurement', description: 'Contract and standardization owners.' },
     { audience: 'Distributor partners', description: 'Logistics and service intermediaries.' },
@@ -987,7 +1047,7 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     },
   ],
   areaServed: ['Japan'],
-  priority: 'next',
+  priority: 'now',
 };
 
 const japanMedtechAccessAutomation: SpecialtyMarketDemandContent = {
@@ -1250,11 +1310,46 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Italy Portable Diagnostic Devices Market',
   title: 'Italy Portable Diagnostic Devices Market Research | BioNixus',
   description:
-    'Italy portable diagnostic devices market research — POCT adoption, hospital and community laboratory pathways, AIFA/notified-body context, and procurement.',
+    'Italy portable diagnostic devices market research — POCT adoption, hospital and lab pathways, IVDR context, and regional procurement intelligence from BioNixus.',
   canonical: `${BASE}/italy-portable-diagnostic-devices-market`,
   h1: 'Italy Portable Diagnostic Devices Market: POCT & Adoption Intelligence',
+  dateModified: '2026-10-31',
+  expandedKey: 'italy-portable-diagnostic-devices-market',
+  geoAnswer: {
+    question: 'What is the Italy portable diagnostic devices market?',
+    answer:
+      'Italy’s portable diagnostic devices market is hospital-led point-of-care testing and handheld platforms governed by laboratory directors—not consumer gadgets. Adoption scales when POCT passes method validation, LIS integration, and regional tender scoring; pilots stall when IT or quality gates block go-live.',
+    points: [
+      {
+        title: 'Laboratory governance',
+        description:
+          'Core lab directors control decentralization by analyte; ED and ward enthusiasm alone rarely expands POCT beyond pilot beds without QC and connectivity proof.',
+      },
+      {
+        title: 'Regional ASL procurement',
+        description:
+          'Regional tenders and hospital-group awards include interoperability and service clauses that disqualify vendors after shortlist stage if IT diligence fails.',
+      },
+      {
+        title: 'Reagent rental economics',
+        description:
+          'Renewals follow total per-test cost and throughput—not capital list price—finance and laboratory stakeholders joint-own renewal decisions.',
+      },
+      {
+        title: 'IVDR performance expectations',
+        description:
+          'EU IVDR raises evidence and post-market surveillance expectations that Italian laboratories translate into renewal and validation requirements.',
+      },
+    ],
+    summary:
+      'BioNixus interviews laboratory, clinical, IT, and procurement stakeholders to forecast which portable diagnostics platforms scale in Italy—and which remain perpetual pilots.',
+  },
   intro: [
     'Italy’s portable diagnostic devices market is shaped by hospital POCT programmes, community laboratory networks, and regional procurement rules more than retail gadget demand. BioNixus researches laboratory directors, emergency and ward clinicians, and ASL/hospital buyers to show which handheld and near-patient platforms clear volume — and which remain pilots.',
+    'Queries such as “Italy portable diagnostic devices market” spike when IVD vendors prepare regional tenders or defend reagent rental renewals. Research separates acute POCT, ambulatory monitoring, and community pathways so demand models do not average incompatible buyer sets.',
+    'BioNixus proposals typically reach a scoped design within 48 hours once analyte, region, and decision milestone are defined.',
+    'Laboratory directors, ED chiefs, and ASL procurement are interviewed with separate guides so POCT governance and tender scoring are not collapsed into a single generic “hospital buyer” profile.',
+    'IVDR and regional tender modules can run in parallel when connectivity is on the critical path.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1280,6 +1375,15 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Portable diagnostics in Italy sit between laboratory governance and clinical urgency. BioNixus separates acute POCT, ambulatory programmes, and community pathways so manufacturers do not average incompatible buyer sets.',
+      'Renewal decisions often occur twelve to twenty-four months after pilot go-live—research timelines must align with reagent contract end dates, not device installation alone.',
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Italy POCT and tender calendar cues',
+    items: [
+      { period: 'Jan–Mar', detail: 'Regional ASL budget finalizations; laboratory directors lock decentralization plans for the fiscal year.' },
+      { period: 'Apr–Sep', detail: 'Peak ED and ward POCT pilots before winter respiratory surge; connectivity projects compete for IT bandwidth.' },
+      { period: 'Oct–Dec', detail: 'Reagent rental renewals and multi-year tender awards; EQA performance summaries influence scoring.' },
     ],
   },
   audiences: [
@@ -1303,9 +1407,14 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
       answer:
         'Near-patient and handheld diagnostic platforms used in hospitals, ambulatory settings, and selected community pathways — researched through laboratory, clinical, and procurement stakeholders rather than consumer gadget panels.',
     },
+    {
+      question: 'How should manufacturers prioritize Italy POCT analytes?',
+      answer:
+        'Prioritize analytes where ED or ward turnaround materially changes admission or treatment decisions and where core labs willingly delegate QC—not categories where laboratory directors retain centralization mandates for reimbursement or quality reasons. BioNixus pathway modules rank indications by decentralization probability before sponsors fund national sales headcount.',
+    },
   ],
   areaServed: ['Italy'],
-  priority: 'later',
+  priority: 'now',
 };
 
 const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
@@ -1519,11 +1628,45 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'GCC Medication Management Market',
   title: 'GCC Medication Management Market Research | BioNixus',
   description:
-    'GCC medication management market research — hospital pharmacy automation, e-prescribing, adherence programmes, Wasfaty-linked workflows, and buyer.',
+    'GCC medication management market research — pharmacy automation, e-prescribing, Wasfaty workflows, adherence programmes, and Gulf buyer intelligence from BioNixus.',
   canonical: `${BASE}/gcc-medication-management-market`,
   h1: 'GCC Medication Management Market: Pharmacy, Automation & Adherence Intelligence',
+  dateModified: '2026-10-31',
+  expandedKey: 'gcc-medication-management-market',
+  geoAnswer: {
+    question: 'What is the GCC medication management market?',
+    answer:
+      'The GCC medication management market covers hospital pharmacy automation, e-prescribing and closed-loop medication systems, and adherence programmes funded by hospitals, payers, or employers. Purchases are coalition decisions among chief pharmacists, CIOs, and patient-safety leaders—not pharmacy-only capital buys.',
+    points: [
+      {
+        title: 'Greenfield hospital opportunity',
+        description:
+          'New Saudi and UAE facilities adopt modern ADC and closed-loop stacks from day one; retrofit hospitals fund adherence software before robotics when budgets are constrained.',
+      },
+      {
+        title: 'Wasfaty ambulatory linkage',
+        description:
+          'Saudi ambulatory prescribing and fulfilment through Wasfaty shapes medication management outside inpatient wards—modules must separate ambulatory from ward automation demand.',
+      },
+      {
+        title: 'E-health integration gates',
+        description:
+          'National and emirate e-health programmes require HIS integration and cybersecurity packs before SaaS or connected devices scale beyond pilots.',
+      },
+      {
+        title: 'Specialty inventory pressure',
+        description:
+          'High-cost biologics and cold-chain products push inventory visibility and ADC accuracy into tender scoring alongside error-reduction narratives.',
+      },
+    ],
+    summary:
+      'BioNixus runs bilingual GCC fieldwork with pharmacy, IT, quality, and payer stakeholders so vendors prioritize the buying centre and evidence pack that matches each country cell.',
+  },
   intro: [
     'The GCC medication management market covers hospital pharmacy automation, e-prescribing and closed-loop medication systems, and adherence / patient-support programmes that sit between IT, pharmacy, and clinical care. BioNixus researches chief pharmacists, hospital CIOs, and ambulatory stakeholders so vendors know which Gulf buyers fund automation versus adherence software — and what evidence they demand.',
+    'Interest in “GCC medication management market” reflects digital health vendors and hospital groups comparing closed-loop investments with ambulatory adherence platforms. Our research scopes capital automation, e-Rx integration, and payer-funded adherence separately so forecasts match real budget owners.',
+    'Contact admin@bionixus.com or use the proposal form for a GCC medication management feasibility memo by country cell.',
+    'Studies can open with a written feasibility assessment before full protocol commitment.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1560,6 +1703,14 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
       { label: 'Oman / Bahrain', signal: 'Selective modernisation projects; localisation and service support weigh heavily.' },
     ],
   },
+  calendarBlocks: {
+    heading: 'GCC medication management decision windows',
+    items: [
+      { period: 'H1', detail: 'New hospital commissioning and capital budget releases for ADC and robotics in KSA and UAE mega-projects.' },
+      { period: 'Mid-year', detail: 'E-health integration sprints before fiscal close; CIO security reviews peak for connected medication platforms.' },
+      { period: 'H2', detail: 'NUPCO and private group tenders bundle supply and automation; adherence SaaS renewals align to payer contract cycles.' },
+    ],
+  },
   audiences: [
     { audience: 'Chief pharmacists', description: 'Clinical and operational owners of medication systems.' },
     { audience: 'Hospital CIO / IT', description: 'Integration and cybersecurity gatekeepers.' },
@@ -1581,9 +1732,14 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
       answer:
         'Hospital pharmacy automation, e-prescribing and closed-loop medication systems, inventory visibility, and adherence / patient-support programmes — researched through pharmacy, IT, and clinical stakeholders across Gulf markets.',
     },
+    {
+      question: 'When should vendors lead with automation versus adherence in the GCC?',
+      answer:
+        'Lead with inpatient automation when chief pharmacists and capital committees own a greenfield or replacement window; lead with adherence when payers or employers fund ambulatory programmes and Wasfaty-linked fulfilment is the strategic hook in Saudi Arabia. BioNixus feasibility calls identify the budget owner in week one so demos reach the coalition that can sign.',
+    },
   ],
   areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],
-  priority: 'later',
+  priority: 'now',
 };
 
 const doxorubicinMarket: SpecialtyMarketDemandContent = {
