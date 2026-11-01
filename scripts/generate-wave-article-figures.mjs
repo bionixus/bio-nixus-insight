@@ -186,6 +186,43 @@ const FIGURES = {
         <text x="40" y="510" fill="${MUTED}" font-family="${SANS}" font-size="19">Mean domain scores, percent. Only 12.6% of respondents were consultants.</text>`,
     },
   ],
+  'market-entry-research-singapore-southeast-asia': [
+    {
+      file: 'market-entry-research-singapore-southeast-asia-october-signals.webp',
+      height: 620,
+      title: 'October 2026: five Southeast Asia signals',
+      footer: 'EDB · Horizon3 · DFAT · CNA',
+      body: `
+        <path d="M 120 120 V 520" stroke="${TRACK}" stroke-width="6"/>
+        ${[
+          ['2 Oct', 'Pandora opens Asia headquarters in Singapore', GOLD],
+          ['8 Oct', 'Revolut commits nearly S$350m to Singapore', NAVY_MID],
+          ['16 Oct', 'Indonesia delays import halal rule to 2028', GOLD],
+          ['19 Oct', 'Horizon3 sets up ASEAN headquarters', NAVY_MID],
+          ['Nov', 'ASEAN DEFA signing planned in Manila', GOLD],
+        ]
+          .map(
+            ([date, label, fill], i) => `
+          <circle cx="120" cy="${140 + i * 92}" r="16" fill="${fill}"/>
+          <text x="40" y="${148 + i * 92}" fill="${NAVY}" font-family="${SERIF}" font-size="20" font-weight="700">${esc(date.split(' ')[0])}</text>
+          <text x="40" y="${172 + i * 92}" fill="${MUTED}" font-family="${SANS}" font-size="16">${esc(date.split(' ')[1] ?? '')}</text>
+          <text x="160" y="${148 + i * 92}" fill="${INK}" font-family="${SANS}" font-size="22" font-weight="600">${esc(label)}</text>`,
+          )
+          .join('')}`,
+    },
+    {
+      file: 'market-entry-research-singapore-southeast-asia-indonesia-halal-dates.webp',
+      height: 620,
+      title: 'Indonesia halal certification deadlines',
+      footer: 'DFAT summary of Government Regulation 40/2026',
+      body: `
+        ${barRow({ y: 128, label: 'Food, drink, cosmetics, supplements', valueLabel: '2028', value: 2, max: 13, tone: 'gold' })}
+        ${barRow({ y: 228, label: 'OTC medicines, class B devices', valueLabel: '2029', value: 3, max: 13, tone: 'navy' })}
+        ${barRow({ y: 328, label: 'Prescription medicines, class C devices', valueLabel: '2034', value: 8, max: 13, tone: 'navy' })}
+        ${barRow({ y: 428, label: 'Class D medical devices', valueLabel: '2039', value: 13, max: 13, tone: 'navy' })}
+        <text x="40" y="530" fill="${MUTED}" font-family="${SANS}" font-size="19">Bar length shows years from 2026. Imported food and drink: 18 October 2028.</text>`,
+    },
+  ],
 };
 
 const slugs = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(FIGURES);

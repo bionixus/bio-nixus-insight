@@ -38,6 +38,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'chinese-ev-brands-saudi-uae-consumer-research',
+  'market-entry-research-singapore-southeast-asia',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -243,6 +244,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Chinese EV Consumer Research Saudi UAE (2026 Guide)',
     description:
       'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
+  },
+  'market-entry-research-singapore-southeast-asia': {
+    title: 'Market Entry Research Singapore: Southeast Asia Guide 2026',
+    description:
+      'Market entry research for Singapore and Southeast Asia: why a Singapore base is not a proxy for Indonesia or Vietnam, and what to check in each market.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',

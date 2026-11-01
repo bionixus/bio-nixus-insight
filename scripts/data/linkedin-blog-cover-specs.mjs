@@ -959,4 +959,30 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowSaudiMentalHealth',
     ),
   },
+  'market-entry-research-singapore-southeast-asia': {
+    cover: 'market-entry-research-singapore-southeast-asia-cover.jpg',
+    hero: 'market-entry-research-singapore-southeast-asia-hero.jpg',
+    badge: 'SINGAPORE  ·  ASEAN  ·  2026',
+    lines: ['Southeast Asia', 'market entry'],
+    goldLine: 'Start at the border',
+    sub: 'Research beyond the Singapore base',
+    brandMeta: 'INDUSTRY MARKET RESEARCH',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 110 516, 230 578, 350 536 S 486 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <circle cx="280" cy="250" r="44" fill="${GOLD}"/>
+        <circle cx="280" cy="250" r="70" fill="none" stroke="${GOLD_LIGHT}" stroke-width="2" stroke-opacity="0.5"/>
+        <path d="M 280 180 L 150 110 M 350 250 L 480 200 M 330 300 L 450 380 M 230 300 L 120 380 M 220 220 L 100 230" stroke="${GOLD_LIGHT}" stroke-width="2.5" stroke-dasharray="8 7"/>
+        <rect x="112" y="84" width="76" height="52" rx="10" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="442" y="174" width="76" height="52" rx="10" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="412" y="354" width="76" height="52" rx="10" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="82" y="354" width="76" height="52" rx="10" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="62" y="204" width="76" height="52" rx="10" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="80" y="460" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="460" width="240" height="10" rx="5" fill="${GOLD}"/>
+      </g>`,
+      'glowSingaporeEntry',
+    ),
+  },
 };

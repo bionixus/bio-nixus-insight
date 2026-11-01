@@ -87,6 +87,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/kantar-alternative-middle-east',
   '/blog/chinese-ev-brands-saudi-uae-consumer-research':
     '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research',
+  '/blog/market-entry-research-singapore-southeast-asia':
+    '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':

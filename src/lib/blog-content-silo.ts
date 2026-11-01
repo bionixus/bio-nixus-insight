@@ -127,6 +127,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('chinese-ev-brands-saudi-uae-consumer-research'),
     label: 'Chinese EV brands in the Gulf: consumer research before launch',
   },
+  {
+    to: getIndustriesInsightPostPath('market-entry-research-singapore-southeast-asia'),
+    label: 'Market entry research Singapore',
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */

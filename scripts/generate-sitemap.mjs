@@ -138,6 +138,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'chinese-ev-brands-saudi-uae-consumer-research',
+  'market-entry-research-singapore-southeast-asia',
   'market-research-companies-egypt',
 ]);
 
@@ -620,6 +621,7 @@ const staticPages = [
   { path: '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/kantar-alternative-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1540,6 +1542,10 @@ const STATIC_PAGE_FILES = {
   ],
   '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research': [
     'src/data/blog-chinese-ev-brands-saudi-uae-consumer-research.ts',
+  ],
+  '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia': [
+    'src/data/blog-market-entry-research-singapore-southeast-asia.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
   ],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],

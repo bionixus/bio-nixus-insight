@@ -1,9 +1,11 @@
 /**
  * Registers article-waves posts in every crawler, SEO and sitemap list:
  * blog-robots, crawler stubs, both CTR override tables, generate-sitemap
- * (three places), public/sitemap.xml, llms.txt, llm.txt, verify-ssr-bundle
- * and vercel.json. Each slug is inserted after the previous wave slug, so
- * the lists stay in brief order. Slugs already present are skipped.
+ * (three places), public/sitemap.xml, llms.txt, llm.txt (healthcare only),
+ * verify-ssr-bundle and vercel.json; industries posts also get the /blog legacy
+ * href rewrite and an editorial insights link. Each slug is inserted after the
+ * previous wave slug of the same silo, so the lists stay in brief order.
+ * Slugs already present are skipped.
  *
  *   node scripts/register-wave-article.mjs              # every wave slug
  *   node scripts/register-wave-article.mjs <slug> ...   # selected slugs
@@ -15,7 +17,14 @@ import { loadWaveArticles } from './generate-wave-article-sanity-json.mjs';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ORIGIN = 'https://www.bionixus.com';
-const FIRST_ANCHOR = 'china-biotech-export-controls-pharma-deals-2026';
+/** Existing posts the first wave article of each silo is inserted after. */
+const FIRST_ANCHOR = {
+  healthcare: { slug: 'china-biotech-export-controls-pharma-deals-2026', path: '/blog/china-biotech-export-controls-pharma-deals-2026' },
+  industries: {
+    slug: 'chinese-ev-brands-saudi-uae-consumer-research',
+    path: '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research',
+  },
+};
 
 const q = (value) => `'${value.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
 
@@ -55,56 +64,46 @@ function afterEntry(source, opener, closer, block) {
 
 function register(article, anchor) {
   const { slug, path: urlPath, url, metaTitle, metaDescription } = article;
+  const industries = article.contentSilo === 'industries';
   const cta = article.ctaSection.buttonUrl.replace(ORIGIN, '');
-  console.log(`${slug} (after ${anchor})`);
+  console.log(`${urlPath} (after ${anchor.path})`);
 
-  const slugLine = (line) => line.replace(anchor, slug);
+  const slugLine = (line) => line.replace(anchor.slug, slug);
   const has = (source, needle) => source.includes(needle);
+  const overrideEntry = (key) => `  '${key}': {\n    title: ${q(metaTitle)},\n    description:\n      ${q(metaDescription)},\n  },\n`;
 
-  edit('src/lib/blog-robots.ts', (s) => (has(s, `'${slug}'`) ? s : afterLines(s, `'${anchor}',`, slugLine)));
+  edit('src/lib/blog-robots.ts', (s) => (has(s, `'${slug}'`) ? s : afterLines(s, `'${anchor.slug}',`, slugLine)));
 
   edit('blog-crawler-stubs.mjs', (s) => {
     if (has(s, `'${slug}'`)) return s;
-    s = afterLines(s, `'${anchor}',`, slugLine);
-    return afterEntry(
-      s,
-      `  '${anchor}': {\n`,
-      '  },\n',
-      `  '${slug}': {\n    title: ${q(metaTitle)},\n    description:\n      ${q(metaDescription)},\n  },\n`,
-    );
+    s = afterLines(s, `'${anchor.slug}',`, slugLine);
+    return afterEntry(s, `  '${anchor.slug}': {\n`, '  },\n', overrideEntry(slug));
   });
 
   for (const file of ['lib/ctr-seo-overrides.mjs', 'src/server/ctr-seo-overrides.js']) {
-    edit(file, (s) =>
-      has(s, `'${urlPath}'`)
-        ? s
-        : afterEntry(
-            s,
-            `  '/blog/${anchor}': {\n`,
-            '  },\n',
-            `  '${urlPath}': {\n    title: ${q(metaTitle)},\n    description:\n      ${q(metaDescription)},\n  },\n`,
-          ),
-    );
+    edit(file, (s) => {
+      if (has(s, `'${urlPath}'`)) return s;
+      const entries = industries ? overrideEntry(`/blog/${slug}`) + overrideEntry(urlPath) : overrideEntry(urlPath);
+      return afterEntry(s, `  '${anchor.path}': {\n`, '  },\n', entries);
+    });
   }
 
   edit('scripts/verify-ssr-bundle.mjs', (s) =>
-    has(s, `'${urlPath}'`) ? s : afterLines(s, `'/blog/${anchor}',`, slugLine),
+    has(s, `'${urlPath}'`) ? s : afterLines(s, `'${anchor.path}',`, () => `  '${urlPath}',`),
   );
 
   edit('scripts/generate-sitemap.mjs', (s) => {
     if (has(s, `path: '${urlPath}'`)) return s;
-    s = afterLines(s, `'${anchor}',`, slugLine);
+    s = afterLines(s, `'${anchor.slug}',`, slugLine);
     const lastmod = article.updatedIso.slice(0, 10);
-    const staticLine = s
-      .split('\n')
-      .find((line) => line.trim().startsWith(`{ path: '/blog/${anchor}'`));
-    if (!staticLine) throw new Error(`staticPages entry not found for ${anchor}`);
+    const staticLine = s.split('\n').find((line) => line.trim().startsWith(`{ path: '${anchor.path}'`));
+    if (!staticLine) throw new Error(`staticPages entry not found for ${anchor.path}`);
     s = afterLines(s, staticLine.trim(), () =>
       `  { path: '${urlPath}', priority: '0.88', changefreq: 'monthly', lastmod: '${lastmod}' },`,
     );
     return afterEntry(
       s,
-      `  '/blog/${anchor}': [\n`,
+      `  '${anchor.path}': [\n`,
       '  ],\n',
       `  '${urlPath}': [\n    'src/data/blog-${slug}.ts',\n    'src/data/articleWaves/buildWaveArticle.ts',\n  ],\n`,
     );
@@ -112,8 +111,8 @@ function register(article, anchor) {
 
   edit('vercel.json', (s) => {
     if (has(s, `"source": "${urlPath}"`)) return s;
-    const at = s.indexOf(`      "source": "/blog/${anchor}",`);
-    if (at === -1) throw new Error(`vercel.json rewrite not found for ${anchor}`);
+    const at = s.indexOf(`      "source": "${anchor.path}",`);
+    if (at === -1) throw new Error(`vercel.json rewrite not found for ${anchor.path}`);
     const open = s.lastIndexOf('    {', at);
     const end = s.indexOf('    },\n', open) + '    },\n'.length;
     const entry = `    {\n      "source": "${urlPath}",\n      "destination": "/api/indexnow-key?__ssr=1&url=${urlPath}"\n    },\n`;
@@ -122,34 +121,58 @@ function register(article, anchor) {
 
   edit('public/llms.txt', (s) => {
     if (has(s, `(${url})`)) return s;
-    const line = s.split('\n').find((l) => l.includes(`(${ORIGIN}/blog/${anchor})`));
-    if (!line) throw new Error(`llms.txt line not found for ${anchor}`);
+    const line = s.split('\n').find((l) => l.includes(`(${ORIGIN}${anchor.path})`));
+    if (!line) throw new Error(`llms.txt line not found for ${anchor.path}`);
     const summary = article.excerpt.replace(/\s+/g, ' ').trim();
+    const hub = industries ? '/bionixus-industries' : '/healthcare-market-research';
     return afterLines(s, line.trim(), () =>
-      `- [${article.breadcrumbLabel}](${url}): sourced 2026 briefing. ${summary} (links to /healthcare-market-research and ${cta})`,
+      `- [${article.breadcrumbLabel}](${url}): sourced 2026 briefing. ${summary} (links to ${hub} and ${cta})`,
     );
   });
 
-  edit('public/llm.txt', (s) => {
-    if (has(s, url)) return s;
-    const line = s.split('\n').find((l) => l.endsWith(`${ORIGIN}/blog/${anchor}`));
-    if (!line) throw new Error(`llm.txt line not found for ${anchor}`);
-    return afterLines(s, line.trim(), () => `- ${metaTitle} (EN): ${url}`);
-  });
+  if (!industries) {
+    edit('public/llm.txt', (s) => {
+      if (has(s, url)) return s;
+      const line = s.split('\n').find((l) => l.endsWith(`${ORIGIN}${anchor.path}`));
+      if (!line) throw new Error(`llm.txt line not found for ${anchor.path}`);
+      return afterLines(s, line.trim(), () => `- ${metaTitle} (EN): ${url}`);
+    });
+  }
+
+  if (industries) {
+    edit('blog-legacy-redirects.mjs', (s) =>
+      has(s, `'/blog/${slug}':`)
+        ? s
+        : afterEntry(s, `  '/blog/${anchor.slug}':\n`, `'${anchor.path}',\n`, `  '/blog/${slug}':\n    '${urlPath}',\n`),
+    );
+    edit('src/lib/blog-content-silo.ts', (s) =>
+      has(s, `getIndustriesInsightPostPath('${slug}')`)
+        ? s
+        : afterEntry(
+            s,
+            `    to: getIndustriesInsightPostPath('${anchor.slug}'),\n`,
+            '  },\n',
+            `  {\n    to: getIndustriesInsightPostPath('${slug}'),\n    label: ${q(article.breadcrumbLabel)},\n  },\n`,
+          ),
+    );
+  }
 
   edit('public/sitemap.xml', (s) => {
     if (has(s, `<loc>${url}</loc>`)) return s;
     const entry = `  <url>\n    <loc>${url}</loc>\n    <lastmod>${article.updatedIso.slice(0, 10)}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.88</priority>\n  </url>\n`;
-    const blogLocs = [...s.matchAll(/ {2}<url>\n {4}<loc>(https:\/\/www\.bionixus\.com\/blog\/[^<]+)<\/loc>/g)];
-    const next = blogLocs.find((m) => m[1] > url);
-    const at = next ? next.index : s.lastIndexOf('</urlset>');
+    const prefix = url.slice(0, url.lastIndexOf('/') + 1);
+    const locs = [...s.matchAll(/ {2}<url>\n {4}<loc>(https:\/\/[^<]+)<\/loc>/g)].filter((m) => m[1].startsWith(prefix));
+    const next = locs.find((m) => m[1] > url);
+    const at = next ? next.index : locs.length ? s.indexOf('  </url>\n', locs[locs.length - 1].index) + '  </url>\n'.length : s.lastIndexOf('</urlset>');
     return s.slice(0, at) + entry + s.slice(at);
   });
 }
 
 const wanted = process.argv.slice(2);
 const articles = await loadWaveArticles();
-articles.forEach((article, index) => {
-  if (wanted.length && !wanted.includes(article.slug)) return;
-  register(article, index === 0 ? FIRST_ANCHOR : articles[index - 1].slug);
-});
+const previous = { healthcare: FIRST_ANCHOR.healthcare, industries: FIRST_ANCHOR.industries };
+for (const article of articles) {
+  const silo = article.contentSilo === 'industries' ? 'industries' : 'healthcare';
+  if (!wanted.length || wanted.includes(article.slug)) register(article, previous[silo]);
+  previous[silo] = { slug: article.slug, path: article.path };
+}

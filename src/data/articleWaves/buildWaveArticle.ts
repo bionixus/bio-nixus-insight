@@ -12,6 +12,7 @@
  */
 import type { BlogPost, BlogPostCtaSection, BlogPostItemListEntry, ContentSilo } from '@/types/blog';
 import { WESTERN_AUTHORS, personAuthorJsonLd, type EditorialAuthor } from '@/data/editorialAuthors';
+import { getIndustriesInsightPostPath } from '@/lib/blog-content-silo';
 
 export const SITE_ORIGIN = 'https://www.bionixus.com';
 
@@ -131,7 +132,8 @@ export function buildWaveArticle(input: WaveArticleInput): WaveArticle {
   const author = WESTERN_AUTHORS.find((candidate) => candidate.name === input.authorName);
   if (!author) throw new Error(`${input.slug}: author ${input.authorName} is not in WESTERN_AUTHORS`);
 
-  const path = `/blog/${input.slug}`;
+  const path =
+    input.contentSilo === 'industries' ? getIndustriesInsightPostPath(input.slug) : `/blog/${input.slug}`;
   const url = `${SITE_ORIGIN}${path}`;
   const coverImage = `/images/blog/${input.slug}-cover.jpg`;
   const heroImage = `/images/blog/${input.slug}-hero.jpg`;

@@ -1024,6 +1024,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
   },
+  '/blog/market-entry-research-singapore-southeast-asia': {
+    title: 'Market Entry Research Singapore: Southeast Asia Guide 2026',
+    description:
+      'Market entry research for Singapore and Southeast Asia: why a Singapore base is not a proxy for Indonesia or Vietnam, and what to check in each market.',
+  },
+  '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia': {
+    title: 'Market Entry Research Singapore: Southeast Asia Guide 2026',
+    description:
+      'Market entry research for Singapore and Southeast Asia: why a Singapore base is not a proxy for Indonesia or Vietnam, and what to check in each market.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:

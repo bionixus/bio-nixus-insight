@@ -12,6 +12,8 @@ import { WAVE_ARTICLES } from '@/data/articleWaves';
 import { countWords, type WaveArticle } from '@/data/articleWaves/buildWaveArticle';
 import { getCrawlerStubForSlug, shouldCrawlerIndexBlogSlug } from '../../../../blog-crawler-stubs.mjs';
 import { WAVE_ARTICLE_SLUGS } from '../../../../scripts/lib/wave-article-slugs.mjs';
+import { REDIRECT_HREF_REWRITES } from '../../../../blog-legacy-redirects.mjs';
+import { INDUSTRIES_INSIGHT_EDITORIAL_LINKS } from '@/lib/blog-content-silo';
 
 const root = process.cwd();
 const read = (file: string) => readFileSync(join(root, file), 'utf8');
@@ -101,7 +103,7 @@ describe.each(WAVE_ARTICLES.map((article) => [article.path, article] as [string,
       expect(visible).toContain('References');
       for (const item of article.faq) expect(visible).toContain(text(item.question));
       expect(html).toMatch(/<details[\s>]/);
-      expect(html).toContain('<nav aria-label="Breadcrumb"');
+      if (article.contentSilo !== 'industries') expect(html).toContain('<nav aria-label="Breadcrumb"');
     });
 
     it('stays inside the 1,200–2,000 word band', () => {
@@ -141,7 +143,8 @@ describe.each(WAVE_ARTICLES.map((article) => [article.path, article] as [string,
 
     it('links the research hub within the first 200 words and the CTA to a service page', () => {
       const source = `${article.summaryHtml}\n${article.bodyHtml}`;
-      const hubAt = source.indexOf('href="/healthcare-market-research"');
+      const hub = article.contentSilo === 'industries' ? '/bionixus-industries' : '/healthcare-market-research';
+      const hubAt = source.indexOf(`href="${hub}"`);
       expect(hubAt).toBeGreaterThan(-1);
       expect(countWords(source.slice(0, hubAt))).toBeLessThan(200);
       expect(article.ctaSection.buttonUrl).toMatch(/^https:\/\/www\.bionixus\.com\/[a-z0-9/-]+$/);
@@ -216,8 +219,16 @@ describe.each(WAVE_ARTICLES.map((article) => [article.path, article] as [string,
       expect(sitemapScript).toContain(`'src/data/blog-${article.slug}.ts'`);
       expect(sitemapXml).toContain(`<loc>${article.url}</loc>`);
       expect(llms).toContain(`(${article.url})`);
-      expect(llm).toContain(article.url);
       expect(ssrBundleCheck).toContain(`'${article.path}'`);
+      if (article.contentSilo === 'industries') {
+        expect(article.path).toBe(`/bionixus-industries/insights/${article.slug}`);
+        expect((REDIRECT_HREF_REWRITES as Record<string, string>)[`/blog/${article.slug}`]).toBe(article.path);
+        expect(getCtrSeo(`/blog/${article.slug}`)).toMatchObject({ title: article.metaTitle });
+        expect(INDUSTRIES_INSIGHT_EDITORIAL_LINKS.some((link) => link.to === article.path)).toBe(true);
+        expect(html).toContain('href="/bionixus-industries/insights"');
+      } else {
+        expect(llm).toContain(article.url);
+      }
     });
   },
 );

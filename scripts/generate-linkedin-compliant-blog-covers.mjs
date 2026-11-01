@@ -27,6 +27,7 @@ export async function renderLinkedInCover(slug, browser) {
     goldLine: spec.goldLine,
     sub: spec.sub,
     motifSvg: spec.motif,
+    brandMeta: spec.brandMeta,
     coverPath: path.join(outDir, spec.cover),
     heroPath: spec.hero ? path.join(outDir, spec.hero) : undefined,
     browser,

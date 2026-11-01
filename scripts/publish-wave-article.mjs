@@ -124,9 +124,9 @@ async function buildDoc(client, payload, mainImage, ogImage, authorId) {
     (await client.fetch(`*[_type == "category" && title == $title][0]._id`, {
       title: payload.category,
     })) ||
-    (await client.fetch(
-      `*[_type == "category" && (slug.current == "healthcare-market-research" || title == "Healthcare Market Research")][0]._id`,
-    ));
+    (await client.fetch(`*[_type == "category" && title == $title][0]._id`, {
+      title: payload.contentSilo === 'industries' ? 'Industries' : 'Healthcare Market Research',
+    }));
 
   return {
     _type: 'blogPost',

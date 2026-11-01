@@ -74,6 +74,7 @@ export async function loadWaveArticles() {
     server: { middlewareMode: true },
     appType: 'custom',
     logLevel: 'error',
+    optimizeDeps: { noDiscovery: true, entries: [] },
   });
   try {
     const mod = await vite.ssrLoadModule('/src/data/articleWaves/index.ts');
