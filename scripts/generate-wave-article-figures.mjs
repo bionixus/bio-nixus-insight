@@ -314,6 +314,40 @@ const FIGURES = {
         ${card({ x: 420, y: 320, w: 360, h: 190, heading: 'Re-scoping risk', lines: ['Which packages are', 'funded in 24 months'], tone: 'gold' })}`,
     },
   ],
+  'chinese-tourists-dubai-research': [
+    {
+      file: 'chinese-tourists-dubai-research-signals.webp',
+      height: 580,
+      title: 'Chinese visitor signals, and a missing split',
+      footer: 'Xinhua Silk Road · SPA · DET via Dubai Media Office',
+      body: `
+        <path d="M 120 120 V 480" stroke="${TRACK}" stroke-width="6"/>
+        ${[
+          ['2024', 'Dubai: 824,000 Chinese visitors (DET via Xinhua)', GOLD],
+          ['2025', 'Saudi Arabia: Chinese visitors up 48% (STA)', NAVY_MID],
+          ['Sep 2026', 'STA finishes a China promotional visit', GOLD],
+          ['Aug 2026', 'Dubai YTD 6.97m overnight visitors; no China line', NAVY_MID],
+        ]
+          .map(
+            ([date, label, fill], i) => `
+          <circle cx="120" cy="${148 + i * 100}" r="16" fill="${fill}"/>
+          <text x="40" y="${156 + i * 100}" fill="${NAVY}" font-family="${SERIF}" font-size="18" font-weight="700">${esc(date.split(' ')[0])}</text>
+          <text x="40" y="${178 + i * 100}" fill="${MUTED}" font-family="${SANS}" font-size="15">${esc(date.split(' ')[1] ?? '')}</text>
+          <text x="160" y="${156 + i * 100}" fill="${INK}" font-family="${SANS}" font-size="20" font-weight="600">${esc(label)}</text>`,
+          )
+          .join('')}`,
+    },
+    {
+      file: 'chinese-tourists-dubai-research-touchpoints.webp',
+      height: 520,
+      title: 'Three places to ask Chinese visitors',
+      footer: 'BioNixus intercept design · Mandarin fieldwork',
+      body: `
+        ${card({ x: 40, y: 110, w: 230, h: 300, heading: 'Airport', lines: ['Departure hall', 'Nights and itinerary', 'Group or independent'], tone: 'gold' })}
+        ${card({ x: 285, y: 110, w: 230, h: 300, heading: 'Mall', lines: ['Spend drivers', 'Which wallet is used', 'Staff language'] })}
+        ${card({ x: 530, y: 110, w: 230, h: 300, heading: 'Attraction', lines: ['Why this stop', 'Would they return', 'What to change'], tone: 'gold' })}`,
+    },
+  ],
 };
 
 const slugs = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(FIGURES);

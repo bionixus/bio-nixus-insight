@@ -41,6 +41,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-entry-research-singapore-southeast-asia',
   'brand-tracking-chinese-electronics-brands-middle-east',
   'chinese-suppliers-saudi-giga-projects-research',
+  'chinese-tourists-dubai-research',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -262,6 +263,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Chinese Suppliers Saudi Giga Projects Research 2026',
     description:
       'B2B research for Chinese suppliers on Saudi giga-projects: who decides after the Qiddiya award, local content scores, and how to interview the buyer group.',
+  },
+  'chinese-tourists-dubai-research': {
+    title: 'Chinese Tourists Dubai Research: Gulf Boards Guide 2026',
+    description:
+      'Chinese tourist research for Dubai and the Gulf: Saudi arrivals rose 48% in 2025, Dubai has not published a 2026 China split, and what to ask visitors.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
