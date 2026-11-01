@@ -41,7 +41,10 @@ const NEXT_SLUGS = new Set([
 ]);
 
 const LASTMOD_BY_SLUG = {
-  'singapore-ivd-market-access': '2026-10-18',
+  'singapore-ivd-market-access': '2026-11-01',
+  'japan-medical-disposables-market': '2026-11-01',
+  'italy-portable-diagnostic-devices-market': '2026-11-01',
+  'gcc-medication-management-market': '2026-11-01',
 };
 
 /** @returns {{ path: string, priority: string, changefreq: string, lastmod?: string }[]} */
