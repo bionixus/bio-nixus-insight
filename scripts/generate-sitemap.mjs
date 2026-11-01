@@ -128,12 +128,19 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'dubai-essential-drug-list-formulary-submission',
   'diabetes-market-research-uae-2026-price-cuts',
   'china-biotech-export-controls-pharma-deals-2026',
+  'kuwait-drug-pricing-2026-decision-62',
+  'uae-pharmacovigilance-requirements-2026',
+  'japanese-pharmaceutical-companies-middle-east-entry',
+  'mental-health-market-research-saudi-arabia',
+  'womens-health-market-research-gcc',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
   'chinese-companies-egypt-market-research',
   'nielsen-alternative-saudi-arabia',
   'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'chinese-ev-brands-saudi-uae-consumer-research',
+  'market-entry-research-singapore-southeast-asia',
+  'brand-tracking-chinese-electronics-brands-middle-east',
   'market-research-companies-egypt',
 ]);
 
@@ -527,6 +534,11 @@ const staticPages = [
   { path: '/blog/dubai-essential-drug-list-formulary-submission', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/diabetes-market-research-uae-2026-price-cuts', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/china-biotech-export-controls-pharma-deals-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-18' },
+  { path: '/blog/kuwait-drug-pricing-2026-decision-62', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/blog/uae-pharmacovigilance-requirements-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/blog/japanese-pharmaceutical-companies-middle-east-entry', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/blog/mental-health-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/blog/womens-health-market-research-gcc', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/blog/nupco-tender-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/car-t-saudi-arabia-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/saudi-health-insurance-payer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
@@ -612,6 +624,8 @@ const staticPages = [
   { path: '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/kantar-alternative-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
+  { path: '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1533,6 +1547,14 @@ const STATIC_PAGE_FILES = {
   '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research': [
     'src/data/blog-chinese-ev-brands-saudi-uae-consumer-research.ts',
   ],
+  '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia': [
+    'src/data/blog-market-entry-research-singapore-southeast-asia.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east': [
+    'src/data/blog-brand-tracking-chinese-electronics-brands-middle-east.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],
   '/blog/qatar-obesity-glp1-market-research': ['src/data/blog-qatar-obesity-glp1-research.ts'],
   '/blog/hematology-market-research-saudi-arabia': ['src/data/blog-hematology-market-research-saudi-arabia.ts'],
@@ -1552,6 +1574,26 @@ const STATIC_PAGE_FILES = {
   ],
   '/blog/china-biotech-export-controls-pharma-deals-2026': [
     'src/data/blog-china-biotech-export-controls-pharma-deals-2026.ts',
+  ],
+  '/blog/kuwait-drug-pricing-2026-decision-62': [
+    'src/data/blog-kuwait-drug-pricing-2026-decision-62.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/blog/uae-pharmacovigilance-requirements-2026': [
+    'src/data/blog-uae-pharmacovigilance-requirements-2026.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/blog/japanese-pharmaceutical-companies-middle-east-entry': [
+    'src/data/blog-japanese-pharmaceutical-companies-middle-east-entry.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/blog/mental-health-market-research-saudi-arabia': [
+    'src/data/blog-mental-health-market-research-saudi-arabia.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/blog/womens-health-market-research-gcc': [
+    'src/data/blog-womens-health-market-research-gcc.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
   ],
   '/blog/nupco-tender-market-research-saudi-arabia': [
     'src/data/blog-nupco-tender-market-research-saudi-arabia.ts',

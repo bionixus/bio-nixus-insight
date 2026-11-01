@@ -49,9 +49,19 @@ export async function tintLogo(hex = CREAM, logoPng = DEFAULT_LOGO) {
  *   motifSvg: string;
  *   logoUri: string;
  *   withText: boolean;
+ *   brandMeta?: string;
  * }} opts
  */
-export function linkedInCoverHtml({ badge, lines, goldLine, sub, motifSvg, logoUri, withText }) {
+export function linkedInCoverHtml({
+  badge,
+  lines,
+  goldLine,
+  sub,
+  motifSvg,
+  logoUri,
+  withText,
+  brandMeta = 'HEALTHCARE MARKET RESEARCH',
+}) {
   const copy = withText
     ? `
     <div class="copy">
@@ -67,7 +77,7 @@ export function linkedInCoverHtml({ badge, lines, goldLine, sub, motifSvg, logoU
       </div>
       <div class="brand">
         <img class="logo" src="${logoUri}" alt=""/>
-        <div class="brand-meta">HEALTHCARE MARKET RESEARCH</div>
+        <div class="brand-meta">${brandMeta}</div>
       </div>
     </div>`
     : '';
@@ -148,6 +158,7 @@ async function writeJpeg(browser, pageHtml, dest) {
  *   goldLine: string;
  *   sub: string;
  *   motifSvg: string;
+ *   brandMeta?: string;
  *   coverPath: string;
  *   heroPath?: string;
  *   logoPng?: string;

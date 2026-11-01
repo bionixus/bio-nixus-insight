@@ -1151,6 +1151,14 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research"
     },
     {
+      "source": "/bionixus-industries/insights/market-entry-research-singapore-southeast-asia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/market-entry-research-singapore-southeast-asia"
+    },
+    {
+      "source": "/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
@@ -1185,6 +1193,26 @@
     {
       "source": "/blog/china-biotech-export-controls-pharma-deals-2026",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/china-biotech-export-controls-pharma-deals-2026"
+    },
+    {
+      "source": "/blog/kuwait-drug-pricing-2026-decision-62",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/kuwait-drug-pricing-2026-decision-62"
+    },
+    {
+      "source": "/blog/uae-pharmacovigilance-requirements-2026",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/uae-pharmacovigilance-requirements-2026"
+    },
+    {
+      "source": "/blog/japanese-pharmaceutical-companies-middle-east-entry",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/japanese-pharmaceutical-companies-middle-east-entry"
+    },
+    {
+      "source": "/blog/mental-health-market-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/mental-health-market-research-saudi-arabia"
+    },
+    {
+      "source": "/blog/womens-health-market-research-gcc",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/womens-health-market-research-gcc"
     },
     {
       "source": "/blog/diabetes-market-research-uae-2026-price-cuts",

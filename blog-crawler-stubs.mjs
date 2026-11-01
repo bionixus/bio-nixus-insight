@@ -38,6 +38,8 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'government-customer-satisfaction-research-saudi-arabia',
   'kantar-alternative-middle-east',
   'chinese-ev-brands-saudi-uae-consumer-research',
+  'market-entry-research-singapore-southeast-asia',
+  'brand-tracking-chinese-electronics-brands-middle-east',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -48,6 +50,11 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'dubai-essential-drug-list-formulary-submission',
   'diabetes-market-research-uae-2026-price-cuts',
   'china-biotech-export-controls-pharma-deals-2026',
+  'kuwait-drug-pricing-2026-decision-62',
+  'uae-pharmacovigilance-requirements-2026',
+  'japanese-pharmaceutical-companies-middle-east-entry',
+  'mental-health-market-research-saudi-arabia',
+  'womens-health-market-research-gcc',
   'nupco-tender-market-research-saudi-arabia',
   'car-t-saudi-arabia-market-research',
   'saudi-health-insurance-payer-research',
@@ -240,6 +247,16 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     description:
       'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
   },
+  'market-entry-research-singapore-southeast-asia': {
+    title: 'Market Entry Research Singapore: Southeast Asia Guide 2026',
+    description:
+      'Market entry research for Singapore and Southeast Asia: why a Singapore base is not a proxy for Indonesia or Vietnam, and what to check in each market.',
+  },
+  'brand-tracking-chinese-electronics-brands-middle-east': {
+    title: 'Brand Tracking Middle East: Chinese Electronics Brands 2026',
+    description:
+      'Brand tracking for Chinese phone and electronics brands in the Middle East: what Omdia shipment data misses, and how to track Gulf buyer awareness and NPS.',
+  },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
@@ -284,6 +301,31 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'China Biotech Export Controls: Pharma Deal Guide 2026',
     description:
       'China biotech export controls in the 16 Oct 2026 draft: 40 AI, biotech and solar items. What BD, licensing and Gulf access teams should do before 15 Nov.',
+  },
+  'kuwait-drug-pricing-2026-decision-62': {
+    title: 'Kuwait Drug Pricing 2026: Decision 62 and Launch Evidence',
+    description:
+      'Kuwait drug pricing under Decision 62/2026: one ceiling price per medicine, GCC reference checks and capped margins. What launch teams must prove first.',
+  },
+  'uae-pharmacovigilance-requirements-2026': {
+    title: 'UAE Pharmacovigilance Requirements 2026: EDE Update',
+    description:
+      'UAE pharmacovigilance requirements in 2026: EDE’s updated guideline on QPPV approval, RMPs, PSURs and patient programmes, plus the new 3PL storage route.',
+  },
+  'japanese-pharmaceutical-companies-middle-east-entry': {
+    title: 'Japanese Pharmaceutical Companies in the Middle East 2026',
+    description:
+      'How Japanese pharmaceutical companies enter the Middle East: Kyorin’s nine-country partner deal, Sysmex’s Saudi factory plan, and the research to run first.',
+  },
+  'mental-health-market-research-saudi-arabia': {
+    title: 'Mental Health Market Research Saudi Arabia: CNS Guide 2026',
+    description:
+      'Mental health market research in Saudi Arabia: an 86% treatment gap, telepsychiatry and stigma. What CNS teams should ask psychiatrists and GPs at launch.',
+  },
+  'womens-health-market-research-gcc': {
+    title: 'Women’s Health Market Research GCC: Fertility, PCOS 2026',
+    description:
+      'Women’s health market research in the GCC: new fertility deals, PCOS in Thiqa obesity cover and low menopause therapy use. What to ask doctors and patients.',
   },
   'diabetes-market-research-uae-2026-price-cuts': {
     title: 'Diabetes Market Research UAE After 2026 Price Cuts',
