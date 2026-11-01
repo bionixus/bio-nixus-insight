@@ -985,4 +985,27 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowSingaporeEntry',
     ),
   },
+  'womens-health-market-research-gcc': {
+    cover: 'womens-health-market-research-gcc-cover.jpg',
+    hero: 'womens-health-market-research-gcc-hero.jpg',
+    badge: 'GCC  ·  WOMEN’S HEALTH  ·  2026',
+    lines: ['Women’s health', 'in the Gulf'],
+    goldLine: 'Research the gap',
+    sub: 'Fertility, menopause and PCOS',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 110 516, 230 578, 350 536 S 486 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <path d="M 90 360 C 160 140, 400 140, 470 360" fill="none" stroke="${CREAM}" stroke-opacity="0.16" stroke-width="18" stroke-linecap="round"/>
+        <path d="M 90 360 C 130 240, 210 180, 280 172" fill="none" stroke="${GOLD}" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="132" cy="262" r="26" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="3"/>
+        <circle cx="280" cy="172" r="34" fill="${GOLD}"/>
+        <circle cx="428" cy="262" r="26" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="3"/>
+        <circle cx="280" cy="172" r="54" fill="none" stroke="${GOLD_LIGHT}" stroke-width="2" stroke-opacity="0.5"/>
+        <rect x="80" y="440" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="440" width="120" height="10" rx="5" fill="${GOLD}"/>
+      </g>`,
+      'glowGccWomensHealth',
+    ),
+  },
 };

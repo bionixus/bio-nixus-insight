@@ -74,6 +74,7 @@ const CRITICAL_PATHS = [
   '/blog/uae-pharmacovigilance-requirements-2026',
   '/blog/japanese-pharmaceutical-companies-middle-east-entry',
   '/blog/mental-health-market-research-saudi-arabia',
+  '/blog/womens-health-market-research-gcc',
   '/blog/nupco-tender-market-research-saudi-arabia',
   '/blog/car-t-saudi-arabia-market-research',
   '/blog/saudi-health-insurance-payer-research',

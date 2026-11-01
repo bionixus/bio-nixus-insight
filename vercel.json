@@ -1207,6 +1207,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/mental-health-market-research-saudi-arabia"
     },
     {
+      "source": "/blog/womens-health-market-research-gcc",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/womens-health-market-research-gcc"
+    },
+    {
       "source": "/blog/diabetes-market-research-uae-2026-price-cuts",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/diabetes-market-research-uae-2026-price-cuts"
     },

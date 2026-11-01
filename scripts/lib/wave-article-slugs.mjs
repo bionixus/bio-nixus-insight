@@ -9,4 +9,5 @@ export const WAVE_ARTICLE_SLUGS = [
   'japanese-pharmaceutical-companies-middle-east-entry',
   'mental-health-market-research-saudi-arabia',
   'market-entry-research-singapore-southeast-asia',
+  'womens-health-market-research-gcc',
 ];

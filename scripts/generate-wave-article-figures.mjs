@@ -223,6 +223,43 @@ const FIGURES = {
         <text x="40" y="530" fill="${MUTED}" font-family="${SANS}" font-size="19">Bar length shows years from 2026. Imported food and drink: 18 October 2028.</text>`,
     },
   ],
+  'womens-health-market-research-gcc': [
+    {
+      file: 'womens-health-market-research-gcc-autumn-2026.webp',
+      height: 560,
+      title: 'Autumn 2026: Gulf women’s health moves',
+      footer: 'DoH Abu Dhabi · WAM · MENA Startup Digest',
+      body: `
+        <path d="M 120 120 V 450" stroke="${TRACK}" stroke-width="6"/>
+        ${[
+          ['Sep', 'Banat Nareng women’s health platform, Riyadh', NAVY_MID],
+          ['8 Oct', 'SEHA reproductive medicine fellowship', GOLD],
+          ['21 Oct', 'Mubadala Bio and Marcyrl localisation deal', NAVY_MID],
+          ['23 Oct', 'Abu Dhabi DoH and Merck fertility MoU', GOLD],
+        ]
+          .map(
+            ([date, label, fill], i) => `
+          <circle cx="120" cy="${140 + i * 100}" r="16" fill="${fill}"/>
+          <text x="40" y="${148 + i * 100}" fill="${NAVY}" font-family="${SERIF}" font-size="20" font-weight="700">${esc(date.split(' ')[0])}</text>
+          <text x="40" y="${172 + i * 100}" fill="${MUTED}" font-family="${SANS}" font-size="16">${esc(date.split(' ')[1] ?? '')}</text>
+          <text x="160" y="${148 + i * 100}" fill="${INK}" font-family="${SANS}" font-size="22" font-weight="600">${esc(label)}</text>`,
+          )
+          .join('')}`,
+    },
+    {
+      file: 'womens-health-market-research-gcc-pcos-estimates.webp',
+      height: 640,
+      title: 'PCOS estimates depend on who is counted',
+      footer: 'Frontiers 2021 and 2026 · Heliyon 2024',
+      body: `
+        ${barRow({ y: 128, label: 'Middle East, population studies (NIH)', valueLabel: '8.9%', value: 8.9, max: 40, tone: 'navy' })}
+        ${barRow({ y: 228, label: 'Gulf Arab states, population studies', valueLabel: '18.8%', value: 18.8, max: 40, tone: 'navy' })}
+        ${barRow({ y: 328, label: 'Eastern Province, symptom-based', valueLabel: '19.9%', value: 19.9, max: 40, tone: 'navy' })}
+        ${barRow({ y: 428, label: 'GCC women with infertility', valueLabel: '30.0%', value: 30, max: 40, tone: 'gold' })}
+        <text x="40" y="530" fill="${MUTED}" font-family="${SANS}" font-size="19">Pooled or survey estimates with wide ranges; the populations</text>
+        <text x="40" y="556" fill="${MUTED}" font-family="${SANS}" font-size="19">and diagnostic criteria differ, so the bars are not comparable.</text>`,
+    },
+  ],
 };
 
 const slugs = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(FIGURES);
