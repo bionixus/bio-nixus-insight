@@ -1044,6 +1044,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Brand tracking for Chinese phone and electronics brands in the Middle East: what Omdia shipment data misses, and how to track Gulf buyer awareness and NPS.',
   },
+  '/blog/chinese-suppliers-saudi-giga-projects-research': {
+    title: 'Chinese Suppliers Saudi Giga Projects Research 2026',
+    description:
+      'B2B research for Chinese suppliers on Saudi giga-projects: who decides after the Qiddiya award, local content scores, and how to interview the buyer group.',
+  },
+  '/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research': {
+    title: 'Chinese Suppliers Saudi Giga Projects Research 2026',
+    description:
+      'B2B research for Chinese suppliers on Saudi giga-projects: who decides after the Qiddiya award, local content scores, and how to interview the buyer group.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:

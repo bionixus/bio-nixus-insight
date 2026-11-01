@@ -289,6 +289,31 @@ const FIGURES = {
         <text x="40" y="576" fill="${INK}" font-family="${SANS}" font-size="20" font-weight="600">in Arabic and English, against named competitors.</text>`,
     },
   ],
+  'chinese-suppliers-saudi-giga-projects-research': [
+    {
+      file: 'chinese-suppliers-saudi-giga-projects-research-buyer-chain.webp',
+      height: 560,
+      title: 'Who buys a giga-project package',
+      footer: 'Fangda filing · Qiddiya stadium, October 2026',
+      body: `
+        ${card({ x: 40, y: 104, w: 720, h: 92, heading: 'Developer', lines: ['Sets the programme and local-content ask'], tone: 'gold' })}
+        ${arrowDown(400, 204)}
+        ${card({ x: 40, y: 246, w: 720, h: 92, heading: 'General contractor', lines: ['FCC and Nesma bought the façade package'] })}
+        ${arrowDown(400, 346)}
+        ${card({ x: 40, y: 388, w: 720, h: 92, heading: 'Specialist supplier', lines: ['IKK Fangda JV designs, supplies and installs'], tone: 'gold' })}`,
+    },
+    {
+      file: 'chinese-suppliers-saudi-giga-projects-research-interview-topics.webp',
+      height: 600,
+      title: 'Four questions for 20–30 buyer interviews',
+      footer: 'BioNixus B2B design for Saudi project buyers',
+      body: `
+        ${card({ x: 40, y: 104, w: 360, h: 190, heading: 'Vendor criteria', lines: ['Certificates, audits', 'and in-Kingdom presence'], tone: 'gold' })}
+        ${card({ x: 420, y: 104, w: 360, h: 190, heading: 'Local content', lines: ['The score this tender', 'actually applies'] })}
+        ${card({ x: 40, y: 320, w: 360, h: 190, heading: 'Payment terms', lines: ['Advances, retention', 'and delay damages'] })}
+        ${card({ x: 420, y: 320, w: 360, h: 190, heading: 'Re-scoping risk', lines: ['Which packages are', 'funded in 24 months'], tone: 'gold' })}`,
+    },
+  ],
 };
 
 const slugs = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(FIGURES);

@@ -40,6 +40,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'chinese-ev-brands-saudi-uae-consumer-research',
   'market-entry-research-singapore-southeast-asia',
   'brand-tracking-chinese-electronics-brands-middle-east',
+  'chinese-suppliers-saudi-giga-projects-research',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -256,6 +257,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Brand Tracking Middle East: Chinese Electronics Brands 2026',
     description:
       'Brand tracking for Chinese phone and electronics brands in the Middle East: what Omdia shipment data misses, and how to track Gulf buyer awareness and NPS.',
+  },
+  'chinese-suppliers-saudi-giga-projects-research': {
+    title: 'Chinese Suppliers Saudi Giga Projects Research 2026',
+    description:
+      'B2B research for Chinese suppliers on Saudi giga-projects: who decides after the Qiddiya award, local content scores, and how to interview the buyer group.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',

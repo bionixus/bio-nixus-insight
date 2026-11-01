@@ -1034,4 +1034,29 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowChineseElectronicsGulf',
     ),
   },
+  'chinese-suppliers-saudi-giga-projects-research': {
+    cover: 'chinese-suppliers-saudi-giga-projects-research-cover.jpg',
+    hero: 'chinese-suppliers-saudi-giga-projects-research-hero.jpg',
+    badge: 'SAUDI ARABIA  ·  B2B  ·  2026',
+    lines: ['Chinese suppliers', 'on giga-projects'],
+    goldLine: 'Find the buyer',
+    sub: 'Qiddiya, local content and interviews',
+    brandMeta: 'INDUSTRY MARKET RESEARCH',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 110 516, 230 578, 350 536 S 486 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="110" y="280" width="70" height="160" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="200" y="200" width="90" height="240" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="310" y="140" width="110" height="300" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="216" y="220" width="58" height="40" fill="${CREAM}" fill-opacity="0.08"/>
+        <rect x="330" y="164" width="70" height="48" fill="${CREAM}" fill-opacity="0.08"/>
+        <circle cx="245" cy="120" r="18" fill="${GOLD}"/>
+        <path d="M 245 138 V 200" stroke="${GOLD}" stroke-width="3"/>
+        <rect x="80" y="460" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="460" width="160" height="10" rx="5" fill="${GOLD}"/>
+      </g>`,
+      'glowChineseGigaSaudi',
+    ),
+  },
 };
