@@ -143,17 +143,17 @@ const UsaPharmaCompanies = () => {
   const { language } = useLanguage();
   const citationUrl = 'https://www.bionixus.com/pharmaceutical-companies-usa';
 
-  const ogTitle = 'Top Pharmaceutical Companies in USA (2026 Ranked List)';
-  const ogDescription = 'Complete 2026 list of pharmaceutical companies in the USA — Big Pharma, biotech, wholesalers, FDA/CMS context. Research by BioNixus.';
+  const ogTitle = 'Top 28 Pharmaceutical Companies in USA (2026 List)';
+  const ogDescription = 'Top 28 pharmaceutical companies in the USA for 2026: Lilly, Pfizer, Merck, AbbVie, J&J and Amgen, plus the Big Three wholesalers, FDA and CMS context.';
 
   return (
     <div className="directory-page min-h-screen">
       <Helmet>
-        <title>Top Pharmaceutical Companies in USA (2026 Ranked List)</title>
-        <meta name="description" content="Complete 2026 list of pharmaceutical companies in the USA — Big Pharma, biotech, wholesalers, FDA/CMS context. Research by BioNixus." />
+        <title>Top 28 Pharmaceutical Companies in USA (2026 List)</title>
+        <meta name="description" content="Top 28 pharmaceutical companies in the USA for 2026: Lilly, Pfizer, Merck, AbbVie, J&J and Amgen, plus the Big Three wholesalers, FDA and CMS context." />
         <link rel="canonical" href={citationUrl} />
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesItemListLd(citationUrl, pharmaCompanies.map((c) => c.name)))}</script>
-        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the USA: Complete Industry Guide 2026', description: 'Guide to pharmaceutical companies in the United States — major manufacturers, biotech leaders, wholesalers, FDA/CMS landscape, and market structure for 2026.', url: citationUrl, datePublished: '2026-08-14', dateModified: '2026-10-18', author: personAuthorJsonLd(PAGE_AUTHOR), publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', image: 'https://www.bionixus.com/og-image.png', headline: 'Pharmaceutical Companies in the USA: Complete Industry Guide 2026', description: 'Guide to pharmaceutical companies in the United States — major manufacturers, biotech leaders, wholesalers, FDA/CMS landscape, and market structure for 2026.', url: citationUrl, datePublished: '2026-08-14', dateModified: '2026-11-01', author: personAuthorJsonLd(PAGE_AUTHOR), publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } } })}</script>
         <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' }, { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bionixus.com/resources' }, { '@type': 'ListItem', position: 3, name: 'Pharmaceutical Companies in the USA', item: citationUrl }] })}</script>
         <script type="application/ld+json">{JSON.stringify(buildPharmaCompaniesFaqLd(citationUrl, faqItems))}</script>
       </Helmet>
@@ -192,7 +192,7 @@ const UsaPharmaCompanies = () => {
               </>
             }
             rest="This guide covers major manufacturers, biotech leaders, wholesalers, FDA/CMS dynamics, distribution channels, and strategic opportunities."
-            metaLine="Last updated: September 2026 · Sources: FDA, CMS, company filings, BioNixus research"
+            metaLine="Last updated: November 2026 · Sources: FDA, CMS, company filings, BioNixus research"
             stats={[
               { value: '$590–640B', label: 'Rx pharma market (BioNixus)' },
               { value: '340M+', label: 'Population' },

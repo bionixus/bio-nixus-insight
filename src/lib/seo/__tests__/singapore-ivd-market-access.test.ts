@@ -53,7 +53,7 @@ describe('/singapore-ivd-market-access', () => {
     expect(devicesReport).toContain(`to="${PATH}"`);
     expect(devicesReport).toContain("dateModified: '2026-10-18'");
     expect(pharmaCompanies).toContain(`to: '${PATH}'`);
-    expect(pharmaCompanies).toContain("modifiedDate: '2026-10-18'");
+    expect(pharmaCompanies).toContain("modifiedDate: '2026-11-01'");
     expect(sitemap).toMatch(new RegExp(`${PATH}</loc>\\s*<lastmod>2026-10-18</lastmod>`));
   });
 });
