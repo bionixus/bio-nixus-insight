@@ -6,7 +6,7 @@ const config: CountryCompaniesGuideConfig = {
   industry: 'pharmaceutical',
   title: 'Top 20 Pharmaceutical Companies in Japan (2026 Ranked List)',
   metaDescription:
-    'Top 20 pharmaceutical companies in Japan ranked for 2026 — Takeda, Daiichi Sankyo, Astellas, Otsuka, PMDA regulation, NHI pricing and market size. By BioNixus.',
+    'Top 20 pharmaceutical companies in Japan for 2026: Takeda, Daiichi Sankyo, Astellas, Otsuka, Chugai and Eisai, with PMDA registration and NHI price rules.',
   h1: 'Pharmaceutical Companies in Japan',
   introLead: 'Pharmaceutical companies in Japan operate the world\'s third-largest single-country drug market',
   introRest: 'This guide ranks Takeda, Daiichi Sankyo, Astellas, Otsuka and the other majors, and explains PMDA registration, NHI price listing, biennial price revisions, and a market of roughly $88–95 billion.',
@@ -94,6 +94,7 @@ const config: CountryCompaniesGuideConfig = {
     { q: 'How can foreign pharma companies enter Japan?', a: 'Options are a Japanese subsidiary acting as MAH, a designated MAH (DMAH) arrangement, or licensing to a Japanese partner. The drug-lag/drug-loss policy reforms and PMDA\'s acceptance of global data have shortened entry timelines significantly.' },
   ],
   relatedLinks: [
+    { to: '/insights/top-market-research-companies-japan-2026', label: 'Top market research companies in Japan 2026' },
     { to: '/japan-healthcare-market-report', label: 'Japan healthcare market report 2026' },
     { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
     { to: '/pharmaceutical-companies-china', label: 'Pharmaceutical companies in China' },
@@ -109,7 +110,7 @@ const config: CountryCompaniesGuideConfig = {
     'BioNixus proprietary research (Japan & Asia, 2024–2026)',
   ],
   publishedDate: '2026-08-22',
-  modifiedDate: '2026-08-22',
+  modifiedDate: '2026-11-01',
   conversion: {
     routingHint: 'Mention PMDA registration or NHI pricing strategy for a faster routed response.',
     emailSubject: 'Japan pharma market research — BioNixus',

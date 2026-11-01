@@ -210,7 +210,7 @@ export default function TopMarketResearchCompaniesChina2026() {
       'Top market research companies in China 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HCP surveys at Tier 3A hospitals, NHSA NRDL payer research, VBP procurement intelligence, and KOL mapping.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    dateModified: '2026-11-01',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -729,6 +729,7 @@ export default function TopMarketResearchCompaniesChina2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { to: '/pharmaceutical-companies-china', label: 'Pharmaceutical companies in China', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
+                { to: '/china-medical-devices-market-report', label: 'China medical devices market report', desc: 'NMPA Class I–III registration, NHSA VBP price cuts, and hospital procurement for the China device market.' },
                 {
                   to: '/insights/top-healthcare-market-research-companies-china-2026',
                   label: 'Top Healthcare Market Research Companies China 2026',

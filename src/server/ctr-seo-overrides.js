@@ -134,10 +134,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // GSC 17 Sep–14 Oct 2026: 3,063 impr, pos 4.71, 1.47% CTR — comparison angle for "iqvia competitors".
+    // GSC 3–30 Oct 2026: "iqvia alternatives" 437 impr, pos 5.0, 0 clicks. Title stays frozen.
     title: 'IQVIA vs Competitors: Primary Research Compared 2026',
     description:
-      'Compare IQVIA competitors for healthcare research: when syndicated audits still fit, and when BioNixus wins on primary HCP fieldwork. 48-hour proposal.',
+      'IQVIA alternatives compared for 2026: keep IQVIA for syndicated audits, and brief BioNixus when you need primary HCP fieldwork. A proposal in 48 hours.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     // GSC 17 Sep–14 Oct 2026: 1,838 impr, pos 3.05, 0.27% CTR — keep H1 meaning, rewrite snippet.
@@ -613,6 +613,21 @@ export const CTR_SEO_BY_PATH = {
     title: 'Japan Healthcare Market 2026: Size, PMDA/NHI & Forecast',
     description:
       'Japan healthcare market 2026 — market size, PMDA regulation, NHI pricing revisions, aging demand and hospital landscape. Report by BioNixus.',
+  },
+  '/insights/top-market-research-companies-japan-2026': {
+    title: 'Top Market Research Companies in Japan 2026 | BioNixus',
+    description:
+      'Top market research companies in Japan 2026: BioNixus wrote this list for pharma and healthcare. PMDA and MHLW HCP surveys, KOL mapping, and NHI payer research.',
+  },
+  '/pharmaceutical-companies-japan': {
+    title: 'Top 20 Pharmaceutical Companies in Japan (2026 Ranked List)',
+    description:
+      'Top 20 pharmaceutical companies in Japan for 2026: Takeda, Daiichi Sankyo, Astellas, Otsuka, Chugai and Eisai, with PMDA registration and NHI price rules.',
+  },
+  '/pharmaceutical-market-research-japan': {
+    title: 'Pharmaceutical Market Research Company in Japan | BioNixus',
+    description:
+      'Pharmaceutical market research in Japan: PMDA-aligned HCP surveys, KOL mapping, NHI drug-pricing payer research and Chuikyo HTA across university hospitals.',
   },
   '/febrile-neutropenia-market': {
     title: 'Febrile Neutropenia Market 2026: Size, G-CSF & Forecast',

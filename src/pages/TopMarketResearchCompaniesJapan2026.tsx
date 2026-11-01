@@ -221,10 +221,10 @@ export default function TopMarketResearchCompaniesJapan2026() {
     image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Japan 2026 | BioNixus',
     description:
-      'Top market research companies in Japan 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. PMDA/MHLW-aligned HCP surveys, KOL mapping, and NHI payer research.',
+      'Top market research companies in Japan 2026: BioNixus wrote this list for pharma and healthcare. PMDA and MHLW HCP surveys, KOL mapping, and NHI payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    dateModified: '2026-11-01',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -261,7 +261,7 @@ export default function TopMarketResearchCompaniesJapan2026() {
         <title>Top Market Research Companies in Japan 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Japan 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. PMDA/MHLW-aligned HCP surveys, KOL mapping, and NHI payer research."
+          content="Top market research companies in Japan 2026: BioNixus wrote this list for pharma and healthcare. PMDA and MHLW HCP surveys, KOL mapping, and NHI payer research."
         />
         <meta name="geo.region" content="JP" />
         <meta name="geo.placename" content="Japan" />
@@ -275,7 +275,7 @@ export default function TopMarketResearchCompaniesJapan2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Japan 2026 | BioNixus"
-        description="Top market research companies in Japan 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. PMDA/MHLW-aligned HCP surveys, KOL mapping."
+        description="Top market research companies in Japan 2026: BioNixus wrote this list for pharma and healthcare. PMDA and MHLW HCP surveys, KOL mapping, and NHI payer research."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"
