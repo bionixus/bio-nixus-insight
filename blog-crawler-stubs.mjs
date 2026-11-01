@@ -48,6 +48,9 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'dubai-essential-drug-list-formulary-submission',
   'diabetes-market-research-uae-2026-price-cuts',
   'china-biotech-export-controls-pharma-deals-2026',
+  'kuwait-drug-pricing-2026-decision-62',
+  'uae-pharmacovigilance-requirements-2026',
+  'japanese-pharmaceutical-companies-middle-east-entry',
   'nupco-tender-market-research-saudi-arabia',
   'car-t-saudi-arabia-market-research',
   'saudi-health-insurance-payer-research',
@@ -284,6 +287,21 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'China Biotech Export Controls: Pharma Deal Guide 2026',
     description:
       'China biotech export controls in the 16 Oct 2026 draft: 40 AI, biotech and solar items. What BD, licensing and Gulf access teams should do before 15 Nov.',
+  },
+  'kuwait-drug-pricing-2026-decision-62': {
+    title: 'Kuwait Drug Pricing 2026: Decision 62 and Launch Evidence',
+    description:
+      'Kuwait drug pricing under Decision 62/2026: one ceiling price per medicine, GCC reference checks and capped margins. What launch teams must prove first.',
+  },
+  'uae-pharmacovigilance-requirements-2026': {
+    title: 'UAE Pharmacovigilance Requirements 2026: EDE Update',
+    description:
+      'UAE pharmacovigilance requirements in 2026: EDE’s updated guideline on QPPV approval, RMPs, PSURs and patient programmes, plus the new 3PL storage route.',
+  },
+  'japanese-pharmaceutical-companies-middle-east-entry': {
+    title: 'Japanese Pharmaceutical Companies in the Middle East 2026',
+    description:
+      'How Japanese pharmaceutical companies enter the Middle East: Kyorin’s nine-country partner deal, Sysmex’s Saudi factory plan, and the research to run first.',
   },
   'diabetes-market-research-uae-2026-price-cuts': {
     title: 'Diabetes Market Research UAE After 2026 Price Cuts',

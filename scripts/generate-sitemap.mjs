@@ -128,6 +128,9 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'dubai-essential-drug-list-formulary-submission',
   'diabetes-market-research-uae-2026-price-cuts',
   'china-biotech-export-controls-pharma-deals-2026',
+  'kuwait-drug-pricing-2026-decision-62',
+  'uae-pharmacovigilance-requirements-2026',
+  'japanese-pharmaceutical-companies-middle-east-entry',
   'chinese-companies-entering-saudi-arabia-and-the-uae',
   'chinese-companies-egypt-market-research',
   'nielsen-alternative-saudi-arabia',
@@ -527,6 +530,9 @@ const staticPages = [
   { path: '/blog/dubai-essential-drug-list-formulary-submission', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/diabetes-market-research-uae-2026-price-cuts', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/china-biotech-export-controls-pharma-deals-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-18' },
+  { path: '/blog/kuwait-drug-pricing-2026-decision-62', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/blog/uae-pharmacovigilance-requirements-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/blog/japanese-pharmaceutical-companies-middle-east-entry', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/blog/nupco-tender-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/car-t-saudi-arabia-market-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/saudi-health-insurance-payer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
@@ -1552,6 +1558,18 @@ const STATIC_PAGE_FILES = {
   ],
   '/blog/china-biotech-export-controls-pharma-deals-2026': [
     'src/data/blog-china-biotech-export-controls-pharma-deals-2026.ts',
+  ],
+  '/blog/kuwait-drug-pricing-2026-decision-62': [
+    'src/data/blog-kuwait-drug-pricing-2026-decision-62.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/blog/uae-pharmacovigilance-requirements-2026': [
+    'src/data/blog-uae-pharmacovigilance-requirements-2026.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/blog/japanese-pharmaceutical-companies-middle-east-entry': [
+    'src/data/blog-japanese-pharmaceutical-companies-middle-east-entry.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
   ],
   '/blog/nupco-tender-market-research-saudi-arabia': [
     'src/data/blog-nupco-tender-market-research-saudi-arabia.ts',

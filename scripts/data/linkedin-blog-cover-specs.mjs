@@ -840,4 +840,97 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowChinaExport',
     ),
   },
+  'kuwait-drug-pricing-2026-decision-62': {
+    cover: 'kuwait-drug-pricing-2026-decision-62-cover.jpg',
+    hero: 'kuwait-drug-pricing-2026-decision-62-hero.jpg',
+    badge: 'KUWAIT  ·  PRICING  ·  2026',
+    lines: ['Kuwait drug', 'pricing'],
+    goldLine: 'Decision 62/2026',
+    sub: 'Ceiling prices and launch evidence',
+    motif: glowMotif(
+      `
+      <path d="M 0 556 C 110 520, 230 580, 350 538 S 480 528, 560 552 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="72" y="96" width="132" height="96" rx="14" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="96" y="124" width="84" height="10" rx="4" fill="${GOLD}"/>
+        <rect x="96" y="150" width="60" height="8" rx="4" fill="${CREAM}" fill-opacity="0.24"/>
+        <path d="M 212 144 H 252" stroke="${GOLD_LIGHT}" stroke-width="3"/>
+        <polygon points="252,136 266,144 252,152" fill="${GOLD_LIGHT}"/>
+        <rect x="272" y="96" width="132" height="96" rx="14" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="296" y="124" width="84" height="10" rx="4" fill="${GOLD_LIGHT}"/>
+        <rect x="296" y="150" width="60" height="8" rx="4" fill="${CREAM}" fill-opacity="0.24"/>
+        <path d="M 338 200 V 236" stroke="${GOLD_LIGHT}" stroke-width="3"/>
+        <polygon points="330,236 338,250 346,236" fill="${GOLD_LIGHT}"/>
+        <rect x="272" y="256" width="132" height="96" rx="14" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="296" y="284" width="84" height="10" rx="4" fill="${GOLD}"/>
+        <rect x="296" y="310" width="60" height="8" rx="4" fill="${CREAM}" fill-opacity="0.24"/>
+        <rect x="72" y="388" width="420" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="72" y="388" width="300" height="10" rx="5" fill="${GOLD}"/>
+        <rect x="72" y="428" width="420" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="72" y="428" width="220" height="10" rx="5" fill="${GOLD_LIGHT}"/>
+        <rect x="72" y="468" width="420" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="72" y="468" width="140" height="10" rx="5" fill="${GOLD}"/>
+      </g>`,
+      'glowKuwaitPricing',
+    ),
+  },
+  'uae-pharmacovigilance-requirements-2026': {
+    cover: 'uae-pharmacovigilance-requirements-2026-cover.jpg',
+    hero: 'uae-pharmacovigilance-requirements-2026-hero.jpg',
+    badge: 'UAE  ·  DRUG SAFETY  ·  2026',
+    lines: ['UAE pharmaco-', 'vigilance'],
+    goldLine: 'EDE 2026 update',
+    sub: 'Safety rules and 3PL storage',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 100 516, 220 576, 340 534 S 490 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <path d="M 176 92 L 268 128 V 220 C 268 288, 222 330, 176 352 C 130 330, 84 288, 84 220 V 128 Z" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.6"/>
+        <path d="M 136 222 L 166 252 L 222 190" fill="none" stroke="${GOLD_LIGHT}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="312" y="196" width="196" height="156" rx="12" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <polygon points="300,200 410,140 520,200" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="336" y="232" width="44" height="40" rx="4" fill="${GOLD}" fill-opacity="0.85"/>
+        <rect x="388" y="232" width="44" height="40" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+        <rect x="440" y="232" width="44" height="40" rx="4" fill="${GOLD_LIGHT}" fill-opacity="0.6"/>
+        <rect x="336" y="284" width="44" height="40" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+        <rect x="388" y="284" width="44" height="40" rx="4" fill="${GOLD}" fill-opacity="0.6"/>
+        <rect x="440" y="284" width="44" height="40" rx="4" fill="${CREAM}" fill-opacity="0.22"/>
+        <rect x="84" y="404" width="424" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="84" y="404" width="180" height="10" rx="5" fill="${GOLD}"/>
+        <rect x="84" y="444" width="424" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="84" y="444" width="320" height="10" rx="5" fill="${GOLD_LIGHT}"/>
+      </g>`,
+      'glowUaePv',
+    ),
+  },
+  'japanese-pharmaceutical-companies-middle-east-entry': {
+    cover: 'japanese-pharmaceutical-companies-middle-east-entry-cover.jpg',
+    hero: 'japanese-pharmaceutical-companies-middle-east-entry-hero.jpg',
+    badge: 'JAPAN  ·  GULF  ·  2026',
+    lines: ['Japanese pharma', 'in the Gulf'],
+    goldLine: 'Partner or factory',
+    sub: 'Two entry routes, one research gap',
+    motif: glowMotif(
+      `
+      <path d="M 0 550 C 110 514, 230 576, 350 534 S 486 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <circle cx="140" cy="170" r="70" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <circle cx="140" cy="170" r="30" fill="${GOLD}"/>
+        <path d="M 210 170 C 300 150, 340 220, 420 210" fill="none" stroke="${GOLD}" stroke-width="3" stroke-dasharray="10 8"/>
+        <path d="M 210 196 C 290 260, 330 330, 420 330" fill="none" stroke="${GOLD_LIGHT}" stroke-width="3"/>
+        <rect x="420" y="176" width="92" height="68" rx="12" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2"/>
+        <circle cx="452" cy="210" r="12" fill="${GOLD}"/>
+        <rect x="472" y="204" width="28" height="8" rx="4" fill="${CREAM}" fill-opacity="0.28"/>
+        <rect x="420" y="292" width="92" height="76" rx="8" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <polygon points="420,292 444,268 444,292 468,268 468,292 492,268 492,292 512,292" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <rect x="438" y="320" width="20" height="28" rx="3" fill="${GOLD_LIGHT}" fill-opacity="0.7"/>
+        <rect x="470" y="320" width="20" height="28" rx="3" fill="${CREAM}" fill-opacity="0.24"/>
+        <rect x="80" y="420" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="420" width="260" height="10" rx="5" fill="${GOLD}"/>
+        <rect x="80" y="460" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="460" width="160" height="10" rx="5" fill="${GOLD_LIGHT}"/>
+      </g>`,
+      'glowJapanGulf',
+    ),
+  },
 };

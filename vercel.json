@@ -1187,6 +1187,18 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/china-biotech-export-controls-pharma-deals-2026"
     },
     {
+      "source": "/blog/kuwait-drug-pricing-2026-decision-62",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/kuwait-drug-pricing-2026-decision-62"
+    },
+    {
+      "source": "/blog/uae-pharmacovigilance-requirements-2026",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/uae-pharmacovigilance-requirements-2026"
+    },
+    {
+      "source": "/blog/japanese-pharmaceutical-companies-middle-east-entry",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/japanese-pharmaceutical-companies-middle-east-entry"
+    },
+    {
       "source": "/blog/diabetes-market-research-uae-2026-price-cuts",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/diabetes-market-research-uae-2026-price-cuts"
     },
