@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29",
+  "generatedAt": "2026-11-01",
   "source": "data/gsc/current-week/Pages.csv",
   "minImpressions": 100,
   "freezeWeeks": 8,
@@ -458,8 +458,11 @@
     },
     "/healthcare-market-research-singapore": {
       "impressions": 110,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-01",
+      "override": {
+        "title": "Healthcare Market Research Company in Singapore | BioNixus",
+        "description": "BioNixus is a healthcare market research company in Singapore — HBRA-compliant HCP surveys, payer landscape analysis, KOL mapping, and health outcomes."
+      }
     },
     "/healthcare-market-research-south-korea": {
       "impressions": 174,
@@ -519,8 +522,11 @@
     },
     "/healthcare-market-research/united-states": {
       "impressions": 587,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-01",
+      "override": {
+        "title": "Healthcare Market Research in United States | BioNixus",
+        "description": "Healthcare market research in the United States: FDA, CMS, PBM and IRA-aware physician, payer and hospital evidence for launch teams. Proposal in 24 hours."
+      }
     },
     "/healthcare-market-statistics": {
       "impressions": 956,
@@ -1150,8 +1156,11 @@
     },
     "/singapore-healthcare-market-report": {
       "impressions": 543,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-01",
+      "override": {
+        "title": "Singapore Healthcare Market Report 2026 | BioNixus",
+        "description": "Singapore healthcare market at USD 30B in 2026: HSA abridged registration, ACE cost-effectiveness reviews, MediShield Life and the Biopolis life sciences hub."
+      }
     },
     "/singapore-ivd-market-access": {
       "impressions": 145,
@@ -1163,18 +1172,27 @@
     },
     "/singapore-medical-devices-market-report": {
       "impressions": 614,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-01",
+      "override": {
+        "title": "Singapore Medical Devices Market Report 2026 | BioNixus",
+        "description": "Singapore medical devices market at USD 2.5B in 2026, growing 7% CAGR. HSA Class A–D registration, Access Consortium, ASEAN regional distribution hub."
+      }
     },
     "/singapore-medtech-manufacturing-market": {
       "impressions": 191,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-01",
+      "override": {
+        "title": "Singapore MedTech Manufacturing Market Research | BioNixus",
+        "description": "Singapore MedTech manufacturing: who builds devices in Tuas and Woodlands, HSA manufacturing licences, CDMO capacity and ASEAN export routing. Primary research."
+      }
     },
     "/singapore-pharmaceutical-market": {
       "impressions": 272,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-01",
+      "override": {
+        "title": "Singapore Pharmaceutical Market Intelligence 2026 | BioNixus",
+        "description": "Singapore pharmaceutical market intelligence — HSA registration, ACE HTA, MOH SDL/MAF subsidy listing, SingHealth/NUHS/NHG cluster dynamics, and APAC hub."
+      }
     },
     "/sitemap": {
       "impressions": 138,
@@ -1240,13 +1258,19 @@
     },
     "/usa-healthcare-market-report": {
       "impressions": 4731,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-01",
+      "override": {
+        "title": "USA Healthcare Market Research Report 2026 | BioNixus",
+        "description": "USA healthcare market at USD 6.017T in 2026 (CMS NHE). FDA pathways, IRA Medicare talks, PBMs, USD 590–640B pharma (BioNixus) and USD 175–200B devices."
+      }
     },
     "/usa-medical-devices-market-report": {
       "impressions": 1110,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-01",
+      "override": {
+        "title": "USA Medical Devices Market Report 2026 | BioNixus Research",
+        "description": "USA medical devices market at USD 175–200B in 2026 (MDMA/AdvaMed). FDA 510(k)/PMA, CMS DRG and NTAP, GPO/IDN procurement, and BioNixus GCC intelligence."
+      }
     },
     "/videos/healthcare-market-research-overview": {
       "impressions": 147,

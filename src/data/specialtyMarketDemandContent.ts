@@ -52,7 +52,7 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Singapore MedTech Manufacturing Market',
   title: 'Singapore MedTech Manufacturing Market Research | BioNixus',
   description:
-    'Singapore MedTech manufacturing market intelligence — EDB and JTC manufacturing hubs, HSA manufacturing licences, CDMO capacity, ASEAN export positioning.',
+    'Singapore MedTech manufacturing: who builds devices in Tuas and Woodlands, HSA manufacturing licences, CDMO capacity and ASEAN export routing. Primary research.',
   canonical: `${BASE}/singapore-medtech-manufacturing-market`,
   h1: 'Singapore MedTech Manufacturing Market: Research & Commercial Intelligence',
   intro: [
@@ -60,6 +60,11 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
     'Buyers searching “MedTech manufacturing Singapore” and “Singapore MedTech industry” need plant economics, regulatory manufacturing pathways, and hospital/OEM sourcing behaviour — not a generic MedTech market overview. Our programmes interview manufacturing directors, quality leads, procurement at export-focused OEMs, and hospital biomedical engineering teams that specify locally finished devices.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  earlyLinks: [
+    { to: '/blog/medtech-singapore-2026-market-hsa-registration', label: 'medtech companies in Singapore guide' },
+    { to: '/pharmaceutical-companies-singapore', label: 'pharmaceutical companies in Singapore directory' },
+  ],
+  dateModified: '2026-11-01',
   researchTopics: [
     {
       name: 'Manufacturing footprint & capacity mapping',
@@ -130,6 +135,7 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   marketStructure: {
     heading: 'How the Singapore MedTech manufacturing market is structured',
     paragraphs: [
+      'Which MedTech companies manufacture in Singapore? Global players with manufacturing, R&D, or regional-HQ presence include Medtronic, Johnson & Johnson, Becton Dickinson (BD), Boston Scientific, Baxter (Woodlands Industrial Park), Thermo Fisher Scientific, Siemens Healthineers, Stryker, and Beckman Coulter. The Singapore MedTech industry punches above its domestic market: the country produces roughly 60% of the world’s microarrays and one-third of its mass spectrometers, and medical devices and equipment manufacturing output was valued at about USD 12 billion in 2021.',
       'Singapore’s MedTech manufacturing base clusters around industrial biomedical estates with co-located test labs, sterile suppliers, and specialist logistics. Multinational captives sit alongside Asian OEM affiliates and independent CDMOs. Decision rights for capacity adds typically sit with regional manufacturing directors and global supply-chain committees — not Singapore sales teams alone.',
       'Commercial research must therefore separate three buyer contexts: (1) OEM partner selection for outsourced manufacture, (2) investment-committee diligence on plant expansion, and (3) hospital/public-procurement preference for Singapore-finished SKUs. BioNixus scopes modules to one of those decisions rather than mixing them into an undifferentiated “industry report.”',
       'For manufacturers also selling into Gulf tenders, Singapore manufacturing credentials often travel with the product story — SFDA and MOHAP buyers ask about origin of manufacture, quality system, and dual sources. We link Singapore manufacturing intelligence to GCC access work when that is on the critical path.',
@@ -180,6 +186,9 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
+    { to: '/blog/medtech-singapore-2026-market-hsa-registration', label: 'Medtech companies in Singapore and HSA registration' },
+    { to: '/pharmaceutical-companies-singapore', label: 'Pharmaceutical companies in Singapore' },
+    { to: '/singapore-medtech-market-research', label: 'MedTech market research in Singapore' },
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
     { to: '/pharmaceutical-market-research-singapore', label: 'Pharmaceutical market research Singapore' },
     { to: '/healthcare-market-research-singapore', label: 'Healthcare market research Singapore' },
@@ -191,6 +200,11 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
       question: 'What is the Singapore MedTech manufacturing market?',
       answer:
         'It is the ecosystem of captive OEM plants, CDMOs, and supply-chain partners producing or finishing medical devices and diagnostics in Singapore for domestic use and APAC/ASEAN export — governed by HSA manufacturing rules and clustered in biomedical industrial estates.',
+    },
+    {
+      question: 'Which MedTech companies manufacture in Singapore?',
+      answer:
+        'Medtronic, Johnson & Johnson, BD, Boston Scientific, Baxter, and Thermo Fisher Scientific run device manufacturing in Singapore, while Siemens Healthineers, Stryker, and Beckman Coulter run regional operations. Baxter’s plant is at Woodlands Industrial Park; pharma and biologics plants concentrate at Tuas Biomedical Park.',
     },
     {
       question: 'Why do MedTech firms manufacture in Singapore?',

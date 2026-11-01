@@ -124,8 +124,8 @@ export default function SingaporePharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Singapore | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Singapore — HSA-aware HCP surveys, KOL mapping, ACE payer research, MOH drug subsidy studies, and."
+        title="Pharmaceutical Market Research Singapore | BioNixus"
+        description="Pharmaceutical market research in Singapore: HSA-aware HCP surveys, KOL mapping, ACE payer research and MOH drug subsidy studies across SingHealth, NUHS, NHG."
         canonical="/pharmaceutical-market-research-singapore"
         jsonLd={jsonLd}
       />

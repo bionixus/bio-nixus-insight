@@ -400,7 +400,7 @@ const staticPages = [
   { path: '/pharmaceutical-companies-bahrain', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-iraq', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-iran', priority: '0.9', changefreq: 'monthly' },
-  { path: '/pharmaceutical-companies-usa', priority: '0.9', changefreq: 'monthly' },
+  { path: '/pharmaceutical-companies-usa', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/pharmaceutical-companies-uk', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-germany', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-brazil', priority: '0.9', changefreq: 'monthly' },
@@ -412,7 +412,7 @@ const staticPages = [
   { path: '/pharmaceutical-companies-china', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-japan', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-south-korea', priority: '0.9', changefreq: 'monthly' },
-  { path: '/pharmaceutical-companies-singapore', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-18' },
+  { path: '/pharmaceutical-companies-singapore', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/pharmaceutical-companies-malaysia', priority: '0.9', changefreq: 'monthly' },
   { path: '/pharmaceutical-companies-switzerland', priority: '0.9', changefreq: 'monthly' },
   { path: '/medical-device-companies-saudi-arabia', priority: '0.9', changefreq: 'monthly' },
@@ -803,8 +803,8 @@ const staticPages = [
   { path: '/uae-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/uk-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/uk-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
-  { path: '/usa-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
-  { path: '/usa-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
+  { path: '/usa-healthcare-market-report', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/usa-medical-devices-market-report', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
 ];
 
 /**

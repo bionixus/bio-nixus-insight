@@ -37,6 +37,7 @@ const IRREGULAR_IMPORTS: Record<string, Importer> = {
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement': () =>
     import('@/pages/BlogPost'),
   '/singapore-ivd-market-access': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
+  '/singapore-medtech-manufacturing-market': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
 };
 
 /** Dynamic-slug routes matched by prefix. */
@@ -148,6 +149,7 @@ const IRREGULAR_LAZY: Record<string, unknown> = {
   '/gcc-anesthesia-surgical-market-report': reportLazyPages.GccAnesthesiaSurgicalMarket,
   '/uae-influenza-vaccine-report': reportLazyPages.UaeInfluenzaVaccineReport,
   '/singapore-ivd-market-access': seoLazyPages.SpecialtyMarketDemandPage,
+  '/singapore-medtech-manufacturing-market': seoLazyPages.SpecialtyMarketDemandPage,
 };
 
 function resolveLazyComponent(pathname: string): unknown {
