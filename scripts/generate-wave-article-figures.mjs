@@ -260,6 +260,35 @@ const FIGURES = {
         <text x="40" y="556" fill="${MUTED}" font-family="${SANS}" font-size="19">and diagnostic criteria differ, so the bars are not comparable.</text>`,
     },
   ],
+  'brand-tracking-chinese-electronics-brands-middle-east': [
+    {
+      file: 'brand-tracking-chinese-electronics-brands-middle-east-q2-shares.webp',
+      height: 720,
+      title: 'Chinese brands split: Middle East share',
+      footer: 'Omdia via TelecomLead · Q2, excluding Turkey',
+      body: `
+        ${barRow({ y: 128, label: 'HONOR, Q2 2025', valueLabel: '10%', value: 10, max: 20, tone: 'navy' })}
+        ${barRow({ y: 210, label: 'HONOR, Q2 2026', valueLabel: '13%', value: 13, max: 20, tone: 'gold' })}
+        ${barRow({ y: 310, label: 'TRANSSION, Q2 2025', valueLabel: '15%', value: 15, max: 20, tone: 'navy' })}
+        ${barRow({ y: 392, label: 'TRANSSION, Q2 2026', valueLabel: '11%', value: 11, max: 20, tone: 'gold' })}
+        ${barRow({ y: 492, label: 'Xiaomi, Q2 2025', valueLabel: '17%', value: 17, max: 20, tone: 'navy' })}
+        ${barRow({ y: 574, label: 'Xiaomi, Q2 2026', valueLabel: '11%', value: 11, max: 20, tone: 'gold' })}`,
+    },
+    {
+      file: 'brand-tracking-chinese-electronics-brands-middle-east-tracker-funnel.webp',
+      height: 660,
+      title: 'What a Gulf brand tracker measures',
+      footer: 'BioNixus tracker design',
+      body: `
+        ${card({ x: 40, y: 100, w: 720, h: 100, heading: 'Awareness', lines: ['Unaided and aided'], tone: 'gold' })}
+        ${arrowDown(400, 204)}
+        ${card({ x: 40, y: 246, w: 720, h: 100, heading: 'Consideration and preference', lines: ['Next purchase shortlist and first choice'] })}
+        ${arrowDown(400, 350)}
+        ${card({ x: 40, y: 392, w: 720, h: 100, heading: 'Recommendation (NPS)', lines: ['Promoters minus detractors, among owners'], tone: 'gold' })}
+        <text x="40" y="548" fill="${INK}" font-family="${SANS}" font-size="20" font-weight="600">Every measure split by nationality, gender, age and city,</text>
+        <text x="40" y="576" fill="${INK}" font-family="${SANS}" font-size="20" font-weight="600">in Arabic and English, against named competitors.</text>`,
+    },
+  ],
 };
 
 const slugs = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(FIGURES);

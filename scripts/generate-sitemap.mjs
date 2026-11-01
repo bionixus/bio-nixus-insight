@@ -140,6 +140,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'kantar-alternative-middle-east',
   'chinese-ev-brands-saudi-uae-consumer-research',
   'market-entry-research-singapore-southeast-asia',
+  'brand-tracking-chinese-electronics-brands-middle-east',
   'market-research-companies-egypt',
 ]);
 
@@ -624,6 +625,7 @@ const staticPages = [
   { path: '/bionixus-industries/insights/kantar-alternative-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -1547,6 +1549,10 @@ const STATIC_PAGE_FILES = {
   ],
   '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia': [
     'src/data/blog-market-entry-research-singapore-southeast-asia.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east': [
+    'src/data/blog-brand-tracking-chinese-electronics-brands-middle-east.ts',
     'src/data/articleWaves/buildWaveArticle.ts',
   ],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],

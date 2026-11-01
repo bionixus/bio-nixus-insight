@@ -1155,6 +1155,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/market-entry-research-singapore-southeast-asia"
     },
     {
+      "source": "/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },

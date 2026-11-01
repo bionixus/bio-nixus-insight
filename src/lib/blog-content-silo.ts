@@ -131,6 +131,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('market-entry-research-singapore-southeast-asia'),
     label: 'Market entry research Singapore',
   },
+  {
+    to: getIndustriesInsightPostPath('brand-tracking-chinese-electronics-brands-middle-east'),
+    label: 'Brand tracking Chinese brands Middle East',
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */

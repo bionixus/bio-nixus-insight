@@ -39,6 +39,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'kantar-alternative-middle-east',
   'chinese-ev-brands-saudi-uae-consumer-research',
   'market-entry-research-singapore-southeast-asia',
+  'brand-tracking-chinese-electronics-brands-middle-east',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -250,6 +251,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Market Entry Research Singapore: Southeast Asia Guide 2026',
     description:
       'Market entry research for Singapore and Southeast Asia: why a Singapore base is not a proxy for Indonesia or Vietnam, and what to check in each market.',
+  },
+  'brand-tracking-chinese-electronics-brands-middle-east': {
+    title: 'Brand Tracking Middle East: Chinese Electronics Brands 2026',
+    description:
+      'Brand tracking for Chinese phone and electronics brands in the Middle East: what Omdia shipment data misses, and how to track Gulf buyer awareness and NPS.',
   },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',

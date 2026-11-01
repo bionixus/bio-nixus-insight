@@ -1008,4 +1008,30 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowGccWomensHealth',
     ),
   },
+  'brand-tracking-chinese-electronics-brands-middle-east': {
+    cover: 'brand-tracking-chinese-electronics-brands-middle-east-cover.jpg',
+    hero: 'brand-tracking-chinese-electronics-brands-middle-east-hero.jpg',
+    badge: 'GCC  ·  BRAND TRACKING  ·  2026',
+    lines: ['Chinese brands', 'in the Gulf'],
+    goldLine: 'Track the buyer',
+    sub: 'Awareness, preference and NPS',
+    brandMeta: 'INDUSTRY MARKET RESEARCH',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 110 516, 230 578, 350 536 S 486 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <rect x="96" y="96" width="150" height="270" rx="24" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="3"/>
+        <rect x="146" y="114" width="50" height="8" rx="4" fill="${CREAM}" fill-opacity="0.3"/>
+        <rect x="118" y="140" width="106" height="190" rx="10" fill="${CREAM}" fill-opacity="0.06"/>
+        <path d="M 290 330 L 350 290 L 400 306 L 460 220 L 510 180" fill="none" stroke="${GOLD}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="510" cy="180" r="12" fill="${GOLD}"/>
+        <path d="M 290 360 H 520" stroke="${CREAM}" stroke-opacity="0.2" stroke-width="2"/>
+        <rect x="80" y="420" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="420" width="260" height="10" rx="5" fill="${GOLD}"/>
+        <rect x="80" y="460" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="460" width="150" height="10" rx="5" fill="${GOLD_LIGHT}"/>
+      </g>`,
+      'glowChineseElectronicsGulf',
+    ),
+  },
 };

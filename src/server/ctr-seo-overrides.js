@@ -1034,6 +1034,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Market entry research for Singapore and Southeast Asia: why a Singapore base is not a proxy for Indonesia or Vietnam, and what to check in each market.',
   },
+  '/blog/brand-tracking-chinese-electronics-brands-middle-east': {
+    title: 'Brand Tracking Middle East: Chinese Electronics Brands 2026',
+    description:
+      'Brand tracking for Chinese phone and electronics brands in the Middle East: what Omdia shipment data misses, and how to track Gulf buyer awareness and NPS.',
+  },
+  '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east': {
+    title: 'Brand Tracking Middle East: Chinese Electronics Brands 2026',
+    description:
+      'Brand tracking for Chinese phone and electronics brands in the Middle East: what Omdia shipment data misses, and how to track Gulf buyer awareness and NPS.',
+  },
   '/blog/obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
