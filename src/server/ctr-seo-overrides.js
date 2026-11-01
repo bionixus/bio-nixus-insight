@@ -1084,6 +1084,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'How Japanese pharmaceutical companies enter the Middle East: Kyorin’s nine-country partner deal, Sysmex’s Saudi factory plan, and the research to run first.',
   },
+  '/blog/mental-health-market-research-saudi-arabia': {
+    title: 'Mental Health Market Research Saudi Arabia: CNS Guide 2026',
+    description:
+      'Mental health market research in Saudi Arabia: an 86% treatment gap, telepsychiatry and stigma. What CNS teams should ask psychiatrists and GPs at launch.',
+  },
   '/blog/diabetes-market-research-uae-2026-price-cuts': {
     title: 'Diabetes Market Research UAE After 2026 Price Cuts',
     description:

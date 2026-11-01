@@ -7,4 +7,5 @@ export const WAVE_ARTICLE_SLUGS = [
   'kuwait-drug-pricing-2026-decision-62',
   'uae-pharmacovigilance-requirements-2026',
   'japanese-pharmaceutical-companies-middle-east-entry',
+  'mental-health-market-research-saudi-arabia',
 ];

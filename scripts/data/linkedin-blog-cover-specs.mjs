@@ -933,4 +933,30 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowJapanGulf',
     ),
   },
+  'mental-health-market-research-saudi-arabia': {
+    cover: 'mental-health-market-research-saudi-arabia-cover.jpg',
+    hero: 'mental-health-market-research-saudi-arabia-hero.jpg',
+    badge: 'SAUDI ARABIA  ·  CNS  ·  2026',
+    lines: ['Saudi mental', 'health research'],
+    goldLine: 'The 86% gap',
+    sub: 'Prescribers, stigma and telepsychiatry',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 110 516, 230 578, 350 536 S 486 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <circle cx="200" cy="210" r="112" fill="none" stroke="${CREAM}" stroke-opacity="0.14" stroke-width="26"/>
+        <path d="M 200 98 A 112 112 0 1 1 132 121" fill="none" stroke="${GOLD}" stroke-width="26" stroke-linecap="round"/>
+        <rect x="352" y="132" width="156" height="112" rx="14" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2"/>
+        <circle cx="430" cy="172" r="18" fill="${GOLD_LIGHT}" fill-opacity="0.85"/>
+        <path d="M 394 244 C 394 212, 466 212, 466 244 Z" fill="${GOLD_LIGHT}" fill-opacity="0.55"/>
+        <rect x="408" y="256" width="44" height="10" rx="5" fill="${CREAM}" fill-opacity="0.24"/>
+        <path d="M 330 300 C 380 320, 420 300, 470 330" fill="none" stroke="${GOLD}" stroke-width="3" stroke-dasharray="8 8"/>
+        <rect x="80" y="404" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="404" width="372" height="10" rx="5" fill="${GOLD}"/>
+        <rect x="80" y="444" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="444" width="200" height="10" rx="5" fill="${GOLD_LIGHT}"/>
+      </g>`,
+      'glowSaudiMentalHealth',
+    ),
+  },
 };

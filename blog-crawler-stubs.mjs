@@ -51,6 +51,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'kuwait-drug-pricing-2026-decision-62',
   'uae-pharmacovigilance-requirements-2026',
   'japanese-pharmaceutical-companies-middle-east-entry',
+  'mental-health-market-research-saudi-arabia',
   'nupco-tender-market-research-saudi-arabia',
   'car-t-saudi-arabia-market-research',
   'saudi-health-insurance-payer-research',
@@ -302,6 +303,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Japanese Pharmaceutical Companies in the Middle East 2026',
     description:
       'How Japanese pharmaceutical companies enter the Middle East: Kyorin’s nine-country partner deal, Sysmex’s Saudi factory plan, and the research to run first.',
+  },
+  'mental-health-market-research-saudi-arabia': {
+    title: 'Mental Health Market Research Saudi Arabia: CNS Guide 2026',
+    description:
+      'Mental health market research in Saudi Arabia: an 86% treatment gap, telepsychiatry and stigma. What CNS teams should ask psychiatrists and GPs at launch.',
   },
   'diabetes-market-research-uae-2026-price-cuts': {
     title: 'Diabetes Market Research UAE After 2026 Price Cuts',

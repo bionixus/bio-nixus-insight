@@ -8,11 +8,13 @@ import type { WaveArticle } from '@/data/articleWaves/buildWaveArticle';
 import { KUWAIT_DRUG_PRICING_ARTICLE } from '@/data/blog-kuwait-drug-pricing-2026-decision-62';
 import { UAE_PHARMACOVIGILANCE_ARTICLE } from '@/data/blog-uae-pharmacovigilance-requirements-2026';
 import { JAPANESE_PHARMA_MIDDLE_EAST_ARTICLE } from '@/data/blog-japanese-pharmaceutical-companies-middle-east-entry';
+import { MENTAL_HEALTH_SAUDI_ARTICLE } from '@/data/blog-mental-health-market-research-saudi-arabia';
 
 export const WAVE_ARTICLES: readonly WaveArticle[] = [
   KUWAIT_DRUG_PRICING_ARTICLE,
   UAE_PHARMACOVIGILANCE_ARTICLE,
   JAPANESE_PHARMA_MIDDLE_EAST_ARTICLE,
+  MENTAL_HEALTH_SAUDI_ARTICLE,
 ];
 
 export const WAVE_ARTICLE_POSTS: BlogPost[] = WAVE_ARTICLES.map((article) => article.post);

@@ -160,6 +160,32 @@ const FIGURES = {
         <text x="40" y="470" fill="${MUTED}" font-family="${SANS}" font-size="20">Counts cover every sector, not only healthcare.</text>`,
     },
   ],
+  'mental-health-market-research-saudi-arabia': [
+    {
+      file: 'mental-health-market-research-saudi-arabia-treatment-gap.webp',
+      height: 600,
+      title: 'People with a disorder who got no care',
+      footer: 'Saudi National Mental Health Survey 2013–2016 · LJMH 2026',
+      body: `
+        ${barRow({ y: 128, label: 'Saudi Arabia', valueLabel: '86.1%', value: 86.1, max: 100, tone: 'gold' })}
+        ${barRow({ y: 228, label: 'USA', valueLabel: '55%', value: 55, max: 100, tone: 'navy' })}
+        ${barRow({ y: 328, label: 'Western Europe', valueLabel: '50%', value: 50, max: 100, tone: 'navy' })}
+        ${barRow({ y: 428, label: 'High-income country median', valueLabel: '50%', value: 50, max: 100, tone: 'navy' })}
+        <text x="40" y="530" fill="${MUTED}" font-family="${SANS}" font-size="19">Share of people with a 12-month disorder who used no services.</text>`,
+    },
+    {
+      file: 'mental-health-market-research-saudi-arabia-telepsychiatry.webp',
+      height: 620,
+      title: 'Telepsychiatry among 500 Saudi providers',
+      footer: 'Frontiers in Psychiatry, May 2025 · online survey',
+      body: `
+        <text x="40" y="128" fill="${INK}" font-family="${SANS}" font-size="22" font-weight="600">500 surveyed  ·  369 aware (73.8%)  ·  235 had practised</text>
+        ${barRow({ y: 200, label: 'Perceived patient access', valueLabel: '75.2%', value: 75.2, max: 100, tone: 'gold' })}
+        ${barRow({ y: 300, label: 'Practice satisfaction', valueLabel: '57.6%', value: 57.6, max: 100, tone: 'navy' })}
+        ${barRow({ y: 400, label: 'Provider access to systems', valueLabel: '46.6%', value: 46.6, max: 100, tone: 'navy' })}
+        <text x="40" y="510" fill="${MUTED}" font-family="${SANS}" font-size="19">Mean domain scores, percent. Only 12.6% of respondents were consultants.</text>`,
+    },
+  ],
 };
 
 const slugs = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(FIGURES);

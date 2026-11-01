@@ -1199,6 +1199,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/japanese-pharmaceutical-companies-middle-east-entry"
     },
     {
+      "source": "/blog/mental-health-market-research-saudi-arabia",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/mental-health-market-research-saudi-arabia"
+    },
+    {
       "source": "/blog/diabetes-market-research-uae-2026-price-cuts",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/diabetes-market-research-uae-2026-price-cuts"
     },
