@@ -91,6 +91,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia',
   '/blog/brand-tracking-chinese-electronics-brands-middle-east':
     '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east',
+  '/blog/chinese-suppliers-saudi-giga-projects-research':
+    '/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':

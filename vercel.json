@@ -1159,6 +1159,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east"
     },
     {
+      "source": "/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },

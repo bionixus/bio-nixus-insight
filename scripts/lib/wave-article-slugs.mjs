@@ -11,4 +11,5 @@ export const WAVE_ARTICLE_SLUGS = [
   'market-entry-research-singapore-southeast-asia',
   'womens-health-market-research-gcc',
   'brand-tracking-chinese-electronics-brands-middle-east',
+  'chinese-suppliers-saudi-giga-projects-research',
 ];
