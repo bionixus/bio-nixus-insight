@@ -139,6 +139,10 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('chinese-suppliers-saudi-giga-projects-research'),
     label: 'Chinese suppliers Saudi giga-projects',
   },
+  {
+    to: getIndustriesInsightPostPath('chinese-tourists-dubai-research'),
+    label: 'Chinese tourists Dubai research',
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */

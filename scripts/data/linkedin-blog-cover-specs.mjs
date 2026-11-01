@@ -1059,4 +1059,27 @@ export const LINKEDIN_BLOG_COVERS = {
       'glowChineseGigaSaudi',
     ),
   },
+  'chinese-tourists-dubai-research': {
+    cover: 'chinese-tourists-dubai-research-cover.jpg',
+    hero: 'chinese-tourists-dubai-research-hero.jpg',
+    badge: 'DUBAI  ·  GULF  ·  2026',
+    lines: ['Chinese visitors', 'in the Gulf'],
+    goldLine: 'Ask, don’t assume',
+    sub: 'Spend, payment and itinerary research',
+    brandMeta: 'INDUSTRY MARKET RESEARCH',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 110 516, 230 578, 350 536 S 486 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <circle cx="200" cy="220" r="70" fill="none" stroke="${GOLD_LIGHT}" stroke-width="3"/>
+        <path d="M 130 220 H 270 M 200 150 V 290" stroke="${GOLD_LIGHT}" stroke-width="2" stroke-opacity="0.5"/>
+        <circle cx="420" cy="260" r="28" fill="${GOLD}"/>
+        <path d="M 268 230 C 320 200, 360 240, 394 255" fill="none" stroke="${GOLD}" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="388,242 420,260 386,268" fill="${GOLD}"/>
+        <rect x="80" y="420" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="420" width="180" height="10" rx="5" fill="${GOLD}"/>
+      </g>`,
+      'glowChineseTouristsGulf',
+    ),
+  },
 };
