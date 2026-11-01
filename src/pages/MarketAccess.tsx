@@ -211,7 +211,6 @@ export default function MarketAccess() {
           'United States',
         ],
         url: CANONICAL_URL,
-        dateModified: '2026-11-01',
       },
       {
         '@context': 'https://schema.org',
