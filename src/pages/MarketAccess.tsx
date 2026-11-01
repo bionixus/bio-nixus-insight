@@ -211,6 +211,7 @@ export default function MarketAccess() {
           'United States',
         ],
         url: CANONICAL_URL,
+        dateModified: '2026-11-01',
       },
       {
         '@context': 'https://schema.org',
@@ -847,6 +848,12 @@ export default function MarketAccess() {
                 className="sr sr-up rounded-lg border border-border bg-card p-4 text-primary hover:underline"
               >
                 Respiratory market access GCC
+              </Link>
+              <Link
+                to="/heor-consulting"
+                className="sr sr-up rounded-lg border border-border bg-card p-4 text-primary hover:underline"
+              >
+                HEOR consulting — cost-effectiveness, budget impact and value dossiers
               </Link>
               <Link
                 to="/healthcare-market-research"
