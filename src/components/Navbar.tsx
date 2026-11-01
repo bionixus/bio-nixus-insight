@@ -21,6 +21,7 @@ import { SiteSearch } from '@/components/SiteSearch';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
   const { language, t } = useLanguage();
   const ui = t.ui;
@@ -38,6 +39,14 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  // Transparent over the hero, night glass once the page scrolls (alsaadany.com behaviour).
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const handleLogoClick = () => {
     const isHome =
@@ -72,13 +81,19 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-500 ${
+        isScrolled || isOpen
+          ? 'border-border bg-background/75 backdrop-blur-xl backdrop-saturate-150'
+          : 'border-transparent bg-transparent'
+      }`}
+    >
       <div className="container-wide py-4">
         <div className="flex items-center justify-between">
           {/* Logo – links to home, scrolls to hero when already on home */}
           <Link to={basePath} className="flex items-center gap-3" onClick={handleLogoClick}>
             <img
-              src="/bionixus-logo.webp"
+              src="/bionixus-logo-night.webp"
               alt={ui.nav.logoAlt}
               className="h-9 w-auto object-contain"
               width={126}
@@ -95,7 +110,7 @@ const Navbar = () => {
                 key={item.key}
                 to={item.href}
                 className={`nav-link hover:text-foreground ${
-                  isActiveHref(item.href) ? 'text-foreground font-medium' : 'text-foreground/80'
+                  isActiveHref(item.href) ? 'text-foreground' : 'text-muted-foreground'
                 }`}
                 aria-current={isActiveHref(item.href) ? 'page' : undefined}
               >
@@ -110,21 +125,21 @@ const Navbar = () => {
               <Link
                 to={globalSitesHref}
                 aria-label={ui.nav.globalSites}
-                className="group relative p-2 rounded-lg border border-border bg-background text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
+                className="group relative p-2 rounded-full border border-border bg-white/[0.03] text-muted-foreground hover:border-line-2 hover:text-foreground transition-colors"
               >
                 <Globe2 className="w-4 h-4" />
-                <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs text-background opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
+                <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-popover px-2 py-1 text-xs text-foreground opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
                   {ui.nav.globalSites}
                 </span>
               </Link>
               <DropdownMenu>
                 <DropdownMenuTrigger
                   type="button"
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="flex items-center gap-2 px-3 py-2 rounded-full border border-transparent hover:border-border hover:bg-white/[0.03] transition-colors text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   aria-label={`${ui.nav.language}: ${currentLang?.name ?? 'English'}`}
                 >
                   <span aria-hidden>{currentLang?.flag}</span>
-                  <span className="text-foreground/80">{currentLang?.code.toUpperCase()}</span>
+                  <span className="font-mono text-[0.72rem] tracking-[0.1em] text-muted-foreground">{currentLang?.code.toUpperCase()}</span>
                   <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" aria-hidden />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="min-w-[150px]">
@@ -149,7 +164,7 @@ const Navbar = () => {
 
               <Link
                 to={contactPath}
-                className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
+                className="px-5 py-2.5 bg-primary text-primary-foreground rounded-full font-semibold text-sm"
                 aria-current={isActiveHref(contactPath) ? 'page' : undefined}
               >
                 {t.nav.contact}
@@ -184,8 +199,8 @@ const Navbar = () => {
                 <Link
                   key={item.key}
                   to={item.href}
-                  className={`font-medium hover:text-foreground ${
-                    isActiveHref(item.href) ? 'text-foreground' : 'text-foreground/80'
+                  className={`font-display text-2xl font-semibold tracking-tight hover:text-foreground ${
+                    isActiveHref(item.href) ? 'text-foreground' : 'text-muted-foreground'
                   }`}
                   aria-current={isActiveHref(item.href) ? 'page' : undefined}
                   onClick={() => setIsOpen(false)}
@@ -195,14 +210,14 @@ const Navbar = () => {
               ))}
               <Link
                 to={globalSitesHref}
-                className="text-foreground/80 hover:text-foreground font-medium"
+                className="text-muted-foreground hover:text-foreground font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {ui.nav.globalSites}
               </Link>
               <Link
                 to={contactPath}
-                className="px-5 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-sm text-center hover:opacity-90 transition-opacity"
+                className="px-5 py-3 bg-primary text-primary-foreground rounded-full font-semibold text-sm text-center"
                 onClick={() => setIsOpen(false)}
               >
                 {t.nav.contact}

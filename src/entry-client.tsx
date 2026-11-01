@@ -6,6 +6,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import App from './App';
 import { preloadRouteChunk } from '@/lib/preloadRouteChunk';
 import './index.css';
+import './styles/night-theme.css';
 
 declare global {
   interface Window {

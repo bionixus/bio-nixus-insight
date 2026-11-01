@@ -1,0 +1,257 @@
+/*
+ * Night theme layer — the alsaadany.com design language on BioNixus navy and gold.
+ * Loaded after index.css, so these rules win over Tailwind utilities of equal specificity.
+ * Styling only: no rule here adds, hides or reorders content.
+ */
+
+/* ---------- ambient texture ---------- */
+@media (min-width: 900px) and (prefers-reduced-transparency: no-preference) {
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    pointer-events: none;
+    opacity: 0.045;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ---------- type ---------- */
+body {
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+h1 {
+  font-weight: 760;
+  font-stretch: 112%;
+  letter-spacing: -0.03em;
+}
+:is(h1, h2, h3).font-light,
+:is(h1, h2, h3).font-normal {
+  font-weight: 560;
+}
+:is(h1, h2, h3).font-semibold {
+  font-weight: 700;
+}
+:is(h1, h2, h3).font-bold {
+  font-weight: 760;
+}
+
+/* Section titles were sized for the light layout; give them the alsaadany.com display scale. */
+h2.text-3xl:is([class*='md:text-4xl'], [class*='lg:text-5xl']),
+h2.text-4xl,
+h2.text-5xl {
+  font-size: clamp(2rem, 1.1rem + 2.4vw, 3.15rem);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+}
+
+/* Italic emphasis inside headings: Bodoni italic with the BioNixus heat gradient. */
+:is(h1, h2) em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  font-stretch: normal;
+  letter-spacing: -0.01em;
+  padding-inline-end: 0.04em;
+  background: var(--heat);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: night-heat 7s ease-in-out infinite alternate;
+}
+[lang='ar'] :is(h1, h2) em,
+:is(h1, h2):lang(ar) em {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+@keyframes night-heat {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+/* Eyebrows, kickers and labels (uppercase + tracking) speak in mono, like alsaadany.com. */
+.uppercase:not(.font-mono):is([class*='tracking-wide'], [class*='tracking-widest'], [class*='tracking-wider'], [class*='tracking-[']) {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
+.uppercase:not(.font-mono):is([class*='tracking-wide'], [class*='tracking-widest'], [class*='tracking-wider'], [class*='tracking-[']):is(.text-xs, .text-sm, [class*='text-[1'], [class*='text-[0.'], [class*='text-[9'], [class*='text-[8']) {
+  font-size: 0.7rem;
+}
+[lang='ar'] .uppercase:is([class*='tracking-']),
+.uppercase:is([class*='tracking-']):lang(ar) {
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+/* Long-form reading comfort on night */
+.prose-body,
+.prose-body p,
+.prose-body li {
+  color: hsl(var(--ink) / 0.9);
+}
+
+/* ---------- buttons ---------- */
+/* Solid gold actions become alsaadany-style gradient pills with a warm glow. */
+:is(a, button).bg-primary:is([class*='px-'], [class*='py-']) {
+  border-radius: 999px;
+  background-image: linear-gradient(100deg, hsl(var(--accent)), hsl(var(--primary)));
+  color: hsl(var(--on-gold));
+  box-shadow: 0 14px 40px -16px hsl(var(--gold-glow) / 0.6), inset 0 1px 0 rgb(255 255 255 / 0.35);
+  transition: box-shadow 0.35s var(--ease), filter 0.35s var(--ease), transform 0.35s var(--ease);
+}
+:is(a, button).bg-primary:is([class*='px-'], [class*='py-']):hover {
+  filter: brightness(1.06);
+  box-shadow: 0 20px 56px -14px hsl(var(--gold-glow) / 0.72), inset 0 1px 0 rgb(255 255 255 / 0.45);
+}
+/* Outline and ghost actions: hairline pills. */
+:is(a, button):is(.border-primary, [class*='border-primary-foreground/'], [class*='border-white/']):is([class*='px-'])[class*='py-']:not(.rounded-full) {
+  border-radius: 999px;
+}
+:is(a, button).border.border-border:is(.rounded-lg, .rounded-md):is([class*='px-'])[class*='py-'] {
+  border-radius: 999px;
+}
+
+/* ---------- navy brand surfaces from the light layout ---------- */
+/* In the light system primary was navy, so CTA bands, hero panels and feature cards were navy
+   (solid bg-primary, navy gradients, or the inline --gradient-hero) with text-primary-foreground.
+   Primary is gold now, so those surfaces become night glass with a gold glow, and their text stays light. */
+:is(
+  section.bg-primary,
+  footer.bg-primary,
+  aside.bg-primary.text-primary-foreground,
+  div.bg-primary.text-primary-foreground:not(.rounded-full):not([class*='w-']),
+  [class*='bg-gradient-to-'].text-primary-foreground:not(.rounded-full):not([class*='w-']):is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']),
+  .text-primary-foreground:is([class*='bg-navy'], [class*='bg-[hsl']),
+  [style*='gradient-hero']
+) {
+  position: relative;
+  isolation: isolate;
+  background-color: hsl(var(--night-2));
+  background-image:
+    radial-gradient(50% 60% at 85% 40%, hsl(var(--primary) / 0.14), transparent 65%),
+    radial-gradient(40% 55% at 6% 62%, hsl(var(--teal) / 0.07), transparent 65%);
+  color: hsl(var(--foreground));
+}
+:is(section, footer, div:not([class*='rounded'])).bg-primary,
+section[class*='bg-gradient-to-'].text-primary-foreground:is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']) {
+  border-block: 1px solid hsl(var(--border));
+}
+footer.bg-primary {
+  background-image:
+    radial-gradient(70% 60% at 50% 120%, hsl(28 90% 50% / 0.14), transparent 70%),
+    radial-gradient(45% 55% at 88% 40%, hsl(var(--primary) / 0.06), transparent 65%);
+  border-bottom: 0;
+}
+:is(:is(section, footer, aside, div:not(.rounded-full):not([class*='w-'])).bg-primary, [class*='bg-gradient-to-'].text-primary-foreground:is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']), .text-primary-foreground:is([class*='bg-navy'], [class*='bg-[hsl']), [style*='gradient-hero']) :is(.text-primary-foreground, h1, h2, h3, h4) {
+  color: hsl(var(--foreground));
+}
+:is(:is(section, footer, aside, div:not(.rounded-full):not([class*='w-'])).bg-primary, [class*='bg-gradient-to-'].text-primary-foreground:is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']), .text-primary-foreground:is([class*='bg-navy'], [class*='bg-[hsl']), [style*='gradient-hero']) [class*='text-primary-foreground/'] {
+  color: hsl(var(--ink-2));
+}
+:is(:is(section, footer, aside, div:not(.rounded-full):not([class*='w-'])).bg-primary, [class*='bg-gradient-to-'].text-primary-foreground:is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']), .text-primary-foreground:is([class*='bg-navy'], [class*='bg-[hsl']), [style*='gradient-hero']) [class*='border-primary-foreground/'] {
+  border-color: hsl(var(--line-2));
+}
+/* White buttons on the old navy surfaces become the gold primary pill. */
+:is(:is(section, footer, aside, div:not(.rounded-full):not([class*='w-'])).bg-primary, [class*='bg-gradient-to-'].text-primary-foreground:is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']), .text-primary-foreground:is([class*='bg-navy'], [class*='bg-[hsl']), [style*='gradient-hero']) :is(a, button).bg-white {
+  border-radius: 999px;
+  background-image: linear-gradient(100deg, hsl(var(--accent)), hsl(var(--primary)));
+  color: hsl(var(--on-gold));
+  box-shadow: 0 14px 40px -16px hsl(var(--gold-glow) / 0.6), inset 0 1px 0 rgb(255 255 255 / 0.35);
+}
+:is(:is(section, footer, aside, div:not(.rounded-full):not([class*='w-'])).bg-primary, [class*='bg-gradient-to-'].text-primary-foreground:is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']), .text-primary-foreground:is([class*='bg-navy'], [class*='bg-[hsl']), [style*='gradient-hero']) :is(a, button).bg-white :is(*, .text-primary) {
+  color: hsl(var(--on-gold));
+}
+:is(:is(section, footer, aside, div:not(.rounded-full):not([class*='w-'])).bg-primary, [class*='bg-gradient-to-'].text-primary-foreground:is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']), .text-primary-foreground:is([class*='bg-navy'], [class*='bg-[hsl']), [style*='gradient-hero']) :is(a, button)[class*='bg-white/'] {
+  border-radius: 999px;
+}
+/* Gold text links on these surfaces read as warm links. */
+:is(:is(section, footer, aside, div:not(.rounded-full):not([class*='w-'])).bg-primary, [class*='bg-gradient-to-'].text-primary-foreground:is(.from-primary, .via-primary, .to-primary, [class*='from-navy'], [class*='via-navy'], [class*='to-navy']), .text-primary-foreground:is([class*='bg-navy'], [class*='bg-[hsl']), [style*='gradient-hero']) a.text-primary {
+  color: hsl(var(--accent));
+}
+/* White numerals on small gold badges read poorly; use the on-gold ink. */
+.bg-primary.text-white {
+  color: hsl(var(--on-gold));
+}
+
+/* ---------- cards: pointer-following glow (vars set by NightThemeEffects) ---------- */
+.bg-card,
+.service-card {
+  background-image: radial-gradient(360px circle at var(--mx, -500px) var(--my, -500px), hsl(var(--primary) / 0.075), transparent 65%);
+}
+:is(.rounded-xl, .rounded-2xl, .rounded-lg).border.bg-card {
+  transition: border-color 0.35s var(--ease), box-shadow 0.35s var(--ease), transform 0.35s var(--ease);
+}
+a:is(.rounded-xl, .rounded-2xl, .rounded-lg).border.bg-card:hover,
+a.bg-card.border:hover {
+  border-color: hsl(var(--primary) / 0.4);
+}
+
+/* ---------- tables ---------- */
+.prose-body thead,
+:is(thead, tr, th).bg-primary {
+  background: hsl(var(--night-3));
+}
+.prose-body thead th,
+:is(thead, tr).bg-primary th,
+th.bg-primary {
+  color: hsl(var(--accent));
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid hsl(var(--primary) / 0.35);
+}
+:is(thead, tr).bg-primary :is(th, td).text-primary-foreground {
+  color: hsl(var(--accent));
+}
+.prose-body tbody td:first-child {
+  color: hsl(var(--foreground));
+}
+
+/* ---------- forms ---------- */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: hsl(var(--foreground));
+  -webkit-box-shadow: 0 0 0 1000px hsl(var(--night-3)) inset;
+  caret-color: hsl(var(--foreground));
+  transition: background-color 9999s ease-out 0s;
+}
+::placeholder {
+  color: hsl(var(--ink-3));
+  opacity: 1;
+}
+select option {
+  background: hsl(var(--night-2));
+  color: hsl(var(--foreground));
+}
+
+/* ---------- media on night ---------- */
+hr {
+  border-color: hsl(var(--border));
+}
+/* Logo plates: company and client logos are drawn for white backgrounds; keep them on light plates. */
+:is([class*='logo'], [aria-label*='logo' i]) .bg-white,
+.bg-white:has(> img[alt*='logo' i]:only-child) {
+  background-color: #f6f3ec;
+}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  :is(h1, h2) em {
+    animation: none;
+  }
+  :is(a, button).bg-primary {
+    transition: none;
+  }
+}

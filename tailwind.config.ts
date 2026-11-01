@@ -29,8 +29,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Playfair Display", "Georgia", "Times New Roman", "serif"],
-        body: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-display)"],
+        body: ["var(--font-body)"],
+        sans: ["var(--font-body)"],
+        mono: ["var(--font-mono)"],
+        accent: ["var(--font-accent)"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -78,6 +81,23 @@ export default {
           DEFAULT: "hsl(var(--cream))",
           dark: "hsl(var(--cream-dark))",
         },
+        // Night theme tokens (CSS variables, so the night colour adapter never rewrites them)
+        night: {
+          DEFAULT: "hsl(var(--night) / <alpha-value>)",
+          2: "hsl(var(--night-2) / <alpha-value>)",
+          3: "hsl(var(--night-3) / <alpha-value>)",
+        },
+        ink: {
+          DEFAULT: "hsl(var(--ink) / <alpha-value>)",
+          2: "hsl(var(--ink-2) / <alpha-value>)",
+          3: "hsl(var(--ink-3) / <alpha-value>)",
+        },
+        line: {
+          DEFAULT: "hsl(var(--line) / <alpha-value>)",
+          2: "hsl(var(--line-2) / <alpha-value>)",
+        },
+        "teal-glow": "hsl(var(--teal) / <alpha-value>)",
+        "on-gold": "hsl(var(--on-gold) / <alpha-value>)",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

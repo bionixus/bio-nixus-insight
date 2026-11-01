@@ -3,6 +3,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { PremiumHeroDashboard } from '@/components/home/PremiumHeroDashboard';
 import { PremiumHeroOrbitals } from '@/components/home/PremiumHeroOrbitals';
+import { HeroParticles } from '@/components/home/HeroParticles';
+import { ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   const { t, language, isRTL } = useLanguage();
@@ -18,7 +20,7 @@ const HeroSection = () => {
   return (
     <section
       data-hero-lcp
-      className={`relative flex min-h-screen items-center overflow-hidden bg-[#06101F] ${language === 'ar' ? 'hero-arabic' : ''} ${language === 'de' ? 'hero-german' : ''} ${language === 'fr' ? 'hero-french' : ''} ${language === 'es' ? 'hero-spanish' : ''} ${language === 'zh' ? 'hero-chinese' : ''}`}
+      className={`relative flex min-h-screen items-center overflow-hidden bg-background ${language === 'ar' ? 'hero-arabic' : ''} ${language === 'de' ? 'hero-german' : ''} ${language === 'fr' ? 'hero-french' : ''} ${language === 'es' ? 'hero-spanish' : ''} ${language === 'zh' ? 'hero-chinese' : ''}`}
       dir={isRTL ? 'rtl' : undefined}
       lang={language}
     >
@@ -41,23 +43,25 @@ const HeroSection = () => {
         </svg>
       </div>
 
+      <HeroParticles />
+
       <PremiumHeroOrbitals />
 
-      <div className="relative z-10 container-wide mx-auto w-full max-w-[1260px] pb-20 pt-32 sm:pt-32">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div className="max-w-[500px] premium-fade-up">
-            <div className="mb-8 inline-flex items-center gap-2.5">
-              <span className="h-px w-8 bg-[#C9A84C]/40" aria-hidden="true" />
-              <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
+      <div className="relative z-10 container-wide mx-auto w-full max-w-[1320px] pb-20 pt-32 sm:pt-36">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
+          <div className="max-w-[640px] premium-fade-up">
+            <div className="mb-8 inline-flex items-center gap-3">
+              <span className="h-px w-10 bg-gradient-to-r from-teal-glow/70 to-primary" aria-hidden="true" />
+              <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-ink-2">
                 {hero.tagline}
               </span>
             </div>
 
-            <h1 className="sr-lcp mb-7 font-display text-[clamp(2.8rem,4.5vw,4.2rem)] font-light leading-[1.12] tracking-tight text-[#FFFEFB] text-balance">
+            <h1 className="sr-lcp mb-8 font-display text-[clamp(2.6rem,5.4vw,5.1rem)] font-bold leading-[0.98] tracking-[-0.03em] text-foreground text-balance">
               {hero.titleLead && hero.titleEmphasis ? (
                 <>
                   {hero.titleLead}{' '}
-                  <em className="font-medium not-italic text-transparent bg-clip-text bg-gradient-to-br from-[#C9A84C] to-[#E4CC7A]">
+                  <em>
                     {hero.titleEmphasis}
                   </em>
                 </>
@@ -66,22 +70,23 @@ const HeroSection = () => {
               )}
             </h1>
 
-            <p className="mb-11 max-w-[500px] text-[17px] font-light leading-[1.8] text-white/45">
+            <p className="mb-11 max-w-[560px] text-[1.08rem] leading-[1.75] text-muted-foreground md:text-[1.15rem]">
               {hero.subtitle}
             </p>
 
             <PremiumHeroDashboard className="premium-scale-in mb-10 lg:hidden" />
 
-            <div className="mb-14 flex flex-col gap-5 sm:flex-row sm:items-center">
+            <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
                 to={contactPath}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#C9A84C] to-[#B8933E] px-9 py-[17px] text-sm font-semibold tracking-wide text-[#06101F] shadow-[0_4px_20px_rgba(201,168,76,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(201,168,76,0.35)]"
+                className="premium-gold-btn group px-8 py-[1.05rem] text-[0.95rem]"
               >
                 {hero.ctaPremium ?? hero.cta}
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100" aria-hidden="true" />
               </Link>
               <Link
                 to="#methodology"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-8 py-[17px] text-sm font-normal tracking-wide text-white/55 transition-colors hover:border-white/25 hover:text-white"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-line-2 px-7 py-[1.05rem] text-[0.95rem] font-semibold text-foreground transition-colors hover:border-ink-3 hover:bg-white/[0.04]"
               >
                 <span aria-hidden="true">◈</span>
                 {hero.ctaSecondary}
@@ -93,7 +98,7 @@ const HeroSection = () => {
                 {t.ui.brands.initials.map((initials, i) => (
                   <span
                     key={initials}
-                    className={`flex h-[38px] w-[38px] items-center justify-center rounded-full border-2 border-[#06101F] text-[11px] font-semibold text-white ${
+                    className={`flex h-[38px] w-[38px] items-center justify-center rounded-full border-2 border-background text-[11px] font-semibold text-white ${
                       i === 0
                         ? 'bg-gradient-to-br from-blue-600 to-blue-800'
                         : i === 1
@@ -107,9 +112,9 @@ const HeroSection = () => {
                   </span>
                 ))}
               </div>
-              <p className="text-[13px] font-light leading-snug text-white/35">
+              <p className="text-[13px] leading-snug text-ink-3">
                 {t.homePage.heroTrust.primary}{' '}
-                <strong className="font-medium text-white/70">{t.homePage.heroTrust.stats}</strong>
+                <strong className="font-medium text-ink-2">{t.homePage.heroTrust.stats}</strong>
               </p>
             </div>
           </div>
