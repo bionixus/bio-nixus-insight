@@ -4,6 +4,8 @@
  * regulators, tenders, and care pathways. No fabricated dollar totals.
  */
 
+import { SPECIALTY_LONG_FORM_BY_SLUG } from '@/data/specialtyMarketDemandLongForm';
+
 export type SpecialtyMarketDemandContent = {
   slug: string;
   segmentLabel: string;
@@ -26,6 +28,8 @@ export type SpecialtyMarketDemandContent = {
   whyBionixus: string[];
   relatedLinks: Array<{ to: string; label: string }>;
   faqs: Array<{ question: string; answer: string }>;
+  /** Optional SSR long-form blocks for GSC demand pages below the 2k-word threshold. */
+  longFormSections?: Array<{ heading: string; paragraphs: string[] }>;
   areaServed?: string[];
   priority: 'now' | 'next' | 'later';
 };
@@ -797,9 +801,11 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
     'Singapore IVD market access: HSA pathways, SingHealth/NUHS/NHG lab algorithms, and assays that stay registered but unused. Primary research. 48h proposal.',
   canonical: `${BASE}/singapore-ivd-market-access`,
   h1: 'Singapore IVD market access',
-  dateModified: '2026-10-18',
+  dateModified: '2026-11-01',
   intro: [
     'Singapore IVD market access is decided inside hospital laboratories and cluster testing algorithms as much as at HSA registration. An assay can sit on the register and still miss SingHealth, NUHS, or NHG menus if lab directors, pathologists, and cluster procurement do not adopt it. We interview those buyers, map algorithm lock-in, and separate registered-but-unused SKUs from assays that actually run.',
+    'Searchers for “singapore ivd market access” need cluster-specific adoption plans: which validation steps remain, which clinical champions are missing, and how reagent contracts block share even after HSA clearance. BioNixus delivers gate-by-gate findings rather than APAC syndicated market tables.',
+    'Use our Singapore market research companies ranking and pharmaceutical companies in Singapore directory for context, then commission cluster-specific lab access fieldwork.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   earlyLinks: [
@@ -829,6 +835,16 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
     heading: 'IVD access structure in Singapore',
     paragraphs: [
       'Access is multi-gated: HSA clearance, lab technical validation, clinical ordering behaviour, and budget owners. BioNixus scopes research to the gate that is currently blocking volume.',
+      'Cluster standardization means a win at one anchor hospital can cascade — or stall if sister sites disagree on menu fit. APAC HQ presence does not substitute for cluster lab director endorsement.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Singapore cluster signals',
+    items: [
+      { label: 'SingHealth laboratories', signal: 'Menu and platform decisions ripple across the cluster; validation templates set regional pace.' },
+      { label: 'NUHS / NHG networks', signal: 'Competitive analyser contracts and send-out rules differ; entrant strategy must be cluster-specific.' },
+      { label: 'Oncology & genomics panels', signal: 'Higher evidence bars and specialist champions required before routine ordering.' },
+      { label: 'ASEAN dossier linkage', signal: 'Singapore registration may support reference filings — primary research validates where it actually helps.' },
     ],
   },
   audiences: [
@@ -861,9 +877,50 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
       answer:
         'Typically laboratory leadership plus clinical champions and procurement — with cluster standardization often binding sister hospitals.',
     },
+    {
+      question: 'What is singapore ivd market access research?',
+      answer:
+        'Primary interviews with lab directors, pathologists, procurement, and ordering specialists to map HSA-to-volume gates and competitive installed-base lock-in — not syndicated market-size republishing.',
+    },
+    {
+      question: 'Why are registered IVDs unused in Singapore?',
+      answer:
+        'Common blockers are lab validation backlog, LIS integration gaps, missing clinical champions, and reagent contracts that favour incumbents — BioNixus identifies which gate applies per cluster.',
+    },
+    {
+      question: 'How quickly can BioNixus start Singapore IVD access research?',
+      answer:
+        'Proposals typically return within 48 hours once target clusters, assay class, and the primary blocking gate are named. Fieldwork schedules depend on laboratory director availability and hospital engagement letter requirements.',
+    },
+    {
+      question: 'Should APAC teams use Singapore as an IVD pilot market?',
+      answer:
+        'Often yes for evidence generation, but cluster adoption must be validated separately from HSA registration. BioNixus research shows where Singapore pilots translate to ASEAN tenders versus where they remain HQ showcase accounts with limited reorder volume.',
+    },
   ],
   areaServed: ['Singapore'],
   priority: 'next',
+  calendarBlocks: {
+    heading: 'Singapore IVD access calendar hints',
+    items: [
+      {
+        period: 'Cluster menu review cycles',
+        detail: 'Laboratory leadership often batch-validates new assays quarterly; align evidence drops to those windows.',
+      },
+      {
+        period: 'HSA variation submissions',
+        detail: 'Label or indication changes reopen lab discussions even when initial registration exists.',
+      },
+      {
+        period: 'Budget and reagent contract renewals',
+        detail: 'Procurement renegotiates multi-year deals annually; competitive modules should precede renewal notices.',
+      },
+      {
+        period: 'APAC HQ annual planning',
+        detail: 'Singapore pilot readouts feed ASEAN dossier plans — fieldwork should finish before HQ lock of 2027 priorities.',
+      },
+    ],
+  },
 };
 
 const japanNeurologyDevices: SpecialtyMarketDemandContent = {
@@ -938,8 +995,12 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     'Japan medical disposables market research — hospital consumables, infection-control products, tender dynamics, and procurement behaviour intelligence from.',
   canonical: `${BASE}/japan-medical-disposables-market`,
   h1: 'Japan Medical Disposables Market: Procurement & Adoption Intelligence',
+  dateModified: '2026-11-01',
   intro: [
     'Japan’s medical disposables market is high-volume, committee-governed, and sensitive to infection-control standards and total cost. BioNixus researches nursing, infection control, and procurement stakeholders to show which SKUs earn formulary permanency versus perpetual trial status.',
+    'Buyers searching “Japan medical disposables market” need tender timing, nursing usability proof, and distributor service truth — not a syndicated shipment table. Our programmes link disposable decisions to OR packs, ward turnover, and Gulf tender documentation when export teams need both stories.',
+    'BioNixus scopes Japan disposable research to one category and one hospital tier per wave so nursing, infection-control, and procurement interviews stay decision-led. Deliverables include gate maps, switch barriers, and sequenced actions your Japan distributor and medical teams can execute within the same commercial quarter.',
+    'Request a scoped proposal via our contact page; most programmes begin fieldwork within two to four weeks after hospital engagement letters are cleared.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -965,6 +1026,16 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Disposables decisions mix nursing preference, infection-control policy, and purchasing contracts. Successful research treats those lanes explicitly instead of averaging them.',
+      'Large hospital groups and medical universities set category standards that community hospitals follow with delay. Distributors remain influential on service scoring even when clinical preference favours a challenger SKU.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Category signals in Japan',
+    items: [
+      { label: 'Infection-control committees', signal: 'Gate premium drapes, PPE, and antiseptic categories with accreditation-linked criteria.' },
+      { label: 'OR and sterile supply', signal: 'Procedure packs and sterile barriers follow surgeon and nursing joint review plus cost-per-case models.' },
+      { label: 'Central purchasing alliances', signal: 'Alliance tenders reset dual-source rules and service SLAs on high-turn SKUs.' },
+      { label: 'Gulf tender linkage', signal: 'Japanese origin and quality-system documentation sometimes supports SFDA/MOHAP disposable dossiers.' },
     ],
   },
   audiences: [
@@ -985,9 +1056,54 @@ const japanMedicalDisposables: SpecialtyMarketDemandContent = {
       answer:
         'High-turn hospital consumables — infection-control products, procedure packs, and related single-use categories — researched through nursing, infection control, and procurement lenses.',
     },
+    {
+      question: 'What does the Japan medical disposables market research cover?',
+      answer:
+        'Tender calendars, nursing usability, infection-control committee criteria, distributor service scoring, and switch barriers — scoped to one disposable category or hospital cluster per study wave.',
+    },
+    {
+      question: 'How is Japan different from GCC disposable procurement?',
+      answer:
+        'Japan emphasises nursing workflow, alliance tenders, and JIS-aligned quality culture; GCC buyers weight MOH/SFDA tender templates and local agent service. BioNixus runs separate modules rather than averaging the two.',
+    },
+    {
+      question: 'Can BioNixus link Japan disposables research to device programmes?',
+      answer:
+        'Yes. When capital and consumable decisions are coupled, we align with Japan general surgical devices and Japan medical devices market report intelligence on the same proposal.',
+    },
+    {
+      question: 'How long does Japan medical disposables fieldwork take?',
+      answer:
+        'Most modules run four to eight weeks from kickoff to readout depending on sample depth across nursing, infection-control, and procurement stakeholders. Urgent tender support can compress qualitative tranches when hospitals agree to expedited slots.',
+    },
   ],
   areaServed: ['Japan'],
   priority: 'next',
+  calendarBlocks: {
+    heading: 'When to run Japan disposables research',
+    items: [
+      {
+        period: 'Pre-tender (8–12 weeks before alliance RFP)',
+        detail:
+          'Win/loss and nursing preference modules shape bid scoring criteria and service bundles before drafts circulate.',
+      },
+      {
+        period: 'Post-award pull-through (0–90 days)',
+        detail:
+          'Switch-risk interviews explain slow uptake despite contract wins — critical for distributors defending share.',
+      },
+      {
+        period: 'Accreditation cycles',
+        detail:
+          'Infection-control committees refresh categories ahead of visits; message tests timed here see faster decisions.',
+      },
+      {
+        period: 'Export dossier alignment',
+        detail:
+          'Optional Gulf-facing module when Japanese origin documentation must match SFDA/MOHAP disposable submissions.',
+      },
+    ],
+  },
 };
 
 const japanMedtechAccessAutomation: SpecialtyMarketDemandContent = {
@@ -1253,8 +1369,12 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
     'Italy portable diagnostic devices market research — POCT adoption, hospital and community laboratory pathways, AIFA/notified-body context, and procurement.',
   canonical: `${BASE}/italy-portable-diagnostic-devices-market`,
   h1: 'Italy Portable Diagnostic Devices Market: POCT & Adoption Intelligence',
+  dateModified: '2026-11-01',
   intro: [
     'Italy’s portable diagnostic devices market is shaped by hospital POCT programmes, community laboratory networks, and regional procurement rules more than retail gadget demand. BioNixus researches laboratory directors, emergency and ward clinicians, and ASL/hospital buyers to show which handheld and near-patient platforms clear volume — and which remain pilots.',
+    'Queries for “Italy portable diagnostic devices market” signal POCT scale-up, IVDR validation, or regional tender positioning. We scope one decision cell — ED turnaround, ambulatory chronic care, or lab menu consolidation — so fieldwork stays actionable.',
+    'Deliverables emphasise pathway owners, ASL tender scorecards reconstructed from interviews, and clinical champion requirements — formatted for laboratory commercial and medical affairs teams preparing regional scale-up.',
+    'Contact BioNixus for a scoped Italy POCT proposal; we respond within 48 hours with sample, timeline, and compliance notes for hospital engagement.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1280,6 +1400,16 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Portable diagnostics in Italy sit between laboratory governance and clinical urgency. BioNixus separates acute POCT, ambulatory programmes, and community pathways so manufacturers do not average incompatible buyer sets.',
+      'Regional ASL buyers influence tender templates; university hospitals pilot first and set reference protocols for satellite facilities. Send-out reference labs retain esoteric testing even when POCT expands at the bedside.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Italy POCT adoption signals',
+    items: [
+      { label: 'Regional ASL tenders', signal: 'Scoring weights for LIS integration, QC, and service uptime vary by region.' },
+      { label: 'ED and chest-pain pathways', signal: 'Turnaround-driven POCT often wins before ward decentralisation programmes.' },
+      { label: 'IVDR validation load', signal: 'Post-transition documentation requests extend lab approval timelines.' },
+      { label: 'Send-out versus in-house', signal: 'Central labs resist menu duplication unless clinical champions prove bed-flow benefit.' },
     ],
   },
   audiences: [
@@ -1303,9 +1433,55 @@ const italyPortableDiagnostics: SpecialtyMarketDemandContent = {
       answer:
         'Near-patient and handheld diagnostic platforms used in hospitals, ambulatory settings, and selected community pathways — researched through laboratory, clinical, and procurement stakeholders rather than consumer gadget panels.',
     },
+    {
+      question: 'What does Italy portable diagnostic devices market research include?',
+      answer:
+        'POCT programme mapping, IVDR-aware hospital validation, regional tender intelligence, clinical pathway interviews, and competitive installed-base research — one primary decision per engagement.',
+    },
+    {
+      question: 'How do Italian labs evaluate portable platforms?',
+      answer:
+        'Through method validation, LIS connectivity, QC burden, cost-per-test versus central lab, and specialist ordering pull — BioNixus interviews the stakeholders who score each factor.',
+    },
+    {
+      question: 'Can research link POCT to connectivity programmes?',
+      answer:
+        'Yes. When IT integration is the blocker, we align with our Italy medical device connectivity market module on the same proposal timeline.',
+    },
+    {
+      question: 'How do Italian hospitals score portable diagnostic tenders?',
+      answer:
+        'Scoring blends LIS integration, QC burden, service uptime, cost-per-test versus send-out, and specialist ordering pull — BioNixus reconstructs weightings from procurement and laboratory interviews rather than publishing generic score templates.',
+    },
+    {
+      question: 'Does BioNixus publish Italy POCT market size estimates?',
+      answer:
+        'No. Public pages describe decision structure and research modules. Test-volume bands, share estimates, and price benchmarks are produced only inside commissioned primary studies with disclosed sample and methodology — avoiding speculative syndicated numbers that mislead tender strategy.',
+    },
   ],
   areaServed: ['Italy'],
   priority: 'later',
+  calendarBlocks: {
+    heading: 'Italy POCT research timing',
+    items: [
+      {
+        period: 'Regional tender windows',
+        detail: 'ASL procurement calendars vary; primary interviews surface realistic RFP dates better than scraped notices alone.',
+      },
+      {
+        period: 'IVDR validation backlog peaks',
+        detail: 'Lab capacity for parallel testing is seasonal; feasibility modules avoid starting fieldwork during known holiday closures.',
+      },
+      {
+        period: 'ED pathway redesigns',
+        detail: 'Hospital reconfigurations reopen POCT decisions — message tests land better when pathways are being rewritten.',
+      },
+      {
+        period: 'Post-pilot scale reviews',
+        detail: 'Three- to six-month pilot readouts determine menu permanency; research timed to those reviews influences formulary votes.',
+      },
+    ],
+  },
 };
 
 const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
@@ -1522,8 +1698,12 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
     'GCC medication management market research — hospital pharmacy automation, e-prescribing, adherence programmes, Wasfaty-linked workflows, and buyer.',
   canonical: `${BASE}/gcc-medication-management-market`,
   h1: 'GCC Medication Management Market: Pharmacy, Automation & Adherence Intelligence',
+  dateModified: '2026-11-01',
   intro: [
     'The GCC medication management market covers hospital pharmacy automation, e-prescribing and closed-loop medication systems, and adherence / patient-support programmes that sit between IT, pharmacy, and clinical care. BioNixus researches chief pharmacists, hospital CIOs, and ambulatory stakeholders so vendors know which Gulf buyers fund automation versus adherence software — and what evidence they demand.',
+    'Search interest in “GCC medication management market” often mixes capital automation with SaaS adherence dashboards. We force a single decision cell per wave — inpatient closed-loop, ambulatory e-Rx, or payer adherence — before recruiting stakeholders.',
+    'Outputs map pharmacy–IT–quality coalitions, test ROI narratives with chief pharmacists, and capture Wasfaty-linked ambulatory nuances in Saudi Arabia plus emirate-level e-Rx maturity in the UAE — without republishing speculative software market-size totals.',
+    'Start from our healthcare market research hub for GCC programme design, then request a medication-management module scoped to automation, e-Rx, or adherence.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1581,9 +1761,55 @@ const gccMedicationManagement: SpecialtyMarketDemandContent = {
       answer:
         'Hospital pharmacy automation, e-prescribing and closed-loop medication systems, inventory visibility, and adherence / patient-support programmes — researched through pharmacy, IT, and clinical stakeholders across Gulf markets.',
     },
+    {
+      question: 'What does GCC medication management market research cover?',
+      answer:
+        'Buyer coalition mapping, Wasfaty-linked ambulatory workflows in Saudi Arabia, emirate-level e-Rx maturity in UAE, tender scoring for ADC and closed-loop systems, and adherence programme sponsorship criteria.',
+    },
+    {
+      question: 'How is medication management different from GCC pharmacy market sizing?',
+      answer:
+        'Sizing reports describe spend; our research explains who funds automation, what ROI narratives survive capital committees, and which vendors win renewals after go-live.',
+    },
+    {
+      question: 'Can BioNixus run bilingual GCC pharmacy interviews?',
+      answer:
+        'Yes. Arabic and English modules are standard for Saudi and UAE hospital stakeholders; proposals note privacy and hospital communication rules before fieldwork.',
+    },
+    {
+      question: 'What is the difference between medication management and pharmacy market research?',
+      answer:
+        'Pharmacy market pages describe category structure; medication management research explains who funds closed-loop systems, which ROI stories survive capital committees, and why vendors win or lose renewals after go-live — based on primary interviews, not syndicated sizing.',
+    },
+    {
+      question: 'Does BioNixus estimate GCC medication management software market size?',
+      answer:
+        'Not on public pages. Sizing belongs in scoped studies. Our GCC medication management work explains buyer coalitions, Wasfaty-linked workflows, tender scoring, and renewal drivers — the questions hospital CIOs and chief pharmacists actually answer in procurement meetings.',
+    },
   ],
   areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'],
   priority: 'later',
+  calendarBlocks: {
+    heading: 'GCC medication management programme timing',
+    items: [
+      {
+        period: 'Hospital greenfield go-live',
+        detail: 'Closed-loop and ADC decisions are locked 6–12 months before opening; research must precede vendor shortlists.',
+      },
+      {
+        period: 'Wasfaty policy updates',
+        detail: 'Saudi ambulatory workflow changes create new adherence and e-Rx opportunities — stakeholder maps need refreshing after major releases.',
+      },
+      {
+        period: 'Capital committee cycles',
+        detail: 'Q3–Q4 budgeting dominates ADC purchases in many systems; ROI narratives should be tested before finance gates.',
+      },
+      {
+        period: 'Post-implementation audits',
+        detail: '12-month go-live reviews decide renewals; win/loss-style interviews explain churn risk early.',
+      },
+    ],
+  },
 };
 
 const doxorubicinMarket: SpecialtyMarketDemandContent = {
@@ -1723,6 +1949,12 @@ const meaClinicalTrialImaging: SpecialtyMarketDemandContent = {
   priority: 'later',
 };
 
+function withLongForm(content: SpecialtyMarketDemandContent): SpecialtyMarketDemandContent {
+  const longFormSections = SPECIALTY_LONG_FORM_BY_SLUG[content.slug];
+  if (!longFormSections?.length) return content;
+  return { ...content, longFormSections };
+}
+
 export const SPECIALTY_MARKET_DEMAND_CONTENT: SpecialtyMarketDemandContent[] = [
   singaporeMedtechManufacturing,
   singaporePharmaceuticalMarket,
@@ -1743,7 +1975,7 @@ export const SPECIALTY_MARKET_DEMAND_CONTENT: SpecialtyMarketDemandContent[] = [
   gccMedicationManagement,
   doxorubicinMarket,
   meaClinicalTrialImaging,
-];
+].map(withLongForm);
 
 export const SPECIALTY_MARKET_DEMAND_BY_SLUG: Record<string, SpecialtyMarketDemandContent> =
   Object.fromEntries(SPECIALTY_MARKET_DEMAND_CONTENT.map((item) => [item.slug, item]));
