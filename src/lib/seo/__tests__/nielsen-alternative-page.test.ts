@@ -25,7 +25,7 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
   it('ships unique title, meta, one H1, canonical, and OG/Twitter tags', () => {
     expect(html).toContain('<title>NielsenIQ vs Competitors: Audit or Fieldwork (2026)</title>');
     expect(html).toMatch(
-      /<meta name="description" content="Nielsen competitors compared: keep NielsenIQ for national retail audits, brief BioNixus for named accounts, traditional trade and SKU-level cuts in 2026\.">/,
+      /<meta name="description" content="Nielsen alternatives compared for 2026: keep NielsenIQ for national retail audits, and brief BioNixus for named accounts, traditional trade and SKU-level cuts\.">/,
     );
     const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '';
     const description =
@@ -85,7 +85,7 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
     expect(schemas.some((node) => node['@type'] === 'ItemList')).toBe(true);
     expect(schemas.some((node) => node['@type'] === 'BreadcrumbList')).toBe(true);
     const page = schemas.find((node) => node['@type'] === 'WebPage');
-    expect(page?.dateModified).toBe('2026-10-27');
+    expect(page?.dateModified).toBe('2026-11-01');
     expect(html).toContain(saoPauloFieldOfficeSentence());
     expect(html).toContain(officeRoleLabel({ id: 'latam' }));
     expect(html).not.toMatch(/opening a São Paulo/i);

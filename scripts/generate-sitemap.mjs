@@ -142,6 +142,7 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'market-entry-research-singapore-southeast-asia',
   'brand-tracking-chinese-electronics-brands-middle-east',
   'chinese-suppliers-saudi-giga-projects-research',
+  'chinese-tourists-dubai-research',
   'market-research-companies-egypt',
 ]);
 
@@ -253,7 +254,7 @@ const extraStaticSitemapPages = [
   { path: '/b2c-industries', priority: '0.8', changefreq: 'monthly' },
   { path: '/pharma-healthcare-industries', priority: '0.8', changefreq: 'monthly' },
   { path: '/msl-insight-research-middle-east', priority: '0.8', changefreq: 'monthly' },
-  { path: '/heor-consulting', priority: '0.85', changefreq: 'monthly' },
+  { path: '/heor-consulting', priority: '0.85', changefreq: 'monthly', lastmod: '2026-11-01' },
 ];
 
 function urlEntry(loc, lastmod = null, changefreq = 'weekly', priority = '0.8', alternates = []) {
@@ -376,7 +377,7 @@ const staticPages = [
   { path: '/pharma-fieldwork-uae', priority: '0.8', changefreq: 'monthly' },
   { path: '/real-world-evidence', priority: '0.9', changefreq: 'weekly' },
   { path: '/real-world-evidence-gcc', priority: '0.8', changefreq: 'monthly' },
-  { path: '/heor-consulting', priority: '0.9', changefreq: 'weekly' },
+  { path: '/heor-consulting', priority: '0.9', changefreq: 'weekly', lastmod: '2026-11-01' },
   { path: '/heor-consulting-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
   { path: '/hta-studies-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
   { path: '/cost-effectiveness-analysis-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
@@ -437,7 +438,7 @@ const staticPages = [
   { path: '/sfda-market-access-strategy-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/biosimilar-market-entry-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-27' },
   { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-01' },
-  { path: '/nielsen-alternative', priority: '0.9', changefreq: 'monthly' },
+  { path: '/nielsen-alternative', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/kantar-alternative', priority: '0.88', changefreq: 'monthly' },
   { path: '/bionixus-vs-kantar', priority: '0.86', changefreq: 'monthly' },
   { path: '/gfk-alternative', priority: '0.88', changefreq: 'monthly' },
@@ -628,6 +629,7 @@ const staticPages = [
   { path: '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
+  { path: '/bionixus-industries/insights/chinese-tourists-dubai-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/pharma-healthcare-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2b-industries', priority: '0.7', changefreq: 'monthly' },
   { path: '/b2c-industries', priority: '0.7', changefreq: 'monthly' },
@@ -812,7 +814,7 @@ const staticPages = [
   { path: '/spain-medical-devices-market-report', priority: '0.88', changefreq: 'monthly' },
   { path: '/sweden-healthcare-market-report', priority: '0.85', changefreq: 'monthly' },
   { path: '/uae-influenza-vaccine-report', priority: '0.85', changefreq: 'monthly' },
-  { path: '/market-access', priority: '0.8', changefreq: 'monthly' },
+  { path: '/market-access', priority: '0.8', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/turkey-healthcare-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/turkey-medical-devices-market-report', priority: '0.83', changefreq: 'monthly' },
   { path: '/uae-healthcare-market-report', priority: '0.88', changefreq: 'monthly' },
@@ -1559,6 +1561,10 @@ const STATIC_PAGE_FILES = {
   ],
   '/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research': [
     'src/data/blog-chinese-suppliers-saudi-giga-projects-research.ts',
+    'src/data/articleWaves/buildWaveArticle.ts',
+  ],
+  '/bionixus-industries/insights/chinese-tourists-dubai-research': [
+    'src/data/blog-chinese-tourists-dubai-research.ts',
     'src/data/articleWaves/buildWaveArticle.ts',
   ],
   '/blog/obesity-market-research-kuwait': ['src/data/blog-kuwait-obesity-research-glp1-payers.ts'],

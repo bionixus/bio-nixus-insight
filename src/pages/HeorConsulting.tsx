@@ -4,12 +4,12 @@ export default function HeorConsulting() {
   return (
     <StrategicServicePage
       title="HEOR Consulting Services: Health Economics & Outcomes Research"
-      description="Bionixus HEOR consulting — economic models, RWE studies, payer evidence and value dossiers for pharma & medtech across emerging and developed markets."
+      description="HEOR consulting for pharma and medtech: cost-effectiveness models, budget impact, RWE and payer value dossiers. BioNixus HEOR services. 48-hour proposal."
       canonicalUrl="https://www.bionixus.com/heor-consulting"
       breadcrumbLabel="HEOR Consulting"
       h1="HEOR Consulting — GCC, Middle East & Europe"
       publishedAt="2026-06-26"
-      modifiedAt="2026-10-04"
+      modifiedAt="2026-11-01"
       answerBlock={{
         question: 'What is HEOR consulting, and what does a HEOR consultancy deliver?',
         answer:
