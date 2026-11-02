@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { GrowthStage } from '@/components/GrowthStage';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -114,7 +115,7 @@ const MethodologySection = ({ nestUnderParentH1 = false }: MethodologySectionPro
   return (
     <section
       id="methodology"
-      className="methodology premium-home-cream section-padding"
+      className="methodology premium-home-cream gl-host section-padding"
       lang={LANG_ATTR[language]}
       dir={language === 'ar' ? 'rtl' : undefined}
       ref={sectionRef}
@@ -135,7 +136,10 @@ const MethodologySection = ({ nestUnderParentH1 = false }: MethodologySectionPro
           ) : null}
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <GrowthStage shape="funnel" size={0.86} sizeMobile={0.9} className="mx-auto mb-14 mt-2 h-[240px] w-full max-w-md md:h-[310px]" />
+
+        <div className="grid gap-5 md:grid-cols-3" data-mv-process="">
+          <span className="mv-process-line hidden md:block" aria-hidden="true" />
           {data.steps.map((step, i) => (
             <article key={step.title} className="premium-card h-full sr sr-scale-up sr-spring">
               <span className="mb-5 block font-display text-3xl font-light text-[#C9A84C]">

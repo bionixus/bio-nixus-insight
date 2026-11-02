@@ -35,7 +35,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
       </div>
 
       <div className="relative mb-7 h-[200px]">
-        <div className="absolute right-5 top-2 z-10 rounded-[14px] border border-primary/25 bg-background/85 px-4 py-3 backdrop-blur">
+        <div className="hero-callout absolute right-5 top-2 z-10 rounded-[14px] border border-primary/25 bg-background/85 px-4 py-3 backdrop-blur">
           <p className="font-display text-[28px] font-bold leading-none tracking-tight text-primary">{d.calloutValue}</p>
           <p className="mt-1 text-[11px] text-white/35">{d.calloutLabel}</p>
           <p className="mt-0.5 text-[11px] font-medium text-[#14CFC8]">{d.calloutCagr}</p>
@@ -45,6 +45,11 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
             <linearGradient id="premiumGoldGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="rgba(201,168,76,0.25)" />
               <stop offset="100%" stopColor="rgba(201,168,76,0)" />
+            </linearGradient>
+            <linearGradient id="premiumScanGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="rgba(247,201,72,0)" />
+              <stop offset="50%" stopColor="rgba(247,201,72,0.55)" />
+              <stop offset="100%" stopColor="rgba(247,201,72,0)" />
             </linearGradient>
             <linearGradient id="premiumTealGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="rgba(14,165,160,0.12)" />
@@ -62,6 +67,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
           <path
             d="M20,120 C60,118 100,110 140,105 C180,100 220,98 260,88 C300,78 340,72 380,65 C420,58 460,50 490,45 L490,160 L20,160 Z"
             fill="url(#premiumTealGrad)"
+            className="hero-area"
           />
           <path
             d="M20,120 C60,118 100,110 140,105 C180,100 220,98 260,88 C300,78 340,72 380,65 C420,58 460,50 490,45"
@@ -70,11 +76,13 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
             strokeWidth="2.5"
             strokeLinecap="round"
             opacity="0.6"
+            pathLength={1}
+            className="hero-line hero-line--teal"
           />
           <path
             d="M20,140 C60,135 100,125 140,118 C180,108 220,95 260,82 C300,68 340,55 380,42 C420,32 460,25 490,18 L490,160 L20,160 Z"
             fill="url(#premiumGoldGrad)"
-            className="premium-chart-fade"
+            className="hero-area hero-area--gold"
           />
           <path
             d="M20,140 C60,135 100,125 140,118 C180,108 220,95 260,82 C300,68 340,55 380,42 C420,32 460,25 490,18"
@@ -82,10 +90,14 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
             stroke="#C9A84C"
             strokeWidth="2.5"
             strokeLinecap="round"
-            className="premium-chart-draw"
+            pathLength={1}
+            className="hero-line hero-line--gold"
           />
-          <circle cx="490" cy="18" r="4.5" fill="#C9A84C" className="premium-dot-fade" style={{ filter: 'drop-shadow(0 0 6px rgba(201,168,76,0.5))' }} />
-          <circle cx="490" cy="45" r="3.5" fill="#0EA5A0" className="premium-dot-fade" style={{ filter: 'drop-shadow(0 0 6px rgba(14,165,160,0.5))' }} />
+          <line x1="0" y1="14" x2="0" y2="160" className="hero-scan" stroke="url(#premiumScanGrad)" strokeWidth="1.5" />
+          <circle cx="490" cy="18" r="4.5" fill="none" stroke="#F7C948" strokeWidth="1.2" className="hero-ring" />
+          <circle cx="490" cy="45" r="3.5" fill="none" stroke="#14CFC8" strokeWidth="1.2" className="hero-ring hero-ring--teal" />
+          <circle cx="490" cy="18" r="4.5" fill="#C9A84C" className="hero-dot" style={{ filter: 'drop-shadow(0 0 6px rgba(201,168,76,0.5))' }} />
+          <circle cx="490" cy="45" r="3.5" fill="#0EA5A0" className="hero-dot" style={{ filter: 'drop-shadow(0 0 6px rgba(14,165,160,0.5))' }} />
           <line x1="20" y1="10" x2="38" y2="10" stroke="rgba(201,168,76,0.8)" strokeWidth="2" />
           <text x="42" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Archivo, 'Archivo Fallback', Arial, sans-serif">
             {d.legendGlobal}

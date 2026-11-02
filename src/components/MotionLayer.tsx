@@ -301,6 +301,48 @@ export default function MotionLayer() {
     }
   }, [pathname]);
 
+  // Process lines: steps light up in turn as the reader scrolls through them.
+  useEffect(() => {
+    if (!motionAllowed()) return;
+    let raf = 0;
+    let items: HTMLElement[] = [];
+    const collect = () => {
+      items = Array.from(document.querySelectorAll<HTMLElement>('[data-mv-process]'));
+    };
+    const update = () => {
+      raf = 0;
+      const vh = window.innerHeight || 800;
+      for (const el of items) {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -vh || r.top > vh * 2) continue;
+        const p = Math.min(1, Math.max(0, (vh * 0.78 - r.top) / (vh * 0.18 + r.height)));
+        el.style.setProperty('--p', p.toFixed(3));
+        const steps = Array.from(el.children).filter((c) => c.getAttribute('aria-hidden') !== 'true');
+        steps.forEach((step, i) => {
+          const lit = p >= (i + 0.35) / steps.length;
+          if (lit !== step.hasAttribute('data-lit')) step.toggleAttribute('data-lit', lit);
+        });
+      }
+    };
+    const onScroll = () => {
+      if (!raf) raf = window.requestAnimationFrame(update);
+    };
+    collect();
+    update();
+    const late = window.setTimeout(() => {
+      collect();
+      update();
+    }, 900);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.clearTimeout(late);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      window.cancelAnimationFrame(raf);
+    };
+  }, [pathname]);
+
   // Reading progress line.
   useEffect(() => {
     if (!motionAllowed()) return;

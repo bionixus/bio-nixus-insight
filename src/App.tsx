@@ -17,6 +17,7 @@ import CookieConsent from '@/components/CookieConsent';
 import WhatsAppProposalWidget from '@/components/WhatsAppProposalWidget';
 import NightThemeEffects from '@/components/NightThemeEffects';
 import MotionLayer from '@/components/MotionLayer';
+import GrowthEngineLayer from '@/components/GrowthEngineLayer';
 import { routes } from '@/routes';
 import { InitialDataProvider } from '@/contexts/InitialDataContext';
 
@@ -115,6 +116,7 @@ function AppProviders({ children }: { children: ReactNode }) {
           <Sonner />
           {children}
           <MotionLayer />
+          <GrowthEngineLayer />
           <LocalePrompt />
           <DeferredPageChrome />
           <DeferredAnalytics />

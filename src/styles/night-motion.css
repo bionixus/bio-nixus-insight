@@ -345,8 +345,158 @@ html[data-mv-route] main {
   transition: transform 1.2s var(--mv-ease-soft);
 }
 
+/* ---------- growth engine: WebGL particle figures (funnel, globe, growth bars) ---------- */
+/* The canvas sits behind the page; sections that host a figure turn transparent so it shows through. */
+.gl-field {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.4s var(--mv-ease-soft);
+}
+.gl-field.is-on {
+  opacity: 1;
+}
+html.gl-on body,
+html.gl-on #root,
+html.gl-on .min-h-screen.bg-background {
+  background-color: transparent;
+}
+html.gl-on .gl-host {
+  background: transparent;
+}
+.gl-stage {
+  pointer-events: none;
+}
+html:not(.gl-on) .gl-stage {
+  background: radial-gradient(closest-side, hsl(var(--primary) / 0.07), transparent 72%);
+}
+
+/* ---------- process line: steps light up as the reader scrolls through them ---------- */
+[data-mv-process] {
+  position: relative;
+}
+.mv-process-line {
+  position: absolute;
+  inset-inline: 0;
+  top: -26px;
+  height: 1px;
+  pointer-events: none;
+  background: hsl(var(--line-2));
+}
+.mv-process-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--heat);
+  box-shadow: 0 0 14px hsl(var(--primary) / 0.55);
+  transform: scaleX(var(--p, 0));
+  transform-origin: left center;
+}
+[dir='rtl'] .mv-process-line::after {
+  transform-origin: right center;
+}
+[data-mv-process] > .premium-card[data-lit] {
+  border-color: hsl(var(--primary) / 0.4);
+}
+[data-mv-process] > .premium-card[data-lit]::before {
+  opacity: 1;
+}
+[data-mv-process] > * > span:first-child {
+  transition: color 0.6s var(--mv-ease-soft), text-shadow 0.6s var(--mv-ease-soft);
+}
+[data-mv-process] > [data-lit] > span:first-child {
+  color: hsl(var(--accent));
+  text-shadow: 0 0 22px hsl(var(--primary) / 0.55);
+}
+
+/* ---------- hero dashboard chart: lines draw, areas rise, end points pulse, a scan line sweeps ---------- */
+.hero-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: mv-line 2.2s var(--mv-ease) 0.9s forwards;
+}
+.hero-line--teal {
+  animation-delay: 0.7s;
+}
+@keyframes mv-line {
+  to { stroke-dashoffset: 0; }
+}
+.hero-area {
+  opacity: 0;
+  animation: mv-area 1.4s var(--mv-ease-soft) 1.5s forwards;
+}
+.hero-area--gold {
+  animation-delay: 1.75s;
+}
+@keyframes mv-area {
+  to { opacity: 1; }
+}
+.hero-dot {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mv-dot 0.6s var(--mv-ease) 2.6s forwards;
+}
+@keyframes mv-dot {
+  from { opacity: 0; transform: scale(0.2); }
+  to { opacity: 1; transform: none; }
+}
+.hero-ring {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mv-ring 2.4s ease-out 3s infinite;
+}
+.hero-ring--teal {
+  animation-delay: 3.7s;
+}
+@keyframes mv-ring {
+  0% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(3.6); }
+}
+.hero-scan {
+  opacity: 0;
+  animation: mv-scan 7s var(--mv-ease-io) 3.4s infinite;
+}
+@keyframes mv-scan {
+  0% { transform: translateX(20px); opacity: 0; }
+  8% { opacity: 1; }
+  60% { transform: translateX(490px); opacity: 1; }
+  68%, 100% { transform: translateX(490px); opacity: 0; }
+}
+.hero-callout {
+  animation: mv-callout 0.9s var(--mv-ease) 1.9s both;
+}
+@keyframes mv-callout {
+  from { opacity: 0; transform: translateY(10px) scale(0.96); }
+}
+
+/* Report charts wait until they are on screen before they draw. */
+html.mv-on [data-mv]:not([data-mv-in]) :is(.report-chart-line, .report-bar-grow) {
+  animation-play-state: paused;
+}
+
 /* ---------- accessibility and print ---------- */
 @media (prefers-reduced-motion: reduce) {
+  .hero-line,
+  .hero-area,
+  .hero-dot,
+  .hero-callout {
+    animation: none !important;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  .hero-ring,
+  .hero-scan {
+    display: none;
+  }
+  .gl-field {
+    transition: none;
+  }
   .mwi,
   :is(h1, h2) em.mw-em .mwi,
   [data-hero-lcp] [data-intro],
