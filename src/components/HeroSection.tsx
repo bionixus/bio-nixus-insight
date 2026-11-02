@@ -86,18 +86,18 @@ const HeroSection = () => {
               </span>
             </div>
 
-            <h1 className="sr-lcp mb-8 font-display text-[clamp(2.6rem,5.4vw,5.1rem)] font-bold leading-[0.98] tracking-[-0.03em] text-foreground text-balance">
+            <h1 className="sr-lcp mb-7 font-display text-[clamp(2.8rem,4.5vw,4.2rem)] font-light leading-[1.12] tracking-tight text-foreground text-balance">
               {lead && emphasis ? (
                 <>
                   {lead.nodes}{' '}
-                  <em className="mw-em">{emphasis.nodes}</em>
+                  <em className="mw-em font-medium not-italic">{emphasis.nodes}</em>
                 </>
               ) : (
                 plainTitle?.nodes
               )}
             </h1>
 
-            <p className="mb-11 max-w-[560px] text-[1.08rem] leading-[1.75] text-muted-foreground md:text-[1.15rem]" data-intro="lede">
+            <p className="mb-11 max-w-[560px] text-[17px] font-light leading-[1.8] text-muted-foreground" data-intro="lede">
               {hero.subtitle}
             </p>
 
@@ -106,14 +106,14 @@ const HeroSection = () => {
             <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-center" data-intro="3">
               <Link
                 to={contactPath}
-                className="premium-gold-btn group px-8 py-[1.05rem] text-[0.95rem]"
+                className="premium-gold-btn group px-8 py-[1.05rem] text-sm font-semibold tracking-wide"
               >
                 {hero.ctaPremium ?? hero.cta}
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100" aria-hidden="true" />
               </Link>
               <Link
                 to="#methodology"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-line-2 px-7 py-[1.05rem] text-[0.95rem] font-semibold text-foreground transition-colors hover:border-ink-3 hover:bg-white/[0.04]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-line-2 px-7 py-[1.05rem] text-sm font-normal tracking-wide text-foreground transition-colors hover:border-ink-3 hover:bg-white/[0.04]"
               >
                 <span aria-hidden="true">◈</span>
                 {hero.ctaSecondary}
@@ -139,7 +139,7 @@ const HeroSection = () => {
                   </span>
                 ))}
               </div>
-              <p className="text-[13px] leading-snug text-ink-3">
+              <p className="text-[13px] font-light leading-snug text-ink-3">
                 {t.homePage.heroTrust.primary}{' '}
                 <strong className="font-medium text-ink-2">{t.homePage.heroTrust.stats}</strong>
               </p>

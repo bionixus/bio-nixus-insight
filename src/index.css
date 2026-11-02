@@ -1,67 +1,7 @@
 /* BioNixus night theme — the dark, editorial system shared with alsaadany.com, in BioNixus
-   navy and gold. Self-hosted fonts (public/fonts, OFL), preloaded in index.html; metric-matched
-   fallbacks keep layout shift low while they load. Light-theme utility colours still used by
-   older pages are adapted to the night palette at build time by lib/postcss-night-theme.mjs. */
-
-@font-face {
-  font-family: "Archivo";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  font-stretch: 62% 125%;
-  src: url("/fonts/archivo-latin.woff2") format("woff2-variations"), url("/fonts/archivo-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Archivo";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  font-stretch: 62% 125%;
-  src: url("/fonts/archivo-latin-ext.woff2") format("woff2-variations"), url("/fonts/archivo-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: "Martian Mono";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 800;
-  src: url("/fonts/martian-mono-latin.woff2") format("woff2-variations"), url("/fonts/martian-mono-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Bodoni Moda";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 400 900;
-  src: url("/fonts/bodoni-moda-italic-latin.woff2") format("woff2-variations"), url("/fonts/bodoni-moda-italic-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Alexandria";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("/fonts/alexandria-arabic.woff2") format("woff2-variations"), url("/fonts/alexandria-arabic.woff2") format("woff2");
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
-}
-/* Metric-matched local fallbacks (Archivo: ascent .878, descent .21; avg width ≈ Arial × 1.01). */
-@font-face {
-  font-family: "Archivo Fallback";
-  src: local("Arial"), local("Helvetica Neue"), local("Liberation Sans"), local("Roboto");
-  size-adjust: 101%;
-  ascent-override: 87%;
-  descent-override: 20.8%;
-  line-gap-override: 0%;
-}
-@font-face {
-  font-family: "Martian Mono Fallback";
-  src: local("Menlo"), local("Consolas"), local("DejaVu Sans Mono"), local("Liberation Mono");
-  size-adjust: 116%;
-  ascent-override: 86%;
-  descent-override: 17%;
-  line-gap-override: 0%;
-}
+   navy and gold, on the original BioNixus type (Playfair Display / Inter stacks). Light-theme
+   utility colours still used by older pages are adapted to the night palette at build time by
+   lib/postcss-night-theme.mjs. */
 
 @tailwind base;
 @tailwind components;
@@ -135,10 +75,9 @@
     --shadow-xl: 0 30px 60px -24px rgb(0 0 0 / 0.65);
     --shadow-elegant: 0 30px 70px -30px rgb(0 0 0 / 0.75), 0 0 0 1px hsl(var(--line));
 
-    --font-display: "Archivo", "Archivo Fallback", "Helvetica Neue", Arial, sans-serif;
-    --font-body: "Archivo", "Archivo Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --font-accent: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
-    --font-mono: "Martian Mono", "Martian Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    /* Typography (unchanged from the original site) */
+    --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
     --sidebar-background: var(--night-2);
     --sidebar-foreground: var(--ink);
@@ -150,12 +89,6 @@
     --sidebar-ring: 38 92% 50%;
   }
 
-  :root[lang="ar"],
-  [lang="ar"] {
-    --font-display: "Alexandria", "Archivo", "Noto Kufi Arabic", "Segoe UI", Tahoma, sans-serif;
-    --font-body: "Alexandria", "Archivo", "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif;
-    --font-mono: "Alexandria", "Martian Mono", "Segoe UI", Tahoma, sans-serif;
-  }
 }
 
 @layer base {
@@ -175,8 +108,6 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
-    line-height: 1.65;
-    -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
     max-width: 100%;
   }
@@ -189,12 +120,6 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-stretch: 110%;
-    letter-spacing: -0.022em;
-    text-wrap: balance;
-  }
-  h1, h2 {
-    line-height: 1.06;
   }
 
   ::selection {
@@ -373,9 +298,9 @@
     border: 0;
     background: linear-gradient(100deg, hsl(var(--accent)), hsl(var(--primary)));
     padding: 0.95rem 1.7rem;
-    font-size: 0.92rem;
-    font-weight: 650;
-    letter-spacing: 0.005em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     color: hsl(var(--on-gold));
     box-shadow: 0 14px 40px -14px hsl(var(--gold-glow) / 0.6), inset 0 1px 0 rgb(255 255 255 / 0.35);
     transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), filter 0.3s var(--ease);
@@ -451,10 +376,9 @@
     color: hsl(var(--accent));
     border-radius: 999px;
     padding: 0.4rem 0.9rem;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
   .directory-stat {
@@ -468,8 +392,6 @@
   }
   .directory-stat-value {
     font-family: var(--font-display);
-    font-stretch: 112%;
-    font-weight: 750;
     font-size: 1.85rem;
     line-height: 1.1;
     color: hsl(var(--foreground));
@@ -521,11 +443,8 @@
   .directory-table thead th {
     background: hsl(var(--night-3));
     color: hsl(var(--foreground));
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     text-align: left;
     padding: 0.95rem 1rem;
     border-bottom: 1px solid hsl(var(--primary) / 0.35);
@@ -553,8 +472,7 @@
   }
   .directory-rank {
     font-variant-numeric: tabular-nums;
-    font-family: var(--font-mono);
-    font-weight: 500;
+    font-weight: 600;
     color: hsl(var(--primary));
     letter-spacing: 0.04em;
   }

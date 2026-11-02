@@ -110,7 +110,7 @@ const Navbar = () => {
                 key={item.key}
                 to={item.href}
                 className={`nav-link hover:text-foreground ${
-                  isActiveHref(item.href) ? 'text-foreground' : 'text-muted-foreground'
+                  isActiveHref(item.href) ? 'text-foreground font-medium' : 'text-muted-foreground'
                 }`}
                 aria-current={isActiveHref(item.href) ? 'page' : undefined}
               >
@@ -139,7 +139,7 @@ const Navbar = () => {
                   aria-label={`${ui.nav.language}: ${currentLang?.name ?? 'English'}`}
                 >
                   <span aria-hidden>{currentLang?.flag}</span>
-                  <span className="font-mono text-[0.72rem] tracking-[0.1em] text-muted-foreground">{currentLang?.code.toUpperCase()}</span>
+                  <span className="text-muted-foreground">{currentLang?.code.toUpperCase()}</span>
                   <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" aria-hidden />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="min-w-[150px]">
@@ -164,7 +164,7 @@ const Navbar = () => {
 
               <Link
                 to={contactPath}
-                className="px-5 py-2.5 bg-primary text-primary-foreground rounded-full font-semibold text-sm"
+                className="px-5 py-2.5 bg-primary text-primary-foreground rounded-full font-medium text-sm"
                 aria-current={isActiveHref(contactPath) ? 'page' : undefined}
               >
                 {t.nav.contact}
@@ -199,7 +199,7 @@ const Navbar = () => {
                 <Link
                   key={item.key}
                   to={item.href}
-                  className={`font-display text-2xl font-semibold tracking-tight hover:text-foreground ${
+                  className={`font-medium hover:text-foreground ${
                     isActiveHref(item.href) ? 'text-foreground' : 'text-muted-foreground'
                   }`}
                   aria-current={isActiveHref(item.href) ? 'page' : undefined}
@@ -217,7 +217,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to={contactPath}
-                className="px-5 py-3 bg-primary text-primary-foreground rounded-full font-semibold text-sm text-center"
+                className="px-5 py-3 bg-primary text-primary-foreground rounded-full font-medium text-sm text-center"
                 onClick={() => setIsOpen(false)}
               >
                 {t.nav.contact}

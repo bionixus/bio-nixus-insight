@@ -27,7 +27,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
         aria-hidden="true"
       />
       <div className="mb-7 flex items-center justify-between gap-4">
-        <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">{d.heading}</h2>
+        <h2 className="font-display text-lg font-normal tracking-wide text-foreground">{d.heading}</h2>
         <span className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-[#14CFC8]">
           <span className="premium-live-pulse h-1.5 w-1.5 rounded-full bg-[#14CFC8]" />
           {d.status}
@@ -36,7 +36,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
 
       <div className="relative mb-7 h-[200px]">
         <div className="hero-callout absolute right-5 top-2 z-10 rounded-[14px] border border-primary/25 bg-background/85 px-4 py-3 backdrop-blur">
-          <p className="font-display text-[28px] font-bold leading-none tracking-tight text-primary">{d.calloutValue}</p>
+          <p className="font-display text-[28px] font-medium leading-none text-primary">{d.calloutValue}</p>
           <p className="mt-1 text-[11px] text-white/35">{d.calloutLabel}</p>
           <p className="mt-0.5 text-[11px] font-medium text-[#14CFC8]">{d.calloutCagr}</p>
         </div>
@@ -60,7 +60,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
             <line key={y} x1="0" y1={y} x2="500" y2={y} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
           ))}
           {axisYears.map(({ label, x }) => (
-            <text key={label} x={x} y="175" fill="rgba(255,255,255,0.25)" fontSize="10" fontFamily="Martian Mono, ui-monospace, monospace">
+            <text key={label} x={x} y="175" fill="rgba(255,255,255,0.25)" fontSize="10" fontFamily="Inter, sans-serif">
               {label}
             </text>
           ))}
@@ -99,11 +99,11 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
           <circle cx="490" cy="18" r="4.5" fill="#C9A84C" className="hero-dot" style={{ filter: 'drop-shadow(0 0 6px rgba(201,168,76,0.5))' }} />
           <circle cx="490" cy="45" r="3.5" fill="#0EA5A0" className="hero-dot" style={{ filter: 'drop-shadow(0 0 6px rgba(14,165,160,0.5))' }} />
           <line x1="20" y1="10" x2="38" y2="10" stroke="rgba(201,168,76,0.8)" strokeWidth="2" />
-          <text x="42" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Archivo, 'Archivo Fallback', Arial, sans-serif">
+          <text x="42" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Inter, sans-serif">
             {d.legendGlobal}
           </text>
           <line x1="130" y1="10" x2="148" y2="10" stroke="rgba(14,165,160,0.5)" strokeWidth="2" />
-          <text x="152" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Archivo, 'Archivo Fallback', Arial, sans-serif">
+          <text x="152" y="14" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="Inter, sans-serif">
             {d.legendRegional}
           </text>
         </svg>
@@ -116,7 +116,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
             className="rounded-[16px] border border-line bg-white/[0.02] px-4 py-4 text-center transition-colors hover:border-primary/25 hover:bg-primary/[0.04]"
           >
             <p className="mb-1.5 text-[10px] font-medium uppercase tracking-wider text-ink-3">{metric.label}</p>
-            <p className="font-display text-lg font-bold tracking-tight text-foreground">{metric.value}</p>
+            <p className="font-display text-base font-medium text-foreground">{metric.value}</p>
             <p className="mt-0.5 text-[11px] text-white/25">{metric.sub}</p>
           </div>
         ))}

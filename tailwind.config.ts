@@ -29,11 +29,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["var(--font-display)"],
-        body: ["var(--font-body)"],
-        sans: ["var(--font-body)"],
-        mono: ["var(--font-mono)"],
-        accent: ["var(--font-accent)"],
+        display: ["Playfair Display", "Georgia", "Times New Roman", "serif"],
+        body: ["Inter", "system-ui", "-apple-system", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

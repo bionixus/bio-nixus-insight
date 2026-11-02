@@ -10,7 +10,7 @@ export function PremiumComplianceRibbon() {
         {badges.map((item) => (
           <span
             key={item}
-            className="inline-flex items-start gap-2.5 font-mono text-[10.5px] font-medium uppercase leading-snug tracking-[0.05em] text-ink-2"
+            className="inline-flex items-start gap-2 text-[11px] leading-snug tracking-wide text-ink-2 md:text-xs"
           >
             <span className="mt-0.5 shrink-0 text-primary" aria-hidden="true">
               ◆

@@ -19,43 +19,10 @@
 }
 
 /* ---------- type ---------- */
-body {
-  font-feature-settings: 'ss01', 'cv11';
-}
+/* Typefaces, weights and sizes stay exactly as on the original site; only colour changes here. */
 
-h1 {
-  font-weight: 760;
-  font-stretch: 112%;
-  letter-spacing: -0.03em;
-}
-:is(h1, h2, h3).font-light,
-:is(h1, h2, h3).font-normal {
-  font-weight: 560;
-}
-:is(h1, h2, h3).font-semibold {
-  font-weight: 700;
-}
-:is(h1, h2, h3).font-bold {
-  font-weight: 760;
-}
-
-/* Section titles were sized for the light layout; give them the alsaadany.com display scale. */
-h2.text-3xl:is([class*='md:text-4xl'], [class*='lg:text-5xl']),
-h2.text-4xl,
-h2.text-5xl {
-  font-size: clamp(2rem, 1.1rem + 2.4vw, 3.15rem);
-  line-height: 1.04;
-  letter-spacing: -0.028em;
-}
-
-/* Italic emphasis inside headings: Bodoni italic with the BioNixus heat gradient. */
+/* Emphasis inside headings keeps its original type and carries the BioNixus heat gradient. */
 :is(h1, h2) em {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 500;
-  font-stretch: normal;
-  letter-spacing: -0.01em;
-  padding-inline-end: 0.04em;
   background: var(--heat);
   background-size: 220% 100%;
   -webkit-background-clip: text;
@@ -64,31 +31,9 @@ h2.text-5xl {
   -webkit-text-fill-color: transparent;
   animation: night-heat 7s ease-in-out infinite alternate;
 }
-[lang='ar'] :is(h1, h2) em,
-:is(h1, h2):lang(ar) em {
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0;
-}
 @keyframes night-heat {
   from { background-position: 0% 50%; }
   to { background-position: 100% 50%; }
-}
-
-/* Eyebrows, kickers and labels (uppercase + tracking) speak in mono, like alsaadany.com. */
-.uppercase:not(.font-mono):is([class*='tracking-wide'], [class*='tracking-widest'], [class*='tracking-wider'], [class*='tracking-[']) {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  letter-spacing: 0.14em;
-}
-.uppercase:not(.font-mono):is([class*='tracking-wide'], [class*='tracking-widest'], [class*='tracking-wider'], [class*='tracking-[']):is(.text-xs, .text-sm, [class*='text-[1'], [class*='text-[0.'], [class*='text-[9'], [class*='text-[8']) {
-  font-size: 0.7rem;
-}
-[lang='ar'] .uppercase:is([class*='tracking-']),
-.uppercase:is([class*='tracking-']):lang(ar) {
-  letter-spacing: 0;
-  font-weight: 600;
 }
 
 /* Long-form reading comfort on night */
@@ -203,10 +148,6 @@ a.bg-card.border:hover {
 :is(thead, tr).bg-primary th,
 th.bg-primary {
   color: hsl(var(--accent));
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
   border-bottom: 1px solid hsl(var(--primary) / 0.35);
 }
 :is(thead, tr).bg-primary :is(th, td).text-primary-foreground {
@@ -244,6 +185,11 @@ hr {
 :is([class*='logo'], [aria-label*='logo' i]) .bg-white,
 .bg-white:has(> img[alt*='logo' i]:only-child) {
   background-color: #f6f3ec;
+}
+
+/* Disclosure rows: hide the native marker in Safari (the list-none class covers the rest). */
+details > summary.list-none::-webkit-details-marker {
+  display: none;
 }
 
 /* ---------- motion ---------- */

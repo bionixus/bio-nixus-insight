@@ -11,11 +11,10 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/icons/bnx-favicon-48.png" />
     <link rel="apple-touch-icon" href="/icons/bnx-apple-touch.png" />
     <link rel="manifest" href="/icons/site.webmanifest" />
-    <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#050A14" />
     <style id="critical-lcp">
       :root{color-scheme:dark;--background:220 60% 5%;--foreground:40 33% 93%;--primary:38 92% 50%;--primary-foreground:219 54% 8.5%;--muted:220 46% 12.9%;--muted-foreground:221 20% 72%;--border:222 38% 18.3%;--card:219 54% 8.5%;--accent:42 95% 65%}
-      html,body,#root{margin:0;background:#050A14;color:#F3EFE7;font-family:Archivo,"Archivo Fallback",system-ui,-apple-system,sans-serif}
+      html,body,#root{margin:0;background:#050A14;color:#F3EFE7;font-family:system-ui,-apple-system,sans-serif}
       body{min-height:100vh}
       a{color:inherit;text-decoration:none}
       nav{background:transparent}
@@ -23,8 +22,8 @@
       [data-report-hero] h1,[data-report-hero] img,[data-report-hero] figure,[data-hero-lcp] h1,[data-hero-lcp] .premium-fade-up,[data-hero-lcp] .premium-scale-in,.sr-lcp,main h1{opacity:1!important;transform:none!important;animation:none!important;visibility:visible}
       [data-report-hero] .report-chart-line,[data-report-hero] .report-bar-grow,[data-report-hero] .float-gentle,[data-report-hero] .float-gentle-delayed{animation:none!important;stroke-dashoffset:0!important;transform:none!important}
       [data-hero-lcp]{background:#050A14}
-      main h1{font-family:Archivo,"Archivo Fallback","Helvetica Neue",Arial,sans-serif;font-weight:760;font-stretch:112%;letter-spacing:-0.03em;line-height:1.06;color:#F3EFE7}
-      [data-hero-lcp] h1,[data-hero-lcp] .sr-lcp{color:#F3EFE7!important}
+      main h1{font-family:Georgia,'Times New Roman',serif;font-weight:600;line-height:1.2;color:#F3EFE7}
+      [data-hero-lcp] h1,[data-hero-lcp] .sr-lcp{color:#F3EFE7!important;font-weight:300}
     </style>
     <!-- Core Web Vitals: do not high-priority-preload the nav logo — it steals bandwidth from LCP (H1 / hero). -->
     <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />

@@ -219,20 +219,15 @@ html[data-mv-route] main {
 }
 .mv-curtain__label {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(2.6rem, 9vw, 7rem);
   line-height: 1.2;
-  font-stretch: 120%;
   padding: 0.1em 0.2em;
   background: var(--heat);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-}
-.mv-curtain__label:lang(ar),
-.mv-curtain__label:lang(zh) {
-  font-stretch: normal;
 }
 .mv-curtain.is-on .mv-curtain__label {
   animation: mv-curtain-label 1.15s var(--mv-ease) both;
@@ -310,9 +305,6 @@ html[data-mv-route] main {
 }
 .animate-marquee span.font-display {
   font-size: clamp(1.25rem, 2.2vw, 1.85rem);
-  font-weight: 700;
-  font-stretch: 122%;
-  letter-spacing: -0.01em;
   color: transparent;
   -webkit-text-stroke: 1px hsl(var(--ink-3));
   transition: color 0.4s, -webkit-text-stroke-color 0.4s;
