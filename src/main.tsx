@@ -3,6 +3,7 @@ import App from "./App.tsx";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import "./index.css";
 import "./styles/night-theme.css";
+import "./styles/night-motion.css";
 
 function showError(message: string, detail?: string) {
   const root = document.getElementById("root");

@@ -5,6 +5,32 @@ import { PremiumHeroDashboard } from '@/components/home/PremiumHeroDashboard';
 import { PremiumHeroOrbitals } from '@/components/home/PremiumHeroOrbitals';
 import { HeroParticles } from '@/components/home/HeroParticles';
 import { ArrowRight } from 'lucide-react';
+import type { ReactNode } from 'react';
+
+/**
+ * Splits a headline into word masks for the hero intro (CSS animates .mwi from first paint).
+ * Spaces stay as plain text nodes, so the heading's text content is unchanged.
+ */
+function splitWords(text: string, startIndex: number): { nodes: ReactNode[]; next: number } {
+  const nodes: ReactNode[] = [];
+  let index = startIndex;
+  text.split(/(\s+)/).forEach((part, k) => {
+    if (!part) return;
+    if (/^\s+$/.test(part)) {
+      nodes.push(part);
+      return;
+    }
+    nodes.push(
+      <span key={k} className="mw">
+        <span className="mwi" data-w={index}>
+          {part}
+        </span>
+      </span>,
+    );
+    index += 1;
+  });
+  return { nodes, next: index };
+}
 
 const HeroSection = () => {
   const { t, language, isRTL } = useLanguage();
@@ -14,6 +40,9 @@ const HeroSection = () => {
     ctaPremium?: string;
   };
   const basePath = languagePaths[language] || '/';
+  const lead = hero.titleLead && hero.titleEmphasis ? splitWords(hero.titleLead, 0) : null;
+  const emphasis = lead && hero.titleEmphasis ? splitWords(hero.titleEmphasis, lead.next) : null;
+  const plainTitle = lead ? null : splitWords(hero.title ?? "", 0);
   const contactPath =
     language === 'fr' ? '/fr/contact' : language === 'ar' ? '/ar/contact' : `${basePath === '/' ? '' : basePath}/contact`;
 
@@ -50,7 +79,7 @@ const HeroSection = () => {
       <div className="relative z-10 container-wide mx-auto w-full max-w-[1320px] pb-20 pt-32 sm:pt-36">
         <div className="grid items-center gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
           <div className="max-w-[640px] premium-fade-up">
-            <div className="mb-8 inline-flex items-center gap-3">
+            <div className="mb-8 inline-flex items-center gap-3" data-intro="1">
               <span className="h-px w-10 bg-gradient-to-r from-teal-glow/70 to-primary" aria-hidden="true" />
               <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-ink-2">
                 {hero.tagline}
@@ -58,25 +87,23 @@ const HeroSection = () => {
             </div>
 
             <h1 className="sr-lcp mb-8 font-display text-[clamp(2.6rem,5.4vw,5.1rem)] font-bold leading-[0.98] tracking-[-0.03em] text-foreground text-balance">
-              {hero.titleLead && hero.titleEmphasis ? (
+              {lead && emphasis ? (
                 <>
-                  {hero.titleLead}{' '}
-                  <em>
-                    {hero.titleEmphasis}
-                  </em>
+                  {lead.nodes}{' '}
+                  <em className="mw-em">{emphasis.nodes}</em>
                 </>
               ) : (
-                hero.title
+                plainTitle?.nodes
               )}
             </h1>
 
-            <p className="mb-11 max-w-[560px] text-[1.08rem] leading-[1.75] text-muted-foreground md:text-[1.15rem]">
+            <p className="mb-11 max-w-[560px] text-[1.08rem] leading-[1.75] text-muted-foreground md:text-[1.15rem]" data-intro="lede">
               {hero.subtitle}
             </p>
 
             <PremiumHeroDashboard className="premium-scale-in mb-10 lg:hidden" />
 
-            <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-center" data-intro="3">
               <Link
                 to={contactPath}
                 className="premium-gold-btn group px-8 py-[1.05rem] text-[0.95rem]"
@@ -93,7 +120,7 @@ const HeroSection = () => {
               </Link>
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5" data-intro="4">
               <div className="flex -space-x-2.5" aria-hidden="true">
                 {t.ui.brands.initials.map((initials, i) => (
                   <span

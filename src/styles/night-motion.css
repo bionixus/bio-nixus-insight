@@ -1,0 +1,386 @@
+/*
+ * Night motion layer: the alsaadany.com motion language on BioNixus.
+ * Progressive by design: without JavaScript nothing is hidden (the reveal states only apply under
+ * html.mv-on, which MotionLayer sets), and prefers-reduced-motion turns every animation off.
+ * Styling only: no rule here adds, removes or reorders content.
+ */
+:root {
+  --mv-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --mv-ease-soft: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --mv-ease-io: cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+/* ---------- hero intro (CSS-driven from first paint, so it never waits for JavaScript) ---------- */
+/* Headline words rise out of a mask, one after another. */
+.mw {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-block: 0.1em 0.16em;
+  margin-block: -0.1em -0.16em;
+  padding-inline: 0.02em 0.12em;
+  margin-inline: -0.02em -0.12em;
+}
+.mwi {
+  display: inline-block;
+  animation: mv-rise 1.2s var(--mv-ease) var(--wd, 0s) both;
+}
+@keyframes mv-rise {
+  from { transform: translateY(118%); }
+}
+.mwi[data-w='0'] { --wd: 0.080s; }
+.mwi[data-w='1'] { --wd: 0.135s; }
+.mwi[data-w='2'] { --wd: 0.190s; }
+.mwi[data-w='3'] { --wd: 0.245s; }
+.mwi[data-w='4'] { --wd: 0.300s; }
+.mwi[data-w='5'] { --wd: 0.355s; }
+.mwi[data-w='6'] { --wd: 0.410s; }
+.mwi[data-w='7'] { --wd: 0.465s; }
+.mwi[data-w='8'] { --wd: 0.520s; }
+.mwi[data-w='9'] { --wd: 0.575s; }
+.mwi[data-w='10'] { --wd: 0.630s; }
+.mwi[data-w='11'] { --wd: 0.685s; }
+.mwi[data-w='12'] { --wd: 0.740s; }
+.mwi[data-w='13'] { --wd: 0.795s; }
+.mwi[data-w='14'] { --wd: 0.850s; }
+.mwi[data-w='15'] { --wd: 0.905s; }
+.mwi[data-w='16'] { --wd: 0.960s; }
+.mwi[data-w='17'] { --wd: 1.015s; }
+.mwi[data-w='18'] { --wd: 1.070s; }
+.mwi[data-w='19'] { --wd: 1.125s; }
+.mwi[data-w='20'] { --wd: 1.180s; }
+.mwi[data-w='21'] { --wd: 1.235s; }
+.mwi[data-w='22'] { --wd: 1.290s; }
+.mwi[data-w='23'] { --wd: 1.345s; }
+.mwi[data-w='24'] { --wd: 1.400s; }
+.mwi[data-w='25'] { --wd: 1.455s; }
+.mwi[data-w='26'] { --wd: 1.510s; }
+.mwi[data-w='27'] { --wd: 1.565s; }
+/* Italic heat words: each word carries the gradient so it can move inside its mask. */
+:is(h1, h2) em.mw-em {
+  background: none;
+  animation: none;
+}
+:is(h1, h2) em.mw-em .mwi {
+  background: var(--heat);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: mv-rise 1.2s var(--mv-ease) var(--wd, 0s) both, night-heat 7s ease-in-out infinite alternate;
+}
+
+/* Supporting hero lines follow the headline. The lede only moves and sharpens (it stays painted,
+   which keeps it a fast LCP candidate); smaller items also fade. */
+[data-hero-lcp] [data-intro] {
+  animation: mv-intro 1.1s var(--mv-ease) var(--id, 0.45s) both;
+}
+[data-hero-lcp] [data-intro='lede'] {
+  --id: 0.3s;
+  animation-name: mv-intro-soft;
+}
+[data-hero-lcp] [data-intro='1'] { --id: 0.04s; }
+[data-hero-lcp] [data-intro='3'] { --id: 0.5s; }
+[data-hero-lcp] [data-intro='4'] { --id: 0.64s; }
+@keyframes mv-intro {
+  from { opacity: 0; transform: translateY(26px); }
+}
+@keyframes mv-intro-soft {
+  from { transform: translateY(18px); filter: blur(6px); }
+}
+
+/* Hero dashboard: rises out of a mask, then floats and tilts toward the pointer (desktop). */
+@media (min-width: 1024px) {
+  [data-hero-lcp] .hero-dash {
+    transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.9s var(--mv-ease);
+    animation: mv-dash-in 1.6s var(--mv-ease-io) 0.2s both, mv-float 7s ease-in-out 1.8s infinite alternate;
+  }
+  [data-hero-lcp] .hero-dash::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 0%), rgb(255 255 255 / 0.07), transparent 60%);
+    opacity: var(--glare, 0);
+    transition: opacity 0.6s var(--mv-ease-soft);
+  }
+}
+@keyframes mv-dash-in {
+  from { clip-path: inset(100% -40% -40% -40%); scale: 1.06; }
+  to { clip-path: inset(-40% -40% -40% -40%); scale: 1; }
+}
+@keyframes mv-float {
+  from { translate: 0 -5px; }
+  to { translate: 0 6px; }
+}
+
+/* ---------- scroll reveals (MotionLayer marks elements below the fold) ---------- */
+html.mv-on [data-mv] {
+  transition:
+    opacity 1s var(--mv-ease-soft) var(--mv-d, 0ms),
+    transform 1.2s var(--mv-ease) var(--mv-d, 0ms),
+    clip-path 1.2s var(--mv-ease) var(--mv-d, 0ms),
+    filter 1s var(--mv-ease-soft) var(--mv-d, 0ms);
+}
+html.mv-on [data-mv='up']:not([data-mv-in]) {
+  opacity: 0;
+  transform: translateY(36px);
+}
+/* Section titles rise from behind a fixed baseline: the clip moves against the transform. */
+html.mv-on [data-mv='h']:not([data-mv-in]) {
+  transform: translateY(100%);
+  clip-path: inset(-100% -6% 100% -6%);
+}
+html.mv-on [data-mv='h'][data-mv-in] {
+  clip-path: inset(-14% -6% -20% -6%);
+}
+html.mv-on [data-mv='img']:not([data-mv-in]) {
+  clip-path: inset(100% 0 0 0);
+  transform: scale(1.08);
+  filter: saturate(0.7) brightness(0.85);
+}
+html.mv-on [data-mv='img'][data-mv-in] {
+  clip-path: inset(0 0 0 0);
+}
+html.mv-on [data-mv]:focus-within {
+  opacity: 1;
+  transform: none;
+  clip-path: none;
+  filter: none;
+}
+[data-mv-counting] {
+  font-variant-numeric: tabular-nums;
+}
+/* The older reveal system animates its own headings; section titles take the mask rise instead. */
+html.mv-on h2.sr {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- page transitions ---------- */
+html[data-mv-route] main {
+  animation: mv-route-in 0.7s var(--mv-ease-soft) both;
+}
+@keyframes mv-route-in {
+  from { opacity: 0; }
+}
+.mv-route {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 2147482999;
+  height: 2px;
+  pointer-events: none;
+  background: var(--heat);
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+}
+[dir='rtl'] .mv-route {
+  transform-origin: right center;
+}
+.mv-route.is-play {
+  animation: mv-route-line 0.95s var(--mv-ease) both;
+}
+@keyframes mv-route-line {
+  0% { transform: scaleX(0); opacity: 1; }
+  65% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+/* Language switch: a night curtain carrying the new language name wipes across. */
+.mv-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 2147482998;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  visibility: hidden;
+  background: radial-gradient(70% 70% at 50% 50%, hsl(var(--night-3)), hsl(var(--night)) 70%);
+}
+.mv-curtain.is-on {
+  visibility: visible;
+  animation: mv-curtain-out 0.8s var(--mv-ease-io) 0.55s both;
+}
+.mv-curtain.is-on.is-rtl {
+  animation-name: mv-curtain-out-rtl;
+}
+@keyframes mv-curtain-out {
+  from { clip-path: inset(0 0 0 0); }
+  to { clip-path: inset(0 0 0 100%); visibility: hidden; }
+}
+@keyframes mv-curtain-out-rtl {
+  from { clip-path: inset(0 0 0 0); }
+  to { clip-path: inset(0 100% 0 0); visibility: hidden; }
+}
+.mv-curtain__label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 9vw, 7rem);
+  line-height: 1.2;
+  font-stretch: 120%;
+  padding: 0.1em 0.2em;
+  background: var(--heat);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.mv-curtain__label:lang(ar),
+.mv-curtain__label:lang(zh) {
+  font-stretch: normal;
+}
+.mv-curtain.is-on .mv-curtain__label {
+  animation: mv-curtain-label 1.15s var(--mv-ease) both;
+}
+@keyframes mv-curtain-label {
+  0% { opacity: 0; transform: translateY(24px); }
+  30% { opacity: 1; transform: none; }
+  62% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translateY(-18px); }
+}
+
+/* ---------- pointer craft (fine pointers only; MotionLayer creates these) ---------- */
+.mv-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483001;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  border: 1px solid rgb(243 239 231 / 0.35);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    width 0.35s var(--mv-ease-soft),
+    height 0.35s var(--mv-ease-soft),
+    margin 0.35s var(--mv-ease-soft),
+    background-color 0.35s,
+    border-color 0.35s,
+    opacity 0.3s;
+}
+.mv-cursor.is-on {
+  opacity: 1;
+}
+.mv-cursor.is-hover {
+  width: 62px;
+  height: 62px;
+  margin: -31px 0 0 -31px;
+  border-color: hsl(var(--primary));
+  background-color: hsl(var(--primary) / 0.1);
+}
+.mv-cursor.is-text {
+  opacity: 0;
+}
+
+/* Reading progress: a heat line across the top edge. */
+.mv-progress {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 2147482997;
+  height: 2px;
+  pointer-events: none;
+  background: var(--heat);
+  transform: scaleX(var(--mv-scroll, 0));
+  transform-origin: left center;
+  opacity: 0.85;
+}
+[dir='rtl'] .mv-progress {
+  transform-origin: right center;
+}
+
+/* ---------- small craft ---------- */
+/* Client-name marquee: outlined wide type that fills on hover, slower and edge-masked. */
+.overflow-hidden:has(> .animate-marquee) {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+}
+.overflow-hidden > .animate-marquee {
+  animation-duration: 70s;
+}
+.overflow-hidden:hover > .animate-marquee {
+  animation-play-state: paused;
+}
+.animate-marquee span.font-display {
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  font-stretch: 122%;
+  letter-spacing: -0.01em;
+  color: transparent;
+  -webkit-text-stroke: 1px hsl(var(--ink-3));
+  transition: color 0.4s, -webkit-text-stroke-color 0.4s;
+}
+.animate-marquee span.font-display:hover {
+  color: hsl(var(--foreground));
+  -webkit-text-stroke-color: transparent;
+}
+
+/* FAQ and other disclosures open smoothly where the browser supports animating to auto. */
+@supports (interpolate-size: allow-keywords) {
+  details {
+    interpolate-size: allow-keywords;
+  }
+  details::details-content {
+    height: 0;
+    overflow: clip;
+    transition: height 0.55s var(--mv-ease), content-visibility 0.55s allow-discrete;
+  }
+  details[open]::details-content {
+    height: auto;
+  }
+}
+
+/* Cards: images settle slowly on hover, like the alsaadany.com moments. */
+:is(a, .group):hover .overflow-hidden > img {
+  transform: scale(1.04);
+}
+.overflow-hidden > img {
+  transition: transform 1.2s var(--mv-ease-soft);
+}
+
+/* ---------- accessibility and print ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .mwi,
+  :is(h1, h2) em.mw-em .mwi,
+  [data-hero-lcp] [data-intro],
+  [data-hero-lcp] .hero-dash,
+  html[data-mv-route] main {
+    animation: none !important;
+  }
+  :is(h1, h2) em.mw-em .mwi {
+    background-position: 0% 50%;
+  }
+  .mv-cursor,
+  .mv-route,
+  .mv-curtain,
+  .mv-progress {
+    display: none !important;
+  }
+  .overflow-hidden > .animate-marquee {
+    animation-play-state: paused;
+  }
+  details::details-content {
+    transition: none;
+  }
+}
+@media print {
+  [data-mv] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    filter: none !important;
+  }
+  .mv-cursor,
+  .mv-route,
+  .mv-curtain,
+  .mv-progress {
+    display: none !important;
+  }
+}

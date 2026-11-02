@@ -16,6 +16,7 @@ import LocalePrompt from '@/components/LocalePrompt';
 import CookieConsent from '@/components/CookieConsent';
 import WhatsAppProposalWidget from '@/components/WhatsAppProposalWidget';
 import NightThemeEffects from '@/components/NightThemeEffects';
+import MotionLayer from '@/components/MotionLayer';
 import { routes } from '@/routes';
 import { InitialDataProvider } from '@/contexts/InitialDataContext';
 
@@ -113,6 +114,7 @@ function AppProviders({ children }: { children: ReactNode }) {
           <Toaster />
           <Sonner />
           {children}
+          <MotionLayer />
           <LocalePrompt />
           <DeferredPageChrome />
           <DeferredAnalytics />

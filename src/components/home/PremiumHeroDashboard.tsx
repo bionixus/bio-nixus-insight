@@ -20,7 +20,7 @@ export function PremiumHeroDashboard({ className = '' }: { className?: string })
 
   return (
     <div
-      className={`relative overflow-hidden rounded-[28px] border border-line bg-night-2/70 p-7 backdrop-blur-xl sm:p-9 shadow-[0_50px_110px_-40px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.05)] ${className}`.trim()}
+      className={`hero-dash relative overflow-hidden rounded-[28px] border border-line bg-night-2/70 p-7 backdrop-blur-xl sm:p-9 shadow-[0_50px_110px_-40px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.05)] ${className}`.trim()}
     >
       <div
         className="pointer-events-none absolute inset-x-[60px] top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"

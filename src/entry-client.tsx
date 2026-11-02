@@ -7,6 +7,7 @@ import App from './App';
 import { preloadRouteChunk } from '@/lib/preloadRouteChunk';
 import './index.css';
 import './styles/night-theme.css';
+import './styles/night-motion.css';
 
 declare global {
   interface Window {

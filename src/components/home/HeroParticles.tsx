@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 
 type Particle = { x: number; y: number; vx: number; vy: number; r: number; phase: number };
 
+const POINTER_R = 150;
+const POINTER_LINK = 170;
 const TEAL = [143, 227, 220];
 const GOLD = [247, 201, 72];
 const EMBER = [245, 165, 3];
@@ -40,6 +42,20 @@ export function HeroParticles({ className = '' }: { className?: string }) {
     let visible = true;
     let started = false;
     let last = 0;
+    // Pointer influence (fine pointers): particles part around the cursor and link to it.
+    let px = -9999;
+    let py = -9999;
+    let pointerIn = false;
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const onPointer = (e: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      px = e.clientX - rect.left;
+      py = e.clientY - rect.top;
+      pointerIn = px >= 0 && py >= 0 && px <= rect.width && py <= rect.height;
+    };
+    const onPointerLeave = () => {
+      pointerIn = false;
+    };
 
     const seed = () => {
       const area = width * height;
@@ -80,6 +96,33 @@ export function HeroParticles({ className = '' }: { className?: string }) {
           }
           if (p.y < -10) p.y = height + 10;
           if (p.y > height + 10) p.y = -10;
+          if (pointerIn) {
+            const dx = p.x - px;
+            const dy = p.y - py;
+            const d2 = dx * dx + dy * dy;
+            if (d2 < POINTER_R * POINTER_R) {
+              const d = Math.sqrt(d2) || 1;
+              const f = 1 - d / POINTER_R;
+              p.x += (dx / d) * f * 2.4 * dt;
+              p.y += (dy / d) * f * 2.4 * dt;
+            }
+          }
+        }
+      }
+      if (pointerIn && !still) {
+        for (const p of particles) {
+          const dx = p.x - px;
+          const dy = p.y - py;
+          const d2 = dx * dx + dy * dy;
+          if (d2 > POINTER_LINK * POINTER_LINK) continue;
+          const f = 1 - Math.sqrt(d2) / POINTER_LINK;
+          const [r, g, b] = warmth(Math.min(1, Math.max(0, p.x / width)));
+          ctx.strokeStyle = `rgba(${r},${g},${b},${(f * 0.32).toFixed(3)})`;
+          ctx.lineWidth = 0.7;
+          ctx.beginPath();
+          ctx.moveTo(px, py);
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
         }
       }
       for (let i = 0; i < particles.length; i++) {
@@ -149,6 +192,10 @@ export function HeroParticles({ className = '' }: { className?: string }) {
       }
     };
     document.addEventListener('visibilitychange', onVisibility);
+    if (fine && !still) {
+      window.addEventListener('pointermove', onPointer, { passive: true });
+      document.documentElement.addEventListener('mouseleave', onPointerLeave);
+    }
 
     const idle = window.requestIdleCallback
       ? window.requestIdleCallback(start, { timeout: 1800 })
@@ -161,6 +208,8 @@ export function HeroParticles({ className = '' }: { className?: string }) {
       ro.disconnect();
       io.disconnect();
       document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('pointermove', onPointer);
+      document.documentElement.removeEventListener('mouseleave', onPointerLeave);
     };
   }, []);
 
