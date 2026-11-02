@@ -68,6 +68,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   'egypt-eda-decree-480-drug-pricing-2026',
   'dksh-newbridge-acquisition-mena-launch-market-access',
+  'saudi-diabetes-syndicated-vs-hospital-switching',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -338,6 +339,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Women’s Health Market Research GCC: Fertility, PCOS 2026',
     description:
       'Women’s health market research in the GCC: new fertility deals, PCOS in Thiqa obesity cover and low menopause therapy use. What to ask doctors and patients.',
+  },
+  'saudi-diabetes-syndicated-vs-hospital-switching': {
+    title: 'Saudi Diabetes Research Still Misses Hospital Switching',
+    description:
+      'Syndicated Saudi diabetes numbers size the category. They still miss which hospital is switching, and what primary research a launch team must answer.',
   },
   'diabetes-market-research-uae-2026-price-cuts': {
     title: 'Diabetes Market Research UAE After 2026 Price Cuts',
