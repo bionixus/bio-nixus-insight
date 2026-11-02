@@ -30,7 +30,9 @@ describe('Japan, IQVIA alternatives, and China device inlinks (Nov 2026)', () =>
     const html = read('public/conf/iqvia-alternative.html');
     expect(html).toContain(`<title>${IQVIA_TITLE}</title>`);
     expect(html).toContain(IQVIA_DESCRIPTION);
-    expect(html).toContain('"dateModified":"2026-11-01"');
+    expect(html).toContain('"dateModified":"2026-11-02"');
+    expect(html).toContain('127 studies in 2026');
+    expect(html).not.toContain('127 projects in 2025');
   });
 
   it('ships full Japan listicle, directory, and PMR descriptions', () => {
@@ -78,8 +80,8 @@ describe('Japan, IQVIA alternatives, and China device inlinks (Nov 2026)', () =>
   });
 
   it('bumps sitemap lastmod for the changed pages', () => {
+    expect(sitemap).toMatch(/\/iqvia-alternative<\/loc>\s*<lastmod>2026-11-02<\/lastmod>/);
     for (const path of [
-      '/iqvia-alternative',
       '/insights/top-market-research-companies-japan-2026',
       '/pharmaceutical-companies-japan',
       '/pharmaceutical-market-research-japan',

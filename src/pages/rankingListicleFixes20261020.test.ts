@@ -42,7 +42,11 @@ describe('ranking listicle fixes 2026-10-20', () => {
     for (const path of PATHS) {
       const html = pages.get(path)!.html;
       const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '';
-      expect(h1, path).toMatch(/BioNixus/);
+      if (path === '/insights/top-market-research-companies-uae-2026') {
+        expect(h1, path).toContain('Top Market Research Company in UAE');
+      } else {
+        expect(h1, path).toMatch(/BioNixus/);
+      }
       expect(html, path).toContain('BioNixus wrote this list');
       expect(html, path).not.toMatch(/Ranked #1|ranks #1|ranks first|\(#1\b|rank ourselves first/);
       if (path === '/insights/top-market-research-companies-uae-2026') {

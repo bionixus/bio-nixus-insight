@@ -137,16 +137,15 @@ export default function MarketResearchCountryLanding({
             )}
             {contentKey === 'uae' && (
               <p className="text-muted-foreground leading-relaxed mb-4">
-                For an independent ranking of{' '}
+                For our 2026 comparison of{' '}
                 <Link
                   to="/insights/top-market-research-companies-uae-2026"
                   className="text-primary underline font-medium"
                 >
-                  market research firms UAE
+                  market research firms in the UAE
                 </Link>
                 {' '}
-                — BioNixus, IQVIA, Kantar, Ipsos, and local agencies — see the 2026 comparison, then return here to
-                scope a BioNixus programme.
+                (BioNixus wrote this list), see the guide, then return here to scope a BioNixus programme.
               </p>
             )}
             {contentKey === 'ar-uae' && (
