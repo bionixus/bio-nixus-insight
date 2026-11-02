@@ -524,7 +524,12 @@ const GccPharmaMarketReport2026 = () => {
               <div>
                 <h3 className="text-xl font-display font-semibold text-foreground mb-2">GCC biologics &amp; Middle East biologics</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Biologics spend is concentrated in Saudi Arabia and the UAE (~USD 4.8–5.4B GCC total). Deep dive:{' '}
+                  Biologics spend is concentrated in Saudi Arabia and the UAE (~USD 4.8–5.4B GCC total). For prescriber
+                  and access intelligence, see our{' '}
+                  <Link to="/middle-east-biologics-market" className="text-primary font-medium hover:underline">
+                    Middle East biologics market
+                  </Link>{' '}
+                  page. For immunology spend segmentation, see the{' '}
                   <Link to="/market-reports/gcc-immunology-biologics-market-report" className="text-primary font-medium hover:underline">
                     GCC immunology &amp; biologics market report
                   </Link>

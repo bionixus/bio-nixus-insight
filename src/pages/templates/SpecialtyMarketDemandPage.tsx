@@ -51,6 +51,7 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
     { href: '#research', label: 'Research' },
     { href: '#drivers', label: 'Drivers' },
     { href: '#structure', label: 'Structure' },
+    ...(content.longFormSections?.length ? [{ href: '#deep-dive', label: 'Deep dive' }] : []),
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
     { href: '#audiences', label: 'Audiences' },
@@ -143,6 +144,30 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             ))}
           </div>
         </DirectorySection>
+
+        {content.longFormSections?.length ? (
+          <DirectorySection
+            id="deep-dive"
+            surface="cream"
+            eyebrow="Decision guide"
+            title={`${content.segmentLabel} — field intelligence for commercial teams`}
+          >
+            <div className="space-y-10 max-w-3xl">
+              {content.longFormSections.map((section) => (
+                <div key={section.heading}>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">{section.heading}</h3>
+                  <div className="space-y-4">
+                    {section.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
 
         {content.signalGrid ? (
           <DirectorySection id="signals" surface="cream" eyebrow="Signals" title={content.signalGrid.heading}>
