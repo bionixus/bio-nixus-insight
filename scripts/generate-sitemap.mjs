@@ -356,7 +356,7 @@ const staticPages = [
   { path: '/bionixus-market-research-middle-east', priority: '0.9', changefreq: 'monthly' },
   { path: '/bionixus-middle-east-africa', priority: '0.9', changefreq: 'monthly' },
   { path: '/gcc-pharmaceutical-market-research', priority: '0.8', changefreq: 'monthly' },
-  { path: '/uae-pharmaceutical-market-research', priority: '0.8', changefreq: 'monthly' },
+  { path: '/uae-pharmaceutical-market-research', priority: '0.8', changefreq: 'monthly', lastmod: '2026-11-03' },
   { path: '/pharmaceutical-market-research-kuwait', priority: '0.8', changefreq: 'monthly' },
   { path: '/pharmaceutical-market-research-qatar', priority: '0.8', changefreq: 'monthly' },
   { path: '/pharmaceutical-market-research-bahrain', priority: '0.8', changefreq: 'monthly' },
@@ -437,7 +437,7 @@ const staticPages = [
   { path: '/physician-survey-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/sfda-market-access-strategy-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/biosimilar-market-entry-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-27' },
-  { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-02' },
+  { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-03' },
   { path: '/nielsen-alternative', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/kantar-alternative', priority: '0.88', changefreq: 'monthly' },
   { path: '/bionixus-vs-kantar', priority: '0.86', changefreq: 'monthly' },
@@ -477,7 +477,7 @@ const staticPages = [
   { path: '/gfk-alternative-egypt', priority: '0.87', changefreq: 'monthly' },
   { path: '/ar/insights/top-market-research-companies-egypt-2026', priority: '0.80', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-egypt-2026', priority: '0.88', changefreq: 'monthly' },
-  { path: '/insights/top-market-research-companies-saudi-arabia-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-market-research-companies-saudi-arabia-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-03' },
   { path: '/insights/top-consumer-insights-companies-ksa-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-market-research-companies-uae-2026', priority: '0.85', changefreq: 'monthly', lastmod: '2026-11-02' },
   { path: '/insights/top-market-research-companies-dubai-2026', priority: '0.85', changefreq: 'monthly' },
@@ -1027,6 +1027,7 @@ function buildStaticRoutes() {
       path: `/healthcare-market-research/${slug}`,
       priority: '0.85',
       changefreq: 'weekly',
+      ...(slug === 'uae' ? { lastmod: '2026-11-03' } : {}),
     });
   }
   for (const area of healthcareTherapySlugs) {

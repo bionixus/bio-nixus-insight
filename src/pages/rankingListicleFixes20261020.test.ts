@@ -44,6 +44,10 @@ describe('ranking listicle fixes 2026-10-20', () => {
       const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '';
       if (path === '/insights/top-market-research-companies-uae-2026') {
         expect(h1, path).toContain('Top Market Research Company in UAE');
+      } else if (path === '/insights/top-market-research-companies-saudi-arabia-2026') {
+        expect(h1, path).toBe(
+          'Top Market Research Companies in Saudi Arabia 2026: Shortlist by Research Need',
+        );
       } else {
         expect(h1, path).toMatch(/BioNixus/);
       }
@@ -84,8 +88,10 @@ describe('ranking listicle fixes 2026-10-20', () => {
     expect(article?.datePublished).toBe('2026-10-29');
 
     const ksa = pages.get(PATHS[3])!.html;
-    expect(ksa).toContain('BioNixus was founded in 2012 and has served 118 clients in 48 countries');
+    expect(ksa).toContain('Top market research companies in Saudi Arabia split by job');
+    expect(ksa).toContain('Last reviewed 3 November 2026 · Saudi Arabia · Riyadh · Jeddah · Eastern Province');
     expect(ksa).toContain('BioNixus wrote this list');
+    expect(ksa).toContain('There is no single best firm for every brief.');
     expect(ksa).not.toMatch(/Ranked #1|ranks #1|ranks first|\(#1\b|rank ourselves first/);
     expect(ksa).not.toContain('are BioNixus (ranked #1');
     expect(ksa).toContain('São Paulo is a field office for LATAM');

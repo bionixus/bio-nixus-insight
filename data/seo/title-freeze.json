@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02",
+  "generatedAt": "2026-11-03",
   "source": "data/gsc/current-week/Pages.csv",
   "minImpressions": 100,
   "freezeWeeks": 8,
@@ -774,10 +774,10 @@
     },
     "/insights/top-market-research-companies-saudi-arabia-2026": {
       "impressions": 324,
-      "frozenAt": "2026-10-27",
+      "frozenAt": "2026-11-03",
       "override": {
-        "title": "Top Market Research Companies in KSA 2026 | BioNixus",
-        "description": "Top market research companies in Saudi Arabia, 2026. BioNixus wrote this list of custom primary firms. Compare IQVIA, Kantar, NielsenIQ, and local KSA firms."
+        "title": "Top Market Research Companies in Saudi Arabia 2026 | BioNixus",
+        "description": "Top market research companies in Saudi Arabia, 2026. BioNixus wrote this list for custom primary firms. Compare syndicated audits vs KSA bilingual fieldwork needs."
       }
     },
     "/insights/top-market-research-companies-senegal-2026": {
@@ -819,10 +819,10 @@
     },
     "/iqvia-alternative": {
       "impressions": 3608,
-      "frozenAt": "2026-11-01",
+      "frozenAt": "2026-11-03",
       "override": {
-        "title": "IQVIA vs Competitors: Primary Research Compared 2026",
-        "description": "IQVIA alternatives compared for 2026: keep IQVIA for syndicated audits, and brief BioNixus when you need primary HCP fieldwork. A proposal in 48 hours."
+        "title": "IQVIA Alternative Middle East: Primary Research 2026 | BioNixus",
+        "description": "IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours."
       }
     },
     "/italy-medical-devices-market-report": {
@@ -1237,10 +1237,10 @@
     },
     "/uae-pharmaceutical-market-research": {
       "impressions": 122,
-      "frozenAt": "2026-10-27",
+      "frozenAt": "2026-11-03",
       "override": {
         "title": "Healthcare Market Research Company in UAE | BioNixus",
-        "description": "Healthcare market research company in the UAE. Dubai is BioNixus's field office for UAE: DHA, DOH and MOHAP-aligned HCP, KOL, payer and patient research."
+        "description": "Healthcare market research company in UAE: BioNixus runs DHA-, DOH- and MOHAP-aligned HCP, KOL, payer and patient studies from its Dubai field office. Proposal in 48 hours."
       }
     },
     "/uae-pricing-reimbursement-strategy": {
