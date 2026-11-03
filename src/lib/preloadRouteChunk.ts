@@ -13,6 +13,7 @@
 
 import { DEDICATED_INDUSTRY_LISTICLE_PATHS } from '@/data/industry-listicle-clusters';
 import { isSegmentMarketPath } from '@/data/segmentMarketIndex';
+import { SPECIALTY_MARKET_DEMAND_CONTENT } from '@/data/specialtyMarketDemandContent';
 import { getSeoExportName, getSeoPageLoader } from '@/routes/lazySeoPages';
 import * as seoLazyPages from '@/routes/lazySeoPages';
 import * as marketingLazyPages from '@/routes/lazyMarketingPages';
@@ -20,6 +21,14 @@ import * as reportLazyPages from '@/routes/lazyReportPages';
 import { warmLazy } from '@/lib/warmLazy';
 
 type Importer = () => Promise<unknown>;
+
+const SPECIALTY_DEMAND_PATHS = new Set(
+  SPECIALTY_MARKET_DEMAND_CONTENT.map((item) => `/${item.slug}`),
+);
+
+function isSpecialtyDemandPath(path: string): boolean {
+  return SPECIALTY_DEMAND_PATHS.has(path);
+}
 
 /** Standalone country / medical-device report pages (file name follows the slug). */
 const reportModules = import.meta.glob('../pages/*MarketReport.tsx');
@@ -36,8 +45,12 @@ const IRREGULAR_IMPORTS: Record<string, Importer> = {
   '/gcc-anesthesia-surgical-market-report': () => import('@/pages/GccAnesthesiaSurgicalMarket'),
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement': () =>
     import('@/pages/BlogPost'),
-  '/singapore-ivd-market-access': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
-  '/singapore-medtech-manufacturing-market': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
+  ...Object.fromEntries(
+    SPECIALTY_MARKET_DEMAND_CONTENT.map((item) => [
+      `/${item.slug}`,
+      () => import('@/pages/templates/SpecialtyMarketDemandPage'),
+    ]),
+  ),
 };
 
 /** Dynamic-slug routes matched by prefix. */
@@ -98,6 +111,10 @@ const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }>
     load: () => import('@/pages/SegmentMarketRoute'),
   },
   {
+    test: isSpecialtyDemandPath,
+    load: () => import('@/pages/templates/SpecialtyMarketDemandPage'),
+  },
+  {
     test: (path) => path.startsWith('/news/') && path !== '/news/feed.xml',
     load: () => import('@/pages/PressReleasePage'),
   },
@@ -148,8 +165,12 @@ const IRREGULAR_LAZY: Record<string, unknown> = {
   '/medical-device-companies-saudi-arabia': reportLazyPages.SaudiMedicalDeviceCompanies,
   '/gcc-anesthesia-surgical-market-report': reportLazyPages.GccAnesthesiaSurgicalMarket,
   '/uae-influenza-vaccine-report': reportLazyPages.UaeInfluenzaVaccineReport,
-  '/singapore-ivd-market-access': seoLazyPages.SpecialtyMarketDemandPage,
-  '/singapore-medtech-manufacturing-market': seoLazyPages.SpecialtyMarketDemandPage,
+  ...Object.fromEntries(
+    SPECIALTY_MARKET_DEMAND_CONTENT.map((item) => [
+      `/${item.slug}`,
+      seoLazyPages.SpecialtyMarketDemandPage,
+    ]),
+  ),
 };
 
 function resolveLazyComponent(pathname: string): unknown {

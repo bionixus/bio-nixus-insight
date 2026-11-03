@@ -631,9 +631,24 @@ export const CTR_SEO_BY_PATH = {
       'Pharmaceutical market research in Japan: PMDA-aligned HCP surveys, KOL mapping, NHI drug-pricing payer research and Chuikyo HTA across university hospitals.',
   },
   '/febrile-neutropenia-market': {
-    title: 'Febrile Neutropenia Market 2026: Size, G-CSF & Forecast',
+    title: 'Febrile Neutropenia Market Research: G-CSF & GCC Tenders',
     description:
-      'Febrile neutropenia market 2026 — G-CSF market size, biosimilar filgrastim/pegfilgrastim competition and oncology demand forecast. By BioNixus.',
+      'Febrile neutropenia market research — oncology prophylaxis protocols, G-CSF biosimilar switching, and NUPCO tender pull-through. Primary research by BioNixus.',
+  },
+  '/mek-inhibitors-market': {
+    title: 'MEK Inhibitors Market Access Research | BioNixus',
+    description:
+      'MEK inhibitors market access — biomarker testing, oncology sequencing, payer evidence, and GCC high-cost oncology listing. Primary research by BioNixus.',
+  },
+  '/japan-neurology-devices-market': {
+    title: 'Japan Neurology Devices Market Research | BioNixus',
+    description:
+      'Japan neurology devices market — stroke neurointervention, neurosurgery capital, PMDA and NHI context, and hospital adoption. Primary research by BioNixus.',
+  },
+  '/italy-medical-device-connectivity-market': {
+    title: 'Italy Medical Device Connectivity Market Research | BioNixus',
+    description:
+      'Italy medical device connectivity — HIS/LIS integration, hospital IT microservices, cybersecurity diligence, and procurement gates. By BioNixus.',
   },
   '/uae-pricing-reimbursement-strategy': {
     title: 'UAE Drug Pricing & Reimbursement 2026: MOHAP, DHA & DOH',
