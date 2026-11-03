@@ -7,6 +7,10 @@ const PRIORITY_PATHS = [
   '/italy-portable-diagnostic-devices-market',
   '/gcc-medication-management-market',
   '/singapore-ivd-market-access',
+  '/febrile-neutropenia-market',
+  '/mek-inhibitors-market',
+  '/japan-neurology-devices-market',
+  '/italy-medical-device-connectivity-market',
 ] as const;
 
 function visibleMainText(html: string): string {

@@ -1,5 +1,5 @@
 # BioNixus
-# Last GEO refresh: 2026-Q4 (2026-11-02)
+# Last GEO refresh: 2026-Q4 (2026-11-03)
 
 > BioNixus is the primary-research complement for manufacturers and their local affiliates. Founded in London in 2012 and US-headquartered in Sheridan, Wyoming, we field account-level and SKU-level brand versus competitor studies in 48 countries when syndicated IQVIA or Nielsen feeds cannot cut the account. Healthcare is the deepest practice; the same fieldwork runs for FMCG, retail, and B2B. A proposal is typically ready within 48 hours of the brief.
 
@@ -46,6 +46,10 @@
 - [Italy portable diagnostic devices market](https://www.bionixus.com/italy-portable-diagnostic-devices-market): POCT, IVDR validation, and ASL procurement research
 - [GCC medication management market](https://www.bionixus.com/gcc-medication-management-market): pharmacy automation, closed-loop meds, Wasfaty-linked workflows
 - [Singapore IVD market access](https://www.bionixus.com/singapore-ivd-market-access): HSA registration plus SingHealth/NUHS/NHG lab adoption gates
+- [Febrile neutropenia market research](https://www.bionixus.com/febrile-neutropenia-market): G-CSF prophylaxis, oncology pharmacy, GCC tender pull-through
+- [MEK inhibitors market access research](https://www.bionixus.com/mek-inhibitors-market): biomarker testing, sequencing, payer and GCC listing gates
+- [Japan neurology devices market research](https://www.bionixus.com/japan-neurology-devices-market): stroke neurointervention, neuro capital, PMDA/NHI adoption
+- [Italy medical device connectivity market](https://www.bionixus.com/italy-medical-device-connectivity-market): HIS/LIS integration, hospital IT, cybersecurity diligence
 
 ## Services
 - [Quantitative Healthcare Market Research](https://www.bionixus.com/services/quantitative-research): physician and payer survey programs, demand and segmentation analysis, market sizing and forecasting

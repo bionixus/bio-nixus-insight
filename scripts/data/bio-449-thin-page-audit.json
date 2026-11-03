@@ -1,14 +1,14 @@
 {
   "summary": {
-    "generatedAt": "2026-11-01T04:02:03.416Z",
+    "generatedAt": "2026-11-03T04:12:50.080Z",
     "baseUrl": "https://www.bionixus.com",
     "threshold": 2000,
-    "totalAudited": 711,
-    "thinCount": 332,
+    "totalAudited": 715,
+    "thinCount": 331,
     "notFoundCount": 0,
     "thinByCluster": {
       "ar-localized": 23,
-      "standalone-landing": 282,
+      "standalone-landing": 281,
       "healthcare-market-research": 27
     }
   },
@@ -487,17 +487,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/zh/bionixus-industries",
-      "pathname": "/zh/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Bionixus Industries | BioNixus",
-      "h1": "一家研究机构，<em>服务我们所覆盖的每一个行业</em>",
-      "wordCount": 430,
-      "thin": true,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/case-studies",
       "pathname": "/case-studies",
       "status": 200,
@@ -505,6 +494,17 @@
       "title": "Healthcare & Pharmaceutical Case Studies | BioNixus",
       "h1": "Real-World Research.<br class=\"hidden md:block\"/> Measurable Results.",
       "wordCount": 437,
+      "thin": true,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/zh/bionixus-industries",
+      "pathname": "/zh/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Bionixus Industries | BioNixus",
+      "h1": "一家研究机构，<em>服务我们所覆盖的每一个行业</em>",
+      "wordCount": 496,
       "thin": true,
       "notFound": false
     },
@@ -2500,17 +2500,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/de/bionixus-industries",
-      "pathname": "/de/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Marktforschung über Branchen hinweg | BioNixus",
-      "h1": "Ein Forschungsunternehmen, <em>das jede Branche, die wir bedienen, begleitet</em>",
-      "wordCount": 1076,
-      "thin": true,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/pt/contact",
       "pathname": "/pt/contact",
       "status": 200,
@@ -2566,17 +2555,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/singapore-medtech-manufacturing-market",
-      "pathname": "/singapore-medtech-manufacturing-market",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Singapore MedTech Manufacturing Market Research | BioNixus",
-      "h1": "Singapore MedTech Manufacturing Market: Research &amp; Commercial Intelligence",
-      "wordCount": 1129,
-      "thin": true,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/account-level-market-research",
       "pathname": "/account-level-market-research",
       "status": 200,
@@ -2599,6 +2577,17 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/de/bionixus-industries",
+      "pathname": "/de/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Marktforschung über Branchen hinweg | BioNixus",
+      "h1": "Ein Forschungsunternehmen, <em>das jede Branche, die wir bedienen, begleitet</em>",
+      "wordCount": 1145,
+      "thin": true,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/sfda-market-access-strategy-saudi-arabia",
       "pathname": "/sfda-market-access-strategy-saudi-arabia",
       "status": 200,
@@ -2606,17 +2595,6 @@
       "title": "SFDA Market Access Strategy KSA | BioNixus",
       "h1": "SFDA Market Access Strategy in Saudi Arabia: 2026 Complete Guide",
       "wordCount": 1148,
-      "thin": true,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/ru/bionixus-industries",
-      "pathname": "/ru/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Исследования рынка во всех отраслях | BioNixus",
-      "h1": "Одна исследовательская компания, <em>сопровождающая каждую отрасль, которую мы обслуживаем</em>",
-      "wordCount": 1163,
       "thin": true,
       "notFound": false
     },
@@ -2731,6 +2709,17 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/ru/bionixus-industries",
+      "pathname": "/ru/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Исследования рынка во всех отраслях | BioNixus",
+      "h1": "Одна исследовательская компания, <em>сопровождающая каждую отрасль, которую мы обслуживаем</em>",
+      "wordCount": 1235,
+      "thin": true,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/pt/about",
       "pathname": "/pt/about",
       "status": 200,
@@ -2738,17 +2727,6 @@
       "title": "About | BioNixus",
       "h1": "Pesquisa de mercado global — construída sobre pharma, a indústria mais regulada que servimos, e expandida para ser confiável em todas as indústrias",
       "wordCount": 1248,
-      "thin": true,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/bionixus-industries",
-      "pathname": "/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Market Research Across Industries | BioNixus",
-      "h1": "One research firm <em>guiding every industry we serve</em>",
-      "wordCount": 1258,
       "thin": true,
       "notFound": false
     },
@@ -2775,6 +2753,17 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/bionixus-industries",
+      "pathname": "/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Market Research Across Industries | BioNixus",
+      "h1": "One research firm <em>guiding every industry we serve</em>",
+      "wordCount": 1272,
+      "thin": true,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/fr/about",
       "pathname": "/fr/about",
       "status": 200,
@@ -2793,6 +2782,17 @@
       "title": "Empresa de Pesquisa de Mercado de Saúde no | BioNixus",
       "h1": "Empresa de Pesquisa de Mercado de Saúde no Brasil",
       "wordCount": 1285,
+      "thin": true,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/singapore-medtech-manufacturing-market",
+      "pathname": "/singapore-medtech-manufacturing-market",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Singapore MedTech Manufacturing Market Research | BioNixus",
+      "h1": "Singapore MedTech Manufacturing Market: Research &amp; Commercial Intelligence",
+      "wordCount": 1286,
       "thin": true,
       "notFound": false
     },
@@ -2837,17 +2837,6 @@
       "title": "NF1 Pharma Market Research Services | BioNixus",
       "h1": "NF1 Pharma Market Research &amp; Competitive Intelligence Services",
       "wordCount": 1303,
-      "thin": true,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/es/bionixus-industries",
-      "pathname": "/es/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Investigación de mercado en todas las industrias | BioNixus",
-      "h1": "Una firma de investigación <em>que guía cada industria que servimos</em>",
-      "wordCount": 1307,
       "thin": true,
       "notFound": false
     },
@@ -2925,6 +2914,17 @@
       "title": "Top FMCG Companies in Oman (2026) | Trade Mix",
       "h1": "FMCG Companies in Oman",
       "wordCount": 1349,
+      "thin": true,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/es/bionixus-industries",
+      "pathname": "/es/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Investigación de mercado en todas las industrias | BioNixus",
+      "h1": "Una firma de investigación <em>que guía cada industria que servimos</em>",
+      "wordCount": 1376,
       "thin": true,
       "notFound": false
     },
@@ -3606,17 +3606,6 @@
       "cluster": "healthcare-market-research",
       "title": "Healthcare Market Research Company in Italy | BioNixus",
       "h1": "Healthcare &amp; Pharmaceutical Market Research in Italy",
-      "wordCount": 1952,
-      "thin": true,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/pharmaceutical-companies-singapore",
-      "pathname": "/pharmaceutical-companies-singapore",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Top Pharmaceutical Companies in Singapore (2026 Ranked)",
-      "h1": "Pharmaceutical Companies in Singapore",
       "wordCount": 1952,
       "thin": true,
       "notFound": false
@@ -4469,17 +4458,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/pharmaceutical-companies-japan",
-      "pathname": "/pharmaceutical-companies-japan",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Top 20 Pharmaceutical Companies in Japan (2026 Ranked List)",
-      "h1": "Pharmaceutical Companies in Japan",
-      "wordCount": 2124,
-      "thin": false,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/saudi-arabia-biotech-market-research",
       "pathname": "/saudi-arabia-biotech-market-research",
       "status": 200,
@@ -4564,6 +4542,17 @@
       "title": "Consumer Health Market Research in Kuwait 2026 | BioNixus",
       "h1": "<em>Consumer Health &amp; OTC</em> market research company in <!-- -->Kuwait",
       "wordCount": 2130,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/pharmaceutical-companies-japan",
+      "pathname": "/pharmaceutical-companies-japan",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Top 20 Pharmaceutical Companies in Japan (2026 Ranked List)",
+      "h1": "Pharmaceutical Companies in Japan",
+      "wordCount": 2131,
       "thin": false,
       "notFound": false
     },
@@ -5069,6 +5058,17 @@
       "cluster": "standalone-landing",
       "title": "MedTech Market Research Company in Malaysia | BioNixus",
       "h1": "MedTech &amp; Medical Devices Market Research Company in Malaysia",
+      "wordCount": 2167,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/pharmaceutical-companies-singapore",
+      "pathname": "/pharmaceutical-companies-singapore",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Top 17 Pharmaceutical Companies in Singapore (2026 List)",
+      "h1": "Pharmaceutical Companies in Singapore",
       "wordCount": 2167,
       "thin": false,
       "notFound": false
@@ -5789,17 +5789,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/usa-healthcare-market-report",
-      "pathname": "/usa-healthcare-market-report",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "USA Healthcare Market Research Report 2026 | BioNixus",
-      "h1": "USA Healthcare Market Report 2026: FDA Approval, Medicare IRA Negotiations, and Commercial Market Intelligence",
-      "wordCount": 2300,
-      "thin": false,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/uae-healthcare-market-research",
       "pathname": "/uae-healthcare-market-research",
       "status": 200,
@@ -5840,6 +5829,17 @@
       "title": "Egypt Medical Tourism Market Research & Insights | BioNixus",
       "h1": "Egypt Medical Tourism Market: Research, Demand, and Provider Strategy",
       "wordCount": 2310,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/usa-healthcare-market-report",
+      "pathname": "/usa-healthcare-market-report",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "USA Healthcare Market Research Report 2026 | BioNixus",
+      "h1": "USA Healthcare Market Report 2026: FDA Approval, Medicare IRA Negotiations, and Commercial Market Intelligence",
+      "wordCount": 2323,
       "thin": false,
       "notFound": false
     },
@@ -6009,6 +6009,17 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/ar/blog/saudi-healthcare-market-research-firms-ar",
+      "pathname": "/ar/blog/saudi-healthcare-market-research-firms-ar",
+      "status": 200,
+      "cluster": "ar-localized",
+      "title": "شركات أبحاث السوق الصحي السعودية 2026 | BioNixus",
+      "h1": "أبرز شركات أبحاث السوق الصحي في المملكة العربية السعودية: المشهد، معايير اختيار الشريك، وشركات يُعتد بها",
+      "wordCount": 2433,
+      "thin": false,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/ar/healthcare-market-research/saudi-arabia",
       "pathname": "/ar/healthcare-market-research/saudi-arabia",
       "status": 200,
@@ -6097,17 +6108,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
-      "pathname": "/saudi-arabia-healthcare-market-report",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Saudi Arabia Healthcare Market Report 2026 | BioNixus",
-      "h1": "Saudi Arabia Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Vision 2030 Strategy",
-      "wordCount": 2461,
-      "thin": false,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/pharmaceutical-product-registration-saudi-arabia",
       "pathname": "/pharmaceutical-product-registration-saudi-arabia",
       "status": 200,
@@ -6130,23 +6130,23 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/ar/blog/saudi-healthcare-market-research-firms-ar",
-      "pathname": "/ar/blog/saudi-healthcare-market-research-firms-ar",
-      "status": 200,
-      "cluster": "ar-localized",
-      "title": "شركات أبحاث السوق الصحي السعودية 2026 | BioNixus",
-      "h1": "أبرز شركات أبحاث السوق الصحي في المملكة العربية السعودية: المشهد، معايير اختيار الشريك، وشركات يُعتد بها",
-      "wordCount": 2471,
-      "thin": false,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/pharmaceutical-companies-oman",
       "pathname": "/pharmaceutical-companies-oman",
       "status": 200,
       "cluster": "standalone-landing",
       "title": "Top Pharmaceutical Companies in Oman (2026 Ranked List)",
       "h1": "Pharmaceutical Companies in Oman",
+      "wordCount": 2473,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/saudi-arabia-healthcare-market-report",
+      "pathname": "/saudi-arabia-healthcare-market-report",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Saudi Arabia Healthcare Market Report 2026 | BioNixus",
+      "h1": "Saudi Arabia Healthcare Market Report 2026: Market Size, Pharmaceutical Intelligence, and Vision 2030 Strategy",
       "wordCount": 2473,
       "thin": false,
       "notFound": false
@@ -6310,7 +6310,7 @@
       "pathname": "/pharmaceutical-companies-usa",
       "status": 200,
       "cluster": "standalone-landing",
-      "title": "Top Pharmaceutical Companies in USA (2026 Ranked List)",
+      "title": "Top 28 Pharmaceutical Companies in USA (2026 List)",
       "h1": "Pharmaceutical Companies in the USA",
       "wordCount": 2570,
       "thin": false,
@@ -6497,7 +6497,7 @@
       "pathname": "/pharmaceutical-market-research-singapore",
       "status": 200,
       "cluster": "standalone-landing",
-      "title": "Pharmaceutical Market Research Company in | BioNixus",
+      "title": "Pharmaceutical Market Research Singapore | BioNixus",
       "h1": "Pharmaceutical Market Research Company in Singapore",
       "wordCount": 2694,
       "thin": false,
@@ -6708,7 +6708,7 @@
       "cluster": "standalone-landing",
       "title": "Wood Boards Market Research Trackers | BioNixus",
       "h1": "BioNixus Wood Boards Manufacturing Market Research Trackers: Leading Across the Middle East and Africa",
-      "wordCount": 2837,
+      "wordCount": 2840,
       "thin": false,
       "notFound": false
     },
@@ -6895,7 +6895,7 @@
       "cluster": "standalone-landing",
       "title": "USA Medical Devices Market Report 2026 | BioNixus Research",
       "h1": "USA Medical Devices Market Report 2026: FDA Approval, CMS Reimbursement, and GPO/IDN Procurement Intelligence",
-      "wordCount": 2961,
+      "wordCount": 2992,
       "thin": false,
       "notFound": false
     },
@@ -7082,7 +7082,7 @@
       "cluster": "standalone-landing",
       "title": "Pharmaceutical Market Access Research | GCC | BioNixus",
       "h1": "Market access research and strategy for pharma, biotech, and medical devices",
-      "wordCount": 3350,
+      "wordCount": 3359,
       "thin": false,
       "notFound": false
     },
@@ -7203,7 +7203,7 @@
       "cluster": "standalone-landing",
       "title": "Japan Healthcare Market 2026: Size, PMDA/NHI & Forecast",
       "h1": "Japan Healthcare Market Report 2026: PMDA Approval, NHI Pricing, and Pharmaceutical Market Intelligence",
-      "wordCount": 3531,
+      "wordCount": 3550,
       "thin": false,
       "notFound": false
     },
@@ -7241,6 +7241,28 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/bionixus-industries/insights/market-entry-research-singapore-southeast-asia",
+      "pathname": "/bionixus-industries/insights/market-entry-research-singapore-southeast-asia",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Market Entry Research Singapore: Southeast Asia Guide 2026",
+      "h1": "Singapore is the easy part of entering Southeast Asia, and the research starts at the border<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">A practical market entry research guide for Singapore and Southeast Asia.</span>",
+      "wordCount": 3680,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/bionixus-industries/insights/chinese-tourists-dubai-research",
+      "pathname": "/bionixus-industries/insights/chinese-tourists-dubai-research",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Chinese Tourists Dubai Research: Gulf Boards Guide 2026",
+      "h1": "Chinese visitors to the Gulf rose last year, and boards still lack spend data<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Visitor research for Gulf tourism boards and retailers targeting Chinese travellers.</span>",
+      "wordCount": 3725,
+      "thin": false,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/pharmaceutical-market-research",
       "pathname": "/pharmaceutical-market-research",
       "status": 200,
@@ -7263,13 +7285,35 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research",
+      "pathname": "/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Chinese Suppliers Saudi Giga Projects Research 2026",
+      "h1": "Chinese suppliers are winning Saudi giga-project work, and the buyers sit with a few teams<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">B2B research for Chinese construction and engineering suppliers in Saudi Arabia.</span>",
+      "wordCount": 3758,
+      "thin": false,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/uk-healthcare-market-report",
       "pathname": "/uk-healthcare-market-report",
       "status": 200,
       "cluster": "standalone-landing",
       "title": "UK Healthcare Market Research Report 2026 | BioNixus",
       "h1": "UK Healthcare Market Report 2026: NHS Pharmaceutical Market, NICE Access, and Commercial Intelligence",
-      "wordCount": 3780,
+      "wordCount": 3790,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east",
+      "pathname": "/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Brand Tracking Middle East: Chinese Electronics Brands 2026",
+      "h1": "Chinese phone brands are splitting in the Gulf, and shipment data cannot say why<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">A brand tracking guide for Chinese consumer electronics brands in the Middle East.</span>",
+      "wordCount": 3830,
       "thin": false,
       "notFound": false
     },
@@ -7313,7 +7357,7 @@
       "cluster": "standalone-landing",
       "title": "Online Market Research & Social Listening 2026 | BioNixus",
       "h1": "Online Market Research and Social Listening for Brand Growth (2026 Guide)",
-      "wordCount": 3993,
+      "wordCount": 4004,
       "thin": false,
       "notFound": false
     },
@@ -7368,7 +7412,7 @@
       "cluster": "standalone-landing",
       "title": "Japan Medical Devices Market 2026: $41B Size & PMDA Forecast",
       "h1": "Japan Medical Devices Market 2026: $41B Size, PMDA &amp; NHI Intelligence",
-      "wordCount": 4132,
+      "wordCount": 4147,
       "thin": false,
       "notFound": false
     },
@@ -7412,7 +7456,7 @@
       "cluster": "standalone-landing",
       "title": "IQVIA vs Competitors: Primary Research Compared 2026",
       "h1": "IQVIA Competitors &amp; Alternatives Built for How Pharma Really Works",
-      "wordCount": 4344,
+      "wordCount": 4348,
       "thin": false,
       "notFound": false
     },
@@ -7456,7 +7500,7 @@
       "cluster": "standalone-landing",
       "title": "Kantar Alternative Middle East: When Specialists Fit",
       "h1": "When to Use a Specialist Instead of a Global Research Firm<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">What Gulf buyers should compare before they hire</span>",
-      "wordCount": 4620,
+      "wordCount": 4637,
       "thin": false,
       "notFound": false
     },
@@ -7467,7 +7511,7 @@
       "cluster": "standalone-landing",
       "title": "Feasibility Study Company Saudi Arabia (2026 Guide)",
       "h1": "What the market chapter of a Saudi feasibility study must prove<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Demand, price, city, and the file a lender will read</span>",
-      "wordCount": 4636,
+      "wordCount": 4653,
       "thin": false,
       "notFound": false
     },
@@ -7478,7 +7522,7 @@
       "cluster": "standalone-landing",
       "title": "Customer Satisfaction Survey Company UAE (2026 Guide)",
       "h1": "How an NPS survey company Saudi Arabia should write the recommend question<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">CSAT, effort, and a score you can act on</span>",
-      "wordCount": 4655,
+      "wordCount": 4661,
       "thin": false,
       "notFound": false
     },
@@ -7489,7 +7533,7 @@
       "cluster": "standalone-landing",
       "title": "Market Entry Research Saudi Arabia (2026 Playbook)",
       "h1": "What to Research Before Entering Saudi Arabia<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the buyer, the city, the price, and the licence before you send money</span>",
-      "wordCount": 4715,
+      "wordCount": 4732,
       "thin": false,
       "notFound": false
     },
@@ -7500,7 +7544,18 @@
       "cluster": "standalone-landing",
       "title": "Nielsen Alternative Saudi Arabia: Syndicated vs Custom",
       "h1": "When to keep a Saudi retail audit and when to add your own study<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">What sold is one question. Why shoppers bought is another.</span>",
-      "wordCount": 4748,
+      "wordCount": 4761,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/uae-influenza-vaccine-report",
+      "pathname": "/uae-influenza-vaccine-report",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "UAE Influenza Vaccine Market Report 2026 | BioNixus",
+      "h1": "UAE Influenza Vaccine Report 2026: Seasonality, Procurement, Payer Access, and Competitive Landscape",
+      "wordCount": 4766,
       "thin": false,
       "notFound": false
     },
@@ -7522,18 +7577,7 @@
       "cluster": "standalone-landing",
       "title": "Consumer Survey Company Saudi Arabia: 2026 Methods",
       "h1": "How to sample shoppers in Saudi Arabia<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Language, city, and who is actually in the household</span>",
-      "wordCount": 4774,
-      "thin": false,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/uae-influenza-vaccine-report",
-      "pathname": "/uae-influenza-vaccine-report",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "UAE Influenza Vaccine Market Report 2026 | BioNixus",
-      "h1": "UAE Influenza Vaccine Report 2026: Seasonality, Procurement, Payer Access, and Competitive Landscape",
-      "wordCount": 4777,
+      "wordCount": 4780,
       "thin": false,
       "notFound": false
     },
@@ -7544,7 +7588,7 @@
       "cluster": "standalone-landing",
       "title": "UK Market Entry Research: GCC and US Playbook 2026",
       "h1": "What to Research Before Selling into the UK<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the nation, the VAT, and the product mark before you send money</span>",
-      "wordCount": 4846,
+      "wordCount": 4878,
       "thin": false,
       "notFound": false
     },
@@ -7555,7 +7599,7 @@
       "cluster": "standalone-landing",
       "title": "Brand Tracking Research Agency Dubai: Custom Tracker",
       "h1": "What a brand tracking research agency Dubai should measure<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Residents, overnight visitors, and a score a budget meeting can use</span>",
-      "wordCount": 4890,
+      "wordCount": 4892,
       "thin": false,
       "notFound": false
     },
@@ -7566,29 +7610,7 @@
       "cluster": "standalone-landing",
       "title": "Government Customer Satisfaction Survey Saudi Arabia",
       "h1": "How Saudi ministries measure satisfaction with a service<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Platform scores, Absher, Tawakkalna, and the journey you still have to study</span>",
-      "wordCount": 4955,
-      "thin": false,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/bionixus-industries/insights/australia-gcc-market-entry-research",
-      "pathname": "/bionixus-industries/insights/australia-gcc-market-entry-research",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Australia GCC Market Entry Research (2026 Playbook)",
-      "h1": "What Australian Exporters Should Check in Saudi Arabia and the UAE<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the buyer, the tariff, and the price before a container leaves</span>",
-      "wordCount": 5014,
-      "thin": false,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/bionixus-industries/insights/b2b-market-research-uae",
-      "pathname": "/bionixus-industries/insights/b2b-market-research-uae",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "B2B Market Research UAE: Recruiting Decision-Makers",
-      "h1": "How to reach the people who buy in the UAE<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Named buyers, emirates, and a price that states the tax</span>",
-      "wordCount": 5017,
+      "wordCount": 4961,
       "thin": false,
       "notFound": false
     },
@@ -7604,13 +7626,35 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/bionixus-industries/insights/australia-gcc-market-entry-research",
+      "pathname": "/bionixus-industries/insights/australia-gcc-market-entry-research",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Australia GCC Market Entry Research (2026 Playbook)",
+      "h1": "What Australian Exporters Should Check in Saudi Arabia and the UAE<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the buyer, the tariff, and the price before a container leaves</span>",
+      "wordCount": 5027,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/bionixus-industries/insights/b2b-market-research-uae",
+      "pathname": "/bionixus-industries/insights/b2b-market-research-uae",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "B2B Market Research UAE: Recruiting Decision-Makers",
+      "h1": "How to reach the people who buy in the UAE<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Named buyers, emirates, and a price that states the tax</span>",
+      "wordCount": 5034,
+      "thin": false,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research",
       "pathname": "/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research",
       "status": 200,
       "cluster": "standalone-landing",
       "title": "Chinese EV Consumer Research Saudi UAE (2026 Guide)",
       "h1": "Chinese EV Brands in Saudi Arabia and the UAE: What to Ask Buyers<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Charging, price, and service are separate questions in each country</span>",
-      "wordCount": 5098,
+      "wordCount": 5104,
       "thin": false,
       "notFound": false
     },
@@ -7621,7 +7665,7 @@
       "cluster": "standalone-landing",
       "title": "US Market Entry Research for Foreign Companies 2026",
       "h1": "What Foreign Companies Should Research Before Selling in the US<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the state, the sales tax, and the product file before you send money</span>",
-      "wordCount": 5167,
+      "wordCount": 5192,
       "thin": false,
       "notFound": false
     },
@@ -7632,7 +7676,7 @@
       "cluster": "standalone-landing",
       "title": "Chinese Companies Egypt Market Research: Plain Guide",
       "h1": "Chinese Companies in Egypt: What to Research First<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Who will buy, in which city, at what price, and under which licence</span>",
-      "wordCount": 5188,
+      "wordCount": 5213,
       "thin": false,
       "notFound": false
     },
@@ -7643,7 +7687,7 @@
       "cluster": "standalone-landing",
       "title": "Europe-to-GCC Market Entry Research (2026 Playbook)",
       "h1": "What European Brands Should Check Before Selling in the Gulf<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the country, the tax, and the product rule before you send money</span>",
-      "wordCount": 5197,
+      "wordCount": 5214,
       "thin": false,
       "notFound": false
     },
@@ -7676,18 +7720,7 @@
       "cluster": "standalone-landing",
       "title": "Chinese Companies Entering Saudi Arabia and the UAE",
       "h1": "Chinese Companies in Saudi Arabia and the UAE: What to Research First<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the buyer, the city, the price, and the licence in each country</span>",
-      "wordCount": 5573,
-      "thin": false,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/bionixus-industries/insights/new-zealand-exporters-gcc-market-research",
-      "pathname": "/bionixus-industries/insights/new-zealand-exporters-gcc-market-research",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "New Zealand Exporters GCC Market Research 2026 Guide",
-      "h1": "What New Zealand Food Exporters Should Check in the Gulf<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the product, the country, and the halal file before a container leaves</span>",
-      "wordCount": 5737,
+      "wordCount": 5590,
       "thin": false,
       "notFound": false
     },
@@ -7699,6 +7732,17 @@
       "title": "Saudi Market Access Research: SFDA, CHI & NUPCO Payers",
       "h1": "Saudi Payer Market Access Research",
       "wordCount": 5753,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/bionixus-industries/insights/new-zealand-exporters-gcc-market-research",
+      "pathname": "/bionixus-industries/insights/new-zealand-exporters-gcc-market-research",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "New Zealand Exporters GCC Market Research 2026 Guide",
+      "h1": "What New Zealand Food Exporters Should Check in the Gulf<span class=\"sr-only\"> — </span><span class=\"mt-3 block font-body text-lg font-medium leading-snug tracking-normal text-white/75 md:text-xl\">Name the product, the country, and the halal file before a container leaves</span>",
+      "wordCount": 5771,
       "thin": false,
       "notFound": false
     },
@@ -7720,7 +7764,7 @@
       "cluster": "standalone-landing",
       "title": "Sitemap | BioNixus — Healthcare & Pharmaceutical Directory",
       "h1": "Every BioNixus route—curated for precision navigation",
-      "wordCount": 5904,
+      "wordCount": 5922,
       "thin": false,
       "notFound": false
     },
@@ -7758,17 +7802,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/bionixus-industries/insights",
-      "pathname": "/bionixus-industries/insights",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Global Industry Market Research Insights | BioNixus",
-      "h1": "Global market research across industries",
-      "wordCount": 6859,
-      "thin": false,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/healthcare-market-research",
       "pathname": "/healthcare-market-research",
       "status": 200,
@@ -7798,6 +7831,17 @@
       "title": "Market Access Research Kuwait | BioNixus",
       "h1": "Market Access Research Kuwait",
       "wordCount": 7498,
+      "thin": false,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/bionixus-industries/insights",
+      "pathname": "/bionixus-industries/insights",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Global Industry Market Research Insights | BioNixus",
+      "h1": "Global market research across industries",
+      "wordCount": 7750,
       "thin": false,
       "notFound": false
     },
@@ -8310,17 +8354,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/zh/bionixus-industries",
-      "pathname": "/zh/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Bionixus Industries | BioNixus",
-      "h1": "一家研究机构，<em>服务我们所覆盖的每一个行业</em>",
-      "wordCount": 430,
-      "thin": true,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/case-studies",
       "pathname": "/case-studies",
       "status": 200,
@@ -8328,6 +8361,17 @@
       "title": "Healthcare & Pharmaceutical Case Studies | BioNixus",
       "h1": "Real-World Research.<br class=\"hidden md:block\"/> Measurable Results.",
       "wordCount": 437,
+      "thin": true,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/zh/bionixus-industries",
+      "pathname": "/zh/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Bionixus Industries | BioNixus",
+      "h1": "一家研究机构，<em>服务我们所覆盖的每一个行业</em>",
+      "wordCount": 496,
       "thin": true,
       "notFound": false
     },
@@ -10323,17 +10367,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/de/bionixus-industries",
-      "pathname": "/de/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Marktforschung über Branchen hinweg | BioNixus",
-      "h1": "Ein Forschungsunternehmen, <em>das jede Branche, die wir bedienen, begleitet</em>",
-      "wordCount": 1076,
-      "thin": true,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/pt/contact",
       "pathname": "/pt/contact",
       "status": 200,
@@ -10389,17 +10422,6 @@
       "notFound": false
     },
     {
-      "url": "https://www.bionixus.com/singapore-medtech-manufacturing-market",
-      "pathname": "/singapore-medtech-manufacturing-market",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Singapore MedTech Manufacturing Market Research | BioNixus",
-      "h1": "Singapore MedTech Manufacturing Market: Research &amp; Commercial Intelligence",
-      "wordCount": 1129,
-      "thin": true,
-      "notFound": false
-    },
-    {
       "url": "https://www.bionixus.com/account-level-market-research",
       "pathname": "/account-level-market-research",
       "status": 200,
@@ -10422,6 +10444,17 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/de/bionixus-industries",
+      "pathname": "/de/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Marktforschung über Branchen hinweg | BioNixus",
+      "h1": "Ein Forschungsunternehmen, <em>das jede Branche, die wir bedienen, begleitet</em>",
+      "wordCount": 1145,
+      "thin": true,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/sfda-market-access-strategy-saudi-arabia",
       "pathname": "/sfda-market-access-strategy-saudi-arabia",
       "status": 200,
@@ -10429,17 +10462,6 @@
       "title": "SFDA Market Access Strategy KSA | BioNixus",
       "h1": "SFDA Market Access Strategy in Saudi Arabia: 2026 Complete Guide",
       "wordCount": 1148,
-      "thin": true,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/ru/bionixus-industries",
-      "pathname": "/ru/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Исследования рынка во всех отраслях | BioNixus",
-      "h1": "Одна исследовательская компания, <em>сопровождающая каждую отрасль, которую мы обслуживаем</em>",
-      "wordCount": 1163,
       "thin": true,
       "notFound": false
     },
@@ -10554,6 +10576,17 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/ru/bionixus-industries",
+      "pathname": "/ru/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Исследования рынка во всех отраслях | BioNixus",
+      "h1": "Одна исследовательская компания, <em>сопровождающая каждую отрасль, которую мы обслуживаем</em>",
+      "wordCount": 1235,
+      "thin": true,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/pt/about",
       "pathname": "/pt/about",
       "status": 200,
@@ -10561,17 +10594,6 @@
       "title": "About | BioNixus",
       "h1": "Pesquisa de mercado global — construída sobre pharma, a indústria mais regulada que servimos, e expandida para ser confiável em todas as indústrias",
       "wordCount": 1248,
-      "thin": true,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/bionixus-industries",
-      "pathname": "/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Market Research Across Industries | BioNixus",
-      "h1": "One research firm <em>guiding every industry we serve</em>",
-      "wordCount": 1258,
       "thin": true,
       "notFound": false
     },
@@ -10598,6 +10620,17 @@
       "notFound": false
     },
     {
+      "url": "https://www.bionixus.com/bionixus-industries",
+      "pathname": "/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Market Research Across Industries | BioNixus",
+      "h1": "One research firm <em>guiding every industry we serve</em>",
+      "wordCount": 1272,
+      "thin": true,
+      "notFound": false
+    },
+    {
       "url": "https://www.bionixus.com/fr/about",
       "pathname": "/fr/about",
       "status": 200,
@@ -10616,6 +10649,17 @@
       "title": "Empresa de Pesquisa de Mercado de Saúde no | BioNixus",
       "h1": "Empresa de Pesquisa de Mercado de Saúde no Brasil",
       "wordCount": 1285,
+      "thin": true,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/singapore-medtech-manufacturing-market",
+      "pathname": "/singapore-medtech-manufacturing-market",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Singapore MedTech Manufacturing Market Research | BioNixus",
+      "h1": "Singapore MedTech Manufacturing Market: Research &amp; Commercial Intelligence",
+      "wordCount": 1286,
       "thin": true,
       "notFound": false
     },
@@ -10660,17 +10704,6 @@
       "title": "NF1 Pharma Market Research Services | BioNixus",
       "h1": "NF1 Pharma Market Research &amp; Competitive Intelligence Services",
       "wordCount": 1303,
-      "thin": true,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/es/bionixus-industries",
-      "pathname": "/es/bionixus-industries",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Investigación de mercado en todas las industrias | BioNixus",
-      "h1": "Una firma de investigación <em>que guía cada industria que servimos</em>",
-      "wordCount": 1307,
       "thin": true,
       "notFound": false
     },
@@ -10748,6 +10781,17 @@
       "title": "Top FMCG Companies in Oman (2026) | Trade Mix",
       "h1": "FMCG Companies in Oman",
       "wordCount": 1349,
+      "thin": true,
+      "notFound": false
+    },
+    {
+      "url": "https://www.bionixus.com/es/bionixus-industries",
+      "pathname": "/es/bionixus-industries",
+      "status": 200,
+      "cluster": "standalone-landing",
+      "title": "Investigación de mercado en todas las industrias | BioNixus",
+      "h1": "Una firma de investigación <em>que guía cada industria que servimos</em>",
+      "wordCount": 1376,
       "thin": true,
       "notFound": false
     },
@@ -11429,17 +11473,6 @@
       "cluster": "healthcare-market-research",
       "title": "Healthcare Market Research Company in Italy | BioNixus",
       "h1": "Healthcare &amp; Pharmaceutical Market Research in Italy",
-      "wordCount": 1952,
-      "thin": true,
-      "notFound": false
-    },
-    {
-      "url": "https://www.bionixus.com/pharmaceutical-companies-singapore",
-      "pathname": "/pharmaceutical-companies-singapore",
-      "status": 200,
-      "cluster": "standalone-landing",
-      "title": "Top Pharmaceutical Companies in Singapore (2026 Ranked)",
-      "h1": "Pharmaceutical Companies in Singapore",
       "wordCount": 1952,
       "thin": true,
       "notFound": false

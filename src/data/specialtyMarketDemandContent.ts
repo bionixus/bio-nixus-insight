@@ -947,10 +947,16 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
     'Japan neurology devices market research — neurointervention, neuromonitoring, neurosurgery capital, PMDA pathways, and hospital adoption intelligence from.',
   canonical: `${BASE}/japan-neurology-devices-market`,
   h1: 'Japan Neurology Devices Market: Clinical & Access Intelligence',
+  dateModified: '2026-11-03',
   intro: [
     'Japan’s neurology devices market concentrates in stroke intervention, neurosurgery, monitoring, and implant categories inside a high-bed, aging health system. BioNixus isolates neurology from general MedTech coverage so OEMs can brief PMDA timing, NHI category issues, and hospital KOL cascades accurately.',
+    'Buyers searching “Japan neurology devices market” need adoption realism across stroke networks, neuro capital committees, and service-heavy disposable contracts — not a generic MedTech overview averaged across unrelated device classes.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  earlyLinks: [
+    { to: '/japan-medical-devices-market-report', label: 'Japan medical devices market report' },
+    { to: '/japan-medical-device-market-access', label: 'Japan medical device market access guide' },
+  ],
   researchTopics: [
     { name: 'Neurointerventionalist panels', detail: 'Stroke and aneurysm device choice drivers and switch barriers.' },
     { name: 'Neurosurgery capital planning', detail: 'How hospitals prioritise neuro capital budgets.' },
@@ -974,6 +980,34 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Volume concentrates in designated stroke and university neurosurgery centres. Distributor technical specialists and proctors are part of the commercial system BioNixus maps alongside clinical preference.',
+      'Capital and disposable economics are coupled: neurovascular share shifts may require angio suite time, consignment inventory, and biomed maintenance contracts researched together rather than as siloed SKUs.',
+      'Regional cluster differences between Kanto, Chubu, and Kansai stroke hubs affect proctor availability and tender alliances — national averages mislead field plans when those cells are blended.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Signals Japan neurology OEMs track in primary research',
+    items: [
+      { label: 'Stroke centre designation', signal: 'Hub status that concentrates neurointerventional case volume and protocol norms.' },
+      { label: 'Proctor bandwidth', signal: 'Training queues that delay capital purchases beyond fiscal planning windows.' },
+      { label: 'NHI category timing', signal: 'Reimbursement category decisions that affect disposable versus capital mix.' },
+      { label: 'Service engineer density', signal: 'Maintenance response expectations that influence monitoring fleet renewals.' },
+      { label: 'Distributor consignment', signal: 'Inventory risk allocation that shapes neurovascular share stability.' },
+      { label: 'KOL cascade realism', signal: 'Which academic relationships actually change community hospital orders.' },
+    ],
+  },
+  calendarBlocks: {
+    heading: 'Typical Japan neurology device planning checkpoints',
+    items: [
+      {
+        period: 'Fiscal Q1–Q2 — capital committee windows',
+        detail:
+          'Map neuro capital budgets and proctor availability before forecasting angio suite or monitoring fleet purchases; finance interviews clarify deferral language used internally.',
+      },
+      {
+        period: 'Post-designation stroke network reviews',
+        detail:
+          'Run preference and service scorecards after regional stroke designation changes — hub shifts redistribute case volume faster than national statistics suggest.',
+      },
     ],
   },
   audiences: [
@@ -993,6 +1027,21 @@ const japanNeurologyDevices: SpecialtyMarketDemandContent = {
       question: 'What does the Japan neurology devices market include?',
       answer:
         'Neurointervention consumables and capital, neurosurgical instruments, neuromonitoring, and related implants — researched as a distinct decision set from broad MedTech.',
+    },
+    {
+      question: 'How does BioNixus research stroke device adoption in Japan?',
+      answer:
+        'We interview neurointerventionalists, stroke coordinators, and procurement in designated stroke centres and map hub-and-spoke referral patterns that drive case volume more than national demographic averages.',
+    },
+    {
+      question: 'Are PMDA and NHI topics part of neurology device research?',
+      answer:
+        'Yes — as context for hospital decision timing and category economics, researched through clinical and procurement stakeholders rather than as legal advice.',
+    },
+    {
+      question: 'What timelines should Japan neurology programmes expect?',
+      answer:
+        'Most mixed qualitative modules run five to nine weeks depending on sample breadth across regions; proposals return within 48 hours of a scoped brief naming device class and decision cell. Minimum programmes follow BioNixus healthcare research sizing norms.',
     },
   ],
   areaServed: ['Japan'],
@@ -1255,8 +1304,10 @@ const mekInhibitors: SpecialtyMarketDemandContent = {
     'MEK inhibitors market access research — oncology prescribing, biomarker testing, payer evidence needs, and GCC tender dynamics from BioNixus.',
   canonical: `${BASE}/mek-inhibitors-market`,
   h1: 'MEK Inhibitors Market Access: Oncology Evidence & Commercial Intelligence',
+  dateModified: '2026-11-03',
   intro: [
     'MEK inhibitor access decisions turn on biomarker pathway readiness, line-of-therapy sequencing, and payer evidence — not brand awareness alone. BioNixus runs oncologist, molecular-pathology, and access interviews to show where MEK classes win protocol space and where testing or funding gates stall uptake, with GCC modules when tender listing is on the path.',
+    'Searchers asking about MEK inhibitors market access typically need testing-pathway maps, tumor-board sequencing truth, or Gulf listing pull-through — not invented global market-size figures. We align each programme to one utilisation barrier your medical or access team must unblock this quarter.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1282,6 +1333,19 @@ const mekInhibitors: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'MEK access is oncology-network and testing-dependent. BioNixus designs modules by indication cluster and geography rather than treating “MEK market” as one homogeneous category.',
+      'Combination regimens mean partner-drug access and pathology menus must be researched together — forecasting MEK uptake without testing readiness produces launch plans that stall in the first hospital committee.',
+      'High-cost scrutiny splits medical oncologist enthusiasm from pharmacy restriction; interviews with both groups prevent dashboards that show “approved” but not “dispensed” realities.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Signals MEK access teams monitor in fieldwork',
+    items: [
+      { label: 'Reflex testing live?', signal: 'Pathology menus and turnaround times that define eligible pools before oncologists can order.' },
+      { label: 'Tumor board sequencing', signal: 'Where MEK sits after prior targeted failures — deferral norms vary by hospital network.' },
+      { label: 'Pharmacy restriction', signal: 'Whether listing converts to dispensing or remains approval-only on paper.' },
+      { label: 'Partner drug access', signal: 'Combination partner availability that gates MEK utilization in the same protocol.' },
+      { label: 'GCC listing pull-through', signal: 'Framework placement versus ward protocol use in high-cost oncology settings.' },
+      { label: 'RWE requests', signal: 'Local evidence asks that delay or accelerate committee decisions after first submission.' },
     ],
   },
   audiences: [
@@ -1303,6 +1367,21 @@ const mekInhibitors: SpecialtyMarketDemandContent = {
       answer:
         'Primary research with oncology, pathology, and funding stakeholders that maps the practical barriers between regulatory approval and sustained utilisation for MEK inhibitor classes.',
     },
+    {
+      question: 'Why is biomarker testing part of MEK access research?',
+      answer:
+        'Eligible patient pools depend on reflex testing, panel breadth, and turnaround times that vary hospital by hospital — pathology interviews explain utilisation ceilings better than prescriber surveys alone.',
+    },
+    {
+      question: 'Can BioNixus run GCC modules for MEK combinations?',
+      answer:
+        'Yes — when NUPCO or hospital high-cost oncology frameworks are on your path, we add procurement and pharmacy modules separate from EU5 or US sequencing research.',
+    },
+    {
+      question: 'What is excluded from MEK market access studies?',
+      answer:
+        'We do not fabricate market-size or patient-count statistics; quantification is scoped inside commissioned samples with explicit methodology when clients require numeric eligible pools. Contact BioNixus for a scoped MEK access brief.',
+    },
   ],
   priority: 'next',
 };
@@ -1317,8 +1396,10 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     'Febrile neutropenia market research — G-CSF supportive care, hospital protocols, oncology pharmacy practice, and GCC tender intelligence from BioNixus.',
   canonical: `${BASE}/febrile-neutropenia-market`,
   h1: 'Febrile Neutropenia Market: Supportive-Care & Protocol Intelligence',
+  dateModified: '2026-11-03',
   intro: [
     'The febrile neutropenia market is driven by oncology regimen intensity, hospital prophylaxis protocols, and biosimilar G-CSF competition more than consumer awareness. BioNixus researches oncologists, oncology pharmacists, and tender stakeholders to forecast switching and protocol stickiness — including Gulf hospital settings where supportive-care injectables move through frameworks.',
+    'Teams searching “febrile neutropenia market” usually need protocol stickiness after a biosimilar switch, tender win/loss truth, or Gulf pull-through diagnostics — not syndicated market-size tables. We scope one decision cell per wave so fieldwork stays actionable for medical affairs, access, and sales leadership.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1344,6 +1425,8 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'FN markets are protocol- and tender-shaped. BioNixus isolates prophylaxis choice, secondary treatment, and tender award as distinct research questions.',
+      'Western hospital systems and Gulf framework hospitals do not share identical substitution rules or nursing training paths — mixing them in one forecast produces errors commercial teams later pay for in missed quarters.',
+      'Supportive-care economics tie to length-of-stay and admission avoidance metrics; research must interview operational stakeholders, not only prescribers, when ROI stories are on the table.',
     ],
   },
   audiences: [
@@ -1364,6 +1447,21 @@ const febrileNeutropenia: SpecialtyMarketDemandContent = {
       question: 'What drives the febrile neutropenia market?',
       answer:
         'Oncology regimen myelosuppression, prophylaxis guidelines, hospital pharmacy substitution, and tender awards for G-CSF and related supportive care — researched by BioNixus through clinical and procurement stakeholders.',
+    },
+    {
+      question: 'How does BioNixus research G-CSF switching after a tender?',
+      answer:
+        'We interview oncology pharmacists and prescribers after award announcements to capture substitution rules, nursing training timelines, and protocol exceptions that determine whether tender wins convert to utilization within one or two cycles.',
+    },
+    {
+      question: 'Should febrile neutropenia research include Gulf procurement?',
+      answer:
+        'When Saudi or UAE hospital frameworks influence your SKU, yes — as a distinct module with Arabic-capable moderation and procurement stakeholders, not as an appendix to Western hospital averages.',
+    },
+    {
+      question: 'What deliverables do FN programmes include?',
+      answer:
+        'Gate maps, objection libraries, tender win/loss debriefs, and executive summaries with prioritized actions — formatted for quarterly business reviews rather than academic publication.',
     },
   ],
   priority: 'next',
@@ -1508,8 +1606,10 @@ const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
     'Italy medical device connectivity and digital health market research — HIS/LIS integration, hospital microservices architectures, cybersecurity diligence.',
   canonical: `${BASE}/italy-medical-device-connectivity-market`,
   h1: 'Italy Medical Device Connectivity & Digital Health Market Intelligence',
+  dateModified: '2026-11-03',
   intro: [
     'Queries for “Italy medical device connectivity market” and “Italy microservices healthcare market” point to the same commercial gap: who funds, integrates, and greets connected devices inside Italian hospital IT stacks. BioNixus interviews CIOs, clinical engineering, cybersecurity, and department heads to test whether connectivity claims survive procurement and go-live.',
+    'Commercial teams often lose Italian connectivity deals after IT veto despite strong clinical champions. Our programmes document coalition dynamics, interface requirements, and cybersecurity artefacts hospitals request before acceptance testing — not marketing interoperability slogans.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
   researchTopics: [
@@ -1535,6 +1635,19 @@ const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
     heading: 'Structure',
     paragraphs: [
       'Connectivity purchases are coalition buys across IT, clinical engineering, and clinical departments. BioNixus maps those coalitions and tests microservices/interoperability claims with the people who can veto go-live.',
+      'Regional ASL tender language and hub-hospital standardization mandates create different integration timelines — research cells respect north, centre, and south macro-regions instead of a single “Italy hospital IT” persona.',
+      'Renewals depend on interface maintenance effort and clinical engineering uptime metrics as much as on initial clinical enthusiasm — twelve-month post go-live modules catch churn drivers early.',
+    ],
+  },
+  signalGrid: {
+    heading: 'Signals Italy connectivity vendors monitor',
+    items: [
+      { label: 'CIO architecture review', signal: 'Whether microservices claims survive interface and middleware diligence.' },
+      { label: 'Cybersecurity acceptance', signal: 'Evidence packs hospitals request before connected fleets attach to production networks.' },
+      { label: 'HIS vendor backlog', signal: 'Interface queues that delay go-live after clinical sign-off.' },
+      { label: 'Clinical engineering uptime', signal: 'Maintenance and patch compliance expectations tied to renewals.' },
+      { label: 'Regional tender clauses', signal: 'Interoperability scoring weights that differ by ASL and hub standardization mandates.' },
+      { label: 'Nursing workaround risk', signal: 'Ward practices that bypass connectivity features and trigger churn at renewal.' },
     ],
   },
   audiences: [
@@ -1557,6 +1670,21 @@ const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
       question: 'What does Italy medical device connectivity research cover?',
       answer:
         'Primary research on how Italian hospitals evaluate device-to-HIS/LIS integration, microservices architectures, cybersecurity, and clinical go-live — the gates that decide whether connected MedTech actually deploys.',
+    },
+    {
+      question: 'Who should be interviewed for connectivity tenders?',
+      answer:
+        'CIO architecture, cybersecurity, clinical engineering, and the clinical department sponsor — skipping IT guarantees proposals that fail acceptance testing even when clinicians remain enthusiastic.',
+    },
+    {
+      question: 'How is this different from Italy portable diagnostics research?',
+      answer:
+        'Portable diagnostics focuses on laboratory validation and POCT pathways; connectivity research focuses on IT integration, fleet management, and architecture politics — link both when LIS integration blocks POCT scale-up.',
+    },
+    {
+      question: 'Does BioNixus provide legal GDPR advice?',
+      answer:
+        'No — we document how hospital privacy and security offices practically review connected-device proposals so your teams prepare the artefacts those offices request in primary interviews.',
     },
   ],
   areaServed: ['Italy'],
