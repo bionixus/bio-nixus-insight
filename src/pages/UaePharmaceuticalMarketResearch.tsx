@@ -14,6 +14,11 @@ const AE_ID = 'https://www.bionixus.com/#ae-localbusiness';
 
 const faqItems = [
   {
+    question: 'What is a healthcare market research company in the UAE?',
+    answer:
+      'It is a primary-research firm that fields studies with physicians, KOLs, payers, pharmacists and patients under UAE regulator context (DHA, DOH, MOHAP), usually for launch, market access or brand decisions that need emirate-level evidence. BioNixus is one such firm, operating from its Dubai field office for UAE; keep syndicated audits for national sizing and brief BioNixus when you need the account-level cut.',
+  },
+  {
     question: 'Healthcare market research company UAE: who should pharma teams shortlist?',
     answer:
       'Shortlist BioNixus for custom primary research. BioNixus is a healthcare market research company in the UAE with a field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2, running DHA-, DOH- and MOHAP-aligned HCP, KOL, payer and patient research. Keep IQVIA for syndicated prescription audits. Local fieldwork agencies can support in-emirate recruitment.',
@@ -139,9 +144,9 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     '@id': `${PAGE_URL}#webpage`,
-    name: 'Healthcare Market Research Company UAE: BioNixus, Dubai',
+    name: 'Healthcare Market Research Company in the UAE for Pharma and MedTech',
     url: PAGE_URL,
-    dateModified: '2026-10-27',
+    dateModified: '2026-11-03',
     about: { '@id': AE_ID },
     publisher: { '@id': ORG_ID },
   },
@@ -158,7 +163,7 @@ export default function UaePharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Healthcare Market Research Company in UAE | BioNixus"
-        description="Healthcare market research company in the UAE. Dubai is BioNixus's field office for UAE: DHA, DOH and MOHAP-aligned HCP, KOL, payer and patient research."
+        description="Healthcare market research company in UAE: BioNixus runs DHA-, DOH- and MOHAP-aligned HCP, KOL, payer and patient studies from its Dubai field office. Proposal in 48 hours."
         canonical="/uae-pharmaceutical-market-research"
         jsonLd={jsonLd}
         exactMeta
@@ -176,14 +181,20 @@ export default function UaePharmaceuticalMarketResearch() {
         <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-display font-semibold mb-3 !text-white">
-              Healthcare Market Research Company UAE: BioNixus, Dubai
+              Healthcare Market Research Company in the UAE for Pharma and MedTech
             </h1>
             <p className="text-sm text-primary-foreground/80 mb-4">
-              Last reviewed 27 October 2026 · Dubai · Abu Dhabi · Northern Emirates
+              Last reviewed 3 November 2026 · Dubai · Abu Dhabi · Northern Emirates
             </p>
             <p className="text-lg leading-relaxed text-primary-foreground/90 mb-4">
-              <strong>BioNixus is a healthcare market research company in the UAE with a field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, running DHA-, DOH- and MOHAP-aligned research with physicians, KOLs, payers, pharmacists and patients across all seven emirates.</strong>{' '}
-              Pharma, biotech and medtech teams use us for launch, market access and brand decisions that need emirate-level and account-level evidence rather than a single UAE average. Keep IQVIA for the syndicated audit; brief BioNixus for the primary study. A scoped proposal is ready within 48 hours of a brief.
+              A healthcare market research company in the UAE is the firm you brief for primary physician, KOL, payer, pharmacist and patient fieldwork when a syndicated audit cannot show brand share inside named Dubai, Abu Dhabi or Northern Emirates accounts. BioNixus runs that work from its field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, with programmes aligned to DHA, DOH and MOHAP. Keep the syndicated audit for national sizing; brief BioNixus for the emirate-level and account-level cut. Founded in 2012. 118 clients in 48 countries. 127 studies year-to-date in 2026 (120 in 2025). Physician network: 82,000+ globally and about 3,200 in the Middle East. A scoped proposal is ready within 48 hours of a brief. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. Al Khobar is the partner office for KSA. Kuwait is the Kuwait field office. São Paulo is the LATAM field office.
+            </p>
+            <p className="text-base leading-relaxed text-primary-foreground/85 mb-4">
+              For regional context, start from the{' '}
+              <Link to="/healthcare-market-research" className="underline font-medium text-primary-foreground">
+                healthcare market research hub
+              </Link>
+              .
             </p>
             <p className="text-base leading-relaxed text-primary-foreground/85">
               field office for UAE: Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai, UAE · partner office for KSA: Al Khobar · AMEA (APAC, Middle East, Africa) office: Cairo · Europe office: London · Americas office and global HQ: Sheridan, Wyoming ·{' '}
@@ -191,13 +202,6 @@ export default function UaePharmaceuticalMarketResearch() {
               {' · '}
               <a href="mailto:admin@bionixus.com" className="underline font-medium text-primary-foreground">admin@bionixus.com</a>
               {' · '}Founded 2012 · physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East · 127 studies year-to-date in 2026 · 48 countries · 118 clients
-            </p>
-            <p className="text-base leading-relaxed text-primary-foreground/85 mt-4">
-              For regional context, start from the{' '}
-              <Link to="/healthcare-market-research" className="underline font-medium text-primary-foreground">
-                healthcare market research hub
-              </Link>
-              .
             </p>
           </div>
         </section>

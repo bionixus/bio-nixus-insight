@@ -96,7 +96,7 @@ export const CTR_SEO_BY_PATH = {
   '/uae-pharmaceutical-market-research': {
     title: 'Healthcare Market Research Company in UAE | BioNixus',
     description:
-      'Healthcare market research company in the UAE. Dubai is BioNixus\'s field office for UAE: DHA, DOH and MOHAP-aligned HCP, KOL, payer and patient research.',
+      'Healthcare market research company in UAE: BioNixus runs DHA-, DOH- and MOHAP-aligned HCP, KOL, payer and patient studies from its Dubai field office. Proposal in 48 hours.',
   },
   '/pharmaceutical-companies-iran': {
     title: 'Top 18 Pharmaceutical Companies in Iran (2026 Ranked List)',
@@ -134,10 +134,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // GSC 3–30 Oct 2026: "iqvia alternatives" 437 impr, pos 5.0, 0 clicks. Title stays frozen.
-    title: 'IQVIA vs Competitors: Primary Research Compared 2026',
+    // 3 Nov 2026 recovery: Middle East primary-research query. Keep the 127-studies-in-2026 label.
+    title: 'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus',
     description:
-      'IQVIA alternatives compared for 2026: keep IQVIA for syndicated audits, and brief BioNixus when you need primary HCP fieldwork. A proposal in 48 hours.',
+      'IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     // GSC 17 Sep–14 Oct 2026: 1,838 impr, pos 3.05, 0.27% CTR — keep H1 meaning, rewrite snippet.
@@ -276,9 +276,9 @@ export const CTR_SEO_BY_PATH = {
       'Healthcare market research companies in the USA for 2026. BioNixus wrote this list for primary work; keep IQVIA or NielsenIQ for national Rx and retail.',
   },
   '/insights/top-market-research-companies-saudi-arabia-2026': {
-    title: 'Top Market Research Companies in KSA 2026 | BioNixus',
+    title: 'Top Market Research Companies in Saudi Arabia 2026 | BioNixus',
     description:
-      'Top market research companies in Saudi Arabia, 2026. BioNixus wrote this list of custom primary firms. Compare IQVIA, Kantar, NielsenIQ, and local KSA firms.',
+      'Top market research companies in Saudi Arabia, 2026. BioNixus wrote this list for custom primary firms. Compare syndicated audits vs KSA bilingual fieldwork needs.',
   },
   '/insights/top-market-research-companies-uae-2026': {
     title: 'Top Market Research Company in UAE: 2026 Guide | BioNixus',

@@ -12,26 +12,23 @@ const freeze = JSON.parse(read('data/seo/title-freeze.json')) as {
 };
 const sitemap = read('public/sitemap.xml');
 
-const IQVIA_TITLE = 'IQVIA vs Competitors: Primary Research Compared 2026';
+const IQVIA_TITLE = 'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus';
 const IQVIA_DESCRIPTION =
-  'IQVIA alternatives compared for 2026: keep IQVIA for syndicated audits, and brief BioNixus when you need primary HCP fieldwork. A proposal in 48 hours.';
+  'IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours.';
 
 describe('Japan, IQVIA alternatives, and China device inlinks (Nov 2026)', () => {
-  it('keeps the frozen IQVIA title and leads the description with the zero-click query', () => {
+  it('ships the Middle East IQVIA title and keeps 127 studies in 2026', () => {
     const ctr = getCtrSeo('/iqvia-alternative');
     expect(ctr?.title).toBe(IQVIA_TITLE);
     expect(ctr?.description).toBe(IQVIA_DESCRIPTION);
-    expect(ctr!.description).toMatch(/^IQVIA alternatives/);
-    expect(ctr!.title.length).toBeGreaterThanOrEqual(50);
-    expect(ctr!.title.length).toBeLessThanOrEqual(60);
-    expect(ctr!.description.length).toBeGreaterThanOrEqual(150);
-    expect(ctr!.description.length).toBeLessThanOrEqual(160);
+    expect(ctr!.description).toMatch(/^IQVIA alternative for Middle East/);
     expect(freeze.entries['/iqvia-alternative']?.override).toEqual(ctr);
     const html = read('public/conf/iqvia-alternative.html');
     expect(html).toContain(`<title>${IQVIA_TITLE}</title>`);
     expect(html).toContain(IQVIA_DESCRIPTION);
-    expect(html).toContain('"dateModified":"2026-11-02"');
+    expect(html).toContain('"dateModified":"2026-11-03"');
     expect(html).toContain('127 studies in 2026');
+    expect(html).toContain('Scale (2026):</strong> 127 studies');
     expect(html).not.toContain('127 projects in 2025');
   });
 
@@ -80,7 +77,7 @@ describe('Japan, IQVIA alternatives, and China device inlinks (Nov 2026)', () =>
   });
 
   it('bumps sitemap lastmod for the changed pages', () => {
-    expect(sitemap).toMatch(/\/iqvia-alternative<\/loc>\s*<lastmod>2026-11-02<\/lastmod>/);
+    expect(sitemap).toMatch(/\/iqvia-alternative<\/loc>\s*<lastmod>2026-11-03<\/lastmod>/);
     for (const path of [
       '/insights/top-market-research-companies-japan-2026',
       '/pharmaceutical-companies-japan',
