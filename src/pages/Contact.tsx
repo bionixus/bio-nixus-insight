@@ -423,7 +423,7 @@ const Contact = () => {
               Google-listed offices
             </h2>
             <p className={`text-muted-foreground mb-10 max-w-2xl ${isRTL ? 'text-right ms-auto' : ''}`}>
-              Regional leadership offices are the US headquarters in Sheridan, London and Cairo. Field offices are in Al Khobar, Dubai and Kuwait. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and is in the process of opening a São Paulo office by the end of 2026. Addresses and phones match the BioNixus Google Business Profiles.
+              The USA is the Americas office and global HQ, the UK is the Europe office, and Cairo is the AMEA (APAC, Middle East, Africa) office. Al Khobar is the partner office for KSA, Dubai is the field office for UAE, and Kuwait is the field office for Kuwait. BioNixus is fully operational in LATAM, delivered from its USA offices with BioNixus field teams in Brazil and LATAM, and São Paulo is the field office for LATAM. Addresses and phones match the BioNixus Google Business Profiles.
             </p>
             {(
               [
