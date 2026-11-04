@@ -13,6 +13,7 @@
 
 import { DEDICATED_INDUSTRY_LISTICLE_PATHS } from '@/data/industry-listicle-clusters';
 import { isSegmentMarketPath } from '@/data/segmentMarketIndex';
+import { SPECIALTY_MARKET_DEMAND_CONTENT } from '@/data/specialtyMarketDemandContent';
 import { getSeoExportName, getSeoPageLoader } from '@/routes/lazySeoPages';
 import * as seoLazyPages from '@/routes/lazySeoPages';
 import * as marketingLazyPages from '@/routes/lazyMarketingPages';
@@ -20,6 +21,10 @@ import * as reportLazyPages from '@/routes/lazyReportPages';
 import { warmLazy } from '@/lib/warmLazy';
 
 type Importer = () => Promise<unknown>;
+
+const SPECIALTY_MARKET_PATHS = new Set(
+  SPECIALTY_MARKET_DEMAND_CONTENT.map((item) => `/${item.slug}`),
+);
 
 /** Standalone country / medical-device report pages (file name follows the slug). */
 const reportModules = import.meta.glob('../pages/*MarketReport.tsx');
@@ -111,6 +116,9 @@ const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }>
 ];
 
 function resolveImporter(pathname: string): Importer | undefined {
+  if (SPECIALTY_MARKET_PATHS.has(pathname)) {
+    return () => import('@/pages/templates/SpecialtyMarketDemandPage');
+  }
   if (IRREGULAR_IMPORTS[pathname]) return IRREGULAR_IMPORTS[pathname];
 
   if (/-market-report$/.test(pathname)) {
@@ -154,6 +162,7 @@ const IRREGULAR_LAZY: Record<string, unknown> = {
 
 function resolveLazyComponent(pathname: string): unknown {
   if (isHomePath(pathname)) return marketingLazyPages.Index;
+  if (SPECIALTY_MARKET_PATHS.has(pathname)) return seoLazyPages.SpecialtyMarketDemandPage;
   if (IRREGULAR_LAZY[pathname]) return IRREGULAR_LAZY[pathname];
 
   const seoName = getSeoExportName(pathname);

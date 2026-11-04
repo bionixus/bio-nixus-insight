@@ -49,10 +49,14 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
 
   const jumpItems = [
     { href: '#research', label: 'Research' },
+    ...(content.decisionBlueprint ? [{ href: '#decision', label: 'Decision' }] : []),
     { href: '#drivers', label: 'Drivers' },
     { href: '#structure', label: 'Structure' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
+    ...(content.longFormSections?.length
+      ? [{ href: '#deep-dive', label: 'Deep dive' }]
+      : []),
     { href: '#audiences', label: 'Audiences' },
     { href: '#faq', label: 'FAQ' },
   ];
@@ -79,6 +83,11 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
                   {para}
                 </p>
               ))}
+              {content.geoAnswer ? (
+                <p className="mt-4 rounded-2xl border border-[#EDE9E3] bg-[#FFFEFB] p-5 text-sm leading-relaxed text-foreground">
+                  <strong className="text-[#1A2744]">Short answer:</strong> {content.geoAnswer}
+                </p>
+              ) : null}
               {content.hubLink ? (
                 <p className="mt-3">
                   Start from our <Link to={content.hubLink.to}>{content.hubLink.label}</Link>
@@ -126,6 +135,33 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
           </div>
         </DirectorySection>
 
+        {content.decisionBlueprint ? (
+          <DirectorySection id="decision" surface="cream" eyebrow="Decision framework" title="Why it matters, what the evidence says, and what to do next">
+            <div className="grid md:grid-cols-3 gap-5 max-w-5xl">
+              <DirectoryDriverCard title="Why it matters" desc={content.decisionBlueprint.why} />
+              <DirectoryDriverCard title="What the evidence says" desc={content.decisionBlueprint.evidence} />
+              <DirectoryDriverCard title="What to do next" desc={content.decisionBlueprint.next} />
+            </div>
+            {content.proofMetrics?.length ? (
+              <div className="grid sm:grid-cols-2 gap-5 mt-8">
+                {content.proofMetrics.map((item) => (
+                  <DirectoryDriverCard key={item.label} title={item.label} desc={item.detail} />
+                ))}
+              </div>
+            ) : null}
+            {content.deliveryPriorities?.length ? (
+              <ul className="mt-8 space-y-2 max-w-3xl">
+                {content.deliveryPriorities.map((line) => (
+                  <li key={line.slice(0, 48)} className="flex gap-2 text-sm text-muted-foreground leading-relaxed">
+                    <span className="text-[#C9A84C] flex-shrink-0">→</span>
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </DirectorySection>
+        ) : null}
+
         <DirectorySection id="drivers" surface="cream" eyebrow="What is moving" title={content.demandDrivers.heading}>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
             {content.demandDrivers.drivers.map((d) => (
@@ -137,6 +173,11 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
         <DirectorySection id="structure" eyebrow="Market structure" title={content.marketStructure.heading}>
           <div className="space-y-4 max-w-3xl">
             {content.marketStructure.paragraphs.map((para) => (
+              <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                {para}
+              </p>
+            ))}
+            {content.methodologyParagraphs?.map((para) => (
               <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
                 {para}
               </p>
@@ -159,6 +200,25 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             <div className="space-y-4">
               {content.calendarBlocks.items.map((item) => (
                 <DirectoryDriverCard key={item.period} title={item.period} desc={item.detail} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {content.longFormSections?.length ? (
+          <DirectorySection id="deep-dive" eyebrow="Evidence" title="Market intelligence depth for commercial decisions">
+            <div className="space-y-10 max-w-3xl">
+              {content.longFormSections.map((section) => (
+                <div key={section.heading}>
+                  <h3 className="text-lg font-semibold text-[#1A2744] mb-3">{section.heading}</h3>
+                  <div className="space-y-4">
+                    {section.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </DirectorySection>
