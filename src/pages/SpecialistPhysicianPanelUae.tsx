@@ -1,3 +1,4 @@
+import { AgencyResearchOffer } from '@/components/conversion/AgencyResearchOffer';
 import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 import { getServiceLandingContent } from '@/data/serviceLandingContent';
 
@@ -8,6 +9,14 @@ export default function SpecialistPhysicianPanelUae() {
     <StrategicServicePage
       title="Specialist Physician Panel UAE | BioNixus"
       description="Validated specialist physician panel UAE: DHA, DOH, and MOHAP licence-verified specialists. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East."
+      publishedAt="2026-06-24"
+      modifiedAt="2026-10-29"
+      afterDelivery={
+        <AgencyResearchOffer
+          pageSlug="specialist-physician-panel-uae"
+          lead="When a client brief needs a verified UAE specialist physician panel, BioNixus can deliver under your brand."
+        />
+      }
       canonicalUrl="https://www.bionixus.com/specialist-physician-panel-uae"
       breadcrumbLabel="Specialist Physician Panel UAE"
       serviceType="Specialist physician recruitment and panel management for pharmaceutical market research in the UAE"

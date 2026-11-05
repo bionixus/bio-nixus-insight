@@ -389,6 +389,57 @@ section { padding: 72px 24px; }
   border-top: 1px solid var(--line-soft);
 }
 .footer-note a { color: var(--blue-accent); text-decoration: none; }
+
+.hero-offices {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  font-size: .92rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,.82);
+}
+.agency-offer h2 {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.agency-offer h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 28px 0 8px;
+}
+.agency-offer p, .agency-offer li { font-size: .95rem; color: var(--slate); line-height: 1.65; }
+.agency-offer ul { margin: 16px 0 16px 1.2rem; }
+.agency-offer li { margin-bottom: 10px; }
+.agency-offer a { color: var(--blue-accent); }
+.agency-form { margin-top: 16px; display: grid; gap: 14px; max-width: 640px; }
+.agency-form label { display: block; font-size: .82rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.agency-form input, .agency-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  font: inherit;
+  font-size: .9rem;
+  color: var(--navy);
+}
+.agency-form .field-error, .agency-form .form-error { color: #9b2c2c; font-size: .85rem; }
+.agency-form .form-warn { color: #8a5a00; font-size: .85rem; }
+.agency-form button {
+  justify-self: start;
+  background: var(--navy);
+  color: var(--white);
+  border: 0;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.agency-form button:disabled { opacity: .65; cursor: wait; }
+.agency-hp { position: absolute; left: -9999px; height: 0; width: 0; overflow: hidden; }
 </style>
 </head>
 <body>
@@ -419,6 +470,181 @@ section { padding: 72px 24px; }
     </div>
   </div>
 </header>
+
+<section class="agency-offer" id="for-research-agencies" aria-labelledby="agency-quote-physician-survey-saudi-arabia-heading">
+  <div class="container">
+    <h2 id="agency-quote-physician-survey-saudi-arabia-heading">For research agencies</h2>
+    <p>When a client brief needs Saudi physician surveys with verified recruitment, BioNixus can deliver under your brand.</p>
+    <ul>
+      <li>White-label delivery: instruments, fieldwork, and datasets can ship under the commissioning agency’s brand. BioNixus stays off client-facing materials unless you ask otherwise.</li>
+      <li>Client confidentiality: the end client’s identity and study purpose are held to the people working the project. We do not reuse agency client names in marketing.</li>
+      <li>48-hour quote: from a complete brief (markets, specialty, method, n, timeline), BioNixus aims to return a costed quote within 48 hours. This is a response-time commitment, not a guarantee of project outcomes or timelines in field.</li>
+    </ul>
+    <p>Agency partners can also review the <a href="/contact">BioNixus partner programme</a>.</p>
+    <p>BioNixus works with a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, with role and licence checks matched to the country of practice.</p>
+
+    <h3>Request an agency quote</h3>
+    <p id="agency-quote-intro">Tell us the markets, specialty and method. We aim to return a costed quote within 48 hours of a complete brief.</p>
+    <form id="agency-quote-physician-survey-saudi-arabia" class="agency-form" novalidate>
+      <input class="agency-hp" type="text" name="hp_company" tabindex="-1" autocomplete="off" aria-hidden="true" value="">
+      <input type="hidden" name="tags" value="source-ai-search,agency-quote">
+      <input type="hidden" name="ref" value="agency-physician-survey-saudi-arabia">
+      <input type="hidden" name="formVariant" value="agency-quote">
+      <input type="hidden" name="requestType" value="Agency quote">
+      <input type="hidden" name="sourcePage" value="/physician-survey-saudi-arabia">
+      <div>
+        <label for="agency-quote-physician-survey-saudi-arabia-name">Name <span aria-hidden="true">*</span></label>
+        <input id="agency-quote-physician-survey-saudi-arabia-name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div>
+        <label for="agency-quote-physician-survey-saudi-arabia-agency">Agency <span aria-hidden="true">*</span></label>
+        <input id="agency-quote-physician-survey-saudi-arabia-agency" name="agency" type="text" required autocomplete="organization">
+      </div>
+      <div>
+        <label for="agency-quote-physician-survey-saudi-arabia-email">Work email <span aria-hidden="true">*</span></label>
+        <input id="agency-quote-physician-survey-saudi-arabia-email" name="email" type="email" required autocomplete="email">
+      </div>
+      <div>
+        <label for="agency-quote-physician-survey-saudi-arabia-country">Country <span aria-hidden="true">*</span></label>
+        <input id="agency-quote-physician-survey-saudi-arabia-country" name="country" type="text" required autocomplete="country-name">
+      </div>
+      <div>
+        <label for="agency-quote-physician-survey-saudi-arabia-brief">Project brief <span aria-hidden="true">*</span></label>
+        <textarea id="agency-quote-physician-survey-saudi-arabia-brief" name="projectBrief" rows="5" required placeholder="Markets, specialty, method, n, timeline, white-label yes/no"></textarea>
+      </div>
+      <p class="field-error" id="agency-quote-field-error" hidden></p>
+      <p class="form-warn" id="agency-quote-warn" role="alert" hidden></p>
+      <p class="form-error" id="agency-quote-error" role="alert" hidden></p>
+      <button type="submit">Send agency brief</button>
+    </form>
+    <p id="agency-quote-success" role="status" hidden>Thanks — we aim to reply with a costed quote within 48 hours of a complete brief.</p>
+  </div>
+</section>
+<script>
+/* Same lead path as submitLeadDual: POST /api/highlevel-lead, then Formspree. Server maps Name, Agency, and Project brief. */
+(function () {
+  var form = document.getElementById('agency-quote-physician-survey-saudi-arabia');
+  if (!form) return;
+  var FREE = {
+    'gmail.com': 1, 'yahoo.com': 1, 'hotmail.com': 1, 'outlook.com': 1, 'aol.com': 1,
+    'icloud.com': 1, 'live.com': 1, 'msn.com': 1, 'mail.com': 1, 'protonmail.com': 1,
+    'gmx.com': 1, 'yandex.com': 1
+  };
+  var EMAIL_RE = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
+  var warned = false;
+  var fieldError = document.getElementById('agency-quote-field-error');
+  var warn = document.getElementById('agency-quote-warn');
+  var error = document.getElementById('agency-quote-error');
+  var success = document.getElementById('agency-quote-success');
+  var button = form.querySelector('button[type="submit"]');
+
+  function show(el, text) {
+    if (!el) return;
+    if (text) el.textContent = text;
+    el.hidden = false;
+  }
+  function hide(el) { if (el) el.hidden = true; }
+  function validEmail(raw) {
+    var email = String(raw || '').trim();
+    var at = email.lastIndexOf('@');
+    var local = at === -1 ? email : email.slice(0, at);
+    return local.length <= 64 && email.length <= 254 && EMAIL_RE.test(email);
+  }
+  function isFree(email) {
+    var at = email.lastIndexOf('@');
+    if (at === -1) return false;
+    return !!FREE[email.slice(at + 1).trim().toLowerCase()];
+  }
+  function value(name) {
+    var field = form.elements.namedItem(name);
+    return field && 'value' in field ? String(field.value).trim() : '';
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    hide(fieldError);
+    hide(warn);
+    hide(error);
+    if (value('hp_company')) {
+      hide(form);
+      show(success);
+      return;
+    }
+    var name = value('name');
+    var agency = value('agency');
+    var email = value('email');
+    var country = value('country');
+    var brief = value('projectBrief');
+    if (!name || !agency || !country || !brief) {
+      show(fieldError, 'Name, agency, country, and project brief are required.');
+      return;
+    }
+    if (!validEmail(email)) {
+      show(fieldError, email ? 'Please enter a valid email address' : 'Work email is required');
+      return;
+    }
+    if (isFree(email) && !warned) {
+      warned = true;
+      show(warn, 'That looks like a personal email address. A company email helps us respond faster — press the button again to send it anyway.');
+      return;
+    }
+    var payload = {
+      name: name,
+      agency: agency,
+      email: email,
+      country: country,
+      projectBrief: brief,
+      tags: value('tags'),
+      ref: value('ref'),
+      formVariant: value('formVariant'),
+      requestType: value('requestType'),
+      sourcePage: value('sourcePage'),
+      sourceUrl: location.href,
+      _subject: 'Agency quote - ' + (agency || email)
+    };
+    button.disabled = true;
+    fetch('/api/highlevel-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (json) {
+        return { ok: res.ok && json && json.success === true, status: res.status, error: json && json.error };
+      });
+    }).then(function (highLevel) {
+      if (!highLevel.ok && (highLevel.status === 400 || highLevel.status === 422)) {
+        show(error, highLevel.error || 'Please check your email address and try again.');
+        button.disabled = false;
+        return;
+      }
+      var formspreeBody = {
+        _subject: payload._subject,
+        form: payload.formVariant,
+        pageUrl: payload.sourceUrl,
+        email: payload.email
+      };
+      Object.keys(payload).forEach(function (key) { formspreeBody[key] = payload[key]; });
+      return fetch('https://formspree.io/f/xgozewew', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(formspreeBody)
+      }).then(function (res) {
+        if (res.ok || highLevel.ok) {
+          form.hidden = true;
+          document.getElementById('agency-quote-intro').hidden = true;
+          show(success);
+          return;
+        }
+        show(error, 'Something went wrong — please try again or email us directly.');
+        button.disabled = false;
+      });
+    }).catch(function () {
+      show(error, 'Something went wrong — please try again or email us directly.');
+      button.disabled = false;
+    });
+  });
+})();
+</script>
 
 <!-- Physician Landscape -->
 <section>
@@ -484,7 +710,7 @@ section { padding: 72px 24px; }
     </div>
     <div class="prose">
       <p><strong>Language:</strong> Arabic-language surveys consistently produce higher response rates, richer qualitative responses, and more accurate reflection of real clinical practice. BioNixus conducts all Saudi Arabia physician surveys with certified medical Arabic translation, reviewed by clinically qualified translators for therapy area terminology precision. Bilingual design — Arabic primary, English reference — is our standard for quantitative fieldwork.</p>
-      <p><strong>Recruitment:</strong> BioNixus maintains a recruited, verified panel of Saudi physicians across specialties, with identity verification against Saudi Commission for Health Specialties (SCHS) registration, specialty and institutional affiliation confirmation, and ongoing panel relationship management. The Saudi medical community is not reachable through generic consumer research panels.</p>
+      <p><strong>Recruitment:</strong> BioNixus maintains a recruited, verified Saudi physician panel across specialties, drawn from a wider network of 82,000+ physicians globally and about 3,200 physicians in the Middle East, with identity verification against Saudi Commission for Health Specialties (SCFHS) registration, specialty and institutional affiliation confirmation, and ongoing panel relationship management. The Saudi medical community is not reachable through generic consumer research panels.</p>
     </div>
   </div>
 </section>
@@ -504,7 +730,7 @@ section { padding: 72px 24px; }
       <li><div class="dot"></div><span>Saudi Health Council research registration requirements</span></li>
       <li><div class="dot"></div><span>IRB approval from relevant institutional ethics committees (managed by BioNixus as part of project scope)</span></li>
     </ul>
-    <p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-top:24px"><strong style="color:var(--navy)">Incentive Structure:</strong> Professional honoraria of SAR 150–400 per completed interview, calibrated to survey length and specialty, in line with SCHS guidance. Digital gift card formats are preferred for compliance documentation.</p>
+    <p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-top:24px"><strong style="color:var(--navy)">Incentive Structure:</strong> Professional honoraria of SAR 150–400 per completed interview, calibrated to survey length and specialty, in line with SCFHS guidance. Digital gift card formats are preferred for compliance documentation.</p>
   </div>
 </section>
 

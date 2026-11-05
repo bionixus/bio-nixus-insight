@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -73,6 +74,10 @@ type StrategicServicePageProps = {
   answerBlock?: StrategicAnswerBlock;
   /** Optional additional sections rendered after "Delivery priorities". */
   sections?: StrategicSection[];
+  /** Rendered immediately after "Delivery priorities" (agency offer on selected pages). */
+  afterDelivery?: ReactNode;
+  /** Service JSON-LD description when it should carry facts that are not in the meta description. */
+  serviceSchemaDescription?: string;
   /** ISO dates for a WebPage node (datePublished/dateModified). Bump modifiedAt on every content change. */
   publishedAt?: string;
   modifiedAt?: string;
@@ -105,6 +110,8 @@ export default function StrategicServicePage({
   regionalLandscapes,
   answerBlock,
   sections,
+  afterDelivery,
+  serviceSchemaDescription,
   publishedAt,
   modifiedAt,
 }: StrategicServicePageProps) {
@@ -145,7 +152,7 @@ export default function StrategicServicePage({
       '@context': 'https://schema.org',
       '@type': 'Service',
       name: h1,
-      description,
+      description: serviceSchemaDescription ?? description,
       serviceType: serviceType ?? breadcrumbLabel,
       provider: {
         '@type': 'Organization',
@@ -275,6 +282,8 @@ export default function StrategicServicePage({
               </ul>
             </div>
           </section>
+
+          {afterDelivery}
 
           {sections?.map((section, index) => (
             <section
