@@ -559,6 +559,9 @@ function normalizeDescriptionLength(description, pathname) {
   const clean = String(description || '').replace(/\s+/g, ' ').trim();
   // CTR-engineered descriptions must ship exact (often outside 120–130 band).
   if (pathname && isCtrSeoPath(pathname)) return clean;
+  // Finished ≤155 sentence for this URL. Skip the 130-character ellipsis clamp.
+  // Production SSR (api/indexnow-key.ts) already keeps descriptions at or under 155.
+  if (pathname === '/healthcare-fieldwork-gcc' && clean.length > 0 && clean.length <= 155) return clean;
   return formatMetaDescriptionInRange(description);
 }
 

@@ -425,6 +425,10 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     );
   }
 
+  if (path === '/healthcare-fieldwork-gcc') {
+    return 'White-label healthcare fieldwork across all six GCC markets for agencies, under NDA. Role-verified HCP recruitment from about 3,200 Middle East physicians.';
+  }
+
   // Generic fallback still route-specific to prevent duplicates.
   const topic = titleCase(noPrefixParts.join(' ') || slugToWords(path.replace(/\//g, ' ')));
   const langSuffix = language === 'en' ? '' : ` (${language.toUpperCase()})`;
