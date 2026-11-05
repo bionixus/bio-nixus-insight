@@ -85,6 +85,7 @@ const serviceSchema = {
   provider: { '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   description: PAGE_DESCRIPTION,
   areaServed: ['MENA', 'EMEA', 'Americas', 'Asia-Pacific'],
+  dateModified: '2026-11-05',
 };
 
 export const PRICING_SCHEMA_NODES = [breadcrumbSchema, faqSchema, serviceSchema] as const;
@@ -230,7 +231,7 @@ export default function Pricing() {
             </div>
             <div className="cover-foot">
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                Americas office and global HQ: Sheridan, Wyoming, USA · Europe office: London, UK · AMEA office: Cairo · KSA partner office: Al Khobar · UAE field office: Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
@@ -428,7 +429,7 @@ export default function Pricing() {
               <div className="closing-contact">
                 <div>
                   <div className="label">Firm</div>
-                  <div className="value">BioNixus · USA Global HQ</div>
+                  <div className="value">BioNixus · Americas office and global HQ</div>
                 </div>
                 <div>
                   <div className="label">Email</div>
