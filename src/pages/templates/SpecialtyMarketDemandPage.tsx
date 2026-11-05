@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SpecialtyMarketDemandContent } from '@/data/specialtyMarketDemandContent';
 import {
@@ -48,12 +49,14 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
   ];
 
   const jumpItems = [
+    ...(content.geoAnswer ? [{ href: '#geo-answer', label: 'Quick answer' }] : []),
     { href: '#research', label: 'Research' },
     { href: '#drivers', label: 'Drivers' },
     { href: '#structure', label: 'Structure' },
     ...(content.signalGrid ? [{ href: '#signals', label: 'Signals' }] : []),
     ...(content.calendarBlocks ? [{ href: '#calendar', label: 'Calendar' }] : []),
     { href: '#audiences', label: 'Audiences' },
+    ...(content.narrativeSections?.length ? [{ href: '#field-guide', label: 'Field guide' }] : []),
     { href: '#faq', label: 'FAQ' },
   ];
 
@@ -113,6 +116,18 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
         />
 
         <DirectoryJumpNav items={jumpItems} />
+
+        {content.geoAnswer ? (
+          <DirectorySection id="geo-answer" surface="cream" eyebrow="Direct answer" title="What buyers need to know first">
+            <GeoLLMAnswerBlock
+              question={content.geoAnswer.question}
+              answer={content.geoAnswer.answer}
+              points={content.geoAnswer.points}
+              summary={content.geoAnswer.summary}
+              pageUrl={content.canonical}
+            />
+          </DirectorySection>
+        ) : null}
 
         <DirectorySection
           id="research"
@@ -190,6 +205,25 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             ))}
           </ul>
         </DirectorySection>
+
+        {content.narrativeSections?.length ? (
+          <DirectorySection id="field-guide" eyebrow="Field guide" title="How decisions actually get made">
+            <div className="space-y-10 max-w-3xl">
+              {content.narrativeSections.map((section) => (
+                <div key={section.heading}>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">{section.heading}</h3>
+                  <div className="space-y-4">
+                    {section.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)} className="text-muted-foreground leading-relaxed">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
 
         <DirectorySection id="related" surface="cream" eyebrow="Keep reading" title="Related research resources">
           <div className="grid md:grid-cols-2 gap-3">

@@ -14,6 +14,7 @@
 import { DEDICATED_INDUSTRY_LISTICLE_PATHS } from '@/data/industry-listicle-clusters';
 import { isSegmentMarketPath } from '@/data/segmentMarketIndex';
 import { getSeoExportName, getSeoPageLoader } from '@/routes/lazySeoPages';
+import { SPECIALTY_MARKET_DEMAND_CONTENT } from '@/data/specialtyMarketDemandContent';
 import * as seoLazyPages from '@/routes/lazySeoPages';
 import * as marketingLazyPages from '@/routes/lazyMarketingPages';
 import * as reportLazyPages from '@/routes/lazyReportPages';
@@ -31,14 +32,18 @@ function slugToComponentName(slug: string): string {
     .join('');
 }
 
+const specialtyPageImporter = () => import('@/pages/templates/SpecialtyMarketDemandPage');
+
 /** Report routes whose file name does not match slug -> PascalCase + "Report". */
 const IRREGULAR_IMPORTS: Record<string, Importer> = {
   '/gcc-anesthesia-surgical-market-report': () => import('@/pages/GccAnesthesiaSurgicalMarket'),
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement': () =>
     import('@/pages/BlogPost'),
-  '/singapore-ivd-market-access': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
-  '/singapore-medtech-manufacturing-market': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
 };
+
+for (const { slug } of SPECIALTY_MARKET_DEMAND_CONTENT) {
+  IRREGULAR_IMPORTS[`/${slug}`] = specialtyPageImporter;
+}
 
 /** Dynamic-slug routes matched by prefix. */
 const PREFIX_IMPORTS: Array<{ test: (path: string) => boolean; load: Importer }> = [
@@ -148,9 +153,11 @@ const IRREGULAR_LAZY: Record<string, unknown> = {
   '/medical-device-companies-saudi-arabia': reportLazyPages.SaudiMedicalDeviceCompanies,
   '/gcc-anesthesia-surgical-market-report': reportLazyPages.GccAnesthesiaSurgicalMarket,
   '/uae-influenza-vaccine-report': reportLazyPages.UaeInfluenzaVaccineReport,
-  '/singapore-ivd-market-access': seoLazyPages.SpecialtyMarketDemandPage,
-  '/singapore-medtech-manufacturing-market': seoLazyPages.SpecialtyMarketDemandPage,
 };
+
+for (const { slug } of SPECIALTY_MARKET_DEMAND_CONTENT) {
+  IRREGULAR_LAZY[`/${slug}`] = seoLazyPages.SpecialtyMarketDemandPage;
+}
 
 function resolveLazyComponent(pathname: string): unknown {
   if (isHomePath(pathname)) return marketingLazyPages.Index;

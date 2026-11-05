@@ -4,6 +4,20 @@
  * regulators, tenders, and care pathways. No fabricated dollar totals.
  */
 
+import { applySpecialtyGscPatch } from './specialtyMarketDemandGscExpansions';
+
+export type SpecialtyGeoAnswer = {
+  question: string;
+  answer: string;
+  points: Array<{ title: string; description: string }>;
+  summary?: string;
+};
+
+export type SpecialtyNarrativeSection = {
+  heading: string;
+  paragraphs: string[];
+};
+
 export type SpecialtyMarketDemandContent = {
   slug: string;
   segmentLabel: string;
@@ -17,6 +31,8 @@ export type SpecialtyMarketDemandContent = {
   hubLink?: { to: string; label: string };
   earlyLinks?: Array<{ to: string; label: string }>;
   dateModified?: string;
+  geoAnswer?: SpecialtyGeoAnswer;
+  narrativeSections?: SpecialtyNarrativeSection[];
   researchTopics: Array<{ name: string; detail: string }>;
   demandDrivers: { heading: string; drivers: Array<{ title: string; detail: string }> };
   marketStructure: { heading: string; paragraphs: string[] };
@@ -1757,7 +1773,7 @@ export const SPECIALTY_MARKET_DEMAND_CONTENT: SpecialtyMarketDemandContent[] = [
   gccMedicationManagement,
   doxorubicinMarket,
   meaClinicalTrialImaging,
-];
+].map((item) => applySpecialtyGscPatch(item));
 
 export const SPECIALTY_MARKET_DEMAND_BY_SLUG: Record<string, SpecialtyMarketDemandContent> =
   Object.fromEntries(SPECIALTY_MARKET_DEMAND_CONTENT.map((item) => [item.slug, item]));
