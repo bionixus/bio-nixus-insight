@@ -85,7 +85,6 @@ const serviceSchema = {
   provider: { '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
   description: PAGE_DESCRIPTION,
   areaServed: ['MENA', 'EMEA', 'Americas', 'Asia-Pacific'],
-  dateModified: '2026-11-05',
 };
 
 export const PRICING_SCHEMA_NODES = [breadcrumbSchema, faqSchema, serviceSchema] as const;
