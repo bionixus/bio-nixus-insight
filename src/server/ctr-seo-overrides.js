@@ -1150,6 +1150,11 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Women’s health market research in the GCC: new fertility deals, PCOS in Thiqa obesity cover and low menopause therapy use. What to ask doctors and patients.',
   },
+  '/blog/saudi-diabetes-syndicated-vs-hospital-switching': {
+    title: 'Saudi Diabetes Research Still Misses Hospital Switching',
+    description:
+      'Syndicated Saudi diabetes numbers size the category. They still miss which hospital is switching, and what primary research a launch team must answer.',
+  },
   '/blog/diabetes-market-research-uae-2026-price-cuts': {
     title: 'Diabetes Market Research UAE After 2026 Price Cuts',
     description:
