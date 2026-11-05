@@ -372,7 +372,7 @@ const staticPages = [
   { path: '/kuwait-market-access-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/qatar-market-access-research', priority: '0.8', changefreq: 'monthly' },
   { path: '/healthcare-fieldwork-middle-east', priority: '0.8', changefreq: 'monthly' },
-  { path: '/healthcare-fieldwork-gcc', priority: '0.8', changefreq: 'monthly' },
+  { path: '/healthcare-fieldwork-gcc', priority: '0.8', changefreq: 'monthly', lastmod: '2026-11-05' },
   { path: '/pharma-fieldwork-saudi-arabia', priority: '0.8', changefreq: 'monthly' },
   { path: '/pharma-fieldwork-uae', priority: '0.8', changefreq: 'monthly' },
   { path: '/real-world-evidence', priority: '0.9', changefreq: 'weekly' },
