@@ -89,8 +89,11 @@ describe('ranking listicle fixes 2026-10-20', () => {
 
     const ksa = pages.get(PATHS[3])!.html;
     expect(ksa).toContain('Top market research companies in Saudi Arabia split by job');
-    expect(ksa).toContain('Last reviewed 3 November 2026 · Saudi Arabia · Riyadh · Jeddah · Eastern Province');
+    expect(ksa).toContain('Last reviewed 5 November 2026 · Saudi Arabia · Riyadh · Jeddah · Eastern Province');
     expect(ksa).toContain('BioNixus wrote this list');
+    const outsideFaq = ksa.split('id="faq"')[0] ?? ksa;
+    expect(outsideFaq.match(/BioNixus wrote this list\./g) ?? []).toHaveLength(1);
+    expect(ksa).toContain('BioNixus wrote this list so buyers can match the firm to the research need');
     expect(ksa).toContain('There is no single best firm for every brief.');
     expect(ksa).not.toMatch(/Ranked #1|ranks #1|ranks first|\(#1\b|rank ourselves first/);
     expect(ksa).not.toContain('are BioNixus (ranked #1');
@@ -116,7 +119,8 @@ describe('ranking listicle fixes 2026-10-20', () => {
     expect(gcc).toContain('Americas office and global HQ');
     expect(gcc).toContain('partner office for KSA');
     expect(gcc).toContain('field office for UAE');
-    expect(gcc).not.toMatch(/opening a São Paulo office|KSA field office|UAE field office|field offices in Dubai/);
+    expect(gcc).toContain('UAE field office: Dubai');
+    expect(gcc).not.toMatch(/opening a São Paulo office|KSA field office|field offices in Dubai/);
 
     const egypt = pages.get(PATHS[5])!;
     expect(egypt.html).toContain('Kantar vs BioNixus: when to choose each');
