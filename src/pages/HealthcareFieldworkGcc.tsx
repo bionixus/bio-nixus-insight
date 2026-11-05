@@ -11,7 +11,6 @@ const pageTitle = 'Healthcare Fieldwork GCC | Specialist HCP Research | BioNixus
 /** Finished SERP description. Must stay ≤155 so the production 155-char clamp does not cut it. */
 const pageDescription =
   'White-label healthcare fieldwork across all six GCC markets for agencies, under NDA. Role-verified HCP recruitment from about 3,200 Middle East physicians.';
-const dateModified = '2026-11-05';
 
 const faqItems = [
   {
@@ -64,7 +63,6 @@ const serviceSchema = {
   },
   description:
     'White-label healthcare fieldwork for market research agencies, working under NDA across all six GCC markets. BioNixus recruits from 82,000+ physicians globally and about 3,200 physicians in the Middle East. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. São Paulo is a field office for LATAM. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE.',
-  dateModified,
 };
 
 const jsonLd = [

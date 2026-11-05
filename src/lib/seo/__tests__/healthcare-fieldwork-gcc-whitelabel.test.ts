@@ -72,11 +72,12 @@ describe('/healthcare-fieldwork-gcc white-label fieldwork', () => {
     expect(head).toContain('"@type":"FAQPage"');
     expect(head).toContain(FAQ_Q);
     expect(head).toContain('white-label fieldwork partner for market research agencies under NDA');
-    expect(head).toContain('"dateModified":"2026-11-05"');
+    expect(head).not.toContain('"dateModified"');
   });
 
   it('does not add guarantee language, competitor names, or a number-one claim', () => {
     const page = readFileSync(join(root, 'src/pages/HealthcareFieldworkGcc.tsx'), 'utf8');
+    expect(page).not.toMatch(/dateModified/);
     expect(page).not.toMatch(/guaranteed/i);
     expect(page).not.toMatch(/SurveyArabia/i);
     expect(page).not.toMatch(/#1|number one|ranked first/i);
