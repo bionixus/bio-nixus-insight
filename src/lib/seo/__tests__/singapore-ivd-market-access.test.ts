@@ -26,7 +26,7 @@ describe('/singapore-ivd-market-access', () => {
     expect(content.title).toBe(TITLE);
     expect(content.description).toBe(DESCRIPTION);
     expect(content.h1).toBe('Singapore IVD market access');
-    expect(content.dateModified).toBe('2026-10-18');
+    expect(content.dateModified).toBe('2026-11-05');
     expect(content.title.length).toBeGreaterThanOrEqual(50);
     expect(content.title.length).toBeLessThanOrEqual(60);
     expect(content.description.length).toBeGreaterThanOrEqual(150);
@@ -54,7 +54,7 @@ describe('/singapore-ivd-market-access', () => {
     expect(devicesReport).toContain("dateModified: '2026-10-18'");
     expect(pharmaCompanies).toContain(`to: '${PATH}'`);
     expect(pharmaCompanies).toContain("modifiedDate: '2026-11-01'");
-    expect(sitemap).toMatch(new RegExp(`${PATH}</loc>\\s*<lastmod>2026-10-18</lastmod>`));
+    expect(sitemap).toMatch(new RegExp(`${PATH}</loc>\\s*<lastmod>2026-11-05</lastmod>`));
   });
 });
 
@@ -79,7 +79,7 @@ describe('/singapore-ivd-market-access SSR', () => {
     expect(html).toContain('href="/pharmaceutical-companies-singapore"');
     expect(html).toContain('<details');
     expect(html).toContain('What is Singapore IVD market access?');
-    expect(head).toContain('"dateModified":"2026-10-18"');
+    expect(head).toContain('"dateModified":"2026-11-05"');
   });
 });
 
