@@ -28,15 +28,20 @@ describe('R1 R2 R3 recovery SSR', () => {
 
   it('ships the UAE company page answer, FAQ, and 3 November review', () => {
     const { html, head } = pages['/uae-pharmaceutical-market-research'];
-    expect(head).toContain('Healthcare Market Research Company in UAE | BioNixus');
+    expect(head).toContain('Healthcare Market Research Company in Dubai, UAE | BioNixus');
     expect(head).toContain(
-      'Healthcare market research company in UAE: BioNixus runs DHA-, DOH- and MOHAP-aligned HCP, KOL, payer and patient studies from its Dubai field office. Proposal in 48 hours.',
+      'BioNixus is a healthcare market research company in Dubai, UAE: DHA-, DOH- and MOHAP-aligned physician, KOL, payer and patient research. Proposal in 48 hours.',
     );
-    expect(html).toContain('Healthcare Market Research Company in the UAE for Pharma and MedTech');
-    expect(html).toContain('Last reviewed 3 November 2026 · Dubai · Abu Dhabi · Northern Emirates');
+    expect(html).toContain('BioNixus: Healthcare Market Research Company in Dubai, UAE');
+    expect(html).toContain('BioNixus is a healthcare market research company in Dubai, UAE, running primary');
+    expect(html).toContain('It runs that work from its field office for UAE at Thuraya Tower 1');
+    expect(html).toContain('Which healthcare market research company in Dubai works with pharma teams?');
+    expect(html).toContain('How large is BioNixus');
+    expect(html).toContain('with role verification before interview');
+    expect(html).toContain('Last reviewed 5 November 2026 · Dubai · Abu Dhabi · Northern Emirates');
     expect(html).toContain('What is a healthcare market research company in the UAE?');
     expect(head).toContain('What is a healthcare market research company in the UAE?');
-    expect(head).toContain('"dateModified":"2026-11-03"');
+    expect(head).toContain('"dateModified":"2026-11-05"');
     expect(html.match(/<h1[\s>]/g)?.length).toBe(1);
     expect(html).toContain('href="/healthcare-market-research"');
   });
@@ -54,12 +59,12 @@ describe('R1 R2 R3 recovery SSR', () => {
     const { html, head } = pages['/insights/top-market-research-companies-saudi-arabia-2026'];
     expect(head).toContain('Top Market Research Companies in Saudi Arabia 2026 | BioNixus');
     expect(html).toContain('Top Market Research Companies in Saudi Arabia 2026: Shortlist by Research Need');
-    expect(html).toContain('Last reviewed 3 November 2026 · Saudi Arabia · Riyadh · Jeddah · Eastern Province');
+    expect(html).toContain('Last reviewed 5 November 2026 · Saudi Arabia · Riyadh · Jeddah · Eastern Province');
     expect(html).toContain('Top market research companies in Saudi Arabia split by job');
     expect(html).toContain('There is no single best firm for every brief.');
     expect(head).toContain('"datePublished":"2026-06-07"');
-    expect(head).toContain('"dateModified":"2026-11-03"');
-    expect((html.match(/BioNixus wrote this list/g) || []).length).toBe(3);
+    expect(head).toContain('"dateModified":"2026-11-05"');
+    expect((html.match(/BioNixus wrote this list/g) || []).length).toBe(2);
     expect(html).not.toMatch(/Ranked #1|ranks #1/);
     const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '';
     expect(h1).not.toContain('vs IQVIA');

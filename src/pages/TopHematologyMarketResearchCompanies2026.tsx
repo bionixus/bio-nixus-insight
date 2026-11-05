@@ -185,7 +185,7 @@ const PAGE_TITLE = 'Top Hematology Market Research Companies 2026 | BioNixus';
 const PAGE_DESCRIPTION =
   'Top hematology market research companies 2026: BioNixus vs IQVIA, Oracle, Adelphi. Anonymous PRFs, line-of-therapy brand trackers, malignant + benign.';
 const DATE_PUBLISHED = '2026-09-04';
-const DATE_MODIFIED = '2026-09-04';
+const DATE_MODIFIED = '2026-11-05';
 
 export default function TopHematologyMarketResearchCompanies2026() {
   const breadcrumbSchema = {
@@ -403,7 +403,7 @@ export default function TopHematologyMarketResearchCompanies2026() {
             </div>
             <div className="cover-foot">
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                Americas office and global HQ: Sheridan, Wyoming, USA · Europe office: London, UK · AMEA office: Cairo · KSA partner office: Al Khobar · UAE field office: Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
@@ -879,7 +879,7 @@ export default function TopHematologyMarketResearchCompanies2026() {
               <div className="closing-contact">
                 <div>
                   <div className="label">Firm</div>
-                  <div className="value">BioNixus · USA Global HQ</div>
+                  <div className="value">BioNixus · Americas office and global HQ</div>
                 </div>
                 <div>
                   <div className="label">Email</div>
