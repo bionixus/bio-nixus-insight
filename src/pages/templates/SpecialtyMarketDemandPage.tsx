@@ -16,6 +16,7 @@ import {
   DirectoryOutlineLink,
   DirectorySection,
 } from '@/components/seo/DirectoryPremium';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 /**
  * Shared template for GSC demand-driven specialty market pages
@@ -111,6 +112,20 @@ export default function SpecialtyMarketDemandPage({ content }: { content: Specia
             </>
           }
         />
+
+        {content.geoAnswer ? (
+          <section className="section-padding pt-0 pb-4">
+            <div className="container-wide max-w-4xl mx-auto">
+              <GeoLLMAnswerBlock
+                question={content.geoAnswer.question}
+                answer={content.geoAnswer.answer}
+                points={content.geoAnswer.points}
+                summary={content.geoAnswer.summary}
+                pageUrl={content.canonical}
+              />
+            </div>
+          </section>
+        ) : null}
 
         <DirectoryJumpNav items={jumpItems} />
 

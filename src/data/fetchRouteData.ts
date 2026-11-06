@@ -383,6 +383,14 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     return articleRedirectOrData(path, slug, data);
   }
 
+  /** Localized blog posts share English slugs; only `/ar/blog` had SSR data before this matcher. */
+  const localizedBlogPostMatch = path.match(/^\/(de|fr|es|pt|ru|zh)\/blog\/([^/]+)\/?$/);
+  if (localizedBlogPostMatch) {
+    const slug = decodePathSegment(localizedBlogPostMatch[2]);
+    const data = await fetchBlogPostRouteData(slug);
+    return articleRedirectOrData(path, slug, data);
+  }
+
   const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
   if (blogPostMatch) {
     const slug = decodePathSegment(blogPostMatch[1]);
