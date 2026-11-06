@@ -21,7 +21,7 @@ export interface MarketStatRegion {
   stats: MarketStat[];
 }
 
-export const MARKET_STATISTICS_LAST_UPDATED = '2026-07-22';
+export const MARKET_STATISTICS_LAST_UPDATED = '2026-11-06';
 
 export const MARKET_STATISTICS: MarketStatRegion[] = [
   {
@@ -189,6 +189,112 @@ export const MARKET_STATISTICS: MarketStatRegion[] = [
         sourceHref: '/canada-healthcare-market-report',
       },
       { stat: 'Approximately 5.3 million Spanish adults have diabetes (14.8% prevalence).', source: 'Sociedad Española de Diabetes (SED), 2023' },
+    ],
+  },
+  {
+    region: 'Americas (benchmark)',
+    intro:
+      'Population, payer, and regulatory benchmarks for the USA and Brazil — the two Americas markets BioNixus covers most often for cross-border pharma and device strategy.',
+    stats: [
+      {
+        stat: 'The United States healthcare market is estimated at USD 4.8–5.1 trillion in 2026 — the largest national health economy globally.',
+        source: 'CMS National Health Expenditure projections; BioNixus market analysis',
+        sourceHref: '/usa-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: 'U.S. pharmaceutical spend exceeds USD 600 billion annually, with Medicare Part D and commercial PBM channels shaping access for innovative therapies.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/usa-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Brazil's population exceeds 215 million; universal SUS coverage coexists with ~50 million private supplementary lives under ANS regulation.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Brazil's healthcare market is estimated at USD 155–175 billion in 2026 — the largest in Latin America.",
+        source: 'BioNixus market analysis',
+        sourceHref: '/brazil-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: 'ANVISA regulates pharmaceutical and device registration; CONITEC conducts HTA for SUS incorporation; CMED sets maximum medicine prices.',
+        source: 'ANVISA / CONITEC / CMED public guidance',
+        sourceHref: '/brazil-healthcare-market-report',
+      },
+      {
+        stat: 'Type 2 diabetes prevalence in Brazil exceeds 10% of adults, driving GLP-1, SGLT-2, and insulin market growth in both SUS and private channels.',
+        source: 'IDF Diabetes Atlas',
+        sourceHref: '/brazil-healthcare-market-report',
+      },
+    ],
+  },
+  {
+    region: 'Europe (G5 benchmark)',
+    intro:
+      'Reference statistics for Germany, France, the UK, Italy, and Spain — used when GCC or MENA clients benchmark access timelines against EU5 HTA and pricing systems.',
+    stats: [
+      {
+        stat: 'Combined EU5 pharmaceutical market spend exceeds USD 180 billion — Germany and France represent the largest national segments.',
+        source: 'BioNixus market analysis',
+        isBioNixusEstimate: true,
+      },
+      {
+        stat: "Germany's AMNOG early benefit assessment (Frühe Nutzenbewertung) applies to new medicines within the statutory sickness fund system (GKV).",
+        source: 'G-BA / AMNOG framework',
+        sourceHref: '/de/blog/amnog-frueher-nutzen-marktzugang-2026',
+      },
+      {
+        stat: "France's HAS transparency commission (CEESP) and economic committee (CEPS) govern reimbursement and price for innovative drugs.",
+        source: 'HAS / CEPS public guidance',
+        sourceHref: '/fr/blog/evaluation-economique-has-france-2026',
+      },
+      {
+        stat: 'The UK NICE technology appraisals and NHS England commissioning policies set access for England; Scotland and Wales run parallel HTA routes.',
+        source: 'NICE / NHS England',
+        sourceHref: '/uk-healthcare-market-report',
+      },
+      {
+        stat: "Italy's AIFA negotiation and regional formulary dynamics create dual public–private access paths for oncology and rare disease therapies.",
+        source: 'AIFA public guidance',
+        sourceHref: '/italy-healthcare-market-report',
+      },
+      {
+        stat: 'Spain combines regional health service autonomy with national price negotiation — relevant for Mediterranean launch sequencing with GCC tenders.',
+        source: 'BioNixus market analysis',
+        sourceHref: '/spain-healthcare-market-report',
+        isBioNixusEstimate: true,
+      },
+    ],
+  },
+  {
+    region: 'Using these statistics in market research',
+    intro:
+      'How commercial and access teams should apply the figures above — and when to commission primary research instead of desk statistics alone.',
+    stats: [
+      {
+        stat: 'Syndicated market-size tables rarely explain payer-specific adoption; BioNixus primary research fills gaps for formulary, tender, and prescriber behaviour.',
+        source: 'BioNixus methodology',
+        sourceHref: '/methodology',
+      },
+      {
+        stat: 'Cross-market launches (e.g., Brazil to GCC or EU5 to MENA) need comparable instruments — not translated syndicated reports.',
+        source: 'BioNixus methodology',
+        sourceHref: '/healthcare-market-research',
+      },
+      {
+        stat: 'Figures marked BioNixus modeled estimate should be validated against your indication, channel, and price assumptions before board use.',
+        source: 'BioNixus content standards',
+        sourceHref: '/terms',
+      },
+      {
+        stat: 'For therapy-level demand (oncology, diabetes, devices), use linked market reports and country directories cited under each statistic.',
+        source: 'BioNixus site map',
+        sourceHref: '/market-reports',
+      },
     ],
   },
 ];
