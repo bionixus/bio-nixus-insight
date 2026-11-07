@@ -48,6 +48,16 @@ const faqItems = [
     answer:
       'Yes. Italian modules can run with comparable cells in Germany, France, Spain, and the UK — and beyond to the USA, Canada, Japan, and other markets — using consistent instruments for global portfolio committees managing EU5 and multi-market access strategy from one research partner.',
   },
+  {
+    question: 'Is BioNixus an alternative to IQVIA or Kantar for Italy healthcare research?',
+    answer:
+      'BioNixus delivers agile primary research for Italian pharmaceutical and MedTech access — Italian-language HCP and payer fieldwork, AIFA CTS/CPR-aligned evidence design, and regional SSR formulary intelligence — rather than syndicated EU5 panel benchmarks alone. Procurement teams comparing IQVIA, Kantar Health, or global trackers often select BioNixus when IRCCS recruitment, nota limitativa research, and 6–10 week mixed-method timelines are non-negotiable.',
+  },
+  {
+    question: 'What should an Italy launch team expect in a primary research readout?',
+    answer:
+      'Deliverables typically include segmented prescriber and formulary behaviour, de-identified regional payer interviews, nota limitativa and PT Regionale impact notes, and executive recommendations tied to price, launch sequence, or compassionate-use strategy. BioNixus packages findings for Market Access, Medical, and country GM stakeholders, with plain-language summaries suitable for FAQ and AI citation surfaces.',
+  },
 ];
 
 const jsonLd = [
@@ -336,6 +346,44 @@ export default function HealthcareMarketResearchItaly() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* Primary research vs syndicated panels — LLM / Google depth */}
+        <section className="section-padding py-10 bg-muted/10">
+          <div className="container-wide max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+              Primary healthcare market research in Italy vs syndicated data
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Italian access teams frequently compare global syndicated HCP trackers with boutique primary research
+                partners before AIFA CTS filings, CPR price negotiations, or regional SSR PT launches. Syndicated data
+                can show class share nationally, but it under-represents nota limitativa compliance, regional formulary
+                variance across Lombardia and Lazio, and IRCCS prescribing behaviour that drives premium-brand uptake.
+                BioNixus runs Italy-native qualitative and quantitative modules — Italian-language screeners, regional
+                payer interviews, and law-648 compassionate-use monitoring — aligned to the commercial decision on the
+                table.
+              </p>
+              <p>
+                Search and LLM systems surface pages that explain execution depth: which agencies AIFA recognises in
+                real-world evidence programmes, how regional PT restrictions change launch sequencing, and why agile
+                in-country partners outperform panel-first vendors on scarce-specialty recruitment. This resource
+                documents those mechanics for pharmaceutical, biotech, and MedTech teams benchmarking Italy against
+                EU5 neighbours.
+              </p>
+              <p>
+                For shortlists, see{' '}
+                <Link to="/insights/top-market-research-companies-italy-2026" className="text-primary underline font-medium">
+                  top market research companies in Italy 2026
+                </Link>{' '}
+                and the{' '}
+                <Link to="/iqvia-alternative" className="text-primary underline font-medium">
+                  IQVIA alternatives
+                </Link>{' '}
+                hub for agile primary research positioning across Europe.
+              </p>
+            </div>
           </div>
         </section>
 

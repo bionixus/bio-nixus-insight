@@ -331,36 +331,11 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
     };
   }
 
-  const blogPostMatchAr = path.match(/^\/ar\/blog\/([^/]+)\/?$/);
-  if (blogPostMatchAr) {
-    const slug = decodePathSegment(blogPostMatchAr[1]);
-    const sanitySlug = resolveSanityBlogSlug(slug);
-    let blogPost: BlogPost | null = null;
-    let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
-    try {
-      blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
-      if (blogPost) {
-        relatedPosts = await fetchRelatedPostsWithClient(
-          sanitySlug,
-          blogPost.category,
-          blogPost.publishedAtIso || blogPost.date,
-          blogPost.country,
-          blogPost.tags ?? [],
-          sanityServer,
-          resolveContentSilo(blogPost),
-        );
-      }
-    } catch {
-      blogPost = null;
-    }
-    blogPost = resolveBlogPostForRoute(slug, blogPost);
-    return {
-      pageType: 'blog-post',
-      blogSlug: slug,
-      blogPost,
-      relatedPosts,
-      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.ogImage || blogPost?.coverImage),
-    };
+  const localizedBlogPostMatch = path.match(/^\/(ar|de|fr|es|pt|ru|zh)\/blog\/([^/]+)\/?$/);
+  if (localizedBlogPostMatch) {
+    const slug = decodePathSegment(localizedBlogPostMatch[2]);
+    const data = await fetchBlogPostRouteData(slug);
+    return articleRedirectOrData(path, slug, data);
   }
 
   if (path === '/bionixus-industries/insights' || path === '/bionixus-industries/insights/') {

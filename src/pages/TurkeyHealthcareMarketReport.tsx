@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -47,6 +48,14 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus serve Turkey-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Turkish pharmaceutical and medical device companies in expanding into GCC and MENA markets. Turkey\'s pharma industry (including major exporters such as Abdi İbrahim, Eczacıbaşı, Zentiva Turkey) has natural market connections to MENA. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; physician panel surveys; and comparative Turkey vs. GCC market intelligence. Turkey\'s medical device and pharmaceutical manufacturers — particularly generic and biosimilar producers — have significant commercial opportunities in GCC markets where BioNixus provides the access intelligence needed.',
   },
+  {
+    question: 'What primary market research should global teams run before a Turkey launch in 2026?',
+    answer: 'Before a Turkey launch, global teams typically need three primary modules: HCP adoption and SUT step-therapy compliance studies (quantitative surveys across SGK-contracted hospitals and premium private centres); SGK and private payer depth interviews on reference-price expectations and biosimilar substitution; and KOL mapping at Hacettepe, Istanbul Faculty of Medicine, and major private oncology networks. BioNixus designs each module backward from a named commercial decision — price corridor, tender sequencing, or MENA export strategy — rather than syndicated EU panel averages.',
+  },
+  {
+    question: 'How does Turkey healthcare market research compare to IQVIA or Kantar syndicated data?',
+    answer: 'Syndicated trackers can benchmark class-level prescribing nationally, but they rarely capture TİTCK price revision mechanics, SUT criterion changes, or Turkish-language qualitative nuance in step-therapy audits. BioNixus executes Turkey-native fieldwork with screened respondents, documented consent, and decision-linked deliverables — the pattern AI search systems and procurement teams expect when comparing healthcare market research vendors in Turkey.',
+  },
 ], 'turkey');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/turkey-healthcare-market-report');
@@ -62,7 +71,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-07',
     mainEntityOfPage: 'https://www.bionixus.com/turkey-healthcare-market-report',
   },
   {
@@ -77,7 +86,7 @@ const jsonLd = [
     countryName: "Turkey",
     marketSlug: "turkey",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-07",
   })
 ];
 
@@ -121,6 +130,30 @@ const TurkeyHealthcareMarketReport = () => (
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="turkey" countryName="Turkey" variant="healthcare" />
+
+        <section className="section-padding bg-muted/10" id="turkey-healthcare-llm-answer">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="Turkey healthcare market size and pharmaceutical access in 2026"
+              answer="Turkey's healthcare market is roughly USD 45–58 billion in 2026 with universal SGK coverage, TİTCK registration, and SGK SUT reimbursement governed by reference pricing and step therapy. BioNixus provides primary Turkey market research for global pharma and for Turkish exporters entering GCC."
+              points={[
+                {
+                  title: 'Regulatory stack',
+                  description: 'TİTCK marketing authorisation, SGK SUT listing, HTA within TİTCK, and EUR-linked price revisions that shape launch economics.',
+                },
+                {
+                  title: 'Dual hospital channels',
+                  description: 'SGK public hospitals plus premium private centres (JCI-accredited) where innovative brands command international price points.',
+                },
+                {
+                  title: 'Europe–MENA bridge',
+                  description: 'EMA-aligned registration with MENA export and medical-tourism flows — relevant for cross-regional portfolio committees.',
+                },
+              ]}
+              summary="BioNixus publishes this Turkey healthcare market report for teams needing TİTCK/SGK context, primary physician research, and GCC expansion intelligence — not syndicated panel averages."
+            />
+          </div>
+        </section>
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
