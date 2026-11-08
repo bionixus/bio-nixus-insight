@@ -81,6 +81,13 @@ export const americasMarketIntelligence: Record<string, MarketIntelligence> = {
       { step: 7, action: "ANS incorporation for private insurance", body: "ANS", timeline: "90-day statutory review", notes: "Rol de Procedimentos e Eventos em Saúde — mandatory benefit basket for private plans; significant coverage for ~50M insured" },
     ],
     majorHospitals: [
+      { name: "Hospital Israelita Albert Einstein (São Paulo)", type: 'private', beds: "650 beds", specialties: "Premium private; oncology, cardiology, transplant — top ANS-reimbursed account" },
+      { name: "Hospital Sírio-Libanês (São Paulo)", type: 'private', beds: "400 beds", specialties: "Oncology, cardiology, neurology — reference for innovative therapy adoption" },
+      { name: "Hospital das Clínicas da USP", type: 'academic', beds: "2,200 beds", specialties: "Largest academic hospital complex in Brazil; SUS + research volume" },
+      { name: "INCA — Instituto Nacional de Câncer (Rio de Janeiro)", type: 'public', beds: "200 beds", specialties: "National oncology reference; SUS cancer pathway anchor" },
+      { name: "Hospital BP — Beneficência Portuguesa (São Paulo)", type: 'private', beds: "700 beds", specialties: "Multi-specialty private; high commercial pharma volume" },
+      { name: "Rede D'Or São Luiz (multi-site)", type: 'private', beds: "Distributed", specialties: "Largest private hospital group; key ANS channel for biologics and devices" },
+      { name: "Hospital Moinhos de Vento (Porto Alegre)", type: 'private', beds: "350 beds", specialties: "Southern Brazil premium private; cardiology and oncology" },
     ],
     accessTimeline: {
       regulatoryApproval: "12–24 months (priority)",
@@ -92,6 +99,8 @@ export const americasMarketIntelligence: Record<string, MarketIntelligence> = {
       { condition: "Cancer", stat: "~625,000 new diagnoses/year; breast, prostate, colorectal, cervix most prevalent", source: "INCA (Instituto Nacional de Câncer) 2023" },
       { condition: "Cardiovascular disease", stat: "~400,000 deaths/year from CVD — #1 cause of mortality", source: "SBC (Sociedade Brasileira de Cardiologia) 2023" },
       { condition: "Diabetes", stat: "~16.8 million adults with diabetes (~15.7% adult prevalence)", source: "IDF Diabetes Atlas 2023" },
+      { condition: "Obesity", stat: "~60% of adults overweight or obese; GLP-1 demand rising in private ANS channel", source: "IBGE Pesquisa Nacional de Saúde 2019; updated estimates 2024" },
+      { condition: "Infectious disease (HIV)", stat: "~930,000 people living with HIV; SUS provides universal ARV access", source: "Brazil Ministry of Health HIV/AIDS Program 2023" },
     ],
   },
   'canada': {
