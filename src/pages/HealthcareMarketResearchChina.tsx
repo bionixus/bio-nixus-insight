@@ -48,6 +48,11 @@ const faqItems = [
     answer:
       'Yes. Chinese modules can run with comparable cells in Japan, South Korea, Singapore, Australia, and global markets — using consistent instruments. This enables global portfolio committees managing Asia-Pacific launch sequencing and NHSA-to-PMDA-to-HIRA payer benchmarking from one research partner.',
   },
+  {
+    question: 'How does NMPA approval translate into NHSA reimbursement and hospital uptake in China?',
+    answer:
+      'NMPA marketing authorisation allows commercial sale but does not guarantee NHSA NRDL listing or hospital adoption. After NMPA approval, manufacturers typically negotiate NRDL inclusion (with pharmacoeconomic dossiers), navigate VBP rounds for molecules in centralized procurement, seek provincial PRLS supplementary listing where NRDL coverage is partial, and secure Tier 3A hospital pharmacy committee decisions. BioNixus maps each gate with payer interviews, hospital formulary research, and physician adoption studies so launch teams sequence evidence to the decision that actually limits revenue.',
+  },
 ];
 
 const jsonLd = [
@@ -105,12 +110,23 @@ export default function HealthcareMarketResearchChina() {
               journey studies, and HEOR evidence — purpose-built for China's NMPA-regulated, NHSA-administered
               healthcare environment.
             </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              China's commercial pathway stacks NMPA registration, NHSA NRDL negotiation, VBP procurement waves, and
+              hospital-level P&T committees — each with different evidence requirements. BioNixus designs studies that
+              trace account-level adoption at leading centres (Beijing, Shanghai, Guangdong, Sichuan) while tying payer
+              and procurement dynamics to the therapy-specific access story your medical and market-access teams defend in
+              NRDL and formulary settings.
+            </p>
             <p className="text-muted-foreground leading-relaxed">
               Looking for pharmaceutical-specific research?{' '}
               <Link to="/pharmaceutical-market-research-china" className="text-primary underline font-medium">
                 China pharmaceutical market research
               </Link>{' '}
-              covers HCP surveys, NHSA NRDL payer research, VBP impact studies, and market access strategy.
+              covers HCP surveys, NHSA NRDL payer research, VBP impact studies, and market access strategy. See also the{' '}
+              <Link to="/china-medical-devices-market-report" className="text-primary underline font-medium">
+                China medical devices market report
+              </Link>{' '}
+              for NMPA device classes and DRG-linked adoption.
             </p>
           </div>
         </section>

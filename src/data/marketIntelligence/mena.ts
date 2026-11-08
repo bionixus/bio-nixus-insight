@@ -535,6 +535,13 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
       { step: 7, action: "Hospital formulary adoption", body: "MOH City Hospital pharmacy committees + Private hospital P&T committees", timeline: "3–6 months", notes: "City Hospitals Alliance (Şehir Hastaneleri) has joint procurement — critical for access to ~50,000-bed network" },
     ],
     majorHospitals: [
+      { name: "Hacettepe University Hospitals (Ankara)", type: 'academic', beds: "1,300+ beds", specialties: "National tertiary reference; oncology, transplant, paediatrics" },
+      { name: "Istanbul University Cerrahpaşa Medical Faculty Hospitals", type: 'academic', beds: "Multi-site", specialties: "Istanbul's largest academic cluster; all major specialties" },
+      { name: "Memorial Şişli Hospital", type: 'private', beds: "300 beds", specialties: "Premium private; oncology, cardiology, IVF — JCI-accredited" },
+      { name: "Acıbadem Maslak Hospital", type: 'private', beds: "350 beds", specialties: "Flagship Acıbadem site; oncology, neurosurgery, robotics" },
+      { name: "Florence Nightingale Şişli", type: 'private', beds: "300 beds", specialties: "Cardiac surgery, oncology, orthopaedics — high medical-tourism volume" },
+      { name: "Ankara City Hospital (Şehir Hastanesi)", type: 'public', beds: "3,810 beds", specialties: "Largest single-campus public hospital in Europe; joint City Hospitals procurement" },
+      { name: "Medipol Mega University Hospital Istanbul", type: 'semi-government', beds: "470 beds", specialties: "Multi-specialty university hospital; strong private payer mix" },
     ],
     accessTimeline: {
       regulatoryApproval: "",
@@ -546,6 +553,8 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
       { condition: "Cardiovascular disease", stat: "37% of all-cause mortality — #1 cause of death", source: "TÜİK Turkey Cause of Death Statistics 2023" },
       { condition: "Cancer", stat: "~260,000 new diagnoses/year; lung, breast, colorectal, prostate most prevalent", source: "Turkey Cancer Statistics 2023 (Sağlık Bakanlığı)" },
       { condition: "Diabetes", stat: "~8.5 million adults with T2DM (~14% adult prevalence)", source: "IDF Diabetes Atlas 2023" },
+      { condition: "COPD and asthma", stat: "~4.5 million adults with COPD; high air-quality-linked exacerbation burden in Istanbul and industrial zones", source: "Turkish Thoracic Society registry estimates 2023" },
+      { condition: "Chronic kidney disease", stat: "~7% adult prevalence; dialysis utilisation growing with SGK budget pressure", source: "Turkish Society of Nephrology 2023" },
     ],
   },
 };
