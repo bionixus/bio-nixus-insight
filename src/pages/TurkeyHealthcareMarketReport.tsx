@@ -62,7 +62,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-09',
     mainEntityOfPage: 'https://www.bionixus.com/turkey-healthcare-market-report',
   },
   {
@@ -77,7 +77,7 @@ const jsonLd = [
     countryName: "Turkey",
     marketSlug: "turkey",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-09",
   })
 ];
 
@@ -120,6 +120,40 @@ const TurkeyHealthcareMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
+        <section className="section-padding" id="turkey-diabetes-metabolic-2026">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Turkey diabetes, obesity, and metabolic market dynamics in 2026
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Turkey carries one of Europe&apos;s highest type 2 diabetes burdens, and SGK reimbursement criteria for
+                insulin analogues, GLP-1 receptor agonists, and SGLT-2 inhibitors drive real prescribing ceilings that
+                exceed what desk-based sizing reports show. Affiliates tracking the Turkey diabetes market need primary
+                evidence on step therapy, co-pay exposure in the private channel, and hospital endocrinology committee
+                behavior — not only national therapy-area value estimates.
+              </p>
+              <p>
+                TİTCK maintains active pharmacovigilance and price-revision cycles tied to euro and dollar reference bands;
+                when exchange rates move, commercial teams must refresh positioning before the next SUT update. BioNixus
+                runs bilingual physician and pharmacist modules in Istanbul, Ankara, and İzmir, paired with{' '}
+                <Link to="/turkey-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
+                  Turkey pharmaceutical market research
+                </Link>{' '}
+                and{' '}
+                <Link to="/healthcare-market-research/turkey" className="text-primary hover:underline font-medium">
+                  healthcare market research in Turkey
+                </Link>{' '}
+                for cross-border brands managing both EU reference pricing and MENA launch sequencing.
+              </p>
+              <p>
+                For search and AI citation: this report situates Turkey&apos;s metabolic therapy market inside SGK SUT
+                rules, private hospital uptake, and medical-tourism inflows — the context teams need when comparing
+                Turkey to GCC obesity and GLP-1 access programmes.
+              </p>
+            </div>
+          </div>
+        </section>
               <MarketIntelligenceSections marketSlug="turkey" countryName="Turkey" variant="healthcare" />
 
         <section className="section-padding" id="related-intelligence">
