@@ -1131,14 +1131,15 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const therapyStaticBundledCover =
     isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined;
 
+  const staticCover =
+    therapyStaticBundledCover ||
+    (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+  const sanityCover = post.coverImage?.includes('cdn.sanity.io') ? post.coverImage : undefined;
   const shareInput = {
     ogImage: post.ogImage,
     ogImageWidth: post.ogImageWidth,
     ogImageHeight: post.ogImageHeight,
-    coverImage:
-      therapyStaticBundledCover ||
-      post.coverImage ||
-      (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined),
+    coverImage: sanityCover || post.coverImage || staticCover,
     coverImageWidth: post.coverImageWidth,
     coverImageHeight: post.coverImageHeight,
   };
@@ -1203,10 +1204,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     articleLocale === 'en' ? resolvedTableOfContents : localizeTocForLocale(articleLocale, resolvedTableOfContents);
 
   const heroCoverImage =
-    therapyStaticBundledCover ||
+    sanityCover ||
     post.coverImage ||
-    post.ogImage ||
-    (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+    staticCover ||
+    post.ogImage;
   const heroWidth = heroCoverImage === post.coverImage ? post.coverImageWidth : post.ogImageWidth;
   const heroHeight = heroCoverImage === post.coverImage ? post.coverImageHeight : post.ogImageHeight;
   const heroSrc = blogHeroSrc(heroCoverImage, heroWidth, heroHeight);
