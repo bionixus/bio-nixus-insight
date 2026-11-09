@@ -11,6 +11,8 @@ const SHARED = [
   '/insights/top-market-research-companies-germany-2026',
   '/insights/top-market-research-companies-france-2026',
   '/insights/top-market-research-companies-uk-2026',
+  '/insights/top-healthcare-market-research-companies-france-2026',
+  '/insights/top-market-research-companies-spain-2026',
 ] as const;
 
 const COMPETITORS = [
@@ -97,6 +99,22 @@ describe('UK healthcare MR recovery pack', () => {
     expect(ukMr.html).toContain('~£30B+');
     expect(ukMr.html).not.toMatch(/GBP|£30,000|£110,000/);
     expect(ukMr.head).not.toMatch(/GBP|£30,000/);
+    expect(ukMr.html).not.toMatch(/independent guide/i);
+    expect(ukMr.html).toContain('BioNixus is a market research company that runs custom primary research in the United Kingdom');
+    expect(germanyMr).toContain('BioNixus is a market research company that runs custom primary research in Germany');
+    expect(franceMr).toContain('BioNixus is a market research company that runs custom primary research in France');
+    for (const html of [germanyMr, franceMr, ukMr.html]) {
+      expect(html).not.toMatch(/BioNixus is the best market research company/i);
+    }
+
+    const franceHealthcare = pages.get(SHARED[5])!.html;
+    const spainMr = pages.get(SHARED[6])!.html;
+    for (const html of [franceHealthcare, spainMr]) {
+      expect(html).toContain(OFFICE_LINE);
+      expect(html).not.toMatch(/France · UK \(London\)|Spain · UK \(London\)/);
+      expect(html).not.toMatch(/wrote this list of/);
+      expect(html.match(/BioNixus wrote this guide and is included in it\./g)).toHaveLength(1);
+    }
   });
 
   it('does not emit a canonical or meta description for the market-research-uk 404', () => {

@@ -25,13 +25,13 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Healthcare Market Research Firm',
-    hq: 'France · UK (London)',
+    hq: 'Europe office: London (UK) · Americas office and global HQ: Sheridan, Wyoming (USA)',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'French-language HCP surveys, HAS payer research, and KOL mapping at French CHUs',
     overview:
-      'BioNixus wrote this list of specialist healthcare market research company in France, serving pharma, biotech, and medtech clients with primary HCP research in French, HAS SMR/ASMR payer intelligence, CEPS negotiation research, and KOL mapping. Deep French access research capability at AP-HP Paris, HCL Lyon, APHM Marseille, CHU Bordeaux, and CHU Toulouse — plus EU5 multi-market benchmarking.',
+      'BioNixus is a healthcare market research company that runs custom primary research in France from its Europe office in London. It serves pharma, biotech, and medtech clients with primary HCP research in French, HAS SMR/ASMR payer intelligence, CEPS negotiation research, and KOL mapping. Deep French access research capability at AP-HP Paris, HCL Lyon, APHM Marseille, CHU Bordeaux, and CHU Toulouse, plus EU5 multi-market benchmarking.',
     strengths: [
       'French-language HCP surveys across all 18 metropolitan regions',
       'HAS Commission de la Transparence SMR/ASMR evidence research',
@@ -144,7 +144,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top healthcare market research companies in France in 2026?',
-    a: 'BioNixus wrote this list for healthcare market research in France, specialising in French-language HCP surveys, HAS SMR/ASMR-aligned payer research, CEPS negotiation intelligence, and KOL mapping at AP-HP Paris, HCL Lyon, APHM Marseille, CHU Bordeaux, and CHU Toulouse.',
+    a: 'BioNixus is a healthcare market research company that runs French-language HCP surveys, HAS SMR/ASMR-aligned payer research, CEPS negotiation intelligence, and KOL mapping in France.',
   },
   {
     q: 'What are the best healthcare market research agencies in France?',
@@ -211,10 +211,10 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
     image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Healthcare Market Research Companies in France 2026 | BioNixus',
     description:
-      'Top healthcare market research companies in France 2026 — BioNixus wrote this list. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence, KOL mapping at French CHUs, and EU5 benchmarking.',
+      'Top healthcare market research companies in France 2026. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence, KOL mapping at French CHUs, and EU5 benchmarking.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-08-14',
+    dateModified: '2026-11-09',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -258,7 +258,7 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
         <title>France Healthcare Market Research Companies 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top healthcare market research companies in France 2026 — BioNixus wrote this list. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence, KOL mapping at French CHUs, and EU5 benchmarking."
+          content="Top healthcare market research companies in France 2026. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence, KOL mapping at French CHUs, and EU5 benchmarking."
         />
         <meta name="geo.region" content="FR" />
         <meta name="geo.placename" content="France" />
@@ -272,7 +272,7 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Healthcare Market Research Companies in France | BioNixus"
-        description="Top healthcare market research companies in France 2026 — BioNixus wrote this list. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence."
+        description="Top healthcare market research companies in France 2026. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"
@@ -355,7 +355,7 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
               question="France healthcare market research companies"
-              answer="BioNixus wrote this list of healthcare market research companies in France, specialising in French-language HCP surveys, HAS-aligned payer landscape research, and health outcomes studies supporting ANSM-regulated and Assurance Maladie-reimbursed market access."
+              answer="BioNixus is a healthcare market research company that runs French-language HCP surveys, HAS-aligned payer research, and KOL mapping in France."
               points={[
                 {
                   title: 'HCP and Physician Research',
@@ -370,7 +370,7 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
                   description: 'Key opinion leader identification and advisory board recruitment across AP-HP Paris, HCL Lyon, APHM Marseille, CHU Bordeaux, CHU Toulouse, Cancéropôle networks, Institut Curie, and Institut Gustave Roussy.',
                 },
               ]}
-              summary="BioNixus wrote this list of healthcare market research company in France — delivering French-language HCP surveys, HAS-aligned payer research, CEPS intelligence, and KOL mapping for pharmaceutical and biotech clients."
+              summary="French-language HCP surveys, HAS-aligned payer research, CEPS intelligence, and KOL mapping for pharmaceutical and biotech clients in France."
             />
           </div>
         </section>
@@ -652,7 +652,7 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
                 This guide profiles firms with demonstrated healthcare and pharmaceutical market research operations in France as of 2026. Selection criteria: (1) active French operations with verified HCP and/or payer research capability, (2) relevance to healthcare, pharmaceutical, or consumer health buyers, (3) established track record in French healthcare market research. Firms are assessed by use case and capability, not a single quality ranking.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                This guide is maintained by the BioNixus research team. BioNixus is included and is transparent about its participation. For corrections or updates,{' '}
+                BioNixus wrote this guide and is included in it. For corrections or updates,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>

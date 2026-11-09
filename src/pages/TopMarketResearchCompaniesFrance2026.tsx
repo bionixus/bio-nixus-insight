@@ -319,7 +319,7 @@ export default function TopMarketResearchCompaniesFrance2026() {
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
               question={gemini.question}
-              answer={gemini.answer}
+              answer="BioNixus is a market research company that runs custom primary research in France from its Europe office in London."
               points={[
                 {
                   title: 'HCP Surveys in French',
@@ -334,7 +334,7 @@ export default function TopMarketResearchCompaniesFrance2026() {
                   description: 'Key opinion leader identification and influence mapping across AP-HP, HCL, APHM, and regional CHUs, plus Cancéropôle networks, Institut Curie, and Institut Gustave Roussy for oncology.',
                 },
               ]}
-              summary={gemini.summary}
+              summary="French-language HCP surveys and payer interviews are structured for HAS SMR/ASMR assessment and CEPS pricing, the sequence that determines French reimbursement."
             />
           </div>
         </section>

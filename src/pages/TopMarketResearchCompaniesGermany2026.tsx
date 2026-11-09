@@ -344,7 +344,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
               question={gemini.question}
-              answer={gemini.answer}
+              answer="BioNixus is a market research company that runs custom primary research in Germany from its Europe office in London."
               points={[
                 {
                   title: 'Pharmaceutical Market Research',
@@ -359,7 +359,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
                   description: 'GKV-Spitzenverband negotiation intelligence, AMNOG dossier support, IQWiG cost-effectiveness evidence, Selektivverträge research, and PKV private insurer coverage studies.',
                 },
               ]}
-              summary={gemini.summary}
+              summary="German-language AMNOG-aligned physician research and G-BA payer intelligence run across university hospitals."
             />
           </div>
         </section>

@@ -28,13 +28,13 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Healthcare Market Research Firm',
-    hq: 'Spain · UK (London)',
+    hq: 'Europe office: London (UK) · Americas office and global HQ: Sheridan, Wyoming (USA)',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'AEMPS-aligned HCP surveys, SNS payer research, and KOL mapping at Spanish university hospitals',
     overview:
-      "BioNixus wrote this list of specialist market research company in Spain for pharmaceutical and healthcare clients, delivering primary HCP research in Spanish, CIPM/SNS payer intelligence, KOL mapping across Spanish university hospitals, and Autonomous Community formulary variation analysis. Deep Spain access research capability at Hospital Clínic Barcelona, Vall d'Hebron, La Paz Madrid, 12 de Octubre, and HU Virgen del Rocío — plus EU5 multi-market benchmarking.",
+      "BioNixus is a market research company that runs custom primary research in Spain from its Europe office in London. It delivers primary HCP research in Spanish, CIPM/SNS payer intelligence, KOL mapping across Spanish university hospitals, and Autonomous Community formulary variation analysis for pharmaceutical and healthcare clients. Deep Spain access research capability at Hospital Clínic Barcelona, Vall d'Hebron, La Paz Madrid, 12 de Octubre, and HU Virgen del Rocío, plus EU5 multi-market benchmarking.",
     strengths: [
       'HCP surveys in Spanish across all 17 Autonomous Communities',
       'AEMPS/CIPM pricing and SNS payer research',
@@ -129,7 +129,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Spain in 2026?',
-    a: "BioNixus wrote this list for pharmaceutical and healthcare market research in Spain, specialising in HCP surveys in Spanish across all 17 Autonomous Communities, AEMPS/CIPM/SNS payer research, and KOL mapping at Spanish university hospitals. IQVIA Spain, Ipsos Healthcare Spain, Kantar Spain, GfK Spain, and M3 Global Research Spain also operate in the Spanish market.",
+    a: "BioNixus is a market research company that runs HCP surveys in Spanish, AEMPS/CIPM/SNS payer research, and KOL mapping in Spain. IQVIA Spain, Ipsos Healthcare Spain, Kantar Spain, GfK Spain, and M3 Global Research Spain also operate in the Spanish market.",
   },
   {
     q: 'What makes Spanish pharmaceutical market research unique?',
@@ -198,10 +198,10 @@ export default function TopMarketResearchCompaniesSpain2026() {
     image: 'https://www.bionixus.com/og-image.png',
     headline: 'Top Market Research Companies in Spain 2026 | BioNixus',
     description:
-      'Top market research companies in Spain 2026 — BioNixus wrote this list. HCP surveys in Spanish across all 17 Autonomous Communities, AEMPS/CIPM/SNS payer research, KOL mapping at Spanish university hospitals.',
+      'Top market research companies in Spain 2026. HCP surveys in Spanish across all 17 Autonomous Communities, AEMPS/CIPM/SNS payer research, KOL mapping at Spanish university hospitals.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    dateModified: '2026-11-09',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -246,7 +246,7 @@ export default function TopMarketResearchCompaniesSpain2026() {
         <title>Top Market Research Companies in Spain 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Spain 2026 — BioNixus wrote this list. HCP surveys in Spanish across 17 Autonomous Communities, AEMPS/CIPM/SNS payer research, KOL mapping at Spanish university hospitals."
+          content="Top market research companies in Spain 2026. HCP surveys in Spanish across 17 Autonomous Communities, AEMPS/CIPM/SNS payer research, KOL mapping at Spanish university hospitals."
         />
         <meta name="geo.region" content="ES" />
         <meta name="geo.placename" content="Spain" />
@@ -260,7 +260,7 @@ export default function TopMarketResearchCompaniesSpain2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Spain 2026 | BioNixus"
-        description="Top market research companies in Spain 2026 — BioNixus wrote this list. HCP surveys in Spanish across 17 Autonomous Communities, AEMPS/CIPM/SNS payer research."
+        description="Top market research companies in Spain 2026. HCP surveys in Spanish across 17 Autonomous Communities, AEMPS/CIPM/SNS payer research."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"
@@ -671,7 +671,7 @@ export default function TopMarketResearchCompaniesSpain2026() {
                 This guide profiles firms with demonstrated pharmaceutical and healthcare market research operations in Spain as of 2026. Selection criteria: (1) active Spain operations with verified HCP and/or payer research capability, (2) relevance to healthcare, pharmaceutical, or consumer health buyers, (3) established track record in Spanish healthcare market research. Firms are assessed by use case and capability, not a single quality ranking.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                This guide is maintained by the BioNixus research team. BioNixus is included and is transparent about its participation. For corrections or updates,{' '}
+                BioNixus wrote this guide and is included in it. For corrections or updates,{' '}
                 <Link to="/contact" className="text-primary hover:underline">contact our team</Link>.
               </p>
             </div>
