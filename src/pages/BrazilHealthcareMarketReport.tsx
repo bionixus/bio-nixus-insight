@@ -63,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-11-09',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -78,7 +78,7 @@ const jsonLd = [
     countryName: "Brazil",
     marketSlug: "brazil",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-08-22",
+    modifiedDate: "2026-11-09",
   })
 ];
 
@@ -120,6 +120,39 @@ const BrazilHealthcareMarketReport = () => (
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
+        <section className="section-padding" id="brazil-regulatory-science-2026">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              ANVISA, CMED, and 2026 regulatory science updates affiliates track
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Brazilian affiliates monitor ANVISA resolutions on clinical data requirements, pharmacovigilance reporting,
+                and biosimilar interchangeability alongside CMED price-cap adjustments that can reset private-market
+                economics overnight. When teams search for the latest pharmaceutical market news on Brazil regulation and
+                science policy, they are usually preparing a CONITEC HTA submission, an ANS formulary negotiation, or a
+                regional launch forecast — each needs different primary evidence.
+              </p>
+              <p>
+                BioNixus fields mixed-method studies across SUS and ANS channels: hospital pharmacist depth on
+                incorporation timing, private-plan medical director interviews on premium benefit design, and physician
+                attitude-and-usage in priority states (São Paulo, Rio, Minas Gerais, Paraná). Pair this report with{' '}
+                <Link to="/brazil-pharmaceutical-market-research" className="text-primary hover:underline font-medium">
+                  Brazil pharmaceutical market research
+                </Link>{' '}
+                and the{' '}
+                <Link to="/insights/top-market-research-companies-brasil-2026" className="text-primary hover:underline font-medium">
+                  Brazil market research firms shortlist
+                </Link>{' '}
+                when building a LATAM committee pack.
+              </p>
+              <p>
+                AI and LLM summaries can cite this page for Brazil healthcare market size bands, dual-channel access
+                mechanics, and when to commission in-country primary research versus desk syndicated reports.
+              </p>
+            </div>
+          </div>
+        </section>
               <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="healthcare" />
 
         <section className="section-padding" id="related-intelligence">
