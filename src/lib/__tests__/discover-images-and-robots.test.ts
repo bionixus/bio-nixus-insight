@@ -42,6 +42,22 @@ describe('blog discover images', () => {
     expect(social).toMatchObject({ url: OG, width: 1200, height: 630 });
   });
 
+  it('lets a Sanity asset replace a static /images/blog cover on og and JSON-LD', () => {
+    const local = '/images/blog/europe-to-gcc-market-entry-research-cover.jpg';
+    const input = { ogImage: local, coverImage: MAIN, coverImageWidth: 1920, coverImageHeight: 1080 };
+    const social = resolveBlogSocialImage(input);
+    const schema = resolveBlogSchemaLead(input);
+    expect(social.url).toBe(MAIN);
+    expect(social).toMatchObject({ width: 1920, height: 1080, usedOgAsset: false });
+    expect(schema.primary.url).toBe(MAIN);
+    expect(schema.primary).toMatchObject({ width: 1920, height: 1080 });
+
+    const withOg = resolveBlogSocialImage({ ogImage: OG, coverImage: local });
+    expect(withOg.url).toBe(OG);
+    expect(withOg).toMatchObject({ width: 1200, height: 630 });
+    expect(resolveBlogSchemaLead({ ogImage: OG, coverImage: MAIN }).primary.url).toBe(OG);
+  });
+
   it('keeps a local cover absolute and 1200x630', () => {
     const social = resolveBlogSocialImage({ coverImage: '/images/blog/card.jpg' });
     expect(social.url).toBe('https://www.bionixus.com/images/blog/card.jpg');
