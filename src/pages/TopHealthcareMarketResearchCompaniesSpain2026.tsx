@@ -221,7 +221,7 @@ export default function TopHealthcareMarketResearchCompaniesSpain2026() {
       'Top healthcare market research companies in Spain 2026. Spanish-language HCP surveys across all 17 Autonomous Communities, AEMPS/CIPM/SNS payer research, KOL mapping at Spanish university hospitals.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: 'DEPLOY_DATE_TBD',
+    dateModified: '2026-11-09',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

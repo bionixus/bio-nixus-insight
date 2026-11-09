@@ -213,7 +213,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
       'Top market research companies in Germany 2026. AMNOG-aligned HCP surveys, GBA payer research, KOL mapping at German university hospitals, and HEOR evidence.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: 'DEPLOY_DATE_TBD',
+    dateModified: '2026-11-09',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

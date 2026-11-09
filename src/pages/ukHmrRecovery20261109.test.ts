@@ -70,8 +70,8 @@ describe('UK healthcare MR recovery pack', () => {
     expect(page.html).toContain('partner office for KSA');
     expect(page.html).toContain('field office for LATAM');
     expect(page.html).not.toMatch(/UK proof point|MRS \/ BHBIA|EphMRA membership/);
-    expect(page.html).toContain('Last reviewed DEPLOY_DATE_TBD');
-    expect(page.head).toContain('"dateModified":"DEPLOY_DATE_TBD"');
+    expect(page.html).toContain('Last reviewed 9 Nov 2026');
+    expect(page.head).toContain('"dateModified":"2026-11-09"');
     expect(page.html).not.toContain('BioNixus wrote this list');
   });
 

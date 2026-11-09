@@ -19,8 +19,7 @@ interface FirmProfile {
   orgId?: string;
 }
 
-/** Swap for the deploy day (YYYY-MM-DD) before merge. Visible "Last reviewed" uses the same token. */
-const PAGE_DATE_MODIFIED = 'DEPLOY_DATE_TBD';
+const PAGE_DATE_MODIFIED = '2026-11-09';
 
 const firms: FirmProfile[] = [
   {
@@ -401,7 +400,7 @@ export default function TopHealthcareMarketResearchCompaniesUk2026() {
               </Link>.
             </p>
             <p className="text-sm text-muted-foreground">
-              {`Published 25 June 2026 · Last reviewed ${PAGE_DATE_MODIFIED} · By the BioNixus Research Team`}
+              Published 25 June 2026 · Last reviewed 9 Nov 2026 · By the BioNixus Research Team
             </p>
           </div>
         </section>
