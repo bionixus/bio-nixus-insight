@@ -39,14 +39,31 @@ describe('applySanityShareImages', () => {
     expect(fromMain.coverImageAlt).toBe('Main alt');
   });
 
-  it('keeps a local cover instead of replacing it with Sanity', () => {
-    const local = 'https://www.bionixus.com/images/blog/local-cover.jpg';
+  it('replaces a static cover with Sanity ogImage, then mainImage', () => {
+    const localOg = '/images/blog/europe-to-gcc-market-entry-research-cover.jpg';
+    const localHero = '/images/blog/europe-to-gcc-market-entry-research-hero.jpg';
     const merged = applySanityShareImages(
-      { ...egyptArticle, ogImage: local, coverImage: local, ogImageAlt: 'Local' },
-      { ...egyptArticle, ogImage: OG, coverImage: MAIN },
+      { ...egyptArticle, ogImage: localOg, coverImage: localHero, ogImageAlt: 'Local' },
+      { ...egyptArticle, ogImage: OG, ogImageAlt: 'OG alt', coverImage: MAIN, coverImageAlt: 'Main alt' },
     );
-    expect(merged.ogImage).toBe(local);
-    expect(merged.coverImage).toBe(local);
+    expect(merged.ogImage).toBe(OG);
+    expect(merged.coverImage).toBe(MAIN);
+    expect(merged.ogImageAlt).toBe('OG alt');
+
+    const mainOnly = applySanityShareImages(
+      { ...egyptArticle, ogImage: localOg, coverImage: localHero },
+      { ...egyptArticle, ogImage: undefined, coverImage: MAIN, coverImageAlt: 'Main alt' },
+    );
+    expect(mainOnly.ogImage).toBe(MAIN);
+    expect(mainOnly.coverImage).toBe(MAIN);
+
+    const narrow = 'https://cdn.sanity.io/images/h2whvvpo/production/tiny-640x360.jpg';
+    const kept = applySanityShareImages(
+      { ...egyptArticle, ogImage: localOg, coverImage: localHero },
+      { ...egyptArticle, ogImage: undefined, coverImage: narrow },
+    );
+    expect(kept.ogImage).toBe(localOg);
+    expect(kept.coverImage).toBe(localHero);
   });
 });
 
@@ -108,6 +125,7 @@ describe('blog hero and social image', () => {
       .map((match) => JSON.parse(match[1]))
       .find((node) => node['@type'] === 'BlogPosting');
     const schemaImages = Array.isArray(schema.image) ? schema.image : [schema.image];
-    expect(schemaImages[0]).toMatchObject({ '@type': 'ImageObject', url: MAIN, width: 1200, height: 630 });
+    expect(schemaImages[0]).toMatchObject({ '@type': 'ImageObject', url: OG, width: 1200, height: 630 });
+    expect(schemaImages[1]).toMatchObject({ '@type': 'ImageObject', url: MAIN, width: 1200, height: 630 });
   });
 });
