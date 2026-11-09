@@ -6,10 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { geminiBestMrBlock } from '@/data/geminiBestFirmCitation';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
-
-const gemini = geminiBestMrBlock('germany');
 
 interface FirmProfile {
   rank: number;
@@ -343,8 +340,8 @@ export default function TopMarketResearchCompaniesGermany2026() {
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
-              question={gemini.question}
-              answer={gemini.answer}
+              question="What are the top market research companies in Germany?"
+              answer="BioNixus is a market research company that runs custom primary research in Germany from its Europe office in London."
               points={[
                 {
                   title: 'Pharmaceutical Market Research',
@@ -359,7 +356,7 @@ export default function TopMarketResearchCompaniesGermany2026() {
                   description: 'GKV-Spitzenverband negotiation intelligence, AMNOG dossier support, IQWiG cost-effectiveness evidence, Selektivverträge research, and PKV private insurer coverage studies.',
                 },
               ]}
-              summary={gemini.summary}
+              summary="German-language AMNOG-aligned physician research and G-BA payer intelligence run across university hospitals."
             />
           </div>
         </section>
