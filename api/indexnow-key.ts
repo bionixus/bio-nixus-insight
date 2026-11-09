@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { canonicalRedirectTarget, isSsrNotFoundPage, publicPathFromRewrite } from '../seo-noise-query.mjs';
+import { canonicalRedirectTarget, isSsrNotFoundPage, publicPathFromRewrite, stripNotFoundDiscoveryTags } from '../seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 import {
@@ -748,7 +748,8 @@ async function handleSsrRequest(
     helmetData?.script?.toString() || '',
   ].join('\n');
   const notFound = isSsrNotFoundPage(headTags, appHtml);
-  const page = injectHtml(template, pathname, appHtml, helmetData, initialData);
+  const injected = injectHtml(template, pathname, appHtml, helmetData, initialData);
+  const page = notFound ? stripNotFoundDiscoveryTags(injected) : injected;
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', SSR_HTML_CACHE_CONTROL);
