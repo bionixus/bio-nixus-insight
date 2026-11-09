@@ -24,10 +24,10 @@ import {
 import { getRareTumorClusterByBlogSlug } from '@/data/rare-tumor-seo-cluster';
 import { RareTumorClusterCallout } from '@/components/seo/RareTumorClusterCallout';
 import {
+  blogHeroSrc,
   optimizeSanityImage,
-  pickSocialShareImage,
-  SOCIAL_OG_HEIGHT,
-  SOCIAL_OG_WIDTH,
+  resolveBlogSchemaLead,
+  resolveBlogSocialImage,
 } from '@/lib/image-utils';
 import {
   buildSeoDescription,
@@ -1131,12 +1131,19 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const therapyStaticBundledCover =
     isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined;
 
-  const socialShare = pickSocialShareImage(
-    therapyStaticBundledCover,
-    post.ogImage,
-    post.coverImage,
-    isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined,
-  );
+  const shareInput = {
+    ogImage: post.ogImage,
+    ogImageWidth: post.ogImageWidth,
+    ogImageHeight: post.ogImageHeight,
+    coverImage:
+      therapyStaticBundledCover ||
+      post.coverImage ||
+      (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined),
+    coverImageWidth: post.coverImageWidth,
+    coverImageHeight: post.coverImageHeight,
+  };
+  const socialShare = resolveBlogSocialImage(shareInput);
+  const schemaLead = resolveBlogSchemaLead(shareInput);
   const resolvedOgImageUrl = socialShare.url;
   const resolvedOgImageType = socialShare.mime;
   const socialImageAlt =
@@ -1197,9 +1204,12 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
   const heroCoverImage =
     therapyStaticBundledCover ||
-    post.ogImage ||
     post.coverImage ||
+    post.ogImage ||
     (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+  const heroWidth = heroCoverImage === post.coverImage ? post.coverImageWidth : post.ogImageWidth;
+  const heroHeight = heroCoverImage === post.coverImage ? post.coverImageHeight : post.ogImageHeight;
+  const heroSrc = blogHeroSrc(heroCoverImage, heroWidth, heroHeight);
   const heroImageAlt =
     (heroCoverImage && heroCoverImage === post.ogImage ? post.ogImageAlt : undefined) ||
     post.coverImageAlt ||
@@ -1255,8 +1265,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         alternateLocales={getOgLocaleAlternates(language)}
         siteName="BioNixus"
         imageAlt={socialImageAlt}
-        imageWidth={SOCIAL_OG_WIDTH}
-        imageHeight={SOCIAL_OG_HEIGHT}
+        imageWidth={socialShare.width}
+        imageHeight={socialShare.height}
         imageType={resolvedOgImageType}
         twitterSite="@BioNixus"
         article={{
@@ -1295,20 +1305,26 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           post.excerpt?.trim() ||
           buildSeoDescription({ fallback: articleDisplayTitle })
         }
-        imageUrl={resolvedOgImageUrl}
-        {...(isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaOgImageDimensions
+        imageUrl={schemaLead.primary.url}
+        secondaryImages={schemaLead.extras}
+        {...(schemaLead.primaryIsMain
           ? {
-              ogImageWidth: therapyStaticBlogBundle.schemaOgImageDimensions.width,
-              ogImageHeight: therapyStaticBlogBundle.schemaOgImageDimensions.height,
+              ogImageWidth: schemaLead.primary.width,
+              ogImageHeight: schemaLead.primary.height,
             }
-          : isQ2PharmaBlogEn && q2PharmaSchemaBundle
+          : isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaOgImageDimensions
             ? {
-                ogImageWidth: q2PharmaSchemaBundle.ogImageWidth,
-                ogImageHeight: q2PharmaSchemaBundle.ogImageHeight,
+                ogImageWidth: therapyStaticBlogBundle.schemaOgImageDimensions.width,
+                ogImageHeight: therapyStaticBlogBundle.schemaOgImageDimensions.height,
               }
-            : resolvedOgImageUrl && !resolvedOgImageUrl.endsWith('/og-image.png')
-              ? { ogImageWidth: SOCIAL_OG_WIDTH, ogImageHeight: SOCIAL_OG_HEIGHT }
-              : {})}
+            : isQ2PharmaBlogEn && q2PharmaSchemaBundle
+              ? {
+                  ogImageWidth: q2PharmaSchemaBundle.ogImageWidth,
+                  ogImageHeight: q2PharmaSchemaBundle.ogImageHeight,
+                }
+              : resolvedOgImageUrl && !resolvedOgImageUrl.endsWith('/og-image.png')
+                ? { ogImageWidth: socialShare.width, ogImageHeight: socialShare.height }
+                : {})}
         articleSection={
           post.category?.trim() ||
           (isQ2PharmaBlogEn ? q2PharmaSchemaBundle?.articleSection : undefined) ||
@@ -1332,7 +1348,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         }
         wordCount={post.wordCount}
         emitWebPage={post.schemaExtras?.emitWebPage}
-        imageAlt={post.schemaExtras?.emitWebPage ? socialImageAlt : undefined}
+        imageAlt={
+          post.schemaExtras?.emitWebPage
+            ? (schemaLead.primaryIsMain ? post.coverImageAlt || socialImageAlt : socialImageAlt)
+            : undefined
+        }
         organization={post.schemaExtras?.organization}
         contentImages={post.schemaExtras?.contentImages}
         authorNode={post.schemaExtras?.author}
@@ -1431,14 +1451,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           <div className="relative w-full bg-navy-deep group min-h-[380px] md:min-h-[480px]">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
-              src={optimizeSanityImage(heroCoverImage, 1400, 600)}
+              src={heroSrc}
               alt={heroImageAlt}
               className="w-full h-full object-cover opacity-[0.55] transition-transform duration-[6000ms] ease-in-out group-hover:scale-[1.03]"
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              width={1400}
-              height={600}
+              width={heroWidth && heroWidth >= 1200 ? heroWidth : 1400}
+              height={heroHeight && heroWidth && heroWidth >= 1200 ? heroHeight : 600}
             />
             {/* Gradient overlays */}
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 47% 10% / 0.97) 0%, hsl(220 47% 10% / 0.65) 38%, transparent 72%)' }} />

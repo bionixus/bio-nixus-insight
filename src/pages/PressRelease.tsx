@@ -71,7 +71,7 @@ export default function PressRelease() {
       <div className="min-h-screen bg-background">
         <Helmet>
           <meta name="prerender-status" content="404" />
-          <meta name="robots" content="noindex" />
+          <meta name="robots" content="noindex, max-image-preview:large" />
           <title>Press Release Not Found | BioNixus</title>
         </Helmet>
         <Navbar />
@@ -140,7 +140,14 @@ export default function PressRelease() {
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={release.seoCanonicalUrl || pageUrl} />
-        {release.seoNoIndex && <meta name="robots" content="noindex" />}
+        <meta
+          name="robots"
+          content={
+            release.seoNoIndex
+              ? 'noindex, max-image-preview:large'
+              : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1'
+          }
+        />
         <meta property="og:title" content={release.ogTitle || metaTitle} />
         <meta property="og:description" content={release.ogDescription || metaDescription} />
         <meta property="og:type" content="article" />

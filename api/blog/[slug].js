@@ -19,6 +19,8 @@ import { prepareBlogBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
 import { fixBrokenInternalHref, fixBrokenInternalHrefsInHtml } from '../../lib/fix-broken-internal-hrefs.mjs';
 import { handlePressReleaseCrawler } from '../../lib/press-crawler-html.mjs';
 import { resolveLegacyRedirect } from '../../lib/legacy-redirects.mjs';
+import { resolveBlogSchemaLead, resolveBlogSocialImage } from '../../lib/blog-discover-image.mjs';
+import { withMaxImagePreview } from '../../lib/robots-meta.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
@@ -49,41 +51,6 @@ function htmlDocumentAttrs(isArabic) {
   return isArabic ? ' lang="ar" dir="rtl"' : ' lang="en"';
 }
 
-function isSvgImageUrl(url) {
-  if (!url) return false;
-  return url.split('?')[0].toLowerCase().endsWith('.svg');
-}
-
-function toSocialShareImageUrl(url) {
-  if (!url) return `${BASE}/og-image.png`;
-  let absolute = url;
-  if (absolute.startsWith('//')) absolute = `https:${absolute}`;
-  if (absolute.startsWith('/')) absolute = `${BASE}${absolute}`;
-  if (absolute.includes('cdn.sanity.io')) {
-    const base = absolute.split('?')[0];
-    return `${base}?w=1200&h=630&fit=crop&fm=jpg&q=90`;
-  }
-  if (absolute.includes('images.unsplash.com')) {
-    try {
-      const parsed = new URL(absolute);
-      parsed.searchParams.set('w', '1200');
-      parsed.searchParams.set('h', '630');
-      parsed.searchParams.set('fit', 'crop');
-      parsed.searchParams.set('q', '85');
-      parsed.searchParams.set('fm', 'jpg');
-      return parsed.toString();
-    } catch {
-      return absolute;
-    }
-  }
-  return absolute;
-}
-
-function pickCrawlerShareImage(post) {
-  const raster = [post?.ogImage, post?.coverImage].find((candidate) => candidate && !isSvgImageUrl(candidate));
-  return toSocialShareImageUrl(raster || post?.ogImage || post?.coverImage);
-}
-
 // Fetch full post including body content for crawlers (AhrefsBot, Googlebot, etc.)
 const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   title,
@@ -99,8 +66,12 @@ const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   htmlContent,
   "coverImage": mainImage.asset->url,
   "coverImageAlt": mainImage.alt,
+  "coverImageWidth": mainImage.asset->metadata.dimensions.width,
+  "coverImageHeight": mainImage.asset->metadata.dimensions.height,
   "ogImage": openGraph.ogImage.asset->url,
   "ogImageAlt": openGraph.ogImage.alt,
+  "ogImageWidth": openGraph.ogImage.asset->metadata.dimensions.width,
+  "ogImageHeight": openGraph.ogImage.asset->metadata.dimensions.height,
   publishedAt,
   "author": author->name,
   category,
@@ -342,7 +313,7 @@ export default async function handler(req, res) {
       // on that URL tells Google to drop it; 404 does not.
       return sendCompressedHtml(req, res, buildFallbackHtml(slug), 404, {
         cacheControl: 'public, max-age=300',
-        robotsTag: 'noindex, follow',
+        robotsTag: withMaxImagePreview('noindex, follow'),
       });
     }
 
@@ -385,7 +356,24 @@ export default async function handler(req, res) {
             fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
           }),
         );
-    const image = pickCrawlerShareImage(post);
+    const shareInput = {
+      ogImage: post.ogImage,
+      ogImageWidth: post.ogImageWidth,
+      ogImageHeight: post.ogImageHeight,
+      coverImage: post.coverImage,
+      coverImageWidth: post.coverImageWidth,
+      coverImageHeight: post.coverImageHeight,
+    };
+    const social = resolveBlogSocialImage(shareInput);
+    const schemaLead = resolveBlogSchemaLead(shareInput);
+    const image = social.url;
+    const schemaImageNodes = [schemaLead.primary, ...schemaLead.extras].map((item) => ({
+      '@type': 'ImageObject',
+      url: item.url,
+      width: item.width,
+      height: item.height,
+    }));
+    const schemaImage = schemaImageNodes.length === 1 ? schemaImageNodes[0] : schemaImageNodes;
     const ogTitle = post.ogTitle ? esc(post.ogTitle) : title;
     const ogDescription = post.ogDescription ? esc(post.ogDescription) : description;
     const ogImageAlt = esc(post.ogImageAlt || post.coverImageAlt || documentTitle);
@@ -464,7 +452,7 @@ export default async function handler(req, res) {
       '@type': 'Article',
       headline: post.title || '',
       description: post.excerpt || '',
-      image: image,
+      image: schemaImage,
       url: url,
       datePublished: post.publishedAt || '',
       dateModified:
@@ -526,7 +514,7 @@ export default async function handler(req, res) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="${withMaxImagePreview('index, follow')}">
   <meta name="llm-access" content="allow">
 
   <!-- Open Graph / Facebook / LinkedIn -->
@@ -541,8 +529,8 @@ export default async function handler(req, res) {
   <meta property="og:image:url" content="${esc(image)}">
   <meta property="og:image:secure_url" content="${esc(image)}">
   <meta property="og:image:type" content="${image.includes('.png') && !image.includes('fm=jpg') ? 'image/png' : 'image/jpeg'}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="${social.width}">
+  <meta property="og:image:height" content="${social.height}">
   <meta property="og:image:alt" content="${ogImageAlt}">
   ${post.publishedAt ? `<meta property="article:published_time" content="${esc(post.publishedAt)}">` : ''}
   ${category ? `<meta property="article:section" content="${esc(category)}">` : ''}
@@ -588,7 +576,9 @@ export default async function handler(req, res) {
 </body>
 </html>`;
 
-    return sendCompressedHtml(req, res, html);
+    return sendCompressedHtml(req, res, html, 200, {
+      cacheControl: 'public, max-age=0, s-maxage=3600, stale-while-revalidate=60',
+    });
   } catch (error) {
     console.error('OG handler error:', error);
     // Transient upstream failure must not emit noindex. A 200 noindex response
@@ -619,7 +609,7 @@ function buildIndexableStubHtml(slug, stub) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="${withMaxImagePreview('index, follow')}">
   <meta name="llm-access" content="allow">
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
@@ -652,6 +642,7 @@ function buildUnavailableHtml(slug) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioNixus Blog</title>
   <meta name="description" content="This BioNixus article is temporarily unavailable. Retry shortly.">
+  <meta name="robots" content="${withMaxImagePreview('')}">
   <meta name="llm-access" content="allow">
   <meta property="og:title" content="BioNixus Blog">
   <meta property="og:description" content="This BioNixus article is temporarily unavailable. Retry shortly.">
@@ -683,7 +674,7 @@ function buildFallbackHtml(slug) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioNixus Blog</title>
   <meta name="description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="${withMaxImagePreview('noindex, follow')}">
   <meta name="llm-access" content="allow">
   <meta property="og:title" content="BioNixus – EMEA Healthcare Market Research">
   <meta property="og:description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">

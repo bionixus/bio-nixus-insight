@@ -254,7 +254,7 @@ const CaseStudyPage = () => {
       <div className="min-h-screen bg-background">
         <Helmet>
           <meta name="prerender-status" content="404" />
-          <meta name="robots" content="noindex" />
+          <meta name="robots" content="noindex, max-image-preview:large" />
         </Helmet>
         <Navbar />
         <main className="section-padding container-wide">
@@ -355,7 +355,7 @@ const CaseStudyPage = () => {
           name="robots"
           content={
             caseStudy.seoNoIndex
-              ? 'noindex,nofollow'
+              ? 'noindex,nofollow,max-image-preview:large'
               : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1'
           }
         />

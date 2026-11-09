@@ -50,9 +50,9 @@ describe('api/blog crawler status', () => {
     fetchMock.mockResolvedValue(null);
     const res = await run('missing-blog-slug-not-in-stubs');
     expect(res.statusCode).toBe(404);
-    expect(res.headers.get('x-robots-tag')).toBe('noindex, follow');
+    expect(res.headers.get('x-robots-tag')).toBe('noindex, follow, max-image-preview:large');
     expect(res.headers.get('retry-after')).toBeUndefined();
-    expect(res.body).toContain('noindex, follow');
+    expect(res.body).toContain('noindex, follow, max-image-preview:large');
     expect(res.body).toContain('rel="canonical" href="https://www.bionixus.com/blog/missing-blog-slug-not-in-stubs"');
   });
 
@@ -82,7 +82,7 @@ describe('api/blog crawler status', () => {
     for (const slug of slugs) {
       const res = await run(slug);
       expect(res.statusCode, slug).toBe(200);
-      expect(res.body, slug).toContain('name="robots" content="index, follow"');
+      expect(res.body, slug).toContain('name="robots" content="index, follow, max-image-preview:large"');
       expect(res.body, slug).toContain(`rel="canonical" href="https://www.bionixus.com/blog/${slug}"`);
     }
   });
@@ -102,7 +102,7 @@ describe('api/blog crawler status', () => {
     const res = await run('kol-mapping-pharma-middle-east');
     expect(res.statusCode).toBe(200);
     expect(res.body).toContain('<title>KOL Mapping Guide for Middle East Pharma | BioNixus</title>');
-    expect(res.body).toContain('name="robots" content="index, follow"');
+    expect(res.body).toContain('name="robots" content="index, follow, max-image-preview:large"');
     expect(res.body).toContain('rel="canonical" href="https://www.bionixus.com/blog/kol-mapping-pharma-middle-east"');
     expect(res.body).toContain('"dateModified":"2026-09-29"');
     expect(res.headers.get('retry-after')).toBeUndefined();

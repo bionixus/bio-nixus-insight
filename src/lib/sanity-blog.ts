@@ -27,8 +27,8 @@ function overlayHardcodedSeoPost(post: BlogPost): BlogPost {
 
 /**
  * Hardcoded SEO posts keep their copy. When that copy has no share image,
- * the article hero and og:image use Sanity openGraph.ogImage, then mainImage.
- * A local cover (for example the DKSH JPEG) is left as-is.
+ * og:image uses Sanity openGraph.ogImage and the hero uses mainImage.
+ * Either field fills in when the other is empty. A local cover is left as-is.
  */
 export function applySanityShareImages<T extends BlogPost>(
   base: T,
@@ -36,17 +36,27 @@ export function applySanityShareImages<T extends BlogPost>(
 ): T {
   if (!sanity) return base;
   if (base.ogImage?.trim() || base.coverImage?.trim()) return base;
-  const chosenUrl = sanity.ogImage?.trim() || sanity.coverImage?.trim();
-  if (!chosenUrl) return base;
-  const chosenAlt =
-    (sanity.ogImage?.trim() ? sanity.ogImageAlt?.trim() : sanity.coverImageAlt?.trim()) ||
-    sanity.ogImageAlt?.trim() ||
-    sanity.coverImageAlt?.trim();
+  const ogUrl = sanity.ogImage?.trim() || '';
+  const coverUrl = sanity.coverImage?.trim() || '';
+  const resolvedOg = ogUrl || coverUrl;
+  const resolvedCover = coverUrl || ogUrl;
+  if (!resolvedOg && !resolvedCover) return base;
+  const ogAlt = (ogUrl ? sanity.ogImageAlt?.trim() : sanity.coverImageAlt?.trim()) || sanity.coverImageAlt?.trim();
+  const coverAlt = (coverUrl ? sanity.coverImageAlt?.trim() : sanity.ogImageAlt?.trim()) || sanity.ogImageAlt?.trim();
   return {
     ...base,
-    ogImage: chosenUrl,
-    coverImage: chosenUrl,
-    ...(chosenAlt ? { ogImageAlt: chosenAlt, coverImageAlt: chosenAlt } : {}),
+    ogImage: resolvedOg,
+    coverImage: resolvedCover,
+    ...(ogUrl && typeof sanity.ogImageWidth === 'number' ? { ogImageWidth: sanity.ogImageWidth } : {}),
+    ...(ogUrl && typeof sanity.ogImageHeight === 'number' ? { ogImageHeight: sanity.ogImageHeight } : {}),
+    ...(coverUrl && typeof sanity.coverImageWidth === 'number' ? { coverImageWidth: sanity.coverImageWidth } : {}),
+    ...(coverUrl && typeof sanity.coverImageHeight === 'number' ? { coverImageHeight: sanity.coverImageHeight } : {}),
+    ...(!ogUrl && typeof sanity.coverImageWidth === 'number' ? { ogImageWidth: sanity.coverImageWidth } : {}),
+    ...(!ogUrl && typeof sanity.coverImageHeight === 'number' ? { ogImageHeight: sanity.coverImageHeight } : {}),
+    ...(!coverUrl && typeof sanity.ogImageWidth === 'number' ? { coverImageWidth: sanity.ogImageWidth } : {}),
+    ...(!coverUrl && typeof sanity.ogImageHeight === 'number' ? { coverImageHeight: sanity.ogImageHeight } : {}),
+    ...(ogAlt ? { ogImageAlt: ogAlt } : {}),
+    ...(coverAlt ? { coverImageAlt: coverAlt } : {}),
   };
 }
 
@@ -168,6 +178,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "countryTitle": country->title,
   "coverImage": mainImage.asset->url,
   "coverImageAlt": mainImage.alt,
+  "coverImageWidth": mainImage.asset->metadata.dimensions.width,
+  "coverImageHeight": mainImage.asset->metadata.dimensions.height,
   readingTime,
   tags,
   tableOfContents,
@@ -178,6 +190,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   openGraph,
   "ogImageUrl": openGraph.ogImage.asset->url,
   "ogImageAlt": openGraph.ogImage.alt,
+  "ogImageWidth": openGraph.ogImage.asset->metadata.dimensions.width,
+  "ogImageHeight": openGraph.ogImage.asset->metadata.dimensions.height,
   "authorName": author->name,
   "authorTitle": author->title,
   "authorImage": author->image.asset->url,
@@ -288,6 +302,10 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       }
       if (raw.ogImageUrl) out.ogImage = raw.ogImageUrl;
       if (typeof raw.ogImageAlt === 'string' && raw.ogImageAlt.trim()) out.ogImageAlt = raw.ogImageAlt.trim();
+      if (typeof raw.coverImageWidth === 'number') out.coverImageWidth = raw.coverImageWidth;
+      if (typeof raw.coverImageHeight === 'number') out.coverImageHeight = raw.coverImageHeight;
+      if (typeof raw.ogImageWidth === 'number') out.ogImageWidth = raw.ogImageWidth;
+      if (typeof raw.ogImageHeight === 'number') out.ogImageHeight = raw.ogImageHeight;
       if (raw.authorName) out.authorName = raw.authorName;
       if (raw.authorTitle) out.authorTitle = raw.authorTitle;
       if (raw.authorImage) out.authorImage = raw.authorImage;
@@ -570,6 +588,8 @@ interface RawSanityPost {
   countryTitle?: string;
   coverImage?: string;
   coverImageAlt?: string;
+  coverImageWidth?: number;
+  coverImageHeight?: number;
   readingTime?: number;
   tags?: string[];
   tableOfContents?: { heading?: string; anchor?: string }[];
@@ -588,6 +608,8 @@ interface RawSanityPost {
   };
   ogImageUrl?: string;
   ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   authorName?: string;
   authorTitle?: string;
   authorImage?: string;

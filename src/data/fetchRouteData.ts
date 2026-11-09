@@ -24,9 +24,18 @@ import type { Language } from '@/lib/i18n';
 import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import { isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
-import { getBlogHeroPreloadUrl } from '@/lib/image-utils';
+import { blogHeroSrc } from '@/lib/image-utils';
 import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
 import { FR_FRANCE_CONTENT, FR_HUB_CONTENT } from '@/data/frHealthcareMarketResearchContent';
+
+function blogPostHeroPreload(blogPost: BlogPost | null): string | undefined {
+  if (!blogPost) return undefined;
+  const src = blogPost.coverImage || blogPost.ogImage;
+  const width = blogPost.coverImage ? blogPost.coverImageWidth : blogPost.ogImageWidth;
+  const height = blogPost.coverImage ? blogPost.coverImageHeight : blogPost.ogImageHeight;
+  const url = blogHeroSrc(src, width, height);
+  return url || undefined;
+}
 
 function resolveBlogPostForRoute(slug: string, sanityPost: BlogPost | null): BlogPost | null {
   const hardcoded = getHardcodedPostBySlug(slug);
@@ -64,7 +73,7 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
     blogPost,
     blogPostLookup: blogPost ? 'found' : sanityLookup,
     relatedPosts,
-    lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.ogImage || blogPost?.coverImage),
+    lcpPreloadImageUrl: blogPostHeroPreload(blogPost),
   };
 }
 
@@ -359,7 +368,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       blogSlug: slug,
       blogPost,
       relatedPosts,
-      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.ogImage || blogPost?.coverImage),
+      lcpPreloadImageUrl: blogPostHeroPreload(blogPost),
     };
   }
 

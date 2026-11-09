@@ -164,7 +164,7 @@ export function SEOHead({
         <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
       ))}
       {noindex
-        ? <meta name="robots" content="noindex, nofollow" />
+        ? <meta name="robots" content="noindex, nofollow, max-image-preview:large" />
         : <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />}
 
       <meta property="og:title" content={safeTitle} />

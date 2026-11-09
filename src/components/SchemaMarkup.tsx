@@ -49,6 +49,8 @@ type BlogSchemaProps = {
   /** Primary OG / hero dimensions for structured `image` ImageObject */
   ogImageWidth?: number
   ogImageHeight?: number
+  /** Further ImageObjects after the primary, such as a 1200x630 social asset beside a 16:9 cover. */
+  secondaryImages?: ReadonlyArray<{ url: string; width: number; height: number; caption?: string }>
   authorName: string
   authorUrl?: string
   authorJobTitle?: string
@@ -387,6 +389,14 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       caption: props.imageAlt?.trim() || props.headline,
     }
 
+    const secondaryImageObjects = (props.secondaryImages ?? []).map((image) => ({
+      '@type': 'ImageObject',
+      url: toHttpsUrl(image.url),
+      width: image.width,
+      height: image.height,
+      ...(image.caption ? { caption: image.caption } : {}),
+    }))
+
     const contentImageObjects = (props.contentImages ?? []).map((image) => ({
       '@type': 'ImageObject',
       url: toHttpsUrl(image.url),
@@ -407,7 +417,9 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       url: pageUrlHttps,
       headline: props.headline,
       description: props.description,
-      image: contentImageObjects.length > 0 ? [primaryImageObject, ...contentImageObjects] : primaryImageObject,
+      image: secondaryImageObjects.length > 0 || contentImageObjects.length > 0
+        ? [primaryImageObject, ...secondaryImageObjects, ...contentImageObjects]
+        : primaryImageObject,
       ...(props.articleSection?.trim()
         ? { articleSection: props.articleSection.trim() }
         : {}),
