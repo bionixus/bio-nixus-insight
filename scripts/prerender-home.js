@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { ensureRobotsMeta } from '../lib/robots-meta.mjs';
 
 const projectRoot = process.cwd();
 const clientIndexPath = path.join(projectRoot, 'dist', 'client', 'index.html');
@@ -27,13 +28,13 @@ const headTags = [
   helmetData?.script?.toString() || '',
 ].join('\n');
 
-const prerendered = template
+const prerendered = ensureRobotsMeta(template
   .replace('<!--ssr-head-->', headTags)
   .replace('<!--ssr-outlet-->', appHtml)
   .replace(
     '<!--ssr-data-->',
     `<script>window.__INITIAL_DATA__ = ${JSON.stringify(initialData).replace(/</g, '\\u003c')}</script>`,
-  );
+  ));
 
 fs.writeFileSync(clientIndexPath, prerendered, 'utf8');
 // eslint-disable-next-line no-console

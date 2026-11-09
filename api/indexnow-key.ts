@@ -7,8 +7,7 @@ import {
   buildLcpPreloadTag,
   getClientAssetHints,
   SSR_HTML_CACHE_CONTROL,
-  SSR_HTML_CDN_CACHE_CONTROL,
-  SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL,
+  htmlCdnCacheControl,
 } from '../lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
@@ -17,6 +16,7 @@ import { LEGACY_REDIRECTS, lookupRedirect } from '../lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-redirects.mjs';
 import { stripDefaultOrganizationJsonLd } from '../lib/strip-industries-insights-org.mjs';
 import { dedupeBlogOpenGraphTags } from '../lib/dedupe-blog-og-tags.mjs';
+import { ensureRobotsMeta } from '../lib/robots-meta.mjs';
 import { fitBrandedSeoTitle, titleHasBrandSuffix } from '../src/server/seo-meta.js';
 
 type HelmetLike = {
@@ -602,7 +602,7 @@ function injectHtml(
     );
   // Do not inject nodes into #root after renderToString. A share <aside> that
   // is not in the React tree makes hydrateRoot throw and client-render the page.
-  return dedupeBlogOpenGraphTags(
+  return ensureRobotsMeta(dedupeBlogOpenGraphTags(
     stripDefaultOrganizationJsonLd(
       ensureCtrOgTags(
         ensureCanonicalTag(
@@ -616,7 +616,7 @@ function injectHtml(
       pathname,
     ),
     pathname,
-  );
+  ));
 }
 
 function getParamFromUrl(url: string | undefined, key: string): string | undefined {
@@ -753,10 +753,10 @@ async function handleSsrRequest(
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', SSR_HTML_CACHE_CONTROL);
-  const cdnCache = notFound ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL;
+  const cdnCache = htmlCdnCacheControl(pathname, notFound);
   res.setHeader('CDN-Cache-Control', cdnCache);
   res.setHeader('Vercel-CDN-Cache-Control', cdnCache);
-  if (notFound) res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  if (notFound) res.setHeader('X-Robots-Tag', 'noindex, nofollow, max-image-preview:large');
   res.status(notFound ? 404 : 200).send(page);
 }
 

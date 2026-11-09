@@ -151,4 +151,4 @@ export function resolveBlogSeoNoIndex(slug: string, cmsNoIndex?: unknown): boole
 export const BLOG_INDEX_ROBOTS =
   'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
 
-export const BLOG_NOINDEX_ROBOTS = 'noindex,nofollow';
+export const BLOG_NOINDEX_ROBOTS = 'noindex,nofollow,max-image-preview:large';

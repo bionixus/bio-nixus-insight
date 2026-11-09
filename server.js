@@ -13,8 +13,7 @@ import {
   buildLcpPreloadTag,
   getClientAssetHints,
   SSR_HTML_CACHE_CONTROL,
-  SSR_HTML_CDN_CACHE_CONTROL,
-  SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL,
+  htmlCdnCacheControl,
 } from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
@@ -22,6 +21,7 @@ import { LEGACY_REDIRECTS, lookupRedirect } from './lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from './lib/untranslated-locale-redirects.mjs';
 import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-org.mjs';
 import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
+import { ensureRobotsMeta } from './lib/robots-meta.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -959,7 +959,7 @@ async function startServer() {
       return next();
     });
     app.get(publicPath, (_req, res) => {
-      res.setHeader('X-Robots-Tag', 'noindex, follow');
+      res.setHeader('X-Robots-Tag', 'noindex, follow, max-image-preview:large');
       res.type('html').sendFile(absolutePath);
     });
   };
@@ -1171,14 +1171,16 @@ async function startServer() {
         ),
         req.path,
       ), req.path), req.path);
-      const responseHtml = statusCode === 404 ? stripNotFoundDiscoveryTags(localizedPage) : localizedPage;
+      const withRobots = ensureRobotsMeta(localizedPage);
+      const responseHtml = statusCode === 404 ? stripNotFoundDiscoveryTags(withRobots) : withRobots;
+      const cdnCache = htmlCdnCacheControl(req.path, statusCode === 404);
 
       res.status(statusCode).set({
         'Content-Type': 'text/html; charset=utf-8',
         'Cache-Control': SSR_HTML_CACHE_CONTROL,
-        'CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
-        'Vercel-CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
-        ...(statusCode === 404 ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}),
+        'CDN-Cache-Control': cdnCache,
+        'Vercel-CDN-Cache-Control': cdnCache,
+        ...(statusCode === 404 ? { 'X-Robots-Tag': 'noindex, nofollow, max-image-preview:large' } : {}),
       }).end(responseHtml);
     } catch (error) {
       // eslint-disable-next-line no-console
