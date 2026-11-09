@@ -5,6 +5,7 @@
 
 import type { SanityClient } from '@sanity/client';
 import { getSanityClient } from './sanity';
+import { sanityImageDimensions } from '@/lib/image-utils';
 import { resolveBlogSeoNoIndex, isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
 import type { BlogPost } from '@/types/blog';
 import {
@@ -25,38 +26,51 @@ function overlayHardcodedSeoPost(post: BlogPost): BlogPost {
   return getHardcodedPostBySlug(post.slug) ?? post;
 }
 
+const MIN_MAIN_IMAGE_WIDTH = 1200;
+
+/** A Sanity mainImage qualifies when its width is unknown or at least 1200. */
+function sanityMainIsWideEnough(url: string, width?: number, height?: number): boolean {
+  if (!url.includes('cdn.sanity.io')) return false;
+  const dims = sanityImageDimensions(url, width, height);
+  return !dims || dims.width >= MIN_MAIN_IMAGE_WIDTH;
+}
+
 /**
- * Hardcoded SEO posts keep their copy. When that copy has no share image,
- * og:image uses Sanity openGraph.ogImage and the hero uses mainImage.
- * Either field fills in when the other is empty. A local cover is left as-is.
+ * Hardcoded SEO posts keep their copy. Share images follow Sanity first:
+ * openGraph.ogImage, then mainImage when it is 1200px wide or wider, then the
+ * static file on the hardcoded post. SSR and the prerendered shell both render
+ * this object, so the same order reaches the live HTML.
  */
 export function applySanityShareImages<T extends BlogPost>(
   base: T,
   sanity: BlogPost | null | undefined,
 ): T {
   if (!sanity) return base;
-  if (base.ogImage?.trim() || base.coverImage?.trim()) return base;
-  const ogUrl = sanity.ogImage?.trim() || '';
-  const coverUrl = sanity.coverImage?.trim() || '';
-  const resolvedOg = ogUrl || coverUrl;
-  const resolvedCover = coverUrl || ogUrl;
-  if (!resolvedOg && !resolvedCover) return base;
-  const ogAlt = (ogUrl ? sanity.ogImageAlt?.trim() : sanity.coverImageAlt?.trim()) || sanity.coverImageAlt?.trim();
-  const coverAlt = (coverUrl ? sanity.coverImageAlt?.trim() : sanity.ogImageAlt?.trim()) || sanity.ogImageAlt?.trim();
+  const sanityOg = sanity.ogImage?.trim() || '';
+  const sanityMain = sanity.coverImage?.trim() || '';
+  const usableMain = sanityMain && sanityMainIsWideEnough(sanityMain, sanity.coverImageWidth, sanity.coverImageHeight)
+    ? sanityMain
+    : '';
+  if (!sanityOg && !usableMain) return base;
+
+  const ogFromSanityOg = Boolean(sanityOg);
+  const ogImage = sanityOg || usableMain || base.ogImage;
+  const coverImage = usableMain || base.coverImage;
+  const ogFromMain = !ogFromSanityOg && Boolean(usableMain);
+
   return {
     ...base,
-    ogImage: resolvedOg,
-    coverImage: resolvedCover,
-    ...(ogUrl && typeof sanity.ogImageWidth === 'number' ? { ogImageWidth: sanity.ogImageWidth } : {}),
-    ...(ogUrl && typeof sanity.ogImageHeight === 'number' ? { ogImageHeight: sanity.ogImageHeight } : {}),
-    ...(coverUrl && typeof sanity.coverImageWidth === 'number' ? { coverImageWidth: sanity.coverImageWidth } : {}),
-    ...(coverUrl && typeof sanity.coverImageHeight === 'number' ? { coverImageHeight: sanity.coverImageHeight } : {}),
-    ...(!ogUrl && typeof sanity.coverImageWidth === 'number' ? { ogImageWidth: sanity.coverImageWidth } : {}),
-    ...(!ogUrl && typeof sanity.coverImageHeight === 'number' ? { ogImageHeight: sanity.coverImageHeight } : {}),
-    ...(!coverUrl && typeof sanity.ogImageWidth === 'number' ? { coverImageWidth: sanity.ogImageWidth } : {}),
-    ...(!coverUrl && typeof sanity.ogImageHeight === 'number' ? { coverImageHeight: sanity.ogImageHeight } : {}),
-    ...(ogAlt ? { ogImageAlt: ogAlt } : {}),
-    ...(coverAlt ? { coverImageAlt: coverAlt } : {}),
+    ...(ogImage ? { ogImage } : {}),
+    ...(coverImage ? { coverImage } : {}),
+    ...(ogFromSanityOg && typeof sanity.ogImageWidth === 'number' ? { ogImageWidth: sanity.ogImageWidth } : {}),
+    ...(ogFromSanityOg && typeof sanity.ogImageHeight === 'number' ? { ogImageHeight: sanity.ogImageHeight } : {}),
+    ...(ogFromMain && typeof sanity.coverImageWidth === 'number' ? { ogImageWidth: sanity.coverImageWidth } : {}),
+    ...(ogFromMain && typeof sanity.coverImageHeight === 'number' ? { ogImageHeight: sanity.coverImageHeight } : {}),
+    ...(usableMain && typeof sanity.coverImageWidth === 'number' ? { coverImageWidth: sanity.coverImageWidth } : {}),
+    ...(usableMain && typeof sanity.coverImageHeight === 'number' ? { coverImageHeight: sanity.coverImageHeight } : {}),
+    ...(ogFromSanityOg && sanity.ogImageAlt?.trim() ? { ogImageAlt: sanity.ogImageAlt.trim() } : {}),
+    ...(ogFromMain && sanity.coverImageAlt?.trim() ? { ogImageAlt: sanity.coverImageAlt.trim() } : {}),
+    ...(usableMain && sanity.coverImageAlt?.trim() ? { coverImageAlt: sanity.coverImageAlt.trim() } : {}),
   };
 }
 

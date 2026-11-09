@@ -18,8 +18,8 @@ describe('blog discover images', () => {
     expect(social.url).toBe(OG);
     expect(social).toMatchObject({ width: 1200, height: 630, usedOgAsset: true });
     expect(social.url).not.toContain('w=1200');
-    expect(schema.primary).toEqual({ url: MAIN, width: 1920, height: 1080 });
-    expect(schema.extras).toEqual([{ url: OG, width: 1200, height: 630 }]);
+    expect(schema.primary).toEqual({ url: OG, width: 1200, height: 630 });
+    expect(schema.extras).toEqual([{ url: MAIN, width: 1920, height: 1080 }]);
     expect(blogHeroSrc(MAIN)).toBe(`${MAIN}?w=1920&h=1080&fit=max&fm=webp&q=80&auto=format`);
   });
 
