@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import compression from 'compression';
-import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
+import { canonicalRedirectTarget, isSsrNotFoundPage, stripNotFoundDiscoveryTags } from './seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
 import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
 import { fitBrandedSeoTitle, formatMetaDescriptionInRange, titleHasBrandSuffix } from './src/server/seo-meta.js';
@@ -1171,6 +1171,7 @@ async function startServer() {
         ),
         req.path,
       ), req.path), req.path);
+      const responseHtml = statusCode === 404 ? stripNotFoundDiscoveryTags(localizedPage) : localizedPage;
 
       res.status(statusCode).set({
         'Content-Type': 'text/html; charset=utf-8',
@@ -1178,7 +1179,7 @@ async function startServer() {
         'CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
         'Vercel-CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
         ...(statusCode === 404 ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}),
-      }).end(localizedPage);
+      }).end(responseHtml);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('SSR request failed:', error);

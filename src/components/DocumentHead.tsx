@@ -450,7 +450,10 @@ const DocumentHead = () => {
   const hreflangLinks = getHreflangLinks(pathname);
   const geoMeta = getGeoMeta(pathname);
 
-  if (routeProvidesOwnDocumentHead(pathname || '/')) {
+  // Unknown slugs such as /market-research-uk render the 404 template. Do not
+  // invent a meta description or self-canonical for that URL. The SSR response
+  // also strips any description or canonical the shell would otherwise inject.
+  if (cleanPath(pathname || '/') === '/market-research-uk' || routeProvidesOwnDocumentHead(pathname || '/')) {
     return (
       <Helmet>
         <meta name="llm-access" content="allow" />
