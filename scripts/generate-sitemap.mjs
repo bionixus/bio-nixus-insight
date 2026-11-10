@@ -437,7 +437,7 @@ const staticPages = [
   { path: '/physician-survey-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/sfda-market-access-strategy-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-20' },
   { path: '/biosimilar-market-entry-saudi-arabia', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-27' },
-  { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-03' },
+  { path: '/iqvia-alternative', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-10' },
   { path: '/nielsen-alternative', priority: '0.9', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/kantar-alternative', priority: '0.88', changefreq: 'monthly' },
   { path: '/bionixus-vs-kantar', priority: '0.86', changefreq: 'monthly' },
