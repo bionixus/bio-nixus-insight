@@ -45,9 +45,9 @@ export const CTR_SEO_BY_PATH = {
       '2026 list of pharmaceutical companies in the UAE and Dubai — Julphar, Neopharma, Globalpharma, MNC offices and distributors, with MOHAP, DHA and DOH context.',
   },
   '/pharmaceutical-companies-dubai': {
-    title: 'Pharmaceutical Companies in Dubai (2026): HQs & Distributors',
+    title: 'Pharma Companies in Dubai UAE (2026 Ranked List)',
     description:
-      'Pharmaceutical companies in Dubai: MNC regional HQs in Dubai Science Park and DHCC, local manufacturers, distributors and pharmacy chains, with DHA context.',
+      'Pharmaceutical companies in Dubai and the UAE — MNC HQs in DHCC and Dubai Science Park, manufacturers, distributors and pharmacy chains. DHA and MOHAP context for 2026.',
   },
   // CTR sprint wave 3 (2026-08-22): "Top N + year + Ranked List" formula — matches
   // winning query pattern ("top 20 pharmaceutical companies in saudi arabia" = 37.5% CTR @ pos 5).
@@ -134,10 +134,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // 3 Nov 2026 recovery: Middle East primary-research query. Keep the 127-studies-in-2026 label.
-    title: 'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus',
+    // GSC 2026-11-10: "companies like iqvia" pos 3.1 @ 0% CTR; "iqvia alternatives" pos 4.0 @ 0% CTR.
+    title: 'Companies Like IQVIA & Alternatives 2026 | BioNixus',
     description:
-      'IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours.',
+      'Companies like IQVIA for pharma primary research: syndicated audits for sizing; BioNixus for HCP, payer and patient fieldwork in MENA, USA and Europe. 127 studies in 2026.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     // GSC 17 Sep–14 Oct 2026: 1,838 impr, pos 3.05, 0.27% CTR — keep H1 meaning, rewrite snippet.
@@ -1241,9 +1241,9 @@ export const CTR_SEO_BY_PATH = {
       'Healthcare market research in the United States: FDA, CMS, PBM and IRA-aware physician, payer and hospital evidence for launch teams. Proposal in 24 hours.',
   },
   '/healthcare-market-research-usa': {
-    title: 'Healthcare Market Research Company in USA | BioNixus',
+    title: 'Healthcare Market Research Companies USA 2026',
     description:
-      'USA healthcare market research: IRB-compliant HCP surveys, KOL mapping, PBM/CMS payer studies, and HEOR evidence for FDA-aligned US launch teams in 2026.',
+      'Healthcare market research companies in the USA: IRB-compliant HCP surveys, PBM and CMS payer studies, KOL mapping and HEOR for FDA-aligned launch teams. Proposal in 48 hours.',
   },
   '/pharmaceutical-market-research-usa': {
     title: 'Pharmaceutical Market Research Company in USA | BioNixus',
