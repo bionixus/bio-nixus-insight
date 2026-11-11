@@ -574,6 +574,8 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Spain\'s EUR 10–12 billion devices market within EUR 120–130 billion health expenditure serves 47.9 million population. High diabetes prevalence (14.8% adults) drives monitoring and therapeutic device demand.',
       'Regional adoption variation is among the widest in EU5 — Catalonia and Madrid versus slower rural communities require segmented research, not national averages.',
       'BioNixus supports Spain MedTech research with AEMPS context and verified hospital networks across target autonomous communities.',
+      'Structural heart, diabetes technology, and surgical robotics investment cycles align to regional capital plans funded partly through EU recovery instruments — hospital committees reference total cost of ownership when comparing capital bids, making qualitative procurement research as important as prescriber surveys for high-ticket categories.',
+      'Spanish manufacturers and distributors increasingly serve Latin America and North Africa from Barcelona and Madrid logistics hubs; research programmes that connect Iberian hospital adoption to export-market sequencing help portfolio teams avoid treating Spain as an isolated EU5 node.',
     ],
   },
   switzerland: {
@@ -606,6 +608,8 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Switzerland\'s CHF 6–7 billion medtech market punches above population weight (8.7 million) with highest OECD health spending per capita. Roche, Zambon, and dense SME ecosystem characterise domestic industry.',
       'Access Consortium credentials make Switzerland a strategic parallel market with Canada and Australia for global launch sequencing.',
       'BioNixus supports Swiss MedTech research with Swissmedic context and verified KOL networks at major university hospitals.',
+      'Cantonal tender calendars and supplementary-insurance uptake for premium technologies create two-speed adoption — programmes that segment Zurich university hospitals from smaller cantonal providers capture listing risk syndicated audits smooth away.',
+      'Swiss headquarters teams frequently commission bilingual German–French modules when rolling EU5 dossiers into Romandy and German-speaking cantons simultaneously; verified fieldwork in both linguistic regions prevents message-testing artefacts from single-language samples.',
     ],
   },
   denmark: {
@@ -638,6 +642,8 @@ export const DEVELOPED_MARKET_MEDTECH_COUNTRIES: Record<
       'Denmark\'s medtech sector exports globally through Ambu, Coloplast, and William Demant (Demant) — domestic market size belies international strategic importance. 5.9 million population with high health expenditure per capita.',
       'Regional hospital groups concentrate procedural volume; digital health leadership creates differentiated adoption pathways for connected devices.',
       'BioNixus supports Denmark MedTech research with EU MDR context and Nordic expansion intelligence.',
+      'Nordic collaborative procurement (SKI, NHN) means a Danish listing decision can pre-signal Swedish and Norwegian committee behaviour — research that documents regional buyer networks improves multi-market sequencing for capital equipment categories.',
+      'Connected device and SaMD programmes should align sample design with MedCom interoperability requirements; hospital IT gatekeepers often block adoption after clinical enthusiasm unless integration evidence is validated in qualitative modules.',
     ],
   },
   'new-zealand': {
