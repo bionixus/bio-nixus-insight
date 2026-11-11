@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03",
+  "generatedAt": "2026-11-11",
   "source": "data/gsc/current-week/Pages.csv",
   "minImpressions": 100,
   "freezeWeeks": 8,
@@ -120,8 +120,11 @@
     },
     "/bionixus-market-research-middle-east": {
       "impressions": 2180,
-      "frozenAt": "2026-10-04",
-      "override": null
+      "frozenAt": "2026-11-11",
+      "override": {
+        "title": "Middle East Pharma Market Research | GCC Fieldwork",
+        "description": "Middle East pharmaceutical market research for GCC launch teams: SFDA, MOHAP, and EDA fieldwork, hospital procurement intelligence, and payer evidence from BioNixus Cairo and Dubai offices."
+      }
     },
     "/biotech-companies-india": {
       "impressions": 1937,
@@ -277,10 +280,10 @@
     },
     "/china-medical-devices-market-report": {
       "impressions": 9603,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-11-11",
       "override": {
-        "title": "China Medical Devices Market 2026 | NMPA, VBP & Size",
-        "description": "China medical devices market 2026 (~$75–90B): NMPA Class I–III registration, NHSA VBP price cuts, import substitution, and hospital procurement intelligence from BioNixus."
+        "title": "China Medical Devices Market Report 2026 | NMPA & VBP",
+        "description": "China medical devices market report 2026 (~$75–90B): NMPA Class I–III registration, VBP procurement waves, import substitution, and hospital channel intelligence. BioNixus primary research."
       }
     },
     "/companies-in-egypt": {
@@ -414,10 +417,10 @@
     },
     "/gcc-market-access-guide": {
       "impressions": 4164,
-      "frozenAt": "2026-10-04",
+      "frozenAt": "2026-11-11",
       "override": {
         "title": "GCC Market Entry Guide 2026: Pharma & MedTech Access",
-        "description": "GCC market entry for pharma and medtech in 2026: the 7-step path into Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain: registration, pricing, tenders."
+        "description": "Step-by-step GCC market entry for pharma and medtech in 2026 — SFDA, MOHAP, NUPCO tenders, pricing, and reimbursement across Saudi Arabia, UAE, Qatar, Kuwait, Oman, and Bahrain."
       }
     },
     "/gcc-medication-management-market": {
@@ -819,10 +822,10 @@
     },
     "/iqvia-alternative": {
       "impressions": 3608,
-      "frozenAt": "2026-11-03",
+      "frozenAt": "2026-11-11",
       "override": {
-        "title": "IQVIA Alternative Middle East: Primary Research 2026 | BioNixus",
-        "description": "IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours."
+        "title": "Companies Like IQVIA & Alternatives 2026 | BioNixus",
+        "description": "Companies like IQVIA for pharma primary research: syndicated audits for sizing; BioNixus for HCP, payer and patient fieldwork in MENA, USA and Europe. 127 studies in 2026."
       }
     },
     "/italy-medical-devices-market-report": {
