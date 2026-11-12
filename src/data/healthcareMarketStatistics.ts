@@ -21,7 +21,7 @@ export interface MarketStatRegion {
   stats: MarketStat[];
 }
 
-export const MARKET_STATISTICS_LAST_UPDATED = '2026-07-22';
+export const MARKET_STATISTICS_LAST_UPDATED = '2026-11-12';
 
 export const MARKET_STATISTICS: MarketStatRegion[] = [
   {
