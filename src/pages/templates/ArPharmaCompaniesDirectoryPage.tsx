@@ -119,12 +119,26 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
 
         <DirectoryJumpNav
           items={[
+            ...(config.editorialSections?.map((s) => ({ href: `#${s.id}`, label: s.heading.split(':')[0].trim() })) ?? []),
             { href: '#companies', label: 'الشركات' },
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
           ]}
         />
+
+        {config.editorialSections?.map((section) => (
+          <section key={section.id} className="section-padding py-14 border-b border-border/60" id={section.id}>
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">{section.heading}</h2>
+              <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
 
         <section className="section-padding py-16 bg-muted/30" id="companies">
           <div className="container-wide max-w-5xl mx-auto">

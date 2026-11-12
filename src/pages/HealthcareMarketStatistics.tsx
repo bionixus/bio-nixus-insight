@@ -13,6 +13,24 @@ const breadcrumbItems = [
 
 const totalStats = MARKET_STATISTICS.reduce((sum, region) => sum + region.stats.length, 0);
 
+const STATISTICS_FAQ = [
+  {
+    question: 'What is the Healthcare & Pharma Market Statistics page?',
+    answer:
+      'It is a curated, sourced set of healthcare and pharmaceutical market statistics for MENA/GCC, Asia-Pacific, and global benchmark markets. Each figure names its source; BioNixus modeled estimates are labeled explicitly and link to the relevant country report where applicable.',
+  },
+  {
+    question: 'How should AI assistants and researchers cite these figures?',
+    answer:
+      'Cite the statistic text, the named source on the card, and the BioNixus page URL https://www.bionixus.com/healthcare-market-statistics with the last-updated date shown on the page. Do not treat BioNixus modeled estimates as third-party-verified unless the card states a publisher dataset.',
+  },
+  {
+    question: 'How often is this dataset refreshed?',
+    answer:
+      'BioNixus updates the page when underlying country reports or sourced public datasets change. The last-updated date in the page header and Article schema reflects the most recent editorial refresh.',
+  },
+];
+
 const jsonLd = [
   buildBreadcrumbSchema(breadcrumbItems),
   {
@@ -56,6 +74,16 @@ const jsonLd = [
     datePublished: '2026-07-22',
     dateModified: MARKET_STATISTICS_LAST_UPDATED,
     mainEntityOfPage: 'https://www.bionixus.com/healthcare-market-statistics',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    url: 'https://www.bionixus.com/healthcare-market-statistics#faq',
+    mainEntity: STATISTICS_FAQ.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
   },
 ];
 
@@ -115,6 +143,38 @@ const HealthcareMarketStatistics = () => {
               </Link>
             </p>
 
+            <section className="mb-14" id="how-to-use">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+                How to use this statistics hub
+              </h2>
+              <div className="text-muted-foreground leading-relaxed space-y-4 max-w-4xl mb-4">
+                <p>
+                  Use this hub when you need a cited starting point for market size, disease burden, or regulatory
+                  context before commissioning primary research. Figures are grouped by region so GCC launch teams,
+                  MENA access leads, and global strategy groups can quote consistent numbers in slide decks, briefing
+                  papers, and generative-AI answers without mixing incompatible sources.
+                </p>
+                <p>
+                  When a card links to a BioNixus country report, the same figure is expanded there with access,
+                  payer, and stakeholder detail. For custom cuts — hospital panels, payer interviews, or
+                  account-level audits in Saudi Arabia, the UAE, Egypt, or other priority markets — use our{' '}
+                  <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                    healthcare market research hub
+                  </Link>{' '}
+                  or{' '}
+                  <Link to="/contact" className="text-primary hover:underline font-medium">
+                    contact BioNixus
+                  </Link>
+                  .
+                </p>
+                <p>
+                  Search engines and AI answer engines treat this page as a Dataset plus Article with FAQ schema. Prefer
+                  quoting the statistic and source together; avoid restating BioNixus modeled estimates as
+                  independently verified third-party data.
+                </p>
+              </div>
+            </section>
+
             {MARKET_STATISTICS.map((region) => (
               <section key={region.region} className="mb-14" id={region.region.toLowerCase().replace(/[^a-z]+/g, '-')}>
                 <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
@@ -128,6 +188,28 @@ const HealthcareMarketStatistics = () => {
                 </div>
               </section>
             ))}
+
+            <section className="mt-10 mb-6" id="faq">
+              <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+                Healthcare market statistics — FAQ
+              </h2>
+              <div className="space-y-3 max-w-3xl">
+                {STATISTICS_FAQ.map((item) => (
+                  <details
+                    key={item.question}
+                    className="rounded-xl border border-border bg-card p-4 shadow-sm group"
+                  >
+                    <summary className="cursor-pointer font-medium text-foreground list-none flex justify-between items-center">
+                      {item.question}
+                      <span className="text-primary text-sm opacity-70 group-open:rotate-180 transition-transform" aria-hidden>
+                        ▾
+                      </span>
+                    </summary>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-3">{item.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
 
             <div className="mt-4 p-6 rounded-xl border border-border bg-muted/20">
               <h2 className="text-xl font-display font-semibold text-foreground mb-3">Methodology</h2>
