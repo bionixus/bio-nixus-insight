@@ -608,12 +608,13 @@ const RETAIL_UAE = finish('retail', 'uae', {
 });
 
 const RETAIL_KSA = finish('retail', 'saudi-arabia', {
+  modifiedDate: '2026-11-13',
   metaDescription:
     '2026 directory of retail companies in Saudi Arabia: Panda, BinDawood, Othaim, Tamimi, Lulu. Traditional grocers plus Nahdi. Account-level shopper research.',
   introLead:
     'Saudi grocery is a listed-equity story. Panda (Savola) is the volume modern banner. BinDawood and Danube hold the Hijaz premium-to-mid trip. Othaim is the Central and Qassim supermarket system. Tamimi is the Eastern Province name. Lulu and Carrefour add the Gulf hypermarket format. Nahdi and Al Dawaa take the chemist mission. Traditional grocers still fill the week outside the three cities.',
   introRest:
-    'BioNixus fields banners as accounts. A Nielsen modern-trade cut can size the category. It cannot tell you whether a dairy SKU died in Othaim Qassim while it lived in Danube Jeddah. Use this directory with our retail market research in Saudi Arabia.',
+    'BioNixus fields banners as accounts — not as a single “Saudi modern trade” row. A Nielsen modern-trade cut can size dairy or laundry nationally; it cannot explain why a yogurt SKU died in Othaim Qassim while the same pack gained facings in Danube Jeddah, or why Nahdi personal-care velocity diverged from Panda grocery. Vision 2030 retail formalisation, compulsory health insurance, and e-commerce (Ninja, Jahez grocery adjacency) are changing mission mix, but the banner map below is still how shopper studies should be designed. Pair this directory with our retail market research in Saudi Arabia and FMCG companies in Saudi Arabia when the brief crosses manufacture and shelf.',
   stats: [
     { value: '10', label: 'Banners we list and study' },
     { value: 'Panda', label: 'Savola-owned volume gate' },
@@ -622,7 +623,7 @@ const RETAIL_KSA = finish('retail', 'saudi-arabia', {
   ],
   channelHeading: 'Listed grocers, regional systems, chemist, traditional fill-in',
   channelBody:
-    'Panda, BinDawood/Danube, Othaim, and Tamimi are professionalised, often listed, and geographically specialised. Merging them into “KSA modern trade” hides the shopper. Lulu and Carrefour are the Gulf hypers. Nahdi and Al Dawaa take baby and personal care. Traditional grocers remain the volume leak in secondary cities. Name the banner and the region.',
+    'Panda, BinDawood/Danube, Othaim, and Tamimi are professionalised, often listed, and geographically specialised. Panda sets Central volume architecture tied to Savola’s own-brand portfolio. BinDawood/Danube splits Hijaz premium and mid missions — Danube is not a Panda clone. Othaim dominates Central and Qassim supermarket trips that a Jeddah-only panel never sees. Tamimi is the Eastern Province professional banner; Dammam–Khobar studies that skip it misread the coast. Lulu and MAF Carrefour import Gulf hyper formats as comparison anchors, not as the Saudi supermarket core. Nahdi and Al Dawaa absorb baby, derma and OTC-adjacent missions that grocery-only intercepts understate. Traditional grocers and neighbourhood stores still leak oils, value dairy and bakery in secondary cities. Quick-commerce and dark-store pilots (Ninja, some Carrefour formats) add a fifth mission: ultra-short-range top-up. Name the banner, the region and the mission before you field.',
   companies: [
     { name: 'Panda Retail', hq: 'Saudi Arabia', type: 'Retailer', focus: 'Hypermarket, supermarket', notes: 'Savola-owned; the volume modern banner' },
     { name: 'BinDawood Holding', hq: 'Saudi Arabia', type: 'Retailer', focus: 'Supermarket (BinDawood, Danube)', notes: 'Hijaz system; Danube as the premium cut' },
@@ -648,6 +649,37 @@ const RETAIL_KSA = finish('retail', 'saudi-arabia', {
     { title: 'Chemist banners as grocery competitors', desc: 'Nahdi and Al Dawaa take baby and personal-care trips. Grocery-only samples understate P&G and Unilever velocity.' },
     { title: 'Vision 2030 retail formalisation', desc: 'More organised grocery does not retire traditional trade. It changes the mix. Measure both.' },
     { title: 'Premium Hijaz versus value Central', desc: 'Danube and Panda are different missions in different cities. A national “modern trade” average hides the SKU you came to save.' },
+    { title: 'Quick-commerce top-up', desc: 'Ninja and partner dark-store pilots add ultra-short trips beside the weekly hyper visit. Mix them only when the SKU is replenishment-sized.' },
+  ],
+  sections: [
+    {
+      heading: 'Vision 2030 and the formalisation wave',
+      paragraphs: [
+        'Saudi grocery is formalising faster than almost any GCC market, but formalisation is not homogenisation. Vision 2030 entertainment, tourism and housing corridors pull new hyper and supermarket floors into Riyadh, Jeddah and secondary cities, while compulsory health insurance and chemist density lift Nahdi and Al Dawaa as everyday destinations. Panda’s Savola ownership still ties manufacturer and retailer incentives on oils, sugar and bakery — a structural fact US-imported syndicated models rarely encode.',
+        'For research, the formalisation wave means more audited modern facings, not the death of traditional trade. Studies that declare “modern trade only” after visiting three Riyadh hypers will overstate organised share and miss the bakkal layer that still moves value dairy in Buraidah and Abha. BioNixus pairs audited banner cells with traditional fill-in checks so launch trackers do not confuse a capital-city planogram for national velocity.',
+      ],
+    },
+    {
+      heading: 'Regional banner economics',
+      paragraphs: [
+        'Geography is the design variable. Othaim’s Central and Qassim strength is a different shopper from Danube’s Hijaz premium basket. Tamimi’s Eastern Province base means Dammam–Khobar intercepts are not interchangeable with Riyadh Panda trips. Farm Superstores adds a Western-region professional banner that is neither BinDawood nor Panda. When a multinational brief asks for “Saudi shopper insights,” the first deliverable is a fascia map by region — only then does sample size mean something.',
+        'Listing and promotion mechanics differ by banner type. Hypers run destination trips; Othaim and Tamimi run weekly family shops; Nahdi runs personal-care missions that steal laundry and baby facings from grocery. Merging those missions produces the classic failure mode: a winning concept in Carrefour Riyadh Park that never reaches Othaim Qassim or a Nahdi end-cap.',
+      ],
+    },
+    {
+      heading: 'Pharmacy-led personal care',
+      paragraphs: [
+        'Nahdi Medical and Al Dawaa Pharmacies are grocery competitors for baby, derma, oral care and OTC-adjacent packs. Their store counts and health-insurance adjacency mean P&G, Unilever and regional challengers must field them as first-class accounts, not as “chemist other.” Grocery-only audits systematically understate velocity on the same SKU that sits beside pharmacy-controlled categories.',
+        'Vision 2030 health-sector investment increases pharmacy traffic without shrinking supermarket missions — shoppers split trips. BioNixus runs matched basket audits across Panda, Danube and Nahdi when the category bleeds across aisles, so incrementality claims survive procurement scrutiny.',
+      ],
+    },
+    {
+      heading: 'How BioNixus uses this directory',
+      paragraphs: [
+        'This page is an account roster for fieldwork design, not a ranking by revenue. BioNixus selects banners from the list below to match the SKU mission: fresh dairy in Othaim versus Panda, premium imported ice cream in Danube, personal care in Nahdi versus Al Dawaa, and traditional fill-in in a named secondary city. We pair banner audits with e-commerce and quick-commerce checks when the pack is replenishment-sized.',
+        'When the brief crosses manufacture and shelf, we link to FMCG companies in Saudi Arabia and our Saudi retail market research service page for methodology. Minimum engagement for account-level Saudi shopper work typically starts at USD 20,000 — below that threshold syndicated feeds are usually the honest recommendation.',
+      ],
+    },
   ],
   faq: [
     { q: 'Which retail companies define grocery in Saudi Arabia?', a: 'Panda, BinDawood/Danube, Othaim, Tamimi, Farm, Lulu, Carrefour/MAF, Nahdi, Al Dawaa, and traditional grocers. That set covers volume, Hijaz, Central, Eastern Province, Gulf hypers, chemist, and fill-in.' },
@@ -655,6 +687,25 @@ const RETAIL_KSA = finish('retail', 'saudi-arabia', {
     { q: 'Do Nahdi and Al Dawaa belong on a grocery map?', a: 'Yes, when the SKU is personal care, baby, or OTC-adjacent. They are accounts, not “other outlets.”' },
     { q: 'Does Nielsen replace banner-level work in the Kingdom?', a: 'NielsenIQ can size modern-trade categories. It cannot tell you Othaim Qassim versus Danube Jeddah on a named pack. That is the primary study we run.' },
     { q: 'What must a KSA retail brief name?', a: 'Banner and region. “Shopper in Saudi Arabia” is not a design. “Almarai fresh in Othaim versus Panda in Qassim” is.' },
+    { q: 'How is Saudi retail changing under Vision 2030?', a: 'More organised floors in new corridors, higher chemist density, and quick-commerce top-up — but traditional grocers and regional banners still set volume architecture outside the three main metros.' },
+    { q: 'What does BioNixus field on Saudi retail?', a: 'Banner-level SKU and facing audits across Panda, BinDawood/Danube, Othaim, Tamimi and Nahdi; traditional fill-in in a named secondary city; matched grocery/pharmacy baskets when the SKU crosses aisles; and e-commerce checks when the pack is replenishment-sized.' },
+  ],
+  regulatorSource: {
+    name: 'Ministry of Commerce — commercial registration; Saudi Exchange listed retail disclosures (Panda, BinDawood, Othaim)',
+    url: 'https://mc.gov.sa',
+    asOf: '2026-11-13',
+  },
+  sources: [
+    'Tadawul annual reports — Panda Retail, BinDawood Holding, Abdullah Al Othaim Markets, 2024–2025',
+    'Nahdi Medical and Al Dawaa pharmacy chain disclosures, 2024–2025',
+    'Ministry of Commerce retail-sector and franchise circulars, 2024–2026',
+    'BioNixus Saudi banner, traditional-trade and pharmacy fieldwork, 2023–2026',
+  ],
+  fieldNotes: [
+    'SKU-facing audits in Panda, BinDawood/Danube, Othaim and Tamimi on a named dairy, bakery and laundry basket — split Riyadh, Jeddah and Dammam cells.',
+    'Nahdi and Al Dawaa personal-care and baby audits when the category crosses grocery and chemist missions.',
+    'Traditional grocer availability checks in one Central and one Southern city versus the nearest Othaim or Panda banner.',
+    'Quick-commerce shelf checks (Ninja / partner dark stores) when the pack is replenishment-sized.',
   ],
 });
 
