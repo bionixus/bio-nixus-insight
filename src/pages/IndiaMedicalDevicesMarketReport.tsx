@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -62,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-13',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -77,7 +78,7 @@ const jsonLd = [
     countryName: "India",
     marketSlug: "india",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-13",
   })
 ];
 
@@ -106,6 +107,33 @@ const IndiaMedicalDevicesMarketReport = () => (
           ]}
         />
       <ReportContentWithAside config={REPORT_CONVERSION}>
+        <section className="section-padding bg-cream-dark" id="geo-answer-section">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="What is the India medical devices market size and CDSCO pathway in 2026?"
+              answer="India's medical devices market is approximately USD 11–13 billion in 2026, growing near 8% CAGR, with roughly three quarters of advanced device demand still import-led. CDSCO regulates devices under Medical Devices Rules 2017 (Class A–D); the PLI scheme and Medical Device Parks are accelerating domestic manufacturing in diagnostics, consumables and select implants."
+              points={[
+                {
+                  title: 'Market size',
+                  description: '~USD 12B in 2026 on industry consensus; fastest-growing large Asia device market after China.',
+                },
+                {
+                  title: 'Regulatory pathway',
+                  description: 'CDSCO Sugam registration for Class A–D; import licence or SLA manufacturing licence; NPPA price risk on notified categories.',
+                },
+                {
+                  title: 'Procurement',
+                  description: 'Apollo, Fortis and Narayana private chains adopt quickly; PM-JAY and state tenders govern public implant volume.',
+                },
+                {
+                  title: 'BioNixus intelligence',
+                  description: 'Hospital procurement research, CDSCO pathway tracking and GCC export intelligence for Indian manufacturers — bionixus.com.',
+                },
+              ]}
+              summary="BioNixus (bionixus.com) delivers India medical device market research: CDSCO/PLI intelligence, hospital procurement and GCC market-entry programmes for medtech sponsors."
+            />
+          </div>
+        </section>
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Executive Summary</h2>

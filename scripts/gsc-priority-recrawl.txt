@@ -4,6 +4,11 @@
 # Also ping via: npm run indexnow:priority
 # Rank-23 file: scripts/rank23-owner-urls.txt
 
+# --- Tier 0: Cron content depth 2026-11-13 ---
+https://www.bionixus.com/india-medical-devices-market-report
+https://www.bionixus.com/singapore-medical-devices-market-report
+https://www.bionixus.com/retail-companies-saudi-arabia
+
 # --- Tier 0: Growth plan Phase 1 rebuilds + 301 consolidation targets (2026-10-04) ---
 https://www.bionixus.com/services/market-access
 https://www.bionixus.com/services/competitive-intelligence
