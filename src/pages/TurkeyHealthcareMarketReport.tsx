@@ -62,7 +62,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-14',
     mainEntityOfPage: 'https://www.bionixus.com/turkey-healthcare-market-report',
   },
   {
@@ -117,6 +117,15 @@ const TurkeyHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Turkey is the largest healthcare market between Europe and the GCC — a 87-million-population market with near-universal SGK coverage, EMA-aligned regulation, and the world's fourth-largest medical tourism sector. Its position at the Europe-MENA crossroads creates natural strategic relevance for pharmaceutical companies managing multi-regional portfolios.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            BioNixus field teams map SGK reimbursement list updates, hospital group procurement (MEDİPOL, Acıbadem, Memorial), and TİTCK registration backlogs so launch and access teams see account-level demand rather than syndicated market-size slides alone. Compare therapy-segment work on the{' '}
+            <Link to="/turkey-medical-devices-market-report" className="text-primary hover:underline font-medium">Turkey medical devices market report</Link>{' '}
+            when the brief spans capital equipment or IVD.             Request a scoping call if you need Istanbul and Ankara hospital lists with SGK-linked procurement contacts in the same programme. BioNixus also benchmarks Turkish pricing and access decisions against EU5 hubs on the{' '}
+            <Link to="/healthcare-market-research/germany" className="text-primary hover:underline font-medium">Germany healthcare market research</Link>{' '}
+            and{' '}
+            <Link to="/healthcare-market-research/france" className="text-primary hover:underline font-medium">France healthcare market research</Link>{' '}
+            country pages when affiliates manage one EMEA evidence pack.
+          </p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>

@@ -63,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-11-14',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -117,6 +117,15 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Primary research must separate SUS tender and CONITEC evidence requirements from ANS private formulary dynamics — the same molecule can face entirely different pricing and volume paths in the same metro area. BioNixus LATAM programmes pair hospital procurement interviews with payer and prescriber modules; see the{' '}
+            <Link to="/brazil-medical-devices-market-report" className="text-primary hover:underline font-medium">Brazil medical devices market report</Link>{' '}
+            for MedTech-specific ANVISA and hospital capital cycles.             São Paulo and Rio private hospital panels are available for mixed-method modules alongside SUS stakeholder interviews. Pair Brazil modules with{' '}
+            <Link to="/healthcare-market-research/argentina" className="text-primary hover:underline font-medium">Argentina healthcare market research</Link>{' '}
+            or{' '}
+            <Link to="/pharmaceutical-companies-brazil" className="text-primary hover:underline font-medium">pharmaceutical companies in Brazil</Link>{' '}
+            directory context when the launch committee spans LATAM.             Typical mixed-method Brazil healthcare programmes complete in six to ten weeks once ANVISA and audience scope are confirmed, with proposal turnaround in about forty-eight hours after objectives and geography are locked.
+          </p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
@@ -55,6 +56,8 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   },
 ], 'egypt');
 
+const PAGE_MODIFIED = '2026-11-14';
+
 const REPORT_CONVERSION = getStandaloneReportConfig('/egypt-medical-devices-market-report');
 const FAQ_SECTION_ID = 'egypt-medical-devices-faq';
 
@@ -73,7 +76,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: PAGE_MODIFIED,
     mainEntityOfPage: 'https://www.bionixus.com/egypt-medical-devices-market-report',
   },
   {
@@ -92,7 +95,7 @@ const jsonLd = [
     countryName: "Egypt",
     marketSlug: "egypt",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: PAGE_MODIFIED,
   })
 ];
 
@@ -124,6 +127,38 @@ const EgyptMedicalDevicesMarketReport = () => {
             { value: '~9%', label: 'CAGR 2026–2030' },
           ]}
         />
+
+        <section className="section-padding py-8 bg-muted/10">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="What is the Egypt medical devices market size in 2026?"
+              answer="Egypt's medical devices market is approximately USD 1.2–1.5 billion in 2026 — among the largest in Africa and the wider Middle East — growing near 8–10% CAGR as Universal Health Insurance (UHI) rolls out hospital upgrades across 27 governorates. EDA registration, MOH central procurement, and private hospital groups in Greater Cairo and Alexandria set distinct commercial channels."
+              points={[
+                {
+                  title: 'UHI infrastructure driver',
+                  description:
+                    'Progressive UHI rollout mandates equipment upgrades, screening expansion, and accreditation-linked procurement in governorates that have completed enrollment.',
+                },
+                {
+                  title: 'Dual-channel mix',
+                  description:
+                    'Government hospitals favour cost-competitive imaging and consumables; private insurers fund premium cardiovascular, robotics-adjacent, and diabetes technology.',
+                },
+                {
+                  title: 'Regulatory pathway',
+                  description:
+                    'EDA device registration accepts CE and FDA dossiers as supporting evidence; timelines vary 6–24 months by class and backlog.',
+                },
+                {
+                  title: 'Field intelligence',
+                  description:
+                    'BioNixus Cairo team maps biomedical engineering contacts, tender calendars, and brand preference at university, MOH, and private accounts.',
+                },
+              ]}
+              summary="BioNixus Egypt medical devices market report combines sizing with hospital procurement intelligence — request a Cairo-scoped medtech brief."
+            />
+          </div>
+        </section>
 
         <ReportContentWithAside config={REPORT_CONVERSION}>
         <section className="section-padding bg-cream-dark" id="executive-summary">
@@ -170,24 +205,121 @@ const EgyptMedicalDevicesMarketReport = () => {
 
 
         <MarketIntelligenceSections marketSlug="egypt" countryName="Egypt" variant="medical-devices" />
-        <section className="section-padding" id="segments">
+
+        <section className="section-padding bg-cream-dark" id="uhi-procurement">
           <div className="container-wide max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Egypt Medical Device Market Segments</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Universal Health Insurance and hospital procurement
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Egypt&apos;s Universal Health Insurance program is the structural demand engine for medical devices through
+              2032. Governorates that completed UHI rollout — including Port Said and South Sinai in early waves —
+              reported measurable increases in outpatient visits, diagnostic referrals, and screening uptake. Those
+              utilisation shifts translate directly into imaging backlog clearance, laboratory reagent consumption, and
+              surgical throughput in both MOH facilities and contracted private providers.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Procurement teams should plan device launches against UHI phase maps, not national averages. Equipment
+              specifications in MOH tenders often reference EDA-registered models with local agent representation; private
+              groups such as Cleopatra, Dar Al Fouad, and As-Salam can move faster on premium platforms when payers cover
+              interventional or diabetes technology. BioNixus tracks tender publication on the Egyptian Unified Procurement
+              Authority portal, MOH hospital maintenance cycles, and biomedical engineering switching criteria at National
+              Cancer Institute and Ain Shams university hospitals.
+            </p>
+            <div className="space-y-4">
               {[
-                { seg: 'Diagnostic Imaging', note: 'Largest value segment. Government hospital CT and X-ray upgrade programs under UHI. Mindray, GE, and Siemens competing for government tenders.' },
-                { seg: 'Laboratory Diagnostics (IVD)', note: 'Highest volume category. National labs, university hospitals, and private diagnostic chains drive IVD demand across Cairo and Alexandria.' },
-                { seg: 'Cardiovascular Devices', note: 'National Heart Institute and private cardiac centers anchor demand. Stents, pacemakers, and cardiac monitors growing with Egypt\'s high CVD mortality rate.' },
-                { seg: 'Dialysis Equipment', note: 'Egypt has one of the Middle East\'s highest ESRD prevalence rates. MOH and private dialysis centers drive sustained dialysis machine and consumable demand.' },
-                { seg: 'Surgical Instruments', note: 'Growing minimally invasive surgery adoption in Cairo\'s leading private hospitals. Laparoscopic and endoscopic equipment demand increasing.' },
-                { seg: 'Diabetes Care Devices', note: 'Egypt has ~20% adult diabetes prevalence. CGM and SMBG adoption growing in private insurance-covered patients; limited penetration in government sector.' },
-              ].map(({ seg, note }) => (
-                <div key={seg} className="bg-white rounded-xl border border-border p-4 shadow-sm">
-                  <p className="font-semibold text-foreground text-sm mb-1">{seg}</p>
-                  <p className="text-xs text-muted-foreground">{note}</p>
+                {
+                  label: 'Government hospital channel',
+                  body: 'Central tenders and framework contracts for imaging, OR equipment, and dialysis capacity. Price sensitivity and local representation weigh heavily; Chinese OEMs compete on cost in CT and ultrasound.',
+                },
+                {
+                  label: 'University hospital channel',
+                  body: 'Cairo University, Ain Shams, and Alexandria University hospitals combine teaching, research, and high-complexity volumes — strong entry points for cardiology and oncology devices with KOL visibility.',
+                },
+                {
+                  label: 'Private insured channel',
+                  body: 'International JCI-accredited hospitals standardise on EU/US platforms. Faster capital cycles and clinician champion models; diabetes tech and minimally invasive surgery adoption leads the government sector.',
+                },
+              ].map(({ label, body }) => (
+                <div key={label} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <h3 className="text-base font-semibold text-foreground mb-2">{label}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="section-padding" id="segments">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+              Egypt medical device market segments
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
+              Segment mix below reflects import statistics, MOH tender categories, and BioNixus hospital account
+              research — not a single syndicated total-market definition.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  segment: 'Diagnostic imaging',
+                  share: 'Largest value segment',
+                  body: 'CT and X-ray upgrades dominate government capital plans under UHI. Siemens, GE, and Philips hold premium share; Mindray and United Imaging win mid-tier MOH awards on price-performance.',
+                },
+                {
+                  segment: 'Laboratory diagnostics (IVD)',
+                  share: 'Highest volume',
+                  body: 'National reference labs, university hospitals, and Al Borg / Medlab private chains scale immunoassay and chemistry analysers. Infectious disease and diabetes panels drive reagent volume.',
+                },
+                {
+                  segment: 'Cardiovascular devices',
+                  share: '~18% of device spend',
+                  body: 'National Heart Institute and private cath labs anchor stent and pacemaker demand. Egypt&apos;s CVD burden supports sustained interventional growth when supply and reimbursement align.',
+                },
+                {
+                  segment: 'Dialysis equipment',
+                  share: 'Structurally large',
+                  body: 'Among the highest regional ESRD prevalence rates. MOH dialysis centre expansion and private Fresenius/Baxter-linked clinics sustain machine and consumable pull.',
+                },
+                {
+                  segment: 'Surgical instruments',
+                  share: 'Fast-growing private',
+                  body: 'Laparoscopic and endoscopic platforms expand in Cairo premium hospitals; government sector procurement focuses on basic OR sets and sterilisation adjacencies.',
+                },
+                {
+                  segment: 'Diabetes care devices',
+                  share: 'Private-led adoption',
+                  body: 'Roughly one in five adults has diabetes. CGM and insulin pump uptake clusters in insured urban patients; government coverage for advanced diabetes tech remains limited.',
+                },
+              ].map(({ segment, share, body }) => (
+                <div key={segment} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <div className="flex justify-between items-start mb-2 gap-2">
+                    <h3 className="text-base font-display font-semibold text-foreground">{segment}</h3>
+                    <span className="text-xs font-medium text-primary shrink-0">{share}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-cream-dark" id="data-methodology">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Methodology and Egypt field coverage
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Headline market size bands on this page combine import trade data, MOH capital budget disclosures, and
+              BioNixus primary research at named hospital accounts. Published third-party reports that size &quot;Middle
+              East and Africa&quot; in one figure are useful orientation but rarely separate Egypt&apos;s government and
+              private channels.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              BioNixus Cairo operations run physician and biomedical engineer interviews, procurement desk reviews, and
+              competitive landscaping across Greater Cairo, Alexandria, and Delta cities — with extension to Upper Egypt
+              university hospitals when launch plans require national coverage evidence.
+            </p>
           </div>
         </section>
 
