@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const BASE = process.env.SEO_CHECK_BASE_URL || 'https://www.bionixus.com';
-const MUST_BE_200_NO_REDIRECT = ['/', '/de/', '/es/'];
+/** Locale hubs are canonically without a trailing slash (middleware strips `/de/` → `/de`). */
+const MUST_BE_200_NO_REDIRECT = ['/', '/de', '/es'];
 const REQUEST_TIMEOUT_MS = 15000;
 
 async function checkUrl(pathname) {

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { getStandaloneReportConfig } from '@/data/reportConversionConfig';
 import { MarketIntelligenceSections } from '@/components/market-intelligence';
@@ -49,6 +50,8 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
   },
 ], 'uk');
 
+const PAGE_MODIFIED = '2026-11-14';
+
 const REPORT_CONVERSION = getStandaloneReportConfig('/uk-medical-devices-market-report');
 const FAQ_SECTION_ID = 'uk-medical-devices-faq';
 
@@ -62,7 +65,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: PAGE_MODIFIED,
     mainEntityOfPage: 'https://www.bionixus.com/uk-medical-devices-market-report',
   },
   {
@@ -77,7 +80,7 @@ const jsonLd = [
     countryName: "United Kingdom",
     marketSlug: "uk",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: PAGE_MODIFIED,
   })
 ];
 
@@ -105,6 +108,39 @@ const UkMedicalDevicesMarketReport = () => (
             { value: '5.5%', label: 'CAGR 2026–2030' },
           ]}
         />
+
+        <section className="section-padding py-8 bg-muted/10">
+          <div className="container-wide max-w-4xl mx-auto">
+            <GeoLLMAnswerBlock
+              question="What is the UK medical devices market size in 2026?"
+              answer="The UK medical devices market is approximately GBP 12–13 billion (~USD 15–16 billion) in 2026, growing near 5.5% CAGR. Post-Brexit UKCA marking and MHRA registration apply in Great Britain; NHS Supply Chain frameworks govern most English hospital volume procurement."
+              points={[
+                {
+                  title: 'NHS Supply Chain',
+                  description:
+                    'Category towers for imaging, orthopaedics, cardiovascular, and infection prevention set framework pricing for English NHS trusts.',
+                },
+                {
+                  title: 'UKCA vs CE',
+                  description:
+                    'Great Britain requires UKCA; Northern Ireland retains CE under the Windsor Framework — dual labelling remains common for cross-border portfolios.',
+                },
+                {
+                  title: 'Private hospitals',
+                  description:
+                    'HCA, Spire, Nuffield, and Ramsay procure outside NHS frameworks with faster adoption of robotics and premium diagnostics.',
+                },
+                {
+                  title: 'GCC bridge',
+                  description:
+                    'BioNixus London team supports UK OEMs with SFDA/MOHAP pathway intelligence and hospital procurement in Saudi Arabia and UAE.',
+                },
+              ]}
+              summary="BioNixus UK medical devices market report pairs MHRA and NHS intelligence with MENA expansion research for medtech manufacturers."
+            />
+          </div>
+        </section>
+
       <ReportContentWithAside config={REPORT_CONVERSION}>
         <section className="section-padding bg-cream-dark" id="executive-summary">
         <div className="container-wide max-w-4xl mx-auto">
@@ -141,6 +177,159 @@ const UkMedicalDevicesMarketReport = () => (
           </div>
         </div>
       </section>
+
+        <section className="section-padding bg-cream-dark" id="device-segments">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">
+              UK medical device market segments
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
+              Segment shares reflect NHS expenditure reports, MHRA registration volumes, and private hospital capital
+              plans — useful for launch sequencing even when global syndicated figures disagree on exact totals.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  segment: 'In vitro diagnostics',
+                  share: 'Largest NHS spend',
+                  body: 'Molecular diagnostics, point-of-care, and hospital laboratory analysers. NHS England pathology consolidation and community diagnostic centre expansion reshape regional lab procurement.',
+                },
+                {
+                  segment: 'Cardiovascular',
+                  share: '~22% value',
+                  body: 'Pacemaker, ICD, structural heart, and electrophysiology devices. TAVR and LAA closure volumes grow with ageing demographics; NICE technology appraisals influence adoption pace.',
+                },
+                {
+                  segment: 'Orthopaedics',
+                  share: 'High joint-replacement volume',
+                  body: 'Hip, knee, and spinal implants through NHS Supply Chain orthopaedic towers and private revision surgery at premium centres.',
+                },
+                {
+                  segment: 'Diagnostic imaging',
+                  share: 'Capital intensive',
+                  body: 'MRI, CT, and ultrasound replacement cycles at NHS trusts and private imaging networks; cybersecurity and interoperability requirements feature in tenders.',
+                },
+                {
+                  segment: 'Surgical robotics',
+                  share: 'Fastest-growing capital',
+                  body: 'da Vinci and competing platforms expand in NHS training centres and HCA/Spire sites; robotic program economics drive separate business cases from open surgery sets.',
+                },
+                {
+                  segment: 'Digital health & RPM',
+                  share: 'Emerging reimbursement',
+                  body: 'Remote monitoring and connected diabetes devices follow NHS England innovation tariff pilots and local integrated care board adoption.',
+                },
+              ].map(({ segment, share, body }) => (
+                <div key={segment} className="bg-white rounded-xl border border-border p-5 shadow-sm">
+                  <div className="flex justify-between items-start mb-2 gap-2">
+                    <h3 className="text-base font-display font-semibold text-foreground">{segment}</h3>
+                    <span className="text-xs font-medium text-primary shrink-0">{share}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding" id="top-companies">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Leading medical device suppliers in the UK NHS and private sector
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Global OEMs dominate installed base; UK-born scale-ups (e.g. Smith+Nephew, Convatec, B.air) compete in
+              orthopaedics, wound care, and respiratory niches. BioNixus maps framework status and clinical preference at
+              trust level where syndicated sales data stops at national charts.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
+              <table className="w-full text-sm text-left border-collapse">
+                <thead className="bg-cream-dark">
+                  <tr>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">
+                      Company
+                    </th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">
+                      Segment focus
+                    </th>
+                    <th scope="col" className="p-4 font-display font-semibold text-foreground">
+                      UK position
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border bg-white">
+                  {[
+                    {
+                      company: 'Siemens Healthineers',
+                      segment: 'Imaging',
+                      position: 'Major MRI/CT supplier across NHS trusts and private networks',
+                    },
+                    {
+                      company: 'GE HealthCare',
+                      segment: 'Imaging & monitoring',
+                      position: 'Large installed base; strong in ultrasound and patient monitoring',
+                    },
+                    {
+                      company: 'Philips',
+                      segment: 'Imaging & informatics',
+                      position: 'Imaging plus connected care in ICU and cardiology programs',
+                    },
+                    {
+                      company: 'Medtronic',
+                      segment: 'Cardiovascular & diabetes',
+                      position: 'CRM, structural heart, and CGM footprint in NHS and private',
+                    },
+                    {
+                      company: 'Abbott',
+                      segment: 'Cardiovascular & diagnostics',
+                      position: 'Structural heart and point-of-care diagnostics',
+                    },
+                    {
+                      company: 'Stryker',
+                      segment: 'Orthopaedics & surgical',
+                      position: 'Joint replacement and surgical navigation at scale',
+                    },
+                    {
+                      company: 'Intuitive Surgical',
+                      segment: 'Robotics',
+                      position: 'da Vinci installed across leading NHS and private robotic programs',
+                    },
+                    {
+                      company: 'Smith+Nephew',
+                      segment: 'Orthopaedics & wound',
+                      position: 'UK-headquartered global orthopaedics and advanced wound management',
+                    },
+                  ].map((row) => (
+                    <tr key={row.company}>
+                      <td className="p-4 font-medium text-foreground whitespace-nowrap">{row.company}</td>
+                      <td className="p-4 text-muted-foreground">{row.segment}</td>
+                      <td className="p-4 text-muted-foreground">{row.position}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-cream-dark" id="methodology">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Research methodology for UK medtech teams
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              This report combines published NHS expenditure and MHRA registration statistics with BioNixus primary
+              research at NHS trusts, integrated care boards, and private hospital groups. Market size headlines from
+              trade associations and desk syndicated reports are cited for orientation; account-level procurement
+              intelligence requires hospital-specific fieldwork.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              UK-based manufacturers expanding to GCC markets can run paired modules: NHS framework benchmarking
+              alongside SFDA/MOHAP registration and NUPCO tender intelligence — delivered from BioNixus London with
+              in-country GCC field teams.
+            </p>
+          </div>
+        </section>
               <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
