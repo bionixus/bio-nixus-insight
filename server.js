@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import compression from 'compression';
-import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
+import { canonicalRedirectTarget, isSsrNotFoundPage, stripNotFoundDiscoveryTags } from './seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
 import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
 import { fitBrandedSeoTitle, formatMetaDescriptionInRange, titleHasBrandSuffix } from './src/server/seo-meta.js';
@@ -13,8 +13,7 @@ import {
   buildLcpPreloadTag,
   getClientAssetHints,
   SSR_HTML_CACHE_CONTROL,
-  SSR_HTML_CDN_CACHE_CONTROL,
-  SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL,
+  htmlCdnCacheControl,
 } from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
@@ -22,6 +21,7 @@ import { LEGACY_REDIRECTS, lookupRedirect } from './lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from './lib/untranslated-locale-redirects.mjs';
 import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-org.mjs';
 import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
+import { ensureRobotsMeta } from './lib/robots-meta.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -182,10 +182,10 @@ function buildFallbackTitle(pathname) {
   if (path === '/pt/insights/top-empresas-pesquisa-mercado-saude-brasil-2026') return '5 Melhores Empresas de Pesquisa de Mercado em Saúde no Brasil (2026) | ANVISA | BioNixus';
   if (path === '/es/insights/top-empresas-investigacion-mercado-argentina-2026') return '5 Mejores Empresas de Investigación de Mercado en Argentina (2026) | Rankings | BioNixus';
   if (path === '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026') return '5 Mejores Empresas de Investigación de Mercado en Salud en Argentina (2026) | ANMAT | BioNixus';
-  if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return 'Top Market Research Companies in KSA 2026 | BioNixus';
+  if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return 'Top Market Research Companies in Saudi Arabia 2026 | BioNixus';
   if (path === '/insights/top-consumer-insights-companies-ksa-2026') return 'Consumer Insights Companies KSA 2026 | BioNixus';
-  if (path === '/insights/top-market-research-companies-uae-2026') return 'Best UAE Market Research Companies 2026 | BioNixus';
-  if (path === '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026') return 'شركات أبحاث السوق في الإمارات 2026 | بيونيكسس';
+  if (path === '/insights/top-market-research-companies-uae-2026') return 'Top Market Research Company in UAE: 2026 Guide | BioNixus';
+  if (path === '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026') return 'أفضل شركة أبحاث سوق في الإمارات: دليل 2026 | بيونيكسس';
   if (path === '/insights/top-market-research-companies-dubai-2026') return 'Market Research Companies in Dubai 2026 | BioNixus';
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return '6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-riyadh-2026') return '6 Best Market Research Companies in Riyadh (2026) | KSA Agency Rankings | BioNixus';
@@ -559,6 +559,9 @@ function normalizeDescriptionLength(description, pathname) {
   const clean = String(description || '').replace(/\s+/g, ' ').trim();
   // CTR-engineered descriptions must ship exact (often outside 120–130 band).
   if (pathname && isCtrSeoPath(pathname)) return clean;
+  // Finished ≤155 sentence for this URL. Skip the 130-character ellipsis clamp.
+  // Production SSR (api/indexnow-key.ts) already keeps descriptions at or under 155.
+  if (pathname === '/healthcare-fieldwork-gcc' && clean.length > 0 && clean.length <= 155) return clean;
   return formatMetaDescriptionInRange(description);
 }
 
@@ -956,7 +959,7 @@ async function startServer() {
       return next();
     });
     app.get(publicPath, (_req, res) => {
-      res.setHeader('X-Robots-Tag', 'noindex, follow');
+      res.setHeader('X-Robots-Tag', 'noindex, follow, max-image-preview:large');
       res.type('html').sendFile(absolutePath);
     });
   };
@@ -1168,14 +1171,17 @@ async function startServer() {
         ),
         req.path,
       ), req.path), req.path);
+      const withRobots = ensureRobotsMeta(localizedPage);
+      const responseHtml = statusCode === 404 ? stripNotFoundDiscoveryTags(withRobots) : withRobots;
+      const cdnCache = htmlCdnCacheControl(req.path, statusCode === 404);
 
       res.status(statusCode).set({
         'Content-Type': 'text/html; charset=utf-8',
         'Cache-Control': SSR_HTML_CACHE_CONTROL,
-        'CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
-        'Vercel-CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
-        ...(statusCode === 404 ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}),
-      }).end(localizedPage);
+        'CDN-Cache-Control': cdnCache,
+        'Vercel-CDN-Cache-Control': cdnCache,
+        ...(statusCode === 404 ? { 'X-Robots-Tag': 'noindex, nofollow, max-image-preview:large' } : {}),
+      }).end(responseHtml);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('SSR request failed:', error);

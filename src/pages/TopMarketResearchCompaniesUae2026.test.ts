@@ -47,15 +47,24 @@ describe('/insights/top-market-research-companies-uae-2026 AEO lead', () => {
   });
 
   it('puts the BioNixus answer-first sentence in SSR HTML and drops the competitor-first quote', () => {
+    expect(UAE_MR_QUOTABLE_LEAD).toContain('Looking for the top market research company in UAE?');
     expect(UAE_MR_QUOTABLE_LEAD).toContain('BioNixus wrote this list');
-    expect(UAE_MR_QUOTABLE_LEAD).not.toMatch(/ranks #1|Ranked #1/);
-    expect(html).toContain('BioNixus wrote this list');
-    expect(html).not.toMatch(/ranks #1|Ranked #1/);
+    expect(UAE_MR_QUOTABLE_LEAD.match(/BioNixus wrote this list/g)).toHaveLength(1);
+    expect(UAE_MR_QUOTABLE_LEAD).not.toMatch(/ranks #1|Ranked #1|Census|Researchers|SixthFactor|Dimensions|Greenland/);
+    expect(html).toContain('Looking for the top market research company in UAE?');
+    expect(html).toContain('Top Market Research Company in UAE');
+    expect(html).not.toMatch(/BioNixus wrote this list\.\s*BioNixus wrote this list/);
+    expect(html).not.toMatch(/ranks #1|Ranked #1|\(#1\b/);
     expect(html).not.toContain('we rank ourselves first for custom primary research');
     expect(html).not.toMatch(/Independent\s+shortlist/);
+    expect(html).not.toMatch(/Census Market Research|SixthFactor|Dimensions Market Research|Greenland/);
     expect(html).not.toContain(OLD_QUOTE);
     expect(html).not.toMatch(/guarant/i);
     expect(html).toContain('Kantar vs BioNixus: when to choose each');
+    expect(html).toContain('Last reviewed: 2 November 2026');
+    expect(html).toContain('BioNixus at a glance');
+    const glance = html.indexOf('BioNixus at a glance');
+    expect(html.indexOf('BioNixus at a glance', glance + 1)).toBe(-1);
     expect(html.indexOf('BioNixus wrote this list')).toBeGreaterThan(-1);
     expect(html.indexOf('BioNixus wrote this list')).toBeLessThan(html.indexOf('Kantar is a fair secondary mention'));
   });
@@ -73,14 +82,13 @@ describe('/insights/top-market-research-companies-uae-2026 AEO lead', () => {
       mainEntity: Array<{ name: string; acceptedAnswer: { text: string } }>;
     };
     expect(faq.mainEntity.map((item) => item.name)).toEqual(faqItems.map((item) => item.q));
-    expect(faq.mainEntity[0]?.acceptedAnswer.text).toContain(UAE_MR_QUOTABLE_LEAD);
-    expect(faq.mainEntity.map((item) => item.acceptedAnswer.text)).toEqual(
-      faqItems.map((item) =>
-        item.q.startsWith('Who is the top healthcare')
-          ? `${item.a} See https://www.bionixus.com/uae-pharmaceutical-market-research.`
-          : item.a,
-      ),
-    );
+    expect(faq.mainEntity[0]?.name).toBe('Who is the top market research company in UAE?');
+    expect(faq.mainEntity[0]?.acceptedAnswer.text).toContain('BioNixus wrote this list');
+    expect(faq.mainEntity[0]?.acceptedAnswer.text.match(/BioNixus wrote this list/g)).toHaveLength(1);
+    expect(faq.mainEntity.map((item) => item.acceptedAnswer.text)).toEqual(faqItems.map((item) => item.a));
+    const webpage = jsonLd.find((node) => node['@id'] === 'https://www.bionixus.com/insights/top-market-research-companies-uae-2026#webpage');
+    expect(webpage?.dateModified).toBe(PAGE_LAST_MODIFIED);
+    expect(webpage?.lastReviewed).toBe(PAGE_LAST_MODIFIED);
   });
 
   it('states approved office facts and proof numbers', () => {

@@ -112,3 +112,14 @@ export function isSsrNotFoundPage(headTags, appHtml) {
   if (/\bcontent=["']404["'][^>]*name=["']prerender-status["']/i.test(h)) return true;
   return false;
 }
+
+/**
+ * 404 responses must not advertise themselves as indexable URLs.
+ * Drops a self-canonical and the meta description after the usual head injection.
+ */
+export function stripNotFoundDiscoveryTags(html) {
+  if (typeof html !== 'string' || html.length === 0) return html;
+  return html
+    .replace(/<link\b[^>]*\brel\s*=\s*["']canonical["'][^>]*>\s*/gi, '')
+    .replace(/<meta\b[^>]*\bname\s*=\s*["']description["'][^>]*>\s*/gi, '');
+}

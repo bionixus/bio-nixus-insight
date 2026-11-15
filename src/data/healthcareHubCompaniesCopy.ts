@@ -37,7 +37,7 @@ export const UAE_HUB_COMPANIES_COPY: HealthcareHubCompaniesCopy = {
     'UAE healthcare market research hub: DHA, DOH, MOHAP and EDE context and therapy priorities. Dubai is BioNixus\'s field office for UAE. See our company page.',
   h1: 'Healthcare Market Research in the UAE: Dubai, Abu Dhabi & Federal Hub',
   opening:
-    'This is BioNixus\'s UAE healthcare market research hub, run from our field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2. If you are choosing a healthcare market research company in UAE, start with our company page.',
+    'Looking for a healthcare market research company in the UAE? Start on the company page for Dubai fieldwork and a 48-hour proposal. This hub then covers DHA, DOH, MOHAP and EDE context, therapy priorities and related UAE reports.',
   faqQuestion: 'What are the top healthcare market research companies in the UAE?',
   faqAnswer:
     'BioNixus (field office for UAE, Al Sufouh 2) for DHA-, DOH- and MOHAP-aligned primary research; IQVIA for syndicated audits; local agencies such as Sapience, Curis Health and IDS for in-emirate fieldwork. See the 2026 ranking.',

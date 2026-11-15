@@ -202,7 +202,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-04',
+    dateModified: '2026-11-05',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -265,7 +265,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
         locale="en"
         article={{
           publishedTime: '2026-06-12',
-          modifiedTime: '2026-09-04',
+          modifiedTime: '2026-11-05',
           section: 'Oncology Market Research',
           tags: [
             'oncology market research',
@@ -387,7 +387,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
             </div>
             <div className="cover-foot">
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                Americas office and global HQ: Sheridan, Wyoming, USA · Europe office: London, UK · AMEA office: Cairo · KSA partner office: Al Khobar · UAE field office: Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
@@ -850,7 +850,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
               <div className="closing-contact">
                 <div>
                   <div className="label">Firm</div>
-                  <div className="value">BioNixus · USA Global HQ</div>
+                  <div className="value">BioNixus · Americas office and global HQ</div>
                 </div>
                 <div>
                   <div className="label">Email</div>

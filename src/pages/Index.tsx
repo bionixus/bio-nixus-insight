@@ -38,7 +38,7 @@ const Index = () => {
   const ssrHomeInsights = Array.isArray(routeData.homeLatestInsights)
     ? (routeData.homeLatestInsights as BlogPost[])
     : undefined;
-  const { data: sanityPosts, isLoading: blogLoading } = useSanityLatestInsights(3, ssrHomeInsights);
+  const { data: sanityPosts, isLoading: blogLoading } = useSanityLatestInsights(6, ssrHomeInsights);
   const homeArticlePosts = filterPostsBySilo(sanityPosts ?? ssrHomeInsights ?? [], 'healthcare');
   const homeFaq = getHomePageFaq(language);
   const homeCanonicalUrl = new URL(seoByLanguage[language].canonicalPath, 'https://www.bionixus.com').toString();

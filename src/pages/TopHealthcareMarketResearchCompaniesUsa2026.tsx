@@ -37,7 +37,7 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Primary Healthcare Market Research',
-    hq: 'USA (HQ — Sheridan, WY) · London · Cairo · Dubai · Al Khobar',
+    hq: 'Americas office and global HQ: Sheridan, Wyoming, USA · Europe office: London, UK · AMEA office: Cairo · KSA partner office: Al Khobar · UAE field office: Dubai',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
@@ -236,7 +236,7 @@ export const USA_HEALTHCARE_MR_H1 =
 export const USA_HEALTHCARE_MR_CTA_ID = 'usa_healthcare_mr_companies_2026';
 export const USA_HEALTHCARE_MR_FIRMS = firms;
 export const USA_HEALTHCARE_MR_FAQS = faqItems;
-export const USA_HEALTHCARE_MR_DATE_MODIFIED = '2026-10-20';
+export const USA_HEALTHCARE_MR_DATE_MODIFIED = '2026-11-05';
 
 const CANONICAL = `https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`;
 const PAGE_AUTHOR = getEditorialAuthor({

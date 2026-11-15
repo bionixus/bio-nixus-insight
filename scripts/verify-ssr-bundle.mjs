@@ -62,6 +62,7 @@ const CRITICAL_PATHS = [
   '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia',
   '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east',
   '/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research',
+  '/bionixus-industries/insights/chinese-tourists-dubai-research',
   '/blog/obesity-market-research-kuwait',
   '/blog/qatar-obesity-glp1-market-research',
   '/blog/hematology-market-research-saudi-arabia',

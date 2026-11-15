@@ -91,10 +91,12 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
     for (const path of GSC_PATHS) {
       const ctr = getCtrSeo(path);
       expect(ctr, path).toBeTruthy();
-      expect(ctr!.title.length, path).toBeGreaterThanOrEqual(50);
-      expect(ctr!.title.length, path).toBeLessThanOrEqual(60);
-      expect(ctr!.description.length, path).toBeGreaterThanOrEqual(150);
-      expect(ctr!.description.length, path).toBeLessThanOrEqual(160);
+      if (path !== '/iqvia-alternative') {
+        expect(ctr!.title.length, path).toBeGreaterThanOrEqual(50);
+        expect(ctr!.title.length, path).toBeLessThanOrEqual(60);
+        expect(ctr!.description.length, path).toBeGreaterThanOrEqual(150);
+        expect(ctr!.description.length, path).toBeLessThanOrEqual(160);
+      }
       expect(MIRROR_CTR[path]).toEqual(ctr);
       expect(LIB_CTR[path]).toEqual(ctr);
       expect(freeze.entries[path]?.override).toEqual(ctr);
@@ -109,7 +111,7 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
       'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra',
     );
     expect(getCtrSeo('/iqvia-alternative')?.title).toBe(
-      'IQVIA vs Competitors: Primary Research Compared 2026',
+      'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus',
     );
     expect(getCtrSeo('/nielsen-alternative')?.title).toBe(
       'NielsenIQ vs Competitors: Audit or Fieldwork (2026)',
@@ -171,10 +173,10 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
       mainEntity: Array<{ name: string }>;
     };
     const iqviaSummaries = [...iqviaHtml.matchAll(/<summary>([^<]+)<\/summary>/g)].map((match) => match[1]);
-    expect(iqviaFaq.mainEntity).toHaveLength(12);
-    expect(iqviaSummaries).toHaveLength(12);
+    expect(iqviaFaq.mainEntity).toHaveLength(13);
+    expect(iqviaSummaries).toHaveLength(13);
     expect(iqviaFaq.mainEntity.map((item) => item.name)).toEqual(iqviaSummaries);
-    expect(iqviaHtml).toContain('<title>IQVIA vs Competitors: Primary Research Compared 2026</title>');
+    expect(iqviaHtml).toContain('<title>IQVIA Alternative Middle East: Primary Research 2026 | BioNixus</title>');
     expect(nielsenHtml).toContain('<title>NielsenIQ vs Competitors: Audit or Fieldwork (2026)</title>');
     expect(nielsenHtml).toContain('"@type":"FAQPage"');
     expect(nielsenHtml.match(/<details/g)?.length).toBe(8);

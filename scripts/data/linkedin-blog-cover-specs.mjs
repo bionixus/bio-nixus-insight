@@ -12,6 +12,51 @@ function skylineBlocks(blocks, baseline = 552) {
 }
 
 export const LINKEDIN_BLOG_COVERS = {
+  'saudi-diabetes-syndicated-vs-hospital-switching': {
+    cover: 'saudi-diabetes-syndicated-vs-hospital-switching-cover.jpg',
+    hero: 'saudi-diabetes-syndicated-vs-hospital-switching-hero.jpg',
+    badge: 'SAUDI ARABIA  ·  DIABETES  ·  2026',
+    lines: ['Hospital switching', 'in Saudi Arabia'],
+    goldLine: 'Beyond the category total',
+    sub: 'Account-level diabetes research',
+    motif: glowMotif(
+      `
+      <path d="M 0 560 C 90 520, 180 580, 280 536 S 430 548, 560 562 V 630 H 0 Z" fill="#0A1422"/>
+      <g fill="#0C1728" stroke="${GOLD_LIGHT}" stroke-width="1.6">
+        ${skylineBlocks(
+          [
+            [28, 22, 84],
+            [56, 30, 148, true],
+            [94, 18, 110],
+            [118, 42, 196],
+            [168, 24, 132],
+            [200, 36, 170, true],
+            [244, 18, 96],
+            [270, 46, 214],
+          ],
+          548,
+        )}
+      </g>
+      <g>
+        <rect x="48" y="118" width="168" height="210" rx="14" fill="#0E1A2C" stroke="${GOLD}" stroke-width="2.4"/>
+        <rect x="72" y="146" width="120" height="14" rx="3" fill="${GOLD_LIGHT}"/>
+        <rect x="72" y="174" width="86" height="10" rx="2" fill="${CREAM}" opacity="0.7"/>
+        <rect x="72" y="196" width="108" height="10" rx="2" fill="${CREAM}" opacity="0.45"/>
+        <rect x="72" y="248" width="52" height="52" rx="8" fill="#101C30" stroke="${GOLD}" stroke-width="2"/>
+        <rect x="136" y="248" width="52" height="52" rx="8" fill="${GOLD}"/>
+        <path d="M 236 210 C 280 210, 292 168, 336 168" fill="none" stroke="${GOLD}" stroke-width="6" stroke-linecap="round"/>
+        <polygon points="336,152 364,168 336,184" fill="${GOLD}"/>
+        <rect x="372" y="96" width="148" height="232" rx="14" fill="#0E1A2C" stroke="${GOLD_LIGHT}" stroke-width="2.4"/>
+        <rect x="394" y="122" width="104" height="12" rx="3" fill="${GOLD}"/>
+        <rect x="394" y="150" width="78" height="8" rx="2" fill="${CREAM}" opacity="0.7"/>
+        <rect x="394" y="170" width="92" height="8" rx="2" fill="${CREAM}" opacity="0.45"/>
+        <rect x="394" y="206" width="28" height="78" rx="4" fill="${GOLD_LIGHT}"/>
+        <rect x="432" y="178" width="28" height="106" rx="4" fill="${GOLD}"/>
+        <rect x="470" y="154" width="28" height="130" rx="4" fill="${CREAM}"/>
+      </g>`,
+      'glowSaudiDiabetesSwitch',
+    ),
+  },
   'diabetes-market-research-uae-2026-price-cuts': {
     cover: 'diabetes-market-research-uae-2026-price-cuts-cover.jpg',
     hero: 'diabetes-market-research-uae-2026-price-cuts-hero.jpg',
@@ -1057,6 +1102,29 @@ export const LINKEDIN_BLOG_COVERS = {
         <rect x="80" y="460" width="160" height="10" rx="5" fill="${GOLD}"/>
       </g>`,
       'glowChineseGigaSaudi',
+    ),
+  },
+  'chinese-tourists-dubai-research': {
+    cover: 'chinese-tourists-dubai-research-cover.jpg',
+    hero: 'chinese-tourists-dubai-research-hero.jpg',
+    badge: 'DUBAI  ·  GULF  ·  2026',
+    lines: ['Chinese visitors', 'in the Gulf'],
+    goldLine: 'Ask, don’t assume',
+    sub: 'Spend, payment and itinerary research',
+    brandMeta: 'INDUSTRY MARKET RESEARCH',
+    motif: glowMotif(
+      `
+      <path d="M 0 552 C 110 516, 230 578, 350 536 S 486 526, 560 550 V 630 H 0 Z" fill="#0A1422"/>
+      <g>
+        <circle cx="200" cy="220" r="70" fill="none" stroke="${GOLD_LIGHT}" stroke-width="3"/>
+        <path d="M 130 220 H 270 M 200 150 V 290" stroke="${GOLD_LIGHT}" stroke-width="2" stroke-opacity="0.5"/>
+        <circle cx="420" cy="260" r="28" fill="${GOLD}"/>
+        <path d="M 268 230 C 320 200, 360 240, 394 255" fill="none" stroke="${GOLD}" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="388,242 420,260 386,268" fill="${GOLD}"/>
+        <rect x="80" y="420" width="432" height="10" rx="5" fill="${CREAM}" fill-opacity="0.12"/>
+        <rect x="80" y="420" width="180" height="10" rx="5" fill="${GOLD}"/>
+      </g>`,
+      'glowChineseTouristsGulf',
     ),
   },
 };

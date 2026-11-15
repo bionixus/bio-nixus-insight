@@ -139,6 +139,21 @@ describe('missingArticleRedirect', () => {
     ).toBeNull();
   });
 
+  it('301s the old Avalon obesity slug to the Saudi tirzepatide article, not the Qatar GLP-1 post', () => {
+    expect(
+      missingArticleRedirect({
+        pathname: '/blog/avalon-pharma-onesource-saudi-obesity-glp1-market',
+        slug: 'avalon-pharma-onesource-saudi-obesity-glp1-market',
+        lookup: 'missing',
+        post: null,
+      }),
+    ).toEqual({
+      pageType: 'redirect',
+      statusCode: 301,
+      redirectTo: '/blog/avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market',
+    });
+  });
+
   it('leaves Arabic blog addresses unchanged', () => {
     expect(
       missingArticleRedirect({

@@ -78,7 +78,7 @@ export default function PressReleasePage() {
       <div className="min-h-screen bg-background">
         <Helmet>
           <title>Press release not found | BioNixus</title>
-          <meta name="robots" content="noindex, nofollow" />
+          <meta name="robots" content="noindex, nofollow, max-image-preview:large" />
         </Helmet>
         <Navbar />
         <main className="container-wide section-padding max-w-2xl">

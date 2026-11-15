@@ -94,9 +94,9 @@ export const CTR_SEO_BY_PATH = {
       'UAE healthcare market research hub: DHA, DOH, MOHAP and EDE context and therapy priorities. Dubai is BioNixus\'s field office for UAE. See our company page.',
   },
   '/uae-pharmaceutical-market-research': {
-    title: 'Healthcare Market Research Company in UAE | BioNixus',
+    title: 'Healthcare Market Research Company in Dubai, UAE | BioNixus',
     description:
-      'Healthcare market research company in the UAE. Dubai is BioNixus\'s field office for UAE: DHA, DOH and MOHAP-aligned HCP, KOL, payer and patient research.',
+      'BioNixus is a healthcare market research company in Dubai, UAE: DHA-, DOH- and MOHAP-aligned physician, KOL, payer and patient research. Proposal in 48 hours.',
   },
   '/pharmaceutical-companies-iran': {
     title: 'Top 18 Pharmaceutical Companies in Iran (2026 Ranked List)',
@@ -134,10 +134,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // GSC 3–30 Oct 2026: "iqvia alternatives" 437 impr, pos 5.0, 0 clicks. Title stays frozen.
-    title: 'IQVIA vs Competitors: Primary Research Compared 2026',
+    // 3 Nov 2026 recovery: Middle East primary-research query. Keep the 127-studies-in-2026 label.
+    title: 'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus',
     description:
-      'IQVIA alternatives compared for 2026: keep IQVIA for syndicated audits, and brief BioNixus when you need primary HCP fieldwork. A proposal in 48 hours.',
+      'IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     // GSC 17 Sep–14 Oct 2026: 1,838 impr, pos 3.05, 0.27% CTR — keep H1 meaning, rewrite snippet.
@@ -276,19 +276,19 @@ export const CTR_SEO_BY_PATH = {
       'Healthcare market research companies in the USA for 2026. BioNixus wrote this list for primary work; keep IQVIA or NielsenIQ for national Rx and retail.',
   },
   '/insights/top-market-research-companies-saudi-arabia-2026': {
-    title: 'Top Market Research Companies in KSA 2026 | BioNixus',
+    title: 'Top Market Research Companies in Saudi Arabia 2026 | BioNixus',
     description:
-      'Top market research companies in Saudi Arabia, 2026. BioNixus wrote this list of custom primary firms. Compare IQVIA, Kantar, NielsenIQ, and local KSA firms.',
+      'Top market research companies in Saudi Arabia, 2026. BioNixus wrote this list for custom primary firms. Compare syndicated audits vs KSA bilingual fieldwork needs.',
   },
   '/insights/top-market-research-companies-uae-2026': {
-    title: 'Best UAE Market Research Companies 2026 | BioNixus',
+    title: 'Top Market Research Company in UAE: 2026 Guide | BioNixus',
     description:
-      'Top market research companies in the UAE for 2026. BioNixus wrote this list of custom primary firms. Compare Kantar, IQVIA, Ipsos, and NielsenIQ in Dubai.',
+      'Top market research company in UAE? Compare BioNixus, Kantar, Ipsos, NielsenIQ, IQVIA and Dubai agencies by research need. BioNixus wrote this list in 2026.',
   },
   '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026': {
-    title: 'شركات أبحاث السوق في الإمارات 2026 | بيونيكسس',
+    title: 'أفضل شركة أبحاث سوق في الإمارات: دليل 2026 | بيونيكسس',
     description:
-      'شركات أبحاث السوق في الإمارات 2026 — بيونيكسس كتبت هذه القائمة للأبحاث الأولية المخصصة. قارن آي كيو في آي إيه وكانتار وإبسوس ونيلسن والوكالات المحلية.',
+      'أفضل شركة أبحاث سوق في الإمارات؟ قارن بيونيكسس وكانتار وإبسوس ونيلسن آي كيو وآي كيو في آي إيه حسب الحاجة. كتبت بيونيكسس هذه القائمة.',
   },
   '/insights/top-consumer-insights-companies-ksa-2026': {
     title: 'Top Consumer Insights Companies in KSA (2026 Ranking)',
@@ -1149,6 +1149,16 @@ export const CTR_SEO_BY_PATH = {
     title: 'Women’s Health Market Research GCC: Fertility, PCOS 2026',
     description:
       'Women’s health market research in the GCC: new fertility deals, PCOS in Thiqa obesity cover and low menopause therapy use. What to ask doctors and patients.',
+  },
+  '/blog/saudi-diabetes-syndicated-vs-hospital-switching': {
+    title: 'Saudi Diabetes Data Misses Hospital Switching',
+    description:
+      'Saudi diabetes category totals miss which hospital is switching. Primary research is what a launch team still has to answer.',
+  },
+  '/blog/saudi-hematology-diagnostics-vs-ward-brand-cut': {
+    title: 'Saudi Hematology Diagnostics Miss Ward Share',
+    description:
+      'Saudi hematology diagnostics reports count lab products. Pharma still needs the ward-level brand cut a diagnostics total omits.',
   },
   '/blog/diabetes-market-research-uae-2026-price-cuts': {
     title: 'Diabetes Market Research UAE After 2026 Price Cuts',

@@ -549,6 +549,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/avalon-pharma-onesource-saudi-obesity-glp1-market",
+      "destination": "/blog/avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market",
+      "statusCode": 301
+    },
+    {
       "source": "/insights/top-consumer-insights-companies-saudi-arabia-2026",
       "destination": "/insights/top-consumer-insights-companies-ksa-2026",
       "statusCode": 301
@@ -1163,6 +1168,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research"
     },
     {
+      "source": "/bionixus-industries/insights/chinese-tourists-dubai-research",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/chinese-tourists-dubai-research"
+    },
+    {
       "source": "/blog/obesity-market-research-kuwait",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/obesity-market-research-kuwait"
     },
@@ -1265,6 +1274,14 @@
     {
       "source": "/blog/dksh-newbridge-acquisition-mena-launch-market-access",
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/dksh-newbridge-acquisition-mena-launch-market-access"
+    },
+    {
+      "source": "/blog/saudi-diabetes-syndicated-vs-hospital-switching",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/saudi-diabetes-syndicated-vs-hospital-switching"
+    },
+    {
+      "source": "/blog/saudi-hematology-diagnostics-vs-ward-brand-cut",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/saudi-hematology-diagnostics-vs-ward-brand-cut"
     },
     {
       "source": "/blog/:slug",

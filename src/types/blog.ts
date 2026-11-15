@@ -55,6 +55,9 @@ export interface BlogPost {
   country: string;
   coverImage?: string;
   coverImageAlt?: string;
+  /** Pixel size of Sanity `mainImage`, when the asset metadata is known. */
+  coverImageWidth?: number;
+  coverImageHeight?: number;
   body?: string | PortableTextBlock[];
   bodyHtml?: string;
   language?: string;
@@ -92,6 +95,9 @@ export interface BlogPost {
   ogDescription?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  /** Pixel size of Sanity `openGraph.ogImage`, when the asset metadata is known. */
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   authorName?: string;
   authorTitle?: string;
   authorImage?: string;

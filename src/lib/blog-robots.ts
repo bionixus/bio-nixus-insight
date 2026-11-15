@@ -39,6 +39,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-entry-research-singapore-southeast-asia',
   'brand-tracking-chinese-electronics-brands-middle-east',
   'chinese-suppliers-saudi-giga-projects-research',
+  'chinese-tourists-dubai-research',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -65,6 +66,8 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   'egypt-eda-decree-480-drug-pricing-2026',
   'dksh-newbridge-acquisition-mena-launch-market-access',
+  'saudi-diabetes-syndicated-vs-hospital-switching',
+  'saudi-hematology-diagnostics-vs-ward-brand-cut',
 ]);
 
 export const BLOG_HARDCODED_SEO_SLUGS = new Set([
@@ -102,6 +105,7 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'market-entry-research-singapore-southeast-asia',
   'brand-tracking-chinese-electronics-brands-middle-east',
   'chinese-suppliers-saudi-giga-projects-research',
+  'chinese-tourists-dubai-research',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -128,6 +132,8 @@ export const BLOG_HARDCODED_SEO_SLUGS = new Set([
   'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   'egypt-eda-decree-480-drug-pricing-2026',
   'dksh-newbridge-acquisition-mena-launch-market-access',
+  'saudi-diabetes-syndicated-vs-hospital-switching',
+  'saudi-hematology-diagnostics-vs-ward-brand-cut',
 ]);
 
 export function isHardcodedSeoBlogSlug(slug: string | undefined): boolean {
@@ -149,4 +155,4 @@ export function resolveBlogSeoNoIndex(slug: string, cmsNoIndex?: unknown): boole
 export const BLOG_INDEX_ROBOTS =
   'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
 
-export const BLOG_NOINDEX_ROBOTS = 'noindex,nofollow';
+export const BLOG_NOINDEX_ROBOTS = 'noindex,nofollow,max-image-preview:large';

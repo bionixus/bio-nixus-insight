@@ -3,6 +3,8 @@
  * Keys: slug segment only. Values: current canonical blog slug in Sanity / sitemap.
  */
 export const LEGACY_BLOG_SLUG_TO_CANONICAL = {
+  'avalon-pharma-onesource-saudi-obesity-glp1-market':
+    'avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market',
   'healthcare-market-research-europe': 'healthcare-market-research-europe-2026',
   'pharmaceutical-market-research-uk': 'pharmaceutical-market-research-uk-2026',
   'drug-registration-kuwait-pharma-guide': 'healthcare-overview-kuwait-market-2026',
@@ -93,6 +95,8 @@ export const REDIRECT_HREF_REWRITES = {
     '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east',
   '/blog/chinese-suppliers-saudi-giga-projects-research':
     '/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research',
+  '/blog/chinese-tourists-dubai-research':
+    '/bionixus-industries/insights/chinese-tourists-dubai-research',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':

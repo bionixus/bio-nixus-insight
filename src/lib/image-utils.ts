@@ -158,3 +158,10 @@ export const CONTENT_FIGURE_SIZES = '(max-width: 768px) 100vw, (max-width: 1200p
 
 /** Default sizes for hero visuals in a two-column layout. */
 export const HERO_VISUAL_SIZES = '(max-width: 1024px) 100vw, 560px';
+
+export {
+  blogHeroSrc,
+  resolveBlogSchemaLead,
+  resolveBlogSocialImage,
+  sanityImageDimensions,
+} from '../../lib/blog-discover-image.mjs';

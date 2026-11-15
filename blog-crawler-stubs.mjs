@@ -41,6 +41,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'market-entry-research-singapore-southeast-asia',
   'brand-tracking-chinese-electronics-brands-middle-east',
   'chinese-suppliers-saudi-giga-projects-research',
+  'chinese-tourists-dubai-research',
   'obesity-market-research-kuwait',
   'qatar-obesity-glp1-market-research',
   'hematology-market-research-saudi-arabia',
@@ -67,6 +68,8 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   'egypt-eda-decree-480-drug-pricing-2026',
   'dksh-newbridge-acquisition-mena-launch-market-access',
+  'saudi-diabetes-syndicated-vs-hospital-switching',
+  'saudi-hematology-diagnostics-vs-ward-brand-cut',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -263,6 +266,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     description:
       'B2B research for Chinese suppliers on Saudi giga-projects: who decides after the Qiddiya award, local content scores, and how to interview the buyer group.',
   },
+  'chinese-tourists-dubai-research': {
+    title: 'Chinese Tourists Dubai Research: Gulf Boards Guide 2026',
+    description:
+      'Chinese tourist research for Dubai and the Gulf: Saudi arrivals rose 48% in 2025, Dubai has not published a 2026 China split, and what to ask visitors.',
+  },
   'obesity-market-research-kuwait': {
     title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
     description:
@@ -392,6 +400,16 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'DKSH to Acquire NewBridge: What It Means for MENA Launches (2026)',
     description:
       'DKSH agreed to acquire NewBridge Pharmaceuticals for USD 390 million. What the deal means for oncology and rare disease launch and market access planning across 14 MENA markets.',
+  },
+  'saudi-diabetes-syndicated-vs-hospital-switching': {
+    title: 'Saudi Diabetes Data Misses Hospital Switching',
+    description:
+      'Saudi diabetes category totals miss which hospital is switching. Primary research is what a launch team still has to answer.',
+  },
+  'saudi-hematology-diagnostics-vs-ward-brand-cut': {
+    title: 'Saudi Hematology Diagnostics Miss Ward Share',
+    description:
+      'Saudi hematology diagnostics reports count lab products. Pharma still needs the ward-level brand cut a diagnostics total omits.',
   },
 };
 

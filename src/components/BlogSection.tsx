@@ -218,14 +218,14 @@ const BlogSection = ({
   });
 
   const filteredPosts = useMemo(() => list, [list]);
-  const useFeaturedLayout = isMagazineLayout && !disableFeatured;
+  const useFeaturedLayout = isMagazineLayout && !isHomeLayout && !disableFeatured;
   const [featuredPost, ...gridPosts] =
     useFeaturedLayout && filteredPosts.length > 0
       ? filteredPosts
       : [null, ...filteredPosts];
   const gridOnlyPosts = useFeaturedLayout ? gridPosts : filteredPosts;
 
-  const skeletonGridCount = isHomeLayout ? 2 : isMagazineLayout ? 6 : 3;
+  const skeletonGridCount = isHomeLayout ? 6 : isMagazineLayout ? 6 : 3;
 
   return (
     <section
@@ -274,7 +274,9 @@ const BlogSection = ({
             ) : null}
             <div
               className={`grid ${
-                isMagazineLayout
+                isHomeLayout
+                  ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                  : isMagazineLayout
                   ? "md:grid-cols-2 lg:grid-cols-3"
                   : "lg:grid-cols-3"
               } gap-8`}
@@ -362,12 +364,10 @@ const BlogSection = ({
 
             <div
               className={
-                isMagazineLayout
-                  ? `grid gap-8 ${
-                      isHomeLayout
-                        ? "md:grid-cols-2"
-                        : "md:grid-cols-2 lg:grid-cols-3"
-                    }`
+                isHomeLayout
+                  ? "grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+                  : isMagazineLayout
+                  ? "grid gap-8 md:grid-cols-2 lg:grid-cols-3"
                   : "grid lg:grid-cols-3 gap-8"
               }
             >
