@@ -724,11 +724,11 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
               </h2>
               <p className="text-primary-foreground/70 leading-relaxed mb-10">{form.premiumIntro}</p>
               {channelBlock}
-              <div className="mt-10 pt-8 border-t border-primary-foreground/15">
-                <TrustCoverageMap />
-              </div>
             </aside>
             {formPanel}
+          </div>
+          <div className="mt-12 md:mt-16">
+            <TrustCoverageMap wide />
           </div>
         </div>
       </section>
@@ -743,7 +743,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
               {t.contact.title}
             </h2>
-            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">{t.contact.subtitle}</p>
+            <p className="text-lg text-white mb-10 leading-relaxed">{t.contact.subtitle}</p>
             {channelBlock}
             <TrustCoverageMap />
             <div className="flex flex-wrap gap-4 mt-10">

@@ -45,6 +45,11 @@ export type UiChromeStrings = {
   coverageMap: {
     alt: string;
     caption: string;
+    /** Word after the "48" figure (48 countries). */
+    countriesLabel: string;
+    regions: string;
+    leadOffice: string;
+    fieldOffice: string;
   };
   chart: {
     /** Abbreviated label for the 2026 forecast point on the hero chart axis. */
@@ -126,6 +131,10 @@ const en: UiChromeStrings = {
     alt: 'BioNixus global research coverage map showing regional leadership offices in Sheridan, London and Sheikh Zayed, and a field office for UAE in Dubai, a partner office for KSA in Al Khobar, and a field office for Kuwait in Salmiya.',
     caption:
       'Regional leadership offices: Sheridan (US headquarters), London and Sheikh Zayed (Egypt). Field offices: Dubai, Al Khobar (KSA) and Salmiya (Kuwait). Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
+    countriesLabel: 'countries',
+    regions: 'EMEA · the Americas · APAC',
+    leadOffice: 'Regional leadership office',
+    fieldOffice: 'Field office',
   },
   chart: {
     forecastYear: '26E',
@@ -200,6 +209,10 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       alt: 'Karte der globalen Forschungspräsenz von BioNixus mit regionaler Leitung in Sheridan, London und Kairo sowie Außenstellen in Dubai, Al Khobar und Kuwait.',
       caption:
         'Regionale Leitung: Sheridan (US-Hauptsitz), London und Kairo. Außenstellen: Dubai, Al Khobar und Kuwait. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
+      countriesLabel: 'Länder',
+      regions: 'EMEA · Amerika · APAC',
+      leadOffice: 'Regionale Leitung',
+      fieldOffice: 'Außenstelle',
     },
     chart: {
       forecastYear: '26P',
@@ -271,6 +284,10 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       alt: 'Carte de la couverture mondiale des études BioNixus, avec une direction régionale à Sheridan, Londres et Le Caire, et des bureaux de terrain à Dubaï, Al Khobar et Koweït.',
       caption:
         'Direction régionale : Sheridan (siège américain), Londres et Le Caire. Bureaux de terrain : Dubaï, Al Khobar et Koweït. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
+      countriesLabel: 'pays',
+      regions: 'EMEA · Amériques · APAC',
+      leadOffice: 'Bureau de direction régionale',
+      fieldOffice: 'Bureau terrain',
     },
     chart: {
       forecastYear: '26P',
@@ -342,6 +359,10 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       alt: 'Mapa de la cobertura global de investigación de BioNixus con liderazgo regional en Sheridan, Londres y El Cairo, y oficinas de campo en Dubái, Al Khobar y Kuwait.',
       caption:
         'Liderazgo regional: Sheridan (sede en EE. UU.), Londres y El Cairo. Oficinas de campo: Dubái, Al Khobar y Kuwait. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
+      countriesLabel: 'países',
+      regions: 'EMEA · las Américas · APAC',
+      leadOffice: 'Oficina de dirección regional',
+      fieldOffice: 'Oficina de campo',
     },
     chart: {
       forecastYear: '26P',
@@ -413,6 +434,10 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       alt: 'Mapa da cobertura global de pesquisa da BioNixus com liderança regional em Sheridan, Londres e Cairo, e escritórios de campo em Dubai, Al Khobar e Kuwait.',
       caption:
         'Liderança regional: Sheridan (sede nos EUA), Londres e Cairo. Escritórios de campo: Dubai, Al Khobar e Kuwait. Latin America is covered from the US office with a network of local consultants. São Paulo is a field office for LATAM.',
+      countriesLabel: 'países',
+      regions: 'EMEA · Américas · APAC',
+      leadOffice: 'Escritório de liderança regional',
+      fieldOffice: 'Escritório de campo',
     },
     chart: {
       forecastYear: '26P',
@@ -488,6 +513,10 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       alt: 'Карта глобального охвата исследований BioNixus с офисами в Шеридане (штаб-квартира в США), Лондоне, Каире, Эр-Рияде, Дубае, Эль-Кувейте и Сан-Паулу.',
       caption:
         'Офисы в Шеридане (штаб-квартира в США), Лондоне, Каире, Эр-Рияде, Дубае, Эль-Кувейте и Сан-Паулу — двуязычные арабо-английские полевые исследования на рынках ССАГПЗ и MENA, а также европейские программы, соответствующие GDPR.',
+      countriesLabel: 'стран',
+      regions: 'EMEA · Америка · APAC',
+      leadOffice: 'Региональный офис руководства',
+      fieldOffice: 'Полевой офис',
     },
     chart: {
       forecastYear: '26П',
@@ -563,6 +592,10 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       alt: 'BioNixus 全球研究覆盖地图，标注谢里丹（美国总部）、伦敦、开罗、利雅得、迪拜、科威特城与圣保罗七处办公室。',
       caption:
         '办公室分布于谢里丹（美国总部）、伦敦、开罗、利雅得、迪拜、科威特城与圣保罗——在海湾国家与中东北非市场开展阿拉伯语与英语双语实地调研，并配套符合 GDPR 的欧洲项目。',
+      countriesLabel: '个国家',
+      regions: '欧洲、中东和非洲 · 美洲 · 亚太',
+      leadOffice: '区域领导办公室',
+      fieldOffice: '现场办公室',
     },
     chart: {
       forecastYear: '二六预估',
@@ -638,6 +671,10 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       alt: 'خريطة التغطية البحثية العالمية لبيونكسس تُظهر المكاتب في شيريدان (المقر الأمريكي) ولندن والقاهرة والرياض ودبي ومدينة الكويت وساو باولو.',
       caption:
         'مكاتب في شيريدان (المقر الأمريكي) ولندن والقاهرة والرياض ودبي ومدينة الكويت وساو باولو — عمل ميداني ثنائي اللغة بالعربية والإنجليزية في أسواق الخليج والشرق الأوسط وشمال أفريقيا، مع برامج أوروبية متوافقة مع GDPR.',
+      countriesLabel: 'دولة',
+      regions: 'أوروبا والشرق الأوسط وأفريقيا · الأمريكتان · آسيا والمحيط الهادئ',
+      leadOffice: 'مكتب قيادة إقليمي',
+      fieldOffice: 'مكتب ميداني',
     },
     chart: {
       forecastYear: '٢٦ تقديري',

@@ -32,7 +32,7 @@ const GlobalReachSection = () => {
             {t.indexLanding.emeaSignalsH2}
           </h2>
         </div>
-        <GrowthStage shape="globe" size={1.02} className="mx-auto -mt-4 mb-12 h-[260px] w-full max-w-md md:h-[340px]" />
+        <GrowthStage shape="bars" size={0.66} sizeMobile={0.7} className="mx-auto mb-12 mt-8 h-[240px] w-full max-w-xl md:h-[330px]" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {signals.map((text, index) => {
             const Icon = SIGNAL_ICONS[index];

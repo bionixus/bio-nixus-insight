@@ -136,7 +136,7 @@ const MethodologySection = ({ nestUnderParentH1 = false }: MethodologySectionPro
           ) : null}
         </div>
 
-        <GrowthStage shape="funnel" size={0.86} sizeMobile={0.9} className="mx-auto mb-14 mt-2 h-[240px] w-full max-w-md md:h-[310px]" />
+        <GrowthStage shape="globe" size={1.0} className="mx-auto mb-14 mt-2 h-[260px] w-full max-w-md md:h-[330px]" />
 
         <div className="grid gap-5 md:grid-cols-3" data-mv-process="">
           <span className="mv-process-line hidden md:block" aria-hidden="true" />

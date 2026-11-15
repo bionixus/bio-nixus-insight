@@ -338,7 +338,7 @@ const Contact = () => {
             >
               {heroTitle}
             </h1>
-            <p className="sr sr-up max-w-xl text-base sm:text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-10 break-words">
+            <p className="sr sr-up max-w-xl text-base sm:text-lg md:text-xl text-white leading-relaxed mb-10 break-words">
               {heroSubtitle}
             </p>
 

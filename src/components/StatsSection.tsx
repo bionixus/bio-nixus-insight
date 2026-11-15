@@ -84,7 +84,7 @@ const StatsSection = () => {
           {t.stats.title}
         </h2>
 
-        <GrowthStage shape="bars" size={0.72} sizeMobile={0.72} className="mx-auto mb-12 mt-2 h-[240px] w-full max-w-xl md:h-[330px]" />
+        <GrowthStage shape="funnel" size={0.86} sizeMobile={0.9} className="mx-auto mb-12 mt-2 h-[240px] w-full max-w-md md:h-[310px]" />
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
           {t.stats.items.map((stat, index) => (

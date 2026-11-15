@@ -472,6 +472,92 @@ html.mv-on [data-mv]:not([data-mv-in]) :is(.report-chart-line, .report-bar-grow)
   animation-play-state: paused;
 }
 
+/* ---------- global coverage map (offices, routes, 48 countries) ---------- */
+.coverage-arc {
+  fill: none;
+  stroke: #5fd6cf;
+  stroke-opacity: 0.6;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+html.mv-on .coverage-map:not([data-live]) .coverage-arc {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.coverage-map[data-live] .coverage-arc {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: mv-line 1.6s var(--mv-ease) forwards;
+}
+.coverage-map[data-live] .coverage-arc[data-i='1'] { animation-delay: 0.25s; }
+.coverage-map[data-live] .coverage-arc[data-i='2'] { animation-delay: 0.5s; }
+.coverage-map[data-live] .coverage-arc[data-i='3'] { animation-delay: 0.75s; }
+.coverage-packet {
+  fill: #f7c948;
+  filter: drop-shadow(0 0 4px rgb(247 201 72 / 0.85));
+}
+.coverage-leader {
+  stroke: rgb(243 239 231 / 0.28);
+  stroke-width: 1;
+}
+.coverage-dot {
+  fill: #14cfc8;
+  filter: drop-shadow(0 0 5px rgb(20 207 200 / 0.8));
+}
+.coverage-pin.is-lead .coverage-dot {
+  fill: #f7c948;
+  filter: drop-shadow(0 0 6px rgb(247 201 72 / 0.85));
+}
+.coverage-halo {
+  fill: none;
+  stroke: #f7c948;
+  stroke-opacity: 0.45;
+  stroke-width: 1.2;
+}
+.coverage-ring {
+  fill: none;
+  stroke: #14cfc8;
+  stroke-width: 1.4;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.coverage-pin.is-lead .coverage-ring {
+  stroke: #f7c948;
+}
+.coverage-map[data-live] .coverage-ring {
+  animation: mv-ring 2.8s ease-out 1.2s infinite;
+}
+.coverage-map[data-live] .coverage-pin:nth-child(odd) .coverage-ring {
+  animation-delay: 2.1s;
+}
+.coverage-label {
+  font-family: var(--font-body);
+  font-size: 23px;
+  font-weight: 600;
+  fill: #f3efe7;
+  paint-order: stroke;
+  stroke: #06101f;
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+/* Full-width map (contact page): the frame is drawn larger, so labels stay a comfortable size. */
+.coverage-map[data-size='wide'] .coverage-label {
+  font-size: 15px;
+  stroke-width: 4px;
+}
+/* Phones: larger labels; the three Gulf field offices sit too close to label, the caption names them. */
+@media (max-width: 640px) {
+  .coverage-map .coverage-label,
+  .coverage-map[data-size='wide'] .coverage-label {
+    font-size: 30px;
+    stroke-width: 6px;
+  }
+  .coverage-map :is([data-office='salmiya'], [data-office='khobar'], [data-office='dubai']) :is(.coverage-label, .coverage-leader) {
+    display: none;
+  }
+}
+
 /* ---------- accessibility and print ---------- */
 @media (prefers-reduced-motion: reduce) {
   .hero-line,
@@ -483,8 +569,13 @@ html.mv-on [data-mv]:not([data-mv-in]) :is(.report-chart-line, .report-bar-grow)
     opacity: 1;
   }
   .hero-ring,
-  .hero-scan {
+  .hero-scan,
+  .coverage-ring {
     display: none;
+  }
+  .coverage-arc {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
   }
   .gl-field {
     transition: none;
