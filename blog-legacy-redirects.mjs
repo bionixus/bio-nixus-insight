@@ -3,6 +3,8 @@
  * Keys: slug segment only. Values: current canonical blog slug in Sanity / sitemap.
  */
 export const LEGACY_BLOG_SLUG_TO_CANONICAL = {
+  'avalon-pharma-onesource-saudi-obesity-glp1-market':
+    'avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market',
   'healthcare-market-research-europe': 'healthcare-market-research-europe-2026',
   'pharmaceutical-market-research-uk': 'pharmaceutical-market-research-uk-2026',
   'drug-registration-kuwait-pharma-guide': 'healthcare-overview-kuwait-market-2026',

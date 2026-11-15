@@ -127,6 +127,8 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'uae-drug-pricing-ede-takeover-launch-research',
   'dubai-essential-drug-list-formulary-submission',
   'diabetes-market-research-uae-2026-price-cuts',
+  'saudi-diabetes-syndicated-vs-hospital-switching',
+  'saudi-hematology-diagnostics-vs-ward-brand-cut',
   'china-biotech-export-controls-pharma-deals-2026',
   'kuwait-drug-pricing-2026-decision-62',
   'uae-pharmacovigilance-requirements-2026',
@@ -535,6 +537,8 @@ const staticPages = [
   { path: '/blog/uae-drug-pricing-ede-takeover-launch-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/dubai-essential-drug-list-formulary-submission', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/diabetes-market-research-uae-2026-price-cuts', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
+  { path: '/blog/saudi-diabetes-syndicated-vs-hospital-switching', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15' },
+  { path: '/blog/saudi-hematology-diagnostics-vs-ward-brand-cut', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15' },
   { path: '/blog/china-biotech-export-controls-pharma-deals-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-18' },
   { path: '/blog/kuwait-drug-pricing-2026-decision-62', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/blog/uae-pharmacovigilance-requirements-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
@@ -1584,6 +1588,12 @@ const STATIC_PAGE_FILES = {
   ],
   '/blog/diabetes-market-research-uae-2026-price-cuts': [
     'src/data/blog-diabetes-market-research-uae-2026-price-cuts.ts',
+  ],
+  '/blog/saudi-diabetes-syndicated-vs-hospital-switching': [
+    'src/data/blog-saudi-diabetes-syndicated-vs-hospital-switching.ts',
+  ],
+  '/blog/saudi-hematology-diagnostics-vs-ward-brand-cut': [
+    'src/data/blog-saudi-hematology-diagnostics-vs-ward-brand-cut.ts',
   ],
   '/blog/china-biotech-export-controls-pharma-deals-2026': [
     'src/data/blog-china-biotech-export-controls-pharma-deals-2026.ts',

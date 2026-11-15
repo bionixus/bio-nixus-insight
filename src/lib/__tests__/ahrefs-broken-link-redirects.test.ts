@@ -116,4 +116,15 @@ describe('Ahrefs Oct 2026 broken-link map', () => {
       'kresladi-marnetegragene-lad1-fda-2026',
     );
   });
+
+  it('maps the old Avalon obesity slug onto the Saudi tirzepatide article', () => {
+    expect(LEGACY_BLOG_SLUG_TO_CANONICAL['avalon-pharma-onesource-saudi-obesity-glp1-market']).toBe(
+      'avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market',
+    );
+    expect(vercelSources.has('/blog/avalon-pharma-onesource-saudi-obesity-glp1-market')).toBe(true);
+    expect(
+      vercel.redirects?.find((row) => row.source === '/blog/avalon-pharma-onesource-saudi-obesity-glp1-market')
+        ?.destination,
+    ).toBe('/blog/avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market');
+  });
 });

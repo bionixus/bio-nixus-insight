@@ -136,7 +136,7 @@ async function fetchHomeLatestInsights(language: Language): Promise<BlogPost[]> 
   let posts: BlogPost[] = [];
   try {
     posts = await withTimeout(
-      fetchSanityLatestInsightsWithClient(sanityServer, language, 3),
+      fetchSanityLatestInsightsWithClient(sanityServer, language, 6),
       HOME_INSIGHTS_BUDGET_MS,
       hit?.posts ?? [],
     );

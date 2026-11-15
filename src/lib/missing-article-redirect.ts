@@ -132,6 +132,7 @@ export function closestKnownPostPath(slug: string, requestPath: string): string 
   if (exact) {
     const exactPath = canonicalPathForPost(exact);
     if (exactPath !== request) return exactPath;
+    return null;
   }
 
   const unknownTokens = distinctiveTokens(slug);
@@ -160,6 +161,17 @@ function redirectTo(redirectToPath: string): ArticleRedirect {
 }
 
 /**
+ * Exact misses that the token overlap would send to the wrong live article.
+ * The Avalon obesity slug shares "obesity" and "glp1" with the Qatar GLP-1 post,
+ * so closest-match was 301ing it there. The canonical article is the Saudi
+ * tirzepatide post.
+ */
+const EXPLICIT_MISSING_ARTICLE_REDIRECTS: Record<string, string> = {
+  '/blog/avalon-pharma-onesource-saudi-obesity-glp1-market':
+    '/blog/avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market',
+};
+
+/**
  * 301 target for a missing English article address.
  * A Sanity lookup error stays a soft miss (null). Other locales are unchanged.
  */
@@ -172,6 +184,8 @@ export function missingArticleRedirect(args: {
   const pathname = normalizeArticlePath(args.pathname);
   const hub = hubForRequest(pathname);
   if (!hub) return null;
+  const explicit = EXPLICIT_MISSING_ARTICLE_REDIRECTS[pathname];
+  if (explicit && explicit !== pathname) return redirectTo(explicit);
   if (args.lookup === 'error') return null;
 
   const isIndustries = pathname.startsWith('/bionixus-industries/insights/');

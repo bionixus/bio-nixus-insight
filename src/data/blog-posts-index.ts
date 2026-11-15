@@ -51,6 +51,8 @@ import { socialArticle as socialArticle2 } from '@/data/blog-gazya-obinutuzumab-
 import { socialArticle as socialArticle3 } from '@/data/blog-orzeyful-oveporexton-narcolepsy-japan-china-launch-2026';
 import { socialArticle as socialArticle4 } from '@/data/blog-egypt-eda-decree-480-drug-pricing-2026';
 import { DKSH_NEWBRIDGE_HARDCODED_POST } from '@/data/blog-dksh-newbridge-acquisition-mena-launch-market-access';
+import { SAUDI_DIABETES_SWITCHING_HARDCODED_POST } from '@/data/blog-saudi-diabetes-syndicated-vs-hospital-switching';
+import { SAUDI_HEMATOLOGY_WARD_HARDCODED_POST } from '@/data/blog-saudi-hematology-diagnostics-vs-ward-brand-cut';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -111,6 +113,8 @@ export const hardcodedSeoPosts: BlogPost[] = [
   socialArticle3,
   socialArticle4,
   DKSH_NEWBRIDGE_HARDCODED_POST,
+  SAUDI_DIABETES_SWITCHING_HARDCODED_POST,
+  SAUDI_HEMATOLOGY_WARD_HARDCODED_POST,
 ];
 
 /** Helper to find a hardcoded post by slug */
