@@ -125,7 +125,7 @@ export default function JapanPharmaceuticalMarketResearch() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pharmaceutical Market Research Company in Japan | BioNixus"
-        description="BioNixus is a pharmaceutical market research company in Japan — PMDA-aligned HCP surveys, KOL mapping, NHI drug-pricing payer research, Chuikyo HTA."
+        description="Pharmaceutical market research in Japan: PMDA-aligned HCP surveys, KOL mapping, NHI drug-pricing payer research and Chuikyo HTA across university hospitals."
         canonical="/pharmaceutical-market-research-japan"
         jsonLd={jsonLd}
       />

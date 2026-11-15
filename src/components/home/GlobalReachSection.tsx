@@ -1,4 +1,5 @@
 import { Globe2, Stethoscope, Building2, ShieldCheck, type LucideIcon } from 'lucide-react';
+import { GrowthStage } from '@/components/GrowthStage';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 const SIGNAL_ICONS: LucideIcon[] = [Globe2, Stethoscope, Building2, ShieldCheck];
@@ -17,7 +18,7 @@ const GlobalReachSection = () => {
 
   return (
     <section
-      className="premium-home-cream section-padding py-16 md:py-20 border-b border-[#EDE9E3]"
+      className="premium-home-cream gl-host section-padding py-16 md:py-20 border-b border-[#EDE9E3]"
       aria-labelledby="home-global-reach-heading"
       ref={sectionRef}
     >
@@ -31,6 +32,7 @@ const GlobalReachSection = () => {
             {t.indexLanding.emeaSignalsH2}
           </h2>
         </div>
+        <GrowthStage shape="globe" size={1.02} className="mx-auto -mt-4 mb-12 h-[260px] w-full max-w-md md:h-[340px]" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {signals.map((text, index) => {
             const Icon = SIGNAL_ICONS[index];

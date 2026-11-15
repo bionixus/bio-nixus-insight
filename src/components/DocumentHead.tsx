@@ -237,7 +237,7 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
 
   if (path === '/about') {
     return clampDescription(
-      'Founded in London in 2012 — now US-headquartered with offices across the GCC, Cairo, and São Paulo. Global pharma & healthcare market research for 118 clients across 48 countries.'
+      'Founded in London in 2012 — now US-headquartered, with regional leadership in London and Cairo and field offices in the GCC. Global pharma & healthcare market research for 118 clients across 48 countries.'
     );
   }
 
@@ -425,6 +425,10 @@ function buildRouteDescription(pathname: string, language: Language, fallback: s
     );
   }
 
+  if (path === '/healthcare-fieldwork-gcc') {
+    return 'White-label healthcare fieldwork across all six GCC markets for agencies, under NDA. Role-verified HCP recruitment from about 3,200 Middle East physicians.';
+  }
+
   // Generic fallback still route-specific to prevent duplicates.
   const topic = titleCase(noPrefixParts.join(' ') || slugToWords(path.replace(/\//g, ' ')));
   const langSuffix = language === 'en' ? '' : ` (${language.toUpperCase()})`;
@@ -446,7 +450,10 @@ const DocumentHead = () => {
   const hreflangLinks = getHreflangLinks(pathname);
   const geoMeta = getGeoMeta(pathname);
 
-  if (routeProvidesOwnDocumentHead(pathname || '/')) {
+  // Unknown slugs such as /market-research-uk render the 404 template. Do not
+  // invent a meta description or self-canonical for that URL. The SSR response
+  // also strips any description or canonical the shell would otherwise inject.
+  if (cleanPath(pathname || '/') === '/market-research-uk' || routeProvidesOwnDocumentHead(pathname || '/')) {
     return (
       <Helmet>
         <meta name="llm-access" content="allow" />

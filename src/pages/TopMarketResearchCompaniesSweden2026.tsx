@@ -135,7 +135,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Sweden in 2026?',
-    a: 'Leading market research companies in Sweden in 2026 include BioNixus, IQVIA Sweden, Ipsos Sweden, Kantar Sweden, Novus, YouGov Sweden, and United Minds. BioNixus ranks first for pharmaceutical and healthcare research, with Läkemedelsverket-aligned primary research, verified HCP recruitment at Swedish university hospitals, and deep TLV and NT Council payer intelligence.',
+    a: 'Leading market research companies in Sweden in 2026 include BioNixus, IQVIA Sweden, Ipsos Sweden, Kantar Sweden, Novus, YouGov Sweden, and United Minds. BioNixus wrote this list for pharmaceutical and healthcare research, with Läkemedelsverket-aligned primary research, verified HCP recruitment at Swedish university hospitals, and deep TLV and NT Council payer intelligence.',
   },
   {
     q: 'What is pharmaceutical market research in Sweden?',
@@ -218,9 +218,9 @@ export default function TopMarketResearchCompaniesSweden2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in Sweden 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in Sweden 2026 | BioNixus',
     description:
-      'Top market research companies in Sweden 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. Läkemedelsverket-aligned HCP surveys, KOL mapping, and TLV payer research.',
+      'Top market research companies in Sweden 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. Läkemedelsverket-aligned HCP surveys, KOL mapping, and TLV payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -257,10 +257,10 @@ export default function TopMarketResearchCompaniesSweden2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Sweden 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in Sweden 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Sweden 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. Läkemedelsverket-aligned HCP surveys, KOL mapping, and TLV payer research."
+          content="Top market research companies in Sweden 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. Läkemedelsverket-aligned HCP surveys, KOL mapping, and TLV payer research."
         />
         <meta name="geo.region" content="SE" />
         <meta name="geo.placename" content="Sweden" />
@@ -274,7 +274,7 @@ export default function TopMarketResearchCompaniesSweden2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Sweden 2026 | BioNixus"
-        description="Top market research companies in Sweden 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. Läkemedelsverket-aligned HCP surveys, KOL."
+        description="Top market research companies in Sweden 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. Läkemedelsverket-aligned HCP surveys, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

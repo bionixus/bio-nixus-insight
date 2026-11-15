@@ -6,7 +6,7 @@
  * The static index.html block is hand-aligned to these values.
  */
 
-import { GOOGLE_OFFICE_MAPS_URLS, GOOGLE_OFFICES } from '@/data/googleLocations';
+import { GOOGLE_OFFICE_MAPS_URLS, GOOGLE_OFFICES, officeRoleLabel } from '@/data/googleLocations';
 
 const BASE_URL = 'https://www.bionixus.com';
 
@@ -139,7 +139,7 @@ export const ORG_NUMBER_OF_EMPLOYEES = {
 
 /**
  * Streets match live Google Business Profiles (captured 2026-09-02).
- * São Paulo is not open yet (opening planned by the end of 2026), so it is not an address.
+ * São Paulo is a field office for LATAM and has no street on file, so it is not an address.
  */
 export const ORG_ADDRESS = GOOGLE_OFFICES.map((office) => ({
   '@type': 'PostalAddress' as const,
@@ -193,7 +193,16 @@ export function buildCanonicalOrganization(): Record<string, unknown> {
     knowsAbout: ORG_KNOWS_ABOUT,
     sameAs: ORG_SAME_AS,
     address: ORG_ADDRESS,
-    location: GOOGLE_OFFICES.map((office) => ({ '@id': office.schemaId })),
+    location: GOOGLE_OFFICES.map((office) => ({
+      '@type': 'Place',
+      '@id': office.schemaId,
+      name: office.name,
+      description: officeRoleLabel(office),
+      address: {
+        '@type': 'PostalAddress',
+        ...office.address,
+      },
+    })),
     contactPoint: ORG_CONTACT_POINT,
     areaServed: ORG_AREA_SERVED,
   };

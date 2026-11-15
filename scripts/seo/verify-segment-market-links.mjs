@@ -141,10 +141,14 @@ for (const page of pages.SEGMENT_MARKET_PAGES) {
   if (page.title.length > TITLE_MAX) {
     errors.push(`${page.slug}: title is ${page.title.length} chars, server truncates over ${TITLE_MAX}`);
   }
-  if (page.description.length < DESC_MIN || page.description.length > DESC_MAX) {
+  // exactMeta pages ship a finalized query description (this one is 143 chars on purpose).
+  if (!page.exactMeta && (page.description.length < DESC_MIN || page.description.length > DESC_MAX)) {
     errors.push(
       `${page.slug}: description is ${page.description.length} chars, expected ${DESC_MIN}-${DESC_MAX}`,
     );
+  }
+  if (page.exactMeta && page.description.length > DESC_MAX) {
+    errors.push(`${page.slug}: exact meta description is ${page.description.length} chars, max ${DESC_MAX}`);
   }
   if (seenTitles.has(page.title)) {
     errors.push(`${page.slug}: duplicate title shared with ${seenTitles.get(page.title)}`);

@@ -1,15 +1,18 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import sharp from 'sharp';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
 import { render } from '@/entry-server';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { getBlogHeroPreloadUrl } from '@/lib/image-utils';
 import { hardcodedSeoPosts } from '@/data/blog-posts-index';
 import { BLOG_FORCE_INDEX_SLUGS, BLOG_HARDCODED_SEO_SLUGS } from '@/lib/blog-robots';
 import { GOOGLE_OFFICES } from '@/data/googleLocations';
 import { buildCanonicalOrganization } from '@/lib/seo/organization';
 import { getCrawlerStubForSlug, shouldCrawlerIndexBlogSlug } from '../../../../blog-crawler-stubs.mjs';
+import { stripDefaultOrganizationJsonLd } from '../../../../lib/strip-industries-insights-org.mjs';
 import {
   SAUDI_OBESITY_SHORTLIST,
   SAUDI_OBESITY_SHORTLIST_BODY_HTML,
@@ -19,6 +22,7 @@ import {
   SAUDI_OBESITY_SHORTLIST_DISPLAY_TITLE,
   SAUDI_OBESITY_SHORTLIST_EXECUTIVE_SUMMARY_HTML,
   SAUDI_OBESITY_SHORTLIST_FAQ,
+  SAUDI_OBESITY_SHORTLIST_FIGURES,
   SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
   SAUDI_OBESITY_SHORTLIST_HERO_IMAGE,
   SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT,
@@ -35,7 +39,7 @@ import {
 
 const PHRASE_WHO = 'who does obesity market research in saudi arabia';
 const PHRASE_GLP1 = 'obesity glp-1 market research saudi arabia';
-const SAO_PAULO_PHRASE = 'in the process of opening a São Paulo office by the end of 2026';
+const SAO_PAULO_PHRASE = 'São Paulo is a field office for LATAM';
 
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
@@ -45,6 +49,8 @@ const sitemapScript = readFileSync(join(root, 'scripts/generate-sitemap.mjs'), '
 const sitemapXml = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');
 const llms = readFileSync(join(root, 'public/llms.txt'), 'utf8');
 const indexHtml = readFileSync(join(root, 'index.html'), 'utf8');
+const ssrFunctionSource = readFileSync(join(root, 'api/indexnow-key.ts'), 'utf8');
+const serverSource = readFileSync(join(root, 'server.js'), 'utf8');
 
 // Parsed JSON-LD is untyped JSON read by property path in the assertions below.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -110,6 +116,19 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: server render', (
     expect(html).toContain(`src="${SAUDI_OBESITY_SHORTLIST_HERO_IMAGE}" alt="${SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT}"`);
     expect(html).not.toContain(`src="${SAUDI_OBESITY_SHORTLIST_COVER_IMAGE}"`);
     expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.ogImage).toBe(SAUDI_OBESITY_SHORTLIST_COVER_IMAGE);
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.coverImage).toBe(SAUDI_OBESITY_SHORTLIST_HERO_IMAGE);
+    expect(getBlogHeroPreloadUrl(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.coverImage)).toBe(
+      SAUDI_OBESITY_SHORTLIST_HERO_IMAGE,
+    );
+    expect(SAUDI_OBESITY_SHORTLIST_HERO_IMAGE_ALT).toContain('Riyadh skyline');
+    expect(SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT).toContain('Riyadh skyline');
+  });
+
+  it('keeps the hero and OG card at 1200 by 630', async () => {
+    for (const file of [SAUDI_OBESITY_SHORTLIST_HERO_IMAGE, SAUDI_OBESITY_SHORTLIST_COVER_IMAGE]) {
+      const meta = await sharp(join(root, 'public', file)).metadata();
+      expect(meta).toMatchObject({ width: 1200, height: 630, format: 'jpeg' });
+    }
   });
 
   it('renders a visible breadcrumb trail that matches the BreadcrumbList', () => {
@@ -149,8 +168,8 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: server render', (
     expect(metaContent(head, 'property', 'og:image:width')).toEqual(['1200']);
     expect(metaContent(head, 'property', 'og:image:height')).toEqual(['630']);
     expect(metaContent(head, 'property', 'og:image:alt')).toEqual([SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT]);
-    expect(metaContent(head, 'property', 'article:published_time')).toEqual(['2026-10-11T12:00:00.000Z']);
-    expect(metaContent(head, 'property', 'article:modified_time')).toEqual(['2026-10-11T12:00:00.000Z']);
+    expect(metaContent(head, 'property', 'article:published_time')).toEqual(['2026-10-12T12:00:00.000Z']);
+    expect(metaContent(head, 'property', 'article:modified_time')).toEqual(['2026-10-12T12:00:00.000Z']);
     expect(metaContent(head, 'property', 'article:author')).toHaveLength(1);
     expect(metaContent(head, 'property', 'article:section')).toEqual(['Market Research']);
     expect(metaContent(head, 'property', 'article:tag')).toEqual(SAUDI_OBESITY_SHORTLIST_TAGS);
@@ -180,8 +199,8 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     const [article] = byType('BlogPosting');
     expect(article.headline).toBe(SAUDI_OBESITY_SHORTLIST_DISPLAY_TITLE);
     expect(article.description).toBe(SAUDI_OBESITY_SHORTLIST_META_DESCRIPTION);
-    expect(article.datePublished).toBe('2026-10-11T12:00:00.000Z');
-    expect(article.dateModified).toBe('2026-10-11T12:00:00.000Z');
+    expect(article.datePublished).toBe('2026-10-12T12:00:00.000Z');
+    expect(article.dateModified).toBe('2026-10-12T12:00:00.000Z');
     expect(article.inLanguage).toBe('en');
     expect(article.articleSection).toBe('Market Research');
     expect(article.keywords).toBe(SAUDI_OBESITY_SHORTLIST_TAGS.join(', '));
@@ -191,7 +210,8 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
       '@id': `${SAUDI_OBESITY_SHORTLIST_URL}#webpage`,
       url: SAUDI_OBESITY_SHORTLIST_URL,
     });
-    expect(article.image).toMatchObject({
+    const images = Array.isArray(article.image) ? article.image : [article.image];
+    expect(images[0]).toMatchObject({
       '@type': 'ImageObject',
       '@id': `${SAUDI_OBESITY_SHORTLIST_URL}#primaryimage`,
       url: `https://www.bionixus.com${SAUDI_OBESITY_SHORTLIST_COVER_IMAGE}`,
@@ -199,6 +219,15 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
       height: 630,
       caption: SAUDI_OBESITY_SHORTLIST_COVER_IMAGE_ALT,
     });
+    expect(images.slice(1)).toEqual(
+      SAUDI_OBESITY_SHORTLIST_FIGURES.map((figure) => ({
+        '@type': 'ImageObject',
+        url: `https://www.bionixus.com${figure.src}`,
+        width: figure.width,
+        height: figure.height,
+        caption: figure.caption,
+      })),
+    );
     expect(article.author['@type']).toBe('Person');
     expect(article.publisher).toMatchObject({
       '@type': 'Organization',
@@ -211,22 +240,39 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     expect(webPage.breadcrumb).toEqual({ '@id': `${SAUDI_OBESITY_SHORTLIST_URL}#breadcrumb` });
   });
 
-  it('keeps the Organization node to the verified fact set', () => {
+  it('keeps the Organization node to the verified facts and all six labelled offices', () => {
     const orgs = byType('Organization');
+    expect(orgs).toHaveLength(1);
     const pageOrg = orgs.find((node) => typeof node.description === 'string' && node.description.includes('127 studies'));
     expect(pageOrg).toBeDefined();
     expect(pageOrg!['@id']).toBe('https://www.bionixus.com/#organization');
     expect(pageOrg!.foundingDate).toBe('2012');
-    for (const fact of ['118 clients', '48 countries', '127 studies', '3,200 physicians']) {
+    for (const fact of ['118 clients', '48 countries', '127 studies', '3,200 physicians', 'Field offices']) {
       expect(pageOrg!.description).toContain(fact);
     }
     const localities = pageOrg!.address.map((address: JsonLdNode) => address.addressLocality);
-    expect(localities).toEqual(['Sheridan', 'London', 'Sheikh Zayed', 'Dubai']);
+    expect(localities).toEqual(['Sheridan', 'London', 'Sheikh Zayed', 'Dubai', 'Al Khobar', 'Salmiya']);
+    const office = Object.fromEntries(
+      pageOrg!.address.map((address: JsonLdNode) => [address.addressLocality, address]),
+    ) as Record<string, JsonLdNode>;
+    expect(office.Sheridan).toMatchObject({ addressRegion: 'WY', addressCountry: 'US' });
+    expect(office.London).toMatchObject({ postalCode: 'EC1V 2NX', addressCountry: 'GB' });
+    // The Cairo office's Google Business Profile address is in Sheikh Zayed, Giza.
+    expect(office['Sheikh Zayed']).toMatchObject({ addressRegion: 'Giza', addressCountry: 'EG' });
+    expect(office.Dubai.streetAddress).toContain('Thuraya Tower 1');
+    expect(office['Al Khobar'].streetAddress).toContain('Al Khobar Al Shamalia');
+    expect(office.Salmiya.streetAddress).toContain('Olympia Mall');
     expect(pageOrg!.description).toContain(SAO_PAULO_PHRASE);
-    const excludedMaps = GOOGLE_OFFICES.filter((office) => office.id === 'sa' || office.id === 'kw').map(
-      (office) => office.mapsUrl,
-    );
-    for (const url of excludedMaps) expect(pageOrg!.sameAs).not.toContain(url);
+    const labels = pageOrg!.location.map((place: JsonLdNode) => place.description);
+    expect(labels).toEqual([
+      'Americas office and global HQ',
+      'Europe office',
+      'AMEA (APAC, Middle East, Africa) office',
+      'field office for UAE',
+      'partner office for KSA',
+      'field office for Kuwait',
+    ]);
+    for (const listed of GOOGLE_OFFICES) expect(pageOrg!.sameAs).toContain(listed.mapsUrl);
     expect(pageOrg!.sameAs).toContain('https://www.linkedin.com/company/bionixus/');
   });
 
@@ -243,9 +289,21 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
     expect(places.map((match) => match[1])).not.toContain('São Paulo');
   });
 
-  it('keeps São Paulo out of the sitewide Organization block this page also ships', () => {
+  it('keeps São Paulo out of the sitewide Organization block', () => {
     expect(JSON.stringify(buildCanonicalOrganization())).not.toContain('São Paulo');
     expect(indexHtml).not.toContain('São Paulo');
+  });
+
+  it('drops the template Organization, which lists every Google listing, from this page only', () => {
+    const page = stripDefaultOrganizationJsonLd(indexHtml, SAUDI_OBESITY_SHORTLIST_PATH);
+    expect(page).toContain('<!-- org-schema:start --><!-- org-schema:end -->');
+    expect(page).not.toMatch(/"Organization"|Al Khobar|Salmiya/);
+    expect(stripDefaultOrganizationJsonLd(indexHtml, '/blog/turkey-pharmaceutical-market-2026-titck-top-companies')).toBe(
+      indexHtml,
+    );
+    for (const source of [ssrFunctionSource, serverSource]) {
+      expect(source).toMatch(/stripDefaultOrganizationJsonLd\(/);
+    }
   });
 
   it('mirrors the visible FAQ exactly in FAQPage', () => {
@@ -262,9 +320,14 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: JSON-LD', () => {
 
   it('lists the same providers in the ItemList and the comparison table', () => {
     const [itemList] = byType('ItemList');
-    const names = itemList.itemListElement.map((entry: JsonLdNode) => entry.item.name);
+    const names = itemList.itemListElement.map((entry: JsonLdNode) => entry.item?.name ?? entry.name);
     expect(names).toEqual(SAUDI_OBESITY_SHORTLIST.map((entry) => entry.name));
     expect(itemList.itemListElement[0].item['@id']).toBe('https://www.bionixus.com/#organization');
+    expect(itemList.itemListElement[0].item.url).toBe('https://www.bionixus.com');
+    for (const entry of itemList.itemListElement.slice(1)) {
+      expect(entry.item).toBeUndefined();
+      expect(JSON.stringify(entry)).not.toMatch(/https?:\/\//);
+    }
     const table = /<table>[\s\S]*?<\/table>/.exec(SAUDI_OBESITY_SHORTLIST_BODY_HTML)?.[0] ?? '';
     const firstCells = [...table.matchAll(/<tr><td>([^<]+)<\/td>/g)].map((m) => m[1]);
     expect(firstCells).toEqual(names);
@@ -317,29 +380,100 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: copy rules', () =
     expect(SAUDI_OBESITY_SHORTLIST_TABLE_OF_CONTENTS.map((item) => item.anchor)).toEqual(ids);
   });
 
-  it('states no prices and no Al Khobar or Kuwait office', () => {
-    expect(allCopy).not.toMatch(/Khobar/i);
-    expect(allCopy).not.toMatch(/Kuwait office|Salmiya/i);
+  it('states no prices and labels Al Khobar and Kuwait as field offices', () => {
+    expect(allCopy).toMatch(/a field office for UAE in Dubai, a partner office for KSA in Al Khobar, and a field office for Kuwait in Salmiya/i);
     expect(allCopy).not.toMatch(/\$\s?\d[\d,]*(?:k|,000)/i);
   });
 
-  it('cites every reference inline before the reference list', () => {
+  it('cites every linked reference inline, and keeps competitor bibliography entries unlinked', () => {
     const [narrative, referenceList] = SAUDI_OBESITY_SHORTLIST_BODY_HTML.split('<h2 id="references">');
-    const referenceUrls = [...referenceList.matchAll(/<li id="ref-[^"]+">[\s\S]*?<a href="([^"]+)"/g)].map((m) => m[1]);
-    expect(referenceUrls.length).toBeGreaterThan(20);
-    for (const url of referenceUrls) expect(narrative).toContain(`href="${url}"`);
+    const items = [...referenceList.matchAll(/<li id="ref-([^"]+)">([\s\S]*?)<\/li>/g)];
+    const linked = items.filter(([, , html]) => html.includes('<a '));
+    const unlinked = items.filter(([, , html]) => !html.includes('<a '));
+    expect(linked.length).toBeGreaterThanOrEqual(16);
+    expect(unlinked.map(([, id]) => id)).toEqual([
+      'euromonitor',
+      'grand-view',
+      'imarc-weight-loss',
+      'imarc-weight-management',
+      'ken-research',
+      '6wresearch',
+    ]);
+    for (const [, , html] of linked) {
+      const url = /href="([^"]+)"/.exec(html)?.[1] ?? '';
+      expect(narrative).toContain(`href="${url}"`);
+    }
+    for (const [, , html] of unlinked) {
+      expect(html).not.toMatch(/https?:\/\/|<a /);
+      expect(narrative).toContain(text(html).split('.')[0]);
+    }
+    expect(referenceList).not.toMatch(/iqvia|ipsos/i);
   });
 
-  it('opens external citations in a new tab and nofollows vendor pages', () => {
+  it('opens external citations in a new tab', () => {
     const external = [...SAUDI_OBESITY_SHORTLIST_BODY_HTML.matchAll(/<a href="(https?:[^"]+)"([^>]*)>/g)];
     expect(external.length).toBeGreaterThan(30);
     for (const [, href, attrs] of external) {
       expect(attrs).toContain('target="_blank"');
       expect(attrs).toMatch(/rel="[^"]*noopener/);
-      if (/euromonitor|grandviewresearch|imarcgroup|kenresearch|6wresearch|iqvia|ipsos/.test(href)) {
-        expect(attrs).toContain('nofollow');
-      }
+      expect(href).not.toMatch(
+        /iqvia\.com|ipsos\.com|kantar\.com|euromonitor\.com|grandviewresearch\.com|imarcgroup\.com|kenresearch\.com|6wresearch\.com/i,
+      );
     }
+  });
+
+  const COMPETITOR_HOSTS = [
+    'iqvia.com',
+    'ipsos.com',
+    'kantar.com',
+    'kantarhealth.com',
+    'kantarworldpanel.com',
+    'euromonitor.com',
+    'grandviewresearch.com',
+    'imarcgroup.com',
+    'kenresearch.com',
+    '6wresearch.com',
+  ];
+
+  it('fails if any competitor or report-publisher domain is linked', () => {
+    const corpus = [
+      SAUDI_OBESITY_SHORTLIST_EXECUTIVE_SUMMARY_HTML,
+      SAUDI_OBESITY_SHORTLIST_BODY_HTML,
+      JSON.stringify(SAUDI_OBESITY_SHORTLIST_FAQ),
+      JSON.stringify(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.schemaExtras),
+      JSON.stringify(SAUDI_OBESITY_SHORTLIST),
+      html,
+      JSON.stringify(jsonLd),
+    ].join('\n');
+    const urls = [...corpus.matchAll(/https?:\/\/[^\s"'<>\\]+/g)].map((match) => match[0].replace(/[),.;]+$/, ''));
+    const hits = urls.filter((url) => {
+      try {
+        const host = new URL(url).hostname.replace(/^www\./, '').toLowerCase();
+        return COMPETITOR_HOSTS.some((domain) => host === domain || host.endsWith(`.${domain}`));
+      } catch {
+        return false;
+      }
+    });
+    expect(hits).toEqual([]);
+    const visible = text(html);
+    for (const name of ['IQVIA', 'Ipsos', 'Euromonitor International', 'Grand View Research', 'IMARC Group', 'Ken Research', '6Wresearch']) {
+      expect(visible).toContain(name);
+    }
+  });
+
+  it('places lazy-loaded in-content figures with alt text, captions and files under 120 KB', () => {
+    for (const figure of SAUDI_OBESITY_SHORTLIST_FIGURES) {
+      expect(figure.src.endsWith('.webp')).toBe(true);
+      const file = statSync(join(root, 'public', figure.src));
+      expect(file.size).toBeGreaterThan(5 * 1024);
+      expect(file.size).toBeLessThanOrEqual(120 * 1024);
+      expect(html).toContain(
+        `src="${figure.src}" alt="${figure.alt}" width="${figure.width}" height="${figure.height}" loading="lazy"`,
+      );
+      expect(html).toContain(`<figcaption>${figure.caption}</figcaption>`);
+    }
+    expect(html).toContain(`src="${SAUDI_OBESITY_SHORTLIST_HERO_IMAGE}"`);
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.ogImage).toBe(SAUDI_OBESITY_SHORTLIST_COVER_IMAGE);
   });
 });
 
@@ -355,7 +489,9 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: registration', ()
     const sources = vercel.rewrites.map((rewrite) => rewrite.source);
     const ssrIndex = sources.indexOf(SAUDI_OBESITY_SHORTLIST_PATH);
     const crawlerIndex = vercel.rewrites.findIndex(
-      (rewrite) => rewrite.source === '/blog/:slug' && rewrite.destination === '/api/blog/:slug',
+      (rewrite) =>
+        rewrite.source === '/blog/:slug' &&
+        rewrite.destination === '/api/indexnow-key?__ssr=1&url=/blog/:slug',
     );
     expect(ssrIndex).toBeGreaterThanOrEqual(0);
     expect(ssrIndex).toBeLessThan(crawlerIndex);
@@ -365,9 +501,10 @@ describe('/blog/who-does-obesity-market-research-saudi-arabia: registration', ()
     expect(vercel.rewrites[ssrIndex].has).toBeUndefined();
   });
 
-  it('is listed in the sitemap source, the committed sitemap and llms.txt', () => {
-    expect(sitemapScript).toContain(`path: '${SAUDI_OBESITY_SHORTLIST_PATH}'`);
-    expect(sitemapXml).toContain(`<loc>${SAUDI_OBESITY_SHORTLIST_URL}</loc>`);
+  it('is listed in the sitemap source, the committed sitemap and llms.txt, dated 12 October 2026', () => {
+    expect(SAUDI_OBESITY_SHORTLIST_HARDCODED_POST.date).toBe('12 Oct 2026');
+    expect(sitemapScript).toContain(`path: '${SAUDI_OBESITY_SHORTLIST_PATH}', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12'`);
+    expect(sitemapXml).toMatch(new RegExp(`<loc>${SAUDI_OBESITY_SHORTLIST_URL}</loc>\\s*<lastmod>2026-10-12</lastmod>`));
     expect(llms).toContain(SAUDI_OBESITY_SHORTLIST_URL);
   });
 });

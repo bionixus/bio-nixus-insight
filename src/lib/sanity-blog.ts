@@ -5,6 +5,7 @@
 
 import type { SanityClient } from '@sanity/client';
 import { getSanityClient } from './sanity';
+import { sanityImageDimensions } from '@/lib/image-utils';
 import { resolveBlogSeoNoIndex, isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
 import type { BlogPost } from '@/types/blog';
 import {
@@ -14,10 +15,63 @@ import {
   INDUSTRIES_SILO_GROQ,
 } from '@/lib/blog-content-silo';
 import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
+import {
+  canonicalAlsaadanyJobTitle,
+  isAlsaadanyDisplayName,
+  replaceLegacyAlsaadanyPhrases,
+} from '@/data/editorialAuthors';
 
 function overlayHardcodedSeoPost(post: BlogPost): BlogPost {
   if (!isHardcodedSeoBlogSlug(post.slug)) return post;
   return getHardcodedPostBySlug(post.slug) ?? post;
+}
+
+const MIN_MAIN_IMAGE_WIDTH = 1200;
+
+/** A Sanity mainImage qualifies when its width is unknown or at least 1200. */
+function sanityMainIsWideEnough(url: string, width?: number, height?: number): boolean {
+  if (!url.includes('cdn.sanity.io')) return false;
+  const dims = sanityImageDimensions(url, width, height);
+  return !dims || dims.width >= MIN_MAIN_IMAGE_WIDTH;
+}
+
+/**
+ * Hardcoded SEO posts keep their copy. Share images follow Sanity first:
+ * openGraph.ogImage, then mainImage when it is 1200px wide or wider, then the
+ * static file on the hardcoded post. SSR and the prerendered shell both render
+ * this object, so the same order reaches the live HTML.
+ */
+export function applySanityShareImages<T extends BlogPost>(
+  base: T,
+  sanity: BlogPost | null | undefined,
+): T {
+  if (!sanity) return base;
+  const sanityOg = sanity.ogImage?.trim() || '';
+  const sanityMain = sanity.coverImage?.trim() || '';
+  const usableMain = sanityMain && sanityMainIsWideEnough(sanityMain, sanity.coverImageWidth, sanity.coverImageHeight)
+    ? sanityMain
+    : '';
+  if (!sanityOg && !usableMain) return base;
+
+  const ogFromSanityOg = Boolean(sanityOg);
+  const ogImage = sanityOg || usableMain || base.ogImage;
+  const coverImage = usableMain || base.coverImage;
+  const ogFromMain = !ogFromSanityOg && Boolean(usableMain);
+
+  return {
+    ...base,
+    ...(ogImage ? { ogImage } : {}),
+    ...(coverImage ? { coverImage } : {}),
+    ...(ogFromSanityOg && typeof sanity.ogImageWidth === 'number' ? { ogImageWidth: sanity.ogImageWidth } : {}),
+    ...(ogFromSanityOg && typeof sanity.ogImageHeight === 'number' ? { ogImageHeight: sanity.ogImageHeight } : {}),
+    ...(ogFromMain && typeof sanity.coverImageWidth === 'number' ? { ogImageWidth: sanity.coverImageWidth } : {}),
+    ...(ogFromMain && typeof sanity.coverImageHeight === 'number' ? { ogImageHeight: sanity.coverImageHeight } : {}),
+    ...(usableMain && typeof sanity.coverImageWidth === 'number' ? { coverImageWidth: sanity.coverImageWidth } : {}),
+    ...(usableMain && typeof sanity.coverImageHeight === 'number' ? { coverImageHeight: sanity.coverImageHeight } : {}),
+    ...(ogFromSanityOg && sanity.ogImageAlt?.trim() ? { ogImageAlt: sanity.ogImageAlt.trim() } : {}),
+    ...(ogFromMain && sanity.coverImageAlt?.trim() ? { ogImageAlt: sanity.coverImageAlt.trim() } : {}),
+    ...(usableMain && sanity.coverImageAlt?.trim() ? { coverImageAlt: sanity.coverImageAlt.trim() } : {}),
+  };
 }
 
 function stripHtml(input: string): string {
@@ -138,6 +192,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "countryTitle": country->title,
   "coverImage": mainImage.asset->url,
   "coverImageAlt": mainImage.alt,
+  "coverImageWidth": mainImage.asset->metadata.dimensions.width,
+  "coverImageHeight": mainImage.asset->metadata.dimensions.height,
   readingTime,
   tags,
   tableOfContents,
@@ -148,6 +204,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   openGraph,
   "ogImageUrl": openGraph.ogImage.asset->url,
   "ogImageAlt": openGraph.ogImage.alt,
+  "ogImageWidth": openGraph.ogImage.asset->metadata.dimensions.width,
+  "ogImageHeight": openGraph.ogImage.asset->metadata.dimensions.height,
   "authorName": author->name,
   "authorTitle": author->title,
   "authorImage": author->image.asset->url,
@@ -200,7 +258,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       ? (p as RawSanityPost & { authorName: string }).authorName.trim()
       : '';
 
-  return {
+  const mapped: BlogPost = {
     id: p._id,
     slug: p.slug ?? p._id,
     title: p.title ?? 'Untitled',
@@ -258,6 +316,10 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       }
       if (raw.ogImageUrl) out.ogImage = raw.ogImageUrl;
       if (typeof raw.ogImageAlt === 'string' && raw.ogImageAlt.trim()) out.ogImageAlt = raw.ogImageAlt.trim();
+      if (typeof raw.coverImageWidth === 'number') out.coverImageWidth = raw.coverImageWidth;
+      if (typeof raw.coverImageHeight === 'number') out.coverImageHeight = raw.coverImageHeight;
+      if (typeof raw.ogImageWidth === 'number') out.ogImageWidth = raw.ogImageWidth;
+      if (typeof raw.ogImageHeight === 'number') out.ogImageHeight = raw.ogImageHeight;
       if (raw.authorName) out.authorName = raw.authorName;
       if (raw.authorTitle) out.authorTitle = raw.authorTitle;
       if (raw.authorImage) out.authorImage = raw.authorImage;
@@ -266,6 +328,11 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     })()),
     language: p.language ?? undefined,
   };
+  const corrected = replaceLegacyAlsaadanyPhrases(mapped);
+  if (isAlsaadanyDisplayName(corrected.authorName)) {
+    corrected.authorTitle = canonicalAlsaadanyJobTitle(corrected.authorTitle);
+  }
+  return corrected;
 }
 
 /** Test Sanity connection. Returns { ok: true } or { ok: false, error: string }. */
@@ -311,14 +378,18 @@ export async function fetchIndustriesInsightsWithClient(
   client: SanityClient,
   limit = BLOG_INDEX_POST_LIMIT,
 ): Promise<BlogPost[]> {
+  const hardcodedIndustries = filterPostsBySilo([...hardcodedSeoPosts], 'industries');
   try {
     const raw = await client.fetch<RawSanityPost[]>(INDUSTRIES_INSIGHTS_QUERY, {
       limit: Math.max(1, Math.min(limit, BLOG_INDEX_POST_LIMIT)),
     });
-    return sortPostsNewestFirst(raw.map((p) => mapRawToPost(p)!).filter(Boolean));
+    const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean).map(overlayHardcodedSeoPost);
+    const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
+    const extra = hardcodedIndustries.filter((p) => !sanitySlugs.has(p.slug));
+    return sortPostsNewestFirst([...sanityPosts, ...extra]);
   } catch (err) {
     console.error('Failed to fetch industries insights from Sanity CMS', err);
-    return [];
+    return sortPostsNewestFirst(hardcodedIndustries);
   }
 }
 
@@ -329,7 +400,7 @@ export async function fetchIndustriesInsights(limit = BLOG_INDEX_POST_LIMIT): Pr
 export async function fetchSanityLatestInsightsWithClient(
   client: SanityClient,
   language: string,
-  limit = 3,
+  limit = 6,
 ): Promise<BlogPost[]> {
   try {
     const raw = await client.fetch<RawSanityPost[]>(LATEST_INSIGHTS_QUERY, {
@@ -365,7 +436,7 @@ export async function fetchSanityLatestInsightsWithClient(
   }
 }
 
-export async function fetchSanityLatestInsights(language: string, limit = 3): Promise<BlogPost[]> {
+export async function fetchSanityLatestInsights(language: string, limit = 6): Promise<BlogPost[]> {
   return fetchSanityLatestInsightsWithClient(getSanityClient(), language, limit);
 }
 
@@ -374,11 +445,15 @@ export async function fetchSanityPostBySlugWithClient(
   client: SanityClient,
 ): Promise<BlogPost | null> {
   const hardcodedFallback = getHardcodedPostBySlug(slug);
-  if (hardcodedFallback && isHardcodedSeoBlogSlug(slug)) return hardcodedFallback;
+  const hardcodedSeo = Boolean(hardcodedFallback && isHardcodedSeoBlogSlug(slug));
 
+  // Always hit the API client (sanityServer / getSanityClient set useCdn: false).
+  // Skipping this for hardcoded SEO posts dropped mainImage and openGraph.ogImage,
+  // so the hero and og:image stayed on /og-image.png after the Sanity asset was published.
   try {
     const raw = await client.fetch<RawSanityPost | null>(POST_BY_SLUG_QUERY, { slug });
     const mapped = mapRawToPost(raw, true);
+    if (hardcodedSeo && hardcodedFallback) return applySanityShareImages(hardcodedFallback, mapped);
     if (mapped) return mapped;
 
     if (hardcodedFallback) return hardcodedFallback;
@@ -386,7 +461,7 @@ export async function fetchSanityPostBySlugWithClient(
   } catch (err) {
     console.error('Sanity fetch error for slug:', slug, err);
     if (hardcodedFallback) return hardcodedFallback;
-    return null;
+    throw err;
   }
 }
 
@@ -527,6 +602,8 @@ interface RawSanityPost {
   countryTitle?: string;
   coverImage?: string;
   coverImageAlt?: string;
+  coverImageWidth?: number;
+  coverImageHeight?: number;
   readingTime?: number;
   tags?: string[];
   tableOfContents?: { heading?: string; anchor?: string }[];
@@ -545,6 +622,8 @@ interface RawSanityPost {
   };
   ogImageUrl?: string;
   ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   authorName?: string;
   authorTitle?: string;
   authorImage?: string;

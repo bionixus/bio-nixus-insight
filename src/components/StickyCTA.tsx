@@ -9,9 +9,9 @@ import { ScopingCallButton } from '@/components/conversion/ScopingCallButton';
 const contactPaths = new Set(languages.map((lang) => localizedContactPath(lang.code)));
 
 const barClassName =
-  'fixed bottom-0 left-0 right-0 z-40 md:hidden bg-primary/95 backdrop-blur-sm border-t border-primary-foreground/10 px-4 py-3 safe-area-bottom';
+  'fixed bottom-0 left-0 right-0 z-40 md:hidden bg-night-2/85 backdrop-blur-xl backdrop-saturate-150 border-t border-line px-4 py-3 safe-area-bottom';
 const buttonClassName =
-  'flex items-center justify-center gap-2 w-full rounded-lg bg-white text-primary font-semibold py-3 text-sm hover:bg-white/90 transition-colors';
+  'flex items-center justify-center gap-2 w-full rounded-full bg-primary bg-gradient-to-r from-accent to-primary text-on-gold font-semibold py-3 text-sm shadow-[0_14px_40px_-16px_hsl(var(--gold-glow)/0.6),inset_0_1px_0_rgb(255_255_255/0.35)] transition-[filter] hover:brightness-105';
 
 const StickyCTA = () => {
   const { pathname } = useLocation();

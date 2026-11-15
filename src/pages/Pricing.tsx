@@ -8,7 +8,7 @@ import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { ScopingCallAgenda } from '@/components/conversion/ScopingCallAgenda';
 import { ScopingCallButton } from '@/components/conversion/ScopingCallButton';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
-import { STATS } from '@/lib/companyStats';
+import { STATS, STATS_PROJECTS_PHRASE } from '@/lib/companyStats';
 import { BIONIXUS_PHONE_UK, BIONIXUS_PHONE_UK_DISPLAY } from '@/components/report-conversion/constants';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
@@ -230,12 +230,11 @@ export default function Pricing() {
             </div>
             <div className="cover-foot">
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                Americas office and global HQ: Sheridan, Wyoming, USA · Europe office: London, UK · AMEA office: Cairo · KSA partner office: Al Khobar · UAE field office: Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
-                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
-                annually · {STATS.projects2025} in 2025
+                {STATS.clients} clients · {STATS.countries} countries · {STATS_PROJECTS_PHRASE}
               </div>
             </div>
           </div>
@@ -429,7 +428,7 @@ export default function Pricing() {
               <div className="closing-contact">
                 <div>
                   <div className="label">Firm</div>
-                  <div className="value">BioNixus · USA Global HQ</div>
+                  <div className="value">BioNixus · Americas office and global HQ</div>
                 </div>
                 <div>
                   <div className="label">Email</div>

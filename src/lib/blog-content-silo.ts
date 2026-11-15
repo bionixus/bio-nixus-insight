@@ -59,6 +59,90 @@ export const INDUSTRIES_INSIGHT_EDITORIAL_LINKS = [
     to: getIndustriesInsightPostPath('financial-services-market-research-egypt-2026'),
     label: 'Financial services market research in Egypt 2026',
   },
+  {
+    to: getIndustriesInsightPostPath('feasibility-study-company-saudi-arabia'),
+    label: 'Feasibility studies in Saudi Arabia: what the market section must prove',
+  },
+  {
+    to: getIndustriesInsightPostPath('customer-satisfaction-surveys-uae-csat-nps-ces'),
+    label: 'Customer satisfaction surveys in the UAE: CSAT, NPS and CES',
+  },
+  {
+    to: getIndustriesInsightPostPath('brand-tracking-research-agency-dubai'),
+    label: 'Brand tracking in Dubai and the UAE: a tracker that moves budgets',
+  },
+  {
+    to: getIndustriesInsightPostPath('market-entry-research-saudi-arabia'),
+    label: 'Market entry research for Saudi Arabia: a non-pharma playbook',
+  },
+  {
+    to: getIndustriesInsightPostPath('consumer-survey-company-saudi-arabia'),
+    label: 'Consumer survey research in Saudi Arabia: sampling, language and mode',
+  },
+  {
+    to: getIndustriesInsightPostPath('b2b-market-research-uae'),
+    label: 'B2B market research in the UAE: reaching hard-to-reach decision-makers',
+  },
+  {
+    to: getIndustriesInsightPostPath('australia-gcc-market-entry-research'),
+    label: "Australian exporters' guide to Saudi and UAE market research",
+  },
+  {
+    to: getIndustriesInsightPostPath('europe-to-gcc-market-entry-research'),
+    label: 'Europe-to-GCC market entry research: what European brands need to know',
+  },
+  {
+    to: getIndustriesInsightPostPath('uk-market-entry-research'),
+    label: 'UK market entry research: a guide for GCC and US companies',
+  },
+  {
+    to: getIndustriesInsightPostPath('us-market-entry-research-for-foreign-companies'),
+    label: 'US market entry research for Middle East, European and Brazilian companies',
+  },
+  {
+    to: getIndustriesInsightPostPath('new-zealand-exporters-gcc-market-research'),
+    label: 'New Zealand exporters GCC market research: dairy, meat and food proof',
+  },
+  {
+    to: getIndustriesInsightPostPath('chinese-companies-entering-saudi-arabia-and-the-uae'),
+    label: 'Chinese companies entering Saudi Arabia and the UAE: market research playbook',
+  },
+  {
+    to: getIndustriesInsightPostPath('chinese-companies-egypt-market-research'),
+    label: 'Chinese companies in Egypt: what to research first',
+  },
+  {
+    to: getIndustriesInsightPostPath('nielsen-alternative-saudi-arabia'),
+    label: 'Syndicated vs custom research in Saudi Arabia: when each fits',
+  },
+  {
+    to: getIndustriesInsightPostPath('government-customer-satisfaction-research-saudi-arabia'),
+    label: 'Government customer satisfaction research in Saudi Arabia: Vision 2030 service quality',
+  },
+  {
+    to: getIndustriesInsightPostPath('kantar-alternative-middle-east'),
+    label: 'Kantar alternative Middle East: what buyers should compare',
+  },
+  {
+    to: getIndustriesInsightPostPath('chinese-ev-brands-saudi-uae-consumer-research'),
+    label: 'Chinese EV brands in the Gulf: consumer research before launch',
+  },
+  {
+    to: getIndustriesInsightPostPath('market-entry-research-singapore-southeast-asia'),
+    label: 'Market entry research Singapore',
+  },
+  {
+    to: getIndustriesInsightPostPath('brand-tracking-chinese-electronics-brands-middle-east'),
+    label: 'Brand tracking Chinese brands Middle East',
+  },
+  {
+    to: getIndustriesInsightPostPath('chinese-suppliers-saudi-giga-projects-research'),
+    label: 'Chinese suppliers Saudi giga-projects',
+  },
+  {
+    to: getIndustriesInsightPostPath('chinese-tourists-dubai-research'),
+    label: 'Chinese tourists Dubai research',
+  },
 ] as const;
 
 /** Canonical root URL for the Skyrizi omnichannel article (not /blog/…). */

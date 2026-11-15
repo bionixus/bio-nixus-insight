@@ -13,12 +13,11 @@
  * and contact.brief_description_of_your_situation (summary fallback).
  */
 
+import { LEAD_EMAIL_CHECK_ERROR, leadEmailProblem } from '../lib/leadEmailValidation.js';
+
 const GHL_BASE = 'https://services.leadconnectorhq.com';
 const GHL_VERSION = '2021-07-28';
 const DEFAULT_LOCATION_ID = 'SjwWFl3GxGB1WQ1LbzLq';
-const EMAIL_RE =
-  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
-const EMAIL_CHECK_ERROR = 'Please check your email address and try again.';
 const CACHE_MS = 10 * 60 * 1000;
 const RATE_WINDOW_MS = 10 * 60 * 1000;
 const RATE_MAX = 20;
@@ -445,20 +444,10 @@ function emailRejected(response: GhlResponse) {
   return /\bemail\b/i.test(highLevelErrorText(response));
 }
 
-function emailProblem(email: string): string | null {
-  if (!email) return 'A valid email is required';
-  const at = email.lastIndexOf('@');
-  const local = at === -1 ? email : email.slice(0, at);
-  if (local.length > 64 || email.length > 254 || !EMAIL_RE.test(email)) {
-    return EMAIL_CHECK_ERROR;
-  }
-  return null;
-}
-
 function rejectedEmailResult(response: GhlResponse): LeadResult | null {
   if (!emailRejected(response)) return null;
   console.error('[highlevel-lead] upsert rejected the email', response.status);
-  return { status: 400, body: { error: EMAIL_CHECK_ERROR } };
+  return { status: 400, body: { error: LEAD_EMAIL_CHECK_ERROR } };
 }
 
 function omitCountry(body: Record<string, unknown>) {
@@ -887,7 +876,7 @@ export async function processHighLevelLead(rawBody: unknown, options: ProcessOpt
   }
 
   const email = leadEmail(fields);
-  const emailError = emailProblem(email);
+  const emailError = leadEmailProblem(email);
   if (emailError) {
     return { status: 400, body: { error: emailError } };
   }

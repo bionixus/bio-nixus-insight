@@ -1,5 +1,5 @@
 /**
- * Publishes Sanity pressRelease: BioNixus São Paulo / LATAM expansion (Q2 2026).
+ * Publishes Sanity pressRelease: LATAM covered from the US office; São Paulo is a field office for LATAM.
  *
  * Requires repo-root .env: SANITY_PROJECT_ID, SANITY_DATASET, SANITY_TOKEN (Editor)
  * Run: node scripts/publish-brazil-latam-press-release-2026.mjs
@@ -17,6 +17,7 @@ import {
   SUBHEADLINE,
   DATELINE,
   SPOKESPERSON_NAME,
+  SPOKESPERSON_TITLE,
   SEO_META_TITLE,
   SEO_META_DESCRIPTION,
   OG_DESCRIPTION,
@@ -72,7 +73,7 @@ async function ensureCoverImage(outPath) {
   <rect x="0" y="0" width="100%" height="6" fill="#b91c1c"/>
   <text x="80" y="120" fill="#f8fafc" font-family="Georgia, serif" font-size="42" font-weight="600">BioNixus</text>
   <text x="80" y="200" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="28">Latin America expansion</text>
-  <text x="80" y="260" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="22">São Paulo office · Opening Q2 2026</text>
+  <text x="80" y="260" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="22">LATAM from the US office · São Paulo field office for LATAM</text>
   <text x="80" y="620" fill="#94a3b8" font-family="Helvetica, Arial, sans-serif" font-size="16">Healthcare &amp; pharmaceutical market research</text>
 </svg>`
   const buf = await sharp(Buffer.from(svg)).jpeg({ quality: 90, progressive: true }).toBuffer()
@@ -132,12 +133,12 @@ async function ensureAuthorTitle(client) {
     { name: AUTHOR_NAME },
   )
   if (!author?._id) {
-    console.warn(`Author "${AUTHOR_NAME}" not found in Sanity; quote still uses Research Director in release body.`)
+    console.warn(`Author "${AUTHOR_NAME}" not found in Sanity; quote still uses ${SPOKESPERSON_TITLE} in release body.`)
     return
   }
-  if (author.title !== 'Research Director') {
-    await client.patch(author._id).set({ title: 'Research Director' }).commit()
-    console.log(`Updated author ${AUTHOR_NAME} title → Research Director`)
+  if (author.title !== SPOKESPERSON_TITLE) {
+    await client.patch(author._id).set({ title: SPOKESPERSON_TITLE }).commit()
+    console.log(`Updated author ${AUTHOR_NAME} title → ${SPOKESPERSON_TITLE}`)
   }
 }
 
@@ -186,7 +187,7 @@ async function main() {
     console.log('Created pressRelease:', created._id)
   }
 
-  console.log('Spokesperson:', `${SPOKESPERSON_NAME}, Research Director`)
+  console.log('Spokesperson:', `${SPOKESPERSON_NAME}, ${SPOKESPERSON_TITLE}`)
   console.log('URL:', `https://www.bionixus.com/news/${SLUG}`)
   console.log('Studio:', `https://${projectId}.sanity.studio`)
 }

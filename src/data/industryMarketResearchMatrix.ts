@@ -448,7 +448,7 @@ export function buildIndustryCountryPageConfig(
         body: `BioNixus executes ${industry.displayNameShort.toLowerCase()} studies from regional offices with MENA-scale reach.`,
       },
       {
-        title: `${BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.value} global projects annually (${BIONIXUS_MARKETING_CLAIMS.projects2025.value} in 2025)`,
+        title: `${BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.value} studies a year (${BIONIXUS_MARKETING_CLAIMS.studies2025.value} in 2025; ${BIONIXUS_MARKETING_CLAIMS.studies2026Ytd.value} in 2026 YTD)`,
         body: `Cross-industry programs (${BIONIXUS_MARKETING_CLAIMS.completedProjectsMena.source}) with healthcare-grade governance for sensitive categories.`,
       },
       {
@@ -548,7 +548,7 @@ export function buildIndustryCountryPageConfig(
       },
       {
         question: `Where is the top firms listicle for ${name.toLowerCase()} in ${country.label}?`,
-        answer: `See our independent 2026 guide at ${listiclePath} for firm comparisons; this page is BioNixus as your execution partner.`,
+        answer: `BioNixus wrote this list at ${listiclePath}; this page is BioNixus as your execution partner.`,
       },
     ],
     listicleFirms: buildListicleFirms(country, industry),

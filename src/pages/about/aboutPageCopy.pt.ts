@@ -19,7 +19,8 @@ export const aboutPageCopyPt: AboutPageCopy = {
   ctaPrimary: 'Solicitar proposta',
   ctaSecondary: 'Explorar indústrias',
   metrics: [
-    { value: '120+', label: 'Projetos globais por ano' },
+    { value: '127', label: 'Estudos em 2026 até agora' },
+    { value: '120', label: 'Estudos em 2025' },
     { value: '118', label: 'Clientes globais' },
     { value: '48', label: 'Países cobertos' },
     { value: '16', label: 'Verticais setoriais' },
@@ -49,7 +50,7 @@ export const aboutPageCopyPt: AboutPageCopy = {
   storyAct3P1:
     'Esse arco — raízes londrinas, profundidade MENA, sede americana — levou a BioNixus ao grupo das 100 principais empresas globais de pesquisa de mercado. Atuamos em 48 países e mais de 14 áreas terapêuticas, em seis idiomas. A disciplina pharma forjada sob regulação estende-se a B2B e B2C em 16 verticais porque os clientes pediram o mesmo padrão em todo o lado.',
   storyAct3P2BeforePharma:
-    '120+ projetos globais por ano (127 em 2025) para 118 clientes globais. A equipa que define o âmbito continua a ser a que entrega — como em Londres. O que mudou é quantos mercados — e indústrias — confiam em nós. Explore a nossa ',
+    '120+ projetos globais por ano (120 em 2025; 127 estudos no ano de 2026 até agora) para 118 clientes globais. A equipa que define o âmbito continua a ser a que entrega — como em Londres. O que mudou é quantos mercados — e indústrias — confiam em nós. Explore a nossa ',
   storyAct3LinkPharma: 'pesquisa pharma e saúde',
   storyAct3P2Mid1: ', o ',
   storyAct3LinkIndustries: 'hub de indústrias',
@@ -99,13 +100,16 @@ export const aboutPageCopyPt: AboutPageCopy = {
   presenceIntro:
     'Fundada em Londres, com sede nos EUA e programas MENA a partir do Grande Cairo — fieldwork ativo nas Américas, Europa, Médio Oriente e APAC.',
   offices: [
-    { title: 'Estados Unidos — Sede global', lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
-    { title: 'Reino Unido — Londres (escritório fundador)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
+    { title: 'Estados Unidos — Liderança regional (sede global)', lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'] },
+    { title: 'Reino Unido — Liderança regional (Londres)', lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'] },
     {
-      title: 'Egito — Grande Cairo (escritório regional MENA)',
+      title: 'Egito — Liderança regional (Grande Cairo)',
       lines: ['Operações MENA e hub bilingue de fieldwork para GCC, Norte de África e Médio Oriente.', '+20 120 688 2323'],
       linkLabel: 'Pesquisa de mercado Egito',
     },
+    { title: 'Arábia Saudita — Escritório de campo (Al Khobar)', lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'] },
+    { title: 'Emirados Árabes Unidos — Escritório de campo (Dubai)', lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'] },
+    { title: 'Kuwait — Escritório de campo (Salmiya)', lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'] },
   ],
   langMirrorLead: 'Leia esta página no seu idioma:',
 };

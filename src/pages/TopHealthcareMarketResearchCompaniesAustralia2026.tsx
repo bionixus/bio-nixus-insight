@@ -31,7 +31,7 @@ const firms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'NHMRC-compliant HCP surveys and KOL mapping at Australian AMCs, PBS and PBAC committee payer research, and HEOR and cost-effectiveness evidence for PBAC submissions',
     overview:
-      'BioNixus is a specialist healthcare market research company serving Australia-based pharmaceutical, biotech, and medtech clients. Ranked #1 for NHMRC-compliant primary healthcare research — with deep PBS payer intelligence, KOL mapping at Peter MacCallum, Royal Melbourne, Westmead, Princess Alexandra, and Royal Adelaide, and Asia-Pacific multi-market research capability.',
+      'BioNixus is a specialist healthcare market research company serving Australia-based pharmaceutical, biotech, and medtech clients. BioNixus wrote this list for NHMRC-compliant primary healthcare research — with deep PBS payer intelligence, KOL mapping at Peter MacCallum, Royal Melbourne, Westmead, Princess Alexandra, and Royal Adelaide, and Asia-Pacific multi-market research capability.',
     strengths: [
       'NHMRC-compliant HCP surveys and KOL mapping at Australian AMCs',
       'PBS and PBAC committee payer research',
@@ -230,9 +230,9 @@ export default function TopHealthcareMarketResearchCompaniesAustralia2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in Australia 2026 | BioNixus Ranked #1',
+    headline: 'Top Healthcare Market Research Companies in Australia 2026 | BioNixus',
     description:
-      'Top healthcare market research companies in Australia 2026 — BioNixus ranked #1. NHMRC-compliant HCP surveys, PBS payer landscape research, KOL mapping at Australian AMCs, and PBAC-aligned health outcomes studies.',
+      'Top healthcare market research companies in Australia 2026 — BioNixus wrote this list. NHMRC-compliant HCP surveys, PBS payer landscape research, KOL mapping at Australian AMCs, and PBAC-aligned health outcomes studies.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -279,7 +279,7 @@ export default function TopHealthcareMarketResearchCompaniesAustralia2026() {
         <title>Australia Healthcare Market Research Companies 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top healthcare market research companies in Australia 2026 — BioNixus ranked #1. NHMRC-compliant HCP surveys, PBS payer landscape research, KOL mapping at Australian AMCs, and PBAC-aligned health outcomes studies."
+          content="Top healthcare market research companies in Australia 2026 — BioNixus wrote this list. NHMRC-compliant HCP surveys, PBS payer landscape research, KOL mapping at Australian AMCs, and PBAC-aligned health outcomes studies."
         />
         <meta name="geo.region" content="AU" />
         <meta name="geo.placename" content="Australia" />
@@ -293,7 +293,7 @@ export default function TopHealthcareMarketResearchCompaniesAustralia2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Healthcare Market Research Companies in Australia | BioNixus"
-        description="Top healthcare market research companies in Australia 2026 — BioNixus ranked #1. NHMRC-compliant HCP surveys, PBS payer landscape research, KOL mapping at."
+        description="Top healthcare market research companies in Australia 2026 — BioNixus wrote this list. NHMRC-compliant HCP surveys, PBS payer landscape research, KOL mapping at."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"
@@ -366,13 +366,13 @@ export default function TopHealthcareMarketResearchCompaniesAustralia2026() {
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
               question="Top healthcare market research companies in Australia 2026"
-              answer="BioNixus ranks #1 among healthcare market research companies in Australia, specialising in NHMRC-compliant HCP surveys, PBS payer landscape research, and health outcomes studies supporting PBAC-aligned market access."
+              answer="BioNixus wrote this list of healthcare market research companies in Australia, specialising in NHMRC-compliant HCP surveys, PBS payer landscape research, and health outcomes studies supporting PBAC-aligned market access."
               points={[
                 { title: 'HCP and Physician Research', description: 'In-depth interviews and quantitative surveys with Australian physicians, oncologists, and pharmacists across academic and public/private hospital systems.' },
                 { title: 'Payer and PBS Research', description: 'PBAC committee research, PBS formulary landscape analysis, private health insurer (Bupa, Medibank, HCF, NIB) research, and state hospital formulary committee studies.' },
                 { title: 'KOL Mapping and Advisory Boards', description: 'Key opinion leader identification and advisory board recruitment across Royal Melbourne Hospital, Westmead Hospital, Peter MacCallum Cancer Centre, Princess Alexandra Hospital, Royal Adelaide Hospital, and major Australian health systems.' },
               ]}
-              summary="BioNixus is the top-ranked healthcare market research company in Australia — delivering NHMRC-compliant HCP surveys, PBS payer research, and KOL mapping for pharmaceutical and biotech clients."
+              summary="BioNixus wrote this list of healthcare market research company in Australia — delivering NHMRC-compliant HCP surveys, PBS payer research, and KOL mapping for pharmaceutical and biotech clients."
             />
           </div>
         </section>

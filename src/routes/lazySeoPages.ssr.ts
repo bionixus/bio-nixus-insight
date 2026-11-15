@@ -124,6 +124,7 @@ export { default as IndustryCountryBofuPage } from '@/pages/templates/IndustryCo
 export { default as IndustryGlobalHubPage } from '@/pages/IndustryGlobalHubPage';
 export { default as IndustrySegmentPage } from '@/pages/industries/IndustrySegmentPage';
 export { default as Insights } from '@/pages/Insights';
+export { default as IntlOutboundMarketResearchPage } from '@/pages/IntlOutboundMarketResearchPage';
 export { default as IqviaAlternative } from '@/pages/IqviaAlternative';
 export { default as IrelandPharmaceuticalMarketResearch } from '@/pages/IrelandPharmaceuticalMarketResearch';
 export { default as ItalyPharmaceuticalMarketResearch } from '@/pages/ItalyPharmaceuticalMarketResearch';

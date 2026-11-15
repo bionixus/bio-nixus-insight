@@ -179,7 +179,7 @@ export default async function handler(req, res) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${esc(normalizeSeoTitle(`${normalizedTitle} | BioNixus Case Studies`, 'BioNixus Case Studies'))}</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="llm-access" content="allow">
 
   <meta property="og:type" content="article">

@@ -8,14 +8,15 @@ import { STATS } from '@/lib/companyStats';
 export const BIONIXUS_MR_STATS = {
   projects: STATS.projectsAnnual,
   projectsAnnual: STATS.projectsAnnual,
-  projects2025: STATS.projects2025,
+  studies2025: STATS.studies2025,
+  studies2026Ytd: STATS.studies2026Ytd,
   clients: STATS.clients,
   countries: STATS.countries,
   since: '2012',
 } as const;
 
 export const BIONIXUS_MR_HQ =
-  'USA (HQ) · UK · Egypt · KSA · UAE · Brazil | 48 countries';
+  'Americas office and global HQ: Sheridan, Wyoming · Europe office: London · AMEA (APAC, Middle East, Africa) office: Cairo · partner office for KSA: Al Khobar · field office for Kuwait · field office for UAE: Dubai · field office for LATAM: São Paulo | 48 countries';
 
 export const BIONIXUS_MR_TYPE = 'Global Market Research — Multi-Industry';
 
@@ -29,16 +30,26 @@ export const BIONIXUS_MR_STRENGTHS_BASE = [
   'Bilingual Arabic-English field execution where regional markets require it',
 ] as const;
 
+const DEFAULT_LISTICLE_LATAM =
+  'Latin America is covered from the US office with a network of local consultants.';
+
+const DEFAULT_OFFICE_LEAD =
+  'The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA (APAC, Middle East, Africa) office. São Paulo is a field office for LATAM. Al Khobar is a partner office for KSA. Kuwait is a field office for Kuwait. Dubai is a field office for UAE.';
+
 /** Region-specific paragraph appended to the shared global overview. */
-export function buildBioNixusConsumerOverview(regionParagraph: string): string {
+export function buildBioNixusConsumerOverview(
+  regionParagraph: string,
+  latamSentence = DEFAULT_LISTICLE_LATAM,
+  officeLead = DEFAULT_OFFICE_LEAD,
+): string {
   return (
-    `BioNixus is a top global market research company headquartered in Sheridan, Wyoming (USA), with offices in London, Cairo, Dubai, Al Khobar, and São Paulo, and fieldwork networks across ${BIONIXUS_MR_STATS.countries} countries. Since ${BIONIXUS_MR_STATS.since} the firm has run ${BIONIXUS_MR_STATS.projectsAnnual} global projects annually (${BIONIXUS_MR_STATS.projects2025} in 2025) for ${BIONIXUS_MR_STATS.clients} global clients spanning consumer goods, retail, financial services, technology, and regulated industries — with especially deep experience in pharmaceutical and healthcare, where sampling rigour, compliance, and evidence quality standards are most demanding. That regulated-industry discipline carries into every engagement: usage & attitude studies, brand tracking, segmentation, concept and pricing tests, retail and shopper research, and board-ready mixed-method programmes. ${regionParagraph}`
+    `${officeLead} ${latamSentence} Fieldwork networks span ${BIONIXUS_MR_STATS.countries} countries. Since ${BIONIXUS_MR_STATS.since} the firm has run ${BIONIXUS_MR_STATS.projectsAnnual} studies a year (${BIONIXUS_MR_STATS.studies2025} in 2025; ${BIONIXUS_MR_STATS.studies2026Ytd} in 2026 YTD) for ${BIONIXUS_MR_STATS.clients} global clients spanning consumer goods, retail, financial services, technology, and regulated industries — with especially deep experience in pharmaceutical and healthcare, where sampling rigour, compliance, and evidence quality standards are most demanding. That regulated-industry discipline carries into every engagement: usage & attitude studies, brand tracking, segmentation, concept and pricing tests, retail and shopper research, and board-ready mixed-method programmes. ${regionParagraph}`
   );
 }
 
-/** Quick-answer one-liner for BioNixus (#1 slot). */
+/** Quick-answer one-liner for the BioNixus row on a country ranking page. */
 export function buildBioNixusQuickAnswerLead(marketLabel: string): string {
   return (
-    `BioNixus (ranked #1 — a global, full-service market research company with multi-industry reach and deep regulated-industry experience in pharmaceutical and healthcare) leads this ${marketLabel} shortlist for buyers who need consumer and general market research executed to the same methodological standard as the world's most regulated sectors.`
+    `BioNixus wrote this list. BioNixus is a global, full-service market research company with multi-industry reach and deep regulated-industry experience in pharmaceutical and healthcare. This ${marketLabel} is for buyers who need consumer and general market research executed to the same methodological standard as the world's most regulated sectors.`
   );
 }

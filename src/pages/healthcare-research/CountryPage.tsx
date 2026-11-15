@@ -315,7 +315,11 @@ export default function CountryPage() {
                 </>
               ) : config.slug === 'saudi-arabia' && hubCompaniesCopy ? (
                 <>
-                  {hubCompaniesCopy.opening} See the{' '}
+                  {hubCompaniesCopy.opening} Start from the{' '}
+                  <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
+                    healthcare market research company
+                  </Link>{' '}
+                  hub for Saudi Arabia, the UAE and the GCC. See the{' '}
                   <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
                     IQVIA alternative
                   </Link>{' '}
@@ -327,12 +331,12 @@ export default function CountryPage() {
                 </>
               ) : config.slug === 'uae' && hubCompaniesCopy ? (
                 <>
-                  <span className="block text-sm text-muted-foreground mb-3">Last reviewed 28 September 2026</span>
-                  This is BioNixus&apos;s UAE healthcare market research hub, run from our Dubai office at Thuraya Tower 1, 5th Floor, Al Sufouh 2. If you are choosing a healthcare market research company in UAE, start with our{' '}
+                  <span className="block text-sm text-muted-foreground mb-3">Last reviewed 3 November 2026</span>
+                  Looking for a healthcare market research company in the UAE? Start on the{' '}
                   <Link to="/uae-pharmaceutical-market-research" className="text-primary font-medium hover:underline">
                     company page
                   </Link>
-                  . For the regional index, see the{' '}
+                  {' '}for Dubai fieldwork and a 48-hour proposal. This hub then covers DHA, DOH, MOHAP and EDE context, therapy priorities and related UAE reports. For the regional index, see the{' '}
                   <Link to="/healthcare-market-research" className="text-primary font-medium hover:underline">
                     healthcare market research hub
                   </Link>
@@ -378,6 +382,13 @@ export default function CountryPage() {
           ),
         }}
         tocItems={[
+          ...(config.slug === 'saudi-arabia'
+            ? [
+                { href: '#who-briefs-ksa-healthcare-mr-company', label: 'Who should brief' },
+                { href: '#what-bionixus-fields-ksa', label: 'What we field' },
+                { href: '#why-healthcare-mr-saudi-differs', label: 'Why KSA differs' },
+              ]
+            : []),
           { href: '#key-indicators', label: 'Market indicators' },
           { href: '#market-overview', label: 'Market overview' },
           { href: '#capabilities', label: 'Capabilities' },

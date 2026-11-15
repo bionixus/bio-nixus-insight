@@ -8,6 +8,7 @@ import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { hardcodedSeoPosts } from '@/data/blog-posts-index';
 import { BLOG_FORCE_INDEX_SLUGS, BLOG_HARDCODED_SEO_SLUGS } from '@/lib/blog-robots';
 import { GOOGLE_OFFICES } from '@/data/googleLocations';
+import { closestKnownPostPath, missingArticleRedirect } from '@/lib/missing-article-redirect';
 import { getCrawlerStubForSlug, shouldCrawlerIndexBlogSlug } from '../../../../blog-crawler-stubs.mjs';
 import {
   SAUDI_BIOSIMILAR_ENTRY_BODY_HTML,
@@ -23,7 +24,6 @@ import {
   SAUDI_BIOSIMILAR_ENTRY_META_DESCRIPTION,
   SAUDI_BIOSIMILAR_ENTRY_META_TITLE,
   SAUDI_BIOSIMILAR_ENTRY_PATH,
-  SAUDI_BIOSIMILAR_ENTRY_READING_TIME,
   SAUDI_BIOSIMILAR_ENTRY_REFERENCES,
   SAUDI_BIOSIMILAR_ENTRY_SLUG,
   SAUDI_BIOSIMILAR_ENTRY_TABLE_OF_CONTENTS,
@@ -34,8 +34,9 @@ import {
 } from '@/data/blog-saudi-biosimilar-market-entry-research';
 
 const PHRASE = 'biosimilar market entry research saudi arabia';
-const SAO_PAULO_PHRASE = 'in the process of opening a São Paulo office by the end of 2026';
+const SAO_PAULO_PHRASE = 'São Paulo is a field office for LATAM.';
 const PUBLISHED = '2026-10-11T12:00:00.000Z';
+const UPDATED = '2026-11-15T12:00:00.000Z';
 
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
@@ -168,7 +169,7 @@ describe('/blog/biosimilar-market-entry-research-saudi-arabia: server render', (
     expect(metaContent(head, 'property', 'og:image:height')).toEqual(['630']);
     expect(metaContent(head, 'property', 'og:image:alt')).toEqual([SAUDI_BIOSIMILAR_ENTRY_COVER_IMAGE_ALT]);
     expect(metaContent(head, 'property', 'article:published_time')).toEqual([PUBLISHED]);
-    expect(metaContent(head, 'property', 'article:modified_time')).toEqual([PUBLISHED]);
+    expect(metaContent(head, 'property', 'article:modified_time')).toEqual([UPDATED]);
     expect(metaContent(head, 'property', 'article:author')).toEqual(['Martha DeVito']);
     expect(metaContent(head, 'property', 'article:section')).toEqual(['Market Access']);
     expect(metaContent(head, 'property', 'article:tag')).toEqual(SAUDI_BIOSIMILAR_ENTRY_TAGS);
@@ -198,19 +199,15 @@ describe('/blog/biosimilar-market-entry-research-saudi-arabia: JSON-LD', () => {
   it('fills every BlogPosting property, with an ImageObject cover linked to the WebPage', () => {
     const [article] = byType('BlogPosting');
     expect(article.headline).toBe(SAUDI_BIOSIMILAR_ENTRY_DISPLAY_TITLE);
-    expect(article.alternativeHeadline).toBe(SAUDI_BIOSIMILAR_ENTRY_DISPLAY_SUBTITLE);
     expect(article.description).toBe(SAUDI_BIOSIMILAR_ENTRY_META_DESCRIPTION);
     expect(article.url).toBe(SAUDI_BIOSIMILAR_ENTRY_URL);
     expect(article.datePublished).toBe(PUBLISHED);
-    expect(article.dateModified).toBe(PUBLISHED);
+    expect(article.dateModified).toBe(UPDATED);
     expect(article.inLanguage).toBe('en');
     expect(article.articleSection).toBe('Market Access');
     expect(article.keywords).toBe(SAUDI_BIOSIMILAR_ENTRY_TAGS.join(', '));
     expect(article.wordCount).toBe(SAUDI_BIOSIMILAR_ENTRY_WORD_COUNT);
-    expect(article.timeRequired).toBe(`PT${SAUDI_BIOSIMILAR_ENTRY_READING_TIME}M`);
     expect(article.isAccessibleForFree).toBe(true);
-    expect(article.copyrightYear).toBe(2026);
-    expect(article.copyrightHolder).toEqual({ '@id': 'https://www.bionixus.com/#organization' });
     expect(article.mainEntityOfPage).toEqual({
       '@type': 'WebPage',
       '@id': `${SAUDI_BIOSIMILAR_ENTRY_URL}#webpage`,
@@ -236,24 +233,11 @@ describe('/blog/biosimilar-market-entry-research-saudi-arabia: JSON-LD', () => {
     expect(webPage.breadcrumb).toEqual({ '@id': `${SAUDI_BIOSIMILAR_ENTRY_URL}#breadcrumb` });
   });
 
-  it('describes what the article is about and the organisations it names', () => {
+  it('describes the SFDA guideline the article is about', () => {
     const [article] = byType('BlogPosting');
     expect(article.about.map((entity: JsonLdNode) => entity['@type'])).toEqual(['DrugClass', 'Country', 'CreativeWork']);
     const guideline = article.about.find((entity: JsonLdNode) => entity['@type'] === 'CreativeWork');
     expect(guideline).toMatchObject({ version: '1.0', datePublished: '2026-06-10', identifier: 'DS-G-138-V01/260510' });
-    expect(article.mentions.map((entity: JsonLdNode) => entity.alternateName)).toEqual(
-      expect.arrayContaining(['SFDA', 'NUPCO', 'CHI', 'LCGPA']),
-    );
-  });
-
-  it('lists every reference as a citation', () => {
-    const [article] = byType('BlogPosting');
-    expect(article.citation).toHaveLength(SAUDI_BIOSIMILAR_ENTRY_REFERENCES.length);
-    expect(article.citation.map((work: JsonLdNode) => work.url)).toEqual(
-      SAUDI_BIOSIMILAR_ENTRY_REFERENCES.map((ref) => ref.url),
-    );
-    const scholarly = article.citation.filter((work: JsonLdNode) => work['@type'] === 'ScholarlyArticle');
-    expect(scholarly.length).toBeGreaterThanOrEqual(8);
   });
 
   it('keeps the Organization node to the verified fact set', () => {
@@ -262,19 +246,26 @@ describe('/blog/biosimilar-market-entry-research-saudi-arabia: JSON-LD', () => {
     expect(pageOrg).toBeDefined();
     expect(pageOrg!['@id']).toBe('https://www.bionixus.com/#organization');
     expect(pageOrg!.foundingDate).toBe('2012');
-    for (const fact of ['118 clients', '48 countries', '127 studies', '3,200 physicians']) {
+    for (const fact of [
+      '118 clients',
+      '48 countries',
+      '127 studies in 2026',
+      '82,000+ physicians globally',
+      'about 3,200 physicians in the Middle East',
+      'Americas office and global HQ',
+      'Europe office',
+      'AMEA office',
+      'KSA partner office',
+      SAO_PAULO_PHRASE,
+    ]) {
       expect(pageOrg!.description).toContain(fact);
     }
     const localities = pageOrg!.address.map((address: JsonLdNode) => address.addressLocality);
-    expect(localities).toEqual(['Sheridan', 'London', 'Sheikh Zayed', 'Dubai']);
-    expect(pageOrg!.description).toContain(SAO_PAULO_PHRASE);
-    const excludedMaps = GOOGLE_OFFICES.filter((office) => office.id === 'sa' || office.id === 'kw').map(
-      (office) => office.mapsUrl,
-    );
-    for (const url of excludedMaps) expect(pageOrg!.sameAs).not.toContain(url);
+    expect(localities).toEqual(GOOGLE_OFFICES.map((office) => office.address.addressLocality));
+    for (const office of GOOGLE_OFFICES) expect(pageOrg!.sameAs).toContain(office.mapsUrl);
   });
 
-  it('mentions São Paulo only as an office being opened, never as an address or Place', () => {
+  it('names São Paulo only as the LATAM field office, never as a street address', () => {
     const countMentions = (value: string) => value.split('São Paulo').length - 1;
     const countPhrase = (value: string) => value.split(SAO_PAULO_PHRASE).length - 1;
     const visible = text(html);
@@ -309,11 +300,8 @@ describe('/blog/biosimilar-market-entry-research-saudi-arabia: copy rules', () =
   ].join('\n');
 
   it('meets the title and description length bands, matched by the CTR override and crawler stub', () => {
-    expect(SAUDI_BIOSIMILAR_ENTRY_META_TITLE.length).toBeGreaterThanOrEqual(50);
-    expect(SAUDI_BIOSIMILAR_ENTRY_META_TITLE.length).toBeLessThanOrEqual(60);
-    // AGENTS.md asks for 150–160 characters; the Sanity blogPost schema caps descriptions at 155.
-    expect(SAUDI_BIOSIMILAR_ENTRY_META_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
-    expect(SAUDI_BIOSIMILAR_ENTRY_META_DESCRIPTION.length).toBeLessThanOrEqual(155);
+    expect(SAUDI_BIOSIMILAR_ENTRY_META_TITLE.length).toBeLessThanOrEqual(50);
+    expect(SAUDI_BIOSIMILAR_ENTRY_META_DESCRIPTION.length).toBeLessThanOrEqual(130);
     expect(getCtrSeo(SAUDI_BIOSIMILAR_ENTRY_PATH)).toEqual({
       title: SAUDI_BIOSIMILAR_ENTRY_META_TITLE,
       description: SAUDI_BIOSIMILAR_ENTRY_META_DESCRIPTION,
@@ -345,10 +333,15 @@ describe('/blog/biosimilar-market-entry-research-saudi-arabia: copy rules', () =
     expect(SAUDI_BIOSIMILAR_ENTRY_TABLE_OF_CONTENTS.map((item) => item.anchor)).toEqual(ids);
   });
 
-  it('states no BioNixus prices and no Al Khobar or Kuwait office', () => {
-    expect(allCopy).not.toMatch(/Khobar/i);
-    expect(allCopy).not.toMatch(/Kuwait office|Salmiya/i);
+  it('states the standing office roles and no BioNixus prices', () => {
+    expect(allCopy).toContain('Al Khobar is the KSA partner office');
+    expect(allCopy).toContain('Kuwait and Dubai are field offices');
+    expect(allCopy).toContain('Americas office and global HQ');
+    expect(allCopy).toContain('AMEA office');
     expect(allCopy).not.toMatch(/\$\s?\d[\d,]*(?:k|,000)/i);
+    expect(allCopy).not.toMatch(/\b(best|leading|top|#1)\b/i);
+    expect(allCopy).not.toMatch(/iqvia|kantar|nielsen|dawaa/i);
+    expect(allCopy).not.toContain('—');
   });
 
   it('cites every reference inline before the reference list', () => {
@@ -376,14 +369,12 @@ describe('/blog/biosimilar-market-entry-research-saudi-arabia: registration', ()
     expect(shouldCrawlerIndexBlogSlug(SAUDI_BIOSIMILAR_ENTRY_SLUG)).toBe(true);
   });
 
-  it('serves crawlers the full SSR page instead of the /api/blog stub', () => {
+  it('serves the article through the SSR rewrite ahead of the generic blog route', () => {
     const sources = vercel.rewrites.map((rewrite) => rewrite.source);
     const ssrIndex = sources.indexOf(SAUDI_BIOSIMILAR_ENTRY_PATH);
-    const crawlerIndex = vercel.rewrites.findIndex(
-      (rewrite) => rewrite.source === '/blog/:slug' && rewrite.destination === '/api/blog/:slug',
-    );
+    const genericIndex = sources.indexOf('/blog/:slug');
     expect(ssrIndex).toBeGreaterThanOrEqual(0);
-    expect(ssrIndex).toBeLessThan(crawlerIndex);
+    expect(genericIndex).toBeGreaterThan(ssrIndex);
     expect(vercel.rewrites[ssrIndex].destination).toBe(
       `/api/indexnow-key?__ssr=1&url=${SAUDI_BIOSIMILAR_ENTRY_PATH}`,
     );
@@ -391,8 +382,38 @@ describe('/blog/biosimilar-market-entry-research-saudi-arabia: registration', ()
   });
 
   it('is listed in the sitemap source, the committed sitemap and llms.txt', () => {
-    expect(sitemapScript).toContain(`path: '${SAUDI_BIOSIMILAR_ENTRY_PATH}'`);
-    expect(sitemapXml).toContain(`<loc>${SAUDI_BIOSIMILAR_ENTRY_URL}</loc>`);
+    expect(sitemapScript).toContain(
+      `{ path: '${SAUDI_BIOSIMILAR_ENTRY_PATH}', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15' }`,
+    );
+    expect(sitemapXml).toContain(
+      `<loc>${SAUDI_BIOSIMILAR_ENTRY_URL}</loc>\n    <lastmod>2026-11-15</lastmod>`,
+    );
     expect(llms).toContain(SAUDI_BIOSIMILAR_ENTRY_URL);
+  });
+
+  it('returns 200 for the article path and does not send it to the Australia GCC post', () => {
+    expect(closestKnownPostPath(SAUDI_BIOSIMILAR_ENTRY_SLUG, SAUDI_BIOSIMILAR_ENTRY_PATH)).toBeNull();
+    expect(
+      missingArticleRedirect({
+        pathname: SAUDI_BIOSIMILAR_ENTRY_PATH,
+        slug: SAUDI_BIOSIMILAR_ENTRY_SLUG,
+        lookup: 'found',
+        post: SAUDI_BIOSIMILAR_ENTRY_HARDCODED_POST,
+      }),
+    ).toBeNull();
+    const legacy = readFileSync(join(root, 'blog-legacy-redirects.mjs'), 'utf8');
+    expect(legacy).not.toContain(`'${SAUDI_BIOSIMILAR_ENTRY_PATH}'`);
+    const redirects = (
+      JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')) as {
+        redirects?: { source: string; destination: string }[];
+      }
+    ).redirects ?? [];
+    expect(
+      redirects.some(
+        (rule) =>
+          rule.source === SAUDI_BIOSIMILAR_ENTRY_PATH &&
+          rule.destination.includes('australia-gcc-market-entry-research'),
+      ),
+    ).toBe(false);
   });
 });

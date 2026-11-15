@@ -250,7 +250,7 @@ for (const rel of [
         );
         text = text.replace(
           /seoDescription:\s*'[^']*'/,
-          "seoDescription: 'Founded in London in 2012 — US HQ, Cairo regional office. Global pharma & healthcare market research across 38 countries. See how we work.'",
+          "seoDescription: 'Founded in London in 2012 — US HQ, Cairo regional office. Global pharma & healthcare market research across 48 countries. See how we work.'",
         );
       }
       text = rewriteQuotedField(text, 'seoTitle', (v) => withBrand(v));
@@ -319,8 +319,8 @@ for (const rel of [
       "'Market Research Services | Pharma, Healthcare & B2B | BioNixus'",
     );
     text = text.replace(
-      /'BioNixus market research across 38 countries — pharma modules, CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and B2B\/B2C programmes for financial services, retail, technology, and more\.'/,
-      "'Pharma & B2B research across 38 countries: physician surveys, KOL mapping, market access & CATI/CAWI. Proposal in 24 hours.'",
+      /'BioNixus market research across 48 countries — pharma modules, CATI, CAWI, CAPI, focus groups, mystery shopping, price elasticity, and B2B\/B2C programmes for financial services, retail, technology, and more\.'/,
+      "'Pharma & B2B research across 48 countries: physician surveys, KOL mapping, market access & CATI/CAWI. Proposal in 24 hours.'",
     );
     if (writeIfChanged(services, text, before)) console.log('updated Services.tsx');
   }

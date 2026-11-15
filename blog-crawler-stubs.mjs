@@ -21,6 +21,56 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'china-device-vbp-rounds-explained',
   'who-does-obesity-market-research-saudi-arabia',
   'biosimilar-market-entry-research-saudi-arabia',
+  'feasibility-study-company-saudi-arabia',
+  'glp-1-physician-survey-saudi-arabia',
+  'customer-satisfaction-surveys-uae-csat-nps-ces',
+  'brand-tracking-research-agency-dubai',
+  'market-entry-research-saudi-arabia',
+  'consumer-survey-company-saudi-arabia',
+  'b2b-market-research-uae',
+  'australia-gcc-market-entry-research',
+  'europe-to-gcc-market-entry-research',
+  'uk-market-entry-research',
+  'us-market-entry-research-for-foreign-companies',
+  'new-zealand-exporters-gcc-market-research',
+  'chinese-companies-entering-saudi-arabia-and-the-uae',
+  'chinese-companies-egypt-market-research',
+  'nielsen-alternative-saudi-arabia',
+  'government-customer-satisfaction-research-saudi-arabia',
+  'kantar-alternative-middle-east',
+  'chinese-ev-brands-saudi-uae-consumer-research',
+  'market-entry-research-singapore-southeast-asia',
+  'brand-tracking-chinese-electronics-brands-middle-east',
+  'chinese-suppliers-saudi-giga-projects-research',
+  'chinese-tourists-dubai-research',
+  'obesity-market-research-kuwait',
+  'qatar-obesity-glp1-market-research',
+  'hematology-market-research-saudi-arabia',
+  'rare-disease-market-research-saudi-arabia',
+  'iqvia-alternative-uae-primary-research',
+  'how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  'uae-drug-pricing-ede-takeover-launch-research',
+  'dubai-essential-drug-list-formulary-submission',
+  'diabetes-market-research-uae-2026-price-cuts',
+  'china-biotech-export-controls-pharma-deals-2026',
+  'kuwait-drug-pricing-2026-decision-62',
+  'uae-pharmacovigilance-requirements-2026',
+  'japanese-pharmaceutical-companies-middle-east-entry',
+  'mental-health-market-research-saudi-arabia',
+  'womens-health-market-research-gcc',
+  'nupco-tender-market-research-saudi-arabia',
+  'car-t-saudi-arabia-market-research',
+  'saudi-health-insurance-payer-research',
+  'thiqa-obesity-reimbursement-abu-dhabi',
+  'oral-glp-1-uae-market-research',
+  'medicare-globe-model-part-b-account-level-2027',
+  'rasonque-daraxonrasib-pancreatic-ema-chmp-2026',
+  'gazya-obinutuzumab-lupus-anvisa-brazil-access-2026',
+  'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
+  'egypt-eda-decree-480-drug-pricing-2026',
+  'dksh-newbridge-acquisition-mena-launch-market-access',
+  'saudi-diabetes-syndicated-vs-hospital-switching',
+  'saudi-hematology-diagnostics-vs-ward-brand-cut',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -113,9 +163,259 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
       'Who does obesity market research in Saudi Arabia? A sourced 2026 shortlist of 8 providers for obesity GLP-1 market research Saudi Arabia teams can act on.',
   },
   'biosimilar-market-entry-research-saudi-arabia': {
-    title: 'Biosimilar Market Entry Research Saudi Arabia: SFDA 2026',
+    title: 'Biosimilar Market Entry Research Saudi Arabia',
     description:
-      'Biosimilar market entry research Saudi Arabia: what the SFDA 2026 guideline changes, how price caps and NUPCO tenders work, and what to research first.',
+      'Biosimilar market entry research Saudi Arabia: SFDA 2026 rules, price caps, NUPCO tenders and what to study before a launch.',
+  },
+  'feasibility-study-company-saudi-arabia': {
+    title: 'Feasibility Study Company Saudi Arabia (2026 Guide)',
+    description:
+      'Feasibility study company Saudi Arabia: what the 2026 market section must prove — demand, price, channels, competition and SIDF-ready primary evidence.',
+  },
+  'glp-1-physician-survey-saudi-arabia': {
+    title: 'GLP-1 Physician Survey Saudi Arabia: 2026 Methods Guide',
+    description:
+      'GLP-1 physician survey Saudi Arabia: KAP findings, specialty quotas, and a network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
+  },
+  'customer-satisfaction-surveys-uae-csat-nps-ces': {
+    title: 'Customer Satisfaction Survey Company UAE (2026 Guide)',
+    description:
+      'Customer satisfaction survey company UAE guide to CSAT, NPS and CES — how an NPS survey company Saudi Arabia brief should specify the recommend question.',
+  },
+  'brand-tracking-research-agency-dubai': {
+    title: 'Brand Tracking Research Agency Dubai: Custom Tracker',
+    description:
+      'Brand tracking research agency Dubai guide: custom tracker vs syndicated data, bilingual UAE fieldwork from a Dubai field office, KPIs that move budgets.',
+  },
+  'market-entry-research-saudi-arabia': {
+    title: 'Market Entry Research Saudi Arabia (2026 Playbook)',
+    description:
+      'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.',
+  },
+  'consumer-survey-company-saudi-arabia': {
+    title: 'Consumer Survey Company Saudi Arabia: 2026 Methods',
+    description:
+      'Consumer survey company Saudi Arabia guide to sampling, Arabic/English, online vs CATI/F2F, women respondents, regions, costs and how to choose a firm.',
+  },
+  'b2b-market-research-uae': {
+    title: 'B2B Market Research UAE: Recruiting Decision-Makers',
+    description:
+      'B2B market research UAE for hard-to-reach buyers: methods, recruitment, costs, and how to choose a B2B market research company Dubai. Named-sample 2026.',
+  },
+  'australia-gcc-market-entry-research': {
+    title: 'Australia GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Australia GCC market entry research playbook for exporters: prove demand, CEPA tariffs, cities, halal and price in Saudi Arabia and UAE before you ship.',
+  },
+  'europe-to-gcc-market-entry-research': {
+    title: 'Europe-to-GCC Market Entry Research (2026 Playbook)',
+    description:
+      'Europe-to-GCC market entry research for European brands: six-country sequencing, VAT, G-Mark, channels and price before a brand committee commits capital.',
+  },
+  'uk-market-entry-research': {
+    title: 'UK Market Entry Research: GCC and US Playbook 2026',
+    description:
+      'UK market entry research for GCC and US companies: four nations, 20% VAT, UKCA or CE, Companies House and price before a Riyadh or Dubai committee commits.',
+  },
+  'us-market-entry-research-for-foreign-companies': {
+    title: 'US Market Entry Research for Foreign Companies 2026',
+    description:
+      'US market entry research for foreign companies: CFIUS, 50-state sales tax, FDA and price before a Riyadh, Dubai, London or Brazilian committee commits.',
+  },
+  'new-zealand-exporters-gcc-market-research': {
+    title: 'New Zealand Exporters GCC Market Research 2026 Guide',
+    description:
+      'New Zealand exporters GCC market research for dairy and meat: Saudi and UAE demand, CEPA, SFDA lists, MPI halal and VAT before a first Gulf container.',
+  },
+  'chinese-companies-entering-saudi-arabia-and-the-uae': {
+    title: 'Chinese Companies Entering Saudi Arabia and the UAE',
+    description:
+      'Chinese companies entering Saudi Arabia and the UAE need demand, licence, city and channel proof before a mainland HQ remits capital. A 2026 playbook.',
+  },
+  'chinese-companies-egypt-market-research': {
+    title: 'Chinese Companies Egypt Market Research: Plain Guide',
+    description:
+      'Chinese companies Egypt market research in plain steps: who will buy, which city, the price after 14% VAT, and which licence to use before you send money.',
+  },
+  'nielsen-alternative-saudi-arabia': {
+    title: 'Nielsen Alternative Saudi Arabia: Syndicated vs Custom',
+    description:
+      'Nielsen alternative Saudi Arabia: syndicated vs custom research Saudi Arabia — when a retail audit fits, when custom work is needed, how to combine both.',
+  },
+  'government-customer-satisfaction-research-saudi-arabia': {
+    title: 'Government Customer Satisfaction Survey Saudi Arabia',
+    description:
+      'Government customer satisfaction survey Saudi Arabia: Vision 2030, DGA CSAT, Absher/Tawakkalna, Arabic fieldwork and citizen satisfaction research KSA.',
+  },
+  'kantar-alternative-middle-east': {
+    title: 'Kantar Alternative Middle East: When Specialists Fit',
+    description:
+      'Kantar alternative Middle East for custom research: what GCC buyers should compare, when a specialist market research agency alternative GCC fits better.',
+  },
+  'chinese-ev-brands-saudi-uae-consumer-research': {
+    title: 'Chinese EV Consumer Research Saudi UAE (2026 Guide)',
+    description:
+      'Chinese EV consumer research for Chinese EV brands in the Gulf: what Saudi and UAE teams must test on charging, TCO and aftersales before a 2026 launch.',
+  },
+  'market-entry-research-singapore-southeast-asia': {
+    title: 'Market Entry Research Singapore: Southeast Asia Guide 2026',
+    description:
+      'Market entry research for Singapore and Southeast Asia: why a Singapore base is not a proxy for Indonesia or Vietnam, and what to check in each market.',
+  },
+  'brand-tracking-chinese-electronics-brands-middle-east': {
+    title: 'Brand Tracking Middle East: Chinese Electronics Brands 2026',
+    description:
+      'Brand tracking for Chinese phone and electronics brands in the Middle East: what Omdia shipment data misses, and how to track Gulf buyer awareness and NPS.',
+  },
+  'chinese-suppliers-saudi-giga-projects-research': {
+    title: 'Chinese Suppliers Saudi Giga Projects Research 2026',
+    description:
+      'B2B research for Chinese suppliers on Saudi giga-projects: who decides after the Qiddiya award, local content scores, and how to interview the buyer group.',
+  },
+  'chinese-tourists-dubai-research': {
+    title: 'Chinese Tourists Dubai Research: Gulf Boards Guide 2026',
+    description:
+      'Chinese tourist research for Dubai and the Gulf: Saudi arrivals rose 48% in 2025, Dubai has not published a 2026 China split, and what to ask visitors.',
+  },
+  'obesity-market-research-kuwait': {
+    title: 'Obesity Market Research Kuwait: Who Funds GLP-1s 2026',
+    description:
+      'Obesity market research Kuwait: who funds GLP-1s, what MOH and private payers need to see, and how BioNixus designs 2026 access studies for brand teams.',
+  },
+  'qatar-obesity-glp1-market-research': {
+    title: 'Qatar Obesity GLP-1 Market Research: Wegovy to Oral',
+    description:
+      'Qatar obesity GLP-1 market research after Wegovy and MOPH oral GLP-1 approval: what STEPS, HMC cover and private prices mean for 2026 brand-team studies.',
+  },
+  'hematology-market-research-saudi-arabia': {
+    title: 'Hematology Market Research Saudi Arabia: Launch 2026',
+    description:
+      'Hematology market research Saudi Arabia for sickle cell, thalassemia and Casgevy: what pharma must study before a 2026 launch, with sourced access facts.',
+  },
+  'rare-disease-market-research-saudi-arabia': {
+    title: 'Rare Disease Market Research Saudi Arabia: 2026 Gaps',
+    description:
+      'Rare disease market research Saudi Arabia: how to size small orphan populations, close evidence gaps, and brief SFDA, NUPCO and CHI before a 2026 launch.',
+  },
+  'iqvia-alternative-uae-primary-research': {
+    title: 'IQVIA Alternative UAE Primary Research: Keep Audit',
+    description:
+      'IQVIA alternative UAE primary research for brand teams that keep syndicated audits and add custom physician, payer and patient studies from a Dubai office.',
+  },
+  'how-to-choose-healthcare-market-research-agency-saudi-arabia': {
+    title: 'Healthcare Market Research Agency Saudi Arabia: 10 Questions',
+    description:
+      'Ten questions to ask a healthcare market research agency Saudi Arabia: field office, PDPL, SFDA, NUPCO, CHI panels, and what BioNixus puts in writing.',
+  },
+  'uae-drug-pricing-ede-takeover-launch-research': {
+    title: 'UAE Drug Pricing After EDE Takeover: Launch Research',
+    description:
+      'UAE drug pricing after the Emirates Drug Establishment takeover: what launch research must prove for first price, May 2026 repricing and payer listing.',
+  },
+  'dubai-essential-drug-list-formulary-submission': {
+    title: 'Dubai Essential Drug List Formulary Submission 2026',
+    description:
+      'Dubai Essential Drug List formulary submission: what DDC coding, EBP formulary limits and local evidence an affiliate should commission before listing.',
+  },
+  'china-biotech-export-controls-pharma-deals-2026': {
+    title: 'China Biotech Export Controls: Pharma Deal Guide 2026',
+    description:
+      'China biotech export controls in the 16 Oct 2026 draft: 40 AI, biotech and solar items. What BD, licensing and Gulf access teams should do before 15 Nov.',
+  },
+  'kuwait-drug-pricing-2026-decision-62': {
+    title: 'Kuwait Drug Pricing 2026: Decision 62 and Launch Evidence',
+    description:
+      'Kuwait drug pricing under Decision 62/2026: one ceiling price per medicine, GCC reference checks and capped margins. What launch teams must prove first.',
+  },
+  'uae-pharmacovigilance-requirements-2026': {
+    title: 'UAE Pharmacovigilance Requirements 2026: EDE Update',
+    description:
+      'UAE pharmacovigilance requirements in 2026: EDE’s updated guideline on QPPV approval, RMPs, PSURs and patient programmes, plus the new 3PL storage route.',
+  },
+  'japanese-pharmaceutical-companies-middle-east-entry': {
+    title: 'Japanese Pharmaceutical Companies in the Middle East 2026',
+    description:
+      'How Japanese pharmaceutical companies enter the Middle East: Kyorin’s nine-country partner deal, Sysmex’s Saudi factory plan, and the research to run first.',
+  },
+  'mental-health-market-research-saudi-arabia': {
+    title: 'Mental Health Market Research Saudi Arabia: CNS Guide 2026',
+    description:
+      'Mental health market research in Saudi Arabia: an 86% treatment gap, telepsychiatry and stigma. What CNS teams should ask psychiatrists and GPs at launch.',
+  },
+  'womens-health-market-research-gcc': {
+    title: 'Women’s Health Market Research GCC: Fertility, PCOS 2026',
+    description:
+      'Women’s health market research in the GCC: new fertility deals, PCOS in Thiqa obesity cover and low menopause therapy use. What to ask doctors and patients.',
+  },
+  'diabetes-market-research-uae-2026-price-cuts': {
+    title: 'Diabetes Market Research UAE After 2026 Price Cuts',
+    description:
+      'Diabetes market research UAE after the 2026 EDE list cuts: what brand teams should commission on price, switching, pharmacy behaviour and payer listing.',
+  },
+  'nupco-tender-market-research-saudi-arabia': {
+    title: 'NUPCO Tender Market Research for Saudi Oncology 2026',
+    description:
+      'NUPCO tender market research for Saudi oncology and specialty bids: what vial lists, award ranks and centre facts a 2026 bid team must commission first.',
+  },
+  'car-t-saudi-arabia-market-research': {
+    title: 'CAR-T Saudi Arabia Market Research at Tertiary Centres',
+    description:
+      'CAR-T Saudi Arabia market research for ADC and bispecific adoption at KFSHRC and KAMC: centre capacity, P-T and listed vials a 2026 brief must measure.',
+  },
+  'saudi-health-insurance-payer-research': {
+    title: 'Saudi Health Insurance Payer Research: CHI Formularies',
+    description:
+      'Saudi health insurance payer research on CHI, the Dhaman formulary and insurer lists: what a 2026 launch team must commission before a private claim pays.',
+  },
+  'thiqa-obesity-reimbursement-abu-dhabi': {
+    title: 'Thiqa Obesity Reimbursement: Abu Dhabi GLP-1 Policy',
+    description:
+      'Thiqa obesity reimbursement and Abu Dhabi GLP-1 coverage: DOH BMI gates, 5% weight-loss rules, and what obesity market research UAE must measure in 2026.',
+  },
+  'oral-glp-1-uae-market-research': {
+    title: 'Oral GLP-1 UAE Market Research After Foundayo 2026',
+    description:
+      'Oral GLP-1 UAE market research after EDE approved Foundayo on 3 Apr 2026: what brand teams must measure on orforglipron prescriber and patient uptake.',
+  },
+  'medicare-globe-model-part-b-account-level-2027': {
+    title: "Medicare GLOBE Model: A Guide for Part B Brand Teams",
+    description:
+      "The Medicare GLOBE Model ties some Part B rebates to prices in 19 countries, but only in areas covering about 25% of Original Medicare. What to plan now.",
+  },
+  'rasonque-daraxonrasib-pancreatic-ema-chmp-2026': {
+    title: "Rasonque CHMP Opinion: EU Launch Planning | BioNixus",
+    description:
+      "CHMP backed Rasonque (daraxonrasib) for previously treated metastatic pancreatic cancer after a phased review. What EU launch and access teams should plan.",
+  },
+  'gazya-obinutuzumab-lupus-anvisa-brazil-access-2026': {
+    title: "Gazya for Lupus in Brazil: Access Planning | BioNixus",
+    description:
+      "Anvisa approved Gazya (obinutuzumab) for active SLE on 13 Oct 2026. How CONITEC, ANS coverage rules and rheumatology accounts shape access in Brazil.",
+  },
+  'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026': {
+    title: "ORZEYFUL Launch in Japan and China: Lessons | BioNixus",
+    description:
+      "Takeda launched ORZEYFUL (oveporexton) for narcolepsy type 1 in Japan and China. What the Japan NHI price file and labels mean for APAC launch planning.",
+  },
+  'egypt-eda-decree-480-drug-pricing-2026': {
+    title: "EDA Decree 480: Egypt's New Drug Pricing Rules | BioNixus",
+    description:
+      "Egypt's EDA Decree 480/2026 links repricing to FX, inflation and rates, sets a 15-country basket and a generic ladder. What commercial teams should plan.",
+  },
+  'dksh-newbridge-acquisition-mena-launch-market-access': {
+    title: 'DKSH to Acquire NewBridge: What It Means for MENA Launches (2026)',
+    description:
+      'DKSH agreed to acquire NewBridge Pharmaceuticals for USD 390 million. What the deal means for oncology and rare disease launch and market access planning across 14 MENA markets.',
+  },
+  'saudi-diabetes-syndicated-vs-hospital-switching': {
+    title: 'Saudi Diabetes Data Misses Hospital Switching',
+    description:
+      'Saudi diabetes category totals miss which hospital is switching. Primary research is what a launch team still has to answer.',
+  },
+  'saudi-hematology-diagnostics-vs-ward-brand-cut': {
+    title: 'Saudi Hematology Diagnostics Miss Ward Share',
+    description:
+      'Saudi hematology diagnostics reports count lab products. Pharma still needs the ward-level brand cut a diagnostics total omits.',
   },
 };
 

@@ -3,23 +3,25 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import compression from 'compression';
-import { canonicalRedirectTarget, isSsrNotFoundPage } from './seo-noise-query.mjs';
+import { canonicalRedirectTarget, isSsrNotFoundPage, stripNotFoundDiscoveryTags } from './seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
 import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
-import { formatMetaDescriptionInRange } from './src/server/seo-meta.js';
+import { fitBrandedSeoTitle, formatMetaDescriptionInRange, titleHasBrandSuffix } from './src/server/seo-meta.js';
 import { getCtrSeo, isCtrSeoPath } from './lib/ctr-seo-overrides.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 import {
   buildLcpPreloadTag,
   getClientAssetHints,
   SSR_HTML_CACHE_CONTROL,
-  SSR_HTML_CDN_CACHE_CONTROL,
-  SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL,
+  htmlCdnCacheControl,
 } from './lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from './lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from './lib/global-websites-redirects.mjs';
 import { LEGACY_REDIRECTS, lookupRedirect } from './lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from './lib/untranslated-locale-redirects.mjs';
+import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-org.mjs';
+import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
+import { ensureRobotsMeta } from './lib/robots-meta.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -130,9 +132,9 @@ const GENERIC_DEFAULT_TITLES = new Set([
 
 /** GSC CTR overrides — keep in sync with BlogPost.tsx EGYPT/KUWAIT constants */
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra';
 const EGYPT_HEALTHCARE_2026_META =
-  'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.';
+  'Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview.';
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_TITLE = 'April Healthcare Kuwait | Healthcare 2026 | BioNixus';
 const KUWAIT_HEALTHCARE_2026_META =
@@ -170,7 +172,7 @@ function buildFallbackTitle(pathname) {
   if (path === '/privacy') return 'Privacy Policy & Terms for BioNixus Services';
   if (path === '/strategic-portfolio') return 'BioNixus Strategic Portfolio | Market Research & Consulting';
   if (path === '/ar/strategic-portfolio') return 'محفظة BioNixus الاستراتيجية | أبحاث السوق والاستشارات';
-  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Best Market Research Companies in Egypt (2026) | Ranked';
+  if (path === '/insights/top-market-research-companies-egypt-2026') return 'Best Market Research Companies in Egypt (2026) | BioNixus';
   if (path === '/ar/insights/top-market-research-companies-egypt-2026') return '5 أفضل شركات أبحاث السوق في مصر (2026) | دليل المشترين | BioNixus';
   if (path === '/insights/top-market-research-companies-brazil-2026') return '5 Best Market Research Companies in Brazil (2026) | LATAM Agency Rankings | BioNixus';
   if (path === '/insights/top-healthcare-market-research-companies-brazil-2026') return '5 Best Healthcare Market Research Firms in Brazil (2026) | ANVISA Specialists | BioNixus';
@@ -182,9 +184,9 @@ function buildFallbackTitle(pathname) {
   if (path === '/es/insights/top-empresas-investigacion-mercado-salud-argentina-2026') return '5 Mejores Empresas de Investigación de Mercado en Salud en Argentina (2026) | ANMAT | BioNixus';
   if (path === '/insights/top-market-research-companies-saudi-arabia-2026') return 'Top Market Research Companies in Saudi Arabia 2026 | BioNixus';
   if (path === '/insights/top-consumer-insights-companies-ksa-2026') return 'Consumer Insights Companies KSA 2026 | BioNixus';
-  if (path === '/insights/top-market-research-companies-uae-2026') return 'Top Market Research Company in UAE: 2026 Ranking | BioNixus';
-  if (path === '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026') return 'شركات أبحاث السوق في الإمارات 2026 | بيونيكسس';
-  if (path === '/insights/top-market-research-companies-dubai-2026') return '6 Best Market Research Companies in Dubai (2026) | UAE Agency Rankings | BioNixus';
+  if (path === '/insights/top-market-research-companies-uae-2026') return 'Top Market Research Company in UAE: 2026 Guide | BioNixus';
+  if (path === '/ar/insights/top-sharaket-abhath-alsuq-alimarat-2026') return 'أفضل شركة أبحاث سوق في الإمارات: دليل 2026 | بيونيكسس';
+  if (path === '/insights/top-market-research-companies-dubai-2026') return 'Market Research Companies in Dubai 2026 | BioNixus';
   if (path === '/insights/top-market-research-companies-abu-dhabi-2026') return '6 Best Market Research Companies in Abu Dhabi (2026) | UAE Agency Rankings | BioNixus';
   if (path === '/insights/top-market-research-companies-riyadh-2026') return '6 Best Market Research Companies in Riyadh (2026) | KSA Agency Rankings | BioNixus';
   if (path === '/insights/top-oncology-market-research-companies-2026') return 'Top Oncology Market Research Companies 2026 | BioNixus';
@@ -217,7 +219,7 @@ function buildFallbackTitle(pathname) {
     return `${industryLabel} Market Research Company in ${countryLabel} (2026) | ${titleSuffix} | BioNixus`;
   }
 
-  if (path === '/healthcare-market-research') return 'Healthcare Market Research by Country | US HQ · Global Coverage | BioNixus';
+  if (path === '/healthcare-market-research') return 'Healthcare Market Research Company | Saudi, UAE & GCC';
   if (path === '/fr/healthcare-market-research') return 'Recherche de marché santé et pharma | Europe et MENA | BioNixus';
   if (path === '/fr/healthcare-market-research/france') return 'Études de marché pharmaceutique France | HAS et ANSM | BioNixus';
   if (path === `/${SKYRIZI_ROOT_SLUG}`) return SKYRIZI_ROOT_TITLE;
@@ -310,7 +312,7 @@ function buildFallbackTitle(pathname) {
   }
 
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar Entry Saudi Arabia (2026) | BioNixus';
+    return 'Biosimilar Market Entry Research Saudi Arabia | BioNixus';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -351,7 +353,8 @@ function truncateAtWordBoundary(text, max) {
   const slice = text.slice(0, Math.max(0, max - 1))
   const lastSpace = slice.lastIndexOf(' ')
   const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice
-  return `${cut.trim().replace(/[|,;:\-–—\s]+$/, '')}…`
+  const trimmed = cut.trim().replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '')
+  return `${trimmed}…`
 }
 
 /** Keep in sync with TITLE_MAX in src/lib/seo-meta.ts. */
@@ -362,6 +365,8 @@ function normalizeTitleLength(title, max = 60, pathname) {
   if (pathname && isCtrSeoPath(pathname)) return clean;
   // Hebrew / Arabic scripts: truncate by UTF-16 code units mangles SSR titles vs visible text.
   if (/[\u0590-\u08FF]/.test(clean)) return clean;
+  if (titleHasBrandSuffix(clean)) return fitBrandedSeoTitle(clean, max);
+
   if (clean.length <= max) return clean;
 
   for (const suffix of KNOWN_TITLE_SUFFIXES) {
@@ -413,7 +418,7 @@ function buildFallbackDescription(pathname) {
     return 'محفظة BioNixus الاستراتيجية: قدرات أبحاث السوق الصحي والدوائي والمستهلك عبر أوروبا والشرق الأوسط وأفريقيا.';
   }
   if (path === '/healthcare-market-research') {
-    return 'US-headquartered healthcare market research from BioNixus — physician, payer, and hospital evidence across 20+ countries: USA, Canada, Brazil, UK, Europe, GCC, MENA, and Asia-Pacific with local fieldwork.';
+    return 'Healthcare market research company for Saudi Arabia, the UAE and the GCC. Primary HCP fieldwork vs IQVIA syndicated. $10k–$60k. 48-hour proposal from BioNixus.';
   }
   if (path === '/fr/healthcare-market-research') {
     return 'Études de marché pharmaceutique et santé en Europe et au Moyen-Orient : preuves médecins, payeurs et hôpitaux pour lancement, accès au marché et croissance — BioNixus.';
@@ -543,7 +548,7 @@ function buildFallbackDescription(pathname) {
     return 'Oncology KOL mapping in Saudi Arabia: physician networks, influence scoring, utilization context, and GCC engagement—BioNixus.';
   }
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar entry in Saudi Arabia 2026: SFDA pathways, NUPCO dynamics, utilization research, and physician adoption—BioNixus.';
+    return 'BioNixus runs biosimilar market entry research in Saudi Arabia from the Al Khobar partner office for KSA: SFDA, NUPCO and physician switching studies.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -554,6 +559,9 @@ function normalizeDescriptionLength(description, pathname) {
   const clean = String(description || '').replace(/\s+/g, ' ').trim();
   // CTR-engineered descriptions must ship exact (often outside 120–130 band).
   if (pathname && isCtrSeoPath(pathname)) return clean;
+  // Finished ≤155 sentence for this URL. Skip the 130-character ellipsis clamp.
+  // Production SSR (api/indexnow-key.ts) already keeps descriptions at or under 155.
+  if (pathname === '/healthcare-fieldwork-gcc' && clean.length > 0 && clean.length <= 155) return clean;
   return formatMetaDescriptionInRange(description);
 }
 
@@ -932,6 +940,15 @@ async function startServer() {
     res.type('html').sendFile(gfkAltEgyptAbsolutePath);
   });
 
+  /** Staging homepage is gone. Content file stays on disk; the route returns 410. */
+  app.get(['/home-staging', '/home-staging/', '/home-staging.html'], (_req, res) => {
+    res.status(410);
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    res.type('html').send(
+      '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>410 Gone</title><meta name="robots" content="noindex, nofollow"></head><body><h1>410 Gone</h1><p>This page has been removed.</p></body></html>',
+    );
+  });
+
   const serveGatedHtmlReport = (publicPath, confRelativePath) => {
     const absolutePath = path.resolve(
       __dirname,
@@ -942,7 +959,7 @@ async function startServer() {
       return next();
     });
     app.get(publicPath, (_req, res) => {
-      res.setHeader('X-Robots-Tag', 'noindex, follow');
+      res.setHeader('X-Robots-Tag', 'noindex, follow, max-image-preview:large');
       res.type('html').sendFile(absolutePath);
     });
   };
@@ -1144,7 +1161,7 @@ async function startServer() {
       // for real users and corrupts hydration of the surrounding subtree (the
       // "Expected server HTML to contain a matching <div> in <main>" warning). Page-level
       // imagery/social cards are handled inside the React tree and via OpenGraph meta tags.
-      const localizedPage = ensureCtrOgTags(
+      const localizedPage = dedupeBlogOpenGraphTags(stripDefaultOrganizationJsonLd(ensureCtrOgTags(
         ensureCanonicalTag(
           ensureMetaDescriptionTag(
             ensureTitleTag(applyHtmlLang(page, req.path, initialData), req.path),
@@ -1153,15 +1170,18 @@ async function startServer() {
           req.path,
         ),
         req.path,
-      );
+      ), req.path), req.path);
+      const withRobots = ensureRobotsMeta(localizedPage);
+      const responseHtml = statusCode === 404 ? stripNotFoundDiscoveryTags(withRobots) : withRobots;
+      const cdnCache = htmlCdnCacheControl(req.path, statusCode === 404);
 
       res.status(statusCode).set({
         'Content-Type': 'text/html; charset=utf-8',
         'Cache-Control': SSR_HTML_CACHE_CONTROL,
-        'CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
-        'Vercel-CDN-Cache-Control': statusCode === 404 ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL,
-        ...(statusCode === 404 ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}),
-      }).end(localizedPage);
+        'CDN-Cache-Control': cdnCache,
+        'Vercel-CDN-Cache-Control': cdnCache,
+        ...(statusCode === 404 ? { 'X-Robots-Tag': 'noindex, nofollow, max-image-preview:large' } : {}),
+      }).end(responseHtml);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('SSR request failed:', error);

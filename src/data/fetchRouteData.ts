@@ -8,9 +8,11 @@ import {
   fetchSanityLatestInsightsWithClient,
   fetchIndustriesInsightsWithClient,
   fetchRelatedPostsWithClient,
+  applySanityShareImages,
   type RelatedPostsData,
 } from '@/lib/sanity-blog';
-import { getIndustriesInsightPostPath, resolveContentSilo } from '@/lib/blog-content-silo';
+import { resolveContentSilo } from '@/lib/blog-content-silo';
+import { missingArticleRedirect } from '@/lib/missing-article-redirect';
 import type { BlogPost } from '@/types/blog';
 import type { PressRelease, PressReleaseListItem } from '@/types/pressRelease';
 import {
@@ -22,13 +24,22 @@ import type { Language } from '@/lib/i18n';
 import { resolveSanityBlogSlug } from '../../blog-legacy-redirects.mjs';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import { isHardcodedSeoBlogSlug } from '@/lib/blog-robots';
-import { getBlogHeroPreloadUrl } from '@/lib/image-utils';
+import { blogHeroSrc } from '@/lib/image-utils';
 import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
 import { FR_FRANCE_CONTENT, FR_HUB_CONTENT } from '@/data/frHealthcareMarketResearchContent';
 
+function blogPostHeroPreload(blogPost: BlogPost | null): string | undefined {
+  if (!blogPost) return undefined;
+  const src = blogPost.coverImage || blogPost.ogImage;
+  const width = blogPost.coverImage ? blogPost.coverImageWidth : blogPost.ogImageWidth;
+  const height = blogPost.coverImage ? blogPost.coverImageHeight : blogPost.ogImageHeight;
+  const url = blogHeroSrc(src, width, height);
+  return url || undefined;
+}
+
 function resolveBlogPostForRoute(slug: string, sanityPost: BlogPost | null): BlogPost | null {
   const hardcoded = getHardcodedPostBySlug(slug);
-  if (hardcoded && isHardcodedSeoBlogSlug(slug)) return hardcoded;
+  if (hardcoded && isHardcodedSeoBlogSlug(slug)) return applySanityShareImages(hardcoded, sanityPost);
   return sanityPost ?? hardcoded ?? null;
 }
 
@@ -36,8 +47,10 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
   const sanitySlug = resolveSanityBlogSlug(slug);
   let blogPost: BlogPost | null = null;
   let relatedPosts: RelatedPostsData = { related: [], prev: null, next: null };
+  let sanityLookup: 'found' | 'missing' | 'error' = 'missing';
   try {
     blogPost = await fetchSanityPostBySlugWithClient(sanitySlug, sanityServer);
+    sanityLookup = blogPost ? 'found' : 'missing';
     if (blogPost) {
       relatedPosts = await fetchRelatedPostsWithClient(
         sanitySlug,
@@ -51,14 +64,16 @@ async function fetchBlogPostRouteData(slug: string): Promise<Record<string, unkn
     }
   } catch {
     blogPost = null;
+    sanityLookup = 'error';
   }
   blogPost = resolveBlogPostForRoute(slug, blogPost);
   return {
     pageType: 'blog-post',
     blogSlug: slug,
     blogPost,
+    blogPostLookup: blogPost ? 'found' : sanityLookup,
     relatedPosts,
-    lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
+    lcpPreloadImageUrl: blogPostHeroPreload(blogPost),
   };
 }
 
@@ -121,7 +136,7 @@ async function fetchHomeLatestInsights(language: Language): Promise<BlogPost[]> 
   let posts: BlogPost[] = [];
   try {
     posts = await withTimeout(
-      fetchSanityLatestInsightsWithClient(sanityServer, language, 3),
+      fetchSanityLatestInsightsWithClient(sanityServer, language, 6),
       HOME_INSIGHTS_BUDGET_MS,
       hit?.posts ?? [],
     );
@@ -173,6 +188,20 @@ function decodePathSegment(encoded: string): string {
   } catch {
     return encoded;
   }
+}
+
+function articleRedirectOrData(
+  pathname: string,
+  slug: string,
+  data: Record<string, unknown>,
+): Record<string, unknown> {
+  const redirect = missingArticleRedirect({
+    pathname,
+    slug,
+    lookup: typeof data.blogPostLookup === 'string' ? data.blogPostLookup : undefined,
+    post: (data.blogPost as BlogPost | null) ?? null,
+  });
+  return redirect ?? data;
 }
 
 export async function fetchRouteData(url: string): Promise<Record<string, unknown>> {
@@ -339,7 +368,7 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
       blogSlug: slug,
       blogPost,
       relatedPosts,
-      lcpPreloadImageUrl: getBlogHeroPreloadUrl(blogPost?.coverImage),
+      lcpPreloadImageUrl: blogPostHeroPreload(blogPost),
     };
   }
 
@@ -360,32 +389,14 @@ export async function fetchRouteData(url: string): Promise<Record<string, unknow
   if (industriesInsightPostMatch) {
     const slug = decodePathSegment(industriesInsightPostMatch[1]);
     const data = await fetchBlogPostRouteData(slug);
-    const post = data.blogPost as BlogPost | null;
-    if (post && resolveContentSilo(post) !== 'industries') {
-      return {
-        pageType: 'blog-post',
-        blogSlug: slug,
-        blogPost: null,
-        relatedPosts: { related: [], prev: null, next: null },
-        lcpPreloadImageUrl: undefined,
-      };
-    }
-    return data;
+    return articleRedirectOrData(path, slug, data);
   }
 
   const blogPostMatch = path.match(/^\/blog\/([^/]+)\/?$/);
   if (blogPostMatch) {
     const slug = decodePathSegment(blogPostMatch[1]);
     const data = await fetchBlogPostRouteData(slug);
-    const post = data.blogPost as BlogPost | null;
-    if (post && resolveContentSilo(post) === 'industries') {
-      return {
-        pageType: 'redirect',
-        statusCode: 301,
-        redirectTo: getIndustriesInsightPostPath(slug),
-      };
-    }
-    return data;
+    return articleRedirectOrData(path, slug, data);
   }
 
   if (path === `/${SKYRIZI_ROOT_SLUG}` || path === `/${SKYRIZI_ROOT_SLUG}/`) {

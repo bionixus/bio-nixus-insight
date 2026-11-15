@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
   cardLive: 'مباشر',
   chartNonHealthcare: 'سيلو غير الصحي',
   chartHealthcare: 'سيلو الرعاية الصحية',
-  cardFoot: 'منذ 2012 · +120 مشروعًا سنويًا · 127 في 2025 · 118 عميلًا · 48 دولة',
+  cardFoot: 'منذ 2012 · +120 مشروعًا سنويًا · 120 في 2025؛ 127 دراسة منذ بداية 2026 · 118 عميلًا · 48 دولة',
   regionRibbon: [
     'أمريكا الشمالية',
     'LATAM',
@@ -33,7 +33,7 @@ export const bionixusIndustriesPageCopyAr: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'تأسست في لندن', sub: 'جذور في الأبحاث الدوائية البريطانية' },
-    { value: '120+', label: 'مشروعًا عالميًا سنويًا', sub: 'في 48 دولة' },
+    { value: '120+', label: 'دراسة سنويًا', sub: '120 في 2025؛ 127 منذ بداية 2026' },
     { value: '118', label: 'عميلًا خدمناهم', sub: 'من pharma إلى consumer' },
     { value: '16', label: 'قطاعًا صناعيًا', sub: 'وما زال يتوسع' },
   ],

@@ -6,14 +6,14 @@ import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
 import { PortableText } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Helmet } from 'react-helmet-async';
-import { fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
+import { applySanityShareImages, fetchSanityPostBySlug, type RelatedPostsData } from '@/lib/sanity-blog';
 import {
   getBlogIndexLabelForPost,
   getBlogIndexPathForPost,
-  getIndustriesInsightPostPath,
   INDUSTRIES_INSIGHTS_INDEX_PATH,
   resolveContentSilo,
 } from '@/lib/blog-content-silo';
+import { missingArticleRedirect } from '@/lib/missing-article-redirect';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import {
   BLOG_INDEX_ROBOTS,
@@ -24,10 +24,10 @@ import {
 import { getRareTumorClusterByBlogSlug } from '@/data/rare-tumor-seo-cluster';
 import { RareTumorClusterCallout } from '@/components/seo/RareTumorClusterCallout';
 import {
+  blogHeroSrc,
   optimizeSanityImage,
-  pickSocialShareImage,
-  SOCIAL_OG_HEIGHT,
-  SOCIAL_OG_WIDTH,
+  resolveBlogSchemaLead,
+  resolveBlogSocialImage,
 } from '@/lib/image-utils';
 import {
   buildSeoDescription,
@@ -48,7 +48,7 @@ import {
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
-import { alsaadanyProfileUrl, authorLinkedInForDisplay } from '@/data/editorialAuthors';
+import { alsaadanyProfileUrl, authorLinkedInForDisplay, canonicalAlsaadanyJobTitle } from '@/data/editorialAuthors';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import BlogSiteExplorer from '@/components/BlogSiteExplorer';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
@@ -309,12 +309,11 @@ const CHINA_HEALTHCARE_2026_META_DESCRIPTION =
 const EGYPT_HEALTHCARE_2026_SLUG = 'healthcare-overview-egypt-market-2026';
 const EGYPT_HEALTHCARE_2026_DISPLAY_TITLE =
   'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
-const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide';
+const EGYPT_HEALTHCARE_2026_TITLE = 'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra';
 const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.';
-const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_DISPLAY_TITLE;
-const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026 — public tertiary, private groups & UHI rollout mapped with EDA pharma access context from BioNixus Egypt research.';
+  'Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview.';
+const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_TITLE;
+const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION = EGYPT_HEALTHCARE_2026_META_DESCRIPTION;
 
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE =
@@ -853,7 +852,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const preferHardcodedPillar =
     Boolean(hardcodedPillar) && (isGccPharmacoeconomicsEn || isHardcodedSeoBlogSlug(slug));
   const post = preferHardcodedPillar
-    ? hardcodedPillar
+    ? applySanityShareImages(hardcodedPillar!, sanityPost)
     : sanityPost ?? hardcodedPillar ?? fallbackPost;
   const resolvedSilo = post ? resolveContentSilo(post) : 'healthcare';
   const articleLocale = resolveBlogArticleLocale(post, pathname);
@@ -866,20 +865,45 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const executiveSummary =
     post && !isGccComparisonEn ? getExecutiveSummaryToRender(post, slug, { isArBlog: isArabicArticle }) : null;
 
+  const requestPath = (pathname.split('?')[0] || '').replace(/\/+$/, '') || '/';
+  const ssrBlogPostLookup =
+    ssrBlogBundle && typeof routeData.blogPostLookup === 'string' ? routeData.blogPostLookup : undefined;
+  const lookupFailed = ssrBlogPostLookup === 'error' || isError;
+  const isEnglishArticlePath = /^\/(?:blog|bionixus-industries\/insights)\/[^/]+$/.test(requestPath);
+  const foundRedirect =
+    post && slug && isEnglishArticlePath && !lookupFailed
+      ? missingArticleRedirect({
+          pathname: requestPath,
+          slug,
+          lookup: 'found',
+          post,
+        })
+      : null;
+  const confirmedMissing =
+    Boolean(slug) &&
+    isEnglishArticlePath &&
+    !lookupFailed &&
+    !post &&
+    !fallbackPost &&
+    (ssrBlogPostLookup === 'missing' || !isLoading);
+  const missingRedirect = confirmedMissing
+    ? missingArticleRedirect({
+        pathname: requestPath,
+        slug: slug!,
+        lookup: 'missing',
+        post: null,
+      })
+    : null;
+  const clientRedirectTo = foundRedirect?.redirectTo ?? missingRedirect?.redirectTo ?? null;
+
   useEffect(() => {
     if (slug?.startsWith('fallback-')) {
       const target = pathname.startsWith('/de/') ? '/de/blog' : '/blog';
       window.location.replace(target);
       return;
     }
-    if (
-      slug &&
-      !isArBlog &&
-      post &&
-      resolveContentSilo(post) === 'industries' &&
-      pathname.startsWith('/blog/')
-    ) {
-      navigate(getIndustriesInsightPostPath(slug), { replace: true });
+    if (clientRedirectTo) {
+      navigate(clientRedirectTo, { replace: true });
     }
     const bar = document.getElementById('blog-rp');
     if (!bar) return;
@@ -891,7 +915,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     };
     window.addEventListener('scroll', update, { passive: true });
     return () => window.removeEventListener('scroll', update);
-  }, [post, slug, pathname, isArBlog, navigate]);
+  }, [post, slug, pathname, isArBlog, navigate, clientRedirectTo]);
 
   if (!slug) {
     return (
@@ -916,7 +940,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         {/* Skeleton loader */}
         <div className="animate-pulse">
           <div className="w-full bg-primary/10" style={{ minHeight: '420px' }} />
-          <div className="max-w-screen-xl mx-auto px-6 pt-8 grid lg:grid-cols-[1fr_272px] gap-10">
+          <div className="max-w-screen-xl mx-auto px-6 pt-8 grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_272px] gap-10">
             <div className="space-y-4">
               <div className="h-3 bg-muted rounded w-24" />
               <div className="h-6 bg-muted rounded w-3/4" />
@@ -932,6 +956,18 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             </div>
           </div>
         </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (clientRedirectTo) {
+    return (
+      <div className="min-h-screen bg-background" data-slug-redirect={clientRedirectTo}>
+        <Navbar />
+        <main className="px-6 py-16 max-w-3xl mx-auto" lang={errorLocale} dir={isRtlBlogLocale(errorLocale) ? 'rtl' : 'ltr'}>
+          <p className="text-muted-foreground">{errorUi.articleNotFound}</p>
+        </main>
         <Footer />
       </div>
     );
@@ -962,6 +998,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const localizedArticleIndexLabel =
     articleLocale === 'en' ? articleIndexLabel : getBlogArticleIndexLabel(articleLocale, resolvedSilo);
   const isEgyptHealthcare2026 = slug === EGYPT_HEALTHCARE_2026_SLUG;
+  const isSaudiHealthcareBlog =
+    Boolean(slug) &&
+    !pathClean.startsWith('/bionixus-industries') &&
+    /(saudi-arabia|nupco-|sfda-|(^|-)ksa($|-))/.test(slug);
   const isKuwaitHealthcare2026 = slug === KUWAIT_HEALTHCARE_2026_SLUG;
   const isUaeHealthcareTrends2025En = slug === UAE_HEALTHCARE_TRENDS_2025_SLUG && !isArBlog;
   const comparisonPageUrl = `https://www.bionixus.com/blog/${GCC_PHARMA_COMPARISON_SLUG}`;
@@ -1091,12 +1131,20 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   const therapyStaticBundledCover =
     isTherapyStaticBlogEn ? therapyStaticBlogBundle!.coverImage : undefined;
 
-  const socialShare = pickSocialShareImage(
-    therapyStaticBundledCover,
-    post.ogImage,
-    post.coverImage,
-    isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined,
-  );
+  const staticCover =
+    therapyStaticBundledCover ||
+    (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+  const sanityCover = post.coverImage?.includes('cdn.sanity.io') ? post.coverImage : undefined;
+  const shareInput = {
+    ogImage: post.ogImage,
+    ogImageWidth: post.ogImageWidth,
+    ogImageHeight: post.ogImageHeight,
+    coverImage: sanityCover || post.coverImage || staticCover,
+    coverImageWidth: post.coverImageWidth,
+    coverImageHeight: post.coverImageHeight,
+  };
+  const socialShare = resolveBlogSocialImage(shareInput);
+  const schemaLead = resolveBlogSchemaLead(shareInput);
   const resolvedOgImageUrl = socialShare.url;
   const resolvedOgImageType = socialShare.mime;
   const socialImageAlt =
@@ -1156,9 +1204,19 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     articleLocale === 'en' ? resolvedTableOfContents : localizeTocForLocale(articleLocale, resolvedTableOfContents);
 
   const heroCoverImage =
-    therapyStaticBundledCover ||
+    sanityCover ||
     post.coverImage ||
-    (isGccPharmacoeconomicsEn ? GCC_PHARMACOECONOMICS_COVER_IMAGE : undefined);
+    staticCover ||
+    post.ogImage;
+  const heroWidth = heroCoverImage === post.coverImage ? post.coverImageWidth : post.ogImageWidth;
+  const heroHeight = heroCoverImage === post.coverImage ? post.coverImageHeight : post.ogImageHeight;
+  const heroSrc = blogHeroSrc(heroCoverImage, heroWidth, heroHeight);
+  const heroImageAlt =
+    (heroCoverImage && heroCoverImage === post.ogImage ? post.ogImageAlt : undefined) ||
+    post.coverImageAlt ||
+    post.ogImageAlt ||
+    articleDisplayTitle ||
+    'Article cover image';
 
   const displayBlogTags =
     isTherapyStaticBlogEn
@@ -1208,8 +1266,8 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         alternateLocales={getOgLocaleAlternates(language)}
         siteName="BioNixus"
         imageAlt={socialImageAlt}
-        imageWidth={SOCIAL_OG_WIDTH}
-        imageHeight={SOCIAL_OG_HEIGHT}
+        imageWidth={socialShare.width}
+        imageHeight={socialShare.height}
         imageType={resolvedOgImageType}
         twitterSite="@BioNixus"
         article={{
@@ -1248,20 +1306,26 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           post.excerpt?.trim() ||
           buildSeoDescription({ fallback: articleDisplayTitle })
         }
-        imageUrl={resolvedOgImageUrl}
-        {...(isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaOgImageDimensions
+        imageUrl={schemaLead.primary.url}
+        secondaryImages={schemaLead.extras}
+        {...(schemaLead.primaryIsMain
           ? {
-              ogImageWidth: therapyStaticBlogBundle.schemaOgImageDimensions.width,
-              ogImageHeight: therapyStaticBlogBundle.schemaOgImageDimensions.height,
+              ogImageWidth: schemaLead.primary.width,
+              ogImageHeight: schemaLead.primary.height,
             }
-          : isQ2PharmaBlogEn && q2PharmaSchemaBundle
+          : isTherapyStaticBlogEn && therapyStaticBlogBundle?.schemaOgImageDimensions
             ? {
-                ogImageWidth: q2PharmaSchemaBundle.ogImageWidth,
-                ogImageHeight: q2PharmaSchemaBundle.ogImageHeight,
+                ogImageWidth: therapyStaticBlogBundle.schemaOgImageDimensions.width,
+                ogImageHeight: therapyStaticBlogBundle.schemaOgImageDimensions.height,
               }
-            : resolvedOgImageUrl && !resolvedOgImageUrl.endsWith('/og-image.png')
-              ? { ogImageWidth: SOCIAL_OG_WIDTH, ogImageHeight: SOCIAL_OG_HEIGHT }
-              : {})}
+            : isQ2PharmaBlogEn && q2PharmaSchemaBundle
+              ? {
+                  ogImageWidth: q2PharmaSchemaBundle.ogImageWidth,
+                  ogImageHeight: q2PharmaSchemaBundle.ogImageHeight,
+                }
+              : resolvedOgImageUrl && !resolvedOgImageUrl.endsWith('/og-image.png')
+                ? { ogImageWidth: socialShare.width, ogImageHeight: socialShare.height }
+                : {})}
         articleSection={
           post.category?.trim() ||
           (isQ2PharmaBlogEn ? q2PharmaSchemaBundle?.articleSection : undefined) ||
@@ -1273,9 +1337,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             ? [...therapyStaticBlogBundle.schemaMentions]
             : isQ2PharmaBlogEn && q2PharmaSchemaBundle?.mentions?.length
               ? [...q2PharmaSchemaBundle.mentions]
-              : post.schemaExtras?.mentions?.length
-                ? [...post.schemaExtras.mentions]
-                : undefined
+              : undefined
         }
         about={
           post.schemaExtras?.about?.length
@@ -1287,18 +1349,20 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
         }
         wordCount={post.wordCount}
         emitWebPage={post.schemaExtras?.emitWebPage}
-        imageAlt={post.schemaExtras?.emitWebPage ? socialImageAlt : undefined}
+        imageAlt={
+          post.schemaExtras?.emitWebPage
+            ? (schemaLead.primaryIsMain ? post.coverImageAlt || socialImageAlt : socialImageAlt)
+            : undefined
+        }
         organization={post.schemaExtras?.organization}
+        contentImages={post.schemaExtras?.contentImages}
         authorNode={post.schemaExtras?.author}
-        alternativeHeadline={post.schemaExtras?.alternativeHeadline}
-        citations={post.schemaExtras?.citation}
-        timeRequired={post.schemaExtras?.timeRequired}
-        copyrightYear={post.schemaExtras?.copyrightYear}
         authorName={post.authorName?.trim() || 'BioNixus Research Team'}
         authorUrl={authorLinkedIn}
         authorJobTitle={
-          post.authorTitle?.trim()
-          || (alsaadanyProfileUrl(post.authorName) ? 'Director' : 'Healthcare Market Research Lead')
+          alsaadanyProfileUrl(post.authorName)
+            ? canonicalAlsaadanyJobTitle(post.authorTitle)
+            : (post.authorTitle?.trim() || 'Healthcare Market Research Lead')
         }
         publishedAt={post.publishedAtIso}
         modifiedAt={post.updatedAtIso || post.publishedAtIso}
@@ -1385,27 +1449,26 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         {heroCoverImage ? (
-          <div
-            className="relative w-full overflow-hidden bg-navy-deep group"
-            style={{ minHeight: '380px', maxHeight: '560px', aspectRatio: '21 / 9' }}
-          >
+          <div className="relative w-full bg-navy-deep group min-h-[380px] md:min-h-[480px]">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
-              src={optimizeSanityImage(heroCoverImage, 1400, 600)}
-              alt={post.coverImageAlt || articleDisplayTitle || 'Article cover image'}
+              src={heroSrc}
+              alt={heroImageAlt}
               className="w-full h-full object-cover opacity-[0.55] transition-transform duration-[6000ms] ease-in-out group-hover:scale-[1.03]"
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              width={1400}
-              height={600}
+              width={heroWidth && heroWidth >= 1200 ? heroWidth : 1400}
+              height={heroHeight && heroWidth && heroWidth >= 1200 ? heroHeight : 600}
             />
             {/* Gradient overlays */}
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 47% 10% / 0.97) 0%, hsl(220 47% 10% / 0.65) 38%, transparent 72%)' }} />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsl(220 47% 10% / 0.45) 0%, transparent 55%)' }} />
             {/* Gold top accent line */}
             <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--gold-light)) 55%, transparent 100%)' }} />
+            </div>
 
-            <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-10 z-10">
+            <div className="relative z-10 flex min-h-[380px] flex-col justify-end px-6 pb-8 pt-16 md:min-h-[480px] md:px-10 md:pb-10">
               {visibleBreadcrumbItems ? (
                 <BreadcrumbNav tone="on-dark" items={visibleBreadcrumbItems} className="hidden md:block px-0 pt-0 pb-0 mb-5" />
               ) : (
@@ -1537,7 +1600,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             <article
               dir={isRtlArticle ? 'rtl' : 'ltr'}
               lang={articleLocale}
-              className="rounded-3xl border border-border/70 bg-card/35 shadow-[0_32px_90px_-40px_rgb(15_23_42/0.22)] ring-1 ring-border/60 backdrop-blur-sm px-4 py-8 sm:px-7 sm:py-10 md:px-10 md:py-11"
+              className="min-w-0 rounded-3xl border border-border/70 bg-card/35 shadow-[0_32px_90px_-40px_rgb(15_23_42/0.22)] ring-1 ring-border/60 backdrop-blur-sm px-4 py-8 sm:px-7 sm:py-10 md:px-10 md:py-11"
             >
 
               {/* Tags + Share toolbar */}
@@ -1580,6 +1643,26 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                   </div>
                 </aside>
               )}
+
+              {isSaudiHealthcareBlog ? (
+                <p className="mb-8 text-[15px] text-muted-foreground leading-relaxed">
+                  For the Kingdom buyer briefing, open the{' '}
+                  <Link
+                    to="/healthcare-market-research/saudi-arabia"
+                    className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    healthcare market research company in Saudi Arabia
+                  </Link>{' '}
+                  page, then the{' '}
+                  <Link
+                    to="/healthcare-market-research"
+                    className="text-primary font-semibold underline underline-offset-2 hover:no-underline"
+                  >
+                    healthcare market research company
+                  </Link>{' '}
+                  hub for Saudi Arabia, the UAE and the GCC.
+                </p>
+              ) : null}
 
               {/* Table of contents — inline grid */}
               {localizedTableOfContents && localizedTableOfContents.length > 0 && (
@@ -1838,7 +1921,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               <BlogSiteExplorer locale={articleLocale} />
 
               {/* FAQ — uses <details>/<summary> so answers are always in server-rendered HTML */}
-              {mergedBlogFaqItems.length > 0 && (
+              {mergedBlogFaqItems.length > 0 && !post.faqInBody && (
                 <section className="mt-12" aria-label={blogUi.faqHeading}>
                   <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-6 flex items-center gap-3">
                     <span className="inline-flex px-2 py-0.5 text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--navy-deep))' }}>{blogUi.faqBadge}</span>

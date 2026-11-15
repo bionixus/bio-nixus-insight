@@ -135,7 +135,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Singapore in 2026?',
-    a: 'Leading market research companies in Singapore in 2026 include BioNixus, IQVIA Singapore, Ipsos Singapore, Kantar, Milieu Insight, Blackbox Research, and Rakuten Insight. BioNixus ranks first for pharmaceutical and healthcare research, with HSA- and ACE-aligned primary research, verified HCP recruitment across the SingHealth, NUHS, and NHG public healthcare clusters, and deep payer intelligence across MOH drug subsidy mechanisms and the ACE health technology assessment process.',
+    a: 'Leading market research companies in Singapore in 2026 include BioNixus, IQVIA Singapore, Ipsos Singapore, Kantar, Milieu Insight, Blackbox Research, and Rakuten Insight. BioNixus wrote this list for pharmaceutical and healthcare research, with HSA- and ACE-aligned primary research, verified HCP recruitment across the SingHealth, NUHS, and NHG public healthcare clusters, and deep payer intelligence across MOH drug subsidy mechanisms and the ACE health technology assessment process.',
   },
   {
     q: 'What is pharmaceutical market research in Singapore?',
@@ -222,12 +222,12 @@ export default function TopMarketResearchCompaniesSingapore2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in Singapore 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in Singapore 2026 | BioNixus',
     description:
-      'Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research.',
+      'Top market research companies in Singapore 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    dateModified: '2026-10-18',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -264,7 +264,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
         <title>Top Market Research Companies in Singapore 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research."
+          content="Top market research companies in Singapore 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL mapping, and payer research."
         />
         <meta name="geo.region" content="SG" />
         <meta name="geo.placename" content="Singapore" />
@@ -278,7 +278,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Singapore 2026 | BioNixus"
-        description="Top market research companies in Singapore 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL."
+        description="Top market research companies in Singapore 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. HSA- and ACE-aligned HCP surveys, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"
@@ -313,7 +313,16 @@ export default function TopMarketResearchCompaniesSingapore2026() {
               An independent guide to the leading market research companies operating in Singapore for 2026.
               This article profiles seven firms across healthcare, pharmaceutical, and consumer research — comparing
               capabilities, methodologies, Singapore-specific expertise, and what to look for when shortlisting a
-              research partner for the Singapore pharmaceutical and healthcare market.
+              research partner for the Singapore pharmaceutical and healthcare market. For HSA lab and cluster assay
+              briefs, start with{' '}
+              <Link to="/singapore-ivd-market-access" className="text-primary hover:underline font-medium">
+                Singapore IVD market access
+              </Link>
+              . For manufacturer and distributor lists, see{' '}
+              <Link to="/pharmaceutical-companies-singapore" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Singapore
+              </Link>
+              .
             </p>
             <p className="text-sm text-muted-foreground">
               Published June 2026 · By BioNixus Research Team · 14 min read
@@ -721,6 +730,7 @@ export default function TopMarketResearchCompaniesSingapore2026() {
             <h2 className="text-xl font-display font-semibold text-foreground mb-6">Related Resources</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                { to: '/singapore-ivd-market-access', label: 'Singapore IVD market access', desc: 'HSA pathways, SingHealth/NUHS/NHG lab algorithms, and assays that stay registered but unused.' },
                 { to: '/pharmaceutical-companies-singapore', label: 'Pharmaceutical companies in Singapore', desc: 'The companies we study — manufacturers, MNCs, and distributors.' },
                 {
                   to: '/insights/top-healthcare-market-research-companies-singapore-2026',

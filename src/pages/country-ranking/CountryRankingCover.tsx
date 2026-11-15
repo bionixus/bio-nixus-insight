@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { STATS } from '@/lib/companyStats';
+import { STATS, STATS_PROJECTS_PHRASE } from '@/lib/companyStats';
 
 export type RankingCoverChip = {
   rank: string;
@@ -119,12 +119,11 @@ export function CountryRankingCover({
           {networkLine ?? (
             <>
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                Americas office and global HQ: Sheridan, Wyoming, USA · Europe office: London, UK · AMEA office: Cairo · KSA partner office: Al Khobar · UAE field office: Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
-                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
-                annually · {STATS.projects2025} in 2025
+                {STATS.clients} clients · {STATS.countries} countries · {STATS_PROJECTS_PHRASE}
               </div>
             </>
           )}

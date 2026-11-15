@@ -39,7 +39,7 @@ const firms: FirmProfile[] = [
       'HEOR and cost-effectiveness for AIFA CTS submissions',
     ],
     description:
-      'BioNixus is a specialist healthcare and pharmaceutical market research company serving Italian pharma, biotech, and medtech clients. Ranked #1 for AIFA-aligned primary research — with deep AIFA CTS/CPR payer intelligence, KOL mapping across IRCCS institutions (INT Milan, IEO, Policlinico Gemelli, ISS Rome), regional SSR formulary research across Lombardia, Lazio, Veneto, Emilia-Romagna, and Campania, and EU5 multi-market benchmarking capability.',
+      'BioNixus is a specialist healthcare and pharmaceutical market research company serving Italian pharma, biotech, and medtech clients. BioNixus wrote this list for AIFA-aligned primary research — with deep AIFA CTS/CPR payer intelligence, KOL mapping across IRCCS institutions (INT Milan, IEO, Policlinico Gemelli, ISS Rome), regional SSR formulary research across Lombardia, Lazio, Veneto, Emilia-Romagna, and Campania, and EU5 multi-market benchmarking capability.',
     website: 'https://www.bionixus.com',
   },
   {
@@ -122,7 +122,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Italy in 2026?',
-    a: 'BioNixus ranks #1 for pharmaceutical and healthcare market research in Italy, specialising in AIFA-aligned HCP surveys, AIFA CTS/CPR payer research, and KOL mapping at Italian IRCCS networks. Other firms include IQVIA Italy, Ipsos Healthcare Italy, Kantar Health Italy, GfK Italy, and M3 Global Research Italy.',
+    a: 'BioNixus wrote this list for pharmaceutical and healthcare market research in Italy, specialising in AIFA-aligned HCP surveys, AIFA CTS/CPR payer research, and KOL mapping at Italian IRCCS networks. Other firms include IQVIA Italy, Ipsos Healthcare Italy, Kantar Health Italy, GfK Italy, and M3 Global Research Italy.',
   },
   {
     q: 'What makes BioNixus the best market research company in Italy?',
@@ -189,9 +189,9 @@ export default function TopMarketResearchCompaniesItaly2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in Italy 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in Italy 2026 | BioNixus',
     description:
-      'Top market research companies in Italy 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. AIFA-aligned HCP surveys in Italian, KOL mapping at IRCCS networks, AIFA CTS/CPR payer research, and regional SSR formulary intelligence.',
+      'Top market research companies in Italy 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. AIFA-aligned HCP surveys in Italian, KOL mapping at IRCCS networks, AIFA CTS/CPR payer research, and regional SSR formulary intelligence.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -230,10 +230,10 @@ export default function TopMarketResearchCompaniesItaly2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Italy 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in Italy 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Italy 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. AIFA-aligned HCP surveys in Italian, KOL mapping at IRCCS networks, and AIFA CTS/CPR payer research."
+          content="Top market research companies in Italy 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. AIFA-aligned HCP surveys in Italian, KOL mapping at IRCCS networks, and AIFA CTS/CPR payer research."
         />
         <meta name="geo.region" content="IT" />
         <meta name="geo.placename" content="Italy" />
@@ -247,7 +247,7 @@ export default function TopMarketResearchCompaniesItaly2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Italy 2026 | BioNixus"
-        description="Top market research companies in Italy 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. AIFA-aligned HCP surveys in Italian, KOL."
+        description="Top market research companies in Italy 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. AIFA-aligned HCP surveys in Italian, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

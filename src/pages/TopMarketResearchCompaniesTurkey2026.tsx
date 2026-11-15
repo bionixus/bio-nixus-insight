@@ -136,7 +136,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Turkey in 2026?',
-    a: 'Leading market research companies in Turkey in 2026 include BioNixus, IQVIA Turkey, Ipsos Turkey, Kantar Turkey, GfK Turkey, Nielsen Turkey, and PharmaTR. BioNixus ranks first for pharmaceutical and healthcare research, with TİTCK-aligned primary research, verified HCP recruitment at leading Turkish university hospitals, and deep SGK reimbursement and payer intelligence.',
+    a: 'Leading market research companies in Turkey in 2026 include BioNixus, IQVIA Turkey, Ipsos Turkey, Kantar Turkey, GfK Turkey, Nielsen Turkey, and PharmaTR. BioNixus wrote this list for pharmaceutical and healthcare research, with TİTCK-aligned primary research, verified HCP recruitment at leading Turkish university hospitals, and deep SGK reimbursement and payer intelligence.',
   },
   {
     q: 'What is pharmaceutical market research in Turkey?',
@@ -219,9 +219,9 @@ export default function TopMarketResearchCompaniesTurkey2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in Turkey 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in Turkey 2026 | BioNixus',
     description:
-      'Top market research companies in Turkey 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. TİTCK-aligned HCP surveys, KOL mapping, and SGK payer research.',
+      'Top market research companies in Turkey 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. TİTCK-aligned HCP surveys, KOL mapping, and SGK payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -258,10 +258,10 @@ export default function TopMarketResearchCompaniesTurkey2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Turkey 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in Turkey 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Turkey 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. TİTCK-aligned HCP surveys, KOL mapping, and SGK payer research."
+          content="Top market research companies in Turkey 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. TİTCK-aligned HCP surveys, KOL mapping, and SGK payer research."
         />
         <meta name="geo.region" content="TR" />
         <meta name="geo.placename" content="Turkey" />
@@ -275,7 +275,7 @@ export default function TopMarketResearchCompaniesTurkey2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Turkey 2026 | BioNixus"
-        description="Top market research companies in Turkey 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. TİTCK-aligned HCP surveys, KOL mapping, and."
+        description="Top market research companies in Turkey 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. TİTCK-aligned HCP surveys, KOL mapping, and."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

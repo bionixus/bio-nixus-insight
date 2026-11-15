@@ -41,16 +41,8 @@ export interface BlogPostSchemaExtras {
   /** Replaces the default `about` Thing built from the category. */
   about?: ReadonlyArray<Record<string, unknown>>;
   itemList?: { name: string; description?: string; items: BlogPostItemListEntry[] };
-  /** Secondary headline on the article node, e.g. the dek shown under the h1. */
-  alternativeHeadline?: string;
-  /** Sources cited in the body, emitted as the article's `citation` list. */
-  citation?: ReadonlyArray<Record<string, unknown>>;
-  /** Organisations or works named in the body, emitted as `mentions`. */
-  mentions?: ReadonlyArray<Record<string, unknown>>;
-  /** ISO 8601 duration for the reading time, e.g. "PT14M". */
-  timeRequired?: string;
-  /** Sets copyrightYear, with the sitewide Organization as copyrightHolder. */
-  copyrightYear?: number;
+  /** In-article figures, emitted after the primary cover ImageObject. */
+  contentImages?: ReadonlyArray<{ url: string; width: number; height: number; caption: string }>;
 }
 
 export interface BlogPost {
@@ -63,6 +55,9 @@ export interface BlogPost {
   country: string;
   coverImage?: string;
   coverImageAlt?: string;
+  /** Pixel size of Sanity `mainImage`, when the asset metadata is known. */
+  coverImageWidth?: number;
+  coverImageHeight?: number;
   body?: string | PortableTextBlock[];
   bodyHtml?: string;
   language?: string;
@@ -85,6 +80,11 @@ export interface BlogPost {
   tableOfContents?: { heading?: string; anchor?: string }[];
   executiveSummary?: string | unknown[];
   faq?: BlogPostFaqItem[];
+  /**
+   * The article HTML already contains the FAQ prose. Schema still uses `faq`,
+   * and the template accordion is skipped so the questions are not repeated.
+   */
+  faqInBody?: boolean;
   ctaSection?: BlogPostCtaSection;
   // SEO / OG / Author
   seoMetaTitle?: string;
@@ -95,6 +95,9 @@ export interface BlogPost {
   ogDescription?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  /** Pixel size of Sanity `openGraph.ogImage`, when the asset metadata is known. */
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   authorName?: string;
   authorTitle?: string;
   authorImage?: string;

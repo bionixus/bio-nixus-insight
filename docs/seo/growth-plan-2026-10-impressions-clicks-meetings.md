@@ -251,7 +251,7 @@ inbound links to the hub within 4 weeks.
 ## 5. Phase 2 — Meeting-first conversion layer (weeks 2–6, parallel with Phase 1)
 
 Decisions taken 2026-10-04: **no embedded scheduler** (spam risk at this stage). The existing flow
-stays — qualification form first, then the `schedule.bionixus.com` link on the thank-you state. Lead
+stays — qualification form first, then the `https://research.bionixus.co.uk/widget/bookings/bionixus` link on the thank-you state. Lead
 routing changes so that only scoping-call requests generate a Formspree email alert; everything else
 is saved to HighLevel only.
 
@@ -259,7 +259,7 @@ is saved to HighLevel only.
 
 | Form | Request type | Formspree | HighLevel | Visitor outcome |
 |---|---|---|---|---|
-| `QualificationForm` — "Book a 30-minute scoping call" (budget ≥ $20K or unspecified) | `Scoping Call Request` | **Yes** | Yes | Thank-you + "Pick a time for your call" link to `schedule.bionixus.com` |
+| `QualificationForm` — "Book a 30-minute scoping call" (budget ≥ $20K or unspecified) | `Scoping Call Request` | **Yes** | Yes | Thank-you + "Pick a time for your call" link to `https://research.bionixus.co.uk/widget/bookings/bionixus` |
 | `QualificationForm` — budget "Under $20K" | `Research Enquiry (below minimum)` | No | Yes (`qualified: no`) | Thank-you "we'll reply by email"; no booking link |
 | Contact page form (`ContactSection`) | `Contact Request` | No | Yes (+ `/api/subscribe`) | Thank-you |
 | Gated sample downloads (`GatedAssetForm`) | `Gated Asset Download` | No | Yes | PDF download |

@@ -47,15 +47,20 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     relatedCountries: ['uae', 'kuwait'],
     relatedTherapies: ['diabetes', 'oncology', 'respiratory', 'immunology'],
     keyStats: [
-      { label: 'Pharma Market Size', value: '$10B+ annually' },
       { label: 'Key Regulator', value: 'SFDA' },
-      { label: 'BioNixus Projects', value: '50+ completed KSA studies' },
+      { label: 'Central procurement', value: 'NUPCO tenders' },
+      { label: 'partner office for KSA', value: 'Al Khobar' },
       { label: 'Strategic Context', value: 'Vision 2030 healthcare transformation' },
     ],
     faqQuestions: [
       {
         question: KSA_HUB_COMPANIES_COPY.faqQuestion,
         answer: KSA_HUB_COMPANIES_COPY.faqAnswer,
+      },
+      {
+        question: 'What does a healthcare market research company in Saudi Arabia cost?',
+        answer:
+          'Custom programmes with BioNixus typically run from $10,000 to $60,000 depending on countries, sample and method. A written proposal follows within 48 hours of a brief. Guarantees in writing cover replacing non-qualifying respondents, the contracted minimum sample, re-field at our cost, and a credited pilot fee — not guaranteed accuracy of findings.',
       },
       {
         question: 'Who provides healthcare market research in Saudi Arabia?',
@@ -110,7 +115,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     keyStats: [
       { label: 'Pharma Market Size', value: '$5.2B+ annually' },
       { label: 'Key Regulators', value: 'DOH / MOHAP' },
-      { label: 'BioNixus Projects', value: 'Around 70 studies in 2026' },
+      { label: 'BioNixus Projects', value: '127 studies year-to-date in 2026' },
       { label: 'Healthcare Context', value: 'Multilingual physician workforce' },
     ],
     faqQuestions: [
@@ -461,7 +466,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       {
         question: 'What are the top market research companies in Egypt?',
         answer:
-          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, Nielsen, AMRB, YouGov, Infomine, and Alkoun MEA. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with a 15-year track record and 120+ global projects annually (127 in 2025).',
+          'Leading market research firms in Egypt include BioNixus, Kantar Egypt, Ipsos Egypt, Nielsen, AMRB, YouGov, Infomine, and Alkoun MEA. BioNixus is the only Egypt-based firm offering dual-practice coverage across both healthcare/pharma and consumer research with a 15-year track record and 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026).',
       },
       {
         question: 'How does BioNixus run pharmaceutical market research in Egypt?',

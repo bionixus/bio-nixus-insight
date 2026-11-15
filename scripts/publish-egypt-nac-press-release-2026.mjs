@@ -117,7 +117,7 @@ async function ensureSpokespersonAuthor(client) {
       { name: '*Alsaadany*' },
     )
     if (!alt?._id) {
-      console.warn(`Author matching "${SPOKESPERSON_NAME}" not found; quotes still attribute MEA Director in body.`)
+      console.warn(`Author matching "${SPOKESPERSON_NAME}" not found; quotes still attribute AMEA Director (APAC, Middle East and Africa) in body.`)
       return
     }
     if (alt.title !== SPOKESPERSON_TITLE) {

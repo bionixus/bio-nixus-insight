@@ -49,6 +49,8 @@ type BlogSchemaProps = {
   /** Primary OG / hero dimensions for structured `image` ImageObject */
   ogImageWidth?: number
   ogImageHeight?: number
+  /** Further ImageObjects after the primary, such as a 1200x630 social asset beside a 16:9 cover. */
+  secondaryImages?: ReadonlyArray<{ url: string; width: number; height: number; caption?: string }>
   authorName: string
   authorUrl?: string
   authorJobTitle?: string
@@ -78,14 +80,8 @@ type BlogSchemaProps = {
   organization?: Record<string, unknown>
   /** Replaces the Person built from authorName / authorUrl / authorJobTitle. */
   authorNode?: Record<string, unknown>
-  /** `alternativeHeadline` on the article node. */
-  alternativeHeadline?: string
-  /** Works cited in the body (`citation` on the article node). */
-  citations?: ReadonlyArray<Record<string, unknown>>
-  /** ISO 8601 reading time (`timeRequired`). */
-  timeRequired?: string
-  /** Emits copyrightYear with the sitewide Organization as copyrightHolder. */
-  copyrightYear?: number
+  /** In-article figures appended after the primary cover ImageObject. */
+  contentImages?: ReadonlyArray<{ url: string; width: number; height: number; caption: string }>
 }
 
 type ServiceSchemaProps = {
@@ -225,7 +221,14 @@ export function isValidSchemaNode(node: Record<string, unknown>): boolean {
       imageOk = true
     }
     if (!imageOk && Array.isArray(img) && img.length > 0) {
-      imageOk = img.every((e) => isNonEmptyString(String(e)))
+      imageOk = img.every((entry) => {
+        if (isNonEmptyString(entry)) return true
+        if (entry !== null && typeof entry === 'object' && !Array.isArray(entry)) {
+          const image = entry as Record<string, unknown>
+          return image['@type'] === 'ImageObject' && isNonEmptyString(image.url)
+        }
+        return false
+      })
     }
     const mainEntityOk =
       node.mainEntityOfPage === undefined ||
@@ -386,6 +389,22 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       caption: props.imageAlt?.trim() || props.headline,
     }
 
+    const secondaryImageObjects = (props.secondaryImages ?? []).map((image) => ({
+      '@type': 'ImageObject',
+      url: toHttpsUrl(image.url),
+      width: image.width,
+      height: image.height,
+      ...(image.caption ? { caption: image.caption } : {}),
+    }))
+
+    const contentImageObjects = (props.contentImages ?? []).map((image) => ({
+      '@type': 'ImageObject',
+      url: toHttpsUrl(image.url),
+      width: image.width,
+      height: image.height,
+      caption: image.caption,
+    }))
+
     const articleNode: Record<string, unknown> = {
       '@context': 'https://schema.org',
       '@type': schemaType,
@@ -397,9 +416,10 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       },
       url: pageUrlHttps,
       headline: props.headline,
-      ...(props.alternativeHeadline?.trim() ? { alternativeHeadline: props.alternativeHeadline.trim() } : {}),
       description: props.description,
-      image: primaryImageObject,
+      image: secondaryImageObjects.length > 0 || contentImageObjects.length > 0
+        ? [primaryImageObject, ...secondaryImageObjects, ...contentImageObjects]
+        : primaryImageObject,
       ...(props.articleSection?.trim()
         ? { articleSection: props.articleSection.trim() }
         : {}),
@@ -408,13 +428,6 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         : {}),
       ...(typeof props.wordCount === 'number' && props.wordCount > 0
         ? { wordCount: Math.round(props.wordCount) }
-        : {}),
-      ...(props.timeRequired?.trim() ? { timeRequired: props.timeRequired.trim() } : {}),
-      ...(props.citations && props.citations.length > 0
-        ? { citation: props.citations.map((c) => ({ ...c })) }
-        : {}),
-      ...(typeof props.copyrightYear === 'number'
-        ? { copyrightYear: props.copyrightYear, copyrightHolder: { '@id': ORG_ID } }
         : {}),
       ...(props.schemaMentions && props.schemaMentions.length > 0
         ? { mentions: props.schemaMentions.map((m) => ({ ...m })) }

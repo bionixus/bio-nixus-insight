@@ -2,7 +2,7 @@
  * Contact form copy that sits outside the `t.contact` i18n bundle.
  *
  * Select/checkbox options are `value -> label` maps on purpose: the **value** is
- * submitted to Formspree and copied into the fallback mailto, so it stays English
+ * submitted to HighLevel and Formspree and copied into the fallback mailto, so it stays English
  * for lead triage, while the **label** is what the visitor reads.
  *
  * English is the complete shape; every other locale is deep-merged over it, so a
@@ -25,7 +25,9 @@ export type ContactFormStrings = {
   referralOptions: Record<string, string>;
   phoneFieldLabel: string;
   regionalRepresentationLabel: string;
-  regionalOffices: [string, string, string, string];
+  regionalOffices: string[];
+  /** Submit button label while the request is in flight. */
+  submitting: string;
   premiumFormSubcopy: string;
   premiumEyebrow: string;
   premiumHeading: string;
@@ -88,7 +90,15 @@ const en: ContactFormStrings = {
   },
   phoneFieldLabel: 'Phone',
   regionalRepresentationLabel: 'Regional representation',
-  regionalOffices: ['Dubai, UAE', 'Al Khobar, Saudi Arabia', 'Kuwait City, Kuwait', 'Cairo, Egypt'],
+  regionalOffices: [
+    'Regional leadership: Sheridan, Wyoming (US headquarters)',
+    'Regional leadership: London, United Kingdom',
+    'Regional leadership: Sheikh Zayed, Giza (Cairo)',
+    'Field office: Al Khobar, Saudi Arabia',
+    'Field office: Dubai, UAE',
+    'Field office: Salmiya, Kuwait',
+  ],
+  submitting: 'Sending…',
   premiumFormSubcopy:
     'Tell us the markets, sector, and decision at stake. We respond with a scoped plan — typically within one business day.',
   premiumEyebrow: 'Direct channels',
@@ -153,11 +163,14 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     phoneFieldLabel: 'Telefon',
     regionalRepresentationLabel: 'Regionale Vertretung',
     regionalOffices: [
-      'Dubai, VAE',
-      'Al Khobar, Saudi-Arabien',
-      'Kuwait-Stadt, Kuwait',
-      'Kairo, Ägypten',
+      'Regionale Leitung: Sheridan, Wyoming (US-Hauptsitz)',
+      'Regionale Leitung: London, Vereinigtes Königreich',
+      'Regionale Leitung: Sheikh Zayed, Giza (Kairo)',
+      'Außenstelle: Al Khobar, Saudi-Arabien',
+      'Außenstelle: Dubai, VAE',
+      'Außenstelle: Salmiya, Kuwait',
     ],
+    submitting: 'Wird gesendet…',
     premiumFormSubcopy:
       'Nennen Sie uns Markt, Indikation und die anstehende Entscheidung. Sie erhalten einen abgegrenzten Projektplan — in der Regel innerhalb eines Werktags.',
     premiumEyebrow: 'Direkte Kontaktwege',
@@ -219,11 +232,14 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     phoneFieldLabel: 'Téléphone',
     regionalRepresentationLabel: 'Représentation régionale',
     regionalOffices: [
-      'Dubaï, Émirats arabes unis',
-      'Al Khobar, Arabie saoudite',
-      'Koweït, Koweït',
-      'Le Caire, Égypte',
+      'Direction régionale : Sheridan, Wyoming (siège américain)',
+      'Direction régionale : Londres, Royaume-Uni',
+      'Direction régionale : Sheikh Zayed, Giza (Le Caire)',
+      'Bureau de terrain : Al Khobar, Arabie saoudite',
+      'Bureau de terrain : Dubaï, Émirats arabes unis',
+      'Bureau de terrain : Salmiya, Koweït',
     ],
+    submitting: 'Envoi…',
     premiumFormSubcopy:
       'Indiquez-nous le marché, l’aire thérapeutique et la décision en jeu. Nous répondons avec un plan cadré — généralement sous un jour ouvré.',
     premiumEyebrow: 'Contacts directs',
@@ -285,11 +301,14 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     phoneFieldLabel: 'Teléfono',
     regionalRepresentationLabel: 'Representación regional',
     regionalOffices: [
-      'Dubái, Emiratos Árabes Unidos',
-      'Al Khobar, Arabia Saudí',
-      'Ciudad de Kuwait, Kuwait',
-      'El Cairo, Egipto',
+      'Liderazgo regional: Sheridan, Wyoming (sede de EE. UU.)',
+      'Liderazgo regional: Londres, Reino Unido',
+      'Liderazgo regional: Sheikh Zayed, Giza (El Cairo)',
+      'Oficina de campo: Al Khobar, Arabia Saudí',
+      'Oficina de campo: Dubái, Emiratos Árabes Unidos',
+      'Oficina de campo: Salmiya, Kuwait',
     ],
+    submitting: 'Enviando…',
     premiumFormSubcopy:
       'Cuéntenos el mercado, el área terapéutica y la decisión en juego. Respondemos con un plan acotado, normalmente en un día hábil.',
     premiumEyebrow: 'Canales directos',
@@ -351,11 +370,14 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     phoneFieldLabel: 'Telefone',
     regionalRepresentationLabel: 'Representação regional',
     regionalOffices: [
-      'Dubai, Emirados Árabes Unidos',
-      'Al Khobar, Arábia Saudita',
-      'Cidade do Kuwait, Kuwait',
-      'Cairo, Egito',
+      'Liderança regional: Sheridan, Wyoming (sede nos EUA)',
+      'Liderança regional: Londres, Reino Unido',
+      'Liderança regional: Sheikh Zayed, Giza (Cairo)',
+      'Escritório de campo: Al Khobar, Arábia Saudita',
+      'Escritório de campo: Dubai, Emirados Árabes Unidos',
+      'Escritório de campo: Salmiya, Kuwait',
     ],
+    submitting: 'A enviar…',
     premiumFormSubcopy:
       'Diga-nos o mercado, a área terapêutica e a decisão em causa. Respondemos com um plano delimitado — normalmente dentro de um dia útil.',
     premiumEyebrow: 'Canais diretos',
@@ -417,11 +439,14 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     phoneFieldLabel: 'Телефон',
     regionalRepresentationLabel: 'Региональное представительство',
     regionalOffices: [
-      'Дубай, ОАЭ',
-      'Эль-Хубар, Саудовская Аравия',
-      'Эль-Кувейт, Кувейт',
-      'Каир, Египет',
+      'Региональное руководство: Шеридан, Вайоминг (штаб-квартира в США)',
+      'Региональное руководство: Лондон, Великобритания',
+      'Региональное руководство: Шейх-Заид, Гиза (Каир)',
+      'Полевой офис: Эль-Хубар, Саудовская Аравия',
+      'Полевой офис: Дубай, ОАЭ',
+      'Полевой офис: Сальмия, Кувейт',
     ],
+    submitting: 'Отправка…',
     premiumFormSubcopy:
       'Расскажите о рынке, терапевтической области и предстоящем решении. Мы ответим планом работ с чёткими границами — как правило, в течение одного рабочего дня.',
     premiumEyebrow: 'Прямые контакты',
@@ -482,7 +507,15 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     },
     phoneFieldLabel: '电话',
     regionalRepresentationLabel: '区域代表处',
-    regionalOffices: ['阿联酋迪拜', '沙特阿拉伯胡拜尔', '科威特科威特城', '埃及开罗'],
+    regionalOffices: [
+      '区域领导办公室：美国怀俄明州谢里丹（总部）',
+      '区域领导办公室：英国伦敦',
+      '区域领导办公室：吉萨谢赫扎耶德（开罗）',
+      '驻地办公室：沙特阿拉伯胡拜尔',
+      '驻地办公室：阿联酋迪拜',
+      '驻地办公室：科威特萨尔米亚',
+    ],
+    submitting: '正在提交…',
     premiumFormSubcopy:
       '请告诉我们目标市场、治疗领域以及需要支持的决策。我们通常会在一个工作日内回复一份明确界定范围的研究方案。',
     premiumEyebrow: '直接联系方式',
@@ -544,11 +577,14 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     phoneFieldLabel: 'الهاتف',
     regionalRepresentationLabel: 'التمثيل الإقليمي',
     regionalOffices: [
-      'دبي، الإمارات العربية المتحدة',
-      'الخبر، المملكة العربية السعودية',
-      'مدينة الكويت، الكويت',
-      'القاهرة، مصر',
+      'قيادة إقليمية: شيريدان، وايومنغ (المقر الأمريكي)',
+      'قيادة إقليمية: لندن، المملكة المتحدة',
+      'قيادة إقليمية: الشيخ زايد، الجيزة (القاهرة)',
+      'مكتب ميداني: الخبر، السعودية',
+      'مكتب ميداني: دبي، الإمارات العربية المتحدة',
+      'مكتب ميداني: السالمية، الكويت',
     ],
+    submitting: 'جارٍ الإرسال…',
     premiumFormSubcopy:
       'أخبرنا بالسوق والمجال العلاجي والقرار المطروح. نرد بخطة بحث محددة النطاق — عادةً خلال يوم عمل واحد.',
     premiumEyebrow: 'قنوات الاتصال المباشر',

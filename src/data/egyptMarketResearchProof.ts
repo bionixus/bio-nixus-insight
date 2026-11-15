@@ -6,7 +6,7 @@ export const EGYPT_MR_COMPANY_PROOF = [
     body: 'BioNixus delivers healthcare market research from a Cairo base with reach across Egypt’s public, private, and pharmacy channels—not desk research imported from Gulf averages.',
   },
   {
-    title: '48 countries · 120+ global projects annually (127 in 2025)',
+    title: '48 countries · 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026)',
     body: 'Programs span launch sizing, access evidence, competitive intelligence, and post-launch tracking for pharma, biotech, medtech, and consumer sponsors across MENA and beyond (BioNixus internal project records, 2026).',
   },
   {

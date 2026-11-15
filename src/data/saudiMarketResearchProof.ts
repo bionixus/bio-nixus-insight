@@ -6,7 +6,7 @@ export const SAUDI_MR_COMPANY_PROOF = [
     body: 'BioNixus runs physician, payer, and institutional research across Saudi Arabia with bilingual Arabic–English execution—not imported GCC averages.',
   },
   {
-    title: '120+ global projects annually (127 in 2025)',
+    title: '120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026)',
     body: 'Programs span launch sizing, access evidence, competitive intelligence, and post-launch tracking for pharma, biotech, and medtech sponsors.',
   },
   {

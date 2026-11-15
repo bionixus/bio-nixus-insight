@@ -6,7 +6,7 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
-import { STATS } from '@/lib/companyStats';
+import { STATS, STATS_PROJECTS_PHRASE } from '@/lib/companyStats';
 import { BIONIXUS_PHONE_UK, BIONIXUS_PHONE_UK_DISPLAY } from '@/components/report-conversion/constants';
 import { OncologyPremiumStyles } from '@/pages/oncology-listicle/OncologyPremiumStyles';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
@@ -128,7 +128,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top oncology market research companies in 2026?',
-    a: 'Ranked by fit for treatment-pattern work — not headcount — the 2026 shortlist is BioNixus (indication-level anonymous PRFs with full history, new and current case recruitment, brand trackers as share of treated patients), IQVIA (syndicated pack and prescription volume), Kantar / Cerner Enviza (epidemiology and journey), Adelphi Real World (Western DSP charts), and OPEN Health (oncology HEOR). BioNixus ranks first when the decision needs the patient behind the pack.',
+    a: 'Ranked by fit for treatment-pattern work — not headcount — the 2026 shortlist is BioNixus (indication-level anonymous PRFs with full history, new and current case recruitment, brand trackers as share of treated patients), IQVIA (syndicated pack and prescription volume), Kantar / Cerner Enviza (epidemiology and journey), Adelphi Real World (Western DSP charts), and OPEN Health (oncology HEOR). BioNixus wrote this list when the decision needs the patient behind the pack.',
   },
   {
     q: 'How is BioNixus different from IQVIA in oncology?',
@@ -202,7 +202,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
     description: PAGE_DESCRIPTION,
     url: CANONICAL,
     datePublished: '2026-06-12',
-    dateModified: '2026-09-04',
+    dateModified: '2026-11-05',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',
@@ -265,7 +265,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
         locale="en"
         article={{
           publishedTime: '2026-06-12',
-          modifiedTime: '2026-09-04',
+          modifiedTime: '2026-11-05',
           section: 'Oncology Market Research',
           tags: [
             'oncology market research',
@@ -387,12 +387,11 @@ export default function TopOncologyMarketResearchCompanies2026() {
             </div>
             <div className="cover-foot">
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                Americas office and global HQ: Sheridan, Wyoming, USA · Europe office: London, UK · AMEA office: Cairo · KSA partner office: Al Khobar · UAE field office: Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
-                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
-                annually · {STATS.projects2025} in 2025
+                {STATS.clients} clients · {STATS.countries} countries · {STATS_PROJECTS_PHRASE}
               </div>
             </div>
           </div>
@@ -851,7 +850,7 @@ export default function TopOncologyMarketResearchCompanies2026() {
               <div className="closing-contact">
                 <div>
                   <div className="label">Firm</div>
-                  <div className="value">BioNixus · USA Global HQ</div>
+                  <div className="value">BioNixus · Americas office and global HQ</div>
                 </div>
                 <div>
                   <div className="label">Email</div>

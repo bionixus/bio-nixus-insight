@@ -121,7 +121,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best market research companies in Abu Dhabi?',
-    a: 'Leading market research firms in Abu Dhabi include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus ranks first as a global, multi-industry market research company with 120+ global projects annually (127 in 2025) across 48 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
+    a: 'Leading market research firms in Abu Dhabi include BioNixus, Kantar, Ipsos, NielsenIQ, YouGov, and Euromonitor International. BioNixus wrote this list as a global, multi-industry market research company with 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) across 48 countries — combining consumer, FMCG, retail, and financial services research with especially deep experience in regulated pharmaceutical and healthcare sectors.',
   },
   {
     q: 'How much does market research cost in Abu Dhabi?',
@@ -189,7 +189,7 @@ export default function TopMarketResearchCompaniesAbuDhabi2026() {
       'Independent guide to the leading market research companies in Abu Dhabi for 2026: consumer, FMCG, retail, and multi-industry firms compared by capability, methodology, and Abu Dhabi expertise.',
     url: CANONICAL,
     datePublished: '2026-06-09',
-    dateModified: '2026-09-28',
+    dateModified: '2026-10-29',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage: 'en',

@@ -349,8 +349,8 @@ return (
         />
 
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pb-16 items-start">
-            <article>
+          <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_272px] gap-10 lg:gap-14 pb-16 items-start">
+            <article className="min-w-0">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-5 mb-8 border-b border-border">
                 <div className="flex flex-wrap gap-1.5">
                   {(['Pharmaceuticals', 'Kuwait', 'Market access', 'Distributors'] as const).map((tag) => (

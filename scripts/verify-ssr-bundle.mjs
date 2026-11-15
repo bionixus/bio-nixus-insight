@@ -28,6 +28,9 @@ const entryPath = path.join(root, '..', 'dist', 'server', 'server-entry.js');
 const CRITICAL_PATHS = [
   '/',
   '/healthcare-market-research',
+  '/healthcare-market-research/saudi-arabia',
+  '/blog/healthcare-overview-egypt-market-2026',
+  '/insights/top-market-research-companies-dubai-2026',
   '/fr/healthcare-market-research',
   '/fr/healthcare-market-research/france',
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
@@ -38,7 +41,58 @@ const CRITICAL_PATHS = [
   '/gcc-pharmaceutical-market-research',
   '/saudi-arabia-medical-devices-market-report',
   '/blog/who-does-obesity-market-research-saudi-arabia',
-  '/blog/biosimilar-market-entry-research-saudi-arabia',
+  '/bionixus-industries/insights/feasibility-study-company-saudi-arabia',
+  '/blog/glp-1-physician-survey-saudi-arabia',
+  '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces',
+  '/bionixus-industries/insights/brand-tracking-research-agency-dubai',
+  '/bionixus-industries/insights/market-entry-research-saudi-arabia',
+  '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
+  '/bionixus-industries/insights/b2b-market-research-uae',
+  '/bionixus-industries/insights/australia-gcc-market-entry-research',
+  '/bionixus-industries/insights/europe-to-gcc-market-entry-research',
+  '/bionixus-industries/insights/uk-market-entry-research',
+  '/bionixus-industries/insights/us-market-entry-research-for-foreign-companies',
+  '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research',
+  '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae',
+  '/bionixus-industries/insights/chinese-companies-egypt-market-research',
+  '/bionixus-industries/insights/nielsen-alternative-saudi-arabia',
+  '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia',
+  '/bionixus-industries/insights/kantar-alternative-middle-east',
+  '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research',
+  '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia',
+  '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east',
+  '/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research',
+  '/bionixus-industries/insights/chinese-tourists-dubai-research',
+  '/blog/obesity-market-research-kuwait',
+  '/blog/qatar-obesity-glp1-market-research',
+  '/blog/hematology-market-research-saudi-arabia',
+  '/blog/rare-disease-market-research-saudi-arabia',
+  '/blog/iqvia-alternative-uae-primary-research',
+  '/blog/how-to-choose-healthcare-market-research-agency-saudi-arabia',
+  '/blog/uae-drug-pricing-ede-takeover-launch-research',
+  '/blog/dubai-essential-drug-list-formulary-submission',
+  '/blog/diabetes-market-research-uae-2026-price-cuts',
+  '/blog/china-biotech-export-controls-pharma-deals-2026',
+  '/blog/kuwait-drug-pricing-2026-decision-62',
+  '/blog/uae-pharmacovigilance-requirements-2026',
+  '/blog/japanese-pharmaceutical-companies-middle-east-entry',
+  '/blog/mental-health-market-research-saudi-arabia',
+  '/blog/womens-health-market-research-gcc',
+  '/blog/nupco-tender-market-research-saudi-arabia',
+  '/blog/car-t-saudi-arabia-market-research',
+  '/blog/saudi-health-insurance-payer-research',
+  '/blog/thiqa-obesity-reimbursement-abu-dhabi',
+  '/blog/oral-glp-1-uae-market-research',
+  '/blog/medicare-globe-model-part-b-account-level-2027',
+  '/blog/rasonque-daraxonrasib-pancreatic-ema-chmp-2026',
+  '/blog/gazya-obinutuzumab-lupus-anvisa-brazil-access-2026',
+  '/blog/orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
+  '/blog/egypt-eda-decree-480-drug-pricing-2026',
+  '/blog/dksh-newbridge-acquisition-mena-launch-market-access',
+  '/market-research/usa',
+  '/market-research/japan',
+  '/market-research/china',
+  '/market-research/singapore',
 ];
 
 let serverEntry;
@@ -73,7 +127,14 @@ for (const pathname of CRITICAL_PATHS) {
       .replace(/<[^>]+>/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
-    const wordCount = mainText ? mainText.split(' ').filter(Boolean).length : 0;
+    const cjkChars = mainText.match(/[\u3040-\u30ff\u3400-\u9fff]/g)?.length ?? 0;
+    const latinWords = mainText
+      .replace(/[\u3040-\u30ff\u3400-\u9fff]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .split(' ')
+      .filter(Boolean).length;
+    const wordCount = latinWords + Math.round(cjkChars / 2);
     if (wordCount < 500) {
       throw new Error(`render returned thin SSR content (${wordCount} words)`);
     }

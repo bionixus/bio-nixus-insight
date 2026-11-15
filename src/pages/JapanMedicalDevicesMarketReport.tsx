@@ -23,7 +23,7 @@ import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportC
 const PAGE_TITLE = 'Japan Medical Devices Market 2026: $41B Size & PMDA Forecast';
 const PAGE_DESCRIPTION =
   'Japan medical devices market $41B in 2026 → ~$64B by 2032. PMDA Class I–IV (todokede/ninsho/shonin), NHI listing & hospital procurement — BioNixus market report.';
-const PAGE_MODIFIED = '2026-08-30';
+const PAGE_MODIFIED = '2026-11-01';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -252,6 +252,14 @@ const JapanMedicalDevicesMarketReport = () => (
               and{' '}
               <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
                 GCC medical devices market report
+              </Link>
+              . Compare the{' '}
+              <Link to="/insights/top-market-research-companies-japan-2026" className="text-primary hover:underline font-medium">
+                top market research companies in Japan
+              </Link>{' '}
+              and the{' '}
+              <Link to="/pharmaceutical-companies-japan" className="text-primary hover:underline font-medium">
+                pharmaceutical companies in Japan
               </Link>
               . Request a scoped proposal at{' '}
               <a href="mailto:admin@bionixus.com" className="text-primary hover:underline font-medium">

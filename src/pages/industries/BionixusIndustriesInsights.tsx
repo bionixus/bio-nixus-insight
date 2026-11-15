@@ -1,22 +1,40 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
+import {
+  Building2,
+  Car,
+  Cpu,
+  Factory,
+  GraduationCap,
+  Hotel,
+  Landmark,
+  Radio,
+  ShoppingBasket,
+  Sparkles,
+  Store,
+  Truck,
+  Utensils,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogSection from '@/components/BlogSection';
 import IndustriesInsightsFilters from '@/components/blog/IndustriesInsightsFilters';
-import { BlogIndexHero } from '@/components/blog/BlogIndexHero';
-import { BlogRelatedPathways } from '@/components/blog/BlogRelatedPathways';
-import { PremiumComplianceRibbon } from '@/components/home/PremiumComplianceRibbon';
 import { FAQSection } from '@/components/healthcare-research/FAQSection';
-import { CTASection } from '@/components/shared/CTASection';
-import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
+import { SEOHead } from '@/components/seo/SEOHead';
+import {
+  DirectoryGoldLink,
+  DirectoryHero,
+  DirectoryJumpNav,
+  DirectoryLinkTile,
+  DirectorySection,
+} from '@/components/seo/DirectoryPremium';
+import { QualificationForm, QUALIFICATION_FORM_SCHEDULING_URL } from '@/components/conversion/QualificationForm';
 import { useIndustriesInsights } from '@/hooks/useSanityBlog';
 import { useInitialData } from '@/contexts/InitialDataContext';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { buildFilterOptions } from '@/lib/blog-index-filters';
 import {
-  ALL_INDUSTRIES,
   ALL_SEGMENTS,
   DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE,
   buildIndustrySlugFilterOptions,
@@ -27,34 +45,25 @@ import {
 } from '@/lib/industries-insights-filters';
 import {
   INDUSTRIES_HUB_PATH,
-  INDUSTRIES_INSIGHTS_INDEX_PATH,
-  INDUSTRIES_INSIGHT_POST_PATH_PREFIX,
   INDUSTRIES_INSIGHT_EDITORIAL_LINKS,
+  INDUSTRIES_INSIGHT_POST_PATH_PREFIX,
 } from '@/lib/blog-content-silo';
+import {
+  INDUSTRIES_INSIGHTS_CANONICAL,
+  INDUSTRIES_INSIGHTS_DESCRIPTION,
+  INDUSTRIES_INSIGHTS_FAQ,
+  INDUSTRIES_INSIGHTS_PATH,
+  INDUSTRIES_INSIGHTS_TITLE,
+  LATAM_COVERAGE_SENTENCE,
+  NON_PHARMA_INSIGHTS_CATALOG,
+  type CatalogCountryGroup,
+  type CatalogLink,
+  type IndustrySection,
+} from '@/data/nonPharmaInsightsCatalog';
+import { buildIndustriesInsightsSchemas } from '@/lib/seo/industriesInsightsSchema';
+import { trackMeetingLinkClicked } from '@/lib/analytics';
+import { BIONIXUS_PHONE_LINES } from '@/components/report-conversion/constants';
 import type { BlogPost } from '@/types/blog';
-
-const PAGE_CANONICAL = 'https://www.bionixus.com/bionixus-industries/insights';
-const PAGE_TITLE = 'Industry Insights Blog | B2B & B2C Market Research | BioNixus';
-const PAGE_DESCRIPTION =
-  'B2B and B2C market research insights across technology, energy, FMCG, retail, financial services, and more — fieldwork-led articles for commercial and strategy teams. Separate from BioNixus healthcare blog.';
-
-const INSIGHTS_FAQ = [
-  {
-    question: 'What industries do these insights cover?',
-    answer:
-      'Articles span B2B categories (technology, energy, real estate, public sector, education) and B2C categories (FMCG, retail, financial services, telecom, automotive, hospitality, media) across Saudi Arabia, the UAE, Egypt, and the wider GCC — with global coverage expanding by programme.',
-  },
-  {
-    question: 'How is this different from the healthcare blog?',
-    answer:
-      'The healthcare blog focuses on pharmaceutical, clinical, and market access research. This industry insights blog is for non-healthcare buyers — brand, commercial, and strategy teams in B2B and B2C markets. Both run to the same sampling and governance standards BioNixus built in regulated healthcare.',
-  },
-  {
-    question: 'Can I request a country × industry deep-dive?',
-    answer:
-      'Yes. Use the contact form with your industry vertical, country, and decision deadline — we typically respond with a tailored methodology outline within one business day.',
-  },
-] as const;
 
 const SEGMENT_PILLS: { value: IndustrySegmentFilter; label: string }[] = [
   { value: ALL_SEGMENTS, label: 'All segments' },
@@ -62,40 +71,174 @@ const SEGMENT_PILLS: { value: IndustrySegmentFilter; label: string }[] = [
   { value: 'b2c', label: 'B2C' },
 ];
 
-const RELATED_PATHWAYS = [
-  {
-    to: INDUSTRIES_HUB_PATH,
-    label: 'Industries hub',
-    description: 'Bridge between healthcare and B2B/B2C research silos.',
-  },
-  {
-    to: '/b2b-industries',
-    label: 'B2B industries',
-    description: 'Enterprise, institutional, and infrastructure markets.',
-  },
-  {
-    to: '/b2c-industries',
-    label: 'B2C industries',
-    description: 'Consumer demand, brands, and shopper journeys.',
-  },
-  {
-    to: '/market-research-by-industry',
-    label: 'Market research by industry',
-    description: 'Country × industry matrix entry points.',
-  },
-  ...INDUSTRIES_INSIGHT_EDITORIAL_LINKS.map((item) => ({
-    to: item.to,
-    label: item.label,
-    description: 'Industry insight article.',
-  })),
+const JUMP_ITEMS = [
+  { href: '#overview', label: 'Overview' },
+  { href: '#indexes', label: 'Indexes' },
+  { href: '#industries', label: 'Industries' },
+  { href: '#regions', label: 'Regions' },
+  { href: '#articles', label: 'Articles' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#request-proposal', label: 'Request a proposal' },
 ];
+
+const HERO_STATS = [
+  { value: '2012', label: 'Since 2012' },
+  { value: '118', label: 'Clients' },
+  { value: '48', label: 'Countries' },
+  { value: '127', label: 'Studies YTD 2026' },
+];
+
+const OFFICES = [
+  { place: 'Sheridan, Wyoming', role: 'US headquarters' },
+  { place: 'London', role: 'Europe' },
+  { place: 'Cairo', role: 'Sheikh Zayed, the biggest MEA office' },
+  { place: 'Dubai', role: 'UAE' },
+];
+
+const INDUSTRY_ICONS: Record<string, LucideIcon> = {
+  fmcg: ShoppingBasket,
+  retail: Store,
+  'financial-services': Landmark,
+  telecom: Radio,
+  technology: Cpu,
+  energy: Zap,
+  'real-estate': Building2,
+  automotive: Car,
+  hospitality: Hotel,
+  'public-sector': Landmark,
+  education: GraduationCap,
+  media: Radio,
+  'food-beverage': Utensils,
+  cosmetics: Sparkles,
+  construction: Building2,
+  logistics: Truck,
+  manufacturing: Factory,
+};
+
+const KIND_LABELS: Record<string, string> = {
+  'industry-hub': 'Industry hub',
+  'country-study': 'Country study',
+  'firm-ranking': 'Firm ranking',
+  directory: 'Company directory',
+  'entity-hub': 'Company index',
+  'country-list': 'Country ranking',
+  'city-list': 'City ranking',
+  pathway: 'Research index',
+};
+
+function kindLabel(kind: string): string {
+  return KIND_LABELS[kind] ?? 'Published page';
+}
+
+function linkMatches(link: CatalogLink, query: string): boolean {
+  if (!query) return true;
+  const haystack = `${link.label} ${link.countryLabel} ${link.href} ${kindLabel(link.kind)}`.toLowerCase();
+  return haystack.includes(query);
+}
+
+function PageLinkGrid({ links, query }: { links: CatalogLink[]; query: string }) {
+  if (links.length === 0) return null;
+  return (
+    <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {links.map((link) => (
+        <li key={link.href} className="min-w-0" hidden={!linkMatches(link, query)}>
+          <DirectoryLinkTile to={link.href} title={link.label} sub={kindLabel(link.kind)} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function CountryAccordions({
+  groups,
+  query,
+  idPrefix,
+  openFirst = false,
+}: {
+  groups: CatalogCountryGroup[];
+  query: string;
+  idPrefix: string;
+  openFirst?: boolean;
+}) {
+  if (groups.length === 0) return null;
+  return (
+    <div className="mt-6 space-y-3">
+      {groups.map((group, index) => {
+        const anyMatch = group.links.some((link) => linkMatches(link, query));
+        const expanded = (query && anyMatch) || (openFirst && index === 0 && query === '');
+        return (
+          <details
+            key={`${idPrefix}-${group.label}`}
+            className="group scroll-mt-28"
+            hidden={query !== '' && !anyMatch}
+            {...(expanded ? { open: true } : {})}
+          >
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2">
+              <span className="min-w-0">
+                <h4 className="m-0 font-display text-lg font-semibold text-foreground">{group.label}</h4>
+                <span className="mt-0.5 block text-xs text-muted-foreground">
+                  {group.links.length} {group.links.length === 1 ? 'page' : 'pages'}
+                </span>
+              </span>
+              <span className="shrink-0 text-[#C9A84C] transition-transform group-open:rotate-180" aria-hidden>
+                ▾
+              </span>
+            </summary>
+            <div className="px-4 pb-4">
+              <PageLinkGrid links={group.links} query={query} />
+            </div>
+          </details>
+        );
+      })}
+    </div>
+  );
+}
+
+function IndustryIcon({ slug }: { slug: string }) {
+  const Icon = INDUSTRY_ICONS[slug] ?? Building2;
+  return (
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#EDE9E3] bg-[#F4F2ED] text-[#A8872E]">
+      <Icon className="h-5 w-5" aria-hidden />
+    </div>
+  );
+}
+
+function AnchorRow({ children }: { children: ReactNode }) {
+  return (
+    <div className="mb-8 max-w-full overflow-x-auto overscroll-x-contain">
+      <ul className="flex w-max gap-1 pb-1">{children}</ul>
+    </div>
+  );
+}
+
+function industryHasMatch(industry: IndustrySection, query: string): boolean {
+  if (!query) return true;
+  return (
+    industry.introLinks.some((link) => linkMatches(link, query)) ||
+    industry.countries.some((group) => group.links.some((link) => linkMatches(link, query)))
+  );
+}
+
+function openDetailsFromHash() {
+  if (typeof window === 'undefined') return;
+  const id = window.location.hash.replace(/^#/, '');
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  const details: HTMLDetailsElement[] = [];
+  if (target instanceof HTMLDetailsElement) details.push(target);
+  let parent = target.parentElement;
+  while (parent) {
+    if (parent instanceof HTMLDetailsElement) details.push(parent);
+    parent = parent.parentElement;
+  }
+  for (const node of details) node.open = true;
+}
 
 export default function BionixusIndustriesInsights() {
   const { data: routeData } = useInitialData();
   const ssrPosts =
-    (routeData.pageType === 'industries-insights-index' ||
-      routeData.pageType === 'bionixus-industries') &&
-    Array.isArray(routeData.industriesInsights)
+    routeData.pageType === 'industries-insights-index' && Array.isArray(routeData.industriesInsights)
       ? (routeData.industriesInsights as BlogPost[])
       : undefined;
   const { data: posts, isLoading, isError, error } = useIndustriesInsights(ssrPosts);
@@ -104,6 +247,8 @@ export default function BionixusIndustriesInsights() {
   const [filterState, setFilterState] = useState<IndustriesInsightsFilterState>(
     DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE,
   );
+  const [directoryQuery, setDirectoryQuery] = useState('');
+  const query = directoryQuery.trim().toLowerCase();
 
   const countryOptions = useMemo(() => buildFilterOptions(allPosts, 'country'), [allPosts]);
   const industryOptions = useMemo(() => buildIndustrySlugFilterOptions(allPosts), [allPosts]);
@@ -115,6 +260,24 @@ export default function BionixusIndustriesInsights() {
   const postCount = allPosts.length;
   const visibleCount = filteredPosts.length;
 
+  const articles = useMemo(
+    () =>
+      postCount > 0
+        ? allPosts.map((post) => ({ title: post.title, slug: post.slug }))
+        : INDUSTRIES_INSIGHT_EDITORIAL_LINKS.map((item) => ({
+            title: item.label,
+            slug: item.to.split('/').pop() ?? item.to,
+          })),
+    [allPosts, postCount],
+  );
+
+  const schemas = useMemo(() => buildIndustriesInsightsSchemas(articles), [articles]);
+  const pageCount = NON_PHARMA_INSIGHTS_CATALOG.links.length;
+  const directoryMatchCount = useMemo(() => {
+    if (!query) return pageCount;
+    return NON_PHARMA_INSIGHTS_CATALOG.links.filter((link) => linkMatches(link, query)).length;
+  }, [pageCount, query]);
+
   const handleFilterChange = useCallback((patch: Partial<IndustriesInsightsFilterState>) => {
     setFilterState((prev) => ({ ...prev, ...patch }));
   }, []);
@@ -123,297 +286,397 @@ export default function BionixusIndustriesInsights() {
     setFilterState(DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE);
   }, []);
 
-  const heroRef = useScrollReveal<HTMLElement>({ stagger: 80 });
-  const introRef = useScrollReveal<HTMLElement>({ stagger: 100 });
-
-  const heroStats =
-    !isLoading && postCount > 0
-      ? [
-          { value: String(postCount), label: 'Published articles' },
-          { value: 'B2B · B2C', label: 'Research segments' },
-          { value: '◈', label: 'Fieldwork-led insights' },
-        ]
-      : undefined;
-
-  const collectionSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    url: PAGE_CANONICAL,
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'BioNixus',
-      url: 'https://www.bionixus.com',
-    },
-    about: ['B2B market research', 'B2C market research', 'Industry insights'],
-    ...(postCount > 0
-      ? {
-          mainEntity: {
-            '@type': 'ItemList',
-            numberOfItems: postCount,
-            itemListElement: {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Industry market research articles',
-            },
-          },
-        }
-      : {}),
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Industries',
-        item: 'https://www.bionixus.com/bionixus-industries',
-      },
-      { '@type': 'ListItem', position: 3, name: 'Industry Insights', item: PAGE_CANONICAL },
-    ],
-  };
-
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: INSIGHTS_FAQ.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: { '@type': 'Answer', text: item.answer },
-    })),
-  };
+  useEffect(() => {
+    openDetailsFromHash();
+    window.addEventListener('hashchange', openDetailsFromHash);
+    return () => window.removeEventListener('hashchange', openDetailsFromHash);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{PAGE_TITLE}</title>
-        <meta name="description" content={PAGE_DESCRIPTION} />
-        <link rel="canonical" href={PAGE_CANONICAL} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="BioNixus" />
-        <meta property="og:title" content={PAGE_TITLE} />
-        <meta property="og:description" content={PAGE_DESCRIPTION} />
-        <meta property="og:url" content={PAGE_CANONICAL} />
-        <meta property="og:image" content="https://www.bionixus.com/og-image.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@BioNixus" />
-        <meta name="twitter:title" content={PAGE_TITLE} />
-        <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-        <meta name="twitter:image" content="https://www.bionixus.com/og-image.png" />
-        <script type="application/ld+json">{JSON.stringify(collectionSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
-      </Helmet>
+    <div className="directory-page min-h-screen">
+      <SEOHead
+        title={INDUSTRIES_INSIGHTS_TITLE}
+        description={INDUSTRIES_INSIGHTS_DESCRIPTION}
+        canonical={INDUSTRIES_INSIGHTS_CANONICAL}
+        ogImageAlt="BioNixus — global market research across industries"
+        exactMeta
+        jsonLd={schemas}
+      />
       <Navbar />
       <main>
-        <BlogIndexHero
-          homeHref={INDUSTRIES_HUB_PATH}
-          homeLabel="Back to Industries"
-          eyebrow="Industry Insights"
-          title="B2B & B2C Market Research Insights"
-          subtitle="Fieldwork-led articles for commercial and strategy teams — separate from our healthcare and pharmaceutical blog."
-          stats={heroStats}
-          browseLabel="Browse articles"
-          proposalLabel="Request a proposal"
-          proposalHref="/contact"
-          sectionRef={heroRef}
-        />
-        <PremiumComplianceRibbon />
-
-        <div className="border-b border-border/60 bg-[#FAF8F4]">
-          <div className="container-wide mx-auto max-w-5xl px-4 pt-4">
-            <BreadcrumbNav
-              items={[
-                { name: 'Home', href: '/' },
-                { name: 'Industries', href: INDUSTRIES_HUB_PATH },
-                { name: 'Industry Insights', href: INDUSTRIES_INSIGHTS_INDEX_PATH },
-              ]}
-            />
-          </div>
+        <div data-hero-lcp>
+          <DirectoryHero
+            breadcrumbs={[
+              { name: 'Home', href: '/' },
+              { name: 'Industries', href: INDUSTRIES_HUB_PATH },
+              { name: 'Industry Insights', href: INDUSTRIES_INSIGHTS_PATH },
+            ]}
+            kicker="Industry insights"
+            h1="Global market research across industries"
+            lead="Primary market research for commercial teams across FMCG, retail, finance, technology, energy and the wider B2B and B2C economy."
+            stats={HERO_STATS}
+            actions={
+              <>
+                <DirectoryGoldLink to="#request-proposal">Request a proposal</DirectoryGoldLink>
+                {QUALIFICATION_FORM_SCHEDULING_URL ? (
+                  <a
+                    href={QUALIFICATION_FORM_SCHEDULING_URL}
+                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#06101F]"
+                    onClick={() =>
+                      trackMeetingLinkClicked({
+                        formId: 'industries_insights_hub',
+                        sourceContext: 'Industry insights hub',
+                        targetUrl: QUALIFICATION_FORM_SCHEDULING_URL,
+                      })
+                    }
+                  >
+                    Book a call
+                  </a>
+                ) : null}
+                <Link
+                  to="/contact"
+                  className="inline-flex min-h-11 items-center text-sm font-semibold text-[#E8C56A] underline decoration-[#E8C56A]/40 underline-offset-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#06101F] rounded"
+                >
+                  Contact page
+                </Link>
+              </>
+            }
+          />
         </div>
 
-        <section className="section-padding border-b border-border/60 bg-[#FAF8F4] py-12" ref={introRef}>
-          <div className="container-wide mx-auto max-w-5xl">
-            <div className="mb-3 inline-flex items-center gap-2.5">
-              <span className="h-px w-8 bg-[#C9A84C]/50" aria-hidden />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C9A84C]">
-                Research silo
-              </span>
-            </div>
-            <h2 className="mb-6 font-display text-2xl font-semibold text-foreground md:text-3xl sr sr-up sr-line">
-              Insights for industry decisions
-            </h2>
-            <div className="grid gap-8 text-[15px] leading-relaxed text-muted-foreground md:grid-cols-2">
-              <p className="sr sr-left">
-                Filter by B2B or B2C segment, industry vertical, and country. Articles are built from primary
-                fieldwork — buyer, channel, and competitive intelligence — not syndicated desk-only summaries.
-              </p>
-              <p className="sr sr-right">
-                Pharmaceutical and healthcare research stays on our{' '}
-                <Link to="/blog" className="font-medium text-primary hover:underline">
-                  healthcare market research blog
-                </Link>
-                . Start from the{' '}
-                <Link to={INDUSTRIES_HUB_PATH} className="font-medium text-primary hover:underline">
-                  industries hub
-                </Link>{' '}
-                when you need segment entry points rather than articles.
-              </p>
-            </div>
+        <DirectoryJumpNav items={JUMP_ITEMS} />
+
+        <section className="border-b border-[#EDE9E3] bg-[#FFFEFB]" aria-label="Offices and physician network">
+          <div className="container-wide mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#A8872E]">
+              Offices and network
+            </p>
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {OFFICES.map((office) => (
+                <li key={office.place} className="rounded-2xl border border-[#EDE9E3] bg-[#F4F2ED] px-4 py-4">
+                  <p className="font-display text-lg font-semibold text-foreground">{office.place}</p>
+                  <p className="mt-1 text-sm leading-snug text-muted-foreground">{office.role}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              A physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. {LATAM_COVERAGE_SENTENCE}
+            </p>
           </div>
         </section>
 
-        <section className="section-padding border-b border-border/40 bg-background py-8" aria-label="Filter by segment">
-          <div className="container-wide mx-auto max-w-5xl">
-            <div className="flex flex-wrap gap-3" role="group" aria-label="Filter by industry segment">
-              {SEGMENT_PILLS.map(({ value, label }) => {
-                const active = filterState.segment === value;
-                return (
-                  <button
-                    key={value}
-                    type="button"
-                    onClick={() => handleFilterChange({ segment: value })}
-                    className={`cursor-pointer rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
-                      active
-                        ? 'bg-primary text-primary-foreground'
-                        : 'border border-border bg-card text-foreground hover:border-primary/40'
-                    }`}
-                    aria-pressed={active}
-                  >
-                    {label}
-                  </button>
-                );
-              })}
+        <DirectorySection
+          id="overview"
+          eyebrow="Global coverage"
+          title="Research for commercial decisions worldwide"
+          surface="ivory"
+        >
+          <div className="max-w-3xl space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+            <p>
+              This index links {pageCount} published non-pharma industry, country and city pages, plus the industry
+              articles. Start from the <Link to={INDUSTRIES_HUB_PATH} className="font-semibold text-foreground underline decoration-[#C9A84C]/55 underline-offset-4 hover:text-[#A8872E]">industries hub</Link> when
+              you need segment entry points, or the{' '}
+              <Link to="/blog" className="font-semibold text-foreground underline decoration-[#C9A84C]/55 underline-offset-4 hover:text-[#A8872E]">
+                healthcare market research blog
+              </Link>{' '}
+              when the brief is pharmaceutical.
+            </p>
+            <p>
+              BioNixus was founded in 2012 and has served 118 clients across 48 countries, with 127 studies so far in
+              2026. Fieldwork is designed around the commercial decision, with the same sampling and governance
+              standards used for regulated work.
+            </p>
+            <p>
+              <Link to="/contact" className="font-semibold text-foreground underline decoration-[#C9A84C]/55 underline-offset-4 hover:text-[#A8872E]">
+                Request a proposal
+              </Link>
+              {' · '}
+              <a href="mailto:admin@bionixus.com" className="font-semibold text-foreground underline decoration-[#C9A84C]/55 underline-offset-4 hover:text-[#A8872E]">
+                admin@bionixus.com
+              </a>
+            </p>
+          </div>
+        </DirectorySection>
+
+        <DirectorySection id="indexes" eyebrow="Start here" title="Research indexes" surface="cream">
+          <PageLinkGrid links={NON_PHARMA_INSIGHTS_CATALOG.pathways} query={query} />
+        </DirectorySection>
+
+        <DirectorySection
+          id="industries"
+          eyebrow="By industry"
+          title="Industries we publish"
+          surface="ivory"
+          body={
+            <div className="max-w-3xl space-y-4">
+              <p>
+                Each industry opens by country. Page titles stay in the page HTML, grouped so the list can be scanned
+                a country at a time.
+              </p>
+              <div className="max-w-xl">
+                <label htmlFor="industries-directory-search" className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  Search pages
+                </label>
+                <input
+                  id="industries-directory-search"
+                  type="search"
+                  value={directoryQuery}
+                  onChange={(event) => setDirectoryQuery(event.target.value)}
+                  placeholder="Industry, country, or page title"
+                  autoComplete="off"
+                  className="h-11 w-full rounded-xl border border-[#EDE9E3] bg-[#FFFEFB] px-4 text-sm text-foreground focus:border-[#C9A84C] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/30"
+                />
+              </div>
+              <p className="text-sm" aria-live="polite">
+                {query
+                  ? `${directoryMatchCount} of ${pageCount} pages match`
+                  : `${pageCount} published pages`}
+              </p>
             </div>
-            {industryOptions.length > 0 ? (
-              <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Quick filter by industry">
-                <button
-                  type="button"
-                  onClick={() => handleFilterChange({ industry: ALL_INDUSTRIES })}
-                  className={`cursor-pointer rounded-full px-4 py-1.5 text-xs font-semibold transition-colors ${
-                    filterState.industry === ALL_INDUSTRIES
-                      ? 'border border-primary/30 bg-primary/15 text-primary'
-                      : 'border border-border bg-card text-muted-foreground hover:border-primary/30'
-                  }`}
-                  aria-pressed={filterState.industry === ALL_INDUSTRIES}
+          }
+        >
+          <AnchorRow>
+            {NON_PHARMA_INSIGHTS_CATALOG.industries.map((industry) => (
+              <li key={industry.slug}>
+                <a href={`#industry-${industry.slug}`} className="directory-jump-link">
+                  {industry.name}
+                </a>
+              </li>
+            ))}
+          </AnchorRow>
+          <div className="space-y-3">
+            {NON_PHARMA_INSIGHTS_CATALOG.industries.map((industry) => {
+              const total =
+                industry.introLinks.length +
+                industry.countries.reduce((sum, group) => sum + group.links.length, 0);
+              const isFirst = industry.slug === NON_PHARMA_INSIGHTS_CATALOG.industries[0]?.slug;
+              const expanded = (query !== '' && industryHasMatch(industry, query)) || (isFirst && query === '');
+              return (
+                <details
+                  key={industry.slug}
+                  id={`industry-${industry.slug}`}
+                  className="group scroll-mt-28"
+                  hidden={query !== '' && !industryHasMatch(industry, query)}
+                  {...(expanded ? { open: true } : {})}
                 >
-                  All industries
-                </button>
-                {industryOptions.map((opt) => {
-                  const active = filterState.industry === opt.value;
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2">
+                    <span className="flex min-w-0 items-center gap-4">
+                      <IndustryIcon slug={industry.slug} />
+                      <span className="min-w-0">
+                        <h3 className="m-0 font-display text-2xl font-semibold text-foreground">{industry.name}</h3>
+                        <span className="mt-0.5 block text-sm text-muted-foreground">
+                          {total} published {total === 1 ? 'page' : 'pages'}
+                        </span>
+                      </span>
+                    </span>
+                    <span className="shrink-0 text-[#C9A84C] transition-transform group-open:rotate-180" aria-hidden>
+                      ▾
+                    </span>
+                  </summary>
+                  <div className="px-4 pb-5 sm:px-5">
+                    <PageLinkGrid links={industry.introLinks} query={query} />
+                    <CountryAccordions groups={industry.countries} query={query} idPrefix={industry.slug} openFirst={isFirst} />
+                  </div>
+                </details>
+              );
+            })}
+          </div>
+        </DirectorySection>
+
+        <DirectorySection
+          id="regions"
+          eyebrow="By region"
+          title="Regions with published pages"
+          surface="cream"
+        >
+          <AnchorRow>
+            {NON_PHARMA_INSIGHTS_CATALOG.regions.map((region) => (
+              <li key={region.id}>
+                <a href={`#region-${region.id}`} className="directory-jump-link">
+                  {region.title}
+                </a>
+              </li>
+            ))}
+          </AnchorRow>
+          <div className="space-y-8">
+            {NON_PHARMA_INSIGHTS_CATALOG.regions.map((region) => {
+              const anyMatch =
+                !query ||
+                region.countries.some((group) => group.links.some((link) => linkMatches(link, query)));
+              return (
+                <article
+                  key={region.id}
+                  id={`region-${region.id}`}
+                  className="scroll-mt-28 rounded-2xl border border-[#EDE9E3] bg-[#FFFEFB] p-5 sm:p-7"
+                  hidden={query !== '' && !anyMatch}
+                >
+                  <h3 className="font-display text-2xl font-semibold text-foreground">{region.title}</h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">{region.description}</p>
+                  <CountryAccordions groups={region.countries} query={query} idPrefix={`region-${region.id}`} />
+                </article>
+              );
+            })}
+          </div>
+        </DirectorySection>
+
+        <section id="articles" className="scroll-mt-28 border-t border-[#EDE9E3] bg-[#FFFEFB] pt-16 md:pt-20">
+          <div className="container-wide mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#A8872E]">Articles</p>
+            <h2 className="mb-3 max-w-3xl font-display text-2xl font-semibold text-foreground md:text-3xl">
+              Industry insight articles
+            </h2>
+            <p className="mb-2 max-w-3xl leading-relaxed text-muted-foreground">
+              Every non-pharma insight in the industries silo is listed here. A newly published article appears on
+              this page on the next render.
+            </p>
+          </div>
+
+          {postCount > 0 ? (
+            <div className="container-wide mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+              <div className="flex flex-wrap gap-3" role="group" aria-label="Filter by industry segment">
+                {SEGMENT_PILLS.map(({ value, label }) => {
+                  const active = filterState.segment === value;
                   return (
                     <button
-                      key={opt.value}
+                      key={value}
                       type="button"
-                      onClick={() => handleFilterChange({ industry: opt.value })}
-                      className={`cursor-pointer rounded-full px-4 py-1.5 text-xs font-semibold transition-colors ${
+                      onClick={() => handleFilterChange({ segment: value })}
+                      className={`min-h-11 cursor-pointer rounded-full px-5 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2 ${
                         active
-                          ? 'border border-primary/30 bg-primary/15 text-primary'
-                          : 'border border-border bg-card text-muted-foreground hover:border-primary/30'
+                          ? 'bg-[#06101F] text-[#FFFEFB]'
+                          : 'border border-[#EDE9E3] bg-[#FFFEFB] text-foreground hover:border-[#C9A84C]'
                       }`}
                       aria-pressed={active}
                     >
-                      {opt.label} ({opt.count})
+                      {label}
                     </button>
                   );
                 })}
               </div>
-            ) : null}
-          </div>
-        </section>
+            </div>
+          ) : null}
 
-        {isError ? (
-          <section className="section-padding py-8">
-            <div className="container-wide mx-auto max-w-xl rounded-2xl border border-destructive/20 bg-destructive/10 px-6 py-12 text-center">
+          {isError ? (
+            <div className="container-wide mx-auto max-w-6xl px-4 pb-8 sm:px-6 lg:px-8">
               <p className="font-semibold text-destructive">Unable to load industry insights</p>
               <p className="mt-2 text-sm text-muted-foreground">
                 {error instanceof Error ? error.message : String(error)}
               </p>
             </div>
-          </section>
-        ) : null}
+          ) : null}
 
-        {!isLoading && postCount > 0 ? (
-          <IndustriesInsightsFilters
-            state={filterState}
-            onChange={handleFilterChange}
-            onClear={handleClearFilters}
-            industryOptions={industryOptions}
-            countryOptions={countryOptions}
-            visibleCount={visibleCount}
-            totalCount={postCount}
-          />
-        ) : null}
+          {postCount > 0 ? (
+            <IndustriesInsightsFilters
+              state={filterState}
+              onChange={handleFilterChange}
+              onClear={handleClearFilters}
+              industryOptions={industryOptions}
+              countryOptions={countryOptions}
+              visibleCount={visibleCount}
+              totalCount={postCount}
+            />
+          ) : null}
 
-        {!isLoading && postCount === 0 ? (
-          <section className="section-padding py-16">
-            <div className="container-wide mx-auto max-w-3xl rounded-2xl border border-border bg-card px-6 py-16 text-center">
-              <h2 className="mb-3 font-display text-2xl font-semibold text-foreground">
-                Industry insights coming soon
-              </h2>
-              <p className="mb-6 leading-relaxed text-muted-foreground">
-                We are publishing B2B and B2C fieldwork-led articles tied to our country × industry coverage. Explore
-                the industries index or contact us for a scoped proposal.
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <Link to="/market-research-by-industry" className="text-primary font-medium hover:underline">
-                  Browse industries index
-                </Link>
-                <span className="text-muted-foreground" aria-hidden>
-                  ·
-                </span>
-                <Link to="/contact" className="text-primary font-medium hover:underline">
-                  Contact us
-                </Link>
-              </div>
+          {postCount === 0 ? (
+            <div className="container-wide mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {INDUSTRIES_INSIGHT_EDITORIAL_LINKS.map((item) => (
+                  <li key={item.to} className="min-w-0">
+                    <DirectoryLinkTile to={item.to} title={item.label} sub="Industry insight article" />
+                  </li>
+                ))}
+              </ul>
             </div>
-          </section>
-        ) : (
-          <BlogSection
-            posts={filteredPosts}
-            isLoading={isLoading && !ssrPosts?.length}
-            variant="index"
-            showHeader={false}
-            showViewAllLink={false}
-            disableFeatured={filtersActive || postCount < 6}
-            postBasePath={INDUSTRIES_INSIGHT_POST_PATH_PREFIX}
-          />
-        )}
+          ) : (
+            <BlogSection
+              posts={filteredPosts}
+              isLoading={isLoading && !ssrPosts?.length}
+              variant="index"
+              showHeader={false}
+              showViewAllLink={false}
+              disableFeatured={filtersActive || postCount < 6}
+              postBasePath={INDUSTRIES_INSIGHT_POST_PATH_PREFIX}
+            />
+          )}
 
-        {!isLoading && filtersActive && visibleCount === 0 && postCount > 0 ? (
-          <p className="pb-12 text-center text-muted-foreground">
-            No articles match your filters.{' '}
-            <button
-              type="button"
-              onClick={handleClearFilters}
-              className="cursor-pointer font-medium text-primary hover:underline"
-            >
-              Clear filters
-            </button>
-          </p>
-        ) : null}
-
-        <BlogRelatedPathways
-          heading="Related industry paths"
-          description="Hubs and indexes commonly paired with these B2B and B2C insights."
-          links={RELATED_PATHWAYS}
-          moreHeading="Explore further"
-          moreLinks={[
-            { path: '/blog', label: 'Healthcare market research blog' },
-            { path: '/market-research', label: 'Market research hub' },
-            { path: '/contact', label: 'Contact BioNixus' },
-          ]}
-        />
-
-        <section className="section-padding border-t border-border/60 bg-cream py-12">
-          <FAQSection title="Frequently asked questions" items={[...INSIGHTS_FAQ]} className="bg-transparent py-0" />
+          {!isLoading && filtersActive && visibleCount === 0 && postCount > 0 ? (
+            <p className="px-4 pb-12 text-center text-muted-foreground">
+              No articles match your filters.{' '}
+              <button
+                type="button"
+                onClick={handleClearFilters}
+                className="cursor-pointer font-medium text-[#A8872E] underline underline-offset-4 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C]"
+              >
+                Clear filters
+              </button>
+            </p>
+          ) : null}
         </section>
 
-        <CTASection variant="research-proposal" />
+        <section className="border-t border-[#EDE9E3] bg-[#F4F2ED]">
+          <FAQSection
+            premium
+            title="Frequently asked questions"
+            items={[...INDUSTRIES_INSIGHTS_FAQ]}
+            className="scroll-mt-28 bg-transparent"
+            sectionId="faq"
+          />
+        </section>
+
+        <section id="request-proposal" className="scroll-mt-28 border-t border-[#EDE9E3] bg-[#FFFEFB] py-16 md:py-20">
+          <div className="container-wide mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.8fr)] lg:px-8">
+            <div className="min-w-0 rounded-2xl border border-[#EDE9E3] bg-[#FFFEFB] p-5 shadow-[0_16px_50px_rgba(6,16,31,0.05)] sm:p-8">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#A8872E]">Proposal</p>
+              <h2 className="mb-3 font-display text-2xl font-semibold text-foreground md:text-3xl">
+                Request a proposal
+              </h2>
+              <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
+                Share the industry, country and the decision the study needs to support. A research lead replies
+                with a methodology outline.
+              </p>
+              <QualificationForm
+                formId="industries_insights_hub"
+                sourceContext="Industry insights hub"
+                defaultNeed="Primary market research"
+              />
+            </div>
+            <aside className="min-w-0 rounded-2xl border border-[#EDE9E3] bg-[#F4F2ED] p-5 sm:p-8">
+              <h3 className="font-display text-xl font-semibold text-foreground">Book a call</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Prefer a time on the calendar? Use the booking page, or call an office directly.
+              </p>
+              {QUALIFICATION_FORM_SCHEDULING_URL ? (
+                <a
+                  href={QUALIFICATION_FORM_SCHEDULING_URL}
+                  className="premium-gold-btn mt-5 w-full sm:w-auto"
+                  onClick={() =>
+                    trackMeetingLinkClicked({
+                      formId: 'industries_insights_hub',
+                      sourceContext: 'Industry insights hub',
+                      targetUrl: QUALIFICATION_FORM_SCHEDULING_URL,
+                    })
+                  }
+                >
+                  Book a call
+                </a>
+              ) : null}
+              <ul className="mt-6 space-y-2 text-sm">
+                {BIONIXUS_PHONE_LINES.map((line) => (
+                  <li key={line.tel}>
+                    <a className="font-medium text-foreground underline decoration-[#C9A84C]/50 underline-offset-4 hover:text-[#A8872E]" href={`tel:${line.tel}`}>
+                      {line.label}
+                    </a>
+                  </li>
+                ))}
+                <li>
+                  <a className="font-medium text-foreground underline decoration-[#C9A84C]/50 underline-offset-4 hover:text-[#A8872E]" href="mailto:admin@bionixus.com">
+                    admin@bionixus.com
+                  </a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

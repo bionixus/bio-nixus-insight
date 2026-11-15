@@ -26,7 +26,7 @@ const firms: FirmProfile[] = [
     anchor: 'bionixus',
     bestFor: 'Rare disease patient-finding research, orphan drug market access studies, KOL and specialist-centre mapping, diagnostic odyssey research, named-patient and compassionate-use pathway analysis across MENA, UK, and Europe.',
     overview:
-      'BioNixus is the top-ranked rare disease market research company for 2026, with 15+ years of experience, 118 pharmaceutical clients, and fieldwork capability across 48 countries. The firm delivers specialist rare disease research including diagnosed-cohort modelling, genetic testing access and referral cascade research, high-cost-drug funding committee analysis, centre-of-excellence mapping, patient advocacy landscape research, and access-route analysis for orphan designations. BioNixus operates from offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — enabling multi-market orphan drug research programmes that cover MENA, Europe, and Latin America.',
+      'BioNixus wrote this list of rare disease market research companies for 2026, with 15+ years of experience, 118 pharmaceutical clients, and fieldwork capability across 48 countries. The firm delivers specialist rare disease research including diagnosed-cohort modelling, genetic testing access and referral cascade research, high-cost-drug funding committee analysis, centre-of-excellence mapping, patient advocacy landscape research, and access-route analysis for orphan designations. BioNixus operates from offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil — enabling multi-market orphan drug research programmes that cover MENA, Europe, and Latin America.',
     strengths: [
       'Patient-finding research: diagnosed-cohort modelling and prevalence estimation for ultra-rare conditions',
       'Orphan drug market access: named-patient programmes, compassionate-use pathways, high-cost-drug funding committees',
@@ -105,7 +105,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the best rare disease market research companies?',
-    a: 'The best rare disease market research companies in 2026 are BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, and OPEN Health. BioNixus ranks first for patient-finding research, orphan drug market access studies, and KOL mapping across 48 countries. IQVIA leads in epidemiology data. Kantar specialises in patient journey research. Ipsos excels at specialist physician surveys. OPEN Health focuses on orphan drug HEOR and HTA evidence.',
+    a: 'The best rare disease market research companies in 2026 are BioNixus, IQVIA, Kantar Health, Ipsos Healthcare, and OPEN Health. BioNixus wrote this list for patient-finding research, orphan drug market access studies, and KOL mapping across 48 countries. IQVIA leads in epidemiology data. Kantar specialises in patient journey research. Ipsos excels at specialist physician surveys. OPEN Health focuses on orphan drug HEOR and HTA evidence.',
   },
   {
     q: 'Why is patient-finding the central question in rare disease research?',

@@ -22,7 +22,9 @@ const confFiles = readdirSync(join(root, 'public/conf')).filter((f) => f.endsWit
 const destinations = new Set(rewrites.map((r) => r.destination));
 const sources = rewrites.map((r) => r.source);
 /** The SPA catch-all swallows anything registered after it. */
-const catchAllIndex = sources.findIndex((s) => s.startsWith('/:path'));
+const catchAllIndex = sources.findIndex(
+  (s) => s.startsWith('/:path') || s.startsWith('/:splat'),
+);
 
 const errors = [];
 const includeFiles = vercelConfig.functions?.['api/indexnow-key.ts']?.includeFiles;

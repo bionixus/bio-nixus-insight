@@ -16,7 +16,7 @@ import {
   personAuthorJsonLd,
   withAlsaadanyPersonJsonLd,
 } from '@/data/editorialAuthors';
-import { GOOGLE_OFFICES } from '@/data/googleLocations';
+import { GOOGLE_OFFICES, officeRoleLabel, saoPauloFieldOfficeSentence } from '@/data/googleLocations';
 import { ORG_ID, ORG_LOGO, ORG_NAME, ORG_SAME_AS } from '@/lib/seo/organization';
 
 export const SAUDI_BIOSIMILAR_ENTRY_SLUG = 'biosimilar-market-entry-research-saudi-arabia';
@@ -48,10 +48,10 @@ export const SAUDI_BIOSIMILAR_ENTRY_HERO_IMAGE =
 export const SAUDI_BIOSIMILAR_ENTRY_HERO_IMAGE_ALT =
   'Navy and gold BioNixus artwork for the Saudi biosimilar market entry research guide: unlabelled bars stepping down like the SFDA biosimilar price caps';
 
-export const SAUDI_BIOSIMILAR_ENTRY_META_TITLE = 'Biosimilar Market Entry Research Saudi Arabia: SFDA 2026';
+export const SAUDI_BIOSIMILAR_ENTRY_META_TITLE = 'Biosimilar Market Entry Research Saudi Arabia';
 
 export const SAUDI_BIOSIMILAR_ENTRY_META_DESCRIPTION =
-  'Biosimilar market entry research Saudi Arabia: what the SFDA 2026 guideline changes, how price caps and NUPCO tenders work, and what to research first.';
+  'Biosimilar market entry research Saudi Arabia: SFDA 2026 rules, price caps, NUPCO tenders and what to study before a launch.';
 
 export const SAUDI_BIOSIMILAR_ENTRY_DISPLAY_TITLE = 'Biosimilar Entry in Saudi Arabia After the SFDA’s 2026 Guideline';
 
@@ -65,7 +65,7 @@ export const SAUDI_BIOSIMILAR_ENTRY_EXCERPT =
   'What the SFDA’s June 2026 biosimilar guideline changes, how SFDA price caps, NUPCO tenders and CHI insurance rules shape a launch, what published Saudi evidence shows, and the research to commission before the tender.';
 
 export const SAUDI_BIOSIMILAR_ENTRY_PUBLISHED_ISO = '2026-10-11T12:00:00.000Z';
-export const SAUDI_BIOSIMILAR_ENTRY_UPDATED_ISO = '2026-10-11T12:00:00.000Z';
+export const SAUDI_BIOSIMILAR_ENTRY_UPDATED_ISO = '2026-11-15T12:00:00.000Z';
 
 export const SAUDI_BIOSIMILAR_ENTRY_CATEGORY = 'Market Access';
 
@@ -330,7 +330,7 @@ const METHODS_TABLE_HTML = `<table>
 const NARRATIVE_HTML = `<p>On 10 June 2026 the Saudi Food and Drug Authority (SFDA) issued a General Guideline on Regulatory and Scientific Requirements for Development and Approval of Biosimilars, which took effect on 10 July 2026 (${cite('sfda-guideline', 'SFDA, 2026')}). It lets developers ask to skip comparative efficacy trials when quality and pharmacokinetic data are strong, and it states that a biosimilar approved to the SFDA’s standards “is considered interchangeable” with its reference product. For brand, access and commercial teams, that moves the hard questions from the dossier to the market: which hospitals will switch, how far the reference product’s price will fall, and what NUPCO and private insurers will pay for. This guide sets out what changed, how pricing and procurement work, what published Saudi evidence shows and which research answers each question. It sits alongside our <a href="/healthcare-market-research">healthcare market research hub</a> and our <a href="/biosimilar-market-entry-saudi-arabia">Saudi Arabia biosimilar market entry guide</a>.</p>
 
 <div class="value-box">
-<p><strong>Quick facts: biosimilar entry in Saudi Arabia, October 2026</strong></p>
+<p><strong>Quick facts: biosimilar entry in Saudi Arabia, November 2026</strong></p>
 <ul>
 <li><strong>10 July 2026:</strong> the SFDA’s biosimilar guideline, issued on 10 June 2026, took effect (${cite('sfda-guideline', 'SFDA')}).</li>
 <li><strong>15 and 10 batches:</strong> the minimum numbers of reference product and biosimilar batches in the comparative quality exercise, with case-by-case flexibility for orphan medicines (${cite('sfda-guideline', 'SFDA')}).</li>
@@ -407,7 +407,7 @@ ${PRICING_TABLE_HTML}
 <ul>
 <li><strong>Lines are written by molecule, not brand.</strong> The item list, dated 25 December 2025, specifies each line by molecule, strength and presentation, and includes trastuzumab, bevacizumab, rituximab, filgrastim and pegfilgrastim.</li>
 <li><strong>The lowest compliant offer wins.</strong> Awards go to the lowest financial offer that meets the specifications, for a product registered with the SFDA or past the technical evaluation stage of registration. Unregistered products are considered only when no registered offer exists, and then with conditions such as an SFDA-registered manufacturer or approval by Health Canada, the PMDA, the MHRA, the EMA, the TGA or the US FDA.</li>
-<li><strong>NUPCO can split, negotiate and auction.</strong> It may divide one line between suppliers, negotiate with the best bidder or others, and use reverse auctions or agreements based on value or cost. Bidders commit that their price is among the lowest offered in the Kingdom and must tell NUPCO about any lower price they offer elsewhere during the tender, which then applies.</li>
+<li><strong>NUPCO can split, negotiate and auction.</strong> It may divide one line between suppliers, negotiate with the bidder it selects or with others, and use reverse auctions or agreements based on value or cost. Bidders commit that their price is among the lowest offered in the Kingdom and must tell NUPCO about any lower price they offer elsewhere during the tender, which then applies.</li>
 <li><strong>The framework reopens.</strong> It is updated every six months for offers that earlier lacked SFDA or local content certificates and for products whose manufacture has been localised in Saudi Arabia, and yearly for other new products on lines NUPCO chooses to reopen. Awarded suppliers may update prices, but not above the agreed framework prices.</li>
 <li><strong>Local content counts.</strong> The booklet applies the Regulations on Preference for Local Content and asks manufacturers of pharmaceutical products on the mandatory list for a local content baseline certificate. Under those regulations, a national product not on the mandatory list is compared as if foreign bids were 10% more expensive (${cite('lc-regulation', 'Local Content Regulations, Article 10')}).</li>
 <li><strong>Market entry agreements apply.</strong> The booklet states that “pharmaceutical market entry agreements”, subject to special terms agreed with the stakeholders concerned, apply to its items.</li>
@@ -475,7 +475,7 @@ ${PRICING_TABLE_HTML}
 
 ${METHODS_TABLE_HTML}
 
-<p>Commissioned research complements syndicated data rather than replacing it; if you are weighing an independent partner against a data provider, see our <a href="/iqvia-alternative-saudi-arabia">IQVIA alternative in Saudi Arabia</a> page.</p>
+<p>Commissioned research answers which hospitals will switch and what a tender is likely to pay. A national size figure does not answer either question.</p>
 
 <h2 id="briefing-questions">What should you ask before commissioning biosimilar research in Saudi Arabia?</h2>
 
@@ -492,9 +492,9 @@ ${METHODS_TABLE_HTML}
 
 <h2 id="why-bionixus">Why choose BioNixus for biosimilar research in Saudi Arabia?</h2>
 
-<p>BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. It covers the Middle East and Africa from offices in Cairo, its largest in the region, and Dubai, alongside an office in London and US headquarters in Sheridan, Wyoming. It is fully operational in Latin America, covered from the US office with a network of local consultants, and is in the process of opening a São Paulo office by the end of 2026. BioNixus positions itself as the agile, region-specialist alternative to global syndicated providers. For biosimilars, it builds each study around one launch or defence decision and reports it in a form brand, medical and access teams can use. See our <a href="/healthcare-market-research/therapy/biosimilars">biosimilars market research</a> page, <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a> and our <a href="/market-research-saudi-arabia-pharmaceutical">pharmaceutical market research company in Saudi Arabia</a> page.</p>
+<p>${'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare teams, founded in 2012. It has served 118 clients in 48 countries and has run 127 studies in 2026. It recruits from a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA office. '}${saoPauloFieldOfficeSentence()} Al Khobar is the KSA partner office. Kuwait and Dubai are field offices. For biosimilars, it builds each study around one launch or defence decision and reports it in a form brand, medical and access teams can use. See our <a href="/healthcare-market-research/therapy/biosimilars">biosimilars market research</a> page and <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>.</p>
 
-<p>Related reading: <a href="/insights/leading-biologics-biosimilars-market-research-companies-2026">leading biologics and biosimilars market research companies (2026)</a>, <a href="/blog/hta-dossier-saudi-arabia-market-access">HTA dossiers for Saudi market access</a> and the first article in this series, <a href="/blog/who-does-obesity-market-research-saudi-arabia">who does obesity market research in Saudi Arabia</a>.</p>
+<p>Related reading: <a href="/blog/hta-dossier-saudi-arabia-market-access">HTA dossiers for Saudi market access</a> and <a href="/blog/who-does-obesity-market-research-saudi-arabia">who does obesity market research in Saudi Arabia</a>.</p>
 
 <p>To brief a Saudi biosimilar study, use the <a href="/contact">BioNixus contact form</a> or email <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>.</p>`;
 
@@ -581,12 +581,10 @@ export const SAUDI_BIOSIMILAR_ENTRY_READING_TIME = Math.ceil(
     READING_WORDS_PER_MINUTE,
 );
 
-/** Offices in the verified fact set; Al Khobar and Kuwait stay out of this page. */
-const ARTICLE_OFFICE_IDS = new Set(['us', 'uk', 'eg', 'ae']);
-
-const ARTICLE_SAME_AS = ORG_SAME_AS.filter(
-  (url) => !GOOGLE_OFFICES.some((office) => !ARTICLE_OFFICE_IDS.has(office.id) && office.mapsUrl === url),
-);
+export const SAUDI_BIOSIMILAR_ENTRY_ORG_DESCRIPTION =
+  'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare teams, founded in 2012. It has served 118 clients in 48 countries and has run 127 studies in 2026. It recruits from a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East. The USA (Sheridan, Wyoming) is the Americas office and global HQ. The UK (London) is the Europe office. Cairo is the AMEA office. ' +
+  saoPauloFieldOfficeSentence() +
+  ' Al Khobar is the KSA partner office. Kuwait and Dubai are field offices.';
 
 export const SAUDI_BIOSIMILAR_ENTRY_ORGANIZATION: Record<string, unknown> = {
   '@type': 'Organization',
@@ -595,13 +593,22 @@ export const SAUDI_BIOSIMILAR_ENTRY_ORGANIZATION: Record<string, unknown> = {
   url: 'https://www.bionixus.com',
   logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 512, height: 512 },
   foundingDate: '2012',
-  description:
-    'BioNixus is a primary market research and market access consultancy for pharmaceutical, medical device and healthcare companies, founded in 2012. It has served 118 clients in 48 countries, has run 127 studies so far in 2026 and works with a network of about 3,200 physicians. It has offices in London, Cairo and Dubai and US headquarters in Sheridan, Wyoming, covers Latin America from the US office with a network of local consultants, and is in the process of opening a São Paulo office by the end of 2026.',
-  address: GOOGLE_OFFICES.filter((office) => ARTICLE_OFFICE_IDS.has(office.id)).map((office) => ({
+  description: SAUDI_BIOSIMILAR_ENTRY_ORG_DESCRIPTION,
+  address: GOOGLE_OFFICES.map((office) => ({
     '@type': 'PostalAddress',
     ...office.address,
   })),
-  sameAs: ARTICLE_SAME_AS,
+  location: GOOGLE_OFFICES.map((office) => ({
+    '@type': 'Place',
+    '@id': office.schemaId,
+    name: office.name,
+    description: officeRoleLabel(office),
+    address: {
+      '@type': 'PostalAddress',
+      ...office.address,
+    },
+  })),
+  sameAs: ORG_SAME_AS,
   knowsAbout: [
     'Biosimilar market research',
     'Market access research',
@@ -679,7 +686,7 @@ export const SAUDI_BIOSIMILAR_ENTRY_HARDCODED_POST: BlogPost = {
   ctaSection: {
     title: 'Planning a biosimilar launch in Saudi Arabia?',
     description:
-      'Tell us the molecule and the decision you need to make. BioNixus scopes prescriber, pharmacist, hospital and payer research around it, from a network of about 3,200 physicians.',
+      'Tell us the molecule and the decision you need to make. BioNixus scopes prescriber, pharmacist, hospital and payer research around it, from a physician network of 82,000+ physicians globally and about 3,200 physicians in the Middle East.',
     buttonText: 'Talk to BioNixus',
     buttonUrl: 'https://www.bionixus.com/contact',
   },
@@ -687,9 +694,6 @@ export const SAUDI_BIOSIMILAR_ENTRY_HARDCODED_POST: BlogPost = {
     emitWebPage: true,
     organization: SAUDI_BIOSIMILAR_ENTRY_ORGANIZATION,
     author: AUTHOR.schema,
-    alternativeHeadline: SAUDI_BIOSIMILAR_ENTRY_DISPLAY_SUBTITLE,
-    timeRequired: `PT${SAUDI_BIOSIMILAR_ENTRY_READING_TIME}M`,
-    copyrightYear: 2026,
     about: [
       { '@type': 'DrugClass', name: 'Biosimilars' },
       { '@type': 'Country', name: 'Saudi Arabia', sameAs: 'https://www.wikidata.org/wiki/Q851' },
@@ -703,18 +707,6 @@ export const SAUDI_BIOSIMILAR_ENTRY_HARDCODED_POST: BlogPost = {
         publisher: SFDA_ENTITY,
       },
     ],
-    mentions: [
-      SFDA_ENTITY,
-      { '@type': 'Organization', name: 'National Unified Procurement Company', alternateName: 'NUPCO', url: 'https://www.nupco.com' },
-      { '@type': 'GovernmentOrganization', name: 'Council of Health Insurance', alternateName: 'CHI', url: 'https://www.chi.gov.sa' },
-      { '@type': 'GovernmentOrganization', name: 'Local Content and Government Procurement Authority', alternateName: 'LCGPA' },
-      { '@type': 'Organization', name: 'Lifera', alternateName: 'Pharmaceutical Investment Company', url: 'https://lifera.com' },
-    ],
-    citation: REFERENCES.map((ref) => ({
-      '@type': ref.scholarly ? 'ScholarlyArticle' : 'CreativeWork',
-      name: ref.label,
-      url: ref.url,
-    })),
   },
   body: SAUDI_BIOSIMILAR_ENTRY_BODY_HTML,
 };

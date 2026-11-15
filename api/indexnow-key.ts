@@ -1,20 +1,23 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { canonicalRedirectTarget, isSsrNotFoundPage } from '../seo-noise-query.mjs';
+import { canonicalRedirectTarget, isSsrNotFoundPage, publicPathFromRewrite, stripNotFoundDiscoveryTags } from '../seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from '../blog-legacy-redirects.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from '../lib/og-card-svg.mjs';
 import {
   buildLcpPreloadTag,
   getClientAssetHints,
   SSR_HTML_CACHE_CONTROL,
-  SSR_HTML_CDN_CACHE_CONTROL,
-  SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL,
+  htmlCdnCacheControl,
 } from '../lib/ssr-client-asset-hints.mjs';
 import { resolveLegacyCountryIndustryMarketResearchRedirect } from '../lib/country-industry-redirects.mjs';
 import { resolveGlobalWebsitesRedirect } from '../lib/global-websites-redirects.mjs';
 import { getCtrSeo, isCtrSeoPath } from '../lib/ctr-seo-overrides.mjs';
 import { LEGACY_REDIRECTS, lookupRedirect } from '../lib/legacy-redirects.mjs';
 import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-redirects.mjs';
+import { stripDefaultOrganizationJsonLd } from '../lib/strip-industries-insights-org.mjs';
+import { dedupeBlogOpenGraphTags } from '../lib/dedupe-blog-og-tags.mjs';
+import { ensureRobotsMeta } from '../lib/robots-meta.mjs';
+import { fitBrandedSeoTitle, titleHasBrandSuffix } from '../src/server/seo-meta.js';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -207,7 +210,7 @@ function buildFallbackTitle(pathname: string): string {
   }
 
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar Entry Saudi Arabia (2026) | BioNixus';
+    return 'Biosimilar Market Entry Research Saudi Arabia | BioNixus';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -237,29 +240,33 @@ function decodeTitleEntities(s: string): string {
     .replace(/&#39;|&apos;/g, "'");
 }
 
+function truncateAtWordBoundary(text: string, max: number): string {
+  const slice = text.slice(0, Math.max(0, max - 1));
+  const lastSpace = slice.lastIndexOf(' ');
+  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice;
+  const trimmed = cut.trim().replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '');
+  return `${trimmed}…`;
+}
+
 function normalizeTitleLength(title: string, max = 60, pathname?: string): string {
   const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
   // CTR-engineered titles must ship exact (often >60 chars); do not clamp.
   if (pathname && isCtrSeoPath(pathname)) return clean;
   if (/[\u0590-\u08FF]/.test(clean)) return clean;
+  if (titleHasBrandSuffix(clean)) return fitBrandedSeoTitle(clean, max);
+
   if (clean.length <= max) return clean;
 
   for (const suffix of KNOWN_TITLE_SUFFIXES) {
     if (!clean.endsWith(suffix)) continue;
     const prefix = clean.slice(0, clean.length - suffix.length).trim();
     const prefixMax = Math.max(12, max - suffix.length - 1);
-    const truncated = prefix
-      .slice(0, prefixMax)
-      .trim()
-      .replace(/[|,;:\-–—\s]+$/, '');
-    return `${truncated} ${suffix}`;
+    if (prefix.length <= prefixMax) return `${prefix} ${suffix}`;
+    return `${truncateAtWordBoundary(prefix, prefixMax)} ${suffix}`;
   }
 
-  return clean
-    .slice(0, Math.max(0, max - 1))
-    .trim()
-    .replace(/[|,;:\-–—\s]+$/, '');
+  return truncateAtWordBoundary(clean, max);
 }
 
 function buildFallbackDescription(pathname: string): string {
@@ -371,7 +378,7 @@ function buildFallbackDescription(pathname: string): string {
     return 'Oncology KOL mapping in Saudi Arabia: physician networks, influence scoring, utilization context, and GCC engagement—BioNixus.';
   }
   if (path === '/biosimilar-market-entry-saudi-arabia') {
-    return 'Biosimilar entry in Saudi Arabia 2026: SFDA pathways, NUPCO dynamics, utilization research, and physician adoption—BioNixus.';
+    return 'BioNixus runs biosimilar market entry research in Saudi Arabia from the Al Khobar partner office for KSA: SFDA, NUPCO and physician switching studies.';
   }
 
   const segment = path.split('/').filter(Boolean).pop() || 'home';
@@ -595,15 +602,21 @@ function injectHtml(
     );
   // Do not inject nodes into #root after renderToString. A share <aside> that
   // is not in the React tree makes hydrateRoot throw and client-render the page.
-  return ensureCtrOgTags(
-    ensureCanonicalTag(
-      ensureImageTitleAttributes(
-        ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+  return ensureRobotsMeta(dedupeBlogOpenGraphTags(
+    stripDefaultOrganizationJsonLd(
+      ensureCtrOgTags(
+        ensureCanonicalTag(
+          ensureImageTitleAttributes(
+            ensureMetaDescriptionTag(ensureTitleTag(applyHtmlLang(page, pathname), pathname), pathname),
+          ),
+          pathname,
+        ),
+        pathname,
       ),
       pathname,
     ),
     pathname,
-  );
+  ));
 }
 
 function getParamFromUrl(url: string | undefined, key: string): string | undefined {
@@ -646,25 +659,9 @@ async function handleSsrRequest(
     : '';
   const fallbackUrl = req.url || '/';
 
-  /** Merge rewrite path with passthrough public query (trk/utm). Skip Vercel SSR internals. */
-  const buildPublicPathAndQuery = (pathWithOptionalQuery: string): string => {
-    const pathOnly = (pathWithOptionalQuery.split('?')[0] || '/').split('#')[0];
-    const params = new URLSearchParams(
-      pathWithOptionalQuery.includes('?')
-        ? pathWithOptionalQuery.slice(pathWithOptionalQuery.indexOf('?') + 1).split('#')[0]
-        : '',
-    );
-    const q = req.query ?? {};
-    for (const [key, raw] of Object.entries(q)) {
-      const lower = key.toLowerCase();
-      // `__ssr` + `url` are Vercel rewrite internals — never treat as public query.
-      if (lower === 'url' || lower === '__ssr') continue;
-      const val = Array.isArray(raw) ? raw[0] : raw;
-      if (typeof val === 'string') params.set(key, val);
-    }
-    const qs = params.toString();
-    return qs ? `${pathOnly}?${qs}` : pathOnly;
-  };
+  /** Merge the rewrite path with the browser query. Drop the capture leak (`path`). */
+  const buildPublicPathAndQuery = (pathWithOptionalQuery: string): string =>
+    publicPathFromRewrite(pathWithOptionalQuery, req.query ?? {});
 
   let url: string;
   if (normalizedRewrittenPath) {
@@ -751,14 +748,15 @@ async function handleSsrRequest(
     helmetData?.script?.toString() || '',
   ].join('\n');
   const notFound = isSsrNotFoundPage(headTags, appHtml);
-  const page = injectHtml(template, pathname, appHtml, helmetData, initialData);
+  const injected = injectHtml(template, pathname, appHtml, helmetData, initialData);
+  const page = notFound ? stripNotFoundDiscoveryTags(injected) : injected;
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', SSR_HTML_CACHE_CONTROL);
-  const cdnCache = notFound ? SSR_HTML_NOT_FOUND_CDN_CACHE_CONTROL : SSR_HTML_CDN_CACHE_CONTROL;
+  const cdnCache = htmlCdnCacheControl(pathname, notFound);
   res.setHeader('CDN-Cache-Control', cdnCache);
   res.setHeader('Vercel-CDN-Cache-Control', cdnCache);
-  if (notFound) res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  if (notFound) res.setHeader('X-Robots-Tag', 'noindex, nofollow, max-image-preview:large');
   res.status(notFound ? 404 : 200).send(page);
 }
 

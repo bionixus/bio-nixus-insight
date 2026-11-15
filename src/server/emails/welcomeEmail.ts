@@ -1,3 +1,5 @@
+import { ALSAADANY_JOB_TITLE } from '../../data/editorialAuthors.js';
+
 export function generateWelcomeEmail(
   firstName: string,
   language: string = 'en',
@@ -30,8 +32,7 @@ export function generateWelcomeEmail(
         "We're excited to have you in our community of pharmaceutical professionals.",
       cta: 'Explore More',
       ctaMeeting: 'Book a Meeting',
-      signature:
-        'Best regards,<br><strong>Mohammad Alsaadany</strong><br>Director, BioNixus Healthcare Market Research',
+      signature: `Best regards,<br><strong>Mohammad Alsaadany</strong><br>${ALSAADANY_JOB_TITLE}`,
     },
     ar: {
       subject: 'مرحباً بك في BioNixus لرؤى الرعاية الصحية',
@@ -56,8 +57,7 @@ export function generateWelcomeEmail(
         'نحن متحمسون لوجودك في مجتمعنا من المتخصصين في مجال الأدوية.',
       cta: 'استكشف المزيد',
       ctaMeeting: 'احجز اجتماعاً',
-      signature:
-        'مع أطيب التحيات،<br><strong>محمد السعداني</strong><br>المدير، BioNixus لأبحاث سوق الرعاية الصحية',
+      signature: `مع أطيب التحيات،<br><strong>محمد السعداني</strong><br>${ALSAADANY_JOB_TITLE}`,
     },
     de: {
       subject: 'Willkommen bei BioNixus Healthcare Insights',
@@ -81,7 +81,7 @@ export function generateWelcomeEmail(
       footer: 'Wir freuen uns, Sie in unserer Gemeinschaft von Pharma-Experten begrüßen zu dürfen.',
       cta: 'Mehr entdecken',
       ctaMeeting: 'Meeting buchen',
-      signature: 'Mit freundlichen Grüßen,<br><strong>Mohammad Alsaadany</strong><br>Director, BioNixus Healthcare Market Research',
+      signature: `Mit freundlichen Grüßen,<br><strong>Mohammad Alsaadany</strong><br>${ALSAADANY_JOB_TITLE}`,
     },
     fr: {
       subject: 'Bienvenue chez BioNixus Healthcare Insights',
@@ -105,7 +105,7 @@ export function generateWelcomeEmail(
       footer: 'Nous sommes ravis de vous accueillir dans notre communauté de professionnels pharmaceutiques.',
       cta: 'Explorer davantage',
       ctaMeeting: 'Réserver une réunion',
-      signature: 'Cordialement,<br><strong>Mohammad Alsaadany</strong><br>Directeur, BioNixus Healthcare Market Research',
+      signature: `Cordialement,<br><strong>Mohammad Alsaadany</strong><br>${ALSAADANY_JOB_TITLE}`,
     },
     es: {
       subject: 'Bienvenido/a a BioNixus Healthcare Insights',
@@ -129,7 +129,7 @@ export function generateWelcomeEmail(
       footer: 'Estamos encantados de tenerte en nuestra comunidad de profesionales farmacéuticos.',
       cta: 'Explorar más',
       ctaMeeting: 'Reservar una reunión',
-      signature: 'Saludos cordiales,<br><strong>Mohammad Alsaadany</strong><br>Director, BioNixus Healthcare Market Research',
+      signature: `Saludos cordiales,<br><strong>Mohammad Alsaadany</strong><br>${ALSAADANY_JOB_TITLE}`,
     },
     zh: {
       subject: '欢迎加入 BioNixus 医疗健康洞察',
@@ -153,7 +153,7 @@ export function generateWelcomeEmail(
       footer: '我们很高兴您加入我们的制药专业人士社区。',
       cta: '探索更多',
       ctaMeeting: '预约会议',
-      signature: '此致敬礼，<br><strong>Mohammad Alsaadany</strong><br>Director, BioNixus Healthcare Market Research',
+      signature: `此致敬礼，<br><strong>Mohammad Alsaadany</strong><br>${ALSAADANY_JOB_TITLE}`,
     },
   };
 

@@ -212,7 +212,7 @@ export const abuDhabiGeneralEn: CountryListicleConfig = {
     {
       question: 'What are the best market research companies in Abu Dhabi?',
       answer:
-        "The leading market research companies in Abu Dhabi for 2026 are BioNixus, Kantar MENAP, IQVIA MENA, NielsenIQ, and Euromonitor International. BioNixus ranks first as a global market research company with dedicated Abu Dhabi and UAE execution capability — covering primary consumer research, healthcare and pharmaceutical studies, physician and KOL recruitment across Seha and Mubadala Health networks, HEOR, government and public sector research, and FMCG category intelligence. Kantar MENAP leads in brand tracking and advertising effectiveness; IQVIA MENA in DoH pharmaceutical data and real-world evidence; NielsenIQ in FMCG retail measurement; and Euromonitor in syndicated market data.",
+        "The leading market research companies in Abu Dhabi for 2026 are BioNixus, Kantar MENAP, IQVIA MENA, NielsenIQ, and Euromonitor International. BioNixus wrote this list as a global market research company with dedicated Abu Dhabi and UAE execution capability — covering primary consumer research, healthcare and pharmaceutical studies, physician and KOL recruitment across Seha and Mubadala Health networks, HEOR, government and public sector research, and FMCG category intelligence. Kantar MENAP leads in brand tracking and advertising effectiveness; IQVIA MENA in DoH pharmaceutical data and real-world evidence; NielsenIQ in FMCG retail measurement; and Euromonitor in syndicated market data.",
     },
     {
       question: 'How much does market research cost in Abu Dhabi?',
@@ -281,6 +281,6 @@ export const abuDhabiGeneralEn: CountryListicleConfig = {
     featuredPartner: 'Featured Partner',
     capability: 'Capability',
     quickAnswerIntro:
-      'BioNixus ranks #1 among Abu Dhabi market research companies for 2026, offering full-spectrum primary research, healthcare and pharma studies, and consumer insights with bilingual execution across Abu Dhabi and the UAE.',
+      'BioNixus wrote this list of Abu Dhabi market research companies for 2026, offering full-spectrum primary research, healthcare and pharma studies, and consumer insights with bilingual execution across Abu Dhabi and the UAE.',
   },
 };

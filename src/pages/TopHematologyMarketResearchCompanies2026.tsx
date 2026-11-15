@@ -6,7 +6,7 @@ import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { RelatedPages } from '@/components/healthcare-research/RelatedPages';
-import { STATS } from '@/lib/companyStats';
+import { STATS, STATS_PROJECTS_PHRASE } from '@/lib/companyStats';
 import { BIONIXUS_PHONE_UK, BIONIXUS_PHONE_UK_DISPLAY } from '@/components/report-conversion/constants';
 import { OncologyPremiumStyles } from '@/pages/oncology-listicle/OncologyPremiumStyles';
 import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
@@ -135,7 +135,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top hematology market research companies in 2026?',
-    a: 'Ranked by fit for treatment-pattern and brand-tracker work — not by headcount — the 2026 shortlist is BioNixus (custom anonymous PRFs across malignant and benign hematology, incident and prevalent case quotas, brand trackers as share of treated patients), IQVIA (unit audits plus the syndicated Oncology Dynamics patient panel), Oracle Life Sciences (CancerMPact epidemiology and treatment architecture), Adelphi Real World (MDS and CLL/SLL Disease Specific Programmes), and OPEN Health (hematology HEOR). BioNixus ranks first when the decision needs the patient behind the vial in your launch markets.',
+    a: 'Ranked by fit for treatment-pattern and brand-tracker work — not by headcount — the 2026 shortlist is BioNixus (custom anonymous PRFs across malignant and benign hematology, incident and prevalent case quotas, brand trackers as share of treated patients), IQVIA (unit audits plus the syndicated Oncology Dynamics patient panel), Oracle Life Sciences (CancerMPact epidemiology and treatment architecture), Adelphi Real World (MDS and CLL/SLL Disease Specific Programmes), and OPEN Health (hematology HEOR). BioNixus wrote this list when the decision needs the patient behind the vial in your launch markets.',
   },
   {
     q: 'How is BioNixus different from IQVIA in hematology?',
@@ -185,7 +185,7 @@ const PAGE_TITLE = 'Top Hematology Market Research Companies 2026 | BioNixus';
 const PAGE_DESCRIPTION =
   'Top hematology market research companies 2026: BioNixus vs IQVIA, Oracle, Adelphi. Anonymous PRFs, line-of-therapy brand trackers, malignant + benign.';
 const DATE_PUBLISHED = '2026-09-04';
-const DATE_MODIFIED = '2026-09-04';
+const DATE_MODIFIED = '2026-11-05';
 
 export default function TopHematologyMarketResearchCompanies2026() {
   const breadcrumbSchema = {
@@ -403,12 +403,11 @@ export default function TopHematologyMarketResearchCompanies2026() {
             </div>
             <div className="cover-foot">
               <div>
-                <strong>Global HQ</strong> Sheridan, Wyoming · USA · London · Cairo · Al Khobar · Dubai ·{' '}
+                Americas office and global HQ: Sheridan, Wyoming, USA · Europe office: London, UK · AMEA office: Cairo · KSA partner office: Al Khobar · UAE field office: Dubai ·{' '}
                 <a href="mailto:admin@bionixus.com">admin@bionixus.com</a>
               </div>
               <div>
-                {STATS.clients} clients · {STATS.countries} countries · {STATS.projectsAnnual} projects
-                annually · {STATS.projects2025} in 2025
+                {STATS.clients} clients · {STATS.countries} countries · {STATS_PROJECTS_PHRASE}
               </div>
             </div>
           </div>
@@ -880,7 +879,7 @@ export default function TopHematologyMarketResearchCompanies2026() {
               <div className="closing-contact">
                 <div>
                   <div className="label">Firm</div>
-                  <div className="value">BioNixus · USA Global HQ</div>
+                  <div className="value">BioNixus · Americas office and global HQ</div>
                 </div>
                 <div>
                   <div className="label">Email</div>

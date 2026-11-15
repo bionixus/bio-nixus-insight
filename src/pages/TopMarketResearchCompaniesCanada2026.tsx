@@ -120,7 +120,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Canada in 2026?',
-    a: 'Leading market research companies in Canada in 2026 include BioNixus, IQVIA Canada, Ipsos Canada, Léger, Environics Research, and The Logit Group. BioNixus ranks first for pharmaceutical and healthcare research, with CADTH-aligned primary research, verified HCP recruitment at Canadian academic medical centres, and deep provincial payer intelligence across Ontario ODB, Quebec RAMQ, and BC PharmaCare.',
+    a: 'Leading market research companies in Canada in 2026 include BioNixus, IQVIA Canada, Ipsos Canada, Léger, Environics Research, and The Logit Group. BioNixus wrote this list for pharmaceutical and healthcare research, with CADTH-aligned primary research, verified HCP recruitment at Canadian academic medical centres, and deep provincial payer intelligence across Ontario ODB, Quebec RAMQ, and BC PharmaCare.',
   },
   {
     q: 'What is pharmaceutical market research in Canada?',
@@ -207,9 +207,9 @@ export default function TopMarketResearchCompaniesCanada2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in Canada 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in Canada 2026 | BioNixus',
     description:
-      'Top market research companies in Canada 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CADTH-aligned HCP surveys, KOL mapping, and provincial payer research.',
+      'Top market research companies in Canada 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. CADTH-aligned HCP surveys, KOL mapping, and provincial payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -246,10 +246,10 @@ export default function TopMarketResearchCompaniesCanada2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in Canada 2026 | BioNixus Ranked #1</title>
+        <title>Top Market Research Companies in Canada 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Canada 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CADTH-aligned HCP surveys, KOL mapping, and provincial payer research."
+          content="Top market research companies in Canada 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. CADTH-aligned HCP surveys, KOL mapping, and provincial payer research."
         />
         <meta name="geo.region" content="CA" />
         <meta name="geo.placename" content="Canada" />
@@ -263,7 +263,7 @@ export default function TopMarketResearchCompaniesCanada2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Canada 2026 | BioNixus"
-        description="Top market research companies in Canada 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CADTH-aligned HCP surveys, KOL mapping, and."
+        description="Top market research companies in Canada 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. CADTH-aligned HCP surveys, KOL mapping, and."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

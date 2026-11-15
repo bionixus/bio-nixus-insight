@@ -9,7 +9,7 @@
  *
  * Facts policy: regulator names and processes only; the only figures are the published pricing band
  * (/pricing: $10,000–$60,000) and the footprint already stated sitewide (48 countries, 120+ projects a
- * year, 127 in 2025). No invented statistics or client names.
+ * year, 120 in 2025; 127 studies year-to-date in 2026). No invented statistics or client names.
  */
 import type { QUALIFICATION_FORM_NEEDS } from '@/data/qualificationFormOptions';
 
@@ -49,7 +49,7 @@ export const SERVICE_DEEP_CONTENT_MODIFIED_AT = '2026-10-04';
 export const SERVICE_DEEP_CONTENT_PUBLISHED_AT = '2026-02-14';
 
 const FOOTPRINT =
-  'BioNixus runs 120+ primary research projects a year (127 in 2025) across 48 countries, with in-house teams in the GCC, Egypt and the UK and vetted fieldwork partners in Europe, the Americas and Asia.';
+  'BioNixus runs 120+ primary research projects a year (120 in 2025; 127 studies year-to-date in 2026) across 48 countries, with in-house teams in the GCC, Egypt and the UK and vetted fieldwork partners in Europe, the Americas and Asia.';
 
 const PRICING_PARA =
   'Published pricing: most BioNixus primary research projects fall between $10,000 and $60,000 depending on sample, countries and depth. Qualitative programmes with 20–40 interviews sit toward the lower half of the band; multi-country quantitative studies and mixed-method programmes toward the upper half. A scoping call fixes the design and a costed proposal follows within 48 hours.';
