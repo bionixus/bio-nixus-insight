@@ -323,7 +323,7 @@ const marketReportLinks = [
   { to: '/market-reports/country/sweden', label: 'Sweden Healthcare Reports' },
   ...DEVELOPED_MARKET_MEDTECH_LISTICLE_LINKS,
   ...INDUSTRIES_INSIGHT_EDITORIAL_LINKS,
-  { to: SKYRIZI_CANONICAL_PATH, label: 'Skyrizi July rankings: omnichannel lessons' },
+  { to: SKYRIZI_CANONICAL_PATH, label: 'Skyrizi July TV spend: omnichannel lessons' },
 ];
 
 /** Canonical Arabic posts under /ar/blog/ (also listed in public/sitemap.xml). */

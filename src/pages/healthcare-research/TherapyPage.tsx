@@ -732,12 +732,12 @@ export default function TherapyPage() {
                   healthcare market research hub
                 </Link>{' '}
                 for regional coverage, then use this guide to align your immunology research blueprint. For a current
-                commercial read on IL-23 competition and omnichannel ranking, see{' '}
+                commercial read on IL-23 competition and omnichannel engagement, see{' '}
                 <Link
                   to="/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement"
                   className="text-primary underline"
                 >
-                  Skyrizi’s July ranking and what it means for omnichannel engagement
+                  What Skyrizi’s July TV spend means for omnichannel engagement
                 </Link>
                 .
               </p>

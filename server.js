@@ -120,9 +120,9 @@ const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
   'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة';
 
 const SKYRIZI_ROOT_SLUG = 'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement';
-const SKYRIZI_ROOT_TITLE = 'Skyrizi Tops July Pharma Rankings: Omnichannel Lessons | BioNixus';
+const SKYRIZI_ROOT_TITLE = 'Skyrizi July TV Spend: Omnichannel | BioNixus';
 const SKYRIZI_ROOT_DESCRIPTION =
-  'Skyrizi led July pharma TV ad spend and brand-impression rankings. What AbbVie immunology leadership means for omnichannel engagement, HCP digital, and promotional ROI.';
+  'Skyrizi July TV ad spend and impression share, and what that means for omnichannel engagement, HCP digital and promotional ROI.';
 
 const GENERIC_DEFAULT_TITLES = new Set([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
