@@ -119,6 +119,8 @@ function buildPostsQuery(silo: ContentSilo): string {
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
+  region,
+  "regionTitle": region->title,
   "coverImage": mainImage.asset->url,
   ${SILO_FIELDS}
 }[0...$limit]`;
@@ -144,6 +146,8 @@ const LATEST_INSIGHTS_QUERY = `*[
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
+  region,
+  "regionTitle": region->title,
   "coverImage": mainImage.asset->url,
   "authorName": author->name,
   ${SILO_FIELDS}
@@ -168,6 +172,8 @@ const INDUSTRIES_INSIGHTS_QUERY = `*[
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
+  region,
+  "regionTitle": region->title,
   "coverImage": mainImage.asset->url,
   "authorName": author->name,
   ${SILO_FIELDS}
@@ -190,6 +196,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
+  region,
+  "regionTitle": region->title,
   "coverImage": mainImage.asset->url,
   "coverImageAlt": mainImage.alt,
   "coverImageWidth": mainImage.asset->metadata.dimensions.width,
@@ -253,6 +261,10 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     typeof p.country === 'string'
       ? p.country
       : (p as RawSanityPost & { countryTitle?: string }).countryTitle ?? '';
+  const regionStr =
+    typeof p.region === 'string'
+      ? p.region
+      : (p as RawSanityPost & { regionTitle?: string }).regionTitle ?? '';
   const authorFromQuery =
     typeof (p as RawSanityPost & { authorName?: string }).authorName === 'string'
       ? (p as RawSanityPost & { authorName: string }).authorName.trim()
@@ -267,6 +279,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     date: formatDate(p.date),
     category: categoryStr,
     country: countryStr,
+    ...(regionStr.trim() ? { region: regionStr.trim() } : {}),
     coverImage: p.coverImage ?? undefined,
     coverImageAlt: typeof p.coverImageAlt === 'string' && p.coverImageAlt.trim() ? p.coverImageAlt.trim() : undefined,
     publishedAtIso: p.publishedAtIso,
@@ -600,6 +613,8 @@ interface RawSanityPost {
   categories?: string[];
   country?: string;
   countryTitle?: string;
+  region?: string;
+  regionTitle?: string;
   coverImage?: string;
   coverImageAlt?: string;
   coverImageWidth?: number;
