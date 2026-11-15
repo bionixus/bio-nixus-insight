@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getLocalizedPathForLanguage } from '@/lib/seo';
+import { useLanguage } from '@/contexts/LanguageContext';
 import type { Language } from '@/lib/i18n';
 import type { UiChromeStrings } from '@/lib/uiChromeStrings';
 
@@ -18,12 +19,7 @@ function displayPath(to: string): string {
 function UrlCard({ to, label, featured = false }: ExploreLink) {
   return (
     <li>
-      <Link
-        to={to}
-        className={`group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-gold-warm/50 hover:bg-white/[0.06] ${
-          featured ? 'min-h-[8.5rem] sm:p-6' : ''
-        }`}
-      >
+      <Link to={to} className="premium-card group flex h-full cursor-pointer flex-col p-5">
         <span className="font-mono text-[11px] leading-relaxed tracking-wide text-gold-warm/80 break-all">
           {displayPath(to)}
         </span>
@@ -91,6 +87,18 @@ export function HomeExploreResearchSection({
     { to: '/faq', label: explore.faq },
   ];
 
+  const { t } = useLanguage();
+  const linksLabel = (count: number) => t.homePage.pathways.moreLinksTemplate.replace('{N}', String(count));
+
+  // Compact, like "Where marketing teams usually start": the three spotlight destinations stay
+  // open; each remaining group folds into a row that lists its links when opened.
+  const groups: Array<{ key: string; title: string; links: ExploreLink[]; grid: string }> = [
+    { key: 'rankings', title: explore.rankings, links: rankings, grid: 'sm:grid-cols-2 lg:grid-cols-3' },
+    { key: 'reports', title: explore.featuredReports, links: reports, grid: 'md:grid-cols-3' },
+    { key: 'countries', title: explore.byCountry, links: countries, grid: 'sm:grid-cols-2 lg:grid-cols-3' },
+    { key: 'more', title: explore.more, links: more, grid: 'sm:grid-cols-2 lg:grid-cols-4' },
+  ];
+
   return (
     <section
       className="relative overflow-hidden border-t border-white/10 bg-navy-deep py-16 md:py-20"
@@ -110,49 +118,29 @@ export function HomeExploreResearchSection({
         >
           {explore.heading}
         </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/50">{explore.lede}</p>
+        <p className="mt-4 mb-10 max-w-2xl text-base leading-relaxed text-white/50">{explore.lede}</p>
 
-        <ul className="mt-10 grid gap-4 md:grid-cols-2">
+        <ul className="mb-6 grid gap-4 md:grid-cols-3">
           {spotlight.map((link) => (
             <UrlCard key={link.to} {...link} featured />
           ))}
         </ul>
 
-        <h3 className="mt-12 mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
-          {explore.rankings}
-        </h3>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {rankings.map((link) => (
-            <UrlCard key={link.to} {...link} />
+        <div className="space-y-3">
+          {groups.map((group) => (
+            <details key={group.key} className="premium-card p-6">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display font-medium text-[#0C1B33]">
+                <h3 className="text-base">{group.title}</h3>
+                <span className="shrink-0 text-sm font-light text-[#7A7267]">{linksLabel(group.links.length)}</span>
+              </summary>
+              <ul className={`mt-6 grid gap-3 border-t border-[#EDE9E3] pt-6 ${group.grid}`}>
+                {group.links.map((link) => (
+                  <UrlCard key={link.to} {...link} />
+                ))}
+              </ul>
+            </details>
           ))}
-        </ul>
-
-        <h3 className="mt-12 mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
-          {explore.featuredReports}
-        </h3>
-        <ul className="grid gap-3 md:grid-cols-3">
-          {reports.map((link) => (
-            <UrlCard key={link.to} {...link} />
-          ))}
-        </ul>
-
-        <h3 className="mt-12 mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
-          {explore.byCountry}
-        </h3>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {countries.map((link) => (
-            <UrlCard key={link.to} {...link} />
-          ))}
-        </ul>
-
-        <h3 className="mt-12 mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
-          {explore.more}
-        </h3>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {more.map((link) => (
-            <UrlCard key={link.to} {...link} />
-          ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

@@ -78,6 +78,23 @@ export default {
           DEFAULT: "hsl(var(--cream))",
           dark: "hsl(var(--cream-dark))",
         },
+        // Night theme tokens (CSS variables, so the night colour adapter never rewrites them)
+        night: {
+          DEFAULT: "hsl(var(--night) / <alpha-value>)",
+          2: "hsl(var(--night-2) / <alpha-value>)",
+          3: "hsl(var(--night-3) / <alpha-value>)",
+        },
+        ink: {
+          DEFAULT: "hsl(var(--ink) / <alpha-value>)",
+          2: "hsl(var(--ink-2) / <alpha-value>)",
+          3: "hsl(var(--ink-3) / <alpha-value>)",
+        },
+        line: {
+          DEFAULT: "hsl(var(--line) / <alpha-value>)",
+          2: "hsl(var(--line-2) / <alpha-value>)",
+        },
+        "teal-glow": "hsl(var(--teal) / <alpha-value>)",
+        "on-gold": "hsl(var(--on-gold) / <alpha-value>)",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

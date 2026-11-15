@@ -22,6 +22,7 @@ import { resolveUntranslatedLocaleRedirect } from './lib/untranslated-locale-red
 import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-org.mjs';
 import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from './lib/robots-meta.mjs';
+import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from './lib/html-meta-escape.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -626,13 +627,6 @@ function shouldForceArabicMetaDescription(pathname, chosen) {
   return false;
 }
 
-function escapeHtmlAttribute(value) {
-  return String(value || '')
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;');
-}
-
 function ensureMetaDescriptionTag(html, pathname) {
   const ctr = getCtrSeo(pathname);
   const fallbackDescription = normalizeDescriptionLength(buildFallbackDescription(pathname), pathname);
@@ -651,13 +645,13 @@ function ensureMetaDescriptionTag(html, pathname) {
     : forceArDescription
       ? fallbackDescription
       : (chosen || fallbackDescription);
-  const normalizedContent = normalizeDescriptionLength(base, pathname);
+  const normalizedContent = normalizeDescriptionLength(decodeHtmlEntities(base), pathname);
   const safeContent = escapeHtmlAttribute(normalizedContent);
 
   const withoutDescriptions = html.replace(/<meta[^>]+name=(["'])description\1[^>]*>\s*/ig, '');
   return withoutDescriptions.replace(
     /<title[^>]*>[\s\S]*?<\/title>/i,
-    `$&\n<meta name="description" content="${safeContent}" />`,
+    (titleTag) => `${titleTag}\n<meta name="description" content="${safeContent}" />`,
   );
 }
 
@@ -1001,6 +995,13 @@ async function startServer() {
     res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms-full.txt'));
   });
 
+  const blogRssPath = path.resolve(__dirname, 'public/blog/rss.xml');
+  const sendBlogRss = (_req, res) => {
+    res.type('application/rss+xml').sendFile(blogRssPath);
+  };
+  app.get('/blog/rss.xml', sendBlogRss);
+  app.get('/rss.xml', sendBlogRss);
+
   app.get('/pricing.md', (_req, res) => {
     res.type('text/markdown; charset=utf-8').sendFile(path.resolve(__dirname, 'public/pricing.md'));
   });
@@ -1171,7 +1172,7 @@ async function startServer() {
         ),
         req.path,
       ), req.path), req.path);
-      const withRobots = ensureRobotsMeta(localizedPage);
+      const withRobots = ensureRobotsMeta(normalizeDescriptionMetaTags(localizedPage));
       const responseHtml = statusCode === 404 ? stripNotFoundDiscoveryTags(withRobots) : withRobots;
       const cdnCache = htmlCdnCacheControl(req.path, statusCode === 404);
 

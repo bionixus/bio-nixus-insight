@@ -18,6 +18,7 @@ import { stripDefaultOrganizationJsonLd } from '../lib/strip-industries-insights
 import { dedupeBlogOpenGraphTags } from '../lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from '../lib/robots-meta.mjs';
 import { fitBrandedSeoTitle, titleHasBrandSuffix } from '../src/server/seo-meta.js';
+import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from '../lib/html-meta-escape.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -474,13 +475,6 @@ function shouldForceArabicMetaDescription(pathname: string, chosen: string | und
   return false;
 }
 
-function escapeHtmlAttribute(value: string): string {
-  return String(value || '')
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;');
-}
-
 function ensureMetaDescriptionTag(html: string, pathname: string): string {
   const ctr = getCtrSeo(pathname);
   const fallbackDescription = normalizeDescriptionLength(buildFallbackDescription(pathname), 155, pathname);
@@ -499,13 +493,13 @@ function ensureMetaDescriptionTag(html: string, pathname: string): string {
     : forceArDescription
       ? fallbackDescription
       : (chosen || fallbackDescription);
-  const normalizedContent = normalizeDescriptionLength(base, 155, pathname);
+  const normalizedContent = normalizeDescriptionLength(decodeHtmlEntities(base), 155, pathname);
   const safeContent = escapeHtmlAttribute(normalizedContent);
 
   const withoutDescriptions = html.replace(/<meta[^>]+name=(["'])description\1[^>]*>\s*/ig, '');
   return withoutDescriptions.replace(
     /<title[^>]*>[\s\S]*?<\/title>/i,
-    `$&\n<meta name="description" content="${safeContent}" />`,
+    (titleTag) => `${titleTag}\n<meta name="description" content="${safeContent}" />`,
   );
 }
 
@@ -602,7 +596,7 @@ function injectHtml(
     );
   // Do not inject nodes into #root after renderToString. A share <aside> that
   // is not in the React tree makes hydrateRoot throw and client-render the page.
-  return ensureRobotsMeta(dedupeBlogOpenGraphTags(
+  return ensureRobotsMeta(normalizeDescriptionMetaTags(dedupeBlogOpenGraphTags(
     stripDefaultOrganizationJsonLd(
       ensureCtrOgTags(
         ensureCanonicalTag(
@@ -616,7 +610,7 @@ function injectHtml(
       pathname,
     ),
     pathname,
-  ));
+  )));
 }
 
 function getParamFromUrl(url: string | undefined, key: string): string | undefined {
@@ -684,6 +678,20 @@ async function handleSsrRequest(
   }
 
   const pathname = url.split('?')[0] || '/';
+  const barePath = pathname.replace(/\/+$/, '') || '/';
+  if (barePath === '/blog/rss.xml' || barePath === '/rss.xml') {
+    const candidates = [
+      path.join(process.cwd(), 'dist', 'client', 'blog', 'rss.xml'),
+      path.join(process.cwd(), 'public', 'blog', 'rss.xml'),
+    ];
+    const rssFile = candidates.find((candidate) => fs.existsSync(candidate));
+    if (rssFile) {
+      res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.status(200).send(fs.readFileSync(rssFile, 'utf8'));
+      return;
+    }
+  }
   const query = url.includes('?') ? `?${url.split('?').slice(1).join('?')}` : '';
 
   let decodedPathname = pathname;

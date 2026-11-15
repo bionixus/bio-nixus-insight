@@ -15,6 +15,8 @@ import {
   INDUSTRIES_SILO_GROQ,
 } from '@/lib/blog-content-silo';
 import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
+import { selectListablePosts, type BlogListingHub } from '@/lib/blog-listing-eligibility';
+import { decodeHtmlEntities } from '../../lib/html-meta-escape.mjs';
 import {
   canonicalAlsaadanyJobTitle,
   isAlsaadanyDisplayName,
@@ -92,6 +94,10 @@ function sortPostsNewestFirst(posts: BlogPost[]): BlogPost[] {
   return [...posts].sort((a, b) => postSortTime(b) - postSortTime(a));
 }
 
+function listableSorted(posts: BlogPost[], hub: BlogListingHub): BlogPost[] {
+  return sortPostsNewestFirst(selectListablePosts(posts, hub));
+}
+
 function siloFilterClause(silo: ContentSilo): string {
   return silo === 'industries' ? INDUSTRIES_SILO_GROQ : HEALTHCARE_SILO_GROQ;
 }
@@ -104,7 +110,7 @@ const SILO_FIELDS = `
 
 function buildPostsQuery(silo: ContentSilo): string {
   const siloFilter = siloFilterClause(silo);
-  return `*[_type == "blogPost" && defined(slug.current) && ${siloFilter}] | order(publishedAt desc, _createdAt desc) {
+  return `*[_type == "blogPost" && defined(slug.current) && !(_id in path("drafts.**")) && ${siloFilter}] | order(publishedAt desc, _createdAt desc) {
   _id,
   _type,
   title,
@@ -129,6 +135,7 @@ function buildPostsQuery(silo: ContentSilo): string {
 const LATEST_INSIGHTS_QUERY = `*[
   _type == "blogPost" &&
   defined(slug.current) &&
+  !(_id in path("drafts.**")) &&
   (${HEALTHCARE_SILO_GROQ}) &&
   (!defined(language) || language == $language)
 ] | order(coalesce(publishedAt, _createdAt) desc) {
@@ -156,6 +163,7 @@ const LATEST_INSIGHTS_QUERY = `*[
 const INDUSTRIES_INSIGHTS_QUERY = `*[
   _type == "blogPost" &&
   defined(slug.current) &&
+  !(_id in path("drafts.**")) &&
   ${INDUSTRIES_SILO_GROQ}
 ] | order(coalesce(publishedAt, _createdAt) desc) {
   _id,
@@ -275,7 +283,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     slug: p.slug ?? p._id,
     title: p.title ?? 'Untitled',
     // Always expose excerpt as clean text for cards/meta even if legacy data contains HTML.
-    excerpt: excerptText.slice(0, 200),
+    excerpt: decodeHtmlEntities(excerptText).slice(0, 200),
     date: formatDate(p.date),
     category: categoryStr,
     country: countryStr,
@@ -319,13 +327,17 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       // SEO / OG / Author
       if (raw.seo) {
         out.seoMetaTitle = raw.seo.metaTitle;
-        out.seoMetaDescription = raw.seo.metaDescription;
+        out.seoMetaDescription = typeof raw.seo.metaDescription === 'string'
+          ? decodeHtmlEntities(raw.seo.metaDescription)
+          : raw.seo.metaDescription;
         out.seoCanonicalUrl = raw.seo.canonicalUrl;
         out.seoNoIndex = resolveBlogSeoNoIndex(p.slug ?? p._id, raw.seo.noIndex);
       }
       if (raw.openGraph) {
         out.ogTitle = raw.openGraph.ogTitle;
-        out.ogDescription = raw.openGraph.ogDescription;
+        out.ogDescription = typeof raw.openGraph.ogDescription === 'string'
+          ? decodeHtmlEntities(raw.openGraph.ogDescription)
+          : raw.openGraph.ogDescription;
       }
       if (raw.ogImageUrl) out.ogImage = raw.ogImageUrl;
       if (typeof raw.ogImageAlt === 'string' && raw.ogImageAlt.trim()) out.ogImageAlt = raw.ogImageAlt.trim();
@@ -376,10 +388,12 @@ export async function fetchSanityPostsWithClient(
     const newHardcoded = hardcodedSeoPosts.filter(
       (p) => !sanitySlugs.has(p.slug) && (silo === 'healthcare' ? true : false),
     );
-    return sortPostsNewestFirst([...sanityPosts, ...filterPostsBySilo(newHardcoded, silo)]);
+    const hub: BlogListingHub = silo === 'industries' ? 'industries' : 'healthcare';
+    return listableSorted([...sanityPosts, ...filterPostsBySilo(newHardcoded, silo)], hub);
   } catch (err) {
     console.error('Failed to fetch from Sanity CMS, fallback to hardcoded posts', err);
-    return sortPostsNewestFirst(filterPostsBySilo([...hardcodedSeoPosts], silo));
+    const hub: BlogListingHub = silo === 'industries' ? 'industries' : 'healthcare';
+    return listableSorted(filterPostsBySilo([...hardcodedSeoPosts], silo), hub);
   }
 }
 
@@ -399,10 +413,10 @@ export async function fetchIndustriesInsightsWithClient(
     const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean).map(overlayHardcodedSeoPost);
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
     const extra = hardcodedIndustries.filter((p) => !sanitySlugs.has(p.slug));
-    return sortPostsNewestFirst([...sanityPosts, ...extra]);
+    return listableSorted([...sanityPosts, ...extra], 'industries');
   } catch (err) {
     console.error('Failed to fetch industries insights from Sanity CMS', err);
-    return sortPostsNewestFirst(hardcodedIndustries);
+    return listableSorted(hardcodedIndustries, 'industries');
   }
 }
 
@@ -427,24 +441,20 @@ export async function fetchSanityLatestInsightsWithClient(
       (p) => !sanitySlugs.has(p.slug) && (!p.language || p.language === language),
     );
 
-    const combined = filterPostsBySilo([...sanityPosts, ...newHardcoded], 'healthcare');
-    combined.sort((a, b) => {
-      const da = a.date ? new Date(a.date).getTime() : 0;
-      const db = b.date ? new Date(b.date).getTime() : 0;
-      return db - da;
-    });
+    const combined = listableSorted(
+      filterPostsBySilo([...sanityPosts, ...newHardcoded], 'healthcare'),
+      'healthcare',
+    );
     return combined.slice(0, Math.max(1, Math.min(limit, 6)));
   } catch (err) {
     console.error('Failed to fetch latest insights from Sanity CMS, fallback to hardcoded posts', err);
-    const hardcodedFiltered = filterPostsBySilo(
-      hardcodedSeoPosts.filter((p) => !p.language || p.language === language),
+    const hardcodedFiltered = listableSorted(
+      filterPostsBySilo(
+        hardcodedSeoPosts.filter((p) => !p.language || p.language === language),
+        'healthcare',
+      ),
       'healthcare',
     );
-    hardcodedFiltered.sort((a, b) => {
-      const da = a.date ? new Date(a.date).getTime() : 0;
-      const db = b.date ? new Date(b.date).getTime() : 0;
-      return db - da;
-    });
     return hardcodedFiltered.slice(0, Math.max(1, Math.min(limit, 6)));
   }
 }
