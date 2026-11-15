@@ -191,6 +191,7 @@ describe('/blog/saudi-hematology-diagnostics-vs-ward-brand-cut', () => {
     });
     expect(payload.faq).toHaveLength(7);
     expect(payload.sanityProjectId).toBe('h2whvvpo');
+    expect(String(payload.coverNote)).toContain('Gemini');
     expect(String(payload.bodyHtml)).toContain('USD 52.6 million');
     const publishScript = readFileSync(join(root, 'scripts/publish-saudi-hematology-ward.mjs'), 'utf8');
     expect(publishScript).toContain('498ba300-bfab-4a76-b256-b2139d4d66fe');

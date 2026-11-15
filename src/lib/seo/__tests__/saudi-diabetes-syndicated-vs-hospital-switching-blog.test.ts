@@ -220,7 +220,11 @@ describe('/blog/saudi-diabetes-syndicated-vs-hospital-switching', () => {
     expect(publishScript).toContain('5373a02d-e67d-4415-9739-33ee8f4da7e2');
     expect(publishScript).toContain('process.exit(2)');
 
+    expect(String(payload.coverNote)).toContain('Gemini');
+    const hero = await sharp(join(root, 'public', SAUDI_DIABETES_SWITCHING_HERO_IMAGE)).metadata();
     const cover = await sharp(join(root, 'public', SAUDI_DIABETES_SWITCHING_COVER_IMAGE)).metadata();
+    expect(hero.width).toBe(1920);
+    expect(hero.height).toBe(1080);
     expect(cover.width).toBe(1200);
     expect(cover.height).toBe(630);
   });

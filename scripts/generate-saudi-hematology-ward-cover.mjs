@@ -1,11 +1,9 @@
 /**
- * No-text navy and gold covers for
- * /blog/saudi-hematology-diagnostics-vs-ward-brand-cut.
- *
+ * Legacy generator. The committed covers for
+ * /blog/saudi-hematology-diagnostics-vs-ward-brand-cut come from Gemini:
  *   public/images/blog/saudi-hematology-diagnostics-vs-ward-brand-cut-hero.jpg   1920x1080
  *   public/images/blog/saudi-hematology-diagnostics-vs-ward-brand-cut-cover.jpg  1200x630
- *
- *   node scripts/generate-saudi-hematology-ward-cover.mjs
+ * Do not run this script. It would overwrite the Gemini JPEGs.
  */
 import fs from 'node:fs';
 import path from 'node:path';

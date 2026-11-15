@@ -2,7 +2,9 @@
  * Writes scripts/data/saudi-hematology-diagnostics-vs-ward-brand-cut.json with every
  * healthcare-silo blogPost field filled from the hardcoded SSR module.
  *
- * Cover / hero JPEGs: node scripts/generate-saudi-hematology-ward-cover.mjs
+ * Cover / hero JPEGs come from Gemini and already live at
+ * public/images/blog/saudi-hematology-diagnostics-vs-ward-brand-cut-{hero,cover}.jpg.
+ * Do not regenerate those files. Do not run scripts/generate-saudi-hematology-ward-cover.mjs.
  *
  *   node scripts/generate-saudi-hematology-ward-sanity-json.mjs
  */
@@ -184,7 +186,7 @@ export function buildSanityPayload(mod) {
     dataset: 'production',
     publishState: 'draft-in-repo-only',
     coverNote:
-      'mainImage is the 1920x1080 navy-and-gold hero. openGraph.ogImage is the 1200x630 navy-and-gold card. Neither image contains text. Do not publish this document from a draft pull request.',
+      'mainImage (1920x1080 hero) and openGraph.ogImage (1200x630) are Gemini covers stored at public/images/blog/saudi-hematology-diagnostics-vs-ward-brand-cut-{hero,cover}.jpg. Do not regenerate them. Do not publish this document from a draft pull request.',
   };
 }
 

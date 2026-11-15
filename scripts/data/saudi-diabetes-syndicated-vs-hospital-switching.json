@@ -186,5 +186,5 @@
   "sanityProjectId": "h2whvvpo",
   "dataset": "production",
   "publishState": "draft-in-repo-only",
-  "coverNote": "mainImage and openGraph.ogImage are the Playwright-rendered BioNixus navy-and-gold JPEGs. Do not publish this document from a draft pull request."
+  "coverNote": "mainImage (1920x1080 hero) and openGraph.ogImage (1200x630) are Gemini covers stored at public/images/blog/saudi-diabetes-syndicated-vs-hospital-switching-{hero,cover}.jpg. Do not regenerate them. Do not publish this document from a draft pull request."
 }

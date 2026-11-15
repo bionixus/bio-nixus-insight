@@ -6,6 +6,8 @@
  * Global Research Manager.
  *
  * This script is the publish path. A draft pull request must not run it.
+ * Hero and OG JPEGs are Gemini covers already in public/images/blog/.
+ * Do not regenerate them.
  *
  *   node scripts/publish-saudi-diabetes-switching.mjs --dry-run
  *   node scripts/publish-saudi-diabetes-switching.mjs
@@ -200,7 +202,7 @@ async function main() {
   }
 
   if (coverMissing()) {
-    console.error('Cover JPEGs missing. Run the LinkedIn cover generator for this slug.');
+    console.error('Gemini cover JPEGs missing from public/images/blog/. Do not regenerate them.');
     process.exit(2);
   }
 

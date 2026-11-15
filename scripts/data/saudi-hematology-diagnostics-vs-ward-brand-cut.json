@@ -188,5 +188,5 @@
   "sanityProjectId": "h2whvvpo",
   "dataset": "production",
   "publishState": "draft-in-repo-only",
-  "coverNote": "mainImage is the 1920x1080 navy-and-gold hero. openGraph.ogImage is the 1200x630 navy-and-gold card. Neither image contains text. Do not publish this document from a draft pull request."
+  "coverNote": "mainImage (1920x1080 hero) and openGraph.ogImage (1200x630) are Gemini covers stored at public/images/blog/saudi-hematology-diagnostics-vs-ward-brand-cut-{hero,cover}.jpg. Do not regenerate them. Do not publish this document from a draft pull request."
 }
