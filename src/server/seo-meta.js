@@ -5,8 +5,27 @@ const DESC_MAX = 130;
 const DEFAULT_DESC_PAD =
   ' BioNixus healthcare market research for pharmaceutical, medtech, and payer teams in GCC, MENA, and Europe.';
 
+function decodeHtmlEntities(input) {
+  let out = String(input || '');
+  for (let pass = 0; pass < 4; pass += 1) {
+    const next = out.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (entity, body) => {
+      if (body[0] === '#') {
+        const hex = body[1] === 'x' || body[1] === 'X';
+        const code = hex ? Number.parseInt(body.slice(2), 16) : Number.parseInt(body.slice(1), 10);
+        if (!Number.isFinite(code) || code < 0 || code > 0x10ffff) return entity;
+        return String.fromCodePoint(code);
+      }
+      const named = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ' };
+      return named[body.toLowerCase()] ?? entity;
+    });
+    if (next === out) break;
+    out = next;
+  }
+  return out;
+}
+
 function stripTags(input) {
-  return String(input || '')
+  return decodeHtmlEntities(input)
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();

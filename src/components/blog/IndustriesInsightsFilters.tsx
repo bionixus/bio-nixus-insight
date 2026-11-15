@@ -126,9 +126,13 @@ export default function IndustriesInsightsFilters({
             </div>
 
             <div className="flex flex-wrap items-center gap-3 lg:flex-col lg:items-end lg:pb-0.5">
-              <p className="text-sm text-muted-foreground tabular-nums">
+              <p
+                className="text-sm text-muted-foreground tabular-nums"
+                data-blog-visible={visibleCount}
+                data-blog-total={totalCount}
+              >
                 {visibleCount === totalCount
-                  ? `${totalCount} articles`
+                  ? `${visibleCount} articles`
                   : `Showing ${visibleCount} of ${totalCount} articles`}
               </p>
               {filtersActive ? (

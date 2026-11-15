@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server.js",
     "seo:check": "node scripts/seo-hard-check.mjs",
-    "generate-sitemap": "node scripts/emit-topcompanies-manifest.mjs && node scripts/emit-company-directories-manifest.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-video-sitemap.mjs",
+    "generate:live-articles": "vite-node scripts/generate-live-articles.ts",
+    "generate-sitemap": "node scripts/emit-topcompanies-manifest.mjs && node scripts/emit-company-directories-manifest.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-video-sitemap.mjs && npm run generate:live-articles",
     "refresh:geo": "node scripts/refresh-geo-assets.mjs",
     "build:clinical-proposal": "node scripts/build-clinical-diagnostics-proposal-html.mjs",
     "verify:market-reports": "node scripts/verify-market-report-word-count.mjs && node scripts/verify-market-report-geography.mjs",
@@ -53,7 +54,7 @@
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/server-entry.ts --outDir dist/server",
     "build:prerender-home": "node scripts/prerender-home.js",
-    "build:sitemap": "node scripts/emit-topcompanies-manifest.mjs && node scripts/emit-company-directories-manifest.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-video-sitemap.mjs",
+    "build:sitemap": "node scripts/emit-topcompanies-manifest.mjs && node scripts/emit-company-directories-manifest.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-video-sitemap.mjs && npm run generate:live-articles",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "NODE_ENV=production node server.js",

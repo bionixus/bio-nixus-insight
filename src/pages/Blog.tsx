@@ -29,6 +29,9 @@ import {
   hasActiveBlogFilters,
   type BlogIndexFilterState,
 } from '@/lib/blog-index-filters';
+import { listingRedirectTarget } from '@/lib/blog-listing-eligibility';
+
+const BLOG_RSS_HREF = 'https://www.bionixus.com/blog/rss.xml';
 
 function buildBlogCollectionSchema(
   canonical: string,
@@ -380,7 +383,7 @@ const Blog = () => {
     const seen = new Set<string>();
     const out: { path: string; label: string }[] = [];
     for (const row of [...fromAmp, ...fromBlog]) {
-      if (seen.has(row.path)) continue;
+      if (seen.has(row.path) || listingRedirectTarget(row.path)) continue;
       seen.add(row.path);
       out.push(row);
     }
@@ -417,6 +420,7 @@ const Blog = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonical} />
+        <link rel="alternate" type="application/rss+xml" title="BioNixus blog" href={BLOG_RSS_HREF} />
         {hreflangLinks.map(({ lang, href }) => (
           <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
         ))}
