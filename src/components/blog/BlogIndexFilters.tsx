@@ -152,7 +152,11 @@ const BlogIndexFilters = ({
             </div>
 
             <div className="flex flex-wrap items-center gap-3 lg:flex-col lg:items-end lg:pb-0.5">
-              <p className="text-sm font-light tabular-nums text-[#7A7267]">
+              <p
+                className="text-sm font-light tabular-nums text-[#7A7267]"
+                data-blog-visible={visibleCount}
+                data-blog-total={totalCount}
+              >
                 {labels.showing(visibleCount, totalCount)}
               </p>
               {filtersActive ? (

@@ -42,8 +42,34 @@ export function formatSlugAsPageHeading(slug: string): string {
     .join(' ')
 }
 
+function decodeHtmlEntities(input: string): string {
+  let out = String(input || '')
+  for (let pass = 0; pass < 4; pass += 1) {
+    const next = out.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (entity, body: string) => {
+      if (body[0] === '#') {
+        const hex = body[1] === 'x' || body[1] === 'X'
+        const code = hex ? Number.parseInt(body.slice(2), 16) : Number.parseInt(body.slice(1), 10)
+        if (!Number.isFinite(code) || code < 0 || code > 0x10ffff) return entity
+        return String.fromCodePoint(code)
+      }
+      const named: Record<string, string> = {
+        amp: '&',
+        quot: '"',
+        apos: "'",
+        lt: '<',
+        gt: '>',
+        nbsp: ' ',
+      }
+      return named[body.toLowerCase()] ?? entity
+    })
+    if (next === out) break
+    out = next
+  }
+  return out
+}
+
 function stripTags(input: string): string {
-  return String(input || '')
+  return decodeHtmlEntities(String(input || ''))
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
