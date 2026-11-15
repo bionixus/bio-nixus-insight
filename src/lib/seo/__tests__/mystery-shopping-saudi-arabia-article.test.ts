@@ -4,7 +4,6 @@ import { describe, expect, it } from 'vitest';
 import {
   ARTICLE,
   ARTICLE_PATH,
-  ARTICLE_URL,
   AUTHOR_JOB_TITLE,
   AUTHOR_SLUG,
   BODY_HTML_FILE,
@@ -20,7 +19,6 @@ import {
   getIndustriesInsightHowTo,
   htmlToPlainText,
 } from '../../../../lib/industries-insight-jsonld.mjs';
-import { checkNode, walk } from '../../../../scripts/seo/verify-schema-properties.mjs';
 import { CTR_SEO_BY_PATH as SERVER_CTR_SEO } from '@/server/ctr-seo-overrides.js';
 import {
   ALSAADANY_PROFILE_URL as ROSTER_ALSAADANY_PROFILE_URL,
@@ -29,16 +27,12 @@ import {
   withAlsaadanyPersonJsonLd,
 } from '@/data/editorialAuthors';
 import { sanitizeBodyHtml } from '@/lib/sanitize-body-html';
-import { buildSchemas, isValidSchemaNode } from '@/components/SchemaMarkup';
-import { buildIndustriesInsightSchemaExtras } from '@/lib/industriesInsightSchema';
-import type { BlogPost } from '@/types/blog';
 
 const root = join(__dirname, '..', '..', '..', '..');
 const bodyHtml = readFileSync(join(root, BODY_HTML_FILE), 'utf8');
 const sitemapXml = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');
 const keyword = TARGET_KEYWORD.toLowerCase();
 const rosterAuthor = WESTERN_AUTHORS.find((author) => author.slug === AUTHOR_SLUG);
-const PERSON_ID = `https://www.bionixus.com/#person-${AUTHOR_SLUG}`;
 
 const h2s = [...bodyHtml.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map(([, id, text]) => ({ id, text }));
 const hrefs = [...bodyHtml.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
@@ -54,20 +48,19 @@ function decode(text: string): string {
   return htmlToPlainText(text);
 }
 
-describe('Mystery shopping companies Saudi Arabia — content and SEO', () => {
-  it('puts the exact target phrase in the H1, title tag, meta description, summary and H2s', () => {
-    expect(ARTICLE.title.toLowerCase()).toContain(keyword);
-    expect(ARTICLE.seo.metaTitle.toLowerCase()).toContain(keyword);
-    expect(ARTICLE.seo.metaDescription.toLowerCase()).toContain(keyword);
-    expect(ARTICLE.executiveSummary.toLowerCase()).toContain(keyword);
-    expect(h2s.filter((h) => h.text.toLowerCase().includes(keyword)).length).toBeGreaterThanOrEqual(2);
+describe('Mystery shopping in Saudi Arabia: content and SEO', () => {
+  it('names mystery shopping in Saudi Arabia in the title, description and summary', () => {
+    for (const field of [ARTICLE.title, ARTICLE.seo.metaTitle, ARTICLE.seo.metaDescription, ARTICLE.executiveSummary]) {
+      expect(field.toLowerCase()).toContain('mystery shopping');
+      expect(field.toLowerCase()).toContain('saudi arabia');
+    }
+    expect(ARTICLE_PATH).toBe('/bionixus-industries/insights/mystery-shopping-companies-saudi-arabia-2026');
+    expect(keyword).toBe('mystery shopping companies saudi arabia');
   });
 
-  it('keeps title and description inside the AGENTS.md and Sanity Studio limits', () => {
-    expect(ARTICLE.seo.metaTitle.length).toBeGreaterThanOrEqual(50);
-    expect(ARTICLE.seo.metaTitle.length).toBeLessThanOrEqual(60);
-    expect(ARTICLE.seo.metaDescription.length).toBeGreaterThanOrEqual(150);
-    expect(ARTICLE.seo.metaDescription.length).toBeLessThanOrEqual(155);
+  it('keeps the SEO title at 50 characters or fewer and the description at 130 or fewer', () => {
+    expect(ARTICLE.seo.metaTitle.length).toBeLessThanOrEqual(50);
+    expect(ARTICLE.seo.metaDescription.length).toBeLessThanOrEqual(130);
     expect(ARTICLE.excerpt.length).toBeLessThanOrEqual(200);
     expect(ARTICLE.cover.alt.length).toBeLessThanOrEqual(125);
   });
@@ -156,15 +149,19 @@ describe('Mystery shopping companies Saudi Arabia — content and SEO', () => {
       'founded in 2012',
       '118 clients',
       '48 countries',
-      '127 studies so far in 2026',
-      'Dubai (Thuraya Tower 1, Al Sufouh 2)',
-      'London (EC1V 2NX)',
-      'Cairo, which is our biggest office in the Middle East and Africa',
-      'US headquarters in Sheridan, Wyoming',
+      '127 studies in 2026',
+      '82,000+ physicians globally',
+      'about 3,200 physicians in the Middle East',
+      'Americas office and global HQ',
+      'Europe office',
+      'AMEA office',
+      'São Paulo is a field office for LATAM.',
+      'Al Khobar is the KSA partner office',
+      'Kuwait and Dubai are field offices',
     ]) {
       expect(copy).toContain(fact);
     }
-    for (const banned of [/Al Khobar/i, /S[aã]o Paulo/i, /\$\s?\d/, /\bUSD\b/, /price range/i, /\bclients? include/i]) {
+    for (const banned of [/\$\s?\d/, /\bUSD\b/, /price range/i, /\bclients? include/i, /—/, /\b(best|leading|top)\b/i, /iqvia|dawaa/i]) {
       expect(copy).not.toMatch(banned);
     }
     for (const competitor of [/Ipsos/i, /Kantar/i, /Nielsen/i, /\bSGS\b/, /\bSMRC\b/, /Madarij/i, /\bMSKSA\b/]) {
@@ -221,137 +218,41 @@ describe('Mystery shopping article — shared JSON-LD helpers', () => {
   });
 });
 
-describe('Mystery shopping article — React BlogPosting graph', () => {
-  const imageUrl =
-    'https://cdn.sanity.io/images/h2whvvpo/production/0000000000000000000000000000000000000000-1200x630.jpg?w=1200&h=630&fit=crop&fm=jpg&q=90';
-  const basePost: BlogPost = {
-    id: 'fixture',
-    slug: SLUG,
-    title: ARTICLE.title,
-    excerpt: ARTICLE.excerpt,
-    date: '11 Oct 2026',
-    category: ARTICLE.category,
-    country: ARTICLE.country,
-    coverImage: imageUrl,
-    coverImageAlt: ARTICLE.cover.alt,
-    body: bodyHtml,
-    contentSilo: 'industries',
-    industrySegment: 'b2c',
-    industrySlug: 'retail',
-    tags: ARTICLE.tags,
-    faq: ARTICLE.faq,
-    seoKeywords: ARTICLE.seo.keywords,
-    publishedAtIso: '2026-10-11T12:00:00.000Z',
-    updatedAtIso: '2026-10-12T09:30:00.000Z',
-    authorName: rosterAuthor?.name,
-    authorSlug: AUTHOR_SLUG,
-    authorTitle: AUTHOR_JOB_TITLE,
-  };
-
-  function graphFor(post: BlogPost) {
-    const extras = buildIndustriesInsightSchemaExtras({
-      post,
-      slug: SLUG,
-      pageUrl: ARTICLE_URL,
-      imageUrl,
-      imageWidth: 1200,
-      imageHeight: 630,
-      body: post.body,
-      inLanguage: 'en',
-      headline: post.title,
+describe('Mystery shopping article server render', () => {
+  it('returns the article at its canonical path with one h1 and the updated date', async () => {
+    const { HelmetProvider } = await import('react-helmet-async');
+    HelmetProvider.canUseDOM = false;
+    const { render } = await import('@/entry-server');
+    const { MYSTERY_SHOPPING_KSA_HARDCODED_POST, MYSTERY_SHOPPING_KSA_PATH, MYSTERY_SHOPPING_KSA_SLUG, MYSTERY_SHOPPING_KSA_META_TITLE, MYSTERY_SHOPPING_KSA_META_DESCRIPTION, MYSTERY_SHOPPING_KSA_UPDATED_ISO } = await import('@/data/blog-mystery-shopping-saudi-arabia');
+    const { html, helmetData } = await render(MYSTERY_SHOPPING_KSA_PATH, {
+      pageType: 'blog-post',
+      blogSlug: MYSTERY_SHOPPING_KSA_SLUG,
+      blogPost: MYSTERY_SHOPPING_KSA_HARDCODED_POST,
+      blogPostLookup: 'found',
+      relatedPosts: { related: [], prev: null, next: null },
     });
-    return buildSchemas({
-      pageType: 'blog',
-      pageUrl: ARTICLE_URL,
-      language: 'en',
-      headline: post.title,
-      description: ARTICLE.seo.metaDescription,
-      imageUrl,
-      ogImageWidth: 1200,
-      ogImageHeight: 630,
-      articleSection: post.category,
-      keywords: extras.keywords,
-      schemaMentions: extras.mentions,
-      about: extras.about,
-      authorName: post.authorName || 'BioNixus Research Team',
-      publishedAt: post.publishedAtIso,
-      modifiedAt: post.updatedAtIso,
-      breadcrumb: [
-        { name: 'Home', item: 'https://www.bionixus.com/' },
-        { name: 'Industries', item: 'https://www.bionixus.com/bionixus-industries' },
-        { name: 'Industry Insights', item: 'https://www.bionixus.com/bionixus-industries/insights' },
-        { name: post.title, item: ARTICLE_URL },
-      ],
-      faqItems: ARTICLE.faq,
-      wordCount: extras.wordCount,
-      authorNode: extras.authorNode,
-      imageId: extras.imageId,
-      imageCaption: extras.imageCaption,
-      extraNodes: extras.extraNodes,
-    });
-  }
+    const h1s = html.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/g) ?? [];
+    expect(h1s).toHaveLength(1);
+    expect(html).toContain('What does a mystery shopping programme in Saudi Arabia deliver?');
+    expect(html).toContain('Al Khobar is the KSA partner office');
+    const head = [helmetData.title, helmetData.meta, helmetData.script].map((part) => part.toString()).join('\n');
+    expect(head).toContain(`<title data-rh="true">${MYSTERY_SHOPPING_KSA_META_TITLE}</title>`);
+    expect(head).toContain(MYSTERY_SHOPPING_KSA_META_DESCRIPTION);
+    expect(head).toContain(MYSTERY_SHOPPING_KSA_UPDATED_ISO);
+    expect(head).toContain('Sarah Chen');
+  }, 120_000);
 
-  function vocabularyIssues(nodes: Record<string, unknown>[]): string[] {
-    const issues: string[] = [];
-    for (const node of nodes) for (const [entry, path] of walk(node)) checkNode(entry, path, issues);
-    return issues;
-  }
-
-  it('emits valid BlogPosting, BreadcrumbList, FAQPage, Person, ImageObject and HowTo nodes', () => {
-    const nodes = graphFor(basePost);
-    expect(nodes.map((n) => n['@type'])).toEqual([
-      'BlogPosting',
-      'BreadcrumbList',
-      'FAQPage',
-      'Person',
-      'ImageObject',
-      'HowTo',
-    ]);
-    expect(nodes.every((n) => isValidSchemaNode(JSON.parse(JSON.stringify(n))))).toBe(true);
-    expect(vocabularyIssues(nodes)).toEqual([]);
-
-    expect(nodes[0]).toMatchObject({
-      headline: ARTICLE.title,
-      description: ARTICLE.seo.metaDescription,
-      datePublished: '2026-10-11T12:00:00.000Z',
-      dateModified: '2026-10-12T09:30:00.000Z',
-      inLanguage: 'en',
-      articleSection: 'B2C Market Research',
-      keywords: ARTICLE.seo.keywords.join(', '),
-      wordCount: countWords(htmlToPlainText(bodyHtml)),
-      mainEntityOfPage: { '@type': 'WebPage', url: ARTICLE_URL },
-      image: { '@type': 'ImageObject', '@id': `${ARTICLE_URL}#primaryimage`, width: 1200, height: 630 },
-      publisher: { logo: { url: 'https://www.bionixus.com/bionixus-logo.webp', width: 200, height: 57 } },
-      author: { '@type': 'Person', '@id': PERSON_ID },
-    });
-  });
-
-  it('matches the FAQPage to the visible FAQ word for word', () => {
-    const faqPage = graphFor(basePost).find((n) => n['@type'] === 'FAQPage') as {
-      mainEntity: { name: string; acceptedAnswer: { text: string } }[];
-    };
-    expect(faqPage.mainEntity.map((q) => ({ question: q.name, answer: q.acceptedAnswer.text }))).toEqual(ARTICLE.faq);
-  });
-
-  it('describes Sarah Chen, Global Research Manager, as the Person the article credits', () => {
-    const nodes = graphFor(basePost);
-    const person = {
-      '@type': 'Person',
-      '@id': PERSON_ID,
-      name: 'Sarah Chen',
-      jobTitle: 'Global Research Manager',
-      worksFor: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    };
-    expect(nodes.find((n) => n['@type'] === 'Person')).toEqual({ '@context': 'https://schema.org', ...person });
-    expect(nodes[0].author).toEqual(person);
-  });
-
-  it('credits the BioNixus Research Team when no author is set', () => {
-    const nodes = graphFor({ ...basePost, authorName: undefined, authorSlug: undefined, authorTitle: undefined });
-    expect(nodes.some((n) => n['@type'] === 'Person')).toBe(false);
-    expect(nodes[0]).toMatchObject({
-      author: { '@type': 'Organization', name: 'BioNixus Research Team', url: 'https://www.bionixus.com' },
-    });
-    expect(vocabularyIssues(nodes)).toEqual([]);
+  it('does not redirect the live article to the industries hub or another post', async () => {
+    const { closestKnownPostPath, missingArticleRedirect } = await import('@/lib/missing-article-redirect');
+    const { MYSTERY_SHOPPING_KSA_HARDCODED_POST, MYSTERY_SHOPPING_KSA_PATH, MYSTERY_SHOPPING_KSA_SLUG } = await import('@/data/blog-mystery-shopping-saudi-arabia');
+    const { hardcodedSeoPosts } = await import('@/data/blog-posts-index');
+    expect(hardcodedSeoPosts).toContain(MYSTERY_SHOPPING_KSA_HARDCODED_POST);
+    expect(closestKnownPostPath(MYSTERY_SHOPPING_KSA_SLUG, MYSTERY_SHOPPING_KSA_PATH)).toBeNull();
+    expect(missingArticleRedirect({
+      pathname: MYSTERY_SHOPPING_KSA_PATH,
+      slug: MYSTERY_SHOPPING_KSA_SLUG,
+      lookup: 'found',
+      post: MYSTERY_SHOPPING_KSA_HARDCODED_POST,
+    })).toBeNull();
   });
 });

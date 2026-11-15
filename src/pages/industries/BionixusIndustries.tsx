@@ -307,6 +307,35 @@ export default function BionixusIndustries() {
           </div>
         </section>
 
+        <section className="bx-section">
+          <div className="bx-inner">
+            <div className="bx-section-head">
+              <div className="bx-eyebrow gold">
+                <span className="bx-line" /> Outbound MEA
+              </div>
+              <h2 className="bx-h2">
+                Research into the Middle East from the <em>USA, Japan, China and Singapore</em>
+              </h2>
+              <p className="bx-lead center">
+                Non-pharma and pharma teams booking Gulf or Egypt fieldwork from those markets should use the corridor
+                money pages. Work is delivered from the USA and UK offices.
+              </p>
+            </div>
+            <div className="bx-next-grid">
+              {[
+                { path: '/market-research/usa', label: 'MENA market research company USA' },
+                { path: '/market-research/japan', label: 'Middle East research for Japanese companies' },
+                { path: '/market-research/china', label: 'Middle East research for Chinese companies' },
+                { path: '/market-research/singapore', label: 'Middle East research for Singapore companies' },
+              ].map((item) => (
+                <Link key={item.path} to={item.path} className="bx-next-card">
+                  <h3>{item.label}</h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <IndustriesInsightsSection />
 
         <section className="bx-section dark">

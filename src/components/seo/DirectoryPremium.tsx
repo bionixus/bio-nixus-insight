@@ -366,6 +366,27 @@ export function LegacyDirectoryChrome({
   );
 }
 
+function renderFaqAnswer(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return <span key={index}>{part}</span>;
+    const [, label, href] = match;
+    if (href.startsWith('/')) {
+      return (
+        <Link key={index} to={href} className="text-primary underline">
+          {label}
+        </Link>
+      );
+    }
+    return (
+      <a key={index} href={href} className="text-primary underline">
+        {label}
+      </a>
+    );
+  });
+}
+
 export function DirectoryFaqList({ items }: { items: { q: string; a: string }[] }) {
   return (
     <div className="premium-faq space-y-3">
@@ -377,7 +398,7 @@ export function DirectoryFaqList({ items }: { items: { q: string; a: string }[] 
               ▾
             </span>
           </summary>
-          <p className="text-sm text-muted-foreground leading-relaxed px-6 pb-5 border-t border-[#EDE9E3] pt-4">{faq.a}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed px-6 pb-5 border-t border-[#EDE9E3] pt-4">{renderFaqAnswer(faq.a)}</p>
         </details>
       ))}
     </div>

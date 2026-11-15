@@ -53,7 +53,7 @@ export const translations = {
       subtitle:
         'BioNixus is a global primary market research firm that delivers account-level and SKU-level brand versus competitor data in 48 countries. Syndicated data feeds miss subaccounts, traditional trade, and country-level breakdowns. Field teams run the study; a proposal is ready within 48 hours of your brief.',
       trustStripPrimary: 'Trusted by',
-      trustStripStats: '118 global clients · 120+ projects annually · 127 in 2025 · 48 countries · founded 2012',
+      trustStripStats: '118 global clients · 120+ projects annually · 120 in 2025; 127 studies year-to-date in 2026 · 48 countries · founded 2012',
       valueProposition:
         'Every study starts from a commercial question your marketing team has to answer: how do we stack up vs competitors in this country, at this account, on this SKU? You get fieldwork and a decision pack — not a generic data dump.',
       serviceHighlights: [
@@ -185,7 +185,7 @@ export const translations = {
     stats: {
       title: 'What you can brief internally',
       items: [
-        { value: '120+', label: 'Studies per year' },
+        { value: '120+', label: 'studies a year (127 in 2026 YTD)' },
         { value: '118', label: 'Clients' },
         { value: '48', label: 'Countries' },
         { value: '48h', label: 'Brief to proposal' },
@@ -238,15 +238,15 @@ export const translations = {
       email: 'admin@bionixus.com',
       headquarters: 'Sheridan, WY, USA | London, UK',
       emailLabel: 'Email',
-      headquartersLabel: 'Regional Headquarters',
+      headquartersLabel: 'Headquarters',
       phoneLabel: 'Phone',
-      formTitle: 'Request A Proposal',
+      formTitle: 'Request a proposal',
       firstName: 'First Name',
       lastName: 'Last Name',
       workEmail: 'Work Email',
       company: 'Company',
       message: 'Message',
-      submitButton: 'Submit',
+      submitButton: 'Send proposal request',
       firstNamePlaceholder: 'John',
       lastNamePlaceholder: 'Smith',
       workEmailPlaceholder: 'john@company.com',
@@ -461,7 +461,7 @@ export const translations = {
       subtitle:
         'BioNixus ist ein globaler Erkenntnis- und Marktforschungspartner in Amerika, EMEA und APAC — mit Länder-Tiefe, wo sie zählt. Wir helfen pharmazeutischen, Biotechnologie- und Medizintechnik-Teams, KOL-, Kostenträger- und Krankenhaus-Evidenz in Entscheidungen zu Markteinführung, Zugang und Wachstum zu übersetzen.',
       trustStripPrimary: 'Vertrauenswürdig bei',
-      trustStripStats: '118 globale Kunden · 120+ Projekte jährlich · 127 im Jahr 2025 · 48 Länder',
+      trustStripStats: '118 globale Kunden · 120+ Projekte jährlich · 120 im Jahr 2025; 127 Studien im Jahr 2026 bis heute · 48 Länder',
       valueProposition:
         'Jedes Mandat beginnt mit einer echten vertrieblichen Frage, nicht mit einem generischen Datenexport. Sie erhalten belastbare quantitative und qualitative Erkenntnisse — zugeschnitten auf Entscheidung, Markt und regulatorische Realität — von der Marktgrößenanalyse vor der Markteinführung bis zur Optimierung nach der Markteinführung.',
       serviceHighlights: [
@@ -686,7 +686,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Abgedeckte Länder' },
         { value: '14+', label: 'Therapiegebiete' },
-        { value: '120+', label: 'Globale Projekte jährlich' },
+        { value: '120+', label: 'Studien pro Jahr (127 in 2026 bis heute)' },
         { value: '118', label: 'Globale Kunden' },
       ],
     },
@@ -984,7 +984,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Pays Couverts' },
         { value: '14+', label: 'Aires Thérapeutiques' },
-        { value: '120+', label: 'Projets mondiaux par an' },
+        { value: '120+', label: 'études par an (127 depuis début 2026)' },
         { value: '118', label: 'Clients mondiaux' },
       ],
     },
@@ -1282,7 +1282,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Países Cubiertos' },
         { value: '14+', label: 'Áreas Terapéuticas' },
-        { value: '120+', label: 'Proyectos globales al año' },
+        { value: '120+', label: 'estudios al año (127 en 2026 hasta ahora)' },
         { value: '118', label: 'Clientes globales' },
       ],
     },
@@ -1579,7 +1579,7 @@ export const translations = {
       items: [
         { value: '48', label: '覆盖国家' },
         { value: '14+', label: '治疗领域' },
-        { value: '120+', label: '每年全球项目' },
+        { value: '120+', label: '每年研究（2026年至今127项）' },
         { value: '118', label: '全球客户' },
       ],
     },
@@ -1881,7 +1881,7 @@ export const translations = {
       items: [
         { value: '48', label: 'دولة مغطاة' },
         { value: '+14', label: 'مجال علاجي' },
-        { value: '+120', label: 'مشروعًا عالميًا سنويًا' },
+        { value: '+120', label: 'دراسة سنويًا (١٢٧ في ٢٠٢٦ حتى الآن)' },
         { value: '118', label: 'عميلًا عالميًا' },
       ],
     },
@@ -2229,7 +2229,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Países Atendidos' },
         { value: '14+', label: 'Áreas Terapêuticas' },
-        { value: '120+', label: 'Projetos globais por ano' },
+        { value: '120+', label: 'estudos por ano (127 em 2026 até agora)' },
         { value: '118', label: 'Clientes globais' },
       ],
     },
@@ -2278,7 +2278,7 @@ export const translations = {
       workEmail: 'E-mail profissional',
       company: 'Empresa',
       message: 'Mensagem',
-      submitButton: 'Enviar Mensagem',
+      submitButton: 'Enviar pedido',
       firstNamePlaceholder: 'João',
       lastNamePlaceholder: 'Silva',
       workEmailPlaceholder: 'joao@empresa.com',
@@ -2573,7 +2573,7 @@ export const translations = {
       items: [
         { value: '48', label: 'Охваченных стран' },
         { value: '14+', label: 'Терапевтических областей' },
-        { value: '120+', label: 'Глобальных проектов ежегодно' },
+        { value: '120+', label: 'исследований в год (127 с начала 2026)' },
         { value: '118', label: 'Глобальных клиентов' },
       ],
     },

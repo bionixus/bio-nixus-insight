@@ -2,9 +2,13 @@ import { useState } from 'react';
 import { isFreeMailDomain } from '@/lib/freeMailDomains';
 import { trackLeadSubmitted, trackFormStart } from '@/lib/analytics';
 import { submitLeadDual } from '@/lib/submitLeadDual';
+import { isValidLeadEmail } from '@/lib/leadEmailValidation';
+import { focusFirstInvalidField, revealStatus } from '@/lib/formFeedback';
 import { QUALIFICATION_FORM_MARKETS } from '@/data/qualificationFormOptions';
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const GENERIC_ERROR = 'Something went wrong — please try again, or email admin@bionixus.com and we will send it.';
+const FREE_MAIL_WARNING =
+  'That looks like a personal email address. A company email helps us follow up — press the button again to continue anyway.';
 
 type GatedAssetFormProps = {
   formId: string;
@@ -37,17 +41,21 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
     const rawEmail = (data.get('workEmail') as string)?.trim() || '';
     if (!rawEmail) {
       next.workEmail = 'Work email is required';
-    } else if (!EMAIL_RE.test(rawEmail)) {
+    } else if (!isValidLeadEmail(rawEmail)) {
       next.workEmail = 'Please enter a valid email address';
     }
     if (!(data.get('company') as string)?.trim()) next.company = 'Company is required';
     if (!(data.get('country') as string)?.trim()) next.country = 'Please select a country';
 
     setErrors(next);
-    if (Object.keys(next).length > 0) return;
+    setSubmitError(null);
+    if (Object.keys(next).length > 0) {
+      focusFirstInvalidField(form, next);
+      return;
+    }
 
     if (rawEmail && isFreeMailDomain(rawEmail) && !freeMailAcknowledged) {
-      setFreeMailWarning('Please use your company email — our buyers have work email.');
+      setFreeMailWarning(FREE_MAIL_WARNING);
       setFreeMailAcknowledged(true);
       return;
     }
@@ -73,10 +81,12 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
     data.set('utmTerm', params.get('utm_term') || '');
 
     setSubmitting(true);
-    setSubmitError(null);
     try {
       const result = await submitLeadDual(data);
-      if (result.skipped) return;
+      if (result.skipped) {
+        setSubmitted(true);
+        return;
+      }
       if (result.ok) {
         setSubmitted(true);
         trackLeadSubmitted({ formId });
@@ -88,10 +98,10 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         link.click();
         link.remove();
       } else {
-        setSubmitError(result.error || 'Something went wrong — please try again.');
+        setSubmitError(result.error || GENERIC_ERROR);
       }
     } catch {
-      setSubmitError('Something went wrong — please try again.');
+      setSubmitError(GENERIC_ERROR);
     } finally {
       setSubmitting(false);
     }
@@ -99,7 +109,7 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
 
   if (submitted) {
     return (
-      <div className="text-center py-4">
+      <div className="text-center py-4 focus:outline-none" role="status" aria-live="polite" tabIndex={-1} ref={revealStatus}>
         <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-xl font-bold text-primary">
           ✓
         </div>
@@ -107,7 +117,7 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         <p className="text-sm text-muted-foreground leading-relaxed">
           If it didn't open automatically,{' '}
           <a href={pdfPath} download className="text-primary font-medium hover:underline">
-            click here to download it directly
+            download the {reportName} directly
           </a>
           . Our team may follow up to see if a full engagement makes sense.
         </p>
@@ -133,13 +143,13 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         <input
           id={`${formId}-ga-workEmail`}
           name="workEmail"
+          aria-invalid={Boolean(errors.workEmail)}
           type="email"
           required
           className={`w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.workEmail ? 'border-destructive' : 'border-input'}`}
           placeholder="you@company.com"
         />
         {errors.workEmail && <p className="text-xs text-destructive mt-1">{errors.workEmail}</p>}
-        {freeMailWarning && <p className="text-xs text-amber-600 mt-1">{freeMailWarning}</p>}
       </div>
       <div>
         <label htmlFor={`${formId}-ga-company`} className="block text-sm font-medium text-foreground mb-1.5">
@@ -148,6 +158,7 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         <input
           id={`${formId}-ga-company`}
           name="company"
+          aria-invalid={Boolean(errors.company)}
           type="text"
           required
           className={`w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.company ? 'border-destructive' : 'border-input'}`}
@@ -161,6 +172,7 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         <select
           id={`${formId}-ga-country`}
           name="country"
+          aria-invalid={Boolean(errors.country)}
           required
           defaultValue=""
           className={`w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${errors.country ? 'border-destructive' : 'border-input'}`}
@@ -173,11 +185,23 @@ export function GatedAssetForm({ formId, reportName, pdfPath, submitLabel }: Gat
         {errors.country && <p className="text-xs text-destructive mt-1">{errors.country}</p>}
       </div>
 
-      {submitError && <p className="text-sm text-destructive">{submitError}</p>}
+      <div aria-live="polite">
+        {freeMailWarning && !submitError ? (
+          <p className="text-sm text-amber-700 focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
+            {freeMailWarning}
+          </p>
+        ) : null}
+        {submitError ? (
+          <p className="text-sm text-destructive focus:outline-none" role="alert" tabIndex={-1} ref={revealStatus}>
+            {submitError}
+          </p>
+        ) : null}
+      </div>
 
       <button
         type="submit"
         disabled={submitting}
+        aria-busy={submitting}
         className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {submitting ? 'Sending…' : submitLabel || 'Get the sample PDF'}

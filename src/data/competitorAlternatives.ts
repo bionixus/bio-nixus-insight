@@ -530,7 +530,7 @@ const IQVIA_ALT_KSA: CompetitorAlternativeConfig = {
   faq: [
     {
       q: 'Is this the same page as /iqvia-alternative?',
-      a: 'No. /iqvia-alternative is the global ranked list (“IQVIA Alternatives & Competitors”). This page is the Saudi complement. Do not treat the titles as interchangeable.',
+      a: 'No. /iqvia-alternative is the global comparison (“IQVIA vs Competitors: Primary Research Compared”). This page is the Saudi complement. Do not treat the titles as interchangeable.',
     },
     {
       q: 'When should a Saudi affiliate keep IQVIA and add BioNixus?',

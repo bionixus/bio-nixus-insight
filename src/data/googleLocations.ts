@@ -6,8 +6,21 @@
 
 export type GoogleOfficeId = 'us' | 'uk' | 'eg' | 'ae' | 'sa' | 'kw';
 
+/**
+ * Standing office roles:
+ * USA = Americas office and global HQ
+ * UK = Europe office
+ * Cairo = AMEA (APAC, Middle East, Africa) office
+ * São Paulo = field office for LATAM (no street on file; not in this list)
+ * Al Khobar = partner office for KSA
+ * Kuwait = field office for Kuwait
+ * Dubai = field office for UAE
+ */
+export type OfficeTier = 'leadership' | 'field';
+
 export type GoogleOffice = {
   id: GoogleOfficeId;
+  tier: OfficeTier;
   schemaId: string;
   /** GBP display name */
   name: string;
@@ -44,10 +57,11 @@ const MENA_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
 export const GOOGLE_OFFICES: GoogleOffice[] = [
   {
     id: 'us',
+    tier: 'leadership',
     schemaId: `${BASE}/#us-localbusiness`,
     name: 'BioNixus LLC USA',
     description:
-      'BioNixus LLC USA — global headquarters and corporate office in Sheridan, Wyoming.',
+      'BioNixus LLC USA — Americas office and global HQ in Sheridan, Wyoming.',
     telephone: '+1-888-465-5557',
     url: BASE,
     mapsUrl: 'https://maps.app.goo.gl/cqLtV7gy8jGxq4JV8',
@@ -68,10 +82,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'uk',
+    tier: 'leadership',
     schemaId: `${BASE}/#uk-localbusiness`,
     name: 'BioNixus UK',
     description:
-      'BioNixus UK — pharmaceutical and healthcare market research corporate office in London.',
+      'BioNixus UK — Europe office in London.',
     telephone: '+44-7727-666682',
     url: BASE,
     mapsUrl: 'https://maps.app.goo.gl/h8eEUQ9V3TryGF1t7',
@@ -91,10 +106,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'eg',
+    tier: 'leadership',
     schemaId: `${BASE}/#eg-localbusiness`,
     name: 'BioNixus Egypt',
     description:
-      'BioNixus Egypt — market research office in Sheikh Zayed, Giza.',
+      'BioNixus Egypt — AMEA (APAC, Middle East, Africa) office in Cairo (Sheikh Zayed, Giza).',
     telephone: '+20-120-688-2323',
     url: BASE,
     mapsUrl: 'https://share.google/Fhbb1PvbESItLDNSc',
@@ -111,10 +127,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'ae',
+    tier: 'field',
     schemaId: `${BASE}/#ae-localbusiness`,
     name: 'BioNixus UAE',
     description:
-      'BioNixus UAE — market research office in Al Thuraya Tower 1, Al Sufouh 2, Dubai.',
+      'BioNixus UAE — field office for UAE at Thuraya Tower 1, 5th Floor, Al Sufouh 2, Dubai.',
     telephone: '+44-7727-666682',
     url: BASE,
     mapsUrl: 'https://share.google/TlyheRVZ5L1sFKPQy',
@@ -129,10 +146,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'sa',
+    tier: 'field',
     schemaId: `${BASE}/#sa-localbusiness`,
     name: 'BioNixus Saudi Arabia',
     description:
-      'BioNixus Saudi Arabia — market research office in Al Khobar Al Shamalia.',
+      'BioNixus Saudi Arabia — partner office for KSA in Al Khobar.',
     telephone: '+966-50-182-5336',
     url: BASE,
     mapsUrl: 'https://share.google/Zv2GWYA71ULqo3wEU',
@@ -148,10 +166,11 @@ export const GOOGLE_OFFICES: GoogleOffice[] = [
   },
   {
     id: 'kw',
+    tier: 'field',
     schemaId: `${BASE}/#kw-localbusiness`,
     name: 'BioNixus Kuwait',
     description:
-      'BioNixus Kuwait — market research office at Olympia Mall, Salmiya.',
+      'BioNixus Kuwait — field office for Kuwait in Salmiya.',
     telephone: '+965-6502-3130',
     url: BASE,
     mapsUrl: 'https://share.google/IVQ1EAwF7wktCnYvk',
@@ -173,4 +192,35 @@ export function getGoogleOffice(id: GoogleOfficeId): GoogleOffice {
   const office = GOOGLE_OFFICES.find((item) => item.id === id);
   if (!office) throw new Error(`Unknown Google office: ${id}`);
   return office;
+}
+
+export type OfficeRoleId = GoogleOfficeId | 'latam';
+
+/** Visible footer label and Organization location description. */
+export function officeRoleLabel(office: { id: OfficeRoleId }): string {
+  switch (office.id) {
+    case 'us':
+      return 'Americas office and global HQ';
+    case 'uk':
+      return 'Europe office';
+    case 'eg':
+      return 'AMEA (APAC, Middle East, Africa) office';
+    case 'ae':
+      return 'field office for UAE';
+    case 'sa':
+      return 'partner office for KSA';
+    case 'kw':
+      return 'field office for Kuwait';
+    case 'latam':
+      return 'field office for LATAM';
+    default: {
+      const never: never = office.id;
+      return never;
+    }
+  }
+}
+
+/** São Paulo has no street on file. Use this sentence instead of a PostalAddress. */
+export function saoPauloFieldOfficeSentence(): string {
+  return `São Paulo is a ${officeRoleLabel({ id: 'latam' })}.`;
 }

@@ -135,7 +135,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in the Netherlands in 2026?',
-    a: 'Leading market research companies in the Netherlands in 2026 include BioNixus, IQVIA Netherlands, Ipsos Netherlands, Kantar Netherlands, GfK Netherlands, Motivaction, and Blauw Research. BioNixus ranks first for pharmaceutical and healthcare research, with CBG-MEB-aligned primary research, verified HCP recruitment at Dutch academic medical centres, and deep payer intelligence across the Zorginstituut Nederland GVS reimbursement pathway.',
+    a: 'Leading market research companies in the Netherlands in 2026 include BioNixus, IQVIA Netherlands, Ipsos Netherlands, Kantar Netherlands, GfK Netherlands, Motivaction, and Blauw Research. BioNixus wrote this list for pharmaceutical and healthcare research, with CBG-MEB-aligned primary research, verified HCP recruitment at Dutch academic medical centres, and deep payer intelligence across the Zorginstituut Nederland GVS reimbursement pathway.',
   },
   {
     q: 'What is pharmaceutical market research in the Netherlands?',
@@ -218,9 +218,9 @@ export default function TopMarketResearchCompaniesNetherlands2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in the Netherlands 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in the Netherlands 2026 | BioNixus',
     description:
-      'Top market research companies in the Netherlands 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL mapping, and payer research.',
+      'Top market research companies in the Netherlands 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL mapping, and payer research.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -260,7 +260,7 @@ export default function TopMarketResearchCompaniesNetherlands2026() {
         <title>Top Market Research Companies in the Netherlands 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in the Netherlands 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL mapping, and payer research."
+          content="Top market research companies in the Netherlands 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL mapping, and payer research."
         />
         <meta name="geo.region" content="NL" />
         <meta name="geo.placename" content="Netherlands" />
@@ -274,7 +274,7 @@ export default function TopMarketResearchCompaniesNetherlands2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in the Netherlands 2026 | BioNixus"
-        description="Top market research companies in the Netherlands 2026 — BioNixus ranked #1 for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL."
+        description="Top market research companies in the Netherlands 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

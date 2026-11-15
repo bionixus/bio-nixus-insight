@@ -74,7 +74,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-01',
     mainEntityOfPage: 'https://www.bionixus.com/japan-healthcare-market-report',
   },
   {
@@ -89,7 +89,7 @@ const jsonLd = [
     countryName: "Japan",
     marketSlug: "japan",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-01",
   })
 ];
 
@@ -216,7 +216,9 @@ const JapanHealthcareMarketReport = () => (
               <Link to="/south-korea-healthcare-market-report" className="text-primary hover:underline font-medium">South Korea healthcare market report</Link>, or start from the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
-              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>.
+              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. Shortlisting a partner? Compare the{' '}
+              <Link to="/insights/top-market-research-companies-japan-2026" className="text-primary hover:underline font-medium">top market research companies in Japan</Link>{' '}and the{' '}
+              <Link to="/pharmaceutical-companies-japan" className="text-primary hover:underline font-medium">top pharmaceutical companies in Japan</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

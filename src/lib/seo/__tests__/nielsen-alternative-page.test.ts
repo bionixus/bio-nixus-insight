@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+import { officeRoleLabel, saoPauloFieldOfficeSentence } from '@/data/googleLocations';
 
 const root = join(process.cwd());
 const html = readFileSync(join(root, 'public/conf/nielsen-alternative.html'), 'utf8');
@@ -22,9 +23,9 @@ function extractJsonLd(document: string): Array<Record<string, unknown>> {
 
 describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
   it('ships unique title, meta, one H1, canonical, and OG/Twitter tags', () => {
-    expect(html).toContain('<title>Nielsen Competitors: NielsenIQ Alternatives Compared (2026)</title>');
+    expect(html).toContain('<title>NielsenIQ vs Competitors: Audit or Fieldwork (2026)</title>');
     expect(html).toMatch(
-      /<meta name="description" content="Nielsen competitors compared: when NielsenIQ retail audits are enough, and when to brief BioNixus for named accounts, traditional trade and SKU-level cuts\.">/,
+      /<meta name="description" content="Nielsen alternatives compared for 2026: keep NielsenIQ for national retail audits, and brief BioNixus for named accounts, traditional trade and SKU-level cuts\.">/,
     );
     const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '';
     const description =
@@ -84,7 +85,11 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
     expect(schemas.some((node) => node['@type'] === 'ItemList')).toBe(true);
     expect(schemas.some((node) => node['@type'] === 'BreadcrumbList')).toBe(true);
     const page = schemas.find((node) => node['@type'] === 'WebPage');
-    expect(page?.dateModified).toBe('2026-10-04');
+    expect(page?.dateModified).toBe('2026-11-01');
+    expect(html).toContain(saoPauloFieldOfficeSentence());
+    expect(html).toContain(officeRoleLabel({ id: 'latam' }));
+    expect(html).not.toMatch(/opening a São Paulo/i);
+    expect(html).not.toMatch(/"addressLocality":"São Paulo"/);
     expect(page?.url).toBe('https://www.bionixus.com/nielsen-alternative');
   });
 
@@ -117,8 +122,8 @@ describe('/nielsen-alternative static page (IQVIA conf pattern)', () => {
       expect(legacyRedirects[source]).toBe('/nielsen-alternative');
     }
     const ctr = getCtrSeo('/nielsen-alternative');
-    expect(ctr?.title).toBe('Nielsen Competitors: NielsenIQ Alternatives Compared (2026)');
-    expect(ctr?.description).toContain('when NielsenIQ retail audits are enough');
+    expect(ctr?.title).toBe('NielsenIQ vs Competitors: Audit or Fieldwork (2026)');
+    expect(ctr?.description).toContain('keep NielsenIQ for national retail audits');
   });
 
   it('adds a small reciprocal Nielsen link on the IQVIA alternative page', () => {

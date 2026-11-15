@@ -16,7 +16,7 @@ import { QUALIFICATION_FORM_NEEDS } from '@/data/qualificationFormOptions';
 type TalkToResearchCtaProps = {
   variant: 'talk-to-research';
   market?: string;
-  /** Overrides the Formspree source-context label (defaults to market). */
+  /** Overrides the lead's source-context label (defaults to market). */
   sourceContext?: string;
   /** Prefills the qualification need select. */
   defaultNeed?: (typeof QUALIFICATION_FORM_NEEDS)[number];

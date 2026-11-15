@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   cardLive: '实时',
   chartNonHealthcare: '非医疗健康专区',
   chartHealthcare: '医疗健康专区',
-  cardFoot: '自 2012 年起 · 每年 120+ 个项目 · 2025 年 127 个 · 118 位客户 · 48 国',
+  cardFoot: '自 2012 年起 · 每年 120+ 个项目 · 2025 年 120 个；2026 年至今 127 个 · 118 位客户 · 48 国',
   regionRibbon: [
     '北美',
     'LATAM',
@@ -33,7 +33,7 @@ export const bionixusIndustriesPageCopyZh: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: '创立于伦敦', sub: '英国医药研究根基' },
-    { value: '120+', label: '每年全球项目', sub: '覆盖 48 国' },
+    { value: '120+', label: '每年研究', sub: '2025年120个；2026年至今127个' },
     { value: '118', label: '服务客户', sub: '从 pharma 到 consumer' },
     { value: '16', label: '行业垂直', sub: '持续扩展' },
   ],

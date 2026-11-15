@@ -35,7 +35,7 @@ const firms: FirmProfile[] = [
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, and BAG Spezialitätenliste payer research',
     overview:
-      'BioNixus is the top-ranked specialist market research company in Switzerland for pharmaceutical and healthcare clients, delivering multilingual HCP surveys, KOL mapping at Swiss university hospitals, BAG Spezialitätenliste payer research, and Basel biopharma cluster intelligence. Swissmedic-aligned methodologies with full German, French, and Italian research capability across all 26 Swiss cantons.',
+      'BioNixus wrote this list of specialist market research company in Switzerland for pharmaceutical and healthcare clients, delivering multilingual HCP surveys, KOL mapping at Swiss university hospitals, BAG Spezialitätenliste payer research, and Basel biopharma cluster intelligence. Swissmedic-aligned methodologies with full German, French, and Italian research capability across all 26 Swiss cantons.',
     strengths: [
       'Multilingual HCP surveys in German, French, and Italian',
       'KOL mapping at USZ, USB, Inselspital, CHUV, and HUG',
@@ -130,7 +130,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'Who are the top market research companies in Switzerland in 2026?',
-    a: 'BioNixus ranks #1 for pharmaceutical and healthcare market research in Switzerland in 2026, with multilingual HCP surveys in German, French, and Italian, KOL mapping at Swiss university hospitals, and BAG Spezialitätenliste payer research. Other leading firms include IQVIA Switzerland, Ipsos Switzerland, Kantar Switzerland, GfK Switzerland (NielsenIQ), and MedidataResearch AG.',
+    a: 'BioNixus wrote this list for pharmaceutical and healthcare market research in Switzerland in 2026, with multilingual HCP surveys in German, French, and Italian, KOL mapping at Swiss university hospitals, and BAG Spezialitätenliste payer research. Other leading firms include IQVIA Switzerland, Ipsos Switzerland, Kantar Switzerland, GfK Switzerland (NielsenIQ), and MedidataResearch AG.',
   },
   {
     q: 'What makes Swiss market research unique compared to other European markets?',
@@ -191,9 +191,9 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in Switzerland 2026 | BioNixus Ranked #1',
+    headline: 'Top Market Research Companies in Switzerland 2026 | BioNixus',
     description:
-      'Top market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence.',
+      'Top market research companies in Switzerland 2026 — BioNixus wrote this list. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence.',
     url: PAGE_CANONICAL,
     datePublished: '2026-06-25',
     dateModified: '2026-06-25',
@@ -240,7 +240,7 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
         <title>Top Market Research Companies in Switzerland 2026 | BioNixus</title>
         <meta
           name="description"
-          content="Top market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence."
+          content="Top market research companies in Switzerland 2026 — BioNixus wrote this list. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence."
         />
         <meta name="geo.region" content="CH" />
         <meta name="geo.placename" content="Switzerland" />
@@ -254,7 +254,7 @@ export default function TopMarketResearchCompaniesSwitzerland2026() {
       </Helmet>
       <OpenGraphMeta
         title="Top Market Research Companies in Switzerland 2026 | BioNixus"
-        description="Top market research companies in Switzerland 2026 — BioNixus ranked #1. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence."
+        description="Top market research companies in Switzerland 2026 — BioNixus wrote this list. Multilingual HCP surveys, KOL mapping in the Basel biopharma cluster, BAG Spezialitätenliste payer research, and Swiss pharmaceutical market intelligence."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"

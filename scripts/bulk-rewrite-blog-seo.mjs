@@ -28,9 +28,9 @@ const DESC_TARGET = 145;
 /** Hand-crafted CTR titles/descriptions for high-traffic / GSC-sensitive slugs. */
 const CTR_OVERRIDES = {
   'healthcare-overview-egypt-market-2026': {
-    metaTitle: 'Cairo Hospitals Healthcare 2023–2026 | BioNixus',
+    metaTitle: 'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra',
     metaDescription:
-      'Cairo hospitals healthcare 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German Cairo, EDA pharma access, UHI payer trends — BioNixus Egypt research.',
+      'Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview.',
     focusKeyword: 'cairo hospitals healthcare 2026',
   },
   'healthcare-overview-kuwait-market-2026': {

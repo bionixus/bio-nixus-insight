@@ -46,7 +46,7 @@ export const SEGMENT_MARKET_INDEX: SegmentMarketIndexEntry[] = [
   { slug: 'saudi-arabia-skincare-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia skincare market' },
   { slug: 'saudi-arabia-home-infusion-therapy-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia home infusion therapy market' },
   { slug: 'saudi-arabia-pharmaceutical-packaging-market', group: 'saudi-devices-consumer', label: 'Saudi Arabia pharmaceutical packaging market' },
-  { slug: 'saudi-arabia-obesity-market', group: 'saudi-devices-consumer', label: 'Obesity & GLP-1 market research in Saudi Arabia' },
+  { slug: 'saudi-arabia-obesity-market', group: 'saudi-devices-consumer', label: 'Who does obesity market research in Saudi Arabia?' },
 
   { slug: 'gcc-otc-drugs-market', group: 'gcc', label: 'GCC over-the-counter (OTC) drugs market' },
   { slug: 'gcc-tablet-market', group: 'gcc', label: 'GCC tablet (oral solid dose) market' },
@@ -61,7 +61,7 @@ export const SEGMENT_MARKET_INDEX: SegmentMarketIndexEntry[] = [
   { slug: 'middle-east-biologics-market', group: 'middle-east', label: 'Middle East biologics market' },
 
   { slug: 'uae-in-vitro-diagnostics-devices-market', group: 'country', label: 'UAE in-vitro diagnostics devices market' },
-  { slug: 'uae-obesity-market', group: 'country', label: 'UAE obesity market insights' },
+  { slug: 'uae-obesity-market', group: 'country', label: 'GLP-1 market research in the UAE' },
   { slug: 'kuwait-obesity-market', group: 'country', label: 'Kuwait obesity market insights' },
   { slug: 'egypt-obesity-market', group: 'country', label: 'Egypt obesity and GLP-1 market research' },
   { slug: 'egypt-medical-tourism-market', group: 'country', label: 'Egypt medical tourism market' },

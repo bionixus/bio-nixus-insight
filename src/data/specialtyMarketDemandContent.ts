@@ -15,6 +15,8 @@ export type SpecialtyMarketDemandContent = {
   h1: string;
   intro: string[];
   hubLink?: { to: string; label: string };
+  earlyLinks?: Array<{ to: string; label: string }>;
+  dateModified?: string;
   researchTopics: Array<{ name: string; detail: string }>;
   demandDrivers: { heading: string; drivers: Array<{ title: string; detail: string }> };
   marketStructure: { heading: string; paragraphs: string[] };
@@ -50,7 +52,7 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   breadcrumbLabel: 'Singapore MedTech Manufacturing Market',
   title: 'Singapore MedTech Manufacturing Market Research | BioNixus',
   description:
-    'Singapore MedTech manufacturing market intelligence — EDB and JTC manufacturing hubs, HSA manufacturing licences, CDMO capacity, ASEAN export positioning.',
+    'Singapore MedTech manufacturing: who builds devices in Tuas and Woodlands, HSA manufacturing licences, CDMO capacity and ASEAN export routing. Primary research.',
   canonical: `${BASE}/singapore-medtech-manufacturing-market`,
   h1: 'Singapore MedTech Manufacturing Market: Research & Commercial Intelligence',
   intro: [
@@ -58,6 +60,11 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
     'Buyers searching “MedTech manufacturing Singapore” and “Singapore MedTech industry” need plant economics, regulatory manufacturing pathways, and hospital/OEM sourcing behaviour — not a generic MedTech market overview. Our programmes interview manufacturing directors, quality leads, procurement at export-focused OEMs, and hospital biomedical engineering teams that specify locally finished devices.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  earlyLinks: [
+    { to: '/blog/medtech-singapore-2026-market-hsa-registration', label: 'medtech companies in Singapore guide' },
+    { to: '/pharmaceutical-companies-singapore', label: 'pharmaceutical companies in Singapore directory' },
+  ],
+  dateModified: '2026-11-01',
   researchTopics: [
     {
       name: 'Manufacturing footprint & capacity mapping',
@@ -128,6 +135,7 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   marketStructure: {
     heading: 'How the Singapore MedTech manufacturing market is structured',
     paragraphs: [
+      'Which MedTech companies manufacture in Singapore? Global players with manufacturing, R&D, or regional-HQ presence include Medtronic, Johnson & Johnson, Becton Dickinson (BD), Boston Scientific, Baxter (Woodlands Industrial Park), Thermo Fisher Scientific, Siemens Healthineers, Stryker, and Beckman Coulter. The Singapore MedTech industry punches above its domestic market: the country produces roughly 60% of the world’s microarrays and one-third of its mass spectrometers, and medical devices and equipment manufacturing output was valued at about USD 12 billion in 2021.',
       'Singapore’s MedTech manufacturing base clusters around industrial biomedical estates with co-located test labs, sterile suppliers, and specialist logistics. Multinational captives sit alongside Asian OEM affiliates and independent CDMOs. Decision rights for capacity adds typically sit with regional manufacturing directors and global supply-chain committees — not Singapore sales teams alone.',
       'Commercial research must therefore separate three buyer contexts: (1) OEM partner selection for outsourced manufacture, (2) investment-committee diligence on plant expansion, and (3) hospital/public-procurement preference for Singapore-finished SKUs. BioNixus scopes modules to one of those decisions rather than mixing them into an undifferentiated “industry report.”',
       'For manufacturers also selling into Gulf tenders, Singapore manufacturing credentials often travel with the product story — SFDA and MOHAP buyers ask about origin of manufacture, quality system, and dual sources. We link Singapore manufacturing intelligence to GCC access work when that is on the critical path.',
@@ -178,6 +186,9 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
+    { to: '/blog/medtech-singapore-2026-market-hsa-registration', label: 'Medtech companies in Singapore and HSA registration' },
+    { to: '/pharmaceutical-companies-singapore', label: 'Pharmaceutical companies in Singapore' },
+    { to: '/singapore-medtech-market-research', label: 'MedTech market research in Singapore' },
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
     { to: '/pharmaceutical-market-research-singapore', label: 'Pharmaceutical market research Singapore' },
     { to: '/healthcare-market-research-singapore', label: 'Healthcare market research Singapore' },
@@ -189,6 +200,11 @@ const singaporeMedtechManufacturing: SpecialtyMarketDemandContent = {
       question: 'What is the Singapore MedTech manufacturing market?',
       answer:
         'It is the ecosystem of captive OEM plants, CDMOs, and supply-chain partners producing or finishing medical devices and diagnostics in Singapore for domestic use and APAC/ASEAN export — governed by HSA manufacturing rules and clustered in biomedical industrial estates.',
+    },
+    {
+      question: 'Which MedTech companies manufacture in Singapore?',
+      answer:
+        'Medtronic, Johnson & Johnson, BD, Boston Scientific, Baxter, and Thermo Fisher Scientific run device manufacturing in Singapore, while Siemens Healthineers, Stryker, and Beckman Coulter run regional operations. Baxter’s plant is at Woodlands Industrial Park; pharma and biologics plants concentrate at Tuas Biomedical Park.',
     },
     {
       question: 'Why do MedTech firms manufacture in Singapore?',
@@ -790,15 +806,20 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
   segmentLabel: 'Singapore IVD Market Access',
   badge: 'Singapore · IVD Access',
   breadcrumbLabel: 'Singapore IVD Market Access',
-  title: 'Singapore IVD Market Access Research | BioNixus',
+  title: 'Singapore IVD Market Access: HSA, Labs & Hospitals',
   description:
-    'Singapore IVD market access research — HSA device pathways, hospital lab procurement, cluster testing algorithms, and reimbursement-adjacent adoption.',
+    'Singapore IVD market access: HSA pathways, SingHealth/NUHS/NHG lab algorithms, and assays that stay registered but unused. Primary research. 48h proposal.',
   canonical: `${BASE}/singapore-ivd-market-access`,
-  h1: 'Singapore IVD Market Access: Lab, Hospital & Regulatory Intelligence',
+  h1: 'Singapore IVD market access',
+  dateModified: '2026-10-18',
   intro: [
-    'IVD market access in Singapore is won inside hospital laboratories and cluster testing algorithms as much as at HSA registration. BioNixus researches pathologists, lab directors, and procurement committees to show which assays clear volume barriers — and which stall as “registered but unused.”',
+    'Singapore IVD market access is decided inside hospital laboratories and cluster testing algorithms as much as at HSA registration. An assay can sit on the register and still miss SingHealth, NUHS, or NHG menus if lab directors, pathologists, and cluster procurement do not adopt it. We interview those buyers, map algorithm lock-in, and separate registered-but-unused SKUs from assays that actually run.',
   ],
   hubLink: { to: '/healthcare-market-research', label: 'healthcare market research hub' },
+  earlyLinks: [
+    { to: '/insights/top-market-research-companies-singapore-2026', label: 'Singapore market research companies ranking' },
+    { to: '/pharmaceutical-companies-singapore', label: 'pharmaceutical companies in Singapore' },
+  ],
   researchTopics: [
     { name: 'Lab director & pathologist interviews', detail: 'Algorithm fit, turnaround, and trust barriers for new assays.' },
     { name: 'HSA IVD pathway mapping', detail: 'Classification and evidence expectations for commercial sequencing.' },
@@ -832,11 +853,18 @@ const singaporeIvdMarketAccess: SpecialtyMarketDemandContent = {
   ],
   whyBionixus: SHARED_WHY,
   relatedLinks: [
+    { to: '/insights/top-market-research-companies-singapore-2026', label: 'Top market research companies in Singapore 2026' },
+    { to: '/pharmaceutical-companies-singapore', label: 'Pharmaceutical companies in Singapore' },
     { to: '/clinical-diagnostics-market-research', label: 'Clinical diagnostics market research' },
     { to: '/singapore-medtech-manufacturing-market', label: 'Singapore MedTech manufacturing market' },
     { to: '/singapore-medical-devices-market-report', label: 'Singapore medical devices market report' },
   ],
   faqs: [
+    {
+      question: 'What is Singapore IVD market access?',
+      answer:
+        'Singapore IVD market access is HSA registration plus lab validation, cluster algorithm inclusion, and procurement so an assay actually runs at SingHealth, NUHS, or NHG — not only sits on the register.',
+    },
     {
       question: 'What does IVD market access mean in Singapore?',
       answer:

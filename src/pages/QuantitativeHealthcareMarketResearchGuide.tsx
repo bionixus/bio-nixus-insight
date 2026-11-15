@@ -9,7 +9,7 @@ import { ArrowRight, BookOpen, BarChart3, ShieldCheck, Brain, Users, Target } fr
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { EmailCaptureForm } from '@/components/conversion/EmailCaptureForm';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
-import { withAlsaadanyPersonJsonLd } from '@/data/editorialAuthors';
+import { ALSAADANY_JOB_TITLE, withAlsaadanyPersonJsonLd } from '@/data/editorialAuthors';
 
 type CountryBenchmark = {
   country: string;
@@ -90,7 +90,7 @@ const guideSections = [
 
 const articleAuthor = {
   name: 'Dr. Mohammad Alsaadany',
-  title: 'Healthcare Market Research Advisor',
+  title: ALSAADANY_JOB_TITLE,
   experience: '15+ years in healthcare and pharmaceutical market research',
   linkedin: 'https://www.linkedin.com/in/dr-mohammad-alsaadany',
 };
@@ -375,8 +375,8 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
   const [activeSection, setActiveSection] = useState(guideSections[0].id);
   const [tocOpen, setTocOpen] = useState(false);
   const [finalCtaVisible, setFinalCtaVisible] = useState(false);
-  const lastUpdatedIso = '2026-03-15';
-  const lastUpdatedLabel = 'March 2026';
+  const lastUpdatedIso = '2026-10-27';
+  const lastUpdatedLabel = '27 October 2026';
   const estimatedWordCount = 3900;
 
   const sectionIds = useMemo(() => guideSections.map((s) => s.id), []);

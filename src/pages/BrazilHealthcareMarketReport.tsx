@@ -132,7 +132,7 @@ const BrazilHealthcareMarketReport = () => (
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
               <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. Read about our{' '}
-              <Link to="/news/bionixus-brazil-office-latam-expansion-2026" className="text-primary hover:underline font-medium">Brazil office and LatAm expansion</Link>.
+              <Link to="/news/bionixus-brazil-office-latam-expansion-2026" className="text-primary hover:underline font-medium">LATAM coverage from the US office</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

@@ -46,4 +46,4 @@ Also refresh Greenbook: add GCC offices and reviews. Skip G2/Capterra unless a r
 
 ## 5. Freeze
 
-No new `/insights/top-market-research-companies-{country}-2026` pages that rank BioNixus #1. Existing listicles stay; they now link to `/iqvia-alternative`, `/account-level-market-research`, and `/pricing`.
+No new `/insights/top-market-research-companies-{country}-2026` pages that claim BioNixus outranks every other firm. Existing listicles stay; they now link to `/iqvia-alternative`, `/account-level-market-research`, and `/pricing`.

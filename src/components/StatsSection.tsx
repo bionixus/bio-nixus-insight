@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { GrowthStage } from '@/components/GrowthStage';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { formatLocalizedNumber } from '@/lib/localizedNumbers';
 
@@ -77,11 +78,13 @@ const StatsSection = () => {
   }, [inView, hydrated]);
 
   return (
-    <section ref={sectionRef} id="about" className="premium-home-midnight section-padding">
+    <section ref={sectionRef} id="about" className="premium-home-midnight gl-host section-padding">
       <div className="container-wide relative z-10 max-w-6xl">
         <h2 className={`mb-16 text-center font-display text-3xl md:text-4xl font-light tracking-tight text-[#FFFEFB] transition-all duration-700 ${hydrated && inView ? 'opacity-100 translate-y-0' : hydrated ? 'opacity-0 translate-y-6' : ''}`}>
           {t.stats.title}
         </h2>
+
+        <GrowthStage shape="bars" size={0.72} sizeMobile={0.72} className="mx-auto mb-12 mt-2 h-[240px] w-full max-w-xl md:h-[330px]" />
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
           {t.stats.items.map((stat, index) => (

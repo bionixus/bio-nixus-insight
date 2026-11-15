@@ -63,7 +63,7 @@ const jsonLd = [
     author: personAuthorJsonLd(getEditorialAuthor({ path: '/usa-healthcare-market-report', countrySlug: 'united-states', pageType: 'article' })),
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-09-05',
+    dateModified: '2026-11-01',
     mainEntityOfPage: 'https://www.bionixus.com/usa-healthcare-market-report',
   },
   {
@@ -78,7 +78,7 @@ const jsonLd = [
     countryName: "United States",
     marketSlug: "usa",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-09-05",
+    modifiedDate: "2026-11-01",
   })
 ];
 
@@ -117,7 +117,7 @@ const UsaHealthcareMarketReport = () => (
               <div><p className="text-3xl font-display font-bold text-primary">$175–200B</p><p className="text-xs text-muted-foreground mt-1">Medical devices 2026 (MDMA/AdvaMed)</p></div>
             </div>
           </div>
-          <p className="text-muted-foreground leading-relaxed mb-4">The United States is the world's largest and most commercially significant healthcare market, accounting for approximately 45% of global pharmaceutical revenues. CMS Office of the Actuary (NHE projections 2025–34, June 2026) sizes 2026 national health expenditure at USD 6.017 trillion. The Inflation Reduction Act drug price negotiations represent the most significant structural change to US pharmaceutical commercial models since the Medicare Modernization Act of 2003 — reshaping launch strategy, pricing architecture, and international reference pricing dynamics for all global pharmaceutical companies.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">The United States is the world's largest and most commercially significant healthcare market, accounting for approximately 45% of global pharmaceutical revenues. CMS Office of the Actuary (NHE projections 2025–34, June 2026) sizes 2026 national health expenditure at USD 6.017 trillion. The Inflation Reduction Act drug price negotiations represent the most significant structural change to US pharmaceutical commercial models since the Medicare Modernization Act of 2003 — reshaping launch strategy, pricing architecture, and international reference pricing dynamics for all global pharmaceutical companies. For the buyer shortlist, see <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="text-primary hover:underline font-medium">healthcare market research companies in the USA</Link> and the <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
@@ -132,7 +132,9 @@ const UsaHealthcareMarketReport = () => (
               <Link to="/brazil-healthcare-market-report" className="text-primary hover:underline font-medium">Brazil healthcare market report</Link>, or start from the{' '}
               <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">global healthcare market research hub</Link>{' '}and our{' '}
               <Link to="/market-research-healthcare" className="text-primary hover:underline font-medium">healthcare market research services</Link>. For therapy-segmented demand and access analysis, see our{' '}
-              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>.
+              <Link to="/pharmaceutical-therapy-areas" className="text-primary hover:underline font-medium">pharmaceutical therapy-area coverage</Link>. For the US company landscape, see the{' '}
+              <Link to="/pharmaceutical-companies-usa" className="text-primary hover:underline font-medium">top pharmaceutical companies in the USA</Link>{' '}and the{' '}
+              <Link to="/medical-device-companies-usa" className="text-primary hover:underline font-medium">top medical device companies in the USA</Link>.
             </p>
             <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>

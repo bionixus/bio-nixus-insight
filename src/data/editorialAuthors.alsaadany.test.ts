@@ -9,6 +9,7 @@ import {
 import { SKYRIZI_HARDCODED_POST } from '@/data/blog-skyrizi-omnichannel';
 import {
   ALSAADANY_AUTHOR,
+  ALSAADANY_JOB_TITLE,
   ALSAADANY_PROFILE_URL,
   ALSAADANY_PROFILE_URL_AR,
   ALSAADANY_SAME_AS_URL,
@@ -17,6 +18,7 @@ import {
   authorLinkedInForDisplay,
   isAlsaadanyLinkedInUrl,
   personAuthorJsonLd,
+  replaceMeaDirectorTitle,
   withAlsaadanyPersonJsonLd,
 } from '@/data/editorialAuthors';
 
@@ -40,24 +42,38 @@ describe('Alsaadany profile links', () => {
     expect(alsaadanyProfileUrl('Mohammad Ashour')).toBeNull();
   });
 
-  it('adds url and sameAs on his Person node and keeps an existing jobTitle', () => {
-    const node = asPerson(withAlsaadanyPersonJsonLd({
+  it('rewrites legacy titles to the AMEA Director title and keeps a different explicit title', () => {
+    for (const jobTitle of [
+      'Healthcare Market Research Advisor',
+      'MEA Director',
+      'Director, BioNixus Healthcare Market Research',
+    ]) {
+      const node = asPerson(withAlsaadanyPersonJsonLd({
+        '@type': 'Person' as const,
+        name: 'Dr. Mohammad Alsaadany',
+        jobTitle,
+        sameAs: ['https://www.linkedin.com/in/dr-mohammad-alsaadany'],
+      }));
+      expect(node.jobTitle).toBe(ALSAADANY_JOB_TITLE);
+      expect(node.url).toBe(ALSAADANY_PROFILE_URL);
+    }
+    const social = asPerson(withAlsaadanyPersonJsonLd({
       '@type': 'Person' as const,
-      name: 'Dr. Mohammad Alsaadany',
-      jobTitle: 'Healthcare Market Research Advisor',
-      sameAs: ['https://www.linkedin.com/in/dr-mohammad-alsaadany'],
+      name: 'Mohammad Alsaadany',
+      jobTitle: 'Marketing and Digital Transformation Director at BioNixus Group',
     }));
-    expect(node.url).toBe(ALSAADANY_PROFILE_URL);
-    expect(node.jobTitle).toBe('Healthcare Market Research Advisor');
-    expect(node.sameAs).toEqual([
-      'https://www.linkedin.com/in/dr-mohammad-alsaadany',
-      ALSAADANY_SAME_AS_URL,
-    ]);
+    expect(social.jobTitle).toBe('Marketing and Digital Transformation Director at BioNixus Group');
+    expect(replaceMeaDirectorTitle(`Dr. Mohammad Alsaadany, ${ALSAADANY_JOB_TITLE} at BioNixus`)).toBe(
+      `Dr. Mohammad Alsaadany, ${ALSAADANY_JOB_TITLE} at BioNixus`,
+    );
+    expect(replaceMeaDirectorTitle('Dr. Mohammad Alsaadany, MEA Director at BioNixus')).toBe(
+      `Dr. Mohammad Alsaadany, ${ALSAADANY_JOB_TITLE} at BioNixus`,
+    );
   });
 
-  it('uses Director only when his Person node has no jobTitle', () => {
+  it('uses the AMEA Director title only when his Person node has no jobTitle', () => {
     const node = asPerson(withAlsaadanyPersonJsonLd({ '@type': 'Person' as const, name: 'Mohammad Alsaadany' }));
-    expect(node.jobTitle).toBe('Director');
+    expect(node.jobTitle).toBe('AMEA Director (APAC, Middle East and Africa)');
     expect(node.url).toBe(ALSAADANY_PROFILE_URL);
     expect(node.sameAs).toEqual([ALSAADANY_SAME_AS_URL]);
   });
@@ -84,7 +100,7 @@ describe('Alsaadany profile links', () => {
 
   it('keeps the roster jobTitle on his editorial author object', () => {
     const node = asPerson(personAuthorJsonLd(ALSAADANY_AUTHOR));
-    expect(node.jobTitle).toBe('Director, BioNixus Healthcare Market Research');
+    expect(node.jobTitle).toBe('AMEA Director (APAC, Middle East and Africa)');
     expect(node.url).toBe(ALSAADANY_PROFILE_URL);
     expect(node.sameAs).toEqual([ALSAADANY_SAME_AS_URL]);
   });

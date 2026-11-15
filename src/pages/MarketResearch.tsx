@@ -97,6 +97,7 @@ const PRIORITY_MARKETS = [
     extraLinks: [
       { to: '/healthcare-market-research/united-states', label: 'Healthcare hub' },
       { to: '/healthcare-market-research-usa', label: 'Market research overview' },
+      { to: '/market-research/usa', label: 'MENA outbound from the USA' },
     ],
   },
   {
@@ -315,7 +316,7 @@ export default function MarketResearch() {
                   </div>
                 </div>
                 <div className="bx-card-foot">
-                  <strong>48 countries</strong> fielded · 120+ global projects annually (127 in 2025)
+                  <strong>48 countries</strong> fielded · 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026)
                 </div>
               </div>
             </div>
@@ -384,6 +385,18 @@ export default function MarketResearch() {
                 <PriorityMarketCard key={market.slug} market={market} />
               ))}
             </div>
+            <p className="bx-lead mt-6">
+              Teams booking Gulf or Egypt fieldwork from the USA, Japan, China or Singapore should start on the corridor
+              pages:{' '}
+              <Link to="/market-research/usa">MENA market research company USA</Link>
+              {' · '}
+              <Link to="/market-research/japan">Japan-to-MEA</Link>
+              {' · '}
+              <Link to="/market-research/china">China-to-MEA</Link>
+              {' · '}
+              <Link to="/market-research/singapore">Singapore-to-MEA</Link>
+              . Work is delivered from the USA and UK offices.
+            </p>
           </div>
         </section>
 

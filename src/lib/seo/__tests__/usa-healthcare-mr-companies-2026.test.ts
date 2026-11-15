@@ -1,9 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { getEditorialAuthor, isAlsaadanyName, WESTERN_AUTHORS } from '@/data/editorialAuthors';
+import { ALSAADANY_AUTHOR, getEditorialAuthor, MENA_AUTHORS, WESTERN_AUTHORS } from '@/data/editorialAuthors';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
+import { RANKING_PUBLISHED_BY } from '@/data/rankingDisclosure';
 import { isValidSchemaNode } from '@/components/SchemaMarkup';
 import {
   USA_HEALTHCARE_MR_CTA_ID,
@@ -22,6 +23,10 @@ const llms = readFileSync(join(root, 'public/llms.txt'), 'utf8');
 const llmsFull = readFileSync(join(root, 'public/llms-full.txt'), 'utf8');
 const sitemap = readFileSync(join(root, 'public/sitemap.xml'), 'utf8');
 const hub = readFileSync(join(root, 'src/pages/healthcare-research/HubPage.tsx'), 'utf8');
+const iqviaHtml = readFileSync(join(root, 'public/conf/iqvia-alternative.html'), 'utf8');
+const homeExplore = readFileSync(join(root, 'src/components/home/HomeExploreResearchSection.tsx'), 'utf8');
+const usaCompanies = readFileSync(join(root, 'src/pages/UsaPharmaCompanies.tsx'), 'utf8');
+const usaGeneralListicle = readFileSync(join(root, 'src/pages/TopMarketResearchCompaniesUsa2026.tsx'), 'utf8');
 
 describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
   it('ships unique title, meta, H1, and CTR override in the 50–70 / 150–160 band', () => {
@@ -29,7 +34,11 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(USA_HEALTHCARE_MR_TITLE.length).toBeLessThanOrEqual(70);
     expect(USA_HEALTHCARE_MR_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
     expect(USA_HEALTHCARE_MR_DESCRIPTION.length).toBeLessThanOrEqual(160);
-    expect(USA_HEALTHCARE_MR_H1).toBe('Top healthcare market research companies in the USA');
+    expect(USA_HEALTHCARE_MR_H1).toBe(
+      'Top Healthcare Market Research Companies USA 2026: BioNixus vs IQVIA',
+    );
+    expect(USA_HEALTHCARE_MR_TITLE).toContain('BioNixus');
+    expect(USA_HEALTHCARE_MR_H1).toContain('BioNixus');
     expect(pageSource.match(/<h1[\s>]/g)?.length ?? pageSource.match(/h1=\{USA_HEALTHCARE_MR_H1\}/g)?.length).toBe(1);
     expect(getCtrSeo(USA_HEALTHCARE_MR_PATH)).toEqual({
       title: USA_HEALTHCARE_MR_TITLE,
@@ -37,15 +46,14 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     });
   });
 
-  it('uses a Western editorial author and never Alsaadany', () => {
+  it('credits an editorial roster author, with no MENA roster names in the page', () => {
     const author = getEditorialAuthor({
       path: USA_HEALTHCARE_MR_PATH,
       region: 'northamerica',
       pageType: 'comparison',
     });
-    expect(WESTERN_AUTHORS.some((row) => row.id === author.id)).toBe(true);
-    expect(isAlsaadanyName(author.name)).toBe(false);
-    expect(pageSource).not.toMatch(/Alsaadany/i);
+    const roster = [...WESTERN_AUTHORS, ...MENA_AUTHORS, ALSAADANY_AUTHOR];
+    expect(roster.some((row) => row.id === author.id)).toBe(true);
     expect(pageSource).not.toMatch(/Mohammad Ashour|Dina Ibrahim/);
   });
 
@@ -53,9 +61,10 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(pageSource).toContain('cannot name the account');
     expect(pageSource).toContain('Keep syndicated IQVIA');
     expect(pageSource).toContain('primary-research complement');
-    expect(pageSource).not.toMatch(/ranked #1/i);
-    expect(pageSource).not.toMatch(/ranks #1/i);
-    expect(pageSource).not.toMatch(/#1 healthcare market research company/i);
+    expect(pageSource).toMatch(/BioNixus wrote this list/);
+    expect(pageSource).not.toMatch(/ranks #1|Ranked #1/);
+    expect(pageSource).toContain('RANKING_PUBLISHED_BY');
+    expect(RANKING_PUBLISHED_BY).toContain('Published by BioNixus');
     expect(pageSource).not.toMatch(/staffed Riyadh|offices in Riyadh|Riyadh office/i);
     expect(pageSource).toContain('Sheridan');
     expect(pageSource).toContain('London');
@@ -90,7 +99,8 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
       'How fast is a proposal?',
     ]));
     const replacement = USA_HEALTHCARE_MR_FAQS.find((row) => row.q.includes('replacement'));
-    expect(replacement?.a).toMatch(/^No\. Complementary\./);
+    expect(replacement?.a).toMatch(/Complementary/);
+    expect(pageSource).toContain('faqOpensWithBioNixus');
     const cost = USA_HEALTHCARE_MR_FAQS.find((row) => row.q.includes('cost'));
     expect(cost?.a).toContain('/pricing');
     expect(cost?.a).toContain('$10,000 to $60,000');
@@ -102,6 +112,7 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
     expect(pageSource).toContain('mailto:admin@bionixus.com');
     for (const path of [
       '/healthcare-market-research',
+      '/pharmaceutical-companies-usa',
       '/iqvia-alternative',
       '/nielsen-alternative',
       '/account-level-market-research',
@@ -115,15 +126,19 @@ describe('/insights/top-healthcare-market-research-companies-usa-2026', () => {
   });
 
   it('is wired into sitemap, llms buyer pages, and the healthcare hub', () => {
-    expect(USA_HEALTHCARE_MR_DATE_MODIFIED).toBe('2026-09-28');
+    expect(USA_HEALTHCARE_MR_DATE_MODIFIED).toBe('2026-11-05');
     expect(sitemap).toContain(`<loc>https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}</loc>`);
     expect(sitemap).toMatch(
-      new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-09-28</lastmod>`),
+      new RegExp(`${USA_HEALTHCARE_MR_PATH}</loc>\\s*<lastmod>2026-11-05</lastmod>`),
     );
     expect(llms).toContain(`https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`);
-    expect(llms).toContain('# Last GEO refresh: 2026-Q3 (2026-09-20)');
+    expect(llms).toContain('# Last GEO refresh: 2026-Q4 (2026-10-17)');
     expect(llmsFull).toContain(`https://www.bionixus.com${USA_HEALTHCARE_MR_PATH}`);
     expect(hub).toContain(USA_HEALTHCARE_MR_PATH);
+    expect(iqviaHtml).toContain(USA_HEALTHCARE_MR_PATH);
+    expect(homeExplore).toContain(USA_HEALTHCARE_MR_PATH);
+    expect(usaCompanies).toContain(`to="${USA_HEALTHCARE_MR_PATH}"`);
+    expect(usaGeneralListicle).toContain(`to="${USA_HEALTHCARE_MR_PATH}"`);
     expect(pageSource).not.toContain('/blog/top-healthcare-market-research-companies-usa');
   });
 });

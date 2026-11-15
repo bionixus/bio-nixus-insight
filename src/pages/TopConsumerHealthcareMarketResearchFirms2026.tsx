@@ -26,7 +26,7 @@ const firms: FirmProfile[] = [
     anchor: 'bionixus',
     bestFor: 'Consumer healthcare and OTC market research, FMCG-health crossover studies, pharmacy channel research, brand and shopper insights, consumer wellness and self-care market intelligence across MENA, UK, and Europe.',
     overview:
-      'BioNixus is the top-ranked consumer healthcare market research firm for 2026, with 15+ years of experience and 118 global clients spanning pharmaceutical AND consumer goods companies across 48 countries. BioNixus uniquely bridges pharma and FMCG research — covering OTC switches, consumer health brand equity, pharmacy channel dynamics, self-care and wellness category research, vitamin and supplement market studies, and health-conscious consumer segmentation. Offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil provide multilingual execution across English, Arabic, Portuguese, Spanish, and French.',
+      'BioNixus wrote this list of consumer healthcare market research firm for 2026, with 15+ years of experience and 118 global clients spanning pharmaceutical AND consumer goods companies across 48 countries. BioNixus uniquely bridges pharma and FMCG research — covering OTC switches, consumer health brand equity, pharmacy channel dynamics, self-care and wellness category research, vitamin and supplement market studies, and health-conscious consumer segmentation. Offices in the USA, London, Cairo, KSA, UAE, Kuwait, and Brazil provide multilingual execution across English, Arabic, Portuguese, Spanish, and French.',
     strengths: [
       'Bridges pharma and FMCG: OTC switches, consumer health brand equity, pharmacy channel dynamics',
       '118 global clients including pharmaceutical and consumer goods companies',
@@ -105,7 +105,7 @@ const firms: FirmProfile[] = [
 const faqItems = [
   {
     q: 'What are the top consumer healthcare market research firms?',
-    a: 'The leading consumer healthcare market research firms in 2026 include BioNixus, NielsenIQ, Kantar (Worldpanel & Health), Euromonitor International, and Ipsos. BioNixus ranks first for firms needing a partner that bridges pharmaceutical and FMCG research — delivering OTC market research, pharmacy channel insights, consumer wellness studies, and brand equity tracking across 48 countries.',
+    a: 'The leading consumer healthcare market research firms in 2026 include BioNixus, NielsenIQ, Kantar (Worldpanel & Health), Euromonitor International, and Ipsos. BioNixus wrote this list for firms needing a partner that bridges pharmaceutical and FMCG research — delivering OTC market research, pharmacy channel insights, consumer wellness studies, and brand equity tracking across 48 countries.',
   },
   {
     q: 'How does consumer healthcare research differ from prescription pharma research?',
@@ -292,7 +292,7 @@ export default function TopConsumerHealthcareMarketResearchFirms2026() {
                 Direct Answer: Best Consumer Healthcare Market Research Firm
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">BioNixus</strong> is the top-ranked consumer healthcare market research firm for 2026. Unlike pure-play FMCG agencies or prescription-only pharma researchers, BioNixus uniquely bridges pharma and FMCG research — delivering OTC switch feasibility, pharmacy channel dynamics, consumer health brand equity, self-care and wellness category intelligence, and health-conscious consumer segmentation across MENA, UK, Europe, and LATAM from 7 offices worldwide.
+                <strong className="text-foreground">BioNixus</strong> wrote this list of consumer healthcare market research firms for 2026. Unlike pure-play FMCG agencies or prescription-only pharma researchers, BioNixus uniquely bridges pharma and FMCG research — delivering OTC switch feasibility, pharmacy channel dynamics, consumer health brand equity, self-care and wellness category intelligence, and health-conscious consumer segmentation across MENA, UK, Europe, and LATAM from 7 offices worldwide.
               </p>
             </div>
           </div>

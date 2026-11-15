@@ -11,6 +11,7 @@
  * calls in lazyReportPages.ts, so there is no extra network cost.
  */
 
+import { DEDICATED_INDUSTRY_LISTICLE_PATHS } from '@/data/industry-listicle-clusters';
 import { isSegmentMarketPath } from '@/data/segmentMarketIndex';
 import { getSeoExportName, getSeoPageLoader } from '@/routes/lazySeoPages';
 import * as seoLazyPages from '@/routes/lazySeoPages';
@@ -35,6 +36,8 @@ const IRREGULAR_IMPORTS: Record<string, Importer> = {
   '/gcc-anesthesia-surgical-market-report': () => import('@/pages/GccAnesthesiaSurgicalMarket'),
   '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement': () =>
     import('@/pages/BlogPost'),
+  '/singapore-ivd-market-access': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
+  '/singapore-medtech-manufacturing-market': () => import('@/pages/templates/SpecialtyMarketDemandPage'),
 };
 
 /** Dynamic-slug routes matched by prefix. */
@@ -145,6 +148,8 @@ const IRREGULAR_LAZY: Record<string, unknown> = {
   '/medical-device-companies-saudi-arabia': reportLazyPages.SaudiMedicalDeviceCompanies,
   '/gcc-anesthesia-surgical-market-report': reportLazyPages.GccAnesthesiaSurgicalMarket,
   '/uae-influenza-vaccine-report': reportLazyPages.UaeInfluenzaVaccineReport,
+  '/singapore-ivd-market-access': seoLazyPages.SpecialtyMarketDemandPage,
+  '/singapore-medtech-manufacturing-market': seoLazyPages.SpecialtyMarketDemandPage,
 };
 
 function resolveLazyComponent(pathname: string): unknown {
@@ -216,6 +221,13 @@ function resolveLazyComponent(pathname: string): unknown {
   }
 
   if (isSegmentMarketPath(pathname)) return reportLazyPages.SegmentMarketRoute;
+
+  if (
+    /^\/insights\/top-[a-z0-9-]+-market-research-companies-[a-z0-9-]+-2026$/.test(pathname) &&
+    !DEDICATED_INDUSTRY_LISTICLE_PATHS.has(pathname)
+  ) {
+    return seoLazyPages.TopIndustryMarketResearchListicle;
+  }
 
   return undefined;
 }

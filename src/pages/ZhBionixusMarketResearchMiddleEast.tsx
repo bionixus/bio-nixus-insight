@@ -20,11 +20,12 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
+import { ALSAADANY_JOB_TITLE } from '@/data/editorialAuthors';
 
 const pageUrl = 'https://www.bionixus.com/zh/bionixus-market-research-middle-east';
 const englishSiblingUrl = 'https://www.bionixus.com/bionixus-market-research-middle-east';
 const pageImage = 'https://www.bionixus.com/images/quant-hcp-survey-executive.png';
-const lastUpdated = '2026-03-17';
+const lastUpdated = '2026-10-27';
 const editorialLead = 'Dr. Mohammad Alsaadany';
 const contactHref = '/zh/contact';
 
@@ -334,7 +335,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
               </p>
               <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-white/5 text-primary-foreground/80 text-xs px-3 py-1 mb-4 ml-2">
                 <CalendarDays className="w-3.5 h-3.5 text-gold-warm" />
-                最后更新:2026 年 3 月
+                最后更新:2026 年 10 月 27 日
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-5 leading-tight">
                 加速海湾国家上市决策的中东制药市场研究
@@ -797,7 +798,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
                 <PersonNameLink name={editorialLead} className="text-inherit no-underline" />
               </h2>
               <p className="text-sm text-primary font-medium mb-3">
-                BioNixus 医疗市场研究顾问
+                {ALSAADANY_JOB_TITLE}, BioNixus
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 本页面已对照海湾地区当前的制药市场条件与执行约束进行审阅。最新审阅日期:{lastUpdated}。督导内容包含方法论一致性、利益相关方逻辑校验,以及将发现转化为可执行的上市与准入产出。

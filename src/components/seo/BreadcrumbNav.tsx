@@ -20,7 +20,8 @@ export function BreadcrumbNav({
   return (
     <nav
       aria-label="Breadcrumb"
-      className={cn('py-3 px-4 text-sm', onDark ? 'text-white/55' : 'text-muted-foreground', className)}
+      // The critical CSS in index.html paints every <nav> white; dark heroes need it cleared.
+      className={cn('py-3 px-4 text-sm', onDark ? 'bg-transparent text-white/55' : 'text-muted-foreground', className)}
     >
       <ol className="flex items-center flex-wrap gap-y-1">
         {items.map((item, index) => (

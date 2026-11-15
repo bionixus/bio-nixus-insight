@@ -1,4 +1,5 @@
 import type { Language } from './i18n';
+import { INTL_HREFLANG_BY_PATH } from '@/data/intl-outbound/shared';
 
 function getBaseUrl() {
   return 'https://www.bionixus.com';
@@ -473,6 +474,7 @@ export function resolveLanguageSwitchPath(pathname: string, targetLang: Language
 
 export function getCanonicalPath(pathname: string = '/') {
   const normalized = normalizePath(pathname);
+  if (INTL_HREFLANG_BY_PATH[normalized]) return normalized;
   const englishDuplicate = untranslatedLocaleEnglishPath(normalized);
   if (englishDuplicate) return englishDuplicate;
   const group = findRouteGroup(normalized);
@@ -491,6 +493,10 @@ export function getHreflangLinks(pathname: string = '/') {
   const base = getBaseUrl();
   const normalized = normalizePath(pathname);
   const absoluteHref = (path: string) => `${base}${normalizePath(path)}`;
+  const intlMoney = INTL_HREFLANG_BY_PATH[normalized];
+  if (intlMoney) {
+    return intlMoney.map((link) => ({ lang: link.lang, href: link.href }));
+  }
   const englishDuplicate = untranslatedLocaleEnglishPath(normalized);
   if (englishDuplicate) {
     const href = absoluteHref(englishDuplicate);

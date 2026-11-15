@@ -19,7 +19,8 @@ export const aboutPageCopyDe: AboutPageCopy = {
   ctaPrimary: 'Angebot anfordern',
   ctaSecondary: 'Branchen entdecken',
   metrics: [
-    { value: '120+', label: 'Globale Projekte jährlich' },
+    { value: '127', label: 'Studien 2026 bis heute' },
+    { value: '120', label: 'Studien im Jahr 2025' },
     { value: '118', label: 'Globale Kunden' },
     { value: '48', label: 'Abgedeckte Länder' },
     { value: '16', label: 'Branchenvertikalen' },
@@ -51,7 +52,7 @@ export const aboutPageCopyDe: AboutPageCopy = {
   storyAct3P1:
     'Dieser Bogen — Londoner Wurzeln, regionale MENA-Tiefe, amerikanischer Hauptsitz — trug BioNixus in den Kreis der weltweit führenden 100 Marktforschungsunternehmen. Wir sind in 48 Ländern und über 14 Therapiegebiete tätig, auf Englisch, Arabisch, Französisch, Deutsch, Spanisch und Chinesisch. Die unter Regulierung geschmiedete pharmazeutische Disziplin erstreckt sich heute auf B2B- und B2C-Programme in 16 Branchenvertikalen — weil Kunden uns baten, denselben Standard überall anzuwenden.',
   storyAct3P2BeforePharma:
-    '120+ globale Projekte jährlich (127 im Jahr 2025) für 118 globale Kunden. Das Team, das Ihre Studie plant, ist noch immer das Team, das sie liefert. Das hat sich seit London nicht geändert. Was sich geändert hat, ist, wie viele Märkte — und wie viele Branchen — uns vertrauen. Entdecken Sie unsere ',
+    '120+ globale Projekte jährlich (120 im Jahr 2025; 127 Studien im Jahr 2026 bis heute) für 118 globale Kunden. Das Team, das Ihre Studie plant, ist noch immer das Team, das sie liefert. Das hat sich seit London nicht geändert. Was sich geändert hat, ist, wie viele Märkte — und wie viele Branchen — uns vertrauen. Entdecken Sie unsere ',
   storyAct3LinkPharma: 'Pharmazeutische & Gesundheitsforschung',
   storyAct3P2Mid1: ', den vollständigen ',
   storyAct3LinkIndustries: 'Branchen-Hub',
@@ -102,20 +103,32 @@ export const aboutPageCopyDe: AboutPageCopy = {
     'BioNixus wurde in London gegründet, hat seinen Hauptsitz in den Vereinigten Staaten und führt MENA-Programme von einem Regionalbüro im Großraum Kairo aus — mit aktivem Fieldwork in den Amerikas, Europa, dem Nahen Osten und APAC.',
   offices: [
     {
-      title: 'Vereinigte Staaten — Globaler Hauptsitz',
-      lines: ['1309 Coffeen Ave', 'Sheridan, Wyoming 82801', '+1 888 465 5557'],
+      title: 'Vereinigte Staaten — Regionale Leitung (globaler Hauptsitz)',
+      lines: ['1309 Coffeen Ave Ste 1200', 'Sheridan, Wyoming 82801', '+1 888 465 5557'],
     },
     {
-      title: 'Vereinigtes Königreich — London (Gründungsbüro)',
+      title: 'Vereinigtes Königreich — Regionale Leitung (London)',
       lines: ['128 City Road', 'London, EC1V 2NX', '+44 7727 666682'],
     },
     {
-      title: 'Ägypten — Großraum Kairo (MENA-Regionalbüro)',
+      title: 'Ägypten — Regionale Leitung (Großraum Kairo)',
       lines: [
         'Regionale MENA-Operationen und zweisprachiges Fieldwork-Hub für GCC-, Nordafrika- und Nahost-Programme.',
         '+20 120 688 2323',
       ],
       linkLabel: 'Marktforschung Ägypten',
+    },
+    {
+      title: 'Saudi-Arabien — Außenstelle (Al Khobar)',
+      lines: ['2658 Street 7225, Al Aashir', 'Al Khobar Al Shamalia 34428', '+966 50 182 5336'],
+    },
+    {
+      title: 'Vereinigte Arabische Emirate — Außenstelle (Dubai)',
+      lines: ['Thuraya Tower 1, 5th Floor', 'Al Sufouh 2, Dubai', '+44 7727 666682'],
+    },
+    {
+      title: 'Kuwait — Außenstelle (Salmiya)',
+      lines: ['Olympia Mall, Al Blajat St', 'Salmiya 12111', '+965 6502 3130'],
     },
   ],
   langMirrorLead: 'Diese Seite in Ihrer Sprache:',

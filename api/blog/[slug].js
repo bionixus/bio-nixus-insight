@@ -19,17 +19,15 @@ import { prepareBlogBodyHtml } from '../../lib/demote-blog-body-h1.mjs';
 import { fixBrokenInternalHref, fixBrokenInternalHrefsInHtml } from '../../lib/fix-broken-internal-hrefs.mjs';
 import { handlePressReleaseCrawler } from '../../lib/press-crawler-html.mjs';
 import { resolveLegacyRedirect } from '../../lib/legacy-redirects.mjs';
-import {
-  DEFAULT_AUTHOR_NAME,
-  buildIndustriesInsightGraph,
-  countWords,
-  htmlToPlainText,
-} from '../../lib/industries-insight-jsonld.mjs';
+import { resolveBlogSchemaLead, resolveBlogSocialImage } from '../../lib/blog-discover-image.mjs';
+import { withMaxImagePreview } from '../../lib/robots-meta.mjs';
 
 const sanityClient = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID || 'h2whvvpo',
   dataset: process.env.VITE_SANITY_DATASET || 'production',
-  useCdn: true,
+  // The Sanity CDN (apicdn) can keep a document without mainImage / ogImage
+  // after those assets are published. Article reads go to the API.
+  useCdn: false,
   apiVersion: '2024-01-01',
 });
 
@@ -53,41 +51,6 @@ function htmlDocumentAttrs(isArabic) {
   return isArabic ? ' lang="ar" dir="rtl"' : ' lang="en"';
 }
 
-function isSvgImageUrl(url) {
-  if (!url) return false;
-  return url.split('?')[0].toLowerCase().endsWith('.svg');
-}
-
-function toSocialShareImageUrl(url) {
-  if (!url) return `${BASE}/og-image.png`;
-  let absolute = url;
-  if (absolute.startsWith('//')) absolute = `https:${absolute}`;
-  if (absolute.startsWith('/')) absolute = `${BASE}${absolute}`;
-  if (absolute.includes('cdn.sanity.io')) {
-    const base = absolute.split('?')[0];
-    return `${base}?w=1200&h=630&fit=crop&fm=jpg&q=90`;
-  }
-  if (absolute.includes('images.unsplash.com')) {
-    try {
-      const parsed = new URL(absolute);
-      parsed.searchParams.set('w', '1200');
-      parsed.searchParams.set('h', '630');
-      parsed.searchParams.set('fit', 'crop');
-      parsed.searchParams.set('q', '85');
-      parsed.searchParams.set('fm', 'jpg');
-      return parsed.toString();
-    } catch {
-      return absolute;
-    }
-  }
-  return absolute;
-}
-
-function pickCrawlerShareImage(post) {
-  const raster = [post?.ogImage, post?.coverImage].find((candidate) => candidate && !isSvgImageUrl(candidate));
-  return toSocialShareImageUrl(raster || post?.ogImage || post?.coverImage);
-}
-
 // Fetch full post including body content for crawlers (AhrefsBot, Googlebot, etc.)
 const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   title,
@@ -103,17 +66,14 @@ const QUERY = `*[_type == "blogPost" && slug.current == $slug][0]{
   htmlContent,
   "coverImage": mainImage.asset->url,
   "coverImageAlt": mainImage.alt,
+  "coverImageWidth": mainImage.asset->metadata.dimensions.width,
+  "coverImageHeight": mainImage.asset->metadata.dimensions.height,
   "ogImage": openGraph.ogImage.asset->url,
   "ogImageAlt": openGraph.ogImage.alt,
+  "ogImageWidth": openGraph.ogImage.asset->metadata.dimensions.width,
+  "ogImageHeight": openGraph.ogImage.asset->metadata.dimensions.height,
   publishedAt,
-  updatedAt,
-  _updatedAt,
   "author": author->name,
-  "authorSlug": author->slug.current,
-  "authorTitle": coalesce(authorJobTitle, author->title),
-  "authorLinkedIn": author->linkedIn,
-  "coverImageCaption": mainImage.caption,
-  "seoKeywords": seo.keywords,
   category,
   "categoryTitle": category->title,
   "categories": categories[]->title,
@@ -211,33 +171,6 @@ function buildRelatedInternalLinksNav(slug) {
         `<li><a href="${esc(href)}">${esc(label)}</a></li>`,
     )
     .join('\n      ');
-  return `<nav class="related-internal" aria-label="Related pages on this site">
-    <h2>Explore related pages</h2>
-    <ul>
-      ${items}
-    </ul>
-  </nav>`;
-}
-
-/** Industries-silo outlinks; never the healthcare hub (see .cursor/rules/industry-silo-linking.mdc). */
-const INDUSTRIES_RELATED_LINKS_BY_SLUG = {
-  'mystery-shopping-companies-saudi-arabia-2026': [
-    ['Retail market research company in Saudi Arabia', `${BASE}/saudi-arabia-retail-market-research`],
-    ['GCC mystery-shop retail brief', `${BASE}/templates/mystery-shop-retail-brief`],
-  ],
-};
-
-function buildIndustriesRelatedLinksNav(slug) {
-  const links = [
-    ...(INDUSTRIES_RELATED_LINKS_BY_SLUG[slug] ?? []),
-    ['B2B and B2C industry insights hub', `${BASE}/bionixus-industries/insights`],
-    ['BioNixus industries hub', `${BASE}/bionixus-industries`],
-    ['B2C industries market research', `${BASE}/b2c-industries`],
-    ['B2B industries market research', `${BASE}/b2b-industries`],
-    ['Market research by industry in KSA, UAE, and Egypt', `${BASE}/market-research-by-industry`],
-    ['Contact BioNixus about a market research project', `${BASE}/contact`],
-  ];
-  const items = links.map(([label, href]) => `<li><a href="${esc(href)}">${esc(label)}</a></li>`).join('\n      ');
   return `<nav class="related-internal" aria-label="Related pages on this site">
     <h2>Explore related pages</h2>
     <ul>
@@ -380,7 +313,7 @@ export default async function handler(req, res) {
       // on that URL tells Google to drop it; 404 does not.
       return sendCompressedHtml(req, res, buildFallbackHtml(slug), 404, {
         cacheControl: 'public, max-age=300',
-        robotsTag: 'noindex, follow',
+        robotsTag: withMaxImagePreview('noindex, follow'),
       });
     }
 
@@ -407,30 +340,45 @@ export default async function handler(req, res) {
     const ctr = getCtrSeo(pagePath);
     const documentTitle = ctr?.title || seoTitleWithBrandOnce(titleCore);
     const title = esc(documentTitle);
+    const headline = esc(post.title || documentTitle);
     const rawBodyText =
       typeof post?.body === 'string' ? post.body : portableTextToPlain(Array.isArray(post?.body) ? post.body : []);
     const metaOverride = getBlogMetaDescriptionOverride(slug);
-    const descriptionText = ctr?.description
-      ? ctr.description
-      : buildSeoDescription({
-          preferred:
-            metaOverride ||
-            pickLocalizedString(post.seoMetaDescription, contentLocale) ||
-            pickLocalizedString(post.excerpt, contentLocale),
-          bodySource: rawBodyText,
-          fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
-        });
-    const description = esc(descriptionText);
-    const image = pickCrawlerShareImage(post);
+    const description = ctr?.description
+      ? esc(ctr.description)
+      : esc(
+          buildSeoDescription({
+            preferred:
+              metaOverride ||
+              pickLocalizedString(post.seoMetaDescription, contentLocale) ||
+              pickLocalizedString(post.excerpt, contentLocale),
+            bodySource: rawBodyText,
+            fallback: `${post?.title || 'BioNixus'} — Read the full article on BioNixus.`,
+          }),
+        );
+    const shareInput = {
+      ogImage: post.ogImage,
+      ogImageWidth: post.ogImageWidth,
+      ogImageHeight: post.ogImageHeight,
+      coverImage: post.coverImage,
+      coverImageWidth: post.coverImageWidth,
+      coverImageHeight: post.coverImageHeight,
+    };
+    const social = resolveBlogSocialImage(shareInput);
+    const schemaLead = resolveBlogSchemaLead(shareInput);
+    const image = social.url;
+    const schemaImageNodes = [schemaLead.primary, ...schemaLead.extras].map((item) => ({
+      '@type': 'ImageObject',
+      url: item.url,
+      width: item.width,
+      height: item.height,
+    }));
+    const schemaImage = schemaImageNodes.length === 1 ? schemaImageNodes[0] : schemaImageNodes;
     const ogTitle = post.ogTitle ? esc(post.ogTitle) : title;
     const ogDescription = post.ogDescription ? esc(post.ogDescription) : description;
     const ogImageAlt = esc(post.ogImageAlt || post.coverImageAlt || documentTitle);
     const url = `${BASE}${pagePath}`;
-    const author = post.author || DEFAULT_AUTHOR_NAME;
-    const authorJobTitle =
-      industriesInsight && post.author && typeof post.authorTitle === 'string' ? post.authorTitle.trim() : '';
-    const modifiedAt = post.updatedAt || post._updatedAt || post.publishedAt || '';
-    const heading = industriesInsight && post.title ? esc(post.title) : title;
+    const author = post.author || 'BioNixus Research Team';
     const category =
       typeof post.category === 'string'
         ? post.category
@@ -504,7 +452,7 @@ export default async function handler(req, res) {
       '@type': 'Article',
       headline: post.title || '',
       description: post.excerpt || '',
-      image: image,
+      image: schemaImage,
       url: url,
       datePublished: post.publishedAt || '',
       dateModified:
@@ -526,69 +474,38 @@ export default async function handler(req, res) {
     });
 
     // BreadcrumbList JSON-LD
-    const breadcrumbItems = industriesInsight
-      ? [
-          { name: 'Home', item: BASE },
-          { name: 'Industries', item: `${BASE}/bionixus-industries` },
-          { name: 'Industry Insights', item: `${BASE}/bionixus-industries/insights` },
-          { name: post.title || slug, item: url },
-        ]
-      : [
-          { name: 'Home', item: BASE },
-          { name: 'Blog', item: `${BASE}/blog` },
-          { name: post.title || slug, item: url },
-        ];
-    const breadcrumbJsonLd = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: breadcrumbItems.map((entry, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: entry.name,
-        item: entry.item,
-      })),
-    });
-
-    let structuredDataHtml = `<script type="application/ld+json">${articleJsonLd}</script>
-  <script type="application/ld+json">${breadcrumbJsonLd}</script>
-  ${faqJsonLd}`;
-    if (industriesInsight) {
-      const keywordSource =
-        Array.isArray(post.seoKeywords) && post.seoKeywords.length > 0 ? post.seoKeywords : post.tags;
-      const graph = buildIndustriesInsightGraph({
-        slug: String(slug),
-        pageUrl: url,
-        headline: post.title || documentTitle,
-        description: descriptionText,
-        image: {
-          url: image,
-          width: 1200,
-          height: 630,
-          caption: post.coverImageAlt || post.title || documentTitle,
-        },
-        datePublished: post.publishedAt,
-        dateModified: modifiedAt,
-        inLanguage: contentLocale,
-        articleSection: category,
-        keywords: (Array.isArray(keywordSource) ? keywordSource : []).filter(
-          (k) => typeof k === 'string' && k.trim(),
-        ),
-        wordCount: countWords(htmlToPlainText(articleBodyHtml)),
-        author: post.author
-          ? {
-              name: post.author,
-              slug: post.authorSlug,
-              jobTitle: post.authorTitle,
-              linkedIn: post.authorLinkedIn,
-            }
-          : null,
-        breadcrumb: breadcrumbItems,
-        faq: post.faq,
-      });
-      structuredDataHtml = graph
-        .map((node) => `<script type="application/ld+json">${JSON.stringify(node).replace(/</g, '\\u003c')}</script>`)
-        .join('\n  ');
-    }
+    const breadcrumbJsonLd = JSON.stringify(
+      industriesInsight
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Industries',
+                item: `${BASE}/bionixus-industries`,
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Industry Insights',
+                item: `${BASE}/bionixus-industries/insights`,
+              },
+              { '@type': 'ListItem', position: 4, name: post.title || slug, item: url },
+            ],
+          }
+        : {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+              { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog` },
+              { '@type': 'ListItem', position: 3, name: post.title || slug, item: url },
+            ],
+          },
+    );
 
     const html = `<!DOCTYPE html>
 <html${htmlDocumentAttrs(isArabic)}>
@@ -597,7 +514,7 @@ export default async function handler(req, res) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="${withMaxImagePreview('index, follow')}">
   <meta name="llm-access" content="allow">
 
   <!-- Open Graph / Facebook / LinkedIn -->
@@ -612,12 +529,10 @@ export default async function handler(req, res) {
   <meta property="og:image:url" content="${esc(image)}">
   <meta property="og:image:secure_url" content="${esc(image)}">
   <meta property="og:image:type" content="${image.includes('.png') && !image.includes('fm=jpg') ? 'image/png' : 'image/jpeg'}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="${social.width}">
+  <meta property="og:image:height" content="${social.height}">
   <meta property="og:image:alt" content="${ogImageAlt}">
   ${post.publishedAt ? `<meta property="article:published_time" content="${esc(post.publishedAt)}">` : ''}
-  ${industriesInsight && modifiedAt ? `<meta property="article:modified_time" content="${esc(modifiedAt)}">` : ''}
-  ${industriesInsight ? `<meta property="article:author" content="${esc(author)}">` : ''}
   ${category ? `<meta property="article:section" content="${esc(category)}">` : ''}
   ${Array.isArray(post.tags) ? post.tags.map((t) => `<meta property="article:tag" content="${esc(t)}">`).join('\n  ') : ''}
 
@@ -632,34 +547,38 @@ export default async function handler(req, res) {
   <link rel="canonical" href="${url}">
 
   <!-- Structured Data -->
-  ${structuredDataHtml}
+  <script type="application/ld+json">${articleJsonLd}</script>
+  <script type="application/ld+json">${breadcrumbJsonLd}</script>
+  ${faqJsonLd}
 </head>
 <body${isArabic ? ' dir="rtl"' : ''}>
   <nav aria-label="Breadcrumb">
     ${
       industriesInsight
-        ? `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/bionixus-industries">Industries</a> &gt; <a href="${BASE}/bionixus-industries/insights">Industry Insights</a> &gt; <span>${heading}</span>`
+        ? `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/bionixus-industries">Industries</a> &gt; <a href="${BASE}/bionixus-industries/insights">Industry Insights</a> &gt; <span>${headline}</span>`
         : `<a href="${BASE}">Home</a> &gt; <a href="${BASE}/blog">Blog</a> &gt; <span>${title}</span>`
     }
   </nav>
   <article${isArabic ? ' dir="rtl" lang="ar"' : ''}>
     <header>
-      <h1>${heading}</h1>
+      <h1>${industriesInsight ? headline : title}</h1>
       ${post.publishedAt ? `<time datetime="${esc(post.publishedAt)}">${new Date(post.publishedAt).toLocaleDateString(isArabic ? 'ar-EG' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>` : ''}
-      ${author ? `<p>By ${esc(author)}${authorJobTitle ? `, ${esc(authorJobTitle)}` : ''}</p>` : ''}
+      ${author ? `<p>By ${esc(author)}</p>` : ''}
       ${category ? `<p>Category: ${esc(category)}</p>` : ''}
     </header>
     ${summaryHtml}
     <div class="article-body">
       ${articleBodyHtml || `<p>${description}</p>`}
     </div>
-    ${industriesInsight ? buildIndustriesRelatedLinksNav(String(slug)) : buildRelatedInternalLinksNav(String(slug))}
+    ${buildRelatedInternalLinksNav(String(slug))}
     ${faqHtml}
   </article>
 </body>
 </html>`;
 
-    return sendCompressedHtml(req, res, html);
+    return sendCompressedHtml(req, res, html, 200, {
+      cacheControl: 'public, max-age=0, s-maxage=3600, stale-while-revalidate=60',
+    });
   } catch (error) {
     console.error('OG handler error:', error);
     // Transient upstream failure must not emit noindex. A 200 noindex response
@@ -690,7 +609,7 @@ function buildIndexableStubHtml(slug, stub) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="${withMaxImagePreview('index, follow')}">
   <meta name="llm-access" content="allow">
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
@@ -723,6 +642,7 @@ function buildUnavailableHtml(slug) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioNixus Blog</title>
   <meta name="description" content="This BioNixus article is temporarily unavailable. Retry shortly.">
+  <meta name="robots" content="${withMaxImagePreview('')}">
   <meta name="llm-access" content="allow">
   <meta property="og:title" content="BioNixus Blog">
   <meta property="og:description" content="This BioNixus article is temporarily unavailable. Retry shortly.">
@@ -754,7 +674,7 @@ function buildFallbackHtml(slug) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioNixus Blog</title>
   <meta name="description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="${withMaxImagePreview('noindex, follow')}">
   <meta name="llm-access" content="allow">
   <meta property="og:title" content="BioNixus – EMEA Healthcare Market Research">
   <meta property="og:description" content="Leading UK healthcare market research firm delivering pharmaceutical insights across Europe and MENA.">

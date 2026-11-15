@@ -22,7 +22,7 @@ export const bionixusIndustriesPageCopyRu: BionixusIndustriesPageCopy = {
   cardLive: 'Актуально',
   chartNonHealthcare: 'Раздел вне healthcare',
   chartHealthcare: 'Healthcare-раздел',
-  cardFoot: 'С 2012 · 120+ проектов ежегодно · 127 в 2025 · 118 клиентов · 48 стран',
+  cardFoot: 'С 2012 · 120+ проектов ежегодно · 120 в 2025; 127 исследований с начала 2026 · 118 клиентов · 48 стран',
   regionRibbon: [
     'Северная Америка',
     'LATAM',
@@ -33,7 +33,7 @@ export const bionixusIndustriesPageCopyRu: BionixusIndustriesPageCopy = {
   ],
   trustStats: [
     { value: '2012', label: 'Основана в Лондоне', sub: 'Корни в британских фарма-исследованиях' },
-    { value: '120+', label: 'Глобальных проектов ежегодно', sub: 'в 48 странах' },
+    { value: '120+', label: 'Исследований в год', sub: '120 в 2025; 127 с начала 2026' },
     { value: '118', label: 'Обслуженных клиентов', sub: 'от pharma до consumer' },
     { value: '16', label: 'Отраслевых вертикалей', sub: 'и растёт' },
   ],

@@ -3,6 +3,34 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { languagePaths } from '@/lib/seo';
 import { PremiumHeroDashboard } from '@/components/home/PremiumHeroDashboard';
 import { PremiumHeroOrbitals } from '@/components/home/PremiumHeroOrbitals';
+import { HeroParticles } from '@/components/home/HeroParticles';
+import { ArrowRight } from 'lucide-react';
+import type { ReactNode } from 'react';
+
+/**
+ * Splits a headline into word masks for the hero intro (CSS animates .mwi from first paint).
+ * Spaces stay as plain text nodes, so the heading's text content is unchanged.
+ */
+function splitWords(text: string, startIndex: number): { nodes: ReactNode[]; next: number } {
+  const nodes: ReactNode[] = [];
+  let index = startIndex;
+  text.split(/(\s+)/).forEach((part, k) => {
+    if (!part) return;
+    if (/^\s+$/.test(part)) {
+      nodes.push(part);
+      return;
+    }
+    nodes.push(
+      <span key={k} className="mw">
+        <span className="mwi" data-w={index}>
+          {part}
+        </span>
+      </span>,
+    );
+    index += 1;
+  });
+  return { nodes, next: index };
+}
 
 const HeroSection = () => {
   const { t, language, isRTL } = useLanguage();
@@ -12,13 +40,16 @@ const HeroSection = () => {
     ctaPremium?: string;
   };
   const basePath = languagePaths[language] || '/';
+  const lead = hero.titleLead && hero.titleEmphasis ? splitWords(hero.titleLead, 0) : null;
+  const emphasis = lead && hero.titleEmphasis ? splitWords(hero.titleEmphasis, lead.next) : null;
+  const plainTitle = lead ? null : splitWords(hero.title ?? "", 0);
   const contactPath =
     language === 'fr' ? '/fr/contact' : language === 'ar' ? '/ar/contact' : `${basePath === '/' ? '' : basePath}/contact`;
 
   return (
     <section
       data-hero-lcp
-      className={`relative flex min-h-screen items-center overflow-hidden bg-[#06101F] ${language === 'ar' ? 'hero-arabic' : ''} ${language === 'de' ? 'hero-german' : ''} ${language === 'fr' ? 'hero-french' : ''} ${language === 'es' ? 'hero-spanish' : ''} ${language === 'zh' ? 'hero-chinese' : ''}`}
+      className={`relative flex min-h-screen items-center overflow-hidden bg-background ${language === 'ar' ? 'hero-arabic' : ''} ${language === 'de' ? 'hero-german' : ''} ${language === 'fr' ? 'hero-french' : ''} ${language === 'es' ? 'hero-spanish' : ''} ${language === 'zh' ? 'hero-chinese' : ''}`}
       dir={isRTL ? 'rtl' : undefined}
       lang={language}
     >
@@ -41,59 +72,60 @@ const HeroSection = () => {
         </svg>
       </div>
 
+      <HeroParticles />
+
       <PremiumHeroOrbitals />
 
-      <div className="relative z-10 container-wide mx-auto w-full max-w-[1260px] pb-20 pt-32 sm:pt-32">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div className="max-w-[500px] premium-fade-up">
-            <div className="mb-8 inline-flex items-center gap-2.5">
-              <span className="h-px w-8 bg-[#C9A84C]/40" aria-hidden="true" />
-              <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#C9A84C]">
+      <div className="relative z-10 container-wide mx-auto w-full max-w-[1320px] pb-20 pt-32 sm:pt-36">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
+          <div className="max-w-[640px] premium-fade-up">
+            <div className="mb-8 inline-flex items-center gap-3" data-intro="1">
+              <span className="h-px w-10 bg-gradient-to-r from-teal-glow/70 to-primary" aria-hidden="true" />
+              <span className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-ink-2">
                 {hero.tagline}
               </span>
             </div>
 
-            <h1 className="sr-lcp mb-7 font-display text-[clamp(2.8rem,4.5vw,4.2rem)] font-light leading-[1.12] tracking-tight text-[#FFFEFB] text-balance">
-              {hero.titleLead && hero.titleEmphasis ? (
+            <h1 className="sr-lcp mb-7 font-display text-[clamp(2.8rem,4.5vw,4.2rem)] font-light leading-[1.12] tracking-tight text-foreground text-balance">
+              {lead && emphasis ? (
                 <>
-                  {hero.titleLead}{' '}
-                  <em className="font-medium not-italic text-transparent bg-clip-text bg-gradient-to-br from-[#C9A84C] to-[#E4CC7A]">
-                    {hero.titleEmphasis}
-                  </em>
+                  {lead.nodes}{' '}
+                  <em className="mw-em font-medium not-italic">{emphasis.nodes}</em>
                 </>
               ) : (
-                hero.title
+                plainTitle?.nodes
               )}
             </h1>
 
-            <p className="mb-11 max-w-[500px] text-[17px] font-light leading-[1.8] text-white/45">
+            <p className="mb-11 max-w-[560px] text-[17px] font-light leading-[1.8] text-muted-foreground" data-intro="lede">
               {hero.subtitle}
             </p>
 
             <PremiumHeroDashboard className="premium-scale-in mb-10 lg:hidden" />
 
-            <div className="mb-14 flex flex-col gap-5 sm:flex-row sm:items-center">
+            <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-center" data-intro="3">
               <Link
                 to={contactPath}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#C9A84C] to-[#B8933E] px-9 py-[17px] text-sm font-semibold tracking-wide text-[#06101F] shadow-[0_4px_20px_rgba(201,168,76,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(201,168,76,0.35)]"
+                className="premium-gold-btn group px-8 py-[1.05rem] text-sm font-semibold tracking-wide"
               >
                 {hero.ctaPremium ?? hero.cta}
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100" aria-hidden="true" />
               </Link>
               <Link
                 to="#methodology"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-8 py-[17px] text-sm font-normal tracking-wide text-white/55 transition-colors hover:border-white/25 hover:text-white"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-line-2 px-7 py-[1.05rem] text-sm font-normal tracking-wide text-foreground transition-colors hover:border-ink-3 hover:bg-white/[0.04]"
               >
                 <span aria-hidden="true">◈</span>
                 {hero.ctaSecondary}
               </Link>
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5" data-intro="4">
               <div className="flex -space-x-2.5" aria-hidden="true">
                 {t.ui.brands.initials.map((initials, i) => (
                   <span
                     key={initials}
-                    className={`flex h-[38px] w-[38px] items-center justify-center rounded-full border-2 border-[#06101F] text-[11px] font-semibold text-white ${
+                    className={`flex h-[38px] w-[38px] items-center justify-center rounded-full border-2 border-background text-[11px] font-semibold text-white ${
                       i === 0
                         ? 'bg-gradient-to-br from-blue-600 to-blue-800'
                         : i === 1
@@ -107,9 +139,9 @@ const HeroSection = () => {
                   </span>
                 ))}
               </div>
-              <p className="text-[13px] font-light leading-snug text-white/35">
+              <p className="text-[13px] font-light leading-snug text-ink-3">
                 {t.homePage.heroTrust.primary}{' '}
-                <strong className="font-medium text-white/70">{t.homePage.heroTrust.stats}</strong>
+                <strong className="font-medium text-ink-2">{t.homePage.heroTrust.stats}</strong>
               </p>
             </div>
           </div>

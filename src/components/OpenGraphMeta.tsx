@@ -51,23 +51,10 @@ export default function OpenGraphMeta({
   article,
 }: OpenGraphMetaProps) {
   const trimmedTags = Array.isArray(article?.tags) ? article.tags.map((t) => t.trim()).filter(Boolean) : [];
-  // A flat array, not a Fragment: react-helmet-async replaces a Fragment's <meta> tags
-  // with the Helmet's direct <meta> children, so fragment tags never reach the head.
-  const articleTags =
-    type === 'article'
-      ? [
-          article?.publishedTime ? (
-            <meta key="article:published_time" property="article:published_time" content={article.publishedTime} />
-          ) : null,
-          article?.modifiedTime ? (
-            <meta key="article:modified_time" property="article:modified_time" content={article.modifiedTime} />
-          ) : null,
-          article?.author ? <meta key="article:author" property="article:author" content={article.author} /> : null,
-          article?.section ? <meta key="article:section" property="article:section" content={article.section} /> : null,
-          ...trimmedTags.map((tag) => <meta key={`article:tag:${tag}`} property="article:tag" content={tag} />),
-        ]
-      : [];
+  const isArticle = type === 'article';
 
+  // Keep these as direct <Helmet> children: react-helmet-async replaces the meta
+  // tags collected inside a Fragment with the outer meta list, dropping them.
   return (
     <Helmet>
       <meta property="og:type" content={type} />
@@ -88,7 +75,13 @@ export default function OpenGraphMeta({
         <meta key={alt} property="og:locale:alternate" content={alt} />
       ))}
 
-      {articleTags}
+      {isArticle && article?.publishedTime ? <meta property="article:published_time" content={article.publishedTime} /> : null}
+      {isArticle && article?.modifiedTime ? <meta property="article:modified_time" content={article.modifiedTime} /> : null}
+      {isArticle && article?.author ? <meta property="article:author" content={article.author} /> : null}
+      {isArticle && article?.section ? <meta property="article:section" content={article.section} /> : null}
+      {isArticle
+        ? trimmedTags.map((tag) => <meta key={`article-tag-${tag}`} property="article:tag" content={tag} />)
+        : null}
 
       <meta name="twitter:card" content="summary_large_image" />
       {twitterSite ? <meta name="twitter:site" content={twitterSite} /> : null}

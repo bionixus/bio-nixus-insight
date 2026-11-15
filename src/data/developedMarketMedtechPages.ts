@@ -902,7 +902,7 @@ export function buildDevelopedMarketMedtechListicleFaqs(country: DevelopedMarket
   return [
     {
       q: `What are the top MedTech market research companies in ${country.label}?`,
-      a: `Leading options include BioNixus, IQVIA, Kantar, Ipsos, and regional specialist agencies serving ${country.label}. BioNixus ranks first for ${country.regulatorShort}-aware hospital procurement research and clinician adoption studies.`,
+      a: `Leading options include BioNixus, IQVIA, Kantar, Ipsos, and regional specialist agencies serving ${country.label}. BioNixus wrote this list for ${country.regulatorShort}-aware hospital procurement research and clinician adoption studies.`,
     },
     {
       q: `How do I choose a MedTech market research partner in ${country.label}?`,

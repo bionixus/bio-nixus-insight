@@ -131,7 +131,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Global projects annually"
+          label: "studies a year (127 in 2026 YTD)"
         },
         {
           value: "16",
@@ -199,7 +199,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Strategic Portfolio",
-        description: "Full capability overview: 120+ global projects annually (127 in 2025), 118 global clients, dual-practice healthcare and consumer research across Egypt and MENA.",
+        description: "Full capability overview: 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026), 118 global clients, dual-practice healthcare and consumer research across Egypt and MENA.",
         label: "Egypt Focus",
         hint: "See our market research portfolio"
       },
@@ -217,7 +217,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "All Industries",
-        description: "Explore pharma and healthcare, B2B, and B2C market research — the same rigor behind 120+ global projects annually (127 in 2025) across 16 industry verticals.",
+        description: "Explore pharma and healthcare, B2B, and B2C market research — the same rigor behind 120+ global projects annually (120 in 2025; 127 studies year-to-date in 2026) across 16 industry verticals.",
         label: "Cross-Industry",
         hint: "Explore the industries hub"
       },
@@ -265,7 +265,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Trusted by",
-      stats: "118 global clients · 120+ projects annually · 127 in 2025 · 48 countries"
+      stats: "118 global clients · 120+ projects annually · 120 in 2025; 127 studies year-to-date in 2026 · 48 countries"
     },
     videoEmbed: {
       transcriptLabel: "Transcript"
@@ -320,7 +320,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Projekte branchenübergreifend"
+          label: "Studien pro Jahr (127 in 2026 bis heute)"
         },
         {
           value: "16",
@@ -388,7 +388,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Strategisches Portfolio",
-        description: "Vollständiger Leistungsüberblick: 120+ Projekte jährlich (127 im Jahr 2025), 118 globale Kunden, Gesundheitswesen- und Verbraucherforschung in Ägypten und Naher Osten und Nordafrika.",
+        description: "Vollständiger Leistungsüberblick: 120+ Projekte jährlich (120 im Jahr 2025; 127 Studien im Jahr 2026 bis heute), 118 globale Kunden, Gesundheitswesen- und Verbraucherforschung in Ägypten und Naher Osten und Nordafrika.",
         label: "Fokus Ägypten",
         hint: "Unser Marktforschungs-Portfolio ansehen"
       },
@@ -406,7 +406,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Alle Branchen",
-        description: "Entdecken Sie pharmazeutische, geschäftskunden- und privatkundenorientierte Marktforschung — dieselbe Qualität hinter 120+ Projekten jährlich (127 im Jahr 2025) in 16 Branchen.",
+        description: "Entdecken Sie pharmazeutische, geschäftskunden- und privatkundenorientierte Marktforschung — dieselbe Qualität hinter 120+ Projekten jährlich (120 im Jahr 2025; 127 Studien im Jahr 2026 bis heute) in 16 Branchen.",
         label: "Branchenübergreifend",
         hint: "Branchen-Übersichtsbereich entdecken"
       },
@@ -454,7 +454,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Vertrauenswürdig bei",
-      stats: "118 globale Kunden · 120+ Projekte jährlich · 127 im Jahr 2025 · 48 Länder"
+      stats: "118 globale Kunden · 120+ Projekte jährlich · 120 im Jahr 2025; 127 Studien im Jahr 2026 bis heute · 48 Länder"
     },
     videoEmbed: {
       transcriptLabel: "Transkript"
@@ -509,7 +509,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Projets multi-secteurs"
+          label: "études par an (127 depuis début 2026)"
         },
         {
           value: "16",
@@ -577,7 +577,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Portefeuille stratégique",
-        description: "Vue d'ensemble des capacités : 120+ projets par an (127 en 2025), 118 clients mondiaux, recherche santé et consommateur en Égypte et Moyen-Orient et Afrique du Nord.",
+        description: "Vue d'ensemble des capacités : 120+ projets par an (120 en 2025; 127 études depuis le début de 2026), 118 clients mondiaux, recherche santé et consommateur en Égypte et Moyen-Orient et Afrique du Nord.",
         label: "Focus Égypte",
         hint: "Voir notre portefeuille d'études"
       },
@@ -595,7 +595,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Tous les secteurs",
-        description: "Explorez la recherche industrie pharmaceutique, entreprises et consommateurs — la même rigueur derrière 120+ projets par an (127 en 2025) dans 16 verticales.",
+        description: "Explorez la recherche industrie pharmaceutique, entreprises et consommateurs — la même rigueur derrière 120+ projets par an (120 en 2025; 127 études depuis le début de 2026) dans 16 verticales.",
         label: "Multi-secteur",
         hint: "Explorer le hub secteurs"
       },
@@ -643,7 +643,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Recommandé par",
-      stats: "118 clients mondiaux · 120+ projets par an · 127 en 2025 · 48 pays"
+      stats: "118 clients mondiaux · 120+ projets par an · 120 en 2025; 127 études depuis le début de 2026 · 48 pays"
     },
     videoEmbed: {
       transcriptLabel: "Transcription"
@@ -698,7 +698,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Proyectos multisectoriales"
+          label: "estudios al año (127 en 2026 hasta ahora)"
         },
         {
           value: "16",
@@ -766,7 +766,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Portafolio estratégico",
-        description: "Panorama de capacidades: 120+ proyectos al año (127 en 2025), 118 clientes globales, investigación sanitaria y de consumo en Egipto y Oriente Medio y Norte de África.",
+        description: "Panorama de capacidades: 120+ proyectos al año (120 en 2025; 127 estudios en lo que va de 2026), 118 clientes globales, investigación sanitaria y de consumo en Egipto y Oriente Medio y Norte de África.",
         label: "Enfoque Egipto",
         hint: "Ver nuestro portafolio de investigación"
       },
@@ -784,7 +784,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Todas las industrias",
-        description: "Explore investigación farmacéutico, empresarial y consumo — el mismo rigor en 120+ proyectos al año (127 en 2025) y 16 verticales.",
+        description: "Explore investigación farmacéutico, empresarial y consumo — el mismo rigor en 120+ proyectos al año (120 en 2025; 127 estudios en lo que va de 2026) y 16 verticales.",
         label: "Multisectorial",
         hint: "Explorar el hub de industrias"
       },
@@ -832,7 +832,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Recomendado por",
-      stats: "118 clientes globales · 120+ proyectos al año · 127 en 2025 · 48 países"
+      stats: "118 clientes globales · 120+ proyectos al año · 120 en 2025; 127 estudios en lo que va de 2026 · 48 países"
     },
     videoEmbed: {
       transcriptLabel: "Transcripción"
@@ -887,7 +887,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Projetos multisectoriais"
+          label: "estudos por ano (127 em 2026 até agora)"
         },
         {
           value: "16",
@@ -955,7 +955,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Portfólio estratégico",
-        description: "Visão completa: 120+ projetos por ano (127 em 2025), 118 clientes globais, pesquisa em saúde e consumo no Egito e Oriente Médio e Norte da África.",
+        description: "Visão completa: 120+ projetos por ano (120 em 2025; 127 estudos no ano de 2026 até agora), 118 clientes globais, pesquisa em saúde e consumo no Egito e Oriente Médio e Norte da África.",
         label: "Foco Egito",
         hint: "Ver nosso portfólio de pesquisa"
       },
@@ -973,7 +973,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Todos os setores",
-        description: "Explore pesquisa farmacêutica, corporativo e consumo — o mesmo rigor em 120+ projetos por ano (127 em 2025) e 16 verticais.",
+        description: "Explore pesquisa farmacêutica, corporativo e consumo — o mesmo rigor em 120+ projetos por ano (120 em 2025; 127 estudos no ano de 2026 até agora) e 16 verticais.",
         label: "Multissetorial",
         hint: "Explorar o hub de setores"
       },
@@ -1021,7 +1021,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Recomendado por",
-      stats: "118 clientes globais · 120+ projetos por ano · 127 em 2025 · 48 países"
+      stats: "118 clientes globais · 120+ projetos por ano · 120 em 2025; 127 estudos no ano de 2026 até agora · 48 países"
     },
     videoEmbed: {
       transcriptLabel: "Transcrição"
@@ -1076,7 +1076,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "120+",
-          label: "Проекты по отраслям"
+          label: "исследований в год (127 с начала 2026)"
         },
         {
           value: "16",
@@ -1144,7 +1144,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Стратегический портфель",
-        description: "Полный обзор возможностей: 120+ проектов ежегодно (127 в 2025), 118 клиентов, исследования здравоохранения и потребителей в Египте и Ближний Восток и Северная Африка.",
+        description: "Полный обзор возможностей: 120+ проектов ежегодно (120 в 2025; 127 исследований с начала 2026), 118 клиентов, исследования здравоохранения и потребителей в Египте и Ближний Восток и Северная Африка.",
         label: "Фокус на Египте",
         hint: "Смотреть портфолио исследований"
       },
@@ -1162,7 +1162,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "Все отрасли",
-        description: "Исследования фармы, корпоратив и потребитель — та же строгость в 120+ проектах ежегодно (127 в 2025) и 16 отраслях.",
+        description: "Исследования фармы, корпоратив и потребитель — та же строгость в 120+ проектах ежегодно (120 в 2025; 127 исследований с начала 2026) и 16 отраслях.",
         label: "Межотраслевой",
         hint: "Изучить отраслевой хаб"
       },
@@ -1210,7 +1210,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "Нам доверяют",
-      stats: "118 клиентов · 120+ проектов ежегодно · 127 в 2025 · 48 стран"
+      stats: "118 клиентов · 120+ проектов ежегодно · 120 в 2025; 127 исследований с начала 2026 · 48 стран"
     },
     videoEmbed: {
       transcriptLabel: "Транскрипт"
@@ -1265,7 +1265,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       stats: [
         {
           value: "一百二十+",
-          label: "每年全球项目"
+          label: "每年研究（2026年至今127项）"
         },
         {
           value: "十六",
@@ -1333,7 +1333,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "战略能力组合",
-        description: "完整能力概览：每年一百二十+个全球项目（2025 年 127 个）、一百一十八家全球客户，埃及与 中东与北非 医疗及消费者研究双轨实践。",
+        description: "完整能力概览：每年一百二十+个全球项目（2025 年 120 个；2026 年至今 127 个）、一百一十八家全球客户，埃及与 中东与北非 医疗及消费者研究双轨实践。",
         label: "埃及聚焦",
         hint: "查看我们的市场研究组合"
       },
@@ -1351,7 +1351,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "全部行业",
-        description: "探索医药健康、企业 与 消费者 市场研究 — 每年一百二十+个全球项目（2025 年 127 个）、十六个行业垂直领域的同等严谨标准。",
+        description: "探索医药健康、企业 与 消费者 市场研究 — 每年一百二十+个全球项目（2025 年 120 个；2026 年至今 127 个）、十六个行业垂直领域的同等严谨标准。",
         label: "跨行业",
         hint: "探索行业枢纽"
       },
@@ -1399,7 +1399,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "深受信赖",
-      stats: "一百一十八家全球客户 · 每年一百二十+项目 · 2025 年 127 个 · 四十八个国家"
+      stats: "一百一十八家全球客户 · 每年一百二十+项目 · 2025 年 120 个；2026 年至今 127 个 · 四十八个国家"
     },
     videoEmbed: {
       transcriptLabel: "文字稿"
@@ -1453,8 +1453,8 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       intro: "نفس انضباط العيّنة والتحليل بقيادة خبراء كبار الذي بنيناه للصناعة الدوائية يمتد الآن إلى أسواق الشركات والمستهلكين.",
       stats: [
         {
-          value: "١٢٧+",
-          label: "مشاريع عبر القطاعات"
+          value: "١٢٠+",
+          label: "دراسة سنويًا (١٢٧ في ٢٠٢٦ حتى الآن)"
         },
         {
           value: "١٦",
@@ -1522,7 +1522,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "محفظة استراتيجية",
-        description: "نظرة شاملة: ١٢٧+ مشروعاً، ١١٨ عميلاً عالمياً، أبحاث صحية واستهلاكية في مصر والشرق الأوسط وشمال أفريقيا.",
+        description: "نظرة شاملة: ١٢٠+ دراسة سنويًا (١٢٠ في ٢٠٢٥؛ ١٢٧ في ٢٠٢٦ حتى الآن)، ١١٨ عميلاً عالمياً، أبحاث صحية واستهلاكية في مصر والشرق الأوسط وشمال أفريقيا.",
         label: "تركيز مصر",
         hint: "اطلع على محفظة أبحاث السوق"
       },
@@ -1540,7 +1540,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
       },
       {
         title: "جميع القطاعات",
-        description: "استكشف أبحاث الأدوية و الشركات و المستهلكين — نفس الصرامة في ١٢٧+ مشروعاً عبر ١٦ قطاعاً.",
+        description: "استكشف أبحاث الأدوية و الشركات و المستهلكين — نفس الصرامة في ١٢٠+ دراسة سنويًا (١٢٠ في ٢٠٢٥؛ ١٢٧ في ٢٠٢٦ حتى الآن) عبر ١٦ قطاعاً.",
         label: "عبر القطاعات",
         hint: "استكشف مركز القطاعات"
       },
@@ -1588,7 +1588,7 @@ export const homePageHardcoded: Record<Language, HomePageHardcodedCopy> = {
     },
     heroTrust: {
       primary: "موثوق به من",
-      stats: "١١٨ عميلاً عالمياً · ١٢٧+ مشروعاً · ٤٨ دولة"
+      stats: "١١٨ عميلاً عالمياً · ١٢٠+ دراسة سنويًا (١٢٧ في ٢٠٢٦ حتى الآن) · ٤٨ دولة"
     },
     videoEmbed: {
       transcriptLabel: "النص"

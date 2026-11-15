@@ -116,7 +116,7 @@ function buildLocale(lang) {
       h2: L(21, lang),
       intro: L(22, lang),
       stats: [
-        { value: lang === 'zh' ? '一百二十七+' : lang === 'ar' ? '١٢٧+' : '127+', label: L(23, lang) },
+        { value: lang === 'zh' ? '一百二十+' : lang === 'ar' ? '١٢٠+' : '120+', label: L(23, lang) },
         { value: lang === 'zh' ? '十六' : lang === 'ar' ? '١٦' : '16', label: L(24, lang) },
         { value: lang === 'zh' ? '七' : lang === 'ar' ? '٧' : '7', label: L(25, lang) },
       ],

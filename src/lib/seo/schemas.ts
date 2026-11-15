@@ -38,7 +38,7 @@ export function buildFAQSchema(
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text: item.answer.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)'),
       },
     })),
   };
@@ -112,10 +112,11 @@ export function buildCountryPageSchemas(config: CountryConfig) {
       ? {
           ...buildProfessionalServiceSchema(),
           '@id': `${pageUrl}#service`,
-          name: hubCompaniesCopy?.h1 ?? 'Healthcare market research companies in Saudi Arabia',
+          name: hubCompaniesCopy?.h1 ?? 'Healthcare Market Research Company in Saudi Arabia',
+          dateModified: '2026-10-17',
           serviceType: 'Healthcare Market Research',
           description:
-            'Primary healthcare market research companies in Saudi Arabia — SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah, and Eastern Province. IQVIA remains the syndicated audit; BioNixus is the account-level complement.',
+            'Healthcare market research company in Saudi Arabia — SFDA-aware HCP surveys, NUPCO tender context, Arabic fieldwork across Riyadh, Jeddah, and Al Khobar. IQVIA remains the syndicated audit; BioNixus is the account-level complement.',
           url: pageUrl,
           areaServed: [
             {
@@ -140,7 +141,7 @@ export function buildCountryPageSchemas(config: CountryConfig) {
             ...buildProfessionalServiceSchema(),
             '@id': `${pageUrl}#service`,
             name: hubCompaniesCopy?.h1 ?? 'Healthcare Market Research in the UAE: Dubai, Abu Dhabi & Federal Hub',
-            dateModified: '2026-09-28',
+            dateModified: '2026-11-03',
             serviceType: 'Healthcare Market Research',
             description:
               'Primary healthcare market research companies in the UAE — DHA- and DOH-aligned HCP, hospital, and payer studies in Dubai and Abu Dhabi, with MOHAP-aware evidence. IQVIA covers syndicated audits; BioNixus is the account-level complement.',

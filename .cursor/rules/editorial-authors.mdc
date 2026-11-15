@@ -1,43 +1,41 @@
 ---
-description: Geographic author attribution for BioNixus pages and blogs
+description: Author attribution for BioNixus pages and blogs
 alwaysApply: true
 ---
 
-# Editorial authors by geography
+# Editorial authors
 
 Use **only** authors that already exist in Sanity (`_type == "author"`). Do not invent names. Canonical roster and helpers: `src/data/editorialAuthors.ts`.
 
-## USA, Canada, Europe
+## New articles: six rotating authors in every region
 
-- Bylines, Article JSON-LD `author`, and blog `author` refs must be **European or American names** from the Western Sanity roster (Laura McConaughey, Sarah Chen, Martha DeVito, Anna Cuban, Armela Belba, Ivona Gunjova).
-- Replace Mohammad Alsaadany and any other Arab names on these pages.
+New articles in every region, the Middle East included, rotate these six authors, all titled **Global Research Manager**:
 
-## Middle East / GCC / MENA
+- Laura McConaughey
+- Sarah Chen
+- Martha DeVito
+- Anna Cuban
+- Armela Belba
+- Ivona Gunjova
 
-- Keep **Arab names** from the MENA roster (Mohammad Ashour, Dina Ibrahim).
-- Arabic-language posts stay on MENA authors.
+They are `WESTERN_AUTHORS` in `src/data/editorialAuthors.ts`. Use the same author in the visible byline, the Article / BlogPosting JSON-LD `author` (`personAuthorJsonLd`) and `article:author`.
 
-## Comparison / ranking pages (hard rule)
-
-Never attribute **Mohammad Alsaadany** (or Dr. Mohammad Alsaadany) on pages that compare or rank market research companies — including `/insights/top-*-market-research-companies-*`, “best market research companies” copy, and IQVIA/Nielsen/Kantar alternative listicles.
-
-- MENA comparison pages: use Mohammad Ashour or Dina Ibrahim.
-- USA / Canada / Europe comparison pages: use a Western Sanity author.
+`getEditorialAuthor()` returns one of the six for Western and unscoped paths, but it still returns Mohammad Ashour or Dina Ibrahim for Middle East paths, because existing code-defined pages rely on it. For a new Middle East article, pick from `WESTERN_AUTHORS` directly.
 
 ## Blogs (Sanity)
 
-Change mismatched authors and republish **except** when Google Search Console shows the URL in **position ≤ 20** or with **clicks > 0**. Those URLs keep the live author.
+When a live blog's author changes, republish it, **except** when Google Search Console shows the URL in **position ≤ 20** or with **clicks > 0**. Those URLs keep the live author.
 
 ## Examples
 
 ```ts
-// ✅ USA listicle
+// ✅ New Saudi article: one of the six rotating authors
+const author = WESTERN_AUTHORS.find((a) => a.name === 'Martha DeVito')!;
+personAuthorJsonLd(author); // { '@type': 'Person', name: 'Martha DeVito', jobTitle: 'Global Research Manager', … }
+
+// ✅ New USA listicle: a stable pick from the six
 getEditorialAuthor({ path: '/insights/top-market-research-companies-usa-2026', region: 'northamerica', pageType: 'comparison' })
 
-// ✅ Saudi ranking
-getEditorialAuthor({ path: '/insights/top-market-research-companies-saudi-arabia-2026', region: 'gcc', pageType: 'comparison' })
-// → Dina Ibrahim or Mohammad Ashour — never Alsaadany
-
-// ❌ BAD
-author: { name: 'Dr. Mohammad Alsaadany' } // on a USA or comparison page
+// ❌ BAD: a name that is not in the Sanity roster
+author: { name: 'Jane Smith' }
 ```

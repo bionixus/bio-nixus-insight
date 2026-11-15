@@ -10,6 +10,50 @@ import { NMPA_CLASS_III_TIMELINE_HARDCODED_POST } from '@/data/blog-nmpa-class-i
 import { CHINA_DEVICE_VBP_EXPLAINED_HARDCODED_POST } from '@/data/blog-china-device-vbp-explained';
 import { UAE_HEALTHCARE_TRENDS_2025_HARDCODED_POST } from '@/data/blog-uae-healthcare-trends-2025';
 import { UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST } from '@/data/blog-uae-healthcare-trends-2026';
+import { SAUDI_OBESITY_SHORTLIST_HARDCODED_POST } from '@/data/blog-saudi-obesity-market-research-shortlist';
+import { SAUDI_FEASIBILITY_HARDCODED_POST } from '@/data/blog-feasibility-study-saudi-arabia';
+import { GLP1_PHYSICIAN_SURVEY_HARDCODED_POST } from '@/data/blog-glp1-physician-survey-saudi-arabia';
+import { UAE_CSAT_HARDCODED_POST } from '@/data/blog-uae-csat-nps-ces-surveys';
+import { DUBAI_BRAND_TRACKING_HARDCODED_POST } from '@/data/blog-brand-tracking-research-agency-dubai';
+import { SAUDI_MARKET_ENTRY_HARDCODED_POST } from '@/data/blog-market-entry-research-saudi-arabia';
+import { MYSTERY_SHOPPING_KSA_HARDCODED_POST } from '@/data/blog-mystery-shopping-saudi-arabia';
+import { SAUDI_CONSUMER_SURVEY_HARDCODED_POST } from '@/data/blog-consumer-survey-company-saudi-arabia';
+import { UAE_B2B_MR_HARDCODED_POST } from '@/data/blog-b2b-market-research-uae';
+import { AU_GCC_ENTRY_HARDCODED_POST } from '@/data/blog-australia-gcc-market-entry-research';
+import { EU_GCC_ENTRY_HARDCODED_POST } from '@/data/blog-europe-to-gcc-market-entry-research';
+import { UK_ENTRY_HARDCODED_POST } from '@/data/blog-uk-market-entry-research';
+import { US_ENTRY_HARDCODED_POST } from '@/data/blog-us-market-entry-research';
+import { NZ_GCC_EXPORT_HARDCODED_POST } from '@/data/blog-nz-exporters-gcc-market-research';
+import { CHINESE_KSA_UAE_HARDCODED_POST } from '@/data/blog-chinese-companies-entering-ksa-uae';
+import { CN_EGYPT_HARDCODED_POST } from '@/data/blog-chinese-companies-egypt-market-research';
+import { NIELSEN_KSA_HARDCODED_POST } from '@/data/blog-nielsen-alternative-saudi-arabia';
+import { KSA_GOV_CSAT_HARDCODED_POST } from '@/data/blog-government-customer-satisfaction-saudi-arabia';
+import { KANTAR_ALT_ME_HARDCODED_POST } from '@/data/blog-kantar-alternative-middle-east';
+import { CHINESE_EV_GULF_HARDCODED_POST } from '@/data/blog-chinese-ev-brands-saudi-uae-consumer-research';
+import { KUWAIT_OBESITY_RESEARCH_HARDCODED_POST } from '@/data/blog-kuwait-obesity-research-glp1-payers';
+import { QATAR_OBESITY_GLP1_HARDCODED_POST } from '@/data/blog-qatar-obesity-glp1-research';
+import { HEMATOLOGY_KSA_HARDCODED_POST } from '@/data/blog-hematology-market-research-saudi-arabia';
+import { RARE_DISEASE_KSA_HARDCODED_POST } from '@/data/blog-rare-disease-market-research-saudi-arabia';
+import { IQVIA_UAE_PRIMARY_HARDCODED_POST } from '@/data/blog-iqvia-alternative-uae-primary-research';
+import { CHOOSE_AGENCY_KSA_HARDCODED_POST } from '@/data/blog-how-to-choose-healthcare-market-research-agency-saudi-arabia';
+import { UAE_EDE_HARDCODED_POST } from '@/data/blog-uae-drug-pricing-ede-takeover-launch-research';
+import { DEDL_FORMULARY_HARDCODED_POST } from '@/data/blog-dubai-essential-drug-list-formulary-submission';
+import { DIABETES_UAE_CUTS_HARDCODED_POST } from '@/data/blog-diabetes-market-research-uae-2026-price-cuts';
+import { CHINA_BIOTECH_EXPORT_HARDCODED_POST } from '@/data/blog-china-biotech-export-controls-pharma-deals-2026';
+import { WAVE_ARTICLE_POSTS } from '@/data/articleWaves';
+import { NUPCO_TENDER_HARDCODED_POST } from '@/data/blog-nupco-tender-market-research-saudi-arabia';
+import { CART_KSA_HARDCODED_POST } from '@/data/blog-car-t-saudi-arabia-market-research';
+import { CHI_PAYER_HARDCODED_POST } from '@/data/blog-saudi-health-insurance-payer-research';
+import { THIQA_OBESITY_HARDCODED_POST } from '@/data/blog-thiqa-obesity-reimbursement-abu-dhabi';
+import { ORAL_GLP1_UAE_HARDCODED_POST } from '@/data/blog-oral-glp1-uae-orforglipron';
+import { socialArticle as socialArticle0 } from '@/data/blog-medicare-globe-model-part-b-account-level-2027';
+import { socialArticle as socialArticle1 } from '@/data/blog-rasonque-daraxonrasib-pancreatic-ema-chmp-2026';
+import { socialArticle as socialArticle2 } from '@/data/blog-gazya-obinutuzumab-lupus-anvisa-brazil-access-2026';
+import { socialArticle as socialArticle3 } from '@/data/blog-orzeyful-oveporexton-narcolepsy-japan-china-launch-2026';
+import { socialArticle as socialArticle4 } from '@/data/blog-egypt-eda-decree-480-drug-pricing-2026';
+import { DKSH_NEWBRIDGE_HARDCODED_POST } from '@/data/blog-dksh-newbridge-acquisition-mena-launch-market-access';
+import { SAUDI_DIABETES_SWITCHING_HARDCODED_POST } from '@/data/blog-saudi-diabetes-syndicated-vs-hospital-switching';
+import { SAUDI_HEMATOLOGY_WARD_HARDCODED_POST } from '@/data/blog-saudi-hematology-diagnostics-vs-ward-brand-cut';
 
 /**
  * Array of all hardcoded blog posts designed for SEO strategy,
@@ -29,6 +73,50 @@ export const hardcodedSeoPosts: BlogPost[] = [
   CHINA_DEVICE_VBP_EXPLAINED_HARDCODED_POST,
   UAE_HEALTHCARE_TRENDS_2025_HARDCODED_POST,
   UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST,
+  SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
+  SAUDI_FEASIBILITY_HARDCODED_POST,
+  GLP1_PHYSICIAN_SURVEY_HARDCODED_POST,
+  UAE_CSAT_HARDCODED_POST,
+  DUBAI_BRAND_TRACKING_HARDCODED_POST,
+  SAUDI_MARKET_ENTRY_HARDCODED_POST,
+  MYSTERY_SHOPPING_KSA_HARDCODED_POST,
+  SAUDI_CONSUMER_SURVEY_HARDCODED_POST,
+  UAE_B2B_MR_HARDCODED_POST,
+  AU_GCC_ENTRY_HARDCODED_POST,
+  EU_GCC_ENTRY_HARDCODED_POST,
+  UK_ENTRY_HARDCODED_POST,
+  US_ENTRY_HARDCODED_POST,
+  NZ_GCC_EXPORT_HARDCODED_POST,
+  CHINESE_KSA_UAE_HARDCODED_POST,
+  CN_EGYPT_HARDCODED_POST,
+  NIELSEN_KSA_HARDCODED_POST,
+  KSA_GOV_CSAT_HARDCODED_POST,
+  KANTAR_ALT_ME_HARDCODED_POST,
+  CHINESE_EV_GULF_HARDCODED_POST,
+  KUWAIT_OBESITY_RESEARCH_HARDCODED_POST,
+  QATAR_OBESITY_GLP1_HARDCODED_POST,
+  HEMATOLOGY_KSA_HARDCODED_POST,
+  RARE_DISEASE_KSA_HARDCODED_POST,
+  IQVIA_UAE_PRIMARY_HARDCODED_POST,
+  CHOOSE_AGENCY_KSA_HARDCODED_POST,
+  UAE_EDE_HARDCODED_POST,
+  DEDL_FORMULARY_HARDCODED_POST,
+  DIABETES_UAE_CUTS_HARDCODED_POST,
+  CHINA_BIOTECH_EXPORT_HARDCODED_POST,
+  ...WAVE_ARTICLE_POSTS,
+  NUPCO_TENDER_HARDCODED_POST,
+  CART_KSA_HARDCODED_POST,
+  CHI_PAYER_HARDCODED_POST,
+  THIQA_OBESITY_HARDCODED_POST,
+  ORAL_GLP1_UAE_HARDCODED_POST,
+  socialArticle0,
+  socialArticle1,
+  socialArticle2,
+  socialArticle3,
+  socialArticle4,
+  DKSH_NEWBRIDGE_HARDCODED_POST,
+  SAUDI_DIABETES_SWITCHING_HARDCODED_POST,
+  SAUDI_HEMATOLOGY_WARD_HARDCODED_POST,
 ];
 
 /** Helper to find a hardcoded post by slug */

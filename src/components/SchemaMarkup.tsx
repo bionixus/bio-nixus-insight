@@ -33,6 +33,10 @@ type HomeSchemaProps = {
 type ItemListEntry = {
   name: string
   description: string
+  /** When set, the entry is emitted as an Organization `item` with this URL. */
+  url?: string
+  /** Entity @id for that Organization item. */
+  id?: string
 }
 
 type BlogSchemaProps = {
@@ -45,6 +49,8 @@ type BlogSchemaProps = {
   /** Primary OG / hero dimensions for structured `image` ImageObject */
   ogImageWidth?: number
   ogImageHeight?: number
+  /** Further ImageObjects after the primary, such as a 1200x630 social asset beside a 16:9 cover. */
+  secondaryImages?: ReadonlyArray<{ url: string; width: number; height: number; caption?: string }>
   authorName: string
   authorUrl?: string
   authorJobTitle?: string
@@ -60,16 +66,22 @@ type BlogSchemaProps = {
   about?: ReadonlyArray<Record<string, unknown>>
   breadcrumb: BreadcrumbItem[]
   faqItems?: FaqItem[]
-  itemList?: { name: string; items: ItemListEntry[] }
-  /** Words in the article body, for Article `wordCount`. */
+  itemList?: { name: string; description?: string; items: ItemListEntry[] }
+  /** Words in the visible article text (`wordCount` on the article node). */
   wordCount?: number
-  /** Replaces the Person built from authorName (industries posts share it with the crawler). */
+  /** Alt text for the primary image; becomes the ImageObject caption. */
+  imageAlt?: string
+  /**
+   * Emits a WebPage node for `mainEntityOfPage`, linked by `@id` to the article,
+   * the primary ImageObject and the BreadcrumbList.
+   */
+  emitWebPage?: boolean
+  /** Page-level Organization node; must keep the sitewide `@id`. */
+  organization?: Record<string, unknown>
+  /** Replaces the Person built from authorName / authorUrl / authorJobTitle. */
   authorNode?: Record<string, unknown>
-  /** `@id` for the primary ImageObject, so standalone nodes can reference it. */
-  imageId?: string
-  imageCaption?: string
-  /** Standalone nodes appended after the article graph (Person, ImageObject, HowTo). */
-  extraNodes?: ReadonlyArray<Record<string, unknown>>
+  /** In-article figures appended after the primary cover ImageObject. */
+  contentImages?: ReadonlyArray<{ url: string; width: number; height: number; caption: string }>
 }
 
 type ServiceSchemaProps = {
@@ -125,9 +137,6 @@ const ORG_ID = `${BASE_URL}/#organization`
 const WEBSITE_ID = `${BASE_URL}/#website`
 const ORG_IMAGE = `${BASE_URL}/og-image.png`
 const PUBLISHER_LOGO_IMAGE = `${BASE_URL}/bionixus-logo.webp`
-/** Intrinsic size of public/bionixus-logo.webp. */
-const PUBLISHER_LOGO_WIDTH = 200
-const PUBLISHER_LOGO_HEIGHT = 57
 
 function toHttpsUrl(url: string): string {
   if (!url) return BASE_URL
@@ -212,7 +221,14 @@ export function isValidSchemaNode(node: Record<string, unknown>): boolean {
       imageOk = true
     }
     if (!imageOk && Array.isArray(img) && img.length > 0) {
-      imageOk = img.every((e) => isNonEmptyString(String(e)))
+      imageOk = img.every((entry) => {
+        if (isNonEmptyString(entry)) return true
+        if (entry !== null && typeof entry === 'object' && !Array.isArray(entry)) {
+          const image = entry as Record<string, unknown>
+          return image['@type'] === 'ImageObject' && isNonEmptyString(image.url)
+        }
+        return false
+      })
     }
     const mainEntityOk =
       node.mainEntityOfPage === undefined ||
@@ -360,15 +376,34 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
     const imgWidth = props.ogImageWidth ?? 1200
     const imgHeight = props.ogImageHeight ?? 630
     const schemaType = props.pageType === 'blog' ? 'BlogPosting' : 'Article'
+    const webPageId = `${pageUrlHttps}#webpage`
+    const primaryImageId = `${pageUrlHttps}#primaryimage`
+    const breadcrumbId = `${pageUrlHttps}#breadcrumb`
 
     const primaryImageObject = {
       '@type': 'ImageObject',
-      ...(props.imageId ? { '@id': props.imageId } : {}),
+      ...(props.emitWebPage ? { '@id': primaryImageId, contentUrl: imageUrlHttps } : {}),
       url: imageUrlHttps,
       width: imgWidth,
       height: imgHeight,
-      caption: props.imageCaption?.trim() || props.headline,
+      caption: props.imageAlt?.trim() || props.headline,
     }
+
+    const secondaryImageObjects = (props.secondaryImages ?? []).map((image) => ({
+      '@type': 'ImageObject',
+      url: toHttpsUrl(image.url),
+      width: image.width,
+      height: image.height,
+      ...(image.caption ? { caption: image.caption } : {}),
+    }))
+
+    const contentImageObjects = (props.contentImages ?? []).map((image) => ({
+      '@type': 'ImageObject',
+      url: toHttpsUrl(image.url),
+      width: image.width,
+      height: image.height,
+      caption: image.caption,
+    }))
 
     const articleNode: Record<string, unknown> = {
       '@context': 'https://schema.org',
@@ -376,18 +411,23 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       '@id': `${pageUrlHttps}#${props.pageType === 'blog' ? 'blogPosting' : 'article'}`,
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `${pageUrlHttps}#webpage`,
+        '@id': webPageId,
         url: pageUrlHttps,
       },
       url: pageUrlHttps,
       headline: props.headline,
       description: props.description,
-      image: primaryImageObject,
+      image: secondaryImageObjects.length > 0 || contentImageObjects.length > 0
+        ? [primaryImageObject, ...secondaryImageObjects, ...contentImageObjects]
+        : primaryImageObject,
       ...(props.articleSection?.trim()
         ? { articleSection: props.articleSection.trim() }
         : {}),
       ...(props.keywords && props.keywords.length > 0
         ? { keywords: props.keywords.join(', ') }
+        : {}),
+      ...(typeof props.wordCount === 'number' && props.wordCount > 0
+        ? { wordCount: Math.round(props.wordCount) }
         : {}),
       ...(props.schemaMentions && props.schemaMentions.length > 0
         ? { mentions: props.schemaMentions.map((m) => ({ ...m })) }
@@ -412,16 +452,40 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         logo: {
           '@type': 'ImageObject',
           url: PUBLISHER_LOGO_IMAGE,
-          width: PUBLISHER_LOGO_WIDTH,
-          height: PUBLISHER_LOGO_HEIGHT,
+          width: 512,
+          height: 512,
         },
       },
       inLanguage,
       isAccessibleForFree: true,
-      ...(props.wordCount && props.wordCount > 0 ? { wordCount: props.wordCount } : {}),
     }
 
-    const nodes: Record<string, unknown>[] = [articleNode, buildBreadcrumb(props.breadcrumb)]
+    const breadcrumbNode = buildBreadcrumb(props.breadcrumb)
+    const nodes: Record<string, unknown>[] = [
+      articleNode,
+      props.emitWebPage ? { ...breadcrumbNode, '@id': breadcrumbId } : breadcrumbNode,
+    ]
+
+    if (props.emitWebPage) {
+      nodes.push({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': webPageId,
+        url: pageUrlHttps,
+        name: props.headline,
+        description: props.description,
+        inLanguage,
+        isPartOf: { '@id': WEBSITE_ID },
+        primaryImageOfPage: { '@id': primaryImageId },
+        breadcrumb: { '@id': breadcrumbId },
+        datePublished: published,
+        dateModified: modified,
+      })
+    }
+
+    if (props.organization) {
+      nodes.push({ '@context': 'https://schema.org', ...props.organization, '@type': 'Organization', '@id': ORG_ID })
+    }
 
     if (props.faqItems && props.faqItems.length > 0) {
       nodes.push(buildFaq(props.faqItems, inLanguage, pageUrlHttps))
@@ -432,18 +496,24 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: props.itemList.name,
+        ...(props.itemList.description ? { description: props.itemList.description } : {}),
         itemListOrder: 'https://schema.org/ItemListUnordered',
         itemListElement: props.itemList.items.map((item, idx) => ({
           '@type': 'ListItem',
           position: idx + 1,
-          name: item.name,
-          description: item.description,
+          ...(item.url
+            ? {
+                item: {
+                  '@type': 'Organization',
+                  ...(item.id ? { '@id': item.id } : {}),
+                  name: item.name,
+                  url: item.url,
+                  description: item.description,
+                },
+              }
+            : { name: item.name, description: item.description }),
         })),
       })
-    }
-
-    if (props.pageType === 'blog' && props.extraNodes && props.extraNodes.length > 0) {
-      nodes.push(...props.extraNodes.map((node) => ({ ...node })))
     }
 
     return nodes
@@ -488,8 +558,8 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
         logo: {
           '@type': 'ImageObject',
           url: PUBLISHER_LOGO_IMAGE,
-          width: PUBLISHER_LOGO_WIDTH,
-          height: PUBLISHER_LOGO_HEIGHT,
+          width: 512,
+          height: 512,
         },
       },
       inLanguage,

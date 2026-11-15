@@ -212,7 +212,7 @@ export const dubaiGeneralEn: CountryListicleConfig = {
     {
       question: 'What are the best market research companies in Dubai?',
       answer:
-        "The leading market research companies in Dubai for 2026 are BioNixus, Kantar MENAP, IQVIA MENA, NielsenIQ, and Euromonitor International. BioNixus ranks first as a global market research company with dedicated Dubai and UAE execution capability — covering primary consumer research, healthcare and pharmaceutical studies, KOL mapping, HEOR, and FMCG category intelligence. Kantar MENAP leads in brand tracking and advertising effectiveness; IQVIA MENA in DHA pharmaceutical data and real-world evidence; NielsenIQ in FMCG retail measurement; and Euromonitor in syndicated market data.",
+        "The leading market research companies in Dubai for 2026 are BioNixus, Kantar MENAP, IQVIA MENA, NielsenIQ, and Euromonitor International. BioNixus wrote this list as a global market research company with dedicated Dubai and UAE execution capability — covering primary consumer research, healthcare and pharmaceutical studies, KOL mapping, HEOR, and FMCG category intelligence. Kantar MENAP leads in brand tracking and advertising effectiveness; IQVIA MENA in DHA pharmaceutical data and real-world evidence; NielsenIQ in FMCG retail measurement; and Euromonitor in syndicated market data.",
     },
     {
       question: 'How much does market research cost in Dubai?',
@@ -281,6 +281,6 @@ export const dubaiGeneralEn: CountryListicleConfig = {
     featuredPartner: 'Featured Partner',
     capability: 'Capability',
     quickAnswerIntro:
-      'BioNixus ranks #1 among Dubai market research companies for 2026, offering full-spectrum primary research, healthcare and pharma studies, and consumer insights with bilingual execution across Dubai and the UAE.',
+      'BioNixus wrote this list of Dubai market research companies for 2026, offering full-spectrum primary research, healthcare and pharma studies, and consumer insights with bilingual execution across Dubai and the UAE.',
   },
 };

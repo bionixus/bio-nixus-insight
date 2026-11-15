@@ -25,12 +25,11 @@ const root = path.join(__dirname, '..')
 const SLUG = 'healthcare-overview-egypt-market-2026'
 
 /** Kept in sync with EGYPT_HEALTHCARE_2026_* constants in src/pages/BlogPost.tsx */
-const SEO_META_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide'
+const SEO_META_TITLE = 'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra'
 const SEO_META_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026 — Kasr Al-Ainy, Cleopatra, Saudi German, UHI rollout & EDA pharma access. Free Egypt hospital market overview by BioNixus.'
-const OG_TITLE = 'Cairo Hospitals Healthcare 2023–2026: Ranked Hospital Guide'
-const OG_DESCRIPTION =
-  'Cairo hospitals healthcare 2023–2026 — public tertiary, private groups & UHI rollout mapped with EDA pharma access context from BioNixus Egypt research.'
+  'Cairo hospital rankings 2023–2026: Kasr Al-Ainy, Cleopatra, Saudi German and UHI Medical City — what they mean for Egypt pharma access. BioNixus overview.'
+const OG_TITLE = SEO_META_TITLE
+const OG_DESCRIPTION = SEO_META_DESCRIPTION
 const FOCUS_KEYWORD = 'cairo hospitals healthcare 2023-2026'
 const KEYWORDS = [
   'cairo hospitals',

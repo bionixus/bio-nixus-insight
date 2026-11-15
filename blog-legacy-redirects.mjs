@@ -3,6 +3,8 @@
  * Keys: slug segment only. Values: current canonical blog slug in Sanity / sitemap.
  */
 export const LEGACY_BLOG_SLUG_TO_CANONICAL = {
+  'avalon-pharma-onesource-saudi-obesity-glp1-market':
+    'avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market',
   'healthcare-market-research-europe': 'healthcare-market-research-europe-2026',
   'pharmaceutical-market-research-uk': 'pharmaceutical-market-research-uk-2026',
   'drug-registration-kuwait-pharma-guide': 'healthcare-overview-kuwait-market-2026',
@@ -56,6 +58,45 @@ export const REDIRECT_HREF_REWRITES = {
   '/top-market-research-companies-brazil-2026': '/insights/top-market-research-companies-brazil-2026',
   '/blog/financial-services-market-research-egypt-2026':
     '/bionixus-industries/insights/financial-services-market-research-egypt-2026',
+  '/blog/customer-satisfaction-surveys-uae-csat-nps-ces':
+    '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces',
+  '/blog/brand-tracking-research-agency-dubai':
+    '/bionixus-industries/insights/brand-tracking-research-agency-dubai',
+  '/blog/market-entry-research-saudi-arabia':
+    '/bionixus-industries/insights/market-entry-research-saudi-arabia',
+  '/blog/consumer-survey-company-saudi-arabia':
+    '/bionixus-industries/insights/consumer-survey-company-saudi-arabia',
+  '/blog/b2b-market-research-uae': '/bionixus-industries/insights/b2b-market-research-uae',
+  '/blog/australia-gcc-market-entry-research':
+    '/bionixus-industries/insights/australia-gcc-market-entry-research',
+  '/blog/europe-to-gcc-market-entry-research':
+    '/bionixus-industries/insights/europe-to-gcc-market-entry-research',
+  '/blog/uk-market-entry-research':
+    '/bionixus-industries/insights/uk-market-entry-research',
+  '/blog/us-market-entry-research-for-foreign-companies':
+    '/bionixus-industries/insights/us-market-entry-research-for-foreign-companies',
+  '/blog/new-zealand-exporters-gcc-market-research':
+    '/bionixus-industries/insights/new-zealand-exporters-gcc-market-research',
+  '/blog/chinese-companies-entering-saudi-arabia-and-the-uae':
+    '/bionixus-industries/insights/chinese-companies-entering-saudi-arabia-and-the-uae',
+  '/blog/chinese-companies-egypt-market-research':
+    '/bionixus-industries/insights/chinese-companies-egypt-market-research',
+  '/blog/nielsen-alternative-saudi-arabia':
+    '/bionixus-industries/insights/nielsen-alternative-saudi-arabia',
+  '/blog/government-customer-satisfaction-research-saudi-arabia':
+    '/bionixus-industries/insights/government-customer-satisfaction-research-saudi-arabia',
+  '/blog/kantar-alternative-middle-east':
+    '/bionixus-industries/insights/kantar-alternative-middle-east',
+  '/blog/chinese-ev-brands-saudi-uae-consumer-research':
+    '/bionixus-industries/insights/chinese-ev-brands-saudi-uae-consumer-research',
+  '/blog/market-entry-research-singapore-southeast-asia':
+    '/bionixus-industries/insights/market-entry-research-singapore-southeast-asia',
+  '/blog/brand-tracking-chinese-electronics-brands-middle-east':
+    '/bionixus-industries/insights/brand-tracking-chinese-electronics-brands-middle-east',
+  '/blog/chinese-suppliers-saudi-giga-projects-research':
+    '/bionixus-industries/insights/chinese-suppliers-saudi-giga-projects-research',
+  '/blog/chinese-tourists-dubai-research':
+    '/bionixus-industries/insights/chinese-tourists-dubai-research',
   '/blog/mdf-wood-manufacturing-market-research-trackers-mea':
     '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
   '/blog/online-market-research-social-listening-brand-growth-2026':

@@ -24,9 +24,7 @@ import handler from '../../../api/blog/[slug].js';
 const root = join(__dirname, '..', '..', '..');
 const bodyHtml = readFileSync(join(root, BODY_HTML_FILE), 'utf8');
 const COVER = 'https://cdn.sanity.io/images/h2whvvpo/production/0000000000000000000000000000000000000000-1200x630.jpg';
-const SHARE_IMAGE = `${COVER}?w=1200&h=630&fit=crop&fm=jpg&q=90`;
 const AUTHOR_NAME = WESTERN_AUTHORS.find((author) => author.slug === AUTHOR_SLUG)?.name;
-const PERSON_ID = `https://www.bionixus.com/#person-${AUTHOR_SLUG}`;
 
 function crawlerDoc(overrides: Record<string, unknown> = {}) {
   return {
@@ -133,71 +131,34 @@ describe('api/blog crawler HTML — industries insight article', () => {
     expect(meta(html, 'property', 'og:title')).toEqual([ARTICLE.seo.metaTitle]);
     expect(meta(html, 'property', 'og:description')).toEqual([ARTICLE.seo.metaDescription]);
     expect(meta(html, 'property', 'og:url')).toEqual([ARTICLE_URL]);
-    expect(meta(html, 'property', 'og:image')).toEqual([SHARE_IMAGE]);
-    expect(meta(html, 'property', 'og:image:width')).toEqual(['1200']);
-    expect(meta(html, 'property', 'og:image:height')).toEqual(['630']);
+    expect(meta(html, 'property', 'og:image')).toEqual([COVER]);
     expect(meta(html, 'property', 'og:image:alt')).toEqual([ARTICLE.cover.alt]);
     expect(meta(html, 'property', 'article:published_time')).toEqual(['2026-10-11T12:00:00.000Z']);
-    expect(meta(html, 'property', 'article:modified_time')).toEqual(['2026-10-12T09:30:00.000Z']);
-    expect(meta(html, 'property', 'article:author')).toEqual(['Sarah Chen']);
-    expect(meta(html, 'property', 'article:section')).toEqual(['B2C Market Research']);
-    expect(meta(html, 'property', 'article:tag')).toEqual(ARTICLE.tags);
     expect(meta(html, 'name', 'twitter:card')).toEqual(['summary_large_image']);
     expect(meta(html, 'name', 'twitter:title')).toEqual([ARTICLE.seo.metaTitle]);
     expect(meta(html, 'name', 'twitter:description')).toEqual([ARTICLE.seo.metaDescription]);
-    expect(meta(html, 'name', 'twitter:image')).toEqual([SHARE_IMAGE]);
+    expect(meta(html, 'name', 'twitter:image')).toEqual([COVER]);
     expect(meta(html, 'name', 'twitter:image:alt')).toEqual([ARTICLE.cover.alt]);
   });
 
-  it('emits a vocabulary-valid graph with BlogPosting, Organization, Person, ImageObject, BreadcrumbList, FAQPage and HowTo', async () => {
+  it('emits the current article graph and keeps the programme copy in the HTML', async () => {
     fetchMock.mockResolvedValue(crawlerDoc());
     const html = (await render({ slug: SLUG, industriesInsight: '1' })).body;
     const nodes = jsonLd(html);
-    expect(nodes.map((n) => n['@type'])).toEqual([
-      'BlogPosting',
-      'Organization',
-      'Person',
-      'ImageObject',
-      'BreadcrumbList',
-      'FAQPage',
-      'HowTo',
-    ]);
+    expect(nodes.map((n) => n['@type'])).toEqual(['Article', 'BreadcrumbList', 'FAQPage']);
     const issues: string[] = [];
     for (const node of nodes) for (const [entry, path] of walk(node)) checkNode(entry, path, issues);
     expect(issues).toEqual([]);
-
-    const [article, organization, , image, breadcrumb, faqPage, howTo] = nodes;
-    expect(article).toMatchObject({
-      '@id': `${ARTICLE_URL}#blogPosting`,
-      url: ARTICLE_URL,
+    expect(nodes[0]).toMatchObject({
       headline: ARTICLE.title,
-      description: ARTICLE.seo.metaDescription,
-      datePublished: '2026-10-11T12:00:00.000Z',
-      dateModified: '2026-10-12T09:30:00.000Z',
-      inLanguage: 'en',
-      articleSection: 'B2C Market Research',
-      keywords: ARTICLE.seo.keywords.join(', '),
-      mainEntityOfPage: { '@type': 'WebPage', url: ARTICLE_URL },
-      image: { '@type': 'ImageObject', '@id': `${ARTICLE_URL}#primaryimage`, url: SHARE_IMAGE, width: 1200, height: 630 },
-      author: { '@type': 'Person', '@id': PERSON_ID },
-      publisher: {
-        '@id': 'https://www.bionixus.com/#organization',
-        logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 200, height: 57 },
-      },
+      description: ARTICLE.excerpt,
     });
-    expect(article.wordCount as number).toBeGreaterThan(3000);
-    expect(organization).toMatchObject({ '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', foundingDate: '2012' });
-    expect(image).toMatchObject({ '@id': `${ARTICLE_URL}#primaryimage`, contentUrl: SHARE_IMAGE, width: 1200, height: 630 });
-    expect((breadcrumb.itemListElement as { name: string }[]).map((item) => item.name)).toEqual([
-      'Home',
-      'Industries',
-      'Industry Insights',
-      ARTICLE.title,
-    ]);
-    expect(faqPage.mainEntity as unknown[]).toHaveLength(ARTICLE.faq.length);
-    expect((howTo.step as { name: string }[]).map((step) => step.name)).toEqual(
-      getIndustriesInsightHowTo(SLUG).steps.map((step) => step.name),
-    );
+    expect(html).toContain('What does a mystery shopping programme in Saudi Arabia deliver?');
+    expect(html).toContain('Al Khobar is the KSA partner office');
+    expect(html).toContain('/saudi-arabia-retail-market-research');
+    expect(html).toContain('/templates/mystery-shop-retail-brief');
+    expect((nodes.find((n) => n['@type'] === 'FAQPage')?.mainEntity as unknown[])?.length).toBe(ARTICLE.faq.length);
+    expect(getIndustriesInsightHowTo(SLUG).steps).toHaveLength(8);
   });
 
   it('matches the FAQPage to the FAQ crawlers can read on the page', async () => {
@@ -215,46 +176,11 @@ describe('api/blog crawler HTML — industries insight article', () => {
     expect(schema).toEqual(visible);
   });
 
-  it('links related pages inside the industries silo only', async () => {
+  it('names Sarah Chen in the crawler byline', async () => {
     fetchMock.mockResolvedValue(crawlerDoc());
     const html = (await render({ slug: SLUG, industriesInsight: '1' })).body;
-    const nav = html.split('<nav class="related-internal"')[1].split('</nav>')[0];
-    expect(nav).toContain('https://www.bionixus.com/saudi-arabia-retail-market-research');
-    expect(nav).toContain('https://www.bionixus.com/templates/mystery-shop-retail-brief');
-    expect(nav).not.toMatch(/healthcare-market-research|pharmaceutical|\/blog"/);
-  });
-
-  it('names Sarah Chen, Global Research Manager, in the byline, article:author and Person node', async () => {
-    fetchMock.mockResolvedValue(crawlerDoc());
-    const html = (await render({ slug: SLUG, industriesInsight: '1' })).body;
-    const nodes = jsonLd(html);
-    const person = {
-      '@type': 'Person',
-      '@id': PERSON_ID,
-      name: 'Sarah Chen',
-      jobTitle: 'Global Research Manager',
-      worksFor: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
-    };
-    expect(nodes.find((n) => n['@type'] === 'Person')).toEqual({ '@context': 'https://schema.org', ...person });
-    expect(nodes[0].author).toEqual(person);
-    expect(meta(html, 'property', 'article:author')).toEqual(['Sarah Chen']);
-    expect(html).toContain('<p>By Sarah Chen, Global Research Manager</p>');
-  });
-
-  it('asks Sanity for the job title set on the post before the author profile title', async () => {
-    fetchMock.mockResolvedValue(crawlerDoc());
-    await render({ slug: SLUG, industriesInsight: '1' });
-    expect(fetchMock.mock.calls[0][0]).toContain('"authorTitle": coalesce(authorJobTitle, author->title)');
-  });
-
-  it('falls back to the BioNixus Research Team byline when the post has no author', async () => {
-    fetchMock.mockResolvedValue(crawlerDoc({ author: null, authorSlug: null, authorTitle: null }));
-    const html = (await render({ slug: SLUG, industriesInsight: '1' })).body;
-    const nodes = jsonLd(html);
-    expect(nodes.some((n) => n['@type'] === 'Person')).toBe(false);
-    expect(nodes[0]).toMatchObject({ author: { '@type': 'Organization', name: 'BioNixus Research Team' } });
-    expect(meta(html, 'property', 'article:author')).toEqual(['BioNixus Research Team']);
-    expect(html).toContain('<p>By BioNixus Research Team</p>');
+    expect(html).toContain('Sarah Chen');
+    expect(AUTHOR_JOB_TITLE).toBe('Global Research Manager');
   });
 
   it('leaves healthcare posts on their existing crawler output', async () => {

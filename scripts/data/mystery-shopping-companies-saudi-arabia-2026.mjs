@@ -1,5 +1,5 @@
 /**
- * Sanity blogPost content for "Mystery Shopping Companies Saudi Arabia" — industries silo
+ * Sanity blogPost content for mystery shopping in Saudi Arabia. Industries silo.
  * article listed on /bionixus-industries/insights. Body HTML lives next to this file.
  *
  * Consumed by scripts/publish-mystery-shopping-companies-saudi-arabia-2026.mjs and the
@@ -28,11 +28,11 @@ export const AUTHOR_SLUG = 'sarah-chen';
 export const AUTHOR_JOB_TITLE = 'Global Research Manager';
 
 export const ARTICLE = {
-  title: 'Mystery Shopping Companies Saudi Arabia: How to Run a Programme That Holds Up (2026 Guide)',
+  title: 'How to Run Mystery Shopping in Saudi Arabia',
   seo: {
-    metaTitle: 'Mystery Shopping Companies Saudi Arabia 2026 | BioNixus',
+    metaTitle: 'Mystery Shopping in Saudi Arabia (2026)',
     metaDescription:
-      'How to choose the mystery shopping companies Saudi Arabia buyers trust in 2026: PDPL-aware design, visits per outlet, scorecards and a vendor checklist.',
+      'How to design mystery shopping in Saudi Arabia: PDPL rules, visit counts, scorecards and questions to settle before fieldwork.',
     focusKeyword: TARGET_KEYWORD,
     keywords: [
       TARGET_KEYWORD,
@@ -48,10 +48,10 @@ export const ARTICLE = {
     ],
   },
   excerpt:
-    'A 2026 guide to choosing mystery shopping companies in Saudi Arabia: what to measure, PDPL and cybercrime rules, visits per outlet, scorecards and a vendor checklist.',
+    'A 2026 guide to mystery shopping in Saudi Arabia: what to measure, PDPL and cybercrime rules, visits per outlet, scorecards and what to ask a provider.',
   /** Answer-first summary (40–60 words) rendered as the executive summary. */
   executiveSummary:
-    'The mystery shopping companies Saudi Arabia buyers should hire do three things well: they turn your service standards into credible scenarios, field enough visits per outlet for scores to hold up, and keep the programme inside Saudi data-protection rules and industry codes — telling your own staff in advance, avoiding covert recording and reporting outlets rather than individuals.',
+    'A sound mystery shopping programme in Saudi Arabia turns service standards into credible scenarios, fields enough visits per outlet for the scores to hold up, and stays inside Saudi data-protection rules. Tell your own staff in advance, skip covert recording, and report the outlet rather than the person.',
   category: 'B2C Market Research',
   categorySlugs: ['industries', 'methodology'],
   country: 'Saudi Arabia',
@@ -79,14 +79,14 @@ export const ARTICLE = {
       'BioNixus Industry Insights cover for the 2026 guide to mystery shopping in Saudi Arabia. Original illustration with no people or third-party logos.',
   },
   tableOfContents: [
-    { heading: 'What mystery shopping companies deliver', anchor: 'what-it-delivers' },
+    { heading: 'What a programme delivers', anchor: 'what-it-delivers' },
     { heading: 'Who uses mystery shopping in Saudi Arabia', anchor: 'who-uses-it' },
     { heading: 'PDPL and cybercrime rules', anchor: 'legal-rules' },
     { heading: 'How to run a programme, step by step', anchor: 'how-to-run' },
     { heading: 'How many visits you need', anchor: 'how-many-visits' },
     { heading: 'What a Saudi scorecard should check', anchor: 'scorecard' },
     { heading: 'Comparable results across the GCC', anchor: 'gcc-comparability' },
-    { heading: 'How to compare providers', anchor: 'compare-companies' },
+    { heading: 'What to ask before you commission', anchor: 'compare-companies' },
     { heading: 'What drives cost', anchor: 'cost-drivers' },
     { heading: 'Why BioNixus', anchor: 'why-bionixus' },
     { heading: 'References', anchor: 'references' },
@@ -105,12 +105,12 @@ export const ARTICLE = {
     {
       question: 'How many mystery shopping visits per outlet do you need?',
       answer:
-        'It depends on the level you report at. Finn and Kayandé (1999) found mystery shopping much less reliable than commercial studies using 3–4 shoppers assume, and Dawes and Sharp (2000) found large wave-to-wave swings in store scores. Decide first whether you need results by network, region, format or individual outlet, because outlet league tables need the most visits, then check reliability after the first wave before linking scores to targets.',
+        'It depends on the level you report at. Finn and Kayandé (1999) found mystery shopping much less reliable than commercial studies using 3 to 4 shoppers assume, and Dawes and Sharp (2000) found large wave-to-wave swings in store scores. Decide first whether you need results by network, region, format or individual outlet, because a score for every outlet needs the most visits, then check reliability after the first wave before linking scores to targets.',
     },
     {
       question: 'Do employees have to be told about mystery shopping?',
       answer:
-        'For your own organisation, yes. ESOMAR requires staff to be notified in advance that shopping will happen within a future period, what it is for, whether individuals will be identified and whether anything will be recorded, and MRS guidance adds that exact visit dates need not be given. Competitors’ staff cannot be told, so MRS guidance says no personal information about them may be collected and results must be reported in aggregate.',
+        'For your own organisation, yes. ESOMAR requires staff to be notified in advance that shopping will happen within a future period, what it is for, whether individuals will be identified and whether anything will be recorded, and MRS guidance adds that exact visit dates need not be given. Staff at other organisations cannot be told, so MRS guidance says no personal information about them may be collected and results must be reported in aggregate.',
     },
     {
       question: 'Can mystery shopping results be used to discipline staff?',
@@ -128,7 +128,7 @@ export const ARTICLE = {
         'Yes, if scenarios, items and pass rules are identical in both markets and results are reported side by side rather than pooled. The legal checks differ: the UAE has Federal Decree-Law No. 45 of 2021 on personal data, with separate regimes in DIFC and ADGM, and Article 44 of Federal Decree-Law No. 34 of 2021 punishes recording people or photographing them without consent with at least six months’ imprisonment and/or a fine of AED 150,000 to AED 500,000.',
     },
     {
-      question: 'What should you send mystery shopping companies in Saudi Arabia to get a proposal?',
+      question: 'What should you send a provider in Saudi Arabia to get a proposal?',
       answer:
         'Send the decision the results will support, your outlet list and cities, the channels to test (store, phone, web and app), your service standards or scripts, the reporting level and number of waves, language requirements and your data-handling rules. The BioNixus GCC mystery-shop retail brief at bionixus.com/templates/mystery-shop-retail-brief lists these inputs, or you can use the contact form at bionixus.com/contact.',
     },
@@ -141,19 +141,19 @@ export const ARTICLE = {
     buttonUrl: 'https://www.bionixus.com/contact',
   },
   sources: [
-    'SDAIA — Personal Data Protection Law (Royal Decree M/19, amended by Royal Decree M/148)',
-    'SDAIA — Implementing Regulation of the Personal Data Protection Law',
-    'SDAIA — Guide to the Saudi Personal Data Protection Law',
-    'SDAIA — Regulation on Personal Data Transfer outside the Kingdom (v2.0, August 2024)',
-    'Bureau of Experts at the Council of Ministers — Anti-Cyber Crime Law (Royal Decree M/17)',
-    'Saudi Central Bank (SAMA) — Financial Consumer Protection Principles and Rules (Rules 9, 15 and 18)',
-    'National Center for Performance Measurement (Adaa) — Beneficiary Experience; Ramadan 1445H Umrah measurement',
-    'ZATCA — E-invoicing Phase 1 (4 December 2021)',
-    'GASTAT — Saudi Census 2022 main results, via Saudi Press Agency (31 May 2023)',
-    'CST — Saudi Internet Report 2024',
-    'ESOMAR — Mystery Shopping Studies guideline',
-    'MRS — Code of Conduct (2023); Guideline: Conducting Mystery Shopping (March 2024); Quality standards',
-    'MSPA — Guidelines for Mystery Shopping (August 2011)',
+    'SDAIA. Personal Data Protection Law (Royal Decree M/19, amended by Royal Decree M/148)',
+    'SDAIA. Implementing Regulation of the Personal Data Protection Law',
+    'SDAIA. Guide to the Saudi Personal Data Protection Law',
+    'SDAIA. Regulation on Personal Data Transfer outside the Kingdom (v2.0, August 2024)',
+    'Bureau of Experts at the Council of Ministers. Anti-Cyber Crime Law (Royal Decree M/17)',
+    'Saudi Central Bank (SAMA). Financial Consumer Protection Principles and Rules (Rules 9, 15 and 18)',
+    'National Center for Performance Measurement (Adaa). Beneficiary Experience; Ramadan 1445H Umrah measurement',
+    'ZATCA. E-invoicing Phase 1 (4 December 2021)',
+    'GASTAT. Saudi Census 2022 main results, via Saudi Press Agency (31 May 2023)',
+    'CST. Saudi Internet Report 2024',
+    'ESOMAR. Mystery Shopping Studies guideline',
+    'MRS. Code of Conduct (2023); Guideline: Conducting Mystery Shopping (March 2024); Quality standards',
+    'MSPA. Guidelines for Mystery Shopping (August 2011)',
     'ISO 20252:2019 (withdrawn 1 September 2026) and ISO 20252:2026',
     'Finn & Kayandé (1999), Journal of Retailing 75(2)',
     'Dawes & Sharp (2000), Australasian Journal of Market Research 8(1)',
@@ -170,4 +170,5 @@ export const ARTICLE = {
     'financial-services-market-research-egypt-2026',
   ],
   factCheckedAt: '2026-10-11T12:00:00.000Z',
+  updatedAt: '2026-11-15T12:00:00.000Z',
 };

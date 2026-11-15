@@ -379,6 +379,9 @@ export function resolveBlogArticleLocale(
   }
   if (LATIN_SLUG_ARABIC_BLOG_POSTS.has(post?.slug ?? '')) return 'ar';
   if (LATIN_SLUG_CHINESE_BLOG_POSTS.has(post?.slug ?? '')) return 'zh';
+  // English China / NMPA articles keep language: 'en'. Do not let the slug
+  // heuristic flip them to zh (that hides BreadcrumbNav and Chinese-localizes chrome).
+  if (lang === 'en') return 'en';
   if (ARABIC_SCRIPT_RE.test(post?.slug ?? '')) return 'ar';
   if (ARABIC_SCRIPT_RE.test(post?.title ?? '')) return 'ar';
   if (CHINESE_SLUG_RE.test(post?.slug ?? '')) return 'zh';

@@ -41,12 +41,13 @@ describe('Ahrefs orphan inbound recovery lists', () => {
     }
   });
 
-  it('exposes the three industry insight articles and Skyrizi canonical', () => {
+  it('exposes the industry insight articles and Skyrizi canonical', () => {
     expect(INDUSTRIES_INSIGHT_EDITORIAL_LINKS.map((item) => item.to)).toEqual(
       expect.arrayContaining([
         '/bionixus-industries/insights/online-market-research-social-listening-brand-growth-2026',
         '/bionixus-industries/insights/mdf-wood-manufacturing-market-research-trackers-mea',
         '/bionixus-industries/insights/financial-services-market-research-egypt-2026',
+        '/bionixus-industries/insights/feasibility-study-company-saudi-arabia',
       ]),
     );
     expect(SKYRIZI_CANONICAL_PATH).toBe(

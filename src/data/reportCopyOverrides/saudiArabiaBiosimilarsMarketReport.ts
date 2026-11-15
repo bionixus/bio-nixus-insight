@@ -16,10 +16,10 @@ type OverrideCopy = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 export const SAUDI_ARABIA_BIOSIMILARS_COPY: OverrideCopy = {
   slug: SLUG,
   title: 'Saudi Arabia Biosimilar Market Report 2026',
-  metaTitle: 'Saudi Arabia Biosimilar Market Report 2026 | Size & SFDA | BioNixus',
+  metaTitle: 'Saudi Arabia Biosimilar Market Report 2026 | BioNixus',
   metaDescription:
     "Discover the future of Saudi Arabia's biosimilars market, valued at USD 382M by 2026 with a 15% CAGR. Insights on SFDA pathways and NUPCO agreements.",
-  modifiedDate: '2026-08-11',
+  modifiedDate: '2026-10-20',
   stat1Value: '~USD 382M',
   stat1Label: 'Hospital-administered market size 2026',
   stat1Source: 'BioNixus estimate (hospital-administered scope)',
