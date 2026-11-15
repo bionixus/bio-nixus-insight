@@ -54,7 +54,7 @@ export const SAUDI_DIABETES_SWITCHING_BREADCRUMB_LABEL = 'Saudi diabetes hospita
 export const SAUDI_DIABETES_SWITCHING_EXCERPT =
   'Syndicated Saudi diabetes reports size the category. They do not show which hospital is switching. Here is what primary research still has to answer.';
 
-export const SAUDI_DIABETES_SWITCHING_PUBLISHED_ISO = '2026-11-02T06:00:00.000Z';
+export const SAUDI_DIABETES_SWITCHING_PUBLISHED_ISO = '2026-11-15T05:45:00.000Z';
 export const SAUDI_DIABETES_SWITCHING_UPDATED_ISO = '2026-11-15T06:00:00.000Z';
 
 export const SAUDI_DIABETES_SWITCHING_CATEGORY = 'Healthcare Market Research';
@@ -329,7 +329,7 @@ export const SAUDI_DIABETES_SWITCHING_HARDCODED_POST: BlogPost = {
   slug: SAUDI_DIABETES_SWITCHING_SLUG,
   title: SAUDI_DIABETES_SWITCHING_DISPLAY_TITLE,
   excerpt: SAUDI_DIABETES_SWITCHING_EXCERPT,
-  date: '2 Nov 2026',
+  date: '15 Nov 2026',
   category: SAUDI_DIABETES_SWITCHING_CATEGORY,
   country: 'Saudi Arabia',
   language: 'en',
