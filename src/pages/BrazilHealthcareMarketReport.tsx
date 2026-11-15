@@ -48,6 +48,11 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus support Brazil-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Brazilian and Latin American pharmaceutical and medical device companies in entering GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys across all major therapeutic areas; and comparative Brazil vs. GCC market intelligence. Brazil and the GCC share several commercial parallels — large generic medicine markets, centralized public procurement, and premium private hospital sectors — that make BioNixus\'s cross-regional intelligence particularly relevant for Brazilian pharma companies planning MENA expansion.',
   },
+  {
+    question: 'How large is Brazil\'s medical devices market and who leads hospital procurement in 2026?',
+    answer:
+      'Brazil\'s medical devices market is estimated at roughly USD 11–13 billion in 2026, split between SUS hospital networks, ANS-covered private hospitals, and outpatient diagnostic chains. ANVISA registers devices with INMETRO and labeling rules; CONITEC can influence SUS coverage for high-cost technologies. Procurement at scale flows through Ministry of Health competitive bidding, state hospital consortia, and private GPO-style agreements at Albert Einstein, Sírio-Libanês, and other premium accounts. BioNixus tracks which OEM and distributor wins matter for launch sequencing — imaging, IVD, orthopaedics, and cardiovascular implants — and runs primary research with clinicians and biomedical engineers when syndicated import data does not explain account-level share.',
+  },
 ], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-healthcare-market-report');
@@ -63,7 +68,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-11-15',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {

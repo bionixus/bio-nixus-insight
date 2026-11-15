@@ -73,7 +73,7 @@ const jsonLd = [
       logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' },
     },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-15',
     mainEntityOfPage: 'https://www.bionixus.com/egypt-medical-devices-market-report',
   },
   {
@@ -92,7 +92,7 @@ const jsonLd = [
     countryName: "Egypt",
     marketSlug: "egypt",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-15",
   })
 ];
 
@@ -188,6 +188,47 @@ const EgyptMedicalDevicesMarketReport = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-muted/20" id="procurement-research">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              UHI hospital procurement and primary MedTech research in Egypt
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Egypt&apos;s device market is not a single channel. Government hospitals under the Ministry of Health and
+                Population buy through central tenders, governor-level allocations, and UHI rollout budgets that specify
+                imaging, laboratory, and critical-care upgrades per governorate. Private hospitals in New Cairo, 6th of
+                October, and Alexandria negotiate directly with distributors and OEM country offices — often accepting
+                international list prices with shorter adoption cycles than SUS facilities.
+              </p>
+              <p>
+                Syndicated import statistics rarely explain which account shifted share after a tender or why a private
+                chain standardized on one ultrasound or IVD platform. BioNixus runs primary research with biomedical
+                engineers, heads of procurement, and specialty chiefs at named hospital groups — including competitive
+                win/loss interviews after MOH awards and private GPO decisions. Studies cover EDA registration timelines,
+                local representative requirements, spare-parts and service expectations, and clinician preference drivers
+                that tender documents omit.
+              </p>
+              <p>
+                Typical Egypt MedTech programmes combine Cairo and Delta quantitative waves with qualitative depth at
+                national reference centres (Kasr Al-Ainy, National Heart Institute, NCI Cairo) and premium private
+                accounts. Outputs support launch sequencing, distributor selection, and GCC expansion briefs when
+                Egyptian manufacturers or multinationals compare Egypt utilisation with Saudi or UAE rollouts. See{' '}
+                <Link to="/egypt-medtech-market-research" className="text-primary font-medium hover:underline">
+                  MedTech market research in Egypt
+                </Link>{' '}
+                for methodology and{' '}
+                <Link to="/healthcare-market-research/egypt" className="text-primary font-medium hover:underline">
+                  healthcare market research Egypt
+                </Link>{' '}
+                for pharma-adjacent programmes. Proposal turnaround is typically 48 hours once governorate
+                priorities and device class are confirmed.
+              </p>
+            </div>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
           </div>
         </section>
 
