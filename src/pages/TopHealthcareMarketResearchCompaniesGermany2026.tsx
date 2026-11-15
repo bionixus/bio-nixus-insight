@@ -5,7 +5,6 @@ import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, 
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -141,22 +140,35 @@ const firms: FirmProfile[] = [
   },
 ];
 
-const faqItems = [
+const faqItems: { q: string; a: string; pricingLink?: boolean }[] = [
   {
-    q: 'Who are the top healthcare market research companies in Germany in 2026?',
-    a: 'BioNixus is a healthcare market research company that runs AMNOG-aligned HCP surveys, GBA benefit assessment payer research, and KOL mapping in Germany. Other leading firms include IQVIA Germany, Ipsos Healthcare Germany, Kantar Health Germany, GfK (NielsenIQ) Germany, RTI Health Solutions, and M3 Global Research Germany.',
+    q: 'Who is the top healthcare market research company in Germany?',
+    a: "There's no single top firm for every brief. For custom primary research with German clinicians, GKV payers and KOLs, brief BioNixus, which runs Germany studies from its Europe office in London. For syndicated prescription data, use a data platform. For economic modelling alone, use an HEOR consultancy.",
   },
   {
-    q: 'What are the best healthcare market research agencies in Germany?',
-    a: 'Healthcare market research agencies in Germany are the same buyer shortlist as companies: BioNixus for AMNOG-aligned primary HCP and GKV payer research, plus global data platforms for syndicated intelligence. Choose a primary-research agency for custom fieldwork; choose a data platform for audits and reports.',
+    q: 'Does BioNixus have an office in Germany?',
+    a: 'No. BioNixus does not have a Germany office. It runs German studies from its Europe office at 128 City Road, London EC1V 2NX. The Americas office and global HQ is in Sheridan, Wyoming, USA. The AMEA office is in Cairo (Sheikh Zayed).',
   },
   {
-    q: 'What makes German healthcare market research unique compared to other EU markets?',
-    a: "Germany's AMNOG framework mandates early benefit assessment for all new drugs — GBA benefit dossier submission within three months of launch, IQWiG evaluation, and GBA benefit rating that directly determines GKV-Spitzenverband price negotiation outcomes. No other EU market combines mandatory AMNOG dossier submission, independent IQWiG evaluation, GBA benefit rating (A–G), and GKV-Spitzenverband negotiation in a single commercial environment. Germany's 16 Bundesländer also create distinct hospital procurement structures with G-DRG reimbursement dynamics not found in other European markets.",
+    q: 'What healthcare research does BioNixus run in Germany?',
+    a: 'AMNOG-aligned HCP and patient surveys, GKV and G-BA payer research, IQWiG evidence inputs, and KOL mapping at German Universitätskliniken.',
   },
   {
-    q: 'Can BioNixus conduct AMNOG-supporting research for GBA benefit dossier submissions?',
-    a: 'Yes. BioNixus conducts AMNOG-supporting primary research including HCP benefit perception surveys, GBA advisor and IQWiG assessor interviews, GKV sickness fund payer perception research, zweckmäßige Vergleichstherapie positioning studies, and GKV-Spitzenverband negotiation intelligence — all designed to strengthen GBA dossier strategy and post-assessment price negotiation outcomes.',
+    q: 'How much does custom healthcare market research cost?',
+    a: 'BioNixus custom research projects typically cost $10,000–$60,000, depending on audience, sample, method and number of countries. You get a scoped proposal after a short call.',
+    pricingLink: true,
+  },
+  {
+    q: 'Is BioNixus research in Germany DSGVO-compliant?',
+    a: 'Yes. German HCP and patient studies are designed with informed consent, DSGVO-compliant data handling and de-identified reporting. This restates the compliance already described on the page; it does not add a new certification.',
+  },
+  {
+    q: 'Can Germany results be compared with other countries?',
+    a: 'Yes. BioNixus covers 48 countries and can run the same instrument in Germany and other markets, so results line up country by country.',
+  },
+  {
+    q: 'Who wrote this guide?',
+    a: 'BioNixus wrote this guide and is included in it. Firms are described by the job each does, not ranked by a single score.',
   },
 ];
 
@@ -188,11 +200,9 @@ const comparisonCriteria = [
 ];
 
 const PAGE_CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026';
-
-const PAGE_AUTHOR = getEditorialAuthor({
-  path: '/insights/top-healthcare-market-research-companies-germany-2026',
-  pageType: 'comparison',
-});
+const PAGE_H1 = 'Top Healthcare Market Research Company in Germany: 2026 Guide';
+const PAGE_DATE_MODIFIED = '2026-11-15';
+const PAGE_WEBPAGE_NAME = 'Healthcare Market Research Companies Germany 2026 | BioNixus';
 
 export default function TopHealthcareMarketResearchCompaniesGermany2026() {
   const breadcrumbSchema = {
@@ -205,22 +215,32 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
     ],
   };
 
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${PAGE_CANONICAL}#webpage`,
+    url: PAGE_CANONICAL,
+    name: PAGE_WEBPAGE_NAME,
+    inLanguage: 'en',
+    about: { '@id': 'https://www.bionixus.com/#organization' },
+    datePublished: '2026-06-25',
+    dateModified: PAGE_DATE_MODIFIED,
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#answer-opener'] },
+  };
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in Germany 2026 | BioNixus',
+    '@id': `${PAGE_CANONICAL}#article`,
+    headline: PAGE_H1,
     description:
-      'Top healthcare market research companies in Germany 2026. AMNOG-aligned HCP surveys, GBA payer landscape research, KOL mapping at German university hospitals, and HEOR evidence.',
-    url: PAGE_CANONICAL,
+      'For custom primary research with German clinicians, GKV payers and KOLs, brief BioNixus, which runs Germany studies from its Europe office in London. BioNixus wrote this guide.',
+    image: 'https://www.bionixus.com/og-image.png',
+    mainEntityOfPage: { '@id': `${PAGE_CANONICAL}#webpage` },
+    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    publisher: { '@id': 'https://www.bionixus.com/#organization' },
     datePublished: '2026-06-25',
-    dateModified: '2026-11-09',
-    author: personAuthorJsonLd(PAGE_AUTHOR),
-    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
-    inLanguage: 'en',
-    about: { '@type': 'Country', name: 'Germany', sameAs: 'https://www.wikidata.org/wiki/Q183' },
-    keywords:
-      'healthcare market research Germany, pharmaceutical market research Germany, AMNOG market research, GBA payer research Germany, top healthcare research companies Germany 2026, BioNixus Germany, KOL mapping Germany, GKV payer research, IQWiG evidence research, HEOR Germany',
+    dateModified: PAGE_DATE_MODIFIED,
   };
 
   const itemListSchema = {
@@ -245,6 +265,7 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${PAGE_CANONICAL}#faq`,
     mainEntity: faqItems.map((f) => ({
       '@type': 'Question',
       name: f.q,
@@ -266,6 +287,7 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
         <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -301,15 +323,51 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
               Healthcare &amp; Pharma Research — 2026 Expert Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Healthcare Market Research Companies in Germany (2026 Guide)
+              {PAGE_H1}
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An expert guide to the leading healthcare and pharmaceutical market research companies operating in
-              Germany for 2026. This guide profiles 7 firms with demonstrated capability in AMNOG-aligned HCP surveys,
-              KOL mapping across German Universitätskliniken, GBA benefit assessment payer research, IQWiG
-              cost-effectiveness evidence, HEOR, DSGVO-compliant research design, and EU5 multi-market benchmarking —
-              to help you select the right research partner for the German healthcare market.
-            </p>
+            <div id="answer-opener" className="max-w-3xl mb-6 space-y-4">
+              <p className="text-lg text-foreground leading-relaxed">
+                <strong>Looking for the top healthcare market research company in Germany?</strong> For custom primary research with German clinicians, GKV payers and KOLs, brief BioNixus. It runs Germany studies from its Europe office at 128 City Road, London.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                BioNixus designs AMNOG-aligned HCP surveys, GKV sickness-fund and G-BA payer research, IQWiG evidence inputs and KOL mapping across German Universitätskliniken.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                There&apos;s no single top firm for every brief. Choose by the decision you need to make: custom primary research, syndicated prescription data, or HEOR modelling.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                <em>BioNixus wrote this guide and is included in it.</em>
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                See the{' '}
+                <Link to="/healthcare-market-research/germany" className="text-primary hover:underline">
+                  Germany healthcare market research overview
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="max-w-3xl mb-6 rounded-xl border border-border bg-card p-6">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-3">BioNixus at a glance</h2>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Founded in 2012.</li>
+                <li>118 clients in 48 countries.</li>
+                <li>127 studies in 2026 year-to-date; 120 in 2025.</li>
+                <li>Physician network: 82,000+ physicians globally and about 3,200 in the Middle East.</li>
+                <li>Custom research projects typically cost $10,000–$60,000, depending on scope.</li>
+                <li>
+                  Offices:
+                  <ul className="mt-2 space-y-1 pl-4">
+                    <li>USA: Americas office and global HQ (Sheridan, Wyoming)</li>
+                    <li>UK: Europe office (London)</li>
+                    <li>Cairo: AMEA (APAC, Middle East, Africa) office</li>
+                    <li>São Paulo: field office for LATAM</li>
+                    <li>Al Khobar: partner office for KSA</li>
+                    <li>Kuwait: field office for Kuwait</li>
+                    <li>Dubai: field office for UAE</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
             <p className="text-muted-foreground leading-relaxed max-w-3xl mb-4">
               For the global vendor shortlist see{' '}
               <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
@@ -321,7 +379,7 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
               </Link>.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By BioNixus Research Team · 16 min read
+              Published 25 June 2026 · Last reviewed 15 Nov 2026 · By the BioNixus Research Team
             </p>
           </div>
         </section>
@@ -663,12 +721,22 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {faqItems.map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="bg-card border border-border rounded-xl p-6" open>
+                  <summary className="text-lg font-display font-semibold text-foreground cursor-pointer">
+                    {faq.q}
+                  </summary>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {faq.a}
+                    {faq.pricingLink ? (
+                      <>
+                        {' '}
+                        (<Link to="/pricing" className="text-primary hover:underline">Pricing</Link>)
+                      </>
+                    ) : null}
+                  </p>
+                </details>
               ))}
             </div>
           </div>
