@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import type { GrowthEngine } from '@/lib/growthEngine';
+import { getTheme, THEME_CHANGE_EVENT } from '@/lib/theme';
 
 /**
  * Starts the WebGL growth engine on pages that carry GrowthStage placeholders. The engine code
  * loads only when a stage comes within reach of the viewport (and the browser is idle), so it never
  * competes with the first paint or the hero intro, and a page without stages never loads it.
- * Without WebGL the stages show a soft glow instead.
+ * Without WebGL the stages show a soft glow instead. Follows the theme switch (night glow / light ink).
  */
 export default function GrowthEngineLayer() {
   const { pathname } = useLocation();
@@ -16,6 +17,7 @@ export default function GrowthEngineLayer() {
     let engine: GrowthEngine | null = null;
     let canvas: HTMLCanvasElement | null = null;
     const html = document.documentElement;
+    const onTheme = () => engine?.setTheme(getTheme() === 'light');
 
     const start = async () => {
       const stages = Array.from(document.querySelectorAll('[data-stage]'));
@@ -30,7 +32,9 @@ export default function GrowthEngineLayer() {
         engine = createGrowthEngine(canvas, {
           reduced: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
           pointer: window.matchMedia('(hover: hover) and (pointer: fine)').matches,
+          light: getTheme() === 'light',
         });
+        window.addEventListener(THEME_CHANGE_EVENT, onTheme);
         engine.setStages(stages);
         engine.intro();
         html.classList.add('gl-on');
@@ -76,6 +80,7 @@ export default function GrowthEngineLayer() {
         if (ric && window.cancelIdleCallback) window.cancelIdleCallback(idleHandle);
         else window.clearTimeout(idleHandle);
       }
+      window.removeEventListener(THEME_CHANGE_EVENT, onTheme);
       engine?.destroy();
       canvas?.remove();
       html.classList.remove('gl-on');

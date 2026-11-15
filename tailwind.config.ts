@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 export default {
   darkMode: ["class"],
@@ -155,5 +156,12 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    // `night:` utilities apply only in the night theme (default) and inside .theme-dark islands;
+    // the light theme (html[data-theme="light"]) keeps the plain classes, i.e. the original colours.
+    plugin(({ addVariant }) => {
+      addVariant("night", '&:where(:not([data-theme="light"] *), .theme-dark, .theme-dark *)');
+    }),
+  ],
 } satisfies Config;

@@ -5,6 +5,11 @@
  * Shapes: 0 market orb · 1 funnel · 2 flywheel · 3 growth bars · 4 globe (BioNixus offices) · 5 arch.
  * One fixed canvas renders the shape of whichever stage element sits nearest the middle of the
  * viewport, morphing between shapes as the reader scrolls. Purely decorative.
+ *
+ * Night theme: additive glow on a canvas behind the page (host sections turn transparent).
+ * Light theme (original BioNixus colours): host sections keep their colours, so the canvas sits just
+ * above them, clipped to the host sections, and the particles are drawn as ink (normal blending,
+ * deep teal → navy → gold → ember); on a dark host they keep the night palette.
  */
 
 const VERT = `
@@ -15,7 +20,7 @@ attribute vec4 aGlobe;
 attribute vec4 aArch;
 attribute vec4 aRand;
 uniform mat4 uProj;
-uniform float uTime, uShapeA, uShapeB, uMix, uLeak, uIntro, uScale, uMouseAmt, uAspect, uDpr, uSize, uAlpha, uCamZ;
+uniform float uTime, uShapeA, uShapeB, uMix, uLeak, uIntro, uScale, uMouseAmt, uAspect, uDpr, uSize, uAlpha, uCamZ, uPal;
 uniform vec2 uOffset, uTilt, uMouse;
 varying vec3 vColor;
 varying float vAlpha;
@@ -136,6 +141,18 @@ vec3 heat(float x) {
   return mix(c, c3, smoothstep(0.68, 1.0, x));
 }
 
+// Light theme: the same temperature scale as ink on a light page (BioNixus teal, navy, gold, ember).
+vec3 heatInk(float x) {
+  vec3 c0 = vec3(0.040, 0.540, 0.520);
+  vec3 c1 = vec3(0.110, 0.200, 0.380);
+  vec3 c2 = vec3(0.690, 0.510, 0.150);
+  vec3 c3 = vec3(0.740, 0.300, 0.120);
+  x = clamp(x, 0.0, 1.0);
+  vec3 c = mix(c0, c1, smoothstep(0.0, 0.38, x));
+  c = mix(c, c2, smoothstep(0.38, 0.68, x));
+  return mix(c, c3, smoothstep(0.68, 1.0, x));
+}
+
 void main() {
   vec3 p; float t; float a; float s;
   shapeOf(uShapeA, p, t, a, s);
@@ -171,7 +188,8 @@ void main() {
 
   float persp = uCamZ / max(-view.z, 0.2);
   gl_PointSize = clamp(uSize * aRand.y * s * uDpr * persp * (0.55 + 0.45 * min(uScale, 1.6)), 1.0, 48.0);
-  vColor = heat(t) * (0.78 + 0.45 * hash(aRand.x * 7.7));
+  float jitter = hash(aRand.x * 7.7);
+  vColor = mix(heat(t) * (0.78 + 0.45 * jitter), heatInk(t) * (0.85 + 0.3 * jitter), uPal);
   vAlpha = a * uAlpha * (0.2 + 0.8 * ii);
 }`;
 
@@ -495,12 +513,40 @@ function easeInOut(t: number) {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
 
-type Stage = { el: Element; shape: number; size: number; sizeM: number; dim: number };
+type Stage = {
+  el: Element;
+  shape: number;
+  size: number;
+  sizeM: number;
+  dim: number;
+  /** Section the figure shows through (.gl-host). */
+  host: Element | null;
+  /** Light theme: whether that section is dark (then the night palette is used). null = not measured. */
+  darkHost: boolean | null;
+};
+
+/** Relative luminance of the first opaque background at or above `el`. */
+function backdropIsDark(el: Element | null): boolean {
+  for (let node: Element | null = el; node; node = node.parentElement) {
+    const bg = window.getComputedStyle(node).backgroundColor;
+    const m = bg.match(/rgba?\(([^)]+)\)/);
+    if (!m) continue;
+    const [r, g, b, a = 1] = m[1].split(/[\s,/]+/).filter(Boolean).map(Number);
+    if (a < 0.5) continue;
+    const lin = (v: number) => {
+      const c = v / 255;
+      return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+    };
+    return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b) < 0.2;
+  }
+  return false;
+}
 
 export type GrowthEngine = {
   count: number;
   setStages: (list: Element[]) => void;
   setLeak: (v: boolean) => void;
+  setTheme: (light: boolean) => void;
   intro: () => void;
   refresh: () => void;
   destroy: () => void;
@@ -508,7 +554,7 @@ export type GrowthEngine = {
 
 export function createGrowthEngine(
   canvas: HTMLCanvasElement,
-  opts: { reduced?: boolean; pointer?: boolean; count?: number } = {},
+  opts: { reduced?: boolean; pointer?: boolean; count?: number; light?: boolean } = {},
 ): GrowthEngine {
   const reduced = !!opts.reduced;
   const usePointer = !!opts.pointer && !reduced;
@@ -552,15 +598,27 @@ export function createGrowthEngine(
   const U: Record<string, WebGLUniformLocation | null> = {};
   [
     'uProj', 'uTime', 'uShapeA', 'uShapeB', 'uMix', 'uLeak', 'uIntro', 'uScale', 'uMouseAmt', 'uAspect', 'uDpr',
-    'uSize', 'uAlpha', 'uCamZ', 'uOffset', 'uTilt', 'uMouse',
+    'uSize', 'uAlpha', 'uCamZ', 'uOffset', 'uTilt', 'uMouse', 'uPal',
   ].forEach((n) => {
     U[n] = gl.getUniformLocation(prog, n);
   });
 
   gl.disable(gl.DEPTH_TEST);
   gl.enable(gl.BLEND);
-  gl.blendFunc(gl.ONE, gl.ONE);
   gl.clearColor(0, 0, 0, 0);
+  let light = false;
+  let clip = '';
+  const applyTheme = (isLight: boolean) => {
+    light = isLight;
+    // night: additive glow; light: premultiplied "over" so the particles read as ink
+    if (light) gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+    else gl.blendFunc(gl.ONE, gl.ONE);
+    stages.forEach((s) => {
+      s.darkHost = null;
+    });
+    clip = light ? 'inset(50%)' : '';
+    canvas.style.clipPath = clip;
+  };
 
   const proj = new Float32Array(16);
   let aspect = 1;
@@ -570,7 +628,7 @@ export function createGrowthEngine(
     time: 0, a: 0, b: 0, mix: 0, morphing: false, mt: 0, queued: -1,
     leak: 0, leakT: 0, intro: reduced ? 1 : 0, introOn: reduced, introStart: 0, mStart: 0,
     ox: 0, oy: 0, oxT: 0, oyT: 0, sc: 1, scT: 1, al: 0, alT: 1,
-    mx: 9, my: 9, mAmt: 0, mAmtT: 0, tx: 0, ty: 0, boost: 0, snapped: false,
+    mx: 9, my: 9, mAmt: 0, mAmtT: 0, tx: 0, ty: 0, boost: 0, snapped: false, pal: 0, palT: 0,
   };
   let stages: Stage[] = [];
   let active: Stage | null = null;
@@ -655,6 +713,10 @@ export function createGrowthEngine(
       }
       active = best;
     }
+    if (light) {
+      if (best.darkHost === null) best.darkHost = backdropIsDark(best.host || best.el);
+      st.palT = best.darkHost ? 0 : 1;
+    } else st.palT = 0;
     const r = bestR;
     st.oxT = ((r.left + r.width / 2) / cw) * 2 - 1;
     st.oyT = 1 - ((r.top + r.height / 2) / ch) * 2;
@@ -662,6 +724,31 @@ export function createGrowthEngine(
     st.scT = Math.max(0.12, (Math.min(r.width, r.height) / (0.86 * ch)) * size);
     const far = Math.abs(r.top + r.height / 2 - mid) / vh;
     st.alT = best.dim * (1 - smooth(0.6, 1.15, far));
+  };
+
+  // Light theme: show the canvas only over the host sections (it sits above their backgrounds).
+  const updateClip = () => {
+    const vh = window.innerHeight;
+    const vw = canvas.clientWidth || window.innerWidth;
+    let path = '';
+    const seen = new Set<Element>();
+    for (let i = 0; i < stages.length; i++) {
+      const host = stages[i].host;
+      if (!host || seen.has(host)) continue;
+      seen.add(host);
+      const r = host.getBoundingClientRect();
+      const top = Math.max(0, r.top);
+      const bottom = Math.min(vh, r.bottom);
+      if (bottom <= top || r.right <= 0 || r.left >= vw) continue;
+      const left = Math.max(0, r.left);
+      const right = Math.min(vw, r.right);
+      path += `M${left.toFixed(1)} ${top.toFixed(1)}H${right.toFixed(1)}V${bottom.toFixed(1)}H${left.toFixed(1)}Z`;
+    }
+    const next = path ? `path('${path}')` : 'inset(50%)';
+    if (next !== clip) {
+      clip = next;
+      canvas.style.clipPath = next;
+    }
   };
 
   const draw = () => {
@@ -679,7 +766,8 @@ export function createGrowthEngine(
     gl.uniform1f(U.uAspect, aspect);
     gl.uniform1f(U.uDpr, dpr);
     gl.uniform1f(U.uSize, small ? 2.7 : 3.1);
-    gl.uniform1f(U.uAlpha, st.al * 0.82);
+    gl.uniform1f(U.uAlpha, st.al * (0.82 + 0.1 * st.pal));
+    gl.uniform1f(U.uPal, st.pal);
     gl.uniform1f(U.uCamZ, camZ);
     gl.uniform2f(U.uOffset, st.ox, st.oy);
     gl.uniform2f(U.uTilt, st.tx, st.ty);
@@ -710,6 +798,8 @@ export function createGrowthEngine(
     st.sc += (st.scT - st.sc) * k;
     st.al += (st.alT - st.al) * (1 - Math.exp(-dt * 3));
     st.leak += (st.leakT - st.leak) * (1 - Math.exp(-dt * 2.2));
+    st.pal += (st.palT - st.pal) * (1 - Math.exp(-dt * 3.2));
+    if (light) updateClip();
     // transitions run on wall-clock time so slow devices still finish them on schedule
     if (st.introOn && st.intro < 1) {
       if (!st.introStart) st.introStart = now;
@@ -777,6 +867,7 @@ export function createGrowthEngine(
   window.addEventListener('resize', onResize, { passive: true });
   canvas.addEventListener('webglcontextlost', onLost, false);
 
+  applyTheme(!!opts.light);
   resize();
   raf = window.requestAnimationFrame(frame);
 
@@ -791,12 +882,24 @@ export function createGrowthEngine(
           size,
           sizeM: parseFloat(el.getAttribute('data-size-m') || String(size)),
           dim: parseFloat(el.getAttribute('data-dim') || '1'),
+          host: el.closest('.gl-host'),
+          darkHost: null,
         };
       });
       if (active && !stages.some((s) => s.el === active?.el)) active = null;
     },
     setLeak(v: boolean) {
       st.leakT = v ? 1 : 0;
+    },
+    setTheme(isLight: boolean) {
+      if (isLight === light) return;
+      applyTheme(isLight);
+      if (active) {
+        st.palT = 0;
+        active.darkHost = null;
+      }
+      // jump the palette with the theme switch; it only eases between hosts while scrolling
+      if (!isLight) st.pal = 0;
     },
     intro() {
       st.introOn = true;

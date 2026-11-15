@@ -249,7 +249,7 @@ html[data-mv-route] main {
   height: 34px;
   margin: -17px 0 0 -17px;
   border-radius: 50%;
-  border: 1px solid rgb(243 239 231 / 0.35);
+  border: 1px solid hsl(var(--ink) / 0.35);
   pointer-events: none;
   opacity: 0;
   transition:
@@ -338,7 +338,9 @@ html[data-mv-route] main {
 }
 
 /* ---------- growth engine: WebGL particle figures (funnel, globe, growth bars) ---------- */
-/* The canvas sits behind the page; sections that host a figure turn transparent so it shows through. */
+/* Night: the canvas sits behind the page; sections that host a figure turn transparent so it shows
+   through. Light: host sections keep their original colours, so the canvas sits just above them
+   (clipped to the hosts by the engine) and below their content. */
 .gl-field {
   position: fixed;
   inset: 0;
@@ -352,13 +354,20 @@ html[data-mv-route] main {
 .gl-field.is-on {
   opacity: 1;
 }
-html.gl-on body,
-html.gl-on #root,
-html.gl-on .min-h-screen.bg-background {
-  background-color: transparent;
+@dark-theme {
+  html.gl-on body,
+  html.gl-on #root,
+  html.gl-on .min-h-screen.bg-background {
+    background-color: transparent;
+  }
+  html.gl-on .gl-host {
+    background: transparent;
+  }
 }
-html.gl-on .gl-host {
-  background: transparent;
+@light-theme {
+  .gl-field {
+    z-index: 0;
+  }
 }
 .gl-stage {
   pointer-events: none;
@@ -384,7 +393,7 @@ html:not(.gl-on) .gl-stage {
   position: absolute;
   inset: 0;
   background: var(--heat);
-  box-shadow: 0 0 14px hsl(var(--primary) / 0.55);
+  box-shadow: 0 0 14px hsl(var(--gold-glow) / 0.55);
   transform: scaleX(var(--p, 0));
   transform-origin: left center;
 }
@@ -402,7 +411,7 @@ html:not(.gl-on) .gl-stage {
 }
 [data-mv-process] > [data-lit] > span:first-child {
   color: hsl(var(--accent));
-  text-shadow: 0 0 22px hsl(var(--primary) / 0.55);
+  text-shadow: 0 0 22px hsl(var(--gold-glow) / 0.55);
 }
 
 /* ---------- hero dashboard chart: lines draw, areas rise, end points pulse, a scan line sweeps ---------- */
@@ -558,6 +567,120 @@ html.mv-on .coverage-map:not([data-live]) .coverage-arc {
   }
 }
 
+/* ---------- theme switch (menu): a sun–moon pill with a gold knob ---------- */
+/* The knob side follows html[data-theme] (absent = night), so it is right from the first paint. */
+.theme-switch {
+  --knob-travel: 28px;
+  --knob-dir: 1;
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 60px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid hsl(var(--border));
+  border-radius: 999px;
+  background: hsl(var(--muted) / 0.65);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.18);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.35s var(--ease), background-color 0.35s var(--ease);
+}
+[dir='rtl'] .theme-switch {
+  --knob-dir: -1;
+}
+.theme-switch:hover {
+  border-color: hsl(var(--line-2));
+}
+.theme-switch:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 3px;
+}
+.theme-switch__knob {
+  position: absolute;
+  top: 3px;
+  inset-inline-start: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold-warm)));
+  box-shadow: 0 4px 14px -3px hsl(var(--gold-glow) / 0.7), inset 0 1px 0 rgb(255 255 255 / 0.5);
+  transform: translateX(calc(var(--knob-travel) * var(--knob-dir)));
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s var(--ease);
+}
+.theme-switch:hover .theme-switch__knob {
+  box-shadow: 0 6px 20px -3px hsl(var(--gold-glow) / 0.85), inset 0 1px 0 rgb(255 255 255 / 0.55);
+}
+.theme-switch__icon {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  pointer-events: none;
+  color: hsl(var(--muted-foreground));
+  transition: color 0.45s var(--ease), transform 0.7s var(--mv-ease), opacity 0.45s var(--ease);
+}
+.theme-switch__sun {
+  inset-inline-start: 8px;
+  opacity: 0.75;
+  transform: rotate(-90deg) scale(0.82);
+}
+.theme-switch__moon {
+  inset-inline-end: 8px;
+  color: #0b1630;
+  transform: none;
+}
+@light-theme {
+  .theme-switch {
+    box-shadow: inset 0 1px 2px hsl(220 30% 15% / 0.08);
+  }
+  .theme-switch__knob {
+    transform: translateX(0);
+  }
+  .theme-switch__sun {
+    color: #0b1630;
+    opacity: 1;
+    transform: none;
+  }
+  .theme-switch__moon {
+    color: hsl(var(--muted-foreground));
+    opacity: 0.75;
+    transform: rotate(30deg) scale(0.82);
+  }
+}
+
+/* Light theme chrome: a solid white bar and the original logo, as on the original site. */
+.logo-day {
+  display: none;
+}
+@light-theme {
+  .site-nav {
+    border-color: hsl(var(--border));
+    background-color: hsl(var(--background) / 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  .logo-day {
+    display: block;
+  }
+  .logo-night {
+    display: none;
+  }
+}
+
+/* Theme switch reveal: the new theme opens as a circle from the switch (theme.ts animates it). */
+html.theme-vt::view-transition-old(root),
+html.theme-vt::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+html.theme-vt::view-transition-new(root) {
+  z-index: 2;
+}
+
 /* ---------- accessibility and print ---------- */
 @media (prefers-reduced-motion: reduce) {
   .hero-line,
@@ -577,7 +700,9 @@ html.mv-on .coverage-map:not([data-live]) .coverage-arc {
     animation: none !important;
     stroke-dashoffset: 0 !important;
   }
-  .gl-field {
+  .gl-field,
+  .theme-switch__knob,
+  .theme-switch__icon {
     transition: none;
   }
   .mwi,

@@ -17,6 +17,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { SiteSearch } from '@/components/SiteSearch';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 
 const Navbar = () => {
@@ -40,7 +41,8 @@ const Navbar = () => {
     setIsOpen(false);
   }, [pathname]);
 
-  // Transparent over the hero, night glass once the page scrolls (alsaadany.com behaviour).
+  // Night: transparent over the hero, night glass once the page scrolls (alsaadany.com behaviour).
+  // Light theme: a solid white bar, as on the original site (.site-nav in night-motion.css).
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 12);
     onScroll();
@@ -82,7 +84,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-500 ${
+      className={`site-nav fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-500 ${
         isScrolled || isOpen
           ? 'border-border bg-background/75 backdrop-blur-xl backdrop-saturate-150'
           : 'border-transparent bg-transparent'
@@ -92,13 +94,24 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo – links to home, scrolls to hero when already on home */}
           <Link to={basePath} className="flex items-center gap-3" onClick={handleLogoClick}>
+            {/* One logo per theme; CSS shows the one that matches html[data-theme]. */}
             <img
               src="/bionixus-logo-night.webp"
               alt={ui.nav.logoAlt}
-              className="h-9 w-auto object-contain"
+              className="logo-night h-9 w-auto object-contain"
               width={126}
               height={36}
               decoding="async"
+              fetchPriority="low"
+            />
+            <img
+              src="/bionixus-logo.webp"
+              alt={ui.nav.logoAlt}
+              className="logo-day h-9 w-auto object-contain"
+              width={126}
+              height={36}
+              decoding="async"
+              loading="lazy"
               fetchPriority="low"
             />
           </Link>
@@ -132,6 +145,7 @@ const Navbar = () => {
                   {ui.nav.globalSites}
                 </span>
               </Link>
+              <ThemeToggle />
               <DropdownMenu>
                 <DropdownMenuTrigger
                   type="button"
@@ -222,6 +236,10 @@ const Navbar = () => {
               >
                 {t.nav.contact}
               </Link>
+              <div className="flex items-center justify-between gap-4 pt-4 border-t border-border">
+                <span className="text-sm text-muted-foreground">{ui.theme.menuLabel}</span>
+                <ThemeToggle />
+              </div>
               <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-border">
                 <span className="text-xs text-muted-foreground w-full sm:w-auto">{ui.nav.language}</span>
                 {languages.map((lang) => (

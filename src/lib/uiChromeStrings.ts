@@ -42,6 +42,14 @@ export type UiChromeStrings = {
     noArticles: string;
     coverAlt: string;
   };
+  theme: {
+    /** Accessible name of the menu switch; it reads "on" while the night theme is active. */
+    darkMode: string;
+    toLight: string;
+    toDark: string;
+    /** Row label beside the switch in the mobile menu. */
+    menuLabel: string;
+  };
   coverageMap: {
     alt: string;
     caption: string;
@@ -127,6 +135,12 @@ const en: UiChromeStrings = {
     noArticles: 'No articles match the selected filters.',
     coverAlt: 'Blog post cover',
   },
+  theme: {
+    darkMode: 'Dark mode',
+    toLight: 'Switch to light mode',
+    toDark: 'Switch to dark mode',
+    menuLabel: 'Theme',
+  },
   coverageMap: {
     alt: 'BioNixus global research coverage map showing regional leadership offices in Sheridan, London and Sheikh Zayed, and a field office for UAE in Dubai, a partner office for KSA in Al Khobar, and a field office for Kuwait in Salmiya.',
     caption:
@@ -205,6 +219,12 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       noArticles: 'Keine Artikel entsprechen den gewählten Filtern.',
       coverAlt: 'Titelbild des Beitrags',
     },
+    theme: {
+      darkMode: 'Dunkelmodus',
+      toLight: 'Zum hellen Modus wechseln',
+      toDark: 'Zum dunklen Modus wechseln',
+      menuLabel: 'Design',
+    },
     coverageMap: {
       alt: 'Karte der globalen Forschungspräsenz von BioNixus mit regionaler Leitung in Sheridan, London und Kairo sowie Außenstellen in Dubai, Al Khobar und Kuwait.',
       caption:
@@ -279,6 +299,12 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       latestInsight: 'Dernière analyse',
       noArticles: 'Aucun article ne correspond aux filtres sélectionnés.',
       coverAlt: 'Image de couverture de l’article',
+    },
+    theme: {
+      darkMode: 'Mode sombre',
+      toLight: 'Passer au mode clair',
+      toDark: 'Passer au mode sombre',
+      menuLabel: 'Thème',
     },
     coverageMap: {
       alt: 'Carte de la couverture mondiale des études BioNixus, avec une direction régionale à Sheridan, Londres et Le Caire, et des bureaux de terrain à Dubaï, Al Khobar et Koweït.',
@@ -355,6 +381,12 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       noArticles: 'Ningún artículo coincide con los filtros seleccionados.',
       coverAlt: 'Imagen de portada del artículo',
     },
+    theme: {
+      darkMode: 'Modo oscuro',
+      toLight: 'Cambiar al modo claro',
+      toDark: 'Cambiar al modo oscuro',
+      menuLabel: 'Tema',
+    },
     coverageMap: {
       alt: 'Mapa de la cobertura global de investigación de BioNixus con liderazgo regional en Sheridan, Londres y El Cairo, y oficinas de campo en Dubái, Al Khobar y Kuwait.',
       caption:
@@ -429,6 +461,12 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       latestInsight: 'Última análise',
       noArticles: 'Nenhum artigo corresponde aos filtros selecionados.',
       coverAlt: 'Imagem de capa do artigo',
+    },
+    theme: {
+      darkMode: 'Modo escuro',
+      toLight: 'Mudar para o modo claro',
+      toDark: 'Mudar para o modo escuro',
+      menuLabel: 'Tema',
     },
     coverageMap: {
       alt: 'Mapa da cobertura global de pesquisa da BioNixus com liderança regional em Sheridan, Londres e Cairo, e escritórios de campo em Dubai, Al Khobar e Kuwait.',
@@ -509,6 +547,12 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       noArticles: 'Нет статей, соответствующих выбранным фильтрам.',
       coverAlt: 'Обложка статьи',
     },
+    theme: {
+      darkMode: 'Тёмная тема',
+      toLight: 'Включить светлую тему',
+      toDark: 'Включить тёмную тему',
+      menuLabel: 'Оформление',
+    },
     coverageMap: {
       alt: 'Карта глобального охвата исследований BioNixus с офисами в Шеридане (штаб-квартира в США), Лондоне, Каире, Эр-Рияде, Дубае, Эль-Кувейте и Сан-Паулу.',
       caption:
@@ -588,6 +632,12 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       noArticles: '没有符合所选筛选条件的文章。',
       coverAlt: '文章封面图',
     },
+    theme: {
+      darkMode: '深色模式',
+      toLight: '切换到浅色模式',
+      toDark: '切换到深色模式',
+      menuLabel: '外观',
+    },
     coverageMap: {
       alt: 'BioNixus 全球研究覆盖地图，标注谢里丹（美国总部）、伦敦、开罗、利雅得、迪拜、科威特城与圣保罗七处办公室。',
       caption:
@@ -666,6 +716,12 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<UiChromeStrings>> =
       latestInsight: 'أحدث رؤية',
       noArticles: 'لا توجد مقالات مطابقة للفلاتر المحددة.',
       coverAlt: 'صورة غلاف المقال',
+    },
+    theme: {
+      darkMode: 'الوضع الداكن',
+      toLight: 'التبديل إلى الوضع الفاتح',
+      toDark: 'التبديل إلى الوضع الداكن',
+      menuLabel: 'المظهر',
     },
     coverageMap: {
       alt: 'خريطة التغطية البحثية العالمية لبيونكسس تُظهر المكاتب في شيريدان (المقر الأمريكي) ولندن والقاهرة والرياض ودبي ومدينة الكويت وساو باولو.',

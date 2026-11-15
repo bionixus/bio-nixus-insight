@@ -120,7 +120,7 @@ const MethodologySection = ({ nestUnderParentH1 = false }: MethodologySectionPro
       dir={language === 'ar' ? 'rtl' : undefined}
       ref={sectionRef}
     >
-      <div className="container-wide max-w-6xl mx-auto">
+      <div className="container-wide relative z-[1] max-w-6xl mx-auto">
         <div className="mx-auto mb-12 max-w-3xl text-center sr sr-up">
           <PremiumEyebrow>{t.footer.methodology}</PremiumEyebrow>
           <MethodologySectionTitle

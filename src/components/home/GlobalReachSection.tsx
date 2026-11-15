@@ -22,7 +22,7 @@ const GlobalReachSection = () => {
       aria-labelledby="home-global-reach-heading"
       ref={sectionRef}
     >
-      <div className="container-wide max-w-6xl mx-auto">
+      <div className="container-wide relative z-[1] max-w-6xl mx-auto">
         <div className="mb-12 text-center sr sr-up">
           <span className="mx-auto mb-5 block h-px w-10 bg-[#C9A84C]/40" aria-hidden="true" />
           <h2

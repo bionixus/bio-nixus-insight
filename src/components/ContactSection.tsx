@@ -743,7 +743,7 @@ const ContactSection = ({ embedOnHomePage = false, premium = false }: ContactSec
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
               {t.contact.title}
             </h2>
-            <p className="text-lg text-white mb-10 leading-relaxed">{t.contact.subtitle}</p>
+            <p className="text-lg text-muted-foreground night:text-white mb-10 leading-relaxed">{t.contact.subtitle}</p>
             {channelBlock}
             <TrustCoverageMap />
             <div className="flex flex-wrap gap-4 mt-10">

@@ -49,7 +49,7 @@ const HeroSection = () => {
   return (
     <section
       data-hero-lcp
-      className={`relative flex min-h-screen items-center overflow-hidden bg-background ${language === 'ar' ? 'hero-arabic' : ''} ${language === 'de' ? 'hero-german' : ''} ${language === 'fr' ? 'hero-french' : ''} ${language === 'es' ? 'hero-spanish' : ''} ${language === 'zh' ? 'hero-chinese' : ''}`}
+      className={`theme-dark relative flex min-h-screen items-center overflow-hidden bg-background ${language === 'ar' ? 'hero-arabic' : ''} ${language === 'de' ? 'hero-german' : ''} ${language === 'fr' ? 'hero-french' : ''} ${language === 'es' ? 'hero-spanish' : ''} ${language === 'zh' ? 'hero-chinese' : ''}`}
       dir={isRTL ? 'rtl' : undefined}
       lang={language}
     >

@@ -5,7 +5,7 @@ export function PremiumComplianceRibbon() {
   const badges = t.homePage.compliance.badges;
 
   return (
-    <div className="relative z-10 border-y border-line bg-night-2/80 py-5 backdrop-blur">
+    <div className="theme-dark relative z-10 border-y border-line bg-night-2 py-5">
       <div className="container-wide grid grid-cols-1 gap-x-8 gap-y-3 px-4 sm:grid-cols-2 xl:flex xl:items-start xl:justify-between">
         {badges.map((item) => (
           <span

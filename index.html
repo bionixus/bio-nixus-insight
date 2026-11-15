@@ -12,6 +12,8 @@
     <link rel="apple-touch-icon" href="/icons/bnx-apple-touch.png" />
     <link rel="manifest" href="/icons/site.webmanifest" />
     <meta name="theme-color" content="#050A14" />
+    <!-- Theme switch: apply a saved light-theme choice before the first paint (night is the default). -->
+    <script>try{if(localStorage.getItem('bionixus-theme')==='light'){document.documentElement.setAttribute('data-theme','light');var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content','#FFFFFF')}}catch(e){}</script>
     <style id="critical-lcp">
       :root{color-scheme:dark;--background:220 60% 5%;--foreground:40 33% 93%;--primary:38 92% 50%;--primary-foreground:219 54% 8.5%;--muted:220 46% 12.9%;--muted-foreground:221 20% 72%;--border:222 38% 18.3%;--card:219 54% 8.5%;--accent:42 95% 65%}
       html,body,#root{margin:0;background:#050A14;color:#F3EFE7;font-family:system-ui,-apple-system,sans-serif}
@@ -24,6 +26,9 @@
       [data-hero-lcp]{background:#050A14}
       main h1{font-family:Georgia,'Times New Roman',serif;font-weight:600;line-height:1.2;color:#F3EFE7}
       [data-hero-lcp] h1,[data-hero-lcp] .sr-lcp{color:#F3EFE7!important;font-weight:300}
+      :root[data-theme=light]{color-scheme:light;--background:0 0% 100%;--foreground:220 30% 15%;--primary:220 47% 15%;--primary-foreground:0 0% 100%;--muted:220 15% 96%;--muted-foreground:220 10% 45%;--border:220 15% 90%;--card:40 20% 98%;--accent:38 92% 50%}
+      html[data-theme=light],html[data-theme=light] body,html[data-theme=light] #root{background:#fff;color:#1a2744}
+      :where(html[data-theme=light]) main h1{color:#1a2744}
     </style>
     <!-- Core Web Vitals: do not high-priority-preload the nav logo — it steals bandwidth from LCP (H1 / hero). -->
     <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />

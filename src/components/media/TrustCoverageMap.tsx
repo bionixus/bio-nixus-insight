@@ -71,7 +71,7 @@ export function TrustCoverageMap({ wide = false }: { wide?: boolean } = {}) {
   return (
     <figure
       ref={ref}
-      className="coverage-map overflow-hidden rounded-xl border border-border bg-[#06101F]"
+      className="coverage-map theme-dark overflow-hidden rounded-xl border border-border bg-[#06101F]"
       data-live={live ? 'true' : undefined}
       data-size={wide ? 'wide' : undefined}
     >

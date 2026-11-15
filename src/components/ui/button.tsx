@@ -9,12 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        // Light theme: the original solid navy; night: the gold gradient pill.
         default:
-          "bg-primary bg-gradient-to-r from-accent to-primary text-primary-foreground shadow-[0_14px_40px_-16px_hsl(var(--gold-glow)/0.6),inset_0_1px_0_rgb(255_255_255/0.35)] hover:brightness-105",
+          "bg-primary text-primary-foreground hover:bg-primary/90 night:bg-gradient-to-r night:from-accent night:to-primary night:shadow-[0_14px_40px_-16px_hsl(var(--gold-glow)/0.6),inset_0_1px_0_rgb(255_255_255/0.35)] night:hover:brightness-105",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-line-2 bg-transparent text-foreground hover:border-ink-3 hover:bg-white/[0.04]",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground night:border-line-2 night:bg-transparent night:text-ink night:hover:border-ink-3 night:hover:bg-white/[0.04] night:hover:text-ink",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-white/[0.05] hover:text-foreground",
+        ghost: "hover:bg-accent hover:text-accent-foreground night:hover:bg-white/[0.05] night:hover:text-ink",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

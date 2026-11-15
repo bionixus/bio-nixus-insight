@@ -101,7 +101,7 @@ export function HomeExploreResearchSection({
 
   return (
     <section
-      className="relative overflow-hidden border-t border-white/10 bg-navy-deep py-16 md:py-20"
+      className="theme-dark relative overflow-hidden border-t border-white/10 bg-navy-deep py-16 md:py-20"
       aria-labelledby="home-explore-research-heading"
     >
       <div
