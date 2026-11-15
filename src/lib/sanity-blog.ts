@@ -400,7 +400,7 @@ export async function fetchIndustriesInsights(limit = BLOG_INDEX_POST_LIMIT): Pr
 export async function fetchSanityLatestInsightsWithClient(
   client: SanityClient,
   language: string,
-  limit = 3,
+  limit = 6,
 ): Promise<BlogPost[]> {
   try {
     const raw = await client.fetch<RawSanityPost[]>(LATEST_INSIGHTS_QUERY, {
@@ -436,7 +436,7 @@ export async function fetchSanityLatestInsightsWithClient(
   }
 }
 
-export async function fetchSanityLatestInsights(language: string, limit = 3): Promise<BlogPost[]> {
+export async function fetchSanityLatestInsights(language: string, limit = 6): Promise<BlogPost[]> {
   return fetchSanityLatestInsightsWithClient(getSanityClient(), language, limit);
 }
 

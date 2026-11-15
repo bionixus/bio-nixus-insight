@@ -35,8 +35,8 @@ export function useSanityBlog(ssrPosts?: BlogPost[] | null) {
   return { ...query, data };
 }
 
-/** Optimized hook for homepage Latest Insights (returns latest 3 posts). */
-export function useSanityLatestInsights(limit = 3, ssrPosts?: BlogPost[] | null) {
+/** Homepage Latest Insights. Newest first, six cards. */
+export function useSanityLatestInsights(limit = 6, ssrPosts?: BlogPost[] | null) {
   const { language } = useLanguage();
   const hasSsr = Array.isArray(ssrPosts) && ssrPosts.length > 0;
 

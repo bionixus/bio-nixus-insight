@@ -1150,6 +1150,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Women’s health market research in the GCC: new fertility deals, PCOS in Thiqa obesity cover and low menopause therapy use. What to ask doctors and patients.',
   },
+  '/blog/saudi-diabetes-syndicated-vs-hospital-switching': {
+    title: 'Saudi Diabetes Data Misses Hospital Switching',
+    description:
+      'Saudi diabetes category totals miss which hospital is switching. Primary research is what a launch team still has to answer.',
+  },
+  '/blog/saudi-hematology-diagnostics-vs-ward-brand-cut': {
+    title: 'Saudi Hematology Diagnostics Miss Ward Share',
+    description:
+      'Saudi hematology diagnostics reports count lab products. Pharma still needs the ward-level brand cut a diagnostics total omits.',
+  },
   '/blog/diabetes-market-research-uae-2026-price-cuts': {
     title: 'Diabetes Market Research UAE After 2026 Price Cuts',
     description:
