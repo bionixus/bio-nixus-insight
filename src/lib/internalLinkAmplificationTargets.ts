@@ -50,7 +50,7 @@ export const INTERNAL_LINK_PRIORITY_TARGETS: ReadonlyArray<{ to: string; label: 
   },
   {
     to: '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
-    label: 'Skyrizi omnichannel engagement rankings',
+    label: 'Skyrizi July TV spend and omnichannel engagement',
   },
   {
     to: '/healthcare-market-research-kuwait',

@@ -1121,9 +1121,9 @@ export const CTR_SEO_BY_PATH = {
       'Dubai Essential Drug List formulary submission: what DDC coding, EBP formulary limits and local evidence an affiliate should commission before listing.',
   },
   '/blog/china-biotech-export-controls-pharma-deals-2026': {
-    title: 'China Biotech Export Controls: Pharma Deal Guide 2026',
+    title: 'China Biotech Export Controls: Pharma Deals 2026',
     description:
-      'China biotech export controls in the 16 Oct 2026 draft: 40 AI, biotech and solar items. What BD, licensing and Gulf access teams should do before 15 Nov.',
+      'China biotech export controls, 16 Oct 2026: 40 AI, biotech and solar items. What BD and Gulf access teams should do by 15 Nov.',
   },
   '/blog/kuwait-drug-pricing-2026-decision-62': {
     title: 'Kuwait Drug Pricing 2026: Decision 62 and Launch Evidence',

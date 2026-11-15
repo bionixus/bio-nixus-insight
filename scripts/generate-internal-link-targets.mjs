@@ -56,6 +56,9 @@ function pathnameToLabel(pathname) {
   if (pathname === '/fr') return 'BioNixus — French homepage';
   if (pathname === '/es') return 'BioNixus — Spanish homepage';
   if (pathname === '/zh') return 'BioNixus — Chinese homepage';
+  if (pathname === '/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement') {
+    return 'What Skyrizi July TV Spend Means for Omnichannel Engagement';
+  }
 
   const tail = pathname.split('/').filter(Boolean).pop() ?? pathname;
   const decodedTail = (() => {

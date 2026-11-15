@@ -171,7 +171,7 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: server render',
     expect(metaContent(head, 'property', 'og:image:height')).toEqual(['630']);
     expect(metaContent(head, 'property', 'og:image:alt')).toEqual([CHINA_BIOTECH_EXPORT_COVER_IMAGE_ALT]);
     expect(metaContent(head, 'property', 'article:published_time')).toEqual(['2026-10-18T12:00:00.000Z']);
-    expect(metaContent(head, 'property', 'article:modified_time')).toEqual(['2026-10-18T12:00:00.000Z']);
+    expect(metaContent(head, 'property', 'article:modified_time')).toEqual(['2026-11-15T12:00:00.000Z']);
     expect(metaContent(head, 'property', 'article:author')).toEqual(['Ivona Gunjova']);
     expect(metaContent(head, 'property', 'article:section')).toEqual(['Market Research']);
     expect(metaContent(head, 'property', 'article:tag')).toEqual(CHINA_BIOTECH_EXPORT_TAGS);
@@ -202,7 +202,7 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: JSON-LD', () =>
     expect(article.headline).toBe(CHINA_BIOTECH_EXPORT_DISPLAY_TITLE);
     expect(article.description).toBe(CHINA_BIOTECH_EXPORT_META_DESCRIPTION);
     expect(article.datePublished).toBe('2026-10-18T12:00:00.000Z');
-    expect(article.dateModified).toBe('2026-10-18T12:00:00.000Z');
+    expect(article.dateModified).toBe('2026-11-15T12:00:00.000Z');
     expect(article.inLanguage).toBe('en');
     expect(article.articleSection).toBe('Market Research');
     expect(article.keywords).toBe(CHINA_BIOTECH_EXPORT_TAGS.join(', '));
@@ -334,10 +334,9 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: copy rules', ()
   ].join('\n');
 
   it('meets the title and description length bands, matched by the CTR override and crawler stub', () => {
-    expect(CHINA_BIOTECH_EXPORT_META_TITLE.length).toBeGreaterThanOrEqual(50);
-    expect(CHINA_BIOTECH_EXPORT_META_TITLE.length).toBeLessThanOrEqual(60);
-    expect(CHINA_BIOTECH_EXPORT_META_DESCRIPTION.length).toBeGreaterThanOrEqual(150);
-    expect(CHINA_BIOTECH_EXPORT_META_DESCRIPTION.length).toBeLessThanOrEqual(155);
+    expect(CHINA_BIOTECH_EXPORT_META_TITLE.length).toBeLessThanOrEqual(50);
+    expect(CHINA_BIOTECH_EXPORT_META_DESCRIPTION.length).toBeGreaterThanOrEqual(120);
+    expect(CHINA_BIOTECH_EXPORT_META_DESCRIPTION.length).toBeLessThanOrEqual(130);
     expect(getCtrSeo(CHINA_BIOTECH_EXPORT_PATH)).toEqual({
       title: CHINA_BIOTECH_EXPORT_META_TITLE,
       description: CHINA_BIOTECH_EXPORT_META_DESCRIPTION,
@@ -534,9 +533,9 @@ describe('/blog/china-biotech-export-controls-pharma-deals-2026: registration', 
   it('is listed in the sitemap source, the committed sitemap and llms.txt, dated 18 October 2026', () => {
     expect(CHINA_BIOTECH_EXPORT_HARDCODED_POST.date).toBe('18 Oct 2026');
     expect(sitemapScript).toContain(
-      `path: '${CHINA_BIOTECH_EXPORT_PATH}', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-18'`,
+      `path: '${CHINA_BIOTECH_EXPORT_PATH}', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15'`,
     );
-    expect(sitemapXml).toMatch(new RegExp(`<loc>${CHINA_BIOTECH_EXPORT_URL}</loc>\\s*<lastmod>2026-10-18</lastmod>`));
+    expect(sitemapXml).toMatch(new RegExp(`<loc>${CHINA_BIOTECH_EXPORT_URL}</loc>\\s*<lastmod>2026-11-15</lastmod>`));
     expect(llms).toContain(CHINA_BIOTECH_EXPORT_URL);
   });
 });
