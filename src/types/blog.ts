@@ -53,6 +53,8 @@ export interface BlogPost {
   date: string;
   category: string;
   country: string;
+  /** Optional Sanity region. USA, Canada, Latin America, and Asia-Pacific values roll up in the blog filter. */
+  region?: string;
   coverImage?: string;
   coverImageAlt?: string;
   /** Pixel size of Sanity `mainImage`, when the asset metadata is known. */
