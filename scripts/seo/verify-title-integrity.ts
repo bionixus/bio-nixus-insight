@@ -18,6 +18,7 @@ import {
   MATRIX_INDUSTRIES,
   buildMatrixSeoCopy,
 } from '../../src/data/industryMarketResearchMatrix.ts'
+import { fitBrandedSeoTitle, seoTitleFallbackLog, seoTitleWithBrandOnce } from '../../src/lib/seo-meta.ts'
 
 const root = join(import.meta.dirname, '..', '..')
 const ALLOW_LONG_SOURCE = new Set([
@@ -123,6 +124,77 @@ for (const rel of medtechFiles) {
     report(rel, match[1], problemsFor(match[1], 'title', rel, false))
   }
 }
+
+function titleCase(value: string): string {
+  return value
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
+function shellOwnsTitle(pathname: string): boolean {
+  if (pathname === '/blog' || pathname.startsWith('/blog/')) return true
+  if (pathname.includes('/blog/')) return true
+  if (pathname.startsWith('/bionixus-industries/insights')) return true
+  if (pathname === '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement') return true
+  if (pathname.includes('market-report')) return true
+  if (pathname.startsWith('/healthcare-market-research')) return true
+  if (pathname.startsWith('/case-studies/')) return true
+  return false
+}
+
+function reportDynamicFallbacks() {
+  seoTitleFallbackLog.length = 0
+  const seen = new Set<string>()
+  const note = (kind: string, source: string) => {
+    const before = seoTitleFallbackLog.length
+    const output = kind === 'slug' ? fitBrandedSeoTitle(source) : seoTitleWithBrandOnce(source)
+    if (output === source || output === `${source.replace(/\s+\|\s*BioNixus\s*$/i, '')} | BioNixus`) {
+      seoTitleFallbackLog.length = before
+      return
+    }
+    if (seoTitleFallbackLog.length === before) return
+    const row = seoTitleFallbackLog[seoTitleFallbackLog.length - 1]
+    const key = `${kind} ${row.source} => ${row.result}`
+    if (seen.has(key)) return
+    seen.add(key)
+    console.log(`  - ${kind}: ${source}`)
+    console.log(`    -> ${output}`)
+  }
+
+  for (const file of walk(join(root, 'src/data'))) {
+    if (!/blog-/i.test(file)) continue
+    const text = readFileSync(file, 'utf8')
+    for (const match of text.matchAll(/(?:metaTitle|seoMetaTitle|META_TITLE):\s*['"]([^'"\n]+)['"]/g)) {
+      note('cms', match[1])
+    }
+    for (const match of text.matchAll(/(?:META_TITLE|PAGE_TITLE|TITLE_CORE)\s*=\s*'([^'\n]+)'/g)) {
+      note('cms', match[1])
+    }
+  }
+
+  // Only slug titles the shell still emits. Pages with their own Helmet are skipped.
+  const criticalSlugPaths = [
+    '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
+  ]
+  for (const pathname of criticalSlugPaths) {
+    if (shellOwnsTitle(pathname)) continue
+    const topic = titleCase(pathname.split('/').filter(Boolean).join(' ') || 'page')
+    note('slug', `${topic} | BioNixus`)
+  }
+
+  console.log(
+    seen.size === 0
+      ? 'CMS/slug title fallbacks: none'
+      : `CMS/slug title fallbacks: ${seen.size} (reported, not a failure)`,
+  )
+}
+
+reportDynamicFallbacks()
 
 if (failures.length > 0) {
   console.error(`Title integrity check FAILED (${failures.length})`)

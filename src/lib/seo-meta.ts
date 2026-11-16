@@ -131,8 +131,12 @@ export function seoTitleForQuery(primary: string | undefined, brand = 'BioNixus'
 
 export function normalizeSeoTitle(title?: string, fallback = 'BioNixus'): string {
   const raw = String(title || fallback).replace(/\s+/g, ' ').trim()
-  if (titleHasBrandSuffix(raw)) return fitBrandedSeoTitle(raw, 60)
-  return withEllipsis(raw || fallback, TITLE_MAX)
+  if (titleHasBrandSuffix(raw)) return fitBrandedSeoTitle(raw, 60, 'BioNixus', 'fallback')
+  if (seoTitleCodePoints(raw) <= TITLE_MAX) return raw || fallback
+  const phrase = cleanPhraseToBudget(raw, TITLE_MAX)
+  const result = phrase || fallback
+  if (result !== raw) recordSeoTitleFallback(raw, result)
+  return result
 }
 
 /**
@@ -157,26 +161,103 @@ export function titleHasBrandSuffix(title: string | undefined): boolean {
 }
 
 /**
- * Append " | {brand}" only when the branded title already fits.
- * A branded title over `max` code points throws. Callers must supply a complete
- * title. This function does not cut at a word boundary.
+ * `strict` is for repo-authored titles: overflow throws.
+ * `fallback` is for Sanity fields and slug-derived titles: never throw, and never
+ * ship a dangling token, a split country name, or an ellipsis.
  */
-export function fitBrandedSeoTitle(title: string | undefined, max = 60, brand = 'BioNixus'): string {
-  const brandSuffix = ` | ${brand}`
+export type BrandedTitleFit = 'strict' | 'fallback'
+
+const DANGLING_TAIL =
+  /^(?:a|an|and|at|by|for|from|in|of|on|or|the|to|with|no|de|da|do|del|di|du|em|für|fur|pour|vs|versus|abu|saudi|new|south|united|middle|côte|cote|&)$/i
+
+export type SeoTitleFallback = { source: string; result: string }
+
+/** Titles shortened at runtime because they came from CMS copy or a slug. CI prints these and does not fail. */
+export const seoTitleFallbackLog: SeoTitleFallback[] = []
+
+function tailToken(word: string): string {
+  return word.replace(/[|.,;:'’"“”\-–—&]+$/g, '')
+}
+
+function tailIsDangling(words: string[]): boolean {
+  if (words.length === 0) return false
+  return DANGLING_TAIL.test(tailToken(words[words.length - 1]))
+}
+
+/** Drop words from the end until the phrase fits and does not end on a dangling token. No ellipsis. */
+export function cleanPhraseToBudget(text: string, budget: number): string {
+  const words = String(text || '')
+    .replace(/[.…]+$/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .filter(Boolean)
+  while (words.length > 1 && (seoTitleCodePoints(words.join(' ')) > budget || tailIsDangling(words))) {
+    words.pop()
+  }
+  while (words.length > 0 && tailIsDangling(words)) words.pop()
+  if (words.length > 0) {
+    words[words.length - 1] = words[words.length - 1].replace(/[|.,;:\-–—&\s]+$/g, '')
+  }
+  while (words.length > 0 && tailIsDangling(words)) words.pop()
+  const phrase = words.join(' ').trim()
+  if (seoTitleCodePoints(phrase) <= budget) return phrase
+  return ''
+}
+
+function recordSeoTitleFallback(source: string, result: string): void {
+  seoTitleFallbackLog.push({ source, result })
+  console.warn(`[seo-title] fallback "${source}" -> "${result}"`)
+}
+
+function stripBrand(title: string, brand: string): string {
   let core = dedupePipeBioNixusTail(String(title || '').replace(/\s+/g, ' ').trim())
   core = core.replace(/(?:\s*\|\s*BioNixus)+\s*(?:\|\s*\.?)?\s*$/i, '').trim()
   const brandEsc = brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const exactBrand = new RegExp(`\\s*\\|\\s*${brandEsc}\\s*$`, 'i')
   while (exactBrand.test(core)) core = core.replace(exactBrand, '').trim()
-  if (!core) return brand
-  const fitted = `${core}${brandSuffix}`
-  if (seoTitleCodePoints(fitted) <= max) return fitted
-  throw new SeoTitleOverflowError(fitted, max)
+  return core.replace(/[.…]+$/g, '').trim()
 }
 
-/** One trailing brand token; trims the base at a word boundary before appending the brand. */
+/**
+ * Append " | {brand}" when the branded title already fits.
+ * `strict` throws above `max`. `fallback` (Sanity and slug-derived titles) returns a clean phrase.
+ */
+export function fitBrandedSeoTitle(
+  title: string | undefined,
+  max = 60,
+  brand = 'BioNixus',
+  fit: BrandedTitleFit = 'fallback',
+): string {
+  const brandSuffix = ` | ${brand}`
+  const core = stripBrand(String(title || ''), brand)
+  if (!core) return brand
+  const fitted = `${core}${brandSuffix}`
+  const fits = seoTitleCodePoints(fitted) <= max && !tailIsDangling(core.split(' '))
+  if (fits) return fitted
+  if (fit === 'strict') throw new SeoTitleOverflowError(fitted, max)
+  const phrase = cleanPhraseToBudget(core, Math.max(12, max - brandSuffix.length))
+  let result = phrase ? `${phrase}${brandSuffix}` : ''
+  if (!result || seoTitleCodePoints(result) > max || tailIsDangling(phrase.split(' '))) {
+    const bare = cleanPhraseToBudget(core, max)
+    result = bare || brand
+  }
+  if (result !== fitted) recordSeoTitleFallback(fitted, result)
+  return result
+}
+
+/**
+ * Use a CMS `seoTitle` unchanged when it already fits.
+ * Add the brand only when that still fits. Otherwise fall back to a clean phrase.
+ */
 export function seoTitleWithBrandOnce(primary: string | undefined, brand = 'BioNixus'): string {
-  return fitBrandedSeoTitle(primary, 60, brand)
+  const clean = String(primary || '').replace(/\s+/g, ' ').trim()
+  if (!clean) return brand
+  const alreadyFits = seoTitleCodePoints(clean) <= 60 && !tailIsDangling(clean.split(' ')) && !/[.…]$/.test(clean)
+  if (alreadyFits && !titleHasBrandSuffix(clean) && seoTitleCodePoints(`${clean} | ${brand}`) > 60) {
+    return clean
+  }
+  return fitBrandedSeoTitle(clean, 60, brand, 'fallback')
 }
 
 const DEFAULT_DESC_PAD =
