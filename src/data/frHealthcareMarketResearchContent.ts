@@ -3,7 +3,7 @@ export type FrFaq = { question: string; answer: string };
 export type FrNavLink = { to: string; label: string; featured?: boolean };
 
 export const FR_HUB_CONTENT = {
-  seoTitle: 'Recherche de marché santé et pharma | Europe et MENA | BioNixus',
+  seoTitle: 'Recherche de marché santé et pharma | Europe et | BioNixus',
   seoDescription:
     'Études de marché pharmaceutique et santé en Europe et au Moyen-Orient : preuves médecins, payeurs et hôpitaux pour lancement, accès au marché et croissance — en français et en anglais.',
   canonicalPath: '/fr/healthcare-market-research',
@@ -137,7 +137,7 @@ export const FR_HUB_CONTENT = {
 };
 
 export const FR_FRANCE_CONTENT = {
-  seoTitle: 'Études de marché pharmaceutique France | HAS et ANSM | BioNixus',
+  seoTitle: 'Études de marché pharmaceutique France | HAS et | BioNixus',
   seoDescription:
     'Études de marché pharmaceutique en France : preuves payeurs alignées HAS, entretiens hospitaliers et insights lancement pour équipes pharma et biotech.',
   canonicalPath: '/fr/healthcare-market-research/france',

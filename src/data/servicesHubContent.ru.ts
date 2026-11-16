@@ -269,7 +269,7 @@ export const RU_RECOVERY_LINK_LABELS: Record<string, string> = {
 
 export const RU_SERVICES_HUB_COPY = {
   seo: {
-    title: 'Фармацевтические исследования рынка: Россия и ЕАЭС | BioNixus',
+    title: 'Фармацевтические исследования рынка: Россия и | BioNixus',
     description:
       'Фармацевтические и медицинские исследования рынка с фокусом на Россию, СНГ и ЕАЭС — количественные и качественные опросы врачей, HTA и доступ на рынок, картирование KOL и полевые работы в соответствии с требованиями к персональным данным.',
     canonical: 'https://www.bionixus.com/ru/services',

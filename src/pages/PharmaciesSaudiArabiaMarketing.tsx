@@ -85,7 +85,7 @@ export default function PharmaciesSaudiArabiaMarketing() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmacy Market Research Saudi Arabia: Boost Retail | BioNixus"
+        title="Pharmacy Market Research Saudi Arabia: Boost | BioNixus"
         description="How pharmacies in Saudi Arabia use market research and marketing automation to boost retail sales by 40%. Nahdi, Al-Dawaa case insights. Expert pharmacy."
         canonical="/pharmacies-saudi-arabia-marketing"
         jsonLd={jsonLd}

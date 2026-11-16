@@ -11,7 +11,7 @@ export const saudiPharmaEntryPlaybook: BlogPostType = {
     country: 'Saudi Arabia',
     tags: ['Market Entry', 'Saudi Arabia', 'NUPCO', 'Localization', 'Vision 2030', 'Pharma Commercialization'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'Pharma Market Entry in Saudi Arabia: Complete Playbook | BioNixus',
+    seoMetaTitle: 'Pharma Market Entry in Saudi Arabia | BioNixus',
     seoMetaDescription: 'A complete playbook for pharmaceutical market entry in Saudi Arabia. Master NUPCO procurement, distributor selection, and localization under Vision 2030.',
     tableOfContents: [
         { heading: 'The Size of the Prize', anchor: 'size-of-prize' },

@@ -96,7 +96,7 @@ const jsonLd = [
     '@type': 'WebPage',
     '@id': PAGE_URL,
     url: PAGE_URL,
-    name: 'Pharmaceutical Market Research Company in Australia | TGA, PBAC & PBS Aligned | BioNixus',
+    name: 'Pharmaceutical Market Research Australia | BioNixus',
     description:
       'BioNixus is a pharmaceutical market research company in Australia specialising in TGA-aligned HCP surveys, KOL mapping, PBAC and PBS payer research, and NHMRC-compliant market access evidence for pharmaceutical and biotech clients.',
     about: { '@id': ORG_ID },
@@ -124,7 +124,7 @@ export default function AustraliaPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Australia | BioNixus"
+        title="Pharmaceutical Market Research Australia | BioNixus"
         description="BioNixus is a pharmaceutical market research company in Australia — TGA-aligned HCP surveys, KOL mapping, PBAC payer research, PBS formulary studies, and."
         canonical="/pharmaceutical-market-research-australia"
         jsonLd={jsonLd}

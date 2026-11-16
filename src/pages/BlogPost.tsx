@@ -315,6 +315,11 @@ const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
 const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_TITLE;
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION = EGYPT_HEALTHCARE_2026_META_DESCRIPTION;
 
+const AVALON_TIRZEPATIDE_SLUG = 'avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market';
+const AVALON_TIRZEPATIDE_TITLE = 'Avalon Pharma Generic Tirzepatide, Saudi Arabia | BioNixus';
+const SAUDI_IVD_BLOG_SLUG = 'saudi-arabia-in-vitro-diagnostics-market';
+const SAUDI_IVD_BLOG_TITLE = 'In Vitro Diagnostics (IVD) Market in Saudi Arabia | BioNixus';
+
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE =
   'Kuwait Healthcare Market 2026 Overview';
@@ -327,7 +332,7 @@ const KUWAIT_HEALTHCARE_2026_OG_DESCRIPTION =
 
 /** EN-only SEO overrides: rich blog narrative + internal equity to `/quantitative-healthcare-market-research`. */
 const QUANT_MR_MA_PAGE_TITLE =
-  'Quantitative Healthcare Market Research & Market Access 2026 | BioNixus';
+  'Quantitative Healthcare Market Research & Market | BioNixus';
 const QUANT_MR_MA_META_DESCRIPTION =
   'Quantitative healthcare market research for pharma market access — KPIs, payer evidence, MENA/GCC study design, pricing scenarios. Links to the BioNixus quantitative methodology guide.';
 const QUANT_MR_MA_OG_TITLE =
@@ -1046,6 +1051,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     titleCore = SAUDI_PHARMA_ENTRY_2026_TITLE_CORE;
   } else if (slug === SAUDI_HCR_FIRMS_AR_SLUG && isArabicArticle) {
     titleCore = SAUDI_HCR_FIRMS_AR_TITLE_CORE;
+  } else if (slug === AVALON_TIRZEPATIDE_SLUG) {
+    titleCore = AVALON_TIRZEPATIDE_TITLE;
+  } else if (slug === SAUDI_IVD_BLOG_SLUG) {
+    titleCore = SAUDI_IVD_BLOG_TITLE;
   }
   const documentTitle = ctrSeo ? ctrSeo.title : seoTitleWithBrandOnce(titleCore);
   const metaDescription = buildSeoDescription({
@@ -1104,7 +1113,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             ? GCC_PHARMACOECONOMICS_META_TITLE
             : isTherapyStaticBlogEn
               ? therapyStaticBlogBundle!.metaTitle
-              : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
+              : slug === AVALON_TIRZEPATIDE_SLUG
+                ? AVALON_TIRZEPATIDE_TITLE
+                : slug === SAUDI_IVD_BLOG_SLUG
+                  ? SAUDI_IVD_BLOG_TITLE
+                  : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
   const socialDescription = ctrSeo
     ? ctrSeo.description
     : isEgyptHealthcare2026
@@ -1297,7 +1310,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE
                     : isTherapyStaticBlogEn
                       ? therapyStaticBlogBundle!.displayTitle
-                      : isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr
+                      : slug === AVALON_TIRZEPATIDE_SLUG
+                        ? AVALON_TIRZEPATIDE_TITLE
+                        : slug === SAUDI_IVD_BLOG_SLUG
+                          ? SAUDI_IVD_BLOG_TITLE
+                          : isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr
                       ? documentTitle
                       : post.title
         }

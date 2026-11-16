@@ -311,7 +311,7 @@ export default function WhatIsMarketStudy() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>What is Market Study? Types, Methods &amp; Industries | BioNixus</title>
+        <title>What is Market Study? Types, Methods &amp | BioNixus</title>
         <meta
           name="description"
           content="What is a market study? Complete guide covering definition, 6 types (qualitative, quantitative, competitive intelligence, market sizing, brand tracking, market access), industries, costs ($10k–$60k), timelines, and how to commission one."

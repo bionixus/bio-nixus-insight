@@ -269,7 +269,7 @@ export const DE_RECOVERY_LINK_LABELS: Record<string, string> = {
 
 export const DE_SERVICES_HUB_COPY = {
   seo: {
-    title: 'Pharmazeutische Marktforschung Deutschland & Europa | BioNixus',
+    title: 'Pharmazeutische Marktforschung Deutschland | BioNixus',
     description:
       'Pharmazeutische und Gesundheitsmarktforschung mit Schwerpunkt Deutschland, EU5 und UK — quantitative und qualitative Ärztebefragungen, HTA/Marktzugang, KOL-Kartierung und DSGVO-konforme Feldforschung.',
     canonical: 'https://www.bionixus.com/de/services',

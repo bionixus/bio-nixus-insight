@@ -30,7 +30,38 @@ export default function DevelopedMarketMedtechListiclePage({
   const landscape = getDevelopedMarketMedtechListicleLandscapeParagraphs(country);
   const canonical = `https://www.bionixus.com${listiclePath}`;
   const h1 = `${firms.length} Best MedTech Market Research Firms in ${country.label} (2026 Rankings)`;
-  const pageTitle = `${h1} | BioNixus`;
+  // Cut titles get a complete replacement. The rest keep the title the trimmer already shipped.
+  const listicleTitle: Record<DevelopedMarketMedtechSlug, string> = {
+    australia: 'MedTech Market Research Firms Australia 2026 | BioNixus',
+    'new-zealand': 'MedTech Market Research Firms New Zealand 2026 | BioNixus',
+    singapore: 'MedTech Market Research Firms Singapore 2026 | BioNixus',
+    'south-korea': 'MedTech Market Research Firms South Korea 2026 | BioNixus',
+    switzerland: 'MedTech Market Research Firms Switzerland 2026 | BioNixus',
+    uk: 'MedTech Market Research Firms UK 2026 | BioNixus',
+    usa: 'MedTech Market Research Firms USA 2026 | BioNixus',
+    canada: '5 Best MedTech Market Research Firms in Canada | BioNixus',
+    germany: '5 Best MedTech Market Research Firms in Germany | BioNixus',
+    france: '5 Best MedTech Market Research Firms in France | BioNixus',
+    japan: '5 Best MedTech Market Research Firms in Japan | BioNixus',
+    china: '5 Best MedTech Market Research Firms in China | BioNixus',
+    italy: '5 Best MedTech Market Research Firms in Italy | BioNixus',
+    spain: '5 Best MedTech Market Research Firms in Spain | BioNixus',
+    denmark: '5 Best MedTech Market Research Firms in Denmark | BioNixus',
+    poland: '5 Best MedTech Market Research Firms in Poland | BioNixus',
+    malaysia: '5 Best MedTech Market Research Firms in Malaysia | BioNixus',
+    brazil: '5 Best MedTech Market Research Firms in Brazil | BioNixus',
+  };
+  const pageTitle = listicleTitle[countrySlug];
+  const replacedTitle = new Set<DevelopedMarketMedtechSlug>([
+    'australia',
+    'new-zealand',
+    'singapore',
+    'south-korea',
+    'switzerland',
+    'uk',
+    'usa',
+  ]);
+  const ogTitle = replacedTitle.has(countrySlug) ? pageTitle : `${h1} | BioNixus`;
   const metaDescription = `Ranked ${firms.length} best MedTech market research firms in ${country.label} for 2026 — compared by hospital fieldwork, ${country.regulatorShort} context, and device category expertise.`;
 
   const breadcrumbSchema = {
@@ -75,7 +106,7 @@ export default function DevelopedMarketMedtechListiclePage({
         jsonLd={[breadcrumbSchema, itemListSchema, faqSchema]}
       />
       <OpenGraphMeta
-        title={pageTitle}
+        title={ogTitle}
         description={metaDescription}
         image="https://www.bionixus.com/og-image.png"
         url={canonical}

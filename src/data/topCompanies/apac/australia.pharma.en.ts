@@ -6,7 +6,7 @@ export const australiaPharmaEn: CountryListicleConfig = {
   variant: 'pharma',
   region: 'apac',
   country: 'Australia',
-  title: 'Top Pharmaceutical Market Research Companies in Australia 2026',
+  title: 'Pharma Market Research Companies Australia 2026 | BioNixus',
   metaDescription:
     'Independent 2026 guide to the top pharmaceutical market research companies in Australia — TGA registration, PBAC submissions, PBS listing and payer research.',
   canonical:

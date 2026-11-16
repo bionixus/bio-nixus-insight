@@ -75,7 +75,7 @@ export default function SaudiArabiaVaccineMarketSizeMethodology2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Saudi Arabia Vaccine Market Size: Why Figures Differ | BioNixus</title>
+        <title>Saudi Arabia Vaccine Market Size: Why Figures | BioNixus</title>
         <meta
           name="description"
           content="Why Saudi Arabia vaccine market size quotes diverge: BioNixus ~USD 248M NIP + Hajj scope vs IMARC USD 536.7M broader market—and how to choose the right band."

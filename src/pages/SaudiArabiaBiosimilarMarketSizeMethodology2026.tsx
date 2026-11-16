@@ -75,7 +75,7 @@ export default function SaudiArabiaBiosimilarMarketSizeMethodology2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Saudi Arabia Biosimilar Market Size: Why Figures Differ | BioNixus</title>
+        <title>Saudi Arabia Biosimilar Market Size: Why Figures | BioNixus</title>
         <meta
           name="description"
           content="Why Saudi Arabia biosimilar market size quotes diverge: BioNixus ~USD 382M hospital scope vs IMARC USD 664.2M broader market—and how to choose the right band."

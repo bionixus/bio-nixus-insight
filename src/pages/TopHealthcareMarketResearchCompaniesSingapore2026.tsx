@@ -276,7 +276,7 @@ export default function TopHealthcareMarketResearchCompaniesSingapore2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Singapore Healthcare Market Research Companies 2026 | BioNixus</title>
+        <title>Singapore Healthcare Market Research Companies | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in Singapore 2026 — BioNixus wrote this list. HBRA-compliant HCP surveys, payer landscape research, KOL mapping across Singapore health clusters, and ACE-aligned health outcomes studies."

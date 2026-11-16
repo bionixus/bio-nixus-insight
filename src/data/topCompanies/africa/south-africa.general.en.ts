@@ -6,7 +6,7 @@ export const southAfricaGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: 'South Africa',
-  title: 'Top Market Research Companies in South Africa 2026 | BioNixus',
+  title: 'Top Market Research Companies in South Africa | BioNixus',
   metaDescription:
     'Independent 2026 guide to the leading market research companies in South Africa — healthcare, pharmaceutical, consumer, and strategic research firms.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-south-africa-2026',

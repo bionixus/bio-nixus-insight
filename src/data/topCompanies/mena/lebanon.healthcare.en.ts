@@ -6,7 +6,7 @@ export const lebanonHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Lebanon',
-  title: 'Top Healthcare Market Research Companies in Lebanon | BioNixus',
+  title: 'Healthcare Market Research Companies Lebanon 2026 | BioNixus',
   metaDescription:
     'Independent 2026 guide to the leading healthcare market research companies in Lebanon — pharmaceutical U&A, physician surveys, KOL mapping at AUBMC and.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-lebanon-2026',

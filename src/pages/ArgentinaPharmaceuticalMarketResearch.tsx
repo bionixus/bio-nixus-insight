@@ -96,7 +96,7 @@ const jsonLd = [
     '@type': 'WebPage',
     '@id': PAGE_URL,
     url: PAGE_URL,
-    name: 'Pharmaceutical Market Research Company in Argentina | ANMAT & CONETEC Aligned | BioNixus',
+    name: 'Pharmaceutical Market Research Argentina | BioNixus',
     description:
       'BioNixus is a pharmaceutical market research company in Argentina specialising in ANMAT-aligned HCP surveys, KOL mapping, obras sociales and PAMI payer research, and CEI-compliant market access evidence for pharmaceutical and biotech clients.',
     about: { '@id': ORG_ID },
@@ -124,7 +124,7 @@ export default function ArgentinaPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Argentina | BioNixus"
+        title="Pharmaceutical Market Research Argentina | BioNixus"
         description="BioNixus is a pharmaceutical market research company in Argentina — ANMAT-aligned HCP surveys, KOL mapping, obras sociales and PAMI payer research, and."
         canonical="/pharmaceutical-market-research-argentina"
         jsonLd={jsonLd}

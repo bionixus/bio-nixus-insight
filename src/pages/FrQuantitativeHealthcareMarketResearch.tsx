@@ -214,7 +214,7 @@ export default function FrQuantitativeHealthcareMarketResearch() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <html lang="fr" />
-        <title>Recherche Quantitative en Santé | Enquêtes HCP GCC & Europe | BioNixus</title>
+        <title>Recherche Quantitative en Santé | Enquêtes HCP | BioNixus</title>
         <meta
           name="description"
           content="Guide 2026 sur la recherche quantitative auprès des professionnels de santé : enquêtes CATI/CAPI/en ligne, échantillonnage, validation et applications au GCC et en Europe."

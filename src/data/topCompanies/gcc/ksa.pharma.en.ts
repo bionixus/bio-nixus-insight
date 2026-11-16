@@ -6,7 +6,7 @@ export const ksaPharmaEn: CountryListicleConfig = {
   variant: 'pharma',
   region: 'gcc',
   country: 'Saudi Arabia',
-  title: 'Top Pharmaceutical Market Research Companies in Saudi Arabia 2026',
+  title: 'Pharma Market Research Firms Saudi Arabia 2026 | BioNixus',
   metaDescription:
     'Independent 2026 guide to the top pharmaceutical market research companies in Saudi Arabia — SFDA registration, NUPCO tendering, pricing and payer research.',
   canonical:

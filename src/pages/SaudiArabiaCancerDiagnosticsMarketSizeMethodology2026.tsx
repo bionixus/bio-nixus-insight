@@ -75,7 +75,7 @@ export default function SaudiArabiaCancerDiagnosticsMarketSizeMethodology2026() 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Saudi Arabia Cancer Diagnostics Market Size: Why Figures Differ | BioNixus</title>
+        <title>Saudi Arabia Cancer Diagnostics Market Size: Why | BioNixus</title>
         <meta
           name="description"
           content="Why Saudi Arabia cancer diagnostics market size quotes diverge: BioNixus ~USD 1.25B hospital/lab scope vs IMARC USD 2.1B broader market—and how to choose."

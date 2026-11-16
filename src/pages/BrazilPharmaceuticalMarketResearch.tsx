@@ -83,7 +83,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Pharmaceutical Market Research Company in Brazil | ANVISA, CMED, CONITEC | BioNixus',
+    headline: 'Pharmaceutical Market Research Company in Brazil | BioNixus',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {
       '@type': 'Organization',
@@ -106,7 +106,7 @@ const jsonLd = [
     })),
   },
   ...buildReportEnrichmentSchemas({
-    pageTitle: 'Pharmaceutical Market Research Company in Brazil | ANVISA, CMED, CONITEC | BioNixus',
+    pageTitle: 'Pharmaceutical Market Research Company in Brazil | BioNixus',
     pageMetaDescription:
       'BioNixus is a pharmaceutical market research company in Brazil — HCP surveys, KOL mapping, CONITEC HTA evidence, pricing research, and LGPD-compliant patient studies. USD 28B pharma market, ANVISA & CMED context.',
     countryName: 'Brazil',

@@ -3,7 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { seoByLanguage, getCanonicalPath, getCanonicalUrl, getHreflangLinks, getGeoMeta, defaultOgImageUrl, getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
-import { normalizeSeoTitle } from '@/lib/seo-meta';
+import { normalizeSeoTitle, seoTitleCodePoints } from '@/lib/seo-meta';
+import { SKYRIZI_ROOT_SLUG } from '@/data/blog-skyrizi-omnichannel';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 import type { Language } from '@/lib/i18n';
 import { MATRIX_COUNTRY_SLUGS_ORDERED } from '@/data/industryMarketResearchMatrix';
@@ -106,6 +107,10 @@ function routeProvidesOwnDocumentHead(pathname: string): boolean {
     return true;
   }
 
+  /** Root-level blog post and industry insights render BlogPost / SEOHead themselves. */
+  if (path === `/${SKYRIZI_ROOT_SLUG}`) return true;
+  if (path === '/bionixus-industries/insights' || path.startsWith('/bionixus-industries/insights/')) return true;
+
   return false;
 }
 
@@ -147,7 +152,7 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
   }
 
   if (path === '/services') {
-    return makeTitle('Market Research Services | Pharma, Healthcare & B2B | BioNixus');
+    return makeTitle('Market Research Services | Pharma, Healthcare | BioNixus');
   }
 
   if (path === '/contact' || path === '/de/contact' || path === '/fr/contact' || path === '/ar/contact') {
@@ -212,7 +217,12 @@ function buildRouteTitle(pathname: string, language: Language, fallback: string)
   }
 
   const topic = titleCase(noPrefixParts.join(' ') || slugToWords(path.replace(/\//g, ' ')));
-  return makeTitle(`${topic} | BioNixus`);
+  const branded = `${topic} | BioNixus`;
+  if (seoTitleCodePoints(branded) <= 60) return makeTitle(branded);
+  const lastSegment = titleCase(noPrefixParts[noPrefixParts.length - 1] || 'page');
+  const short = `${lastSegment} | BioNixus`;
+  if (seoTitleCodePoints(short) <= 60) return makeTitle(short);
+  return 'BioNixus';
 }
 
 function buildRouteDescription(pathname: string, language: Language, fallback: string): string {
@@ -443,8 +453,6 @@ const DocumentHead = () => {
   const seo = seoByLanguage[language];
   const canonicalPath = getCanonicalPath(pathname || '/');
   const canonicalUrl = getCanonicalUrl(canonicalPath);
-  const title = buildRouteTitle(pathname, language, seo.title);
-  const description = buildRouteDescription(pathname, language, seo.description);
   const contentLanguage = language === 'zh' ? 'zh-CN' : language;
   const gscId = import.meta.env.VITE_GSC_VERIFICATION;
   const hreflangLinks = getHreflangLinks(pathname);
@@ -453,6 +461,8 @@ const DocumentHead = () => {
   // Unknown slugs such as /market-research-uk render the 404 template. Do not
   // invent a meta description or self-canonical for that URL. The SSR response
   // also strips any description or canonical the shell would otherwise inject.
+  // Skip the shell title first: building it must not throw on a route that
+  // already ships its own Helmet title.
   if (cleanPath(pathname || '/') === '/market-research-uk' || routeProvidesOwnDocumentHead(pathname || '/')) {
     return (
       <Helmet>
@@ -464,6 +474,9 @@ const DocumentHead = () => {
       </Helmet>
     );
   }
+
+  const title = buildRouteTitle(pathname, language, seo.title);
+  const description = buildRouteDescription(pathname, language, seo.description);
 
   return (
     <>

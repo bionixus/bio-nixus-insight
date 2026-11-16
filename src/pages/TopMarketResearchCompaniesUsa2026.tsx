@@ -228,7 +228,7 @@ export default function TopMarketResearchCompaniesUsa2026() {
   return (
     <div className="directory-page min-h-screen">
       <Helmet>
-        <title>Top Market Research Companies in the USA (2026 Guide) | BioNixus</title>
+        <title>Top Market Research Companies in the USA (2026 | BioNixus</title>
         <meta
           name="description"
           content="Independent 2026 guide to the top market research companies in the USA for healthcare, pharma, and consumer research — compared by US expertise, IRB compliance, and payer research capability."

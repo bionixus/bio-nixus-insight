@@ -846,7 +846,7 @@ export const CTR_SEO_BY_PATH = {
       'BioNixus runs GLP-1 market research in the UAE: prescriber surveys, Thiqa and Daman payer interviews and oral GLP-1 uptake studies. Custom research $10k–$60k.',
   },
   '/blog/kol-mapping-pharma-middle-east': {
-    title: 'KOL Mapping Guide for Middle East Pharma | BioNixus',
+    title: 'KOL Mapping for Pharma in the Middle East | BioNixus',
     description:
       'How to map pharma KOLs in Saudi Arabia, the UAE, and the wider Middle East: peer nomination, hospital hierarchies, and digital opinion leaders. By BioNixus.',
   },
@@ -1216,7 +1216,7 @@ export const CTR_SEO_BY_PATH = {
       "Egypt's EDA Decree 480/2026 links repricing to FX, inflation and rates, sets a 15-country basket and a generic ladder. What commercial teams should plan.",
   },
   '/blog/dksh-newbridge-acquisition-mena-launch-market-access': {
-    title: 'DKSH to Acquire NewBridge: What It Means for MENA Launches (2026)',
+    title: 'DKSH to Acquire NewBridge: MENA Launches 2026 | BioNixus',
     description:
       'DKSH agreed to acquire NewBridge Pharmaceuticals for USD 390 million. What the deal means for oncology and rare disease launch and market access planning across 14 MENA markets.',
   },

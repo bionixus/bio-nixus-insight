@@ -85,7 +85,7 @@ const HealthcareMarketStatistics = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <SEOHead
-        title="Healthcare & Pharma Market Statistics 2026 (MENA, Asia & Global) | BioNixus"
+        title="Healthcare & Pharma Market Statistics 2026 | BioNixus"
         description={`${totalStats} sourced healthcare and pharmaceutical market statistics for MENA/GCC, Asia-Pacific, and global markets — market size, disease prevalence, and regulatory data, each with a cited source.`}
         canonical="https://www.bionixus.com/healthcare-market-statistics"
         jsonLd={jsonLd}

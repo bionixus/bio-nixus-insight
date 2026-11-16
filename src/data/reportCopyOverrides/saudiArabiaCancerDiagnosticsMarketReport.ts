@@ -14,7 +14,7 @@ type OverrideCopy = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 export const SAUDI_ARABIA_CANCER_DIAGNOSTICS_COPY: OverrideCopy = {
   slug: SLUG,
   title: 'Saudi Arabia Cancer Diagnostics Market Report 2026',
-  metaTitle: 'Saudi Arabia Cancer Diagnostics Market 2026 | Size & SFDA | BioNixus',
+  metaTitle: 'Saudi Arabia Cancer Diagnostics Market 2026 | BioNixus',
   metaDescription:
     'Saudi Arabia cancer diagnostics market ~USD 1.25B in 2026 (~7% CAGR): IVD, imaging, biopsy, SFDA pathways, and NUPCO tenders—BioNixus Gulf intelligence.',
   modifiedDate: '2026-08-11',

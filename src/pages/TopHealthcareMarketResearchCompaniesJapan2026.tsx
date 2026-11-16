@@ -230,7 +230,7 @@ export default function TopHealthcareMarketResearchCompaniesJapan2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in Japan 2026 | BioNixus',
+    headline: 'Healthcare Market Research Companies Japan 2026 | BioNixus',
     description:
       'Top healthcare market research companies in Japan 2026 — BioNixus wrote this list. Ethics-compliant HCP surveys, NHI payer landscape research, KOL mapping at Japanese AMCs, and PMDA/Chuikyo-aligned health outcomes studies.',
     url: PAGE_CANONICAL,
@@ -276,7 +276,7 @@ export default function TopHealthcareMarketResearchCompaniesJapan2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in Japan 2026 | BioNixus</title>
+        <title>Healthcare Market Research Companies Japan 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in Japan 2026 — BioNixus wrote this list. Ethics-compliant HCP surveys, NHI payer landscape research, KOL mapping at Japanese AMCs, and PMDA/Chuikyo-aligned health outcomes studies."
@@ -292,7 +292,7 @@ export default function TopHealthcareMarketResearchCompaniesJapan2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Japan 2026 | BioNixus"
+        title="Healthcare Market Research Companies Japan 2026 | BioNixus"
         description="Top healthcare market research companies in Japan 2026 — BioNixus wrote this list. Ethics-compliant HCP surveys, NHI payer landscape research, KOL mapping at."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

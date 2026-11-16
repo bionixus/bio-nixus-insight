@@ -625,7 +625,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'bahrain',
     region: 'mena',
     metaSuffix: 'Bahrain pharmaceutical market research with NHRA and Salmaniya context.',
-    metaTitle: 'Healthcare Market Research Bahrain | NHRA Fieldwork | BioNixus',
+    metaTitle: 'Healthcare Market Research Bahrain | NHRA | BioNixus',
     metaDescription:
       'Healthcare and pharmaceutical market research in Bahrain: NHRA-aligned physician surveys, Salmaniya Medical Complex stakeholder access, and compact-market.',
     ogDescription:
@@ -783,7 +783,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'spain',
     region: 'europe',
     metaSuffix: 'Spain pharmaceutical market research with AEMPS and regional HTA context.',
-    metaTitle: 'Healthcare Market Research Spain | AEMPS Fieldwork | BioNixus',
+    metaTitle: 'Healthcare Market Research Spain | AEMPS | BioNixus',
     metaDescription:
       'Pharmaceutical market research in Spain: AEMPS-aligned physician surveys, regional payer context, and hospital stakeholder evidence for launch teams.',
     ogDescription:
@@ -820,7 +820,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'turkey',
     region: 'mena',
     metaSuffix: 'Turkey pharmaceutical market research with TITCK and SSI context.',
-    metaTitle: 'Healthcare Market Research Turkey | TITCK Fieldwork | BioNixus',
+    metaTitle: 'Healthcare Market Research Turkey | TITCK | BioNixus',
     metaDescription:
       'Healthcare and pharmaceutical market research in Turkey: TITCK-aligned physician surveys, hospital stakeholder access, and launch evidence for MENA–Europe.',
     ogDescription:
@@ -867,7 +867,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     slug: 'singapore',
     region: 'europe',
     metaSuffix: 'Singapore pharmaceutical market research with HSA and MOH context.',
-    metaTitle: 'Healthcare Market Research Singapore | HSA Fieldwork | BioNixus',
+    metaTitle: 'Healthcare Market Research Singapore | HSA | BioNixus',
     metaDescription:
       'Pharmaceutical market research in Singapore: HSA-aligned physician surveys, hospital stakeholder access, and APAC launch evidence for pharma and medtech.',
     ogDescription:
