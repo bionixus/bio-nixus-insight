@@ -11,7 +11,7 @@ export const ciPharmaGccGuide: BlogPostType = {
     country: 'GCC',
     tags: ['Competitive Intelligence', 'GCC', 'Formulary Landscape', 'Pharma Marketing', 'Pricing Strategy'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'Competitive Intelligence in Pharma: GCC Formulary Landscape | BioNixus',
+    seoMetaTitle: 'Pharma Competitive Intelligence, GCC Formulary | BioNixus',
     seoMetaDescription: 'Master competitive intelligence in the GCC pharmaceutical market. Track competitor pricing, formulary inclusion, and P&T committee decisions effectively.',
     tableOfContents: [
         { heading: 'The CI Imperative in the GCC', anchor: 'ci-imperative' },

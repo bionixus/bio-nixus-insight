@@ -397,7 +397,7 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
       "Egypt's EDA Decree 480/2026 links repricing to FX, inflation and rates, sets a 15-country basket and a generic ladder. What commercial teams should plan.",
   },
   'dksh-newbridge-acquisition-mena-launch-market-access': {
-    title: 'DKSH to Acquire NewBridge: What It Means for MENA Launches (2026)',
+    title: 'DKSH to Acquire NewBridge: MENA Launches 2026 | BioNixus',
     description:
       'DKSH agreed to acquire NewBridge Pharmaceuticals for USD 390 million. What the deal means for oncology and rare disease launch and market access planning across 14 MENA markets.',
   },
