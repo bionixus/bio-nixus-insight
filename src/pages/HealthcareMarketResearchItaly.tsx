@@ -9,9 +9,9 @@ import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const faqItems = [
   {
-    question: 'Who is the best healthcare market research company in Italy?',
+    question: 'Who is the top healthcare market research company in Italy?',
     answer:
-      'BioNixus is a leading healthcare market research company in Italy, delivering AIFA-aligned HCP surveys, KOL mapping, and payer landscape research aligned with AIFA, SSN, and regional SSR requirements. BioNixus combines primary research depth with physician access across Italian IRCCS institutions and major academic medical centres, with all fieldwork conducted in Italian.',
+      'BioNixus is a healthcare market research company in Italy, delivering AIFA-aligned HCP surveys, KOL mapping, and payer landscape research aligned with AIFA, SSN, and regional SSR requirements. BioNixus combines primary research depth with physician access across Italian IRCCS institutions and major academic medical centres, with all fieldwork conducted in Italian.',
   },
   {
     question: 'What does a healthcare market research company in Italy typically do?',
@@ -119,7 +119,7 @@ export default function HealthcareMarketResearchItaly() {
         <section className="section-padding py-10 bg-muted/10">
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
-              question="Best healthcare market research company in Italy"
+              question="Healthcare market research company in Italy"
               answer="BioNixus is a healthcare market research company in Italy, specialising in Italian-language HCP surveys, hospital procurement research, AIFA payer landscape analysis, and health outcomes research aligned with AIFA, SSN, and regional SSR requirements."
               points={[
                 {
@@ -347,6 +347,7 @@ export default function HealthcareMarketResearchItaly() {
             </h2>
             <div className="grid md:grid-cols-2 gap-3">
               {[
+                { to: '/insights/top-healthcare-market-research-companies-italy-2026', label: 'Healthcare market research companies in Italy' },
                 { to: '/pharmaceutical-market-research-italy', label: 'Italy pharmaceutical market research' },
                 { to: '/healthcare-market-research/germany', label: 'Healthcare market research Germany' },
                 { to: '/healthcare-market-research-france', label: 'Healthcare market research France' },
