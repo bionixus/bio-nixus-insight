@@ -61,14 +61,24 @@ export function titleHasBrandSuffix(title) {
   return PLAIN_BRAND_RE.test(clean) || /\|\s*\.?\s*$/.test(clean);
 }
 
+/** Function words that make a truncated title read as cut mid-phrase ("Companies in | BioNixus"). */
+const DANGLING_TITLE_TAIL = /(?:^|\s)(?:a|an|and|at|by|for|from|in|of|on|or|the|to|with|&)$/i;
+
 function trimBaseAtWordBoundary(text, max) {
   let core = String(text || '').replace(/\s+/g, ' ').trim();
   core = core.replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '').trim();
   if (core.length <= max) return core;
   const slice = core.slice(0, max);
   const lastSpace = slice.lastIndexOf(' ');
-  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice;
-  return cut.replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/(?:\s+&\s*|\s+and)$/i, '').replace(/[|.,;:\-–—&\s]+$/g, '').trim();
+  const atWord = lastSpace > Math.floor(max * 0.45);
+  const cut = atWord ? slice.slice(0, lastSpace) : slice;
+  const trimmed = cut.replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/(?:\s+&\s*|\s+and)$/i, '').replace(/[|.,;:\-–—&\s]+$/g, '').trim();
+  if (!atWord) {
+    console.warn(
+      `[seo-title] Title was cut mid-word to fit ${max} characters ("${trimmed}"). Shorten the source title. Source: "${core}".`,
+    );
+  }
+  return trimmed;
 }
 
 /**
@@ -82,9 +92,17 @@ export function fitBrandedSeoTitle(title, max = TITLE_MAX, brand = 'BioNixus') {
   const brandEsc = brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const exactBrand = new RegExp(`\\s*\\|\\s*${brandEsc}\\s*$`, 'i');
   while (exactBrand.test(core)) core = core.replace(exactBrand, '').trim();
+  const beforeTrim = core;
   core = trimBaseAtWordBoundary(core, Math.max(12, max - brandSuffix.length));
   if (!core) return brand;
-  return `${core}${brandSuffix}`;
+  const fitted = `${core}${brandSuffix}`;
+  // Warn instead of rewriting. Frozen titles must keep the string they already ship.
+  if (beforeTrim !== core && DANGLING_TITLE_TAIL.test(core)) {
+    console.warn(
+      `[seo-title] Truncated title ends on a dangling word ("${fitted}"). Shorten the source title so the country or topic is not dropped. Source: "${beforeTrim}${brandSuffix}".`,
+    );
+  }
+  return fitted;
 }
 
 /** One trailing brand token; trims the base at a word boundary before appending the brand. */
