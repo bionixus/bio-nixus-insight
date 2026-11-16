@@ -96,7 +96,7 @@ const jsonLd = [
     '@type': 'WebPage',
     '@id': PAGE_URL,
     url: PAGE_URL,
-    name: 'Pharmaceutical Market Research Company in Malaysia | NPRA, MaHTAS & MOH Formulary Aligned | BioNixus',
+    name: 'Pharmaceutical Market Research Malaysia | BioNixus',
     description:
       'BioNixus is a pharmaceutical market research company in Malaysia specialising in NPRA- and MaHTAS-aligned HCP surveys, KOL mapping, MOH Medicines Formulary (FUKKM) payer research, and PDPA-compliant market access evidence for pharmaceutical and biotech clients.',
     about: { '@id': ORG_ID },
@@ -124,7 +124,7 @@ export default function MalaysiaPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in Malaysia | BioNixus"
+        title="Pharmaceutical Market Research Malaysia | BioNixus"
         description="BioNixus is a pharmaceutical market research company in Malaysia — NPRA- and MaHTAS-aligned HCP surveys, KOL mapping, MOH Medicines Formulary (FUKKM)."
         canonical="/pharmaceutical-market-research-malaysia"
         jsonLd={jsonLd}

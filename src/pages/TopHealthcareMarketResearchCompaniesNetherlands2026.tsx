@@ -297,7 +297,7 @@ export default function TopHealthcareMarketResearchCompaniesNetherlands2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in the | BioNixus"
+        title="Healthcare Market Research Companies Netherlands | BioNixus"
         description="Top healthcare market research companies in the Netherlands 2026 — BioNixus wrote this list. METC-compliant HCP surveys, payer landscape research, KOL mapping."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

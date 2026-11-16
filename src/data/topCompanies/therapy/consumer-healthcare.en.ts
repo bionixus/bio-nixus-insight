@@ -6,7 +6,7 @@ export const consumerHealthcareGlobalEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Global',
-  title: 'Top Consumer Healthcare Market Research Firms 2026 | BioNixus',
+  title: 'Top Consumer Healthcare Market Research Firms | BioNixus',
   metaDescription:
     'Independent 2026 guide to the leading consumer healthcare market research firms globally — OTC, vitamins & supplements, personal care, and consumer health.',
   canonical:

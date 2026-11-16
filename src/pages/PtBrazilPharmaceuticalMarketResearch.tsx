@@ -7,7 +7,7 @@ import { ArrowRight, CheckCircle2, Building2, Users, BarChart3, ShieldCheck } fr
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const CANONICAL = 'https://www.bionixus.com/pt/pesquisa-mercado-farmaceutico-brasil';
-const PAGE_TITLE = 'Empresa de Pesquisa de Mercado Farmacêutico no Brasil | ANVISA, CONITEC, CMED | BioNixus';
+const PAGE_TITLE = 'Pesquisa de Mercado Farmacêutico no Brasil | BioNixus';
 const PAGE_DESC =
   'BioNixus é uma empresa de pesquisa de mercado farmacêutico no Brasil — pesquisas com profissionais de saúde, mapeamento de KOLs, evidências para CONITEC, pesquisa de precificação CMED e estudos com pacientes em conformidade com a LGPD.';
 

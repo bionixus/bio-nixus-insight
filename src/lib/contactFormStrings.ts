@@ -181,7 +181,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     consentPrivacyLabel: 'Datenschutzerklärung',
     consentAfter: ' verarbeitet.',
     page: {
-      seoTitle: 'BioNixus kontaktieren | Angebot für Gesundheitsmarktforschung',
+      seoTitle: 'BioNixus kontaktieren | Angebot für Marktforschung',
       seoDescription: 'Kontaktieren Sie BioNixus für pharmazeutische Marktforschung in den USA, Europa, im GCC und in der MENA-Region. Schildern Sie Ihr Briefing und erhalten Sie innerhalb eines Werktags ein abgegrenztes Angebot.',
       breadcrumbHome: 'Startseite',
       breadcrumbContact: 'Kontakt',
@@ -319,7 +319,7 @@ const overrides: Record<Exclude<Language, 'en'>, DeepPartial<ContactFormStrings>
     consentPrivacyLabel: 'política de privacidad',
     consentAfter: '.',
     page: {
-      seoTitle: 'Contactar con BioNixus | Propuesta de investigación sanitaria',
+      seoTitle: 'Contactar con BioNixus | Propuesta de investigación',
       seoDescription: 'Contacte con BioNixus para investigación de mercado farmacéutico en EE. UU., Europa, el CCG y la región MENA. Comparta su brief y reciba una propuesta acotada en un día hábil.',
       breadcrumbHome: 'Inicio',
       breadcrumbContact: 'Contacto',

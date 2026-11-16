@@ -7,7 +7,7 @@ export const ksaGeneralEn: CountryListicleConfig = {
   region: 'gcc',
   country: 'Saudi Arabia',
 
-  title: 'Top Market Research Companies in Saudi Arabia 2026 | BioNixus',
+  title: 'Top Market Research Companies in Saudi Arabia | BioNixus',
   metaDescription:
     'Independent 2026 guide to the leading market research companies in Saudi Arabia — healthcare, pharmaceutical, consumer, and strategic research firms.',
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-ksa-2026',

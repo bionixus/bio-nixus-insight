@@ -6,7 +6,7 @@ export const chileHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'latam',
   country: 'Chile',
-  title: 'Top Healthcare Market Research Companies in Chile 2026 | BioNixus',
+  title: 'Healthcare Market Research Companies Chile 2026 | BioNixus',
   metaDescription:
     'Independent 2026 guide to the leading healthcare market research companies in Chile — pharmaceutical, ISP/ANAMED regulatory, FONASA/ISAPRE system, and.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-chile-2026',

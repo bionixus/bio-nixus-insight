@@ -3,7 +3,7 @@ export type EsFaq = { question: string; answer: string };
 export type EsNavLink = { to: string; label: string; featured?: boolean };
 
 export const ES_HUB_CONTENT = {
-  seoTitle: 'Estudios de mercado farmacéutico y sanitario | Europa y MENA | BioNixus',
+  seoTitle: 'Estudios de mercado farmacéutico y sanitario | BioNixus',
   seoDescription:
     'Estudios de mercado farmacéutico y sanitario en España, Europa y Oriente Medio: evidencia primaria con médicos, pagadores y hospitales para lanzamiento, acceso al mercado y crecimiento — en español, inglés y árabe.',
   canonicalPath: '/es/healthcare-market-research',

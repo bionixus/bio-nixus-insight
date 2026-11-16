@@ -76,7 +76,7 @@ export default function HealthcareMarketResearchNetherlands() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Market Research Company in the Netherlands | BioNixus"
+        title="Healthcare Market Research in the Netherlands | BioNixus"
         description="BioNixus is a healthcare market research company in the Netherlands — METC-compliant HCP surveys, payer landscape analysis, KOL mapping, and health."
         canonical="/healthcare-market-research-netherlands"
         jsonLd={jsonLd}

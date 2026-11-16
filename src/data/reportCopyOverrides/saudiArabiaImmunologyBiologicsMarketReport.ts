@@ -12,7 +12,7 @@ type OverrideCopy = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 export const SAUDI_ARABIA_IMMUNOLOGY_BIOLOGICS_COPY: OverrideCopy = {
   slug: SLUG,
   title: 'Saudi Arabia Immunology & Biologics Market Report 2026',
-  metaTitle: 'Saudi Arabia Immunology & Biologics Market Report 2026 | BioNixus',
+  metaTitle: 'Saudi Arabia Immunology & Biologics Market | BioNixus',
   metaDescription:
     'Saudi immunology & biologics market ~USD 700–850M in 2026 (BioNixus analysis): SFDA biosimilar pathway, NUPCO adalimumab tenders, IL-17/IL-23 & JAK access, infusion capacity, TB screening—decision-ready Gulf intelligence.',
   heroLead:

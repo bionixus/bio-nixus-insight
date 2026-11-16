@@ -1,4 +1,22 @@
 const TITLE_MAX = 60;
+
+/** Code points, not UTF-16 units, so Arabic titles match the 60-character budget. */
+export function seoTitleCodePoints(value) {
+  return Array.from(String(value || '')).length;
+}
+
+export class SeoTitleOverflowError extends Error {
+  constructor(title, max) {
+    const length = seoTitleCodePoints(title);
+    super(
+      `[seo-title] Branded title is ${length} characters (max ${max}). Shorten the source so it already fits. Title: "${title}"`,
+    );
+    this.name = 'SeoTitleOverflowError';
+    this.title = title;
+    this.length = length;
+    this.max = max;
+  }
+}
 const DESC_MIN = 120;
 const DESC_MAX = 130;
 
@@ -61,19 +79,9 @@ export function titleHasBrandSuffix(title) {
   return PLAIN_BRAND_RE.test(clean) || /\|\s*\.?\s*$/.test(clean);
 }
 
-function trimBaseAtWordBoundary(text, max) {
-  let core = String(text || '').replace(/\s+/g, ' ').trim();
-  core = core.replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '').trim();
-  if (core.length <= max) return core;
-  const slice = core.slice(0, max);
-  const lastSpace = slice.lastIndexOf(' ');
-  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice;
-  return cut.replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/(?:\s+&\s*|\s+and)$/i, '').replace(/[|.,;:\-–—&\s]+$/g, '').trim();
-}
-
 /**
- * Trim the base title at a word boundary, then append " | {brand}".
- * Never drops the brand and never leaves a dangling "|.".
+ * Append " | {brand}" only when the branded title already fits.
+ * A branded title over `max` code points throws. Callers must supply a complete title.
  */
 export function fitBrandedSeoTitle(title, max = TITLE_MAX, brand = 'BioNixus') {
   const brandSuffix = ` | ${brand}`;
@@ -82,9 +90,10 @@ export function fitBrandedSeoTitle(title, max = TITLE_MAX, brand = 'BioNixus') {
   const brandEsc = brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const exactBrand = new RegExp(`\\s*\\|\\s*${brandEsc}\\s*$`, 'i');
   while (exactBrand.test(core)) core = core.replace(exactBrand, '').trim();
-  core = trimBaseAtWordBoundary(core, Math.max(12, max - brandSuffix.length));
   if (!core) return brand;
-  return `${core}${brandSuffix}`;
+  const fitted = `${core}${brandSuffix}`;
+  if (seoTitleCodePoints(fitted) <= max) return fitted;
+  throw new SeoTitleOverflowError(fitted, max);
 }
 
 /** One trailing brand token; trims the base at a word boundary before appending the brand. */

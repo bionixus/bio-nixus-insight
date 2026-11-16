@@ -205,7 +205,7 @@ export default function TopHealthcareMarketResearchCompaniesNewZealand2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in New Zealand 2026 | BioNixus',
+    headline: 'New Zealand Healthcare Market Research Companies | BioNixus',
     description:
       'Top healthcare market research companies in New Zealand 2026 — BioNixus wrote this list. HDEC-compliant HCP surveys, PHARMAC payer landscape research, KOL mapping at NZ hospitals, and health outcomes studies.',
     url: PAGE_CANONICAL,
@@ -251,7 +251,7 @@ export default function TopHealthcareMarketResearchCompaniesNewZealand2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>New Zealand Healthcare Market Research Companies 2026 | BioNixus</title>
+        <title>New Zealand Healthcare Market Research Companies | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in New Zealand 2026 — BioNixus wrote this list. HDEC-compliant HCP surveys, PHARMAC payer landscape research, KOL mapping at NZ hospitals, and health outcomes studies."
@@ -267,7 +267,7 @@ export default function TopHealthcareMarketResearchCompaniesNewZealand2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in New | BioNixus"
+        title="New Zealand Healthcare Market Research Companies | BioNixus"
         description="Top healthcare market research companies in New Zealand 2026 — BioNixus wrote this list. HDEC-compliant HCP surveys, PHARMAC payer landscape research, KOL."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

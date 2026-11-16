@@ -66,7 +66,7 @@ export default function CostEffectivenessAnalysisGcc() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Cost Effectiveness Analysis GCC: Saudi Arabia & UAE | BioNixus</title>
+        <title>Cost Effectiveness Analysis GCC: Saudi Arabia | BioNixus</title>
         <meta
           name="description"
           content="Compare cost-effectiveness analysis requirements across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — HTA pathways, informal QALY thresholds, model development, and budget impact modelling for GCC pharmaceutical market access."

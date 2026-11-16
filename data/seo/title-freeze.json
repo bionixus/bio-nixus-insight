@@ -622,11 +622,6 @@
         "description": "Europe healthcare market research companies 2026 — EU5, UK, Nordics buyer guide for HCP, payer, and HEOR primary research. Compare BioNixus & peers."
       }
     },
-    "/insights/top-healthcare-market-research-companies-lebanon-2026": {
-      "impressions": 166,
-      "frozenAt": "2026-10-04",
-      "override": null
-    },
     "/insights/top-healthcare-market-research-companies-peru-2026": {
       "impressions": 129,
       "frozenAt": "2026-10-04",
@@ -1146,11 +1141,6 @@
     },
     "/services/market-access": {
       "impressions": 916,
-      "frozenAt": "2026-10-04",
-      "override": null
-    },
-    "/services/quantitative-research": {
-      "impressions": 291,
       "frozenAt": "2026-10-04",
       "override": null
     },

@@ -276,7 +276,7 @@ export default function TopHealthcareMarketResearchCompaniesAustralia2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Australia Healthcare Market Research Companies 2026 | BioNixus</title>
+        <title>Australia Healthcare Market Research Companies | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in Australia 2026 — BioNixus wrote this list. NHMRC-compliant HCP surveys, PBS payer landscape research, KOL mapping at Australian AMCs, and PBAC-aligned health outcomes studies."

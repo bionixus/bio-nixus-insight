@@ -3,7 +3,7 @@ import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 export default function CommercialEffectivenessPharmaME() {
   return (
     <StrategicServicePage
-      title="Commercial Effectiveness Pharma Middle East | SFE Middle East | BioNixus"
+      title="Commercial Effectiveness Pharma Middle East | BioNixus"
       description="Sales force effectiveness and commercial excellence research for pharmaceutical companies in the Middle East. SFE studies, territory alignment, rep."
       canonicalUrl="https://www.bionixus.com/commercial-effectiveness-pharma-middle-east"
       breadcrumbLabel="Commercial Effectiveness Pharma Middle East"

@@ -233,7 +233,7 @@ export default function MarketAccess() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Access Research | GCC, EU5, US | BioNixus"
+        title="Pharmaceutical Market Access Research | GCC | BioNixus"
         description="Primary pharmaceutical market access research and strategy — payer interviews, HEOR, HTA evidence, SFDA/NUPCO/MOHAP guidance, and tender intelligence across the GCC, EU5, and US."
         canonical="/market-access"
         jsonLd={jsonLd}

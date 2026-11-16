@@ -1,5 +1,27 @@
-/** Google SERP display band — primary keyword cluster should survive truncation. */
-const TITLE_MAX = 65
+/** Google SERP display band. Branded and unbranded titles share 60 so SSR and the client agree. */
+const TITLE_MAX = 60
+
+/** Code points, not UTF-16 units, so Arabic titles match the 60-character budget. */
+export function seoTitleCodePoints(value: string): number {
+  return Array.from(value).length
+}
+
+export class SeoTitleOverflowError extends Error {
+  readonly title: string
+  readonly length: number
+  readonly max: number
+
+  constructor(title: string, max: number) {
+    const length = seoTitleCodePoints(title)
+    super(
+      `[seo-title] Branded title is ${length} characters (max ${max}). Shorten the source so it already fits. Title: "${title}"`,
+    )
+    this.name = 'SeoTitleOverflowError'
+    this.title = title
+    this.length = length
+    this.max = max
+  }
+}
 /** Ahrefs / SERP target band for meta descriptions. */
 const DESC_MIN = 120
 const DESC_MAX = 130
@@ -134,20 +156,10 @@ export function titleHasBrandSuffix(title: string | undefined): boolean {
   return PLAIN_BRAND_RE.test(clean) || /\|\s*\.?\s*$/.test(clean)
 }
 
-function trimBaseAtWordBoundary(text: string, max: number): string {
-  let core = String(text || '').replace(/\s+/g, ' ').trim()
-  core = core.replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '').trim()
-  if (core.length <= max) return core
-  const slice = core.slice(0, max)
-  const lastSpace = slice.lastIndexOf(' ')
-  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice
-  return cut.replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/(?:\s+&\s*|\s+and)$/i, '').replace(/[|.,;:\-–—&\s]+$/g, '').trim()
-}
-
 /**
- * Trim the base title at a word boundary, then append " | {brand}".
- * Never drops the brand and never leaves a dangling "|.".
- * Branded titles use a 60-character budget so SSR and the client agree.
+ * Append " | {brand}" only when the branded title already fits.
+ * A branded title over `max` code points throws. Callers must supply a complete
+ * title. This function does not cut at a word boundary.
  */
 export function fitBrandedSeoTitle(title: string | undefined, max = 60, brand = 'BioNixus'): string {
   const brandSuffix = ` | ${brand}`
@@ -156,9 +168,10 @@ export function fitBrandedSeoTitle(title: string | undefined, max = 60, brand = 
   const brandEsc = brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const exactBrand = new RegExp(`\\s*\\|\\s*${brandEsc}\\s*$`, 'i')
   while (exactBrand.test(core)) core = core.replace(exactBrand, '').trim()
-  core = trimBaseAtWordBoundary(core, Math.max(12, max - brandSuffix.length))
   if (!core) return brand
-  return `${core}${brandSuffix}`
+  const fitted = `${core}${brandSuffix}`
+  if (seoTitleCodePoints(fitted) <= max) return fitted
+  throw new SeoTitleOverflowError(fitted, max)
 }
 
 /** One trailing brand token; trims the base at a word boundary before appending the brand. */

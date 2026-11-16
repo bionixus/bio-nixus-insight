@@ -1327,7 +1327,7 @@ const italyDeviceConnectivity: SpecialtyMarketDemandContent = {
   segmentLabel: 'Italy Medical Device Connectivity',
   badge: 'Italy · Digital Health / Connectivity',
   breadcrumbLabel: 'Italy Medical Device Connectivity Market',
-  title: 'Italy Medical Device Connectivity & Digital Health | BioNixus',
+  title: 'Italy Medical Device Connectivity & Digital | BioNixus',
   description:
     'Italy medical device connectivity and digital health market research — HIS/LIS integration, hospital microservices architectures, cybersecurity diligence.',
   canonical: `${BASE}/italy-medical-device-connectivity-market`,
@@ -1392,7 +1392,7 @@ const italyOncologyAntiInfectiveAccess: SpecialtyMarketDemandContent = {
   segmentLabel: 'Italy Oncology & Anti-infective Access',
   badge: 'Italy · Oncology / Anti-infective Access',
   breadcrumbLabel: 'Italy Oncology & Anti-infective Market Access',
-  title: 'Italy Oncology & Anti-infective Market Access Research | BioNixus',
+  title: 'Italy Oncology & Anti-infective Market Access | BioNixus',
   description:
     'Italy oncology and anti-infective market access research — Keytruda-class IO analogues, daptomycin-class hospital antibiotics, AIFA/regional pathways, and.',
   canonical: `${BASE}/italy-oncology-antiinfective-market-access`,
@@ -1457,7 +1457,7 @@ const gccFspMarket: SpecialtyMarketDemandContent = {
   segmentLabel: 'GCC Functional Service Providers',
   badge: 'GCC · Clinical Development / FSP',
   breadcrumbLabel: 'GCC FSP Market',
-  title: 'GCC Functional Service Providers (FSP) Market Research | BioNixus',
+  title: 'GCC Functional Service Providers (FSP) Market | BioNixus',
   description:
     'GCC functional service providers market research — FSP vs full-service outsourcing, clinical operations capacity, sponsor buyer criteria, and Gulf trial.',
   canonical: `${BASE}/gcc-functional-service-providers-market`,
@@ -1669,7 +1669,7 @@ const meaClinicalTrialImaging: SpecialtyMarketDemandContent = {
   segmentLabel: 'MEA Clinical Trial Imaging',
   badge: 'Middle East & Africa · Clinical Trial Imaging',
   breadcrumbLabel: 'MEA Clinical Trial Imaging Market',
-  title: 'Middle East & Africa Clinical Trial Imaging Market | BioNixus',
+  title: 'Middle East & Africa Clinical Trial Imaging | BioNixus',
   description:
     'Middle East and Africa clinical trial imaging market research — central reads, site imaging capability, oncology and CNS endpoints, and sponsor/CRO buyer.',
   canonical: `${BASE}/mea-clinical-trial-imaging-market`,

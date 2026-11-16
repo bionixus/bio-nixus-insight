@@ -8,7 +8,7 @@ export const CLINICAL_DIAGNOSTICS_PROPOSAL_REQUEST_PATH = '/clinical-diagnostics
 export const CLINICAL_DIAGNOSTICS_PROPOSAL_DECK_PATH = '/clinical-diagnostics-market-assessment-proposal';
 
 export const clinicalDiagnosticsMeta = {
-  title: 'Clinical Diagnostics Market Research | QC & Immunohematology | BioNixus',
+  title: 'Clinical Diagnostics Market Research | QC | BioNixus',
   description:
     'Clinical diagnostics market assessment for quality control and immunohematology: KSA and Türkiye sizing, NUPCO and EKAP procurement, branch fieldwork, and senior-led synthesis across MENA and EU.',
   canonical: CLINICAL_DIAGNOSTICS_PATH,

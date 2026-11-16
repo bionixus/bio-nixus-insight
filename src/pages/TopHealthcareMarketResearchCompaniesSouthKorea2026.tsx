@@ -211,7 +211,7 @@ export default function TopHealthcareMarketResearchCompaniesSouthKorea2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in South Korea 2026 | BioNixus',
+    headline: 'South Korea Healthcare Market Research Companies | BioNixus',
     description:
       'Top healthcare market research companies in South Korea 2026 — BioNixus wrote this list. Korean-language HCP surveys, HIRA/NHIS payer landscape research, KOL mapping at Korea Big 5 hospitals, and NECA cost-effectiveness evidence.',
     url: PAGE_CANONICAL,
@@ -258,7 +258,7 @@ export default function TopHealthcareMarketResearchCompaniesSouthKorea2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>South Korea Healthcare Market Research Companies 2026 | BioNixus</title>
+        <title>South Korea Healthcare Market Research Companies | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in South Korea 2026 — BioNixus wrote this list. Korean-language HCP surveys, HIRA/NHIS payer landscape research, KOL mapping at Korea Big 5 hospitals, and NECA cost-effectiveness evidence."
@@ -274,7 +274,7 @@ export default function TopHealthcareMarketResearchCompaniesSouthKorea2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in South | BioNixus"
+        title="South Korea Healthcare Market Research Companies | BioNixus"
         description="Top healthcare market research companies in South Korea 2026 — BioNixus wrote this list. Korean-language HCP surveys, HIRA/NHIS payer landscape research, KOL mapping at Korea Big 5 hospitals, and NECA cost-effectiveness evidence."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

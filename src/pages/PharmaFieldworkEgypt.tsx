@@ -6,7 +6,7 @@ const expandedContent = getServiceLandingContent('pharma-fieldwork-egypt');
 export default function PharmaFieldworkEgypt() {
   return (
     <StrategicServicePage
-      title="Pharma Fieldwork Egypt | Physician & Pharmacy Research | BioNixus"
+      title="Pharma Fieldwork Egypt | Physician & Pharmacy | BioNixus"
       description="Pharma fieldwork in Egypt: bilingual HCP and pharmacy recruitment, public/private channel coverage, EDA-sensitive therapy areas, and Cairo-based data."
       canonicalUrl="https://www.bionixus.com/pharma-fieldwork-egypt"
       breadcrumbLabel="Pharma Fieldwork Egypt"
