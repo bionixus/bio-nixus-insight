@@ -162,7 +162,10 @@ const NEUROLOGY_CNS_TAIL: ReferenceSection[] = [
     title: 'Neurology and CNS: diagnostic delay, sequencing, and caregiver leverage',
     paragraphs: [
       'Neurology franchises face elongated diagnostic intervals, heterogeneous phenotyping, specialist-gated initiation, monitoring burden, caregiver decision weight, and access committees sceptical of high-cost chronic therapies without clear functional endpoints. Research must map where patients stall before reaching a treatable cohort—not only whether specialists endorse a molecule in principle.',
+      'Diagnostic delay registers should separate “never referred” from “referred but stalled on imaging or genetic testing” so medical teams know whether education, access, or operational capacity is the binding constraint.',
       'Multidisciplinary dynamics differ materially between MS, epilepsy, movement disorders, migraine, and neurodegenerative corridors. Instruments should reflect realistic next-best alternatives, titration rituals, relapse fear, cognitive side-effect intolerance, and institutional infusion or home-administration capacity rather than abstract efficacy scales.',
+      'Caregiver burden and infusion-site capacity often determine whether a neurology launch can scale beyond early adopters — programmes that only survey neurologists miss the operational veto that blocks community uptake after AMC enthusiasm fades.',
+      'Step-therapy and prior-auth documentation requirements differ materially between US commercial plans, NHS pathways, and Gulf ministry formularies; neurology modules localise those gates so forecast models do not assume US-style access in MENA.',
     ],
   },
   {
@@ -170,6 +173,9 @@ const NEUROLOGY_CNS_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Deliverables may include diagnostic pathway maps, referral bottleneck registers, KOL and centre concentration dossiers, persistence and discontinuation drivers, caregiver burden narratives validated for payer conversations, and access-risk overlays tied to step therapy or high-cost drug committees.',
       'BioNixus links neurology programmes to rare-disease hubs, biosimilar substitution modules where relevant, and country reports across MENA, the UK, and Europe so affiliates plan from one behavioural evidence base.',
+      'Where infusion capacity or home-administration logistics cap uptake, centre archetypes and nurse workload modules are run before national roll-out waves are sized.',
+      'Persistence dashboards should flag discontinuation tied to monitoring burden separately from clinical lack of efficacy so lifecycle teams respond with the right intervention.',
+      'Use those splits in quarterly business reviews.',
     ],
   },
 ];
@@ -187,6 +193,14 @@ const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Payers and hospital committees increasingly request operational outcome evidence, total-cost-of-care narratives, and cybersecurity assurances alongside clinical validation. BioNixus pairs clinician adoption studies with payer-adjacent interviews and procurement stakeholder mapping so digital portfolios align evidence generation with the gates that actually control budget release.',
       'Teams escalating from pilots to regional rollout should connect digital-health insight with diabetes, cardiology, or respiratory therapy hubs where companion services intersect with pharmaceutical franchises.',
+    ],
+  },
+  {
+    title: 'GCC digital health: telehealth codes, data residency, and hospital IT gates',
+    paragraphs: [
+      'In Saudi Arabia and the UAE, digital-health adoption is often gated by health-information exchange readiness, national digital-health authority endorsements, and insurer telemedicine codes — not by physician enthusiasm alone. Research should document whether a hospital can bill remote monitoring, who signs off on cybersecurity questionnaires, and whether nursing leadership will absorb workflow change without extra FTE.',
+      'BioNixus fields paired clinician and operations interviews plus payer-adjacent qual so SaMD and connected-device portfolios know which gate stops budget release before scale-up. Link findings to GCC market research and country hubs when the rollout spans multiple Gulf regulators.',
+      'Programmes that only measure clinician interest without IT and nursing sign-off routinely overstate year-one revenue; we treat operational veto as a first-class research output.',
     ],
   },
 ];

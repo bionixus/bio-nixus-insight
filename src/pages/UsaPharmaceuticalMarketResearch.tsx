@@ -105,7 +105,7 @@ const jsonLd = [
     url: PAGE_URL,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-05',
+    dateModified: '2026-11-16',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
   },
@@ -334,6 +334,47 @@ export default function UsaPharmaceuticalMarketResearch() {
             <HealthcareNavCard to="/healthcare-market-research/services/kol-mapping" title="KOL mapping and advisory boards" description="Influence mapping across US AMCs, NCI cancer centres, and specialty society advisory structures." />
             <HealthcareNavCard to="/services/market-access" title="Payer and PBM research" description="Interviews with PBM medical directors, Medicare plan directors, and commercial pharmacy directors." />
             <HealthcareNavCard to="/usa-healthcare-market-report" title="HEOR and market access evidence" description="PRO development, cost-effectiveness strategy, and pre-ICER research for US access dossiers." />
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="launch-committees"
+          title="Evidence packages US launch and access committees actually approve"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              US affiliate committees rarely reject research because the sample is small — they reject it because the
+              deliverable does not map to a formulary gate, an IRA scenario, or a KOL plan with named institutions.
+              BioNixus builds pharmaceutical market research backwards from those gates: which PBM class defines success,
+              which Medicare exposure triggers IRA modelling, and which AMC cluster must endorse adoption before a
+              community roll-out wave makes sense.
+            </p>
+            <p>
+              Typical approval packages combine a quantitative HCP wave with at least one payer or P&T qual module and a
+              short executive readout keyed to launch-quarter decisions — not a hundred-slide appendix. Where IRA or
+              biosimilar substitution is in play, we add a scenario page that translates prescribing intent into formulary
+              risk so finance and access leads review the same narrative. Cross-link the broader{' '}
+              <Link to="/healthcare-market-research-usa" className="text-primary font-medium hover:underline">
+                US healthcare market research
+              </Link>{' '}
+              programme when the brief spans devices, diagnostics, or consumer-health adjacency.
+            </p>
+            <p>
+              Custom research from $10,000 to $60,000. Focused US physician diagnostics often field in three to four
+              weeks; mixed-method access work with PBM depth typically runs six to ten weeks once IRB and recruitment
+              lists are confirmed.
+            </p>
+            <p>
+              Teams evaluating vendors such as IQVIA or Kantar for US launch should keep syndicated subscriptions for
+              trend and add a scoped primary module when the committee must defend a formulary or IRA scenario with
+              fielded evidence — see the{' '}
+              <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                IQVIA alternative guide
+              </Link>{' '}
+              for how buyers split those budgets in practice.
+            </p>
           </div>
         </ReportPremiumSection>
 

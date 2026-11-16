@@ -267,6 +267,11 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
     },
+    {
+      question: 'When should neurology research include caregiver and infusion-capacity modules?',
+      answer:
+        'Include them whenever uptake depends on home infusion, MS clinic capacity, or caregiver-administered therapy. Neurologist intent alone overstates community roll-out when nursing hours, transport burden, or site-of-care rules block the next prescription cohort.',
+    },
   ],
   'digital-health': [
     {
@@ -288,6 +293,11 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support digital health commercialisation?',
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
+    },
+    {
+      question: 'What should a digital health research brief include for GCC hospitals?',
+      answer:
+        'Name the EHR vendor context, telehealth billing codes available in that emirate or ministry, data-residency constraints, and nursing FTE assumptions for remote monitoring. Without those four items, pilot-readiness scores misstate how quickly a SaMD programme can move from innovation office approval to paid rollout.',
     },
   ],
   dermatology: [

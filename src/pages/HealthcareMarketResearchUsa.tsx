@@ -58,6 +58,11 @@ const faqItems = [
     answer:
       'Yes. US modules can run with comparable cells in the UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'When should US affiliates brief primary research instead of extending a syndicated contract?',
+    answer:
+      'Brief primary work when the decision is account-level — a named IDN formulary, a PBM medical director blocking prior auth, or a Southeast community cardiologist message test. Syndicated IQVIA, Clarivate, or panel feeds answer national share and trend; they rarely explain why a launch underperforms in one geography. BioNixus scopes US primary programmes from focused HCP waves through mixed-method PBM access studies, typically starting once syndicated dashboards have narrowed the hypothesis.',
+  },
 ];
 
 const jsonLd = [
@@ -83,7 +88,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-11-16',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -331,6 +336,13 @@ export default function HealthcareMarketResearchUsa() {
               cite ICER evidence. BioNixus conducts pre-ICER evidence strategy research and post-assessment payer impact
               studies.
             </p>
+            <p>
+              US programmes should also reflect how evidence is discovered: mobile search now carries a higher CTR slice
+              than desktop for healthcare-commercial queries, while desktop still dominates impression volume. Pages that
+              answer “who runs primary US HCP research” in plain language — scope, IRB posture, payer modules, and
+              syndicated-versus-primary boundaries — convert better than generic capability lists. That is why this page
+              pairs FDA–CMS–PBM context with named programme types rather than brochure copy alone.
+            </p>
           </div>
         </ReportPremiumSection>
 
@@ -368,6 +380,16 @@ export default function HealthcareMarketResearchUsa() {
               Typical US primary programmes run 3–4 weeks for focused HCP waves and 6–10 weeks for mixed-method access
               work including PBM interviews. Custom research from $10,000 to $60,000. Proposal turnaround is typically 48 hours once objectives,
               audience, and geography are defined.
+            </p>
+            <p>
+              For global affiliates comparing vendors, the decision checklist is simple: if the question is national
+              trend or claims-based share, syndicated is correct; if the question is why a launch misses in a named IDN or
+              PBM, primary research is correct. BioNixus is scoped for the second class of questions and can run parallel
+              cells in the{' '}
+              <Link to="/healthcare-market-research/united-states" className="text-primary font-medium hover:underline">
+                United States country hub
+              </Link>{' '}
+              when the brief also needs EU5 or GCC comparators on the same instrument.
             </p>
           </div>
         </ReportPremiumSection>
