@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneHealthcareFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -63,7 +64,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-11-17',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -87,7 +88,8 @@ const BrazilHealthcareMarketReport = () => (
     <Navbar />
     <SEOHead
       title="Brazil Healthcare & Pharma Market 2026: Size, ANVISA & Outlook"
-      description="Brazil's healthcare and pharmaceutical market in 2026 — market size, ANVISA regulation, top companies and forecast. By Bionixus."      canonical="https://www.bionixus.com/brazil-healthcare-market-report"
+      description="Brazil's healthcare and pharmaceutical market in 2026 — market size, ANVISA regulation, top companies and forecast. By Bionixus."
+      canonical="https://www.bionixus.com/brazil-healthcare-market-report"
       jsonLd={jsonLd}
     />
       <ReportReadingProgress progressId="report-rp-brazil-healthcare-market-report" />
@@ -117,7 +119,35 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
-          <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            For GCC/MENA intelligence, see our{' '}
+            <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">
+              GCC Pharmaceutical Market Report 2026
+            </Link>
+            .
+          </p>
+          <GeoLLMAnswerBlock
+            question="How big is Brazil's healthcare market in 2026?"
+            answer="Brazil's healthcare market is among the largest in Latin America, with roughly USD 165 billion in total health spend in 2026 — split between the universal SUS public system and a fast-growing ANS private insurance sector covering about 50 million lives."
+            points={[
+              {
+                title: 'Dual-channel access',
+                description:
+                  'ANVISA registration and CMED price caps govern the private and retail channel; CONITEC HTA and PCDT protocols determine SUS incorporation for publicly funded treatment.',
+              },
+              {
+                title: 'Pharma and devices scale',
+                description:
+                  'Pharmaceutical spend is estimated near USD 28 billion in 2026; medical devices near USD 12 billion — import-heavy in devices, with a large domestic generics and biosimilars base in medicines.',
+              },
+              {
+                title: 'Research priorities',
+                description:
+                  'Launch teams brief primary research on private-hospital adoption, SUS incorporation likelihood, and NUPCO-style tender analogues when planning GCC expansion from a Brazil base.',
+              },
+            ]}
+            summary="Brazil combines SUS scale with premium private hospitals; CONITEC and CMED pricing shape real-world uptake after ANVISA approval."
+          />
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="healthcare" />

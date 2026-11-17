@@ -16,6 +16,7 @@ import {
 } from '@/components/report-conversion';
 import { ReportPremiumHero } from '@/components/report-premium';
 import { finalizeStandaloneMedDeviceFaqs } from '@/data/standaloneCountryReportContent';
+import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const breadcrumbItems = [
   { name: 'Home', href: '/' },
@@ -62,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-17',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -117,9 +118,76 @@ const IndiaMedicalDevicesMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">India is among the world's fastest-growing medical device markets — fourth-largest in Asia and growing at 8% CAGR. The PLI scheme and Medical Device Parks are driving a domestic manufacturing transformation that is creating Indian-branded device companies with growing international ambitions, including in GCC markets.</p>
-          <p className="text-muted-foreground leading-relaxed">See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            See also:{' '}
+            <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">
+              India Healthcare Market Report
+            </Link>{' '}
+            and{' '}
+            <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">
+              GCC Medical Devices Market Report
+            </Link>
+            .
+          </p>
+          <GeoLLMAnswerBlock
+            question="How big is the India medical devices market in 2026?"
+            answer="India's medical devices market is estimated at roughly USD 11–14 billion in 2026, growing near 8% CAGR — fourth-largest in Asia, import-dependent in advanced imaging and implants, with PLI incentives accelerating domestic manufacturing."
+            points={[
+              {
+                title: 'CDSCO MDR 2017',
+                description:
+                  'Class A–D risk-based registration via CDSCO and state licensing; abridged pathways exist where CE/FDA clearances are already held.',
+              },
+              {
+                title: 'PLI and medtech parks',
+                description:
+                  'Production Linked Incentive tiers reward incremental sales in imaging, cancer-care, and implant categories; four medical device parks supply shared manufacturing infrastructure.',
+              },
+              {
+                title: 'Procurement reality',
+                description:
+                  'PM-JAY and large private chains (Apollo, Fortis, Manipal) concentrate high-value adoption; NPPA price caps on stents and knee implants remain a commercial risk category.',
+              },
+            ]}
+            summary="India medtech pairs fast hospital growth with regulatory maturation under MDR 2017, import reliance in premium segments, and active domestic manufacturing policy."
+          />
         </div>
       </section>
+        <section className="section-padding bg-muted/20" id="hospital-procurement-india">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              Hospital procurement and Ayushman Bharat in India&apos;s device market
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Public procurement for devices flows through Central Medical Services Society (CMSS) for many
+                government hospitals, state tender units, and PM-JAY empanelled packages that cap rates for procedures
+                using specified device categories. Private adoption is concentrated in metro tertiary hospitals where
+                international OEMs still dominate CT, MRI, cath-lab, and robotic surgery platforms — but Indian OEMs and
+                PLI beneficiaries are gaining share in consumables, orthopaedics, and mid-tier imaging.
+              </p>
+              <p>
+                For manufacturers planning GCC entry from India, the relevant research questions are which Indian SKUs
+                already hold CDSCO registration and CE/FDA collateral, which distributor relationships map to SFDA or
+                MOHAP import licences, and whether hospital buyers in Riyadh or Dubai treat Indian manufacturing as
+                tender-eligible on quality grounds. BioNixus triangulates primary interviews with biomedical engineers
+                and procurement managers against tender and formulary data in both markets.
+              </p>
+              <p>
+                Fieldwork proposals for India–GCC programmes are typically issued within 48 hours once therapy,
+                device class, and stakeholder list are confirmed. Compare pathways with our{' '}
+                <Link to="/healthcare-market-research-india" className="text-primary hover:underline font-medium">
+                  healthcare market research in India
+                </Link>{' '}
+                service page and the{' '}
+                <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">
+                  healthcare market research hub
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
               <MarketIntelligenceSections marketSlug="india" countryName="India" variant="medical-devices" />
 
         <section className="section-padding" id="related-intelligence">

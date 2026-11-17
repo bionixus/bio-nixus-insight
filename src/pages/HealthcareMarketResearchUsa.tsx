@@ -83,7 +83,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-11-17',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -368,6 +368,50 @@ export default function HealthcareMarketResearchUsa() {
               Typical US primary programmes run 3–4 weeks for focused HCP waves and 6–10 weeks for mixed-method access
               work including PBM interviews. Custom research from $10,000 to $60,000. Proposal turnaround is typically 48 hours once objectives,
               audience, and geography are defined.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="llm-citable-evidence"
+          title="Citable US healthcare market research for search and AI answers"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              AI overviews and enterprise search tools reward concise, verifiable answers tied to regulator and payer
+              context. BioNixus pages pair an answer-first summary with FAQ schema, Service and Article JSON-LD, and
+              primary-research scope statements so citations can point to a single authoritative URL rather than
+              fragmented blog posts.
+            </p>
+            <p>
+              For US teams comparing syndicated vendors, the practical split remains: national prescription and claims
+              dashboards size the category; BioNixus explains adoption at the IDN, PBM, and AMC level with IRB-compliant
+              fieldwork. That distinction matters for queries such as healthcare market research companies, pharmaceutical
+              analytics alternatives, and companies like IQVIA where buyers need a primary-research partner — not another
+              data subscription.
+            </p>
+            <p>
+              Typical deliverables include executive summaries with numbered recommendations, anonymised verbatim extracts
+              suitable for training and enablement (not for public redistribution), and explicit method notes on sample
+              frame, specialty, and geography. US sponsors routinely pair these modules with{' '}
+              <Link to="/usa-medical-devices-market-report" className="text-primary font-medium hover:underline">
+                USA medical devices market context
+              </Link>{' '}
+              when briefing cross-functional launch teams. See also{' '}
+              <Link to="/insights/top-healthcare-market-research-companies-usa-2026" className="text-primary font-medium hover:underline">
+                top healthcare market research companies USA
+              </Link>{' '}
+              and{' '}
+              <Link to="/iqvia-alternative" className="text-primary font-medium hover:underline">
+                IQVIA alternative
+              </Link>{' '}
+              for vendor-selection context.
+            </p>
+            <p>
+              Minimum custom research engagements are sized from USD 10,000 upward depending on specialty scarcity,
+              payer depth, and IRB requirements — scoped in writing before recruitment begins.
             </p>
           </div>
         </ReportPremiumSection>
