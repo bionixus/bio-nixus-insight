@@ -47,6 +47,14 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
     question: 'How does BioNixus support German medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports German and European medical device manufacturers in entering and growing in GCC and MENA markets. Our services include: regulatory pathway mapping for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and all GCC competent authorities; hospital procurement intelligence at Saudi Arabia\'s MOH, NGHA, and private hospital networks; distributor network mapping and evaluation across all six GCC countries plus Egypt; primary research with biomedical engineers and clinical specialists; and comparative Germany vs. GCC commercial strategy analysis. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
+  {
+    question: 'When should German manufacturers apply for NUB status versus negotiating DRG add-on payments?',
+    answer: 'Novel implants, robotic platforms, and high-cost capital equipment in Germany usually require InEK NUB (Neue Untersuchungs- und Behandlungsmethoden) applications when standard G-DRG tariffs do not cover device costs. NUB status 1 grants time-limited supplementary payments while outcome data accumulate; status 4 denies surcharge and forces manufacturers back into bundled DRG economics. Teams should align clinical evidence collection, hospital case-mix, and procedure coding before the annual NUB window, because university centres and Maximalversorger hospitals interpret economic feasibility differently from community hospitals. BioNixus interviews purchasing, medical engineering, and clinical champions to surface the objections that stall NUB uptake even after CE marking.',
+  },
+  {
+    question: 'How do German hospital groups split procurement between university centres and private operators?',
+    answer: 'Universitätsklinikums (34 nationally) pioneer adoption and influence G-BA and professional-society guidelines, while private groups such as Helios, Asklepios, Sana, and Rhön-Klinikum run central category management with multi-year supply contracts. Procurement committees at each Land therefore see different price benchmarks, rebate ladders, and capital budget cycles. Fieldwork that samples only Berlin or Munich university accounts systematically misprices uptake in community DRG hospitals. BioNixus segments German device research by ownership type, procedure volume, and robotics or imaging installed base so forecasts reflect how each hospital archetype funds technology.',
+  },
 ], 'germany');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/germany-medical-devices-market-report');
@@ -62,7 +70,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-18',
     mainEntityOfPage: 'https://www.bionixus.com/germany-medical-devices-market-report',
   },
   {
@@ -77,7 +85,7 @@ const jsonLd = [
     countryName: "Germany",
     marketSlug: "germany",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-18",
   })
 ];
 

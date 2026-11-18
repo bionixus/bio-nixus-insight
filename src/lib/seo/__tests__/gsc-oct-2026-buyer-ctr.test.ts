@@ -111,7 +111,7 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
       'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra',
     );
     expect(getCtrSeo('/iqvia-alternative')?.title).toBe(
-      'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus',
+      'IQVIA Competitors: 10 Alternatives Compared (2026) | BioNixus',
     );
     expect(getCtrSeo('/nielsen-alternative')?.title).toBe(
       'NielsenIQ vs Competitors: Audit or Fieldwork (2026)',
@@ -176,7 +176,7 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
     expect(iqviaFaq.mainEntity).toHaveLength(13);
     expect(iqviaSummaries).toHaveLength(13);
     expect(iqviaFaq.mainEntity.map((item) => item.name)).toEqual(iqviaSummaries);
-    expect(iqviaHtml).toContain('<title>IQVIA Alternative Middle East: Primary Research 2026 | BioNixus</title>');
+    expect(iqviaHtml).toContain('<title>IQVIA Competitors: 10 Alternatives Compared (2026) | BioNixus</title>');
     expect(nielsenHtml).toContain('<title>NielsenIQ vs Competitors: Audit or Fieldwork (2026)</title>');
     expect(nielsenHtml).toContain('"@type":"FAQPage"');
     expect(nielsenHtml.match(/<details/g)?.length).toBe(8);
