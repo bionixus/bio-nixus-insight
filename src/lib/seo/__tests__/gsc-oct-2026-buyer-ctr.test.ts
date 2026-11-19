@@ -111,7 +111,7 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
       'Cairo Hospitals Ranked 2026 | Kasr Al-Ainy & Cleopatra',
     );
     expect(getCtrSeo('/iqvia-alternative')?.title).toBe(
-      'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus',
+      'Companies Like IQVIA: Alternatives (2026) | BioNixus',
     );
     expect(getCtrSeo('/nielsen-alternative')?.title).toBe(
       'NielsenIQ vs Competitors: Audit or Fieldwork (2026)',
@@ -176,7 +176,7 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
     expect(iqviaFaq.mainEntity).toHaveLength(13);
     expect(iqviaSummaries).toHaveLength(13);
     expect(iqviaFaq.mainEntity.map((item) => item.name)).toEqual(iqviaSummaries);
-    expect(iqviaHtml).toContain('<title>IQVIA Alternative Middle East: Primary Research 2026 | BioNixus</title>');
+    expect(iqviaHtml).toContain('<title>Companies Like IQVIA: Alternatives (2026) | BioNixus</title>');
     expect(nielsenHtml).toContain('<title>NielsenIQ vs Competitors: Audit or Fieldwork (2026)</title>');
     expect(nielsenHtml).toContain('"@type":"FAQPage"');
     expect(nielsenHtml.match(/<details/g)?.length).toBe(8);
@@ -195,10 +195,10 @@ describe('GSC 17 Sep–14 Oct 2026 buyer CTR rewrites', () => {
 
   it('floors sitemap lastmod, lists the six URLs in llms.txt, and keeps SSR critical paths', () => {
     for (const path of GSC_PATHS) {
-      const floor = path === '/iqvia-alternative' ? '2026-10-27' : '2026-10-17';
+      const floor = path === '/iqvia-alternative' ? '2026-11-19' : '2026-10-17';
       expect(sitemapScript).toContain(`[\`\${BASE}${path}\`]: '${floor}'`);
     }
-    expect(llms).toContain('# Last GEO refresh: 2026-Q4 (2026-10-17)');
+    expect(llms).toContain('# Last GEO refresh: 2026-Q4 (2026-11-19)');
     expect(llms).toContain('https://www.bionixus.com/healthcare-market-research');
     expect(llms).toContain('https://www.bionixus.com/healthcare-market-research/saudi-arabia');
     expect(llms).toContain('https://www.bionixus.com/iqvia-alternative');

@@ -47,6 +47,10 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus serve Turkey-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Turkish pharmaceutical and medical device companies in expanding into GCC and MENA markets. Turkey\'s pharma industry (including major exporters such as Abdi İbrahim, Eczacıbaşı, Zentiva Turkey) has natural market connections to MENA. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; physician panel surveys; and comparative Turkey vs. GCC market intelligence. Turkey\'s medical device and pharmaceutical manufacturers — particularly generic and biosimilar producers — have significant commercial opportunities in GCC markets where BioNixus provides the access intelligence needed.',
   },
+  {
+    question: 'How are medical devices regulated and reimbursed in Turkey alongside pharmaceuticals?',
+    answer: 'Medical devices in Turkey are regulated by TİTCK under EU MDR-aligned rules, with registration and vigilance requirements parallel to medicines. SGK reimburses listed devices through SUT procedure bundles and separate device listings for high-cost implants and capital equipment. Private hospitals and medical tourism programmes often procure premium devices above SGK tariffs. For device-specific market sizing, distribution mapping, and SGK listing dynamics, see the BioNixus Turkey medical devices market report — it complements this healthcare briefing for portfolio teams managing pharma and medtech together.',
+  },
 ], 'turkey');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/turkey-healthcare-market-report');
@@ -62,7 +66,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-19',
     mainEntityOfPage: 'https://www.bionixus.com/turkey-healthcare-market-report',
   },
   {
@@ -77,7 +81,7 @@ const jsonLd = [
     countryName: "Turkey",
     marketSlug: "turkey",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-19",
   })
 ];
 
@@ -117,7 +121,10 @@ const TurkeyHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Turkey is the largest healthcare market between Europe and the GCC — a 87-million-population market with near-universal SGK coverage, EMA-aligned regulation, and the world's fourth-largest medical tourism sector. Its position at the Europe-MENA crossroads creates natural strategic relevance for pharmaceutical companies managing multi-regional portfolios.</p>
-          <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            TİTCK continues to align with EMA decisions while SGK reference pricing and exchange-rate adjustments keep commercial teams revising net prices quarterly. Launch plans should separate public hospital, private hospital, and medical-tourism channels because prescribing incentives and device procurement rules differ materially across those paths.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link> and <Link to="/turkey-medical-devices-market-report" className="text-primary hover:underline font-medium">Turkey medical devices market report</Link>.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="turkey" countryName="Turkey" variant="healthcare" />

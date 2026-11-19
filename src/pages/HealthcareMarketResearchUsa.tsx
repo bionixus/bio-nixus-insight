@@ -58,6 +58,16 @@ const faqItems = [
     answer:
       'Yes. US modules can run with comparable cells in the UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How should US teams split IQVIA syndicated data from primary research budgets?',
+    answer:
+      'National prescription and claims feeds answer share and trend; they rarely explain PBM prior-auth friction, IDN P&T votes, or community specialist messaging gaps. Most US affiliates keep IQVIA or Symphony contracts for sizing and brief BioNixus for IRB-compliant physician surveys, payer paired interviews, KOL mapping at named AMCs, and account-level competitor cuts. That split is the same pattern described on the IQVIA alternatives page — syndicated for the headline number, primary for the committee decision.',
+  },
+  {
+    question: 'What evidence do US hospital P&T and PBM committees expect in 2026?',
+    answer:
+      'Hospital P&T committees want comparative effectiveness, infection-control or operational impact for devices, and budget impact within the IDN’s own patient mix. PBMs increasingly reference ICER-influenced narratives and IRA Maximum Fair Price exposure for Medicare-heavy brands. Launch teams should align HCP message testing, payer objection mining, and HEOR storyboards before FDA action dates so US primary research informs both commercial and access workstreams in one wave.',
+  },
 ];
 
 const jsonLd = [
@@ -83,7 +93,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-11-19',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -368,6 +378,17 @@ export default function HealthcareMarketResearchUsa() {
               Typical US primary programmes run 3–4 weeks for focused HCP waves and 6–10 weeks for mixed-method access
               work including PBM interviews. Custom research from $10,000 to $60,000. Proposal turnaround is typically 48 hours once objectives,
               audience, and geography are defined.
+            </p>
+            <p>
+              Google Search Console still shows a large US impression share with very low desktop CTR — listicle and comparison queries often land on directory pages while buyers need method-first answers. Pair this USA hub with the{' '}
+              <Link to="/usa-healthcare-market-report" className="text-primary font-medium hover:underline">
+                USA healthcare market report
+              </Link>{' '}
+              and the{' '}
+              <Link to="/pharmaceutical-market-research-usa" className="text-primary font-medium hover:underline">
+                US pharmaceutical market research
+              </Link>{' '}
+              programme when the brief is evidence depth, not another ranked list.
             </p>
           </div>
         </ReportPremiumSection>
