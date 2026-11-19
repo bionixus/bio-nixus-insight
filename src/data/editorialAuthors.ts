@@ -9,6 +9,7 @@ import {
   replaceLegacyAlsaadanyPhrases as replaceLegacyAlsaadanyPhrasesValue,
   replaceMeaDirectorTitle as replaceMeaDirectorTitleValue,
 } from '../../scripts/data/alsaadany-title.mjs';
+import { alsaadanyHitSubjectOf } from '@/data/inTheMedia';
 
 export const ALSAADANY_JOB_TITLE: string = ALSAADANY_JOB_TITLE_VALUE;
 
@@ -111,6 +112,16 @@ export const ALSAADANY_PROFILE_URL = 'https://www.alsaadany.com/bionixus/';
 export const ALSAADANY_PROFILE_URL_AR = 'https://www.alsaadany.com/ar/bionixus/';
 /** Added to Person `sameAs`. */
 export const ALSAADANY_SAME_AS_URL = 'https://www.alsaadany.com/';
+/** Owned LinkedIn profile. Publication URLs never go in `sameAs`. */
+export const ALSAADANY_LINKEDIN_URL = 'https://www.linkedin.com/in/mohammad-alsaadany';
+
+const ALSAADANY_SAME_AS = [ALSAADANY_LINKEDIN_URL, ALSAADANY_SAME_AS_URL] as const;
+
+const ALSAADANY_WORKS_FOR = {
+  '@type': 'Organization' as const,
+  '@id': 'https://www.bionixus.com/#organization',
+  name: 'BioNixus',
+};
 
 const ALSAADANY_NAMES = new Set([
   'mohammad alsaadany',
@@ -235,29 +246,27 @@ export function authorLinkedInForDisplay(name: string | undefined, url: string |
 
 /**
  * Person / author JSON-LD for Mohammad Alsaadany.
- * Sets `url` to the English profile and appends the site root to `sameAs`.
- * Legacy titles (MEA Director, Healthcare Market Research Advisor, the old
- * welcome-email signature) become the AMEA Director title. Any other explicit
- * jobTitle is kept.
+ * This is the only place that sets his `url` (the English profile).
+ * `sameAs` is only his LinkedIn profile and https://www.alsaadany.com/.
+ * Legacy titles, including any "AMEA Director..." variant, become Director.
+ * Any other explicit jobTitle is kept. Does not add honorificPrefix.
  */
-export function withAlsaadanyPersonJsonLd<
-  T extends {
-    name?: string;
-    jobTitle?: string;
-    url?: string;
-    sameAs?: string | readonly string[];
-  },
->(person: T): T {
-  if (!isAlsaadanyDisplayName(person.name)) return person;
-  const raw = person.sameAs;
-  const sameAs = [...(Array.isArray(raw) ? raw : raw ? [raw] : [])];
-  if (!sameAs.includes(ALSAADANY_SAME_AS_URL)) sameAs.push(ALSAADANY_SAME_AS_URL);
-  const jobTitle = canonicalAlsaadanyJobTitle(person.jobTitle);
+export function withAlsaadanyPersonJsonLd<T extends object>(person: T): T {
+  const name = 'name' in person && typeof (person as { name?: unknown }).name === 'string'
+    ? (person as { name: string }).name
+    : undefined;
+  if (!isAlsaadanyDisplayName(name)) return person;
+  const rawTitle = 'jobTitle' in person && typeof (person as { jobTitle?: unknown }).jobTitle === 'string'
+    ? (person as { jobTitle: string }).jobTitle
+    : undefined;
+  const subjectOf = alsaadanyHitSubjectOf();
   return {
     ...person,
     url: ALSAADANY_PROFILE_URL,
-    sameAs,
-    jobTitle,
+    sameAs: [...ALSAADANY_SAME_AS],
+    jobTitle: canonicalAlsaadanyJobTitle(rawTitle),
+    worksFor: ALSAADANY_WORKS_FOR,
+    ...(subjectOf ? { subjectOf } : {}),
   } as T;
 }
 
@@ -348,11 +357,7 @@ export function personAuthorJsonLd(author: EditorialAuthor) {
     '@type': 'Person' as const,
     name: author.name,
     jobTitle: author.jobTitle,
-    worksFor: {
-      '@type': 'Organization' as const,
-      '@id': 'https://www.bionixus.com/#organization',
-      name: 'BioNixus',
-    },
+    worksFor: ALSAADANY_WORKS_FOR,
   });
 }
 

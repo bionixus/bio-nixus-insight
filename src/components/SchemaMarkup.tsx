@@ -435,14 +435,16 @@ export function buildSchemas(props: SchemaMarkupProps): Record<string, unknown>[
       ...(props.about && props.about.length > 0
         ? { about: props.about.length === 1 ? { ...props.about[0] } : props.about.map((a) => ({ ...a })) }
         : {}),
-      author: props.authorNode
-        ? { ...props.authorNode }
-        : withAlsaadanyPersonJsonLd({
-            '@type': 'Person',
-            name: props.authorName,
-            ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
-            ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
-          }),
+      author: withAlsaadanyPersonJsonLd(
+        props.authorNode
+          ? { ...props.authorNode }
+          : {
+              '@type': 'Person',
+              name: props.authorName,
+              ...(props.authorUrl ? { url: props.authorUrl, sameAs: [props.authorUrl] } : {}),
+              ...(props.authorJobTitle ? { jobTitle: props.authorJobTitle } : {}),
+            },
+      ),
       datePublished: published,
       dateModified: modified,
       publisher: {
