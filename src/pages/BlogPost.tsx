@@ -48,7 +48,9 @@ import {
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
-import { alsaadanyProfileUrl, authorLinkedInForDisplay, canonicalAlsaadanyJobTitle } from '@/data/editorialAuthors';
+import { ALSAADANY_AUTHOR, alsaadanyProfileUrl, authorLinkedInForDisplay, canonicalAlsaadanyJobTitle, isAlsaadanyDisplayName } from '@/data/editorialAuthors';
+import { mediaCreditsForAuthor, type FeaturedInCredit } from '@/data/inTheMedia';
+import { formatListDate } from '@/lib/formatListDate';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import BlogSiteExplorer from '@/components/BlogSiteExplorer';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
@@ -785,6 +787,32 @@ function blogCanonicalAbsoluteUrl(
   }
 }
 
+function FeaturedInLines({ credits }: { credits: readonly FeaturedInCredit[] }) {
+  if (credits.length === 0) return null;
+  return (
+    <ul className="mt-2 space-y-1 list-none p-0 m-0">
+      {credits.map((credit) => {
+        const dateLabel = credit.date ? formatListDate(credit.date) : '';
+        return (
+          <li key={`${credit.url}-${credit.headline}`} className="text-sm text-muted-foreground">
+            Featured in:{' '}
+            <a
+              href={credit.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary hover:underline"
+            >
+              {credit.headline}
+            </a>
+            {`, ${credit.publicationName}`}
+            {dateLabel ? `, ${dateLabel}` : ''}.
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 type BlogPostProps = {
   fixedSlug?: string;
 };
@@ -1241,6 +1269,13 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           : [];
 
   const authorLinkedIn = authorLinkedInForDisplay(post.authorName, post.authorLinkedIn);
+  const visibleAuthorTitle = alsaadanyProfileUrl(post.authorName)
+    ? canonicalAlsaadanyJobTitle(post.authorTitle)
+    : post.authorTitle?.trim();
+  const featuredCredits = mediaCreditsForAuthor({
+    isMohammad: post.authorSlug === ALSAADANY_AUTHOR.slug || isAlsaadanyDisplayName(post.authorName),
+    featuredIn: post.authorFeaturedIn,
+  });
 
   const breadcrumbLabel =
     post.breadcrumbLabel?.trim() && articleLocale === 'en' && resolvedSilo !== 'industries'
@@ -1519,7 +1554,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     )}
                     <div>
                       <PersonNameLink name={post.authorName} className="text-[13px] font-medium text-white/85 block no-underline" />
-                      {post.authorTitle && <span className="text-[11px] text-white/45 block">{post.authorTitle}</span>}
+                      {visibleAuthorTitle && <span className="text-[11px] text-white/45 block">{visibleAuthorTitle}</span>}
                     </div>
                   </div>
                 )}
@@ -2034,13 +2069,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                         <a href={authorLinkedIn} target="_blank" rel="noopener noreferrer" className="hover:underline">{post.authorName}</a>
                       ) : post.authorName}
                     </p>
-                    {post.authorTitle && <p className="text-sm text-muted-foreground mb-1">{post.authorTitle}</p>}
+                    {visibleAuthorTitle && <p className="text-sm text-muted-foreground mb-1">{visibleAuthorTitle}</p>}
                     {authorLinkedIn && (
                       <a href={authorLinkedIn} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary/70 hover:text-primary transition-colors">
                         <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         {blogUi.linkedInProfile}
                       </a>
                     )}
+                    <FeaturedInLines credits={featuredCredits} />
                     {post.updatedAtIso && post.updatedAtIso !== post.publishedAtIso && (
                       <p className="text-xs text-muted-foreground mt-1">
                         {blogUi.updated} {new Date(post.updatedAtIso).toLocaleDateString(BLOG_DATE_LOCALE[articleLocale], { day: 'numeric', month: 'short', year: 'numeric' })}

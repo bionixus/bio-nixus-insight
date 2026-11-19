@@ -22,6 +22,21 @@ import {
   isAlsaadanyDisplayName,
   replaceLegacyAlsaadanyPhrases,
 } from '@/data/editorialAuthors';
+import type { FeaturedInCredit } from '@/data/inTheMedia';
+
+/** Keep a hardcoded byline. Copy featured-in credits only when Sanity names the same person. */
+function applySanityAuthorCredits<T extends BlogPost>(base: T, sanity: BlogPost | null | undefined): T {
+  if (!sanity) return base;
+  const baseName = base.authorName?.trim();
+  const sanityName = sanity.authorName?.trim();
+  if (!baseName || !sanityName || baseName !== sanityName) return base;
+  return {
+    ...base,
+    ...(sanity.authorFeaturedIn?.length ? { authorFeaturedIn: sanity.authorFeaturedIn } : {}),
+    ...(sanity.authorSlug ? { authorSlug: sanity.authorSlug } : {}),
+    ...(sanity.authorBio?.trim() ? { authorBio: sanity.authorBio.trim() } : {}),
+  };
+}
 
 function overlayHardcodedSeoPost(post: BlogPost): BlogPost {
   if (!isHardcodedSeoBlogSlug(post.slug)) return post;
@@ -226,6 +241,15 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "authorTitle": author->title,
   "authorImage": author->image.asset->url,
   "authorLinkedIn": author->linkedIn,
+  "authorBio": author->bio,
+  "authorSlug": coalesce(author->slug.current, author->slug),
+  "authorFeaturedIn": author->featuredIn[]{
+    headline,
+    url,
+    publicationName,
+    date,
+    summary
+  },
   ${SILO_FIELDS}
 }`;
 
@@ -349,6 +373,10 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       if (raw.authorTitle) out.authorTitle = raw.authorTitle;
       if (raw.authorImage) out.authorImage = raw.authorImage;
       if (raw.authorLinkedIn) out.authorLinkedIn = raw.authorLinkedIn;
+      if (typeof raw.authorBio === 'string' && raw.authorBio.trim()) out.authorBio = raw.authorBio.trim();
+      if (typeof raw.authorSlug === 'string' && raw.authorSlug.trim()) out.authorSlug = raw.authorSlug.trim();
+      const featuredIn = mapAuthorFeaturedIn(raw.authorFeaturedIn);
+      if (featuredIn.length > 0) out.authorFeaturedIn = featuredIn;
       return out;
     })()),
     language: p.language ?? undefined,
@@ -476,7 +504,9 @@ export async function fetchSanityPostBySlugWithClient(
   try {
     const raw = await client.fetch<RawSanityPost | null>(POST_BY_SLUG_QUERY, { slug });
     const mapped = mapRawToPost(raw, true);
-    if (hardcodedSeo && hardcodedFallback) return applySanityShareImages(hardcodedFallback, mapped);
+    if (hardcodedSeo && hardcodedFallback) {
+      return applySanityAuthorCredits(applySanityShareImages(hardcodedFallback, mapped), mapped);
+    }
     if (mapped) return mapped;
 
     if (hardcodedFallback) return hardcodedFallback;
@@ -593,6 +623,29 @@ export async function fetchRelatedPosts(
   return fetchRelatedPostsWithClient(slug, category, date, country, tags, getSanityClient(), contentSilo);
 }
 
+function mapAuthorFeaturedIn(raw: unknown): FeaturedInCredit[] {
+  if (!Array.isArray(raw)) return [];
+  const credits: FeaturedInCredit[] = [];
+  for (const entry of raw) {
+    if (!entry || typeof entry !== 'object') continue;
+    const item = entry as Record<string, unknown>;
+    const headline = typeof item.headline === 'string' ? item.headline.trim() : '';
+    const url = typeof item.url === 'string' ? item.url.trim() : '';
+    const publicationName = typeof item.publicationName === 'string' ? item.publicationName.trim() : '';
+    if (!headline || !url || !publicationName) continue;
+    const date = typeof item.date === 'string' ? item.date.trim() : '';
+    const summary = typeof item.summary === 'string' ? item.summary.trim() : '';
+    credits.push({
+      headline,
+      url,
+      publicationName,
+      ...(date ? { date } : {}),
+      ...(summary ? { summary } : {}),
+    });
+  }
+  return credits;
+}
+
 function formatDate(iso: string | undefined): string {
   if (!iso) return '';
   try {
@@ -653,6 +706,9 @@ interface RawSanityPost {
   authorTitle?: string;
   authorImage?: string;
   authorLinkedIn?: string;
+  authorBio?: string;
+  authorSlug?: string;
+  authorFeaturedIn?: FeaturedInCredit[];
   contentSilo?: 'healthcare' | 'industries';
   industrySegment?: 'b2b' | 'b2c';
   industrySlug?: string;

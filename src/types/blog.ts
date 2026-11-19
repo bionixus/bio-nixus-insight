@@ -104,6 +104,16 @@ export interface BlogPost {
   authorTitle?: string;
   authorImage?: string;
   authorLinkedIn?: string;
+  authorBio?: string;
+  /** author->slug.current, used to match the editorial roster before a Sanity edit. */
+  authorSlug?: string;
+  authorFeaturedIn?: {
+    headline: string;
+    url: string;
+    publicationName: string;
+    date?: string;
+    summary?: string;
+  }[];
   publishedAtIso?: string;
   updatedAtIso?: string;
 }
