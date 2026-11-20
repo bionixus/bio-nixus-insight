@@ -62,7 +62,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-20',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -77,7 +77,7 @@ const jsonLd = [
     countryName: "India",
     marketSlug: "india",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-20",
   })
 ];
 

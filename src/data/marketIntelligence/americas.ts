@@ -81,6 +81,21 @@ export const americasMarketIntelligence: Record<string, MarketIntelligence> = {
       { step: 7, action: "ANS incorporation for private insurance", body: "ANS", timeline: "90-day statutory review", notes: "Rol de Procedimentos e Eventos em Saúde — mandatory benefit basket for private plans; significant coverage for ~50M insured" },
     ],
     majorHospitals: [
+      { name: "Hospital Albert Einstein (São Paulo)", type: "private", beds: "~900", specialties: "Premium private tertiary; oncology and CV device early adoption" },
+      { name: "Hospital Sírio-Libanês (São Paulo)", type: "private", beds: "~400", specialties: "Oncology, transplant, and structural heart programmes" },
+      { name: "INCA — Instituto Nacional de Câncer", type: "public", beds: "~200", specialties: "National cancer referral; SUS oncology protocols" },
+      { name: "Hospital das Clínicas FMUSP", type: "academic", beds: "~2,300", specialties: "USP teaching hospital; largest academic centre in Latin America" },
+      { name: "Hospital Moinhos de Vento (Porto Alegre)", type: "private", beds: "~400", specialties: "South Brazil private referral; cardiology and orthopaedics" },
+      { name: "Hospital Copa D'Or (Rio)", type: "private", beds: "~350", specialties: "Premium Rio private hospital; device tenders" },
+      { name: "Hospital Alemão Oswaldo Cruz", type: "private", beds: "~350", specialties: "São Paulo private tertiary; oncology and CV" },
+      { name: "Instituto do Coração (InCor — USP)", type: "academic", beds: "~250", specialties: "Cardiovascular referral; CRM and structural heart trials" },
+    ],
+    bionixusCapabilities: [
+      "ANVISA + CONITEC SUS pathway intelligence alongside ANS private Rol dynamics",
+      "Primary research with hospital P&T committees, SUS oncology centres, and premium private hospitals",
+      "Brazil vs GCC comparative access intelligence for manufacturers expanding across Americas and MENA",
+      "Biosimilar and generic substitution research where SUS step-therapy and private tier divergence matters",
+      "Medical device import-duty and Drawback Suspension modelling for landed cost in Brazil",
     ],
     accessTimeline: {
       regulatoryApproval: "12–24 months (priority)",
@@ -92,6 +107,7 @@ export const americasMarketIntelligence: Record<string, MarketIntelligence> = {
       { condition: "Cancer", stat: "~625,000 new diagnoses/year; breast, prostate, colorectal, cervix most prevalent", source: "INCA (Instituto Nacional de Câncer) 2023" },
       { condition: "Cardiovascular disease", stat: "~400,000 deaths/year from CVD — #1 cause of mortality", source: "SBC (Sociedade Brasileira de Cardiologia) 2023" },
       { condition: "Diabetes", stat: "~16.8 million adults with diabetes (~15.7% adult prevalence)", source: "IDF Diabetes Atlas 2023" },
+      { condition: "Obesity", stat: "~22% of adults with obesity — GLP-1 and metabolic drug growth driver", source: "Vigitel Brazil 2023" },
     ],
   },
   'canada': {

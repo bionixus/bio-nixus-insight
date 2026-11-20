@@ -535,9 +535,24 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
       { step: 7, action: "Hospital formulary adoption", body: "MOH City Hospital pharmacy committees + Private hospital P&T committees", timeline: "3–6 months", notes: "City Hospitals Alliance (Şehir Hastaneleri) has joint procurement — critical for access to ~50,000-bed network" },
     ],
     majorHospitals: [
+      { name: "Hacettepe University Hospital (Ankara)", type: "academic", beds: "~1,200", specialties: "National referral; oncology and transplant" },
+      { name: "Istanbul Faculty of Medicine", type: "academic", beds: "~1,500", specialties: "Teaching hospital; device trials and specialty surgery" },
+      { name: "Acıbadem Altunizade Hospital", type: "private", beds: "~350", specialties: "Premium Istanbul private; robotics and CV" },
+      { name: "Memorial Şişli Hospital", type: "private", beds: "~200", specialties: "Medical tourism hub; oncology and orthopaedics" },
+      { name: "Marmara University Hospital", type: "academic", beds: "~1,000", specialties: "Istanbul academic tertiary referral" },
+      { name: "Başakşehir Çam ve Sakura City Hospital", type: "public", beds: "~2,600", specialties: "City Hospitals Alliance mega-hospital; joint procurement" },
+      { name: "Ege University Hospital (İzmir)", type: "academic", beds: "~1,300", specialties: "Aegean region referral; clinical trial bandwidth" },
+      { name: "Koç University Hospital", type: "private", beds: "~400", specialties: "Research-oriented private tertiary" },
+    ],
+    bionixusCapabilities: [
+      "TİTCK registration and SGK SUT reimbursement intelligence for Turkey pharma and device launches",
+      "Medical tourism and private-hospital procurement research for cross-border patient flows",
+      "Turkey-to-GCC expansion intelligence for Turkish exporters and MNCs bridging EU and MENA",
+      "Reference-pricing and FX volatility modelling where MOH price basket tracks EU5 lows",
+      "City Hospitals Alliance tender and formulary committee primary research",
     ],
     accessTimeline: {
-      regulatoryApproval: "",
+      regulatoryApproval: "12–24 months",
       payerListing: "12–24 months",
       formularyAccess: "3–6 months",
       totalLaunchToAccess: "21–42 months",
@@ -546,6 +561,7 @@ export const menaMarketIntelligence: Record<string, MarketIntelligence> = {
       { condition: "Cardiovascular disease", stat: "37% of all-cause mortality — #1 cause of death", source: "TÜİK Turkey Cause of Death Statistics 2023" },
       { condition: "Cancer", stat: "~260,000 new diagnoses/year; lung, breast, colorectal, prostate most prevalent", source: "Turkey Cancer Statistics 2023 (Sağlık Bakanlığı)" },
       { condition: "Diabetes", stat: "~8.5 million adults with T2DM (~14% adult prevalence)", source: "IDF Diabetes Atlas 2023" },
+      { condition: "Medical tourism", stat: "~1.5M inbound patients/year — hair, dental, plastic, and oncology draw", source: "T.C. Sağlık Bakanlığı 2023" },
     ],
   },
 };
