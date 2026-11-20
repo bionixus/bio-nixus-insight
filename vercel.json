@@ -34,6 +34,23 @@
       ]
     },
     {
+      "source": "/go/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
+    },
+    {
       "source": "/home-staging",
       "headers": [
         {
@@ -596,7 +613,7 @@
       "statusCode": 301
     },
     {
-      "source": "/:splat((?!api/|r/).*)",
+      "source": "/:splat((?!api/|r/|go/).*)",
       "has": [
         {
           "type": "query",
@@ -607,7 +624,7 @@
       "statusCode": 301
     },
     {
-      "source": "/:splat((?!api/|r/).*)",
+      "source": "/:splat((?!api/|r/|go/).*)",
       "has": [
         {
           "type": "query",
@@ -1409,7 +1426,15 @@
       "destination": "/api/r/quality"
     },
     {
-      "source": "/:splat((?!api/|r/).*)",
+      "source": "/go/:pid/:country",
+      "destination": "/api/go/:pid/:country"
+    },
+    {
+      "source": "/go/:pid/:country/",
+      "destination": "/api/go/:pid/:country"
+    },
+    {
+      "source": "/:splat((?!api/|r/|go/).*)",
       "destination": "/api/indexnow-key?__ssr=1&url=/:splat"
     }
   ]

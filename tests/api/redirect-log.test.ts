@@ -3,7 +3,7 @@ import http from 'node:http';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { handleRedirectEnd, handleRedirectExport, resetRedirectLogMemory } from '../../lib/redirect-log.mjs';
+import { handleRedirectEnd, handleRedirectExport, handleRedirectStart, resetRedirectLogMemory } from '../../lib/redirect-log.mjs';
 import endHandler from '../../api/r/[outcome]';
 import exportHandler from '../../api/r/export';
 
@@ -26,6 +26,10 @@ beforeAll(async () => {
     };
     if (parts[0] === 'r' && parts.length === 2) {
       Promise.resolve(handleRedirectEnd(req, res, parts[1])).catch(done);
+      return;
+    }
+    if (parts[0] === 'go' && parts.length === 3) {
+      Promise.resolve(handleRedirectStart(req, res, parts[1], parts[2])).catch(done);
       return;
     }
     if (url.pathname === '/api/r/export') {
@@ -51,6 +55,7 @@ beforeEach(() => {
   process.env.REDIRECT_LOG_DRIVER = 'memory';
   process.env.REDIRECT_EXPORT_TOKEN = TOKEN;
   delete process.env.REDIRECT_IP_SALT;
+  delete process.env.REDIRECT_MODE_2362;
   delete process.env.BLOB_READ_WRITE_TOKEN;
   resetRedirectLogMemory();
 });
@@ -291,11 +296,109 @@ describe('survey redirect end pages', () => {
       expect(sources.indexOf(path)).toBeGreaterThan(-1);
       expect(sources.indexOf(path)).toBeLessThan(catchAll);
     }
-    expect(sources[catchAll]).toContain('(?!api/|r/)');
-    expect(vercel.redirects.some((redirect: { source: string; has?: { key: string }[] }) => redirect.source.includes('(?!api/|r/)') && redirect.has?.some((rule) => rule.key === 'trk'))).toBe(true);
+    expect(sources[catchAll]).toContain('(?!api/|r/|go/)');
+    expect(sources.indexOf('/go/:pid/:country')).toBeGreaterThan(-1);
+    expect(sources.indexOf('/go/:pid/:country')).toBeLessThan(catchAll);
+    expect(vercel.redirects.some((redirect: { source: string; has?: { key: string }[] }) => redirect.source.includes('(?!api/|r/|go/)') && redirect.has?.some((rule) => rule.key === 'trk'))).toBe(true);
     const robots = readFileSync(path.join(root, 'public/robots.txt'), 'utf8');
     expect(robots).toContain('Disallow: /r/');
+    expect(robots).toContain('Disallow: /go/');
     const sitemap = readFileSync(path.join(root, 'scripts/generate-sitemap.mjs'), 'utf8');
     expect(sitemap).toContain('panel-redirect-end');
+  });
+});
+
+describe('survey start links', () => {
+  it('logs a start and redirects to the test survey with the encoded rid', async () => {
+    const us = await hit('/go/2362/us?rid=bxtest-us-0001');
+    expect(us.status).toBe(302);
+    expect(us.headers.get('x-redirect-logged')).toBe('1');
+    expect(us.headers.get('x-robots-tag')).toContain('noindex');
+    expect(us.headers.get('location')).toBe(
+      'https://surveys.osganalytics.com/survey/selfserve/556/260906?list=12&HC=1&HP=1&OID=bxtest-us-0001',
+    );
+
+    const uk = await hit('/go/2362/uk?id=bxtest-uk-0001');
+    expect(uk.status).toBe(302);
+    expect(uk.headers.get('location')).toBe(
+      'https://surveys.osganalytics.com/survey/selfserve/556/260906?list=12&HC=2&HP=1&decLang=uk&OID=bxtest-uk-0001',
+    );
+
+    const de = await hit('/go/2362/de?RID=bxtest-de-0001');
+    expect(de.status).toBe(302);
+    expect(de.headers.get('location')).toBe(
+      'https://surveys.osganalytics.com/survey/selfserve/556/260906?list=12&HC=4&HP=1&decLang=german&OID=bxtest-de-0001',
+    );
+
+    const again = await hit('/go/2362/us?rid=bxtest-us-0001');
+    expect(again.status).toBe(302);
+
+    const encoded = await hit('/go/2362/us?rid=' + encodeURIComponent('a b&c'));
+    expect(encoded.headers.get('location')).toContain('OID=' + encodeURIComponent('a b&c'));
+
+    const missing = await hit('/go/2362/uk');
+    expect(missing.status).toBe(200);
+    expect(missing.headers.get('location')).toBeNull();
+    expect(missing.headers.get('x-redirect-logged')).toBe('1');
+    expect(missing.text).toContain('This link is invalid');
+    expect(missing.text).toContain('noindex');
+
+    const unknownCountry = await hit('/go/2362/fr?rid=bxtest-fr-0001');
+    expect(unknownCountry.status).toBe(404);
+    expect(unknownCountry.headers.get('x-robots-tag')).toContain('noindex');
+    expect(unknownCountry.headers.get('location')).toBeNull();
+
+    const unknownPid = await hit('/go/9999/us?rid=bxtest-us-0001');
+    expect(unknownPid.status).toBe(404);
+
+    const end = await hit('/r/complete?pid=2362&rid=bxtest-us-0001');
+    expect(end.status).toBe(200);
+    expect(end.text).toContain('<h1>Thank you</h1>');
+
+    const exported = await hit('/api/r/export?pid=2362&format=json', {
+      headers: { Authorization: `Bearer ${TOKEN}` },
+    });
+    const body = JSON.parse(exported.text);
+    expect(body.byCountry.us).toEqual({ starts: 3, completes: 1, terminates: 0, overquota: 0, quality: 0 });
+    expect(body.byCountry.uk.starts).toBe(2);
+    expect(body.byCountry.de.starts).toBe(1);
+    expect(body.byCountry.uk.completes).toBe(0);
+    const starts = body.rows.filter((row: { type: string }) => row.type === 'start');
+    expect(starts.some((row: { rid: string; country: string }) => row.rid === 'bxtest-us-0001' && row.country === 'us')).toBe(true);
+    const usStarts = starts.filter((row: { rid: string }) => row.rid === 'bxtest-us-0001');
+    expect(usStarts).toHaveLength(2);
+    expect(usStarts.filter((row: { duplicate: boolean }) => row.duplicate)).toHaveLength(1);
+    const missingRow = starts.find((row: { ridMissing: boolean; country: string }) => row.ridMissing && row.country === 'uk');
+    expect(missingRow.duplicate).toBe(false);
+    expect(body.rows.some((row: { rid: string }) => row.rid === 'bxtest-fr-0001')).toBe(false);
+    expect(body.counts.complete).toBe(1);
+
+    const csv = await hit('/api/r/export?pid=2362&format=csv', {
+      headers: { Authorization: `Bearer ${TOKEN}` },
+    });
+    expect(csv.text.split('\n')[0]).toContain('type');
+    expect(csv.text.split('\n')[0]).toContain('country');
+    expect(csv.text).toContain('start,start,us,');
+  });
+
+  it('uses the live target when REDIRECT_MODE_2362 is live', async () => {
+    process.env.REDIRECT_MODE_2362 = 'live';
+    const us = await hit('/go/2362/us?rid=bxtest-us-live');
+    expect(us.status).toBe(302);
+    expect(us.headers.get('location')).toBe(
+      'https://surveys.osganalytics.com/survey/selfserve/556/260906?list=12&HC=1&HP=4&OID=bxtest-us-live',
+    );
+    const uk = await hit('/go/2362/UK?respondent_id=bxtest-uk-live');
+    expect(uk.headers.get('location')).toContain('decLang=uk');
+    expect(uk.headers.get('location')).toContain('HP=4');
+    expect(uk.headers.get('location')).toContain('OID=bxtest-uk-live');
+  });
+
+  it('still forwards when the start log fails', async () => {
+    process.env.REDIRECT_LOG_DRIVER = 'fail';
+    const us = await hit('/go/2362/us?rid=bxtest-us-unlogged');
+    expect(us.status).toBe(302);
+    expect(us.headers.get('x-redirect-logged')).toBe('0');
+    expect(us.headers.get('location')).toContain('OID=bxtest-us-unlogged');
   });
 });
