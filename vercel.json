@@ -17,6 +17,23 @@
       ]
     },
     {
+      "source": "/r/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
+    },
+    {
       "source": "/home-staging",
       "headers": [
         {
@@ -579,7 +596,7 @@
       "statusCode": 301
     },
     {
-      "source": "/:splat((?!api/).*)",
+      "source": "/:splat((?!api/|r/).*)",
       "has": [
         {
           "type": "query",
@@ -590,7 +607,7 @@
       "statusCode": 301
     },
     {
-      "source": "/:splat((?!api/).*)",
+      "source": "/:splat((?!api/|r/).*)",
       "has": [
         {
           "type": "query",
@@ -1360,7 +1377,39 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/"
     },
     {
-      "source": "/:splat((?!api/).*)",
+      "source": "/r/complete",
+      "destination": "/api/r/complete"
+    },
+    {
+      "source": "/r/complete/",
+      "destination": "/api/r/complete"
+    },
+    {
+      "source": "/r/terminate",
+      "destination": "/api/r/terminate"
+    },
+    {
+      "source": "/r/terminate/",
+      "destination": "/api/r/terminate"
+    },
+    {
+      "source": "/r/overquota",
+      "destination": "/api/r/overquota"
+    },
+    {
+      "source": "/r/overquota/",
+      "destination": "/api/r/overquota"
+    },
+    {
+      "source": "/r/quality",
+      "destination": "/api/r/quality"
+    },
+    {
+      "source": "/r/quality/",
+      "destination": "/api/r/quality"
+    },
+    {
+      "source": "/:splat((?!api/|r/).*)",
       "destination": "/api/indexnow-key?__ssr=1&url=/:splat"
     }
   ]

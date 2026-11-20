@@ -23,6 +23,7 @@ import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-
 import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from './lib/robots-meta.mjs';
 import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from './lib/html-meta-escape.mjs';
+import { handleRedirectEnd, handleRedirectExport, REDIRECT_OUTCOMES } from './lib/redirect-log.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -1048,6 +1049,17 @@ async function startServer() {
         'X-Robots-Tag': 'noindex, nofollow',
       })
       .send(svg);
+  });
+
+  for (const outcome of REDIRECT_OUTCOMES) {
+    const end = (req, res, next) => {
+      Promise.resolve(handleRedirectEnd(req, res, outcome)).catch(next);
+    };
+    app.get(`/r/${outcome}`, end);
+    app.get(`/r/${outcome}/`, end);
+  }
+  app.get(['/api/r/export', '/api/r/export/'], (req, res, next) => {
+    Promise.resolve(handleRedirectExport(req, res)).catch(next);
   });
 
   app.use(async (req, res, next) => {

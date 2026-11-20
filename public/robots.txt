@@ -87,6 +87,7 @@ Allow: /
 # ----------------------------------------------------------------------
 User-agent: *
 Disallow: /api/
+Disallow: /r/
 
 # ----------------------------------------------------------------------
 # LLMs.txt — structured AI context files (not robots.txt directives).

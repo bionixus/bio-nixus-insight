@@ -2160,6 +2160,11 @@ async function main() {
     if (isSitemapRedirectSourcePath(path)) {
       excluded.push({ url: loc, reason: 'redirect-source' });
       finalUrls.delete(loc);
+      continue;
+    }
+    if (path === '/r' || path.startsWith('/r/')) {
+      excluded.push({ url: loc, reason: 'panel-redirect-end' });
+      finalUrls.delete(loc);
     }
   }
 
