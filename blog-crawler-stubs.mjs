@@ -20,6 +20,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'nmpa-class-iii-registration-timeline-2026',
   'china-device-vbp-rounds-explained',
   'who-does-obesity-market-research-saudi-arabia',
+  'biosimilar-market-entry-research-saudi-arabia',
   'feasibility-study-company-saudi-arabia',
   'glp-1-physician-survey-saudi-arabia',
   'customer-satisfaction-surveys-uae-csat-nps-ces',
@@ -160,6 +161,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Who Does Obesity Market Research in Saudi Arabia? (2026)',
     description:
       'Who does obesity market research in Saudi Arabia? A sourced 2026 shortlist of 8 providers for obesity GLP-1 market research Saudi Arabia teams can act on.',
+  },
+  'biosimilar-market-entry-research-saudi-arabia': {
+    title: 'Biosimilar Market Entry Research Saudi Arabia',
+    description:
+      'Biosimilar market entry research Saudi Arabia: SFDA 2026 rules, price caps, NUPCO tenders and what to study before a launch.',
   },
   'feasibility-study-company-saudi-arabia': {
     title: 'Feasibility Study Company Saudi Arabia (2026 Guide)',
