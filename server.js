@@ -23,7 +23,7 @@ import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-
 import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from './lib/robots-meta.mjs';
 import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from './lib/html-meta-escape.mjs';
-import { handleRedirectEnd, handleRedirectExport, REDIRECT_OUTCOMES } from './lib/redirect-log.mjs';
+import { handleRedirectEnd, handleRedirectExport, handleRedirectStart, REDIRECT_OUTCOMES } from './lib/redirect-log.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -1061,6 +1061,11 @@ async function startServer() {
   app.get(['/api/r/export', '/api/r/export/'], (req, res, next) => {
     Promise.resolve(handleRedirectExport(req, res)).catch(next);
   });
+  const start = (req, res, next) => {
+    Promise.resolve(handleRedirectStart(req, res, req.params.pid, req.params.country)).catch(next);
+  };
+  app.get('/go/:pid/:country', start);
+  app.get('/go/:pid/:country/', start);
 
   app.use(async (req, res, next) => {
     try {

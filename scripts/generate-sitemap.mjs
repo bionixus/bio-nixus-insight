@@ -2162,7 +2162,7 @@ async function main() {
       finalUrls.delete(loc);
       continue;
     }
-    if (path === '/r' || path.startsWith('/r/')) {
+    if (path === '/r' || path.startsWith('/r/') || path === '/go' || path.startsWith('/go/')) {
       excluded.push({ url: loc, reason: 'panel-redirect-end' });
       finalUrls.delete(loc);
     }
