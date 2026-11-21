@@ -47,6 +47,10 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
     question: 'How does BioNixus support German medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports German and European medical device manufacturers in entering and growing in GCC and MENA markets. Our services include: regulatory pathway mapping for SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and all GCC competent authorities; hospital procurement intelligence at Saudi Arabia\'s MOH, NGHA, and private hospital networks; distributor network mapping and evaluation across all six GCC countries plus Egypt; primary research with biomedical engineers and clinical specialists; and comparative Germany vs. GCC commercial strategy analysis. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
+  {
+    question: 'How do German hospital GPOs and university clinics influence medtech adoption in 2026?',
+    answer: 'Universitätsklinikums and large private chains (Helios, Asklepios, Sana, Rhön-Klinikum) run category committees that gate robot-assisted surgery, advanced imaging, and high-cost implants. NUB surcharges remain the main bridge for innovative technologies before full DRG integration. Manufacturers should pair InEK pathway intelligence with KOL and biomedical-engineering interviews at target centres — syndicated procedure counts rarely expose which sites are actively piloting versus deferring capital spend.',
+  },
 ], 'germany');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/germany-medical-devices-market-report');
@@ -62,7 +66,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-19',
     mainEntityOfPage: 'https://www.bionixus.com/germany-medical-devices-market-report',
   },
   {
@@ -77,7 +81,7 @@ const jsonLd = [
     countryName: "Germany",
     marketSlug: "germany",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-19",
   })
 ];
 
