@@ -36,7 +36,7 @@ Inventory: `docs/seo/bio-450-thin-page-inventory.csv`, JSON: `scripts/data/bio-4
 
 ## Changes shipped this run
 
-1. **`/ar/pharmaceutical-companies-egypt` & `/ar/pharmaceutical-companies-kuwait`** — deep Arabic market sections, expanded company rows (Egypt), extra FAQs, `dateModified` 2026-11-21, CTR meta refresh (Egypt).
+1. **`/ar/pharmaceutical-companies-egypt` & `/ar/pharmaceutical-companies-kuwait`** — deep Arabic market sections, expanded company rows (Egypt), extra FAQs, `dateModified` 2026-11-21, CTR meta refresh (Egypt). Local SSR post-build: Egypt ~1,996 words, Kuwait ~1,853 (up from 690 / 629 on production).
 2. **`/turkey-healthcare-market-report` & `/brazil-healthcare-market-report`** — executive summary + FAQ depth to cross 2,000-word threshold; schema `dateModified` updated.
 3. **`/iqvia-alternative`** — title/meta iteration for “companies like IQVIA” / “IQVIA competitors” (title-freeze updated 2026-11-21).
 4. **Sitemap** — `lastmod` on touched URLs.
