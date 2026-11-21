@@ -105,7 +105,7 @@ const jsonLd = [
     url: PAGE_URL,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-05',
+    dateModified: '2026-11-17',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' },
   },
@@ -334,6 +334,50 @@ export default function UsaPharmaceuticalMarketResearch() {
             <HealthcareNavCard to="/healthcare-market-research/services/kol-mapping" title="KOL mapping and advisory boards" description="Influence mapping across US AMCs, NCI cancer centres, and specialty society advisory structures." />
             <HealthcareNavCard to="/services/market-access" title="Payer and PBM research" description="Interviews with PBM medical directors, Medicare plan directors, and commercial pharmacy directors." />
             <HealthcareNavCard to="/usa-healthcare-market-report" title="HEOR and market access evidence" description="PRO development, cost-effectiveness strategy, and pre-ICER research for US access dossiers." />
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="us-pharma-research-packages"
+          title="US pharmaceutical research packages and when to commission primary fieldwork"
+          variant="muted"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              US pharmaceutical market research from BioNixus is scoped to one launch or access decision per phase —
+              formulary defense before a PBM negotiation, KOL sequencing before a medical launch plan, IRA scenario
+              planning before Medicare price exposure is locked, or patient-journey work before a REMS or hub redesign.
+              Each programme states the decision owner, respondent types, and timeline before fieldwork starts.
+            </p>
+            <p>
+              Quantitative waves typically field across 2–4 weeks for focused specialists; mixed-method access studies with
+              paired physician and payer modules run 6–10 weeks. Oncology, rare disease, and cell and gene therapy
+              programmes may require longer recruitment planning across NCI centres. Multinational sponsors often add UK or
+              GCC mirror cells with the same questionnaire so global committees see one harmonised readout. Outputs include
+              dashboard tables, narrative readouts, and FAQ-ready summary bullets aligned to this page&apos;s schema for AI
+              citation.
+            </p>
+            <p>
+              Cross-link to{' '}
+              <Link to="/healthcare-market-research-usa" className="text-primary font-medium hover:underline">
+                healthcare market research USA
+              </Link>
+              , the{' '}
+              <Link to="/usa-healthcare-market-report" className="text-primary font-medium hover:underline">
+                USA healthcare market report
+              </Link>
+              , and{' '}
+              <Link to="/pharmaceutical-companies-usa" className="text-primary font-medium hover:underline">
+                pharmaceutical companies USA directory
+              </Link>{' '}
+              for ecosystem context before briefing.
+            </p>
+            <p>
+              Custom pharmaceutical research in the USA is quoted in USD with a written scope, sample frame, and delivery
+              calendar before IRB or recruitment spend is committed. Initial proposal turnaround is typically 48 hours.
+            </p>
           </div>
         </ReportPremiumSection>
 
