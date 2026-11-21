@@ -47,6 +47,14 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneMedDeviceFaqs([
     question: 'How does BioNixus support Indian medtech companies entering the GCC and MENA market?',
     answer: 'BioNixus supports Indian medical device manufacturers in entering GCC and MENA markets. India\'s growing medtech manufacturing base — particularly in diagnostics, consumables, and commodity medical supplies — has strong natural markets in GCC countries where Indian-manufactured products have established procurement histories. BioNixus provides SFDA (Saudi Arabia), MOHAP/DHA/DOH (UAE), HMC (Qatar), and GCC-wide regulatory pathway intelligence; NUPCO and hospital procurement data; distributor network mapping; and primary research with biomedical engineers and procurement managers. BioNixus operates from London with in-country research teams across the GCC and Egypt.',
   },
+  {
+    question: 'How does Ayushman Bharat PM-JAY influence device utilisation in tier-2 hospitals?',
+    answer: 'Ayushman Bharat PM-JAY expands insurance coverage for secondary and tertiary procedures at empanelled hospitals, increasing demand for consumables, imaging slots, and surgical implants outside metro private centres. Empanelled public hospitals must document package rates that bundle device costs, so manufacturers need utilisation data at district hospitals—not only corporate chains. BioNixus samples procurement officers and clinical heads at PM-JAY empanelled facilities to size realistic uptake.',
+  },
+  {
+    question: 'Which CDSCO device classes face the longest import licence reviews in 2026?',
+    answer: 'Class C and D devices requiring full technical dossier review and clinical data typically face six to twelve month CDSCO timelines, while Class A and B registrations on Sugam complete faster when predicate devices exist. PLI beneficiaries manufacturing domestically may parallel-track SLA manufacturing licences with import licences for SKUs still sourced abroad. Regulatory research should map state licensing authority workload because Maharashtra, Gujarat, and Telangana process the majority of manufacturing applications.',
+  },
 ], 'india');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/india-medical-devices-market-report');
@@ -62,7 +70,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-18',
     mainEntityOfPage: 'https://www.bionixus.com/india-medical-devices-market-report',
   },
   {
@@ -116,11 +124,26 @@ const IndiaMedicalDevicesMarketReport = () => (
               <div><p className="text-3xl font-display font-bold text-primary">8.0%</p><p className="text-xs text-muted-foreground mt-1">CAGR 2026–2030</p></div>
             </div>
           </div>
-          <p className="text-muted-foreground leading-relaxed mb-4">India is among the world's fastest-growing medical device markets — fourth-largest in Asia and growing at 8% CAGR. The PLI scheme and Medical Device Parks are driving a domestic manufacturing transformation that is creating Indian-branded device companies with growing international ambitions, including in GCC markets.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">India is among the world's fastest-growing medical device markets — fourth-largest in Asia and growing at 8% CAGR. The PLI scheme and Medical Device Parks are driving a domestic manufacturing transformation that is creating Indian-branded device companies with growing international ambitions, including in GCC markets. CDSCO class rules and NPPA price caps should be modelled together before scaling hospital fieldwork.</p>
           <p className="text-muted-foreground leading-relaxed">See also: <Link to="/india-healthcare-market-report" className="text-primary hover:underline font-medium">India Healthcare Market Report</Link> and <Link to="/gcc-medical-devices-market-report" className="text-primary hover:underline font-medium">GCC Medical Devices Market Report</Link>.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="india" countryName="India" variant="medical-devices" />
+
+      <section className="section-padding bg-cream-dark" id="india-procurement-playbook">
+        <div className="container-wide max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Public hospital procurement and PLI manufacturing playbook</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Central Government Health Scheme and state tender desks increasingly bundle device costs into procedure packages under Ayushman Bharat, so manufacturers need district-hospital procurement data—not only metro corporate chain volumes. PLI beneficiaries must still prove CDSCO import or manufacturing licences before tenders accept domestic SKUs.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            BioNixus maps NPPA price-cap exposure, hospital substitution behaviour, and distributor margin structures so export teams entering GCC markets understand which Indian SKUs have sustainable economics after reference pricing and freight costs.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Fieldwork typically contrasts corporate hospital chains in Mumbai, Delhi, and Bengaluru with PM-JAY empanelled district hospitals so utilisation models reflect where patients access surgery—not where recruiters are easiest to reach. State licensing authority backlog in Gujarat or Telangana can delay PLI lines independently of CDSCO import clearance timelines.
+          </p>
+        </div>
+      </section>
 
         <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
