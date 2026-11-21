@@ -58,6 +58,11 @@ const faqItems = [
     answer:
       'Yes. US modules can run with comparable cells in the UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'What is the best alternative to IQVIA for US primary healthcare research?',
+    answer:
+      'IQVIA excels at US syndicated prescription and claims data. When the question is why an account lost share, how a PBM medical director sets prior auth, or which KOL narrative moves adoption, buyers brief a primary-research partner such as BioNixus. BioNixus runs IRB-compliant HCP, payer, and patient fieldwork while your IQVIA or NielsenIQ contracts stay in place for sizing. See the IQVIA alternative guide and the USA healthcare market research companies shortlist on this site for budget split guidance.',
+  },
 ];
 
 const jsonLd = [
@@ -83,7 +88,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-11-15',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -178,6 +183,7 @@ export default function HealthcareMarketResearchUsa() {
           { href: '#methodology', label: 'Methodology' },
           { href: '#access', label: 'FDA · CMS · IRA' },
           { href: '#syndicated-vs-primary', label: 'Syndicated vs primary' },
+          { href: '#us-deliverables', label: 'Deliverables' },
           { href: `#${faqSectionId}`, label: 'FAQ' },
         ]}
         faq={{
@@ -368,6 +374,44 @@ export default function HealthcareMarketResearchUsa() {
               Typical US primary programmes run 3–4 weeks for focused HCP waves and 6–10 weeks for mixed-method access
               work including PBM interviews. Custom research from $10,000 to $60,000. Proposal turnaround is typically 48 hours once objectives,
               audience, and geography are defined.
+            </p>
+          </div>
+        </ReportPremiumSection>
+
+        <ReportPremiumSection
+          id="us-deliverables"
+          title="Typical US healthcare market research deliverables"
+          countryName="United States"
+          marketSlug="usa"
+        >
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              US brand, access, and insights teams usually brief BioNixus when a committee needs decision-grade evidence
+              inside two to ten weeks — not another syndicated export. Deliverables are scoped to a named commercial or
+              access decision: formulary defence before a PBM rebate negotiation, KOL tiering ahead of a medical launch,
+              patient journey mapping before an FDA label expansion, or account-level competitive intelligence when
+              national share trends mask a regional loss.
+            </p>
+            <p>
+              Quantitative modules include screened HCP surveys with verifiable specialty and practice setting, conjoint or
+              message testing, treatment algorithm mapping, and patient-reported outcome instruments under IRB. Qualitative
+              modules include in-depth interviews with community and AMC physicians, paired physician–payer discussions,
+              pharmacy director interviews, and virtual advisory boards with documented moderation guides. Outputs are
+              de-identified slide narratives, executive summaries with explicit implications, and optional workshop
+              facilitation for launch or access committees.
+            </p>
+            <p>
+              Geography can be national, regional (for example Southeast IDNs vs West Coast AMCs), or account-specific when
+              sample frames are disclosed under NDA. Programs commonly pair with{' '}
+              <Link to="/usa-medical-devices-market-report" className="text-primary font-medium hover:underline">
+                USA medical device market context
+              </Link>{' '}
+              or{' '}
+              <Link to="/pharmaceutical-market-research-usa" className="text-primary font-medium hover:underline">
+                pharmaceutical market research USA
+              </Link>{' '}
+              modules when the same leadership team manages drug and device portfolios. Minimum engagement typically starts
+              around USD 20,000; proposal turnaround is 48 hours once therapy area, audience, and timeline are defined.
             </p>
           </div>
         </ReportPremiumSection>

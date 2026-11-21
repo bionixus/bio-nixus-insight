@@ -47,6 +47,11 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus serve Turkey-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Turkish pharmaceutical and medical device companies in expanding into GCC and MENA markets. Turkey\'s pharma industry (including major exporters such as Abdi İbrahim, Eczacıbaşı, Zentiva Turkey) has natural market connections to MENA. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; physician panel surveys; and comparative Turkey vs. GCC market intelligence. Turkey\'s medical device and pharmaceutical manufacturers — particularly generic and biosimilar producers — have significant commercial opportunities in GCC markets where BioNixus provides the access intelligence needed.',
   },
+  {
+    question: 'What is Turkey\'s medical devices market size and how does TİTCK regulate devices in 2026?',
+    answer:
+      'Turkey\'s medical devices market is estimated at roughly USD 3.2–3.8 billion in 2026, growing with private hospital investment in Istanbul, Ankara, and Izmir and with SGK-funded device use in public hospitals. TİTCK registers devices under EU MDR-aligned rules with Turkish language labelling and local representative requirements. Distribution runs through hospital tenders, group purchasing organisations, and dealer networks serving private chains such as Acıbadem and Memorial. For device-specific methodology and competitive panels, see BioNixus\'s Turkey medical devices market report and MedTech research programmes linked from this page.',
+  },
 ], 'turkey');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/turkey-healthcare-market-report');
@@ -62,7 +67,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-15',
     mainEntityOfPage: 'https://www.bionixus.com/turkey-healthcare-market-report',
   },
   {
@@ -77,7 +82,7 @@ const jsonLd = [
     countryName: "Turkey",
     marketSlug: "turkey",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-15",
   })
 ];
 

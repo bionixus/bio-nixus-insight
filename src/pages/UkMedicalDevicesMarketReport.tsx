@@ -62,7 +62,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-15',
     mainEntityOfPage: 'https://www.bionixus.com/uk-medical-devices-market-report',
   },
   {
@@ -77,7 +77,7 @@ const jsonLd = [
     countryName: "United Kingdom",
     marketSlug: "uk",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-05-27",
+    modifiedDate: "2026-11-15",
   })
 ];
 
@@ -141,6 +141,45 @@ const UkMedicalDevicesMarketReport = () => (
           </div>
         </div>
       </section>
+
+        <section className="section-padding bg-muted/20" id="nhs-primary-research">
+          <div className="container-wide max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+              NHS procurement intelligence and UK MedTech primary research
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                UK device commercialisation splits across NHS England framework agreements, devolved NHS Scotland and NHS
+                Wales routes, and independent hospital groups that do not follow national frameworks. A product can hold UKCA
+                and MHRA clearance yet stall because it missed an NHS Supply Chain lot, failed a technology appraisal
+                narrative at an ICB, or lacked a clinical champion at a private radiology chain.
+              </p>
+              <p>
+                BioNixus runs primary MedTech research with NHS procurement category leads, clinical directors, and private
+                hospital innovation committees — mapping when frameworks reopen, how value analysis committees weight
+                clinical vs cost evidence, and which competitors are named in live evaluations. Qualitative modules cover
+                ILAP and IDAP positioning, post-market surveillance expectations under UK MDR transposition, and Northern
+                Ireland dual-marking nuances under the Windsor Framework.
+              </p>
+              <p>
+                Quantitative waves can segment by trust type (acute, community, specialist cancer centres) or by therapy
+                (orthopaedics, imaging, IVD, diabetes tech). Outputs support UK launch sequencing, distributor vs direct
+                models, and Middle East expansion when UK-based OEMs benchmark NHS uptake against GCC hospital tenders.
+                Pair this report with{' '}
+                <Link to="/healthcare-market-research-uk" className="text-primary font-medium hover:underline">
+                  UK healthcare market research
+                </Link>{' '}
+                and the{' '}
+                <Link to="/uk-healthcare-market-report" className="text-primary font-medium hover:underline">
+                  UK healthcare market report
+                </Link>{' '}
+                for integrated drug-and-device portfolios.
+              </p>
+            </div>
+            <ReportMidPageCta config={REPORT_CONVERSION} className="mt-8" />
+          </div>
+        </section>
+
               <section className="section-padding" id="related-intelligence">
           <div className="container-wide max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">Related BioNixus market intelligence</h2>
