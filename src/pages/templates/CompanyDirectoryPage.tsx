@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { IndustryDirectoryBridge } from '@/components/seo/IndustryDirectoryBridge';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
+import { DirectoryListDownload } from '@/components/conversion/DirectoryListDownload';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import { buildDirectoryItemListLd, buildPharmaCompaniesFaqLd } from '@/components/seo/pharmaCompaniesSeo';
 import { CountryDirectoryLinks } from '@/components/seo/CountryDirectoryLinks';
@@ -80,6 +81,7 @@ export default function CompanyDirectoryPage({ path }: Props) {
 
   const jumpItems = [
     { href: '#top-companies', label: 'Companies' },
+    { href: '#download-list', label: 'Download' },
     { href: '#channels', label: 'Channels' },
     ...(hasSections ? [{ href: '#market-structure', label: 'Market' }] : []),
     { href: '#growth-drivers', label: 'Drivers' },
@@ -192,6 +194,16 @@ export default function CompanyDirectoryPage({ path }: Props) {
           }
         >
           <DirectoryCompanyTable companies={config.companies} focusColumn={entityMeta.focusColumn} />
+          <DirectoryListDownload
+            path={config.path}
+            labelLower={entityMeta.labelLower}
+            countryDisplay={country.display}
+            market={formMarket}
+            headers={['Company', 'HQ', 'Type', entityMeta.focusColumn, 'Notes']}
+            rows={config.companies.map((c) => [c.name, c.hq, c.type, c.focus, c.notes])}
+            asOf={formatDirectoryDate(config.modifiedDate)}
+            defaultNeed={entityMeta.formNeed}
+          />
           <IndustryDirectoryBridge
             countryName={formMarket}
             countryDisplay={country.display}
