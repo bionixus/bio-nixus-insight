@@ -119,12 +119,32 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
 
         <DirectoryJumpNav
           items={[
+            { href: '#market-context', label: 'السوق' },
             { href: '#companies', label: 'الشركات' },
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
           ]}
         />
+
+        {config.deepSections?.length ? (
+          <section className="section-padding py-16" id="market-context">
+            <div className="container-wide max-w-5xl mx-auto space-y-12">
+              {config.deepSections.map((section) => (
+                <article key={section.heading}>
+                  <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+                    {section.heading}
+                  </h2>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    {section.paragraphs.map((para) => (
+                      <p key={para.slice(0, 48)}>{para}</p>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <section className="section-padding py-16 bg-muted/30" id="companies">
           <div className="container-wide max-w-5xl mx-auto">
@@ -205,6 +225,11 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
                 يجمع هذا الدليل وقائع معلنة من مواقع الشركات والهيئات ومن عمل بيونيكسس الميداني. ليس ترتيب حصة ولا بديلاً
                 عن تدقيق IQVIA أو اشتراك نيلسن. بيونيكسس تبيع بحثاً أولياً على مستوى الحساب والعبوة يُكمّل تلك الاشتراكات.
               </p>
+              {config.methodologyNotes?.map((note) => (
+                <p key={note.slice(0, 40)} className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  {note}
+                </p>
+              ))}
               <p className="text-sm text-muted-foreground leading-relaxed">
                 للنسخة الإنجليزية:{' '}
                 <Link to={config.enPath} className="text-primary hover:underline">

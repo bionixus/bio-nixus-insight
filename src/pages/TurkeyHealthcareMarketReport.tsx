@@ -47,6 +47,10 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus serve Turkey-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Turkish pharmaceutical and medical device companies in expanding into GCC and MENA markets. Turkey\'s pharma industry (including major exporters such as Abdi İbrahim, Eczacıbaşı, Zentiva Turkey) has natural market connections to MENA. BioNixus provides SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender intelligence; physician panel surveys; and comparative Turkey vs. GCC market intelligence. Turkey\'s medical device and pharmaceutical manufacturers — particularly generic and biosimilar producers — have significant commercial opportunities in GCC markets where BioNixus provides the access intelligence needed.',
   },
+  {
+    question: 'What role does Turkey’s hospital and medical tourism sector play in pharmaceutical demand in 2026?',
+    answer: 'Turkey operates more than 1,500 hospitals, including a large private tier accredited to international standards, and remains a top global medical tourism destination with over one million visitors seeking treatment annually. Medical tourists — particularly from Libya, Iraq, Azerbaijan, and Gulf states — create episodic demand spikes for oncology, orthopaedics, fertility, and aesthetic franchises that do not appear in national prescription audits alone. Istanbul, Ankara, and Izmir concentrate tertiary capacity; SGK contracts and private hospital cash-pay mixes differ sharply by city. Teams sizing Turkey from a single national average underestimate private-hospital uptake of biologics and underestimate how reference pricing and lira volatility change net price between quarters. BioNixus cross-checks audit trends with hospital-mix and tourism-channel analogues when sponsors need launch or access decisions grounded in where patients actually receive therapy.',
+  },
 ], 'turkey');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/turkey-healthcare-market-report');
@@ -62,7 +66,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-05-27',
+    dateModified: '2026-11-21',
     mainEntityOfPage: 'https://www.bionixus.com/turkey-healthcare-market-report',
   },
   {
@@ -117,6 +121,7 @@ const TurkeyHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Turkey is the largest healthcare market between Europe and the GCC — a 87-million-population market with near-universal SGK coverage, EMA-aligned regulation, and the world's fourth-largest medical tourism sector. Its position at the Europe-MENA crossroads creates natural strategic relevance for pharmaceutical companies managing multi-regional portfolios.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">SGK’s reference-pricing linkage to EU5 baskets and periodic lira adjustments mean commercial teams must refresh net-price assumptions frequently, not only at launch. TİTCK accepts EMA dossiers for many categories, but SUT listing criteria and step-therapy rules still gate hospital uptake — desk models that stop at registration miss the reimbursement clock.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>

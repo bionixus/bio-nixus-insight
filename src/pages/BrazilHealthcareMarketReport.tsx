@@ -48,6 +48,10 @@ const REPORT_FAQ_ITEMS = finalizeStandaloneHealthcareFaqs([
     question: 'How does BioNixus support Brazil-based pharmaceutical companies expanding to MENA?',
     answer: 'BioNixus supports Brazilian and Latin American pharmaceutical and medical device companies in entering GCC and MENA markets. From our London office, we provide SFDA (Saudi Arabia), MOHAP (UAE), and GCC-wide regulatory pathway intelligence; NUPCO tender and hospital formulary data; physician panel surveys across all major therapeutic areas; and comparative Brazil vs. GCC market intelligence. Brazil and the GCC share several commercial parallels — large generic medicine markets, centralized public procurement, and premium private hospital sectors — that make BioNixus\'s cross-regional intelligence particularly relevant for Brazilian pharma companies planning MENA expansion.',
   },
+  {
+    question: 'How do CMED price caps and ANS Rol updates interact for innovative medicines in 2026?',
+    answer: 'CMED sets factory and consumer ceiling prices that constrain list-price ambition even in the private channel, while ANS Rol expansions periodically unlock coverage for oncology biologics, gene therapies, and high-cost procedures in supplementary plans. A product can be ANVISA-approved and Rol-eligible yet commercially constrained if CMED revisions lag competitor entries or if SUS incorporation through CONITEC remains unfavourable. Sponsors therefore model three channels in parallel: SUS volume at regulated prices, ANS premium hospitals at nearer-international net prices, and out-of-pocket retail. BioNixus uses hospital-mix and payer interviews to validate which channel actually drives uptake for a given therapy class rather than assuming private insurance always leads.',
+  },
 ], 'brazil');
 
 const REPORT_CONVERSION = getStandaloneReportConfig('/brazil-healthcare-market-report');
@@ -78,7 +82,7 @@ const jsonLd = [
     countryName: "Brazil",
     marketSlug: "brazil",
     publishedDate: "2026-05-27",
-    modifiedDate: "2026-08-22",
+    modifiedDate: "2026-11-21",
   })
 ];
 
@@ -117,6 +121,7 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">State-level SUS procurement and municipal health secretariats introduce geographic variance that national models smooth away — launches in São Paulo private networks behave differently from north-east public oncology queues. ANVISA priority pathways can compress registration timelines for unmet need, but CONITEC and PCDT still govern whether SUS budgets absorb the therapy.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>
