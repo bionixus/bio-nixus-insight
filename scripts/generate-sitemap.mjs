@@ -619,6 +619,7 @@ const staticPages = [
   { path: '/bionixus-industries/insights', priority: '0.9', changefreq: 'daily', lastmod: '2026-10-17' },
   { path: '/bionixus-industries/insights/customer-satisfaction-surveys-uae-csat-nps-ces', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/bionixus-industries/insights/market-entry-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
+  { path: '/bionixus-industries/insights/mystery-shopping-companies-saudi-arabia-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15' },
   { path: '/bionixus-industries/insights/consumer-survey-company-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/b2b-market-research-uae', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-15' },
   { path: '/bionixus-industries/insights/australia-gcc-market-entry-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
@@ -1521,6 +1522,7 @@ const STATIC_PAGE_FILES = {
     'src/data/blog-brand-tracking-research-agency-dubai.ts',
   ],
   '/bionixus-industries/insights/market-entry-research-saudi-arabia': ['src/data/blog-market-entry-research-saudi-arabia.ts'],
+  '/bionixus-industries/insights/mystery-shopping-companies-saudi-arabia-2026': ['src/data/blog-mystery-shopping-saudi-arabia.ts'],
   '/bionixus-industries/insights/consumer-survey-company-saudi-arabia': [
     'src/data/blog-consumer-survey-company-saudi-arabia.ts',
   ],

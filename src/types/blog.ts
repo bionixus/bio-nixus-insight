@@ -93,6 +93,7 @@ export interface BlogPost {
   seoMetaDescription?: string;
   seoCanonicalUrl?: string;
   seoNoIndex?: boolean;
+  seoKeywords?: string[];
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
@@ -101,6 +102,7 @@ export interface BlogPost {
   ogImageWidth?: number;
   ogImageHeight?: number;
   authorName?: string;
+  authorSlug?: string;
   authorTitle?: string;
   authorImage?: string;
   authorLinkedIn?: string;

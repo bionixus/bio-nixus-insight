@@ -61,6 +61,7 @@ import {
   getBlogArticleIndexLabel,
   getBlogArticleIndexPath,
   getBlogPostUiStrings,
+  getBlogPostUiStringsForSilo,
   isRtlBlogLocale,
   resolveBlogArticleLocale,
   BLOG_DATE_LOCALE,
@@ -1025,7 +1026,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
   }
 
   const pathClean = (pathname.split('?')[0] || '/blog').replace(/\/+$/, '') || '/blog';
-  const blogUi = getBlogPostUiStrings(articleLocale);
+  const blogUi = getBlogPostUiStringsForSilo(articleLocale, resolvedSilo);
   const localizedArticleIndexPath =
     articleLocale === 'en' ? articleIndexPath : getBlogArticleIndexPath(articleLocale, resolvedSilo);
   const localizedArticleIndexLabel =
@@ -1957,6 +1958,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                   {getRelatedResearchLinksForLocale(articleLocale, {
                     isGccComparisonEn,
                     isQuantMrMaEn,
+                    isIndustriesSilo: resolvedSilo === 'industries',
                   }).map(({ to, label }) => (
                     <Link
                       key={to}

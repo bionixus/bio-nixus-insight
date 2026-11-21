@@ -227,10 +227,21 @@ export function getLocaleContactPath(locale: BlogArticleLocale): string {
 
 export type RelatedResearchLink = { to: string; label: string };
 
+/** Industries-silo hubs; healthcare links stay off these pages (industry-silo-linking rule). */
+const INDUSTRIES_RELATED_RESEARCH_LINKS: RelatedResearchLink[] = [
+  { to: '/bionixus-industries/insights', label: 'B2B and B2C industry insights' },
+  { to: '/bionixus-industries', label: 'BioNixus industries hub' },
+  { to: '/b2c-industries', label: 'B2C industries market research' },
+  { to: '/b2b-industries', label: 'B2B industries market research' },
+  { to: '/market-research-by-industry', label: 'Market research by industry' },
+  { to: '/contact', label: 'Contact BioNixus' },
+];
+
 export function getRelatedResearchLinksForLocale(
   locale: BlogArticleLocale,
-  ctx: { isGccComparisonEn?: boolean; isQuantMrMaEn?: boolean },
+  ctx: { isGccComparisonEn?: boolean; isQuantMrMaEn?: boolean; isIndustriesSilo?: boolean },
 ): RelatedResearchLink[] {
+  if (ctx.isIndustriesSilo && locale === 'en') return INDUSTRIES_RELATED_RESEARCH_LINKS;
   if (locale === 'de') {
     return [
       { to: '/de/healthcare-market-research/germany', label: 'Gesundheitsmarktforschung Deutschland' },

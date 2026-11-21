@@ -910,6 +910,16 @@ export const CTR_SEO_BY_PATH = {
     description:
       'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.',
   },
+  '/blog/mystery-shopping-companies-saudi-arabia-2026': {
+    title: 'Mystery Shopping in Saudi Arabia (2026)',
+    description:
+      'How to design mystery shopping in Saudi Arabia: PDPL rules, visit counts, scorecards and questions to settle before fieldwork.',
+  },
+  '/bionixus-industries/insights/mystery-shopping-companies-saudi-arabia-2026': {
+    title: 'Mystery Shopping in Saudi Arabia (2026)',
+    description:
+      'How to design mystery shopping in Saudi Arabia: PDPL rules, visit counts, scorecards and questions to settle before fieldwork.',
+  },
   '/blog/consumer-survey-company-saudi-arabia': {
     title: 'Consumer Survey Company Saudi Arabia: 2026 Methods',
     description:

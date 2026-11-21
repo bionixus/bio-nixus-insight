@@ -24,6 +24,8 @@ type TalkToResearchCtaProps = {
   ctaLocation: string;
   className?: string;
   headline?: string;
+  /** Replaces the default pharma-oriented line under the headline. */
+  description?: string;
   buttonLabel?: string;
 };
 
@@ -65,7 +67,8 @@ export function ConversionCTA(props: ConversionCtaProps) {
             {props.headline || `Planning research in ${market}?`}
           </h3>
           <p className="text-sm text-muted-foreground mb-5 max-w-xl mx-auto">
-            Primary research, market access &amp; HEOR. A 30-minute scoping call, then a costed proposal within 48 hours.
+            {props.description ??
+              'Primary research, market access & HEOR. A 30-minute scoping call, then a costed proposal within 48 hours.'}
           </p>
           <button
             type="button"

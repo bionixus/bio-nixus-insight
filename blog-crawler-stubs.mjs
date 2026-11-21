@@ -25,6 +25,7 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'customer-satisfaction-surveys-uae-csat-nps-ces',
   'brand-tracking-research-agency-dubai',
   'market-entry-research-saudi-arabia',
+  'mystery-shopping-companies-saudi-arabia-2026',
   'consumer-survey-company-saudi-arabia',
   'b2b-market-research-uae',
   'australia-gcc-market-entry-research',
@@ -185,6 +186,11 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
     title: 'Market Entry Research Saudi Arabia (2026 Playbook)',
     description:
       'Market entry research Saudi Arabia playbook for US, UK and European firms: demand, MISA registration, cities, channels and price before you commit capital.',
+  },
+  'mystery-shopping-companies-saudi-arabia-2026': {
+    title: 'Mystery Shopping in Saudi Arabia (2026)',
+    description:
+      'How to design mystery shopping in Saudi Arabia: PDPL rules, visit counts, scorecards and questions to settle before fieldwork.',
   },
   'consumer-survey-company-saudi-arabia': {
     title: 'Consumer Survey Company Saudi Arabia: 2026 Methods',

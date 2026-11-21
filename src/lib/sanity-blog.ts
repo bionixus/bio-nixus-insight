@@ -238,7 +238,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "ogImageWidth": openGraph.ogImage.asset->metadata.dimensions.width,
   "ogImageHeight": openGraph.ogImage.asset->metadata.dimensions.height,
   "authorName": author->name,
-  "authorTitle": author->title,
+  "authorSlug": author->slug.current,
+  "authorTitle": coalesce(authorJobTitle, author->title),
   "authorImage": author->image.asset->url,
   "authorLinkedIn": author->linkedIn,
   "authorBio": author->bio,
@@ -356,6 +357,9 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
           : raw.seo.metaDescription;
         out.seoCanonicalUrl = raw.seo.canonicalUrl;
         out.seoNoIndex = resolveBlogSeoNoIndex(p.slug ?? p._id, raw.seo.noIndex);
+        if (Array.isArray(raw.seo.keywords)) {
+          out.seoKeywords = raw.seo.keywords.filter((k): k is string => typeof k === 'string' && k.trim() !== '');
+        }
       }
       if (raw.openGraph) {
         out.ogTitle = raw.openGraph.ogTitle;
@@ -370,6 +374,7 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       if (typeof raw.ogImageWidth === 'number') out.ogImageWidth = raw.ogImageWidth;
       if (typeof raw.ogImageHeight === 'number') out.ogImageHeight = raw.ogImageHeight;
       if (raw.authorName) out.authorName = raw.authorName;
+      if (raw.authorSlug) out.authorSlug = raw.authorSlug;
       if (raw.authorTitle) out.authorTitle = raw.authorTitle;
       if (raw.authorImage) out.authorImage = raw.authorImage;
       if (raw.authorLinkedIn) out.authorLinkedIn = raw.authorLinkedIn;
@@ -693,6 +698,7 @@ interface RawSanityPost {
     metaDescription?: string;
     canonicalUrl?: string;
     noIndex?: boolean;
+    keywords?: string[];
   };
   openGraph?: {
     ogTitle?: string;
@@ -703,6 +709,7 @@ interface RawSanityPost {
   ogImageWidth?: number;
   ogImageHeight?: number;
   authorName?: string;
+  authorSlug?: string;
   authorTitle?: string;
   authorImage?: string;
   authorLinkedIn?: string;

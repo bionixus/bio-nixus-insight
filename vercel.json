@@ -1337,6 +1337,10 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/brand-tracking-research-agency-dubai"
     },
     {
+      "source": "/bionixus-industries/insights/mystery-shopping-companies-saudi-arabia-2026",
+      "destination": "/api/indexnow-key?__ssr=1&url=/bionixus-industries/insights/mystery-shopping-companies-saudi-arabia-2026"
+    },
+    {
       "source": "/bionixus-industries/insights/:slug",
       "has": [
         {

@@ -52,6 +52,8 @@ const MENA = [
 ];
 
 const ALSAADANY_ID = '11ed7ad8-6b57-4358-ac18-a9f32105dab6';
+/** Posts whose author the site owner chose by hand; the roster rule does not reassign them. */
+const OWNER_SET_AUTHOR_SLUGS = new Set(['mystery-shopping-companies-saudi-arabia-2026']);
 const WESTERN_IDS = new Set(WESTERN.map((a) => a.id));
 const MENA_IDS = new Set(MENA.map((a) => a.id));
 
@@ -192,6 +194,10 @@ const unchanged = [];
 const now = new Date().toISOString();
 
 for (const post of posts) {
+  if (OWNER_SET_AUTHOR_SLUGS.has(post.slug)) {
+    skipped.push({ slug: post.slug, reason: 'owner-set author', author: post.authorName });
+    continue;
+  }
   const g = gsc.get(post.slug);
   if (g && (g.clicks > 0 || g.position <= 20)) {
     skipped.push({
@@ -232,7 +238,7 @@ console.log(`patched: ${patched.length}`);
 for (const row of patched) {
   console.log(`  ${row.slug}: ${row.from} → ${row.to}`);
 }
-console.log(`skipped (GSC): ${skipped.length}`);
+console.log(`skipped (GSC or owner-set author): ${skipped.length}`);
 for (const row of skipped.slice(0, 40)) {
   console.log(`  ${row.slug}: keep ${row.author} (${row.reason})`);
 }
