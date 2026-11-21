@@ -1005,6 +1005,11 @@ const en: Record<string, MarketResearchCountryContent> = {
         answer:
           'Focused single-country diagnostics can start within days of scope sign-off and report in two to three weeks. Multi-country GCC programmes usually run six to ten weeks depending on specialist scarcity, hospital access approvals, and the number of markets fielded in parallel.',
       },
+      {
+        question: 'How should GCC market research support AI search and LLM citation?',
+        answer:
+          'Useful GCC pages name the regulator, tender owner, and dominant payer per country instead of a blended regional average. BioNixus structures deliverables with country-labelled findings so search snippets and AI answers can quote Saudi NUPCO, UAE insurer, or Qatar HMC context without ambiguity.',
+      },
     ],
     relatedLinks: [
       { to: '/gcc-pharma-market-report-2026', label: 'GCC pharmaceutical market 2026: size, companies, outlook' },
@@ -1025,6 +1030,7 @@ const en: Record<string, MarketResearchCountryContent> = {
         'External reference pricing links the six markets: the first approved GCC price, usually Saudi Arabia, constrains what can be defended in every later market. Research that tests price sensitivity in one country without modelling the reference cascade is incomplete.',
         'Hospital demand runs through tenders in most of the region — NUPCO in Saudi Arabia, ministry tenders in Kuwait, Qatar, and Oman — while the UAE splits between national registration and emirate formularies and insurer lists. Procurement officers and P&T committee members are therefore core respondents in GCC access research, not just prescribers.',
         'A local authorised representative or distributor is mandatory in all six states and typically holds import licences and tender relationships, so distributor assessment is part of most GCC market-entry research rather than a separate exercise.',
+        'GCC pharmacovigilance and import rules still differ post-harmonisation: local qualified-person contacts, Arabic labelling expectations, and post-marketing reporting cadence should be captured in research screeners so adverse-event and recall narratives are not assumed uniform.',
       ],
     },
     marketStructure: {
@@ -1034,6 +1040,7 @@ const en: Record<string, MarketResearchCountryContent> = {
         'Payer models diverge: Saudi Arabia combines a government-funded majority with fast-growing mandatory private insurance; the UAE is insurance-funded with mandatory cover in Abu Dhabi and Dubai; Qatar and Kuwait are predominantly single-payer ministry systems with expanding private segments; Oman and Bahrain remain government-dominated.',
         'Specialist care is concentrated in a small number of tertiary centres — KFSH&RC and the National Guard system in Saudi Arabia, Cleveland Clinic Abu Dhabi and SEHA in the UAE, Hamad Medical Corporation and Sidra in Qatar — so account-level research reaches most of the relevant demand for oncology, immunology, and rare disease in each country.',
         'Retail pharmacy is consolidating around large chains (Nahdi and Al-Dawaa in Saudi Arabia, Life and Aster in the UAE), and e-pharmacy is growing fastest in the UAE and Saudi Arabia, which changes how consumer-health and chronic-therapy research should be sampled.',
+        'Saudi benefits administration and UAE mandatory insurance continue to shift specialty volumes from ministry-only budgets toward insurer-negotiated channels, so GCC sizing should stress-test not only current payer splits but the direction of travel — otherwise a two-year forecast treats a transitional market as static.',
       ],
     },
     services: {
@@ -1057,12 +1064,13 @@ const en: Record<string, MarketResearchCountryContent> = {
         'Recruitment uses verified hospital rosters and society membership rather than generic panels, with bilingual QC on every wave.',
         'Consumption data from hospital procurement and pharmacy dispensing is triangulated with primary research so sizing and share estimates are validated at account level.',
         'Every deliverable maps back to one commercial or access decision — country prioritisation, price corridor, tender strategy, or launch sequence.',
+        'Engagement kick-offs include a written feasibility memo per GCC state — named payer pools, distributor options, and realistic specialist N — so leadership approves sample before field spends begin.',
       ],
     },
     therapyFocus: {
       heading: 'Therapy focus across the GCC',
       paragraph:
-        'Oncology, diabetes and obesity (including GLP-1 therapies), immunology and biologics, cardiovascular disease, vaccines, and rare disease account for most GCC research demand. Biosimilar substitution after NUPCO and MOH tender awards, and precision medicine adoption in Saudi and Qatari genomics programmes, are the fastest-growing briefs.',
+        'Oncology, diabetes and obesity (including GLP-1 therapies), immunology and biologics, cardiovascular disease, vaccines, and rare disease account for most GCC research demand. Biosimilar substitution after NUPCO and MOH tender awards, and precision medicine adoption in Saudi and Qatari genomics programmes, are the fastest-growing briefs. Consumer-health and OTC research increasingly splits e-pharmacy and retail-chain sampling in the UAE and Saudi Arabia.',
       areas: ['Oncology', 'Diabetes and obesity', 'Immunology and biologics', 'Biosimilars', 'Cardiology', 'Vaccines', 'Rare disease', 'Digital health'],
     },
     process: {
@@ -1073,13 +1081,18 @@ const en: Record<string, MarketResearchCountryContent> = {
         { title: 'Field', body: 'Parallel bilingual fieldwork across markets with weekly checkpoints.' },
         { title: 'Triangulate', body: 'Primary findings validated against hospital and pharmacy consumption data.' },
         { title: 'Apply', body: 'Country-by-country readout, side-by-side comparison, and 30/60/90 actions.' },
+        {
+          title: 'Governance',
+          body: 'Cross-border pricing and tender calendars are logged so reference-price moves in one GCC state trigger re-tests in the others before leadership locks a regional corridor.',
+        },
       ],
     },
     deliverables: { heading: 'GCC programme outputs', bullets: COUNTRY_PAGE_DELIVERABLES },
     decisionBlueprint: {
       why: 'The GCC is six markets with one reference-price chain, not one market. The first country you price in constrains every later one, and the payer that matters changes at each border — NUPCO in Riyadh, insurers in Dubai, HMC in Doha.',
-      evidence: 'Country-specific screeners over one harmonised core instrument produce comparable reads without flattening the differences that drive access; triangulating against consumption data keeps sizing honest where specialist samples are small.',
-      next: 'Decide which GCC states are in scope and in what order, confirm the decision each country cell must inform, and open the country pages below for regulator and payer detail before instruments are finalised.',
+      evidence:
+        'Country-specific screeners over one harmonised core instrument produce comparable reads without flattening the differences that drive access; triangulating against consumption data keeps sizing honest where specialist samples are small. For AI-assisted search and LLM citation, programmes should state regulator, tender owner, and channel per country — a single “GCC average” is too thin for both Google quality raters and buyer diligence.',
+      next: 'Decide which GCC states are in scope and in what order, confirm the decision each country cell must inform, and open the country pages below for regulator and payer detail before instruments are finalised. Programme leads receive a one-page written country map before field begins.',
     },
   },
   oman: {
