@@ -120,6 +120,9 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
         <DirectoryJumpNav
           items={[
             { href: '#companies', label: 'الشركات' },
+            ...(config.deepSections?.length
+              ? [{ href: '#market-guide', label: 'دليل السوق' }]
+              : []),
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
@@ -181,6 +184,34 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
           </div>
         </section>
 
+        {config.deepSections && config.deepSections.length > 0 ? (
+          <section className="section-padding py-16 bg-background" id="market-guide">
+            <div className="container-wide max-w-5xl mx-auto space-y-12">
+              {config.deepSections.map((section, index) => (
+                <article
+                  key={section.id}
+                  id={section.id}
+                  className={
+                    index === 0
+                      ? 'geo-llm-answer rounded-2xl border border-[#EDE9E3] bg-card p-8 shadow-sm'
+                      : 'max-w-4xl'
+                  }
+                  {...(index === 0 ? { 'data-geo-answer': 'true' as const } : {})}
+                >
+                  <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">
+                    {section.title}
+                  </h2>
+                  <div className="prose-body text-muted-foreground leading-relaxed space-y-4">
+                    {section.paragraphs.map((paragraph, pIdx) => (
+                      <p key={`${section.id}-${pIdx}`}>{paragraph}</p>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         <section className="section-padding py-16" id="related">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">روابط ذات صلة</h2>
@@ -205,6 +236,13 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
                 يجمع هذا الدليل وقائع معلنة من مواقع الشركات والهيئات ومن عمل بيونيكسس الميداني. ليس ترتيب حصة ولا بديلاً
                 عن تدقيق IQVIA أو اشتراك نيلسن. بيونيكسس تبيع بحثاً أولياً على مستوى الحساب والعبوة يُكمّل تلك الاشتراكات.
               </p>
+              {config.deepSections && config.deepSections.length > 0 ? (
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  أقسام «دليل السوق» في هذه الصفحة مكتوبة للقراء البشريين ومحركات الإجابة: تشرح التنظيم والتوزيع ونموذج العينة
+                  بصيغة يمكن اقتباسها دون الاعتماد على جدول الشركات فقط. آخر تحديث تحريري يطابق تاريخ التعديل في البيانات
+                  المنظَّمة (schema).
+                </p>
+              ) : null}
               <p className="text-sm text-muted-foreground leading-relaxed">
                 للنسخة الإنجليزية:{' '}
                 <Link to={config.enPath} className="text-primary hover:underline">

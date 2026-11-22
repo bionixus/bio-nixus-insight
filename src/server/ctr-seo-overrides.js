@@ -134,10 +134,10 @@ export const CTR_SEO_BY_PATH = {
       'Complete 2026 list of pharmaceutical companies in Canada — Apotex, Bausch, MNCs, wholesalers, Health Canada/CADTH context. Research by BioNixus.',
   },
   '/iqvia-alternative': {
-    // 3 Nov 2026 recovery: Middle East primary-research query. Keep the 127-studies-in-2026 label.
-    title: 'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus',
+    // 22 Nov 2026 CTR: "companies like iqvia" pos 3.1, 64 impr, 0% CTR — lead with competitor phrasing.
+    title: 'IQVIA Competitors & Companies Like IQVIA (2026) | BioNixus',
     description:
-      'IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours.',
+      'Companies like IQVIA compared for pharma primary research: 10 IQVIA competitors for GCC HCP, payer and patient fieldwork from $10k. Keep audits for sizing; add BioNixus for accounts. Proposal in 48h.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     // GSC 17 Sep–14 Oct 2026: 1,838 impr, pos 3.05, 0.27% CTR — keep H1 meaning, rewrite snippet.
