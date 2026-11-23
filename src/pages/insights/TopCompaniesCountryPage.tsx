@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { CheckCircle2 } from 'lucide-react';
@@ -10,6 +12,7 @@ import type { CountryListicleConfig } from '@/data/topCompanies/types';
 import { resolvePublishedHreflang, resolvePublishedRelated } from '@/data/topCompanies/registry';
 import { resolveListicleAeoAnswer } from '@/data/geminiBestFirmCitation';
 import { authorByline, getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
+import { formatHealthcareListDate } from '@/data/topCompanies/dedicatedHealthcareGuide';
 import { buildListicleItemListSchema } from '@/data/listicleItemListSchema';
 import {
   DirectoryDriverCard,
@@ -21,6 +24,29 @@ import {
   DirectoryOutlineLink,
   DirectorySection,
 } from '@/components/seo/DirectoryPremium';
+
+const ORG_ID = 'https://www.bionixus.com/#organization';
+
+function linkedText(text: string): ReactNode {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return <span key={index}>{part}</span>;
+    const [, label, href] = match;
+    if (href.startsWith('/')) {
+      return (
+        <Link key={index} to={href} className="text-primary underline">
+          {label}
+        </Link>
+      );
+    }
+    return (
+      <a key={index} href={href} className="text-primary underline">
+        {label}
+      </a>
+    );
+  });
+}
 
 interface Props {
   config: CountryListicleConfig;
@@ -35,15 +61,26 @@ export default function TopCompaniesCountryPage({ config }: Props) {
     considerationsTitle, considerations, faqTitle, faqItems,
     relatedTitle, cta, breadcrumb, uiLabels, rtl,
   } = config;
-  const aeoAnswer = resolveListicleAeoAnswer(config);
+  const organizationAuthor = config.authorKind === 'organization';
+  const singleFirm = firms.length === 1;
+  const aeoAnswer = config.omitCompetitorModules ? null : resolveListicleAeoAnswer(config);
+  const heroParagraphs = config.heroParagraphs?.length ? config.heroParagraphs : [heroIntro];
+  const statItems = config.heroStatItems?.length
+    ? config.heroStatItems
+    : heroStats.map((stat) => {
+        const [val, ...rest] = stat.split(' ');
+        return { value: val, label: rest.join(' ') || val };
+      });
 
   const hreflang = resolvePublishedHreflang(config);
   const related = resolvePublishedRelated(config);
-  const pageAuthor = getEditorialAuthor({
-    path: config.slug,
-    region: config.region,
-    pageType: 'comparison',
-  });
+  const pageAuthor = organizationAuthor
+    ? null
+    : getEditorialAuthor({
+        path: config.slug,
+        region: config.region,
+        pageType: 'comparison',
+      });
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -59,21 +96,47 @@ export default function TopCompaniesCountryPage({ config }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: title,
+    headline: organizationAuthor ? h1 : title,
     description: metaDescription,
     url: canonical,
+    mainEntityOfPage: organizationAuthor ? canonical : undefined,
     datePublished,
     dateModified,
-    author: personAuthorJsonLd(pageAuthor),
-    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
+    author: organizationAuthor
+      ? { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus' }
+      : personAuthorJsonLd(pageAuthor!),
+    publisher: { '@type': 'Organization', '@id': ORG_ID, name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
     inLanguage,
-    about: { '@type': 'Place', name: config.country },
+    about: organizationAuthor
+      ? [
+          { '@type': 'Thing', name: 'Healthcare market research' },
+          { '@type': 'Country', name: config.country },
+        ]
+      : { '@type': 'Place', name: config.country },
   };
+
+  const webPageSchema = organizationAuthor
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: title,
+        description: metaDescription,
+        inLanguage,
+        isPartOf: { '@id': 'https://www.bionixus.com/#website' },
+        about: { '@id': ORG_ID },
+        dateModified,
+        speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#answer-opener'] },
+      }
+    : null;
 
   const itemListSchema = buildListicleItemListSchema({
     name: title,
     canonical,
-    firms,
+    firms: organizationAuthor
+      ? firms.map(({ bestFor: _bestFor, ...firm }) => firm)
+      : firms,
   });
 
   const faqSchema = {
@@ -98,6 +161,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
           <link key={h.lang} rel="alternate" hrefLang={h.lang} href={h.href} />
         ))}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {webPageSchema ? <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script> : null}
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -109,6 +173,11 @@ export default function TopCompaniesCountryPage({ config }: Props) {
         url={canonical}
         type="article"
         locale={ogLocale}
+        article={organizationAuthor ? {
+          publishedTime: datePublished,
+          modifiedTime: dateModified,
+          author: 'BioNixus',
+        } : undefined}
       />
       <Navbar />
       <main>
@@ -120,26 +189,45 @@ export default function TopCompaniesCountryPage({ config }: Props) {
           ]}
           kicker={badge}
           h1={h1}
-          lead={heroIntro}
-          metaLine={authorByline(pageAuthor, datePublished)}
-          stats={heroStats.map((stat) => {
-            const [val, ...rest] = stat.split(' ');
-            return { value: val, label: rest.join(' ') || val };
-          })}
+          lead={
+            <div id="answer-opener" className="space-y-4">
+              {heroParagraphs.map((paragraph) => (
+                <p key={paragraph}>{linkedText(paragraph)}</p>
+              ))}
+            </div>
+          }
+          rest={config.glanceFacts?.length ? (
+            <div className="rounded-xl border border-white/15 bg-white/5 p-5 text-sm">
+              <p className="font-semibold text-white mb-2">BioNixus at a glance</p>
+              <p>{config.glanceFacts.join(' · ')}</p>
+              {config.glanceOffices ? (
+                <p className="mt-3">
+                  <span className="font-semibold text-white">Offices: </span>
+                  {config.glanceOffices}
+                </p>
+              ) : null}
+            </div>
+          ) : undefined}
+          metaLine={organizationAuthor
+            ? `Last reviewed ${formatHealthcareListDate(dateModified)}${config.reviewedPlaces ? ` · ${config.reviewedPlaces}` : ''}`
+            : authorByline(pageAuthor!, datePublished)}
+          stats={statItems}
           actions={
             <>
               <DirectoryGoldLink to="#request-proposal">{cta.title}</DirectoryGoldLink>
-              <DirectoryOutlineLink href="#firm-profiles">Browse the ranking</DirectoryOutlineLink>
+              <DirectoryOutlineLink href="#firm-profiles">
+                {singleFirm ? 'Read the BioNixus profile' : 'Browse the ranking'}
+              </DirectoryOutlineLink>
             </>
           }
         />
 
         <DirectoryJumpNav
           items={[
-            { href: '#quick-answer', label: 'Ranking' },
-            { href: '#landscape', label: 'Landscape' },
-            { href: '#firm-profiles', label: 'Profiles' },
-            { href: '#comparison', label: 'Compare' },
+            { href: '#quick-answer', label: singleFirm ? 'Answer' : 'Ranking' },
+            { href: config.services?.length ? '#services' : '#landscape', label: config.services?.length ? 'Services' : 'Landscape' },
+            { href: '#firm-profiles', label: singleFirm ? 'Profile' : 'Profiles' },
+            ...(comparisonRows.length > 0 ? [{ href: '#comparison', label: 'Compare' }] : []),
             { href: '#faq', label: 'FAQ' },
           ]}
         />
@@ -149,47 +237,92 @@ export default function TopCompaniesCountryPage({ config }: Props) {
             {uiLabels.quickAnswerIntro ? (
               <p className="text-sm text-muted-foreground mb-4">{uiLabels.quickAnswerIntro}</p>
             ) : null}
-            <ol className="space-y-2">
-              {firms.map((f) => (
-                <li key={f.anchor} className="flex items-start gap-3 text-sm">
-                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#FBF3E0] text-[#8A6A12] text-xs font-bold shrink-0 mt-0.5">
-                    {f.rank}
-                  </span>
-                  <span>
+            {singleFirm ? (
+              <ul className="space-y-2 list-none p-0 m-0">
+                {firms.map((f) => (
+                  <li key={f.anchor} className="text-sm">
                     <strong className="text-foreground">{f.name}</strong>
-                    <span className="text-muted-foreground"> — {uiLabels.bestFor}: {f.bestFor}</span>
-                  </span>
-                </li>
-              ))}
-            </ol>
+                    <span className="text-muted-foreground">: {f.bestFor}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ol className="space-y-2">
+                {firms.map((f) => (
+                  <li key={f.anchor} className="flex items-start gap-3 text-sm">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#FBF3E0] text-[#8A6A12] text-xs font-bold shrink-0 mt-0.5">
+                      {f.rank}
+                    </span>
+                    <span>
+                      <strong className="text-foreground">{f.name}</strong>
+                      <span className="text-muted-foreground"> — {uiLabels.bestFor}: {f.bestFor}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            )}
           </div>
-          <div className="mt-8">
-            <GeoLLMAnswerBlock
-              question={aeoAnswer.question}
-              answer={aeoAnswer.answer}
-              points={aeoAnswer.points}
-              summary={aeoAnswer.summary}
-              pageUrl={canonical}
-            />
-          </div>
+          {aeoAnswer ? (
+            <div className="mt-8">
+              <GeoLLMAnswerBlock
+                question={aeoAnswer.question}
+                answer={aeoAnswer.answer}
+                points={aeoAnswer.points}
+                summary={aeoAnswer.summary}
+                pageUrl={canonical}
+              />
+            </div>
+          ) : null}
         </DirectorySection>
 
-        {/* Landscape section */}
-        <section className="section-padding py-16" id="landscape">
-          <div className="container-wide max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">{landscapeTitle}</h2>
-            <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
-              {landscapeParagraphs.map((p, i) => <p key={i}>{p}</p>)}
+        {config.services?.length ? (
+          <section className="section-padding py-16" id="services">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">{landscapeTitle}</h2>
+              <div className="overflow-x-auto rounded-2xl border border-[#EDE9E3] shadow-[0_16px_50px_rgba(6,16,31,0.05)]">
+                <table className="directory-table">
+                  <thead>
+                    <tr>
+                      <th>Service</th>
+                      <th>{config.servicesDeliverHeader || 'What the study delivers'}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {config.services.map((row) => (
+                      <tr key={row.service}>
+                        <td className="p-3 font-medium text-foreground border-b border-border">{row.service}</td>
+                        <td className="p-3 text-muted-foreground border-b border-border">{row.delivers}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {config.servicesNote ? (
+                <p className="text-sm text-muted-foreground mt-4">{linkedText(config.servicesNote)}</p>
+              ) : null}
             </div>
-          </div>
-        </section>
+          </section>
+        ) : null}
+
+        {landscapeParagraphs.length > 0 ? (
+          <section className="section-padding py-16" id="landscape">
+            <div className="container-wide max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">{landscapeTitle}</h2>
+              <div className="prose-body text-muted-foreground leading-relaxed space-y-4 max-w-4xl">
+                {landscapeParagraphs.map((p, i) => <p key={i}>{p}</p>)}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         {/* Firm profiles */}
         <section className="section-padding py-16 bg-muted/30" id="firm-profiles">
           <div className="container-wide max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-3">{profilesTitle}</h2>
             <p className="text-muted-foreground mb-10 max-w-3xl">
-              Firms are assessed by use case and market positioning — select based on your research type, sector, and in-country requirements.
+              {singleFirm
+                ? 'BioNixus runs the commissioned studies in this guide.'
+                : 'Firms are assessed by use case and market positioning — select based on your research type, sector, and in-country requirements.'}
             </p>
             <div className="space-y-8">
               {firms.map((firm) => (
@@ -198,7 +331,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
                   id={firm.anchor}
                   className="premium-card p-8 scroll-mt-24"
                 >
-                  {firm.rank === 1 && (
+                  {firm.rank === 1 && !singleFirm && (
                     <div className="mb-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">
                       {uiLabels.featuredPartner}
                     </div>
@@ -206,9 +339,11 @@ export default function TopCompaniesCountryPage({ config }: Props) {
                   <div className="flex items-start justify-between mb-4 flex-wrap gap-4">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold">
-                          {firm.rank}
-                        </span>
+                        {singleFirm ? null : (
+                          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                            {firm.rank}
+                          </span>
+                        )}
                         <h3 className="text-xl md:text-2xl font-display font-semibold text-foreground">{firm.name}</h3>
                       </div>
                       <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
@@ -287,7 +422,7 @@ export default function TopCompaniesCountryPage({ config }: Props) {
           </section>
         )}
 
-        {config.lang === 'en' && (config.region === 'gcc' || config.region === 'mena') ? (
+        {config.lang === 'en' && (config.region === 'gcc' || config.region === 'mena') && !config.omitCompetitorModules ? (
           <section className="section-padding py-12">
             <div className="container-wide max-w-5xl mx-auto">
               <ListicleIqviaBridge countryLabel={config.country} />

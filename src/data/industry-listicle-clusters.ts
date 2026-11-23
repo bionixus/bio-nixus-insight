@@ -5,6 +5,17 @@ export interface IndustryListicleCrossLink {
   readonly label: string;
 }
 
+/**
+ * Healthcare lists served by the registry guide (TopCompaniesCountryPage),
+ * not by a standalone page component and not by the generic matrix template.
+ */
+export const REGISTRY_ONLY_DEDICATED_LISTICLE_PATHS = [
+  '/insights/top-healthcare-market-research-companies-egypt-2026',
+  '/insights/top-healthcare-market-research-companies-qatar-2026',
+  '/insights/top-healthcare-market-research-companies-oman-2026',
+  '/insights/top-healthcare-market-research-companies-bahrain-2026',
+] as const;
+
 /** Paths served by rich standalone listicle pages — matrix template must not register these. */
 export const DEDICATED_INDUSTRY_LISTICLE_PATHS = new Set<string>([
   '/insights/top-healthcare-market-research-companies-saudi-arabia-2026',
@@ -21,6 +32,7 @@ export const DEDICATED_INDUSTRY_LISTICLE_PATHS = new Set<string>([
   '/insights/top-market-research-companies-abu-dhabi-2026',
   '/insights/top-market-research-companies-riyadh-2026',
   '/insights/top-market-research-companies-egypt-2026',
+  ...REGISTRY_ONLY_DEDICATED_LISTICLE_PATHS,
 ]);
 
 const HEALTHCARE_ADJACENT: ReadonlySet<MatrixIndustrySlug> = new Set([

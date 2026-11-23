@@ -14,6 +14,8 @@ import {
   resolveContentSilo,
 } from '@/lib/blog-content-silo';
 import { missingArticleRedirect } from '@/lib/missing-article-redirect';
+import { isReservedUnpublishedBlogSlug } from '@/lib/reserved-unpublished-blog-slugs';
+import NotFound from '@/pages/NotFound';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import {
   BLOG_INDEX_ROBOTS,
@@ -928,6 +930,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
       })
     : null;
   const clientRedirectTo = foundRedirect?.redirectTo ?? missingRedirect?.redirectTo ?? null;
+  const reservedUnpublishedMiss =
+    isReservedUnpublishedBlogSlug(slug) &&
+    !lookupFailed &&
+    !post &&
+    (ssrBlogPostLookup === 'missing' || confirmedMissing);
 
   useEffect(() => {
     if (slug?.startsWith('fallback-')) {
@@ -949,6 +956,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     window.addEventListener('scroll', update, { passive: true });
     return () => window.removeEventListener('scroll', update);
   }, [post, slug, pathname, isArBlog, navigate, clientRedirectTo]);
+
+  if (reservedUnpublishedMiss) {
+    return <NotFound />;
+  }
 
   if (!slug) {
     return (

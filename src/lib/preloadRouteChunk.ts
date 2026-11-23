@@ -11,7 +11,10 @@
  * calls in lazyReportPages.ts, so there is no extra network cost.
  */
 
-import { DEDICATED_INDUSTRY_LISTICLE_PATHS } from '@/data/industry-listicle-clusters';
+import {
+  DEDICATED_INDUSTRY_LISTICLE_PATHS,
+  REGISTRY_ONLY_DEDICATED_LISTICLE_PATHS,
+} from '@/data/industry-listicle-clusters';
 import { isSegmentMarketPath } from '@/data/segmentMarketIndex';
 import { getSeoExportName, getSeoPageLoader } from '@/routes/lazySeoPages';
 import * as seoLazyPages from '@/routes/lazySeoPages';
@@ -221,6 +224,10 @@ function resolveLazyComponent(pathname: string): unknown {
   }
 
   if (isSegmentMarketPath(pathname)) return reportLazyPages.SegmentMarketRoute;
+
+  if ((REGISTRY_ONLY_DEDICATED_LISTICLE_PATHS as readonly string[]).includes(pathname)) {
+    return seoLazyPages.TopCompaniesCountryPage;
+  }
 
   if (
     /^\/insights\/top-[a-z0-9-]+-market-research-companies-[a-z0-9-]+-2026$/.test(pathname) &&
