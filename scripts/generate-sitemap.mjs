@@ -526,6 +526,7 @@ const staticPages = [
   { path: '/blog/uae-healthcare-market-trends-2025', priority: '0.85', changefreq: 'monthly' },
   { path: '/blog/uae-healthcare-market-trends-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/blog/who-does-obesity-market-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
+  { path: '/blog/biosimilar-market-entry-research-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15' },
   { path: '/bionixus-industries/insights/feasibility-study-company-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
   { path: '/bionixus-industries/insights/brand-tracking-research-agency-dubai', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-13' },
   { path: '/blog/glp-1-physician-survey-saudi-arabia', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-12' },
@@ -1512,6 +1513,7 @@ const STATIC_PAGE_FILES = {
   '/blog/uae-healthcare-market-trends-2025': ['src/data/blog-uae-healthcare-trends-2025.ts'],
   '/blog/uae-healthcare-market-trends-2026': ['src/data/blog-uae-healthcare-trends-2026.ts'],
   '/blog/who-does-obesity-market-research-saudi-arabia': ['src/data/blog-saudi-obesity-market-research-shortlist.ts'],
+  '/blog/biosimilar-market-entry-research-saudi-arabia': ['src/data/blog-saudi-biosimilar-market-entry-research.ts'],
   '/bionixus-industries/insights/feasibility-study-company-saudi-arabia': [
     'src/data/blog-feasibility-study-saudi-arabia.ts',
   ],

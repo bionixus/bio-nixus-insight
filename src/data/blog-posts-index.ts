@@ -11,6 +11,7 @@ import { CHINA_DEVICE_VBP_EXPLAINED_HARDCODED_POST } from '@/data/blog-china-dev
 import { UAE_HEALTHCARE_TRENDS_2025_HARDCODED_POST } from '@/data/blog-uae-healthcare-trends-2025';
 import { UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST } from '@/data/blog-uae-healthcare-trends-2026';
 import { SAUDI_OBESITY_SHORTLIST_HARDCODED_POST } from '@/data/blog-saudi-obesity-market-research-shortlist';
+import { SAUDI_BIOSIMILAR_ENTRY_HARDCODED_POST } from '@/data/blog-saudi-biosimilar-market-entry-research';
 import { SAUDI_FEASIBILITY_HARDCODED_POST } from '@/data/blog-feasibility-study-saudi-arabia';
 import { GLP1_PHYSICIAN_SURVEY_HARDCODED_POST } from '@/data/blog-glp1-physician-survey-saudi-arabia';
 import { UAE_CSAT_HARDCODED_POST } from '@/data/blog-uae-csat-nps-ces-surveys';
@@ -73,6 +74,7 @@ export const hardcodedSeoPosts: BlogPost[] = [
   UAE_HEALTHCARE_TRENDS_2025_HARDCODED_POST,
   UAE_HEALTHCARE_TRENDS_2026_HARDCODED_POST,
   SAUDI_OBESITY_SHORTLIST_HARDCODED_POST,
+  SAUDI_BIOSIMILAR_ENTRY_HARDCODED_POST,
   SAUDI_FEASIBILITY_HARDCODED_POST,
   GLP1_PHYSICIAN_SURVEY_HARDCODED_POST,
   UAE_CSAT_HARDCODED_POST,
