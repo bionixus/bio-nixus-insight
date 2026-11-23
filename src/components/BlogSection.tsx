@@ -10,6 +10,7 @@ import { INDUSTRIES_INSIGHTS_INDEX_PATH } from "@/lib/blog-content-silo";
 
 import { optimizeSanityImage } from "@/lib/image-utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { BlogFilterEmptyState } from "@/components/blog/BlogFilterEmptyState";
 
 import blogImage1 from "@/assets/blog-insight-1.png";
 import blogImage2 from "@/assets/blog-insight-2.png";
@@ -178,17 +179,14 @@ const BlogSection = ({
 }: BlogSectionProps) => {
   const { t, language } = useLanguage();
   const { pathname } = useLocation();
+  const localeBlog = pathname.match(/^\/(ar|de|fr|es|zh|pt|ru)(?:\/|$)/);
   const blogBasePath =
     postBasePath ??
     (pathname.startsWith("/bionixus-industries/insights")
       ? INDUSTRIES_INSIGHTS_INDEX_PATH
-      : pathname.startsWith("/ar/blog")
-        ? "/ar/blog"
-        : pathname.startsWith("/de/")
-          ? "/de/blog"
-          : pathname.startsWith("/fr/")
-            ? "/fr/blog"
-            : "/blog");
+      : localeBlog
+        ? `/${localeBlog[1]}/blog`
+        : "/blog");
 
   const isPlaceholderSlug = (slug: string) => slug.startsWith("fallback-");
   const isMagazineLayout = variant === "index" || variant === "home";
@@ -208,8 +206,9 @@ const BlogSection = ({
         : undefined,
   }));
 
+  const showFallback = variant === "home" && (!posts || posts.length === 0) && !isLoading;
   const list = (
-    posts && posts.length > 0 ? posts : isLoading ? [] : fallbackItems
+    posts && posts.length > 0 ? posts : isLoading ? [] : showFallback ? fallbackItems : []
   ) as CardPost[];
   const revealKey = `${isLoading ? "loading" : "ready"}-${variant}-${Array.isArray(posts) ? posts.length : 0}-${list.length}`;
   const sectionRef = useScrollReveal<HTMLElement>({
@@ -218,14 +217,14 @@ const BlogSection = ({
   });
 
   const filteredPosts = useMemo(() => list, [list]);
-  const useFeaturedLayout = isMagazineLayout && !disableFeatured;
+  const useFeaturedLayout = isMagazineLayout && !isHomeLayout && !disableFeatured;
   const [featuredPost, ...gridPosts] =
     useFeaturedLayout && filteredPosts.length > 0
       ? filteredPosts
       : [null, ...filteredPosts];
   const gridOnlyPosts = useFeaturedLayout ? gridPosts : filteredPosts;
 
-  const skeletonGridCount = isHomeLayout ? 2 : isMagazineLayout ? 6 : 3;
+  const skeletonGridCount = isHomeLayout ? 6 : isMagazineLayout ? 6 : 3;
 
   return (
     <section
@@ -274,7 +273,9 @@ const BlogSection = ({
             ) : null}
             <div
               className={`grid ${
-                isMagazineLayout
+                isHomeLayout
+                  ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                  : isMagazineLayout
                   ? "md:grid-cols-2 lg:grid-cols-3"
                   : "lg:grid-cols-3"
               } gap-8`}
@@ -362,12 +363,10 @@ const BlogSection = ({
 
             <div
               className={
-                isMagazineLayout
-                  ? `grid gap-8 ${
-                      isHomeLayout
-                        ? "md:grid-cols-2"
-                        : "md:grid-cols-2 lg:grid-cols-3"
-                    }`
+                isHomeLayout
+                  ? "grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+                  : isMagazineLayout
+                  ? "grid gap-8 md:grid-cols-2 lg:grid-cols-3"
                   : "grid lg:grid-cols-3 gap-8"
               }
             >
@@ -428,9 +427,7 @@ const BlogSection = ({
         )}
 
         {filteredPosts.length === 0 && !isLoading ? (
-          <p className="text-center text-muted-foreground py-12 animate-fade-up">
-            {t.ui.blogCards.noArticles}
-          </p>
+          <BlogFilterEmptyState href={blogBasePath.split("?")[0] || "/blog"} />
         ) : null}
 
         {showViewAllLink ? (

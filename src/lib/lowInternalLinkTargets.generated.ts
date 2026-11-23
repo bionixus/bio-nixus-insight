@@ -89,7 +89,7 @@ export const LOW_INTERNAL_LINK_TARGETS: readonly LowInternalLinkTarget[] = [
   {"to":"/blog/sfda-approval-qfitlia-saudi-arabia-pharmaceutical-market","label":"Sfda Approval Qfitlia Saudi Arabia Pharmaceutical Market"},
   {"to":"/blog/sfda-drug-registration-guide","label":"Sfda Drug Registration Guide"},
   {"to":"/blog/shift-to-always-on-quantitative-tracking-why-periodic-studies-are-dying","label":"Shift To Always On Quantitative Tracking Why Periodic Studies Are Dying"},
-  {"to":"/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement","label":"Skyrizi Tops Julys Pharma Rankings And What It Means For Omnichannel Engagement"},
+  {"to":"/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement","label":"What Skyrizi July TV Spend Means for Omnichannel Engagement"},
   {"to":"/blog/souk-adwiya-saudiya-dalil-shamel-rueya-2030-2026","label":"Souk Adwiya Saudiya Dalil Shamel Rueya 2030 2026"},
   {"to":"/blog/top-healthcare-market-research-companies-kuwait","label":"Top Healthcare Market Research Companies Kuwait"},
   {"to":"/blog/top-healthcare-market-research-companies-mena","label":"Top Healthcare Market Research Companies Mena"},

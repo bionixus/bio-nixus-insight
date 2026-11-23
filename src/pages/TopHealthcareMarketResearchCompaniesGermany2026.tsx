@@ -201,7 +201,7 @@ const comparisonCriteria = [
 
 const PAGE_CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-germany-2026';
 const PAGE_H1 = 'Top Healthcare Market Research Company in Germany: 2026 Guide';
-const PAGE_DATE_MODIFIED = '2026-11-15';
+const PAGE_DATE_MODIFIED = '2026-11-23';
 const PAGE_WEBPAGE_NAME = 'Healthcare Market Research Companies Germany 2026 | BioNixus';
 
 export default function TopHealthcareMarketResearchCompaniesGermany2026() {
@@ -379,7 +379,7 @@ export default function TopHealthcareMarketResearchCompaniesGermany2026() {
               </Link>.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published 25 June 2026 · Last reviewed 15 Nov 2026 · By the BioNixus Research Team
+              Published 25 June 2026 · Last reviewed 23 Nov 2026 · By the BioNixus Research Team
             </p>
           </div>
         </section>

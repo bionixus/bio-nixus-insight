@@ -11,7 +11,7 @@ export const patientJourneySaudiArabia: BlogPostType = {
     country: 'Saudi Arabia',
     tags: ['Patient Journey', 'Saudi Arabia', 'Qualitative Research', 'Caregiver Influence', 'Healthcare System', 'Pharma Marketing'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'Patient Journey Mapping in Saudi Arabia: Complete Guide | BioNixus',
+    seoMetaTitle: 'Patient Journey Mapping in Saudi Arabia | BioNixus',
     seoMetaDescription: 'Master patient journey mapping in Saudi Arabia. Discover exactly how to map public vs. private pathways, caregiver dynamics, and cultural treatment nuances.',
     tableOfContents: [
         { heading: 'Why Patient Journeys in KSA are Unique', anchor: 'why-ksa-unique' },

@@ -420,7 +420,7 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Quantitative Healthcare Market Research Guide 2026 | BioNixus</title>
+        <title>Quantitative Healthcare Market Research Guide | BioNixus</title>
         <meta
           name="description"
           content="A 2026 execution guide to quantitative healthcare market research: survey architecture, tracker governance, HCP verification, and AI-assisted data validation across Saudi Arabia, UAE, and the wider GCC."
@@ -438,14 +438,14 @@ const QuantitativeHealthcareMarketResearchGuide = () => {
         <meta property="article:author" content={articleAuthor.name} />
         <meta
           property="og:title"
-          content="Quantitative Healthcare Market Research Guide 2026 | BioNixus"
+          content="Quantitative Healthcare Market Research Guide | BioNixus"
         />
         <meta
           property="og:description"
           content="Long-form guide for pharmaceutical and healthcare strategy teams: quantitative methods, specialized HCP recruitment, and AI-driven quality validation in Saudi Arabia and UAE."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Quantitative Healthcare Market Research Guide 2026 | BioNixus" />
+        <meta name="twitter:title" content="Quantitative Healthcare Market Research Guide | BioNixus" />
         <meta
           name="twitter:description"
           content="A 2026 execution guide to quantitative healthcare market research: survey architecture, tracker governance, HCP verification, and AI-assisted data validation across Saudi Arabia, UAE, and the wider GCC."

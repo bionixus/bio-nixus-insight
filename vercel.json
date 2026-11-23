@@ -17,6 +17,40 @@
       ]
     },
     {
+      "source": "/r/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
+    },
+    {
+      "source": "/go/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
+    },
+    {
       "source": "/home-staging",
       "headers": [
         {
@@ -549,6 +583,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/avalon-pharma-onesource-saudi-obesity-glp1-market",
+      "destination": "/blog/avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market",
+      "statusCode": 301
+    },
+    {
       "source": "/insights/top-consumer-insights-companies-saudi-arabia-2026",
       "destination": "/insights/top-consumer-insights-companies-ksa-2026",
       "statusCode": 301
@@ -574,7 +613,7 @@
       "statusCode": 301
     },
     {
-      "source": "/:splat((?!api/).*)",
+      "source": "/:splat((?!api/|r/|go/).*)",
       "has": [
         {
           "type": "query",
@@ -585,7 +624,7 @@
       "statusCode": 301
     },
     {
-      "source": "/:splat((?!api/).*)",
+      "source": "/:splat((?!api/|r/|go/).*)",
       "has": [
         {
           "type": "query",
@@ -1271,6 +1310,14 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/blog/dksh-newbridge-acquisition-mena-launch-market-access"
     },
     {
+      "source": "/blog/saudi-diabetes-syndicated-vs-hospital-switching",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/saudi-diabetes-syndicated-vs-hospital-switching"
+    },
+    {
+      "source": "/blog/saudi-hematology-diagnostics-vs-ward-brand-cut",
+      "destination": "/api/indexnow-key?__ssr=1&url=/blog/saudi-hematology-diagnostics-vs-ward-brand-cut"
+    },
+    {
       "source": "/blog/:slug",
       "has": [
         {
@@ -1347,7 +1394,47 @@
       "destination": "/api/indexnow-key?__ssr=1&url=/"
     },
     {
-      "source": "/:splat((?!api/).*)",
+      "source": "/r/complete",
+      "destination": "/api/r/complete"
+    },
+    {
+      "source": "/r/complete/",
+      "destination": "/api/r/complete"
+    },
+    {
+      "source": "/r/terminate",
+      "destination": "/api/r/terminate"
+    },
+    {
+      "source": "/r/terminate/",
+      "destination": "/api/r/terminate"
+    },
+    {
+      "source": "/r/overquota",
+      "destination": "/api/r/overquota"
+    },
+    {
+      "source": "/r/overquota/",
+      "destination": "/api/r/overquota"
+    },
+    {
+      "source": "/r/quality",
+      "destination": "/api/r/quality"
+    },
+    {
+      "source": "/r/quality/",
+      "destination": "/api/r/quality"
+    },
+    {
+      "source": "/go/:pid/:country",
+      "destination": "/api/go/:pid/:country"
+    },
+    {
+      "source": "/go/:pid/:country/",
+      "destination": "/api/go/:pid/:country"
+    },
+    {
+      "source": "/:splat((?!api/|r/|go/).*)",
       "destination": "/api/indexnow-key?__ssr=1&url=/:splat"
     }
   ]

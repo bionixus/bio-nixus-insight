@@ -33,16 +33,19 @@ import {
 import { QualificationForm, QUALIFICATION_FORM_SCHEDULING_URL } from '@/components/conversion/QualificationForm';
 import { useIndustriesInsights } from '@/hooks/useSanityBlog';
 import { useInitialData } from '@/contexts/InitialDataContext';
-import { buildFilterOptions } from '@/lib/blog-index-filters';
+import { buildFilterOptions, selectedBlogCountry } from '@/lib/blog-index-filters';
 import {
   ALL_SEGMENTS,
   DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE,
   buildIndustrySlugFilterOptions,
   filterIndustriesInsightsPosts,
   hasActiveIndustriesInsightsFilters,
+  industriesFiltersFromSearchParams,
+  searchParamsForIndustriesFilters,
   type IndustriesInsightsFilterState,
   type IndustrySegmentFilter,
 } from '@/lib/industries-insights-filters';
+import { useSyncedCountryParam } from '@/hooks/useSyncedCountryParam';
 import {
   INDUSTRIES_HUB_PATH,
   INDUSTRIES_INSIGHT_EDITORIAL_LINKS,
@@ -243,15 +246,21 @@ export default function BionixusIndustriesInsights() {
       : undefined;
   const { data: posts, isLoading, isError, error } = useIndustriesInsights(ssrPosts);
 
-  const allPosts = posts ?? ssrPosts ?? [];
-  const [filterState, setFilterState] = useState<IndustriesInsightsFilterState>(
-    DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE,
-  );
+  const allPosts = useMemo(() => posts ?? ssrPosts ?? [], [posts, ssrPosts]);
   const [directoryQuery, setDirectoryQuery] = useState('');
   const query = directoryQuery.trim().toLowerCase();
 
   const countryOptions = useMemo(() => buildFilterOptions(allPosts, 'country'), [allPosts]);
   const industryOptions = useMemo(() => buildIndustrySlugFilterOptions(allPosts), [allPosts]);
+  const filtersReady = !isLoading || allPosts.length > 0;
+  const [searchParams, setSearchParams] = useSyncedCountryParam(countryOptions, filtersReady);
+  const filterState = useMemo(() => {
+    const fromUrl = industriesFiltersFromSearchParams(searchParams);
+    return {
+      ...fromUrl,
+      country: selectedBlogCountry(fromUrl.country, countryOptions),
+    };
+  }, [searchParams, countryOptions]);
   const filteredPosts = useMemo(
     () => filterIndustriesInsightsPosts(allPosts, filterState),
     [allPosts, filterState],
@@ -278,13 +287,19 @@ export default function BionixusIndustriesInsights() {
     return NON_PHARMA_INSIGHTS_CATALOG.links.filter((link) => linkMatches(link, query)).length;
   }, [pageCount, query]);
 
-  const handleFilterChange = useCallback((patch: Partial<IndustriesInsightsFilterState>) => {
-    setFilterState((prev) => ({ ...prev, ...patch }));
-  }, []);
+  const handleFilterChange = useCallback(
+    (patch: Partial<IndustriesInsightsFilterState>) => {
+      const next = { ...filterState, ...patch };
+      setSearchParams(searchParamsForIndustriesFilters(searchParams, next), { replace: true });
+    },
+    [filterState, searchParams, setSearchParams],
+  );
 
   const handleClearFilters = useCallback(() => {
-    setFilterState(DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE);
-  }, []);
+    setSearchParams(searchParamsForIndustriesFilters(searchParams, DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE), {
+      replace: true,
+    });
+  }, [searchParams, setSearchParams]);
 
   useEffect(() => {
     openDetailsFromHash();
@@ -599,18 +614,6 @@ export default function BionixusIndustriesInsights() {
             />
           )}
 
-          {!isLoading && filtersActive && visibleCount === 0 && postCount > 0 ? (
-            <p className="px-4 pb-12 text-center text-muted-foreground">
-              No articles match your filters.{' '}
-              <button
-                type="button"
-                onClick={handleClearFilters}
-                className="cursor-pointer font-medium text-[#A8872E] underline underline-offset-4 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C]"
-              >
-                Clear filters
-              </button>
-            </p>
-          ) : null}
         </section>
 
         <section className="border-t border-[#EDE9E3] bg-[#F4F2ED]">

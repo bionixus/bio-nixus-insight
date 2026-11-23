@@ -90,6 +90,13 @@ export default function Media() {
               </Link>{' '}
               for official announcements.
             </p>
+            <p className="mt-3 text-muted-foreground leading-relaxed">
+              Guest articles and interviews in other publications are listed in{' '}
+              <Link to="/news#in-the-media" className="font-medium text-primary hover:underline">
+                In the media
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

@@ -88,7 +88,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Healthcare Market Research Company in Brazil | SUS, ANS, ANVISA | BioNixus',
+    headline: 'Healthcare Market Research Company in Brazil | BioNixus',
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: {
       '@type': 'Organization',
@@ -111,7 +111,7 @@ const jsonLd = [
     })),
   },
   ...buildReportEnrichmentSchemas({
-    pageTitle: 'Healthcare Market Research Company in Brazil | SUS, ANS, ANVISA | BioNixus',
+    pageTitle: 'Healthcare Market Research Company in Brazil | BioNixus',
     pageMetaDescription:
       'BioNixus is a healthcare market research company in Brazil — HCP surveys, KOL mapping, SUS/CONITEC access evidence, ANS private-sector research, and LGPD-compliant patient studies. USD 165B+ healthcare market.',
     countryName: 'Brazil',

@@ -155,7 +155,7 @@ export const PHARMACY_MYSTERY_SHOPPER: PharmaStudyTypeConfig = {
 
 export const PHARMA_COMPETITOR_INTEL: PharmaStudyTypeConfig = {
   path: '/pharmaceutical-competitor-intelligence',
-  title: 'Pharmaceutical Competitor Intelligence | Brand vs Competitors | BioNixus',
+  title: 'Pharmaceutical Competitor Intelligence | Brand | BioNixus',
   description:
     'Pharmaceutical competitor intelligence and brand-versus-competitor studies at account and SKU level in a named country. Primary fieldwork. 48-hour proposal.',
   h1: 'Pharmaceutical competitor intelligence — brand vs competitors in-market',

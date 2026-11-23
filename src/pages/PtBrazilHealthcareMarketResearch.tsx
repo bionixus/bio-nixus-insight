@@ -7,7 +7,7 @@ import { ArrowRight, CheckCircle2, Building2, Users, BarChart3, ShieldCheck, Ste
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 
 const CANONICAL = 'https://www.bionixus.com/pt/pesquisa-mercado-saude-brasil';
-const PAGE_TITLE = 'Empresa de Pesquisa de Mercado de Saúde no Brasil | ANVISA, SUS, CONITEC | BioNixus';
+const PAGE_TITLE = 'Empresa de Pesquisa de Mercado de Saúde no Brasil | BioNixus';
 const PAGE_DESC =
   'BioNixus é uma empresa de pesquisa de mercado de saúde no Brasil — pesquisas com médicos, mapeamento de KOLs, pesquisa de acesso ao SUS, estudos com pacientes e pesquisa de dispositivos médicos em conformidade com a ANVISA.';
 

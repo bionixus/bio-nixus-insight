@@ -15,11 +15,28 @@ import {
   INDUSTRIES_SILO_GROQ,
 } from '@/lib/blog-content-silo';
 import { hardcodedSeoPosts, getHardcodedPostBySlug } from '@/data/blog-posts-index';
+import { selectListablePosts, type BlogListingHub } from '@/lib/blog-listing-eligibility';
+import { decodeHtmlEntities } from '../../lib/html-meta-escape.mjs';
 import {
   canonicalAlsaadanyJobTitle,
   isAlsaadanyDisplayName,
   replaceLegacyAlsaadanyPhrases,
 } from '@/data/editorialAuthors';
+import type { FeaturedInCredit } from '@/data/inTheMedia';
+
+/** Keep a hardcoded byline. Copy featured-in credits only when Sanity names the same person. */
+function applySanityAuthorCredits<T extends BlogPost>(base: T, sanity: BlogPost | null | undefined): T {
+  if (!sanity) return base;
+  const baseName = base.authorName?.trim();
+  const sanityName = sanity.authorName?.trim();
+  if (!baseName || !sanityName || baseName !== sanityName) return base;
+  return {
+    ...base,
+    ...(sanity.authorFeaturedIn?.length ? { authorFeaturedIn: sanity.authorFeaturedIn } : {}),
+    ...(sanity.authorSlug ? { authorSlug: sanity.authorSlug } : {}),
+    ...(sanity.authorBio?.trim() ? { authorBio: sanity.authorBio.trim() } : {}),
+  };
+}
 
 function overlayHardcodedSeoPost(post: BlogPost): BlogPost {
   if (!isHardcodedSeoBlogSlug(post.slug)) return post;
@@ -92,6 +109,10 @@ function sortPostsNewestFirst(posts: BlogPost[]): BlogPost[] {
   return [...posts].sort((a, b) => postSortTime(b) - postSortTime(a));
 }
 
+function listableSorted(posts: BlogPost[], hub: BlogListingHub): BlogPost[] {
+  return sortPostsNewestFirst(selectListablePosts(posts, hub));
+}
+
 function siloFilterClause(silo: ContentSilo): string {
   return silo === 'industries' ? INDUSTRIES_SILO_GROQ : HEALTHCARE_SILO_GROQ;
 }
@@ -104,7 +125,7 @@ const SILO_FIELDS = `
 
 function buildPostsQuery(silo: ContentSilo): string {
   const siloFilter = siloFilterClause(silo);
-  return `*[_type == "blogPost" && defined(slug.current) && ${siloFilter}] | order(publishedAt desc, _createdAt desc) {
+  return `*[_type == "blogPost" && defined(slug.current) && !(_id in path("drafts.**")) && ${siloFilter}] | order(publishedAt desc, _createdAt desc) {
   _id,
   _type,
   title,
@@ -119,6 +140,8 @@ function buildPostsQuery(silo: ContentSilo): string {
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
+  region,
+  "regionTitle": region->title,
   "coverImage": mainImage.asset->url,
   ${SILO_FIELDS}
 }[0...$limit]`;
@@ -127,6 +150,7 @@ function buildPostsQuery(silo: ContentSilo): string {
 const LATEST_INSIGHTS_QUERY = `*[
   _type == "blogPost" &&
   defined(slug.current) &&
+  !(_id in path("drafts.**")) &&
   (${HEALTHCARE_SILO_GROQ}) &&
   (!defined(language) || language == $language)
 ] | order(coalesce(publishedAt, _createdAt) desc) {
@@ -144,6 +168,8 @@ const LATEST_INSIGHTS_QUERY = `*[
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
+  region,
+  "regionTitle": region->title,
   "coverImage": mainImage.asset->url,
   "authorName": author->name,
   ${SILO_FIELDS}
@@ -152,6 +178,7 @@ const LATEST_INSIGHTS_QUERY = `*[
 const INDUSTRIES_INSIGHTS_QUERY = `*[
   _type == "blogPost" &&
   defined(slug.current) &&
+  !(_id in path("drafts.**")) &&
   ${INDUSTRIES_SILO_GROQ}
 ] | order(coalesce(publishedAt, _createdAt) desc) {
   _id,
@@ -168,6 +195,8 @@ const INDUSTRIES_INSIGHTS_QUERY = `*[
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
+  region,
+  "regionTitle": region->title,
   "coverImage": mainImage.asset->url,
   "authorName": author->name,
   ${SILO_FIELDS}
@@ -190,6 +219,8 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "categories": categories[]->title,
   country,
   "countryTitle": country->title,
+  region,
+  "regionTitle": region->title,
   "coverImage": mainImage.asset->url,
   "coverImageAlt": mainImage.alt,
   "coverImageWidth": mainImage.asset->metadata.dimensions.width,
@@ -210,6 +241,15 @@ const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slug][0] {
   "authorTitle": author->title,
   "authorImage": author->image.asset->url,
   "authorLinkedIn": author->linkedIn,
+  "authorBio": author->bio,
+  "authorSlug": coalesce(author->slug.current, author->slug),
+  "authorFeaturedIn": author->featuredIn[]{
+    headline,
+    url,
+    publicationName,
+    date,
+    summary
+  },
   ${SILO_FIELDS}
 }`;
 
@@ -253,6 +293,10 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     typeof p.country === 'string'
       ? p.country
       : (p as RawSanityPost & { countryTitle?: string }).countryTitle ?? '';
+  const regionStr =
+    typeof p.region === 'string'
+      ? p.region
+      : (p as RawSanityPost & { regionTitle?: string }).regionTitle ?? '';
   const authorFromQuery =
     typeof (p as RawSanityPost & { authorName?: string }).authorName === 'string'
       ? (p as RawSanityPost & { authorName: string }).authorName.trim()
@@ -263,10 +307,11 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
     slug: p.slug ?? p._id,
     title: p.title ?? 'Untitled',
     // Always expose excerpt as clean text for cards/meta even if legacy data contains HTML.
-    excerpt: excerptText.slice(0, 200),
+    excerpt: decodeHtmlEntities(excerptText).slice(0, 200),
     date: formatDate(p.date),
     category: categoryStr,
     country: countryStr,
+    ...(regionStr.trim() ? { region: regionStr.trim() } : {}),
     coverImage: p.coverImage ?? undefined,
     coverImageAlt: typeof p.coverImageAlt === 'string' && p.coverImageAlt.trim() ? p.coverImageAlt.trim() : undefined,
     publishedAtIso: p.publishedAtIso,
@@ -306,13 +351,17 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       // SEO / OG / Author
       if (raw.seo) {
         out.seoMetaTitle = raw.seo.metaTitle;
-        out.seoMetaDescription = raw.seo.metaDescription;
+        out.seoMetaDescription = typeof raw.seo.metaDescription === 'string'
+          ? decodeHtmlEntities(raw.seo.metaDescription)
+          : raw.seo.metaDescription;
         out.seoCanonicalUrl = raw.seo.canonicalUrl;
         out.seoNoIndex = resolveBlogSeoNoIndex(p.slug ?? p._id, raw.seo.noIndex);
       }
       if (raw.openGraph) {
         out.ogTitle = raw.openGraph.ogTitle;
-        out.ogDescription = raw.openGraph.ogDescription;
+        out.ogDescription = typeof raw.openGraph.ogDescription === 'string'
+          ? decodeHtmlEntities(raw.openGraph.ogDescription)
+          : raw.openGraph.ogDescription;
       }
       if (raw.ogImageUrl) out.ogImage = raw.ogImageUrl;
       if (typeof raw.ogImageAlt === 'string' && raw.ogImageAlt.trim()) out.ogImageAlt = raw.ogImageAlt.trim();
@@ -324,6 +373,10 @@ function mapRawToPost(p: RawSanityPost | null, includeBody = false): BlogPost | 
       if (raw.authorTitle) out.authorTitle = raw.authorTitle;
       if (raw.authorImage) out.authorImage = raw.authorImage;
       if (raw.authorLinkedIn) out.authorLinkedIn = raw.authorLinkedIn;
+      if (typeof raw.authorBio === 'string' && raw.authorBio.trim()) out.authorBio = raw.authorBio.trim();
+      if (typeof raw.authorSlug === 'string' && raw.authorSlug.trim()) out.authorSlug = raw.authorSlug.trim();
+      const featuredIn = mapAuthorFeaturedIn(raw.authorFeaturedIn);
+      if (featuredIn.length > 0) out.authorFeaturedIn = featuredIn;
       return out;
     })()),
     language: p.language ?? undefined,
@@ -363,10 +416,12 @@ export async function fetchSanityPostsWithClient(
     const newHardcoded = hardcodedSeoPosts.filter(
       (p) => !sanitySlugs.has(p.slug) && (silo === 'healthcare' ? true : false),
     );
-    return sortPostsNewestFirst([...sanityPosts, ...filterPostsBySilo(newHardcoded, silo)]);
+    const hub: BlogListingHub = silo === 'industries' ? 'industries' : 'healthcare';
+    return listableSorted([...sanityPosts, ...filterPostsBySilo(newHardcoded, silo)], hub);
   } catch (err) {
     console.error('Failed to fetch from Sanity CMS, fallback to hardcoded posts', err);
-    return sortPostsNewestFirst(filterPostsBySilo([...hardcodedSeoPosts], silo));
+    const hub: BlogListingHub = silo === 'industries' ? 'industries' : 'healthcare';
+    return listableSorted(filterPostsBySilo([...hardcodedSeoPosts], silo), hub);
   }
 }
 
@@ -386,10 +441,10 @@ export async function fetchIndustriesInsightsWithClient(
     const sanityPosts = raw.map((p) => mapRawToPost(p)!).filter(Boolean).map(overlayHardcodedSeoPost);
     const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
     const extra = hardcodedIndustries.filter((p) => !sanitySlugs.has(p.slug));
-    return sortPostsNewestFirst([...sanityPosts, ...extra]);
+    return listableSorted([...sanityPosts, ...extra], 'industries');
   } catch (err) {
     console.error('Failed to fetch industries insights from Sanity CMS', err);
-    return sortPostsNewestFirst(hardcodedIndustries);
+    return listableSorted(hardcodedIndustries, 'industries');
   }
 }
 
@@ -400,7 +455,7 @@ export async function fetchIndustriesInsights(limit = BLOG_INDEX_POST_LIMIT): Pr
 export async function fetchSanityLatestInsightsWithClient(
   client: SanityClient,
   language: string,
-  limit = 3,
+  limit = 6,
 ): Promise<BlogPost[]> {
   try {
     const raw = await client.fetch<RawSanityPost[]>(LATEST_INSIGHTS_QUERY, {
@@ -414,29 +469,25 @@ export async function fetchSanityLatestInsightsWithClient(
       (p) => !sanitySlugs.has(p.slug) && (!p.language || p.language === language),
     );
 
-    const combined = filterPostsBySilo([...sanityPosts, ...newHardcoded], 'healthcare');
-    combined.sort((a, b) => {
-      const da = a.date ? new Date(a.date).getTime() : 0;
-      const db = b.date ? new Date(b.date).getTime() : 0;
-      return db - da;
-    });
+    const combined = listableSorted(
+      filterPostsBySilo([...sanityPosts, ...newHardcoded], 'healthcare'),
+      'healthcare',
+    );
     return combined.slice(0, Math.max(1, Math.min(limit, 6)));
   } catch (err) {
     console.error('Failed to fetch latest insights from Sanity CMS, fallback to hardcoded posts', err);
-    const hardcodedFiltered = filterPostsBySilo(
-      hardcodedSeoPosts.filter((p) => !p.language || p.language === language),
+    const hardcodedFiltered = listableSorted(
+      filterPostsBySilo(
+        hardcodedSeoPosts.filter((p) => !p.language || p.language === language),
+        'healthcare',
+      ),
       'healthcare',
     );
-    hardcodedFiltered.sort((a, b) => {
-      const da = a.date ? new Date(a.date).getTime() : 0;
-      const db = b.date ? new Date(b.date).getTime() : 0;
-      return db - da;
-    });
     return hardcodedFiltered.slice(0, Math.max(1, Math.min(limit, 6)));
   }
 }
 
-export async function fetchSanityLatestInsights(language: string, limit = 3): Promise<BlogPost[]> {
+export async function fetchSanityLatestInsights(language: string, limit = 6): Promise<BlogPost[]> {
   return fetchSanityLatestInsightsWithClient(getSanityClient(), language, limit);
 }
 
@@ -453,7 +504,9 @@ export async function fetchSanityPostBySlugWithClient(
   try {
     const raw = await client.fetch<RawSanityPost | null>(POST_BY_SLUG_QUERY, { slug });
     const mapped = mapRawToPost(raw, true);
-    if (hardcodedSeo && hardcodedFallback) return applySanityShareImages(hardcodedFallback, mapped);
+    if (hardcodedSeo && hardcodedFallback) {
+      return applySanityAuthorCredits(applySanityShareImages(hardcodedFallback, mapped), mapped);
+    }
     if (mapped) return mapped;
 
     if (hardcodedFallback) return hardcodedFallback;
@@ -570,6 +623,29 @@ export async function fetchRelatedPosts(
   return fetchRelatedPostsWithClient(slug, category, date, country, tags, getSanityClient(), contentSilo);
 }
 
+function mapAuthorFeaturedIn(raw: unknown): FeaturedInCredit[] {
+  if (!Array.isArray(raw)) return [];
+  const credits: FeaturedInCredit[] = [];
+  for (const entry of raw) {
+    if (!entry || typeof entry !== 'object') continue;
+    const item = entry as Record<string, unknown>;
+    const headline = typeof item.headline === 'string' ? item.headline.trim() : '';
+    const url = typeof item.url === 'string' ? item.url.trim() : '';
+    const publicationName = typeof item.publicationName === 'string' ? item.publicationName.trim() : '';
+    if (!headline || !url || !publicationName) continue;
+    const date = typeof item.date === 'string' ? item.date.trim() : '';
+    const summary = typeof item.summary === 'string' ? item.summary.trim() : '';
+    credits.push({
+      headline,
+      url,
+      publicationName,
+      ...(date ? { date } : {}),
+      ...(summary ? { summary } : {}),
+    });
+  }
+  return credits;
+}
+
 function formatDate(iso: string | undefined): string {
   if (!iso) return '';
   try {
@@ -600,6 +676,8 @@ interface RawSanityPost {
   categories?: string[];
   country?: string;
   countryTitle?: string;
+  region?: string;
+  regionTitle?: string;
   coverImage?: string;
   coverImageAlt?: string;
   coverImageWidth?: number;
@@ -628,6 +706,9 @@ interface RawSanityPost {
   authorTitle?: string;
   authorImage?: string;
   authorLinkedIn?: string;
+  authorBio?: string;
+  authorSlug?: string;
+  authorFeaturedIn?: FeaturedInCredit[];
   contentSilo?: 'healthcare' | 'industries';
   industrySegment?: 'b2b' | 'b2c';
   industrySlug?: string;

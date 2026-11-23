@@ -276,7 +276,7 @@ export default function TopHealthcareMarketResearchCompaniesMalaysia2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Malaysia Healthcare Market Research Companies 2026 | BioNixus</title>
+        <title>Malaysia Healthcare Market Research Companies | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in Malaysia 2026 — BioNixus wrote this list. MREC-compliant HCP surveys, payer and formulary research, KOL mapping at Malaysian university hospitals, and MaHTAS-aligned health outcomes studies."

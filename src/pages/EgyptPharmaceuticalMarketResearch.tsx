@@ -136,7 +136,7 @@ export default function EgyptPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research in Egypt | EDA & UHI | BioNixus"
+        title="Pharmaceutical Market Research in Egypt | EDA | BioNixus"
         description="BioNixus pharmaceutical market research in Egypt—EDA registration context, UHI payer insight, public/private channel evidence, bilingual fieldwork."
         canonical="/egypt-pharmaceutical-market-research"
         jsonLd={jsonLd}

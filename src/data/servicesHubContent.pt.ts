@@ -269,7 +269,7 @@ export const PT_RECOVERY_LINK_LABELS: Record<string, string> = {
 
 export const PT_SERVICES_HUB_COPY = {
   seo: {
-    title: 'Pesquisa de Mercado Farmacêutico no Brasil e LATAM | BioNixus',
+    title: 'Pesquisa de Mercado Farmacêutico no Brasil e | BioNixus',
     description:
       'Pesquisa de mercado farmacêutico e de saúde com foco no Brasil e na América Latina — estudos quantitativos e qualitativos com médicos, HTA e acesso ao mercado, mapeamento de KOL e campo em conformidade com a LGPD.',
     canonical: 'https://www.bionixus.com/pt/services',

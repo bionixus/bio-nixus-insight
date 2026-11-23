@@ -96,7 +96,7 @@ const jsonLd = [
     '@type': 'WebPage',
     '@id': PAGE_URL,
     url: PAGE_URL,
-    name: 'Pharmaceutical Market Research Company in the Netherlands | CBG-MEB & Zorginstituut Aligned | BioNixus',
+    name: 'Pharmaceutical Market Research in the Netherlands | BioNixus',
     description:
       'BioNixus is a pharmaceutical market research company in the Netherlands specialising in CBG-MEB-aligned HCP surveys, KOL mapping, Zorginstituut Nederland payer research, and METC-compliant market access evidence for pharmaceutical and biotech clients.',
     about: { '@id': ORG_ID },
@@ -124,7 +124,7 @@ export default function NetherlandsPharmaceuticalMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharmaceutical Market Research Company in the | BioNixus"
+        title="Pharmaceutical Market Research in the Netherlands | BioNixus"
         description="BioNixus is a pharmaceutical market research company in the Netherlands — CBG-MEB-aligned HCP surveys, KOL mapping, Zorginstituut Nederland payer."
         canonical="/pharmaceutical-market-research-netherlands"
         jsonLd={jsonLd}

@@ -1,265 +1,125 @@
-import type { CountryListicleConfig } from '../types';
+import { buildDedicatedHealthcareGuide } from '../dedicatedHealthcareGuide';
 
-export const omanHealthcareEn: CountryListicleConfig = {
+const COST_ANSWER =
+  'Custom projects typically run $10,000–$60,000, depending on audience, sample size, method and the number of countries. A scoped proposal is ready within 48 hours of a brief.';
+
+export const omanHealthcareEn = buildDedicatedHealthcareGuide({
   slug: '/insights/top-healthcare-market-research-companies-oman-2026',
-  lang: 'en',
-  variant: 'healthcare',
-  region: 'gcc',
   country: 'Oman',
-  title: 'Top Healthcare Market Research Companies in Oman 2026 | BioNixus',
-  metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Oman — pharmaceutical U&A, physician surveys, KOL mapping, MoH Oman.',
-  canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-oman-2026',
-  hreflang: [
-    { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-oman-2026' },
-    { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-oman-2026' },
-  ],
+  region: 'gcc',
   ogLocale: 'en_OM',
-  inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-09-28',
-  badge: '2026 Healthcare Research Guide',
-  h1: 'Best Healthcare Market Research Companies in Oman (2026 Guide)',
-  heroIntro:
-    'An independent guide to the leading healthcare market research companies operating in Oman for 2026. This guide profiles 5 specialist and full-service firms covering pharmaceutical U&A, physician surveys, KOL mapping, MoH Oman regulatory awareness, HEOR, and Oman Vision 2040 sector intelligence — comparing capabilities and Oman-specific healthcare expertise to help you select the right research partner in this growing $700M+ pharmaceutical market.',
-  heroStats: ['5 Firms Profiled', '$700M+ Pharma Market', 'MoH Oman + SQUH', '8 FAQs Answered'],
-  quickAnswerTitle: 'Best Healthcare Market Research Companies in Oman (2026)',
-  uiLabels: {
-    bestFor: 'Best for',
-    keyStrengths: 'Key strengths',
-    featuredPartner: 'Featured Partner',
-    capability: 'Capability',
-    quickAnswerIntro:
-      'The following healthcare market research companies have demonstrated operations or project delivery in Oman as of 2026, covering pharmaceutical research, physician studies, KOL mapping, payer research, and real-world evidence:',
+  title: 'Healthcare Market Research Companies Oman 2026',
+  metaDescription:
+    'Healthcare market research in Oman, 2026: BioNixus runs physician, KOL, patient and MoH access studies from its Cairo AMEA office. Proposal in 48 hours.',
+  h1: 'Top Healthcare Market Research Company in Oman: 2026 Guide',
+  breadcrumbCurrent: 'Healthcare Market Research Companies in Oman',
+  reviewedPlaces: 'Muscat',
+  heroParagraphs: [
+    'For custom [healthcare and pharmaceutical primary research](/healthcare-market-research) in Oman, including physician and pharmacist surveys, KOL mapping, patient-journey studies and market-access research for Ministry of Health registration and pricing decisions, [brief BioNixus](/healthcare-market-research/oman). The work is run from the BioNixus AMEA (APAC, Middle East, Africa) office in Sheikh Zayed, Giza, with Arabic–English fieldwork in Muscat. Keep a syndicated audit for national category sizing; brief BioNixus for the physician-, payer- and account-level answers an audit can\'t give. BioNixus wrote this guide.',
+  ],
+  quickAnswerTitle: 'Top healthcare market research company in Oman (2026)',
+  quickAnswerIntro:
+    'Who to brief depends on the job. For commissioned physician, KOL, patient and Ministry of Health access research in Oman, BioNixus runs the study end to end from its Cairo AMEA office, with Arabic–English fieldwork in Muscat. For national sales and prescription trends, use a syndicated audit.',
+  servicesTitle: 'Healthcare market research BioNixus runs in Oman',
+  servicesDeliverHeader: 'What the Oman study delivers',
+  services: [
+    {
+      service: 'Physician and pharmacist surveys',
+      delivers:
+        'Quantitative surveys (online, CATI, face-to-face) and qualitative IDIs by specialty across Ministry of Health facilities, Sultan Qaboos University Hospital, the Royal Hospital and private care',
+    },
+    {
+      service: 'KOL mapping',
+      delivers: 'Identification and influence tiering by therapy area across Muscat specialist centres',
+    },
+    {
+      service: 'Market access: Ministry of Health',
+      delivers: 'Payer and formulary interviews, drug registration and pricing evidence, and procurement context',
+    },
+    {
+      service: 'Patient research',
+      delivers: 'Patient-journey and persistence studies across public, private and out-of-pocket channels',
+    },
+    {
+      service: 'Pharmacy and channel checks',
+      delivers: 'Pharmacy-level availability, switching and price checks',
+    },
+    {
+      service: 'Account-level research',
+      delivers: 'Named-hospital and pharmacy-chain reads that a national audit can\'t break out',
+    },
+  ],
+  servicesNote:
+    'See the [Oman healthcare page](/healthcare-market-research/oman) for team, method and timelines.',
+  profilesTitle: 'BioNixus healthcare research in Oman',
+  firm: {
+    type: 'Healthcare and pharmaceutical primary research',
+    bestFor:
+      'commissioned physician, KOL, patient and Ministry of Health access research in Oman, with Arabic–English fieldwork in Muscat',
+    overview:
+      'BioNixus runs custom healthcare and pharmaceutical primary research in Oman from its AMEA office in Sheikh Zayed, Giza: physician and pharmacist surveys, KOL mapping, patient-journey studies, pharmacy and channel checks, and market-access research for Ministry of Health registration and pricing decisions. Fieldwork is Arabic–English in Muscat. Founded in 2012; 118 clients in 48 countries; 127 studies in 2026 year to date (120 in 2025).',
+    strengths: [
+      'Physician and pharmacist surveys by specialty and care setting',
+      'KOL mapping across Muscat specialist centres',
+      'Market-access research for Ministry of Health registration and pricing',
+      'Patient-journey and persistence studies',
+      'Pharmacy and channel checks',
+      'Account-level hospital and pharmacy-chain research',
+    ],
   },
-  landscapeTitle: 'Oman Healthcare Market Research Landscape 2026',
-  landscapeParagraphs: [
-    'Oman\'s pharmaceutical and healthcare market, valued at over $700 million and growing steadily, is shaped by the Ministry of Health Oman (MoH Oman) National Health Strategy 2050 and the broader Oman Vision 2040 economic diversification programme. With healthcare identified as a priority sector under Vision 2040, the Sultanate is investing heavily in upgrading its healthcare infrastructure — expanding Sultan Qaboos University Hospital (SQUH), developing The Medical City Muscat complex, and incentivising private sector participation through groups such as Badr Al Samaa Group. Muscat is consolidating its position as the principal healthcare hub for Oman, with secondary centres growing in Salalah, Sohar, and Nizwa.',
-    'The institutional framework for healthcare research and pharmaceutical regulation in Oman centres on MoH Oman and the Medicines and Clinical Supplies Directorate (MCIOMS), which oversees drug registration, pricing, and clinical trial authorisation. The Oman Medical Specialty Board (OMSB) governs specialist medical training and maintains a significant influence over the specialist physician workforce. Sultan Qaboos University Hospital (SQUH) is the principal academic and tertiary referral centre, while the Royal Hospital Muscat serves as the national referral hospital for complex care. Pharmaceutical companies seeking formulary inclusion or market access must engage with MoH Oman procurement frameworks and, increasingly, with HEOR evidence requirements.',
-    'For pharmaceutical primary research, the Oman market requires specialist recruitment capabilities across MoH Oman facilities, SQUH, and the expanding private hospital sector. Key Opinion Leader (KOL) mapping must account for the relatively concentrated physician community — with senior specialists at SQUH and Royal Hospital Muscat holding disproportionate formulary influence. Oman\'s predominantly Arabic-speaking patient population and the bilingual (Arabic/English) physician workforce require research firms capable of delivering bilingual instrument design and fieldwork execution. Healthcare market research in Oman must navigate MCIOMS regulatory requirements, MoH Oman ethics processes, and the strategic context of Vision 2040 healthcare investment priorities.',
-  ],
-  profilesTitle: '5 Healthcare Market Research Companies in Oman (2026)',
-  firms: [
-    {
-      id: 'bionixus',
-      rank: 1,
-      name: 'BioNixus',
-      type: 'Global Healthcare & Market Research Firm',
-      hq: 'USA (HQ) / UK / Middle East',
-      anchor: 'bionixus',
-      url: 'https://www.bionixus.com',
-      orgId: 'https://www.bionixus.com/#organization',
-      bestFor: 'pharmaceutical U&A, KOL mapping, physician surveys, MoH Oman regulatory awareness, HEOR, market access strategy — Oman Vision 2040 sector intelligence',
-      overview:
-        'BioNixus is a global healthcare and market research firm headquartered in the USA with offices in the UK and the Middle East, delivering specialist pharmaceutical and healthcare research across Oman and the wider GCC. With 15+ years of experience serving 118 global clients across 48 countries, BioNixus covers the full healthcare research value chain: pharmaceutical usage and attitude (U&A) studies, brand perception and positioning, physician surveys across specialty and primary care, Key Opinion Leader (KOL) mapping and engagement profiling, payer and formulary committee research, Health Economics and Outcomes Research (HEOR), and market access strategy. BioNixus operates with awareness of MoH Oman\'s MCIOMS drug registration and regulatory framework, Sultan Qaboos University Hospital (SQUH) institutional protocols, and Oman Vision 2040 healthcare diversification priorities. As a global firm comparable in scope to IQVIA and Kantar Health, BioNixus delivers decision-ready pharmaceutical research to multinational pharma, biotech, and medical device clients targeting the Oman and GCC markets.',
-      strengths: [
-        'Pharmaceutical U&A, brand tracking, and therapy area landscaping in Oman',
-        'Physician and specialist recruitment within MoH Oman, SQUH, and Royal Hospital Muscat networks',
-        'KOL mapping and stakeholder engagement profiling across Oman therapy areas',
-        'Payer and formulary committee research aligned with MoH Oman procurement frameworks',
-        'HEOR and market access strategy for MCIOMS/MoH Oman formulary submissions',
-        'Arabic-English bilingual instrument design and fieldwork execution',
-        'MCIOMS regulatory framework awareness and ethics-aligned research protocols',
-        'Oman Vision 2040 healthcare investment landscape and competitive intelligence',
-      ],
-    },
-    {
-      id: 'iqvia',
-      rank: 2,
-      name: 'IQVIA MENA',
-      type: 'Global Healthcare Data & Analytics Company',
-      hq: 'USA (global) / UAE regional office',
-      anchor: 'iqvia',
-      url: 'https://www.iqvia.com',
-      bestFor: 'pharma data audits, real-world evidence, MoH Oman analytics, pharmaceutical sales force effectiveness',
-      overview:
-        'IQVIA is the world\'s largest healthcare data and analytics company, with a MENA regional presence serving Oman through its UAE hub. In Oman, IQVIA supports pharmaceutical manufacturers with pharmaceutical audit data, real-world evidence (RWE) programme design, MoH Oman regulatory intelligence, and commercial analytics. Their core strength is data-driven analytics — linking prescription and audit data, claims, and outcomes information at GCC scale — rather than qualitative primary research. IQVIA is the default choice for companies requiring longitudinal pharmaceutical market data, secondary analytics, and MoH Oman regulatory intelligence.',
-      strengths: [
-        'Pharmaceutical prescription and audit data across GCC including Oman',
-        'Real-world evidence design and secondary data analytics',
-        'MoH Oman and MCIOMS regulatory intelligence',
-        'Clinical research operations and site management',
-        'Sales force effectiveness and commercial analytics',
-      ],
-    },
-    {
-      id: 'ipsos-healthcare',
-      rank: 3,
-      name: 'Ipsos Healthcare',
-      type: 'Global Market Research Company — Healthcare Division',
-      hq: 'France (global) / UAE regional hub',
-      anchor: 'ipsos-healthcare',
-      url: 'https://www.ipsos.com',
-      bestFor: 'consumer health research, patient experience studies, quantitative and qualitative pharma research',
-      overview:
-        'Ipsos Healthcare is the dedicated health and pharmaceutical research division of Ipsos, one of the world\'s largest market research groups. Serving Oman through its MENA regional hub, Ipsos Healthcare conducts consumer health studies, patient experience and journey research, and quantitative pharmaceutical surveys. Their broad fieldwork infrastructure and established MENA panel access make them capable for large-scale consumer health and patient studies in Oman, though their specialist KOL mapping, payer research, and HEOR depth is more limited than dedicated healthcare research specialists.',
-      strengths: [
-        'Consumer health and patient experience research across MENA including Oman',
-        'Quantitative and qualitative pharmaceutical studies',
-        'Treatment decision and brand perception surveys',
-        'Broad MENA panel access and fieldwork infrastructure',
-        'Patient journey and adherence research',
-      ],
-    },
-    {
-      id: 'kantar-health',
-      rank: 4,
-      name: 'Kantar Health (MENAP)',
-      type: 'Global Market Research Network — Healthcare Division',
-      hq: 'UK (global) / UAE regional hub',
-      anchor: 'kantar-health',
-      url: 'https://www.kantar.com',
-      bestFor: 'patient tracking, consumer health studies, OTC brand research, health behaviour tracking',
-      overview:
-        'Kantar\'s healthcare and health practice operates across the MENAP region, serving Oman through its UAE regional hub. Kantar Health focuses on patient tracking, consumer health behaviour, OTC brand tracking, and health behaviour studies. For pharmaceutical clients in Oman, Kantar provides brand health tracking, treatment decision studies, and patient journey research across chronic disease categories. Their quantitative survey infrastructure and GCC-wide panel access make them capable for large-scale consumer health studies, though specialist clinical and payer research depth is more limited.',
-      strengths: [
-        'Patient tracking and consumer health behaviour research',
-        'OTC brand tracking and health behaviour studies',
-        'Large-scale quantitative health surveys across GCC',
-        'Brand health tracking across chronic disease categories',
-        'GCC-wide panel and sample infrastructure',
-      ],
-    },
-    {
-      id: 'euromonitor',
-      rank: 5,
-      name: 'Euromonitor International',
-      type: 'Global Syndicated Intelligence Provider',
-      hq: 'UK (global)',
-      anchor: 'euromonitor',
-      url: 'https://www.euromonitor.com',
-      bestFor: 'OTC/consumer health syndicated data, market sizing, competitive intelligence, Oman country reports',
-      overview:
-        'Euromonitor International provides syndicated healthcare and consumer health market intelligence for Oman through its Passport database. Their coverage spans OTC medications, dietary supplements, medical devices (consumer segment), and personal care/health categories with five-year market forecasts and competitive brand share data. Euromonitor does not conduct custom primary research or qualitative physician studies — their value is standardised market sizing data for market entry assessment, category benchmarking, and executive summary reports on Oman\'s healthcare consumer landscape.',
-      strengths: [
-        'Syndicated OTC healthcare and consumer health market data for Oman',
-        'Five-year market size forecasts and category trend analysis',
-        'Competitive brand share and company profiling',
-        'Oman country health reports and GCC benchmarking',
-      ],
-    },
-  ],
-  comparisonTitle: 'Oman Healthcare Market Research Capabilities Comparison',
-  comparisonHeaders: ['BioNixus', 'IQVIA MENA', 'Ipsos Healthcare', 'Kantar Health', 'Euromonitor'],
-  comparisonRows: [
-    {
-      capability: 'Pharmaceutical primary research (U&A)',
-      bionixus: 'Core capability',
-      competitor2: 'Limited — analytics-led',
-      competitor3: 'Yes — quant/qual',
-      competitor4: 'Consumer health focus',
-      competitor5: 'None (syndicated only)',
-    },
-    {
-      capability: 'Physician / KOL recruitment (SQUH / Royal Hospital)',
-      bionixus: 'Yes — specialist networks',
-      competitor2: 'Site-level only',
-      competitor3: 'Limited',
-      competitor4: 'Limited',
-      competitor5: 'No',
-    },
-    {
-      capability: 'MoH Oman / MCIOMS regulatory support',
-      bionixus: 'Awareness & alignment',
-      competitor2: 'Full regulatory advisory',
-      competitor3: 'Partial',
-      competitor4: 'Partial',
-      competitor5: 'No',
-    },
-    {
-      capability: 'Real-world evidence (RWE)',
-      bionixus: 'Custom design',
-      competitor2: 'Core capability',
-      competitor3: 'Limited',
-      competitor4: 'Limited',
-      competitor5: 'No',
-    },
-    {
-      capability: 'Payer / formulary research',
-      bionixus: 'Yes — MoH Oman aligned',
-      competitor2: 'Regulatory intelligence',
-      competitor3: 'Limited',
-      competitor4: 'Limited',
-      competitor5: 'No',
-    },
-    {
-      capability: 'HEOR & market access strategy',
-      bionixus: 'Yes',
-      competitor2: 'Analytics support',
-      competitor3: 'Partial',
-      competitor4: 'Limited',
-      competitor5: 'No',
-    },
-  ],
-  considerationsTitle: 'Key Considerations for Healthcare Market Research in Oman',
-  considerations: [
-    {
-      title: 'MoH Oman / MCIOMS Regulatory and Ethics Requirements',
-      body: 'Any primary research involving patients, physicians, or clinical data in Oman must comply with the Ministry of Health Oman (MoH Oman) research ethics framework and the Medicines and Clinical Supplies Directorate (MCIOMS) requirements. Studies generating evidence for drug registration, formulary listing, or clinical guideline submissions must be designed with MCIOMS requirements in mind from the outset. Working with a research partner familiar with MoH Oman\'s institutional research landscape materially reduces approval timelines and ensures compliant data collection.',
-    },
-    {
-      title: 'SQUH and Royal Hospital Muscat Research Access',
-      body: 'Sultan Qaboos University Hospital (SQUH) and the Royal Hospital Muscat are the two most influential referral institutions in Oman — their specialist physicians form the core of the KOL landscape and formulary decision-making community. Primary research involving SQUH or Royal Hospital-affiliated specialists requires professional network access and awareness of institutional protocols. Healthcare market research firms with established GCC physician networks, including SQUH-affiliated specialists, provide a significant advantage in study execution timelines and respondent quality.',
-    },
-    {
-      title: 'Vision 2040 Healthcare Investment and Private Sector Growth',
-      body: 'Oman Vision 2040 has identified healthcare as a priority diversification sector, driving expanded investment in both public and private healthcare infrastructure. The growth of private hospital groups — including The Medical City Muscat and Badr Al Samaa Group — and the development of Muscat as a regional medical tourism destination are reshaping the competitive landscape for pharmaceutical and healthcare companies. Healthcare market research in Oman should incorporate Vision 2040 investment trajectories and the evolving role of private providers alongside the public MoH Oman system.',
-    },
-  ],
-  faqTitle: 'Frequently Asked Questions',
   faqItems: [
     {
-      question: 'What are the best healthcare market research companies in Oman?',
-      answer: 'Leading healthcare market research companies serving Oman include BioNixus, IQVIA MENA, Ipsos Healthcare, Kantar Health (MENAP), and Euromonitor International. BioNixus is a global healthcare and market research firm with GCC execution capability covering pharmaceutical U&A, physician surveys, KOL mapping, payer research, HEOR, and MoH Oman regulatory awareness.',
+      question: 'What is the top healthcare market research company in Oman?',
+      answer:
+        'It depends on the job. For commissioned physician, KOL, patient and Ministry of Health market-access research, BioNixus runs the study end to end from its AMEA office in Cairo, with Arabic–English fieldwork in Muscat. For national sales and prescription trends, a syndicated audit is the usual source. BioNixus wrote this guide.',
     },
     {
-      question: 'How much does pharmaceutical market research cost in Oman?',
-      answer: 'Custom pharmaceutical market research in Oman typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with SQUH or Royal Hospital Muscat recruitment tend to cost more than consumer health studies. Payer and formulary committee research with MoH Oman-aligned design commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
+      question: 'What healthcare research does BioNixus run in Oman?',
+      answer:
+        'Physician and pharmacist surveys, KOL mapping, patient-journey and persistence studies, pharmacy and channel checks, account-level hospital and pharmacy-chain research, and market-access work for Ministry of Health registration and pricing decisions. Studies can run alone or alongside other GCC country cells on one instrument.',
     },
     {
-      question: 'What is the role of MCIOMS in Oman pharmaceutical regulation?',
-      answer: 'The Medicines and Clinical Supplies Directorate (MCIOMS), operating under the Ministry of Health Oman, oversees pharmaceutical registration, pricing, clinical trial authorisation, and medicines supply regulation in Oman. Companies seeking market access or conducting clinical/observational research in Oman must align their programmes with MCIOMS requirements. A research partner with MCIOMS regulatory awareness can help ensure study design and ethics compliance from the outset.',
+      question: 'Where is BioNixus\'s Oman team based?',
+      answer:
+        'BioNixus does not keep an office in Oman. Oman studies are run from the AMEA (APAC, Middle East, Africa) office in Sheikh Zayed, Giza, with Arabic–English fieldwork in Muscat. The Americas office and global HQ is in the USA, and the Europe office is in London.',
     },
     {
-      question: 'How do I recruit physicians at Sultan Qaboos University Hospital (SQUH) for research?',
-      answer: 'Physician recruitment at Sultan Qaboos University Hospital requires established professional networks and, for formal research studies, alignment with SQUH and MoH Oman ethics review processes. BioNixus maintains GCC physician networks that include SQUH-affiliated specialists across key therapy areas, enabling compliant physician survey and KOL mapping engagements in Oman.',
+      question: 'How much does custom healthcare market research in Oman cost?',
+      answer: COST_ANSWER,
     },
     {
-      question: 'What is Oman Vision 2040 and how does it affect healthcare market research?',
-      answer: 'Oman Vision 2040 is the Sultanate\'s long-term economic diversification strategy, which identifies healthcare as a priority investment sector. The Vision is driving expansion of both public and private healthcare infrastructure, the growth of medical tourism from Oman, and the development of a competitive pharmaceutical market. For healthcare market research, Vision 2040 context is increasingly important for strategic landscape studies, market access assessments, and competitive intelligence projects.',
+      question: 'How does the Ministry of Health affect a research design in Oman?',
+      answer:
+        'Drug registration and pricing run through the Ministry of Health. Specialist care is concentrated at Sultan Qaboos University Hospital and the Royal Hospital in Muscat. Designs should separate public hospital, primary care, private and out-of-pocket channels and test the access path for each.',
     },
     {
-      question: 'What is KOL mapping and why is it important in Oman?',
-      answer: 'Key Opinion Leader (KOL) mapping identifies the most influential physicians, academics, and healthcare decision-makers in a therapy area and assesses their views, relationships, and influence networks. In Oman, KOL mapping is particularly important given the concentration of specialist care at SQUH and Royal Hospital Muscat — a relatively concentrated but highly influential physician community that shapes prescribing behaviour and formulary decisions across the national health system.',
-    },
-    {
-      question: 'What is the Oman Medical Specialty Board (OMSB)?',
-      answer: 'The Oman Medical Specialty Board (OMSB) is the statutory body responsible for postgraduate specialist medical training and accreditation in Oman. OMSB-recognised specialists form a significant portion of the senior physician and KOL community across Oman\'s therapy areas. For pharmaceutical companies conducting KOL mapping or physician engagement research in Oman, understanding the OMSB specialist landscape is an important component of stakeholder identification and engagement strategy.',
-    },
-    {
-      question: 'Does BioNixus conduct healthcare market research in Oman?',
-      answer: 'Yes. BioNixus is a global healthcare and market research firm with GCC execution capability, serving pharmaceutical, biotech, and medical device clients in Oman. We cover pharmaceutical U&A, physician surveys, KOL mapping, payer and formulary research, HEOR, and market access strategy — all designed with MoH Oman and MCIOMS regulatory awareness and SQUH/Royal Hospital institutional familiarity. Contact us to discuss your Oman healthcare research requirements.',
+      question: 'How is this guide different from BioNixus\'s Oman pharmaceutical list and country page?',
+      answer:
+        'This guide answers who to brief for healthcare research in Oman. The pharmaceutical list covers prescription-medicine work, including registration, pricing and tenders. The country page explains how BioNixus runs Oman studies.',
     },
   ],
-  relatedTitle: 'Related Resources',
   related: [
-    { to: '/insights/top-pharmaceutical-market-research-companies-oman-2026', label: 'Top Pharmaceutical Market Research Companies in Oman' },
-    { to: '/insights/top-market-research-companies-oman-2026', label: 'Best Market Research Companies in Oman' },
-    { to: '/insights/top-healthcare-market-research-companies-qatar-2026', label: 'Healthcare Market Research Companies in Qatar' },
-    { to: '/insights/top-healthcare-market-research-companies-bahrain-2026', label: 'Healthcare Market Research Companies in Bahrain' },
-    { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
-    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
-    { to: '/contact', label: 'Request an Oman Healthcare Research Proposal' },
+    { to: '/healthcare-market-research/oman', label: 'Healthcare market research in Oman' },
+    {
+      to: '/insights/top-pharmaceutical-market-research-companies-oman-2026',
+      label: 'Pharmaceutical market research companies in Oman',
+    },
+    {
+      to: '/insights/top-market-research-companies-oman-2026',
+      label: 'Market research companies in Oman (all industries)',
+    },
+    { to: '/pharmaceutical-market-research-oman', label: 'Pharmaceutical market research in Oman' },
+    { to: '/oman-healthcare-market-report', label: 'Oman healthcare market report' },
+    {
+      to: '/insights/top-healthcare-market-research-companies-mena-2026',
+      label: 'Healthcare market research companies in MENA',
+    },
+    { to: '/methodology', label: 'How BioNixus validates respondents' },
+    { to: '/client-reviews', label: 'Client reviews' },
+    { to: '/contact', label: 'Request an Oman healthcare research proposal' },
   ],
-  cta: {
-    title: 'Plan Healthcare Market Research in Oman | BioNixus',
-    body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Oman and the wider GCC — physician surveys, KOL mapping, payer research, HEOR, market access strategy, and Oman Vision 2040 sector intelligence.',
-    button: 'Request a Proposal',
-    to: '/contact',
-  },
-  breadcrumb: {
-    home: 'Home',
-    insights: 'Insights',
-    current: 'Best Healthcare Market Research Companies in Oman',
-  },
-};
+  ctaTitle: 'Planning healthcare research in Oman?',
+  ctaBody:
+    'Planning healthcare research in Oman? BioNixus scopes physician, KOL, patient and Ministry of Health access studies from its Cairo AMEA office, with Arabic–English fieldwork in Muscat. A costed proposal is ready within 48 hours of a brief.',
+});

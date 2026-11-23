@@ -15,6 +15,9 @@ import GA4EventTracker from '@/components/GA4EventTracker';
 import LocalePrompt from '@/components/LocalePrompt';
 import CookieConsent from '@/components/CookieConsent';
 import WhatsAppProposalWidget from '@/components/WhatsAppProposalWidget';
+import NightThemeEffects from '@/components/NightThemeEffects';
+import MotionLayer from '@/components/MotionLayer';
+import GrowthEngineLayer from '@/components/GrowthEngineLayer';
 import { routes } from '@/routes';
 import { InitialDataProvider } from '@/contexts/InitialDataContext';
 
@@ -83,6 +86,7 @@ function DeferredPageChrome() {
       </Suspense>
       <WhatsAppProposalWidget />
       <CookieConsent />
+      <NightThemeEffects />
     </>
   );
 }
@@ -111,6 +115,8 @@ function AppProviders({ children }: { children: ReactNode }) {
           <Toaster />
           <Sonner />
           {children}
+          <MotionLayer />
+          <GrowthEngineLayer />
           <LocalePrompt />
           <DeferredPageChrome />
           <DeferredAnalytics />

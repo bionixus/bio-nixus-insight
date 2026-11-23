@@ -1,9 +1,10 @@
 /** Canonical job title for Mohammad Alsaadany, shared by SSR and the news RSS builder. */
 
-export const ALSAADANY_JOB_TITLE = 'AMEA Director (APAC, Middle East and Africa)';
+export const ALSAADANY_JOB_TITLE = 'Director';
 
 const LEGACY_TITLES = new Set([
   'mea director',
+  'amea director (apac, middle east and africa)',
   'healthcare market research advisor',
   'healthcare market research advisor, bionixus',
   'director, bionixus healthcare market research',
@@ -14,9 +15,16 @@ const LEGACY_TITLES = new Set([
 /** "MEA Director" only. The leading A in "AMEA Director" blocks a second replacement. */
 const MEA_DIRECTOR = /(?<![A-Za-z])MEA Director\b/g;
 
+/** "AMEA Director" and any suffix, including the previous canonical title. */
+function isAmeaDirectorTitle(title) {
+  return /^amea director\b/i.test(title);
+}
+
 export function canonicalAlsaadanyJobTitle(title) {
   const trimmed = typeof title === 'string' ? title.trim() : '';
-  if (!trimmed || LEGACY_TITLES.has(trimmed.toLowerCase())) return ALSAADANY_JOB_TITLE;
+  if (!trimmed || LEGACY_TITLES.has(trimmed.toLowerCase()) || isAmeaDirectorTitle(trimmed)) {
+    return ALSAADANY_JOB_TITLE;
+  }
   return trimmed;
 }
 

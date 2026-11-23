@@ -12,7 +12,7 @@ export const DKSH_NEWBRIDGE_PATH = '/blog/dksh-newbridge-acquisition-mena-launch
 export const DKSH_NEWBRIDGE_URL =
   'https://www.bionixus.com/blog/dksh-newbridge-acquisition-mena-launch-market-access';
 export const DKSH_NEWBRIDGE_META_TITLE =
-  'DKSH to Acquire NewBridge: What It Means for MENA Launches (2026)';
+  'DKSH to Acquire NewBridge: MENA Launches 2026 | BioNixus';
 export const DKSH_NEWBRIDGE_META_DESCRIPTION =
   'DKSH agreed to acquire NewBridge Pharmaceuticals for USD 390 million. What the deal means for oncology and rare disease launch and market access planning across 14 MENA markets.';
 export const DKSH_NEWBRIDGE_TITLE =

@@ -344,6 +344,42 @@ const REGIONS: Record<string, LocalizedLabel> = {
     zh: '美国',
     ar: 'الولايات المتحدة',
   },
+  USA: {
+    de: 'USA',
+    fr: 'États-Unis',
+    es: 'EE. UU.',
+    pt: 'EUA',
+    ru: 'США',
+    zh: '美国',
+    ar: 'الولايات المتحدة',
+  },
+  Canada: {
+    de: 'Kanada',
+    fr: 'Canada',
+    es: 'Canadá',
+    pt: 'Canadá',
+    ru: 'Канада',
+    zh: '加拿大',
+    ar: 'كندا',
+  },
+  LATAM: {
+    de: 'LATAM',
+    fr: 'LATAM',
+    es: 'LATAM',
+    pt: 'LATAM',
+    ru: 'ЛАТАМ',
+    zh: '拉美',
+    ar: 'أمريكا اللاتينية',
+  },
+  APAC: {
+    de: 'APAC',
+    fr: 'APAC',
+    es: 'APAC',
+    pt: 'APAC',
+    ru: 'АТР',
+    zh: '亚太',
+    ar: 'آسيا والمحيط الهادئ',
+  },
 };
 
 const LOOKUP = new Map<string, LocalizedLabel>();

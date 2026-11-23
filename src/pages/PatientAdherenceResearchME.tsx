@@ -3,7 +3,7 @@ import StrategicServicePage from '@/pages/templates/StrategicServicePage';
 export default function PatientAdherenceResearchME() {
   return (
     <StrategicServicePage
-      title="Patient Adherence Research Middle East | Medication Adherence MENA | BioNixus"
+      title="Patient Adherence Research Middle East | BioNixus"
       description="Patient adherence and medication compliance research in Middle East and MENA markets. Understand adherence barriers, persistence drivers, and design evidence-based patient support programmes in GCC."
       canonicalUrl="https://www.bionixus.com/patient-adherence-research-middle-east"
       breadcrumbLabel="Patient Adherence Research Middle East"

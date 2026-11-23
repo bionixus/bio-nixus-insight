@@ -1,4 +1,5 @@
 import { hardcodedSeoPosts } from '@/data/blog-posts-index';
+import { isReservedUnpublishedBlogSlug } from '@/lib/reserved-unpublished-blog-slugs';
 import {
   getIndustriesInsightPostPath,
   HEALTHCARE_BLOG_INDEX_PATH,
@@ -62,6 +63,14 @@ const GENERIC_TOKENS = new Set([
   'survey',
   'surveys',
 ]);
+
+/**
+ * A single shared token of this length used to count as a match. "health" (5)
+ * then 301'd /blog/health-data-residency-gcc-mena-research-2026 to
+ * /blog/mental-health-market-research-saudi-arabia, the alphabetically first
+ * live slug that also contains the token. These words are too common to do that.
+ */
+const WEAK_SINGLE_TOKENS = new Set(['health', 'data', 'care', 'medical', 'pharma']);
 
 export function normalizeArticlePath(pathname: string): string {
   const noQuery = (pathname.split('?')[0] || '/').trim();
@@ -132,6 +141,7 @@ export function closestKnownPostPath(slug: string, requestPath: string): string 
   if (exact) {
     const exactPath = canonicalPathForPost(exact);
     if (exactPath !== request) return exactPath;
+    return null;
   }
 
   const unknownTokens = distinctiveTokens(slug);
@@ -142,7 +152,8 @@ export function closestKnownPostPath(slug: string, requestPath: string): string 
     const path = canonicalPathForPost(post);
     if (path === request) continue;
     const shared = unknownTokens.filter((token) => distinctiveTokens(post.slug).includes(token));
-    const reasonable = shared.some((token) => token.length >= 5) || shared.length >= 2;
+    const strongSingle = shared.some((token) => token.length >= 5 && !WEAK_SINGLE_TOKENS.has(token));
+    const reasonable = strongSingle || shared.length >= 2;
     if (!reasonable) continue;
     const candidate: RankedMatch = {
       path,
@@ -160,6 +171,17 @@ function redirectTo(redirectToPath: string): ArticleRedirect {
 }
 
 /**
+ * Exact misses that the token overlap would send to the wrong live article.
+ * The Avalon obesity slug shares "obesity" and "glp1" with the Qatar GLP-1 post,
+ * so closest-match was 301ing it there. The canonical article is the Saudi
+ * tirzepatide post.
+ */
+const EXPLICIT_MISSING_ARTICLE_REDIRECTS: Record<string, string> = {
+  '/blog/avalon-pharma-onesource-saudi-obesity-glp1-market':
+    '/blog/avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market',
+};
+
+/**
  * 301 target for a missing English article address.
  * A Sanity lookup error stays a soft miss (null). Other locales are unchanged.
  */
@@ -172,6 +194,10 @@ export function missingArticleRedirect(args: {
   const pathname = normalizeArticlePath(args.pathname);
   const hub = hubForRequest(pathname);
   if (!hub) return null;
+  // Staged, unpublished slugs must 404. A found Sanity document falls through and renders.
+  if (isReservedUnpublishedBlogSlug(args.slug) && args.lookup !== 'found') return null;
+  const explicit = EXPLICIT_MISSING_ARTICLE_REDIRECTS[pathname];
+  if (explicit && explicit !== pathname) return redirectTo(explicit);
   if (args.lookup === 'error') return null;
 
   const isIndustries = pathname.startsWith('/bionixus-industries/insights/');

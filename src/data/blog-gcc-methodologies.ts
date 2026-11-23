@@ -11,7 +11,7 @@ export const gccMethodologiesGuide: BlogPostType = {
     country: 'GCC',
     tags: ['Methodology', 'CATI', 'CAPI', 'Online Surveys', 'GCC Market Research', 'Physician Insights'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'Healthcare Market Research Methodologies: CATI vs CAPI vs Online in GCC | BioNixus',
+    seoMetaTitle: 'Healthcare Research Methods: CATI vs CAPI, GCC | BioNixus',
     seoMetaDescription: 'Discover the most effective healthcare market research methodologies in the GCC. Expert comparison of CATI, CAPI, and online surveys for engaging with physicians in Saudi Arabia and the UAE.',
     tableOfContents: [
         { heading: 'The Unique GCC Research Landscape', anchor: 'unique-gcc-landscape' },

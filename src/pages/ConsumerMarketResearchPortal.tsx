@@ -216,7 +216,7 @@ export default function ConsumerMarketResearchPortal() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Consumer & Business Market Research Company — FMCG | BioNixus"
+        title="Consumer & Business Market Research Company | BioNixus"
         description="BioNixus delivers consumer and B2B market research across FMCG, retail, financial services, technology, and automotive — with local field teams in 15+."
         canonical="https://www.bionixus.com/consumer-market-research"
         ogImage="https://www.bionixus.com/og-image.png"

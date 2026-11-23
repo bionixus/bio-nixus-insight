@@ -52,7 +52,7 @@ const BASE = 'https://www.bionixus.com';
 const genericInjectables: GccSegmentContent = {
   slug: 'gcc-generic-injectables-market',
   segmentLabel: 'Generic Injectables',
-  title: 'GCC Generic Injectables Market Research & Intelligence | BioNixus',
+  title: 'GCC Generic Injectables Market Research | BioNixus',
   description:
     'GCC generic injectables market intelligence — hospital tender dynamics, NUPCO and Rafed procurement, localization mandates, and biosimilar injectable.',
   canonical: `${BASE}/gcc-generic-injectables-market`,

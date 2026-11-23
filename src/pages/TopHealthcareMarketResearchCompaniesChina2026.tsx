@@ -205,7 +205,7 @@ export default function TopHealthcareMarketResearchCompaniesChina2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in China 2026 | BioNixus',
+    headline: 'Healthcare Market Research Companies China 2026 | BioNixus',
     description:
       'Top healthcare market research companies in China 2026 — BioNixus wrote this list. HCP surveys at Tier 3A hospitals, NHSA NRDL payer landscape research, VBP procurement intelligence, and KOL mapping at PUMCH, West China Hospital, Zhongshan, and PLA General Hospital.',
     url: PAGE_CANONICAL,
@@ -251,7 +251,7 @@ export default function TopHealthcareMarketResearchCompaniesChina2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in China 2026 | BioNixus</title>
+        <title>Healthcare Market Research Companies China 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in China 2026 — BioNixus wrote this list. HCP surveys at Tier 3A hospitals, NHSA NRDL payer landscape research, VBP procurement intelligence, and KOL mapping at PUMCH, West China Hospital, Zhongshan, and PLA General Hospital."
@@ -267,7 +267,7 @@ export default function TopHealthcareMarketResearchCompaniesChina2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in China 2026 | BioNixus"
+        title="Healthcare Market Research Companies China 2026 | BioNixus"
         description="Top healthcare market research companies in China 2026 — BioNixus wrote this list. HCP surveys at Tier 3A hospitals, NHSA NRDL payer landscape research, VBP procurement intelligence, and KOL mapping at PUMCH, West China Hospital, Zhongshan, and PLA General Hospital."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

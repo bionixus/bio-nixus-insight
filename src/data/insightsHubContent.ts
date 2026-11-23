@@ -31,7 +31,7 @@ export type InsightsHubCopy = {
 
 const en: InsightsHubCopy = {
   seo: {
-    title: 'BioNixus Insights for Healthcare & Pharma Strategy | BioNixus',
+    title: 'BioNixus Insights for Healthcare & Pharma | BioNixus',
     description:
       'Discover why BioNixus insights improve healthcare and pharmaceutical decisions across market access, launch planning, and growth strategy.',
   },
@@ -157,7 +157,7 @@ const fr: InsightsHubCopy = {
 
 const es: InsightsHubCopy = {
   seo: {
-    title: 'Insights de BioNixus para estrategia sanitaria y farmacéutica',
+    title: 'Insights de BioNixus para estrategia sanitaria',
     description:
       'Descubra cómo los insights de BioNixus mejoran las decisiones sanitarias y farmacéuticas en acceso al mercado, preparación de lanzamiento y estrategia de crecimiento.',
   },

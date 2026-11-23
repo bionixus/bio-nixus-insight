@@ -6,7 +6,7 @@ export const coteDivoireGeneralEn: CountryListicleConfig = {
   variant: 'general',
   region: 'africa',
   country: "Côte d'Ivoire",
-  title: "Top Market Research Companies in Côte d'Ivoire 2026 | BioNixus",
+  title: "Market Research Companies Côte d'Ivoire 2026 | BioNixus",
   metaDescription:
     "Independent 2026 guide to the leading market research companies in Côte d'Ivoire — healthcare, pharmaceutical, consumer, and strategic research firms.",
   canonical: 'https://www.bionixus.com/insights/top-market-research-companies-cote-divoire-2026',

@@ -2,10 +2,14 @@ import type { BlogPost } from '@/types/blog';
 import {
   ALL_COUNTRIES,
   ALL_TOPICS,
+  canonicalBlogCountryParam,
   hasActiveBlogFilters,
+  searchParamsForBlogIndexFilters,
+  blogIndexFiltersFromSearchParams,
   type BlogFilterOption,
   type BlogIndexFilterState,
 } from '@/lib/blog-index-filters';
+import { postBlogFilterKey } from '@/lib/blog-region-filters';
 import {
   MATRIX_INDUSTRIES,
   type MatrixIndustrySlug,
@@ -63,7 +67,8 @@ export function filterIndustriesInsightsPosts(
     result = result.filter((post) => post.industrySlug?.trim() === industry);
   }
   if (country !== ALL_COUNTRIES) {
-    result = result.filter((post) => post.country?.trim() === country);
+    const selectedCountry = canonicalBlogCountryParam(country);
+    result = result.filter((post) => postBlogFilterKey(post) === selectedCountry);
   }
 
   const q = search.trim().toLowerCase();
@@ -75,6 +80,8 @@ export function filterIndustriesInsightsPosts(
       post.excerpt,
       post.category,
       post.country,
+      post.region,
+      postBlogFilterKey(post),
       post.slug,
       post.industrySlug,
       post.industrySlug ? industrySlugLabel(post.industrySlug) : '',
@@ -102,3 +109,27 @@ export const DEFAULT_INDUSTRIES_INSIGHTS_FILTER_STATE: IndustriesInsightsFilterS
   segment: ALL_SEGMENTS,
   industry: ALL_INDUSTRIES,
 };
+
+export function industriesFiltersFromSearchParams(params: URLSearchParams): IndustriesInsightsFilterState {
+  const base = blogIndexFiltersFromSearchParams(params);
+  const segmentRaw = params.get('segment');
+  const segment: IndustrySegmentFilter =
+    segmentRaw === 'b2b' || segmentRaw === 'b2c' ? segmentRaw : ALL_SEGMENTS;
+  return {
+    ...base,
+    segment,
+    industry: params.get('industry')?.trim() || ALL_INDUSTRIES,
+  };
+}
+
+export function searchParamsForIndustriesFilters(
+  current: URLSearchParams,
+  state: IndustriesInsightsFilterState,
+): URLSearchParams {
+  const next = searchParamsForBlogIndexFilters(current, state);
+  if (state.segment !== ALL_SEGMENTS) next.set('segment', state.segment);
+  else next.delete('segment');
+  if (state.industry !== ALL_INDUSTRIES) next.set('industry', state.industry);
+  else next.delete('industry');
+  return next;
+}

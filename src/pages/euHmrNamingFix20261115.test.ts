@@ -3,8 +3,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import { render } from '@/entry-server';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
 
-const DEPLOY_DATE = '2026-11-15';
-const REVIEWED = 'Last reviewed 15 Nov 2026';
+const DEPLOY_DATE = '2026-11-23';
+const REVIEWED = 'Last reviewed 23 Nov 2026';
 const PRICE = '$10,000–$60,000';
 
 const PAGES = [

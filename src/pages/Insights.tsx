@@ -293,7 +293,7 @@ export default function Insights() {
                 to="/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement"
                 className="inline-flex items-center rounded-xl border border-border px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >
-                Skyrizi July rankings: omnichannel lessons
+                Skyrizi July TV spend: omnichannel lessons
               </Link>
               <Link
                 to="/insights/best-rare-disease-market-research-companies-2026"

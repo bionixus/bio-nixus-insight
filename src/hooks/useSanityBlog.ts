@@ -4,6 +4,7 @@ import { fetchSanityLatestInsights, fetchSanityPosts, fetchIndustriesInsights } 
 import { isSanityConfigured } from '@/lib/sanity';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { BlogPost } from '@/types/blog';
+import { selectListablePosts } from '@/lib/blog-listing-eligibility';
 
 /** Returns posts filtered by current site language. Posts with no language set are shown in all locales. */
 export function useSanityBlog(ssrPosts?: BlogPost[] | null) {
@@ -20,7 +21,7 @@ export function useSanityBlog(ssrPosts?: BlogPost[] | null) {
 
   // Filter by language, then ensure sorted by publish date (newest first)
   const data = useMemo(() => {
-    const posts = query.data ?? [];
+    const posts = selectListablePosts(query.data ?? [], 'healthcare');
     return posts
       .filter((p) => !p.language || p.language === language)
       .sort((a, b) => {
@@ -35,8 +36,8 @@ export function useSanityBlog(ssrPosts?: BlogPost[] | null) {
   return { ...query, data };
 }
 
-/** Optimized hook for homepage Latest Insights (returns latest 3 posts). */
-export function useSanityLatestInsights(limit = 3, ssrPosts?: BlogPost[] | null) {
+/** Homepage Latest Insights. Newest first, six cards. */
+export function useSanityLatestInsights(limit = 6, ssrPosts?: BlogPost[] | null) {
   const { language } = useLanguage();
   const hasSsr = Array.isArray(ssrPosts) && ssrPosts.length > 0;
 
@@ -65,7 +66,7 @@ export function useIndustriesInsights(ssrPosts?: BlogPost[] | null) {
   });
 
   const data = useMemo(() => {
-    const posts = query.data ?? [];
+    const posts = selectListablePosts(query.data ?? [], 'industries');
     return posts.sort((a, b) => {
       const da = a.publishedAtIso || a.date;
       const db = b.publishedAtIso || b.date;

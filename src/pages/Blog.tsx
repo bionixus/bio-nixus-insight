@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useMemo, useState, useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogSection from '@/components/BlogSection';
@@ -24,11 +23,19 @@ import type { BlogPost } from '@/types/blog';
 import {
   ALL_COUNTRIES,
   ALL_TOPICS,
+  blogIndexFiltersFromSearchParams,
   buildFilterOptions,
   filterBlogPosts,
   hasActiveBlogFilters,
+  searchParamsForBlogIndexFilters,
+  selectedBlogCountry,
   type BlogIndexFilterState,
 } from '@/lib/blog-index-filters';
+import { localizeBlogTaxonomy } from '@/lib/blogTaxonomyStrings';
+import { useSyncedCountryParam } from '@/hooks/useSyncedCountryParam';
+import { listingRedirectTarget } from '@/lib/blog-listing-eligibility';
+
+const BLOG_RSS_HREF = 'https://www.bionixus.com/blog/rss.xml';
 
 function buildBlogCollectionSchema(
   canonical: string,
@@ -118,15 +125,25 @@ const Blog = () => {
   const isGerman = pathname.startsWith('/de/');
   const isFrench = pathname.startsWith('/fr/');
 
-  const allPosts = posts ?? ssrPosts ?? [];
-  const [filterState, setFilterState] = useState<BlogIndexFilterState>({
-    search: '',
-    country: ALL_COUNTRIES,
-    topic: ALL_TOPICS,
-  });
-
-  const countryOptions = useMemo(() => buildFilterOptions(allPosts, 'country'), [allPosts]);
+  const allPosts = useMemo(() => posts ?? ssrPosts ?? [], [posts, ssrPosts]);
+  const countryOptions = useMemo(
+    () =>
+      buildFilterOptions(allPosts, 'country').map((option) => ({
+        ...option,
+        label: localizeBlogTaxonomy(option.value, language),
+      })),
+    [allPosts, language],
+  );
   const topicOptions = useMemo(() => buildFilterOptions(allPosts, 'category'), [allPosts]);
+  const filtersReady = !isLoading || allPosts.length > 0;
+  const [searchParams, setSearchParams] = useSyncedCountryParam(countryOptions, filtersReady);
+  const filterState = useMemo(() => {
+    const fromUrl = blogIndexFiltersFromSearchParams(searchParams);
+    return {
+      ...fromUrl,
+      country: selectedBlogCountry(fromUrl.country, countryOptions),
+    };
+  }, [searchParams, countryOptions]);
   const filteredPosts = useMemo(
     () => filterBlogPosts(allPosts, filterState),
     [allPosts, filterState],
@@ -135,13 +152,24 @@ const Blog = () => {
   const postCount = allPosts.length;
   const visibleCount = filteredPosts.length;
 
-  const handleFilterChange = useCallback((patch: Partial<BlogIndexFilterState>) => {
-    setFilterState((prev) => ({ ...prev, ...patch }));
-  }, []);
+  const handleFilterChange = useCallback(
+    (patch: Partial<BlogIndexFilterState>) => {
+      const next = { ...filterState, ...patch };
+      setSearchParams(searchParamsForBlogIndexFilters(searchParams, next), { replace: true });
+    },
+    [filterState, searchParams, setSearchParams],
+  );
 
   const handleClearFilters = useCallback(() => {
-    setFilterState({ search: '', country: ALL_COUNTRIES, topic: ALL_TOPICS });
-  }, []);
+    setSearchParams(
+      searchParamsForBlogIndexFilters(searchParams, {
+        search: '',
+        country: ALL_COUNTRIES,
+        topic: ALL_TOPICS,
+      }),
+      { replace: true },
+    );
+  }, [searchParams, setSearchParams]);
 
   const filterLabels = isArabicBlog
     ? {
@@ -380,7 +408,7 @@ const Blog = () => {
     const seen = new Set<string>();
     const out: { path: string; label: string }[] = [];
     for (const row of [...fromAmp, ...fromBlog]) {
-      if (seen.has(row.path)) continue;
+      if (seen.has(row.path) || listingRedirectTarget(row.path)) continue;
       seen.add(row.path);
       out.push(row);
     }
@@ -417,6 +445,7 @@ const Blog = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonical} />
+        <link rel="alternate" type="application/rss+xml" title="BioNixus blog" href={BLOG_RSS_HREF} />
         {hreflangLinks.map(({ lang, href }) => (
           <link key={`${lang}-${href}`} rel="alternate" hrefLang={lang} href={href} />
         ))}

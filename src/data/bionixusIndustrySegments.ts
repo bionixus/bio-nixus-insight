@@ -112,7 +112,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
     label: 'B2B Industries',
     navLabel: 'B2B Industries',
     tagline: 'Enterprise, institutional, and infrastructure markets.',
-    seoTitle: 'B2B Market Research | Technology, Energy, Real Estate & More | BioNixus',
+    seoTitle: 'B2B Market Research | Technology, Energy, Real | BioNixus',
     seoDescription:
       'BioNixus B2B market research for technology, energy and industrials, real estate, public sector, and education — buyer journeys, market sizing, and competitive intelligence across MENA, Africa, Europe, and the Americas.',
     h1: 'B2B Industries Market Research',
@@ -154,7 +154,7 @@ export const SEGMENTS: Record<SegmentSlug, SegmentConfig> = {
     label: 'B2C Industries',
     navLabel: 'B2C Industries',
     tagline: 'Consumer demand, brands, and the shopper journey.',
-    seoTitle: 'B2C Market Research | FMCG, Retail, Telecom, Finance & More | BioNixus',
+    seoTitle: 'B2C Market Research | FMCG, Retail, Telecom | BioNixus',
     seoDescription:
       'BioNixus B2C market research for FMCG, retail, financial services, telecom, automotive, hospitality, and media — consumer demand, brand tracking, and shopper insight across MENA, Africa, Europe, and the Americas.',
     h1: 'B2C Industries Market Research',

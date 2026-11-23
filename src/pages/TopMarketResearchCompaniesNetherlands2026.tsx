@@ -218,7 +218,7 @@ export default function TopMarketResearchCompaniesNetherlands2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Market Research Companies in the Netherlands 2026 | BioNixus',
+    headline: 'Top Market Research Companies in the Netherlands | BioNixus',
     description:
       'Top market research companies in the Netherlands 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL mapping, and payer research.',
     url: PAGE_CANONICAL,
@@ -257,7 +257,7 @@ export default function TopMarketResearchCompaniesNetherlands2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Market Research Companies in the Netherlands 2026 | BioNixus</title>
+        <title>Top Market Research Companies in the Netherlands | BioNixus</title>
         <meta
           name="description"
           content="Top market research companies in the Netherlands 2026 — BioNixus wrote this list for pharmaceutical and healthcare sectors. CBG-MEB-aligned HCP surveys, KOL mapping, and payer research."

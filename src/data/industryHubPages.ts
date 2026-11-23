@@ -727,7 +727,7 @@ export const INDUSTRY_HUB_PAGES: IndustryHubPageConfig[] = [
     slug: 'public-sector',
     displayName: 'Public Sector & Government',
     displayNameShort: 'Public Sector',
-    metaTitle: 'Public Sector & Government Market Research Company | BioNixus',
+    metaTitle: 'Public Sector & Government Market Research | BioNixus',
     metaDescription:
       'Citizen satisfaction, policy awareness, and public opinion research — structured government-grade fieldwork across the GCC and Europe. BioNixus.',
     h1: 'Public Sector & Government Market Research Company (2026)',

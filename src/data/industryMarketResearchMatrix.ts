@@ -324,7 +324,13 @@ export function buildMatrixSeoCopy(
   const title =
     country.slug === 'saudi-arabia' && industry.slug === 'consumer-health'
       ? 'Consumer Health Market Research in Saudi Arabia | BioNixus'
-      : `${name} Market Research in ${country.label} 2026 | BioNixus`;
+      : country.slug === 'saudi-arabia' && industry.slug === 'financial-services'
+        ? 'Saudi Arabia Financial Services Market Research | BioNixus'
+        : country.slug === 'saudi-arabia' && industry.slug === 'public-sector'
+          ? 'Public Sector Market Research in Saudi Arabia | BioNixus'
+          : country.slug === 'bahrain' && industry.slug === 'financial-services'
+            ? 'Financial Services Market Research in Bahrain | BioNixus'
+            : `${name} Market Research in ${country.label} 2026 | BioNixus`;
   const metaDescription = industry.isHealthcareAdjacent
     ? `${full} market research in ${country.label}: ${country.regulatorShort}-aware fieldwork, bilingual studies & decision-ready evidence. Proposal in 24 hours.`
     : `${name} market research in ${country.label} 2026 — surveys, qualitative depth & buyer intelligence with local field teams. Proposal in 24 hours.`;

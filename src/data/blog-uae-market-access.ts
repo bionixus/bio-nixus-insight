@@ -11,7 +11,7 @@ export const uaeMarketAccessGuide: BlogPostType = {
     country: 'UAE',
     tags: ['Market Access', 'UAE', 'MOHAP', 'DOH', 'DHA', 'Pricing Strategy', 'Reimbursement'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'Market Access Strategy for Pharma in the UAE: DOH vs MOHAP | BioNixus',
+    seoMetaTitle: 'UAE Market Access Strategy: DOH vs MOHAP | BioNixus',
     seoMetaDescription: 'Navigate UAE market access for pharmaceutical products. Learn the differences between MOHAP registration, DOH Abu Dhabi formularies, and DHA pathways.',
     tableOfContents: [
         { heading: 'The Tripartite Regulatory System', anchor: 'tripartite-system' },

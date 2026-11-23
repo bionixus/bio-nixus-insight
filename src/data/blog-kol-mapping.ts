@@ -11,7 +11,7 @@ export const kolMappingGuide: BlogPostType = {
     country: 'Middle East',
     tags: ['KOL Mapping', 'Key Opinion Leaders', 'Saudi Arabia', 'UAE', 'Pharma Marketing', 'Medical Affairs'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'KOL Mapping for Pharma Companies in the Middle East: Complete Guide | BioNixus',
+    seoMetaTitle: 'KOL Mapping for Pharma in the Middle East | BioNixus',
     seoMetaDescription: 'Learn how to design an effective KOL mapping study in the Middle East. Expert guide on identifying Key Opinion Leaders in Saudi Arabia, UAE, and GCC hospitals.',
     tableOfContents: [
         { heading: 'What is KOL Mapping?', anchor: 'what-is-kol-mapping' },

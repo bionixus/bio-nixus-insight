@@ -22,6 +22,8 @@ import { resolveUntranslatedLocaleRedirect } from './lib/untranslated-locale-red
 import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-org.mjs';
 import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from './lib/robots-meta.mjs';
+import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from './lib/html-meta-escape.mjs';
+import { handleRedirectEnd, handleRedirectExport, handleRedirectStart, REDIRECT_OUTCOMES } from './lib/redirect-log.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -119,9 +121,9 @@ const SAUDI_PHARMA_MARKET_2026_AR_META_DESCRIPTION =
   'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة';
 
 const SKYRIZI_ROOT_SLUG = 'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement';
-const SKYRIZI_ROOT_TITLE = 'Skyrizi Tops July Pharma Rankings: Omnichannel Lessons | BioNixus';
+const SKYRIZI_ROOT_TITLE = 'Skyrizi July TV Spend: Omnichannel | BioNixus';
 const SKYRIZI_ROOT_DESCRIPTION =
-  'Skyrizi led July pharma TV ad spend and brand-impression rankings. What AbbVie immunology leadership means for omnichannel engagement, HCP digital, and promotional ROI.';
+  'Skyrizi July TV ad spend and impression share, and what that means for omnichannel engagement, HCP digital and promotional ROI.';
 
 const GENERIC_DEFAULT_TITLES = new Set([
   'BioNixus | Healthcare & Pharmaceutical Market Research',
@@ -588,10 +590,10 @@ function extractDocumentTitles(html) {
 
 function ensureTitleTag(html, pathname) {
   const ctr = getCtrSeo(pathname);
-  const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname), 60, pathname);
   const headTitles = extractDocumentTitles(html);
   const chosen = headTitles.at(-1) ?? '';
   // Force CTR-engineered titles so view-source matches the approved copy.
+  // Do this before fitting a fallback: CTR titles ship exact and often exceed 60.
   if (ctr) {
     const withoutTitles = html.replace(/<title[^>]*>[\s\S]*?<\/title>/ig, '');
     return withoutTitles.replace(
@@ -599,17 +601,19 @@ function ensureTitleTag(html, pathname) {
       `$&\n<title>${ctr.title}</title>`,
     );
   }
-  const normalized = normalizeTitleLength(chosen || fallbackTitle, 60, pathname);
-  // If the rendered title is a generic site default (the index.html fallback
-  // that React-Helmet didn't override at SSR time, typically because page
-  // data is fetched async from Sanity), replace it with the path-specific
-  // fallback so each URL ships a unique <title>.
+  // Fit the fallback only when it is the title we will ship. A long unused
+  // fallback must not throw on a page that already has a complete <title>.
   const isGeneric = chosen
     ? GENERIC_DEFAULT_TITLES.has(chosen) || /^BioNixus \| Global Pharmaceutical/i.test(chosen)
     : false;
   const forceLocale = shouldForceLocaleFallback(pathname, chosen);
+  const normalized = chosen && !isGeneric && !forceLocale
+    ? normalizeTitleLength(chosen, 60, pathname)
+    : '';
   const strengthened =
-    isGeneric || forceLocale || normalized.length < 30 ? fallbackTitle : normalized;
+    !chosen || isGeneric || forceLocale || normalized.length < 30
+      ? normalizeTitleLength(buildFallbackTitle(pathname), 60, pathname)
+      : normalized;
 
   const withoutTitles = html.replace(/<title[^>]*>[\s\S]*?<\/title>/ig, '');
   return withoutTitles.replace(
@@ -624,13 +628,6 @@ function shouldForceArabicMetaDescription(pathname, chosen) {
     return !/[\u0590-\u08FF]/.test(chosen);
   }
   return false;
-}
-
-function escapeHtmlAttribute(value) {
-  return String(value || '')
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;');
 }
 
 function ensureMetaDescriptionTag(html, pathname) {
@@ -651,13 +648,13 @@ function ensureMetaDescriptionTag(html, pathname) {
     : forceArDescription
       ? fallbackDescription
       : (chosen || fallbackDescription);
-  const normalizedContent = normalizeDescriptionLength(base, pathname);
+  const normalizedContent = normalizeDescriptionLength(decodeHtmlEntities(base), pathname);
   const safeContent = escapeHtmlAttribute(normalizedContent);
 
   const withoutDescriptions = html.replace(/<meta[^>]+name=(["'])description\1[^>]*>\s*/ig, '');
   return withoutDescriptions.replace(
     /<title[^>]*>[\s\S]*?<\/title>/i,
-    `$&\n<meta name="description" content="${safeContent}" />`,
+    (titleTag) => `${titleTag}\n<meta name="description" content="${safeContent}" />`,
   );
 }
 
@@ -1001,6 +998,13 @@ async function startServer() {
     res.type('text/plain').sendFile(path.resolve(__dirname, 'public/llms-full.txt'));
   });
 
+  const blogRssPath = path.resolve(__dirname, 'public/blog/rss.xml');
+  const sendBlogRss = (_req, res) => {
+    res.type('application/rss+xml').sendFile(blogRssPath);
+  };
+  app.get('/blog/rss.xml', sendBlogRss);
+  app.get('/rss.xml', sendBlogRss);
+
   app.get('/pricing.md', (_req, res) => {
     res.type('text/markdown; charset=utf-8').sendFile(path.resolve(__dirname, 'public/pricing.md'));
   });
@@ -1046,6 +1050,22 @@ async function startServer() {
       })
       .send(svg);
   });
+
+  for (const outcome of REDIRECT_OUTCOMES) {
+    const end = (req, res, next) => {
+      Promise.resolve(handleRedirectEnd(req, res, outcome)).catch(next);
+    };
+    app.get(`/r/${outcome}`, end);
+    app.get(`/r/${outcome}/`, end);
+  }
+  app.get(['/api/r/export', '/api/r/export/'], (req, res, next) => {
+    Promise.resolve(handleRedirectExport(req, res)).catch(next);
+  });
+  const start = (req, res, next) => {
+    Promise.resolve(handleRedirectStart(req, res, req.params.pid, req.params.country)).catch(next);
+  };
+  app.get('/go/:pid/:country', start);
+  app.get('/go/:pid/:country/', start);
 
   app.use(async (req, res, next) => {
     try {
@@ -1171,7 +1191,7 @@ async function startServer() {
         ),
         req.path,
       ), req.path), req.path);
-      const withRobots = ensureRobotsMeta(localizedPage);
+      const withRobots = ensureRobotsMeta(normalizeDescriptionMetaTags(localizedPage));
       const responseHtml = statusCode === 404 ? stripNotFoundDiscoveryTags(withRobots) : withRobots;
       const cdnCache = htmlCdnCacheControl(req.path, statusCode === 404);
 

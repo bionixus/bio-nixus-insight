@@ -127,6 +127,8 @@ const BLOG_SLUG_SITEMAP_STATIC_ONLY = new Set([
   'uae-drug-pricing-ede-takeover-launch-research',
   'dubai-essential-drug-list-formulary-submission',
   'diabetes-market-research-uae-2026-price-cuts',
+  'saudi-diabetes-syndicated-vs-hospital-switching',
+  'saudi-hematology-diagnostics-vs-ward-brand-cut',
   'china-biotech-export-controls-pharma-deals-2026',
   'kuwait-drug-pricing-2026-decision-62',
   'uae-pharmacovigilance-requirements-2026',
@@ -305,6 +307,7 @@ const staticPages = [
     path: '/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
     priority: '0.85',
     changefreq: 'monthly',
+    lastmod: '2026-11-15',
   },
   { path: '/blog', priority: '0.9', changefreq: 'daily' },
   { path: '/news', priority: '0.85', changefreq: 'weekly' },
@@ -535,7 +538,9 @@ const staticPages = [
   { path: '/blog/uae-drug-pricing-ede-takeover-launch-research', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-16' },
   { path: '/blog/dubai-essential-drug-list-formulary-submission', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/blog/diabetes-market-research-uae-2026-price-cuts', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-17' },
-  { path: '/blog/china-biotech-export-controls-pharma-deals-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-10-18' },
+  { path: '/blog/saudi-diabetes-syndicated-vs-hospital-switching', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15' },
+  { path: '/blog/saudi-hematology-diagnostics-vs-ward-brand-cut', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15' },
+  { path: '/blog/china-biotech-export-controls-pharma-deals-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-15' },
   { path: '/blog/kuwait-drug-pricing-2026-decision-62', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/blog/uae-pharmacovigilance-requirements-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
   { path: '/blog/japanese-pharmaceutical-companies-middle-east-entry', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-01' },
@@ -572,6 +577,7 @@ const staticPages = [
     path: '/blog/skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement',
     priority: '0.85',
     changefreq: 'monthly',
+    lastmod: '2026-11-15',
   },
   // Rare-tumour service pillars (hub) — blogs above are editorial spokes; distinct titles/schema.
   { path: '/nf1-pharma-market-research', priority: '0.88', changefreq: 'monthly' },
@@ -711,7 +717,7 @@ const staticPages = [
   { path: '/india-healthcare-market-report', priority: '0.85', changefreq: 'monthly' },
   { path: '/india-medical-devices-market-report', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-australia-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-bahrain-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-bahrain-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-belgium-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-canada-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-india-2026', priority: '0.90', changefreq: 'monthly' },
@@ -720,21 +726,21 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-colombia-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-denmark-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-norway-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-egypt-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-france-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-11-15' },
-  { path: '/insights/top-healthcare-market-research-companies-germany-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-11-15' },
+  { path: '/insights/top-healthcare-market-research-companies-egypt-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-11-23' },
+  { path: '/insights/top-healthcare-market-research-companies-france-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-11-23' },
+  { path: '/insights/top-healthcare-market-research-companies-germany-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-italy-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-jordan-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-lebanon-2026', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-mexico-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-netherlands-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-new-zealand-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-oman-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-oman-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-peru-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-poland-2026', priority: '0.88', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-qatar-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-qatar-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-south-korea-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-spain-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-11-15' },
+  { path: '/insights/top-healthcare-market-research-companies-spain-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-switzerland-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-turkey-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-uae-2026', priority: '0.90', changefreq: 'monthly' },
@@ -1585,6 +1591,12 @@ const STATIC_PAGE_FILES = {
   '/blog/diabetes-market-research-uae-2026-price-cuts': [
     'src/data/blog-diabetes-market-research-uae-2026-price-cuts.ts',
   ],
+  '/blog/saudi-diabetes-syndicated-vs-hospital-switching': [
+    'src/data/blog-saudi-diabetes-syndicated-vs-hospital-switching.ts',
+  ],
+  '/blog/saudi-hematology-diagnostics-vs-ward-brand-cut': [
+    'src/data/blog-saudi-hematology-diagnostics-vs-ward-brand-cut.ts',
+  ],
   '/blog/china-biotech-export-controls-pharma-deals-2026': [
     'src/data/blog-china-biotech-export-controls-pharma-deals-2026.ts',
   ],
@@ -2147,6 +2159,11 @@ async function main() {
     const path = pathFromAbsoluteUrl(loc);
     if (isSitemapRedirectSourcePath(path)) {
       excluded.push({ url: loc, reason: 'redirect-source' });
+      finalUrls.delete(loc);
+      continue;
+    }
+    if (path === '/r' || path.startsWith('/r/') || path === '/go' || path.startsWith('/go/')) {
+      excluded.push({ url: loc, reason: 'panel-redirect-end' });
       finalUrls.delete(loc);
     }
   }

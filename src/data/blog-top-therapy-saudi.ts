@@ -11,7 +11,7 @@ export const therapyAreasSaudiArabia: BlogPostType = {
     country: 'Saudi Arabia',
     tags: ['Saudi Arabia', 'Therapy Areas', 'Pharma Growth', 'Oncology', 'Diabetes', 'Cardiovascular', 'Market Intelligence'],
     authorName: 'BioNixus Research Team',
-    seoMetaTitle: 'Top 10 Therapy Areas Driving Pharma Growth in Saudi Arabia (2026) | BioNixus',
+    seoMetaTitle: 'Top 10 Therapy Areas for Pharma in Saudi Arabia | BioNixus',
     seoMetaDescription: 'Discover the top 10 therapeutic areas fueling pharmaceutical growth in Saudi Arabia for 2026. Insights on oncology, diabetes, cardiovascular diseases, and more.',
     tableOfContents: [
         { heading: 'The Demographic Shift', anchor: 'demographic-shift' },

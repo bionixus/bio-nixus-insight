@@ -72,13 +72,13 @@ function figureHtml(figure: ArticleFigure): string {
   return `<figure class="article-figure"><img src="${figure.src}" alt="${figure.alt}" width="${figure.width}" height="${figure.height}" loading="lazy" decoding="async"><figcaption>${figure.caption}</figcaption></figure>`;
 }
 
-export const CHINA_BIOTECH_EXPORT_META_TITLE = 'China Biotech Export Controls: Pharma Deal Guide 2026';
+export const CHINA_BIOTECH_EXPORT_META_TITLE = 'China Biotech Export Controls: Pharma Deals 2026';
 
 export const CHINA_BIOTECH_EXPORT_META_DESCRIPTION =
-  'China biotech export controls in the 16 Oct 2026 draft: 40 AI, biotech and solar items. What BD, licensing and Gulf access teams should do before 15 Nov.';
+  'China biotech export controls, 16 Oct 2026: 40 AI, biotech and solar items. What BD and Gulf access teams should do by 15 Nov.';
 
 export const CHINA_BIOTECH_EXPORT_DISPLAY_TITLE =
-  'China wants to stop foreign buyers taking its best biotech platforms';
+  'China wants to stop foreign buyers taking its critical biotech platforms';
 
 export const CHINA_BIOTECH_EXPORT_DISPLAY_SUBTITLE =
   'Licensing deals are still open. The 16 October draft is not yet law.';
@@ -89,7 +89,7 @@ export const CHINA_BIOTECH_EXPORT_EXCERPT =
   'China’s 16 October 2026 draft would add 40 technologies, including five in biotech, to its export-control catalogue. Platform sales are the hard case. Licensing is still open. What BD and Gulf access teams should do before 15 November.';
 
 export const CHINA_BIOTECH_EXPORT_PUBLISHED_ISO = '2026-10-18T12:00:00.000Z';
-export const CHINA_BIOTECH_EXPORT_UPDATED_ISO = '2026-10-18T12:00:00.000Z';
+export const CHINA_BIOTECH_EXPORT_UPDATED_ISO = '2026-11-15T12:00:00.000Z';
 
 export const CHINA_BIOTECH_EXPORT_CATEGORY = 'Market Research';
 
@@ -296,7 +296,7 @@ export const CHINA_BIOTECH_EXPORT_TABLE_OF_CONTENTS: { heading: string; anchor: 
   { heading: 'References', anchor: 'references' },
 ];
 
-export const CHINA_BIOTECH_EXPORT_EXECUTIVE_SUMMARY_HTML = `<p>China wants to keep its best biotech platforms out of foreign hands. On 16 October 2026, its Ministry of Commerce and Ministry of Science and Technology published a draft that would add 40 technologies, five of them in biotech, to the export-control catalogue. That catalogue is the official list of know-how that may not leave China, or may leave only with a licence.</p>
+export const CHINA_BIOTECH_EXPORT_EXECUTIVE_SUMMARY_HTML = `<p>China wants to keep its critical biotech platforms out of foreign hands. On 16 October 2026, its Ministry of Commerce and Ministry of Science and Technology published a draft that would add 40 technologies, five of them in biotech, to the export-control catalogue. That catalogue is the official list of know-how that may not leave China, or may leave only with a licence.</p>
 <p>China biotech export controls, in this draft, are a proposed add-on to a list the State already uses, not a new standalone law. The five biotech items cover cell and gene therapy — treatments that change or replace a patient’s cells or genes — siRNA (small interfering RNA, a medicine that turns a gene down), and some germ-related technology.</p>
 <p>The notice is still a draft. Comments close on 15 November 2026. This page is not legal advice. For the Gulf launch file that sits next to the legal read, start from our <a href="/healthcare-market-research">healthcare market research</a> hub.</p>`;
 

@@ -6,7 +6,7 @@ export const mexicoHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'latam',
   country: 'Mexico',
-  title: 'Top Healthcare Market Research Companies in Mexico | BioNixus',
+  title: 'Healthcare Market Research Companies Mexico 2026 | BioNixus',
   metaDescription:
     'Independent 2026 guide to the leading healthcare market research companies in Mexico — pharmaceutical, clinical, COFEPRIS regulatory, and HEOR research.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-mexico-2026',

@@ -68,6 +68,8 @@ export const BLOG_FORCE_INDEX_SLUGS = new Set([
   'orzeyful-oveporexton-narcolepsy-japan-china-launch-2026',
   'egypt-eda-decree-480-drug-pricing-2026',
   'dksh-newbridge-acquisition-mena-launch-market-access',
+  'saudi-diabetes-syndicated-vs-hospital-switching',
+  'saudi-hematology-diagnostics-vs-ward-brand-cut',
 ]);
 
 /** Slugs served primarily from React hardcoded modules (full HTML in SPA). */
@@ -78,7 +80,7 @@ export const BLOG_META_DESCRIPTION_OVERRIDES = {
   'سوق-الدواء-السعودي-2026':
     'سوق الدواء السعودي 2026: توطين التصنيع، نمو الأدوية الحيوية، توسع التأمين ومشتريات NUPCO—تحليل BioNixus للوصول والتجاري في المملكة',
   'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement':
-    'Skyrizi led July pharma TV ad spend and brand-impression rankings. What AbbVie immunology leadership means for omnichannel engagement, HCP digital, and promotional ROI.',
+    'Skyrizi July TV ad spend and impression share, and what that means for omnichannel engagement, HCP digital and promotional ROI.',
   // Owner URL for "sfda drug registration", "pharmaceutical product registration in saudi arabia",
   // "medicinal product registration in saudi arabia". Keep in sync with lib/ctr-seo-overrides.mjs.
   'sfda-drug-registration-guide':
@@ -94,7 +96,7 @@ export function getBlogMetaDescriptionOverride(slug) {
 export const BLOG_TITLE_OVERRIDES = {
   'pharmaceutical-market-entry-saudi-arabia-2026-guide': 'Saudi Pharma Market Entry 2026',
   'skyrizi-tops-julys-pharma-rankings-and-what-it-means-for-omnichannel-engagement':
-    'Skyrizi Tops July Pharma Rankings: Omnichannel Lessons',
+    'Skyrizi July TV Spend: Omnichannel',
   'sfda-drug-registration-guide': 'SFDA Drug Registration Saudi Arabia: 2026 Guide',
 };
 
@@ -310,9 +312,9 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
       'Dubai Essential Drug List formulary submission: what DDC coding, EBP formulary limits and local evidence an affiliate should commission before listing.',
   },
   'china-biotech-export-controls-pharma-deals-2026': {
-    title: 'China Biotech Export Controls: Pharma Deal Guide 2026',
+    title: 'China Biotech Export Controls: Pharma Deals 2026',
     description:
-      'China biotech export controls in the 16 Oct 2026 draft: 40 AI, biotech and solar items. What BD, licensing and Gulf access teams should do before 15 Nov.',
+      'China biotech export controls, 16 Oct 2026: 40 AI, biotech and solar items. What BD and Gulf access teams should do by 15 Nov.',
   },
   'kuwait-drug-pricing-2026-decision-62': {
     title: 'Kuwait Drug Pricing 2026: Decision 62 and Launch Evidence',
@@ -395,9 +397,19 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
       "Egypt's EDA Decree 480/2026 links repricing to FX, inflation and rates, sets a 15-country basket and a generic ladder. What commercial teams should plan.",
   },
   'dksh-newbridge-acquisition-mena-launch-market-access': {
-    title: 'DKSH to Acquire NewBridge: What It Means for MENA Launches (2026)',
+    title: 'DKSH to Acquire NewBridge: MENA Launches 2026 | BioNixus',
     description:
       'DKSH agreed to acquire NewBridge Pharmaceuticals for USD 390 million. What the deal means for oncology and rare disease launch and market access planning across 14 MENA markets.',
+  },
+  'saudi-diabetes-syndicated-vs-hospital-switching': {
+    title: 'Saudi Diabetes Data Misses Hospital Switching',
+    description:
+      'Saudi diabetes category totals miss which hospital is switching. Primary research is what a launch team still has to answer.',
+  },
+  'saudi-hematology-diagnostics-vs-ward-brand-cut': {
+    title: 'Saudi Hematology Diagnostics Miss Ward Share',
+    description:
+      'Saudi hematology diagnostics reports count lab products. Pharma still needs the ward-level brand cut a diagnostics total omits.',
   },
 };
 
