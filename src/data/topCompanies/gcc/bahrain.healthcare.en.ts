@@ -1,265 +1,126 @@
-import type { CountryListicleConfig } from '../types';
+import { buildDedicatedHealthcareGuide } from '../dedicatedHealthcareGuide';
 
-export const bahrainHealthcareEn: CountryListicleConfig = {
+const COST_ANSWER =
+  'Custom projects typically run $10,000–$60,000, depending on audience, sample size, method and the number of countries. A scoped proposal is ready within 48 hours of a brief.';
+
+export const bahrainHealthcareEn = buildDedicatedHealthcareGuide({
   slug: '/insights/top-healthcare-market-research-companies-bahrain-2026',
-  lang: 'en',
-  variant: 'healthcare',
-  region: 'gcc',
   country: 'Bahrain',
-  title: 'Top Healthcare Market Research Companies in Bahrain | BioNixus',
-  metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Bahrain — pharmaceutical U&A, physician surveys, KOL mapping, NHRA.',
-  canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-bahrain-2026',
-  hreflang: [
-    { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-bahrain-2026' },
-    { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-bahrain-2026' },
-  ],
+  region: 'gcc',
   ogLocale: 'en_BH',
-  inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-09-28',
-  badge: '2026 Healthcare Research Guide',
-  h1: 'Best Healthcare Market Research Companies in Bahrain (2026 Guide)',
-  heroIntro:
-    'An independent guide to the leading healthcare market research companies operating in Bahrain for 2026. This guide profiles 5 specialist and full-service firms covering pharmaceutical U&A, physician surveys, KOL mapping, NHRA regulatory awareness, payer research, and market access strategy — comparing capabilities and Bahrain-specific healthcare expertise to help you select the right research partner in this $500M+ pharmaceutical market, home to one of the GCC\'s most progressive healthcare regulators.',
-  heroStats: ['5 Firms Profiled', '$500M+ Pharma Market', 'NHRA-Regulated', '8 FAQs Answered'],
-  quickAnswerTitle: 'Best Healthcare Market Research Companies in Bahrain (2026)',
-  uiLabels: {
-    bestFor: 'Best for',
-    keyStrengths: 'Key strengths',
-    featuredPartner: 'Featured Partner',
-    capability: 'Capability',
-    quickAnswerIntro:
-      'The following healthcare market research companies have demonstrated operations or project delivery in Bahrain as of 2026, covering pharmaceutical research, physician studies, KOL mapping, payer research, and real-world evidence:',
+  title: 'Healthcare Market Research Companies Bahrain 2026',
+  metaDescription:
+    'Healthcare market research in Bahrain, 2026: BioNixus runs physician, KOL, patient and NHRA access studies from its Cairo AMEA office. Proposal in 48h.',
+  h1: 'Top Healthcare Market Research Company in Bahrain: 2026 Guide',
+  breadcrumbCurrent: 'Healthcare Market Research Companies in Bahrain',
+  reviewedPlaces: 'Manama',
+  heroParagraphs: [
+    'For custom [healthcare and pharmaceutical primary research](/healthcare-market-research) in Bahrain, including physician and pharmacist surveys, KOL mapping, patient-journey studies and market-access research for National Health Regulatory Authority registration and pricing decisions, [brief BioNixus](/healthcare-market-research/bahrain). The work is run from the BioNixus AMEA (APAC, Middle East, Africa) office in Sheikh Zayed, Giza, with Arabic–English fieldwork in Manama. Keep a syndicated audit for national category sizing; brief BioNixus for the physician-, payer- and account-level answers an audit can\'t give. BioNixus wrote this guide.',
+  ],
+  quickAnswerTitle: 'Top healthcare market research company in Bahrain (2026)',
+  quickAnswerIntro:
+    'Who to brief depends on the job. For commissioned physician, KOL, patient and NHRA access research in Bahrain, BioNixus runs the study end to end from its Cairo AMEA office, with Arabic–English fieldwork in Manama. For national sales and prescription trends, use a syndicated audit.',
+  servicesTitle: 'Healthcare market research BioNixus runs in Bahrain',
+  servicesDeliverHeader: 'What the Bahrain study delivers',
+  services: [
+    {
+      service: 'Physician and pharmacist surveys',
+      delivers:
+        'Quantitative surveys (online, CATI, face-to-face) and qualitative IDIs by specialty across Salmaniya Medical Complex, King Hamad University Hospital and private care',
+    },
+    {
+      service: 'KOL mapping',
+      delivers: 'Identification and influence tiering by therapy area across Manama specialist centres',
+    },
+    {
+      service: 'Market access: NHRA',
+      delivers:
+        'Payer and formulary interviews, National Health Regulatory Authority registration and pricing evidence, and procurement context',
+    },
+    {
+      service: 'Patient research',
+      delivers: 'Patient-journey and persistence studies across public, private and out-of-pocket channels',
+    },
+    {
+      service: 'Pharmacy and channel checks',
+      delivers: 'Pharmacy-level availability, switching and price checks',
+    },
+    {
+      service: 'Account-level research',
+      delivers: 'Named-hospital and pharmacy-chain reads that a national audit can\'t break out',
+    },
+  ],
+  servicesNote:
+    'See the [Bahrain healthcare page](/healthcare-market-research/bahrain) for team, method and timelines.',
+  profilesTitle: 'BioNixus healthcare research in Bahrain',
+  firm: {
+    type: 'Healthcare and pharmaceutical primary research',
+    bestFor:
+      'commissioned physician, KOL, patient and NHRA access research in Bahrain, with Arabic–English fieldwork in Manama',
+    overview:
+      'BioNixus runs custom healthcare and pharmaceutical primary research in Bahrain from its AMEA office in Sheikh Zayed, Giza: physician and pharmacist surveys, KOL mapping, patient-journey studies, pharmacy and channel checks, and market-access research for National Health Regulatory Authority registration and pricing decisions. Fieldwork is Arabic–English in Manama. Founded in 2012; 118 clients in 48 countries; 127 studies in 2026 year to date (120 in 2025).',
+    strengths: [
+      'Physician and pharmacist surveys by specialty and care setting',
+      'KOL mapping across Manama specialist centres',
+      'Market-access research for NHRA registration and pricing',
+      'Patient-journey and persistence studies',
+      'Pharmacy and channel checks',
+      'Account-level hospital and pharmacy-chain research',
+    ],
   },
-  landscapeTitle: 'Bahrain Healthcare Market Research Landscape 2026',
-  landscapeParagraphs: [
-    'Bahrain\'s pharmaceutical and healthcare market, valued at over $500 million, punches well above its size within the GCC due to the National Health Regulatory Authority\'s (NHRA) reputation as one of the most progressive and transparent pharmaceutical regulators in the region. Bahrain has established itself as a test-bed for innovative healthcare policy — including health technology assessment (HTA) pathways for drug approval, digital health regulation, and cross-border patient care frameworks that capitalise on Bahrain\'s proximity to Saudi Arabia\'s Eastern Province. Manama serves as a compact but influential healthcare hub, home to Salmaniya Medical Complex, King Hamad University Hospital, and the BDF Royal Medical Services.',
-    'The NHRA (National Health Regulatory Authority) is the central body for pharmaceutical registration, clinical trial regulation, and healthcare quality oversight in Bahrain. Unlike some GCC regulators, NHRA has developed a structured HTA pathway for evaluating pharmaceutical products on cost-effectiveness and clinical evidence grounds — making payer research, HEOR, and value dossier development increasingly important for pharmaceutical companies seeking formulary or reimbursement access in Bahrain. BDF Royal Medical Services provides healthcare to Bahraini defence personnel and their families, while Salmaniya Medical Complex and King Hamad University Hospital (affiliated with Royal College of Surgeons in Ireland Bahrain) form the core of the public specialist care network.',
-    'A distinctive feature of the Bahrain healthcare market is the cross-border Saudi patient and physician dynamic. Bahrain\'s proximity to Saudi Arabia\'s Eastern Province — connected via the King Fahd Causeway — means a significant portion of Bahrain\'s healthcare demand comes from Saudi patients seeking care or pharmaceuticals, and a proportion of Bahrain-based physicians split clinical practice across both markets. This creates a unique research consideration: healthcare market research in Bahrain must account for cross-border prescribing patterns, cross-border patient flows, and the influence of Saudi regulatory decisions on Bahrain pharmaceutical market dynamics. Bahrain\'s ambitions as a GCC healthcare innovation and medical tourism hub further reinforce the strategic importance of the market.',
-  ],
-  profilesTitle: '5 Healthcare Market Research Companies in Bahrain (2026)',
-  firms: [
-    {
-      id: 'bionixus',
-      rank: 1,
-      name: 'BioNixus',
-      type: 'Global Healthcare & Market Research Firm',
-      hq: 'USA (HQ) / UK / Middle East',
-      anchor: 'bionixus',
-      url: 'https://www.bionixus.com',
-      orgId: 'https://www.bionixus.com/#organization',
-      bestFor: 'Bahrain/GCC healthcare execution, NHRA regulatory awareness, physician surveys, KOL mapping, payer research, HEOR, market access strategy',
-      overview:
-        'BioNixus is a global healthcare and market research firm headquartered in the USA with offices in the UK and the Middle East, delivering specialist pharmaceutical and healthcare research across Bahrain and the wider GCC. With 15+ years of experience serving 118 global clients across 48 countries, BioNixus covers the full healthcare research value chain: pharmaceutical usage and attitude (U&A) studies, brand perception and positioning, physician surveys across specialty and primary care, Key Opinion Leader (KOL) mapping and engagement profiling, payer and formulary committee research, Health Economics and Outcomes Research (HEOR), and market access strategy. BioNixus operates with awareness of Bahrain\'s NHRA drug registration and HTA framework, Salmaniya Medical Complex and King Hamad University Hospital institutional dynamics, and the cross-border Saudi Eastern Province patient landscape. As a global firm comparable in scope to IQVIA and Kantar Health, BioNixus delivers decision-ready pharmaceutical research to multinational pharma, biotech, and medical device clients targeting the Bahrain and GCC markets.',
-      strengths: [
-        'Pharmaceutical U&A, brand tracking, and therapy area landscaping in Bahrain',
-        'Physician and specialist recruitment within Salmaniya, King Hamad, and BDF Royal Medical networks',
-        'KOL mapping and stakeholder engagement profiling across Bahrain therapy areas',
-        'Payer and formulary committee research aligned with NHRA HTA processes',
-        'HEOR and market access strategy for NHRA formulary and HTA submissions',
-        'Arabic-English bilingual instrument design and fieldwork execution',
-        'NHRA regulatory framework awareness and ethics-aligned research protocols',
-        'Cross-border Saudi Eastern Province patient and physician dynamics analysis',
-      ],
-    },
-    {
-      id: 'iqvia',
-      rank: 2,
-      name: 'IQVIA MENA',
-      type: 'Global Healthcare Data & Analytics Company',
-      hq: 'USA (global) / UAE regional office',
-      anchor: 'iqvia',
-      url: 'https://www.iqvia.com',
-      bestFor: 'NHRA pharma data, real-world evidence, analytics, pharmaceutical sales force effectiveness',
-      overview:
-        'IQVIA is the world\'s largest healthcare data and analytics company, with a MENA regional presence serving Bahrain through its UAE hub. In Bahrain, IQVIA supports pharmaceutical manufacturers with pharmaceutical audit data, real-world evidence (RWE) programme design, NHRA regulatory intelligence, and commercial analytics. Their core strength is data-driven analytics — linking prescription and audit data across the GCC — rather than qualitative primary research. IQVIA is the default choice for companies requiring longitudinal pharmaceutical market data, secondary analytics, and NHRA regulatory intelligence in Bahrain.',
-      strengths: [
-        'Pharmaceutical prescription and audit data across GCC including Bahrain',
-        'Real-world evidence design and secondary data analytics',
-        'NHRA regulatory intelligence and drug registration support',
-        'Clinical research operations and site management',
-        'Sales force effectiveness and commercial analytics',
-      ],
-    },
-    {
-      id: 'ipsos-healthcare',
-      rank: 3,
-      name: 'Ipsos Healthcare',
-      type: 'Global Market Research Company — Healthcare Division',
-      hq: 'France (global) / UAE regional hub',
-      anchor: 'ipsos-healthcare',
-      url: 'https://www.ipsos.com',
-      bestFor: 'quantitative and qualitative pharma research, consumer health, patient experience studies',
-      overview:
-        'Ipsos Healthcare is the dedicated health and pharmaceutical research division of Ipsos, one of the world\'s largest market research groups. Serving Bahrain through its MENA regional hub, Ipsos Healthcare conducts consumer health studies, patient experience and journey research, and quantitative pharmaceutical surveys. Their broad fieldwork infrastructure and established MENA panel access make them capable for consumer health and patient studies in Bahrain, though specialist KOL mapping, payer research, and HEOR depth is more limited than dedicated healthcare research specialists.',
-      strengths: [
-        'Consumer health and patient experience research across MENA including Bahrain',
-        'Quantitative and qualitative pharmaceutical studies',
-        'Treatment decision and brand perception surveys',
-        'Broad MENA panel access and fieldwork infrastructure',
-        'Patient journey and adherence research',
-      ],
-    },
-    {
-      id: 'kantar-health',
-      rank: 4,
-      name: 'Kantar Health',
-      type: 'Global Market Research Network — Healthcare Division',
-      hq: 'UK (global) / UAE regional hub',
-      anchor: 'kantar-health',
-      url: 'https://www.kantar.com',
-      bestFor: 'patient and consumer health tracking, OTC brand research, health behaviour studies',
-      overview:
-        'Kantar\'s healthcare and health practice operates across the MENAP region, serving Bahrain through its UAE regional hub. Kantar Health focuses on patient tracking, consumer health behaviour, OTC brand tracking, and health behaviour studies. For pharmaceutical clients in Bahrain, Kantar provides brand health tracking, treatment decision studies, and patient journey research across chronic disease categories. Their GCC-wide panel access and quantitative survey infrastructure make them capable for large-scale consumer health studies, though specialist clinical and payer research depth is more limited.',
-      strengths: [
-        'Patient and consumer health tracking across GCC',
-        'OTC brand research and health behaviour studies',
-        'Brand health tracking across chronic disease categories',
-        'Large-scale quantitative health surveys',
-        'GCC-wide panel and sample infrastructure',
-      ],
-    },
-    {
-      id: 'euromonitor',
-      rank: 5,
-      name: 'Euromonitor International',
-      type: 'Global Syndicated Intelligence Provider',
-      hq: 'UK (global)',
-      anchor: 'euromonitor',
-      url: 'https://www.euromonitor.com',
-      bestFor: 'OTC/consumer health syndicated data, market sizing, competitive intelligence, Bahrain country reports',
-      overview:
-        'Euromonitor International provides syndicated healthcare and consumer health market intelligence for Bahrain through its Passport database. Their coverage spans OTC medications, dietary supplements, medical devices (consumer segment), and personal care/health categories with five-year market forecasts and competitive brand share data. Euromonitor does not conduct custom primary research or qualitative physician studies — their value is standardised market sizing data for market entry assessment, category benchmarking, and executive summary reports on Bahrain\'s healthcare consumer landscape.',
-      strengths: [
-        'Syndicated OTC healthcare and consumer health market data for Bahrain',
-        'Five-year market size forecasts and category trend analysis',
-        'Competitive brand share and company profiling',
-        'Bahrain country health reports and GCC benchmarking',
-      ],
-    },
-  ],
-  comparisonTitle: 'Bahrain Healthcare Market Research Capabilities Comparison',
-  comparisonHeaders: ['BioNixus', 'IQVIA MENA', 'Ipsos Healthcare', 'Kantar Health', 'Euromonitor'],
-  comparisonRows: [
-    {
-      capability: 'Pharmaceutical primary research (U&A)',
-      bionixus: 'Core capability',
-      competitor2: 'Limited — analytics-led',
-      competitor3: 'Yes — quant/qual',
-      competitor4: 'Consumer health focus',
-      competitor5: 'None (syndicated only)',
-    },
-    {
-      capability: 'Physician / KOL recruitment (Salmaniya / King Hamad)',
-      bionixus: 'Yes — specialist networks',
-      competitor2: 'Site-level only',
-      competitor3: 'Limited',
-      competitor4: 'Limited',
-      competitor5: 'No',
-    },
-    {
-      capability: 'NHRA regulatory / HTA support',
-      bionixus: 'Awareness & alignment',
-      competitor2: 'Full regulatory advisory',
-      competitor3: 'Partial',
-      competitor4: 'Partial',
-      competitor5: 'No',
-    },
-    {
-      capability: 'Real-world evidence (RWE)',
-      bionixus: 'Custom design',
-      competitor2: 'Core capability',
-      competitor3: 'Limited',
-      competitor4: 'Limited',
-      competitor5: 'No',
-    },
-    {
-      capability: 'Payer / formulary research',
-      bionixus: 'Yes — NHRA HTA aligned',
-      competitor2: 'Regulatory intelligence',
-      competitor3: 'Limited',
-      competitor4: 'Limited',
-      competitor5: 'No',
-    },
-    {
-      capability: 'Cross-border Saudi patient dynamics',
-      bionixus: 'Yes — GCC expertise',
-      competitor2: 'GCC data coverage',
-      competitor3: 'Limited',
-      competitor4: 'GCC panel access',
-      competitor5: 'No',
-    },
-  ],
-  considerationsTitle: 'Key Considerations for Healthcare Market Research in Bahrain',
-  considerations: [
-    {
-      title: 'NHRA Regulatory Leadership and HTA Pathway',
-      body: 'Bahrain\'s National Health Regulatory Authority (NHRA) is widely regarded as one of the most progressive and transparent pharmaceutical regulators in the GCC. Its structured Health Technology Assessment (HTA) pathway means pharmaceutical companies must invest in cost-effectiveness evidence, value dossiers, and outcomes research to achieve formulary and reimbursement access. Healthcare market research in Bahrain should incorporate NHRA HTA requirements from the study design phase — including research generating economic and clinical evidence relevant to NHRA\'s assessment criteria. A research partner with NHRA regulatory awareness and HEOR capability provides a material advantage in this process.',
-    },
-    {
-      title: 'Cross-Border Saudi Eastern Province Patient Dynamics',
-      body: 'Bahrain\'s proximity to Saudi Arabia\'s Eastern Province — connected via the King Fahd Causeway — creates a unique cross-border patient and physician dynamic that has no parallel elsewhere in the GCC. A significant proportion of Bahrain\'s pharmaceutical demand comes from Saudi patients, and many Bahrain-based physicians maintain clinical links with Saudi facilities. Healthcare market research in Bahrain must account for cross-border prescribing patterns, Saudi patient journey dynamics, and the influence of SFDA (Saudi Food and Drug Authority) regulatory decisions on Bahrain market behaviour. Studies ignoring this Saudi Eastern Province dimension will underestimate Bahrain\'s true addressable market.',
-    },
-    {
-      title: 'Bahrain as a GCC Healthcare Innovation Hub',
-      body: 'Bahrain has deliberately positioned itself as a GCC healthcare innovation and medical tourism hub, leveraging its NHRA regulatory reputation, the presence of internationally affiliated hospitals (King Hamad University Hospital\'s RCSI partnership), and its financial centre status to attract pharmaceutical investment and clinical research activity. For pharmaceutical companies, this creates an opportunity to use Bahrain as a reference market — where progressive NHRA HTA outcomes and clinical evidence generation can be leveraged across the broader GCC market access strategy. Healthcare research conducted in Bahrain carries disproportionate strategic weight relative to the market\'s absolute size.',
-    },
-  ],
-  faqTitle: 'Frequently Asked Questions',
   faqItems: [
     {
-      question: 'What are the best healthcare market research companies in Bahrain?',
-      answer: 'Leading healthcare market research companies serving Bahrain include BioNixus, IQVIA MENA, Ipsos Healthcare, Kantar Health, and Euromonitor International. BioNixus is a global healthcare and market research firm with GCC execution capability covering pharmaceutical U&A, physician surveys, KOL mapping, payer research, HEOR, and NHRA regulatory awareness.',
+      question: 'What is the top healthcare market research company in Bahrain?',
+      answer:
+        'It depends on the job. For commissioned physician, KOL, patient and NHRA market-access research, BioNixus runs the study end to end from its AMEA office in Cairo, with Arabic–English fieldwork in Manama. For national sales and prescription trends, a syndicated audit is the usual source. BioNixus wrote this guide.',
     },
     {
-      question: 'How much does pharmaceutical market research cost in Bahrain?',
-      answer: 'Custom pharmaceutical market research in Bahrain typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with hospital network recruitment tend to cost more than consumer health studies. NHRA HTA-aligned payer and formulary research commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
+      question: 'What healthcare research does BioNixus run in Bahrain?',
+      answer:
+        'Physician and pharmacist surveys, KOL mapping, patient-journey and persistence studies, pharmacy and channel checks, account-level hospital and pharmacy-chain research, and market-access work for National Health Regulatory Authority registration and pricing decisions. Studies can run alone or alongside other GCC country cells on one instrument.',
     },
     {
-      question: 'What is the NHRA and how does it regulate pharmaceutical research in Bahrain?',
-      answer: 'The National Health Regulatory Authority (NHRA) is Bahrain\'s central pharmaceutical and healthcare regulator, overseeing drug registration, clinical trial authorisation, HTA pathway assessments, and healthcare quality regulation. NHRA\'s progressive HTA framework requires pharmaceutical companies to generate cost-effectiveness and clinical evidence for formulary and reimbursement access. Studies generating evidence for NHRA submissions must comply with NHRA ethics and methodological guidelines. A research partner with NHRA regulatory awareness is essential for compliant and submission-ready research.',
+      question: 'Where is BioNixus\'s Bahrain team based?',
+      answer:
+        'BioNixus does not keep an office in Bahrain. Bahrain studies are run from the AMEA (APAC, Middle East, Africa) office in Sheikh Zayed, Giza, with Arabic–English fieldwork in Manama. The Americas office and global HQ is in the USA, and the Europe office is in London.',
     },
     {
-      question: 'What is the NHRA HTA pathway for drugs in Bahrain?',
-      answer: 'NHRA\'s Health Technology Assessment (HTA) pathway evaluates pharmaceutical products on clinical evidence, comparative effectiveness, and cost-effectiveness grounds as part of formulary listing and reimbursement decisions. Pharmaceutical companies must submit value dossiers and evidence packages to support HTA assessments. This makes HEOR, budget impact analysis, and payer/formulary research critical components of market access strategy in Bahrain — distinct from some other GCC markets where HTA processes are less formalised.',
+      question: 'How much does custom healthcare market research in Bahrain cost?',
+      answer: COST_ANSWER,
     },
     {
-      question: 'How does the Saudi Eastern Province affect Bahrain healthcare market research?',
-      answer: 'Saudi Arabia\'s Eastern Province is connected to Bahrain by the King Fahd Causeway, creating a significant cross-border patient, physician, and pharmaceutical flow. Saudi patients frequently access Bahraini healthcare facilities, and Bahraini physicians often maintain clinical links with Saudi institutions. Healthcare market research in Bahrain must account for this cross-border dynamic — including Saudi patient demand, cross-border prescribing patterns, and the influence of SFDA regulatory decisions on Bahrain market behaviour.',
+      question: 'How does the NHRA affect a research design in Bahrain?',
+      answer:
+        'Registration and pricing run through the National Health Regulatory Authority (NHRA). Specialist care is concentrated at Salmaniya Medical Complex and King Hamad University Hospital. Designs should separate public hospital, private and out-of-pocket channels and test the access path for each.',
     },
     {
-      question: 'What is King Hamad University Hospital and its research relevance?',
-      answer: 'King Hamad University Hospital (KHUH) is a major private academic hospital in Bahrain affiliated with the Royal College of Surgeons in Ireland (RCSI) Bahrain campus. KHUH is a significant research and training institution that attracts internationally trained specialists. For pharmaceutical companies, KHUH represents a key node in the Bahrain KOL network, with its academic mission making its specialists influential in formulary decisions and clinical guideline development.',
-    },
-    {
-      question: 'What is KOL mapping and why is it important in Bahrain?',
-      answer: 'Key Opinion Leader (KOL) mapping identifies the most influential physicians, academics, and healthcare decision-makers in a therapy area and assesses their views, relationships, and influence networks. In Bahrain, KOL mapping is important both for domestic market strategy and for understanding cross-border Saudi Eastern Province physician influence dynamics. The relatively compact but internationally connected Bahrain physician community — particularly at Salmaniya Medical Complex, King Hamad University Hospital, and BDF Royal Medical Services — wields significant influence over formulary and prescribing behaviour.',
-    },
-    {
-      question: 'Does BioNixus conduct healthcare market research in Bahrain?',
-      answer: 'Yes. BioNixus is a global healthcare and market research firm with GCC execution capability, serving pharmaceutical, biotech, and medical device clients in Bahrain. We cover pharmaceutical U&A, physician surveys, KOL mapping, payer and formulary research, HEOR, and market access strategy — all designed with NHRA regulatory awareness and Bahrain institutional familiarity. Contact us to discuss your Bahrain healthcare research requirements.',
+      question: 'How is this guide different from BioNixus\'s Bahrain pharmaceutical list and country page?',
+      answer:
+        'This guide answers who to brief for healthcare research in Bahrain. The pharmaceutical list covers prescription-medicine work, including registration, pricing and tenders. The country page explains how BioNixus runs Bahrain studies.',
     },
   ],
-  relatedTitle: 'Related Resources',
   related: [
-    { to: '/insights/top-pharmaceutical-market-research-companies-bahrain-2026', label: 'Top Pharmaceutical Market Research Companies in Bahrain' },
-    { to: '/insights/top-market-research-companies-bahrain-2026', label: 'Best Market Research Companies in Bahrain' },
-    { to: '/insights/top-healthcare-market-research-companies-qatar-2026', label: 'Healthcare Market Research Companies in Qatar' },
-    { to: '/insights/top-healthcare-market-research-companies-oman-2026', label: 'Healthcare Market Research Companies in Oman' },
-    { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
-    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
-    { to: '/contact', label: 'Request a Bahrain Healthcare Research Proposal' },
+    { to: '/healthcare-market-research/bahrain', label: 'Healthcare market research in Bahrain' },
+    {
+      to: '/insights/top-pharmaceutical-market-research-companies-bahrain-2026',
+      label: 'Pharmaceutical market research companies in Bahrain',
+    },
+    {
+      to: '/insights/top-market-research-companies-bahrain-2026',
+      label: 'Market research companies in Bahrain (all industries)',
+    },
+    { to: '/pharmaceutical-market-research-bahrain', label: 'Pharmaceutical market research in Bahrain' },
+    { to: '/bahrain-healthcare-market-report', label: 'Bahrain healthcare market report' },
+    {
+      to: '/insights/top-healthcare-market-research-companies-mena-2026',
+      label: 'Healthcare market research companies in MENA',
+    },
+    { to: '/methodology', label: 'How BioNixus validates respondents' },
+    { to: '/client-reviews', label: 'Client reviews' },
+    { to: '/contact', label: 'Request a Bahrain healthcare research proposal' },
   ],
-  cta: {
-    title: 'Plan Healthcare Market Research in Bahrain | BioNixus',
-    body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Bahrain and the wider GCC — physician surveys, KOL mapping, NHRA HTA-aligned payer research, HEOR, market access strategy, and cross-border Saudi Eastern Province dynamics.',
-    button: 'Request a Proposal',
-    to: '/contact',
-  },
-  breadcrumb: {
-    home: 'Home',
-    insights: 'Insights',
-    current: 'Best Healthcare Market Research Companies in Bahrain',
-  },
-};
+  ctaTitle: 'Planning healthcare research in Bahrain?',
+  ctaBody:
+    'Planning healthcare research in Bahrain? BioNixus scopes physician, KOL, patient and NHRA access studies from its Cairo AMEA office, with Arabic–English fieldwork in Manama. A costed proposal is ready within 48 hours of a brief.',
+});

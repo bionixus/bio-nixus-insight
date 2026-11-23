@@ -1,265 +1,127 @@
-import type { CountryListicleConfig } from '../types';
+import { buildDedicatedHealthcareGuide } from '../dedicatedHealthcareGuide';
 
-export const qatarHealthcareEn: CountryListicleConfig = {
+const COST_ANSWER =
+  'Custom projects typically run $10,000–$60,000, depending on audience, sample size, method and the number of countries. A scoped proposal is ready within 48 hours of a brief.';
+
+export const qatarHealthcareEn = buildDedicatedHealthcareGuide({
   slug: '/insights/top-healthcare-market-research-companies-qatar-2026',
-  lang: 'en',
-  variant: 'healthcare',
-  region: 'gcc',
   country: 'Qatar',
-  title: 'Top Healthcare Market Research Companies in Qatar 2026 | BioNixus',
-  metaDescription:
-    'Independent 2026 guide to the leading healthcare market research companies in Qatar — pharmaceutical U&A, physician surveys, KOL mapping, payer research.',
-  canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-qatar-2026',
-  hreflang: [
-    { lang: 'en', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-qatar-2026' },
-    { lang: 'x-default', href: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-qatar-2026' },
-  ],
+  region: 'gcc',
   ogLocale: 'en_QA',
-  inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-09-28',
-  badge: '2026 Healthcare Research Guide',
-  h1: 'Best Healthcare Market Research Companies in Qatar (2026 Guide)',
-  heroIntro:
-    'An independent guide to the leading healthcare market research companies operating in Qatar for 2026. This guide profiles 5 specialist and full-service firms covering pharmaceutical U&A, physician surveys, KOL mapping, payer and HTA research, real-world evidence, and market access strategy — comparing capabilities and Qatar-specific healthcare expertise to help you select the right research partner in this $1.2B pharmaceutical market.',
-  heroStats: ['5 Firms Profiled', '$1.2B Pharma Market', 'HMC + Sidra Medicine', '8 FAQs Answered'],
-  quickAnswerTitle: 'Best Healthcare Market Research Companies in Qatar (2026)',
-  uiLabels: {
-    bestFor: 'Best for',
-    keyStrengths: 'Key strengths',
-    featuredPartner: 'Featured Partner',
-    capability: 'Capability',
-    quickAnswerIntro:
-      'The following healthcare market research companies have demonstrated operations or project delivery in Qatar as of 2026, covering pharmaceutical research, physician studies, KOL mapping, payer research, and real-world evidence:',
+  title: 'Healthcare Market Research Companies Qatar 2026',
+  metaDescription:
+    'Healthcare market research in Qatar, 2026: BioNixus runs physician, KOL, patient and MoPH and HMC access studies from its Cairo AMEA office. Proposal in 48h.',
+  h1: 'Top Healthcare Market Research Company in Qatar: 2026 Guide',
+  breadcrumbCurrent: 'Healthcare Market Research Companies in Qatar',
+  reviewedPlaces: 'Doha',
+  heroParagraphs: [
+    'For custom [healthcare and pharmaceutical primary research](/healthcare-market-research) in Qatar, including physician and pharmacist surveys, KOL mapping, patient-journey studies and market-access research for Ministry of Public Health registration and Hamad Medical Corporation formulary decisions, [brief BioNixus](/healthcare-market-research/qatar). The work is run from the BioNixus AMEA (APAC, Middle East, Africa) office in Sheikh Zayed, Giza, with Arabic–English fieldwork in Doha. Keep a syndicated audit for national category sizing; brief BioNixus for the physician-, payer- and account-level answers an audit can\'t give. BioNixus wrote this guide.',
+  ],
+  quickAnswerTitle: 'Top healthcare market research company in Qatar (2026)',
+  quickAnswerIntro:
+    'Who to brief depends on the job. For commissioned physician, KOL, patient and MoPH/HMC access research in Qatar, BioNixus runs the study end to end from its Cairo AMEA office, with Arabic–English fieldwork in Doha. For national sales and prescription trends, use a syndicated audit.',
+  servicesTitle: 'Healthcare market research BioNixus runs in Qatar',
+  servicesDeliverHeader: 'What the Qatar study delivers',
+  services: [
+    {
+      service: 'Physician and pharmacist surveys',
+      delivers:
+        'Quantitative surveys (online, CATI, face-to-face) and qualitative IDIs by specialty across Hamad Medical Corporation, primary care and private hospitals',
+    },
+    {
+      service: 'KOL mapping',
+      delivers:
+        'Identification and influence tiering by therapy area across Doha specialist centres, including Hamad Medical Corporation and Sidra Medicine',
+    },
+    {
+      service: 'Market access: MoPH and HMC',
+      delivers:
+        'Payer and formulary interviews, Ministry of Public Health registration and pricing evidence, and Hamad Medical Corporation formulary context',
+    },
+    {
+      service: 'Patient research',
+      delivers: 'Patient-journey and persistence studies across public and private channels',
+    },
+    {
+      service: 'Pharmacy and channel checks',
+      delivers: 'Pharmacy-level availability, switching and price checks',
+    },
+    {
+      service: 'Account-level research',
+      delivers: 'Named-hospital and pharmacy-chain reads that a national audit can\'t break out',
+    },
+  ],
+  servicesNote:
+    'See the [Qatar healthcare page](/healthcare-market-research/qatar) for team, method and timelines.',
+  profilesTitle: 'BioNixus healthcare research in Qatar',
+  firm: {
+    type: 'Healthcare and pharmaceutical primary research',
+    bestFor:
+      'commissioned physician, KOL, patient and MoPH/HMC access research in Qatar, with Arabic–English fieldwork in Doha',
+    overview:
+      'BioNixus runs custom healthcare and pharmaceutical primary research in Qatar from its AMEA office in Sheikh Zayed, Giza: physician and pharmacist surveys, KOL mapping, patient-journey studies, pharmacy and channel checks, and market-access research for Ministry of Public Health registration and Hamad Medical Corporation formulary decisions. Fieldwork is Arabic–English in Doha. Founded in 2012; 118 clients in 48 countries; 127 studies in 2026 year to date (120 in 2025).',
+    strengths: [
+      'Physician and pharmacist surveys by specialty and care setting',
+      'KOL mapping across Doha specialist centres',
+      'Market-access research for Ministry of Public Health registration and HMC formulary decisions',
+      'Patient-journey and persistence studies',
+      'Pharmacy and channel checks',
+      'Account-level hospital and pharmacy-chain research',
+    ],
   },
-  landscapeTitle: 'Qatar Healthcare Market Research Landscape 2026',
-  landscapeParagraphs: [
-    'Qatar\'s pharmaceutical and healthcare market is valued at approximately $1.2 billion and growing at around 6% annually, underpinned by the Ministry of Public Health (MoPH) National Health Strategy 2023–2030 and substantial public investment through Hamad Medical Corporation (HMC) and Sidra Medicine. Qatar\'s exceptionally high per-capita healthcare spend — among the highest in the MENA region — reflects both its sovereign wealth and the government\'s commitment to world-class healthcare infrastructure under Qatar National Vision 2030.',
-    'The primary healthcare research landscape in Qatar is shaped by four major institutional actors: HMC (the national integrated healthcare network encompassing around 14 hospitals), Sidra Medicine (a quaternary women\'s and children\'s research hospital affiliated with Qatar Foundation), the National Primary Health Care Corporation (NPHC), and the MoPH regulatory authority. Pharmaceutical companies launching or expanding in Qatar must navigate MoPH\'s drug registration framework, formulary listing processes, and evolving Health Technology Assessment (HTA) requirements. Research generating evidence for market access, formulary inclusion, or clinical guideline development must align with MoPH ethics and institutional review board (IRB) requirements.',
-    'For pharmaceutical primary research, the Qatar market requires specialist fieldwork capabilities: physician recruitment within HMC and Sidra networks, specialist KOL mapping across cardiology, oncology, endocrinology, and respiratory therapy areas, and payer interviews with MoPH and HMC formulary committee members. The right healthcare market research partner must combine global pharmaceutical research methodology with an understanding of Qatar\'s unique healthcare delivery system, its predominantly expatriate physician workforce, and the growing role of private hospital groups including Aster, Al Ahli, and Qatar Medical Centre.',
-  ],
-  profilesTitle: '5 Healthcare Market Research Companies in Qatar (2026)',
-  firms: [
-    {
-      id: 'bionixus',
-      rank: 1,
-      name: 'BioNixus',
-      type: 'Global Healthcare & Market Research Firm',
-      hq: 'USA (HQ) / UK / Middle East',
-      anchor: 'bionixus',
-      url: 'https://www.bionixus.com',
-      orgId: 'https://www.bionixus.com/#organization',
-      bestFor: 'pharmaceutical U&A, KOL mapping, physician surveys, payer research, market access strategy, HEOR — with Qatar MoPH regulatory awareness',
-      overview:
-        'BioNixus is a global healthcare and market research firm headquartered in the USA with offices in the UK and the Middle East, delivering specialist pharmaceutical and healthcare research across Qatar and the wider GCC. With 15+ years of experience serving 118 global clients across 48 countries, BioNixus covers the full healthcare research value chain: pharmaceutical usage and attitude (U&A) studies, brand perception and positioning, physician surveys across specialty and primary care, Key Opinion Leader (KOL) mapping and engagement profiling, payer and formulary committee research, Health Economics and Outcomes Research (HEOR), and market access strategy. BioNixus operates with awareness of Qatar\'s MoPH registration and regulatory framework, HMC and Sidra Medicine institutional protocols, and the Arabic-English bilingual physician population. As a global firm comparable in scope to IQVIA and Kantar Health, BioNixus delivers decision-ready pharmaceutical research to multinational pharma, biotech, and medical device clients targeting the Qatar and GCC markets.',
-      strengths: [
-        'Pharmaceutical U&A, brand tracking, and therapy area landscaping in Qatar',
-        'Physician and specialist recruitment within HMC and Sidra Medicine networks',
-        'KOL mapping and stakeholder engagement profiling across Qatar therapy areas',
-        'Payer and formulary committee research aligned with MoPH HTA processes',
-        'HEOR and market access strategy for MoPH/HMC formulary submissions',
-        'Arabic-English bilingual instrument design and fieldwork execution',
-        'MoPH regulatory framework awareness and IRB-aligned research protocols',
-        'National Health Strategy 2023–2030 landscape and competitive intelligence',
-      ],
-    },
-    {
-      id: 'iqvia',
-      rank: 2,
-      name: 'IQVIA MENA',
-      type: 'Global Healthcare Data & Analytics Company',
-      hq: 'USA (global) / UAE regional office',
-      anchor: 'iqvia',
-      url: 'https://www.iqvia.com',
-      bestFor: 'prescription data audits, real-world evidence, healthcare analytics, pharmaceutical sales force effectiveness',
-      overview:
-        'IQVIA is the world\'s largest healthcare data and analytics company, with a MENA regional presence serving Qatar through its UAE hub. In Qatar, IQVIA supports pharmaceutical manufacturers with pharmaceutical audit data, real-world evidence (RWE) programme design, regulatory intelligence, and clinical research operations. Their strength is data-driven analytics — linking prescription data, claims data, and outcomes information at GCC scale — rather than qualitative primary research. IQVIA is the default choice for companies requiring longitudinal pharmaceutical market data, secondary analytics, and sales force effectiveness consulting in the Qatar market.',
-      strengths: [
-        'Pharmaceutical prescription data and market audit across GCC including Qatar',
-        'Real-world evidence design and secondary data analytics',
-        'MoPH regulatory intelligence and drug registration support',
-        'Clinical research operations and site management',
-        'Sales force effectiveness and commercial analytics',
-      ],
-    },
-    {
-      id: 'kantar-health',
-      rank: 3,
-      name: 'Kantar Health (MENAP)',
-      type: 'Global Market Research Network — Healthcare Division',
-      hq: 'UK (global) / UAE regional hub',
-      anchor: 'kantar-health',
-      url: 'https://www.kantar.com',
-      bestFor: 'consumer health tracking, patient experience research, OTC brand research, health behaviour studies',
-      overview:
-        'Kantar\'s healthcare and health practice operates across the MENAP region, serving Qatar through its UAE regional hub. Kantar Health focuses on the intersection of consumer health behaviour, OTC brand tracking, and patient experience research. For pharmaceutical clients in Qatar, Kantar provides brand health tracking, treatment decision studies, and patient journey research across chronic disease categories. Their quantitative survey infrastructure and panel access across the GCC make them a capable partner for large-scale consumer health studies, though their specialist clinical and payer research depth is more limited than dedicated healthcare research firms.',
-      strengths: [
-        'Consumer health tracking and OTC brand research',
-        'Patient experience and treatment decision studies',
-        'Large-scale quantitative health behaviour surveys',
-        'Brand health tracking across chronic disease categories',
-        'GCC-wide panel and sample infrastructure',
-      ],
-    },
-    {
-      id: 'syneos-icon',
-      rank: 4,
-      name: 'Syneos Health / ICON (GCC)',
-      type: 'Clinical Research Organisation (CRO)',
-      hq: 'USA (global) / GCC operations',
-      anchor: 'syneos-icon',
-      url: 'https://www.iconplc.com',
-      bestFor: 'clinical trial operations, medical affairs research, regulatory support, site activation in Qatar',
-      overview:
-        'Syneos Health and ICON (the latter dominant in GCC CRO operations following the Syneos-ICON consolidation trend) maintain a presence in the Gulf Cooperation Council for clinical research organisation (CRO) services. In Qatar, their primary value lies in clinical trial site identification, IRB and MoPH ethics submission support, site activation at HMC and Sidra Medicine, and medical affairs research for late-phase and post-marketing studies. While not primarily a market research firm, their regulatory and site management expertise makes them relevant for pharmaceutical companies requiring evidence generation aligned with MoPH requirements and Qatar\'s clinical research infrastructure.',
-      strengths: [
-        'Clinical trial site identification at HMC and Sidra Medicine',
-        'MoPH IRB and ethics submission support',
-        'Medical affairs and post-marketing research operations',
-        'Regulatory strategy and submission support for Qatar',
-        'Phase III–IV and real-world study operations in GCC',
-      ],
-    },
-    {
-      id: 'euromonitor',
-      rank: 5,
-      name: 'Euromonitor International',
-      type: 'Global Syndicated Intelligence Provider',
-      hq: 'UK (global)',
-      anchor: 'euromonitor',
-      url: 'https://www.euromonitor.com',
-      bestFor: 'OTC healthcare market sizing, consumer health syndicated data, competitive landscape intelligence, Qatar country reports',
-      overview:
-        'Euromonitor International provides syndicated healthcare and consumer health market intelligence for Qatar through its Passport database. Their coverage spans OTC medications, dietary supplements, medical devices (consumer segment), and personal care/health categories with five-year market forecasts and competitive brand share data. Euromonitor does not conduct custom primary research or qualitative physician studies — their value is standardised market sizing data for market entry assessment, category benchmarking, and executive summary reports on Qatar\'s healthcare consumer landscape.',
-      strengths: [
-        'Syndicated OTC healthcare and consumer health market data for Qatar',
-        'Five-year market size forecasts and category trend analysis',
-        'Competitive brand share and company profiling',
-        'Qatar country health reports and GCC benchmarking',
-      ],
-    },
-  ],
-  comparisonTitle: 'Qatar Healthcare Market Research Capabilities Comparison',
-  comparisonHeaders: ['BioNixus', 'IQVIA MENA', 'Kantar Health', 'Syneos / ICON', 'Euromonitor'],
-  comparisonRows: [
-    {
-      capability: 'Pharmaceutical primary research (U&A)',
-      bionixus: 'Core capability',
-      competitor2: 'Limited — analytics-led',
-      competitor3: 'Consumer health focus',
-      competitor4: 'Not primary capability',
-      competitor5: 'None (syndicated only)',
-    },
-    {
-      capability: 'Physician recruitment (HMC / Sidra)',
-      bionixus: 'Yes — specialist networks',
-      competitor2: 'Site-level only',
-      competitor3: 'Limited',
-      competitor4: 'Yes — clinical sites',
-      competitor5: 'No',
-    },
-    {
-      capability: 'Payer / HTA / formulary research',
-      bionixus: 'Yes — MoPH aligned',
-      competitor2: 'Regulatory intelligence',
-      competitor3: 'Limited',
-      competitor4: 'Partial (medical affairs)',
-      competitor5: 'No',
-    },
-    {
-      capability: 'Real-world evidence (RWE)',
-      bionixus: 'Custom design',
-      competitor2: 'Core capability',
-      competitor3: 'Limited',
-      competitor4: 'Phase III–IV ops',
-      competitor5: 'No',
-    },
-    {
-      capability: 'KOL mapping & stakeholder profiling',
-      bionixus: 'Yes',
-      competitor2: 'Partial',
-      competitor3: 'Limited',
-      competitor4: 'Medical affairs only',
-      competitor5: 'No',
-    },
-    {
-      capability: 'MoPH regulatory support',
-      bionixus: 'Awareness & alignment',
-      competitor2: 'Full regulatory advisory',
-      competitor3: 'Partial',
-      competitor4: 'Yes — IRB/ethics',
-      competitor5: 'No',
-    },
-  ],
-  considerationsTitle: 'Key Considerations for Healthcare Market Research in Qatar',
-  considerations: [
-    {
-      title: 'MoPH and HMC Research Ethics Requirements',
-      body: 'Any primary research involving patients, physicians, or clinical data in Qatar must comply with the Ministry of Public Health (MoPH) research ethics framework and, where HMC or Sidra Medicine professionals are involved, institutional review board (IRB) requirements. Studies generating evidence for drug registration, formulary listing, or clinical guideline submissions must be designed with these requirements in mind from the outset. Working with a research partner familiar with Qatar\'s institutional research landscape materially reduces approval timelines.',
-    },
-    {
-      title: 'Qatar\'s High Per-Capita Healthcare Spend',
-      body: 'Qatar has one of the highest per-capita healthcare expenditures in the world, with significant public funding channelled through HMC and NPHC and a growing private sector. This creates a premium market for innovative pharmaceuticals and medical devices — but also means that payer research, formulary committee engagement, and Health Technology Assessment evidence are increasingly important for market access. Research must speak to both MoPH cost-effectiveness priorities and the clinical standards of HMC\'s internationally trained physician workforce.',
-    },
-    {
-      title: 'National Health Strategy 2023–2030 Research Priorities',
-      body: 'Qatar\'s National Health Strategy 2023–2030 defines priority therapeutic areas including non-communicable diseases (NCDs), mental health, maternal and child health, and digital health transformation. Pharmaceutical and medical device companies aligning their research and evidence programmes with NHS 2023–2030 priorities — and positioning their products within the national strategy\'s objectives — achieve stronger formulary and market access outcomes. Healthcare market research in Qatar should incorporate NHS strategic context alongside standard commercial analytics.',
-    },
-  ],
-  faqTitle: 'Frequently Asked Questions',
   faqItems: [
     {
-      question: 'What are the best healthcare market research companies in Qatar?',
-      answer: 'Leading healthcare market research companies serving Qatar include BioNixus, IQVIA MENA, Kantar Health (MENAP), Syneos Health / ICON, and Euromonitor International. BioNixus is a global healthcare and market research firm with GCC execution capability covering pharmaceutical U&A, physician surveys, KOL mapping, payer research, and HEOR — all with MoPH regulatory awareness.',
+      question: 'What is the top healthcare market research company in Qatar?',
+      answer:
+        'It depends on the job. For commissioned physician, KOL, patient and MoPH/HMC market-access research, BioNixus runs the study end to end from its AMEA office in Cairo, with Arabic–English fieldwork in Doha. For national sales and prescription trends, a syndicated audit is the usual source. BioNixus wrote this guide.',
     },
     {
-      question: 'How much does pharmaceutical market research cost in Qatar?',
-      answer: 'Custom pharmaceutical market research in Qatar typically ranges from $10,000 to $60,000 per project depending on scope, methodology, and sample requirements. Physician surveys and KOL mapping studies with HMC-network recruitment tend to cost more than consumer health studies. Payer and formulary committee research with MoPH-aligned design commands a premium. Syndicated reports from providers like Euromonitor start from around $2,500.',
+      question: 'What healthcare research does BioNixus run in Qatar?',
+      answer:
+        'Physician and pharmacist surveys, KOL mapping, patient-journey and persistence studies, pharmacy and channel checks, account-level hospital and pharmacy-chain research, and market-access work for Ministry of Public Health registration and Hamad Medical Corporation formulary decisions. Studies can run alone or alongside other GCC country cells on one instrument.',
     },
     {
-      question: 'How do I recruit physicians at Hamad Medical Corporation (HMC) for research?',
-      answer: 'Physician recruitment within HMC requires established professional networks and, for formal research, IRB approval from HMC\'s research ethics committee. BioNixus maintains GCC physician networks that include HMC-affiliated specialists across cardiology, oncology, endocrinology, and other therapy areas, enabling compliant physician survey and KOL mapping engagements in Qatar.',
+      question: 'Where is BioNixus\'s Qatar team based?',
+      answer:
+        'BioNixus does not keep an office in Qatar. Qatar studies are run from the AMEA (APAC, Middle East, Africa) office in Sheikh Zayed, Giza, with Arabic–English fieldwork in Doha. The Americas office and global HQ is in the USA, and the Europe office is in London.',
     },
     {
-      question: 'What is Qatar\'s National Health Strategy 2023–2030?',
-      answer: 'Qatar\'s National Health Strategy (NHS) 2023–2030 is the MoPH\'s strategic framework for healthcare development, prioritising non-communicable disease management, mental health, maternal and child health, digital health, and healthcare system efficiency. For pharmaceutical companies, aligning market access evidence and outcomes research with NHS priorities strengthens formulary and payer positioning in the Qatar market.',
+      question: 'How much does custom healthcare market research in Qatar cost?',
+      answer: COST_ANSWER,
     },
     {
-      question: 'What is the role of Sidra Medicine in Qatar healthcare research?',
-      answer: 'Sidra Medicine is a quaternary academic medical centre affiliated with Qatar Foundation, specialising in women\'s and children\'s health and serving as a major clinical research hub. For pharmaceutical companies with paediatric, obstetric, or women\'s health products, Sidra Medicine is a key institutional partner for research, clinical studies, and KOL engagement. Research involving Sidra requires alignment with its own IRB and Qatar Foundation research ethics processes.',
+      question: 'How do the Ministry of Public Health and Hamad Medical Corporation affect a research design in Qatar?',
+      answer:
+        'Registration and pricing run through the Ministry of Public Health, while hospital care is concentrated at Hamad Medical Corporation and primary care at the Primary Health Care Corporation. Designs should separate those public channels, private care and out-of-pocket demand, and test the access path for each.',
     },
     {
-      question: 'How does MoPH regulate pharmaceutical market research in Qatar?',
-      answer: 'The Ministry of Public Health (MoPH) oversees pharmaceutical registration, clinical trial authorisation, and research ethics in Qatar. Studies generating evidence for drug registration or formulary listing require MoPH alignment. Observational and non-interventional studies involving healthcare professionals may require institutional ethics review. A research partner with MoPH regulatory awareness can significantly streamline study design, IRB navigation, and data collection timelines.',
-    },
-    {
-      question: 'What is KOL mapping and why is it important in Qatar?',
-      answer: 'Key Opinion Leader (KOL) mapping identifies the most influential physicians, academics, and healthcare decision-makers in a therapy area and assesses their views, relationships, and influence networks. In Qatar, KOL mapping is particularly important given the concentration of specialist care within HMC and Sidra Medicine — a relatively small but highly influential physician community that shapes prescribing behaviour and formulary decisions across the national health system.',
-    },
-    {
-      question: 'Does BioNixus conduct healthcare market research in Qatar?',
-      answer: 'Yes. BioNixus is a global healthcare and market research firm with GCC execution capability, serving pharmaceutical, biotech, and medical device clients in Qatar. We cover pharmaceutical U&A, physician surveys, KOL mapping, payer and formulary research, HEOR, and market access strategy — all designed with Qatar MoPH regulatory awareness and HMC/Sidra institutional familiarity. Contact us to discuss your Qatar healthcare research requirements.',
+      question: 'How is this guide different from BioNixus\'s Qatar pharmaceutical list and country page?',
+      answer:
+        'This guide answers who to brief for healthcare research in Qatar. The pharmaceutical list covers prescription-medicine work, including registration, pricing and tenders. The country page explains how BioNixus runs Qatar studies.',
     },
   ],
-  relatedTitle: 'Related Resources',
   related: [
-    { to: '/insights/top-pharmaceutical-market-research-companies-qatar-2026', label: 'Top Pharmaceutical Market Research Companies in Qatar' },
-    { to: '/insights/top-market-research-companies-qatar-2026', label: 'Best Market Research Companies in Qatar' },
-    { to: '/insights/top-healthcare-market-research-companies-kuwait-2026', label: 'Healthcare Market Research Companies in Kuwait' },
-    { to: '/insights/top-market-research-companies-uae-2026', label: 'Best Market Research Companies in the UAE' },
-    { to: '/gcc-market-access-guide', label: 'GCC Market Access Guide' },
-    { to: '/pharmaceutical-market-research-dubai', label: 'Pharmaceutical Market Research Dubai' },
-    { to: '/contact', label: 'Request a Qatar Healthcare Research Proposal' },
+    { to: '/healthcare-market-research/qatar', label: 'Healthcare market research in Qatar' },
+    {
+      to: '/insights/top-pharmaceutical-market-research-companies-qatar-2026',
+      label: 'Pharmaceutical market research companies in Qatar',
+    },
+    {
+      to: '/insights/top-market-research-companies-qatar-2026',
+      label: 'Market research companies in Qatar (all industries)',
+    },
+    { to: '/qatar-market-access-research', label: 'Qatar market access research' },
+    { to: '/qatar-healthcare-market-report', label: 'Qatar healthcare market report' },
+    {
+      to: '/insights/top-healthcare-market-research-companies-mena-2026',
+      label: 'Healthcare market research companies in MENA',
+    },
+    { to: '/methodology', label: 'How BioNixus validates respondents' },
+    { to: '/client-reviews', label: 'Client reviews' },
+    { to: '/contact', label: 'Request a Qatar healthcare research proposal' },
   ],
-  cta: {
-    title: 'Plan Healthcare Market Research in Qatar | BioNixus',
-    body: 'BioNixus delivers custom healthcare and pharmaceutical market research across Qatar and the wider GCC — physician surveys, KOL mapping, payer research, HEOR, market access strategy, and National Health Strategy 2023–2030 sector intelligence.',
-    button: 'Request a Proposal',
-    to: '/contact',
-  },
-  breadcrumb: {
-    home: 'Home',
-    insights: 'Insights',
-    current: 'Best Healthcare Market Research Companies in Qatar',
-  },
-};
+  ctaTitle: 'Planning healthcare research in Qatar?',
+  ctaBody:
+    'Planning healthcare research in Qatar? BioNixus scopes physician, KOL, patient and MoPH/HMC access studies from its Cairo AMEA office, with Arabic–English fieldwork in Doha. A costed proposal is ready within 48 hours of a brief.',
+});

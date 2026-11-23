@@ -256,9 +256,18 @@ export function resolvePublishedRelated(
   config: CountryListicleConfig,
 ): CountryListicleConfig['related'] {
   const seen = new Set<string>();
+  if (config.omitCompetitorModules) {
+    return config.related.filter((link) => {
+      if (!link.to.startsWith('/') || link.to === config.slug || seen.has(link.to)) return false;
+      seen.add(link.to);
+      return true;
+    });
+  }
   const directory = directoryForListiclePath(config.slug);
   const iqvia =
-    config.lang === 'en' && (config.region === 'gcc' || config.region === 'mena')
+    !config.omitCompetitorModules &&
+    config.lang === 'en' &&
+    (config.region === 'gcc' || config.region === 'mena')
       ? IQVIA_MENA_RELATED
       : [];
   const seeded = [
