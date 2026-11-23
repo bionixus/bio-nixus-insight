@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { ConversionCTA } from '@/components/conversion/ConversionCTA';
+import { ArPharmaDeepGuide } from '@/components/seo/ArPharmaDeepGuide';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import {
@@ -119,12 +120,15 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
 
         <DirectoryJumpNav
           items={[
+            { href: '#market-overview', label: 'السوق' },
             { href: '#companies', label: 'الشركات' },
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
           ]}
         />
+
+        <ArPharmaDeepGuide countrySlug={countrySlug} enPath={config.enPath} />
 
         <section className="section-padding py-16 bg-muted/30" id="companies">
           <div className="container-wide max-w-5xl mx-auto">
