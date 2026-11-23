@@ -63,7 +63,7 @@ const jsonLd = [
     author: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com' },
     publisher: { '@type': 'Organization', name: 'BioNixus', url: 'https://www.bionixus.com', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp' } },
     datePublished: '2026-05-27',
-    dateModified: '2026-08-22',
+    dateModified: '2026-11-23',
     mainEntityOfPage: 'https://www.bionixus.com/brazil-healthcare-market-report',
   },
   {
@@ -117,7 +117,8 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
-          <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
+          <p className="text-muted-foreground leading-relaxed">ANVISA registration and CONITEC health-technology assessment for SUS incorporation remain the gating steps for innovative medicines, while CMED caps ex-factory prices that shape both public and private channels. The ANS-regulated private market (roughly 50 million beneficiaries) often adopts therapies faster than SUS but still negotiates against CMED benchmarks — a pattern that makes Brazil a dual-speed market in oncology and rare diseases.</p>
         </div>
       </section>
               <MarketIntelligenceSections marketSlug="brazil" countryName="Brazil" variant="healthcare" />
