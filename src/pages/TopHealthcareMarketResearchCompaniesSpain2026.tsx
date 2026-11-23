@@ -5,7 +5,6 @@ import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, 
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -142,22 +141,35 @@ const firms: FirmProfile[] = [
   },
 ];
 
-const faqItems = [
+const faqItems: { q: string; a: string; pricingLink?: boolean }[] = [
   {
-    q: 'Who are the top healthcare market research companies in Spain in 2026?',
-    a: "BioNixus is a healthcare market research company that runs Spanish-language HCP surveys, AEMPS/CIPM/SNS payer research, and KOL mapping in Spain. IQVIA Spain, Ipsos Healthcare Spain, Kantar Spain, GfK Spain, RTI Health Solutions, and Demoskopia Health Spain also operate in the Spanish healthcare research market.",
+    q: 'Who is the top healthcare market research company in Spain?',
+    a: "There's no single top firm for every brief. For custom primary research with Spanish clinicians, SNS payers and KOLs, brief BioNixus, which runs Spain studies from its Europe office in London. For syndicated prescription data, use a data platform. For economic modelling alone, use an HEOR consultancy.",
   },
   {
-    q: 'What are the best healthcare market research agencies in Spain?',
-    a: 'Healthcare market research agencies in Spain are the same buyer shortlist as companies: BioNixus for Spanish-language primary HCP across Autonomous Communities and CIPM/SNS payer research, plus global data platforms for syndicated intelligence. Choose a primary-research agency for custom fieldwork; choose a data platform for audits and reports.',
+    q: 'Does BioNixus have an office in Spain?',
+    a: 'No. BioNixus does not have a Spain office. It runs Spanish studies from its Europe office at 128 City Road, London EC1V 2NX. The Americas office and global HQ is in Sheridan, Wyoming, USA. The AMEA office is in Cairo (Sheikh Zayed).',
   },
   {
-    q: "What makes Spanish healthcare market research unique compared to other EU5 markets?",
-    a: "Spain's SNS is implemented through 17 Autonomous Communities, each managing independent healthcare budgets and formulary processes — national CIPM pricing and SNS listing do not guarantee regional access. The GENESIS pharmacoeconomic evaluation system used by Spanish hospital pharmacy committees creates an institutional evidence layer not found in Germany, France, Italy, or the UK. Bilingual (Spanish/English) fieldwork capability is essential for credible Spanish primary research.",
+    q: 'What healthcare research does BioNixus run in Spain?',
+    a: 'Spanish-language HCP and patient surveys across all 17 Autonomous Communities, CIPM and SNS payer research, Autonomous Community formulary interviews, and KOL mapping at Spanish university hospitals, with bilingual English deliverables.',
   },
   {
-    q: 'Can BioNixus conduct healthcare research in Spanish across all Autonomous Communities?',
-    a: 'Yes. BioNixus conducts all HCP surveys, depth interviews, and payer research in Spanish — with full coverage across all 17 Autonomous Communities and bilingual deliverables in English for global pharmaceutical clients. Regional Autonomous Community payer mapping (CatSalut, SERMAS, SAS, Valencia, País Vasco, Galicia) is integrated into all Spanish market access research programmes.',
+    q: 'How much does custom healthcare market research cost?',
+    a: 'BioNixus custom research projects typically cost $10,000–$60,000, depending on audience, sample, method and number of countries. You get a scoped proposal after a short call.',
+    pricingLink: true,
+  },
+  {
+    q: 'Does BioNixus run the research in Spanish?',
+    a: 'Yes. HCP surveys, interviews and payer research in Spain are conducted in Spanish, with bilingual deliverables in English. This restates what the page already says; it does not add a new language credential.',
+  },
+  {
+    q: 'Can Spain results be compared with other countries?',
+    a: 'Yes. BioNixus covers 48 countries and can run the same instrument in Spain and other markets, so results line up country by country.',
+  },
+  {
+    q: 'Who wrote this guide?',
+    a: 'BioNixus wrote this guide and is included in it. Firms are described by the job each does, not ranked by a single score.',
   },
 ];
 
@@ -195,11 +207,9 @@ const comparisonCriteria = [
 ];
 
 const PAGE_CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-spain-2026';
-
-const PAGE_AUTHOR = getEditorialAuthor({
-  path: '/insights/top-healthcare-market-research-companies-spain-2026',
-  pageType: 'comparison',
-});
+const PAGE_H1 = 'Top Healthcare Market Research Company in Spain: 2026 Guide';
+const PAGE_DATE_MODIFIED = '2026-11-23';
+const PAGE_WEBPAGE_NAME = 'Healthcare Market Research Companies Spain 2026 | BioNixus';
 
 export default function TopHealthcareMarketResearchCompaniesSpain2026() {
   const breadcrumbSchema = {
@@ -212,22 +222,32 @@ export default function TopHealthcareMarketResearchCompaniesSpain2026() {
     ],
   };
 
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${PAGE_CANONICAL}#webpage`,
+    url: PAGE_CANONICAL,
+    name: PAGE_WEBPAGE_NAME,
+    inLanguage: 'en',
+    about: { '@id': 'https://www.bionixus.com/#organization' },
+    datePublished: '2026-06-25',
+    dateModified: PAGE_DATE_MODIFIED,
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#answer-opener'] },
+  };
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in Spain 2026 | BioNixus',
+    '@id': `${PAGE_CANONICAL}#article`,
+    headline: PAGE_H1,
     description:
-      'Top healthcare market research companies in Spain 2026. Spanish-language HCP surveys across all 17 Autonomous Communities, AEMPS/CIPM/SNS payer research, KOL mapping at Spanish university hospitals.',
-    url: PAGE_CANONICAL,
+      'For custom primary research with Spanish clinicians, SNS payers and KOLs, brief BioNixus, which runs Spain studies from its Europe office in London. BioNixus wrote this guide.',
+    image: 'https://www.bionixus.com/og-image.png',
+    mainEntityOfPage: { '@id': `${PAGE_CANONICAL}#webpage` },
+    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    publisher: { '@id': 'https://www.bionixus.com/#organization' },
     datePublished: '2026-06-25',
-    dateModified: '2026-11-09',
-    author: personAuthorJsonLd(PAGE_AUTHOR),
-    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
-    inLanguage: 'en',
-    about: { '@type': 'Country', name: 'Spain', sameAs: 'https://www.wikidata.org/wiki/Q29' },
-    keywords:
-      'healthcare market research Spain, pharmaceutical market research Spain, CIPM payer research, SNS market research Spain, top healthcare research companies Spain, BioNixus Spain, KOL mapping Spain, AEMPS market research, Autonomous Community formulary research Spain, GENESIS hospital pharmacy Spain',
+    dateModified: PAGE_DATE_MODIFIED,
   };
 
   const itemListSchema = {
@@ -253,6 +273,7 @@ export default function TopHealthcareMarketResearchCompaniesSpain2026() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${PAGE_CANONICAL}#faq`,
     mainEntity: faqItems.map((f) => ({
       '@type': 'Question',
       name: f.q,
@@ -274,6 +295,7 @@ export default function TopHealthcareMarketResearchCompaniesSpain2026() {
         <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -309,15 +331,51 @@ export default function TopHealthcareMarketResearchCompaniesSpain2026() {
               Healthcare &amp; Pharma Research — 2026 Expert Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Healthcare Market Research Companies in Spain (2026 Guide)
+              {PAGE_H1}
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An expert guide to the leading healthcare and pharmaceutical market research companies operating in Spain
-              for 2026. This guide profiles 7 firms with demonstrated capability in Spanish-language HCP surveys across
-              all 17 Autonomous Communities, KOL mapping across Spanish university hospitals, CIPM/SNS payer research,
-              AEMPS/CIPM evidence alignment, HEOR evidence generation, and EU5 multi-market benchmarking — to help you
-              select the right research partner for the Spanish healthcare market.
-            </p>
+            <div id="answer-opener" className="max-w-3xl mb-6 space-y-4">
+              <p className="text-lg text-foreground leading-relaxed">
+                <strong>Looking for the top healthcare market research company in Spain?</strong> For custom primary research with Spanish clinicians, SNS payers and KOLs, brief BioNixus. It runs Spain studies from its Europe office at 128 City Road, London.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                BioNixus designs Spanish-language HCP surveys, CIPM and SNS payer research, Autonomous Community formulary interviews and KOL mapping across Spanish university hospitals.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                There&apos;s no single top firm for every brief. Choose by the decision you need to make: custom primary research, syndicated prescription data, or HEOR modelling.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                <em>BioNixus wrote this guide and is included in it.</em>
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                See the{' '}
+                <Link to="/healthcare-market-research-spain" className="text-primary hover:underline">
+                  Spain healthcare market research overview
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="max-w-3xl mb-6 rounded-xl border border-border bg-card p-6">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-3">BioNixus at a glance</h2>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Founded in 2012.</li>
+                <li>118 clients in 48 countries.</li>
+                <li>127 studies in 2026 year-to-date; 120 in 2025.</li>
+                <li>Physician network: 82,000+ physicians globally and about 3,200 in the Middle East.</li>
+                <li>Custom research projects typically cost $10,000–$60,000, depending on scope.</li>
+                <li>
+                  Offices:
+                  <ul className="mt-2 space-y-1 pl-4">
+                    <li>USA: Americas office and global HQ (Sheridan, Wyoming)</li>
+                    <li>UK: Europe office (London)</li>
+                    <li>Cairo: AMEA (APAC, Middle East, Africa) office</li>
+                    <li>São Paulo: field office for LATAM</li>
+                    <li>Al Khobar: partner office for KSA</li>
+                    <li>Kuwait: field office for Kuwait</li>
+                    <li>Dubai: field office for UAE</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
             <p className="text-muted-foreground leading-relaxed max-w-3xl mb-4">
               For the global vendor shortlist see{' '}
               <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
@@ -329,7 +387,7 @@ export default function TopHealthcareMarketResearchCompaniesSpain2026() {
               </Link>.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By BioNixus Research Team · 16 min read
+              Published 25 June 2026 · Last reviewed 23 Nov 2026 · By the BioNixus Research Team
             </p>
           </div>
         </section>
@@ -719,12 +777,22 @@ export default function TopHealthcareMarketResearchCompaniesSpain2026() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {faqItems.map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="bg-card border border-border rounded-xl p-6" open>
+                  <summary className="text-lg font-display font-semibold text-foreground cursor-pointer">
+                    {faq.q}
+                  </summary>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {faq.a}
+                    {faq.pricingLink ? (
+                      <>
+                        {' '}
+                        (<Link to="/pricing" className="text-primary hover:underline">Pricing</Link>)
+                      </>
+                    ) : null}
+                  </p>
+                </details>
               ))}
             </div>
           </div>

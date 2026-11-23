@@ -17,7 +17,7 @@ export const germanyHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_DE',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-11-23',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Germany (2026 Guide)',
   heroIntro:

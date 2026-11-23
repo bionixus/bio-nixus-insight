@@ -5,7 +5,6 @@ import { ArrowRight, Building2, Globe, Users, BarChart3, ShieldCheck, BookOpen, 
 import { Helmet } from 'react-helmet-async';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
-import { getEditorialAuthor, personAuthorJsonLd } from '@/data/editorialAuthors';
 
 interface FirmProfile {
   rank: number;
@@ -141,22 +140,35 @@ const firms: FirmProfile[] = [
   },
 ];
 
-const faqItems = [
+const faqItems: { q: string; a: string; pricingLink?: boolean }[] = [
   {
-    q: 'Who are the top healthcare market research companies in France in 2026?',
-    a: 'BioNixus is a healthcare market research company that runs French-language HCP surveys, HAS SMR/ASMR-aligned payer research, CEPS negotiation intelligence, and KOL mapping in France.',
+    q: 'Who is the top healthcare market research company in France?',
+    a: "There's no single top firm for every brief. For custom primary research with French clinicians, HAS and CEPS payers and KOLs, brief BioNixus, which runs France studies from its Europe office in London. For syndicated prescription data, use a data platform. For economic modelling alone, use an HEOR consultancy.",
   },
   {
-    q: 'What are the best healthcare market research agencies in France?',
-    a: 'Healthcare market research agencies in France are the same buyer shortlist as companies: BioNixus for French-language primary HCP and HAS-aligned payer research, plus global data platforms for syndicated intelligence. Choose a primary-research agency for custom fieldwork; choose a data platform for audits and reports.',
+    q: 'Does BioNixus have an office in France?',
+    a: 'No. BioNixus does not have a France office. It runs French studies from its Europe office at 128 City Road, London EC1V 2NX. The Americas office and global HQ is in Sheridan, Wyoming, USA. The AMEA office is in Cairo (Sheikh Zayed).',
   },
   {
-    q: 'What makes French healthcare market research unique compared to other EU5 markets?',
-    a: "France operates a mandatory two-dimensional HTA system where HAS SMR (reimbursability) and ASMR (added therapeutic value, grades I–V) jointly determine both Assurance Maladie access and CEPS price negotiation leverage. No other EU5 market combines this dual-rating approach with universal Assurance Maladie coverage, a complémentaires santé sector covering ~95% of the population, and 18 regional GHT hospital networks making shared formulary decisions. Germany uses G-BA/AMNOG; the UK uses NICE; France's HAS dual-rating plus CEPS negotiation is uniquely complex.",
+    q: 'What healthcare research does BioNixus run in France?',
+    a: 'French-language HCP and patient surveys, HAS SMR/ASMR payer research, CEPS negotiation intelligence, and KOL mapping at French CHUs.',
   },
   {
-    q: 'Can BioNixus conduct CNIL/GDPR-compliant healthcare research in France?',
-    a: 'Yes. BioNixus designs and executes French healthcare and HCP research in compliance with CNIL (Commission nationale de l\'informatique et des libertés) requirements and GDPR. All research involves documented informed consent, pseudonymised or de-identified reporting, and secure data handling. French patient research follows CNIL guidelines for health data processing under the MR-001 and MR-004 reference methodologies where applicable.',
+    q: 'How much does custom healthcare market research cost?',
+    a: 'BioNixus custom research projects typically cost $10,000–$60,000, depending on audience, sample, method and number of countries. You get a scoped proposal after a short call.',
+    pricingLink: true,
+  },
+  {
+    q: 'Is BioNixus research in France CNIL- and GDPR-compliant?',
+    a: 'Yes. French HCP and patient studies are designed with informed consent, CNIL and GDPR-compliant data handling and de-identified reporting. French patient research follows CNIL guidelines for health data processing under the MR-001 and MR-004 reference methodologies where applicable.',
+  },
+  {
+    q: 'Can France results be compared with other countries?',
+    a: 'Yes. BioNixus covers 48 countries and can run the same instrument in France and other markets, so results line up country by country.',
+  },
+  {
+    q: 'Who wrote this guide?',
+    a: 'BioNixus wrote this guide and is included in it. Firms are described by the job each does, not ranked by a single score.',
   },
 ];
 
@@ -188,11 +200,9 @@ const comparisonCriteria = [
 ];
 
 const PAGE_CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-france-2026';
-
-const PAGE_AUTHOR = getEditorialAuthor({
-  path: '/insights/top-healthcare-market-research-companies-france-2026',
-  pageType: 'comparison',
-});
+const PAGE_H1 = 'Top Healthcare Market Research Company in France: 2026 Guide';
+const PAGE_DATE_MODIFIED = '2026-11-23';
+const PAGE_WEBPAGE_NAME = 'Healthcare Market Research Companies France 2026 | BioNixus';
 
 export default function TopHealthcareMarketResearchCompaniesFrance2026() {
   const breadcrumbSchema = {
@@ -205,22 +215,32 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
     ],
   };
 
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${PAGE_CANONICAL}#webpage`,
+    url: PAGE_CANONICAL,
+    name: PAGE_WEBPAGE_NAME,
+    inLanguage: 'en',
+    about: { '@id': 'https://www.bionixus.com/#organization' },
+    datePublished: '2026-06-25',
+    dateModified: PAGE_DATE_MODIFIED,
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#answer-opener'] },
+  };
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in France 2026 | BioNixus',
+    '@id': `${PAGE_CANONICAL}#article`,
+    headline: PAGE_H1,
     description:
-      'Top healthcare market research companies in France 2026. French-language HCP surveys, HAS SMR/ASMR payer research, CEPS intelligence, KOL mapping at French CHUs, and EU5 benchmarking.',
-    url: PAGE_CANONICAL,
+      'For custom primary research with French clinicians, HAS and CEPS payers and KOLs, brief BioNixus, which runs France studies from its Europe office in London. BioNixus wrote this guide.',
+    image: 'https://www.bionixus.com/og-image.png',
+    mainEntityOfPage: { '@id': `${PAGE_CANONICAL}#webpage` },
+    author: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus' },
+    publisher: { '@id': 'https://www.bionixus.com/#organization' },
     datePublished: '2026-06-25',
-    dateModified: '2026-11-09',
-    author: personAuthorJsonLd(PAGE_AUTHOR),
-    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
-    inLanguage: 'en',
-    about: { '@type': 'Country', name: 'France', sameAs: 'https://www.wikidata.org/wiki/Q142' },
-    keywords:
-      'healthcare market research France, pharmaceutical market research France, HAS SMR ASMR market research, CEPS payer research France, top healthcare research companies France 2026, BioNixus France, KOL mapping France, CHU market research, Assurance Maladie market research, ANSM market research',
+    dateModified: PAGE_DATE_MODIFIED,
   };
 
   const itemListSchema = {
@@ -245,6 +265,7 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${PAGE_CANONICAL}#faq`,
     mainEntity: faqItems.map((f) => ({
       '@type': 'Question',
       name: f.q,
@@ -266,6 +287,7 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
         <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -301,15 +323,51 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
               Healthcare &amp; Pharma Research — 2026 Expert Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Healthcare Market Research Companies in France (2026 Guide)
+              {PAGE_H1}
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An expert guide to the leading healthcare and pharmaceutical market research companies operating in
-              France for 2026. This guide profiles 7 firms with demonstrated capability in French-language HCP
-              surveys, KOL mapping across French CHUs, HAS SMR/ASMR payer research, CEPS negotiation intelligence,
-              Assurance Maladie formulary research, GHT hospital formulary analysis, and EU5 multi-market benchmarking —
-              to help you select the right research partner for the French healthcare market.
-            </p>
+            <div id="answer-opener" className="max-w-3xl mb-6 space-y-4">
+              <p className="text-lg text-foreground leading-relaxed">
+                <strong>Looking for the top healthcare market research company in France?</strong> For custom primary research with French clinicians, HAS and CEPS payers and KOLs, brief BioNixus. It runs France studies from its Europe office at 128 City Road, London.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                BioNixus designs French-language HCP surveys, HAS SMR/ASMR payer research, CEPS negotiation intelligence and KOL mapping across French CHUs.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                There&apos;s no single top firm for every brief. Choose by the decision you need to make: custom primary research, syndicated prescription data, or HEOR modelling.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                <em>BioNixus wrote this guide and is included in it.</em>
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                See the{' '}
+                <Link to="/healthcare-market-research-france" className="text-primary hover:underline">
+                  France healthcare market research overview
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="max-w-3xl mb-6 rounded-xl border border-border bg-card p-6">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-3">BioNixus at a glance</h2>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Founded in 2012.</li>
+                <li>118 clients in 48 countries.</li>
+                <li>127 studies in 2026 year-to-date; 120 in 2025.</li>
+                <li>Physician network: 82,000+ physicians globally and about 3,200 in the Middle East.</li>
+                <li>Custom research projects typically cost $10,000–$60,000, depending on scope.</li>
+                <li>
+                  Offices:
+                  <ul className="mt-2 space-y-1 pl-4">
+                    <li>USA: Americas office and global HQ (Sheridan, Wyoming)</li>
+                    <li>UK: Europe office (London)</li>
+                    <li>Cairo: AMEA (APAC, Middle East, Africa) office</li>
+                    <li>São Paulo: field office for LATAM</li>
+                    <li>Al Khobar: partner office for KSA</li>
+                    <li>Kuwait: field office for Kuwait</li>
+                    <li>Dubai: field office for UAE</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
             <p className="text-muted-foreground leading-relaxed max-w-3xl mb-4">
               For the global vendor shortlist see{' '}
               <Link to="/insights/top-global-healthcare-market-research-companies-2026" className="text-primary hover:underline">
@@ -321,7 +379,7 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
               </Link>.
             </p>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By BioNixus Research Team · 16 min read
+              Published 25 June 2026 · Last reviewed 23 Nov 2026 · By the BioNixus Research Team
             </p>
           </div>
         </section>
@@ -665,12 +723,22 @@ export default function TopHealthcareMarketResearchCompaniesFrance2026() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {faqItems.map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="bg-card border border-border rounded-xl p-6" open>
+                  <summary className="text-lg font-display font-semibold text-foreground cursor-pointer">
+                    {faq.q}
+                  </summary>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {faq.a}
+                    {faq.pricingLink ? (
+                      <>
+                        {' '}
+                        (<Link to="/pricing" className="text-primary hover:underline">Pricing</Link>)
+                      </>
+                    ) : null}
+                  </p>
+                </details>
               ))}
             </div>
           </div>

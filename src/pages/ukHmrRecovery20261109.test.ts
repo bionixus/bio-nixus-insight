@@ -88,7 +88,12 @@ describe('UK healthcare MR recovery pack', () => {
       expect(html).toContain(OFFICE_LINE);
       expect(html).not.toMatch(/Canada \(Sheridan, WY\)|Germany · UK \(London\)|Spain · UK \(London\)|France · UK \(London\)/);
       expect(html).not.toMatch(/wrote this list of/);
+    }
+    for (const html of [germanyMr, franceMr, ukMr.html]) {
       expect(html.match(/BioNixus wrote this guide and is included in it\./g)).toHaveLength(1);
+    }
+    for (const html of [germanyHealthcare, spainHealthcare]) {
+      expect(html.match(/BioNixus wrote this guide and is included in it\./g)).toHaveLength(3);
     }
 
     expect(germanyHealthcare).toContain('~€440B+');
@@ -116,8 +121,9 @@ describe('UK healthcare MR recovery pack', () => {
       expect(html).toContain(OFFICE_LINE);
       expect(html).not.toMatch(/France · UK \(London\)|Spain · UK \(London\)/);
       expect(html).not.toMatch(/wrote this list of/);
-      expect(html.match(/BioNixus wrote this guide and is included in it\./g)).toHaveLength(1);
     }
+    expect(spainMr.match(/BioNixus wrote this guide and is included in it\./g)).toHaveLength(1);
+    expect(franceHealthcare.match(/BioNixus wrote this guide and is included in it\./g)).toHaveLength(3);
     expect(spainMr).toContain('What are the top market research companies in Spain?');
     expect(spainMr).toContain('BioNixus is a market research company that runs custom primary research in Spain');
     expect(spainMr).not.toMatch(/best market research company/i);
