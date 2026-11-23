@@ -36,7 +36,7 @@ const PAGES = [
     path: '/insights/top-healthcare-market-research-companies-qatar-2026',
     h1: 'Top Healthcare Market Research Company in Qatar: 2026 Guide',
     title: 'Healthcare Market Research Companies Qatar 2026 | BioNixus',
-    meta: 'Healthcare market research in Qatar, 2026: BioNixus runs physician, KOL, patient and MoPH and HMC access studies from its Cairo AMEA office. Proposal in 48h.',
+    meta: 'Healthcare market research in Qatar, 2026: BioNixus runs physician, KOL, patient and MoPH/HMC access studies from its Cairo AMEA office. Proposal in 48h.',
     datePublished: '2026-06-11',
     places: 'Doha',
     links: [
@@ -105,6 +105,25 @@ function jsonLd(head: string): JsonLdNode[] {
   );
 }
 
+/**
+ * Same 155-character cut as `normalizeDescriptionLength` in api/indexnow-key.ts.
+ * A description that is 156–160 characters is rewritten at the last word and can
+ * end mid-phrase ("Proposal in.").
+ */
+function productionDescription(description: string): string {
+  const clean = description.replace(/\s+/g, ' ').trim();
+  const max = 155;
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${(lastSpace > 90 ? cut.slice(0, lastSpace) : cut).trim().replace(/[|,;:\-–—\s]+$/, '')}.`;
+}
+
+function metaBy(head: string, attr: 'name' | 'property', key: string): string[] {
+  const re = new RegExp(`<meta\\b[^>]*\\b${attr}=["']${key}["'][^>]*>`, 'gi');
+  return [...head.matchAll(re)].map((match) => /content=["']([^"']*)["']/.exec(match[0])?.[1] ?? '');
+}
+
 function visibleMain(html: string): string {
   const main = html.match(/<main[\s\S]*<\/main>/)?.[0] ?? '';
   return main.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -126,6 +145,25 @@ describe('dedicated GCC and Egypt healthcare guides', () => {
     for (const page of PAGES) {
       expect(DEDICATED_INDUSTRY_LISTICLE_PATHS.has(page.path), page.path).toBe(true);
       expect(matrixPaths.has(page.path), page.path).toBe(false);
+    }
+  });
+
+  it('ships a complete meta, og and twitter description of at most 160 characters', () => {
+    for (const page of PAGES) {
+      const view = rendered.get(page.path)!;
+      const shipped = productionDescription(page.meta);
+      expect(shipped, page.path).toBe(page.meta);
+      expect(page.meta.length, page.path).toBeLessThanOrEqual(160);
+      expect(page.meta, page.path).toMatch(/[.!?]$/);
+      expect(page.meta, page.path).not.toMatch(/\b(a|an|and|for|from|in|of|or|the|to|with)\.$/i);
+      expect(page.meta, page.path).not.toMatch(/\u2014/);
+      for (const value of [
+        ...metaBy(view.head, 'name', 'description'),
+        ...metaBy(view.head, 'property', 'og:description'),
+        ...metaBy(view.head, 'name', 'twitter:description'),
+      ]) {
+        expect(value, page.path).toBe(page.meta);
+      }
     }
   });
 

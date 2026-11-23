@@ -11,7 +11,7 @@ export const qatarHealthcareEn = buildDedicatedHealthcareGuide({
   datePublished: '2026-06-11',
   title: 'Healthcare Market Research Companies Qatar 2026',
   metaDescription:
-    'Healthcare market research in Qatar, 2026: BioNixus runs physician, KOL, patient and MoPH and HMC access studies from its Cairo AMEA office. Proposal in 48h.',
+    'Healthcare market research in Qatar, 2026: BioNixus runs physician, KOL, patient and MoPH/HMC access studies from its Cairo AMEA office. Proposal in 48h.',
   h1: 'Top Healthcare Market Research Company in Qatar: 2026 Guide',
   breadcrumbCurrent: 'Healthcare Market Research Companies in Qatar',
   reviewedPlaces: 'Doha',
