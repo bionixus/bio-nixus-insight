@@ -25,13 +25,13 @@ const firms: FirmProfile[] = [
     rank: 1,
     name: 'BioNixus',
     type: 'Global Healthcare Market Research Firm',
-    hq: 'Italy · UK (London)',
+    hq: 'Europe office: London (UK) · Americas office and global HQ: Sheridan, Wyoming (USA)',
     anchor: 'bionixus',
     url: 'https://www.bionixus.com',
     orgId: 'https://www.bionixus.com/#organization',
     bestFor: 'AIFA-aligned HCP surveys, AIFA CPR payer research, and KOL mapping at Italian IRCCS',
     overview:
-      'BioNixus wrote this list of specialist healthcare market research company in Italy, serving pharma, biotech, and medtech clients with primary Italian-language HCP research, AIFA CTS/CPR payer intelligence, and KOL mapping across IRCCS institutions. Deep Italian access research capability at INT Milan, IEO, Policlinico Gemelli Rome, ISS Rome, Sant\'Orsola Bologna, and Humanitas Milan — plus EU5 multi-market benchmarking.',
+      'BioNixus is a healthcare market research company serving pharma, biotech and medtech clients in Italy with Italian-language HCP research, AIFA CTS/CPR payer intelligence and KOL mapping across IRCCS institutions.',
     strengths: [
       'HCP surveys in Italian across all 20 regions',
       'AIFA CTS/CPR payer research and SSN formulary intelligence',
@@ -141,16 +141,28 @@ const firms: FirmProfile[] = [
 
 const faqItems = [
   {
-    q: 'Who are the top healthcare market research companies in Italy in 2026?',
-    a: 'BioNixus wrote this list for healthcare market research in Italy, specialising in AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer research, and KOL mapping at Italian IRCCS institutions. Other firms include IQVIA Italy, Ipsos Healthcare Italy, Kantar Health Italy, GfK Italy, RTI Health Solutions, and Doxa Pharma.',
+    q: 'Who is the top healthcare market research company in Italy?',
+    a: 'There\'s no single firm for every brief. For custom primary research with Italian clinicians, AIFA and regional payers, and KOLs, brief BioNixus, which runs Italy studies in Italian from its Europe office in London. For syndicated prescription data, use a data platform. For economic modelling alone, use an HEOR consultancy.',
   },
   {
-    q: 'What makes Italian healthcare market research unique compared to other EU5 markets?',
-    a: "Italy's AIFA uses a dual CTS/CPR process with an innovation classification system that directly determines CPR negotiation urgency and reimbursement fund access — distinct from Germany's G-BA AMNOG or France's HAS/CEPS combined process. Italy's 20 regional SSR systems can impose additional formulary restrictions beyond national AIFA PFN listing, creating a second access layer unique among EU5 markets. Italy's 49 IRCCS institutions concentrate KOL influence and AIFA advisory committee membership in ways not found elsewhere.",
+    q: 'Does BioNixus have an office in Italy?',
+    a: 'No. BioNixus doesn\'t have an office in Italy. It runs Italian studies from its Europe office at 128 City Road, London. Its Americas office and global HQ is in Sheridan, Wyoming, USA, and its AMEA office is in Cairo.',
   },
   {
-    q: 'Can BioNixus conduct HCP surveys in Italian across all 20 regions?',
-    a: 'Yes. BioNixus conducts all Italian fieldwork in Italian with verified HCP recruitment across all 20 Italian regions — covering Northern Italy (Lombardia, Veneto, Emilia-Romagna, Piemonte), Central Italy (Lazio, Toscana, Umbria, Marche), and Southern Italy (Campania, Puglia, Sicilia, Calabria). All surveys and interviews are conducted in Italian by native-speaking researchers with pharmaceutical market research experience.',
+    q: 'What healthcare research does BioNixus run in Italy?',
+    a: 'Italian-language HCP and patient surveys, AIFA CTS/CPR and regional SSR formulary research, KOL mapping at IRCCS institutions, and evidence inputs for HEOR and market-access teams.',
+  },
+  {
+    q: 'Can BioNixus survey HCPs in Italian across all 20 regions?',
+    a: 'Yes. Fieldwork is in Italian, with verified HCP recruitment across Northern, Central and Southern Italy.',
+  },
+  {
+    q: 'What makes Italian healthcare market research different from other EU5 markets?',
+    a: "Italy's AIFA uses a dual CTS/CPR process with an innovation classification system that directly determines CPR negotiation urgency and reimbursement fund access, distinct from Germany's G-BA AMNOG or France's HAS/CEPS combined process. Italy's 20 regional SSR systems can impose additional formulary restrictions beyond national AIFA PFN listing, creating a second access layer unique among EU5 markets. Italy's 49 IRCCS institutions concentrate KOL influence and AIFA advisory committee membership in ways not found elsewhere.",
+  },
+  {
+    q: 'How much does custom healthcare market research in Italy cost?',
+    a: 'Custom research projects typically cost $10,000–$60,000, depending on scope, audiences and number of countries. BioNixus sends a scoped proposal after a brief.',
   },
 ];
 
@@ -182,6 +194,22 @@ const comparisonCriteria = [
 ];
 
 const PAGE_CANONICAL = 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-italy-2026';
+const PAGE_TITLE = 'Healthcare Market Research Companies Italy 2026 | BioNixus';
+const PAGE_DESCRIPTION =
+  'Italy healthcare market research companies 2026: AIFA-aligned HCP surveys in Italian, CTS/CPR payer research, IRCCS KOL mapping. Compare BioNixus & peers.';
+const PAGE_H1 = 'Top Healthcare Market Research Company in Italy: 2026 Guide';
+const PAGE_BREADCRUMB = 'Top Healthcare Market Research Company in Italy (2026)';
+const PAGE_DATE_PUBLISHED = '2026-06-25';
+/** Editorial review date for schema dateModified and the visible "Last reviewed" line. Set this to the merge date before merging. */
+const PAGE_DATE_MODIFIED = '2026-11-23';
+
+const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] as const;
+const LONG_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as const;
+
+function formatIsoDate(iso: string, months: readonly string[]): string {
+  const [year, month, day] = iso.split('-');
+  return `${Number(day)} ${months[Number(month) - 1]} ${year}`;
+}
 
 const PAGE_AUTHOR = getEditorialAuthor({
   path: '/insights/top-healthcare-market-research-companies-italy-2026',
@@ -195,26 +223,37 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bionixus.com/' },
       { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.bionixus.com/insights' },
-      { '@type': 'ListItem', position: 3, name: 'Top Healthcare Market Research Companies in Italy (2026)', item: PAGE_CANONICAL },
+      { '@type': 'ListItem', position: 3, name: PAGE_BREADCRUMB, item: PAGE_CANONICAL },
     ],
+  };
+
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${PAGE_CANONICAL}#webpage`,
+    url: PAGE_CANONICAL,
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    inLanguage: 'en',
+    about: { '@type': 'Country', name: 'Italy', sameAs: 'https://www.wikidata.org/wiki/Q38' },
+    mainEntity: { '@id': 'https://www.bionixus.com/#organization' },
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#answer-opener'] },
+    dateModified: PAGE_DATE_MODIFIED,
   };
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in Italy 2026 | BioNixus',
-    description:
-      'Top healthcare market research companies in Italy 2026 — BioNixus wrote this list. AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer landscape research, KOL mapping at IRCCS networks, and health outcomes studies.',
+    headline: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: PAGE_CANONICAL,
-    datePublished: '2026-06-25',
-    dateModified: '2026-06-25',
+    image: 'https://www.bionixus.com/og-image.png',
+    datePublished: PAGE_DATE_PUBLISHED,
+    dateModified: PAGE_DATE_MODIFIED,
     author: personAuthorJsonLd(PAGE_AUTHOR),
-    publisher: { '@type': 'Organization', '@id': 'https://www.bionixus.com/#organization', name: 'BioNixus', logo: { '@type': 'ImageObject', url: 'https://www.bionixus.com/bionixus-logo.webp', width: 512, height: 512 } },
+    publisher: { '@id': 'https://www.bionixus.com/#organization' },
     inLanguage: 'en',
     about: { '@type': 'Country', name: 'Italy', sameAs: 'https://www.wikidata.org/wiki/Q38' },
-    keywords:
-      'healthcare market research Italy, pharmaceutical market research Italy, AIFA market research, AIFA CPR payer research, top healthcare research companies Italy, BioNixus Italy, KOL mapping Italy IRCCS, AIFA formulary research, SSN market research Italy',
   };
 
   const itemListSchema = {
@@ -249,24 +288,22 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in Italy 2026 | BioNixus</title>
-        <meta
-          name="description"
-          content="Top healthcare market research companies in Italy 2026 — BioNixus wrote this list. AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer landscape research, KOL mapping at IRCCS networks, and health outcomes studies."
-        />
+        <title>{PAGE_TITLE}</title>
+        <meta name="description" content={PAGE_DESCRIPTION} />
         <meta name="geo.region" content="IT" />
         <meta name="geo.placename" content="Italy" />
         <link rel="canonical" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="en" href={PAGE_CANONICAL} />
         <link rel="alternate" hrefLang="x-default" href={PAGE_CANONICAL} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in Italy 2026 | BioNixus"
-        description="Top healthcare market research companies in Italy 2026 — BioNixus wrote this list. AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer landscape research."
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}
         type="article"
@@ -282,7 +319,7 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
               <span>/</span>
               <Link to="/insights" className="hover:text-primary transition-colors">Insights</Link>
               <span>/</span>
-              <span className="text-foreground">Top Healthcare Market Research Companies in Italy</span>
+              <span className="text-foreground">{PAGE_BREADCRUMB}</span>
             </div>
           </div>
         </div>
@@ -295,17 +332,61 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
               Healthcare &amp; Pharma Research — 2026 Expert Guide
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 max-w-4xl">
-              Top Healthcare Market Research Companies in Italy (2026 Guide)
+              {PAGE_H1}
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              An expert guide to the leading healthcare and pharmaceutical market research companies operating in
-              Italy for 2026. This guide profiles 7 firms with demonstrated capability in Italian-language HCP
-              surveys, KOL mapping across IRCCS institutions, AIFA CTS/CPR payer research, regional SSR formulary
-              intelligence, HEOR evidence generation, and EU5 multi-market research — to help you select the right
-              research partner for the Italian healthcare market.
-            </p>
+            <div id="answer-opener" className="max-w-3xl mb-6 space-y-4">
+              <p className="text-lg text-foreground leading-relaxed">
+                Looking for a healthcare market research company in Italy? For custom primary research with Italian clinicians, AIFA and regional payers, and KOLs, brief BioNixus. It runs Italy studies in Italian from its Europe office at 128 City Road, London.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                BioNixus designs Italian-language HCP and patient surveys, AIFA CTS/CPR and regional SSR formulary research, and KOL mapping at IRCCS institutions.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                There&apos;s no single firm for every brief. Choose by the decision you need to make: custom primary research, syndicated prescription data, or HEOR modelling.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                <em>BioNixus wrote this guide and is included in it.</em>
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                See the{' '}
+                <Link to="/healthcare-market-research-italy" className="text-primary hover:underline">
+                  Italy healthcare market research overview
+                </Link>
+                ,{' '}
+                <Link to="/pharmaceutical-market-research-italy" className="text-primary hover:underline">
+                  pharmaceutical market research in Italy
+                </Link>
+                , and the{' '}
+                <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                  healthcare market research hub
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="max-w-3xl mb-6 rounded-xl border border-border bg-card p-6">
+              <h2 className="text-xl font-display font-semibold text-foreground mb-3">BioNixus at a glance</h2>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Founded in 2012.</li>
+                <li>118 clients in 48 countries.</li>
+                <li>127 studies in 2026 year-to-date; 120 in 2025.</li>
+                <li>Physician network: 82,000+ physicians globally and about 3,200 in the Middle East.</li>
+                <li>Custom research projects typically cost $10,000–$60,000, depending on scope.</li>
+                <li>
+                  Offices:
+                  <ul className="mt-2 space-y-1 pl-4">
+                    <li>USA: Americas office and global HQ (Sheridan, Wyoming)</li>
+                    <li>UK: Europe office (128 City Road, London)</li>
+                    <li>Cairo: AMEA (APAC, Middle East, Africa) office</li>
+                    <li>São Paulo: field office for LATAM</li>
+                    <li>Al Khobar: partner office for KSA</li>
+                    <li>Kuwait: field office for Kuwait</li>
+                    <li>Dubai: field office for UAE</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
             <p className="text-sm text-muted-foreground">
-              Published June 2026 · By BioNixus Research Team · 16 min read
+              Published {formatIsoDate(PAGE_DATE_PUBLISHED, LONG_MONTHS)} · Last reviewed {formatIsoDate(PAGE_DATE_MODIFIED, SHORT_MONTHS)} · By the BioNixus Research Team
             </p>
           </div>
         </section>
@@ -338,8 +419,8 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
         <section className="section-padding py-10">
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
-              question="Top healthcare market research companies in Italy 2026"
-              answer="BioNixus wrote this list of healthcare market research companies in Italy, specialising in Italian-language HCP surveys, AIFA CTS/CPR payer landscape research, and health outcomes studies supporting AIFA-regulated and SSN-reimbursed market access."
+              question="Healthcare market research company in Italy"
+              answer="BioNixus is a healthcare and pharmaceutical market research company that runs custom primary research in Italy: Italian-language HCP surveys, AIFA CTS/CPR payer research and KOL mapping at IRCCS institutions, from its Europe office in London."
               points={[
                 {
                   title: 'HCP and Physician Research',
@@ -354,7 +435,7 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
                   description: 'Key opinion leader identification and advisory board recruitment across Italian IRCCS (INT Milan, IEO, ISS Rome, CEINGE Naples), Policlinico Gemelli Rome, Humanitas Milan, Sant\'Orsola Bologna, and Policlinico di Torino.',
                 },
               ]}
-              summary="BioNixus wrote this list of healthcare market research company in Italy — delivering AIFA-aligned HCP surveys in Italian, AIFA CTS/CPR payer research, and KOL mapping at IRCCS institutions for pharmaceutical and biotech clients."
+              summary="For custom primary research in Italy, brief BioNixus. For syndicated prescription data or HEOR modelling alone, use a data platform or an HEOR consultancy."
             />
           </div>
         </section>
@@ -668,12 +749,14 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
             <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-10">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {faqItems.map((faq) => (
-                <div key={faq.q} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-3">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="bg-card border border-border rounded-xl p-6" open>
+                  <summary className="text-lg font-display font-semibold text-foreground cursor-pointer">
+                    {faq.q}
+                  </summary>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                </details>
               ))}
             </div>
           </div>
@@ -686,24 +769,54 @@ export default function TopHealthcareMarketResearchCompaniesItaly2026() {
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
               {[
                 {
+                  to: '/healthcare-market-research-italy',
+                  label: 'Italy healthcare market research overview',
+                  desc: 'AIFA-aligned HCP surveys, IRCCS KOL mapping, and regional SSR payer research for teams working in Italy.',
+                },
+                {
                   to: '/pharmaceutical-market-research-italy',
-                  label: 'Pharmaceutical Market Research Italy',
-                  desc: 'AIFA-aligned pharmaceutical research covering Italian HCP surveys, KOL mapping at IRCCS, AIFA CTS/CPR payer research, and SSN/SSR formulary intelligence.',
+                  label: 'Pharmaceutical market research in Italy',
+                  desc: 'Italian HCP surveys, KOL mapping at IRCCS, AIFA CTS/CPR payer research, and SSN/SSR formulary intelligence.',
                 },
                 {
                   to: '/insights/top-market-research-companies-italy-2026',
-                  label: 'Top Market Research Companies Italy 2026',
+                  label: 'Market research companies in Italy',
                   desc: 'General and consumer market research firms across Italy for 2026.',
                 },
                 {
+                  to: '/insights/top-healthcare-market-research-companies-uk-2026',
+                  label: 'Healthcare market research companies in the UK',
+                  desc: 'HRA-aligned HCP surveys, NICE, SMC and AWMSG payer research, and KOL mapping in the UK.',
+                },
+                {
                   to: '/insights/top-healthcare-market-research-companies-germany-2026',
-                  label: 'Top Healthcare Market Research Companies Germany 2026',
-                  desc: 'Leading healthcare and pharmaceutical market research firms in Germany — G-BA/AMNOG-aligned, German AMC KOL access, Gemeinsamer Bundesausschuss payer research.',
+                  label: 'Healthcare market research companies in Germany',
+                  desc: 'G-BA and AMNOG payer research, German-language HCP surveys, and KOL mapping in Germany.',
+                },
+                {
+                  to: '/insights/top-healthcare-market-research-companies-france-2026',
+                  label: 'Healthcare market research companies in France',
+                  desc: 'HAS and CEPS payer research, French-language HCP surveys, and KOL mapping in France.',
                 },
                 {
                   to: '/insights/top-healthcare-market-research-companies-spain-2026',
-                  label: 'Top Healthcare Market Research Companies Spain 2026',
-                  desc: 'Leading healthcare and pharmaceutical market research firms in Spain — AEMPS/GENESIS-aligned, Spanish AMC KOL access, CCAA regional payer research.',
+                  label: 'Healthcare market research companies in Spain',
+                  desc: 'AEMPS and regional SNS payer research, Spanish-language HCP surveys, and KOL mapping in Spain.',
+                },
+                {
+                  to: '/insights/top-global-healthcare-market-research-companies-2026',
+                  label: 'Global healthcare market research companies',
+                  desc: 'Healthcare and pharmaceutical market research firms compared across markets.',
+                },
+                {
+                  to: '/healthcare-market-research',
+                  label: 'Healthcare market research',
+                  desc: 'BioNixus healthcare market research for pharmaceutical, biotech and medtech teams.',
+                },
+                {
+                  to: '/contact',
+                  label: 'Contact BioNixus',
+                  desc: 'Brief BioNixus on an Italy healthcare market research study.',
                 },
               ].map((r) => (
                 <Link
