@@ -6,7 +6,7 @@ export const jordanHealthcareEn: CountryListicleConfig = {
   variant: 'healthcare',
   region: 'mena',
   country: 'Jordan',
-  title: 'Top Healthcare Market Research Companies in Jordan | BioNixus',
+  title: 'Healthcare Market Research Companies Jordan 2026 | BioNixus',
   metaDescription:
     'Independent 2026 guide to the leading healthcare market research companies in Jordan — pharmaceutical U&A, physician surveys, KOL mapping at KHCC and JUH.',
   canonical: 'https://www.bionixus.com/insights/top-healthcare-market-research-companies-jordan-2026',

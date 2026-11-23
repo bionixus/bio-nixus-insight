@@ -101,7 +101,7 @@ describe('api/blog crawler status', () => {
     });
     const res = await run('kol-mapping-pharma-middle-east');
     expect(res.statusCode).toBe(200);
-    expect(res.body).toContain('<title>KOL Mapping Guide for Middle East Pharma | BioNixus</title>');
+    expect(res.body).toContain('<title>KOL Mapping for Pharma in the Middle East | BioNixus</title>');
     expect(res.body).toContain('name="robots" content="index, follow, max-image-preview:large"');
     expect(res.body).toContain('rel="canonical" href="https://www.bionixus.com/blog/kol-mapping-pharma-middle-east"');
     expect(res.body).toContain('"dateModified":"2026-09-29"');

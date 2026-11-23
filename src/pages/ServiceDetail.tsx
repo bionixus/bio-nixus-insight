@@ -32,7 +32,7 @@ interface ServiceData {
 const serviceData: Record<string, ServiceData> = {
   'quantitative-research': {
     title: 'Quantitative Healthcare Research & Physician Surveys',
-    metaTitle: 'Quantitative Healthcare Research | Physician Surveys EMEA — BioNixus',
+    metaTitle: 'Quantitative Research | Physician Surveys EMEA | BioNixus',
     metaDescription: 'Statistically robust physician and payer surveys across 17+ EMEA markets. Sample sizes n=50-500+, market sizing, conjoint, MaxDiff, and DCE methodologies.',
     heroSubtitle: 'Large-scale statistical insights from physicians and healthcare professionals across UK, Europe, and MENA markets.',
     overview: 'BioNixus conducts rigorous quantitative healthcare market research designed to provide statistically robust evidence for pharmaceutical decision-making. Our physician surveys span multiple specialties and countries, delivering the data foundations your commercial, medical affairs, and market access teams need.',

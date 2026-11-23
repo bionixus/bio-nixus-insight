@@ -717,7 +717,7 @@ const staticPages = [
   { path: '/india-healthcare-market-report', priority: '0.85', changefreq: 'monthly' },
   { path: '/india-medical-devices-market-report', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-australia-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-bahrain-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-bahrain-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-belgium-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-canada-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-india-2026', priority: '0.90', changefreq: 'monthly' },
@@ -726,7 +726,7 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-colombia-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-denmark-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-norway-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-egypt-2026', priority: '0.90', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-egypt-2026', priority: '0.90', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-france-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-germany-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-italy-2026', priority: '0.88', changefreq: 'monthly' },
@@ -735,10 +735,10 @@ const staticPages = [
   { path: '/insights/top-healthcare-market-research-companies-mexico-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-netherlands-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-new-zealand-2026', priority: '0.90', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-oman-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-oman-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-peru-2026', priority: '0.88', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-poland-2026', priority: '0.88', changefreq: 'monthly' },
-  { path: '/insights/top-healthcare-market-research-companies-qatar-2026', priority: '0.88', changefreq: 'monthly' },
+  { path: '/insights/top-healthcare-market-research-companies-qatar-2026', priority: '0.88', changefreq: 'monthly', lastmod: '2026-11-23' },
   { path: '/insights/top-healthcare-market-research-companies-south-korea-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-spain-2026', priority: '0.90', changefreq: 'monthly' },
   { path: '/insights/top-healthcare-market-research-companies-switzerland-2026', priority: '0.90', changefreq: 'monthly' },
@@ -2159,6 +2159,11 @@ async function main() {
     const path = pathFromAbsoluteUrl(loc);
     if (isSitemapRedirectSourcePath(path)) {
       excluded.push({ url: loc, reason: 'redirect-source' });
+      finalUrls.delete(loc);
+      continue;
+    }
+    if (path === '/r' || path.startsWith('/r/') || path === '/go' || path.startsWith('/go/')) {
+      excluded.push({ url: loc, reason: 'panel-redirect-end' });
       finalUrls.delete(loc);
     }
   }

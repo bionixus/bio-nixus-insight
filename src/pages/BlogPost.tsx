@@ -14,6 +14,8 @@ import {
   resolveContentSilo,
 } from '@/lib/blog-content-silo';
 import { missingArticleRedirect } from '@/lib/missing-article-redirect';
+import { isReservedUnpublishedBlogSlug } from '@/lib/reserved-unpublished-blog-slugs';
+import NotFound from '@/pages/NotFound';
 import { getHardcodedPostBySlug } from '@/data/blog-posts-index';
 import {
   BLOG_INDEX_ROBOTS,
@@ -48,7 +50,9 @@ import {
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
-import { alsaadanyProfileUrl, authorLinkedInForDisplay, canonicalAlsaadanyJobTitle } from '@/data/editorialAuthors';
+import { ALSAADANY_AUTHOR, alsaadanyProfileUrl, authorLinkedInForDisplay, canonicalAlsaadanyJobTitle, isAlsaadanyDisplayName } from '@/data/editorialAuthors';
+import { mediaCreditsForAuthor, type FeaturedInCredit } from '@/data/inTheMedia';
+import { formatListDate } from '@/lib/formatListDate';
 import OpenGraphMeta from '@/components/OpenGraphMeta';
 import BlogSiteExplorer from '@/components/BlogSiteExplorer';
 import { getOgLocale, getOgLocaleAlternates } from '@/lib/seo';
@@ -315,6 +319,11 @@ const EGYPT_HEALTHCARE_2026_META_DESCRIPTION =
 const EGYPT_HEALTHCARE_2026_OG_TITLE = EGYPT_HEALTHCARE_2026_TITLE;
 const EGYPT_HEALTHCARE_2026_OG_DESCRIPTION = EGYPT_HEALTHCARE_2026_META_DESCRIPTION;
 
+const AVALON_TIRZEPATIDE_SLUG = 'avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market';
+const AVALON_TIRZEPATIDE_TITLE = 'Avalon Pharma Generic Tirzepatide, Saudi Arabia | BioNixus';
+const SAUDI_IVD_BLOG_SLUG = 'saudi-arabia-in-vitro-diagnostics-market';
+const SAUDI_IVD_BLOG_TITLE = 'In Vitro Diagnostics (IVD) Market in Saudi Arabia | BioNixus';
+
 const KUWAIT_HEALTHCARE_2026_SLUG = 'healthcare-overview-kuwait-market-2026';
 const KUWAIT_HEALTHCARE_2026_DISPLAY_TITLE =
   'Kuwait Healthcare Market 2026 Overview';
@@ -327,7 +336,7 @@ const KUWAIT_HEALTHCARE_2026_OG_DESCRIPTION =
 
 /** EN-only SEO overrides: rich blog narrative + internal equity to `/quantitative-healthcare-market-research`. */
 const QUANT_MR_MA_PAGE_TITLE =
-  'Quantitative Healthcare Market Research & Market Access 2026 | BioNixus';
+  'Quantitative Healthcare Market Research & Market | BioNixus';
 const QUANT_MR_MA_META_DESCRIPTION =
   'Quantitative healthcare market research for pharma market access — KPIs, payer evidence, MENA/GCC study design, pricing scenarios. Links to the BioNixus quantitative methodology guide.';
 const QUANT_MR_MA_OG_TITLE =
@@ -780,6 +789,32 @@ function blogCanonicalAbsoluteUrl(
   }
 }
 
+function FeaturedInLines({ credits }: { credits: readonly FeaturedInCredit[] }) {
+  if (credits.length === 0) return null;
+  return (
+    <ul className="mt-2 space-y-1 list-none p-0 m-0">
+      {credits.map((credit) => {
+        const dateLabel = credit.date ? formatListDate(credit.date) : '';
+        return (
+          <li key={`${credit.url}-${credit.headline}`} className="text-sm text-muted-foreground">
+            Featured in:{' '}
+            <a
+              href={credit.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary hover:underline"
+            >
+              {credit.headline}
+            </a>
+            {`, ${credit.publicationName}`}
+            {dateLabel ? `, ${dateLabel}` : ''}.
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 type BlogPostProps = {
   fixedSlug?: string;
 };
@@ -895,6 +930,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
       })
     : null;
   const clientRedirectTo = foundRedirect?.redirectTo ?? missingRedirect?.redirectTo ?? null;
+  const reservedUnpublishedMiss =
+    isReservedUnpublishedBlogSlug(slug) &&
+    !lookupFailed &&
+    !post &&
+    (ssrBlogPostLookup === 'missing' || confirmedMissing);
 
   useEffect(() => {
     if (slug?.startsWith('fallback-')) {
@@ -916,6 +956,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     window.addEventListener('scroll', update, { passive: true });
     return () => window.removeEventListener('scroll', update);
   }, [post, slug, pathname, isArBlog, navigate, clientRedirectTo]);
+
+  if (reservedUnpublishedMiss) {
+    return <NotFound />;
+  }
 
   if (!slug) {
     return (
@@ -1046,6 +1090,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
     titleCore = SAUDI_PHARMA_ENTRY_2026_TITLE_CORE;
   } else if (slug === SAUDI_HCR_FIRMS_AR_SLUG && isArabicArticle) {
     titleCore = SAUDI_HCR_FIRMS_AR_TITLE_CORE;
+  } else if (slug === AVALON_TIRZEPATIDE_SLUG) {
+    titleCore = AVALON_TIRZEPATIDE_TITLE;
+  } else if (slug === SAUDI_IVD_BLOG_SLUG) {
+    titleCore = SAUDI_IVD_BLOG_TITLE;
   }
   const documentTitle = ctrSeo ? ctrSeo.title : seoTitleWithBrandOnce(titleCore);
   const metaDescription = buildSeoDescription({
@@ -1104,7 +1152,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
             ? GCC_PHARMACOECONOMICS_META_TITLE
             : isTherapyStaticBlogEn
               ? therapyStaticBlogBundle!.metaTitle
-              : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
+              : slug === AVALON_TIRZEPATIDE_SLUG
+                ? AVALON_TIRZEPATIDE_TITLE
+                : slug === SAUDI_IVD_BLOG_SLUG
+                  ? SAUDI_IVD_BLOG_TITLE
+                  : dedupePipeBioNixusTail(post.ogTitle || documentTitle);
   const socialDescription = ctrSeo
     ? ctrSeo.description
     : isEgyptHealthcare2026
@@ -1228,6 +1280,13 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
           : [];
 
   const authorLinkedIn = authorLinkedInForDisplay(post.authorName, post.authorLinkedIn);
+  const visibleAuthorTitle = alsaadanyProfileUrl(post.authorName)
+    ? canonicalAlsaadanyJobTitle(post.authorTitle)
+    : post.authorTitle?.trim();
+  const featuredCredits = mediaCreditsForAuthor({
+    isMohammad: post.authorSlug === ALSAADANY_AUTHOR.slug || isAlsaadanyDisplayName(post.authorName),
+    featuredIn: post.authorFeaturedIn,
+  });
 
   const breadcrumbLabel =
     post.breadcrumbLabel?.trim() && articleLocale === 'en' && resolvedSilo !== 'industries'
@@ -1297,7 +1356,11 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     ? GCC_PHARMACOECONOMICS_DISPLAY_TITLE
                     : isTherapyStaticBlogEn
                       ? therapyStaticBlogBundle!.displayTitle
-                      : isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr
+                      : slug === AVALON_TIRZEPATIDE_SLUG
+                        ? AVALON_TIRZEPATIDE_TITLE
+                        : slug === SAUDI_IVD_BLOG_SLUG
+                          ? SAUDI_IVD_BLOG_TITLE
+                          : isSaudiPharmaMarket2026ArArticle || isGccMeastPharmaHealthArticleAr
                       ? documentTitle
                       : post.title
         }
@@ -1502,7 +1565,7 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                     )}
                     <div>
                       <PersonNameLink name={post.authorName} className="text-[13px] font-medium text-white/85 block no-underline" />
-                      {post.authorTitle && <span className="text-[11px] text-white/45 block">{post.authorTitle}</span>}
+                      {visibleAuthorTitle && <span className="text-[11px] text-white/45 block">{visibleAuthorTitle}</span>}
                     </div>
                   </div>
                 )}
@@ -2017,13 +2080,14 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
                         <a href={authorLinkedIn} target="_blank" rel="noopener noreferrer" className="hover:underline">{post.authorName}</a>
                       ) : post.authorName}
                     </p>
-                    {post.authorTitle && <p className="text-sm text-muted-foreground mb-1">{post.authorTitle}</p>}
+                    {visibleAuthorTitle && <p className="text-sm text-muted-foreground mb-1">{visibleAuthorTitle}</p>}
                     {authorLinkedIn && (
                       <a href={authorLinkedIn} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary/70 hover:text-primary transition-colors">
                         <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         {blogUi.linkedInProfile}
                       </a>
                     )}
+                    <FeaturedInLines credits={featuredCredits} />
                     {post.updatedAtIso && post.updatedAtIso !== post.publishedAtIso && (
                       <p className="text-xs text-muted-foreground mt-1">
                         {blogUi.updated} {new Date(post.updatedAtIso).toLocaleDateString(BLOG_DATE_LOCALE[articleLocale], { day: 'numeric', month: 'short', year: 'numeric' })}

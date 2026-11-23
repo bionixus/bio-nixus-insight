@@ -166,7 +166,7 @@ const comparisonCriteria = [
 
 const PAGE_CANONICAL = 'https://www.bionixus.com/insights/top-market-research-companies-italy-2026';
 /** Set to the merge date before merging. Title and meta on this frozen URL stay unchanged. */
-const PAGE_DATE_MODIFIED = '2026-11-16';
+const PAGE_DATE_MODIFIED = '2026-11-23';
 
 const PAGE_AUTHOR = getEditorialAuthor({
   path: '/insights/top-market-research-companies-italy-2026',

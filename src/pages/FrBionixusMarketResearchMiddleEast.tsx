@@ -353,7 +353,7 @@ const FrBionixusMarketResearchMiddleEast = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Études Pharmaceutiques Moyen-Orient | Programmes CCG | BioNixus"
+        title="Études Pharmaceutiques Moyen-Orient | Programmes | BioNixus"
         description="Études pharmaceutiques Moyen-Orient et CCG : lancement, accès au marché et croissance. BioNixus livre des programmes de preuves au niveau pays en Arabie saoudite, EAU, Koweït, Qatar, Bahreïn et Oman."
         canonical={pageUrl}
         ogImage={pageImage}

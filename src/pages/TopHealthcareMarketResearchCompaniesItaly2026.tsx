@@ -201,7 +201,7 @@ const PAGE_H1 = 'Top Healthcare Market Research Company in Italy: 2026 Guide';
 const PAGE_BREADCRUMB = 'Top Healthcare Market Research Company in Italy (2026)';
 const PAGE_DATE_PUBLISHED = '2026-06-25';
 /** Editorial review date for schema dateModified and the visible "Last reviewed" line. Set this to the merge date before merging. */
-const PAGE_DATE_MODIFIED = '2026-11-16';
+const PAGE_DATE_MODIFIED = '2026-11-23';
 
 const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] as const;
 const LONG_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as const;

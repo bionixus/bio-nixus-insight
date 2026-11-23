@@ -8,6 +8,7 @@ import { NUPCO_TENDER_PATH } from '@/data/blog-nupco-tender-market-research-saud
 import { KSA_GOV_CSAT_HARDCODED_POST, KSA_GOV_CSAT_PATH } from '@/data/blog-government-customer-satisfaction-saudi-arabia';
 import { HEALTHCARE_BLOG_INDEX_PATH, INDUSTRIES_INSIGHTS_INDEX_PATH } from '@/lib/blog-content-silo';
 import { closestKnownPostPath, missingArticleRedirect } from '@/lib/missing-article-redirect';
+import { isReservedUnpublishedBlogSlug } from '@/lib/reserved-unpublished-blog-slugs';
 import { fetchSanityPostBySlugWithClient } from '@/lib/sanity-blog';
 
 const UNKNOWN_SLUG = 'this-slug-does-not-exist';
@@ -152,6 +153,34 @@ describe('missingArticleRedirect', () => {
       statusCode: 301,
       redirectTo: '/blog/avalon-pharma-onesource-saudi-generic-tirzepatide-glp1-market',
     });
+  });
+
+  it('does not fuzzy-redirect the unpublished health-data residency slug', () => {
+    const slug = 'health-data-residency-gcc-mena-research-2026';
+    const pathname = `/blog/${slug}`;
+    expect(isReservedUnpublishedBlogSlug(slug)).toBe(true);
+    expect(closestKnownPostPath(slug, pathname)).toBeNull();
+    expect(closestKnownPostPath(slug, pathname)).not.toBe('/blog/mental-health-market-research-saudi-arabia');
+    expect(
+      missingArticleRedirect({
+        pathname,
+        slug,
+        lookup: 'missing',
+        post: null,
+      }),
+    ).toBeNull();
+    expect(
+      missingArticleRedirect({
+        pathname,
+        slug,
+        lookup: 'found',
+        post: {
+          slug,
+          contentSilo: 'healthcare',
+          seoCanonicalUrl: `https://www.bionixus.com${pathname}`,
+        },
+      }),
+    ).toBeNull();
   });
 
   it('leaves Arabic blog addresses unchanged', () => {

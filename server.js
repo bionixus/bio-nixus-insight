@@ -23,6 +23,7 @@ import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-
 import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from './lib/robots-meta.mjs';
 import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from './lib/html-meta-escape.mjs';
+import { handleRedirectEnd, handleRedirectExport, handleRedirectStart, REDIRECT_OUTCOMES } from './lib/redirect-log.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -589,10 +590,10 @@ function extractDocumentTitles(html) {
 
 function ensureTitleTag(html, pathname) {
   const ctr = getCtrSeo(pathname);
-  const fallbackTitle = normalizeTitleLength(buildFallbackTitle(pathname), 60, pathname);
   const headTitles = extractDocumentTitles(html);
   const chosen = headTitles.at(-1) ?? '';
   // Force CTR-engineered titles so view-source matches the approved copy.
+  // Do this before fitting a fallback: CTR titles ship exact and often exceed 60.
   if (ctr) {
     const withoutTitles = html.replace(/<title[^>]*>[\s\S]*?<\/title>/ig, '');
     return withoutTitles.replace(
@@ -600,17 +601,19 @@ function ensureTitleTag(html, pathname) {
       `$&\n<title>${ctr.title}</title>`,
     );
   }
-  const normalized = normalizeTitleLength(chosen || fallbackTitle, 60, pathname);
-  // If the rendered title is a generic site default (the index.html fallback
-  // that React-Helmet didn't override at SSR time, typically because page
-  // data is fetched async from Sanity), replace it with the path-specific
-  // fallback so each URL ships a unique <title>.
+  // Fit the fallback only when it is the title we will ship. A long unused
+  // fallback must not throw on a page that already has a complete <title>.
   const isGeneric = chosen
     ? GENERIC_DEFAULT_TITLES.has(chosen) || /^BioNixus \| Global Pharmaceutical/i.test(chosen)
     : false;
   const forceLocale = shouldForceLocaleFallback(pathname, chosen);
+  const normalized = chosen && !isGeneric && !forceLocale
+    ? normalizeTitleLength(chosen, 60, pathname)
+    : '';
   const strengthened =
-    isGeneric || forceLocale || normalized.length < 30 ? fallbackTitle : normalized;
+    !chosen || isGeneric || forceLocale || normalized.length < 30
+      ? normalizeTitleLength(buildFallbackTitle(pathname), 60, pathname)
+      : normalized;
 
   const withoutTitles = html.replace(/<title[^>]*>[\s\S]*?<\/title>/ig, '');
   return withoutTitles.replace(
@@ -1047,6 +1050,22 @@ async function startServer() {
       })
       .send(svg);
   });
+
+  for (const outcome of REDIRECT_OUTCOMES) {
+    const end = (req, res, next) => {
+      Promise.resolve(handleRedirectEnd(req, res, outcome)).catch(next);
+    };
+    app.get(`/r/${outcome}`, end);
+    app.get(`/r/${outcome}/`, end);
+  }
+  app.get(['/api/r/export', '/api/r/export/'], (req, res, next) => {
+    Promise.resolve(handleRedirectExport(req, res)).catch(next);
+  });
+  const start = (req, res, next) => {
+    Promise.resolve(handleRedirectStart(req, res, req.params.pid, req.params.country)).catch(next);
+  };
+  app.get('/go/:pid/:country', start);
+  app.get('/go/:pid/:country/', start);
 
   app.use(async (req, res, next) => {
     try {

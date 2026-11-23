@@ -6,7 +6,7 @@ const expandedContent = getServiceLandingContent('pharma-fieldwork-saudi-arabia'
 export default function PharmaFieldworkSaudiArabia() {
   return (
     <StrategicServicePage
-      title="Pharma Fieldwork Saudi Arabia | Physician & Payer Research | BioNixus"
+      title="Pharma Fieldwork Saudi Arabia | Physician | BioNixus"
       description="Pharma fieldwork in Saudi Arabia: bilingual HCP recruitment, hospital access coordination, SFDA-sensitive therapy areas, and quality-controlled KSA data."
       canonicalUrl="https://www.bionixus.com/pharma-fieldwork-saudi-arabia"
       breadcrumbLabel="Pharma Fieldwork Saudi Arabia"

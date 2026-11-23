@@ -38,7 +38,7 @@ describe('Italy body fixes on the frozen MR list and the service page', () => {
     expect(html).not.toContain('BioNixus is the best market research company in Italy');
     expect(html).toContain('Europe office: London (UK) · Americas office and global HQ: Sheridan, Wyoming (USA)');
     expect(html).not.toContain('HQ: Italy');
-    expect(head).toContain('"dateModified":"2026-11-16"');
+    expect(head).toContain('"dateModified":"2026-11-23"');
     expect(head).toContain('"datePublished":"2026-06-25"');
   });
 
@@ -69,16 +69,17 @@ describe('Italy healthcare market research companies 2026', () => {
       .join('\n');
   });
 
-  it('keeps the 58-character title and warns when the old title is cut onto "in"', () => {
+  it('keeps the 58-character title and never ships the old title cut onto "in"', () => {
     expect(TITLE.length).toBe(58);
     expect(fitBrandedSeoTitle(TITLE)).toBe(TITLE);
+    expect(fitBrandedSeoTitle(TITLE, 60, 'BioNixus', 'strict')).toBe(TITLE);
 
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
-    expect(fitBrandedSeoTitle(SOURCE_TITLE)).toBe(
-      'Top Healthcare Market Research Companies in | BioNixus',
-    );
-    expect(warn).toHaveBeenCalled();
-    expect(String(warn.mock.calls[0]?.[0])).toContain('dangling word');
+    const fallback = fitBrandedSeoTitle(SOURCE_TITLE);
+    expect(fallback).not.toBe('Top Healthcare Market Research Companies in | BioNixus');
+    expect(fallback).not.toMatch(/\bin \| BioNixus$/);
+    expect(fallback.length).toBeLessThanOrEqual(60);
+    expect(() => fitBrandedSeoTitle(SOURCE_TITLE, 60, 'BioNixus', 'strict')).toThrow();
     warn.mockRestore();
   });
 
@@ -104,10 +105,10 @@ describe('Italy healthcare market research companies 2026', () => {
     expect(html).toContain('Al Khobar: partner office for KSA');
     expect(html).toContain('Europe office: London (UK) · Americas office and global HQ: Sheridan, Wyoming (USA)');
     expect(html).not.toContain('HQ: Italy');
-    expect(html.replace(/<!-- -->/g, '')).toContain('Last reviewed 16 Nov 2026');
+    expect(html.replace(/<!-- -->/g, '')).toContain('Last reviewed 23 Nov 2026');
     expect(html.replace(/<!-- -->/g, '')).toContain('Published 25 June 2026');
     expect(head).toContain('"datePublished":"2026-06-25"');
-    expect(head).toContain('"dateModified":"2026-11-16"');
+    expect(head).toContain('"dateModified":"2026-11-23"');
 
     const questions = [
       'Who is the top healthcare market research company in Italy?',

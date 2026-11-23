@@ -13,14 +13,80 @@ import type { PressReleaseListItem } from '@/types/pressRelease'
 import { PRESS_RSS_URL } from '@/lib/pressReleaseConstants'
 import { getPressListThumbUrl } from '@/lib/pressReleaseHero'
 import { CalendarDays, Rss } from 'lucide-react'
+import { ALSAADANY_AUTHOR, ALSAADANY_JOB_TITLE } from '@/data/editorialAuthors'
+import { inTheMediaNewestFirst, type InTheMediaItem } from '@/data/inTheMedia'
+import { formatListDate } from '@/lib/formatListDate'
 
 const CANONICAL = 'https://www.bionixus.com/news'
 
-function formatListDate(iso?: string): string {
-  if (!iso) return ''
-  const d = new Date(iso)
-  if (Number.isNaN(d.getTime())) return ''
-  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+const MEDIA_TYPE_LABEL: Record<NonNullable<InTheMediaItem['type']>, string> = {
+  'guest-article': 'Guest article',
+  mention: 'Mention',
+  interview: 'Interview',
+  quote: 'Quote',
+}
+
+function mediaByline(item: InTheMediaItem): string | null {
+  const authors = (item.authors ?? []).map((name) => name.trim()).filter(Boolean)
+  if (authors.length === 0) return null
+  if (authors.length === 1 && authors[0] === ALSAADANY_AUTHOR.name) {
+    return `by ${ALSAADANY_AUTHOR.name}, ${ALSAADANY_JOB_TITLE}, BioNixus`
+  }
+  return `by ${authors.join(', ')}`
+}
+
+export function InTheMediaSection({ items }: { items: readonly InTheMediaItem[] }) {
+  const sorted = inTheMediaNewestFirst(items)
+  if (sorted.length === 0) return null
+  return (
+    <section
+      id="in-the-media"
+      aria-labelledby="in-the-media-heading"
+      className="container-wide section-padding max-w-5xl border-t border-border/70"
+    >
+      <h2
+        id="in-the-media-heading"
+        className="font-display text-2xl md:text-3xl font-semibold text-primary tracking-tight"
+      >
+        In the media
+      </h2>
+      <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
+        Guest articles and interviews published by other outlets. The headline links to the original article.
+      </p>
+      <ul className="mt-8 divide-y divide-border/70 list-none p-0 m-0">
+        {sorted.map((item) => {
+          const byline = mediaByline(item)
+          return (
+            <li key={item.id} className="py-8 first:pt-0">
+              <article>
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  {formatListDate(item.date)}
+                </p>
+                <p className="mt-2 text-sm font-medium text-foreground">{item.publicationName}</p>
+                <h3 className="mt-2 font-display text-xl md:text-2xl font-semibold text-primary">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline underline-offset-4 decoration-primary/40"
+                  >
+                    {item.headline}
+                  </a>
+                </h3>
+                {item.type ? (
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    {MEDIA_TYPE_LABEL[item.type]}
+                  </p>
+                ) : null}
+                <p className="mt-3 text-muted-foreground leading-relaxed max-w-3xl">{item.summary}</p>
+                {byline ? <p className="mt-3 text-sm text-foreground">{byline}</p> : null}
+              </article>
+            </li>
+          )
+        })}
+      </ul>
+    </section>
+  )
 }
 
 function buildNewsHubSchemas(postCount: number) {
@@ -76,6 +142,7 @@ export default function NewsHub() {
   })
 
   const releases: PressReleaseListItem[] = fetchedReleases ?? ssrReleases ?? []
+  const mediaItems = inTheMediaNewestFirst()
 
   const schemas = buildNewsHubSchemas(releases.length)
 
@@ -145,6 +212,14 @@ export default function NewsHub() {
               <Link to="/media" className="text-sm font-medium text-primary hover:underline">
                 Media kit
               </Link>
+              {mediaItems.length > 0 ? (
+                <>
+                  {' · '}
+                  <Link to="/news#in-the-media" className="text-sm font-medium text-primary hover:underline">
+                    In the media
+                  </Link>
+                </>
+              ) : null}
             </p>
           </div>
         </section>
@@ -221,6 +296,8 @@ export default function NewsHub() {
             </ul>
           )}
         </section>
+
+        <InTheMediaSection items={mediaItems} />
 
         <CTASection variant="service" />
       </main>

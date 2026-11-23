@@ -108,4 +108,19 @@ export interface CountryListicleConfig {
     capability: string;
     quickAnswerIntro?: string;
   };
+  /** Person byline by default. Organization keeps the BioNixus entity as author. */
+  authorKind?: 'person' | 'organization';
+  /** Cities after the reviewed date, for example "Cairo · Alexandria · Upper Egypt". */
+  reviewedPlaces?: string;
+  /** Paragraphs inside #answer-opener. Markdown links [text](/path) are allowed. */
+  heroParagraphs?: string[];
+  heroStatItems?: { value: string; label: string }[];
+  glanceFacts?: string[];
+  glanceOffices?: string;
+  services?: { service: string; delivers: string }[];
+  servicesDeliverHeader?: string;
+  /** Markdown links [text](/path) are allowed. */
+  servicesNote?: string;
+  /** Skip competitor bridges, competitor related links, and the auto answer block. */
+  omitCompetitorModules?: boolean;
 }

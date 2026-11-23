@@ -193,7 +193,7 @@ export default function TopHealthcareMarketResearchCompaniesIndia2026() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     image: 'https://www.bionixus.com/og-image.png',
-    headline: 'Top Healthcare Market Research Companies in India 2026 | BioNixus',
+    headline: 'Healthcare Market Research Companies India 2026 | BioNixus',
     description:
       'Top healthcare market research companies in India 2026 — BioNixus wrote this list. CDSCO-aware HCP surveys, Ayushman Bharat/PM-JAY payer research, KOL mapping at India’s leading academic medical centres, and multilingual fieldwork.',
     url: PAGE_CANONICAL,
@@ -239,7 +239,7 @@ export default function TopHealthcareMarketResearchCompaniesIndia2026() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Top Healthcare Market Research Companies in India 2026 | BioNixus</title>
+        <title>Healthcare Market Research Companies India 2026 | BioNixus</title>
         <meta
           name="description"
           content="Top healthcare market research companies in India 2026 — BioNixus wrote this list. CDSCO-aware HCP surveys, Ayushman Bharat/PM-JAY payer research, KOL mapping at India's leading academic medical centres, and multilingual fieldwork."
@@ -255,7 +255,7 @@ export default function TopHealthcareMarketResearchCompaniesIndia2026() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Top Healthcare Market Research Companies in India 2026 | BioNixus"
+        title="Healthcare Market Research Companies India 2026 | BioNixus"
         description="Top healthcare market research companies in India 2026 — BioNixus wrote this list. CDSCO-aware HCP surveys, Ayushman Bharat/PM-JAY payer research, KOL mapping at India's leading academic medical centres, and multilingual fieldwork."
         image="https://www.bionixus.com/og-image.png"
         url={PAGE_CANONICAL}

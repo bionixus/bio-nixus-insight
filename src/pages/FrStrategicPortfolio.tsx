@@ -245,7 +245,7 @@ export default function FrStrategicPortfolio() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <html lang="fr" />
-        <title>Portefeuille Stratégique BioNixus | Recherche Pharma EMEA & MENA</title>
+        <title>Portefeuille Stratégique BioNixus | Pharma EMEA & MENA</title>
         <meta
           name="description"
           content="Portefeuille stratégique BioNixus : recherche primaire, accès au marché, HEOR, KOL, RWE et intelligence concurrentielle pharma à travers l'EMEA et le MENA."
@@ -261,7 +261,7 @@ export default function FrStrategicPortfolio() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <OpenGraphMeta
-        title="Portefeuille Stratégique BioNixus | Recherche Pharma EMEA & MENA"
+        title="Portefeuille Stratégique BioNixus | Pharma EMEA & MENA"
         description="Portefeuille stratégique BioNixus : capacités de recherche primaire, accès au marché, HEOR, KOL, RWE et intelligence concurrentielle pharmaceutique à travers l'EMEA et le MENA."
         image="https://www.bionixus.com/og-image.png"
         url={CANONICAL}

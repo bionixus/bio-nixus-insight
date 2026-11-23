@@ -39,7 +39,7 @@ export default function QualitativeMarketResearch() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Qualitative Market Research for Healthcare and Pharma | BioNixus"
+        title="Qualitative Market Research for Healthcare | BioNixus"
         description="Qualitative healthcare market research programs including IDIs, focus groups, ethnographic insight, and strategy-oriented synthesis for pharmaceutical."
         canonical="/qualitative-market-research"
         jsonLd={jsonLd}

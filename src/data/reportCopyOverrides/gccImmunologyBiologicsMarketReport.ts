@@ -12,7 +12,7 @@ type GccImmunologyOverride = Partial<ReportEntry> & Pick<ReportEntry, 'slug'>;
 export const GCC_IMMUNOLOGY_BIOLOGICS_COPY: GccImmunologyOverride = {
   slug: SLUG,
   title: 'GCC Immunology & Biologics Market Report 2026',
-  metaTitle: 'GCC Biologics Market Report 2026 | Immunology & Middle East Biologics | BioNixus',
+  metaTitle: 'GCC Biologics Market Report 2026 | Immunology | BioNixus',
   metaDescription:
     'GCC immunology and biologics is USD 2.2–2.8B in 2026 at ~11% CAGR. BioNixus estimates about USD 3.3–4.3B by 2030. SFDA, MOHAP, and NUPCO tender access.',
   modifiedDate: '2026-09-29',

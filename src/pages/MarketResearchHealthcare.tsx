@@ -40,7 +40,7 @@ type LocalizedCopy = {
 const copyByLanguage: Record<Language, LocalizedCopy> = {
   en: {
     seoTitle:
-      'Healthcare Market Research Services | Pharma Evidence | BioNixus',
+      'Healthcare Market Research Services | Pharma | BioNixus',
     seoDescription:
       'Pharma market research: physician, payer & hospital evidence for launch & access across Europe & MENA. Proposal in 24 hours.',
     breadcrumbHome: 'Home',
@@ -129,7 +129,7 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
   },
   de: {
     seoTitle:
-      'Healthcare Market Research | Pharma Healthcare Market Research in Europa und Nahost',
+      'Pharma- und Healthcare-Marktforschung | BioNixus',
     seoDescription:
       'Healthcare market research fuer Pharma-Teams in Europa und Nahost. Quantitative und qualitative Healthcare Market Research fuer Launch, Market Access und Wachstum.',
     breadcrumbHome: 'Startseite',
@@ -197,7 +197,7 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
   },
   fr: {
     seoTitle:
-      'Healthcare Market Research | Recherche healthcare et pharmaceutique Europe et Moyen-Orient',
+      'Recherche healthcare et pharmaceutique | BioNixus',
     seoDescription:
       'Healthcare market research pour equipes pharmaceutiques en Europe et au Moyen-Orient. Recherche quantitative et qualitative pour lancement, access et croissance.',
     breadcrumbHome: 'Accueil',
@@ -244,7 +244,7 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
   },
   es: {
     seoTitle:
-      'Healthcare Market Research | Investigacion healthcare y farmaceutica en Europa y Oriente Medio',
+      'Investigación sanitaria y farmacéutica | BioNixus',
     seoDescription:
       'Healthcare market research para equipos farmaceuticos en Europa y Oriente Medio. Estudios cuantitativos y cualitativos para lanzamiento, acceso y crecimiento.',
     breadcrumbHome: 'Inicio',
@@ -335,7 +335,7 @@ const copyByLanguage: Record<Language, LocalizedCopy> = {
     ctaSecondary: '查看market research hub',
   },
   ar: {
-    seoTitle: 'Healthcare Market Research | ابحاث healthcare ودوائية لاوروبا والشرق الاوسط',
+    seoTitle: 'Healthcare Market Research | أبحاث الرعاية الصحية | BioNixus',
     seoDescription:
       'Healthcare market research لفرق الدوائي والأجهزة الطبية عبر اوروبا والشرق الاوسط والخليج من BioNixus: تصميمات كمية ونوعية، أدلة دافعة، وممرات الوصول التي ترتبط مباشرة بقرارات الإطلاق وتوسعة المحفظة.',
     breadcrumbHome: 'الرئيسية',
