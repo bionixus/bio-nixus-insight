@@ -41,6 +41,8 @@ import { ReportTherapySpendChartLazy } from '@/components/report-premium/ReportT
 import { SAUDI_BIOSIMILARS_REPORT_ENRICHMENT } from '@/data/saudiBiosimilarsReportEnrichment';
 import { SAUDI_CANCER_DIAGNOSTICS_REPORT_ENRICHMENT } from '@/data/saudiCancerDiagnosticsReportEnrichment';
 import { SAUDI_VACCINES_REPORT_ENRICHMENT } from '@/data/saudiVaccinesReportEnrichment';
+import { KSA_AI_SEARCH_PAGES, KSA_AI_SEARCH_REVIEWED_LABEL } from '@/data/ksaAiSearchRefresh';
+import { KsaInsightBriefForm } from '@/components/conversion/KsaInsightBriefForm';
 
 function pickVariant(seed: string, options: [string, string, string]) {
   const score = seed.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
@@ -68,6 +70,7 @@ export default function HealthcareReportPage() {
   const gccEnrichment = getGccTherapyEnrichment(report.slug);
   const gccTherapyComparator = gccTherapyReportPath(report.therapyAreaSlug);
   const whitePaper = getMarketReportWhitePaper(report.slug);
+  const isSaudiDiabetes = report.slug === 'saudi-arabia-diabetes-market-report';
   const introLead = pickVariant(report.slug, [
     `${report.market} ${report.therapyArea} demand is influenced by provider pathway constraints, access sequencing, and institution-level implementation capacity.`,
     `In ${report.market}, ${report.therapyArea} performance depends on how policy timing, reimbursement workflow, and care delivery realities interact in practice.`,
@@ -154,7 +157,16 @@ export default function HealthcareReportPage() {
       <main>
         <ReportPremiumHero
           title={report.title}
-          description={report.heroLead ?? intro}
+          description={
+            isSaudiDiabetes ? (
+              <>
+                <p>{report.heroLead}</p>
+                <p className="mt-3 text-sm text-white/70">Last reviewed: {KSA_AI_SEARCH_REVIEWED_LABEL}.</p>
+              </>
+            ) : (
+              report.heroLead ?? intro
+            )
+          }
           config={conversionConfig}
           marketSlug={report.marketSlug}
           therapySlug={report.therapyAreaSlug}
@@ -191,9 +203,15 @@ export default function HealthcareReportPage() {
                 : report.stat3Value
             }
             chartMode="modelled"
+            showGrowthChart={!isSaudiDiabetes}
+            lede={
+              isSaudiDiabetes
+                ? 'IDF Diabetes Atlas estimates for 2024, adults aged 20 to 79, and the primary research a launch team still has to commission.'
+                : undefined
+            }
             sourcesBlock={<ReportSourcesBlock sources={report.sourceNotes} />}
             therapySpendChart={
-              report.therapySegments?.length ? (
+              !isSaudiDiabetes && report.therapySegments?.length ? (
                 <>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     Therapy spend mix
@@ -699,7 +717,11 @@ export default function HealthcareReportPage() {
 
           <FAQSection
             sectionId={faqSectionId}
-            title={`${report.market} ${report.therapyArea} market 2026 — regulatory, reimbursement, and commercial intelligence FAQ`}
+            title={
+              isSaudiDiabetes
+                ? 'Saudi Arabia diabetes market research: questions teams ask'
+                : `${report.market} ${report.therapyArea} market 2026 — regulatory, reimbursement, and commercial intelligence FAQ`
+            }
             items={report.faqs}
             className="bg-muted/30 rounded-2xl border border-border/40"
           />
@@ -708,6 +730,8 @@ export default function HealthcareReportPage() {
         </ReportContentWithAside>
 
         {whitePaper ? <MarketReportWhitePaperBand whitePaper={whitePaper} /> : null}
+
+        {isSaudiDiabetes ? <KsaInsightBriefForm page={KSA_AI_SEARCH_PAGES.diabetes} /> : null}
 
         <ReportConsultationBand config={conversionConfig} />
       </main>

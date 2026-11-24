@@ -13,6 +13,9 @@ type ReportExecutiveDashboardProps = {
   children: ReactNode;
   cagrStatLabel?: string;
   chartMode?: 'modelled' | 'illustrative';
+  /** When false, the modelled growth curve is omitted. */
+  showGrowthChart?: boolean;
+  lede?: string;
   sourcesBlock?: ReactNode;
   therapySpendChart?: ReactNode;
   midPageCta?: ReactNode;
@@ -24,6 +27,8 @@ export function ReportExecutiveDashboard({
   children,
   cagrStatLabel,
   chartMode = 'modelled',
+  showGrowthChart = true,
+  lede = 'Headline market sizing, growth trajectory, and strategic context for commercial planning.',
   sourcesBlock,
   therapySpendChart,
   midPageCta,
@@ -46,11 +51,15 @@ export function ReportExecutiveDashboard({
         <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-2 sr sr-up sr-line">
           Executive Summary
         </h2>
-        <p className="text-sm text-muted-foreground mb-8 sr sr-up">
-          Headline market sizing, growth trajectory, and strategic context for commercial planning.
-        </p>
+        <p className="text-sm text-muted-foreground mb-8 sr sr-up">{lede}</p>
 
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(260px,340px)] gap-6 mb-8">
+        <div
+          className={
+            showGrowthChart
+              ? 'grid lg:grid-cols-[minmax(0,1fr)_minmax(260px,340px)] gap-6 mb-8'
+              : 'mb-8'
+          }
+        >
           <div className="grid sm:grid-cols-3 gap-4">
             {stats.map((stat) => (
               <article
@@ -72,20 +81,22 @@ export function ReportExecutiveDashboard({
             ))}
           </div>
 
-          <div className="space-y-4">
-            <div className="rounded-xl border border-border/70 bg-card p-4 shadow-sm sr sr-right">
-              <ReportGrowthChartLazy
-                cagrLabel={cagrSource}
-                title="Growth trajectory"
-                mode={chartMode}
-              />
-            </div>
-            {therapySpendChart ? (
+          {showGrowthChart ? (
+            <div className="space-y-4">
               <div className="rounded-xl border border-border/70 bg-card p-4 shadow-sm sr sr-right">
-                {therapySpendChart}
+                <ReportGrowthChartLazy
+                  cagrLabel={cagrSource}
+                  title="Growth trajectory"
+                  mode={chartMode}
+                />
               </div>
-            ) : null}
-          </div>
+              {therapySpendChart ? (
+                <div className="rounded-xl border border-border/70 bg-card p-4 shadow-sm sr sr-right">
+                  {therapySpendChart}
+                </div>
+              ) : null}
+            </div>
+          ) : null}
         </div>
 
         {sourcesBlock ? <div className="mb-6 sr sr-up">{sourcesBlock}</div> : null}

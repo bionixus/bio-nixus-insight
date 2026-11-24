@@ -17,7 +17,7 @@ export const italyHealthcareEn: CountryListicleConfig = {
   ogLocale: 'en_IT',
   inLanguage: 'en',
   datePublished: '2026-06-11',
-  dateModified: '2026-06-11',
+  dateModified: '2026-11-23',
   badge: '2026 Healthcare Research Guide',
   h1: 'Best Healthcare Market Research Companies in Italy (2026 Guide)',
   heroIntro:

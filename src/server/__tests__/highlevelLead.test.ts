@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   countryForUpsert,
   phoneLookupNumbers,
+  leadTags,
   planLeadWrite,
   processHighLevelLead,
   resetHighLevelLeadStateForTests,
@@ -155,6 +156,23 @@ function createBodies(calls: Call[]) {
     })
     .map((call) => JSON.parse(String(call.init.body)) as Record<string, unknown>);
 }
+
+describe('leadTags', () => {
+  it('adds source-ai-search beside website-lead and ignores other extra tags', () => {
+    expect(leadTags('ksa-insight-brief', '2-page KSA insight brief saudi-diabetes', 'source-ai-search')).toEqual([
+      'website-lead',
+      'form:ksa-insight-brief',
+      'request:2-page-ksa-insight-brief-saudi-diabetes',
+      'source-ai-search',
+    ]);
+    expect(leadTags('ksa-insight-brief', 'brief', 'source-ai-search,iqvia')).not.toContain('iqvia');
+    expect(leadTags('contact_section', 'Contact Request')).toEqual([
+      'website-lead',
+      'form:contact_section',
+      'request:contact-request',
+    ]);
+  });
+});
 
 describe('planLeadWrite', () => {
   it('maps known custom fields and keeps unmapped extras in the note', () => {

@@ -20,6 +20,12 @@
  */
 
 import { SEGMENT_MARKET_BASE, type SegmentMarketContent } from '@/data/segmentMarkets/types';
+import {
+  KSA_AI_SEARCH_PAGES,
+  KSA_AI_SEARCH_REVIEWED_ISO,
+  KSA_OFFICE_WORDING,
+  KSA_PHYSICIAN_NETWORK,
+} from '@/data/ksaAiSearchRefresh';
 
 /* ------------------------------------------------------------------ */
 /* 1. Saudi Arabia Cardiovascular Devices Market                       */
@@ -1638,7 +1644,8 @@ const obesity: SegmentMarketContent = {
   serviceDescription:
     'Commissioned primary research for teams asking who does obesity market research in Saudi Arabia: GLP-1 physician surveys, patient-journey and persistence studies, and SFDA, NUPCO, and CHI access interviews, with Saudi fieldwork from the Al Khobar partner office for KSA.',
   emitWebPage: true,
-  lastUpdated: '2026-10-27',
+  lastUpdated: KSA_AI_SEARCH_REVIEWED_ISO,
+  insightBriefTag: KSA_AI_SEARCH_PAGES.obesity.pageTag,
   dateLabel: 'Last reviewed',
   heroCtaLabel: 'Request a $10,000–$60,000 scoped proposal',
   heroStats: [
@@ -1648,8 +1655,8 @@ const obesity: SegmentMarketContent = {
     { value: 'Al Khobar', label: 'partner office for KSA' },
   ],
   intro: [
-    'BioNixus does obesity market research in Saudi Arabia: GLP-1 physician surveys, patient-journey and persistence studies, and payer and access interviews. Saudi fieldwork runs from the Al Khobar partner office for KSA. Cairo is the AMEA (APAC, Middle East, Africa) office, and the USA is the Americas office and global HQ in Sheridan, Wyoming. It is commissioned primary research, not a syndicated pack, at $10,000–$60,000, with a costed proposal within one working day.',
-    'The modules below cover physician KAP, semaglutide and tirzepatide, patient discontinuation, and SFDA, NUPCO, and CHI access. Arabic and English fieldwork is standard.',
+    `${KSA_AI_SEARCH_PAGES.obesity.opening} It is commissioned primary research, not a syndicated pack, at $10,000–$60,000, with a costed proposal within one working day. ${KSA_OFFICE_WORDING}`,
+    `The modules below cover physician KAP, semaglutide and tirzepatide, patient discontinuation, and SFDA, NUPCO, and CHI access. Arabic and English fieldwork is standard. ${KSA_PHYSICIAN_NETWORK}`,
   ],
   introLinks: [{ to: '/healthcare-market-research', label: 'healthcare market research hub' }],
   quickAnswer: {
@@ -1692,41 +1699,48 @@ const obesity: SegmentMarketContent = {
       'BioNixus runs physician surveys and KAP studies across endocrinology, family medicine, internal medicine, and bariatric surgery, plus patient-journey and discontinuation work and SFDA, NUPCO, and CHI access interviews, in Arabic and English. Saudi fieldwork is from the Al Khobar partner office for KSA. Cairo is the AMEA (APAC, Middle East, Africa) office. The UK is the Europe office. The USA is the Americas office and global HQ in Sheridan, Wyoming. Dubai is a field office for UAE. Kuwait is a field office for Kuwait. The physician network is 82,000+ physicians globally and about 3,200 physicians in the Middle East, with 127 studies year-to-date in 2026.',
   },
   comparisonTable: {
-    heading: 'BioNixus vs syndicated obesity publishers in Saudi Arabia',
+    heading: 'What obesity GLP-1 market research in Saudi Arabia covers',
     columns: ['Research need', 'Who does it'],
     rows: [
       {
         need: 'Published market-size pack',
-        who: 'Ken Research, IMARC, Euromonitor, Mordor, Grand View',
+        who: 'Syndicated report publishers',
       },
       {
         need: 'Named HCP quotas, Arabic fieldwork, and molecule-level semaglutide/tirzepatide modules',
         who: 'BioNixus',
       },
       {
-        need: 'Syndicated Rx audits',
-        who: 'IQVIA, plus BioNixus for primary research',
+        need: 'Syndicated prescription audits',
+        who: 'Audit publishers. BioNixus runs the primary research.',
       },
       {
         need: 'Brand tracking',
-        who: 'Kantar',
+        who: 'Brand-tracking studies, or BioNixus when the question needs primary evidence',
       },
       {
-        need: 'Retail',
-        who: 'NielsenIQ',
+        need: 'Retail measurement',
+        who: 'Retail measurement studies',
       },
     ],
     footnote:
-      'Publisher names are plain text. The table compares research type. It does not claim guaranteed accuracy.',
+      'The table compares research type. It does not name other firms and it does not claim a guaranteed result.',
   },
   sourceNotes: {
     heading: 'Key figures for Saudi obesity and GLP-1 market research',
     items: [
       {
         text:
-          'Independent national survey of Saudi clinicians (n=92; 2024 fieldwork published on PMC): endocrinologists prescribed anti-obesity medicines more frequently than family physicians (90.0% vs 60.5%); GLP-1 receptor agonists were the most commonly reported first-line anti-obesity medicines. This is an independent academic survey, not a BioNixus study.',
+          'Academic survey of Saudi clinicians (n=92; 2024 fieldwork published on PMC): endocrinologists prescribed anti-obesity medicines more frequently than family physicians (90.0% vs 60.5%); GLP-1 receptor agonists were the most commonly reported first-line anti-obesity medicines. This is an academic survey, not a BioNixus study.',
         sourceLabel: 'PMC12366907',
         sourceHref: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12366907/',
+      },
+      {
+        text:
+          'General Authority for Statistics, Health Determinants Statistics Publication 2024: 23.1 percent of adults aged 15 and older were classified as obese (BMI of 30 or above) on self-reported National Health Survey data, and 45.1 percent were classified as overweight.',
+        sourceLabel: 'GASTAT 2024',
+        sourceHref:
+          'https://www.stats.gov.sa/documents/20117/2435259/Health+Determinants+Statistics+Publication+2024+EN.pdf/84a7831c-e181-a40b-555a-e04de9400f31',
       },
       {
         text:
@@ -1837,7 +1851,7 @@ const obesity: SegmentMarketContent = {
     paragraphs: [
       'The Saudi obesity conversation is no longer GLP-1 in the abstract. Commercial teams brief research on semaglutide (injectable weight-management and diabetes brands in class) and tirzepatide (dual GIP/GLP-1), alongside other incretin-based and legacy anti-obesity medicines. BioNixus physician surveys ask molecule-level questions: initiation criteria, dose escalation, switching between semaglutide and tirzepatide, diabetes versus obesity indication mix, supply interruptions, and self-pay versus covered use.',
       'The Saudi Food and Drug Authority (SFDA) governs registration, quality, and safety communications for GLP-1 receptor agonists. BioNixus maps how SFDA registration status and safety communications affect willingness to initiate semaglutide or tirzepatide. Public volume for obesity and metabolic therapies often depends on NUPCO tendering and institutional formulary uptake, not retail awareness alone.',
-      'Access — not awareness — still decides addressable volume for anti-obesity medicines in Saudi Arabia. Public pathways depend on formulary and procurement (including NUPCO-linked supply). Private pathways sit under Council of Health Insurance (CHI) plan design, where weight-management therapy is often treated between medical necessity and lifestyle care. The remainder is out-of-pocket through retail pharmacy and private obesity clinics. BioNixus payer and physician research separates public, insured, and self-pay routes before any forecast is locked.',
+      'Access, not awareness, still decides addressable volume for anti-obesity medicines in Saudi Arabia. Public pathways depend on formulary and procurement (including NUPCO-linked supply). Private pathways sit under Council of Health Insurance (CHI) plan design, where weight-management therapy is often treated between medical necessity and lifestyle care. The remainder is out-of-pocket through retail pharmacy and private obesity clinics. BioNixus payer and physician research separates public, insured, and self-pay routes before any forecast is locked.',
       'Three treatment routes compete for the same patient: prescription pharmacotherapy, bariatric and metabolic surgery, and obesity clinic programmes. Prescribing is distributed across endocrinologists, family physicians, internal medicine, bariatric surgeons, and obesity-clinic physicians. A physician survey that models only one route or one specialty misreads the market.',
     ],
     links: [
@@ -1908,7 +1922,7 @@ const obesity: SegmentMarketContent = {
     heading: 'GLP-1 physician survey methodology in Saudi Arabia',
     paragraphs: [
       'BioNixus designs GLP-1 physician surveys in Saudi Arabia as commissioned primary research, scoped to the brand decision. A typical instrument covers the modules below.',
-      'Modes: online quantitative with optional CATI; Arabic and English; depth interviews for KOLs and medical directors. Sample frames are stratified across endocrinology, family medicine, internal medicine, and bariatric surgery — the same specialty split highlighted in independent Saudi anti-obesity medicine research (PMC12366907). Deliverables include crosstabs, specialty segmentation, message implications, and forecast inputs. Scoped custom projects typically cost $10,000–$60,000.',
+      'Modes: online quantitative with optional CATI; Arabic and English; depth interviews for KOLs and medical directors. Sample frames are stratified across endocrinology, family medicine, internal medicine, and bariatric surgery, the same specialty split highlighted in a 2024 Saudi anti-obesity medicine survey (PMC12366907). Deliverables include crosstabs, specialty segmentation, message implications, and forecast inputs. Scoped custom projects typically cost $10,000–$60,000.',
     ],
     steps: [
       'Screeners: specialty, sector (public or private), region (Riyadh, Jeddah and the Western Region, Eastern Province including Al Khobar and Dammam, secondary cities), and monthly obesity or metabolic caseload.',
@@ -1955,14 +1969,14 @@ const obesity: SegmentMarketContent = {
   ],
   faqs: [
     {
-      question: 'Can BioNixus run a GLP-1 physician survey in Saudi Arabia?',
+      question: KSA_AI_SEARCH_PAGES.obesity.firstFaqQuestion,
       answer:
-        'Yes. BioNixus fields GLP-1 physician surveys and KAP studies in Saudi Arabia among endocrinology, family medicine, internal medicine, and bariatric surgery, in Arabic and English. Instruments cover initiation, switching between semaglutide and tirzepatide, access barriers, and persistence. Fieldwork is coordinated from the Al Khobar partner office for KSA. The physician network is 82,000+ physicians globally and about 3,200 physicians in the Middle East, with 127 studies year-to-date in 2026.',
+        'Obesity GLP-1 market research in Saudi Arabia is primary research on how physicians start and switch incretin therapy, how patients stay on it, and how SFDA, NUPCO and CHI routes fund it. BioNixus runs that work from its Al Khobar partner office for KSA and its Cairo AMEA office, in Arabic and English. The General Authority for Statistics, in the 2024 Health Determinants Statistics Publication, reported that 23.1 percent of adults aged 15 and older were classified as obese on self-reported National Health Survey data, using a BMI of 30 or above, and that 45.1 percent were classified as overweight. A 2024 academic survey of Saudi clinicians (n=92, published on PMC) found endocrinologists prescribed anti-obesity medicines more often than family physicians (90.0 percent versus 60.5 percent), and that GLP-1 receptor agonists were the most commonly reported first-line anti-obesity medicines. Those figures describe the population and one clinician sample. They do not replace a study scoped to a brand decision.',
     },
     {
       question: 'Who does obesity market research in Saudi Arabia?',
       answer:
-        'BioNixus does obesity market research in Saudi Arabia. Saudi fieldwork runs from the Al Khobar partner office for KSA. Cairo is the AMEA (APAC, Middle East, Africa) office. The UK is the Europe office. The USA is the Americas office and global HQ in Sheridan, Wyoming. Dubai is a field office for UAE. Kuwait is a field office for Kuwait. The work covers GLP-1 physician surveys and KAP studies across endocrinology, family medicine, internal medicine, and bariatric surgery; patient-journey and discontinuation studies; and SFDA, NUPCO, and CHI access interviews, in Arabic and English. It is commissioned primary research, not a syndicated pack, typically $10,000–$60,000, with a costed proposal within one working day. The comparison of other providers is in [Who does obesity market research in Saudi Arabia?](/blog/who-does-obesity-market-research-saudi-arabia).',
+        `BioNixus does obesity market research in Saudi Arabia. ${KSA_OFFICE_WORDING} The work covers GLP-1 physician surveys and KAP studies across endocrinology, family medicine, internal medicine, and bariatric surgery, patient-journey and discontinuation studies, and SFDA, NUPCO, and CHI access interviews, in Arabic and English. It is commissioned primary research, not a syndicated pack, typically $10,000–$60,000, with a costed proposal within one working day. ${KSA_PHYSICIAN_NETWORK}`,
     },
     {
       question: 'Is semaglutide for weight loss reimbursed in Saudi Arabia?',
@@ -1975,14 +1989,8 @@ const obesity: SegmentMarketContent = {
         'Both molecules sit in the incretin and anti-obesity medicine set. Competitive share, diabetes versus obesity indication mix, supply, and self-pay economics differ by specialty and sector. BioNixus measures that with molecule-level physician surveys and pharmacy and clinic channel work, not with a single headline market number.',
     },
     {
-      question: 'How does BioNixus differ from IQVIA or a syndicated obesity report?',
-      answer:
-        'IQVIA publishes syndicated prescription audits. Ken Research, IMARC, Euromonitor, Mordor, and Grand View publish market-size packs. Kantar runs brand tracking, and NielsenIQ covers retail. BioNixus runs commissioned primary research: named HCP quotas, Arabic fieldwork, and molecule-level semaglutide and tirzepatide modules, typically $10,000–$60,000. Use the syndicated source that fits the question, and brief BioNixus when the decision needs primary evidence.',
-    },
-    {
       question: 'Where is BioNixus based?',
-      answer:
-        'The USA (1309 Coffeen Ave Ste 1200, Sheridan, Wyoming 82801) is the Americas office and global HQ. The UK (128 City Road, London EC1V 2NX) is the Europe office. Cairo (22 Beverly Hills, Second Sheikh Zayed, Giza 3240232) is the AMEA (APAC, Middle East, Africa) office. Al Khobar is a partner office for KSA. Dubai (Thuraya Tower 1, 5th Floor, Al Sufouh 2) is a field office for UAE. Kuwait (Salmiya) is a field office for Kuwait. São Paulo is a field office for LATAM.',
+      answer: `${KSA_OFFICE_WORDING} Saudi fieldwork for this page is coordinated from the Al Khobar partner office for KSA.`,
     },
     {
       question: 'What does obesity market research in Saudi Arabia cost?',

@@ -35,7 +35,7 @@ const PAGES = [
     h1: 'Top Healthcare Market Research Company in Spain: 2026 Guide',
     liveTitle: 'Healthcare Market Research Companies Spain 2026 | BioNixus',
     liveDescription:
-      'Spain healthcare market research companies 2026 — AEMPS/SNS research across Autonomous Communities. Compare BioNixus and leading Spanish firms.',
+      'Spain healthcare market research companies 2026: AEMPS/SNS research across Autonomous Communities. Compare BioNixus and Spanish firms.',
     helmetTitle: 'Top Healthcare Market Research Companies in Spain 2026 | BioNixus',
     opener: 'Looking for the top healthcare market research company in Spain?',
     articleDescription:
