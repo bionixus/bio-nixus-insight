@@ -1,0 +1,1 @@
+export type ArPharmaCountrySlug = 'egypt' | 'uae' | 'saudi-arabia' | 'kuwait' | 'oman' | 'qatar';
