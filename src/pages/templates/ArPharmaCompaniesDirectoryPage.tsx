@@ -8,11 +8,13 @@ import { ConversionCTA } from '@/components/conversion/ConversionCTA';
 import { ListicleProposalCta } from '@/components/seo/ListicleProposalCta';
 import { PharmaCompaniesFaqSection } from '@/components/seo/PharmaCompaniesFaqSection';
 import {
+  DirectoryDriverCard,
   DirectoryGoldLink,
   DirectoryHero,
   DirectoryJumpNav,
   DirectoryLinkTile,
   DirectoryOutlineLink,
+  DirectorySection,
 } from '@/components/seo/DirectoryPremium';
 import { buildPharmaCompaniesFaqLd, buildPharmaCompaniesItemListLd } from '@/components/seo/pharmaCompaniesSeo';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
@@ -42,6 +44,7 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
   const ctr = getCtrSeo(config.path);
   const pageTitle = ctr?.title ?? config.title;
   const pageDescription = ctr?.description ?? config.metaDescription;
+  const hasDeepSections = Boolean(config.sections && config.sections.length > 0);
 
   return (
     <div className="directory-page min-h-screen" dir="rtl">
@@ -107,7 +110,18 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
           kicker="دليل شركات الأدوية 2026"
           h1={config.h1}
           lead={config.introLead}
-          rest={<p>{config.introRest}</p>}
+          rest={
+            <>
+              <p>{config.introRest}</p>
+              <p>
+                لإطار أبحاث السوق الأوسع راجع{' '}
+                <Link to="/healthcare-market-research" className="text-primary hover:underline">
+                  مركز أبحاث السوق الصحي
+                </Link>
+                .
+              </p>
+            </>
+          }
           stats={config.stats}
           actions={
             <>
@@ -120,6 +134,10 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
         <DirectoryJumpNav
           items={[
             { href: '#companies', label: 'الشركات' },
+            ...(config.channelHeading ? [{ href: '#channels', label: 'القنوات' }] : []),
+            ...(hasDeepSections ? [{ href: '#market-structure', label: 'السوق' }] : []),
+            ...(config.growthDrivers?.length ? [{ href: '#growth-drivers', label: 'محفزات' }] : []),
+            ...(config.fieldNotes?.length ? [{ href: '#bionixus-fieldwork', label: 'ميدان' }] : []),
             { href: '#related', label: 'روابط' },
             { href: '#faq', label: 'أسئلة' },
             { href: '#methodology', label: 'المنهجية' },
@@ -180,6 +198,54 @@ export default function ArPharmaCompaniesDirectoryPage({ countrySlug }: Props) {
             </div>
           </div>
         </section>
+
+        {config.channelHeading && config.channelBody ? (
+          <DirectorySection id="channels" surface="cream" eyebrow="بنية السوق" title={config.channelHeading} body={config.channelBody} />
+        ) : null}
+
+        {hasDeepSections ? (
+          <DirectorySection id="market-structure" eyebrow="سياق السوق">
+            <div className="space-y-12">
+              {config.sections!.map((sec) => (
+                <div key={sec.heading}>
+                  <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4">{sec.heading}</h2>
+                  <div className="space-y-4 max-w-3xl">
+                    {sec.paragraphs.map((p, i) => (
+                      <p key={i} className="text-muted-foreground leading-relaxed">
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {config.growthDrivers && config.growthDrivers.length > 0 ? (
+          <DirectorySection
+            id="growth-drivers"
+            surface={hasDeepSections ? 'cream' : 'ivory'}
+            eyebrow="ما الذي يتحرك"
+            title="محفزات تغيّر قوائم الشركات"
+          >
+            <div className="grid md:grid-cols-3 gap-5">
+              {config.growthDrivers.map((driver) => (
+                <DirectoryDriverCard key={driver.title} title={driver.title} desc={driver.desc} />
+              ))}
+            </div>
+          </DirectorySection>
+        ) : null}
+
+        {config.fieldNotes && config.fieldNotes.length > 0 ? (
+          <DirectorySection id="bionixus-fieldwork" surface={hasDeepSections ? 'ivory' : 'cream'} eyebrow="عمل ميداني" title="ما الذي ننفّذه فوق التدقيق">
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground max-w-3xl">
+              {config.fieldNotes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          </DirectorySection>
+        ) : null}
 
         <section className="section-padding py-16" id="related">
           <div className="container-wide max-w-5xl mx-auto">

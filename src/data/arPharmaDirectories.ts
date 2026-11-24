@@ -1,4 +1,8 @@
-export type ArPharmaCountrySlug = 'egypt' | 'uae' | 'saudi-arabia' | 'kuwait' | 'oman' | 'qatar';
+import { AR_PHARMA_DEEP_BY_COUNTRY } from '@/data/arPharmaDeepContent';
+import type { DirectoryProseSection } from '@/data/companyDirectories/types';
+import type { ArPharmaCountrySlug } from '@/data/arPharmaTypes';
+
+export type { ArPharmaCountrySlug } from '@/data/arPharmaTypes';
 
 export type ArPharmaCompanyType = 'محلي' | 'متعدد الجنسيات' | 'إقليمي' | 'موزّع';
 
@@ -26,9 +30,15 @@ export type ArPharmaDirectoryConfig = {
   enPath: string;
   publishedDate: string;
   modifiedDate: string;
+  channelHeading?: string;
+  channelBody?: string;
+  sections?: DirectoryProseSection[];
+  growthDrivers?: { title: string; desc: string }[];
+  fieldNotes?: string[];
 };
 
 const PUBLISHED = '2026-09-02';
+const CONTENT_MODIFIED = '2026-11-24';
 
 function pathFor(country: ArPharmaCountrySlug): string {
   return `/ar/pharmaceutical-companies-${country}`;
@@ -435,12 +445,26 @@ const QATAR: ArPharmaDirectoryConfig = {
 export const AR_PHARMA_DIRECTORIES: ArPharmaDirectoryConfig[] = [EGYPT, UAE, KSA, KUWAIT, OMAN, QATAR];
 
 export function getArPharmaDirectory(country: ArPharmaCountrySlug): ArPharmaDirectoryConfig | undefined {
-  return AR_PHARMA_DIRECTORIES.find((d) => d.countrySlug === country);
+  const base = AR_PHARMA_DIRECTORIES.find((d) => d.countrySlug === country);
+  if (!base) return undefined;
+  const deep = AR_PHARMA_DEEP_BY_COUNTRY[country];
+  return {
+    ...base,
+    channelHeading: deep.channelHeading,
+    channelBody: deep.channelBody,
+    sections: deep.sections,
+    growthDrivers: deep.growthDrivers,
+    fieldNotes: deep.fieldNotes,
+    faq: [...base.faq, ...deep.extraFaq],
+    modifiedDate: CONTENT_MODIFIED,
+  };
 }
 
 export function getArPharmaDirectoryByPath(path: string): ArPharmaDirectoryConfig | undefined {
   const normalized = path.startsWith('/') ? path : `/${path}`;
-  return AR_PHARMA_DIRECTORIES.find((d) => d.path === normalized);
+  const base = AR_PHARMA_DIRECTORIES.find((d) => d.path === normalized);
+  if (!base) return undefined;
+  return getArPharmaDirectory(base.countrySlug);
 }
 
 export function getArPharmaDirectorySitemapPages(): Array<{
@@ -451,7 +475,7 @@ export function getArPharmaDirectorySitemapPages(): Array<{
 }> {
   return AR_PHARMA_DIRECTORIES.map((d) => ({
     path: d.path,
-    lastmod: d.modifiedDate,
+    lastmod: getArPharmaDirectory(d.countrySlug)?.modifiedDate ?? d.modifiedDate,
     priority: '0.75',
     changefreq: 'monthly',
   }));
