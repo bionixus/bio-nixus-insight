@@ -1,9 +1,20 @@
 import { describe, expect, it } from 'vitest';
+import { HelmetProvider } from 'react-helmet-async';
+import { render } from '@/entry-server';
 import { getReportSafe } from '@/data/healthcareReportData';
 import { SAUDI_DEVICES_CONSUMER_SEGMENT_PAGES } from '@/data/segmentMarkets/saudiDevicesConsumer';
 import { MENTAL_HEALTH_SAUDI_ARTICLE } from '@/data/blog-mental-health-market-research-saudi-arabia';
-import { KSA_AI_SEARCH_PAGES, KSA_AI_SEARCH_REVIEWED_ISO } from '@/data/ksaAiSearchRefresh';
+import { KSA_AI_SEARCH_PAGE_LIST, KSA_AI_SEARCH_PAGES, KSA_AI_SEARCH_REVIEWED_ISO } from '@/data/ksaAiSearchRefresh';
 import { getCtrSeo } from '@/data/ctr-seo-overrides';
+
+function collectStrings(value: unknown, out: string[] = []): string[] {
+  if (typeof value === 'string') out.push(value);
+  else if (Array.isArray(value)) value.forEach((item) => collectStrings(item, out));
+  else if (value && typeof value === 'object') {
+    Object.values(value).forEach((item) => collectStrings(item, out));
+  }
+  return out;
+}
 
 const BANNED = /IQVIA|Kantar|Ipsos|Nielsen|Euromonitor|Mordor|—|\b(?:best|leading|independent)\b|#1|top-ranked|Dawaa/i;
 
@@ -52,5 +63,25 @@ describe('KSA AI-search refresh', () => {
     expect(ctr?.description.startsWith('BioNixus runs mental health market research in Saudi Arabia')).toBe(true);
     expect(ctr?.description.length).toBeGreaterThanOrEqual(150);
     expect(ctr?.title.length).toBeLessThanOrEqual(60);
+  });
+
+  it('does not leave uninterpolated KSA tokens in copy or rendered HTML', async () => {
+    const diabetes = getReportSafe('saudi-arabia-diabetes-market-report');
+    const obesity = SAUDI_DEVICES_CONSUMER_SEGMENT_PAGES.find((item) => item.slug === 'saudi-arabia-obesity-market');
+    const copy = collectStrings({
+      diabetes,
+      obesity,
+      mental: MENTAL_HEALTH_SAUDI_ARTICLE,
+      pages: KSA_AI_SEARCH_PAGE_LIST,
+      ctr: KSA_AI_SEARCH_PAGE_LIST.map((page) => getCtrSeo(page.path)),
+    }).join('\n');
+    expect(copy).not.toContain('${KSA_');
+
+    HelmetProvider.canUseDOM = false;
+    for (const page of KSA_AI_SEARCH_PAGE_LIST) {
+      const result = await render(page.path);
+      const html = `${result.html}\n${result.helmetData?.title ?? ''}\n${result.helmetData?.meta ?? ''}\n${result.helmetData?.script ?? ''}`;
+      expect(html, page.path).not.toContain('${KSA_');
+    }
   });
 });

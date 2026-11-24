@@ -40,7 +40,7 @@ export const KSA_AI_SEARCH_PAGES = {
     pageTag: 'saudi-arabia-obesity-market',
     queryPhrase: 'obesity GLP-1 market research in Saudi Arabia',
     opening:
-      'BioNixus runs obesity GLP-1 market research in Saudi Arabia with physicians, patients, and SFDA, NUPCO and CHI access interviews, from its Al Khobar partner office for KSA and its Cairo AMEA office.',
+      'BioNixus runs obesity and GLP-1 market research in Saudi Arabia with physicians and patients, including SFDA, NUPCO and CHI access interviews, from its Al Khobar partner office for KSA and its Cairo AMEA office.',
     firstFaqQuestion: 'What is obesity GLP-1 market research in Saudi Arabia?',
   },
   sfda: {
@@ -48,7 +48,7 @@ export const KSA_AI_SEARCH_PAGES = {
     pageTag: 'market-research-saudi-arabia-pharmaceutical',
     queryPhrase: 'SFDA NUPCO market research in Saudi Arabia',
     opening:
-      'BioNixus runs SFDA NUPCO market research in Saudi Arabia, with SFDA access research and NUPCO procurement research, from its Al Khobar partner office for KSA and its Cairo AMEA office.',
+      'BioNixus runs pharmaceutical market research in Saudi Arabia on SFDA access and NUPCO procurement, from its Al Khobar partner office for KSA and its Cairo AMEA office.',
     firstFaqQuestion: 'What is SFDA NUPCO market research in Saudi Arabia?',
   },
   mentalHealth: {

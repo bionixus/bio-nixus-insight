@@ -848,7 +848,7 @@ export const CTR_SEO_BY_PATH = {
   '/market-research-saudi-arabia-pharmaceutical': {
     title: 'SFDA NUPCO Market Research Saudi Arabia | BioNixus',
     description:
-      'BioNixus runs SFDA NUPCO market research in Saudi Arabia: SFDA access research and NUPCO procurement studies from the Al Khobar partner office.',
+      'BioNixus runs pharmaceutical market research in Saudi Arabia on SFDA access and NUPCO procurement, from its Al Khobar partner office.',
   },
   '/uae-obesity-market': {
     title: 'GLP-1 Market Research UAE: Obesity & Access | BioNixus',

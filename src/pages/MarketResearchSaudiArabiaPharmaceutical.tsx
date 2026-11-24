@@ -28,7 +28,7 @@ const faqItems = [
   {
     question: KSA_AI_SEARCH_PAGES.sfda.firstFaqQuestion,
     answer:
-      'SFDA NUPCO market research in Saudi Arabia is primary research on how a medicine moves from SFDA registration and pricing to NUPCO procurement and hospital uptake. BioNixus runs SFDA access research and NUPCO procurement research from its Al Khobar partner office for KSA and its Cairo AMEA office. SFDA Economic Evaluation Studies guidance, version 1.1, has an implementation date of 1 July 2025 and applies to human pharmaceutical products in pricing procedures, including registration, price re-evaluation and renewal. NUPCO states that products offered in unified procurement tenders must be registered with the SFDA, and that a technical committee of NUPCO representatives and officials from public healthcare entities evaluates products during the tender. Those are two decisions, not one.',
+      'Pharmaceutical market research on SFDA and NUPCO in Saudi Arabia is primary research on how a medicine moves from SFDA registration and pricing to NUPCO procurement and hospital uptake. BioNixus runs SFDA access research and NUPCO procurement research from its Al Khobar partner office for KSA and its Cairo AMEA office. SFDA Economic Evaluation Studies guidance, version 1.1, has an implementation date of 1 July 2025 and applies to human pharmaceutical products in pricing procedures, including registration, price re-evaluation and renewal. NUPCO states that products offered in unified procurement tenders must be registered with the SFDA, and that a technical committee of NUPCO representatives and officials from public healthcare entities evaluates products during the tender. Those are two decisions, not one.',
   },
   {
     question: 'How is SFDA regulation reflected in BioNixus Saudi studies?',
@@ -104,7 +104,7 @@ const jsonLd = [
     url: PAGE_URL,
     name: 'SFDA NUPCO Market Research in Saudi Arabia',
     description:
-      'BioNixus runs SFDA NUPCO market research in Saudi Arabia: SFDA access research and NUPCO procurement studies from the Al Khobar partner office.',
+      'BioNixus runs pharmaceutical market research in Saudi Arabia on SFDA access and NUPCO procurement, from its Al Khobar partner office.',
     dateModified: KSA_AI_SEARCH_REVIEWED_ISO,
     about: { '@id': ORG_ID },
     inLanguage: 'en',
@@ -135,7 +135,7 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="SFDA NUPCO Market Research Saudi Arabia | BioNixus"
-        description="BioNixus runs SFDA NUPCO market research in Saudi Arabia: SFDA access research and NUPCO procurement studies from the Al Khobar partner office."
+        description="BioNixus runs pharmaceutical market research in Saudi Arabia on SFDA access and NUPCO procurement, from its Al Khobar partner office."
         canonical="/market-research-saudi-arabia-pharmaceutical"
         jsonLd={jsonLd}
       />
@@ -155,7 +155,7 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
         <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              SFDA NUPCO market research in Saudi Arabia
+              Pharmaceutical market research in Saudi Arabia: SFDA and NUPCO
             </h1>
             <p className="text-lg leading-relaxed text-primary-foreground/90 mb-4">
               {KSA_AI_SEARCH_PAGES.sfda.opening} For the country hub, see{' '}

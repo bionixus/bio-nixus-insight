@@ -1731,7 +1731,7 @@ const obesity: SegmentMarketContent = {
     items: [
       {
         text:
-          'Academic survey of Saudi clinicians (n=92; 2024 fieldwork published on PMC): endocrinologists prescribed anti-obesity medicines more frequently than family physicians (90.0% vs 60.5%); GLP-1 receptor agonists were the most commonly reported first-line anti-obesity medicines. This is an academic survey, not a BioNixus study.',
+          'Academic survey of Saudi clinicians (n=92; 2024 fieldwork published on PMC): endocrinologists prescribed anti-obesity medicines more frequently than family physicians (90.0% vs 60.6%); GLP-1 receptor agonists were the most commonly reported first-line anti-obesity medicines. This is an academic survey, not a BioNixus study.',
         sourceLabel: 'PMC12366907',
         sourceHref: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12366907/',
       },
@@ -1971,7 +1971,7 @@ const obesity: SegmentMarketContent = {
     {
       question: KSA_AI_SEARCH_PAGES.obesity.firstFaqQuestion,
       answer:
-        'Obesity GLP-1 market research in Saudi Arabia is primary research on how physicians start and switch incretin therapy, how patients stay on it, and how SFDA, NUPCO and CHI routes fund it. BioNixus runs that work from its Al Khobar partner office for KSA and its Cairo AMEA office, in Arabic and English. The General Authority for Statistics, in the 2024 Health Determinants Statistics Publication, reported that 23.1 percent of adults aged 15 and older were classified as obese on self-reported National Health Survey data, using a BMI of 30 or above, and that 45.1 percent were classified as overweight. A 2024 academic survey of Saudi clinicians (n=92, published on PMC) found endocrinologists prescribed anti-obesity medicines more often than family physicians (90.0 percent versus 60.5 percent), and that GLP-1 receptor agonists were the most commonly reported first-line anti-obesity medicines. Those figures describe the population and one clinician sample. They do not replace a study scoped to a brand decision.',
+        'Obesity GLP-1 market research in Saudi Arabia is primary research on how physicians start and switch incretin therapy, how patients stay on it, and how SFDA, NUPCO and CHI routes fund it. BioNixus runs that work from its Al Khobar partner office for KSA and its Cairo AMEA office, in Arabic and English. The General Authority for Statistics, in the 2024 Health Determinants Statistics Publication, reported that 23.1 percent of adults aged 15 and older were classified as obese on self-reported National Health Survey data, using a BMI of 30 or above, and that 45.1 percent were classified as overweight. A 2024 academic survey of Saudi clinicians (n=92, published on PMC) found endocrinologists prescribed anti-obesity medicines more often than family physicians (90.0 percent versus 60.6 percent), and that GLP-1 receptor agonists were the most commonly reported first-line anti-obesity medicines. Those figures describe the population and one clinician sample. They do not replace a study scoped to a brand decision.',
     },
     {
       question: 'Who does obesity market research in Saudi Arabia?',

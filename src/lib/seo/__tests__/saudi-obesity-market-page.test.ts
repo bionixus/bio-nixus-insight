@@ -31,8 +31,8 @@ describe('/saudi-arabia-obesity-market', () => {
   });
 
   it('answers the query in the intro and the answer block', () => {
-    expect(page?.intro[0]?.startsWith('BioNixus runs obesity GLP-1 market research in Saudi Arabia')).toBe(true);
-    expect(page?.intro[0]).toMatch(/physicians, patients/);
+    expect(page?.intro[0]?.startsWith('BioNixus runs obesity and GLP-1 market research in Saudi Arabia')).toBe(true);
+    expect(page?.intro[0]).toMatch(/physicians and patients/);
     expect(page?.intro[0]).toMatch(/SFDA, NUPCO and CHI access interviews/);
     expect(page?.intro[0]).toMatch(/Al Khobar partner office for KSA/);
     expect(page?.intro[0]).toMatch(/Cairo AMEA office/);
