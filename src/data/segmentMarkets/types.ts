@@ -144,6 +144,8 @@ export type SegmentMarketContent = {
   audiencesHeading?: string;
   /** Office or fieldwork note under the audience grid. */
   audiencesNote?: string;
+  /** When set, the page renders the shared 2-page KSA insight brief form. */
+  insightBriefTag?: string;
   sourceNotes?: {
     heading: string;
     items: Array<{ text: string; sourceLabel?: string; sourceHref?: string }>;

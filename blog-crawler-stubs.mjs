@@ -334,7 +334,7 @@ export const BLOG_HARDCODED_CRAWLER_STUBS = {
   'mental-health-market-research-saudi-arabia': {
     title: 'Mental Health Market Research Saudi Arabia: CNS Guide 2026',
     description:
-      'Mental health market research in Saudi Arabia: an 86% treatment gap, telepsychiatry and stigma. What CNS teams should ask psychiatrists and GPs at launch.',
+      'BioNixus runs mental health market research in Saudi Arabia with psychiatrists, GPs and patients from its Al Khobar partner office and Cairo AMEA office.',
   },
   'womens-health-market-research-gcc': {
     title: 'Women’s Health Market Research GCC: Fertility, PCOS 2026',

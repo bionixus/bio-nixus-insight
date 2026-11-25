@@ -25,6 +25,8 @@ import {
 } from '@/lib/blog-robots';
 import { getRareTumorClusterByBlogSlug } from '@/data/rare-tumor-seo-cluster';
 import { RareTumorClusterCallout } from '@/components/seo/RareTumorClusterCallout';
+import { KsaInsightBriefForm } from '@/components/conversion/KsaInsightBriefForm';
+import { ksaAiSearchPageByPath } from '@/data/ksaAiSearchRefresh';
 import {
   blogHeroSrc,
   optimizeSanityImage,
@@ -1984,6 +1986,10 @@ const BlogPost = ({ fixedSlug }: BlogPostProps = {}) => {
               <BlogSiteExplorer locale={articleLocale} />
 
               {/* FAQ — uses <details>/<summary> so answers are always in server-rendered HTML */}
+              {ksaAiSearchPageByPath(pathClean) ? (
+                <KsaInsightBriefForm page={ksaAiSearchPageByPath(pathClean)!} />
+              ) : null}
+
               {mergedBlogFaqItems.length > 0 && !post.faqInBody && (
                 <section className="mt-12" aria-label={blogUi.faqHeading}>
                   <h2 className="font-display text-2xl font-bold tracking-tight text-primary mb-6 flex items-center gap-3">

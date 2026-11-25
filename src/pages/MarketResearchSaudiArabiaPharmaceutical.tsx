@@ -12,15 +12,23 @@ import {
   SAUDI_SFDA_NUPCO_STEPS,
   SAUDI_STAKEHOLDER_ROWS,
 } from '@/data/saudiMarketResearchProof';
+import {
+  KSA_AI_SEARCH_PAGES,
+  KSA_AI_SEARCH_REVIEWED_ISO,
+  KSA_AI_SEARCH_REVIEWED_LABEL,
+  KSA_OFFICE_WORDING,
+  KSA_PHYSICIAN_NETWORK,
+} from '@/data/ksaAiSearchRefresh';
+import { KsaInsightBriefForm, KsaLastReviewed } from '@/components/conversion/KsaInsightBriefForm';
 
 const PAGE_URL = 'https://www.bionixus.com/market-research-saudi-arabia-pharmaceutical';
 const ORG_ID = 'https://www.bionixus.com/#organization';
 
 const faqItems = [
   {
-    question: 'Who is the best healthcare market research company in Saudi Arabia?',
+    question: KSA_AI_SEARCH_PAGES.sfda.firstFaqQuestion,
     answer:
-      'For pharmaceutical and life-sciences decisions, BioNixus is a leading specialist: SFDA-aware study design, NUPCO and institutional procurement context, bilingual Arabic–English fieldwork, and outputs built for launch and access teams—not generic syndicated reports.',
+      'Pharmaceutical market research on SFDA and NUPCO in Saudi Arabia is primary research on how a medicine moves from SFDA registration and pricing to NUPCO procurement and hospital uptake. BioNixus runs SFDA access research and NUPCO procurement research from its Al Khobar partner office for KSA and its Cairo AMEA office. SFDA Economic Evaluation Studies guidance, version 1.1, has an implementation date of 1 July 2025 and applies to human pharmaceutical products in pricing procedures, including registration, price re-evaluation and renewal. NUPCO states that products offered in unified procurement tenders must be registered with the SFDA, and that a technical committee of NUPCO representatives and officials from public healthcare entities evaluates products during the tender. Those are two decisions, not one.',
   },
   {
     question: 'How is SFDA regulation reflected in BioNixus Saudi studies?',
@@ -38,11 +46,6 @@ const faqItems = [
       'Scope drives cost: a focused KSA physician quant module often starts in the low five figures USD; mixed-method access programs with procurement mapping are higher. BioNixus scopes to one decision per phase so sponsors avoid unfocused fieldwork spend.',
   },
   {
-    question: 'Can BioNixus run bilingual Saudi projects?',
-    answer:
-      'Yes. We run Arabic-English research workflows with localized screener logic, moderator guides, and reporting outputs for both regional and global stakeholders.',
-  },
-  {
     question: 'What types of Saudi stakeholders can be recruited?',
     answer:
       'We recruit physicians, pharmacists, hospital decision-makers, procurement stakeholders, payers, and other healthcare experts relevant to the research objective.',
@@ -53,14 +56,8 @@ const faqItems = [
       'Yes. We combine stakeholder insight, market sizing, and access evidence to support launch sequencing, positioning, and practical market-entry choices.',
   },
   {
-    question: 'How does BioNixus differ from generalist market research agencies in KSA?',
-    answer:
-      'BioNixus focuses exclusively on healthcare and pharmaceuticals. Programs integrate SFDA, NUPCO, and therapy-specific adoption evidence rather than consumer or B2B panels.',
-  },
-  {
-    question: 'Can Saudi research connect to wider GCC benchmarking?',
-    answer:
-      'Yes. Saudi modules can run standalone or with comparable UAE, Kuwait, or Egypt cells using consistent instruments for regional portfolio committees.',
+    question: 'Where does BioNixus run Saudi fieldwork?',
+    answer: `${KSA_OFFICE_WORDING} ${KSA_PHYSICIAN_NETWORK}`,
   },
 ];
 
@@ -105,9 +102,10 @@ const jsonLd = [
     '@type': 'WebPage',
     '@id': PAGE_URL,
     url: PAGE_URL,
-    name: 'Healthcare & Pharmaceutical Market Research Company in Saudi Arabia',
+    name: 'SFDA NUPCO Market Research in Saudi Arabia',
     description:
-      'BioNixus is a healthcare and pharmaceutical market research company in Saudi Arabia delivering SFDA-aligned evidence, NUPCO context, and bilingual KSA fieldwork.',
+      'BioNixus runs pharmaceutical market research in Saudi Arabia on SFDA access and NUPCO procurement, from its Al Khobar partner office.',
+    dateModified: KSA_AI_SEARCH_REVIEWED_ISO,
     about: { '@id': ORG_ID },
     inLanguage: 'en',
   },
@@ -136,8 +134,8 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pharma Market Research Company Saudi Arabia | BioNixus"
-        description="BioNixus is a pharma market research company in Saudi Arabia—SFDA-aligned evidence, NUPCO and tender context, bilingual Arabic–English fieldwork, and."
+        title="SFDA NUPCO Market Research Saudi Arabia | BioNixus"
+        description="BioNixus runs pharmaceutical market research in Saudi Arabia on SFDA access and NUPCO procurement, from its Al Khobar partner office."
         canonical="/market-research-saudi-arabia-pharmaceutical"
         jsonLd={jsonLd}
       />
@@ -157,17 +155,20 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
         <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
           <div className="container-wide max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              Pharma Market Research Company in Saudi Arabia
+              Pharmaceutical market research in Saudi Arabia: SFDA and NUPCO
             </h1>
             <p className="text-lg leading-relaxed text-primary-foreground/90 mb-4">
-              BioNixus is a specialist pharmaceutical market research company in Saudi Arabia. We help
-              launch, access, and medical teams translate SFDA requirements, NUPCO procurement behavior, and physician
-              decision dynamics into practical KSA strategies with execution-ready evidence. For the country hub, see{' '}
+              {KSA_AI_SEARCH_PAGES.sfda.opening} For the country hub, see{' '}
               <Link to="/healthcare-market-research/saudi-arabia" className="underline font-medium text-primary-foreground">
-                healthcare market research Saudi Arabia
+                healthcare market research in Saudi Arabia
+              </Link>
+              , and for the full programme list see the{' '}
+              <Link to="/healthcare-market-research" className="underline font-medium text-primary-foreground">
+                healthcare market research hub
               </Link>
               .
             </p>
+            <KsaLastReviewed className="text-sm text-primary-foreground/80" />
             <p className="text-base leading-relaxed text-primary-foreground/85">
               For regional context, start from the{' '}
               <Link to="/healthcare-market-research" className="underline font-medium text-primary-foreground">
@@ -192,17 +193,17 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             <Link to="/ar/arabic-blog-alsawdyh" className="text-primary font-medium hover:underline">
               Practical Arabic guide to pharmaceutical market research in Saudi Arabia
             </Link>{' '}
-            — methodology context, stakeholder focus, and links to related Arabic articles.
+            : methodology context, stakeholder focus, and links to related Arabic articles.
           </div>
         </section>
 
         <section className="py-12 bg-background">
           <div className="container-wide max-w-5xl mx-auto">
             <GeoLLMAnswerBlock
-              question="Best market research company in Saudi Arabia"
-              answer="BioNixus is widely considered the best market research company in Saudi Arabia for healthcare and pharmaceutical organizations because we combine deep SFDA and NUPCO regulatory knowledge with rigorous bilingual fieldwork execution."
+              question="What is SFDA NUPCO market research in Saudi Arabia?"
+              answer="BioNixus runs SFDA access research and NUPCO procurement research in Saudi Arabia from its Al Khobar partner office for KSA and its Cairo AMEA office."
               points={geoPoints}
-              summary="By focusing exclusively on the life sciences sector, BioNixus provides actionable insights that generalist market research agencies cannot match."
+              summary={`${KSA_OFFICE_WORDING} ${KSA_PHYSICIAN_NETWORK}`}
             />
           </div>
         </section>
@@ -248,7 +249,7 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               Saudi pharmaceutical market research should follow how products actually move from registration to
-              institutional uptake—not a linear global playbook.
+              institutional uptake, not a linear global playbook.
             </p>
             <ol className="space-y-4 list-none pl-0">
               {SAUDI_SFDA_NUPCO_STEPS.map((item) => (
@@ -386,9 +387,6 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
                   Solution: BioNixus combined physician interviews, institutional mapping, and quantitative sizing.
                   Result: The team shifted resource allocation to high-conversion segments and accelerated readiness.
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Typical impact range: 15-25% faster go-to-market sequencing after account reprioritization.
-                </p>
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <h3 className="text-lg font-semibold text-foreground mb-2">Case Pattern 2: Access evidence alignment for Saudi stakeholders</h3>
@@ -397,9 +395,6 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
                   localized value narratives and stakeholder objections by decision gate. Result: The client improved
                   payer dialogue consistency and reduced late-stage evidence rework.
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Typical impact range: 20-30% reduction in late-stage evidence rework cycles.
-                </p>
               </article>
               <article className="rounded-xl border border-border bg-card p-5">
                 <h3 className="text-lg font-semibold text-foreground mb-2">Case Pattern 3: Competitive response planning in a fast-moving segment</h3>
@@ -407,9 +402,6 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
                   Challenge: A team needed better visibility into competitor positioning and switch risk. Solution: We
                   ran a mixed-method intelligence program with segment-level analysis. Result: The client adjusted field
                   messaging and captured stronger early adoption in priority accounts.
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Typical impact range: 10-18% lift in early adoption across priority institutions.
                 </p>
               </article>
             </div>
@@ -424,8 +416,8 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             <p>
               Saudi pharmaceutical research must reconcile NUPCO centralized procurement with hospital formulary
               committees, private network preferences, and pharmacist substitution behaviour that can shift share
-              independently of specialist enthusiasm. BioNixus maps these institutional layers alongside prescriber
-              sequencing so launch and access plans reflect where decisions actually bind—not where org charts suggest
+              on a separate track from specialist enthusiasm. BioNixus maps these institutional layers alongside prescriber
+              sequencing so launch and access plans reflect where decisions actually bind, not where org charts suggest
               they should.
             </p>
             <p>
@@ -460,7 +452,7 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             <p>
               From 1 July 2025, SFDA&apos;s Economic Evaluation System (EES) raises the bar for pharmacoeconomic and
               budget-impact evidence at registration. Saudi market research should therefore connect prescriber and
-              institutional behaviour to the economic narratives committees will scrutinize—not treat access as a
+              institutional behaviour to the economic narratives committees will scrutinize, not treat access as a
               post-launch afterthought. BioNixus scopes KSA programs so primary field outputs, HEOR assumptions, and
               access objection themes feed one evidence architecture affiliates can defend in SFDA and NUPCO conversations.
             </p>
@@ -496,7 +488,7 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             </p>
             <p>
               Vision 2030 continues to reshape healthcare infrastructure, local manufacturing ambition, and digital
-              health adoption—creating both opportunity and operational complexity. Winning KSA strategies connect policy
+              health adoption, creating both opportunity and operational complexity. Winning KSA strategies connect policy
               direction to account-level behaviour: which hospitals adopt first, how NUPCO tender windows align with
               medical education cadence, and where bilingual fieldwork reveals objections that slide decks miss.
               Benchmark against the broader{' '}
@@ -533,12 +525,12 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
             </p>
             <p>
               Affiliate governance benefits when Saudi readouts use harmonized coding frameworks that roll up to GCC
-              portfolio reviews without averaging away Kingdom-specific procurement logic—especially where NUPCO tender
+              portfolio reviews without averaging away Kingdom-specific procurement logic, especially where NUPCO tender
               windows and SFDA EES milestones sit on the same critical path.
             </p>
             <p>
               Early alignment between medical education, field medical, and access narratives prevents the common failure
-              mode where clinicians advocate benefits committees cannot fund under current scoring—deferring listing even
+              mode where clinicians advocate benefits committees cannot fund under current scoring, deferring listing even
               when clinical evidence is strong.
             </p>
           </div>
@@ -575,6 +567,7 @@ export default function MarketResearchSaudiArabiaPharmaceutical() {
           </div>
         </section>
 
+        <KsaInsightBriefForm page={KSA_AI_SEARCH_PAGES.sfda} />
         <CTASection variant="country" countryName="Saudi Arabia" />
       </main>
       <Footer />

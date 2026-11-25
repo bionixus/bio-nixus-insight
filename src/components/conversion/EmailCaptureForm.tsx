@@ -12,6 +12,8 @@ type EmailCaptureFormProps = {
   sourcePage: string;
   sourceUrl: string;
   reportName?: string;
+  /** Allowlisted HighLevel tag, sent as a hidden field. website-lead is added on the server. */
+  extraTags?: string;
   submitLabel: string;
   placeholder?: string;
   onSubmitClick?: () => void;
@@ -25,6 +27,7 @@ export function EmailCaptureForm({
   sourcePage,
   sourceUrl,
   reportName,
+  extraTags,
   submitLabel,
   placeholder = 'Work email',
   onSubmitClick,
@@ -82,6 +85,7 @@ export function EmailCaptureForm({
       <input type="hidden" name="sourcePage" value={sourcePage} />
       <input type="hidden" name="sourceUrl" value={sourceUrl} />
       {reportName ? <input type="hidden" name="reportName" value={reportName} /> : null}
+      {extraTags ? <input type="hidden" name="extraTags" value={extraTags} /> : null}
       <input
         type="text"
         name="hp_company"

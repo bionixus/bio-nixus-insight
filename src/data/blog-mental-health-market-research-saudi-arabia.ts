@@ -6,6 +6,13 @@
  * the telepsychiatry sample is an online convenience sample; both caveats are stated.
  */
 import { buildWaveArticle, citeFrom, figureHtml, type WaveFigure, type WaveReference } from '@/data/articleWaves/buildWaveArticle';
+import {
+  KSA_AI_SEARCH_PAGES,
+  KSA_AI_SEARCH_REVIEWED_ISO,
+  KSA_AI_SEARCH_REVIEWED_LABEL,
+  KSA_OFFICE_WORDING,
+  KSA_PHYSICIAN_NETWORK,
+} from '@/data/ksaAiSearchRefresh';
 
 const SLUG = 'mental-health-market-research-saudi-arabia';
 
@@ -48,7 +55,8 @@ const FIGURES: WaveFigure[] = [
   },
 ];
 
-const SUMMARY_HTML = `<p>Saudi Arabia’s National Center for Mental Health Promotion led the national World Mental Health Day campaign on 10 October 2026, with a focus on stigma, early help-seeking and services delivered in person and through digital channels. The need is large: in the national survey, 86.1% of people with a recent mental disorder had used no services at all.</p>
+const SUMMARY_HTML = `<p>${KSA_AI_SEARCH_PAGES.mentalHealth.opening} Last reviewed: ${KSA_AI_SEARCH_REVIEWED_LABEL}.</p>
+<p>Saudi Arabia’s National Center for Mental Health Promotion led the national World Mental Health Day campaign on 10 October 2026, with a focus on stigma, early help-seeking and services delivered in person and through digital channels. The need is large: in the national survey, 86.1% of people with a recent mental disorder had used no services at all.</p>
 <p>For CNS teams, that gap is the market question. Sizing reports count patients. They do not say which doctors see those patients, what they prescribe, or why most people never reach a prescriber.</p>
 <p>This briefing sets out what the data shows, where it is out of date, and the research questions a launch team should ask. It is part of our <a href="/healthcare-market-research">healthcare market research</a> work; for the country view, see <a href="/healthcare-market-research/saudi-arabia">healthcare market research in Saudi Arabia</a>.</p>`;
 
@@ -58,7 +66,7 @@ const NARRATIVE_HTML = `<h2 id="what-the-national-campaign-puts-on-the-agenda">W
 <p>It also said services are being integrated across healthcare levels and offered through in-person and digital channels (${cite('moh', 'Ministry of Health')}). Both points matter for drugmakers. Integration moves patients towards primary care, and digital channels change where a first consultation happens.</p>
 
 <h2 id="how-big-the-saudi-treatment-gap-is">How big the Saudi treatment gap is</h2>
-<p>The best national data is still the Saudi National Mental Health Survey (SNMHS). It interviewed 4,004 Saudi citizens aged 15 to 65 between 2013 and 2016, using the WHO’s structured diagnostic interview, in 11 of the country’s 13 regions (${cite('ljmh', 'Lebanese Journal of Mental Health')}).</p>
+<p>The main national dataset is still the Saudi National Mental Health Survey (SNMHS). It interviewed 4,004 Saudi citizens aged 15 to 65 between 2013 and 2016, using the WHO’s structured diagnostic interview, in 11 of the country’s 13 regions (${cite('ljmh', 'Lebanese Journal of Mental Health')}).</p>
 <p>A 2026 secondary analysis of that survey puts the 12-month prevalence of any psychiatric disorder at 20.2%. Lifetime prevalence is 34.2%, or about one adult in three. Anxiety disorders were the most common, at 12.3%, followed by mood disorders at 6.8% (${cite('ljmh', 'LJMH')}).</p>
 <p>The treatment gap is the share of people with a disorder who get no care. In Saudi Arabia it was 86.1%, against 55% in the USA and 50% in Western Europe (${cite('ljmh', 'LJMH')}).</p>
 ${figureHtml(FIGURES[0])}
@@ -110,7 +118,7 @@ ${figureHtml(FIGURES[1])}
 <p>Include telepsychiatry questions: how often remote consultations happen, and whether prescribing changes in them.</p>
 <p>Design any patient research with ethics review, clear consent and a referral route.</p>
 <p>Map formulary access across hospital and insurer channels, and check it against the <a href="/market-reports/saudi-arabia-neurology-cns-market-report">Saudi CNS market report</a> view of the market.</p>
-<p>If you need Saudi prescriber insight for a CNS launch, BioNixus can design a sensitive, ethics-reviewed study through our <a href="/healthcare-market-research/therapy/neurology-cns">neurology and CNS market research</a>. We were founded in 2012, have worked with 118 clients in 48 countries, and run Saudi fieldwork from our Cairo office with our field team in the Kingdom.</p>`;
+<p>If you need Saudi prescriber insight for a CNS launch, BioNixus can design a sensitive, ethics-reviewed study through our <a href="/healthcare-market-research/therapy/neurology-cns">neurology and CNS market research</a>. ${KSA_OFFICE_WORDING} ${KSA_PHYSICIAN_NETWORK}</p>`;
 
 export const MENTAL_HEALTH_SAUDI_ARTICLE = buildWaveArticle({
   briefNumber: 15,
@@ -119,8 +127,8 @@ export const MENTAL_HEALTH_SAUDI_ARTICLE = buildWaveArticle({
   authorName: 'Martha DeVito',
   metaTitle: 'Mental Health Market Research Saudi Arabia: CNS Guide 2026',
   metaDescription:
-    'Mental health market research in Saudi Arabia: an 86% treatment gap, telepsychiatry and stigma. What CNS teams should ask psychiatrists and GPs at launch.',
-  displayTitle: 'Most Saudi adults with a mental disorder get no treatment, and CNS teams lack prescriber data',
+    'BioNixus runs mental health market research in Saudi Arabia with psychiatrists, GPs and patients from its Al Khobar partner office and Cairo AMEA office.',
+  displayTitle: 'BioNixus runs mental health market research in Saudi Arabia with psychiatrists and GPs.',
   displaySubtitle: 'Stigma, telepsychiatry and prescriber insight: what CNS teams need to research in the Kingdom.',
   breadcrumbLabel: 'Mental health market research Saudi Arabia',
   excerpt:
@@ -136,7 +144,7 @@ export const MENTAL_HEALTH_SAUDI_ARTICLE = buildWaveArticle({
     'CNS launch Saudi Arabia',
   ],
   publishedIso: '2026-11-01T11:00:00.000Z',
-  updatedIso: '2026-11-01T11:00:00.000Z',
+  updatedIso: `${KSA_AI_SEARCH_REVIEWED_ISO}T00:00:00.000Z`,
   dateLabel: '1 Nov 2026',
   category: 'Market Research',
   sanityCategory: 'Healthcare Market Research',
@@ -150,6 +158,11 @@ export const MENTAL_HEALTH_SAUDI_ARTICLE = buildWaveArticle({
   summaryHtml: SUMMARY_HTML,
   narrativeHtml: NARRATIVE_HTML,
   faq: [
+    {
+      question: KSA_AI_SEARCH_PAGES.mentalHealth.firstFaqQuestion,
+      answer:
+        'BioNixus runs mental health market research in Saudi Arabia with psychiatrists, GPs and patients, from its Al Khobar partner office for KSA and its Cairo AMEA office. The work asks who diagnoses, who starts treatment, and why most people with a disorder never reach a prescriber. In the Saudi National Mental Health Survey (2013 to 2016), re-analysed in 2026, 20.2 percent of Saudi citizens aged 15 to 65 had a disorder in the past year and 86.1 percent of people with a 12-month disorder used no services.',
+    },
     {
       question: 'How common are mental disorders in Saudi Arabia?',
       answer:

@@ -7,6 +7,8 @@ import { WhyBioNixusIntro } from '@/components/shared/WhyBioNixusIntro';
 import { CTASection } from '@/components/shared/CTASection';
 import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '@/lib/seo/schemas';
 import type { SegmentMarketContent } from '@/data/segmentMarkets/types';
+import { KsaInsightBriefForm } from '@/components/conversion/KsaInsightBriefForm';
+import { ksaAiSearchPageByPath } from '@/data/ksaAiSearchRefresh';
 import {
   DirectoryDriverCard,
   DirectoryFaqList,
@@ -560,6 +562,16 @@ export default function SegmentMarketPage({ content }: { content: SegmentMarketC
           <DirectoryFaqList items={content.faqs.map((item) => ({ q: item.question, a: item.answer }))} />
         </DirectorySection>
 
+        {content.insightBriefTag ? (
+          <KsaInsightBriefForm
+            page={
+              ksaAiSearchPageByPath(canonicalPath) ?? {
+                path: canonicalPath,
+                pageTag: content.insightBriefTag,
+              }
+            }
+          />
+        ) : null}
         <CTASection variant="research-proposal" />
       </main>
       <Footer />

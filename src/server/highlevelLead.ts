@@ -75,6 +75,7 @@ const NOTE_SKIP = new Set<string>([
   'phone',
   'company',
   'companyName',
+  'extraTags',
 ]);
 
 export type GhlCustomField = {
@@ -223,12 +224,22 @@ function tagSlug(value: string | undefined) {
     .slice(0, 80);
 }
 
-export function leadTags(formVariant: string | undefined, requestType?: string): string[] {
+const EXTRA_TAG_ALLOW = new Set(['source-ai-search']);
+
+export function leadTags(
+  formVariant: string | undefined,
+  requestType?: string,
+  extraTags?: string,
+): string[] {
   const tags = ['website-lead'];
   const variant = tagSlug(formVariant);
   if (variant) tags.push(`form:${variant}`);
   const request = tagSlug(requestType);
   if (request) tags.push(`request:${request}`);
+  for (const part of (extraTags || '').split(',')) {
+    const tag = tagSlug(part);
+    if (tag && EXTRA_TAG_ALLOW.has(tag) && !tags.includes(tag)) tags.push(tag);
+  }
   return tags;
 }
 
@@ -332,7 +343,7 @@ export function planLeadWrite(
   const plan: LeadWritePlan = {
     email: leadEmail(fields),
     upsert,
-    tags: leadTags(fields.formVariant, fields.requestType),
+    tags: leadTags(fields.formVariant, fields.requestType, fields.extraTags),
     note,
   };
   if (upsert.phone) plan.upsertWithoutPhone = buildUpsertBody(fields, locationId, customFields, false);
