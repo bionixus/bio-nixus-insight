@@ -16,6 +16,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { FAVICON_HEAD_HTML } from '../lib/faviconHead.js';
+import { injectStaticConsentAndGtm } from '../lib/gtmConsentHtml.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -174,6 +175,16 @@ function enhancePhase2Presentation(html) {
   return html.replace(anchor, `</div>\n\n${snippet}\n\n  <div class="sub-subhead">Phase 1A — Hospital &amp; lab branches (core quantitative sample: 50 total)</div>`);
 }
 
+function ensureRobotsMeta(html) {
+  if (/<meta\s+name="robots"/i.test(html)) return html;
+  const tag =
+    '<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">\n';
+  const viewport = html.match(/<meta name="viewport"[^>]*>\s*/i);
+  if (!viewport || viewport.index == null) return html;
+  const at = viewport.index + viewport[0].length;
+  return `${html.slice(0, at)}${tag}${html.slice(at)}`;
+}
+
 function injectFaviconHead(html) {
   if (html.includes('href="/icons/bnx-favicon.ico"')) return html;
   const viewport = html.match(/<meta name="viewport"[^>]*>\s*/i);
@@ -225,6 +236,8 @@ function writePublicDeckFrom(sourcePath) {
   html = enhancePhase2Presentation(html);
   html = injectStickyCta(html);
   html = injectFaviconHead(html);
+  html = ensureRobotsMeta(html);
+  html = injectStaticConsentAndGtm(html);
   fs.mkdirSync(path.dirname(PUBLIC_OUT), { recursive: true });
   fs.writeFileSync(PUBLIC_OUT, html, 'utf8');
   console.log(`Wrote public deck ${PUBLIC_OUT} (${(html.length / 1024).toFixed(1)} KB, redacted)`);

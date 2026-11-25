@@ -16,6 +16,15 @@ const CookieConsent = () => {
 
   const setConsent = (value: 'accepted' | 'declined') => {
     localStorage.setItem(COOKIE_CONSENT_KEY, value);
+    const granted = value === 'accepted' ? 'granted' : 'denied';
+    window.gtag?.('consent', 'update', {
+      analytics_storage: granted,
+      ad_storage: granted,
+      ad_user_data: granted,
+      ad_personalization: granted,
+    });
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'consent_update', consent_choice: value });
     window.dispatchEvent(new Event('bionixus-consent-changed'));
     setVisible(false);
   };

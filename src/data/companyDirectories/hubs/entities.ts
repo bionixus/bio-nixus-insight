@@ -184,6 +184,7 @@ export const fmcgCompaniesHub: DirectoryHubInput = {
 export const medicalDeviceCompaniesHub: DirectoryHubInput = {
   kind: 'entity',
   entity: 'medical-device-companies',
+  modifiedDate: '2026-11-26',
   metaDescription:
     'Medical device company directories by country: manufacturers, affiliates, distributors and public buyers across MENA, Europe, Asia and the Americas.',
   intro: [

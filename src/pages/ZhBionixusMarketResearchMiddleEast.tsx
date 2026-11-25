@@ -21,6 +21,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
 import { ALSAADANY_JOB_TITLE } from '@/data/editorialAuthors';
+import { trackCtaClick as pushCtaClick } from '@/lib/analytics';
 
 const pageUrl = 'https://www.bionixus.com/zh/bionixus-market-research-middle-east';
 const englishSiblingUrl = 'https://www.bionixus.com/bionixus-market-research-middle-east';
@@ -287,14 +288,12 @@ const pageJsonLd: object[] = [
   breadcrumbSchema,
 ];
 
-function trackCtaClick(ctaName: string, ctaPlacement: string) {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', 'middle_east_cta_click', {
-      cta_name: ctaName,
-      cta_placement: ctaPlacement,
-      page_path: '/zh/bionixus-market-research-middle-east',
-    });
-  }
+function trackCtaClick(ctaName: string, ctaPlacement: string, targetUrl: string) {
+  pushCtaClick({
+    ctaId: `middle_east_${ctaName}`,
+    ctaLocation: ctaPlacement,
+    targetUrl,
+  });
 }
 
 const ZhBionixusMarketResearchMiddleEast = () => {
@@ -377,7 +376,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to={contactHref}
-                  onClick={() => trackCtaClick('book_strategy_call', 'hero_primary')}
+                  onClick={() => trackCtaClick('book_strategy_call', 'hero_primary', contactHref)}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-gold-warm text-navy-deep font-semibold hover:bg-gold-light transition-colors"
                 >
                   预约 20 分钟战略沟通
@@ -385,7 +384,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
                 </Link>
                 <a
                   href="#proof-band"
-                  onClick={() => trackCtaClick('see_proof', 'hero_secondary')}
+                  onClick={() => trackCtaClick('see_proof', 'hero_secondary', '#proof-band')}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-primary-foreground/30 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
                 >
                   查看区域证据要点
@@ -680,7 +679,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to={contactHref}
-                  onClick={() => trackCtaClick('request_research_scope', 'mid_scroll')}
+                  onClick={() => trackCtaClick('request_research_scope', 'mid_scroll', contactHref)}
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold-warm text-navy-deep px-5 py-3 font-semibold hover:bg-gold-light transition-colors"
                 >
                   申请研究范围建议
@@ -688,7 +687,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
                 </Link>
                 <Link
                   to="/healthcare-market-research"
-                  onClick={() => trackCtaClick('explore_market_research_hub', 'mid_scroll')}
+                  onClick={() => trackCtaClick('explore_market_research_hub', 'mid_scroll', '/healthcare-market-research')}
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
                 >
                   了解服务体系
@@ -838,7 +837,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to={contactHref}
-                  onClick={() => trackCtaClick('book_strategy_call', 'final_cta')}
+                  onClick={() => trackCtaClick('book_strategy_call', 'final_cta', contactHref)}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-gold-warm text-navy-deep font-semibold hover:bg-gold-light transition-colors"
                 >
                   预约战略沟通
@@ -846,7 +845,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
                 </Link>
                 <Link
                   to="/healthcare-market-research"
-                  onClick={() => trackCtaClick('visit_healthcare_hub', 'final_cta')}
+                  onClick={() => trackCtaClick('visit_healthcare_hub', 'final_cta', '/healthcare-market-research')}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/30 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
                 >
                   浏览医疗市场研究总览
@@ -870,7 +869,7 @@ const ZhBionixusMarketResearchMiddleEast = () => {
       <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background/95 backdrop-blur p-3 md:hidden">
         <Link
           to={contactHref}
-          onClick={() => trackCtaClick('book_strategy_call', 'sticky_mobile')}
+          onClick={() => trackCtaClick('book_strategy_call', 'sticky_mobile', contactHref)}
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
         >
           与战略负责人对话

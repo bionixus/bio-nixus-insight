@@ -1,15 +1,8 @@
-import { useEffect, useState } from 'react';
-import { hasAnalyticsConsent, onConsentChange } from '@/lib/consent';
+import { useEffect } from 'react';
 import { analyticsPagePath, trackGaEvent as emitEvent } from '@/lib/analytics';
 
 export default function GA4EventTracker() {
-  const [consentGranted, setConsentGranted] = useState(() => hasAnalyticsConsent());
-
-  useEffect(() => onConsentChange(() => setConsentGranted(hasAnalyticsConsent())), []);
-
   useEffect(() => {
-    if (!consentGranted) return;
-
     const handleClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;
       const anchor = target?.closest('a') as HTMLAnchorElement | null;
@@ -48,8 +41,7 @@ export default function GA4EventTracker() {
       document.removeEventListener('click', handleClick, true);
       document.removeEventListener('submit', handleSubmit, true);
     };
-  }, [consentGranted]);
+  }, []);
 
   return null;
 }
-

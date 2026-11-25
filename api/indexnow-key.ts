@@ -19,6 +19,7 @@ import { dedupeBlogOpenGraphTags } from '../lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from '../lib/robots-meta.mjs';
 import { fitBrandedSeoTitle, titleHasBrandSuffix } from '../src/server/seo-meta.js';
 import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from '../lib/html-meta-escape.mjs';
+import { applyGtmContainerId } from '../lib/gtmConsentHtml.mjs';
 
 type HelmetLike = {
   title?: { toString: () => string };
@@ -558,7 +559,7 @@ function getTemplate(): string {
   const primary = path.join(process.cwd(), 'dist', 'client', '_ssr-template.html');
   const fallback = path.join(process.cwd(), 'dist', 'client', 'index.html');
   const templatePath = fs.existsSync(primary) ? primary : fallback;
-  templateCache = fs.readFileSync(templatePath, 'utf-8');
+  templateCache = applyGtmContainerId(fs.readFileSync(templatePath, 'utf-8'));
   return templateCache;
 }
 

@@ -32,7 +32,7 @@ function json(body: unknown, status = 200) {
   });
 }
 
-function mockChannels(options: { formspree: ChannelMode; highLevel: ChannelMode; subscribe?: 'ok' | 'fail' }) {
+function mockChannels(options: { formspree: ChannelMode; highLevel: ChannelMode; subscribe?: 'ok' | 'fail' | 'already' }) {
   const fetchMock = vi.fn((input: RequestInfo) => {
     const url = String(input);
     if (url === FORMSPREE_ENDPOINT) {
@@ -48,9 +48,9 @@ function mockChannels(options: { formspree: ChannelMode; highLevel: ChannelMode;
       return Promise.resolve(json({ error: SAVE_ERROR }, 502));
     }
     if (url === '/api/subscribe') {
-      return Promise.resolve(
-        options.subscribe === 'fail' ? json({ error: 'Internal server error' }, 500) : json({ success: true }),
-      );
+      if (options.subscribe === 'fail') return Promise.resolve(json({ error: 'Internal server error' }, 500));
+      if (options.subscribe === 'already') return Promise.resolve(json({ success: true, alreadySubscribed: true }));
+      return Promise.resolve(json({ success: true }));
     }
     throw new Error(url);
   });
@@ -105,6 +105,7 @@ class Observer {
 }
 
 beforeEach(() => {
+  window.dataLayer = [];
   hrefWrites.length = 0;
   scrollIntoView.mockClear();
   HTMLElement.prototype.scrollIntoView = scrollIntoView;
@@ -479,6 +480,37 @@ describe('EmailCaptureForm (report briefs)', () => {
       email: 'buyer@pfizer.com',
       pageUrl: 'https://www.bionixus.com/reports',
     });
+    expect(window.dataLayer).toContainEqual(
+      expect.objectContaining({ event: 'lead_submitted', form_id: 'brief', page_path: '/page' }),
+    );
+  });
+
+  it('fires form_start once and lead_submitted for the KSA brief only after success', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok' });
+    render(
+      <EmailCaptureForm
+        formVariant="ksa-insight-brief"
+        requestType="Brief"
+        subject="Brief"
+        sourcePage="/market-research-saudi-arabia-pharmaceutical"
+        sourceUrl="https://www.bionixus.com/market-research-saudi-arabia-pharmaceutical"
+        submitLabel="Request a 2-page KSA insight brief"
+      />,
+    );
+    const email = screen.getByLabelText(/work email/i);
+    fireEvent.focus(email);
+    fireEvent.input(email, { target: { value: 'b' } });
+    fireEvent.focus(email);
+    expect(window.dataLayer?.filter((entry) => entry.event === 'form_start')).toEqual([
+      { event: 'form_start', form_id: 'ksa-insight-brief' },
+    ]);
+    expect(window.dataLayer?.some((entry) => entry.event === 'lead_submitted')).toBe(false);
+    fireEvent.change(email, { target: { value: 'buyer@pfizer.com' } });
+    fireEvent.click(screen.getByRole('button', { name: /request a 2-page ksa insight brief/i }));
+    expect(await screen.findByRole('status')).toHaveTextContent(/we will send this to your work email/i);
+    expect(window.dataLayer?.filter((entry) => entry.event === 'lead_submitted')).toEqual([
+      expect.objectContaining({ event: 'lead_submitted', form_id: 'ksa-insight-brief', page_path: '/page' }),
+    ]);
   });
 
   it('reveals the HighLevel 400 email message and does not send it to Formspree', async () => {
@@ -666,12 +698,23 @@ describe('Footer newsletter', () => {
       firstName: 'Ana',
       requestType: 'Newsletter Signup',
     });
+    expect(window.dataLayer).toContainEqual(
+      expect.objectContaining({ event: 'lead_submitted', form_id: 'footer_newsletter', page_path: '/page' }),
+    );
+  });
+
+  it('does not fire lead_submitted when the address is already subscribed', async () => {
+    mockChannels({ formspree: 'ok', highLevel: 'ok', subscribe: 'already' });
+    fillNewsletter();
+    expect(await screen.findByRole('status')).toHaveTextContent(/already subscribed/i);
+    expect(window.dataLayer?.some((entry) => entry.event === 'lead_submitted')).toBe(false);
   });
 
   it('shows an error when every destination fails', async () => {
     mockChannels({ formspree: 'fail', highLevel: 'fail', subscribe: 'fail' });
     fillNewsletter();
     expectRevealedServerError(await screen.findByRole('alert'), /internal server error|something went wrong/i);
+    expect(window.dataLayer?.some((entry) => entry.event === 'lead_submitted')).toBe(false);
   });
 
   it('rejects a malformed email before calling any endpoint', async () => {

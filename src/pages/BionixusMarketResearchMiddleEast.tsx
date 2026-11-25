@@ -21,6 +21,7 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo/schemas';
 import { GeoLLMAnswerBlock } from '@/components/seo/GeoLLMAnswerBlock';
 import { EmailCaptureForm } from '@/components/conversion/EmailCaptureForm';
+import { trackCtaClick as pushCtaClick } from '@/lib/analytics';
 import { PersonNameLink } from '@/components/seo/PersonNameLink';
 import { ALSAADANY_JOB_TITLE } from '@/data/editorialAuthors';
 
@@ -268,14 +269,12 @@ const pageJsonLd = [
   ]),
 ];
 
-function trackCtaClick(ctaName: string, ctaPlacement: string) {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', 'middle_east_cta_click', {
-      cta_name: ctaName,
-      cta_placement: ctaPlacement,
-      page_path: '/bionixus-market-research-middle-east',
-    });
-  }
+function trackCtaClick(ctaName: string, ctaPlacement: string, targetUrl: string) {
+  pushCtaClick({
+    ctaId: `middle_east_${ctaName}`,
+    ctaLocation: ctaPlacement,
+    targetUrl,
+  });
 }
 
 const BionixusMarketResearchMiddleEast = () => {
@@ -393,7 +392,7 @@ const BionixusMarketResearchMiddleEast = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to={contactHref}
-                  onClick={() => trackCtaClick('book_strategy_call', 'hero_primary')}
+                  onClick={() => trackCtaClick('book_strategy_call', 'hero_primary', contactHref)}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
                 >
                   Book a 20-minute strategy call
@@ -401,7 +400,7 @@ const BionixusMarketResearchMiddleEast = () => {
                 </Link>
                 <a
                   href="#proof-band"
-                  onClick={() => trackCtaClick('see_proof', 'hero_secondary')}
+                  onClick={() => trackCtaClick('see_proof', 'hero_secondary', '#proof-band')}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-border text-foreground font-semibold hover:bg-muted transition-colors"
                 >
                   See regional proof points
@@ -811,7 +810,7 @@ const BionixusMarketResearchMiddleEast = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to={contactHref}
-                  onClick={() => trackCtaClick('request_research_scope', 'mid_scroll')}
+                  onClick={() => trackCtaClick('request_research_scope', 'mid_scroll', contactHref)}
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-primary font-semibold hover:bg-white/90 transition-colors"
                 >
                   Request your research scope
@@ -819,7 +818,7 @@ const BionixusMarketResearchMiddleEast = () => {
                 </Link>
                 <Link
                   to="/market-research"
-                  onClick={() => trackCtaClick('explore_market_research_hub', 'mid_scroll')}
+                  onClick={() => trackCtaClick('explore_market_research_hub', 'mid_scroll', '/market-research')}
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
                 >
                   Explore service architecture
@@ -960,7 +959,7 @@ const BionixusMarketResearchMiddleEast = () => {
                 sourcePage="/bionixus-market-research-middle-east"
                 sourceUrl="https://www.bionixus.com/bionixus-market-research-middle-east"
                 submitLabel="Send brief"
-                onSubmitClick={() => trackCtaClick('download_research_brief', 'post_faq')}
+                onSubmitClick={() => trackCtaClick('download_research_brief', 'post_faq', '/bionixus-market-research-middle-east')}
               />
             </article>
           </div>
@@ -980,7 +979,7 @@ const BionixusMarketResearchMiddleEast = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to={contactHref}
-                  onClick={() => trackCtaClick('book_strategy_call', 'final_cta')}
+                  onClick={() => trackCtaClick('book_strategy_call', 'final_cta', contactHref)}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
                 >
                   Book a strategy call
@@ -988,14 +987,14 @@ const BionixusMarketResearchMiddleEast = () => {
                 </Link>
                 <Link
                   to="/healthcare-market-research"
-                  onClick={() => trackCtaClick('visit_healthcare_hub', 'final_cta')}
+                  onClick={() => trackCtaClick('visit_healthcare_hub', 'final_cta', '/healthcare-market-research')}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/30 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
                 >
                   Explore healthcare market research hub
                 </Link>
                 <Link
                   to="/bionixus-middle-east-africa"
-                  onClick={() => trackCtaClick('visit_mea_hub', 'final_cta')}
+                  onClick={() => trackCtaClick('visit_mea_hub', 'final_cta', '/bionixus-middle-east-africa')}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/30 text-primary-foreground font-semibold hover:bg-white/10 transition-colors"
                 >
                   BioNixus Middle East &amp; Africa solutions
@@ -1009,7 +1008,7 @@ const BionixusMarketResearchMiddleEast = () => {
       <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background/95 backdrop-blur p-3 md:hidden">
         <Link
           to={contactHref}
-          onClick={() => trackCtaClick('book_strategy_call', 'sticky_mobile')}
+          onClick={() => trackCtaClick('book_strategy_call', 'sticky_mobile', contactHref)}
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
         >
           Talk to a strategy lead

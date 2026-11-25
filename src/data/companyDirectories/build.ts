@@ -234,6 +234,12 @@ export function finishHub(input: DirectoryHubInput): DirectoryHubConfig {
     path = e.hubPath ?? `/${input.entity}`;
     title = `${e.labelPlural} by Country (2026 Directories) | BioNixus`;
     h1 = `${e.labelPlural} by country`;
+    // Approved 26 Nov 2026. The shared template is 65 characters and the SSR
+    // fitter cuts it mid-bracket. This hub ships a 50-character title with no
+    // brand suffix so it is not trimmed. The h1 stays on the shared template.
+    if (input.entity === 'medical-device-companies') {
+      title = 'Medical Device Company Directory by Country (2026)';
+    }
   }
   return {
     ...input,
