@@ -15,10 +15,13 @@ function headOf(html: string) {
 
 function expectConsentBeforeGtm(html: string, containerId: string) {
   const head = headOf(html);
+  const charset = head.search(/<meta\s+charset=/i);
   const consent = head.indexOf("gtag('consent', 'default'");
   const gtm = head.indexOf('https://www.googletagmanager.com/gtm.js?id=');
-  expect(consent).toBeGreaterThan(-1);
+  expect(charset).toBeGreaterThan(-1);
+  expect(consent).toBeGreaterThan(charset);
   expect(gtm).toBeGreaterThan(consent);
+  expect(html).not.toContain('__gtmLoaded');
   for (const key of ['analytics_storage', 'ad_storage', 'ad_user_data', 'ad_personalization']) {
     expect(head.slice(consent, gtm)).toContain(`${key}: 'denied'`);
   }
