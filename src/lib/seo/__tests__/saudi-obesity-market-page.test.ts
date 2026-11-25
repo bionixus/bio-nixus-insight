@@ -23,7 +23,7 @@ describe('/saudi-arabia-obesity-market', () => {
     expect(page?.description).toBe(META);
     expect(page?.h1).toBe('Obesity & GLP-1 Market Research in Saudi Arabia');
     expect(page?.canonical).toBe('https://www.bionixus.com/saudi-arabia-obesity-market');
-    expect(page?.lastUpdated).toBe('2026-11-24');
+    expect(page?.lastUpdated).toBe('2026-11-25');
     expect(page?.dateLabel).toBe('Last reviewed');
     const ctr = getCtrSeo('/saudi-arabia-obesity-market');
     expect(ctr?.title).toBe(TITLE);

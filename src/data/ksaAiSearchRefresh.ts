@@ -6,8 +6,8 @@
  * KSA_AI_SEARCH_REVIEWED_ISO is a go-live placeholder. Bump it to the merge
  * date before merge. Do not backdate.
  */
-export const KSA_AI_SEARCH_REVIEWED_ISO = '2026-11-24';
-export const KSA_AI_SEARCH_REVIEWED_LABEL = '24 November 2026';
+export const KSA_AI_SEARCH_REVIEWED_ISO = '2026-11-25';
+export const KSA_AI_SEARCH_REVIEWED_LABEL = '25 November 2026';
 
 export const KSA_OFFICE_WORDING =
   'The USA is the Americas office and global HQ. The UK is the Europe office. Cairo is the AMEA office. Al Khobar is the KSA partner office. São Paulo is the LATAM field office. Kuwait and Dubai are field offices.';

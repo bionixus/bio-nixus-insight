@@ -51,7 +51,7 @@ describe('KSA AI-search refresh', () => {
     const post = MENTAL_HEALTH_SAUDI_ARTICLE.post;
     const summary = typeof post.executiveSummary === 'string' ? post.executiveSummary : '';
     expect(summary.startsWith(`<p>${KSA_AI_SEARCH_PAGES.mentalHealth.opening}`)).toBe(true);
-    expect(summary).toContain('Last reviewed: 24 November 2026.');
+    expect(summary).toContain('Last reviewed: 25 November 2026.');
     expect(post.faq?.[0]?.question).toBe(KSA_AI_SEARCH_PAGES.mentalHealth.firstFaqQuestion);
     expect(post.faq?.length).toBeGreaterThanOrEqual(5);
     expect(post.faq?.length).toBeLessThanOrEqual(7);
