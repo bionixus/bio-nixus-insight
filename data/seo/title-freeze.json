@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03",
+  "generatedAt": "2026-11-25",
   "source": "data/gsc/current-week/Pages.csv",
   "minImpressions": 100,
   "freezeWeeks": 8,
@@ -809,10 +809,10 @@
     },
     "/iqvia-alternative": {
       "impressions": 3608,
-      "frozenAt": "2026-11-03",
+      "frozenAt": "2026-11-25",
       "override": {
-        "title": "IQVIA Alternative Middle East: Primary Research 2026 | BioNixus",
-        "description": "IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours."
+        "title": "Companies Like IQVIA: GCC Primary Research Alternative (2026)",
+        "description": "Companies like IQVIA for GCC primary research: BioNixus runs HCP, payer and patient fieldwork in Saudi, UAE, Egypt — keep syndicated panels for sizing. 127 studies in 2026; proposal in 48 hours."
       }
     },
     "/italy-medical-devices-market-report": {
