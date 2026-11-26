@@ -14,9 +14,39 @@ import {
 } from '@/data/qualificationFormOptions';
 import {
   isScopingCallCountry,
-  SCOPING_CALL_FEATURED_COUNTRIES,
-  SCOPING_CALL_OTHER_COUNTRIES,
+  SCOPING_CALL_ALPHABETICAL_COUNTRIES,
+  SCOPING_CALL_COMMON_CHOICES,
+  SCOPING_CALL_FAVORED_COUNTRIES,
+  SCOPING_CALL_MULTI_COUNTRY,
+  SCOPING_CALL_OTHER_COUNTRY,
+  serializeScopingCallMarkets,
 } from '@/data/scopingCallCountryOptions';
+
+const SELECT_CLASS =
+  'w-full px-3.5 py-2.5 rounded-lg border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors';
+
+function ScopingCountryOptions({ includeMulti }: { includeMulti: boolean }) {
+  const common = includeMulti ? SCOPING_CALL_COMMON_CHOICES : SCOPING_CALL_FAVORED_COUNTRIES;
+  return (
+    <>
+      <optgroup label="Common choices">
+        {common.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </optgroup>
+      <optgroup label="All countries">
+        {SCOPING_CALL_ALPHABETICAL_COUNTRIES.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </optgroup>
+      <option value={SCOPING_CALL_OTHER_COUNTRY}>{SCOPING_CALL_OTHER_COUNTRY}</option>
+    </>
+  );
+}
 
 const ERROR_EMAIL = 'admin@bionixus.com';
 const GENERIC_ERROR = 'Something went wrong — please try again or email us directly.';
@@ -68,6 +98,10 @@ export function QualificationForm({
   const visibleMarkets = showAllMarkets ? QUALIFICATION_FORM_MARKETS : priorityMarkets;
   const dropdownDefaultMarket =
     marketsControl === 'dropdown' ? (defaultMarkets?.find((market) => isScopingCallCountry(market)) ?? '') : '';
+  const [countryChoice, setCountryChoice] = useState(dropdownDefaultMarket);
+  const [mainCountry, setMainCountry] = useState('');
+  const [otherCountriesText, setOtherCountriesText] = useState('');
+  const showMultiCountry = marketsControl === 'dropdown' && countryChoice === SCOPING_CALL_MULTI_COUNTRY;
 
   const handleFirstInteraction = () => {
     if (started) return;
@@ -90,6 +124,9 @@ export function QualificationForm({
     if (!(data.get('company') as string)?.trim()) next.company = 'Company is required';
     if (!(data.get('role') as string)?.trim()) next.role = 'Role is required';
     if (!(data.get('need') as string)?.trim()) next.need = 'Please select what you need';
+    if (marketsControl === 'dropdown' && !(data.get('budget') as string)?.trim()) {
+      next.budget = 'Please select a budget range';
+    }
 
     setErrors(next);
     setSubmitError(null);
@@ -110,7 +147,10 @@ export function QualificationForm({
     const company = (data.get('company') as string)?.trim() || '';
     const role = (data.get('role') as string)?.trim() || '';
     const need = (data.get('need') as string)?.trim() || '';
-    const markets = data.getAll('markets').join(', ');
+    const markets =
+      marketsControl === 'dropdown'
+        ? serializeScopingCallMarkets(countryChoice, mainCountry, otherCountriesText)
+        : data.getAll('markets').join(', ');
     const timeline = (data.get('timeline') as string)?.trim() || '';
     const budget = (data.get('budget') as string)?.trim() || '';
     const currentUrl = window.location.href;
@@ -316,32 +356,60 @@ export function QualificationForm({
       </div>
 
       {marketsControl === 'dropdown' ? (
-        <div>
-          <label htmlFor={`${formId}-markets`} className="block text-sm font-medium text-foreground mb-1.5">
-            Country
-          </label>
-          <select
-            id={`${formId}-markets`}
-            name="markets"
-            defaultValue={dropdownDefaultMarket}
-            className="w-full px-3.5 py-2.5 rounded-lg border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-          >
-            <option value="">Select a country…</option>
-            <optgroup label="Common choices">
-              {SCOPING_CALL_FEATURED_COUNTRIES.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </optgroup>
-            <optgroup label="All countries">
-              {SCOPING_CALL_OTHER_COUNTRIES.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </optgroup>
-          </select>
+        <div className="space-y-4">
+          <div>
+            <label htmlFor={`${formId}-markets`} className="block text-sm font-medium text-foreground mb-1.5">
+              Country
+            </label>
+            <select
+              id={`${formId}-markets`}
+              name="markets"
+              value={countryChoice}
+              onChange={(event) => {
+                const value = event.target.value;
+                setCountryChoice(value);
+                if (value !== SCOPING_CALL_MULTI_COUNTRY) {
+                  setMainCountry('');
+                  setOtherCountriesText('');
+                }
+              }}
+              className={`${SELECT_CLASS} border-input`}
+            >
+              <option value="">Select a country…</option>
+              <ScopingCountryOptions includeMulti />
+            </select>
+          </div>
+          {showMultiCountry ? (
+            <>
+              <div>
+                <label htmlFor={`${formId}-main-country`} className="block text-sm font-medium text-foreground mb-1.5">
+                  Main country
+                </label>
+                <select
+                  id={`${formId}-main-country`}
+                  value={mainCountry}
+                  onChange={(event) => setMainCountry(event.target.value)}
+                  className={`${SELECT_CLASS} border-input`}
+                >
+                  <option value="">Select a country…</option>
+                  <ScopingCountryOptions includeMulti={false} />
+                </select>
+              </div>
+              <div>
+                <label htmlFor={`${formId}-other-countries`} className="block text-sm font-medium text-foreground mb-1.5">
+                  Other countries
+                </label>
+                <input
+                  id={`${formId}-other-countries`}
+                  type="text"
+                  value={otherCountriesText}
+                  onChange={(event) => setOtherCountriesText(event.target.value)}
+                  placeholder="e.g. UAE, Germany, Japan"
+                  className={`${SELECT_CLASS} border-input`}
+                />
+              </div>
+            </>
+          ) : null}
         </div>
       ) : (
         <fieldset>
@@ -391,19 +459,31 @@ export function QualificationForm({
         </div>
         <div>
           <label htmlFor={`${formId}-budget`} className="block text-sm font-medium text-foreground mb-1.5">
-            Budget range <span className="text-muted-foreground font-normal">(optional)</span>
+            Budget range
+            {marketsControl === 'dropdown' ? <span className="text-destructive"> *</span> : (
+              <span className="text-muted-foreground font-normal"> (optional)</span>
+            )}
           </label>
           <select
             id={`${formId}-budget`}
             name="budget"
+            aria-invalid={Boolean(errors.budget)}
+            required={marketsControl === 'dropdown'}
             defaultValue=""
-            className="w-full px-3.5 py-2.5 rounded-lg border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+            className={`${SELECT_CLASS} ${errors.budget ? 'border-destructive' : 'border-input'}`}
           >
-            <option value="">Prefer not to say</option>
+            {marketsControl === 'dropdown' ? (
+              <option value="" disabled>
+                Select…
+              </option>
+            ) : (
+              <option value="">Prefer not to say</option>
+            )}
             {QUALIFICATION_FORM_BUDGETS.map((opt) => (
               <option key={opt} value={opt}>{opt}</option>
             ))}
           </select>
+          {errors.budget ? <p className="text-xs text-destructive mt-1">{errors.budget}</p> : null}
         </div>
       </div>
 
