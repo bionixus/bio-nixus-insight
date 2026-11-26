@@ -117,6 +117,7 @@ const BrazilHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Brazil is Latin America's largest healthcare market and a dual-channel commercial environment — SUS universal public healthcare serving 170+ million patients alongside a 50-million-strong ANS-regulated private insurance sector. For methods and multi-country coverage, start from BioNixus's <Link to="/healthcare-market-research" className="text-primary hover:underline font-medium">healthcare market research hub</Link>. The CONITEC HTA pathway for SUS incorporation and CMED price regulation are the dominant access mechanisms; premium private hospitals operate at international price points with minimal regulation.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">Regional affiliates use this report when sizing LATAM alongside GCC launches — ANVISA registration, CMED price caps, and CONITEC incorporation timing differ sharply from SFDA or MOHAP pathways, so cross-regional portfolio teams need Brazil-specific access assumptions before they reuse an Middle East demand model.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>

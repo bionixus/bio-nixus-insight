@@ -117,6 +117,7 @@ const TurkeyHealthcareMarketReport = () => (
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-4">Turkey is the largest healthcare market between Europe and the GCC — a 87-million-population market with near-universal SGK coverage, EMA-aligned regulation, and the world's fourth-largest medical tourism sector. Its position at the Europe-MENA crossroads creates natural strategic relevance for pharmaceutical companies managing multi-regional portfolios.</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">TİTCK marketing authorisation and SGK SUT reimbursement still run on different clocks — manufacturers brief BioNixus when a launch plan needs realistic listing-to-formulary timelines across public city hospitals, university hospitals, and private chains that do not share one P&amp;T committee.</p>
           <p className="text-muted-foreground leading-relaxed">For GCC/MENA intelligence, see our <Link to="/gcc-pharma-market-report-2026" className="text-primary hover:underline font-medium">GCC Pharmaceutical Market Report 2026</Link>.</p>
         </div>
       </section>

@@ -1,4 +1,6 @@
 import type { IndustryDirectoryConfig } from '@/data/industryCompanyDirectories';
+import { getFmcgLegacyDeepContent } from '@/data/seo/fmcgLegacyDeepContent';
+import { getRetailLegacyDeepContent } from '@/data/seo/retailLegacyDeepContent';
 import { DIRECTORY_COUNTRIES } from './countries';
 import { DIRECTORY_ENTITIES } from './entities';
 import { DIRECTORY_MASTER_HUB_PATH, countryHubPath, hasCountryHub, hasEntityHub } from './build';
@@ -18,6 +20,17 @@ const INDUSTRY_TO_ENTITY: Record<IndustryDirectoryConfig['industry'], DirectoryE
 export function adaptIndustryDirectory(cfg: IndustryDirectoryConfig): DirectoryPageConfig {
   const entity = INDUSTRY_TO_ENTITY[cfg.industry];
   const countrySlug = cfg.countrySlug as DirectoryCountrySlug;
+
+  const retailDeep = cfg.industry === 'retail' ? getRetailLegacyDeepContent(cfg.countrySlug) : undefined;
+  const fmcgDeep = cfg.industry === 'fmcg' ? getFmcgLegacyDeepContent(cfg.countrySlug) : undefined;
+  const legacyDeep = retailDeep ?? fmcgDeep;
+  const sections = legacyDeep?.sections ?? cfg.sections;
+  const fieldNotes = legacyDeep?.fieldNotes ?? cfg.fieldNotes ?? [];
+  const sources = legacyDeep?.sources ?? cfg.sources ?? [];
+  const regulatorSource = legacyDeep?.regulatorSource ?? cfg.regulatorSource;
+  const faq = legacyDeep ? [...cfg.faq, ...legacyDeep.additionalFaq] : cfg.faq;
+  const modifiedDate = legacyDeep?.modifiedDate ?? cfg.modifiedDate;
+
   return {
     entity,
     countrySlug,
@@ -33,11 +46,11 @@ export function adaptIndustryDirectory(cfg: IndustryDirectoryConfig): DirectoryP
     companies: cfg.companies,
     categoryBlurbs: cfg.categoryBlurbs,
     growthDrivers: cfg.growthDrivers,
-    sections: cfg.sections,
-    faq: cfg.faq,
-    regulatorSource: cfg.regulatorSource,
-    sources: cfg.sources ?? [],
-    fieldNotes: cfg.fieldNotes ?? [],
+    sections,
+    faq,
+    regulatorSource,
+    sources,
+    fieldNotes,
     entityMeta: DIRECTORY_ENTITIES[entity],
     country: DIRECTORY_COUNTRIES[countrySlug],
     listicleTo: cfg.listicleTo,
@@ -51,7 +64,7 @@ export function adaptIndustryDirectory(cfg: IndustryDirectoryConfig): DirectoryP
       entity: hasEntityHub(entity) ? DIRECTORY_ENTITIES[entity].hubPath : undefined,
     },
     publishedDate: cfg.publishedDate,
-    modifiedDate: cfg.modifiedDate,
+    modifiedDate,
     legacyIndustryConfig: true,
   };
 }
