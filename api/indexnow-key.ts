@@ -17,7 +17,7 @@ import { resolveUntranslatedLocaleRedirect } from '../lib/untranslated-locale-re
 import { stripDefaultOrganizationJsonLd } from '../lib/strip-industries-insights-org.mjs';
 import { dedupeBlogOpenGraphTags } from '../lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from '../lib/robots-meta.mjs';
-import { fitBrandedSeoTitle, titleHasBrandSuffix } from '../src/server/seo-meta.js';
+import { fitBrandedSeoTitle, titleHasBrandSuffix, truncateSeoTitleAtWordBoundary } from '../src/server/seo-meta.js';
 import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from '../lib/html-meta-escape.mjs';
 import { applyGtmContainerId } from '../lib/gtmConsentHtml.mjs';
 
@@ -242,14 +242,6 @@ function decodeTitleEntities(s: string): string {
     .replace(/&#39;|&apos;/g, "'");
 }
 
-function truncateAtWordBoundary(text: string, max: number): string {
-  const slice = text.slice(0, Math.max(0, max - 1));
-  const lastSpace = slice.lastIndexOf(' ');
-  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice;
-  const trimmed = cut.trim().replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '');
-  return `${trimmed}…`;
-}
-
 function normalizeTitleLength(title: string, max = 60, pathname?: string): string {
   const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
@@ -265,10 +257,10 @@ function normalizeTitleLength(title: string, max = 60, pathname?: string): strin
     const prefix = clean.slice(0, clean.length - suffix.length).trim();
     const prefixMax = Math.max(12, max - suffix.length - 1);
     if (prefix.length <= prefixMax) return `${prefix} ${suffix}`;
-    return `${truncateAtWordBoundary(prefix, prefixMax)} ${suffix}`;
+    return `${truncateSeoTitleAtWordBoundary(prefix, prefixMax)} ${suffix}`;
   }
 
-  return truncateAtWordBoundary(clean, max);
+  return truncateSeoTitleAtWordBoundary(clean, max);
 }
 
 function buildFallbackDescription(pathname: string): string {

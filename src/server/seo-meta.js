@@ -98,6 +98,35 @@ function tailIsDangling(words) {
   return DANGLING_TAIL.test(tailToken(words[words.length - 1]));
 }
 
+/**
+ * Drop an unmatched "(" and everything after it.
+ * Word-budget cuts otherwise leave `(2026` when the closing token was the next word.
+ */
+export function stripUnclosedParenthetical(text) {
+  const stack = [];
+  for (let i = 0; i < text.length; i += 1) {
+    const ch = text[i];
+    if (ch === '(') stack.push(i);
+    else if (ch === ')' && stack.length > 0) stack.pop();
+  }
+  if (stack.length === 0) return text;
+  return text
+    .slice(0, stack[0])
+    .replace(/[\s|.,;:\-–—&]+$/g, '')
+    .trim();
+}
+
+function phraseWithinBudget(words, budget) {
+  const next = [...words];
+  while (next.length > 1 && (seoTitleCodePoints(next.join(' ')) > budget || tailIsDangling(next))) {
+    next.pop();
+  }
+  while (next.length > 0 && tailIsDangling(next)) next.pop();
+  const phrase = next.join(' ').trim();
+  if (next.length > 0 && seoTitleCodePoints(phrase) <= budget) return phrase;
+  return '';
+}
+
 /** Drop words from the end until the phrase fits and does not end on a dangling token. No ellipsis. */
 export function cleanPhraseToBudget(text, budget) {
   const words = String(text || '')
@@ -114,9 +143,25 @@ export function cleanPhraseToBudget(text, budget) {
     words[words.length - 1] = words[words.length - 1].replace(/[|.,;:\-–—&\s]+$/g, '');
   }
   while (words.length > 0 && tailIsDangling(words)) words.pop();
-  const phrase = words.join(' ').trim();
+  const joined = words.join(' ').trim();
+  const closed = stripUnclosedParenthetical(joined);
+  const phrase = closed === joined ? joined : phraseWithinBudget(closed.split(' ').filter(Boolean), budget);
   if (seoTitleCodePoints(phrase) <= budget) return phrase;
   return '';
+}
+
+/**
+ * Word-boundary truncation used by the SSR shell for unbranded titles over 60.
+ * An unmatched "(" is removed before the ellipsis so the year group is not left open.
+ */
+export function truncateSeoTitleAtWordBoundary(text, max) {
+  const slice = text.slice(0, Math.max(0, max - 1));
+  const lastSpace = slice.lastIndexOf(' ');
+  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice;
+  const trimmed = cut.trim().replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '');
+  const closed = stripUnclosedParenthetical(trimmed);
+  const base = closed || trimmed.replace(/[()]/g, '').trim();
+  return `${base}…`;
 }
 
 function recordSeoTitleFallback(source, result) {

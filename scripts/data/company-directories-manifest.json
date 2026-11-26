@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T23:03:25.988Z",
+  "generatedAt": "2026-11-26T11:11:04.151Z",
   "directories": [
     {
       "path": "/automotive-distributors-bahrain",
@@ -3461,18 +3461,18 @@
     {
       "path": "/pharmaceutical-companies",
       "kind": "entity",
-      "title": "Pharmaceutical Companies by Country (2026 Directories) | BioNixus",
+      "title": "Pharmaceutical Company Directory by Country (2026)",
       "metaDescription": "Pharmaceutical company directories for 50+ countries: local manufacturers, MNC affiliates and regional groups across the Gulf, Africa, Asia, Europe and Latin America.",
-      "lastmod": "2026-09-03",
+      "lastmod": "2026-11-26",
       "priority": "0.86",
       "changefreq": "weekly"
     },
     {
       "path": "/pharmaceutical-distributors",
       "kind": "entity",
-      "title": "Pharmaceutical Distributors by Country (2026 Directories) | BioNixus",
+      "title": "Pharmaceutical Distributor Directory by Country (2026)",
       "metaDescription": "Pharmaceutical distributor directories by country: licensed agents, wholesalers, public buyers and cold-chain 3PLs across the Gulf, Egypt, Levant, Turkey and Pakistan.",
-      "lastmod": "2026-09-03",
+      "lastmod": "2026-11-26",
       "priority": "0.86",
       "changefreq": "weekly"
     },

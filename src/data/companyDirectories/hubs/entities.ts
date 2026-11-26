@@ -8,6 +8,7 @@ import type { DirectoryHubInput } from '../types';
 export const pharmaceuticalCompaniesHub: DirectoryHubInput = {
   kind: 'entity',
   entity: 'pharmaceutical-companies',
+  modifiedDate: '2026-11-26',
   metaDescription:
     'Pharmaceutical company directories for 50+ countries: local manufacturers, MNC affiliates and regional groups across the Gulf, Africa, Asia, Europe and Latin America.',
   intro: [
@@ -52,6 +53,7 @@ export const pharmaceuticalCompaniesHub: DirectoryHubInput = {
 export const pharmaceuticalDistributorsHub: DirectoryHubInput = {
   kind: 'entity',
   entity: 'pharmaceutical-distributors',
+  modifiedDate: '2026-11-26',
   metaDescription:
     'Pharmaceutical distributor directories by country: licensed agents, wholesalers, public buyers and cold-chain 3PLs across the Gulf, Egypt, Levant, Turkey and Pakistan.',
   intro: [

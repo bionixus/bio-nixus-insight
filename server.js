@@ -6,7 +6,7 @@ import compression from 'compression';
 import { canonicalRedirectTarget, isSsrNotFoundPage, stripNotFoundDiscoveryTags } from './seo-noise-query.mjs';
 import { BLOG_DUPLICATE_EN_BLOGPATH_TO_AR_PATH, BLOG_LEGACY_FULL_PATH_REDIRECTS } from './blog-legacy-redirects.mjs';
 import { getBlogMetaDescriptionOverride } from './blog-crawler-stubs.mjs';
-import { fitBrandedSeoTitle, formatMetaDescriptionInRange, titleHasBrandSuffix } from './src/server/seo-meta.js';
+import { fitBrandedSeoTitle, formatMetaDescriptionInRange, titleHasBrandSuffix, truncateSeoTitleAtWordBoundary } from './src/server/seo-meta.js';
 import { getCtrSeo, isCtrSeoPath } from './lib/ctr-seo-overrides.mjs';
 import { normalizeOgCardPath, renderOgCardSvg } from './lib/og-card-svg.mjs';
 import {
@@ -345,22 +345,7 @@ function decodeTitleEntities(s) {
     .replace(/&#39;|&apos;/g, "'");
 }
 
-/**
- * Word-boundary-aware truncation with an explicit ellipsis marker — mirrors
- * `withEllipsis()` in src/lib/seo-meta.ts so the SSR-rendered title matches
- * what the client re-renders after hydration (no title flicker), and so a
- * truncated title reads as visibly truncated rather than silently cut off
- * mid-word.
- */
-function truncateAtWordBoundary(text, max) {
-  const slice = text.slice(0, Math.max(0, max - 1))
-  const lastSpace = slice.lastIndexOf(' ')
-  const cut = lastSpace > Math.floor(max * 0.45) ? slice.slice(0, lastSpace) : slice
-  const trimmed = cut.trim().replace(/(?:\s*\|\s*\.?)+$/g, '').replace(/[|.,;:\-–—\s]+$/g, '')
-  return `${trimmed}…`
-}
-
-/** Keep in sync with TITLE_MAX in src/lib/seo-meta.ts. */
+/** Keep in sync with TITLE_MAX and truncateSeoTitleAtWordBoundary in src/lib/seo-meta.ts. */
 function normalizeTitleLength(title, max = 60, pathname) {
   const clean = decodeTitleEntities(String(title || '').replace(/\s+/g, ' ').trim());
   if (!clean) return 'BioNixus';
@@ -377,10 +362,10 @@ function normalizeTitleLength(title, max = 60, pathname) {
     const prefix = clean.slice(0, clean.length - suffix.length).trim();
     const prefixMax = Math.max(12, max - suffix.length - 1);
     if (prefix.length <= prefixMax) return `${prefix} ${suffix}`;
-    return `${truncateAtWordBoundary(prefix, prefixMax)} ${suffix}`;
+    return `${truncateSeoTitleAtWordBoundary(prefix, prefixMax)} ${suffix}`;
   }
 
-  return truncateAtWordBoundary(clean, max);
+  return truncateSeoTitleAtWordBoundary(clean, max);
 }
 
 function buildFallbackDescription(pathname) {
