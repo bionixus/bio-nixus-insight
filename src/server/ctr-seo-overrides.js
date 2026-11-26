@@ -661,9 +661,9 @@ export const CTR_SEO_BY_PATH = {
       'Top hematology market research companies 2026: BioNixus vs IQVIA, Oracle, Adelphi. Anonymous PRFs, line-of-therapy brand trackers, malignant + benign.',
   },
   '/fmcg-companies-egypt': {
-    title: 'Top FMCG Companies in Egypt (2026) | Traditional Trade',
+    title: 'FMCG Companies in Egypt (2026): Edita, Juhayna, MNCs | BioNixus',
     description:
-      '2026 list of FMCG companies in Egypt — Edita, Juhayna, MNCs, bakals vs modern trade. Account-level research by BioNixus.',
+      'FMCG companies in Egypt — Edita, Juhayna, Domty, bakals vs Metro. Account-level brand research; complement syndicated modern-trade panels.',
   },
   '/fmcg-companies-uae': {
     title: 'FMCG Companies in UAE (2026): Agthia, IFFCO, MNCs | BioNixus',
@@ -671,9 +671,9 @@ export const CTR_SEO_BY_PATH = {
       'FMCG companies in the UAE — Agthia, IFFCO, Al Rawabi, Nestlé, Unilever; union Coop vs souk. Account-level SKU research; complement Nielsen panels.',
   },
   '/fmcg-companies-saudi-arabia': {
-    title: 'Top FMCG Companies in Saudi Arabia (2026) | Trade Mix',
+    title: 'FMCG Companies in Saudi Arabia (2026): Almarai, Savola | BioNixus',
     description:
-      '2026 list of FMCG companies in Saudi Arabia — Almarai, Savola, NADEC, MNCs. Account-level research by BioNixus.',
+      'FMCG companies in Saudi Arabia — Almarai, Savola, NADEC, Panda listing, traditional trade. Account-level SKU research; complement Nielsen panels.',
   },
   '/fmcg-companies-kuwait': {
     title: 'Top FMCG Companies in Kuwait (2026) | Trade Mix',

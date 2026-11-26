@@ -1,4 +1,5 @@
 import type { IndustryDirectoryConfig } from '@/data/industryCompanyDirectories';
+import { getFmcgLegacyDeepContent } from '@/data/seo/fmcgLegacyDeepContent';
 import { getRetailLegacyDeepContent } from '@/data/seo/retailLegacyDeepContent';
 import { DIRECTORY_COUNTRIES } from './countries';
 import { DIRECTORY_ENTITIES } from './entities';
@@ -21,12 +22,14 @@ export function adaptIndustryDirectory(cfg: IndustryDirectoryConfig): DirectoryP
   const countrySlug = cfg.countrySlug as DirectoryCountrySlug;
 
   const retailDeep = cfg.industry === 'retail' ? getRetailLegacyDeepContent(cfg.countrySlug) : undefined;
-  const sections = retailDeep?.sections ?? cfg.sections;
-  const fieldNotes = retailDeep?.fieldNotes ?? cfg.fieldNotes ?? [];
-  const sources = retailDeep?.sources ?? cfg.sources ?? [];
-  const regulatorSource = retailDeep?.regulatorSource ?? cfg.regulatorSource;
-  const faq = retailDeep ? [...cfg.faq, ...retailDeep.additionalFaq] : cfg.faq;
-  const modifiedDate = retailDeep?.modifiedDate ?? cfg.modifiedDate;
+  const fmcgDeep = cfg.industry === 'fmcg' ? getFmcgLegacyDeepContent(cfg.countrySlug) : undefined;
+  const legacyDeep = retailDeep ?? fmcgDeep;
+  const sections = legacyDeep?.sections ?? cfg.sections;
+  const fieldNotes = legacyDeep?.fieldNotes ?? cfg.fieldNotes ?? [];
+  const sources = legacyDeep?.sources ?? cfg.sources ?? [];
+  const regulatorSource = legacyDeep?.regulatorSource ?? cfg.regulatorSource;
+  const faq = legacyDeep ? [...cfg.faq, ...legacyDeep.additionalFaq] : cfg.faq;
+  const modifiedDate = legacyDeep?.modifiedDate ?? cfg.modifiedDate;
 
   return {
     entity,
