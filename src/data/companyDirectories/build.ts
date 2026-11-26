@@ -220,6 +220,92 @@ export function toListing(input: DirectoryPageInput): DirectoryListing {
   };
 }
 
+function codePoints(value: string): number {
+  return Array.from(value).length;
+}
+
+function parenthesesBalanced(value: string): boolean {
+  let open = 0;
+  for (const ch of value) {
+    if (ch === '(') open += 1;
+    else if (ch === ')') {
+      open -= 1;
+      if (open < 0) return false;
+    }
+  }
+  return open === 0;
+}
+
+/** True when the SSR title fitter will emit this string unchanged. */
+function hubTitleShipsIntact(title: string): boolean {
+  return codePoints(title) <= 60 && parenthesesBalanced(title);
+}
+
+function titleCaseHubLabel(value: string): string {
+  return value
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((word) => (word === word.toUpperCase() ? word : word.charAt(0).toUpperCase() + word.slice(1)))
+    .join(' ');
+}
+
+const ENTITY_HUB_TITLE_TAIL = ' Directory by Country (2026)';
+
+/**
+ * `{Singular} Directory by Country (2026)`. The year group stays closed and the
+ * string stays within 60 code points, so the SSR fitter does not trim a bracket.
+ * `/medical-device-companies` is this shape at 50 characters.
+ */
+export function entityDirectoryHubTitle(labelSingular: string): string {
+  const words = titleCaseHubLabel(labelSingular).split(' ');
+  while (words.length > 1 && codePoints(`${words.join(' ')}${ENTITY_HUB_TITLE_TAIL}`) > 60) {
+    words.pop();
+  }
+  let head = words.join(' ').trim();
+  const budget = 60 - codePoints(ENTITY_HUB_TITLE_TAIL);
+  if (codePoints(head) > budget) {
+    head = Array.from(head).slice(0, budget).join('').trim();
+  }
+  if (!head) head = 'Company';
+  return `${head}${ENTITY_HUB_TITLE_TAIL}`;
+}
+
+/** Approved 26 Nov 2026. Do not regenerate this from the label. */
+export const MEDICAL_DEVICE_HUB_TITLE = 'Medical Device Company Directory by Country (2026)';
+
+/**
+ * Keep a branded `(2026 Directories)` title when it already fits.
+ * Otherwise use the closed `(2026)` directory pattern so the fitter cannot
+ * cut the year group.
+ */
+export function entityHubTitle(entity: {
+  slug?: string;
+  labelPlural: string;
+  labelSingular: string;
+}): string {
+  if (entity.slug === 'medical-device-companies') return MEDICAL_DEVICE_HUB_TITLE;
+  const legacy = `${entity.labelPlural} by Country (2026 Directories) | BioNixus`;
+  if (hubTitleShipsIntact(legacy)) return legacy;
+  return entityDirectoryHubTitle(entity.labelSingular);
+}
+
+/**
+ * Keep `Top Companies in {place} by Industry (2026 Directories)` when it already
+ * fits (every published country hub does). Longer place names drop to a closed
+ * `(2026)` title instead of a mid-bracket trim.
+ */
+export function countryDirectoryHubTitle(place: string): string {
+  const legacy = `Top Companies in ${place} by Industry (2026 Directories)`;
+  if (hubTitleShipsIntact(legacy)) return legacy;
+  const closed = `Top Companies in ${place} by Industry (2026)`;
+  if (hubTitleShipsIntact(closed)) return closed;
+  const short = `Companies in ${place} (2026)`;
+  if (hubTitleShipsIntact(short)) return short;
+  const headBudget = 60 - codePoints(' (2026)');
+  const head = Array.from(`Companies in ${place}`).slice(0, headBudget).join('').trim();
+  return `${head} (2026)`;
+}
+
 export function finishHub(input: DirectoryHubInput): DirectoryHubConfig {
   let path = DIRECTORY_MASTER_HUB_PATH;
   let title = 'Company Directories by Country & Industry (2026) | BioNixus';
@@ -227,19 +313,13 @@ export function finishHub(input: DirectoryHubInput): DirectoryHubConfig {
   if (input.kind === 'country' && input.countrySlug) {
     const c = DIRECTORY_COUNTRIES[input.countrySlug];
     path = countryHubPath(input.countrySlug);
-    title = `Top Companies in ${c.titlePlace} by Industry (2026 Directories)`;
+    title = countryDirectoryHubTitle(c.titlePlace);
     h1 = `Companies in ${c.display}: directories by industry`;
   } else if (input.kind === 'entity' && input.entity) {
     const e = DIRECTORY_ENTITIES[input.entity];
     path = e.hubPath ?? `/${input.entity}`;
-    title = `${e.labelPlural} by Country (2026 Directories) | BioNixus`;
+    title = entityHubTitle(e);
     h1 = `${e.labelPlural} by country`;
-    // Approved 26 Nov 2026. The shared template is 65 characters and the SSR
-    // fitter cuts it mid-bracket. This hub ships a 50-character title with no
-    // brand suffix so it is not trimmed. The h1 stays on the shared template.
-    if (input.entity === 'medical-device-companies') {
-      title = 'Medical Device Company Directory by Country (2026)';
-    }
   }
   return {
     ...input,

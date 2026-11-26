@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { fitBrandedSeoTitle, seoTitleCodePoints, seoTitleWithBrandOnce, SeoTitleOverflowError } from '@/lib/seo-meta'
+import {
+  fitBrandedSeoTitle,
+  normalizeSeoTitle,
+  seoTitleCodePoints,
+  seoTitleWithBrandOnce,
+  SeoTitleOverflowError,
+  truncateSeoTitleAtWordBoundary,
+} from '@/lib/seo-meta'
 
 const FITS = [
   'Healthcare Market Research Companies Italy 2026 | BioNixus',
@@ -58,5 +65,33 @@ describe('fitBrandedSeoTitle', () => {
     expect(seoTitleWithBrandOnce('UK Market Entry Research: GCC and US Playbook 2026')).toBe(
       'UK Market Entry Research: GCC and US Playbook 2026',
     )
+  })
+
+  it('drops an unmatched year bracket instead of shipping (2026 | BioNixus', () => {
+    const legacy = [
+      'Pharmaceutical Companies by Country (2026 Directories) | BioNixus',
+      'Pharmaceutical Distributors by Country (2026 Directories) | BioNixus',
+    ]
+    const expected = [
+      'Pharmaceutical Companies by Country | BioNixus',
+      'Pharmaceutical Distributors by Country | BioNixus',
+    ]
+    legacy.forEach((title, index) => {
+      const result = fitBrandedSeoTitle(title)
+      expect(result).toBe(expected[index])
+      expect(result).not.toMatch(/\([^)]*\|/)
+      expect(seoTitleCodePoints(result)).toBeLessThanOrEqual(60)
+      expect(normalizeSeoTitle(title)).toBe(expected[index])
+    })
+
+    const cut = truncateSeoTitleAtWordBoundary(
+      'Top Companies in the United Arab Emirates by Industry (2026 Directories)',
+      60,
+    )
+    expect(cut.endsWith('…')).toBe(true)
+    expect(cut).not.toContain('(2026')
+    const opens = cut.split('(').length - 1
+    const closes = cut.split(')').length - 1
+    expect(opens).toBe(closes)
   })
 })
