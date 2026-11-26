@@ -62,9 +62,7 @@ function DeferredAnalytics() {
 
   return (
     <SilentBoundary>
-      <GoogleTagManager />
       <GoogleAnalytics />
-      <GA4EventTracker />
       <Suspense fallback={null}>
         <LazyStatsigInit />
         <LazyVercelAnalytics />
@@ -118,6 +116,8 @@ function AppProviders({ children }: { children: ReactNode }) {
           <MotionLayer />
           <GrowthEngineLayer />
           <LocalePrompt />
+          <GoogleTagManager />
+          <GA4EventTracker />
           <DeferredPageChrome />
           <DeferredAnalytics />
         </TooltipProvider>

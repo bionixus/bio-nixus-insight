@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T07:33:00.653Z",
+  "generatedAt": "2026-11-25T23:03:25.988Z",
   "directories": [
     {
       "path": "/automotive-distributors-bahrain",
@@ -3497,9 +3497,9 @@
     {
       "path": "/medical-device-companies",
       "kind": "entity",
-      "title": "Medical Device Companies by Country (2026 Directories) | BioNixus",
+      "title": "Medical Device Company Directory by Country (2026)",
       "metaDescription": "Medical device company directories by country: manufacturers, affiliates, distributors and public buyers across MENA, Europe, Asia and the Americas.",
-      "lastmod": "2026-09-03",
+      "lastmod": "2026-11-26",
       "priority": "0.86",
       "changefreq": "weekly"
     },

@@ -16,6 +16,7 @@ import { ClientPortalDialog } from '@/components/ClientPortalDialog';
 import { submitLeadDual } from '@/lib/submitLeadDual';
 import { isValidLeadEmail, LEAD_EMAIL_CHECK_ERROR } from '@/lib/leadEmailValidation';
 import { revealStatus } from '@/lib/formFeedback';
+import { trackLeadSubmitted } from '@/lib/analytics';
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -90,6 +91,7 @@ const Footer = () => {
       setNlStatus('already');
     } else if (subscribed?.success || leadResult?.ok) {
       setNlStatus('success');
+      trackLeadSubmitted({ formId: 'footer_newsletter' });
       setNlName('');
       setNlEmail('');
       setNlConsent(false);

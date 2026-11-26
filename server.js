@@ -23,6 +23,7 @@ import { stripDefaultOrganizationJsonLd } from './lib/strip-industries-insights-
 import { dedupeBlogOpenGraphTags } from './lib/dedupe-blog-og-tags.mjs';
 import { ensureRobotsMeta } from './lib/robots-meta.mjs';
 import { decodeHtmlEntities, escapeHtmlAttribute, normalizeDescriptionMetaTags } from './lib/html-meta-escape.mjs';
+import { applyGtmContainerId } from './lib/gtmConsentHtml.mjs';
 import { handleRedirectEnd, handleRedirectExport, handleRedirectStart, REDIRECT_OUTCOMES } from './lib/redirect-log.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -1122,6 +1123,7 @@ async function startServer() {
       if (!isProduction) {
         template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
         template = await vite.transformIndexHtml(url, template);
+        template = applyGtmContainerId(template);
 
         const serverMod = await vite.ssrLoadModule('/src/server-entry.ts');
         render = serverMod.render;
@@ -1131,7 +1133,7 @@ async function startServer() {
         const ssrTemplate = path.join(distClient, '_ssr-template.html');
         const indexHtml = path.join(distClient, 'index.html');
         const templateFile = fs.existsSync(ssrTemplate) ? ssrTemplate : indexHtml;
-        template = fs.readFileSync(templateFile, 'utf-8');
+        template = applyGtmContainerId(fs.readFileSync(templateFile, 'utf-8'));
 
         const serverMod = await import('./dist/server/server-entry.js');
         render = serverMod.render;

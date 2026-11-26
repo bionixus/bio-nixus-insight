@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { submitLeadDual } from '@/lib/submitLeadDual';
 import { revealStatus } from '@/lib/formFeedback';
 import { isValidLeadEmail } from '@/lib/leadEmailValidation';
+import { trackFormStart, trackLeadSubmitted } from '@/lib/analytics';
 
 const GENERIC_ERROR = 'Something went wrong. Email admin@bionixus.com and we will send it.';
 
@@ -36,6 +37,12 @@ export function EmailCaptureForm({
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const started = useRef(false);
+  const markStarted = () => {
+    if (started.current) return;
+    started.current = true;
+    trackFormStart({ formId: formVariant });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -55,6 +62,7 @@ export function EmailCaptureForm({
       const result = await submitLeadDual(data);
       if (result.ok) {
         setSubmitted(true);
+        trackLeadSubmitted({ formId: formVariant });
         form.reset();
       }
       else setSubmitError(result.invalidEmail && result.error ? result.error : GENERIC_ERROR);
@@ -107,6 +115,8 @@ export function EmailCaptureForm({
           aria-invalid={Boolean(error)}
           aria-describedby={error || submitError ? `${formVariant}-email-error` : undefined}
           placeholder={placeholder}
+          onFocus={markStarted}
+          onInput={markStarted}
           className="h-11 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
         />
         {error ? (

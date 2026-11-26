@@ -1,5 +1,3 @@
-import { hasAnalyticsConsent } from '@/lib/consent';
-
 type EventParams = Record<string, string | number | boolean | undefined>;
 
 /**
@@ -13,11 +11,13 @@ export function analyticsPagePath(loc?: { pathname?: string; search?: string }):
   return `${pathname}${search}`;
 }
 
-/** Fires a GA4 event via gtag, gated on cookie consent. Shared by GA4EventTracker and CTA/lead instrumentation. */
+/** Pushes an analytics event to the GTM dataLayer. Consent is enforced by Consent Mode v2 in GTM, so there is no client-side consent gate here. */
 export function trackGaEvent(eventName: string, params: EventParams = {}) {
-  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
-  if (!hasAnalyticsConsent()) return;
-  window.gtag('event', eventName, params);
+  if (typeof window === 'undefined') return;
+  const clean: Record<string, string | number | boolean> = {};
+  for (const [k, v] of Object.entries(params)) if (v !== undefined && v !== '') clean[k] = v;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: eventName, ...clean });
 }
 
 /** Fires when a visitor clicks a primary/secondary call-to-action (e.g. "Book a briefing call"). */
