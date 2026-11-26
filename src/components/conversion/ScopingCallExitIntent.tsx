@@ -25,6 +25,7 @@ function ExitIntentScopingDialog({ pathname }: { pathname: string }) {
       }}
       formId={FORM_ID}
       sourceContext={`Exit intent: ${pathname}`}
+      marketsControl="dropdown"
       title="Before you go: book a 30-minute scoping call"
     />
   );

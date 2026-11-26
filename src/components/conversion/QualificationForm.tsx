@@ -12,6 +12,11 @@ import {
   QUALIFICATION_FORM_BUDGETS,
   QUALIFICATION_FORM_BELOW_MINIMUM_BUDGET,
 } from '@/data/qualificationFormOptions';
+import {
+  isScopingCallCountry,
+  SCOPING_CALL_FEATURED_COUNTRIES,
+  SCOPING_CALL_OTHER_COUNTRIES,
+} from '@/data/scopingCallCountryOptions';
 
 const ERROR_EMAIL = 'admin@bionixus.com';
 const GENERIC_ERROR = 'Something went wrong — please try again or email us directly.';
@@ -26,10 +31,15 @@ export type QualificationFormProps = {
   formId: string;
   /** Optional context label shown in the form and sent with the submission, e.g. a report/page name. */
   sourceContext?: string;
-  /** Prefills Markets of interest checkboxes (must match QUALIFICATION_FORM_MARKETS). */
+  /** Prefills Markets of interest (checkbox values, or one dropdown country). */
   defaultMarkets?: string[];
   /** Prefills the need select (must match QUALIFICATION_FORM_NEEDS). */
   defaultNeed?: (typeof QUALIFICATION_FORM_NEEDS)[number];
+  /**
+   * `dropdown` replaces the market checkboxes with one country `<select>`.
+   * The field name stays `markets` so HighLevel and Formspree keep the same payload key.
+   */
+  marketsControl?: 'checkboxes' | 'dropdown';
   onSuccess?: () => void;
 };
 
@@ -38,6 +48,7 @@ export function QualificationForm({
   sourceContext,
   defaultMarkets,
   defaultNeed,
+  marketsControl = 'checkboxes',
   onSuccess,
 }: QualificationFormProps) {
   const [submitted, setSubmitted] = useState(false);
@@ -55,6 +66,8 @@ export function QualificationForm({
   );
   const priorityMarkets = QUALIFICATION_FORM_MARKETS.slice(0, 7);
   const visibleMarkets = showAllMarkets ? QUALIFICATION_FORM_MARKETS : priorityMarkets;
+  const dropdownDefaultMarket =
+    marketsControl === 'dropdown' ? (defaultMarkets?.find((market) => isScopingCallCountry(market)) ?? '') : '';
 
   const handleFirstInteraction = () => {
     if (started) return;
@@ -302,32 +315,62 @@ export function QualificationForm({
         {errors.need && <p className="text-xs text-destructive mt-1">{errors.need}</p>}
       </div>
 
-      <fieldset>
-        <legend className="block text-sm font-medium text-foreground mb-2">Markets of interest</legend>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-1.5 pr-1">
-          {visibleMarkets.map((market) => (
-            <label key={market} className="flex items-center gap-1.5 text-xs text-foreground cursor-pointer">
-              <input
-                type="checkbox"
-                name="markets"
-                value={market}
-                defaultChecked={defaultMarkets?.includes(market)}
-                className="h-3.5 w-3.5 rounded border-input text-primary focus:ring-primary/20"
-              />
-              {market}
-            </label>
-          ))}
-        </div>
-        {!showAllMarkets ? (
-          <button
-            type="button"
-            className="mt-2 text-xs font-medium text-primary hover:underline"
-            onClick={() => setShowAllMarkets(true)}
+      {marketsControl === 'dropdown' ? (
+        <div>
+          <label htmlFor={`${formId}-markets`} className="block text-sm font-medium text-foreground mb-1.5">
+            Country
+          </label>
+          <select
+            id={`${formId}-markets`}
+            name="markets"
+            defaultValue={dropdownDefaultMarket}
+            className="w-full px-3.5 py-2.5 rounded-lg border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
           >
-            Show all {QUALIFICATION_FORM_MARKETS.length} markets
-          </button>
-        ) : null}
-      </fieldset>
+            <option value="">Select a country…</option>
+            <optgroup label="Common choices">
+              {SCOPING_CALL_FEATURED_COUNTRIES.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </optgroup>
+            <optgroup label="All countries">
+              {SCOPING_CALL_OTHER_COUNTRIES.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </optgroup>
+          </select>
+        </div>
+      ) : (
+        <fieldset>
+          <legend className="block text-sm font-medium text-foreground mb-2">Markets of interest</legend>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-1.5 pr-1">
+            {visibleMarkets.map((market) => (
+              <label key={market} className="flex items-center gap-1.5 text-xs text-foreground cursor-pointer">
+                <input
+                  type="checkbox"
+                  name="markets"
+                  value={market}
+                  defaultChecked={defaultMarkets?.includes(market)}
+                  className="h-3.5 w-3.5 rounded border-input text-primary focus:ring-primary/20"
+                />
+                {market}
+              </label>
+            ))}
+          </div>
+          {!showAllMarkets ? (
+            <button
+              type="button"
+              className="mt-2 text-xs font-medium text-primary hover:underline"
+              onClick={() => setShowAllMarkets(true)}
+            >
+              Show all {QUALIFICATION_FORM_MARKETS.length} markets
+            </button>
+          ) : null}
+        </fieldset>
+      )}
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>

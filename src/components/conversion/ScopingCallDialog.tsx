@@ -18,6 +18,8 @@ type ScopingCallDialogProps = {
   sourceContext?: string;
   defaultNeed?: (typeof QUALIFICATION_FORM_NEEDS)[number];
   defaultMarkets?: string[];
+  /** Exit-intent popup uses a country dropdown. Other dialogs keep market checkboxes. */
+  marketsControl?: 'checkboxes' | 'dropdown';
   title?: string;
 };
 
@@ -28,6 +30,7 @@ export function ScopingCallDialog({
   sourceContext,
   defaultNeed,
   defaultMarkets,
+  marketsControl,
   title = 'Book a 30-minute scoping call',
 }: ScopingCallDialogProps) {
   return (
@@ -45,6 +48,7 @@ export function ScopingCallDialog({
           sourceContext={sourceContext}
           defaultNeed={defaultNeed}
           defaultMarkets={defaultMarkets}
+          marketsControl={marketsControl}
           onSuccess={() => undefined}
         />
       </DialogContent>
