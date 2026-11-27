@@ -63,6 +63,16 @@ const faqItems = [
     answer:
       'We send a scoped, project-priced proposal within 48 hours of a brief. Priority modules typically move to field-ready instruments in 2–4 weeks.',
   },
+  {
+    question: 'Which pharmaceutical companies operate in Dubai and how is that relevant to market research?',
+    answer:
+      'Dubai and the wider UAE host regional headquarters and commercial affiliates for global innovators alongside local manufacturers and distributors — from multinational prescription brands to hospital-focused generics and consumer-health portfolios. Research must separate DIFC/JAFZA commercial presence from where products are actually listed on DHA, DOH, and MOHAP formularies and insurer networks. BioNixus maps named-account adoption across Cleveland Clinic Abu Dhabi, Mediclinic, NMC, Aster, and SEHA-linked facilities so “companies in Dubai” lists are translated into prescriber, payer, and pharmacy behaviour teams can act on.',
+  },
+  {
+    question: 'How does EDE federal pricing change UAE pharmaceutical market research in 2026?',
+    answer:
+      'With marketing-authorisation and pricing functions consolidating under the Emirates Drug Establishment, federal list-price and re-pricing decisions now sit upstream of emirate formulary and insurer work. Fieldwork should capture how manufacturers sequence EDE registration, DHA Dubai formulary, DOH UPP, and Northern Emirates MOHAP listings — not treat the UAE as one reimbursement switch. BioNixus runs payer and hospital modules aligned to each layer so launch, access, and competitive intelligence reflect the post-2025 regulatory split.',
+  },
 ];
 
 const services = [
@@ -156,7 +166,7 @@ const jsonLd = [
     '@id': `${PAGE_URL}#webpage`,
     name: 'BioNixus: Healthcare Market Research Company in Dubai, UAE',
     url: PAGE_URL,
-    dateModified: '2026-11-05',
+    dateModified: '2026-11-27',
     about: { '@id': AE_ID },
     publisher: { '@id': ORG_ID },
   },

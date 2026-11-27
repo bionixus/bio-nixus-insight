@@ -245,6 +245,11 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Yes. Cardiometabolic overlap is common; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
     },
+    {
+      question: 'How do NOAC, PCSK9, and GDMT programmes differ in research design?',
+      answer:
+        'Anticoagulation studies must capture bleeding-risk discourse and reversal readiness; PCSK9 programmes hinge on residual LDL narratives and payer prior-authorization templates; GDMT uptitration after heart-failure admission depends on nursing follow-up and primary-care ownership. BioNixus keeps separate objection libraries per corridor so combined cardio portfolios do not collapse distinct access gates into one generic survey.',
+    },
   ],
   'neurology-cns': [
     {
@@ -266,6 +271,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support neurology and CNS strategy?',
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
+    },
+    {
+      question: 'How should neurology research document real-world monitoring and safety burden?',
+      answer:
+        'Infusion scheduling, MRI surveillance, cognitive monitoring, REMS paperwork, and home-administration training often cap uptake before efficacy ceilings bind. BioNixus measures which monitoring rituals clinicians will sustain, where nurses absorb burden, and which payer criteria treat monitoring cost as a budget line—so launch assumptions reflect operational capacity, not trial-protocol ideals.',
+    },
+    {
+      question: 'When should neurology programmes integrate caregiver and advocacy stakeholders?',
+      answer:
+        'In paediatric, rare, and progressive neurodegenerative categories, caregivers influence initiation, persistence, and funding appeals as much as neurologists. Qualitative modules with structured caregiver burden scales and advocacy-network mapping prevent forecasts that treat the treating specialist as the only decision node.',
     },
   ],
   'digital-health': [
@@ -289,6 +304,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
     },
+    {
+      question: 'What evidence do hospital digital committees expect before budget release?',
+      answer:
+        'Committees increasingly ask for cybersecurity attestations, interoperability with existing EHR workflows, nursing FTE impact, liability allocation, and a reimbursement or CPT pathway—not only clinical pilot outcomes. BioNixus documents which artefacts unblock procurement in each market so evidence generation matches the gate that actually holds budget.',
+    },
+    {
+      question: 'How should SaMD and connected-device research treat pharma companion offerings?',
+      answer:
+        'When digital tools bundle with a pharmaceutical franchise, adoption research must separate device enthusiasm from drug initiation and persistence effects. Combined modules across digital-health and therapy hubs clarify whether the tool accelerates prescribing, adherence, or access documentation—or merely adds dashboard noise clinicians abandon after onboarding.',
+    },
   ],
   dermatology: [
     {
@@ -310,6 +335,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support dermatology teams?',
       answer:
         'We deliver step-therapy maps, KOL and centre archetypes, message tests on safety monitoring and flare fear, and competitive scenarios for biosimilar or small-molecule entry—linked to aesthetic-medicine and GCC pharmaceutical context where portfolios overlap.',
+    },
+    {
+      question: 'How does the medical–aesthetic overlap change dermatology research design?',
+      answer:
+        'Injectables, energy devices, and prescription biologics share patient attention but obey different regulatory and payment rules. Research should stratify immune-mediated disease corridors from elective aesthetic demand so messaging, access, and forecasting do not conflate chronic inflammatory pathways with discretionary spend cycles.',
+    },
+    {
+      question: 'Which access artefacts accelerate dermatology biologic initiation?',
+      answer:
+        'Prior-authorization forms that match payer criteria language, photography documentation standards, and failure-of-conventional therapy proof points often determine speed more than KOL endorsement alone. BioNixus tests which evidence formats committees accept and where GPs versus dermatologists own the paperwork burden.',
     },
   ],
   biosimilars: [

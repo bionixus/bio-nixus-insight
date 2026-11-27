@@ -135,9 +135,9 @@ export const CTR_SEO_BY_PATH = {
   },
   '/iqvia-alternative': {
     // 3 Nov 2026 recovery: Middle East primary-research query. Keep the 127-studies-in-2026 label.
-    title: 'IQVIA Alternative Middle East: Primary Research 2026 | BioNixus',
+    title: 'Companies Like IQVIA: MENA Primary Research 2026 | BioNixus',
     description:
-      'IQVIA alternative for Middle East primary research: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient fieldwork. 127 studies in 2026. Proposal in 48 hours.',
+      'Companies like IQVIA for MENA fieldwork: keep syndicated audits for sizing; brief BioNixus for HCP, payer and patient primary research. 127 studies in 2026. Proposal in 48 hours.',
   },
   '/blog/healthcare-overview-egypt-market-2026': {
     // GSC 17 Sep–14 Oct 2026: 1,838 impr, pos 3.05, 0.27% CTR — keep H1 meaning, rewrite snippet.
@@ -666,9 +666,9 @@ export const CTR_SEO_BY_PATH = {
       '2026 list of FMCG companies in Egypt — Edita, Juhayna, MNCs, bakals vs modern trade. Account-level research by BioNixus.',
   },
   '/fmcg-companies-uae': {
-    title: 'Top FMCG Companies in UAE (2026) | Traditional Trade',
+    title: 'FMCG Companies in UAE (2026 List) | Dubai & Emirates',
     description:
-      '2026 list of FMCG companies in the UAE — Agthia, IFFCO, Unilever, Nestlé. Account-level research by BioNixus.',
+      'FMCG companies in the UAE for 2026 — Agthia, IFFCO, Unilever, Nestlé, pharma-to-consumer crossovers. Ranked list plus account-level field research by BioNixus.',
   },
   '/fmcg-companies-saudi-arabia': {
     title: 'Top FMCG Companies in Saudi Arabia (2026) | Trade Mix',
