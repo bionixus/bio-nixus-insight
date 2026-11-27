@@ -58,6 +58,16 @@ const faqItems = [
     answer:
       'Yes. US modules can run with comparable cells in the UK, EU5 (Germany, France, Italy, Spain), Brazil, Saudi Arabia, and UAE — using consistent instruments for global portfolio committees managing multi-market access strategy from one research partner.',
   },
+  {
+    question: 'How does IRA Medicare price negotiation affect US market research priorities in 2026?',
+    answer:
+      'With the Inflation Reduction Act’s first negotiated Medicare prices taking effect for selected high-spend drugs, US teams need research that separates Medicare-exposed revenue from commercial and Part D segments still governed by PBM rebate economics. BioNixus runs payer and pharmacy-benefit research that models gross-to-net erosion, indication-level access after negotiation headlines, and physician behaviour when Medicare patients face new cost-sharing realities — so forecasting does not assume list-price narratives still drive the whole US book.',
+  },
+  {
+    question: 'Why is US desktop search traffic underperforming on CTR for healthcare pages?',
+    answer:
+      'US impressions often land on deep-rank syndicated-style URLs or generic hub pages where titles do not signal primary-research differentiation. BioNixus pages are structured with explicit HCP, PBM, and KOL deliverables, FAQ schema for answer engines, and GeoLLM summary blocks so snippets communicate custom fieldwork — not syndicated audit resale. Teams briefed on US access questions should land on country BOFU pages with proposal CTAs rather than directory fragments that read like data-vendor catalogues.',
+  },
 ];
 
 const jsonLd = [
@@ -83,7 +93,7 @@ const jsonLd = [
     url: `https://www.bionixus.com${canonicalPath}`,
     image: 'https://www.bionixus.com/og-image.png',
     datePublished: '2026-06-25',
-    dateModified: '2026-09-27',
+    dateModified: '2026-11-27',
     author: personAuthorJsonLd(PAGE_AUTHOR),
     publisher: {
       '@type': 'Organization',
@@ -257,6 +267,11 @@ export default function HealthcareMarketResearchUsa() {
           <p className="mt-6 text-muted-foreground leading-relaxed">
             Additional US modules cover cardiovascular (PCSK9, SGLT2, HFrEF algorithms), rare disease and gene therapy,
             immunology and JAK inhibitors, pharmacovigilance and REMS awareness, and consumer health / OTC category work.
+          </p>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            US evidence plans should name the payer gate that binds uptake — PBM exclusion, Medicare Part B buy-and-bill
+            policy, hospital P&amp;T, or IRA negotiation exposure — before fieldwork starts, so deliverables map to
+            access owners rather than generic physician satisfaction scores.
           </p>
         </ReportPremiumSection>
 

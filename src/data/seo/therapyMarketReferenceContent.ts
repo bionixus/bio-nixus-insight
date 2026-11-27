@@ -128,6 +128,12 @@ const CARDIO_TAIL: ReferenceSection[] = [
       'Teams ready to escalate should route into country cardiovascular reports, market access research services, and the healthcare hub for coherent multi-market expansion across MENA, the UK, and Europe.',
     ],
   },
+  {
+    title: 'Residual risk, lipids, and anticoagulation: where forecasts usually break',
+    paragraphs: [
+      'Residual inflammatory risk after statins, bethesda scores on NOAC persistence, GDMT up-titration after heart-failure hospitalisation, and pharmacist substitution on lipid-lowering corridors each create adoption plateaus that guideline updates alone cannot explain. Research should quantify which narrative clinicians repeat when they defer escalation — monitoring fatigue, bleeding fear, cost, or formulary step edits — so medical and access teams target the operational blocker rather than repeating efficacy alone.',
+    ],
+  },
 ];
 
 const RARE_TAIL: ReferenceSection[] = [
@@ -187,6 +193,12 @@ const DIGITAL_HEALTH_TAIL: ReferenceSection[] = [
     paragraphs: [
       'Payers and hospital committees increasingly request operational outcome evidence, total-cost-of-care narratives, and cybersecurity assurances alongside clinical validation. BioNixus pairs clinician adoption studies with payer-adjacent interviews and procurement stakeholder mapping so digital portfolios align evidence generation with the gates that actually control budget release.',
       'Teams escalating from pilots to regional rollout should connect digital-health insight with diabetes, cardiology, or respiratory therapy hubs where companion services intersect with pharmaceutical franchises.',
+    ],
+  },
+  {
+    title: 'Procurement and IT veto points that outlast clinical pilots',
+    paragraphs: [
+      'Hospital digital committees often approve pilots but stall scale-up when security review, data-residency rules, nursing FTE models, or indemnity clauses remain unresolved. Mapping which committee chair, which IT security questionnaire, and which budget line must move before renewal prevents digital forecasts that treat pilot enthusiasm as enterprise rollout.',
     ],
   },
 ];
