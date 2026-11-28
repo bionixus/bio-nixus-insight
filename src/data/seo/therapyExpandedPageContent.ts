@@ -245,6 +245,16 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'Yes. Cardiometabolic overlap is common; combined modules reduce duplicate fieldwork and clarify where messaging, access, and medical education should coordinate across specialty boundaries rather than compete for clinician attention.',
     },
+    {
+      question: 'How should cardiovascular teams research GLP-1 and SGLT-2 crosswinds without double-counting demand?',
+      answer:
+        'Metabolic therapies now compete for cardiologist attention, primary-care bandwidth, and payer budget simultaneously. BioNixus segments studies by initiation gate — who owns titration after partial response, how monitoring burden is delegated to nurses, and where step therapy blocks overlap indications — so lipid or heart-failure franchises are not forecast against inflated diabetes denominators that will never convert under real-world monitoring capacity.',
+    },
+    {
+      question: 'Where do valve, device, and pharma cardiovascular budgets collide in Gulf tenders?',
+      answer:
+        'NUPCO and ministry scoring sometimes bundles procedure volume with chronic therapy contracts. Research maps those bundles so pharma teams do not forecast share as if prescribing were isolated from cath-lab purchasing calendars.',
+    },
   ],
   'neurology-cns': [
     {
@@ -266,6 +276,26 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support neurology and CNS strategy?',
       answer:
         'We deliver centre concentration maps, KOL connectivity dossiers, persistence and discontinuation analysis, caregiver burden narratives, and access-risk registers tied to step therapy or funding exceptions—outputs medical, access, and brand teams can operationalise without reinterpretation.',
+    },
+    {
+      question: 'How do high-cost drug committees treat neurology biologics differently from small molecules?',
+      answer:
+        'Infusion capacity, home-administration training, safety monitoring calendars, and caregiver availability often appear on committee scorecards alongside clinical benefit. Research documents which evidence formats accelerate exceptions versus which triggers re-review after twelve months, preventing access dossiers built for outpatient tablets from failing on operational grounds.',
+    },
+    {
+      question: 'When should neurology studies weight generalists over neurologists?',
+      answer:
+        'In MS, epilepsy, migraine, and early Parkinson pathways, generalists and nurses frequently control referral timing and persistence longer than tertiary KOLs. Sampling plans weight those gates when the commercial question is diagnostic delay or maintenance ownership—not when the brief is exclusively biomarker-driven oncology-style board behaviour.',
+    },
+    {
+      question: 'How should migraine and epilepsy programmes model adherence when patients self-titrate?',
+      answer:
+        'Patient diaries and pharmacy claims often disagree in CNS categories where side-effect fear drives covert dose changes. Mixed methods reconcile stated adherence with refill gaps so persistence models reflect what caregivers and patients actually do between visits.',
+    },
+    {
+      question: 'How does rare-neurology sampling differ from high-prevalence CNS studies?',
+      answer:
+        'Ultra-small treater pools favour qualitative depth and named-centre validation before any quant sample is promised, avoiding vanity n counts that cannot generalise.',
     },
   ],
   'digital-health': [
@@ -289,6 +319,21 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       answer:
         'We pair clinician adoption studies with payer-adjacent interviews, procurement stakeholder mapping, and pricing scenario tests—linking findings to diabetes, cardiology, or respiratory hubs where companion services intersect pharmaceutical franchises.',
     },
+    {
+      question: 'Which procurement gates most often block SaMD and remote monitoring scale-up?',
+      answer:
+        'IT security review, inability to map procedures to reimbursement codes, nursing time accounting, and siloed hospital budgets routinely outrank clinician enthusiasm. Studies score each gate by institution archetype—public teaching hospital, insurer-owned network, private elective centre—so product teams fix purchase blockers instead of re-running awareness surveys.',
+    },
+    {
+      question: 'Can digital health research cover DiGA, GCC national digital health, and NHS app pathways in one programme?',
+      answer:
+        'Yes, with modular cores: comparable adoption metrics roll up regionally while national modules embed DiGA fast-track rules, UAE or Saudi digital authority engagement norms, and NHS app evaluation criteria. That prevents a single global playbook from misreading which market actually reimburses connected care in 2026.',
+    },
+    {
+      question: 'How do insurers score ROI on remote monitoring versus inpatient avoidance?',
+      answer:
+        'Payers differ on whether avoided admissions or reduced nurse FTE justify premium reimbursement. Direct interviews with medical directors clarify which metric unlocks budget in each plan archetype before pricing connected-care bundles.',
+    },
   ],
   dermatology: [
     {
@@ -310,6 +355,36 @@ export const THIN_THERAPY_EXPANDED_FAQS: Record<ThinTherapySlug, TherapyFaq[]> =
       question: 'How does BioNixus support dermatology teams?',
       answer:
         'We deliver step-therapy maps, KOL and centre archetypes, message tests on safety monitoring and flare fear, and competitive scenarios for biosimilar or small-molecule entry—linked to aesthetic-medicine and GCC pharmaceutical context where portfolios overlap.',
+    },
+    {
+      question: 'How should dermatology research treat tele-dermatology and pharmacy-led channels?',
+      answer:
+        'Async consults and pharmacist-administered biologics in some Gulf markets change who initiates therapy and documents step therapy. Field modules capture those channels when they carry real volume, not only hospital dermatology departments that no longer own the patient journey.',
+    },
+    {
+      question: 'What access evidence helps dermatology biologics survive prior-authorization churn?',
+      answer:
+        'Committees often request flare documentation, photos, lab monitoring discipline, and failed conventional therapy calendars in repeatable formats. Research catalogs which artefact bundles shorten approval cycles in each payer archetype so medical and access teams stop resubmitting dossiers shaped for a different market’s PA template.',
+    },
+    {
+      question: 'How do psoriasis and atopic dermatitis pathways differ for sampling design?',
+      answer:
+        'Psoriasis volume clusters in hospital dermatology and rheumatology overlap; atopic dermatitis often lives in primary care and paediatric corridors with different step-therapy calendars. Programmes mirror the corridor your label actually fights in rather than blending unrelated patient flows into one incidence number.',
+    },
+    {
+      question: 'What should lifecycle teams measure before a dermatology biosimilar tender?',
+      answer:
+        'Substitution confidence among hospital pharmacists, nurse retraining needs for alternate devices, and patient anxiety about flare risk during switches routinely predict erosion better than price alone. BioNixus maps those operational levers before tender defence budgets are set.',
+    },
+    {
+      question: 'How should sun and phototherapy habits shape Middle East dermatology forecasts?',
+      answer:
+        'Seasonal UV exposure, cultural covering norms, and private-clinic waiting times shift flare patterns and treatment gaps materially versus European analogues. Local modules prevent imports of seasonality assumptions that do not describe Gulf patient journeys or local insurer prior-authorization review calendars.',
+    },
+    {
+      question: 'When should dermatology research combine aesthetic and medical positioning?',
+      answer:
+        'Portfolios that span medical dermatology and aesthetic injectables need channel-separated modules so physician sampling does not blend elective demand with treated-patient denominators, keeping launch and access forecasts defensible in affiliate governance and medical affairs reviews.',
     },
   ],
   biosimilars: [
